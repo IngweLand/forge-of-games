@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message CityMapEntityDto {
+  string city_entity_id = 2;
+  int32 x = 4;
+  int32 y = 5;
+  bool is_rotated = 9;
+  string customization_entity_id = 15;
+  int32 customization_applied_at = 16;
+  int32 level = 18;
+}

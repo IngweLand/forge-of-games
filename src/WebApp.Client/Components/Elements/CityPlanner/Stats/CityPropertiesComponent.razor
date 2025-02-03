@@ -1,0 +1,51 @@
+@rendermode InteractiveWebAssembly
+@using Ingweland.Fog.Application.Client.Web.CityPlanner
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Dtos.Hoh.City
+@using Microsoft.Extensions.Localization
+@implements IDisposable
+@inject ICityPlanner CityPlanner
+@inject IStringLocalizer<FogResource> Loc
+<div class="fog-container component-root">
+    <div class="age-label" style="background-color: @Data.Age.Color">@Data.Age.Name</div>
+    <div class="header-container">@Data.Name</div>
+    <div class="main-container">
+        <CityProductionStatsComponent Data="@Data.Production"/>
+        <HappinessStatsComponent Data="@Data.Happiness"/>
+        <CityAreaStatsComponent Data="@Data.Areas"/>
+        <WorkforceStatsComponent Data="@Data.Workforce"/>
+    </div>
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        CityPlanner.CityMapState.StateChanged += CityMapStateOnStateChanged;
+    }
+
+    private void CityMapStateOnStateChanged()
+    {
+        StateHasChanged();
+    }
+
+    [Parameter]
+    public CityPlannerCityPropertiesViewModel Data { get; set; } = null!;
+
+    private void OnProductClicked(string productId)
+    {
+        CityPlanner.UpdateProduct(productId);
+    }
+
+    public void Dispose()
+    {
+        CityPlanner.CityMapState.StateChanged -= CityMapStateOnStateChanged;
+    }
+
+    private void OnCustomizationItemChanged(BuildingCustomizationDto item)
+    {
+        CityPlanner.UpdateCustomization(item);
+    }
+}

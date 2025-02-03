@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ContinentDefinitionDTO {
+  string continent = 1;
+  repeated string regions = 2;
+  string world = 4;
+}

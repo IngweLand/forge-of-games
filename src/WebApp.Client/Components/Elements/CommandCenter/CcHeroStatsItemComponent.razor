@@ -1,0 +1,10 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+<div class="value-container user-select-none">
+    <img src="@StatItem.IconUrl" alt="resource icon" class="value-icon">
+    <span class="value-label">@StatItem.Label</span>
+</div>
+
+@code {
+    [Parameter]
+    public required IconLabelItemViewModel StatItem { get; set; }
+}

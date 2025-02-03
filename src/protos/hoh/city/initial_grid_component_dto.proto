@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "expansion_definition_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message InitialGridComponentDTO {
+  int32 expansion_size = 1;
+  repeated ExpansionDefinitionDTO expansions = 2;
+}

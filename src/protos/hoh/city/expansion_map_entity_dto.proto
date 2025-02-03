@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ExpansionMapEntityDto {
+  int32 x = 2;
+  int32 y = 3;
+  int32 width = 6;
+  int32 length = 7;
+  string id = 10;
+}

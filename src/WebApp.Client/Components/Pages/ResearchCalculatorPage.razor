@@ -1,0 +1,192 @@
+@page "/tools/research-calculator"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Microsoft.Extensions.Localization
+@rendermode InteractiveWebAssembly
+@inject IResearchCalculatorService ResearchCalculatorService
+@inject IStringLocalizer<FogResource> Loc
+@inject IJSRuntime JS
+<HeadContent>
+    <meta name="description"
+          content="Calculate resources required to open technologies - the tool for Heroes of History">
+    <meta name="keywords"
+          content="Heroes of History tools, research calculator, hoh tools, hoh calculator, research, technologies, research cost, technology cost">
+</HeadContent>
+<PageTitle>Research calculator for Heroes of History on Forge of Games</PageTitle>
+<div class="content-wrapper vertical-layout" id="scrollable-container">
+    <div class="vertical-layout text-container">
+        <div class="tool-title">@Loc[FogResource.Tools_ResearchCalculator_Name]</div>
+        <div>@Loc[FogResource.Tools_ResearchCalculator_Description]</div>
+    </div>
+    @if (_ageTechnologies == null)
+    {
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="spinner-grow" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="step-description-container vertical-layout">
+            <div class="stepper">
+                <div class="step-number">1</div>
+                <hr/>
+                <div class="step-number" style="background-color: @(_step2BgColor)">2</div>
+                <hr/>
+                <div class="step-number" style="background-color: @(_step3BgColor)">3</div>
+            </div>
+            <div class="step-description">@_stepDescription</div>
+        </div>
+        @if (_cost == null)
+        {
+            <div class="fog-container vertical-layout technologies-container">
+                @foreach (var ageTechnologies in _ageTechnologies)
+                {
+                    <div class="age-header" @onclick="() => ageTechnologies.IsListOpen = !ageTechnologies.IsListOpen"
+                         style="background-color: @ageTechnologies.AgeColor">@ageTechnologies.AgeName</div>
+
+                    <MudCollapse Expanded="@ageTechnologies.IsListOpen">
+                        <div class="items-container">
+                            @foreach (var technology in ageTechnologies.Technologies)
+                            {
+                                <TechnologyComponent Data="@technology" Clicked="OnClicked"/>
+                            }
+                        </div>
+                    </MudCollapse>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="cost-container vertical-layout">
+                <h4 class="user-select-none">@Loc[FogResource.Hoh_Cost]</h4>
+                <div class="fog-container cost-items-container">
+                    @foreach (var costItem in _cost.Cost)
+                    {
+                        <ResourceWithValue ResourceValue="@costItem"/>
+                    }
+                </div>
+            </div>
+        }
+
+        <div class="navigation-buttons-container">
+            <div class="btn navigation-btn" style="visibility: @(_previousBtnIsVisible ? "visible" : "hidden")"
+                 @onclick="PreviousBtnOnClicked">@Loc[FogResource.Common_Previous] </div>
+            <div class="btn navigation-btn" style="visibility: @(_nextBtnIsVisible ? "visible" : "hidden")"
+                 @onclick="NextBtnOnClicked">@Loc[FogResource.Common_Next]</div>
+        </div>
+    }
+
+</div>
+
+@code {
+    private IReadOnlyCollection<AgeTechnologiesViewModel>? _ageTechnologies;
+    private Step _currentStep = Step.SelectOpen;
+    private bool _previousBtnIsVisible;
+    private bool _nextBtnIsVisible;
+    private string _stepDescription = "1";
+    private string _step2BgColor = "";
+    private string _step3BgColor = "";
+    private ResearchCostViewModel? _cost;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        _ageTechnologies = await ResearchCalculatorService.GetTechnologiesAsync(CityId.Capital);
+        _ageTechnologies.First().IsListOpen = true;
+        UpdateUiForStep();
+    }
+
+    private void OnClicked(ResearchCalculatorTechnologyViewModel item)
+    {
+        switch (_currentStep)
+        {
+            case Step.SelectOpen:
+            {
+                ResearchCalculatorService.SelectOpenTechnologies(item.Id);
+                break;
+            }
+            case Step.SelectTarget:
+            {
+                ResearchCalculatorService.SelectTargetTechnologies(item.Id);
+                break;
+            }
+        }
+    }
+
+    private enum Step
+    {
+        SelectOpen,
+        SelectTarget,
+        Results,
+    }
+
+    private void PreviousBtnOnClicked()
+    {
+        _currentStep = _currentStep switch
+        {
+            Step.SelectTarget => Step.SelectOpen,
+            Step.Results => Step.SelectTarget,
+            _ => _currentStep,
+        };
+        UpdateUiForStep();
+    }
+
+    private void NextBtnOnClicked()
+    {
+        _currentStep = _currentStep switch
+        {
+            Step.SelectOpen => Step.SelectTarget,
+            Step.SelectTarget => Step.Results,
+            _ => _currentStep,
+        };
+        UpdateUiForStep();
+    }
+
+    private void UpdateUiForStep()
+    {
+        switch (_currentStep)
+        {
+            case Step.SelectOpen:
+            {
+                _nextBtnIsVisible = true;
+                _previousBtnIsVisible = false;
+                _stepDescription = Loc[FogResource.Tools_ResearchCalculator_SelectOpenTech];
+                ResearchCalculatorService.ClearTargetTechnologies();
+                _cost = null;
+                _step2BgColor = "var(--fog-stepper-inactive-color)";
+                _step3BgColor = "var(--fog-stepper-inactive-color)";
+                break;
+            }
+            case Step.SelectTarget:
+            {
+                _nextBtnIsVisible = true;
+                _previousBtnIsVisible = true;
+                _stepDescription = Loc[FogResource.Tools_ResearchCalculator_SelectTargetTech];
+                _cost = null;
+                _step2BgColor = "var(--fog-stepper-active-color)";
+                _step3BgColor = "var(--fog-stepper-inactive-color)";
+                break;
+            }
+            case Step.Results:
+            {
+                _nextBtnIsVisible = false;
+                _previousBtnIsVisible = true;
+                _stepDescription = Loc[FogResource.Tools_ResearchCalculator_Result];
+                _cost = ResearchCalculatorService.CalculateCost();
+                _step2BgColor = "var(--fog-stepper-active-color)";
+                _step3BgColor = "var(--fog-stepper-active-color)";
+                break;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,12 @@
+.page-full {
+    display: grid;
+    grid-template-rows: 1fr ;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-full {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+}

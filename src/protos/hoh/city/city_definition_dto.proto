@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "city_init_definition_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message CityDefinitionDTO {
+  string id = 1;
+  CityInitDefinitionDTO init_definition = 3;
+  repeated string building_menu_types = 4;
+}

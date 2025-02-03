@@ -1,0 +1,21 @@
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Models.Hoh.Entities.City;
+
+namespace Ingweland.Fog.Application.Server.Factories;
+
+public class WonderDtoFactory(IHohGameLocalizationService localizationService) : IWonderDtoFactory
+{
+    public WonderDto Create(Wonder wonder)
+    {
+        return new WonderDto()
+        {
+            Id = wonder.Id,
+            CityName = localizationService.GetCityName(wonder.CityId),
+            WonderName = localizationService.GetWonderName($"{wonder.CityId}_{wonder.Id}"),
+            Levels = wonder.LevelUpComponent.LevelCosts.OrderBy(wlc => wlc.Level)
+                .Select(wlc => new WonderLevelDto() {Cost = wlc.Crates}).ToList(),
+        };
+    }
+}

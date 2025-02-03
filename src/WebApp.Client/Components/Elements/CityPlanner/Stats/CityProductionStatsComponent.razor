@@ -1,0 +1,46 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IHohStorageIconUrlProvider StorageIconUrlProvider
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Production]" OnClick="OnHeaderClick"/>
+    <MudCollapse Expanded="_expanded">
+        <table class="table">
+            <thead>
+            <tr>
+                <th/>
+                <th><img src="@StorageIconUrlProvider.GetIconUrl(string.Empty)" class="resource-icon"/></th>
+                <th>@Loc[FogResource.Common_1h]</th>
+                <th>@Loc[FogResource.Common_24hrs]</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Data.Products)
+            {
+                <tr class="user-select-none">
+                    <td><img src="@item.IconUrl" class="resource-icon"/></td>
+                    <td class="production-label">@item.DefaultProduction</td>
+                    <td class="production-label">@item.OneHourProduction</td>
+                    <td class="production-label">@item.OneDayProduction</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </MudCollapse>
+</div>
+
+@code {
+
+    [Parameter]
+    public required ProductionStatsViewModel Data { get; set; }
+    
+    bool _expanded = true;
+
+    private void OnHeaderClick() {
+        _expanded = !_expanded;
+    }
+}

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Navigation.Home" xml:space="preserve">
+        <value>Home</value>
+    </data>
+    <data name="Navigation.Campaign" xml:space="preserve">
+        <value>Campaign</value>
+    </data>
+    <data name="Navigation.TreasureHunt" xml:space="preserve">
+        <value>Treasure Hunt</value>
+    </data>
+    <data name="Navigation.Buildings" xml:space="preserve">
+        <value>Buildings</value>
+    </data>
+    <data name="Navigation.Wonders" xml:space="preserve">
+        <value>Wonders</value>
+    </data>
+    <data name="Navigation.About" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="About.HeaderText" xml:space="preserve">
+        <value>Welcome to Forge of Games: Your Ultimate Heroes of History Companion</value>
+    </data>
+    <data name="About.Text1" xml:space="preserve">
+        <value>Whether you're planning your campaigns, optimizing hero stats, or uncovering the history behind your favorite characters, Forge of Games is your ultimate companion.</value>
+    </data>
+    <data name="About.ListItem1" xml:space="preserve">
+        <value>Access detailed campaign info for all regions, encounters and treasure hunt.</value>
+    </data>
+    <data name="About.ListItem2" xml:space="preserve">
+        <value>Dive into comprehensive hero stats and leveling resources.</value>
+    </data>
+    <data name="About.ListItem3" xml:space="preserve">
+        <value>Discover unique historical insights about each hero, sourced directly from their real-life legends.</value>
+    </data>
+    <data name="About.Text2" xml:space="preserve">
+        <value>More tools, including research calculators and city stats, are coming soon - stay tuned!</value>
+    </data>
+    <data name="Common.JoinDiscord" xml:space="preserve">
+        <value>Join Discord</value>
+    </data>
+    <data name="Common.AllRightsReserved" xml:space="preserve">
+        <value>All rights reserved.</value>
+    </data>
+    <data name="Hoh.Campaign" xml:space="preserve">
+        <value>Campaign</value>
+    </data>
+    <data name="Hoh.Heroes" xml:space="preserve">
+        <value>Heroes</value>
+    </data>
+    <data name="Hoh.Levels" xml:space="preserve">
+        <value>Levels</value>
+    </data>
+    <data name="Common.ReadMore" xml:space="preserve">
+        <value>Read more...</value>
+    </data>
+    <data name="Hoh.Hero.Ability" xml:space="preserve">
+        <value>Ability</value>
+    </data>
+    <data name="Hoh.Hero.Create" xml:space="preserve">
+        <value>Create</value>
+    </data>
+    <data name="Hoh.Hero.Main" xml:space="preserve">
+        <value>Main</value>
+    </data>
+    <data name="Hoh.Hero.Awakening" xml:space="preserve">
+        <value>Awakening</value>
+    </data>
+    <data name="Hoh.Hero.Barracks" xml:space="preserve">
+        <value>Barracks</value>
+    </data>
+    <data name="Hoh.Encounters" xml:space="preserve">
+        <value>Encounters</value>
+    </data>
+    <data name="Hoh.Building.ConstructionCost" xml:space="preserve">
+        <value>Construction cost</value>
+    </data>
+    <data name="Hoh.Building.UpgradeCost" xml:space="preserve">
+        <value>Upgrade cost</value>
+    </data>
+    <data name="Hoh.Cost" xml:space="preserve">
+        <value>Cost</value>
+    </data>
+    <data name="Hoh.Wonder.CummulativeCost" xml:space="preserve">
+        <value>Cummulative cost</value>
+    </data>
+    <data name="Hoh.Lvl" xml:space="preserve">
+        <value>Lvl.</value>
+    </data>
+    <data name="Hoh.Hero.AbilityLvl" xml:space="preserve">
+        <value>Ability lvl.</value>
+    </data>
+    <data name="Common.Disclaimer" xml:space="preserve">
+        <value>Disclaimer</value>
+    </data>
+    <data name="Common.Disclaimer.Text" xml:space="preserve">
+        <value>Forge of Games is a fan-made website dedicated to the game Heroes of History. All rights to the game, its assets, and intellectual property are owned by their respective holders. Users are encouraged to consult the official Innogames website for the most up-to-date and accurate information. Forge of Games is not affiliated with or officially connected to the creators or publishers of Heroes of History. The content here is created to support the game’s community by providing unique tools, guides, and insights.</value>
+    </data>
+    <data name="Hoh.City" xml:space="preserve">
+        <value>City</value>
+    </data>
+    <data name="Hoh.Battle" xml:space="preserve">
+        <value>Battle</value>
+    </data>
+    <data name="Hoh.Building" xml:space="preserve">
+        <value>Building</value>
+    </data>
+    <data name="Tools.CurrentLevel" xml:space="preserve">
+        <value>Current level</value>
+    </data>
+    <data name="Tools.TargetLevel" xml:space="preserve">
+        <value>Target level</value>
+    </data>
+    <data name="Navigation.Tools" xml:space="preserve">
+        <value>Tools</value>
+    </data>
+    <data name="Hoh.Resource" xml:space="preserve">
+        <value>Resource</value>
+    </data>
+    <data name="Tools.BuildingCost.Name" xml:space="preserve">
+        <value>Building cost calculator</value>
+    </data>
+    <data name="Tools.BuildingCost.Description" xml:space="preserve">
+        <value>Calculate the resources needed to build or upgrade a building.</value>
+    </data>
+    <data name="Tools.WonderCost.Name" xml:space="preserve">
+        <value>World wonder calculator</value>
+    </data>
+    <data name="Tools.WonderCost.Description" xml:space="preserve">
+        <value>Calculate the resources required to progress through world wonder levels.</value>
+    </data>
+    <data name="Hoh.WorldWonder" xml:space="preserve">
+        <value>World wonder</value>
+    </data>
+    <data name="Hoh.Hero" xml:space="preserve">
+        <value>Hero</value>
+    </data>
+    <data name="Tools.HeroProgressionResourcesCalculator.Name" xml:space="preserve">
+        <value>Hero progression calculator</value>
+    </data>
+    <data name="Tools.HeroProgressionResourcesCalculator.Description" xml:space="preserve">
+        <value>Calculate the resources needed to level up a hero.</value>
+    </data>
+    <data name="HeroSelector.HelperText" xml:space="preserve">
+        <value>Pick a hero. Start typing the name or select from the list.</value>
+    </data>
+    <data name="Tools.HeroBuilder.Name" xml:space="preserve">
+        <value>Hero builder</value>
+    </data>
+    <data name="Tools.HeroBuilder.Description" xml:space="preserve">
+        <value>Configure your hero's potential by adjusting all four critical properties.</value>
+    </data>
+    <data name="Hoh.Research" xml:space="preserve">
+        <value>Research</value>
+    </data>
+    <data name="Tools.ResearchCalculator.Name" xml:space="preserve">
+        <value>Research calculator</value>
+    </data>
+    <data name="Tools.ResearchCalculator.Description" xml:space="preserve">
+        <value>Calculate the resources required to open technologies.</value>
+    </data>
+    <data name="Common.Next" xml:space="preserve">
+        <value>Next</value>
+    </data>
+    <data name="Common.Previous" xml:space="preserve">
+        <value>Previous</value>
+    </data>
+    <data name="Tools.ResearchCalculator.SelectOpenTech" xml:space="preserve">
+        <value>Pick the last technologies you have discovered.</value>
+    </data>
+    <data name="Tools.ResearchCalculator.SelectTargetTech" xml:space="preserve">
+        <value>Pick technologies you want to discover.</value>
+    </data>
+    <data name="Tools.ResearchCalculator.Result" xml:space="preserve">
+        <value>Cost of the technologies.</value>
+    </data>
+    <data name="CityPlanner.Title" xml:space="preserve">
+        <value>City planner</value>
+    </data>
+    <data name="Common.Info" xml:space="preserve">
+        <value>Info</value>
+    </data>
+    <data name="CityPlanner.Production" xml:space="preserve">
+        <value>Production</value>
+    </data>
+    <data name="Common.Hour.Abbr" xml:space="preserve">
+        <value>h</value>
+    </data>
+    <data name="Common.Hours.Abbr" xml:space="preserve">
+        <value>hrs</value>
+    </data>
+    <data name="Common.1h" xml:space="preserve">
+        <value>1h</value>
+    </data>
+    <data name="Common.24hrs" xml:space="preserve">
+        <value>24hrs</value>
+    </data>
+    <data name="CityPlanner.Customization" xml:space="preserve">
+        <value>Customization</value>
+    </data>
+    <data name="CityPlanner.CreateNewCity" xml:space="preserve">
+        <value>Create new city</value>
+    </data>
+    <data name="Common.Cancel" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+    <data name="Common.Create" xml:space="preserve">
+        <value>Create</value>
+    </data>
+    <data name="CityPlanner.CityName" xml:space="preserve">
+        <value>City name</value>
+    </data>
+    <data name="CityPlanner.NameRequiredError" xml:space="preserve">
+        <value>Name is required</value>
+    </data>
+    <data name="CityPlanner.NameTooLongError" xml:space="preserve">
+        <value>Name cannot exceed {0} characters</value>
+    </data>
+    <data name="CityPlanner.Cities" xml:space="preserve">
+        <value>Cities</value>
+    </data>
+    <data name="CityPlanner.Import" xml:space="preserve">
+        <value>Import</value>
+    </data>
+    <data name="CityPlanner.Workforce" xml:space="preserve">
+        <value>Workforce</value>
+    </data>
+    <data name="CityPlanner.Happiness" xml:space="preserve">
+        <value>Culture</value>
+    </data>
+    <data name="CityPlanner.Happiness.TotalAvailable" xml:space="preserve">
+        <value>Total available</value>
+    </data>
+    <data name="CityPlanner.Happiness.TotalConsumed" xml:space="preserve">
+        <value>Total consumed</value>
+    </data>
+    <data name="CityPlanner.Happiness.Excess" xml:space="preserve">
+        <value>Excess</value>
+    </data>
+    <data name="CityPlanner.Happiness.UnmetNeed" xml:space="preserve">
+        <value>Unmet need</value>
+    </data>
+    <data name="CityPlanner.Happiness.UsageRatio" xml:space="preserve">
+        <value>Usage ratio</value>
+    </data>
+    <data name="CityPlanner.Area" xml:space="preserve">
+        <value>Area</value>
+    </data>
+    <data name="CityPlanner.Settings.Layout" xml:space="preserve">
+        <value>Layout</value>
+    </data>
+    <data name="CityPlanner.Settings.ShowNames" xml:space="preserve">
+        <value>Show names</value>
+    </data>
+    <data name="CityPlanner.Settings.ShowLevels" xml:space="preserve">
+        <value>Show levels</value>
+    </data>
+    <data name="About.ListItem4" xml:space="preserve">
+        <value>Use City Planner to optimize your city</value>
+    </data>
+    <data name="CityPlanner.PageTitle" xml:space="preserve">
+        <value>HoH City Planner | Heroes of History City Building Tool | Forge of Games</value>
+    </data>
+    <data name="CityPlanner.Meta.Description" xml:space="preserve">
+        <value>Professional city planning tool for Heroes of History game. Import your in-game city, manage multiple layouts, analyze production and culture stats. Free web-based tool by Forge of Games.</value>
+    </data>
+    <data name="CityPlanner.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History, HoH, city planner, city builder, game tools, Forge of Games, city layout, production calculator, city management, browser game tools, HoH calculator, city planning, city optimization</value>
+    </data>
+    <data name="CommandCenter.Title" xml:space="preserve">
+        <value>Command Center</value>
+    </data>
+    <data name="CommandCenter.Meta.Description" xml:space="preserve">
+        <value>Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more.</value>
+    </data>
+    <data name="CommandCenter.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center</value>
+    </data>
+    <data name="CommandCenter.PageTitle" xml:space="preserve">
+        <value>Command Center - Heroes of History Team Planner &amp; Battle Optimizer | Forge of Games</value>
+    </data>
+    <data name="CommandCenter.CreateNewProfileDialog.Title" xml:space="preserve">
+        <value>Create new profile</value>
+    </data>
+    <data name="CommandCenter.CreateNewProfileDialog.InputLabel" xml:space="preserve">
+        <value>Profile name</value>
+    </data>
+    <data name="CommandCenter.Profile.CreateTeamButton" xml:space="preserve">
+        <value>Create team</value>
+    </data>
+    <data name="CommandCenter.Profile.HeroesButton" xml:space="preserve">
+        <value>Heroes</value>
+    </data>
+    <data name="CommandCenter.Profile.BarracksButton" xml:space="preserve">
+        <value>Barracks</value>
+    </data>
+    <data name="CommandCenter.Profile.AddHeroDialog.Title" xml:space="preserve">
+        <value>Add hero</value>
+    </data>
+    <data name="CommandCenter.Profile.AddHeroDialog.OkButton" xml:space="preserve">
+        <value>Add</value>
+    </data>
+    <data name="CommandCenter.Profile.Heroes.AddHeroButton" xml:space="preserve">
+        <value>Add hero</value>
+    </data>
+    <data name="CommandCenter.Profile.Team.EmptyTeamMessage" xml:space="preserve">
+        <value>Empty</value>
+    </data>
+    <data name="Common.Ok" xml:space="preserve">
+        <value>OK</value>
+    </data>
+    <data name="CommandCenter.CreateNewTeamDialog.InputLabel" xml:space="preserve">
+        <value>Team name</value>
+    </data>
+    <data name="CommandCenter.CreateNewTeamDialog.Title" xml:space="preserve">
+        <value>Create new team</value>
+    </data>
+    <data name="Common.Delete" xml:space="preserve">
+        <value>Delete</value>
+    </data>
+    <data name="Common.Remove" xml:space="preserve">
+        <value>Remove</value>
+    </data>
+    <data name="Common.Close" xml:space="preserve">
+        <value>Close</value>
+    </data>
+    <data name="CommandCenter.DeleteTeamDialog.Message" xml:space="preserve">
+        <value>Do you want to delete {0} team?</value>
+    </data>
+    <data name="CommandCenter.RemoveHeroDialog.Message" xml:space="preserve">
+        <value>Do you want to remove {0}?</value>
+    </data>
+    <data name="CommandCenter.ShareProfileDialog.ShareButton" xml:space="preserve">
+        <value>Create link</value>
+    </data>
+    <data name="CommandCenter.ShareProfileDialog.Title" xml:space="preserve">
+        <value>Share profile</value>
+    </data>
+    <data name="CommandCenter.Import" xml:space="preserve">
+        <value>Import</value>
+    </data>
+    <data name="CommandCenter.CreateProfile" xml:space="preserve">
+        <value>Create profile</value>
+    </data>
+    <data name="CommandCenter.Menu.Profiles" xml:space="preserve">
+        <value>Profiles</value>
+    </data>
+    <data name="CommandCenter.Menu.Playgrounds" xml:space="preserve">
+        <value>Playgrounds</value>
+    </data>
+    <data name="CommandCenter.Menu.Heroes" xml:space="preserve">
+        <value>Heroes</value>
+    </data>
+    <data name="BrandName" xml:space="preserve">
+        <value>Forge of Games</value>
+    </data>
+    <data name="Common.Share" xml:space="preserve">
+        <value>Share</value>
+    </data>
+    <data name="Common.Save" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="Common.Settings" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="CommandCenter.DeleteCcProfileDialog.Message" xml:space="preserve">
+        <value>Do you want to delete {0}?</value>
+    </data>
+    <data name="CommandCenter.Profile.Settings.ProfileName" xml:space="preserve">
+        <value>Profile name</value>
+    </data>
+    <data name="CommandCenter.Profile.Settings.DeleteProfileButton" xml:space="preserve">
+        <value>Delete profile</value>
+    </data>
+    <data name="ImportInGameData.Options.Cities" xml:space="preserve">
+        <value>Capital city</value>
+    </data>
+    <data name="ImportInGameData.Options.Profile" xml:space="preserve">
+        <value>Command center profile</value>
+    </data>
+    <data name="Common.Import" xml:space="preserve">
+        <value>Import</value>
+    </data>
+    <data name="ImportInGameData.Headline" xml:space="preserve">
+        <value>Import your in-game data</value>
+    </data>
+    <data name="ImportInGameData.SuccessMessage" xml:space="preserve">
+        <value>Data has been imported successfully. Open City planner or Command center to see it.</value>
+    </data>
+    <data name="ImportInGameData.NotFound" xml:space="preserve">
+        <value>Data with id {0} could not be found.</value>
+    </data>
+    <data name="Navigation.SupportUs" xml:space="preserve">
+        <value>Support Us</value>
+    </data>
+    <data name="SupportUs.PageTitle" xml:space="preserve">
+        <value>Support Forge of Games</value>
+    </data>
+    <data name="SupportUs.Message" xml:space="preserve">
+        <value>If you find our tools helpful, consider supporting the project with a small donation.</value>
+    </data>
+    <data name="SupportUs.Why.Title" xml:space="preserve">
+        <value>Why Support Us?</value>
+    </data>
+    <data name="SupportUs.Why.Reason1" xml:space="preserve">
+        <value>Keep our tools free and accessible for everyone in the gaming community</value>
+    </data>
+    <data name="SupportUs.Why.Reason2" xml:space="preserve">
+        <value>Support ongoing development of new features and improvements</value>
+    </data>
+    <data name="SupportUs.Why.Reason3" xml:space="preserve">
+        <value>Help cover server and maintenance costs</value>
+    </data>
+    <data name="SupportUs.Why.Reason4" xml:space="preserve">
+        <value>Be part of our growing gaming community</value>
+    </data>
+</root>

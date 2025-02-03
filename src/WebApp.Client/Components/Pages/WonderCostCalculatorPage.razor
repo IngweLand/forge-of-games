@@ -1,0 +1,170 @@
+@page "/tools/wonder-cost-calculator"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Microsoft.Extensions.Localization
+@rendermode InteractiveWebAssembly
+@inject ICityUiService CityUiService;
+@inject IStringLocalizer<FogResource> Loc
+@inject IToolsUiService ToolsUiService
+<HeadContent>
+    <meta name="description"
+          content="Calculate resources required to progress through world wonder levels - the tool for Heroes of History">
+    <meta name="keywords"
+          content="Heroes of History tools, wonder cost calculator, hoh tools, hoh calculator, wonders, wonder cost">
+</HeadContent>
+<PageTitle>World wonder calculator for Heroes of History on Forge of Games</PageTitle>
+<div class="component-root vertical-layout">
+    <div class="vertical-layout text-container">
+        <div class="tool-title">@Loc[FogResource.Tools_WonderCost_Name]</div>
+        <div >@Loc[FogResource.Tools_WonderCost_Description]</div>
+    </div>
+    <div class="fog-container vertical-layout tool-container">
+        @if (_wonders == null)
+        {
+            <div class="d-flex justify-content-center align-items-center vh-100">
+                <div class="spinner-grow" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        }
+        else
+        {
+            // city selector 
+            <MudSelect Label="@Loc[FogResource.Hoh_City]"
+                       @bind-Value="@_selectedWonderGroup" SelectedValuesChanged="OnCitiesSelectedValuesChanged"
+                       T="WonderGroupViewModel" Variant="Variant.Outlined">
+
+                @foreach (var wonderGroup in _wonders)
+                {
+                    <MudSelectItem Value="wonderGroup">@wonderGroup.CityName</MudSelectItem>
+                }
+            </MudSelect>
+
+            // wonder selector
+            @if (_selectedWonderGroup != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]"
+                           @bind-Value="@_selectedWonder" T="WonderBasicViewModel"
+                           SelectedValuesChanged="OnWonderSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var wonder in _selectedWonderGroup.Wonders)
+                    {
+                        <MudSelectItem Value="wonder">@wonder.Name</MudSelectItem>
+                    }
+                </MudSelect>
+            }
+
+            // current level selector
+            @if (_fromLevels != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
+                           @bind-Value="@_currentLevel" T="WonderLevelViewModel"
+                           SelectedValuesChanged="OnCurrentLevelSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var wonderLevel in _fromLevels)
+                    {
+                        <MudSelectItem Value="wonderLevel">@wonderLevel.Level</MudSelectItem>
+                    }
+                </MudSelect>
+            }
+
+            // target level selector
+            @if (_toLevels != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]"
+                           @bind-Value="@_targetLevel" T="WonderLevelViewModel"
+                           SelectedValuesChanged="OnDesiredLevelSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var wonderLevel in _toLevels)
+                    {
+                        <MudSelectItem Value="wonderLevel">@wonderLevel.Level</MudSelectItem>
+                    }
+                </MudSelect>
+            }
+
+            @if (_costs != null)
+            {
+                <div class="cost-items-container">
+                    @foreach (var cost in _costs)
+                    {
+                        <HorizontalIconLabelComponent Item="cost"/>
+                    }
+                </div>
+            }
+        }
+    </div>
+
+</div>
+
+@code {
+    private IReadOnlyCollection<WonderGroupViewModel>? _wonders;
+    private WonderGroupViewModel? _selectedWonderGroup;
+    private WonderBasicViewModel? _selectedWonder;
+    private WonderViewModel? _selectedWonderDetails;
+    private IList<WonderLevelViewModel>? _fromLevels;
+    private IList<WonderLevelViewModel>? _toLevels;
+    private WonderLevelViewModel? _currentLevel;
+    private WonderLevelViewModel? _targetLevel;
+    private IReadOnlyCollection<IconLabelItemViewModel>? _costs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        _wonders = await CityUiService.GetWonderGroupsAsync();
+    }
+
+    private void OnCurrentLevelSelectedValuesChanged()
+    {
+        _toLevels = null;
+        _targetLevel = null;
+        _costs = null;
+
+        _toLevels = _selectedWonderDetails!.Levels
+            .Where(b => b.Level > _currentLevel!.Level)
+            .OrderBy(b => b.Level)
+            .ToList();
+    }
+
+    private void OnDesiredLevelSelectedValuesChanged()
+    {
+        _costs = ToolsUiService.CalculateWonderLevelsCost(_selectedWonderDetails!, _currentLevel!.Level, _targetLevel!.Level);
+    }
+
+    private async Task OnWonderSelectedValuesChanged()
+    {
+        _fromLevels = null;
+        _toLevels = null;
+        _currentLevel = null;
+        _targetLevel = null;
+        _costs = null;
+
+        _selectedWonderDetails = await CityUiService.GetWonderAsync(_selectedWonder!.Id);
+        if (_selectedWonderDetails == null)
+        {
+            return;
+        }
+
+        var buildings = _selectedWonderDetails.Levels
+            .Take(_selectedWonderDetails.Levels.Count - 1)
+            .ToList();
+        _fromLevels = new List<WonderLevelViewModel>() {WonderLevelViewModel.Blank}.Concat(buildings).ToList();
+    }
+
+    private void OnCitiesSelectedValuesChanged()
+    {
+        _selectedWonder = null;
+        _fromLevels = null;
+        _toLevels = null;
+        _currentLevel = null;
+        _targetLevel = null;
+        _costs = null;
+    }
+
+}

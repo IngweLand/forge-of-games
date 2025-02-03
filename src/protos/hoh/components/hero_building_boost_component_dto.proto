@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "unit_stat_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroBuildingBoostComponentDTO {
+  string id = 1;
+  string unit_type = 2;
+  repeated UnitStatDto unit_stats = 3;
+}
+    

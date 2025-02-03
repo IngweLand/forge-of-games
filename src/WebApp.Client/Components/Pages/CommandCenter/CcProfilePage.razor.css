@@ -1,0 +1,34 @@
+.cc-page-container{
+    padding: 0;
+}
+
+.action-buttons-container {
+    display: flex;
+    gap: 8px;
+    padding: 0 8px 8px 8px;
+}
+
+.command-center-card {
+    flex: 1;
+    padding: 0;
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    padding: 0 2px;
+    gap: 10px 0;
+}
+
+@media (min-width: 576px) {
+    .action-buttons-container {
+        display: flex;
+        gap: 16px;
+        padding: 0 16px 16px 16px;
+    }
+
+    .teams-container {
+        gap: 18px;
+        padding: 0 12px;
+    }
+}

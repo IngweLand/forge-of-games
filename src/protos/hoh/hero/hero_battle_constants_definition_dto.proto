@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroBattleConstantsDefinitionDTO {
+  map<string, string> stat_to_formula = 4;
+  repeated HeroUnitStatBaseValueDto base_values = 6;
+}
+
+message HeroUnitStatBaseValueDto {
+  string stat_id = 1;
+  float value = 2;
+}

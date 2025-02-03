@@ -1,0 +1,12 @@
+.value-container {
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+    gap: 0.25rem;
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+}
+
+.value-icon {
+    width: 36px;
+    height: 36px;
+}

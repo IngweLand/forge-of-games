@@ -1,0 +1,6 @@
+syntax = "proto3";
+import "hero_profile.proto";
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+message HeroPush {
+  repeated HeroProfile unlocked = 1;
+}

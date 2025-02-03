@@ -1,0 +1,23 @@
+@page "/command-center/profiles/{ProfileId}/heroes"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Ingweland.Fog.WebApp.Client.Components.Layout
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@inherits CcProfilePageBase
+@rendermode PageRenderMode
+
+@if (_heroes != null)
+{
+    <div class="cc-page-container">
+        <CcPageTitle Title="@_profileName"/>
+        <CcHeroListComponent Profiles="@_heroes" HeroProfileSelected="OnHeroProfileSelected">
+            <StartContent>
+                <div class="command-center-card command-center-action-card add-button" @onclick="AddHero">
+                    <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+                    <span
+                        class="command-center-card-label">@Loc[FogResource.CommandCenter_Profile_Heroes_AddHeroButton]</span>
+                </div>
+            </StartContent>
+        </CcHeroListComponent>
+    </div>
+}

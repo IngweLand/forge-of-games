@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "id_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message UnlockGoodRewardDTO {
+  IdDto Id = 1;
+  string City = 2;
+  string Age = 3;
+}

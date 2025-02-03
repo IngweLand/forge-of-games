@@ -1,0 +1,12 @@
+<div class="component-root">
+    <div class="header-container user-select-none" @onclick="OnClick">@Label</div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+    
+    [Parameter]
+    public EventCallback OnClick { get; set; }
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "age_definition_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message UnlockAgeRewardDTO {
+  AgeDefinitionDTO age = 1; 
+}

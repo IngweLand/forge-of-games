@@ -1,0 +1,75 @@
+@rendermode InteractiveWebAssembly
+@using Ingweland.Fog.Application.Client.Web.CityPlanner
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Dtos.Hoh.City
+@using Microsoft.Extensions.Localization
+@implements IDisposable
+@inject ICityPlanner CityPlanner
+@inject IStringLocalizer<FogResource> Loc
+@inject ICommandManager CommandManager
+@inject ICityPlannerCommandFactory CommandFactory
+<div class="fog-container component-root">
+    <div class="age-label" style="background-color: @Building.Age?.Color">@Building.Age?.Name</div>
+    <div class="header-container">
+        <span class="entity-title">@Building.Name</span>
+        <BuildingLevelSelectorComponent Levels="@Building.LevelRange" LevelChanged="OnLevelChanged"
+                                        SelectedLevel="@Building.Level"/>
+    </div>
+    <div class="main-container">
+        <BuildingInfoComponent Items="@Building.InfoItems"/>
+        @if (Building.ProductionComponent != null)
+        {
+            <ProductionComponent Data="@Building.ProductionComponent" ProductClicked="OnProductClicked"/>
+        }
+        @if (Building.CustomizationComponent != null)
+        {
+            <CustomizationComponent Data="@Building.CustomizationComponent" ItemChanged="OnCustomizationItemChanged"/>
+        }
+    </div>
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        CityPlanner.CityMapState.StateChanged += CityMapStateOnStateChanged;
+    }
+
+    private void CityMapStateOnStateChanged()
+    {
+        StateHasChanged();
+    }
+
+    [Parameter]
+    public CityMapEntityViewModel Building { get; set; } = null!;
+
+    private void OnLevelChanged(int level)
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntity == null)
+        {
+            return;
+        }
+
+        var cmd = CommandFactory.CreateChangeEntityLevelCommand(CityPlanner.CityMapState.SelectedCityMapEntity, level);
+        CommandManager.ExecuteCommand(cmd);
+    }
+
+    private void OnProductClicked(string productId)
+    {
+        CityPlanner.UpdateProduct(productId);
+    }
+
+    public void Dispose()
+    {
+        CityPlanner.CityMapState.StateChanged -= CityMapStateOnStateChanged;
+    }
+
+    private void OnCustomizationItemChanged(BuildingCustomizationDto item)
+    {
+        CityPlanner.UpdateCustomization(item);
+    }
+
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "building_buff_details_dto.proto";
+import "expansion_sub_type.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingDefinitionDTO {
+  string id = 1;
+  string type = 2;
+  int32 width = 3;
+  int32 length = 4;
+  // LevelUpComponentDTO
+  repeated google.protobuf.Any packed_components = 5;
+  string city = 7;
+  string age = 9;
+  string subtype = 10;
+  BuildingBuffDetailsDto buff_details = 11;
+  int32 level = 12;
+  ExpansionSubType expansion_sub_type = 14;
+  string asset_id = 15;
+}
+    
+//
+//message InitComponentDTO {
+//  string id = 1;
+//}
+
+//message MoveComponentDTO {
+//  string id = 1;
+//}
+
+//message SellComponentDTO {
+//  string id = 1;
+//  repeated BuildingProductionRewardDto rewards = 2;
+//}
+
+//message SubscriptionSlotComponentDTO {
+//  string benefit_type = 1;
+//  int32 slot_count = 2;
+//}
+
+// Common sub-messages

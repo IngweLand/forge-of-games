@@ -1,0 +1,35 @@
+.item-container {
+    display: flex;
+    padding: 16px 16px 16px 0;
+}
+
+.item-icon {
+    width: 64px;
+    font-size: 1.5rem;
+    align-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    color: var(--fog-icon-color);
+}
+
+.item-labels-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-title {
+    font-weight: 700 !important;
+}
+
+.tool-title-obsolete {
+    text-decoration: line-through;
+}
+
+.tool-description {
+    font-size: 0.75rem !important;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fog-text-color);
+}

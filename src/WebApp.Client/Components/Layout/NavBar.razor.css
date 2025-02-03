@@ -1,0 +1,190 @@
+.navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-brand{
+    font-size: 16px;
+}
+
+.nav-item {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-item ::deep .nav-link {
+    color: var(--fog-text-on-dark-color);
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 12px;
+}
+
+.nav-item ::deep a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.nav-item ::deep .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.text-only-nav-link {
+    margin-left: 0.25rem;
+}
+
+.bi {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-right: 0.1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.bi-icon-flat-home-nav-menu {
+    background-image: url("images/icon_flat_home.png");
+}
+
+.bi-icon-hud-heroes-nav-menu {
+    background-image: url("images/icon_hud_heroes.png");
+}
+
+.bi-icon-hud-map-nav-menu {
+    background-image: url("images/icon_hud_map.png");
+}
+
+.bi-icon-hud-research-nav-menu {
+    background-image: url("images/icon_hud_research.png");
+}
+
+.bi-icon-hud-build-nav-menu {
+    background-image: url("images/icon_hud_build.png");
+}
+
+.bi-icon-hud-battle-nav-menu {
+    background-image: url("images/icon_hud_battle.png");
+}
+
+.bi-icon_flat_allied_culture-nav-menu {
+    background-image: url("images/icon_flat_allied_culture.png");
+}
+
+.bi-icon_tools-nav-menu {
+    background-image: url("images/construction_28dp_FBE0C6_FILL0_wght700_GRAD200_opsz24.png");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.bi-icon-city-planner-nav-menu {
+    background-image: url("images/architecture_30dp_FBE0C6_FILL0_wght700_GRAD200_opsz24.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.bi-icon-command-center-nav-menu {
+    background-image: url("images/target_32dp_FBE0C6_FILL0_wght400_GRAD0_opsz40.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.bi-icon-support-us-nav-menu {
+    background-image: url("images/volunteer_activism_36dp_FBE0C6_FILL0_wght400_GRAD0_opsz40.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.navbar-toggler:focus {
+    border: none;
+}
+
+/* Fix vertical alignment in dropdown items */
+.dropdown-item {
+    display: flex !important;
+    align-items: center;
+    line-height: 3rem;
+}
+
+/* Style dropdown menu in collapsed state */
+@media (max-width: 1199px) {  /* xl breakpoint in Bootstrap */
+    .navbar-nav .dropdown-menu {
+        background: none;
+        border: none;
+        padding-left: 1.5rem;  /* Move items to the right */
+    }
+
+    /* Remove default Bootstrap dropdown item hover effect */
+    .dropdown-item:hover {
+        background: none;
+    }
+
+    /* Make dropdown items look like regular nav items when collapsed */
+    .nav-item.dropdown .dropdown-item {
+        color: var(--fog-text-on-dark-color);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    /* Apply the same hover effect as regular nav items */
+    .nav-item.dropdown .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    /* Apply the same active state as regular nav items */
+    .nav-item.dropdown .dropdown-item.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+}
+
+/* Style dropdown menu in expanded state */
+@media (min-width: 1200px) {
+
+    .navbar {
+        padding-bottom: 0;
+        padding-top: 0;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    .dropdown-menu {
+        background-color: var(--fog-navigation-bar-color);
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown-item {
+        color: var(--fog-text-on-dark-color);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .dropdown-item.active {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+}
+
+@media (min-width: 1300px) {
+    .navbar-brand{
+        font-size: 18px;
+    }
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .nav-item ::deep .nav-link {
+        font-size: 14px;
+    }
+}

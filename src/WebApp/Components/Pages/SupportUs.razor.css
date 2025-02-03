@@ -1,0 +1,100 @@
+:root {
+    --primary-color: #6d28d9;
+    --secondary-color: #4c1d95;
+    --background-color: #f3f4f6;
+    --text-color: #1f2937;
+    --kofi-color: #29abe0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.header h4 {
+    font-size: 20px;
+    color: var(--fog-text-on-container-color);
+    margin-bottom: 12px;
+}
+
+.donation-section {
+    background: var(--fog-surface-color);
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+}
+
+.benefits {
+    background:  var(--fog-surface-color);
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefits h4 {
+    color: var(--fog-text-on-container-color);
+    font-size: 16px;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.benefits li {
+    margin-bottom: 12px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.benefits li::before {
+    content: "✓";
+    color: var(--fog-text-on-container-color);
+    position: absolute;
+    left: 0;
+}
+
+@media (min-width: 576px) {
+    .container {
+        padding: 16px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .header h4 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .donation-section {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .benefits {
+        padding: 24px;
+    }
+
+    .benefits h4 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .benefits li {
+        margin-bottom: 16px;
+        padding-left: 20px;
+        position: relative;
+    }
+}

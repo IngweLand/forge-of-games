@@ -1,0 +1,15 @@
+@page "/city-planner"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
+@using Ingweland.Fog.WebApp.Client.Components.Layout
+@using Microsoft.Extensions.Localization
+@layout BlankLayout
+@inject IStringLocalizer<FogResource> Loc
+
+<HeadContent>
+    <meta name="description" content="@Loc[FogResource.CityPlanner_Meta_Description]">
+    <meta name="keywords" content="@Loc[FogResource.CityPlanner_Meta_Keywords]">
+</HeadContent>
+<PageTitle>@Loc[FogResource.CityPlanner_PageTitle]</PageTitle>
+<CityPlannerComponent/>
+

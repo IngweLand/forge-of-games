@@ -1,0 +1,36 @@
+@page "/command-center/profiles/{ProfileId}/settings"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@inherits CcProfilePageBase
+@rendermode PageRenderMode
+
+@if (_profileSettings != null)
+{
+    <div class="cc-page-container">
+            <CcPageTitle Title="@Loc[FogResource.Common_Settings]" Subtitle="@Profile!.Name"/>
+            <div class="fog-container section-container">
+                <MudTextField T="string" FullWidth="true"
+                              @bind-Value="@_profileSettings.Name"
+                              Label="@Loc[FogResource.CommandCenter_Profile_Settings_ProfileName]"
+                              MaxLength="@FogConstants.NAME_MAX_CHARACTERS"
+                              Counter="@FogConstants.NAME_MAX_CHARACTERS"
+                              Immediate="true"
+                              Validation="@(new Func<string, IEnumerable<string>>(ValidateInput))"
+                              Required="true"/>
+                <MudButton Color="Color.Success" Variant="Variant.Filled"
+                           OnClick="SaveSettings"
+                           Disabled="@(!string.IsNullOrWhiteSpace(ValidateInput(_profileSettings.Name).FirstOrDefault()))">
+                    @Loc[FogResource.Common_Save]
+                </MudButton>
+            </div>
+            <div class="fog-container section-container">
+                <MudButton Color="Color.Error" Variant="Variant.Filled"
+                           OnClick="OnDeleteProfileClicked">
+                    @Loc[FogResource.CommandCenter_Profile_Settings_DeleteProfileButton]
+                </MudButton>
+            </div>
+    </div>
+}

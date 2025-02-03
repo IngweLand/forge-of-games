@@ -1,0 +1,43 @@
+.menu-header{
+    display: inline-flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.menu-header > img {
+    width: 48px;
+    aspect-ratio: 1/1;
+    height: auto;
+    object-fit: contain;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 32px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+.toolbar-divider {
+    height: 1.5rem;
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+sup {
+    font-size: 10px;
+    padding-left: 4px;
+    font-weight: 400;
+}
+
+@media (min-width: 576px) {
+    .menu-header{
+        height: 120px;
+    }
+    .menu-header > img {
+        width: 64px;
+    }
+}

@@ -1,0 +1,35 @@
+.data-items {
+    display: flex;
+    align-items: stretch;
+}
+
+.header-label {
+    height: auto;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center !important;
+    justify-content: center;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+}
+
+.level-label {
+    width: 40px;
+    padding: 4px;
+}
+
+.age-label {
+    font-weight: 200 !important;
+    font-size: 0.75rem !important;
+    color: var(--fog-text-on-dark-color);
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.component-icon {
+    align-content: center;
+    margin-left: 4px;
+    margin-right: 4px;
+}

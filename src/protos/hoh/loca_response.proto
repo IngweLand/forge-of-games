@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message LocaResponse {
+  repeated TranslationEntry entries = 3;
+}
+
+message TranslationEntry {
+  string key = 1;
+  // singular, plural
+  repeated string values = 2;
+}
+  

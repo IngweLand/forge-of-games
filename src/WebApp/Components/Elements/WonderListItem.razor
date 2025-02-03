@@ -1,0 +1,14 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+<div class="card-wrapper">
+    <div class="card">
+        <img src="@Wonder.ImageUrl"/>
+        <div class="title">@Wonder.Name</div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public WonderBasicViewModel Wonder { get; set; }
+
+}

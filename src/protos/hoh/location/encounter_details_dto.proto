@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "resource_collection_dto.proto";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message EncounterDetailsDto {
+  ResourceCollectionDto cost = 1;
+  ResourceCollectionDto auto_victory_cost = 2;
+  EncounterRewardDto regular_reward = 3;
+  EncounterRewardDto first_victory_bonus = 4;
+}
+
+message EncounterRewardDto {
+  // ResourceRewardDTO, MysteryChestRewardDTO, RewardDefinitionDTO, IncreaseExpansionRightRewardDTO
+  repeated google.protobuf.Any packed_rewards = 2;
+}
+
+    

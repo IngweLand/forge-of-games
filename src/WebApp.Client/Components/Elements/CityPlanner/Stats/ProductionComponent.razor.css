@@ -1,0 +1,73 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding-bottom: 16px;
+    gap: 6px;
+}
+
+.general-items-container {
+    gap: 12px;
+    display: flex !important;
+    flex-flow: wrap;
+    align-items: center !important;
+}
+
+.resource-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.production-label {
+    font-size: 12px !important;
+    vertical-align: middle;
+}
+
+.table {
+    margin-bottom: 0 !important;
+}
+
+.table>:not(caption)>*>*:has(>img) {
+    padding: 2px 6px 2px 12px !important;
+    background-color: transparent;
+}
+.table>:not(caption)>*>*:has(>input) {
+    padding: 2px 0 2px 12px !important;
+    background-color: transparent;
+}
+
+.table>:not(caption)>*>* {
+    padding: 2px 12px !important;
+    background-color: transparent;
+}
+
+thead {
+    border-bottom: none;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    border-bottom: 0;
+}
+th {
+    white-space: nowrap;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    background-color: var(--fog-surface2-color) !important;
+}
+
+th:last-child {
+    width: 100%;
+}
+
+td > * {
+    vertical-align: middle;
+}
+input, tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}

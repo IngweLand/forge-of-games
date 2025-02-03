@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message GrantWorkerComponentDTO {
+  string id = 1;
+  int32 worker_count = 2;
+  string dynamic_value_id = 4;
+}

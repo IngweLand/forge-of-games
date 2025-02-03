@@ -1,0 +1,32 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Tools
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <table class="table">
+        <thead>
+        <tr>
+            <th >@Loc[FogResource.Hoh_Resource]</th>
+            <th >@Loc[FogResource.Hoh_Building_ConstructionCost]</th>
+            <th >@Loc[FogResource.Hoh_Building_UpgradeCost]</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Costs.Costs)
+        {
+            <tr>
+                <td><img src="@item.IconUrl" class="resource-icon"/></td>
+                <td class="cost-label">@item.ConstructionCost</td>
+                <td class="cost-label">@item.UpgradeCost</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@code {
+
+    [Parameter]
+    public required BuildingMultilevelCostViewModel Costs { get; set; }
+
+}

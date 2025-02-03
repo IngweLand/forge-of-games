@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "building_group_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message IncreaseBuildingLimitRewardDTO {
+  string u1 = 1;
+  BuildingGroupDto building_group = 3;
+  string city = 4;
+}

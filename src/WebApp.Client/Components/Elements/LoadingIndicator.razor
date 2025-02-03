@@ -1,0 +1,14 @@
+@using MudBlazor.Utilities
+<div id="fog-loading-indicator" class="@Classname">
+    <div class="spinner-grow" role="status"></div>
+</div>
+
+@code
+{
+    [Parameter]
+    public bool Dense { get; set; } = false;
+    
+    private string Classname => new CssBuilder("loading-indicator")
+        .AddClass("loading-indicator-dense", Dense)
+        .Build();
+}

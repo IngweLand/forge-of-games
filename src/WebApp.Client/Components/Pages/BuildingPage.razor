@@ -1,0 +1,75 @@
+@page "/buildings/{cityId}/{buildingGroup}"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Microsoft.Extensions.Localization
+@inject ICityUiService CityUiService;
+@inject IAssetUrlProvider AssetUrlProvider;
+@inject IStringLocalizer<FogResource> Loc
+@attribute [StreamRendering]
+<HeadContent>
+    <meta name="description"
+          content="Comprehensive building database for Heroes of History. Discover buildings and their levels for the Capital City, China, Egypt and Vikings. Check resources required for their construction and upgrade.">
+    <meta name="keywords"
+          content="Heroes of History buildings, building levels, building cost, building upgrade cost, building construction cost">
+</HeadContent>
+<PageTitle>@_pageTitle</PageTitle>
+<div class="content-wrapper">
+    <!-- Header -->
+    <div class="p-2 fog-container header-container">
+        <div class="group-name">@_buildingGroup?.Name</div>
+        <hr class="w-100 header-divider">
+        <div class="d-flex justify-content-center align-items-center gap-2">
+            <div class="unit-type-name user-select-none">@_buildingGroup?.CityName</div>
+            <div class="unit-type-name user-select-none">|</div>
+            <img class="unit-type-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_terrain_land")"/>
+            <div class="unit-type-name user-select-none">@_buildingGroup?.BuildingSize</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Levels]</h4>
+    </div>
+
+    <div class="fog-container">
+        @if (_buildingGroup != null)
+        {
+            foreach (var level in _buildingGroup.Buildings)
+            {
+                <BuildingLevelComponent LevelData="@level"/>
+            }
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required string CityId { get; set; }
+
+    [Parameter]
+    public required string BuildingGroup { get; set; }
+
+    private string _pageTitle = "Building";
+
+    private BuildingGroupViewModel? _buildingGroup;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!Enum.TryParse<CityId>(CityId, true, out var cityId) || !Enum.TryParse<BuildingGroup>(BuildingGroup, true, out var buildingGroup))
+        {
+            return;
+        }
+
+        _buildingGroup = await CityUiService.GetBuildingGroupAsync(cityId, buildingGroup);
+
+        if (_buildingGroup != null)
+        {
+            _pageTitle = $"Building - {_buildingGroup.Name}";
+        }
+    }
+
+}

@@ -1,0 +1,38 @@
+@using Ingweland.Fog.WebApp.Client.Models
+@rendermode InteractiveWebAssembly
+@inject IClientLocaleService LocaleService
+<MudPopoverProvider/>
+<div>
+    @if (_selectedLocale != null)
+    {
+        <MudMenu StartIcon="@Icons.Material.Filled.Translate"
+                 EndIcon="@Icons.Material.Filled.KeyboardArrowDown" Label="@_selectedLocale.Label"
+                 Variant="Variant.Text">
+            @foreach (var locale in LocaleService.SupportedLocales)
+            {
+                <MudMenuItem OnClick="() => SetLocale(locale)">@locale.Label</MudMenuItem>
+            }
+        </MudMenu>
+    }
+</div>
+
+
+@code {
+    private LocaleInfo? _selectedLocale;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+         return;   
+        }
+        _selectedLocale = await LocaleService.GetCurrentLocaleAsync();
+    }
+
+    private async Task SetLocale(LocaleInfo locale)
+    {
+        _selectedLocale = locale;
+        await LocaleService.SetLocaleAsync(locale);
+    }
+
+}

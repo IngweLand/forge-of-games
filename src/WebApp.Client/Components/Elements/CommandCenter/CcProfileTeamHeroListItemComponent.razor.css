@@ -1,0 +1,217 @@
+.component-root{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.more-menu {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 2;
+}
+
+.header-container {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+
+.avatar-section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 60px;
+    height: fit-content;
+    border-radius: var(--fog-border-radius) 0;
+    border: 1px solid var(--fog-border-color);
+}
+
+.avatar-container {
+    position: relative;
+    width: 100%;
+}
+
+.avatar-container > img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    aspect-ratio: 9/10;
+}
+
+.power-label {
+    background-color: var(--fog-text-color);
+    color: var(--fog-text-on-dark-color);
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.rating {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px black;
+    font-size: 12px;
+}
+
+.header-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 8px 8px 8px 0;
+    gap: 8px;
+}
+
+.hero-name {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-icons-section {
+    display: flex;
+    height: auto;
+    align-self: center;
+    width: 100%;
+    gap: 12px;
+}
+
+.hero-icons-section-item-container {
+    display: flex;
+    align-items: center;
+}
+
+.hero-icons-section-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-icons-section-icon {
+    width: auto;
+    height: auto;
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+}
+
+.hero-icons-section-label {
+    display: none;
+}
+
+.hero-levels-label {
+    font-size: 12px;
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+.ability-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+
+.ability-description-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    font-size: 12px;
+}
+
+.ability-description-container > img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--fog-border-color);
+    border-radius: var(--fog-border-radius);
+    overflow: hidden;
+}
+
+@media (min-width: 576px) {
+    .component-root{
+        gap: 24px;
+    }
+
+    .avatar-section{
+        width: 80px;
+    }
+    
+    .header-content {
+        padding: 12px 12px 12px 0;
+        gap: 12px;
+    }
+
+    .power-label {
+        font-size: 16px;
+    }
+
+    .hero-name {
+        font-size: 20px;
+    }
+
+    .hero-icons-section-label {
+        font-size: 14px;
+        display: block;
+    }
+
+    .hero-levels-label {
+        font-size: 14px;
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+
+    .hero-icons-section-icon {
+        max-width: 24px;
+        max-height: 24px;
+    }
+
+   .ability-container{
+        gap: 12px;
+    }
+
+
+    .ability-description-container {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+   .ability-description-container > img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero-icons-section {
+        gap: 24px;
+    }
+
+    .more-menu {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        z-index: 2;
+    }
+}

@@ -1,0 +1,43 @@
+@page "/inGameData/{inGameStartupDataId}"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@rendermode InteractiveWebAssembly
+<div class="main-container">
+    <span class="title">@Loc[FogResource.ImportInGameData_Headline]</span>
+    <div class="fog-container section-container">
+        @if (_inGameStartupData == null)
+        {
+            @if (_isLoading)
+            {
+                <LoadingIndicator/>
+            }
+            else
+            {
+                <span>@Loc[FogResource.ImportInGameData_NotFound, InGameStartupDataId]</span>
+            }
+        }
+        else
+        {
+            @if (_isImporting)
+            {
+                <MudCheckBox
+                    @bind-Value="@_shouldImportCities">@Loc[FogResource.ImportInGameData_Options_Cities]</MudCheckBox>
+                <MudCheckBox
+                    @bind-Value="@_shouldImportProfile">@Loc[FogResource.ImportInGameData_Options_Profile]</MudCheckBox>
+                <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="ImportData"
+                           Disabled="@(!_canImport)">@Loc[FogResource.Common_Import]</MudButton>
+            }
+            else
+            {
+                <span>@Loc[FogResource.ImportInGameData_SuccessMessage]</span>
+            }
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string? InGameStartupDataId { get; set; }
+
+}

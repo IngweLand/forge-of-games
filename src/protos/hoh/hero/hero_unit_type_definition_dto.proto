@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "hero_unit_stat_value_definition_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroUnitTypeDefinitionDTO {
+  string unit_type = 1;
+  repeated HeroUnitStatValueDefinitionDTO unit_stats = 2;
+}

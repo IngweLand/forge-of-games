@@ -1,0 +1,32 @@
+namespace Ingweland.Fog.Models.Hoh.Enums;
+
+public enum WonderId
+{
+    Undefined = 0,
+    AbuSimbel,
+    Alhambra,
+    Carcassonne,
+    CheopsPyramid,
+    ChichenItza,
+    Colosseum,
+    Colossus,
+    DragonshipEllida,
+    ForbiddenCity,
+    GreatSphinx,
+    GreatWall,
+    HagiaSophia,
+    HangingGardens,
+    Lighthouse,
+    Mausoleum,
+    PalaceOfAachen,
+    SayilPalace,
+    SherwoodForest,
+    StatueOfZeus,
+    Stonehenge,
+    TempleOfArtemis,
+    TerracottaArmy,
+    Tikal,
+    TowerOfPisa,
+    Valhalla,
+    Yggdrasil,
+}

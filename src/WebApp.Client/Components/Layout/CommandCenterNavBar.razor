@@ -1,0 +1,107 @@
+@rendermode InteractiveWebAssembly
+@inject NavigationManager NavigationManager
+@implements IBrowserViewportObserver
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Microsoft.Extensions.Localization
+@using MudBlazor.Services
+@implements IAsyncDisposable
+@inject IAssetUrlProvider AssetUrlProvider
+@inject IJSRuntime JSRuntime
+@inject IStringLocalizer<FogResource> Loc
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudAppBar ToolBarClass="user-select-none" Fixed="@(_currentWidth > 575)" Class="command-center-app-bar"
+           Color="Color.Primary" Dense="true">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+                   OnClick="@((e) => DrawerToggle())"/>
+    <span class="title" @onclick="NavigateToMain">@Loc[FogResource.CommandCenter_Title]<sup>beta</sup></span>
+    <MudSpacer/>
+    <MudIconButton Icon="@Icons.Material.Outlined.Help"
+                   Color="Color.Inherit" Edge="Edge.End"
+                   OnClick="@(() => OpenHelp())"
+                   Size="Size.Large"/>
+</MudAppBar>
+<MudDrawer Fixed="true" Class="mud-drawer-fixed" Variant="DrawerVariant.Temporary" @bind-Open="@_drawerOpen">
+    <div class="menu-header"><img class=" command-center-card-icon"
+                                  src="@AssetUrlProvider.GetHohIconUrl("icon_hud_map")"/></div>
+
+    <MudNavMenu>
+        <MudNavLink Href="/command-center/profiles"
+                    Match="NavLinkMatch.Prefix">@Loc[FogResource.CommandCenter_Menu_Profiles]</MudNavLink>
+        <MudNavGroup Title="@Loc[FogResource.CommandCenter_Menu_Playgrounds]" Expanded="true">
+            <MudNavLink Href="/command-center/playgrounds/heroes"
+                        Match="NavLinkMatch.Prefix">@Loc[FogResource.CommandCenter_Menu_Heroes]</MudNavLink>
+        </MudNavGroup>
+        <div style="height: 32px"></div>
+        <MudNavGroup Title="@Loc[FogResource.BrandName]" Expanded="true">
+            <MudNavLink Href="/city-planner"
+                        Match="NavLinkMatch.Prefix">@Loc[FogResource.CityPlanner_Title]</MudNavLink>
+            <MudNavLink Href="/tools" Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_Tools]</MudNavLink>
+            <MudNavLink Href="/heroes" Match="NavLinkMatch.Prefix">@Loc[FogResource.Hoh_Heroes]</MudNavLink>
+            <MudNavLink Href="/campaign" Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_Campaign]</MudNavLink>
+            <MudNavLink Href="/treasure-hunt-campaign"
+                        Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_TreasureHunt]</MudNavLink>
+            <MudNavLink Href="/buildings"
+                        Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_Buildings]</MudNavLink>
+            <MudNavLink Href="/wonders" Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_Wonders]</MudNavLink>
+            <MudNavLink Href="/support-us" Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_SupportUs]</MudNavLink>
+            <MudNavLink Href="/about" Match="NavLinkMatch.Prefix">@Loc[FogResource.Navigation_About]</MudNavLink>
+        </MudNavGroup>
+    </MudNavMenu>
+</MudDrawer>
+
+@code {
+
+    private void NavigateToMain()
+    {
+        NavigationManager.NavigateTo("/command-center");
+    }
+
+    private const string HELP_URL = "help/command-center";
+
+    private async Task OpenHelp()
+    {
+        await JSRuntime.InvokeVoidAsync("open", HELP_URL, "_blank");
+    }
+
+    private bool _drawerOpen = false;
+
+    private void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+
+    private int _currentWidth;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async ValueTask DisposeAsync() => await BrowserViewportService.UnsubscribeAsync(this);
+
+    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+
+    ResizeOptions IBrowserViewportObserver.ResizeOptions { get; } = new()
+    {
+        ReportRate = 250,
+        NotifyOnBreakpointOnly = true,
+    };
+
+    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
+    {
+        _currentWidth = browserViewportEventArgs.BrowserWindowSize.Width;
+
+        return InvokeAsync(StateHasChanged);
+    }
+
+}

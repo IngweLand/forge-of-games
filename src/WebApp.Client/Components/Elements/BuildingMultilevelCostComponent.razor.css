@@ -1,0 +1,29 @@
+.component-root {
+    border-top: solid 2px var(--fog-container-color);
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+}
+
+.resource-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    vertical-align: center;
+}
+
+.cost-label {
+    font-size: 1rem !important;
+    vertical-align: middle;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+}
+th {
+   white-space: nowrap;
+}
+
+th:last-child {
+    width: 100%;
+}

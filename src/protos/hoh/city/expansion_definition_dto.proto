@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "expansion_type.proto";
+import "google/protobuf/any.proto";
+import "expansion_sub_type.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ExpansionDefinitionDTO {
+  string id = 1;
+  string city_id = 2;
+  int32 x = 3;
+  int32 y = 4;
+  ExpansionType type = 5;
+  ExpansionSubType subtype = 6;
+  // LinkedExpansionComponentDTO
+  repeated google.protobuf.Any packed_components = 7;
+}

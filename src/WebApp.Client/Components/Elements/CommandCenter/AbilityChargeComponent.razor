@@ -1,0 +1,24 @@
+@using MudBlazor.Utilities
+<div class="@Classname">
+    <div class="progress-bar" style="width: @(AbilityInitialChargePercentage)%"></div>
+    <span class="right-label">@(AbilityInitialChargeTime) / @(AbilityChargeTime)</span>
+</div>
+
+@code {
+
+    [Parameter]
+    public required string AbilityChargeTime { get; init; }
+
+    [Parameter]
+    public required string AbilityInitialChargeTime { get; init; }
+
+    [Parameter]
+    public required float AbilityInitialChargePercentage { get; set; }
+
+    [Parameter]
+    public bool Dense { get; set; } = false;
+
+    private string Classname => new CssBuilder("progress-container")
+        .AddClass("progress-container-dense", Dense)
+        .Build();
+}

@@ -1,0 +1,60 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Production]"/>
+    <div class="general-items-container">
+        @foreach (var item in Data.General)
+        {
+            <GeneralProductionItemComponent Item="@item"/>
+        }
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            @if (Data.CanSelectProduct)
+            {
+                <th/>
+            }
+            <th/>
+            <th>@Loc[FogResource.Common_1h]</th>
+            <th>@Loc[FogResource.Common_24hrs]</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Data.Products)
+        {
+            <tr class="user-select-none" @onclick="() => HandleProductSelection(item)">
+                @if (Data.CanSelectProduct)
+                {
+                    <td><input type="radio"
+                               name="productSelection"
+                               value="@item" T="CityMapEntityProductViewModel"
+                               checked="@item.IsSelected"/></td>
+                }
+                <td><img src="@item.IconUrl" class="resource-icon"/></td>
+                <td class="production-label">@item.OneHourProduction</td>
+                <td class="production-label">@item.OneDayProduction</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@code {
+
+    [Parameter]
+    public required ProductionComponentViewModel Data { get; set; }
+
+    [Parameter]
+    public EventCallback<string> ProductClicked { get; set; }
+
+    private Task HandleProductSelection(CityMapEntityProductViewModel product)
+    {
+        return ProductClicked.InvokeAsync(product.ProductId);
+    }
+
+}

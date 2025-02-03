@@ -1,0 +1,9 @@
+.component-root{
+    padding-top: 12px;
+}
+
+@media (min-width: 576px) {
+    .component-root{
+        padding-top: 16px;
+    }
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "duration_dto.proto";
+import "building_production_reward_dto.proto";
+import "production_cost_dto.proto";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ProductionComponentDTO {
+  string id = 1;
+  DurationDto production_time = 5;
+  double factor = 8;
+  // WorkerBehaviourDTO
+  google.protobuf.Any packed_worker_behaviour = 9;
+  ProductionCostDto cost = 10;
+  BuildingProductDto product = 11;
+}

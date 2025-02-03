@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroAwakeningComponentDTO {
+  string id = 1;
+  repeated AwakeningLevelDto levels = 2;
+}
+
+message AwakeningLevelDto {
+  int32 converted_heroes_amount = 2;
+  AwakeningLevelValueDto level_value = 3;
+}
+
+message AwakeningLevelValueDto {
+  bool is_percentage = 2;
+  string unit_stat_id = 3;
+  float value = 4;
+}

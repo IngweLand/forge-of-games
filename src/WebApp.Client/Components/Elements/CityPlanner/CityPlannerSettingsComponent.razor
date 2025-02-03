@@ -1,0 +1,20 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@inject CityPlannerSettings CityPlannerSettings
+@inject IStringLocalizer<FogResource> Loc
+
+<div class="fog-container component-root">
+    <div class="section-title">@Loc[FogResource.CityPlanner_Settings_Layout]</div>
+    <div class="main-container">
+        <MudCheckBox @bind-Value="@CityPlannerSettings.ShowEntityName" Label="@Loc[FogResource.CityPlanner_Settings_ShowNames]"
+                     Color="Color.Primary"></MudCheckBox>
+        <MudCheckBox @bind-Value="@CityPlannerSettings.ShowEntityLevel" Label="@Loc[FogResource.CityPlanner_Settings_ShowLevels]"
+                     Color="Color.Primary"></MudCheckBox>
+    </div>
+</div>
+
+@code {
+
+}

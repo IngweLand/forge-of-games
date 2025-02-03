@@ -1,0 +1,20 @@
+.component-root {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero-avatar {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--fog-border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.small-avatar{
+    width: 48px;
+    height: 48px;
+}

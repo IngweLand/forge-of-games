@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BattleAbilityDefinitionDTO {
+  string id = 1;
+  string description_localization_id = 5;
+  repeated BattleAbilityDefinitionDescriptionItemDto description_items = 6;
+}
+
+message BattleAbilityDefinitionDescriptionItemDto {
+  string id = 1;
+  BattleAbilityDefinitionDescriptionItemValueDto value = 2;
+}
+
+message BattleAbilityDefinitionDescriptionItemValueDto {
+  double value = 1;
+  string type = 2;
+}

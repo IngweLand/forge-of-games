@@ -1,0 +1,130 @@
+* {
+    --header-spacing: 0.75rem !important;
+}
+
+.fog-container {
+    overflow: hidden;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem !important;
+    gap: 1rem !important;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem !important;
+    align-items: center;
+}
+
+.media-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.media-container {
+    background-color: var(--fog-hero-background-color);
+    border: solid var(--fog-hero-background-border-color) 3px;
+    border-radius: var(--fog-border-radius);
+    overflow: hidden;
+    height: 300px;
+    flex-grow: 1;
+}
+
+.info-container {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 1.5rem;
+    gap: 1rem !important;
+    height: 300px;
+}
+
+.info-container .info-text-container {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.info-container a {
+    align-self: end;
+}
+
+.info-text-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+}
+
+@media (min-width: 992px) {
+
+    .media-content-container {
+        flex-direction: row;
+    }
+
+    .media-container, .info-container {
+        flex: 1;
+    }
+}
+
+.unit-type-icon {
+    object-fit: contain;
+    display: inline-block;
+    width: 24px !important;
+    height: 24px !important;
+}
+
+
+.group-name {
+    font-weight: 700 !important;
+    font-size: 1.5rem;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    line-height: 1;
+}
+
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.unit-type-name {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1;
+}
+
+.header-divider {
+    margin-bottom: var(--header-spacing);
+    margin-top: var(--header-spacing);
+}
+
+.btn-group {
+    width: 100%;
+}
+
+h4 {
+    color: var(--fog-text-on-background-color);
+}
+
+.loading-indicator {
+    color: var(--fog-icon-color);
+    align-self: center;
+}

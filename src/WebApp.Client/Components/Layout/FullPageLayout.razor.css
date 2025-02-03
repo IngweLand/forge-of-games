@@ -1,0 +1,16 @@
+.page-full {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-full {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+}
+
+footer {
+    margin-top: 0 !important;
+}

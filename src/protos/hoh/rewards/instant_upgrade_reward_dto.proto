@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message InstantUpgradeRewardDTO {
+//    1 {
+//  1: "Technology_AgeOfTheFranks_RegnumFrancorum_TransitionReward_1"
+//      }
+  string target_building_id = 2;
+  string building_group_id = 10;
+  string city = 11;
+}

@@ -1,0 +1,24 @@
+.reward-container {
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+}
+
+.icon-container {
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+}
+
+.reward-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.reward-subtitle {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 0.9rem !important;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    border: solid var(--fog-container-color);
+    border-width: 1px 0 0 0;
+}

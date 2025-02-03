@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Happiness]" OnClick="OnHeaderClick"/>
+    <MudCollapse Style="align-self: start" Expanded="_expanded">
+        <div class="items-container">
+            <div class="item-label">@Loc[FogResource.CityPlanner_Happiness_TotalAvailable]</div>
+            <GeneralProductionItemComponent Item="@Data.TotalAvailableHappiness"/>
+            <div class="item-label">@Loc[FogResource.CityPlanner_Happiness_TotalConsumed]</div>
+            <GeneralProductionItemComponent Item="@Data.TotalHappinessConsumption"/>
+            <div class="item-label">@Loc[FogResource.CityPlanner_Happiness_UsageRatio]</div>
+            <GeneralProductionItemComponent Item="@Data.UsageRatio"/>
+            <div class="item-label">@Loc[FogResource.CityPlanner_Happiness_UnmetNeed]</div>
+            <GeneralProductionItemComponent Item="@Data.UnmetHappinessNeed"/>
+            <div class="item-label">@Loc[FogResource.CityPlanner_Happiness_Excess]</div>
+            <GeneralProductionItemComponent Item="@Data.ExcessHappiness"/>
+        </div>
+    </MudCollapse>
+</div>
+
+@code {
+
+    [Parameter]
+    public required HappinessStatsViewModel Data { get; set; }
+    
+    bool _expanded = true;
+
+    private void OnHeaderClick() {
+        _expanded = !_expanded;
+    }
+}

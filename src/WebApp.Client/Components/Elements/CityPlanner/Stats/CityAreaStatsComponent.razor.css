@@ -1,0 +1,104 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding-bottom: 16px;
+    gap: 6px;
+}
+
+.main-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.areas-by-type-items-container {
+    gap: 2px;
+    display: flex !important;
+    flex-flow: wrap;
+    align-items: center !important;
+}
+
+.value-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+    gap: 4px;
+    padding: 6px 6px 2px 6px;
+}
+
+.value-label {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.value-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))
+}
+
+.resource-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.table-row-label {
+    font-size: 10px !important;
+    vertical-align: middle;
+    white-space: nowrap !important;
+}
+
+.table-left-column {
+    text-align: end !important;
+}
+
+.table {
+    margin-bottom: 0 !important;
+}
+
+.table>:not(caption)>*>*:has(>img) {
+    padding: 2px 6px !important;
+    background-color: transparent;
+}
+
+.table>:not(caption)>*>* {
+    padding: 2px 6px !important;
+    background-color: transparent;
+}
+
+thead {
+    border-bottom: none;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    border-bottom: 0;
+}
+th {
+    white-space: nowrap;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    background-color: var(--fog-surface2-color) !important;
+}
+
+th:last-child {
+    width: 100%;
+}
+
+td > * {
+    vertical-align: middle;
+}
+input, tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}

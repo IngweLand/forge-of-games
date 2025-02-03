@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Ingweland.Fog.Application.Client.Web</AssemblyName>
+        <RootNamespace>Ingweland.Fog.Application.Client.Web</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="9.0.1" />
+        <PackageReference Include="QuikGraph" Version="2.5.0" />
+        <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.116.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
+        <ProjectReference Include="..\Dtos.Hoh\Dtos.Hoh.csproj"/>
+        <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj"/>
+        <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Localization\FogResource.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>FogResource.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <Compile Update="Localization\FogResource.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>FogResource.resx</DependentUpon>
+      </Compile>
+      <EmbeddedResource Include="resources\fonts\NotoSans-Regular.ttf" />
+    </ItemGroup>
+
+</Project>

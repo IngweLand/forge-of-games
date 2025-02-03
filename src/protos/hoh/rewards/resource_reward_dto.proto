@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "id_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ResourceRewardDTO {
+  IdDto id = 1;
+  string resource_id = 2;
+  int32 amount = 3;
+}

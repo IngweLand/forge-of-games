@@ -1,0 +1,51 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: auto;
+    background: var(--fog-icon-color);
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+    align-self: center;
+    color: var(--fog-text-on-dark-color);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.action-buttons-container {
+    display: flex;
+    gap: 8px;
+    padding: 0 8px;
+}
+
+.command-center-card {
+    flex: 1;
+    padding: 0;
+}
+
+.heroes-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    gap: 8px;
+}
+
+@media (min-width: 576px) {
+    .action-buttons-container {
+        display: flex;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .heroes-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .banner {
+        width: 160px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,21 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="root">
+    <div class="title">@Loc[FogResource.About_HeaderText]</div>
+
+    <div>
+        <p>@Loc[FogResource.About_Text1]</p>
+        <ul>
+            <li>@Loc[FogResource.About_ListItem4]</li>
+            <li>@Loc[FogResource.About_ListItem1]</li>
+            <li>@Loc[FogResource.About_ListItem2]</li>
+            <li>@Loc[FogResource.About_ListItem3]</li>
+        </ul>
+    </div>
+</div>
+
+
+@code {
+
+}

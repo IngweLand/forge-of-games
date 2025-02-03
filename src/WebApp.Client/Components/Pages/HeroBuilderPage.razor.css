@@ -1,0 +1,25 @@
+.component-root {
+    gap: 12px;
+}
+
+.vertical-layout
+{
+    display: flex !important;
+    flex-direction: column;
+}
+
+.tool-container {
+    gap: 24px;
+    padding: 16px;
+}
+
+.text-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.tool-title {
+    font-size: 1.25rem;
+    font-weight: 700 !important;
+    color: var(--fog-text-on-background-color);
+}

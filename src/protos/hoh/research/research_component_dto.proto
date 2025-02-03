@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "research_rewards_dto.proto";
+import "research_details_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ResearchComponentDTO {
+  string id = 1;
+  ResearchDetailsDto details = 3;
+  ResearchRewardsDto rewards = 4;
+}

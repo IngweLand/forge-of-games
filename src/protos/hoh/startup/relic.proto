@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message Relic {
+  string definitionId = 1;
+  int32 level = 2;
+  string equippedOnHeroDefinitionId = 3;
+}

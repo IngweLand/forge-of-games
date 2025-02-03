@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "resource_collection_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroProgressionAscensionCostDto {
+  int32 level = 1;
+  ResourceCollectionDto resources = 2;
+}

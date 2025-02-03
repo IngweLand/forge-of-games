@@ -1,0 +1,80 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+<div class="fog-container component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
+    <div class="more-menu">
+        <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="OnDeleteClicked"/>
+    </div>
+    <div class="header-container">
+        <div class="avatar-section">
+            <div class="avatar-container">
+                <img src="@Profile.PortraitUrl"/>
+                <div class="rating">@(new string('★', Profile.StarCount))</div>
+            </div>
+            <div class="power-label">@Profile.TotalPower</div>
+        </div>
+        <div class="header-content">
+            <div class="hero-name">@Profile.Name</div>
+            <div class="hero-icons-section">
+                <div class="hero-icons-section-item-container">
+                    <div class="hero-icons-section-item">
+                        <span
+                            class="hero-levels-label">@($"{Profile.Level.Title} | {Profile.AbilityLevel} | {Profile.AwakeningLevel}")</span>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="hero-icons-section-item-container">
+                    <div class="hero-icons-section-item">
+                        <img src="@Profile.UnitClassTintedIconUrl" class="hero-icons-section-icon"/>
+                        <span class="hero-icons-section-label">@Profile.UnitClassName</span>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="hero-icons-section-item-container">
+                    <div class="hero-icons-section-item">
+                        <img src="@Profile.UnitTypeTintedIconUrl" class="hero-icons-section-icon"/>
+                        <span class="hero-icons-section-label">@Profile.UnitTypeName</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ability-container">
+                @* <div class="ability-description-container"> *@
+                @*     <img src="@Profile.AbilityIconUrl"/> *@
+                @*     <span>@((MarkupString) Profile.AbilityDescription)</span> *@
+                @* </div> *@
+                <AbilityChargeComponent Dense="true"
+                                        AbilityInitialChargePercentage="@Profile.AbilityInitialChargePercentage"
+                                        AbilityChargeTime="@Profile.AbilityChargeTime"
+                                        AbilityInitialChargeTime="@Profile.AbilityInitialChargeTime"></AbilityChargeComponent>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required HeroProfileViewModel Profile { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnDelete { get; set; }
+    
+    private async Task OnDeleteClicked()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.CommandCenter_RemoveHeroDialog_Message, Profile.Name],
+            yesText: Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            await OnDelete.InvokeAsync(Profile.Id);
+        }
+    }
+
+}

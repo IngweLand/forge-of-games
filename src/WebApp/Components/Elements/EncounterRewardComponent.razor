@@ -1,0 +1,19 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+<div class="d-inline-flex flex-column align-self-start overflow-hidden reward-container ">
+    <div class="d-inline-flex flex-column align-items-center icon-container">
+        <img src="@Reward.IconUrl" alt="resource icon" class="object-fit-contain reward-icon">
+        <span class="fw-bold fs-6 text-nowrap user-select-none">@Reward.Title</span>
+    </div>
+    <div class="reward-subtitle text-nowrap user-select-none">
+        @Reward.Subtitle
+    </div>
+</div>
+
+
+
+@code {
+
+    [Parameter]
+    public EncounterRewardViewModel Reward { get; set; }
+
+}

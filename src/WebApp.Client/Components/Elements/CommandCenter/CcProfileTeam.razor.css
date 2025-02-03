@@ -1,0 +1,52 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 200px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-row, .footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 32px;
+    white-space: nowrap;
+}
+
+.header-row {
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    position: relative;
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.footer-row {
+    background-color: var(--fog-icon-color);
+    color: var(--fog-text-on-dark-color);
+    font-weight: 700;
+}
+
+.content-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    min-height: 120px;
+    flex: 1;
+    padding: 4px 0;
+}
+
+.empty-collection-msg {
+    font-size: 24px;
+    font-weight: 700;
+    align-content: center;
+    color: #eee;
+}

@@ -1,0 +1,16 @@
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 12px;
+}
+
+@media (min-width: 576px) {
+    .section-container {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 16px;
+    }
+}

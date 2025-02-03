@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@inject IAssetUrlProvider AssetUrlProvider;
+<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3">
+    <div class="d-flex align-items-start">
+        <div class="encounter-number-container">
+            <span class="encounter-number user-select-none">
+                @Encounter.Title
+            </span>
+            <img alt="Encounter" src="@AssetUrlProvider.GetHohImageUrl("icon_ath_encounter")">
+        </div>
+    </div>
+    @foreach (var wave in Encounter.Waves)
+    {
+        <div class="d-flex align-items-center title-container">
+            <span class="title">@wave.Title</span>
+        </div>
+        <div class="row g-2 m-0 mb-2">
+            @foreach (var squad in wave.Squads)
+            {
+                <div class="col-12 col-lg-6 col-xxl-4">
+                    <BattleSquadComponent Squad="@squad"></BattleSquadComponent>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public TreasureHuntEncounterViewModel Encounter { get; set; }
+
+}

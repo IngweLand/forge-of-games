@@ -1,0 +1,69 @@
+@page "/help/importing-hoh-data"
+<div class="container">
+    <h3>Importing your data from the Heroes of History game</h3>
+
+    <div class="info">
+        <p>This importing functionality is provided through a Chrome extension, which can be installed in Google Chrome and other Chromium-based browsers (like Microsoft Edge, Brave, or Opera). Follow the steps below to install the extension and start importing your data.</p>
+    </div>
+
+    <div class="step">
+        <h5>Step 1: Download the Extension</h5>
+        <ol>
+            <li>Download the extension source code from GitHub: <a href="https://github.com/IngweLand/hoh-helper/releases" target="_blank">Releases page</a></li>
+            <li>Extract the ZIP file to a folder on your computer</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Step 2: Enable Developer Mode in Chrome</h5>
+        <ol>
+            <li>Open Google Chrome</li>
+            <li>Click the three dots menu (⋮) in the top-right corner</li>
+            <li>Go to "Extensions" (or type chrome://extensions in the address bar)</li>
+            <li>Toggle "Developer mode" in the top-right corner</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Step 3: Load the Unpacked Extension</h5>
+        <ol>
+            <li>Click the "Load unpacked" button that appears after enabling Developer mode</li>
+            <li>Navigate to the folder where you extracted the extension</li>
+            <li>Select the folder containing the manifest.json file</li>
+            <li>Click "Select Folder" (Windows) or "Open" (Mac)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Step 4: Verify Installation</h5>
+        <ol>
+            <li>The extension should appear in your extensions list</li>
+            <li>You should see the extension icon in your Chrome toolbar</li>
+            <li>If the icon is not visible, click the puzzle piece icon to find it</li>
+            <li>Click the pin icon next to the extension to keep it visible in the toolbar</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Step 5: Import Your Data</h5>
+        <ol>
+            <li>After enabling the extension, reload the webpage with the game</li>
+            <li>Wait until the green "Copy data" button appears in the top left corner of the web page</li>
+            <li>Click the button to copy the data</li>
+            <li>Go to the city planner or command center and click on the Import button in the toolbar</li>
+            <li>In the popup, paste the data into the text field (note: there might be a small lag due to the large amount of data)</li>
+            <li>Click the import button</li>
+            <li>Once the data is processed, you'll be taken to a new page where you can choose which information to save in your browser's local storage</li>
+        </ol>
+    </div>
+
+    <div class="privacy">
+        <h2>Data Privacy</h2>
+        <p>The extension operates with complete transparency and respect for your privacy:</p>
+        <ul>
+            <li>It reads but does not modify your original game data</li>
+            <li>It captures the data that is already loaded into the game and stores it temporarily in memory</li>
+            <li>During the importing process, specific data required for city planner and command center features is processed and stored on our servers. All other captured data is immediately and permanently discarded.</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "id_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message UnlockBuildingUpgradeRewardDTO {
+    IdDto building_id = 1;
+    string city = 3;
+}

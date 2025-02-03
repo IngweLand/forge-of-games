@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message FactionDefinitionDTO {
+  string faction_id = 1;
+  string faction_leader = 2;
+}

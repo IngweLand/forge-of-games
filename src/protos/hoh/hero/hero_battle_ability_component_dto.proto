@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroBattleAbilityComponentDTO {
+  string hero_ability_id = 1;
+  repeated HeroBattleAbilityComponentLevelDto levels = 2;
+}
+
+message HeroBattleAbilityComponentLevelDto {
+  string ability_id = 1;
+  int32 cost = 4;
+  bool is_key_level = 5;
+  repeated string ability_ids = 6;
+}

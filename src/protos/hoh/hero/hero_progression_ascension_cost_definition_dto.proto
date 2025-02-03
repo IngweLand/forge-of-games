@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "hero_progression_ascension_cost_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroProgressionAscensionCostDefinitionDTO {
+  string id = 1;
+  repeated HeroProgressionAscensionCostDto cost = 2;
+}

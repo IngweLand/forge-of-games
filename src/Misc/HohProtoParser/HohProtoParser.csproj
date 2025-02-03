@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Ingweland.Fog.HohProtoParser</AssemblyName>
+        <RootNamespace>Ingweland.Fog.HohProtoParser</RootNamespace>
+        <LangVersion>default</LangVersion>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+      <UserSecretsId>b3a50ebe-4f44-46c5-9501-f93ac9b79b42</UserSecretsId>
+  </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="Google.Protobuf" Version="3.29.3" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="protobuf-net" Version="3.2.45" />
+      <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Application.Server\Application.Server.csproj" />
+      <ProjectReference Include="..\..\Inn\InnModels.Hoh\InnModels.Hoh.csproj" />
+      <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj" />
+      <ProjectReference Include="..\..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+</Project>

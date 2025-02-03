@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message CultureBoostComponentDTO {
+  string id = 1;
+  double factor = 2;
+}

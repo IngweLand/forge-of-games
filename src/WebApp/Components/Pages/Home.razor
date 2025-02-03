@@ -1,0 +1,45 @@
+﻿@page "/"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.WebApp.Components.Elements
+@using Microsoft.Extensions.Localization
+@inject IAssetUrlProvider AssetUrlProvider;
+@inject IStringLocalizer<FogResource> Loc
+<HeadContent>
+    <meta name="description"
+          content="Forge of Games: The ultimate Heroes of History wiki, resource and tool hub. Discover campaign details, hero information, and more.">
+    <meta name="keywords" content="Heroes of History, wiki, strategy game, game guide, game tools, Innogames">
+</HeadContent>
+<div class="container-fluid">
+    <div class="row py-3 px-2">
+        <AboutComponent/>
+    </div>
+    <div class="row gy-4 pb-4">
+        <a class="col-md-6" href="city-planner" target="_blank">
+            <div class="card">
+                <img src="@AssetUrlProvider.GetHohImageUrl("city_planner_banner", ".jpg")"/>
+                <div class="title">@Loc[FogResource.CityPlanner_Title]</div>
+            </div>
+        </a>
+        <a class="col-md-6" href="command-center">
+            <div class="card">
+                <img src="@AssetUrlProvider.GetHohImageUrl("command_center_banner", ".webp")"/>
+                <div class="title">@Loc[FogResource.CommandCenter_Title]</div>
+            </div>
+        </a>
+    </div>
+    <div class="row gy-4">
+        <a class="col-md-6" href="campaign">
+            <div class="card">
+                <img src="@AssetUrlProvider.GetHohImageUrl("scout_banner_feudal_age", ".jpg")"/>
+                <div class="title">@Loc[FogResource.Navigation_Campaign]</div>
+            </div>
+        </a>
+        <a class="col-md-6" href="heroes">
+            <div class="card">
+                <img src="@AssetUrlProvider.GetHohImageUrl("deco_hero_pattern", ".jpg")"/>
+                <div class="title">@Loc[FogResource.Hoh_Heroes]</div>
+            </div>
+        </a>
+    </div>
+</div>

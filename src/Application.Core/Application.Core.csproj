@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Ingweland.Fog.Application.Core</AssemblyName>
+        <RootNamespace>Ingweland.Fog.Application.Core</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dtos.Hoh\Dtos.Hoh.csproj" />
+      <ProjectReference Include="..\Models.Fog\Models.Fog.csproj" />
+      <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Refit" Version="8.0.0" />
+    </ItemGroup>
+
+</Project>

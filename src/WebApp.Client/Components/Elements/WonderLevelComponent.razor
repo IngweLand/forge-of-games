@@ -1,0 +1,40 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <div class="header-container">
+        <div class="header-label level-label">@LevelData.Level</div>
+    </div>
+
+
+    <div class="section-container">
+        <span class="section-label">@Loc[FogResource.Hoh_Cost]</span>
+    </div>
+    <div class="items-container">
+        @foreach (var costItem in LevelData.Cost)
+        {
+            <HorizontalIconLabelComponent Item="@costItem"/>
+        }
+    </div>
+
+    @if (LevelData.Level > 1)
+    {
+        <div class="section-container">
+            <span class="section-label">@Loc[FogResource.Hoh_Wonder_CummulativeCost]</span>
+        </div>
+        <div class="items-container">
+            @foreach (var costItem in LevelData.CumulativeCost)
+            {
+                <HorizontalIconLabelComponent Item="@costItem"/>
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public required WonderLevelViewModel LevelData { get; set; }
+
+}

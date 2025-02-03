@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message DynamicFloatValueDefinitionDTO {
+  string id = 1;
+  // BuildingLevelDynamicChangeDTO, BuildingAgeDynamicChangeDTO
+  google.protobuf.Any packed_mapping = 2;
+}

@@ -1,0 +1,11 @@
+.options-container {
+    padding: 8px;
+    margin: 0 8px 8px 8px;
+}
+
+@media (min-width: 576px) {
+    .options-container{
+        margin: 0 16px 16px 16px;
+        padding: 16px;
+    }
+}

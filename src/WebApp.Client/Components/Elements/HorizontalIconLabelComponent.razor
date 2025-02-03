@@ -1,0 +1,15 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+<div class="d-flex flex-nowrap align-items-center gap-2" style="width: @WidthStyle">
+    <img src="@Item.IconUrl"/>
+    <span>@Item.Label</span>
+</div>
+
+@code {
+
+    [Parameter]
+    public required IconLabelItemViewModel Item { get; set; }
+
+    [Parameter]
+    public string WidthStyle { get; set; } = "auto";
+
+}

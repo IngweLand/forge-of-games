@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "hero_battle_wave_squad_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroBattleWaveDefinitionDTO {
+  string id = 1;
+  repeated HeroBattleWaveSquadDto squads = 2;
+}

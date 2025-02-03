@@ -1,0 +1,32 @@
+footer {
+    flex-shrink: 0;
+    background-color: var(--fog-footer-color);
+    color: var(--fog-text-on-dark-color);
+}
+
+.discord-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--fog-text-on-dark-color);
+}
+
+.discord-link > i {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .discord-link {
+        flex-direction: column;
+    }
+
+    .discord-link > i {
+        margin-right: 0;
+    }
+
+    .discord-link > span {
+        text-align: center;
+    }
+}

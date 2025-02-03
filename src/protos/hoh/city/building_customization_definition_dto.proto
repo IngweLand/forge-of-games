@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "duration_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingCustomizationDefinitionDTO {
+  string id = 1;
+  DurationDto duration = 2;
+  string subtype = 3;
+  // OriginComponentDTO, CultureBoostComponentDTO, ProductionComponentDTO, BoostResourceComponentDTO
+  repeated google.protobuf.Any packed_components = 4;
+  string city_id = 7;
+}

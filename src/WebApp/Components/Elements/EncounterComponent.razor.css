@@ -1,0 +1,22 @@
+.encounter-number {
+    position: absolute;
+    text-align: center;
+    font-size: 48px;
+    width: 60px;
+    left: 11px;
+    top: 5px;
+    font-weight: 700 !important;
+    color: var(--fog-text-on-dark-color);
+}
+
+.title-container {
+    background-color: var(--fog-container-color);
+    border-radius: var(--fog-border-radius);
+    padding: 0.1rem 0.4rem;
+}
+
+.title {
+    color: var(--fog-text-on-container-color);
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+}

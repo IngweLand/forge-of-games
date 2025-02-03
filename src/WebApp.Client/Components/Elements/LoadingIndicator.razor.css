@@ -1,0 +1,10 @@
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh / 2);
+}
+
+.loading-indicator-dense {
+    height: auto;
+}

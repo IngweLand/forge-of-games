@@ -1,0 +1,23 @@
+@page "/command-center/profiles/{ProfileId}/heroes/{HeroProfileId}"
+@page "/command-center/playgrounds/heroes/{HeroProfileId}"
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@inherits CommandCenterPageBase
+@rendermode PageRenderMode
+@if (IsInitialized && _heroProfileViewModel != null)
+{
+    <CcHeroComponent ProgressionCost="@_progressionCost"
+                            Profile="@_heroProfileViewModel"
+                            ProgressionTargetLevelChanged="OnProgressionTargetLevelChanged"
+                            ValueChanged="UpdateProfile"/>
+}
+
+@code {
+
+    [Parameter]
+    public required string? ProfileId { get; set; }
+
+    [Parameter]
+    public required string HeroProfileId { get; set; }
+
+}

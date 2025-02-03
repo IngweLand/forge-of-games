@@ -1,0 +1,65 @@
+@page "/wonders/{wonderId}"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Microsoft.Extensions.Localization
+@inject ICityUiService CityUiService;
+@inject IStringLocalizer<FogResource> Loc
+@attribute [StreamRendering]
+<HeadContent>
+    <meta name="description"
+          content="Comprehensive wonders database for Heroes of History. Discover wonders and their levels for the China, Egypt and Vikings. Check resources required for their upgrade.">
+    <meta name="keywords" content="Heroes of History wonders, wonder levels, wonder upgrade cost, wonder crates">
+</HeadContent>
+<PageTitle>@_pageTitle</PageTitle>
+<div class="content-wrapper">
+    <!-- Header -->
+    <div class="fog-container header-container">
+        <div class="group-name">@_wonder?.Name</div>
+        <hr class="w-100 header-divider">
+        <div class="unit-type-name user-select-none">@_wonder?.CityName</div>
+    </div>
+
+    <div class="container">
+        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Levels]</h4>
+    </div>
+
+    <div class="fog-container">
+        @if (_wonder != null)
+        {
+            foreach (var level in _wonder.Levels)
+            {
+                <WonderLevelComponent LevelData="@level"/>
+            }
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required string WonderId { get; set; }
+
+    private string _pageTitle = "Wonder - Heroes of History";
+
+    private WonderViewModel? _wonder;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!Enum.TryParse<WonderId>(WonderId, true, out var wonderId))
+        {
+            return;
+        }
+
+        _wonder = await CityUiService.GetWonderAsync(wonderId);
+
+        if (_wonder != null)
+        {
+            _pageTitle = $"{_wonder.Name} - Heroes of History";
+        }
+    }
+
+}

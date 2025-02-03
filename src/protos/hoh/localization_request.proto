@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message LocalizationRequest {
+  string locale = 1;
+  string checksum = 2;
+}

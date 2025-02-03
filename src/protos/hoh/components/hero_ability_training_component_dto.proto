@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroAbilityTrainingComponentDTO {
+  string id = 1;
+  string unit_type = 2;
+  float value = 3;
+}

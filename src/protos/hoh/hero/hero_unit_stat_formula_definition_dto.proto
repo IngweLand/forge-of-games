@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroUnitStatFormulaDefinitionDTO {
+  string id = 1;
+  HeroUnitStatFormulaDefinitionFactorsDto unit = 2;
+  repeated HeroUnitStatFormulaDefinitionUnitRarityFactorsDto rarity_units = 3;
+}
+
+message HeroUnitStatFormulaDefinitionUnitRarityFactorsDto {
+  string rarity_id = 1;
+  HeroUnitStatFormulaDefinitionFactorsDto factors = 2;
+}
+
+message HeroUnitStatFormulaDefinitionFactorsDto {
+  float normal = 1;
+  float ascension = 2;
+}

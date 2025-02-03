@@ -1,0 +1,192 @@
+@page "/tools/building-cost-calculator"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Tools
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Microsoft.Extensions.Localization
+@rendermode InteractiveWebAssembly
+@inject ICityUiService CityUiService;
+@inject IStringLocalizer<FogResource> Loc
+@inject IToolsUiService ToolsUiService
+<HeadContent>
+    <meta name="description"
+          content="Calculate resources required to build or upgrade a building - the tool for Heroes of History">
+    <meta name="keywords"
+          content="Heroes of History tools, building cost calculator, hoh tools, hoh calculator, buildings, build or upgrade, building price, building leveling, upgrade vs construct, upgrade or build">
+</HeadContent>
+<PageTitle>Building cost calculator for Heroes of History on Forge of Games</PageTitle>
+<div class="component-root vertical-layout">
+    <div class="vertical-layout text-container">
+        <div class="tool-title">@Loc[FogResource.Tools_BuildingCost_Name]</div>
+        <div class="tool-description">@Loc[FogResource.Tools_BuildingCost_Description]</div>
+    </div>
+    <div class="fog-container vertical-layout tool-container">
+        @if (_cities == null)
+        {
+            <div class="d-flex justify-content-center align-items-center vh-100">
+                <div class="spinner-grow" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        }
+        else
+        {
+            // city selector 
+            <MudSelect Label="@Loc[FogResource.Hoh_City]"
+                       @bind-Value="@_selectedCity" SelectedValuesChanged="OnCitiesSelectedValuesChanged"
+                       T="CityBuildingGroupsViewModel" Variant="Variant.Outlined">
+
+                @foreach (var city in _cities)
+                {
+                    <MudSelectItem Value="city">@city.CityName</MudSelectItem>
+                }
+            </MudSelect>
+
+            // building selector
+            @if (_selectedCity != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Hoh_Building]"
+                           @bind-Value="@_selectedBuildingGroup" T="BuildingGroupBasicViewModel"
+                           SelectedValuesChanged="OnBuildingSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var buildingType in _selectedCity.BuildingTypes)
+                    {
+                        <MudSelectItem T="BuildingGroupBasicViewModel" Disabled="true"
+                                       Style="background-color: var(--fog-container-color); color: var(--fog-text-on-dark-color) !important;">@buildingType.Name</MudSelectItem>
+                        @foreach (var group in buildingType.Groups)
+                        {
+                            <MudSelectItem Value="group">@group.Name</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+            }
+
+            // current level selector
+            @if (_fromLevels != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
+                           @bind-Value="@_currentLevel" T="BuildingViewModel"
+                           SelectedValuesChanged="OnCurrentLevelSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var building in _fromLevels)
+                    {
+                        <BuildingLevelSelectItemComponent Data="building"/>
+                    }
+                </MudSelect>
+            }
+
+            // target level selector
+            @if (_toLevels != null)
+            {
+                <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]"
+                           @bind-Value="@_targetLevel" T="BuildingViewModel"
+                           SelectedValuesChanged="OnDesiredLevelSelectedValuesChanged" Variant="Variant.Outlined">
+
+                    @foreach (var building in _toLevels)
+                    {
+                        <BuildingLevelSelectItemComponent Data="building"/>
+                    }
+                </MudSelect>
+            }
+
+            @if (_costs != null)
+            {
+                <BuildingMultilevelCostComponent Costs="_costs"/>
+            }
+        }
+    </div>
+
+</div>
+
+@code {
+    private IReadOnlyCollection<CityBuildingGroupsViewModel>? _cities;
+    private CityBuildingGroupsViewModel? _selectedCity;
+    private BuildingGroupBasicViewModel? _selectedBuildingGroup;
+    private BuildingGroupViewModel? _selectedBuildingGroupDetails;
+    private IList<BuildingViewModel>? _fromLevels;
+    private IList<BuildingViewModel>? _toLevels;
+    private BuildingViewModel? _currentLevel;
+    private BuildingViewModel? _targetLevel;
+    private BuildingMultilevelCostViewModel? _costs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        _cities = await CityUiService.GetCityBuildingGroupsAsync();
+        _selectedCity = _cities.FirstOrDefault();
+    }
+
+    private void OnCurrentLevelSelectedValuesChanged()
+    {
+        _toLevels = null;
+        _targetLevel = null;
+        _costs = null;
+
+        _toLevels = _selectedBuildingGroupDetails!.Buildings
+            .Where(b => b.Level > _currentLevel!.Level && (b.ConstructionComponent != null || b.UpgradeComponent != null))
+            .OrderBy(b => b.Level)
+            .ToList();
+    }
+
+    private BuildingViewModel CreateZeroLevelBuilding(BuildingViewModel src)
+    {
+        return new BuildingViewModel
+        {
+            Level = 0,
+            AgeColor = src.AgeColor,
+            Data = src.Data,
+            Id = string.Empty,
+            Name = string.Empty,
+            Size = string.Empty,
+        };
+    }
+
+    private void OnDesiredLevelSelectedValuesChanged()
+    {
+        _costs = ToolsUiService.CalculateBuildingMultiLevelCost(_selectedBuildingGroupDetails!, _currentLevel!.Level, _targetLevel!.Level);
+    }
+
+    private async Task OnBuildingSelectedValuesChanged()
+    {
+        _fromLevels = null;
+        _toLevels = null;
+        _currentLevel = null;
+        _targetLevel = null;
+        _costs = null;
+        if (!Enum.TryParse<BuildingGroup>(_selectedBuildingGroup?.Id, true, out var group))
+        {
+            return;
+        }
+
+        _selectedBuildingGroupDetails = await CityUiService.GetBuildingGroupAsync(_selectedCity!.CityId, group);
+        if (_selectedBuildingGroupDetails == null)
+        {
+            return;
+        }
+
+        var buildings = _selectedBuildingGroupDetails.Buildings
+            .Where(b => b.ConstructionComponent != null || b.UpgradeComponent != null)
+            .OrderBy(b => b.Level)
+            .Take(_selectedBuildingGroupDetails.Buildings.Count - 1)
+            .ToList();
+        _fromLevels = new List<BuildingViewModel>() {CreateZeroLevelBuilding(buildings.First())}.Concat(buildings).ToList();
+    }
+
+    private void OnCitiesSelectedValuesChanged()
+    {
+        _selectedBuildingGroup = null;
+        _fromLevels = null;
+        _toLevels = null;
+        _currentLevel = null;
+        _targetLevel = null;
+        _costs = null;
+    }
+
+}

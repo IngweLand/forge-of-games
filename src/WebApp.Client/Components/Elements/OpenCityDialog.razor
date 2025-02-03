@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<MudDialog Style="height: 350px">
+    <TitleContent>
+        <MudText Typo="Typo.h6">@Loc[FogResource.CityPlanner_Cities]</MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudList Clickable="true" T="HohCityBasicData">
+            @foreach (var city in Cities)
+            {
+                <MudListItem OnClick="@(() => Submit(city))" Text="@city.Name"/>
+            }
+        </MudList>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public IEnumerable<HohCityBasicData> Cities { get; set; } = new List<HohCityBasicData>();
+
+    private void Submit(object selectedItem)
+    {
+        MudDialog.Close(DialogResult.Ok(selectedItem));
+    }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+}

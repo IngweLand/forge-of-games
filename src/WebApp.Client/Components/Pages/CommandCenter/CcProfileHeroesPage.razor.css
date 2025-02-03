@@ -1,0 +1,28 @@
+.add-button {
+    flex: 0 0 105px;
+}
+
+@media (min-width: 576px) {
+    .add-button{
+        flex: 0 0 120px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .add-button{
+        flex: 0 0 135px;
+    }
+}
+
+@media (min-width: 992px) {
+    .add-button{
+        flex: 0 0 150px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .add-button{
+        flex: 0 0 180px;
+    }
+}

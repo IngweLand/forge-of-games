@@ -1,0 +1,26 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Workforce]" OnClick="OnHeaderClick"/>
+    <MudCollapse Expanded="_expanded">
+        <div class="general-items-container">
+            <GeneralProductionItemComponent Item="@Data"/>
+        </div>
+    </MudCollapse>
+</div>
+
+@code {
+
+    [Parameter]
+    public required IconLabelItemViewModel Data { get; set; }
+
+    bool _expanded = true;
+
+    private void OnHeaderClick()
+    {
+        _expanded = !_expanded;
+    }
+
+}

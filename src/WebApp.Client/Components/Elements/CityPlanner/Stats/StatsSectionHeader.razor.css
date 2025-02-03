@@ -1,0 +1,14 @@
+.component-root {
+    border-top: solid 1px var(--fog-container-color);
+}
+
+.header-container {
+    height: auto;
+    width: fit-content;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    font-size: 10px;
+    font-weight: 700 !important;
+    padding: 2px 8px;
+    cursor: pointer;
+}

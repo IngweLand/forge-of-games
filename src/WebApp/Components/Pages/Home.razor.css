@@ -1,0 +1,34 @@
+.card {
+    overflow: hidden;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--fog-container-color);
+    border: none;
+}
+
+.card:hover img {
+    filter: grayscale(100%);
+}
+
+.card img {
+    height: 400px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    filter: grayscale(0%);
+    transition: filter 0.3s ease;
+    object-position: bottom;
+}
+
+.card .title {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.8rem !important;
+    font-size: 1.5rem !important;
+    font-weight: 200 !important;
+    letter-spacing: 3px;
+    color: var(--fog-text-on-container-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingRequirementsDto {
+  google.protobuf.Any packed_requirements = 1;
+  // ResourceDTO
+  repeated google.protobuf.Any packed_cost = 4;
+}
+
+message GoodRequirementDTO {
+  string good_type = 1;
+}
+
+message AgeRequirementDTO {
+  string age = 3;
+}
+

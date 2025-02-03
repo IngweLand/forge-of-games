@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroTreasureHuntUnlockDifficultyRewardDTO {
+//    1 {
+//  1: "Technology_AgeOfTheFranks_RegnumFrancorum_ATH_Difficulty_Unlock_1"
+//      2: 1
+//      }
+  string target = 2;
+  int32 value = 3;
+}

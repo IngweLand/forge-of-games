@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "encounter_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message EncounterDefinitionDTO {
+  string encounter_id = 1;
+  string hero_battle_id = 2;
+  EncounterDto encounter = 3;
+}

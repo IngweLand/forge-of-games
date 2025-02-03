@@ -1,0 +1,69 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+@rendermode InteractiveWebAssembly
+<div class="component-root">
+    <img class="hero-avatar" src="@_heroPortrait"/>
+    <MudAutocomplete T="HeroBasicViewModel" AdornmentIcon="@Icons.Material.Filled.Search"
+                     SearchFunc="Search" MaxItems="null" HelperText="@Loc[FogResource.HeroSelector_HelperText]"
+                     Variant="Variant.Outlined" ToStringFunc="@(h => h == null ? null : h.Name)"
+                     Label="@Loc[FogResource.Hoh_Hero]" ValueChanged="OnHeroChanged">
+        <ItemTemplate Context="hero">
+            <div class="d-flex align-items-center gap-2">
+                <img class="hero-avatar small-avatar" src="@hero.PortraitUrl"/>
+                <span class="text-truncate">@hero.Name</span>
+            </div>
+        </ItemTemplate>
+        <ItemSelectedTemplate Context="hero">
+            <div class="d-flex align-items-center gap-2">
+                <img class="hero-avatar small-avatar" src="@hero.PortraitUrl"/>
+                <span class="text-truncate">@hero.Name</span>
+            </div>
+        </ItemSelectedTemplate>
+    </MudAutocomplete>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public IReadOnlyCollection<HeroBasicViewModel> Heroes { get; set; }
+
+    [Parameter]
+    public EventCallback<HeroBasicViewModel> HeroChanged { get; set; }
+
+    public HeroBasicViewModel? Hero { get; private set; }
+    private string? _heroPortrait;
+    
+    protected override void OnInitialized()
+    {
+        _heroPortrait = AssetUrlProvider.GetHohUnitPortraitUrl("Unit_Unknown");
+    }
+
+    private Task OnHeroChanged(HeroBasicViewModel hero)
+    {
+        Hero = hero;
+        _heroPortrait = hero.PortraitUrl;
+        return HeroChanged.InvokeAsync(hero);
+    }
+
+    private Task<IEnumerable<HeroBasicViewModel>> Search(string searchString, CancellationToken token)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+        {
+            return Task.FromResult<IEnumerable<HeroBasicViewModel>>(Heroes);
+        }
+
+        var searchResults = Heroes
+            .Select(item => (Item: item, Position: item.Name.IndexOf(searchString, StringComparison.OrdinalIgnoreCase)))
+            .Where(result => result.Position != -1)
+            .OrderBy(result => result.Position)
+            .ThenBy(result => result.Item.Name)
+            .Select(result => result.Item);
+        return Task.FromResult(searchResults);
+    }
+
+}

@@ -1,0 +1,20 @@
+<div class="component-root">
+    @if (Title != null)
+    {
+        <div class="title">@Title</div>
+    }
+    @if (Subtitle != null)
+    {
+        <div class="subtitle">@Subtitle</div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Subtitle { get; set; }
+
+}

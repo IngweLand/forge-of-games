@@ -1,0 +1,24 @@
+.content-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.toolbar-divider {
+    height: 1.5rem;
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+.loading-indicator {
+    grid-column: 1 / -1; /* Spans all columns */
+    grid-row: 1 / -1;    /* Spans all rows */
+    place-self: center;
+}
+
+sup {
+    font-size: 10px;
+    padding-left: 4px;
+}

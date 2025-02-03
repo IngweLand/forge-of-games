@@ -1,0 +1,58 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using MudBlazor.Utilities
+<div class="@Classname" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
+    <div class="avatar-section">
+        <img src="@Profile.PortraitUrl"/>
+        <div class="rating">@(new string('★', Profile.StarCount))</div>
+    </div>
+    <div class="main-label">@Profile.Name</div>
+    <div class="@IconContainerClassname" style="background-color: @Profile.UnitColor">
+        <img class="@IconClassname" src="@Profile.UnitClassIconUrl"/>
+        @if (!Dense)
+        {
+            <div class="icon-label">@($"{Profile.Level.Title} | {Profile.AbilityLevel}")</div>
+        }
+        else
+        {
+            <img class="@IconClassname" src="@Profile.UnitTypeIconUrl"/>
+        }
+    </div>
+    @if (!Dense)
+    {
+        <div class="bottom-label">@Profile.TotalPower</div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public required HeroProfileViewModel Profile { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    [Parameter]
+    public bool HasShadow { get; set; } = true;
+
+    [Parameter]
+    public Size? Size { get; set; }
+
+    [Parameter]
+    public bool Dense { get; set; } = false;
+
+    private string Classname => new CssBuilder("cc-hero-collection-item")
+        .AddClass($"cc-hero-collection-item-{Size?.ToDescriptionString()}", Size != null)
+        .AddClass("cc-hero-collection-item-shadow", HasShadow)
+        .AddClass("user-select-none")
+        .Build();
+    
+    private string IconContainerClassname => new CssBuilder("icon-label-container")
+        .AddClass("icon-label-container-dense", Dense)
+        .Build();
+    
+    private string IconClassname => new CssBuilder("icon")
+        .AddClass("icon-dense", Dense)
+        .Build();
+
+}

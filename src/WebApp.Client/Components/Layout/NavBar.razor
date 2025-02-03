@@ -1,0 +1,106 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+
+<nav class="navbar navbar-expand-xl navbar-dark sticky-lg-top"
+     style="background-color: var(--fog-navigation-bar-color)">
+    <a class="navbar-brand" href="#">Forge of Games</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <div class="nav-item">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-flat-home-nav-menu"></span> @Loc[FogResource.Navigation_Home]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="city-planner" target="_blank">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-city-planner-nav-menu"></span> @Loc[FogResource.CityPlanner_Title]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="command-center">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-command-center-nav-menu"></span> @Loc[FogResource.CommandCenter_Title]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="tools">
+                    <span aria-hidden="true"
+                          class="bi bi-icon_tools-nav-menu"></span> @Loc[FogResource.Navigation_Tools]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="heroes">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-hud-heroes-nav-menu"></span> @Loc[FogResource.Hoh_Heroes]
+                </NavLink>
+            </div>
+
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-hud-battle-nav-menu"></span> @Loc[FogResource.Hoh_Battle]
+                </a>
+                <ul class="dropdown-menu">
+                    <li >
+                        <NavLink class="nav-link" href="campaign">
+                            <span aria-hidden="true"
+                                  class="bi bi-icon-hud-map-nav-menu"></span>@Loc[FogResource.Navigation_Campaign]
+                        </NavLink>
+                    </li>
+                    <li >
+                        <NavLink class="nav-link" href="treasure-hunt-campaign">
+                            <span aria-hidden="true"
+                                  class="bi bi-icon-hud-battle-nav-menu"></span>@Loc[FogResource.Navigation_TreasureHunt]
+                        </NavLink>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="buildings">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-hud-build-nav-menu"></span> @Loc[FogResource.Navigation_Buildings]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="wonders">
+                    <span aria-hidden="true"
+                          class="bi bi-icon_flat_allied_culture-nav-menu"></span> @Loc[FogResource.Navigation_Wonders]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="support-us">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-support-us-nav-menu"></span> @Loc[FogResource.Navigation_SupportUs]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link text-only-nav-link" href="about">
+                    @Loc[FogResource.Navigation_About]
+                </NavLink>
+            </div>
+
+            <div class="nav-item">
+                <NavLink class="nav-link" href="https://github.com/IngweLand/forge-of-games" target="_blank">
+                    <span><i class="fa-brands fa-github fa-2xl" style="color: #FBE0C6;"></i></span>
+                </NavLink>
+            </div>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,250 @@
+@using System.Diagnostics.CodeAnalysis
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <div class="header-container">
+        <div class="fog-container avatar-section">
+            <div class="avatar-container">
+                <img src="@Profile.PortraitUrl"/>
+                <div class="rating">@(new string('★', Profile.StarCount))</div>
+            </div>
+            <div class="power-label">@Profile.TotalPower</div>
+        </div>
+        <div class="fog-container header-content">
+            <div class="hero-name">@Profile.Name</div>
+            <div class="hero-icons-section">
+                <div class="hero-icons-section-item-container">
+                    <div class="hero-icons-section-item">
+                        <img src="@Profile.UnitClassTintedIconUrl" class="hero-icons-section-icon"/>
+                        <span class="hero-icons-section-label">@Profile.UnitClassName</span>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="hero-icons-section-item-container">
+                    <div class="hero-icons-section-item">
+                        <img src="@Profile.UnitTypeTintedIconUrl" class="hero-icons-section-icon"/>
+                        <span class="hero-icons-section-label">@Profile.UnitTypeName</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-stats-section">
+                @foreach (var statItem in Profile.StatsItems)
+                {
+                    <CcHeroStatsItemComponent StatItem="@statItem"/>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="fog-container options-container">
+        <div class="selector-component">
+            <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Main]" ToStringFunc="@(l => l?.Title)"
+                       Value="@Profile.Level" T="HeroLevelSpecs"
+                       ValueChanged="OnLevelValueChanged" Variant="Variant.Outlined">
+                @foreach (var level in Profile.HeroLevels)
+                {
+                    <MudSelectItem Value="level">@level.Title</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+        <div class="selector-component">
+            <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Ability]" T="int" Value="@Profile.AbilityLevel"
+                       ValueChanged="OnAbilityLevelValueChanged" Variant="Variant.Outlined">
+                @foreach (var level in Profile.AbilityLevels)
+                {
+                    <MudSelectItem Value="level">@level</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+        <div class="selector-component">
+            <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Awakening]" T="int" Value="@Profile.AwakeningLevel"
+                       ValueChanged="OnAwakeningValueChanged"
+                       Variant="Variant.Outlined">
+                @foreach (var level in Profile.AwakeningLevels)
+                {
+                    <MudSelectItem Value="level">@level</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+        @if (Profile.BarracksLevels != null)
+        {
+            <div class="selector-component">
+                <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Barracks]"
+                           ValueChanged="OnBarracksLevelChanged"
+                           T="int" Value="@Profile.BarracksLevel"
+                           Variant="Variant.Outlined">
+
+                    @foreach (var level in Profile.BarracksLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+        }
+    </div>
+    <div class="ability-container fog-container">
+        <div class="ability-description-container">
+            <img src="@Profile.AbilityIconUrl"/>
+            <span>@((MarkupString) Profile.AbilityDescription)</span>
+        </div>
+        <AbilityChargeComponent AbilityInitialChargePercentage="@Profile.AbilityInitialChargePercentage"
+                                AbilityChargeTime="@Profile.AbilityChargeTime"
+                                AbilityInitialChargeTime="@Profile.AbilityInitialChargeTime"></AbilityChargeComponent>
+    </div>
+    @if (_progressionTargetLevels != null)
+    {
+        <div class="progression-cost-container fog-container">
+            <span class="progression-cost-title">@Loc[FogResource.Tools_HeroProgressionResourcesCalculator_Name]</span>
+            <div class="selector-component">
+                <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" T="HeroLevelSpecs"
+                           ValueChanged="OnProgressionTargetLevelChanged" Value="@_progressionTargetLevel"
+                           ToStringFunc="@(l => l == null ? null : l.Title)"
+                           Variant="Variant.Outlined">
+
+                    @foreach (var level in _progressionTargetLevels)
+                    {
+                        <MudSelectItem Value="level">@level.Title</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+
+            @if (ProgressionCost != null)
+            {
+                <div class="progression-cost-items-container">
+                    @foreach (var cost in ProgressionCost)
+                    {
+                        <HorizontalIconLabelComponent Item="cost"/>
+                    }
+                </div>
+            }
+        </div>
+    }
+
+    @if (Profile.SupportUnit != null)
+    {
+        <div class="support-unit-container fog-container">
+            <img src="@Profile.SupportUnit.IconUrl"/>
+            @foreach (var statItem in Profile.SupportUnit.StatsItems)
+            {
+                <CcHeroStatsItemComponent StatItem="@statItem"/>
+            }
+        </div>
+    }
+
+</div>
+
+@code {
+
+    private HeroLevelSpecs? _progressionTargetLevel;
+
+    protected override void OnInitialized()
+    {
+        UpdateProgressionTargetLevels();
+    }
+
+    private void UpdateProgressionTargetLevels()
+    {
+        var targetLevels = _profile.HeroLevels.SkipWhile(l => l <= _profile.Level).ToList();
+        if (targetLevels.Count == 0)
+        {
+            _progressionTargetLevels = null;
+            _progressionTargetLevel = null;
+            return;
+        }
+
+        _progressionTargetLevels = targetLevels;
+        if (_progressionTargetLevel < targetLevels[0])
+        {
+            _progressionTargetLevel = targetLevels[0];
+        }
+
+        OnProgressionTargetLevelChanged(_progressionTargetLevel!);
+    }
+
+    private IList<HeroLevelSpecs>? _progressionTargetLevels;
+    private HeroProfileViewModel _profile;
+
+    [Parameter]
+    public required HeroProfileViewModel Profile
+    {
+        get => _profile;
+        [MemberNotNull(nameof(_profile))]
+        set
+        {
+            if (_profile == value)
+            {
+                return;
+            }
+
+            _profile = value;
+            UpdateProgressionTargetLevels();
+        }
+    }
+
+    [Parameter]
+    public EventCallback<HeroProfileStatsUpdateRequest> ValueChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<HeroProgressionCostRequest> ProgressionTargetLevelChanged { get; set; }
+
+    [Parameter]
+    public IReadOnlyCollection<IconLabelItemViewModel>? ProgressionCost { get; set; }
+
+    private Task OnLevelValueChanged(HeroLevelSpecs level)
+    {
+        var request = CreateRequest();
+        request.Level = level;
+        return ValueChanged.InvokeAsync(request);
+    }
+
+    private Task OnBarracksLevelChanged(int level)
+    {
+        var request = CreateRequest();
+        request.BarracksLevel = level;
+        return ValueChanged.InvokeAsync(request);
+    }
+
+    private Task OnAwakeningValueChanged(int level)
+    {
+        var request = CreateRequest();
+        request.AwakeningLevel = level;
+        return ValueChanged.InvokeAsync(request);
+    }
+
+    private Task OnAbilityLevelValueChanged(int level)
+    {
+        var request = CreateRequest();
+        request.AbilityLevel = level;
+        return ValueChanged.InvokeAsync(request);
+    }
+
+    private HeroProfileStatsUpdateRequest CreateRequest()
+    {
+        return new HeroProfileStatsUpdateRequest()
+        {
+            HeroProfileId = Profile.Id,
+            Level = Profile.Level,
+            AbilityLevel = Profile.AbilityLevel,
+            AwakeningLevel = Profile.AwakeningLevel,
+            BarracksLevel = Profile.BarracksLevel,
+        };
+    }
+
+    private void OnProgressionTargetLevelChanged(HeroLevelSpecs targetLevel)
+    {
+        //TODO: this is called on any profile change, which is not required.
+        _progressionTargetLevel = targetLevel;
+        ProgressionTargetLevelChanged.InvokeAsync(new HeroProgressionCostRequest()
+        {
+            HeroId = _profile.HeroId,
+            CurrentLevel = _profile.Level,
+            TargetLevel = targetLevel,
+        });
+    }
+
+}

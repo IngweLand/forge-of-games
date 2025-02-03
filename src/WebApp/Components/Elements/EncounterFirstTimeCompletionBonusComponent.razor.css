@@ -1,0 +1,26 @@
+.first-time-completion-bonus-container {
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+}
+
+.first-time-completion-bonus-icon-container {
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+}
+
+.first-time-completion-bonus-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.first-time-completion-bonus-subtitle {
+    text-align: center !important;
+    width: 100% !important;
+    font-size: 0.9rem !important;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    border: solid var(--fog-container-color);
+    border-width: 1px 0 0 0;
+}

@@ -1,0 +1,39 @@
+@page "/command-center/profiles/{ProfileId}/{TeamId}"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@inherits CcProfilePageBase
+@rendermode PageRenderMode
+@if (_team != null)
+{
+    <div class="cc-page-container">
+        <CcPageTitle Title="@_team.Name" Subtitle="@Profile!.Name"/>
+        @if (_team.Heroes.Count > 0)
+        {
+            <div class="banner">@_team.Power</div>
+            <div class="heroes-container">
+                @foreach (var hero in _team.Heroes)
+                {
+                    <CcProfileTeamHeroListItemComponent Profile="@hero" OnClick="OnHeroProfileSelected" OnDelete="RemoveHero"/>
+                }
+            </div>
+        }
+        @if (_team.Heroes.Count < HohConstants.MAX_TEAM_MEMBERS)
+        {
+            <div class="action-buttons-container">
+                <div class="command-center-card command-center-action-card" @onclick="AddHero">
+                    <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+                    <span
+                        class="command-center-card-label">@Loc[FogResource.CommandCenter_Profile_Heroes_AddHeroButton]</span>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public string TeamId { get; set; }
+
+}

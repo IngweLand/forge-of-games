@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "city_map_entity_dto.proto";
+import "expansion_map_entity_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message CityDTO {
+  int32 player_city_id = 1;
+  string city_id = 2;
+  repeated CityMapEntityDto map_entities = 4;
+  repeated ExpansionMapEntityDto expansion_map_entities = 6;
+}

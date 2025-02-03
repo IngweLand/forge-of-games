@@ -1,0 +1,52 @@
+.fog-container {
+    height: 66px;
+}
+
+.trailing-container {
+    height: 100%;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.unit-image-container {
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.unit-type-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.unit-type-icon-container img {
+    max-width: 24px;
+    max-height: 24px;
+    width: auto;
+    height: auto;
+}
+
+.unit-amount-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unit-amount-container {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    color: var(--fog-text-on-dark-color);
+}
+
+.stripes {
+    background: repeating-linear-gradient(
+            135deg, /* Angle of the stripes */ transparent, /* First color starts */ transparent 10px, /* First color ends */ rgb(from var(--fog-container-color) r g b / 0.1) 10px, /* Second color starts */ rgb(from var(--fog-container-color) r g b / 0.1) 20px /* Second color ends */
+    );
+}

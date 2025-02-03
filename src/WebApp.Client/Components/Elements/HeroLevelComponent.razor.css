@@ -1,0 +1,45 @@
+.component-root {
+    border-top: solid 1px var(--fog-container-color);
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding-bottom: 10px;
+}
+
+hr {
+    margin: 10px 24px;
+}
+
+.items-container {
+    gap: 12px;
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex !important;
+    align-items: center !important;
+    flex-flow: wrap;
+    justify-content: flex-start;
+}
+
+.items-container-ascension {
+    gap: 24px;
+}
+
+.level-label {
+    width: 100px;
+    height: auto;
+    display: flex;
+    flex-flow: nowrap;
+    align-items: center !important;
+    justify-content: center;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    border-bottom-right-radius: var(--fog-border-radius);
+    margin-bottom: 10px;
+    padding: 6px;
+}
+
+.level-label-ascension {
+    width: 140px;
+}

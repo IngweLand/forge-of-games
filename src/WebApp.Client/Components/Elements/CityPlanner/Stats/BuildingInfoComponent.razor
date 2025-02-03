@@ -1,0 +1,22 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.Common_Info]"/>
+
+    <div class="items-container">
+        @foreach (var item in Items)
+        {
+            <BuildingInfoItemComponent Item="@item"/>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required IReadOnlyCollection<IconLabelItemViewModel> Items { get; set; }
+
+}

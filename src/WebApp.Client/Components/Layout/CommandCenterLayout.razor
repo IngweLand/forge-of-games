@@ -1,0 +1,21 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Ingweland.Fog.WebApp.Client.Theme
+@using Microsoft.Extensions.Localization
+@inherits LayoutComponentBase
+
+@inject IStringLocalizer<FogResource> Loc
+<HeadContent>
+    <meta name="description" content="@Loc[FogResource.CommandCenter_Meta_Description]">
+    <meta name="keywords" content="@Loc[FogResource.CommandCenter_Meta_Keywords]">
+</HeadContent>
+<PageTitle>@Loc[FogResource.CommandCenter_PageTitle]</PageTitle>
+<MudThemeProvider Theme="FogTheme.Theme"/>
+
+<MudLayout Class="d-flex flex-column" Style="min-height: 100dvh">
+    <CommandCenterNavBar/>
+    <MudMainContent Class="command-center-main-content">
+        <LoadingIndicator/>
+        @Body
+    </MudMainContent>
+</MudLayout>

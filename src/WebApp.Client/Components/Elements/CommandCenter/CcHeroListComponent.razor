@@ -1,0 +1,28 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+<div class="component-root">
+    @if(StartContent !=null)
+    {
+        @StartContent
+    }
+    @foreach (var profile in Profiles)
+    {
+        <CcHeroListItemComponent Profile="@profile" Dense="@Dense" OnClick="HeroProfileSelected"/>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public required IEnumerable<HeroProfileViewModel> Profiles { get; set; }
+    
+    [Parameter]
+    public EventCallback<string> HeroProfileSelected { get; set; }
+    
+    [Parameter]
+    public RenderFragment? StartContent { get; set; }
+    
+    [Parameter]
+    public bool Dense { get; set; } = false;
+
+}

@@ -1,0 +1,21 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding-bottom: 16px;
+    gap: 6px;
+}
+
+.items-container {
+    align-self: start;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2px 8px;  /* row-gap column-gap */
+}
+
+.item-label {
+    font-size: 10px;
+    vertical-align: middle;
+    align-content: center;
+    text-align: right;
+}

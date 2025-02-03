@@ -1,0 +1,52 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<MudDialog Style="padding-left: 4px; padding-right: 4px" Gutters="false">
+    <TitleContent>
+        <MudText Typo="Typo.h6">@Loc[FogResource.CommandCenter_Profile_AddHeroDialog_Title]</MudText>
+    </TitleContent>
+    <DialogContent>
+        <HeroSelectorComponent Heroes="@Heroes" HeroChanged="OnHeroSelected"/>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">@Loc[FogResource.Common_Cancel]</MudButton>
+        <MudButton Color="Color.Success"
+                   OnClick="Add"
+                   Disabled="@(_selectedHero == null)">
+            @Loc[FogResource.CommandCenter_Profile_AddHeroDialog_OkButton]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+    private HeroBasicViewModel? _selectedHero;
+    
+    [Parameter]
+    public IReadOnlyCollection<HeroBasicViewModel> Heroes { get; set; }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void Add()
+    {
+        if (_selectedHero == null)
+        {
+            return;
+        }
+
+        MudDialog.Close(DialogResult.Ok(_selectedHero.Id));
+    }
+
+    private void OnHeroSelected(HeroBasicViewModel hero)
+    {
+        _selectedHero = hero;
+    }
+
+}

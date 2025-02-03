@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingGroupDto {
+  string id = 1;
+  int32 amount = 3;
+}

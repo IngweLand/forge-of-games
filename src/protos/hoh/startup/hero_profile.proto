@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroProfile {
+  string hero_id = 1;
+  int32 level = 2;
+  int32 ascension_level = 3;
+  int32 ability_level = 5;
+  int32 ability_mastery_points = 6;
+  int32 awakening_level = 7;
+}

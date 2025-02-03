@@ -1,0 +1,24 @@
+﻿@using Ingweland.Fog.WebApp.Client.Components.Layout
+@inherits LayoutComponentBase
+@inject IWebHostEnvironment Environment
+
+<MudThemeProvider/>
+<div class="page">
+    <NavBar/>
+    <main>
+        <article class="content px-2 px-md-4">
+            @Body
+        </article>
+    </main>
+    <Footer/>
+    
+</div>
+
+@if (Environment.IsDevelopment() || Environment.IsStaging())
+{
+    <div data-nosnippet id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a class="reload" href=".">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+}

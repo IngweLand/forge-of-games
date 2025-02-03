@@ -1,0 +1,54 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+
+<div class="fog-container component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Data.Id)">
+    <div class="header-row">
+        <span>@Data.Name</span>
+        <div class="delete-button">
+            <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="OnDeleteClicked"/>
+        </div>
+    </div>
+    <div class="content-row">
+        @if (Data.Heroes.Count > 0)
+        {
+            @foreach (var hero in Data.Heroes)
+            {
+                <CcHeroListItemComponent HasShadow="false" Size="Size.Small" Profile="@hero" Dense="true"/>
+            }
+        }
+        else
+        {
+            <span class="empty-collection-msg">@Loc[FogResource.CommandCenter_Profile_Team_EmptyTeamMessage]</span>
+        }
+    </div>
+    <div class="footer-row">@Data.Power</div>
+</div>
+
+@code {
+
+    [Parameter]
+    public CcProfileTeamViewModel Data { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnDelete { get; set; }
+
+    private async Task OnDeleteClicked()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.CommandCenter_DeleteTeamDialog_Message, Data.Name],
+            yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            await OnDelete.InvokeAsync(Data.Id);
+        }
+    }
+
+}

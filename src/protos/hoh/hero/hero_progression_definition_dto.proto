@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroProgressionDefinitionDTO {
+  string id = 1;
+  int32 u2 = 2;
+  bytes u3 = 3;
+}

@@ -1,0 +1,56 @@
+// ReSharper disable InconsistentNaming
+
+using ProtoBuf;
+
+namespace Ingweland.Fog.Models.Hoh.Enums;
+
+[ProtoContract]
+public enum RegionId
+{
+    Undefined = 0,
+    DesertDelta_1,
+    DesertDelta_2,
+    DesertDelta_3,
+    DesertDelta_4,
+    DesertDelta_5,
+    DesertDelta_6,
+    DesertDelta_7,
+    DesertDelta_8,
+    EasternValley_1,
+    EasternValley_2,
+    EasternValley_3,
+    EasternValley_4,
+    EasternValley_5,
+    EasternValley_6,
+    EasternValley_7,
+    EasternValley_8,
+    FrozenFjord_1,
+    FrozenFjord_2,
+    FrozenFjord_3,
+    FrozenFjord_4,
+    FrozenFjord_5,
+    FrozenFjord_6,
+    FrozenFjord_7,
+    FrozenFjord_8,
+    Panganea_1,
+    Panganea_2,
+    Panganea_3,
+    Panganea_4,
+    Panganea_5,
+    Panganea_6,
+    Panganea_7,
+    Panganea_8,
+    TeslaStormBlue,
+    TeslaStormGreen,
+    TeslaStormPurple,
+    TeslaStormRed,
+    TeslaStormYellow,
+    VolcanicJungle_1,
+    VolcanicJungle_2,
+    VolcanicJungle_3,
+    VolcanicJungle_4,
+    VolcanicJungle_5,
+    VolcanicJungle_6,
+    VolcanicJungle_7,
+    VolcanicJungle_8,
+}

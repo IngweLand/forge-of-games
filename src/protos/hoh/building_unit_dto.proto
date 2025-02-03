@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingUnitDto {
+  string id = 1;
+  uint32 level = 2;
+}

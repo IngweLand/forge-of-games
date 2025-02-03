@@ -1,0 +1,146 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.WebApp.Client.Services
+@using Microsoft.Extensions.Localization
+@inject IHeroBuilderService HeroBuilderService
+@inject IAssetUrlProvider AssetUrlProvider;
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    @if (_formData == null)
+    {
+        <div class="spinner-grow loading-indicator" style="color: var(--fog-icon-color)" role="status">
+        </div>
+    }
+    else
+    {
+        <div class="options-container">
+            <div>
+                <MudSelect Label="@Loc[FogResource.Hoh_Hero_Main]" @bind-Value="@_selectedHeroLevel" T="HeroLevelSpecs"
+                           SelectedValuesChanged="OnHeroLevelSelectedValuesChanged" Variant="Variant.Outlined">
+                    @foreach (var level in _formData.HeroLevels)
+                    {
+                        <MudSelectItem Value="level">@level.Title</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            <div>
+                <MudSelect Label="@Loc[FogResource.Hoh_Hero_Ability]" T="int" @bind-Value="@_selectedAbilityLevel"
+                           SelectedValuesChanged="OnLevelSelectedValuesChanged" Variant="Variant.Outlined">
+                    @foreach (var level in _formData.AbilityLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            <div>
+                <MudSelect Label="@Loc[FogResource.Hoh_Hero_Awakening]" T="int" SelectedValuesChanged="OnLevelSelectedValuesChanged"
+                           @bind-Value="@_selectedAwakeningLevel" Variant="Variant.Outlined">
+                    @foreach (var level in _formData.AwakeningLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            <div>
+                <MudSelect Label="@Loc[FogResource.Hoh_Hero_Barracks]" SelectedValuesChanged="OnLevelSelectedValuesChanged" T="int"
+                           @bind-Value="@_selectedBarracksLevel"
+                           Variant="Variant.Outlined">
+                    @foreach (var level in _formData.BarracksLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+
+        </div>
+
+        @if (_customProfile != null)
+        {
+            // hero power
+            <div class="power-container">
+                <img src="@AssetUrlProvider.GetHohIconUrl("icon_hero_power")"/>
+                <span>@_customProfile.TotalPower</span>
+            </div>
+            // hero
+            <div class="section-container">
+                <img src="@_customProfile.PortraitUrl"/>
+                <div class="stat-items-container">
+                    @foreach (var statItem in _customProfile.StatsItems)
+                    {
+                        <HorizontalIconLabelComponent Item="@statItem"/>
+                    }
+                </div>
+            </div>
+            
+            // support unit
+            @if(_customProfile.SupportUnit != null)
+            {
+                <div class="section-container">
+                    <img src="@_customProfile.SupportUnit.IconUrl"/>
+                    <div class="stat-items-container">
+                        @foreach (var statItem in _customProfile.SupportUnit.StatsItems)
+                        {
+                            <HorizontalIconLabelComponent Item="@statItem"/>
+                        }
+                    </div>
+                </div>
+            }
+
+            // ability
+            <div class="section-container">
+                <img src="@_customProfile.AbilityIconUrl"/>
+                <span>@((MarkupString) _customProfile.AbilityDescription)</span>
+            </div>
+        }
+    }
+
+</div>
+
+
+@code {
+
+    [Parameter]
+    public required string HeroId { get; set; }
+
+    private HeroBuilderViewModel? _formData;
+    private HeroLevelSpecs _selectedHeroLevel = null!;
+    private int _selectedAbilityLevel = 1;
+    private int _selectedAwakeningLevel;
+    private int _selectedBarracksLevel;
+    private CustomHeroViewModel? _customProfile;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _formData = await HeroBuilderService.GetFormData(HeroId);
+        if (_formData == null)
+        {
+            return;
+        }
+
+        _selectedHeroLevel = _formData.HeroLevels.First();
+        UpdateProfile();
+    }
+
+    private void OnHeroLevelSelectedValuesChanged(IEnumerable<HeroLevelSpecs> values)
+    {
+        UpdateProfile();
+    }
+
+    private void OnLevelSelectedValuesChanged(IEnumerable<int> values)
+    {
+        UpdateProfile();
+    }
+
+    private void UpdateProfile()
+    {
+        _customProfile = HeroBuilderService.CreateCustomProfile(
+            _formData!,
+            _selectedHeroLevel,
+            abilityLevel: _selectedAbilityLevel,
+            awakeningLevel: _selectedAwakeningLevel,
+            barracksLevel: _selectedBarracksLevel);
+    }
+
+}

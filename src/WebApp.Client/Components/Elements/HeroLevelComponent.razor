@@ -1,0 +1,42 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+<div class="component-root">
+    @if (!LevelData.LevelSpecs.IsAscension)
+    {
+        <div class="level-label">@LevelData.Title</div>
+    }
+    else
+    {
+        <div class="level-label level-label-ascension">@LevelData.Title</div>
+    }
+
+    <div class="items-container">
+        @foreach (var statItem in LevelData.Stats)
+        {
+            <HorizontalIconLabelComponent WidthStyle="90px" Item="@statItem"/>
+        }
+    </div>
+    @if(LevelData.Cost != null)
+    {
+        <hr/>
+        <div class="items-container">
+            @foreach (var costItem in LevelData.Cost)
+            {
+                @if (!LevelData.LevelSpecs.IsAscension)
+                {
+                    <HorizontalIconLabelComponent WidthStyle="90px" Item="@costItem"/>
+                }
+                else
+                {
+                    <HorizontalIconLabelComponent Item="@costItem"/>
+                }
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public required HeroLevelViewModel LevelData { get; set; }
+
+}

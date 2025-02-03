@@ -1,0 +1,50 @@
+@page "/treasure-hunt-campaign"
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@inject ITreasureHuntUiService TreasureHuntUiService;
+<HeadContent>
+    <meta name="description"
+          content="Detailed Treasure Hunt campaign info for Heroes of History. Explore encounters, enemy squads, and battle rewards.">
+    <meta name="keywords" content="Heroes of History treasure hunt, game encounters, battle rewards, enemy squads">
+</HeadContent>
+<PageTitle>Heroes of History Treasure Hunt - Forge of Games</PageTitle>
+@if (_difficulties == null)
+{
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="root" data-enhance-nav="false">
+        @foreach (var _difficulty in _difficulties)
+        {
+            <div class="fog-container">
+                <img class="difficulty-icon" src="@_difficulty.IconUrl"/>
+                <div class="difficulty-text">@_difficulty.Name</div>
+                <div class="stage-items-container">
+
+                    @foreach (var stage in _difficulty.Stages)
+                    {
+                        <a href="treasure-hunt/@_difficulty.Difficulty/@stage.Index">
+                            <div class="btn stage-btn"> @stage.Name</div>
+
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _difficulties = await TreasureHuntUiService.GetDifficultiesAsync();
+    }
+
+}

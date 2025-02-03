@@ -1,0 +1,57 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    padding-top: 30px;
+}
+
+.root > * {
+    width: 100%;
+}
+
+.fog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    gap: 1rem !important;
+}
+
+.difficulty-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-top: -32px;
+}
+
+.difficulty-text {
+    font-size: 1.5rem !important;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+}
+
+.city-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.city-container > * {
+    width: 100%;
+}
+
+.stage-items-container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: space-evenly !important;
+    width: 100%;
+    gap: 0.5rem !important;
+}
+
+.stage-btn {
+    padding: 0.5rem 2rem !important;
+}

@@ -1,0 +1,89 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding: 16px;
+    gap: 12px;
+}
+
+.header-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.header-container > img {
+    width: 64px;
+    height: 64px;
+}
+
+.header-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ability-name {
+    color: var(--fog-text-color);
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+}
+
+.cost-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    color: var(--fog-text-color);
+    font-weight: 400 !important;
+    font-size: 0.875rem !important;
+}
+
+.cost-container > img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    align-items: center;
+}
+
+.ability-level-title {
+    color: var(--fog-text-accent-color);
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+}
+
+.ability-level-description {
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+}
+
+.ability-level {
+    color: var(--fog-text-color);
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    user-select: none;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-self: center;
+    gap: 24px;
+    margin-top: 24px !important;
+}
+
+.navigation-btn {
+    width: 48px;
+    height: 48px;
+    color: var(--fog-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-variation-settings: 'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24
+}

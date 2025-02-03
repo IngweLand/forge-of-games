@@ -1,0 +1,137 @@
+.content-wrapper {
+    --fog-stepper-active-color: #DEC78E;
+    --fog-stepper-inactive-color: #F0F0F0;
+}
+
+.vertical-layout
+{
+    display: flex !important;
+    flex-direction: column;
+}
+
+.technologies-container {
+    overflow: hidden;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.age-header {
+    height: 44px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2px 12px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: var(--fog-text-on-dark-color);
+    cursor: pointer;
+}
+
+.navigation-buttons-container {
+    position: sticky;
+    bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.step-description-container {
+    position: sticky;
+    top: 0;
+    gap: 10px;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    align-items: center;
+    background-color: var(--fog-background-color);
+}
+
+.stepper {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.step-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    border-radius: 50%;
+}
+
+hr {
+   width: 100%; 
+}
+
+.step-description {
+    font-size: 1rem;
+    color: var(--fog-text-color);
+    flex: 1;
+    text-align: center;
+}
+
+.text-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.tool-title {
+    font-size: 1.25rem;
+    font-weight: 700 !important;
+    color: var(--fog-text-on-background-color);
+}
+
+.cost-container {
+    display: grid;
+    align-items: center;
+    width: 100%;
+}
+
+.cost-items-container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+}
+
+h4 {
+    color: var(--fog-text-on-background-color);
+}
+
+.navigation-btn {
+    align-content: center;
+    height: 56px;
+    width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+    .items-container {
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .step-description-container {
+        top: 56px;
+    }
+}

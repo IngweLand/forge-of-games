@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message RewardDefinitionDTO {
+  string id = 1;
+  // MysteryChestRewardDTO, LootContainerRewardDTO, HeroRewardDTO
+  repeated google.protobuf.Any packed_rewards = 2;
+}

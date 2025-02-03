@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "level_value.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingLevelDynamicChangeDTO {
+  repeated LevelValue values = 1;
+}

@@ -1,0 +1,39 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Dtos.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Customization]"/>
+
+    <MudSelect Value="@Data.SelectedItem" ValueChanged="OnItemChanged" T="BuildingCustomizationDto"
+               Variant="Variant.Outlined" Margin="Margin.Dense" Dense="true"
+               InputClass="building-customization-selector-input" ListClass="building-customization-selector-list">
+        @foreach (var item in Data.Items)
+        {
+            <MudSelectItem Value="item">@item.Name</MudSelectItem>
+        }
+    </MudSelect>
+
+    <div class="general-items-container">
+        @foreach (var item in Data.General)
+        {
+            <GeneralProductionItemComponent Item="@item"/>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required CustomizationComponentViewModel Data { get; set; }
+
+    [Parameter]
+    public EventCallback<BuildingCustomizationDto> ItemChanged { get; set; }
+
+    private Task OnItemChanged(BuildingCustomizationDto item)
+    {
+        return ItemChanged.InvokeAsync(item);
+    }
+
+}

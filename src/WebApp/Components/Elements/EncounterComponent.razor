@@ -1,0 +1,48 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@inject IAssetUrlProvider AssetUrlProvider;
+<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3">
+    <div class="d-flex align-items-start">
+        <div class="position-relative d-inline-block" style="height: 115px;">
+            <img alt="Encounter" class="h-100 object-fit-contain"
+                 src="@AssetUrlProvider.GetHohImageUrl("common_map_encounter")">
+            <span class="encounter-number user-select-none">
+                @Encounter.Title
+            </span>
+        </div>
+
+        <div class="d-flex align-items-start flex-wrap gap-3 gap-sm-4">
+            <ResourceWithValue ResourceValue="@Encounter.AvailableHeroSlots"/>
+            @foreach (var reward in Encounter.FirstTimeComletionBonus)
+            {
+                <EncounterFirstTimeCompletionBonusComponent Reward="@reward"/>
+            }
+            @foreach (var reward in Encounter.Rewards)
+            {
+                <EncounterRewardComponent Reward="@reward"/>
+            }
+        </div>
+    </div>
+    @foreach (var wave in Encounter.Waves)
+    {
+        <div class="d-flex align-items-center title-container">
+            <span class="title">@wave.Title</span>
+        </div>
+        <div class="row g-2 m-0 mb-2">
+            @foreach (var squad in wave.Squads)
+            {
+                <div class="col-12 col-lg-6 col-xxl-4">
+                    <BattleSquadComponent Squad="@squad"></BattleSquadComponent>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public EncounterViewModel Encounter { get; set; }
+
+}

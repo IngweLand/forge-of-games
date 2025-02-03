@@ -1,0 +1,14 @@
+@page "/command-center/profiles/{ProfileId}/barracks"
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@inherits CcProfilePageBase
+@rendermode PageRenderMode
+
+@if (_barracks != null)
+{
+    <div class="cc-page-container">
+        <CcPageTitle Title="@Profile!.Name"/>
+        <div class="fog-container options-container">
+            <CcBarracksComponent Barracks="@_barracks" OnLevelChanged="OnBarracksLevelChanged"/>
+        </div>
+    </div>
+}

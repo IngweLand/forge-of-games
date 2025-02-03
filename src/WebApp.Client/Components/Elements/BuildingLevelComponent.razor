@@ -1,0 +1,54 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <div class="header-container">
+        @if (LevelData.ConstructionComponent == null)
+        {
+            <div class="header-label level-label level-label-upgrade">@LevelData.Level</div>
+        }
+        else
+        {
+            <div class="header-label level-label">@LevelData.Level</div>
+        }
+        @if (LevelData.AgeName != null)
+        {
+            <div class="header-label age-label" style="background-color: @LevelData.AgeColor">@LevelData.AgeName</div>
+        }
+    </div>
+
+
+    @if (LevelData.ConstructionComponent != null)
+    {
+        <div class="section-container">
+            <span class="section-label">@Loc[FogResource.Hoh_Building_ConstructionCost]</span>
+        </div>
+        <div class="items-container">
+            @foreach (var costItem in LevelData.ConstructionComponent.Cost)
+            {
+                <HorizontalIconLabelComponent Item="@costItem"/>
+            }
+        </div>
+    }
+
+    @if (LevelData.UpgradeComponent != null)
+    {
+        <div class="section-container">
+            <span class="section-label">@Loc[FogResource.Hoh_Building_UpgradeCost]</span>
+        </div>
+        <div class="items-container">
+            @foreach (var costItem in LevelData.UpgradeComponent.Cost)
+            {
+                <HorizontalIconLabelComponent Item="@costItem"/>
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public required BuildingViewModel LevelData { get; set; }
+
+}

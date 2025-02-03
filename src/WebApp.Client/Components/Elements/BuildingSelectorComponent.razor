@@ -1,0 +1,37 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Models.Hoh.Enums
+@rendermode InteractiveWebAssembly
+
+@if (Items != null)
+{
+    <MudTabs Class="city-planner-buildings-selector-container" TabHeaderClass="buildings-selector-tabs"
+             SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Left" Outlined="false">
+        @foreach (var buildingType in Items)
+        {
+            <MudTabPanel Class="buildings-selector-tabs" Icon="@buildingType.Icon">
+                <div class="city-planner-side-panel">
+                    @foreach (var buildingGroup in buildingType.BuildingGroups)
+                    {
+                        <div class="building-selector-item user-select-none"
+                             @onclick="@(_ => OnItemClick(buildingGroup))">@buildingGroup.Label</div>
+                    }
+                </div>
+            </MudTabPanel>
+        }
+    </MudTabs>
+}
+
+@code {
+
+    [Parameter]
+    public IReadOnlyCollection<BuildingSelectorTypesViewModel>? Items { get; set; }
+
+    [Parameter]
+    public EventCallback<BuildingGroup> ItemClicked { get; set; }
+
+    private Task OnItemClick(BuildingSelectorItemViewModel buildingGroup)
+    {
+        return ItemClicked.InvokeAsync(buildingGroup.BuildingGroup);
+    }
+
+}

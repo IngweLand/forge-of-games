@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message CultureComponentDTO {
+  string id = 1;
+  optional int32 range = 2;
+  optional int32 value = 3;
+  string dynamic_values_id = 4;
+  string dynamic_ranges_id = 5;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "duration_dto.proto";
+import "building_requirements_dto.proto";
+import "worker_count_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message UpgradeComponentDTO {
+  string id = 1;
+  string next_building_id = 2;
+  DurationDto upgrade_time = 5;
+  BuildingRequirementsDto requirements = 7;
+  WorkerCountDto worker_count = 10;
+}

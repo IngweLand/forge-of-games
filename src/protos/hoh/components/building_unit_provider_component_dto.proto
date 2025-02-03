@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "building_unit_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BuildingUnitProviderComponentDTO {
+  BuildingUnitDto unit = 1;
+  int32 unit_count = 2;
+}
+    

@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+<div class="options-container">
+    @foreach (var barracks in Barracks)
+    {
+        <div>
+            <MudSelect Dense="true" Label="@barracks.Name"
+                       Value="@barracks.SelectedLevel" T="int"
+                       ValueChanged="lvl => OnBarracksLevelChanged(barracks, lvl)" Variant="Variant.Outlined">
+                @foreach (var level in barracks.Levels)
+                {
+                    <MudSelectItem Value="level">@level.ToString()</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public required IReadOnlyCollection<CcBarracksViewModel> Barracks { get; set; }
+
+    [Parameter]
+    public EventCallback<CcBarracksViewModel> OnLevelChanged { get; set; }
+
+    private void OnBarracksLevelChanged(CcBarracksViewModel barracks, int level)
+    {
+        barracks.SelectedLevel = level;
+        OnLevelChanged.InvokeAsync(barracks);
+    }
+
+}

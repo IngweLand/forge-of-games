@@ -1,0 +1,23 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+<MudSelectItem Value="Data">
+    <div class="data-items">
+        <div class="header-label level-label">@Data.Level</div>
+        @if (Data.AgeName != null)
+        {
+            <div class="header-label age-label" style="background-color: @Data.AgeColor">@Data.AgeName</div>
+        }
+        @if (Data.ConstructionComponent != null)
+        {
+            <span class="material-symbols-outlined component-icon">construction</span>
+        }
+        @if (Data.UpgradeComponent != null)
+        {
+            <span class="material-symbols-outlined component-icon">upgrade</span>
+        }
+    </div>
+</MudSelectItem>
+
+@code {
+    [Parameter]
+    public required BuildingViewModel Data { get; set; }
+}

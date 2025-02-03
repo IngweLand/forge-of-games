@@ -1,0 +1,83 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IJSRuntime JSRuntime
+<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">@Loc[FogResource.CityPlanner_Import]</MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudContainer>
+            @if (!_isImporting)
+            {
+                <MudTextField @bind-Value="_inputText"
+                              Lines="7" MaxLength="2000000"
+                              Variant="Variant.Outlined"
+                              Label="Paste your data here"
+                              Class="h-full"
+                              Immediate="true"
+                              AutoFocus="true"/>
+            }
+            else
+            {
+                <div class="d-flex justify-center align-center h-100">
+                    <div class="spinner-grow" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            }
+        </MudContainer>
+    </DialogContent>
+    <DialogActions>
+        <MudIconButton Icon="@Icons.Material.Filled.Help"
+                       Color="Color.Inherit"
+                       OnClick="@(() => OpenHelp())"
+                       Size="Size.Large"
+                       Class="mr-auto"
+                       Disabled="@_isImporting"/>
+        <MudButton Color="Color.Default"
+                   OnClick="Cancel"
+                   Disabled="@_isImporting">@Loc[FogResource.Common_Cancel]</MudButton>
+        <MudButton Color="Color.Primary"
+                   OnClick="Import"
+                   Disabled="@(_isImporting || string.IsNullOrWhiteSpace(_inputText))">
+            @Loc[FogResource.CityPlanner_Import]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    private bool _isImporting = false;
+    private string _inputText = "";
+
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+    private async Task Import()
+    {
+        if (string.IsNullOrWhiteSpace(_inputText))
+            return;
+
+        try
+        {
+            _isImporting = true;
+            StateHasChanged();
+
+            MudDialog.Close(DialogResult.Ok(_inputText));
+        }
+        catch (Exception)
+        {
+            _isImporting = false;
+            StateHasChanged();
+        }
+    }
+
+    private const string HELP_URL = "help/importing-hoh-data";
+
+    private async Task OpenHelp()
+    {
+        await JSRuntime.InvokeVoidAsync("open", HELP_URL, "_blank");
+    }
+
+    private void Cancel() => MudDialog.Cancel();
+}

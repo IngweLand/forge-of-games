@@ -1,0 +1,32 @@
+<a class="fog-container"
+   href="@PageLink">
+    <div class="item-container">
+        <i class="fa-solid @(Icon) item-icon"></i>
+        <div class="item-labels-container">
+            <span class="@TitleClassName">@Name</span>
+            <span>@Description</span>
+        </div>
+
+    </div>
+</a>
+
+@code {
+
+    [Parameter]
+    public required string PageLink { get; set; }
+
+    [Parameter]
+    public required string Name { get; set; }
+
+    [Parameter]
+    public required string Description { get; set; }
+
+    [Parameter]
+    public required string Icon { get; set; }
+    
+    [Parameter]
+    public bool Obsolete { get; set; }
+
+    private string TitleClassName => Obsolete ? "tool-title tool-title-obsolete" : "tool-title";
+
+}

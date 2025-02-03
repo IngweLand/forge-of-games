@@ -1,0 +1,86 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject ICcProfileUiService ProfileUiService
+@inject ICommandCenterProfileSharingService CommandCenterProfileSharingService
+@inject IJSInteropService JSInteropService
+@inject NavigationManager NavigationManager
+<MudDialog DefaultFocus="DefaultFocus.FirstChild">
+    <DialogContent>
+        @if (_isLoading)
+        {
+            <LoadingIndicator Dense="true"/>
+        }
+        else if (_link != null)
+        {
+            <div class="share-link-container">
+                <span>@_link</span>
+                <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" OnClick="CopyLink"/>
+            </div>
+        }
+        else
+        {
+            <MudButton Color="Color.Primary" Variant="Variant.Filled"
+                       OnClick="ShareProfile">@Loc[FogResource.CommandCenter_ShareProfileDialog_ShareButton]</MudButton>
+        }
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public required string ProfileId { get; set; }
+
+    private bool _isLoading;
+
+    private string? _link;
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task ShareProfile()
+    {
+        try
+        {
+            _isLoading = true;
+            var profileDto = await ProfileUiService.GetProfileDtoAsync(ProfileId);
+            if (profileDto != null)
+            {
+                var sharingResult = await CommandCenterProfileSharingService.ShareAsync(profileDto);
+
+                _link = sharingResult.WebResourceUrl;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private async Task CopyLink()
+    {
+        if (string.IsNullOrWhiteSpace(_link))
+        {
+            return;
+        }
+
+        await JSInteropService.CopyToClipboardAsync(_link);
+    }
+
+}

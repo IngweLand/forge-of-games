@@ -1,0 +1,21 @@
+.value-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-container-color);
+    gap: 4px;
+    padding: 2px 6px;
+}
+
+.value-label {
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.value-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}

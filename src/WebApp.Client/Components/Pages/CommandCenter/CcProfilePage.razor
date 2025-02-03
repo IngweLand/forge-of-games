@@ -1,0 +1,43 @@
+@page "/command-center/profiles/{ProfileId}"
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Ingweland.Fog.WebApp.Client.Components.Elements
+@inherits CcProfilePageBase
+@rendermode PageRenderMode
+@if (Profile != null)
+{
+    <div class="cc-page-container">
+        <div class="cc-page-header-container">
+            <CcPageTitle Title="@Profile.Name"/>
+            <MudMenu Icon="@Icons.Material.Filled.MoreVert"
+                     AriaLabel="Open user menu">
+                <MudMenuItem Icon="@Icons.Material.Filled.Share"
+                             OnClick="ShareProfile">@Loc[FogResource.Common_Share]</MudMenuItem>
+                <MudMenuItem Icon="@Icons.Material.Filled.Settings"
+                             OnClick="OpenSettingsPage">@Loc[FogResource.Common_Settings]</MudMenuItem>
+            </MudMenu>
+        </div>
+        <div class="action-buttons-container">
+            <div class="command-center-card command-center-action-card" @onclick="OpenProfileHeroesPage">
+                <img class=" command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_heroes")"/>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Profile_HeroesButton]</span>
+            </div>
+
+            <div class="command-center-card command-center-action-card" @onclick="OpenProfileBarracks">
+                <img class=" command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battle")"/>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Profile_BarracksButton]</span>
+            </div>
+
+            <div class="command-center-card command-center-action-card" @onclick="CreateTeam">
+                <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Profile_CreateTeamButton]</span>
+            </div>
+        </div>
+        <div class="teams-container">
+            @foreach (var team in Profile.Teams)
+            {
+                <CcProfileTeam Data="@team" OnClick="OpenTeam" OnDelete="DeleteTeam"/>
+            }
+        </div>
+    </div>
+}

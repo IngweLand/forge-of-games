@@ -1,0 +1,43 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
+@implements IDisposable
+<div class="fog-container component-root  user-select-none" @onclick="OnClicked" style="background-color: @GetBgColor()">
+    <img class="icon" src="@Data.IconUrl"/>
+    <div class="label">@Data.Name</div>
+</div>
+
+@code {
+
+    [Parameter]
+    public ResearchCalculatorTechnologyViewModel Data { get; set; } = null!;
+    
+    [Parameter]
+    public EventCallback<ResearchCalculatorTechnologyViewModel> Clicked { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Data.OnStateChanged += StateHasChanged;
+    }
+
+    private string GetBgColor()
+    {
+        return Data.State switch
+        {
+            ResearchCalculatorTechnologyState.Open => "var(--fog-open-tech-color)",
+            ResearchCalculatorTechnologyState.SelectedOpen => "var(--fog-selected-open-tech-color)",
+            ResearchCalculatorTechnologyState.Target => "var(--fog-target-tech-color)",
+            ResearchCalculatorTechnologyState.SelectedTarget => "var(--fog-selected-target-tech-color)",
+            _ => "var(--fog-surface-color)",
+        };
+    }
+
+    private Task OnClicked()
+    {
+        return Clicked.InvokeAsync(Data);
+    }
+
+    public void Dispose()
+    {
+        Data.OnStateChanged -= StateHasChanged;
+    }
+
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+message GamedesignRequest {
+  string checksum = 1;
+}

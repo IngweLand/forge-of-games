@@ -1,0 +1,12 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+<div class="value-container">
+    <img src="@Item.IconUrl" alt="resource icon" class="value-icon">
+    <span class="value-label user-select-none">@Item.Label</span>
+</div>
+
+@code {
+
+    [Parameter]
+    public IconLabelItemViewModel Item { get; set; }
+
+}

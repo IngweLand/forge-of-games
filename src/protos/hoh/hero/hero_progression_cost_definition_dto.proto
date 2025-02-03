@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroProgressionCostDefinitionDTO {
+  string id = 1;
+  repeated HeroProgressionCostDto cost = 2;
+}
+
+message HeroProgressionCostDto {
+  int32 level = 1;
+  HeroProgressionCostResourceDto resource = 2;
+}
+
+message HeroProgressionCostResourceDto{
+  int32 amount = 1;
+  string resource_id = 2;
+  float resource_factor= 3;
+}

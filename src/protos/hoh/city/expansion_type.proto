@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum ExpansionType {
+  ExpansionType_UNDEFINED = 0;
+  ExpansionType_BLOCKER = 1;
+  ExpansionType_CONNECTOR = 2;
+  ExpansionType_LINKED = 3;
+  ExpansionType_DETACHED_CONNECTOR = 4;
+}
