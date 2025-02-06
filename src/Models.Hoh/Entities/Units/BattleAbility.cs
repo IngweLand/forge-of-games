@@ -3,7 +3,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Hoh.Entities.Units;
 
 [ProtoContract]
-public class HeroAbility
+public class BattleAbility
 {
     [ProtoMember(1)]
     public required IReadOnlyCollection<HeroAbilityDescriptionItem> DescriptionItems { get; init; } =

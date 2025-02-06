@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
 public class HeroBuilderViewModel
 {
-    public required HeroAbilityDto Ability { get; init; }
+    public required BattleAbilityDto Ability { get; init; }
     public required IReadOnlyCollection<int> AbilityLevels { get; init; }
     public required IReadOnlyCollection<int> AwakeningLevels { get; init; }
     public required IReadOnlyCollection<BuildingDto> Barracks { get; init; }

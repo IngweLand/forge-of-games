@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.Enums.Hoh;
 using Ingweland.Fog.Application.Server.Extensions;
 using Ingweland.Fog.Application.Server.Helpers;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
-using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -60,6 +59,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Regions, HohLocalizationProperty.Name,
             $"region.{id}");
         return GetValue(key) ?? id.ToString();
+    }
+
+    public string GetRelicName(string relicId)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Relics, HohLocalizationProperty.Name,
+            relicId);
+        return GetValue(key) ?? relicId;
     }
 
     public string GetUnitName(string name)
@@ -134,7 +140,8 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
 
     public string GetBuildingCustomizationName(string customizationId)
     {
-        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingCustomizations, HohLocalizationProperty.Name,
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingCustomizations,
+            HohLocalizationProperty.Name,
             customizationId);
         return GetValue(key) ?? customizationId;
     }

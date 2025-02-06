@@ -14,5 +14,5 @@ public interface IHeroDtoFactory
         UnitBattleConstants unitBattleConstants, 
         Unit baseSupportUnit,
         HeroAwakeningComponent awakeningComponent,
-        HeroAbilityDto ability, HeroUnitType heroUnitType);
+        BattleAbilityDto ability, HeroUnitType heroUnitType);
 }

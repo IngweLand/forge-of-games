@@ -9,7 +9,7 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 public class HeroBuilderViewModelFactory(IHohHeroLevelSpecsProvider heroLevelSpecsProvider)
     : IHeroBuilderViewModelFactory
 {
-    public HeroBuilderViewModel Create(HeroDto hero, HeroAbilityDto ability, IReadOnlyCollection<BuildingDto> barracks)
+    public HeroBuilderViewModel Create(HeroDto hero, BattleAbilityDto ability, IReadOnlyCollection<BuildingDto> barracks)
     {
         return new HeroBuilderViewModel()
         {

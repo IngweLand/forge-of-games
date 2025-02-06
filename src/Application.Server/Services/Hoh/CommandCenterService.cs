@@ -1,13 +1,10 @@
-using System.Diagnostics;
 using System.Globalization;
-using AutoMapper;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using Ingweland.Fog.Inn.Models.Hoh;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
@@ -19,20 +16,15 @@ public class CommandCenterService(
     IHohCoreDataRepository hohCoreDataRepository,
     ICityService cityService,
     IMemoryCache cache,
-    IMapper mapper,
+    IRelicDtoFactory relicDtoFactory,
     ILogger<CommandCenterService> logger) : ICommandCenterService
 {
     private const string CACHE_KEY_PREFIX = nameof(CommandCenterService);
 
     public async Task<CommandCenterDataDto> GetCommandCenterDataAsync()
     {
-        var sw = new Stopwatch();
-        sw.Start();
-
         if (cache.TryGetValue(GetKey(), out CommandCenterDataDto? cachedResult) && cachedResult != null)
         {
-            sw.Stop();
-            Console.Out.WriteLine(sw.Elapsed);
             return cachedResult;
         }
 
@@ -53,18 +45,20 @@ public class CommandCenterService(
             barracks.AddRange(await cityService.GetBarracks(unitType));
         }
 
-        sw.Stop();
-        Console.Out.WriteLine(sw.Elapsed);
         var result = new CommandCenterDataDto()
         {
             Heroes = heroes,
             Barracks = barracks,
+            Relics = relicDtoFactory.Create(await hohCoreDataRepository.GetRelicsAsync(),
+                await hohCoreDataRepository.GetRelicBoostAgeModifiersAsync(),
+                await hohCoreDataRepository.GetBattleAbilitiesAsync(),
+                await hohCoreDataRepository.GetHeroBattleAbilityComponentsAsync()),
         };
 
         cache.Set(GetKey(), result, TimeSpan.FromHours(1));
         return result;
     }
-    
+
     private string GetKey()
     {
         return $"{CACHE_KEY_PREFIX}_{CultureInfo.CurrentCulture.Name}";

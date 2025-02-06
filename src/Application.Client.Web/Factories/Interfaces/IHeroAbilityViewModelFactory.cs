@@ -5,5 +5,5 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 
 public interface IHeroAbilityViewModelFactory
 {
-    HeroAbilityViewModel Create(HeroAbilityDto heroAbilityDto);
+    HeroAbilityViewModel Create(BattleAbilityDto battleAbilityDto);
 }

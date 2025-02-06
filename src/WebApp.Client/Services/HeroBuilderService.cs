@@ -41,7 +41,7 @@ public class HeroBuilderService(
             return null;
         }
 
-        HeroAbilityDto? heroAbility;
+        BattleAbilityDto? heroAbility;
         try
         {
             heroAbility = await unitService.GetHeroAbilityAsync(heroId);

@@ -33,7 +33,7 @@ public class HeroDto
     public required HeroAwakeningComponent AwakeningComponent { get; init; }
 
     [ProtoMember(9)]
-    public required HeroAbilityDto Ability { get; set; }
+    public required BattleAbilityDto Ability { get; set; }
     [ProtoMember(10)]
     public required HeroClassId ClassId { get; init; }
     [ProtoMember(11)]

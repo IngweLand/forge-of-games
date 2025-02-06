@@ -28,7 +28,7 @@ public class Data
     [ProtoMember(9)]
     public required IReadOnlyCollection<TreasureHuntDifficultyData> TreasureHuntBattles { get; init; }
     [ProtoMember(10)]
-    public required IReadOnlyCollection<HeroAbility> HeroAbilities { get; init; }
+    public required IReadOnlyCollection<BattleAbility> HeroAbilities { get; init; }
 
     [ProtoMember(11)]
     public required IReadOnlyCollection<HeroBattleAbilityComponent> HeroBattleAbilityComponents { get; init; }

@@ -247,7 +247,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.RarityFactors,
                 opt => opt.MapFrom(src =>
                     Enumerable.ToDictionary(src.RarityUnits, dto => dto.RarityId, dto => dto.Factors)));
-        CreateMap<BattleAbilityDefinitionDTO, HeroAbility>();
+        CreateMap<BattleAbilityDefinitionDTO, BattleAbility>();
         CreateMap<ReworkedWonderDefinitionDTO, Wonder>()
             .ForMember(dest => dest.Id, opt => opt.ConvertUsing(new WonderIdValueConverter(), src => src.Id))
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId));

@@ -53,10 +53,22 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.AscensionCosts.FirstOrDefault(hpc => hpc.Id == ascensionCostId);
     }
 
-    public async Task<HeroAbility?> GetHeroAbilityAsync(string abilityId)
+    public async Task<IReadOnlyCollection<BattleAbility>> GetBattleAbilitiesAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.HeroAbilities;
+    }
+
+    public async Task<BattleAbility?> GetBattleAbilityAsync(string abilityId)
     {
         var data = await dataProvider.GetDataAsync();
         return data.HeroAbilities.FirstOrDefault(ha => ha.Id == abilityId);
+    }
+
+    public async Task<IReadOnlyCollection<HeroBattleAbilityComponent>> GetHeroBattleAbilityComponentsAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.HeroBattleAbilityComponents;
     }
 
     public async Task<UnitBattleConstants> GetUnitBattleConstants()
@@ -122,7 +134,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
             .FirstOrDefault(ths => ths.Index == stageIndex);
     }
 
-    public async Task<HeroBattleAbilityComponent?> GetHeroAbilityComponentAsync(string heroAbilityId)
+    public async Task<HeroBattleAbilityComponent?> GetHeroBattleAbilityComponentAsync(string heroAbilityId)
     {
         var data = await dataProvider.GetDataAsync();
         return data.HeroBattleAbilityComponents.FirstOrDefault(ha => ha.HeroAbilityId == heroAbilityId);
@@ -156,5 +168,17 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     {
         var data = await dataProvider.GetDataAsync();
         return data.Cities.FirstOrDefault(src => src.Id == id);
+    }
+
+    public async Task<IReadOnlyCollection<Relic>> GetRelicsAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.Relics;
+    }
+
+    public async Task<IReadOnlyCollection<RelicBoostAgeModifier>> GetRelicBoostAgeModifiersAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.RelicBoostAgeModifiers;
     }
 }

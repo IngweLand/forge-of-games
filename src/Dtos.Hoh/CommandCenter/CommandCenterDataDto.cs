@@ -9,6 +9,10 @@ public class CommandCenterDataDto
 {
     [ProtoMember(1)]
     public required IReadOnlyCollection<BuildingDto> Barracks { get; init; }
+
     [ProtoMember(2)]
     public required IReadOnlyCollection<HeroDto> Heroes { get; init; }
+
+    [ProtoMember(3)]
+    public required IReadOnlyCollection<RelicDto> Relics { get; init; }
 }

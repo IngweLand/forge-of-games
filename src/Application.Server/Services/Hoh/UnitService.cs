@@ -14,7 +14,7 @@ public class UnitService(
     ILogger<UnitService> logger,
     IHeroBasicDtoFactory heroBasicDtoFactory,
     IHeroDtoFactory heroDtoFactory,
-    IHeroAbilityDtoFactory heroAbilityDtoFactory)
+    IBattleAbilityDtoFactory battleAbilityDtoFactory)
     : IUnitService
 {
     public async Task<HeroDto?> GetHeroAsync(string id)
@@ -85,7 +85,7 @@ public class UnitService(
             await hohCoreDataRepository.GetHeroUnitType(unit.Type));
     }
 
-    public async Task<HeroAbilityDto?> GetHeroAbilityAsync(string heroId)
+    public async Task<BattleAbilityDto?> GetHeroAbilityAsync(string heroId)
     {
         var hero = await hohCoreDataRepository.GetHeroAsync(heroId);
         if (hero == null)
@@ -97,9 +97,9 @@ public class UnitService(
         return await GetHeroAbilityAsync(hero);
     }
     
-    public async Task<HeroAbilityDto?> GetHeroAbilityAsync(Hero hero)
+    public async Task<BattleAbilityDto?> GetHeroAbilityAsync(Hero hero)
     {
-        var abilityComponent = await hohCoreDataRepository.GetHeroAbilityComponentAsync(hero.AbilityId);
+        var abilityComponent = await hohCoreDataRepository.GetHeroBattleAbilityComponentAsync(hero.AbilityId);
         if (abilityComponent == null)
         {
             logger.LogError($"Could not find ability component for hero with id {hero.Id} and hero ability id {
@@ -107,10 +107,10 @@ public class UnitService(
             return null;
         }
 
-        var abilities = new List<HeroAbility>();
+        var abilities = new List<BattleAbility>();
         foreach (var level in abilityComponent.Levels)
         {
-            var ability = await hohCoreDataRepository.GetHeroAbilityAsync(level.AbilityId);
+            var ability = await hohCoreDataRepository.GetBattleAbilityAsync(level.AbilityId);
             if (ability == null)
             {
                 logger.LogError($"Could not find ability for hero with id {hero.Id} and ability id {level.AbilityId}");
@@ -120,7 +120,7 @@ public class UnitService(
             abilities.Add(ability);
         }
 
-        return heroAbilityDtoFactory.Create(abilityComponent, abilities);
+        return battleAbilityDtoFactory.CreateForHero(abilityComponent, abilities);
     }
 
     public async Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync()

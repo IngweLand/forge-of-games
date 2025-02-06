@@ -8,11 +8,11 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 
 public class HeroAbilityViewModelFactory(IAssetUrlProvider assetUrlProvider) : IHeroAbilityViewModelFactory
 {
-    public HeroAbilityViewModel Create(HeroAbilityDto heroAbilityDto)
+    public HeroAbilityViewModel Create(BattleAbilityDto battleAbilityDto)
     {
         var levels = new List<HeroAbilityLevelViewModel>();
         HeroAbilityText abilityText = null!;
-        foreach (var levelDto in heroAbilityDto.Levels.OrderBy(l => l.Level))
+        foreach (var levelDto in battleAbilityDto.Levels.OrderBy(l => l.Level))
         {
             if (levelDto.Description != null)
             {
@@ -31,8 +31,8 @@ public class HeroAbilityViewModelFactory(IAssetUrlProvider assetUrlProvider) : I
 
         return new HeroAbilityViewModel
         {
-            IconUrl = assetUrlProvider.GetHohHeroAbilityIconUrl(heroAbilityDto.Id),
-            Name = heroAbilityDto.Name,
+            IconUrl = assetUrlProvider.GetHohHeroAbilityIconUrl(battleAbilityDto.Id),
+            Name = battleAbilityDto.Name,
             Levels = levels,
         };
     }

@@ -12,5 +12,5 @@ public interface IUnitService
     Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync();
 
     [Get("/heroes/{heroId}/ability")]
-    Task<HeroAbilityDto?> GetHeroAbilityAsync(string heroId);
+    Task<BattleAbilityDto?> GetHeroAbilityAsync(string heroId);
 }

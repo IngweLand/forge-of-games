@@ -5,11 +5,11 @@ using Ingweland.Fog.Models.Hoh.Entities.Units;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
-public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizationService) : IHeroAbilityDtoFactory
+public class BattleAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizationService) : IBattleAbilityDtoFactory
 {
-    public HeroAbilityDto Create(HeroBattleAbilityComponent abilityComponent, IList<HeroAbility> abilities)
+    public BattleAbilityDto CreateForHero(HeroBattleAbilityComponent abilityComponent, IList<BattleAbility> abilities)
     {
-        var levels = new List<HeroAbilityLevelDto>();
+        var levels = new List<BattleAbilityLevelDto>();
         foreach (var levelData in abilityComponent.Levels.OrderBy(c => int.Parse(c.AbilityId.Split('_').Last())))
         {
             var level = int.Parse(levelData.AbilityId.Split('_').Last());
@@ -18,7 +18,7 @@ public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizati
                 ? hohGameLocalizationService.GetHeroAbilityDescription(ability.DescriptionLocalizationId)
                 : null;
 
-            levels.Add(new HeroAbilityLevelDto
+            levels.Add(new BattleAbilityLevelDto
             {
                 Level = level,
                 Description = description,
@@ -27,7 +27,7 @@ public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizati
             });
         }
 
-        return new HeroAbilityDto
+        return new BattleAbilityDto
         {
             Id = abilityComponent.HeroAbilityId,
             Levels = levels,

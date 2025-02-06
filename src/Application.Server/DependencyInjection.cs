@@ -30,7 +30,7 @@ public static class DependencyInjection
         services.AddScoped<IBuildingGroupDtoFactory, BuildingGroupDtoFactory>();
         services.AddScoped<ITreasureHuntService, TreasureHuntService>();
         services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
-        services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();
+        services.AddScoped<IBattleAbilityDtoFactory, BattleAbilityDtoFactory>();
         services.AddScoped<IWonderDtoFactory, WonderDtoFactory>();
         services.AddScoped<IUnitPowerCalculator, UnitPowerCalculator>();
         services.AddScoped<IResearchService, ResearchService>();
@@ -41,5 +41,7 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
+        services.AddScoped<IRelicDtoFactory, RelicDtoFactory>();
+        services.AddScoped<IRelicBattleAbilityDtoFactory, RelicBattleAbilityDtoFactory>();
     }
 }

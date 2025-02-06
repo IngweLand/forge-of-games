@@ -101,9 +101,9 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
         return mapper.Map<IList<Expansion>>(gdr.ExpansionDefinitions);
     }
 
-    private static IList<HeroAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<BattleAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponseDTO gdr)
     {
-        return mapper.Map<IList<HeroAbility>>(gdr.BattleAbilityDefinitions);
+        return mapper.Map<IList<BattleAbility>>(gdr.BattleAbilityDefinitions);
     }
 
     private static IList<HeroBattleAbilityComponent> CreateHeroAbilityComponents(IMapper mapper,

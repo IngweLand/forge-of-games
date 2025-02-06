@@ -16,7 +16,7 @@ public class HeroDtoFactory(IUnitDtoFactory unitDtoFactory,IHohGameLocalizationS
         UnitBattleConstants unitBattleConstants, 
         Unit baseSupportUnit,
         HeroAwakeningComponent awakeningComponent,
-        HeroAbilityDto ability, HeroUnitType heroUnitType)
+        BattleAbilityDto ability, HeroUnitType heroUnitType)
     {
         return new HeroDto
         {

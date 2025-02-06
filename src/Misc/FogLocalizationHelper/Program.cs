@@ -30,6 +30,7 @@ var searchKeys = new List<string>()
     "Base.Generic.Cancel",
     "Base.BuildingContextPanel.InfoTab",
     "Base.CampaignPanel.Battle",
+    "Base.HeroPanel.Relics",
 };
 
 var result = new Dictionary<string, List<Translations>>();
