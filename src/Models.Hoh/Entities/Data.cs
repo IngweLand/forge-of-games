@@ -55,8 +55,13 @@ public class Data
     public required IReadOnlyCollection<BuildingCustomization> BuildingCustomizations { get; init; }
 
     [ProtoMember(19)]
-    public required IReadOnlyCollection<HeroUnitType> HeroUnitTypes { get; set; }
+    public required IReadOnlyCollection<HeroUnitType> HeroUnitTypes { get; init; }
     
     [ProtoMember(20)]
-    public required IReadOnlyCollection<Resource> Resources { get; set; }
+    public required IReadOnlyCollection<Resource> Resources { get; init; }
+
+    [ProtoMember(21)]
+    public required IReadOnlyCollection<Relic> Relics { get; init; }
+    [ProtoMember(22)]
+    public required IReadOnlyCollection<RelicBoostAgeModifier> RelicBoostAgeModifiers { get; init; }
 }

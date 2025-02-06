@@ -1,0 +1,29 @@
+syntax = "proto3";
+import "unit_stat_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message RelicDefinitionDTO {
+  string id = 1;
+  string relicRarityDefinitionId = 2;
+  RelicHeroEquipFilterDto heroEquipFilter = 3;
+  repeated RelicLevelDataDto levelData = 4;
+}
+
+message RelicHeroEquipFilterDto {
+  string heroClassDefinitionId = 2;
+}
+
+message RelicLevelDataDto {
+  bool ascension = 1;
+  int32 level = 2;
+  int32 ascensionLevel = 3;
+  string relicCostDefinitionId = 4;
+  repeated string abilities = 10;
+  repeated RelicStatBoostDto statBoosts = 11;
+}
+
+message RelicStatBoostDto {
+  UnitStatDto boost = 1;
+  string relicBoostAgeModifierDefinitionId = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message RelicBoostAgeModifierDefinitionDTO {
+  string id = 1;
+  map<string, float> modifier_by_age_definition_id = 2;
+}

@@ -9,6 +9,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Shared.Helpers;
 using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Microsoft.Extensions.Logging;
+using Relic = Ingweland.Fog.Models.Hoh.Entities.Units.Relic;
 
 namespace Ingweland.Fog.HohProtoParser;
 
@@ -255,6 +256,9 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
             BuildingCustomizations = buildingCustomizations.ToList(),
             HeroUnitTypes = mapper.Map<IReadOnlyCollection<HeroUnitType>>(gdr.HeroUnitTypeDefinitions),
             Resources = resources.AsReadOnly(),
+            Relics = mapper.Map<IReadOnlyCollection<Relic>>(gdr.RelicDefinitions),
+            RelicBoostAgeModifiers =
+                mapper.Map<IReadOnlyCollection<RelicBoostAgeModifier>>(gdr.RelicBoostAgeModifierDefinitions),
         };
 
         return data;

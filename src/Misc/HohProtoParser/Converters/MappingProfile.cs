@@ -3,6 +3,7 @@ using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using HohProtoParser.Extensions;
 using HohProtoParser.Helpers;
+using Ingweland.Fog.HohProtoParser.Converters;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
@@ -93,6 +94,17 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.LinkedExpansionId,
                 opt => opt.MapFrom(src =>
                     src.LinkedExpansionComponent != null ? src.LinkedExpansionComponent.LinkedExpansionId : null));
+        CreateMap<RelicLevelDataDto, RelicLevel>()
+            .ForMember(dest => dest.IsAscension, opt => opt.MapFrom(src => src.Ascension))
+            .ForMember(dest => dest.CostId, opt => opt.MapFrom(src => src.RelicCostDefinitionId))
+            .ForMember(dest => dest.Boosts, opt => opt.MapFrom(src => src.StatBoosts));
+        CreateMap<RelicStatBoostDto, RelicBoost>()
+            .ForMember(dest => dest.RelicBoostAgeModifierId,
+                opt => opt.MapFrom(src => src.RelicBoostAgeModifierDefinitionId))
+            .ForMember(dest => dest.StatBoost, opt => opt.MapFrom(src => src.Boost));
+        CreateMap<RelicHeroEquipFilterDto, RelicHeroEquipFilter>()
+            .ForMember(dest => dest.HeroClassId,
+                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<HeroClassId>(src.HeroClassDefinitionId)));
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -154,7 +166,7 @@ public class MappingProfile : Profile
         CreateMap<InitialGridComponentDTO, InitialGridComponent>();
         CreateMap<CultureBoostComponentDTO, CultureBoostComponent>();
         CreateMap<LevelUpComponentDTO, LevelUpComponent>()
-            .ForMember(dest=> dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
+            .ForMember(dest => dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
 
         // rewards
         CreateMap<DynamicActionChangeRewardDTO, DynamicActionChangeReward>();
@@ -255,7 +267,14 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.UnitType,
                 opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitType>(src.UnitType)))
             .ForMember(dest => dest.BaseValues, opt => opt.MapFrom(src => src.UnitStats));
-        
+        CreateMap<RelicDefinitionDTO, Relic>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => StringParser.GetConcreteId(src.Id)))
+            .ForMember(dest => dest.RarityId,
+                opt => opt.ConvertUsing(new RelicRarityIdValueConverter(), src => src.RelicRarityDefinitionId))
+            .ForMember(dest => dest.Levels, opt => opt.MapFrom(src => src.LevelData));
+        CreateMap<RelicBoostAgeModifierDefinitionDTO, RelicBoostAgeModifier>()
+            .ForMember(dest => dest.AgeModifiers, opt => opt.MapFrom(src => src.ModifierByAgeDefinitionId));
+
         // localization
         CreateMap<LocaResponse, LocalizationData>()
             .ForMember(dest => dest.Entries, opt => opt.MapFrom(src =>

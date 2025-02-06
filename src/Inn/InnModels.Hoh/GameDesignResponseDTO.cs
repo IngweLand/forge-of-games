@@ -5,7 +5,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh;
 public sealed partial class GameDesignResponseDTO
 {
     public IList<CityDefinitionDTO> CityDefinitions => Items.FindAndUnpackToList<CityDefinitionDTO>();
-    public IList<BuildingCustomizationDefinitionDTO> BuildingCustomizationDefinitions => Items.FindAndUnpackToList<BuildingCustomizationDefinitionDTO>();
+
+    public IList<BuildingCustomizationDefinitionDTO> BuildingCustomizationDefinitions =>
+        Items.FindAndUnpackToList<BuildingCustomizationDefinitionDTO>();
+
     public IList<ConstantsDefinitionDTO> ConstantsDefinitions => Items.FindAndUnpackToList<ConstantsDefinitionDTO>();
     public IList<ContinentDefinitionDTO> ContinentDefinitions => Items.FindAndUnpackToList<ContinentDefinitionDTO>();
     public IList<DifficultyDefinitionDTO> DifficultyDefinitions => Items.FindAndUnpackToList<DifficultyDefinitionDTO>();
@@ -49,17 +52,41 @@ public sealed partial class GameDesignResponseDTO
 
     public IList<WorldTypeDefinitionDTO> WorldTypeDefinitions => Items.FindAndUnpackToList<WorldTypeDefinitionDTO>();
     public IList<BuildingDefinitionDTO> BuildingDefinitions => Items.FindAndUnpackToList<BuildingDefinitionDTO>();
-    public IList<HeroBuildingBoostComponentDTO> HeroBuildingBoostComponents => Items.FindAndUnpackToList<HeroBuildingBoostComponentDTO>();
-    public IList<HeroAbilityTrainingComponentDTO> HeroAbilityTrainingComponents => Items.FindAndUnpackToList<HeroAbilityTrainingComponentDTO>();
+
+    public IList<HeroBuildingBoostComponentDTO> HeroBuildingBoostComponents =>
+        Items.FindAndUnpackToList<HeroBuildingBoostComponentDTO>();
+
+    public IList<HeroAbilityTrainingComponentDTO> HeroAbilityTrainingComponents =>
+        Items.FindAndUnpackToList<HeroAbilityTrainingComponentDTO>();
+
     public IList<HeroUnitDefinitionDTO> HeroUnitDefinitions => Items.FindAndUnpackToList<HeroUnitDefinitionDTO>();
     public IList<HeroDefinitionDTO> HeroDefinitions => Items.FindAndUnpackToList<HeroDefinitionDTO>();
-    
-    public HeroBattleConstantsDefinitionDTO HeroBattleConstantsDefinition => Items.FindAndUnpackToList<HeroBattleConstantsDefinitionDTO>().Single();
-    public IList<HeroUnitStatFormulaDefinitionDTO> HeroUnitStatFormulaDefinitions => Items.FindAndUnpackToList<HeroUnitStatFormulaDefinitionDTO>();
-    public IList<BattleAbilityDefinitionDTO> BattleAbilityDefinitions => Items.FindAndUnpackToList<BattleAbilityDefinitionDTO>();
-    public IList<HeroBattleAbilityComponentDTO> HeroBattleAbilityComponents => Items.FindAndUnpackToList<HeroBattleAbilityComponentDTO>();
-    public IList<ReworkedWonderDefinitionDTO> ReworkedWonderDefinitions => Items.FindAndUnpackToList<ReworkedWonderDefinitionDTO>();
-    public IList<HeroAwakeningComponentDTO> HeroAwakeningComponents => Items.FindAndUnpackToList<HeroAwakeningComponentDTO>();
+
+    public HeroBattleConstantsDefinitionDTO HeroBattleConstantsDefinition =>
+        Items.FindAndUnpackToList<HeroBattleConstantsDefinitionDTO>().Single();
+
+    public IList<HeroUnitStatFormulaDefinitionDTO> HeroUnitStatFormulaDefinitions =>
+        Items.FindAndUnpackToList<HeroUnitStatFormulaDefinitionDTO>();
+
+    public IList<BattleAbilityDefinitionDTO> BattleAbilityDefinitions =>
+        Items.FindAndUnpackToList<BattleAbilityDefinitionDTO>();
+
+    public IList<HeroBattleAbilityComponentDTO> HeroBattleAbilityComponents =>
+        Items.FindAndUnpackToList<HeroBattleAbilityComponentDTO>();
+
+    public IList<ReworkedWonderDefinitionDTO> ReworkedWonderDefinitions =>
+        Items.FindAndUnpackToList<ReworkedWonderDefinitionDTO>();
+
+    public IList<HeroAwakeningComponentDTO> HeroAwakeningComponents =>
+        Items.FindAndUnpackToList<HeroAwakeningComponentDTO>();
+
     public IList<ExpansionDefinitionDTO> ExpansionDefinitions => Items.FindAndUnpackToList<ExpansionDefinitionDTO>();
-    public IList<DynamicFloatValueDefinitionDTO> DynamicFloatValueDefinitions => Items.FindAndUnpackToList<DynamicFloatValueDefinitionDTO>();
+
+    public IList<DynamicFloatValueDefinitionDTO> DynamicFloatValueDefinitions =>
+        Items.FindAndUnpackToList<DynamicFloatValueDefinitionDTO>();
+
+    public IList<RelicDefinitionDTO> RelicDefinitions => Items.FindAndUnpackToList<RelicDefinitionDTO>();
+
+    public IList<RelicBoostAgeModifierDefinitionDTO> RelicBoostAgeModifierDefinitions =>
+        Items.FindAndUnpackToList<RelicBoostAgeModifierDefinitionDTO>();
 }

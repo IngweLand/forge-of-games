@@ -1,8 +1,8 @@
 syntax = "proto3";
-import "relic.proto";
+import "hero_relic_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message RelicPush {
-  repeated Relic relics = 1; 
+  repeated HeroRelicDto relics = 1; 
 }
