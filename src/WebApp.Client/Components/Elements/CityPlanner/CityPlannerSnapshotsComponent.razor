@@ -6,9 +6,13 @@
 @inject CityPlannerSettings CityPlannerSettings
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
+@inject IJSRuntime JSRuntime
 
 <div class="fog-container component-root">
-    <div class="section-title">@Loc[FogResource.CityPlanner_Snapshots_Title]</div>
+    <div class="header-container">
+        <div class="section-title">@Loc[FogResource.CityPlanner_Snapshots_Title]</div>
+        <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" OnClick="@(() => OpenHelp())"/>
+    </div>
     <div class="main-container">
         <div class="items-container">
             @foreach (var ss in Snapshots)
@@ -31,6 +35,7 @@
 </div>
 
 @code {
+    private const string HELP_URL = "help/city-planner-snapshots";
 
     [Parameter]
     public required IReadOnlyCollection<HohCitySnapshot> Snapshots { get; set; }
@@ -69,6 +74,11 @@
         {
             await OnLoad.InvokeAsync(snapshot.Id);
         }
+    }
+
+    private async Task OpenHelp()
+    {
+        await JSRuntime.InvokeVoidAsync("open", HELP_URL, "_blank");
     }
 
 }
