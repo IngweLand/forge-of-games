@@ -16,7 +16,8 @@ public class HohServices(
     IProtobufSerializer protobufSerializer,
     ICommandCenterProfileRepository commandCenterProfileRepository,
     IInGameStartupDataProcessingService inGameStartupDataProcessingService,
-    IInGameStartupDataRepository inGameStartupDataRepository)
+    IInGameStartupDataRepository inGameStartupDataRepository,
+    IHohCityRepository hohCityRepository)
 {
     public ICityService CityService { get; } = cityService;
     public ICommandCenterProfileRepository CommandCenterProfileRepository { get; } = commandCenterProfileRepository;
@@ -28,6 +29,8 @@ public class HohServices(
 
     public IInGameStartupDataRepository InGameStartupDataRepository { get; } =
         inGameStartupDataRepository;
+
+    public IHohCityRepository HohCityRepository { get; } = hohCityRepository;
 
     public ILogger<HohServices> Logger { get; } = logger;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;

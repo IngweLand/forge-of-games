@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@inject ICityPlanner CityPlanner
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+
+<div class="fog-container component-root">
+    <div class="main-container">
+        <MudButton StartIcon="@Icons.Material.Filled.Share" Size="Size.Small" Variant="Variant.Filled"
+                   OnClick="ShareProfile">@Loc[FogResource.Common_Share]</MudButton>
+    </div>
+</div>
+
+@code {
+
+    private async Task ShareProfile()
+    {
+        var options = new DialogOptions
+        {
+            MaxWidth = MaxWidth.Small,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            Position = DialogPosition.TopCenter,
+        };
+        var parameters = new DialogParameters<ShareCityDialog>
+        {
+            {d => d.CityId, CityPlanner.CityMapState.CityId},
+        };
+        await DialogService.ShowAsync<ShareCityDialog>(Loc[FogResource.CommandCenter_ShareCityDialog_Title],
+            parameters, options);
+    }
+
+}

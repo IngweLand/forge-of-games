@@ -42,6 +42,7 @@ internal static class DependencyInjection
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
         AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress);
         AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress);
+        AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress, RefitSettings settings)

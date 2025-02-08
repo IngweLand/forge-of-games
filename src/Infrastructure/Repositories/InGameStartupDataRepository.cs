@@ -11,7 +11,7 @@ namespace Ingweland.Fog.Infrastructure.Repositories;
 public class InGameStartupDataRepository(
     ITableStorageRepository<InGameStartupDataTableEntity> tableStorageRepository,
     IMapper mapper,
-    ILogger<CommandCenterProfileRepository> logger) : IInGameStartupDataRepository
+    ILogger<InGameStartupDataRepository> logger) : IInGameStartupDataRepository
 {
     private static readonly string PartitionKey = "inGameData";
 

@@ -1,14 +1,12 @@
-@using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
-@using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions
 @using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
-@inject ICcProfileUiService ProfileUiService
-@inject ICommandCenterProfileSharingService CommandCenterProfileSharingService
+@inject IPersistenceService PersistenceService
+@inject ICityPlannerSharingService CitysPlannerSharingService
 @inject IJSInteropService JSInteropService
-@inject NavigationManager NavigationManager
 <MudDialog DefaultFocus="DefaultFocus.FirstChild">
     <DialogContent>
         @if (_isLoading)
@@ -25,7 +23,7 @@
         else
         {
             <MudButton Color="Color.Primary" Variant="Variant.Filled"
-                       OnClick="ShareProfile">@Loc[FogResource.ShareDialog_ShareButton]</MudButton>
+                       OnClick="Share">@Loc[FogResource.ShareDialog_ShareButton]</MudButton>
         }
     </DialogContent>
     <DialogActions>
@@ -39,7 +37,7 @@
     MudDialogInstance MudDialog { get; set; }
 
     [Parameter]
-    public required string ProfileId { get; set; }
+    public required string CityId { get; set; }
 
     private bool _isLoading;
 
@@ -50,15 +48,15 @@
         MudDialog.Cancel();
     }
 
-    private async Task ShareProfile()
+    private async Task Share()
     {
         try
         {
             _isLoading = true;
-            var profileDto = await ProfileUiService.GetProfileDtoAsync(ProfileId);
-            if (profileDto != null)
+            var city = await PersistenceService.LoadCity(CityId);
+            if (city != null)
             {
-                var sharingResult = await CommandCenterProfileSharingService.ShareAsync(profileDto);
+                var sharingResult = await CitysPlannerSharingService.ShareAsync(city);
 
                 _link = sharingResult.WebResourceUrl;
             }

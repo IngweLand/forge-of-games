@@ -21,6 +21,7 @@ public static class DependencyInjection
         services.TryAddSingleton<IHohDataProvider, DefaultHohDataProvider>();
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
+        services.AddScoped<IHohCityRepository, HohCityRepository>();
     }
 
     public static IServiceCollection AddTableStorage(this IServiceCollection services)
@@ -37,6 +38,13 @@ public static class DependencyInjection
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
             return new TableStorageRepository<InGameStartupDataTableEntity>(options.ConnectionString,
                 options.HohStartupDataTable);
+        });
+        
+        services.AddSingleton<ITableStorageRepository<HohCityTableEntity>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new TableStorageRepository<HohCityTableEntity>(options.ConnectionString,
+                options.CityPlannerCitiesTable);
         });
 
         return services;
