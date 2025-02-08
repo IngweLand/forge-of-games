@@ -1,14 +1,22 @@
 .component-root {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     clip-path: inset(0 0 0 0 round var(--fog-border-radius));
+    gap: 12px;
+    padding-bottom: 12px;
 }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 .main-container {
     display: flex !important;
     flex-direction: column;
     padding-left: 12px;
     padding-right: 12px;
+    gap: 12px;
 }
 
 .section-title {
@@ -23,4 +31,22 @@
     min-height: 22px;
     min-width: 80px;
     text-align: center;
+}
+
+.items-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.snapshot-item-label {
+    font-size: 12px;
+}
+
+.snapshot-item {
+    display: grid;
+    grid-template-columns: 1fr 32px 32px;
+    grid-template-rows: auto;
+    gap: 8px;
+    align-items: center;
 }

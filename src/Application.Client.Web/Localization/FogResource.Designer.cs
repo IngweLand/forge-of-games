@@ -321,6 +321,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compare.
+        /// </summary>
+        public static string CityPlanner_Snapshots_Compare {
+            get {
+                return ResourceManager.GetString("CityPlanner.Snapshots.Compare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string CityPlanner_Snapshots_Current {
+            get {
+                return ResourceManager.GetString("CityPlanner.Snapshots.Current", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to load {0} snapshot? This will reset your current city. This action cannot be undone..
+        /// </summary>
+        public static string CityPlanner_Snapshots_LoadConfirmation {
+            get {
+                return ResourceManager.GetString("CityPlanner.Snapshots.LoadConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snapshots.
+        /// </summary>
+        public static string CityPlanner_Snapshots_Title {
+            get {
+                return ResourceManager.GetString("CityPlanner.Snapshots.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City planner.
         /// </summary>
         public static string CityPlanner_Title {
@@ -380,15 +416,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CommandCenter_CreateProfile {
             get {
                 return ResourceManager.GetString("CommandCenter.CreateProfile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do you want to delete {0}?.
-        /// </summary>
-        public static string CommandCenter_DeleteCcProfileDialog_Message {
-            get {
-                return ResourceManager.GetString("CommandCenter.DeleteCcProfileDialog.Message", resourceCulture);
             }
         }
         
@@ -645,6 +672,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete {0}?.
+        /// </summary>
+        public static string Common_DeleteConfirmation {
+            get {
+                return ResourceManager.GetString("Common.DeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disclaimer.
         /// </summary>
         public static string Common_Disclaimer {
@@ -704,6 +740,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_JoinDiscord {
             get {
                 return ResourceManager.GetString("Common.JoinDiscord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load.
+        /// </summary>
+        public static string Common_Load {
+            get {
+                return ResourceManager.GetString("Common.Load", resourceCulture);
             }
         }
         

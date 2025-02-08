@@ -146,14 +146,14 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         _skCanvasView!.Invalidate();
     }
 
-    private static DialogOptions GetDefaultDialogOptions(bool closButton = false)
+    private static DialogOptions GetDefaultDialogOptions(bool closeButton = false)
     {
         return new DialogOptions
         {
             MaxWidth = MaxWidth.Small,
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
-            CloseButton = closButton,
+            CloseButton = closeButton,
         };
     }
 
@@ -322,7 +322,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private async Task Save()
     {
-        await PersistenceService.SaveCity(CityPlanner!.GetCity());
+        await CityPlanner.SaveCity();
     }
 
     private void SelectGroup()
@@ -376,5 +376,35 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         {
             _skCanvasView!.Invalidate();
         }
+    }
+    
+    private async Task LoadSnapshot(string id)
+    {
+        await CityPlanner.LoadSnapshot(id);
+    }
+    
+    private async Task CreateSnapshot()
+    {
+        await CityPlanner.CreateSnapshot();
+    }
+    private async Task CompareSnapshots()
+    {
+        var viewModel = CityPlanner.CompareSnapshots();
+        
+        var parameters = new DialogParameters<SnapshotsComparisonComponent>{{src => src.Data, viewModel}};
+
+        var options = new DialogOptions
+        {
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            NoHeader = true,
+            CloseOnEscapeKey = true,
+        };
+        await DialogService.ShowAsync<SnapshotsComparisonComponent>(null, parameters, options);
+    }
+    
+    private async Task DeleteSnapshot(string id)
+    {
+        await CityPlanner.DeleteSnapshot(id);
     }
 }

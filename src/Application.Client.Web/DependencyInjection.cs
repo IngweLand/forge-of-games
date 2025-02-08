@@ -4,6 +4,8 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.CommandCenter;
@@ -19,9 +21,12 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
+using Ingweland.Fog.Application.Core.Factories;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Formatters;
 using Ingweland.Fog.Application.Core.Formatters.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Polly;
 
 namespace Ingweland.Fog.Application.Client.Web;
@@ -97,6 +102,8 @@ public static class DependencyInjection
         services.AddScoped<IHohCommandCenterProfileFactory, CcProfileFactory>();
         services.AddScoped<ICcProfileUiService, CcProfileUiService>();
         services.AddScoped<ICcHeroesPlaygroundUiService, CcHeroesPlaygroundUiService>();
+        services.AddScoped<ISnapshotsComparisonViewModelFactory, SnapshotsComparisonViewModelFactory>();
+        services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         services.AddScoped<CityPlannerSettings>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()

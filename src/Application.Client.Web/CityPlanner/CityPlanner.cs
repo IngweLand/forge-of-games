@@ -4,18 +4,24 @@ using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.Constants;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using SkiaSharp;
 
@@ -36,6 +42,10 @@ public class CityPlanner(
     ICommandManager commandManager,
     ICityMapEntityStatsFactory cityMapEntityStatsFactory,
     ICityPlannerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
+    IHohCitySnapshotFactory snapshotFactory,
+    IPersistenceService persistenceService,
+    ISnapshotsComparisonViewModelFactory snapshotsComparisonViewModelFactory,
+    IStringLocalizer<FogResource> localizer,
     IMapper mapper) : ICityPlanner
 {
     public event Action? StateHasChanged;
@@ -54,6 +64,26 @@ public class CityPlanner(
         return DoInitializeAsync(hohCityFactory.CreateNewCapital());
     }
 
+    public SnapshotsComparisonViewModel CompareSnapshots()
+    {
+        var cityPlannerData = _cityPlannerDataCache[CityMapState.InGameCityId];
+        var city = GetCity();
+        var stats = new Dictionary<HohCitySnapshot, CityStats>();
+        foreach (var snapshot in CityMapState.Snapshots)
+        {
+            city.Entities = snapshot.Entities;
+            var state = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
+                PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city);
+            var statsProcessor = cityStatsProcessorFactory.Create(state);
+            statsProcessor.UpdateStats();
+            
+            stats.Add(snapshot, state.CityStats);
+        }
+        var currentStateSnapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities),localizer[FogResource.CityPlanner_Snapshots_Current]);
+        stats.Add(currentStateSnapshot, CityMapState.CityStats);
+        return snapshotsComparisonViewModelFactory.Create(stats);
+    }
+
     public HohCity CreateNew(string cityName)
     {
         return hohCityFactory.CreateNewCapital(cityName);
@@ -64,12 +94,42 @@ public class CityPlanner(
         return DoInitializeAsync(city);
     }
 
+    public async Task LoadSnapshot(string id)
+    {
+        var snapshot = CityMapState.Snapshots.FirstOrDefault(src => src.Id == id);
+        if (snapshot == null)
+        {
+            return;
+        }
+
+        var city = await persistenceService.LoadCity(CityMapState.CityId);
+        if (city == null)
+        {
+            return;
+        }
+
+        city.Entities = snapshot.Entities.Select(src => src.Clone()).ToList();
+        await DoInitializeAsync(city);
+        await SaveCity();
+    }
+
     public Rectangle Bounds => _mapAreaRenderer.Bounds;
 
     public void RenderScene(SKCanvas canvas)
     {
         _mapAreaRenderer.Render(canvas);
         buildingRenderer.RenderBuildings(canvas, CityMapState.CityMapEntities);
+    }
+    
+    public Task CreateSnapshot()
+    {
+        if (CityMapState.Snapshots.Count >= FogConstants.MaxHohCitySnapshots)
+        {
+            return Task.CompletedTask;
+        }
+        var snapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities));
+        CityMapState.AddSnapshot(snapshot);
+        return SaveCity();
     }
 
     public CityMapEntity AddEntity(BuildingGroup buildingGroup)
@@ -115,6 +175,17 @@ public class CityPlanner(
         _statsProcessor.UpdateStats();
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
+    }
+    
+    public async Task SaveCity()
+    {
+        await persistenceService.SaveCity(GetCity());
+        StateHasChanged?.Invoke();
+    }
+
+    public Task DeleteSnapshot(string id)
+    {
+        return !CityMapState.DeleteSnapshot(id) ? Task.CompletedTask : SaveCity();
     }
 
     public void RotateEntity(CityMapEntity entity)
@@ -175,14 +246,13 @@ public class CityPlanner(
         return canBePlaced;
     }
 
-    public HohCity GetCity()
+    private HohCity GetCity()
     {
         DeselectAll();
         UpdateSelectedEntityViewModel();
-        StateHasChanged?.Invoke();
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities);
+            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots);
     }
 
     public CityMapEntity UpdateLevel(CityMapEntity entity, int level)

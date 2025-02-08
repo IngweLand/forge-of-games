@@ -44,7 +44,7 @@ public partial class CcProfileSettingsPage : CcProfilePageBase
     {
         var result = await DialogService.ShowMessageBox(
             null,
-            Loc[FogResource.CommandCenter_DeleteCcProfileDialog_Message, Profile!.Name],
+            Loc[FogResource.Common_DeleteConfirmation, Profile!.Name],
             yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
         if (result != null)
         {

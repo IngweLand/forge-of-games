@@ -1,0 +1,84 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject CityPlannerSettings CityPlannerSettings
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+@inject IJSRuntime JSRuntime
+
+<div class="fog-container component-root">
+    <div class="header-container">
+        <div class="section-title">@Loc[FogResource.CityPlanner_Snapshots_Title]</div>
+        <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" OnClick="@(() => OpenHelp())"/>
+    </div>
+    <div class="main-container">
+        <div class="items-container">
+            @foreach (var ss in Snapshots)
+            {
+                <div class="snapshot-item">
+                    <span class="snapshot-item-label">@ss.ComputedName</span>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Publish" Size="Size.Small"
+                                   OnClick="() => OnLoadClicked(ss)"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Delete" Size="Size.Small"
+                                   OnClick="() => OnDeleteClicked(ss)"/>
+                </div>
+            }
+        </div>
+
+        <MudButton Variant="Variant.Outlined" OnClick="OnCreate"
+                   Disabled="@(Snapshots.Count >= FogConstants.MaxHohCitySnapshots)">@Loc[FogResource.Common_Create]</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="OnCompare"
+                   Disabled="@(Snapshots.Count == 0)">@Loc[FogResource.CityPlanner_Snapshots_Compare]</MudButton>
+    </div>
+</div>
+
+@code {
+    private const string HELP_URL = "help/city-planner-snapshots";
+
+    [Parameter]
+    public required IReadOnlyCollection<HohCitySnapshot> Snapshots { get; set; }
+
+    [Parameter]
+    public EventCallback OnCreate { get; set; }
+
+    [Parameter]
+    public EventCallback OnCompare { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnLoad { get; set; }
+
+    private async Task OnDeleteClicked(HohCitySnapshot snapshot)
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.Common_DeleteConfirmation, snapshot.CreatedDateUtc.ToLocalTime().ToString("G")],
+            yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            await OnDelete.InvokeAsync(snapshot.Id);
+        }
+    }
+
+    private async Task OnLoadClicked(HohCitySnapshot snapshot)
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.CityPlanner_Snapshots_LoadConfirmation, snapshot.CreatedDateUtc.ToLocalTime().ToString("G")],
+            yesText: Loc[FogResource.Common_Load], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            await OnLoad.InvokeAsync(snapshot.Id);
+        }
+    }
+
+    private async Task OpenHelp()
+    {
+        await JSRuntime.InvokeVoidAsync("open", HELP_URL, "_blank");
+    }
+
+}
