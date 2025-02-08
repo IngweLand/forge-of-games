@@ -1,0 +1,55 @@
+.icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.row-label {
+    font-size: 12px !important;
+    vertical-align: middle;
+}
+
+.table {
+    margin-bottom: 0 !important;
+    width: 100%;
+}
+
+.table>:not(caption)>*>*:has(>img) {
+    padding: 2px 6px !important;
+    background-color: transparent;
+}
+
+.table>:not(caption)>*>* {
+    padding: 2px 6px !important;
+    background-color: transparent;
+}
+
+thead {
+    border-bottom: none;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    border-bottom: 0;
+    text-align: center;
+}
+th {
+    white-space: nowrap;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    background-color: var(--fog-surface2-color) !important;
+    padding: 4px 8px;
+}
+
+td > * {
+    vertical-align: middle;
+}
+input, tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+

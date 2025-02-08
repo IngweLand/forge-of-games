@@ -105,7 +105,7 @@ public class InGameStartupDataProcessingService(
         if (capital != null)
         {
             var buildings = await coreDataRepository.GetBuildingsAsync(CityId.Capital);
-            barracksProfile = barracksProfileFactory.Create(capital.Entities.AsReadOnly(), buildings);
+            barracksProfile = barracksProfileFactory.Create(capital.Entities, buildings);
         }
         else
         {

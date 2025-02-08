@@ -1,11 +1,14 @@
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
+using Ingweland.Fog.Application.Core.Factories;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace Ingweland.Fog.Application.Server;
@@ -41,5 +44,6 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
+        services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
     }
 }

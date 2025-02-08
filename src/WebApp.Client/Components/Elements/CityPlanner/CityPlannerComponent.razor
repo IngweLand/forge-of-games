@@ -90,6 +90,13 @@
                     </div>
 
                 </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.ViewList">
+                    <div class="city-planner-side-panel">
+                        <CityPlannerSnapshotsComponent OnCreate="CreateSnapshot" OnDelete="DeleteSnapshot"
+                                                       OnLoad="LoadSnapshot" OnCompare="CompareSnapshots"
+                                                       Snapshots="@CityPlanner!.CityMapState.Snapshots"/>
+                    </div>
+                </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">
                     <div class="city-planner-side-panel">
                         <CityPlannerSettingsComponent/>

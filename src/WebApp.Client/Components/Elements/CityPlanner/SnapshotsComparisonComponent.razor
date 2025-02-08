@@ -1,0 +1,45 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Microsoft.Extensions.Localization
+@inject IHohStorageIconUrlProvider StorageIconUrlProvider
+<MudDialog Style="max-width: max-content">
+    <DialogContent>
+        <table class="table">
+            <thead>
+            <th/>
+            @foreach (var snapshot in Data.SnapshotNames)
+            {
+                <th>@snapshot</th>
+            }
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="@(Data.SnapshotNames.Count + 1)">
+                    <img src="@StorageIconUrlProvider.GetIconUrl(string.Empty)" class="icon"/></td>
+            </tr>
+            @foreach (var row in Data.Production)
+            {
+                <tr class="user-select-none">
+
+                    <td ><img src="@row.Header" class="icon"/></td>
+                    @foreach (var cell in row.Cells)
+                    {
+                        <td class="row-label" style="background-color: @(cell.IsLargest?"#CFFCEF":"transparent")">@cell.Value</td>
+                    }
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    </DialogContent>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public SnapshotsComparisonViewModel Data { get; set; }
+}

@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Constants;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -36,15 +37,16 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
     }
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
-        IReadOnlyCollection<CityMapEntity> entities)
+        IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots)
     {
         return new HohCity()
         {
             Id = id,
             InGameCityId = inGameCityId,
             AgeId = ageId,
-            Entities = mapper.Map<IList<HohCityMapEntity>>(entities),
+            Entities = mapper.Map<IReadOnlyCollection<HohCityMapEntity>>(entities),
             Name = name,
+            Snapshots = snapshots,
         };
     }
 }

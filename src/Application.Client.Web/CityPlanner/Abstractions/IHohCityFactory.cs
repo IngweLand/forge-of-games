@@ -7,5 +7,7 @@ public interface IHohCityFactory
 {
     HohCity CreateNewCapital();
     HohCity CreateNewCapital(string cityName);
-    HohCity Create(string id, CityId inGameCityId, string ageId, string name, IReadOnlyCollection<CityMapEntity> entities);
+
+    HohCity Create(string id, CityId inGameCityId, string ageId, string name,
+        IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots);
 }

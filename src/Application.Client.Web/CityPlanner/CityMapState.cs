@@ -1,24 +1,27 @@
+using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
-using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
-using Ingweland.Fog.Models.Hoh.Constants;
-using Ingweland.Fog.Models.Hoh.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
-public class CityMapState(IBuildingLevelRangesFactory buildingLevelRangesFactory, ILogger<CityMapState> logger)
+public class CityMapState(
+    IBuildingLevelRangesFactory buildingLevelRangesFactory)
 {
+    public event Action? StateChanged;
     private readonly IList<CityMapEntity> _cityMapEntities = new List<CityMapEntity>();
     private readonly IList<CityMapEntity> _happinessConsumers = new List<CityMapEntity>();
     private readonly IList<CityMapEntity> _happinessProviders = new List<CityMapEntity>();
+    private readonly IList<HohCitySnapshot> _snapshots = new List<HohCitySnapshot>();
 
     private readonly IDictionary<BuildingType, IList<CityMapEntity>> _typedEntities =
         new Dictionary<BuildingType, IList<CityMapEntity>>();
@@ -28,7 +31,7 @@ public class CityMapState(IBuildingLevelRangesFactory buildingLevelRangesFactory
     private AgeDto _cityAge;
     private CityPlannerCityPropertiesViewModel? _cityPropertiesViewModel;
 
-    private CityStats _cityStats = new ();
+    private CityStats _cityStats = new();
     private CityMapEntity? _selectedCityMapEntity;
     private CityMapEntityViewModel? _selectedEntityViewModel;
     public required IReadOnlyCollection<BuildingCustomizationDto> BuildingCustomizations { get; init; }
@@ -57,9 +60,9 @@ public class CityMapState(IBuildingLevelRangesFactory buildingLevelRangesFactory
     }
 
     public required string CityId { get; init; }
-    public required string CityName { get; init; }
 
     public IReadOnlyList<CityMapEntity> CityMapEntities => _cityMapEntities.AsReadOnly();
+    public required string CityName { get; init; }
 
     public CityPlannerCityPropertiesViewModel? CityPropertiesViewModel
     {
@@ -136,20 +139,13 @@ public class CityMapState(IBuildingLevelRangesFactory buildingLevelRangesFactory
         }
     }
 
-    public IReadOnlyDictionary<BuildingType, IList<CityMapEntity>> TypedEntities => _typedEntities.AsReadOnly();
-
-    public event Action? StateChanged;
-
-    public bool IsHappinessProvider(CityMapEntity entity) => _happinessProviders.Contains(entity);
-    public bool IsHappinessConsumer(CityMapEntity entity) => _happinessConsumers.Contains(entity);
-
-    public void AddRange(IEnumerable<CityMapEntity> cityMapEntities)
+    public IReadOnlyCollection<HohCitySnapshot> Snapshots
     {
-        foreach (var entity in cityMapEntities)
-        {
-            Add(entity);
-        }
+        get => _snapshots.AsReadOnly();
+        init => _snapshots = value.OrderBy(src => src.CreatedDateUtc).ToList();
     }
+
+    public IReadOnlyDictionary<BuildingType, IList<CityMapEntity>> TypedEntities => _typedEntities.AsReadOnly();
 
     public void Add(CityMapEntity cityMapEntity)
     {
@@ -183,6 +179,37 @@ public class CityMapState(IBuildingLevelRangesFactory buildingLevelRangesFactory
             // log
         }
     }
+
+    public void AddRange(IEnumerable<CityMapEntity> cityMapEntities)
+    {
+        foreach (var entity in cityMapEntities)
+        {
+            Add(entity);
+        }
+    }
+
+    public void AddSnapshot(HohCitySnapshot snapshot)
+    {
+        _snapshots.Add(snapshot);
+        StateChanged?.Invoke();
+    }
+
+    public bool DeleteSnapshot(string id)
+    {
+        var ss = _snapshots.FirstOrDefault(src => src.Id == id);
+        if (ss == null)
+        {
+            return false;
+        }
+
+        _snapshots.Remove(ss);
+        StateChanged?.Invoke();
+        return true;
+    }
+
+    public bool IsHappinessConsumer(CityMapEntity entity) => _happinessConsumers.Contains(entity);
+
+    public bool IsHappinessProvider(CityMapEntity entity) => _happinessProviders.Contains(entity);
 
     public void Remove(CityMapEntity cityMapEntity)
     {
