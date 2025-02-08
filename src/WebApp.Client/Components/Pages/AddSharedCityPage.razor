@@ -1,0 +1,7 @@
+@page "/cityPlanner/sharedCities/{sharedCityId}"
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender:false))
+<MudDialogProvider/>
+@code {
+    [Parameter]
+    public string? SharedCityId { get; set; }
+}

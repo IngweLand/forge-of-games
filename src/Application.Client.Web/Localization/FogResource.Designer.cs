@@ -582,11 +582,11 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create link.
+        ///   Looks up a localized string similar to Share city.
         /// </summary>
-        public static string CommandCenter_ShareProfileDialog_ShareButton {
+        public static string CommandCenter_ShareCityDialog_Title {
             get {
-                return ResourceManager.GetString("CommandCenter.ShareProfileDialog.ShareButton", resourceCulture);
+                return ResourceManager.GetString("CommandCenter.ShareCityDialog.Title", resourceCulture);
             }
         }
         
@@ -1145,6 +1145,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Navigation_Wonders {
             get {
                 return ResourceManager.GetString("Navigation.Wonders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create link.
+        /// </summary>
+        public static string ShareDialog_ShareButton {
+            get {
+                return ResourceManager.GetString("ShareDialog.ShareButton", resourceCulture);
             }
         }
         

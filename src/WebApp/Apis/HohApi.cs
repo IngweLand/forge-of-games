@@ -44,6 +44,21 @@ public static class HohApi
             return TypedResults.BadRequest("Could not get shared profile.");
         }
     }
+    
+    public static async Task<Results<Ok<HohCity?>, BadRequest<string>, NotFound>>
+        GetSharedCityAsync([AsParameters] HohServices services, HttpContext context, string cityId)
+    {
+        try
+        {
+            var city = await services.HohCityRepository.GetAsync(cityId);
+
+            return city != null ? TypedResults.Ok(city)! : TypedResults.NotFound();
+        }
+        catch (Exception e)
+        {
+            return TypedResults.BadRequest("Could not get shared city.");
+        }
+    }
 
     public static async
         Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>, InternalServerError<string>>>
@@ -105,6 +120,8 @@ public static class HohApi
         api.MapProtobufGet("/ages", GetAgesAsync);
 
         api.MapProtobufGet("/cityPlanner/data/{cityId}", GetCityPlannerDataAsync);
+        api.MapPost("/cityPlanner/sharedCities", ShareCityAsync);
+        api.MapGet("/cityPlanner/sharedCities/{cityId}", GetSharedCityAsync);
 
         api.MapProtobufGet("/commandCenter/data", GetCommandCenterDataAsync);
         api.MapPost("/commandCenter/sharedProfiles", ShareProfileAsync);
@@ -127,6 +144,27 @@ public static class HohApi
             {
                 ApiResourceUrl = $"https://{context.Request.Host}{context.Request.Path}/{newId}",
                 WebResourceUrl = $"https://{context.Request.Host}/commandCenter/sharedProfiles/{newId}",
+                ResourceId = newId,
+            };
+            return TypedResults.Ok(result);
+        }
+        catch (Exception e)
+        {
+            return TypedResults.BadRequest("Could not create the share.");
+        }
+    }
+    
+    public static async Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>>> ShareCityAsync(
+        [AsParameters] HohServices services,
+        HttpContext context, [FromBody] HohCity city)
+    {
+        try
+        {
+            var newId = await services.HohCityRepository.SaveAsync(city);
+            var result = new ResourceCreatedResponse
+            {
+                ApiResourceUrl = $"https://{context.Request.Host}{context.Request.Path}/{newId}",
+                WebResourceUrl = $"https://{context.Request.Host}/cityPlanner/sharedCities/{newId}",
                 ResourceId = newId,
             };
             return TypedResults.Ok(result);
