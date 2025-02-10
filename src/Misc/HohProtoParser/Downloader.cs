@@ -81,6 +81,7 @@ public class Downloader(
         };
         using var request = new HttpRequestMessage(HttpMethod.Post, LOCALIZATION_URL);
         request.Content = new ByteArrayContent(payload.ToByteArray());
+        request.Content.Headers.ContentType = new MediaTypeHeaderValue(PROTOBUF_CONTENT_TYPE);
         AddRequiredHeaders(request, JSON_CONTENT_TYPE);
         var response = await httpClient.SendAsync(request);
         response.EnsureSuccessStatusCode();

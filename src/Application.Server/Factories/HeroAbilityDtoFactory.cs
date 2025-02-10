@@ -14,9 +14,7 @@ public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizati
         {
             var level = int.Parse(levelData.AbilityId.Split('_').Last());
             var ability = abilities.First(ha => ha.Id == levelData.AbilityId);
-            var description = levelData.IsKeyLevel || level == 1
-                ? hohGameLocalizationService.GetHeroAbilityDescription(ability.DescriptionLocalizationId)
-                : null;
+            var description = hohGameLocalizationService.GetHeroAbilityDescription(ability.DescriptionLocalizationId);
 
             levels.Add(new HeroAbilityLevelDto
             {
