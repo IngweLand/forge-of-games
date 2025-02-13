@@ -29,6 +29,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Application.Server\Application.Server.csproj" />
       <ProjectReference Include="..\..\Inn\InnModels.Hoh\InnModels.Hoh.csproj" />
+      <ProjectReference Include="..\..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj" />
       <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj" />
       <ProjectReference Include="..\..\Shared\Shared.csproj" />
     </ItemGroup>

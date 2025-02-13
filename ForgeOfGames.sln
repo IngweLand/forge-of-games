@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Core", "src\App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FogLocalizationHelper", "src\Misc\FogLocalizationHelper\FogLocalizationHelper.csproj", "{08623E89-E3DF-4D5C-9973-118F5B6CEB53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnSdk.Hoh", "src\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj", "{C57F9F03-80F7-45FD-BF79-E2C44ABB2330}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{08623E89-E3DF-4D5C-9973-118F5B6CEB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08623E89-E3DF-4D5C-9973-118F5B6CEB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08623E89-E3DF-4D5C-9973-118F5B6CEB53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57F9F03-80F7-45FD-BF79-E2C44ABB2330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57F9F03-80F7-45FD-BF79-E2C44ABB2330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57F9F03-80F7-45FD-BF79-E2C44ABB2330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57F9F03-80F7-45FD-BF79-E2C44ABB2330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,5 +121,6 @@ Global
 		{3F38EA51-8F59-4ABE-81F6-99DC441EFB72} = {3A7D422D-8C59-45E7-9642-913485E36131}
 		{7C92C3EE-096B-4744-BA4F-73F794102218} = {DA391560-5A96-4DA1-81AD-11F0C496202C}
 		{08623E89-E3DF-4D5C-9973-118F5B6CEB53} = {185F4E0D-8359-46BC-B433-61C460C78755}
+		{C57F9F03-80F7-45FD-BF79-E2C44ABB2330} = {EB604B9D-0A5C-484E-899D-9ABA32E8A40B}
 	EndGlobalSection
 EndGlobal
