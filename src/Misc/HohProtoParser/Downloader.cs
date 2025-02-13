@@ -1,93 +1,48 @@
-using System.Net.Http.Headers;
-using Google.Protobuf;
 using Ingweland.Fog.Inn.Models.Hoh;
-using Ingweland.Fog.Shared;
+using Ingweland.Fog.InnSdk.Hoh.Abstractions;
+using Ingweland.Fog.InnSdk.Hoh.Authentication;
+using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.Shared.Localization;
 
 namespace Ingweland.Fog.HohProtoParser;
 
-public class Downloader(
-    IAuthenticationService authenticationService,
-    HttpClient httpClient) : IDownloader
+public class Downloader(IInnSdkClient sdkClient) : IDownloader
 {
-    private const string LOCALIZATION_URL = "https://zz1.heroesofhistorygame.com/game/loca";
-    private const string GAMEDESIGN_URL = "https://zz1.heroesofhistorygame.com/game/gamedesign";
-    private const string PROTOBUF_CONTENT_TYPE = "application/x-protobuf";
-    private const string JSON_CONTENT_TYPE = "application/json";
     private const string DEFAULT_DIRECTORY = "downloads";
-    private AuthResponse _authResponse = null!;
     private string _directory = null!;
+    private GameWorldConfig _betaWorldConfig = new("zz", 1, "beta");
 
     public async Task<DownloadResult> DownloadAsync(string? location)
     {
         _directory = location ?? DEFAULT_DIRECTORY;
-        _authResponse = await authenticationService.Authenticate();
         Directory.CreateDirectory(_directory);
         await DownloadLocales();
         await DownloadJsonLocale();
 
-        var gamedesignDescriptors = new List<(string ContentType, string Extension)>()
-        {
-            (PROTOBUF_CONTENT_TYPE, "bin"),
-            (JSON_CONTENT_TYPE, "json"),
-        };
         var result = new DownloadResult()
         {
             Directory = _directory,
         };
-        foreach (var task in gamedesignDescriptors)
-        {
-            var filename = $"gamedesign_{DateTime.Today:dd.MM.yy}.{task.Extension}";
-            await DownloadGamedesign(task.ContentType, filename);
-            if (task.ContentType == PROTOBUF_CONTENT_TYPE)
-            {
-                result.GamedesignFileName = filename;
-            }
-        }
+        var filename = $"gamedesign_{DateTime.Today:dd.MM.yy}.bin";
+        await DownloadProtobufGamedesign(filename);
+        result.GamedesignFileName = filename;
+        filename = $"gamedesign_{DateTime.Today:dd.MM.yy}.json";
+        await DownloadJsonGamedesign(filename);
 
         return result;
     }
 
-    private void AddRequiredHeaders(HttpRequestMessage request, string acceptContentType)
+    private async Task DownloadJsonGamedesign(string filename)
     {
-        request.Headers.Add("X-AUTH-TOKEN", _authResponse.SessionId);
-        request.Headers.Add("X-Request-Id", Guid.NewGuid().ToString());
-        request.Headers.Add("X-Platform", "browser");
-        request.Headers.Add("X-ClientVersion", _authResponse.ClientVersion);
-        request.Headers.Add("Accept-Encoding", "gzip");
-        request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptContentType));
-    }
-
-    private async Task DownloadGamedesign(string acceptContentType, string filename)
-    {
-        var payload = new GamedesignRequest() {Checksum = "invalid"};
-        using var request = new HttpRequestMessage(HttpMethod.Post, GAMEDESIGN_URL);
-        request.Content = new ByteArrayContent(payload.ToByteArray());
-        request.Content.Headers.ContentType = new MediaTypeHeaderValue(PROTOBUF_CONTENT_TYPE);
-        AddRequiredHeaders(request, acceptContentType);
-        var response = await httpClient.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var stream = await response.Content.ReadAsStreamAsync();
-        stream.Position = 0;
-        await using var fileStream = File.Create(Path.Combine(DEFAULT_DIRECTORY, filename));
-        await response.Content.CopyToAsync(fileStream);
+        await File.WriteAllTextAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
+            await sdkClient.StaticDataService.GetGameDesignJsonAsync(_betaWorldConfig));
     }
 
     private async Task DownloadJsonLocale()
     {
-        var payload = new LocalizationRequest()
-        {
-            Locale = "en_DK",
-        };
-        using var request = new HttpRequestMessage(HttpMethod.Post, LOCALIZATION_URL);
-        request.Content = new ByteArrayContent(payload.ToByteArray());
-        request.Content.Headers.ContentType = new MediaTypeHeaderValue(PROTOBUF_CONTENT_TYPE);
-        AddRequiredHeaders(request, JSON_CONTENT_TYPE);
-        var response = await httpClient.SendAsync(request);
-        response.EnsureSuccessStatusCode();
-        var fileName = "loca_en-DK.json";
-        var responseData = await response.Content.ReadAsStringAsync();
-        await File.WriteAllTextAsync(Path.Combine(_directory, fileName), responseData);
+        var filename = "loca_en-DK.json";
+        var response = await sdkClient.StaticDataService.GetLocalizationJsonAsync(_betaWorldConfig, "en_DK");
+        await File.WriteAllTextAsync(Path.Combine(_directory, filename), response);
     }
 
     private async Task DownloadLocales()
@@ -99,17 +54,15 @@ public class Downloader(
             {
                 Locale = kvp.Value,
             };
-            using var request = new HttpRequestMessage(HttpMethod.Post, LOCALIZATION_URL);
-            request.Content = new ByteArrayContent(payload.ToByteArray());
-            request.Content.Headers.ContentType = new MediaTypeHeaderValue(PROTOBUF_CONTENT_TYPE);
-            AddRequiredHeaders(request, PROTOBUF_CONTENT_TYPE);
-            var response = await httpClient.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-            var fileName = $"loca_{kvp.Key}.bin";
-            var stream = await response.Content.ReadAsStreamAsync();
-            stream.Position = 0;
-            await using var fileStream = File.Create(Path.Combine(_directory, fileName));
-            await response.Content.CopyToAsync(fileStream);
+            var filename = $"loca_{kvp.Key}.bin";
+            var response = await sdkClient.StaticDataService.GetLocalizationProtobufAsync(_betaWorldConfig, kvp.Value);
+            await File.WriteAllBytesAsync(Path.Combine(_directory, filename), response);
         }
+    }
+
+    private async Task DownloadProtobufGamedesign(string filename)
+    {
+        await File.WriteAllBytesAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
+            await sdkClient.StaticDataService.GetGameDesignProtobufAsync(_betaWorldConfig));
     }
 }
