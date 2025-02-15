@@ -18,6 +18,8 @@ public static class DependencyInjection
 {
     public static void AddInnSdkServices(this IServiceCollection services)
     {
+        services.AddAutoMapper(typeof(DependencyInjection).Assembly);
+        
         services.TryAddSingleton<IGameConnectionManager, GameConnectionManager>();
         services.TryAddScoped<IGameCredentialsManager, DefaultGameCredentialsManager>();
 
@@ -25,10 +27,17 @@ public static class DependencyInjection
         services.AddScoped<IWebAuthPayloadFactory, WebAuthPayloadFactory>();
         services.AddScoped<ILocalizationRequestPayloadFactory, LocalizationRequestPayloadFactory>();
         services.AddScoped<IGameDesignRequestPayloadFactory, GameDesignRequestPayloadFactory>();
+        services.AddScoped<IPlayerRankingRequestPayloadFactory, PlayerRankingRequestPayloadFactory>();
+        services.AddScoped<IAllianceRankingRequestPayloadFactory, AllianceRankingRequestPayloadFactory>();
+        
         services.AddScoped<IStaticDataService, StaticDataService>();
+        services.AddScoped<IRankingsService, RankingsService>();
+        services.AddScoped<IDataParsingService, DataParsingService>();
 
         services.AddScoped<Lazy<IStaticDataService>>(sp =>
             new Lazy<IStaticDataService>(sp.GetRequiredService<IStaticDataService>));
+        services.AddScoped<Lazy<IRankingsService>>(sp =>
+            new Lazy<IRankingsService>(sp.GetRequiredService<IRankingsService>));
 
         services.AddHttpClient<IWebAuthenticationService, WebAuthenticationService>()
             .AddSdkHttpClientResilienceHandler();

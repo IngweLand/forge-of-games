@@ -1,6 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.CommandCenter
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using MudBlazor.Utilities
+@using Size = MudBlazor.Size
 <div class="@Classname" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
     <div class="avatar-section">
         <img src="@Profile.PortraitUrl"/>

@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "alliance_ranking_type.proto";
+import "alliance_rank_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceRanksDTO {
+  repeated AllianceRankDto top_100 = 1;
+  repeated AllianceRankDto surrounding_ranking = 2;
+  AllianceRankingType type = 5;
+}

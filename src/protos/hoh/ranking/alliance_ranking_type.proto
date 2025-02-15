@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum AllianceRankingType {
+  AllianceRankingType_UNDEFINED = 0;
+  AllianceRankingType_TOTAL_POINTS = 1;
+  AllianceRankingType_RANKING_POINTS = 2;
+}

@@ -39,4 +39,32 @@ public static class CompressionUtils
 
         return Encoding.UTF8.GetString(outputStream.ToArray());
     }
+    
+    public static byte[] Compress(byte[] data)
+    {
+        using var memoryStream = new MemoryStream();
+        using (var gzipStream = new GZipStream(memoryStream, CompressionMode.Compress))
+        {
+            gzipStream.Write(data, 0, data.Length);
+        }
+
+        return memoryStream.ToArray();
+    }
+
+    public static byte[] Decompress(byte[] compressedData)
+    {
+        if (compressedData.Length == 0)
+        {
+            return [];
+        }
+
+        using var memoryStream = new MemoryStream(compressedData);
+        using var outputStream = new MemoryStream();
+        using (var gzipStream = new GZipStream(memoryStream, CompressionMode.Decompress))
+        {
+            gzipStream.CopyTo(outputStream);
+        }
+
+        return outputStream.ToArray();
+    }
 }

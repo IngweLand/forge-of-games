@@ -17,7 +17,9 @@
 </MudDialog>
 
 @code {
-    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
 
     [Parameter]
     public IEnumerable<HohCityBasicData> Cities { get; set; } = new List<HohCityBasicData>();
@@ -31,4 +33,5 @@
     {
         MudDialog.Cancel();
     }
+
 }

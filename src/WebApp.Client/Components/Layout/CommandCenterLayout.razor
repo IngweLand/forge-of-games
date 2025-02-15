@@ -1,21 +1,32 @@
-@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Ingweland.Fog.WebApp.Client.Theme
-@using Microsoft.Extensions.Localization
 @inherits LayoutComponentBase
-
-@inject IStringLocalizer<FogResource> Loc
+@inject IPageSetupService PageSetupService
 <HeadContent>
-    <meta name="description" content="@Loc[FogResource.CommandCenter_Meta_Description]">
-    <meta name="keywords" content="@Loc[FogResource.CommandCenter_Meta_Keywords]">
+    <meta name="description" content="@_pageMetadata.Description">
+    <meta name="keywords" content="@_pageMetadata.Keywords">
 </HeadContent>
-<PageTitle>@Loc[FogResource.CommandCenter_PageTitle]</PageTitle>
+<PageTitle>@_pageMetadata.PageTitle</PageTitle>
 <MudThemeProvider Theme="FogTheme.Theme"/>
 
 <MudLayout Class="d-flex flex-column" Style="min-height: 100dvh">
     <CommandCenterNavBar/>
     <MudMainContent Class="command-center-main-content">
         <LoadingIndicator/>
-        @Body
+        <ErrorBoundary>
+            @Body
+        </ErrorBoundary>
     </MudMainContent>
 </MudLayout>
+
+@code
+{
+    private PageMetadata _pageMetadata = null!;
+
+    protected override void OnInitialized()
+    {
+        _pageMetadata = PageSetupService.GetMetadata();
+    }
+}

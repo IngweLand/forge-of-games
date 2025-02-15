@@ -23,6 +23,7 @@
     --fog-link-color: #6C79A7;
     --fog-positive-selection-color: #CFFCEF;
     --fog-text-color: #34495E;
+    --fog-text-secondary-color: #9EA9B3;
     --fog-text2-color: #7D6C3C;
     --fog-text-accent-color: #7D6C3C;
     --fog-text-on-dark-color: #FFFFFF;
@@ -36,13 +37,15 @@
     --fog-units-blue-color: #479AFF;
     --fog-units-purple-color: #7C3BE8;
     --fog-units-neutral-color: #c0c0c0;
+    --fog-chart-line-color: #329AB4;
 
     /*values*/
     --fog-border-radius: 0.5rem;
+    --main-font-family: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
-    font-family: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: var(--main-font-family), sans-serif;
     background-color: var(--fog-background-color);
     color: var(--fog-text-color);
 }
@@ -52,10 +55,6 @@ body {
     background-color: inherit !important;
     color: inherit !important;
     font-family: inherit !important;
-}
-
-ul {
-    list-style-type: disc;
 }
 
 a, .btn-link {

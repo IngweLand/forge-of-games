@@ -24,14 +24,15 @@
 </MudDialog>
 
 @code {
+
     [CascadingParameter]
-    MudDialogInstance MudDialog { get; set; }
+    private IMudDialogInstance MudDialog { get; set; }
 
     private string _inputText;
 
     [Parameter]
     public required string PositiveButtonText { get; set; }
-    
+
     [Parameter]
     public required string InputLabel { get; set; }
 

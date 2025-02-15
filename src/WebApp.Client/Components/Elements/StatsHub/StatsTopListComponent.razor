@@ -1,0 +1,38 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Core.Helpers
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject NavigationManager NavigationManager
+<div class="fog-container component-root">
+    <div class="title">@Title</div>
+    <div class="items-container">
+        @foreach (var player in Players)
+        {
+            <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+        }
+    </div>
+    <div class="button-container">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                   Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public required string Title { get; set; }
+
+    [Parameter]
+    public required string ViewAllUrl { get; set; }
+
+    [Parameter]
+    public required IReadOnlyCollection<PlayerViewModel> Players { get; init; }
+
+    private void OnPlayerClicked(PlayerViewModel player)
+    {
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Key.WorldId, player.Key.InGamePlayerId));
+    }
+
+}

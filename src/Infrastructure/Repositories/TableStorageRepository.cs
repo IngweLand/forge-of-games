@@ -21,23 +21,37 @@ public class TableStorageRepository<T>(string connectionString, string tableName
             return null;
         }
     }
-    
+
     public async Task<IEnumerable<T>> GetAllAsync(string partitionKey)
     {
         var results = new List<T>();
         var queryResults = _tableClient.Value.QueryAsync<T>(x => x.PartitionKey == partitionKey);
-        
+
         await foreach (var entity in queryResults)
         {
             results.Add(entity);
         }
-        
+
         return results;
     }
 
     public async Task AddAsync(T entity)
     {
         await _tableClient.Value.AddEntityAsync(entity);
+    }
+
+    public Task AddRangeAsync(IEnumerable<T> entities)
+    {
+        var transactions =
+            entities.Select(src => new TableTransactionAction(TableTransactionActionType.Add, src));
+        return _tableClient.Value.SubmitTransactionAsync(transactions);
+    }
+
+    public Task UpsertRangeAsync(IEnumerable<T> entities)
+    {
+        var transactions =
+            entities.Select(src => new TableTransactionAction(TableTransactionActionType.UpsertReplace, src));
+        return _tableClient.Value.SubmitTransactionAsync(transactions);
     }
 
     public async Task UpdateAsync(T entity)

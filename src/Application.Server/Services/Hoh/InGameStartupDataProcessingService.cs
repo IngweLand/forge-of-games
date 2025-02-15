@@ -17,28 +17,12 @@ public class InGameStartupDataProcessingService(
     IHohCoreDataRepository coreDataRepository,
     IBarracksProfileFactory barracksProfileFactory,
     ICommandCenterProfileFactory commandCenterProfileFactory,
-    ILogger<InGameStartupDataProcessingService> logger) : IInGameStartupDataProcessingService
+    ILogger<InGameStartupDataProcessingService> logger)
+    : InGameDataProcessingServiceBase(logger), IInGameStartupDataProcessingService
 {
     public async Task<InGameStartupData> ParseStartupData(string inputData)
     {
-        byte[] data;
-        try
-        {
-            data = Convert.FromBase64String(inputData);
-        }
-        catch (Exception ex)
-        {
-            const string msg = "Failed to decode Base64 string of startup data";
-            logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
-        }
-
-        if (data == null || data.Length == 0)
-        {
-            const string msg = "Startup data cannot be null or empty";
-            logger.LogError(msg);
-            throw new ArgumentException(msg, nameof(data));
-        }
+        var data = DecodeInternal(inputData);
 
         StartupDto startupDto;
         try
@@ -83,6 +67,7 @@ public class InGameStartupDataProcessingService(
             {
                 continue;
             }
+
             try
             {
                 var buildings = await coreDataRepository.GetBuildingsAsync(cityDto.CityId);

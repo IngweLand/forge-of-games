@@ -91,6 +91,16 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
+    public ValueTask<bool> IsMobileAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask OpenUrlAsync(string url, string target)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask RemoveLoadingIndicatorAsync()
     {
         throw new NotImplementedException();

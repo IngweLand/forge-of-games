@@ -7,19 +7,19 @@ using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Hosting;
 
 namespace Ingweland.Fog.Application.Server;
 
 public static class DependencyInjection
 {
-    public static void AddApplicationServices(this IHostApplicationBuilder builder)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        var services = builder.Services;
-
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
+
+        services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly); });
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();
@@ -44,6 +44,12 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
+        services.AddScoped<IPlayerRankingService, PlayerRankingService>();
+        services.AddScoped<IPlayerWithRankingsFactory, PlayerWithRankingsFactory>();
+        services.AddScoped<IStatsHubService, StatsHubService>();
+        services.AddScoped<IAllianceRankingService, AllianceRankingService>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
+
+        return services;
     }
 }

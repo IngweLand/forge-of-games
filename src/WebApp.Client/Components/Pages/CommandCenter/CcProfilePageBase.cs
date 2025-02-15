@@ -57,5 +57,7 @@ public abstract class CcProfilePageBase : CommandCenterPageBase
                 ProfileUiService.StateHasChanged -= ProfileUiServiceOnStateHasChanged;
             }
         }
+        
+        base.Dispose(disposing);
     }
 }

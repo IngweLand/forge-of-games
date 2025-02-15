@@ -1,6 +1,5 @@
 .navbar {
     padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .navbar-brand{
@@ -12,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 4px;
 }
 
 .nav-item ::deep .nav-link {
@@ -100,6 +100,21 @@
     filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
 }
 
+.bi-icon-stats-hub-nav-menu {
+    background-image: url("images/monitoring_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.bi-icon-more-nav-menu {
+    background-image: url("images/more_vert_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
+.bi-icon-about-nav-menu {
+    background-image: url("images/info_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg");
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+
 .navbar-toggler:focus {
     border: none;
 }
@@ -176,7 +191,7 @@
     }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1500px) {
     .navbar-brand{
         font-size: 18px;
     }

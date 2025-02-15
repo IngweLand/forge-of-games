@@ -17,10 +17,10 @@ builder.Services.AddOpenApi();
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 builder.Services.AddMudServices();
-builder.AddApplicationServices();
+builder.Services.AddApplicationServices();
 builder.AddWebAppServices();
 builder.Services.AddInfrastructureServices();
-builder.Services.AddTableStorage();
+builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddSharedServices();
 builder.Services.AddWebAppApplicationServices();
 builder.Services.AddLocalization();
@@ -75,5 +75,6 @@ app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(Ingweland.Fog.WebApp.Client._Imports).Assembly);
 
 app.MapHohApi();
+app.MapStatsApi();
 
 app.Run();

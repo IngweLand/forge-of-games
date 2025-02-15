@@ -1,0 +1,42 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.WebApp.Client.Models
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+
+@foreach (var item in MenuItems)
+{
+    @if (item.IsGroup)
+    {
+        <MudNavGroup Title="@Loc[item.ResourceKey]" Expanded="@item.Expanded" Icon="@item.Icon">
+            @foreach (var child in item.Children)
+            {
+                <MudNavLink Href="@child.Href" ActiveClass="fog-navlink-active" Class="fog-navlink" Match="@child.Match"
+                            Icon="@child.Icon">@Loc[child.ResourceKey]</MudNavLink>
+            }
+        </MudNavGroup>
+    }
+    else
+    {
+        <MudNavLink Href="@item.Href" ActiveClass="fog-navlink-active" Match="@item.Match" Class="fog-navlink"
+                    Icon="@item.Icon">@Loc[item.ResourceKey]</MudNavLink>
+    }
+}
+
+<style>
+    .fog-navlink {
+        text-decoration: none;
+    }
+
+    .fog-navlink-active {
+        color: var(--fog-text-on-dark-color);
+        background-color: rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+    }
+</style>
+
+@code {
+
+    [Parameter]
+    public required IReadOnlyCollection<NavMenuItem> MenuItems { get; set; }
+
+}

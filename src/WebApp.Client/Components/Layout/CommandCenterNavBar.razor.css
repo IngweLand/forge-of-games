@@ -1,15 +1,24 @@
 .menu-header{
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 100%;
-    height: 100px;
     align-items: center;
     justify-content: center;
+    padding: 12px 0;
 }
 .menu-header > img {
     width: 48px;
     aspect-ratio: 1/1;
     height: auto;
     object-fit: contain;
+}
+
+.menu-header > span {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 }
 
 .title {
@@ -35,9 +44,14 @@ sup {
 
 @media (min-width: 576px) {
     .menu-header{
-        height: 120px;
+        gap: 14px;
+        padding: 24px 0;
     }
     .menu-header > img {
         width: 64px;
+    }
+
+    .menu-header > span {
+        font-size: 20px;
     }
 }

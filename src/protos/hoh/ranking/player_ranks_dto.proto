@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "player_ranking_type.proto";
+import "player_rank_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PlayerRanksDTO {
+  repeated PlayerRankDto top_100 = 1;
+  repeated PlayerRankDto surrounding_ranking = 2;
+  PlayerRankingType type = 5;
+}

@@ -1,4 +1,4 @@
-namespace Ingweland.Fog.Shared.Static;
+namespace Ingweland.Fog.Shared.Constants;
 
 public static class KeyboardKeys
 {
