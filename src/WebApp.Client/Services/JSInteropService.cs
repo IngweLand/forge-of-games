@@ -19,4 +19,14 @@ public class JSInteropService(IJSRuntime jsRuntime) : IJSInteropService
     {
         return jsRuntime.InvokeAsync<bool>("Fog.Webapp.Common.copyToClipboard", payload);
     }
+
+    public ValueTask<bool> IsMobileAsync()
+    {
+        return jsRuntime.InvokeAsync<bool>("Fog.Webapp.Common.isMobile");
+    }
+
+    public ValueTask OpenUrlAsync(string url, string target)
+    {
+        return jsRuntime.InvokeVoidAsync("open", url, target);
+    }
 }

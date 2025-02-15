@@ -807,6 +807,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Common_Search {
+            get {
+                return ResourceManager.GetString("Common.Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Common_Settings {
@@ -1032,6 +1041,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forge of Games: The ultimate Heroes of History wiki, resource and tool hub. Discover campaign details, hero information, and more..
+        /// </summary>
+        public static string Home_Meta_Description {
+            get {
+                return ResourceManager.GetString("Home.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History, wiki, strategy game, game guide, game tools, Innogames.
+        /// </summary>
+        public static string Home_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Home.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import your in-game data.
         /// </summary>
         public static string ImportInGameData_Headline {
@@ -1113,6 +1140,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        public static string Navigation_More {
+            get {
+                return ResourceManager.GetString("Navigation.More", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support Us.
         /// </summary>
         public static string Navigation_SupportUs {
@@ -1154,6 +1190,186 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string ShareDialog_ShareButton {
             get {
                 return ResourceManager.GetString("ShareDialog.ShareButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more..
+        /// </summary>
+        public static string StatsHub_Meta_Description {
+            get {
+                return ResourceManager.GetString("StatsHub.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center.
+        /// </summary>
+        public static string StatsHub_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("StatsHub.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stats Hub - Heroes of History Stats &amp; Leaderboards | Forge of Games.
+        /// </summary>
+        public static string StatsHub_PageTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string StatsHub_Player_Age {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ages.
+        /// </summary>
+        public static string StatsHub_Player_Ages {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Ages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alliance.
+        /// </summary>
+        public static string StatsHub_Player_Alliance {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Alliance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alliances.
+        /// </summary>
+        public static string StatsHub_Player_Alliances {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Alliances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string StatsHub_Player_Name {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Names.
+        /// </summary>
+        public static string StatsHub_Player_Names {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rank.
+        /// </summary>
+        public static string StatsHub_Player_Rank {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Rank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ranking Points.
+        /// </summary>
+        public static string StatsHub_Player_RankingPoints {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.RankingPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated on.
+        /// </summary>
+        public static string StatsHub_Player_UpdatedOn {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.UpdatedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World.
+        /// </summary>
+        public static string StatsHub_Player_World {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.World", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stats Hub.
+        /// </summary>
+        public static string StatsHub_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated on {0}.
+        /// </summary>
+        public static string StatsHub_UpdatedOn {
+            get {
+                return ResourceManager.GetString("StatsHub.UpdatedOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View All.
+        /// </summary>
+        public static string StatsHub_ViewAll {
+            get {
+                return ResourceManager.GetString("StatsHub.ViewAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beta world.
+        /// </summary>
+        public static string StatsHub_Worlds_BetaWorld {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.BetaWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main world.
+        /// </summary>
+        public static string StatsHub_Worlds_MainWorld {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.MainWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Players on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_PlayerListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.PlayerListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top players on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopPlayerListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopPlayerListTitle", resourceCulture);
             }
         }
         

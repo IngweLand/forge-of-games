@@ -12,10 +12,10 @@ public class FogTheme
         },
         Typography = new Typography()
         {
-            Default = new Default()
+            Default = new DefaultTypography()
             {
                 FontFamily = ["Noto Sans", "Segoe UI", "Helvetica Neue", "Arial", "sans-serif"],
             },
-        }
+        },
     };
 }

@@ -132,5 +132,9 @@ window.Fog.Webapp.Common = {
             return false;
         }
     },
+    
+    isMobile: () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    },
 };
 

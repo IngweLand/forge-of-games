@@ -13,6 +13,9 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
     public string GetHohIconUrl(string assetId)
         => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{assetId}.png");
 
+    public string GetHohPlayerAvatarUrl(string avatarId)
+        => GetAssetUrl(assetsSettings.Value.HohPlayerAvatarsPath, $"{avatarId}.png");
+
     public string GetHohTechnologyImageUrl(string assetId, string extension) =>
         GetAssetUrl(assetsSettings.Value.HohImagesBasePath, "technologies", $"{assetId}{extension}");
 

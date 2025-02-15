@@ -1,0 +1,19 @@
+.page-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(375px, 100%), 1fr));
+    gap: 24px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .component-root {
+        padding: 24px;
+    }
+}
+

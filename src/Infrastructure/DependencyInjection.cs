@@ -1,9 +1,11 @@
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
-using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Entities;
 using Ingweland.Fog.Infrastructure.Repositories;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
@@ -12,19 +14,39 @@ namespace Ingweland.Fog.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static void AddInfrastructureServices(this IServiceCollection services)
+    public static IServiceCollection AddInfrastructureDbContext(this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("DefaultSQL");
+        if (string.IsNullOrEmpty(connectionString))
+        {
+            throw new InvalidOperationException("Connection string 'DefaultSQL' not found.");
+        }
+
+        services.AddDbContext<IFogDbContext, FogDbContext>(options => { options.UseSqlServer(connectionString); });
+        return services;
+    }
+
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-        
+
+        services.AddTableStorage();
+
         services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.TryAddSingleton<IHohDataProvider, DefaultHohDataProvider>();
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
+        services.AddScoped<IPlayerRankingTableRepository, PlayerRankingTableRepository>();
+        services.AddScoped<IAllianceRankingTableRepository, AllianceRankingTableRepository>();
+        services.AddScoped<IAllianceRankingRawDataTableRepository, AllianceRankingRawDataTableRepository>();
+
+        return services;
     }
 
-    public static IServiceCollection AddTableStorage(this IServiceCollection services)
+    private static IServiceCollection AddTableStorage(this IServiceCollection services)
     {
         services.AddSingleton<ITableStorageRepository<CcProfileTableEntity>>(sp =>
         {
@@ -32,19 +54,40 @@ public static class DependencyInjection
             return new TableStorageRepository<CcProfileTableEntity>(options.ConnectionString,
                 options.CommandCenterProfilesTable);
         });
-        
+
         services.AddSingleton<ITableStorageRepository<InGameStartupDataTableEntity>>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
             return new TableStorageRepository<InGameStartupDataTableEntity>(options.ConnectionString,
                 options.HohStartupDataTable);
         });
-        
+
         services.AddSingleton<ITableStorageRepository<HohCityTableEntity>>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
             return new TableStorageRepository<HohCityTableEntity>(options.ConnectionString,
                 options.CityPlannerCitiesTable);
+        });
+
+        services.AddSingleton<ITableStorageRepository<PlayerRankingTableEntity>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new TableStorageRepository<PlayerRankingTableEntity>(options.ConnectionString,
+                options.PlayerRankingsTable);
+        });
+        
+        services.AddSingleton<ITableStorageRepository<AllianceRankingTableEntity>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new TableStorageRepository<AllianceRankingTableEntity>(options.ConnectionString,
+                options.AllianceRankingsTable);
+        });
+        
+        services.AddSingleton<ITableStorageRepository<AllianceRankingRawDataTableEntity>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new TableStorageRepository<AllianceRankingRawDataTableEntity>(options.ConnectionString,
+                options.AllianceRankingsRawDataTable);
         });
 
         return services;

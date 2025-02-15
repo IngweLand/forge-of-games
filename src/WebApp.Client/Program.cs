@@ -6,6 +6,7 @@ using MudBlazor.Services;
 using System.Globalization;
 using Blazored.LocalStorage;
 using Ingweland.Fog.Shared;
+using Syncfusion.Blazor;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddSharedServices();
@@ -14,6 +15,7 @@ builder.Services.AddMudServices();
 builder.Services.AddWebAppApplicationServices();
 builder.Services.AddWebAppClientServices(builder.HostEnvironment.BaseAddress);
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddSyncfusionBlazor();
 builder.AddWebAppClientSettings();
 
 if (builder.HostEnvironment.IsProduction())

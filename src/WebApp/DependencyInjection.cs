@@ -4,6 +4,8 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Server.Settings;
+using Ingweland.Fog.WebApp.Client.Services;
+using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Ingweland.Fog.WebApp.Services;
 using Ingweland.Fog.WebApp.Services.Abstractions;
 
@@ -23,6 +25,8 @@ internal static class DependencyInjection
         services.AddScoped<IClientLocaleService, DummyClientLocaleService>();
         services.AddScoped<IPersistenceService, DummyPersistenceService>();
         services.AddScoped<IInGameStartupDataService, DummyInGameStartupDataService>();
+        services.AddScoped<IJSInteropService, DummyJSInteropService>();
+        services.AddScoped<IPageSetupService, PageSetupService>();
     }
 
     public static void AddWebAppSettings(this IHostApplicationBuilder builder)

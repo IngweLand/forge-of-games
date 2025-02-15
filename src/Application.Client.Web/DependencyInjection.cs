@@ -19,6 +19,8 @@ using Ingweland.Fog.Application.Client.Web.Services;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Client.Web.StatsHub;
+using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.Factories;
@@ -103,7 +105,12 @@ public static class DependencyInjection
         services.AddScoped<ICcProfileUiService, CcProfileUiService>();
         services.AddScoped<ICcHeroesPlaygroundUiService, CcHeroesPlaygroundUiService>();
         services.AddScoped<ISnapshotsComparisonViewModelFactory, SnapshotsComparisonViewModelFactory>();
+        services.AddScoped<IHohPlayerAvatarUrlProvider, HohPlayerAvatarUrlProvider>();
+        services.AddScoped<IStatsHubViewModelsFactory, StatsHubViewModelsFactory>();
+        services.AddScoped<IStatsHubUiService, StatsHubUiService>();
+        
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
+        
         services.AddScoped<CityPlannerSettings>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()

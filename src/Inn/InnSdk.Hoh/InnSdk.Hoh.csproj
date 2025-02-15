@@ -17,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Models.Hoh\Models.Hoh.csproj" />
         <ProjectReference Include="..\InnModels.Hoh\InnModels.Hoh.csproj"/>
     </ItemGroup>
 

@@ -30,6 +30,7 @@ internal static class DependencyInjection
         services.AddScoped<IJSInteropService, JSInteropService>();
         services.AddScoped<IClipboardService, ClipboardService>();
         services.AddScoped<IPersistenceService, PersistenceService>();
+        services.AddScoped<IPageSetupService, PageSetupService>();
 
         var refitSettings = new RefitSettings
         {
@@ -43,6 +44,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress);
         AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress);
         AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress);
+        AddRefitJsonApiClient<IStatsHubService>(services, baseAddress);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress, RefitSettings settings)

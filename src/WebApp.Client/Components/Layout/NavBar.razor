@@ -34,16 +34,16 @@
             </div>
 
             <div class="nav-item">
-                <NavLink class="nav-link" href="tools">
+                <NavLink class="nav-link" href="stats-hub">
                     <span aria-hidden="true"
-                          class="bi bi-icon_tools-nav-menu"></span> @Loc[FogResource.Navigation_Tools]
+                          class="bi bi-icon-stats-hub-nav-menu"></span> @Loc[FogResource.StatsHub_Title]
                 </NavLink>
             </div>
 
             <div class="nav-item">
-                <NavLink class="nav-link" href="heroes">
+                <NavLink class="nav-link" href="tools">
                     <span aria-hidden="true"
-                          class="bi bi-icon-hud-heroes-nav-menu"></span> @Loc[FogResource.Hoh_Heroes]
+                          class="bi bi-icon_tools-nav-menu"></span> @Loc[FogResource.Navigation_Tools]
                 </NavLink>
             </div>
 
@@ -54,13 +54,19 @@
                           class="bi bi-icon-hud-battle-nav-menu"></span> @Loc[FogResource.Hoh_Battle]
                 </a>
                 <ul class="dropdown-menu">
-                    <li >
+                    <li>
+                        <NavLink class="nav-link" href="heroes">
+                    <span aria-hidden="true"
+                          class="bi bi-icon-hud-heroes-nav-menu"></span> @Loc[FogResource.Hoh_Heroes]
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink class="nav-link" href="campaign">
                             <span aria-hidden="true"
                                   class="bi bi-icon-hud-map-nav-menu"></span>@Loc[FogResource.Navigation_Campaign]
                         </NavLink>
                     </li>
-                    <li >
+                    <li>
                         <NavLink class="nav-link" href="treasure-hunt-campaign">
                             <span aria-hidden="true"
                                   class="bi bi-icon-hud-battle-nav-menu"></span>@Loc[FogResource.Navigation_TreasureHunt]
@@ -69,30 +75,38 @@
                 </ul>
             </div>
 
-            <div class="nav-item">
-                <NavLink class="nav-link" href="buildings">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                   aria-expanded="false">
                     <span aria-hidden="true"
-                          class="bi bi-icon-hud-build-nav-menu"></span> @Loc[FogResource.Navigation_Buildings]
-                </NavLink>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link" href="wonders">
-                    <span aria-hidden="true"
-                          class="bi bi-icon_flat_allied_culture-nav-menu"></span> @Loc[FogResource.Navigation_Wonders]
-                </NavLink>
+                          class="bi bi-icon-more-nav-menu"></span> @Loc[FogResource.Navigation_More]
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <NavLink class="nav-link" href="buildings">
+                        <span aria-hidden="true"
+                              class="bi bi-icon-hud-build-nav-menu"></span> @Loc[FogResource.Navigation_Buildings]
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink class="nav-link" href="wonders">
+                        <span aria-hidden="true"
+                              class="bi bi-icon_flat_allied_culture-nav-menu"></span> @Loc[FogResource.Navigation_Wonders]
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink class="nav-link" href="about">
+                             <span aria-hidden="true"
+                                   class="bi bi-icon-about-nav-menu"></span> @Loc[FogResource.Navigation_About]
+                        </NavLink>
+                    </li>
+                </ul>
             </div>
 
             <div class="nav-item">
                 <NavLink class="nav-link" href="support-us">
                     <span aria-hidden="true"
                           class="bi bi-icon-support-us-nav-menu"></span> @Loc[FogResource.Navigation_SupportUs]
-                </NavLink>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link text-only-nav-link" href="about">
-                    @Loc[FogResource.Navigation_About]
                 </NavLink>
             </div>
 

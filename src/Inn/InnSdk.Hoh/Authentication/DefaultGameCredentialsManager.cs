@@ -4,12 +4,12 @@ using Microsoft.Extensions.Options;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Authentication;
 
-public class DefaultGameCredentialsManager(IOptions<List<HohServerCredentials>> credentialsOptions)
+public class DefaultGameCredentialsManager(IOptions<HohServerCredentials> credentialsOptions)
     : IGameCredentialsManager
 {
     public Task<HohServerCredentials?> GetAsync(GameWorldConfig world)
     {
-        return Task.FromResult(credentialsOptions.Value.FirstOrDefault(src => src.ServerId == world.Id));
+        return Task.FromResult(credentialsOptions.Value)!;
     }
 
     public Task ReportAuthIssueAsync(HohServerCredentials credentials, AuthErrorCode errorCode)

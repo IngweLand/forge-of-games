@@ -43,7 +43,7 @@ public abstract class CommandCenterPageBase : ComponentBase, IDisposable
     }
     
     [Inject]
-    protected IJSInteropService IjsInteropService { get; set; }
+    protected IJSInteropService IJsInteropService { get; set; }
 
     protected static DialogOptions GetDefaultDialogOptions()
     {
@@ -65,9 +65,9 @@ public abstract class CommandCenterPageBase : ComponentBase, IDisposable
     
     protected override async Task OnInitializedAsync()
     {
-        IjsInteropService.ResetScrollPositionAsync();
+        IJsInteropService.ResetScrollPositionAsync();
         await CommandCenterUiService.EnsureInitializedAsync();
-        await IjsInteropService.RemoveLoadingIndicatorAsync();
+        await IJsInteropService.RemoveLoadingIndicatorAsync();
         CommandCenterUiService.StateHasChanged += CommandCenterUiServiceOnStateHasChanged;
         IsInitialized = true;
     }

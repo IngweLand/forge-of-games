@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PlayerRankDto {
+  int32 id = 1;
+  string name = 2;
+  int32 avatar_id = 3;
+  string age = 4;
+  optional string alliance_name = 5;
+  int32 rank = 6;
+  int32 points = 7;
+}

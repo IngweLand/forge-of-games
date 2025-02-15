@@ -7,6 +7,7 @@ public class AssetsSettings
     public required string HohIconsPath { get; set; } = "images/hoh/icons";
     public required string HohImagesBasePath { get; set; } = "images/hoh";
     public required string HohUnitImagesPath { get; set; } = "images/hoh/units";
+    public required string HohPlayerAvatarsPath { get; set; } = "images/hoh/avatars";
     public required string HohUnitVideosPath { get; set; } = "videos/hoh/units";
     public required string HohVideosBasePath { get; set; } = "videos/hoh";
     public required string Version { get; set; } = "1";

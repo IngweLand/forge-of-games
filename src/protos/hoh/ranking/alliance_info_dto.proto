@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "alliance_leader_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceInfoDto {
+  AllianceLeaderDto leader = 7;
+}
