@@ -1,7 +1,6 @@
 @using SkiaSharp.Views.Blazor
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using Position = MudBlazor.Position
-@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 
 <MudPopoverProvider/>
 <MudDialogProvider/>
@@ -20,7 +19,7 @@
                                  ToggledIcon="material-symbols-outlined/left_panel_close"
                                  ToggledColor="Color.Inherit"
                                  ToggledChanged="ToggleLeftPanel"/>
-            <span>Hoh City Planner<sup>beta</sup></span>
+            <span>Hoh City Planner</span>
             <div>
                 <MudIconButton Icon="@Icons.Material.Outlined.Dashboard" OnClick="OpenCitiesDialog"
                                Class="fog-icon-light"/>

@@ -1,8 +1,33 @@
-@attribute [Route(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @using Ingweland.Fog.WebApp.Client.Components.Layout
+@using Microsoft.Extensions.Localization
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH)]
 @layout BlankLayout
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<FogResource> Loc
 
-<CityPlannerComponent/>
+@if (_isBrowser)
+{
+    <div class="city-planner">
+        <CityPlannerComponent/>
+    </div>
+
+    <div class="small-screen-message">
+        <span>@Loc[FogResource.CityPlanner_SmallScreenMessage]</span>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                   OnClick="@(() => NavigationManager.NavigateTo("/"))">@Loc[FogResource.Navigation_Home]</MudButton>
+    </div>
+}
+
+@code
+{
+    private bool _isBrowser;
+
+    protected override void OnInitialized()
+    {
+        _isBrowser = OperatingSystem.IsBrowser();
+    }
+}
 
