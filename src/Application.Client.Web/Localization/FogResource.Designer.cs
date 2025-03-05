@@ -483,6 +483,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This city planner isn’t optimized for smaller screens. Please visit again on a larger device or switch to a bigger screen..
+        /// </summary>
+        public static string CityPlanner_SmallScreenMessage {
+            get {
+                return ResourceManager.GetString("CityPlanner.SmallScreenMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Compare.
         /// </summary>
         public static string CityPlanner_Snapshots_Compare {

@@ -1,0 +1,23 @@
+.city-planner {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.small-screen-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    margin: 24px;
+    text-align: center;
+    gap: 16px;
+}
+
+@media (min-width: 880px) {
+    .city-planner {
+        display: block;
+    }
+    .small-screen-message {
+        display: none;
+    }
+}
