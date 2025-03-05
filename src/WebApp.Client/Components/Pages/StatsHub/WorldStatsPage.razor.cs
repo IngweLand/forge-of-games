@@ -41,15 +41,14 @@ public partial class WorldStatsPage : StatsHubPageBase
         {
             pageNumber = PageNumber.Value;
         }
-
-        if (!ApplicationState.TryTakeFromJson<PaginatedList<PlayerViewModel>>(
-                GetPersistenceKey(), out var restoredData))
+        
+        try
         {
-            _players = await GetData(pageNumber);
+            _players = await LoadWithPersistenceAsync(GetPersistenceKey(), async () => await GetData(pageNumber));
         }
-        else
+        catch (OperationCanceledException _)
         {
-            _players = restoredData;
+            return;
         }
 
         _pageNumber = pageNumber;
@@ -63,16 +62,8 @@ public partial class WorldStatsPage : StatsHubPageBase
 
         if (OperatingSystem.IsBrowser())
         {
-            await IJsInteropService.RemoveLoadingIndicatorAsync();
             IsInitialized = true;
         }
-    }
-
-    protected override Task PersistData()
-    {
-        ApplicationState.PersistAsJson(GetPersistenceKey(), _players);
-
-        return Task.CompletedTask;
     }
 
     private Task<PaginatedList<PlayerViewModel>> GetData(int pageNumber)
@@ -120,7 +111,7 @@ public partial class WorldStatsPage : StatsHubPageBase
 
     private async Task Search()
     {
-        if (await IJsInteropService.IsMobileAsync())
+        if (await JsInteropService.IsMobileAsync())
         {
             await _playerNameSearchField.BlurAsync();
         }

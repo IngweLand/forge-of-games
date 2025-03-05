@@ -1,120 +1,177 @@
+@rendermode InteractiveWebAssembly
+@inject NavigationManager NavigationManager
+@implements IBrowserViewportObserver
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Models
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Microsoft.Extensions.Localization
+@using MudBlazor.Services
+@implements IAsyncDisposable
+@inject IAssetUrlProvider AssetUrlProvider
+@inject IJSInteropService JsInteropService
 @inject IStringLocalizer<FogResource> Loc
+@inject IMainMenuService MainMenuService
+@inject IPageMetadataService PageMetadataService
 
-<nav class="navbar navbar-expand-xl navbar-dark sticky-lg-top"
-     style="background-color: var(--fog-navigation-bar-color)">
-    <a class="navbar-brand" href="#">Forge of Games</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-            <div class="nav-item">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-flat-home-nav-menu"></span> @Loc[FogResource.Navigation_Home]
-                </NavLink>
-            </div>
+<MudAppBar ToolBarClass="user-select-none" Fixed="false" Class="command-center-app-bar" Elevation="0"
+           Color="Color.Primary" Dense="true">
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+                   OnClick="@(e => DrawerToggle())"/>
+    <span class="nav-bar-title" @onclick="NavigateToCurrentHome">@_pageMetadata.Title</span>
+    <MudSpacer/>
+    <MudTooltip Text="@Loc[FogResource.Navigation_SupportUs]">
+        <MudIconButton Icon="@Icons.Material.Outlined.VolunteerActivism"
+                       Color="Color.Inherit"
+                       OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SUPPORT_US_PATH))"/>
+    </MudTooltip>
+    @if (_currentWidth > 575)
+    {
+        <MudTooltip Text="GitHub">
+            <MudIconButton Icon="@Icons.Custom.Brands.GitHub"
+                           Color="Color.Inherit"
+                           OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_GITHUB_URL))"/>
+        </MudTooltip>
+        <MudTooltip Text="Discord">
+            <MudIconButton Icon="@Icons.Custom.Brands.Discord"
+                           Color="Color.Inherit"
+                           OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_DISCORD_URL))"/>
 
-            <div class="nav-item">
-                <NavLink class="nav-link" href="city-planner" target="_blank">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-city-planner-nav-menu"></span> @Loc[FogResource.CityPlanner_Title]
-                </NavLink>
-            </div>
+        </MudTooltip>
+        <MudTooltip Text="@Loc[FogResource.Common_Help]">
+            <MudIconButton Icon="@Icons.Material.Outlined.Help"
+                           Color="Color.Inherit" Edge="Edge.End"
+                           OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))"/>
+        </MudTooltip>
+    }
+    else
+    {
+        <MudMenu Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit">
+            <MudMenuItem Icon="@Icons.Custom.Brands.GitHub"
+                         Color="Color.Inherit"
+                         OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_GITHUB_URL))">GitHub
+            </MudMenuItem>
+            <MudMenuItem Icon="@Icons.Custom.Brands.Discord"
+                         Color="Color.Inherit"
+                         OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_DISCORD_URL))">Discord
+            </MudMenuItem>
+            <MudMenuItem Icon="@Icons.Material.Outlined.Help"
+                         Color="Color.Inherit" Edge="Edge.End"
+                         OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))">
+                @Loc[FogResource.Common_Help]
+            </MudMenuItem>
+        </MudMenu>
+    }
 
-            <div class="nav-item">
-                <NavLink class="nav-link" href="command-center">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-command-center-nav-menu"></span> @Loc[FogResource.CommandCenter_Title]
-                </NavLink>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link" href="stats-hub">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-stats-hub-nav-menu"></span> @Loc[FogResource.StatsHub_Title]
-                </NavLink>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link" href="tools">
-                    <span aria-hidden="true"
-                          class="bi bi-icon_tools-nav-menu"></span> @Loc[FogResource.Navigation_Tools]
-                </NavLink>
-            </div>
-
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-hud-battle-nav-menu"></span> @Loc[FogResource.Hoh_Battle]
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <NavLink class="nav-link" href="heroes">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-hud-heroes-nav-menu"></span> @Loc[FogResource.Hoh_Heroes]
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink class="nav-link" href="campaign">
-                            <span aria-hidden="true"
-                                  class="bi bi-icon-hud-map-nav-menu"></span>@Loc[FogResource.Navigation_Campaign]
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink class="nav-link" href="treasure-hunt-campaign">
-                            <span aria-hidden="true"
-                                  class="bi bi-icon-hud-battle-nav-menu"></span>@Loc[FogResource.Navigation_TreasureHunt]
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-more-nav-menu"></span> @Loc[FogResource.Navigation_More]
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <NavLink class="nav-link" href="buildings">
-                        <span aria-hidden="true"
-                              class="bi bi-icon-hud-build-nav-menu"></span> @Loc[FogResource.Navigation_Buildings]
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink class="nav-link" href="wonders">
-                        <span aria-hidden="true"
-                              class="bi bi-icon_flat_allied_culture-nav-menu"></span> @Loc[FogResource.Navigation_Wonders]
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink class="nav-link" href="about">
-                             <span aria-hidden="true"
-                                   class="bi bi-icon-about-nav-menu"></span> @Loc[FogResource.Navigation_About]
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link" href="support-us">
-                    <span aria-hidden="true"
-                          class="bi bi-icon-support-us-nav-menu"></span> @Loc[FogResource.Navigation_SupportUs]
-                </NavLink>
-            </div>
-
-            <div class="nav-item">
-                <NavLink class="nav-link" href="https://github.com/IngweLand/forge-of-games" target="_blank">
-                    <span><i class="fa-brands fa-github fa-2xl" style="color: #FBE0C6;"></i></span>
-                </NavLink>
-            </div>
-        </ul>
+</MudAppBar>
+<MudDrawer Fixed="true" Class="mud-drawer-fixed" Color="Color.Primary" Variant="DrawerVariant.Temporary"
+           @bind-Open="@_drawerOpen">
+    <div class="menu-header">
+        <span>@Loc[FogResource.BrandName]</span>
+        @if (_pageMetadata.Icon != null)
+        {
+            <img class=" command-center-card-icon" src="@_pageMetadata.Icon"/>
+        }
     </div>
-</nav>
+
+    <MudNavMenu>
+        <NavMenuSection MenuItems="_mainMenuItems"/>
+    </MudNavMenu>
+    <MudSpacer/>
+    <div class="menu-footer">
+        <LanguageSelectorComponent/>
+        <div class="copyright">
+            <span>© @(DateTime.Now.ToString("yyyy")) Forge of Games</span>
+            <span>@Loc[FogResource.Common_AllRightsReserved]</span>
+        </div>
+    </div>
+</MudDrawer>
+
+@code {
+    private PageMetadata _pageMetadata = null!;
+    private IReadOnlyCollection<NavMenuItem> _mainMenuItems = null!;
+
+    protected override void OnInitialized()
+    {
+        Setup();
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void Setup()
+    {
+        _pageMetadata = PageMetadataService.GetForCurrentPage();
+        _mainMenuItems = MainMenuService.GetMainMenuItems();
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        Setup();
+        StateHasChanged();
+    }
+
+    private void NavigateToCurrentHome()
+    {
+        if (NavigationManager.Uri == NavigationManager.ToAbsoluteUri(_pageMetadata.CurrentHomePath).AbsoluteUri)
+        {
+            return;
+        }
+
+        NavigationManager.NavigateTo(_pageMetadata.CurrentHomePath);
+    }
+
+    private async Task OpenPage(string path)
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        await JsInteropService.OpenUrlAsync(path, "_blank");
+    }
+
+    private bool _drawerOpen = false;
+
+    private void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+
+    private int _currentWidth;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await BrowserViewportService.UnsubscribeAsync(this);
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();
+
+    ResizeOptions IBrowserViewportObserver.ResizeOptions { get; } = new()
+    {
+        NotifyOnBreakpointOnly = false,
+        ReportRate = 200,
+    };
+
+    Task IBrowserViewportObserver.NotifyBrowserViewportChangeAsync(BrowserViewportEventArgs browserViewportEventArgs)
+    {
+        _currentWidth = browserViewportEventArgs.BrowserWindowSize.Width;
+
+        return InvokeAsync(StateHasChanged);
+    }
+
+}

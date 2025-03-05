@@ -27,13 +27,27 @@ builder.Services.AddInfrastructureServices();
 builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddScoped<IInGameDataParsingService, InGameDataParsingService>();
+builder.Services.AddTransient<DatabaseWarmUpService>();
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services
 //     .AddApplicationInsightsTelemetryWorkerService()
 //     .ConfigureFunctionsApplicationInsights();
-builder.Services.AddLogging(logging =>
+var customEnvironment = builder.Configuration.GetValue<string>("CustomEnvironment");
+if(customEnvironment is "Development" or "Staging")
 {
-    logging.SetMinimumLevel(LogLevel.Information);
-    logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
-});
+    builder.Services.AddLogging(logging =>
+    {
+        logging.SetMinimumLevel(LogLevel.Information);
+        logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Information);
+    });
+}
+else
+{
+    builder.Services.AddLogging(logging =>
+    {
+        logging.SetMinimumLevel(LogLevel.Information);
+        logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
+    });
+}
+
 builder.Build().Run();

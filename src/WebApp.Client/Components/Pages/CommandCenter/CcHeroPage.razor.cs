@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
@@ -17,9 +16,15 @@ public partial class CcHeroPage : CommandCenterPageBase
     [Inject]
     private ICcProfileUiService ProfileUiService { get; set; }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+        
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+        
         if (string.IsNullOrWhiteSpace(ProfileId))
         {
             _heroProfileViewModel = await PlaygroundUiService.GetHeroProfileAsync(HeroProfileId);

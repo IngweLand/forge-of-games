@@ -26,13 +26,8 @@ public class CommandCenterService(
 
     public async Task<CommandCenterDataDto> GetCommandCenterDataAsync()
     {
-        var sw = new Stopwatch();
-        sw.Start();
-
         if (cache.TryGetValue(GetKey(), out CommandCenterDataDto? cachedResult) && cachedResult != null)
         {
-            sw.Stop();
-            Console.Out.WriteLine(sw.Elapsed);
             return cachedResult;
         }
 
@@ -53,8 +48,6 @@ public class CommandCenterService(
             barracks.AddRange(await cityService.GetBarracks(unitType));
         }
 
-        sw.Stop();
-        Console.Out.WriteLine(sw.Elapsed);
         var result = new CommandCenterDataDto()
         {
             Heroes = heroes,

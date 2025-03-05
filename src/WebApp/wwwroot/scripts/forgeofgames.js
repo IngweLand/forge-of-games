@@ -116,10 +116,17 @@ window.Fog.Webapp.Common = {
         window.scrollTo(0, 0);
     },
 
-    removeLoadingIndicator:  () => {
-        const loadingElement = document.getElementById('fog-loading-indicator');
+    hidePageLoadingIndicator:  () => {
+        const loadingElement = document.getElementById('page-loading-indicator');
         if (loadingElement) {
-            loadingElement.remove();
+            loadingElement.style.display = 'none';
+        }
+    },
+
+    showPageLoadingIndicator:  () => {
+        const loadingElement = document.getElementById('page-loading-indicator');
+        if (loadingElement) {
+            loadingElement.style.display = 'flex';
         }
     },
 

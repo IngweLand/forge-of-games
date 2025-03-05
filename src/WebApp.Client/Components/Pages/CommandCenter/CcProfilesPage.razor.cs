@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.WebApp.Client.Components.Elements;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
@@ -16,9 +17,10 @@ public partial class CcProfilesPage : CommandCenterPageBase
     [Inject]
     private IInGameStartupDataService InGameStartupDataService { get; set; }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+        
         _profiles = await CommandCenterUiService.GetProfiles();
     }
 
@@ -49,51 +51,11 @@ public partial class CcProfilesPage : CommandCenterPageBase
         OpenProfile(profileId);
     }
 
-    private async Task HandleImportData(string data)
+    private void NavigateTo(string path)
     {
-        string? error = null;
-        ResourceCreatedResponse? response = null;
-        try
-        {
-            response = await InGameStartupDataService.ImportInGameDataAsync(new ImportInGameStartupDataRequestDto()
-            {
-                InGameStartupData = data,
-            });
-        }
-        catch (Exception e)
-        {
-            error = "Could not import data.";
-        }
-
-        if (response != null)
-        {
-            NavigationManager.NavigateTo(response.WebResourceUrl);
-        }
-        else if (error != null)
-        {
-            Snackbar!.Add(error, Severity.Error);
-        }
+        NavigationManager.NavigateTo(path);
     }
-
-    private async Task ImportProfile()
-    {
-        var options = GetDefaultDialogOptions();
-        var dialog = await DialogService.ShowAsync<ImportInGameCityDialog>(null, options);
-        var result = await dialog.Result;
-        if (result == null || result.Canceled)
-        {
-            return;
-        }
-
-        var importedText = result.Data as string;
-        if (string.IsNullOrWhiteSpace(importedText))
-        {
-            return;
-        }
-
-        await HandleImportData(importedText);
-    }
-
+    
     private void OpenProfile(string profileId)
     {
         NavigationManager.NavigateTo($"command-center/profiles/{profileId}");

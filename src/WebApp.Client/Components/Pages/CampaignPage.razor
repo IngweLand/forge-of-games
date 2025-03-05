@@ -1,0 +1,40 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_CAMPAIGN_PATH)]
+@inject ICampaignUiService CampaignUiService;
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="container-fluid g-0">
+    <div class="list-group">
+        @if (_continents != null)
+        {
+            @foreach (var continent in _continents)
+            {
+                <div class="list-group-item list-group-item-secondary fw-bold">
+                    @continent.Name
+                </div>
+
+                @foreach (var region in continent.Regions)
+                {
+                    <NavLink class="list-group-item list-group-item-action"
+                             href="@($"campaign/region/{region.Id}")">@region.Name</NavLink>
+                }
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private IReadOnlyCollection<ContinentBasicViewModel>? _continents;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _continents = await LoadWithPersistenceAsync(
+            nameof(_continents),
+            async () => await CampaignUiService.GetCampaignContinentsBasicDataAsync()
+        );
+    }
+
+}

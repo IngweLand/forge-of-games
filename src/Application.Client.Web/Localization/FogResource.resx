@@ -276,26 +276,8 @@
     <data name="About.ListItem4" xml:space="preserve">
         <value>Use City Planner to optimize your city</value>
     </data>
-    <data name="CityPlanner.PageTitle" xml:space="preserve">
-        <value>HoH City Planner | Heroes of History City Building Tool | Forge of Games</value>
-    </data>
-    <data name="CityPlanner.Meta.Description" xml:space="preserve">
-        <value>Professional city planning tool for Heroes of History game. Import your in-game city, manage multiple layouts, analyze production and culture stats. Free web-based tool by Forge of Games.</value>
-    </data>
-    <data name="CityPlanner.Meta.Keywords" xml:space="preserve">
-        <value>Heroes of History, HoH, city planner, city builder, game tools, Forge of Games, city layout, production calculator, city management, browser game tools, HoH calculator, city planning, city optimization</value>
-    </data>
     <data name="CommandCenter.Title" xml:space="preserve">
         <value>Command Center</value>
-    </data>
-    <data name="CommandCenter.Meta.Description" xml:space="preserve">
-        <value>Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more.</value>
-    </data>
-    <data name="CommandCenter.Meta.Keywords" xml:space="preserve">
-        <value>Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center</value>
-    </data>
-    <data name="CommandCenter.PageTitle" xml:space="preserve">
-        <value>Command Center - Heroes of History Team Planner &amp; Battle Optimizer | Forge of Games</value>
     </data>
     <data name="CommandCenter.CreateNewProfileDialog.Title" xml:space="preserve">
         <value>Create new profile</value>
@@ -411,7 +393,7 @@
     <data name="Navigation.SupportUs" xml:space="preserve">
         <value>Support Us</value>
     </data>
-    <data name="SupportUs.PageTitle" xml:space="preserve">
+    <data name="SupportUs.Title" xml:space="preserve">
         <value>Support Forge of Games</value>
     </data>
     <data name="SupportUs.Message" xml:space="preserve">
@@ -449,15 +431,6 @@
     </data>
     <data name="CommandCenter.ShareCityDialog.Title" xml:space="preserve">
         <value>Share city</value>
-    </data>
-    <data name="StatsHub.PageTitle" xml:space="preserve">
-        <value>Stats Hub - Heroes of History Stats &amp; Leaderboards | Forge of Games</value>
-    </data>
-    <data name="StatsHub.Meta.Description" xml:space="preserve">
-        <value>Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more.</value>
-    </data>
-    <data name="StatsHub.Meta.Keywords" xml:space="preserve">
-        <value>Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center</value>
     </data>
     <data name="StatsHub.Title" xml:space="preserve">
         <value>Stats Hub</value>
@@ -516,10 +489,262 @@
     <data name="Common.Search" xml:space="preserve">
         <value>Search</value>
     </data>
+    <data name="CommandCenter.Menu.HeroPlaygrounds" xml:space="preserve">
+        <value>Hero Playgrounds</value>
+    </data>
+    <data name="Common.Help" xml:space="preserve">
+        <value>Help</value>
+    </data>
+    <data name="Navigation.Help" xml:space="preserve">
+        <value>Help</value>
+    </data>
+
+    <data name="Building.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Building.Meta.Description" xml:space="preserve">
+        <value>Explore the complete database of buildings in Heroes of History. Find construction and upgrade costs for Capital City, China, Egypt, and Vikings.</value>
+    </data>
+    <data name="Building.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History buildings, building stats, construction cost, upgrade cost, city planning</value>
+    </data>
+
+    <data name="Buildings.PageTitle" xml:space="preserve">
+        <value>Buildings Database | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Buildings.Meta.Description" xml:space="preserve">
+        <value>Discover all buildings in Heroes of History with their stats, levels, and resource requirements for construction and upgrades: Capital City, China, Egypt and Vikings</value>
+    </data>
+    <data name="Buildings.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History buildings, construction costs, upgrade requirements, city development</value>
+    </data>
+
+    <data name="Campaign.PageTitle" xml:space="preserve">
+        <value>Campaign Guide | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Campaign.Meta.Description" xml:space="preserve">
+        <value>Master the campaign in Heroes of History. Explore battles, enemy squads, rewards, and strategic insights for each region.</value>
+    </data>
+    <data name="Campaign.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History campaign, battles, strategy guide, enemy encounters, game progression</value>
+    </data>
+
+    <data name="Heroes.PageTitle" xml:space="preserve">
+        <value>Heroes Database | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Heroes.Meta.Description" xml:space="preserve">
+        <value>Explore Heroes of History heroes with detailed stats, abilities, progression resources, and historical backgrounds.</value>
+    </data>
+    <data name="Heroes.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History heroes, character stats, hero abilities, hero progression, historical figures</value>
+    </data>
+
+    <data name="Hero.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Hero.Meta.Description" xml:space="preserve">
+        <value>Explore Heroes of History heroes with detailed stats, abilities, progression resources, and historical backgrounds.</value>
+    </data>
+    <data name="Hero.Meta.Keywords" xml:space="preserve">
+        <value>hero, Heroes of History characters, hero stats, hero abilities, historical background</value>
+    </data>
+
+    <data name="Home.PageTitle" xml:space="preserve">
+        <value>Forge of Games | Heroes of History Tools &amp; Resources</value>
+    </data>
     <data name="Home.Meta.Description" xml:space="preserve">
-        <value>Forge of Games: The ultimate Heroes of History wiki, resource and tool hub. Discover campaign details, hero information, and more.</value>
+        <value>Forge of Games is your ultimate resource for Heroes of History. Access command center, city planner, leaderboards, tools, calculators and wiki to enhance your gameplay.</value>
     </data>
     <data name="Home.Meta.Keywords" xml:space="preserve">
-        <value>Heroes of History, wiki, strategy game, game guide, game tools, Innogames</value>
+        <value>Heroes of History, game tools, strategy guides, city planner, hero builder, command center, leaderboards, wiki</value>
+    </data>
+
+    <data name="CampaignRegion.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CampaignRegion.Meta.Description" xml:space="preserve">
+        <value>Master the campaign in Heroes of History. Explore battles, enemy squads, rewards, and strategic insights for each region.</value>
+    </data>
+    <data name="CampaignRegion.Meta.Keywords" xml:space="preserve">
+        <value>campaign region, Heroes of History battles, enemy squads, game progression</value>
+    </data>
+
+    <data name="ResearchCalculator.PageTitle" xml:space="preserve">
+        <value>Research Calculator | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="ResearchCalculator.Meta.Description" xml:space="preserve">
+        <value>Plan your research efficiently in Heroes of History. Calculate resource costs and unlock new technologies with ease.</value>
+    </data>
+    <data name="ResearchCalculator.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History research calculator, technology costs, research planning, resource management</value>
+    </data>
+
+    <data name="SupportUs.PageTitle" xml:space="preserve">
+        <value>Support Forge of Games | Heroes of History</value>
+    </data>
+    <data name="SupportUs.Meta.Description" xml:space="preserve">
+        <value>Help support Forge of Games! Your contributions keep our Heroes of History tools and guides free for all players.</value>
+    </data>
+    <data name="SupportUs.Meta.Keywords" xml:space="preserve">
+        <value>support Forge of Games, Heroes of History community, game tools donation</value>
+    </data>
+
+    <data name="Tools.PageTitle" xml:space="preserve">
+        <value>Game Tools | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Tools.Meta.Description" xml:space="preserve">
+        <value>Optimize your gameplay with Heroes of History tools. Use calculators for buildings, research, hero progression, and more.</value>
+    </data>
+    <data name="Tools.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History tools, building calculator, research calculator, hero planner, game utilities</value>
+    </data>
+
+    <data name="TreasureHunt.PageTitle" xml:space="preserve">
+        <value>Treasure Hunt | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="TreasureHunt.Meta.Description" xml:space="preserve">
+        <value>Navigate the Treasure Hunt in Heroes of History with our complete guide. View battle encounters, enemy squads, and rewards.</value>
+    </data>
+    <data name="TreasureHunt.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History treasure hunt, battle encounters, enemy squads, game rewards</value>
+    </data>
+
+    <data name="TreasureHuntStage.PageTitle" xml:space="preserve">
+        <value>{0} | Treasure Hunt | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="TreasureHuntStage.Meta.Description" xml:space="preserve">
+        <value>Navigate the Treasure Hunt in Heroes of History with our complete guide. View battle encounters, enemy squads, and rewards.</value>
+    </data>
+    <data name="TreasureHuntStage.Meta.Keywords" xml:space="preserve">
+        <value>treasure hunt stage, Heroes of History battles, game encounters, battle strategy</value>
+    </data>
+
+    <data name="WonderCostCalculator.PageTitle" xml:space="preserve">
+        <value>Wonder Cost Calculator | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="WonderCostCalculator.Meta.Description" xml:space="preserve">
+        <value>Calculate resources needed to upgrade world wonders in Heroes of History. Plan your progression efficiently with our detailed cost breakdown.</value>
+    </data>
+    <data name="WonderCostCalculator.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History wonders, wonder upgrade cost, wonder calculator, resource management, hoh tools</value>
+    </data>
+
+    <data name="Wonders.PageTitle" xml:space="preserve">
+        <value>Wonders Database | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Wonders.Meta.Description" xml:space="preserve">
+        <value>Explore the wonders of Heroes of History. View wonder levels, upgrade costs, and crate requirements for China, Egypt, and Vikings.</value>
+    </data>
+    <data name="Wonders.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History wonders, wonder database, wonder progression, upgrade cost, wonder crates</value>
+    </data>
+
+    <data name="Wonder.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Wonder.Meta.Description" xml:space="preserve">
+        <value>Explore the wonders of Heroes of History. View wonder levels, upgrade costs, and crate requirements for China, Egypt, and Vikings.</value>
+    </data>
+    <data name="Wonder.Meta.Keywords" xml:space="preserve">
+        <value>wonder, Heroes of History wonders, wonder progression, upgrade cost, game strategy</value>
+    </data>
+
+    <data name="About.PageTitle" xml:space="preserve">
+        <value>About Forge of Games | Heroes of History</value>
+    </data>
+    <data name="About.Meta.Description" xml:space="preserve">
+        <value>Learn more about Forge of Games, a dedicated resource hub for Heroes of History players. Tools, guides, and wiki to enhance your gameplay.</value>
+    </data>
+    <data name="About.Meta.Keywords" xml:space="preserve">
+        <value>Forge of Games, Heroes of History, game tools, strategy guides, hoh tools</value>
+    </data>
+
+    <data name="BuildingCostCalculator.PageTitle" xml:space="preserve">
+        <value>Building Cost Calculator | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="BuildingCostCalculator.Meta.Description" xml:space="preserve">
+        <value>Calculate the resources required to construct or upgrade buildings in Heroes of History. Compare upgrade vs. rebuild strategies.</value>
+    </data>
+    <data name="BuildingCostCalculator.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History buildings, building cost calculator, upgrade vs construct, building efficiency, city management</value>
+    </data>
+
+    <data name="Help.PageTitle" xml:space="preserve">
+        <value>Help &amp; Guides | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.Meta.Description" xml:space="preserve">
+        <value>Find helpful guides, FAQs, and tutorials for Heroes of History tools and gameplay. Learn how to optimize your experience.</value>
+    </data>
+    <data name="Help.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History help, FAQs, game guides, hoh tutorials, strategy guides</value>
+    </data>
+
+    <data name="Help.CityPlannerSnapshots.PageTitle" xml:space="preserve">
+        <value>City Planner Snapshots Guide | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.CityPlannerSnapshots.Meta.Description" xml:space="preserve">
+        <value>Learn how to use Snapshots in the City Planner tool to save, compare, and optimize different city layouts in Heroes of History.</value>
+    </data>
+    <data name="Help.CityPlannerSnapshots.Meta.Keywords" xml:space="preserve">
+        <value>city planner, Heroes of History, city snapshots, city layouts, city optimization, city management</value>
+    </data>
+
+    <data name="CityPlanner.PageTitle" xml:space="preserve">
+        <value>City Planner | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CityPlanner.Meta.Description" xml:space="preserve">
+        <value>Plan and optimize your city in Heroes of History. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency.</value>
+    </data>
+    <data name="CityPlanner.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History city planner, city building, city management, game optimization, production stats</value>
+    </data>
+
+    <data name="CommandCenter.PageTitle" xml:space="preserve">
+        <value>Command Center | Battle &amp; Team Planner | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CommandCenter.Meta.Description" xml:space="preserve">
+        <value>Optimize battle strategies in Heroes of History with the Command Center. Plan teams, analyze hero stats, and collaborate with alliances.</value>
+    </data>
+    <data name="CommandCenter.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History battle planner, team strategy, hero progression, command center tool</value>
+    </data>
+
+    <data name="StatsHub.PageTitle" xml:space="preserve">
+        <value>Stats Hub | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="StatsHub.Meta.Description" xml:space="preserve">
+        <value>Track leaderboards and statistics for Heroes of History. View top players, alliances, and world rankings.</value>
+    </data>
+    <data name="StatsHub.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History stats, player rankings, leaderboard, alliance statistics, game performance</value>
+    </data>
+    <data name="Help.CommandCenter.PageTitle" xml:space="preserve">
+        <value>Command Center Guide | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.CommandCenter.Meta.Description" xml:space="preserve">
+        <value>Learn how to use the Command Center tool in Heroes of History. Manage your heroes, optimize teams, and improve battle strategies.</value>
+    </data>
+    <data name="Help.CommandCenter.Meta.Keywords" xml:space="preserve">
+        <value>command center, Heroes of History, team planner, battle strategies, hero management, game optimization</value>
+    </data>
+
+    <data name="Help.ImportingInGameData.PageTitle" xml:space="preserve">
+        <value>Importing In-Game Data | Help | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.ImportingInGameData.Meta.Description" xml:space="preserve">
+        <value>Step-by-step guide to importing in-game data into Forge of Games. Learn how to import your city and heroes.</value>
+    </data>
+    <data name="Help.ImportingInGameData.Meta.Keywords" xml:space="preserve">
+        <value>import game data, Heroes of History sync, game data transfer, city planner import, command center import</value>
+    </data>
+
+    <data name="Help.BrowserExtension.PageTitle" xml:space="preserve">
+        <value>Browser Extension Guide | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.BrowserExtension.Meta.Description" xml:space="preserve">
+        <value>Discover how to use the HoH Helper browser extension to export city layouts and heroes, and to feed the leaderboards.</value>
+    </data>
+    <data name="Help.BrowserExtension.Meta.Keywords" xml:space="preserve">
+        <value>HoH helper, browser extension, Heroes of History tools, game data export, city planner extension, hero tracker</value>
     </data>
 </root>

@@ -1,0 +1,46 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject IUnitUiService UnitUiService
+@if (_heroes != null)
+{
+    <div class="d-flex flex-column ms-0 gap-2">
+        @foreach (var hero in _heroes)
+        {
+            <a class="list-group-item list-group-item-action" href="heroes/@hero.Id">
+                <div class="fog-container d-flex overflow-hidden ">
+                    <div class="unit-image-container flex-shrink-0">
+                        <img class="h-100 w-100 object-fit-cover" src="@hero.PortraitUrl">
+                    </div>
+
+                    <div class="flex-grow-1 d-flex px-3 align-items-center" style="min-width: 0">
+                        <span class="text-truncate">@hero.Name</span>
+                    </div>
+
+                    <div class="trailing-container d-flex flex-column m-0 p-0 flex-shrink-0"
+                         style="background-color: @hero.UnitColor">
+                        <div class="unit-type-icon-container">
+                            <img class="object-fit-contain" src="@hero.UnitTypeIconUrl">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _heroes = await LoadWithPersistenceAsync(
+            nameof(_heroes),
+            async () => await UnitUiService.GetHeroListAsync()
+        );
+    }
+}

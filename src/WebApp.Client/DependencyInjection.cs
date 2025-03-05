@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
+using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers;
 using Ingweland.Fog.WebApp.Client.Net;
@@ -24,13 +25,13 @@ internal static class DependencyInjection
 
         services.AddSingleton<ITypeSafeMemoryCache, TypeSafeMemoryCache>();
 
-        services.AddScoped<IUnitUiService, UnitUiService>();
         services.AddScoped<IHeroBuilderService, HeroBuilderService>();
         services.AddScoped<IClientLocaleService, ClientLocaleService>();
         services.AddScoped<IJSInteropService, JSInteropService>();
         services.AddScoped<IClipboardService, ClipboardService>();
         services.AddScoped<IPersistenceService, PersistenceService>();
-        services.AddScoped<IPageSetupService, PageSetupService>();
+        services.AddScoped<IMainMenuService, MainMenuService>();
+        services.AddScoped<IPageMetadataService, PageMetadataService>();
 
         var refitSettings = new RefitSettings
         {
@@ -41,10 +42,13 @@ internal static class DependencyInjection
         AddRefitProtobufApiClient<ICommonService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<IResearchService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
+        AddRefitProtobufApiClient<ICampaignService>(services, baseAddress, refitSettings);
+        AddRefitProtobufApiClient<ITreasureHuntService>(services, baseAddress, refitSettings);
         AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress);
         AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress);
         AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress);
         AddRefitJsonApiClient<IStatsHubService>(services, baseAddress);
+        AddRefitJsonApiClient<IWikipediaService>(services, baseAddress);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress, RefitSettings settings)
@@ -62,6 +66,7 @@ internal static class DependencyInjection
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
                 options.Retry.MaxRetryAttempts = 3;
+                options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
             });
     }
     
@@ -78,6 +83,7 @@ internal static class DependencyInjection
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
                 options.Retry.MaxRetryAttempts = 3;
+                options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
             });
     }
 

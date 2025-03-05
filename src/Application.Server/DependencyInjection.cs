@@ -2,14 +2,18 @@ using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.Factories;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Services;
+using Ingweland.Fog.Application.Core.Services.Hoh;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Services;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Polly;
 
 namespace Ingweland.Fog.Application.Server;
 
@@ -50,6 +54,13 @@ public static class DependencyInjection
         services.AddScoped<IAllianceRankingService, AllianceRankingService>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
 
+        services.AddHttpClient<IWikipediaService, WikipediaService>()
+            .AddStandardResilienceHandler(options =>
+            {
+                options.Retry.BackoffType = DelayBackoffType.Exponential;
+                options.Retry.MaxRetryAttempts = 3;
+            });
+        
         return services;
     }
 }

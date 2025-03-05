@@ -1,0 +1,47 @@
+.container {
+    line-height: 1.6;
+    background-color: var(--fog-surface-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.step {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+.step h3 {
+    color: #2c5282;
+    margin-top: 0;
+}
+
+.info {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #ebf8ff;
+    border-radius: 6px;
+    border-left: 4px solid #4299e1;
+}
+
+.privacy {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background-color: #f0fff4;
+    border-radius: 6px;
+    border-left: 4px solid #48bb78;
+}
+
+.privacy h2 {
+    color: #2f855a;
+    margin-top: 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

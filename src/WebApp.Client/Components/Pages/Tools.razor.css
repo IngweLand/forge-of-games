@@ -1,0 +1,38 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.root > * {
+    width: 100%;
+}
+
+.section-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+}
+
+.section-container > * {
+    width: 100%;
+}
+
+.section-name {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--fog-background-color);
+    color: var(--fog-text-on-background-color);
+    text-align: center;
+}
+
+.items-container {
+    display: flex;
+    flex-flow: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}

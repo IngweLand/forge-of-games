@@ -3,7 +3,6 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits StatsHubPageBase
-@rendermode PageRenderMode
 @if (IsInitialized)
 {
     <div class="page-container">
@@ -11,14 +10,18 @@
             <StatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_MainWorld]"
                 ViewAllUrl="/stats-hub/worlds/un1"
-                Players="@_topStats!.MainWorldPlayers"/>
+                Players="@_topStats?.MainWorldPlayers"/>
         </div>
         <div class="column">
             <StatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
                 ViewAllUrl="/stats-hub/worlds/zz1"
-                Players="@_topStats!.BetaWorldPlayers"/>
+                Players="@_topStats?.BetaWorldPlayers"/>
 
         </div>
     </div>
+}
+else
+{
+    <LoadingIndicator/>
 }

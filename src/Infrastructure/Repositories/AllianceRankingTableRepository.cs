@@ -17,10 +17,17 @@ public class AllianceRankingTableRepository(
     public async Task SaveAsync(IEnumerable<AllianceRank> rankings, string worldId, AllianceRankingType rankingType,
         DateOnly date)
     {
+        var rankingList = rankings as IList<AllianceRank> ?? rankings.ToList();
+        if (rankingList.Count == 0)
+        {
+            logger.LogInformation("No alliance rankings to add. World: {world}", worldId);
+            return;
+        }
+        
         logger.LogInformation("Starting to save alliance rankings: {@Summary}", new {worldId, rankingType});
 
         var pk = CreatePartitionKey(worldId, date, rankingType);
-        var rankingEntities = mapper.Map<List<AllianceRankingTableEntity>>(rankings,
+        var rankingEntities = mapper.Map<List<AllianceRankingTableEntity>>(rankingList,
             opt => { opt.Items[ResolutionContextKeys.ALLIANCE_RANKING_TYPE] = rankingType; });
         foreach (var entity in rankingEntities)
         {

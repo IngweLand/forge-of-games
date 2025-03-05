@@ -1,24 +1,20 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
+using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Localization;
 using MudBlazor;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
-public partial class AddSharedCityPage : ComponentBase
+public partial class AddSharedCityPage : FogPageBase
 {
     [Inject]
     private ICityPlannerSharingService CityPlannerSharingService { get; set; }
 
     [Inject]
     protected IDialogService DialogService { get; set; }
-
-    [Inject]
-    protected IStringLocalizer<FogResource> Loc { get; set; }
 
     [Inject]
     protected NavigationManager NavigationManager { get; set; }
@@ -28,13 +24,14 @@ public partial class AddSharedCityPage : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        if (string.IsNullOrWhiteSpace(SharedCityId))
+        await base.OnInitializedAsync();
+        
+        if (!OperatingSystem.IsBrowser())
         {
-            OpenMainPage();
             return;
         }
-
-        HohCity? city = null;
+        
+        HohCity? city;
         try
         {
             city = await CityPlannerSharingService.GetSharedCityAsync(SharedCityId!);

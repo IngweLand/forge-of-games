@@ -1,8 +1,10 @@
 using System.Globalization;
-using Ingweland.Fog.Shared;
 using Ingweland.Fog.Shared.Localization;
 using Ingweland.Fog.WebApp.Client.Models;
+using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.JSInterop;
+
+namespace Ingweland.Fog.WebApp.Client.Services;
 
 public class ClientLocaleService : IClientLocaleService
 {

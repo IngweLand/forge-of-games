@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Functions.Functions.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -17,7 +18,8 @@ public class AllianceRankingsReceiver(
     IInGameDataParsingService inGameDataParsingService,
     IAllianceRankingTableRepository allianceRankingTableRepository,
     IAllianceRankingRawDataTableRepository allianceRankingRawDataTableRepository,
-    IGameWorldsProvider gameWorldsProvider) : BaseRankingsReceiver(logger, gameWorldsProvider)
+    IGameWorldsProvider gameWorldsProvider,
+    DatabaseWarmUpService databaseWarmUpService) : RankingsReceiverBase(logger, gameWorldsProvider)
 {
     [Function("AllianceRankingsReceiver")]
     public async Task<IActionResult> Run(
@@ -26,6 +28,8 @@ public class AllianceRankingsReceiver(
         [Microsoft.Azure.Functions.Worker.Http.FromBody]
         InGameDataRequestDto inGameData)
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+        
         SetDebugCorsHeaders(req);
 
         if (!ValidateRequest(inGameData, GameEndpoints.AllianceRankingPath, out var worldId))

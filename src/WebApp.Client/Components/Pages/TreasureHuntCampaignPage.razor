@@ -1,0 +1,43 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_TREASURE_HUNT_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject ITreasureHuntUiService TreasureHuntUiService;
+@if (_difficulties != null)
+{
+    <div class="root">
+        @foreach (var difficulty in _difficulties)
+        {
+            <div class="fog-container">
+                <img class="difficulty-icon" src="@difficulty.IconUrl"/>
+                <div class="difficulty-text">@difficulty.Name</div>
+                <div class="stage-items-container">
+
+                    @foreach (var stage in difficulty.Stages)
+                    {
+                        <a href="@FogUrlBuilder.PageRoutes.TreasureHuntStage(difficulty: difficulty.Difficulty, stageIndex: stage.Index)">
+                            <div class="btn stage-btn"> @stage.Name</div>
+
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _difficulties = await LoadWithPersistenceAsync(
+            nameof(_difficulties),
+            async () => await TreasureHuntUiService.GetDifficultiesAsync()
+        );
+    }
+
+}

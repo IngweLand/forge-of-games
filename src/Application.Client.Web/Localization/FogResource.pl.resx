@@ -406,7 +406,7 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="Navigation.SupportUs" xml:space="preserve">
     <value>Wesprzyj nas</value>
 </data>
-    <data name="SupportUs.PageTitle" xml:space="preserve">
+    <data name="SupportUs.Title" xml:space="preserve">
     <value>Wesprzyj Forge of Games</value>
 </data>
     <data name="SupportUs.Message" xml:space="preserve">
@@ -445,4 +445,307 @@ Forge of Games nie jest powiązany ani oficjalnie związany z twórcami lub wyda
     <data name="CommandCenter.ShareCityDialog.Title" xml:space="preserve">
     <value>Udostępnij miasto</value>
 </data>
+    <data name="StatsHub.Worlds.TopPlayerListTitle" xml:space="preserve">
+        <value>Najlepsi gracze na {0}</value>
+    </data>
+    <data name="StatsHub.Worlds.PlayerListTitle" xml:space="preserve">
+        <value>Gracze na {0}</value>
+    </data>
+    <data name="StatsHub.Worlds.MainWorld" xml:space="preserve">
+        <value>Główny świat</value>
+    </data>
+    <data name="StatsHub.Worlds.BetaWorld" xml:space="preserve">
+        <value>Świat beta</value>
+    </data>
+    <data name="StatsHub.ViewAll" xml:space="preserve">
+        <value>Zobacz wszystkie</value>
+    </data>
+    <data name="StatsHub.UpdatedOn" xml:space="preserve">
+        <value>Zaktualizowano {0}</value>
+    </data>
+    <data name="StatsHub.Player.Name" xml:space="preserve">
+        <value>Imię</value>
+    </data>
+    <data name="StatsHub.Player.Alliance" xml:space="preserve">
+        <value>Sojusz</value>
+    </data>
+    <data name="StatsHub.Player.World" xml:space="preserve">
+        <value>Świat</value>
+    </data>
+    <data name="StatsHub.Player.RankingPoints" xml:space="preserve">
+        <value>Punkty rankingowe</value>
+    </data>
+    <data name="StatsHub.Player.Rank" xml:space="preserve">
+        <value>Ranga</value>
+    </data>
+    <data name="StatsHub.Player.Age" xml:space="preserve">
+        <value>Era</value>
+    </data>
+    <data name="StatsHub.Player.UpdatedOn" xml:space="preserve">
+        <value>Zaktualizowano</value>
+    </data>
+    <data name="StatsHub.Player.Alliances" xml:space="preserve">
+        <value>Sojusze</value>
+    </data>
+    <data name="StatsHub.Player.Ages" xml:space="preserve">
+        <value>Ery</value>
+    </data>
+    <data name="StatsHub.Player.Names" xml:space="preserve">
+        <value>Imiona</value>
+    </data>
+    <data name="Navigation.More" xml:space="preserve">
+        <value>Więcej</value>
+    </data>
+    <data name="Common.Search" xml:space="preserve">
+        <value>Szukaj</value>
+    </data>
+    <data name="CommandCenter.Menu.HeroPlaygrounds" xml:space="preserve">
+        <value>Pole treningowe bohaterów</value>
+    </data>
+    <data name="Common.Help" xml:space="preserve">
+        <value>Pomoc</value>
+    </data>
+    <data name="Navigation.Help" xml:space="preserve">
+        <value>Pomoc</value>
+    </data>
+
+    <data name="Building.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Building.Meta.Description" xml:space="preserve">
+        <value>Przeglądaj pełną bazę danych budynków w Heroes of History. Znajdź koszty budowy i ulepszeń dla Stolicy, Chin, Egiptu i Wikingów.</value>
+    </data>
+    <data name="Building.Meta.Keywords" xml:space="preserve">
+        <value>budynki Heroes of History, statystyki budynków, koszt budowy, koszt ulepszeń, planowanie miasta</value>
+    </data>
+
+    <data name="Buildings.PageTitle" xml:space="preserve">
+        <value>Baza danych budynków | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Buildings.Meta.Description" xml:space="preserve">
+        <value>Odkryj wszystkie budynki w Heroes of History wraz z ich statystykami, poziomami i wymaganiami dotyczącymi zasobów do budowy i ulepszeń: Stolica, Chiny, Egipt i Wikingowie.</value>
+    </data>
+    <data name="Buildings.Meta.Keywords" xml:space="preserve">
+        <value>budynki Heroes of History, koszty budowy, wymagania ulepszeń, rozwój miasta</value>
+    </data>
+
+    <data name="Campaign.PageTitle" xml:space="preserve">
+        <value>Przewodnik po kampanii | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Campaign.Meta.Description" xml:space="preserve">
+        <value>Opanuj kampanię w Heroes of History. Odkryj bitwy, wrogie oddziały, nagrody i strategiczne wskazówki dla każdego regionu.</value>
+    </data>
+    <data name="Campaign.Meta.Keywords" xml:space="preserve">
+        <value>kampania Heroes of History, bitwy, poradnik strategiczny, starcia z wrogami, postęp w grze</value>
+    </data>
+
+    <data name="Heroes.PageTitle" xml:space="preserve">
+        <value>Baza danych bohaterów | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Heroes.Meta.Description" xml:space="preserve">
+        <value>Odkryj bohaterów Heroes of History ze szczegółowymi statystykami, umiejętnościami, zasobami rozwoju i tłem historycznym.</value>
+    </data>
+    <data name="Heroes.Meta.Keywords" xml:space="preserve">
+        <value>bohaterowie Heroes of History, statystyki postaci, umiejętności bohaterów, rozwój bohaterów, postacie historyczne</value>
+    </data>
+
+    <data name="Hero.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Hero.Meta.Description" xml:space="preserve">
+        <value>Odkryj bohaterów Heroes of History ze szczegółowymi statystykami, umiejętnościami, zasobami rozwoju i tłem historycznym.</value>
+    </data>
+    <data name="Hero.Meta.Keywords" xml:space="preserve">
+        <value>bohater, postacie Heroes of History, statystyki bohatera, umiejętności bohatera, tło historyczne</value>
+    </data>
+
+    <data name="Home.PageTitle" xml:space="preserve">
+        <value>Forge of Games | Narzędzia i zasoby do Heroes of History</value>
+    </data>
+    <data name="Home.Meta.Description" xml:space="preserve">
+        <value>Forge of Games to Twoje najlepsze źródło informacji o Heroes of History. Uzyskaj dostęp do centrum dowodzenia, planera miasta, rankingów, narzędzi, kalkulatorów i wiki, aby ulepszyć swoją rozgrywkę.</value>
+    </data>
+    <data name="Home.Meta.Keywords" xml:space="preserve">
+        <value>Heroes of History, narzędzia do gry, poradniki strategiczne, planer miasta, kreator bohaterów, centrum dowodzenia, rankingi, wiki</value>
+    </data>
+
+    <data name="CampaignRegion.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CampaignRegion.Meta.Description" xml:space="preserve">
+        <value>Opanuj kampanię w Heroes of History. Odkryj bitwy, wrogie oddziały, nagrody i strategiczne wskazówki dla każdego regionu.</value>
+    </data>
+    <data name="CampaignRegion.Meta.Keywords" xml:space="preserve">
+        <value>region kampanii, bitwy Heroes of History, wrogie oddziały, postęp w grze</value>
+    </data>
+    <data name="ResearchCalculator.PageTitle" xml:space="preserve">
+        <value>Kalkulator Badań | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="ResearchCalculator.Meta.Description" xml:space="preserve">
+        <value>Planuj swoje badania efektywnie w Heroes of History. Oblicz koszty zasobów i odblokowuj nowe technologie z łatwością.</value>
+    </data>
+    <data name="ResearchCalculator.Meta.Keywords" xml:space="preserve">
+        <value>kalkulator badań Heroes of History, koszty technologii, planowanie badań, zarządzanie zasobami</value>
+    </data>
+
+    <data name="SupportUs.PageTitle" xml:space="preserve">
+        <value>Wspieraj Forge of Games | Heroes of History</value>
+    </data>
+    <data name="SupportUs.Meta.Description" xml:space="preserve">
+        <value>Pomóż wspierać Forge of Games! Twoje wsparcie pozwala nam utrzymać darmowe narzędzia i poradniki do Heroes of History.</value>
+    </data>
+    <data name="SupportUs.Meta.Keywords" xml:space="preserve">
+        <value>wspieraj Forge of Games, społeczność Heroes of History, darowizna na narzędzia do gry</value>
+    </data>
+
+    <data name="Tools.PageTitle" xml:space="preserve">
+        <value>Narzędzia do Gry | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Tools.Meta.Description" xml:space="preserve">
+        <value>Optymalizuj swoją rozgrywkę dzięki narzędziom do Heroes of History. Używaj kalkulatorów do budynków, badań, rozwoju bohaterów i nie tylko.</value>
+    </data>
+    <data name="Tools.Meta.Keywords" xml:space="preserve">
+        <value>narzędzia Heroes of History, kalkulator budynków, kalkulator badań, planer bohaterów, narzędzia do gry</value>
+    </data>
+
+    <data name="TreasureHunt.PageTitle" xml:space="preserve">
+        <value>Poszukiwanie Skarbów | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="TreasureHunt.Meta.Description" xml:space="preserve">
+        <value>Nawiguj po Poszukiwaniach Skarbów w Heroes of History dzięki naszemu kompletnemu przewodnikowi. Zobacz starcia, wrogie oddziały i nagrody.</value>
+    </data>
+    <data name="TreasureHunt.Meta.Keywords" xml:space="preserve">
+        <value>poszukiwanie skarbów Heroes of History, starcia, wrogie oddziały, nagrody w grze</value>
+    </data>
+
+    <data name="TreasureHuntStage.PageTitle" xml:space="preserve">
+        <value>{0} | Poszukiwanie Skarbów | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="TreasureHuntStage.Meta.Description" xml:space="preserve">
+        <value>Nawiguj po Poszukiwaniach Skarbów w Heroes of History dzięki naszemu kompletnemu przewodnikowi. Zobacz starcia, wrogie oddziały i nagrody.</value>
+    </data>
+    <data name="TreasureHuntStage.Meta.Keywords" xml:space="preserve">
+        <value>etap poszukiwania skarbów, bitwy Heroes of History, starcia w grze, strategia bitewna</value>
+    </data>
+
+    <data name="WonderCostCalculator.PageTitle" xml:space="preserve">
+        <value>Kalkulator Kosztów Cudów | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="WonderCostCalculator.Meta.Description" xml:space="preserve">
+        <value>Oblicz zasoby potrzebne do ulepszenia cudów świata w Heroes of History. Planuj swój rozwój efektywnie dzięki szczegółowym kosztom.</value>
+    </data>
+    <data name="WonderCostCalculator.Meta.Keywords" xml:space="preserve">
+        <value>cuda Heroes of History, koszt ulepszenia cudu, kalkulator cudów, zarządzanie zasobami, narzędzia HoH</value>
+    </data>
+
+    <data name="Wonders.PageTitle" xml:space="preserve">
+        <value>Baza Cudów | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Wonders.Meta.Description" xml:space="preserve">
+        <value>Odkryj cuda w Heroes of History. Sprawdź poziomy cudów, koszty ulepszeń i wymagania dotyczące skrzynek dla Chin, Egiptu i Wikingów.</value>
+    </data>
+    <data name="Wonders.Meta.Keywords" xml:space="preserve">
+        <value>cuda Heroes of History, baza cudów, rozwój cudów, koszt ulepszenia, skrzynki cudów</value>
+    </data>
+
+    <data name="Wonder.PageTitle" xml:space="preserve">
+        <value>{0} | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Wonder.Meta.Description" xml:space="preserve">
+        <value>Odkryj cuda w Heroes of History. Sprawdź poziomy cudów, koszty ulepszeń i wymagania dotyczące skrzynek dla Chin, Egiptu i Wikingów.</value>
+    </data>
+    <data name="Wonder.Meta.Keywords" xml:space="preserve">
+        <value>cud, cuda Heroes of History, rozwój cudów, koszt ulepszenia, strategia gry</value>
+    </data>
+
+    <data name="About.PageTitle" xml:space="preserve">
+        <value>O Forge of Games | Heroes of History</value>
+    </data>
+    <data name="About.Meta.Description" xml:space="preserve">
+        <value>Dowiedz się więcej o Forge of Games, centrum zasobów dla graczy Heroes of History. Narzędzia, poradniki i wiki, które poprawią Twoją rozgrywkę.</value>
+    </data>
+    <data name="About.Meta.Keywords" xml:space="preserve">
+        <value>Forge of Games, Heroes of History, narzędzia do gry, poradniki strategiczne, narzędzia HoH</value>
+    </data>
+
+    <data name="BuildingCostCalculator.PageTitle" xml:space="preserve">
+        <value>Kalkulator Kosztów Budowy | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="BuildingCostCalculator.Meta.Description" xml:space="preserve">
+        <value>Oblicz zasoby potrzebne do budowy lub ulepszenia budynków w Heroes of History. Porównaj strategię ulepszania z odbudową.</value>
+    </data>
+    <data name="BuildingCostCalculator.Meta.Keywords" xml:space="preserve">
+        <value>budynki Heroes of History, kalkulator kosztów budowy, ulepszanie vs budowa, efektywność budynków, zarządzanie miastem</value>
+    </data>
+    <data name="Help.PageTitle" xml:space="preserve">
+        <value>Pomoc i Poradniki | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.Meta.Description" xml:space="preserve">
+        <value>Znajdź pomocne poradniki, FAQ i samouczki dotyczące narzędzi i rozgrywki w Heroes of History. Dowiedz się, jak zoptymalizować swoje doświadczenie.</value>
+    </data>
+    <data name="Help.Meta.Keywords" xml:space="preserve">
+        <value>pomoc Heroes of History, FAQ, poradniki do gry, samouczki HoH, poradniki strategiczne</value>
+    </data>
+    <data name="Help.ImportingInGameData.PageTitle" xml:space="preserve">
+        <value>Importowanie Danych z Gry | Pomoc | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.ImportingInGameData.Meta.Description" xml:space="preserve">
+        <value>Przewodnik krok po kroku dotyczący importowania danych z gry do Forge of Games. Dowiedz się, jak zaimportować swoje miasto i bohaterów.</value>
+    </data>
+    <data name="Help.ImportingInGameData.Meta.Keywords" xml:space="preserve">
+        <value>import danych z gry, synchronizacja Heroes of History, transfer danych gry, import planera miasta, import centrum dowodzenia</value>
+    </data>
+
+    <data name="Help.BrowserExtension.PageTitle" xml:space="preserve">
+        <value>Przewodnik po Rozszerzeniu Przeglądarkowym | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.BrowserExtension.Meta.Description" xml:space="preserve">
+        <value>Dowiedz się, jak używać rozszerzenia przeglądarkowego HoH Helper do eksportu układów miasta i bohaterów oraz do aktualizacji rankingów.</value>
+    </data>
+    <data name="Help.BrowserExtension.Meta.Keywords" xml:space="preserve">
+        <value>HoH Helper, rozszerzenie przeglądarkowe, narzędzia Heroes of History, eksport danych gry, rozszerzenie planera miasta, śledzenie bohaterów</value>
+    </data>
+
+    <data name="Help.CityPlannerSnapshots.PageTitle" xml:space="preserve">
+        <value>Przewodnik po Migawkach Planera Miasta | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.CityPlannerSnapshots.Meta.Description" xml:space="preserve">
+        <value>Dowiedz się, jak używać funkcji Migawki w narzędziu Planer Miasta, aby zapisywać, porównywać i optymalizować różne układy miasta w Heroes of History.</value>
+    </data>
+    <data name="Help.CityPlannerSnapshots.Meta.Keywords" xml:space="preserve">
+        <value>planer miasta, Heroes of History, migawki miasta, układy miasta, optymalizacja miasta, zarządzanie miastem</value>
+    </data>
+
+    <data name="CommandCenter.PageTitle" xml:space="preserve">
+        <value>Centrum Dowodzenia | Planer Bitew i Drużyn | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="CommandCenter.Meta.Description" xml:space="preserve">
+        <value>Optymalizuj strategie bitewne w Heroes of History dzięki Centrum Dowodzenia. Planuj drużyny, analizuj statystyki bohaterów i współpracuj z sojuszami.</value>
+    </data>
+    <data name="CommandCenter.Meta.Keywords" xml:space="preserve">
+        <value>planer bitew Heroes of History, strategia drużynowa, rozwój bohaterów, narzędzie centrum dowodzenia</value>
+    </data>
+    <data name="Help.CommandCenter.PageTitle" xml:space="preserve">
+        <value>Przewodnik po Centrum Dowodzenia | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="Help.CommandCenter.Meta.Description" xml:space="preserve">
+        <value>Dowiedz się, jak korzystać z narzędzia Centrum Dowodzenia w Heroes of History. Zarządzaj bohaterami, optymalizuj drużyny i udoskonalaj strategie bitewne.</value>
+    </data>
+    <data name="Help.CommandCenter.Meta.Keywords" xml:space="preserve">
+        <value>centrum dowodzenia, Heroes of History, planer drużyn, strategie bitewne, zarządzanie bohaterami, optymalizacja gry</value>
+    </data>
+
+    <data name="StatsHub.PageTitle" xml:space="preserve">
+        <value>Centrum Statystyk | Heroes of History | Forge of Games</value>
+    </data>
+    <data name="StatsHub.Meta.Description" xml:space="preserve">
+        <value>Śledź rankingi i statystyki w Heroes of History. Zobacz najlepszych graczy, sojusze i rankingi światowe.</value>
+    </data>
+    <data name="StatsHub.Meta.Keywords" xml:space="preserve">
+        <value>statystyki Heroes of History, rankingi graczy, tabela liderów, statystyki sojuszy, wydajność gry</value>
+    </data>
+    <data name="StatsHub.Title" xml:space="preserve">
+        <value>Centrum Statystyk</value>
+    </data>
+
 </root>

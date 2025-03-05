@@ -1,36 +1,19 @@
-@page "/tools/research-calculator"
+@attribute [Route(FogUrlBuilder.PageRoutes.RESEARCH_CALCULATOR_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
+@using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
-@using Ingweland.Fog.WebApp.Client.Components.Elements
-@using Microsoft.Extensions.Localization
-@rendermode InteractiveWebAssembly
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IResearchCalculatorService ResearchCalculatorService
-@inject IStringLocalizer<FogResource> Loc
-@inject IJSRuntime JS
-<HeadContent>
-    <meta name="description"
-          content="Calculate resources required to open technologies - the tool for Heroes of History">
-    <meta name="keywords"
-          content="Heroes of History tools, research calculator, hoh tools, hoh calculator, research, technologies, research cost, technology cost">
-</HeadContent>
-<PageTitle>Research calculator for Heroes of History on Forge of Games</PageTitle>
-<div class="content-wrapper vertical-layout" id="scrollable-container">
-    <div class="vertical-layout text-container">
-        <div class="tool-title">@Loc[FogResource.Tools_ResearchCalculator_Name]</div>
-        <div>@Loc[FogResource.Tools_ResearchCalculator_Description]</div>
-    </div>
-    @if (_ageTechnologies == null)
-    {
-        <div class="d-flex justify-content-center align-items-center vh-100">
-            <div class="spinner-grow" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+@if (_ageTechnologies != null)
+{
+    <div class="content-wrapper vertical-layout" id="scrollable-container">
+        <div class="vertical-layout text-container">
+            <div class="tool-title">@Loc[FogResource.Tools_ResearchCalculator_Name]</div>
+            <div>@Loc[FogResource.Tools_ResearchCalculator_Description]</div>
         </div>
-    }
-    else
-    {
+
         <div class="step-description-container vertical-layout">
             <div class="stepper">
                 <div class="step-number">1</div>
@@ -79,9 +62,9 @@
             <div class="btn navigation-btn" style="visibility: @(_nextBtnIsVisible ? "visible" : "hidden")"
                  @onclick="NextBtnOnClicked">@Loc[FogResource.Common_Next]</div>
         </div>
-    }
 
-</div>
+    </div>
+}
 
 @code {
     private IReadOnlyCollection<AgeTechnologiesViewModel>? _ageTechnologies;
@@ -95,14 +78,15 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (!OperatingSystem.IsBrowser())
+        await base.OnInitializedAsync();
+        
+        _ageTechnologies = await LoadWithPersistenceAsync(nameof(_ageTechnologies),
+            async () => await ResearchCalculatorService.GetTechnologiesAsync(CityId.Capital));
+        _ageTechnologies!.First().IsListOpen = true;
+        if (OperatingSystem.IsBrowser())
         {
-            return;
+            UpdateUiForStep();
         }
-
-        _ageTechnologies = await ResearchCalculatorService.GetTechnologiesAsync(CityId.Capital);
-        _ageTechnologies.First().IsListOpen = true;
-        UpdateUiForStep();
     }
 
     private void OnClicked(ResearchCalculatorTechnologyViewModel item)

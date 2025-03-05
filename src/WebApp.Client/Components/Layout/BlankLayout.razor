@@ -1,9 +1,50 @@
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.WebApp.Client.Services
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Ingweland.Fog.WebApp.Client.Theme
+@inject IPageMetadataService PageMetadataService
+@implements IDisposable
 @inherits LayoutComponentBase
-
+<HeadContent>
+    <meta name="description" content="@_pageMetadata.Description">
+    <meta name="keywords" content="@_pageMetadata.Keywords">
+</HeadContent>
+<PageTitle>@_pageMetadata.PageTitle</PageTitle>
 <MudThemeProvider Theme="FogTheme.Theme"/>
 <div class="page-full">
     <main class="content-full">
         @Body
     </main>
 </div>
+
+@code
+{
+    private PageMetadata _pageMetadata = null!;
+    
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        _pageMetadata = PageMetadataService.GetForCurrentPage();
+
+        if (RendererInfo.IsInteractive)
+        {
+            NavigationManager.LocationChanged += NavigationManagerOnLocationChanged;
+        }
+    }
+
+    private void NavigationManagerOnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        _pageMetadata = PageMetadataService.GetForCurrentPage();
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        if (NavigationManager != null)
+        {
+            NavigationManager.LocationChanged -= NavigationManagerOnLocationChanged;
+        }
+    }
+}

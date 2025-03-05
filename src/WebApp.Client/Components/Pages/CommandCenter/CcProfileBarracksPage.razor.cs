@@ -1,16 +1,14 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
-using Ingweland.Fog.Models.Hoh.Enums;
-using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
 public partial class CcProfileBarracksPage : CcProfilePageBase
 {
     private IReadOnlyCollection<CcBarracksViewModel>? _barracks;
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+        
         _barracks = await ProfileUiService.GetBarracks(ProfileId);
     }
 

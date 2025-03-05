@@ -20,13 +20,15 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
         var rankingList = rankings as IList<PlayerRank> ?? rankings.ToList();
         if (rankingList.Count == 0)
         {
-            logger.LogInformation("AddRange called with no player rankings to add.");
+            logger.LogInformation("AddRange called with no player rankings to add. @{summary}",
+                new {worldId, collectedAt});
             return;
         }
 
         rankingList = Prepare(rankingList);
 
-        logger.LogInformation("Starting to add/update {PlayerCount} player rankings.", rankingList.Count);
+        logger.LogInformation("Starting to add/update {PlayerCount} player rankings. @{summary}",
+            rankingList.Count, new {worldId, collectedAt});
 
         var existingPlayers = await GetPlayers(rankingList, collectedAt);
 
@@ -41,8 +43,12 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
             if (existingPlayers.TryGetValue(new PlayerKey(playerRanking.WorldId, playerRanking.InGamePlayerId),
                     out var existingPlayer))
             {
-                mapper.Map(player, existingPlayer);
-                updatedPlayerCount++;
+                if (player.UpdatedAt >= existingPlayer.UpdatedAt)
+                {
+                    mapper.Map(player, existingPlayer);
+                    updatedPlayerCount++;
+                }
+                
                 if (existingPlayer.Rankings.Count == 0)
                 {
                     existingPlayer.Rankings.Add(playerRanking);
@@ -50,10 +56,10 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                 }
                 else
                 {
-                    var existingRanking = existingPlayer.Rankings.First();
-                    if (playerRanking.Key == existingRanking.Key)
+                    var existingRanking = existingPlayer.Rankings.FirstOrDefault(r => r.Key == playerRanking.Key);
+                    if (existingRanking != null)
                     {
-                        mapper.Map(playerRanking, existingPlayer.Rankings.First());
+                        mapper.Map(playerRanking, existingRanking);
                         updatedRankingCount++;
                     }
                     else

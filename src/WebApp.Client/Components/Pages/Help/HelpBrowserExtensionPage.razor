@@ -1,0 +1,185 @@
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="container">
+    <h3>HoH Helper &ndash; Heroes of History Browser Extension Guide</h3>
+
+    <div class="info">
+            HoH Helper is a powerful browser extension that reads in-game data from Heroes of History
+            and shares it with Forge of Games. This extension does not modify or interfere
+            with normal game operations&mdash;it simply listens for in-game data and, if permitted by
+            you, sends relevant data to Forge of Games servers for advanced features like the Stats Hub,
+            City Planner, and Command Center. It is available for Google Chrome and other Chromium-based browsers
+            (like Microsoft Edge) that support extensions.
+    </div>
+
+    <div class="step">
+        <h5>Extension Overview</h5>
+        <p>HoH Helper provides two key functionalities:</p>
+        <ul>
+            <li><strong>Automatic Data Collection:</strong> Let the extension automatically gather game
+                statistics, such as leaderboards.</li>
+            <li><strong>Game Data Export:</strong> Seamlessly export your city layout and hero roster into
+                our City Planner and Command Center tools.</li>
+        </ul>
+        <p>
+            All communication between the game and its own servers remains intact; the extension
+            simply “listens” to data and never modifies it.
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Data Collection</h5>
+        <p>
+            HoH Helper offers flexible, checkbox-based settings to control what data you share.
+            Each checkbox in the extension's <strong>Data Collection Settings</strong> section
+            must be explicitly enabled by you before any data is transmitted to the server.
+        </p>
+        <p>
+            When a selected piece of game data (for example, the leaderboards) is loaded, the extension
+            automatically collects and sends that data to Forge of Games. If the box is unchecked,
+            the data will not be collected going forward.
+        </p>
+        <p>
+            The <strong>Stats Hub</strong> on Forge of Games relies heavily on user-contributed data.
+            The more players who enable data collection, the more accurate and up-to-date our overall
+            stats become.
+        </p>
+        <h6>Current Data Collection Options:</h6>
+        <ol>
+            <li>
+                <strong>Leaderboards</strong>
+                <p>
+                    Automatically collects both <em>player</em> and <em>alliance</em> leaderboard
+                    information, powering our Stats Hub leaderboard as well as player and alliance
+                    stats pages.
+                </p>
+            </li>
+        </ol>
+        <p>
+            More collection options will be added over time. Check back frequently for updates!
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Game Data Export</h5>
+        <p>
+            HoH Helper makes it easy to export your city layout and heroes into our <strong>City Planner</strong>
+            and <strong>Command Center</strong>. The data is captured once the game is loaded and stored
+            locally by the extension until you choose to export it.
+        </p>
+        <p><strong>How to Export:</strong></p>
+        <ol>
+            <li>Open the Heroes of History game in your browser and wait until it’s fully loaded.</li>
+            <li>Click the HoH Helper extension icon in your browser toolbar. A popup will appear.</li>
+            <li>In the <em>“HoH City Planner and Command Center”</em> section, click the
+                <strong>Export Game Data</strong> button. If it’s inactive, reload the game page.</li>
+            <li>After processing, a new tab will open with a link to your exported data on Forge of Games.</li>
+            <li>On the new page, choose which data to import (city layout, heroes, or both) and click <em>Import</em>.</li>
+            <li>Once imported, navigate to the City Planner or Command Center to find your updated city layout or command center profile.</li>
+            <li>Remember: Data is only captured upon loading the game. To refresh it (for example, after upgrades),
+                reload your game page and export again.</li>
+            <li>If you open multiple servers (e.g., main and beta), only the most recently loaded data is stored. To export from a different server, reload that server.</li>
+            <li>The extension preserves your last captured data even if you close the game. You can export
+                later without reopening the game, though it may be outdated if changes were made in-game.</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Installation Steps</h5>
+
+        <h6>Option A: Chrome Web Store (Upcoming)</h6>
+        <p>
+            We are in the process of publishing HoH Helper to the Chrome Web Store for a simple “one-click” install.
+            Once available, you will be able to:
+        </p>
+        <ol>
+            <li>Go to the Chrome Web Store page for HoH Helper.</li>
+            <li>Click <strong>Add to Chrome</strong> and follow any on-screen prompts.</li>
+        </ol>
+        <p><em>Stay tuned! We will announce this release as soon as possible.</em></p>
+
+        <h6>Option B: Developer Mode (Source Installation)</h6>
+        <p>
+            You can install HoH Helper directly from the GitHub source code <strong>at any time</strong>,
+            even before the Chrome Web Store version is available. In fact, we encourage installing it right now
+            so you can contribute data to our Stats Hub immediately!
+        </p>
+        <ol>
+            <li>Visit
+                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_RELEASES_GITHUB_URL" target="_blank">
+                    HoH Helper Releases
+                </a>, and download the latest ZIP file.
+            </li>
+            <li>Extract the files to a folder on your computer.</li>
+            <li>Open Google Chrome.</li>
+            <li>
+                Either:
+                <ul>
+                    <li>Type <code>chrome://extensions</code> in the address bar</li>
+                    <li>Or click the three-dot menu (⋮) in the top-right corner,
+                        go to <em>More Tools</em>, and select <em>Extensions</em>
+                    </li>
+                </ul>
+            </li>
+            <li>Toggle on <strong>Developer mode</strong> in the top-right corner of the page.</li>
+            <li>Click <strong>Load unpacked</strong>, then select the folder containing
+                <code>manifest.json</code>.
+            </li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Frequently Asked Questions (FAQ)</h5>
+
+        <h6>Q: Does the extension modify the game?</h6>
+        <p>
+            A: No. The extension does not change any game code or intercept server communications.
+            It simply reads in-game data as it loads.
+        </p>
+
+        <h6>Q: Can I use the extension on multiple game servers?</h6>
+        <p>
+            A: Yes. Automatic data collection works on whichever server is open. For manual export,
+            the data will be from the last server where you loaded the game. If you need data
+            from another server, simply reload that game instance.
+        </p>
+
+        <h6>Q: I exported my data, but it’s outdated. How do I fix this?</h6>
+        <p>A: Reload the game page to capture the most recent data, then export again.</p>
+
+        <h6>Q: I enabled data collection, but I don’t see my data in the Stats Hub yet.</h6>
+        <p>
+            A: Data is collected in real time, but processing on Forge of Games may run once per day.
+            Please wait until the next day to see the updated information in the Stats Hub.
+        </p>
+    </div>
+
+    <div class="privacy">
+        <h2>Open Source and Contributions</h2>
+        <p>Our extension is fully open-source and welcomes community involvement:</p>
+        <ul>
+            <li><strong>GitHub Repository:</strong>
+                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL" target="_blank">@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL</a>
+            </li>
+            <li>We actively encourage pull requests, feature requests, and bug reports.</li>
+            <li>Help shape the extension by reporting issues or contributing code.</li>
+        </ul>
+    </div>
+
+    <div class="privacy">
+        <h2>Data Privacy</h2>
+        <p>We are committed to transparency and user privacy:</p>
+        <ul>
+            <li>The extension does not alter your original game data or store private credentials.</li>
+            <li>
+                While we aim to collect only the minimum necessary information, in practice,
+                some requests generated by the game may include additional details. Since the
+                extension does not filter or process these requests locally, all of the data
+                returned by certain in-game endpoints could be forwarded to our server for storage.
+            </li>
+            <li>No personal information (such as emails or authentication tokens) is collected.</li>
+        </ul>
+    </div>
+</div>

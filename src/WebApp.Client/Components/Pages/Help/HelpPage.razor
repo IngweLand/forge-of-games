@@ -1,0 +1,54 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_HELP_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="container">
+    <h2>Forge of Games Help Center</h2>
+    <div class="info">
+            Welcome to the Forge of Games Help Center! This project is aimed at enhancing
+            your <em>Heroes of History</em> experience. Below you’ll find links to specific guides
+            covering our main tools and features.
+    </div>
+
+    <h4>Help Topics</h4>
+    <ul class="list">
+        <li>
+            <strong>HoH Helper - Extension Guide</strong><br/>
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">
+                Installation, configuration, and usage of our browser extension
+            </a>
+        </li>
+        <li>
+            <strong>Importing Data into City Planner & Command Center</strong><br/>
+            <a href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">
+                Step-by-step instructions for transferring your game data into these tools
+            </a>
+        </li>
+        <li>
+            <strong>City Planner Snapshots</strong><br/>
+            <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_SNAPSHOTS_PATH">
+                Learn how to save, compare, and manage multiple city layouts
+            </a>
+        </li>
+        <li>
+            <strong>Command Center</strong><br/>
+            <a href="@FogUrlBuilder.PageRoutes.HELP_COMMAND_CENTER_PATH">
+                Profiles, Playgrounds, and advanced hero and team planning
+            </a>
+        </li>
+        <li>
+            <strong>Stats Hub</strong><br/>
+            <a href="@FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH">
+                A deeper look at leaderboards, trends, and player data analytics
+            </a>
+        </li>
+    </ul>
+
+    <h4>Need More Help?</h4>
+    <p>
+        If you still have questions or would like to provide feedback, feel free to join our
+        <a href="@FogUrlBuilder.PageRoutes.FOG_DISCORD_URL" target="_blank">Discord community</a>
+        or check out our open-source repositories on
+        <a href="@FogUrlBuilder.PageRoutes.FOG_GITHUB_URL" target="_blank">GitHub</a>.
+        We welcome contributions and ideas to make Forge of Games even better!
+    </p>
+</div>

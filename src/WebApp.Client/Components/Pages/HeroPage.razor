@@ -1,54 +1,41 @@
-@page "/heroes/{heroId}"
+@attribute [Route(FogUrlBuilder.PageRoutes.HERO_TEMPLATE)]
+@inject IUnitUiService UnitUiService;
+@inject IAssetUrlProvider AssetUrlProvider;
+@inject IWikipediaService WikipediaService;
+@inject NavigationManager NavigationManager
 @using System.Globalization
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
-@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
-@using Ingweland.Fog.WebApp.Client.Components.Elements
-@using Microsoft.Extensions.Localization
-@implements IDisposable;
-@inject IUnitUiService UnitUiService;
-@inject PersistentComponentState ApplicationState;
-@inject IAssetUrlProvider AssetUrlProvider;
-@inject IWikipediaService WikipediaService;
-@inject IStringLocalizer<FogResource> Loc
-@inject NavigationManager NavigationManager
-@rendermode InteractiveWebAssembly
-@attribute [StreamRendering]
-<HeadContent>
-    <meta name="description"
-          content="Comprehensive hero database for Heroes of History. Discover hero levels, resources, power stats, and historical backgrounds.">
-    <meta name="keywords" content="Heroes of History heroes, hero stats, hero levels, hero ability, game characters">
-</HeadContent>
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Application.Core.Services
+@using Ingweland.Fog.Dtos.Hoh
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <PageTitle>@_pageTitle</PageTitle>
-
-<div class="content-wrapper">
-    <!-- Header -->
-    <div class="p-2 fog-container header-container">
-        <div class="d-flex justify-content-center gap-1 stars-container">
-            @if (_hero != null)
-            {
-                for (var i = 0; i < _hero.StarCount; i++)
+@if (_hero != null)
+{
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="p-2 fog-container header-container">
+            <div class="d-flex justify-content-center gap-1 stars-container">
+                @for (var i = 0; i < _hero.StarCount; i++)
                 {
                     <img src="@AssetUrlProvider.GetHohIconUrl("star-filled", ".svg")"/>
                 }
-            }
+            </div>
+            <div class="hero-name">@_hero.Name</div>
+            <hr class="w-100 header-divider">
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <img class="unit-type-icon" src="@_hero.UnitTypeIconUrl"/>
+                <div class="unit-type-name user-select-none">@_hero.UnitTypeName</div>
+            </div>
         </div>
-        <div class="hero-name">@_hero?.Name</div>
-        <hr class="w-100 header-divider">
-        <div class="d-flex justify-content-center align-items-center gap-2">
-            <img class="unit-type-icon" src="@_hero?.UnitTypeIconUrl"/>
-            <div class="unit-type-name user-select-none">@_hero?.UnitTypeName</div>
-        </div>
-    </div>
 
-    <!-- Media Content -->
-    <div class="media-content-container">
-        <div class="media-container">
-            @if (_hero != null)
-            {
-                if (_showVideo && _hero.VideoUrl != null)
+        <!-- Media Content -->
+        <div class="media-content-container">
+            <div class="media-container">
+                @if (_showVideo && _hero.VideoUrl != null)
                 {
                     <video autoplay loop muted playsinline @onerror="OnVideoError">
                         <source src="@_hero.VideoUrl" type="video/mp4" @onerror="OnVideoError">
@@ -59,172 +46,125 @@
                 {
                     <img src="@_hero.ImageUrl"/>
                 }
-            }
-        </div>
-        @if (_showInfoContainer)
-        {
-            <div class="fog-container info-container">
-                @if (_wikiExtract != null)
-                {
-                    <div class="info-text-container"> @_wikiExtract</div>
-                    <a href="@_wikiUrl" target="_blank">
-                        <div class="btn btn-secondary btn-sm align-self-end">@Loc[FogResource.Common_ReadMore]
-                        </div>
-                    </a>
-                }
-                else
-                {
-                    <div class="spinner-grow loading-indicator" style="color: var(--fog-icon-color)" role="status">
-                    </div>
-                }
             </div>
-        }
+            @if (_showInfoContainer)
+            {
+                <div class="fog-container info-container">
+                    @if (_wikipediaResponse != null)
+                    {
+                        <div class="info-text-container"> @_wikipediaResponse.Extract</div>
+                        <a href="@_wikiUrl" target="_blank">
+                            <div class="btn btn-secondary btn-sm align-self-end">@Loc[FogResource.Common_ReadMore]
+                            </div>
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="spinner-grow loading-indicator" style="color: var(--fog-icon-color)" role="status">
+                        </div>
+                    }
+                </div>
+            }
 
 
-    </div>
+        </div>
 
-    <div class="container segmented-control-container">
-        <div class="row">
-            <div class="col-12 col-xl-10 col-xxl-8 mx-auto">
-                <div class="btn-group">
-                    <input autocomplete="off" checked class="btn-check" id="option1" name="options"
-                           @onchange="@(() => SwitchContent(1))" type="radio" value="1">
-                    <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
-                           for="option1">
-                        <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_upgrade")"/>
-                        <span>@Loc[FogResource.Hoh_Levels]</span>
-                    </label>
+        <div class="container segmented-control-container">
+            <div class="row">
+                <div class="col-12 col-xl-10 col-xxl-8 mx-auto">
+                    <div class="btn-group">
+                        <input autocomplete="off" checked class="btn-check" id="option1" name="options"
+                               @onchange="@(() => SwitchContent(1))" type="radio" value="1">
+                        <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+                               for="option1">
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_upgrade")"/>
+                            <span>@Loc[FogResource.Hoh_Levels]</span>
+                        </label>
 
-                    <input autocomplete="off" class="btn-check" id="option2" name="options"
-                           @onchange="@(() => SwitchContent(2))"
-                           type="radio" value="2" disabled="@_isLoading">
-                    <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
-                           for="option2">
-                        @if (_isLoading)
-                        {
-                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                        }
-                        else
-                        {
+                        <input autocomplete="off" class="btn-check" id="option2" name="options"
+                               @onchange="@(() => SwitchContent(2))"
+                               type="radio" value="2">
+                        <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+                               for="option2">
                             <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_ability")"/>
                             <span>@Loc[FogResource.Hoh_Hero_Ability]</span>
-                        }
-                    </label>
+                        </label>
 
-                    <input autocomplete="off" class="btn-check" id="option3" name="options"
-                           @onchange="@(() => SwitchContent(3))"
-                           type="radio" value="3" disabled="@_isLoading">
-                    <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
-                           for="option3">
-                        @if (_isLoading)
-                        {
-                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                        }
-                        else
-                        {
+                        <input autocomplete="off" class="btn-check" id="option3" name="options"
+                               @onchange="@(() => SwitchContent(3))"
+                               type="radio" value="3">
+                        <label class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+                               for="option3">
                             <img src="@AssetUrlProvider.GetHohIconUrl("icon_hero_power")"/>
                             <span>@Loc[FogResource.Hoh_Hero_Create]</span>
-                        }
-                    </label>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="fog-container">
-        @switch (_selectedOption)
-        {
-            case 1:
+        <div class="fog-container">
+            @switch (_selectedOption)
             {
-                if (_hero != null)
+                case 1:
                 {
                     foreach (var level in _hero.Levels)
                     {
                         <HeroLevelComponent LevelData="@level"/>
                     }
-                }
 
-                break;
-            }
-            case 2:
-            {
-                if (_ability != null)
+                    break;
+                }
+                case 2:
                 {
-                    <HeroAbilityComponent Ability="@_ability"/>
+                    if (_ability != null)
+                    {
+                        <HeroAbilityComponent Ability="@_ability"/>
+                    }
+                    else
+                    {
+                        <div class="spinner-grow loading-indicator" style="color: var(--fog-icon-color)" role="status">
+                        </div>
+                    }
+
+                    break;
                 }
-                else
-                {
-                    <div class="spinner-grow loading-indicator" style="color: var(--fog-icon-color)" role="status">
-                    </div>
-                }
-
-                break;
             }
-
-            case 3:
-            {
-                <HeroBuilderComponent HeroId="@HeroId"/>
-
-                break;
-            }
-        }
+        </div>
     </div>
-</div>
+}
 
 @code {
-    private PersistingComponentStateSubscription? _persistingSubscription;
 
     [Parameter]
     public required string HeroId { get; set; }
 
-    private string _pageTitle = "Hero";
+    private string _pageTitle = null!;
     private HeroAbilityViewModel? _ability;
 
     private HeroViewModel? _hero;
-    private string? _wikiExtract;
     private string? _wikiUrl;
     private bool _showInfoContainer = true;
-    private bool _isLoading = true;
     private bool _showVideo = true;
+    private WikipediaResponseDto? _wikipediaResponse;
 
     protected override async Task OnInitializedAsync()
     {
-        _persistingSubscription =
-            ApplicationState.RegisterOnPersisting(PersistData);
-        if (!ApplicationState.TryTakeFromJson<HeroViewModel>(nameof(_hero), out var restored))
-        {
-            var hero = await UnitUiService.GetHeroAsync(HeroId);
+        await base.OnInitializedAsync();
 
-            if (hero == null)
-            {
-                return;
-            }
+        _hero = await LoadWithPersistenceAsync(nameof(_hero), () => UnitUiService.GetHeroAsync(HeroId));
 
-            _pageTitle = $"Hero - {hero.Name}";
-            _hero = hero;
-        }
-        else
+        if (_hero != null)
         {
-            _hero = restored!;
+            _pageTitle = Loc[FogResource.Hero_PageTitle, _hero.Name];
+            _wikipediaResponse = await LoadWithPersistenceAsync(nameof(_wikipediaResponse), () => WikipediaService.GetArticleAbstractAsync(_hero.Name, CultureInfo.CurrentCulture.TwoLetterISOLanguageName));
         }
+
 
         if (OperatingSystem.IsBrowser())
         {
-            _isLoading = false;
-            await LoadWikiSummary();
+            SetupWikiAbstract();
         }
-    }
-
-    private Task PersistData()
-    {
-        ApplicationState.PersistAsJson(nameof(_hero), _hero);
-
-        return Task.CompletedTask;
-    }
-
-    void IDisposable.Dispose()
-    {
-        _persistingSubscription?.Dispose();
     }
 
     private int _selectedOption = 1;
@@ -249,18 +189,12 @@
         StateHasChanged();
     }
 
-    private async Task LoadWikiSummary()
+    private void SetupWikiAbstract()
     {
-        if (_hero == null)
+        if (_wikipediaResponse != null)
         {
-            return;
-        }
-
-        var wikipediaResponse = await WikipediaService.GetArticleAbstractAsync(_hero.Name, CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-        if (wikipediaResponse != null)
-        {
-            _wikiUrl = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS() ? wikipediaResponse.ContentUrls?.Mobile?.Page : wikipediaResponse.ContentUrls?.Desktop?.Page;
-            _wikiExtract = wikipediaResponse.Extract;
+            _wikiUrl = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS() ? 
+                _wikipediaResponse.MobileUrl : _wikipediaResponse.DesktopUrl;
         }
         else
         {

@@ -105,6 +105,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learn more about Forge of Games, a dedicated resource hub for Heroes of History players. Tools, guides, and wiki to enhance your gameplay..
+        /// </summary>
+        public static string About_Meta_Description {
+            get {
+                return ResourceManager.GetString("About.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forge of Games, Heroes of History, game tools, strategy guides, hoh tools.
+        /// </summary>
+        public static string About_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("About.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Forge of Games | Heroes of History.
+        /// </summary>
+        public static string About_PageTitle {
+            get {
+                return ResourceManager.GetString("About.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Whether you&apos;re planning your campaigns, optimizing hero stats, or uncovering the history behind your favorite characters, Forge of Games is your ultimate companion..
         /// </summary>
         public static string About_Text1 {
@@ -128,6 +155,141 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string BrandName {
             get {
                 return ResourceManager.GetString("BrandName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explore the complete database of buildings in Heroes of History. Find construction and upgrade costs for Capital City, China, Egypt, and Vikings..
+        /// </summary>
+        public static string Building_Meta_Description {
+            get {
+                return ResourceManager.GetString("Building.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History buildings, building stats, construction cost, upgrade cost, city planning.
+        /// </summary>
+        public static string Building_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Building.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Building_PageTitle {
+            get {
+                return ResourceManager.GetString("Building.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculate the resources required to construct or upgrade buildings in Heroes of History. Compare upgrade vs. rebuild strategies..
+        /// </summary>
+        public static string BuildingCostCalculator_Meta_Description {
+            get {
+                return ResourceManager.GetString("BuildingCostCalculator.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History buildings, building cost calculator, upgrade vs construct, building efficiency, city management.
+        /// </summary>
+        public static string BuildingCostCalculator_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("BuildingCostCalculator.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Building Cost Calculator | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string BuildingCostCalculator_PageTitle {
+            get {
+                return ResourceManager.GetString("BuildingCostCalculator.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover all buildings in Heroes of History with their stats, levels, and resource requirements for construction and upgrades: Capital City, China, Egypt and Vikings.
+        /// </summary>
+        public static string Buildings_Meta_Description {
+            get {
+                return ResourceManager.GetString("Buildings.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History buildings, construction costs, upgrade requirements, city development.
+        /// </summary>
+        public static string Buildings_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Buildings.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buildings Database | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Buildings_PageTitle {
+            get {
+                return ResourceManager.GetString("Buildings.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master the campaign in Heroes of History. Explore battles, enemy squads, rewards, and strategic insights for each region..
+        /// </summary>
+        public static string Campaign_Meta_Description {
+            get {
+                return ResourceManager.GetString("Campaign.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History campaign, battles, strategy guide, enemy encounters, game progression.
+        /// </summary>
+        public static string Campaign_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Campaign.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campaign Guide | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Campaign_PageTitle {
+            get {
+                return ResourceManager.GetString("Campaign.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master the campaign in Heroes of History. Explore battles, enemy squads, rewards, and strategic insights for each region..
+        /// </summary>
+        public static string CampaignRegion_Meta_Description {
+            get {
+                return ResourceManager.GetString("CampaignRegion.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to campaign region, Heroes of History battles, enemy squads, game progression.
+        /// </summary>
+        public static string CampaignRegion_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CampaignRegion.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CampaignRegion_PageTitle {
+            get {
+                return ResourceManager.GetString("CampaignRegion.PageTitle", resourceCulture);
             }
         }
         
@@ -240,7 +402,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Professional city planning tool for Heroes of History game. Import your in-game city, manage multiple layouts, analyze production and culture stats. Free web-based tool by Forge of Games..
+        ///   Looks up a localized string similar to Plan and optimize your city in Heroes of History. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency..
         /// </summary>
         public static string CityPlanner_Meta_Description {
             get {
@@ -249,7 +411,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History, HoH, city planner, city builder, game tools, Forge of Games, city layout, production calculator, city management, browser game tools, HoH calculator, city planning, city optimization.
+        ///   Looks up a localized string similar to Heroes of History city planner, city building, city management, game optimization, production stats.
         /// </summary>
         public static string CityPlanner_Meta_Keywords {
             get {
@@ -276,7 +438,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HoH City Planner | Heroes of History City Building Tool | Forge of Games.
+        ///   Looks up a localized string similar to City Planner | Heroes of History | Forge of Games.
         /// </summary>
         public static string CityPlanner_PageTitle {
             get {
@@ -447,6 +609,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hero Playgrounds.
+        /// </summary>
+        public static string CommandCenter_Menu_HeroPlaygrounds {
+            get {
+                return ResourceManager.GetString("CommandCenter.Menu.HeroPlaygrounds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playgrounds.
         /// </summary>
         public static string CommandCenter_Menu_Playgrounds {
@@ -465,7 +636,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more..
+        ///   Looks up a localized string similar to Optimize battle strategies in Heroes of History with the Command Center. Plan teams, analyze hero stats, and collaborate with alliances..
         /// </summary>
         public static string CommandCenter_Meta_Description {
             get {
@@ -474,7 +645,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center.
+        ///   Looks up a localized string similar to Heroes of History battle planner, team strategy, hero progression, command center tool.
         /// </summary>
         public static string CommandCenter_Meta_Keywords {
             get {
@@ -483,7 +654,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Command Center - Heroes of History Team Planner &amp; Battle Optimizer | Forge of Games.
+        ///   Looks up a localized string similar to Command Center | Battle &amp; Team Planner | Heroes of History | Forge of Games.
         /// </summary>
         public static string CommandCenter_PageTitle {
             get {
@@ -699,6 +870,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Common_Help {
+            get {
+                return ResourceManager.GetString("Common.Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to h.
         /// </summary>
         public static string Common_Hour_Abbr {
@@ -830,6 +1010,195 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Share {
             get {
                 return ResourceManager.GetString("Common.Share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discover how to use the HoH Helper browser extension to export city layouts and heroes, and to feed the leaderboards..
+        /// </summary>
+        public static string Help_BrowserExtension_Meta_Description {
+            get {
+                return ResourceManager.GetString("Help.BrowserExtension.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HoH helper, browser extension, Heroes of History tools, game data export, city planner extension, hero tracker.
+        /// </summary>
+        public static string Help_BrowserExtension_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Help.BrowserExtension.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browser Extension Guide | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Help_BrowserExtension_PageTitle {
+            get {
+                return ResourceManager.GetString("Help.BrowserExtension.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn how to use Snapshots in the City Planner tool to save, compare, and optimize different city layouts in Heroes of History..
+        /// </summary>
+        public static string Help_CityPlannerSnapshots_Meta_Description {
+            get {
+                return ResourceManager.GetString("Help.CityPlannerSnapshots.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to city planner, Heroes of History, city snapshots, city layouts, city optimization, city management.
+        /// </summary>
+        public static string Help_CityPlannerSnapshots_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Help.CityPlannerSnapshots.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Planner Snapshots Guide | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Help_CityPlannerSnapshots_PageTitle {
+            get {
+                return ResourceManager.GetString("Help.CityPlannerSnapshots.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn how to use the Command Center tool in Heroes of History. Manage your heroes, optimize teams, and improve battle strategies..
+        /// </summary>
+        public static string Help_CommandCenter_Meta_Description {
+            get {
+                return ResourceManager.GetString("Help.CommandCenter.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to command center, Heroes of History, team planner, battle strategies, hero management, game optimization.
+        /// </summary>
+        public static string Help_CommandCenter_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Help.CommandCenter.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Command Center Guide | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Help_CommandCenter_PageTitle {
+            get {
+                return ResourceManager.GetString("Help.CommandCenter.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Step-by-step guide to importing in-game data into Forge of Games. Learn how to import your city and heroes..
+        /// </summary>
+        public static string Help_ImportingInGameData_Meta_Description {
+            get {
+                return ResourceManager.GetString("Help.ImportingInGameData.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to import game data, Heroes of History sync, game data transfer, city planner import, command center import.
+        /// </summary>
+        public static string Help_ImportingInGameData_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Help.ImportingInGameData.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Importing In-Game Data | Help | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Help_ImportingInGameData_PageTitle {
+            get {
+                return ResourceManager.GetString("Help.ImportingInGameData.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find helpful guides, FAQs, and tutorials for Heroes of History tools and gameplay. Learn how to optimize your experience..
+        /// </summary>
+        public static string Help_Meta_Description {
+            get {
+                return ResourceManager.GetString("Help.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History help, FAQs, game guides, hoh tutorials, strategy guides.
+        /// </summary>
+        public static string Help_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Help.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Help &amp; Guides | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Help_PageTitle {
+            get {
+                return ResourceManager.GetString("Help.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explore Heroes of History heroes with detailed stats, abilities, progression resources, and historical backgrounds..
+        /// </summary>
+        public static string Hero_Meta_Description {
+            get {
+                return ResourceManager.GetString("Hero.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hero, Heroes of History characters, hero stats, hero abilities, historical background.
+        /// </summary>
+        public static string Hero_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Hero.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Hero_PageTitle {
+            get {
+                return ResourceManager.GetString("Hero.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explore Heroes of History heroes with detailed stats, abilities, progression resources, and historical backgrounds..
+        /// </summary>
+        public static string Heroes_Meta_Description {
+            get {
+                return ResourceManager.GetString("Heroes.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History heroes, character stats, hero abilities, hero progression, historical figures.
+        /// </summary>
+        public static string Heroes_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Heroes.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes Database | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Heroes_PageTitle {
+            get {
+                return ResourceManager.GetString("Heroes.PageTitle", resourceCulture);
             }
         }
         
@@ -1041,7 +1410,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forge of Games: The ultimate Heroes of History wiki, resource and tool hub. Discover campaign details, hero information, and more..
+        ///   Looks up a localized string similar to Forge of Games is your ultimate resource for Heroes of History. Access command center, city planner, leaderboards, tools, calculators and wiki to enhance your gameplay..
         /// </summary>
         public static string Home_Meta_Description {
             get {
@@ -1050,11 +1419,20 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History, wiki, strategy game, game guide, game tools, Innogames.
+        ///   Looks up a localized string similar to Heroes of History, game tools, strategy guides, city planner, hero builder, command center, leaderboards, wiki.
         /// </summary>
         public static string Home_Meta_Keywords {
             get {
                 return ResourceManager.GetString("Home.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forge of Games | Heroes of History Tools &amp; Resources.
+        /// </summary>
+        public static string Home_PageTitle {
+            get {
+                return ResourceManager.GetString("Home.PageTitle", resourceCulture);
             }
         }
         
@@ -1131,6 +1509,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string Navigation_Help {
+            get {
+                return ResourceManager.GetString("Navigation.Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Navigation_Home {
@@ -1185,6 +1572,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Plan your research efficiently in Heroes of History. Calculate resource costs and unlock new technologies with ease..
+        /// </summary>
+        public static string ResearchCalculator_Meta_Description {
+            get {
+                return ResourceManager.GetString("ResearchCalculator.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History research calculator, technology costs, research planning, resource management.
+        /// </summary>
+        public static string ResearchCalculator_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("ResearchCalculator.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Research Calculator | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string ResearchCalculator_PageTitle {
+            get {
+                return ResourceManager.GetString("ResearchCalculator.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create link.
         /// </summary>
         public static string ShareDialog_ShareButton {
@@ -1194,7 +1608,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan your Heroes of History teams, configure heroes, optimize battle strategies, and collaborate with alliance members. Features hero progression calculator, ability timers, profile sharing for Treasure Hunt planning, and more..
+        ///   Looks up a localized string similar to Track leaderboards and statistics for Heroes of History. View top players, alliances, and world rankings..
         /// </summary>
         public static string StatsHub_Meta_Description {
             get {
@@ -1203,7 +1617,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History, team planner, battle optimizer, treasure hunt, alliance collaboration, hero progression calculator, game strategy, profile sharing, command center, battle planner, HoH tool, HoH command center.
+        ///   Looks up a localized string similar to Heroes of History stats, player rankings, leaderboard, alliance statistics, game performance.
         /// </summary>
         public static string StatsHub_Meta_Keywords {
             get {
@@ -1212,7 +1626,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stats Hub - Heroes of History Stats &amp; Leaderboards | Forge of Games.
+        ///   Looks up a localized string similar to Stats Hub | Heroes of History | Forge of Games.
         /// </summary>
         public static string StatsHub_PageTitle {
             get {
@@ -1383,11 +1797,38 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Support Forge of Games.
+        ///   Looks up a localized string similar to Help support Forge of Games! Your contributions keep our Heroes of History tools and guides free for all players..
+        /// </summary>
+        public static string SupportUs_Meta_Description {
+            get {
+                return ResourceManager.GetString("SupportUs.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to support Forge of Games, Heroes of History community, game tools donation.
+        /// </summary>
+        public static string SupportUs_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("SupportUs.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support Forge of Games | Heroes of History.
         /// </summary>
         public static string SupportUs_PageTitle {
             get {
                 return ResourceManager.GetString("SupportUs.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support Forge of Games.
+        /// </summary>
+        public static string SupportUs_Title {
+            get {
+                return ResourceManager.GetString("SupportUs.Title", resourceCulture);
             }
         }
         
@@ -1500,6 +1941,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optimize your gameplay with Heroes of History tools. Use calculators for buildings, research, hero progression, and more..
+        /// </summary>
+        public static string Tools_Meta_Description {
+            get {
+                return ResourceManager.GetString("Tools.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History tools, building calculator, research calculator, hero planner, game utilities.
+        /// </summary>
+        public static string Tools_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Tools.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Tools | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Tools_PageTitle {
+            get {
+                return ResourceManager.GetString("Tools.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculate the resources required to open technologies..
         /// </summary>
         public static string Tools_ResearchCalculator_Description {
@@ -1568,6 +2036,141 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Tools_WonderCost_Name {
             get {
                 return ResourceManager.GetString("Tools.WonderCost.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigate the Treasure Hunt in Heroes of History with our complete guide. View battle encounters, enemy squads, and rewards..
+        /// </summary>
+        public static string TreasureHunt_Meta_Description {
+            get {
+                return ResourceManager.GetString("TreasureHunt.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History treasure hunt, battle encounters, enemy squads, game rewards.
+        /// </summary>
+        public static string TreasureHunt_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("TreasureHunt.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treasure Hunt | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string TreasureHunt_PageTitle {
+            get {
+                return ResourceManager.GetString("TreasureHunt.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigate the Treasure Hunt in Heroes of History with our complete guide. View battle encounters, enemy squads, and rewards..
+        /// </summary>
+        public static string TreasureHuntStage_Meta_Description {
+            get {
+                return ResourceManager.GetString("TreasureHuntStage.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to treasure hunt stage, Heroes of History battles, game encounters, battle strategy.
+        /// </summary>
+        public static string TreasureHuntStage_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("TreasureHuntStage.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} | Treasure Hunt | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string TreasureHuntStage_PageTitle {
+            get {
+                return ResourceManager.GetString("TreasureHuntStage.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explore the wonders of Heroes of History. View wonder levels, upgrade costs, and crate requirements for China, Egypt, and Vikings..
+        /// </summary>
+        public static string Wonder_Meta_Description {
+            get {
+                return ResourceManager.GetString("Wonder.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to wonder, Heroes of History wonders, wonder progression, upgrade cost, game strategy.
+        /// </summary>
+        public static string Wonder_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Wonder.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Wonder_PageTitle {
+            get {
+                return ResourceManager.GetString("Wonder.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calculate resources needed to upgrade world wonders in Heroes of History. Plan your progression efficiently with our detailed cost breakdown..
+        /// </summary>
+        public static string WonderCostCalculator_Meta_Description {
+            get {
+                return ResourceManager.GetString("WonderCostCalculator.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History wonders, wonder upgrade cost, wonder calculator, resource management, hoh tools.
+        /// </summary>
+        public static string WonderCostCalculator_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("WonderCostCalculator.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wonder Cost Calculator | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string WonderCostCalculator_PageTitle {
+            get {
+                return ResourceManager.GetString("WonderCostCalculator.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explore the wonders of Heroes of History. View wonder levels, upgrade costs, and crate requirements for China, Egypt, and Vikings..
+        /// </summary>
+        public static string Wonders_Meta_Description {
+            get {
+                return ResourceManager.GetString("Wonders.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History wonders, wonder database, wonder progression, upgrade cost, wonder crates.
+        /// </summary>
+        public static string Wonders_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("Wonders.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wonders Database | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string Wonders_PageTitle {
+            get {
+                return ResourceManager.GetString("Wonders.PageTitle", resourceCulture);
             }
         }
     }

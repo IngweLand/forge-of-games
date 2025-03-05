@@ -2,10 +2,11 @@ using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
+using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
@@ -44,6 +45,9 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     [Inject]
     private IInGameStartupDataService InGameStartupDataService { get; set; }
+
+    [Inject]
+    private IJSInteropService JsInteropService { get; set; }
 
     [Inject]
     protected NavigationManager NavigationManager { get; set; }
@@ -153,53 +157,13 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             MaxWidth = MaxWidth.Small,
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
-            CloseButton = closeButton,
+            CloseButton = closeButton
         };
     }
 
-    private async Task HandleImportData(string data)
+    private async Task OpenImportingHelpPage()
     {
-        string? error = null;
-        ResourceCreatedResponse? response = null;
-        try
-        {
-            response = await InGameStartupDataService.ImportInGameDataAsync(new ImportInGameStartupDataRequestDto()
-            {
-                InGameStartupData = data,
-            });
-        }
-        catch (Exception e)
-        {
-            error = "Could not import data.";
-        }
-
-        if (response != null)
-        {
-            NavigationManager.NavigateTo(response.WebResourceUrl);
-        }
-        else if (error != null)
-        {
-            Snackbar!.Add(error, Severity.Error);
-        }
-    }
-
-    private async Task ImportInGameCity()
-    {
-        var options = GetDefaultDialogOptions();
-        var dialog = await DialogService.ShowAsync<ImportInGameCityDialog>(null, options);
-        var result = await dialog.Result;
-        if (result == null || result.Canceled)
-        {
-            return;
-        }
-
-        var importedText = result.Data as string;
-        if (string.IsNullOrWhiteSpace(importedText))
-        {
-            return;
-        }
-
-        await HandleImportData(importedText);
+        await JsInteropService.OpenUrlAsync(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH, "_blank");
     }
 
     private void InteractiveCanvasOnPointerDown(PointerEventArgs args)
@@ -276,7 +240,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     {
         var parameters = new DialogParameters
         {
-            {nameof(OpenCityDialog.Cities), await PersistenceService.GetCities()},
+            {nameof(OpenCityDialog.Cities), await PersistenceService.GetCities()}
         };
 
         var options = GetDefaultDialogOptions(true);
@@ -377,32 +341,33 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             _skCanvasView!.Invalidate();
         }
     }
-    
+
     private async Task LoadSnapshot(string id)
     {
         await CityPlanner.LoadSnapshot(id);
     }
-    
+
     private async Task CreateSnapshot()
     {
         await CityPlanner.CreateSnapshot();
     }
+
     private async Task CompareSnapshots()
     {
         var viewModel = CityPlanner.CompareSnapshots();
-        
-        var parameters = new DialogParameters<SnapshotsComparisonComponent>{{src => src.Data, viewModel}};
+
+        var parameters = new DialogParameters<SnapshotsComparisonComponent> {{src => src.Data, viewModel}};
 
         var options = new DialogOptions
         {
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
             NoHeader = true,
-            CloseOnEscapeKey = true,
+            CloseOnEscapeKey = true
         };
         await DialogService.ShowAsync<SnapshotsComparisonComponent>(null, parameters, options);
     }
-    
+
     private async Task DeleteSnapshot(string id)
     {
         await CityPlanner.DeleteSnapshot(id);

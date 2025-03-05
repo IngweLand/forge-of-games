@@ -30,14 +30,14 @@ public class CampaignService(
         return result.AsReadOnly();
     }
 
-    public async Task<RegionDto?> GetRegionAsync(RegionId id)
+    public async Task<RegionDto?> GetRegionAsync(RegionId regionId)
     {
         var region = (await hohCoreDataRepository.GetWorldAsync(WorldId.Starter))?.Continents
             .SelectMany(c => c.Regions)
-            .FirstOrDefault(r => r.Id == id);
+            .FirstOrDefault(r => r.Id == regionId);
         if (region == null)
         {
-            logger.LogError($"Failed to get region by RegionId: {id}");
+            logger.LogError($"Failed to get region by RegionId: {regionId}");
             return null;
         }
 

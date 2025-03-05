@@ -5,6 +5,7 @@ public interface IJSInteropService
     ValueTask<bool> CopyToClipboardAsync(string payload);
     ValueTask<bool> IsMobileAsync();
     ValueTask OpenUrlAsync(string url, string target);
-    ValueTask RemoveLoadingIndicatorAsync();
+    ValueTask HideLoadingIndicatorAsync();
     ValueTask ResetScrollPositionAsync();
+    ValueTask ShowLoadingIndicatorAsync();
 }
