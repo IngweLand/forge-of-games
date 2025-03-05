@@ -1,0 +1,50 @@
+@page "/help-stats-hub"
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="container">
+    <h3>Stats Hub: Community-Driven Analytics</h3>
+
+    <div class="info">
+            The Stats Hub aggregates data across <em>Heroes of History</em> to provide
+            leaderboards, metrics, and trend analysis for players and alliances. This
+            information is largely crowdsourced—meaning it depends on contributions
+            from users like you!
+    </div>
+
+    <div class="step">
+        <h5>How the Stats Hub Works</h5>
+        <p>
+            Whenever you or other community members load the <em>Heroes of History</em> game
+            with our HoH Helper extension active, the in-game leaderboards and relevant
+            stats are collected and sent to Forge of Games. Our servers then compile
+            this data to power the Stats Hub’s rankings and historical insights.
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Contributing Your Data</h5>
+        <p>
+            <strong>Want to help keep the Stats Hub current?</strong> Install the HoH Helper
+            extension, enable leaderboard data collection, and play normally. Your data will
+            automatically be added to the pool, benefiting the entire community!
+        </p>
+        <p>
+            For step-by-step installation instructions, check out the 
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">
+                HoH Helper Extension Guide
+            </a>.
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Why Your Contributions Matter</h5>
+        <p>
+            More contributors mean more accurate and up-to-date statistics, so the entire
+            community can get a clearer picture of player rankings and alliance power levels.
+            In addition, reliable data fuels future features and enhancements for the Stats Hub.
+        </p>
+        <p><strong>Thank You for Supporting the Community!</strong></p>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -11,7 +12,7 @@ namespace Ingweland.Fog.WebApp.Apis;
 
 public static class HohApi
 {
-    public static async Task<Results<Ok<InGameStartupData?>, InternalServerError<string>, NotFound>>
+    private static async Task<Results<Ok<InGameStartupData?>, InternalServerError<string>, NotFound>>
         GetInGameDataAsync(
             [AsParameters] HohServices services,
             HttpContext context, string inGameStartupDataId)
@@ -28,7 +29,7 @@ public static class HohApi
         }
     }
 
-    public static async Task<Results<Ok<BasicCommandCenterProfile?>, BadRequest<string>, NotFound>>
+    private static async Task<Results<Ok<BasicCommandCenterProfile?>, BadRequest<string>, NotFound>>
         GetSharedProfileAsync(
             [AsParameters] HohServices services,
             HttpContext context, string profileId)
@@ -44,8 +45,8 @@ public static class HohApi
             return TypedResults.BadRequest("Could not get shared profile.");
         }
     }
-    
-    public static async Task<Results<Ok<HohCity?>, BadRequest<string>, NotFound>>
+
+    private static async Task<Results<Ok<HohCity?>, BadRequest<string>, NotFound>>
         GetSharedCityAsync([AsParameters] HohServices services, HttpContext context, string cityId)
     {
         try
@@ -60,7 +61,7 @@ public static class HohApi
         }
     }
 
-    public static async
+    private static async
         Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>, InternalServerError<string>>>
         ImportInGameDataAsync(
             [AsParameters] HohServices services,
@@ -117,6 +118,13 @@ public static class HohApi
 
         api.MapProtobufGet("/technologies/{cityId}", GetTechnologiesAsync);
 
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_CONTINENTS_BASIC_DATA_PATH,
+            GetCampaignContinentsBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_REGION_TEMPLATE, GetCampaignRegionAsync);
+
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
+
         api.MapProtobufGet("/ages", GetAgesAsync);
 
         api.MapProtobufGet("/cityPlanner/data/{cityId}", GetCityPlannerDataAsync);
@@ -129,11 +137,26 @@ public static class HohApi
 
         api.MapPost("/inGameData/", ImportInGameDataAsync).RequireCors(PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY);
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
+        
+        api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
 
         return api;
     }
+    
+    private static async Task<Results<Ok<WikipediaResponseDto>, NotFound, BadRequest<string>>>
+        GetWikiExtractAsync([AsParameters] HohServices services, HttpContext context,
+            [FromQuery] string title, [FromQuery] string language)
+    {
+        var result = await services.WikipediaService.GetArticleAbstractAsync(title, language);
+        if (result != null)
+        {
+            return TypedResults.Ok(result);
+        }
 
-    public static async Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>>> ShareProfileAsync(
+        return TypedResults.NotFound();
+    }
+
+    private static async Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>>> ShareProfileAsync(
         [AsParameters] HohServices services,
         HttpContext context, [FromBody] BasicCommandCenterProfile profileDto)
     {
@@ -153,8 +176,8 @@ public static class HohApi
             return TypedResults.BadRequest("Could not create the share.");
         }
     }
-    
-    public static async Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>>> ShareCityAsync(
+
+    private static async Task<Results<Ok<ResourceCreatedResponse>, BadRequest<string>>> ShareCityAsync(
         [AsParameters] HohServices services,
         HttpContext context, [FromBody] HohCity city)
     {
@@ -288,6 +311,50 @@ public static class HohApi
         await WriteToResponseAsync(context, types, services.ProtobufSerializer);
     }
 
+    private static async Task GetCampaignRegionAsync([AsParameters] HohServices services,
+        HttpContext context, RegionId regionId)
+    {
+        var region = await services.CampaignService.GetRegionAsync(regionId);
+        if (region != null)
+        {
+            await WriteToResponseAsync(context, region, services.ProtobufSerializer);
+        }
+        else
+        {
+            WriteNotFoundToResponseAsync(context);
+        }
+    }
+
+    private static async Task GetTreasureHuntStageAsync([AsParameters] HohServices services,
+        HttpContext context, int difficulty, int stageIndex)
+    {
+        var stage = await services.TreasureHuntService.GetStageAsync(difficulty, stageIndex);
+        if (stage != null)
+        {
+            await WriteToResponseAsync(context, stage, services.ProtobufSerializer);
+        }
+        else
+        {
+            WriteNotFoundToResponseAsync(context);
+        }
+    }
+
+    private static async Task GetCampaignContinentsBasicDataAsync([AsParameters] HohServices services,
+        HttpContext context)
+    {
+        var data = await services.CampaignService.GetCampaignContinentsBasicDataAsync();
+
+        await WriteToResponseAsync(context, data, services.ProtobufSerializer);
+    }
+
+    private static async Task GetTreasureHuntDifficultiesAsync([AsParameters] HohServices services,
+        HttpContext context)
+    {
+        var difficulties = await services.TreasureHuntService.GetDifficultiesAsync();
+
+        await WriteToResponseAsync(context, difficulties, services.ProtobufSerializer);
+    }
+
     private static async Task GetWonderAsync([AsParameters] HohServices services,
         HttpContext context, WonderId id)
     {
@@ -315,5 +382,11 @@ public static class HohApi
         context.Response.ContentType = "application/x-protobuf";
         context.Response.StatusCode = StatusCodes.Status200OK;
         return context.Response.Body.WriteAsync(bytes);
+    }
+
+    private static void WriteNotFoundToResponseAsync(HttpContext context)
+    {
+        context.Response.ContentType = "application/x-protobuf";
+        context.Response.StatusCode = StatusCodes.Status404NotFound;
     }
 }

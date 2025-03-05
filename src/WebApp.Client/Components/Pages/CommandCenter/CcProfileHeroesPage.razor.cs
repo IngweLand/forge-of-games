@@ -1,7 +1,5 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter;
-using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
@@ -12,9 +10,10 @@ public partial class CcProfileHeroesPage :CcProfilePageBase
     private IEnumerable<HeroProfileViewModel>? _heroes;
     private string? _profileName;
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+        
         _profileName = (await ProfileUiService.GetProfileAsync(ProfileId))?.Name;
         await GetHeroes();
     }

@@ -4,7 +4,6 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @using Size = MudBlazor.Size
 @inherits StatsHubPageBase
-@rendermode PageRenderMode
 @if (IsInitialized)
 {
     <div class="page-container">
@@ -32,10 +31,14 @@
             </MudCollapse>
             <div class="items-container">
 
-                @foreach (var player in _players!.Items)
+                @if (_players != null)
                 {
-                    <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                    @foreach (var player in _players.Items)
+                    {
+                        <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                    }
                 }
+
             </div>
             <div class="pagination-container">
                 <MudPagination Count="@(_players?.TotalPages ?? 0)" Selected="@_pageNumber"
@@ -44,6 +47,10 @@
 
         </div>
     </div>
+}
+else
+{
+    <LoadingIndicator/>
 }
 
 @code {

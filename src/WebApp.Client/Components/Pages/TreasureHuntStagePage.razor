@@ -1,0 +1,54 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.TREASURE_HUNT_STAGE_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject ITreasureHuntUiService TreasureHuntUiService;
+<PageTitle>@_pageTitle</PageTitle>
+@if (_stage != null)
+{
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="p-2 fog-container header-container">
+            <img class="difficulty-icon" src="@_stage.DifficultyIconUrl"/>
+            <div class="difficulty-name">@_stage.DifficultyName</div>
+            <hr class="w-100 header-divider">
+            <div class="stage-name user-select-none">@_stage.Name</div>
+        </div>
+        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Encounters]</h4>
+        @foreach (var encounter in _stage.Encounters)
+        {
+            <TreasureHuntEncounterComponent Encounter="@encounter"/>
+        }
+    </div>
+}
+
+
+@code {
+
+    [Parameter]
+    public int Difficulty { get; set; }
+
+    [Parameter]
+    public int StageIndex { get; set; }
+
+    private string _pageTitle = null!;
+    private TreasureHuntStageViewModel? _stage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _stage = await LoadWithPersistenceAsync(
+            nameof(_stage),
+            () => TreasureHuntUiService.GetStageAsync(Difficulty, StageIndex)
+        );
+
+        if (_stage != null)
+        {
+            _pageTitle = Loc[FogResource.TreasureHuntStage_PageTitle, $"{_stage.DifficultyName} - {_stage.Name}"];
+        }
+    }
+
+}

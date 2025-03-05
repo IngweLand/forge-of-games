@@ -1,7 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Core.Constants;
-using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
@@ -21,9 +20,10 @@ public partial class CcProfileSettingsPage : CcProfilePageBase
         }
     }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+        
         _profileSettings = await ProfileUiService.GetSettingsAsync(ProfileId);
     }
 

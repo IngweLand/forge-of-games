@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Microsoft.AspNetCore.Components;
@@ -12,10 +11,10 @@ public partial class CcPlaygroundHeroesPage : CommandCenterPageBase
 
     private IEnumerable<HeroProfileViewModel>? _heroes;
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task HandleOnInitializedAsync()
     {
-        await base.OnInitializedAsync();
-
+        await base.HandleOnInitializedAsync();
+        
         var heroes = await PlaygroundUiService.GetHeroes();
         _heroes = heroes.OrderBy(h => h.Name);
     }

@@ -10,9 +10,14 @@ public class JSInteropService(IJSRuntime jsRuntime) : IJSInteropService
         return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.resetScrollPosition");
     }
 
-    public ValueTask RemoveLoadingIndicatorAsync()
+    public ValueTask HideLoadingIndicatorAsync()
     {
-        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.removeLoadingIndicator");
+        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.hidePageLoadingIndicator");
+    }
+    
+    public ValueTask ShowLoadingIndicatorAsync()
+    {
+        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.showPageLoadingIndicator");
     }
 
     public ValueTask<bool> CopyToClipboardAsync(string payload)

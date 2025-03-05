@@ -1,0 +1,23 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_ABOUT_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Microsoft.Extensions.Localization
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="container gap-5">
+    <div class="row py-3 px-2 mb-3">
+        <AboutComponent/>
+    </div>
+    <div class="row py-3 px-2">
+        <h5>@Loc[FogResource.Common_Disclaimer]</h5>
+        <p>@Loc[FogResource.Common_Disclaimer_Text]</p>
+        <p>info@forgeofgames.com</p>
+        <a href="https://discord.gg/4vFeeh7CZn" target="_blank" class="discord-link">
+            <i class="fab fa-discord fs-4"></i>
+            <span>@Loc[FogResource.Common_JoinDiscord]</span>
+        </a>
+    </div>
+</div>
+
+@code {
+
+}

@@ -1,7 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.WebApp.Client.Components.Elements;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter;
 using Microsoft.AspNetCore.Components;

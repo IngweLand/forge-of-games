@@ -20,11 +20,14 @@ public class LeaderboardsFetcher(
     IPlayerRankingTableRepository playerRankingTableRepository,
     IAllianceRankingTableRepository allianceRankingTableRepository,
     IAllianceRankingRawDataTableRepository allianceRankingRawDataTableRepository,
-    ILogger<LeaderboardsFetcher> logger)
+    ILogger<LeaderboardsFetcher> logger,
+    DatabaseWarmUpService databaseWarmUpService)
 {
     [Function("LeaderboardsFetcher")]
-    public async Task Run([TimerTrigger("0 0 6 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 30 23 * * *")] TimerInfo myTimer)
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+        
         foreach (var gameWorld in gameWorldsProvider.GetGameWorlds())
         {
             try
@@ -78,7 +81,9 @@ public class LeaderboardsFetcher(
 
         var date = DateOnly.FromDateTime(DateTime.UtcNow);
         await UpdateTableStorage(ranks.Top100, playerRankingType, gameWorld.Id, date);
+        await UpdateTableStorage(ranks.SurroundingRanking, playerRankingType, gameWorld.Id, date);
         await playerRankingService.AddOrUpdateRangeAsync(ranks.Top100, gameWorld.Id, date, playerRankingType);
+        await playerRankingService.AddOrUpdateRangeAsync(ranks.SurroundingRanking, gameWorld.Id, date, playerRankingType);
     }
 
     private async Task FetchAllianceRankings(GameWorldConfig gameWorld)

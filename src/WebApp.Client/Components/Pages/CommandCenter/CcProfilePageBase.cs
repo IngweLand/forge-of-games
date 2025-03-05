@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Microsoft.AspNetCore.Components;
@@ -15,9 +14,10 @@ public abstract class CcProfilePageBase : CommandCenterPageBase
 
     protected CcProfileViewModel? Profile { get; private set; }
 
-    protected override async Task OnParametersSetAsync()
+    protected override async Task HandleOnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        await base.HandleOnParametersSetAsync();
+
         var profile = await ProfileUiService.GetProfileAsync(ProfileId);
         if (profile == null)
         {
@@ -42,7 +42,7 @@ public abstract class CcProfilePageBase : CommandCenterPageBase
             Profile = await ProfileUiService.GetProfileAsync(ProfileId);
             StateHasChanged();
         }
-        catch (Exception ex)
+        catch (Exception e)
         {
             // Handle or log the exception
         }

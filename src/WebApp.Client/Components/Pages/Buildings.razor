@@ -1,0 +1,44 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_BUILDINGS_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject ICityUiService CityUiService;
+@if (_cities != null)
+{
+    <div class="root">
+        @foreach (var city in _cities)
+        {
+            <div class="city-container">
+                <h4 class="city-name">@city.CityName</h4>
+                <div class="list-group">
+                    @foreach (var buildingType in city.BuildingTypes)
+                    {
+                        <div class="list-group-item list-group-item-secondary fw-bold">
+                            @buildingType.Name
+                        </div>
+
+                        @foreach (var group in buildingType.Groups)
+                        {
+                            <a class="list-group-item list-group-item-action"
+                               href="buildings/@buildingType.CityId/@group.Id">@group.Name</a>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<CityBuildingGroupsViewModel>? _cities;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        
+        _cities = await LoadWithPersistenceAsync(nameof(_cities),
+            async () => await CityUiService.GetCityBuildingGroupsAsync());
+    }
+
+}

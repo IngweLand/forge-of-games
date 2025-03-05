@@ -55,6 +55,7 @@ body {
     background-color: inherit !important;
     color: inherit !important;
     font-family: inherit !important;
+    position: relative;
 }
 
 a, .btn-link {
@@ -213,6 +214,12 @@ input[type="radio"]:checked {
     color: var(--fog-icon-color);
 }
 
+.main-layout-main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 8px !important;
+}
+
 /*city planner start*/
 .building-type-icon {
     display: inline-block; 
@@ -345,14 +352,15 @@ input[type="radio"]:checked {
     gap: 6px !important;
 }
 
-.command-center-main-content {
+.static-main-layout-main-content {
     display: flex;
     flex-direction: column;
+    padding: 8px !important;
 }
 
 .command-center-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 12px;
     padding: 12px;
 }
@@ -413,13 +421,23 @@ img.command-center-card-icon {
     justify-content: space-between;
 }
 
-@media (max-width: 576px) {
-    .command-center-main-content {
-        padding-top: 0 !important;
-    }
+/*command center end*/
+
+/*mudblazor overrides*/
+.mud-input-control>.mud-input-control-input-container>.mud-input-label-inputcontrol{
+    font-size: 14px !important;
 }
+/*mudblazor overrides end*/
 
 @media (min-width: 576px) {
+    .main-layout-main-content {
+        padding: 12px !important;
+    }
+    
+    .static-main-layout-main-content {
+        padding: 12px !important;
+    }
+
     .cc-page-container {
         padding: 16px 0;
         gap: 16px;
@@ -434,12 +452,3 @@ img.command-center-card-icon {
         border: 2px dashed var(--fog-border-color);
     }
 }
-
-
-/*command center end*/
-
-/*mudblazor overrides*/
-.mud-input-control>.mud-input-control-input-container>.mud-input-label-inputcontrol{
-    font-size: 14px !important;
-}
-/*mudblazor overrides end*/

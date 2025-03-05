@@ -1,38 +1,22 @@
-@page "/tools/wonder-cost-calculator"
+@attribute [Route(FogUrlBuilder.PageRoutes.WONDER_COST_CALCULATOR_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
-@using Ingweland.Fog.WebApp.Client.Components.Elements
-@using Microsoft.Extensions.Localization
-@rendermode InteractiveWebAssembly
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject ICityUiService CityUiService;
-@inject IStringLocalizer<FogResource> Loc
 @inject IToolsUiService ToolsUiService
-<HeadContent>
-    <meta name="description"
-          content="Calculate resources required to progress through world wonder levels - the tool for Heroes of History">
-    <meta name="keywords"
-          content="Heroes of History tools, wonder cost calculator, hoh tools, hoh calculator, wonders, wonder cost">
-</HeadContent>
-<PageTitle>World wonder calculator for Heroes of History on Forge of Games</PageTitle>
-<div class="component-root vertical-layout">
-    <div class="vertical-layout text-container">
-        <div class="tool-title">@Loc[FogResource.Tools_WonderCost_Name]</div>
-        <div >@Loc[FogResource.Tools_WonderCost_Description]</div>
-    </div>
-    <div class="fog-container vertical-layout tool-container">
-        @if (_wonders == null)
-        {
-            <div class="d-flex justify-content-center align-items-center vh-100">
-                <div class="spinner-grow" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        }
-        else
-        {
-            // city selector 
+@if (_wonders != null)
+{
+    <div class="component-root vertical-layout">
+        <div class="vertical-layout text-container">
+            <div class="tool-title">@Loc[FogResource.Tools_WonderCost_Name]</div>
+            <div>@Loc[FogResource.Tools_WonderCost_Description]</div>
+        </div>
+        <div class="fog-container vertical-layout tool-container">
+
+            @* city selector *@
             <MudSelect Label="@Loc[FogResource.Hoh_City]"
                        @bind-Value="@_selectedWonderGroup" SelectedValuesChanged="OnCitiesSelectedValuesChanged"
                        T="WonderGroupViewModel" Variant="Variant.Outlined">
@@ -43,7 +27,7 @@
                 }
             </MudSelect>
 
-            // wonder selector
+            @* wonder selector *@
             @if (_selectedWonderGroup != null)
             {
                 <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]"
@@ -57,7 +41,7 @@
                 </MudSelect>
             }
 
-            // current level selector
+            @* current level selector *@
             @if (_fromLevels != null)
             {
                 <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
@@ -71,7 +55,7 @@
                 </MudSelect>
             }
 
-            // target level selector
+            @* target level selector *@
             @if (_toLevels != null)
             {
                 <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]"
@@ -94,10 +78,9 @@
                     }
                 </div>
             }
-        }
+        </div>
     </div>
-
-</div>
+}
 
 @code {
     private IReadOnlyCollection<WonderGroupViewModel>? _wonders;
@@ -112,12 +95,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        if (!OperatingSystem.IsBrowser())
-        {
-            return;
-        }
+        await base.OnInitializedAsync();
 
-        _wonders = await CityUiService.GetWonderGroupsAsync();
+        _wonders = await LoadWithPersistenceAsync(nameof(_wonders),
+            async () => await CityUiService.GetWonderGroupsAsync());
     }
 
     private void OnCurrentLevelSelectedValuesChanged()

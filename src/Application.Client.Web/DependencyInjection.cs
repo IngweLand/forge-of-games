@@ -15,8 +15,6 @@ using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Services;
-using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub;
@@ -108,16 +106,13 @@ public static class DependencyInjection
         services.AddScoped<IHohPlayerAvatarUrlProvider, HohPlayerAvatarUrlProvider>();
         services.AddScoped<IStatsHubViewModelsFactory, StatsHubViewModelsFactory>();
         services.AddScoped<IStatsHubUiService, StatsHubUiService>();
+        services.AddScoped<ICampaignUiService, CampaignUiService>();
+        services.AddScoped<ITreasureHuntUiService, TreasureHuntUiService>();
+        services.AddScoped<IUnitUiService, UnitUiService>();
+        services.AddScoped<ICityUiService, CityUiService>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         
         services.AddScoped<CityPlannerSettings>();
-
-        services.AddHttpClient<IWikipediaService, WikipediaService>()
-            .AddStandardResilienceHandler(options =>
-            {
-                options.Retry.BackoffType = DelayBackoffType.Exponential;
-                options.Retry.MaxRetryAttempts = 3;
-            });
     }
 }

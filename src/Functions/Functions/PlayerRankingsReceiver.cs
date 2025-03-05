@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Functions.Functions.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
@@ -17,7 +18,8 @@ public class PlayerRankingsReceiver(
     ILogger<PlayerRankingsReceiver> logger,
     IInGameDataParsingService inGameDataParsingService,
     IPlayerRankingTableRepository playerRankingTableRepository,
-    IGameWorldsProvider gameWorldsProvider):BaseRankingsReceiver(logger, gameWorldsProvider)
+    IGameWorldsProvider gameWorldsProvider,
+    DatabaseWarmUpService databaseWarmUpService):RankingsReceiverBase(logger, gameWorldsProvider)
 {
     [Function("PlayerRankingsReceiver")]
     public async Task<IActionResult> Run(
@@ -25,6 +27,8 @@ public class PlayerRankingsReceiver(
         HttpRequest req,
         [FromBody] InGameDataRequestDto inGameData)
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+        
         SetDebugCorsHeaders(req);
         
         if (!ValidateRequest(inGameData, GameEndpoints.PlayerRankingPath, out var worldId))

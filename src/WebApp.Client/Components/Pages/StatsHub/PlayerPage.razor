@@ -3,7 +3,6 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Size = MudBlazor.Size
 @inherits StatsHubPageBase
-@rendermode PageRenderMode
 @if (IsInitialized)
 {
     <div class="page-container">
@@ -105,7 +104,10 @@
 
     </div>
 }
-
+else
+{
+    <LoadingIndicator/>
+}
 
 @code {
 

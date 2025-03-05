@@ -1,10 +1,13 @@
 @page "/command-center/playgrounds/heroes"
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @inherits CommandCenterPageBase
-@rendermode PageRenderMode
 @if (_heroes != null)
 {
     <div class="component-root">
         <CcHeroListComponent Profiles="@_heroes" Dense="true" HeroProfileSelected="OnHeroProfileSelected"/>
     </div>
+}
+else
+{
+    <LoadingIndicator/>
 }

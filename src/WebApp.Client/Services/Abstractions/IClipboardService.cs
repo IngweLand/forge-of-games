@@ -1,4 +1,4 @@
-namespace Ingweland.Fog.WebApp.Client.Services;
+namespace Ingweland.Fog.WebApp.Client.Services.Abstractions;
 
 public interface IClipboardService
 {

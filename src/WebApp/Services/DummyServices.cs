@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Models;
@@ -91,6 +92,11 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
+    public ValueTask ShowLoadingIndicatorAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<bool> IsMobileAsync()
     {
         throw new NotImplementedException();
@@ -101,7 +107,7 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
-    public ValueTask RemoveLoadingIndicatorAsync()
+    public ValueTask HideLoadingIndicatorAsync()
     {
         throw new NotImplementedException();
     }
@@ -120,6 +126,19 @@ internal class DummyInGameStartupDataService : IInGameStartupDataService
     }
 
     public Task<InGameStartupData?> GetImportedInGameDataAsync(string inGameStartupDataId)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+internal class DummyCityPlannerSharingService : ICityPlannerSharingService
+{
+    public Task<ResourceCreatedResponse> ShareAsync(HohCity city)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<HohCity?> GetSharedCityAsync(string cityId)
     {
         throw new NotImplementedException();
     }

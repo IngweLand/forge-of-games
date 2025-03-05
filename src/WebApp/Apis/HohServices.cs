@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh;
@@ -17,7 +18,10 @@ public class HohServices(
     ICommandCenterProfileRepository commandCenterProfileRepository,
     IInGameStartupDataProcessingService inGameStartupDataProcessingService,
     IInGameStartupDataRepository inGameStartupDataRepository,
-    IHohCityRepository hohCityRepository)
+    IHohCityRepository hohCityRepository,
+    ICampaignService campaignService,
+    ITreasureHuntService treasureHuntService,
+    IWikipediaService wikipediaService)
 {
     public ICityService CityService { get; } = cityService;
     public ICommandCenterProfileRepository CommandCenterProfileRepository { get; } = commandCenterProfileRepository;
@@ -31,6 +35,9 @@ public class HohServices(
         inGameStartupDataRepository;
 
     public IHohCityRepository HohCityRepository { get; } = hohCityRepository;
+    public ICampaignService CampaignService { get; } = campaignService;
+    public ITreasureHuntService TreasureHuntService { get; } = treasureHuntService;
+    public IWikipediaService WikipediaService { get; } = wikipediaService;
 
     public ILogger<HohServices> Logger { get; } = logger;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;

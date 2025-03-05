@@ -1,0 +1,64 @@
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_SNAPSHOTS_PATH)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="container">
+    <h3>Snapshots: Save and Compare Your City Layouts</h3>
+
+    <div class="info">
+        Snapshots let you save different versions of your city and switch between them. You can save up to 5 different snapshots and compare how your city performs across these different layouts.
+    </div>
+
+    <div class="step">
+        <h5>What is a Snapshot?</h5>
+        <p>A snapshot saves your entire city layout at a specific moment. It preserves all buildings exactly as they are when you create it.</p>
+    </div>
+
+    <div class="step">
+        <h5>Creating Snapshots</h5>
+        <ol>
+            <li>Open the Snapshots menu in the right panel</li>
+            <li>Click the Create button to save your current city layout as a snapshot</li>
+            <li>The snapshot will be named with your current local time</li>
+            <li>Your city is automatically saved when creating a snapshot</li>
+        </ol>
+        <p class="note">Note: When you import a city, the system automatically creates an initial snapshot to help you track changes.</p>
+    </div>
+
+    <div class="step">
+        <h5>Managing Snapshots</h5>
+
+        <h6>Loading a Snapshot</h6>
+        <p>When you load a snapshot, your entire city layout will change to match that saved version. Important:</p>
+        <ul>
+            <li>Your current layout will be replaced</li>
+            <li>Changes are saved automatically</li>
+            <li>This action cannot be undone</li>
+        </ul>
+
+        <h6>Deleting a Snapshot</h6>
+        <p>You can remove any snapshot using the delete option in the Snapshots menu.</p>
+    </div>
+
+    <div class="step">
+        <h5>Comparing Layouts</h5>
+        <p>The comparison feature helps you see how different layouts affect your city's production.</p>
+
+        <p>How it works:</p>
+        <ul>
+            <li>Compare up to 6 different versions (5 snapshots plus your current layout)</li>
+            <li>Your current city layout is always included in the comparison</li>
+            <li>You need at least one snapshot to make comparisons</li>
+            <li>The comparison table shows production values for each resource</li>
+            <li>When production values in a row differ, the highest values are highlighted in green</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h5>Additional Information</h5>
+        <ul>
+            <li>New cities start without any snapshots</li>
+            <li>Imported cities receive one automatic snapshot</li>
+            <li>Loading a snapshot permanently replaces your current layout</li>
+        </ul>
+    </div>
+</div>

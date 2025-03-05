@@ -1,0 +1,51 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CAMPAIGN_REGION_TEMPLATE)]
+@inject ICampaignUiService CampaignUiService;
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<PageTitle>@_pageTitle</PageTitle>
+@if (_region != null)
+{
+    <div class="d-flex flex-column align-items-center gap-3 pb-4">
+        <div class="container-fluid py-3 fog-container mb-3">
+            <h3 class="text-center mb-3 user-select-none">@_region!.Name</h3>
+            <hr class="w-100 mb-3">
+            <div class="d-flex flex-wrap justify-content-center gap-4">
+                @foreach (var reward in _region.Rewards)
+                {
+                    <ResourceWithValue ResourceValue="@reward"/>
+                }
+            </div>
+        </div>
+        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Encounters]</h4>
+        @foreach (var encounter in _region.Encounters)
+        {
+            <EncounterComponent Encounter="@encounter"/>
+        }
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public string RegionId { get; set; }
+
+    private string _pageTitle = null!;
+    private RegionViewModel? _region;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _region = await LoadWithPersistenceAsync(nameof(_region),
+            async () => await CampaignUiService.GetRegionAsync(RegionId));
+
+        if (_region != null)
+        {
+            _pageTitle = Loc[FogResource.CampaignRegion_PageTitle, _region.Name];
+        }
+    }
+
+}

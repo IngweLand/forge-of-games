@@ -1,0 +1,38 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_WONDERS_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject ICityUiService CityUiService;
+@if (_wonders != null)
+{
+    <div class="root">
+        @foreach (var wonderGroup in _wonders)
+        {
+            <div class="city-container">
+                <h4 class="city-name">@wonderGroup.CityName</h4>
+                <div class="wonders-container">
+                    @foreach (var wonder in wonderGroup.Wonders)
+                    {
+                        <a href="wonders/@wonder.Id">
+                            <WonderListItem Wonder="@wonder"/>
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<WonderGroupViewModel>? _wonders;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        
+        _wonders = await LoadWithPersistenceAsync(nameof(_wonders),
+            async () => await CityUiService.GetWonderGroupsAsync());
+    }
+
+}

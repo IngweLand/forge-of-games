@@ -45,9 +45,13 @@ public class CityUiService(
             .ToList();
     }
 
-    public async Task<BuildingGroupViewModel> GetBuildingGroupAsync(CityId cityId, BuildingGroup group)
+    public async Task<BuildingGroupViewModel?> GetBuildingGroupAsync(CityId cityId, BuildingGroup group)
     {
         var buildingGroup = await cityService.GetBuildingGroupAsync(cityId, group);
+        if (buildingGroup == null)
+        {
+            return null;
+        }
         return mapper.Map<BuildingGroupViewModel>(buildingGroup);
     }
 

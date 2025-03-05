@@ -10,27 +10,32 @@
         <MudNavGroup Title="@Loc[item.ResourceKey]" Expanded="@item.Expanded" Icon="@item.Icon">
             @foreach (var child in item.Children)
             {
-                <MudNavLink Href="@child.Href" ActiveClass="fog-navlink-active" Class="fog-navlink" Match="@child.Match"
-                            Icon="@child.Icon">@Loc[child.ResourceKey]</MudNavLink>
+                <MudNavLink  Href="@child.Href" ActiveClass="fog-navlink-active" Match="@child.Match"
+                             Icon="@child.Icon">@Loc[child.ResourceKey]</MudNavLink>
             }
         </MudNavGroup>
     }
     else
     {
-        <MudNavLink Href="@item.Href" ActiveClass="fog-navlink-active" Match="@item.Match" Class="fog-navlink"
+        <MudNavLink Href="@item.Href" ActiveClass="fog-navlink-active" Match="@item.Match" 
                     Icon="@item.Icon">@Loc[item.ResourceKey]</MudNavLink>
     }
 }
 
 <style>
-    .fog-navlink {
-        text-decoration: none;
-    }
-
     .fog-navlink-active {
         color: var(--fog-text-on-dark-color);
         background-color: rgba(255, 255, 255, 0.2);
-        text-decoration: none;
+        text-decoration: none  !important;
+    }
+    
+    .mud-nav-link {
+        text-decoration: none !important;
+    }
+
+    .mud-nav-link-expand-icon {
+        color: var(--fog-icon-on-dark-color) !important;
+        fill: var(--fog-icon-on-dark-color) !important;
     }
 </style>
 

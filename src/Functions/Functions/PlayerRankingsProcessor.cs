@@ -12,11 +12,14 @@ public class PlayerRankingsProcessor(
     IGameWorldsProvider gameWorldsProvider,
     IPlayerRankingService playerRankingService,
     IPlayerRankingTableRepository playerRankingTableRepository,
-    ILogger<PlayerRankingsProcessor> logger)
+    ILogger<PlayerRankingsProcessor> logger,
+    DatabaseWarmUpService databaseWarmUpService)
 {
     [Function("PlayerRankingsProcessor")]
-    public async Task Run([TimerTrigger("0 0 0 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 5 0 * * *")] TimerInfo myTimer)
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         const PlayerRankingType playerRankingType = PlayerRankingType.RankingPoints;
         foreach (var gameWorld in gameWorldsProvider.GetGameWorlds())

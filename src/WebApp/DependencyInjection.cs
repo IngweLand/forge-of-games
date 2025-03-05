@@ -1,13 +1,11 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Services.Hoh;
-using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Ingweland.Fog.WebApp.Services;
-using Ingweland.Fog.WebApp.Services.Abstractions;
 
 namespace Ingweland.Fog.WebApp;
 
@@ -18,15 +16,13 @@ internal static class DependencyInjection
         var services = builder.Services;
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-        services.AddScoped<IUnitUiService, UnitUiService>();
-        services.AddScoped<ICampaignUiServerService, CampaignUiServerService>();
-        services.AddScoped<ICityUiService, CityUiService>();
-        services.AddScoped<ITreasureHuntUiService, TreasureHuntUiServerService>();
         services.AddScoped<IClientLocaleService, DummyClientLocaleService>();
         services.AddScoped<IPersistenceService, DummyPersistenceService>();
         services.AddScoped<IInGameStartupDataService, DummyInGameStartupDataService>();
         services.AddScoped<IJSInteropService, DummyJSInteropService>();
-        services.AddScoped<IPageSetupService, PageSetupService>();
+        services.AddScoped<ICityPlannerSharingService, DummyCityPlannerSharingService>();
+        services.AddScoped<IMainMenuService, MainMenuService>();
+        services.AddScoped<IPageMetadataService, PageMetadataService>();
     }
 
     public static void AddWebAppSettings(this IHostApplicationBuilder builder)

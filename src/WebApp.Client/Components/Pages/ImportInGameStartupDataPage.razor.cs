@@ -2,12 +2,13 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
-public partial class ImportInGameStartupDataPage : ComponentBase
+public partial class ImportInGameStartupDataPage : FogPageBase
 {
     private InGameStartupData? _inGameStartupData;
     private bool _isImporting = true;
@@ -18,20 +19,16 @@ public partial class ImportInGameStartupDataPage : ComponentBase
     private bool _canImport => _shouldImportCities | _shouldImportProfile;
 
     [Inject]
-    protected IStringLocalizer<FogResource> Loc { get; set; }
-
-    [Inject]
-    private NavigationManager NavigationManager { get; set; }
-
-    [Inject]
     private IPersistenceService PersistenceService { get; set; }
 
     [Inject]
     private IInGameStartupDataService StartupDataService { get; set; }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnInitializedAsync()
     {
-        if (!firstRender)
+        await base.OnInitializedAsync();
+
+        if (!OperatingSystem.IsBrowser())
         {
             return;
         }
@@ -39,21 +36,11 @@ public partial class ImportInGameStartupDataPage : ComponentBase
         try
         {
             _inGameStartupData = await StartupDataService.GetImportedInGameDataAsync(InGameStartupDataId!);
+            _isLoading = false;
         }
         catch (Exception e)
         {
-            // ignored
-        }
-
-        _isLoading = false;
-        StateHasChanged();
-    }
-
-    protected override void OnInitialized()
-    {
-        if (string.IsNullOrWhiteSpace(InGameStartupDataId))
-        {
-            NavigationManager.NavigateTo("/");
+            //ignore
         }
     }
 

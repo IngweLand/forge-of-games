@@ -1,0 +1,120 @@
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="container">
+    <h3>Importing In-Game Data into City Planner & Command Center</h3>
+
+    <div class="info">
+            The City Planner and Command Center tools on Forge of Games let you manage, optimize,
+            and review your city layouts and hero rosters with ease. To take full advantage of these
+            features, you’ll want to import your actual in-game data—so that what you see here matches
+            what’s in <em>Heroes of History</em>.
+    </div>
+
+    <div class="step">
+        <h5>Step 1: Install the HoH Helper Extension</h5>
+        <p>
+            The easiest way to import your data is via the
+            <strong>HoH Helper</strong> browser extension, which automatically collects your city
+            and hero data whenever the game is loaded. It is available for Google Chrome and other Chromium-based browsers
+            (like Microsoft Edge) that support extensions.
+        </p>
+
+        <p>
+            If you haven’t already, please visit our
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">
+                Extension Guide
+            </a>
+            to learn how to install and configure HoH Helper. The guide explains both the upcoming
+            Chrome Web Store installation (once available) and how to install the extension from source
+            immediately in Developer Mode.
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Step 2: Capture Your In-Game Data</h5>
+        <p>
+            Once you have the extension installed:
+        </p>
+        <ol>
+            <li>Open your <em>Heroes of History</em> game in Google Chrome and let it load fully.</li>
+            <li>The extension will detect your city layout and heroes in the background.
+            </li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h5>Step 3: Export Data to Forge of Games</h5>
+        <ol>
+            <li>
+                Click the HoH Helper extension icon in your browser’s toolbar. A popup will appear,
+                showing the <strong>“HoH City Planner and Command Center”</strong> section.
+            </li>
+            <li>
+                If the <strong>Export Game Data</strong> button is active, click it. (If it’s inactive,
+                reload your game page.)
+            </li>
+            <li>
+                The extension will send the captured data (your city layout and heroes) to the Forge of Games
+                servers. If successful, a new tab opens with a custom link.
+            </li>
+        </ol>
+        <p>
+            <em>Tip:</em> Make sure you have the most current in-game data by reloading your game
+            before exporting. This ensures any recent upgrades or layout changes are captured.
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Step 4: Import into City Planner or Command Center</h5>
+        <ol>
+            <li>
+                The newly opened page on Forge of Games will let you choose which data
+                (city layout, heroes, or both) you’d like to import.
+            </li>
+            <li>
+                Click <strong>Import</strong>. Once successful, head over to the City Planner
+                or Command Center to review and manage your newly imported data.
+            </li>
+        </ol>
+        <p>
+            That’s it—you’re ready to start optimizing your city layouts or strategizing your heroes!
+        </p>
+    </div>
+
+    <div class="step">
+        <h5>Frequently Asked Questions (FAQ)</h5>
+
+        <h6>Q: Why is my data out of date?</h6>
+        <p>
+            A: The extension captures your data only when the game first loads. If you’ve
+            made changes since then, just reload the game and export again.
+        </p>
+
+        <h6>Q: I have multiple tabs or servers open. Which data is used?</h6>
+        <p>
+            A: Whichever game tab was loaded most recently will have its data captured.
+            If you want data from another server or tab, reload that tab before exporting.
+        </p>
+
+        <h6>Q: Do I need to keep the game open while importing data?</h6>
+        <p>
+            A: No. Once the game’s data is captured and the extension sends it to our server,
+            you can import at any time—though note that if you continue playing and make changes,
+            those changes won’t be included unless you export again.
+        </p>
+    </div>
+
+    <div class="privacy">
+        <h2>Need More Help?</h2>
+        <p>
+            For additional details or troubleshooting steps, be sure to consult our
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH" >
+                HoH Helper Extension Guide
+            </a>.
+            If you still have questions, feel free to reach out to our <a href="@FogUrlBuilder.PageRoutes.FOG_DISCORD_URL" target="_blank">Discord community</a>.
+        </p>
+    </div>
+</div>
+

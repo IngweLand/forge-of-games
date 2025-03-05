@@ -26,12 +26,18 @@
         <PackageReference Include="Refit" Version="8.0.0" />
         <PackageReference Include="Refit.HttpClientFactory" Version="8.0.0" />
         <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.116.1" />
-        <PackageReference Include="Syncfusion.Blazor.Charts" Version="28.2.6" />
+        <PackageReference Include="Syncfusion.Blazor.Charts" Version="28.2.7" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj" />
         <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="Exists('..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj')">
+        <ProjectReference Include="..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="!Exists('..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj')">
+        <ProjectReference Include="..\Misc\SyncfusionLicensingStub\SyncfusionLicensingStub.csproj" />
     </ItemGroup>
 
 </Project>

@@ -10,27 +10,9 @@ public partial class StatsHubPage : StatsHubPageBase
     {
         await base.OnInitializedAsync();
 
-        if (!ApplicationState.TryTakeFromJson<TopStatsViewModel>(
-                nameof(_topStats), out var restoredTopStats))
-        {
-            _topStats = await StatsHubUiService.GetTopStatsAsync();
-        }
-        else
-        {
-            _topStats = restoredTopStats;
-        }
-
-        if (OperatingSystem.IsBrowser())
-        {
-            await IJsInteropService.RemoveLoadingIndicatorAsync();
-            IsInitialized = true;
-        }
-    }
-
-    protected override Task PersistData()
-    {
-        ApplicationState.PersistAsJson(nameof(_topStats), _topStats);
-
-        return Task.CompletedTask;
+        _topStats = await LoadWithPersistenceAsync(nameof(_topStats),
+            async () => await StatsHubUiService.GetTopStatsAsync());
+        
+        IsInitialized = true;
     }
 }

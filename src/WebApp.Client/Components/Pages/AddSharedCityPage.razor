@@ -1,6 +1,5 @@
 @page "/cityPlanner/sharedCities/{sharedCityId}"
-@rendermode @(new InteractiveWebAssemblyRenderMode(prerender:false))
-<MudDialogProvider/>
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @code {
     [Parameter]
     public string? SharedCityId { get; set; }

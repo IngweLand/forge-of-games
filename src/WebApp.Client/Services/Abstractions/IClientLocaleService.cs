@@ -1,5 +1,7 @@
 using Ingweland.Fog.WebApp.Client.Models;
 
+namespace Ingweland.Fog.WebApp.Client.Services.Abstractions;
+
 public interface IClientLocaleService
 {
     Task<LocaleInfo> GetCurrentLocaleAsync();

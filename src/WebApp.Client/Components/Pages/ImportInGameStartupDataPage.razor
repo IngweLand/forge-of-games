@@ -1,7 +1,6 @@
 @page "/inGameData/{inGameStartupDataId}"
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.WebApp.Client.Components.Elements
-@rendermode InteractiveWebAssembly
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="main-container">
     <span class="title">@Loc[FogResource.ImportInGameData_Headline]</span>
     <div class="fog-container section-container">

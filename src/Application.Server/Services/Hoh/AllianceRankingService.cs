@@ -41,8 +41,13 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
             if (existingAlliances.TryGetValue(new AllianceKey(allianceRanking.WorldId, allianceRanking.InGameAllianceId),
                     out var existingAlliance))
             {
-                mapper.Map(alliance, existingAlliance);
-                updatedAllianceCount++;
+               
+                if (alliance.UpdatedAt >= existingAlliance.UpdatedAt)
+                {
+                    mapper.Map(alliance, existingAlliance);
+                    updatedAllianceCount++;
+                }
+               
                 if (existingAlliance.Rankings.Count == 0)
                 {
                     existingAlliance.Rankings.Add(allianceRanking);
@@ -50,10 +55,10 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                 }
                 else
                 {
-                    var existingRanking = existingAlliance.Rankings.First();
-                    if (allianceRanking.Key == existingRanking.Key)
+                    var existingRanking = existingAlliance.Rankings.FirstOrDefault(r => r.Key == allianceRanking.Key);
+                    if (existingRanking != null)
                     {
-                        mapper.Map(allianceRanking, existingAlliance.Rankings.First());
+                        mapper.Map(allianceRanking, existingRanking);
                         updatedRankingCount++;
                     }
                     else

@@ -1,5 +1,4 @@
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements;
 using MudBlazor;
@@ -8,18 +7,24 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
 public abstract class AddRemoteProfilePageBase: CommandCenterPageBase
 {
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        if (!CanGetProfile())
+        if (CanGetProfile())
         {
-            OpenMainPage();
             return;
         }
-        var baseTask =  base.OnInitializedAsync();
+
+        OpenMainPage();
+    }
+
+    protected override async Task HandleOnInitializedAsync()
+    {
+        await base.HandleOnInitializedAsync();
+        
         var sharingTask = GetProfile();
         try
         {
-            await Task.WhenAll(baseTask, sharingTask);
+            await sharingTask;
         }
         catch (Exception e)
         {

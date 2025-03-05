@@ -1,20 +1,12 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.WebApp.Client.Components.Layout;
-using Ingweland.Fog.WebApp.Client.Services;
-using Ingweland.Fog.WebApp.Client.Services.Abstractions;
+using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.Extensions.Localization;
 using MudBlazor;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
-[Layout(typeof(CommandCenterLayout))]
-public abstract class CommandCenterPageBase : ComponentBase, IDisposable
+public abstract class CommandCenterPageBase : FogPageBase
 {
-    protected static IComponentRenderMode PageRenderMode = new InteractiveWebAssemblyRenderMode(prerender: false);
     [Inject]
     protected ICommandCenterUiService CommandCenterUiService { get; set; }
 
@@ -22,15 +14,12 @@ public abstract class CommandCenterPageBase : ComponentBase, IDisposable
     protected IDialogService DialogService { get; set; }
 
     [Inject]
-    protected IStringLocalizer<FogResource> Loc { get; set; }
-
-    [Inject]
     protected NavigationManager NavigationManager { get; set; }
 
     [Inject]
     protected ISnackbar Snackbar { get; set; }
 
-    protected virtual void Dispose(bool disposing)
+    protected override void Dispose(bool disposing)
     {
         if (disposing)
         {
@@ -40,10 +29,29 @@ public abstract class CommandCenterPageBase : ComponentBase, IDisposable
                 CommandCenterUiService.StateHasChanged -= CommandCenterUiServiceOnStateHasChanged;
             }
         }
+        
+        base.Dispose(disposing);
+    }
+
+    protected sealed override async Task OnParametersSetAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        await HandleOnParametersSetAsync();
+    }
+
+    protected virtual Task HandleOnParametersSetAsync()
+    {
+        return Task.CompletedTask;
     }
     
-    [Inject]
-    protected IJSInteropService IJsInteropService { get; set; }
+    protected virtual Task HandleOnInitializedAsync()
+    {
+        return Task.CompletedTask;
+    }
 
     protected static DialogOptions GetDefaultDialogOptions()
     {
@@ -57,19 +65,21 @@ public abstract class CommandCenterPageBase : ComponentBase, IDisposable
     }
     protected bool IsInitialized { get; set; }
 
-    public void Dispose()
+    protected sealed override async Task OnInitializedAsync()
     {
-        Dispose(true);
-        GC.SuppressFinalize(this);
-    }
-    
-    protected override async Task OnInitializedAsync()
-    {
-        IJsInteropService.ResetScrollPositionAsync();
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+        
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+        JsInteropService.ResetScrollPositionAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         await CommandCenterUiService.EnsureInitializedAsync();
-        await IJsInteropService.RemoveLoadingIndicatorAsync();
         CommandCenterUiService.StateHasChanged += CommandCenterUiServiceOnStateHasChanged;
+        await HandleOnInitializedAsync();
         IsInitialized = true;
+        await JsInteropService.HideLoadingIndicatorAsync();
     }
     
     private void CommandCenterUiServiceOnStateHasChanged()
