@@ -1,16 +1,16 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BASE_HELP_PATH)]
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-<div class="container">
+<div class="help-container">
     <h2>Forge of Games Help Center</h2>
-    <div class="info">
+    <div class="help-info">
             Welcome to the Forge of Games Help Center! This project is aimed at enhancing
             your <em>Heroes of History</em> experience. Below you’ll find links to specific guides
             covering our main tools and features.
     </div>
 
     <h4>Help Topics</h4>
-    <ul class="list">
+    <ul class="help-table-of-contents">
         <li>
             <strong>HoH Helper - Extension Guide</strong><br/>
             <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">

@@ -2,10 +2,10 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH)]
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 
-<div class="container">
+<div class="help-container">
     <h3>HoH Helper &ndash; Heroes of History Browser Extension Guide</h3>
 
-    <div class="info">
+    <div class="help-info">
             HoH Helper is a powerful browser extension that reads in-game data from Heroes of History
             and shares it with Forge of Games. This extension does not modify or interfere
             with normal game operations&mdash;it simply listens for in-game data and, if permitted by
@@ -14,7 +14,7 @@
             (like Microsoft Edge) that support extensions.
     </div>
 
-    <div class="step">
+    <div class="help-step">
         <h5>Extension Overview</h5>
         <p>HoH Helper provides two key functionalities:</p>
         <ul>
@@ -29,7 +29,51 @@
         </p>
     </div>
 
-    <div class="step">
+    <div class="help-step">
+        <h5>Installation Steps</h5>
+
+        <h6>Option A: Chrome Web Store (Upcoming)</h6>
+        <p>
+            We are in the process of publishing HoH Helper to the Chrome Web Store for a simple “one-click” install.
+            Once available, you will be able to:
+        </p>
+        <ol>
+            <li>Go to the Chrome Web Store page for HoH Helper.</li>
+            <li>Click <strong>Add to Chrome</strong> and follow any on-screen prompts.</li>
+        </ol>
+        <p><em>Stay tuned! We will announce this release as soon as possible.</em></p>
+        <br/>
+        <h6>Option B: Developer Mode (Source Installation)</h6>
+        <p>
+            You can install HoH Helper directly from the GitHub source code <strong>at any time</strong>,
+            even before the Chrome Web Store version is available. In fact, we encourage installing it right now
+            so you can contribute data to our Stats Hub immediately!
+        </p>
+        <ol>
+            <li>Visit
+                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_RELEASES_GITHUB_URL" target="_blank">
+                    HoH Helper Releases
+                </a>, and download the latest ZIP file.
+            </li>
+            <li>Extract the files to a folder on your computer.</li>
+            <li>Open Google Chrome.</li>
+            <li>
+                Either:
+                <ul>
+                    <li>Type <code>chrome://extensions</code> in the address bar</li>
+                    <li>Or click the three-dot menu (⋮) in the top-right corner,
+                        go to <em>More Tools</em>, and select <em>Extensions</em>
+                    </li>
+                </ul>
+            </li>
+            <li>Toggle on <strong>Developer mode</strong> in the top-right corner of the page.</li>
+            <li>Click <strong>Load unpacked</strong>, then select the folder containing
+                <code>manifest.json</code>.
+            </li>
+        </ol>
+    </div>
+
+    <div class="help-step">
         <h5>Data Collection</h5>
         <p>
             HoH Helper offers flexible, checkbox-based settings to control what data you share.
@@ -62,7 +106,7 @@
         </p>
     </div>
 
-    <div class="step">
+    <div class="help-step">
         <h5>Game Data Export</h5>
         <p>
             HoH Helper makes it easy to export your city layout and heroes into our <strong>City Planner</strong>
@@ -86,51 +130,7 @@
         </ol>
     </div>
 
-    <div class="step">
-        <h5>Installation Steps</h5>
-
-        <h6>Option A: Chrome Web Store (Upcoming)</h6>
-        <p>
-            We are in the process of publishing HoH Helper to the Chrome Web Store for a simple “one-click” install.
-            Once available, you will be able to:
-        </p>
-        <ol>
-            <li>Go to the Chrome Web Store page for HoH Helper.</li>
-            <li>Click <strong>Add to Chrome</strong> and follow any on-screen prompts.</li>
-        </ol>
-        <p><em>Stay tuned! We will announce this release as soon as possible.</em></p>
-
-        <h6>Option B: Developer Mode (Source Installation)</h6>
-        <p>
-            You can install HoH Helper directly from the GitHub source code <strong>at any time</strong>,
-            even before the Chrome Web Store version is available. In fact, we encourage installing it right now
-            so you can contribute data to our Stats Hub immediately!
-        </p>
-        <ol>
-            <li>Visit
-                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_RELEASES_GITHUB_URL" target="_blank">
-                    HoH Helper Releases
-                </a>, and download the latest ZIP file.
-            </li>
-            <li>Extract the files to a folder on your computer.</li>
-            <li>Open Google Chrome.</li>
-            <li>
-                Either:
-                <ul>
-                    <li>Type <code>chrome://extensions</code> in the address bar</li>
-                    <li>Or click the three-dot menu (⋮) in the top-right corner,
-                        go to <em>More Tools</em>, and select <em>Extensions</em>
-                    </li>
-                </ul>
-            </li>
-            <li>Toggle on <strong>Developer mode</strong> in the top-right corner of the page.</li>
-            <li>Click <strong>Load unpacked</strong>, then select the folder containing
-                <code>manifest.json</code>.
-            </li>
-        </ol>
-    </div>
-
-    <div class="step">
+    <div class="help-step">
         <h5>Frequently Asked Questions (FAQ)</h5>
 
         <h6>Q: Does the extension modify the game?</h6>
@@ -156,7 +156,7 @@
         </p>
     </div>
 
-    <div class="privacy">
+    <div class="help-note">
         <h2>Open Source and Contributions</h2>
         <p>Our extension is fully open-source and welcomes community involvement:</p>
         <ul>
@@ -168,7 +168,7 @@
         </ul>
     </div>
 
-    <div class="privacy">
+    <div class="help-note">
         <h2>Data Privacy</h2>
         <p>We are committed to transparency and user privacy:</p>
         <ul>
