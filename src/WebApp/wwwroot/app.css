@@ -20,7 +20,7 @@
     /*--fog-hero-background-color: #7B8B6F;*/
     --fog-hero-background-color: #7b886e;
     --fog-hero-background-border-color: #4F5947;
-    --fog-link-color: #6C79A7;
+    --fog-link-color: #939632;
     --fog-positive-selection-color: #CFFCEF;
     --fog-text-color: #34495E;
     --fog-text-secondary-color: #9EA9B3;
@@ -429,6 +429,59 @@ img.command-center-card-icon {
 }
 /*mudblazor overrides end*/
 
+/*help start*/
+
+.help-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    line-height: 1.6;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 12px;
+    max-width: 1200px;
+    align-self: center;
+}
+
+.help-step {
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: var(--fog-border-radius);
+}
+
+.help-step h3 {
+    color: #2c5282;
+    margin-top: 0;
+}
+
+.help-info, .help-note {
+    padding: 12px;
+    background-color: #ebf8ff;
+    border-radius: var(--fog-border-radius);
+    border-left: 4px solid #4299e1;
+}
+
+.help-note {
+    background-color: #f0fff4;
+    border-left: 4px solid #48bb78;
+}
+
+.help-note h2 {
+    color: #2f855a;
+    margin-top: 0;
+}
+
+.help-table-of-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/*help end*/
+
+
 @media (min-width: 576px) {
     .main-layout-main-content {
         padding: 12px !important;
@@ -451,4 +504,25 @@ img.command-center-card-icon {
     .command-center-card.command-center-action-card {
         border: 2px dashed var(--fog-border-color);
     }
+    
+    /*help start*/
+
+    .help-container {
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .help-step {
+        padding: 24px;
+    }
+
+    .help-info, .help-note {
+        padding: 24px;
+    }
+
+    .help-table-of-contents {
+        gap: 16px;
+    }
+
+    /*help end*/
 }
