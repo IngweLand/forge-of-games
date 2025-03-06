@@ -417,6 +417,8 @@ A
 $Base.BuildingGroups.averageHome_NameMedium HomeMedium Homes
 ’
 !Base.Units.Unit_RomanPraetor_DescØParty like a Roman with Aemilia Tertia! This socialite of the 2nd century BC in ancient Rome, was the wife of Scipio Africanus, the renowned general who defeated Hannibal in the Second Punic War. Known for her noble birth and marriage into one of Rome‚Äôs leading families, she exemplified the Roman matron's virtues.<br><br>Her life is noted for her support of her husband's military and political career, alongside her role in managing the household and upbringing of her children, including Cornelia Africana, mother of the Gracchi brothers.<br><br>Aemilia Tertia's legacy is reflective of the influential roles women could hold in Roman society despite their limited public presence.
+ó
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc¡<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 ã
@@ -813,6 +815,8 @@ Stonehenge
 )Base.Regions.region.TeslaStormPurple_NamePurple Tesla Storm
 J
 3Base.Technologies.Technology_StoneAge_BearCult_NameTribal Celebrations
+N
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameImperial Conquest
 {
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
 `
@@ -867,6 +871,8 @@ W
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSicilian Villetta
 ©
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHintkYou can choose to play any unlocked difficulty. The choice is locked once you complete the first encounter.
+O
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameShield of Defiance
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantine Infantry
 M
@@ -908,6 +914,8 @@ C
 >
 #Base.BuildingGroups.chronicler_Name
 ChroniclerChroniclers
+⁄
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_DescÑ<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 E
 5Base.Technologies.Technology_Vikings_HealingMead_NameHealing Mead
 ;
@@ -1242,8 +1250,8 @@ I
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
-·
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Nameí<style=ability_label>Summon</style>Throws his triangle ruler at the current target. For <style=basestat>{duration}</style>, the ruler will move across the battlefield in a triangular shape and deal up to <style=basestat>{dmg_percentage}</style> damage to nearby enemy units.
+Ó
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Nameü<style=ability_label>Summon | Burn</style>Throws his triangle ruler at the current target. For <style=basestat>{duration}</style>, the ruler will move across the battlefield in a triangular shape and deal up to <style=basestat>{dmg_percentage}</style> damage to nearby enemy units, and leaves the affected units burning for <style=basestat>{dmg_percentage_burn}</style> over <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameChina
 k
@@ -1910,6 +1918,8 @@ N
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProduces Togas
 F
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduces Rice
+B
+.Base.Abilities.hero_battle_ability.Mozart_NameSymphony No. 999
 G
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameDomestic Farm
 `
@@ -2041,6 +2051,8 @@ V
 D
 6Base.Technologies.Technology_IberianEra_MeadHalls_Name
 Mead Halls
+E
+4Base.Abilities.hero_battle_ability.ScarabBeetle_NameScarab Beetle
 6
 "Base.Units.Unit_OracleOfDephi_NameOracle of Delphi
 <
@@ -2057,8 +2069,8 @@ N
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NameChili
 M
 8Base.Technologies.Technology_China_ChineseConsensus_NameChinese Consensus
-‚
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Nameì<style=ability_label>Debuff | Burn</style>Keg Throw: Blackbeard throws a rum keg at the largest group of enemy units, slowing their attack speed by <style=basestat>{attackspeed_debuff}</style>and movement speed by <style=basestat>{movespeed_debuff}</style> for <style=basestat>{debuff_duration}</style>. The affected enemies are also doused for <style=basestat>{doused_duration}</style>. After 12 seconds, this ability then becomes Trial by Fire.<br>Trial by Fire: Blackbeard shoots his current target, burning them for <style=basestat>{burn_damage}</style> over <style=basestat>{burn_duration}</style>. After 8 seconds, this ability then becomes Keg Throw.<br>If a doused enemy is also burned by anything, they explode, spreading the burn to nearby units and removing the doused effect.
+Ü
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name∑<style=ability_label>Debuff | Burn</style>Keg Throw: Blackbeard unleashes a rum keg at the largest cluster of enemies, reducing their attack speed by <style=basestat>{attackspeed_debuff}</style> and movement speed by <style=basestat>{movespeed_debuff}</style> for <style=basestat>{debuff_duration}</style>. These enemies become doused for <style=basestat>{doused_duration}</style>. After 12 seconds, the ability transitions to Trial by Fire.<br>Trial by Fire: Blackbeard targets his current opponent, igniting them for <style=basestat>{burn_damage}</style> damage over <style=basestat>{burn_duration}</style>. The ability reverts to Keg Throw after 8 seconds.<br>If a doused enemy is burned by any source, they will explode, spreading the burn effect to nearby units and removing the doused effect from the original target.
 Ä
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name≤<style=ability_label>Ranged Strike| Poison</style>Shoots an arrow at the furthest target, hitting them for <style=basestat>{dmg_percentage}</style> damage and poisoning them for a further <style=basestat>{poison_percentage}</style> damage over <style=basestat>{poison_duration}</style>. Prioritizes heroes.
 O
@@ -2119,6 +2131,8 @@ g
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc1Produces Pennies and adds 2 Workers to your city.
 é
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
+P
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMask of Tutankhamun
 S
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePaper Packaging
 Q
@@ -2418,6 +2432,8 @@ K
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescUnlocks Slingers
 Q
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameRanged Barracks
+?
+'Base.Heroes.hero.PhilipIIOfMacedon_NamePhilip II of Macedon
 5
 "Base.Units.Unit_CyrusTheGreat_NameCyrus the Great
 @
@@ -2456,6 +2472,8 @@ y
 &Base.Regions.region.DesertDelta_5_NameFortified Sands
 R
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameByzantine Steeds
+>
+'Base.Heroes.hero.AlexanderTheGreat_NameAlexander the Great
 O
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameAbility Training
 W
@@ -3215,6 +3233,8 @@ E
 40000 B.C.
 R
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHero Academy
+∏
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_NameÁ<style=ability_label>Buff</style>When the holder's hitpoints drop below <style=basestat>{hp_threshold}</style>, their defense is increased by <style=basestat>{defense_buff}</style> until the end of the current wave. Does not stack.
 R
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduces Doors
 I
@@ -3299,8 +3319,8 @@ W
 &Base.Regions.region.FrozenFjord_4_NameForest of the Fae
 F
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameTwilight Corsairs
-Ñ
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Nameπ<style=ability_label>Heal</style>Tansen transcends through his music, becoming invulnerable for  <style=basestat>{duration}</style>, and gaining a healing aura, healing all allied units around him for upto <style=basestat>{heal_amount}</style> over time. While the ability is active, Tansen cannot attack or move.
+Ö
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name∫<style=ability_label>Heal</style>Tansen transcends through his music, becoming invulnerable for  <style=basestat>{duration}</style>, and gaining a healing aura, healing all allied units around him for up to <style=basestat>{heal_amount}</style> over time. While the ability is active, Tansen cannot attack or move.
 R
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Namekaolin quarry
 E
@@ -3722,10 +3742,10 @@ P
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameRanged Barracks
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
-3
-!Base.Units.Unit_AttilaTheHun_NameAttila the Hun
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
+3
+!Base.Units.Unit_AttilaTheHun_NameAttila the Hun
 %
 Base.Units.Unit_Medusa_NameMedusa
 7
@@ -4522,8 +4542,8 @@ Skull Home
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 @
 3Base.Technologies.Technology_StoneAge_GoatPens_Name	Goat Pens
-È
-Base.Units.Unit_Mozart_Desc…Put on an opera and inspire thousands with Wolfgang Amadeus Mozart! This musical prodigy from the 18th century performed before kings and mastered the violin and keyboard - and that's at the age of five!<br><br>By 25, Mozart had produced a trove pieces of music, including several symphonies, countless concertos, and even a successful opera. Now in Vienna, he became extremely famous, but not extremely rich. <br> <br> In his last years, Mozart put out many of his most known reworks, including his unfinished Requiem. In life, he was a famous prankster, often pulling practical jokes on his friends, and an inspiration to many, including Ludwig Van Beethoven, another potential recruit to the Heroes of History.
+Ê
+Base.Units.Unit_Mozart_Desc∆Put on an opera and inspire thousands with Wolfgang Amadeus Mozart! This musical prodigy from the 18th century performed before kings and mastered the violin and keyboard - and that at the age of five!<br><br>By 25, Mozart had produced a trove pieces of music, including several symphonies, countless concertos, and even a successful opera. Now in Vienna, he became extremely famous, but not extremely rich. <br> <br>In his last years, Mozart put out many of his most known reworks, including his unfinished Requiem. In life, he was a famous prankster, often pulling practical jokes on his friends, and an inspiration to many, including Ludwig Van Beethoven, another potential recruit to the Heroes of History.
 T
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameAdvanced Trebuchet
 t
@@ -4671,6 +4691,8 @@ w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc=The tavern produces mead and stockfish out of honey and fish.
 -
  Base.Ages.KingdomOfSicily_Decade	1100 A.D.
+˚
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name•<style=ability_label>Recovery</style>When the holder faces fatal damage for the first time in a battle, their HP recovers to <style=basestat>{hp_percentage}</style>.
 ™
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DeschSiege Units attack slowly and are weak to enemy attacks, but they impact a large area over a wide range.
 ?
@@ -4679,6 +4701,8 @@ X
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameSustainable Mining
 )
 Base.Ages.ComingSoon_NameComing soon!
+P
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationExhaustion duration {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolyculture
 >
@@ -4834,6 +4858,8 @@ l
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc(Improves Happiness of adjacent buildings
 €
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameè<style=ability_label>Melee Strike| Stun</style>Skillfully strikes the current target with her staff, dealing <style=basestat>{dmg_percentage}</style> damage and having a <style=basestat>{chance}</style> chance to leave them stunned for <style=basestat>{duration}</style>.
+‡
+&Base.Units.Unit_PhilipIIOfMacedon_DescµBattle alongside the visionary who brought Greece to heel! Philip II, a Macedonian king from the 4th century BC, is famed for his military prowess and his conquests, the figurehead of the rise of Macedon.<br><br>Taking control of the kingdom amid crisis, Philip defeated invaders at the very beginning of his rule, then made his own innovation: the Macedonian phalanx, armed with 6 meter long pikes. With a superior army, he led campaigns against the Grecian mainland, forging an alliance with key poleis on the peninsula.<br><br>By his death, Philip was a one eyed war hero, whose genius had seen him unite Greece into the League of Corinth, and was preparing to invade Persia when he was assassinated. Even that couldn't hold him back: he was deified and worshiped as a God, while his son Alexander continue his legacy.
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameAviary
 4
@@ -4889,6 +4915,8 @@ P
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_NameÖ<style=ability_label>Invincibility| Buff</style>Provides Invincibility to all friendly units for <style=basestat>{duration}</style> and increases their DEF by <style=basestat>{def_percentage}</style> of Lincoln's DEF for <style=basestat>{buff_duration}</style>.
 M
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameCavalry Barracks
+C
+.Base.Abilities.hero_battle_ability.Tansen_NameHarmony's Embrace
 ◊
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Nameä<style=ability_label>Stomp| Stun</style>Leonidas stomps the ground, dealing <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of¬†<style=basestat>{range}</style> and stunning his current target for <style=basestat>{stun_duration}</style>.
 -
@@ -5186,6 +5214,8 @@ i
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc-Produces Coins and adds a Worker to your city
 B
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameChannel
+>
+&Base.Units.Unit_PhilipIIOfMacedon_NamePhilip II of Macedon
 O
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameViking Homesteads
 [
@@ -5613,6 +5643,8 @@ L
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameSiege Barracks
 S
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_DescProduces a ton of Gold Ore
+=
+&Base.Units.Unit_AlexanderTheGreat_NameAlexander the Great
 J
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameFishing Pier
 L
@@ -5879,8 +5911,8 @@ L
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxurious Merchant
 G
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameDomestic Farm
-ß
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name‹<style=ability_label>Area Strike | Stun</style>Mozart casts a symphony on the battlefield to stun and damage enemies in an area with the most enemies, gaining additional power with each use, and maximum power on the third use. <br> <br> First Use: <style=basestat>{damage_a}</style> damage, in a small range of for <style=basestat>{duration_a}</style> <br> Second Use: <style=basestat>{damage_b}</style> damage, in a medium range of for <style=basestat>{duration_b}</style>  <br> Third Use onwards: <style=basestat>{damage_c}</style> damage, in a medium range of for <style=basestat>{duration_c}</style>.
+ö
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Nameœ<style=ability_label>Area Strike | Stun</style>Mozart casts a symphony on the battlefield to stun and damage enemies in an area with the most enemies, gaining additional power with each use, and maximum power on the third use. <br> <br>First Use: <style=basestat>{damage_a}</style> damage, in a small range for <style=basestat>{duration_a}</style> <br>Second Use: <style=basestat>{damage_b}</style> damage, in a medium range for <style=basestat>{duration_b}</style> <br>Third Use onwards: <style=basestat>{damage_c}</style> damage, in a medium range for <style=basestat>{duration_c}</style>.
 M
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameCultural Exchange
 G
@@ -6006,6 +6038,8 @@ u
 A
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name
 Small Home
+õ
+&Base.Units.Unit_AlexanderTheGreat_DescBehold Alexander the Great, undefeated, triumphant, the best general the world has ever known! This king from the 4th Century BC is famed for conquering vast swathes of the world before his early death.<br><br>Alexander took the throne at the age of 20, following his father's assassination. He quickly proved himself decisive: he conquered the Thracians and destroyed the famed city state of Thebes. This brought peace to Greece once more, and Alexander led the League of Corinth to conquer Achaemenid Persia. This famed empire fell before him, but Alexander wasn't done: before his armies knelt Syria, Babylon, Iran, and even Pakistan.<br><br>Alexander never lost a battle. In the end, his own army demanded a return to their homes. In Babylon, on the way home (although he did do some conquering on the way back), Alexander breathed his last.<br><br>Within the Heroes of History, Alexander is a bit controversial. He really enjoys drinking with Achilles, getting lessons off Cyrus, and showing up his dad!
 A
 .Base.Abilities.hero_battle_ability.Medusa_NamePetrifying Gaze
 O

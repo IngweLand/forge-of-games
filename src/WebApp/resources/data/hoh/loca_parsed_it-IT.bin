@@ -400,6 +400,8 @@ T
 $Base.BuildingGroups.averageHome_NameAbitazione intermediaAbitazioni intermedie
 å
 !Base.Units.Unit_RomanPraetor_DescÊFesteggia come un romano con Emialia Terzia! Questa mondana del II secolo a.C. nell'antica Roma era la moglie di Scipione Africano, il famoso generale che sconfisse Annibale nella Seconda Guerra Punica. Nota per la sua nobile nascita e per il suo matrimonio con una delle famiglie pi√π importanti di Roma, esemplificava le virt√π della matrona romana.<br><br>La sua vita √® nota per l'assistenza alla carriera militare e politica del marito, oltre che per il suo ruolo nella gestione della casa e nell'educazione dei figli, tra cui Cornelia Africana, madre dei fratelli Gracchi.<br><br>L'eredit√† di Emialia Terzia riflette i ruoli influenti che le donne potevano ricoprire nella societ√† romana nonostante la loro limitata presenza pubblica.
+«
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_DescÒ<style=ability_label>Scudo | Legame Spirituale | Controllo Mentale</style>Alessandro inizia una conquista nel raggio di <style=basestat>{range}</style>, fornendo a tutte le unit√† amiche in quest'area uno scudo di <style=basestat>{shield_per_second}</style> al secondo per <style=basestat>{duration}</style>. Le unit√† amiche sono collegate spiritualmente durante la conquista e condividono i danni in arrivo. Al termine della durata, il nemico con gli HP pi√π bassi nel raggio d'azione viene controllato mentalmente per attaccare i propri alleati per <style=basestat>{mind_control_duration}</style>. D√† priorit√† agli Eroi.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 Ü
@@ -789,6 +791,8 @@ D
 )Base.Regions.region.TeslaStormPurple_NameTempesta di Tesla Viola
 M
 3Base.Technologies.Technology_StoneAge_BearCult_NameFesteggiamenti Tribali
+P
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameConquista Imperiale
 Ä
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc;Aumenta considerevolmente la felicit√† degli edifici vicini
 j
@@ -841,6 +845,8 @@ X
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameVilletta siciliana
 ø
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHintÄPuoi scegliere qualsiasi livello di difficolt√† gi√† sbloccato. La scelta viene bloccata una volta completato il primo incontro.
+N
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameScudo della Sfida
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameFanteria bizantina
 U
@@ -882,6 +888,8 @@ H
 1Base.Buildings.Building_China_Home_Premium_1_NameAbitazione lussuosa
 9
 #Base.BuildingGroups.chronicler_NameCronistaCronisti
+Ñ
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_DescÆ<style=ability_label>Provocazione | Scudo | Colpo ad Area</style>Filippo II di Macedonia ottiene un grande scudo pari al <style=basestat>{shield_percentage}</style> del suo danno base e provoca tutti i nemici per una durata di <style=basestat>{taunt_duration}</style>. Dopo <style=basestat>{detonation_time}</style>, il suo scudo esplode, infliggendo <style=basestat>{damage_percentage}</style> del valore rimanente dello scudo come danno a tutte le unit√† nemiche entro un raggio di <style=basestat>{range}</style>. L'esplosione consuma lo scudo di Filippo.
 J
 5Base.Technologies.Technology_Vikings_HealingMead_NameIdromele Curativo
 B
@@ -1203,8 +1211,8 @@ O
 3Base.Technologies.Technology_EarlyRome_Velites_NameVeliti
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
-ç
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Nameæ<style=ability_label>Evocazione</style>Lancia il suo righello triangolare verso il bersaglio attuale. Per <style=basestat>{duration}</style>, il righello si muover√† attraverso il campo di battaglia in forma triangolare e infligger√† fino a <style=basestat>{dmg_percentage}</style> di danni alle unit√† nemiche vicine.
+è
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name¿<style=ability_label>Evocazione | Ustione</style>Lancia il suo righello verso il bersaglio attuale. Per <style=basestat>{duration}</style>, il righello si muover√† formando un triangolo sul campo di battaglia e infligger√† fino a <style=basestat>{dmg_percentage}</style> danni alle unit√† nemiche vicine, le unit√† colpite subiscono anche una bruciatura del <style=basestat>{dmg_percentage_burn}</style> per <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameCina
 h
@@ -1859,6 +1867,8 @@ M
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProduce Toghe
 E
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduce Riso
+A
+.Base.Abilities.hero_battle_ability.Mozart_NameSinfonia n. 999
 L
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameFattoria cittadina
 n
@@ -1987,6 +1997,8 @@ Padiglioni
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc Produce una tonnellata di Papiro
 L
 6Base.Technologies.Technology_IberianEra_MeadHalls_NameSala dell'idromele
+@
+4Base.Abilities.hero_battle_ability.ScarabBeetle_NameScarabeo
 6
 "Base.Units.Unit_OracleOfDephi_NameOracolo di Delfi
 <
@@ -2004,8 +2016,8 @@ F
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NamePeperoncino
 K
 8Base.Technologies.Technology_China_ChineseConsensus_NameConsenso Cinese
-µ
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_NameÊ<style=ability_label>Malus | Ustione</style>Lancio del Barile: Barbanera lancia un barile di rum sul gruppo pi√π numeroso di unit√† nemiche, rallentando la loro velocit√† d'attacco di <style=basestat>{attackspeed_debuff}</style>e la velocit√† di movimento di <style=basestat>{movespeed_debuff}</style> per <style=basestat>{debuff_duration}</style>. Inoltre, i nemici colpiti vengono impregnati per <style=basestat>{doused_duration}</style>. Dopo 12 secondi, questa abilit√† diventa Prova del Fuoco.<br>Prova del Fuoco: Barbanera spara al suo bersaglio attuale, bruciandolo di <style=basestat>{burn_damage}</style> per <style=basestat>{burn_duration}</style>. Dopo 8 secondi, questa abilit√† diventa Lancio della Botte.<br>Se un nemico impregnato viene bruciato da qualcosa, esplode, diffondendo la bruciatura alle unit√† vicine e rimuovendo l'effetto dell'impregnamento.
+Ÿ
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Nameä<style=ability_label>Malus | Ustione</style>Lancio del Barile: Barbanera lancia un barile di rum contro il gruppo pi√π grande di nemici, riducendo la loro velocit√† di attacco di <style=basestat>{attackspeed_debuff}</style> e la velocit√† di movimento di <style=basestat>{movespeed_debuff}</style> per <style=basestat>{debuff_duration}</style>. Questi nemici vengono inzuppati per <style=basestat>{doused_duration}</style>. Dopo 12 secondi, l'abilit√† passa a Prova del Fuoco.<br>Prova del Fuoco: Barbanera prende di mira il suo avversario attuale, bruciandolo per <style=basestat>{burn_damage}</style> danni per <style=basestat>{burn_duration}</style>. L'abilit√† ritorna a Lancio della Botte dopo 8 secondi.<br>Se un nemico inzuppato viene bruciato da qualsiasi fonte, esploder√†, diffondendo l'effetto della bruciatura alle unit√† vicine e rimuovendo l'effetto dell'inzuppamento dal bersaglio originale.
 í
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Nameƒ<style=ability_label>Attacco a Distanza| Veleno</style> Lancia una freccia verso il bersaglio pi√π lontano, infliggendogli <style=basestat>{dmg_percentage}</style> danni e avvelenandolo per un ulteriore <style=basestat>{poison_percentage}</style> danni per <style=basestat>{poison_duration}</style>. D√† priorit√† agli Eroi.
 Q
@@ -2065,6 +2077,8 @@ l
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc6Produce Penny e aggiunge 2 lavoratori alla tua citt√†.
 †
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescdLe unit√† di fanteria pesante sono ingombranti e impediscono il passaggio alle unit√† di cavalleria.
+T
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMaschera di Tutankhamon
 X
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NameImballaggio di carta
 T
@@ -2353,6 +2367,8 @@ P
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescSblocca i frombolieri
 V
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameCaserma dei tiratori
+B
+'Base.Heroes.hero.PhilipIIOfMacedon_NameFilippo II di Macedonia
 4
 "Base.Units.Unit_CyrusTheGreat_NameCiro il Grande
 A
@@ -2391,6 +2407,8 @@ U
 &Base.Regions.region.DesertDelta_5_NameSabbie Fortificate
 U
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameDestrieri bizantini
+;
+'Base.Heroes.hero.AlexanderTheGreat_NameAlessandro Magno
 Y
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameAllenamento delle Abilit√†
 T
@@ -2763,8 +2781,8 @@ C
 :Base.Buildings.Building_RomanEmpire_Workshop_Tailor_1_NameSarto
 <
 )Base.Regions.region.VolcanicJungle_8_NamePercorsi ornati
-X
-CBase.Technologies.Technology_KingdomOfSicily_ImprovedRoofTiles_NameTegole migliorate
+Y
+CBase.Technologies.Technology_KingdomOfSicily_ImprovedRoofTiles_NameTessere migliorate
 .
 Base.BuildingGroups.SmallOakAntica quercia
 [
@@ -3126,6 +3144,8 @@ O
 40000 A.C.
 Z
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAccademia degli eroi
+Œ
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name˝<style=ability_label>Potenziamento</style>Quando i punti salute del possessore scendono sotto <style=basestat>{hp_threshold}</style>, la sua difesa aumenta di <style=basestat>{defense_buff}</style> fino alla fine dell'ondata corrente. Non √® cumulabile.
 R
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduce Porte.
 W
@@ -3207,8 +3227,8 @@ T
 &Base.Regions.region.FrozenFjord_4_NameForesta delle fate
 K
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameCorsari del Crepuscolo
-≤
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_NameÁ<style=ability_label>Guarigione</style> Tansen trascende attraverso la sua musica, diventando invulnerabile per <style=basestat>{duration}</style> e guadagnando un'aura di guarigione, che guarisce tutte le unit√† alleate intorno a lui fino a <style=basestat>{heal_amount}</style> nel tempo. Mentre l'abilit√† √® attiva, Tansen non pu√≤ attaccare n√© muoversi.
+¶
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name€<style=ability_label>Guarigione</style>Tansen trascende attraverso la sua musica, diventando invulnerabile per <style=basestat>{duration}</style> e ottenendo un'aura curativa, che cura nel tempo fino a <style=basestat>{heal_amount}</style> tutte le unit√† alleate intorno a lui. Mentre l'abilit√† √® attiva, Tansen non pu√≤ attaccare n√© muoversi.
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameCava di Caolino
 J
@@ -3625,10 +3645,10 @@ U
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameCaserma dei tiratori
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
-2
-!Base.Units.Unit_AttilaTheHun_NameAttila l'Unno
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
+2
+!Base.Units.Unit_AttilaTheHun_NameAttila l'Unno
 %
 Base.Units.Unit_Medusa_NameMedusa
 6
@@ -4404,8 +4424,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_DesczLe unit√† a distanza scagliano proiettili su grandi distanze e sono particolarmente efficaci contro le unit√† di fanteria.
 H
 3Base.Technologies.Technology_StoneAge_GoatPens_NameRecinti per Capre
-√
-Base.Units.Unit_Mozart_Desc£Metti in scena un'opera e ispira migliaia di persone con Wolfgang Amadeus Mozart! Questo prodigio musicale del 18¬∞ secolo suonava davanti ai re e dominava il violino e la tastiera - e lo faceva gi√† all'et√† di cinque anni!<br><br>A soli 25 anni, Mozart aveva composto un enorme repertorio musicale, tra cui diverse sinfonie, innumerevoli concerti e anche un'opera di successo. Stabilitosi a Vienna, divenne estremamente famoso, ma non altrettanto ricco.<br><br>Negli ultimi anni della sua vita, Mozart pubblic√≤ molte delle sue composizioni pi√π note, tra cui il suo incompleto Requiem. Durante la sua vita, era anche un famoso burlone, spesso facendo scherzi pratici ai suoi amici, e una fonte d'ispirazione per molti, incluso Ludwig Van Beethoven, un altra possibile recluta degli Eroi della Storia.
+£
+Base.Units.Unit_Mozart_DescÉMetti in scena un'opera e ispira migliaia di persone con Wolfgang Amadeus Mozart! Questo prodigio musicale del XVIII secolo si esib√¨ davanti ai re e padroneggi√≤ il violino e la tastiera ‚Äì e tutto questo all'et√† di cinque anni!<br><br>A 25 anni, Mozart aveva composto una ricca collezione di pezzi musicali, tra cui diverse sinfonie, innumerevoli concerti e anche un'opera di successo. A Vienna, divenne estremamente famoso, ma non ricchissimo.<br><br>Negli ultimi anni della sua vita, Mozart pubblic√≤ molte delle sue opere pi√π conosciute, incluso il suo incompleto Requiem. Nella vita, era anche un famoso burlone, spesso faceva scherzi ai suoi amici, ed era un'ispirazione per molti, tra cui Ludwig Van Beethoven, un altra potenziale recluta di Heroes of History.
 S
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameTrabucco avanzato
 v
@@ -4550,6 +4570,8 @@ u
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc;La Taverna produce Idromele e Stoccafisso da Miele e Pesce.
 -
  Base.Ages.KingdomOfSicily_Decade	1100 D.C.
+é
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name∏<style=ability_label>Recupero</style>Quando il possessore subisce un danno mortale per la prima volta in una battaglia, i suoi HP recuperano il <style=basestat>{hp_percentage}</style>.
 «
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DescÑLe unit√† da assedio attaccano lentamente e sono vulnerabili agli attacchi nemici, ma colpiscono una vasta area su un'ampia gittata.
 ?
@@ -4559,6 +4581,8 @@ BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameEstrazione 
 '
 Base.Ages.ComingSoon_Name
 In arrivo!
+T
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationDurata dello Sfinimento {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolicoltura
 >
@@ -4710,6 +4734,8 @@ m
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc)Aumenta la Felicit√† degli edifici vicini
 ˛
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name≤<style=ability_label>Attacco Corpo a Corpo| Stordimento</style>Colpisce abilmente il bersaglio attuale con il suo bastone, infliggendo <style=basestat>{dmg_percentage}</style> danni e avendo una probabilit√† del <style=basestat>{chance}</style> di lasciarlo stordito per <style=basestat>{duration}</style>.
+Ã
+&Base.Units.Unit_PhilipIIOfMacedon_Desc°Battaglia a fianco del visionario che ha messo in ginocchio la Grecia! Filippo II, un re macedone del IV secolo a.C., √® famoso per le sue prodezze militari e le sue conquiste, la figura di spicco dell'ascesa della Macedonia.<br><br>Assumendo il controllo del regno in un momento di crisi, Filippo sconfisse gli invasori fin dall'inizio del suo governo e poi introdusse la sua innovazione: la falange macedone, armata di picche lunghe 6 metri. Con un esercito superiore, condusse campagne contro la Grecia continentale, stringendo alleanze con le citt√†-stato pi√π importanti della penisola.<br><br>Alla sua morte, Filippo era un eroe di guerra con un occhio solo, il cui genio lo aveva visto unire la Grecia nella Lega di Corinto e si stava preparando a invadere la Persia quando fu assassinato. Neanche questo riusc√¨ a trattenerlo: fu divinizzato e venerato come un Dio, mentre suo figlio Alessandro continu√≤ la sua eredit√†.
 >
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVoliera
 5
@@ -4764,6 +4790,8 @@ O
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Nameñ<style=ability_label>Invincibilit√†| Potenziamento</style>Fornisce Invincibilit√† a tutte le unit√† amiche per <style=basestat>{duration}</style> e aumenta la loro DIF del <style=basestat>{def_percentage}</style> della DIF di Lincoln per <style=basestat>{buff_duration}</style>.
 U
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameCaserma della cavalleria
+J
+.Base.Abilities.hero_battle_ability.Tansen_NameL'Abbraccio dell'Armonia
 ı
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name®<style=ability_label>Calpestio| Stordimento</style>Leonida colpisce il suolo con forza, infliggendo <style=basestat>{dmg_percentage}</style> danni a tutti i nemici entro un raggio di <style=basestat>{range}</style> e stordendo il suo bersaglio attuale per <style=basestat>{stun_duration}</style>.
 ,
@@ -5050,6 +5078,8 @@ t
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameCanale
+A
+&Base.Units.Unit_PhilipIIOfMacedon_NameFilippo II di Macedonia
 P
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameFattorie Vichinghe
 `
@@ -5254,8 +5284,8 @@ O
 5Base.Buildings.Building_China_RiceFarm_Premium_4_NameCampo di riso Lussuoso
 X
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_3_NameCaserma della cavalleria
-G
-1Base.Wonders.Wonder_Vikings_DragonshipEllida_NameDragonship Ellidia
+D
+1Base.Wonders.Wonder_Vikings_DragonshipEllida_NameDrakkar Ellidia
 J
 3Base.Buildings.Building_Vikings_Home_Premium_6_NameAbitazione Lussuosa
 π
@@ -5471,6 +5501,8 @@ Z
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameCaserma per unit√† d'assedio
 U
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_DescProduce una tonnellata d'Oro
+:
+&Base.Units.Unit_AlexanderTheGreat_NameAlessandro Magno
 K
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameMolo da pesca
 O
@@ -5726,8 +5758,8 @@ K
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameMercante lussuoso
 L
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameFattoria cittadina
-Î
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name†<style=ability_label>Attacco ad Area | Stordimento</style> Mozart esegue una sinfonia sul campo di battaglia per stordire e danneggiare i nemici in un'area con il maggior numero di nemici, guadagnando potere aggiuntivo ad ogni utilizzo, raggiungendo il potere massimo al terzo utilizzo. <br> <br> Primo Utilizzo: <style=basestat>{damage_a}</style> danni, in un piccolo raggio per <style=basestat>{duration_a}</style> <br> Secondo Utilizzo: <style=basestat>{damage_b}</style> danni, in un raggio medio per <style=basestat>{duration_b}</style> <br> Terzo Utilizzo in poi: <style=basestat>{damage_c}</style> danni, in un raggio medio per <style=basestat>{duration_c}</style>.
+€
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Nameê<style=ability_label>Attacco ad Area | Stordimento</style>Mozart lancia una sinfonia sul campo di battaglia per stordire e danneggiare i nemici in un'area con il maggior numero di nemici, guadagnando potenza aggiuntiva ad ogni utilizzo, con la potenza massima al terzo utilizzo. <br> <br>Primo Utilizzo: <style=basestat>{damage_a}</style> danni, in un'area ridotta per <style=basestat>{duration_a}</style> <br>Secondo Utilizzo: <style=basestat>{damage_b}</style> danni, in un'area media per <style=basestat>{duration_b}</style> <br>Terzo Utilizzo e oltre: <style=basestat>{damage_c}</style> danni, in un'area media per <style=basestat>{duration_c}</style>.
 M
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameScambio culturale
 L
@@ -5851,6 +5883,8 @@ v
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc=Aumenta considerevolmente l'irrigazione degli edifici vicini.
 I
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameAbitazione piccola
+ñ	
+&Base.Units.Unit_AlexanderTheGreat_DescÎAmmira Alessandro Magno, invincibile, trionfante, il miglior generale che il mondo abbia mai conosciuto! Questo re del IV secolo a.C. √® famoso per aver conquistato vasti territori del mondo prima della sua prematura morte.<br><br>Alessandro sal√¨ al trono all'et√† di 20 anni, dopo l'assassinio di suo padre. Presto dimostr√≤ di essere decisivo: conquist√≤ i Traci e distrusse la famosa citt√†-stato di Tebe. Questo port√≤ nuovamente la pace in Grecia, e Alessandro guid√≤ la Lega di Corinto per conquistare la Persia Achemenide. Questo impero leggendario cadde davanti a lui, ma Alessandro non si ferm√≤: prima che le sue armate si inginocchiassero, Siria, Babilonia, Iran e anche il Pakistan furono conquistati.<br><br>Alessandro non perse mai una battaglia. Alla fine, fu il suo stesso esercito a chiedere di tornare a casa. A Babilonia, mentre tornava a casa (anche se fece altre conquiste durante il viaggio di ritorno), Alessandro emise il suo ultimo respiro.<br><br>All'interno di Heroes of History, Alessandro √® un po' controverso. Gli piace molto bere con Achille, prendere lezioni da Ciro, e mettere in ombra suo padre!
 G
 .Base.Abilities.hero_battle_ability.Medusa_NameSguardo Pietrificante
 W

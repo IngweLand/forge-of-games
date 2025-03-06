@@ -6,7 +6,6 @@ using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
-using Ingweland.Fog.Shared.Helpers;
 using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Microsoft.Extensions.Logging;
 
@@ -14,8 +13,26 @@ namespace Ingweland.Fog.HohProtoParser;
 
 public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogger<GameDesignDataParser> logger)
 {
+    private static readonly HashSet<string> HeroesToSkip = 
+    [
+        "hero.AlexanderTheGreat", 
+        "hero.PhilipIIOfMacedon",
+    ];
+
     public void Parse(string input, string? outputDirectory)
     {
+        if (HeroesToSkip.Count > 0)
+        {
+            logger.LogWarning("");
+            logger.LogWarning("===================================");
+            logger.LogWarning("");
+            logger.LogWarning("Skipping following Heroes:");
+            logger.LogWarning(string.Join(',', HeroesToSkip));
+            logger.LogWarning("");
+            logger.LogWarning("===================================");
+            logger.LogWarning("");
+        }
+
         logger.LogInformation("Starting parsing game design data.");
         var filename = "data.bin";
         var outputFilePath = filename;
@@ -236,7 +253,8 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
             Worlds = worlds.AsReadOnly(),
             Buildings = buildings.AsReadOnly(),
             Units = units.Values,
-            Heroes = mapper.Map<IReadOnlyCollection<Hero>>(gdr.HeroDefinitions),
+            Heroes =
+                mapper.Map<IReadOnlyCollection<Hero>>(gdr.HeroDefinitions.Where(h => !HeroesToSkip.Contains(h.Id))),
             ProgressionCosts = mapper.Map<IReadOnlyCollection<HeroProgressionCost>>(gdr.HeroProgressionCostDefinitions),
             AscensionCosts =
                 mapper.Map<IReadOnlyCollection<HeroAscensionCost>>(gdr.HeroProgressionAscensionCostDefinitions),

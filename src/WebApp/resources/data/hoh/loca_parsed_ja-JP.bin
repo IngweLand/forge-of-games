@@ -397,6 +397,8 @@ g
 $Base.BuildingGroups.averageHome_Name大きな住宅
 �
 !Base.Units.Unit_RomanPraetor_Desc�ローマの華やかな社交界を彩ったアエミリア・テルティア。紀元前2世紀のローマに生き、第二次ポエニ戦争でハンニバルを打ち破った名将スキピオ・アフリカヌスの妻として知られる。名門の出身であり、ローマの貴婦人の理想像とされた。<br><br>夫の軍事や政治活動を支えつつ、家庭を取り仕切り、子どもたちの教育にも尽力。特に、後に改革派として知られるグラックス兄弟の母となるコルネリア・アフリカナを育てたことで名を残した。<br><br>公の場で目立つことは少なかったが、その影響力は計り知れない。アエミリア・テルティアの名は、ローマ社会における女性の重要な役割を今に伝えている。
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>シールド・魂リンク・精神支配</style>アレクサンドロスが<style=basestat>{range}</style>の範囲内で帝国の制覇を開始し、<style=basestat>{duration}</style>間、範囲内の味方ユニットに毎秒<style=basestat>{shield_per_second}</style>のシールドを付与する。さらに、味方ユニットは魂リンク状態となり、受けたダメージを分担する。効果終了時、範囲内で最も体力が低い敵を<style=basestat>{mind_control_duration}</style>の間、味方に対して攻撃させる。ヒーローを優先する。
 ,
 Base.Heroes.hero.Geisha_Name吉野太夫
 �
@@ -492,7 +494,7 @@ N
 ]
 ;Base.Buildings.Building_StoneAge_CultureSite_Compact_1_Nameコンパクトな文化遺産
 H
-8Base.Technologies.Technology_BronzeAge_SacredGroves_Name聖なる森
+8Base.Technologies.Technology_BronzeAge_SacredGroves_Name聖なる木
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_1_Name�<style=ability_label>範囲攻撃・治癒</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。同時に、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内でジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。
 E
@@ -627,8 +629,8 @@ s
 2Base.Buildings.Building_Vikings_Home_Worker_4_Desc=ペニーを生産し、都市に労働者を2人追加する
 t
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_6_Desc6パピルス巻物と儀式用の衣装を生産する
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.OttomanGeneral_Name�<style=ability_label>挑発・強化</style>すべての敵ユニットを<style=basestat>{taunt_duration}</style>の間挑発する。この間、ハサン・パシャの防御力が<style=basestat>{def_percentage}</style>上昇する。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OttomanGeneral_Name�<style=ability_label>挑発・強化</style><style=basestat>{duration}</style>の間、敵ユニット全体を挑発する。この間、ハサン・パシャの防御力が<style=basestat>{def_percentage}</style>上昇する。
 F
 0Base.Technologies.Technology_StoneAge_Rifts_Name時空ポータル
 J
@@ -707,8 +709,8 @@ J
 Base.Units.Unit_Hoplit_Nameミルティアデス
 h
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Heavy_Name-シチリアのバイデンヘンダー剣士
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>弱体化・範囲攻撃</style>ボニーは爆弾を投げ、敵ユニットの最大集団に渦を発生させる。この爆発によって生じた渦は<style=basestat>{duration}</style>間<style=basestat>{damage}</style>のダメージを与え、渦の中にいる敵ユニットの移動速度が<style=basestat>{movespeed_slow}</style>低下する。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>弱体化・範囲攻撃</style>ボニーは爆弾を投げ、敵ユニットの最大集団に渦を発生させる。この渦は<style=basestat>{duration}</style>の間<style=basestat>{damage}</style>のダメージを与え、その中にいる敵ユニットの移動速度を<style=basestat>{movespeed_slow}</style>低下させる。
 j
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc-隣接する建物の灌漑用水を増やす
 p
@@ -771,10 +773,12 @@ N
 &Base.Units.Unit_AztecTlacateccatl_Desc�武器を取って、自治のために戦おう！降り立つ鷲、クアウテモクが今、立ち上がる！アステカの最後の皇帝、クアウテモクは、16世紀のスペイン征服に対する抵抗でその名を残した戦士であり、卓越した指導者でもあった。<br><br>崩壊寸前の王国を治め、クアウテモクはテノチティトランの防衛を指揮した。80日間にわたる戦いの後、援軍を呼びかけ、帝国と故郷を守ろうとしたが、集まったのはわずかな兵だった。都市を逃げる途中で捕らえられ、降伏を余儀なくされた。<br><br>敗北したものの、クアウテモクはスペインの支配下でしばらくの間統治を続けた。抵抗の象徴として記憶され、先住民の誇りを体現する存在となった。スペインの侵略を生き抜いた唯一のアステカ皇帝として讃えられ、今もなお、街の名前や像、さらにはビデオゲームの中でもその名が語り継がれている。
 D
 +Base.Wonders.Wonder_Capital_Stonehenge_Nameストーンヘンジ
-H
-)Base.Regions.region.TeslaStormPurple_Name紫のテスラストーム
+<
+)Base.Regions.region.TeslaStormPurple_Name紫ストーム
 F
 3Base.Technologies.Technology_StoneAge_BearCult_Name部族の祝祭
+L
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_Name帝国の制覇
 x
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
 p
@@ -827,6 +831,8 @@ X
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_Nameシチリア小邸
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHint�アンロックされた難易度から自由に選べる。ただし、最初の対決をクリアするとその選択は固定される。
+I
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_Name抵抗の盾
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_Nameビザンツ歩兵
 I
@@ -867,6 +873,8 @@ D
 1Base.Buildings.Building_China_Home_Premium_1_Name豪華な住宅
 3
 #Base.BuildingGroups.chronicler_Name史官の家
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>挑発・シールド・範囲攻撃</style>フィリッポス２世は<style=basestat>{taunt_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分の大量のシールドを獲得し、敵ユニット全体を挑発する。<style=basestat>{detonation_time}</style>が経過すると、シールドが爆発し、残りのシールド量の<style=basestat>{damage_percentage}</style>に相当するダメージを<style=basestat>{range}</style>の範囲内にいる敵ユニットに与える。爆発と同時にシールドは消滅する。
 K
 5Base.Technologies.Technology_Vikings_HealingMead_Name回復の蜂蜜酒
 A
@@ -945,8 +953,8 @@ S
 =Base.Technologies.Technology_ByzantineEra_SaracenArchers_Nameサラセン弓兵
 E
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Name深紅の襲撃隊
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力をstyle=basestat>{duration}</style>の間、自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 `
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_Desc$複合弓兵をアンロックする
 J
@@ -999,8 +1007,8 @@ E
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Nameオアシス
 +
 Base.Ages.IberianEra_Start西暦1050年
-�
-PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>弱体化・アビリティ封鎖</style>すべての敵ユニットの攻撃能力を抑制し、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、攻撃力をフランクリンの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。さらに、<style=basestat>{block_duration}</style>の間、敵はアビリティを使用できなくなる。
+�
+PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>弱体化・アビリティ封鎖</style>敵ユニット全体の攻撃能力を抑制し、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。さらに、<style=basestat>{block_duration}</style>の間、敵はアビリティを使用できなくなる。
 [
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Nameスパイス工房
 y
@@ -1183,8 +1191,8 @@ C
 3Base.Technologies.Technology_EarlyRome_Velites_Name投槍散兵
 [
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_Name	海賊旗
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>召喚</style>三角定規を現在のターゲットに投げる。この定規は<style=basestat>{duration}</style>の間、戦場を三角形に動き回り、近くの敵ユニットに最大<style=basestat>{dmg_percentage}</style>のダメージを与える。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>召喚・燃焼</style>三角定規を現在のターゲットに投げる。この定規は<style=basestat>{duration}</style>の間、戦場を三角形に動き回り、近くの敵ユニットに最大<style=basestat>{dmg_percentage}</style>のダメージを与え、さらに<style=basestat>{burn_duration}</style>の間、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを与える。
 
 Base.Ages.China_Name中華
 j
@@ -1209,8 +1217,8 @@ S
 =Base.Technologies.Technology_AgeOfTheFranks_PotteryWheel_Name陶芸用ろくろ
 I
 0Base.Wonders.Wonder_Capital_TempleOfArtemis_Nameアルテミス神殿
-�
- Base.Units.Unit_WilliamTell_Desc�弓矢を手に、決して外さない！ウィリアム・テル、伝説のスイスの民間英雄が味方となる。14世紀初頭、圧政に立ち向かったその弓の技と勇気は、今も語り継がれている。<br><br>息子の頭上のリンゴを射抜いたという伝説は、彼の正確無比な腕前と揺るがぬ決意を象徴するものとして広く知られている。この一矢は、ハプスブルク家の圧制に抗う反乱の火種となり、スイス独立への道を切り開くきっかけとなった。<br><br>テルの物語は、歴史と伝説が交差する中で、個人の勇気が国全体の精神を目覚めさせることを示している。どうやら、タイムトラベルの影響で混乱してしまったのか、今ではリンゴを息子のように大切に扱っているらしい。
+�
+ Base.Units.Unit_WilliamTell_Desc�弓矢を手に、決して外さない！ウィリアム・テル、伝説のスイスの民間英雄が味方となる。14世紀初頭、圧政に立ち向かったその弓の技と勇気は、今も語り継がれている。<br><br>息子の頭上のリンゴを射抜いたという伝説は、正確無比な腕前と揺るがぬ決意を象徴するものとして広く知られている。この一矢は、ハプスブルク家の圧制に抗う反乱の火種となり、スイス独立への道を切り開くきっかけとなった。<br><br>テルの物語は、歴史と伝説が交差する中で、個人の勇気が国全体の精神を目覚めさせることを示している。どうやら、タイムトラベルの影響で混乱してしまったのか、今ではリンゴをまるで息子のように大切に扱っているらしい。
 �
 Base.Units.Unit_Inanna_Desc�イナンナの忠義を誓う者たちに、天の宮殿が待っている。シュメールの愛と戦争、豊穣の女神イナンナは、紀元前4000年頃から神話の中で重要な存在として語り継がれてきた。<br><br>力強く、多面的なイナンナは、妹の玉座を奪おうと冥界に降り、見事に帰還したことで崇拝された。その伝説は、知恵、力、独立心を象徴している。<br><br>イナンナの物語は、最も古い文明に多大な影響を与え、その影響は今後も広がり続ける可能性がある。もしシュメール人に踊りを誘われたら、音楽を流す前に少し躊躇した方がいいかもしれない！
 G
@@ -1242,7 +1250,7 @@ S
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Name水路
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵に自分の味方を攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
+JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
 *
  Base.BuildingGroups.default_Name建物
 I
@@ -1758,8 +1766,8 @@ b
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_Desc$絹糸から絹織物を生産する
 ]
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Name中規模な文化遺産
-K
-)Base.Regions.region.TeslaStormYellow_Name黄色いテスラストーム
+<
+)Base.Regions.region.TeslaStormYellow_Name黄ストーム
 q
 0Base.Buildings.Building_Mayas_Home_Priest_6_Desc=カカオ豆を生産し、都市に祭司を1人追加する
 p
@@ -1780,8 +1788,8 @@ I
 6Base.Buildings.Building_IberianEra_Home_Average_2_Name大きな住宅
 H
 ;Base.Technologies.Technology_Vikings_FelagPartnerships_Name	協同体
-\
-=Base.Technologies.Technology_RomanEmpire_ImprovedGladius_Nameグラディウスの改良
+S
+=Base.Technologies.Technology_RomanEmpire_ImprovedGladius_Nameグラディウス
 D
 .Base.Units.Unit_TreasureHunt_Red_Corsairs_Name深紅の重装隊
 t
@@ -1832,6 +1840,8 @@ X
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_Descトーガを生産する
 K
 5Base.Buildings.Building_China_RiceFarm_Average_5_Desc米を生産する
+D
+.Base.Abilities.hero_battle_ability.Mozart_Name交響曲第999番
 F
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_Name畜産農場
 Y
@@ -1928,8 +1938,8 @@ I
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_Name大ホール
 �
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
-U
-!Base.Units.Unit_VikingRaider_Name0フレイディス・エイリクスドッティ
+X
+!Base.Units.Unit_VikingRaider_Name3フレイディス・エイリクスドッティル
 9
 Base.Ages.AgeOfTheFranks_Nameフランク王国時代
 I
@@ -1958,6 +1968,8 @@ d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc'山ほどのパピルスを生産する
 F
 6Base.Technologies.Technology_IberianEra_MeadHalls_Name蜂蜜酒館
+D
+4Base.Abilities.hero_battle_ability.ScarabBeetle_Nameスカラベ
 A
 "Base.Units.Unit_OracleOfDephi_Nameデルフォイの神託者
 <
@@ -1974,8 +1986,8 @@ D
 7Base.Technologies.Technology_KingdomOfSicily_Chili_Name	唐辛子
 K
 8Base.Technologies.Technology_China_ChineseConsensus_Name中華の連携
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>弱体化・燃焼</style>樽投げ：黒ひげは敵ユニットの最大集団にラム酒の樽を投げる。<style=basestat>{debuff_duration}</style>の間、範囲内の敵の攻撃速度を<style=basestat>{attackspeed_debuff}</style>、移動速度を<style=basestat>{movespeed_debuff}</style>低下させる。影響を受けた敵は<style=basestat>{doused_duration}</style>の間、燃焼しやすい状態になる。12秒経過すると、アビリティは火の試練に変化する。火の試練：黒ひげは現在のターゲットに銃撃を加え、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_damage}</style>の燃焼ダメージを与える。このアビリティは8秒後に再び樽投げに変化する。燃焼しやすい状態の敵が燃焼すると爆発し、周囲の敵にも燃焼が広がり、燃焼しやすい状態が解除される。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>弱体化・燃焼</style>樽投げ：黒ひげは敵ユニットの最大集団にラム酒の樽を投げる。<style=basestat>{debuff_duration}</style>の間、範囲内の敵の攻撃速度を<style=basestat>{attackspeed_debuff}</style>、移動速度を<style=basestat>{movespeed_debuff}</style>低下させる。影響を受けた敵は<style=basestat>{doused_duration}</style>の間、燃えやすい状態になる。12秒経過すると、アビリティは火の試練に変化する。<br>火の試練：黒ひげは現在のターゲットに銃撃を加え、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_damage}</style>の燃焼ダメージを与える。このアビリティは8秒後に再び樽投げに変化する。<br>燃えやすい状態の敵に燃焼ダメージが与えられると、爆発して周囲の敵に燃焼効果が拡散され、対象の燃えやすい状態が解除される。
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>遠隔攻撃・毒</style>最も遠い敵に矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、<style=basestat>{poison_duration}</style>の間<style=basestat>{poison_percentage}</style>の毒ダメージを与える。ヒーローを優先する。
 H
@@ -2034,6 +2046,8 @@ s
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc=ペニーを生産し、都市に労働者を2人追加する
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
+[
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_Nameツタンカーメンの仮面
 M
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_Name	紙包装
 W
@@ -2190,8 +2204,8 @@ DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_Desc鉾兵を
 Base.Units.Unit_Cleopatra_Desc�永遠の時を感じながら、クレオパトラ7世と共にテスラを打ち負かそう！エジプト最後の現役ファラオ、クレオパトラ7世は、その政治的手腕、知性、そしてカリスマによって帝国を支え、紀元前1世紀の激動の時代に名を刻んだ。<br><br>ローマの指導者ユリウス・カエサルやマルクス・アントニウスとの同盟で特に知られ、ローマの拡大に立ち向かいながらエジプトの独立を維持しようとした。アントニウスとの関係は、芸術や文学の中で数多く描かれ、壮大な物語の一部となっている。<br><br>その美貌だけでなく、贅沢な生活や毒蛇のアスプとの関わりも語り継がれ、ドラマティックな人生の象徴となった。政治的陰謀、文化の融合、そして波乱に満ちた生涯を通じて、クレオパトラ7世の遺産は今なお輝きを放ち続けている。エジプトの象徴的な存在とされることが多いが、実際にはギリシャ系の血を引くファラオだった。
 [
 9Base.Buildings.Building_BronzeAge_Workshop_Artisan_1_Desc青銅の腕輪を生産する
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name�<style=ability_label>無敵・強化</style>すべての味方ユニットに対し、<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、リンカーンの防御力の<style=basestat>{def_percentage}</style>分、味方ユニットの防御力を上昇させる。加えて、<style=basestat>{buff_duration}</style>の間、回避率を<style=basestat>{evasion_percentage}</style>上昇させる。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name�<style=ability_label>無敵・強化</style>すべての味方ユニットに対し、<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力を自身の防御力の<style=basestat>{def_percentage}</style>分上昇させ、回避率を<style=basestat>{evasion_percentage}</style>上昇させる。
 c
 GBase.Technologies.Technology_ByzantineEra_BetterObsidianExtraction_Name黒曜石採取の改善
 e
@@ -2199,7 +2213,7 @@ e
 j
 <Base.Buildings.Building_RomanEmpire_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵に自分の味方を攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
+JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 K
@@ -2296,8 +2310,8 @@ H
 5Base.Buildings.Building_EarlyRome_Farm_Premium_1_Name豪華な農場
 C
 3Base.Technologies.Technology_Vikings_Seafaring_Name海洋航行
-g
-TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_ScallywagsShanty_Name海賊の小屋
+j
+TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_ScallywagsShanty_Name海賊のアジト
 C
 6Base.Technologies.Technology_FeudalAge_KingsGuard_Name	近衛兵
 �
@@ -2322,6 +2336,8 @@ F
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Desc!投石兵をアンロックする
 Q
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_Name射撃兵兵舎
+C
+'Base.Heroes.hero.PhilipIIOfMacedon_Nameフィリッポス２世
 8
 "Base.Units.Unit_CyrusTheGreat_Nameキュロス大王
 @
@@ -2360,8 +2376,10 @@ I
 &Base.Regions.region.DesertDelta_5_Name守護の砂地
 T
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_Nameビザンツの馬
-N
-;Base.Technologies.Technology_BronzeAge_AbilityTraining_Name能力の訓練
+I
+'Base.Heroes.hero.AlexanderTheGreat_Nameアレクサンドロス大王
+K
+;Base.Technologies.Technology_BronzeAge_AbilityTraining_Name能力訓練
 R
 ?Base.Technologies.Technology_MinoanEra_LionheartedInfantry_Name獅子心歩兵
 �
@@ -2454,8 +2472,8 @@ N
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_Name襲撃と略奪
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_Name聖銀の矢
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>瞬間移動・近接攻撃・強化</style>ラゲルタが雷と化し、最も強力な敵ユニットに突撃して<style=basestat>{damage}</style>のダメージを与える。さらに、<style=basestat>{attack_speed_duration}</style>の間、攻撃速度が<style=basestat>{attack_speed_buff}</style>上昇する。
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>瞬間移動・近接攻撃・強化</style>ラゲルタが雷と化し、最も強力な敵ユニットに突撃して<style=basestat>{damage}</style>のダメージを与える。さらに、攻撃速度が<style=basestat>{attack_speed_duration}</style>の間<style=basestat>{attack_speed_buff}</style>上昇する。
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、イムホテプの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 J
@@ -2495,7 +2513,7 @@ M
 V
 CBase.Technologies.Technology_ByzantineEra_SacrificialOfferings_Name生贄の供物
 �
-IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_5_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵に自分の味方を攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。
+IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_5_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。
 F
 3Base.Abilities.hero_battle_ability.WilliamTell_Nameリンゴ割り
 s
@@ -2674,8 +2692,8 @@ C
 )Base.Wonders.Wonder_Vikings_Valhalla_Nameヴァルハラ
 s
 2Base.Buildings.Building_Vikings_Home_Worker_3_Desc=ペニーを生産し、都市に労働者を2人追加する
-F
-'Base.Regions.region.TeslaStormBlue_Name青いテスラストーム
+:
+'Base.Regions.region.TeslaStormBlue_Name青ストーム
 J
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Name射撃兵兵舎
 �
@@ -2712,8 +2730,8 @@ D
 MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�<style=ability_label>弱体化</style>オラクルは敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 �
 1Base.Buildings.Building_Mayas_Home_Premium_2_DescY山ほどのカカオ豆を生産し、都市に労働者1人と祭司1人を追加する
-c
-MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_PirateDen_Name海賊のアジト
+`
+MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_PirateDen_Name海賊の小屋
 Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_3_Desc蚕の繭を生産する
 C
@@ -3088,6 +3106,8 @@ K
 Base.Ages.StoneAge_Start紀元前4万年
 X
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_Nameヒーロー学堂
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>強化</style>装備しているヒーローの体力が<style=basestat>{hp_threshold}</style>以下になると、現在のウェーブ終了まで、防御力が<style=basestat>{defense_buff}</style>上昇する。効果は重複しない。
 V
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Desc扉を生産する
 J
@@ -3168,8 +3188,8 @@ s
 &Base.Regions.region.FrozenFjord_4_Name妖精たちの森
 G
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_Name黄昏の重装隊
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治癒</style>タンセンが音楽の力と共鳴し、<style=basestat>{duration}</style>の間、無敵状態となる。同時に、周囲の味方ユニットを最大<style=basestat>{heal_amount}</style>まで継続的に治癒する。アビリティ発動中は攻撃も移動もできない。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治癒</style>タンセンが音楽の力と共鳴し、<style=basestat>{duration}</style>の間は無敵状態となる。同時に回復オーラを発生させ、周囲の味方ユニットを最大<style=basestat>{heal_amount}</style>まで継続的に治癒する。アビリティ発動中は攻撃も移動もできない。
 Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Nameカオリン採石場
 G
@@ -3576,10 +3596,10 @@ P
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_Name射撃兵兵舎
 C
 6Base.Technologies.Technology_ClassicGreece_Psiloi_Name	軽歩兵
-@
-!Base.Units.Unit_AttilaTheHun_Nameフン族のアッティラ
 C
 -Base.Units.Unit_MinoanEra_Player_Hippeis_Nameギリシャ騎兵
+@
+!Base.Units.Unit_AttilaTheHun_Nameフン族のアッティラ
 .
 Base.Units.Unit_Medusa_Nameメデューサ
 =
@@ -3592,8 +3612,8 @@ x
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 B
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_Name	槍騎兵
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>瞬間移動・挑発・燃焼・シールド</style>ラグナルが最も遠い敵にテレポートし、<style=basestat>{range}</style>の範囲内にいる敵ユニットを挑発して<style=basestat>{burn_dmg}</style>の燃焼ダメージを与える。加えて、自身に<style=basestat>{shield_percentage}</style>のシールドを付与する。
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>瞬間移動・挑発・燃焼・シールド</style>ラグナルが最も遠い敵にテレポートし、<style=basestat>{range}</style>の範囲内にいる敵ユニットを挑発して<style=basestat>{burn_dmg}</style>の燃焼ダメージを与える。加えて、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得する。
 �
  Base.Units.Unit_SirLancelot_Desc�円卓の騎士にして、アーサー王の忠臣、そして妖精の国をも旅したフランスの騎士、ランスロットの物語を聞こう。<br><br>遠き地よりアーサー王の宮廷にたどり着き、グィネヴィア王妃を救い、聖杯を求めて旅をした。その武勇と気高さは、まさに理想の騎士そのものだった。<br><br>しかし、ただ一つの過ちがキャメロットを崩壊へと導いた。王妃への叶わぬ愛が、王国を揺るがしたのだ。それでもなお、誠実な英雄として語り継がれ、多くの者に愛され続けている。あまり知られていないが、実はもう一人、異なる才能を持つ兄弟がいたらしい。その名も、ダンスロット卿！
 �
@@ -3876,8 +3896,8 @@ l
 >Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
 K
 ;Base.Buildings.Building_AgeOfTheFranks_City_CityHall_1_Name大ホール
-�
-PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Name�<style=ability_label>強化・シールド</style>すべての味方ユニットを鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。加えて、攻撃力をエリザベスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、すべての敵ユニットのシールドをエリザベスの基礎ダメージの<style=basestat>{shield_percentage}</style>分減少させる。
+�
+PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Name�<style=ability_label>強化・シールド</style>味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。加えて、攻撃力をエリザベスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、敵ユニット全体のシールドをエリザベスの基礎ダメージの<style=basestat>{shield_percentage}</style>分減少させる。
 =
 3Base.Technologies.Technology_MinoanEra_Columns_Name列柱
 �
@@ -4041,8 +4061,8 @@ J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_Name黒曜石採掘場
 H
 5Base.Technologies.Technology_FeudalAge_TaflGames_Nameタフル遊戯
-�
-Base.Units.Unit_AnneBonny_Desc�カットラスを構え、火薬を乾燥させておこう！今日はアン・ボニーと冒険だ！18世紀の海賊アン・ボニーは、カリコ・ジャックの下でメアリー・リードと共にバハマ諸島で船を奪い、商船を襲撃したことで有名だ。<br><br>仲間たちと「ウィリアム号」を奪い、その後、商船を襲いながら海を渡った。戦闘中は火薬を供給するなど、仲間たちを支え続けた。<br><br>しかし、数ヶ月後、船は捕まり、海賊たちは裁判にかけられることとなった。アンの運命は今なお謎のままであり、それが伝説をさらに深めている。時が経つにつれ、女性海賊として、また常識を超えた存在として、その名はますます広がっていった。
+�
+Base.Units.Unit_AnneBonny_Desc�カットラスを構え、火薬を乾燥させておこう！今日はアン・ボニーと冒険だ！18世紀の海賊アン・ボニーは、カリコ・ジャックの下でメアリー・リードと共にバハマ諸島で船を奪い、商船を襲撃したことで有名だ。<br><br>仲間たちとウィリアム号を奪い、その後、商船を襲いながら海を渡った。戦闘中は火薬を供給するなど、仲間たちを支え続けた。<br><br>しかし、数ヶ月後、船は捕まり、海賊たちは裁判にかけられることとなった。アンの運命は今なお謎のままであり、それが伝説をさらに深めている。時が経つにつれ、女性海賊として、また常識を超えた存在として、その名はますます広がっていった。
 G
 7Base.Technologies.Technology_IberianEra_ShieldBoss_Name盾の突起
 ]
@@ -4387,8 +4407,8 @@ E
 8Base.Technologies.Technology_KingdomOfSicily_Piazza_Name	市広場
 X
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Name豪華な文化遺産
-�
-"Base.Units.Unit_RagnarLodbrok_Desc�略奪と戦の伝説、ラグナル・ロズブローク。9世紀の英雄にして戦士王。北欧の伝承によれば、イングランドやフランスへの大胆な襲撃を指揮し、その名を歴史と神話の狭間に刻んだ。<br><br>優れた戦略家であり、苛烈な指揮官として知られ、戦士ラゲルタと結ばれ、剛勇のビョルンや骨無しのイーヴァルといった伝説的な息子たちをもうけた。戦場では、オーディンの象徴とされる鴉の軍旗を掲げ、神の加護を受けて戦ったとされる。<br><br>ラグナルの武勇譚はヴァイキングたちの士気を鼓舞し、現代でもテレビやゲーム、小説を通じて語り継がれている。だが、最古の史料には「彼女の息子たち」との記述も…。もしかすると、ラグナルの伝説にはまだ知られざる秘密が隠されているのかもしれない。
+�
+"Base.Units.Unit_RagnarLodbrok_Desc�略奪と戦の伝説、ラグナル・ロズブローク。9世紀の英雄にして戦士王。北欧の伝承によれば、イングランドやフランスへの大胆な襲撃を指揮し、その名は歴史と神話の狭間に刻まれた。<br><br>優れた戦略家であり、苛烈な指揮官として知られ、戦士ラゲルタと結ばれ、剛勇のビョルンや骨無しのイーヴァルといった伝説的な息子たちをもうけた。戦場では、オーディンの象徴とされる鴉の軍旗を掲げ、神の加護を受けて戦ったとされる。<br><br>ラグナルの武勇譚はヴァイキングたちの士気を鼓舞し、現代でもテレビやゲーム、小説を通じて語り継がれている。だが、最古の史料には「彼女の息子たち」との記述も…。もしかすると、ラグナルの伝説にはまだ知られざる秘密が隠されているのかもしれない。
 A
 1Base.Technologies.Technology_MinoanEra_Winch_Nameウインチ
 d
@@ -4434,7 +4454,7 @@ x
 p
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 �
-IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵に自分の味方を攻撃させる。支配下の敵ユニットは攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇する。
+IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇する。
 J
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_1_Name歩兵兵舎
 N
@@ -4492,11 +4512,13 @@ M
 �
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_20_Name�<style=ability_label>精神支配・強化・弱体化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵に自分の味方を攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。同時に、敵の防御力はクレオパトラの攻撃力の<style=basestat>{def_percentage}</style>分低下する。
+JBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_20_Name�<style=ability_label>精神支配・強化・弱体化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。同時に、敵の防御力はクレオパトラの攻撃力の<style=basestat>{def_percentage}</style>分低下する。
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 1
  Base.Ages.KingdomOfSicily_Decade西暦1100年
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>回復</style>バトル中、装備しているヒーローが初めて致命ダメージを受けた時、体力が<style=basestat>{hp_percentage}</style>まで回復する。
 �
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
 =
@@ -4505,6 +4527,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_20_Name�<s
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_Name持続可能な採掘
 ,
 Base.Ages.ComingSoon_Name近日公開！
+U
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDuration疲労状態：{0}回休戦 
 J
 :Base.Technologies.Technology_ByzantineEra_Polyculture_Name複合栽培
 @
@@ -4655,6 +4679,8 @@ n
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>近接攻撃・気絶</style>杖で現在のターゲットを打ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、<style=basestat>{chance}</style>の確率で敵を<style=basestat>{duration}</style>の間気絶させる。
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�戦略的な手腕でギリシアを統合した指導者と共に戦おう。紀元前4世紀のマケドニア王、フィリッポス2世は、軍事の才覚と征服活動、そしてマケドニア興隆の象徴として名高い。<br><br>危機のさなか王国を掌握したフィリッポスは、統治開始直後に侵略者を撃退した。その後、独自の革新である6メートルの長槍を装備したマケドニアファランクスを編み出し、優れた軍隊を率いてギリシア本土へ侵攻。半島の主要ポリスと同盟を結び、その支配を固めた。<br><br>最期を迎えたフィリッポスは、隻眼の戦争の英雄として、ギリシアをコリント同盟として統一し、ペルシア侵攻を目前に暗殺された。しかし、その死さえも影響力を弱めることはなく、神格化され崇拝の対象となった。息子アレクサンドロスが遺志を継ぎ、その伝説をさらに引き継いだ。
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_2_Name鳥舎
 ;
@@ -4705,10 +4731,12 @@ F
 0Base.Units.Unit_TreasureHunt_Blue_Marauders_Name蒼天の襲撃隊
 [
 <Base.Technologies.Technology_IberianEra_VikingConsensus_Nameヴァイキングの連携
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>無敵・強化</style>すべての味方ユニットに対し、<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力をリンカーンの防御力の<style=basestat>{def_percentage}</style>分上昇させる。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>無敵・強化</style>すべての味方ユニットに対し、<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力を自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 I
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_Name騎兵兵舎
+A
+.Base.Abilities.hero_battle_ability.Tansen_Name調和の抱擁
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>踏みつけ・気絶</style>レオニダスが地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、現在のターゲットを<style=basestat>{stun_duration}</style>の間気絶させる。
 ,
@@ -4793,8 +4821,8 @@ T
 DBase.Technologies.Technology_KingdomOfSicily_ArmoredCrossbowmen_Name重装弩兵
 G
 7Base.Technologies.Technology_China_DeepFoundations_Name深い基礎
-�
-PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>踏みつけ・弱体化・魂リンク</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>低下させる。さらに、すべての味方ユニットの魂を<style=basestat>{duration_link}</style>の間リンクさせる。リンクされたユニットは受けたダメージを共有する。
+�
+PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>踏みつけ・弱体化・魂リンク</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>低下させる。さらに、すべての味方ユニットは魂リンク状態となり、<style=basestat>{duration_link}</style>の間、受けたダメージを分担する。
 5
 Base.Heroes.hero.Spartacus_Nameスパルタクス
 >
@@ -4827,8 +4855,8 @@ J
 #Base.Regions.region.Panganea_1_Name古の荒野
 F
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name小さな住宅
-�
- Base.HeroClass.AreaAttacker_Desc�範囲攻撃者は広範囲の敵にダメージを与える。特に小規模な部隊に対して効果を発揮する。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>や<color=#3DA229>宝探し</color>の<color=#3DA229>大規模部隊</color>。</indent><br><line-height=50%><br></line-height>
+�
+ Base.HeroClass.AreaAttacker_Desc�範囲攻撃者は広範囲の敵にダメージを与える。特に小規模な部隊に対して効果を発揮する。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>や<color=#3DA229>宝探し</color>の<color=#3DA229>大規模な部隊</color>。</indent><br><line-height=50%><br></line-height>
 <color=#CD2A25>不利</color>：<br>•<indent=5%>キャンペーン、闘技場、宝探しの<color=#CD2A25>敵ヒーロー</color>。</indent><br>•<indent=5%><color=#CD2A25>テスラストーム</color>。</indent>
 W
 ABase.Technologies.Technology_AgeOfTheFranks_XocolatlVirtuoso_Nameカカオの達人
@@ -4992,6 +5020,8 @@ y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Name水路
+B
+&Base.Units.Unit_PhilipIIOfMacedon_Nameフィリッポス２世
 V
 :Base.Technologies.Technology_Vikings_VikingHomesteads_Nameヴァイキング農場
 [
@@ -5020,8 +5050,8 @@ t
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.VincentVanGogh_1_Name�<style=ability_label>召喚</style>敵ユニットの最大集団に渦を召喚する。この渦は<style=basestat>{duration}</style>の間、戦場を渦巻くように移動し、接触した敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、防御力を<style=basestat>{defense_debuff}</style>低下させる。
-�	
-Base.Units.Unit_Blackbeard_Desc�	今夜、海は荒れ狂い、船乗りたちは恐怖に震えている。彼らの耳に届くのは、「黒ひげ」と呼ばれる男の伝説だ。髪に炎を灯し、40門の大砲を備えたその姿は、誰もが恐れずにはいられなかった。18世紀の海賊、エドワード・ティーチは、黒旗と赤い炎で恐怖を振りまき、その名を刻んだ。<br><br>「黒ひげ」の名は、フランスの船ラ・コンコルド号を奪い、「アン女王の復讐号」と改名したことから生まれた。その装甲船を拠点に、大胆な襲撃を繰り返し、捕えた船や新たな仲間を加えて艦隊を拡大していった。長く黒いひげと、頭の周りに火を灯した導火線が生み出す姿はまさに恐怖そのもので、やがて「黒ひげ」の異名で知られるようになった。<br><br>黒ひげの伝説は、しばしば実像を超えて語られる。支配と恐怖の象徴となり、今もなお海を渡る者たちに畏怖の念を抱かせている。七つの海をさまよう幽霊の話もあるが、実際には暴力を避け、恐怖を巧みに利用して目的を達成していたという。
+�	
+Base.Units.Unit_Blackbeard_Desc�	今夜、海は荒れ狂い、船乗りたちは恐怖に震えている。耳に届くのは、「黒ひげ」と呼ばれる男の伝説だ。髪に炎を灯し、40門の大砲を備えたその姿は、誰もが恐れずにはいられなかった。18世紀の海賊、エドワード・ティーチは、黒旗と赤い炎で恐怖を振りまき、その名を刻んだ。<br><br>「黒ひげ」の名は、フランスの船ラ・コンコルド号を奪い、「アン女王の復讐号」と改名したことから生まれた。その装甲船を拠点に、大胆な襲撃を繰り返し、捕えた船や新たな仲間を加えて艦隊を拡大していった。長く黒いひげと、頭の周りに火を灯した導火線が生み出す姿はまさに恐怖そのもので、やがて「黒ひげ」の異名で知られるようになった。<br><br>黒ひげの伝説は、しばしば実像を超えて語られる。支配と恐怖の象徴となり、今もなお海を渡る者たちに畏怖の念を抱かせている。七つの海をさまよう幽霊の話もあるが、実際には暴力を避け、恐怖を巧みに利用して目的を達成していたという。
 ?
 /Base.TreasureHuntDifficulties.Difficulty_1_Name見習い２
 �
@@ -5240,8 +5270,8 @@ H
 5Base.Buildings.Building_EarlyRome_Home_Premium_1_Name豪華な住宅
 O
 'Base.Heroes.hero.ArtemisiaIOfCaria_Name$カリアの女王アルテミシア
-E
-&Base.Regions.region.TeslaStormRed_Name赤いテスラストーム
+9
+&Base.Regions.region.TeslaStormRed_Name赤ストーム
 G
 "Base.Heroes.hero.RomanPraetor_Name!アエミリア・テルティア
 �
@@ -5408,6 +5438,8 @@ M
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_Name攻城兵兵舎
 ]
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_Desc$山ほどの金鉱石を生産する
+H
+&Base.Units.Unit_AlexanderTheGreat_Nameアレクサンドロス大王
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	漁桟橋
 K
@@ -5526,8 +5558,8 @@ t
 3Base.Technologies.Technology_China_Sericulture_Name	養蚕業
 J
 7Base.Buildings.Building_RomanEmpire_Farm_Premium_1_Name豪華な農場
-G
-(Base.Regions.region.TeslaStormGreen_Name緑のテスラストーム
+;
+(Base.Regions.region.TeslaStormGreen_Name緑ストーム
 [
 <Base.Technologies.Technology_FeudalAge_RiseOfTheVikings_Nameヴァイキングの台頭
 �
@@ -5662,8 +5694,8 @@ I
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_Name豪華な商店
 F
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Name畜産農場
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範囲攻撃・気絶</style>モーツァルトが戦場に壮大な旋律を響かせ、敵ユニットの最大集団を攻撃し、ダメージと気絶効果を与える。アビリティを使用するごとに最大3回まで効果が強化され、3回目で最大の威力に達する。1回目：小範囲に<style=basestat>{damage_a}</style>のダメージを与え、<style=basestat>{duration_a}</style>の間気絶させる。2回目：中範囲に<style=basestat>{damage_b}</style>のダメージを与え、<style=basestat>{duration_b}</style>の間気絶させる。3回目以降：中範囲に<style=basestat>{damage_c}</style>のダメージを与え、<style=basestat>{duration_c}</style>の間気絶させる。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範囲攻撃・気絶</style>モーツァルトが戦場に壮大な旋律を響かせ、敵ユニットの最大集団を攻撃し、ダメージと気絶効果を与える。アビリティを使用するたびに効果が強化され、3回目で最大の威力に達する。<br> <br>1回目：小範囲に<style=basestat>{damage_a}</style>のダメージを与え、<style=basestat>{duration_a}</style>の間気絶させる。<br>2回目：中範囲に<style=basestat>{damage_b}</style>のダメージを与え、<style=basestat>{duration_b}</style>の間気絶させる。<br>3回目以降：中範囲に<style=basestat>{damage_c}</style>のダメージを与え、<style=basestat>{duration_c}</style>の間気絶させる。
 H
 8Base.Technologies.Technology_Egypt_CulturalExchange_Name文化交流
 H
@@ -5782,6 +5814,8 @@ o
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc6隣接する建物の灌漑用水を大幅に増やす
 F
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name小さな住宅
+�	
+&Base.Units.Unit_AlexanderTheGreat_Desc�	アレクサンドロス大王、無敗の征服者、史上最強の将軍。紀元前4世紀のこの王は、若くして世を去る前に世界の大半を征服し、その名を歴史に刻んだ。<br><br>20歳で父の暗殺後、王位を継承。瞬く間に決断力を示し、トラキア人を征服し、名高い都市国家テーベを破壊した。これによりギリシアに再び平和をもたらし、コリント同盟を率いてアケメネス朝ペルシアを征服。この偉大な帝国さえも前に屈服させたが、アレクサンドロスの野望は終わらない。シリア、バビロン、イラン、パキスタン、すべてが軍団の前に膝を屈した。<br><br>アレクサンドロスは一度も戦場で敗れることはなかった。最期には自らの軍が帰郷を要求。バビロンへの帰還途中（道中でも征服は続けた）、息を引き取った。<br><br>ヒーローズオブヒストリーでは意見の分かれる存在だ。アキレスとの酒宴を楽しみ、キュロスから教訓を学び、何より父親を見返すことに情熱を燃やす。
 A
 .Base.Abilities.hero_battle_ability.Medusa_Name石化の凝視
 W

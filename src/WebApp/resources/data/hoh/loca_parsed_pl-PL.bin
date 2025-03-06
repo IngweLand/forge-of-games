@@ -120,8 +120,8 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Achilles_1_Name�<sty
 D
 6Base.Technologies.Technology_EarlyRome_Municipium_Name
 Municipium
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.BessieColeman_1_Name�<style=ability_label>Osłabienie | Uderzenie Dystansowe</style>Bessie wystrzeliwuje flary dymne na najbliższe i najdalsze wrogie jednostki, zadając im <style=basestat>{obrażenia}</style> obrażenia i zmniejszając ich celność o <style=basestat>{accuracy_debuff}</style> na <style=basestat>{accuracy_debuff_duration}</style>. Nadaje priorytet bohaterom.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.BessieColeman_1_Name�<style=ability_label>Osłabienie | Uderzenie Dystansowe</style>Bessie wystrzeliwuje flary dymne na najbliższe i najdalsze wrogie jednostki, zadając im <style=basestat>{damage}</style> obrażenia i zmniejszając ich celność o <style=basestat>{accuracy_debuff}</style> na <style=basestat>{accuracy_debuff_duration}</style>. Nadaje priorytet bohaterom.
 I
 9Base.Technologies.Technology_MinoanEra_BasketWeaving_NameKoszykarstwo
 P
@@ -399,6 +399,8 @@ T
 $Base.BuildingGroups.averageHome_NameŚredni DomŚrednie DomyŚrednich Domów
 �
 !Base.Units.Unit_RomanPraetor_Desc�Imprezuj jak Rzymianka z Emilią Tercją! Ta towarzyska dama z II wieku p.n.e. w starożytnym Rzymie była żoną Scypiona Afrykańskiego, sławnego generała, który pokonał Hannibala w drugiej wojnie punickiej. Znana ze szlachetnego urodzenia i małżeństwa z jedną z wiodących rodzin Rzymu, była przykładem cnót rzymskiej matrony.<br><br>Jej życie jest znane ze wspierania wojskowej i politycznej kariery męża, a także z roli w zarządzaniu domem i wychowywaniu dzieci, w tym Kornelii Afrykańskiej, matki braci Grakchów.<br><br>Dziedzictwo Emilii Tercji odzwierciedla wpływowe role, jakie kobiety mogły pełnić w społeczeństwie rzymskim pomimo ich ograniczonej obecności publicznej.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Tarcza | Duchowe Połączenie | Kontrola Umysłu</style>Alexander inicjuje podbój w zasięgu <style=basestat>{range}</style>, zapewniając wszystkim przyjaznym jednostkom w tym obszarze tarczę o wartości <style=basestat>{shield_per_second}</style> na sekundę przez <style=basestat>{duration}</style>. Przyjazne jednostki są połączone duchem podczas podboju, dzieląc między sobą otrzymywane obrażenia. Pod koniec czasu trwania, wróg z najniższymi punktami życia w zasięgu jest kontrolowany umysłem, aby atakować sojuszników przez <style=basestat>{mind_control_duration}</style>. Nadaje priorytet Bohaterom.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
@@ -713,8 +715,8 @@ P
 Base.Units.Unit_Hoplit_Name	Miltiades
 R
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Heavy_NameSycylijski Bidenhaender
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>Obrażenia | Uderzenie obszarowe </style>Bonny rzuca bombę, która tworzy wir pod największą grupą wrogów, zadając <style=basestat>{obrażenia}</style> obrażenia przez <style=basestat>{czas trwania}</style>. Wrogie jednostki w wirze mają spowolnioną prędkość ruchu o <style=basestat>{movespeed_slow}</style>.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>Obrażenia | Uderzenie obszarowe </style>Bonny rzuca bombę, która tworzy wir pod największą grupą wrogów, zadając <style=basestat>{damage}</style> obrażenia przez <style=basestat>{duration}</style>. Wrogie jednostki w wirze mają spowolnioną prędkość ruchu o <style=basestat>{movespeed_slow}</style>.
 h
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc+Zwiększa nawadnianie sąsiednich budynków
 t
@@ -784,6 +786,8 @@ B
 )Base.Regions.region.TeslaStormPurple_NameFioletowa Burza Tesli
 I
 3Base.Technologies.Technology_StoneAge_BearCult_NamePlemienne święta
+O
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameImperialny podbój
 y
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc4Znacznie zwiększa zadowolenie sąsiednich budynków
 i
@@ -836,6 +840,8 @@ V
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSycylijska willa
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHinttMożesz wybrać dowolny, odblokowany poziom trudności. Wybór jest zablokowany do ukończenia pierwszego spotkania.
+U
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameTarcza Nieustępliwości
 X
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NamePiechur Bizancjum
 N
@@ -878,6 +884,8 @@ H
 #Base.BuildingGroups.chronicler_Name	Kronikarz
 Kronikarze
 Kronikarzy
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Prowokacja | Tarcza | Uderzenie obszarowe</style>Filip II Macedoński zyskuje dużą tarczę wartą <style=basestat>{shield_percentage}</style> jego podstawowych obrażeń i drwi ze wszystkich wrogich jednostek przez <style=basestat>{taunt_duration}</style>. Po <style=basestat>{detonation_time}</style>, jego tarcza detonuje, zadając <style=basestat>{damage_percentage}</style> pozostałej wartości tarczy jako obrażenia wszystkim wrogim jednostkom w zasięgu <style=basestat>{range}</style>. Detonacja zużywa tarczę Filipa.
 N
 5Base.Technologies.Technology_Vikings_HealingMead_NameMiód pitny leczniczy
 @
@@ -1203,8 +1211,8 @@ M
 3Base.Technologies.Technology_EarlyRome_Velites_NameWeliści
 a
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameBandera piracka
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Przywołanie</style> Rzuca swoją ekierką w obecny cel. Przez <style=basestat>{duration}</style> ekierka będzie poruszać się po polu bitwy w trójkątnym kształcie i zadawać do <style=basestat>{dmg_percentage}</style> obrażeń pobliskim jednostkom wroga.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Przywołanie | Spalenie</style>Rzuca trójkątnym władcą w aktualny cel. Przez <style=basestat>{czas trwania}</style>, władca będzie poruszał się po polu bitwy w kształcie trójkąta i zada do <style=basestat>{dmg_procent}</style> obrażeń pobliskim wrogim jednostkom, pozostawiając je płonące przez <style=basestat>{dmg_procent_palenia}</style> ponad <style=basestat>{czas_palenia}</style>.
 
 Base.Ages.China_NameChiny
 i
@@ -1216,8 +1224,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.Spartacus_16_Name�<s
 D
 6Base.Technologies.Technology_BronzeAge_SilentDraw_Name
 Cichy Rzut
-.
-Base.Units.Unit_MarieCurie_NameMarie Curie
+:
+Base.Units.Unit_MarieCurie_NameMaria Skłodowska-Curie
 
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescDProdukuje duży stos monet i dodaje do twojego miasta 2 pracowników
 @
@@ -1683,8 +1691,8 @@ A
 Kaligrafia
 U
 ;Base.Technologies.Technology_MinoanEra_OraclesGuidance_NamePrzewodnictwo Wyroczni
-/
- Base.Heroes.hero.MarieCurie_NameMarie Curie
+;
+ Base.Heroes.hero.MarieCurie_NameMaria Skłodowska-Curie
 7
 Base.BuildingGroups.PremiumFarmGospodarstwo premium
 �
@@ -1861,6 +1869,8 @@ N
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProdukuje togi
 G
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProdukuje ryż
+A
+.Base.Abilities.hero_battle_ability.Mozart_NameSymfonia nr 999
 M
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameGospodarstwo domowe
 b
@@ -1987,6 +1997,9 @@ _
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc"Produkuje ogromne ilości papirusu
 N
 6Base.Technologies.Technology_IberianEra_MeadHalls_NameGmachy miodu pitnego
+B
+4Base.Abilities.hero_battle_ability.ScarabBeetle_Name
+Skarabeusz
 8
 "Base.Units.Unit_OracleOfDephi_NameWyrocznia Delficka
 <
@@ -2004,8 +2017,8 @@ Legionista
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NameChili
 N
 8Base.Technologies.Technology_China_ChineseConsensus_NameChiński Konsensus
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Osłabienie | Spalenie</style>Rzut Beczką: Czarnobrody rzuca beczułką rumu w największą grupę wrogów, spowalniając ich prędkość ataku o <style=basestat>{attackspeed_debuff}</style>i prędkość ruchu o <style=basestat>{movespeed_debuff}</style> na <style=basestat>{debuff_duration}</style>. Zaatakowani wrogowie zostają również oblani wodą na <style=basestat>{doused_duration}</style>. Po 12 sekundach umiejętność ta zmienia się w próbę ognia.<br>Próba ognia: Czarnobrody strzela w swój aktualny cel, podpalając go na <style=basestat>{burn_damage}</style> przez <style=basestat>{burn_duration}</style>. Po 8 sekundach umiejętność ta zmienia się w rzut beczką.<br>Jeśli oblany wróg również zostanie czymś poparzony, eksploduje, rozprzestrzeniając poparzenie na pobliskie jednostki i usuwając efekt oblania.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Osłabienie | Poparzenie</style>Rzut Beczką: Czarnobrody rzuca beczułką rumu w największe skupisko wrogów, zmniejszając ich prędkość ataku o <style=basestat>{attackspeed_debuff}</style> i prędkość ruchu o <style=basestat>{movespeed_debuff}</style> na <style=basestat>{debuff_duration}</style>. Wrogowie ci zostają oblani wodą na <style=basestat>{doused_duration}</style>. Po 12 sekundach umiejętność przechodzi w próbę ognia.<br>Próba ognia: Czarnobrody celuje w aktualnego przeciwnika, podpalając go i zadając mu obrażenia <style=basestat>{burn_damage}</style> przez <style=basestat>{burn_duration}</style>. Umiejętność powraca do rzutu beczką po 8 sekundach.<br>Jeśli oblany przeciwnik zostanie podpalony z dowolnego źródła, eksploduje, rozprzestrzeniając efekt podpalenia na pobliskie jednostki i usuwając efekt oblania z pierwotnego celu.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Dystansowi|Trucizna</style>Wystrzeliwuje strzałę w najdalszy cel, trafiając go i zadając mu <style=basestat>{dmg_percentage}</style> obrażenia oraz zatruwając go, zadając mu kolejne <style=basestat>{poison_percentage}</style> obrażenia przez <style=basestat>{poison_duration}</style>. Nadaje priorytet bohaterom.
 P
@@ -2065,6 +2078,8 @@ p
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc:Produkuje pensy i dodaje do twojego miasta 2 pracowników.
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescYJednostki ciężkiej piechoty są wytrwałe i nie przepuszczają szarży kawalerii wroga.
+O
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMaska Tutenchamona
 X
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapierowe opakowania
 S
@@ -2154,7 +2169,7 @@ J
 <Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_Name
 Kamieniarz
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_10_Name�<style=ability_label>Dystansowe Uderzenie | Trucizna | Krwawienie</style>Wystrzeliwuje strzałę w najdalszy cel, trafiając go, zadając mu <style=basestat>{dmg_percentage}</style> obrażenia i zatruwając go, zadając mu kolejne <style=basestat>{poison_percentage}</style> obrażenia przez <style=basestat>{poison_duration}</style>. Ma <style=basestat>{szansa}</style> szansę, aby cel krwawił przez <style=basestat>{bleed_percentage}</style> przez <style=basestat>{bleed_duration}</style>. Nadaje priorytet bohaterom.
+JBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_10_Name�<style=ability_label>Dystansowe Uderzenie | Trucizna | Krwawienie</style>Wystrzeliwuje strzałę w najdalszy cel, trafiając go, zadając mu <style=basestat>{dmg_percentage}</style> obrażenia i zatruwając go, zadając mu kolejne <style=basestat>{poison_percentage}</style> obrażenia przez <style=basestat>{poison_duration}</style>. Ma <style=basestat>{chance}</style> szansę, aby cel krwawił przez <style=basestat>{bleed_percentage}</style> przez <style=basestat>{bleed_duration}</style>. Nadaje priorytet bohaterom.
 G
 2Base.Technologies.Technology_StoneAge_Cavalry_NameKoszary kawalerii
 M
@@ -2357,6 +2372,8 @@ O
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescOdblokowuje Procarzy
 T
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameKoszary strzelców
+?
+'Base.Heroes.hero.PhilipIIOfMacedon_NameFilip II Macedoński
 2
 "Base.Units.Unit_CyrusTheGreat_NameCyrus Wielki
 A
@@ -2395,6 +2412,8 @@ N
 &Base.Regions.region.DesertDelta_5_NameUfortyfikowane Piaski
 U
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameBizantyjskie Rumaki
+<
+'Base.Heroes.hero.AlexanderTheGreat_NameAleksander Wielki
 U
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameTrening Umiejętności
 V
@@ -3012,7 +3031,7 @@ t
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_Desc=Produkuje małą ilość żywności w krótkim okresie czasu.
 ,
 Base.Units.Unit_AnneBonny_Name
-Anna Bonny
+Anne Bonny
 2
 Base.Ages.ClassicGreece_NameStarożytna Grecja
 J
@@ -3133,6 +3152,8 @@ M
 Base.Ages.StoneAge_Start40 000 r. p.n.e.
 Y
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAkademia Bohaterów
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Wzmocnienie</style>Kiedy punkty wytrzymałości posiadacza spadną poniżej <style=basestat>{hp_threshold}</style>, jego obrona zostaje zwiększona o <style=basestat>{defense_buff}</style> do końca bieżącej fali. Nie kumuluje się.
 S
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProdukuje drzwi
 O
@@ -3214,8 +3235,8 @@ S
 &Base.Regions.region.FrozenFjord_4_NameLas Fae
 G
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameKorsarze Zmierzchu
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Uzdrowienie</style>Tansen przenika przez swoją muzykę, stając się niewrażliwym na <style=basestat>{czas trwania}</style> i zyskując leczącą aurę, która leczy wszystkie sojusznicze jednostki wokół niego do <style=basestat>{liczba_leczenia}</style> w czasie. Gdy umiejętność jest aktywna, Tansen nie może atakować ani się poruszyć.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Uzdrowienie</style>Tansen transcenduje przez swoją muzykę, stając się niewrażliwym na <style=basestat>{czas trwania}</style> i zyskując aurę uzdrawiającą, która leczy wszystkie sojusznicze jednostki wokół niego do <style=basestat>{heal_amount}</style> w czasie. Gdy umiejętność jest aktywna, Tansen nie może atakować ani się przenieść.
 Y
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKamieniołom kaolinu
 P
@@ -3626,11 +3647,11 @@ S
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameKoszary strzelców
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
+8
+-Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippisi
 /
 !Base.Units.Unit_AttilaTheHun_Name
 Attyla Hun
-8
--Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippisi
 %
 Base.Units.Unit_Medusa_NameMeduza
 6
@@ -4399,8 +4420,8 @@ _
 Base.BuildingGroups.MarketplaceRynek
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_15_Name�<style=ability_label>Osłabienie| Spalenie</style> Celuje w największą grupę wrogich jednostek, zmniejszając celność o <style=basestat>{accuracy_percentage}</style> i ATK o <style=basestat>{atk_percentage}</style> ATK Marksa przez <style=basestat>{duration}</style> w zasięgu <style=basestat>{range}</style>. Dotknięte jednostki również palą się, zadając <style=basestat>{dmg_percentage}</style> obrażeń przez <style=basestat>{burn_duration}</style>.
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_Name�<style=ability_label>Uderzenie obszarowe | Ogłuszenie | Spalenie</style>Kieruje ogłuszający dźwięk w stronę największego skupiska wrogich jednostek, zadając <style=basestat>{dmg_percentage}</style> obrażenia i ogłuszając wszystkich wrogów na <style=basestat>{stun_duration}</style> w zasięgu <style=basestat>{range}</style>. Obrażenia zadane jednostkom mają <style=basestat>{szansa}</style> szansę na spalenie, zadając kolejne <style=basestat>{spalenie_dmg_procent}</style> obrażenia przez <style=basestat>{czas_spalania}</style>.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_Name�<style=ability_label>Uderzenie obszarowe | Ogłuszenie | Spalenie</style>Kieruje ogłuszający dźwięk w stronę największego skupiska wrogich jednostek, zadając <style=basestat>{dmg_percentage}</style> obrażenia i ogłuszając wszystkich wrogów na <style=basestat>{stun_duration}</style> w zasięgu <style=basestat>{range}</style>. Obrażenia zadane jednostkom mają <style=basestat>{chance}</style> szansę na spalenie, zadając kolejne <style=basestat>{burn_dmg_percentage}</style> obrażenia przez <style=basestat>{burn_duration}</style>.
 I
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameŚredni dom
 ^
@@ -4409,8 +4430,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc{Jednostki dystansowe strzelają pociskami z dużej odległości i są szczególnie skuteczne przeciwko jednostkom piechoty.
 G
 3Base.Technologies.Technology_StoneAge_GoatPens_NameZagrody dla kóz
-�
-Base.Units.Unit_Mozart_Desc�Wystaw operę i zainspiruj tysiące Wolfgangiem Amadeuszem Mozartem! Ten muzyczny cud z XVIII wieku występował przed królami i opanował grę na skrzypcach i keyboardzie - i to w wieku pięciu lat!<br><br>Do 25 roku życia Mozart skomponował mnóstwo utworów muzycznych, w tym kilka symfonii, niezliczone koncerty, a nawet udaną operę. Teraz w Wiedniu stał się niezwykle sławny, ale nie niezwykle bogaty. <br> <br> W ostatnich latach życia Mozart wydał wiele ze swoich najbardziej znanych przeróbek, w tym niedokończone Requiem. Za życia był sławnym dowcipnisiem, często robiącym żarty swoim przyjaciołom i inspiracją dla wielu, w tym Ludwiga van Beethovena, kolejnego potencjalnego rekruta do Bohaterów Historii.
+�
+Base.Units.Unit_Mozart_Desc�Wystaw operę i zainspiruj tysiące dzięki Wolfgangowi Amadeuszowi Mozartowi! Ten cudowny muzyk z XVIII wieku występował przed królami i opanował grę na skrzypcach i keyboardzie - i to już w wieku pięciu lat!<br><br>Do 25 roku życia Mozart utworzył wiele utworów muzycznych, w tym kilka symfonii, niezliczone koncerty, a nawet udaną operę. Teraz w Wiedniu stał się niezwykle sławny, ale nie niezwykle bogaty. <br> <br>W swoich ostatnich latach Mozart wydał wiele ze swoich najbardziej znanych przeróbek, w tym niedokończone Requiem. Za życia był słynnym dowcipnisiem, często robiącym swoim przyjaciołom praktyczne żarty, i inspiracją dla wielu, w tym Ludwiga van Beethovena, kolejnego potencjalnego rekruta wśród bohaterów historii.
 V
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameZaawansowany trebusz
 y
@@ -4557,6 +4578,8 @@ r
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc8Tawerna produkuje miód pitny i sztokfisz z miodu i ryb.
 0
  Base.Ages.KingdomOfSicily_Decade1100 r. n.e.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>Regeneracja</style>Kiedy posiadacz po raz pierwszy w bitwie otrzyma śmiertelne obrażenia, jego PŻ regeneruje się do poziomu <style=basestat>{hp_percentage}</style>.
 �
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DescoJednostki oblężnicze atakują powoli i są podatne na ataki wroga, ale zadają obrażenia na dużym obszarze.
 =
@@ -4565,6 +4588,8 @@ _
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameZrównoważone górnictwo
 0
 Base.Ages.ComingSoon_NameDostępne wkrótce!
+M
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationCzas wyczerpania {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolikultura
 A
@@ -4717,6 +4742,8 @@ o
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Atak wręcz| Ogłuszenie</style> Umiejętnie uderza obecny cel swoją laską, zadając <style=basestat>{dmg_percentage}</style> obrażeń i mając <style=basestat>{chance}</style> szans na ogłuszenie ich na <style=basestat>{duration}</style>.
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�Walczyć u boku wizjonera, który ujarzmił Grecję! Filip II, król Macedonii z IV wieku p.n.e., jest słynny ze swojej wojskowej biegłości i podbojów, będąc symbolem wzrostu Macedonii. <br><br>Przejmując kontrolę nad królestwem w czasach kryzysu, Filip pokonał najeźdźców na początku swojej władzy, a następnie wprowadził swoją własną innowację: macedońską falangę, uzbrojoną w włócznie o długości 6 metrów. Dysponując potężną armią, prowadził kampanie przeciwko greckiemu kontynentowi, tworząc sojusz z kluczowymi polis półwyspu. <br><br>Po jego śmierci Filip był jednookim bohaterem wojennym, którego geniusz doprowadził do zjednoczenia Grecji w Związek Koryncki, a który przygotowywał się do inwazji na Persję, kiedy został zamordowany. Nawet to nie mogło go powstrzymać: został zdefiniowany jako bóg i czczony przez lud, a jego syn Aleksander kontynuował jego dziedzictwo.
 A
 3Base.Buildings.Building_Mayas_Aviary_Average_2_Name
 Ptaszarnia
@@ -4772,6 +4799,8 @@ S
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>Niezwyciężoność| Wzmocnienie</style>Zapewnia niezwyciężoność wszystkim sojuszniczym jednostkom na <style=basestat>{duration}</style> i zwiększa ich DEF o <style=basestat>{def_percentage}</style> DEF Lincolna na <style=basestat>{buff_duration}</style>.
 N
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameKoszary kawalerii
+B
+.Base.Abilities.hero_battle_ability.Tansen_NameUścisk Harmonii
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>Tupnięcie| Ogłuszenie</style>Leonidas tupie w ziemię, zadając <style=basestat>{dmg_percentage}</style> obrażeń wszystkim wrogom w zasięgu <style=basestat>{range}</style> i ogłuszając swojego obecnego celu na <style=basestat>{stun_duration}</style>.
 .
@@ -5056,6 +5085,8 @@ r
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc6Produkuje monety i dodaje do Twojego miasta pracownika
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameKanał
+>
+&Base.Units.Unit_PhilipIIOfMacedon_NameFilip II Macedoński
 O
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameZagrody Wikingów
 S
@@ -5082,8 +5113,8 @@ m
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc6Produkuje monety i dodaje do twojego miasta pracownika
 w
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Desc<Produkuje dużą ilość żywności w długim okresie czasu.
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.VincentVanGogh_1_Name�<style=ability_label>Przywołanie</style>Tworzy wir koloru w miejscu największego skupiska wrogich jednostek. Przez <style=basestat>{czas trwania}</style>, wir będzie poruszał się po polu bitwy w kształcie spirali i zadawał do <style=basestat>{dmg_percentage}</style> obrażeń oraz zmniejszał Obronę o <style=basestat>{defense_debuff}</style> wszystkim wrogim jednostkom, z którymi się zetknie.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.VincentVanGogh_1_Name�<style=ability_label>Przywołanie</style>Tworzy wir koloru w miejscu największego skupiska wrogich jednostek. Przez <style=basestat>{duration}</style>, wir będzie poruszał się po polu bitwy w kształcie spirali i zadawał do <style=basestat>{dmg_percentage}</style> obrażeń oraz zmniejszał Obronę o <style=basestat>{defense_debuff}</style> wszystkim wrogim jednostkom, z którymi się zetknie.
 �	
 Base.Units.Unit_Blackbeard_Desc�Morza są dziś wzburzone, a żeglarze się boją. Słyszeli opowieści o tym, którego nazywają Czarnobrodym, z ogniem we włosach i 40 armatami w gotowości. Ten pirat z XVIII wieku, którego prawdziwe imię brzmiało Edward Teach, wyrobił sobie przerażający wizerunek, siejąc przerażenie czarnymi flagami i czerwonym płomieniem.<br><br>Nazwę Czarnobrody zyskał, gdy Teach ukradł La Concord, francuski statek i przemianował go na Zemstę Królowej Anny. Z jego opancerzonego kadłuba prowadził śmiałe rajdy, powiększając swoją flotę o zdobyte statki i nowych sojuszników. Jego wizerunek, pirackiego wodza z długą czarną brodą i zapalonymi lontami wokół głowy, był tak przerażający, że otrzymał swój przydomek.<br><br>Legenda Czarnobrodego być może przyćmiewa tego człowieka. W kolejnych latach Czarnobrody stał się symbolem, ucieleśniającym zarówno romantyzm, jak i przerażenie prymatu. Mówi się, że jego duch nawiedza siedem mórz, a jego imię nadal budzi respekt. Jednak Czarnobrody wolał unikać przemocy, jeśli to możliwe, i posługiwał się strachem, aby osiągnąć to, czego chciał.
 ?
@@ -5475,6 +5506,8 @@ R
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameKoszary oblężnicze
 V
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_DescWytwarza mnóstwo rudy złota
+;
+&Base.Units.Unit_AlexanderTheGreat_NameAleksander Wielki
 K
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameMolo rybackie
 P
@@ -5732,8 +5765,8 @@ P
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameHandlarz kosztowności
 M
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameGospodarstwo domowe
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Uderzenie obszarowe | Ogłuszenie</style>Mozart rzuca symfonię na pole bitwy, aby ogłuszyć i zadać obrażenia wrogom na obszarze z największą liczbą wrogów, zyskując dodatkową moc przy każdym użyciu i maksymalną moc przy trzecim użyciu. <br> <br> Pierwsze użycie: <style=basestat>{obrażenia_a}</style> obrażeń, w niewielkim zakresie przez <style=basestat>{czas_a}</style> <br> Drugie użycie: <style=basestat>{obrażenia_b}</style> obrażeń, w średnim zasięgu dla <style=basestat>{czas trwania_b}</style>  <br> Trzecie użycie: <style=basestat>{obrażenia_c}</style> obrażeń, w średnim zasięgu dla <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Uderzenie obszarowe | Ogłuszenie</style>Mozart rzuca symfonię na pole bitwy, aby ogłuszyć i zadać obrażenia wrogom na obszarze z największą liczbą wrogów, zyskując dodatkową moc przy każdym użyciu i maksymalną moc przy trzecim użyciu. <br> <br>Pierwsze użycie: <style=basestat>{damage_a}</style> obrażenia, w małym zasięgu dla <style=basestat>{duration_a}</style> <br>Drugie użycie: <style=basestat>{damage_b}</style> obrażenia, w średnim zasięgu dla <style=basestat>{duration_b}</style> <br>Trzecie użycie: <style=basestat>{damage_c}</style> obrażeń, w średnim zasięgu dla <style=basestat>{duration_c}</style>.
 M
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameWymiana Kulturowa
 F
@@ -5792,8 +5825,8 @@ M
 5Base.Buildings.Building_China_RiceFarm_Average_2_NameGospodarstwo ryżowe
 U
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_DescProdukuje kaolin
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>Wyrzut Burzy | Krwawienie</style>Wystrzeliwuje bełty w kierunku 3 najbliższych wrogich jednostek, zadając <style=basestat>{obrażenia}</style> obrażenia wszystkim jednostkom na drodze bełtów i sprawiając, że krwawią, zadając <style=basestat>{bleed_damage}</style> obrażenia przez <style=basestat>{bleed_duration}</style>. Nadaje priorytet bohaterom.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>Wyrzut Burzy | Krwawienie</style>Wystrzeliwuje bełty w kierunku 3 najbliższych wrogich jednostek, zadając <style=basestat>{damage}</style> obrażenia wszystkim jednostkom na drodze bełtów i sprawiając, że krwawią, zadając <style=basestat>{bleed_damage}</style> obrażenia przez <style=basestat>{bleed_duration}</style>. Nadaje priorytet bohaterom.
 i
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc6Produkuje debeny i dodaje do twojego miasta pracownika
 p
@@ -5855,6 +5888,8 @@ m
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc4Znacznie zwiększa nawadnianie sąsiednich budynków
 @
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name	Mały dom
+�
+&Base.Units.Unit_AlexanderTheGreat_Desc�Oto Aleksander Wielki, niepokonany, triumfujący, najlepszy generał, jakiego znał świat! Ten król z IV wieku p.n.e. słynie z podbijania ogromnych połaci świata przed swoją przedwczesną śmiercią.<br><br>Aleksander objął tron w wieku 20 lat, po zabójstwie swojego ojca. Szybko udowodnił swoją determinację: podbił Traków i zniszczył słynne miasto-państwo Teb. To przywróciło pokój w Grecji, a Aleksander poprowadził Ligę Koryncką na podbój Persji Achemenidów. To słynne imperium upadło przed nim, ale Aleksander nie skończył: przed jego armiami uklękła Syria, Babilon, a nawet Pakistan.<br><br>Aleksander nigdy nie przegrał bitwy. W końcu jego własna armia zażądała powrotu do swoich domów. W Babilonie, w drodze do domu (choć w drodze powrotnej dokonał kilku podbojów), Aleksander wydał ostatnie tchnienie.<br><br>Wśród bohaterów historii Aleksander jest nieco kontrowersyjny. Bardzo lubi pić z Achillesem, dostawać lekcje od Cyrusa i pokazywać się swojemu ojcu!
 I
 .Base.Abilities.hero_battle_ability.Medusa_NameSkamieniałe Spojrzenie
 U

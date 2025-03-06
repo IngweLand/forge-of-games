@@ -401,6 +401,12 @@ D
 $Base.BuildingGroups.averageHome_NameCasa MedianaCasas Medianas
 �
 !Base.Units.Unit_RomanPraetor_Desc�¡Vete de fiesta como una romana con Aemilia Tertia! Esta mujer de la alta sociedad del siglo II a.C. en la antigua Roma, fue esposa de Escipión Africano, el célebre general que derrotó a Aníbal en la Segunda Guerra Púnica. Conocida por su noble cuna y su matrimonio con una de las principales familias de Roma, ejemplificó las virtudes de la matrona romana.<br><br>Su vida destaca por su apoyo a la carrera militar y política de su marido, junto con su papel en la gestión del hogar y la educación de sus hijos, entre ellos Cornelia Africana, madre de los hermanos Gracos.<br><br>El legado de Aemilia Tertia refleja el influyente papel que podían desempeñar las mujeres en la sociedad romana a pesar de su escasa presencia pública.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Escudo | Vínculo Espiritual | Control Mental</style>  
+Alexander inicia una conquista dentro de un rango de <style=basestat>{range}</style>, otorgando a todas las unidades aliadas en esta área un escudo de <style=basestat>{shield_per_second}</style> por segundo durante <style=basestat>{duration}</style>.  
+Las unidades aliadas están vinculadas espiritualmente durante la conquista, compartiendo el daño recibido entre ellas.  
+Al final de la duración, el enemigo con la menor PV dentro del rango es controlado mentalmente para atacar a sus aliados durante <style=basestat>{mind_control_duration}</style>.  
+Prioriza a los Héroes.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
@@ -790,6 +796,8 @@ B
 )Base.Regions.region.TeslaStormPurple_NameMorada Tesla Tormenta
 M
 3Base.Technologies.Technology_StoneAge_BearCult_NameCelebraciones Tribales
+O
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameConquista Imperial
 �
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
 d
@@ -842,6 +850,8 @@ X
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameVilletta siciliana
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHint�Puedes elegir jugar en cualquier dificultad desbloqueada. La elección queda bloqueada una vez que completas el primer encuentro.
+O
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameEscudo de Desafío
 \
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameInfantería bizantina
 U
@@ -882,6 +892,8 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 1Base.Buildings.Building_China_Home_Premium_1_NameCasa lujosa
 T
 #Base.BuildingGroups.chronicler_NameEdificio de CronistasEdificios de Cronistas
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Burla | Escudo | Golpe en Área</style>Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su daño base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Después de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonación consume el escudo de Felipe.
 K
 5Base.Technologies.Technology_Vikings_HealingMead_NameHidromiel Curativo
 =
@@ -1207,8 +1219,9 @@ I
 3Base.Technologies.Technology_EarlyRome_Velites_NameVélites
 `
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameBandera pirata
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Invocar</style>Lanza su regla triangular al objetivo actual. Durante <style=basestat>{duration}</style>, la regla se moverá por el campo de batalla en forma triangular e infligirá hasta <style=basestat>{dmg_percentage}</style> de daño a las unidades enemigas cercanas.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Invocar | Quemar</style>  
+Lanza su escuadra al objetivo actual. Durante <style=basestat>{duration}</style>, la escuadra se moverá por el campo de batalla en un patrón triangular, infligiendo hasta <style=basestat>{dmg_percentage}</style> de daño a las unidades enemigas cercanas y dejando a los enemigos afectados ardiendo, causando <style=basestat>{dmg_percentage_burn}</style> de daño adicional durante <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameChina
 o
@@ -1866,6 +1879,8 @@ N
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProduce togas.
 G
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduce arroz.
+C
+.Base.Abilities.hero_battle_ability.Mozart_NameSinfonía Nº 999
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameGranja de ganado
 e
@@ -1994,6 +2009,9 @@ Z
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescProduce un montón de papiro.
 M
 6Base.Technologies.Technology_IberianEra_MeadHalls_NameSalón del aguamiel
+B
+4Base.Abilities.hero_battle_ability.ScarabBeetle_Name
+Escarabajo
 8
 "Base.Units.Unit_OracleOfDephi_NameOráculo de Delfos
 =
@@ -2012,10 +2030,8 @@ Legionario
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NameChile
 J
 8Base.Technologies.Technology_China_ChineseConsensus_NameConsenso Chino
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Penalización | Quemadura</style>Lanzamiento de Barril: Barbanegra lanza un barril de ron al grupo más grande de unidades enemigas, reduciendo su velocidad de ataque en <style=basestat>{attackspeed_debuff}</style> y su velocidad de movimiento en <style=basestat>{movespeed_debuff}</style> durante <style=basestat>{debuff_duration}</style>. Los enemigos afectados también quedan empapados durante <style=basestat>{doused_duration}</style>. Después de 12 segundos, esta habilidad se convierte en Juicio por Fuego.<br>  
-Juicio por Fuego: Barbanegra dispara a su objetivo actual, quemándolo y causando <style=basestat>{burn_damage}</style> de daño a lo largo de <style=basestat>{burn_duration}</style>. Después de 8 segundos, esta habilidad vuelve a convertirse en Lanzamiento de Barril.<br>  
-Si un enemigo empapado es quemado por cualquier cosa, explota, propagando la quemadura a las unidades cercanas y eliminando el efecto de empapado.  
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Penalización | Quemadura</style>Lanzamiento de Barril: Blackbeard arroja un barril de ron al grupo más grande de enemigos, reduciendo su velocidad de ataque en <style=basestat>{attackspeed_debuff}</style> y su velocidad de movimiento en <style=basestat>{movespeed_debuff}</style> durante <style=basestat>{debuff_duration}</style>. Estos enemigos quedan empapados durante <style=basestat>{doused_duration}</style>. Después de 12 segundos, la habilidad evoluciona a Prueba de Fuego.<br>Prueba de Fuego: Barbanegra ataca a su oponente actual, prendiéndolo en llamas e infligiendo <style=basestat>{burn_damage}</style> de daño a lo largo de <style=basestat>{burn_duration}</style>. La habilidad vuelve a Lanzamiento de Barril después de 8 segundos.<br>Si un enemigo empapado es quemado por cualquier fuente, explotará, propagando el efecto de quemadura a las unidades cercanas y eliminando el estado de empapado del objetivo original.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Ataque a Distancia | Veneno</style>Dispara una flecha al objetivo más lejano, infligiéndole <style=basestat>{dmg_percentage}</style> de daño y envenenándolo, causando <style=basestat>{poison_percentage}</style> de daño adicional durante <style=basestat>{poison_duration}</style>. Da prioridad a los héroes.
 Q
@@ -2076,6 +2092,8 @@ k
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc5Produce peniques y añade 2 trabajadores a tu ciudad.
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
+T
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMáscara de Tutankamón
 X
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NameEmpaquetado de Papel
 S
@@ -2365,6 +2383,8 @@ T
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescDesbloquea a los honderos
 \
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameBarracón de largo alcance
+A
+'Base.Heroes.hero.PhilipIIOfMacedon_NameFilipo II de Macedonia
 4
 "Base.Units.Unit_CyrusTheGreat_NameCiro el Grande
 A
@@ -2403,6 +2423,8 @@ U
 &Base.Regions.region.DesertDelta_5_NameArenas Fortificadas
 U
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameCorceles bizantinos
+:
+'Base.Heroes.hero.AlexanderTheGreat_NameAlejandro Magno
 Y
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameEntrenamiento de Habilidad
 `
@@ -3140,6 +3162,8 @@ N
 Base.Ages.StoneAge_Start40 000 a. C.
 Y
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAcademia de héroes
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Potenciador</style>Cuando los puntos de vida del poseedor caen por debajo de <style=basestat>{hp_threshold}</style>, su defensa aumenta en <style=basestat>{defense_buff}</style> hasta el final de la oleada actual. No se acumula.
 S
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduce Puertas
 N
@@ -3222,8 +3246,8 @@ S
 &Base.Regions.region.FrozenFjord_4_NameBosque de las Adas
 N
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameCorsarios del Crepúsculo
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Curar</style>Tansen trasciende a través de su música, volviéndose invulnerable durante <style=basestat>{duration}</style> y obteniendo un aura de curación, sanando a todas las unidades aliadas a su alrededor hasta por <style=basestat>{heal_amount}</style> con el tiempo. Mientras la habilidad está activa, Tansen no puede atacar ni moverse.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Curar</style>Tansen trasciende a través de su música, volviéndose invulnerable durante <style=basestat>{duration}</style> y generando un aura de curación que restaura hasta <style=basestat>{heal_amount}</style> de vida a todas las unidades aliadas cercanas con el tiempo. Mientras la habilidad está activa, Tansen no puede atacar ni moverse.
 W
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameCantera de Caolín
 G
@@ -3637,10 +3661,10 @@ Y
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameBarracón de a distancia
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
-2
-!Base.Units.Unit_AttilaTheHun_NameAtila el Huno
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
+2
+!Base.Units.Unit_AttilaTheHun_NameAtila el Huno
 %
 Base.Units.Unit_Medusa_NameMedusa
 5
@@ -4013,8 +4037,8 @@ P
 !Base.HeroClass.SingleStriker_Desc�Los Golpeadores individuales infligen una gran cantidad de daño a objetivos individuales. Son excelentes contra héroes enemigos.<br><line-height=50%><br></line-height><b><color=#3DA229>Fuertes</color> contra:</b><br>-<indent=5%><color=#3DA229>Héroes enemigos</color> en <color=#3DA229>Campaña</color>, <color=#3DA229>Arena</color> y <color=#3DA229>Caza del Tesoro</color>.</indent><br>-<indent=5%><color=#3DA229>Tormentas Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Débiles</color> contra:</b><br>-<indent=5%><color=#CD2A25>Grandes Escuadrones</color> en Campaña y Caza del Tesoro.
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
-�
-Base.Units.Unit_Medusa_Desc�¡No mires! Medusa, una de las tres Gorgonas de los mitos griegos, fue enviada como mensajera, pero se unió a Heroes of History. Con el poder de convertir en piedra a quienes la miran, este monstruo de pelo de serpiente fue una vez una hermosa mujer, hasta que fue maldecida por la diosa Atenea por profanar su templo.<br><br>La historia de Medusa es una historia de transformación y venganza. En los mitos, Perseo, aconsejado por Atenea, la derrotó con un escudo de espejo y le cortó la cabeza, que se convirtió en un símbolo de seguridad para los antiguos griegos.<br><br>Pero sabemos la verdad: Medusa fue teletransportada a la Edad de Piedra por Tesla en el último momento, y tratada como el experimento científico definitivo. Ahora que es Gratis, quiere vengarse desesperadamente...
+�
+Base.Units.Unit_Medusa_Desc�¡No mires! Medusa, una de las tres Gorgonas de los mitos griegos, fue enviada como mensajera, pero se unió a Heroes of History. Con el poder de convertir en piedra a quienes la miran, este monstruo de pelo de serpiente fue una vez una hermosa mujer, hasta que fue maldecida por la diosa Atenea por profanar su templo.<br><br>La historia de Medusa es una historia de transformación y venganza. En los mitos, Perseo, aconsejado por Atenea, la derrotó con un escudo de espejo y le cortó la cabeza, que se convirtió en un símbolo de seguridad para los antiguos griegos.<br><br>Pero sabemos la verdad: Medusa fue teletransportada a la Edad de Piedra por Tesla en el último momento, y tratada como el experimento científico definitivo. Ahora que es libre, quiere vengarse desesperadamente...
 -
 Base.Heroes.hero.Shaolin_NameXueting Fuyu
 s
@@ -4421,8 +4445,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc}Las unidades a distancia lanzan proyectiles a gran distancia y son especialmente eficaces contra las unidades de infantería.
 I
 3Base.Technologies.Technology_StoneAge_GoatPens_NameCorrales de cabras
-�
-Base.Units.Unit_Mozart_Desc�¡Monta una ópera e inspira a miles de personas con Wolfgang Amadeus Mozart! Este prodigio musical del siglo XVIII actuó ante reyes y dominó el violín y el teclado, ¡y eso a los cinco años!<br><br>A los 25, Mozart ya había producido un tesoro de obras musicales, incluidas varias sinfonías, innumerables conciertos e incluso una ópera de éxito. Ya en Viena, se hizo extremadamente famoso, pero no extremadamente rico. <br> <br> En sus últimos años, Mozart publicó muchas de sus obras más conocidas, incluido su inacabado Réquiem. En vida, fue un bromista famoso, que a menudo gastaba bromas pesadas a sus amigos, y una inspiración para muchos, como Ludwig van Beethoven, otro posible recluta para los Heroes of History.
+�
+Base.Units.Unit_Mozart_Desc�¡Organiza una ópera e inspira a miles con Wolfgang Amadeus Mozart! Este prodigio musical del siglo XVIII se presentó ante reyes y dominó el violín y el teclado, ¡y eso a la edad de cinco años! <br><br>A los 25 años, Mozart ya había compuesto una gran cantidad de piezas musicales, incluyendo varias sinfonías, incontables conciertos e incluso una ópera exitosa. Ya en Viena, se hizo extremadamente famoso, pero no extremadamente rico. <br><br>En sus últimos años, Mozart publicó muchas de sus obras más conocidas, incluyendo su Requiem inacabado. En vida, era un famoso bromista, a menudo haciendo trucos a sus amigos, y una inspiración para muchos, incluido Ludwig Van Beethoven, otro posible recluta para los Heroes of History.
 W
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameFundíbulos avanzados
 �
@@ -4570,6 +4594,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_20_Name�<s
 .
  Base.Ages.KingdomOfSicily_Decade
 1100 d. C.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>Recuperación</style>Cuando el portador enfrenta daño fatal por primera vez en una batalla, su PV se recupera hasta un <style=basestat>{hp_percentage}</style>.
 �
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�Las unidades de asalto atacan lentamente y son vulnerables a los ataques enemigos, pero tienen un impacto sobre una zona amplia desde la distancia.
 @
@@ -4578,6 +4604,8 @@ Y
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameMinería sostenible
 -
 Base.Ages.ComingSoon_Name¡Próximamente!
+U
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationDuración de Agotamiento {0}
 S
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NameAgricultura múltiple
 >
@@ -4731,6 +4759,8 @@ t
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc0Mejora la felicidad de los edificios adyacentes.
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Golpe Cuerpo a Cuerpo| Aturdir</style>Golpea hábilmente al objetivo actual con su bastón, infligiendo <style=basestat>{dmg_percentage}</style> de daño y teniendo una <style=basestat>{chance}</style> de posibilidad de dejarlo aturdido durante <style=basestat>{duration}</style>.
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�¡Lucha junto al visionario que sometió a Grecia! Filipo II, un rey macedonio del siglo IV a.C., es célebre por su destreza militar y sus conquistas, siendo la figura clave en el ascenso de Macedonia.<br><br>Tomando el control del reino en plena crisis, Filipo derrotó a los invasores al comienzo de su reinado y realizó su propia innovación: la falange macedonia, armada con picas de 6 metros de largo. Con un ejército superior, lideró campañas contra el continente griego, forjando alianzas con importantes polis de la península.<br><br>Para el momento de su muerte, Filipo era un héroe de guerra tuerto, cuyo genio lo llevó a unificar Grecia bajo la Liga de Corinto y a prepararse para invadir Persia cuando fue asesinado. Ni siquiera eso pudo detenerlo: fue deificado y adorado como un dios, mientras su hijo Alejandro continuaba con su legado.
 >
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameAviario
 3
@@ -4786,6 +4816,8 @@ P
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>Invencibilidad| Potenciador</style>Proporciona Invencibilidad a todas las unidades amigas durante <style=basestat>{duration}</style> y aumenta su DEF en <style=basestat>{def_percentage}</style> de la DEF de Lincoln durante <style=basestat>{buff_duration}</style>.
 U
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameBarracón de caballería
+J
+.Base.Abilities.hero_battle_ability.Tansen_NameEl Abrazo de la Armonía
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>Pisotón| Aturdir</style>Leónidas da un pisotón en el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de un alcance de <style=basestat>{range}</style> y aturdiendo a su objetivo actual durante <style=basestat>{stun_duration}</style>.
 -
@@ -5073,6 +5105,8 @@ o
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 @
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameCanal
+@
+&Base.Units.Unit_PhilipIIOfMacedon_NameFilipo II de Macedonia
 N
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameHogares Vikingos
 U
@@ -5312,8 +5346,8 @@ D
 9Base.Technologies.Technology_KingdomOfSicily_Melites_NameMelites
 L
 7Base.Technologies.Technology_FeudalAge_HealingMead_NameAguamiel Curativo
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>Golpe en Área| Penalización| Quemadura| Potenciador</style>Provoca una tormenta divina en la ubicación del mayor grupo de unidades enemigas. La tormenta inflige <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>, reduce la velocidad de movimiento en <style=basestat>{move_speed_percentage}</style>, y deja a las unidades afectadas quemándose por <style=basestat>{dmg_percentage_burn}</style> durante <style=basestat>{duration}</style>. También ataca al mayor grupo de unidades amigas, aumentando el ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Menes durante <style=basestat>{duration}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>Golpe en Área| Penalización| Quemadura| Potenciador</style>Provoca una tormenta divina en la ubicación del mayor grupo de unidades enemigas. La tormenta inflige <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>, reduce la velocidad de movimiento en <style=basestat>{move_speed_percentage}</style>, y deja a las unidades afectadas quemándose por <style=basestat>{dmg_percentage_burn}</style> durante <style=basestat>{duration}</style>. También aumenta el ataque del mayor grupo de unidades amigas un <style=basestat>{atk_percentage}</style> del ataque de Menes durante<style=basestat>{duration}</style>.
 |
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 E
@@ -5493,6 +5527,8 @@ Q
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameBarracón de asedio
 [
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_Desc"Produce un montón de mena de oro.
+9
+&Base.Units.Unit_AlexanderTheGreat_NameAlejandro Magno
 M
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameMuelle de pesca
 O
@@ -5749,8 +5785,11 @@ I
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameMercader lujoso
 J
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameGranja de Ganado
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Golpe en Área | Aturdir</style>Mozart interpreta una sinfonía en el campo de batalla para aturdir y dañar a los enemigos en el área con más unidades, ganando poder adicional con cada uso y alcanzando su máximo poder en el tercer uso. <br> <br> Primer Uso: <style=basestat>{damage_a}</style> de daño, en un rango pequeño durante <style=basestat>{duration_a}</style> <br> Segundo Uso: <style=basestat>{damage_b}</style> de daño, en un rango medio durante <style=basestat>{duration_b}</style> <br> Tercer Uso en adelante: <style=basestat>{damage_c}</style> de daño, en un rango medio durante <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Golpe en Área | Aturdir</style>Mozart interpreta una sinfonía en el campo de batalla para aturdir y dañar a los enemigos en el área con mayor concentración de adversarios, ganando poder adicional con cada uso y alcanzando su máximo en el tercer uso. 
+<br><br>Primer Uso: <style=basestat>{damage_a}</style> de daño, en un área pequeña durante <style=basestat>{duration_a}</style>  
+<br>Segundo Uso: <style=basestat>{damage_b}</style> de daño, en un área media durante <style=basestat>{duration_b}</style>  
+<br>Tercer Uso en adelante: <style=basestat>{damage_c}</style> de daño, en un área media durante <style=basestat>{duration_c}</style>.
 P
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameIntercambio cultural
 D
@@ -5874,6 +5913,8 @@ Q
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_DescDMejora considerablemente la irrigación de los edificios adyacentes.
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameCasa pequeña
+�
+&Base.Units.Unit_AlexanderTheGreat_Desc�He aquí Alejandro Magno, invicto, triunfante, ¡el mejor general que el mundo haya conocido! Este rey del siglo IV a.C. es famoso por conquistar vastas regiones del mundo antes de su temprana muerte.  <br><br>Alejandro ascendió al trono a los 20 años, tras el asesinato de su padre. Rápidamente demostró ser decisivo: conquistó a los tracios y destruyó la famosa ciudad-estado de Tebas. Esto trajo nuevamente la paz a Grecia, y Alejandro lideró la Liga de Corinto para conquistar el Imperio Aqueménida de Persia. Este famoso imperio cayó ante él, pero Alejandro no se detuvo: antes de que sus ejércitos se arrodillaran, Siria, Babilonia, Irán e incluso Pakistán cayeron bajo su mando. <br><br>Alejandro nunca perdió una batalla. Al final, su propio ejército pidió regresar a sus hogares. En Babilonia, en el camino de regreso (aunque hizo algunas conquistas en el camino), Alejandro exhaló su último suspiro. <br><br>Dentro de los Heroes of History, Alejandro es algo controversial. ¡Le encanta beber con Aquiles, recibir lecciones de Ciro y hacerle sombra a su padre!
 E
 .Base.Abilities.hero_battle_ability.Medusa_NameMirada petrificante
 V

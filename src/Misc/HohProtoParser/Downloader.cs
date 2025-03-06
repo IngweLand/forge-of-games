@@ -50,10 +50,6 @@ public class Downloader(IInnSdkClient sdkClient) : IDownloader
         var locales = HohSupportedCultures.AllCultures.ToDictionary(c => c, c => c.Replace('-', '_'));
         foreach (var kvp in locales)
         {
-            var payload = new LocalizationRequest()
-            {
-                Locale = kvp.Value,
-            };
             var filename = $"loca_{kvp.Key}.bin";
             var response = await sdkClient.StaticDataService.GetLocalizationProtobufAsync(_betaWorldConfig, kvp.Value);
             await File.WriteAllBytesAsync(Path.Combine(_directory, filename), response);
