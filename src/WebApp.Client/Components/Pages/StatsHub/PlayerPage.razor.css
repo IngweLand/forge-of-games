@@ -64,6 +64,24 @@ p {
     font-size: 10px;
 }
 
+.strings-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.name {
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    border-radius: var(--fog-border-radius);
+    padding: 4px;
+}
+
+.material-symbols-outlined{
+    font-size: 16px;
+    vertical-align: middle;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -102,5 +120,13 @@ p {
 
     .timeline-date {
         font-size: 12px;
+    }
+
+    .strings-container {
+        gap: 12px;
+    }
+
+    .name {
+        padding: 6px;
     }
 }

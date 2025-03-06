@@ -8,7 +8,9 @@ public static class GameEndpoints
     public static readonly string LocaPath = "game/loca";
     public static readonly string GameDesignPath = "game/gamedesign";
     public static readonly string PlayerRankingPath = "game/ranking/player";
+    public static readonly string PvpRankingPath = "game/pvp/get-ranking";
     public static readonly string AllianceRankingPath = "game/ranking/alliance";
+    public static readonly string BattleStatsPath = "game/battle/hero/stats";
 
     public static string CreateUrl(string serverId, string path)
     {

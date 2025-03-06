@@ -10,5 +10,6 @@ public interface IFogDbContext
     DbSet<Player> Players { get; set; }
     DbSet<Alliance> Alliances { get; set; }
     DbSet<AllianceRanking> AllianceRankings { get; set; }
+    DbSet<PlayerAllianceNameHistoryEntry> PlayerAllianceNameHistory { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

@@ -12,36 +12,41 @@ public class StatsHubUiService(
     ICommonService commonService,
     IStatsHubViewModelsFactory statsHubViewModelsFactory) : IStatsHubUiService
 {
-    private readonly IDictionary<AllianceKey, AllianceWithRankingsViewModel> _concreteAlliances =
-        new Dictionary<AllianceKey, AllianceWithRankingsViewModel>();
+    private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
+        new Dictionary<int, AllianceWithRankingsViewModel>();
 
-    private readonly IDictionary<PlayerKey, PlayerWithRankingsViewModel> _concretePlayers =
-        new Dictionary<PlayerKey, PlayerWithRankingsViewModel>();
+    private readonly IDictionary<int, PlayerWithRankingsViewModel> _concretePlayers =
+        new Dictionary<int, PlayerWithRankingsViewModel>();
 
     private IReadOnlyDictionary<string, AgeDto>? _ages;
+    private TopStatsViewModel? _topStatsViewModel;
 
-    public async Task<PlayerWithRankingsViewModel?> GetPlayerAsync(string worldId, int playerId)
+    public async Task<PlayerWithRankingsViewModel?> GetPlayerAsync(int playerId)
     {
-        var key = new PlayerKey(worldId, playerId);
-        if (_concretePlayers.TryGetValue(key, out var playerViewModel))
+        if (_concretePlayers.TryGetValue(playerId, out var playerViewModel))
         {
             return playerViewModel;
         }
 
         await GetAgesAsync();
-        var player = await statsHubService.GetPlayerAsync(key.WorldId, key.InGamePlayerId);
+        var player = await statsHubService.GetPlayerAsync(playerId);
         if (player == null)
         {
             return null;
         }
 
         var newViewModel = statsHubViewModelsFactory.CreatePlayer(player, _ages!);
-        _concretePlayers.Add(key, newViewModel);
+        _concretePlayers.Add(playerId, newViewModel);
         return newViewModel;
     }
 
     public async Task<TopStatsViewModel> GetTopStatsAsync()
     {
+        if (_topStatsViewModel != null)
+        {
+            return _topStatsViewModel;
+        }
+        
         await GetAgesAsync();
         var mainPlayersTask = statsHubService.GetPlayersAsync("un1");
         var betaPlayersTask = statsHubService.GetPlayersAsync("zz1");
@@ -50,26 +55,27 @@ public class StatsHubUiService(
 
         await Task.WhenAll(mainPlayersTask, betaPlayersTask, mainAlliancesTask, betaAlliancesTask);
 
-        return statsHubViewModelsFactory.CreateTopStats(mainPlayersTask.Result.Items, betaPlayersTask.Result.Items,
+        _topStatsViewModel =  statsHubViewModelsFactory.CreateTopStats(mainPlayersTask.Result.Items, betaPlayersTask.Result.Items,
             mainAlliancesTask.Result.Items, betaAlliancesTask.Result.Items, _ages!);
+
+        return _topStatsViewModel;
     }
 
-    public async Task<AllianceWithRankingsViewModel?> GetAllianceAsync(string worldId, int allianceId)
+    public async Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId)
     {
-        var key = new AllianceKey(worldId, allianceId);
-        if (_concreteAlliances.TryGetValue(key, out var allianceViewModel))
+        if (_concreteAlliances.TryGetValue(allianceId, out var allianceViewModel))
         {
             return allianceViewModel;
         }
 
-        var alliance = await statsHubService.GetAllianceAsync(key.WorldId, key.InGameAllianceId);
+        var alliance = await statsHubService.GetAllianceAsync(allianceId);
         if (alliance == null)
         {
             return null;
         }
         await GetAgesAsync();
         var newViewModel = statsHubViewModelsFactory.CreateAlliance(alliance, _ages!);
-        _concreteAlliances.Add(key, newViewModel);
+        _concreteAlliances.Add(allianceId, newViewModel);
         return newViewModel;
     }
 

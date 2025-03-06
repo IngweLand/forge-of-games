@@ -20,11 +20,11 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<AllianceWithRankings?> GetAllianceAsync(string worldId, int inGameAllianceId)
+    public Task<AllianceWithRankings?> GetAllianceAsync(int allianceId)
     {
         var query = new GetAllianceQuery()
         {
-            AllianceKey = new AllianceKey(worldId, inGameAllianceId),
+            AllianceId = allianceId,
         };
         return sender.Send(query);
     }
@@ -40,11 +40,11 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<PlayerWithRankings?> GetPlayerAsync(string worldId, int inGamePlayerId)
+    public Task<PlayerWithRankings?> GetPlayerAsync(int playerId)
     {
         var query = new GetPlayerQuery()
         {
-            PlayerKey = new PlayerKey(worldId, inGamePlayerId),
+            PlayerId = playerId,
         };
         return sender.Send(query);
     }

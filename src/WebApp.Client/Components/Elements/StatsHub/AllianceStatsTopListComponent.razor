@@ -32,7 +32,7 @@
 
     private void OnAllianceClicked(AllianceViewModel alliance)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(alliance.Key.WorldId, alliance.Key.InGameAllianceId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(alliance.Id));
     }
 
 }

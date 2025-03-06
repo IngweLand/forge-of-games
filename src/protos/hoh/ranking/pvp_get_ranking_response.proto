@@ -1,0 +1,16 @@
+syntax = "proto3";
+import "alliance_dto.proto";
+import "player_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PvpGetRankingResponse {
+  repeated PvpRankDto rankings = 1;
+}
+
+message PvpRankDto {
+  PlayerDto player = 1;
+  AllianceDto alliance = 2;
+  int32 rank = 3;
+  int32 points = 4;
+}

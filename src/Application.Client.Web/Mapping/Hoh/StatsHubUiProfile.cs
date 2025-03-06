@@ -15,6 +15,9 @@ public class StatsHubUiProfile : Profile
     public StatsHubUiProfile()
     {
         CreateMap<PlayerDto, PlayerViewModel>()
+            .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank == 0 ? "-" : src.Rank.ToString()))
+            .ForMember(dest => dest.RankingPoints,
+                opt => opt.MapFrom(src => src.RankingPoints == 0 ? "-" : src.RankingPoints.ToString()))
             .ForMember(dest => dest.Age, opt =>
                 opt.MapFrom((src, _, _, context) =>
                 {
@@ -44,7 +47,7 @@ public class StatsHubUiProfile : Profile
                     return src.Ages.Select(
                         a => new StatsTimedStringValue() {Date = a.Date, Value = ages[a.Value].Name});
                 }));
-        
+
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.AvatarIconUrl,
                 opt => opt.ConvertUsing<AllianceAvatarIconIdToUrlConverter, int>(src => src.AvatarIconId))
@@ -54,6 +57,12 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
         CreateMap<PaginatedList<AllianceDto>, PaginatedList<AllianceViewModel>>();
-        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>();
+        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>()
+            .ForMember(dest => dest.RegisteredAt, opt =>
+            {
+                opt.PreCondition(src => src.RegisteredAt != null);
+                opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
+            })
+            .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader));
     }
 }

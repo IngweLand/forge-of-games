@@ -14,17 +14,40 @@
                 <img class="avatar-icon" src="@_alliance.Alliance.AvatarIconUrl"/>
             </div>
             <div class="details">
-                <div><span
-                        class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>"@_alliance.Alliance.Name"
+                <div>
+                    <span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>
+                    "@_alliance.Alliance.Name"
                 </div>
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@WorldId</div>
+                @if (_alliance.Leader != null)
+                {
+                    <div>
+                        <span class="label">@Loc[FogResource.StatsHub_Alliance_Leader_Label]: </span>
+                        @_alliance.Leader.Name
+                    </div>
+                }
+                <div>
+                    <span class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>
+                    @_alliance.Alliance.RankingPoints
+                </div>
+                <div>
+                    <span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>
+                    @_alliance.Alliance.Rank
+                </div>
+                @if (_alliance.RegisteredAt != null)
+                {
+                    <div>
+                        <span class="label">@Loc[FogResource.StatsHub_Alliance_RegisteredOn_Label]: </span>
+                        @_alliance.RegisteredAt
+                    </div>
+                }
+                <div>
+                    <span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>
+                    @_alliance.Alliance.WorldId
+                </div>
                 <div>
                     <span
-                        class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_alliance.Alliance.RankingPoints
-                </div>
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@_alliance.Alliance.Rank</div>
-                <div><span
-                        class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@_alliance.Alliance.UpdatedAt
+                        class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>
+                    @_alliance.Alliance.UpdatedAt
                 </div>
             </div>
         </div>
@@ -76,22 +99,24 @@
             </MudTimeline>
         </div>
 
-        <div class="fog-container section-container">
-            <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
-            <div class="members-container">
-                @foreach (var player in _alliance.CurrentMembers)
-                {
-                    <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
-                }
-            </div>
-        </div>
-        
-        @if (_alliance.PossiblePastMembers.Count > 0)
+        @if (_alliance.CurrentMembers.Count > 0)
         {
             <div class="fog-container section-container">
-                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_PossiblePastMembers]</span>
+                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
                 <div class="members-container">
-                    @foreach (var player in _alliance.PossiblePastMembers)
+                    @foreach (var player in _alliance.CurrentMembers)
+                    {
+                        <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                    }
+                </div>
+            </div>
+        }
+        @if (_alliance.PossibleMembers.Count > 0)
+        {
+            <div class="fog-container section-container">
+                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_PossibleMembers]</span>
+                <div class="members-container">
+                    @foreach (var player in _alliance.PossibleMembers)
                     {
                         <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
                     }
@@ -107,10 +132,6 @@ else
 }
 
 @code {
-
-    [Parameter]
-    public required string WorldId { get; set; }
-
     [Parameter]
     public required int AllianceId { get; set; }
 

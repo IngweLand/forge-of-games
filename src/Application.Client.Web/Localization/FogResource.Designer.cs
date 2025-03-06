@@ -1617,7 +1617,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CurrentMembers.
+        ///   Looks up a localized string similar to Current Members.
         /// </summary>
         public static string StatsHub_Alliance_CurrentMembers {
             get {
@@ -1626,11 +1626,29 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Possible Past Members.
+        ///   Looks up a localized string similar to Leader.
         /// </summary>
-        public static string StatsHub_Alliance_PossiblePastMembers {
+        public static string StatsHub_Alliance_Leader_Label {
             get {
-                return ResourceManager.GetString("StatsHub.Alliance.PossiblePastMembers", resourceCulture);
+                return ResourceManager.GetString("StatsHub.Alliance.Leader.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Possible Members.
+        /// </summary>
+        public static string StatsHub_Alliance_PossibleMembers {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.PossibleMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered on.
+        /// </summary>
+        public static string StatsHub_Alliance_RegisteredOn_Label {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.RegisteredOn.Label", resourceCulture);
             }
         }
         
@@ -1721,6 +1739,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Player_Names {
             get {
                 return ResourceManager.GetString("StatsHub.Player.Names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arena Ranking Points.
+        /// </summary>
+        public static string StatsHub_Player_PvpRankingPoints {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.PvpRankingPoints", resourceCulture);
             }
         }
         

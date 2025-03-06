@@ -22,14 +22,28 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AlliancePlayer", b =>
+                {
+                    b.Property<int>("AllianceHistoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MemberHistoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AllianceHistoryId", "MemberHistoryId");
+
+                    b.HasIndex("MemberHistoryId");
+
+                    b.ToTable("AlliancePlayer");
+                });
+
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Alliance", b =>
                 {
-                    b.Property<string>("WorldId")
-                        .HasMaxLength(48)
-                        .HasColumnType("nvarchar(48)");
-
-                    b.Property<int>("InGameAllianceId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AvatarBackgroundId")
                         .HasColumnType("int");
@@ -37,7 +51,10 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("AvatarIconId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MemberCount")
+                    b.Property<int>("InGameAllianceId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LeaderId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -51,12 +68,24 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("RankingPoints")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("RegisteredAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateOnly>("UpdatedAt")
                         .HasColumnType("date");
 
-                    b.HasKey("WorldId", "InGameAllianceId");
+                    b.Property<string>("WorldId")
+                        .IsRequired()
+                        .HasMaxLength(48)
+                        .HasColumnType("nvarchar(48)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("InGameAllianceId");
+
+                    b.HasIndex("LeaderId")
+                        .IsUnique()
+                        .HasFilter("[LeaderId] IS NOT NULL");
 
                     b.HasIndex("Name");
 
@@ -65,28 +94,54 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     b.HasIndex("WorldId");
 
+                    b.HasIndex("WorldId", "InGameAllianceId")
+                        .IsUnique();
+
                     b.ToTable("alliances", (string)null);
                 });
 
-            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceRanking", b =>
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceNameHistoryEntry", b =>
                 {
-                    b.Property<string>("WorldId")
-                        .HasMaxLength(48)
-                        .HasColumnType("nvarchar(48)");
-
-                    b.Property<int>("InGameAllianceId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("CollectedAt")
-                        .HasColumnType("date");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("MemberCount")
+                    b.Property<int>("AllianceId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("ChangedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name");
+
+                    b.HasIndex("AllianceId", "Name", "ChangedAt")
+                        .IsUnique();
+
+                    b.ToTable("alliance_name_history_entries", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceRanking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AllianceId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("CollectedAt")
+                        .HasColumnType("date");
 
                     b.Property<int>("Points")
                         .HasColumnType("int");
@@ -97,26 +152,23 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("WorldId", "InGameAllianceId", "CollectedAt");
+                    b.HasKey("Id");
+
+                    b.HasIndex("AllianceId");
 
                     b.HasIndex("CollectedAt")
                         .IsDescending();
-
-                    b.HasIndex("WorldId");
-
-                    b.HasIndex("WorldId", "InGameAllianceId");
 
                     b.ToTable("alliance_rankings", (string)null);
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
                 {
-                    b.Property<string>("WorldId")
-                        .HasMaxLength(48)
-                        .HasColumnType("nvarchar(48)");
-
-                    b.Property<int>("InGamePlayerId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Age")
                         .IsRequired()
@@ -130,23 +182,36 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("AvatarId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CurrentAllianceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InGamePlayerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("Rank")
+                    b.Property<int?>("Rank")
                         .HasColumnType("int");
 
-                    b.Property<int>("RankingPoints")
+                    b.Property<int?>("RankingPoints")
                         .HasColumnType("int");
 
                     b.Property<DateOnly>("UpdatedAt")
                         .HasColumnType("date");
 
-                    b.HasKey("WorldId", "InGamePlayerId");
+                    b.Property<string>("WorldId")
+                        .IsRequired()
+                        .HasMaxLength(48)
+                        .HasColumnType("nvarchar(48)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("Age");
+
+                    b.HasIndex("CurrentAllianceId");
 
                     b.HasIndex("InGamePlayerId");
 
@@ -157,34 +222,102 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     b.HasIndex("WorldId");
 
+                    b.HasIndex("WorldId", "InGamePlayerId")
+                        .IsUnique();
+
                     b.ToTable("players", (string)null);
                 });
 
-            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerRanking", b =>
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerAgeHistoryEntry", b =>
                 {
-                    b.Property<string>("WorldId")
-                        .HasMaxLength(48)
-                        .HasColumnType("nvarchar(48)");
-
-                    b.Property<int>("InGamePlayerId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("CollectedAt")
-                        .HasColumnType("date");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Age")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("AllianceName")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("ChangedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlayerId", "Age", "ChangedAt")
+                        .IsUnique();
+
+                    b.ToTable("player_age_history_entries", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerAllianceNameHistoryEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AllianceName")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AllianceName");
+
+                    b.HasIndex("PlayerId", "AllianceName");
+
+                    b.ToTable("player_alliance_name_history_entries", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerNameHistoryEntry", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name");
+
+                    b.HasIndex("PlayerId", "Name");
+
+                    b.ToTable("player_name_history_entries", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerRanking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("CollectedAt")
+                        .HasColumnType("date");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Points")
                         .HasColumnType("int");
@@ -195,23 +328,122 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("WorldId", "InGamePlayerId", "CollectedAt");
+                    b.HasKey("Id");
 
                     b.HasIndex("CollectedAt")
                         .IsDescending();
 
-                    b.HasIndex("WorldId");
-
-                    b.HasIndex("WorldId", "InGamePlayerId");
+                    b.HasIndex("PlayerId");
 
                     b.ToTable("player_rankings", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PvpRanking", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CollectedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Points")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rank")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CollectedAt")
+                        .IsDescending();
+
+                    b.HasIndex("PlayerId");
+
+                    b.ToTable("pvp_rankings", (string)null);
+                });
+
+            modelBuilder.Entity("AlliancePlayer", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Alliance", null)
+                        .WithMany()
+                        .HasForeignKey("AllianceHistoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                        .WithMany()
+                        .HasForeignKey("MemberHistoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Alliance", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", "Leader")
+                        .WithOne("LedAlliance")
+                        .HasForeignKey("Ingweland.Fog.Models.Fog.Entities.Alliance", "LeaderId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Leader");
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceNameHistoryEntry", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Alliance", null)
+                        .WithMany("NameHistory")
+                        .HasForeignKey("AllianceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.AllianceRanking", b =>
                 {
                     b.HasOne("Ingweland.Fog.Models.Fog.Entities.Alliance", null)
                         .WithMany("Rankings")
-                        .HasForeignKey("WorldId", "InGameAllianceId")
+                        .HasForeignKey("AllianceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Alliance", "CurrentAlliance")
+                        .WithMany("Members")
+                        .HasForeignKey("CurrentAllianceId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("CurrentAlliance");
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerAgeHistoryEntry", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                        .WithMany("AgeHistory")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerAllianceNameHistoryEntry", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                        .WithMany("AllianceNameHistory")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerNameHistoryEntry", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                        .WithMany("NameHistory")
+                        .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -220,18 +452,41 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                 {
                     b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
                         .WithMany("Rankings")
-                        .HasForeignKey("WorldId", "InGamePlayerId")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PvpRanking", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                        .WithMany("PvpRankings")
+                        .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Alliance", b =>
                 {
+                    b.Navigation("Members");
+
+                    b.Navigation("NameHistory");
+
                     b.Navigation("Rankings");
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
                 {
+                    b.Navigation("AgeHistory");
+
+                    b.Navigation("AllianceNameHistory");
+
+                    b.Navigation("LedAlliance");
+
+                    b.Navigation("NameHistory");
+
+                    b.Navigation("PvpRankings");
+
                     b.Navigation("Rankings");
                 });
 #pragma warning restore 612, 618

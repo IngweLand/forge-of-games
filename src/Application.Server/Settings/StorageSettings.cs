@@ -7,7 +7,5 @@ public class StorageSettings
     public required string CommandCenterProfilesTable { get; set; }
     public required string ConnectionString { get; set; }
     public required string HohStartupDataTable { get; set; }
-    public required string PlayerRankingsTable { get; set; }
-    public required string AllianceRankingsTable { get; set; }
-    public required string AllianceRankingsRawDataTable { get; set; }
+    public required string InGameRawDataTable { get; set; }
 }

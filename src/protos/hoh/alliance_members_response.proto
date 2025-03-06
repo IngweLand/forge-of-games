@@ -1,0 +1,9 @@
+syntax = "proto3";
+import "alliance_member_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceMembersResponse {
+  int32 alliance_id = 1;
+  repeated AllianceMemberDto members = 2;
+}

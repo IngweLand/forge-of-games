@@ -1,8 +1,10 @@
 syntax = "proto3";
-import "alliance_leader_dto.proto";
+import "player_dto.proto";
+import "google/protobuf/timestamp.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message AllianceInfoDto {
-  AllianceLeaderDto leader = 7;
+  PlayerDto leader = 7;
+  google.protobuf.Timestamp registered_at = 10;
 }

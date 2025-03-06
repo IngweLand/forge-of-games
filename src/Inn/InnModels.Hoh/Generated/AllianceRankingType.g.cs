@@ -24,11 +24,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static AllianceRankingTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChthbGxpYW5jZV9yYW5raW5nX3R5cGUucHJvdG8qjQEKE0FsbGlhbmNlUmFu",
-            "a2luZ1R5cGUSIQodQWxsaWFuY2VSYW5raW5nVHlwZV9VTkRFRklORUQQABIr",
-            "CidBbGxpYW5jZVJhbmtpbmdUeXBlX1BMQVlFUl9UT1RBTF9QT0lOVFMQARIm",
-            "CiJBbGxpYW5jZVJhbmtpbmdUeXBlX1JBTktJTkdfUE9JTlRTEAJCH6oCHElu",
-            "Z3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "ChthbGxpYW5jZV9yYW5raW5nX3R5cGUucHJvdG8qhgEKE0FsbGlhbmNlUmFu",
+            "a2luZ1R5cGUSIQodQWxsaWFuY2VSYW5raW5nVHlwZV9VTkRFRklORUQQABIk",
+            "CiBBbGxpYW5jZVJhbmtpbmdUeXBlX1RPVEFMX1BPSU5UUxABEiYKIkFsbGlh",
+            "bmNlUmFua2luZ1R5cGVfUkFOS0lOR19QT0lOVFMQAkIfqgIcSW5nd2VsYW5k",
+            "LkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceRankingType), }, null, null));
@@ -39,7 +39,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   #region Enums
   public enum AllianceRankingType {
     [pbr::OriginalName("AllianceRankingType_UNDEFINED")] Undefined = 0,
-    [pbr::OriginalName("AllianceRankingType_PLAYER_TOTAL_POINTS")] PlayerTotalPoints = 1,
+    [pbr::OriginalName("AllianceRankingType_TOTAL_POINTS")] TotalPoints = 1,
     [pbr::OriginalName("AllianceRankingType_RANKING_POINTS")] RankingPoints = 2,
   }
 

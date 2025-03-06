@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroBattleStatsResponse {
+  bytes battle_id = 1;
+  repeated UnitGroupBattleStatsDto team = 2;
+  repeated UnitGroupBattleStatsDto adversary = 3;
+}
+
+message UnitGroupBattleStatsDto {
+    optional UnitBattleStatsDto hero = 1;
+    optional UnitBattleStatsDto support_unit = 2;
+}
+
+message UnitBattleStatsDto {
+  string unit_id = 1;
+  float attack = 2;
+  float defense = 3;
+  float heal = 4;
+}
+

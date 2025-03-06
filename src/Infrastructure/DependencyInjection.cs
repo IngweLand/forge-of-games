@@ -39,9 +39,7 @@ public static class DependencyInjection
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
-        services.AddScoped<IPlayerRankingTableRepository, PlayerRankingTableRepository>();
-        services.AddScoped<IAllianceRankingTableRepository, AllianceRankingTableRepository>();
-        services.AddScoped<IAllianceRankingRawDataTableRepository, AllianceRankingRawDataTableRepository>();
+        services.AddScoped<IInGameRawDataTableRepository, InGameRawDataTableRepository>();
 
         return services;
     }
@@ -69,25 +67,11 @@ public static class DependencyInjection
                 options.CityPlannerCitiesTable);
         });
 
-        services.AddSingleton<ITableStorageRepository<PlayerRankingTableEntity>>(sp =>
+        services.AddSingleton<ITableStorageRepository<InGameRawDataTableEntity>>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<PlayerRankingTableEntity>(options.ConnectionString,
-                options.PlayerRankingsTable);
-        });
-        
-        services.AddSingleton<ITableStorageRepository<AllianceRankingTableEntity>>(sp =>
-        {
-            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<AllianceRankingTableEntity>(options.ConnectionString,
-                options.AllianceRankingsTable);
-        });
-        
-        services.AddSingleton<ITableStorageRepository<AllianceRankingRawDataTableEntity>>(sp =>
-        {
-            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<AllianceRankingRawDataTableEntity>(options.ConnectionString,
-                options.AllianceRankingsRawDataTable);
+            return new TableStorageRepository<InGameRawDataTableEntity>(options.ConnectionString,
+                options.InGameRawDataTable);
         });
 
         return services;

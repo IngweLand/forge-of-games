@@ -10,8 +10,8 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
     {
         builder.ToTable("players");
 
-        builder.HasKey(p => new {p.WorldId, p.InGamePlayerId});
-
+        builder.HasKey(p => p.Id);
+        
         builder.Ignore(p => p.Key);
 
         builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
@@ -25,7 +25,12 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasIndex(p => p.InGamePlayerId);
         builder.HasIndex(p => p.Age);
         builder.HasIndex(p => p.RankingPoints).IsDescending();
+        builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();
 
-        builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => new {p.WorldId, p.InGamePlayerId});
+        builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.AgeHistory).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.NameHistory).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.AllianceNameHistory).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.PvpRankings).WithOne().HasForeignKey(p => p.PlayerId);
     }
 }

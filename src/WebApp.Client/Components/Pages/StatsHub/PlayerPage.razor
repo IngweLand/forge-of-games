@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Size = MudBlazor.Size
+@using ValueType = Syncfusion.Blazor.Charts.ValueType
 @inherits StatsHubPageBase
 @if (IsInitialized && _player != null)
 {
@@ -9,14 +10,17 @@
         <div class="fog-container info-container">
             <img class="avatar" src="@_player.Player.AvatarUrl"/>
             <div class="details">
-                <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name</div>
+                <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name
+                </div>
                 @if (_player.Player.AllianceName != null)
                 {
-                    <div><span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
+                    <div class="user-select-none" style="cursor: pointer" @onclick="SearchAlliance">
+                        <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
                         <span class="preserve-whitespace">"@_player.Player.AllianceName"</span>
+                        <span class="material-symbols-outlined">link</span>
                     </div>
                 }
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@WorldId</div>
+                <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@_player.Player.WorldId</div>
                 <div><span
                         class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_player.Player.RankingPoints
                 </div>
@@ -36,7 +40,7 @@
                     </ChartArea>
                     <ChartMargin Top="12"/>
                     <ChartPrimaryXAxis IntervalType="IntervalType.Days" Format="dd/MM"
-                                       ValueType="Syncfusion.Blazor.Charts.ValueType.DateTime">
+                                       ValueType="ValueType.DateTime">
                         <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
                         <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
                                              Color="var(--fog-text-color)"/>
@@ -59,19 +63,52 @@
                     </ChartSeriesCollection>
                 </SfChart>
             </div>
+
+            @if (_player.PvpRankingPoints.Count > 0)
+            {
+                <div class="fog-container section-container ranking-points-chart-container">
+                    <span class="section-title">@Loc[FogResource.StatsHub_Player_PvpRankingPoints]</span>
+                    <SfChart Focusable="false" Height="300">
+                        <ChartArea>
+                            <ChartAreaBorder Width="0"/>
+                        </ChartArea>
+                        <ChartMargin Top="12"/>
+                        <ChartPrimaryXAxis IntervalType="IntervalType.Hours" Format="dd/MM HH:mm"
+                                           ValueType="ValueType.DateTime">
+                            <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                            <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                                 Color="var(--fog-text-color)"/>
+                            <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                            <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                        </ChartPrimaryXAxis>
+                        <ChartPrimaryYAxis Interval="20" RangePadding="ChartRangePadding.Round">
+                            <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                            <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                                 Color="var(--fog-text-color)"/>
+                            <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                            <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                        </ChartPrimaryYAxis>
+                        <ChartSeriesCollection>
+                            <ChartSeries DataSource="@_player.PvpRankingPoints" XName="Date" YName="Value"
+                                         Type="ChartSeriesType.Line" Fill="var(--fog-chart-line-color)">
+                                <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
+                                <ChartSeriesAnimation Enable="false"/>
+                            </ChartSeries>
+                        </ChartSeriesCollection>
+                    </SfChart>
+                </div>
+            }
         }
 
         <div class="fog-container section-container">
             <span class="section-title">@Loc[FogResource.StatsHub_Player_Alliances]</span>
-            <MudTimeline TimelinePosition="TimelinePosition.Start">
+            <div class="strings-container">
                 @foreach (var alliance in _player.Alliances)
                 {
-                    <MudTimelineItem Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small">
-                        <p class="preserve-whitespace">"@alliance.Value"</p>
-                        <p class="timeline-date">@alliance.Date.ToString("d")</p>
-                    </MudTimelineItem>
+                    <span class="name preserve-whitespace user-select-none" style="cursor: pointer"
+                          @onclick="SearchAlliance">"@alliance"</span>
                 }
-            </MudTimeline>
+            </div>
         </div>
 
         <div class="fog-container section-container">
@@ -89,18 +126,19 @@
             </MudTimeline>
         </div>
 
-        <div class="fog-container section-container">
-            <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
-            <MudTimeline TimelinePosition="TimelinePosition.Start">
-                @foreach (var name in _player.Names)
-                {
-                    <MudTimelineItem Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small">
-                        <p class="preserve-whitespace">"@name.Value"</p>
-                        <p class="timeline-date">@name.Date.ToString("d")</p>
-                    </MudTimelineItem>
-                }
-            </MudTimeline>
-        </div>
+        @if (_player.Names.Count > 1)
+        {
+            <div class="fog-container section-container">
+                <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
+                <div class="strings-container">
+                    @foreach (var name in _player.Names)
+                    {
+                        <span class="name preserve-whitespace">"@name"</span>
+                    }
+                </div>
+            </div>
+        }
+
 
     </div>
 }
@@ -110,9 +148,6 @@ else
 }
 
 @code {
-
-    [Parameter]
-    public required string WorldId { get; set; }
 
     [Parameter]
     public required int PlayerId { get; set; }

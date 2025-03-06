@@ -37,12 +37,17 @@ public class RankingsService(
         return apiClient.SendForProtobufAsync(world, GameEndpoints.AllianceRankingPath,
             allianceRankingRequestPayloadFactory.Create(rankingType));
     }
-    
-    public async Task<PlayerRanks> GetPlayerRankingAsync(GameWorldConfig world, PlayerRankingType rankingType)
+
+    public Task<byte[]> GetPlayerRankingRawDataAsync(GameWorldConfig world, PlayerRankingType rankingType)
     {
         logger.LogInformation("Fetching player ranking from {WorldId}", world.Id);
-        var data = await apiClient.SendForProtobufAsync(world, GameEndpoints.PlayerRankingPath,
+        return apiClient.SendForProtobufAsync(world, GameEndpoints.PlayerRankingPath,
             playerRankingRequestPayloadFactory.Create(rankingType));
+    }
+
+    public async Task<PlayerRanks> GetPlayerRankingAsync(GameWorldConfig world, PlayerRankingType rankingType)
+    {
+        var data = await GetPlayerRankingRawDataAsync(world, rankingType);
         return dataParsingService.ParsePlayerRankings(data);
     }
 }
