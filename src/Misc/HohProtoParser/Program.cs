@@ -19,7 +19,7 @@ var configuration = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
     .Build();
 
-services.Configure<List<HohServerCredentials>>(
+services.Configure<HohServerCredentials>(
     configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));
 
 services.AddLogging(builder =>

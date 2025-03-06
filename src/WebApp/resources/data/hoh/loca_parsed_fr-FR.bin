@@ -401,6 +401,8 @@ H
 $Base.BuildingGroups.averageHome_NameMaison moyenneMaisons moyennes
 �
 !Base.Units.Unit_RomanPraetor_Desc�Festoie comme une Romaine avec Aemilia Tertia ! Cette figure mondaine du IIᵉ siècle av. J.-C. dans la Rome antique était l’épouse de Scipion l’Africain, le célèbre général qui vainquit Hannibal lors de la Deuxième Guerre punique. Issue d’une noble lignée et mariée à l’une des plus grandes familles de Rome, elle incarnait les vertus de la matrone romaine.<br><br>Son rôle fut marqué par son soutien à la carrière militaire et politique de son époux, ainsi que par la gestion de son foyer et l’éducation de ses enfants, dont Cornelia Africana, la mère des célèbres frères Gracques.<br><br>L’héritage d’Aemilia Tertia témoigne de l’influence que les femmes pouvaient exercer dans la société romaine, malgré leur présence limitée sur la scène publique.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Bouclier | Lien Spirituel | Contrôle Mental</style>Alexandre lance une conquête dans un rayon de <style=basestat>{range}</style>, conférant à toutes les unités alliées dans cette zone un bouclier de <style=basestat>{shield_per_second}</style> par seconde pendant <style=basestat>{duration}</style>. Pendant la conquête, les unités alliées sont liées spirituellement, partageant les dégâts qu'elles reçoivent. À la fin de la durée, l’ennemi ayant le moins de PV dans la zone est soumis à un contrôle mental et attaque ses alliés pendant <style=basestat>{mind_control_duration}</style>. Priorise les Héros.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
@@ -790,6 +792,8 @@ D
 )Base.Regions.region.TeslaStormPurple_NameTempête Tesla violette
 L
 3Base.Technologies.Technology_StoneAge_BearCult_NameCérémonies tribales
+Q
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameConquête Impériale
 �
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc;Augmente fortement le bonheur dans les bâtiments adjacents
 j
@@ -842,6 +846,8 @@ Y
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameVilletta sicilienne
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHint�Tu peux choisir n'importe quel niveau de difficulté déjà débloqué. Le choix est verrouillé une fois que tu as complété la première rencontre.
+U
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameBouclier de la Défiance
 [
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameInfanterie byzantine
 Q
@@ -882,6 +888,8 @@ D
 1Base.Buildings.Building_China_Home_Premium_1_NameMaison luxueuse
 @
 #Base.BuildingGroups.chronicler_NameChroniqueurChroniqueurs
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Provocation | Bouclier | Attaque de Zone</style>Philippe II de Macédoine gagne un bouclier puissant équivalent à <style=basestat>{shield_percentage}</style> de ses dégâts de base et provoque toutes les unités ennemies pendant <style=basestat>{taunt_duration}</style>. Après <style=basestat>{detonation_time}</style>, son bouclier explose, infligeant <style=basestat>{damage_percentage}</style> de sa valeur restante en dégâts à toutes les unités ennemies dans un rayon de <style=basestat>{range}</style>. L’explosion consume entièrement le bouclier de Philippe.
 L
 5Base.Technologies.Technology_Vikings_HealingMead_NameHydromel médicinal
 =
@@ -1205,8 +1213,8 @@ M
 3Base.Technologies.Technology_EarlyRome_Velites_NameVélites
 _
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NamePavillon noir
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Invocation</style>Lance son équerre sur la cible actuelle. Pendant <style=basestat>{duration}</style>, l'équerre se déplace sur le champ de bataille en formant un triangle et inflige jusqu'à <style=basestat>{dmg_percentage}</style> de dégâts aux unités ennemies proches.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Invocation | Brûlure</style>Lance son équerre sur la cible actuelle. Pendant <style=basestat>{duration}</style>, l'équerre se déplace en formant un triangle sur le champ de bataille et inflige jusqu'à <style=basestat>{dmg_percentage}</style> de dégâts aux ennemis proches. Les unités touchées subissent également une brûlure de <style=basestat>{dmg_percentage_burn}</style> sur <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameChine
 k
@@ -1857,6 +1865,8 @@ Q
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProduit des toges
 G
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduit du riz
+C
+.Base.Abilities.hero_battle_ability.Mozart_NameSymphonie n° 999
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameFerme domestique
 \
@@ -1983,6 +1993,8 @@ Y
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescProduit une tonne de papyrus
 K
 6Base.Technologies.Technology_IberianEra_MeadHalls_NameSalle à hydromel
+A
+4Base.Abilities.hero_battle_ability.ScarabBeetle_Name	Scarabée
 7
 "Base.Units.Unit_OracleOfDephi_NameOracle de Delphes
 =
@@ -2000,8 +2012,8 @@ A
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NamePiment
 M
 8Base.Technologies.Technology_China_ChineseConsensus_NameConsensus chinois
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Malus | Brûlure</style>Lancer de tonneau de rhum : Barbe Noire lance un tonneau de rhum sur le plus grand groupe d'unités ennemies, ce qui ralentit leur vitesse d'attaque de <style=basestat>{attackspeed_debuff}</style>et leur vitesse de déplacement de <style=basestat>{movespeed_debuff}</style> pendant <style=basestat>{debuff_duration}</style>. Les ennemis affectés sont également imbibés pendant <style=basestat>{doused_duration}</style>. Au bout de 12 secondes, cette capacité devient alors Épreuve de Feu.<br>Épreuve de Feu : Barbe Noire tire sur sa cible actuelle, la brûlant pour <style=basestat>{burn_damage}</style> sur <style=basestat>{burn_duration}</style>. Au bout de 8 secondes, cette capacité devient alors Lancer de tonneau de rhum.<br>Si un ennemi imbibé est également brûlé par quoi que ce soit, il explose, propageant la brûlure aux unités voisines et enlevant l'effet imbibé.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Malus | Brûlure</style>Lancer de Fût : Barbe Noire projette un tonneau de rhum sur le plus grand groupe d’ennemis, réduisant leur vitesse d’attaque de <style=basestat>{attackspeed_debuff}</style> et leur vitesse de déplacement de <style=basestat>{movespeed_debuff}</style> pendant <style=basestat>{debuff_duration}</style>. Ces ennemis deviennent imbibés pendant <style=basestat>{doused_duration}</style>. Après 12 secondes, la capacité passe à Épreuve du Feu.<br>Épreuve du Feu : Barbe Noire cible son adversaire actuel, l’enflammant pour <style=basestat>{burn_damage}</style> de dégâts sur <style=basestat>{burn_duration}</style>. La capacité revient à Lancer de Fût après 8 secondes.<br>Si un ennemi imbibé est brûlé par n’importe quelle source, il explose, propageant l’effet de brûlure aux unités proches et supprimant l’effet d’imbibition sur la cible initiale.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Attaque e à distance | Poison</style>Tire une flèche sur la cible la plus éloignée, lui infligeant <style=basestat>{dmg_percentage}</style> de dégâts et l'empoisonnant pour <style=basestat>{poison_percentage}</style> de dégâts supplémentaires sur <style=basestat>{poison_duration}</style>. Priorise les Héros.
 O
@@ -2061,6 +2073,8 @@ n
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc8Produit des pennies et ajoute 2 travailleurs à ta cité
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescsLes unités d'infanterie lourde sont robustes et empêchent les unités de cavalerie de les traverser en chargeant.
+S
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMasque de Toutankhamon
 W
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NameEmballage en papier
 V
@@ -2351,6 +2365,8 @@ V
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescDéverrouille les frondeurs
 ]
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameCaserne d'armes à distance
+D
+'Base.Heroes.hero.PhilipIIOfMacedon_NamePhilippe II de Macédoine
 4
 "Base.Units.Unit_CyrusTheGreat_NameCyrus le Grand
 A
@@ -2390,6 +2406,8 @@ Q
 &Base.Regions.region.DesertDelta_5_NameSables fortifiés
 T
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameÉtalons byzantins
+=
+'Base.Heroes.hero.AlexanderTheGreat_NameAlexandre le Grand
 Y
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameEntraînement de capacité
 W
@@ -3128,6 +3146,8 @@ M
 Base.Ages.StoneAge_Start40 000 avant J.-C.
 Z
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAcadémie des héros
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Bonus</style>Lorsque les points de vie du porteur descendent en dessous de <style=basestat>{hp_threshold}</style>, sa défense augmente de <style=basestat>{defense_buff}</style> jusqu'à la fin de la vague en cours. Ne se cumule pas.
 V
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduit des portes
 L
@@ -3209,8 +3229,8 @@ W
 &Base.Regions.region.FrozenFjord_4_NameForêt de la fée
 N
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameCorsaires crépusculaires
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Soin</style>Tansen transcende à travers sa musique, devenant invulnérable pendant <style=basestat>{duration}</style> et déployant une aura de soin qui restaure jusqu'à <style=basestat>{heal_amount}</style> points de vie aux unités alliées à proximité, au fil du temps. Tant que la capacité est active, Tansen ne peut ni attaquer ni se déplacer.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Soin</style>Tansen transcende à travers sa musique, devenant invulnérable pendant <style=basestat>{duration}</style> et émettant une aura de soin qui restaure jusqu'à <style=basestat>{heal_amount}</style> aux unités alliées à proximité, au fil du temps. Tant que la capacité est active, Tansen ne peut ni attaquer ni se déplacer.
 X
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameCarrière de kaolin
 G
@@ -3622,10 +3642,10 @@ H
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameCaserne d'armes à distance
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
-2
-!Base.Units.Unit_AttilaTheHun_NameAttila le Hun
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
+2
+!Base.Units.Unit_AttilaTheHun_NameAttila le Hun
 &
 Base.Units.Unit_Medusa_NameMéduse
 6
@@ -4405,8 +4425,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc�Les unités à distance tirent des projectiles sur une grande distance et sont particulièrement efficaces contre les unités d'infanterie.
 K
 3Base.Technologies.Technology_StoneAge_GoatPens_NameEnclos pour chèvres
-�
-Base.Units.Unit_Mozart_Desc�Mets en scène un opéra et inspire des milliers de personnes avec Wolfgang Amadeus Mozart ! Ce prodige musical du XVIIIᵉ siècle jouait devant des rois et maîtrisait déjà le violon et le clavier… à seulement cinq ans !<br><br>À 25 ans, Mozart avait déjà composé une multitude d’œuvres, dont plusieurs symphonies, d’innombrables concertos et même un opéra à succès. Installé à Vienne, il devint immensément célèbre… mais pas immensément riche.<br><br>Dans ses dernières années, Mozart produisit certaines de ses œuvres les plus célèbres, dont son *Requiem*, resté inachevé. De son vivant, il était aussi un farceur notoire, multipliant les plaisanteries avec ses amis, et une source d’inspiration pour de nombreux musiciens, notamment Ludwig van Beethoven, un autre candidat potentiel aux Héros de l’Histoire.
+�
+Base.Units.Unit_Mozart_Desc�Mets en scène un opéra et inspire des milliers de personnes avec Wolfgang Amadeus Mozart ! Ce prodige musical du XVIIIe siècle jouait devant les rois et maîtrisait déjà le violon et le clavier… à seulement cinq ans !<br><br>À 25 ans, Mozart avait déjà composé une multitude d’œuvres, dont plusieurs symphonies, d’innombrables concertos et même un opéra à succès. Installé à Vienne, il gagna en notoriété, mais pas en richesse.<br><br>Dans ses dernières années, il produisit certaines de ses œuvres les plus célèbres, dont son Requiem inachevé. Dans la vie, Mozart était un grand farceur, multipliant les plaisanteries avec ses amis. Il inspira de nombreux musiciens, dont Ludwig van Beethoven, une autre potentiel recrue des Héros de l'Histoire !
 T
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameTrébuchet avancé
 �
@@ -4550,6 +4570,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_20_Name�<s
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_DescTLa taverne produit de l'hydromel et de l'estafinade à partir de miel et de poisson.
 5
  Base.Ages.KingdomOfSicily_Decade1100 après J.-C.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>Régénération</style>Lorsque le porteur subit des dégâts mortels pour la première fois dans un combat, ses PV se rétablissent à <style=basestat>{hp_percentage}</style>.
 �
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�Les unités de siège attaquent lentement et elles sont faibles contre les attaques ennemies, mais elles atteignent une zone étendue et ont une large portée.
 ?
@@ -4558,6 +4580,8 @@ X
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameExtraction durable
 2
 Base.Ages.ComingSoon_NameBientôt disponible !
+T
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationDurée de l'épuisement {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolyculture
 >
@@ -4709,6 +4733,8 @@ u
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc1Augmente le bonheur dans les bâtiments adjacents
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Attaque de mêlée | Étourdissement</style>Frappe habilement la cible actuelle avec son bâton, infligeant <style=basestat>{dmg_percentage}</style> de dégâts et ayant une <style=basestat>{chance}</style> de chance de les laisser étourdis pendant <style=basestat>{duration}</style>.
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�Combat aux côtés du visionnaire qui a unifié la Grèce ! Philippe II, roi de Macédoine du IVe siècle av. J.-C., est reconnu pour ses prouesses militaires et ses conquêtes, incarnant l’essor de la Macédoine.<br><br>Monté sur le trône en pleine crise, Philippe repoussa les envahisseurs dès le début de son règne, puis révolutionna l’art de la guerre avec sa propre innovation : la phalange macédonienne, armée de longues piques de 6 mètres. Grâce à une armée supérieure, il lança des campagnes sur le territoire grec et forgea des alliances stratégiques avec les cités-États les plus influentes de la péninsule.<br><br>À sa mort, Philippe était un héros de guerre borgne, dont le génie militaire permit d’unifier la Grèce sous la Ligue de Corinthe. Il s’apprêtait à mener une invasion de la Perse lorsqu’il fut assassiné. Mais même la mort ne put freiner son héritage : il fut déifié et vénéré comme un dieu, tandis que son fils, Alexandre, poursuivait son œuvre et immortalisait son nom dans l’histoire.  
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVolière
 5
@@ -4763,6 +4789,8 @@ P
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>Invincibilité | Bonus</style>Accorde l'invincibilité à toutes les unités alliées pendant <style=basestat>{duration}</style> et augmente leur DÉF de <style=basestat>{def_percentage}</style> de la DÉF de Lincoln pendant <style=basestat>{buff_duration}</style>.
 Q
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameCaserne de cavalerie
+I
+.Base.Abilities.hero_battle_ability.Tansen_NameÉtreinte de l'Harmonie
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>Frappe au sol | Étourdissement</style>Léonidas frappe le sol, infligeant <style=basestat>{dmg_percentage}</style> de dégâts à tous les ennemis dans un rayon de <style=basestat>{range}</style> et étourdissant sa cible actuelle pendant <style=basestat>{stun_duration}</style>.
 .
@@ -5048,6 +5076,8 @@ s
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc7Produit des pièces et ajoute 1 travailleur à ta cité
 @
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameCanal
+C
+&Base.Units.Unit_PhilipIIOfMacedon_NamePhilippe II de Macédoine
 R
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NamePropriétés vikings
 \
@@ -5430,8 +5460,8 @@ O
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_NameGrand hôtel de ville
 P
 <Base.Technologies.Technology_BronzeAge_ThunderingGallop_NameGalop tonitruant
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name�<style=ability_label>Buff</style>Tant que l'utilisateur possède plus de <style=basestat>{health_cutoff}</style> points de vie, son esquive est augmentée de <style=basestat>{evasion_buff}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name�<style=ability_label>Bonus</style>Tant que l'utilisateur possède plus de <style=basestat>{health_cutoff}</style> points de vie, son esquive est augmentée de <style=basestat>{evasion_buff}</style>.
 q
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc:Produit une petite quantité de nourriture à court terme.
 _
@@ -5464,6 +5494,8 @@ O
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameCaserne de siège
 Z
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_Desc!Produit une tonne de minerai d'or
+<
+&Base.Units.Unit_AlexanderTheGreat_NameAlexandre le Grand
 L
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NamePort de pêche
 P
@@ -5719,8 +5751,8 @@ J
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameMarchand luxueux
 J
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameFerme domestique
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Attaque de zone | Étourdissement</style>Mozart déchaîne une symphonie sur le champ de bataille, étourdissant et infligeant des dégâts aux ennemis dans la zone la plus densément peuplée. Sa puissance augmente à chaque utilisation, atteignant son apogée dès la troisième. <br> <br> Première utilisation : <style=basestat>{damage_a}</style> de dégâts, dans une petite zone et pendant <style=basestat>{duration_a}</style> <br> Deuxième utilisation : <style=basestat>{damage_b}</style> de dégâts, dans une zone moyenne et pendant <style=basestat>{duration_b}</style> <br> Troisième utilisation et suivantes : <style=basestat>{damage_c}</style> de dégâts, dans une zone moyenne et pendant <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Attaque de zone | Étourdissement</style>Mozart joue une symphonie sur le champ de bataille, étourdissant et infligeant des dégâts au plus grand groupe d'enemis. Chaque utilisation augmente sa puissance, atteignant son maximum à la troisième activation. <br> <br>Première utilisation : <style=basestat>{damage_a}</style> de dégâts, sur une petite zone et pendant <style=basestat>{duration_a}</style> <br>Deuxième utilisation : <style=basestat>{damage_b}</style> de dégâts, sur une zone moyenne et pendant <style=basestat>{duration_b}</style> <br>Troisième utilisation et suivantes : <style=basestat>{damage_c}</style> de dégâts, sur une zone moyenne et pendant <style=basestat>{duration_c}</style>.
 M
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameÉchange culturel
 H
@@ -5841,6 +5873,8 @@ q
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc8Augmente fortement l'irrigation des bâtiments adjacents
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NamePetite maison
+�	
+&Base.Units.Unit_AlexanderTheGreat_Desc�Voici Alexandre le Grand, invincible, triomphant, le plus grand général que le monde ait jamais connu ! Ce roi du IVe siècle av. J.-C. est célèbre pour avoir conquis d'immenses territoires avant sa mort prématurée.<br><br>Alexandre accéda au trône à 20 ans, après l'assassinat de son père. Il ne tarda pas à prouver sa détermination : il vainquit les Thraces et rasa la célèbre cité-État de Thèbes, ramenant ainsi la paix en Grèce. Il mena ensuite la Ligue de Corinthe à la conquête de l'Empire achéménide, qui s'effondra sous ses assauts. Mais il ne s’arrêta pas là : son armée soumit tour à tour la Syrie, Babylone, l’Iran et même le Pakistan.<br><br>Alexandre ne perdit jamais une seule bataille. Finalement, ce fut son propre armée qui l'obligea à rebrousser chemin. Sur la route du retour, à Babylone (où il trouva encore le moyen de conquérir quelques territoires), il rendit son dernier souffle.<br><br>Parmi les Héros de l'Histoire, Alexandre est un personnage un peu controversé. Il adore boire avec Achille, prendre des leçons auprès de Cyrus et, surtout, surpasser son père !
 D
 .Base.Abilities.hero_battle_ability.Medusa_NameRegard pétrifiant
 Q

@@ -405,6 +405,8 @@ P
 $Base.BuildingGroups.averageHome_NameMiddelgrote woningMiddelgrote woningen
 ≠
 !Base.Units.Unit_RomanPraetor_DescáFeest als een Romein met Aemilia Tertia! Deze socialite uit de 2e eeuw voor Christus in het oude Rome was de vrouw van Scipio Africanus, de beroemde generaal die Hannibal versloeg in de Tweede Punische Oorlog. Ze stond bekend om haar adellijke geboorte en haar huwelijk in een van de leidende families van Rome en was een voorbeeld van de deugden van de Romeinse matrone.<br><br>Haar leven staat bekend om haar support voor de militaire en politieke carri√®re van haar man, naast haar rol in het huishouden en de opvoeding van haar kinderen, waaronder Cornelia Africana, moeder van de Gracchi broers.<br><br>De nalatenschap van Aemilia Tertia weerspiegelt de invloedrijke rollen die vrouwen konden hebben in de Romeinse samenleving ondanks hun beperkte publieke aanwezigheid.
+¸
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc¶<style=ability_label>Schild | Geest Link | Mind Control</style>Alexander start een verovering binnen een Bereik van <style=basestat>{bereik}</style>, en Levert alle vriendelijke eenheden in dit gebied een schild ter waarde van <style=basestat>{schild_per_seconde}</style> per seconde gedurende <style=basestat>{duur}</style>. Bevriende eenheden zijn tijdens de verovering met elkaar verbonden door middel van geesten, waardoor de inkomende schade tussen hen wordt gedeeld. Aan het einde van de duur wordt de vijand met de laagste HP binnen het Bereik gedachtengestuurd om hun bondgenoten aan te vallen voor <style=basestat>{mind_control_duration}</style>. Geeft Helden voorrang.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 õ
@@ -799,6 +801,8 @@ Stonehenge
 )Base.Regions.region.TeslaStormPurple_NamePaarse Tesla Storm
 H
 3Base.Technologies.Technology_StoneAge_BearCult_NameTribale Vieringen
+S
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameKeizerlijke verovering
 Ñ
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc?Verbetert de tevredenheid van aangrenzende gebouwen aanzienlijk
 i
@@ -852,6 +856,8 @@ Z
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSiciliaanse villetta
 Õ
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHintéJe kunt ervoor kiezen om elke vrijgespeelde moeilijkheidsgraad te spelen. De keuze is vergrendeld zodra je de eerste ontmoeting hebt voltooid.
+N
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameSchild van verzet
 \
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantijnse Infantrie
 N
@@ -892,6 +898,8 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 1Base.Buildings.Building_China_Home_Premium_1_NameLuxe woning
 J
 #Base.BuildingGroups.chronicler_NameKroniekschrijverKroniekschrijvers
+í
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Descº<style=ability_label>Taunt | Shield | Area Strike</style>Filips II van Macedoni√´ krijgt een groot schild ter waarde van <style=basestat>{shield_percentage}</style> van zijn Basis Schade en taunt alle vijandelijke eenheden gedurende <style=basestat>{taunt_duration}</style>. Na <style=basestat>{detonatie_tijd}</style>, ontploft zijn schild en brengt <style=basestat>{schade_percentage}</style> van de resterende waarde van het schild schade toe aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{bereik}</style>. De detonatie verbruikt Philip's schild.
 G
 5Base.Technologies.Technology_Vikings_HealingMead_NameGenesende mede
 <
@@ -1214,8 +1222,8 @@ O
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NamePiratenvlag
-Ò
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name¢<style=ability_label>Oproepen</style>Gooit zijn driehoekslineaal naar het huidige doelwit. Voor <style=basestat>{duration}</style> beweegt de lineaal over het slagveld in een driehoekige vorm en richt tot <style=basestat>{dmg_percentage}</style> schade aan bij nabije vijandelijke eenheden.
+ê
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name¡<style=ability_label>Summon | Burn</style>Werpt zijn driehoekige liniaal naar het huidige doelwit. Voor <style=basestat>{dmg_percentage}</style> zal de liniaal in een driehoekige vorm over het slagveld bewegen en tot <style=basestat>{dmg_percentage}</style> schade toebrengen aan vijandelijke eenheden in de buurt, en laat de getroffen eenheden branden voor <style=basestat>{dmg_percentage_burn}</style> over <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameChina
 l
@@ -1876,6 +1884,8 @@ Q
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescProduceert toga's
 I
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduceert rijst
+B
+.Base.Abilities.hero_battle_ability.Mozart_NameSymfonie nr. 999
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameKleine boerderij
 b
@@ -2007,6 +2017,8 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescProduceert veel papyrus
 C
 6Base.Technologies.Technology_IberianEra_MeadHalls_Name	Medezalen
+F
+4Base.Abilities.hero_battle_ability.ScarabBeetle_NameScarabee kever
 7
 "Base.Units.Unit_OracleOfDephi_NameOrakel van Delphi
 =
@@ -2024,8 +2036,8 @@ I
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NameChili
 M
 8Base.Technologies.Technology_China_ChineseConsensus_NameChinese Consensus
-Ã
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name˝<style=ability_label>Debuff | Burn</style>Vaatje gooien: Blackbeard gooit een vat rum naar de grootste groep vijandelijke eenheden, waardoor hun aanvalssnelheid wordt vertraagd met <style=basestat>{attackspeed_debuff}</style>en hun bewegingssnelheid met <style=basestat>{movespeed_debuff}</style> gedurende <style=basestat>{debuff_duration}</style>. De getroffen vijanden worden ook verdoofd gedurende <style=basestat>{doused_duration}</style>. Na 12 seconden wordt deze Eigenschap dan Vuurproef.<br>Vuurproef: Blackbeard schiet op zijn huidige doelwit en verbrandt ze voor <style=basestat>{burn_damage}</style> over <style=basestat>{burn_duration}</style>. Na 8 seconden gaat deze Eigenschap over in Vatengooien.<br>Als een gedompelde vijand ook door iets wordt verbrand, ontploft hij, waardoor de brandwond wordt verspreid naar eenheden in de buurt en het gedompelde effect wordt verwijderd.
+ı
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name¶<style=ability_label>Debuff | Burn</style>Vaatje gooien: Zwartbaard laat een vat rum los op de grootste groep vijanden, waardoor hun aanvalsnelheid wordt verminderd met <style=basestat>{aanvalsnelheid_debuff}</style> en hun bewegingssnelheid met <style=basestat>{movespeed_debuff}</style> gedurende <style=basestat>{debuff_duration}</style>. Deze vijanden worden verzwakt gedurende <style=basestat>{doused_duration}</style>. Na 12 seconden gaat de Eigenschap over in Vuurproef.<br>Vuurproef: Zwartbaard richt zich op zijn huidige tegenstander en steekt hem aan voor <style=basestat>{burn_damage}</style> schade over <style=basestat>{burn_duration}</style>. De Eigenschap wordt na 8 seconden weer Keg Throw.<br>Als een gedompelde vijand door een willekeurige bron wordt verbrand, ontploft hij, waardoor het brandeffect wordt verspreid naar eenheden in de buurt en het gedompelde effect wordt verwijderd van het oorspronkelijke doelwit.
 É
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Nameµ<style=ability_label>Ranged Strike| Poison</style>Schiet een pijl naar het verste doelwit, raakt ze voor <style=basestat>{dmg_percentage}</style> schade en vergiftigt ze voor nog eens <style=basestat>{poison_percentage}</style> schade over <style=basestat>{poison_duration}</style>. Geeft voorrang aan Helden.
 T
@@ -2086,6 +2098,8 @@ m
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc7Produceert centen en voegt 2 arbeiders toe aan je stad.
 ù
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescaZware infanterie-eenheden zijn breed en verhinderen dat cavalerie-eenheden door hen heen stormen.
+T
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMasker van Toetanchamon
 W
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapieren verpakking
 V
@@ -2379,6 +2393,8 @@ R
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescOntgrendelt Slingeraars
 X
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameAfstandstroepenkazerne
+C
+'Base.Heroes.hero.PhilipIIOfMacedon_NameFilips II van Macedoni√´
 4
 "Base.Units.Unit_CyrusTheGreat_NameCyrus de Grote
 B
@@ -2417,6 +2433,8 @@ M
 &Base.Regions.region.DesertDelta_5_NameVersterkte Zanden
 U
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameByzantijnse Paarden
+=
+'Base.Heroes.hero.AlexanderTheGreat_NameAlexander de Grote
 S
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameVaardigheidstraining
 \
@@ -2635,7 +2653,7 @@ IBase.Technologies.Technology_KingdomOfSicily_AstronomicalInstruments_NameAstr
 K
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_NameLandelijke boerderij
 ﬂ
-JBase.AbilityDescriptions.hero_battle_ability_description.Cornucopia_1_Nameê<style=ability_label>Schild</style>Aan het begin van de golf krijgt de houder <style=basestat>{schild}</style> van zijn basis schade als schild.
+JBase.AbilityDescriptions.hero_battle_ability_description.Cornucopia_1_Nameê<style=ability_label>Schild</style>Aan het begin van de golf krijgt de houder <style=basestat>{shield}</style> van zijn basis schade als schild.
 j
 /Base.Buildings.Building_China_Home_Small_4_Desc7Produceert wu zhu en voegt een arbeider aan je stad toe
 Ä
@@ -3166,6 +3184,8 @@ F
 Base.Ages.StoneAge_Start40.000 v.Chr.
 T
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHeldenacademie
+«
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Nameˆ<style=ability_label>Buff</style>Als de hitpoints van de houder onder <style=basestat>{hp_threshold}</style> komen, wordt hun verdediging verhoogd met <style=basestat>{defense_buff}</style> tot het einde van de huidige golf. Wordt niet gestapeld.
 U
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduceert Deuren
 M
@@ -3249,8 +3269,8 @@ Z
 Fee√´nwoud
 B
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameSchemerkapers
-®
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name›<style=ability_label>Heal</style>Tansen transcendeert door zijn muziek en wordt onkwetsbaar voor <style=basestat>{duur}</style>, en krijgt een genezend aura dat alle geallieerde eenheden om hem heen geneest tot <style=basestat>{heal_amount}</style> na verloop van tijd. Terwijl de Eigenschap actief is, kan Tansen niet aanvallen of zich verplaatsen.
+©
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Nameﬁ<style=ability_label>Genezen</style>Tansen Transcendeert door zijn muziek, wordt onkwetsbaar voor <style=basestat>{duur}</style> en krijgt een genezend aura, dat alle geallieerde eenheden om hem heen geneest tot <style=basestat>{heal_amount}</style> na verloop van tijd. Terwijl de Eigenschap actief is, kan Tansen niet aanvallen of zich verplaatsen.
 R
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKaoliengroeve
 O
@@ -3667,10 +3687,10 @@ W
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameAfstandstroepenkazerne
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
-2
-!Base.Units.Unit_AttilaTheHun_NameAttila de Hun
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
+2
+!Base.Units.Unit_AttilaTheHun_NameAttila de Hun
 %
 Base.Units.Unit_Medusa_NameMedusa
 7
@@ -4459,8 +4479,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_DescmAfstandseenheden schieten projectielen over grote afstand en zijn vooral effectief tegen infanterie-eenheden.
 C
 3Base.Technologies.Technology_StoneAge_GoatPens_NameGeitenhokken
-≠
-Base.Units.Unit_Mozart_DescçZet een opera op en inspireer duizenden met Wolfgang Amadeus Mozart! Dit muzikale wonderkind uit de 18e eeuw trad op voor koningen en beheerste de viool en het toetsenbord - en dat al op vijfjarige leeftijd!<br><br>Op zijn 25e had Mozart een schat aan muziek geproduceerd, waaronder verschillende symfonie√´n, talloze concerti en zelfs een succesvolle opera. Nu in Wenen werd hij extreem beroemd, maar niet extreem rijk. <br> <br> In zijn laatste jaren bracht Mozart veel van zijn bekendste herwerkingen uit, waaronder zijn onvoltooide Requiem. Tijdens zijn leven was hij een beroemde grappenmaker, haalde vaak practical jokes uit met zijn vrienden en was een inspiratie voor velen, waaronder Ludwig van Beethoven, een andere potenti√´le rekruut voor de Helden van de Geschiedenis.
+©
+Base.Units.Unit_Mozart_DescâZet een opera op en inspireer duizenden met Wolfgang Amadeus Mozart! Dit muzikale wonderkind uit de 18e eeuw trad op voor koningen en beheerste de viool en het toetsenbord - en dat al op vijfjarige leeftijd!<br><br>Op zijn 25e had Mozart een schat aan muziek geproduceerd, waaronder verschillende symfonie√´n, talloze concerti en zelfs een succesvolle opera. In Wenen werd hij extreem beroemd, maar niet extreem rijk. <br> <br>In zijn laatste jaren bracht Mozart veel van zijn bekendste herwerkingen uit, waaronder zijn onvoltooide Requiem. Tijdens zijn leven was hij een beroemde grappenmaker, haalde vaak practical jokes uit met zijn vrienden en was een inspiratie voor velen, waaronder Ludwig van Beethoven, een andere potenti√´le rekruut voor de Helden van de Geschiedenis.
 X
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameGeavanceerde trebuchet
 t
@@ -4608,6 +4628,8 @@ s
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc9De Taveerne produceert mede en stokvis van honing en vis.
 +
  Base.Ages.KingdomOfSicily_Decade1100 AD
+á
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name±<style=ability_label>Herstel</style>Als de houder voor de eerste keer in een gevecht dodelijke schade oploopt, herstelt zijn HP zich tot <style=basestat>{hp_percentage}</style>.
 —
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DescéBelegeringseenheden zijn langzaam en zijn niet erg bestand tegen vijandelijke aanvallen, maar ze raken een groot gebied over een groot bereik.
 D
@@ -4616,6 +4638,8 @@ W
 BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameDuurzame mijnbouw
 1
 Base.Ages.ComingSoon_NameBinnenkort verwacht!
+L
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationUitputting duur {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolycultuur
 A
@@ -4772,6 +4796,8 @@ v
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 Ÿ
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameç<style=ability_label>M√™lee Aanval| Verdoven</style>Slaat vaardig het huidige doelwit met haar staf, toebrengend <style=basestat>{dmg_percentage}</style> schade en met een <style=basestat>{chance}</style> kans om hen te verdoven voor <style=basestat>{duration}</style>.
+·
+&Base.Units.Unit_PhilipIIOfMacedon_Desc∂Gevecht samen met de visionair die Griekenland op de been bracht! Filips II, een Macedonische koning uit de 4e eeuw voor Christus, is beroemd om zijn militaire dapperheid en zijn veroveringen, het boegbeeld van de opkomst van Macedoni√´.<br><br>Filips, die het koninkrijk in een crisis overnam, versloeg in het begin van zijn heerschappij indringers en zorgde daarna voor zijn eigen innovatie: de Macedonische falanx, gewapend met 6 meter lange pieken. Met een superieur leger leidde hij campagnes tegen het Griekse vasteland en sloot hij een alliantie met belangrijke poleis op het schiereiland.<br><br>Bij zijn dood was Filippos een oorlogsheld met √©√©n oog, wiens Genie hem Griekenland had doen verenigen in de Liga van Korinthe en hij maakte zich klaar om Perzi√´ binnen te vallen toen hij werd vermoord. Zelfs dat kon hem niet tegenhouden: hij werd vergoddelijkt en aanbeden als een God, terwijl zijn zoon Alexander zijn nalatenschap doorging. 
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVoli√®re
 7
@@ -4826,6 +4852,8 @@ O
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Nameé<style=ability_label>Onkwetsbaarheid| Buff</style>Biedt Onkwetsbaarheid aan alle bevriende eenheden voor <style=basestat>{duration}</style> en verhoogt hun VERD met <style=basestat>{def_percentage}</style> van Lincoln's VERD voor <style=basestat>{buff_duration}</style>.
 M
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameCavaleriekazerne
+J
+.Base.Abilities.hero_battle_ability.Tansen_NameDe omarming van harmonie
 Û
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name¶<style=ability_label>Stamp| Verlammen</style>Leonidas stampt op de grond, waardoor hij <style=basestat>{dmg_percentage}</style> schade toebrengt aan alle vijanden binnen een bereik van <style=basestat>{range}</style> en zijn huidige doelwit verlamt voor <style=basestat>{stun_duration}</style>.
 -
@@ -5115,6 +5143,8 @@ s
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc7Produceert munten en voegt een arbeider toe aan je stad
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameKanaal
+B
+&Base.Units.Unit_PhilipIIOfMacedon_NameFilips II van Macedoni√´
 F
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameVikingen
 U
@@ -5536,6 +5566,8 @@ P
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameBelegeringskazerne
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_DescProduceert veel gouderts
+<
+&Base.Units.Unit_AlexanderTheGreat_NameAlexander de Grote
 H
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_Name
 Vissteiger
@@ -5799,8 +5831,8 @@ H
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxe handelaar
 J
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameKleine boerderij
-Ò
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name¶<style=ability_label>Area Strike | Stun</style>Mozart richt een symfonie op het slagveld om vijanden in een gebied met de meeste vijanden te verdoven en schade toe te brengen. Bij elk gebruik wordt de kracht verhoogd en bij het derde gebruik is de kracht maximaal. <br> <br> Eerste gebruik: <style=basestat>{damage_a}</style> schade, in een klein Bereik van voor <style=basestat>{duration_a}</style> <br> Tweede gebruik: <style=basestat>{damage_b}</style> schade, in een middelgroot bereik van voor <style=basestat>{duration_b}</style>  <br> Vanaf derde gebruik: <style=basestat>{damage_c}</style> schade, in een middelgroot bereik van voor <style=basestat>{duration_c}</style>.
+⁄
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Nameè<style=ability_label>Area Strike | Stun</style>Mozart richt een symfonie op het slagveld om vijanden in een gebied met de meeste vijanden te verdoven en te beschadigen, waarbij hij bij elk gebruik meer kracht krijgt en bij het derde gebruik de maximale kracht. <br> <br>Eerste gebruik: <style=basestat>{damage_a}</style> schade, in een klein bereik voor <style=basestat>{duration_a}</style> <br>Tweede gebruik: <style=basestat>{damage_b}</style> schade, in een gemiddeld bereik voor <style=basestat>{duration_b}</style> <br>Derde gebruik en verder: <style=basestat>{damage_c}</style> schade, in een medium bereik voor <style=basestat>{duration_c}</style>.
 R
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameCulturele Uitwisseling
 D
@@ -5924,6 +5956,8 @@ t
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc;Verhoogt de irrigatie van aangrenzende gebouwen aanzienlijk
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameKleine woning
+‡
+&Base.Units.Unit_AlexanderTheGreat_DescµAanschouw Alexander de Grote, ongeslagen, triomfantelijk, de beste generaal die de wereld ooit gekend heeft! Deze koning uit de 4e eeuw voor Christus is beroemd omdat hij voor zijn vroege dood grote delen van de wereld veroverde.<br><br>Alexander kwam op 20-jarige leeftijd op de troon na de moord op zijn vader. Hij bewees al snel zijn daadkracht: hij veroverde de Thraci√´rs en vernietigde de beroemde stadstaat Thebe. Dit bracht weer vrede in Griekenland en Alexander leidde de Liga van Korinthe om Achaemenidisch Perzi√´ te veroveren. Dit beroemde rijk viel voor hem, maar Alexander was nog niet klaar: voor zijn legers knielden Syri√´, Babylon, Iran en zelfs Pakistan.<br><br>Alexander verloor nooit een veldslag. Uiteindelijk eiste zijn eigen leger een terugkeer naar hun huizen. In Babylon, op weg naar huis (hoewel hij op de terugweg nog wel wat veroverde), blies Alexander zijn laatste adem uit.<br><br>Binnen de Helden van de Geschiedenis is Alexander een beetje controversieel. Hij drinkt graag met Achilles, krijgt graag les van Cyrus en laat graag zijn vader zien!
 A
 .Base.Abilities.hero_battle_ability.Medusa_NameVersteende Blik
 N

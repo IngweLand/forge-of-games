@@ -164,8 +164,8 @@ U
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_NameKořenářství
 G
 6Base.Buildings.Building_IberianEra_Home_Premium_1_NameLuxusní dům
-<
-#Base.Regions.region.Panganea_2_NameDoména lebkodrtičů
+;
+#Base.Regions.region.Panganea_2_NameOblast lebkodrtičů
 Q
 5Base.Units.Unit_MinoanEra_Spartans_XiphosCavalry_NameKavalerie s meči xiphos
 T
@@ -403,8 +403,10 @@ Y
 $Base.BuildingGroups.averageHome_NameStřední důmStřední domyStředních domů
 �
 !Base.Units.Unit_RomanPraetor_Desc�Párty jako Říman s Aemilií Tertií! Tato společenská dáma z 2. století př. n. l. ve starověkém Římě byla manželkou Scipia Africana, slavného generála, který porazil Hannibala ve druhé punské válce. Byla známá svým vznešeným původem a sňatkem do jedné z předních římských rodin a byla příkladem ctností římské matróny.<br><br>Její život je známý tím, že podporovala vojenskou a politickou kariéru svého manžela a zároveň se podílela na vedení domácnosti a výchově svých dětí, včetně Cornelie Africany, matky bratrů Gracchiů.<br><br>Odkaz Aemilie Tertie odráží vlivné role, které ženy mohly zastávat v římské společnosti navzdory své omezené přítomnosti na veřejnosti.
-,
-Base.Heroes.hero.Geisha_NameYoshino Dayu
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Štít | Spojení duší | Ovládání mysli</style>Alexander zahájí dobývání v dosahu <style=basestat>{range}</style>, čímž všem spřáteleným jednotkám v této oblasti udělí štít v hodnotě <style=basestat>{shield_per_second}</style> za sekundu po dobu <style=basestat>{duration}</style>. Spřátelené jednotky jsou během dobývání duchovně propojeny a sdílejí mezi sebou příchozí poškození. Na konci doby trvání je nepřítel s nejnižšími body života v dosahu ovládán myslí, aby útočil na své spojence po dobu <style=basestat>{mind_control_duration}</style>. Upřednostňuje hrdiny.
+-
+Base.Heroes.hero.Geisha_NameJošino Tajú
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_6_DescWVčelí úl produkuje lahodný med, který se používá k výrobě medoviny v krčmě.
 �
@@ -541,8 +543,8 @@ X
 DBase.Buildings.Building_TreasureHunt_Evolving_FountainOfYouth_1_NameFontána mládí
 I
 1Base.Abilities.hero_battle_ability.Confucius_NameKonfuciánský chaos
-�
-$Base.Units.Unit_MiyamotoMusashi_Desc�Vydejte se s Mijamotem Musašim na cestu dvou nebes jako jednoho! Tento legendární japonský šermíř z přelomu 16. a 17. století je oslavován jako kenshi, světec meče. Vynalezl vlastní styly a byl téměř nepřekonatelný s mečem.<br><br>Musaši se vydal na cestu napříč Japonskem na výpravě Musha šugjó neboli Výprava válečníka. Bojoval v 62 soubojích a všechny vyhrál, v jednom z nich dokonce zvítězil vyřezaným kouskem vesla. Než odešel na odpočinek, bojoval v bitvách i soubojích a vyučoval mnoho šermířů.<br><br>Jeho jedinečný styl a taktická genialita ho odlišovaly a učinily z něj uctívanou postavu v historii bojových umění. Mimo bitevní pole byl Musaši také filozofem a umělcem, autorem "Knihy pěti kruhů", příručky, která dodnes inspiruje svou moudrostí o strategii a životě. Jeho odkaz je svědectvím o síle mistrovského umění. Jen ho nevyzývejte na souboj!
+�
+$Base.Units.Unit_MiyamotoMusashi_Desc�Vydejte se s Musaši Mijamoto na cestu dvou nebes jako jednoho! Tento legendární japonský šermíř z přelomu 16. a 17. století je oslavován jako kenshi, světec meče. Vynalezl vlastní styly a byl téměř nepřekonatelný s mečem.<br><br>Musaši se vydal na cestu napříč Japonskem na výpravě Musha šugjó neboli Výprava válečníka. Bojoval v 62 soubojích a všechny vyhrál, v jednom z nich dokonce zvítězil vyřezaným kouskem vesla. Než odešel na odpočinek, bojoval v bitvách i soubojích a vyučoval mnoho šermířů.<br><br>Jeho jedinečný styl a taktická genialita ho odlišovaly a učinily z něj uctívanou postavu v historii bojových umění. Mimo bitevní pole byl Musaši také filozofem a umělcem, autorem "Knihy pěti kruhů", příručky, která dodnes inspiruje svou moudrostí o strategii a životě. Jeho odkaz je svědectvím o síle mistrovského umění. Jen ho nevyzývejte na souboj!
 /
 Base.Heroes.hero.TigerLily_NameTygří Lily
 a
@@ -586,8 +588,8 @@ M
 O
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_3_Name
 Amfiteátr
-5
- Base.Units.Unit_QinShiHuang_NameČchin Š'-chuang
+8
+ Base.Units.Unit_QinShiHuang_NameČchin Š'-chuang-ti
 A
 3Base.Technologies.Technology_Egypt_Hieroglyphs_Name
 Hieroglyfy
@@ -797,6 +799,8 @@ B
 )Base.Regions.region.TeslaStormPurple_NameFialová Tesla bouře
 I
 3Base.Technologies.Technology_StoneAge_BearCult_NameKmenové slavnosti
+T
+9Base.Abilities.hero_battle_ability.AlexanderTheGreat_NameCísařské dobývání
 s
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc.Výrazně zvyšuje spokojenost okolních budov
 b
@@ -850,6 +854,8 @@ X
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSicilská Villetta
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHintxMůžete si vybrat jakoukoli odemčenou obtížnost. Tato volba bude zablokována, jakmile dokončíte první setkání.
+J
+9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameŠtít vzdoru
 Z
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantská pěchota
 O
@@ -891,6 +897,8 @@ B
 L
 #Base.BuildingGroups.chronicler_Name
 KronikářKronikářiKronikářů
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Provokace | Štít | Úder na oblast</style>Filip II. Makedonský získá velký štít v hodnotě <style=basestat>{shield_percentage}</style> svého základního poškození a provokuje všechny nepřátelské jednotky po dobu <style=basestat>{taunt_duration}</style>. Po uplynutí <style=basestat>{detonation_time}</style> jeho štít exploduje a způsobí <style=basestat>{damage_percentage}</style> zbývající hodnoty štítu jako poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Detonace spotřebuje Filipův štít.
 K
 5Base.Technologies.Technology_Vikings_HealingMead_NameLéčivá medovina
 ?
@@ -1216,8 +1224,8 @@ M
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Vyvolání</style> Hodí své trojúhelníkové pravítko na aktuální cíl. Po dobu <style=basestat>{duration}</style> se pravítko bude pohybovat po bojišti v trojúhelníkovém tvaru a způsobí až <style=basestat>{dmg_percentage}</style> poškození blízkým nepřátelským jednotkám.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Vyvolání | Spálení</style>Vrhne své trojúhelníkové pravítko na aktuální cíl. Po dobu <style=basestat>{duration}</style> se pravítko pohybuje po bojišti v trojúhelníkovém tvaru a způsobí až <style=basestat>{dmg_percentage}</style> poškození blízkým nepřátelským jednotkám a zanechá zasažené jednotky hořet za <style=basestat>{dmg_percentage_burn}</style> poškození po dobu <style=basestat>{burn_duration}</style>.
 
 Base.Ages.China_NameČína
 a
@@ -1880,6 +1888,8 @@ M
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescVyrábí togy
 H
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescVyrábí rýži
+B
+.Base.Abilities.hero_battle_ability.Mozart_NameSymfonie č. 999
 I
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameMěstská farma
 c
@@ -1888,8 +1898,8 @@ T
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameMistrovství ve Faeringu
 M
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_2_NameTkalcovství
-�
-Base.Units.Unit_Geisha_Desc�V Yoshino Dayu se snoubí krása a intelekt! Tato proslulá kurtizána z Kjóta byla v 17. století známá po celém Japonsku pro svou krásu, umělecký talent a inteligenci. Byla jednou z nejslavnějších "Tayu", nejvýše postavených kurtizán té doby.<br><br>Její schopnosti v tradičních uměních, jako je tanec a poezie, zvýšily její postavení a učinily ji vyhledávanou v elitních kruzích. Pověst Yoshino Dayu přesáhla rámec její profese a stala se kulturní ikonou obdivovanou pro svůj půvab a úspěchy.<br><br>Její život odráží složitou společenskou roli a kulturní význam kurtizán v japonském období Edo a zdůrazňuje jejich přínos pro umění a společnost.
+�
+Base.Units.Unit_Geisha_Desc�V Jošino Tajú se snoubí krása a intelekt! Tato proslulá kurtizána z Kjóta byla v 17. století známá po celém Japonsku pro svou krásu, umělecký talent a inteligenci. Byla jednou z nejslavnějších "tajú", nejvýše postavených kurtizán té doby.<br><br>Její schopnosti v tradičních uměních, jako je tanec a poezie, zvýšily její postavení a učinily ji vyhledávanou v elitních kruzích. Pověst Jošino Tajú přesáhla rámec její profese a stala se kulturní ikonou obdivovanou pro svůj půvab a úspěchy.<br><br>Její život odráží složitou společenskou roli a kulturní význam kurtizán v japonském období Edo a zdůrazňuje jejich přínos pro umění a společnost.
 O
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_1_Name
 Amfiteátr
@@ -2008,6 +2018,8 @@ V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescVyrábí hromadu papyrusu
 L
 6Base.Technologies.Technology_IberianEra_MeadHalls_NameMedovinové síně
+G
+4Base.Abilities.hero_battle_ability.ScarabBeetle_NameBrouk skarabeus
 8
 "Base.Units.Unit_OracleOfDephi_NameVěštkyně z Delf
 ;
@@ -2025,12 +2037,10 @@ A
 7Base.Technologies.Technology_KingdomOfSicily_Chili_NameChilli
 L
 8Base.Technologies.Technology_China_ChineseConsensus_NameČínská dohoda
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Oslabení | Spálení</style> Hod sudu: Černovous hodí sud rumu na největší skupinu nepřátelských jednotek, čímž zpomalí jejich rychlost útoku o <style=basestat>{attackspeed_debuff}</style> a rychlost pohybu o <style=basestat>{movespeed_debuff}</style> na <style=basestat>{debuff_duration}</style>. Zasažení nepřátelé jsou zároveň zkropeni na <style=basestat>{doused_duration}</style>. Po 12 sekundách se tato schopnost změní na Zkouška ohněm.
-Zkouška ohněm: Černovous vystřelí na svůj aktuální cíl, spálí ho za <style=basestat>{burn_damage}</style> během <style=basestat>{burn_duration}</style>. Po 8 sekundách se tato schopnost změní zpět na Hod sudu.
-Pokud je zkropený nepřítel spálen jakýmkoli efektem, exploduje, šíří spálení na blízké jednotky a odstraní efekt zkropení.
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Úder na dálku | Jed</style>Vystřelí šíp na nejvzdálenější cíl, zasáhne ho za <style=basestat>{dmg_percentage}</style> poškození a otráví ho za další <style=basestat>{poison_percentage}</style> poškození v průběhu <style=basestat>{poison_duration}</style>. Upřednostňuje hrdiny.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Oslabení | Spálení</style>Hod sudem: Černovous hodí sud rumu na největší skupinu nepřátelských jednotek, čímž spomalí jejich útoku o <style=basestat>{attackspeed_debuff}</style> a rychlost pohybu o <style=basestat>{movespeed_debuff}</style> na <style=basestat>{debuff_duration}</style>. Zasažení nepřátelé se na dobu <style=basestat>{doused_duration}</style> stanou omámenými. Po 12 sekundách se tato schopnost změní na zkoušku ohněm.<br>Zkouška ohněm: Černovous se zaměří na svého aktuálního protivníka a zapálí ho za <style=basestat>{burn_damage}</style> poškození po dobu <style=basestat>{burn_duration}</style>. Schopnost se po 8 sekundách vrátí na Hod sudem.<br>Pokud je zapálený nepřítel popálen z jakéhokoli zdroje, vybuchne, čímž se efekt popálení rozšíří na okolní jednotky a z původního cíle se efekt popálení odstraní.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Úder na dálku | Jed</style>Vystřelí šíp na nejvzdálenější cíl, zasáhne ho za <style=basestat>{dmg_percentage}</style> poškození a otráví ho za dalších <style=basestat>{poison_percentage}</style> poškození v průběhu <style=basestat>{poison_duration}</style>. Upřednostňuje hrdiny.
 S
 ;Base.Technologies.Technology_BronzeAge_CavalrySpearmen_NameJezdečtí kopiníci
 ]
@@ -2088,6 +2098,8 @@ j
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc4Vyrábí haléře a přidá 2 pracovníky do města.
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescRJednotky těžké pěchoty jsou velké a brání jednotkám kavalerie v průjezdu.
+Q
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameTutanchamonova maska
 T
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapírové obaly
 X
@@ -2176,8 +2188,8 @@ G
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_NamePán draků
 K
 <Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_NameKamenictví
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_10_Name�<style=ability_label>Úder na dálku | Jed | Krvácení</style>Vystřelí šíp na nejvzdálenější cíl, zasáhne ho za <style=basestat>{dmg_percentage}</style> poškození a otráví ho za další <style=basestat>{poison_percentage}</style> poškození v průběhu <style=basestat>{poison_duration}</style>. Má <style=basestat>{chance}</style> šanci také nechat cíl vykrvácet za <style=basestat>{bleed_percentage}</style> po dobu <style=basestat>{bleed_duration}</style>. Upřednostňuje hrdiny.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_10_Name�<style=ability_label>Úder na dálku | Jed | Krvácení</style>Vystřelí šíp na nejvzdálenější cíl, zasáhne ho za <style=basestat>{dmg_percentage}</style> poškození a otráví ho za dalších <style=basestat>{poison_percentage}</style> poškození v průběhu <style=basestat>{poison_duration}</style>. Má <style=basestat>{chance}</style> šanci také nechat cíl vykrvácet za <style=basestat>{bleed_percentage}</style> po dobu <style=basestat>{bleed_duration}</style>. Upřednostňuje hrdiny.
 H
 2Base.Technologies.Technology_StoneAge_Cavalry_NameKasárny kavalerie
 H
@@ -2192,8 +2204,8 @@ T
 >Base.Units.Unit_CurrentEra_MercenaryCommander_Stormcaller_NameVyvolávač bouře
 R
 ?Base.Buildings.Building_FeudalAge_Workshop_SpiceMerchant_1_NameKořenářství
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Name�<style=ability_label>Úder na blízko | Oslabení | Posílení</style> Zasáhne aktuální cíl dvakrát, způsobí celkem <style=basestat>{dmg_percentage}</style> poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Poté se Sun Tzu soustředí, což způsobí auru klidu, která sníží rychlost útoku blízkých nepřátel o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>. Všechny přátelské jednotky získají <style=basestat>{atk_speed_percentage_buff}</style> rychlost útoku na <style=basestat>{duration}</style>.
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Name�<style=ability_label>Úder na blízko | Oslabení | Posílení</style> Zasáhne aktuální cíl dvakrát, způsobí celkem <style=basestat>{dmg_percentage}</style> poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Poté se Mistr Sun soustředí, což způsobí auru klidu, která sníží rychlost útoku blízkých nepřátel o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>. Všechny přátelské jednotky získají <style=basestat>{atk_speed_percentage_buff}</style> rychlost útoku na <style=basestat>{duration}</style>.
 P
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_NameVýrobna hedvábí
 W
@@ -2383,6 +2395,8 @@ N
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_DescOdemkne Prakovníky
 T
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameKasárny střelců
+@
+'Base.Heroes.hero.PhilipIIOfMacedon_NameFilip II. Makedonský
 4
 "Base.Units.Unit_CyrusTheGreat_NameKýros Veliký
 @
@@ -2421,6 +2435,8 @@ s
 &Base.Regions.region.DesertDelta_5_NameOpevněné písky
 R
 >Base.Technologies.Technology_ByzantineEra_ByzantineSteeds_NameByzantské koně
+;
+'Base.Heroes.hero.AlexanderTheGreat_NameAlexandr Veliký
 S
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_NameTrénink schopností
 X
@@ -2455,8 +2471,8 @@ O
  Base.BuildingGroups.artisan_NameŘemeslníkŘemeslnictvíŘemeslnictví
 U
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameAkademie hrdinů
-�
- Base.Units.Unit_QinShiHuang_Desc�Jak bylo předepsáno nebesy a zapsáno v tisíci památkách, je to Čchin Š'-chuang, první císař Číny! Ve 3. století př. n. l. si tento bývalý král nárokoval trůn sjednocené Číny. Za vůně hořícího papíru a broušení čepelí si Čchin Š'-chuang podmanil celou Čínu a započal odkaz, který nikdy nebude zapomenut.<br><br>Za jeho vlády byly realizovány rozsáhlé stavební projekty, včetně počáteční Velké čínské zdi a Terakotové armády, která chrání jeho mauzoleum o velikosti města. Cílem těchto snah bylo ochránit a upevnit jednotu a sílu říše.<br><br>Čchin Š'-chuang je připomínán jako tyran: brutální, autoritářský a všemocný. Přesto to může být nepravdivé: tato slova pocházejí od těch, kteří měli monumentální úkol nahradit jeho dynastii. Ať tak či onak, Čína byla nepochybně formována vlivem tohoto Syna nebes. Bohužel, jako s hrdinou se s ním pracuje dost těžko. On a Lincoln spolu v současné době odmítají mluvit!
+�
+ Base.Units.Unit_QinShiHuang_Desc�Jak bylo předepsáno nebesy a zapsáno v tisíci památkách, je to Čchin Š'-chuang-ti, první císař Číny! Ve 3. století př. n. l. si tento bývalý král nárokoval trůn sjednocené Číny. Za vůně hořícího papíru a broušení čepelí si Čchin Š'-chuang-ti podmanil celou Čínu a započal odkaz, který nikdy nebude zapomenut.<br><br>Za jeho vlády byly realizovány rozsáhlé stavební projekty, včetně počáteční Velké čínské zdi a Terakotové armády, která chrání jeho mauzoleum o velikosti města. Cílem těchto snah bylo ochránit a upevnit jednotu a sílu říše.<br><br>Čchin Š'-chuang-ti je připomínán jako tyran: brutální, autoritářský a všemocný. Přesto to může být nepravdivé: tato slova pocházejí od těch, kteří měli monumentální úkol nahradit jeho dynastii. Ať tak či onak, Čína byla nepochybně formována vlivem tohoto Syna nebes. Bohužel, jako s hrdinou se s ním pracuje dost těžko. On a Lincoln spolu v současné době odmítají mluvit!
 D
 /Base.Units.Unit_TreasureHunt_Purple_Cannon_NameSoumrakové dělo
 0
@@ -2676,8 +2692,8 @@ C
 Mumifikace
 L
 1Base.Abilities.hero_battle_ability.MansaMusa_NameZlatopobřežní Gambit
-+
-Base.Heroes.hero.HuaMulan_Name	Hua Mulan
+-
+Base.Heroes.hero.HuaMulan_NameChua Mu-lan
 Y
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_NameKasárny obléhacích jednotek
 b
@@ -2747,8 +2763,8 @@ M
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_NameKasárny střelců
 �
 "Base.Units.Unit_CyrusTheGreat_Desc�Od Libye po Pákistán oslavují Kýra Velikého, zakladatele Achaimenovské říše, největší říše, jakou kdy svět poznal. Tento císař 6. století byl proslulý svým vojenským umem a strategickou genialitou.<br><br>Kýros sjednotil perské kmeny a poté rozšířil své území po celé Malé Asii a východní Evropě. Podmaněné satrapie si mohly ponechat své vlastní náboženství a zvyky, což upevnilo Kýrův odkaz moudrého vůdce.<br><br>Pro Židy byl mesiášem, pro Babyloňany osvoboditelem, pro Alexandra Velikého i Thomase Jeffersona hrdinou. Jeho sláva se projevuje v Íránu a jeho laskavost v Kýrově válci, prohlášení o státnických schopnostech a snech. Kýros byl nejen talentovaný státník, ale také velmi lstivý na bitevním poli. Údajně před jednou bitvou opil své nepřátele!
-3
-$Base.Heroes.hero.JapaneseShogun_NameKondo Isami
+4
+$Base.Heroes.hero.JapaneseShogun_NameIsami Kondó
 t
 5Base.Buildings.Building_StoneAge_Farm_Domestic_1_Desc;Vyrábí velké množství jídla během dlouhého období.
 <
@@ -2790,7 +2806,7 @@ IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_Name�<st
 i
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Desc$Zvýší zavlažení okolních budov
 9
-%Base.Heroes.hero.MiyamotoMusashi_NameMiyamoto Musaši
+%Base.Heroes.hero.MiyamotoMusashi_NameMusaši Mijamoto
 K
 :Base.Buildings.Building_RomanEmpire_Workshop_Tailor_1_NameKrejčovství
 ;
@@ -3162,6 +3178,8 @@ J
 Base.Ages.StoneAge_Start40000 př. n. l.
 V
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAkademie hrdinů
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Posílení</style>Když body života držitele klesnou pod <style=basestat>{hp_threshold}</style>, jeho obrana se zvýší o <style=basestat>{defense_buff}</style> až do konce aktuální vlny. Nestohuje se.
 S
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescVyrábí Dveře
 Y
@@ -3205,8 +3223,8 @@ G
 7Base.Buildings.Building_IberianEra_City_CityHall_1_NameVelká síň
 �
 0Base.Units.Unit_FeudalAge_Player_Longbowmen_DescYStřelci střílejí na velkou vzdálenost a jsou účinní především proti pěchotě.
-2
-#Base.Units.Unit_JapaneseShogun_NameKondo Isami
+3
+#Base.Units.Unit_JapaneseShogun_NameIsami Kondó
 L
 7Base.Technologies.Technology_EarlyRome_WarMachines_NameVálečné stroje
 F
@@ -3239,12 +3257,12 @@ R
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescVyrábí mozaiky
 R
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescVyrábí peří
-5
-&Base.Regions.region.FrozenFjord_4_NameFaeský les
+2
+&Base.Regions.region.FrozenFjord_4_NameLes víl
 J
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameSoumrakové korzáři
 �
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Léčba</style>Tansen se skrze svou hudbu přenáší, stává se nezranitelným na <style=basestat>{duration}</style>, a získává léčivou auru, která v průběhu času vyléčí všechny spojenecké jednotky v jeho okolí až za <style=basestat>{heal_amount}</style>. Dokud je schopnost aktivní, nemůže Tansen útočit ani se pohybovat.
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Uzdravení</style>Tansen se skrze svou hudbu povznese, stává se nezranitelným na <style=basestat>{duration}</style>, a získává léčivou auru, která v průběhu času vyléčí všechny spojenecké jednotky v jeho okolí až za <style=basestat>{heal_amount}</style>. Dokud je schopnost aktivní, nemůže Tansen útočit ani se pohybovat.
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKaolínový lom
 K
@@ -3423,8 +3441,8 @@ A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_NameKanál
 *
 Base.Heroes.hero.Hercules_NameHerkules
->
-)Base.Regions.region.VolcanicJungle_7_NameCothon z Kartága
+B
+)Base.Regions.region.VolcanicJungle_7_NamePřístavy v Kartágu
 3
 !Base.UnitTypes.HeavyInfantry_NameTěžkooděnci
 g
@@ -3566,8 +3584,8 @@ H
 6Base.Buildings.Building_IberianEra_Home_Average_1_NameStřední dům
 �
 2Base.Buildings.Building_China_City_CityHall_2_DescNRadnice je středem tvého města. Neustále generuje malé množství Wu Zhu.
-�
-#Base.Units.Unit_JapaneseShogun_Desc�Připravte si katanu a sloužte svému šógunovi s Kondo Isami! Tento samuraj z pozdního období Edo proslul jako vůdce Šinsengumi, elitní ochranné jednotky v Kjótu v 19. století. Potlačovali nepokoje a bojovali za udržení rozpadající se správy při životě.<br><br>Kondo, který pocházel z rolnického prostředí, se vyznamenal výjimečným šermířským uměním: ve 14 letech porazil skupinu zlodějů, kteří se pokusili vyloupit jeho dům. Byl povýšen do vyšších hodností a brzy se stal velitelem šinsengumi, kteří se proslavili přísným prosazováním autority šógunátu Tokugawa.<br><br>Jeho odkaz je poznamenán neochvějnou loajalitou k samurajskému etosu a šógunátu, což ztělesňuje složitosti doby charakterizované výraznými sociálními a politickými otřesy.
+�
+#Base.Units.Unit_JapaneseShogun_Desc�Připravte si katanu a sloužte svému šógunovi s Isami Kondó! Tento samuraj z pozdního období Edo proslul jako vůdce Šinsengumi, elitní ochranné jednotky v Kjótu v 19. století. Potlačovali nepokoje a bojovali za udržení rozpadající se správy při životě.<br><br>Kondó, který pocházel z rolnického prostředí, se vyznamenal výjimečným šermířským uměním: ve 14 letech porazil skupinu zlodějů, kteří se pokusili vyloupit jeho dům. Byl povýšen do vyšších hodností a brzy se stal velitelem šinsengumi, kteří se proslavili přísným prosazováním autority šógunátu Tokugawa.<br><br>Jeho odkaz je poznamenán neochvějnou loajalitou k samurajskému etosu a šógunátu, což ztělesňuje složitosti doby charakterizované výraznými sociálními a politickými otřesy.
 F
 2Base.Buildings.Building_StoneAge_Farm_Rural_1_NameVenkovská farma
 ]
@@ -3645,7 +3663,7 @@ ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameMerovejští
 R
 ;Base.Technologies.Technology_IberianEra_BraceMechanism_NameMechanismus podpory
 <
-)Base.Regions.region.VolcanicJungle_4_NameNové Byzantium
+)Base.Regions.region.VolcanicJungle_4_NameNový Byzantion
 2
 #Base.Units.Unit_OttomanGeneral_NameHasan Paša
 ^
@@ -3658,17 +3676,17 @@ S
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameKasárny střelců
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
+?
+-Base.Units.Unit_MinoanEra_Player_Hippeis_NameJezdci hippeis
 /
 !Base.Units.Unit_AttilaTheHun_Name
 Attila Hun
-?
--Base.Units.Unit_MinoanEra_Player_Hippeis_NameJezdci hippeis
 &
 Base.Units.Unit_Medusa_NameMedúza
 6
 *Base.Wonders.Wonder_Capital_Colosseum_NameKoloseum
 0
-Base.Heroes.hero.Ninja_NameMochizuki Chiyome
+Base.Heroes.hero.Ninja_NameČijome Močizuki
 ]
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescZpracovává kaolín na hlínu
 i
@@ -3802,8 +3820,8 @@ Stavějte a vylepšujte kasárny obléhacích jednotek, abyste zlepšili ÚTOK, 
 
 E
 3Base.Technologies.Technology_China_RiseOfChina_NameVzestup Číny
-'
-Base.Heroes.hero.SunTzu_NameSun Tzu
+)
+Base.Heroes.hero.SunTzu_Name	Mistr Sun
 p
 1Base.Units.Unit_IberianEra_Player_Almogavars_Desc;Jednotky pěchoty jsou nejefektivnější v přední linii.
 T
@@ -4037,8 +4055,8 @@ L
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescRJednotky těžké pěchoty jsou velké a brání jednotkám kavalerie v průjezdu.
 �
 Base.Units.Unit_Medusa_Desc�Dívejte se jinam! Medúza, jedna ze tří Gorgon z řeckých mýtů, byla vyslána jako posel, ale přidala se k hrdinům dějin. Toto hadovité monstrum, které má moc proměnit v kámen ty, kdo se na ni podívají, bylo kdysi krásnou ženou, dokud ji bohyně Athéna neproklela za znesvěcení jejího chrámu.<br><br>Medúzin příběh je příběhem proměny a pomsty. V mýtech ji Perseus na radu Athény porazil zrcadlovým štítem a usekl jí hlavu, která se pro staré Řeky stala symbolem bezpečí.<br><br>My však známe pravdu: Medúzu na poslední chvíli teleportoval Tesla do doby kamenné a zacházel s ní jako s dokonalým vědeckým experimentem. Nyní je volná a zoufale touží po pomstě...
--
-Base.Heroes.hero.Shaolin_NameXueting Fuyu
+3
+Base.Heroes.hero.Shaolin_NameJüe-tching Fu-jü
 g
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
 O
@@ -4060,8 +4078,8 @@ P
 6Base.Buildings.Building_Arabia_Merchant_Average_2_DescVyrábí kupu dirhamů
 P
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_2_NameVýrobna hedvábí
-�
-Base.Units.Unit_HuaMulan_Desc�Pojďme se pustit do práce s Hua Mulan! Tato legenda z čínského folklóru je oslavována pro svou statečnost a oddanost. V "Baladě o Mulan" je to mladá žena, která se převlékne za muže, aby zaujala místo svého otce v armádě.<br><br>Po tisíci mílích a tisíci bitvách je Mulan poslána na návštěvu k Synovi nebes. Od něj požaduje pouze oře dostatečně rychlého na to, aby ji odvezl domů. Jakmile tam dorazí, prozradí, že je žena, čímž své druhy šokuje.<br><br>Mulanin příběh je příběhem hrdinského vzdoru. Vzepřela se očekávání žen i válečníků a prokázala věrnost své rodině i Číně. Příběh se dočkal několika adaptací, zejména filmových a divadelních, a je oblíbený v Číně i mimo ni. V poslední době si s Joan porovnávají oblečení!
+�
+Base.Units.Unit_HuaMulan_Desc�Pojďme se pustit do práce s Chua Mu-lan! Tato legenda z čínského folklóru je oslavována pro svou statečnost a oddanost. V "Baladě o Mu-lan" je to mladá žena, která se převlékne za muže, aby zaujala místo svého otce v armádě.<br><br>Po tisíci mílích a tisíci bitvách je Mu-lan poslána na návštěvu k Synovi nebes. Od něj požaduje pouze oře dostatečně rychlého na to, aby ji odvezl domů. Jakmile tam dorazí, prozradí, že je žena, čímž své druhy šokuje.<br><br>Mu-lanin příběh je příběhem hrdinského vzdoru. Vzepřela se očekávání žen i válečníků a prokázala věrnost své rodině i Číně. Příběh se dočkal několika adaptací, zejména filmových a divadelních, a je oblíbený v Číně i mimo ni. V poslední době si s Janou porovnávají oblečení!
 j
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_3_Desc.Výrazně zvýší zavlažení okolních budov
 W
@@ -4097,7 +4115,7 @@ M
 t
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
 �
-PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>Úder na blízko | Posílení</style>Miyamoto zasáhne svůj aktuální cíl čtyřikrát a způsobí celkem <style=basestat>{dmg_percentage}</style> poškození. Také zvýší svou šanci na kritický zásah o <style=basestat>{crit_percentage}</style> na <style=basestat>{duration}</style>.
+PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>Úder na blízko | Posílení</style>Mijamoto zasáhne svůj aktuální cíl čtyřikrát a způsobí celkem <style=basestat>{dmg_percentage}</style> poškození. Také zvýší svou šanci na kritický zásah o <style=basestat>{crit_percentage}</style> na <style=basestat>{duration}</style>.
 ;
 0Base.Technologies.Technology_BronzeAge_Barn_NameStodola
 Y
@@ -4272,8 +4290,8 @@ J
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_NameTesař
 j
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Desc.Výrazně zvýší zavlažení okolních budov
-�
-Base.Units.Unit_Shaolin_Desc�Shromážděte se v chrámu a buďte připraveni naslouchat, protože Xueting Fuyu je zde, aby učil a bojoval! Tento významný čchanový mnich dynastie Song byl proslulý svým duchovním vhledem a učením.<br><br>Jako klíčová postava oživení školy Caodong kladl důraz na meditaci a bdělost, zaměřoval se na přímou zkušenost a osobní osvícení. Jeho učení shromáždilo mnoho žáků a významně rozšířilo čchanový buddhismus v tomto období.<br><br>Fuyu také navždy změnil bojová umění. Pozval všechny bojové umělce v Číně do šaolinského chrámu, kde společně cvičili a vytvořili jeden styl. Chrám byl navždy nazýván "rodištěm bojových umění". Fuyuův vliv je tak ztělesněn v nesčetných formách a pohybech.
+�
+Base.Units.Unit_Shaolin_Desc�Shromážděte se v chrámu a buďte připraveni naslouchat, protože Jüe-tching Fu-jü je zde, aby učil a bojoval! Tento významný čchanový mnich říše Sung byl proslulý svým duchovním vhledem a učením.<br><br>Jako klíčová postava oživení školy čchanu kladl důraz na meditaci a bdělost, zaměřoval se na přímou zkušenost a osobní osvícení. Jeho učení shromáždilo mnoho žáků a významně rozšířilo čchanový buddhismus v tomto období.<br><br>Fu-jü také navždy změnil bojová umění. Pozval všechny bojové umělce v Číně do šaolinského chrámu, kde společně cvičili a vytvořili jeden styl. Chrám byl navždy nazýván "rodištěm bojových umění". Jeho vliv je tak ztělesněn v nesčetných formách a pohybech.
 E
 7Base.Buildings.Building_ClassicGreece_Home_Small_2_Name
 Malý dům
@@ -4395,8 +4413,8 @@ P
 3Base.Buildings.Building_Vikings_Home_Premium_4_DescSVyprodukuje tunu haléřů a přidá vašemu městu 2 pracovníky a 2 námořníky.
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_DescRVyšli expediční lodě, které budou získávat poklady s keramikou nebo zlatem.
-*
-Base.Units.Unit_HuaMulan_Name	Hua Mulan
+,
+Base.Units.Unit_HuaMulan_NameChua Mu-lan
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_3_NameFontána
 S
@@ -4446,8 +4464,8 @@ Dům lebek
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_DesceStřelecké jednotky střílejí na velkou vzdálenost a jsou účinné především proti pěchotě.
 L
 3Base.Technologies.Technology_StoneAge_GoatPens_NameKozí hospodářství
-�
-Base.Units.Unit_Mozart_Desc�Uveďte operu a inspirujte tisíce lidí Wolfgangem Amadeem Mozartem! Tento hudební zázrak z 18. století vystupoval před králi a ovládal hru na housle a klávesy - a to už v pěti letech!<br><br>Do 25 let Mozart vytvořil celou řadu hudebních děl, včetně několika symfonií, nesčetných koncertů a dokonce i úspěšné opery. Nyní ve Vídni se stal mimořádně slavným, ale nikoli mimořádně bohatým. <br> <br> V posledních letech života Mozart vydal mnoho svých nejznámějších předělávek, včetně nedokončeného Requiem. Za života byl proslulým vtipálkem, který si často tropil žerty ze svých přátel, a inspirací pro mnohé, včetně Ludwiga van Beethovena, dalšího potenciálního rekruta Heroes of History.
+�
+Base.Units.Unit_Mozart_Desc�Uveďte operu a inspirujte tisíce lidí Wolfgangem Amadeem Mozartem! Tento hudební zázrak z 18. století vystupoval před králi a ovládal hru na housle a klávesy - a to už v pěti letech!<br><br>Do 25 let Mozart vytvořil celou řadu hudebních děl, včetně několika symfonií, nesčetných koncertů a dokonce i úspěšné opery. Nyní ve Vídni se stal mimořádně slavným, ale nikoli mimořádně bohatým. <br> <br>V posledních letech života Mozart vydal mnoho svých nejznámějších předělávek, včetně nedokončeného Requiem. Za života byl proslulým vtipálkem, který si často tropil žerty ze svých přátel, a inspirací pro mnohé, včetně Ludwiga van Beethovena, dalšího potenciálního rekruta Heroes of History.
 W
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NamePokročilý trebuchet
 w
@@ -4598,6 +4616,8 @@ i
 .
  Base.Ages.KingdomOfSicily_Decade
 1100 n. l.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>Zotavení</style>Když držitel poprvé v boji čelí smrtelnému poškození, jeho body života se zotaví na <style=basestat>{hp_percentage}</style>.
 �
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DescwObléhací jednotky útočí pomalu a jsou slabé vůči nepřátelským útokům, ale mají dopad na široké území.
 :
@@ -4607,6 +4627,8 @@ BBase.Technologies.Technology_AgeOfTheFranks_SustainableMining_NameUdržiteln�
 '
 Base.Ages.ComingSoon_Name
 Již brzy!
+W
+5Base.TreasureHuntDifficultiesPanel.ExhaustionDurationDoba trvání vyčerpání {0}
 I
 :Base.Technologies.Technology_ByzantineEra_Polyculture_NamePolykultura
 @
@@ -4764,6 +4786,8 @@ h
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc$Zvyšuje spokojenost okolních budov
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Útok na blízko | Omráčení</style>Obratně zasáhne aktuální cíl svou holí, způsobí <style=basestat>{dmg_percentage}</style> poškození a má <style=basestat>{chance}</style> šanci, že ho omráčí na <style=basestat>{duration}</style>.
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�Bojujte po boku vizionáře, který přivedl Řecko na buben! Filip II., makedonský král ze 4. století př. n. l., je proslulý svou vojenskou zdatností a výboji a stojí v čele vzestupu Makedonie.<br><br>Filip převzal vládu nad královstvím uprostřed krize, na samém počátku své vlády porazil útočníky a poté zavedl vlastní inovaci: makedonskou falangu vyzbrojenou šestimetrovými kopími. S vynikající armádou vedl tažení proti řecké pevnině a uzavřel spojenectví s klíčovými poleis na poloostrově.<br><br>Do své smrti byl Filip jednookým válečným hrdinou, který díky své genialitě sjednotil Řecko do Korintské ligy a připravoval se na invazi do Persie, když byl zavražděn. Ani to ho však nemohlo zadržet: byl zbožštěn a uctíván jako bůh, zatímco jeho syn Alexandr pokračoval v jeho odkazu. 
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVoliéra
 8
@@ -4819,6 +4843,8 @@ Q
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>Nezranitelnost | Posílení</style>Poskytuje nezranitelnost všem přátelským jednotkám na <style=basestat>{duration}</style> a zvyšuje jejich OBR o <style=basestat>{def_percentage}</style> z Lincolnovy OBR na <style=basestat>{buff_duration}</style>.
 O
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameKasárny kavalerie
+B
+.Base.Abilities.hero_battle_ability.Tansen_NameObjetí harmonie
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>Dupnutí | Omráčení</style> Leonidas dupne na zem, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style> a omráčí svůj aktuální cíl na <style=basestat>{stun_duration}</style>.
 -
@@ -4983,8 +5009,8 @@ Z
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescOdemkne obléhací věže
 ?
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMozaika
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Úder na blízko | Oslabení</style> Zasáhne aktuální cíl dvakrát, způsobí celkové poškození <style=basestat>{dmg_percentage}</style> všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Poté se Sun Tzu soustředí, čímž vytvoří auru klidu, která sníží rychlost útoku blízkých nepřátel o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Úder na blízko | Oslabení</style> Zasáhne aktuální cíl dvakrát, způsobí celkové poškození <style=basestat>{dmg_percentage}</style> všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Poté se Mistr Sun soustředí, čímž vytvoří auru klidu, která sníží rychlost útoku blízkých nepřátel o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>.
 �
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_DescvLuxusní rybářská mola vysílají lodě lovit tuny ryb, aby zásobily všechny hladové pracovníky a námořníky.
 f
@@ -5033,7 +5059,7 @@ R
 X
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NamePomerančová plantáž
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>Úder na oblast | Spálení | Otrava</style>Vrhá <style=basestat>{no_vials}</style> lahvičky s nestabilními chemikáliemi na náhodné nepřátelské jednotky, způsobuje <style=basestat>{dmg_procentage}</style> poškození v dosahu <style=basestat>{range}</style> a zanechává postižené jednotky hořící a otrávené pro další <style=basestat>{debuff_procentage}</style> poškození v průběhu <style=basestat>{duration}</style>.
+JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>Úder na oblast | Spálení | Otrava</style>Vrhá <style=basestat>{no_vials}</style> lahvičky s nestabilními chemikáliemi na náhodné nepřátelské jednotky, způsobuje <style=basestat>{dmg_percentage}</style> poškození v dosahu <style=basestat>{range}</style> a zanechává postižené jednotky hořící a otrávené pro další <style=basestat>{debuff_percentage}</style> poškození v průběhu <style=basestat>{duration}</style>.
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_1_Name�<style=ability_label>Oslabení</style>Zaměřuje největší skupinu nepřátelských jednotek, snižuje přesnost o <style=basestat>{accuracy_percentage}</style> a ÚTOK o <style=basestat>{atk_percentage}</style> z Marxova ÚTOKU na dobu <style=basestat>{duration}</style> v dosahu <style=basestat>{range}</style>.
 �
@@ -5051,8 +5077,8 @@ x
 =
 /Base.TreasureHuntDifficulties.Difficulty_4_Name
 Veterán I
-6
-!Base.Heroes.hero.QinShiHuang_NameČchin Š'-chuang
+9
+!Base.Heroes.hero.QinShiHuang_NameČchin Š'-chuang-ti
 x
 1Base.Buildings.Building_China_Home_Average_1_DescCVyrobí velkou hromadu Wu Zhu a přidá vašemu městu 5 dělníků
 _
@@ -5108,6 +5134,8 @@ h
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc,Vyrábí mince a přidá dělníka do města
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameKanál
+?
+&Base.Units.Unit_PhilipIIOfMacedon_NameFilip II. Makedonský
 O
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameVikingské statky
 W
@@ -5364,7 +5392,7 @@ F
 4
 "Base.Heroes.hero.RomanPraetor_NameAemilia Tertia
 �
-KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Úder bouře</style>Císař Čchin vyvolá svůj Duchovní meč, který letí přes bojiště, způsobuje nepřátelským jednotkám <style=basestat>{dmg_percentage}</style> poškození a léčí spojenecké jednotky za <style=basestat>{heal_percentage}</style> z Císařova základního poškození po dobu <style=basestat>{duration}</style>.
+KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Úder bouře</style>Císař Čchin vyvolá svůj duchovní meč, který letí přes bojiště, způsobuje nepřátelským jednotkám <style=basestat>{dmg_percentage}</style> poškození a léčí spojenecké jednotky za <style=basestat>{heal_percentage}</style> z císařova základního poškození po dobu <style=basestat>{duration}</style>.
 b
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc.Vyrábí kakao a přidá pracovníka do města
 s
@@ -5519,8 +5547,8 @@ s
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameKasárny těžkooděnců
 W
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_NameEfektivita přídělů
-�
-Base.Units.Unit_SunTzu_Desc�Ať jsou vaše plány temné jako noc, protože Sun Tzu se přidal k hrdinům! Tento starověký čínský vojenský stratég se proslavil tím, že v 5. století př. n. l. sepsal "Umění války", které po tisíciletí formovalo východoasijské válečnictví.<br><br>Umění války klade důraz na strategii, klamání a přizpůsobivost a tvrdí, že "nejvyšším uměním války je podmanit si nepřítele bez boje". Její zásady se uplatňují ve všech oblastech, od války po obchod a sport, což dokazuje její nadčasovou aktuálnost.<br><br>Sun Tzu zůstává symbolem lsti a taktiky a jeho učení ovlivňuje myslitele a vůdce po celém světě. Když se Leonidas setkal s hrdiny dějin, napadlo ho, že musí v bitvě používat zvířata: proč by tomu jinak říkali zoologická zahrada?
+�
+Base.Units.Unit_SunTzu_Desc�Ať jsou vaše plány temné jako noc, protože Mistr Sun se přidal k hrdinům! Tento starověký čínský vojenský stratég se proslavil tím, že v 5. století př. n. l. sepsal "Umění války", které po tisíciletí formovalo východoasijské válečnictví.<br><br>Umění války klade důraz na strategii, klamání a přizpůsobivost a tvrdí, že "nejvyšším uměním války je podmanit si nepřítele bez boje". Její zásady se uplatňují ve všech oblastech, od války po obchod a sport, což dokazuje její nadčasovou aktuálnost.<br><br>Mistr Sun zůstává symbolem lsti a taktiky a jeho učení ovlivňuje myslitele a vůdce po celém světě. Když se Leonidas setkal s hrdiny dějin, napadlo ho, že musí v bitvě používat zvířata: proč by tomu jinak říkali zoologická zahrada?
 b
 /Base.Buildings.Building_China_Home_Small_5_Desc/Vyrábí Wu Zhu a přidá pracovníka do města
 f
@@ -5529,6 +5557,8 @@ f
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_NameKasárny obléhacích jednotek
 U
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_DescVyrábí hromadu zlaté rudy
+:
+&Base.Units.Unit_AlexanderTheGreat_NameAlexandr Veliký
 N
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameRybářské molo
 Q
@@ -5791,8 +5821,8 @@ L
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxusní kupectví
 I
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameMěstská farma
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Úder na oblast | Omráčení</style>Mozart sesílá symfonii na bojiště, omračuje a poškozuje nepřátele v oblasti s největším počtem nepřátel. S každým použitím získává dodatečnou sílu a maximální sílu dosahuje při třetím použití. <br> <br> První použití: <style=basestat>{damage_a}</style> poškození, v malém rozsahu za <style=basestat>{duration_a}.</style> <br> Druhé použití: <style=basestat>{damage_b}</style> poškození, ve středním rozsahu za <style=basestat>{duration_b}.</style>  <br> Třetí použití a dále: <style=basestat>{damage_c}</style> poškození, ve středním rozsahu za <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Úder na oblast | Omráčení</style>Mozart na bojišti spustí symfonii, která omráčí a poškodí nepřátele v oblasti s největším počtem nepřátel, přičemž s každým použitím zvýší svou sílu a při třetím použití dosáhne maximální sílu. <br> <br>První použití: <style=basestat>{damage_a}</style> poškození, v malém rozsahu za <style=basestat>{duration_a}</style> <br>Druhé použití: <style=basestat>{damage_b}</style> poškození, ve středním rozsahu za <style=basestat>{duration_b}</style> <br>Od třetího použití: <style=basestat>{damage_c}</style> poškození, ve středním rozsahu pro <style=basestat>{duration_c}</style>.
 N
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameKulturní výměna
 F
@@ -5886,8 +5916,8 @@ b
 &Base.BuildingGroups.premiumAviary_NameLuxusní voliéraLuxusní voliéryLuxusních voliér
 `
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_DescOdemkne Minotaurovy předvoje
-�
-Base.Units.Unit_Ninja_Desc�Přesouvejte se ze stínu do stínu a připravte si šuriken! Připojila se k vám Mochizuki Chiyome, legendární postava z Japonska 16. století. Chiyome, která je proslulá svou fascinující rolí organizátorky tajné sítě nindžů neboli kunoichi, se nachází na pomezí historie a mýtů.<br><br>Jako manželka samuraje byla pověřena svým příbuzným, vojevůdcem Takedou Šingenem, aby shromažďovala informace a prováděla špionáž. Mochizuki Chiyome cvičila a rekrutovala ženy z různých prostředí a vytvořila tak efektivní síť, která byla zkušená ve sběru zpravodajských informací, infiltraci a taktice utajení.<br><br>Její odkaz jako průkopnické osobnosti špionáže podtrhuje jedinečný přínos žen ve feudálním Japonsku a zdůrazňuje jejich rozmanité role přesahující tradiční očekávání.
+�
+Base.Units.Unit_Ninja_Desc�Přesouvejte se ze stínu do stínu a připravte si šuriken! Připojila se k vám Čijome Močizuki, legendární postava z Japonska 16. století. Čijome, která je proslulá svou fascinující rolí organizátorky tajné sítě nindžů neboli kunoichi, se nachází na pomezí historie a mýtů.<br><br>Jako manželka samuraje byla pověřena svým příbuzným, vojevůdcem jménem Šingen Takeda, aby shromažďovala informace a prováděla špionáž. Čijome Močizuki cvičila a rekrutovala ženy z různých prostředí a vytvořila tak efektivní síť, která byla zkušená ve sběru zpravodajských informací, infiltraci a taktice utajení.<br><br>Její odkaz jako průkopnické osobnosti špionáže podtrhuje jedinečný přínos žen ve feudálním Japonsku a zdůrazňuje jejich rozmanité role přesahující tradiční očekávání.
 �
 'Base.BuildingGroups.premiumCulture_NameLuxusní kulturní památkaLuxusní kulturní památkyLuxusních kulturních památek
 Y
@@ -5908,13 +5938,15 @@ E
 4Base.Technologies.Technology_Vikings_Beekeeping_NameVčelařství
 I
 8Base.Abilities.hero_battle_ability.ThomasAlvaEdison_NameŠoková vlna
-&
-Base.Units.Unit_SunTzu_NameSun Tzu
+(
+Base.Units.Unit_SunTzu_Name	Mistr Sun
 g
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc.Výrazně zvýší zavlažení okolních budov
 A
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name
 Malý dům
+�
+&Base.Units.Unit_AlexanderTheGreat_Desc�Hle, Alexandr Veliký, neporažený, vítězný, nejlepší vojevůdce, jakého kdy svět poznal! Tento král ze 4. století př. n. l. se proslavil tím, že před svou brzkou smrtí dobyl rozsáhlá území světa.<br><br>Alexandr nastoupil na trůn ve věku 20 let po zavraždění svého otce. Rychle prokázal svou rozhodnost: podmanil si Thráky a zničil slavný městský stát Théby. To přineslo Řecku opět mír a Alexandr vedl Korintskou ligu, aby dobyl Achaimenovskou Persii. Tato slavná říše před ním padla, ale Alexandr ještě neskončil: před jeho vojsky poklekla Sýrie, Babylon, Írán, a dokonce i Pákistán.<br><br>Alexandr nikdy neprohrál žádnou bitvu. Nakonec se jeho vlastní armáda dožadovala návratu do svých domovů. V Babylonu, na cestě domů (i když cestou zpět ještě něco dobyl), Alexandr vydechl naposledy.<br><br>V rámci historických hrdinů je Alexandr poněkud kontroverzní. Opravdu rád popíjí s Achilleem, dostává lekce od Kýra a ukazuje svého otce!
 D
 .Base.Abilities.hero_battle_ability.Medusa_NameZkamenělý pohled
 W
@@ -5947,8 +5979,8 @@ T
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameZlatý vavřínový věnec
 u
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_Desc;Vyrábí velké množství jídla během dlouhého období.
-I
-2Base.Abilities.hero_battle_ability.MarieCurie_NameRadiumový vodopád
+H
+2Base.Abilities.hero_battle_ability.MarieCurie_NameRádiový vodopád
 T
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_NameNebeští oslí nájezdníci
 s
