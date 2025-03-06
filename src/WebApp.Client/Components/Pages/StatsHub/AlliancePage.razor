@@ -1,0 +1,117 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.ALLIANCE_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@using Size = MudBlazor.Size
+@using ValueType = Syncfusion.Blazor.Charts.ValueType
+@inherits StatsHubPageBase
+@if (IsInitialized && _alliance != null)
+{
+    <div class="page-container">
+        <div class="fog-container info-container">
+            <div class="avatar-container">
+                <img class="avatar-background" src="@_alliance.Alliance.AvatarBackgroundUrl"/>
+                <img class="avatar-icon" src="@_alliance.Alliance.AvatarIconUrl"/>
+            </div>
+            <div class="details">
+                <div><span
+                        class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>"@_alliance.Alliance.Name"
+                </div>
+                <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@WorldId</div>
+                <div>
+                    <span
+                        class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_alliance.Alliance.RankingPoints
+                </div>
+                <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@_alliance.Alliance.Rank</div>
+                <div><span
+                        class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@_alliance.Alliance.UpdatedAt
+                </div>
+            </div>
+        </div>
+        @if (_canShowChart)
+        {
+            <div class="fog-container section-container ranking-points-chart-container">
+                <span class="section-title">@Loc[FogResource.StatsHub_Player_RankingPoints]</span>
+                <SfChart Focusable="false" Height="300">
+                    <ChartArea>
+                        <ChartAreaBorder Width="0"/>
+                    </ChartArea>
+                    <ChartMargin Top="12"/>
+                    <ChartPrimaryXAxis IntervalType="IntervalType.Days" Format="dd/MM"
+                                       ValueType="ValueType.DateTime">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryXAxis>
+                    <ChartPrimaryYAxis Interval="20" RangePadding="ChartRangePadding.Round">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryYAxis>
+                    <ChartSeriesCollection>
+                        <ChartSeries DataSource="@_alliance.RankingPoints" XName="Date" YName="Value"
+                                     Type="ChartSeriesType.Line" Fill="var(--fog-chart-line-color)">
+                            <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
+                            <ChartSeriesAnimation Enable="false"/>
+                        </ChartSeries>
+                    </ChartSeriesCollection>
+                </SfChart>
+            </div>
+        }
+
+        <div class="fog-container section-container">
+            <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
+            <MudTimeline TimelinePosition="TimelinePosition.Start">
+                @foreach (var name in _alliance.Names)
+                {
+                    <MudTimelineItem Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small">
+                        <p class="preserve-whitespace">"@name.Value"</p>
+                        <p class="timeline-date">@name.Date.ToString("d")</p>
+                    </MudTimelineItem>
+                }
+            </MudTimeline>
+        </div>
+
+        <div class="fog-container section-container">
+            <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
+            <div class="members-container">
+                @foreach (var player in _alliance.CurrentMembers)
+                {
+                    <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                }
+            </div>
+        </div>
+        
+        @if (_alliance.PossiblePastMembers.Count > 0)
+        {
+            <div class="fog-container section-container">
+                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_PossiblePastMembers]</span>
+                <div class="members-container">
+                    @foreach (var player in _alliance.PossiblePastMembers)
+                    {
+                        <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+}
+else
+{
+    <LoadingIndicator/>
+}
+
+@code {
+
+    [Parameter]
+    public required string WorldId { get; set; }
+
+    [Parameter]
+    public required int AllianceId { get; set; }
+
+}

@@ -34,7 +34,6 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToString("d")))
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
-
         CreateMap<PaginatedList<PlayerDto>, PaginatedList<PlayerViewModel>>();
         CreateMap<PlayerWithRankings, PlayerWithRankingsViewModel>()
             .ForMember(dest => dest.Ages, opt =>
@@ -45,5 +44,16 @@ public class StatsHubUiProfile : Profile
                     return src.Ages.Select(
                         a => new StatsTimedStringValue() {Date = a.Date, Value = ages[a.Value].Name});
                 }));
+        
+        CreateMap<AllianceDto, AllianceViewModel>()
+            .ForMember(dest => dest.AvatarIconUrl,
+                opt => opt.ConvertUsing<AllianceAvatarIconIdToUrlConverter, int>(src => src.AvatarIconId))
+            .ForMember(dest => dest.AvatarBackgroundUrl,
+                opt => opt.ConvertUsing<AllianceAvatarBackgroundIdToUrlConverter, int>(src => src.AvatarBackgroundId))
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToString("d")))
+            .ForMember(dest => dest.IsStale,
+                opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
+        CreateMap<PaginatedList<AllianceDto>, PaginatedList<AllianceViewModel>>();
+        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>();
     }
 }

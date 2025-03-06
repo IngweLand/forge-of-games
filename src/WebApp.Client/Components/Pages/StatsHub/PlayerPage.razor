@@ -3,13 +3,13 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Size = MudBlazor.Size
 @inherits StatsHubPageBase
-@if (IsInitialized)
+@if (IsInitialized && _player != null)
 {
     <div class="page-container">
         <div class="fog-container info-container">
-            <img class="avatar" src="@_player!.Player.AvatarUrl"/>
+            <img class="avatar" src="@_player.Player.AvatarUrl"/>
             <div class="details">
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_Name]: </span>@_player.Player.Name</div>
+                <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name</div>
                 @if (_player.Player.AllianceName != null)
                 {
                     <div><span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>

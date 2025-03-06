@@ -7,16 +7,30 @@
 {
     <div class="page-container">
         <div class="column">
-            <StatsTopListComponent
+            <PlayerStatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_MainWorld]"
-                ViewAllUrl="/stats-hub/worlds/un1"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("un1")"
                 Players="@_topStats?.MainWorldPlayers"/>
         </div>
         <div class="column">
-            <StatsTopListComponent
+            <PlayerStatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
-                ViewAllUrl="/stats-hub/worlds/zz1"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("zz1")"
                 Players="@_topStats?.BetaWorldPlayers"/>
+
+        </div>
+
+        <div class="column">
+            <AllianceStatsTopListComponent
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("un1")"
+                Alliances="@_topStats?.MainWorldAlliances"/>
+        </div>
+        <div class="column">
+            <AllianceStatsTopListComponent
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("zz1")"
+                Alliances="@_topStats?.BetaWorldAlliances"/>
 
         </div>
     </div>

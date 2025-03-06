@@ -13,5 +13,12 @@ public class StatsMappingProfile:Profile
         CreateMap<Player, Player>()
             .ForMember(dest => dest.Rankings, opt => opt.Ignore());
         CreateMap<Player, PlayerDto>();
+        CreateMap<PlayerRanking, PlayerKey>();
+        
+        CreateMap<Alliance, AllianceKey>();
+        CreateMap<AllianceRanking, AllianceRanking>();
+        CreateMap<Alliance, Alliance>()
+            .ForMember(dest => dest.Rankings, opt => opt.Ignore());
+        CreateMap<Alliance, AllianceDto>();
     }
 }

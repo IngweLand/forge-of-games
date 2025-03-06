@@ -104,6 +104,7 @@ public static class DependencyInjection
         services.AddScoped<ICcHeroesPlaygroundUiService, CcHeroesPlaygroundUiService>();
         services.AddScoped<ISnapshotsComparisonViewModelFactory, SnapshotsComparisonViewModelFactory>();
         services.AddScoped<IHohPlayerAvatarUrlProvider, HohPlayerAvatarUrlProvider>();
+        services.AddScoped<IAllianceAvatarUrlProvider, AllianceAvatarUrlProvider>();
         services.AddScoped<IStatsHubViewModelsFactory, StatsHubViewModelsFactory>();
         services.AddScoped<IStatsHubUiService, StatsHubUiService>();
         services.AddScoped<ICampaignUiService, CampaignUiService>();

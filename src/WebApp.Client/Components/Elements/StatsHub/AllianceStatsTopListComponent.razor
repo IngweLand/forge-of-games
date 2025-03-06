@@ -1,0 +1,38 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Core.Helpers
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject NavigationManager NavigationManager
+<div class="fog-container component-root">
+    <div class="title">@Title</div>
+    <div class="items-container">
+        @foreach (var alliance in Alliances)
+        {
+            <AllianceListItemComponent Alliance="@alliance" OnClick="OnAllianceClicked"/>
+        }
+    </div>
+    <div class="button-container">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                   Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+    </div>
+
+</div>
+
+@code {
+
+    [Parameter]
+    public required string Title { get; set; }
+
+    [Parameter]
+    public required string ViewAllUrl { get; set; }
+
+    [Parameter]
+    public required IReadOnlyCollection<AllianceViewModel> Alliances { get; init; }
+
+    private void OnAllianceClicked(AllianceViewModel alliance)
+    {
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(alliance.Key.WorldId, alliance.Key.InGameAllianceId));
+    }
+
+}

@@ -17,6 +17,9 @@ public static class StatsApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
+        
+        api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
 
         return api;
     }
@@ -43,11 +46,44 @@ public static class StatsApi
             string worldId,
             [FromQuery] int pageNumber = 1,
             [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
-            [FromQuery] string? playerName = null)
+            [FromQuery] string? name = null)
     {
         var query = new GetPlayersWithPaginationQuery()
         {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = playerName,
+            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name,
+        };
+        var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
+        GetAllianceAsync([AsParameters] StatsServices services, HttpContext context,
+            string worldId, int inGameAllianceId)
+    {
+        var query = new GetAllianceQuery()
+        {
+            AllianceKey = new AllianceKey(worldId, inGameAllianceId),
+        };
+        var result = await services.Mediator.Send(query);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
+        GetAlliancesAsync([AsParameters] StatsServices services, HttpContext context,
+            string worldId,
+            [FromQuery] int pageNumber = 1,
+            [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
+            [FromQuery] string? name = null)
+    {
+        var query = new GetAlliancesWithPaginationQuery()
+        {
+            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
         };
         var result = await services.Mediator.Send(query);
 
