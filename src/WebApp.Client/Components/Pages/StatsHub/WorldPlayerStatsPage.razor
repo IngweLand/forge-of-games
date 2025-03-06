@@ -1,0 +1,22 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.WORLD_PLAYERS_TEMPLATE)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@inherits WorldStatsPageBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.PlayerViewModel>
+
+@if (IsInitialized)
+{
+    <PaginatedStatsListComponent Items="@Items" PageNumber="@CalculatedPageNumber" Title="@Title"
+                                 OnPageChanged="OnPageChanged" OnSearch="Search"
+                                 IsLoading="@IsLoading" NameSearchString="@NameSearchString">
+        <ItemTemplate >
+            <PlayerListItemComponent Player="@context" OnClick="OnItemClicked" />
+        </ItemTemplate>
+    </PaginatedStatsListComponent>
+}
+else
+{
+    <LoadingIndicator/>
+}
+
+@code {
+}

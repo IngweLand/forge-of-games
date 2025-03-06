@@ -1617,6 +1617,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CurrentMembers.
+        /// </summary>
+        public static string StatsHub_Alliance_CurrentMembers {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.CurrentMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Possible Past Members.
+        /// </summary>
+        public static string StatsHub_Alliance_PossiblePastMembers {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.PossiblePastMembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;strong&gt;Can&apos;t find yourself or another player/alliance?&lt;/strong&gt; Our game analytics are community-driven! Click this message to learn how to contribute!.
+        /// </summary>
+        public static string StatsHub_ContributePrompt {
+            get {
+                return ResourceManager.GetString("StatsHub.ContributePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Track leaderboards and statistics for Heroes of History. View top players, alliances, and world rankings..
         /// </summary>
         public static string StatsHub_Meta_Description {
@@ -1631,6 +1658,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Meta_Keywords {
             get {
                 return ResourceManager.GetString("StatsHub.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string StatsHub_NameSearchField_Label {
+            get {
+                return ResourceManager.GetString("StatsHub.NameSearchField.Label", resourceCulture);
             }
         }
         
@@ -1676,15 +1712,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Player_Alliances {
             get {
                 return ResourceManager.GetString("StatsHub.Player.Alliances", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        public static string StatsHub_Player_Name {
-            get {
-                return ResourceManager.GetString("StatsHub.Player.Name", resourceCulture);
             }
         }
         
@@ -1761,6 +1788,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alliances on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_AllianceListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.AllianceListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beta world.
         /// </summary>
         public static string StatsHub_Worlds_BetaWorld {
@@ -1784,6 +1820,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Worlds_PlayerListTitle {
             get {
                 return ResourceManager.GetString("StatsHub.Worlds.PlayerListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top alliances on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopAllianceListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopAllianceListTitle", resourceCulture);
             }
         }
         

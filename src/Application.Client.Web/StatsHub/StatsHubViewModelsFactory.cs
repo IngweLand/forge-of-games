@@ -17,8 +17,21 @@ public class StatsHubViewModelsFactory(IMapper mapper) : IStatsHubViewModelsFact
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
     }
 
+    public AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,IReadOnlyDictionary<string, AgeDto> ages)
+    {
+        return mapper.Map<AllianceWithRankingsViewModel>(alliance,
+            opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
+    }
+
+    public PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players)
+    {
+        return mapper.Map<PaginatedList<AllianceViewModel>>(players);
+    }
+
     public TopStatsViewModel CreateTopStats(IReadOnlyCollection<PlayerDto> mainPlayers,
-        IReadOnlyCollection<PlayerDto> betaPlayers, IReadOnlyDictionary<string, AgeDto> ages)
+        IReadOnlyCollection<PlayerDto> betaPlayers,
+        IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
+        IReadOnlyDictionary<string, AgeDto> ages)
     {
         return new TopStatsViewModel()
         {
@@ -26,6 +39,8 @@ public class StatsHubViewModelsFactory(IMapper mapper) : IStatsHubViewModelsFact
                 opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
             BetaWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(betaPlayers,
                 opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
+            MainWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(mainAlliances),
+            BetaWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(betaAlliances)
         };
     }
 

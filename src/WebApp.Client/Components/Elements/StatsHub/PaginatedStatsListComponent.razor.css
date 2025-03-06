@@ -2,18 +2,24 @@
     padding-left: 0 !important;
 }
 
-.page-container {
+.content-wrapper{
     display: flex;
-    justify-content: center;
-    padding: 8px;
+    flex-direction: column;
+    align-self: center;
+    gap: 8px;
 }
 
 .section {
     display: flex;
     flex-direction: column;
+    align-self: center;
     width: 100%;
     max-width: 650px;
     overflow: hidden;
+}
+
+.help-info {
+    cursor: pointer;
 }
 
 .top-container {
@@ -60,12 +66,10 @@
 }
 
 @media (min-width: 576px) {
-    .page-container {
-        display: flex;
-        align-items: center;
-        padding: 24px;
+    .content-wrapper{
+        gap: 12px;
     }
-
+    
     .top-container {
         padding: 12px;
     }

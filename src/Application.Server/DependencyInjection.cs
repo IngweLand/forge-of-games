@@ -50,6 +50,7 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
         services.AddScoped<IPlayerRankingService, PlayerRankingService>();
         services.AddScoped<IPlayerWithRankingsFactory, PlayerWithRankingsFactory>();
+        services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
         services.AddScoped<IAllianceRankingService, AllianceRankingService>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
