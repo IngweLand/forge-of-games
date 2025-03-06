@@ -10,21 +10,13 @@ public class AllianceRankingEntityTypeConfiguration : IEntityTypeConfiguration<A
     {
         builder.ToTable("alliance_rankings");
 
-        builder.HasKey(p => new {p.WorldId, p.InGameAllianceId, p.CollectedAt});
+        builder.HasKey(p => p.Id);
         
-        builder.Ignore(p => p.Key);
-        
-        builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
         builder.Property(p => p.Type).IsRequired();
         builder.Property(p => p.Points).IsRequired();
         builder.Property(p => p.Rank).IsRequired();
-        builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
         builder.Property(p => p.CollectedAt).IsRequired();
-        builder.Property(p => p.Type).IsRequired();
-        builder.Property(p => p.MemberCount).IsRequired();
 
-        builder.HasIndex(p => new {p.WorldId, p.InGameAllianceId});
         builder.HasIndex(p => p.CollectedAt).IsDescending();
-        builder.HasIndex(p => p.WorldId);
     }
 }

@@ -13,7 +13,7 @@ public partial class AlliancePage : StatsHubPageBase
         await base.OnInitializedAsync();
         
         _alliance = await LoadWithPersistenceAsync(nameof(_alliance),
-            () => StatsHubUiService.GetAllianceAsync(WorldId, AllianceId));
+            () => StatsHubUiService.GetAllianceAsync(AllianceId));
 
         if (OperatingSystem.IsBrowser())
         {
@@ -24,6 +24,6 @@ public partial class AlliancePage : StatsHubPageBase
     
     private void OnPlayerClicked(PlayerViewModel player)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Key.WorldId, player.Key.InGamePlayerId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Id));
     }
 }

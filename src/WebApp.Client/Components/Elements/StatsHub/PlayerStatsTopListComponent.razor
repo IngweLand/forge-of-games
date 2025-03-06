@@ -32,7 +32,7 @@
 
     private void OnPlayerClicked(PlayerViewModel player)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Key.WorldId, player.Key.InGamePlayerId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Id));
     }
 
 }

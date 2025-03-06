@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BattleStatsRequestDto {
+  BattleIdWrapper battle = 2;
+}
+message BattleIdWrapper {
+  bytes battle_id = 1;
+}

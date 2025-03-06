@@ -8,5 +8,7 @@ public class AllianceWithRankingsViewModel
     public required AllianceViewModel Alliance { get; init; }
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
     public IReadOnlyCollection<PlayerViewModel> CurrentMembers { get; init; } = Array.Empty<PlayerViewModel>();
-    public IReadOnlyCollection<PlayerViewModel> PossiblePastMembers { get; init; } = Array.Empty<PlayerViewModel>();
+    public IReadOnlyCollection<PlayerViewModel> PossibleMembers { get; init; } = Array.Empty<PlayerViewModel>();
+    public string? RegisteredAt { get; set; }
+    public PlayerDto? Leader { get; set; }
 }

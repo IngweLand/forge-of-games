@@ -28,7 +28,7 @@ public partial class WorldPlayerStatsPage : WorldStatsPageBase<PlayerViewModel>
 
     protected override void NavigateToItemPage(PlayerViewModel item)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(item.Key.WorldId, item.Key.InGamePlayerId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(item.Id));
     }
    
 }

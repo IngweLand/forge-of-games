@@ -1,4 +1,5 @@
 using AutoMapper;
+using Google.Protobuf.WellKnownTypes;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -9,41 +10,56 @@ public class PlayerWithRankingsFactory(IMapper mapper) : IPlayerWithRankingsFact
 {
     public PlayerWithRankings Create(Player player)
     {
+        var alliances = player.AllianceHistory.Select(a => a.Name)
+            .Concat(player.AllianceNameHistory.Select(n => n.AllianceName))
+            .ToHashSet()
+            .Order()
+            .ToList();
+        
         return new PlayerWithRankings()
         {
             Player = mapper.Map<PlayerDto>(player),
             RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.RankingPoints),
-            ResearchPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.ResearchPoints),
-            Ages = CreateTimedStringValueCollection(player.Rankings, pr => pr.Age),
-            Alliances = CreateTimedStringValueCollection(player.Rankings, pr => pr.AllianceName),
-            Names = CreateTimedStringValueCollection(player.Rankings, pr => pr.Name),
+            PvpRankingPoints = CreateTimedIntValueCollection(player.PvpRankings),
+            Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
+            Alliances = alliances,
+            Names = player.NameHistory.Select(entry => entry.Name).ToList()
         };
     }
 
-    private static IReadOnlyCollection<StatsTimedIntValue> CreateTimedIntValueCollection(
+    private static List<StatsTimedIntValue> CreateTimedIntValueCollection(
         IEnumerable<PlayerRanking> rankings,
         PlayerRankingType playerRankingType)
     {
-        return rankings.Where(pr => pr.Type == playerRankingType)
-            .OrderBy(pr => pr.CollectedAt).Select(pr => new StatsTimedIntValue()
-                {Value = pr.Points, Date = pr.CollectedAt}).ToList();
+        return rankings
+            .Where(pr => pr.Type == playerRankingType)
+            .OrderBy(pr => pr.CollectedAt)
+            .Select(pr => new StatsTimedIntValue() {Value = pr.Points, Date = pr.CollectedAt.ToDateTime(TimeOnly.MinValue)})
+            .ToList();
     }
-
-    private static IReadOnlyCollection<StatsTimedStringValue> CreateTimedStringValueCollection(
-        IEnumerable<PlayerRanking> rankings, Func<PlayerRanking, string?> selector)
+    
+    private static List<StatsTimedIntValue> CreateTimedIntValueCollection(IEnumerable<PvpRanking> rankings)
     {
         return rankings
-            .Where(pr => selector.Invoke(pr) != null)
             .OrderBy(pr => pr.CollectedAt)
-            .Aggregate(new List<StatsTimedStringValue>(), (acc, pr) =>
-            {
-                var currentValue = selector.Invoke(pr);
-                if (acc.Count == 0 || acc.Last().Value != currentValue)
-                {
-                    acc.Add(new StatsTimedStringValue {Value = currentValue!, Date = pr.CollectedAt});
-                }
+            .Select(pr => new StatsTimedIntValue() {Value = pr.Points, Date = pr.CollectedAt})
+            .ToList();
+    }
 
-                return acc;
-            });
+    private static List<StatsTimedStringValue> CreateTimedStringValueCollection<THistoryEntry>(
+        IEnumerable<THistoryEntry> items,
+        Func<THistoryEntry, string?> valueSelector) where THistoryEntry : IHistoryEntry
+    {
+        return items
+            .OrderBy(entry => entry.ChangedAt)
+            .Select(entry => new StatsTimedStringValue
+                {Value = valueSelector(entry) ?? string.Empty, Date = DateOnly.FromDateTime(entry.ChangedAt)})
+            .ToList();
+    }
+    
+    private class TempHistoryEntry : IHistoryEntry
+    {
+        public DateTime ChangedAt { get; set; }
+        public string? Value { get; init; }
     }
 }

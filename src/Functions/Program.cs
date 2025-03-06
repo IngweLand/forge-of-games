@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Functions;
+using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.Infrastructure;
 using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
@@ -21,13 +22,15 @@ builder.Services.Configure<StorageSettings>(
     builder.Configuration.GetSection(StorageSettings.CONFIGURATION_PROPERTY_NAME));
 
 builder.ConfigureFunctionsWebApplication();
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 builder.Services.AddInnSdkServices();
-builder.Services.AddScoped<IGameWorldsProvider, GameWorldsProvider>();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddApplicationServices();
-builder.Services.AddScoped<IInGameDataParsingService, InGameDataParsingService>();
-builder.Services.AddTransient<DatabaseWarmUpService>();
+builder.Services.AddFunctionsServices();
+
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services
 //     .AddApplicationInsightsTelemetryWorkerService()
@@ -39,6 +42,7 @@ if(customEnvironment is "Development" or "Staging")
     {
         logging.SetMinimumLevel(LogLevel.Information);
         logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Information);
+        logging.AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Warning);
     });
 }
 else

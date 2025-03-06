@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AlliancePush {
+  AlliancePushAlliance alliance = 2;
+}
+
+message AlliancePushAlliance {
+  int32 id = 1;
+  int32 member_count = 2;
+  AlliancePushAllianceDetails details = 4;
+}
+
+message AlliancePushAllianceDetails {
+  string name = 1;
+  int32 avatar_icon_id = 6;
+  int32 avatar_background_id = 7;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "player_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroTreasureHuntPlayerPointsPush {
+  int32 treasure_hunt_event_id = 1;
+  PlayerDto player = 3;
+  int32 ranking_points = 4;
+}

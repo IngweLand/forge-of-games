@@ -9,7 +9,7 @@ namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 public interface IStatsHubService
 {
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE_REFIT)]
-    Task<PlayerWithRankings?> GetPlayerAsync(string worldId, int inGamePlayerId);
+    Task<PlayerWithRankings?> GetPlayerAsync(int playerId);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE)]
     Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, [Query] int pageNumber = 1,
@@ -17,7 +17,7 @@ public interface IStatsHubService
         CancellationToken ct = default);
     
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE_REFIT)]
-    Task<AllianceWithRankings?> GetAllianceAsync(string worldId, int inGameAllianceId);
+    Task<AllianceWithRankings?> GetAllianceAsync(int allianceId);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE)]
     Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int pageNumber = 1,

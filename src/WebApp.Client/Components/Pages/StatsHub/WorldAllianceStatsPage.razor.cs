@@ -28,7 +28,7 @@ public partial class WorldAllianceStatsPage : WorldStatsPageBase<AllianceViewMod
 
     protected override void NavigateToItemPage(AllianceViewModel item)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(item.Key.WorldId, item.Key.InGameAllianceId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(item.Id));
     }
    
 }

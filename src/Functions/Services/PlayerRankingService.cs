@@ -1,0 +1,93 @@
+using AutoMapper;
+using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Functions.Data;
+using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Ranking;
+using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Constants;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Player = Ingweland.Fog.Models.Fog.Entities.Player;
+
+namespace Ingweland.Fog.Functions.Services;
+
+public interface IPlayerRankingService
+{
+    Task AddOrUpdateRankingsAsync(IEnumerable<PlayerAggregate> playerAggregates);
+}
+
+public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger<PlayerRankingService> logger)
+    : IPlayerRankingService
+{
+    public async Task AddOrUpdateRankingsAsync(IEnumerable<PlayerAggregate> playerAggregates)
+    {
+        var filtered = playerAggregates.Where(p => p.CanBeConvertedToPlayerRanking()).ToList();
+        if (filtered.Count == 0)
+        {
+            return;
+        }
+
+        var latestUnique = filtered
+            .GroupBy(p => (p.WorldId, p.InGamePlayerId, p.PlayerRankingType, DateOnly.FromDateTime(p.CollectedAt)))
+            .Select(g => g.OrderByDescending(p => p.CollectedAt).First())
+            .ToList();
+
+        int updatedPlayerCount = 0, updatedRankingCount = 0, addedRankingCount = 0;
+
+        foreach (var chunk in latestUnique.Chunk(1000))
+        {
+            var inGamePlayerIds = chunk.Select(p => p.InGamePlayerId).ToHashSet();
+            var earliestDate = chunk.OrderBy(p => p.CollectedAt).Select(p => p.CollectedAt).First();
+
+            var existingPlayers = await FindExistingPlayers(inGamePlayerIds, earliestDate);
+            
+            foreach (var playerAggregate in chunk)
+            {
+                if (existingPlayers.TryGetValue(playerAggregate.Key, out var existingPlayer))
+                {
+                    var date = DateOnly.FromDateTime(playerAggregate.CollectedAt);
+                    var existingRanking =
+                        existingPlayer.Rankings.FirstOrDefault(r =>
+                            r.CollectedAt == date && r.Type == playerAggregate.PlayerRankingType);
+                    if (existingRanking != null)
+                    {
+                        existingRanking.Points = playerAggregate.RankingPoints!.Value;
+                        existingRanking.Rank = playerAggregate.Rank!.Value;
+                        updatedRankingCount++;
+                    }
+                    else
+                    {
+                        existingPlayer.Rankings.Add(mapper.Map<PlayerRanking>(playerAggregate));
+                        addedRankingCount++;
+                    }
+
+                    if (playerAggregate.PlayerRankingType == PlayerRankingType.RankingPoints &&
+                        date >= existingPlayer.UpdatedAt)
+                    {
+                        existingPlayer.RankingPoints = playerAggregate.RankingPoints!.Value;
+                        existingPlayer.Rank = playerAggregate.Rank!.Value;
+                        existingPlayer.UpdatedAt = date;
+                        updatedPlayerCount++;
+                    }
+                }
+                else
+                {
+                    // log warning
+                }
+
+                await context.SaveChangesAsync();
+            }
+        }
+    }
+
+    private async Task<Dictionary<PlayerKey, Player>> FindExistingPlayers(HashSet<int> inGamePlayerIds,
+        DateTime earliestDate)
+    {
+        var date = DateOnly.FromDateTime(earliestDate).AddDays(-1);
+        var players = await context.Players
+            .Include(p => p.Rankings.Where(pr => pr.CollectedAt > date))
+            .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
+            .ToListAsync();
+        return players.ToDictionary(p => p.Key);
+    }
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceDto {
+  int32 id = 1;
+  string name = 2;
+  int32 avatar_icon_id = 3;
+  int32 avatar_background_id = 4;
+  int32 member_count = 5;
+}

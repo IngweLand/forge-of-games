@@ -25,12 +25,11 @@ public static class StatsApi
     }
 
     private static async Task<Results<Ok<PlayerWithRankings>, NotFound, BadRequest<string>>>
-        GetPlayerAsync([AsParameters] StatsServices services, HttpContext context,
-            string worldId, int inGamePlayerId)
+        GetPlayerAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
     {
         var query = new GetPlayerQuery()
         {
-            PlayerKey = new PlayerKey(worldId, inGamePlayerId),
+            PlayerId = playerId,
         };
         var result = await services.Mediator.Send(query);
         if (result == null)
@@ -58,12 +57,11 @@ public static class StatsApi
     }
     
     private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
-        GetAllianceAsync([AsParameters] StatsServices services, HttpContext context,
-            string worldId, int inGameAllianceId)
+        GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId)
     {
         var query = new GetAllianceQuery()
         {
-            AllianceKey = new AllianceKey(worldId, inGameAllianceId),
+            AllianceId = allianceId,
         };
         var result = await services.Mediator.Send(query);
         if (result == null)

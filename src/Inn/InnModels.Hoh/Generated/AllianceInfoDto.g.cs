@@ -24,14 +24,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static AllianceInfoDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChdhbGxpYW5jZV9pbmZvX2R0by5wcm90bxoZYWxsaWFuY2VfbGVhZGVyX2R0",
-            "by5wcm90byI1Cg9BbGxpYW5jZUluZm9EdG8SIgoGbGVhZGVyGAcgASgLMhIu",
-            "QWxsaWFuY2VMZWFkZXJEdG9CH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVs",
-            "cy5Ib2hiBnByb3RvMw=="));
+            "ChdhbGxpYW5jZV9pbmZvX2R0by5wcm90bxoQcGxheWVyX2R0by5wcm90bxof",
+            "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90byJgCg9BbGxpYW5jZUlu",
+            "Zm9EdG8SGgoGbGVhZGVyGAcgASgLMgouUGxheWVyRHRvEjEKDXJlZ2lzdGVy",
+            "ZWRfYXQYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQh+qAhxJ",
+            "bmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceInfoDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceInfoDto.Parser, new[]{ "Leader" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceInfoDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceInfoDto.Parser, new[]{ "Leader", "RegisteredAt" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +75,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllianceInfoDto(AllianceInfoDto other) : this() {
       leader_ = other.leader_ != null ? other.leader_.Clone() : null;
+      registeredAt_ = other.registeredAt_ != null ? other.registeredAt_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -85,13 +87,25 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "leader" field.</summary>
     public const int LeaderFieldNumber = 7;
-    private global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDto leader_;
+    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto leader_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDto Leader {
+    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Leader {
       get { return leader_; }
       set {
         leader_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "registered_at" field.</summary>
+    public const int RegisteredAtFieldNumber = 10;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp registeredAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RegisteredAt {
+      get { return registeredAt_; }
+      set {
+        registeredAt_ = value;
       }
     }
 
@@ -111,6 +125,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return true;
       }
       if (!object.Equals(Leader, other.Leader)) return false;
+      if (!object.Equals(RegisteredAt, other.RegisteredAt)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -119,6 +134,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       if (leader_ != null) hash ^= Leader.GetHashCode();
+      if (registeredAt_ != null) hash ^= RegisteredAt.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -141,6 +157,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(58);
         output.WriteMessage(Leader);
       }
+      if (registeredAt_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RegisteredAt);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -155,6 +175,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(58);
         output.WriteMessage(Leader);
       }
+      if (registeredAt_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RegisteredAt);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -167,6 +191,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       int size = 0;
       if (leader_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Leader);
+      }
+      if (registeredAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RegisteredAt);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -182,9 +209,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.leader_ != null) {
         if (leader_ == null) {
-          Leader = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDto();
+          Leader = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
         }
         Leader.MergeFrom(other.Leader);
+      }
+      if (other.registeredAt_ != null) {
+        if (registeredAt_ == null) {
+          RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RegisteredAt.MergeFrom(other.RegisteredAt);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -203,9 +236,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           case 58: {
             if (leader_ == null) {
-              Leader = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDto();
+              Leader = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
             input.ReadMessage(Leader);
+            break;
+          }
+          case 82: {
+            if (registeredAt_ == null) {
+              RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RegisteredAt);
             break;
           }
         }
@@ -225,9 +265,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           case 58: {
             if (leader_ == null) {
-              Leader = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceLeaderDto();
+              Leader = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
             input.ReadMessage(Leader);
+            break;
+          }
+          case 82: {
+            if (registeredAt_ == null) {
+              RegisteredAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RegisteredAt);
             break;
           }
         }

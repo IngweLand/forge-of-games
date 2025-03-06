@@ -30,6 +30,8 @@ public class MainMappingProfile:Profile
                     context.Items.GetRequiredItem<AllianceRankingType>(ResolutionContextKeys.ALLIANCE_RANKING_TYPE)))
             .ReverseMap();
         
-        CreateMap<AllianceRankingRawData, AllianceRankingRawDataTableEntity>().ReverseMap();
+        CreateMap<InGameRawData, InGameRawDataTableEntity>()
+            .ForMember(dest => dest.CompressedData, opt => opt.Ignore())
+            .ReverseMap();
     }
 }

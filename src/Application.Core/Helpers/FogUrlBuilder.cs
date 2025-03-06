@@ -25,12 +25,12 @@ public static class FogUrlBuilder
         public const string WIKI_EXTRACT = "/wiki/extract";
 
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
-        public const string PLAYER_TEMPLATE = PLAYERS_TEMPLATE + "/{inGamePlayerId:int}";
-        public const string PLAYER_TEMPLATE_REFIT = PLAYERS_TEMPLATE + "/{inGamePlayerId}";
+        public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
+        public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
         
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
-        public const string ALLIANCE_TEMPLATE = ALLIANCES_TEMPLATE + "/{inGameAllianceId:int}";
-        public const string ALLIANCE_TEMPLATE_REFIT = ALLIANCES_TEMPLATE + "/{inGameAllianceId}";
+        public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
+        public const string ALLIANCE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/alliances/{allianceId}";
     }
 
     public static class PageRoutes
@@ -64,31 +64,26 @@ public static class FogUrlBuilder
         public const string SUPPORT_US_PATH = "/support-us";
         public const string WORLD_PLAYERS_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/players";
         public const string WORLD_ALLIANCES_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/alliances";
-        public const string PLAYER_TEMPLATE = WORLD_PLAYERS_TEMPLATE + "/{playerId:int}";
-        public const string ALLIANCE_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/{allianceId:int}";
+        public const string PLAYER_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}";
+        public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
         public const string FOG_GITHUB_URL = "https://github.com/IngweLand/forge-of-games";
         public const string HOH_HELPER_GITHUB_URL = "https://github.com/IngweLand/hoh-helper";
         public const string HOH_HELPER_RELEASES_GITHUB_URL = HOH_HELPER_GITHUB_URL + "/releases";
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
 
-        public static string Player(string worldId, int playerId)
+        public static string Player(int id)
         {
-            if (string.IsNullOrWhiteSpace(worldId))
-            {
-                throw new ArgumentNullException(nameof(worldId));
-            }
-
-            return PLAYER_TEMPLATE.Replace("{worldId}", worldId).Replace("{playerId:int}", playerId.ToString());
+            return PLAYER_TEMPLATE.Replace("{playerId:int}", id.ToString());
         }
         
-        public static string Alliance(string worldId, int allianceId)
+        public static string Alliance(int id)
         {
-            if (string.IsNullOrWhiteSpace(worldId))
-            {
-                throw new ArgumentNullException(nameof(worldId));
-            }
-
-            return ALLIANCE_TEMPLATE.Replace("{worldId}", worldId).Replace("{allianceId:int}", allianceId.ToString());
+            return ALLIANCE_TEMPLATE.Replace("{allianceId:int}", id.ToString());
+        }
+        
+        public static string SearchAlliance(string worldId, string name)
+        {
+            return $"{WORLD_ALLIANCES_TEMPLATE.Replace("{worldId}", worldId)}?name={Uri.EscapeDataString(name)}";
         }
         
         public static string TreasureHuntStage(int difficulty, int stageIndex)

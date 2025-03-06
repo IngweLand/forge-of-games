@@ -15,8 +15,6 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
 {
     private static readonly HashSet<string> HeroesToSkip = 
     [
-        "hero.AlexanderTheGreat", 
-        "hero.PhilipIIOfMacedon",
     ];
 
     public void Parse(string input, string? outputDirectory)
