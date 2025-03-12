@@ -76,9 +76,11 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
 
     public string GetHeroAbilityDescription(string abilityDescriptionId)
     {
-        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.AbilityDescriptions,
+        var keyName = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.AbilityDescriptions,
             HohLocalizationProperty.Name, abilityDescriptionId);
-        return GetValue(key) ?? abilityDescriptionId;
+        var keyDesc = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.AbilityDescriptions,
+            HohLocalizationProperty.Desc, abilityDescriptionId);
+        return GetValue(keyName) ?? GetValue(keyDesc) ?? abilityDescriptionId;
     }
 
     public string GetHeroAbilityName(string abilityId)

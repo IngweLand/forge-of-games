@@ -3247,7 +3247,7 @@ T
 I
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameDämmerungs-Korsaren
 �
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Heilen</style>Tansen transzendiert durch seine Musik, wird für <style=basestat>{duration}</style> unverwundbar und erhält eine heilende Aura, die alle verbündeten Einheiten um ihn herum für bis zu <style=basestat>{heal_amount}</style> über Zeit heilt. Solange die Fähigkeit aktiv ist, kann Tansen weder angreifen noch sich bewegen.
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Heilen</style>Tansen transzendiert durch seine Musik und erhält eine heilende Aura, die alle verbündeten Einheiten um ihn herum für bis zu <style=basestat>{heal_amount}</style> des Basisschadens von Tansen über <style=basestat>{duration}</style> heilt. Solange die Fähigkeit aktiv ist, kann Tansen weder angreifen noch sich bewegen.
 V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKaolin-Steinbruch
 C
@@ -5795,8 +5795,8 @@ N
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxuriöser Händler
 C
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Name	Bauernhof
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Flächenschlag | Betäuben</style>Mozart lässt eine Symphonie auf dem Schlachtfeld erklingen, um Feinde in einem Gebiet mit den meisten Feinden zu betäuben und ihnen Schaden zuzufügen, wobei er mit jeder Anwendung zusätzliche Macht erhält und bei der dritten Anwendung die maximale Macht erreicht. <br> <br>Erster Einsatz: <style=basestat>{damage_a}</style> Schaden, in einem kleinen Bereich für <style=basestat>{duration_a}</style> <br>Zweiter Einsatz: <style=basestat>{damage_b}</style> Schaden, in einem mittleren Bereich für <style=basestat>{duration_b}</style> <br>Dritter Einsatz ab: <style=basestat>{damage_c}</style> Schaden, in mittlerem Bereich für <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Area Strike | Stun</style>Mozart orchestriert eine klingende Symphonie auf dem Schlachtfeld, die auf den dichtesten Bereich von Gegnern zielt, um sie zu betäuben und ihnen Schaden zuzufügen. Die Symphonie wird mit jeder Anwendung stärker und erreicht ihren Höhepunkt bei der dritten Anwendung. <br> <br>Erster Einsatz: Fügt <style=basestat>{damage_a}</style> Schaden in geringem Bereich zu, betäubt für <style=basestat>{duration_a}</style> <br>Zweiter Einsatz: Fügt <style=basestat>{damage_b}</style> Schaden in mittlerem Bereich zu, betäubt für <style=basestat>{duration_b}</style> <br>Dritter Einsatz: Verursacht <style=basestat>{damage_c}</style> Schaden in mittlerem Bereich, betäubt für <style=basestat>{duration_c}</style>.
 Q
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameKultureller Austausch
 I

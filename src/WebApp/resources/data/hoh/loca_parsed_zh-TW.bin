@@ -3191,8 +3191,8 @@ O
 &Base.Regions.region.FrozenFjord_4_Name精靈之森
 A
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_Name暮光海盜
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治癒</style>坦森透過他的音樂進入超凡境界，於 <style=basestat>{duration}</style> 內獲得無敵狀態，並產生治癒光環，持續為周圍的友方單位恢復最高達 <style=basestat>{heal_amount}</style> 的生命值。此能力啟動期間，坦森無法攻擊或移動。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治療</style>坦森透過音樂進入超然境界，獲得治癒光環，在 <style=basestat>{duration}</style> 內治癒周圍所有友方單位，恢復最多 <style=basestat>{heal_amount}</style> 相當於坦森基礎傷害的生命值。技能持續期間，坦森無法攻擊或移動。
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Name陶土採掘場
 G
@@ -5697,8 +5697,8 @@ F
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_Name豪華商人
 F
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Name家庭農場
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範圍攻擊 | 暈眩</style>莫札特在戰場上演奏交響樂，對敵人最多的區域造成傷害並使其暈眩。此技能每次施放都會增強效果，第三次施放後達到最大威力。<br><br> 首次施放：對小範圍內造成 <style=basestat>{damage_a}</style> 傷害，持續 <style=basestat>{duration_a}</style> <br> 第二次施放：對中範圍內造成 <style=basestat>{damage_b}</style> 傷害，持續 <style=basestat>{duration_b}</style> <br> 第三次施放及後續施放：對中範圍內造成 <style=basestat>{damage_c}</style> 傷害，持續 <style=basestat>{duration_c}</style>。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範圍攻擊 | 暈眩</style>莫札特在戰場上指揮出共鳴交響曲，鎖定敵人最密集的區域，造成傷害並施加暈眩效果。此交響曲會隨著每次施放而增強，在第三次施放時達到最強效果<br><br>首次施放：對小範圍內的敵人造成 <style=basestat>{damage_a}</style> 傷害，並暈眩 <style=basestat>{duration_a}</style> 秒。<br>第二次施放：對中等範圍內的敵人造成 <style=basestat>{damage_b}</style> 傷害，並暈眩 <style=basestat>{duration_b}</style> 秒。<br>第三次施放及之後：對中等範圍內的敵人造成 <style=basestat>{damage_c}</style> 傷害，並暈眩 <style=basestat>{duration_c}</style> 秒。
 H
 8Base.Technologies.Technology_Egypt_CulturalExchange_Name文化交流
 E

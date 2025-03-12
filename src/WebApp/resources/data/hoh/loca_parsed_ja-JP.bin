@@ -69,8 +69,8 @@ S
 =Base.Units.Unit_ClassicGreece_ThePersians_GlaiveFighters_Nameグレイブ戦士
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_Name�<style=ability_label>踏みつけ</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>範囲攻撃・治癒・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、同じ範囲内の味方ユニットをジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。影響を受けた味方ユニットの攻撃力が<style=basestat>{duration}</style>の間ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分上昇し、攻撃速度が<style=basestat>{atkspeed_percentage}</style>上昇する。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>範囲攻撃・治癒・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、同じ範囲内の味方ユニットをジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。影響を受けた味方ユニットの攻撃力に<style=basestat>{duration}</style>の間、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が加算され、その攻撃速度が<style=basestat>{atkspeed_percentage}</style>上昇する。
 C
 0Base.Abilities.hero_battle_ability.KarlMarx_Name宣言の欺瞞
 +
@@ -359,8 +359,8 @@ I
 6Base.Buildings.Building_Arabia_Workshop_Incense_1_DescE香炉屋では、没薬と黄銅を使って乳香が作られる。
 Q
 ;Base.Technologies.Technology_ClassicGreece_SwiftReload_Name迅速な再装填
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_1_Name�<style=ability_label>強化</style>すべての味方ユニットを鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。加えて、攻撃力をエリザベスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_1_Name�<style=ability_label>強化</style>味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。加えて、攻撃力をエリザベスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 7
 Base.Heroes.hero.Leonidas_Nameレオニダス１世
 �
@@ -709,8 +709,8 @@ J
 Base.Units.Unit_Hoplit_Nameミルティアデス
 h
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Heavy_Name-シチリアのバイデンヘンダー剣士
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>弱体化・範囲攻撃</style>ボニーは爆弾を投げ、敵ユニットの最大集団に渦を発生させる。この渦は<style=basestat>{duration}</style>の間<style=basestat>{damage}</style>のダメージを与え、その中にいる敵ユニットの移動速度を<style=basestat>{movespeed_slow}</style>低下させる。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>弱体化・範囲攻撃</style>ボニーは爆弾を投げ、敵ユニットの最大集団に渦を発生させる。この渦は<style=basestat>{duration}</style>の間、<style=basestat>{damage}</style>のダメージを与え、その中にいる敵ユニットの移動速度を<style=basestat>{movespeed_slow}</style>低下させる。
 j
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc-隣接する建物の灌漑用水を増やす
 p
@@ -2472,8 +2472,8 @@ N
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_Name襲撃と略奪
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_Name聖銀の矢
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>瞬間移動・近接攻撃・強化</style>ラゲルタが雷と化し、最も強力な敵ユニットに突撃して<style=basestat>{damage}</style>のダメージを与える。さらに、攻撃速度が<style=basestat>{attack_speed_duration}</style>の間<style=basestat>{attack_speed_buff}</style>上昇する。
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>瞬間移動・近接攻撃・強化</style>ラゲルタが雷と化し、最も強力な敵ユニットに突撃して<style=basestat>{damage}</style>のダメージを与える。さらに、攻撃速度が<style=basestat>{attack_speed_duration}</style>の間、<style=basestat>{attack_speed_buff}</style>上昇する。
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、イムホテプの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 J
@@ -3188,8 +3188,8 @@ s
 &Base.Regions.region.FrozenFjord_4_Name妖精たちの森
 G
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_Name黄昏の重装隊
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治癒</style>タンセンが音楽の力と共鳴し、<style=basestat>{duration}</style>の間は無敵状態となる。同時に回復オーラを発生させ、周囲の味方ユニットを最大<style=basestat>{heal_amount}</style>まで継続的に治癒する。アビリティ発動中は攻撃も移動もできない。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>治癒</style>タンセンが音楽の力と共鳴し、回復オーラを発生する。オーラは<style=basestat>{duration}</style>の間、タンセンの基礎ダメージに基づく最大<style=basestat>{heal_amount}</style>分の治癒効果を周囲の味方ユニットに与える。アビリティ発動中は攻撃も移動もできない。
 Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Nameカオリン採石場
 G
@@ -3428,8 +3428,8 @@ D
 4Base.Units.Unit_StoneAge_SkullSmasherTribe_Grok_Name頭蓋砕き
 �
 %Base.Units.Unit_BenjaminFranklin_Desc�ベンジャミン・フランクリンは、言葉で雷を引き寄せ、文字通り雷も操る男だ！18世紀の多才な人物、フランクリンは、アメリカ合衆国の建国の父の一人として、独立宣言や憲法の草案作成に貢献しただけでなく、作家、発明家、科学者としても知られている。<br><br>電気の分野をいち早く探求し、凧を使って雲から「電気の火」を集め、雷が電気であることを証明した。この実験を通じて避雷針を発明し、さらに遠近両用眼鏡を考案し、海洋の研究にも携わった。<br><br>それだけでなく、外交官や作家としても広く名を馳せた。言葉の巧みさは、アメリカ独立戦争中にフランスの支援を得る上で大いに役立ち、その名は今でも書物に刻まれている。「死と税金以上に確かなものはない」という言葉は、今なお多くの人々に影響を与え続けている。
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>範囲攻撃・治癒・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、同じ範囲内の味方ユニットをジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。影響を受けた味方ユニットの攻撃力が、<style=basestat>{duration}</style>の間ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分上昇する。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>範囲攻撃・治癒・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、同じ範囲内の味方ユニットをジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。影響を受けた味方ユニットの攻撃力には<style=basestat>{duration}</style>の間、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が加算される。
 I
 0Base.Buildings.Building_Mayas_Quarry_Jade_2_Desc翡翠を生産する
 2
@@ -5216,8 +5216,8 @@ c
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_Desc!騎馬兵をアンロックする
 I
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_Name騎兵兵舎
-�
-EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
 L
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_Name王室の弩兵
 K
@@ -5258,8 +5258,8 @@ I
 9Base.Technologies.Technology_KingdomOfSicily_Melites_Name装甲騎兵
 M
 7Base.Technologies.Technology_FeudalAge_HealingMead_Name回復の蜂蜜酒
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>範囲攻撃・弱体化・燃焼・強化</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。同時に、メネスは味方ユニットの最大集団に向かい、攻撃力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>範囲攻撃・弱体化・燃焼・強化</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。同時に、メネスは味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 s
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
 H
@@ -5694,8 +5694,8 @@ I
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_Name豪華な商店
 F
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Name畜産農場
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範囲攻撃・気絶</style>モーツァルトが戦場に壮大な旋律を響かせ、敵ユニットの最大集団を攻撃し、ダメージと気絶効果を与える。アビリティを使用するたびに効果が強化され、3回目で最大の威力に達する。<br> <br>1回目：小範囲に<style=basestat>{damage_a}</style>のダメージを与え、<style=basestat>{duration_a}</style>の間気絶させる。<br>2回目：中範囲に<style=basestat>{damage_b}</style>のダメージを与え、<style=basestat>{duration_b}</style>の間気絶させる。<br>3回目以降：中範囲に<style=basestat>{damage_c}</style>のダメージを与え、<style=basestat>{duration_c}</style>の間気絶させる。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>範囲攻撃・気絶</style>モーツァルトが戦場に壮大な旋律を響かせ、敵ユニットが最も密集しているエリアを攻撃し、ダメージと気絶効果を与える。アビリティを使用するたびに効果が強化され、3回目で最大の威力に達する。<br> <br>1回目：小範囲に<style=basestat>{damage_a}</style>のダメージを与え、<style=basestat>{duration_a}</style>の間気絶させる。<br>2回目：中範囲に<style=basestat>{damage_b}</style>のダメージを与え、<style=basestat>{duration_b}</style>の間気絶させる。<br>3回目以降：中範囲に<style=basestat>{damage_c}</style>のダメージを与え、<style=basestat>{duration_c}</style>の間気絶させる。
 H
 8Base.Technologies.Technology_Egypt_CulturalExchange_Name文化交流
 H
