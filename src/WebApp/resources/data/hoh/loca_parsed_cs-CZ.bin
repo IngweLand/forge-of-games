@@ -3261,8 +3261,8 @@ R
 &Base.Regions.region.FrozenFjord_4_NameLes víl
 J
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameSoumrakové korzáři
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Uzdravení</style>Tansen se skrze svou hudbu povznese, stává se nezranitelným na <style=basestat>{duration}</style>, a získává léčivou auru, která v průběhu času vyléčí všechny spojenecké jednotky v jeho okolí až za <style=basestat>{heal_amount}</style>. Dokud je schopnost aktivní, nemůže Tansen útočit ani se pohybovat.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Léčení</style>Tansen se přenáší skrze svou hudbu a získává léčivou auru, která léčí všechny spojenecké jednotky v jeho okolí až do výše <style=basestat>{heal_amount}</style> Tansenova základního poškození po dobu <style=basestat>{duration}</style>. Dokud je schopnost aktivní, nemůže Tansen útočit ani se pohybovat.
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKaolínový lom
 K
@@ -5684,8 +5684,8 @@ I
 (Base.Regions.region.TeslaStormGreen_NameZelená Tesla bouře
 P
 <Base.Technologies.Technology_FeudalAge_RiseOfTheVikings_NameVzestup Vikingů
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_Name�<style=ability_label>Dupnutí | Obnova</style>Dupne na zem, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style> a obnoví <style=basestat>{hp_percentage}</style> svého základního poškození.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_Name�<style=ability_label>Dupnutí | Obnova</style>Dupne na zem, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style> a obnoví své body života o <style=basestat>{hp_percentage}</style> jeho základního poškození.
 �
 'Base.Units.Unit_MargaretIOfDenmark_Desc�Říkali jí Semiramis ze severu, Paní králová nebo První velká královna, ale především to byla dánská královna Markéta I. Tato panovnice 14. a 15. století se nejprve stala královnou Norska, později vládla Dánsku a Švédsku a prostřednictvím Kalmarské unie sjednotila Skandinávii.<br><br>Markéta byla proslulou diplomatkou a udržela si kontrolu nad unií navzdory tomu, že čelila neloajálním šlechticům a církvi. Vládla jménem svého vnuka, upevnila moc a prosadila stabilitu, jaká tu nebyla po celou generaci.<br><br>Její vláda nakonec přinesla Skandinávii mír a prosperitu, které jí tolik chyběly. Markéta I. je připomínána jako velká královna, "největší předtím i potom". Přesto na ni ne všichni vzpomínají s takovým zalíbením: jejímu rivalovi králi Albertovi se říkalo "král bez bříška!".
 n
@@ -5821,8 +5821,8 @@ L
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxusní kupectví
 I
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameMěstská farma
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Úder na oblast | Omráčení</style>Mozart na bojišti spustí symfonii, která omráčí a poškodí nepřátele v oblasti s největším počtem nepřátel, přičemž s každým použitím zvýší svou sílu a při třetím použití dosáhne maximální sílu. <br> <br>První použití: <style=basestat>{damage_a}</style> poškození, v malém rozsahu za <style=basestat>{duration_a}</style> <br>Druhé použití: <style=basestat>{damage_b}</style> poškození, ve středním rozsahu za <style=basestat>{duration_b}</style> <br>Od třetího použití: <style=basestat>{damage_c}</style> poškození, ve středním rozsahu pro <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Úder na oblast | Omráčení</style>Mozart rozehraje na bojišti zvučnou symfonii, při níž se zaměří na největší oblast nepřátel a způsobí jim omráčení a poškození. S každým použitím symfonie sílí a při třetím použití dosáhne svého vrcholu. <br> <br>První použití: Způsobí <style=basestat>{damage_a}</style> poškození v malém dosahu a omráčí na <style=basestat>{duration_a}</style> <br>Druhé použití: Způsobí <style=basestat>{damage_b}</style> poškození ve středním dosahu a omráčí na <style=basestat>{duration_b}</style> <br>Třetí použití a dále: Způsobuje <style=basestat>{damage_c}</style> poškození ve středním dosahu a omráčení na <style=basestat>{duration_c}</style>.
 N
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameKulturní výměna
 F
