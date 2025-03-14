@@ -2,9 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Ingweland.Fog.Shared.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Player = Ingweland.Fog.Models.Fog.Entities.Player;
@@ -24,6 +22,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
         var filtered = playerAggregates.Where(p => p.CanBeConvertedToPlayerRanking()).ToList();
         if (filtered.Count == 0)
         {
+            logger.LogInformation("No valid player aggregates to process.");
             return;
         }
 
@@ -36,11 +35,14 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
 
         foreach (var chunk in latestUnique.Chunk(1000))
         {
+            logger.LogInformation("Processing chunk with {ChunkSize} items", chunk.Length);
             var inGamePlayerIds = chunk.Select(p => p.InGamePlayerId).ToHashSet();
             var earliestDate = chunk.OrderBy(p => p.CollectedAt).Select(p => p.CollectedAt).First();
 
             var existingPlayers = await FindExistingPlayers(inGamePlayerIds, earliestDate);
-            
+            logger.LogInformation("Found {ExistingPlayerCount} existing players for the current chunk",
+                existingPlayers.Count);
+
             foreach (var playerAggregate in chunk)
             {
                 if (existingPlayers.TryGetValue(playerAggregate.Key, out var existingPlayer))
@@ -72,12 +74,16 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                 }
                 else
                 {
-                    // log warning
+                    logger.LogWarning("Player with key {PlayerKey} not found in existing players", playerAggregate.Key);
                 }
-
-                await context.SaveChangesAsync();
             }
+            
+            await context.SaveChangesAsync();
         }
+
+        logger.LogInformation(
+            "Completed processing: {UpdatedPlayers} players updated, {UpdatedRankings} rankings updated, {AddedRankings} rankings added",
+            updatedPlayerCount, updatedRankingCount, addedRankingCount);
     }
 
     private async Task<Dictionary<PlayerKey, Player>> FindExistingPlayers(HashSet<int> inGamePlayerIds,
@@ -88,6 +94,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
             .Include(p => p.Rankings.Where(pr => pr.CollectedAt > date))
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
             .ToListAsync();
+        logger.LogInformation("Retrieved {PlayerCount} players from database", players.Count);
         return players.ToDictionary(p => p.Key);
     }
 }

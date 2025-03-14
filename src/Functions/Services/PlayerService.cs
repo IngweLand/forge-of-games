@@ -23,9 +23,12 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
             .OrderByDescending(p => p.CollectedAt) // we need this to correctly set UpdateAt on the player
             .DistinctBy(p => p.Key)
             .ToDictionary(p => p.Key);
+        logger.LogInformation("Filtered aggregates to {UniqueCount} unique items.", unique.Count);
         var existingPlayerKeys = await GetExistingPlayersAsync(unique.Keys.Select(pk => pk.InGamePlayerId).ToHashSet());
-        var newPlayerKeys = unique.Keys.ToHashSet().Except(existingPlayerKeys);
-        var newPlayers = newPlayerKeys.Select(k =>
+        logger.LogInformation("Found {ExistingCount} existing players.", existingPlayerKeys.Count);
+        var newPlayerKeys = unique.Keys.ToHashSet().Except(existingPlayerKeys).ToList();
+        logger.LogInformation("Identified {NewCount} new players.", newPlayerKeys.Count);
+        var newPlayersList = newPlayerKeys.Select(k =>
         {
             var playerAggregate = unique[k];
             return new Player()
@@ -37,16 +40,20 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
                 AvatarId = playerAggregate.AvatarId ?? 0,
                 UpdatedAt = DateOnly.FromDateTime(playerAggregate.CollectedAt),
             };
-        });
-        context.Players.AddRange(newPlayers);
+        }).ToList();
+        context.Players.AddRange(newPlayersList);
         await context.SaveChangesAsync();
+        logger.LogInformation("Saved {NewPlayersCount} new players.", newPlayersList.Count);
     }
 
     private async Task<HashSet<PlayerKey>> GetExistingPlayersAsync(HashSet<int> inGamePlayerIds)
     {
-        return await context.Players
+        logger.LogInformation("Querying existing players for {IdCount} in-game player IDs.", inGamePlayerIds.Count);
+        var existing = await context.Players
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
             .ProjectTo<PlayerKey>(mapper.ConfigurationProvider)
             .ToHashSetAsync();
+        logger.LogInformation("Query returned {ExistingCount} existing players.", existing.Count);
+        return existing;
     }
 }

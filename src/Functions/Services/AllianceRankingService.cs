@@ -19,8 +19,10 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
     public async Task AddOrUpdateRankingsAsync(IEnumerable<AllianceAggregate> allianceAggregates)
     {
         var filtered = allianceAggregates.Where(a => a.CanBeConvertedToAllianceRanking()).ToList();
+        logger.LogInformation("Filtered to {FilteredCount} valid alliance aggregates.", filtered.Count);
         if (filtered.Count == 0)
         {
+            logger.LogInformation("No valid alliance aggregates to process. Exiting method.");
             return;
         }
 
@@ -28,17 +30,22 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
             .GroupBy(p => (p.WorldId, p.InGameAllianceId, DateOnly.FromDateTime(p.CollectedAt)))
             .Select(g => g.OrderByDescending(p => p.CollectedAt).First())
             .ToList();
+        logger.LogInformation("Latest unique aggregates count: {Count}.", latestUnique.Count);
 
         int updatedAllianceCount = 0, updatedRankingCount = 0, addedRankingCount = 0;
 
         foreach (var chunk in latestUnique.Chunk(1000))
         {
+            logger.LogInformation("Processing a chunk of {ChunkCount} aggregates.", chunk.Count());
             var inGameAllianceIds = chunk.Select(p => p.InGameAllianceId).ToHashSet();
-            var inGameLeaderIds = chunk.Where(a => a.LeaderInGameId.HasValue).Select(p => p.LeaderInGameId!.Value).ToHashSet();
+            var inGameLeaderIds = chunk.Where(a => a.LeaderInGameId.HasValue).Select(p => p.LeaderInGameId!.Value)
+                .ToHashSet();
             var earliestDate = chunk.OrderBy(p => p.CollectedAt).Select(p => p.CollectedAt).First();
 
             var existingAlliances = await FindExistingAlliances(inGameAllianceIds, earliestDate);
-            var leaderIds = await FindLeaderIds(inGameLeaderIds);
+            logger.LogInformation("Found {Count} existing alliances for current chunk.", existingAlliances.Count);
+            var leaderIds = await FindLeaders(inGameLeaderIds);
+            logger.LogInformation("Found {Count} leader IDs.", leaderIds.Count);
 
             foreach (var allianceAggregate in chunk)
             {
@@ -71,9 +78,19 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
 
                         if (allianceAggregate.LeaderInGameId.HasValue && leaderIds.TryGetValue(
                                 new PlayerKey(allianceAggregate.WorldId, allianceAggregate.LeaderInGameId.Value),
-                                out var leaderId))
+                                out var leader))
                         {
-                            existingAlliance.LeaderId = leaderId;
+                            if (existingAlliance.LeaderId != leader.Id)
+                            {
+                                var oldLedAlliance = await context.Alliances
+                                    .FirstOrDefaultAsync(a => a.LeaderId == leader.Id);
+
+                                if (oldLedAlliance != null)
+                                {
+                                    oldLedAlliance.Leader = null;
+                                }
+                                existingAlliance.Leader = leader;
+                            }
                         }
 
                         updatedAllianceCount++;
@@ -81,31 +98,40 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                 }
                 else
                 {
-                    // log warning
+                    logger.LogWarning("Alliance with key {AllianceKey} not found.", allianceAggregate.Key);
                 }
-
-                await context.SaveChangesAsync();
             }
+            
+            await context.SaveChangesAsync();
         }
+
+        logger.LogInformation(
+            "Finished processing alliance aggregates. Updated Alliances: {UpdatedAllianceCount}, Updated Rankings: {UpdatedRankingCount}, Added Rankings: {AddedRankingCount}.",
+            updatedAllianceCount, updatedRankingCount, addedRankingCount);
     }
 
     private async Task<Dictionary<AllianceKey, Alliance>> FindExistingAlliances(HashSet<int> inGameAllianceIds,
         DateTime earliestDate)
     {
-        var date = DateOnly.FromDateTime(earliestDate).AddDays(-1);
+        var queryDate = DateOnly.FromDateTime(earliestDate).AddDays(-1);
+        logger.LogInformation(
+            "Querying existing alliances for {Count} in-game alliance IDs with collected date after {QueryDate}.",
+            inGameAllianceIds.Count, queryDate);
         var alliances = await context.Alliances
-            .Include(p => p.Rankings.Where(pr => pr.CollectedAt > date))
+            .Include(p => p.Rankings.Where(pr => pr.CollectedAt > queryDate))
             .Where(p => inGameAllianceIds.Contains(p.InGameAllianceId))
             .ToListAsync();
+        logger.LogInformation("Found {AllianceCount} alliances from DB.", alliances.Count);
         return alliances.ToDictionary(p => p.Key);
     }
 
-    private async Task<Dictionary<PlayerKey, int>> FindLeaderIds(HashSet<int> inGamePlayerIds)
+    private async Task<Dictionary<PlayerKey, Player>> FindLeaders(HashSet<int> inGamePlayerIds)
     {
-        var alliances = await context.Players
+        logger.LogInformation("Querying leader IDs for {Count} in-game player IDs.", inGamePlayerIds.Count);
+        var players = await context.Players
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
-            .Select(p => new {p.Id, p.InGamePlayerId, p.WorldId})
             .ToListAsync();
-        return alliances.ToDictionary(p => new PlayerKey(p.WorldId, p.InGamePlayerId), p => p.Id);
+        logger.LogInformation("Found {PlayerCount} players.", players.Count);
+        return players.ToDictionary(p => new PlayerKey(p.WorldId, p.InGamePlayerId));
     }
 }
