@@ -20,9 +20,13 @@ public class PvpRankingService(IFogDbContext context, IMapper mapper, ILogger<Pv
 
     public async Task AddOrUpdateRankingsAsync(IEnumerable<PlayerAggregate> playerAggregates)
     {
-        var filtered = playerAggregates.Where(p => p.CanBeConvertedToPvpRanking()).ToList();
+        var playerAggregatesList = playerAggregates.ToList();
+        logger.LogInformation("AddOrUpdateRankingsAsync started with {Count} aggregates", playerAggregatesList.Count);
+        var filtered = playerAggregatesList.Where(p => p.CanBeConvertedToPvpRanking()).ToList();
+        logger.LogInformation("Filtered aggregates count: {Count}", filtered.Count);
         if (filtered.Count == 0)
         {
+            logger.LogInformation("No valid player aggregates to process");
             return;
         }
 
@@ -31,14 +35,18 @@ public class PvpRankingService(IFogDbContext context, IMapper mapper, ILogger<Pv
             .Select(g => g.OrderByDescending(p => p.CollectedAt).First())
             .ToList();
 
-        int updatedPlayerCount = 0, updatedRankingCount = 0, addedRankingCount = 0;
+        int updatedRankingCount = 0, addedRankingCount = 0;
+
+        logger.LogInformation("Processing {Count} unique player aggregates", latestUnique.Count);
 
         foreach (var chunk in latestUnique.Chunk(1000))
         {
+            logger.LogInformation("Processing chunk with {ChunkSize} aggregates", chunk.Length);
             var inGamePlayerIds = chunk.Select(p => p.InGamePlayerId).ToHashSet();
             var earliestDate = chunk.OrderBy(p => p.CollectedAt).Select(p => p.CollectedAt).First();
-
+            logger.LogInformation("Earliest collected date in chunk: {EarliestDate}", earliestDate);
             var existingPlayers = await FindExistingPlayers(inGamePlayerIds, earliestDate);
+            logger.LogInformation("Found {Count} existing players in current chunk", existingPlayers.Count);
 
             foreach (var playerAggregate in chunk)
             {
@@ -51,6 +59,7 @@ public class PvpRankingService(IFogDbContext context, IMapper mapper, ILogger<Pv
                         existingRanking.Points = playerAggregate.PvpRankingPoints!.Value;
                         existingRanking.Rank = playerAggregate.PvpRank!.Value;
                         updatedRankingCount++;
+                        logger.LogDebug("Updated ranking for player {PlayerKey} at {Date}", playerAggregate.Key, date);
                     }
                     else
                     {
@@ -61,16 +70,19 @@ public class PvpRankingService(IFogDbContext context, IMapper mapper, ILogger<Pv
                             CollectedAt = date,
                         });
                         addedRankingCount++;
+                        logger.LogDebug("Added ranking for player {PlayerKey} at {Date}", playerAggregate.Key, date);
                     }
                 }
                 else
                 {
-                    // log warning
+                    logger.LogWarning("Player with key {PlayerKey} not found in existing players", playerAggregate.Key);
                 }
 
                 await context.SaveChangesAsync();
+                logger.LogDebug("Saved changes for player {PlayerKey}", playerAggregate.Key);
             }
         }
+        logger.LogInformation("Completed processing. Updated ranking count: {UpdatedRankingCount}, Added ranking count: {AddedRankingCount}", updatedRankingCount, addedRankingCount);
     }
 
     private static DateTime AdjustCollectedTime(DateTime src)
@@ -83,10 +95,12 @@ public class PvpRankingService(IFogDbContext context, IMapper mapper, ILogger<Pv
         DateTime earliestDate)
     {
         var date = earliestDate.AddDays(-1);
+        logger.LogInformation("Fetching players with InGamePlayerIds count: {Count} with date filter > {Date}", inGamePlayerIds.Count, date);
         var players = await context.Players
             .Include(p => p.PvpRankings.Where(pr => pr.CollectedAt > date))
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
             .ToListAsync();
+        logger.LogInformation("Fetched {Count} players from database", players.Count);
         return players.ToDictionary(p => p.Key);
     }
 }

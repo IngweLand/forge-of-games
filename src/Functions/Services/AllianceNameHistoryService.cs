@@ -2,7 +2,6 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Functions.Extensions;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -19,9 +18,11 @@ public class AllianceNameHistoryService(IFogDbContext context, ILogger<PlayerRan
     public async Task UpdateAsync(IEnumerable<AllianceAggregate> allianceAggregates)
     {
         var filtered = Filter(allianceAggregates);
+        logger.LogInformation("Filtered alliance aggregates count: {FilteredCount}", filtered.Count);
 
         if (filtered.Count == 0)
         {
+            logger.LogInformation("No valid alliance aggregates to process after filtering.");
             return;
         }
 
@@ -29,8 +30,12 @@ public class AllianceNameHistoryService(IFogDbContext context, ILogger<PlayerRan
 
         foreach (var chunk in grouped.Chunk(1000))
         {
+            logger.LogInformation("Processing a chunk containing {ChunkCount} alliance groups", chunk.Count());
             var inGameAllianceIds = chunk.Select(g => g.Key.InGameAllianceId).ToHashSet();
             var existingAlliances = await FindExistingAlliances(inGameAllianceIds);
+
+            logger.LogInformation("Retrieved {ExistingCount} existing alliances for the current chunk",
+                existingAlliances.Count);
 
             foreach (var allianceGroup in chunk)
             {
@@ -40,12 +45,17 @@ public class AllianceNameHistoryService(IFogDbContext context, ILogger<PlayerRan
                 }
                 else
                 {
-                    // log warning 
+                    logger.LogWarning("Alliance not found for key {AllianceKey}. Skipping processing.",
+                        allianceGroup.Key);
                 }
             }
 
+            logger.LogInformation("Saving changes for the current chunk.");
             await context.SaveChangesAsync();
+            logger.LogInformation("Successfully saved changes for the current chunk.");
         }
+
+        logger.LogInformation("UpdateAsync completed processing alliance aggregates.");
     }
 
     private List<AllianceAggregate> Filter(IEnumerable<AllianceAggregate> allianceAggregates)
@@ -72,12 +82,14 @@ public class AllianceNameHistoryService(IFogDbContext context, ILogger<PlayerRan
         }
     }
 
-    private async Task<Dictionary<AllianceKey, Alliance>> FindExistingAlliances(HashSet<int> inGamePlayerIds)
+    private async Task<Dictionary<AllianceKey, Alliance>> FindExistingAlliances(HashSet<int> inGameAllianceIds)
     {
-        var players = await context.Alliances
+        var alliances = await context.Alliances
             .Include(a => a.NameHistory)
-            .Where(p => inGamePlayerIds.Contains(p.InGameAllianceId))
+            .Where(p => inGameAllianceIds.Contains(p.InGameAllianceId))
             .ToListAsync();
-        return players.ToDictionary(p => p.Key);
+        logger.LogDebug("Retrieved {AlliancesCount} alliances from the database for in-game alliance IDs.",
+            alliances.Count);
+        return alliances.ToDictionary(p => p.Key);
     }
 }

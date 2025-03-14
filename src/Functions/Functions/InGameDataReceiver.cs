@@ -1,3 +1,4 @@
+using System.Linq;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Functions.Validators;
@@ -38,6 +39,7 @@ public class InGameDataReceiver(
         try
         {
             var now = DateTime.UtcNow;
+            logger.LogInformation("Processing raw data at {Time}", now);
             var rawData = new InGameRawData
             {
                 Base64Data = inGameData.Base64ResponseData!,
@@ -47,14 +49,15 @@ public class InGameDataReceiver(
             foreach (var pk in hohHelperResponseDtoToTablePkConverter.Get(inGameData, date))
             {
                 await inGameRawDataTableRepository.SaveAsync(rawData, pk);
+                logger.LogInformation("Saved raw data for primary key: {PrimaryKey}", pk);
             }
-            
+            logger.LogInformation("Processing raw data completed");
         }
         catch (Exception e)
         {
-            logger.LogError(e, "");
+            logger.LogError(e, "Error occurred while processing raw data");
         }
-
+        logger.LogInformation("Function InGameDataReceiver completed");
         return new NoContentResult();
     }
 
