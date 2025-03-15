@@ -1,14 +1,11 @@
 using System.Drawing;
-using System.Text.Json;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
-using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
@@ -48,14 +45,13 @@ public class CityPlanner(
     IStringLocalizer<FogResource> localizer,
     IMapper mapper) : ICityPlanner
 {
-    public event Action? StateHasChanged;
-
     private IDictionary<CityId, CityPlannerDataDto>
         _cityPlannerDataCache = new Dictionary<CityId, CityPlannerDataDto>();
 
     private MapArea _mapArea = null!;
     private MapAreaRenderer _mapAreaRenderer = null!;
     private StatsProcessor _statsProcessor = null!;
+    public event Action? StateHasChanged;
 
     public CityMapState CityMapState { get; private set; } = null!;
 
@@ -76,10 +72,13 @@ public class CityPlanner(
                 PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city);
             var statsProcessor = cityStatsProcessorFactory.Create(state);
             statsProcessor.UpdateStats();
-            
+
             stats.Add(snapshot, state.CityStats);
         }
-        var currentStateSnapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities),localizer[FogResource.CityPlanner_Snapshots_Current]);
+
+        var currentStateSnapshot =
+            snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities),
+                localizer[FogResource.CityPlanner_Snapshots_Current]);
         stats.Add(currentStateSnapshot, CityMapState.CityStats);
         return snapshotsComparisonViewModelFactory.Create(stats);
     }
@@ -120,13 +119,14 @@ public class CityPlanner(
         _mapAreaRenderer.Render(canvas);
         buildingRenderer.RenderBuildings(canvas, CityMapState.CityMapEntities);
     }
-    
+
     public Task CreateSnapshot()
     {
         if (CityMapState.Snapshots.Count >= FogConstants.MaxHohCitySnapshots)
         {
             return Task.CompletedTask;
         }
+
         var snapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities));
         CityMapState.AddSnapshot(snapshot);
         return SaveCity();
@@ -176,7 +176,7 @@ public class CityPlanner(
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
     }
-    
+
     public async Task SaveCity()
     {
         await persistenceService.SaveCity(GetCity());
@@ -244,15 +244,6 @@ public class CityPlanner(
         }
 
         return canBePlaced;
-    }
-
-    private HohCity GetCity()
-    {
-        DeselectAll();
-        UpdateSelectedEntityViewModel();
-
-        return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots);
     }
 
     public CityMapEntity UpdateLevel(CityMapEntity entity, int level)
@@ -343,6 +334,15 @@ public class CityPlanner(
         }
     }
 
+    private HohCity GetCity()
+    {
+        DeselectAll();
+        UpdateSelectedEntityViewModel();
+
+        return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
+            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots);
+    }
+
     private void DeselectAll()
     {
         if (CityMapState.SelectedCityMapEntity != null)
@@ -398,6 +398,15 @@ public class CityPlanner(
                 kvp.Value.Group == currentBuilding.Group && kvp.Value.Level == level).Value;
             var newStats = cityMapEntityStatsFactory.Create(newBuilding);
             newEntity = currentEntity.CloneWithLevel(newBuilding.Id, level, newStats);
+            if (currentEntity.SelectedProductId != null)
+            {
+                var lastProduct = newEntity.FirstOrDefaultStat<ProductionProvider>()?.ProductionComponents
+                    .LastOrDefault();
+                if (lastProduct != null)
+                {
+                    newEntity.SelectedProductId = lastProduct.Id;
+                }
+            }
         }
         else
         {
