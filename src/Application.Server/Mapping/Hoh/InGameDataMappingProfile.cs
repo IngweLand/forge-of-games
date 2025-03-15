@@ -17,5 +17,6 @@ public class InGameDataMappingProfile : Profile
             });
         CreateMap<CityDTO, City>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId));
+        CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>();
     }
 }
