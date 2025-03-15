@@ -1,40 +1,16 @@
 using System.Runtime.Serialization;
 using System.Text.Json;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Infrastructure.Entities;
 
 public class InGameStartupDataTableEntity : TableEntityBase
 {
     private IReadOnlyCollection<HohCity>? _cities;
-    private string? _citiesJson;
+    private byte[]? _citiesData;
     private BasicCommandCenterProfile? _profile;
-    private string? _profileJson;
-
-    [IgnoreDataMember]
-    public BasicCommandCenterProfile? Profile
-    {
-        get => _profile;
-        set
-        {
-            _profile = value;
-            _profileJson = value != null
-                ? JsonSerializer.Serialize(value)
-                : null;
-        }
-    }
-
-    public string? ProfileJson
-    {
-        get => _profileJson;
-        set
-        {
-            _profileJson = value;
-            _profile = !string.IsNullOrWhiteSpace(value)
-                ? JsonSerializer.Deserialize<BasicCommandCenterProfile>(value)
-                : null;
-        }
-    }
+    private byte[]? _profileData;
 
     [IgnoreDataMember]
     public IReadOnlyCollection<HohCity>? Cities
@@ -43,20 +19,45 @@ public class InGameStartupDataTableEntity : TableEntityBase
         set
         {
             _cities = value;
-            _citiesJson = value != null
-                ? JsonSerializer.Serialize(value)
+            _citiesData = value != null
+                ? CompressionUtils.CompressString(JsonSerializer.Serialize(value))
                 : null;
         }
     }
 
-    public string? CitiesJson
+    public byte[]? CitiesData
     {
-        get => _citiesJson;
+        get => _citiesData;
         set
         {
-            _citiesJson = value;
-            _cities = !string.IsNullOrWhiteSpace(value)
-                ? JsonSerializer.Deserialize<IReadOnlyCollection<HohCity>>(value)
+            _citiesData = value;
+            _cities = value != null
+                ? JsonSerializer.Deserialize<IReadOnlyCollection<HohCity>>(CompressionUtils.DecompressToString(value))
+                : null;
+        }
+    }
+
+    [IgnoreDataMember]
+    public BasicCommandCenterProfile? Profile
+    {
+        get => _profile;
+        set
+        {
+            _profile = value;
+            _profileData = value != null
+                ? CompressionUtils.CompressString(JsonSerializer.Serialize(value))
+                : null;
+        }
+    }
+
+    public byte[]? ProfileData
+    {
+        get => _profileData;
+        set
+        {
+            _profileData = value;
+            _profile = value != null
+                ? JsonSerializer.Deserialize<BasicCommandCenterProfile>(CompressionUtils.DecompressToString(value))
                 : null;
         }
     }
