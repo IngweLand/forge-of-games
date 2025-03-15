@@ -3,8 +3,7 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Player)">
-    <div class="rank"
-         style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
+    <div class="rank" style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
         @Player.Rank
     </div>
     <div class="avatar-container">
@@ -12,7 +11,10 @@
     </div>
     <div class="content">
         <div class="content-top">
-            <span class="content-label">@Player.Name</span>
+            <span class="content-label"
+                  style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
+                @Player.Name
+            </span>
             @if (Player.AllianceName != null)
             {
                 <span class="alliance-label">|</span>
@@ -22,8 +24,11 @@
         </div>
         <div class="age-label" style="background-color: @Player.AgeColor">@Player.Age</div>
     </div>
-    <div class="points">@Player.RankingPoints</div>
-    @if(Player.IsStale)
+    <div class="points"
+         style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+        @Player.RankingPoints
+    </div>
+    @if (Player.IsStale)
     {
         <div class="updated-at-label">@Loc[FogResource.StatsHub_UpdatedOn, @Player.UpdatedAt]</div>
     }
@@ -33,7 +38,7 @@
 
     [Parameter]
     public required PlayerViewModel Player { get; set; }
-    
+
     [Parameter]
     public EventCallback<PlayerViewModel> OnClick { get; set; }
 

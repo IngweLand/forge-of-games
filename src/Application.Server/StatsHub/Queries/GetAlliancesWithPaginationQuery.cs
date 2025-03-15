@@ -36,7 +36,8 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
         }
 
         return result
-            .OrderByDescending(p => p.RankingPoints)
+            .OrderByDescending(p => p.UpdatedAt)
+            .ThenByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)
             .ToPaginatedListAsync(request.PageNumber, pageSize, cancellationToken);

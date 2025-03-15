@@ -3,8 +3,7 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Alliance)">
-    <div class="rank"
-         style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
+    <div class="rank" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
         @Alliance.Rank
     </div>
     <div class="avatar-container">
@@ -13,11 +12,17 @@
     </div>
     <div class="content">
         <div class="content-top">
-            <span class="content-label">@Alliance.Name</span>
+            <span class="content-label"
+                  style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
+                @Alliance.Name
+            </span>
         </div>
     </div>
-    <div class="points">@Alliance.RankingPoints</div>
-    @if(Alliance.IsStale)
+    <div class="points"
+         style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+        @Alliance.RankingPoints
+    </div>
+    @if (Alliance.IsStale)
     {
         <div class="updated-at-label">@Loc[FogResource.StatsHub_UpdatedOn, Alliance.UpdatedAt]</div>
     }
@@ -27,7 +32,7 @@
 
     [Parameter, EditorRequired]
     public required AllianceViewModel Alliance { get; set; }
-    
+
     [Parameter, EditorRequired]
     public EventCallback<AllianceViewModel> OnClick { get; set; }
 
