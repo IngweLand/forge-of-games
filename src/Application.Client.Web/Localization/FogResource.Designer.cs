@@ -294,6 +294,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete city.
+        /// </summary>
+        public static string CityPlanner_Actions_DeleteCityButton {
+            get {
+                return ResourceManager.GetString("CityPlanner.Actions.DeleteCityButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Area.
         /// </summary>
         public static string CityPlanner_Area {

@@ -1,19 +1,84 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
 @using Microsoft.Extensions.Localization
-@using Size = MudBlazor.Size
+@implements IDisposable
 @inject ICityPlanner CityPlanner
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
 
 <div class="fog-container component-root">
     <div class="main-container">
-        <MudButton StartIcon="@Icons.Material.Filled.Share" Size="Size.Small" Variant="Variant.Filled"
-                   OnClick="ShareProfile">@Loc[FogResource.Common_Share]</MudButton>
+        <div class="section-container">
+            <MudTextField T="string" FullWidth="true"
+                          @bind-Value="@_cityName"
+                          Label="@Loc[FogResource.CityPlanner_CityName]"
+                          MaxLength="@FogConstants.NAME_MAX_CHARACTERS"
+                          Counter="@FogConstants.NAME_MAX_CHARACTERS"
+                          Immediate="true"
+                          Validation="@(new Func<string, IEnumerable<string>>(ValidateInput))"
+                          Required="true"/>
+            <MudButton Color="Color.Success" Variant="Variant.Filled"
+                       OnClick="SaveName"
+                       Disabled="@(!string.IsNullOrWhiteSpace(ValidateInput(_cityName).FirstOrDefault()))">
+                @Loc[FogResource.Common_Save]
+            </MudButton>
+        </div>
+        <MudButton StartIcon="@Icons.Material.Filled.Share" Variant="Variant.Filled"
+                   OnClick="ShareProfile">@Loc[FogResource.Common_Share]
+        </MudButton>
+        <MudButton Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" Variant="Variant.Filled"
+                   OnClick="OnDeleteClicked">
+            @Loc[FogResource.CityPlanner_Actions_DeleteCityButton]
+        </MudButton>
     </div>
 </div>
 
 @code {
+
+    private string _cityName;
+
+    protected override void OnInitialized()
+    {
+        _cityName = CityPlanner.CityMapState.CityName;
+        CityPlanner.StateHasChanged += CityPlannerOnStateHasHasChanged;
+    }
+
+    private void CityPlannerOnStateHasHasChanged()
+    {
+        _cityName = CityPlanner.CityMapState.CityName;
+        StateHasChanged();
+    }
+
+    private async Task SaveName()
+    {
+        await CityPlanner.SaveCityAsync(_cityName);
+    }
+
+    private async Task Delete()
+    {
+        await CityPlanner.DeleteCityAsync();
+    }
+
+    private async Task OnDeleteClicked()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.Common_DeleteConfirmation, CityPlanner.CityMapState.CityName],
+            yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            await Delete();
+        }
+    }
+
+    private IEnumerable<string> ValidateInput(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            yield return Loc[FogResource.CityPlanner_NameRequiredError];
+        else if (input.Length > FogConstants.NAME_MAX_CHARACTERS)
+            yield return Loc[FogResource.CityPlanner_NameTooLongError, FogConstants.NAME_MAX_CHARACTERS];
+    }
 
     private async Task ShareProfile()
     {
@@ -22,14 +87,19 @@
             MaxWidth = MaxWidth.Small,
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
-            Position = DialogPosition.TopCenter,
+            Position = DialogPosition.TopCenter
         };
         var parameters = new DialogParameters<ShareCityDialog>
         {
-            {d => d.CityId, CityPlanner.CityMapState.CityId},
+            {d => d.CityId, CityPlanner.CityMapState.CityId}
         };
         await DialogService.ShowAsync<ShareCityDialog>(Loc[FogResource.CommandCenter_ShareCityDialog_Title],
             parameters, options);
+    }
+
+    public void Dispose()
+    {
+        CityPlanner.StateHasChanged -= CityPlannerOnStateHasHasChanged;
     }
 
 }

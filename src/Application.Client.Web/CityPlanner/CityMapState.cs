@@ -62,7 +62,7 @@ public class CityMapState(
     public required string CityId { get; init; }
 
     public IReadOnlyList<CityMapEntity> CityMapEntities => _cityMapEntities.AsReadOnly();
-    public required string CityName { get; init; }
+    public required string CityName { get; set; }
 
     public CityPlannerCityPropertiesViewModel? CityPropertiesViewModel
     {

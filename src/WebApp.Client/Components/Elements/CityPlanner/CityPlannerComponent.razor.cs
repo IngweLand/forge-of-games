@@ -286,7 +286,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private async Task Save()
     {
-        await CityPlanner.SaveCity();
+        await CityPlanner.SaveCityAsync();
     }
 
     private void SelectGroup()
