@@ -80,7 +80,6 @@ public static class DependencyInjection
         services.AddScoped<ICityMapEntityInteractionComponent, CityMapEntityInteractionComponent>();
         services.AddScoped<ICityMapEntityFactory, CityMapEntityFactory>();
         services.AddScoped<IMapAreaFactory, MapAreaFactory>();
-        services.AddScoped<IBuildingRenderer, BuildingRenderer>();
         services.AddScoped<ICommandManager, CommandManager>();
         services.AddScoped<ICityPlannerCommandFactory, CityPlannerCommandFactory>();
         services.AddScoped<IBuildingViewModelFactory, BuildingViewModelFactory>();
@@ -115,5 +114,7 @@ public static class DependencyInjection
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         
         services.AddScoped<CityPlannerSettings>();
+        
+        services.AddHttpClient<IBuildingRenderer, BuildingRenderer>();
     }
 }

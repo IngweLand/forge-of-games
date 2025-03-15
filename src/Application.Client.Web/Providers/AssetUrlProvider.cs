@@ -55,6 +55,18 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
     public string GetHohWorkerIconUrl(CityId cityId)=>
         GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_workers_city_{cityId.ToString().ToLowerInvariant()}.png");
 
+    public string GetNotoSansFontUrl(string locale)
+    {
+        var filename = locale switch
+        {
+            "ja-JP" => "NotoSansJP-Regular.ttf",
+            "zh-TW" => "NotoSansTC-Regular.ttf",
+            _ => "NotoSans-Regular.ttf",
+        };
+        var basePath = assetsSettings.Value.BaseUrl.TrimEnd('/');
+        return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename}) ;
+    }
+
     private string GetAssetUrl(params string[] pathElements)
     {
         var cleanElements = pathElements

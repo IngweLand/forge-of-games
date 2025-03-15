@@ -395,6 +395,8 @@ public class CityPlanner(
             _cityPlannerDataCache.Add(city.InGameCityId, cityPlannerData);
         }
 
+        await buildingRenderer.InitializeAsync();
+
         commandManager.Reset();
         CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
             PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city);
