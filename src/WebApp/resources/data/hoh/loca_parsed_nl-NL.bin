@@ -405,8 +405,6 @@ P
 $Base.BuildingGroups.averageHome_NameMiddelgrote woningMiddelgrote woningen
 ­
 !Base.Units.Unit_RomanPraetor_Desc‡Feest als een Romein met Aemilia Tertia! Deze socialite uit de 2e eeuw voor Christus in het oude Rome was de vrouw van Scipio Africanus, de beroemde generaal die Hannibal versloeg in de Tweede Punische Oorlog. Ze stond bekend om haar adellijke geboorte en haar huwelijk in een van de leidende families van Rome en was een voorbeeld van de deugden van de Romeinse matrone.<br><br>Haar leven staat bekend om haar support voor de militaire en politieke carriÃ¨re van haar man, naast haar rol in het huishouden en de opvoeding van haar kinderen, waaronder Cornelia Africana, moeder van de Gracchi broers.<br><br>De nalatenschap van Aemilia Tertia weerspiegelt de invloedrijke rollen die vrouwen konden hebben in de Romeinse samenleving ondanks hun beperkte publieke aanwezigheid.
-ü
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc¦<style=ability_label>Schild | Geest Link | Mind Control</style>Alexander start een verovering binnen een Bereik van <style=basestat>{bereik}</style>, en Levert alle vriendelijke eenheden in dit gebied een schild ter waarde van <style=basestat>{schild_per_seconde}</style> per seconde gedurende <style=basestat>{duur}</style>. Bevriende eenheden zijn tijdens de verovering met elkaar verbonden door middel van geesten, waardoor de inkomende schade tussen hen wordt gedeeld. Aan het einde van de duur wordt de vijand met de laagste HP binnen het Bereik gedachtengestuurd om hun bondgenoten aan te vallen voor <style=basestat>{mind_control_duration}</style>. Geeft Helden voorrang.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 ›
@@ -898,8 +896,6 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 1Base.Buildings.Building_China_Home_Premium_1_NameLuxe woning
 J
 #Base.BuildingGroups.chronicler_NameKroniekschrijverKroniekschrijvers
-’
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc¼<style=ability_label>Taunt | Shield | Area Strike</style>Filips II van MacedoniÃ« krijgt een groot schild ter waarde van <style=basestat>{shield_percentage}</style> van zijn Basis Schade en taunt alle vijandelijke eenheden gedurende <style=basestat>{taunt_duration}</style>. Na <style=basestat>{detonatie_tijd}</style>, ontploft zijn schild en brengt <style=basestat>{schade_percentage}</style> van de resterende waarde van het schild schade toe aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{bereik}</style>. De detonatie verbruikt Philip's schild.
 G
 5Base.Technologies.Technology_Vikings_HealingMead_NameGenesende mede
 <
@@ -1307,6 +1303,8 @@ D
 Base.Units.Unit_Spartacus_Name	Spartacus
 E
 1Base.Buildings.Building_Egypt_Home_Average_3_NameMiddelgroot huis
+Ú
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name„<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 E
 (Base.BuildingGroups.smallIrrigation_Name
 Kleine putKleine putten
@@ -2303,6 +2301,8 @@ c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLyceum der Geleerden
 W
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameGotische Boogschutters
+—
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_NameÁ<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 )
 Base.Ages.RomanEmpire_Finish	50 v.Chr.
 C
@@ -2535,8 +2535,8 @@ N
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NamePlunderinvallen
 C
 2Base.Abilities.hero_battle_ability.VanHelsing_NameZilver Bouten
-Š
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name½<style=ability_label>Teleport | Schade aanval | Buff </style> Lagertha wordt zelf bliksem en valt de krachtigste vijandelijke eenheid aan, waarbij ze <style=basestat>{schade}</style> uitdeelt en <style=basestat>{aanval_snelheid_buff}</style> aanvalssnelheid krijgt voor <style=basestat>{aanval_snelheid_duur}</style>.
+÷
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Nameª<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 Ú
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name‡<style=ability_label>Debuff</style> Richt zich op de grootste groep vijandelijke eenheden, vermindert DEF met <style=basestat>{atk_percentage}</style> van Imhotep's ATK voor <style=basestat>{duration}</style> binnen een bereik van <style=basestat>{range}</style>.
 K

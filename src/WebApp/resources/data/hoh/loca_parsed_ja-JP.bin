@@ -397,8 +397,6 @@ g
 $Base.BuildingGroups.averageHome_Name大きな住宅
 �
 !Base.Units.Unit_RomanPraetor_Desc�ローマの華やかな社交界を彩ったアエミリア・テルティア。紀元前2世紀のローマに生き、第二次ポエニ戦争でハンニバルを打ち破った名将スキピオ・アフリカヌスの妻として知られる。名門の出身であり、ローマの貴婦人の理想像とされた。<br><br>夫の軍事や政治活動を支えつつ、家庭を取り仕切り、子どもたちの教育にも尽力。特に、後に改革派として知られるグラックス兄弟の母となるコルネリア・アフリカナを育てたことで名を残した。<br><br>公の場で目立つことは少なかったが、その影響力は計り知れない。アエミリア・テルティアの名は、ローマ社会における女性の重要な役割を今に伝えている。
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>シールド・魂リンク・精神支配</style>アレクサンドロスが<style=basestat>{range}</style>の範囲内で帝国の制覇を開始し、<style=basestat>{duration}</style>間、範囲内の味方ユニットに毎秒<style=basestat>{shield_per_second}</style>のシールドを付与する。さらに、味方ユニットは魂リンク状態となり、受けたダメージを分担する。効果終了時、範囲内で最も体力が低い敵を<style=basestat>{mind_control_duration}</style>の間、味方に対して攻撃させる。ヒーローを優先する。
 ,
 Base.Heroes.hero.Geisha_Name吉野太夫
 �
@@ -873,8 +871,6 @@ D
 1Base.Buildings.Building_China_Home_Premium_1_Name豪華な住宅
 3
 #Base.BuildingGroups.chronicler_Name史官の家
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>挑発・シールド・範囲攻撃</style>フィリッポス２世は<style=basestat>{taunt_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分の大量のシールドを獲得し、敵ユニット全体を挑発する。<style=basestat>{detonation_time}</style>が経過すると、シールドが爆発し、残りのシールド量の<style=basestat>{damage_percentage}</style>に相当するダメージを<style=basestat>{range}</style>の範囲内にいる敵ユニットに与える。爆発と同時にシールドは消滅する。
 K
 5Base.Technologies.Technology_Vikings_HealingMead_Name回復の蜂蜜酒
 A
@@ -1275,6 +1271,8 @@ H
 Base.Units.Unit_Spartacus_Nameスパルタクス
 D
 1Base.Buildings.Building_Egypt_Home_Average_3_Name大きな住宅
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 ;
 (Base.BuildingGroups.smallIrrigation_Name小さな井戸
 J
@@ -2246,6 +2244,8 @@ M
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_Name哲学者の館
 V
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_Nameゴート族の弓兵
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 .
 Base.Ages.RomanEmpire_Finish紀元前50年
 @
@@ -2472,8 +2472,8 @@ N
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_Name襲撃と略奪
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_Name聖銀の矢
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>瞬間移動・近接攻撃・強化</style>ラゲルタが雷と化し、最も強力な敵ユニットに突撃して<style=basestat>{damage}</style>のダメージを与える。さらに、攻撃速度が<style=basestat>{attack_speed_duration}</style>の間、<style=basestat>{attack_speed_buff}</style>上昇する。
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、イムホテプの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 J

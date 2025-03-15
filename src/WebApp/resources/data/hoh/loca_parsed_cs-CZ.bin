@@ -403,8 +403,6 @@ Y
 $Base.BuildingGroups.averageHome_NameStřední důmStřední domyStředních domů
 �
 !Base.Units.Unit_RomanPraetor_Desc�Párty jako Říman s Aemilií Tertií! Tato společenská dáma z 2. století př. n. l. ve starověkém Římě byla manželkou Scipia Africana, slavného generála, který porazil Hannibala ve druhé punské válce. Byla známá svým vznešeným původem a sňatkem do jedné z předních římských rodin a byla příkladem ctností římské matróny.<br><br>Její život je známý tím, že podporovala vojenskou a politickou kariéru svého manžela a zároveň se podílela na vedení domácnosti a výchově svých dětí, včetně Cornelie Africany, matky bratrů Gracchiů.<br><br>Odkaz Aemilie Tertie odráží vlivné role, které ženy mohly zastávat v římské společnosti navzdory své omezené přítomnosti na veřejnosti.
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Štít | Spojení duší | Ovládání mysli</style>Alexander zahájí dobývání v dosahu <style=basestat>{range}</style>, čímž všem spřáteleným jednotkám v této oblasti udělí štít v hodnotě <style=basestat>{shield_per_second}</style> za sekundu po dobu <style=basestat>{duration}</style>. Spřátelené jednotky jsou během dobývání duchovně propojeny a sdílejí mezi sebou příchozí poškození. Na konci doby trvání je nepřítel s nejnižšími body života v dosahu ovládán myslí, aby útočil na své spojence po dobu <style=basestat>{mind_control_duration}</style>. Upřednostňuje hrdiny.
 -
 Base.Heroes.hero.Geisha_NameJošino Tajú
 �
@@ -897,8 +895,6 @@ B
 L
 #Base.BuildingGroups.chronicler_Name
 KronikářKronikářiKronikářů
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Provokace | Štít | Úder na oblast</style>Filip II. Makedonský získá velký štít v hodnotě <style=basestat>{shield_percentage}</style> svého základního poškození a provokuje všechny nepřátelské jednotky po dobu <style=basestat>{taunt_duration}</style>. Po uplynutí <style=basestat>{detonation_time}</style> jeho štít exploduje a způsobí <style=basestat>{damage_percentage}</style> zbývající hodnoty štítu jako poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Detonace spotřebuje Filipův štít.
 K
 5Base.Technologies.Technology_Vikings_HealingMead_NameLéčivá medovina
 ?
@@ -1310,6 +1306,8 @@ F
 Base.Units.Unit_Spartacus_Name	Spartakus
 C
 1Base.Buildings.Building_Egypt_Home_Average_3_NameStřední dům
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 V
 (Base.BuildingGroups.smallIrrigation_NameMalá studnaMalé studnyMalých studen
 O
@@ -2303,6 +2301,8 @@ W
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLyceum učenců
 X
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameGótští lučištníci
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 -
 Base.Ages.RomanEmpire_Finish50 př. n. l.
 C
@@ -2533,8 +2533,8 @@ Q
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameRabovací nájezdy
 H
 2Base.Abilities.hero_battle_ability.VanHelsing_NameStříbrné šípy
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Úder na blízko | Posílení </style> Lagertha se stane bleskem a zasáhne nejsilnější nepřátelskou jednotku, čím způsobí <style=basestat>{damage}</style> a získá <style=basestat>{attack_speed_buff}</style> rychlost útoku po dobu <style=basestat>{attack_speed_duration}</style>.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Oslabení</style>Cílí na největší skupinu nepřátelských jednotek, snižuje OBR o <style=basestat>{atk_percentage}</style> z Imhotepova ÚTOKU na <style=basestat>{duration}</style> v dosahu <style=basestat>{range}</style>.
 K

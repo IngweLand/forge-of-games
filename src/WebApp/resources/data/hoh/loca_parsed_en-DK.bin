@@ -417,8 +417,6 @@ A
 $Base.BuildingGroups.averageHome_NameMedium HomeMedium Homes
 Õ
 !Base.Units.Unit_RomanPraetor_Desc¯Party like a Roman with Aemilia Tertia! This socialite of the 2nd century BC in ancient Rome, was the wife of Scipio Africanus, the renowned general who defeated Hannibal in the Second Punic War. Known for her noble birth and marriage into one of Romeâ€™s leading families, she exemplified the Roman matron's virtues.<br><br>Her life is noted for her support of her husband's military and political career, alongside her role in managing the household and upbringing of her children, including Cornelia Africana, mother of the Gracchi brothers.<br><br>Aemilia Tertia's legacy is reflective of the influential roles women could hold in Roman society despite their limited public presence.
-—
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_DescÁ<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 ‹
@@ -914,8 +912,6 @@ C
 >
 #Base.BuildingGroups.chronicler_Name
 ChroniclerChroniclers
-Ú
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc„<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 E
 5Base.Technologies.Technology_Vikings_HealingMead_NameHealing Mead
 ;
@@ -1336,6 +1332,8 @@ G
 Base.Units.Unit_Spartacus_Name	Spartacus
 @
 1Base.Buildings.Building_Egypt_Home_Average_3_NameMedium Home
+Ú
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name„<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 C
 (Base.BuildingGroups.smallIrrigation_Name
 Small WellSmall Wells
@@ -2340,6 +2338,8 @@ Q
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameScholars Lyceum
 O
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameGothic Archers
+—
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_NameÁ<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 '
 Base.Ages.RomanEmpire_Finish50 B.C.
 B
@@ -2575,8 +2575,8 @@ O
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NamePlundering Raids
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSilver Bolts
-ø
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name«<style=ability_label>Teleport | Melee Strike | Buff </style> Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
+÷
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Nameª<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 Á
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Nameî<style=ability_label>Debuff</style>Targets the biggest cluster of enemy units, reducing DEF by <style=basestat>{atk_percentage}</style> of Imhotep's ATK for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>.
 E
