@@ -401,12 +401,6 @@ D
 $Base.BuildingGroups.averageHome_NameCasa MedianaCasas Medianas
 é
 !Base.Units.Unit_RomanPraetor_DescË¬°Vete de fiesta como una romana con Aemilia Tertia! Esta mujer de la alta sociedad del siglo II a.C. en la antigua Roma, fue esposa de Escipi√≥n Africano, el c√©lebre general que derrot√≥ a An√≠bal en la Segunda Guerra P√∫nica. Conocida por su noble cuna y su matrimonio con una de las principales familias de Roma, ejemplific√≥ las virtudes de la matrona romana.<br><br>Su vida destaca por su apoyo a la carrera militar y pol√≠tica de su marido, junto con su papel en la gesti√≥n del hogar y la educaci√≥n de sus hijos, entre ellos Cornelia Africana, madre de los hermanos Gracos.<br><br>El legado de Aemilia Tertia refleja el influyente papel que pod√≠an desempe√±ar las mujeres en la sociedad romana a pesar de su escasa presencia p√∫blica.
-Ë
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Descí<style=ability_label>Escudo | V√≠nculo Espiritual | Control Mental</style>  
-Alexander inicia una conquista dentro de un rango de <style=basestat>{range}</style>, otorgando a todas las unidades aliadas en esta √°rea un escudo de <style=basestat>{shield_per_second}</style> por segundo durante <style=basestat>{duration}</style>.  
-Las unidades aliadas est√°n vinculadas espiritualmente durante la conquista, compartiendo el da√±o recibido entre ellas.  
-Al final de la duraci√≥n, el enemigo con la menor PV dentro del rango es controlado mentalmente para atacar a sus aliados durante <style=basestat>{mind_control_duration}</style>.  
-Prioriza a los H√©roes.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 ê
@@ -892,8 +886,6 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 1Base.Buildings.Building_China_Home_Premium_1_NameCasa lujosa
 T
 #Base.BuildingGroups.chronicler_NameEdificio de CronistasEdificios de Cronistas
-í
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Descº<style=ability_label>Burla | Escudo | Golpe en √Årea</style>Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su da√±o base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Despu√©s de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como da√±o a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonaci√≥n consume el escudo de Felipe.
 K
 5Base.Technologies.Technology_Vikings_HealingMead_NameHidromiel Curativo
 =
@@ -1304,6 +1296,8 @@ D
 Base.Units.Unit_Spartacus_Name	Espartaco
 A
 1Base.Buildings.Building_Egypt_Home_Average_3_NameCasa mediana
+⁄
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_NameÑ<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 J
 (Base.BuildingGroups.smallIrrigation_NamePozo Peque√±oPozos Peque√±os
 V
@@ -2293,6 +2287,8 @@ T
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLiceo de Eruditos
 R
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameArqueros G√≥ticos
+ó
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name¡<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 )
 Base.Ages.RomanEmpire_Finish	50 a.¬†C.
 B
@@ -2522,8 +2518,8 @@ F
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameSaqueos
 E
 2Base.Abilities.hero_battle_ability.VanHelsing_NamePernos de Plata
-ü
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name“<style=ability_label>Teletransporte | Golpe Cuerpo a Cuerpo | Potenciador </style> Lagertha se convierte en un rayo y golpea a la unidad enemiga m√°s poderosa, infligiendo <style=basestat>{damage}</style> y ganando <style=basestat>{attack_speed_buff}</style> de velocidad de ataque durante <style=basestat>{attack_speed_duration}</style>.
+˜
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name™<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 ◊
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_NameÑ<style=ability_label>Penalizaci√≥n</style>Se dirige al mayor grupo de unidades enemigas, reduciendo la DEF en <style=basestat>{atk_percentage}</style> del ATQ de Imhotep durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>.
 M

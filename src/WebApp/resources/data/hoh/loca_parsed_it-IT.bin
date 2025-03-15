@@ -400,8 +400,6 @@ T
 $Base.BuildingGroups.averageHome_NameAbitazione intermediaAbitazioni intermedie
 å
 !Base.Units.Unit_RomanPraetor_DescÊFesteggia come un romano con Emialia Terzia! Questa mondana del II secolo a.C. nell'antica Roma era la moglie di Scipione Africano, il famoso generale che sconfisse Annibale nella Seconda Guerra Punica. Nota per la sua nobile nascita e per il suo matrimonio con una delle famiglie pi√π importanti di Roma, esemplificava le virt√π della matrona romana.<br><br>La sua vita √® nota per l'assistenza alla carriera militare e politica del marito, oltre che per il suo ruolo nella gestione della casa e nell'educazione dei figli, tra cui Cornelia Africana, madre dei fratelli Gracchi.<br><br>L'eredit√† di Emialia Terzia riflette i ruoli influenti che le donne potevano ricoprire nella societ√† romana nonostante la loro limitata presenza pubblica.
-«
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_DescÒ<style=ability_label>Scudo | Legame Spirituale | Controllo Mentale</style>Alessandro inizia una conquista nel raggio di <style=basestat>{range}</style>, fornendo a tutte le unit√† amiche in quest'area uno scudo di <style=basestat>{shield_per_second}</style> al secondo per <style=basestat>{duration}</style>. Le unit√† amiche sono collegate spiritualmente durante la conquista e condividono i danni in arrivo. Al termine della durata, il nemico con gli HP pi√π bassi nel raggio d'azione viene controllato mentalmente per attaccare i propri alleati per <style=basestat>{mind_control_duration}</style>. D√† priorit√† agli Eroi.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 Ü
@@ -888,8 +886,6 @@ H
 1Base.Buildings.Building_China_Home_Premium_1_NameAbitazione lussuosa
 9
 #Base.BuildingGroups.chronicler_NameCronistaCronisti
-Ñ
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_DescÆ<style=ability_label>Provocazione | Scudo | Colpo ad Area</style>Filippo II di Macedonia ottiene un grande scudo pari al <style=basestat>{shield_percentage}</style> del suo danno base e provoca tutti i nemici per una durata di <style=basestat>{taunt_duration}</style>. Dopo <style=basestat>{detonation_time}</style>, il suo scudo esplode, infliggendo <style=basestat>{damage_percentage}</style> del valore rimanente dello scudo come danno a tutte le unit√† nemiche entro un raggio di <style=basestat>{range}</style>. L'esplosione consuma lo scudo di Filippo.
 J
 5Base.Technologies.Technology_Vikings_HealingMead_NameIdromele Curativo
 B
@@ -1296,6 +1292,8 @@ L
 Base.Units.Unit_Spartacus_NameSpartaco
 J
 1Base.Buildings.Building_Egypt_Home_Average_3_NameAbitazione intermedia
+⁄
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_NameÑ<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 H
 (Base.BuildingGroups.smallIrrigation_NamePozzo piccoloPozzi piccoli
 T
@@ -2277,6 +2275,8 @@ c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLiceo degli Studiosi
 O
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameArcieri Gotici
+ó
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name¡<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 '
 Base.Ages.RomanEmpire_Finish50 A.C.
 B
@@ -2505,8 +2505,8 @@ Q
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameRazzie e saccheggi
 G
 2Base.Abilities.hero_battle_ability.VanHelsing_NameBulloni d'Argento
-ñ
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name…<style=ability_label>Teletrasporto | Attacco Corpo a Corpo | Potenziamento</style> Lagertha diventa fulmine puro e colpisce l'unit√† nemica pi√π potente, infliggendo <style=basestat>{damage}</style> e guadagnando <style=basestat>{attack_speed_buff}</style> velocit√† d'attacco per <style=basestat>{attack_speed_duration}</style>.
+˜
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name™<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 Ÿ
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_NameÜ<style=ability_label>Malus</style>Prende di mira il pi√π grande gruppo di unit√† nemiche, riducendo la DIF del <style=basestat>{atk_percentage}</style> dell'ATT di Imhotep per <style=basestat>{duration}</style> entro un raggio di <style=basestat>{range}</style>.
 O

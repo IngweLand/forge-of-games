@@ -401,8 +401,6 @@ H
 $Base.BuildingGroups.averageHome_NameMaison moyenneMaisons moyennes
 �
 !Base.Units.Unit_RomanPraetor_Desc�Festoie comme une Romaine avec Aemilia Tertia ! Cette figure mondaine du IIᵉ siècle av. J.-C. dans la Rome antique était l’épouse de Scipion l’Africain, le célèbre général qui vainquit Hannibal lors de la Deuxième Guerre punique. Issue d’une noble lignée et mariée à l’une des plus grandes familles de Rome, elle incarnait les vertus de la matrone romaine.<br><br>Son rôle fut marqué par son soutien à la carrière militaire et politique de son époux, ainsi que par la gestion de son foyer et l’éducation de ses enfants, dont Cornelia Africana, la mère des célèbres frères Gracques.<br><br>L’héritage d’Aemilia Tertia témoigne de l’influence que les femmes pouvaient exercer dans la société romaine, malgré leur présence limitée sur la scène publique.
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Bouclier | Lien Spirituel | Contrôle Mental</style>Alexandre lance une conquête dans un rayon de <style=basestat>{range}</style>, conférant à toutes les unités alliées dans cette zone un bouclier de <style=basestat>{shield_per_second}</style> par seconde pendant <style=basestat>{duration}</style>. Pendant la conquête, les unités alliées sont liées spirituellement, partageant les dégâts qu'elles reçoivent. À la fin de la durée, l’ennemi ayant le moins de PV dans la zone est soumis à un contrôle mental et attaque ses alliés pendant <style=basestat>{mind_control_duration}</style>. Priorise les Héros.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
@@ -888,8 +886,6 @@ D
 1Base.Buildings.Building_China_Home_Premium_1_NameMaison luxueuse
 @
 #Base.BuildingGroups.chronicler_NameChroniqueurChroniqueurs
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Provocation | Bouclier | Attaque de Zone</style>Philippe II de Macédoine gagne un bouclier puissant équivalent à <style=basestat>{shield_percentage}</style> de ses dégâts de base et provoque toutes les unités ennemies pendant <style=basestat>{taunt_duration}</style>. Après <style=basestat>{detonation_time}</style>, son bouclier explose, infligeant <style=basestat>{damage_percentage}</style> de sa valeur restante en dégâts à toutes les unités ennemies dans un rayon de <style=basestat>{range}</style>. L’explosion consume entièrement le bouclier de Philippe.
 L
 5Base.Technologies.Technology_Vikings_HealingMead_NameHydromel médicinal
 =
@@ -1300,6 +1296,8 @@ H
 Base.Units.Unit_Spartacus_Name	Spartacus
 C
 1Base.Buildings.Building_Egypt_Home_Average_3_NameMaison moyenne
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 E
 (Base.BuildingGroups.smallIrrigation_NamePetit puitsPetits puits
 R
@@ -2274,6 +2272,8 @@ T
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLycée érudit
 R
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameArchers gothiques
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 .
 Base.Ages.RomanEmpire_Finish50 avant J.-C.
 B
@@ -2504,8 +2504,8 @@ G
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NamePillages
 F
 2Base.Abilities.hero_battle_ability.VanHelsing_NameBoulons d'Argent
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Téléportation | Attaque de mêlée | Bonus</style>Lagertha devient la foudre elle-même et frappe l’unité ennemie la plus puissante, infligeant <style=basestat>{damage}</style> de dégâts et gagnant un bonus de <style=basestat>{attack_speed_buff}</style> de vitesse d'attaque pendant <style=basestat>{attack_speed_duration}</style>.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Malus</style>Cible le plus grand regroupement d'unités ennemies, réduisant la DÉF de <style=basestat>{atk_percentage}</style> de l'ATQ d'Imhotep pendant <style=basestat>{duration}</style> dans un rayon de <style=basestat>{range}</style>.
 L

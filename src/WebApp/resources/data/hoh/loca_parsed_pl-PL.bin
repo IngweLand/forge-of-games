@@ -399,8 +399,6 @@ T
 $Base.BuildingGroups.averageHome_NameŚredni DomŚrednie DomyŚrednich Domów
 �
 !Base.Units.Unit_RomanPraetor_Desc�Imprezuj jak Rzymianka z Emilią Tercją! Ta towarzyska dama z II wieku p.n.e. w starożytnym Rzymie była żoną Scypiona Afrykańskiego, sławnego generała, który pokonał Hannibala w drugiej wojnie punickiej. Znana ze szlachetnego urodzenia i małżeństwa z jedną z wiodących rodzin Rzymu, była przykładem cnót rzymskiej matrony.<br><br>Jej życie jest znane ze wspierania wojskowej i politycznej kariery męża, a także z roli w zarządzaniu domem i wychowywaniu dzieci, w tym Kornelii Afrykańskiej, matki braci Grakchów.<br><br>Dziedzictwo Emilii Tercji odzwierciedla wpływowe role, jakie kobiety mogły pełnić w społeczeństwie rzymskim pomimo ich ograniczonej obecności publicznej.
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Desc�<style=ability_label>Tarcza | Duchowe Połączenie | Kontrola Umysłu</style>Alexander inicjuje podbój w zasięgu <style=basestat>{range}</style>, zapewniając wszystkim przyjaznym jednostkom w tym obszarze tarczę o wartości <style=basestat>{shield_per_second}</style> na sekundę przez <style=basestat>{duration}</style>. Przyjazne jednostki są połączone duchem podczas podboju, dzieląc między sobą otrzymywane obrażenia. Pod koniec czasu trwania, wróg z najniższymi punktami życia w zasięgu jest kontrolowany umysłem, aby atakować sojuszników przez <style=basestat>{mind_control_duration}</style>. Nadaje priorytet Bohaterom.
 ,
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
@@ -884,8 +882,6 @@ H
 #Base.BuildingGroups.chronicler_Name	Kronikarz
 Kronikarze
 Kronikarzy
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Desc�<style=ability_label>Prowokacja | Tarcza | Uderzenie obszarowe</style>Filip II Macedoński zyskuje dużą tarczę wartą <style=basestat>{shield_percentage}</style> jego podstawowych obrażeń i drwi ze wszystkich wrogich jednostek przez <style=basestat>{taunt_duration}</style>. Po <style=basestat>{detonation_time}</style>, jego tarcza detonuje, zadając <style=basestat>{damage_percentage}</style> pozostałej wartości tarczy jako obrażenia wszystkim wrogim jednostkom w zasięgu <style=basestat>{range}</style>. Detonacja zużywa tarczę Filipa.
 N
 5Base.Technologies.Technology_Vikings_HealingMead_NameMiód pitny leczniczy
 @
@@ -1296,6 +1292,8 @@ F
 Base.Units.Unit_Spartacus_Name	Spartakus
 @
 1Base.Buildings.Building_Egypt_Home_Average_3_NameŚredni dom
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 X
 (Base.BuildingGroups.smallIrrigation_NameMała studniaMałe studnieMałych studni
 N
@@ -2281,6 +2279,8 @@ Q
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLiceum Uczonych
 O
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameGoccy Strzelcy
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
 ,
 Base.Ages.RomanEmpire_Finish50 r. p.n.e.
 B
@@ -2509,8 +2509,8 @@ R
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameNajazdy łupieżcze
 D
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSrebrne śruby
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Uderzenie wręcz | Wzmocnienie </style> Lagertha sama staje się błyskawicą i uderza w najpotężniejszą wrogą jednostkę, zadając <style=basestat>{damage}</style> i zyskując <style=basestat>{attack_speed_buff}</style> szybkość ataku na <style=basestat>{attack_speed_duration}</style>.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Osłabienie</style> Celuje w największą grupę wrogich jednostek, zmniejszając DEF o <style=basestat>{atk_percentage}</style> ATK Imhotepa na <style=basestat>{duration}</style> w zasięgu <style=basestat>{range}</style>.
 U
