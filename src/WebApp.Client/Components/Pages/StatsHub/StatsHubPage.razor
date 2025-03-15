@@ -13,18 +13,17 @@
                 Players="@_topStats?.MainWorldPlayers"/>
         </div>
         <div class="column">
+            <AllianceStatsTopListComponent
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("un1")"
+                Alliances="@_topStats?.MainWorldAlliances"/>
+        </div>
+        <div class="column">
             <PlayerStatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
                 ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("zz1")"
                 Players="@_topStats?.BetaWorldPlayers"/>
 
-        </div>
-
-        <div class="column">
-            <AllianceStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("un1")"
-                Alliances="@_topStats?.MainWorldAlliances"/>
         </div>
         <div class="column">
             <AllianceStatsTopListComponent
