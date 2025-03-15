@@ -11,4 +11,5 @@ public class AssetsSettings
     public required string HohUnitVideosPath { get; set; } = "videos/hoh/units";
     public required string HohVideosBasePath { get; set; } = "videos/hoh";
     public required string Version { get; set; } = "1";
+    public required string Fonts { get; set; } = "fonts";
 }
