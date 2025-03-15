@@ -99,6 +99,12 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
 
     public string GetBuildingName(string name)
     {
+        // school localization has only one value for some reason
+        // which does not confirm to the rest of the buildings
+        if (name.StartsWith("Building_BronzeAge_Collectable_SchoolV2"))
+        {
+            name = "Building_BronzeAge_Collectable_SchoolV2_1";
+        }
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Buildings, HohLocalizationProperty.Name,
             name);
         return GetValue(key) ?? name;

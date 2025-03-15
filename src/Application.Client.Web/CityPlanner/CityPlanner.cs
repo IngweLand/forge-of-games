@@ -109,7 +109,7 @@ public class CityPlanner(
 
         city.Entities = snapshot.Entities.Select(src => src.Clone()).ToList();
         await DoInitializeAsync(city);
-        await SaveCity();
+        await SaveCityAsync();
     }
 
     public Rectangle Bounds => _mapAreaRenderer.Bounds;
@@ -129,7 +129,7 @@ public class CityPlanner(
 
         var snapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities));
         CityMapState.AddSnapshot(snapshot);
-        return SaveCity();
+        return SaveCityAsync();
     }
 
     public CityMapEntity AddEntity(BuildingGroup buildingGroup)
@@ -177,15 +177,33 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
-    public async Task SaveCity()
+    public async Task SaveCityAsync()
     {
         await persistenceService.SaveCity(GetCity());
         StateHasChanged?.Invoke();
     }
 
+    public async Task DeleteCityAsync()
+    {
+        var deleted = await persistenceService.DeleteCity(CityMapState.CityId);
+        if (deleted)
+        {
+            await InitializeAsync();
+            StateHasChanged?.Invoke();
+        }
+    }
+
+    public async Task SaveCityAsync(string newCityName)
+    {
+        CityMapState.CityName = newCityName;
+        await persistenceService.SaveCity(GetCity());
+        UpdateCityPropertiesViewModel();
+        StateHasChanged?.Invoke();
+    }
+
     public Task DeleteSnapshot(string id)
     {
-        return !CityMapState.DeleteSnapshot(id) ? Task.CompletedTask : SaveCity();
+        return !CityMapState.DeleteSnapshot(id) ? Task.CompletedTask : SaveCityAsync();
     }
 
     public void RotateEntity(CityMapEntity entity)

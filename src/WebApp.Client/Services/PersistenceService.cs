@@ -1,7 +1,6 @@
 using System.Text.Json;
 using Blazored.LocalStorage;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
@@ -28,6 +27,26 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
         return localStorageService.SetItemAsStringAsync(GetCityKey(city.Id), serializedCity);
     }
 
+    public async ValueTask<bool> DeleteCity(string cityId)
+    {
+        var key = GetCityKey(cityId);
+        if (!await localStorageService.ContainKeyAsync(key))
+        {
+            return false;
+        }
+
+        try
+        {
+            await localStorageService.RemoveItemAsync(key);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return false;
+        }
+    }
+
     public ValueTask<HohCity?> LoadCity(string cityId)
     {
         return DoLoadCity(GetCityKey(cityId));
@@ -46,7 +65,7 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
                 cities.Add(new HohCityBasicData()
                 {
                     Id = city.Id,
-                    Name = city.Name,
+                    Name = city.Name
                 });
             }
         }
@@ -101,19 +120,19 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
 
         return profiles;
     }
-    
+
     public async ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync()
     {
         Dictionary<string, HeroPlaygroundProfile>? profiles = null;
         var rawData = await localStorageService.GetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX);
-        if(!string.IsNullOrWhiteSpace(rawData))
+        if (!string.IsNullOrWhiteSpace(rawData))
         {
             profiles = JsonSerializer.Deserialize<Dictionary<string, HeroPlaygroundProfile>>(rawData);
         }
 
         return profiles ?? [];
     }
-    
+
     public ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles)
     {
         var serializedProfile = JsonSerializer.Serialize(profiles);
@@ -129,7 +148,9 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     private async ValueTask<BasicCommandCenterProfile?> DoLoadProfile(string key)
     {
         var rawData = await localStorageService.GetItemAsStringAsync(key);
-        return string.IsNullOrWhiteSpace(rawData) ? null : JsonSerializer.Deserialize<BasicCommandCenterProfile>(rawData);
+        return string.IsNullOrWhiteSpace(rawData)
+            ? null
+            : JsonSerializer.Deserialize<BasicCommandCenterProfile>(rawData);
     }
 
     private static string GetCityKey(string id)

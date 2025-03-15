@@ -1,4 +1,3 @@
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
@@ -6,6 +5,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 public interface IPersistenceService
 {
     ValueTask SaveCity(HohCity city);
+    ValueTask<bool> DeleteCity(string cityId);
     ValueTask<HohCity?> LoadCity(string cityId);
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities();
 

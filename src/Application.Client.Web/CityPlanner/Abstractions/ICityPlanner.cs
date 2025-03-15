@@ -9,9 +9,9 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 
 public interface ICityPlanner
 {
-    public event Action? StateHasChanged;
     Rectangle Bounds { get; }
     CityMapState CityMapState { get; }
+    public event Action? StateHasChanged;
     CityMapEntity AddEntity(BuildingGroup buildingGroup);
     void AddEntity(CityMapEntity entity);
     bool CanBePlaced(CityMapEntity cityMapEntity);
@@ -26,11 +26,13 @@ public interface ICityPlanner
     void MoveEntity(CityMapEntity entity, Point location);
     void RenderScene(SKCanvas canvas);
     void RotateEntity(CityMapEntity entity);
-    Task SaveCity();
+    Task SaveCityAsync();
+    Task SaveCityAsync(string newCityName);
     void SelectGroup();
     bool TrySelectCityMapEntity(Point coordinates, out CityMapEntity? cityMapEntity);
     void UpdateCustomization(BuildingCustomizationDto customization);
     void UpdateEntityState(CityMapEntity entity);
     CityMapEntity UpdateLevel(CityMapEntity entity, int level);
     void UpdateProduct(string productId);
+    Task DeleteCityAsync();
 }

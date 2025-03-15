@@ -16,6 +16,11 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
+    public ValueTask<bool> DeleteCity(string cityId)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<HohCity?> LoadCity(string cityId)
     {
         throw new NotImplementedException();
