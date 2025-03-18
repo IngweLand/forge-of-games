@@ -36,6 +36,7 @@ public class GameApiClient(
         request.Headers.Add("X-Request-Id", Guid.NewGuid().ToString());
         request.Headers.Add("X-Platform", "browser");
         request.Headers.Add("X-ClientVersion", sessionData.ClientVersion);
+        request.Headers.Add("X-Action-At", DateTime.UtcNow.ToString("O"));
         request.Headers.Add("Accept-Encoding", "gzip");
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptContentType));
     }

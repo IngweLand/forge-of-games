@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PvpRankingRequestDto {
+  int32 event_id = 2;
+  string event_type = 3;
+}

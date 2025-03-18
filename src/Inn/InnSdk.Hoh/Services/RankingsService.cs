@@ -1,4 +1,3 @@
-using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
@@ -14,8 +13,8 @@ public class RankingsService(
     IGameApiClient apiClient,
     IPlayerRankingRequestPayloadFactory playerRankingRequestPayloadFactory,
     IAllianceRankingRequestPayloadFactory allianceRankingRequestPayloadFactory,
+    IPvpRankingRequestPayloadFactory pvpRankingRequestPayloadFactory,
     IDataParsingService dataParsingService,
-    IMapper mapper,
     ILogger<RankingsService> logger) : IRankingsService
 {
     public async Task<AllianceRanks> GetAllianceRankingAsync(GameWorldConfig world, AllianceRankingType rankingType)
@@ -23,7 +22,7 @@ public class RankingsService(
         var data = await GetAllianceRankingRawDataAsync(world, rankingType);
         return dataParsingService.ParseAllianceRankings(data);
     }
-    
+
     public Task<byte[]> GetAllianceRankingRawDataAsync(GameWorldConfig world, AllianceRankingType rankingType)
     {
         if (rankingType == AllianceRankingType.Undefined)
@@ -49,5 +48,12 @@ public class RankingsService(
     {
         var data = await GetPlayerRankingRawDataAsync(world, rankingType);
         return dataParsingService.ParsePlayerRankings(data);
+    }
+
+    public Task<byte[]> GetPvpRankingRawDataAsync(GameWorldConfig world, int eventId)
+    {
+        logger.LogInformation("Fetching pvp ranking from {WorldId}", world.Id);
+        return apiClient.SendForProtobufAsync(world, GameEndpoints.PvpRankingPath,
+            pvpRankingRequestPayloadFactory.Create(eventId));
     }
 }

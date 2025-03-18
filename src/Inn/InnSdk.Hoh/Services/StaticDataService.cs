@@ -23,6 +23,18 @@ public class StaticDataService(
             gameDesignRequestPayloadFactory.Create());
     }
 
+    public Task<string> GetStartupJsonAsync(GameWorldConfig world)
+    {
+        return apiClient.SendForJsonAsync(world, GameEndpoints.StartupPath,
+            gameDesignRequestPayloadFactory.Create());
+    }
+
+    public Task<byte[]> GetStartupProtobufAsync(GameWorldConfig world)
+    {
+        return apiClient.SendForProtobufAsync(world, GameEndpoints.StartupPath,
+            gameDesignRequestPayloadFactory.Create());
+    }
+
     public Task<string> GetLocalizationJsonAsync(GameWorldConfig world, string locale)
     {
         var payload = localizationRequestPayloadFactory.Create(locale);

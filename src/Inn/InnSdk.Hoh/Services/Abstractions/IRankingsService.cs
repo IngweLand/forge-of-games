@@ -10,4 +10,5 @@ public interface IRankingsService
     Task<PlayerRanks> GetPlayerRankingAsync(GameWorldConfig world, PlayerRankingType rankingType);
     Task<byte[]> GetAllianceRankingRawDataAsync(GameWorldConfig world, AllianceRankingType rankingType);
     Task<byte[]> GetPlayerRankingRawDataAsync(GameWorldConfig world, PlayerRankingType rankingType);
+    Task<byte[]> GetPvpRankingRawDataAsync(GameWorldConfig world, int eventId);
 }

@@ -8,4 +8,6 @@ public interface IStaticDataService
     Task<byte[]> GetGameDesignProtobufAsync(GameWorldConfig world);
     Task<string> GetLocalizationJsonAsync(GameWorldConfig world, string locale);
     Task<byte[]> GetLocalizationProtobufAsync(GameWorldConfig world, string locale);
+    Task<string> GetStartupJsonAsync(GameWorldConfig world);
+    Task<byte[]> GetStartupProtobufAsync(GameWorldConfig world);
 }

@@ -29,6 +29,7 @@ public static class DependencyInjection
         services.AddScoped<IGameDesignRequestPayloadFactory, GameDesignRequestPayloadFactory>();
         services.AddScoped<IPlayerRankingRequestPayloadFactory, PlayerRankingRequestPayloadFactory>();
         services.AddScoped<IAllianceRankingRequestPayloadFactory, AllianceRankingRequestPayloadFactory>();
+        services.AddScoped<IPvpRankingRequestPayloadFactory, PvpRankingRequestPayloadFactory>();
         
         services.AddScoped<IStaticDataService, StaticDataService>();
         services.AddScoped<IRankingsService, RankingsService>();
