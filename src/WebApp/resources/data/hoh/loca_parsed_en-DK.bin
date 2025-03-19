@@ -40,6 +40,8 @@ a
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc-Produces Cocoa and adds a Priest to your city
 R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NameLuxurious sailor port
+T
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameInfantry barracks
 J
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameVerdant Harpoonists
 q
@@ -89,6 +91,8 @@ P
 4Base.Technologies.Technology_IberianEra_Saffron_NameSaffron
 G
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_NameMead Brewery
+A
+)Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
 Ì
 JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Nameû<style=ability_label>Buff</style>Mansa Musa targets the biggest cluster of friendly units, increasing their chance to critically hit by <style=basestat>{crit_percentage}</style>, their ATK by <style=basestat>{atk_percentage}</style> of Mansa Musa's ATK, and their critical damage by <style=basestat>{crit_dmg_percentage}</style> for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>.
 C
@@ -129,6 +133,8 @@ K
 9Base.Technologies.Technology_MinoanEra_BasketWeaving_NameBasket Weaving
 M
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_2_NameRanged Barracks
+k
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_Desc(Improves happiness of adjacent buildings
 ?
 2Base.Technologies.Technology_Vikings_TarOvens_Name	Tar Ovens
 L
@@ -168,6 +174,8 @@ T
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_NameSpice Merchant
 H
 6Base.Buildings.Building_IberianEra_Home_Premium_1_NameLuxurious Home
+i
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Desc-Produces coins and adds a worker to your city
 <
 #Base.Regions.region.Panganea_2_NameSkullsmashers' Domain
 G
@@ -186,6 +194,8 @@ K
 D
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name
 Prosperity
+P
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameRanged barracks
 ¿
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_NameÎ<style=ability_label>Taunt| Shield</style>Taunts all enemies for <style=basestat>{taunt_duration}</style>. Bismarck gains <style=basestat>{shield_percentage}</style> of his base damage as a shield. Also provides <style=basestat>{shield_percentage_friendly}</style> of Bismarck's base damage as a shield to the friendly unit with the lowest HP. Prioritizes heroes.
 U
@@ -305,6 +315,8 @@ T
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
 X
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_NameCompact Culture Site
+Y
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_DescProduces cinnamon
 M
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_3_NameDomestic Farm
 4
@@ -319,6 +331,8 @@ L
 (Base.Heroes.hero.GreekMathematician_NameEuclid
 `
 /Base.Buildings.Building_Egypt_Home_Small_1_Desc-Produces Deben and adds a Worker to your city
+L
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_NameDomestic farm
 M
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_Cavalry_NameSicilian Cavalry
 @
@@ -337,6 +351,8 @@ g
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc(Improves Happiness of adjacent buildings
 <
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_NameToxotai
+R
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_NameCavalry barracks
 M
 :Base.Technologies.Technology_EarlyRome_TerrainMapping_NameTerrain Mapping
 O
@@ -411,6 +427,8 @@ N
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_DescProduces a ton of Food
 d
 HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NameBasic Irrigation Network
+z
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_Desc<Produces a big pile of coins and adds 2 workers to your city
 W
 6Base.Buildings.Building_Arabia_Merchant_Average_3_DescProduces a big pile of Dirham
 A
@@ -432,6 +450,8 @@ C
 Rural Farm
 \
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerovingian Infantry
+J
+6Base.Technologies.Technology_HighMiddleAges_Start_NameHigh Middle Ages
 5
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtemoc 
 ‡
@@ -590,6 +610,9 @@ O
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameFamilia Regis
 K
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameRitual Carver
+F
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Name
+Small home
 ®
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 D
@@ -701,14 +724,20 @@ Small Home
 5Base.Technologies.Technology_RomanEmpire_Swinery_NameSwinery
 R
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_NameLittle Culture Site
+L
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameLuxurious home
 k
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc)Improves Happiness of adjacent buildings.
 >
 3Base.Technologies.Technology_BronzeAge_Artisan_NameArtisan
+v
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc7Produces a large amount of food in long period of time.
 V
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_NameModerate Culture Site
 ä
 6Base.Buildings.Building_Vikings_Beehive_Average_3_DescPThe Beehive produces delicious honey that is used to produce mead in the Tavern.
+Z
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_DescUnlocks knightly cavalry
 D
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_Name	Goldsmith
 \
@@ -786,6 +815,8 @@ T
 Base.Units.Unit_Menes_DescºHail Menes, the first mortal king of all Egypt. This great ruler of the 31st century BCE in ancient Egypt is credited with uniting Upper and Lower Egypt, thus becoming the first pharaoh of a unified Egyptian kingdom.<br><br>He established Memphis as the capital, strategically placed between Upper and Lower Egypt. His leadership marked the start of Egypt's First Dynasty, setting the stage for its cultural and political development.<br><br>Menes' legacy is the the birth of the Egyptian civilization, for he laid the foundation for one of history's greatest cultures. Unfortunately, he's currently rumored to be working with Tesla. Apparently, he wants to replace all of history with Ancient Egypt.
 K
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_NameRanged Barracks
+A
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name	Arbalists
 H
 :Base.Units.Unit_MinoanEra_EgyptianAcolytes_Crocodiles_Name
 Crocodiles
@@ -912,6 +943,8 @@ C
 >
 #Base.BuildingGroups.chronicler_Name
 ChroniclerChroniclers
+N
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameKnightly cavalry
 E
 5Base.Technologies.Technology_Vikings_HealingMead_NameHealing Mead
 ;
@@ -942,6 +975,8 @@ Q
 +
 Base.BuildingGroups.SmallFarm
 Rural Farm
+Ï
+MBase.AbilityDescriptions.hero_battle_ability_description.FalconryGlove_1_Nameö<style=ability_label>Heal</style>Upon delivering the killing blow to an enemy unit, the hero equipped with the Falconry Glove recovers <style=basestat>{heal_percentage_per_relic_level}</style> of the defeated enemy's maximum HP. This effect applies to both regular units and heroes.
 Q
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_2_NameInfantry Barracks
 W
@@ -1010,6 +1045,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_
 Base.Heroes.hero.Achilles_NameAchilles
 `
 UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Little_NameSnowman
+3
+"Base.Heroes.hero.LouisPasteur_NameLouis Pasteur
 P
 >Base.Technologies.Technology_AgeOfTheFranks_ImprovedReins_NameImproved Reins
 U
@@ -1036,6 +1073,8 @@ N
 A
 3Base.Buildings.Building_MinoanEra_Home_Small_2_Name
 Small Home
+t
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Desc8Produces a small amount of food in short period of time.
 B
 #Base.BuildingTypes.fishingPier_NameFishing PierFishing Piers
 _
@@ -1057,6 +1096,8 @@ I
 Base.Ages.IberianEra_Start	1050 A.D.
 ê
 PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Nameª<style=ability_label>Debuff | Ability Block</style>Inhibits all enemy units' ability to attack, decreasing their Accuracy by <style=basestat>{accuracy_percentage}</style>, their ATK Speed by <style=basestat>{atk_speed_percentage}</style>, and their ATK by <style=basestat>{atk_percentage}</style> of Franklin's ATK for <style=basestat>{duration}</style>. Also prevents enemies from using Abilities for <style=basestat>{block_duration}</style>.
+Z
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_DescUnlocks knightly cavalry
 W
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_NameSpice Merchant
 i
@@ -1224,6 +1265,8 @@ w
 -Base.Units.Unit_FeudalAge_Player_Knights_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 '
 Base.Ages.RomanEmpire_Decade50 B.C.
+°
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_DesciRanged units shoot projectiles over a great distance and are especially effective against infantry units.
 ˚
 Base.Units.Unit_MarcoPolo_DescÿThe winds fill your sails, for Marco Polo's voyages have brought him to you! Famed for his extensive travels across Asia, this 13th century Venetian explorer recorded his travels and secured his place in history.<br><br>Aged 17, he embarked with his uncle and his father, traveling along the Silk Road to the court of Kublai Khan in China. His vivid descriptions inspired European imaginations and developed their knowledge of the East.<br><br>Though much of Marco Polo's accounts have been questioned, they forged an interest in the East in Europe that has never ceased. The greatest map ever made, the Atlas of Catalan, was based on his voyages, and his name is remembered in both scholarly debate and children's games. Marco!
 R
@@ -1402,6 +1445,8 @@ Z
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_3_NameHeavy Infantry Barracks
 ]
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_DescProduces silk from silk threads
+R
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescUnlocks arbalists
 L
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_NameDomestic Farm
 d
@@ -1434,10 +1479,13 @@ V
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_NameSpice Merchant
 U
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NamePorcelain workshop
-R
-9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_DescProduces Gold Laurels
+F
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Name
+Rural farm
 F
 5Base.Abilities.hero_battle_ability.OracleOfDephi_NameOracle's Omen
+R
+9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_DescProduces Gold Laurels
 v
 -Base.Units.Unit_IberianEra_Player_Jinete_DescECavalry Units are very fast and charge toward the enemies rear guard.
 M
@@ -1492,6 +1540,8 @@ D
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameRise of Egypt
 K
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameUnion Rejuvenation
+V
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameSpice merchant
 :
 %Base.Heroes.hero.LeonardoDaVinci_NameLeonardo da Vinci
 {
@@ -1735,6 +1785,8 @@ B
 3Base.Technologies.Technology_China_Calligraphy_NameCalligraphy
 O
 ;Base.Technologies.Technology_MinoanEra_OraclesGuidance_NameOracles Guidance
+=
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_NameBillmen
 /
  Base.Heroes.hero.MarieCurie_NameMarie Curie
 /
@@ -1800,6 +1852,8 @@ P
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_1_DescUnlocks Sagittarii
 _
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_DescProduces porcelain from clay
+v
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_Desc7Produces a large amount of food in long period of time.
 A
 2Base.Buildings.Building_Vikings_Home_Sailor_4_NameSailor Home
 6
@@ -1922,6 +1976,8 @@ G
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameDomestic Farm
 `
 FBase.Technologies.Technology_KingdomOfSicily_HeavyCrossbowDesigns_NameHeavy Crossbow Designs
+V
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_DescUnlocks infantrymen
 K
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameFaering Mastery
 Q
@@ -1962,6 +2018,8 @@ A
 0Base.Abilities.hero_battle_ability.Lagertha_NameThunderstrike
 v
 <Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
+1
+Base.Ages.HighMiddleAges_NameHigh Middle Ages
 T
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_NameBeekeeping Mastery
 O
@@ -1979,6 +2037,8 @@ w
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_Desc<Produces a big pile of Coins and adds 2 Workers to your city
 ¯
 NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name•<style=ability_label>Summon</style>Manipulates the space-time continuum to create a black hole at the location of Einstein's current target. The black hole will move across the battlefield in a spiral shape for <style=basestat>{duration}</style>, dealing up to <style=basestat>{dmg_percentage}</style> damage to nearby enemy units and cripples their attack speed by <style=basestat>{atk_speed_slow}</style> while near it.
+>
+1Base.Abilities.hero_battle_ability.Excalibur_Name	Excalibur
 M
 =Base.Technologies.Technology_KingdomOfSicily_MaskanHouse_NameMaskan House
 T
@@ -2123,6 +2183,8 @@ Small Home
 Mansa Musa
 D
 7Base.Technologies.Technology_RomanEmpire_Ballistas_Name	Ballistas
+à
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_DescRHeavy infantry units are bulky and block cavalry units from charging through them.
 U
 ?Base.Technologies.Technology_RomanEmpire_UnderfloorHeating_NameUnderfloor Heating
 g
@@ -2193,6 +2255,8 @@ J
 Base.Units.Unit_VanHelsing_Desc≈Ready your crossbow and sharpen your stakes, Abraham Van Helsing is on the hunt! In Bram Stoker's 19th century horror novel 'Dracula', this doctor takes up the role of amateur vampire hunter, finishing off four of them!<br><br>Since then, Van Helsing has become an increasingly mythologized figure; a hunter by trade, famed in Hammer horror and adaptations of Dracula. Generations of Van Helsings have been shown battling for the side of light.<br><br>Van Helsing has changed a lot since his initial creation. Once simply a medical doctor and polymath, now this dashing figure is synonymous with monster slaying, with his crossbow and stakes in hand. What's his favorite place to eat? A stakehouse, of course!
 É
 -Base.Units.Unit_EarlyRome_Player_Triarii_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
+L
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_NameDomestic farm
 `
 EBase.Technologies.Technology_ByzantineEra_ChainmailReinforcement_NameChainmail Reinforcement
 ©
@@ -2258,6 +2322,8 @@ w
 6Base.Buildings.Building_IberianEra_Home_Average_2_Desc=Produces a big pile of Coins and adds 2 Workers to your city.
 Q
 <Base.Technologies.Technology_EarlyRome_SiegeEngineering_NameSiege Engineering
+R
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_DescUnlocks arbalists
 B
 4Base.Technologies.Technology_Vikings_Pictograms_Name
 Pictograms
@@ -2265,6 +2331,8 @@ J
 5Base.Abilities.hero_battle_ability.RagnarLodbrok_NameLion of the North
 :
 &Base.Regions.region.DesertDelta_2_NameCity of Pharaohs
+W
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_NameLittle culture site
 K
 9Base.Buildings.Building_ClassicGreece_Home_Premium_1_NameLuxurious Home
 G
@@ -2320,12 +2388,16 @@ P
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameThralls and Jarls
 ;
 )Base.Regions.region.VolcanicJungle_3_NameEnglish Colony
+m
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc(Improves happiness of adjacent buildings
 =
 1Base.Units.Unit_ByzantineEra_Player_Catapult_NameCatapult
 G
 +Base.Wonders.Wonder_Capital_Lighthouse_NameLighthouse of Alexandria
 V
 <Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_NameLuxurious Culture Site
+I
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_NameMedium home
 °
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_DescdSend off expedition ships which will gather either tons of Jewel, Spice, Gold, or Ceramic Treasures.
 D
@@ -2346,6 +2418,8 @@ B
 6Base.Buildings.Building_Arabia_Merchant_Average_3_NameMerchant
 J
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_NameMedium Home
+V
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_DescUnlocks large ballista
 5
 )Base.Wonders.Wonder_Capital_Alhambra_NameAlhambra
 P
@@ -2411,6 +2485,8 @@ E
 6Base.Technologies.Technology_FeudalAge_KingsGuard_NameKings Guard
 ¿
 IBase.AbilityDescriptions.hero_battle_ability_description.MarcoPolo_1_NameÚ<style=ability_label>Teleport| Stomp</style>Teleports into the largest cluster of enemy units, causing an explosion on arrival. The explosion deals <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>.
+≠
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of coins and food for you.
 ‰
 "Base.Units.Unit_OracleOfDephi_DescΩBathe in the Castalian Spring, drink the holy waters of the Cassotis, and ready a goat, for the Oracle of Delphi is ready to prophecize! From the 8th century BC, people traveled to the Temple of Apollo, to hear whispers of the future.<br><br>These prophecies, delivered by the Pythia, a high priestess who embodied the Oracle, played a critical role in decision-making on matters of war, politics, and colonization. Leaders and common folk turned to the Pythia for advice again and again for over 8 centuries.<br><br>The Oracle of Delphi became a central figure in Greek culture, at the intersection of religion, politics, and society. More than 500 statements of the Oracle have been recorded: more than half are known to have come true. When I asked her if you're going to beat Tesla, she said that you'll need to keep playing!
 E
@@ -2577,6 +2653,8 @@ B
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSilver Bolts
 ˜
 HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name™<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
+u
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_Desc7Produces a ton of coins and adds 2 workers to your city
 ¡
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_NameÓ<style=ability_label>Debuff</style>Targets the biggest cluster of enemy units, reducing DEF by <style=basestat>{atk_percentage}</style> of Imhotep's ATK for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>.
 E
@@ -2594,6 +2672,8 @@ N
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
 k
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
+W
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_DescUnlocks Billmen
 K
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_NameSilk workshop
 R
@@ -2610,6 +2690,8 @@ I
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
 A
 0Base.Buildings.Building_Mayas_Home_Worker_4_NameWorker's Home
+l
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc(Improves happiness of adjacent buildings
 +
 Base.BuildingTypes.farm_NameFarmFarms
 P
@@ -2706,6 +2788,8 @@ S
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameCavalry Barracks
 g
 6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc-Produces Coins and adds a Worker to your city
+N
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_NameSiege barracks
 A
 .Base.Abilities.hero_battle_ability.Jester_NameConfetti Cannon
 T
@@ -2862,6 +2946,9 @@ Z
 CBase.Technologies.Technology_KingdomOfSicily_ImprovedRoofTiles_NameImproved Roof Tiles
 +
 Base.BuildingGroups.SmallOakAncient Oak
+I
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_Name
+Great Hall
 \
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameModerate Culture Site
 K
@@ -3015,6 +3102,8 @@ U
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_NameLarge Culture Site
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_NameRanged Barracks
+_
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_NameHeavy infantry barracks
 ]
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_DescProduces silk from silk threads
 O
@@ -3088,6 +3177,8 @@ q
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_Desc7Produces a large amount of Food in long period of time.
 [
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_2_NameHeavy Infantry Barracks
+T
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_NameInfantry barracks
 G
 1Base.Units.Unit_IberianEra_Castilla_Infantry_NameCastillan Infantry
 l
@@ -3296,6 +3387,8 @@ O
 :Base.Abilities.hero_battle_ability.GreekMathematician_NameAxiomatic Assault
 6
 #Base.Heroes.hero.CyrusTheGreat_NameCyrus the Great
+W
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescUnlocks Billmen
 ?
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Name
 Rural Farm
@@ -3334,6 +3427,8 @@ R
 4Base.Technologies.Technology_ClassicGreece_Toga_NameToga
 õ
 2Base.Buildings.Building_Egypt_City_CityHall_2_DesceThe Great Hall is the center of your city. It continuously generates a small amount of Deben for you.
+S
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_DescProduces grimoires
 <
 1Base.Technologies.Technology_Vikings_Jarldom_NameJarldom
 T
@@ -3346,6 +3441,8 @@ g
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc1Produces Pennies and adds 2 Sailors to your city.
 )
 Base.Units.Unit_Lagertha_NameLagertha
+Z
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_DescUnlocks knightly cavalry
 L
 :Base.Technologies.Technology_MinoanEra_Administration_NameAdministration
 5
@@ -3383,6 +3480,8 @@ P
  Base.Units.Unit_SirLancelot_NameSir Lancelot
 M
 <Base.Technologies.Technology_ClassicGreece_HerbalAromas_NameHerbal Aromas
+V
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_DescUnlocks large ballista
 W
 BBase.Technologies.Technology_KingdomOfSicily_TacticalChambers_NameTactical Chambers
 C
@@ -3490,6 +3589,8 @@ A
 6Base.Buildings.Building_Vikings_Beehive_Average_2_NameBeehive
 V
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_NameModerate Culture Site
+Y
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_NameCompact culture site
 E
 6Base.Technologies.Technology_FeudalAge_SheepHerds_NameSheep Herds
 ß
@@ -3593,8 +3694,12 @@ u
 [
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_NameHeavy Infantry Barracks
 +
+Base.Ages.HighMiddleAges_Start	1200 A.D.
++
 Base.Units.Unit_Leonidas_Name
 Leonidas I
+G
+5Base.Abilities.hero_battle_ability.FalconryGlove_NameFalconry Glove
 #
 Base.HeroClass.DefenderDefender
 d
@@ -3662,6 +3767,8 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_2_NameLuxurious Papyrus Field
 <
 )Base.Regions.region.VolcanicJungle_1_NameMayan Foothills
+_
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameHeavy infantry barracks
 H
 0Base.Abilities.hero_battle_ability.Achilles_NameAchilles' Last Stand
 M
@@ -3693,11 +3800,15 @@ D'Artagnan
 1Base.Technologies.Technology_FeudalAge_Sagas_NameSagas
 d
 1Base.Buildings.Building_Arabia_Home_Medium_3_Desc/Produces Dirham and adds 2 Workers to your city
+N
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_NameSiege barracks
 @
 2Base.Buildings.Building_Egypt_City_CityHall_2_Name
 Great Hall
 >
 4Base.Technologies.Technology_RomanEmpire_Turmae_NameTurmae
+G
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_NameScribe
 N
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_NameCavalry Barracks
 @
@@ -3724,6 +3835,8 @@ a
 $Base.Units.Unit_OttoVonBismarck_NameOtto von Bismarck
 [
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameMerovingian Berserkers
+2
+!Base.Units.Unit_LouisPasteur_NameLouis Pasteur
 -
  Base.Ages.KingdomOfSicily_Finish	1100 A.D.
 N
@@ -3732,6 +3845,8 @@ N
 )Base.Regions.region.VolcanicJungle_4_NameNew Byzantium
 2
 #Base.Units.Unit_OttomanGeneral_NameHasan Pasha
+I
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_NameMedium home
 N
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_2_NameSiege Barracks
 h
@@ -3792,6 +3907,8 @@ y
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameVerdant Cannon
 P
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescProduces Tomes
+›
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Nameè<style=ability_label>Buff| Bleed</style>Enhances the hero's damage against bleeding targets by <style=basestat>{damage_increase_per_relic_level}</style>. Additionally, damaging an enemy has a <style=basestat>{bleed_chance_percentage}</style> chance to inflict a bleed, dealing <style=basestat>{bleed_percentage_per_relic_level}</style> damage per second for <style=basestat>{bleed_duration}</style>.
 Y
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatic Controls
 @
@@ -3936,6 +4053,8 @@ Q
 ;
 -Base.TreasureHuntDifficultiesPanel.Difficulty
 Difficulty
+i
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc-Produces coins and adds a worker to your city
 o
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Desc8Produces a small amount of Food in short period of time.
 &
@@ -4082,6 +4201,8 @@ q
 1Base.Buildings.Building_Egypt_Home_Average_5_Desc<Produces a big pile of Deben and adds 2 Workers to your city
 (
 Base.Ages.ByzantineEra_Start330 A.D.
+@
+(Base.Units.Unit_FlorenceNightingale_NameFlorence Nightingale
 N
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_Name	Carpenter
 6
@@ -4122,6 +4243,8 @@ L
 9Base.Abilities.hero_battle_ability.ArtemisiaIOfCaria_NameStorm of Arrows
 Á
 !Base.HeroClass.SingleStriker_Desc¡Single Strikers deal large amount of damage to single targets. They excel against enemy heroes.<br><line-height=50%><br></line-height><b><color=#3DA229>Strong</color> against:</b><br>‚Ä¢<indent=5%><color=#3DA229>Enemy Heroes</color> in <color=#3DA229>Campaign</color>, <color=#3DA229>Arena</color> and <color=#3DA229>Treasure Hunt</color>.</indent><br>‚Ä¢<indent=5%><color=#3DA229>Tesla Storms</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Weak</color> against:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Large Squads</color> in Campaign and Treasure Hunt.
+z
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_Desc<Produces a big pile of coins and adds 2 workers to your city
 Ü
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 Ó
@@ -4145,6 +4268,8 @@ E
 BBase.Technologies.Technology_IberianEra_LongDistanceSeafaring_NameLong-Distance Seafaring
 u
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_Desc<Substantially increases the irrigation of adjacent buildings
+P
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_NameRanged barracks
 W
 6Base.Buildings.Building_Arabia_Merchant_Average_2_DescProduces a big pile of Dirham
 K
@@ -4167,6 +4292,9 @@ m
 1Base.Buildings.Building_China_Home_Premium_2_Desc8Produces a ton of Wu Zhu and adds 3 workers to your city
 P
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_NameExpedition Pier
+F
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Name
+Rural farm
 N
 <Base.Units.Unit_RomanEmpire_Carthaginians_CretanArchers_NameCretan Archers
 B
@@ -4262,6 +4390,8 @@ I
 8Base.Technologies.Technology_BronzeAge_SmallHolding_NameSmall Holding
 G
 $Base.BuildingGroups.premiumFarm_NameLuxurious FarmLuxurious Farms
+,
+Base.Ages.HighMiddleAges_Finish	1200 A.D.
 R
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_NameLittle Culture Site
 T
@@ -4280,6 +4410,9 @@ B
 5Base.Technologies.Technology_FeudalAge_Seafaring_Name	Seafaring
 L
 ;Base.Technologies.Technology_ByzantineEra_StoneCarving_NameStone Carving
+F
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Name
+Small home
 U
 >Base.Technologies.Technology_MinoanEra_DivinatoryStrategy_NameDivinatory Strategy
 7
@@ -4433,6 +4566,8 @@ s
 2Base.Technologies.Technology_MinoanEra_Screws_NameScrews
 .
 Base.Heroes.hero.JoanOfArc_NameJoan of Arc
+¿
+(Base.Units.Unit_FlorenceNightingale_DescìDo not worry: The Lady with the Lamp is by your side. Florence Nightingale, a 19th-century British nurse, is famed for her work in the Crimean War, healing soldiers as they lay dying. <br><br> But Florence Nightingale's greatest achievements perhaps come later. After having assisted the military at Scutari and treated the sick of three armies, Nightingale led the reform of British nursing, promoting a modernised system that has shaped care to this day. Nurses swear the Nightingale Pledge, an echo of her own promise to help. <br><br> Florence Nightingale's legacy is thusly two-fold: on one hand, an angel, the Lady with the Lamp; on the other, a determined and brilliantly intelligent woman who changed hospitals forever. Perhaps neither is fully true. Nightingale's nickname was originally the Lady with the Hammer, after she broke into a locked medical supply ‚Äî perhaps this image is truer than any other!
 ¨
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_DescrMaya Archers are additional Ranged Units for your army. Their stats scale automatically based on your current age.
 W
@@ -4441,6 +4576,8 @@ T
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameCompact Culture Site
 ;
 2Base.Technologies.Technology_IberianEra_Masia_NameMasia
+R
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_NameCavalry barracks
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_NameOasis
 u
@@ -4525,6 +4662,8 @@ Trapezites
 D
 )Base.BuildingGroups.averageCamelFarm_Name
 Camel FarmCamel Farms
+t
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc8Produces a small amount of food in short period of time.
 _
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_4_DescProduces porcelain from clay
 .
@@ -4643,6 +4782,11 @@ H
 3Base.TreasureHuntDifficultiesPanel.RecommendedPowerRecommended power
 m
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_Desc3Produces a large amount of Food over a long period.
+F
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Name
+Small home
+_
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameHeavy infantry barracks
 å
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_DescLThe Hero Academy produces Experience Scrolls at the cost of Research Points.
 ç
@@ -4658,6 +4802,8 @@ i
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
 D
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameMedium Home
+M
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_Name	Carpenter
 Q
 ?Base.Technologies.Technology_KingdomOfSicily_ArmoredPanels_NameArmored Panels
 :
@@ -4724,6 +4870,9 @@ D
 Base.Ages.ClassicGreece_Start880 B.C.
 v
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_Desc9Produces a large amount of Food in a long period of time.
+F
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Name
+Rural farm
 d
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc-Produces Coins and adds a Worker to your city
 ,
@@ -4761,6 +4910,8 @@ v
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_Desc7Produces a large amount of Food in long period of time.
 L
 7Base.Units.Unit_BronzeAge_SumerianEmpire_Gilgamesh_NameMinoan Berserkers
+T
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_NameInfantry barracks
 N
 <Base.Technologies.Technology_ByzantineEra_WheeledPlough_NameWheeled Plough
 _
@@ -4866,6 +5017,8 @@ GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameè<styl
 "Base.Units.Unit_QueenBoudicca_NameQueen Boudicca
 Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_2_DescProduces Ankhs and Golden Masks
+{
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc6Substantially improves happiness of adjacent buildings
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_NameSchool
 ﬁ
@@ -4878,6 +5031,8 @@ J
 :Base.Technologies.Technology_ByzantineEra_RitualSites_NameRitual Sites
 8
 -Base.Units.Unit_BronzeAge_Player_Archers_NameArchers
+n
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_Desc4Infantry units are most effective in the front rows.
 K
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_NameRanged Barracks
 E
@@ -4931,6 +5086,10 @@ Q
 A
 (Base.BuildingGroups.averageGoldMine_Name	Gold Mine
 Gold Mines
+N
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_NameSiege barracks
+I
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_NameMedium home
 ;
 )Base.Regions.region.VolcanicJungle_2_NameObsidian Arena
 A
@@ -5013,6 +5172,8 @@ K
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_NameΩ<style=ability_label>Stomp| Debuff| Soul Link</style>Stomps the ground, dealing <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of <style=basestat>{range}</style> and reducing their accuracy by <style=basestat>{accuracy_percentage}</style> for <style=basestat>{duration}</style>. Also links all friendly units' souls for <style=basestat>{duration_link}</style>. Soul-linked units share incoming damage between them.
 ,
 Base.Heroes.hero.Spartacus_Name	Spartacus
+P
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_NameRanged barracks
 A
 7Base.Technologies.Technology_AgeOfTheFranks_Spades_NameSpades
 D
@@ -5027,6 +5188,8 @@ M
 =Base.Buildings.Building_IberianEra_Special_HeroAcademy_1_NameHero Academy
 S
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_NameLarge Culture Site
+W
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_DescUnlocks Billmen
 Q
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameCavalry Barracks
 Ï
@@ -5056,18 +5219,24 @@ S
 Base.Heroes.hero.Inanna_NameInanna
 I
 &Base.BuildingGroups.clayProcessor_NameClay ProcessorClay Processors
+n
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_Desc(Improves happiness of adjacent buildings
 v
 5Base.Buildings.Building_FeudalAge_Home_Average_2_Desc=Produces a big pile of Coins and adds 2 Workers to your city.
 U
 *Base.BuildingGroups.porcelainWorkshop_NamePorcelain WorkshopPorcelain Workshops
 ∆
 "Base.Units.Unit_AmeliaEarhart_DescüChocks away! Amelia Earhart is trailblazing across all of history, ready to cross new horizons with her dog Derry. This 20th century tomboy shook the world with her trans-Atlantic flights, defying expectations and overcoming every obstacle before her.<br><br>Sipping hot chocolate and terrifying farmers, Earhart broke record after record, becoming the first woman to cross the Atlantic, the first to cross the Pacific alone, the highest flying woman pilot of all of history.<br><br>But it was her last trip that earned her fame forever. Earhart wanted to be the first woman to ever circumnavigate the world by plane, and almost made it, but disappeared toward the end of the journey. Nobody knew exactly what happened to her, but now we do: she found a time portal and ended up here on your screen!
+X
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_DescProduces secretaries
 W
 ABase.Technologies.Technology_ClassicGreece_ImprovedFletching_NameImproved Fletching
 E
 /Base.Units.Unit_TreasureHunt_Blue_Corsairs_NameCelestial Corsairs
 E
 6Base.Technologies.Technology_FeudalAge_Wingguards_NameWing Guards
+Ñ
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_DescFCavalry units are very fast and charge towards the enemies rear guard.
 P
 %Base.BuildingGroups.largeCulture_NameLarge Culture SiteLarge Culture Sites
 D
@@ -5108,6 +5277,8 @@ I
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduces Obsidian
 O
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCavalry Barracks
+t
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc8Produces a small amount of food in short period of time.
 A
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_Name
 Rural Farm
@@ -5138,6 +5309,8 @@ P
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameCavalry Barracks
 R
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrange Plantation
+V
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescUnlocks infantrymen
 „
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Nameî<style=ability_label>Area Strike| Burn| Poison</style>Throws <style=basestat>{no_vials}</style> vials with unstable chemicals at random enemy units, dealing <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style> and leaving affected units burning and poisoned for a further <style=basestat>{debuff_percentage}</style> damage over <style=basestat>{duration}</style>.
 ˆ
@@ -5185,6 +5358,8 @@ O
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameHarbour Economics
 æ
 Base.Units.Unit_KingMinos_DescõChat with Zeus and hide the red thread: King Minos is here! This legendary ruler from Greek mythology is believed to have reigned in the 2nd millennium BC, famed as the sovereign of Crete.<br><br>Celebrated for his wisdom and authority, he is best known for commissioning the construction of a complex labyrinth to imprison the Minotaur, a mythical beast.<br><br>Minos's reign is woven with captivating tales of intrigue and adventure, such as the story of Daedalus and Icarus.His enduring legacy as a formidable and mysterious king continues to enchant storytellers, weaving together threads of myth and ancient history. Don't let him take you on a tour of his maze!
+R
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_NameCavalry barracks
 ®
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
 O
@@ -5193,6 +5368,8 @@ G
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_NameMedium Home
 l
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc3Produces a large amount of Food over a long period.
+i
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc-Produces coins and adds a worker to your city
 i
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_BelltowerCottage_NameBelltower Cottage
 A
@@ -5206,6 +5383,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Tar Ovens
 T
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescProduces Pillars
+E
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameInfantrymen
 L
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameWater Cistern
 h
@@ -5220,6 +5399,8 @@ O
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameViking Homesteads
 [
 3Base.TreasureHuntDifficultiesPanel.CurrentlyPlaying$You are currently playing level {0}!
+Q
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_NameHero Academy
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_NameOasis
 \
@@ -5280,6 +5461,8 @@ R
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_Namekaolin quarry
 A
 6Base.Buildings.Building_Vikings_Beehive_Average_5_NameBeehive
+V
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_DescUnlocks large ballista
 S
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_2_NameInfantry Barracks
 ]
@@ -5323,6 +5506,8 @@ B
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameChannel
 F
 %Base.BuildingGroups.silkWorkshop_NameSilk WorkshopSilk Workshops
+T
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_DescProduces a ton of food
 K
 9Base.Abilities.hero_battle_ability.NapoleonBonaparte_NameCode of Battle
 Q
@@ -5381,6 +5566,8 @@ e
 3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc.Produces Coins and adds a Worker to your city.
 @
 'Base.Units.Unit_MargaretIOfDenmark_NameMargaret I of Denmark
+v
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Desc7Produces a large amount of food in long period of time.
 V
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_NameLuxurious Culture Site
 ä
@@ -5412,10 +5599,14 @@ f
 4Base.Buildings.Building_IberianEra_Home_Small_2_Desc.Produces Coins and adds a Worker to your city.
 T
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_DescUnlocks Caballarii
+E
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_NameLarge ballista
 M
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_NameCavalry Barracks
 Å
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name∑<style=ability_label>Area Strike| Debuff| Burn</style>Calls forth a storm at the location of the biggest cluster of enemy units. The storm deals <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>, reduces movement speed by <style=basestat>{move_speed_percentage}</style>, and leaves affected units burning for <style=basestat>{dmg_percentage_burn}</style> over <style=basestat>{duration}</style>.
+R
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_DescUnlocks arbalists
 N
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_NameRoyal Arbalesters
 L
@@ -5452,6 +5643,8 @@ q
 1Base.Buildings.Building_Egypt_Home_Average_1_NameMedium Home
 J
 8Base.Buildings.Building_ByzantineEra_Home_Premium_1_NameLuxurious Home
+[
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_NameModerate culture site
 D
 9Base.Technologies.Technology_KingdomOfSicily_Melites_NameMelites
 G
@@ -5612,6 +5805,8 @@ Q
 FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name∞<style=ability_label>Buff</style>While the holder is above <style=basestat>{health_cutoff}</style> health, their evasion is increased by <style=basestat>{evasion_buff}</style>.
 o
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
+õ
+!Base.Units.Unit_LouisPasteur_DescıConquer diseases with Louis Pasteur, the father of Microbiology! This 19th century French scientist is famed for his discovery of the rabies vaccine, invention of pasteurization, and his theory of germs. <br><br> Pasteur is most known for injecting 9-year old Joseph Meister, who had been attacked by a rabid dog, with an inoculation for rabies. Months later, the boy remained healthy. Over the next year or so, Pasteur treated 350 others for the disease: only one contracted it. Yet, that is just a fraction of Pasteur's genius. He taught the heating of milk or wine to kill bacteria and the washing of hands before surgery, and set up the Pasteur Institute. <br><br> Today, he is followed by both fame and controversy. Many places in the world are named after this genius, but his notebooks reveal a sneaky side, deceiving and manipulating the truth in order to seem truly original. 
 U
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_DescUnlocks Mounted Spearmen
 G
@@ -5655,6 +5850,8 @@ L
 ;Base.Technologies.Technology_ByzantineEra_SolarRituals_NameSolar Rituals
 B
 7Base.Technologies.Technology_ClassicGreece_Toxotai_NameToxotai
+ë
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_DescLThe Hero Academy produces experience scrolls at the cost of research points.
 G
 7Base.Abilities.hero_battle_ability.NubianMercenary_NameDesert Viper
 A
@@ -5742,6 +5939,8 @@ M
 ;Base.Technologies.Technology_RomanEmpire_CircusMaximus_NameCircus Maximus
 C
 3Base.Technologies.Technology_China_LaborDuties_NameLabor Duties
+L
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_NameLuxurious farm
 ^
 BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_NameCarolingian Axe Throwers
 D
@@ -5766,6 +5965,8 @@ m
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_Desc/Produces Papyrus Scrolls and Ceremonial Dresses
 <
 2Base.Technologies.Technology_BronzeAge_Tailor_NameTailor
+V
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_DescUnlocks infantrymen
 ¢
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_DesceSend off expedition ships which will gather either tons of jewel-, spice-, gold- or ceramic treasures
 B
@@ -5791,6 +5992,8 @@ Minoan Era
 0Base.Units.Unit_RomanEmpire_Player_Ballista_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 3
 *Base.Units.Unit_StoneAge_Animal_Boars_NameBoars
+L
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_NameDomestic farm
 K
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameTimber Framing
 U
@@ -5810,6 +6013,8 @@ R
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_NameCavalry Barracks
 \
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_7_NameMinoan Watchtower
+•
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_DescnSiege units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 V
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_DescUnlocks Legionary
 L
@@ -5881,6 +6086,8 @@ D
 9Base.Buildings.Building_MinoanEra_Workshop_Artisan_1_NameArtisan
 w
 7Base.Buildings.Building_RomanEmpire_Home_Average_3_Desc<Produces a big pile of Coins and adds 2 Workers to your city
+U
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_NameLarge culture site
 Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_5_DescProduces Ankhs and Golden Masks
 1
@@ -6018,6 +6225,8 @@ M
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameCavalry Barracks
 k
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_Desc4Infantry Units are most effective in the front rows.
+[
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_NameLuxurious culture site
 ?
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_NameNoria
 B
@@ -6071,12 +6280,16 @@ A
 5Base.Buildings.Building_Mayas_Workshop_Premium_2_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
 E
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameGold Laurel
+,
+Base.Ages.HighMiddleAges_Decade	1200 A.D.
 m
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_Desc3Produces a large amount of Food over a long period.
 D
 2Base.Abilities.hero_battle_ability.MarieCurie_NameRadium Cascade
 P
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_NameCelestial Donkey Raiders
+z
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_Desc<Produces a big pile of coins and adds 2 workers to your city
 y
 9Base.Buildings.Building_ClassicGreece_Home_Average_3_Desc<Produces a big pile of Coins and adds 2 Workers to your city
 E

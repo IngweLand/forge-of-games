@@ -40,6 +40,8 @@ f
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc2Produce monedas y añade un sacerdote a tu ciudad.
 X
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NamePuerto de Marineros de Lujo
+[
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameBarracón de Infantería
 K
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameArponeros Verdeantes
 
@@ -88,6 +90,8 @@ X
 4Base.Technologies.Technology_IberianEra_Saffron_NameAzafrán
 O
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_NameFábrica de aguamiel
+A
+)Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Name�<style=ability_label>Potenciador</style>Mansa Musa se dirige al mayor grupo de unidades amigas, aumentando su probabilidad de golpe crítico en <style=basestat>{crit_percentage}</style>, su ATQ en <style=basestat>{crit_percentage}</style> del ATQ de Mansa Musa, y su Daño crítico en <style=basestat>{crit_dmg_percentage}</style> durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>.
 H
@@ -127,6 +131,8 @@ F
 9Base.Technologies.Technology_MinoanEra_BasketWeaving_Name	Cestería
 X
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_2_NameBarracón de largo alcance
+r
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 D
 2Base.Technologies.Technology_Vikings_TarOvens_NameHornos de Brea
 W
@@ -165,6 +171,8 @@ Z
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_NameMercader de Especias
 E
 6Base.Buildings.Building_IberianEra_Home_Premium_1_NameCasa lujosa
+n
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Desc2Produce Monedas y añade un Trabajador a tu Ciudad
 H
 #Base.Regions.region.Panganea_2_Name!Dominio de Cazadores de Calaveras
 N
@@ -182,6 +190,8 @@ N
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameTrajes ceremoniales
 E
 6Base.Technologies.Technology_BronzeAge_Prosperity_NameProsperidad
+[
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameBarracón de Largo Alcance
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_Name�<style=ability_label>Burla| Escudo</style>Burla a todos los enemigos durante <style=basestat>{taunt_duration}</style>. Bismarck obtiene <style=basestat>{shield_percentage}</style> de su daño base como escudo. Proporciona también <style=basestat>{shield_percentage_friendly}</style> del daño base de Bismarck como escudo a la unidad amiga con menos PV. Da prioridad a los héroes.
 Z
@@ -297,6 +307,8 @@ D
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
 Z
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_NameZona cultural compacta
+V
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_DescProduce Canela
 P
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_3_NameGranja de ganado
 4
@@ -311,6 +323,8 @@ a
 (Base.Heroes.hero.GreekMathematician_NameEuclid
 d
 /Base.Buildings.Building_Egypt_Home_Small_1_Desc1Produce deben y añade un trabajador a tu ciudad.
+O
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_NameGranja de Ganado
 R
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_Cavalry_NameCaballería Siciliana
 B
@@ -327,6 +341,8 @@ o
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc0Mejora la felicidad de los edificios adyacentes.
 <
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_NameToxotas
+X
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_NameCaballería Nobiliaria
 R
 :Base.Technologies.Technology_EarlyRome_TerrainMapping_NameCartografiar terreno
 T
@@ -395,6 +411,8 @@ U
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_DescProduce un montón de comida.
 e
 HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NameRed de irrigación simple
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_DescFProduce un gran montón de Monedas y añade 2 Trabajadores a tu Ciudad
 Z
 6Base.Buildings.Building_Arabia_Merchant_Average_3_Desc Produce una gran pila de dirham.
 D
@@ -415,6 +433,8 @@ E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NameGranja rural
 ^
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameInfantería Merovingia
+I
+6Base.Technologies.Technology_HighMiddleAges_Start_NameAlta Edad Media
 5
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtémoc
 �
@@ -571,6 +591,8 @@ N
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameGuardia real
 R
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameTallador de rituales
+I
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_NameCasa Pequeña
 �
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_Desc�Las unidades de asalto atacan lentamente y son vulnerables a los ataques enemigos, pero tienen un impacto devastador sobre una zona amplia.
 B
@@ -678,14 +700,20 @@ D
 5Base.Technologies.Technology_RomanEmpire_Swinery_NamePorquerizas
 U
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_NameZona cultural pequeña
+I
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameCasa Lujosa
 r
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc0Mejora la felicidad de los edificios adyacentes.
 ?
 3Base.Technologies.Technology_BronzeAge_Artisan_NameArtesano
+�
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_DescBProduce una gran cantidad de Comida en un largo periodo de tiempo.
 V
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_NameZona cultural mediana
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_3_DescVLa colmena produce una miel deliciosa que se usa para elaborar aguamiel en la taberna.
+c
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_Desc!Desbloquea Caballería Nobiliaria
 B
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_NameOrfebre
 a
@@ -763,6 +791,9 @@ U
 Base.Units.Unit_Menes_Desc�Salve Menes, el primer rey mortal de todo Egipto. A este gran gobernante del siglo XXXI a.C. del antiguo Egipto se le atribuye la unificación del Alto y Bajo Egipto, convirtiéndose así en el primer faraón de un reino egipcio unificado.<br><br>Estableció Menfis como capital, estratégicamente situada entre el Alto y el Bajo Egipto. Su liderazgo marcó el comienzo de la Primera Dinastía de Egipto, sentando las bases de su desarrollo cultural y político.<br><br>El legado de Menes es el nacimiento de la civilización egipcia, pues sentó las bases de una de las mayores culturas de la historia. Por desgracia, actualmente se rumorea que está trabajando con Tesla. Al parecer, quiere Reemplazar toda la historia por el Antiguo Egipto.
 V
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_NameBarracón de largo alcance
+B
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name
+Arbalistas
 H
 :Base.Units.Unit_MinoanEra_EgyptianAcolytes_Crocodiles_Name
 Cocodrilos
@@ -886,6 +917,8 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 1Base.Buildings.Building_China_Home_Premium_1_NameCasa lujosa
 T
 #Base.BuildingGroups.chronicler_NameEdificio de CronistasEdificios de Cronistas
+T
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameCaballería Nobiliaria
 K
 5Base.Technologies.Technology_Vikings_HealingMead_NameHidromiel Curativo
 =
@@ -912,6 +945,10 @@ S
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_NameProcesador de hilo
 -
 Base.BuildingGroups.SmallFarmGranja Rural
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.FalconryGlove_1_Name�<style=ability_label>Sanar</style>Al asestar el golpe mortal a una unidad enemiga, el Héroe equipado con el Guante de Cetrería recupera <style=basestat>{heal_percentage_per_relic_level}</style> de los PS máximos del enemigo derrotado. Este Efecto se aplica tanto a las unidades normales como a los Héroes.
+
+<style=ability_label>Sanar</style> Al asestar el golpe final a una unidad enemiga, el héroe equipado con el Guante de Cetrería recupera <style=basestat>{heal_percentage_per_relic_level}</style> de los PV máximos del enemigo derrotado. Este efecto se aplica tanto a unidades normales como a héroes.
 X
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_2_NameBarracón de infantería
 \
@@ -979,6 +1016,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_
 Base.Heroes.hero.Achilles_NameAquiles
 i
 UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Little_NameMuñeco de nieve
+3
+"Base.Heroes.hero.LouisPasteur_NameLouis Pasteur
 S
 >Base.Technologies.Technology_AgeOfTheFranks_ImprovedReins_NameRiendas mejoradas
 U
@@ -1003,6 +1042,8 @@ O
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Siege_NameTrebutchet Siciliano
 D
 3Base.Buildings.Building_MinoanEra_Home_Small_2_NameCasa Pequeña
+s
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Desc7Produce una pequeña cantidad de Comida en poco tiempo.
 H
 #Base.BuildingTypes.fishingPier_NameMuelle de pescaMuelles de pesca
 h
@@ -1024,6 +1065,8 @@ F
 1050 d. C.
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>Penalización | Bloqueo de Habilidad</style>Inhibe la habilidad de atacar de todas las unidades enemigas, disminuyendo su precisión en <style=basestat>{accuracy_percentage}</style>, su Velocidad ATQ en <style=basestat>{atk_speed_percentage}</style>, y su ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Franklin durante <style=basestat>{duration}</style>. También impide a los enemigos usar Habilidades durante <style=basestat>{block_duration}</style>.
+c
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Desc!Desbloquea Caballería Nobiliaria
 ]
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_NameMercader de especias
 o
@@ -1188,6 +1231,8 @@ Q
 -Base.Units.Unit_FeudalAge_Player_Knights_DescSLas unidades de caballería son muy rápidas y cargan hacia la retaguardia enemiga.
 )
 Base.Ages.RomanEmpire_Decade	50 a. C.
+�
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Desc|Las Unidades a Distancia disparan proyectiles a gran distancia y son especialmente efectivas contra unidades de infantería.
 �
 Base.Units.Unit_MarcoPolo_Desc�¡Los vientos llenan tus velas, pues los viajes de Marco Polo le han traído hasta ti! Famoso por sus extensos viajes por Asia, este explorador veneciano del siglo XIII dejó constancia de sus viajes y se aseguró un lugar en la historia.<br><br>A los 17 años, se embarcó con su tío y su padre, viajando por la Ruta de la Seda hasta la corte de Kublai Khan en China. Sus vívidas descripciones inspiraron la imaginación de los europeos y desarrollaron su conocimiento de Oriente.<br><br>Aunque gran parte de los relatos de Marco Polo han sido cuestionados, forjaron en Europa un interés por Oriente que nunca ha cesado. El mayor mapa jamás realizado, el Atlas de Catalán, se basó en sus viajes, y su nombre se recuerda tanto en el debate académico como en los juegos infantiles. ¡Marco!
 W
@@ -1296,8 +1341,10 @@ D
 Base.Units.Unit_Spartacus_Name	Espartaco
 A
 1Base.Buildings.Building_Egypt_Home_Average_3_NameCasa mediana
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
+�	
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Burla | Escudo | Golpe de Área</style>Filipo II de Macedonia obtiene un gran escudo que vale <style=basestat>{porcentaje_de_escudo}</style> de su daño base y burla a todas las unidades enemigas durante <style=basestat>{duración_de_burla}</style>. Tras <style=basestat>{tiempo_detonación}</style>, su escudo detona, infligiendo <style=basestat>{porcentaje_de_daño}</style> del valor restante del escudo como daño a todas las unidades enemigas en un radio de <style=basestat>{rango}</style>. La detonación consume el escudo de Felipe.
+
+<style=ability_label>Burla | Escudo | Golpe en Área</style> Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su daño base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Después de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonación consume el escudo de Felipe.
 J
 (Base.BuildingGroups.smallIrrigation_NamePozo PequeñoPozos Pequeños
 V
@@ -1365,6 +1412,8 @@ b
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_3_NameBarracón de infantería pesada
 d
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_Desc&Produce seda a partir de hilos de seda
+V
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescDesbloquea Arbalistas
 P
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_NameGranja doméstica
 j
@@ -1397,10 +1446,12 @@ X
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_NameMercader de Especias
 V
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NameTaller de Porcelana
-U
-9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_DescProduce laureles de oro.
+H
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_NameGranja Rural
 N
 5Base.Abilities.hero_battle_ability.OracleOfDephi_NamePresagio del Oráculo
+U
+9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_DescProduce laureles de oro.
 �
 -Base.Units.Unit_IberianEra_Player_Jinete_DescSLas unidades de caballería son muy rápidas y cargan hacia la retaguardia enemiga.
 S
@@ -1455,6 +1506,8 @@ H
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameAscenso de Egipto
 V
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameRejuvenecimiento de la Unión
+\
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameMercader de Especias
 :
 %Base.Heroes.hero.LeonardoDaVinci_NameLeonardo da Vinci
 �
@@ -1697,6 +1750,8 @@ B
 3Base.Technologies.Technology_China_Calligraphy_NameCaligrafía
 U
 ;Base.Technologies.Technology_MinoanEra_OraclesGuidance_NameGuía de los oráculos
+=
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_NameBillmen
 /
  Base.Heroes.hero.MarieCurie_NameMarie Curie
 1
@@ -1759,6 +1814,8 @@ Y
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_1_DescDesbloquea a los sagittarii
 h
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Desc%Produce Porcelana a partir de Arcilla
+�
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_DescBProduce una gran cantidad de Comida en un largo periodo de tiempo.
 G
 2Base.Buildings.Building_Vikings_Home_Sailor_4_NameCasa de marineros
 6
@@ -1879,6 +1936,8 @@ J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_NameGranja de ganado
 e
 FBase.Technologies.Technology_KingdomOfSicily_HeavyCrossbowDesigns_NameDiseños de ballesta pesada
+k
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_Desc(Desbloquea a los Soldados de Infantería
 P
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameMaestría en Faering
 T
@@ -1920,6 +1979,8 @@ A
 0Base.Abilities.hero_battle_ability.Lagertha_NameThunderstrike
 �
 <Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
+0
+Base.Ages.HighMiddleAges_NameAlta Edad Media
 Z
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_NameDominio de la apicultura
 M
@@ -1936,6 +1997,8 @@ O
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name�<style=ability_label>Invocar</style>Manipula el continuo espacio-tiempo para crear un agujero negro en la ubicación del objetivo actual de Einstein. El agujero negro se moverá por el campo de batalla en forma de espiral durante <style=basestat>{duration}</style>, infligiendo hasta <style=basestat>{dmg_percentage}</style> de daño a las unidades enemigas cercanas e incapacita su Velocidad de ataque en <style=basestat>{atk_speed_slow}</style> mientras esté cerca de él.
+>
+1Base.Abilities.hero_battle_ability.Excalibur_Name	Excalibur
 L
 =Base.Technologies.Technology_KingdomOfSicily_MaskanHouse_NameCasa maskan
 T
@@ -2080,6 +2143,8 @@ J
 Mansa Musa
 C
 7Base.Technologies.Technology_RomanEmpire_Ballistas_NameBalistas
+�
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_Desc�Las Unidades de Infantería Pesada son robustas y bloquean a las Unidades de Caballería para que no puedan embestir a través de ellas.
 Q
 ?Base.Technologies.Technology_RomanEmpire_UnderfloorHeating_NameSuelo radiante
 k
@@ -2148,6 +2213,8 @@ M
 Base.Units.Unit_VanHelsing_Desc�Prepara la ballesta y afila las estacas, ¡Abraham Van Helsing está de caza! En la novela de terror del siglo XIX "Drácula", de Bram Stoker, este médico asume el papel de cazavampiros aficionado, ¡y acaba con cuatro de ellos!<br><br>Desde entonces, Van Helsing se ha convertido en una figura cada vez más mitificada; un cazador de oficio, famoso en el terror de la Hammer y en las adaptaciones de Drácula. Se ha mostrado a generaciones de Van Helsing luchando por el lado de la luz.<br><br>Van Helsing ha cambiado mucho desde su creación inicial. Antes era simplemente un médico y un polímata, ahora esta gallarda figura es sinónimo de matar monstruos, con su ballesta y sus estacas en la mano. ¿Cuál es su Lugar favorito para comer? Una estaca, ¡por supuesto!
 �
 -Base.Units.Unit_EarlyRome_Player_Triarii_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
+O
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_NameGranja de Ganado
 `
 EBase.Technologies.Technology_ByzantineEra_ChainmailReinforcement_NameCota de malla reforzada
 �
@@ -2208,12 +2275,16 @@ Q
 6Base.Buildings.Building_IberianEra_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 U
 <Base.Technologies.Technology_EarlyRome_SiegeEngineering_NameIngeniería de asedio
+V
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_DescDesbloquea Arbalistas
 C
 4Base.Technologies.Technology_Vikings_Pictograms_NamePictogramas
 H
 5Base.Abilities.hero_battle_ability.RagnarLodbrok_NameLeón del Norte
 @
 &Base.Regions.region.DesertDelta_2_NameCiudad de los Faraones
+Z
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_NameZona Cultural Pequeña
 H
 9Base.Buildings.Building_ClassicGreece_Home_Premium_1_NameCasa lujosa
 J
@@ -2269,12 +2340,16 @@ P
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameSúbditos y jarls
 <
 )Base.Regions.region.VolcanicJungle_3_NameColonia Inglesa
+t
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 >
 1Base.Units.Unit_ByzantineEra_Player_Catapult_Name	Catapulta
 B
 +Base.Wonders.Wonder_Capital_Lighthouse_NameFaro de Alejandría
 T
 <Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_NameZona cultural lujosa
+J
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_NameCasa Mediana
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_DescgEnvía barcos de expedición que recogerán un montón de los tesoros joyas, especias, oro o cerámica.
 E
@@ -2287,14 +2362,16 @@ T
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLiceo de Eruditos
 R
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameArqueros Góticos
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Escudo | Enlace Espiritual | Control Mental</style> Alexander inicia una conquista dentro de un rango de <style=basestat>{range}</style>, otorgando a todas las unidades aliadas en esta área un escudo de <style=basestat>{shield_per_second}</style> por segundo durante <style=basestat>{duration}</style>. Durante la conquista, las unidades aliadas están vinculadas espiritualmente, compartiendo el daño recibido entre ellas. Al finalizar la duración, el enemigo con la menor PV dentro del rango es controlado mentalmente para atacar a sus aliados durante <style=basestat>{mind_control_duration}</style>. Prioriza a los Héroes.
 )
 Base.Ages.RomanEmpire_Finish	50 a. C.
 B
 6Base.Buildings.Building_Arabia_Merchant_Average_3_NameMercader
 K
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_NameCasa mediana
+[
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_DescDesbloquea la Gran Ballesta
 5
 )Base.Wonders.Wonder_Capital_Alhambra_NameAlhambra
 R
@@ -2359,6 +2436,8 @@ F
 6Base.Technologies.Technology_FeudalAge_KingsGuard_NameGuardia real
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.MarcoPolo_1_Name�<style=ability_label>Teletransporte| Pisotón</style>Se teletransporta al mayor grupo de unidades enemigas, provocando una explosión al llegar. La explosión inflige <style=basestat>{dmg_percentage}</style> daño en un rango de <style=basestat>{range}</style>.
+�
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_DescqEl Gran Salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de Monedas y Comida para ti.
 �
 "Base.Units.Unit_OracleOfDephi_Desc�Báñate en el Manantial de Castalia, bebe las aguas sagradas de los Cassotis y prepara una cabra, ¡porque el Oráculo de Delfos está listo para profetizar! Desde el siglo VIII a.C., la gente viajaba al Templo de Apolo para escuchar susurros sobre el futuro.<br><br>Estas profecías, pronunciadas por la Pitia, una gran sacerdotisa que encarnaba al Oráculo, desempeñaban un papel fundamental en la toma de decisiones sobre asuntos de guerra, política y colonización. Líderes y plebeyos acudieron una y otra vez a la Pitia en busca de consejo durante más de 8 siglos.<br><br>El Oráculo de Delfos se convirtió en una figura central de la cultura griega, en la intersección de la religión, la política y la sociedad. Se han registrado más de 500 afirmaciones del Oráculo: se sabe que más de la mitad se hicieron realidad. Cuando le pregunté si ibas a vencer a Tesla, me dijo que ¡tendrías que seguir jugando!
 E
@@ -2518,8 +2597,10 @@ F
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameSaqueos
 E
 2Base.Abilities.hero_battle_ability.VanHelsing_NamePernos de Plata
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teletransporte | Golpe Cuerpo a Cuerpo | Potenciador</style> Lagertha se convierte en un rayo y ataca a la unidad enemiga más poderosa, infligiendo <style=basestat>{damage}</style> de daño y obteniendo <style=basestat>{attack_speed_buff}</style> de velocidad de ataque durante <style=basestat>{attack_speed_duration}</style>.
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_DescCProduce una tonelada de Monedas y añade 2 Trabajadores a tu Ciudad
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Penalización</style>Se dirige al mayor grupo de unidades enemigas, reduciendo la DEF en <style=basestat>{atk_percentage}</style> del ATQ de Imhotep durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>.
 M
@@ -2536,6 +2617,8 @@ J
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
 s
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc0Mejora la felicidad de los edificios adyacentes.
+Z
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_DescDesbloquea Billmen
 L
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_NameTaller de Seda
 X
@@ -2552,6 +2635,8 @@ J
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
 G
 0Base.Buildings.Building_Mayas_Home_Worker_4_NameCasa del trabajador
+s
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 /
 Base.BuildingTypes.farm_NameGranjaGranjas
 V
@@ -2645,6 +2730,8 @@ e
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameBarracón de caballería
 m
 6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc3Produce monedas y añade un trabajador a tu ciudad.
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_NameBarracón de Asalto
 D
 .Base.Abilities.hero_battle_ability.Jester_NameCañón de Confeti
 V
@@ -2801,6 +2888,8 @@ V
 CBase.Technologies.Technology_KingdomOfSicily_ImprovedRoofTiles_NameMejora de tejas
 -
 Base.BuildingGroups.SmallOakRoble Antiguo
+J
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_NameGran Salón
 \
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameZona cultural mediana
 V
@@ -2949,6 +3038,8 @@ W
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_NameZona cultural grande
 T
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_NameBarracón de a distancia
+g
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_NameBarracón de Infantería Pesada
 d
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_Desc&Produce seda a partir de hilos de seda
 V
@@ -3020,6 +3111,8 @@ N
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 c
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_2_NameBarracón de infantería pesada
+[
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_NameBarracón de Infantería
 K
 1Base.Units.Unit_IberianEra_Castilla_Infantry_NameInfantería Castellana
 t
@@ -3220,6 +3313,8 @@ P
 :Base.Abilities.hero_battle_ability.GreekMathematician_NameAsalto Axiomático
 5
 #Base.Heroes.hero.CyrusTheGreat_NameCiro el Grande
+Z
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescDesbloquea Billmen
 A
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_NameGranja rural
 I
@@ -3256,6 +3351,8 @@ U
 4Base.Technologies.Technology_ClassicGreece_Toga_NameToga
 �
 2Base.Buildings.Building_Egypt_City_CityHall_2_Desc^El gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de deben.
+R
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_DescProduce Grimorios
 <
 1Base.Technologies.Technology_Vikings_Jarldom_NameJarldom
 [
@@ -3268,6 +3365,8 @@ h
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc2Produce peniques y añade 2 marineros a tu ciudad.
 )
 Base.Units.Unit_Lagertha_NameLagertha
+c
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_Desc!Desbloquea Caballería Nobiliaria
 M
 :Base.Technologies.Technology_MinoanEra_Administration_NameAdministración
 5
@@ -3304,6 +3403,8 @@ O
  Base.Units.Unit_SirLancelot_NameSir Lancelot
 O
 <Base.Technologies.Technology_ClassicGreece_HerbalAromas_NameAromas herbales
+[
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_DescDesbloquea la Gran Ballesta
 X
 BBase.Technologies.Technology_KingdomOfSicily_TacticalChambers_NameRecintos tácticos
 G
@@ -3409,6 +3510,8 @@ A
 6Base.Buildings.Building_Vikings_Beehive_Average_2_NameColmena
 V
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_NameZona cultural mediana
+[
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_NameZona Cultural Compacta
 L
 6Base.Technologies.Technology_FeudalAge_SheepHerds_NameRebaños de ovejas
 �
@@ -3508,8 +3611,12 @@ l
 Base.HeroClass.Commander_DescKLos Comandantes son héroes defensores que destacan por mantener la línea.
 c
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_NameBarracón de infantería pesada
++
+Base.Ages.HighMiddleAges_Start	1200 D.C.
 -
 Base.Units.Unit_Leonidas_NameLeónidas I.
+L
+5Base.Abilities.hero_battle_ability.FalconryGlove_NameGuante de Cetrería
 #
 Base.HeroClass.DefenderDefensor
 o
@@ -3576,6 +3683,8 @@ S
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_2_NameCampo de papiro lujoso
 @
 )Base.Regions.region.VolcanicJungle_1_NameEstribaciones Mayas
+g
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameBarracón de Infantería Pesada
 Q
 0Base.Abilities.hero_battle_ability.Achilles_NameLa última batalla de Aquiles
 U
@@ -3608,10 +3717,14 @@ D'Artagnan
 1Base.Technologies.Technology_FeudalAge_Sagas_NameSagas
 h
 1Base.Buildings.Building_Arabia_Home_Medium_3_Desc3Produce dirham y añade 2 trabajadores a tu ciudad.
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_NameBarracón de Asalto
 A
 2Base.Buildings.Building_Egypt_City_CityHall_2_NameGran salón
 >
 4Base.Technologies.Technology_RomanEmpire_Turmae_NameTurmae
+S
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_NameTaller de Escribas
 V
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_NameBarracón de caballería
 A
@@ -3638,6 +3751,8 @@ e
 $Base.Units.Unit_OttoVonBismarck_NameOtto von Bismarck
 [
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameBerserkers Merovingios
+2
+!Base.Units.Unit_LouisPasteur_NameLouis Pasteur
 .
  Base.Ages.KingdomOfSicily_Finish
 1100 d. C.
@@ -3647,6 +3762,8 @@ T
 )Base.Regions.region.VolcanicJungle_4_NameNuevo Bizancio
 2
 #Base.Units.Unit_OttomanGeneral_NameHasan Pasha
+J
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_NameCasa Mediana
 S
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_2_NameBarracón de asedio
 p
@@ -3707,6 +3824,8 @@ C
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameCañón Verdeante
 P
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescProduce tomos.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Potenciador| Sangrado</style> Aumenta el daño del héroe contra objetivos que sufren hemorragia en <style=basestat>{damage_increase_per_relic_level}</style>. Además, al dañar a un enemigo, hay un <style=basestat>{bleed_chance_percentage}</style> de probabilidad de infligir sangrado, causando <style=basestat>{bleed_percentage_per_relic_level}</style> de daño por segundo durante <style=basestat>{bleed_duration}</style>.
 ]
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameControles automáticos
 A
@@ -3851,6 +3970,8 @@ T
 ;
 -Base.TreasureHuntDifficultiesPanel.Difficulty
 Dificultad
+n
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc2Produce Monedas y añade un Trabajador a tu Ciudad
 }
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
 *
@@ -3993,6 +4114,8 @@ x
 1Base.Buildings.Building_Egypt_Home_Average_5_DescCProduce una gran pila de deben y añade 2 trabajadores a tu ciudad.
 )
 Base.Ages.ByzantineEra_Start	330 d. C.
+@
+(Base.Units.Unit_FlorenceNightingale_NameFlorence Nightingale
 Q
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_NameCarpintería
 9
@@ -4031,6 +4154,8 @@ P
 9Base.Abilities.hero_battle_ability.ArtemisiaIOfCaria_NameTormenta de Flechas
 �
 !Base.HeroClass.SingleStriker_Desc�Los Golpeadores individuales infligen una gran cantidad de daño a objetivos individuales. Son excelentes contra héroes enemigos.<br><line-height=50%><br></line-height><b><color=#3DA229>Fuertes</color> contra:</b><br>-<indent=5%><color=#3DA229>Héroes enemigos</color> en <color=#3DA229>Campaña</color>, <color=#3DA229>Arena</color> y <color=#3DA229>Caza del Tesoro</color>.</indent><br>-<indent=5%><color=#3DA229>Tormentas Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Débiles</color> contra:</b><br>-<indent=5%><color=#CD2A25>Grandes Escuadrones</color> en Campaña y Caza del Tesoro.
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescFProduce un gran montón de Monedas y añade 2 Trabajadores a tu Ciudad
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
 �
@@ -4053,6 +4178,8 @@ f
 BBase.Technologies.Technology_IberianEra_LongDistanceSeafaring_Name Navegación de largas distancias
 }
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_DescDMejora considerablemente la irrigación de los edificios adyacentes.
+[
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_NameBarracón de Largo Alcance
 Z
 6Base.Buildings.Building_Arabia_Merchant_Average_2_Desc Produce una gran pila de dirham.
 L
@@ -4075,6 +4202,8 @@ w
 1Base.Buildings.Building_China_Home_Premium_2_DescBProduce una tonelada de Wu Zhu y añade 3 Trabajadores a tu ciudad
 V
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_NameMuelle de expedición
+H
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_NameGranja Rural
 R
 <Base.Units.Unit_RomanEmpire_Carthaginians_CretanArchers_NameArqueros Cretenses
 @
@@ -4169,6 +4298,8 @@ L
 8Base.Technologies.Technology_BronzeAge_SmallHolding_NameParcela pequeña
 F
 $Base.BuildingGroups.premiumFarm_NameGranja LujosaGranjas Lujosas
+,
+Base.Ages.HighMiddleAges_Finish	1200 D.C.
 U
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_NameZona cultural pequeña
 T
@@ -4187,6 +4318,8 @@ D
 5Base.Technologies.Technology_FeudalAge_Seafaring_NameNavegación
 P
 ;Base.Technologies.Technology_ByzantineEra_StoneCarving_NameGrabado en piedra
+I
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_NameCasa Pequeña
 X
 >Base.Technologies.Technology_MinoanEra_DivinatoryStrategy_NameEstrategia Divinatoria
 7
@@ -4336,6 +4469,8 @@ O
 2Base.Technologies.Technology_MinoanEra_Screws_Name	Tornillos
 0
 Base.Heroes.hero.JoanOfArc_NameJuana de Arco
+�
+(Base.Units.Unit_FlorenceNightingale_Desc�No te preocupes: la Dama de la Lámpara está a tu lado. Florence Nightingale, una enfermera británica del siglo XIX, es famosa por su labor en la Guerra de Crimea, curando a los soldados mientras agonizaban.<br><br>Pero quizás los mayores logros de Florence Nightingale llegaron más tarde. Después de haber asistido al ejército en Scutari y tratado a los enfermos de tres ejércitos, Nightingale lideró la reforma de la enfermería británica, promoviendo un sistema modernizado que ha dado forma a la atención hasta el día de hoy. Las enfermeras juran el Compromiso Nightingale, un eco de su propia promesa de ayudar.<br><br>El legado de Florence Nightingale es, por tanto, doble: por un lado, un ángel, la Dama de la Lámpara; por otro, una mujer determinada y brillantemente inteligente que cambió los hospitales para siempre. Quizás ninguna de estas imágenes sea completamente cierta. Su apodo original era en realidad la Dama del Martillo, después de que forzara la entrada a un suministro médico cerrado con llave. ¡Tal vez esta imagen sea más acertada que cualquier otra!
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�Los arqueros mayas son unidades a distancia adicionales para tu ejército. Sus estadísticas aumentan automáticamente en función de tu edad actual.
 U
@@ -4344,6 +4479,8 @@ V
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameZona cultural compacta
 <
 2Base.Technologies.Technology_IberianEra_Masia_NameMasía
+X
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_NameCaballería Nobiliaria
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_NameOasis
 ~
@@ -4425,6 +4562,8 @@ G
 Trapecitas
 T
 )Base.BuildingGroups.averageCamelFarm_NameGranja de CamellosGranjas de Camellos
+s
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc7Produce una pequeña cantidad de Comida en poco tiempo.
 h
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_4_Desc%Produce Porcelana a partir de Arcilla
 *
@@ -4541,6 +4680,10 @@ K
 3Base.TreasureHuntDifficultiesPanel.RecommendedPowerPotencia Recomendada
 |
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
+I
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_NameCasa Pequeña
+g
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameBarracón de Infantería Pesada
 �
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_DescZLa Academia de Héroes produce Rollos de Experiencia a cambio de Puntos de Investigación.
 �
@@ -4556,6 +4699,8 @@ q
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc0Mejora la felicidad de los edificios adyacentes.
 E
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameCasa mediana
+P
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_NameCarpintería
 T
 ?Base.Technologies.Technology_KingdomOfSicily_ArmoredPanels_NamePaneles blindados
 :
@@ -4623,6 +4768,8 @@ A
 880 a. C.
 
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
+H
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_NameGranja Rural
 j
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 ,
@@ -4660,6 +4807,8 @@ L
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_DescGProduce una gran cantidad de comida durante un largo periodo de tiempo.
 N
 7Base.Units.Unit_BronzeAge_SumerianEmpire_Gilgamesh_NameBerserkers Minoicos
+[
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_NameBarracón de Infantería
 P
 <Base.Technologies.Technology_ByzantineEra_WheeledPlough_NameArado con ruedas
 h
@@ -4763,6 +4912,8 @@ GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<styl
 "Base.Units.Unit_QueenBoudicca_NameQueen Boudica
 \
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_2_Desc!Produce anjs y máscaras doradas.
+�
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc?Mejora sustancialmente la Felicidad de los Edificios adyacentes
 H
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_NameEscuela
 �
@@ -4775,6 +4926,8 @@ O
 :Base.Technologies.Technology_ByzantineEra_RitualSites_NameZonas de rituales
 9
 -Base.Units.Unit_BronzeAge_Player_Archers_NameArqueros
+~
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_DescDLas Unidades de Infantería son más eficaces en las primeras filas.
 V
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_NameBarracón de largo alcance
 E
@@ -4827,6 +4980,10 @@ K
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameBarracón de largo alcance
 E
 (Base.BuildingGroups.averageGoldMine_NameMina de OroMinas de Oro
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_NameBarracón de Asalto
+J
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_NameCasa Mediana
 <
 )Base.Regions.region.VolcanicJungle_2_NameArena Obsidiana
 D
@@ -4904,6 +5061,8 @@ J
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>Pisotón| Penalización| Enlace del Alma</style>Pisotea el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de un rango de <style=basestat>{range}</style> y reduciendo su precisión en <style=basestat>{accuracy_percentage}</style> durante <style=basestat>{duration}</style>. También vincula las almas de todas las unidades amigas durante <style=basestat>{duration_link}</style>. Las unidades alma-vinculadas  comparten el daño recibido.
 ,
 Base.Heroes.hero.Spartacus_Name	Espartaco
+[
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_NameBarracón de Largo Alcance
 @
 7Base.Technologies.Technology_AgeOfTheFranks_Spades_NamePalas
 C
@@ -4918,6 +5077,8 @@ T
 =Base.Buildings.Building_IberianEra_Special_HeroAcademy_1_NameAcademia de héroes
 U
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_NameZona cultural grande
+Z
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_DescDesbloquea Billmen
 Y
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameBarracón de caballería
 �
@@ -4946,6 +5107,8 @@ K
 Base.Heroes.hero.Inanna_NameInanna
 X
 &Base.BuildingGroups.clayProcessor_NameProcesador de ArcillaProcesadores de Arcilla
+u
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 ~
 5Base.Buildings.Building_FeudalAge_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 X
@@ -4953,11 +5116,15 @@ X
 �
 "Base.Units.Unit_AmeliaEarhart_Desc�¡Fuera calzos! Amelia Earhart atraviesa toda la historia, dispuesta a cruzar nuevos horizontes con su perro Derry. Esta chica del siglo XX conmocionó al mundo con sus vuelos transatlánticos, desafiando las expectativas y superando todos los obstáculos que se le presentaron.<br><br>Sorbiendo chocolate caliente y aterrorizando a los granjeros, Earhart batió récord tras récord, convirtiéndose en la primera mujer en cruzar el Atlántico, la primera en cruzar el Pacífico en solitario, la mujer piloto que más alto voló de toda la historia.<br><br>Pero fue su último viaje el que le valió la fama para siempre. Earhart quería ser la primera mujer en circunnavegar el mundo en avión, y casi lo consiguió, pero desapareció hacia el final del viaje. Nadie sabía exactamente qué le ocurrió, pero ahora sí: ¡encontró un portal del tiempo y acabó aquí, en tu pantalla!
 W
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_DescProduce Secretarias
+W
 ABase.Technologies.Technology_ClassicGreece_ImprovedFletching_NameEmplumado mejorado
 H
 /Base.Units.Unit_TreasureHunt_Blue_Corsairs_NameCorsarios Celestiales
 B
 6Base.Technologies.Technology_FeudalAge_Wingguards_NameCrucetas
+�
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_DescSLas Unidades de Caballería son muy rápidas y cargan hacia la retaguardia enemiga.
 W
 %Base.BuildingGroups.largeCulture_NameZona Cultural GrandeZonas Culturales Grandes
 F
@@ -4996,6 +5163,8 @@ J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduce obsidiana.
 W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameBarracón de caballería
+s
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc7Produce una pequeña cantidad de Comida en poco tiempo.
 C
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_NameGranja rural
 o
@@ -5025,6 +5194,8 @@ X
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameBarracón de caballería
 X
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NamePlantación de naranjas
+k
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_Desc(Desbloquea a los Soldados de Infantería
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>Golpe en Área| Quemadura| Veneno</style>Lanza <style=basestat>{no_vials}</style> frascos con productos químicos inestables a unidades enemigas aleatorias, infligiendo <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style> y dejando a las unidades afectadas ardiendo y envenenadas, causando <style=basestat>{debuff_percentage}</style> de daño adicional durante <style=basestat>{duration}</style>.
 �
@@ -5073,6 +5244,8 @@ Q
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameEconomía Portuaria
 �
 Base.Units.Unit_KingMinos_Desc�Chat con Zeus y esconde el hilo rojo: ¡El Rey Minos está aquí! Se cree que este legendario gobernante de la mitología griega reinó en el II milenio a.C., famoso como soberano de Creta.<br><br>Célebre por su sabiduría y autoridad, se le conoce sobre todo por haber encargado la construcción de un complejo laberinto para encarcelar al Minotauro, una bestia mítica.<br><br>El reinado de Minos está entretejido con cautivadores relatos de intriga y aventura, como la historia de Dédalo e Ícaro. Su perdurable legado como rey formidable y misterioso sigue encantando a los narradores, entretejiendo hilos de mitos e historia antigua. ¡No dejes que te lleve a recorrer su laberinto!
+X
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_NameCaballería Nobiliaria
 �
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
 P
@@ -5081,6 +5254,8 @@ H
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_NameCasa mediana
 {
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
+n
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc2Produce Monedas y añade un Trabajador a tu Ciudad
 l
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_BelltowerCottage_NameChoza del campanario
 C
@@ -5093,6 +5268,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Pezgueras
 T
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescProduce pilares.
+Q
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameSoldados de Infantería
 S
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameCisterna hidráulica
 l
@@ -5107,6 +5284,8 @@ N
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameHogares Vikingos
 U
 3Base.TreasureHuntDifficultiesPanel.CurrentlyPlaying¡Estás jugando al Nivel {0}!
+X
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_NameAcademia de Héroes
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_NameOasis
 Z
@@ -5167,6 +5346,8 @@ W
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_NameCantera de Caolín
 A
 6Base.Buildings.Building_Vikings_Beehive_Average_5_NameColmena
+[
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_DescDesbloquea la Gran Ballesta
 Z
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_2_NameBarracón de infantería
 k
@@ -5210,6 +5391,8 @@ F
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameCanal
 I
 %Base.BuildingGroups.silkWorkshop_NameTaller de SedaTalleres de Seda
+\
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_DescProduce una tonelada de Comida
 O
 9Base.Abilities.hero_battle_ability.NapoleonBonaparte_NameCódigo de Batalla
 O
@@ -5267,6 +5450,8 @@ j
 3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 C
 'Base.Units.Unit_MargaretIOfDenmark_NameMargarita I de Dinamarca
+�
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_DescBProduce una gran cantidad de Comida en un largo periodo de tiempo.
 T
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_NameZona cultural lujosa
 �
@@ -5298,10 +5483,14 @@ k
 4Base.Buildings.Building_IberianEra_Home_Small_2_Desc3Produce monedas y añade un trabajador a tu ciudad.
 ]
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_DescDesbloquea a los caballeros
+D
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_NameGran Ballesta
 U
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_NameBarracón de caballería
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>Golpe en Área| Penalización| Quemar</style>Provoca una tormenta en la ubicación del mayor grupo de unidades enemigas. La tormenta inflige <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>, reduce la velocidad de movimiento en <style=basestat>{move_speed_percentage}</style>, y deja a las unidades afectadas quemándose por <style=basestat>{dmg_percentage_burn}</style> durante <style=basestat>{duration}</style>.
+V
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_DescDesbloquea Arbalistas
 P
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_NameArbalesteros Reales
 O
@@ -5338,6 +5527,8 @@ A
 1Base.Buildings.Building_Egypt_Home_Average_1_NameCasa mediana
 G
 8Base.Buildings.Building_ByzantineEra_Home_Premium_1_NameCasa lujosa
+[
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_NameZona Cultural Mediana
 D
 9Base.Technologies.Technology_KingdomOfSicily_Melites_NameMelites
 L
@@ -5493,6 +5684,8 @@ P
 FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name�<style=ability_label>Potenciador</style>Mientras el poseedor esté por encima de <style=basestat>{health_cutoff}</style> de salud, su evasión aumenta en <style=basestat>{evasion_buff}</style>.
 }
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
+�
+!Base.Units.Unit_LouisPasteur_Desc�¡Conquista las enfermedades con Louis Pasteur, el padre de la Microbiología! Este científico francés del siglo XIX es famoso por su descubrimiento de la vacuna contra la rabia, la invención de la pasteurización y su teoría de los gérmenes.<br><br>Pasteur es más conocido por inyectar al niño de 9 años, Joseph Meister, quien había sido atacado por un perro rabioso, con una inoculación para la rabia. Meses después, el niño se mantenía saludable. Durante el siguiente año aproximadamente, Pasteur trató a 350 personas por la enfermedad: solo una la contrajo. Sin embargo, eso es solo una fracción del genio de Pasteur. Enseñó el calentamiento de la leche o el vino para matar bacterias y el lavado de manos antes de las cirugías, y fundó el Instituto Pasteur.<br><br>Hoy en día, es seguido tanto por la fama como por la controversia. Muchos lugares del mundo llevan su nombre, pero sus cuadernos revelan un lado astuto, engañando y manipulando la verdad para parecer verdaderamente original.
 `
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Desc#Desbloquea a los piqueros a caballo
 G
@@ -5535,6 +5728,8 @@ O
 ;Base.Technologies.Technology_ByzantineEra_SolarRituals_NameRituales solares
 B
 7Base.Technologies.Technology_ClassicGreece_Toxotai_NameToxotas
+�
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_Desc]La Academia de héroes produce Pergaminos de Experiencia a costa de Puntos de Investigación.
 O
 7Base.Abilities.hero_battle_ability.NubianMercenary_NameVíbora del Desierto
 C
@@ -5615,6 +5810,8 @@ L
 ;Base.Technologies.Technology_RomanEmpire_CircusMaximus_NameCirco Máximo
 H
 3Base.Technologies.Technology_China_LaborDuties_NameDeberes Laborales
+K
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_NameGranja Lujosa
 f
 BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_Name Lanzadores de Hachas Carolingios
 D
@@ -5639,6 +5836,8 @@ o
 @
 2Base.Technologies.Technology_BronzeAge_Tailor_Name
 Sastrería
+k
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_Desc(Desbloquea a los Soldados de Infantería
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_DesceEnvía barcos de expedición que recogerán toneladas de Tesoros de Joyas, Especias, Oro o Cerámica.
 B
@@ -5663,6 +5862,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_
 0Base.Units.Unit_RomanEmpire_Player_Ballista_Desc�Las unidades de asalto atacan lentamente y son vulnerables a los ataques enemigos, pero tienen un impacto devastador sobre una zona amplia.
 7
 *Base.Units.Unit_StoneAge_Animal_Boars_Name	Jabalíes
+O
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_NameGranja de Ganado
 P
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameEstructura de leña
 Z
@@ -5681,6 +5882,8 @@ Z
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_NameBarracón de caballería
 Z
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_7_NameAtalaya Minoica
+�
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_Desc�Las Unidades de Asedio atacan lentamente y son débiles a los ataques enemigos, pero tienen un impacto devastador a gran distancia.
 ]
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_DescDesbloquea al legionario
 S
@@ -5751,6 +5954,8 @@ E
 9Base.Buildings.Building_MinoanEra_Workshop_Artisan_1_NameArtesano
 �
 7Base.Buildings.Building_RomanEmpire_Home_Average_3_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
+W
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_NameZona Cultural Grande
 \
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_5_Desc!Produce anjs y máscaras doradas.
 :
@@ -5888,6 +6093,8 @@ U
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameBarracón de caballería
 }
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_DescFLas unidades de infantería son más eficaces en las filas delanteras.
+Y
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_NameZona Cultural Lujosa
 K
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_NameRueda hidráulica
 D
@@ -5939,12 +6146,16 @@ A
 5Base.Buildings.Building_Mayas_Workshop_Premium_2_DescTProduce máscaras ancestrales, calendarios en piedra, dagas para rituales y tocados.
 G
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameLaurel de oro
+,
+Base.Ages.HighMiddleAges_Decade	1200 D.C.
 |
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 F
 2Base.Abilities.hero_battle_ability.MarieCurie_NameCascada de Radio
 N
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_NameAsaltantes Celestiales
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_DescFProduce un gran montón de Monedas y añade 2 Trabajadores a tu Ciudad
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_3_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 D
