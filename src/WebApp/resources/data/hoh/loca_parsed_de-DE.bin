@@ -39,10 +39,12 @@ p
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc<Stellt Kakao her und fügt deiner Stadt einen Priester hinzu
 V
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NameLuxuriöser Seemannshafen
+U
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameInfanterie-Kaserne
 I
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameGrüne Harpunisten
-u
-5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+v
+5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 I
 %Base.BuildingGroups.ritualCarver_NameRitualschnitzerRitualschnitzer
 T
@@ -87,6 +89,8 @@ R
 4Base.Technologies.Technology_IberianEra_Saffron_NameSafran
 G
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_NameMet-Brauerei
+A
+)Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Name�<style=ability_label>Buff</style>Mansa Musa zielt auf die größte Ansammlung freundlicher Einheiten und erhöht deren Chance, kritisch zu treffen, um <style=basestat>{crit_percentage}</style>, ihre ATK um <style=basestat>{atk_percentage}</style> der ATK von Mansa Musa und ihren kritischen Schaden um <style=basestat>{crit_dmg_percentage}</style> für <style=basestat>{duration}</style> in einem Bereich von <style=basestat>{range}</style>.
 G
@@ -126,6 +130,8 @@ I
 9Base.Technologies.Technology_MinoanEra_BasketWeaving_NameKorbflechten
 R
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_2_NameFernkämpfer-Kaserne
+x
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 ?
 2Base.Technologies.Technology_Vikings_TarOvens_Name	Teeröfen
 P
@@ -164,6 +170,8 @@ U
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_NameGewürzhändler
 J
 6Base.Buildings.Building_IberianEra_Home_Premium_1_NameLuxuriöses Haus
+z
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 B
 #Base.Regions.region.Panganea_2_NameDomäne der Schädelspalter
 J
@@ -180,6 +188,8 @@ N
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameZeremonielles Kleid
 C
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name	Wohlstand
+U
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameFernkämpfer-Kaserne
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_Name�<style=ability_label>Spott| Schild</style>Spottet alle Gegner für <style=basestat>{taunt_duration}</style>. Bismarck erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild. Verleiht außerdem <style=basestat>{shield_percentage_friendly}</style> des Basisschadens von Bismarck als Schild an die befreundete Einheit mit den niedrigsten HP. Priorisiert Helden.
 U
@@ -257,8 +267,8 @@ c
 MBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Rural_NameZugefrorener Teich
 '
 Base.BuildingGroups.TownhallRathaus
-V
-@Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_NameKleine Kultstätte
+X
+@Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_NameKleine Kulturstätte
 C
 6Base.Technologies.Technology_BronzeAge_StoneMason_Name	Steinmetz
 L
@@ -295,6 +305,8 @@ T
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 Z
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_NameKompakte Kulturstätte
+W
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_DescProduziert Zimt
 I
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_3_Name	Bauernhof
 =
@@ -309,14 +321,16 @@ W
 (Base.Heroes.hero.GreekMathematician_NameEuklid
 o
 /Base.Buildings.Building_Egypt_Home_Small_1_Desc<Stellt Deben her und fügt deiner Stadt einen Arbeiter hinzu
+H
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Name	Bauernhof
 U
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_Cavalry_NameSizilianische Kavallerie
 >
 2Base.Buildings.Building_StoneAge_Farm_Rural_2_NamePlantage
 K
 7Base.Abilities.hero_battle_ability.OttoVonBismarck_NameEiserner Kanzler
-V
->Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameMittlere Kultstätte
+X
+>Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameMittlere Kulturstätte
 N
 7Base.Abilities.hero_battle_ability.MayanAstronomer_NameKosmische Explosion
 B
@@ -325,6 +339,8 @@ t
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 <
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_NameToxotai
+T
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_NameKavallerie-Kaserne
 P
 :Base.Technologies.Technology_EarlyRome_TerrainMapping_NameGeländekartierung
 T
@@ -381,8 +397,8 @@ Y
 /Base.TreasureHuntDifficulties.Difficulty_6_Name	Meister I
 s
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
-{
-;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+|
+;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 ;
 !Base.BuildingTypes.camelFarm_Name	KamelfarmKamelfarmen
 Z
@@ -393,6 +409,8 @@ E
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
 k
 HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NameGrundlegendes Bewässerungsnetz
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 \
 6Base.Buildings.Building_Arabia_Merchant_Average_3_Desc"Stellt große Mengen an Dirham her
 P
@@ -413,14 +431,16 @@ A
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NamePlantage
 `
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerowingische Infanterie
+I
+6Base.Technologies.Technology_HighMiddleAges_Start_NameHochmittelalter
 5
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtemoc 
 �
 #Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth! William Wallace ist aus dem Schottland des 13. Jahrhunderts gekommen, bereit, in einem neuen Unabhängigkeitskrieg zu kämpfen. Zurück in seiner Heimat hallen die Geschichten über seine Führungsstärke, seine Tapferkeit und seinen Trotz in den Herzen der Schotten nach.<br><br>Wallace wendete das Blatt in der Schlacht von Stirling Bridge und besiegte die Engländer, obwohl zahlenmäßig weit unterlegen. Sein Traum von Freiheit verbreitete sich in ganz Schottland, und unzählige schlossen sich dem Kampf für ein freies Land an.<br><br>Als er in seine Zeit zurückkehrt, wird er zwar gefangen genommen und hingerichtet, aber Wallaces Geist wird niemals wanken. In ganz Schottland wird er als Freiheitskämpfer und Patriot verehrt, und sein spezielles Verschieben, der "Wallace Wallop", ist auch heute noch in den Bars von Glasgow zu sehen!
 C
 4Base.Technologies.Technology_StoneAge_Firemaker_NameFeuermacher
-Q
-<Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_NameKaiserliche Garde
+O
+<Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_NameImperiale Garde
 >
 (Base.Regions.region.EasternValley_6_NameTiefster Dschungel
 Q
@@ -436,8 +456,8 @@ M
 /Base.Buildings.Building_Egypt_Home_Small_4_NameKleines Haus
 �
 >Base.Buildings.Building_RomanEmpire_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
-[
-ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_NameLuxuriöse Kultstätte
+]
+ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 ,
 Base.Units.Unit_JohnLocke_Name
 John Locke
@@ -558,8 +578,8 @@ G
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_NameArmbrustschützen
 ?
 /Base.Buildings.Building_China_Home_Small_2_NameKleines Haus
-s
-3Base.Buildings.Building_EarlyRome_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_EarlyRome_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 G
 3Base.Buildings.Building_Vikings_Home_Premium_5_NameLuxuriöses Haus
 L
@@ -568,6 +588,8 @@ O
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameFamilia Regis
 M
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameRitualschnitzer
+H
+8Base.Buildings.Building_HighMiddleAges_Home_Small_2_NameKleines Haus
 �
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben eine vernichtende Wirkung auf eine große Distanz.
 F
@@ -599,8 +621,8 @@ H
 .Base.Abilities.hero_battle_ability.SunTzu_NameKunst der Verteidigung
 E
 1Base.Buildings.Building_Egypt_Home_Premium_2_NameLuxuriöses Haus
-x
-8Base.Buildings.Building_RomanEmpire_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+y
+8Base.Buildings.Building_RomanEmpire_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 e
 GBase.Technologies.Technology_KingdomOfSicily_RefinedChainmailCoifs_NameVeredelte Kettenhemdhauben
 F
@@ -660,8 +682,8 @@ B
 0Base.Buildings.Building_Mayas_Quarry_Jade_4_NameJadesteinbruch
 L
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_NameLuxuriöse Goldmine
-r
-2Base.Buildings.Building_StoneAge_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+s
+2Base.Buildings.Building_StoneAge_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 N
 >Base.Units.Unit_CurrentEra_MercenaryCommander_VladDracula_NameVlad Dracula
 ?
@@ -674,15 +696,21 @@ F
 5Base.Technologies.Technology_RomanEmpire_Swinery_NameSchweinestall
 S
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_NameKleine Kulturstätte
+N
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameLuxuriöses Haus
 x
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc6Verbessert die Zufriedenheit in umliegenden Gebäuden.
 A
 3Base.Technologies.Technology_BronzeAge_Artisan_Name
 Handwerker
+|
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 W
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_NameMittlere Kulturstätte
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_3_DeschDer Bienenstock produziert köstlichen Honig, der zur Herstellung von Met in der Taverne verwendet wird.
+f
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_Desc$Schaltet Ritterliche Kavallerie frei
 F
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_NameGoldschmied
 b
@@ -719,8 +747,8 @@ V
 IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>Debuff | Flächenschlag </style>Bonny wirft eine Bombe, die einen Strudel unter der größten Feindgruppe erzeugt, der <style=basestat>{damage}</style> Schaden über <style=basestat>{duration}</style> verursacht. Feindliche Einheiten im Strudel verlangsamen ihre Bewegungsgeschwindigkeit um <style=basestat>{movespeed_slow}</style>.
 s
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
-s
-3Base.Buildings.Building_MinoanEra_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_MinoanEra_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 x
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Desc<Verbessert die Bewässerung von umliegenden Gebäuden enorm.
 c
@@ -760,6 +788,9 @@ X
 Base.Units.Unit_Menes_Desc�Gegrüßt sei König Menes, der erste sterbliche König von ganz Ägypten. Diesem großen Herrscher des 31. Jahrhunderts v. Chr. im alten Ägypten wird zugeschrieben, dass er Ober- und Unterägypten vereinigte und damit der erste Pharao eines vereinigten ägyptischen Königreichs wurde.<br><br>Er gründete Memphis als Hauptstadt, die strategisch günstig zwischen Ober- und Unterägypten platziert war. Unter seiner Führung begann die Erste Dynastie Ägyptens und stellte die Weichen für die kulturelle und politische Entwicklung des Landes.<br><br>Das Vermächtnis von König Menes ist die Geburtsstunde der ägyptischen Zivilisation, denn er legte den Grundstein für eine der größten Kulturen der Geschichte. Leider gibt es derzeit Gerüchte, dass er mit Tesla zusammenarbeitet. Offenbar will er die gesamte Geschichte durch das alte Ägypten ersetzen.
 P
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_NameFernkämpfer-Kaserne
+B
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name
+Arbalisten
 G
 :Base.Units.Unit_MinoanEra_EgyptianAcolytes_Crocodiles_Name	Krokodile
 ,
@@ -802,8 +833,8 @@ K
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameLanzenexpertise
 M
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_NameMittelgroßes Haus
-|
-9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_Desc?Stellt über einen kurzen Zeitraum kleine Mengen an Nahrung her
+z
+9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 6
 &Base.Regions.region.FrozenFjord_3_NameDer Damensee
 K
@@ -831,8 +862,8 @@ o
 1Base.Buildings.Building_Arabia_Home_Medium_2_Desc:Stellt Dirham her und fügt deiner Stadt 2 Arbeiter hinzu.
 y
 5Base.Buildings.Building_Arabia_Workshop_Coffee_1_Desc@Der Kaffeebrauer stellt Kaffee aus Kaffeebohnen und Messing her.
-z
-:Base.Buildings.Building_ClassicGreece_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+{
+:Base.Buildings.Building_ClassicGreece_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_3_DescStellt Golderz her
 �
@@ -884,6 +915,8 @@ E
 ;
 #Base.BuildingGroups.chronicler_NameChronist
 Chronisten
+T
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameRitterliche Kavallerie
 F
 5Base.Technologies.Technology_Vikings_HealingMead_NameHeilender Met
 =
@@ -900,8 +933,8 @@ T
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescStellt Ahnenmasken her
 $
 Base.Cities.City_China_NameChina
-W
-=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_NameLuxuriöse Kultstätte
+Y
+=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 P
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_2_NameInfanterie-Kaserne
 E
@@ -910,6 +943,8 @@ N
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_NameFaden-Spinner
 )
 Base.BuildingGroups.SmallFarmPlantage
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.FalconryGlove_1_Name�<style=ability_label>Heilung</style>Wenn du einer gegnerischen Einheit den Todesstoß versetzt hast, erholt sich der mit dem Falknerhandschuh ausgerüstete Held um<style=basestat>{heal_percentage_per_relic_level}</style> von den maximalen HP des besiegten Feindes. Dieser Effekt gilt sowohl für normale Einheiten als auch für Helden.
 R
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_2_NameInfanterie-Kaserne
 U
@@ -977,6 +1012,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_
 c
 UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Little_Name
 Schneemann
+3
+"Base.Heroes.hero.LouisPasteur_NameLouis Pasteur
 T
 >Base.Technologies.Technology_AgeOfTheFranks_ImprovedReins_NameVerbesserte Zügel
 U
@@ -1001,6 +1038,8 @@ R
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Siege_NameSizilianische Trebuchet
 C
 3Base.Buildings.Building_MinoanEra_Home_Small_2_NameKleines Haus
+y
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 <
 #Base.BuildingTypes.fishingPier_Name	Angelsteg
 Angelstege
@@ -1022,6 +1061,8 @@ I
 Base.Ages.IberianEra_Start1.050 n. Chr.
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>Debuff| Fähigkeits-Blockade</style>Verhindert die Fähigkeit aller gegnerischen Einheiten anzugreifen und verringert ihre Genauigkeit um <style=basestat>{accuracy_percentage}</style>, ihre ATK-Geschwindigkeit um <style=basestat>{atk_speed_percentage}</style> und ihre ATK um <style=basestat>{atk_percentage}</style> der ATK von Franklin für <style=basestat>{duration}</style>. Außerdem hindert er Gegner für <style=basestat>{block_duration}</style> daran, Fähigkeiten einzusetzen.
+f
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Desc$Schaltet Ritterliche Kavallerie frei
 X
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_NameGewürzhändler
 z
@@ -1172,8 +1213,8 @@ G
 5Base.Buildings.Building_Egypt_GoldMine_Premium_2_Desc$Stellt riesige Mengen an Golderz her
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_NamePapyrusmanufaktur
-�
-6Base.Buildings.Building_IberianEra_Home_Average_3_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+�
+6Base.Buildings.Building_IberianEra_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_3_DescStellt Jade her
 4
@@ -1189,6 +1230,8 @@ z
 *
 Base.Ages.RomanEmpire_Decade
 50 v. Chr.
+�
+4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 �
 Base.Units.Unit_MarcoPolo_Desc�Die Winde füllen deine Segel, denn die Reisen von Marco Polo haben ihn zu dir gebracht! Dieser venezianische Entdecker aus dem 13. Jahrhundert war berühmt für seine ausgedehnten Reisen durch Asien und hat seine Reisen aufgezeichnet und sich damit einen Platz in der Geschichte gesichert.<br><br>Im Alter von 17 Jahren schiffte er sich mit seinem Onkel und seinem Vater ein und reiste entlang der Seidenstraße zum Hof von Kublai Khan in China. Seine anschaulichen Beschreibungen beflügelten die Fantasie der Europäer und vertieften ihr Wissen über den Osten.<br><br>Obwohl viele von Marco Polos Berichten angezweifelt werden, haben sie in Europa ein Interesse am Osten geweckt, das bis heute anhält. Die größte Karte, die je angefertigt wurde, der Atlas von Katalonien, basiert auf seinen Reisen, und sein Name wird sowohl in wissenschaftlichen Debatten als auch in Kinderspielen erwähnt. 
 V
@@ -1295,8 +1338,8 @@ I
 Base.Units.Unit_Spartacus_Name	Spartacus
 G
 1Base.Buildings.Building_Egypt_Home_Average_3_NameMittelgroßes Haus
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Spott | Schild | Flächenschlag</style>Philipp II. von Makedonien erhält einen großen Schild im Wert von <style=basestat>{shield_percentage}</style> seines Basisschadens und verspottet alle gegnerischen Einheiten für <style=basestat>{taunt_duration}</style>. Nach <style=basestat>{detonation_time}</style> detoniert sein Schild und verursacht <style=basestat>{damage_percentage}</style> des verbleibenden Schildwerts als Schaden an allen gegnerischen Einheiten innerhalb eines Bereichs von <style=basestat>{range}</style>. Die Detonation verbraucht Philipps Schild.
 I
 (Base.BuildingGroups.smallIrrigation_NameKleine QuelleKleine Quellen
 P
@@ -1364,6 +1407,8 @@ LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 _
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_Desc!Produziert Seide aus Seidenfäden
+Y
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescSchaltet Arbalesten frei
 H
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_Name	Bauernhof
 u
@@ -1396,10 +1441,12 @@ W
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_NameGewürzhändler
 W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NamePorzellan-Manufaktur
-^
-9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc!Stellt Goldene Lorbeerkränze her
+D
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_NamePlantage
 I
 5Base.Abilities.hero_battle_ability.OracleOfDephi_NameOmen des Orakels
+^
+9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc!Stellt Goldene Lorbeerkränze her
 z
 -Base.Units.Unit_IberianEra_Player_Jinete_DescIKavallerie-Einheiten sind schnell und greifen die Nachhut des Gegners an.
 V
@@ -1444,8 +1491,8 @@ H
 Base.Ages.FeudalAge_Decade1.000 n. Chr.
 )
 Base.HeroClass.SupporterUnterstützer
-U
-=Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_NameMittlere Kultstätte
+W
+=Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_NameMittlere Kulturstätte
 )
 Base.UnitTypes.Cavalry_Name
 Kavallerie
@@ -1453,6 +1500,8 @@ I
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameAufstieg Ägyptens
 J
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameUnion-Verjüngung
+W
+DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameGewürzhändler
 :
 %Base.Heroes.hero.LeonardoDaVinci_NameLeonardo da Vinci
 �
@@ -1511,8 +1560,8 @@ I
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameCastillanische Balliste
 *
 Base.BuildingGroups.SkyDiskSonnenaltar
-�
-7Base.Units.Unit_AgeOfTheFranks_Player_FrancArchers_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+7Base.Units.Unit_AgeOfTheFranks_Player_FrancArchers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 �
 5Base.Units.Unit_AgeOfTheFranks_Player_Caballarii_DescIKavallerie-Einheiten sind schnell und greifen die Nachhut des Gegners an.
 x
@@ -1582,14 +1631,14 @@ O
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_2_NameKavallerie-Kaserne
 w
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
-z
-:Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+{
+:Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 _
 3Base.Buildings.Building_Mayas_Quarry_Premium_2_Desc(Stellt sowohl Jade als auch Obsidian her
 M
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_NameMittelgroßes Haus
-O
-7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_DescSchaltet Tribok frei
+R
+7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_DescSchaltet Trebuchet frei
 :
 %Base.Units.Unit_GeorgeWashington_NameGeorge Washington
 F
@@ -1669,8 +1718,8 @@ E
 1Base.Buildings.Building_Egypt_Home_Premium_4_NameLuxuriöses Haus
 Y
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_1_DescSchaltet Pedites frei
-L
-<Base.Technologies.Technology_FeudalAge_TrebuchetCommand_NameTribokbefehl
+P
+<Base.Technologies.Technology_FeudalAge_TrebuchetCommand_NameTrebuchet-Befehl
 =
 /Base.Technologies.Technology_Egypt_Library_Name
 Bibliothek
@@ -1694,6 +1743,8 @@ C
 3Base.Technologies.Technology_China_Calligraphy_NameKalligraphie
 R
 ;Base.Technologies.Technology_MinoanEra_OraclesGuidance_NameWeisung des Orakels
+C
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_NameHippenträger
 /
  Base.Heroes.hero.MarieCurie_NameMarie Curie
 /
@@ -1756,6 +1807,8 @@ V
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_1_DescSchaltet Sagittarii frei
 _
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_DescProduziert Porzellan aus Ton
+|
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_4_NameSeemannshaus
 6
@@ -1834,8 +1887,8 @@ J
 Lex Salica
 O
 ;Base.Technologies.Technology_EarlyRome_TributumCapitis_NameTributum Capitis
-T
-8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_NameFortschrittliche Triboke
+V
+8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_NameFortschrittliche Trebuchet
 D
 6Base.Technologies.Technology_IberianEra_DriftNets_Name
 Treibnetze
@@ -1843,8 +1896,8 @@ O
 #Base.BuildingGroups.mediumHome_NameMittelgroßes HausMittelgroße Häuser
 I
 <Base.Technologies.Technology_KingdomOfSicily_WaterClock_Name	Wasseruhr
-x
-8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+y
+8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 K
 :Base.Technologies.Technology_RomanEmpire_VillaRustica_NameVilla Rustica
 �
@@ -1878,6 +1931,8 @@ C
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_Name	Bauernhof
 h
 FBase.Technologies.Technology_KingdomOfSicily_HeavyCrossbowDesigns_NameSchwere Armbrustkonstruktionen
+^
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_DescSchaltet Infanteristen frei
 Q
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameFaering-Meisterschaft
 N
@@ -1890,8 +1945,8 @@ K
 5Base.Buildings.Building_MinoanEra_Home_Average_3_NameMittelgroßes Haus
 S
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_DescStellt Pergament her
-v
-6Base.Buildings.Building_BronzeAge_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_BronzeAge_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 G
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Name	Bauernhof
 J
@@ -1918,6 +1973,8 @@ H
 0Base.Abilities.hero_battle_ability.Lagertha_NameDonnerschlag
 
 <Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
+0
+Base.Ages.HighMiddleAges_NameHochmittelalter
 W
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_NameBienenzucht-Expertise
 L
@@ -1934,6 +1991,8 @@ P
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name�<style=ability_label>Beschwörung</style>Manipuliert das Raum-Zeit-Kontinuum, um ein schwarzes Loch an der Position von Einsteins aktuellem Ziel zu erzeugen. Das schwarze Loch verschiebt sich für <style=basestat>{duration}</style> spiralförmig über das Schlachtfeld und fügt gegnerischen Einheiten in der Nähe bis zu <style=basestat>{dmg_percentage}</style> Schaden zu und verlangsamt ihre Angriffsgeschwindigkeit um <style=basestat>{atk_speed_slow}</style> solange sie sich in der Nähe befinden.
+>
+1Base.Abilities.hero_battle_ability.Excalibur_Name	Excalibur
 K
 =Base.Technologies.Technology_KingdomOfSicily_MaskanHouse_Name
 Maskanhaus
@@ -1969,8 +2028,8 @@ J
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_NameHeiliges Band
 I
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_NameGroße Halle
-�
-5Base.Buildings.Building_FeudalAge_Home_Average_1_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+�
+5Base.Buildings.Building_FeudalAge_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 9
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 6
@@ -2063,8 +2122,8 @@ W
 .Base.Technologies.Technology_Egypt_MakeUp_NameMakeup
 t
 2Base.Buildings.Building_StoneAge_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
-�
-=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_Desc@Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich.
+�
+=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_NamePorzellan-Manufaktur
 N
@@ -2076,6 +2135,8 @@ I
 Mansa Musa
 D
 7Base.Technologies.Technology_RomanEmpire_Ballistas_Name	Ballisten
+�
+2Base.Units.Unit_HighMiddleAges_Player_Billmen_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 S
 ?Base.Technologies.Technology_RomanEmpire_UnderfloorHeating_NameFußbodenheizung
 p
@@ -2086,8 +2147,8 @@ R
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMaske des Tutanchamun
 T
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapierverpackung
-Q
-;Base.Buildings.Building_IberianEra_CultureSite_Large_1_NameGroße Kultstätte
+S
+;Base.Buildings.Building_IberianEra_CultureSite_Large_1_NameGroße Kulturstätte
 P
 ?Base.Technologies.Technology_ByzantineEra_ObsidianDeposits_NameObsidianlager
 D
@@ -2144,6 +2205,8 @@ G
 Base.Units.Unit_VanHelsing_Desc�Mach deine Armbrust bereit und wetze deine Pflöcke, Abraham Van Helsing ist auf der Jagd! In Bram Stokers Horrorroman "Dracula" aus dem 19. Jahrhundert schlüpft der Arzt in die Rolle eines Amateur-Vampirjägers und bringt vier von ihnen um!<br><br>Seitdem ist Van Helsing zu einer zunehmend mythologisierten Figur geworden; ein Berufs-Jäger, der im Hammer-Horror und in den Dracula-Verfilmungen berühmt wurde. Generationen von Van Helsings wurden gezeigt, wie sie für die Seite des Lichts kämpften.<br><br>Van Helsing hat sich seit seiner Erschaffung stark verändert. Einst war er ein einfacher Arzt und Universalgelehrter, heute ist diese schneidige Figur mit Armbrust und Pfählen in der Hand ein Synonym für Monstertötung. Warum sollte man sich nicht mit ihm anlegen? Er ist un-pfähl-bar!
 �
 -Base.Units.Unit_EarlyRome_Player_Triarii_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
+H
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_2_Name	Bauernhof
 _
 EBase.Technologies.Technology_ByzantineEra_ChainmailReinforcement_NameKettenhemdverstärkung
 �
@@ -2201,16 +2264,20 @@ H
  Base.BuildingTypes.barracks_NameKaserneKasernen
 R
 ;Base.Technologies.Technology_EarlyRome_RomanProvidence_NameRömische Fürsorge
-�
-6Base.Buildings.Building_IberianEra_Home_Average_2_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+�
+6Base.Buildings.Building_IberianEra_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 R
 <Base.Technologies.Technology_EarlyRome_SiegeEngineering_NameBelagerungstechnik
+Y
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_DescSchaltet Arbalesten frei
 C
 4Base.Technologies.Technology_Vikings_Pictograms_NamePiktogramme
 J
 5Base.Abilities.hero_battle_ability.RagnarLodbrok_NameLöwe des Nordens
 =
 &Base.Regions.region.DesertDelta_2_NameStadt der Pharaonen
+X
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_NameKleine Kulturstätte
 M
 9Base.Buildings.Building_ClassicGreece_Home_Premium_1_NameLuxuriöses Haus
 C
@@ -2227,8 +2294,8 @@ N
 <Base.Technologies.Technology_ClassicGreece_FlankAssault_NameFlankenangriff
 I
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_Name	Schneider
-s
-3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBelagerungs-Kaserne
 I
@@ -2251,8 +2318,8 @@ u
 <Base.Buildings.Building_RomanEmpire_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Gedankenkontrolle</style>Entfesselt ihr literarisches Genie und überzeugt eine gegnerische Einheit, ihre Verbündeten für <style=basestat>{duration}</style> anzugreifen. Während sie unter Janes Kontrolle steht, wird die ATK der gegnerischen Einheit um <style=basestat>{atk_percentage}</style> erhöht. Priorisiert Helden.
-�
--Base.Units.Unit_EarlyRome_Player_Velites_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+-Base.Units.Unit_EarlyRome_Player_Velites_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 H
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Name	Bauernhof
 F
@@ -2265,12 +2332,16 @@ S
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameLeibeigene und Jarls
 >
 )Base.Regions.region.VolcanicJungle_3_NameEnglische Kolonie
+z
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 =
 1Base.Units.Unit_ByzantineEra_Player_Catapult_NameKatapult
 H
 +Base.Wonders.Wonder_Capital_Lighthouse_NameLeuchtturm von Alexandria
-V
-<Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_NameLuxuriöse Kultstätte
+X
+<Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
+P
+:Base.Buildings.Building_HighMiddleAges_Home_Average_2_NameMittelgroßes Haus
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_Desc`Entsende Expeditionsschiffe, die riesige Juwelen-, Gewürz-, Gold- oder Keramikschätze sammeln.
 K
@@ -2283,8 +2354,8 @@ _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameGelehrten-Lyzeum
 X
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameGotische Bogenschützen
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Shield | Spirit Link | Mind Control</style>Alexander initiates a conquest within a range of <style=basestat>{range}</style>, granting all friendly units in this area a shield worth <style=basestat>{shield_per_second}</style> per second for <style=basestat>{duration}</style>. Friendly units are spirit-linked during the conquest, sharing incoming damage between them. At the end of the duration, the enemy with the lowest HP within the range is mind-controlled to attack their allies for <style=basestat>{mind_control_duration}</style>. Prioritizes Heroes.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Schild | Geistverbindung | Gedankenkontrolle</style>Alexander initiiert eine Eroberung innerhalb eines Bereichs von <style=basestat>{range}</style> und verleiht allen befreundeten Einheiten in diesem Gebiet einen Schild im Wert von <style=basestat>{shield_per_second}</style> pro Sekunde für <style=basestat>{duration}</style>. Befreundete Einheiten sind während der Eroberung durch eine Geistverbindung miteinander verbunden und teilen den eingehenden Schaden untereinander auf. Am Ende der Dauer wird der Feind mit den niedrigsten HP innerhalb des Bereichs kontrolliert, um seine Verbündeten für <style=basestat>{mind_control_duration}</style> anzugreifen. Priorisiert Helden.
 *
 Base.Ages.RomanEmpire_Finish
 50 v. Chr.
@@ -2292,6 +2363,8 @@ B
 6Base.Buildings.Building_Arabia_Merchant_Average_3_NameHändler
 Q
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_NameMittelgroßes Haus
+]
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_DescSchaltet Große Balliste frei
 5
 )Base.Wonders.Wonder_Capital_Alhambra_NameAlhambra
 N
@@ -2306,8 +2379,8 @@ F
 Base.HeroClass.Manipulator_Desc�Manipulatoren <color=#3DA229>schwächen und kontrollieren Gegner</color>. Jeder hat eine spezielle Aufgabe. Einige sind stark gegen Helden, andere sind stark gegen große Trupps.<br><line-height=50%><br></line-height><b><color=#3DA229>Stark</color> gegen:</b><br>•<indent=5%><color=#3DA229>Kampagne</color>, <color=#3DA229>Arena</color> und <color=#3DA229>Schatzjagd</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Schwach</color> gegen:</b><br>•<indent=5%><color=#CD2A25>Tesla-Stürme I</color>.</indent>
 >
 3Base.Technologies.Technology_EarlyRome_Insulae_NameInsulae
-v
-6Base.Buildings.Building_EarlyRome_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_EarlyRome_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 ^
 5Base.Buildings.Building_FeudalAge_Farm_Premium_1_Desc%Stellt riesige Mengen an Nahrung her.
 X
@@ -2322,12 +2395,12 @@ F
 !Base.Units.Unit_VikingRaider_Desc�Hab keine Angst und kämpfe tapfer, denn Freydís Eiríksdóttir wird dir den Rücken freihalten! Diese Wikingerin aus dem 11. Jahrhundert ist in den nordischen Sagas von Vinland für ihre kühnen Heldentaten und ihre Entschlossenheit bekannt.<br><br>Als Tochter von Erik dem Roten unternahm sie Reisen nach Vinland, einem Teil der nordamerikanischen Küste, und stellte ihre Entschlossenheit und ihren Mut im Angesicht unbekannter Länder unter Beweis. Die Legende von Freydís erzählt, dass sie ihre Siedlung furchtlos gegen Feinde verteidigt hat.<br><br>Ihre mythenumwobenen Geschichten zeigen die Stärke und Zähigkeit der Wikingerfrauen und tragen zu einem Erbe an Abenteuern und Widerstandsfähigkeit in der nordischen Geschichte bei.
 H
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_NamePapyrusfeld
-w
-7Base.Buildings.Building_ClassicGreece_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+x
+7Base.Buildings.Building_ClassicGreece_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 L
 :Base.Technologies.Technology_KingdomOfSicily_Wardrobe_NameKleiderschrank
-Z
-BBase.Buildings.Building_AgeOfTheFranks_CultureSite_Moderate_1_NameMittlere Kultstätte
+\
+BBase.Buildings.Building_AgeOfTheFranks_CultureSite_Moderate_1_NameMittlere Kulturstätte
 R
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_NameGroße Kulturstätte
 c
@@ -2357,6 +2430,8 @@ F
 6Base.Technologies.Technology_FeudalAge_KingsGuard_NameKönigsgarde
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.MarcoPolo_1_Name�<style=ability_label>Teleport| Stampfen</style>Teleportiert sich in die größte Ansammlung gegnerischer Einheiten und verursacht eine Explosion. Die Explosion verursacht <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style>.
+�
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_DescyDie große Halle ist das Zentrum deiner Stadt. Sie generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
 �
 "Base.Units.Unit_OracleOfDephi_Desc�Bade in der kastalischen Quelle, trinke das heilige Wasser der Cassotis und halte eine Ziege bereit, denn das Orakel von Delphi ist bereit, zu prophezeien! Seit dem 8. Jahrhundert v. Chr. reisten die Menschen in den Tempel des Apollo, um Einflüsterungen über die Zukunft zu hören.<br><br>Diese Prophezeiungen, die von der Pythia, einer Hohepriesterin, die das Orakel verkörperte, überbracht wurden, spielten eine entscheidende Rolle bei der Entscheidungsfindung in Fragen des Krieges, der Politik und der Kolonialisierung. Anführer und das einfache Volk wandten sich über 8 Jahrhunderte lang immer wieder an die Pythia, um sich Rat zu holen.<br><br>Das Orakel von Delphi wurde zu einer zentralen Figur in der griechischen Kultur, an der Schnittstelle von Religion, Politik und Gesellschaft. Mehr als 500 Aussagen des Orakels sind überliefert: mehr als die Hälfte davon haben sich bewahrheitet. Als ich sie fragte, ob du Tesla schlagen wirst, sagte sie, dass du weiter spielen musst!
 H
@@ -2399,8 +2474,8 @@ P
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_1_NameKavallerie-Kaserne
 K
 8Base.Buildings.Building_ByzantineEra_Farm_Premium_1_NameLuxuriöse Farm
-�
-1Base.Units.Unit_TreasureHunt_Red_Harpoonists_DescvFerneinheiten schießen Geschosse über eine große Entfernung und sind besonders effektiv gegen Infanterie-Einheiten.
+�
+1Base.Units.Unit_TreasureHunt_Red_Harpoonists_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 X
 ABase.Technologies.Technology_ClassicGreece_ReinforcedShields_NameVerstärkte Schilde
 Q
@@ -2435,18 +2510,18 @@ B
 2Base.Buildings.Building_China_City_CityHall_2_NameGroße Halle
 )
 Base.Units.Unit_Hercules_NameHerkules
-�
-2Base.Units.Unit_IberianEra_Player_Crossbowmen_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+2Base.Units.Unit_IberianEra_Player_Crossbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 B
 2Base.Buildings.Building_Mayas_City_CityHall_1_NameGroße Halle
 ?
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameStierreiter
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.WilliamTell_10_Name�<style=ability_label>Fernkampfangriff| Buff</style>Richtet seine Armbrust auf das am weitesten entfernte Ziel und fügt ihm <style=basestat>{dmg_percentage}</style> Schaden zu und erhöht seine eigene ATK-Geschwindigkeit um <style=basestat>{atk_speed_percentage}</style> für <style=basestat>{duration}</style>. Priorisiert Helden.
-v
-6Base.Buildings.Building_EarlyRome_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
-r
-2Base.Buildings.Building_StoneAge_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+w
+6Base.Buildings.Building_EarlyRome_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+s
+2Base.Buildings.Building_StoneAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 -
 Base.Heroes.hero.Dracula_NameVlad Dracula
 :
@@ -2510,16 +2585,18 @@ J
 John Locke
 �
 3Base.Buildings.Building_Arabia_City_CityHall_1_DescqDie große Halle ist das Zentrum deiner Stadt. Sie generiert fortlaufend eine geringe Anzahl an Dirham für dich.
-W
-?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_NameKompakte Kultstätte
+Y
+?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_NameKompakte Kulturstätte
 ]
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 R
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameÜberfall-Raubzüge
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSilberbolzen
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Melee Strike | Buff </style>Lagertha becomes lightning itself and strikes the most powerful enemy unit, dealing <style=basestat>{damage}</style> and gaining <style=basestat>{attack_speed_buff}</style> attack speed for <style=basestat>{attack_speed_duration}</style>.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<style=ability_label>Teleport | Nahkampfangriff | Buff </style>Lagertha wird selbst zum Blitz und schlägt die stärkste gegnerische Einheit, verursacht <style=basestat>{damage}</style> und erhält <style=basestat>{attack_speed_buff}</style> Angriffsgeschwindigkeit für <style=basestat>{attack_speed_duration}</style>.
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_DescLStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Debuff</style> Zielt auf die größte Ansammlung feindlicher Einheiten und reduziert deren DEF um Imhoteps ATK für <style=basestat>{duration}</style> in einem Bereich von <style=basestat>{range}</style>. 
 D
@@ -2536,6 +2613,8 @@ Y
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescuDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
 x
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+c
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_DescSchaltet Hippenträger frei
 L
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_NameSeiden-Weberei
 V
@@ -2552,6 +2631,8 @@ I
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
 @
 0Base.Buildings.Building_Mayas_Home_Worker_4_NameArbeiterhaus
+y
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 ,
 Base.BuildingTypes.farm_NameFarmFarmen
 Q
@@ -2563,8 +2644,8 @@ Opfergaben
 IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_5_Name�<style=ability_label>Gedankenkontrolle| Buff</style>Richtet das Auge des Horus auf die größte Ansammlung von gegnerischen Einheiten, wodurch diese ihre Verbündeten für <style=basestat>{duration}</style> angreifen. Feindliche Einheiten unter Kleopatras Kontrolle erhalten <style=basestat>{attack_speed_percentage}</style> Angriffsgeschwindigkeit und <style=basestat>{attack_percentage}</style> von Kleopatras ATK.
 C
 3Base.Abilities.hero_battle_ability.WilliamTell_NameApfelspalter
-v
-6Base.Buildings.Building_MinoanEra_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_MinoanEra_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 T
 ;Base.Technologies.Technology_IberianEra_FishingMastery_NameMeisterhaftes Fischen
 P
@@ -2599,8 +2680,8 @@ A
 7Base.Technologies.Technology_IberianEra_Eyeglasses_NameBrille
 +
 Base.Ages.FeudalAge_Finish1.000 n. Chr.
-P
-:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_NameGroße Kultstätte
+R
+:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_NameGroße Kulturstätte
 J
 )Base.TreasureHuntDifficultiesPanel.HeaderSchatzjagd-Schwierigkeitsgrad
 i
@@ -2645,6 +2726,8 @@ U
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameKavallerie-Kaserne
 x
 6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_NameBelagerungs-Kaserne
 A
 .Base.Abilities.hero_battle_ability.Jester_NameKonfetti-Kanone
 V
@@ -2731,8 +2814,8 @@ w
 5Base.Buildings.Building_RomanEmpire_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 0
  Base.Units.Unit_NikolaTesla_NameNikola Tesla
-|
-9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc?Stellt über einen kurzen Zeitraum kleine Mengen an Nahrung her
+z
+9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>Nahkampfangriff| Schild</style>Sticht auf das aktuelle Ziel hinter seinem Schild ein, verursacht <style=basestat>{dmg_percentage}</style> Schaden und erhält <style=basestat>{hp_percentage}</style> seines Basisschadens als Schild.
 S
@@ -2751,8 +2834,8 @@ O
 "Base.Units.Unit_CyrusTheGreat_Desc�Von Libyen bis Pakistan preisen sie Kyros den Großen, den Gründer des Achämenidenreiches, des größten Reiches, das die Welt je gesehen hat. Dieser Kaiser aus dem 6. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Kyros vereinigte die Stämme Persiens und vergrößerte dann sein Territorium über Kleinasien und Osteuropa. Die eroberten Satrapen durften ihre eigenen Religionen und Bräuche beibehalten, was Kyros' Erbe als weiser Anführer festigte.<br><br>Für die Juden war er ein Messias, für die Babylonier ein Befreier und ein Held für Alexander den Großen und Thomas Jefferson. Sein Ruhm ist im Iran manifestiert, und seine Güte im Kyros-Zylinder, einer Erklärung der Staatskunst und der Träume. Kyros war nicht nur ein begabter Staatsmann, er war auch auf dem Schlachtfeld sehr gerissen. Angeblich hat er seine Feinde vor einer Schlacht betrunken gemacht!
 3
 $Base.Heroes.hero.JapaneseShogun_NameKondo Isami
-u
-5Base.Buildings.Building_StoneAge_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+v
+5Base.Buildings.Building_StoneAge_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 <
 &Base.Heroes.hero.ThomasAlvaEdison_NameThomas Alva Edison
 �
@@ -2802,6 +2885,8 @@ G
 CBase.Technologies.Technology_KingdomOfSicily_ImprovedRoofTiles_NameVerbesserte Dachziegel
 ,
 Base.BuildingGroups.SmallOakAntike Eiche
+K
+;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_NameGroße Halle
 ]
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameMittlere Kulturstätte
 P
@@ -2948,10 +3033,12 @@ V
 :Base.Units.Unit_ClassicGreece_ThePersians_ShortBowmen_NamePersische Bogenschützen
 q
 2Base.Buildings.Building_Vikings_Home_Sailor_1_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
-U
-?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_NameGroße Kultstätte
+W
+?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_NameGroße Kulturstätte
 P
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_NameFernkämpfer-Kaserne
+b
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
 _
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_Desc!Produziert Seide aus Seidenfäden
 P
@@ -2999,8 +3086,8 @@ H
 5Base.Buildings.Building_China_RiceFarm_Average_3_DescProduziert Reis
 >
 3Base.Units.Unit_KingdomOfSicily_Player_Melites_NameMelites
-9
-/Base.Units.Unit_FeudalAge_Player_Trebuchet_NameTribok
+<
+/Base.Units.Unit_FeudalAge_Player_Trebuchet_Name	Trebuchet
 S
 :Base.Buildings.Building_Vikings_FishingPier_Premium_2_NameLuxuriöser Angelsteg
 s
@@ -3009,8 +3096,8 @@ s
 4Base.Buildings.Building_Vikings_City_CityHall_1_DeschDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Pennys für dich.
 E
 1Base.Abilities.hero_battle_ability.JohnLocke_NameEmpirisches Echo
-u
-5Base.Buildings.Building_RomanEmpire_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+v
+5Base.Buildings.Building_RomanEmpire_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 >
 5Base.Units.Unit_RomanEmpire_GermanicTribes_Gedri_NameGedri
 R
@@ -3023,14 +3110,16 @@ w
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 ^
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
+U
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_NameInfanterie-Kaserne
 K
 1Base.Units.Unit_IberianEra_Castilla_Infantry_NameKastilische Infanterie
 y
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 6
 +Base.Units.Unit_EarlyRome_Huns_Geoguth_NameGeoguth
-�
-5Base.Buildings.Building_FeudalAge_Home_Average_3_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+�
+5Base.Buildings.Building_FeudalAge_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 G
 7Base.Technologies.Technology_FeudalAge_BurialSites_NameGrabstätten
 H
@@ -3088,8 +3177,8 @@ o
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 H
 4Base.Buildings.Building_StoneAge_Home_Premium_1_NameLuxuriöses Haus
-u
-5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+v
+5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 [
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_Desc Schaltet Schleuderkatapulte frei
 H
@@ -3202,12 +3291,12 @@ S
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 E
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_NameKleines Haus
-v
-6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 G
 7Base.Buildings.Building_IberianEra_City_CityHall_1_NameGroße Halle
-�
-0Base.Units.Unit_FeudalAge_Player_Longbowmen_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+0Base.Units.Unit_FeudalAge_Player_Longbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 2
 #Base.Units.Unit_JapaneseShogun_NameKondo Isami
 J
@@ -3224,6 +3313,8 @@ S
 :Base.Abilities.hero_battle_ability.GreekMathematician_NameAxiomatischer Angriff
 7
 #Base.Heroes.hero.CyrusTheGreat_NameKyros der Große
+c
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescSchaltet Hippenträger frei
 =
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_NamePlantage
 F
@@ -3260,6 +3351,8 @@ O
 4Base.Technologies.Technology_ClassicGreece_Toga_NameToga
 �
 2Base.Buildings.Building_Egypt_City_CityHall_2_DescgDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Deben für dich.
+U
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_DescProduziert Grimoires
 <
 1Base.Technologies.Technology_Vikings_Jarldom_NameJarltum
 V
@@ -3272,13 +3365,15 @@ q
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
 )
 Base.Units.Unit_Lagertha_NameLagertha
+f
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_Desc$Schaltet Ritterliche Kavallerie frei
 H
 :Base.Technologies.Technology_MinoanEra_Administration_Name
 Verwaltung
 ;
 #Base.Regions.region.Panganea_6_NameGefallene Hauptstadt
-�
-6Base.Buildings.Building_IberianEra_Home_Average_1_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+�
+6Base.Buildings.Building_IberianEra_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 ?
 /Base.Buildings.Building_China_Home_Small_6_NameKleines Haus
 d
@@ -3309,6 +3404,8 @@ R
  Base.Units.Unit_SirLancelot_NameSir Lancelot
 N
 <Base.Technologies.Technology_ClassicGreece_HerbalAromas_NameKräuteraromen
+]
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_DescSchaltet Große Balliste frei
 W
 BBase.Technologies.Technology_KingdomOfSicily_TacticalChambers_NameTaktische Kammern
 G
@@ -3345,8 +3442,8 @@ ABase.Technologies.Technology_KingdomOfSicily_LawOfCotangents_NameGesetz der K
 /Base.Units.Unit_FeudalAge_Player_Trebuchet_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben auf große Distanz eine vernichtende Wirkung.
 T
 >Base.Technologies.Technology_RomanEmpire_ImprovedStirrups_NameVerbesserte Bügel
-s
-3Base.Buildings.Building_BronzeAge_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_BronzeAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_4_NamePorzellan-Manufaktur
 N
@@ -3415,6 +3512,8 @@ E
 6Base.Buildings.Building_Vikings_Beehive_Average_2_NameBienenstock
 W
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_NameMittlere Kulturstätte
+[
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_NameKompakte Kulturstätte
 E
 6Base.Technologies.Technology_FeudalAge_SheepHerds_NameSchafherden
 �
@@ -3483,8 +3582,8 @@ C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_1_NameBrunnen
 ]
 5Base.Buildings.Building_Egypt_GoldMine_Premium_3_Desc$Stellt riesige Mengen an Golderz her
-T
-<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_NameKompakte Kultstätte
+V
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_NameKompakte Kulturstätte
 G
 4Base.Units.Unit_StoneAge_SkullSmasherTribe_Grok_NameSchädelspalter
 �
@@ -3514,8 +3613,12 @@ b
 ^
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 +
+Base.Ages.HighMiddleAges_Start	1200 A.D.
++
 Base.Units.Unit_Leonidas_Name
 Leonidas I
+I
+5Base.Abilities.hero_battle_ability.FalconryGlove_NameFalknerhandschuh
 &
 Base.HeroClass.DefenderVerteidiger
 n
@@ -3540,8 +3643,8 @@ K
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_NameLuxuriöses Haus
 @
 4Base.Technologies.Technology_MinoanEra_Township_NameGemeinde
-�
--Base.Units.Unit_StoneAge_Player_Slingers_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+-Base.Units.Unit_StoneAge_Player_Slingers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_36_Name�<style=ability_label>Stampfen| Schild| Buff| Debuff</style>Führt einen mächtigen Schwertangriff aus, der allen gegerischen Einheiten<style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> zufügt und ihre Angriffsgeschwindigkeit um <style=basestat>{atk_speed_percentage}</style> für <style=basestat>{duration_debuff}</style> reduziert. William Wallace erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild und erhöht seine DEF um <style=basestat>{def_percentage}</style> für <style=basestat>{duration}</style>. Außerdem gibt er <style=basestat>{shield_percentage_friendly}</style> seines Basisschadens als Schild an alle befreundeten Einheiten in einem Bereich von <style=basestat>{range}</style>.
 &
@@ -3552,8 +3655,8 @@ D
 Base.BuildingGroups.scribe_NameSchriftgelehrterSchriftgelehrte
 *
 Base.Ages.MinoanEra_Decade1600 v. Chr.
-v
-6Base.Buildings.Building_BronzeAge_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_BronzeAge_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 X
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescSchaltet Bogenschützen frei
 U
@@ -3580,6 +3683,8 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_2_NameLuxuriöses Papyrusfeld
 <
 )Base.Regions.region.VolcanicJungle_1_NameMaya Vorgebirge
+b
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 M
 0Base.Abilities.hero_battle_ability.Achilles_NameAchilles' letztes Gefecht
 O
@@ -3611,10 +3716,14 @@ D'Artagnan
 1Base.Technologies.Technology_FeudalAge_Sagas_NameSagas
 o
 1Base.Buildings.Building_Arabia_Home_Medium_3_Desc:Stellt Dirham her und fügt deiner Stadt 2 Arbeiter hinzu.
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_NameBelagerungs-Kaserne
 B
 2Base.Buildings.Building_Egypt_City_CityHall_2_NameGroße Halle
 >
 4Base.Technologies.Technology_RomanEmpire_Turmae_NameTurmae
+Q
+=Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_NameSchriftgelehrter
 P
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_NameKavallerie-Kaserne
 G
@@ -3641,6 +3750,8 @@ p
 $Base.Units.Unit_OttoVonBismarck_NameOtto von Bismarck
 \
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameMerowingische Berserker
+2
+!Base.Units.Unit_LouisPasteur_NameLouis Pasteur
 0
  Base.Ages.KingdomOfSicily_Finish1100 n. Chr.
 V
@@ -3649,6 +3760,8 @@ V
 )Base.Regions.region.VolcanicJungle_4_NameNeues Byzanz
 3
 #Base.Units.Unit_OttomanGeneral_NameHasan Pascha
+P
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_NameMittelgroßes Haus
 S
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_2_NameBelagerungs-Kaserne
 u
@@ -3699,8 +3812,8 @@ _
 DBase.Technologies.Technology_ClassicGreece_PhilosophicalDebates_NamePhilosophische Debatten
 b
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
-U
-=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_NameKompakte Kultstätte
+W
+=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_NameKompakte Kulturstätte
 �
 Base.Units.Unit_Dracula_Desc�Man nennt Vlad Dracula einen Teufel, denn seine Herrschaft war rot vor Blut. Dieser rumänische Herzog aus dem 15. Jahrhundert ist berühmt für seine Brutalität, seine Grausamkeit und, bei manchen, für seine Tapferkeit. Während seiner Herrschaft beherrschte er Rivalen und Verbündete gleichermaßen und hinterließ "Wälder von Leichen" in seinem Gefolge.<br><br>Fast fünf Jahrhunderte später inspirierte Vlad Draculas Name Bram Stoker zu seinem Roman Dracula. In dieser berühmten Horrorgeschichte reist der rumänische Graf Dracula nach London, um sich mit dem Anwalt Jonathan Harker und dem Professor Van Helsing einen tödlichen Tanz zu liefern.<br><br>Beide inspirierten die Gruselgeschichten. Vlad Draculas Grausamkeit machte ihn zum Star einiger der frühesten deutschen Bestseller, während Graf Draculas Legion untoter Nachkommen die Leser bis heute in Angst und Schrecken versetzt. 
 {
@@ -3709,6 +3822,8 @@ U
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameGrüne Kanone
 V
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescStellt Folianten her
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Buff| Blutung</style>Erhöht den Schaden des Helden gegen blutende Ziele um <style=basestat>{damage_increase_per_relic_level}</style>. Zusätzlich hat ein Schaden an einem Gegner eine <style=basestat>{bleed_chance_percentage}</style> Chance, eine Blutung hervorzurufen, die <style=basestat>{bleed_percentage_per_relic_level}</style> Schaden pro Sekunde für <style=basestat>{bleed_duration}</style> verursacht.
 V
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatisierung
 G
@@ -3757,8 +3872,8 @@ B
 Base.Units.Unit_Tansen_Desc�Werde Zeuge, wie Mian Tansen mit seiner Musik den Regen vom Himmel beschwört! Dieser Musiker aus dem 16. Jahrhundert war einer von Kaiser Akbars "Neun Juwelen", einer Reihe besonderer Menschen am indischen Hof.<br><br>Mian Tansen (was "der Gelehrte" bedeutet) gründete die Gwalior Gharana, die erste Schule der nordindischen Musik. Tansen trat bereits im Alter von fünf Jahren auf und war sein ganzes Leben lang ein ausgezeichneter Sänger und Musiker.<br><br>Es gibt unzählige Legenden über ihn. Seine Lieder sollen wilde Elefanten gezähmt und Vögel besänftigt, sowie Feuer entfacht und Regenstürme heraufbeschworen haben. Gwalior, wo er seine Schule gründete, ist bis heute als die Stadt der Musik bekannt!
 K
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescStellt Obsidian her
-s
-3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 v
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 /
@@ -3808,8 +3923,8 @@ x
 1Base.Units.Unit_IberianEra_Player_Almogavars_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 R
 ;Base.Technologies.Technology_RomanEmpire_TenantFarming_NamePachtlandwirtschaft
-R
-<Base.Buildings.Building_IberianEra_CultureSite_Little_1_NameKleine Kultstätte
+T
+<Base.Buildings.Building_IberianEra_CultureSite_Little_1_NameKleine Kulturstätte
 T
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_2_NameFernkämpfer-Kaserne
 E
@@ -3853,8 +3968,10 @@ N
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_NameFaden-Spinner
 >
 -Base.TreasureHuntDifficultiesPanel.DifficultySchwierigkeit
-s
-3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+z
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
+t
+3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 *
 Base.Ages.DawnAge_Finish50.000 v. Chr.
 8
@@ -3879,8 +3996,8 @@ M
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_4_NameMinoischer Wachturm
 e
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_Desc!Schaltet Orden von Calatrava frei
-x
-8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+y
+8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 '
 Base.Cities.City_Egypt_NameÄgypten
 J
@@ -3913,8 +4030,8 @@ W
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameTheodosianische Mauer
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_NameBrunnen
-r
-2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+s
+2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 H
 -Base.Units.Unit_StoneAge_Player_Slingers_NameSteinschleuderschützen
 z
@@ -3939,8 +4056,8 @@ t
 ;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_NameGelehrten-Lyzeum
-o
-;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc0Schaltet den Hellenischen Bolzenschleuderer frei
+k
+;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc,Schaltet Hellenischen Bolzenschleuderer frei
 I
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia Regis
 S
@@ -3969,8 +4086,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Flächenschlag| Buff| Debuff</style>Befiehlt einen Kanonenschuss auf die größte Ansammlung feindlicher Einheiten, der <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Bei den betroffenen Einheiten wird die Genauigkeit um <style=basestat>{accuracy_percentage}</style>, der Schaden um <style=basestat>{atk_percentage}</style> und die Bewegungsgeschwindigkeit um <style=basestat>{movement_percentage}</style> für <style=basestat>{debuff_duration}</style> reduziert. Alle befreundeten Einheiten erhalten <style=basestat>{evasion_percentage}</style> Ausweichen für <style=basestat>{evasion_duration}</style>.
 v
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
-A
-6Base.Technologies.Technology_FeudalAge_Trebuchets_NameTriboke
+C
+6Base.Technologies.Technology_FeudalAge_Trebuchets_Name	Trebuchet
 P
 6Base.Technologies.Technology_Vikings_TavernBrawls_NameTavernen-Schlägereien
 G
@@ -3997,6 +4114,8 @@ K
 1Base.Buildings.Building_Egypt_Home_Average_5_DescIStellt große Mengen an Deben her und fügt deiner Stadt 2 Arbeiter hinzu
 +
 Base.Ages.ByzantineEra_Start330 n. Chr.
+@
+(Base.Units.Unit_FlorenceNightingale_NameFlorence Nightingale
 N
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_Name	Schreiner
 =
@@ -4036,6 +4155,8 @@ G
 Pfeilsturm
 �
 !Base.HeroClass.SingleStriker_Desc�Einzelangreifer verursachen großen Schaden an einzelnen Zielen. Sie sind besonders gut gegen gegnerische Helden.<br><line-height=50%><br></line-height><b><color=#3DA229>Stark</color> gegen:</b><br>•<indent=5%><color=#3DA229>Feindliche Helden</color> in <color=#3DA229>Kampagne</color>, <color=#3DA229>Arena</color> und <color=#3DA229>Schatzjagd</color>.</indent><br>•<indent=5%><color=#3DA229>Tesla-Stürme</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Schwach</color> gegen:</b><br>•<indent=5%><color=#CD2A25>Große Trupps</color> in Kampagne und Schatzjagd.</indent>
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 �
@@ -4058,6 +4179,8 @@ G
 BBase.Technologies.Technology_IberianEra_LongDistanceSeafaring_NameLangstrecken-Seefahrt
 t
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_Desc;Verbessert die Bewässerung von umliegenden Gebäuden enorm
+U
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_NameFernkämpfer-Kaserne
 \
 6Base.Buildings.Building_Arabia_Merchant_Average_2_Desc"Stellt große Mengen an Dirham her
 L
@@ -4072,14 +4195,16 @@ L
 ,Base.Wonders.Wonder_Capital_HagiaSophia_NameHagia Sophia
 X
 ?Base.Technologies.Technology_RomanEmpire_AlloyedArrowheads_NameLegierte Pfeilspitzen
-b
-8Base.Buildings.Building_IberianEra_Barracks_Siege_1_Desc&Schaltet fortschrittliche Triboke frei
+d
+8Base.Buildings.Building_IberianEra_Barracks_Siege_1_Desc(Schaltet fortschrittliche Trebuchet frei
 Y
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_DescSchaltet Kopis-Krieger frei
 z
 1Base.Buildings.Building_China_Home_Premium_2_DescEProduziert eine Tonne Wu Zhu und fügt deiner Stadt 3 Arbeiter hinzu 
 Q
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_NameExpeditions-Steg
+D
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_NamePlantage
 X
 <Base.Units.Unit_RomanEmpire_Carthaginians_CretanArchers_NameKretische Bogenschützen
 >
@@ -4176,6 +4301,8 @@ J
 8Base.Technologies.Technology_BronzeAge_SmallHolding_NameKleiner Besitz
 J
 $Base.BuildingGroups.premiumFarm_NameLuxuriöse FarmLuxuriöse Farmen
+,
+Base.Ages.HighMiddleAges_Finish	1200 A.D.
 S
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_NameKleine Kulturstätte
 S
@@ -4194,6 +4321,8 @@ A
 5Base.Technologies.Technology_FeudalAge_Seafaring_NameSeefahrt
 O
 ;Base.Technologies.Technology_ByzantineEra_StoneCarving_NameSteinbildhauerei
+H
+8Base.Buildings.Building_HighMiddleAges_Home_Small_1_NameKleines Haus
 V
 >Base.Technologies.Technology_MinoanEra_DivinatoryStrategy_NameWeissagungsstrategie
 7
@@ -4332,14 +4461,16 @@ E
 5Base.Technologies.Technology_Vikings_MeadMastery_NameMetexpertise
 B
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_NameSchwertkämpfer
-w
-7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+x
+7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
  Base.Units.Unit_LeifErikson_Desc�Halt dich fest: Leif Erikson, ein nordischer Entdecker aus dem 11. Jahrhundert, ist in dein Gerät gesegelt! Er gilt als einer der ersten Europäer, die Nordamerika betreten haben. Leif, der Sohn von Erik dem Roten, brach von Grönland aus zu seiner Seereise auf.<br><br>Leif landete in einer Region, die er Vinland nannte und die man als Teile des heutigen Neufundlands in Kanada bezeichnen kann. Mit dieser Reise begannen die Wikinger, Vinland zu erkunden und ihren Horizont über den Atlantik zu erweitern.<br><br>Seine Reisen sind nie vergessen worden: Die nordischen Amerikaner feiern ihn heute mit Statuen in Boston und Reykjavík. Der 9. Oktober ist der Leif Erikson-Tag, also reise und trinke auf ihn!
 ?
 2Base.Technologies.Technology_MinoanEra_Screws_Name	Schrauben
 1
 Base.Heroes.hero.JoanOfArc_NameJeanne d’Arc
+�	
+(Base.Units.Unit_FlorenceNightingale_Desc�Keine Sorge: Die Dame mit der Lampe ist an deiner Seite. Florence Nightingale, eine britische Krankenschwester aus dem 19. Jahrhundert, ist berühmt für ihre Arbeit im Krimkrieg, als sie Soldaten heilte, die im Sterben lagen. <br><br> Aber Florence Nightingales größte Erfolge kommen vielleicht erst später. Nachdem sie dem Militär in Scutari beigestanden und die Kranken von drei Armeen behandelt hatte, führte Nightingale die Reform der britischen Krankenpflege an und förderte ein modernisiertes System, das die Pflege bis heute geprägt hat. Krankenschwestern und -pfleger schwören den "Nightingale Pledge", ein Echo ihres eigenen Versprechens zu helfen. <br><br> Florence Nightingales Vermächtnis ist also zweigeteilt: Einerseits ein Engel, die "Lady with the Lamp", andererseits eine entschlossene und brillant intelligente Frau, die Krankenhäuser für immer verändert hat. Vielleicht ist beides nicht ganz zutreffend. Nightingales Spitzname war ursprünglich die Dame mit dem Hammer, nachdem sie einen gesperrten medizinischen Vorrat aufgebrochen hatte - vielleicht steckt in diesem Bild mehr Wahrheit als in jedem anderen!
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�Maya-Bogenschützen sind zusätzliche Fernkampf-Einheiten für deine Armee. Ihre Statuswerte skalieren automatisch mit deinem Zeitalter.
 `
@@ -4348,6 +4479,8 @@ V
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameKompakte Kulturstätte
 ;
 2Base.Technologies.Technology_IberianEra_Masia_NameMasia
+T
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_NameKavallerie-Kaserne
 =
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_NameOase
 �
@@ -4358,8 +4491,8 @@ B
 FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>Nahkampfschlag</style>Schlägt das aktuelle Ziel gekonnt mit ihrem Stab und fügt <style=basestat>{dmg_percentage}</style> Schaden zu.
 F
 %Base.BuildingGroups.papyrusPress_NamePapyruspressePapyruspressen
-s
-3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 o
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_2_Desc1Stellt Papyrusrollen und zeremonielle Kleider her
 c
@@ -4430,6 +4563,8 @@ G
 Trapeziten
 C
 )Base.BuildingGroups.averageCamelFarm_Name	KamelfarmKamelfarmen
+y
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 _
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_4_DescProduziert Porzellan aus Ton
 -
@@ -4443,14 +4578,14 @@ P
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameMittelgroßes Haus
 ]
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_NameSchädelhaus
-�
-6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 D
 3Base.Technologies.Technology_StoneAge_GoatPens_NameZiegenställe
 �
 Base.Units.Unit_Mozart_Desc�Inszeniere eine Oper und inspiriere Tausende mit Wolfgang Amadeus Mozart! Das musikalische Wunderkind aus dem 18. Jahrhundert trat vor Königen auf und beherrschte die Geige und das Keyboard - und das im Alter von fünf Jahren!<br><br>Im Alter von 25 Jahren hatte Mozart eine Fülle von Musikstücken produziert, darunter mehrere Symphonien, unzählige Konzerte und sogar eine erfolgreiche Oper. In Wien wurde er nun extrem berühmt, aber nicht extrem reich. <br> <br>In seinen letzten Jahren brachte Mozart viele seiner bekanntesten Werke heraus, darunter auch sein unvollendetes Requiem. Zu Lebzeiten war er ein berühmter Scherzkeks, der seinen Freunden oft Streiche spielte und viele inspirierte, darunter auch Ludwig van Beethoven, ein weiterer potenzieller Rekrut für die Heroes of History.
-Z
->Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameFortschrittliche Triboke
+\
+>Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameFortschrittliche Trebuchet
 y
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 Q
@@ -4481,8 +4616,8 @@ T
 =Base.Technologies.Technology_MinoanEra_CeramicArmorcraft_NameKeramische Rüstung
 B
 8Base.Technologies.Technology_KingdomOfSicily_Piazza_NamePiazza
-Y
-?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_NameLuxuriöse Kultstätte
+[
+?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 �
 "Base.Units.Unit_RagnarLodbrok_Desc�Aufbruch und Überfall, Ragnar Lodbrok! Den nordischen Sagas zufolge führte dieser Held und Kriegerkönig aus dem 9. Jahrhundert waghalsige Angriffe auf England und Frankreich an - eine Mischung aus Geschichte und Mythos.<br><br>Als meisterhafter Stratege und kämpferischer Commander heiratete Ragnar die Kriegerin Lagertha und zeugte mit ihr Björn Ironside und Ivar den Knochenlosen, die selbst in der Sage aufgeführt sind. Reafan, das Rabenbanner, ein Symbol des Gottes Odin, leitete ihn in jeder Schlacht.<br><br>So wie die Geschichten von Ragnar die Wikinger mit ihrem Mut und ihrer Kühnheit inspirierten, begeistern sie auch heute noch das Publikum im Fernsehen, in Spielen und Büchern. In den ältesten historischen Quellen ist jedoch von "ihren" Söhnen die Rede. Ist es möglich, dass Ragnar insgeheim eine Frau ist?
 ;
@@ -4527,8 +4662,8 @@ B
 Base.Ages.ByzantineEra_Decade330 n. Chr.
 o
 1Base.Buildings.Building_Arabia_Home_Medium_1_Desc:Stellt Dirham her und fügt deiner Stadt 2 Arbeiter hinzu.
-s
-3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name�<style=ability_label>Gedankenkontrolle| Buff</style>Richtet das Auge des Horus auf die größte Ansammlung feindlicher Einheiten, wodurch diese ihre Verbündeten für <style=basestat>{duration}</style> angreifen. Feindliche Einheiten unter Kleopatras Kontrolle erhalten <style=basestat>{attack_speed_percentage}</style> Angriffsgeschwindigkeit.
 P
@@ -4546,8 +4681,12 @@ H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_NameWasserpumpe
 G
 3Base.TreasureHuntDifficultiesPanel.RecommendedPowerEmpfohlene Macht
-v
-6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+H
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_NameKleines Haus
+b
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 �
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
 �
@@ -4562,6 +4701,8 @@ v
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 K
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameMittelgroßes Haus
+M
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_Name	Schreiner
 U
 ?Base.Technologies.Technology_KingdomOfSicily_ArmoredPanels_NameGepanzerte Platten
 <
@@ -4616,8 +4757,8 @@ A
 6Base.Technologies.Technology_KingdomOfSicily_Tome_NameFoliant
 F
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_5_NameGoldschmied
-T
->Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameKleine Kultstätte
+V
+>Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameKleine Kulturstätte
 `
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 E
@@ -4630,6 +4771,8 @@ F
 Base.Ages.ClassicGreece_Start880 v. Chr.
 z
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+D
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_NamePlantage
 u
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 ,
@@ -4667,6 +4810,8 @@ L
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 N
 7Base.Units.Unit_BronzeAge_SumerianEmpire_Gilgamesh_NameMinoische Berserker
+U
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_NameInfanterie-Kaserne
 H
 <Base.Technologies.Technology_ByzantineEra_WheeledPlough_NameRadpflug
 _
@@ -4680,7 +4825,7 @@ Handwerker
 Base.UnitTypes.Infantry_Name
 Infanterie
 e
-<Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc%Schaltet karolingische Katapults frei
+<Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc%Schaltet karolingische Katapulte frei
 �
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_2_DescCStellt über einen längeren Zeitraum große Mengen an Nahrung her.
 X
@@ -4754,8 +4899,8 @@ P
 Base.HeroClass.ManipulatorManipulator
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name�<style=ability_label>Nahkampfschlag| Buff| Erholung</style>Entfesselt außergewöhnliche Kraft, indem er das aktuelle Ziel für <style=basestat>{dmg_percentage}</style> Schaden trifft. Achilles erhält dann einen Schub an Schnelligkeit, der seine ATK-Geschwindigkeit um <style=basestat>{atk_speed_percentage}</style> für <style=basestat>{atk_speed_duration}</style> erhöht, sich um <style=basestat>{heal_percentage}</style> seiner maximalen HP heilt und seine DEF um <style=basestat>{def_percentage}</style> für <style=basestat>{def_duration}</style> erhöht.
-w
-7Base.Buildings.Building_ClassicGreece_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+x
+7Base.Buildings.Building_ClassicGreece_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 M
 :Base.Technologies.Technology_MinoanEra_BronzeAutomata_NameBronzeautomaten
 _
@@ -4774,6 +4919,8 @@ GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<styl
 "Base.Units.Unit_QueenBoudicca_NameKönigin Boudicca
 Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_2_DescStellt Ankhs und Goldmasken her
+�
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_NameSchule
 �
@@ -4786,6 +4933,8 @@ L
 :Base.Technologies.Technology_ByzantineEra_RitualSites_NameRitualstätten
 ?
 -Base.Units.Unit_BronzeAge_Player_Archers_NameBogenschützen
+{
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_DescAInfanterie-Einheiten sind in den vorderen Reihen am effektivsten.
 P
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
 G
@@ -4838,6 +4987,10 @@ V
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 ?
 (Base.BuildingGroups.averageGoldMine_NameGoldmine	Goldminen
+S
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_NameBelagerungs-Kaserne
+P
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_NameMittelgroßes Haus
 ;
 )Base.Regions.region.VolcanicJungle_2_NameObsidian-Arena
 C
@@ -4887,8 +5040,8 @@ S
 7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameLuxuriöse Ritualstätte
 Q
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NameGletscherexpertise
-�
-7Base.Units.Unit_ByzantineEra_Player_SaracenArchers_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+7Base.Units.Unit_ByzantineEra_Player_SaracenArchers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 D
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_3_NamePlantage
 K
@@ -4915,6 +5068,8 @@ K
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>Stampfen| Debuff| Seelenbindung</style>Stampft auf den Boden und fügt allen Gegnern <style=basestat>{dmg_percentage}</style>Schaden in einem Bereich von <style=basestat>{range}</style> zu und verringert ihre Genauigkeit um <style=basestat>{accuracy_percentage}</style> für <style=basestat>{duration}</style>. Verbindet außerdem die Seelen aller befreundeten Einheiten für <style=basestat>{duration_link}</style>. Seelenverbundene Einheiten teilen den eingehenden Schaden untereinander auf.
 ,
 Base.Heroes.hero.Spartacus_Name	Spartakus
+U
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 A
 7Base.Technologies.Technology_AgeOfTheFranks_Spades_NameSpaten
 A
@@ -4927,8 +5082,10 @@ I
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_NameCyrus' Kultisten
 O
 =Base.Buildings.Building_IberianEra_Special_HeroAcademy_1_NameHeldenakademie
-S
-=Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_NameGroße Kultstätte
+U
+=Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_NameGroße Kulturstätte
+c
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_DescSchaltet Hippenträger frei
 S
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameKavallerie-Kaserne
 �
@@ -4958,18 +5115,24 @@ Z
 Base.Heroes.hero.Inanna_NameInanna
 J
 &Base.BuildingGroups.clayProcessor_NameTon-VerarbeiterTon-Verarbeiter
-�
-5Base.Buildings.Building_FeudalAge_Home_Average_2_DescLStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+{
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+�
+5Base.Buildings.Building_FeudalAge_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 Z
 *Base.BuildingGroups.porcelainWorkshop_NamePorzellan-ManufakturPorzellan-Manufakturen
 �
 "Base.Units.Unit_AmeliaEarhart_Desc�Bremsklötze weg! Amelia Earhart bahnt sich ihren Weg durch die Geschichte und ist bereit, mit ihrem Hund Derry neue Horizonte zu durchqueren. Dieser Wildfang aus dem 20. Jahrhundert erschütterte die Welt mit seinen Transatlantikflügen, indem sie alle Erwartungen übertraf und alle Hindernisse überwand.<br><br>Earhart, die heiße Schokolade schlürfte und Bauern das Fürchten lehrte, brach einen Rekord nach dem anderen. Sie wurde die erste Frau, die den Atlantik überquerte, die erste, die den Pazifik allein überquerte, und die höchstfliegende Pilotin der Geschichte.<br><br>Aber es war ihre letzte Reise, die sie für immer berühmt gemacht hat. Earhart wollte die erste Frau sein, die die Welt mit dem Flugzeug umrundete, und hätte es fast geschafft, aber sie verschwand gegen Ende der Reise. Niemand wusste genau, was mit ihr geschah, aber jetzt wissen wir es: Sie fand ein Zeitportal und landete hier auf deinem Bildschirm!
+Y
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_DescProduziert Sekretäre
 \
 ABase.Technologies.Technology_ClassicGreece_ImprovedFletching_NameVerbesserte Befiederung
 F
 /Base.Units.Unit_TreasureHunt_Blue_Corsairs_NameHimmlische Korsaren
 J
 6Base.Technologies.Technology_FeudalAge_Wingguards_NameFlügelschützer
+�
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_DescSKavallerie-Einheiten sind sehr schnell und stürmen auf die gegnerische Nachhut zu.
 T
 %Base.BuildingGroups.largeCulture_NameGroße KulturstätteGroße Kulturstätten
 B
@@ -5009,6 +5172,8 @@ K
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescStellt Obsidian her
 Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameKavallerie-Kaserne
+y
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 ?
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_NamePlantage
 o
@@ -5020,8 +5185,8 @@ Bucellarii
 2Base.Technologies.Technology_Egypt_WaterWheel_Name	Wasserrad
 3
 $Base.BuildingGroups.PremiumResidencePremiumhaus
-u
-5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+v
+5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 J
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_NameSeemannshafen
 V
@@ -5038,6 +5203,8 @@ R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameKavallerie-Kaserne
 P
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrangenplantage
+^
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSchaltet Infanteristen frei
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>Flächenschlag| Brennen| Vergiften</style>Wirft <style=basestat>{no_vials}</style> Fläschchen mit instabilen Chemikalien auf zufällige gegnerische Einheiten, die <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursachen und die betroffenen Einheiten für einen weiteren <style=basestat>{debuff_percentage}</style> Schaden über <style=basestat>{duration}</style> brennen und vergiften lassen.
 �
@@ -5068,8 +5235,8 @@ f
 PBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_HammockTrees_NameHängemattenpalmen
 M
 8Base.Technologies.Technology_IberianEra_Crossbowmen_NameArmbrustschützen
-|
-9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_Desc?Stellt über einen kurzen Zeitraum kleine Mengen an Nahrung her
+z
+9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameObsidiansteinbruch
 W
@@ -5084,14 +5251,18 @@ M
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameHafenwirtschaft
 �
 Base.Units.Unit_KingMinos_Desc�Chatte mit Zeus und verstecke den roten Faden: König Minos ist da! Dieser legendäre Herrscher aus der griechischen Mythologie soll im 2. Jahrtausend v. Chr. geherrscht haben und war als Herrscher von Kreta berühmt.<br><br>Er wurde für seine Weisheit und Autorität gefeiert und ist vor allem dafür bekannt, dass er ein komplexes Labyrinth erbauen ließ, um den Minotaurus, ein mythisches Tier, einzusperren.<br><br>Minos' Herrschaft ist gespickt mit fesselnden Geschichten von Intrigen und Abenteuern, wie z. B. die Geschichte von Daedalus und Ikarus. Sein bleibendes Vermächtnis als furchteinflößender und mysteriöser König verzaubert weiterhin die Geschichtenerzähler und verwebt die Fäden von Mythos und antiker Geschichte. Lass dich nicht von ihm auf eine Tour durch sein Labyrinth mitnehmen!
+T
+>Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_NameKavallerie-Kaserne
 �
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_DescuDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
 ]
 9Base.Technologies.Technology_China_AdvancedClayworks_Name Fortgeschrittene Töpferarbeiten
 N
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_NameMittelgroßes Haus
-u
-5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+v
+5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+z
+8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 g
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_BelltowerCottage_NameGlockenturmhaus
 ?
@@ -5104,6 +5275,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Teeröfen
 V
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescStellt Säulen her
+G
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameInfanteristen
 M
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameWasserzisterne
 o
@@ -5118,6 +5291,8 @@ R
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameWikinger-Heimstätte
 S
 3Base.TreasureHuntDifficultiesPanel.CurrentlyPlayingDu spielst gerade Level {0}!
+S
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_NameHeldenakademie
 =
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_NameOase
 ^
@@ -5153,8 +5328,8 @@ X
 (Base.BuildingGroups.premiumRiceFarm_NameLuxuriöse Reis-FarmLuxuriöse Reis-Farmen
 ;
 &Base.Heroes.hero.BenjaminFranklin_NameBenjamin Franklin
-�
--Base.Units.Unit_BronzeAge_Player_Archers_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+-Base.Units.Unit_BronzeAge_Player_Archers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 C
 0Base.Abilities.hero_battle_ability.Leonidas_NameDas ist Sparta!
 /
@@ -5180,6 +5355,8 @@ V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_NameKaolin-Steinbruch
 E
 6Base.Buildings.Building_Vikings_Beehive_Average_5_NameBienenstock
+]
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_DescSchaltet Große Balliste frei
 T
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_2_NameInfanterie-Kaserne
 l
@@ -5200,8 +5377,8 @@ A
 +Base.TreasureHuntDifficultiesPanel.OwnPowerDeine Gesamt-Macht
 4
 !Base.Heroes.hero.Charlemagne_NameKarl der Große
-�
-<Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�Kaiserliche Garden sind hochspezialisiert und stärker als normale Infanterie-Einheiten. Ihre Statuswerte skalieren automatisch mit deinem Zeitalter.
+�
+<Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�Imperiale Garden sind hochspezialisiert und stärker als normale Infanterie-Einheiten. Ihre Statuswerte skalieren automatisch mit deinem Zeitalter.
 u
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 =
@@ -5222,6 +5399,8 @@ N
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameKanal
 I
 %Base.BuildingGroups.silkWorkshop_NameSeiden-WebereiSeiden-Webereien
+b
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
 N
 9Base.Abilities.hero_battle_ability.NapoleonBonaparte_NameKodex des Kampfes
 Q
@@ -5278,14 +5457,16 @@ v
 3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 8
 'Base.Units.Unit_MargaretIOfDenmark_NameMargarethe I.
+|
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 X
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 �
 $Base.Units.Unit_NubianMercenary_Desc�Die Kandakes von Nubien waren eine Reihe von Königinnen des Königreichs von Kusch, die den Imperien trotzten und Monumente bauten. Die erste Kandake regierte 200 v. Chr., die letzte 400 v. Chr. und viele sind für ihre Führungsrolle im Schloss und auf dem Schlachtfeld berühmt.<br><br>Viele der Kandakes haben eine andere krönende Errungenschaft. Ameniras fiel in das römische Ägypten ein und zwang sie, Kusch in Ruhe zu lassen, Aminatore baute Pyramiden in Meroe und Shanakdakhete errichtete Tempel.<br><br>Zusammen verkörpern die Kandakes eine antike Gleichberechtigung, die uns in der heutigen Welt überraschen könnte. Welche von ihnen ist deine Kandake? Ich bin mir nicht sicher. Warum fragst du sie nicht?
 7
 (Base.BuildingGroups.oasisIrrigation_NameOaseOasen
-�
->Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+>Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 G
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 W
@@ -5308,10 +5489,14 @@ w
 4Base.Buildings.Building_IberianEra_Home_Small_2_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 Z
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_DescSchaltet Caballarii frei
+F
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_NameGroße Balliste
 O
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_NameKavallerie-Kaserne
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>Flächenschlag| Debuff| Brennen</style>Ruft einen Sturm am Ort der größten Ansammlung gegnerischer Einheiten hervor. Der Sturm verursacht <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style>, verringert die Bewegungsgeschwindigkeit um <style=basestat>{move_speed_percentage}</style> und lässt betroffene Einheiten für <style=basestat>{dmg_percentage_burn}</style> über <style=basestat>{duration}</style> brennen.
+Y
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_DescSchaltet Arbalesten frei
 S
 9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_NameKönigliche Arbalester
 M
@@ -5340,14 +5525,16 @@ V
 @Base.Technologies.Technology_AgeOfTheFranks_AstralAlignment_NameSternenausrichtung
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_DescStellt Golderz her
-z
-:Base.Buildings.Building_ClassicGreece_Farm_Domestic_1_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+{
+:Base.Buildings.Building_ClassicGreece_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 =
 2Base.Technologies.Technology_BronzeAge_Stakes_NamePfähle
 G
 1Base.Buildings.Building_Egypt_Home_Average_1_NameMittelgroßes Haus
 L
 8Base.Buildings.Building_ByzantineEra_Home_Premium_1_NameLuxuriöses Haus
+\
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_NameMittlere Kulturstätte
 D
 9Base.Technologies.Technology_KingdomOfSicily_Melites_NameMelites
 H
@@ -5372,8 +5559,8 @@ I
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Sturmwirbel</style>Qin Shi Huang beschwört seine Geistklinge, die über das Schlachtfeld fliegt und gegnerischen Einheiten <style=basestat>{dmg_percentage}</style> Schaden zufügt und verbündete Einheiten um <style=basestat>{heal_percentage}</style> des Basisschadens von Qin Shi Huang für <style=basestat>{duration}</style> heilt.
 p
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc<Stellt Kakao her und fügt deiner Stadt einen Arbeiter hinzu
-s
-3Base.Buildings.Building_BronzeAge_Farm_Rural_2_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+t
+3Base.Buildings.Building_BronzeAge_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 P
 >Base.Technologies.Technology_MinoanEra_EquestrianArtistry_NameReitsportkunst
 V
@@ -5482,8 +5669,8 @@ z
 1Base.Buildings.Building_China_Home_Premium_5_DescEProduziert eine Tonne Wu Zhu und fügt deiner Stadt 3 Arbeiter hinzu 
 ;
 (Base.Regions.region.EasternValley_5_NamePfad nach Osten
-Y
-ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_NameKompakte Kultstätte
+[
+ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_NameKompakte Kulturstätte
 .
 Base.Units.Unit_KingMinos_NameKönig Minos
 t
@@ -5502,6 +5689,8 @@ Q
 FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name�<style=ability_label>Buff</style>Solange der Besitzer über <style=basestat>{health_cutoff}</style> Gesundheit verfügt, wird seine Ausweichfähigkeit um <style=basestat>{evasion_buff}</style> erhöht.
 t
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+�
+!Base.Units.Unit_LouisPasteur_Desc�Besiege Krankheiten mit Louis Pasteur, dem Vater der Mikrobiologie! Dieser französische Wissenschaftler aus dem 19. Jahrhundert ist berühmt für die Erfindung des Tollwutimpfstoffs, die Erfindung der Pasteurisierung und seine Theorie über Keime. <br><br> Pasteur ist vor allem dafür bekannt, dass er dem 9-jährigen Joseph Meister, der von einem tollwütigen Hund angegriffen worden war, eine Tollwutimpfung verabreichte. Monate später war der Junge wieder gesund. Im Laufe des nächsten Jahres behandelte Pasteur 350 weitere Menschen gegen die Krankheit: Nur einer erkrankte. Doch das ist nur ein Bruchteil von Pasteurs Talent. Er lehrte das Erhitzen von Milch oder Wein, um Bakterien abzutöten, und das Waschen der Hände vor Operationen und gründete das Pasteur-Institut. <br><br> Heute wird er sowohl von Ruhm als auch von Kontroversen verfolgt. Viele Orte auf der Welt sind nach diesem Genie benannt, aber seine Notizbücher offenbaren eine hinterhältige Seite: Er täuschte und manipulierte die Wahrheit, um wirklich originell zu erscheinen. 
 b
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Desc%Schaltet berittene Speerkämpfer frei
 I
@@ -5544,6 +5733,8 @@ L
 ;Base.Technologies.Technology_ByzantineEra_SolarRituals_NameSonnenrituale
 B
 7Base.Technologies.Technology_ClassicGreece_Toxotai_NameToxotai
+�
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
 H
 7Base.Abilities.hero_battle_ability.NubianMercenary_NameWüsten-Viper
 ?
@@ -5582,8 +5773,8 @@ k
 5Base.Buildings.Building_Mayas_RitualSite_Small_1_Desc2Erhöht die Zufriedenheit in umliegenden Gebäuden
 N
 5Base.Buildings.Building_Mayas_Workshop_Premium_2_NameLuxuriöse Manufaktur
-�
-2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 B
 4Base.Units.Unit_ClassicGreece_Player_Cataphract_Name
 Kataphrakt
@@ -5626,6 +5817,8 @@ M
 ;Base.Technologies.Technology_RomanEmpire_CircusMaximus_NameCircus Maximus
 G
 3Base.Technologies.Technology_China_LaborDuties_NameArbeitspflichten
+M
+:Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_NameLuxuriöse Farm
 ]
 BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_NameKarolingische Axtwerfer
 D
@@ -5649,6 +5842,8 @@ o
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_Desc1Stellt Papyrusrollen und zeremonielle Kleider her
 ?
 2Base.Technologies.Technology_BronzeAge_Tailor_Name	Schneider
+^
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_DescSchaltet Infanteristen frei
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_Desc`Entsende Expeditionsschiffe, die riesige Juwelen-, Gewürz-, Gold- oder Keramikschätze sammeln.
 A
@@ -5674,6 +5869,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_
 0Base.Units.Unit_RomanEmpire_Player_Ballista_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben eine vernichtende Wirkung auf eine große Distanz.
 :
 *Base.Units.Unit_StoneAge_Animal_Boars_NameWildschweine
+H
+;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Name	Bauernhof
 G
 9Base.Technologies.Technology_FeudalAge_TimberFraming_Name
 Holzrahmen
@@ -5693,6 +5890,8 @@ T
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_NameKavallerie-Kaserne
 ^
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_7_NameMinoischer Wachturm
+�
+3Base.Units.Unit_HighMiddleAges_Player_Catapult_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben auf große Distanz eine vernichtende Wirkung.
 \
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_DescSchaltet Legionär frei
 N
@@ -5707,8 +5906,8 @@ w
 *Base.Units.Unit_StoneAge_Player_Siege_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben auf große Distanz eine vernichtende Wirkung auf einen großen Bereich.
 >
 3Base.Technologies.Technology_IberianEra_Botany_NameBotanik
-v
-6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+w
+6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 A
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_NameGoldmine
 .
@@ -5765,6 +5964,8 @@ G
 Handwerker
 �
 7Base.Buildings.Building_RomanEmpire_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
+W
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_NameGroße Kulturstätte
 Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_5_DescStellt Ankhs und Goldmasken her
 9
@@ -5803,8 +6004,8 @@ I
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_NameLuxuriöses Haus
 S
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_NameBelagerungs-Kaserne
-q
-1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc<Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her
+r
+1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 ]
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
 �
@@ -5870,8 +6071,8 @@ s
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 x
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc>Die Taverne stellt Met und Stockfisch aus Honig und Fisch her.
-Q
-;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_NameKleine Kultstätte
+S
+;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_NameKleine Kulturstätte
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Name�<style=ability_label>Nahkampfangriff</style>Tritt das aktuelle Ziel dreimal für insgesamt <style=basestat>{dmg_percentage}</style> Schaden.
 _
@@ -5882,8 +6083,8 @@ Q
 *Base.Units.Unit_StoneAge_Player_Siege_NameSchleuderkatapult
 E
 5Base.Technologies.Technology_Vikings_FishingNets_NameFischernetze
-X
-@Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_NameMittlere Kultstätte
+Z
+@Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_NameMittlere Kulturstätte
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Name�<style=ability_label>Spott| Schild</style>Spottet alle Gegner für <style=basestat>{taunt_duration}</style>. Bismarck erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild.
 X
@@ -5900,6 +6101,8 @@ O
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameKavallerie-Kaserne
 z
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
+]
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 ?
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_NameNoria
 @
@@ -5932,8 +6135,8 @@ Z
 0Base.BuildingGroups.evolvingFountainOfYouth_NameBrunnen der JugendBrunnen der Jugend
 �
 0Base.Units.Unit_FeudalAge_Player_KingsGuard_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
-�
-1Base.Units.Unit_ClassicGreece_Player_Toxotai_Desc{Ferneinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+�
+1Base.Units.Unit_ClassicGreece_Player_Toxotai_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 b
 BBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianArcher_NameMerowingische Bogenschützen
 {
@@ -5949,12 +6152,16 @@ C
 5Base.Buildings.Building_Mayas_Workshop_Premium_2_DescHStellt Ahnenmasken, Kalendersteine, Ritualdolche und Kopfbedeckungen her
 O
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameGoldener Lorbeerkranz
-v
-6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_Desc<Stellt große Mengen an Nahrung in langen Zeitabständen her
+,
+Base.Ages.HighMiddleAges_Decade	1200 A.D.
+w
+6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 D
 2Base.Abilities.hero_battle_ability.MarieCurie_NameRadium-Kaskade
 O
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_NameHimmlische Esel-Räuber
+�
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 G
