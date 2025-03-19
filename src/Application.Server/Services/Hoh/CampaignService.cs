@@ -13,6 +13,7 @@ public class CampaignService(
     IHohCoreDataRepository hohCoreDataRepository,
     IRegionDtoFactory regionDtoFactory,
     IUnitDtoFactory unitDtoFactory,
+    IUnitService unitService,
     IMapper mapper,
     ILogger<CampaignService> logger) : ICampaignService
 {
@@ -44,6 +45,7 @@ public class CampaignService(
         var unitIds = region.Encounters.SelectMany(e =>
             e.BattleDetails.Waves.SelectMany(bw => bw.Squads.Select(bws => bws.UnitId))).ToHashSet();
         var units = new List<UnitDto>();
+        var heroes = new List<HeroDto>();
         foreach (var unitId in unitIds)
         {
             var unit = await hohCoreDataRepository.GetUnitAsync(unitId);
@@ -52,11 +54,17 @@ public class CampaignService(
                 logger.LogError($"Failed to get unit by UnitId: {unitId}");
                 return null;
             }
-
+            
             units.Add(unitDtoFactory.Create(unit, await hohCoreDataRepository.GetUnitStatFormulaData(),
                 await hohCoreDataRepository.GetUnitBattleConstants(), await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
+
+            var hero = await unitService.GetHeroAsync(unitId);
+            if (hero != null)
+            {
+                heroes.Add(hero);
+            }
         }
 
-        return regionDtoFactory.Create(region, units);
+        return regionDtoFactory.Create(region, units, heroes);
     }
 }

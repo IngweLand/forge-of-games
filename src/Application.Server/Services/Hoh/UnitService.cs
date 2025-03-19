@@ -19,7 +19,7 @@ public class UnitService(
 {
     public async Task<HeroDto?> GetHeroAsync(string id)
     {
-        var hero = await hohCoreDataRepository.GetHeroAsync(id);
+        var hero = await hohCoreDataRepository.GetHeroAsync(id) ?? await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
         if (hero == null)
         {
             logger.LogError($"Could not find hero with id {id}");

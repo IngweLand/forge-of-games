@@ -12,6 +12,7 @@ public class TreasureHuntService(
     IHohCoreDataRepository hohCoreDataRepository,
     ITreasureHuntStageDtoFactory treasureHuntStageDtoFactory,
     IUnitDtoFactory unitDtoFactory,
+    IUnitService unitService,
     IMapper mapper,
     ILogger<TreasureHuntService> logger) : ITreasureHuntService
 {
@@ -32,6 +33,7 @@ public class TreasureHuntService(
         var unitIds = stage.Battles.SelectMany(e =>
             e.Waves.SelectMany(bw => bw.Squads.Select(bws => bws.UnitId))).ToHashSet();
         var units = new List<UnitDto>();
+        var heroes = new List<HeroDto>();
         foreach (var unitId in unitIds)
         {
             var unit = await hohCoreDataRepository.GetUnitAsync(unitId);
@@ -42,9 +44,16 @@ public class TreasureHuntService(
             }
 
             units.Add(unitDtoFactory.Create(unit, await hohCoreDataRepository.GetUnitStatFormulaData(),
-                await hohCoreDataRepository.GetUnitBattleConstants(), await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
+                await hohCoreDataRepository.GetUnitBattleConstants(),
+                await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
+
+            var hero = await unitService.GetHeroAsync(unitId);
+            if (hero != null)
+            {
+                heroes.Add(hero);
+            }
         }
 
-        return treasureHuntStageDtoFactory.Create(stage, difficulty, units);
+        return treasureHuntStageDtoFactory.Create(stage, difficulty, units, heroes);
     }
 }

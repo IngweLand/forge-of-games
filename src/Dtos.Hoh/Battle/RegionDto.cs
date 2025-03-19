@@ -20,4 +20,7 @@ public class RegionDto
     public required IReadOnlyCollection<RewardBase> Rewards { get; init; }
     [ProtoMember(6)]
     public IReadOnlyCollection<UnitDto> Units { get; set; }
+
+    [ProtoMember(7)]
+    public IReadOnlyCollection<HeroDto> Heroes { get; set; }
 }

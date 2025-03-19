@@ -6,5 +6,5 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface IRegionDtoFactory
 {
-    RegionDto Create(Region region, IReadOnlyCollection<UnitDto> units);
+    RegionDto Create(Region region, IReadOnlyCollection<UnitDto> units, IReadOnlyCollection<HeroDto> heroes);
 }

@@ -1,8 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
-@using Ingweland.Fog.WebApp.Client.Components.Elements
 @inject IAssetUrlProvider AssetUrlProvider;
-<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3" 
+<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3"
      style="@(IsHardDifficulty ? "border-color: var(--fog-error-color)" : "")">
     <div class="d-flex align-items-start">
         <div class="position-relative d-inline-block" style="height: 115px;">
@@ -30,11 +29,15 @@
         <div class="d-flex align-items-center title-container"
              style="@(IsHardDifficulty ? "background-color: var(--fog-error-color)" : "")">
             <span class="title" style="@(IsHardDifficulty ? "color: var(--fog-text-on-dark-color)" : "")">
-                @wave.Title
+                @wave.Title |
+            </span>
+            <img class="power-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hero_power")"/>
+            <span class="power-label" style="@(IsHardDifficulty ? "color: var(--fog-text-on-dark-color)" : "")">
+                @wave.Power
             </span>
         </div>
         <div class="row g-2 m-0 mb-2">
-            @foreach (var squad in IsExpanded?wave.Squads:wave.AggregatedSquads)
+            @foreach (var squad in IsExpanded ? wave.Squads : wave.AggregatedSquads)
             {
                 <div class="col-12 col-lg-6 col-xxl-4">
                     <BattleSquadComponent Squad="@squad"></BattleSquadComponent>
@@ -48,10 +51,10 @@
 
     [Parameter]
     public EncounterViewModel Encounter { get; set; }
-    
+
     [Parameter]
-    public bool IsExpanded { get; set; } 
-    
+    public bool IsExpanded { get; set; }
+
     [Parameter]
     public bool IsHardDifficulty { get; set; }
 
