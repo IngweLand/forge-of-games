@@ -7,4 +7,5 @@ public enum Difficulty
 {
     Undefined = 0,
     Normal,
+    Hard,
 }

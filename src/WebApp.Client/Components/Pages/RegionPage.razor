@@ -1,9 +1,12 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.CAMPAIGN_REGION_TEMPLATE)]
 @inject ICampaignUiService CampaignUiService;
+@inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <PageTitle>@_pageTitle</PageTitle>
 @if (_region != null)
@@ -23,8 +26,9 @@
             <span class="encounter-section-title user-select-none">@Loc[FogResource.Hoh_Encounters]</span>
             <div class="options-container">
                 <div class="option-items left">
+                    <img class="difficulty-icon" src="@_difficultyIcon"/>
                     <MudSwitch T="bool" ValueChanged="OnDifficultyChange" Color="Color.Error"
-                               Value="_isHardDifficulty" Label="@_difficultyLevel"/>
+                               Value="_isHardDifficulty" Label="@_difficultyLabel"/>
                 </div>
                 <div class="option-items right">
                     <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
@@ -53,13 +57,15 @@
     private RegionViewModel? _region;
     private bool _isExpanded;
     private bool _isHardDifficulty;
-    private string _difficultyLevel;
+    private string _difficultyLabel;
+    private string _difficultyIcon;
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
 
         UpdateDifficultyLabel();
+        UpdateDifficultyIcon();
 
         _region = await LoadWithPersistenceAsync(nameof(_region),
             async () => await CampaignUiService.GetRegionAsync(RegionId));
@@ -72,7 +78,14 @@
 
     private void UpdateDifficultyLabel()
     {
-        _difficultyLevel = _isHardDifficulty ? Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
+        _difficultyLabel = _isHardDifficulty ? Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
+    }
+
+    private void UpdateDifficultyIcon()
+    {
+        _difficultyIcon = _isHardDifficulty ?
+            CampaignDifficultyIconUrlProvider.GetIconUrl(Difficulty.Hard) : 
+            CampaignDifficultyIconUrlProvider.GetIconUrl(Difficulty.Normal);
     }
 
     private void OnExpand()
@@ -89,6 +102,7 @@
     {
         _isHardDifficulty = isToggled;
         UpdateDifficultyLabel();
+        UpdateDifficultyIcon();
     }
 
 }

@@ -110,6 +110,7 @@ public static class DependencyInjection
         services.AddScoped<ITreasureHuntUiService, TreasureHuntUiService>();
         services.AddScoped<IUnitUiService, UnitUiService>();
         services.AddScoped<ICityUiService, CityUiService>();
+        services.AddScoped<ICampaignDifficultyIconUrlProvider, CampaignDifficultyIconUrlProvider>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         
