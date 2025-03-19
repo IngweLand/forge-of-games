@@ -1,6 +1,7 @@
 using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace HohProtoParser.Converters;
 
@@ -15,6 +16,8 @@ public class HeroBattleDefinitionDtoConverter:ITypeConverter<HeroBattleDefinitio
             Id = source.Id,
             Waves = context.Mapper.Map<IReadOnlyCollection<BattleWave>>(waves),
             DisabledPlayerSlotIds = context.Mapper.Map<IReadOnlyCollection<int>>(source.DisabledPlayerSlotIds),
+            RequiredHeroTypes = context.Mapper.Map<IReadOnlyCollection<UnitType>>(source.RequiredHeroTypes),
+            RequiredHeroClasses = context.Mapper.Map<IReadOnlyCollection<HeroClassId>>(source.RequiredHeroClasses),
         };
     }
 }

@@ -44,7 +44,10 @@ public class CampaignUiService(
                     {
                         Title = $"~{index + 1}.{bwi + 1}",
                         Squads = bw.Squads.Select(bws => battleWaveSquadViewModelFactory.Create(bws, region.Units))
-                            .ToList().AsReadOnly(),
+                            .ToList(),
+                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
+                            .SelectMany(g => battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units))
+                            .ToList(),
                     }).ToList().AsReadOnly(),
                 AvailableHeroSlots = new IconLabelItemViewModel()
                 {

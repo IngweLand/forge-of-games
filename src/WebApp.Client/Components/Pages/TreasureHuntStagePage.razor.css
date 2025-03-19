@@ -44,3 +44,35 @@
 h4 {
     color: var(--fog-text-on-background-color);
 }
+
+.encounter-section-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.option-items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.option-items.left {
+    justify-content: flex-start;
+}
+
+.option-items.right {
+    justify-content: flex-end;
+}
+
+.encounter-section-title {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}

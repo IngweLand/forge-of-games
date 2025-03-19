@@ -28,6 +28,9 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
     public string GetHohImageUrl(string assetId)
         => GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}.png");
 
+    public string GetImageUrl(string filename)
+        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, filename);
+
     public string GetHohUnitPortraitUrl(string assetId, string extension)
         => GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}{extension}");
 
@@ -52,7 +55,7 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_{iconId}.png");
     }
 
-    public string GetHohWorkerIconUrl(CityId cityId)=>
+    public string GetHohWorkerIconUrl(CityId cityId) =>
         GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_workers_city_{cityId.ToString().ToLowerInvariant()}.png");
 
     public string GetNotoSansFontUrl(string locale)
@@ -64,7 +67,7 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
             _ => "NotoSans-Regular.ttf",
         };
         var basePath = assetsSettings.Value.BaseUrl.TrimEnd('/');
-        return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename}) ;
+        return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename});
     }
 
     private string GetAssetUrl(params string[] pathElements)

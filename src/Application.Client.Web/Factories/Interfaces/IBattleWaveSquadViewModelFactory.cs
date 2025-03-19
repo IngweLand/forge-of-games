@@ -7,4 +7,7 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 public interface IBattleWaveSquadViewModelFactory
 {
     BattleWaveSquadViewModel Create(BattleWaveSquadBase squad, IReadOnlyCollection<UnitDto> units);
+
+    IEnumerable<BattleWaveSquadViewModel> Create(IReadOnlyCollection<BattleWaveSquadBase> squads,
+        IReadOnlyCollection<UnitDto> units);
 }

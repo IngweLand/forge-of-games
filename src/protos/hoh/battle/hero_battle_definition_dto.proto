@@ -8,6 +8,8 @@ message HeroBattleDefinitionDTO {
   string id = 1;
   repeated string waves = 3;
   bytes disabled_player_slot_ids = 5;
+  map<string, int64> requiredHeroClasses = 7;
 //  BattleSuggestionComponentDTO
   google.protobuf.Any packed_battle_suggestion_component = 8;
+  map<string, int64> requiredHeroTypes = 9;
 }

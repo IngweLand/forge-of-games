@@ -9,7 +9,7 @@
 @if (_region != null)
 {
     <div class="d-flex flex-column align-items-center gap-3 pb-4">
-        <div class="container-fluid py-3 fog-container mb-3">
+        <div class="container-fluid py-3 fog-container">
             <h3 class="text-center mb-3 user-select-none">@_region!.Name</h3>
             <hr class="w-100 mb-3">
             <div class="d-flex flex-wrap justify-content-center gap-4">
@@ -19,10 +19,27 @@
                 }
             </div>
         </div>
-        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Encounters]</h4>
+        <div class="encounter-section-title-container">
+            <span class="encounter-section-title user-select-none">@Loc[FogResource.Hoh_Encounters]</span>
+            <div class="options-container">
+                <div class="option-items left">
+                    <MudSwitch T="bool" ValueChanged="OnDifficultyChange" Color="Color.Error"
+                               Value="_isHardDifficulty" Label="@_difficultyLevel"/>
+                </div>
+                <div class="option-items right">
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
+                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldMore" OnClick="OnExpand"/>
+                    </MudTooltip>
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Aggregate]" Delay="500">
+                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldLess" OnClick="OnCollapse"/>
+                    </MudTooltip>
+                </div>
+            </div>
+        </div>
+
         @foreach (var encounter in _region.Encounters)
         {
-            <EncounterComponent Encounter="@encounter"/>
+            <EncounterComponent IsHardDifficulty="@_isHardDifficulty" IsExpanded="@_isExpanded" Encounter="@encounter"/>
         }
     </div>
 }
@@ -34,10 +51,15 @@
 
     private string _pageTitle = null!;
     private RegionViewModel? _region;
+    private bool _isExpanded;
+    private bool _isHardDifficulty;
+    private string _difficultyLevel;
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
+
+        UpdateDifficultyLabel();
 
         _region = await LoadWithPersistenceAsync(nameof(_region),
             async () => await CampaignUiService.GetRegionAsync(RegionId));
@@ -46,6 +68,27 @@
         {
             _pageTitle = Loc[FogResource.CampaignRegion_PageTitle, _region.Name];
         }
+    }
+
+    private void UpdateDifficultyLabel()
+    {
+        _difficultyLevel = _isHardDifficulty ? Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
+    }
+
+    private void OnExpand()
+    {
+        _isExpanded = true;
+    }
+
+    private void OnCollapse()
+    {
+        _isExpanded = false;
+    }
+
+    private void OnDifficultyChange(bool isToggled)
+    {
+        _isHardDifficulty = isToggled;
+        UpdateDifficultyLabel();
     }
 
 }

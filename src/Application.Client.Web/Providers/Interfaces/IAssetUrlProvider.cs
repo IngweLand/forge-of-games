@@ -20,4 +20,5 @@ public interface IAssetUrlProvider
     string GetHohUnitVideoUrl(string assetId);
     string GetHohWorkerIconUrl(CityId cityId);
     string GetNotoSansFontUrl(string locale);
+    string GetImageUrl(string filename);
 }

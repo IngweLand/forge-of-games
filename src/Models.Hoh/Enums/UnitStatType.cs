@@ -16,6 +16,7 @@ public enum UnitStatType
     BaseDamage,
     BasicAttackDamageAmp,
     BurnDamageAmp,
+    BleedDamageAmp,
     CritChance,
     CritDamage,
     Defense,

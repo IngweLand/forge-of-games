@@ -154,7 +154,11 @@ public class MappingProfile : Profile
         CreateMap<InitialGridComponentDTO, InitialGridComponent>();
         CreateMap<CultureBoostComponentDTO, CultureBoostComponent>();
         CreateMap<LevelUpComponentDTO, LevelUpComponent>()
-            .ForMember(dest=> dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
+            .ForMember(dest => dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
+        CreateMap<KeyValuePair<string, long>, UnitType>()
+            .ConvertUsing(src => StringParser.ParseEnumFromString<UnitType>(src.Key));
+        CreateMap<KeyValuePair<string, long>, HeroClassId>()
+            .ConvertUsing(src => StringParser.ParseEnumFromString<HeroClassId>(src.Key));
 
         // rewards
         CreateMap<DynamicActionChangeRewardDTO, DynamicActionChangeReward>();
@@ -255,7 +259,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.UnitType,
                 opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitType>(src.UnitType)))
             .ForMember(dest => dest.BaseValues, opt => opt.MapFrom(src => src.UnitStats));
-        
+
         // localization
         CreateMap<LocaResponse, LocalizationData>()
             .ForMember(dest => dest.Entries, opt => opt.MapFrom(src =>

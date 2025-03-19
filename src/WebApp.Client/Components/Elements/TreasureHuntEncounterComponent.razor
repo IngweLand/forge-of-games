@@ -17,7 +17,7 @@
             <span class="title">@wave.Title</span>
         </div>
         <div class="row g-2 m-0 mb-2">
-            @foreach (var squad in wave.Squads)
+            @foreach (var squad in IsExpanded?wave.Squads:wave.AggregatedSquads)
             {
                 <div class="col-12 col-lg-6 col-xxl-4">
                     <BattleSquadComponent Squad="@squad"></BattleSquadComponent>
@@ -31,5 +31,8 @@
 
     [Parameter]
     public TreasureHuntEncounterViewModel Encounter { get; set; }
+    
+    [Parameter]
+    public bool IsExpanded { get; set; }
 
 }
