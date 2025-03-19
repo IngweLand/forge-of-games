@@ -8,7 +8,8 @@ namespace Ingweland.Fog.Application.Server.Factories;
 
 public class TreasureHuntStageDtoFactory(IHohGameLocalizationService localizationService) : ITreasureHuntStageDtoFactory
 {
-    public TreasureHuntStageDto Create(TreasureHuntStage stage, int difficulty, IReadOnlyCollection<UnitDto> units)
+    public TreasureHuntStageDto Create(TreasureHuntStage stage, int difficulty, IReadOnlyCollection<UnitDto> units,
+        IReadOnlyCollection<HeroDto> heroes)
     {
         return new TreasureHuntStageDto()
         {
@@ -18,6 +19,7 @@ public class TreasureHuntStageDtoFactory(IHohGameLocalizationService localizatio
             DifficultyName = localizationService.GetTreasureHuntDifficulty(difficulty),
             Battles = stage.Battles,
             Units = units,
+            Heroes = heroes,
         };
     }
 }

@@ -24,4 +24,7 @@ public class TreasureHuntStageDto
 
     [ProtoMember(6)]
     public required IReadOnlyCollection<UnitDto> Units { get; init; } = new List<UnitDto>();
+    
+    [ProtoMember(7)]
+    public required IReadOnlyCollection<HeroDto> Heroes { get; init; } = new List<HeroDto>();
 }

@@ -6,5 +6,6 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface ITreasureHuntStageDtoFactory
 {
-    TreasureHuntStageDto Create(TreasureHuntStage stage, int difficulty, IReadOnlyCollection<UnitDto> units);
+    TreasureHuntStageDto Create(TreasureHuntStage stage, int difficulty, IReadOnlyCollection<UnitDto> units,
+        IReadOnlyCollection<HeroDto> heroes);
 }

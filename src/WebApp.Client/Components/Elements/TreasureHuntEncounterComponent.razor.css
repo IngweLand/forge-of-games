@@ -34,3 +34,14 @@
     font-weight: 700 !important;
     font-size: 1rem !important;
 }
+
+.power-label {
+    color: var(--fog-text-on-container-color);
+}
+
+.power-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    object-fit: cover;
+}

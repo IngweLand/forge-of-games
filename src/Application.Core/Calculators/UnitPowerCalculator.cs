@@ -68,8 +68,8 @@ public class UnitPowerCalculator(IUnitStatCalculators unitStatCalculators) : IUn
             squadSize: 1,
             evasion: unit.Stats.First(us => us.Type == UnitStatType.Evasion).Value,
             focusRegen: unit.Stats.First(us => us.Type == UnitStatType.FocusRegen).Value,
-            critChance: unit.Stats.First(us => us.Type == UnitStatType.FocusRegen).Value,
-            critDamage: unit.Stats.First(us => us.Type == UnitStatType.FocusRegen).Value,
+            critChance: unit.Stats.First(us => us.Type == UnitStatType.CritChance).Value,
+            critDamage: unit.Stats.First(us => us.Type == UnitStatType.CritDamage).Value,
             unboostedFocusRegen: unit.Stats.First(us => us.Type == UnitStatType.FocusRegen).Value
         );
 

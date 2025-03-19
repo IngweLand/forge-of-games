@@ -34,4 +34,5 @@ public interface IHohCoreDataRepository
     Task<IReadOnlyCollection<Expansion>> GetExpansions(CityId cityId);
     Task<IReadOnlyCollection<BuildingCustomization>> GetBuildingCustomizations(CityId cityId);
     Task<CityDefinition?> GetCity(CityId id);
+    Task<Hero?> GetHeroByUnitIdAsync(string id);
 }

@@ -11,7 +11,7 @@ public class RegionDtoFactory(
     IHohGameLocalizationService localizationService,
     IMapper mapper) : IRegionDtoFactory
 {
-    public RegionDto Create(Region region, IReadOnlyCollection<UnitDto> units)
+    public RegionDto Create(Region region, IReadOnlyCollection<UnitDto> units, IReadOnlyCollection<HeroDto> heroes)
     {
         return new RegionDto()
         {
@@ -21,6 +21,7 @@ public class RegionDtoFactory(
             Encounters = mapper.Map<IReadOnlyCollection<EncounterDto>>(region.Encounters.OrderBy(e => e.Index)),
             Units = units,
             Rewards = region.Reward!.Rewards,
+            Heroes = heroes,
         };
     }
 }

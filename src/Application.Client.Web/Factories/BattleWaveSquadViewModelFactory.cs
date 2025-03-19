@@ -19,59 +19,8 @@ public class BattleWaveSquadViewModelFactory(
     IUnitPowerCalculator unitPowerCalculator,
     IStringLocalizer<FogResource> loc) : IBattleWaveSquadViewModelFactory
 {
-    public BattleWaveSquadViewModel Create(BattleWaveSquadBase squad, IReadOnlyCollection<UnitDto> units)
-    {
-        var size = 1;
-        if (squad is BattleWaveUnitSquad unitSquad)
-        {
-            size = unitSquad.Size;
-        }
-
-        return CreateInternal(squad, size, units);
-    }
-
-    public BattleWaveSquadViewModel CreateInternal(BattleWaveSquadBase squad, int squadSize,
-        IReadOnlyCollection<UnitDto> units)
-    {
-        var unit = units.First(u => u.Id == squad.UnitId);
-        var level = $"{loc[FogResource.Hoh_Lvl]} {squad.UnitLevel}";
-        double power = 0;
-        if (squad is BattleWaveUnitSquad)
-        {
-            power = unitPowerCalculator.CalculateUnitPower(unit, squad.UnitLevel, squadSize);
-        }
-
-        //TODO: get concrete star class
-        if (squad is BattleWaveHeroSquad heroSquad)
-        {
-            var abilityLvl = int.Parse(heroSquad.AbilityId[(heroSquad.AbilityId.LastIndexOf('_') + 1)..]);
-            level += $" | {loc[FogResource.Hoh_Hero_AbilityLvl]} {abilityLvl}";
-            power = unitPowerCalculator.CalculateHeroPower(unit, HeroStarClass.Star_2, level: squad.UnitLevel,
-                ascensionLevel: squad.UnitLevel / 10, abilityLevel: abilityLvl);
-        }
-
-        UnitColorAffinity? colorAffinity = null;
-        if (UnitColorAdvantageSystem.ColorAffinities.TryGetValue(unit.Color, out var unitColorAffinity))
-        {
-            colorAffinity = unitColorAffinity;
-        }
-        
-        return new BattleWaveSquadViewModel()
-        {
-            Name = unit.Name,
-            Amount = squadSize.ToString(),
-            Color = unit.Color,
-            Level = level,
-            ImageUrl = assetUrlProvider.GetHohUnitPortraitUrl(unit.AssetId),
-            TypeIconUrl = assetUrlProvider.GetHohIconUrl(unit.Type.GetTypeIconId()),
-            IsHero = squad is BattleWaveHeroSquad,
-            Power = power,
-            ColorAffinity = colorAffinity,
-        };
-    }
-
     public IEnumerable<BattleWaveSquadViewModel> Create(IReadOnlyCollection<BattleWaveSquadBase> squads,
-        IReadOnlyCollection<UnitDto> units)
+        IReadOnlyCollection<UnitDto> units, IReadOnlyCollection<HeroDto> heroes)
     {
         if (squads == null || squads.Count == 0)
         {
@@ -84,7 +33,7 @@ public class BattleWaveSquadViewModelFactory(
         {
             throw new InvalidOperationException($"All squads must have the same {nameof(BattleWaveSquadBase.UnitId)}.");
         }
-        
+
         var result = new List<BattleWaveSquadViewModel>();
 
         switch (firstSquad)
@@ -92,14 +41,67 @@ public class BattleWaveSquadViewModelFactory(
             case BattleWaveUnitSquad:
             {
                 var total = squads.OfType<BattleWaveUnitSquad>().Sum(s => s.Size);
-                result.Add(CreateInternal(firstSquad, total, units));
+                result.Add(CreateInternal(firstSquad, total, units, heroes));
                 break;
             }
             case BattleWaveHeroSquad:
-                result.AddRange(squads.Select(squad => CreateInternal(squad, 1, units)));
+                result.AddRange(squads.Select(squad => CreateInternal(squad, 1, units, heroes)));
                 break;
         }
 
         return result;
+    }
+
+    public BattleWaveSquadViewModel Create(BattleWaveSquadBase squad, IReadOnlyCollection<UnitDto> units,
+        IReadOnlyCollection<HeroDto> heroes)
+    {
+        var size = 1;
+        if (squad is BattleWaveUnitSquad unitSquad)
+        {
+            size = unitSquad.Size;
+        }
+
+        return CreateInternal(squad, size, units, heroes);
+    }
+
+    private BattleWaveSquadViewModel CreateInternal(BattleWaveSquadBase squad, int squadSize,
+        IReadOnlyCollection<UnitDto> units, IReadOnlyCollection<HeroDto> heroes)
+    {
+        var unit = units.First(u => u.Id == squad.UnitId);
+        var level = $"{loc[FogResource.Hoh_Lvl]} {squad.UnitLevel}";
+        double power = 0;
+        if (squad is BattleWaveUnitSquad)
+        {
+            power = unitPowerCalculator.CalculateUnitPower(unit, squad.UnitLevel, squadSize);
+        }
+
+        //TODO: get concrete star class
+        if (squad is BattleWaveHeroSquad heroSquad)
+        {
+            var hero = heroes.First(u => u.Unit.Id == squad.UnitId);
+            var abilityLvl = int.Parse(heroSquad.AbilityId[(heroSquad.AbilityId.LastIndexOf('_') + 1)..]);
+            level += $" | {loc[FogResource.Hoh_Hero_AbilityLvl]} {abilityLvl}";
+            power = unitPowerCalculator.CalculateHeroPower(hero.Unit, hero.StarClass, level: squad.UnitLevel,
+                ascensionLevel: squad.UnitLevel / 10, abilityLevel: abilityLvl);
+        }
+
+        UnitColorAffinity? colorAffinity = null;
+        if (UnitColorAdvantageSystem.ColorAffinities.TryGetValue(unit.Color, out var unitColorAffinity))
+        {
+            colorAffinity = unitColorAffinity;
+        }
+
+        return new BattleWaveSquadViewModel()
+        {
+            Name = unit.Name,
+            Amount = squadSize.ToString(),
+            Color = unit.Color,
+            Level = level,
+            ImageUrl = assetUrlProvider.GetHohUnitPortraitUrl(unit.AssetId),
+            TypeIconUrl = assetUrlProvider.GetHohIconUrl(unit.Type.GetTypeIconId()),
+            IsHero = squad is BattleWaveHeroSquad,
+            Power = power,
+            ColorAffinity = colorAffinity
+        };
     }
 }
