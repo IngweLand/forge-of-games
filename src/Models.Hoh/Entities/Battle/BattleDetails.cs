@@ -1,3 +1,5 @@
+using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
 namespace Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -13,4 +15,10 @@ public class BattleDetails
 
     [ProtoMember(3)]
     public IReadOnlyCollection<int> DisabledPlayerSlotIds { get; init; } = new List<int>();
+    
+    [ProtoMember(4)]
+    public IReadOnlyCollection<HeroClassId> RequiredHeroClasses { get; init; } = Array.Empty<HeroClassId>();
+    
+    [ProtoMember(5)]
+    public IReadOnlyCollection<UnitType> RequiredHeroTypes { get; init; } = Array.Empty<UnitType>();
 }

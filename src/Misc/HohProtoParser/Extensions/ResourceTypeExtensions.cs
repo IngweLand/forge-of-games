@@ -30,6 +30,7 @@ public static class ResourceTypeExtensions
             "gacha" => ResourceType.Gacha,
             "wonder_contribution" => ResourceType.WonderContribution,
             "upgrade_token" => ResourceType.UpgradeToken,
+            "ember" => ResourceType.Ember,
             _ => throw new Exception($"Cannot map resource type: {value}"),
         };
     }

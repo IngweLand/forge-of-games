@@ -11,6 +11,7 @@ public enum ResourceType
     AscensionMaterial,
     Blueprint,
     BuildingPiece,
+    Ember,
     EvolutionToken,
     Gacha,
     GachaDust,

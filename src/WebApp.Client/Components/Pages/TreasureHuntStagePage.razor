@@ -16,10 +16,22 @@
             <hr class="w-100 header-divider">
             <div class="stage-name user-select-none">@_stage.Name</div>
         </div>
-        <h4 class="text-center user-select-none">@Loc[FogResource.Hoh_Encounters]</h4>
+        <div class="encounter-section-title-container">
+            <span class="encounter-section-title user-select-none">@Loc[FogResource.Hoh_Encounters]</span>
+            <div class="options-container">
+                <div class="option-items right">
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
+                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldMore" OnClick="OnExpand"/>
+                    </MudTooltip>
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Aggregate]" Delay="500">
+                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldLess" OnClick="OnCollapse"/>
+                    </MudTooltip>
+                </div>
+            </div>
+        </div>
         @foreach (var encounter in _stage.Encounters)
         {
-            <TreasureHuntEncounterComponent Encounter="@encounter"/>
+            <TreasureHuntEncounterComponent IsExpanded="@_isExpanded" Encounter="@encounter"/>
         }
     </div>
 }
@@ -35,6 +47,7 @@
 
     private string _pageTitle = null!;
     private TreasureHuntStageViewModel? _stage;
+    private bool _isExpanded;
 
     protected override async Task OnInitializedAsync()
     {
@@ -49,6 +62,16 @@
         {
             _pageTitle = Loc[FogResource.TreasureHuntStage_PageTitle, $"{_stage.DifficultyName} - {_stage.Name}"];
         }
+    }
+
+    private void OnExpand()
+    {
+        _isExpanded = true;
+    }
+
+    private void OnCollapse()
+    {
+        _isExpanded = false;
     }
 
 }

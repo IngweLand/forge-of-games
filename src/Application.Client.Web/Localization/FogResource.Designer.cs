@@ -150,6 +150,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hard.
+        /// </summary>
+        public static string Battle_Difficulty_Hard {
+            get {
+                return ResourceManager.GetString("Battle.Difficulty.Hard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        public static string Battle_Difficulty_Normal {
+            get {
+                return ResourceManager.GetString("Battle.Difficulty.Normal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forge of Games.
         /// </summary>
         public static string BrandName {
@@ -1878,6 +1896,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click here to pay with Binance Pay.
+        /// </summary>
+        public static string SupportUs_Binance_Link {
+            get {
+                return ResourceManager.GetString("SupportUs.Binance.Link", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donate with Crypto via Binance Pay.
+        /// </summary>
+        public static string SupportUs_Binance_Title {
+            get {
+                return ResourceManager.GetString("SupportUs.Binance.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to If you find our tools helpful, consider supporting the project with a small donation..
         /// </summary>
         public static string SupportUs_Message {
@@ -2126,6 +2162,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Tools_WonderCost_Name {
             get {
                 return ResourceManager.GetString("Tools.WonderCost.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change difficulty.
+        /// </summary>
+        public static string Tooltip_Battle_Difficulty {
+            get {
+                return ResourceManager.GetString("Tooltip.Battle.Difficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aggregate squads.
+        /// </summary>
+        public static string Tooltip_Battle_Squads_Aggregate {
+            get {
+                return ResourceManager.GetString("Tooltip.Battle.Squads.Aggregate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Separate squads.
+        /// </summary>
+        public static string Tooltip_Battle_Squads_Disaggregate {
+            get {
+                return ResourceManager.GetString("Tooltip.Battle.Squads.Disaggregate", resourceCulture);
             }
         }
         

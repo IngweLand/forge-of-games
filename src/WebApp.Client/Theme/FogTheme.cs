@@ -9,6 +9,7 @@ public class FogTheme
         PaletteLight = new PaletteLight()
         {
             Primary = "#316896",
+            Error = "#963532",
         },
         Typography = new Typography()
         {

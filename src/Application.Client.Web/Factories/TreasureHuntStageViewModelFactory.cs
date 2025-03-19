@@ -21,6 +21,9 @@ public class TreasureHuntStageViewModelFactory(
                         Title = $"~{index + 1}.{bwi + 1}",
                         Squads = bw.Squads.Select(bws => battleWaveSquadViewModelFactory.Create(bws, stageDto.Units))
                             .ToList().AsReadOnly(),
+                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
+                            .SelectMany(g => battleWaveSquadViewModelFactory.Create(g.ToList(), stageDto.Units))
+                            .ToList(),
                     }).ToList().AsReadOnly(),
             })
             .ToList().AsReadOnly();

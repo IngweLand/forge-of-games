@@ -35,6 +35,7 @@
     background:  var(--fog-surface-color);
     padding: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
 }
 
 .benefits h4 {
@@ -63,6 +64,28 @@
     left: 0;
 }
 
+.binance-section {
+    border: 2px solid #f3ba2f; /* Binance yellow */
+    border-radius: 4px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.binance-section h4 {
+    color: #f3ba2f;
+}
+
+.binance-qr {
+    max-width: 300px;
+    margin: 12px auto;
+    display: block;
+}
+
+.binance-link {
+    display: block;
+}
+
 @media (min-width: 576px) {
     .container {
         padding: 16px;
@@ -85,6 +108,7 @@
 
     .benefits {
         padding: 24px;
+        margin-bottom: 24px;
     }
 
     .benefits h4 {
@@ -96,5 +120,9 @@
         margin-bottom: 16px;
         padding-left: 20px;
         position: relative;
+    }
+
+    .binance-link {
+        display: none;
     }
 }

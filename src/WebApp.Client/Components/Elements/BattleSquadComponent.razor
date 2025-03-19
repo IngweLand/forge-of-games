@@ -1,26 +1,40 @@
 @using Ingweland.Fog.Application.Client.Web.Extensions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
-<div class="fog-container d-flex overflow-hidden @(Squad.IsHero ? "stripes" : "")">
-    <div class="unit-image-container flex-shrink-0">
-        <img class="h-100 w-100 object-fit-cover" src="@Squad.ImageUrl">
+@using Size = MudBlazor.Size
+<div class="fog-container component-root @(Squad.IsHero ? "stripes" : "")">
+    <div class="unit-image-container">
+        <img src="@Squad.ImageUrl">
     </div>
 
-    <div class="flex-grow-1 d-flex flex-column px-2" style="min-width: 0">
-        <div class="d-flex align-items-end justify-content-start h-50 fs-6">
+    <div class="labels-container" style="min-width: 0">
+        <div class="title">
             <span class="text-truncate">@Squad.Name</span>
         </div>
-        <div class="d-flex align-items-start justify-content-start h-50"
+        <div class="subtitle"
              style="font-size: 0.75rem !important;">@Squad.Level</div>
     </div>
 
-    <div class="trailing-container d-flex flex-column m-0 p-0 flex-shrink-0"
-         style="background-color: @Squad.Color.ToCssColorVar()">
-        <div class="unit-type-icon-container">
-            <img class="object-fit-contain" src="@Squad.TypeIconUrl">
+    @if (Squad.ColorAffinity != null)
+    {
+        <div class="vertical-split-container">
+            <div class="split-container-item"
+                 style="background-color: @Squad.ColorAffinity.WeakAgainst.ToCssColorVar()">
+                <MudIcon Icon="@Icons.Material.Filled.ThumbUp" Size="Size.Small"/>
+            </div>
+            <div class="split-container-item"
+                 style="background-color: @Squad.ColorAffinity.StrongAgainst.ToCssColorVar()">
+                <MudIcon Icon="@Icons.Material.Filled.ThumbDown" Size="Size.Small"/>
+            </div>
+        </div>
+    }
+
+    <div class="vertical-split-container" style="background-color: @Squad.Color.ToCssColorVar()">
+        <div class="split-container-item unit-type-icon-container">
+            <img src="@Squad.TypeIconUrl">
         </div>
         @if (!Squad.IsHero)
         {
-            <div class="unit-amount-container">
+            <div class="split-container-item unit-amount-container">
                 <span>@Squad.Amount</span>
             </div>
         }

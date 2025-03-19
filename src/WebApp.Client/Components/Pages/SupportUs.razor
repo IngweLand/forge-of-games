@@ -1,20 +1,14 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.SUPPORT_US_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Core.Helpers
-@using Microsoft.Extensions.Localization
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject IAssetUrlProvider AssetUrlProvider
 <div class="container">
     <header class="header">
         <h4>@Loc[FogResource.SupportUs_Title]</h4>
     </header>
-
-    <div class="fog-container donation-section">
-        <p>@Loc[FogResource.SupportUs_Message]</p>
-        <a href="https://ko-fi.com/forgeofgames" target="_blank"><img height="36" style="border:0;height:36px;"
-                                                                      src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-                                                                      alt="Buy Me a Coffee at ko-fi.com"/></a>
-    </div>
-
+    
     <section class="fog-container benefits">
         <h4>@Loc[FogResource.SupportUs_Why_Title]</h4>
         <ul>
@@ -24,4 +18,23 @@
             <li>@Loc[FogResource.SupportUs_Why_Reason4]</li>
         </ul>
     </section>
+    
+    <div class="donation-section binance-section">
+        <h4> @Loc[FogResource.SupportUs_Binance_Title]</h4>
+        <a href="https://app.binance.com/qr/dplk881319a3b0394359a593dc1805093d75" target="_blank">
+            <img src="@AssetUrlProvider.GetImageUrl("binance_1.jpg")" alt="Binance Pay QR Code" class="binance-qr"/>
+        </a>
+        <p class="binance-link">
+            <a href="https://app.binance.com/qr/dplk881319a3b0394359a593dc1805093d75" target="_blank">
+                @Loc[FogResource.SupportUs_Binance_Link]
+            </a>
+        </p>
+    </div>
+
+    <div class="fog-container donation-section">
+        <p>@Loc[FogResource.SupportUs_Message]</p>
+        <a href="https://ko-fi.com/forgeofgames" target="_blank"><img height="36" style="border:0;height:36px;"
+                                                                      src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
+                                                                      alt="Buy Me a Coffee at ko-fi.com"/></a>
+    </div>
 </div>
