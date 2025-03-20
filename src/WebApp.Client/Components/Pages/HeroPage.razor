@@ -157,7 +157,15 @@
         if (_hero != null)
         {
             _pageTitle = Loc[FogResource.Hero_PageTitle, _hero.Name];
-            _wikipediaResponse = await LoadWithPersistenceAsync(nameof(_wikipediaResponse), () => WikipediaService.GetArticleAbstractAsync(_hero.Name, CultureInfo.CurrentCulture.TwoLetterISOLanguageName));
+            try
+            {
+                _wikipediaResponse = await LoadWithPersistenceAsync(nameof(_wikipediaResponse), () => WikipediaService.GetArticleAbstractAsync(_hero.Name, CultureInfo.CurrentCulture.TwoLetterISOLanguageName));
+
+            }
+            catch (Exception e)
+            {
+               // ignore
+            }
         }
 
 
