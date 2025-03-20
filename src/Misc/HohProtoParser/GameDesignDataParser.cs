@@ -225,7 +225,6 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
 
         return mapper.Map<IList<World>>(gdr.WorldDefinitions,
             opt => { opt.Items.Add(ContextKeys.CONTINENTS, continents); });
-        ;
     }
 
     private static Data Parse(GameDesignResponseDTO gdr)

@@ -1,9 +1,0 @@
-syntax = "proto3";
-import "encounter_details_dto.proto";
-
-option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
-
-message EncounterDto {
-  string difficulty = 1;
-  EncounterDetailsDto details = 2;
-}

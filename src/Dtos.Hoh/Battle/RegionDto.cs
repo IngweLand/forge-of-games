@@ -17,7 +17,7 @@ public class RegionDto
     [ProtoMember(4)]
     public required string Name { get; init; }
     [ProtoMember(5)]
-    public required IReadOnlyCollection<RewardBase> Rewards { get; init; }
+    public required IReadOnlyDictionary<Difficulty,IReadOnlyCollection<RewardBase>> Rewards { get; init; }
     [ProtoMember(6)]
     public IReadOnlyCollection<UnitDto> Units { get; set; }
 

@@ -13,8 +13,7 @@ public class RegionRewardDtoConverter :ITypeConverter<RegionRewardDto, RegionRew
     {
         return new RegionReward()
         {
-            Difficulty = StringParser.ParseEnumFromString<Difficulty>(source.Difficulty),
-            Rewards = context.Mapper.Map<IReadOnlyCollection<RewardBase>>(source.RewardSetWrapper.RewardSet.PackedRewards),
+            Rewards = context.Mapper.Map<IReadOnlyCollection<RewardBase>>(source.RewardSet.PackedRewards),
         };
     }
 }

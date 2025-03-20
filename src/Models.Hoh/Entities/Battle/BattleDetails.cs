@@ -17,8 +17,8 @@ public class BattleDetails
     public IReadOnlyCollection<int> DisabledPlayerSlotIds { get; init; } = new List<int>();
     
     [ProtoMember(4)]
-    public IReadOnlyCollection<HeroClassId> RequiredHeroClasses { get; init; } = Array.Empty<HeroClassId>();
+    public IReadOnlyCollection<HeroClassId> RequiredHeroClasses { get; init; } =  new List<HeroClassId>();
     
     [ProtoMember(5)]
-    public IReadOnlyCollection<UnitType> RequiredHeroTypes { get; init; } = Array.Empty<UnitType>();
+    public IReadOnlyCollection<UnitType> RequiredHeroTypes { get; init; } =  new List<UnitType>();
 }

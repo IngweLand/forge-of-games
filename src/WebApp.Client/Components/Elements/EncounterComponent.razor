@@ -1,8 +1,9 @@
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Models.Hoh.Enums
 @inject IAssetUrlProvider AssetUrlProvider;
-<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3"
-     style="@(IsHardDifficulty ? "border-color: var(--fog-error-color)" : "")">
+@inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
+<div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3">
     <div class="d-flex align-items-start">
         <div class="position-relative d-inline-block" style="height: 115px;">
             <img alt="Encounter" class="h-100 object-fit-contain"
@@ -13,28 +14,41 @@
         </div>
 
         <div class="d-flex align-items-start flex-wrap gap-3 gap-sm-4">
-            <ResourceWithValue ResourceValue="@Encounter.AvailableHeroSlots"/>
-            @foreach (var reward in Encounter.FirstTimeComletionBonus)
+            @foreach (var url in _encounterDetails.RequiredHeroClassIconUrls)
+            {
+                <IconWithBorder IconUrl="@url"/>
+            }
+            @foreach (var url in _encounterDetails.RequiredHeroTypeIconUrls)
+            {
+                <IconWithBorder IconUrl="@url"/>
+            }
+            <ResourceWithValue ResourceValue="@_encounterDetails.AvailableHeroSlots"/>
+            @foreach (var reward in _encounterDetails.FirstTimeComletionBonus)
             {
                 <EncounterFirstTimeCompletionBonusComponent Reward="@reward"/>
             }
-            @foreach (var reward in Encounter.Rewards)
+            @foreach (var reward in _encounterDetails.Rewards)
             {
                 <EncounterRewardComponent Reward="@reward"/>
             }
         </div>
     </div>
-    @foreach (var wave in Encounter.Waves)
+    @foreach (var wave in _encounterDetails.Waves)
     {
-        <div class="d-flex align-items-center title-container"
-             style="@(IsHardDifficulty ? "background-color: var(--fog-error-color)" : "")">
-            <span class="title" style="@(IsHardDifficulty ? "color: var(--fog-text-on-dark-color)" : "")">
-                @wave.Title |
+        <div class="title-container">
+            <span class="title">
+                @wave.Title
             </span>
-            <img class="power-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hero_power")"/>
-            <span class="power-label" style="@(IsHardDifficulty ? "color: var(--fog-text-on-dark-color)" : "")">
+            @if (_difficultyIcon != null)
+            {
+                <img class="difficulty-icon" src="@_difficultyIcon"/>
+            }
+            <div class="power-container">
+                <img class="power-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hero_power")"/>
+                <span class="power-label">
                 @wave.Power
             </span>
+            </div>
         </div>
         <div class="row g-2 m-0 mb-2">
             @foreach (var squad in IsExpanded ? wave.Squads : wave.AggregatedSquads)
@@ -49,6 +63,9 @@
 
 @code {
 
+    private EncounterDetailsViewModel _encounterDetails;
+    private string? _difficultyIcon;
+
     [Parameter]
     public EncounterViewModel Encounter { get; set; }
 
@@ -56,6 +73,26 @@
     public bool IsExpanded { get; set; }
 
     [Parameter]
-    public bool IsHardDifficulty { get; set; }
+    public Difficulty Difficulty { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        UpdateDifficultyState();
+    }
+
+    private void UpdateDifficultyState()
+    {
+        if (Difficulty == Difficulty.Hard)
+        {
+            _encounterDetails = Encounter.Details[Difficulty.Hard];
+            _difficultyIcon = CampaignDifficultyIconUrlProvider.GetIconUrl(Difficulty);
+        }
+        else
+        {
+            _encounterDetails = Encounter.Details[Difficulty.Normal];
+            _difficultyIcon = null;
+        }
+    }
 
 }

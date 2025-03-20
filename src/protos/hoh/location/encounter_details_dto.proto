@@ -9,6 +9,7 @@ message EncounterDetailsDto {
   ResourceCollectionDto auto_victory_cost = 2;
   EncounterRewardDto regular_reward = 3;
   EncounterRewardDto first_victory_bonus = 4;
+  optional string hero_battle_id = 6;
 }
 
 message EncounterRewardDto {

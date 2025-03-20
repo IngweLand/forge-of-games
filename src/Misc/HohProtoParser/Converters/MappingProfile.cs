@@ -93,6 +93,23 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.LinkedExpansionId,
                 opt => opt.MapFrom(src =>
                     src.LinkedExpansionComponent != null ? src.LinkedExpansionComponent.LinkedExpansionId : null));
+        CreateMap<KeyValuePair<string, long>, UnitType>()
+            .ConvertUsing(src => StringParser.ParseEnumFromString<UnitType>(src.Key));
+        CreateMap<KeyValuePair<string, long>, HeroClassId>()
+            .ConvertUsing(src => StringParser.ParseEnumFromString<HeroClassId>(src.Key));
+        CreateMap<MapField<string, RegionRewardDto>, IReadOnlyDictionary<Difficulty, RegionReward>>()
+            .ConvertUsing((src, _, context) =>
+                src.ToDictionary(kvp => StringParser.ParseEnumFromString<Difficulty>(kvp.Key),
+                    kvp => context.Mapper.Map<RegionReward>(kvp.Value)));
+        CreateMap<MapField<string, EncounterDetailsDto>, IReadOnlyDictionary<Difficulty, EncounterDetails>>()
+            .ConvertUsing((src, _, context) =>
+                src.ToDictionary(kvp => StringParser.ParseEnumFromString<Difficulty>(kvp.Key),
+                    kvp =>
+                    {
+                        context.Items[ContextKeys.DIFFICULTY] = StringParser.ParseEnumFromString<Difficulty>(kvp.Key);
+                        return context.Mapper.Map<EncounterDetails>(kvp.Value);
+                    }));
+        CreateMap<EncounterDetailsDto, EncounterDetails>().ConvertUsing(new EncounterDetailsDtoConverter());
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -155,10 +172,6 @@ public class MappingProfile : Profile
         CreateMap<CultureBoostComponentDTO, CultureBoostComponent>();
         CreateMap<LevelUpComponentDTO, LevelUpComponent>()
             .ForMember(dest => dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
-        CreateMap<KeyValuePair<string, long>, UnitType>()
-            .ConvertUsing(src => StringParser.ParseEnumFromString<UnitType>(src.Key));
-        CreateMap<KeyValuePair<string, long>, HeroClassId>()
-            .ConvertUsing(src => StringParser.ParseEnumFromString<HeroClassId>(src.Key));
 
         // rewards
         CreateMap<DynamicActionChangeRewardDTO, DynamicActionChangeReward>();

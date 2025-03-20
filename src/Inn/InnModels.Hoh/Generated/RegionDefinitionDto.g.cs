@@ -25,21 +25,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtyZWdpb25fZGVmaW5pdGlvbl9kdG8ucHJvdG8aGWdvb2dsZS9wcm90b2J1",
-            "Zi9hbnkucHJvdG8ibgoTUmVnaW9uRGVmaW5pdGlvbkRUTxIOCgZyZWdpb24Y",
-            "ASABKAkSEgoKZW5jb3VudGVycxgCIAMoCRIgCgZyZXdhcmQYAyABKAsyEC5S",
-            "ZWdpb25SZXdhcmREdG8SEQoJY29udGluZW50GAUgASgJIloKD1JlZ2lvblJl",
-            "d2FyZER0bxISCgpkaWZmaWN1bHR5GAEgASgJEjMKEnJld2FyZF9zZXRfd3Jh",
-            "cHBlchgCIAEoCzIXLlJlZ2lvblJld2FyZFNldFdyYXBwZXIiPgoWUmVnaW9u",
-            "UmV3YXJkU2V0V3JhcHBlchIkCgpyZXdhcmRfc2V0GAEgASgLMhAuUmVnaW9u",
-            "UmV3YXJkU2V0Ij8KD1JlZ2lvblJld2FyZFNldBIsCg5wYWNrZWRfcmV3YXJk",
-            "cxgCIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCH6oCHEluZ3dlbGFuZC5G",
-            "b2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "Zi9hbnkucHJvdG8iwgEKE1JlZ2lvbkRlZmluaXRpb25EVE8SDgoGcmVnaW9u",
+            "GAEgASgJEhIKCmVuY291bnRlcnMYAiADKAkSMgoHcmV3YXJkcxgDIAMoCzIh",
+            "LlJlZ2lvbkRlZmluaXRpb25EVE8uUmV3YXJkc0VudHJ5EhEKCWNvbnRpbmVu",
+            "dBgFIAEoCRpACgxSZXdhcmRzRW50cnkSCwoDa2V5GAEgASgJEh8KBXZhbHVl",
+            "GAIgASgLMhAuUmVnaW9uUmV3YXJkRHRvOgI4ASI3Cg9SZWdpb25SZXdhcmRE",
+            "dG8SJAoKcmV3YXJkX3NldBgBIAEoCzIQLlJlZ2lvblJld2FyZFNldCI/Cg9S",
+            "ZWdpb25SZXdhcmRTZXQSLAoOcGFja2VkX3Jld2FyZHMYAiADKAsyFC5nb29n",
+            "bGUucHJvdG9idWYuQW55Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMu",
+            "SG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDTO.Parser, new[]{ "Region", "Encounters", "Reward", "Continent" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto), global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto.Parser, new[]{ "Difficulty", "RewardSetWrapper" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper), global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper.Parser, new[]{ "RewardSet" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDTO.Parser, new[]{ "Region", "Encounters", "Rewards", "Continent" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto), global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto.Parser, new[]{ "RewardSet" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSet), global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSet.Parser, new[]{ "PackedRewards" }, null, null, null, null)
           }));
     }
@@ -84,7 +83,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public RegionDefinitionDTO(RegionDefinitionDTO other) : this() {
       region_ = other.region_;
       encounters_ = other.encounters_.Clone();
-      reward_ = other.reward_ != null ? other.reward_.Clone() : null;
+      rewards_ = other.rewards_.Clone();
       continent_ = other.continent_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -118,16 +117,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return encounters_; }
     }
 
-    /// <summary>Field number for the "reward" field.</summary>
-    public const int RewardFieldNumber = 3;
-    private global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto reward_;
+    /// <summary>Field number for the "rewards" field.</summary>
+    public const int RewardsFieldNumber = 3;
+    private static readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto>.Codec _map_rewards_codec
+        = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto.Parser), 26);
+    private readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto> rewards_ = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto Reward {
-      get { return reward_; }
-      set {
-        reward_ = value;
-      }
+    public pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto> Rewards {
+      get { return rewards_; }
     }
 
     /// <summary>Field number for the "continent" field.</summary>
@@ -159,7 +157,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (Region != other.Region) return false;
       if(!encounters_.Equals(other.encounters_)) return false;
-      if (!object.Equals(Reward, other.Reward)) return false;
+      if (!Rewards.Equals(other.Rewards)) return false;
       if (Continent != other.Continent) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -170,7 +168,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       int hash = 1;
       if (Region.Length != 0) hash ^= Region.GetHashCode();
       hash ^= encounters_.GetHashCode();
-      if (reward_ != null) hash ^= Reward.GetHashCode();
+      hash ^= Rewards.GetHashCode();
       if (Continent.Length != 0) hash ^= Continent.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -195,10 +193,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteString(Region);
       }
       encounters_.WriteTo(output, _repeated_encounters_codec);
-      if (reward_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Reward);
-      }
+      rewards_.WriteTo(output, _map_rewards_codec);
       if (Continent.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Continent);
@@ -218,10 +213,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteString(Region);
       }
       encounters_.WriteTo(ref output, _repeated_encounters_codec);
-      if (reward_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Reward);
-      }
+      rewards_.WriteTo(ref output, _map_rewards_codec);
       if (Continent.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Continent);
@@ -240,9 +232,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
       }
       size += encounters_.CalculateSize(_repeated_encounters_codec);
-      if (reward_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reward);
-      }
+      size += rewards_.CalculateSize(_map_rewards_codec);
       if (Continent.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Continent);
       }
@@ -262,12 +252,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         Region = other.Region;
       }
       encounters_.Add(other.encounters_);
-      if (other.reward_ != null) {
-        if (reward_ == null) {
-          Reward = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto();
-        }
-        Reward.MergeFrom(other.Reward);
-      }
+      rewards_.MergeFrom(other.rewards_);
       if (other.Continent.Length != 0) {
         Continent = other.Continent;
       }
@@ -295,10 +280,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 26: {
-            if (reward_ == null) {
-              Reward = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto();
-            }
-            input.ReadMessage(Reward);
+            rewards_.AddEntriesFrom(input, _map_rewards_codec);
             break;
           }
           case 42: {
@@ -329,10 +311,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 26: {
-            if (reward_ == null) {
-              Reward = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardDto();
-            }
-            input.ReadMessage(Reward);
+            rewards_.AddEntriesFrom(ref input, _map_rewards_codec);
             break;
           }
           case 42: {
@@ -381,8 +360,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionRewardDto(RegionRewardDto other) : this() {
-      difficulty_ = other.difficulty_;
-      rewardSetWrapper_ = other.rewardSetWrapper_ != null ? other.rewardSetWrapper_.Clone() : null;
+      rewardSet_ = other.rewardSet_ != null ? other.rewardSet_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -390,241 +368,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RegionRewardDto Clone() {
       return new RegionRewardDto(this);
-    }
-
-    /// <summary>Field number for the "difficulty" field.</summary>
-    public const int DifficultyFieldNumber = 1;
-    private string difficulty_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Difficulty {
-      get { return difficulty_; }
-      set {
-        difficulty_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "reward_set_wrapper" field.</summary>
-    public const int RewardSetWrapperFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper rewardSetWrapper_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper RewardSetWrapper {
-      get { return rewardSetWrapper_; }
-      set {
-        rewardSetWrapper_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as RegionRewardDto);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RegionRewardDto other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Difficulty != other.Difficulty) return false;
-      if (!object.Equals(RewardSetWrapper, other.RewardSetWrapper)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Difficulty.Length != 0) hash ^= Difficulty.GetHashCode();
-      if (rewardSetWrapper_ != null) hash ^= RewardSetWrapper.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Difficulty.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Difficulty);
-      }
-      if (rewardSetWrapper_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(RewardSetWrapper);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Difficulty.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Difficulty);
-      }
-      if (rewardSetWrapper_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(RewardSetWrapper);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (Difficulty.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Difficulty);
-      }
-      if (rewardSetWrapper_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RewardSetWrapper);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RegionRewardDto other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Difficulty.Length != 0) {
-        Difficulty = other.Difficulty;
-      }
-      if (other.rewardSetWrapper_ != null) {
-        if (rewardSetWrapper_ == null) {
-          RewardSetWrapper = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper();
-        }
-        RewardSetWrapper.MergeFrom(other.RewardSetWrapper);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Difficulty = input.ReadString();
-            break;
-          }
-          case 18: {
-            if (rewardSetWrapper_ == null) {
-              RewardSetWrapper = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper();
-            }
-            input.ReadMessage(RewardSetWrapper);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Difficulty = input.ReadString();
-            break;
-          }
-          case 18: {
-            if (rewardSetWrapper_ == null) {
-              RewardSetWrapper = new global::Ingweland.Fog.Inn.Models.Hoh.RegionRewardSetWrapper();
-            }
-            input.ReadMessage(RewardSetWrapper);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class RegionRewardSetWrapper : pb::IMessage<RegionRewardSetWrapper>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<RegionRewardSetWrapper> _parser = new pb::MessageParser<RegionRewardSetWrapper>(() => new RegionRewardSetWrapper());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<RegionRewardSetWrapper> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDtoReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RegionRewardSetWrapper() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RegionRewardSetWrapper(RegionRewardSetWrapper other) : this() {
-      rewardSet_ = other.rewardSet_ != null ? other.rewardSet_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public RegionRewardSetWrapper Clone() {
-      return new RegionRewardSetWrapper(this);
     }
 
     /// <summary>Field number for the "reward_set" field.</summary>
@@ -642,12 +385,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as RegionRewardSetWrapper);
+      return Equals(other as RegionRewardDto);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(RegionRewardSetWrapper other) {
+    public bool Equals(RegionRewardDto other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -720,7 +463,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(RegionRewardSetWrapper other) {
+    public void MergeFrom(RegionRewardDto other) {
       if (other == null) {
         return;
       }
@@ -796,7 +539,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDtoReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.RegionDefinitionDtoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

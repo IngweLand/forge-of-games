@@ -1,5 +1,7 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
@@ -12,6 +14,7 @@ public class CampaignUiService(
     ICampaignService campaignService,
     IBattleWaveSquadViewModelFactory battleWaveSquadViewModelFactory,
     IContinentBasicViewModelFactory continentBasicViewModelFactory,
+    IAssetUrlProvider assetUrlProvider,
     IMapper mapper) : ICampaignUiService
 {
     public async Task<IReadOnlyCollection<ContinentBasicViewModel>> GetCampaignContinentsBasicDataAsync()
@@ -37,33 +40,45 @@ public class CampaignUiService(
             .Select((e, index) => new EncounterViewModel
             {
                 Title = (index + 1).ToString(),
-                Rewards = e.Rewards.SelectMany(mapper.Map<IList<EncounterRewardViewModel>>).ToList(),
-                FirstTimeComletionBonus = mapper.Map<IList<EncounterRewardViewModel>>(e.FirstTimeCompletionBonus),
-                Waves = e.Waves.Select((bw, bwi) =>
-                    new BattleWaveViewModel
-                    {
-                        Title = $"~{index + 1}.{bwi + 1}",
-                        Squads = bw.Squads.Select(bws =>
-                                battleWaveSquadViewModelFactory.Create(bws, region.Units, region.Heroes))
-                            .ToList(),
-                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
-                            .SelectMany(g =>
-                                battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units, region.Heroes))
-                            .ToList()
-                    }).ToList().AsReadOnly(),
-                AvailableHeroSlots = new IconLabelItemViewModel()
+                Details = e.Details.ToDictionary(kvp => kvp.Key, kvp => new EncounterDetailsViewModel()
                 {
-                    IconUrl = "images/icon_hud_heroes.png",
-                    Label = e.AvailableHeroSlots.ToString(),
-                },
+                    Rewards = kvp.Value.Rewards.SelectMany(mapper.Map<IList<EncounterRewardViewModel>>).ToList(),
+                    FirstTimeComletionBonus =
+                        mapper.Map<IList<EncounterRewardViewModel>>(kvp.Value.FirstTimeCompletionBonus),
+                    Waves = kvp.Value.Waves.Select((bw, bwi) =>
+                        new BattleWaveViewModel
+                        {
+                            Title = $"~{index + 1}.{bwi + 1}",
+                            Squads = bw.Squads.Select(bws =>
+                                    battleWaveSquadViewModelFactory.Create(bws, region.Units, region.Heroes))
+                                .ToList(),
+                            AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
+                                .SelectMany(g =>
+                                    battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units, region.Heroes))
+                                .ToList()
+                        }).ToList().AsReadOnly(),
+                    AvailableHeroSlots = new IconLabelItemViewModel()
+                    {
+                        IconUrl = "images/icon_hud_heroes.png",
+                        Label = kvp.Value.AvailableHeroSlots.ToString()
+                    },
+                    RequiredHeroClassIconUrls =
+                        kvp.Value.RequiredHeroClasses.Select(hc =>
+                            assetUrlProvider.GetHohIconUrl(
+                                $"{hc.GetClassIconId()}_{UnitColor.Neutral.ToString().ToLowerInvariant()}")).ToList(),
+                    RequiredHeroTypeIconUrls =
+                        kvp.Value.RequiredHeroTypes.Select(ht =>
+                            assetUrlProvider.GetHohIconUrl(
+                                $"{ht.GetTypeIconId()}_{UnitColor.Neutral.ToString().ToLowerInvariant()}")).ToList()
+                })
             })
             .ToList().AsReadOnly();
-
         return new RegionViewModel
         {
             Name = $"{region.Index + 1}. {region.Name}",
             Encounters = encounters,
-            Rewards = mapper.Map<IReadOnlyCollection<IconLabelItemViewModel>>(region.Rewards),
+            Rewards =
+                mapper.Map<IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>>>(region.Rewards)
         };
     }
 }

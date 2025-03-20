@@ -17,5 +17,6 @@ public class Region
     public int Index { get; init; }
 
     [ProtoMember(4)]
-    public RegionReward? Reward { get; init; }
+    public IReadOnlyDictionary<Difficulty, RegionReward> Rewards { get; init; } =
+        new Dictionary<Difficulty, RegionReward>();
 }

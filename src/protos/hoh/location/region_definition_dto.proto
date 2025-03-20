@@ -7,16 +7,11 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 message RegionDefinitionDTO {
   string region = 1;
   repeated string encounters = 2;
-  RegionRewardDto reward = 3;
+  map<string, RegionRewardDto> rewards = 3;
   string continent = 5;
 }
 
 message RegionRewardDto {
-  string difficulty = 1;
-  RegionRewardSetWrapper reward_set_wrapper = 2;
-}
-
-message RegionRewardSetWrapper {
   RegionRewardSet reward_set = 1;
 }
 message RegionRewardSet {
