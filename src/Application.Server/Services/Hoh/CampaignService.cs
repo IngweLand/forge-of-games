@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
@@ -43,25 +44,31 @@ public class CampaignService(
         }
 
         var unitIds = region.Encounters.SelectMany(e =>
-            e.BattleDetails.Waves.SelectMany(bw => bw.Squads.Select(bws => bws.UnitId))).ToHashSet();
+            e.Details.Values.Where(ed => ed.BattleDetails != null).SelectMany(ed =>
+                ed.BattleDetails!.Waves.SelectMany(bw =>
+                    bw.Squads.Select(bws => (UnitId: bws.UnitId, IsHero: bws is BattleWaveHeroSquad))))).ToHashSet();
         var units = new List<UnitDto>();
         var heroes = new List<HeroDto>();
-        foreach (var unitId in unitIds)
+        foreach (var t in unitIds)
         {
-            var unit = await hohCoreDataRepository.GetUnitAsync(unitId);
+            var unit = await hohCoreDataRepository.GetUnitAsync(t.UnitId);
             if (unit == null)
             {
-                logger.LogError($"Failed to get unit by UnitId: {unitId}");
+                logger.LogError($"Failed to get unit by UnitId: {t.UnitId}");
                 return null;
             }
-            
-            units.Add(unitDtoFactory.Create(unit, await hohCoreDataRepository.GetUnitStatFormulaData(),
-                await hohCoreDataRepository.GetUnitBattleConstants(), await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
 
-            var hero = await unitService.GetHeroAsync(unitId);
-            if (hero != null)
+            units.Add(unitDtoFactory.Create(unit, await hohCoreDataRepository.GetUnitStatFormulaData(),
+                await hohCoreDataRepository.GetUnitBattleConstants(),
+                await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
+
+            if (t.IsHero)
             {
-                heroes.Add(hero);
+                var hero = await unitService.GetHeroAsync(t.UnitId);
+                if (hero != null)
+                {
+                    heroes.Add(hero);
+                }
             }
         }
 

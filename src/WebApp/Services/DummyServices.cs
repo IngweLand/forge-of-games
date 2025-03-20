@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
@@ -57,6 +58,16 @@ internal class DummyPersistenceService : IPersistenceService
     }
 
     public ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<UiSettings> GetUiSettingsAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveUiSettingsAsync(UiSettings settings)
     {
         throw new NotImplementedException();
     }

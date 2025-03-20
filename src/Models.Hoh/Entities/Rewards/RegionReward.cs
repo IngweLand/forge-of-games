@@ -8,8 +8,5 @@ namespace Ingweland.Fog.Models.Hoh.Entities.Rewards;
 public class RegionReward
 {
     [ProtoMember(1)]
-    public Difficulty Difficulty { get; init; }
-
-    [ProtoMember(2)]
     public required IReadOnlyCollection<RewardBase> Rewards { get; init; }
 }

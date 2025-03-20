@@ -14,4 +14,6 @@ public static class ContextKeys
     public const string BATTLE_WAVES_DEFINITIONS = "battleWavesDefinitions";
     public const string BATTLES_DEFINITIONS = "battlesDefinitions";
     public const string DYNAMIC_FLOAT_VALUE_DEFINITIONS = "DynamicFloatValueDefinitions";
+    public const string HERO_BATTLE_ID = "heroBattleId";
+    public const string DIFFICULTY = "difficulty";
 }

@@ -18,7 +18,7 @@ public class RegionDefinitionConverter :ITypeConverter<RegionDefinitionDTO, Regi
         {
             Id = StringParser.ParseEnumFromString<RegionId>(source.Region),
             Index = index,
-            Reward = context.Mapper.Map<RegionReward>(source.Reward),
+            Rewards = context.Mapper.Map<IReadOnlyDictionary<Difficulty, RegionReward>>(source.Rewards),
             Encounters = encounters.Where(e => source.Encounters.Contains(e.Id)).ToList().AsReadOnly(),
         };
     }

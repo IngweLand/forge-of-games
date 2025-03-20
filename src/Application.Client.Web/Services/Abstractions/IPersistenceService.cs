@@ -1,6 +1,7 @@
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Models.Fog.Entities;
 
-namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+namespace Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 
 public interface IPersistenceService
 {
@@ -15,4 +16,7 @@ public interface IPersistenceService
     ValueTask<IReadOnlyCollection<BasicCommandCenterProfile>> GetProfilesAsync();
     ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync();
     ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles);
+    
+    ValueTask<UiSettings> GetUiSettingsAsync();
+    ValueTask SaveUiSettingsAsync(UiSettings settings);
 }

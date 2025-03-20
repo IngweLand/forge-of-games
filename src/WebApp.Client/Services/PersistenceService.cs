@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Blazored.LocalStorage;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
@@ -10,6 +11,7 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     private const string CITY_DATA_KEY_PREFIX = "CityData";
     private const string PROFILE_DATA_KEY_PREFIX = "CommandCenterProfile";
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
+    private const string UI_SETTINGS = "UiSettings";
 
     public ValueTask SaveCity(HohCity city)
     {
@@ -137,6 +139,30 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     {
         var serializedProfile = JsonSerializer.Serialize(profiles);
         return localStorageService.SetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX, serializedProfile);
+    }
+
+    public async ValueTask<UiSettings> GetUiSettingsAsync()
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(UI_SETTINGS);
+        UiSettings? settings = null;
+        try
+        {
+            settings = string.IsNullOrWhiteSpace(rawData)
+                ? new UiSettings()
+                : JsonSerializer.Deserialize<UiSettings>(rawData);
+        }
+        catch (Exception e)
+        {
+            // ignore
+        }
+
+        return settings ?? new UiSettings();
+    }
+
+    public ValueTask SaveUiSettingsAsync(UiSettings settings)
+    {
+        var serializedSettings = JsonSerializer.Serialize(settings);
+        return localStorageService.SetItemAsStringAsync(UI_SETTINGS, serializedSettings);
     }
 
     private async ValueTask<HohCity?> DoLoadCity(string key)

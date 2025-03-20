@@ -13,21 +13,13 @@ public class EncounterDefinitionDtoConverter:ITypeConverter<EncounterDefinitionD
 {
     public Encounter Convert(EncounterDefinitionDTO source, Encounter destination, ResolutionContext context)
     {
-        var battles = (IList<HeroBattleDefinitionDTO>)context.Items[ContextKeys.BATTLES_DEFINITIONS];
+        context.Items[ContextKeys.HERO_BATTLE_ID] = source.HeroBattleId;
+        
         return new Encounter()
         {
             Id = source.EncounterId,
             Index = int.Parse(StringParser.GetConcreteId(source.EncounterId, '_')),
-            Difficulty = StringParser.ParseEnumFromString<Difficulty>(source.Encounter.Difficulty),
-            Cost = context.Mapper.Map<IReadOnlyCollection<ResourceAmount>>(source.Encounter.Details.Cost.Resources),
-            AutoVictoryCost =
-                context.Mapper.Map<IReadOnlyCollection<ResourceAmount>>(source.Encounter.Details.AutoVictoryCost.Resources),
-            Rewards = context.Mapper.Map<IReadOnlyCollection<RewardBase>>(source.Encounter.Details.RegularReward
-                .PackedRewards),
-            FirstTimeCompletionBonus =
-                context.Mapper.Map<IReadOnlyCollection<RewardBase>>(
-                    source.Encounter.Details.FirstVictoryBonus.PackedRewards).OfType<ResourceReward>().ToList().AsReadOnly(),
-            BattleDetails = context.Mapper.Map<BattleDetails>(battles.Single(hbd=> hbd.Id == source.HeroBattleId)),
+            Details = context.Mapper.Map<IReadOnlyDictionary<Difficulty, EncounterDetails>>(source.Encounters),
         };
     }
 }

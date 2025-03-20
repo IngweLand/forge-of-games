@@ -24,15 +24,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static EncounterDefinitionDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5lbmNvdW50ZXJfZGVmaW5pdGlvbl9kdG8ucHJvdG8aE2VuY291bnRlcl9k",
-            "dG8ucHJvdG8iaAoWRW5jb3VudGVyRGVmaW5pdGlvbkRUTxIUCgxlbmNvdW50",
-            "ZXJfaWQYASABKAkSFgoOaGVyb19iYXR0bGVfaWQYAiABKAkSIAoJZW5jb3Vu",
-            "dGVyGAMgASgLMg0uRW5jb3VudGVyRHRvQh+qAhxJbmd3ZWxhbmQuRm9nLklu",
-            "bi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Ch5lbmNvdW50ZXJfZGVmaW5pdGlvbl9kdG8ucHJvdG8aG2VuY291bnRlcl9k",
+            "ZXRhaWxzX2R0by5wcm90byLMAQoWRW5jb3VudGVyRGVmaW5pdGlvbkRUTxIU",
+            "CgxlbmNvdW50ZXJfaWQYASABKAkSFgoOaGVyb19iYXR0bGVfaWQYAiABKAkS",
+            "OwoKZW5jb3VudGVycxgDIAMoCzInLkVuY291bnRlckRlZmluaXRpb25EVE8u",
+            "RW5jb3VudGVyc0VudHJ5GkcKD0VuY291bnRlcnNFbnRyeRILCgNrZXkYASAB",
+            "KAkSIwoFdmFsdWUYAiABKAsyFC5FbmNvdW50ZXJEZXRhaWxzRHRvOgI4AUIf",
+            "qgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.EncounterDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EncounterDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.EncounterDefinitionDTO.Parser, new[]{ "EncounterId", "HeroBattleId", "Encounter" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EncounterDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.EncounterDefinitionDTO.Parser, new[]{ "EncounterId", "HeroBattleId", "Encounters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -76,7 +78,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public EncounterDefinitionDTO(EncounterDefinitionDTO other) : this() {
       encounterId_ = other.encounterId_;
       heroBattleId_ = other.heroBattleId_;
-      encounter_ = other.encounter_ != null ? other.encounter_.Clone() : null;
+      encounters_ = other.encounters_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -110,16 +112,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "encounter" field.</summary>
-    public const int EncounterFieldNumber = 3;
-    private global::Ingweland.Fog.Inn.Models.Hoh.EncounterDto encounter_;
+    /// <summary>Field number for the "encounters" field.</summary>
+    public const int EncountersFieldNumber = 3;
+    private static readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto>.Codec _map_encounters_codec
+        = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto.Parser), 26);
+    private readonly pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto> encounters_ = new pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.EncounterDto Encounter {
-      get { return encounter_; }
-      set {
-        encounter_ = value;
-      }
+    public pbc::MapField<string, global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto> Encounters {
+      get { return encounters_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,7 +140,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (EncounterId != other.EncounterId) return false;
       if (HeroBattleId != other.HeroBattleId) return false;
-      if (!object.Equals(Encounter, other.Encounter)) return false;
+      if (!Encounters.Equals(other.Encounters)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,7 +150,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       int hash = 1;
       if (EncounterId.Length != 0) hash ^= EncounterId.GetHashCode();
       if (HeroBattleId.Length != 0) hash ^= HeroBattleId.GetHashCode();
-      if (encounter_ != null) hash ^= Encounter.GetHashCode();
+      hash ^= Encounters.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -176,10 +177,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(18);
         output.WriteString(HeroBattleId);
       }
-      if (encounter_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Encounter);
-      }
+      encounters_.WriteTo(output, _map_encounters_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -198,10 +196,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(18);
         output.WriteString(HeroBattleId);
       }
-      if (encounter_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Encounter);
-      }
+      encounters_.WriteTo(ref output, _map_encounters_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -218,9 +213,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (HeroBattleId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroBattleId);
       }
-      if (encounter_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Encounter);
-      }
+      size += encounters_.CalculateSize(_map_encounters_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -239,12 +232,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.HeroBattleId.Length != 0) {
         HeroBattleId = other.HeroBattleId;
       }
-      if (other.encounter_ != null) {
-        if (encounter_ == null) {
-          Encounter = new global::Ingweland.Fog.Inn.Models.Hoh.EncounterDto();
-        }
-        Encounter.MergeFrom(other.Encounter);
-      }
+      encounters_.MergeFrom(other.encounters_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -269,10 +257,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 26: {
-            if (encounter_ == null) {
-              Encounter = new global::Ingweland.Fog.Inn.Models.Hoh.EncounterDto();
-            }
-            input.ReadMessage(Encounter);
+            encounters_.AddEntriesFrom(input, _map_encounters_codec);
             break;
           }
         }
@@ -299,10 +284,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 26: {
-            if (encounter_ == null) {
-              Encounter = new global::Ingweland.Fog.Inn.Models.Hoh.EncounterDto();
-            }
-            input.ReadMessage(Encounter);
+            encounters_.AddEntriesFrom(ref input, _map_encounters_codec);
             break;
           }
         }

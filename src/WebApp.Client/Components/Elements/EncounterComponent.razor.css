@@ -10,9 +10,13 @@
 }
 
 .title-container {
+    display: flex;
+    align-items: center;
     background-color: var(--fog-container-color);
     border-radius: var(--fog-border-radius);
-    padding: 0.1rem 0.4rem;
+    padding: 2px 6px;
+    height: 28px;
+    gap: 6px;
 }
 
 .title {
@@ -22,12 +26,28 @@
 }
 
 .power-label {
-    color: var(--fog-text-on-container-color);
+    color: var(--fog-text-on-dark-color);
+    font-size: 12px;
 }
 
 .power-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
     object-fit: cover;
+}
+
+.difficulty-icon {
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.power-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px;
+    background-color: var(--fog-text-on-container-color);
+    border-radius: var(--fog-border-radius);
 }

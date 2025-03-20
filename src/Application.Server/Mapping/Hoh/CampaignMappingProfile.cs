@@ -17,9 +17,31 @@ public class CampaignMappingProfile : Profile
         CreateMap<Region, RegionBasicDto>()
             .ForMember(dest => dest.Name,
                 opt => opt.ConvertUsing<RegionNameLocalizationConverter, RegionId>(src => src.Id));
-        CreateMap<Encounter, EncounterDto>()
+        CreateMap<Encounter, EncounterDto>();
+        CreateMap<EncounterDetails, EncounterDetailsDto>()
             .ForMember(dest => dest.Waves,
-                opt => opt.MapFrom(src => Enumerable.OrderBy<BattleWave, string>(src.BattleDetails.Waves, w => w.Id)))
-            .ForMember(dest=> dest.AvailableHeroSlots, opt => opt.MapFrom(src => 5 - src.BattleDetails.DisabledPlayerSlotIds.Count));
+                opt =>
+                {
+                    opt.PreCondition(src => src.BattleDetails != null);
+                    opt.MapFrom(src => Enumerable.OrderBy<BattleWave, string>(src.BattleDetails!.Waves, w => w.Id));
+                })
+            .ForMember(dest => dest.AvailableHeroSlots,
+                opt =>
+                {
+                    opt.PreCondition(src => src.BattleDetails != null);
+                    opt.MapFrom(src => 5 - src.BattleDetails!.DisabledPlayerSlotIds.Count);
+                })
+            .ForMember(dest => dest.RequiredHeroClasses,
+                opt =>
+                {
+                    opt.PreCondition(src => src.BattleDetails != null);
+                    opt.MapFrom(src => src.BattleDetails!.RequiredHeroClasses);
+                })
+            .ForMember(dest => dest.RequiredHeroTypes,
+                opt =>
+                {
+                    opt.PreCondition(src => src.BattleDetails != null);
+                    opt.MapFrom(src => src.BattleDetails!.RequiredHeroTypes);
+                });
     }
 }

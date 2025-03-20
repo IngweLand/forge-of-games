@@ -25,18 +25,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChtlbmNvdW50ZXJfZGV0YWlsc19kdG8ucHJvdG8aHXJlc291cmNlX2NvbGxl",
-            "Y3Rpb25fZHRvLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvIs0B",
+            "Y3Rpb25fZHRvLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvIv0B",
             "ChNFbmNvdW50ZXJEZXRhaWxzRHRvEiQKBGNvc3QYASABKAsyFi5SZXNvdXJj",
             "ZUNvbGxlY3Rpb25EdG8SMQoRYXV0b192aWN0b3J5X2Nvc3QYAiABKAsyFi5S",
             "ZXNvdXJjZUNvbGxlY3Rpb25EdG8SKwoOcmVndWxhcl9yZXdhcmQYAyABKAsy",
             "Ey5FbmNvdW50ZXJSZXdhcmREdG8SMAoTZmlyc3RfdmljdG9yeV9ib251cxgE",
-            "IAEoCzITLkVuY291bnRlclJld2FyZER0byJCChJFbmNvdW50ZXJSZXdhcmRE",
-            "dG8SLAoOcGFja2VkX3Jld2FyZHMYAiADKAsyFC5nb29nbGUucHJvdG9idWYu",
-            "QW55Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "IAEoCzITLkVuY291bnRlclJld2FyZER0bxIbCg5oZXJvX2JhdHRsZV9pZBgG",
+            "IAEoCUgAiAEBQhEKD19oZXJvX2JhdHRsZV9pZCJCChJFbmNvdW50ZXJSZXdh",
+            "cmREdG8SLAoOcGFja2VkX3Jld2FyZHMYAiADKAsyFC5nb29nbGUucHJvdG9i",
+            "dWYuQW55Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.ResourceCollectionDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto.Parser, new[]{ "Cost", "AutoVictoryCost", "RegularReward", "FirstVictoryBonus" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.EncounterDetailsDto.Parser, new[]{ "Cost", "AutoVictoryCost", "RegularReward", "FirstVictoryBonus", "HeroBattleId" }, new[]{ "HeroBattleId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EncounterRewardDto), global::Ingweland.Fog.Inn.Models.Hoh.EncounterRewardDto.Parser, new[]{ "PackedRewards" }, null, null, null, null)
           }));
     }
@@ -83,6 +85,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       autoVictoryCost_ = other.autoVictoryCost_ != null ? other.autoVictoryCost_.Clone() : null;
       regularReward_ = other.regularReward_ != null ? other.regularReward_.Clone() : null;
       firstVictoryBonus_ = other.firstVictoryBonus_ != null ? other.firstVictoryBonus_.Clone() : null;
+      heroBattleId_ = other.heroBattleId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -140,6 +143,32 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "hero_battle_id" field.</summary>
+    public const int HeroBattleIdFieldNumber = 6;
+    private readonly static string HeroBattleIdDefaultValue = "";
+
+    private string heroBattleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string HeroBattleId {
+      get { return heroBattleId_ ?? HeroBattleIdDefaultValue; }
+      set {
+        heroBattleId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "hero_battle_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasHeroBattleId {
+      get { return heroBattleId_ != null; }
+    }
+    /// <summary>Clears the value of the "hero_battle_id" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearHeroBattleId() {
+      heroBattleId_ = null;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -159,6 +188,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (!object.Equals(AutoVictoryCost, other.AutoVictoryCost)) return false;
       if (!object.Equals(RegularReward, other.RegularReward)) return false;
       if (!object.Equals(FirstVictoryBonus, other.FirstVictoryBonus)) return false;
+      if (HeroBattleId != other.HeroBattleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -170,6 +200,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (autoVictoryCost_ != null) hash ^= AutoVictoryCost.GetHashCode();
       if (regularReward_ != null) hash ^= RegularReward.GetHashCode();
       if (firstVictoryBonus_ != null) hash ^= FirstVictoryBonus.GetHashCode();
+      if (HasHeroBattleId) hash ^= HeroBattleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,6 +235,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(34);
         output.WriteMessage(FirstVictoryBonus);
       }
+      if (HasHeroBattleId) {
+        output.WriteRawTag(50);
+        output.WriteString(HeroBattleId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -230,6 +265,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(34);
         output.WriteMessage(FirstVictoryBonus);
       }
+      if (HasHeroBattleId) {
+        output.WriteRawTag(50);
+        output.WriteString(HeroBattleId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -251,6 +290,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (firstVictoryBonus_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FirstVictoryBonus);
+      }
+      if (HasHeroBattleId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(HeroBattleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -287,6 +329,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           FirstVictoryBonus = new global::Ingweland.Fog.Inn.Models.Hoh.EncounterRewardDto();
         }
         FirstVictoryBonus.MergeFrom(other.FirstVictoryBonus);
+      }
+      if (other.HasHeroBattleId) {
+        HeroBattleId = other.HeroBattleId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -331,6 +376,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             input.ReadMessage(FirstVictoryBonus);
             break;
           }
+          case 50: {
+            HeroBattleId = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -372,6 +421,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
               FirstVictoryBonus = new global::Ingweland.Fog.Inn.Models.Hoh.EncounterRewardDto();
             }
             input.ReadMessage(FirstVictoryBonus);
+            break;
+          }
+          case 50: {
+            HeroBattleId = input.ReadString();
             break;
           }
         }

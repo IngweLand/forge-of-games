@@ -1,9 +1,12 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.CAMPAIGN_REGION_TEMPLATE)]
 @inject ICampaignUiService CampaignUiService;
 @inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
+@inject IPersistenceService PersistenceService
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
@@ -16,7 +19,7 @@
             <h3 class="text-center mb-3 user-select-none">@_region!.Name</h3>
             <hr class="w-100 mb-3">
             <div class="d-flex flex-wrap justify-content-center gap-4">
-                @foreach (var reward in _region.Rewards)
+                @foreach (var reward in _currentRewards)
                 {
                     <ResourceWithValue ResourceValue="@reward"/>
                 }
@@ -28,7 +31,7 @@
                 <div class="option-items left">
                     <img class="difficulty-icon" src="@_difficultyIcon"/>
                     <MudSwitch T="bool" ValueChanged="OnDifficultyChange" Color="Color.Error"
-                               Value="_isHardDifficulty" Label="@_difficultyLabel"/>
+                               Value="_isChecked" Label="@_difficultyLabel"/>
                 </div>
                 <div class="option-items right">
                     <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
@@ -43,7 +46,7 @@
 
         @foreach (var encounter in _region.Encounters)
         {
-            <EncounterComponent IsHardDifficulty="@_isHardDifficulty" IsExpanded="@_isExpanded" Encounter="@encounter"/>
+            <EncounterComponent Difficulty="@_difficulty" IsExpanded="@_isExpanded" Encounter="@encounter"/>
         }
     </div>
 }
@@ -56,16 +59,17 @@
     private string _pageTitle = null!;
     private RegionViewModel? _region;
     private bool _isExpanded;
-    private bool _isHardDifficulty;
+    private Difficulty _difficulty = Difficulty.Normal;
     private string _difficultyLabel;
     private string _difficultyIcon;
+    private bool _isChecked;
+
+    private IReadOnlyCollection<IconLabelItemViewModel> _currentRewards = Array.Empty<IconLabelItemViewModel>();
+
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-
-        UpdateDifficultyLabel();
-        UpdateDifficultyIcon();
 
         _region = await LoadWithPersistenceAsync(nameof(_region),
             async () => await CampaignUiService.GetRegionAsync(RegionId));
@@ -73,19 +77,28 @@
         if (_region != null)
         {
             _pageTitle = Loc[FogResource.CampaignRegion_PageTitle, _region.Name];
+            UpdateDifficultyState();
+        }
+
+        if (OperatingSystem.IsBrowser())
+        {
+            var difficulty = (await PersistenceService.GetUiSettingsAsync()).CampaignDifficulty;
+            difficulty = difficulty == Difficulty.Hard ? Difficulty.Hard : Difficulty.Normal;
+            if (difficulty != _difficulty)
+            {
+                _difficulty = difficulty;
+                UpdateDifficultyState();
+            }
         }
     }
 
-    private void UpdateDifficultyLabel()
+    private void UpdateDifficultyState()
     {
-        _difficultyLabel = _isHardDifficulty ? Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
-    }
-
-    private void UpdateDifficultyIcon()
-    {
-        _difficultyIcon = _isHardDifficulty ?
-            CampaignDifficultyIconUrlProvider.GetIconUrl(Difficulty.Hard) : 
-            CampaignDifficultyIconUrlProvider.GetIconUrl(Difficulty.Normal);
+        _isChecked = _difficulty == Difficulty.Hard;
+        _difficultyIcon = CampaignDifficultyIconUrlProvider.GetIconUrl(_difficulty);
+        _currentRewards = _region!.Rewards[_difficulty];
+        _difficultyLabel = _difficulty == Difficulty.Hard ?
+            Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
     }
 
     private void OnExpand()
@@ -98,11 +111,17 @@
         _isExpanded = false;
     }
 
-    private void OnDifficultyChange(bool isToggled)
+    private async Task OnDifficultyChange(bool isChecked)
     {
-        _isHardDifficulty = isToggled;
-        UpdateDifficultyLabel();
-        UpdateDifficultyIcon();
+        _difficulty = isChecked ? Difficulty.Hard : Difficulty.Normal;
+        UpdateDifficultyState();
+
+        if (OperatingSystem.IsBrowser())
+        {
+            var uiSettings = await PersistenceService.GetUiSettingsAsync();
+            uiSettings.CampaignDifficulty = _difficulty;
+            await PersistenceService.SaveUiSettingsAsync(uiSettings);
+        }
     }
 
 }
