@@ -37,7 +37,7 @@ public class AutoDataProcessor(
     private const AllianceRankingType AllianceRankingType = Models.Hoh.Enums.AllianceRankingType.RankingPoints;
 
     [Function("AutoDataProcessor")]
-    public async Task Run([TimerTrigger("0 5 0 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 1 0 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         
