@@ -51,6 +51,8 @@ R
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameKoszary strzelców
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_2_DeschMola rybackie wysyłają łodzie, które łowią ryby dla wszystkich głodnych pracowników i marynarzy.
+a
+GBase.Technologies.Technology_HighMiddleAges_GambersonReinforcement_NameWzmocnienie Gambersona
 t
 0Base.Units.Unit_ClassicGreece_Player_Psiloi_Desc@Jednostki piechoty są najskuteczniejsze w pierwszych szeregach.
 P
@@ -329,6 +331,8 @@ K
 2Base.Buildings.Building_StoneAge_Farm_Rural_2_NameGospodarstwo wiejskie
 L
 7Base.Abilities.hero_battle_ability.OttoVonBismarck_NameŻelazny Kanclerz
+R
+;Base.Abilities.hero_battle_ability.FlorenceNightingale_NamePrzysięga Słowika
 X
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameŚredni obiekt kultury
 K
@@ -431,8 +435,6 @@ N
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NameGospodarstwo wiejskie
 \
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NamePiechota Merowingów
-P
-6Base.Technologies.Technology_HighMiddleAges_Start_NameWysokie Średniowiecze
 4
 &Base.Units.Unit_AztecTlacateccatl_Name
 Cuauhtemoc
@@ -609,6 +611,8 @@ A
 Hieroglify
 d
 'Base.BuildingGroups.rangedBarracks_NameKoszary strzelcówKoszary strzelcówKoszar strzelców
+J
+:Base.Technologies.Technology_HighMiddleAges_GreatHelm_NameWielki hełm
 /
 Base.HeroClass.GreatLeaderWielki Przywódca
 <
@@ -617,6 +621,8 @@ J
 ;Base.Technologies.Technology_AgeOfTheFranks_Aviculture_NamePtasznictwo
 Y
 6Base.Units.Unit_TreasureHunt_Yellow_DonkeyRaiders_NamePromienni Napastnicy na Osłach
+W
+@Base.Technologies.Technology_HighMiddleAges_QualityProducts_NameJakość produktów
 ?
 .Base.Abilities.hero_battle_ability.SunTzu_NameSztuka Obrony
 B
@@ -645,6 +651,8 @@ K
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameEdykt Achemenidzki
 <
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
+P
+0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameCiężka piechota Fatymidów
 o
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 ^
@@ -757,10 +765,14 @@ MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�
 Base.Units.Unit_Plato_Desc�Robiąc sobie przerwę od kłótni o Pireusie, oto Platon! Ten pionierski grecki filozof z IV wieku p.n.e. był uczniem Sokratesa i nauczycielem Arystotelesa. Założył Akademię w Atenach i napisał „Państwo”, kształtując myśl zachodnią na zawsze.<br><br>Nauki Platona nie tylko inspirowały myśl, ale także fantazję: Platon przedstawił historię Atlantydy, legendarnej zatopionej cywilizacji, w swoim dziele „Timajos”.<br><br>Jego idee filozoficzne, takie jak Teoria form, ukształtowały Zachód tak bardzo, że słynny filozof kiedyś opisał europejską tradycję jako „serię przypisów do Platona”. Mniej znany jest fakt, że Platon prawdopodobnie mógłby walczyć z każdym wojownikiem w Bohaterach Historii: był tak wielki, że nawet jego imię oznacza „szeroki”!
 T
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_NameKoszary kawalerii
+D
+9Base.Technologies.Technology_HighMiddleAges_Cinnamon_NameCynamon
 |
 (Base.BuildingGroups.premiumGoldMine_NameLuksusowa kopalnia złotaLuksusowe kopalnie złotaLuksusowych kopalni złota
 H
 6Base.Technologies.Technology_MinoanEra_LinenShirt_NameLniana Koszula
+E
+9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimoire
 E
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameŁucznicy Wikingów
 R
@@ -889,6 +901,8 @@ Y
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameStacja Nawadniająca
 �
 #Base.Units.Unit_EgyptianVizier_Desc�Zostań bogiem z Imhotepem, tym, który przychodzi w pokoju! Ten doradca i architekt z XXVII wieku p.n.e. nadzorował budowę Piramidy Schodkowej w Sakkarze, jednej z najwcześniejszych piramid w historii.<br><br>Za życia Imhotep był tajemnicą, kapłanem Ra, o którym niewiele wiadomo. W kolejnych latach jego sława rosła, aż został ubóstwiony: czczony jako bóg medycyny i brat boga Thota.<br><br>Tak właśnie Imhotep był pamiętany przez lata. Podobno czcili go nawet Grecy, a on sam był uznawany za twórcę zakończenia powodzi w okresie rzymskim. Jak na ironię, wydaje się, że nigdy nie miał do czynienia z medycyną za życia!
+S
+=Base.Technologies.Technology_HighMiddleAges_HeraldryPost_NamePoczta heraldyczna
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>Atak na Odległość</style>Rzuca kunai w przeciwnika z najmniejszą ilością obecnych punktów zdrowia (HP), zadając <style=basestat>{dmg_percentage}</style> obrażeń. Priorytetuje bohaterów.
 N
@@ -953,6 +967,8 @@ _
 ,
 Base.Heroes.hero.LouisXIV_Name
 Ludwik XIV
+H
+<Base.Technologies.Technology_HighMiddleAges_Infantrymen_NamePiechota
 |
 1Base.Buildings.Building_Egypt_Home_Average_3_DescGProdukuje duży stos debenów i dodaje do twojego miasta 2 pracowników
 @
@@ -991,6 +1007,8 @@ B
 5Base.Units.Unit_AgeOfTheFranks_Player_Caballarii_Name	Kawaleria
 �
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescOProdukuje tonę Groszy i dodaje 2 Pracowników i 2 Marynarzy do twojego Miasta.
+T
+CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameTrójpolówka
 H
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_NameKopalnia złota
 L
@@ -1119,6 +1137,8 @@ Robin Hood
 E
 7Base.Technologies.Technology_ByzantineEra_Divining_Name
 Wróżenie
+Q
+?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameKody rycerskie
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
 D
@@ -1129,6 +1149,8 @@ V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_NameLuksusowe pole papirusowe
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_9_Name�<style=ability_label>Prowokacja| Tarcza| Wzmocnienie</style>Uderza się w pierś, prowokując wszystkich wrogów na <style=basestat>{taunt_duration}</style>, zyskując tarczę równą <style=basestat>{shield_percentage}</style> DEF, oraz zwiększając DEF o <style=basestat>{def_percentage}</style> na <style=basestat>{duration}</style>.
+A
+7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGildie
 S
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameNubijscy Wojownicy
 b
@@ -1203,6 +1225,8 @@ F
 /Base.Units.Unit_IberianEra_Vikings_Cavalry_NameKawaleria Wikingów
 '
 Base.BuildingTypes.MarketplaceRynek
+V
+CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_NameKarta wolności
 D
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_Name
 Harcownicy
@@ -1351,14 +1375,16 @@ x
 1Base.Buildings.Building_China_Home_Premium_3_DescCProdukuje mnóstwo Wu zhu i dodaje 3 pracowników do twojego miasta
 C
 3Base.Technologies.Technology_China_PaddyFields_NamePola Ryżowe
+J
+2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameKawaleria Fatymidów
 *
 Base.Units.Unit_Menes_NameFaraon Menes
 Q
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_NameGospodarstwo wiejskie
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc$Zamienia kokony ćmy w jedwabne nici
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Wzmocnienie</style>Za każdym razem, gdy posiadacz trafi krytycznie, jego szansa na kolejne trafienia krytyczne zostaje zwiększona o <style=basestat>{crit_buff}</style> na <style=basestat>{duration}</style>.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Wzmocnienie</style>Za każdym razem, gdy posiadacz używa trafienie krytyczne, jego szansa na trafienie krytyczne zostaje zwiększona o <style=basestat>{crit_buff}</style> na <style=basestat>{duration}</style>. Efekty te nie kumuluje się ze sobą.
 |
 2Base.Buildings.Building_Arabia_Home_Premium_1_DescFProdukuje mnóstwo dirhamów i dodaje do Twojego miasta 3 pracowników
 {
@@ -1371,6 +1397,8 @@ C
 7Base.Technologies.Technology_ByzantineEra_Xocolatl_NameXocolatl
 V
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_DescProdukuje mnóstwo żywności
+D
+8Base.Technologies.Technology_HighMiddleAges_Billmen_NameBillmeni
 V
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_DescProdukuje pieprz
 m
@@ -1379,6 +1407,8 @@ U
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NamePrecyzyjna kronika
 }
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescCProdukuje mnóstwo monet i dodaje do twojego miasta 2 pracowników.
+Q
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameStrzelcy Hohenstaufów
 =
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSól
 �
@@ -1496,6 +1526,8 @@ D
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameWzrost Egiptu
 G
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameOdnowa Sojuszu
+H
+9Base.Technologies.Technology_HighMiddleAges_Clearing_NameCzyszczenie
 \
 DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameHandlarz przyprawami
 :
@@ -2293,6 +2325,8 @@ G
 s
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Desc<Produkuje małą ilość żywności w krótki okresie czasu.
 Q
+?Base.Technologies.Technology_HighMiddleAges_WinterStabling_NameStajnia zimowa
+Q
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameKoszary oblężnicze
 [
 ABase.Technologies.Technology_KingdomOfSicily_MagnifyingGlass_NameSzkło powiększające
@@ -2316,6 +2350,8 @@ k
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Kontrola Umysłu| Wzmocnienie</style>Uwalnia swój literacki geniusz, przekonując wrogą jednostkę do atakowania swoich sojuszników przez <style=basestat>{duration}</style>. Podczas kontroli Jane, atak wrogiej jednostki jest zwiększony o <style=basestat>{atk_percentage}</style>. Priorytetem są bohaterowie.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_Desc{Jednostki dystansowe strzelają pociskami z dużej odległości i są szczególnie skuteczne przeciwko jednostkom piechoty.
+U
+<Base.Technologies.Technology_HighMiddleAges_Precautions_NameŚrodki ostrożności
 R
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_NameGospodarstwo domowe
 F
@@ -2328,6 +2364,8 @@ T
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameNiewolnicy i Jarlowie
 >
 )Base.Regions.region.VolcanicJungle_3_NameKolonia Angielska
+L
+5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameDowódca Fatymidów
 i
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc$Ulepszenia dla sąsiednich budynków
 >
@@ -2505,6 +2543,8 @@ D
 2Base.Buildings.Building_China_City_CityHall_2_NameGłówny gmach
 )
 Base.Units.Unit_Hercules_NameHerkules
+M
+:Base.Technologies.Technology_HighMiddleAges_CropSheds_NameWiaty na uprawy
 �
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_Desc{Jednostki dystansowe strzelają pociskami z dużej odległości i są szczególnie skuteczne przeciwko jednostkom piechoty.
 D
@@ -2525,6 +2565,9 @@ X
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameAkademia Bohaterów
 �
  Base.Units.Unit_QinShiHuang_Desc�Zgodnie z nakazem niebios i tysiącem pomników, to Qin Shi Huang, pierwszy cesarz Chin! W III wieku p.n.e. ten były król rościł sobie prawo do tronu zjednoczonych Chin. Pośród zapachu palonego papieru i ostrzenia ostrzy Qin Shi Huang podbił całe Chiny i zapoczątkował dziedzictwo, które nigdy nie zostanie zapomniane.<br><br>Pod jego rządami podjęto ogromne projekty budowlane, w tym wczesny Wielki Mur i Terakotową Armię, która strzeże jego mauzoleum wielkości miasta. Te wysiłki miały na celu ochronę i umocnienie jedności i siły imperium.<br><br>Qin Shi Huang jest zapamiętany jako tyran: brutalny, autorytarny i wszechmocny. Jednak może to być nieprawda: słowa te pochodzą od tych, którzy mieli monumentalne zadanie zastąpienia jego dynastii. Tak czy inaczej, Chiny niewątpliwie zostały ukształtowane przez wpływ tego Syna Niebios. Niestety, jako Bohater jest dość trudny we współpracy. On i Lincoln obecnie nie chcą ze sobą rozmawiać!
+P
+BBase.Technologies.Technology_HighMiddleAges_BaldachinCanopies_Name
+Baldachimy
 E
 /Base.Units.Unit_TreasureHunt_Purple_Cannon_NameZmierzchowa Armata
 0
@@ -2602,6 +2645,8 @@ v
 &Base.BuildingGroups.premiumQuarry_NameLuksusowy kamieniołomLuksusowe kamieniołomyLuksusowych kamieniołomów
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescpGłówny gmach to centrum twojego miasta. Nieustannie generuje dla ciebie niewielką ilości monet i żywności.
+J
+3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NamePiechota Fatymidów
 n
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 [
@@ -2694,6 +2739,8 @@ C
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameZłotnik
 ;
 ,Base.TreasureHuntDifficultiesPanel.CompletedUkończono!
+I
+4Base.Abilities.hero_battle_ability.LouisPasteur_NamePomoc alchemiczna
 X
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameMistrzostwo w szkutnictwie
 c
@@ -2807,6 +2854,8 @@ o
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_DescAProdukuje niewielką ilość żywności w krótkim okresie czasu.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>Atak Wręcz| Tarcza</style>Dźga obecny cel zza swojej tarczy, zadając <style=basestat>{dmg_percentage}</style> obrażeń i zyskując <style=basestat>{hp_percentage}</style> swojej bazowej wartości obrażeń jako tarczę.
+J
+0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameOblężenie Fatymidów
 Q
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescOdblokowuje Hastati
 <
@@ -3201,6 +3250,8 @@ N
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 G
 8Base.Buildings.Building_ByzantineEra_Home_Average_3_NameŚredni dom
+`
+EBase.Technologies.Technology_HighMiddleAges_PikeformationTactics_NameTaktyka formowania Pike
 @
 "Base.Heroes.hero.TribalHealer_NameNaya z Klanu Jaskiniowców
 R
@@ -3211,6 +3262,8 @@ Q
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameWykorzystane ruiny
 P
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameKoszary kawalerii
+T
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameDowódca Hohenstaufen
 X
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_DescProdukuje mnóstwo żywności.
 D
@@ -3605,7 +3658,7 @@ _
 ,
 Base.Units.Unit_Leonidas_NameLeonidas I.
 M
-5Base.Abilities.hero_battle_ability.FalconryGlove_NameRękawice sokolnicze
+5Base.Abilities.hero_battle_ability.FalconryGlove_NameRękawica sokolnicza
 #
 Base.HeroClass.DefenderObrońca
 j
@@ -3623,6 +3676,8 @@ J
 Kamieniarz
 ]
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameInnowacja Balistyczna
+S
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NamePiechota Hohenstaufów
 +
 Base.Ages.EarlyRome_Decade750 r. p.n.e.
 E
@@ -3649,6 +3704,9 @@ S
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescOdblokowuje Łuczników
 t
 (Base.BuildingGroups.premiumMerchant_NameHandlarz kosztownościHandlarze kosztownościHandlarzy kosztowności
+N
+@Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_Name
+Arbaliści
 d
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc%Odblokowuje Saraceńskich Łuczników
 K
@@ -3768,6 +3826,8 @@ Attyla Hun
 %
 Base.Units.Unit_Medusa_NameMeduza
 6
+ Base.BuildingGroups.furnace_NamePiecPiecePiecy
+6
 *Base.Wonders.Wonder_Capital_Colosseum_NameKoloseum
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
@@ -3811,8 +3871,8 @@ Y
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameZielona Armata
 S
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescProdukuje księgi
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Wzmocnienie|Krwawienie</style>Zwiększa obrażenia zadawane przez Bohaterów krwawiącym celom o <style=basestat>{damage_increase_per_relic_levell}</style>. Dodatkowo, obrażenia zadane wrogowi mają <style=basestat>{bleed_chance_percentage}</style> szansę na wywołanie krwawienia, zadając <style=basestat>{bleed_percentage_per_relic_level}</style> obrażenia na sekundę przez <style=basestat>{bleed_duration}</style>.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Wzmocnienie | Krwawienie</style>Zwiększa obrażenia zadawane przez Bohaterów krwawiącym celom o <style=basestat>{damage_increase_per_relic_level}</style>. Dodatkowo, obrażenia zadane wrogowi mają <style=basestat>{bleed_chance_percentage}</style> szansy na wywołanie krwawienia, zadając <style=basestat>{bleed_percentage_per_relic_level}</style> obrażeń na sekundę przez <style=basestat>{bleed_duration}</style>.
 ^
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatyczne sterowanie
 @
@@ -3867,6 +3927,8 @@ l
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 5
 Base.Cities.City_Vikings_NameKrólestwo Wikingów
+G
+:Base.Technologies.Technology_HighMiddleAges_Secretary_Name	Sekretarz
 @
 1Base.Buildings.Building_China_Home_Average_6_NameŚredni dom
 K
@@ -4047,6 +4109,8 @@ O
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameKrólewska piechota
 Q
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NamePowstanie Wikingów
+�
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Desc�Produkuje żużel, a piec może być również używany do pozyskiwania większej ilości żużlu poprzez konwertowanie zasobów.
 L
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NameStrzała Wodza Hordy
 /
@@ -4085,6 +4149,8 @@ Q
 8Base.Technologies.Technology_StoneAge_CavePaintings_NameMalowidła jaskiniowe
 O
 9Base.Technologies.Technology_BronzeAge_BuildingTools_NameWiedza o budynkach
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�<style=ability_label>Leczenie | Obrażenia</style>Louis Pasteur rzuca eliksirem w najbardziej ranną sojuszniczą jednostkę, lecząc ją za <style=basestat>{heal_percentage}</style> swoich podstawowych obrażeń. Opary mikstury zmniejszają efekty leczenia otrzymywane przez wszystkie pobliskie jednostki wroga o <style=basestat>{healing_reduction_percentage}</style> na <style=basestat>{duration}</style>.
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DeschMola rybackie wysyłają łodzie, które łowią ryby dla wszystkich głodnych pracowników i marynarzy.
 E
@@ -4149,6 +4215,8 @@ K
 Base.Units.Unit_Medusa_Desc�Odwróć wzrok! Meduza, jedna z trzech Gorgon z greckich mitów, została wysłana jako posłaniec, ale dołączyła do Bohaterów Historii. Posiadająca moc zamieniania w kamień tych, którzy na nią spojrzą, ta wężowowłosa potwora była niegdyś piękną kobietą, dopóki nie została przeklęta przez boginię Atenę za zbezczeszczenie jej świątyni.<br><br>Historia Meduzy to opowieść o transformacji i zemście. W mitach Perseusz, za radą Ateny, pokonał ją za pomocą lustrzanej tarczy i odciął jej głowę, która stała się symbolem bezpieczeństwa dla starożytnych Greków.<br><br>Znamy jednak prawdę: Meduza została w ostatniej chwili teleportowana przez Teslę do epoki kamienia i potraktowana jako ostateczny eksperyment naukowy. Teraz jest wolna i desperacko pragnie zemsty...
 -
 Base.Heroes.hero.Shaolin_NameXueting Fuyu
+A
+7Base.Technologies.Technology_HighMiddleAges_Bodkin_NameBodkin
 n
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 R
@@ -4272,6 +4340,8 @@ J
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameŚredni dom
 L
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_NameGospodarstwo domowe
+O
+<Base.Technologies.Technology_HighMiddleAges_MailBarding_NameZbroja pocztowa
 r
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc6Produkuje monety i dodaje do Twojego miasta pracownika
 U
@@ -4384,6 +4454,8 @@ B
 1Base.Buildings.Building_Egypt_Home_Premium_6_NameLuksusowy dom
 D
 3Base.Buildings.Building_Vikings_Home_Premium_3_NameLuksusowy dom
+W
+CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameTurniej Jousting
 K
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_NameCieśla
 q
@@ -4419,6 +4491,8 @@ U
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_DescProdukuje kaolin
 1
 !Base.Heroes.hero.SiouxShaman_NameSitting Bull
+D
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_NamePiec
 *
 Base.Units.Unit_RamsesII_Name	Ramzes II
 v
@@ -4447,6 +4521,8 @@ R
 =
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Name
 Szermierze
+S
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameOblężenie Hohenstaufów
 x
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc=Produkuje małą ilość żywności w krótkim okresie czasu.
 �
@@ -4455,12 +4531,16 @@ x
 2Base.Technologies.Technology_MinoanEra_Screws_NameŚruby
 1
 Base.Heroes.hero.JoanOfArc_NameJoanna d’Arc
+S
+8Base.Units.Unit_HighMiddleAges_Hohenstaufen_Cavalry_NameKawaleria Hohenstaufów
 �
 (Base.Units.Unit_FlorenceNightingale_Desc�Nie martw się: Dama z Lampą jest po twojej stronie. Florence Nightingale, XIX-wieczna brytyjska pielęgniarka, zasłynęła swoją pracą podczas wojny krymskiej, lecząc umierających żołnierzy. <br><br> Ale największe osiągnięcia Florence Nightingale być może przyszły później. Po udzieleniu pomocy wojskowym pod Scutari i leczeniu chorych z trzech armii, Nightingale doprowadziła do reformy brytyjskiego pielęgniarstwa, promując zmodernizowany system, który kształtuje opiekę do dziś. Pielęgniarki składają przysięgę Nightingale Pledge, będącą echem jej własnej obietnicy pomocy. <br><br> Dziedzictwo Florence Nightingale jest zatem dwojakie: z jednej strony anioł, Dama z Lampą; z drugiej zdeterminowana i błyskotliwie inteligentna kobieta, która na zawsze zmieniła szpitale. Być może ani jedno, ani drugie nie jest do końca prawdą. Przydomek Nightingale pierwotnie brzmiał Dama z Młotkiem, po tym jak włamała się do Zablokowanych zapasów medycznych - być może ten obraz jest prawdziwszy niż jakikolwiek inny!
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�Łucznicy Majów to dodatkowe jednostki dystansowe w twojej armii. Ich parametry rosną automatycznie w oparciu o bieżącą epokę.
 T
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_DescProdukuje szafy
+T
+BBase.Technologies.Technology_HighMiddleAges_GunpowderWeaponry_NameBroń prochowa
 X
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameNiewielki obiekt kultury
 ;
@@ -4489,6 +4569,8 @@ h
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescBProdukuje mnóstwo monet i dodaje do Twojego miasta 2 pracowników
 <
 (Base.Regions.region.EasternValley_7_NamePort Ottomański
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Heal| Revive</style>Florence chroni najbardziej rannych Bohaterów ochronną przysięgą, lecząc ich za <style=basestat>{heal_amount}</style> przez 8 sekund. Następnym razem, gdy jednostka otrzyma śmiertelne obrażenia od tej fali, zamiast tego stanie się niewrażliwa na <style=basestat>{invulnerability_duration}</style> i uleczy dodatkowe <style=basestat>{revive_percentage}</style> swoich maksymalnych Punkty Życia. Priorytetowo traktuje Bohaterów, którzy nie są jeszcze naznaczeni przez Florencję.
 O
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBrązowy Strażnik
 C
@@ -4638,6 +4720,8 @@ s
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_Desc6Produkuje monety i dodaje do twojego miasta pracownika
 .
 Base.Ages.Vikings_NameKrólestwo Wikingów
+L
+<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameUczty gildii
 _
 LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_NameLiceum Uczonych
 F
@@ -4693,6 +4777,8 @@ R
 2Base.Technologies.Technology_RomanEmpire_Cape_NamePeleryna
 K
 3Base.Technologies.Technology_China_SilkMastery_NameMistrzostwo Jedwabiu
+Q
+;Base.Technologies.Technology_HighMiddleAges_Knighthood_NameKawaleria rycerska
 _
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_3_NameKoszary ciężkiej piechoty
 -
@@ -4762,6 +4848,8 @@ O
 B
 4Base.Technologies.Technology_ClassicGreece_Math_Name
 Matematyka
+]
+ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_NameTargi żywego inwentarza
 N
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NameGospodarstwo wiejskie
 q
@@ -4780,6 +4868,8 @@ J
 (Base.BuildingGroups.averageMerchant_NameHandlarz	Handlarzy	Handlarzy
 �
 Base.Units.Unit_RamsesII_Desc�Równiny zadrżą pod kołami rydwanów, gdyż Ramzes Wielki połączył swoją potęgę z twoją. Ten faraon z XIII wieku p.n.e. zasłynął kampaniami przeciwko Hetytom, Nubijczykom i Libijczykom. Bitwa pod Kadesz z Hetytami doprowadziła do zawarcia jednego z pierwszych traktatów pokojowych w historii.<br><br>Oprócz osiągnięć militarnych Ramzes II był płodnym budowniczym, który zlecił budowę wielkich budowli, takich jak świątynie Abu Simbel i Ramesseum, pozostawiając swój ślad na świecie na zawsze.<br><br>Ramzes II jest pamiętany jako największy faraon największego królestwa Egiptu, a jego 66-letnie panowanie ukształtowało dziedzictwo kulturowe i architektoniczne Egiptu. Grecy nazywali go Ozymandiasem, pod którym to imieniem został uwieczniony w poezji. Kiedy widzisz Ramzesa, padasz na kolana!
+W
+>Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameKonstrukcja drewniana
 g
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc3Produkuje kakao i dodaje do twojego miasta kapłana
 T
@@ -4835,6 +4925,8 @@ S
 #Base.Heroes.hero.UlyssesSGrant_NameUlysses S. Grant
 n
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc+Zwiększa zadowolenie sąsiednich budynków
+^
+EBase.Technologies.Technology_HighMiddleAges_SimpleSpinningWheels_NameProste koła obrotowe
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_1_DescDProdukuje duży stos monet i dodaje do twojego miasta 2 pracowników
 H
@@ -4843,6 +4935,8 @@ D
 5Base.Abilities.hero_battle_ability.BessieColeman_NameFlary dymne
 I
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_NameRzemieślnik
+^
+EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NamePodwaliny z piaskowca
 n
 #Base.BuildingGroups.stoneMason_NameZakład KamieniarskiZakłady KamieniarskieZakładów Kamieniarskich
 J
@@ -4991,6 +5085,8 @@ v
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc3Znacznie poprawia zadowolenie sąsiednich budynków
 S
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameWieża oblężnicza
+Y
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameCiężka piechota Hohenstaufów
 H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NamePompa Wodna
 Z
@@ -5075,6 +5171,8 @@ O
 !Base.Heroes.hero.LeifErikson_NameLeif Erikson
 9
 #Base.Regions.region.Panganea_1_NameStarożytne Dzicze
+]
+DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameArchitektura Staufera
 @
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name	Mały dom
 �
@@ -5222,6 +5320,8 @@ H
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 N
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameEkonomia portowa
+I
+1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameDystansowi Fatymidzi
 �
 Base.Units.Unit_KingMinos_Desc�Porozmawiaj z Zeusem i ukryj czerwoną nić: Król Minos jest tutaj! Uważa się, że ten legendarny władca z mitologii greckiej panował w II tysiącleciu p.n.e. i słynął jako władca Krety.<br><br>Ceniony za mądrość i autorytet, jest najbardziej znany ze zlecenia budowy skomplikowanego labiryntu, w którym uwięziono Minotaura, mityczną bestię.<br><br>Panowanie Minosa jest przeplatane fascynującymi opowieściami o intrygach i przygodach, takimi jak historia Dedala i Ikara. Jego trwałe dziedzictwo jako potężnego i tajemniczego króla nadal zachwyca gawędziarzy, splatając ze sobą wątki mitu i starożytnej historii. Nie pozwól, aby zabrał cię na wycieczkę po swoim labiryncie!
 S
@@ -5248,6 +5348,8 @@ F
 4Base.Technologies.Technology_FeudalAge_TarOvens_NamePiece smołowe
 T
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescProdukuje filary
+K
+:Base.Technologies.Technology_HighMiddleAges_Catapults_NameDuży Balista
 B
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NamePiechota
 M
@@ -5877,6 +5979,8 @@ o
 *Base.Units.Unit_StoneAge_Player_Siege_DesczJednostki oblężnicze atakują powoli i są podatne na ataki wroga, ale oddziałują na duży obszar w szerokim zasięgu.
 ?
 3Base.Technologies.Technology_IberianEra_Botany_NameBotanika
+Q
+@Base.Technologies.Technology_HighMiddleAges_SaltglazeTiling_NamePłytki solne
 v
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Desc<Produkuje dużą ilość żywności w długim okresie czasu.
 H
@@ -5978,6 +6082,8 @@ r
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc=Produkuje małą ilość żywności w krótkim okresie czasu.
 ^
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameKoszary ciężkiej piechoty
+S
+@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameStopnie naukowe
 �
 Base.HeroClass.Healer_Desc�Uzdrowiciele leczą swoich sojuszników. Są <color=#3DA229>doskonali w każdym trybie,</color> ale <color=#CD2A25>polegają na innych w zadawaniu obrażeń</color>.
 -
@@ -6032,6 +6138,8 @@ i
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc6Produkuje debeny i dodaje do twojego miasta pracownika
 p
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc+Zwiększa zadowolenie sąsiednich budynków
+Y
+ABase.Technologies.Technology_HighMiddleAges_CompoundArbalest_NameZwiązek Arbalistów
 B
 1Base.Buildings.Building_China_Home_Premium_5_NameLuksusowy dom
 H
@@ -6095,6 +6203,8 @@ m
 &Base.Units.Unit_AlexanderTheGreat_Desc�Oto Aleksander Wielki, niepokonany, triumfujący, najlepszy generał, jakiego znał świat! Ten król z IV wieku p.n.e. słynie z podbijania ogromnych połaci świata przed swoją przedwczesną śmiercią.<br><br>Aleksander objął tron w wieku 20 lat, po zabójstwie swojego ojca. Szybko udowodnił swoją determinację: podbił Traków i zniszczył słynne miasto-państwo Teb. To przywróciło pokój w Grecji, a Aleksander poprowadził Ligę Koryncką na podbój Persji Achemenidów. To słynne imperium upadło przed nim, ale Aleksander nie skończył: przed jego armiami uklękła Syria, Babilon, a nawet Pakistan.<br><br>Aleksander nigdy nie przegrał bitwy. W końcu jego własna armia zażądała powrotu do swoich domów. W Babilonie, w drodze do domu (choć w drodze powrotnej dokonał kilku podbojów), Aleksander wydał ostatnie tchnienie.<br><br>Wśród bohaterów historii Aleksander jest nieco kontrowersyjny. Bardzo lubi pić z Achillesem, dostawać lekcje od Cyrusa i pokazywać się swojemu ojcu!
 I
 .Base.Abilities.hero_battle_ability.Medusa_NameSkamieniałe Spojrzenie
+W
+ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameSilniki Springalda
 U
 5Base.Buildings.Building_China_RiceFarm_Premium_6_DescStawia ogromne ilości ryżu
 _

@@ -52,6 +52,8 @@ V
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameAfstandstroepenkazerne
 ¢
 :Base.Buildings.Building_Vikings_FishingPier_Average_2_DescdVissteigers sturen boten uit om vis te vangen om al je hongerige arbeiders en zeelui te bevoorraden.
+`
+GBase.Technologies.Technology_HighMiddleAges_GambersonReinforcement_NameGamberson Versterking
 q
 0Base.Units.Unit_ClassicGreece_Player_Psiloi_Desc=Infanterie-eenheden zijn het effectiefst in de voorste rijen.
 K
@@ -333,6 +335,8 @@ J
 2Base.Buildings.Building_StoneAge_Farm_Rural_2_NameLandelijke boerderij
 L
 7Base.Abilities.hero_battle_ability.OttoVonBismarck_NameIJzeren Kanselier
+T
+;Base.Abilities.hero_battle_ability.FlorenceNightingale_NameEed van de nachtegaal
 _
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
 I
@@ -437,8 +441,6 @@ M
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NameLandelijke boerderij
 `
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerovingische Infanterie
-K
-6Base.Technologies.Technology_HighMiddleAges_Start_NameHoge Middeleeuwen
 4
 &Base.Units.Unit_AztecTlacateccatl_Name
 Cuauhtemoc
@@ -619,6 +621,9 @@ D
 3Base.Technologies.Technology_Egypt_Hieroglyphs_NameHi√´rogliefen
 Z
 'Base.BuildingGroups.rangedBarracks_NameAfstandstroepenkazerneAfstandstroepenkazernes
+H
+:Base.Technologies.Technology_HighMiddleAges_GreatHelm_Name
+Grote Helm
 *
 Base.HeroClass.GreatLeaderGrote Leider
 9
@@ -628,6 +633,8 @@ I
 Avicultuur
 O
 6Base.Units.Unit_TreasureHunt_Yellow_DonkeyRaiders_NameStralende Ezel Rovers
+M
+@Base.Technologies.Technology_HighMiddleAges_QualityProducts_Name	Kwaliteit
 G
 .Base.Abilities.hero_battle_ability.SunTzu_NameKunst van Verdediging
 @
@@ -656,6 +663,8 @@ M
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameAchaemenidisch Edict
 <
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
+N
+0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameFatimiden Zware Infanterie
 w
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc3Verbetert de tevredenheid van aangrenzende gebouwen
 R
@@ -772,10 +781,14 @@ MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name¯
 Base.Units.Unit_Plato_Desc≈Even weg van het gekibbel op de Piraeus, het is Plato! Deze Griekse filosoof uit de 4e eeuw voor Christus was een leerling van Socrates en een leraar van Aristoteles. Hij stichtte de Academie in Athene en schreef 'De Republiek', waarmee hij het westerse denken voor altijd vorm gaf.<br><br>Plato's leer inspireerde niet alleen tot nadenken, maar ook tot fantaseren: Plato introduceerde het verhaal van Atlantis, een legendarische gezonken beschaving, in zijn werk 'Timaeus'.<br><br>Zijn filosofische idee√´n, zoals de Vormentheorie, hebben het Westen zo gevormd dat een beroemde filosoof de Europese traditie ooit beschreef als 'een reeks voetnoten bij Plato'. Minder bekend is het feit dat Plato waarschijnlijk met elke krijger uit de Helden van de Geschiedenis zou kunnen vechten: hij was zo groot dat zijn naam zelfs 'breed' betekent!
 S
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_NameCavaleriekazerne
+C
+9Base.Technologies.Technology_HighMiddleAges_Cinnamon_NameKaneel
 J
 (Base.BuildingGroups.premiumGoldMine_NameLuxe goudmijnLuxe goudmijnen
 F
 6Base.Technologies.Technology_MinoanEra_LinenShirt_NameLinnen Shirt
+E
+9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimoire
 L
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameBoogschutters uit Vikingen
 Q
@@ -905,6 +918,8 @@ U
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameIrrigatiestation
 Í
 #Base.Units.Unit_EgyptianVizier_Desc¬Word een God met Imhotep, degene die in vrede komt! Deze adviseur en architect uit de 27e eeuw voor Christus hield toezicht op de bouw van de trappiramide in Saqqara, een van de vroegste piramides uit de geschiedenis.<br><br>Tijdens zijn leven was Imhotep een mysterie, een priester van Ra over wie weinig bekend is. In de jaren daarna groeide zijn roem, tot hij vergoddelijkt werd: aanbeden als god van de geneeskunde en broer van de god Thoth.<br><br>Zo werd Imhotep jarenlang herinnerd. Zelfs de Grieken zouden hem aanbidden en in de Romeinse tijd werd hem het einde van overstromingen toegedicht. Ironisch genoeg lijkt het erop dat hij zich tijdens zijn leven nooit met geneeskunde heeft beziggehouden!
+O
+=Base.Technologies.Technology_HighMiddleAges_HeraldryPost_NameHeraldiek Post
 Å
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name∑<style=ability_label>Afstandaanval</style>Gooi een kunai naar de vijand met de laagste huidige HP, wat <style=basestat>{dmg_percentage}</style> schade veroorzaakt. Prioriteert helden.
 K
@@ -965,6 +980,8 @@ X
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_DescMaakt porselein van klei
 .
 Base.Heroes.hero.LouisXIV_NameLodewijk XIV
+M
+<Base.Technologies.Technology_HighMiddleAges_Infantrymen_NameInfanteristen
 {
 1Base.Buildings.Building_Egypt_Home_Average_3_DescFProduceert een grote stapel deben en voegt 2 arbeiders aan je stad toe
 :
@@ -1003,6 +1020,8 @@ C
 Caballarii
 Ö
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescNProduceert een ton pennies en voegt 2 arbeiders en 2 matrozen toe aan je stad.
+X
+CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameDrie veldrotaties
 A
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_NameGoudmijn
 K
@@ -1130,6 +1149,8 @@ Robin Hood
 
 G
 7Base.Technologies.Technology_ByzantineEra_Divining_NameWaarzeggerij
+T
+?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameRidderlijke codes
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
 C
@@ -1140,6 +1161,8 @@ M
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_NameLuxe papyrusveld
 â
 IBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_9_Nameª<style=ability_label>Uitdagen| Schild| Buff</style>Slaat op zijn borst, daagt alle vijanden uit voor <style=basestat>{taunt_duration}</style>, krijgt <style=basestat>{shield_percentage}</style> van VER als schild, en verhoogt VER met <style=basestat>{def_percentage}</style> voor <style=basestat>{duration}</style>.
+A
+7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGilden
 R
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameNubische Krijgers
 _
@@ -1215,6 +1238,8 @@ C
 /Base.Units.Unit_IberianEra_Vikings_Cavalry_NameViking Cavalerie
 -
 Base.BuildingTypes.MarketplaceMarktplaats
+]
+CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_NameHandvest van Vrijheden
 F
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_NameSchermutsers
 Q
@@ -1363,14 +1388,16 @@ u
 1Base.Buildings.Building_China_Home_Premium_3_Desc@Produceert heel veel wu zhu en voegt 3 arbeiders aan je stad toe
 B
 3Base.Technologies.Technology_China_PaddyFields_NameRijstvelden
+H
+2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameFatimide Cavalerie
 *
 Base.Units.Unit_Menes_NameKoning Menes
 P
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_NameLandelijke boerderij
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc$Verwerkt mottencocons tot zijdedraad
-ú
-NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name…<style=ability_label>Buff</style>Telkens wanneer de houder een critical hit landt, wordt zijn critical strike-kans verhoogd met <style=basestat>{crit_buff}</style> voor <style=basestat>{duur}</style>. 
+¿
+NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_NameÌ<style=ability_label>Buff</style>Telkens wanneer de houder een critical hit landt, wordt zijn critical strike-kans verhoogd met <style=basestat>{crit_buff}</style> voor <style=basestat>{duur}</style>. Dit effect stapelt zichzelf niet op.
 v
 2Base.Buildings.Building_Arabia_Home_Premium_1_Desc@Produceert heel veel dirham en voegt 3 arbeiders toe aan je stad
 }
@@ -1383,6 +1410,8 @@ C
 7Base.Technologies.Technology_ByzantineEra_Xocolatl_NameXocolatl
 Q
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_DescProduceert veel voedsel.
+C
+8Base.Technologies.Technology_HighMiddleAges_Billmen_NameBillmen
 V
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_DescProduceert peper
 n
@@ -1391,6 +1420,8 @@ V
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NameNauwgezette kroniek
 {
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescAProduceert heel veel munten en voegt 2 arbeiders toe aan je stad.
+O
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenstaufen Afstand
 =
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameZout
 ˆ
@@ -1509,6 +1540,8 @@ I
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameOpkomst van Egypte
 E
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameUnie Herstel
+E
+9Base.Technologies.Technology_HighMiddleAges_Clearing_NameOpruimen
 [
 DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameSpecerijenhandelaar
 :
@@ -2314,6 +2347,8 @@ J
 Kleermaker
 o
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
+Q
+?Base.Technologies.Technology_HighMiddleAges_WinterStabling_NameWinterstalling
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBelegeringskazernes
 Q
@@ -2338,6 +2373,8 @@ r
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name◊<style=ability_label>Gedachtenbeheersing| Versterking</style>Ontketent haar literaire genialiteit, waardoor een vijandelijke eenheid hun bondgenoten aanvalt voor <style=basestat>{duration}</style>. Terwijl de eenheid onder Jane's controle staat, wordt hun ATK verhoogd met <style=basestat>{atk_percentage}</style>. Geeft prioriteit aan helden.
 û
 -Base.Units.Unit_EarlyRome_Player_Velites_DescmAfstandseenheden schieten projectielen over grote afstand en zijn vooral effectief tegen infanterie-eenheden.
+T
+<Base.Technologies.Technology_HighMiddleAges_Precautions_NameVoorzorgsmaatregelen
 O
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_NameKleine boerderij
 I
@@ -2350,6 +2387,8 @@ O
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameThralls en jarls
 <
 )Base.Regions.region.VolcanicJungle_3_NameEngelse Kolonie
+N
+5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameFatimide Bevelhebbers
 n
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc)Verbetert Geluk van aangrenzende gebouwen
 =
@@ -2528,6 +2567,8 @@ L
 Grote zaal
 )
 Base.Units.Unit_Hercules_NameHercules
+M
+:Base.Technologies.Technology_HighMiddleAges_CropSheds_NameLandbouwloodsen
 £
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_DescmAfstandseenheden schieten projectielen over grote afstand en zijn vooral effectief tegen infanterie-eenheden.
 @
@@ -2549,6 +2590,8 @@ S
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameHeldenacademie
 ·
  Base.Units.Unit_QinShiHuang_DescºZoals opgedragen door de hemel en geschreven in duizend monumenten, is het Keizer Qin Shi Huang, de eerste keizer van China! In de 3e eeuw voor Christus eiste deze voormalige koning de troon op van een verenigd China. Te midden van de geur van brandend papier en het slijpen van messen veroverde Keizer Qin Shi Huang heel China en begon hij aan een nalatenschap die nooit vergeten zou worden.<br><br>Onder zijn heerschappij werden enorme bouwprojecten uitgevoerd, waaronder de Chinese Muur en het Terracottaleger, dat zijn mausoleum ter grootte van een stad bewaakt. Deze inspanningen waren bedoeld om de eenheid en kracht van het rijk te beschermen en te verstevigen.<br><br>Keizer Qin Shi Huang wordt herinnerd als een tiran: wreed, autoritair en almachtig. Toch kan dit onjuist zijn: deze woorden komen van degenen die de monumentale taak hadden om zijn dynastie te vervangen. Hoe dan ook, China is ongetwijfeld gevormd door de invloed van deze Zoon van de Hemel. Helaas is hij als Held nogal moeilijk om mee samen te werken. Hij en Lincoln weigeren momenteel met elkaar te praten!
+W
+BBase.Technologies.Technology_HighMiddleAges_BaldachinCanopies_NameBaldachin Luifels
 ?
 /Base.Units.Unit_TreasureHunt_Purple_Cannon_NameSchemerkanon
 0
@@ -2628,6 +2671,8 @@ C
 &Base.BuildingGroups.premiumQuarry_NameLuxe groeveLuxe groeves
 æ
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescÅDe grote zaal is het middelpunt van je stad. Hier wordt voortdurend een kleine hoeveelheid munten en voedsel voor je gegenereerd.
+K
+3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NameFatimiden Infanterie
 v
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc3Verbetert de tevredenheid van aangrenzende gebouwen
 Z
@@ -2721,6 +2766,8 @@ C
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameEdelsmid
 9
 ,Base.TreasureHuntDifficultiesPanel.Completed	Voltooid!
+K
+4Base.Abilities.hero_battle_ability.LouisPasteur_NameAlchemistische hulp
 Q
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameFaeringmeesterschap
 ]
@@ -2835,6 +2882,8 @@ u
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 Ã
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name˘<style=ability_label>Nahaanval| Schild</style>Steekt het huidige doelwit van achter zijn schild, toebrengend <style=basestat>{dmg_percentage}</style> schade en verkrijgend <style=basestat>{hp_percentage}</style> van zijn basis schade als een schild.
+P
+0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameFatimiden Belegeringseenheid
 Q
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescOntgrendelt Hastati
 C
@@ -3234,6 +3283,8 @@ A
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 L
 8Base.Buildings.Building_ByzantineEra_Home_Average_3_NameMiddelgroot huis
+_
+EBase.Technologies.Technology_HighMiddleAges_PikeformationTactics_NamePikeformatie Tactieken
 ;
 "Base.Heroes.hero.TribalHealer_NameNaya van de Grot Clan
 Q
@@ -3244,6 +3295,8 @@ S
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameHergebruikte ru√Ønes
 O
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameCavaleriekazerne
+_
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_Name Bevelhebbers van de Hohenstaufen
 W
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_DescProduceert heel veel voedsel.
 E
@@ -3661,6 +3714,8 @@ K
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_NameSteenhouwer
 ^
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameBallistische Innovatie
+T
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameHohenstaufen Infanterie
 (
 Base.Ages.EarlyRome_Decade
 750 v.Chr.
@@ -3689,6 +3744,9 @@ U
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescOntgrendelt Boogschutters
 K
 (Base.BuildingGroups.premiumMerchant_NameLuxe handelaarLuxe handelaren
+N
+@Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_Name
+Arbalisten
 c
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc$Ontgrendelt Saraceense Boogschutters
 M
@@ -3807,6 +3865,8 @@ W
 !Base.Units.Unit_AttilaTheHun_NameAttila de Hun
 %
 Base.Units.Unit_Medusa_NameMedusa
+/
+ Base.BuildingGroups.furnace_NameOvenOvens
 7
 *Base.Wonders.Wonder_Capital_Colosseum_Name	Colosseum
 0
@@ -3851,8 +3911,8 @@ A
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameWeelderig Kanon
 S
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescProduceert boeken
-ñ
-IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name»<style=ability_label>Buff| Bleed</style>Verhoogt de schade van de Helden tegen bloedende doelwitten met <style=basestat>{damage_increase_per_relic_level}</style>. Daarnaast heeft het beschadigen van een vijand een <style=basestat>{bleed_chance_percentage}</style> kans om een bloeding toe te brengen, waarbij <style=basestat>{bleed_percentage_per_relic_level}</style> schade per seconde wordt toegebracht gedurende <style=basestat>{bleed_duration}</style>.
+ì
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name≈<style=ability_label>Buff | Bleed</style>Verhoogt de schade van de Helden tegen bloedende doelen met <style=basestat>{damage_increase_per_relic_level}</style>. Daarnaast heeft het beschadigen van een vijand een <style=basestat>{bleed_chance_percentage}</style> kans om een bloeding toe te brengen, waarbij <style=basestat>{bleed_percentage_per_relic_level}</style> schade per seconde wordt toegebracht gedurende <style=basestat>{bleed_duration}</style>.
 ^
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatische regelingen
 G
@@ -3909,6 +3969,9 @@ s
 +
 Base.Cities.City_Vikings_Name
 Vikingrijk
+H
+:Base.Technologies.Technology_HighMiddleAges_Secretary_Name
+Secretaris
 G
 1Base.Buildings.Building_China_Home_Average_6_NameMiddelgrote woning
 J
@@ -4091,6 +4154,8 @@ I
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia regis
 U
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameOpkomst van de Vikingen
+±
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_DescqProduceert Cinder en de oven kan ook worden gebruikt om meer Cinder te verkrijgen door Grondstoffen om te zetten.
 P
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NamePijl van de Horde Leider
 /
@@ -4131,6 +4196,8 @@ M
 8Base.Technologies.Technology_StoneAge_CavePaintings_NameGrotschilderingen
 K
 9Base.Technologies.Technology_BronzeAge_BuildingTools_NameGebouwenkennis
+Î
+LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Nameö<style=ability_label>Heal | Debuff</style>Louis Pasteur gooit een drankje naar de meest gewonde geallieerde eenheid en geneest ze voor <style=basestat>{heal_percentage}</style> van zijn Basis Schade. De dampen van het drankje verminderen de helende effecten die alle nabije vijandelijke eenheden ontvangen met <style=basestat>{healing_reduction_percentage}</style> gedurende <style=basestat>{duration}</style>.
 ¢
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DescdVissteigers sturen boten uit om vis te vangen om al je hongerige arbeiders en zeelui te bevoorraden.
 H
@@ -4194,6 +4261,8 @@ H
 Base.Units.Unit_Medusa_Desc∂Kijk de andere kant op! Medusa, een van de drie Gorgons uit de Griekse mythen, werd gestuurd als boodschapper maar sloot zich aan bij de Helden van de Geschiedenis. Met de kracht om iedereen die naar haar kijkt in steen te veranderen, was dit slangenharige monster ooit een mooie vrouw, totdat ze werd vervloekt door de godin Athena omdat ze haar tempel had ontheiligd.<br><br>Het verhaal van Medusa is er een van transformatie en wraak. In de mythen versloeg Perseus, op advies van Athena, haar met een spiegelend schild en hakte haar hoofd af, dat een symbool van veiligheid werd voor de Oude Grieken.<br><br>Maar wij kennen de waarheid: Medusa werd op het laatste moment door Tesla naar de Steentijd geteleporteerd en behandeld als het ultieme wetenschappelijke experiment. Nu ze vrij is, wil ze wanhopig wraak nemen...
 -
 Base.Heroes.hero.Shaolin_NameXueting Fuyu
+A
+7Base.Technologies.Technology_HighMiddleAges_Bodkin_NameBodkin
 u
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 N
@@ -4323,6 +4392,8 @@ E
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameMiddelgroot huis
 I
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_NameKleine boerderij
+N
+<Base.Technologies.Technology_HighMiddleAges_MailBarding_NameMail afdekking
 s
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc7Produceert munten en voegt een arbeider toe aan je stad
 R
@@ -4435,6 +4506,8 @@ Metselwerk
 1Base.Buildings.Building_Egypt_Home_Premium_6_NameLuxe woning
 B
 3Base.Buildings.Building_Vikings_Home_Premium_3_NameLuxe woning
+Y
+CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameToernooi steekspel
 M
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	Timmerman
 w
@@ -4469,6 +4542,8 @@ W
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_DescProduceert kaolien
 1
 !Base.Heroes.hero.SiouxShaman_NameSitting Bull
+D
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_NameOven
 *
 Base.Units.Unit_RamsesII_Name	Ramses II
 s
@@ -4496,6 +4571,8 @@ M
 5Base.Technologies.Technology_Vikings_MeadMastery_NameMeesterschap in Mede
 A
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_NameZwaardvechters
+Y
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameBelegeringseenheid Hohenstaufen
 s
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 Ò
@@ -4504,12 +4581,16 @@ s
 2Base.Technologies.Technology_MinoanEra_Screws_Name	Schroeven
 /
 Base.Heroes.hero.JoanOfArc_NameJeanne d'Arc
+R
+8Base.Units.Unit_HighMiddleAges_Hohenstaufen_Cavalry_NameHohenstaufen Cavalerie
 È
 (Base.Units.Unit_FlorenceNightingale_DescºMaak je geen zorgen: The Lady with the Lamp staat aan je zijde. Florence Nightingale, een 19e-eeuwse Britse verpleegster, is beroemd vanwege haar werk in de Krimoorlog, waar ze stervende soldaten genas. <br><br> Maar Florence Nightingale's grootste prestaties komen misschien wel later. Nadat ze het leger in Scutari had bijgestaan en de zieken van drie legers had behandeld, leidde Nightingale de hervorming van de Britse verpleging en bevorderde ze een gemoderniseerd systeem dat de zorg tot op de dag van vandaag vorm heeft gegeven. Verpleegkundigen zweren de Nightingale Pledge, een echo van haar eigen belofte om te helpen. <br><br> De nalatenschap van Florence Nightingale is dus tweeledig: aan de ene kant een engel, de Lady with the Lamp; aan de andere kant een vastberaden en briljant intelligente vrouw die ziekenhuizen voor altijd veranderde. Misschien is geen van beide helemaal waar. De bijnaam van Nightingale was oorspronkelijk de Dame met de Hamer, nadat ze had ingebroken in een vergrendelde medische voorraad - misschien is dit beeld wel het meest waarheidsgetrouwe!
 ø
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_DescÑMaya-boogschutters zijn extra afstandseenheden voor je leger. Hun statistieken schalen automatisch op basis van je huidige tijdperk.
 ]
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_DescProduceert kledingkasten
+T
+BBase.Technologies.Technology_HighMiddleAges_GunpowderWeaponry_NameBuskruitwapens
 Z
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameCompacte culturele locatie
 ;
@@ -4538,6 +4619,8 @@ l
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_Desc@Produceert heel veel munten en voegt 2 arbeiders toe aan je stad
 <
 (Base.Regions.region.EasternValley_7_NameOttomaanse Haven
+ÿ
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_NameÄ<style=ability_label>Heal| Revive</style>Florence beschermt de meest gewonde Helden met een beschermende eed en heelt ze voor <style=basestat>{heal_amount}</style> gedurende 8 seconden. De volgende keer dat de eenheid dodelijke schade oploopt door deze golf, worden ze in plaats daarvan onkwetsbaar voor <style=basestat>{invulnerability_duration}</style> en genezen ze nog eens <style=basestat>{revive_percentage}</style> van hun maximale HP. Geeft voorrang aan Helden die nog niet gemarkeerd zijn door Florence.
 J
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBronzen Wacht
 C
@@ -4689,6 +4772,8 @@ t
 $
 Base.Ages.Vikings_Name
 Vikingrijk
+L
+<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameGildefeesten
 d
 LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_NameLyceum der Geleerden
 H
@@ -4743,6 +4828,8 @@ V
 2Base.Technologies.Technology_RomanEmpire_Cape_NameMantel
 H
 3Base.Technologies.Technology_China_SilkMastery_NameZijdemeesterschap
+T
+;Base.Technologies.Technology_HighMiddleAges_Knighthood_NameRidderlijke Cavalerie
 \
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_3_NameZware infanterie kazerne
 .
@@ -4814,6 +4901,8 @@ L
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_NamePapyrusatelier
 @
 4Base.Technologies.Technology_ClassicGreece_Math_NameWiskunde
+P
+ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_NameVeehouderij
 M
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NameLandelijke boerderij
 r
@@ -4833,6 +4922,8 @@ A
 Handelaren
 †
 Base.Units.Unit_RamsesII_Desc˛De vlaktes zullen beven onder de wielen van de strijdwagens, want Ramses de Grote heeft zijn macht bij die van jou gevoegd. Deze farao uit de 13e eeuw voor Christus wordt beroemd vanwege zijn campagnes tegen de Hettieten, Nubi√´rs en Libi√´rs. De Gevecht van Kadesh tegen de Hettieten resulteerde in een van de eerste vredesverdragen uit de geschiedenis.<br><br>Naast zijn militaire prestaties was Ramses II een productieve bouwer die de opdracht gaf voor grootse bouwwerken zoals de tempels van Aboe Simbel en het Ramesseum, waarmee hij voor altijd zijn stempel op de wereld drukte.<br><br>Ramses II wordt herinnerd als de grootste farao van het grootste koninkrijk Egypte. Zijn 66-jarige heerschappij gaf vorm aan het culturele en architectonische erfgoed van Egypte. De Grieken noemden hem Ozymandias, onder welke naam hij in po√´zie werd vereeuwigd. Als je Ramses ziet, ga je op je knie√´n!
+P
+>Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameHoutskeletbouw
 j
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc6Produceert cacao en voegt een priester toe aan je stad
 O
@@ -4888,6 +4979,8 @@ F
 #Base.Heroes.hero.UlyssesSGrant_NameUlysses S. Grant
 u
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
+d
+EBase.Technologies.Technology_HighMiddleAges_SimpleSpinningWheels_NameEenvoudige draaiende wielen
 Ñ
 9Base.Buildings.Building_ClassicGreece_Home_Average_1_DescGProduceert een grote stapel munten en voegt 2 arbeiders aan je stad toe
 D
@@ -4897,6 +4990,8 @@ D
 5Base.Abilities.hero_battle_ability.BessieColeman_NameRookfakkels
 H
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_NameAmbachtsman
+b
+EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameFundamenten van zandsteen
 @
 #Base.BuildingGroups.stoneMason_NameSteenhouwerSteenhouwers
 L
@@ -5046,6 +5141,8 @@ m
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc>Verhoogt de tevredenheid van aangrenzende gebouwen aanzienlijk
 P
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameBelegeringstoren
+W
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameHohenstaufen Zware Infanterie
 F
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Name	Waterpomp
 ^
@@ -5130,6 +5227,8 @@ M
 !Base.Heroes.hero.LeifErikson_NameLeif Erikson
 8
 #Base.Regions.region.Panganea_1_NameOeroude Wildernis
+\
+DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameStaufer Architectuur
 D
 3Base.Buildings.Building_MinoanEra_Home_Small_3_NameKleine woning
 Ô
@@ -5280,6 +5379,8 @@ M
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 L
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameHaven Economie
+F
+1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameFatimiden Afstand
 ñ
 Base.Units.Unit_KingMinos_DescÛChat met Zeus en verberg de rode draad: Koning Minos is hier! Deze legendarische heerser uit de Griekse mythologie regeerde waarschijnlijk in het 2e millennium voor Christus en werd beroemd als heerser van Kreta.<br><br>Hij werd gevierd om zijn wijsheid en autoriteit en is vooral bekend omdat hij opdracht gaf tot de bouw van een complex labyrint om de Minotaurus, een mythisch beest, gevangen te houden.<br><br>De heerschappij van Koning Minos is verweven met boeiende verhalen over intriges en avontuur, zoals het verhaal van Daedalus en Icarus. Zijn blijvende nalatenschap als geduchte en mysterieuze koning blijft verhalenvertellers betoveren en weeft draden van mythe en oude geschiedenis. Laat je niet meenemen op een rondleiding door zijn doolhof!
 R
@@ -5307,6 +5408,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Teerovens
 V
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescProduceert pilaren
+N
+:Base.Technologies.Technology_HighMiddleAges_Catapults_NameGrote Ballista's
 G
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameInfanteristen
 L
@@ -5945,6 +6048,8 @@ p
 A
 3Base.Technologies.Technology_IberianEra_Botany_Name
 Plantkunde
+Y
+@Base.Technologies.Technology_HighMiddleAges_SaltglazeTiling_NameZoutglazuur Tegelwerk
 z
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Desc@Produceert gedurende langere tijd een grote hoeveelheid voedsel.
 A
@@ -6045,6 +6150,8 @@ m
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 [
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameZware Infanterie Kazerne
+V
+@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameAcademische graden
 ∫
 Base.HeroClass.Healer_DescõHelers helen hun bondgenoten. Ze <color=#3DA229>blinken uit in elke modus</color> maar <color=#CD2A25>vertrouwen op anderen om schade uit te delen</color>.
 *
@@ -6099,6 +6206,8 @@ i
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc6Produceert deben en voegt een arbeider aan je stad toe
 x
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc3Verbetert de tevredenheid van aangrenzende gebouwen
+[
+ABase.Technologies.Technology_HighMiddleAges_CompoundArbalest_NameSamenstelling Arbalest
 @
 1Base.Buildings.Building_China_Home_Premium_5_NameLuxe woning
 D
@@ -6164,6 +6273,8 @@ D
 &Base.Units.Unit_AlexanderTheGreat_DescµAanschouw Alexander de Grote, ongeslagen, triomfantelijk, de beste generaal die de wereld ooit gekend heeft! Deze koning uit de 4e eeuw voor Christus is beroemd omdat hij voor zijn vroege dood grote delen van de wereld veroverde.<br><br>Alexander kwam op 20-jarige leeftijd op de troon na de moord op zijn vader. Hij bewees al snel zijn daadkracht: hij veroverde de Thraci√´rs en vernietigde de beroemde stadstaat Thebe. Dit bracht weer vrede in Griekenland en Alexander leidde de Liga van Korinthe om Achaemenidisch Perzi√´ te veroveren. Dit beroemde rijk viel voor hem, maar Alexander was nog niet klaar: voor zijn legers knielden Syri√´, Babylon, Iran en zelfs Pakistan.<br><br>Alexander verloor nooit een veldslag. Uiteindelijk eiste zijn eigen leger een terugkeer naar hun huizen. In Babylon, op weg naar huis (hoewel hij op de terugweg nog wel wat veroverde), blies Alexander zijn laatste adem uit.<br><br>Binnen de Helden van de Geschiedenis is Alexander een beetje controversieel. Hij drinkt graag met Achilles, krijgt graag les van Cyrus en laat graag zijn vader zien!
 A
 .Base.Abilities.hero_battle_ability.Medusa_NameVersteende Blik
+V
+ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameSpringald motoren
 N
 5Base.Buildings.Building_China_RiceFarm_Premium_6_DescProduceert veel rijst
 \

@@ -51,6 +51,8 @@ T
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_2_DescoAngelstege schicken Boote los, um Fische zu fangen und all deine hungrigen Arbeiter und Seefahrer zu versorgen.
+`
+GBase.Technologies.Technology_HighMiddleAges_GambersonReinforcement_NameGambeson-Verstärkung
 w
 0Base.Units.Unit_ClassicGreece_Player_Psiloi_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 M
@@ -329,6 +331,8 @@ U
 2Base.Buildings.Building_StoneAge_Farm_Rural_2_NamePlantage
 K
 7Base.Abilities.hero_battle_ability.OttoVonBismarck_NameEiserner Kanzler
+Q
+;Base.Abilities.hero_battle_ability.FlorenceNightingale_NameEid der Nachtigall
 X
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameMittlere Kulturstätte
 N
@@ -431,8 +435,6 @@ A
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NamePlantage
 `
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerowingische Infanterie
-I
-6Base.Technologies.Technology_HighMiddleAges_Start_NameHochmittelalter
 5
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtemoc 
 �
@@ -608,6 +610,8 @@ C
 3Base.Technologies.Technology_Egypt_Hieroglyphs_NameHieroglyphen
 V
 'Base.BuildingGroups.rangedBarracks_NameFernkämpfer-KaserneFernkämpfer-Kasernen
+F
+:Base.Technologies.Technology_HighMiddleAges_GreatHelm_NameTopfhelm
 /
 Base.HeroClass.GreatLeaderGroßer Anführer
 :
@@ -617,6 +621,8 @@ I
 Vogelzucht
 Q
 6Base.Units.Unit_TreasureHunt_Yellow_DonkeyRaiders_NameStrahlende Esel-Räuber
+V
+@Base.Technologies.Technology_HighMiddleAges_QualityProducts_NameQualitätsprodukte
 H
 .Base.Abilities.hero_battle_ability.SunTzu_NameKunst der Verteidigung
 E
@@ -645,6 +651,8 @@ K
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameAchämeniden-Edikt
 <
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
+S
+0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameFatimidische Schwere Infanterie
 y
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 T
@@ -759,11 +767,15 @@ MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�
 Base.Units.Unit_Plato_Desc�Hier ist Platon, der eine Pause braucht vom Streit auf der Piräus! Dieser bahnbrechende griechische Philosoph aus dem 4. Jahrhundert v. Chr. war ein Schüler von Sokrates und ein Lehrer von Aristoteles. Er gründete die Akademie in Athen und schrieb "Die Republik", die das westliche Denken für immer prägte.<br><br>Platons Lehren regten nicht nur das Denken, sondern auch die Fantasie an: In seinem Werk "Timaios" stellte Platon die Geschichte von Atlantis, einer legendären versunkenen Zivilisation, vor.<br><br>Seine philosophischen Ideen, wie die Formenlehre, haben den Westen so sehr geprägt, dass ein berühmter Philosoph die europäische Tradition einmal als "eine Reihe von Fußnoten zu Platon" bezeichnete. Weniger bekannt ist die Tatsache, dass Platon es wahrscheinlich mit jedem Krieger der Heroes of History aufnehmen könnte: Er war so groß, dass sein Name sogar "breit" bedeutet!
 U
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_NameKavallerie-Kaserne
+A
+9Base.Technologies.Technology_HighMiddleAges_Cinnamon_NameZimt
 U
 (Base.BuildingGroups.premiumGoldMine_NameLuxuriöse GoldmineLuxuriöse Goldminen
 D
 6Base.Technologies.Technology_MinoanEra_LinenShirt_Name
 Leinenhemd
+E
+9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimoire
 I
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameWikinger Bogenschützen
 T
@@ -892,6 +904,8 @@ X
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameBewässerungsanlage
 �
 #Base.Units.Unit_EgyptianVizier_Desc�Werde ein Gott mit Imhotep, dem, der in Frieden kommt! Dieser Berater und Baumeister aus dem 27. Jahrhundert v. Chr. überwachte den Bau der Stufenpyramide in Saqqara, eine der frühesten Pyramiden der Geschichte.<br><br>Zu Lebzeiten war Imhotep ein Mysterium, ein Priester des Ra, über den nur wenig bekannt ist. In den Jahren danach wuchs sein Ruhm, bis er vergöttert wurde: Er wurde als Gott der Medizin und Bruder des Gottes Thoth verehrt.<br><br>So wurde Imhotep jahrelang verehrt. Sogar die Griechen sollen ihn verehrt haben, und in der römischen Zeit wurde ihm das Ende der Überschwemmungen zugeschrieben. Ironischerweise scheint er sich zu Lebzeiten nicht einmal mit Medizin beschäftigt zu haben!
+I
+=Base.Technologies.Technology_HighMiddleAges_HeraldryPost_NameHeraldik
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>Fernkampfangriff</style>Wirft ein Kunai auf den Gegner mit den niedrigsten aktuellen HP und verursacht <style=basestat>{dmg_percentage}</style> Schaden. Priorisiert Helden.
 O
@@ -953,6 +967,8 @@ _
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_DescProduziert Porzellan aus Ton
 -
 Base.Heroes.hero.LouisXIV_NameLudwig XIV.
+M
+<Base.Technologies.Technology_HighMiddleAges_Infantrymen_NameInfanteristen
 ~
 1Base.Buildings.Building_Egypt_Home_Average_3_DescIStellt große Mengen an Deben her und fügt deiner Stadt 2 Arbeiter hinzu
 <
@@ -991,6 +1007,8 @@ C
 Caballarii
 �
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescUProduziert eine Tonne Pennies und fügt deiner Stadt 2 Arbeiter und 2 Matrosen hinzu.
+[
+CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameDreifelderwirtschaft
 A
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_NameGoldmine
 ?
@@ -1120,6 +1138,8 @@ Robin Hood
 E
 7Base.Technologies.Technology_ByzantineEra_Divining_Name
 Divination
+U
+?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameRitterlicher Kodex
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
 C
@@ -1130,6 +1150,8 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_NameLuxuriöses Papyrusfeld
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_9_Name�<style=ability_label>Spott| Schild| Buff</style>Klopft sich auf die Brust, und verspottet alle Feinde für <style=basestat>{taunt_duration}</style>, erhält <style=basestat>{shield_percentage}</style> seiner DEF als Schild und erhöht DEF um <style=basestat>{def_percentage}</style> für <style=basestat>{duration}</style>.
+A
+7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGilden
 Q
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameNubische Krieger
 a
@@ -1207,6 +1229,8 @@ F
 ,
 Base.BuildingTypes.Marketplace
 Marktplatz
+[
+CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_NameCharter of Liberties
 G
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_NameScharmützler
 ]
@@ -1355,14 +1379,16 @@ z
 A
 3Base.Technologies.Technology_China_PaddyFields_Name
 Reisfelder
+M
+2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameFatimidische Kavallerie
 #
 Base.Units.Unit_Menes_NameMenes
 D
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_NamePlantage
 g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc&Veredelt Motten-Kokons zu Seidenfäden
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Buff</style>Immer wenn der Besitzer einen kritischen Treffer landet, wird seine kritische Trefferchance um <style=basestat>{crit_buff}</style> für <style=basestat>{duration}</style> erhöht. 
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Buff</style>Immer wenn der Besitzer einen kritischen Treffer landet, wird seine kritische Trefferchance um <style=basestat>{crit_buff}</style> für <style=basestat>{duration}</style> erhöht. Dieser Effekt ist nicht mit sich selbst stapelbar.
 �
 2Base.Buildings.Building_Arabia_Home_Premium_1_DescKStellt riesige Mengen an Dirham her und fügt deiner Stadt 3 Arbeiter hinzu
 �
@@ -1375,6 +1401,8 @@ C
 7Base.Technologies.Technology_ByzantineEra_Xocolatl_NameXocolatl
 ]
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
+I
+8Base.Technologies.Technology_HighMiddleAges_Billmen_NameHippenträger
 X
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_DescStellt Pfeffer her
 u
@@ -1383,6 +1411,8 @@ Q
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NameExakte Chronik
 �
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescMStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
+T
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenstaufen Fernkämpfer
 =
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSalz
 �
@@ -1500,6 +1530,8 @@ I
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameAufstieg Ägyptens
 J
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameUnion-Verjüngung
+E
+9Base.Technologies.Technology_HighMiddleAges_Clearing_NameLichtung
 W
 DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameGewürzhändler
 :
@@ -2296,6 +2328,8 @@ I
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_Name	Schneider
 t
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+R
+?Base.Technologies.Technology_HighMiddleAges_WinterStabling_NameWinter-Stallung
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBelagerungs-Kaserne
 I
@@ -2320,6 +2354,8 @@ u
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Gedankenkontrolle</style>Entfesselt ihr literarisches Genie und überzeugt eine gegnerische Einheit, ihre Verbündeten für <style=basestat>{duration}</style> anzugreifen. Während sie unter Janes Kontrolle steht, wird die ATK der gegnerischen Einheit um <style=basestat>{atk_percentage}</style> erhöht. Priorisiert Helden.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
+S
+<Base.Technologies.Technology_HighMiddleAges_Precautions_NameVorsichtsmaßnahmen
 H
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Name	Bauernhof
 F
@@ -2332,6 +2368,8 @@ S
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameLeibeigene und Jarls
 >
 )Base.Regions.region.VolcanicJungle_3_NameEnglische Kolonie
+O
+5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameFatimidische Commander
 z
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 =
@@ -2510,6 +2548,8 @@ B
 2Base.Buildings.Building_China_City_CityHall_2_NameGroße Halle
 )
 Base.Units.Unit_Hercules_NameHerkules
+N
+:Base.Technologies.Technology_HighMiddleAges_CropSheds_NameGetreideschuppen
 �
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 B
@@ -2532,6 +2572,8 @@ S
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameHeldenakademie
 �
  Base.Units.Unit_QinShiHuang_Desc�Wie vom Himmel befohlen und in tausend Denkmälern festgehalten, ist es Qin Shi Huang, der erste Kaiser des vereinten Chinas! Im 3. Jahrhundert v. Chr. erhob dieser ehemalige König Anspruch auf den Thron des vereinten Chinas. Inmitten des Geruchs von brennendem Papier und dem Schärfen von Klingen eroberte Qin Shi Huang ganz China und trat ein Vermächtnis an, das nie vergessen werden sollte.<br><br>Unter seiner Herrschaft wurden gewaltige Bauprojekte in Angriff genommen, darunter die frühe Chinesische Mauer und die Terrakotta-Armee, die sein stadtgroßes Mausoleum bewacht. Mit diesen Maßnahmen wollte er die Einheit und Stärke des Reiches schützen und festigen.<br><br>Qin Shi Huang ist als Tyrann in Erinnerung geblieben: brutal, autoritär und allmächtig. Doch das mag falsch sein: Diese Worte stammen von denen, die die monumentale Aufgabe hatten, seine Dynastie zu ersetzen. Wie auch immer, China wurde zweifellos durch den Einfluss dieses Sohnes des Himmels geprägt. Leider ist es schwer, mit ihm als Held zu arbeiten. Er und Lincoln weigern sich zurzeit, miteinander zu sprechen!
+\
+BBase.Technologies.Technology_HighMiddleAges_BaldachinCanopies_NameBaldachin-Überdachung
 E
 /Base.Units.Unit_TreasureHunt_Purple_Cannon_NameDämmerungs-Kanone
 0
@@ -2611,6 +2653,8 @@ Y
 &Base.BuildingGroups.premiumQuarry_NameLuxuriöser SteinbruchLuxuriöse Steinbrüche
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescuDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
+N
+3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NameFatimidische Infanterie
 x
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 c
@@ -2704,6 +2748,8 @@ F
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameGoldschmied
 >
 ,Base.TreasureHuntDifficultiesPanel.CompletedAbgeschlossen!
+L
+4Base.Abilities.hero_battle_ability.LouisPasteur_NameAlchemistische Hilfe
 S
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameFaering-Meisterschaft
 ]
@@ -2818,6 +2864,8 @@ z
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>Nahkampfangriff| Schild</style>Sticht auf das aktuelle Ziel hinter seinem Schild ein, verursacht <style=basestat>{dmg_percentage}</style> Schaden und erhält <style=basestat>{hp_percentage}</style> seines Basisschadens als Schild.
+K
+0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameFatimidische Belagerung
 S
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescSchaltet Hastati frei
 E
@@ -3211,6 +3259,8 @@ E
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 N
 8Base.Buildings.Building_ByzantineEra_Home_Average_3_NameMittelgroßes Haus
+a
+EBase.Technologies.Technology_HighMiddleAges_PikeformationTactics_NameSpieß-Formations-Taktik
 :
 "Base.Heroes.hero.TribalHealer_NameNaya vom Höhlenklan
 E
@@ -3221,6 +3271,8 @@ U
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameUmfunktionierte Ruinen
 Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameKavallerie-Kaserne
+U
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameHohenstaufen Commander
 _
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_Desc%Stellt riesige Mengen an Nahrung her.
 B
@@ -3484,8 +3536,8 @@ Q
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_1_DescSchaltet Velites frei
 S
 8Base.Buildings.Building_MinoanEra_Workshop_Tailor_1_DescStellt Leinenhemden her
-�
-!Base.Units.Unit_AttilaTheHun_Desc�Es ist der Mann, der das Römische Reich fast zu Fall gebracht hätte: Attila, der Hunnenkönig! Dieser Kaiser aus dem 5. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Als Befehlshaber einer riesigen Stammeskoalition führte Attila Feldzüge durch ganz Europa und besiegte das Römische Reich. Nachdem ihm Tribut angeboten wurde, begann er einen Marsch auf Rom, der durch seinen Tod gestoppt wurde.<br><br>Attilas Erbe ist reich an Geschichten über seine militärischen Heldentaten und seine charismatische Führung, die ihn zu einer beeindruckenden Figur in der europäischen Geschichte machen. Weniger bekannt ist sein Hauskaninchen, Attila das Kaninchen, das ihn angeblich auf seinen Kampagnen begleitete!
+�
+!Base.Units.Unit_AttilaTheHun_Desc�Es ist der Mann, der das Römische Reich fast zu Fall gebracht hätte: Attila, der Hunnenkönig! Dieser Kaiser aus dem 5. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Als Befehlshaber einer riesigen Stammeskoalition führte Attila Feldzüge durch ganz Europa und besiegte das Römische Reich. Nachdem ihm Tribut angeboten wurde, begann er einen Marsch auf Rom, der durch seinen Tod gestoppt wurde.<br><br>Attilas Erbe ist reich an Geschichten über seine militärischen Heldentaten und seine charismatische Führung, die ihn zu einer beeindruckenden Figur in der europäischen Geschichte machen. Weniger bekannt ist sein Hauskaninchen, "Attila the Bun", das ihn angeblich auf seinen Kampagnen begleitete!
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_5_Name�<style=ability_label>Flächenschlag| Brennen</style>Löst eine Explosion aus, die auf die größte Ansammlung feindlicher Einheiten abzielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Hat eine <style=basestat>{chance_percentage}</style> Chance, betroffene Gegner für <style=basestat>{dmg_percentage_burn}</style> Schaden über <style=basestat>{duration}</style> brennen zu lassen.
 6
@@ -3635,6 +3687,8 @@ I
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_Name	Steinmetz
 _
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameBallistische Innovation
+T
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameHohenstaufen Infanterie
 )
 Base.Ages.EarlyRome_Decade750 v. Chr.
 ?
@@ -3661,6 +3715,9 @@ X
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescSchaltet Bogenschützen frei
 U
 (Base.BuildingGroups.premiumMerchant_NameLuxuriöser HändlerLuxuriöse Händler
+N
+@Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_Name
+Arbalisten
 e
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc&Schaltet Sarazenen-Bogenschützen frei
 Q
@@ -3778,6 +3835,9 @@ U
 !Base.Units.Unit_AttilaTheHun_NameAttila, der Hunnenkönig
 %
 Base.Units.Unit_Medusa_NameMedusa
+9
+ Base.BuildingGroups.furnace_Name	Brennofen
+Brennöfen
 7
 *Base.Wonders.Wonder_Capital_Colosseum_Name	Kolosseum
 0
@@ -3822,8 +3882,8 @@ W
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameGrüne Kanone
 V
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescStellt Folianten her
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Buff| Blutung</style>Erhöht den Schaden des Helden gegen blutende Ziele um <style=basestat>{damage_increase_per_relic_level}</style>. Zusätzlich hat ein Schaden an einem Gegner eine <style=basestat>{bleed_chance_percentage}</style> Chance, eine Blutung hervorzurufen, die <style=basestat>{bleed_percentage_per_relic_level}</style> Schaden pro Sekunde für <style=basestat>{bleed_duration}</style> verursacht.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Buff | Blutung</style>Erhöht den Schaden des Helden gegen blutende Ziele um <style=basestat>{damage_increase_per_relic_level}</style>. Zusätzlich besteht eine <style=basestat>{bleed_chance_percentage}</style> Chance, einen Gegner zu verletzen und <style=basestat>{bleed_percentage_per_relic_level}</style> Schaden pro Sekunde für <style=basestat>{bleed_duration}</style> zu verursachen.
 V
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatisierung
 G
@@ -3878,6 +3938,8 @@ v
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 /
 Base.Cities.City_Vikings_NameWikinger-Reich
+G
+:Base.Technologies.Technology_HighMiddleAges_Secretary_Name	Sekretär
 G
 1Base.Buildings.Building_China_Home_Average_6_NameMittelgroßes Haus
 I
@@ -4062,6 +4124,8 @@ I
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia Regis
 S
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameAufstieg der Wikinger
+�
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Desc�Produziert Zunder und der Brennofen kann auch verwendet werden, um mehr Zunder durch die Konvertierung von Ressourcen zu erhalten.
 P
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NamePfeil des Hordenführers
 /
@@ -4100,6 +4164,8 @@ L
 8Base.Technologies.Technology_StoneAge_CavePaintings_NameHöhlenmalereien
 F
 9Base.Technologies.Technology_BronzeAge_BuildingTools_Name	Bauwissen
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�<style=ability_label>Heilung | Debuff</style>Louis Pasteur wirft einen Trank auf die am meisten verletzte verbündete Einheit und heilt sie für <style=basestat>{heal_percentage}</style> seines Basisschadens. Die Dämpfe des Trankes reduzieren die Heileffekte, die alle gegnerischen Einheiten in der Nähe erhalten, um <style=basestat>{healing_reduction_percentage}</style> für <style=basestat>{duration}</style>.
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DescoAngelstege schicken Boote los, um Fische zu fangen und all deine hungrigen Arbeiter und Seefahrer zu versorgen.
 G
@@ -4163,6 +4229,8 @@ Pfeilsturm
 Base.Units.Unit_Medusa_Desc�Schau weg! Medusa, eine der drei Gorgonen aus den griechischen Mythen, wurde als Bote geschickt, trat aber den Helden der Geschichte bei. Dieses schlangenhaarige Ungeheuer hatte die Macht, alle, die sie ansehen, zu Stein zu verwandeln. Einst war sie eine schöne Frau, bis sie von der Göttin Athene verflucht wurde, weil sie ihren Tempel entweiht hatte.<br><br>Medusas Geschichte ist eine Geschichte der Verwandlung und der Rache. In den Mythen besiegte Perseus sie auf Anraten von Athene mit einem verspiegelten Schild und schlug ihr den Kopf ab, der für die alten Griechen zum Symbol der Sicherheit wurde.<br><br>Aber wir kennen die Wahrheit: Medusa wurde von Tesla im letzten Moment in die Steinzeit teleportiert und als das ultimative wissenschaftliche Experiment behandelt. Jetzt, wo sie frei ist, will sie unbedingt Rache...
 -
 Base.Heroes.hero.Shaolin_NameXueting Fuyu
+A
+7Base.Technologies.Technology_HighMiddleAges_Bodkin_NameBodkin
 x
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 S
@@ -4289,6 +4357,8 @@ G
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameMittelgroßes Haus
 B
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Name	Bauernhof
+S
+<Base.Technologies.Technology_HighMiddleAges_MailBarding_NameKetten-Rossrüstung
 z
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 [
@@ -4399,6 +4469,8 @@ E
 1Base.Buildings.Building_Egypt_Home_Premium_6_NameLuxuriöses Haus
 G
 3Base.Buildings.Building_Vikings_Home_Premium_3_NameLuxuriöses Haus
+T
+CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameTurnier-Tjost
 M
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	Schreiner
 x
@@ -4433,6 +4505,8 @@ V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_DescProduziert Kaolin
 1
 !Base.Heroes.hero.SiouxShaman_NameSitting Bull
+I
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Name	Brennofen
 +
 Base.Units.Unit_RamsesII_Name
 Ramses II.
@@ -4461,6 +4535,8 @@ E
 5Base.Technologies.Technology_Vikings_MeadMastery_NameMetexpertise
 B
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_NameSchwertkämpfer
+Q
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameHohenstaufen Belagerung
 x
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
@@ -4469,12 +4545,16 @@ x
 2Base.Technologies.Technology_MinoanEra_Screws_Name	Schrauben
 1
 Base.Heroes.hero.JoanOfArc_NameJeanne d’Arc
+S
+8Base.Units.Unit_HighMiddleAges_Hohenstaufen_Cavalry_NameHohenstaufen Kavallerie
 �	
 (Base.Units.Unit_FlorenceNightingale_Desc�Keine Sorge: Die Dame mit der Lampe ist an deiner Seite. Florence Nightingale, eine britische Krankenschwester aus dem 19. Jahrhundert, ist berühmt für ihre Arbeit im Krimkrieg, als sie Soldaten heilte, die im Sterben lagen. <br><br> Aber Florence Nightingales größte Erfolge kommen vielleicht erst später. Nachdem sie dem Militär in Scutari beigestanden und die Kranken von drei Armeen behandelt hatte, führte Nightingale die Reform der britischen Krankenpflege an und förderte ein modernisiertes System, das die Pflege bis heute geprägt hat. Krankenschwestern und -pfleger schwören den "Nightingale Pledge", ein Echo ihres eigenen Versprechens zu helfen. <br><br> Florence Nightingales Vermächtnis ist also zweigeteilt: Einerseits ein Engel, die "Lady with the Lamp", andererseits eine entschlossene und brillant intelligente Frau, die Krankenhäuser für immer verändert hat. Vielleicht ist beides nicht ganz zutreffend. Nightingales Spitzname war ursprünglich die Dame mit dem Hammer, nachdem sie einen gesperrten medizinischen Vorrat aufgebrochen hatte - vielleicht steckt in diesem Bild mehr Wahrheit als in jedem anderen!
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�Maya-Bogenschützen sind zusätzliche Fernkampf-Einheiten für deine Armee. Ihre Statuswerte skalieren automatisch mit deinem Zeitalter.
 `
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_DescStellt Kleiderschränke her
+Z
+BBase.Technologies.Technology_HighMiddleAges_GunpowderWeaponry_NameSchießpulver-Waffen
 V
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameKompakte Kulturstätte
 ;
@@ -4503,6 +4583,8 @@ r
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescLStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 =
 (Base.Regions.region.EasternValley_7_NameOsmanischer Hafen
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Heilung| Wiederbelebung</style>Florence schützt den am stärksten verletzten Helden mit einem Schutzschwur und heilt ihn für <style=basestat>{heal_amount}</style> über 8 Sekunden. Wenn die Einheit das nächste Mal in dieser Welle tödlichen Schaden erleidet, wird sie stattdessen für <style=basestat>{invulnerability_duration}</style> unverwundbar und heilt zusätzlich <style=basestat>{revive_percentage}</style> ihrer maximalen HP. Bevorzugt Helden, die nicht bereits von Florence markiert sind.
 L
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBronze-Wächter
 F
@@ -4654,6 +4736,8 @@ C
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 (
 Base.Ages.Vikings_NameWikinger-Reich
+L
+<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameGilden-Feste
 `
 LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_NameGelehrten-Lyzeum
 B
@@ -4709,6 +4793,8 @@ U
 2Base.Technologies.Technology_RomanEmpire_Cape_NameUmhang
 J
 3Base.Technologies.Technology_China_SilkMastery_NameSeidenmeisterschaft
+U
+;Base.Technologies.Technology_HighMiddleAges_Knighthood_NameRitterliche Kavallerie
 ^
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 .
@@ -4782,6 +4868,8 @@ O
 B
 4Base.Technologies.Technology_ClassicGreece_Math_Name
 Mathematik
+P
+ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_NameViehhaltung
 A
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NamePlantage
 y
@@ -4800,6 +4888,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 (Base.BuildingGroups.averageMerchant_NameHändlerHändler
 �
 Base.Units.Unit_RamsesII_Desc�Die Ebenen werden unter den Rädern der Streitwagen erbeben, denn Ramses der Große hat seine Macht mit deiner vereint. Dieser Pharao aus dem 13. Jahrhundert v. Chr. wurde durch seine Kampagnen gegen die Hethiter, Nubier und Libyer berühmt. Der Kampf von Kadesch gegen die Hethiter führte zu einem der ersten Friedensverträge der Geschichte.<br><br>Neben seinen militärischen Erfolgen war Ramses II. auch ein produktiver Baumeister, der großartige Bauwerke wie die Tempel von Abu Simbel und das Ramesseum in Auftrag gab und der Welt damit seinen Stempel aufdrückte.<br><br>Ramses II. gilt als der größte Pharao des größten Königreichs Ägyptens. Seine 66-jährige Herrschaft prägte das kulturelle und architektonische Erbe Ägyptens. Die Griechen nannten ihn Ozymandias, ein Name, unter dem er in der Dichtung unsterblich wurde. Wenn du Ramses siehst, gehst du auf die Knie!
+M
+>Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameFachwerkbau
 p
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc<Stellt Kakao her und fügt deiner Stadt einen Priester hinzu
 E
@@ -4856,6 +4946,8 @@ C
 #Base.Heroes.hero.UlyssesSGrant_NameUlysses S. Grant
 x
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+]
+EBase.Technologies.Technology_HighMiddleAges_SimpleSpinningWheels_NameEinfache Spinnräder
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 D
@@ -4866,6 +4958,8 @@ E
 G
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Name
 Handwerker
+]
+EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameSandstein-Fundamente
 <
 #Base.BuildingGroups.stoneMason_Name	Steinmetz
 Steinmetze
@@ -5016,6 +5110,8 @@ p
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 O
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameBelagerungsturm
+Y
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameHohenstaufen Schwere Infanterie
 H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NameWasserpumpe
 a
@@ -5101,6 +5197,8 @@ N
 !Base.Heroes.hero.LeifErikson_NameLeif Erikson
 5
 #Base.Regions.region.Panganea_1_NameUralte Wildnis
+[
+DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameStaufer Architektur
 C
 3Base.Buildings.Building_MinoanEra_Home_Small_3_NameKleines Haus
 �
@@ -5249,6 +5347,8 @@ O
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 M
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameHafenwirtschaft
+N
+1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameFatimidische Fernkämpfer
 �
 Base.Units.Unit_KingMinos_Desc�Chatte mit Zeus und verstecke den roten Faden: König Minos ist da! Dieser legendäre Herrscher aus der griechischen Mythologie soll im 2. Jahrtausend v. Chr. geherrscht haben und war als Herrscher von Kreta berühmt.<br><br>Er wurde für seine Weisheit und Autorität gefeiert und ist vor allem dafür bekannt, dass er ein komplexes Labyrinth erbauen ließ, um den Minotaurus, ein mythisches Tier, einzusperren.<br><br>Minos' Herrschaft ist gespickt mit fesselnden Geschichten von Intrigen und Abenteuern, wie z. B. die Geschichte von Daedalus und Ikarus. Sein bleibendes Vermächtnis als furchteinflößender und mysteriöser König verzaubert weiterhin die Geschichtenerzähler und verwebt die Fäden von Mythos und antiker Geschichte. Lass dich nicht von ihm auf eine Tour durch sein Labyrinth mitnehmen!
 T
@@ -5275,6 +5375,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Teeröfen
 V
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescStellt Säulen her
+M
+:Base.Technologies.Technology_HighMiddleAges_Catapults_NameGroße Balliste
 G
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameInfanteristen
 M
@@ -5906,6 +6008,8 @@ w
 *Base.Units.Unit_StoneAge_Player_Siege_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben auf große Distanz eine vernichtende Wirkung auf einen großen Bereich.
 >
 3Base.Technologies.Technology_IberianEra_Botany_NameBotanik
+V
+@Base.Technologies.Technology_HighMiddleAges_SaltglazeTiling_NameSalzglasur Kacheln
 w
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 A
@@ -6008,6 +6112,8 @@ r
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 ]
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
+[
+@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameAkademische Abschlüsse
 �
 Base.HeroClass.Healer_Desc�Heiler heilen ihre Verbündeten. Sie <color=#3DA229>überragen in jedem Modus</color>, aber <color=#CD2A25>sind auf andere angewiesen, Schaden zu verursachen</color>.
 +
@@ -6061,6 +6167,8 @@ o
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc<Stellt Deben her und fügt deiner Stadt einen Arbeiter hinzu
 z
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+W
+ABase.Technologies.Technology_HighMiddleAges_CompoundArbalest_NameCompound-Arbaleste
 E
 1Base.Buildings.Building_China_Home_Premium_5_NameLuxuriöses Haus
 F
@@ -6123,6 +6231,8 @@ C
 &Base.Units.Unit_AlexanderTheGreat_Desc�Seht Alexander den Großen, unbesiegt, triumphierend, der beste General, den die Welt je gesehen hat! Dieser König aus dem 4. Jahrhundert v. Chr. ist berühmt dafür, dass er vor seinem frühen Tod weite Teile der Welt erobert hat.<br><br>Alexander bestieg den Thron im Alter von 20 Jahren, nachdem sein Vater ermordet worden war. Er erwies sich schnell als entschlossen: Er besiegte die Thraker und zerstörte den berühmten Stadtstaat Theben. Das brachte Griechenland wieder Frieden, und Alexander führte den Bund von Korinth an, um das achämenidische Persien zu erobern. Dieses berühmte Reich fiel vor ihm, aber Alexander war noch nicht fertig: Vor seinen Armeen knieten Syrien, Babylon, Iran und sogar Pakistan.<br><br>Alexander verlor nie eine Schlacht. Am Ende forderte seine eigene Armee die Rückkehr nach Hause. In Babylon, auf dem Heimweg (obwohl er auf dem Rückweg noch einige Eroberungen machte), hauchte Alexander sein Leben aus.<br><br>Innerhalb der Heroes of History ist Alexander ein wenig umstritten. Er genießt es, mit Achilles zu trinken, von Kyrus Lektionen zu erhalten und seinen Vater vorzuführen!
 F
 .Base.Abilities.hero_battle_ability.Medusa_NameVersteinernder Blick
+J
+ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameRutte
 W
 5Base.Buildings.Building_China_RiceFarm_Premium_6_DescProduziert riesige Mengen Reis
 ^

@@ -52,6 +52,8 @@ Z
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameBarracón de largo alcance
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_2_DescmLos muelles de pesca envían barcos a pescar para abastecer a todos tus trabajadores y marineros hambrientos.
+`
+GBase.Technologies.Technology_HighMiddleAges_GambersonReinforcement_NameRefuerzo de Gambesón
 z
 0Base.Units.Unit_ClassicGreece_Player_Psiloi_DescFLas unidades de infantería son más eficaces en las filas delanteras.
 O
@@ -70,8 +72,8 @@ G
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_2_DescGEnvía barcos de expedición que recojan tesoros de Cerámica o de Oro.
 X
 =Base.Units.Unit_ClassicGreece_ThePersians_GlaiveFighters_NameLanzadores de cuchillos
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_Name�<style=ability_label>Pisotón</style>Pisotea el suelo, infligiendo <style=basestat>{dmg_percentage}</style> daño a todos los enemigos dentro de un rango de <style=basestat>{range}</style>.
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_Name�<style=ability_label>Pisotón</style>Pisotea el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de un rango de <style=basestat>{range}</style>.
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>Golpe en Área| Curación| Potenciador</style>Pide ayuda divina dirigida al mayor grupo de unidades enemigas, infligiendo <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>. También cura a todas las unidades amigas de la misma zona un <style=basestat>{hp_percentage}</style> del daño base de Juana. Las unidades amigas afectadas ganan <style=basestat>{atk_percentage}</style> del ATQ de Joan como ATQ y <style=basestat>{atkspeed_percentage}</style> de la velocidad de ATQ durante <style=basestat>{duration}</style>.
 G
@@ -85,7 +87,7 @@ Z
 B
 $Base.BuildingGroups.premiumHome_NameCasa LujosaCasas Lujosas
 X
-<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_2_NameBarracón de caballería
+<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_2_NameBarracón de Caballería
 @
 4Base.Technologies.Technology_IberianEra_Saffron_NameAzafrán
 O
@@ -143,8 +145,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameFuenteFuentes
 w
 /Base.Units.Unit_TreasureHunt_Red_Marauders_DescDLas Unidades de Infantería son más eficaces en las primeras filas.
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Potenciador</style>Inspira a todas las unidades amigas, aumentando su velocidad de ataque en <style=basestat>{atk_speed_percentage}</style> y su ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Margaret durante <style=basestat>{duration}</style>.
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Potenciador</style>Inspira a todas las unidades amigas, aumentando su velocidad de ataque en <style=basestat>{atk_speed_percentage}</style> y su ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Margarita durante <style=basestat>{duration}</style>.
 ,
 Base.Ages.RomanEmpire_NameImperio Romano
 �
@@ -178,7 +180,7 @@ H
 N
 5Base.Units.Unit_MinoanEra_Spartans_XiphosCavalry_NameCaballería de Xiphos
 Z
->Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_3_NameBarracón de caballería
+>Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_3_NameBarracón de Caballería
 K
 #Base.BuildingGroups.sailorHome_NameCasa de MarineroCasas de Marineros
 J
@@ -258,7 +260,7 @@ N
 E
 4Base.Buildings.Building_IberianEra_Home_Small_1_NameCasa pequeña
 T
-8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_NameBarracón de caballería
+8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_NameBarracón de Caballería
 M
 8Base.Technologies.Technology_FeudalAge_RunicWriting_NameEscritura rúnica
 }
@@ -331,6 +333,8 @@ B
 2Base.Buildings.Building_StoneAge_Farm_Rural_2_NameGranja rural
 N
 7Base.Abilities.hero_battle_ability.OttoVonBismarck_NameCanciller de Hierro
+W
+;Base.Abilities.hero_battle_ability.FlorenceNightingale_NameJuramento de Nightingale
 W
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_NameZona cultural mediana
 N
@@ -423,8 +427,8 @@ $Base.BuildingGroups.averageHome_NameCasa MedianaCasas Medianas
 Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_6_DescVLa colmena produce una miel deliciosa que se usa para elaborar aguamiel en la taberna.
-�
-!Base.Units.Unit_TribalHealer_Desc�No pierdas la esperanza, ¡porque Naya se ha unido a ti! Esta joven sanadora del Clan de la Cueva se ha ganado una gran reputación gracias a sus técnicas de curación y herboristería. Antes de unirse a Heroes of History, ayudaba a su clan curando sus heridas y enfermedades.<br><br>Desde que se Unió a los Héroes, Naya ha estado molestando a Einstein con preguntas científicas y aprendiendo a luchar con Leónidas. Einstein desearía haber tenido más estudiantes con el entusiasmo de ella en su época.<br><br>Aunque carece de la reputación y la fama de los otros Héroes, Naya aún puede cambiar el futuro. ¡Eso depende de ti, Jugador!
+�
+!Base.Units.Unit_TribalHealer_Desc�No pierdas la esperanza, ¡porque Naya se ha unido a ti! Esta joven sanadora del Clan de la Cueva se ha ganado una gran reputación gracias a sus técnicas de curación y herboristería. Antes de unirse a Héroes de la Historia, ayudaba a su clan curando sus heridas y enfermedades.<br><br>Desde que se unió a los Héroes, Naya ha estado molestando a Einstein con preguntas científicas y aprendiendo a luchar con Leónidas. Einstein desearía haber tenido más estudiantes con el entusiasmo de ella en su época.<br><br>Aunque carece de la reputación y la fama de los otros Héroes, Naya aún puede cambiar el futuro. ¡Eso depende de ti, Jugador!
 S
 =Base.Technologies.Technology_RomanEmpire_HorseshoeAlloys_NameHerraduras aleadas
 F
@@ -433,8 +437,6 @@ E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_NameGranja rural
 ^
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameInfantería Merovingia
-I
-6Base.Technologies.Technology_HighMiddleAges_Start_NameAlta Edad Media
 5
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtémoc
 �
@@ -612,6 +614,9 @@ D
 3Base.Technologies.Technology_Egypt_Hieroglyphs_NameJeroglíficos
 a
 'Base.BuildingGroups.rangedBarracks_NameBarracón de Largo AlcanceBarracón de largo alcance
+H
+:Base.Technologies.Technology_HighMiddleAges_GreatHelm_Name
+Gran Yelmo
 )
 Base.HeroClass.GreatLeaderGran Líder
 <
@@ -621,6 +626,8 @@ I
 Avicultura
 I
 6Base.Units.Unit_TreasureHunt_Yellow_DonkeyRaiders_NameAsnos Radiantes
+X
+@Base.Technologies.Technology_HighMiddleAges_QualityProducts_NameProductos de Calidad
 D
 .Base.Abilities.hero_battle_ability.SunTzu_NameArte de la Defensa
 @
@@ -649,6 +656,8 @@ K
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameEdicto Aqueménida
 =
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Name	Leónidas
+N
+0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameInfantería Pesada Fatimí
 t
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc0Mejora la felicidad de los edificios adyacentes.
 Y
@@ -759,14 +768,18 @@ d
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_NameBobina Tesla
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�<style=ability_label>Golpe en Área</style>Provoca una explosión en el objetivo actual, que inflige <style=basestat>{dmg_percentage}</style> a todas las unidades enemigas dentro de un radio de <style=basestat>{range}</style>.
-�
-Base.Units.Unit_Plato_Desc�Tomando un descanso de las discusiones en el Pireo, ¡es Platón! Este filósofo griego seminal del siglo IV a.C. fue alumno de Sócrates y maestro de Aristóteles. Fundó la Academia de Atenas y escribió "La República", dando forma al pensamiento occidental para siempre.<br><br>Las enseñanzas de Platón no sólo inspiraron el pensamiento, sino también la fantasía: Platón introdujo la historia de la Atlántida, una legendaria civilización sumergida, en su obra "Timeo".<br><br>Sus ideas filosóficas, como la Teoría de las Formas, han dado tanta forma a Occidente que un famoso filósofo describió una vez la tradición europea como "una serie de notas a pie de página de Platón". Menos conocido es el hecho de que Platón probablemente podría batirse con cualquier guerrero de Heroes of History: ¡era tan grande que incluso su nombre significa "ancho"!
+�
+Base.Units.Unit_Plato_Desc�Tomando un descanso de las discusiones en el Pireo, ¡es Platón! Este filósofo griego seminal del siglo IV a.C. fue alumno de Sócrates y maestro de Aristóteles. Fundó la Academia de Atenas y escribió "La República", dando forma al pensamiento occidental para siempre.<br><br>Las enseñanzas de Platón no sólo inspiraron el pensamiento, sino también la fantasía: Platón introdujo la historia de la Atlántida, una legendaria civilización sumergida, en su obra "Timeo".<br><br>Sus ideas filosóficas, como la Teoría de las Formas, han dado tanta forma a Occidente que un famoso filósofo describió una vez la tradición europea como "una serie de notas a pie de página de Platón". Menos conocido es el hecho de que Platón probablemente podría batirse con cualquier guerrero de Héroes de la Historia: ¡era tan grande que incluso su nombre significa "ancho"!
 [
-?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_NameBarracón de caballería
+?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_NameBarracón de Caballería
+C
+9Base.Technologies.Technology_HighMiddleAges_Cinnamon_NameCanela
 T
 (Base.BuildingGroups.premiumGoldMine_NameMina de Oro LujosaMinas de oro lujosas
 H
 6Base.Technologies.Technology_MinoanEra_LinenShirt_NameCamisa de lino
+E
+9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimorio
 C
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameArqueros Vikingos
 S
@@ -880,7 +893,7 @@ O
 \
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameInfantería bizantina
 U
-9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameBarracón de caballería
+9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameBarracón de Caballería
 I
 .Base.Units.Unit_IberianEra_Castilla_ElCid_NameMercenarios de Castilla
 R
@@ -895,8 +908,10 @@ a
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameEstación de irrigación
 �
 #Base.Units.Unit_EgyptianVizier_Desc�Conviértete en un Dios con Imhotep, ¡el que viene en son de paz! Este consejero y arquitecto del siglo XXVII a.C. supervisó la construcción de la Pirámide Escalonada de Saqqara, una de las primeras pirámides de toda la historia.<br><br>En vida, Imhotep fue un misterio, un sacerdote de Ra del que se sabe poco. En los años posteriores, su fama creció, hasta que fue divinizado: adorado como dios de la medicina y hermano del dios Thot.<br><br>Así se recordó a Imhotep durante años. Se supone que incluso los griegos le veneraban, y se le atribuyó el fin de las inundaciones en la época romana. Irónicamente, ¡parece que ni siquiera se dedicó a la medicina en vida!
-�
-EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>Golpe a Distancia</style>Lanza un kunai al enemigo con menos PV en ese momento, infligiendo <style=basestat>{dmg_percentage}</style> daño. Da prioridad a los héroes.
+U
+=Base.Technologies.Technology_HighMiddleAges_HeraldryPost_NamePuesto de Heráldica
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>Golpe a Distancia</style>Lanza un kunai al enemigo con menos PV en ese momento, infligiendo <style=basestat>{dmg_percentage}</style> de daño. Da prioridad a los héroes.
 Q
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameArponeros del Crepúsculo
 e
@@ -945,10 +960,8 @@ S
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_NameProcesador de hilo
 -
 Base.BuildingGroups.SmallFarmGranja Rural
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.FalconryGlove_1_Name�<style=ability_label>Sanar</style>Al asestar el golpe mortal a una unidad enemiga, el Héroe equipado con el Guante de Cetrería recupera <style=basestat>{heal_percentage_per_relic_level}</style> de los PS máximos del enemigo derrotado. Este Efecto se aplica tanto a las unidades normales como a los Héroes.
-
-<style=ability_label>Sanar</style> Al asestar el golpe final a una unidad enemiga, el héroe equipado con el Guante de Cetrería recupera <style=basestat>{heal_percentage_per_relic_level}</style> de los PV máximos del enemigo derrotado. Este efecto se aplica tanto a unidades normales como a héroes.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.FalconryGlove_1_Name�<style=ability_label>Sanar</style> Al asestar el golpe final a una unidad enemiga, el héroe equipado con el Guante de Cetrería recupera <style=basestat>{heal_percentage_per_relic_level}</style> de los PV máximos del enemigo derrotado. Este efecto se aplica tanto a unidades normales como a héroes.
 X
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_2_NameBarracón de infantería
 \
@@ -957,6 +970,8 @@ h
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_Desc%Produce Porcelana a partir de Arcilla
 *
 Base.Heroes.hero.LouisXIV_NameLuis XIV
+K
+<Base.Technologies.Technology_HighMiddleAges_Infantrymen_NameInfantería
 x
 1Base.Buildings.Building_Egypt_Home_Average_3_DescCProduce una gran pila de deben y añade 2 trabajadores a tu ciudad.
 :
@@ -996,6 +1011,8 @@ C
 Caballeros
 �
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescSProduce una tonelada de Peniques y añade 2 Trabajadores y 2 Marineros a tu ciudad.
+d
+CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameRotación Trienal de Cultivos
 D
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_NameMina de oro
 C
@@ -1116,12 +1133,14 @@ L
 ,
 Base.Units.Unit_RobinHood_Name
 Robin Hood
-�
-Base.UnitTypes.Cavalry_Desc�Las unidades de Caballería intentarán flanquear a tu enemigo. Se centran en la ofensiva.
->Construye y mejora el Barracón de Caballería para mejorar el ATQ, DEF y PV de las unidades de caballería y los héroes.
+�
+Base.UnitTypes.Cavalry_Desc�Las unidades de Caballería intentarán flanquear a tu enemigo. Se centran en la ofensiva.
+Construye y mejora el Barracón de Caballería para mejorar el ATQ, DEF y PV de las unidades de caballería y los héroes.
 
 D
 7Base.Technologies.Technology_ByzantineEra_Divining_Name	Divinidad
+Z
+?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameCódigos de Caballería
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
 A
@@ -1132,6 +1151,8 @@ S
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_NameCampo de papiro lujoso
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_9_Name�<style=ability_label>Burla| Escudo| Potenciador</style>Se golpea el pecho, burlándose de todos los enemigos durante <style=basestat>{taunt_duration}</style>, obteniendo <style=basestat>{shield_percentage}</style> de DEF como escudo, y aumentando la DEF en <style=basestat>{def_percentage}</style> durante <style=basestat>{duration}</style>.
+B
+7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGremios
 Q
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameGuerreros Nubios
 f
@@ -1209,6 +1230,8 @@ F
 /Base.Units.Unit_IberianEra_Vikings_Cavalry_NameCaballería Vikinga
 )
 Base.BuildingTypes.MarketplaceMercado
+Z
+CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_NameCarta de Libertades
 F
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_NameHostigadores
 [
@@ -1341,10 +1364,8 @@ D
 Base.Units.Unit_Spartacus_Name	Espartaco
 A
 1Base.Buildings.Building_Egypt_Home_Average_3_NameCasa mediana
-�	
-QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Burla | Escudo | Golpe de Área</style>Filipo II de Macedonia obtiene un gran escudo que vale <style=basestat>{porcentaje_de_escudo}</style> de su daño base y burla a todas las unidades enemigas durante <style=basestat>{duración_de_burla}</style>. Tras <style=basestat>{tiempo_detonación}</style>, su escudo detona, infligiendo <style=basestat>{porcentaje_de_daño}</style> del valor restante del escudo como daño a todas las unidades enemigas en un radio de <style=basestat>{rango}</style>. La detonación consume el escudo de Felipe.
-
-<style=ability_label>Burla | Escudo | Golpe en Área</style> Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su daño base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Después de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonación consume el escudo de Felipe.
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Burla | Escudo | Golpe en Área</style> Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su daño base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Después de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonación consume el escudo de Felipe.
 J
 (Base.BuildingGroups.smallIrrigation_NamePozo PequeñoPozos Pequeños
 V
@@ -1359,14 +1380,16 @@ w
 1Base.Buildings.Building_China_Home_Premium_3_DescBProduce una tonelada de Wu Zhu y añade 3 Trabajadores a tu ciudad
 F
 3Base.Technologies.Technology_China_PaddyFields_NameCampos de Arroz
+I
+2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameCaballería Fatimí
 #
 Base.Units.Unit_Menes_NameMenes
 H
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_NameGranja rural
 l
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc+Refina los capullos de seda en hilo de seda
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Potenciador</style> Siempre que el portador consiga un golpe crítico, su probabilidad de golpe crítico aumenta en <style=basestat>{crit_buff}</style> durante <style=basestat>{duration}</style>.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>Potenciador</style>Cada vez que el portador consiga un golpe crítico, su probabilidad de golpe crítico aumenta en <style=basestat>{crit_buff}</style> durante <style=basestat>{duration}</style>. Este efecto no se acumula consigo mismo.
 w
 2Base.Buildings.Building_Arabia_Home_Premium_1_DescAProduce un montón de dirham y añade 3 trabajadores a tu ciudad.
 u
@@ -1379,6 +1402,8 @@ C
 7Base.Technologies.Technology_ByzantineEra_Xocolatl_NameXocolatl
 V
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_DescProduce un montón de comida.
+C
+8Base.Technologies.Technology_HighMiddleAges_Billmen_NameBillmen
 W
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_DescProduce pimienta.
 j
@@ -1387,6 +1412,8 @@ S
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NameCrónica precisa
 |
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescBProduce un montón de monedas y añade 2 trabajadores a tu ciudad.
+S
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenstaufen a Distancia
 <
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSal
 �
@@ -1421,7 +1448,7 @@ j
 8
 /Base.Technologies.Technology_Vikings_Sagas_NameSagas
 W
-;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_NameBarracón de caballería
+;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_NameBarracón de Caballería
 E
 5Base.Buildings.Building_MinoanEra_Home_Average_1_NameCasa mediana
 ;
@@ -1506,14 +1533,16 @@ H
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameAscenso de Egipto
 V
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameRejuvenecimiento de la Unión
+E
+9Base.Technologies.Technology_HighMiddleAges_Clearing_NameDespejar
 \
 DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameMercader de Especias
 :
 %Base.Heroes.hero.LeonardoDaVinci_NameLeonardo da Vinci
 �
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_3_DescNProduce una gran cantidad de comida con el paso de un largo periodo de tiempo.
-�
-"Base.Units.Unit_QueenBoudicca_Desc�¡Que tus enemigos teman, pues Boudica, Reina de los Icenos, se ha unido a Heroes of History! Esta reina de los icenos detuvo la máquina de la Antigua Roma en los campos de la Gran Bretaña del siglo I, y al hacerlo se abrió camino en la historia para siempre.<br><br>Se abrió camino en nombre de la independencia, incendiando el Londres romano y avivando el fuego de la rebelión en toda Gran Bretaña.<br><br>Aún hoy es un símbolo de liberación, utilizado tanto por los luchadores por la libertad como por las sufragistas.<br><br>Aunque le espera la muerte, no tiene dudas ni miedo. Cree que por algunas cosas merece la pena arriesgarlo todo.
+�
+"Base.Units.Unit_QueenBoudicca_Desc�¡Que tus enemigos teman, pues Boudica, Reina de los Icenos, se ha unido a Héroes de la Historia! Esta reina de los icenos detuvo la máquina de la Antigua Roma en los campos de la Gran Bretaña del siglo I, y al hacerlo se abrió camino en la historia para siempre.<br><br>Se abrió camino en nombre de la independencia, incendiando el Londres romano y avivando el fuego de la rebelión en toda Gran Bretaña.<br><br>Aún hoy es un símbolo de liberación, utilizado tanto por los luchadores por la libertad como por las sufragistas.<br><br>Aunque le espera la muerte, no tiene dudas ni miedo. Cree que por algunas cosas merece la pena arriesgarlo todo.
 d
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_NameBarracón de infantería pesada
 �
@@ -1634,7 +1663,7 @@ H
 Base.Heroes.hero.RamsesII_Name
 Ramsés II
 U
-9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_2_NameBarracón de caballería
+9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_2_NameBarracón de Caballería
 k
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 �
@@ -2012,7 +2041,7 @@ J
 ]
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_DescProduce Capullos de Polilla
 Y
-=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_3_NameBarracón de caballería
+=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_3_NameBarracón de Caballería
 2
  Base.BuildingGroups.channel_NameCanalCanales
 A
@@ -2048,7 +2077,7 @@ P
 >
 *Base.Wonders.Wonder_Mayas_SayilPalace_NamePalacio de Sayil
 Z
->Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_2_NameBarracón de caballería
+>Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_2_NameBarracón de Caballería
 K
 :Base.Buildings.Building_AgeOfTheFranks_Farm_Premium_1_NameGranja lujosa
 C
@@ -2194,7 +2223,7 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_8_NameAtalay
 D
 3Base.Technologies.Technology_China_RefinedSilk_NameSeda Refinada
 U
-9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_2_NameBarracón de caballería
+9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_2_NameBarracón de Caballería
 
 Base.Ages.Egypt_NameEgipto
 T
@@ -2304,6 +2333,8 @@ J
 Sastrería
 }
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
+V
+?Base.Technologies.Technology_HighMiddleAges_WinterStabling_NameEstablo de Invierno
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBarracón de asedio
 I
@@ -2328,6 +2359,8 @@ p
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Control Mental| Potenciador</style>Desata su genio literario, convenciendo a una unidad enemiga para que ataque a sus aliados durante <style=basestat>{duration}</style>. Mientras esté bajo el control de Jane, el ATQ de la unidad enemiga aumenta en <style=basestat>{atk_percentage}</style>. Da prioridad a los héroes.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_Desc}Las unidades a distancia lanzan proyectiles a gran distancia y son especialmente eficaces contra las unidades de infantería.
+L
+<Base.Technologies.Technology_HighMiddleAges_Precautions_NamePrecauciones
 P
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_NameGranja doméstica
 F
@@ -2340,6 +2373,8 @@ P
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameSúbditos y jarls
 <
 )Base.Regions.region.VolcanicJungle_3_NameColonia Inglesa
+K
+5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameComandante Fatimí
 t
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 >
@@ -2477,7 +2512,7 @@ P
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.LeonardoDaVinci_1_Name� <style=ability_label>Golpe enárea| Quemadura</style>Se teletransporta al grupo más grande de unidades enemigas y dispara proyectiles ardientes a los enemigos dentro de un rango de <style=basestat>{range}</style>, quemándolos por <style=basestat>{dmg_percentage}</style> de daño durante <style=basestat>{duration}</style>, y ganando <style=basestat>{attack_buff}</style> ataque y <style=basestat>{attack_speed_buff}</style> velocidad de ataque durante el resto de la oleada. A continuación, Da Vinci se teletransporta a su posición original en el campo de batalla al cabo de 4 segundos.
 V
-:Base.Buildings.Building_IberianEra_Barracks_Cavalry_1_NameBarracón de caballería
+:Base.Buildings.Building_IberianEra_Barracks_Cavalry_1_NameBarracón de Caballería
 I
 8Base.Buildings.Building_ByzantineEra_Farm_Premium_1_NameGranja lujosa
 �
@@ -2491,7 +2526,7 @@ L
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_NameEstación de irrigación
 U
-9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_1_NameBarracón de caballería
+9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_1_NameBarracón de Caballería
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 =
@@ -2516,6 +2551,8 @@ A
 2Base.Buildings.Building_China_City_CityHall_2_NameGran salón
 *
 Base.Units.Unit_Hercules_Name	Hércules
+S
+:Base.Technologies.Technology_HighMiddleAges_CropSheds_NameCobertizos de Cultivo
 �
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_Desc}Las unidades a distancia lanzan proyectiles a gran distancia y son especialmente eficaces contra las unidades de infantería.
 A
@@ -2536,6 +2573,8 @@ X
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameAcademia de héroes
 �
  Base.Units.Unit_QinShiHuang_Desc�Por mandato del cielo y escrito en mil monumentos, ¡es Qin Shi Huang, el primer emperador de una China! En el siglo III a.C., este antiguo rey reclamó el trono de una China unificada. Entre el olor a papel quemado y el afilado de espadas, Qin Shi Huang conquistó toda China e inició un legado que nunca se olvidaría.<br><br>Bajo su mandato, se emprendieron enormes proyectos de construcción, como la primitiva Gran Muralla y el Ejército de Terracota, que custodia su mausoleo del tamaño de una ciudad. Estos esfuerzos pretendían proteger y solidificar la unidad y la fuerza del imperio.<br><br>A Qin Shi Huang se le recuerda como un tirano: brutal, autoritario y todopoderoso. Sin embargo, esto puede ser falso: estas palabras proceden de quienes tuvieron la monumental tarea de reemplazar su dinastía. En cualquier caso, China se ha visto sin duda marcada por el impacto de este Hijo del Cielo. Por desgracia, como Héroe es bastante difícil trabajar con él. Actualmente, Lincoln y él se niegan a hablarse.
+^
+BBase.Technologies.Technology_HighMiddleAges_BaldachinCanopies_NameBaldaquinos Ornamentales
 F
 /Base.Units.Unit_TreasureHunt_Purple_Cannon_NameCañón Crepuscular
 0
@@ -2575,8 +2614,8 @@ N
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_NameCentinelas de Carcassonne
 m
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_Name%Disposición mejorada de trabajadores
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.MayanAstronomer_1_Name�<style=ability_label>Golpe en Área</style>Invoca energía celestial para que llueva sobre una unidad enemiga aleatoria, infligiendo <style=basestat>{dmg_percentage}</style> daño. El impacto también afecta a las unidades enemigas cercanas en un radio de <style=basestat>{range}</style> del objetivo.
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.MayanAstronomer_1_Name�<style=ability_label>Golpe en Área</style>Invoca energía celestial para que llueva sobre una unidad enemiga aleatoria, infligiendo <style=basestat>{dmg_percentage}</style> de daño. El impacto también afecta a las unidades enemigas cercanas en un radio de <style=basestat>{range}</style> del objetivo.
 -
 Base.Ages.KingdomOfSicily_Start
 1100 d. C.
@@ -2615,6 +2654,8 @@ J
 &Base.BuildingGroups.premiumQuarry_NameCantera LujosaCanteras Lujosas
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
+J
+3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NameInfantería Fatimí
 s
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc0Mejora la felicidad de los edificios adyacentes.
 Z
@@ -2708,6 +2749,8 @@ B
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameOrfebre
 ;
 ,Base.TreasureHuntDifficultiesPanel.Completed¡Completo!
+H
+4Base.Abilities.hero_battle_ability.LouisPasteur_NameAyuda Alquímica
 S
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameMaestría del faering
 _
@@ -2727,7 +2770,7 @@ e
 ~
 5Base.Buildings.Building_BronzeAge_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 [
-?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameBarracón de caballería
+?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameBarracón de Caballería
 m
 6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc3Produce monedas y añade un trabajador a tu ciudad.
 S
@@ -2820,6 +2863,8 @@ l
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_DescRProduce una pequeña cantidad de comida con el paso de un breve periodo de tiempo.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo| Escudo</style>Apuñala al objetivo actual desde detrás de su escudo, infligiendo <style=basestat>{dmg_percentage}</style> de daño y ganando <style=basestat>{hp_percentage}</style> de su Daño Base como escudo.
+B
+0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameAsedio Fatimí
 V
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescDesbloquea a los asteros
 A
@@ -2961,7 +3006,7 @@ Y
 ,
 Base.Ages.AgeOfTheFranks_Decade	550 d. C.
 U
-9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_3_NameBarracón de caballería
+9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_3_NameBarracón de Caballería
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_10_Name�<style=ability_label>Pisotón| Sangrar</style>Golpea el suelo con su lanza, desatando una onda expansiva que inflige <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos en un radio de <style=basestat>{range}</style>. Las unidades afectadas tienen una <style=basestat>{bleed_chance}</style> de posibilidad de sangrar para un <style=basestat>{bleed_percentage}</style> de daño adicional durante <style=basestat>{bleed_duration}</style>.
 �
@@ -3211,6 +3256,8 @@ P
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 H
 8Base.Buildings.Building_ByzantineEra_Home_Average_3_NameCasa mediana
+j
+EBase.Technologies.Technology_HighMiddleAges_PikeformationTactics_Name!Tácticas de Formación con Picas
 ?
 "Base.Heroes.hero.TribalHealer_NameNaya del Clan de la Cueva
 I
@@ -3220,7 +3267,9 @@ I
 Q
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameRuinas Readaptadas
 W
-;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameBarracón de caballería
+;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameBarracón de Caballería
+V
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameComandante Hohenstaufen
 W
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_DescProduce un montón de comida.
 I
@@ -3369,8 +3418,8 @@ c
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_Desc!Desbloquea Caballería Nobiliaria
 M
 :Base.Technologies.Technology_MinoanEra_Administration_NameAdministración
-5
-#Base.Regions.region.Panganea_6_NameCapital Caído
+9
+#Base.Regions.region.Panganea_6_NameCapital Abandonada
 
 6Base.Buildings.Building_IberianEra_Home_Average_1_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 @
@@ -3414,7 +3463,7 @@ QBase.AbilityDescriptions.hero_battle_ability_description.AztecTlacateccatl_1_Na
 ]
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_4_DescProduce Capullos de Polilla
 U
-9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_1_NameBarracón de caballería
+9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_1_NameBarracón de Caballería
 =
 "Base.Heroes.hero.VikingRaider_NameFreydís Eiríksdóttir
 :
@@ -3633,6 +3682,8 @@ S
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_NameTaller de cantería
 ^
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameInnovación balística
+U
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameInfantería Hohenstaufen
 (
 Base.Ages.EarlyRome_Decade
 750 a. C.
@@ -3661,6 +3712,8 @@ U
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescDesbloquea a los arqueros
 O
 (Base.BuildingGroups.premiumMerchant_NameMercader LujosoMercaderes Lujosos
+O
+@Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_NameBallesteros
 c
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc$Desbloquea a los arqueros sarracenos
 U
@@ -3688,7 +3741,7 @@ DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameBarracón
 Q
 0Base.Abilities.hero_battle_ability.Achilles_NameLa última batalla de Aquiles
 U
-9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameBarracón de caballería
+9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameBarracón de Caballería
 �
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
 X
@@ -3726,7 +3779,7 @@ A
 S
 =Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_NameTaller de Escribas
 V
-:Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_NameBarracón de caballería
+:Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_NameBarracón de Caballería
 A
 1Base.Buildings.Building_Egypt_Home_Average_5_NameCasa mediana
 @
@@ -3745,8 +3798,8 @@ R
 =Base.Technologies.Technology_RomanEmpire_EnhancedTorsion_NameTorsión mejorada
 e
 /Base.Buildings.Building_China_Home_Small_6_Desc2Produce wu zhu y añade un trabajador a tu ciudad.
-�
-Base.Units.Unit_Lagertha_Desc�Que nadie te detenga, porque Lagertha, la legendaria escudera vikinga del siglo IX, ¡se ha unido a Heroes of History! Esta mujer guerrera es célebre por su valentía y su destreza estratégica en la batalla, luchando junto a su marido, Ragnar Lodbrok, y desempeñando un papel crucial en sus victorias militares. Conocida por su destreza en el combate, Lagertha inspiró a los guerreros con su intrepidez y liderazgo.<br><br>Más allá de sus proezas marciales, tuvo una compleja vida personal, marcada por su tumultuosa relación con Ragnar, de quien acabó divorciándose. Según la leyenda, incluso después de su separación de Ragnar, Lagertha mantuvo su influencia y condujo a sus propias tropas a la victoria en batallas posteriores.<br><br>El legado de Lagertha como mujer poderosa en la historia y mitología nórdicas sigue inspirando y cautivando al público actual.
+�
+Base.Units.Unit_Lagertha_Desc�Que nadie te detenga, porque Lagertha, la legendaria escudera vikinga del siglo IX, ¡se ha unido a Héroes de la Historia! Esta mujer guerrera es célebre por su valentía y su destreza estratégica en la batalla, luchando junto a su marido, Ragnar Lodbrok, y desempeñando un papel crucial en sus victorias militares. Conocida por su destreza en el combate, Lagertha inspiró a los guerreros con su intrepidez y liderazgo.<br><br>Más allá de sus proezas marciales, tuvo una compleja vida personal, marcada por su tumultuosa relación con Ragnar, de quien acabó divorciándose. Según la leyenda, incluso después de su separación de Ragnar, Lagertha mantuvo su influencia y condujo a sus propias tropas a la victoria en batallas posteriores.<br><br>El legado de Lagertha como mujer poderosa en la historia y mitología nórdicas sigue inspirando y cautivando al público actual.
 9
 $Base.Units.Unit_OttoVonBismarck_NameOtto von Bismarck
 [
@@ -3780,6 +3833,8 @@ Y
 !Base.Units.Unit_AttilaTheHun_NameAtila el Huno
 %
 Base.Units.Unit_Medusa_NameMedusa
+1
+ Base.BuildingGroups.furnace_NameHornoHornos
 5
 *Base.Wonders.Wonder_Capital_Colosseum_NameColiseo
 0
@@ -3817,15 +3872,15 @@ DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_3_NameBarracón
 W
 =Base.Buildings.Building_IberianEra_CultureSite_Compact_1_NameZona cultural compacta
 �
-Base.Units.Unit_Dracula_Desc�A Vlad Drácula le llaman diablo, porque su reinado fue rojo de sangre. Este duque Rumano del siglo XV es famoso por su brutalidad, su crueldad y, para algunos, por su valentía. Durante su reinado, dominó a rivales y aliados por igual, dejando "bosques de cadáveres" a su paso.<br><br>Casi cinco siglos después, el Nombre de Vlad Drácula inspiró la novela Drácula de Bram Stoker. En esta famosa historia de terror, el conde rumano Drácula viaja a Londres, dispuesto a entablar un ballet letal con el abogado Jonathan Harker y el profesor Van Helsing.<br><br>Ambos inspiraron cuentos de terror. La crueldad de Vlad Drácula le convirtió en protagonista de algunos de los primeros bestsellers alemanes, mientras que la legión de descendientes no muertos del Conde Drácula aterroriza a los lectores hasta nuestros días. 
+Base.Units.Unit_Dracula_Desc�A Vlad Drácula le llaman diablo, porque su reinado fue rojo de sangre. Este duque rumano del siglo XV es famoso por su brutalidad, su crueldad y, para algunos, por su valentía. Durante su reinado, dominó a rivales y aliados por igual, dejando "bosques de cadáveres" a su paso.<br><br>Casi cinco siglos después, el nombre de Vlad Drácula inspiró la novela Drácula de Bram Stoker. En esta famosa historia de terror, el conde rumano Drácula viaja a Londres, dispuesto a entablar un ballet letal con el abogado Jonathan Harker y el profesor Van Helsing.<br><br>Ambos inspiraron cuentos de terror. La crueldad de Vlad Drácula le convirtió en protagonista de algunos de los primeros bestsellers alemanes, mientras que la legión de descendientes no muertos del Conde Drácula aterroriza a los lectores hasta nuestros días. 
 �
 .Base.Units.Unit_RomanEmpire_Player_Turmae_DescSLas unidades de caballería son muy rápidas y cargan hacia la retaguardia enemiga.
 C
 .Base.Units.Unit_TreasureHunt_Green_Cannon_NameCañón Verdeante
 P
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_DescProduce tomos.
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Potenciador| Sangrado</style> Aumenta el daño del héroe contra objetivos que sufren hemorragia en <style=basestat>{damage_increase_per_relic_level}</style>. Además, al dañar a un enemigo, hay un <style=basestat>{bleed_chance_percentage}</style> de probabilidad de infligir sangrado, causando <style=basestat>{bleed_percentage_per_relic_level}</style> de daño por segundo durante <style=basestat>{bleed_duration}</style>.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Potenciador | Sangrado</style> Aumenta el daño del héroe contra objetivos sangrantes en <style=basestat>{damage_increase_per_relic_level}</style>. Además, al dañar a un enemigo, hay una probabilidad del <style=basestat>{bleed_chance_percentage}</style> de infligir sangrado, causando <style=basestat>{bleed_percentage_per_relic_level}</style> de daño por segundo durante <style=basestat>{bleed_duration}</style>.
 ]
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameControles automáticos
 A
@@ -3881,6 +3936,9 @@ q
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc0Mejora la felicidad de los edificios adyacentes.
 6
 Base.Cities.City_Vikings_NameReino de los Vikingos
+H
+:Base.Technologies.Technology_HighMiddleAges_Secretary_Name
+Secretario
 A
 1Base.Buildings.Building_China_Home_Average_6_NameCasa mediana
 G
@@ -4062,6 +4120,8 @@ H
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameGuardia real
 U
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameAscenso de los Vikingos
+�
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Desc`Produce Ceniza, y el Horno también puede usarse para obtener más Ceniza convirtiendo recursos.
 U
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NameFlecha del Líder de la Horda
 /
@@ -4083,7 +4143,7 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 ?
 3Base.Technologies.Technology_MinoanEra_Columns_NameColumnas
 �
-RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Golpe em Área| Potenciador| Penalización</style>Ordena disparar un cañón al mayor grupo de unidades enemigas, infligiendo <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>. Las unidades afectadas ven reducida su precisión en <style=basestat>{accuracy_percentage}</style>, su daño en <style=basestat>{atk_percentage}</style>, y su velocidad de movimiento en <style=basestat>{movement_percentage}</style> durante <style=basestat>{debuff_duration}</style>. Todas las unidades amigas obtienen <style=basestat>{evasion_percentage}</style> de evasión durante <style=basestat>{evasion_duration}</style>.
+RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Golpe en Área| Potenciador| Penalización</style>Ordena disparar un cañón al mayor grupo de unidades enemigas, infligiendo <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>. Las unidades afectadas ven reducida su precisión en <style=basestat>{accuracy_percentage}</style>, su daño en <style=basestat>{atk_percentage}</style>, y su velocidad de movimiento en <style=basestat>{movement_percentage}</style> durante <style=basestat>{debuff_duration}</style>. Todas las unidades amigas obtienen <style=basestat>{evasion_percentage}</style> de evasión durante <style=basestat>{evasion_duration}</style>.
 y
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_DescFLas unidades de infantería son más eficaces en las filas delanteras.
 E
@@ -4100,6 +4160,10 @@ N
 8Base.Technologies.Technology_StoneAge_CavePaintings_NamePinturas rupestres
 V
 9Base.Technologies.Technology_BronzeAge_BuildingTools_NameConstruyendo conocimiento
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�<style=ability_label>Curación | Penalización</style>Louis Pasteur lanza una poción a la unidad aliada más herida, curándola por <style=basestat>{porcentaje_de_curación}</style> de su Daño base. Los vapores de la poción reducen los efectos curativos recibidos por todas las unidades enemigas cercanas en <style=basestat>{porcentaje_de_reducción_de_curación}</style> durante <style=basestat>{duración}</style>.
+
+<style=ability_label>Sanar | Penalización</style> Louis Pasteur lanza una poción a la unidad aliada más herida, sanándola por un <style=basestat>{heal_percentage}</style> de su daño base. Los vapores de la poción reducen los efectos curativos recibidos recibidos  por todas las unidades enemigas cercanas en <style=basestat>{healing_reduction_percentage}</style> durante <style=basestat>{duration}</style>.
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DescmLos muelles de pesca envían barcos a pescar para abastecer a todos tus trabajadores y marineros hambrientos.
 C
@@ -4121,7 +4185,7 @@ ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_NameCarpintería
 9
 (Base.Wonders.Wonder_China_GreatWall_NameMuralla China
 U
-9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_3_NameBarracón de caballería
+9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_3_NameBarracón de Caballería
 =
 %Base.Heroes.hero.MayanAstronomer_NameItzamnaaj Bahlam III
 J
@@ -4152,16 +4216,18 @@ J
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_1_NamePozo pequeño
 P
 9Base.Abilities.hero_battle_ability.ArtemisiaIOfCaria_NameTormenta de Flechas
-�
-!Base.HeroClass.SingleStriker_Desc�Los Golpeadores individuales infligen una gran cantidad de daño a objetivos individuales. Son excelentes contra héroes enemigos.<br><line-height=50%><br></line-height><b><color=#3DA229>Fuertes</color> contra:</b><br>-<indent=5%><color=#3DA229>Héroes enemigos</color> en <color=#3DA229>Campaña</color>, <color=#3DA229>Arena</color> y <color=#3DA229>Caza del Tesoro</color>.</indent><br>-<indent=5%><color=#3DA229>Tormentas Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Débiles</color> contra:</b><br>-<indent=5%><color=#CD2A25>Grandes Escuadrones</color> en Campaña y Caza del Tesoro.
+�
+!Base.HeroClass.SingleStriker_Desc�Los Golpeadores Únicos infligen una gran cantidad de daño a objetivos individuales. Son excelentes contra héroes enemigos.<br><line-height=50%><br></line-height><b><color=#3DA229>Fuertes</color> contra:</b><br>-<indent=5%><color=#3DA229>Héroes Enemigos</color> en <color=#3DA229>Campaña</color>, <color=#3DA229>Arena</color> y <color=#3DA229>Caza del Tesoro</color>.</indent><br>-<indent=5%><color=#3DA229>Tormentas Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Débiles</color> contra:</b><br>-<indent=5%><color=#CD2A25>Grandes Escuadrones</color> en Campaña y Caza del Tesoro.
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescFProduce un gran montón de Monedas y añade 2 Trabajadores a tu Ciudad
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
-�
-Base.Units.Unit_Medusa_Desc�¡No mires! Medusa, una de las tres Gorgonas de los mitos griegos, fue enviada como mensajera, pero se unió a Heroes of History. Con el poder de convertir en piedra a quienes la miran, este monstruo de pelo de serpiente fue una vez una hermosa mujer, hasta que fue maldecida por la diosa Atenea por profanar su templo.<br><br>La historia de Medusa es una historia de transformación y venganza. En los mitos, Perseo, aconsejado por Atenea, la derrotó con un escudo de espejo y le cortó la cabeza, que se convirtió en un símbolo de seguridad para los antiguos griegos.<br><br>Pero sabemos la verdad: Medusa fue teletransportada a la Edad de Piedra por Tesla en el último momento, y tratada como el experimento científico definitivo. Ahora que es libre, quiere vengarse desesperadamente...
+�
+Base.Units.Unit_Medusa_Desc�¡No mires! Medusa, una de las tres Gorgonas de los mitos griegos, fue enviada como mensajera, pero se unió a Héroes de la Historia. Con el poder de convertir en piedra a quienes la miran, este monstruo de pelo de serpiente fue una vez una hermosa mujer, hasta que fue maldecida por la diosa Atenea por profanar su templo.<br><br>La historia de Medusa es una historia de transformación y venganza. En los mitos, Perseo, aconsejado por Atenea, la derrotó con un escudo de espejo y le cortó la cabeza, que se convirtió en un símbolo de seguridad para los antiguos griegos.<br><br>Pero sabemos la verdad: Medusa fue teletransportada a la Edad de Piedra por Tesla en el último momento, y tratada como el experimento científico definitivo. Ahora que es libre, quiere vengarse desesperadamente...
 -
 Base.Heroes.hero.Shaolin_NameXueting Fuyu
+A
+7Base.Technologies.Technology_HighMiddleAges_Bodkin_NameBodkin
 s
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc0Mejora la felicidad de los edificios adyacentes.
 N
@@ -4217,7 +4283,7 @@ GBase.Technologies.Technology_KingdomOfSicily_CloseFormationTactics_NameTácti
 M
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_NameArqueros compuestos
 U
-9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_3_NameBarracón de caballería
+9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_3_NameBarracón de Caballería
 L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_3_DescProduce papiro.
 �
@@ -4286,6 +4352,8 @@ A
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameCasa mediana
 I
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_NameGranja de Ganado
+V
+<Base.Technologies.Technology_HighMiddleAges_MailBarding_NameBarda de cota de malla
 o
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc3Produce monedas y añade un trabajador a tu ciudad.
 Z
@@ -4400,6 +4468,8 @@ D
 1Base.Buildings.Building_Egypt_Home_Premium_6_NameCasa lujosa
 B
 3Base.Buildings.Building_Vikings_Home_Premium_3_NameCasa lujosa
+W
+CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameTorneo de Justas
 P
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_NameCarpintería
 �
@@ -4434,6 +4504,8 @@ U
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_DescProduce caolín.
 1
 !Base.Heroes.hero.SiouxShaman_NameToro Sentado
+E
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_NameHorno
 +
 Base.Units.Unit_RamsesII_Name
 Ramsés II
@@ -4444,7 +4516,7 @@ C
 Y
 ABase.Technologies.Technology_KingdomOfSicily_MarketEconomics_NameEconomía de mercado
 Y
-=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_NameBarracón de caballería
+=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_NameBarracón de Caballería
 J
 0Base.Units.Unit_FeudalAge_Player_Longbowmen_NameArqueros de arco largo
 R
@@ -4461,6 +4533,8 @@ O
 5Base.Technologies.Technology_Vikings_MeadMastery_NameMaestría en Hidromiel
 ?
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_NameEspadachines
+P
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameAsedio de Hohenstaufen
 �
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
 �
@@ -4469,12 +4543,16 @@ O
 2Base.Technologies.Technology_MinoanEra_Screws_Name	Tornillos
 0
 Base.Heroes.hero.JoanOfArc_NameJuana de Arco
+T
+8Base.Units.Unit_HighMiddleAges_Hohenstaufen_Cavalry_NameCaballería Hohenstaufen
 �
 (Base.Units.Unit_FlorenceNightingale_Desc�No te preocupes: la Dama de la Lámpara está a tu lado. Florence Nightingale, una enfermera británica del siglo XIX, es famosa por su labor en la Guerra de Crimea, curando a los soldados mientras agonizaban.<br><br>Pero quizás los mayores logros de Florence Nightingale llegaron más tarde. Después de haber asistido al ejército en Scutari y tratado a los enfermos de tres ejércitos, Nightingale lideró la reforma de la enfermería británica, promoviendo un sistema modernizado que ha dado forma a la atención hasta el día de hoy. Las enfermeras juran el Compromiso Nightingale, un eco de su propia promesa de ayudar.<br><br>El legado de Florence Nightingale es, por tanto, doble: por un lado, un ángel, la Dama de la Lámpara; por otro, una mujer determinada y brillantemente inteligente que cambió los hospitales para siempre. Quizás ninguna de estas imágenes sea completamente cierta. Su apodo original era en realidad la Dama del Martillo, después de que forzara la entrada a un suministro médico cerrado con llave. ¡Tal vez esta imagen sea más acertada que cualquier otra!
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�Los arqueros mayas son unidades a distancia adicionales para tu ejército. Sus estadísticas aumentan automáticamente en función de tu edad actual.
 U
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_DescProduce Armarios
+[
+BBase.Technologies.Technology_HighMiddleAges_GunpowderWeaponry_NameArmamento de Pólvora
 V
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_NameZona cultural compacta
 <
@@ -4487,8 +4565,8 @@ X
 5Base.Buildings.Building_MinoanEra_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 F
 2Base.Buildings.Building_Vikings_Home_Sailor_3_NameCasa de marinero
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo</style>Golpea hábilmente al objetivo actual con su bastón, infligiendo <style=basestat>{dmg_percentage}</style> daño.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo</style>Golpea hábilmente al objetivo actual con su bastón, infligiendo <style=basestat>{dmg_percentage}</style> de daño.
 L
 %Base.BuildingGroups.papyrusPress_NamePrensa de PapiroPrensas de Papiro
 }
@@ -4503,6 +4581,8 @@ o
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescBProduce un montón de monedas y añade 2 trabajadores a tu ciudad.
 :
 (Base.Regions.region.EasternValley_7_NamePuerto Otomano
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Sanar | Revivir</style> Florence protege al héroe más herido con un juramento protector, sanándolo por <style=basestat>{heal_amount}</style> durante 8 segundos. La próxima vez que esta unidad reciba daño letal en esta oleada, en su lugar se vuelve invulnerable por <style=basestat>{invulnerability_duration}</style> y sana un <style=basestat>{revive_percentage}</style> adicional de su vida máxima. Prioriza a los héroes que aún no han sido marcados por Florence.
 P
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameCentinela de Bronce
 B
@@ -4580,8 +4660,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc}Las unidades a distancia lanzan proyectiles a gran distancia y son especialmente eficaces contra las unidades de infantería.
 I
 3Base.Technologies.Technology_StoneAge_GoatPens_NameCorrales de cabras
-�
-Base.Units.Unit_Mozart_Desc�¡Organiza una ópera e inspira a miles con Wolfgang Amadeus Mozart! Este prodigio musical del siglo XVIII se presentó ante reyes y dominó el violín y el teclado, ¡y eso a la edad de cinco años! <br><br>A los 25 años, Mozart ya había compuesto una gran cantidad de piezas musicales, incluyendo varias sinfonías, incontables conciertos e incluso una ópera exitosa. Ya en Viena, se hizo extremadamente famoso, pero no extremadamente rico. <br><br>En sus últimos años, Mozart publicó muchas de sus obras más conocidas, incluyendo su Requiem inacabado. En vida, era un famoso bromista, a menudo haciendo trucos a sus amigos, y una inspiración para muchos, incluido Ludwig Van Beethoven, otro posible recluta para los Heroes of History.
+�
+Base.Units.Unit_Mozart_Desc�¡Organiza una ópera e inspira a miles con Wolfgang Amadeus Mozart! Este prodigio musical del siglo XVIII se presentó ante reyes y dominó el violín y el teclado, ¡y eso a la edad de cinco años! <br><br>A los 25 años, Mozart ya había compuesto una gran cantidad de piezas musicales, incluyendo varias sinfonías, incontables conciertos e incluso una ópera exitosa. Ya en Viena, se hizo extremadamente famoso, pero no extremadamente rico. <br><br>En sus últimos años, Mozart publicó muchas de sus obras más conocidas, incluyendo su Requiem inacabado. En vida, era un famoso bromista, a menudo haciendo trucos a sus amigos, y una inspiración para muchos, incluido Ludwig Van Beethoven, otro posible recluta para los Héroes de la Historia.
 W
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameFundíbulos avanzados
 �
@@ -4652,6 +4732,8 @@ p
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_Desc3Produce monedas y añade un trabajador a tu ciudad.
 /
 Base.Ages.Vikings_NameReino de los Vikingos
+S
+<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameFestines del Gremio
 a
 LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_NameLiceo de Eruditos
 B
@@ -4707,6 +4789,8 @@ T
 2Base.Technologies.Technology_RomanEmpire_Cape_NameCapa
 I
 3Base.Technologies.Technology_China_SilkMastery_NameDominio de la Seda
+U
+;Base.Technologies.Technology_HighMiddleAges_Knighthood_NameCaballería Nobiliaria
 c
 @Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_3_NameBarracón de infantería pesada
 .
@@ -4778,6 +4862,8 @@ N
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_NameTaller de papiro
 D
 4Base.Technologies.Technology_ClassicGreece_Math_NameMatemáticas
+T
+ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_NameFeria de Ganado
 E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NameGranja rural
 n
@@ -4797,6 +4883,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 Mercaderes
 �
 Base.Units.Unit_RamsesII_Desc�Las llanuras temblarán bajo las ruedas de los carros, pues Ramsés el Grande ha unido su poderío al tuyo. Este faraón del siglo XIII a.C. se hizo famoso por sus campañas contra los hititas, los nubios y los libios. La Batalla de Kadesh contra los hititas dio lugar a uno de los primeros tratados de paz de la historia.<br><br>Además de sus logros militares, Ramsés II fue un prolífico constructor que encargó grandes estructuras como los templos de Abu Simbel y el Ramesseum, dejando su huella en el mundo para siempre.<br><br>Ramsés II es recordado como el mayor faraón del mayor reino de Egipto, y sus 66 años de reinado dieron forma al patrimonio cultural y arquitectónico de Egipto. Los griegos le llamaban Ozymandias, nombre con el que fue inmortalizado en la poesía. Cuando veas a Ramsés, ¡ponte de rodillas!
+V
+>Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameEnsamblaje de Madera
 f
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc2Produce monedas y añade un sacerdote a tu ciudad.
 W
@@ -4838,7 +4926,7 @@ EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_2_NameBarracó
 X
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_3_NameBarracón de infantería
 V
-:Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_NameBarracón de caballería
+:Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_NameBarracón de Caballería
 U
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_1_NameBarracón de a distancia
 w
@@ -4851,6 +4939,8 @@ ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc2Mejora la ir
 #Base.Heroes.hero.UlyssesSGrant_NameUlysses S. Grant
 s
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc0Mejora la felicidad de los edificios adyacentes.
+b
+EBase.Technologies.Technology_HighMiddleAges_SimpleSpinningWheels_NameRuedas Giratorias Simples
 �
 9Base.Buildings.Building_ClassicGreece_Home_Average_1_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 D
@@ -4860,6 +4950,8 @@ I
 5Base.Abilities.hero_battle_ability.BessieColeman_NameBengalas de Humo
 E
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_NameArtesano
+e
+EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameCimientos de Piedra Arenisca
 Q
 #Base.BuildingGroups.stoneMason_NameTaller de CanteríaTalleres de Cantería
 H
@@ -4964,7 +5056,7 @@ P
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>Invencibilidad| Potenciador</style>Proporciona Invencibilidad a todas las unidades amigas durante <style=basestat>{duration}</style> y aumenta su DEF en <style=basestat>{def_percentage}</style> de la DEF de Lincoln durante <style=basestat>{buff_duration}</style>.
 U
-9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameBarracón de caballería
+9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameBarracón de Caballería
 J
 .Base.Abilities.hero_battle_ability.Tansen_NameEl Abrazo de la Armonía
 �
@@ -5009,6 +5101,8 @@ k
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
 O
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameTorre de asedio
+Y
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameInfantería Pesada Hohenstaufen
 J
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NameBomba de agua
 X
@@ -5080,7 +5174,7 @@ U
 Z
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_DescDesbloquea Billmen
 Y
-=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameBarracón de caballería
+=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameBarracón de Caballería
 �
 Base.Units.Unit_Achilles_Desc�Cruza los mares oscuros como el vino y contempla a Aquiles, guerrero legendario descrito en la "Ilíada" de Homero. Sumergido en la Estigia cuando era un bebé, sólo su talón pudo ser dañado. Entrenado para la batalla e invulnerable, así llegó al Asedio de Troya.<br><br>Tras la muerte de su amante Patroclo, Aquiles buscó al Líder adversario Héctor en un ataque de furia ciega. Aunque Héctor era un poderoso guerrero y héroe por derecho propio, no era rival para el poderío de Aquiles.<br><br>Aunque cayó, con el tobillo atravesado por las flechas, a las puertas de Troya, sus acciones en el asedio resultaron decisivas, y su leyenda ha inspirado a innumerables guerreros, incluido Alejandro Magno. Verdaderamente, ¡nadie como él demuestra lo importante que es limpiarse por completo!
 F
@@ -5093,6 +5187,8 @@ N
 !Base.Heroes.hero.LeifErikson_NameLeif Erikson
 8
 #Base.Regions.region.Panganea_1_NameAntiguos Salvajes
+\
+DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameArquitectura Staufer
 D
 3Base.Buildings.Building_MinoanEra_Home_Small_3_NameCasa Pequeña
 �
@@ -5162,7 +5258,7 @@ Y
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduce obsidiana.
 W
-;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameBarracón de caballería
+;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameBarracón de Caballería
 s
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc7Produce una pequeña cantidad de Comida en poco tiempo.
 C
@@ -5191,7 +5287,7 @@ L
 ;
 1Base.Technologies.Technology_IberianEra_Door_NamePuerta
 X
-<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameBarracón de caballería
+<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameBarracón de Caballería
 X
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NamePlantación de naranjas
 k
@@ -5242,6 +5338,8 @@ I
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 Q
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameEconomía Portuaria
+J
+1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameFatimíes a Distancia
 �
 Base.Units.Unit_KingMinos_Desc�Chat con Zeus y esconde el hilo rojo: ¡El Rey Minos está aquí! Se cree que este legendario gobernante de la mitología griega reinó en el II milenio a.C., famoso como soberano de Creta.<br><br>Célebre por su sabiduría y autoridad, se le conoce sobre todo por haber encargado la construcción de un complejo laberinto para encarcelar al Minotauro, una bestia mítica.<br><br>El reinado de Minos está entretejido con cautivadores relatos de intriga y aventura, como la historia de Dédalo e Ícaro. Su perdurable legado como rey formidable y misterioso sigue encantando a los narradores, entretejiendo hilos de mitos e historia antigua. ¡No dejes que te lleve a recorrer su laberinto!
 X
@@ -5268,6 +5366,8 @@ A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Pezgueras
 T
 @Base.Buildings.Building_ClassicGreece_Workshop_StoneMason_1_DescProduce pilares.
+M
+:Base.Technologies.Technology_HighMiddleAges_Catapults_NameBallesta Grande
 Q
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameSoldados de Infantería
 S
@@ -5332,8 +5432,8 @@ b
 (Base.BuildingGroups.smallRitualSite_NameZona de Rituales PequeñaZonas de Rituales Pequeñas
 ]
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_DescProduce Capullos de Polilla
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�<style=ability_label>Pisotón</style>Balancea su espada en un movimiento circular, infligiendo <style=basestat>{dmg_percentage}</style> daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�<style=ability_label>Pisotón</style>Balancea su espada en un movimiento circular, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>.
 ?
 *Base.Units.Unit_EarlyRome_Huns_Attila_NameJinetes de Sangre
 Y
@@ -5408,8 +5508,8 @@ A
 -Base.Continents.continent.VolcanicJungle_NameSelva volcánica
 I
 1Base.Abilities.hero_battle_ability.AnneBonny_NameRemolino de Vórtice
-�
-Base.Units.Unit_MaoriChief_Desc�Se une a Heroes of History Te Wherowhero, ¡el primer rey maorí! Este jefe de la iwi Waikato de Nueva Zelanda durante el siglo XIX fue coronado por su habilidad en el liderazgo y la guerra, negociando con los británicos y unificando a muchos de su pueblo.<br><br>Nacido en una época de cambios y desafíos, Te Wherowhero intentó proteger la tierra y la cultura maoríes en medio de la creciente colonización europea. Ya mayor, el Movimiento del Rey Maorí le ofreció la realeza, que finalmente aceptó, con el objetivo de reforzar la unidad y la soberanía maoríes.<br><br>Te Wherowhero sigue siendo influyente en la historia maorí, un símbolo de resistencia y unidad para la identidad panmaorí, que luchó por su pueblo en una época de cambios. ¡Comenzó una línea de reyes que existe hasta nuestros días!
+�
+Base.Units.Unit_MaoriChief_Desc�Se une a Héroes de la Historia Te Wherowhero, ¡el primer rey maorí! Este jefe de la iwi Waikato de Nueva Zelanda durante el siglo XIX fue coronado por su habilidad en el liderazgo y la guerra, negociando con los británicos y unificando a muchos de su pueblo.<br><br>Nacido en una época de cambios y desafíos, Te Wherowhero intentó proteger la tierra y la cultura maoríes en medio de la creciente colonización europea. Ya mayor, el Movimiento del Rey Maorí le ofreció la realeza, que finalmente aceptó, con el objetivo de reforzar la unidad y la soberanía maoríes.<br><br>Te Wherowhero sigue siendo influyente en la historia maorí, un símbolo de resistencia y unidad para la identidad panmaorí, que luchó por su pueblo en una época de cambios. ¡Comenzó una línea de reyes que existe hasta nuestros días!
 i
 CBase.Technologies.Technology_AgeOfTheFranks_EliteRiderTraining_Name"Entrenamiento de jinetes de élite
 I
@@ -5486,7 +5586,7 @@ k
 D
 3Base.Units.Unit_HighMiddleAges_Player_Catapult_NameGran Ballesta
 U
-9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_NameBarracón de caballería
+9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_2_NameBarracón de Caballería
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>Golpe en Área| Penalización| Quemar</style>Provoca una tormenta en la ubicación del mayor grupo de unidades enemigas. La tormenta inflige <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>, reduce la velocidad de movimiento en <style=basestat>{move_speed_percentage}</style>, y deja a las unidades afectadas quemándose por <style=basestat>{dmg_percentage_burn}</style> durante <style=basestat>{duration}</style>.
 V
@@ -5496,13 +5596,13 @@ P
 O
 5Base.Buildings.Building_China_RiceFarm_Premium_4_NameGranja de Arroz Lujosa
 X
-<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_3_NameBarracón de caballería
+<Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_3_NameBarracón de Caballería
 D
 1Base.Wonders.Wonder_Vikings_DragonshipEllida_NameDrakkar Ellidia
 B
 3Base.Buildings.Building_Vikings_Home_Premium_6_NameCasa Lujosa
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_1_Name�<style=ability_label>Golpe en Área</style>Detona una explosión dirigida al mayor grupo de unidades enemigas, infligiendo <style=basestat>{dmg_percentage}</style> daño en un rango de <style=basestat>{range}</style>.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_1_Name�<style=ability_label>Golpe en Área</style>Detona una explosión dirigida al mayor grupo de unidades enemigas, infligiendo <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>.
 V
 9Base.Technologies.Technology_China_RammedEarthHouses_NameCasas de Tierra Apisonada
 7
@@ -5706,8 +5806,8 @@ b
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameBarracón de infantería pesada
 [
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_NameEficiencia de las raciones
-�
-Base.Units.Unit_SunTzu_Desc�Deja que tus planes sean tan oscuros como la noche, ¡porque Sun Tzu se ha unido a los Héroes! Este antiguo estratega militar chino es famoso por haber escrito el "Arte de la Guerra" en el siglo V a.C., que dio forma a la guerra en Asia Oriental durante milenios.<br><br>El Arte de la Guerra" hace hincapié en la estrategia, el engaño y la adaptabilidad, y afirma que "el arte supremo de la guerra es someter al enemigo sin luchar". Sus principios se han aplicado en todos los ámbitos, desde la guerra hasta los negocios y los deportes, lo que demuestra su relevancia atemporal.<br><br>Sun Tzu sigue siendo un símbolo de astucia y táctica, y sus enseñanzas una influencia para pensadores y líderes de todo el mundo. Cuando conoció a los héroes de la historia, Leónidas pensó que debía utilizar animales en la batalla: ¿por qué si no lo llamarían zoológico?
+�
+Base.Units.Unit_SunTzu_Desc�Deja que tus planes sean tan oscuros como la noche, ¡porque Sun Tzu se ha unido a los Héroes! Este antiguo estratega militar chino es famoso por haber escrito el "Arte de la Guerra" en el siglo V a.C., que dio forma a la guerra en Asia Oriental durante milenios.<br><br>"El Arte de la Guerra" hace hincapié en la estrategia, el engaño y la adaptabilidad, y afirma que "el arte supremo de la guerra es someter al enemigo sin luchar". Sus principios se han aplicado en todos los ámbitos, desde la guerra hasta los negocios y los deportes, lo que demuestra su relevancia atemporal.<br><br>Sun Tzu sigue siendo un símbolo de astucia y táctica, y sus enseñanzas una influencia para pensadores y líderes de todo el mundo. Cuando conoció a los héroes de la historia, Leónidas pensó que debía utilizar animales en la batalla: ¿por qué si no lo llamarían zoológico?
 e
 /Base.Buildings.Building_China_Home_Small_5_Desc2Produce wu zhu y añade un trabajador a tu ciudad.
 j
@@ -5848,8 +5948,8 @@ H
 (Base.Regions.region.TeslaStormGreen_NameTormenta Tesla Verde
 W
 <Base.Technologies.Technology_FeudalAge_RiseOfTheVikings_NameAscenso de los vikingos
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_Name�<style=ability_label>Pisotón| Recuperación</style>Pisotea el suelo, infligiendo <style=basestat>{dmg_percentage}</style> daño a todos los enemigos dentro de un rango de <style=basestat>{range}</style> y recuperando <style=basestat>{hp_percentage}</style> de su daño base.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_Name�<style=ability_label>Pisotón| Recuperación</style>Pisotea el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de un rango de <style=basestat>{range}</style> y recuperando <style=basestat>{hp_percentage}</style> de su daño base.
 �
 'Base.Units.Unit_MargaretIOfDenmark_Desc�La llamaron Semíramis del Norte, la Dama Rey o La Primera Gran Reina, pero sobre todo fue la Reina Margarita I de Dinamarca. Esta soberana de los siglos XIV y XV se convirtió primero en reina de Noruega, y más tarde gobernó Dinamarca y Suecia, uniendo Escandinavia mediante la Unión de Kalmar.<br><br>Famosa diplomática, Margarita mantuvo el control de la unión a pesar de enfrentarse a nobles desleales y a la iglesia. Gobernando en nombre de su sobrino nieto, consolidó el poder e impuso una estabilidad que no se había visto en una generación.<br><br>Su reinado, al final, trajo a Escandinavia una paz y una prosperidad que se habían echado mucho de menos. Margarita I es recordada como una gran reina, la "más grande antes o después". Aun así, no todos la recuerdan con tanto cariño: su rival, el rey Alberto, la conocía como "¡el rey sin nalgas!
 �
@@ -5879,7 +5979,7 @@ T
 E
 4Base.Buildings.Building_IberianEra_Home_Small_2_NameCasa pequeña
 Z
->Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_NameBarracón de caballería
+>Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_NameBarracón de Caballería
 Z
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_7_NameAtalaya Minoica
 �
@@ -5898,6 +5998,8 @@ l
 *Base.Units.Unit_StoneAge_Player_Siege_Desc�Las Unidades de Asedio atacan lentamente y son débiles a los ataques enemigos, pero impactan en una gran área a gran distancia.
 @
 3Base.Technologies.Technology_IberianEra_Botany_Name	Botánica
+S
+@Base.Technologies.Technology_HighMiddleAges_SaltglazeTiling_NameAzulejos de Sal
 |
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 D
@@ -5931,7 +6033,7 @@ N
 [
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_3_NameBarracón de largo alcance
 [
-?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_2_NameBarracón de caballería
+?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_2_NameBarracón de Caballería
 P
 #Base.BuildingGroups.sailorPort_NamePuerto de MarinerosPuertos de marineros
 k
@@ -5998,6 +6100,8 @@ S
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
 b
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameBarracón de infantería pesada
+X
+@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameTítulos Académicos
 �
 Base.HeroClass.Healer_Desc�Los Sanadores curan a sus aliados. Ellos <color=#3DA229>destacan en todas las modalidades</color> pero <color=#CD2A25>dependen de otros para infligir daño</color>.
 +
@@ -6052,6 +6156,8 @@ d
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc1Produce deben y añade un trabajador a tu ciudad.
 u
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc0Mejora la felicidad de los edificios adyacentes.
+W
+ABase.Technologies.Technology_HighMiddleAges_CompoundArbalest_NameBallesta Compuesta
 @
 1Base.Buildings.Building_China_Home_Premium_5_NameCasa lujosa
 E
@@ -6090,7 +6196,7 @@ K
 0Base.BuildingGroups.collectableAmphitheatre_Name
 AnfiteatroAnfiteatros
 U
-9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameBarracón de caballería
+9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameBarracón de Caballería
 }
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_DescFLas unidades de infantería son más eficaces en las filas delanteras.
 Y
@@ -6113,10 +6219,12 @@ Q
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_DescDMejora considerablemente la irrigación de los edificios adyacentes.
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameCasa pequeña
-�
-&Base.Units.Unit_AlexanderTheGreat_Desc�He aquí Alejandro Magno, invicto, triunfante, ¡el mejor general que el mundo haya conocido! Este rey del siglo IV a.C. es famoso por conquistar vastas regiones del mundo antes de su temprana muerte.  <br><br>Alejandro ascendió al trono a los 20 años, tras el asesinato de su padre. Rápidamente demostró ser decisivo: conquistó a los tracios y destruyó la famosa ciudad-estado de Tebas. Esto trajo nuevamente la paz a Grecia, y Alejandro lideró la Liga de Corinto para conquistar el Imperio Aqueménida de Persia. Este famoso imperio cayó ante él, pero Alejandro no se detuvo: antes de que sus ejércitos se arrodillaran, Siria, Babilonia, Irán e incluso Pakistán cayeron bajo su mando. <br><br>Alejandro nunca perdió una batalla. Al final, su propio ejército pidió regresar a sus hogares. En Babilonia, en el camino de regreso (aunque hizo algunas conquistas en el camino), Alejandro exhaló su último suspiro. <br><br>Dentro de los Heroes of History, Alejandro es algo controversial. ¡Le encanta beber con Aquiles, recibir lecciones de Ciro y hacerle sombra a su padre!
+�
+&Base.Units.Unit_AlexanderTheGreat_Desc�He aquí Alejandro Magno, invicto, triunfante, ¡el mejor general que el mundo haya conocido! Este rey del siglo IV a.C. es famoso por conquistar vastas regiones del mundo antes de su temprana muerte.  <br><br>Alejandro ascendió al trono a los 20 años, tras el asesinato de su padre. Rápidamente demostró ser decisivo: conquistó a los tracios y destruyó la famosa ciudad-estado de Tebas. Esto trajo nuevamente la paz a Grecia, y Alejandro lideró la Liga de Corinto para conquistar el Imperio Aqueménida de Persia. Este famoso imperio cayó ante él, pero Alejandro no se detuvo: antes de que sus ejércitos se arrodillaran, Siria, Babilonia, Irán e incluso Pakistán cayeron bajo su mando. <br><br>Alejandro nunca perdió una batalla. Al final, su propio ejército pidió regresar a sus hogares. En Babilonia, en el camino de regreso (aunque hizo algunas conquistas en el camino), Alejandro exhaló su último suspiro. <br><br>Dentro de los Héroes de la Historia, Alejandro es algo controversial. ¡Le encanta beber con Aquiles, recibir lecciones de Ciro y hacerle sombra a su padre!
 E
 .Base.Abilities.hero_battle_ability.Medusa_NameMirada petrificante
+[
+ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameEspingarda de Torsión
 V
 5Base.Buildings.Building_China_RiceFarm_Premium_6_DescProduce una tonelada de Arroz
 Z
