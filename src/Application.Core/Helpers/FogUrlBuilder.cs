@@ -68,6 +68,7 @@ public static class FogUrlBuilder
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
         public const string FOG_GITHUB_URL = "https://github.com/IngweLand/forge-of-games";
         public const string HOH_HELPER_GITHUB_URL = "https://github.com/IngweLand/hoh-helper";
+        public const string HOH_HELPER_CHROME_WEBSTORE_URL = "https://chromewebstore.google.com/detail/hoh-helper-forge-of-games/almhmnmbpfaonomgaconnmcogadnjndf";
         public const string HOH_HELPER_RELEASES_GITHUB_URL = HOH_HELPER_GITHUB_URL + "/releases";
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
 
