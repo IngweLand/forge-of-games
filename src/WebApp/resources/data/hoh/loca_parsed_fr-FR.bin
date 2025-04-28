@@ -145,6 +145,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameFontaine	Fontaines
 ~
 /Base.Units.Unit_TreasureHunt_Red_Marauders_DescKLes unités d'infanterie sont les plus efficaces sur les premières lignes.
+C
+/Base.TreasureHuntDifficulties.Difficulty_9_NameGrand Maître II
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Bonus</style>Inspire toutes les unités alliées, augmentant leur vitesse d'attaque de <style=basestat>{atk_speed_percentage}</style> et leur ATQ de <style=basestat>{atk_percentage}</style> de l'ATQ de Margaret pendant <style=basestat>{duration}</style>.
 +
@@ -532,6 +534,9 @@ T
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NamePort de pêche luxueux
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_NameFerme domestique
+,
+Base.Heroes.hero.YiSunSin_Name
+Yi Sun-sin
 ;
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
@@ -1367,6 +1372,8 @@ C
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Provocation | Bouclier | Attaque de zone</style>Philippe II de Macédoine obtient un puissant bouclier équivalant à <style=basestat>{shield_percentage}</style> de ses dégâts de base et provoque toutes les unités ennemies pendant <style=basestat>{taunt_duration}</style>. Après <style=basestat>{detonation_time}</style>, son bouclier explose, infligeant <style=basestat>{damage_percentage}</style> de la valeur restante du bouclier en dégâts à toutes les unités ennemies dans un rayon de <style=basestat>{range}</style>. L'explosion consume le bouclier de Philippe.
 E
 (Base.BuildingGroups.smallIrrigation_NamePetit puitsPetits puits
+D
+)Base.Units.Unit_QueenSeondeokOfSilla_NameReine Seondeok de Silla
 R
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameCaserne d'infanterie
 T
@@ -1589,6 +1596,8 @@ G
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_NameCoiffes perfectionnées
 D
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameBaliste castillane
+B
++Base.Regions.region.EmeraldHighlands_1_NameDuché de Highgarde
 ,
 Base.BuildingGroups.SkyDiskAutel solaire
 �
@@ -3656,6 +3665,8 @@ L
 %
 Base.HeroClass.Defender
 Défenseur
+H
+/Base.Continents.continent.EmeraldHighlands_NameHighlands d'Émeraude
 r
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc9Produit des masques d'ancêtre et des pierres calendaires
 P
@@ -3823,6 +3834,9 @@ H
 *Base.Wonders.Wonder_Capital_Colosseum_NameColisée
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
++
+Base.Units.Unit_YiSunSin_Name
+Yi Sun-sin
 ]
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescTransforme le kaolin en argile
 s
@@ -4125,6 +4139,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_NameColonnes
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Attaque de zone | Bonus | Malus</style>Ordonne un tir de canon sur le plus grand groupe d'unités ennemies, infligeant <style=basestat>{dmg_percentage}</style> de dégâts dans un rayon de <style=basestat>{range}</style>. Les unités touchées voient leur précision réduite de <style=basestat>{accuracy_percentage}</style>, leurs dégâts réduits de <style=basestat>{atk_percentage}</style>, et leur vitesse de déplacement réduite de <style=basestat>{movement_percentage}</style> pendant <style=basestat>{debuff_duration}</style>. Toutes les unités alliées gagnent <style=basestat>{evasion_percentage}</style> d'Esquive pour <style=basestat>{evasion_duration}</style>.
+E
+*Base.Heroes.hero.QueenSeondeokOfSilla_NameReine Seondeok de Silla
 {
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_DescHLes unités d'infanterie sont plus efficaces dans les premières lignes.
 E
@@ -4199,6 +4215,8 @@ Q
 !Base.HeroClass.SingleStriker_Desc�Les Attaquants Individuels infligent de lourds dégâts à des cibles uniques. Ils excellent contre les Héros ennemis.<br><line-height=50%><br></line-height><b><color=#3DA229>Fort</color> contre :</b><br>•<indent=5%><color=#3DA229>Héros ennemis</color> dans la <color=#3DA229>Campagne</color>, l'<color=#3DA229>Arène</color> et la <color=#3DA229>Chasse au Trésor</color>.</indent><br>•<indent=5%><color=#3DA229>Tempêtes Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Faible</color> contre :</b><br>•<indent=5%><color=#CD2A25>grandes escouades</color> dans la Campagne et la Chasse au Trésor.
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescDProduit un grand tas de pièces et ajoute 2 travailleurs à ta cité
+�
+Base.Units.Unit_YiSunSin_Desc�Fais trembler les feuilles et les montagnes avec Yi Sun-sin ! Cet amiral coréen du XVIᵉ siècle combattit sous la dynastie Joseon contre les Japonais, sans jamais connaître la défaite en mer. Formé dès l’enfance à l’art de la guerre, Yi mena ses troupes à d’innombrables victoires, jusqu’à être faussement accusé par un général supérieur.<br><br>Une fois réhabilité, Yi obtint des postes de plus en plus prestigieux. Dès sa première bataille en tant qu’amiral, il remporta la victoire à Okpo sans perdre un seul navire, et développa le bateau-tortue, navire emblématique de la flotte Joseon.<br><br>Lors de la bataille de Myeongnyang, Yi rassembla treize navires. Dans les brumes, il frappa, attirant les Japonais vers des courants changeants et des eaux traîtresses. Les récits historiques décrivent son vaisseau amiral comme une forteresse dressée sur la mer, garantissant la victoire de la Corée — et la place de Yi Sun-sin dans l’Histoire.
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescsLes unités d'infanterie lourde sont robustes et empêchent les unités de cavalerie de les traverser en chargeant.
 �
@@ -4560,8 +4578,8 @@ k
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescAProduit une tonne de pièces et ajoute 2 travailleurs à ta cité
 8
 (Base.Regions.region.EasternValley_7_NamePort ottoman
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Soin | Réanimation</style>Florence protège le Héros le plus blessé avec un serment protecteur, le soignant de <style=basestat>{heal_amount}</style> pendant 8 secondes. La prochaine fois que cette unité subit des dégâts létaux pendant cette vague, elle devient invulnérable pendant <style=basestat>{invulnerability_duration}</style> et récupère <style=basestat>{revive_percentage}</style> de ses PV max. Priorise les Héros qui ne sont pas déjà marqués par Florence.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Soin | Réanimation</style>Florence protège l’unité alliée la plus gravement blessée grâce à un serment protecteur, la soignant à hauteur de <style=basestat>{heal_amount}</style> de ses dégâts de base sur 8 secondes. Si l’unité subit des dégâts fatals, elle devient alors invulnérable et récupère <style=basestat>{revive_percentage}</style> de ses PV max sur <style=basestat>{invulnerability_duration}</style>. Priorise les Héros. Priorise les unités qui ne sont pas déjà sous l’effet du serment de Florence.
 Q
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameSentinelle de bronze
 F
@@ -4817,6 +4835,8 @@ W
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameSite culturel réduit
 a
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameCaserne d'infanterie lourde
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�Rends les étoiles au ciel avec la reine Seondeok de Silla ! Au VIIᵉ siècle, cette première reine de l’ancienne Corée monta sur le trône. Dès son avènement, elle mit en place des soins pour les pauvres, les malades et les personnes âgées. Cet amour pour son peuple marqua tout son règne.<br><br>La reine Seondeok guida son royaume entre conflits et paix avec sagesse, foi et élégance. Silla s’enrichit grâce à des alliances, à la construction de grandes pagodes et d’observatoires. Son éclat est raconté dans le Samguk Yusa et d’autres textes historiques.<br><br>L’héritage de Seondeok, c’est la Corée elle-même. Son alliance avec les Tang mena à la première unification de la péninsule sous Silla, et elle posa les fondations de l’épanouissement culturel des royaumes. Certaines histoires racontent même que Seondeok possédait le don de prophétie. À travers des grenouilles et des peintures de fleurs, sa légende grandit. Voyons si tu peux en faire autant : à l’automne, le corbeau se posera sur les cornes du taureau… Que cela peut-il bien signifier ?
 N
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameGrand hôtel de ville
 �
@@ -4859,6 +4879,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 Base.Units.Unit_RamsesII_Desc�Les plaines trembleront sous les roues des chars, car Ramsès le Grand a uni sa puissance à la tienne. Ce pharaon du XIIIᵉ siècle av. J.-C. s’illustra par ses campagnes contre les Hittites, les Nubiens et les Libyens. La bataille de Qadesh contre les Hittites aboutit à l’un des premiers traités de paix de l’histoire.<br><br>Au-delà de ses exploits militaires, Ramsès II fut un bâtisseur prolifique, commanditant des monuments grandioses tels que les temples d’Abou Simbel et le Ramesseum, gravant son nom à jamais dans la pierre.<br><br>Ramsès II est considéré comme le plus grand pharaon du plus grand royaume d’Égypte, son règne de 66 ans ayant façonné l’héritage culturel et architectural du pays. Les Grecs l’appelaient Ozymandias, un nom immortalisé en poésie. Quand Ramsès parle, tu t’agenouilles !
 R
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameOssature en bois
+?
++Base.Regions.region.EmeraldHighlands_2_NameFief de Rosemont
 e
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc1Produit du cacao et ajoute un prêtre à ta cité
 Y
@@ -5372,10 +5394,10 @@ z
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_DescCProduit une petite quantité de nourriture sur une courte période.
 W
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NamePoste d'irrigation
-J
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NamePetit site rituel
 .
 Base.Units.Unit_JoanOfArc_NameJeanne d'Arc
+J
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_NamePetit site rituel
 o
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc8Produit des pièces et ajoute un travailleur à ta cité
 ~

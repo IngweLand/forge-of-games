@@ -143,6 +143,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_Name噴泉
 ]
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc*步兵位於前列可發揮最大作用。
+<
+/Base.TreasureHuntDifficulties.Difficulty_9_Name	大師 II
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>增益</style>激勵所有友方單位，使他們的攻擊速度提高<style=basestat>{atk_speed_percentage}</style>，攻擊力提高<style=basestat>{atk_percentage}</style>，持續<style=basestat>{duration}</style>。
 *
@@ -525,6 +527,8 @@ P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Name豪華釣魚碼頭
 F
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Name家庭農場
++
+Base.Heroes.hero.YiSunSin_Name	李舜臣
 ;
 &Base.Heroes.hero.GeorgeWashington_Name喬治·華盛頓
 <
@@ -1341,6 +1345,8 @@ A
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>嘲諷 | 護盾 | 範圍攻擊</style> 馬其頓的腓力二世獲得一個護盾，數值相當於其基礎傷害的 <style=basestat>{shield_percentage}</style>，並嘲諷所有敵方單位，持續 <style=basestat>{taunt_duration}</style>。在 <style=basestat>{detonation_time}</style> 後，護盾將引爆，對範圍內的所有敵方單位造成相當於護盾剩餘值 <style=basestat>{damage_percentage}</style> 的傷害。引爆將消耗腓力的護盾。
 8
 (Base.BuildingGroups.smallIrrigation_Name小型水井
+?
+)Base.Units.Unit_QueenSeondeokOfSilla_Name新羅善德女王
 J
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_Name步兵軍營
 S
@@ -1563,6 +1569,8 @@ X
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_Name完善的頭飾
 D
 .Base.Units.Unit_IberianEra_Castilla_Siege_Name卡斯提亞弩車
+>
++Base.Regions.region.EmeraldHighlands_1_Name高加德公國
 +
 Base.BuildingGroups.SkyDisk太陽祭壇
 �
@@ -3613,6 +3621,8 @@ E
 5Base.Abilities.hero_battle_ability.FalconryGlove_Name獵鷹手套
 $
 Base.HeroClass.Defender	防御者
+?
+/Base.Continents.continent.EmeraldHighlands_Name翡翠高原
 W
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc生產先祖面具和太陽石
 H
@@ -3780,6 +3790,8 @@ O
 *Base.Wonders.Wonder_Capital_Colosseum_Name大競技場
 .
 Base.Heroes.hero.Ninja_Name望月千代女
+*
+Base.Units.Unit_YiSunSin_Name	李舜臣
 W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_Desc將陶土精煉成黏土
 k
@@ -4083,6 +4095,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_Name柱石
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>範圍打擊| 增益| 減益</style>指揮大砲射擊敵軍中最大的集群，對其造成<style=basestat>{dmg_percentage}</style>傷害，範圍為<style=basestat>{range}</style>。受影響的單位命中率降低<style=basestat>{accuracy_percentage}</style>，傷害降低<style=basestat>{atk_percentage}</style>，移動速度降低<style=basestat>{movement_percentage}</style>，持續<style=basestat>{debuff_duration}</style>。所有友軍單位獲得<style=basestat>{evasion_percentage}</style>閃避，持續<style=basestat>{evasion_duration}</style>。
+@
+*Base.Heroes.hero.QueenSeondeokOfSilla_Name新羅善德女王
 ]
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc*步兵位於前列可發揮最大作用。
 C
@@ -4157,6 +4171,8 @@ C
 !Base.HeroClass.SingleStriker_Desc�單體前鋒對單一目標造成大量傷害。他們擅長對抗敵方英雄。<br><line-height=50%><br></line-height><color=#3DA229>強的</color>反對：<br> •<indent=5%><color=#3DA229>敵方英雄</color>在<color=#3DA229>活動</color>,<color=#3DA229>競技場</color>和<color=#3DA229>尋寶</color>。</indent><br> •<indent=5%><color=#3DA229>特斯拉風暴</color>。</indent><br><line-height=50%><br></line-height><color=#CD2A25>虛弱的</color>反對：<br> •<indent=5%><color=#CD2A25>大隊</color>在戰役和尋寶中。
 w
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_Desc9生產一大堆錢幣並為你的城市增加 2 名工人
+�
+Base.Units.Unit_YiSunSin_Desc�讓樹葉和山脈隨著李舜臣而顫抖！這位 16 世紀的朝鮮海軍上將在朝鮮王朝時期與日本軍隊作戰，在海戰中從未失敗過。易從出生起就接受戰士訓練，率領軍隊取得了無數勝利，直到他被一位高級將領陷害。<br><br>恢復官職後，易被授予了越來越重要的地位。作為一名首次擔任海軍上將的他，在鳴梁戰役中毫無損失地擊敗了日本軍隊，並開發出了朝鮮王朝的標誌性戰艦——龜背船。<br><br>在鳴梁海戰中，李世民召集了十三艘戰船。他們穿過迷霧發動攻擊，將日本軍隊引誘到潮汐變化和不安全的水域。歷史記錄將這位海軍上將的戰船描述為一座矗立在大海中的城堡，確保了朝鮮的勝利和李舜臣在歷史上的地位。
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescZ重型步兵單位體型笨重，能夠阻擋騎兵，令後者無法藉助衝鋒穿過。
 �
@@ -4511,8 +4527,8 @@ r
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_Desc4為您的城市產生許多錢幣並提供2名工人
 ;
 (Base.Regions.region.EasternValley_7_Name奧斯曼港口
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>治療｜復甦</style>佛羅倫斯以守護誓言保護當前生命值最低的英雄，在 8 秒內為其恢復 <style=basestat>{heal_amount}</style>。本波中，當該單位下一次將受到致命傷時，將改為變得無敵 <style=basestat>{invulnerability_duration}</style>，並額外恢復其最大生命值的 <style=basestat>{revive_percentage}</style>。優先選擇尚未被佛羅倫斯標記的英雄。
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>治療｜復活</style>佛羅倫斯以守護誓言庇護生命值最低的友方單位，在 8 秒內恢復相當於她基礎傷害值 <style=basestat>{heal_amount}</style> 的生命值。若該單位即將承受致命傷害，將改為進入無敵狀態，並在 <style=basestat>{invulnerability_duration}</style> 內額外恢復其最大生命值的 <style=basestat>{revive_percentage}</style>。優先對英雄生效，並優先選擇尚未被佛羅倫斯標記的單位。
 I
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_Name青銅哨兵
 A
@@ -4765,6 +4781,8 @@ T
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_Name小型文明場所
 U
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Name重步兵軍營
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�與新羅善德女王一同將星辰歸還天際吧！公元 7 世紀，這位古代朝鮮歷史上首位女性君主登基。即位後，她安排照顧貧弱、病患與老人，這份對百姓的仁愛成為她統治的核心精神。<br><br>善德女王以信念與智慧在戰爭與和平之間靈活應對，使新羅在她的領導下建立起強大同盟、建造壯麗的佛塔與天文觀測台。關於她的傳說被記錄於《三國遺事》與其他史書之中。<br><br>善德的遺產，就是韓國本身。她與唐朝的聯盟促成了新羅對朝鮮半島的首次統一，也為日後三國文化的盛放奠定基礎。傳說她擁有預言之力，能從蛙鳴與花圖中窺見未來。現在，換你來試試吧：秋天裡，烏鴉將停落在牛角上——這會意味著什麼呢？
 B
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name	大禮堂
 v
@@ -4807,6 +4825,8 @@ g
 Base.Units.Unit_RamsesII_Desc�平原將在戰車的車輪下顫抖，因為拉美西斯二世的力量已與你的力量結合。這位來自公元前13世紀的法老以對抗赫梯人、努比亞人和利比亞人的戰爭而聞名。與赫梯的卡迪什戰役使他成為歷史上最早締結和平條約的領袖之一。<br><br>除了軍事成就外，拉美西斯二世還是一位多產的建築師，他委託建造了如阿布辛波古廟和拉美西斯神廟等宏偉建築，永遠在世界上留下了他的印記。<br><br>拉美西斯二世被記住為埃及最偉大的法老，他的66年統治塑造了埃及的文化和建築遺產。希臘人稱他為奧茲曼迪亞斯，並以這個名字在詩歌中使他不朽。當你見到拉美西斯時，別忘了跪下敬拜！
 N
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_Name木榫結構
+A
++Base.Regions.region.EmeraldHighlands_2_Name羅斯蒙特封地
 d
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc0為您的城市產生可可並提供一名祭司
 H
@@ -5315,10 +5335,10 @@ R
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc短期生產少量食物。
 N
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Name	灌溉站
-H
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_Name小型儀式場
 .
 Base.Units.Unit_JoanOfArc_Name聖女貞德
+H
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_Name小型儀式場
 g
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc0為您的城市產生錢幣並提供一名工人
 V

@@ -101,8 +101,8 @@ I
 6Base.Abilities.hero_battle_ability.RomanCenturion_Name亀甲の陣形
 ?
 5Base.Technologies.Technology_Vikings_BurialSites_Name墓地
-i
-;Base.Buildings.Building_StoneAge_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_StoneAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.RamsesII_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内で<style=basestat>{duration}</style>の間、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、移動速度を<style=basestat>{move_percentage}</style>、命中率を<style=basestat>{accuracy_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。
 >
@@ -119,8 +119,8 @@ j
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_Name特異点の碑
 @
 0Base.Buildings.Building_Mayas_Home_Priest_4_Name祭司の家
-�
-%Base.Units.Unit_ThomasAlvaEdison_Desc�メンローパークの魔術師、トーマス・アルバ・エジソンが輝きをもたらす。19世紀後半から20世紀初頭にかけて活躍し、数々の発明で技術と産業を大きく変えた。<br><br>蓄音機、映画カメラ、電球をはじめ、1,000以上の特許を取得し、研究所を拠点に革新的な技術開発を推進。産業研究の先駆けとなり、後の技術革新にも大きな影響を与えた。<br><br>発想力と実行力で人々の暮らしを一変させ、その功績は今もなお受け継がれている。まさに、暗闇を照らした発明家だった。
+�
+%Base.Units.Unit_ThomasAlvaEdison_Desc�メンローパークの魔術師、トーマス・アルバ・エジソンが輝きをもたらす。１９世紀後半から20世紀初頭にかけて活躍し、数々の発明で技術と産業を大きく変えた。<br><br>蓄音機、映画カメラ、電球をはじめ、一千以上の特許を取得し、研究所を拠点に革新的な技術開発を推進。産業研究の先駆けとなり、後の技術革新にも大きな影響を与えた。<br><br>発想力と実行力で人々の暮らしを一変させ、その功績は今もなお受け継がれている。まさに、暗闇を照らした発明家だった。
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Achilles_1_Name�<style=ability_label>近接攻撃・強化</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。驚異的な力を発揮し、アキレスの攻撃速度が<style=basestat>{atk_speed_duration}</style>の間<style=basestat>{atk_speed_percentage}</style>上昇する。
 F
@@ -131,8 +131,8 @@ F
 9Base.Technologies.Technology_MinoanEra_BasketWeaving_Name	籠編み
 M
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_2_Name射撃兵兵舎
-m
-?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+g
+?Base.Buildings.Building_HighMiddleAges_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 B
 2Base.Technologies.Technology_Vikings_TarOvens_Nameタール窯
 N
@@ -143,6 +143,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_Name噴水
 o
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc<歩兵ユニットは前列で最も効果を発揮する。
+<
+/Base.TreasureHuntDifficulties.Difficulty_9_Name	覇者２
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>強化</style>マーガレットがすべての味方ユニットを鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 3
@@ -301,8 +303,8 @@ F
 3Base.Buildings.Building_BronzeAge_Home_Small_1_Name小さな住宅
 P
 @Base.Technologies.Technology_AgeOfTheFranks_PriestSchooling_Name祭司育成
-y
-BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+s
+BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 b
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Nameコンパクトな文化遺産
 c
@@ -337,8 +339,8 @@ J
 7Base.Abilities.hero_battle_ability.MayanAstronomer_Name宇宙の爆発
 B
 2Base.Buildings.Building_China_City_CityHall_1_Name大ホール
-i
-;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 G
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_Nameギリシャ弓兵
 N
@@ -367,8 +369,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_Nameミノ
 3Base.Buildings.Building_Vikings_Home_Premium_2_DescV山ほどのペニーを生産し、都市に労働者2人と水夫2人を追加する
 .
 Base.HeroClass.AreaAttacker範囲攻撃者
-�
-Base.Units.Unit_Hoplit_Desc�ミルティアデス、5世紀のアテナイの軍人。マラトンの戦いでの指導力により名を馳せた英雄。<br><br>優れた戦術家としてアテナイ軍を率い、数で勝るペルシャ軍に決定的な勝利を収めた。この勝利はギリシャ侵攻を防ぎ、戦争の流れを大きく変える転換点となった。<br><br>その後、海上侵攻を指揮するも、命令に従わず復讐を優先する道を選んだ。作戦は失敗に終わり、結果的に不名誉な結末を迎えたが、賢明で狡猾な戦略家として今も記憶されている。
+�
+Base.Units.Unit_Hoplit_Desc�ミルティアデス、５世紀のアテナイの軍人。マラトンの戦いでの指導力により名を馳せた英雄。<br><br>優れた戦術家としてアテナイ軍を率い、数で勝るペルシャ軍に決定的な勝利を収めた。この勝利はギリシャ侵攻を防ぎ、戦争の流れを大きく変える転換点となった。<br><br>その後、海上侵攻を指揮するも、命令に従わず復讐を優先する道を選んだ。作戦は失敗に終わり、結果的に不名誉な結末を迎えたが、賢明で狡猾な戦略家として今も記憶されている。
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Name噴水
 I
@@ -397,8 +399,8 @@ P
 @Base.Technologies.Technology_AgeOfTheFranks_TacticalHurling_Name戦術投擲
 <
 /Base.TreasureHuntDifficulties.Difficulty_6_Name	達人１
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_Desc'隣の建物の灌漑用水を増やす
 x
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 4
@@ -417,8 +419,8 @@ g
 6Base.Buildings.Building_Arabia_Merchant_Average_3_Desc-たくさんのディルハムを生産する
 7
 $Base.BuildingGroups.averageHome_Name大きな住宅
-�
-!Base.Units.Unit_RomanPraetor_Desc�ローマの華やかな社交界を彩ったアエミリア・テルティア。紀元前2世紀のローマに生き、第二次ポエニ戦争でハンニバルを打ち破った名将スキピオ・アフリカヌスの妻として知られる。名門の出身であり、ローマの貴婦人の理想像とされた。<br><br>夫の軍事や政治活動を支えつつ、家庭を取り仕切り、子どもたちの教育にも尽力。特に、後に改革派として知られるグラックス兄弟の母となるコルネリア・アフリカナを育てたことで名を残した。<br><br>公の場で目立つことは少なかったが、その影響力は計り知れない。アエミリア・テルティアの名は、ローマ社会における女性の重要な役割を今に伝えている。
+�
+!Base.Units.Unit_RomanPraetor_Desc�ローマの華やかな社交界を彩ったアエミリア・テルティア。紀元前２世紀のローマに生き、第二次ポエニ戦争でハンニバルを打ち破った名将スキピオ・アフリカヌスの妻として知られる。名門の出身であり、ローマの貴婦人の理想像とされた。<br><br>夫の軍事や政治活動を支えつつ、家庭を取り仕切り、子どもたちの教育にも尽力。特に、後に改革派として知られるグラックス兄弟の母となるコルネリア・アフリカナを育てたことで名を残した。<br><br>公の場で目立つことは少なかったが、その影響力は計り知れない。アエミリア・テルティアの名は、ローマ社会における女性の重要な役割を今に伝えている。
 ,
 Base.Heroes.hero.Geisha_Name吉野太夫
 �
@@ -435,8 +437,8 @@ E
 DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_Nameメロヴィング歩兵
 ?
 &Base.Units.Unit_AztecTlacateccatl_Nameクアウテモック
-�
-#Base.Units.Unit_WilliamWallace_Desc�13世紀のスコットランドから、ウィリアム・ウォレスが新たな独立戦争に挑むために登場。故郷では、その指導力、勇気、反抗の物語がスコットランド人の心に深く刻まれている。<br><br>スターリング・ブリッジの戦いでは、圧倒的に不利な状況にもかかわらず英軍を撃退し、戦局を一変させた。自由への夢はスコットランド全土に広がり、多くの者が独立を求めて立ち上がった。<br><br>時代に戻ると捕らえられ、処刑される運命だが、その精神は決して揺るがない。スコットランド全土で、自由の戦士、愛国者として讃えられ、今もなおその名は語り継がれている。
+�
+#Base.Units.Unit_WilliamWallace_Desc�１３世紀のスコットランドから、ウィリアム・ウォレスが新たな独立戦争に挑むために登場。故郷では、その指導力、勇気、反抗の物語がスコットランド人の心に深く刻まれている。<br><br>スターリング・ブリッジの戦いでは、圧倒的に不利な状況にもかかわらず英軍を撃退し、戦局を一変させた。自由への夢はスコットランド全土に広がり、多くの者が独立を求めて立ち上がった。<br><br>時代に戻ると捕らえられ、処刑される運命だが、その精神は決して揺るがない。スコットランド全土で、自由の戦士、愛国者として讃えられ、今もなおその名は語り継がれている。
 D
 4Base.Technologies.Technology_StoneAge_Firemaker_Name火起こし
 L
@@ -453,8 +455,8 @@ O
 0Base.Units.Unit_ClassicGreece_Player_Psiloi_Name	軽歩兵
 B
 /Base.Buildings.Building_Egypt_Home_Small_4_Name小さな住宅
-u
->Base.Buildings.Building_RomanEmpire_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+o
+>Base.Buildings.Building_RomanEmpire_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 Z
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Name豪華な文化遺産
 7
@@ -525,6 +527,8 @@ P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Name豪華な漁桟橋
 F
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Name畜産農場
++
+Base.Heroes.hero.YiSunSin_Name	李舜臣
 H
 &Base.Heroes.hero.GeorgeWashington_Nameジョージ・ワシントン
 L
@@ -555,20 +559,20 @@ W
 DBase.Buildings.Building_TreasureHunt_Evolving_FountainOfYouth_1_Name若返りの泉
 D
 1Base.Abilities.hero_battle_ability.Confucius_Name儒教的混乱
-�
-$Base.Units.Unit_MiyamotoMusashi_Desc�二天一流の道を極めた宮本武蔵。16世紀末から17世紀初頭にかけて活躍した伝説的な剣豪であり、剣聖として称えられる存在だ。独自の流派を編み出し、剣の腕前はほぼ無敵を誇った。<br><br>日本各地を巡りながら武者修行に励み、生涯で挑んだ62回の真剣勝負はすべて勝利。その中には、削った櫂を武器にして制した決闘もあったという。実戦経験も豊富で、戦場でも剣を振るい、多くの剣士を育てた。<br><br>武蔵の戦術と剣技は他に類を見ないもので、武道史において特別な存在となった。しかし、その才は剣にとどまらず、哲学や芸術にも及ぶ。著書『五輪書』は、戦略と人生の指南書として今も読み継がれ、武蔵の教えと遺産は今なお輝き続けている。決闘を挑むなら、よく考えたほうがよさそうだ。
+�
+$Base.Units.Unit_MiyamotoMusashi_Desc�二天一流の道を極めた宮本武蔵。１６世紀末から１７世紀初頭にかけて活躍した伝説的な剣豪であり、剣聖として称えられる存在だ。独自の流派を編み出し、剣の腕前はほぼ無敵を誇った。<br><br>日本各地を巡りながら武者修行に励み、生涯で挑んだ62回の真剣勝負はすべて勝利。その中には、削った櫂を武器にして制した決闘もあったという。実戦経験も豊富で、戦場でも剣を振るい、多くの剣士を育てた。<br><br>武蔵の戦術と剣技は他に類を見ないもので、武道史において特別な存在となった。しかし、その才は剣にとどまらず、哲学や芸術にも及ぶ。著書『五輪書』は、戦略と人生の指南書として今も読み継がれ、武蔵の教えと遺産は今なお輝き続けている。決闘を挑むなら、よく考えたほうがよさそうだ。
 8
 Base.Heroes.hero.TigerLily_Nameタイガーリリー
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_Desc'隣の建物の灌漑用水を増やす
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_1_Name翡翠採石場
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Desc'隣の建物の灌漑用水を増やす
 �
 3Base.Units.Unit_AgeOfTheFranks_Player_Halberds_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Desc0隣の建物の灌漑用水を大幅に増やす
 M
 :Base.Technologies.Technology_EarlyRome_MarksOfHistory_Name歴史の痕跡
 <
@@ -637,8 +641,8 @@ L
 6Base.Abilities.hero_battle_ability.AshokaTheGreat_Nameダルマの神性
 u
 4Base.Buildings.Building_IberianEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc'隣の建物の灌漑用水を増やす
 .
 Base.Ages.BronzeAge_Decade紀元前3000年
 T
@@ -647,8 +651,8 @@ C
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Nameレオニダス
 U
 0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_Name!ファーティマ朝の重歩兵
-n
-@Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+h
+@Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 T
 ABase.Technologies.Technology_AgeOfTheFranks_DaggerPerfection_Name短剣の精練
 N
@@ -667,8 +671,8 @@ H
 ;Base.Technologies.Technology_AgeOfTheFranks_Caballarii_Name	騎馬兵
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_5_Descパピルスを生産する
-�	
-Base.Units.Unit_JaneAusten_Desc�ジェーン・オースティンは、しばしば無礼な紳士を鋭く描き出すことで知られている！19世紀初頭のイギリスの小説家で、鋭い社会的視点と先駆的な文学作品によって高く評価されている。オースティンの代表作『高慢と偏見』や『分別と多感』では、結婚、階級、幸せの追求といったテーマが、機知に富んだストーリーテリングで描かれている。<br><br>その作品は、印象的なキャラクターと社会の鋭い観察を通じて、当時の社会構造を生き生きと浮き彫りにしている。皮肉とリアリズムを交えた文体は、英文学に大きな影響を与え続けている。<br><br>その遺産は今も受け継がれ、世界中の読者を魅了し続けている。オースティンの作品は、不朽のウィットと知恵を持ち合わせ、現代でも高く評価されている。最近では、新作『時と時間性』に取り組んでいるという噂が広まり、数ヶ月後には書店に並ぶ予定だとも言われている。
+�	
+Base.Units.Unit_JaneAusten_Desc�ジェーン・オースティンは、しばしば無礼な紳士を鋭く描き出すことで知られている！１９世紀初頭のイギリスの小説家で、鋭い社会的視点と先駆的な文学作品によって高く評価されている。オースティンの代表作『高慢と偏見』や『分別と多感』では、結婚、階級、幸せの追求といったテーマが、機知に富んだストーリーテリングで描かれている。<br><br>その作品は、印象的なキャラクターと社会の鋭い観察を通じて、当時の社会構造を生き生きと浮き彫りにしている。皮肉とリアリズムを交えた文体は、英文学に大きな影響を与え続けている。<br><br>その遺産は今も受け継がれ、世界中の読者を魅了し続けている。オースティンの作品は、不朽のウィットと知恵を持ち合わせ、現代でも高く評価されている。最近では、新作『時と時間性』に取り組んでいるという噂が広まり、数ヶ月後には書店に並ぶ予定だとも言われている。
 J
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_2_Name攻城兵兵舎
 �
@@ -689,8 +693,8 @@ o
 >Base.Units.Unit_CurrentEra_MercenaryCommander_VladDracula_Nameヴラド・ドラキュラ
 B
 /Base.Buildings.Building_China_Home_Small_5_Name小さな住宅
-�
-$Base.Units.Unit_LeonardoDaVinci_Desc�ルネサンスの真髄、レオナルド・ダ・ヴィンチと共に新しい世界を描こう！15世紀から16世紀にかけて活躍した発明家、画家、科学者として名を馳せ、『モナ・リザ』や『最後の晩餐』といった名作で永遠に記憶されている。芸術的な才能に加え、自然界への深い好奇心が特徴的だった。<br><br>絵画にとどまらず、発明家や科学者としても飛行機械や装甲車両、解剖学的研究を行い、多岐にわたる分野で先駆的なアイデアを生み出した。残されたノートには、工学、解剖学、芸術に対する絶え間ない探求心が表れている。<br><br>ダ・ヴィンチの遺産は、芸術作品だけでなく、科学や技術への貢献にも色濃く残っている。その生涯は、ルネサンスの創造性と好奇心を象徴するものとなった。時代をはるかに先取りした発想で、今もなお世界を魅了し続けている。
+�
+$Base.Units.Unit_LeonardoDaVinci_Desc�ルネサンスの真髄、レオナルド・ダ・ヴィンチと共に新しい世界を描こう！１５世紀から１６世紀にかけて活躍した発明家、画家、科学者として名を馳せ、『モナ・リザ』や『最後の晩餐』といった名作で永遠に記憶されている。芸術的な才能に加え、自然界への深い好奇心が特徴的だった。<br><br>絵画にとどまらず、発明家や科学者としても飛行機械や装甲車両、解剖学的研究を行い、多岐にわたる分野で先駆的なアイデアを生み出した。残されたノートには、工学、解剖学、芸術に対する絶え間ない探求心が表れている。<br><br>ダ・ヴィンチの遺産は、芸術作品だけでなく、科学や技術への貢献にも色濃く残っている。その生涯は、ルネサンスの創造性と好奇心を象徴するものとなった。時代をはるかに先取りした発想で、今もなお世界を魅了し続けている。
 B
 /Base.Buildings.Building_Egypt_Home_Small_1_Name小さな住宅
 B
@@ -699,8 +703,8 @@ W
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Name小規模な文化遺産
 M
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_Name豪華な住宅
-l
->Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+f
+>Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 =
 3Base.Technologies.Technology_BronzeAge_Artisan_Name職人
 x
@@ -745,18 +749,18 @@ h
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Heavy_Name-シチリアのバイデンヘンダー剣士
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.AnneBonny_1_Name�<style=ability_label>弱体化・範囲攻撃</style>ボニーは爆弾を投げ、敵ユニットの最大集団に渦を発生させる。この渦は<style=basestat>{duration}</style>の間、<style=basestat>{damage}</style>のダメージを与え、その中にいる敵ユニットの移動速度を<style=basestat>{movespeed_slow}</style>低下させる。
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Desc'隣の建物の灌漑用水を増やす
 p
 3Base.Buildings.Building_MinoanEra_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Desc0隣の建物の灌漑用水を大幅に増やす
 j
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_Nameテスラコイル
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�<style=ability_label>範囲攻撃</style>現在のターゲットに爆発を起こし、<style=basestat>{range}</style>の範囲内の敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
-�
-Base.Units.Unit_Plato_Desc�ピレウスでの議論を離れ、哲学の巨星プラトンが姿を現す。紀元前4世紀のギリシャを代表する哲学者であり、ソクラテスの弟子にしてアリストテレスの師。アテナイに学園を設立し、『国家』を著して西洋思想の礎を築いた。<br><br>プラトンの思想は哲学にとどまらず、伝説にも影響を与えた。著作『ティマイオス』では、沈んだ幻の文明アトランティスが語られ、その後の物語や幻想に大きな影響を与えている。<br><br>「イデア論」をはじめとする哲学体系は、西洋思想の根幹を築き、ある哲学者は「ヨーロッパの哲学はプラトン哲学への脚注に過ぎない」と評したほど。その影響力は計り知れない。ちなみに、プラトンという名は「広い」を意味し、体格に由来するとも言われる。哲学だけでなく、腕っぷしでもヒーローたちに引けを取らなかったのかもしれない。
+�
+Base.Units.Unit_Plato_Desc�ピレウスでの議論を離れ、哲学の巨星プラトンが姿を現す。紀元前４世紀のギリシャを代表する哲学者であり、ソクラテスの弟子にしてアリストテレスの師。アテナイに学園を設立し、『国家』を著して西洋思想の礎を築いた。<br><br>プラトンの思想は哲学にとどまらず、伝説にも影響を与えた。著作『ティマイオス』では、沈んだ幻の文明アトランティスが語られ、その後の物語や幻想に大きな影響を与えている。<br><br>「イデア論」をはじめとする哲学体系は、西洋思想の根幹を築き、ある哲学者は「ヨーロッパの哲学はプラトン哲学への脚注に過ぎない」と評したほど。その影響力は計り知れない。ちなみに、プラトンという名は「広い」を意味し、体格に由来するとも言われる。哲学だけでなく、腕っぷしでもヒーローたちに引けを取らなかったのかもしれない。
 O
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_Name騎兵兵舎
 I
@@ -787,8 +791,8 @@ I
 *Base.Wonders.Wonder_Vikings_Yggdrasil_Nameユグドラシル
 S
 @Base.Technologies.Technology_AgeOfTheFranks_DivineAscension_Name神聖な昇華
-�
-Base.Units.Unit_Menes_Desc�エジプト統一の始まりを告げた王、メネス。紀元前31世紀の統治者とされ、上下エジプトを統一し、初めてファラオとなった。<br><br>首都メンフィスを築き、その立地は上エジプトと下エジプトの境界にあり、戦略的にも重要だった。メネスの治世はエジプト第1王朝の始まりを告げ、文化と政治の発展の礎を築いた。<br><br>メネスの遺産は、エジプト文明の基盤そのものにある。ところが、今はテスラと手を組んでいるとの噂がある。どうやら、歴史のすべてを古代エジプトに書き換えようとしているらしい。
+�
+Base.Units.Unit_Menes_Desc�エジプト統一の始まりを告げた王、メネス。紀元前３１世紀の統治者とされ、上下エジプトを統一し、初めてファラオとなった。<br><br>首都メンフィスを築き、その立地は上エジプトと下エジプトの境界にあり、戦略的にも重要だった。メネスの治世はエジプト第１王朝の始まりを告げ、文化と政治の発展の礎を築いた。<br><br>メネスの遺産は、エジプト文明の基盤そのものにある。ところが、今はテスラと手を組んでいるとの噂がある。どうやら、歴史のすべてを古代エジプトに書き換えようとしているらしい。
 K
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_Name射撃兵兵舎
 >
@@ -801,16 +805,16 @@ E
 #Base.Units.Unit_WilliamWallace_Nameウィリアム・ウォレス
 C
 3Base.Units.Unit_EarlyRome_Player_AuxiliaRiders_Name補助騎兵
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_22_Name�<style=ability_label>近接攻撃・出血・強化</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>のダメージを与える。さらに、ランスロットのクリティカルダメージが<style=basestat>{buff_duration}</style>の間<style=basestat>{crit_dmg_percentage}</style>上昇する。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_22_Name�<style=ability_label>近接攻撃・出血・強化</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。さらに、ランスロットのクリティカルダメージが<style=basestat>{buff_duration}</style>の間<style=basestat>{crit_dmg_percentage}</style>上昇する。
 I
 6Base.Buildings.Building_IberianEra_Home_Average_3_Name大きな住宅
 N
 >Base.Technologies.Technology_KingdomOfSicily_RefinedTools_Name精製道具
 =
 3Base.Technologies.Technology_StoneAge_TheWheel_Name車輪
-�
-&Base.Units.Unit_AztecTlacateccatl_Desc�武器を取って、自治のために戦おう！降り立つ鷲、クアウテモクが今、立ち上がる！アステカの最後の皇帝、クアウテモクは、16世紀のスペイン征服に対する抵抗でその名を残した戦士であり、卓越した指導者でもあった。<br><br>崩壊寸前の王国を治め、クアウテモクはテノチティトランの防衛を指揮した。80日間にわたる戦いの後、援軍を呼びかけ、帝国と故郷を守ろうとしたが、集まったのはわずかな兵だった。都市を逃げる途中で捕らえられ、降伏を余儀なくされた。<br><br>敗北したものの、クアウテモクはスペインの支配下でしばらくの間統治を続けた。抵抗の象徴として記憶され、先住民の誇りを体現する存在となった。スペインの侵略を生き抜いた唯一のアステカ皇帝として讃えられ、今もなお、街の名前や像、さらにはビデオゲームの中でもその名が語り継がれている。
+�
+&Base.Units.Unit_AztecTlacateccatl_Desc�武器を取って、自治のために戦おう！降り立つ鷲、クアウテモクが今、立ち上がる！アステカの最後の皇帝、クアウテモクは、１６世紀のスペイン征服に対する抵抗でその名を残した戦士であり、卓越した指導者でもあった。<br><br>崩壊寸前の王国を治め、クアウテモクはテノチティトランの防衛を指揮した。８０日間にわたる戦いの後、援軍を呼びかけ、帝国と故郷を守ろうとしたが、集まったのはわずかな兵だった。都市を逃げる途中で捕らえられ、降伏を余儀なくされた。<br><br>敗北したものの、クアウテモクはスペインの支配下でしばらくの間統治を続けた。抵抗の象徴として記憶され、先住民の誇りを体現する存在となった。スペインの侵略を生き抜いた唯一のアステカ皇帝として讃えられ、今もなお、街の名前や像、さらにはビデオゲームの中でもその名が語り継がれている。
 D
 +Base.Wonders.Wonder_Capital_Stonehenge_Nameストーンヘンジ
 <
@@ -819,8 +823,8 @@ F
 3Base.Technologies.Technology_StoneAge_BearCult_Name部族の祝祭
 L
 9Base.Abilities.hero_battle_ability.AlexanderTheGreat_Name帝国の制覇
-x
-ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+r
+ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 p
 /Base.Buildings.Building_Egypt_Home_Small_4_Desc=デベンを生産し、都市に労働者を1人追加する
 b
@@ -839,8 +843,8 @@ v
 &Base.Regions.region.FrozenFjord_3_Name乙女の湖
 H
 2Base.Units.Unit_TreasureHunt_Purple_Marauders_Name黄昏の襲撃隊
-�
-Base.Units.Unit_MarieCurie_Desc�マリー・キュリーは、科学の歴史を永遠に変えた。19世紀末から20世紀初頭に活躍したポーランド出身の先駆的な科学者で、自然界に対する理解を根本から変える成果を上げた。ポロニウムとラジウムを発見し、放射能という分野を確立。この言葉を名付けたのもキュリー自身だった。<br><br>物理学と化学でノーベル賞を受賞し、女性として初めてノーベル賞を受けた人物であり、異なる2つの科学分野でノーベル賞を受賞した唯一の人でもある。研究成果は、医療や核物理学の発展に大きな影響を与えた。<br><br>発見による利益をほとんど得ることなく、特許も取得しなかったが、放射能は独自の産業を築き上げた。生涯にわたり科学と祖国に尽力し、その遺産は今もなお、元素名、科学的測定方法、そしてパリの街角に刻まれている。まさに、心と知恵を「輝かせた」と言えるだろう。
+�
+Base.Units.Unit_MarieCurie_Desc�マリー・キュリーは、科学の歴史を永遠に変えた。１９世紀末から２０世紀初頭に活躍したポーランド出身の先駆的な科学者で、自然界に対する理解を根本から変える成果を上げた。ポロニウムとラジウムを発見し、放射能という分野を確立。この言葉を名付けたのもキュリー自身だった。<br><br>物理学と化学でノーベル賞を受賞し、女性として初めてノーベル賞を受けた人物であり、異なる２つの科学分野でノーベル賞を受賞した唯一の人でもある。研究成果は、医療や核物理学の発展に大きな影響を与えた。<br><br>発見による利益をほとんど得ることなく、特許も取得しなかったが、放射能は独自の産業を築き上げた。生涯にわたり科学と祖国に尽力し、その遺産は今もなお、元素名、科学的測定方法、そしてパリの街角に刻まれている。まさに、心と知恵を「輝かせた」と言えるだろう。
 P
 =Base.Technologies.Technology_ByzantineEra_ImprovedLorica_Name改良型胸甲
 _
@@ -889,8 +893,8 @@ R
 #Base.Regions.region.Panganea_5_Nameシュメール草原
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_Name灌漑ステーション
-�
-#Base.Units.Unit_EgyptianVizier_Desc�平和の使者、イムホテプと共に神々の領域へ！紀元前27世紀、イムホテプは古代エジプトの建築家であり、王の助言者としても知られ、サッカラの階段ピラミッドの建設を監督した。このピラミッドは、エジプト最古のピラミッドの一つとして、今もその名を馳せている。<br><br>生前のイムホテプは謎に包まれた人物で、ラーの神官としての側面を除けば、ほとんど記録が残されていない。しかし、死後に名声が広まり、ついには神格化された。医療の神として、また知恵を司る神トートの兄として崇拝されるようになった。<br><br>イムホテプは神として長年崇敬され、ギリシャ人からも崇拝されたとされている。ローマ時代には洪水を終わらせた功績があるとも言われているが、皮肉なことに、実際には生前に医療に携わった記録はないという！
+�
+#Base.Units.Unit_EgyptianVizier_Desc�平和の使者、イムホテプと共に神々の領域へ！紀元前２７世紀、イムホテプは古代エジプトの建築家であり、王の助言者としても知られ、サッカラの階段ピラミッドの建設を監督した。このピラミッドは、エジプト最古のピラミッドの一つとして、今もその名を馳せている。<br><br>生前のイムホテプは謎に包まれた人物で、ラーの神官としての側面を除けば、ほとんど記録が残されていない。しかし、死後に名声が広まり、ついには神格化された。医療の神として、また知恵を司る神トートの兄として崇拝されるようになった。<br><br>イムホテプは神として長年崇敬され、ギリシャ人からも崇拝されたとされている。ローマ時代には洪水を終わらせた功績があるとも言われているが、皮肉なことに、実際には生前に医療に携わった記録はないという！
 J
 =Base.Technologies.Technology_HighMiddleAges_HeraldryPost_Name	紋章学
 �
@@ -903,8 +907,8 @@ t
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 D
 1Base.Abilities.hero_battle_ability.JoanOfArc_Name希望の灯火
-�
-Base.Units.Unit_Spartacus_Desc�スパルタクス、その名は今もなお反逆と自由の象徴として語り継がれる。紀元前1世紀、ローマ共和国に反旗を翻したトラキア出身の剣闘士。<br><br>奴隷として剣闘士となることを強いられたが、自由を求めて脱走し、第三次奴隷戦争を率いた。瞬く間に勢力を拡大し、ローマ軍を打ち破りながら各地に混乱をもたらした。最終的な目標はアルプスを越えてローマ領を離れることだったが、内部分裂や戦略上の問題が行く手を阻んだ。<br><br>最後はマルクス・リキニウス・クラッスス率いるローマ軍に敗れ、反乱は鎮圧された。しかし、その戦いは歴史に深く刻まれ、今も語り継がれている。ヒーローたちの間では、レオニダスとの腕相撲や叫び声比べが恒例になっているらしい。
+�
+Base.Units.Unit_Spartacus_Desc�スパルタクス、その名は今もなお反逆と自由の象徴として語り継がれる。紀元前１世紀、ローマ共和国に反旗を翻したトラキア出身の剣闘士。<br><br>奴隷として剣闘士となることを強いられたが、自由を求めて脱走し、第三次奴隷戦争を率いた。瞬く間に勢力を拡大し、ローマ軍を打ち破りながら各地に混乱をもたらした。最終的な目標はアルプスを越えてローマ領を離れることだったが、内部分裂や戦略上の問題が行く手を阻んだ。<br><br>最後はマルクス・リキニウス・クラッスス率いるローマ軍に敗れ、反乱は鎮圧された。しかし、その戦いは歴史に深く刻まれ、今も語り継がれている。ヒーローたちの間では、レオニダスとの腕相撲や叫び声比べが恒例になっているらしい。
 �
 5Base.Buildings.Building_EarlyRome_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 4
@@ -923,8 +927,8 @@ A
 4Base.Technologies.Technology_AgeOfTheFranks_Ink_Name	インク
 ,
 "Base.BuildingTypes.irrigation_Name灌漑
-k
-=Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 E
 2Base.Buildings.Building_StoneAge_Home_Small_1_Name小さな住宅
 D
@@ -983,8 +987,8 @@ A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Name水路
 �
 +Base.Units.Unit_EarlyRome_Player_Siege_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_1_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_1_Desc'隣の建物の灌漑用水を増やす
 =
 3Base.Technologies.Technology_EarlyRome_Compost_Name堆肥
 B
@@ -1099,8 +1103,8 @@ C
 6Base.Buildings.Building_Vikings_Beehive_Average_3_Name	養蜂場
 -
 Base.Ages.ByzantineEra_Finish西暦330年
-k
-=Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 x
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 R
@@ -1141,8 +1145,8 @@ CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_3_Name重歩兵�
  Base.Heroes.hero.VikingJarl_Name赤毛のエイリーク
 U
 <Base.Buildings.Building_MinoanEra_CultureSite_Premium_1_Name豪華な文化遺産
-k
-=Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 D
 1Base.Buildings.Building_Egypt_Home_Average_4_Name大きな住宅
 9
@@ -1231,8 +1235,8 @@ v
 Base.Ages.RomanEmpire_Decade紀元前50年
 �
 4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
-�
-Base.Units.Unit_MarcoPolo_Desc�風を受けて帆が膨らむ。マルコ・ポーロの旅が、今、目の前に広がる！アジアを広範囲に渡って旅した13世紀のヴェネツィアの探検家であり、その旅行記によって歴史に名を刻んだ。<br><br>17歳の時、父と叔父と共にシルクロードを旅し、最終的に中国のクビライ・カーンの宮廷に到達。ヴェネツィアに戻るまでの数十年間、東洋の宮廷で暮らし、各地を巡ったとされる。マルコ・ポーロの鮮やかな記述はヨーロッパ人の想像力を刺激し、東洋への知識と興味を深めるきっかけとなった。<br><br>残された記録の信憑性には議論があるものの、その旅がヨーロッパにおける東方への探求心を生み出したことは間違いない。後の探検家たちに影響を与え、カタルーニャ地図などの偉大な地図の制作にもつながった。その名は今なお語り継がれ、学術的な議論から子供たちの遊びに至るまで、多くの場面に残され
+�
+Base.Units.Unit_MarcoPolo_Desc�風を受けて帆が膨らむ。マルコ・ポーロの旅が、今、目の前に広がる！アジアを広範囲に渡って旅した１３世紀のヴェネツィアの探検家であり、その旅行記によって歴史に名を刻んだ。<br><br>１７歳の時、父と叔父と共にシルクロードを旅し、最終的に中国のクビライ・カーンの宮廷に到達。ヴェネツィアに戻るまでの数十年間、東洋の宮廷で暮らし、各地を巡ったとされる。マルコ・ポーロの鮮やかな記述はヨーロッパ人の想像力を刺激し、東洋への知識と興味を深めるきっかけとなった。<br><br>残された記録の信憑性には議論があるものの、その旅がヨーロッパにおける東方への探求心を生み出したことは間違いない。後の探検家たちに影響を与え、カタルーニャ地図などの偉大な地図の制作にもつながった。その名は今なお語り継がれ、学術的な議論から子供たちの遊びに至るまで、多くの場面に残され
 Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_Nameカオリン採石場
 5
@@ -1257,8 +1261,8 @@ NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_Name
 JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>召喚・燃焼</style>三角定規を現在のターゲットに投げる。この定規は<style=basestat>{duration}</style>の間、戦場を三角形に動き回り、近くの敵ユニットに最大<style=basestat>{dmg_percentage}</style>のダメージを与え、さらに<style=basestat>{burn_duration}</style>の間、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを与える。
 
 Base.Ages.China_Name中華
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_Desc'隣の建物の灌漑用水を増やす
 F
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_Name畜産農場
 �
@@ -1279,10 +1283,10 @@ S
 =Base.Technologies.Technology_AgeOfTheFranks_PotteryWheel_Name陶芸用ろくろ
 I
 0Base.Wonders.Wonder_Capital_TempleOfArtemis_Nameアルテミス神殿
-�
- Base.Units.Unit_WilliamTell_Desc�弓矢を手に、決して外さない！ウィリアム・テル、伝説のスイスの民間英雄が味方となる。14世紀初頭、圧政に立ち向かったその弓の技と勇気は、今も語り継がれている。<br><br>息子の頭上のリンゴを射抜いたという伝説は、正確無比な腕前と揺るがぬ決意を象徴するものとして広く知られている。この一矢は、ハプスブルク家の圧制に抗う反乱の火種となり、スイス独立への道を切り開くきっかけとなった。<br><br>テルの物語は、歴史と伝説が交差する中で、個人の勇気が国全体の精神を目覚めさせることを示している。どうやら、タイムトラベルの影響で混乱してしまったのか、今ではリンゴをまるで息子のように大切に扱っているらしい。
-�
-Base.Units.Unit_Inanna_Desc�イナンナの忠義を誓う者たちに、天の宮殿が待っている。シュメールの愛と戦争、豊穣の女神イナンナは、紀元前4000年頃から神話の中で重要な存在として語り継がれてきた。<br><br>力強く、多面的なイナンナは、妹の玉座を奪おうと冥界に降り、見事に帰還したことで崇拝された。その伝説は、知恵、力、独立心を象徴している。<br><br>イナンナの物語は、最も古い文明に多大な影響を与え、その影響は今後も広がり続ける可能性がある。もしシュメール人に踊りを誘われたら、音楽を流す前に少し躊躇した方がいいかもしれない！
+�
+ Base.Units.Unit_WilliamTell_Desc�弓矢を手に、決して外さない！ウィリアム・テル、伝説のスイスの民間英雄が味方となる。１４世紀初頭、圧政に立ち向かったその弓の技と勇気は、今も語り継がれている。<br><br>息子の頭上のリンゴを射抜いたという伝説は、正確無比な腕前と揺るがぬ決意を象徴するものとして広く知られている。この一矢は、ハプスブルク家の圧制に抗う反乱の火種となり、スイス独立への道を切り開くきっかけとなった。<br><br>テルの物語は、歴史と伝説が交差する中で、個人の勇気が国全体の精神を目覚めさせることを示している。どうやら、タイムトラベルの影響で混乱してしまったのか、今ではリンゴをまるで息子のように大切に扱っているらしい。
+�
+Base.Units.Unit_Inanna_Desc�イナンナの忠義を誓う者たちに、天の宮殿が待っている。シュメールの愛と戦争、豊穣の女神イナンナは、紀元前４千年頃から神話の中で重要な存在として語り継がれてきた。<br><br>力強く、多面的なイナンナは、妹の玉座を奪おうと冥界に降り、見事に帰還したことで崇拝された。その伝説は、知恵、力、独立心を象徴している。<br><br>イナンナの物語は、最も古い文明に多大な影響を与え、その影響は今後も広がり続ける可能性がある。もしシュメール人に踊りを誘われたら、音楽を流す前に少し躊躇した方がいいかもしれない！
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_2_Name	漁桟橋
 N
@@ -1329,8 +1333,8 @@ C
 0Base.Buildings.Building_Mayas_Home_Worker_1_Name労働者の家
 T
 >Base.Technologies.Technology_FeudalAge_ImprovedBeekeeping_Name養蜂技術改良
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_Desc'隣の建物の灌漑用水を増やす
 H
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_Name豪華な住宅
 4
@@ -1341,6 +1345,8 @@ D
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>挑発・シールド・範囲攻撃</style>フィリッポス２世は<style=basestat>{taunt_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分の大量のシールドを獲得し、敵ユニット全体を挑発する。<style=basestat>{detonation_time}</style>が経過すると、シールドが爆発し、残りのシールド量の<style=basestat>{damage_percentage}</style>に相当するダメージを<style=basestat>{range}</style>の範囲内にいる敵ユニットに与える。爆発と同時にシールドは消滅する。
 ;
 (Base.BuildingGroups.smallIrrigation_Name小さな井戸
+9
+)Base.Units.Unit_QueenSeondeokOfSilla_Name善徳女王
 J
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_Name歩兵兵舎
 Y
@@ -1389,8 +1395,8 @@ e
 7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_Name*ホーエンシュタウフェン射撃兵
 <
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_Name塩
-�
-Base.Units.Unit_Jester_Desc�王たちを楽しませ、死をも恐れず挑んだ歴史上最も有名な道化師、トリブレ！15世紀から16世紀にかけて宮廷で活躍し、機知に富んだ言動と下品なユーモアで王族を楽しませながら、宮廷内の複雑な人間関係を巧みに渡り歩いた。<br><br>トリブレにまつわる逸話の中でも、その機転が光るエピソードがある。フランソワ1世の妻を侮辱したため死刑を宣告され、処刑方法を選ぶように言われると、即座に「老衰で死にます」と答えたという。<br><br>そして実際、何年も後に老衰で亡くなった。トリブレは、賢さと愚かさ、そしてユーモアを兼ね備えた道化師の典型として今も語り継がれている。トリブレさえいれば、敵も笑い転げて戦意を失ってしまうかもしれない！
+�
+Base.Units.Unit_Jester_Desc�王たちを楽しませ、死をも恐れず挑んだ歴史上最も有名な道化師、トリブレ！１５世紀から１６世紀にかけて宮廷で活躍し、機知に富んだ言動と下品なユーモアで王族を楽しませながら、宮廷内の複雑な人間関係を巧みに渡り歩いた。<br><br>トリブレにまつわる逸話の中でも、その機転が光るエピソードがある。フランソワ１世の妻を侮辱したため死刑を宣告され、処刑方法を選ぶように言われると、即座に「老衰で死にます」と答えたという。<br><br>そして実際、何年も後に老衰で亡くなった。トリブレは、賢さと愚かさ、そしてユーモアを兼ね備えた道化師の典型として今も語り継がれている。トリブレさえいれば、敵も笑い転げて戦意を失ってしまうかもしれない！
 ;
 +Base.Units.Unit_EarlyRome_Player_Siege_Name槍投石機
 g
@@ -1427,8 +1433,8 @@ C
 *Base.Continents.continent.FrozenFjord_Name氷結フィヨルド
 R
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_1_Name重歩兵兵舎
-�
-!Base.Units.Unit_JuliusCaesar_Desc�ローマの永遠の独裁者、ユリウス・カエサル。1世紀の政治家、作家、軍人、指導者として、軍事的天才と大胆な政治的手腕で知られ、ガリアやブリタニアを征服してローマの領土を広げた。<br><br>カエサルの下で、ローマ軍はヨーロッパと北アフリカの大部分を制圧し、ローマ共和国の政治を変革。最終的にその終焉を迎えることとなった。<br><br>カエサルの影響は歴史に深く刻まれ、ナポレオン・ボナパルトやウィリアム・シェイクスピアもその名を称賛。「ツァーリ」や「カイザー」といった言葉もカエサルの名前から生まれた。歴史を超えて再び登場したカエサルは、リンカーンから裏切り者や危険な友人に気をつける方法を学んだという。
+�
+!Base.Units.Unit_JuliusCaesar_Desc�ローマの永遠の独裁者、ユリウス・カエサル。１世紀の政治家、作家、軍人、指導者として、軍事的天才と大胆な政治的手腕で知られ、ガリアやブリタニアを征服してローマの領土を広げた。<br><br>カエサルの下で、ローマ軍はヨーロッパと北アフリカの大部分を制圧し、ローマ共和国の政治を変革。最終的にその終焉を迎えることとなった。<br><br>カエサルの影響は歴史に深く刻まれ、ナポレオン・ボナパルトやウィリアム・シェイクスピアもその名を称賛。「ツァーリ」や「カイザー」といった言葉もカエサルの名前から生まれた。歴史を超えて再び登場したカエサルは、リンカーンから裏切り者や危険な友人に気をつける方法を学んだという。
 V
 @Base.Buildings.Building_IberianEra_Workshop_SpiceMerchant_1_Nameスパイス工房
 J
@@ -1461,8 +1467,8 @@ Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_6_Desc蚕の繭を生産する
 p
 2Base.Buildings.Building_Vikings_Home_Sailor_4_Desc:ペニーを生産し、都市に水夫を2人追加する
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Desc0隣の建物の灌漑用水を大幅に増やす
 B
 &Base.Regions.region.FrozenFjord_8_Nameアヴァロンへの道
 �
@@ -1511,8 +1517,8 @@ M
 %Base.Heroes.hero.LeonardoDaVinci_Name$レオナルド・ダ・ヴィンチ
 y
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
-�
-"Base.Units.Unit_QueenBoudicca_Desc�敵に恐れられし戦士、ブーディカが歴史のヒーローたちに名を連ねる。1世紀のブリタニアで、イケニ族の女王としてローマの支配に刃向かい、その名を歴史に刻んだ。<br><br>夫の死後、ローマ軍による侵略と圧政に対し、復讐と独立を掲げ、部族を率いて反乱を決行。進軍の道を切り開き、ロンドンを炎に包み、ブリタニア全土に反乱の火を燃え広げた。<br><br>激しい戦いの末、最終的にはローマ軍の反撃を受けて敗北したものの、その姿は今なお解放の象徴とされ、自由を求める者たちや婦人参政権運動の旗印となっている。<br><br>死が待ち受けていようとも、迷いも恐れもない。すべてを懸ける価値があると信じているのだから。
+�
+"Base.Units.Unit_QueenBoudicca_Desc�敵に恐れられし戦士、ブーディカが歴史のヒーローたちに名を連ねる。１世紀のブリタニアで、イケニ族の女王としてローマの支配に刃向かい、その名を歴史に刻んだ。<br><br>夫の死後、ローマ軍による侵略と圧政に対し、復讐と独立を掲げ、部族を率いて反乱を決行。進軍の道を切り開き、ロンドンを炎に包み、ブリタニア全土に反乱の火を燃え広げた。<br><br>激しい戦いの末、最終的にはローマ軍の反撃を受けて敗北したものの、その姿は今なお解放の象徴とされ、自由を求める者たちや婦人参政権運動の旗印となっている。<br><br>死が待ち受けていようとも、迷いも恐れもない。すべてを懸ける価値があると信じているのだから。
 T
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 �
@@ -1535,8 +1541,8 @@ G
 7Base.Technologies.Technology_BronzeAge_EventCities_Name友好文化
 I
 3Base.Abilities.hero_battle_ability.SiouxShaman_Nameタタンカの魂
-�
-Base.Units.Unit_Pythagoras_Desc�魂の本質を探求し、未知を追い求めた数学者ピタゴラス。紀元前6世紀のギリシャに生きた哲学者であり、数学の基礎を築いた人物だ。その生涯は神秘と伝説に包まれているが、ピタゴラスの定理によって名を馳せ、世界中の学生たちに数えきれない頭痛をもたらした。<br><br>クロトンに学派を設立し、弟子たちとともに数学だけでなく、音楽理論、天文学、倫理学にまで探究を広げ、数こそが宇宙を理解する鍵であると説いた。この包括的な学びの姿勢は、異なる分野のつながりを浮き彫りにした。<br><br>その教えは後世に大きな影響を与え、西洋思想の形成にも寄与。数学と哲学の基盤を築き、今なお知の探求を刺激し続けている。そして、あまり知られていないが、ピタゴラスは自信に満ちた人物でもあった。伝説によれば、毒蛇に噛まれた際、噛み返して仕留めたという話も残っている。
+�
+Base.Units.Unit_Pythagoras_Desc�魂の本質を探求し、未知を追い求めた数学者ピタゴラス。紀元前６世紀のギリシャに生きた哲学者であり、数学の基礎を築いた人物だ。その生涯は神秘と伝説に包まれているが、ピタゴラスの定理によって名を馳せ、世界中の学生たちに数えきれない頭痛をもたらした。<br><br>クロトンに学派を設立し、弟子たちとともに数学だけでなく、音楽理論、天文学、倫理学にまで探究を広げ、数こそが宇宙を理解する鍵であると説いた。この包括的な学びの姿勢は、異なる分野のつながりを浮き彫りにした。<br><br>その教えは後世に大きな影響を与え、西洋思想の形成にも寄与。数学と哲学の基盤を築き、今なお知の探求を刺激し続けている。そして、あまり知られていないが、ピタゴラスは自信に満ちた人物でもあった。伝説によれば、毒蛇に噛まれた際、噛み返して仕留めたという話も残っている。
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.Charlemagne_1_Name�<style=ability_label>近接攻撃・弱体化</style>現在のターゲットを攻撃し、<style=basestat>{range}</style>の範囲内の敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える爆発を引き起こす。その後、<style=basestat>{duration}</style>の間、影響を受けた敵の攻撃速度が<style=basestat>{atk_speed_percentage}</style>低下する。
 H
@@ -1553,8 +1559,8 @@ A
 +Base.Units.Unit_MinoanEra_Player_Siege_Nameミノア投石機
 L
 9Base.Technologies.Technology_FeudalAge_SocketLangets_Name柄受け装具
-s
-<Base.Buildings.Building_MinoanEra_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+m
+<Base.Buildings.Building_MinoanEra_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 L
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_3_Name射撃兵兵舎
 B
@@ -1563,6 +1569,8 @@ B
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_Name完璧な頭飾り
 M
 .Base.Units.Unit_IberianEra_Castilla_Siege_Nameカスティーリャ弩砲
+D
++Base.Regions.region.EmeraldHighlands_1_Nameハイガルド公領
 .
 Base.BuildingGroups.SkyDisk太陽の祭壇
 �
@@ -1597,8 +1605,8 @@ G
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_Name棍棒使い
 E
 8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	木工房
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_21_Name�<style=ability_label>踏みつけ・出血・気絶</style>巴御前が槍で地面を打ち、衝撃波を発生させ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{bleed_chance}</style>の確率で出血を引き起こし、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_percentage}</style>のダメージを受ける。さらに、<style=basestat>{stun_chance}</style>の確率で<style=basestat>{stun_duration}</style>の間気絶する。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_21_Name�<style=ability_label>踏みつけ・出血・気絶</style>巴御前が槍で地面を打ち、衝撃波を発生させ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{bleed_chance}</style>の確率で出血を引き起こし、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_percentage}</style>の追加ダメージを受ける。さらに、<style=basestat>{stun_chance}</style>の確率で<style=basestat>{stun_duration}</style>の間気絶する。
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_Descパピルスを生産する
 J
@@ -1607,8 +1615,8 @@ d
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Nameコンパクトな文化遺産
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_3_Name翡翠採石場
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットを4回突き刺し、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各突きには<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>のダメージを与える。
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットを4回突き刺し、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各突きには<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。
 �
 5Base.Buildings.Building_MinoanEra_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 B
@@ -1657,8 +1665,8 @@ R
 %Base.Heroes.hero.QueenElizabethI_Nameエリザベス１世
 4
 Base.Units.Unit_DArtagnan_Nameダルタニャン
-i
-;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 s
 2Base.Buildings.Building_Vikings_Home_Worker_5_Desc=ペニーを生産し、都市に労働者を2人追加する
 �
@@ -1685,8 +1693,8 @@ I
 Base.Ages.BronzeAge_Finish紀元前3000年
 5
 "Base.BuildingGroups.smallHome_Name小さな住宅
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc'隣の建物の灌漑用水を増やす
 �
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 6
@@ -1703,8 +1711,8 @@ t
 
 E
 5Base.Buildings.Building_StoneAge_Farm_Domestic_1_Name畜産農場
-�
-&Base.Units.Unit_ArtemisiaIOfCaria_Desc�矢と叫び声が響き渡る！カリアの女王アルテミシア１世が戦場を駆ける！紀元前5世紀の海軍司令官アルテミシアは、卓越した指導力と戦略眼で歴史に名を刻んだ。<br><br>クセルクセス王の信頼を受け、ペルシャ戦争ではサラミスの海戦でギリシャ軍に立ち向かい、巧みな操船で敵を欺くなど、見事な戦術を披露した。その指導力と海軍技術は、味方だけでなく敵にも尊敬されることとなった。<br><br>時代の常識を打破し、アルテミシアの名は今もなお、恐れを知らず、知恵に満ちた指導者として語り継がれている。女性の影響力を証明する存在として、その伝説は色褪せることがない。1人目のアルテミシアはテスラの暗殺者として知られるが、ここでの姿はきっと異なるものとなるはずだ。そう願いたい！
+�
+&Base.Units.Unit_ArtemisiaIOfCaria_Desc�矢と叫び声が響き渡る！カリアの女王アルテミシア１世が戦場を駆ける！紀元前５世紀の海軍司令官アルテミシアは、卓越した指導力と戦略眼で歴史に名を刻んだ。<br><br>クセルクセス王の信頼を受け、ペルシャ戦争ではサラミスの海戦でギリシャ軍に立ち向かい、巧みな操船で敵を欺くなど、見事な戦術を披露した。その指導力と海軍技術は、味方だけでなく敵にも尊敬されることとなった。<br><br>時代の常識を打破し、アルテミシアの名は今もなお、恐れを知らず、知恵に満ちた指導者として語り継がれている。女性の影響力を証明する存在として、その伝説は色褪せることがない。1人目のアルテミシアはテスラの暗殺者として知られるが、ここでの姿はきっと異なるものとなるはずだ。そう願いたい！
 ?
 /Base.Wonders.Wonder_Capital_HangingGardens_Name空中庭園
 N
@@ -1759,12 +1767,12 @@ E
 2Base.Buildings.Building_Vikings_Home_Worker_1_Name労働者の家
 `
 ;Base.Buildings.Building_KingdomOfSicily_Farm_Premium_1_Desc!山ほどの食料を生産する
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_2_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_2_Desc0隣の建物の灌漑用水を大幅に増やす
 F
 3Base.Buildings.Building_EarlyRome_Home_Small_2_Name小さな住宅
-i
-;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 L
 3Base.Buildings.Building_Mayas_Aviary_Average_3_Desc羽毛を生産する
 �
@@ -1791,8 +1799,8 @@ M
 1Base.Units.Unit_StoneAge_Animal_Blizzardclaw_Nameブリザードクロー
 D
 1Base.Buildings.Building_China_Home_Premium_4_Name豪華な住宅
-�
-#Base.Units.Unit_VincentVanGogh_Desc�心をキャンバスに託し、フィンセント・ファン・ゴッホと共に描こう！19世紀末のオランダの名画家で、感情豊かな筆致と鮮やかな色彩で数々の作品を生み出した。<br><br>精神的な苦しみと、理解を得られない世界と戦いながらも、わずか10年で2,000点以上の作品を描き上げた。『ひまわり』や『星月夜』をはじめとする代表作は、独特な筆遣いと色彩で世界の美しさを表現し、芸術の概念を塗り替えた。<br><br>生前はほとんど評価されなかったものの、死後にその価値が見出され、今では史上最も高価な作品を生み出した画家の一人とされる。遺された絵画は、時を超えて見る者の心を揺さぶり続けている。もしかすると、アインシュタインが未来に連れて行き、本人にその名声を伝える日が来るかもしれない。
+�
+#Base.Units.Unit_VincentVanGogh_Desc�心をキャンバスに託し、フィンセント・ファン・ゴッホと共に描こう！19世紀末のオランダの名画家で、感情豊かな筆致と鮮やかな色彩で数々の作品を生み出した。<br><br>精神的な苦しみと、理解を得られない世界と戦いながらも、わずか１０年で二千点以上の作品を描き上げた。『ひまわり』や『星月夜』をはじめとする代表作は、独特な筆遣いと色彩で世界の美しさを表現し、芸術の概念を塗り替えた。<br><br>生前はほとんど評価されなかったものの、死後にその価値が見出され、今では史上最も高価な作品を生み出した画家の一人とされる。遺された絵画は、時を超えて見る者の心を揺さぶり続けている。もしかすると、アインシュタインが未来に連れて行き、本人にその名声を伝える日が来るかもしれない。
 Z
 >Base.Buildings.Building_ByzantineEra_Workshop_Carpenter_1_Desc板材‌を生産する
 M
@@ -1823,8 +1831,8 @@ P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_4_Name豪華な漁桟橋
 N
 8Base.Units.Unit_KingdomOfSicily_NormanSicily_Ranged_Nameシチリア弓兵
-j
-<Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 J
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_Name歩兵兵舎
 �
@@ -1833,8 +1841,8 @@ J
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_DescH宝石と香辛料の宝物を集める遠征隊の船を出航させる
 K
 5Base.Buildings.Building_China_RiceFarm_Average_1_Desc米を生産する
-�
-$Base.Units.Unit_MayanAstronomer_Desc�力の象徴として、イツァムナー・バハラム3世、盾のジャガーと共に記念碑を築こう！7世紀にヤシュチランの王位に就き、軍事力と政治的策略で統治を行ったマヤの王。<br><br>治世中、王国全体に石碑や寺院を築き、勝ち取った栄光と権威を示した。これらの精緻な彫刻には、王とその民が経験した重要な出来事や儀式、神話が刻まれ、失われた文明の一端を今に伝えている。<br><br>こうした芸術的な記録は、イツァムナーの遺産として石に刻まれ、ヤシュチランがマヤ文明の中でどれほど発展していたかを物語っている。歴史上、最も優れた高齢の将軍の一人とも言えるかもしれない。80代になってもなお戦い続けたというのだから。
+�
+$Base.Units.Unit_MayanAstronomer_Desc�力の象徴として、イツァムナー・バハラム３世、盾のジャガーと共に記念碑を築こう！７世紀にヤシュチランの王位に就き、軍事力と政治的策略で統治を行ったマヤの王。<br><br>治世中、王国全体に石碑や寺院を築き、勝ち取った栄光と権威を示した。これらの精緻な彫刻には、王とその民が経験した重要な出来事や儀式、神話が刻まれ、失われた文明の一端を今に伝えている。<br><br>こうした芸術的な記録は、イツァムナーの遺産として石に刻まれ、ヤシュチランがマヤ文明の中でどれほど発展していたかを物語っている。歴史上、最も優れた高齢の将軍の一人とも言えるかもしれない。８０代になってもなお戦い続けたというのだから。
 Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_4_Name円形劇場
 !
@@ -1913,8 +1921,8 @@ T
 8Base.Units.Unit_EarlyRome_MacedonianKingdom_Peltast_Nameペルタスト軽装兵
 L
 <Base.Technologies.Technology_StoneAge_DomesticatedGoats_Name飼育ヤギ
-�
- Base.Units.Unit_SiouxShaman_Desc�自らの権利と未来を守るために立ち上がったハンクパパ族の戦士、シッティング・ブル。19世紀、アメリカ政府の圧力に抗い、知恵と統率力をもって部族をまとめ上げた。<br><br>リトルビッグホーンの戦いでは、スー族とシャイアン族の戦士たちとともに、カスター将軍の部隊に歴史的な勝利を収めた。その名は、ネイティブ・アメリカンの抵抗と誇りの象徴として刻まれることとなった。<br><br>苦境の中でも文化と誇りを守り続け、その遺志は今も受け継がれている。差別や圧力に晒されながらも、必要とあれば言葉と武器の両方で戦い続けた。
+�
+ Base.Units.Unit_SiouxShaman_Desc�自らの権利と未来を守るために立ち上がったハンクパパ族の戦士、シッティング・ブル。１９世紀、アメリカ政府の圧力に抗い、知恵と統率力をもって部族をまとめ上げた。<br><br>リトルビッグホーンの戦いでは、スー族とシャイアン族の戦士たちとともに、カスター将軍の部隊に歴史的な勝利を収めた。その名は、ネイティブ・アメリカンの抵抗と誇りの象徴として刻まれることとなった。<br><br>苦境の中でも文化と誇りを守り続け、その遺志は今も受け継がれている。差別や圧力に晒されながらも、必要とあれば言葉と武器の両方で戦い続けた。
 B
 /Base.Buildings.Building_Egypt_Home_Small_3_Name小さな住宅
 X
@@ -1933,8 +1941,8 @@ K
 8Base.Technologies.Technology_Vikings_FaeringMastery_Name操船の熟達
 M
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_2_Name糸加工所
-�
-Base.Units.Unit_Geisha_Desc�美と知性が融合した吉野太夫！17世紀の京都で名を馳せた著名な花魁、吉野太夫は、その美しさ、芸術的才能、知性で広く知られ、当時最も高い位に位置する「太夫」の一人として名を刻んだ。<br><br>舞や詩などの伝統芸術における卓越した技術が評価され、上流社会の人々から高く求められる存在となった。吉野太夫の名声は職業の枠を超え、優雅さと業績によって文化的な象徴とされ、多くの人々から尊敬を集めた。<br><br>その生涯は、江戸時代の花魁が担った複雑な社会的役割と文化的意義を映し出しており、芸術と社会への貢献が今なお語り継がれている。
+�
+Base.Units.Unit_Geisha_Desc�美と知性が融合した吉野太夫！１７世紀の京都で名を馳せた著名な花魁、吉野太夫は、その美しさ、芸術的才能、知性で広く知られ、当時最も高い位に位置する「太夫」の一人として名を刻んだ。<br><br>舞や詩などの伝統芸術における卓越した技術が評価され、上流社会の人々から高く求められる存在となった。吉野太夫の名声は職業の枠を超え、優雅さと業績によって文化的な象徴とされ、多くの人々から尊敬を集めた。<br><br>その生涯は、江戸時代の花魁が担った複雑な社会的役割と文化的意義を映し出しており、芸術と社会への貢献が今なお語り継がれている。
 Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_1_Name円形劇場
 H
@@ -1957,8 +1965,8 @@ K
 /Base.Wonders.Wonder_Capital_SherwoodForest_Nameシャーウッドの森
 I
 9Base.Technologies.Technology_EarlyRome_RearLivestock_Name家畜飼育
-p
-BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+j
+BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 N
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Name豪華な住宅
 =
@@ -1967,8 +1975,8 @@ L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_Nameパピルス畑
 C
 0Base.Abilities.hero_battle_ability.Lagertha_Name雷神の一撃
-s
-<Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+m
+<Base.Buildings.Building_FeudalAge_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 0
 Base.Ages.HighMiddleAges_Name高中世時代
 Q
@@ -2017,8 +2025,8 @@ G
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_1_Name小作農場
 S
 7Base.Units.Unit_RomanEmpire_Carthaginians_Hannibal_Nameカルタゴの指揮官
-�	
-Base.Units.Unit_DArtagnan_Desc�ルイ14世の銃士隊長として知られる17世紀のフランス銃士、シャルル・ド・バッツ＝カステルモール、通称ダルタニャン。アレクサンドル・デュマの『三銃士』で広まった伝説を持つこの人物は、地方の小貴族の出身であり、スパイ、銃士、そして知事としても活躍した。<br><br>特にルイ14世の下で銃士隊長として仕え、巨万の富を誇るニコラ・フーケの逮捕で名を馳せた。フーケの警護を担当しながらも、賄賂を受け取ることなく任務を遂行し、その忠誠心を示した。<br><br>ダルタニャンの生涯は『ダルタニャン回想録』で誇張され、その後『三銃士』でさらに劇的に描かれた。物語の中では騎士道精神あふれる冒険者として広く知られているが、実際の人生はもう少し静かなものだったのかもしれない。レオニダスと「名前が一番長い競争」を繰り返していたが、毎回ダルタニャンが勝つ理由をレオニダスは最後まで理解できなかったようだ。
+�	
+Base.Units.Unit_DArtagnan_Desc�ルイ１４世の銃士隊長として知られる１７世紀のフランス銃士、シャルル・ド・バッツ＝カステルモール、通称ダルタニャン。アレクサンドル・デュマの『三銃士』で広まった伝説を持つこの人物は、地方の小貴族の出身であり、スパイ、銃士、そして知事としても活躍した。<br><br>特にルイ１４世の下で銃士隊長として仕え、巨万の富を誇るニコラ・フーケの逮捕で名を馳せた。フーケの警護を担当しながらも、賄賂を受け取ることなく任務を遂行し、その忠誠心を示した。<br><br>ダルタニャンの生涯は『ダルタニャン回想録』で誇張され、その後『三銃士』でさらに劇的に描かれた。物語の中では騎士道精神あふれる冒険者として広く知られているが、実際の人生はもう少し静かなものだったのかもしれない。レオニダスと「名前が一番長い競争」を繰り返していたが、毎回ダルタニャンが勝つ理由をレオニダスは最後まで理解できなかったようだ。
 L
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_Name聖なる軍団
 I
@@ -2093,10 +2101,10 @@ G
 4Base.Technologies.Technology_RomanEmpire_Forums_Nameフォーラム
 G
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Name畜産農場
-�
- Base.Units.Unit_Charlemagne_Desc�カール大帝、またはシャルルマーニュは、8世紀から9世紀にかけてフランク王国を支配し、カロリング帝国の皇帝として歴史に名を刻んだ。卓越した指導力と野心により、西欧と中央ヨーロッパに広がる広大な帝国を築き、宗教の発展を推進し、現代ヨーロッパ国家の基盤を形作った。<br><br>また、文化や教育にも深い関心を持ち、カロリング朝ルネサンスを引き起こした。芸術や学問、宗教改革を活性化させ、その影響は今も続いている。<br><br>統一と先見の明を持つ指導者としての遺産は、ヨーロッパのアイデンティティと歴史的発展に今なお大きな足跡を残している。9世紀のヨーロッパを形作った存在として、その名は語り継がれ続けている。
-�
-%Base.Units.Unit_GeorgeWashington_Desc�アメリカ合衆国の父、ジョージ・ワシントン！18世紀の建国の父であり、アメリカ合衆国初代大統領として、この国の基盤を築いた人物だ。<br><br>アメリカ独立戦争では大陸軍を指揮し、その後、初代大統領として国の誕生を導いた。ワシントンの指導のもと、アメリカは独立を達成し、党派政治や外部勢力から距離を置き、独自の道を歩み始めた。<br><br>軍事指導者、政治家としての功績は今も多くの人々に影響を与え、奉仕と信念、新しい国を築いたその生き様は、アメリカ合衆国の未来を形作った。ちなみに、アイスクリームも大好きだったと言われている！
+�
+ Base.Units.Unit_Charlemagne_Desc�カール大帝、またはシャルルマーニュは、８世紀から９世紀にかけてフランク王国を支配し、カロリング帝国の皇帝として歴史に名を刻んだ。卓越した指導力と野心により、西欧と中央ヨーロッパに広がる広大な帝国を築き、宗教の発展を推進し、現代ヨーロッパ国家の基盤を形作った。<br><br>また、文化や教育にも深い関心を持ち、カロリング朝ルネサンスを引き起こした。芸術や学問、宗教改革を活性化させ、その影響は今も続いている。<br><br>統一と先見の明を持つ指導者としての遺産は、ヨーロッパのアイデンティティと歴史的発展に今なお大きな足跡を残している。9世紀のヨーロッパを形作った存在として、その名は語り継がれ続けている。
+�
+%Base.Units.Unit_GeorgeWashington_Desc�アメリカ合衆国の父、ジョージ・ワシントン！１８世紀の建国の父であり、アメリカ合衆国初代大統領として、この国の基盤を築いた人物だ。<br><br>アメリカ独立戦争では大陸軍を指揮し、その後、初代大統領として国の誕生を導いた。ワシントンの指導のもと、アメリカは独立を達成し、党派政治や外部勢力から距離を置き、独自の道を歩み始めた。<br><br>軍事指導者、政治家としての功績は今も多くの人々に影響を与え、奉仕と信念、新しい国を築いたその生き様は、アメリカ合衆国の未来を形作った。ちなみに、アイスクリームも大好きだったと言われている！
 P
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_1_Name歩兵兵舎
 6
@@ -2105,18 +2113,18 @@ d
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_1_Desc!古参兵をアンロックする
 ~
 1Base.Buildings.Building_China_Home_Premium_1_DescI山ほどの五銖銭を生産し、都市に労働者を3人追加する
-�
-Base.Units.Unit_KarlMarx_Desc�カール・マルクスと共に、支配の枠組みを打ち壊そう！19世紀のドイツの哲学者であり、経済学者でもあるマルクスは、資本主義を批判し、階級のない社会を目指すマルクス主義を確立し、経済思想に深い影響を与えた。<br><br>『共産党宣言』や『資本論』で、社会を形作る経済的な力を分析し、「あらゆる社会の歴史は階級闘争の歴史である」と説いた。変革は避けられないと考え、労働者の搾取の構造を明らかにしようとした。<br><br>マルクスの思想は革命を引き起こし、独裁政権を生み出し、福祉改革を促進させた。大学の講義室から株式市場、そして議会に至るまで、マルクス主義と国家に関する議論は今も続いている。どちらにせよ、歴史に与えた影響は計り知れず、その痕跡は今も色濃く残っている。
-D
-4Base.Units.Unit_ByzantineEra_Mayas_MayaInfantry_Nameマヤ戦士
+�
+Base.Units.Unit_KarlMarx_Desc�カール・マルクスと共に、支配の枠組みを打ち壊そう！１９世紀のドイツの哲学者であり、経済学者でもあるマルクスは、資本主義を批判し、階級のない社会を目指すマルクス主義を確立し、経済思想に深い影響を与えた。<br><br>『共産党宣言』や『資本論』で、社会を形作る経済的な力を分析し、「あらゆる社会の歴史は階級闘争の歴史である」と説いた。変革は避けられないと考え、労働者の搾取の構造を明らかにしようとした。<br><br>マルクスの思想は革命を引き起こし、独裁政権を生み出し、福祉改革を促進させた。大学の講義室から株式市場、そして議会に至るまで、マルクス主義と国家に関する議論は今も続いている。どちらにせよ、歴史に与えた影響は計り知れず、その痕跡は今も色濃く残っている。
+G
+4Base.Units.Unit_ByzantineEra_Mayas_MayaInfantry_Nameマヤの戦士
 W
 5Base.Buildings.Building_China_RiceFarm_Premium_2_Desc山ほどの米を生産する
-8
-.Base.Technologies.Technology_Egypt_MakeUp_Name構成
+;
+.Base.Technologies.Technology_Egypt_MakeUp_Name	化粧品
 s
 2Base.Buildings.Building_StoneAge_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
-t
-=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+n
+=Base.Buildings.Building_IberianEra_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_Name磁器工房
 R
@@ -2135,8 +2143,8 @@ s
 2Base.Buildings.Building_Vikings_Home_Worker_1_Desc=ペニーを生産し、都市に労働者を2人追加する
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
-R
-9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_Nameファラオの仮面
+[
+9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_Nameツタンカーメンの仮面
 M
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_Name	紙包装
 W
@@ -2193,8 +2201,8 @@ J
 4Base.Units.Unit_KingdomOfSicily_Arabia_Infantry_Nameアラビア歩兵
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_Name	漁桟橋
-�
-Base.Units.Unit_VanHelsing_Desc�クロスボウを手にし、杭を握る。エイブラハム・ヴァン・ヘルシングが狩りに挑む。19世紀のブラム・ストーカーのホラー小説『ドラキュラ』に登場する医師であり、素人ながらも4体の吸血鬼を討ち取ったハンター。<br><br>その後、ヴァン・ヘルシングは伝説的な存在となり、『ドラキュラ』の映画化やホラー作品を通じて名を馳せることに。世代を超え、その名を継ぐ者たちが闇に立ち向かってきた。<br><br>誕生当初は医師であり博学者として描かれたが、今では怪物退治の象徴的な存在となった。戦いの場だけでなく、食事にもこだわるようで、好物はもちろんヘルシーなものらしい。
+�
+Base.Units.Unit_VanHelsing_Desc�クロスボウを手にし、杭を握る。エイブラハム・ヴァン・ヘルシングが狩りに挑む。１９世紀のブラム・ストーカーのホラー小説『ドラキュラ』に登場する医師であり、素人ながらも4体の吸血鬼を討ち取ったハンター。<br><br>その後、ヴァン・ヘルシングは伝説的な存在となり、『ドラキュラ』の映画化やホラー作品を通じて名を馳せることに。世代を超え、その名を継ぐ者たちが闇に立ち向かってきた。<br><br>誕生当初は医師であり博学者として描かれたが、今では怪物退治の象徴的な存在となった。戦いの場だけでなく、食事にもこだわるようで、好物はもちろんヘルシーなものらしい。
 �
 -Base.Units.Unit_EarlyRome_Player_Triarii_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 K
@@ -2293,12 +2301,12 @@ L
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_Name攻城兵兵舎
 N
 ABase.Technologies.Technology_KingdomOfSicily_MagnifyingGlass_Name	拡大鏡
-�
-&Base.Units.Unit_NapoleonBonaparte_Desc�勝利の兆しは揺るがない。ナポレオン・ボナパルトと共に戦場へ向かうのだから。18世紀末から19世紀初頭にかけて世界を揺るがした、野心と戦略に長けた指導者。軍司令官として、そしてフランス皇帝として、卓越した戦術と大胆な改革で歴史に名を刻んだ。<br><br>ナポレオンの指揮のもと、フランス軍はヨーロッパ各地を席巻し、非凡な指導力と戦略眼を示した。多くの地域で封建制度に終止符を打ち、新たな時代を切り開いた一方で、戦場には数えきれないほどの犠牲が積み重なった。<br><br>ナポレオンの遺産は、軍事的才能と変革の功績が絡み合う複雑なものだが、ヨーロッパの歴史を大きく塗り替えたことは間違いない。背丈のことを気にする者もいるが、その影響力は計り知れなかった。
+�
+&Base.Units.Unit_NapoleonBonaparte_Desc�勝利の兆しは揺るがない。ナポレオン・ボナパルトと共に戦場へ向かうのだから。１８世紀末から１９世紀初頭にかけて世界を揺るがした、野心と戦略に長けた指導者。軍司令官として、そしてフランス皇帝として、卓越した戦術と大胆な改革で歴史に名を刻んだ。<br><br>ナポレオンの指揮のもと、フランス軍はヨーロッパ各地を席巻し、非凡な指導力と戦略眼を示した。多くの地域で封建制度に終止符を打ち、新たな時代を切り開いた一方で、戦場には数えきれないほどの犠牲が積み重なった。<br><br>ナポレオンの遺産は、軍事的才能と変革の功績が絡み合う複雑なものだが、ヨーロッパの歴史を大きく塗り替えたことは間違いない。背丈のことを気にする者もいるが、その影響力は計り知れなかった。
 f
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_Desc鉾兵をアンロックする
-�
-Base.Units.Unit_Cleopatra_Desc�永遠の時を感じながら、クレオパトラ7世と共にテスラを打ち負かそう！エジプト最後の現役ファラオ、クレオパトラ7世は、その政治的手腕、知性、そしてカリスマによって帝国を支え、紀元前1世紀の激動の時代に名を刻んだ。<br><br>ローマの指導者ユリウス・カエサルやマルクス・アントニウスとの同盟で特に知られ、ローマの拡大に立ち向かいながらエジプトの独立を維持しようとした。アントニウスとの関係は、芸術や文学の中で数多く描かれ、壮大な物語の一部となっている。<br><br>その美貌だけでなく、贅沢な生活や毒蛇のアスプとの関わりも語り継がれ、ドラマティックな人生の象徴となった。政治的陰謀、文化の融合、そして波乱に満ちた生涯を通じて、クレオパトラ7世の遺産は今なお輝きを放ち続けている。エジプトの象徴的な存在とされることが多いが、実際にはギリシャ系の血を引くファラオだった。
+�
+Base.Units.Unit_Cleopatra_Desc�永遠の時を感じながら、クレオパトラ7世と共にテスラを打ち負かそう！エジプト最後の現役ファラオ、クレオパトラ７世は、その政治的手腕、知性、そしてカリスマによって帝国を支え、紀元前１世紀の激動の時代に名を刻んだ。<br><br>ローマの指導者ユリウス・カエサルやマルクス・アントニウスとの同盟で特に知られ、ローマの拡大に立ち向かいながらエジプトの独立を維持しようとした。アントニウスとの関係は、芸術や文学の中で数多く描かれ、壮大な物語の一部となっている。<br><br>その美貌だけでなく、贅沢な生活や毒蛇のアスプとの関わりも語り継がれ、ドラマティックな人生の象徴となった。政治的陰謀、文化の融合、そして波乱に満ちた生涯を通じて、クレオパトラ7世の遺産は今なお輝きを放ち続けている。エジプトの象徴的な存在とされることが多いが、実際にはギリシャ系の血を引くファラオだった。
 [
 9Base.Buildings.Building_BronzeAge_Workshop_Artisan_1_Desc青銅の腕輪を生産する
 �
@@ -2307,8 +2315,8 @@ c
 GBase.Technologies.Technology_ByzantineEra_BetterObsidianExtraction_Name黒曜石採取の改善
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_2_Desc$蚕の繭から絹糸を生産する
-j
-<Base.Buildings.Building_RomanEmpire_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_RomanEmpire_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
 �
@@ -2329,8 +2337,8 @@ H
 )Base.Regions.region.VolcanicJungle_3_Nameイングランド植民地
 Z
 5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_Name!ファーティマ朝の指揮官
-o
-ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+i
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 D
 1Base.Units.Unit_ByzantineEra_Player_Catapult_Nameカタパルト
 S
@@ -2343,8 +2351,8 @@ M
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
 H
 5Base.Buildings.Building_BronzeAge_Home_Average_2_Name大きな住宅
-n
-@Base.Buildings.Building_KingdomOfSicily_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+h
+@Base.Buildings.Building_KingdomOfSicily_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 M
 =Base.Technologies.Technology_IberianEra_HarbourEconomics_Name港湾経済
 ^
@@ -2383,12 +2391,12 @@ U
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Name豪華な文化遺産
 C
 9Base.Technologies.Technology_KingdomOfSicily_Incense_Name乳香
-�
-Base.Units.Unit_JohnLocke_Desc�自由主義の父、オックスフォード大学出身のジョン・ロック！17世紀のイギリスの哲学者で、現代政治思想に多大な影響を与えた。『統治二論』では、生命、自由、財産といった基本的な権利を提唱し、政府は民衆の同意に基づくべきだと説いた。<br><br>ロックの社会契約論は、現代民主主義に大きな影響を与え、政府が民衆に対して責任を負うべきだという考えを広めた。個人の権利と政府の責任を重視した思想は、今でも多くの政治に反映されている。<br><br>また、認識論においては『人間知性論』で、知識は経験に基づくものだと主張し、西洋思想における個人の権利や政府の役割に対する理解を深めた。戦場での実力はあまり知られていないが、その思想は今もなお力強く生き続けている！
+�
+Base.Units.Unit_JohnLocke_Desc�自由主義の父、オックスフォード大学出身のジョン・ロック！１７世紀のイギリスの哲学者で、現代政治思想に多大な影響を与えた。『統治二論』では、生命、自由、財産といった基本的な権利を提唱し、政府は民衆の同意に基づくべきだと説いた。<br><br>ロックの社会契約論は、現代民主主義に大きな影響を与え、政府が民衆に対して責任を負うべきだという考えを広めた。個人の権利と政府の責任を重視した思想は、今でも多くの政治に反映されている。<br><br>また、認識論においては『人間知性論』で、知識は経験に基づくものだと主張し、西洋思想における個人の権利や政府の役割に対する理解を深めた。戦場での実力はあまり知られていないが、その思想は今もなお力強く生き続けている！
 7
 Base.Ages.ByzantineEra_Nameビザンツ帝国時代
-�
-!Base.Units.Unit_VikingRaider_Desc�恐れることなく戦おう。フレイディス・エイリクスドッティルが背を預かる。11世紀のヴァイキングであり、ヴィンランドにまつわるノルマンのサガで、その勇猛さと不屈の意志が語り継がれている。<br><br>赤毛のエイリークの娘として生まれ、未知の地を目指して航海に挑み、北アメリカのヴィンランドへとたどり着いた。その旅の中で、勇気と決断力を示し、新たな土地の開拓に尽力した。伝説によれば、敵の襲撃を受けた際、武器を手に一歩も引かず入植地を守り抜いたとも伝えられている。<br><br>神話と歴史が交錯する存在ながら、ヴァイキングの女性たちの強さと不屈の精神を象徴する人物として語り継がれ、ノルマンの歴史にその名を刻んでいる。
+�
+!Base.Units.Unit_VikingRaider_Desc�恐れることなく戦おう。フレイディス・エイリクスドッティルが背を預かる。１１世紀のヴァイキングであり、ヴィンランドにまつわるノルマンのサガで、その勇猛さと不屈の意志が語り継がれている。<br><br>赤毛のエイリークの娘として生まれ、未知の地を目指して航海に挑み、北アメリカのヴィンランドへとたどり着いた。その旅の中で、勇気と決断力を示し、新たな土地の開拓に尽力した。伝説によれば、敵の襲撃を受けた際、武器を手に一歩も引かず入植地を守り抜いたとも伝えられている。<br><br>神話と歴史が交錯する存在ながら、ヴァイキングの女性たちの強さと不屈の精神を象徴する人物として語り継がれ、ノルマンの歴史にその名を刻んでいる。
 L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_Nameパピルス畑
 t
@@ -2401,8 +2409,8 @@ V
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Name大規模な文化遺産
 X
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_1_Name重歩兵兵舎
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_Desc'隣の建物の灌漑用水を増やす
 6
 &Base.Regions.region.DesertDelta_7_Name峠の山道
 y
@@ -2427,8 +2435,8 @@ C
 IBase.AbilityDescriptions.hero_battle_ability_description.MarcoPolo_1_Name�<style=ability_label>瞬間移動・踏みつけ</style>敵ユニットの最大集団にテレポートし、着地と同時に爆発を引き起こす。爆発は<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
 �
 ;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
-�
-"Base.Units.Unit_OracleOfDephi_Desc�カスタリアの泉に身を浸し、カッソティスの聖なる水を口にし、山羊を捧げる時が来た。デルフォイの神託者が予言を告げるのだ！紀元前8世紀から、人々はアポロン神殿を訪れ、未来の囁きに耳を傾けた。<br><br>神託を告げるのはピュティアと呼ばれる最高女祭司。その言葉は神々の意志として伝えられ、戦争、政治、植民政策など、重大な決断に影響を与えた。王から庶民まで、800年以上にわたり助言を求め続けた。<br><br>デルフォイの神託者は、ギリシャ文化の中心にあり、宗教、政治、社会が交差する存在だった。記録に残る500以上の神託のうち、半数以上が的中したとされる。テスラに勝てるか尋ねたところ、「続けることこそが勝利の鍵」とのお告げが下ったようだ。
+�
+"Base.Units.Unit_OracleOfDephi_Desc�カスタリアの泉に身を浸し、カッソティスの聖なる水を口にし、山羊を捧げる時が来た。デルフォイの神託者が予言を告げるのだ！紀元前８世紀から、人々はアポロン神殿を訪れ、未来の囁きに耳を傾けた。<br><br>神託を告げるのはピュティアと呼ばれる最高女祭司。その言葉は神々の意志として伝えられ、戦争、政治、植民政策など、重大な決断に影響を与えた。王から庶民まで、８００年以上にわたり助言を求め続けた。<br><br>デルフォイの神託者は、ギリシャ文化の中心にあり、宗教、政治、社会が交差する存在だった。記録に残る５００以上の神託のうち、半数以上が的中したとされる。テスラに勝てるか尋ねたところ、「続けることこそが勝利の鍵」とのお告げが下ったようだ。
 @
 6Base.Technologies.Technology_StoneAge_Agriculture_Name農業
 H
@@ -2493,8 +2501,8 @@ K
 ;Base.Technologies.Technology_BronzeAge_AbilityTraining_Name能力訓練
 R
 ?Base.Technologies.Technology_MinoanEra_LionheartedInfantry_Name獅子心歩兵
-�
-Base.Units.Unit_MansaMusa_Desc�カタルーニャからメッカを経て、スクリーンに登場するのはマンサ・ムーサ。14世紀のマリ王であり、歴史上最も裕福な人物の一人として知られている。治世のもと、マリ帝国は西アフリカにおける力と影響力の頂点を迎え、交易、文化、学問の中心となった。<br><br>特に有名なのは、メッカへの豪華な巡礼の旅。大規模な随行団を率い、道中で金を分け与え、マリの膨大な富を誇示した。この旅は、他の地域との外交的および経済的な関係を築く一助となった。<br><br>治世の下で、トンブクトゥなどの都市は教育と文化の中心として繁栄。マンサ・ムーサの遺産は、西アフリカの歴史的な豊かさを今もなお浮き彫りにしている。もしあの大量の金を持ってきていれば、今頃は大金持ちになっていたかもしれない！
+�
+Base.Units.Unit_MansaMusa_Desc�カタルーニャからメッカを経て、スクリーンに登場するのはマンサ・ムーサ。１４世紀のマリ王であり、歴史上最も裕福な人物の一人として知られている。治世のもと、マリ帝国は西アフリカにおける力と影響力の頂点を迎え、交易、文化、学問の中心となった。<br><br>特に有名なのは、メッカへの豪華な巡礼の旅。大規模な随行団を率い、道中で金を分け与え、マリの膨大な富を誇示した。この旅は、他の地域との外交的および経済的な関係を築く一助となった。<br><br>治世の下で、トンブクトゥなどの都市は教育と文化の中心として繁栄。マンサ・ムーサの遺産は、西アフリカの歴史的な豊かさを今もなお浮き彫りにしている。もしあの大量の金を持ってきていれば、今頃は大金持ちになっていたかもしれない！
 =
 3Base.Units.Unit_AgeOfTheFranks_Player_Halberds_Name鉾兵
 5
@@ -2525,8 +2533,8 @@ o
  Base.BuildingGroups.artisan_Name職人工房
 W
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Nameヒーロー学堂
-�
- Base.Units.Unit_QinShiHuang_Desc�天命を受け、千もの碑にその名を刻まれた始皇帝。紀元前3世紀、中国を初めて統一した皇帝であり、燃え上がる書物と研ぎ澄まされた剣の音が、その支配の始まりを告げた。戦乱を終わらせ、歴史に残る帝国の礎を築いた。<br><br>治世のもとで、初期の万里の長城や膨大な兵馬俑など、大規模な建築事業が進められ、帝国の統一と威光を示す遺産を築いた。壮大な陵墓とともに、今も語り継がれている。<br><br>厳格な統治と絶対的な権力は畏れられ、暴君と評されることも多い。しかし、その評価は後の王朝によって作られたものかもしれない。いずれにせよ、中国の歴史を大きく形作ったことは疑いようがない。ヒーローとして迎えられた今も、リンカーンとは折り合いが悪く、一言も言葉を交わしていないらしい。
+�
+ Base.Units.Unit_QinShiHuang_Desc�天命を受け、千もの碑にその名を刻まれた始皇帝。紀元前３世紀、中国を初めて統一した皇帝であり、燃え上がる書物と研ぎ澄まされた剣の音が、その支配の始まりを告げた。戦乱を終わらせ、歴史に残る帝国の礎を築いた。<br><br>治世のもとで、初期の万里の長城や膨大な兵馬俑など、大規模な建築事業が進められ、帝国の統一と威光を示す遺産を築いた。壮大な陵墓とともに、今も語り継がれている。<br><br>厳格な統治と絶対的な権力は畏れられ、暴君と評されることも多い。しかし、その評価は後の王朝によって作られたものかもしれない。いずれにせよ、中国の歴史を大きく形作ったことは疑いようがない。ヒーローとして迎えられた今も、リンカーンとは折り合いが悪く、一言も言葉を交わしていないらしい。
 [
 BBase.Technologies.Technology_HighMiddleAges_BaldachinCanopies_Nameバルダッキーノ
 B
@@ -2597,8 +2605,8 @@ J
 7Base.Buildings.Building_Arabia_CamelFarm_Average_1_Nameラクダ農場
 L
 6Base.Abilities.hero_battle_ability.AlbertEinstein_Name全ては相対的
-�
-$Base.Units.Unit_QueenElizabethI_Desc�砲声と祈りが響いた時代を生きた女王、エリザベス1世。16世紀のイングランドを40年以上にわたり統治し、国に安定と繁栄をもたらした。芸術が花開き、戦乱が渦巻き、大航海時代が幕を開けた激動の時代でもあった。<br><br>国内外の試練に立ち向かい、宗教対立を乗り越え（その過程で犠牲がなかったわけではないが）、幾多の戦争を切り抜いた。スペイン無敵艦隊を打ち破り、強固な統治者としての名声を確立。シェイクスピアらを支援し、その時代を文化的にも黄金期へと導いた。<br><br>「ヴァージン・クイーン」として知られ、一度も結婚せず、最後まで権力と独立を貫いた。知性と統率力を兼ね備え、文化と政治の両面で大きな足跡を残した。そして、甘いものを好みすぎたあまり、歯の状態は最悪だったとも言われている。当時の歯科医にとっては、最も厄介な患者だったのかもしれない。
+�
+$Base.Units.Unit_QueenElizabethI_Desc�砲声と祈りが響いた時代を生きた女王、エリザベス１世。１６世紀のイングランドを４０年以上にわたり統治し、国に安定と繁栄をもたらした。芸術が花開き、戦乱が渦巻き、大航海時代が幕を開けた激動の時代でもあった。<br><br>国内外の試練に立ち向かい、宗教対立を乗り越え（その過程で犠牲がなかったわけではないが）、幾多の戦争を切り抜いた。スペイン無敵艦隊を打ち破り、強固な統治者としての名声を確立。シェイクスピアらを支援し、その時代を文化的にも黄金期へと導いた。<br><br>「ヴァージン・クイーン」として知られ、一度も結婚せず、最後まで権力と独立を貫いた。知性と統率力を兼ね備え、文化と政治の両面で大きな足跡を残した。そして、甘いものを好みすぎたあまり、歯の状態は最悪だったとも言われている。当時の歯科医にとっては、最も厄介な患者だったのかもしれない。
 P
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_Name奇襲技術
 <
@@ -2607,8 +2615,8 @@ P
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 U
 3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_Nameファーティマ朝の歩兵
-m
-?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+g
+?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 f
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_Desc戟兵をアンロックする
 G
@@ -2627,8 +2635,8 @@ L
 $Base.Units.Unit_LeonardoDaVinci_Name$レオナルド・ダ・ヴィンチ
 C
 0Base.Buildings.Building_Mayas_Home_Worker_4_Name労働者の家
-n
-@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+h
+@Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 &
 Base.BuildingTypes.farm_Name農場
 M
@@ -2653,14 +2661,14 @@ C
 *Base.Wonders.Wonder_Capital_Mausoleum_Nameマウソロス霊廟
 T
 >Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_Nameカルタゴ騎兵
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc'隣の建物の灌漑用水を増やす
 e
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_Desc*アンクと黄金の仮面を生産する
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_3_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_3_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_3_Desc'隣の建物の灌漑用水を増やす
 g
 HBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineHeavyInfantry_Nameスクタトイ重装歩兵
 U
@@ -2749,8 +2757,8 @@ O
 9Base.Technologies.Technology_MinoanEra_CretanQuivers_Nameクレタの矢筒
 D
 1Base.Buildings.Building_China_Home_Average_2_Name大きな住宅
-s
-<Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+m
+<Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 E
 5Base.Technologies.Technology_Egypt_Mummification_Nameミイラ化
 J
@@ -2759,14 +2767,14 @@ J
 Base.Heroes.hero.HuaMulan_Name	花木蘭
 J
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_Name攻城兵兵舎
-h
-:Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+b
+:Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 J
 :Base.Buildings.Building_ClassicGreece_City_CityHall_1_Name大ホール
 J
 :Base.Technologies.Technology_EarlyRome_TacticalCharge_Name戦術突撃
-p
-BBase.Buildings.Building_AgeOfTheFranks_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+j
+BBase.Buildings.Building_AgeOfTheFranks_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_Descパピルスを生産する
 H
@@ -2825,8 +2833,8 @@ s
 'Base.Regions.region.TeslaStormBlue_Name青ストーム
 J
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Name射撃兵兵舎
-�
-"Base.Units.Unit_CyrusTheGreat_Desc�キュロス大王は、リビアからパキスタンまで讃えられている。アケメネス朝を築き、世界史上最も広大な帝国の一つを作り上げた。6世紀の皇帝キュロスは、その卓越した軍事力と戦略的天才で名高い。<br><br>ペルシャの部族を統一し、アジア小部や東ヨーロッパにまで領土を拡大。征服したサトラップでは、それぞれの宗教や習慣を尊重し、賢明な統治者としての名声を確立した。<br><br>ユダヤ人にとっては救世主、バビロニア人にとっては解放者、アレクサンドロス大王やトーマス・ジェファーソンにとっては英雄とされ、その名声は今なおイランで語り継がれている。その慈悲深さは「キュロスの円筒」にも記録され、政治手腕と優れた人道的姿勢を示している。政治家としての才覚だけでなく、戦場でも狡猾さを発揮したと言われ、ある戦闘では敵を酔わせてから攻撃を仕掛けたとも伝えられている。
+�
+"Base.Units.Unit_CyrusTheGreat_Desc�キュロス大王は、リビアからパキスタンまで讃えられている。アケメネス朝を築き、世界史上最も広大な帝国の一つを作り上げた。６世紀の皇帝キュロスは、その卓越した軍事力と戦略的天才で名高い。<br><br>ペルシャの部族を統一し、アジア小部や東ヨーロッパにまで領土を拡大。征服したサトラップでは、それぞれの宗教や習慣を尊重し、賢明な統治者としての名声を確立した。<br><br>ユダヤ人にとっては救世主、バビロニア人にとっては解放者、アレクサンドロス大王やトーマス・ジェファーソンにとっては英雄とされ、その名声は今なおイランで語り継がれている。その慈悲深さは「キュロスの円筒」にも記録され、政治手腕と優れた人道的姿勢を示している。政治家としての才覚だけでなく、戦場でも狡猾さを発揮したと言われ、ある戦闘では敵を酔わせてから攻撃を仕掛けたとも伝えられている。
 1
 $Base.Heroes.hero.JapaneseShogun_Name	近藤勇
 r
@@ -2847,8 +2855,8 @@ f
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_3_Desc'カオリンから粘土を生産する
 E
 2Base.Units.Unit_TreasureHunt_Blue_Harpoonists_Name蒼天の銛隊
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_2_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_2_Desc'隣の建物の灌漑用水を増やす
 r
 1Base.Buildings.Building_Egypt_Home_Premium_4_Desc=デベンを生産し、都市に労働者を1人追加する
 W
@@ -2867,8 +2875,8 @@ C
 0Base.Buildings.Building_Mayas_Quarry_Jade_5_Name翡翠採石場
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_Name�<style=ability_label>遠隔攻撃・範囲攻撃・気絶</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{stun_duration}</style>の間気絶させる。さらに、ターゲットの周囲<style=basestat>{range}</style>の範囲内にいる敵ユニットにも<style=basestat>{dmg_percentage_around}</style>のダメージを与える。
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Desc'隣の建物の灌漑用水を増やす
 5
 %Base.Heroes.hero.MiyamotoMusashi_Name宮本武蔵
 G
@@ -2915,12 +2923,12 @@ K
 5Base.Buildings.Building_China_RiceFarm_Premium_5_Name豪華な米農場
 ?
 5Base.Technologies.Technology_Vikings_DragonBoats_Name竜船
-r
-8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc0隣の建物の灌漑用水を大幅に増やす
 X
 3Base.Units.Unit_KingdomOfSicily_Arabia_Cavalry_Name!アラブのドロメダリ騎兵
-�	
- Base.Units.Unit_AdaLovelace_Desc�	数字で未来を描くアダ・ラブレス！19世紀のイギリスの数学者であり作家でもあったアダ・ラブレスは、コンピュータの歴史における革新者として広く知られている。特にチャールズ・バベッジの初期の機械式汎用コンピュータ「解析機関」に関する研究で功績を残した。<br><br>アダ・ラブレスは、この機械が単なる数値計算を超えた可能性を持つことに気づき、最初のアルゴリズムを記述した。コンピュータが数値だけでなく記号や音も処理できるなら、理論上あらゆるものを生み出せると考えた。<br><br>当時の社会的な制約の中でも、その業績は今なお多くの科学者や技術者に影響を与え続けている。名を冠したプログラミング言語が存在し、毎年「アダ・ラブレスの日」として功績が称えられている。2019年には、ロボット「アイダ」が誕生。しかし皮肉なことに、アダ・ラブレスは自身の著作で人工知能に否定的な立場を示しており、もし直接対面していたら意見が対立していたかもしれない。
+�	
+ Base.Units.Unit_AdaLovelace_Desc�	数字で未来を描くアダ・ラブレス！１９世紀のイギリスの数学者であり作家でもあったアダ・ラブレスは、コンピュータの歴史における革新者として広く知られている。特にチャールズ・バベッジの初期の機械式汎用コンピュータ「解析機関」に関する研究で功績を残した。<br><br>アダ・ラブレスは、この機械が単なる数値計算を超えた可能性を持つことに気づき、最初のアルゴリズムを記述した。コンピュータが数値だけでなく記号や音も処理できるなら、理論上あらゆるものを生み出せると考えた。<br><br>当時の社会的な制約の中でも、その業績は今なお多くの科学者や技術者に影響を与え続けている。名を冠したプログラミング言語が存在し、毎年「アダ・ラブレスの日」として功績が称えられている。２０１９年には、ロボット「アイダ」が誕生。しかし皮肉なことに、アダ・ラブレスは自身の著作で人工知能に否定的な立場を示しており、もし直接対面していたら意見が対立していたかもしれない。
 K
 >Base.Technologies.Technology_BronzeAge_BronzeTippedSpears_Name	青銅槍
 [
@@ -2953,12 +2961,12 @@ O
 Base.Ages.AgeOfTheFranks_Decade西暦550年
 I
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_3_Name騎兵兵舎
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_10_Name�<style=ability_label>踏みつけ・出血</style>槍で地面を打ち、衝撃波を発生させ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{bleed_chance}</style>の確率で出血を引き起こし、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_percentage}</style>のダメージを受ける。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_10_Name�<style=ability_label>踏みつけ・出血</style>槍で地面を打ち、衝撃波を発生させ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{bleed_chance}</style>の確率で出血を引き起こし、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_percentage}</style>の追加ダメージを受ける。
 ~
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
-g
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_1_Desc-隣接する建物の灌漑用水を増やす
+a
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_1_Desc'隣の建物の灌漑用水を増やす
 F
 6Base.Buildings.Building_MinoanEra_City_CityHall_1_Name大ホール
 t
@@ -2981,8 +2989,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_1_Nameミノ
  Base.BuildingGroups.BronzeStatue銅像
 B
 /Base.Buildings.Building_Egypt_Home_Small_5_Name小さな住宅
-m
-?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+g
+?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 >
 (Base.Regions.region.EasternValley_4_Nameテスラの要塞
 U
@@ -3003,10 +3011,10 @@ N
 Base.Ages.DawnAge_Start紀元前5万年
 `
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬の市場
-�
-Base.Units.Unit_Confucius_Desc�統治を学び、舞姫たちを脇に置いて、孔子の教えを深めよう！紀元前6世紀から5世紀にかけて活躍した中国の哲学者、孔子は、その思想によって中国の文化と社会に深い影響を与えた。『論語』にまとめられた教えは、道徳、孝行、そして社会の調和の重要性を説いている。<br><br>孝行や年長者への敬意、教育の大切さといった美徳を提唱し、個人と国家の行動指針となる倫理的な枠組みを築こうとした。その哲学では、社会秩序を維持するために義と礼の重要性が強調されている。<br><br>孔子の思想は、中国の歴史や文化の基盤となり、今もなお東洋の哲学や社会的実践に深く影響を与え続けている。
-o
-ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+�
+Base.Units.Unit_Confucius_Desc�統治を学び、舞姫たちを脇に置いて、孔子の教えを深めよう！紀元前６世紀から５世紀にかけて活躍した中国の哲学者、孔子は、その思想によって中国の文化と社会に深い影響を与えた。『論語』にまとめられた教えは、道徳、孝行、そして社会の調和の重要性を説いている。<br><br>孝行や年長者への敬意、教育の大切さといった美徳を提唱し、個人と国家の行動指針となる倫理的な枠組みを築こうとした。その哲学では、社会秩序を維持するために義と礼の重要性が強調されている。<br><br>孔子の思想は、中国の歴史や文化の基盤となり、今もなお東洋の哲学や社会的実践に深く影響を与え続けている。
+i
+ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 P
 1Base.Abilities.hero_battle_ability.RobinHood_Nameシャーウッドの復讐
 <
@@ -3081,8 +3089,8 @@ K
 /Base.Units.Unit_FeudalAge_Player_Trebuchet_Nameトレビュシェット
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_2_Name豪華な漁桟橋
-h
-:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+b
+:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 �
 4Base.Buildings.Building_Vikings_City_CityHall_1_Descr都市の中心部にある大ホール。ここでは、少量ながらペニーを継続的に収集できる。
 D
@@ -3105,8 +3113,8 @@ O
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_Name歩兵兵舎
 M
 1Base.Units.Unit_IberianEra_Castilla_Infantry_Nameカスティリア歩兵
-n
-@Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+h
+@Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 >
 +Base.Units.Unit_EarlyRome_Huns_Geoguth_Nameゲオグス兵
 �
@@ -3135,8 +3143,8 @@ P
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_Nameパピルス工房
 @
 'Base.Heroes.hero.AztecTlacateccatl_Nameクアウテモック
-j
-<Base.Buildings.Building_MinoanEra_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_MinoanEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 P
 1Base.Abilities.hero_battle_ability.Cleopatra_Nameファラオの操り人形
 I
@@ -3151,16 +3159,16 @@ G
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_5_Name	絹工房
 J
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_3_Name攻城兵兵舎
-k
-=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_2_Desc金鉱石を生産する
 K
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_Name	協同体
 �
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescH宝石と香辛料の宝物を集める遠征隊の船を出航させる
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc'隣の建物の灌漑用水を増やす
 @
 *Base.BuildingGroups.averageRitualSite_Name普通の儀式場
 U
@@ -3173,8 +3181,8 @@ h
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_Desc-スリング投石機をアンロックする
 K
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Name小さな住宅
-�
-Base.Units.Unit_Hatshepsut_Desc�男性としても知られる女王、ハトシェプスト。紀元前15世紀、古代エジプトの最も成功したファラオの一人であり、トトメス1世の娘として生まれ、義理の息子トトメス3世の摂政として権力を握った後、自らファラオとして即位した。<br><br>治世を象徴するデル・エル・バハリの葬祭殿は、数多くの記念碑の中でも特に有名だが、貿易遠征にも力を入れ、特にプント国への遠征ではエジプトの富と影響力を大きく高めた。<br><br>男性ファラオの衣装を身にまとった姿で描かれることが多いハトシェプストは、強力で効果的な統治者としての遺産を今に伝えている。その物語は、伝統的な性別役割に対する挑戦を象徴し、エジプト史におけるその重要性を際立たせている。
+�
+Base.Units.Unit_Hatshepsut_Desc�男性としても知られる女王、ハトシェプスト。紀元前１５世紀、古代エジプトの最も成功したファラオの一人であり、トトメス１世の娘として生まれ、義理の息子トトメス３世の摂政として権力を握った後、自らファラオとして即位した。<br><br>治世を象徴するデル・エル・バハリの葬祭殿は、数多くの記念碑の中でも特に有名だが、貿易遠征にも力を入れ、特にプント国への遠征ではエジプトの富と影響力を大きく高めた。<br><br>男性ファラオの衣装を身にまとった姿で描かれることが多いハトシェプストは、強力で効果的な統治者としての遺産を今に伝えている。その物語は、伝統的な性別役割に対する挑戦を象徴し、エジプト史におけるその重要性を際立たせている。
 T
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 F
@@ -3183,14 +3191,14 @@ m
 -Base.Units.Unit_EarlyRome_Player_Hastati_Desc<歩兵ユニットは前列で最も効果を発揮する。
 L
 6Base.Technologies.Technology_FeudalAge_Pictograms_Nameピクトグラム
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Name�<style=ability_label>近接攻撃・出血・強化</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>のダメージを与える。さらに、<style=basestat>{buff_duration}</style>の間、ランスロットのクリティカルダメージが<style=basestat>{crit_dmg_percentage}</style>上昇し、クリティカル率が<style=basestat>{crit_chance_percentage}</style>上昇する。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Name�<style=ability_label>近接攻撃・出血・強化</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。さらに、<style=basestat>{buff_duration}</style>の間、ランスロットのクリティカルダメージが<style=basestat>{crit_dmg_percentage}</style>上昇し、クリティカル率が<style=basestat>{crit_chance_percentage}</style>上昇する。
 �
 2Base.Buildings.Building_Mayas_City_CityHall_2_Descu都市の中心部にある大ホール。ここでは、少量ながらカカオ豆を継続的に収集できる。
 N
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_Name大きな住宅
-j
-<Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 H
 8Base.Technologies.Technology_EarlyRome_SwordMastery_Name剣の熟達
 4
@@ -3235,8 +3243,8 @@ A
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_Name金鉱
 W
 ABase.Technologies.Technology_IberianEra_EquestrianExcellence_Name騎馬技術卓越
-�
-Base.Units.Unit_Leonidas_Desc�今夜はスパルタの王、レオニダスを讃えよう。ヘラクレスの血を引き、その勇気と決意は歴史に刻まれ、最後の戦いの物語は今も語り継がれている。<br><br>300人のスパルタ兵を率いて、5世紀のペルシャによるギリシャ侵攻に立ち向かったレオニダスは、誰もが恐れる中で戦いの先頭に立った。その勇敢な行動は、ギリシャのみならず、広く英雄としての象徴となっている。<br><br>テルモピュライの戦いで全員戦死したものの、レオニダスはアインシュタインによって記憶喪失のまま石器時代に送られた。奇妙なことに、時代を先取りしてサングラスを発明し、戦う時には必ずそれを着用させることにこだわっていた。
+�
+Base.Units.Unit_Leonidas_Desc�今夜はスパルタの王、レオニダスを讃えよう。ヘラクレスの血を引き、その勇気と決意は歴史に刻まれ、最後の戦いの物語は今も語り継がれている。<br><br>三百人のスパルタ兵を率いて、５世紀のペルシャによるギリシャ侵攻に立ち向かったレオニダスは、誰もが恐れる中で戦いの先頭に立った。その勇敢な行動は、ギリシャのみならず、広く英雄としての象徴となっている。<br><br>テルモピュライの戦いで全員戦死したものの、レオニダスはアインシュタインによって記憶喪失のまま石器時代に送られた。奇妙なことに、時代を先取りしてサングラスを発明し、戦う時には必ずそれを着用させることにこだわっていた。
 D
 1Base.Buildings.Building_Mayas_Home_Premium_2_Name豪華な住宅
 K
@@ -3273,8 +3281,8 @@ I
 /Base.TreasureHuntDifficulties.Difficulty_2_Name修練者１
 /
 Base.Ages.AgeOfTheFranks_Finish西暦550年
-q
-CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+k
+CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_6_Descパピルスを生産する
 I
@@ -3317,8 +3325,8 @@ E
 /Base.Wonders.Wonder_Capital_PalaceOfAachen_Nameアーヘン宮殿
 b
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_Desc!重騎兵をアンロックする
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_5_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_5_Desc'隣の建物の灌漑用水を増やす
 s
 2Base.Buildings.Building_StoneAge_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
 ]
@@ -3349,8 +3357,8 @@ Y
 1Base.Technologies.Technology_Vikings_Jarldom_Name	領主国
 M
 @Base.Technologies.Technology_AgeOfTheFranks_ArmorAdaptation_Name	鎧強化
-R
-9Base.Units.Unit_KingdomOfSicily_Arabia_HarunArRachid_Nameハラス・ガード
+O
+9Base.Units.Unit_KingdomOfSicily_Arabia_HarunArRachid_Nameハラス近衛隊
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_10_Name�<style=ability_label>近接攻撃・強化・回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。驚異的な力を発揮し、アキレスの攻撃速度が<style=basestat>{atk_speed_duration}</style>の間<style=basestat>{atk_speed_percentage}</style>上昇する。その後、自身の最大体力の<style=basestat>{heal_percentage}</style>分が回復する。
 p
@@ -3377,8 +3385,8 @@ p
 /Base.Buildings.Building_Egypt_Home_Small_5_Desc=デベンを生産し、都市に労働者を1人追加する
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>猛烈な竜を召喚し、敵ユニットの最大集団を3回攻撃する。それぞれの攻撃で、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力を花木蘭の攻撃力の<style=basestat>{def_percentage}</style>分低下させ、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けた敵ユニットは、さらに<style=basestat>{burn_duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
-�
-#Base.Units.Unit_OttomanGeneral_Desc�大海原へ漕ぎ出そう。オスマン帝国の名将バルバロス・ハイレッディンの息子、ハサン・パシャ。16世紀半ばに名を馳せ、アルジェのベイレルベイとしてその名を刻んだ。<br><br>父の跡を継ぎ、地中海におけるオスマン帝国の海軍支配をさらに強固なものとした。大規模な海戦や私掠活動を展開し、欧州列強と渡り合いながら優位を保ち続けた。アルジェをオスマン帝国の拠点として確立し、北アフリカにおける影響力を不動のものとした。<br><br>その遺産は、海洋覇権を守るための戦いに刻まれ、激動の時代において重要な役割を果たしたことにある。そして何より、ハサン・パシャは辛い料理が大好き。その食の趣向が歴史のヒーローたちの間でも話題となり、特にジャンヌの悩みの種になっているようだ。
+�
+#Base.Units.Unit_OttomanGeneral_Desc�大海原へ漕ぎ出そう。オスマン帝国の名将バルバロス・ハイレッディンの息子、ハサン・パシャ。１６世紀半ばに名を馳せ、アルジェのベイレルベイとしてその名を刻んだ。<br><br>父の跡を継ぎ、地中海におけるオスマン帝国の海軍支配をさらに強固なものとした。大規模な海戦や私掠活動を展開し、欧州列強と渡り合いながら優位を保ち続けた。アルジェをオスマン帝国の拠点として確立し、北アフリカにおける影響力を不動のものとした。<br><br>その遺産は、海洋覇権を守るための戦いに刻まれ、激動の時代において重要な役割を果たしたことにある。そして何より、ハサン・パシャは辛い料理が大好き。その食の趣向が歴史のヒーローたちの間でも話題となり、特にジャンヌの悩みの種になっているようだ。
 K
 8Base.Abilities.hero_battle_ability.GeorgeWashington_Name守護者の父
 S
@@ -3451,8 +3459,8 @@ K
 8Base.Technologies.Technology_China_PorcelainMastery_Name磁器の熟練
 ;
 (Base.Regions.region.EasternValley_2_Name険しい密林
-�
-(Base.Units.Unit_HermannTheCheruscan_Desc�ケルスキ族の戦士、アルミニウスが故郷を解放した！1世紀、アルミニウス、またはヘルマンとして知られるゲルマン人の英雄は、ローマに対して大きな勝利を収め、その名を歴史に刻んだ。<br><br>トイトブルクの森の戦いで最もよく知られ、ゲルマン部族の連合を率いて、プブリウス・クィンクティリウス・ウァルスが指揮するローマ軍三軍団を壊滅的な敗北に追い込んだ。この戦いは、ローマのゲルマニアへの拡大を食い止め、ゲルマン民族がローマ帝国の支配から独立するための転換点となった。<br><br>現在でもアルミニウスは、その戦略的才能とゲルマン民族の文化と歴史のアイデンティティを築いた功績で讃えられ、外国の支配に対する象徴的な存在となっている。
+�
+(Base.Units.Unit_HermannTheCheruscan_Desc�ケルスキ族の戦士、アルミニウスが故郷を解放した！１世紀、アルミニウス、またはヘルマンとして知られるゲルマン人の英雄は、ローマに対して大きな勝利を収め、その名を歴史に刻んだ。<br><br>トイトブルクの森の戦いで最もよく知られ、ゲルマン部族の連合を率いて、プブリウス・クィンクティリウス・ウァルスが指揮するローマ軍三軍団を壊滅的な敗北に追い込んだ。この戦いは、ローマのゲルマニアへの拡大を食い止め、ゲルマン民族がローマ帝国の支配から独立するための転換点となった。<br><br>現在でもアルミニウスは、その戦略的才能とゲルマン民族の文化と歴史のアイデンティティを築いた功績で讃えられ、外国の支配に対する象徴的な存在となっている。
 R
 <Base.Technologies.Technology_FeudalAge_PolearmManeuvers_Name長柄武器操法
 ?
@@ -3475,8 +3483,8 @@ J
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_1_Desc$投槍散兵をアンロックする
 Z
 8Base.Buildings.Building_MinoanEra_Workshop_Tailor_1_Desc麻のシャツを生産する
-�
-!Base.Units.Unit_AttilaTheHun_Desc�ローマ帝国を崩壊寸前に追い込んだ男、フン族の王アッティラ！5世紀の帝王アッティラは、卓越した軍事的手腕と戦略の才覚で名を馳せた。<br><br>広大な部族連合を率いて、アッティラはヨーロッパを横断し、東ローマ帝国を打ち破った。貢物を受け取った後、ローマへの進軍を開始したものの、突然の死によって道半ばで終わることとなった。<br><br>軍事的な功績と圧倒的なカリスマ性を持つその名は、ヨーロッパ史に刻まれ続けている。 そして、あまり知られていない話として、戦争に同行していたという噂のウサギの存在も伝えられている！
+�
+!Base.Units.Unit_AttilaTheHun_Desc�ローマ帝国を崩壊寸前に追い込んだ男、フン族の王アッティラ！５世紀の帝王アッティラは、卓越した軍事的手腕と戦略の才覚で名を馳せた。<br><br>広大な部族連合を率いて、アッティラはヨーロッパを横断し、東ローマ帝国を打ち破った。貢物を受け取った後、ローマへの進軍を開始したものの、突然の死によって道半ばで終わることとなった。<br><br>軍事的な功績と圧倒的なカリスマ性を持つその名は、ヨーロッパ史に刻まれ続けている。 そして、あまり知られていない話として、戦争に同行していたという噂のウサギの存在も伝えられている！
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_5_Name�<style=ability_label>範囲攻撃・燃焼</style>敵ユニットの最大集団をターゲットに爆発を起こし、<style=basestat>{range}</style>の範囲で<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、燃焼効果は<style=basestat>{chance_percentage}</style>の確率で発生し、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の追加ダメージを与える。
 1
@@ -3519,8 +3527,8 @@ H
 )Base.Regions.region.VolcanicJungle_7_Nameカルタゴのコトン港
 .
 !Base.UnitTypes.HeavyInfantry_Name	重歩兵
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_4_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_4_Desc0隣の建物の灌漑用水を大幅に増やす
 b
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_5_Desc$絹糸から絹織物を生産する
 ?
@@ -3575,8 +3583,8 @@ B
 <Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Nameコンパクトな文化遺産
 D
 4Base.Units.Unit_StoneAge_SkullSmasherTribe_Grok_Name頭蓋砕き
-�
-%Base.Units.Unit_BenjaminFranklin_Desc�ベンジャミン・フランクリンは、言葉で雷を引き寄せ、文字通り雷も操る男だ！18世紀の多才な人物、フランクリンは、アメリカ合衆国の建国の父の一人として、独立宣言や憲法の草案作成に貢献しただけでなく、作家、発明家、科学者としても知られている。<br><br>電気の分野をいち早く探求し、凧を使って雲から「電気の火」を集め、雷が電気であることを証明した。この実験を通じて避雷針を発明し、さらに遠近両用眼鏡を考案し、海洋の研究にも携わった。<br><br>それだけでなく、外交官や作家としても広く名を馳せた。言葉の巧みさは、アメリカ独立戦争中にフランスの支援を得る上で大いに役立ち、その名は今でも書物に刻まれている。「死と税金以上に確かなものはない」という言葉は、今なお多くの人々に影響を与え続けている。
+�
+%Base.Units.Unit_BenjaminFranklin_Desc�ベンジャミン・フランクリンは、言葉で雷を引き寄せ、文字通り雷も操る男だ！１８世紀の多才な人物、フランクリンは、アメリカ合衆国の建国の父の一人として、独立宣言や憲法の草案作成に貢献しただけでなく、作家、発明家、科学者としても知られている。<br><br>電気の分野をいち早く探求し、凧を使って雲から「電気の火」を集め、雷が電気であることを証明した。この実験を通じて避雷針を発明し、さらに遠近両用眼鏡を考案し、海洋の研究にも携わった。<br><br>それだけでなく、外交官や作家としても広く名を馳せた。言葉の巧みさは、アメリカ独立戦争中にフランスの支援を得る上で大いに役立ち、その名は今でも書物に刻まれている。「死と税金以上に確かなものはない」という言葉は、今なお多くの人々に影響を与え続けている。
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>範囲攻撃・治癒・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、同じ範囲内の味方ユニットをジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分治癒する。影響を受けた味方ユニットの攻撃力には<style=basestat>{duration}</style>の間、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が加算される。
 I
@@ -3609,6 +3617,8 @@ H
 5Base.Abilities.hero_battle_ability.FalconryGlove_Name鷹匠の手袋
 $
 Base.HeroClass.Defender	守護者
+H
+/Base.Continents.continent.EmeraldHighlands_Nameエメラルド高地
 f
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc-先祖の仮面と太陽の石を生産する
 Q
@@ -3665,8 +3675,8 @@ I
 6Base.Buildings.Building_IberianEra_Home_Average_1_Name大きな住宅
 �
 2Base.Buildings.Building_China_City_CityHall_2_Descr都市の中心部にある大ホール。ここでは、少量ながら五銖銭を継続的に収集できる。
-�
-#Base.Units.Unit_JapaneseShogun_Desc�刀を構え、近藤勇と共に将軍に仕えよう！幕末の時代に活躍したこの侍は、19世紀の京都で新選組を率い、崩壊しつつあった政権を支えるために暴動を鎮圧し、戦い抜いた。<br><br>もともとは農民の出身だったが、優れた剣術でその名を馳せた。14歳の時、家を襲おうとした盗賊団を倒し、その腕前を証明した。やがて身分を上げ、新選組の隊長となると、徳川幕府の権威を守るために厳格な取り締まりを行い、名を轟かせた。<br><br>近藤の遺産は、武士道と幕府への揺るぎない忠義に象徴され、激動の時代を生き抜いた姿勢は、社会的・政治的な混乱を象徴するものとなっている。
+�
+#Base.Units.Unit_JapaneseShogun_Desc�刀を構え、近藤勇と共に将軍に仕えよう！幕末の時代に活躍したこの侍は、１９世紀の京都で新選組を率い、崩壊しつつあった政権を支えるために暴動を鎮圧し、戦い抜いた。<br><br>もともとは農民の出身だったが、優れた剣術でその名を馳せた。１４歳の時、家を襲おうとした盗賊団を倒し、その腕前を証明した。やがて身分を上げ、新選組の隊長となると、徳川幕府の権威を守るために厳格な取り締まりを行い、名を轟かせた。<br><br>近藤の遺産は、武士道と幕府への揺るぎない忠義に象徴され、激動の時代を生き抜いた姿勢は、社会的・政治的な混乱を象徴するものとなっている。
 B
 2Base.Buildings.Building_StoneAge_Farm_Rural_1_Name小作農場
 f
@@ -3735,8 +3745,8 @@ M
 =Base.Technologies.Technology_RomanEmpire_EnhancedTorsion_Name強化機構
 p
 /Base.Buildings.Building_China_Home_Small_6_Desc=五銖銭を生産し、都市に労働者を1人追加する
-�
-Base.Units.Unit_Lagertha_Desc�誰にも止めさせることなく、ラゲルタが歴史のヒーローたちに加わった！9世紀の伝説的なヴァイキングの女戦士であるラゲルタは、その勇敢さと戦術的な才能で知られ、夫ラグナル・ロズブロークと共に戦い、数々の軍事的勝利に貢献した。戦闘技術に優れ、恐れ知らずの姿勢と指導力で戦士たちを鼓舞した。<br><br>戦士としての腕前だけでなく、個人的な生活も複雑で、特にラグナルとの波乱に満ちた関係が知られている。最終的にラグナルと離婚したものの、伝説によると、その後も影響力を保ち、自らの軍を率いて次々と戦いで勝利を収めたと言われている。<br><br>北欧神話と歴史における力強い女性としてのラゲルタの遺産は、今もなお多くの人々にインスピレーションを与え、魅了し続けている。
+�
+Base.Units.Unit_Lagertha_Desc�誰にも止めさせることなく、ラゲルタが歴史のヒーローたちに加わった！９世紀の伝説的なヴァイキングの女戦士であるラゲルタは、その勇敢さと戦術的な才能で知られ、夫ラグナル・ロズブロークと共に戦い、数々の軍事的勝利に貢献した。戦闘技術に優れ、恐れ知らずの姿勢と指導力で戦士たちを鼓舞した。<br><br>戦士としての腕前だけでなく、個人的な生活も複雑で、特にラグナルとの波乱に満ちた関係が知られている。最終的にラグナルと離婚したものの、伝説によると、その後も影響力を保ち、自らの軍を率いて次々と戦いで勝利を収めたと言われている。<br><br>北欧神話と歴史における力強い女性としてのラゲルタの遺産は、今もなお多くの人々にインスピレーションを与え、魅了し続けている。
 R
 $Base.Units.Unit_OttoVonBismarck_Name*オットー・フォン・ビスマルク
 `
@@ -3755,8 +3765,8 @@ M
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_Name大きな住宅
 O
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_2_Name攻城兵兵舎
-j
-<Base.Buildings.Building_StoneAge_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_StoneAge_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 >
 1Base.Technologies.Technology_BronzeAge_Siege_Name	投石機
 P
@@ -3775,6 +3785,8 @@ C
 *Base.Wonders.Wonder_Capital_Colosseum_Nameコロッセオ
 .
 Base.Heroes.hero.Ninja_Name望月千代女
+*
+Base.Units.Unit_YiSunSin_Name	李舜臣
 f
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_Desc'カオリンから粘土を生産する
 x
@@ -3807,8 +3819,8 @@ W
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 _
 =Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Nameコンパクトな文化遺産
-�
-Base.Units.Unit_Dracula_Desc�ヴラド・ドラキュラは、その支配が血で染まっていたため悪魔と呼ばれた。15世紀のルーマニア公爵であるドラキュラは、残虐さや冷酷さで広く知られる一方で、勇敢さを称賛する声もあった。治世の間、敵も味方も問わず恐怖で支配し、その結果「死体の森」と呼ばれる光景が広がった。<br><br>数世代後、ドラキュラの名はブラム・ストーカーの小説『ドラキュラ』によって世界に広まり、ホラー文学の代表作となった。物語の中では、ルーマニアの公爵ドラキュラがロンドンに現れ、弁護士ジョナサン・ハーカーや教授ヴァン・ヘルシングと命を懸けた戦いを繰り広げる。<br><br>その残虐さは、ドイツの初期ベストセラーにも描かれ、歴史の中で語り継がれてきた。そして、ドラキュラ公の不死の子孫たちは、今もなお読者を震え上がらせている。
+�
+Base.Units.Unit_Dracula_Desc�ヴラド・ドラキュラは、その支配が血で染まっていたため悪魔と呼ばれた。１５世紀のルーマニア公爵であるドラキュラは、残虐さや冷酷さで広く知られる一方で、勇敢さを称賛する声もあった。治世の間、敵も味方も問わず恐怖で支配し、その結果「死体の森」と呼ばれる光景が広がった。<br><br>数世代後、ドラキュラの名はブラム・ストーカーの小説『ドラキュラ』によって世界に広まり、ホラー文学の代表作となった。物語の中では、ルーマニアの公爵ドラキュラがロンドンに現れ、弁護士ジョナサン・ハーカーや教授ヴァン・ヘルシングと命を懸けた戦いを繰り広げる。<br><br>その残虐さは、ドイツの初期ベストセラーにも描かれ、歴史の中で語り継がれてきた。そして、ドラキュラ公の不死の子孫たちは、今もなお読者を震え上がらせている。
 w
 .Base.Units.Unit_RomanEmpire_Player_Turmae_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 A
@@ -3835,8 +3847,8 @@ H
 ,Base.BuildingGroups.premiumPapyrusField_Name豪華なパピルス畑
 @
 3Base.Units.Unit_BronzeAge_Player_HeavyInfantry_Name	青銅兵
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_Desc'隣の建物の灌漑用水を増やす
 8
 (Base.BuildingGroups.cavalryBarracks_Name騎兵兵舎
 V
@@ -3861,14 +3873,14 @@ C
 6Base.Technologies.Technology_ByzantineEra_Jovians_Name	親衛兵
 >
 .Base.Abilities.hero_battle_ability.Geisha_Name桜の一撃
-�
-Base.Units.Unit_Tansen_Desc�天から雨を呼び、旋律で世界を揺るがす音楽家、ミアン・タンセン。16世紀のインドに生き、皇帝アクバルに仕えた「九宝」のひとりとして宮廷にその名を刻んだ。<br><br>「学識ある者」を意味する名を持ち、北インド音楽の最初の流派とされるグワリオル・ガラナを創設。5歳の頃から音楽を学び、生涯にわたり卓越した歌声と技を磨き続けた。<br><br>伝説は数知れず、歌声で野生の象を鎮め、鳥を和ませ、火を灯し、雨を降らせたとも語られる。その音楽の遺産は今も受け継がれ、タンセンが学びを築いたグワリオルは「音楽の都」として知られている。
+�
+Base.Units.Unit_Tansen_Desc�天から雨を呼び、旋律で世界を揺るがす音楽家、ミアン・タンセン。１６世紀のインドに生き、皇帝アクバルに仕えた「九宝」のひとりとして宮廷にその名を刻んだ。<br><br>「学識ある者」を意味する名を持ち、北インド音楽の最初の流派とされるグワリオル・ガラナを創設。５歳の頃から音楽を学び、生涯にわたり卓越した歌声と技を磨き続けた。<br><br>伝説は数知れず、歌声で野生の象を鎮め、鳥を和ませ、火を灯し、雨を降らせたとも語られる。その音楽の遺産は今も受け継がれ、タンセンが学びを築いたグワリオルは「音楽の都」として知られている。
 P
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_Desc黒曜石を生産する
 p
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
-k
-=Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 9
 Base.Cities.City_Vikings_Nameヴァイキング王国
 G
@@ -3885,8 +3897,8 @@ E
 /Base.Abilities.hero_battle_ability.Dracula_Name吸血鬼の渇望
 H
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_Name	書記屋
-n
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+h
+7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 F
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Name小さな住宅
 J
@@ -3899,12 +3911,12 @@ S
 @Base.Technologies.Technology_KingdomOfSicily_DomedSanctuary_Nameドーム聖堂
 I
 6Base.Technologies.Technology_RomanEmpire_Princeps_Nameローマ剣兵
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Desc'隣の建物の灌漑用水を増やす
 G
 1Base.Units.Unit_TreasureHunt_Green_Marauders_Name翠緑の襲撃隊
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_Desc'隣の建物の灌漑用水を増やす
 �
 Base.UnitTypes.Siege_Desc�攻城兵ユニットは後方から広範囲にわたって敵を砲撃する。攻撃力に優れている。
 攻城兵兵舎を建設・アップグレードして、攻城兵ユニットとヒーローの攻撃力、防御力、体力を強化しよう。
@@ -3939,10 +3951,10 @@ W
 DBase.Technologies.Technology_ByzantineEra_CounterCavalryTactics_Name対騎兵戦術
 B
 5Base.Technologies.Technology_ClassicGreece_Agora_Name	アゴラ
-�
+�
 
-"Base.Units.Unit_BessieColeman_Desc�
-ベッシー・コールマンと共に新たな高みを目指し、抑圧された人々に希望を与えよう！20世紀の飛行士、ベッシー・コールマンは、アメリカ・ネイティブおよびアフリカ系アメリカ人女性として初めてパイロットのライセンスを取得し、その後も多くの人々に影響を与え続けた。<br><br>コールマンが育った時代、アメリカのパイロット学校では女性や黒人の受け入れがなかった。それでも飛行への情熱を持ち続け、フランス語を学んだ後、渡仏して国際的なパイロットライセンスを取得。黒人として初めてその資格を得た。帰国後は空中ショーで大胆な技を披露し、さらなる訓練のため再びヨーロッパへ向かった。<br><br>その後の10年間、「クイーン・ベス」として親しまれ、多くの黒人飛行士にとって生きたインスピレーションとなった。言葉と行動を通じて市民権を支持し続け、後の世代に大きな影響を与えた。黒人飛行士のウィリアム・J・パウエルは、「おかげで人種的偏見以上の壁を乗り越え、夢を追い求める勇気を持つことができました。」と語っている。
+"Base.Units.Unit_BessieColeman_Desc�
+ベッシー・コールマンと共に新たな高みを目指し、抑圧された人々に希望を与えよう！２０世紀の飛行士、ベッシー・コールマンは、アメリカ・ネイティブおよびアフリカ系アメリカ人女性として初めてパイロットのライセンスを取得し、その後も多くの人々に影響を与え続けた。<br><br>コールマンが育った時代、アメリカのパイロット学校では女性や黒人の受け入れがなかった。それでも飛行への情熱を持ち続け、フランス語を学んだ後、渡仏して国際的なパイロットライセンスを取得。黒人として初めてその資格を得た。帰国後は空中ショーで大胆な技を披露し、さらなる訓練のため再びヨーロッパへ向かった。<br><br>その後の10年間、「クイーン・ベス」として親しまれ、多くの黒人飛行士にとって生きたインスピレーションとなった。言葉と行動を通じて市民権を支持し続け、後の世代に大きな影響を与えた。黒人飛行士のウィリアム・Ｊ・パウエルは、「おかげで人種的偏見以上の壁を乗り越え、夢を追い求める勇気を持つことができました。」と語っている。
 U
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Name豪華なパピルス畑
 N
@@ -3957,8 +3969,8 @@ Q
 2Base.Abilities.hero_battle_ability.VikingJarl_Nameバーサーカーの狂乱
 H
 5Base.Buildings.Building_Egypt_GoldMine_Premium_1_Name豪華な金鉱
-B
-2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_Nameマヤ弓兵
+E
+2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_Nameマヤの弓兵
 M
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Name糸加工所
 :
@@ -3985,8 +3997,8 @@ K
 5Base.Buildings.Building_China_RiceFarm_Premium_2_Name豪華な米農場
 $
 Base.BuildingTypes.Barrack兵舎
-�
-#Base.Units.Unit_AshokaTheGreat_Desc�戦車を整え、記念碑を築こう！神々に愛されたアショーカ王が未来を切り開く戦いに参加する！紀元前3世紀の帝王アショーカは、征服戦争で名を馳せ、南アジアの広大な領土を支配下に置いた。<br><br>血塗られたカリンガ戦争の後、大きな変革を迎え、仏教とその教えにある非暴力と慈悲を受け入れるようになった。宗教的寛容を推進し、民衆の生活を改善するために病院や公共事業を整備した。<br><br>アショーカは仏教の発展にも大きく貢献し、その慈悲の遺産は今も続いている。象徴とされた車輪は、2000年後の現在もインドの国旗の中心に描かれている。
+�
+#Base.Units.Unit_AshokaTheGreat_Desc�戦車を整え、記念碑を築こう！神々に愛されたアショーカ王が未来を切り開く戦いに参加する！紀元前３世紀の帝王アショーカは、征服戦争で名を馳せ、南アジアの広大な領土を支配下に置いた。<br><br>血塗られたカリンガ戦争の後、大きな変革を迎え、仏教とその教えにある非暴力と慈悲を受け入れるようになった。宗教的寛容を推進し、民衆の生活を改善するために病院や公共事業を整備した。<br><br>アショーカは仏教の発展にも大きく貢献し、その慈悲の遺産は今も続いている。象徴とされた車輪は、２０００年後の現在もインドの国旗の中心に描かれている。
 c
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_4_Nameミノアの見張り塔
 h
@@ -4009,8 +4021,8 @@ Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_Nameカオリン採石場
 L
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_2_Name射撃兵兵舎
-�
-#Base.Units.Unit_AlbertEinstein_Desc�アルバート・アインシュタインと共に宇宙の基本コードを解き明かそう！20世紀の物理学者であり、最も有名な科学者の一人であるアインシュタイン。その革命的な理論は科学界を揺るがし、現代科学の基礎を築いた。<br><br>相対性理論で広く知られ、特に一般相対性理論は、時間、空間、重力の相互作用を示した画期的な方程式とされ、科学の世界に革命をもたらした。<br><br>天才的な科学者であるだけでなく、平和や市民権の擁護者としても名を馳せ、その影響力は今もなお、世界中で知識の追求を刺激し続けている。このタイムラインでは、さらに積極的に活動し、なんとタイムトラベルやブラックホールの生成方法を発見したのだ！
+�
+#Base.Units.Unit_AlbertEinstein_Desc�アルバート・アインシュタインと共に宇宙の基本コードを解き明かそう！２０世紀の物理学者であり、最も有名な科学者の一人であるアインシュタイン。その革命的な理論は科学界を揺るがし、現代科学の基礎を築いた。<br><br>相対性理論で広く知られ、特に一般相対性理論は、時間、空間、重力の相互作用を示した画期的な方程式とされ、科学の世界に革命をもたらした。<br><br>天才的な科学者であるだけでなく、平和や市民権の擁護者としても名を馳せ、その影響力は今もなお、世界中で知識の追求を刺激し続けている。このタイムラインでは、さらに積極的に活動し、なんとタイムトラベルやブラックホールの生成方法を発見したのだ！
 D
 :Base.Technologies.Technology_KingdomOfSicily_Windmill_Name風車
 H
@@ -4045,8 +4057,8 @@ K
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
 ;
 (Base.Regions.region.EasternValley_8_Nameマリの要塞
-i
-;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_Name哲学者の館
 i
@@ -4065,12 +4077,12 @@ B
 8Base.Technologies.Technology_FeudalAge_FuneralAtSea_Name海葬
 P
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_Desc黒曜石を生産する
-�
-#Base.Units.Unit_AbrahamLincoln_Desc�アメリカ合衆国第16代大統領、エイブラハム・リンカーンと共に自由を守る戦いを繰り広げよう！19世紀、この偉大な政治家は南北戦争を指揮し、奴隷制を廃止するために尽力した。丸太小屋で生まれた質素な生い立ちは、その人柄だけでなく、リーダーシップのスタイルにも深く影響を与えている。<br><br>リンカーンは連邦を守ることに情熱を注ぎ、奴隷解放宣言を発布。この決断は、アメリカ社会を根本から変える転機となった。雄弁さで知られる演説、特にゲティスバーグ演説は、今でもアメリカ史上最も有名なスピーチの一つとして語り継がれている。<br><br>数多くの困難に直面しながらも、平等への信念と強いリーダーシップで歴史に名を刻んだ。暗殺によって大統領としての生涯は悲劇的な結末を迎えたが、時空ポータルを通り抜け、まさかの時代を超え、石器時代へと飛ばされてしまった！
+�
+#Base.Units.Unit_AbrahamLincoln_Desc�アメリカ合衆国第16代大統領、エイブラハム・リンカーンと共に自由を守る戦いを繰り広げよう！１９世紀、この偉大な政治家は南北戦争を指揮し、奴隷制を廃止するために尽力した。丸太小屋で生まれた質素な生い立ちは、その人柄だけでなく、リーダーシップのスタイルにも深く影響を与えている。<br><br>リンカーンは連邦を守ることに情熱を注ぎ、奴隷解放宣言を発布。この決断は、アメリカ社会を根本から変える転機となった。雄弁さで知られる演説、特にゲティスバーグ演説は、今でもアメリカ史上最も有名なスピーチの一つとして語り継がれている。<br><br>数多くの困難に直面しながらも、平等への信念と強いリーダーシップで歴史に名を刻んだ。暗殺によって大統領としての生涯は悲劇的な結末を迎えたが、時空ポータルを通り抜け、まさかの時代を超え、石器時代へと飛ばされてしまった！
 d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_2_Desc'山ほどのパピルスを生産する
-l
->Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+f
+>Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 K
 ;Base.Buildings.Building_AgeOfTheFranks_City_CityHall_1_Name大ホール
 �
@@ -4079,6 +4091,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_Name列柱
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>範囲攻撃・強化・弱体化</style>敵ユニットの最大集団に大砲を放ち、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{debuff_duration}</style>の間、命中率が<style=basestat>{accuracy_percentage}</style>、攻撃力が<style=basestat>{atk_percentage}</style>、移動速度が<style=basestat>{movement_percentage}</style>低下する。同時に、<style=basestat>{evasion_duration}</style>の間、味方ユニット全体の回避率が<style=basestat>{evasion_percentage}</style>上昇する。
+:
+*Base.Heroes.hero.QueenSeondeokOfSilla_Name善徳女王
 o
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc<歩兵ユニットは前列で最も効果を発揮する。
 R
@@ -4087,8 +4101,8 @@ I
 6Base.Technologies.Technology_Vikings_TavernBrawls_Name酒場の乱闘
 D
 1Base.Buildings.Building_China_Home_Average_4_Name大きな住宅
-�
-Base.Units.Unit_TigerLily_Desc�タイガー・リリー、ネバーランドの勇敢な娘。『ピーター・パン』に登場する、ネバーランドの先住民族の族長の娘であり、ピーター・パンや迷子の子どもたちの頼れる仲間。冒険心にあふれ、フック船長との戦いにも果敢に立ち向かう。<br><br>勇気と聡明さを兼ね備え、数々の冒険で重要な役割を果たす。ピーター・パンたちとの交流を通して、その強い意志と機転の良さが際立っている。<br><br>時代とともに描かれ方も変化し、近年の作品では独立心や強さがより強調され、文化的背景にも配慮した表現がなされるようになっている。
+�
+Base.Units.Unit_TigerLily_Desc�タイガー・リリー、ネバーランドの勇敢な娘。ジェームス・マシュー・バリーの『ピーター・パン』に登場する、ネバーランドの先住民族の族長の娘であり、ピーター・パンや迷子の子どもたちの頼れる仲間。冒険心にあふれ、フック船長との戦いにも果敢に立ち向かう。<br><br>勇気と聡明さを兼ね備え、数々の冒険で重要な役割を果たす。ピーター・パンたちとの交流を通して、その強い意志と機転の良さが際立っている。<br><br>時代とともに描かれ方も変化し、近年の作品では独立心や強さがより強調され、文化的背景にも配慮した表現がなされるようになっている。
 K
 8Base.Technologies.Technology_Vikings_FishingMastery_Name釣りの熟練
 H
@@ -4131,8 +4145,8 @@ J
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_2_Name歩兵兵舎
 S
 %Base.Heroes.hero.OttoVonBismarck_Name*オットー・フォン・ビスマルク
-�
-$Base.Units.Unit_OttoVonBismarck_Desc�帝国議会を後にし、やがて歴史の象徴となったオットー・フォン・ビスマルク。19世紀に活躍し、ドイツ統一の立役者となった政治家だ。プロイセン王国の首相、そしてドイツ帝国初代宰相として、卓越した外交手腕と現実主義的な政策を駆使し、国家の未来を築き上げた。<br><br>デンマーク、オーストリア、フランスとの戦争を巧みに操り、無数の独立したドイツ諸邦を一つの強大な帝国へと統合する道を切り開いた。<br><br>さらに、労働者の権利と社会の安定を重視し、医療保険、労災補償、老齢年金などの先駆的な社会改革を導入したことでも知られる。歴史のヒーローたちの中でも、その堂々たる口ひげは群を抜いており、ヒゲ用クリームの予算の60%を独占していたとか…。
+�
+$Base.Units.Unit_OttoVonBismarck_Desc�帝国議会を後にし、やがて歴史の象徴となったオットー・フォン・ビスマルク。１９世紀に活躍し、ドイツ統一の立役者となった政治家だ。プロイセン王国の首相、そしてドイツ帝国初代宰相として、卓越した外交手腕と現実主義的な政策を駆使し、国家の未来を築き上げた。<br><br>デンマーク、オーストリア、フランスとの戦争を巧みに操り、無数の独立したドイツ諸邦を一つの強大な帝国へと統合する道を切り開いた。<br><br>さらに、労働者の権利と社会の安定を重視し、医療保険、労災補償、老齢年金などの先駆的な社会改革を導入したことでも知られる。歴史のヒーローたちの中でも、その堂々たる口ひげは群を抜いており、ヒゲ用クリームの予算の６０％を独占しているらしい。
 X
 ?Base.Buildings.Building_FeudalAge_Workshop_SpiceMerchant_1_Desc胡椒を生産する
 P
@@ -4154,6 +4168,8 @@ F
 <color=#CD2A25>不利</color>：<br>•<indent=5%>キャンペーンや宝探しの<color=#CD2A25>大規模な部隊</color>。</indent>
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
+�
+Base.Units.Unit_YiSunSin_Desc�李舜臣と共に、山や木々を震わせる戦いに備えよう！１６世紀、朝鮮王朝の海軍提督・李舜臣は、日本軍との戦いにおいて一度も敗北せず、不敗の伝説を築き上げた。<br><br>武人として生まれ育った李舜臣は幾多の勝利を重ねるも、上官の将軍に陥れられ、一時は失脚する。しかし復帰後は次第に重責を任され、初めて提督として指揮した玉浦の戦いでは一艦も失わず日本軍を撃破した。朝鮮の象徴ともなる「亀甲船」の開発によって、海軍戦術に革新をもたらす。<br><br>鳴梁海戦ではわずか１３隻の軍艦を率い、霧の中から奇襲を仕掛け、日本軍を潮流の変化する危険な海域へと誘い込んだ。歴史書は李舜臣の軍艦を「海に浮かぶ城」と称え、朝鮮の勝利と彼の歴史的な地位を不動のものとした。
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 �
@@ -4162,8 +4178,8 @@ F
 Base.Heroes.hero.Shaolin_Name雪庭福裕
 G
 7Base.Technologies.Technology_HighMiddleAges_Bodkin_Nameボドキン
-m
-?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+g
+?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 L
 9Base.Technologies.Technology_IberianEra_TavernBrawls_Name酒場の乱闘
 J
@@ -4176,8 +4192,8 @@ F
 3Base.Buildings.Building_Vikings_Home_Premium_4_Name豪華な住宅
 U
 BBase.Technologies.Technology_IberianEra_LongDistanceSeafaring_Name長距離航海
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_Desc0隣の建物の灌漑用水を大幅に増やす
 P
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_Name射撃兵兵舎
 g
@@ -4186,8 +4202,8 @@ G
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_2_Name	絹工房
 �
 Base.Units.Unit_HuaMulan_Desc�戦いの準備をしよう！中国の伝説的な英雄、花木蘭は、その勇気と家族への深い思いで知られている。『木蘭辞』では、父の代わりに軍に参加するため、男装して戦場に向かう若き女性として描かれている。<br><br>千里を駆け、数多くの戦いを経た木蘭は、天子に謁見するために送られる。そこで求めたのは、ただ家に帰るための速い馬だけだった。帰国後、自分が女性であることを明かし、仲間たちを驚かせる。<br><br>木蘭の物語は、女性としての役割や戦士としての期待を超えた英雄的な反抗の物語であり、家族と中国への深い忠義を示している。この物語は映画や舞台などで何度も描かれ、今も世界中で愛され続けている。最近では、ジャンヌと一緒に衣装を比べ合っているという噂もある。
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_3_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_3_Desc0隣の建物の灌漑用水を大幅に増やす
 P
 @Base.Technologies.Technology_IberianEra_DomesticatedDonkeys_Name飼育ロバ
 H
@@ -4250,8 +4266,8 @@ J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_Name黒曜石採掘場
 H
 5Base.Technologies.Technology_FeudalAge_TaflGames_Nameタフル遊戯
-�
-Base.Units.Unit_AnneBonny_Desc�カットラスを構え、火薬を乾燥させておこう！今日はアン・ボニーと冒険だ！18世紀の海賊アン・ボニーは、カリコ・ジャックの下でメアリー・リードと共にバハマ諸島で船を奪い、商船を襲撃したことで有名だ。<br><br>仲間たちとウィリアム号を奪い、その後、商船を襲いながら海を渡った。戦闘中は火薬を供給するなど、仲間たちを支え続けた。<br><br>しかし、数ヶ月後、船は捕まり、海賊たちは裁判にかけられることとなった。アンの運命は今なお謎のままであり、それが伝説をさらに深めている。時が経つにつれ、女性海賊として、また常識を超えた存在として、その名はますます広がっていった。
+�
+Base.Units.Unit_AnneBonny_Desc�カットラスを構え、火薬を乾燥させておこう！今日はアン・ボニーと冒険だ！１８世紀の海賊アン・ボニーは、カリコ・ジャックの下でメアリー・リードと共にバハマ諸島で船を奪い、商船を襲撃したことで有名だ。<br><br>仲間たちとウィリアム号を奪い、その後、商船を襲いながら海を渡った。戦闘中は火薬を供給するなど、仲間たちを支え続けた。<br><br>しかし、数ヶ月後、船は捕まり、海賊たちは裁判にかけられることとなった。アンの運命は今なお謎のままであり、それが伝説をさらに深めている。時が経つにつれ、女性海賊として、また常識を超えた存在として、その名はますます広がっていった。
 G
 7Base.Technologies.Technology_IberianEra_ShieldBoss_Name盾の突起
 ]
@@ -4262,8 +4278,8 @@ F
 1Base.Buildings.Building_China_Home_Average_6_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
 +
 Base.Heroes.hero.Plato_Nameプラトン
-�
-'Base.Units.Unit_GreekMathematician_Desc�図形の法則を解き明かす、幾何学の父、ユークリッド！紀元前3世紀のギリシャの数学者であるユークリッドは、数学の知識を集大成した『原論』をはじめ、後の西洋数学に多大な影響を与える著作を残した。<br><br>『原論』の13巻には、幾何学を中心に多くの数学的概念が詳述され、ピタゴラスの定理の証明や素数に関する分析も含まれている。この作品はユークリッド幾何学の基礎となり、その後の歴史において数学的思考の枠組みを作り上げた。<br><br>ユークリッドの生涯自体は謎に包まれているが、遺された業績こそが真の遺産といえる。詳細かつ体系的な論理的アプローチと、科学的方法の発展への貢献は世界に大きな影響を与えた。最も研究されている書物は聖書だと言われているが、次に多く読まれているのはユークリッドの『原論』だとも言われている。
+�
+'Base.Units.Unit_GreekMathematician_Desc�図形の法則を解き明かす、幾何学の父、ユークリッド！紀元前３世紀のギリシャの数学者であるユークリッドは、数学の知識を集大成した『原論』をはじめ、後の西洋数学に多大な影響を与える著作を残した。<br><br>『原論』の13巻には、幾何学を中心に多くの数学的概念が詳述され、ピタゴラスの定理の証明や素数に関する分析も含まれている。この作品はユークリッド幾何学の基礎となり、その後の歴史において数学的思考の枠組みを作り上げた。<br><br>ユークリッドの生涯自体は謎に包まれているが、遺された業績こそが真の遺産といえる。詳細かつ体系的な論理的アプローチと、科学的方法の発展への貢献は世界に大きな影響を与えた。最も研究されている書物は聖書だと言われているが、次に多く読まれているのはユークリッドの『原論』だとも言われている。
 t
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 1
@@ -4304,8 +4320,8 @@ W
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Name小規模な文化遺産
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_5_Name豪華な漁桟橋
-j
-<Base.Buildings.Building_IberianEra_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+d
+<Base.Buildings.Building_IberianEra_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 N
 ;Base.Technologies.Technology_IberianEra_LatchMechanism_Name掛け金機構
 J
@@ -4364,8 +4380,8 @@ I
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_Nameミノア重装兵
 L
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_Name攻城兵兵舎
-l
->Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+f
+>Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 E
 /Base.Units.Unit_ClassicGreece_Player_Siege_Nameギリシャ弩砲
 D
@@ -4400,8 +4416,8 @@ V
 CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_Name馬上槍試合
 M
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	木工房
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Desc0隣の建物の灌漑用水を大幅に増やす
 �
 Base.Units.Unit_Shaolin_Desc�寺に人々が集まり、雪庭福裕の教えに耳を傾ける。宋代に名を馳せた禅僧であり、その深い精神的洞察と教えによって広く知られる。<br><br>曹洞宗の復興において重要な役割を果たし、瞑想と気づきを重んじ、直接的な体験と個人の悟りを説いた。その教えは多くの弟子を惹きつけ、禅仏教の広がりに大きく貢献した。<br><br>また、武術の発展にも影響を与えたとされ、中国各地の武芸者を少林寺に招き、ともに修練を重ね、一つの武術体系を築いた。その後、少林寺は「武術の発祥地」として語り継がれるようになった。雪庭福裕の志は、今もなお無数の型や技の中に息づいている。
 J
@@ -4464,16 +4480,16 @@ d
 6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_Name*ホーエンシュタウフェン攻城兵
 t
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
-�
- Base.Units.Unit_LeifErikson_Desc�帆を広げ、赤毛のエイリークの息子、レイフ・エリクソンと共に出航しよう！11世紀の北欧の探検家で、北アメリカに足を踏み入れた最初のヨーロッパ人の一人として知られるレイフは、グリーンランドから出航した。<br><br>レイフが「ヴィンランド」と呼んだ地域に上陸し、現在のカナダ・ニューファンドランドの一部とされている。この航海がヴィンランド探検の始まりとなり、ヴァイキングたちは大西洋を越えて新たな地を切り開いた。<br><br>その業績は今も語り継がれ、ノルウェー系アメリカ人はレイフを讃える日を祝うと共に、ボストンとレイキャヴィークには像が立てられている。10月9日はレイフ・エリクソンの日。その日に敬意を表し、旅に出て、北欧の歴史に思いを馳せてみてはどうだろうか！
+�
+ Base.Units.Unit_LeifErikson_Desc�帆を広げ、赤毛のエイリークの息子、レイフ・エリクソンと共に出航しよう！１１世紀の北欧の探検家で、北アメリカに足を踏み入れた最初のヨーロッパ人の一人として知られるレイフは、グリーンランドから出航した。<br><br>レイフが「ヴィンランド」と呼んだ地域に上陸し、現在のカナダ・ニューファンドランドの一部とされている。この航海がヴィンランド探検の始まりとなり、ヴァイキングたちは大西洋を越えて新たな地を切り開いた。<br><br>その業績は今も語り継がれ、ノルウェー系アメリカ人はレイフを讃える日を祝うと共に、ボストンとレイキャヴィークには像が立てられている。１０月９日はレイフ・エリクソンの日。その日に敬意を表し、旅に出て、北欧の歴史に思いを馳せてみてはどうだろうか！
 <
 2Base.Technologies.Technology_MinoanEra_Screws_Name螺子
 ;
 Base.Heroes.hero.JoanOfArc_Nameジャンヌ・ダルク
 c
 8Base.Units.Unit_HighMiddleAges_Hohenstaufen_Cavalry_Name'ホーエンシュタウフェン騎兵
-�
-(Base.Units.Unit_FlorenceNightingale_Desc�「ランプの貴婦人」の名で知られるフローレンス・ナイチンゲール。19世紀イギリスの看護師であり、クリミア戦争で瀕死の兵士を治療し、歴史に名を刻んだ。<br><br>真の功績は戦後にあった。シュコダルでの軍事支援と三軍の負傷兵治療を経て、英国看護システムの改革を主導した。近代医療の基礎を築き、現在でも看護師がナイチンゲール誓詞を唱和するほどの影響力を残した。<br><br>ナイチンゲールの業績は二つの側面を持つ。一方で「ランプの貴婦人」と呼ばれる慈悲深い天使。他方で病院システムを永遠に変えた決断力と知性に満ちた改革者。真実はその中間かもしれない。元々「ハンマーの貴婦人」と呼ばれ、施錠された医療倉庫を破壊した逸話が残る。この姿こそがナイチンゲールの真の姿を最も表している。
+�
+(Base.Units.Unit_FlorenceNightingale_Desc�「ランプの貴婦人」の名で知られるフローレンス・ナイチンゲール。１９世紀イギリスの看護師であり、クリミア戦争で瀕死の兵士を治療し、歴史に名を刻んだ。<br><br>真の功績は戦後にあった。シュコダルでの軍事支援と三軍の負傷兵治療を経て、英国看護システムの改革を主導した。近代医療の基礎を築き、現在でも看護師がナイチンゲール誓詞を唱和するほどの影響力を残した。<br><br>ナイチンゲールの業績は二つの側面を持つ。一方で「ランプの貴婦人」と呼ばれる慈悲深い天使。他方で病院システムを永遠に変えた決断力と知性に満ちた改革者。真実はその中間かもしれない。元々「ハンマーの貴婦人」と呼ばれ、施錠された医療倉庫を破壊した逸話が残る。この姿こそがナイチンゲールの真の姿を最も表している。
 �
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_Desc�マヤ弓兵は、軍隊の追加の遠隔ユニットだ。その強さは現在の時代に応じて自動的に強化される。
 `
@@ -4502,14 +4518,14 @@ t
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_2_Desc6パピルス巻物と儀式用の衣装を生産する
 R
 6Base.BuildingGroups.collectableMinoanWatchtowerV2_Nameミノアの見張り塔
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_1_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_1_Desc'隣の建物の灌漑用水を増やす
 �
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 ;
 (Base.Regions.region.EasternValley_7_Nameオスマン港
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>治癒・蘇生</style>最もダメージを受けた味方ヒーローを保護し、8秒かけて<style=basestat>{heal_amount}</style>治癒する。対象となったヒーローは現在のウェーブ中に致死ダメージを受けた場合、<style=basestat>{invulnerability_duration}</style>の間、無敵状態となり、最大体力の<style=basestat>{revive_percentage}</style>を即時回復する。既にこの効果を持つヒーローは対象外。
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>治癒・蘇生</style>最もダメージを受けた味方ユニットを保護し、8秒かけて自身の基礎ダメージの<style=basestat>{heal_amount}</style>分を治癒する。対象が致死ダメージを受けた場合、<style=basestat>{invulnerability_duration}</style>の間、無敵状態になりながら最大体力の<style=basestat>{revive_percentage}</style>分を追加回復する。ヒーローが優先され、すでにこの効果を受けているユニットは対象にならない。
 F
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_Name	青銅兵
 J
@@ -4586,8 +4602,8 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 I
 3Base.Technologies.Technology_StoneAge_GoatPens_Nameヤギの囲い場
-�
-Base.Units.Unit_Mozart_Desc�オペラを響かせ、数千人を魅了しよう！ヴォルフガング・アマデウス・モーツァルト、18世紀の天才音楽家が登場。幼少期から驚異的な才能を発揮し、わずか5歳でヴァイオリンと鍵盤楽器を自在に操り、王侯貴族の前で演奏してみせた。<br><br>25歳までに交響曲や協奏曲をはじめ、数々の名曲を生み出し、オペラでも成功を収めた。ウィーンに拠点を移した後は名声を得たが、裕福にはなれなかった。<br><br>晩年には『レクイエム』を含む多くの傑作を残したが、その代表作の一つは未完のままとなった。生前は悪戯好きでも知られ、友人たちに手の込んだ冗談を仕掛けることもしばしば。音楽史に刻まれた影響は計り知れず、ルートヴィヒ・ヴァン・ベートーヴェンをはじめ、後世の音楽家たちに今もなお刺激を与え続けている。
+�
+Base.Units.Unit_Mozart_Desc�オペラを響かせ、数千人を魅了しよう！ヴォルフガング・アマデウス・モーツァルト、１８世紀の天才音楽家が登場。幼少期から驚異的な才能を発揮し、わずか５歳でヴァイオリンと鍵盤楽器を自在に操り、王侯貴族の前で演奏してみせた。<br><br>２５歳までに交響曲や協奏曲をはじめ、数々の名曲を生み出し、オペラでも成功を収めた。ウィーンに拠点を移した後は名声を得たが、裕福にはなれなかった。<br><br>晩年には『レクイエム』を含む多くの傑作を残したが、その代表作の一つは未完のままとなった。生前は悪戯好きでも知られ、友人たちに手の込んだ冗談を仕掛けることもしばしば。音楽史に刻まれた影響は計り知れず、ルートヴィヒ・ヴァン・ベートーヴェンをはじめ、後世の音楽家たちに今もなお刺激を与え続けている。
 c
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_Name!改良型トレビュシェット
 u
@@ -4602,8 +4618,8 @@ D
 7Base.Technologies.Technology_China_SilkManufacture_Name	絹加工
 8
 Base.Heroes.hero.MarcoPolo_Nameマルコ・ポーロ
-w
-@Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+q
+@Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 U
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_4_Name豪華なパピルス畑
 >
@@ -4620,8 +4636,8 @@ E
 8Base.Technologies.Technology_KingdomOfSicily_Piazza_Name	市広場
 X
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Name豪華な文化遺産
-�
-"Base.Units.Unit_RagnarLodbrok_Desc�略奪と戦の伝説、ラグナル・ロズブローク。9世紀の英雄にして戦士王。北欧の伝承によれば、イングランドやフランスへの大胆な襲撃を指揮し、その名は歴史と神話の狭間に刻まれた。<br><br>優れた戦略家であり、苛烈な指揮官として知られ、戦士ラゲルタと結ばれ、剛勇のビョルンや骨無しのイーヴァルといった伝説的な息子たちをもうけた。戦場では、オーディンの象徴とされる鴉の軍旗を掲げ、神の加護を受けて戦ったとされる。<br><br>ラグナルの武勇譚はヴァイキングたちの士気を鼓舞し、現代でもテレビやゲーム、小説を通じて語り継がれている。だが、最古の史料には「彼女の息子たち」との記述も…。もしかすると、ラグナルの伝説にはまだ知られざる秘密が隠されているのかもしれない。
+�
+"Base.Units.Unit_RagnarLodbrok_Desc�略奪と戦の伝説、ラグナル・ロズブローク。９世紀の英雄にして戦士王。北欧の伝承によれば、イングランドやフランスへの大胆な襲撃を指揮し、その名は歴史と神話の狭間に刻まれた。<br><br>優れた戦略家であり、苛烈な指揮官として知られ、戦士ラゲルタと結ばれ、剛勇のビョルンや骨無しのイーヴァルといった伝説的な息子たちをもうけた。戦場では、オーディンの象徴とされる鴉の軍旗を掲げ、神の加護を受けて戦ったとされる。<br><br>ラグナルの武勇譚はヴァイキングたちの士気を鼓舞し、現代でもテレビやゲーム、小説を通じて語り継がれている。だが、最古の史料には「彼女の息子たち」との記述も…。もしかすると、ラグナルの伝説にはまだ知られざる秘密が隠されているのかもしれない。
 A
 1Base.Technologies.Technology_MinoanEra_Winch_Nameウインチ
 d
@@ -4630,10 +4646,10 @@ HBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_10_Nameミ�
 QBase.AbilityDescriptions.hero_battle_ability_description.ArtemisiaIOfCaria_1_Name�<style=ability_label>範囲攻撃</style>敵ユニットの最大集団に矢を降らせ、<style=basestat>{range}</style>の範囲で<style=basestat>{dmg_percentage}</style>のダメージを与える。
 =
 'Base.Units.Unit_GreekMathematician_Nameユークリッド
-�
-'Base.Units.Unit_LudwigVanBeethoven_Desc�オーケストラを整え、アリアを奏でよう！ルートヴィヒ・ヴァン・ベートーヴェンが登場する！18世紀末から19世紀初頭のドイツの偉大な作曲家で、クラシック音楽とロマン派音楽を繋げた人物として知られている。<br><br>その革新性と圧倒的な影響力で知られ、9つの交響曲をはじめ、ピアノ協奏曲や弦楽四重奏など、多くの名作を生み出した。ウィーンに移り住むと、その卓越した才能がすぐに広く認められることとなった。聴力を失っても創作を続け、『交響曲第9番』をはじめとする数々の傑作を残した。<br><br>ベートーヴェンの遺産は、音楽を通して深い感情と複雑さを表現し続けたことにあり、その影響は今なお色あせることがない。おそらく、音楽史上最も有名な二小節も、この天才の手によるものだろう。
-j
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc-隣接する建物の灌漑用水を増やす
+�
+'Base.Units.Unit_LudwigVanBeethoven_Desc�オーケストラを整え、アリアを奏でよう！ルートヴィヒ・ヴァン・ベートーヴェンが登場する！１８世紀末から１９世紀初頭のドイツの偉大な作曲家で、クラシック音楽とロマン派音楽を繋げた人物として知られている。<br><br>その革新性と圧倒的な影響力で知られ、９つの交響曲をはじめ、ピアノ協奏曲や弦楽四重奏など、多くの名作を生み出した。ウィーンに移り住むと、その卓越した才能がすぐに広く認められることとなった。聴力を失っても創作を続け、『交響曲第９番』をはじめとする数々の傑作を残した。<br><br>ベートーヴェンの遺産は、音楽を通して深い感情と複雑さを表現し続けたことにあり、その影響は今なお色あせることがない。おそらく、音楽史上最も有名な二小節も、この天才の手によるものだろう。
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc'隣の建物の灌漑用水を増やす
 N
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_3_Name射撃兵兵舎
 ;
@@ -4700,8 +4716,8 @@ H
  Base.BuildingTypes.evolving_Name進化する建物
 D
 7Base.Technologies.Technology_RomanEmpire_Legionary_Name	軍団兵
-k
-=Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 H
 5Base.Buildings.Building_BronzeAge_Home_Average_3_Name大きな住宅
 M
@@ -4762,6 +4778,8 @@ Z
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_Name小規模な文化遺産
 U
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Name重歩兵兵舎
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�新羅の善徳女王と共に、星を空へと還そう！７世紀、古代朝鮮初の女王として即位した善徳は、貧しい者、病める者、年老いた者を守る政策を打ち出し、慈愛をもって民を治めた。<br> <br>卓越した外交手腕と深い信仰心、そして優雅さを備え、戦と平和の舵を巧みに取った新羅は、同盟の締結、巨大な仏塔の建立、天文台の建設によって繁栄を極める。その功績は『三国遺事』などの歴史書に詳しく記されている。<br><br>善徳女王が遺した真の遺産は、朝鮮半島そのものである。唐との同盟を通じて統一への礎を築き、後の文化的開花へとつながる種を蒔いた。伝説によれば、彼女は未来を予知する力を持ち、カエルの鳴き声や花の絵から運命を読み取ったともいう。「秋になれば、カラスが牛の角に止まる」そう語り残された謎めいた予言、その真意を読み解ける者は、果たして現れるのだろうか？
 E
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name大ホール
 �
@@ -4800,10 +4818,12 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_DescH宝石と香辛料の宝物を集める遠征隊の船を出航させる
 2
 (Base.BuildingGroups.averageMerchant_Name商店
-�
-Base.Units.Unit_RamsesII_Desc�戦車の轟音が大地を揺るがす。偉大なるラムセスが、その力を示す時が来た。紀元前13世紀のファラオとして、ヒッタイト、ヌビア、リビアへの遠征で名を馳せ、カデシュの戦いではヒッタイトと歴史上初の和平条約の一つを結んだ。<br><br>軍事的な功績に加え、壮大な建築事業を推進し、アブ・シンベル神殿やラムセウムといった記念碑を築き、その名を永遠に刻んだ。<br><br>エジプト史上、最も偉大な王の一人とされ、66年に及ぶ治世は文化や建築に計り知れない影響を与えた。ギリシャ人はラムセスを「オジマンディアス」と呼び、その名は詩の中で不滅となった。ラムセスを前にしたなら、ひざまずくしかない！
+�
+Base.Units.Unit_RamsesII_Desc�戦車の轟音が大地を揺るがす。偉大なるラムセスが、その力を示す時が来た。紀元前１３世紀のファラオとして、ヒッタイト、ヌビア、リビアへの遠征で名を馳せ、カデシュの戦いではヒッタイトと歴史上初の和平条約の一つを結んだ。<br><br>軍事的な功績に加え、壮大な建築事業を推進し、アブ・シンベル神殿やラムセウムといった記念碑を築き、その名を永遠に刻んだ。<br><br>エジプト史上、最も偉大な王の一人とされ、６６年に及ぶ治世は文化や建築に計り知れない影響を与えた。ギリシャ人はラムセスを「オジマンディアス」と呼び、その名は詩の中で不滅となった。ラムセスを前にしたなら、ひざまずくしかない！
 N
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_Name木組構造
+D
++Base.Regions.region.EmeraldHighlands_2_Nameローズモント領
 q
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc=カカオ豆を生産し、都市に祭司を1人追加する
 Q
@@ -4848,16 +4868,16 @@ J
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_Name騎兵兵舎
 L
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_1_Name射撃兵兵舎
-r
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc-隣接する建物の灌漑用水を増やす
+l
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc'隣の建物の灌漑用水を増やす
 5
 "Base.BuildingGroups.SmallResidence小さな住宅
 >
 %Base.BuildingGroups.coffeeBrewer_Nameコーヒー醸造所
 E
 #Base.Heroes.hero.UlyssesSGrant_Nameユリシーズ・グラント
-m
-?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+g
+?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 [
 EBase.Technologies.Technology_HighMiddleAges_SimpleSpinningWheels_Name単純な紡績車
 �
@@ -4882,12 +4902,12 @@ s
 WBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SugarcaneDistillery_Nameサトウキビ蒸留所
 �
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_DescLたくさんのコインを生産し、都市に労働者を2人追加する
-P
-4Base.Units.Unit_ByzantineEra_Mayas_QueenXochitl_Nameブレードダンサー
+G
+4Base.Units.Unit_ByzantineEra_Mayas_QueenXochitl_Name刃の舞い手
 L
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Name小さな井戸
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_Desc0隣の建物の灌漑用水を大幅に増やす
 -
 Base.Units.Unit_Ninja_Name望月千代女
 V
@@ -4910,28 +4930,28 @@ M
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_3_Name哲学者の館
 U
 3Base.Abilities.hero_battle_ability.SirLancelot_Nameキャメロットの復讐者
-n
-@Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+h
+@Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>近接攻撃・気絶</style>杖で現在のターゲットを打ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、<style=basestat>{chance}</style>の確率で敵を<style=basestat>{duration}</style>の間気絶させる。
-�
-&Base.Units.Unit_PhilipIIOfMacedon_Desc�戦略的な手腕でギリシアを統合した指導者と共に戦おう。紀元前4世紀のマケドニア王、フィリッポス2世は、軍事の才覚と征服活動、そしてマケドニア興隆の象徴として名高い。<br><br>危機のさなか王国を掌握したフィリッポスは、統治開始直後に侵略者を撃退した。その後、独自の革新である6メートルの長槍を装備したマケドニアファランクスを編み出し、優れた軍隊を率いてギリシア本土へ侵攻。半島の主要ポリスと同盟を結び、その支配を固めた。<br><br>最期を迎えたフィリッポスは、隻眼の戦争の英雄として、ギリシアをコリント同盟として統一し、ペルシア侵攻を目前に暗殺された。しかし、その死さえも影響力を弱めることはなく、神格化され崇拝の対象となった。息子アレクサンドロスが遺志を継ぎ、その伝説をさらに引き継いだ。
+�
+&Base.Units.Unit_PhilipIIOfMacedon_Desc�戦略的な手腕でギリシアを統合した指導者と共に戦おう。紀元前４世紀のマケドニア王、フィリッポス2世は、軍事の才覚と征服活動、そしてマケドニア興隆の象徴として名高い。<br><br>危機のさなか王国を掌握したフィリッポスは、統治開始直後に侵略者を撃退した。その後、独自の革新である六メートルの長槍を装備したマケドニアファランクスを編み出し、優れた軍隊を率いてギリシア本土へ侵攻。半島の主要ポリスと同盟を結び、その支配を固めた。<br><br>最期を迎えたフィリッポスは、隻眼の戦争の英雄として、ギリシアをコリント同盟として統一し、ペルシア侵攻を目前に暗殺された。しかし、その死さえも影響力を弱めることはなく、神格化され崇拝の対象となった。息子アレクサンドロスが遺志を継ぎ、その伝説をさらに引き継いだ。
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_2_Name鳥舎
 ;
 "Base.Units.Unit_QueenBoudicca_Nameブーディカ女王
 e
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_2_Desc*アンクと黄金の仮面を生産する
-x
-ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+r
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_Name学校
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>のダメージを与える。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。
 =
 0Base.Units.Unit_FeudalAge_Player_KingsGuard_Name	近衛兵
-h
-7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc'隣の建物の灌漑用水を増やす
 G
 :Base.Technologies.Technology_ByzantineEra_RitualSites_Name	儀式場
 7
@@ -5012,8 +5032,8 @@ J
 3Base.Technologies.Technology_China_InkAndBrush_Name	筆と墨
 s
 2Base.Buildings.Building_Vikings_Home_Worker_2_Desc=ペニーを生産し、都市に労働者を2人追加する
-v
-?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+p
+?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 I
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_Name	攻城塔
 d
@@ -5022,8 +5042,8 @@ I
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Name水ポンプ
 W
 ABase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineArcher_Nameビザンツ弓兵
-k
-=Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+e
+=Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 5
 Base.Units.Unit_MaoriChief_Nameポタタウ１世
 P
@@ -5034,10 +5054,10 @@ s
 Base.Ages.StoneAge_Name石器時代
 H
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_Name豪華な住宅
-�
-Base.Units.Unit_VikingJarl_Desc�帆を掲げ、潮風を感じながら、赤毛のエイリークの物語を語ろう。10世紀後半の探検家であり、グリーンランドにノルマン人最初の入植地を築いた人物。ノルウェーに生まれたものの、幾度もの争いの末にアイスランドへ渡り、さらにグリーンランドへと進んだ。<br><br>大胆な冒険心と指導力を持ち、大西洋の「鯨の道」を越えて未踏の地にたどり着き、豊かな土地があると広めて入植者を集めた。この開拓は、北大西洋におけるノルマン人の進出において重要な一歩となった。<br><br>ヴァイキング時代を象徴する開拓者として、赤毛のエイリークの名は今も語り継がれている。ところで、黒毛のエイリーク、白毛のエイリーク、緑毛のエイリーク、青毛のエイリークもいるらしい。全部集めたら、一体何が起こるのだろうか…？
-e
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc*隣接する建物の幸福度を上げる
+�
+Base.Units.Unit_VikingJarl_Desc�帆を掲げ、潮風を感じながら、赤毛のエイリークの物語を語ろう。１０世紀後半の探検家であり、グリーンランドにノルマン人最初の入植地を築いた人物。ノルウェーに生まれたものの、幾度もの争いの末にアイスランドへ渡り、さらにグリーンランドへと進んだ。<br><br>大胆な冒険心と指導力を持ち、大西洋の「鯨の道」を越えて未踏の地にたどり着き、豊かな土地があると広めて入植者を集めた。この開拓は、北大西洋におけるノルマン人の進出において重要な一歩となった。<br><br>ヴァイキング時代を象徴する開拓者として、赤毛のエイリークの名は今も語り継がれている。ところで、黒毛のエイリーク、白毛のエイリーク、緑毛のエイリーク、青毛のエイリークもいるらしい。全部集めたら、一体何が起こるのだろうか…？
+_
+7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc$隣の建物の幸福度を上げる
 M
 7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Name豪華な儀式場
 N
@@ -5107,7 +5127,7 @@ DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_Nameシュタ
 F
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name小さな住宅
 �
- Base.HeroClass.AreaAttacker_Desc�範囲攻撃者は広範囲の敵にダメージを与える。特に小規模な部隊に対して効果を発揮する。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>や<color=#3DA229>宝探し</color>の<color=#3DA229>大規模な部隊</color>。</indent><br><line-height=50%><br></line-height>
+ Base.HeroClass.AreaAttacker_Desc�範囲攻撃者は広範囲の敵にダメージを与える。特に大規模な部隊に対して効果を発揮する。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>や<color=#3DA229>宝探し</color>の<color=#3DA229>大規模な部隊</color>。</indent><br><line-height=50%><br></line-height>
 <color=#CD2A25>不利</color>：<br>•<indent=5%>キャンペーン、闘技場、宝探しの<color=#CD2A25>敵ヒーロー</color>。</indent><br>•<indent=5%><color=#CD2A25>テスラストーム</color>。</indent>
 W
 ABase.Technologies.Technology_AgeOfTheFranks_XocolatlVirtuoso_Nameカカオの達人
@@ -5119,14 +5139,14 @@ RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_15_N
 Base.Heroes.hero.Inanna_Nameイナンナ
 9
 &Base.BuildingGroups.clayProcessor_Name粘土加工所
-p
-BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_Desc*隣接する建物の幸福度を上げる
+j
+BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 �
 5Base.Buildings.Building_FeudalAge_Home_Average_2_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 :
 *Base.BuildingGroups.porcelainWorkshop_Name磁器工房
-�
-"Base.Units.Unit_AmeliaEarhart_Desc�さあ、飛び立とう！アメリア・イアハートが歴史を切り開き、新たな地平を目指して相棒のデリーと共に飛び立つ！20世紀の女性パイロット、アメリア・イアハートは、その大西洋横断飛行で世界を驚かせ、あらゆる期待を超えて障害を乗り越えてきた。<br><br>ホットチョコレートを楽しみながら農夫たちを驚かせつつ、次々に記録を打ち立て、大西洋を単独横断した最初の女性、太平洋を単独で横断した最初の女性、そして当時の女性パイロットとして史上最高高度に到達した人物となった。<br><br>しかし、永遠に名を残したのは最後の冒険によるものだ。世界一周を目指し、ほぼその目標を達成したものの、旅の終わりに姿を消してしまった。何が起こったのかは長い間謎だったが、今ではわかっている。なんと、時空ポータルを見つけて、この画面にたどり着いたのだ！
+�
+"Base.Units.Unit_AmeliaEarhart_Desc�さあ、飛び立とう！アメリア・イアハートが歴史を切り開き、新たな地平を目指して相棒のデリーと共に飛び立つ！２０世紀の女性パイロット、アメリア・イアハートは、その大西洋横断飛行で世界を驚かせ、あらゆる期待を超えて障害を乗り越えてきた。<br><br>ホットチョコレートを楽しみながら農夫たちを驚かせつつ、次々に記録を打ち立て、大西洋を単独横断した最初の女性、太平洋を単独で横断した最初の女性、そして当時の女性パイロットとして史上最高高度に到達した人物となった。<br><br>しかし、永遠に名を残したのは最後の冒険によるものだ。世界一周を目指し、ほぼその目標を達成したものの、旅の終わりに姿を消してしまった。何が起こったのかは長い間謎だったが、今ではわかっている。なんと、時空ポータルを見つけて、この画面にたどり着いたのだ！
 \
 @Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_Desc事務机を生産する
 T
@@ -5159,8 +5179,8 @@ D
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>近接攻撃・弱体化</style>現在のターゲットに2回攻撃を加え、<style=basestat>{range}</style>の範囲内にいる敵ユニットに合計<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、孫子は集中し、静穏のオーラを発生させ、周囲の敵ユニットの攻撃速度を<style=basestat>{duration}</style>の間<style=basestat>{atk_speed_percentage}</style>低下させる。
 �
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_Descu豪華な漁桟橋では船を送り出し、山ほどの魚を捕って空腹の労働者と水夫に提供する。
-l
->Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+f
+>Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 g
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Desc!親衛兵をアンロックする
 L
@@ -5231,8 +5251,8 @@ D
 1Base.Buildings.Building_China_Home_Average_1_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
 [
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Name中規模な文化遺産
-�
-Base.Units.Unit_LouisXIV_Desc�ヴェルサイユ宮殿から現れたのは、ルイ14世！「太陽王」として知られるこの17世紀のフランス王は、絶対王政を確立したことで有名だ。権力を王冠に集中させ、その象徴となったのが豪華なヴェルサイユ宮殿で、ここは宮廷の中心地となった。<br><br>ルイ14世は軍事遠征と領土拡大を通じてフランスの影響力を強化しただけでなく、芸術を支援し、多くの壮大な作品を生み出すために資金を提供した。これにより、フランスは文化的、政治的にも支配的な強国として名を馳せることとなった。<br><br>バレエダンサーとしても知られ、戦争の指導者、父親、芸術の保護者としての顔を持ち、自らを国家の中心と考えていた複雑な人物として記憶されている。その虚栄心は広く知られており、ヴェルサイユ宮殿にはなんと35枚の鏡が飾られていたという。
+�
+Base.Units.Unit_LouisXIV_Desc�ヴェルサイユ宮殿から現れたのは、ルイ１４世！「太陽王」として知られるこの１７世紀のフランス王は、絶対王政を確立したことで有名だ。権力を王冠に集中させ、その象徴となったのが豪華なヴェルサイユ宮殿で、ここは宮廷の中心地となった。<br><br>ルイ１４世は軍事遠征と領土拡大を通じてフランスの影響力を強化しただけでなく、芸術を支援し、多くの壮大な作品を生み出すために資金を提供した。これにより、フランスは文化的、政治的にも支配的な強国として名を馳せることとなった。<br><br>バレエダンサーとしても知られ、戦争の指導者、父親、芸術の保護者としての顔を持ち、自らを国家の中心と考えていた複雑な人物として記憶されている。その虚栄心は広く知られており、ヴェルサイユ宮殿にはなんと３５枚の鏡が飾られていたという。
 i
 PBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_HammockTrees_Nameハンモックの木
 B
@@ -5253,8 +5273,8 @@ J
 :Base.Technologies.Technology_Vikings_HarbourEconomics_Name港湾経済
 V
 1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_Name!ファーティマ朝の射撃兵
-�
-Base.Units.Unit_KingMinos_Desc�ゼウスと話し、赤い糸を隠しておこう。ギリシャ神話の伝説的な王、ミノス。紀元前2千年紀にクレタ島を治め、その知恵と権威で名を馳せた。<br><br>特に有名なのは、ミノタウロスという怪物を閉じ込めるために、複雑な迷宮を建設させたことだ。<br><br>ミノスの治世には、ダイダロスとイカロスの話など、陰謀や冒険が絡み合った数多くの魅力的なエピソードがある。強大で謎めいた王としての遺産は今もなお語り継がれ、神話と歴史が交錯する物語を生み出し続けている。迷宮を歩くときは、慎重に進んだほうがいいかもしれない。
+�
+Base.Units.Unit_KingMinos_Desc�ゼウスと話し、赤い糸を隠しておこう。ギリシャ神話の伝説的な王、ミノス。紀元前２千年紀にクレタ島を治め、その知恵と権威で名を馳せた。<br><br>特に有名なのは、ミノタウロスという怪物を閉じ込めるために、複雑な迷宮を建設させたことだ。<br><br>ミノスの治世には、ダイダロスとイカロスの話など、陰謀や冒険が絡み合った数多くの魅力的なエピソードがある。強大で謎めいた王としての遺産は今もなお語り継がれ、神話と歴史が交錯する物語を生み出し続けている。迷宮を歩くときは、慎重に進んだほうがいいかもしれない。
 N
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Name騎兵兵舎
 �
@@ -5285,8 +5305,8 @@ F
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_Name歩兵部隊
 H
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_Name	貯水槽
-g
-6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc-隣接する建物の灌漑用水を増やす
+a
+6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc'隣の建物の灌漑用水を増やす
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 A
@@ -5313,18 +5333,18 @@ p
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
 Q
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Name灌漑施設
-N
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_Name小規模な儀式場
 :
 Base.Units.Unit_JoanOfArc_Nameジャンヌ・ダルク
+N
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_Name小規模な儀式場
 t
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 t
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.VincentVanGogh_1_Name�<style=ability_label>召喚</style>敵ユニットの最大集団に渦を召喚する。この渦は<style=basestat>{duration}</style>の間、戦場を渦巻くように移動し、接触した敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、防御力を<style=basestat>{defense_debuff}</style>低下させる。
-�	
-Base.Units.Unit_Blackbeard_Desc�	今夜、海は荒れ狂い、船乗りたちは恐怖に震えている。耳に届くのは、「黒ひげ」と呼ばれる男の伝説だ。髪に炎を灯し、40門の大砲を備えたその姿は、誰もが恐れずにはいられなかった。18世紀の海賊、エドワード・ティーチは、黒旗と赤い炎で恐怖を振りまき、その名を刻んだ。<br><br>「黒ひげ」の名は、フランスの船ラ・コンコルド号を奪い、「アン女王の復讐号」と改名したことから生まれた。その装甲船を拠点に、大胆な襲撃を繰り返し、捕えた船や新たな仲間を加えて艦隊を拡大していった。長く黒いひげと、頭の周りに火を灯した導火線が生み出す姿はまさに恐怖そのもので、やがて「黒ひげ」の異名で知られるようになった。<br><br>黒ひげの伝説は、しばしば実像を超えて語られる。支配と恐怖の象徴となり、今もなお海を渡る者たちに畏怖の念を抱かせている。七つの海をさまよう幽霊の話もあるが、実際には暴力を避け、恐怖を巧みに利用して目的を達成していたという。
+�	
+Base.Units.Unit_Blackbeard_Desc�	今夜、海は荒れ狂い、船乗りたちは恐怖に震えている。耳に届くのは、「黒ひげ」と呼ばれる男の伝説だ。髪に炎を灯し、４０門の大砲を備えたその姿は、誰もが恐れずにはいられなかった。１８世紀の海賊、エドワード・ティーチは、黒旗と赤い炎で恐怖を振りまき、その名を刻んだ。<br><br>「黒ひげ」の名は、フランスの船ラ・コンコルド号を奪い、「アン女王の復讐号」と改名したことから生まれた。その装甲船を拠点に、大胆な襲撃を繰り返し、捕えた船や新たな仲間を加えて艦隊を拡大していった。長く黒いひげと、頭の周りに火を灯した導火線が生み出す姿はまさに恐怖そのもので、やがて「黒ひげ」の異名で知られるようになった。<br><br>黒ひげの伝説は、しばしば実像を超えて語られる。支配と恐怖の象徴となり、今もなお海を渡る者たちに畏怖の念を抱かせている。七つの海をさまよう幽霊の話もあるが、実際には暴力を避け、恐怖を巧みに利用して目的を達成していたという。
 ?
 /Base.TreasureHuntDifficulties.Difficulty_1_Name見習い２
 �
@@ -5347,8 +5367,8 @@ Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_Desc蚕の繭を生産する
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�<style=ability_label>踏みつけ</style>円を描くように剣を振り、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
-F
-*Base.Units.Unit_EarlyRome_Huns_Attila_Nameブラッドライダー
+=
+*Base.Units.Unit_EarlyRome_Huns_Attila_Name血の騎士団
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_Nameビザンツ弩砲
 �
@@ -5369,8 +5389,8 @@ A
 1Base.Technologies.Technology_Egypt_WaterPump_Name水ポンプ
 K
 5Base.Buildings.Building_China_RiceFarm_Premium_1_Name豪華な米農場
-o
-ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+i
+ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 L
 <Base.Technologies.Technology_Vikings_SuperiorBeekeeping_Name上級養蜂
 N
@@ -5419,8 +5439,8 @@ N
 -Base.Continents.continent.VolcanicJungle_Name火山樹海
 A
 1Base.Abilities.hero_battle_ability.AnneBonny_Name渦の旋律
-�
-Base.Units.Unit_MaoriChief_Desc�歴史のヒーローたちに加わるのは、初代マオリ王、テ・ウェロウェロ！19世紀のニュージーランドでワイカト部族の首長として名を馳せ、卓越した指導力と戦の腕前でイギリスとの交渉を行い、多くの民を統一した。<br><br>変革の時代に生まれ、ヨーロッパ人の入植が進む中で、マオリの土地と文化を守るために尽力。年を重ねると、マオリ王運動から王位を受けることを提案され、最終的にそれを受け入れ、マオリの団結と主権の強化を目指した。<br><br>テ・ウェロウェロは、マオリの歴史において今もなお重要な存在であり、変化の時代に民を守り、マオリとしてのアイデンティティを象徴する人物となった。その築いた王朝は現在も続いている。
+�
+Base.Units.Unit_MaoriChief_Desc�歴史のヒーローたちに加わるのは、初代マオリ王、ポタタウ・テ・フェロフェロ！１９世紀のニュージーランドでワイカト部族の首長として名を馳せ、卓越した指導力と戦の腕前でイギリスとの交渉を行い、多くの民を統一した。<br><br>変革の時代に生まれ、ヨーロッパ人の入植が進む中で、マオリの土地と文化を守るために尽力。年を重ねると、マオリ王運動から王位を受けることを提案され、最終的にそれを受け入れ、マオリの団結と主権の強化を目指した。<br><br>テ・ウェロウェロは、マオリの歴史において今もなお重要な存在であり、変化の時代に民を守り、マオリとしてのアイデンティティを象徴する人物となった。その築いた王朝は現在も続いている。
 Y
 CBase.Technologies.Technology_AgeOfTheFranks_EliteRiderTraining_Name精鋭騎兵訓練
 E
@@ -5465,8 +5485,8 @@ x
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
 U
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_Name豪華な文化遺産
-�
-$Base.Units.Unit_NubianMercenary_Desc�ヌビアのカンダケたちは、クシュ王国を統べ、帝国に抗い、壮大な遺産を築いた女王たち。最初のカンダケが即位したのは紀元前200年、最後のカンダケは紀元前400年とされ、宮廷でも戦場でも統率力を示した。<br><br>それぞれが異なる偉業を残している。アマニレナスはローマ領エジプトへ侵攻し、クシュを守るためにローマ軍を撤退させた。アマニタレはメロエにピラミッドを築き、シャナクダケトは壮麗な神殿を建設した。<br><br>カンダケたちの足跡は、現代の視点から見ても驚くほど進んだ社会の姿を映し出している。どのカンダケの名が響くのか…それは歴史が示している。
+�
+$Base.Units.Unit_NubianMercenary_Desc�ヌビアのカンダケたちは、クシュ王国を統べ、帝国に抗い、壮大な遺産を築いた女王たち。最初のカンダケが即位したのは紀元前２００年、最後のカンダケは紀元前４００年とされ、宮廷でも戦場でも統率力を示した。<br><br>それぞれが異なる偉業を残している。アマニレナスはローマ領エジプトへ侵攻し、クシュを守るためにローマ軍を撤退させた。アマニタレはメロエにピラミッドを築き、シャナクダケトは壮麗な神殿を建設した。<br><br>カンダケたちの足跡は、現代の視点から見ても驚くほど進んだ社会の姿を映し出している。どのカンダケの名が響くのか…それは歴史が示している。
 8
 (Base.BuildingGroups.oasisIrrigation_Nameオアシス
 �
@@ -5521,8 +5541,8 @@ F
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Name畜産農場
 Z
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_Descチュニックを生産する
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_1_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_1_Desc0隣の建物の灌漑用水を大幅に増やす
 >
 4Base.Technologies.Technology_IberianEra_WaxSeal_Name封蝋
 P
@@ -5617,8 +5637,8 @@ s
 2Base.Units.Unit_ClassicGreece_Player_Hoplites_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 F
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_1_Name畜産農場
-r
-;Base.Buildings.Building_StoneAge_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+l
+;Base.Buildings.Building_StoneAge_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 g
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_Name煌めく財宝
 I
@@ -5647,14 +5667,14 @@ L
 9Base.Technologies.Technology_MinoanEra_OatProduction_Nameオーツ生産
 I
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_Name小作農場
-r
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_Desc6隣接する建物の灌漑用水を大幅に増やす
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_Desc0隣の建物の灌漑用水を大幅に増やす
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescE陶器と黄金の宝物を集める遠征隊の船を出航させる
 B
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_Name輝光の砲隊
-�
-"Base.Units.Unit_UlyssesSGrant_Desc�南北戦争の戦場から、ユリシーズ・Ｓ・グラントがやってきた！戦争では北軍の将軍として活躍し、後に第18代アメリカ合衆国大統領を務めた。<br><br>軍人として北軍の勝利に大きく貢献し、最終的に南軍の降伏へと導いた。「合衆国を救った男」とも称され、その名を歴史に刻んでいる。大統領としては、南北戦争後の復興期において公民権を推進し、奴隷解放後の人々の権利を守るために尽力。女性や社会的に立場の弱い人々にも目を向け、国の未来に平和をもたらそうと努めた。<br><br>軍事的才能と国の統合に向けた努力によって記憶されているが、その政権は汚職にも悩まされた。それでも、新たな時代のアメリカに平和を根付かせることを目指し、その功績は時に見過ごされがちだが、歴史に刻まれた足跡は決して消えることはない。
+�
+"Base.Units.Unit_UlyssesSGrant_Desc�南北戦争の戦場から、ユリシーズ・Ｓ・グラントがやってきた！戦争では北軍の将軍として活躍し、後に第１８代アメリカ合衆国大統領を務めた。<br><br>軍人として北軍の勝利に大きく貢献し、最終的に南軍の降伏へと導いた。「合衆国を救った男」とも称され、その名を歴史に刻んでいる。大統領としては、南北戦争後の復興期において公民権を推進し、奴隷解放後の人々の権利を守るために尽力。女性や社会的に立場の弱い人々にも目を向け、国の未来に平和をもたらそうと努めた。<br><br>軍事的才能と国の統合に向けた努力によって記憶されているが、その政権は汚職にも悩まされた。それでも、新たな時代のアメリカに平和を根付かせることを目指し、その功績は時に見過ごされがちだが、歴史に刻まれた足跡は決して消えることはない。
 F
 3Base.Buildings.Building_Vikings_Home_Premium_1_Name豪華な住宅
 Y
@@ -5677,8 +5697,8 @@ c
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Nameコンパクトな文化遺産
 .
 Base.Units.Unit_KingMinos_Nameミノス王
-i
-;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Desc*隣接する建物の幸福度を上げる
+c
+;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 I
 3Base.Buildings.Building_Mayas_Quarry_Premium_1_Name豪華な採石場
 P
@@ -5693,8 +5713,8 @@ O
 FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name�<style=ability_label>強化</style>装備しているヒーローの体力が<style=basestat>{health_cutoff}</style>以上の間、その回避率が<style=basestat>{evasion_buff}</style>上昇する。
 p
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
-�
-!Base.Units.Unit_LouisPasteur_Desc�微生物学の父ルイ・パストゥールと共に病と戦おう！19世紀フランスを代表するこの科学者は、狂犬病ワクチンの開発、低温殺菌法の発明、病原菌説の提唱で歴史を変えた。<br><br> 最も知られるエピソードは、狂犬病に感染した9歳の少年ジョゼフ・マイスターへのワクチン投与だ。少年は数か月後も健康を維持し、その後1年でパストゥールが治療した350人のうち、発症者はわずか1人だった。だがこれは偉業の一端に過ぎない。牛乳やワインの加熱殺菌法を確立し、手術前の手洗い習慣を普及させ、パストゥール研究所を創設し、医学の礎を築いた。<br><br>現代でもその名は世界中の研究所や通りに刻まれるが、残された手記からは「独創性」を強調するためのデータの取捨選択や事実の歪曲が浮かび上がる。天才の光と影——科学の進歩に捧げた情熱と、栄光への執着が交錯する複雑な肖像が浮かび上がる。
+�
+!Base.Units.Unit_LouisPasteur_Desc�微生物学の父ルイ・パストゥールと共に病と戦おう！１９世紀フランスを代表するこの科学者は、狂犬病ワクチンの開発、低温殺菌法の発明、病原菌説の提唱で歴史を変えた。<br><br> 最も知られるエピソードは、狂犬病に感染した９歳の少年ジョゼフ・マイスターへのワクチン投与だ。少年は数か月後も健康を維持し、その後1年でパストゥールが治療した３５０人のうち、発症者はわずか１人だった。だがこれは偉業の一端に過ぎない。牛乳やワインの加熱殺菌法を確立し、手術前の手洗い習慣を普及させ、パストゥール研究所を創設し、医学の礎を築いた。<br><br>現代でもその名は世界中の研究所や通りに刻まれるが、残された手記からは「独創性」を強調するためのデータの取捨選択や事実の歪曲が浮かび上がる。天才の光と影——科学の進歩に捧げた情熱と、栄光への執着が交錯する複雑な肖像が浮かび上がる。
 ^
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Desc!槍騎兵をアンロックする
 I
@@ -5709,14 +5729,14 @@ v
 -Base.Units.Unit_MinoanEra_Player_Hippeis_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 q
 4Base.Buildings.Building_IberianEra_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
-g
-6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc-隣接する建物の灌漑用水を増やす
+a
+6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc'隣の建物の灌漑用水を増やす
 R
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 M
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_Name配給効率
-�
-Base.Units.Unit_SunTzu_Desc�静かに策を巡らせ、孫子が歴史のヒーローたちに加わる。紀元前5世紀の中国で活躍した軍略家であり、『孫子兵法』を著し、東アジアの戦術思想に千年以上の影響を与えた。<br><br>『孫子兵法』は、戦略、欺瞞、柔軟性を重視し、「戦わずして勝つのが最善策」と説く。その教えは戦争のみならず、政治や経済、さらにはスポーツにまで応用され、時代を超えて活用され続けている。<br><br>孫子の名は、知略と戦術の象徴として語り継がれ、歴史上のあらゆる指導者や戦略家に影響を与えてきた。ヒーローたちの間では評価が分かれるようで、レオニダスは「戦わずして勝つだと？戦士は戦って勝つもんだろうが！」と豪快に笑っているらしい。
+�
+Base.Units.Unit_SunTzu_Desc�静かに策を巡らせ、孫子が歴史のヒーローたちに加わる。紀元前５世紀の中国で活躍した軍略家であり、『孫子兵法』を著し、東アジアの戦術思想に千年以上の影響を与えた。<br><br>『孫子兵法』は、戦略、欺瞞、柔軟性を重視し、「戦わずして勝つのが最善策」と説く。その教えは戦争のみならず、政治や経済、さらにはスポーツにまで応用され、時代を超えて活用され続けている。<br><br>孫子の名は、知略と戦術の象徴として語り継がれ、歴史上のあらゆる指導者や戦略家に影響を与えてきた。ヒーローたちの間では評価が分かれるようで、レオニダスは「戦わずして勝つだと？戦士は戦って勝つもんだろうが！」と豪快に笑っているらしい。
 p
 /Base.Buildings.Building_China_Home_Small_5_Desc=五銖銭を生産し、都市に労働者を1人追加する
 t
@@ -5773,8 +5793,8 @@ K
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_Name	書記屋
 h
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_LongNine_Name大砲ロングナイン
-c
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_Desc*隣接する建物の幸福度を上げる
+]
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_Desc$隣の建物の幸福度を上げる
 H
 5Base.Buildings.Building_Mayas_Workshop_Premium_2_Name豪華な工房
 �
@@ -5816,7 +5836,7 @@ _
 d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_4_Desc'山ほどのパピルスを生産する
 N
-;Base.Technologies.Technology_RomanEmpire_CircusMaximus_Name最大競技場
+;Base.Technologies.Technology_RomanEmpire_CircusMaximus_Name戦車競技場
 =
 3Base.Technologies.Technology_China_LaborDuties_Name労役
 M
@@ -5827,8 +5847,8 @@ BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_Nameカロリ�
 6Base.Technologies.Technology_FeudalAge_Manuscript_Name写本
 G
 "Base.Units.Unit_RagnarLodbrok_Name!ラグナル・ロズブローク
-h
-7Base.Buildings.Building_Egypt_Irrigation_Channel_1_Desc-隣接する建物の灌漑用水を増やす
+b
+7Base.Buildings.Building_Egypt_Irrigation_Channel_1_Desc'隣の建物の灌漑用水を増やす
 R
 9Base.Buildings.Building_IberianEra_Workshop_Scribe_1_Desc封蝋を生産する
 I
@@ -5857,10 +5877,10 @@ J
 <Base.Technologies.Technology_FeudalAge_RiseOfTheVikings_Nameヴァイキングの台頭
 �
 SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_Name�<style=ability_label>踏みつけ・回復</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、アルミニウスは自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分を回復する。
-�
-'Base.Units.Unit_MargaretIOfDenmark_Desc�「北欧のセミラミス」や「レディーキング」、また「初代女王」とも呼ばれたマーガレット1世。14世紀から15世紀にかけてノルウェー女王となり、その後デンマークとスウェーデンを統治。カルマル同盟を通じてスカンジナビアを統一した。<br><br>外交の名手として知られ、忠誠心に欠ける貴族や教会に直面しながらも同盟を維持し、大甥の名のもとで統治を行い、権力を固めて数十年ぶりに安定をもたらした。<br><br>治世の終わりには、スカンジナビアに長らく失われていた平和と繁栄が訪れた。マーガレット1世は「歴史上最も偉大な女王」として記憶されている。それでも、すべての人々がマーガレットを讃えたわけではなく、ライバルであるアルベルト王には「ズボンを履いていない王」という侮辱的なあだ名をつけられた。
-s
-<Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_Desc3隣接する建物の幸福度を大幅に上げる
+�
+'Base.Units.Unit_MargaretIOfDenmark_Desc�「北欧のセミラミス」や「レディーキング」、また「初代女王」とも呼ばれたマーガレット１世。１４世紀から１５世紀にかけてノルウェー女王となり、その後デンマークとスウェーデンを統治。カルマル同盟を通じてスカンジナビアを統一した。<br><br>外交の名手として知られ、忠誠心に欠ける貴族や教会に直面しながらも同盟を維持し、大甥の名のもとで統治を行い、権力を固めて数十年ぶりに安定をもたらした。<br><br>治世の終わりには、スカンジナビアに長らく失われていた平和と繁栄が訪れた。マーガレット1世は「歴史上最も偉大な女王」として記憶されている。それでも、すべての人々がマーガレットを讃えたわけではなく、ライバルであるアルベルト王には「ズボンを履いていない王」という侮辱的なあだ名をつけられた。
+m
+<Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 +
 Base.Ages.MinoanEra_Nameミノア時代
 �
@@ -6059,8 +6079,8 @@ ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Descカオリン
 JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>嵐術・出血</style>最も近い敵ユニット3体の方向に矢を発射する。矢が通過した経路上のすべての敵に<style=basestat>{damage}</style>ダメージを与え、さらに<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。ヒーローを優先する。
 p
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc=デベンを生産し、都市に労働者を1人追加する
-o
-ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc*隣接する建物の幸福度を上げる
+i
+ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 N
 ABase.Technologies.Technology_HighMiddleAges_CompoundArbalest_Name	複合弩
 D
@@ -6069,8 +6089,8 @@ F
 6Base.Buildings.Building_FeudalAge_City_CityHall_1_Name大ホール
 D
 1Base.Buildings.Building_Egypt_Home_Average_6_Name大きな住宅
-j
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc-隣接する建物の灌漑用水を増やす
+d
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc'隣の建物の灌漑用水を増やす
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 W
@@ -6093,8 +6113,8 @@ OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Name
 &Base.BuildingGroups.premiumAviary_Name豪華な鳥舎
 m
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Desc*ミノア重装兵をアンロックする
-�
-Base.Units.Unit_Ninja_Desc�影に溶けるように忍び、手裏剣を手にする時が来た。16世紀の日本に名を刻んだ伝説の人物、望月千代女。歴史と伝説の狭間にありながら、女性の忍者、くノ一の組織を築き上げたことで知られている。<br><br>武田信玄の信頼を得て、諜報活動の指揮を任された。さまざまな背景を持つ女性たちを集め、訓練を施し、情報収集や潜入、隠密戦術に秀でた精鋭を育て上げた。<br><br>戦国時代における女性たちの活躍を象徴し、従来の枠を超えた存在としてその名は今も語り継がれている。
+�
+Base.Units.Unit_Ninja_Desc�影に溶けるように忍び、手裏剣を手にする時が来た。１６世紀の日本に名を刻んだ伝説の人物、望月千代女。歴史と伝説の狭間にありながら、女性の忍者、くノ一の組織を築き上げたことで知られている。<br><br>武田信玄の信頼を得て、諜報活動の指揮を任された。さまざまな背景を持つ女性たちを集め、訓練を施し、情報収集や潜入、隠密戦術に秀でた精鋭を育て上げた。<br><br>戦国時代における女性たちの活躍を象徴し、従来の枠を超えた存在としてその名は今も語り継がれている。
 @
 'Base.BuildingGroups.premiumCulture_Name豪華な文化遺産
 @
@@ -6117,12 +6137,12 @@ Q
 8Base.Abilities.hero_battle_ability.ThomasAlvaEdison_Nameワープショック
 %
 Base.Units.Unit_SunTzu_Name孫子
-o
-5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc6隣接する建物の灌漑用水を大幅に増やす
+i
+5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Desc0隣の建物の灌漑用水を大幅に増やす
 F
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name小さな住宅
-�	
-&Base.Units.Unit_AlexanderTheGreat_Desc�	アレクサンドロス大王、無敗の征服者、史上最強の将軍。紀元前4世紀のこの王は、若くして世を去る前に世界の大半を征服し、その名を歴史に刻んだ。<br><br>20歳で父の暗殺後、王位を継承。瞬く間に決断力を示し、トラキア人を征服し、名高い都市国家テーベを破壊した。これによりギリシアに再び平和をもたらし、コリント同盟を率いてアケメネス朝ペルシアを征服。この偉大な帝国さえも前に屈服させたが、アレクサンドロスの野望は終わらない。シリア、バビロン、イラン、パキスタン、すべてが軍団の前に膝を屈した。<br><br>アレクサンドロスは一度も戦場で敗れることはなかった。最期には自らの軍が帰郷を要求。バビロンへの帰還途中（道中でも征服は続けた）、息を引き取った。<br><br>ヒーローズオブヒストリーでは意見の分かれる存在だ。アキレスとの酒宴を楽しみ、キュロスから教訓を学び、何より父親を見返すことに情熱を燃やす。
+�	
+&Base.Units.Unit_AlexanderTheGreat_Desc�	アレクサンドロス大王、無敗の征服者、史上最強の将軍。紀元前４世紀のこの王は、若くして世を去る前に世界の大半を征服し、その名を歴史に刻んだ。<br><br>２０歳で父の暗殺後、王位を継承。瞬く間に決断力を示し、トラキア人を征服し、名高い都市国家テーベを破壊した。これによりギリシアに再び平和をもたらし、コリント同盟を率いてアケメネス朝ペルシアを征服。この偉大な帝国さえも前に屈服させたが、アレクサンドロスの野望は終わらない。シリア、バビロン、イラン、パキスタン、すべてが軍団の前に膝を屈した。<br><br>アレクサンドロスは一度も戦場で敗れることはなかった。最期には自らの軍が帰郷を要求。バビロンへの帰還途中（道中でも征服は続けた）、息を引き取った。<br><br>ヒーローズオブヒストリーでは意見の分かれる存在だ。アキレスとの酒宴を楽しみ、キュロスから教訓を学び、何より父親を見返すことに情熱を燃やす。
 A
 .Base.Abilities.hero_battle_ability.Medusa_Name石化の凝視
 Q

@@ -144,6 +144,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameFontannaFontannyFontann
 r
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc?Jednostki piechoty są najskuteczniejsze w przednich szeregach.
+A
+/Base.TreasureHuntDifficulties.Difficulty_9_NameGrandmaster II
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Wzmocnienie</style> inspiruje wszystkie sojusznicze jednostki, zwiększając ich szybkość ataku o <style=basestat>{atk_speed_percentage}</style> i ich atak o <style=basestat>{atk_percentage}</style> ataku Margaret na <style=basestat>{duration}</style>.
 0
@@ -529,6 +531,9 @@ U
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuksusowe molo rybackie
 M
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_NameGospodarstwo domowe
+,
+Base.Heroes.hero.YiSunSin_Name
+Yi Sun-sin
 ;
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
@@ -1363,6 +1368,8 @@ F
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Prowokacja | Tarcza | Uderzenie obszarowe</style>Filip II Macedoński zyskuje dużą tarczę wartą <style=basestat>{shield_percentage}</style> jego podstawowych obrażeń i drwi ze wszystkich wrogich jednostek przez <style=basestat>{taunt_duration}</style>. Po <style=basestat>{detonation_time}</style>, jego tarcza detonuje, zadając <style=basestat>{damage_percentage}</style> pozostałej wartości tarczy jako obrażenia wszystkim wrogim jednostkom w zasięgu <style=basestat>{range}</style>. Detonacja zużywa tarczę Filipa.
 X
 (Base.BuildingGroups.smallIrrigation_NameMała studniaMałe studnieMałych studni
+F
+)Base.Units.Unit_QueenSeondeokOfSilla_NameKrólowa Seondeok z Silla
 N
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameKoszary piechoty
 W
@@ -1586,6 +1593,8 @@ e
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_NameUdoskonalone nakrycia głowy
 E
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameKastylijska Balista
+B
++Base.Regions.region.EmeraldHighlands_1_NameKsięstwo Highgarde
 1
 Base.BuildingGroups.SkyDiskOłtarz słoneczny
 �
@@ -3661,6 +3670,8 @@ M
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameRękawica sokolnicza
 #
 Base.HeroClass.DefenderObrońca
+D
+/Base.Continents.continent.EmeraldHighlands_NameEmerald Highlands
 j
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc1Produkuje maski przodków i kamienie kalendarzowe
 O
@@ -3831,6 +3842,9 @@ Attyla Hun
 *Base.Wonders.Wonder_Capital_Colosseum_NameKoloseum
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
++
+Base.Units.Unit_YiSunSin_Name
+Yi Sun-sin
 Z
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescPrzetwarza kaolin na glinę
 q
@@ -4133,6 +4147,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_NameKolumny
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Atak Obszarowy| Wzmocnienie| Osłabienie</style>Wydaje rozkaz do strzału z działa w największą grupę wrogich jednostek, zadając <style=basestat>{dmg_percentage}</style> obrażeń w zasięgu <style=basestat>{range}</style>. Dotknięte jednostki mają zmniejszoną celność o <style=basestat>{accuracy_percentage}</style>, ich obrażenia zmniejszone o <style=basestat>{atk_percentage}</style>, a prędkość ruchu zmniejszoną o <style=basestat>{movement_percentage}</style> na <style=basestat>{debuff_duration}</style>. Wszystkie przyjazne jednostki zyskują <style=basestat>{evasion_percentage}</style> uniku na <style=basestat>{evasion_duration}</style>.
+G
+*Base.Heroes.hero.QueenSeondeokOfSilla_NameKrólowa Seondeok z Silla
 s
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc@Jednostki piechoty są najskuteczniejsze w pierwszych szeregach.
 B
@@ -4209,6 +4225,8 @@ K
 !Base.HeroClass.SingleStriker_Desc�Pojedynczy napastnicy zadają duże obrażenia pojedynczym celom. Doskonale sprawdzają się przeciwko wrogim bohaterom.<br><line-height=50%><br></line-height><b><color=#3DA229>Silni</color> przeciwko:</b><br>-<indent=5%><color=#3DA229>wrogim bohaterom</color> w <color=#3DA229>kampanii</color>, <color=#3DA229>arenie</color> i <color=#3DA229>poszukiwaniu skarbów</color>.</indent><br>-<indent=5%><color=#3DA229>Burzom Tesli</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25> Słabi</color> przeciwko:</b><br>-<indent=5%><color=#CD2A25>dużym oddziałom</color> w kampanii i poszukiwaniu skarbów.
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescEProdukuje duży stos monet i dodaje 2 pracowników do twojego miasta.
+�
+Base.Units.Unit_YiSunSin_Desc�Spraw, by liście i góry zadrżały wraz z Yi Sun-sinem! Ten koreański admirał z XVI wieku walczył pod rządami dynastii Joseon przeciwko Japończykom, nigdy nie ponosząc porażki w bitwie morskiej. Trenuj od urodzenia jako wojownik, Yi poprowadził siły do niezliczonych zwycięstw, dopóki nie został wrobiony przez starszego ogólnego.<br><br>Po przywróceniu do służby Yi otrzymywał coraz wyższe stanowiska. Jako pierwszy admirał pokonał Japończyków pod Okpo, nie tracąc ani jednego okrętu, i stworzył okręt-żółwia, charakterystyczny okręt wojenny Joseon. <br><br>Podczas Bitwy pod Myeongnyang, Yi zebrał trzynaście okrętów wojennych. Uderzyli przez mgłę, wabiąc Japończyków na zmieniające się pływy i niebezpieczne wody. Historyczne zapiski opisują admirałowy okręt wojenny jako zamek stojący pośród morza, który zapewnił Korei zwycięstwo, a Yi Sun-Sin miejsce w historii.
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescYJednostki ciężkiej piechoty są wytrwałe i nie przepuszczają szarży kawalerii wroga.
 �
@@ -4569,8 +4587,8 @@ h
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescBProdukuje mnóstwo monet i dodaje do Twojego miasta 2 pracowników
 <
 (Base.Regions.region.EasternValley_7_NamePort Ottomański
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Heal| Revive</style>Florence chroni najbardziej rannych Bohaterów ochronną przysięgą, lecząc ich za <style=basestat>{heal_amount}</style> przez 8 sekund. Następnym razem, gdy jednostka otrzyma śmiertelne obrażenia od tej fali, zamiast tego stanie się niewrażliwa na <style=basestat>{invulnerability_duration}</style> i uleczy dodatkowe <style=basestat>{revive_percentage}</style> swoich maksymalnych Punkty Życia. Priorytetowo traktuje Bohaterów, którzy nie są jeszcze naznaczeni przez Florencję.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Leczenie| Wskrzeszenie</style>Florence chroni najbardziej ranną przyjazną jednostkę przysięgą ochronną, lecząc ją za <style=basestat>{heal_amount}</style> jej podstawowych obrażeń przez 8 sekund. Następnym razem, gdy jednostka otrzyma śmiertelne obrażenia, zamiast tego stanie się niewrażliwa, lecząc dodatkowe <style=basestat>{revive_percentage}</style> swoich maksymalnych HP przez <style=basestat>{invulnerability_duration}</style>. Nadaj priorytet Bohaterom. Nadaje priorytet jednostkom, które nie są jeszcze oznaczone przez Florencję.
 O
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBrązowy Strażnik
 C
@@ -4827,6 +4845,8 @@ X
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameMalutki obiekt kultury
 a
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameKoszary ciężkiej piechoty
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�Przywróć Gwiazdki na niebie z królową Seondeok z Silla! W VII wieku ta pierwsza w historii królowa starożytnej Korei zasiadła na tronie. Po wstąpieniu na tron zorganizowała opiekę nad biednymi, chorymi i starcami. Ta miłość do ludności zdefiniowała jej rządy <br> <br> Królowa Seondeok z wprawą, wiarą i wdziękiem radziła sobie z konfliktami i pokojem. Sojusze, wielkie pagody i obserwatoria wzbogaciły Silla. Historie o jej wspaniałości są zapisane w Samguk Yusa i innych tekstach historycznych. <br><br>Dziedzictwem Seondeok jest sama Korea. Jej sojusz z Tangami doprowadził do pierwszego zjednoczenia Korei pod rządami Silla, a ona sama zasiała ziarno rozkwitu kultury królestw. Według niektórych opowieści, Seondeok była obdarzona zdolnością przepowiadania przyszłości. Dzięki żabom i obrazom kwiatów jej legenda rosła. Zobaczmy, czy dasz radę: jesienią wrona wyląduje na rogach byka! Co to może oznaczać?
 G
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameGłówny gmach
 �
@@ -4870,6 +4890,8 @@ J
 Base.Units.Unit_RamsesII_Desc�Równiny zadrżą pod kołami rydwanów, gdyż Ramzes Wielki połączył swoją potęgę z twoją. Ten faraon z XIII wieku p.n.e. zasłynął kampaniami przeciwko Hetytom, Nubijczykom i Libijczykom. Bitwa pod Kadesz z Hetytami doprowadziła do zawarcia jednego z pierwszych traktatów pokojowych w historii.<br><br>Oprócz osiągnięć militarnych Ramzes II był płodnym budowniczym, który zlecił budowę wielkich budowli, takich jak świątynie Abu Simbel i Ramesseum, pozostawiając swój ślad na świecie na zawsze.<br><br>Ramzes II jest pamiętany jako największy faraon największego królestwa Egiptu, a jego 66-letnie panowanie ukształtowało dziedzictwo kulturowe i architektoniczne Egiptu. Grecy nazywali go Ozymandiasem, pod którym to imieniem został uwieczniony w poezji. Kiedy widzisz Ramzesa, padasz na kolana!
 W
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameKonstrukcja drewniana
+?
++Base.Regions.region.EmeraldHighlands_2_NameRosemont Fiefdom
 g
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc3Produkuje kakao i dodaje do twojego miasta kapłana
 T
@@ -5382,10 +5404,10 @@ t
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc=Produkuje małą ilość żywności w krótkim okresie czasu.
 Y
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameStacja Nawadniająca
-O
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameMałe miejsce rytualne
 0
 Base.Units.Unit_JoanOfArc_NameJoanna d’Arc
+O
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameMałe miejsce rytualne
 m
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc6Produkuje monety i dodaje do twojego miasta pracownika
 w

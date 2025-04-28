@@ -144,6 +144,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameBrunnenBrunnen
 t
 /Base.Units.Unit_TreasureHunt_Red_Marauders_DescAInfanterie-Einheiten sind in den vorderen Reihen am effektivsten.
+B
+/Base.TreasureHuntDifficulties.Difficulty_9_NameGroßmeister II
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Buff</style>Inspiriert alle befreundeten Einheiten und erhöht ihre Angriffsgeschwindigkeit um <style=basestat>{atk_speed_percentage}</style> und ihre ATK um <style=basestat>{atk_percentage}</style> der ATK von Margaret für <style=basestat>{duration}</style>.
 .
@@ -529,6 +531,9 @@ S
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxuriöser Angelsteg
 C
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Name	Bauernhof
+,
+Base.Heroes.hero.YiSunSin_Name
+Yi Sun-sin
 ;
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
@@ -1366,6 +1371,8 @@ G
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Spott | Schild | Flächenschlag</style>Philipp II. von Makedonien erhält einen großen Schild im Wert von <style=basestat>{shield_percentage}</style> seines Basisschadens und verspottet alle gegnerischen Einheiten für <style=basestat>{taunt_duration}</style>. Nach <style=basestat>{detonation_time}</style> detoniert sein Schild und verursacht <style=basestat>{damage_percentage}</style> des verbleibenden Schildwerts als Schaden an allen gegnerischen Einheiten innerhalb eines Bereichs von <style=basestat>{range}</style>. Die Detonation verbraucht Philipps Schild.
 I
 (Base.BuildingGroups.smallIrrigation_NameKleine QuelleKleine Quellen
+H
+)Base.Units.Unit_QueenSeondeokOfSilla_NameKönigin Seondeok von Silla
 P
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameInfanterie-Kaserne
 W
@@ -1590,6 +1597,8 @@ c
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_NameVollendete Kopfbedeckungen
 I
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameCastillanische Balliste
+B
++Base.Regions.region.EmeraldHighlands_1_NameHerzogtum Highgarde
 *
 Base.BuildingGroups.SkyDiskSonnenaltar
 �
@@ -3673,6 +3682,8 @@ I
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameFalknerhandschuh
 &
 Base.HeroClass.DefenderVerteidiger
+J
+/Base.Continents.continent.EmeraldHighlands_NameSmaragdgrünes Hochland
 n
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc5Stellt sowohl Ahnenmasken als auch Kalendersteine her
 K
@@ -3842,6 +3853,9 @@ Brennöfen
 *Base.Wonders.Wonder_Capital_Colosseum_Name	Kolosseum
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
++
+Base.Units.Unit_YiSunSin_Name
+Yi Sun-sin
 U
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescVeredelt Kaolin zu Ton
 y
@@ -4148,6 +4162,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_NameSäulen
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Flächenschlag| Buff| Debuff</style>Befiehlt einen Kanonenschuss auf die größte Ansammlung feindlicher Einheiten, der <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Bei den betroffenen Einheiten wird die Genauigkeit um <style=basestat>{accuracy_percentage}</style>, der Schaden um <style=basestat>{atk_percentage}</style> und die Bewegungsgeschwindigkeit um <style=basestat>{movement_percentage}</style> für <style=basestat>{debuff_duration}</style> reduziert. Alle befreundeten Einheiten erhalten <style=basestat>{evasion_percentage}</style> Ausweichen für <style=basestat>{evasion_duration}</style>.
+I
+*Base.Heroes.hero.QueenSeondeokOfSilla_NameKönigin Seondeok von Silla
 v
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 C
@@ -4223,6 +4239,8 @@ Pfeilsturm
 !Base.HeroClass.SingleStriker_Desc�Einzelangreifer verursachen großen Schaden an einzelnen Zielen. Sie sind besonders gut gegen gegnerische Helden.<br><line-height=50%><br></line-height><b><color=#3DA229>Stark</color> gegen:</b><br>•<indent=5%><color=#3DA229>Feindliche Helden</color> in <color=#3DA229>Kampagne</color>, <color=#3DA229>Arena</color> und <color=#3DA229>Schatzjagd</color>.</indent><br>•<indent=5%><color=#3DA229>Tesla-Stürme</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Schwach</color> gegen:</b><br>•<indent=5%><color=#CD2A25>Große Trupps</color> in Kampagne und Schatzjagd.</indent>
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
+�
+Base.Units.Unit_YiSunSin_Desc�Bring mit Yi Sun-sin die Blätter und Berge zum Beben! Dieser koreanische Admiral aus dem 16. Jahrhundert kämpfte unter der Joseon-Dynastie gegen die Japaner und wurde in der Seeschlacht nie besiegt. Von Geburt an als Krieger trainiert, führte Yi seine Truppen zu zahllosen Siegen, bis er von einem ranghohen General verraten wurde.<br><br>Nach seiner Wiedereinsetzung wurden Yi immer wichtigere Posten zugewiesen. Als Admiral der ersten Stunde besiegte er die Japaner bei Okpo, ohne ein einziges Schiff zu verlieren, und entwickelte das Schildkrötenschiff, das Markenzeichen der Joseon-Kriegsschiffe. <br><br>In der Schlacht von Myeongnyang versammelte Yi dreizehn Kriegsschiffe um sich. Sie schlugen im Nebel zu und köderten die Japaner mit wechselnden Gezeiten und unsicheren Gewässern. Historische Aufzeichnungen beschreiben das Kriegsschiff des Admirals als ein Schloss, das mitten im Meer stand und den koreanischen Sieg und den Platz von Yi Sun-Sin in der Geschichte sicherte.
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 �
@@ -4583,8 +4601,8 @@ r
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_DescLStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 =
 (Base.Regions.region.EasternValley_7_NameOsmanischer Hafen
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Heilung| Wiederbelebung</style>Florence schützt den am stärksten verletzten Helden mit einem Schutzschwur und heilt ihn für <style=basestat>{heal_amount}</style> über 8 Sekunden. Wenn die Einheit das nächste Mal in dieser Welle tödlichen Schaden erleidet, wird sie stattdessen für <style=basestat>{invulnerability_duration}</style> unverwundbar und heilt zusätzlich <style=basestat>{revive_percentage}</style> ihrer maximalen HP. Bevorzugt Helden, die nicht bereits von Florence markiert sind.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Heilen| Wiederbelebung</style>Florence schützt die am stärksten verletzte befreundete Einheit mit einem Schutzschwur und heilt sie über 8 Sekunden für <style=basestat>{heal_amount}</style> ihres Basisschadens. Wenn die Einheit das nächste Mal tödlichen Schaden erleiden würde, wird sie stattdessen unverwundbar und heilt zusätzlich <style=basestat>{revive_percentage}</style> ihrer maximalen HP über <style=basestat>{invulnerability_duration}</style>. Priorisiert Helden. Bevorzugt Einheiten, die nicht bereits von Florence markiert sind.
 L
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBronze-Wächter
 F
@@ -4847,6 +4865,8 @@ V
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameKleine Kulturstätte
 `
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�Bring die Sterne zurück in den Himmel mit Königin Seondeok von Silla! Im 7. Jahrhundert bestieg diese allererste Königin des alten Korea den Thron. Nach ihrem Aufstieg sorgte sie für die Armen, Kranken und Alten. Diese Liebe zu ihrem Volk sollte ihre Herrschaft bestimmen. <br> <br> Königin Seondeok meisterte Konflikte und Frieden mit Geschick, Glauben und Anmut. Silla wurde durch Allianzen, große Pagoden und Observatorien bereichert. Geschichten über ihre Großartigkeit sind im Samguk Yusa und anderen historischen Texten festgehalten. <br><br>Seondeoks Erbe ist Korea selbst. Ihre Allianz mit den Tang führte zur ersten Vereinigung Koreas unter Silla, und sie lege den Grundstein für die Blüte der Kultur der Königreiche. Einigen Geschichten zufolge war Seondeok mit der Gabe der Prophezeiung ausgestattet. Durch Ochsenfrösche und Bilder von Blumen wuchs ihre Legende. Mal sehen, ob du es schaffst: Im Herbst wird die Krähe auf den Hörnern des Stiers landen! Was könnte das bedeuten?
 E
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameGroße Halle
 �
@@ -4890,6 +4910,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 Base.Units.Unit_RamsesII_Desc�Die Ebenen werden unter den Rädern der Streitwagen erbeben, denn Ramses der Große hat seine Macht mit deiner vereint. Dieser Pharao aus dem 13. Jahrhundert v. Chr. wurde durch seine Kampagnen gegen die Hethiter, Nubier und Libyer berühmt. Der Kampf von Kadesch gegen die Hethiter führte zu einem der ersten Friedensverträge der Geschichte.<br><br>Neben seinen militärischen Erfolgen war Ramses II. auch ein produktiver Baumeister, der großartige Bauwerke wie die Tempel von Abu Simbel und das Ramesseum in Auftrag gab und der Welt damit seinen Stempel aufdrückte.<br><br>Ramses II. gilt als der größte Pharao des größten Königreichs Ägyptens. Seine 66-jährige Herrschaft prägte das kulturelle und architektonische Erbe Ägyptens. Die Griechen nannten ihn Ozymandias, ein Name, unter dem er in der Dichtung unsterblich wurde. Wenn du Ramses siehst, gehst du auf die Knie!
 M
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameFachwerkbau
+@
++Base.Regions.region.EmeraldHighlands_2_NameRosemont Lehnsgut
 p
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc<Stellt Kakao her und fügt deiner Stadt einen Priester hinzu
 E
@@ -5410,10 +5432,10 @@ t
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 X
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameBewässerungsanlage
-M
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameKleine Ritualstätte
 0
 Base.Units.Unit_JoanOfArc_NameJeanne d’Arc
+M
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameKleine Ritualstätte
 u
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 ~

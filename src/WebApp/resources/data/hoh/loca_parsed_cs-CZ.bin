@@ -144,6 +144,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameFontánaFontányFontán
 n
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc;Jednotky pěchoty jsou nejefektivnější v přední linii.
+>
+/Base.TreasureHuntDifficulties.Difficulty_9_NameVelmistr II
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>Posílení</style>Inspiruje všechny přátelské jednotky, čímž zvyšuje jejich rychlost útoku o <style=basestat>{atk_speed_percentage}</style> a jejich ÚTOK o <style=basestat>{atk_percentage}</style> z ÚTOKU Margarety na dobu <style=basestat>{duration}</style>.
 /
@@ -533,6 +535,9 @@ W
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxusní rybářské molo
 I
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_NameMěstská farma
+,
+Base.Heroes.hero.YiSunSin_Name
+Yi Sun-sin
 ;
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
@@ -1378,6 +1383,8 @@ C
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Provokace | Štít | Úder na oblast</style>Filip II. Makedonský získá velký štít v hodnotě <style=basestat>{shield_percentage}</style> svého základního poškození a provokuje všechny nepřátelské jednotky po dobu <style=basestat>{taunt_duration}</style>. Po uplynutí <style=basestat>{detonation_time}</style> jeho štít exploduje a způsobí <style=basestat>{damage_percentage}</style> zbývající hodnoty štítu jako poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Detonace spotřebuje Filipův štít.
 V
 (Base.BuildingGroups.smallIrrigation_NameMalá studnaMalé studnyMalých studen
+F
+)Base.Units.Unit_QueenSeondeokOfSilla_NameKrálovna Sondok ze Silly
 O
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameKasárny pěchoty
 ]
@@ -1603,6 +1610,8 @@ H
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_NameZdokonalené čelenky
 D
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameKastilská balista
+K
++Base.Regions.region.EmeraldHighlands_1_NameVojvodství vysoké stráže
 1
 Base.BuildingGroups.SkyDiskSluneční oltář
 �
@@ -3689,6 +3698,8 @@ M
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameSokolnická rukavice
 #
 Base.HeroClass.DefenderObránce
+G
+/Base.Continents.continent.EmeraldHighlands_NameSmaragdové výšiny
 d
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc+Vyrábí masky předků a sluneční kameny
 M
@@ -3861,6 +3872,9 @@ Attila Hun
 *Base.Wonders.Wonder_Capital_Colosseum_NameKoloseum
 0
 Base.Heroes.hero.Ninja_NameČijome Močizuki
++
+Base.Units.Unit_YiSunSin_Name
+Yi Sun-sin
 ]
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescZpracovává kaolín na hlínu
 i
@@ -4164,6 +4178,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_NameSloupy
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name�<style=ability_label>Úder na oblast | Posílení | Oslabení</style>Nařídí dělostřelecký výstřel na největší shluk nepřátelských jednotek, způsobující <style=basestat>{dmg_percentage}</style> poškození v dosahu <style=basestat>{range}</style>. Zasažené jednotky mají sníženou přesnost o <style=basestat>{accuracy_percentage}</style>, jejich poškození je sníženo o <style=basestat>{atk_percentage}</style> a jejich rychlost pohybu je snížena o <style=basestat>{movement_percentage}</style> po dobu <style=basestat>{debuff_duration}</style>. Všechny přátelské jednotky získají <style=basestat>{evasion_percentage}</style> vyhýbání se po dobu <style=basestat>{evasion_duration}</style>.
+G
+*Base.Heroes.hero.QueenSeondeokOfSilla_NameKrálovna Sondok ze Silly
 n
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc;Jednotky pěchoty jsou nejefektivnější v přední linii.
 D
@@ -4239,6 +4255,8 @@ L
 !Base.HeroClass.SingleStriker_Desc�Jednotliví útočníci způsobují velké poškození jednotlivým cílům. Vynikají proti nepřátelským hrdinům.<br><line-height=50%><br></line-height><b><color=#3DA229>Silní</color> proti:</b><br>-<indent=5%><color=#3DA229>Nepřátelským hrdinům</color> v <color=#3DA229>kampani</color>, <color=#3DA229>aréně</color> a <color=#3DA229>Honbě za pokladem</color>.</indent><br>-<indent=5%><color=#3DA229>Tesla bouře</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Slabí</color> proti:</b><br>-<indent=5%><color=#CD2A25>Velkým oddílům</color> v kampani a Honbě za pokladem.
 t
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
+�
+Base.Units.Unit_YiSunSin_Desc�Ať se listy a hory třesou s Yi Sun-sinem! Tento korejský admirál ze 16. století bojoval za dynastie Čoson proti Japoncům a nikdy nebyl poražen v námořní bitvě. Yi byl od narození vychováván jako válečník a vedl vojska k nesčetným vítězstvím, dokud ho starší generál nehodil do latě.<br><br>Jakmile byl Yi znovu dosazen do funkce, získával stále významnější posty. Jako první admirál porazil Japonce u Okpo, aniž by ztratil jedinou loď, a vyvinul želví loď, charakteristickou válečnou loď Čosonu. <br><br>V bitvě u Mjongjangu shromáždil Yi třináct válečných lodí. Přes mlhu udeřily a nalákaly Japonce na měnící se příliv a nebezpečné vody. Historické záznamy popisují admirálovu válečnou loď jako hrad stojící uprostřed moře, který zajistil korejské vítězství a místo Yi Sun-Sina v dějinách.
 �
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescRJednotky těžké pěchoty jsou velké a brání jednotkám kavalerie v průjezdu.
 �
@@ -4604,8 +4622,8 @@ a
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_Desc@Vyrábí velkou hromadu mincí a přidá 2 pracovníky do města
 ?
 (Base.Regions.region.EasternValley_7_NameOsmanský přístav
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Uzdravení | Oživení</style>Florence chrání nejvíce zraněného hrdinu ochrannou přísahou a léčí ho za <style=basestat>{heal_amount}</style> po dobu 8 sekund. Příště, když by jednotka v této vlně utrpěla smrtelné zranění, stane se místo toho nezranitelnou po dobu <style=basestat>{invulnerability_duration}</style>, a vyléčí se o další <style=basestat>{revive_percentage}</style> svých maximálních bodů života. Upřednostňuje hrdiny, kteří ještě nejsou označeni Florence.
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>Léčení | Oživení</style>Florence chrání nejvíce zraněnou přátelskou jednotku ochrannou přísahou a léčí ji za <style=basestat>{heal_amount}</style> jejího základního poškození po dobu 8 sekund. Při příštím smrtelném poškození se jednotka místo toho stane nezranitelnou a zároveň se vyléčí o další <style=basestat>{revive_percentage}</style> svých maximálních bodů života za <style=basestat>{invulnerability_duration}</style>. Upřednostňuje hrdiny. Upřednostňuje jednotky, které ještě nejsou označeny Florence.
 P
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBronzový strážce
 F
@@ -4870,6 +4888,8 @@ Z
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameMalá kulturní památka
 ^
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameKasárny těžkooděnců
+�
+)Base.Units.Unit_QueenSeondeokOfSilla_Desc�Vraťte hvězdy na oblohu s královnou Sondok ze Silly! Tato vůbec první královna starověké Koreje usedla na trůn v 7. století. Po svém nástupu na trůn se postarala o chudé, nemocné a staré lidi. Tato láska k obyvatelstvu určovala její vládu.<br> <br>Královna Sondok procházela konflikty i mír s obratností, vírou a milostí. Silla byla obohacena o spojenectví, velké pagody a observatoře. Příběhy o její velkoleposti jsou zaznamenány v Samguk Yusa a dalších historických textech. <br><br>Odkazem Sondok je samotná Korea. Její spojenectví s Tangy vedlo k prvnímu sjednocení Koreje pod vládou Silla a ona zasela semínka pro rozkvět kultury království. Podle některých příběhů měla Sondok věštecké schopnosti. Díky býčím žábám a obrazům květin se její legenda rozrostla. Schválně, jestli to dokážeš: Na podzim přistane vrána na býčích rozích! Co by to mohlo znamenat?
 @
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameRadnice
 �
@@ -4913,6 +4933,8 @@ K
 Base.Units.Unit_RamsesII_Desc�Pláně se budou třást pod koly vozů, neboť Ramses Veliký spojil svou sílu s tvou. Tento faraon ze 13. století př. n. l. se proslavil svými taženími proti Chetitům, Núbijcům a Libyjcům. Bitva u Kadeše proti Chetitům vyústila v jednu z prvních mírových smluv v historii.<br><br>Kromě vojenských úspěchů byl Ramses II. také plodným stavitelem, který nechal postavit velkolepé stavby, jako jsou chrámy v Abú Simbel a Ramesseum, a navždy tak zanechal svou stopu ve světě.<br><br>Ramses II. je připomínán jako největší faraon největšího egyptského království, jehož 66letá vláda formovala kulturní a architektonické dědictví Egypta. Řekové ho nazývali Ozymandias, pod tímto jménem byl zvěčněn v poezii. Když uvidíte Ramsese, poklekněte!
 T
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameRámování dřeva
+A
++Base.Regions.region.EmeraldHighlands_2_NameRůžové panství
 ]
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc)Vyrábí kakao a přidá kněze do města
 X
@@ -5435,10 +5457,10 @@ r
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc;Vyrábí malé množství jídla během krátkého období.
 Z
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameZavlažovací stanice
-O
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameMalé obřadní místo
 -
 Base.Units.Unit_JoanOfArc_NameJana z Arku
+O
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameMalé obřadní místo
 e
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc.Vyrábí mince a přidá pracovníka do města
 v

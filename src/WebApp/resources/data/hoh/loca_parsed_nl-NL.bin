@@ -146,6 +146,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AshokaTheGreat_5_Name
 !Base.BuildingGroups.fountain_NameFontein	Fonteinen
 p
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc=Infanterie-eenheden zijn het effectiefst in de voorste rijen.
+B
+/Base.TreasureHuntDifficulties.Difficulty_9_NameGrootmeester II
 á
 RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_NameŠ<style=ability_label>Buff</style>Inspireert alle vriendelijke eenheden, verhoogt hun aanvalsnelheid met <style=basestat>{atk_speed_percentage}</style> en hun ATK met <style=basestat>{atk_percentage}</style> van Margreet's ATK voor <style=basestat>{duration}</style>.
 /
@@ -538,6 +540,9 @@ M
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxe vissteiger
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_NameKleine boerderij
+,
+Base.Heroes.hero.YiSunSin_Name
+Yi Sun-sin
 ;
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
@@ -1376,6 +1381,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Na
 E
 (Base.BuildingGroups.smallIrrigation_Name
 Kleine putKleine putten
+H
+)Base.Units.Unit_QueenSeondeokOfSilla_NameKoningin Seondeok van Silla
 O
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameInfanteriekazerne
 ^
@@ -1600,6 +1607,8 @@ f
 EBase.Technologies.Technology_AgeOfTheFranks_PerfectedHeaddresses_NameGeperfectioneerde hoofdtooien
 D
 .Base.Units.Unit_IberianEra_Castilla_Siege_NameCastillan Ballista
+B
++Base.Regions.region.EmeraldHighlands_1_NameHertogdom Hooggarde
 +
 Base.BuildingGroups.SkyDiskZonne-altaar
 ¨
@@ -3700,6 +3709,8 @@ L
 %
 Base.HeroClass.Defender
 Verdediger
+E
+/Base.Continents.continent.EmeraldHighlands_NameSmaragd Hooglanden
 f
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc-Produceert vooroudermaskers en kalenderstenen
 L
@@ -3871,6 +3882,9 @@ W
 *Base.Wonders.Wonder_Capital_Colosseum_Name	Colosseum
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
++
+Base.Units.Unit_YiSunSin_Name
+Yi Sun-sin
 X
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescVerfijnt kaolien tot klei
 r
@@ -4179,6 +4193,8 @@ PBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_20_Nam
 3Base.Technologies.Technology_MinoanEra_Columns_NameZuilen
 ‡
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_40_Name°<style=ability_label>Gebiedsaanval| Buff| Debuff</style>Beveelt een kanonschot op de grootste groep vijandelijke eenheden, wat <style=basestat>{dmg_percentage}</style> schade toebrengt binnen een bereik van <style=basestat>{range}</style>. Getroffen eenheden hebben hun nauwkeurigheid verminderd met <style=basestat>{accuracy_percentage}</style>, hun schade verminderd met <style=basestat>{atk_percentage}</style>, en hun bewegingssnelheid verminderd met <style=basestat>{movement_percentage}</style> voor <style=basestat>{debuff_duration}</style>. Alle vriendelijke eenheden krijgen <style=basestat>{evasion_percentage}</style> ontwijking voor <style=basestat>{evasion_duration}</style>.
+I
+*Base.Heroes.hero.QueenSeondeokOfSilla_NameKoningin Seondeok van Silla
 p
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc=Infanterie-eenheden zijn het effectiefst in de voorste rijen.
 D
@@ -4255,6 +4271,8 @@ H
 !Base.HeroClass.SingleStriker_DescÅSingle strikers richten veel schade aan bij enkele doelwitten. Ze blinken uit tegen vijandelijke Helden.<br><line-height=50%><br></line-height><b><color=#3DA229>Sterk</color> tegen:</b><br>-<indent=5%><color=#3DA229>Vijandelijke Helden</color> in <color=#3DA229>Campagne</color>, <color=#3DA229>Arena</color> en <color=#3DA229>Schattenjacht</color>.</indent><br>-<indent=5%><color=#3DA229>Tesla Stormen</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Zwak</color> tegen:</b><br>-<indent=5%><color=#CD2A25>Grote Squads</color> in Campagne en Schattenjacht.
 …
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescGProduceert een grote stapel Munten en voegt 2 arbeiders toe aan je stad
+Ý
+Base.Units.Unit_YiSunSin_Desc»Laat de bladeren en bergen beven met Yi Sun-sin! Deze 16e-eeuwse Koreaanse admiraal vocht onder de Joseon-dynastie tegen de Japanners en werd nooit verslagen in een gevecht op zee. Vanaf zijn geboorte getraind als krijger, leidde Yi zijn troepen naar ontelbare overwinningen totdat hij er door een hogere generaal werd ingeluisd.<br><br>Eenmaal in ere hersteld, kreeg Yi steeds belangrijkere posten. Als eerste admiraal versloeg hij de Japanners bij Okpo zonder een enkel schip te verliezen en ontwikkelde hij het schildpadschip, het kenmerkende oorlogsschip van Joseon. <br><br>Bij de Gevecht van Myeongnyang bracht Yi dertien oorlogsschepen bijeen. Door de nevelen heen sloegen ze toe en lokten de Japanners naar veranderende getijden en onveilige wateren. Historische verslagen beschrijven het oorlogsschip van de admiraal als een kasteel dat midden op zee stond en de Koreaanse overwinning en de plaats van Yi Sun-Sin in de geschiedenis veilig stelde.
 •
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescaZware infanterie-eenheden zijn breed en verhinderen dat cavalerie-eenheden door hen heen stormen.
 Ö
@@ -4619,8 +4637,8 @@ l
 :Base.Buildings.Building_AgeOfTheFranks_Home_Premium_1_Desc@Produceert heel veel munten en voegt 2 arbeiders toe aan je stad
 <
 (Base.Regions.region.EasternValley_7_NameOttomaanse Haven
-Ø
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name€<style=ability_label>Heal| Revive</style>Florence beschermt de meest gewonde Helden met een beschermende eed en heelt ze voor <style=basestat>{heal_amount}</style> gedurende 8 seconden. De volgende keer dat de eenheid dodelijke schade oploopt door deze golf, worden ze in plaats daarvan onkwetsbaar voor <style=basestat>{invulnerability_duration}</style> en genezen ze nog eens <style=basestat>{revive_percentage}</style> van hun maximale HP. Geeft voorrang aan Helden die nog niet gemarkeerd zijn door Florence.
+Œ
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name´<style=ability_label>Heal Revive</style>Florence beschermt de meest gewonde vriendelijke eenheid met een beschermende eed en geneest ze voor <style=basestat>{heal_amount}</style> van haar Basis Schade gedurende 8 seconden. De volgende keer dat de eenheid dodelijke schade oploopt, wordt ze in plaats daarvan onkwetsbaar terwijl ze een extra <style=basestat>{revive_percentage}</style> van hun maximale HP geneest over <style=basestat>{invulnerability_duration}</style>. Geeft Helden voorrang. Geeft voorrang aan eenheden die nog niet gemarkeerd zijn door Florence.
 J
 9Base.Technologies.Technology_BronzeAge_HeavyInfantry_NameBronzen Wacht
 C
@@ -4879,6 +4897,8 @@ Z
 >Base.Buildings.Building_ByzantineEra_CultureSite_Little_1_NameKleine culturele locatie
 ^
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameZware infanterie kazerne
+’
+)Base.Units.Unit_QueenSeondeokOfSilla_DescäBreng de sterren terug naar de hemel met koningin Seondeok van Silla! In de 7e eeuw besteeg deze allereerste koningin van het oude Korea de troon. Na haar troonsbestijging zorgde ze voor de armen, de zieken en de ouderen. Deze liefde voor haar bevolking zou haar heerschappij bepalen. <br> <br> Koningin Seondeok bestuurde conflicten en vrede met vaardigheid, geloof en gratie. Silla werd verrijkt door allianties, grote pagodes en observatoria. Verhalen over haar grootsheid zijn opgetekend in de Samguk Yusa en andere historische teksten. <br><br>De erfenis van Seondeok is Korea zelf. Haar alliantie met de Tang leidde tot de eerste eenwording van Korea onder Silla, en ze zaaide de kiem voor de bloei van de cultuur van de koninkrijken. Volgens sommige verhalen was Seondeok begaafd met profetie. Door middel van brulkikkers en afbeeldingen van bloemen groeide haar legende. Eens kijken of je het kunt: in de herfst zal de kraai op de horens van de stier landen! Wat zou dat kunnen betekenen?
 C
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name
 Grote zaal
@@ -4924,6 +4944,8 @@ Handelaren
 Base.Units.Unit_RamsesII_DescþDe vlaktes zullen beven onder de wielen van de strijdwagens, want Ramses de Grote heeft zijn macht bij die van jou gevoegd. Deze farao uit de 13e eeuw voor Christus wordt beroemd vanwege zijn campagnes tegen de Hettieten, NubiÃ«rs en LibiÃ«rs. De Gevecht van Kadesh tegen de Hettieten resulteerde in een van de eerste vredesverdragen uit de geschiedenis.<br><br>Naast zijn militaire prestaties was Ramses II een productieve bouwer die de opdracht gaf voor grootse bouwwerken zoals de tempels van Aboe Simbel en het Ramesseum, waarmee hij voor altijd zijn stempel op de wereld drukte.<br><br>Ramses II wordt herinnerd als de grootste farao van het grootste koninkrijk Egypte. Zijn 66-jarige heerschappij gaf vorm aan het culturele en architectonische erfgoed van Egypte. De Grieken noemden hem Ozymandias, onder welke naam hij in poÃ«zie werd vereeuwigd. Als je Ramses ziet, ga je op je knieÃ«n!
 P
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameHoutskeletbouw
+?
++Base.Regions.region.EmeraldHighlands_2_NameRosemont Fiefdom
 j
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc6Produceert cacao en voegt een priester toe aan je stad
 O
@@ -5443,10 +5465,10 @@ o
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 U
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameIrrigatiestation
-N
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameKleine rituele plaats
 .
 Base.Units.Unit_JoanOfArc_NameJeanne d'Arc
+N
+5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameKleine rituele plaats
 n
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
 y
