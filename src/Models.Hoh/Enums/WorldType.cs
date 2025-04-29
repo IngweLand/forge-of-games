@@ -7,5 +7,6 @@ public enum WorldType
 {
     Undefined = 0,
     Campaign,
+    Dungeon,
     TeslaStorm,
 }

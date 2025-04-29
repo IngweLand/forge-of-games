@@ -41,6 +41,8 @@ e
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc1Produit du cacao et ajoute un prêtre à ta cité
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NamePort naval luxueux
+E
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 W
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameCaserne d'infanterie
 M
@@ -161,6 +163,8 @@ C
 1Base.Buildings.Building_China_Home_Average_5_NameMaison moyenne
 G
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_NameFerme luxueuse
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
 O
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameCaserne de siège
 �
@@ -444,6 +448,8 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameInfanteri
 Cuauhtemoc
 �
 #Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth ! William Wallace arrive tout droit de l’Écosse du XIIIᵉ siècle, prêt à livrer une nouvelle Guerre d’Indépendance. Chez lui, les récits de son leadership, de son courage et de sa rébellion résonnent encore dans le cœur des Écossais.<br><br>Wallace renversa le cours de l’histoire à la bataille du pont de Stirling, où il vainquit les Anglais malgré un écrasant désavantage numérique. Son rêve de liberté se répandit à travers toute l’Écosse, ralliant d’innombrables combattants à la cause d’un pays indépendant.<br><br>Bien qu’il soit capturé et exécuté à son retour dans son époque, l’esprit de Wallace ne fléchira jamais. Partout en Écosse, il est honoré comme un héros et un symbole de liberté.
+~
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 I
 4Base.Technologies.Technology_StoneAge_Firemaker_NameProduction de feu
 O
@@ -851,6 +857,8 @@ K
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameFilets de pêche
 Q
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameMaîtrise de la lance
+F
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
 I
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_NameMaison moyenne
 
@@ -1279,6 +1287,8 @@ M
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameChangement social
 ?
 3Base.Technologies.Technology_EarlyRome_Velites_NameVélites
+|
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 _
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NamePavillon noir
 �
@@ -1299,6 +1309,8 @@ S
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescDProduit un grand tas de pièces et ajoute 2 travailleurs à ta cité
 F
 0Base.Abilities.hero_battle_ability.HuaMulan_NameRevanche du dragon
+
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 U
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_NameCaserne d'infanterie
 �
@@ -1550,6 +1562,8 @@ DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameMarchand 
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_NameCaserne d'infanterie lourde
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.NubianMercenary_1_Name�<style=ability_label>Attaque de mêlée</style>Frappe la cible actuelle deux fois, infligeant un total de <style=basestat>{dmg_percentage}</style> de dégâts.
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name�<style=ability_label>Buff</style>Queen Seondeok unleashes her royal command, bestowing the largest cluster of allies with crowd control immunity for <style=basestat>{duration}</style>. Her inspiring aura enhances their attack speed by <style=basestat>{atk_speed_buff}</style> and movement speed by <style=basestat>{move_speed_buff}</style> across a wide radius of <style=basestat>{range}</style>.
 Y
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_DescProduit une tonne de papyrus
 �
@@ -1684,6 +1698,8 @@ X
 *Base.BuildingGroups.premiumRitualSite_NameSite rituel luxueuxSites rituels luxueux
 \
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NameClairière de vers à soie
+C
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFurnace
 S
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_3_NameCaserne d'infanterie
 J
@@ -1799,6 +1815,8 @@ q
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_2_Desc8Augmente fortement l'irrigation des bâtiments adjacents
 D
 3Base.Buildings.Building_EarlyRome_Home_Small_2_NamePetite maison
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
 q
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc2Augmente le bonheur dans les bâtiments adjacents.
 J
@@ -2065,6 +2083,8 @@ R
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 0
 Base.Ages.AgeOfTheFranks_NameÂge des Francs
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heal| Shield</style>The Holy Grail enhances the holder's healing capabilities, amplifying all healing by <style=basestat>{healing_amp}</style>. When a unit is healed beyond it's maximum hitpoints, <style=basestat>{heal_to_shield_conversion}</style> of the excess healing is converted into a shield.
 I
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_NameFerme rurale
 P
@@ -2352,6 +2372,8 @@ q
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Contrôle mental | Bonus</style>Déploie son génie littéraire pour convaincre une unité ennemie d'attaquer ses alliés pendant <style=basestat>{duration}</style>. Pendant qu'elle est sous le contrôle de Jane, l'ATQ de l'unité ennemie est augmentée de <style=basestat>{atk_percentage}</style>. Priorise les Héros.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_Desc�Les unités à distance tirent des projectiles sur une grande distance et sont particulièrement efficaces contre les unités d'infanterie.
+C
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFurnace
 L
 <Base.Technologies.Technology_HighMiddleAges_Precautions_NamePrécautions
 O
@@ -2748,6 +2770,8 @@ G
 4Base.Abilities.hero_battle_ability.LouisPasteur_NameAide Alchimique
 R
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameMaîtrise du færing
+|
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 b
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescDéverrouille les gardes royaux
 [
@@ -3913,6 +3937,8 @@ Z
 =Base.Technologies.Technology_IberianEra_SafetyMechanisms_NameMécanismes de sécurité
 c
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_Desc(Produit des ânkhs et des masques dorés
+K
+<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyal Rally
 c
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_Desc Déverrouille les escarmoucheurs
 j
@@ -3989,6 +4015,8 @@ M
 :Base.Buildings.Building_Vikings_FishingPier_Premium_5_Desc�Les ports de pêche luxueux envoient des bateaux pour attraper des tonnes de poissons et nourrir tous tes travailleurs et marins affamés.
 `
 ABase.Technologies.Technology_AgeOfTheFranks_PopulationGrowth_NameCroissance de la population
+D
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFurnace
 \
 =Base.Buildings.Building_AgeOfTheFranks_Workshop_Scribe_1_DescProduit des cachets de cire
 ]
@@ -4640,6 +4668,8 @@ G
 Trapezites
 R
 )Base.BuildingGroups.averageCamelFarm_NameFerme de chameauxFermes de chameaux
+H
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFurnace
 
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_DescCProduit une petite quantité de nourriture sur une courte période.
 q
@@ -4875,6 +4905,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_DeschEnvoie des navires d'expédition qui récolteront aléatoirement des trésors de bijoux ou de céramique
 ?
 (Base.BuildingGroups.averageMerchant_NameMarchand	Marchands
+G
+0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
 �
 Base.Units.Unit_RamsesII_Desc�Les plaines trembleront sous les roues des chars, car Ramsès le Grand a uni sa puissance à la tienne. Ce pharaon du XIIIᵉ siècle av. J.-C. s’illustra par ses campagnes contre les Hittites, les Nubiens et les Libyens. La bataille de Qadesh contre les Hittites aboutit à l’un des premiers traités de paix de l’histoire.<br><br>Au-delà de ses exploits militaires, Ramsès II fut un bâtisseur prolifique, commanditant des monuments grandioses tels que les temples d’Abou Simbel et le Ramesseum, gravant son nom à jamais dans la pierre.<br><br>Ramsès II est considéré comme le plus grand pharaon du plus grand royaume d’Égypte, son règne de 66 ans ayant façonné l’héritage culturel et architectural du pays. Les Grecs l’appelaient Ozymandias, un nom immortalisé en poésie. Quand Ramsès parle, tu t’agenouilles !
 R
@@ -4912,6 +4944,8 @@ Y
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescDébloque les trapézites
 �
 Base.Units.Unit_TomoeGozen_Desc�Loyauté. Beauté. Victoire. Tels sont les principes de Tomoe Gozen, la samouraï légendaire. Katana en main et à la tête d’un millier de soldats, elle combattit durant la guerre de Genpei sous les ordres de Minamoto no Yoshinaka.<br><br>Au final, presque tous les hommes de Minamoto l’abandonnèrent, y compris sa propre famille. Mais jamais Tomoe Gozen. Alors qu’ils fuyaient Kyoto de nuit, deux généraux rivaux tentèrent de les arrêter. Elle en tua un et laissa l’autre repartir, portant à jamais la honte de sa défaite.<br><br>Bien que la suite de son histoire reste un mystère, elle ne sera jamais oubliée. Sa loyauté et sa force font d’elle un symbole pour ceux qui défient les attentes, et encore aujourd’hui, son récit est perpétué dans les films et les animes.
+�
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 [
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_NameCaserne d'armes à distance
 S
@@ -5159,6 +5193,8 @@ P
 :Base.Technologies.Technology_ByzantineEra_Architekton_NameMaître architecte
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>Frappe au sol</style>Léonidas frappe le sol, infligeant <style=basestat>{dmg_percentage}</style> de dégâts à tous les ennemis dans un rayon de <style=basestat>{range}</style>.
+}
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 K
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_NameCultistes de Cyrus
 U
@@ -5556,6 +5592,8 @@ G
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 X
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_NameAtelier de porcelaine
+I
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFurnace
 X
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_DescProduit une tonne de nourriture
 B
@@ -5838,6 +5876,8 @@ L
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameCaserne d'infanterie lourde
 ,
 Base.Units.Unit_Dracula_NameVlad Dracula
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 D
 3Base.Buildings.Building_EarlyRome_Home_Small_3_NamePetite maison
 E
@@ -5956,6 +5996,8 @@ N
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameCharpente en bois
 Z
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_NameArbalétriers en armures
+�
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 8
 $Base.Units.Unit_NubianMercenary_NameCandace de Nubie
 q
@@ -6194,6 +6236,8 @@ D
 4Base.Buildings.Building_IberianEra_Farm_Rural_2_NameFerme rurale
 0
 Base.Ages.IberianEra_Decade1050 après J.-C.
+F
+9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Equipment
 B
 4Base.Technologies.Technology_Vikings_Beekeeping_Name
 Apiculture
@@ -6231,6 +6275,8 @@ y
 Base.HeroClass.Genius_Desc[Les Génies sont des Héros offensifs qui excellent dans l'art de provoquer des explosions.
 E
 #Base.BuildingTypes.cultureSite_NameSite culturelSites culturels
+H
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFurnace
 @
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Name
 Sagittarii

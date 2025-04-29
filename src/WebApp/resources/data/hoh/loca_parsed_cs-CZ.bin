@@ -39,6 +39,8 @@ C
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc)Vyrábí kakao a přidá kněze do města
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NameLuxusní přístav
+E
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 T
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameKasárny pěchoty
 J
@@ -160,6 +162,8 @@ C
 1Base.Buildings.Building_China_Home_Average_5_NameStřední dům
 G
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_NameLuxusní farma
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
 \
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameKasárny obléhacích jednotek
 �
@@ -445,6 +449,8 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerovejsk
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtémoc
 �
 #Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth! William Wallace přichází ze Skotska 13. století, připraven bojovat v nové válce za nezávislost. Doma se v srdcích Skotů ozývají příběhy o jeho vůdcovství, statečnosti a vzdoru.<br><br>Wallace zvrátil průběh bitvy u Stirling Bridge a porazil Angličany, přestože měl obrovskou přesilu. Jeho sen o svobodě se rozšířil po celém Skotsku a nespočet lidí se přidalo k boji za svobodnou zemi.<br><br>Přestože po návratu do své doby bude zajat a popraven, Wallaceův duch nikdy nezakolísá. V celém Skotsku je uctíván jako bojovník za svobodu a vlastenec, přičemž jeho speciální chvat, "Wallace Wallop", je dodnes k vidění v glasgowských barech!
+~
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 M
 4Base.Technologies.Technology_StoneAge_Firemaker_NameRozdělávání ohně
 R
@@ -860,6 +866,8 @@ M
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameRybářské sítě
 N
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameMistrovství kopí
+F
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
 I
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_NameStřední dům
 y
@@ -1291,6 +1299,8 @@ M
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameSociální změna
 >
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
+|
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
 �
@@ -1312,6 +1322,8 @@ q
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
 B
 0Base.Abilities.hero_battle_ability.HuaMulan_NameDračí pomsta
+
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 R
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_NameKasárny pěchoty
 �
@@ -1563,6 +1575,8 @@ DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameKořená�
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.NubianMercenary_1_Name�<style=ability_label>Úder na blízko</style>Zasáhne aktuální cíl dvakrát pro celkové poškození <style=basestat>{dmg_percentage}</style>.
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name�<style=ability_label>Buff</style>Queen Seondeok unleashes her royal command, bestowing the largest cluster of allies with crowd control immunity for <style=basestat>{duration}</style>. Her inspiring aura enhances their attack speed by <style=basestat>{atk_speed_buff}</style> and movement speed by <style=basestat>{move_speed_buff}</style> across a wide radius of <style=basestat>{range}</style>.
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_DescVyrábí hromadu papyrusu
 r
@@ -1699,6 +1713,8 @@ F
 *Base.BuildingGroups.premiumRitualSite_NameLuxusní obřadní místoLuxusní obřadní místaLuxusní obřadních míst
 Q
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NameMotýlí palouk
+C
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFurnace
 P
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_3_NameKasárny pěchoty
 H
@@ -1820,6 +1836,8 @@ g
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_2_Name
 Malý dům
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
 c
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc$Zvyšuje spokojenost okolních budov
 F
@@ -2091,6 +2109,8 @@ o
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 -
 Base.Ages.AgeOfTheFranks_NameVěk Franků
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heal| Shield</style>The Holy Grail enhances the holder's healing capabilities, amplifying all healing by <style=basestat>{healing_amp}</style>. When a unit is healed beyond it's maximum hitpoints, <style=basestat>{heal_to_shield_conversion}</style> of the excess healing is converted into a shield.
 M
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_NameVenkovská farma
 O
@@ -2382,6 +2402,8 @@ d
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Ovládání mysli | Posílení</style>Uvolní svůj literární génius, přesvědčí nepřátelskou jednotku, aby zaútočila na své spojence po dobu <style=basestat>{duration}</style>. Během její kontroly je útok nepřátelské jednotky zvýšen o <style=basestat>{atk_percentage}</style>. Upřednostňuje hrdiny.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_DesceStřelecké jednotky střílejí na velkou vzdálenost a jsou účinné především proti pěchotě.
+C
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFurnace
 Y
 <Base.Technologies.Technology_HighMiddleAges_Precautions_NameBezpečnostní opatření
 N
@@ -2777,6 +2799,8 @@ I
 4Base.Abilities.hero_battle_ability.LouisPasteur_NameAlchymická pomoc
 W
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameMistrovství stavby lodí
+|
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 ^
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescOdemkne Královskou stráž
 ]
@@ -3951,6 +3975,8 @@ Z
 =Base.Technologies.Technology_IberianEra_SafetyMechanisms_NameBezpečnostní mechanismy
 X
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_DescVyrábí anchy a zlaté masky
+K
+<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyal Rally
 R
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescOdemkne rojnice
 b
@@ -4028,6 +4054,8 @@ I
 :Base.Buildings.Building_Vikings_FishingPier_Premium_5_Desc|Luxusní rybářská mola vysílají lodě, které loví tuny ryb, aby zásobily všechny hladové dělníky a námořníky.
 S
 ABase.Technologies.Technology_AgeOfTheFranks_PopulationGrowth_NameRůst populace
+D
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFurnace
 [
 =Base.Buildings.Building_AgeOfTheFranks_Workshop_Scribe_1_DescVyrábí voskové pečetě
 [
@@ -4683,6 +4711,8 @@ F
 9Base.Technologies.Technology_ByzantineEra_Trapezites_Name	Trapeziti
 c
 )Base.BuildingGroups.averageCamelFarm_NameVelbloudí farmaVelbloudí farmyVelbloudích farem
+H
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFurnace
 w
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc;Vyrábí malé množství jídla během krátkého období.
 ^
@@ -4929,6 +4959,8 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_DescUVyšli expediční lodě, které budou získávat poklady s drahokamy nebo kořením.
 K
 (Base.BuildingGroups.averageMerchant_Name	Kupectví	Kupectví	Kupectví
+G
+0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
 �
 Base.Units.Unit_RamsesII_Desc�Pláně se budou třást pod koly vozů, neboť Ramses Veliký spojil svou sílu s tvou. Tento faraon ze 13. století př. n. l. se proslavil svými taženími proti Chetitům, Núbijcům a Libyjcům. Bitva u Kadeše proti Chetitům vyústila v jednu z prvních mírových smluv v historii.<br><br>Kromě vojenských úspěchů byl Ramses II. také plodným stavitelem, který nechal postavit velkolepé stavby, jako jsou chrámy v Abú Simbel a Ramesseum, a navždy tak zanechal svou stopu ve světě.<br><br>Ramses II. je připomínán jako největší faraon největšího egyptského království, jehož 66letá vláda formovala kulturní a architektonické dědictví Egypta. Řekové ho nazývali Ozymandias, pod tímto jménem byl zvěčněn v poezii. Když uvidíte Ramsese, poklekněte!
 T
@@ -4965,6 +4997,8 @@ Q
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescOdemkne Trapezity
 �
 Base.Units.Unit_TomoeGozen_Desc�Loajalita. Krása. Vítězství. To jsou zásady Tomoe Gozen, samurajky. S katanou v ruce a až tisícovkou vojáků za zády bojovala ve válce Genpei pod velením Minamota no Jošinaka.<br><br>Nakonec Minamota opustili všichni jeho vojáci kromě několika málo, dokonce i jeho vlastní rodina. Nikdy však ne Tomoe Gozen. Když v noci prchali z Kjóta, pokusili se jejich ústup zastavit dva soupeřící generálové. Jednoho zabila a druhého nechala žít s hanbou, že byl poražen.<br><br>Ačkoli zbytek jejího příběhu není znám, nikdy nebude zapomenuta. Díky své věrnosti a síle se stala symbolem pro ty, kteří bojují proti očekávání, a i dnes je její příběh převyprávěn ve filmech a anime.
+�
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 R
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_NameKasárny střelců
 N
@@ -5221,6 +5255,8 @@ I
 :Base.Technologies.Technology_ByzantineEra_Architekton_NameArchitekton
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>Dupnutí</style> Leonidas dupne na zem a způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style>.
+}
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 J
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_NameKýrovi kultisté
 Q
@@ -5621,6 +5657,8 @@ G
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 V
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_NameVýrobna porcelánu
+I
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFurnace
 P
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_DescVyrábí hromady jídla
 D
@@ -5906,6 +5944,8 @@ J
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
 -
 Base.Units.Unit_Dracula_NameVlad Drákula
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Name
 Malý dům
@@ -6028,6 +6068,8 @@ N
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameHrázděné zdivo
 V
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_NameObrnění kušiníci
+�
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 7
 $Base.Units.Unit_NubianMercenary_NameKandake z Nubie
 ^
@@ -6271,6 +6313,8 @@ H
 )
 Base.Ages.IberianEra_Decade
 1050 n. l.
+F
+9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Equipment
 E
 4Base.Technologies.Technology_Vikings_Beekeeping_NameVčelařství
 I
@@ -6308,6 +6352,8 @@ t
 Base.HeroClass.Genius_DescVGéniové jsou ofenzivní hrdinové, kteří vynikají tím, že způsobují výbuchy.
 c
 #Base.BuildingTypes.cultureSite_NameKulturní památkaKulturní památkyKulturních památek
+H
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFurnace
 C
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_NameLučištníci
 C

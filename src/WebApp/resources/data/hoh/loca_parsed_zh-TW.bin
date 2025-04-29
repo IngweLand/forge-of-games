@@ -39,6 +39,8 @@ d
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc0為您的城市產生可可並提供一名祭司
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_Name豪華水手港口
+E
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 O
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_Name步兵軍營
 F
@@ -159,6 +161,8 @@ A
 1Base.Buildings.Building_China_Home_Average_5_Name中型家園
 E
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_Name豪華農場
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
 P
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_Name攻城兵器軍營
 �
@@ -439,6 +443,8 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_Name梅洛溫
 &Base.Units.Unit_AztecTlacateccatl_Name庫奧赫特莫克
 �
 #Base.Units.Unit_WilliamWallace_Desc�阿爾巴萬歲！ 威廉・華萊士從 13 世紀的蘇格蘭來到這片戰場，準備在新的獨立戰爭中奮戰。在他的故鄉，關於他的領導力、勇氣與不屈精神的傳說，仍迴盪在蘇格蘭人民的心中。<br><br>華萊士在斯特靈橋之戰扭轉戰局，即使兵力遠不及英軍，他仍率軍擊潰敵人。他對自由的渴望傳遍整個蘇格蘭，激勵無數人加入為獨立而戰的行列。<br><br>儘管回到他的時代後，他將遭到捕獲並處決，但華萊士的意志從未動搖。在蘇格蘭的每個角落，他都被尊為自由戰士與愛國英雄。而他的招牌技能「華萊士重擊」，至今仍可在格拉斯哥的酒吧中見到！
+~
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 A
 4Base.Technologies.Technology_StoneAge_Firemaker_Name	取火器
 L
@@ -835,6 +841,8 @@ A
 7Base.Technologies.Technology_FeudalAge_FishingNets_Name漁網
 H
 8Base.Technologies.Technology_EarlyRome_LanceMastery_Name長槍精通
+F
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
 G
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_Name中型家園
 X
@@ -1255,6 +1263,8 @@ H
 8Base.Technologies.Technology_BronzeAge_SocialChange_Name社會變遷
 I
 3Base.Technologies.Technology_EarlyRome_Velites_Name羅馬輕裝步兵
+|
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 ^
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_Name海盜旗幟
 �
@@ -1275,6 +1285,8 @@ o
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_Desc4為您的城市產生大筆錢幣並提供2名工人
 @
 0Base.Abilities.hero_battle_ability.HuaMulan_Name龍之復仇
+
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 M
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_Name步兵軍營
 |
@@ -1523,6 +1535,8 @@ T
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_Name重步兵軍營
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.NubianMercenary_1_Name�<style=ability_label>近戰打擊</style>對當前目標進行兩次打擊，總共造成<style=basestat>{dmg_percentage}</style>的傷害。
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name�<style=ability_label>Buff</style>Queen Seondeok unleashes her royal command, bestowing the largest cluster of allies with crowd control immunity for <style=basestat>{duration}</style>. Her inspiring aura enhances their attack speed by <style=basestat>{atk_speed_buff}</style> and movement speed by <style=basestat>{move_speed_buff}</style> across a wide radius of <style=basestat>{range}</style>.
 R
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_Desc生產許多紙莎草
 p
@@ -1657,6 +1671,8 @@ D
 *Base.BuildingGroups.premiumRitualSite_Name豪華儀式場
 N
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_Name蛾之林地
+C
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFurnace
 K
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_3_Name步兵軍營
 C
@@ -1771,6 +1787,8 @@ Z
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_2_Desc!大幅提升相鄰建築的灌溉
 C
 3Base.Buildings.Building_EarlyRome_Home_Small_2_Name小型家園
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
 Z
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc提升相鄰建築的幸福
 C
@@ -2037,6 +2055,8 @@ E
 !Base.Units.Unit_VikingRaider_Name 弗蕾迪絲·艾瑞克斯多特
 0
 Base.Ages.AgeOfTheFranks_Name法蘭克時代
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heal| Shield</style>The Holy Grail enhances the holder's healing capabilities, amplifying all healing by <style=basestat>{healing_amp}</style>. When a unit is healed beyond it's maximum hitpoints, <style=basestat>{heal_to_shield_conversion}</style> of the excess healing is converted into a shield.
 I
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_Name鄉村農場
 L
@@ -2321,6 +2341,8 @@ Y
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>精神控制| 增益</style>釋放她的文學天才，說服一個敵方單位攻擊他們的盟友，持續 <style=basestat>{duration}</style>。在Jane的控制下，敵方單位的攻擊力增加 <style=basestat>{atk_percentage}</style>。優先攻擊英雄。
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_DescW遠程單位可將投射物發射極遠距離，在對抗步兵單位時尤為有效。
+C
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFurnace
 L
 <Base.Technologies.Technology_HighMiddleAges_Precautions_Name預防措施
 K
@@ -2712,6 +2734,8 @@ D
 4Base.Abilities.hero_battle_ability.LouisPasteur_Name煉金援助
 J
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_Name造船精通
+|
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 U
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_Desc解鎖國王護衛
 V
@@ -3868,6 +3892,8 @@ M
 =Base.Technologies.Technology_IberianEra_SafetyMechanisms_Name安全機制
 Y
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_Desc生產十字章和黃金面具
+K
+<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyal Rally
 O
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_Desc解鎖散兵
 c
@@ -3944,6 +3970,8 @@ A
 :Base.Buildings.Building_Vikings_FishingPier_Premium_5_Desc]豪華的釣魚碼頭派出船隻捕撈大量的魚來供應所有飢餓的工人和水手。
 Q
 ABase.Technologies.Technology_AgeOfTheFranks_PopulationGrowth_Name人口增長
+D
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFurnace
 M
 =Base.Buildings.Building_AgeOfTheFranks_Workshop_Scribe_1_Desc生產封蠟
 R
@@ -4587,6 +4615,8 @@ I
 9Base.Technologies.Technology_ByzantineEra_Trapezites_Name輕裝騎兵
 9
 )Base.BuildingGroups.averageCamelFarm_Name駱駝農場
+H
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFurnace
 W
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc短期生產少量食物。
 X
@@ -4821,6 +4851,8 @@ g
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_Desc*派出探險船收集寶石或香料珍品
 2
 (Base.BuildingGroups.averageMerchant_Name商人
+G
+0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
 �
 Base.Units.Unit_RamsesII_Desc�平原將在戰車的車輪下顫抖，因為拉美西斯二世的力量已與你的力量結合。這位來自公元前13世紀的法老以對抗赫梯人、努比亞人和利比亞人的戰爭而聞名。與赫梯的卡迪什戰役使他成為歷史上最早締結和平條約的領袖之一。<br><br>除了軍事成就外，拉美西斯二世還是一位多產的建築師，他委託建造了如阿布辛波古廟和拉美西斯神廟等宏偉建築，永遠在世界上留下了他的印記。<br><br>拉美西斯二世被記住為埃及最偉大的法老，他的66年統治塑造了埃及的文化和建築遺產。希臘人稱他為奧茲曼迪亞斯，並以這個名字在詩歌中使他不朽。當你見到拉美西斯時，別忘了跪下敬拜！
 N
@@ -4857,6 +4889,8 @@ R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_Desc解鎖輕裝騎兵
 �
 Base.Units.Unit_TomoeGozen_Desc�忠誠、美麗、勝利。這些就是女武者巴御前的信條。手握武士刀，背後擁有多達千名士兵，她在源平之戰中，聽從源義仲的指揮作戰。<br><br>最終，源義仲的軍隊幾乎全軍覆沒，連他自己的家族也背叛了他。但巴御前從未離開過他。當他們在夜晚撤退京都時，兩位對立的將軍試圖阻止他們。她斬殺了其中一人，讓另一人活下來，承受被擊敗的恥辱。<br><br>雖然她的故事大多無從得知，但她的身影將永遠不會被遺忘。她的忠誠與力量，成為了對抗偏見的象徵，直到今天，她的故事仍在電影與動畫中不斷被重述。
+�
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 O
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_Name遠程兵軍營
 I
@@ -5103,6 +5137,8 @@ G
 :Base.Technologies.Technology_ByzantineEra_Architekton_Name	建築學
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>重踏</style>列奧尼達斯重踏地面，對所有範圍內的敵人造成<style=basestat>{dmg_percentage}</style>的傷害，範圍為<style=basestat>{range}</style>。
+}
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 K
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_Name居魯士的教徒
 M
@@ -5497,6 +5533,8 @@ J
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name前鋒騎兵
 O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_Name瓷器工坊
+I
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFurnace
 K
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_Desc生產許多食物
 ?
@@ -5780,6 +5818,8 @@ R
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_Name重步兵軍營
 4
 Base.Units.Unit_Dracula_Name弗拉德·德古拉
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 C
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Name小型家園
 C
@@ -5898,6 +5938,8 @@ F
 9Base.Technologies.Technology_FeudalAge_TimberFraming_Name	木架構
 N
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_Name裝甲弩兵
+�
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 =
 $Base.Units.Unit_NubianMercenary_Name努比亞的坎達克
 X
@@ -6135,6 +6177,8 @@ D
 4Base.Buildings.Building_IberianEra_Farm_Rural_2_Name鄉村農場
 (
 Base.Ages.IberianEra_Decade	1050 A.D.
+F
+9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Equipment
 >
 4Base.Technologies.Technology_Vikings_Beekeeping_Name養蜂
 H
@@ -6172,6 +6216,8 @@ N
 Base.HeroClass.Genius_Desc0天才是擅長造成爆炸的進攻型英雄。
 3
 #Base.BuildingTypes.cultureSite_Name文明場所
+H
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFurnace
 <
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Name射手
 @
