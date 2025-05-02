@@ -8,6 +8,7 @@ public enum ContinentId
     Undefined = 0,
     DesertDelta,
     EasternValley,
+    EmeraldHighlands,
     FrozenFjord,
     Panganea,
     TeslaStormBlue,
