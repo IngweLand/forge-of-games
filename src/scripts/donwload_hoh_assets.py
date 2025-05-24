@@ -1,36 +1,45 @@
 import os
 import shutil
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List, Optional
+from typing import List
 from urllib.parse import urlparse
 
 import requests
 
-download_dir = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\downloads\30.04.25'
+download_dir = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\downloads\14.05.25'
 data_file = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\catalog.bin'
-cdn_root = 'https://heczz.innogamescdn.com/'
-data_url_prefix = r'{InnoGames.ModuleIntegration.Market.ServerConfig.REMOTE_LOAD_URL}'
+cdn_root = 'https://heczz.innogamescdn.com/bundles/WebGL/'
+data_url_prefix = '00 00 00'
 end_marker = '.bundle'
 files_to_skip = ['vfx', 'pfx']
 files_to_download = []
 
 
 def parse_binary_file(file_path) -> List[str]:
-    search_bytes = data_url_prefix.encode('utf-8')
-    end_bytes = end_marker.encode('utf-8')
+    search_bytes = bytes.fromhex(data_url_prefix)  # Start marker
+    end_bytes = end_marker.encode('utf-8')          # End marker
 
     with open(file_path, 'rb') as file:
         data = file.read()
+
     results = []
-    start_pos = 0
     search_bytes_len = len(search_bytes)
-    while (match := data.find(search_bytes, start_pos)) != -1:
-        end_pos = data.find(end_bytes, match + len(search_bytes)) + len(end_bytes)
-        if end_pos > match:
-            url = cdn_root + data[match + search_bytes_len:end_pos].decode('utf-8', errors='ignore')
+    end_bytes_len = len(end_bytes)
+    search_start = 0
+
+    while (end_pos := data.find(end_bytes, search_start)) != -1:
+        # Search backward for start marker from just before the end marker
+        start_pos = data.rfind(search_bytes, 0, end_pos)
+        if start_pos != -1:
+            # Extract and decode the segment between the markers
+            content_start = start_pos + search_bytes_len
+            content_end = end_pos + end_bytes_len
+            url = cdn_root + data[content_start:content_end].decode('utf-8', errors='ignore')
             if should_download(url):
                 results.append(url)
-        start_pos = match + len(search_bytes)
+        # Move past this end marker for the next iteration
+        search_start = end_pos + end_bytes_len
+
     return results
 
 
