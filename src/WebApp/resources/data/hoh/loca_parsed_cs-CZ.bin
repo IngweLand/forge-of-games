@@ -7,8 +7,6 @@ R
 7Base.Buildings.Building_RomanEmpire_Farm_Premium_1_DescVyrábí hromady jídla
 I
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_NameMalá studna
-H
-3Base.Buildings.Building_Mayas_Aviary_Premium_1_NameLuxusní voliéra
 �
 Base.HeroClass.Defender_Desc�Obránci se vrhají do útoku a chrání své spojence.<br><line-height=50%><br></line-height><b><color=#3DA229>Silní</color> proti:</b><br>-<indent=5%><color=#3DA229>Kampaň</color>, <color=#3DA229>aréna</color> a <color=#3DA229>Honba za pokladem</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Slabí</color> proti:</b><br>-<indent=5%><color=#CD2A25>Tesla bouře</color>.</indent>
 Y
@@ -35,20 +33,16 @@ Q
 -Base.Units.Unit_FeudalAge_Player_Knights_NameRytíři
 C
 1Base.Abilities.hero_battle_ability.MarcoPolo_NameVýbuch objevu
-]
-0Base.Buildings.Building_Mayas_Home_Priest_1_Desc)Vyrábí kakao a přidá kněze do města
+A
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NamePec
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NameLuxusní přístav
-E
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 T
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameKasárny pěchoty
 J
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameZelení harpunáři
 u
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc<Vyrábí velké množství jídla během krátkého období.
-h
-%Base.BuildingGroups.ritualCarver_NameObřadní rytectvíObřadní rytectvíObřadních rytectví
 R
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameKasárny střelců
 �
@@ -115,12 +109,8 @@ _
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Desc|Luxusní rybářská mola vysílají lodě, které loví tuny ryb, aby zásobily všechny hladové dělníky a námořníky.
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_DescqVyšli expediční lodě, které budou získávat hromady pokladů s drahokamy, kořením, keramikou nebo zlatem.
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_DescVyrábí obsidián
 q
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_NamePamátník singularity
-?
-0Base.Buildings.Building_Mayas_Home_Priest_4_NameDům kněze
 �
 %Base.Units.Unit_ThomasAlvaEdison_Desc�Thomas Alva Edison, čaroděj z Menlo Parku, je tu, aby zazářil! Tento ikonický americký vynálezce a podnikatel konce 19. a počátku 20. století svými četnými inovacemi změnil moderní technologie.<br><br>Edison byl držitelem více než 1 000 patentů, včetně patentů na fonograf, filmovou kameru a elektrickou žárovku. Jeho průmyslové výzkumné laboratoře způsobily revoluci v procesu inovací a sloužily jako vzor pro budoucí technologický vývoj.<br><br>Edisonova vynalézavost a bystrost změnily nejen průmyslová odvětví, ale také moderní způsob života a zanechaly odkaz tvořivosti a vytrvalosti, který dodnes inspiruje vynálezce. Byl skutečně nesmírně "bystrý"!
 �
@@ -162,8 +152,8 @@ C
 1Base.Buildings.Building_China_Home_Average_5_NameStřední dům
 G
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_NameLuxusní farma
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Úder na dálku</style>Yi Sun-Sin přivolá svou legendární flotilu a vypustí na nepřátelského hrdinu s nejnižšími body života palbu tří silných dělových koulí. První dvě dělové koule způsobí <style=basestat>{dmg_percentage}</style> poškození. Poslední dělová koule způsobuje <style=basestat>{final_dmg_percentage}</style> poškození a navíc poškozuje hrdiny za dalších <style=basestat>{missing_hp_percentage}</style> bodů života.
 \
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameKasárny obléhacích jednotek
 �
@@ -201,8 +191,6 @@ U
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameStřelecké kasárny
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_Name�<style=ability_label>Provokace | Štít</style>Provokuje všechny nepřátele na <style=basestat>{taunt_duration}</style>. Bismarck získá <style=basestat>{shield_percentage}</style> svého základního poškození jako štít. Také poskytuje <style=basestat>{shield_percentage_friendly}</style> svého základního poškození jako štít spojenecké jednotce s nejnižším HP. Upřednostňuje hrdiny.
-W
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProdukuje obřadní dýky
 �
 'Base.BuildingGroups.compactCulture_NameKompaktní kulturní památkaKompaktní kulturní památky!Kompaktních kulturních památek
 S
@@ -229,8 +217,6 @@ G
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescDAkademie hrdinů produkuje body zkušeností za cenu bodů výzkumu.
 Z
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_DescProdukuje šafrán
-[
-"Base.BuildingTypes.ritualSite_NameObřadní místoObřadní místaObřadních míst
 Z
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameKasárny obléhacích jednotek
 k
@@ -361,14 +347,14 @@ _
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_2_NameKasárny obléhacích jednotek
 O
 9Base.Technologies.Technology_Vikings_ImprovedFishing_NameZlepšený rybolov
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_NameObsidiánový důl
 D
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameVelká síň
 J
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameVenkovská farma
 G
 3Base.Buildings.Building_MinoanEra_Farm_Rural_1_NameVenkovská farma
+Y
+=Base.Units.Unit_FeudalAge_KnightsOfRoundtable_KingArthur_NameRytíři kulatého stolu
 4
 Base.BuildingGroups.oasis_NameOázaOázyOáz
 3
@@ -415,8 +401,6 @@ a
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc<Vyrábí velké množství jídla během časového období.
 [
 !Base.BuildingTypes.camelFarm_NameVelbloudí farmaVelbloudí farmyVelbloudích farem
-N
-3Base.Buildings.Building_Mayas_Aviary_Premium_1_DescVyrábí hromadu peří
 B
 1Base.Buildings.Building_China_Home_Premium_6_NameLuxusní dům
 O
@@ -449,8 +433,8 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameMerovejsk
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtémoc
 �
 #Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth! William Wallace přichází ze Skotska 13. století, připraven bojovat v nové válce za nezávislost. Doma se v srdcích Skotů ozývají příběhy o jeho vůdcovství, statečnosti a vzdoru.<br><br>Wallace zvrátil průběh bitvy u Stirling Bridge a porazil Angličany, přestože měl obrovskou přesilu. Jeho sen o svobodě se rozšířil po celém Skotsku a nespočet lidí se přidalo k boji za svobodnou zemi.<br><br>Přestože po návratu do své doby bude zajat a popraven, Wallaceův duch nikdy nezakolísá. V celém Skotsku je uctíván jako bojovník za svobodu a vlastenec, přičemž jeho speciální chvat, "Wallace Wallop", je dodnes k vidění v glasgowských barech!
-~
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 M
 4Base.Technologies.Technology_StoneAge_Firemaker_NameRozdělávání ohně
 R
@@ -489,8 +473,6 @@ W
 @Base.Technologies.Technology_RomanEmpire_PastureImprovement_NameVylepšení pastvin
 �
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_DescUVyšli expediční lodě, které budou získávat poklady s drahokamy nebo kořením.
-`
-0Base.Buildings.Building_Mayas_Home_Worker_6_Desc,Vyrábí kakao a přidá dělníka do města
 P
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameFormace valu
 I
@@ -548,8 +530,6 @@ Yi Sun-sin
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
 $Base.Heroes.hero.AbrahamLincoln_NameAbraham Lincoln
-]
-0Base.Buildings.Building_Mayas_Home_Priest_4_Desc)Vyrábí kakao a přidá kněze do města
 ;
 %Base.Units.Unit_ThomasAlvaEdison_NameThomas Alva Edison
 L
@@ -580,8 +560,6 @@ $Base.Units.Unit_MiyamotoMusashi_Desc�Vydejte se s Musaši Mijamoto na cestu d
 Base.Heroes.hero.TigerLily_NameTygří Lily
 a
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_Desc$Zvýší zavlažení okolních budov
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_1_NameNefritový důl
 _
 7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Desc$Zvýší zavlažení okolních budov
 �
@@ -604,8 +582,6 @@ V
 <Base.Technologies.Technology_ClassicGreece_DomesticPigs_NameDomestikovaná prasata
 V
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameKrálovské jednotky
-Q
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameObřadní rytectví
 F
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Name
 Malý dům
@@ -669,8 +645,6 @@ M
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameAchaimenovský edikt
 <
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
-Q
-0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameFatimovská těžká pěchota
 h
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
 W
@@ -706,8 +680,6 @@ M
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLyceum učenců
 L
  Base.BuildingTypes.goldMine_NameZlatý důlZlaté dolyZlatých dolů
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_4_NameNefritový důl
 M
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_NameLuxusní zlatý důl
 r
@@ -866,8 +838,8 @@ M
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameRybářské sítě
 N
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameMistrovství kopí
-F
-;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
+B
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NamePec
 I
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_NameStřední dům
 y
@@ -886,8 +858,6 @@ R
 <Base.Technologies.Technology_ByzantineEra_NatureSpirits_NameDuchové přírody
 A
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_NameRadnice
-B
-0Base.Buildings.Building_Mayas_Home_Worker_6_NameDům dělníka
 D
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Name
 Malý dům
@@ -935,8 +905,6 @@ T
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>Střelecký úder</style>Vrhne kunai na nepřítele s nejnižším aktuálním HP a způsobí <style=basestat>{dmg_percentage}</style> poškození. Upřednostňuje hrdiny.
 O
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameSoumrakové harpunáři
-b
-0Base.Buildings.Building_Mayas_Home_Worker_1_Desc.Vyrábí kakao a přidá pracovníka do města
 y
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc@Vyrábí velkou hromadu mincí a přidá 2 pracovníky do města
 C
@@ -951,9 +919,6 @@ $
 Base.BuildingTypes.ResidenceDomy
 B
 1Base.Buildings.Building_China_Home_Premium_1_NameLuxusní dům
-L
-#Base.BuildingGroups.chronicler_Name
-KronikářKronikářiKronikářů
 S
 :Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameRytířská kavalerie
 K
@@ -969,8 +934,6 @@ e
 Malý dům
 B
 1Base.Buildings.Building_China_Home_Premium_3_NameLuxusní dům
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescVyrábí masky předků
 %
 Base.Cities.City_China_NameČína
 \
@@ -1168,8 +1131,6 @@ T
 ?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameRytířské kódy
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_4_DescVyrábí nefrit
 <
 /Base.TreasureHuntDifficulties.Difficulty_3_Name	Učeň II
 V
@@ -1205,10 +1166,10 @@ M
 ;Base.Buildings.Building_FeudalAge_Workshop_Carpenter_1_DescVyrábí prkna
 [
 &Base.BuildingGroups.spiceMerchant_NameKořenářstvíKořenářstvíKořenářství
-_
-EBase.Technologies.Technology_RomanEmpire_ShieldwallFortification_NamePevnost štítové zdi
 @
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_Name	Trapeziti
+_
+EBase.Technologies.Technology_RomanEmpire_ShieldwallFortification_NamePevnost štítové zdi
 G
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_NameVenkovská farma
 <
@@ -1263,12 +1224,8 @@ O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_NameVýrobna papyrusu
 q
 6Base.Buildings.Building_IberianEra_Home_Average_3_Desc7Vyrábí kupu mincí a přidá 2 pracovníky do města.
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_3_DescVyrábí nefrit
 4
 ,Base.Technologies.Technology_Egypt_Ankh_NameAnch
-?
-0Base.Buildings.Building_Mayas_Home_Priest_1_NameDům kněze
 >
 5Base.Technologies.Technology_StoneAge_Slingshots_NamePraky
 O
@@ -1299,8 +1256,8 @@ M
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameSociální změna
 >
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
-|
-8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
 �
@@ -1320,10 +1277,10 @@ Tichý tah
 Base.Units.Unit_MarieCurie_NameMarie Curie
 q
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
+�
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 B
 0Base.Abilities.hero_battle_ability.HuaMulan_NameDračí pomsta
-
-;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 R
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_NameKasárny pěchoty
 �
@@ -1377,10 +1334,6 @@ H
 )Base.Regions.region.VolcanicJungle_6_NameHrady Kastilie
 Q
 8Base.Technologies.Technology_Vikings_GlacierMastery_NameMistrovství ledovců
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidiánový důl
-D
-0Base.Buildings.Building_Mayas_Home_Worker_1_NameDům pracovníka
 [
 >Base.Technologies.Technology_FeudalAge_ImprovedBeekeeping_NameVylepšení včelařství
 i
@@ -1404,14 +1357,10 @@ O
 B
 4Base.Technologies.Technology_IberianEra_Tattoos_Name
 Tetování
-R
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_NameŘezbářství masek
 u
 1Base.Buildings.Building_China_Home_Premium_3_Desc@Vyrábí velkou hromadu Wu Zhu a přidá 3 pracovníky do města
 E
 3Base.Technologies.Technology_China_PaddyFields_NameRýžová pole
-L
-2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameFatimovská kavalérie
 $
 Base.Units.Unit_Menes_NameMenés
 L
@@ -1442,8 +1391,8 @@ S
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NamePřesná kronika
 t
 6Base.Buildings.Building_IberianEra_Home_Premium_1_Desc:Vyrábí hromady mincí a přidá 2 pracovníky do města.
-T
-7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenstaufenskí střelci
+Y
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenštaufští lučištníci
 =
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSůl
 �
@@ -1504,8 +1453,8 @@ V
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NameVýrobna porcelánu
 L
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_NameVenkovská farma
-L
-5Base.Abilities.hero_battle_ability.OracleOfDephi_NameVěštcovo znamení
+M
+5Base.Abilities.hero_battle_ability.OracleOfDephi_NameZnamení věštkyně
 `
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc#Vyrábí zlaté vavřínové věnce
 w
@@ -1518,6 +1467,8 @@ Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_6_DescVyrábí motýlí kokony
 k
 2Base.Buildings.Building_Vikings_Home_Sailor_4_Desc5Vyrábí haléře a přidá 2 námořníky do města.
+S
+:Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Cavalry_NameRytířská kavalerie
 g
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Desc.Výrazně zvýší zavlažení okolních budov
 9
@@ -1546,8 +1497,6 @@ L
 7Base.Technologies.Technology_IberianEra_SunCompass_NameSluneční kompas
 [
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
-F
-3Base.Buildings.Building_Mayas_Aviary_Average_2_DescVyrábí peří
 (
 Base.Ages.FeudalAge_Decade
 1000 n. l.
@@ -1575,8 +1524,8 @@ DBase.Buildings.Building_HighMiddleAges_Workshop_SpiceMerchant_1_NameKořená�
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.NubianMercenary_1_Name�<style=ability_label>Úder na blízko</style>Zasáhne aktuální cíl dvakrát pro celkové poškození <style=basestat>{dmg_percentage}</style>.
-�
-TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name�<style=ability_label>Buff</style>Queen Seondeok unleashes her royal command, bestowing the largest cluster of allies with crowd control immunity for <style=basestat>{duration}</style>. Her inspiring aura enhances their attack speed by <style=basestat>{atk_speed_buff}</style> and movement speed by <style=basestat>{move_speed_buff}</style> across a wide radius of <style=basestat>{range}</style>.
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name�<style=ability_label>Posílení</style>Královna Sondok vydává svůj královský rozkaz a propůjčí největšímu shluku spojenců imunitu vůči ovládání davu na <style=basestat>{duration}</style>. Její inspirující aura zvyšuje rychlost jejich útoku o <style=basestat>{atk_speed_buff}</style> a rychlost pohybu o <style=basestat>{move_speed_buff}</style> v širokém okruhu <style=basestat>{range}</style>.
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_DescVyrábí hromadu papyrusu
 r
@@ -1668,8 +1617,6 @@ O
 :Base.Technologies.Technology_FeudalAge_RidgeAndFurrow_NameHřeben a brázda
 c
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_NameKompaktní kulturní památka
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_3_NameNefritový důl
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name�<style=ability_label>Úder na blízko | Krvácení</style>Prokláčí aktuální cíl čtyřikrát, přičemž každé bodnutí způsobí zvýšené poškození, celkem <style=basestat>{dmg_percentage}</style> poškození. Každé bodnutí má <style=basestat>{chance_percentage}</style> šanci způsobit, že protivník bude krvácet za <style=basestat>{dmg_percentage_bleed}</style> během <style=basestat>{duration}</style>.
 o
@@ -1699,8 +1646,6 @@ g
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc/Vyrábí mince a přidá pracovníka do města.
 y
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Desc;Vyrábí velké množství jídla během dlouhého období.
-R
-3Base.Buildings.Building_Mayas_Quarry_Premium_2_DescVyrábí nefrit a obsidián
 I
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_NameStřední dům
 L
@@ -1709,12 +1654,10 @@ L
 %Base.Units.Unit_GeorgeWashington_NameGeorge Washington
 F
 4Base.Abilities.hero_battle_ability.TribalHealer_NameLéčivá mast
-~
-*Base.BuildingGroups.premiumRitualSite_NameLuxusní obřadní místoLuxusní obřadní místaLuxusní obřadních míst
 Q
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NameMotýlí palouk
-C
-8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFurnace
+?
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NamePec
 P
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_3_NameKasárny pěchoty
 H
@@ -1758,8 +1701,6 @@ _
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc$Zvýší zavlažení okolních budov
 �
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescRJednotky těžké pěchoty jsou velké a brání jednotkám kavalerie v průjezdu.
-[
-#Base.BuildingGroups.jadeQuarry_NameNefritový důlNefritové dolyNefritových dolů
 Q
 9Base.Technologies.Technology_MinoanEra_HeavyInfantry_NameMinotauří předvoj
 e
@@ -1774,6 +1715,8 @@ H
 5Base.Buildings.Building_StoneAge_Farm_Domestic_1_NameMěstská farma
 �
 &Base.Units.Unit_ArtemisiaIOfCaria_Desc�Vzduch se naplní šípy a výkřiky, neboť Artemisia I. z Karie tě navštěvuje! Tato námořní velitelka a královna z 5. století př. n. l. se zapsala do dějin svým lstivým vedením a strategickou genialitou.<br><br>Jako důvěryhodný spojenec krále Xerxa během řecko-perských válek vedla Artemisia v bitvě u Salamíny proti Řekům svou flotilu lstivě a mazaně, měnila plachty, aby oklamala nepřátele . Její rady a námořní dovednosti jí vynesly respekt mezi spojenci i protivníky.<br><br>Artemisiin odkaz neohrožené a inteligentní vůdkyně, která se vzepřela očekáváním své doby, nepřestává inspirovat a ukazuje silný vliv žen v dějinách. Jedna z verzí jejího působení je Teslova vražedkyně. Ta vaše je tou dobrou verzí, nebo v to alespoň doufáte!
+Z
+;Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Infantry_NameRytířovi nosiči štítů
 B
 /Base.Wonders.Wonder_Capital_HangingGardens_NameVisuté zahrady
 S
@@ -1836,12 +1779,12 @@ g
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_2_Name
 Malý dům
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Léčení</style>Uroboros dává svému držiteli schopnost odčerpávat život a ukrást část léčení, které nepřátelští hrdinové získají ze schopností hrdinů. Držitel získá <style=basestat>{heal_steal}</style> léčení určeného nepřátelským hrdinům a promění jejich omlazení ve svou sílu.
+,
+Base.Heroes.hero.Sacagawea_Name	Sacagawea
 c
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc$Zvyšuje spokojenost okolních budov
-F
-3Base.Buildings.Building_Mayas_Aviary_Average_3_DescVyrábí peří
 �
 "Base.Units.Unit_JaguarWarrior_Desc�Aztékové věřili, že síla boha Tezcatlipoca je ztělesněna v jaguárovi, a jaguáří bojovníci nosili jeho kůži, aby získali svou moc.<br><br>Jaguáří bojovníci byli v aztécké společnosti považováni za šlechtice, kteří se osvědčili na bitevním poli, když zajali zajatce. Se svými holemi s obsidiánovou čepelí bojovali téměř neustále, protože bitva byla životním motorem aztécké říše.<br><br>Jaguáří bojovníci jsou dodnes pravděpodobně příkladem aztéckého válečnictví. Kombinovali výcvik, kulturu, náboženství a boj a věřilo se, že svými schopnostmi dokáží uklidnit samotné bohy. Na muže oblečené do zvířecích dresů je to docela působivé!
 E
@@ -1856,8 +1799,6 @@ Y
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_NameKasárny obléhacích jednotek
 9
 #Base.Heroes.hero.OracleOfDephi_NameVěštkyně z Delf
-V
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_DescVyrábí sluneční kameny
 H
 5Base.Abilities.hero_battle_ability.QueenBoudicca_NameKeltská pomsta
 <
@@ -1902,6 +1843,8 @@ d
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc$Zvyšuje spokojenost okolních budov
 O
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_NameKasárny pěchoty
+9
+%Base.Heroes.hero.ThomasJefferson_NameThomas Jefferson
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_1_DescWVčelí úl produkuje lahodný med, který se používá k výrobě medoviny v krčmě.
 �
@@ -1925,8 +1868,6 @@ a
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameStřední kulturní památka
 A
 )Base.Regions.region.TeslaStormYellow_NameŽlutá Tesla bouře
-]
-0Base.Buildings.Building_Mayas_Home_Priest_6_Desc)Vyrábí kakao a přidá kněze do města
 b
 /Base.Buildings.Building_China_Home_Small_1_Desc/Vyrábí Wu Zhu a přidá pracovníka do města
 G
@@ -1935,8 +1876,6 @@ G
 Base.Units.Unit_Confucius_Name	Konfucius
 @
 5Base.Technologies.Technology_BronzeAge_Alliances_NameAliance
-=
-Base.BuildingTypes.aviary_NameVoliéraVoliéryVoliér
 -
 Base.Heroes.hero.RobinHood_Name
 Robin Hood
@@ -2054,8 +1993,6 @@ _
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_NameMistrovství ve včelařství
 J
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_Name	Katapulty
-D
-3Base.Buildings.Building_Mayas_Quarry_Premium_2_NameLuxusní důl
 |
 3Base.Units.Unit_EarlyRome_Player_AuxiliaRiders_DescEJednotky kavalerie jsou velmi rychle a útočí na nepřátele vzadu.
 B
@@ -2109,8 +2046,8 @@ o
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 -
 Base.Ages.AgeOfTheFranks_NameVěk Franků
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heal| Shield</style>The Holy Grail enhances the holder's healing capabilities, amplifying all healing by <style=basestat>{healing_amp}</style>. When a unit is healed beyond it's maximum hitpoints, <style=basestat>{heal_to_shield_conversion}</style> of the excess healing is converted into a shield.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Léčení | Štít</style>Svatý grál zvyšuje léčitelské schopnosti držitele a zesiluje veškeré léčení o <style=basestat>{healing_amp}</style>. Když je jednotka vyléčena nad rámec svých maximálních bodů života, <style=basestat>{heal_to_shield_conversion}</style> přebytečného léčení se přemění na štít.
 M
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_NameVenkovská farma
 O
@@ -2227,15 +2164,10 @@ X
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_NameVelká kulturní památka
 Y
 ?Base.Technologies.Technology_ByzantineEra_ObsidianDeposits_NameNaleziště obsidiánu
-F
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_Name
-Kronikář
 6
 #Base.Units.Unit_AbrahamLincoln_NameAbraham Lincoln
 K
 5Base.Units.Unit_StoneAge_Animal_SabertoothTigers_NameŠavlozubí tygři
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_NameObsidiánový důl
 �
 ;Base.Buildings.Building_AgeOfTheFranks_City_CityHall_1_DescTVelká síň je centrem města. Neustále generuje malé množství mincí a jídla.
 ^
@@ -2246,16 +2178,14 @@ N
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_NameKasárny střelců
 _
 >Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_NameKompaktní kulturní památka
-?
-3Base.Buildings.Building_Mayas_Aviary_Average_3_NameVoliéra
 -
 "Base.Units.Unit_JaguarWarrior_NameOcelotl
 P
 "Base.BuildingGroups.smallWell_NameMalá studnaMalé studnyMalých studen
-7
-#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
 u
 1Base.Buildings.Building_China_Home_Premium_4_Desc@Vyrábí velkou hromadu Wu Zhu a přidá 3 pracovníky do města
+7
+#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
 x
 1Base.Buildings.Building_China_Home_Average_4_DescCVyrobí velkou hromadu Wu Zhu a přidá vašemu městu 5 dělníků
 e
@@ -2297,12 +2227,12 @@ R
 F
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_2_Name
 Malý dům
+8
+$Base.Units.Unit_ThomasJefferson_NameThomas Jefferson
 Z
 6Base.Buildings.Building_Vikings_Workshop_Tavern_1_Desc Krčma vyrábí medovinu z medu.
 ?
 .Base.Abilities.hero_battle_ability.Inanna_NameRychlý úder
-?
-0Base.Buildings.Building_Mayas_Home_Priest_6_NameDům kněze
 m
 *Base.BuildingGroups.premiumSailorPort_NameLuxusní přístavLuxusní přístavyLuxusních přístavů
 F
@@ -2402,8 +2332,8 @@ d
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Name�<style=ability_label>Ovládání mysli | Posílení</style>Uvolní svůj literární génius, přesvědčí nepřátelskou jednotku, aby zaútočila na své spojence po dobu <style=basestat>{duration}</style>. Během její kontroly je útok nepřátelské jednotky zvýšen o <style=basestat>{atk_percentage}</style>. Upřednostňuje hrdiny.
 �
 -Base.Units.Unit_EarlyRome_Player_Velites_DesceStřelecké jednotky střílejí na velkou vzdálenost a jsou účinné především proti pěchotě.
-C
-8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFurnace
+?
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NamePec
 Y
 <Base.Technologies.Technology_HighMiddleAges_Precautions_NameBezpečnostní opatření
 N
@@ -2418,8 +2348,6 @@ S
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameThralové a jarlové
 >
 )Base.Regions.region.VolcanicJungle_3_NameAnglická kolonie
-L
-5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameFatimovský velitel
 i
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc$Zvyšuje spokojenost okolních budov
 =
@@ -2602,8 +2530,6 @@ d
 :Base.Technologies.Technology_HighMiddleAges_CropSheds_Name&Přístřešky pro pěstování plodin
 �
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_DesceStřelecké jednotky střílejí na velkou vzdálenost a jsou účinní především proti pěchotě.
-=
-2Base.Buildings.Building_Mayas_City_CityHall_1_NameRadnice
 F
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameJezdci na býcích
 �
@@ -2660,6 +2586,8 @@ X
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_NameStrážci Carcassonne
 k
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_Name#Vylepšené uspořádání posádky
+�
+$Base.Units.Unit_ThomasJefferson_Desc�S Thomasem Jeffersonem můžeš pomocí pergamenu a brka vytvořit národ! Tento státník ze 17. a 18. století inspiroval Americkou revoluci, čímž umožnil vzniknout Spojeným státům americkým. Ve třiatřiceti letech se stal autorem Deklarace nezávislosti, inspirované osvícenskými ideály svobody a individuálních práv.<br><br>Sláva Thomase Jeffersona dosáhla vrcholu, když se stal prezidentem Spojených států. Vyjednával s Francií o území Louisiany a po jejím zakoupení pověřil expedicí Lewise a Clarka do této drsné země, což umožnilo americkou expanzi, která zdvojnásobila rozlohu Spojených států.<br><br>Dnes je Jefferson připomínán jako bašta liberálního myšlení: zastánce svobody myšlení, svobody projevu a racionalismu. Lincoln je hvězdou, kdykoli je poblíž!
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.MayanAstronomer_1_Name�<style=ability_label>Úder na oblast</style>Vyvolá nebeskou energii, aby zasáhl náhodnou nepřátelskou jednotku a způsobil <style=basestat>{dmg_percentage}</style> poškození. Dopad také ovlivní blízké nepřátelské jednotky v dosahu <style=basestat>{range}</style> od cíle.
 -
@@ -2696,12 +2624,8 @@ P
 $Base.Units.Unit_QueenElizabethI_Desc�Smíchejte střelbu z děla a modlitbu s královnou Alžbětou I.! Tato panovnice 16. století vládla Anglii více než čtyřicet let, v době stability a prosperity země. Byla to doba umění, válek a objevování.<br><br>Alžběta zvládala výzvy doma i v zahraničí, překonávala náboženský fanatismus (i když ne bez upálení několika lidí) a vnější války. Porážka španělské Armady upevnila její postavení impozantní vůdkyně, zatímco její mecenášství nad takovými osobnostmi, jako byl Shakespeare, znamenalo, že její vláda nebyla nikdy zapomenuta.<br><br>Alžběta, známá jako "panenská královna", protože se nikdy neprovdala, si po celou dobu své vlády udržovala moc a nezávislost. Její odkaz je plný síly, inteligence a kulturního mecenášství a zanechal nesmazatelnou stopu v anglických dějinách. Měla také pruhovaná ústa, protože jedla příliš mnoho cukru - její jméno je přesmyčkou slov "Zebří zuby jsou špína"!
 V
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_NameTechniky přepadů
-X
-&Base.BuildingGroups.premiumQuarry_NameLuxusní důlLuxusní dolyLuxusních dolů
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescWRadnice je středem tvého města. Neustále generuje malé množství mincí a jídla.
-K
-3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NameFatimovská pěchota
 g
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc$Zvyšuje spokojenost okolních budov
 X
@@ -2720,8 +2644,6 @@ L
 9Base.Technologies.Technology_RomanEmpire_UrbsAeterna_NameVěčné město
 9
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
-B
-0Base.Buildings.Building_Mayas_Home_Worker_4_NameDům dělníka
 h
 @Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
 3
@@ -2764,6 +2686,8 @@ BBase.Technologies.Technology_ByzantineEra_ObsidianProspecting_NameHledání o
 ABase.Technologies.Technology_AgeOfTheFranks_BattleAxeMastery_NameMistrovství bojové sekery
 T
 <Base.Technologies.Technology_IberianEra_GambesonPadding_NameProšívaná výplň
+O
+8Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Siege_NameRytířův katapult
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Plato_15_Name�<style=ability_label>Oslabení | Jed</style>Platón mluví v alegoriích, což mate nepřátelské jednotky a snižuje jejich přesnost o <style=basestat>{accuracy_percentage}</style> a ÚTOK o <style=basestat>{atk_percentage}</style> z Platónova ÚTOKU na <style=basestat>{duration}</style>. Ovlivněné jednotky utrpí poškození <style=basestat>{dmg_percentage}</style> během <style=basestat>{dmg_duration}</style>.
 A
@@ -2799,8 +2723,8 @@ I
 4Base.Abilities.hero_battle_ability.LouisPasteur_NameAlchymická pomoc
 W
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NameMistrovství stavby lodí
-|
-8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 ^
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescOdemkne Královskou stráž
 ]
@@ -2839,8 +2763,6 @@ K
 9Base.Buildings.Building_ClassicGreece_Home_Average_2_NameStřední dům
 N
 9Base.Technologies.Technology_IberianEra_ShockCharges_NameŠokové nálože
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_DescVyrábí obsidián
 J
 <Base.Technologies.Technology_KingdomOfSicily_Monastries_Name
 Kláštery
@@ -2881,6 +2803,8 @@ H
 1Base.Technologies.Technology_MinoanEra_Siege_NameMínojský prakomet
 _
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_NameKasárny těžkooděnců
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.GuardianLion_1_Name�<style=ability_label>Očištění</style>Strážný lev posiluje svého držitele v odolnosti proti ovládání, což mu umožňuje ignorovat další případ omráčení každých <style=basestat>{cooldown}</style> vteřin. 
 J
 6Base.Abilities.hero_battle_ability.WilliamWallace_NameStatečné srdce
 �
@@ -2912,8 +2836,6 @@ y
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc<Vyrábí velké množství jídla během krátkého období.
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>Úder na blízko | Štít</style>Probodne aktuální cíl zpoza svého štítu, způsobí <style=basestat>{dmg_percentage}</style> poškození a získá <style=basestat>{hp_percentage}</style> svého základního poškození jako štít.
-S
-0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameFatimovské obléhací jednotky
 M
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescOdemkne Hastati
 E
@@ -2956,16 +2878,12 @@ d
 ABase.Technologies.Technology_ByzantineEra_FlightPathAnalysis_NameAnalýza letové trasy
 L
 1Base.Units.Unit_TreasureHunt_Red_Harpoonists_NameŠarlatoví harpunisté
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�<style=ability_label>Oslabení</style> Cílí na největší skupinu nepřátelských jednotek, snižuje OBR o <style=basestat>{atk_percentage}</style> z ÚTOKU Orákula po dobu <style=basestat>{duration}</style> v dosahu <style=basestat>{range}</style>.
-v
-1Base.Buildings.Building_Mayas_Home_Premium_2_DescAVyrábí hromadu kakaa a přidá 1 dělníka a 1 kněze do města
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�<style=ability_label>Oslabení</style> Cílí na největší skupinu nepřátelských jednotek, snižuje OBR o <style=basestat>{atk_percentage}</style> z ÚTOKU věštkyně po dobu <style=basestat>{duration}</style> v dosahu <style=basestat>{range}</style>.
 b
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_PirateDen_NamePirátské doupě
 Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_3_DescVyrábí motýlí kokony
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_5_NameNefritový důl
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_Name�<style=ability_label>Střelecký Úder | Úder na oblast | Omráčení</style>Způsobí <style=basestat>{dmg_percentage}</style> poškození aktuálnímu cíli a omráčí ho na <style=basestat>{stun_duration}</style>. Nepřátelské jednotky v dosahu <style=basestat>{range}</style> kolem cíle obdrží <style=basestat>{dmg_percentage_around}</style> poškození.
 i
@@ -2990,8 +2908,6 @@ N
 :Base.Buildings.Building_Vikings_FishingPier_Average_5_DescURybářská mola vysílají lodě lovit ryby pro hladové pracovníky a námořníky.
 I
 4Base.Units.Unit_BronzeAge_SumerianEmpire_Inanna_NameInanniny amazonky
-{
-2Base.Buildings.Building_Mayas_City_CityHall_1_DescERadnice je centrem města. Neustále generuje malé množství kakaa.
 s
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_Desc;Vyrábí malé množství jídla během krátkého období.
 >
@@ -3160,8 +3076,6 @@ M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_4_DescRVyšli expediční lodě, které budou získávat poklady s keramikou nebo zlatem.
 e
 3Base.Buildings.Building_BronzeAge_Home_Small_1_Desc.Vyrábí mince a přidá pracovníka do města
-`
-0Base.Buildings.Building_Mayas_Home_Worker_4_Desc,Vyrábí kakao a přidá dělníka do města
 D
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameVrhači oštěpů
 t
@@ -3196,8 +3110,6 @@ u
 5Base.Units.Unit_RomanEmpire_GermanicTribes_Gedri_NameGedri
 N
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVitruviánský vír
-E
-&Base.BuildingGroups.averageAviary_NameVoliéraVoliéryVoliér
 1
  Base.Units.Unit_SiouxShaman_NameSedící Býk
 u
@@ -3216,8 +3128,6 @@ o
 5Base.Buildings.Building_FeudalAge_Home_Average_3_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
 H
 7Base.Technologies.Technology_FeudalAge_BurialSites_NamePohřebiště
-F
-3Base.Buildings.Building_Mayas_Aviary_Average_1_DescVyrábí peří
 l
 VBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Average_NameReaktor prázdnoty
 D
@@ -3233,8 +3143,6 @@ G
 <Base.Technologies.Technology_AgeOfTheFranks_Skirmishers_NameRojnice
 u
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_Desc;Vyrábí velké množství jídla během dlouhého období.
-B
-0Base.Buildings.Building_Mayas_Home_Worker_5_NameDům dělníka
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NameVýrobna papyrusu
 6
@@ -3266,8 +3174,6 @@ U
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescUVyšli expediční lodě, které budou získávat poklady s drahokamy nebo kořením.
 a
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc$Zvýší zavlažení okolních budov
-�
-*Base.BuildingGroups.averageRitualSite_NameStřední obřadní místoStřední obřadní místaStředních obřadních míst
 ^
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
 E
@@ -3293,8 +3199,6 @@ D
 Piktogramy
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Name�<style=ability_label>Úder na blízko | Krvácení | Posílení</style>Švihá mečem na svůj aktuální cíl pětkrát, přičemž každým úderem způsobí zvýšené poškození, celkem <style=basestat>{dmg_percentage}</style> poškození. Každý úder má <style=basestat>{chance_percentage}</style> šanci způsobit, že protivník bude krvácet a utrpí <style=basestat>{dmg_percentage_bleed}</style> poškození během <style=basestat>{duration}</style>. Také zvýší Lancelotovo kritické poškození o <style=basestat>{crit_dmg_percentage}</style> a jeho šanci na kritický zásah o <style=basestat>{crit_chance_percentage}</style> na <style=basestat>{buff_duration}</style>.
-�
-2Base.Buildings.Building_Mayas_City_CityHall_2_DescJVelká síň je centrem města. Neustále generuje malé množství kakaa.
 M
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_NameStřední dům
 d
@@ -3321,8 +3225,8 @@ V
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameRuiny s novým účelem
 Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameKasárny kavalerie
-W
-;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameHohenstaufenský velitel
+Y
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameHohenštaufští mečíři
 R
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_DescVyrábí hromady jídla.
 F
@@ -3335,8 +3239,6 @@ U
 8Base.Technologies.Technology_FeudalAge_PlateBarding_NamePlátová zbroj pro koně
 H
 5Base.Buildings.Building_China_RiceFarm_Average_6_NameRýžová farma
-H
-5Base.Buildings.Building_Mayas_Workshop_Premium_1_NameLuxusní dílna
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_2_NameKanál
 D
@@ -3345,8 +3247,6 @@ Y
 ABase.Technologies.Technology_IberianEra_EquestrianExcellence_NameJezdecká dokonalost
 �
 Base.Units.Unit_Leonidas_Desc�Schovejte kopí a poslouchejte, neboť dnes večer uctíme Leonida! Tento odvážný spartský král věřil, že je z rodu Hérakla, a příběhy o jeho posledním střetu jsou zapsány v dějinách kamenem a inkoustem.<br><br>S 300 Sparťany po boku bojoval proti Peršanům při jejich invazi do Řecka v 5. století a odpověděl na výzvu k boji, když se ostatní báli postavit. Tento statečný čin nebyl nikdy zapomenut a Leonidas se stal symbolem hrdinství nejen v Řecku.<br><br>On i jeho Sparťané byli u Thermopyl do jednoho pobiti, ale Leonidase zachránil, zpět do doby kamenné s amnézií, jistý Albert Einstein. Kupodivu náhodou vynalezl sluneční brýle o několik století dříve: chtěl, aby jeho muži vždy bojovali ve stínech.
-B
-1Base.Buildings.Building_Mayas_Home_Premium_2_NameLuxusní dům
 J
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameVýrobna medoviny
 ,
@@ -3363,8 +3263,6 @@ Y
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_Desc@Vyrábí velkou hromadu mincí a přidá 2 pracovníky do města
 s
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_Desc;Vyrábí malé množství jídla během krátkého období.
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_5_DescVyrábí nefrit
 d
 1Base.Buildings.Building_Egypt_Home_Premium_6_Desc/Vyrábí debeny a přidá pracovníka do města
 7
@@ -3432,8 +3330,6 @@ d
 2Base.Buildings.Building_StoneAge_Home_Small_2_Desc.Vyrábí mince a přidá pracovníka do města
 R
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescVyrábí mozaiky
-R
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescVyrábí peří
 2
 &Base.Regions.region.FrozenFjord_4_NameLes víl
 J
@@ -3567,8 +3463,6 @@ _
 <Base.Technologies.Technology_FeudalAge_PolearmManeuvers_NameManévry s tyčovými zbraněmi
 I
 2Base.Units.Unit_StoneAge_Player_HeavyInfantry_NameBronzový strážce
-b
-0Base.Buildings.Building_Mayas_Home_Worker_2_Desc.Vyrábí kakao a přidá pracovníka do města
 I
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_NameMěstská farma
 E
@@ -3600,8 +3494,6 @@ T
 Base.Buildings.default_NameBudovaBudovyBudov
 G
 5Base.Buildings.Building_FeudalAge_Home_Average_3_NameStřední dům
-h
-'Base.BuildingGroups.obsidianQuarry_NameObsidiánový důlObsidiánové dolyObsidiánových dolů
 [
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_2_NameKasárny těžkooděnců
 G
@@ -3647,8 +3539,6 @@ d
 Hatšepsut
 e
 3Base.Buildings.Building_MinoanEra_Home_Small_1_Desc.Vyrábí mince a přidá pracovníka do města
-`
-0Base.Buildings.Building_Mayas_Home_Worker_5_Desc,Vyrábí kakao a přidá dělníka do města
 ]
 @Base.Technologies.Technology_ByzantineEra_GregorianCalendar_NameGregoriánský kalendář
 q
@@ -3659,8 +3549,6 @@ G
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_NameLuxusní farma
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Medusa_15_Name�<style=ability_label>Úder na oblast | Omráčení | Otrava</style>Upře svůj pohled na největší skupinu nepřátelských jednotek a aplikuje na ně jed v dosahu <style=basestat>{range}</style>. Jed způsobí <style=basestat>{dmg_percentage}</style> poškození během <style=basestat>{duration}</style>, sníží rychlost útoku o <style=basestat>{atk_speed_percentage}</style> a zanechá postižené jednotky omráčené na <style=basestat>{stun_duration}</style>.
-B
-2Base.Buildings.Building_Mayas_City_CityHall_2_NameVelká síň
 u
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
 H
@@ -3691,8 +3579,6 @@ D
 %Base.Units.Unit_BenjaminFranklin_Desc�Benjamin Franklin je tu, aby svými slovy bleskově rozvětvil - a to doslova! Tento mnohostranný vědec z 18. století byl nejen otcem zakladatelem Spojených států amerických, který se podílel na vypracování Deklarace nezávislosti a ústavy, ale také spisovatelem, vynálezcem a vědcem.<br><br>Franklin byl prvním objevitelem v oblasti elektřiny. Použil draka, aby z mraku nasbíral "elektrický oheň", a dokázal tak, že blesk je elektrický. Vynalezl tedy hromosvod. Vynalezl také bifokální brýle a studoval oceány.<br><br>Franklin se však asi nejvíce proslavil jako diplomat a spisovatel. Franklinovo umění zacházet se slovy zajistilo Francii podporu v americké revoluci a bylo zachyceno v knihách, které se dodnes připomínají. Například by vás mohl obohatit: byl to on, kdo jako první prohlásil, že dvě jisté věci v životě jsou smrt a daně!
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>Úder na oblast | Uzdravení | Posílení</style>Volá po božské pomoci zaměřující se na největší shluk nepřátelských jednotek, způsobující <style=basestat>{dmg_percentage}</style> poškození v dosahu <style=basestat>{range}</style>. Také uzdravuje všechny přátelské jednotky ve stejné oblasti o <style=basestat>{hp_percentage}</style> z její základního poškození. Ovlivněné přátelské jednotky získají <style=basestat>{atk_percentage}</style> z její ÚTOKU jako ÚTOK na <style=basestat>{duration}</style>.
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_2_DescVyrábí nefrit
 ]
 %Base.BuildingGroups.incenseMaker_NameVýrobna kadidelVýrobny kadidelVýroben kadidel
 r
@@ -3724,8 +3610,6 @@ M
 Base.HeroClass.DefenderObránce
 G
 /Base.Continents.continent.EmeraldHighlands_NameSmaragdové výšiny
-d
-5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc+Vyrábí masky předků a sluneční kameny
 M
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescVyrábí zlatou rudu
 �
@@ -3738,8 +3622,8 @@ K
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_NameKamenictví
 [
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameBalistická inovace
-V
-9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameHohenstaufenská pěchota
+^
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_Name!Hohenštaufská těžká pěchota
 ,
 Base.Ages.EarlyRome_Decade750 př. n. l.
 B
@@ -3799,8 +3683,6 @@ O
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameKasárny kavalerie
 �
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DescTVelká síň je centrem města. Neustále generuje malé množství mincí a jídla.
-Y
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_NameObřadní oděvnictví
 '
 Base.Ages.FeudalAge_Start
 1000 n. l.
@@ -3951,8 +3833,6 @@ Q
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_1_NameKasárny pěchoty
 \
 %Base.BuildingGroups.domesticFarm_NameMěstská farmaMěstské farmyMěstských farem
-D
-0Base.Buildings.Building_Mayas_Home_Worker_2_NameDům pracovníka
 A
 2Base.Abilities.hero_battle_ability.Hatshepsut_NameKlid Théby
 �
@@ -3975,8 +3855,8 @@ Z
 =Base.Technologies.Technology_IberianEra_SafetyMechanisms_NameBezpečnostní mechanismy
 X
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_DescVyrábí anchy a zlaté masky
-K
-<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyal Rally
+[
+<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameKrálovské shromáždění
 R
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescOdemkne rojnice
 b
@@ -3989,8 +3869,6 @@ B
 .Base.Abilities.hero_battle_ability.Geisha_NameÚder Sakury
 �
 Base.Units.Unit_Tansen_Desc�Sledujte, jak Mian Tansen svou hudbou přivolává déšť z nebes! Tento hudebník ze 16. století byl jedním z "devíti klenotů" císaře Akbara, nejvýznamnějších lidí na indickém dvoře.<br><br>Mian Tansen (což znamená "učený") vytvořil Gwalior Gharana, první školu severoindické hudby. Tansen vystupoval od svých pěti let a celý život byl vynikajícím zpěvákem a hudebníkem.<br><br>Jeho legendy jsou nesčetné. Jeho písně prý dokázaly zkrotit divoké slony a uklidnit ptáky, rozdělat oheň a přivolat dešťové bouře. Gwalior, kde založil svou školu, je dodnes známý jako město hudby! 
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescVyrábí obsidián
 s
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc<Vyrábí velké množství jídla během krátkého období.
 e
@@ -4011,8 +3889,8 @@ B
 /Base.Abilities.hero_battle_ability.Dracula_NameEsence vampýra
 F
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_NamePísař
-j
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc/Podstatně zvyšuje spokojenost okolních budov
++
+Base.Units.Unit_Sacagawea_Name	Sacagawea
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Name
 Malý dům
@@ -4054,8 +3932,8 @@ I
 :Base.Buildings.Building_Vikings_FishingPier_Premium_5_Desc|Luxusní rybářská mola vysílají lodě, které loví tuny ryb, aby zásobily všechny hladové dělníky a námořníky.
 S
 ABase.Technologies.Technology_AgeOfTheFranks_PopulationGrowth_NameRůst populace
-D
-9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFurnace
+@
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_NamePec
 [
 =Base.Buildings.Building_AgeOfTheFranks_Workshop_Scribe_1_DescVyrábí voskové pečetě
 [
@@ -4074,8 +3952,6 @@ V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_NameLuxusní papyrusové pole
 O
 ;Base.Technologies.Technology_IberianEra_PerfectedHoney_NameZdokonalený med
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_2_NameNefritový důl
 3
 'Base.Continents.continent.Panganea_NamePanganea
 k
@@ -4144,8 +4020,6 @@ G
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_NameOslí farmy
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name�<style=ability_label>Úder na oblast | Oslabení</style>Zasáhne aktuální cíl, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Ovlivněné jednotky mají sníženou přesnost o <style=basestat>{accuracy_percentage}</style> na <style=basestat>{duration}</style>.
-]
-0Base.Buildings.Building_Mayas_Home_Priest_2_Desc)Vyrábí kakao a přidá kněze do města
 X
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameTheodosiánské hradby
 D
@@ -4182,16 +4056,14 @@ P
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameKrálovské jednotky
 N
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameVzestup Vikingů
-�
-<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_DescYVyrábí popel a pec lze také použít k získání dalšího popela přeměnou surovin.
+�
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 J
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NameŠíp vůdce hordy
 /
 $Base.Heroes.hero.EgyptianVizier_NameImhotep
 L
 8Base.Technologies.Technology_FeudalAge_FuneralAtSea_NamePohřeb na moři
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_DescVyrábí obsidián
 �
 #Base.Units.Unit_AbrahamLincoln_Desc�Bojujte za svobodu s Abrahamem Lincolnem, 16. prezidentem Spojených států! Tento státník vedl v 19. století národ během občanské války a neúnavně pracoval na ukončení otroctví. Narodil se ve srubu a jeho skromné začátky hluboce formovaly jeho charakter a styl vedení.<br><br>Lincolnův závazek zachovat Unii a jeho vydání Proklamace o osvobození měly zásadní význam pro přetvoření hodnot národa. Jeho Gettysburská řeč, známá svou výmluvností, zůstává jedním z nejslavnějších projevů v americké historii.<br><br>Přestože Lincoln čelil obrovským výzvám, jeho vůdčí schopnosti a oddanost rovnosti zanechaly trvalý dopad. Jeho zavraždění znamenalo tragický konec jeho prezidentství, ale ne v této časové linii: unikl časovým portálem a přistál v době kamenné!
 V
@@ -4231,8 +4103,6 @@ LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DesciRybářská mola vysílají lodě lovit ryby, aby zásobily všechny hladové pracovníky a námořníky.
 G
 7Base.Technologies.Technology_MinoanEra_Shepherding_NamePastevectví
-v
-*Base.BuildingGroups.ceremonyOutfitter_NameObřadní oděvnictvíObřadní oděvnictvíObřadních oděvnictví
 +
 Base.Heroes.hero.Tansen_NameMian Tansen
 K
@@ -4377,10 +4247,10 @@ P
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_3_NameKasárny střelců
 *
 Base.Units.Unit_Tansen_NameMian Tansen
+�
+Base.Units.Unit_Sacagawea_Desc�Zmapuj budoucnost národů po boku Sacagawei! Tato šošonská průzkumnice 17. a 18. století byla tlumočnicí výpravy Lewise a Clarka, mise pověřené Thomasem Jeffersonem k průzkumu území Louisiany. Díky ní bylo zajištěno západní rozšíření a budoucnost Spojených států.<br><br>Při setkání s oběma průzkumníky ve Fort Mandan se Sacagaweina stala nepostradatelným průvodcem. Její přítomnost pomáhala ujišťovat o mírových úmyslech výpravy a její znalost krajiny udržovala výpravu v bezpečí.<br><br>Sacagawea je vzpomínána jako symbol odvahy domorodých amerických žen, uctívána v románech i v historii. Ve věku 25 let, přestože mnozí věří, že zemřela, ji její zvědavost zavedla do časového portálu ukrytého pod horami. Ani nepotřebovala Einsteina, aby ji přivolala! Nyní v minulosti prozkoumává údolí a kopce tohoto nového světa, navždy zvědavá.
 Y
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_NameKasárny obléhacích jednotek
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_NameObsidiánový důl
 E
 5Base.Technologies.Technology_FeudalAge_TaflGames_NameTaflové hry
 �
@@ -4461,8 +4331,6 @@ W
 $Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 U
 5Base.Buildings.Building_Egypt_GoldMine_Premium_1_DescVyrábí hromadu zlaté rudy
-?
-0Base.Buildings.Building_Mayas_Home_Priest_2_NameDům kněze
 1
 Base.BuildingGroups.MediumFarmMěstská farma
 ?
@@ -4552,12 +4420,8 @@ M
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_NameLuxusní zlatý důl
 �
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_DescDAkademie hrdinů produkuje body zkušeností za cenu bodů výzkumu.
-?
-3Base.Buildings.Building_Mayas_Aviary_Average_1_NameVoliéra
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_4_DescWVčelí úl produkuje lahodný med, který se používá k výrobě medoviny v krčmě.
-M
-#Base.BuildingGroups.priestHome_NameDům knězeDomy knězeDomů kněze
 :
 1Base.Technologies.Technology_EarlyRome_Domus_NameDomus
 S
@@ -4602,8 +4466,8 @@ Q
 =
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Name
 Šermíři
-^
-6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_Name$Hohenstaufenské obléhací jednotky
+S
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameHohenštaufský trebuchet
 w
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_Desc<Vyrábí velké množství jídla během krátkého období.
 �
@@ -4662,8 +4526,6 @@ L
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_Name	Hoplíté
 �
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_DescIKheshigští jezdci jsou vysoce specializovaní a obratní lučištníci.
-3
-Base.BuildingTypes.quarry_NameDůlDolyDolů
 =
 /Base.Buildings.Building_China_Home_Small_1_Name
 Malý dům
@@ -4711,8 +4573,8 @@ F
 9Base.Technologies.Technology_ByzantineEra_Trapezites_Name	Trapeziti
 c
 )Base.BuildingGroups.averageCamelFarm_NameVelbloudí farmaVelbloudí farmyVelbloudích farem
-H
-=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFurnace
+D
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NamePec
 w
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_Desc;Vyrábí malé množství jídla během krátkého období.
 ^
@@ -4789,8 +4651,6 @@ Q
 -
 Base.Units.Unit_VikingJarl_Name
 Erik Rudý
-U
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_NameStřední obřadní místo
 M
 :Base.Technologies.Technology_IberianEra_FjordDominion_NameKrajina fjordů
 6
@@ -4959,16 +4819,14 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_DescUVyšli expediční lodě, které budou získávat poklady s drahokamy nebo kořením.
 K
 (Base.BuildingGroups.averageMerchant_Name	Kupectví	Kupectví	Kupectví
-G
-0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
+F
+0Base.Abilities.hero_battle_ability.YiSunSin_NamePalba želví lodi
 �
 Base.Units.Unit_RamsesII_Desc�Pláně se budou třást pod koly vozů, neboť Ramses Veliký spojil svou sílu s tvou. Tento faraon ze 13. století př. n. l. se proslavil svými taženími proti Chetitům, Núbijcům a Libyjcům. Bitva u Kadeše proti Chetitům vyústila v jednu z prvních mírových smluv v historii.<br><br>Kromě vojenských úspěchů byl Ramses II. také plodným stavitelem, který nechal postavit velkolepé stavby, jako jsou chrámy v Abú Simbel a Ramesseum, a navždy tak zanechal svou stopu ve světě.<br><br>Ramses II. je připomínán jako největší faraon největšího egyptského království, jehož 66letá vláda formovala kulturní a architektonické dědictví Egypta. Řekové ho nazývali Ozymandias, pod tímto jménem byl zvěčněn v poezii. Když uvidíte Ramsese, poklekněte!
 T
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameRámování dřeva
 A
 +Base.Regions.region.EmeraldHighlands_2_NameRůžové panství
-]
-0Base.Buildings.Building_Mayas_Home_Priest_3_Desc)Vyrábí kakao a přidá kněze do města
 X
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_NameSystém otevřeného pole
 P
@@ -4997,8 +4855,8 @@ Q
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescOdemkne Trapezity
 �
 Base.Units.Unit_TomoeGozen_Desc�Loajalita. Krása. Vítězství. To jsou zásady Tomoe Gozen, samurajky. S katanou v ruce a až tisícovkou vojáků za zády bojovala ve válce Genpei pod velením Minamota no Jošinaka.<br><br>Nakonec Minamota opustili všichni jeho vojáci kromě několika málo, dokonce i jeho vlastní rodina. Nikdy však ne Tomoe Gozen. Když v noci prchali z Kjóta, pokusili se jejich ústup zastavit dva soupeřící generálové. Jednoho zabila a druhého nechala žít s hanbou, že byl poražen.<br><br>Ačkoli zbytek jejího příběhu není znám, nikdy nebude zapomenuta. Díky své věrnosti a síle se stala symbolem pro ty, kteří bojují proti očekávání, a i dnes je její příběh převyprávěn ve filmech a anime.
-�
-=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 R
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_NameKasárny střelců
 N
@@ -5042,6 +4900,8 @@ H
 EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NamePískovcové základy
 L
 #Base.BuildingGroups.stoneMason_NameKamenictvíKamenictvíKamenictví
+S
+9Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Archer_NameLučištníci rytíře
 P
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_NameMayští lučištníci
 o
@@ -5087,8 +4947,6 @@ h
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Útok na blízko | Omráčení</style>Obratně zasáhne aktuální cíl svou holí, způsobí <style=basestat>{dmg_percentage}</style> poškození a má <style=basestat>{chance}</style> šanci, že ho omráčí na <style=basestat>{duration}</style>.
 �
 &Base.Units.Unit_PhilipIIOfMacedon_Desc�Bojujte po boku vizionáře, který přivedl Řecko na buben! Filip II., makedonský král ze 4. století př. n. l., je proslulý svou vojenskou zdatností a výboji a stojí v čele vzestupu Makedonie.<br><br>Filip převzal vládu nad královstvím uprostřed krize, na samém počátku své vlády porazil útočníky a poté zavedl vlastní inovaci: makedonskou falangu vyzbrojenou šestimetrovými kopími. S vynikající armádou vedl tažení proti řecké pevnině a uzavřel spojenectví s klíčovými poleis na poloostrově.<br><br>Do své smrti byl Filip jednookým válečným hrdinou, který díky své genialitě sjednotil Řecko do Korintské ligy a připravoval se na invazi do Persie, když byl zavražděn. Ani to ho však nemohlo zadržet: byl zbožštěn a uctíván jako bůh, zatímco jeho syn Alexandr pokračoval v jeho odkazu. 
-?
-3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVoliéra
 8
 "Base.Units.Unit_QueenBoudicca_NameKrálovna Boudicca
 X
@@ -5172,8 +5030,6 @@ A
 Malý dům
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_15_Name�<style=ability_label>Úder na oblast</style>Způsobuje explozi na aktuálním cíli, udělující <style=basestat>{dmg_percentage}</style> poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style> a poskytuje <style=basestat>{evasion_percentage}</style> vyhýbání všem přátelským jednotkám ve stejném dosahu po dobu <style=basestat>{duration}</style>.
-i
-%Base.BuildingGroups.maskSculptor_NameŘezbářství masekŘezbářství masekŘezbářství masek
 _
 @Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_NameLuxusní kulturní památka
 6
@@ -5190,8 +5046,8 @@ q
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc.Výrazně zvyšuje spokojenost okolních budov
 P
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameObléhací věž
-\
-6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_Name"Hohenstaufenská těžká pěchota
+R
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameHohenštaufští drtiči
 M
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NameVodní Čerpadlo
 ^
@@ -5210,10 +5066,6 @@ F
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_NameLuxusní dům
 �
 Base.Units.Unit_VikingJarl_Desc�Vyrazte, rozviňte plachty a přivoňte si k soli, protože dnes večer mluvíme o Eriku Rudém. Tento objevitel z konce 10. století se proslavil založením prvních severských osad v Grónsku. Narodil se v Norsku, ale kvůli účasti v několika konfliktech byl vyhnán na Island a později do Grónska.<br><br>Erik, známý svým dobrodružným duchem a vůdčími schopnostmi, překonal velrybí cesty Atlantikem, aby v Grónsku založil úspěšnou kolonii a přilákal osadníky vyprávěním o úrodné půdě. Jeho úsilí znamenalo významné rozšíření severského průzkumu v severním Atlantiku.<br><br>Odkaz Erika Rudého jako průkopnického vůdce doby vikinské přetrvává a zdůrazňuje dobrodružnou a houževnatou povahu severského objevování a osídlování. Prý existuje také Erik Modrý, Erik Žlutý, Erik Zelený a Erik Fialový: sbírejte je všechny!
-_
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc$Zvyšuje spokojenost okolních budov
-T
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameLuxusní obřadní místo
 T
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NameMistrovství ledovců
 �
@@ -5255,8 +5107,8 @@ I
 :Base.Technologies.Technology_ByzantineEra_Architekton_NameArchitekton
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>Dupnutí</style> Leonidas dupne na zem a způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style>.
-}
-9Base.Buildings.Building_IberianEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 J
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_NameKýrovi kultisté
 Q
@@ -5290,8 +5142,6 @@ T
 ABase.Technologies.Technology_AgeOfTheFranks_XocolatlVirtuoso_NameMistr Xocolatlu
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_15_Name�<style=ability_label>Úder na oblast | Posílení | Oslabení</style>Napoleon přikazuje výstřel z děla na největší shluk nepřátelských jednotek, způsobující <style=basestat>{dmg_percentage}</style> poškození v dosahu <style=basestat>{range}</style>. Zasažené jednotky mají sníženou přesnost o <style=basestat>{accuracy_percentage}</style> a snížené poškození o <style=basestat>{atk_percentage}</style> po dobu <style=basestat>{debuff_duration}</style>. Všechny přátelské jednotky získají <style=basestat>{evasion_percentage}</style> vyhýbání po dobu <style=basestat>{evasion_duration}</style>.
-_
-(Base.BuildingGroups.premiumWorkshop_NameLuxusní dílnaLuxusní dílnyLuxusních dílen
 &
 Base.Heroes.hero.Inanna_NameInanna
 R
@@ -5308,6 +5158,8 @@ k
 @Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_DescProdukuje pracovní stoly
 Z
 ABase.Technologies.Technology_ClassicGreece_ImprovedFletching_NameVylepšené opeření
+�
+WBase.AbilityDescriptions.hero_battle_ability_description.TheAntikytheraMechanism_1_Name�<style=ability_label>Posílení</style>Mechanismus z Antikytéry složitě zvyšuje bojové schopnosti a rozšiřuje dobu trvání omráčení o <style=basestat>{damage_duration_increase}</style>. Navíc zesiluje poškození, které držitel způsobí omráčeným cílům, o <style=basestat>{damage_duration_increase}</style>.
 F
 /Base.Units.Unit_TreasureHunt_Blue_Corsairs_NameNebeští korzáři
 O
@@ -5348,8 +5200,6 @@ L
 :Base.Technologies.Technology_BronzeAge_AncestralValor_NameOdkaz předků
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_1_NameLuxusní přístav
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescVyrábí obsidián
 Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameKasárny kavalerie
 w
@@ -5371,8 +5221,6 @@ F
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_Name	Přístav
 O
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_NameLuxusní přístav
-?
-0Base.Buildings.Building_Mayas_Home_Priest_3_NameDům kněze
 s
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_Desc2Zpracovává motýlí kokony na hedvábná vlákna
 K
@@ -5397,8 +5245,6 @@ Stavějte a vylepšujte kasárny pěchoty, abyste zlepšili ÚTOK, OBR a HP pěc
 =Base.Buildings.Building_ClassicGreece_Workshop_Artisan_1_DescVyrábí stříbrné prsteny
 G
 :Base.Technologies.Technology_ClassicGreece_Philosophy_Name	Filosofie
-x
-1Base.Buildings.Building_Mayas_Home_Premium_1_DescCVyrábí hromadu kakaa a přidá 1 pracovníky a 1 kněze do města
 .
 Base.Units.Unit_TomoeGozen_NameTomoe Gozen
 =
@@ -5419,8 +5265,6 @@ F
 Kušiníci
 y
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_Desc<Vyrábí velké množství jídla během krátkého období.
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameObsidiánový důl
 Z
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMramorové dekorace
 6
@@ -5431,8 +5275,6 @@ K
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 R
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameEkonomika přístavu
-J
-1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameFatimovští střelci
 �
 Base.Units.Unit_KingMinos_Desc�Popovídejte si s Diem a schovejte červenou nit: Král Minós je tady! Tento legendární panovník z řecké mytologie vládl údajně ve 2. tisíciletí př. n. l. a proslavil se jako vládce Kréty.<br><br>Proslul svou moudrostí a autoritou a je známý především tím, že nechal postavit složitý labyrint, v němž měl uvěznit bájné zvíře Minotaura.<br><br>Minova vláda je protkána poutavými příběhy plnými intrik a dobrodružství, například příběhem o Daidalovi a Ikarovi. Jeho trvalý odkaz hrozivého a tajemného krále nepřestává okouzlovat vypravěče a splétá nitky mýtů a starověké historie. Nenechte ho, aby vás vzal na prohlídku svého bludiště!
 T
@@ -5495,8 +5337,6 @@ Z
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameZavlažovací stanice
 -
 Base.Units.Unit_JoanOfArc_NameJana z Arku
-O
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameMalé obřadní místo
 e
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc.Vyrábí mince a přidá pracovníka do města
 v
@@ -5521,8 +5361,6 @@ D
 Base.Ages.DawnAge_NamePočátky lidstva
 �
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_DescTJednotky kavalerie jsou velmi rychlé a útočí na nepřátele v zadních řadách.
-u
-(Base.BuildingGroups.smallRitualSite_NameMalé obřadní místoMalá obřadní místaMalých obřadních míst
 Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_DescVyrábí motýlí kokony
 �
@@ -5555,6 +5393,8 @@ Y
 <Base.Technologies.Technology_Vikings_SuperiorBeekeeping_NameŠpičkové včelařství
 [
 >Base.Technologies.Technology_MinoanEra_MysticBattleChants_NameMystické bojové písně
+Z
+8Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Heavy_NameRytířovy obouruční zbraně
 K
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_NameHlinařství
 C
@@ -5577,8 +5417,6 @@ Q
 <Base.Technologies.Technology_ByzantineEra_TrenchWarfare_NameZákopová válka
 Y
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_NameKasárny obléhacích jednotek
-?
-0Base.Buildings.Building_Mayas_Home_Priest_5_NameDům kněze
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameKanál
 c
@@ -5657,8 +5495,8 @@ G
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 V
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_NameVýrobna porcelánu
-I
->Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFurnace
+E
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NamePec
 P
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_DescVyrábí hromady jídla
 D
@@ -5746,8 +5584,6 @@ F
 "Base.Heroes.hero.RomanPraetor_NameAemilia Tertia
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Úder bouře</style>Císař Čchin vyvolá svůj duchovní meč, který letí přes bojiště, způsobuje nepřátelským jednotkám <style=basestat>{dmg_percentage}</style> poškození a léčí spojenecké jednotky za <style=basestat>{heal_percentage}</style> z císařova základního poškození po dobu <style=basestat>{duration}</style>.
-b
-0Base.Buildings.Building_Mayas_Home_Worker_3_Desc.Vyrábí kakao a přidá pracovníka do města
 s
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_Desc<Vyrábí velké množství jídla během krátkého období.
 S
@@ -5796,8 +5632,6 @@ K
 5Base.Abilities.hero_battle_ability.JaguarWarrior_NamePredátor džungle
 @
 /Base.Units.Unit_MinoanEra_Minoan_KingMinos_NameKrál Mínós
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_NameObsidiánový důl
 u
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_3_Desc;Vyrábí malé množství jídla během krátkého období.
 �
@@ -5808,8 +5642,6 @@ m
 ;Base.Buildings.Building_StoneAge_CultureSite_Premium_1_Desc.Výrazně zvyšuje spokojenost okolních budov
 m
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_NameTřpytivé bohatství
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_1_DescVyrábí nefrit
 P
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_DescVyrábí dveře.
 Y
@@ -5826,8 +5658,6 @@ W
 Base.Units.Unit_LouisXIV_NameLudvík XIV.
 C
 1Base.Buildings.Building_China_Home_Average_1_NameStřední dům
-B
-1Base.Buildings.Building_Mayas_Home_Premium_1_NameLuxusní dům
 S
 ?Base.Buildings.Building_ByzantineEra_Special_HeroAcademy_1_NameAkademie hrdinů
 J
@@ -5852,8 +5682,6 @@ OBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Average_Name
 Base.Ages.BronzeAge_Start3000 př. n. l.
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_NameKanál
-J
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescVyrábí obsidián
 H
 5Base.Buildings.Building_China_RiceFarm_Average_2_DescVyrábí rýži
 u
@@ -5866,8 +5694,6 @@ ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_NameKompaktní k
 Base.Units.Unit_KingMinos_NameKrál Mínós
 c
 ;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
-D
-3Base.Buildings.Building_Mayas_Quarry_Premium_1_NameLuxusní důl
 Y
 =Base.Technologies.Technology_EarlyRome_SpearThrowMastery_NameMistrovství vrhu kopím
 M
@@ -5942,15 +5768,13 @@ J
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_DescEJednotky kavalerie jsou velmi rychle a útočí na nepřátele vzadu.
 [
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameKasárny těžkooděnců
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 -
 Base.Units.Unit_Dracula_NameVlad Drákula
-�
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Name
 Malý dům
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_6_NameNefritový důl
 R
 ?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_NameRozmach výroby
 k
@@ -5963,10 +5787,6 @@ N
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_NamePísařství
 V
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_LongNine_NameKanón
-]
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_Desc$Zvyšuje spokojenost okolních budov
-H
-5Base.Buildings.Building_Mayas_Workshop_Premium_2_NameLuxusní dílna
 �
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_DesceStřelecké jednotky střílejí na velkou vzdálenost a jsou účinné především proti pěchotě.
 A
@@ -5996,8 +5816,6 @@ W
 5Base.Buildings.Building_China_RiceFarm_Premium_1_DescVyrábí velkou hromadu rýže
 M
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_3_NameTkalcovství
-]
-0Base.Buildings.Building_Mayas_Home_Priest_5_Desc)Vyrábí kakao a přidá kněze do města
 ]
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_DescZpracovává kaolín na hlínu
 G
@@ -6068,8 +5886,8 @@ N
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameHrázděné zdivo
 V
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_NameObrnění kušiníci
-�
->Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+�
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_DescaProdukuje žhavé uhlíky. Tavte přebytečné suroviny, abyste získali další žhavé uhlíky.
 7
 $Base.Units.Unit_NubianMercenary_NameKandake z Nubie
 ^
@@ -6182,8 +6000,6 @@ L
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_NameMěstská farma
 B
 7Base.Technologies.Technology_ClassicGreece_Temples_NameChrámy
-D
-0Base.Buildings.Building_Mayas_Home_Worker_3_NameDům pracovníka
 ?
 2Base.Units.Unit_ClassicGreece_Player_Hoplites_Name	Hoplíté
 Z
@@ -6194,8 +6010,8 @@ L
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameLuxusní kupectví
 I
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameMěstská farma
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Úder na oblast | Omráčení</style>Mozart rozehraje na bojišti zvučnou symfonii, při níž se zaměří na největší oblast nepřátel a způsobí jim omráčení a poškození. S každým použitím symfonie sílí a při třetím použití dosáhne svého vrcholu. <br> <br>První použití: Způsobí <style=basestat>{damage_a}</style> poškození v malém dosahu a omráčí na <style=basestat>{duration_a}</style> <br>Druhé použití: Způsobí <style=basestat>{damage_b}</style> poškození ve středním dosahu a omráčí na <style=basestat>{duration_b}</style> <br>Třetí použití a dále: Způsobuje <style=basestat>{damage_c}</style> poškození ve středním dosahu a omráčení na <style=basestat>{duration_c}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style=ability_label>Plošný úder | Omráčení</style>Mozart na bojišti zorganizuje rezonující symfonii, která se zaměřuje na nejhustší oblast nepřátel a způsobuje jim omráčení a poškození. Symfonie s každým použitím sílí a vrcholu dosahuje při třetím použití. <br> <br>První použití: Způsobí <style=basestat>{damage_a}<style> poškození v rozsahu 1 a omráčení na <style=basestat>{duration_a}<style> <br>Druhé použití: Způsobí <style=basestat>{damage_b}<style> poškození v rozsahu 2 a omráčení na <style=basestat>{duration_b}<style> <br>Po třetím použití a dále: Způsobí <style=basestat>{damage_c}<style> poškození v rozsahu 3 a omráčení na <style=basestat>{duration_c}<style>.
 N
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameKulturní výměna
 F
@@ -6236,8 +6052,6 @@ e
 CBase.Technologies.Technology_AgeOfTheFranks_AdvancedJadeMining_NamePokročilé dolování nefritu
 [
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_NamePaladinové Karla Velikého
-R
-3Base.Buildings.Building_Mayas_Quarry_Premium_1_DescVyrábí nefrit a obsidián
 J
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_NameHypaspisté
 ,
@@ -6289,8 +6103,6 @@ K
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_NameStřední kulturní památka
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Name�<style=ability_label>Provokace | Štít</style>Provokuje všechny nepřátele na <style=basestat>{taunt_duration}</style>. Bismarck získá <style=basestat>{shield_percentage}</style> svého základního poškození jako štít.
-b
-&Base.BuildingGroups.premiumAviary_NameLuxusní voliéraLuxusní voliéryLuxusních voliér
 `
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_DescOdemkne Minotaurovy předvoje
 �
@@ -6314,7 +6126,7 @@ H
 Base.Ages.IberianEra_Decade
 1050 n. l.
 F
-9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Equipment
+9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Vybavení
 E
 4Base.Technologies.Technology_Vikings_Beekeeping_NameVčelařství
 I
@@ -6352,14 +6164,10 @@ t
 Base.HeroClass.Genius_DescVGéniové jsou ofenzivní hrdinové, kteří vynikají tím, že způsobují výbuchy.
 c
 #Base.BuildingTypes.cultureSite_NameKulturní památkaKulturní památkyKulturních památek
-H
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFurnace
+D
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NamePec
 C
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_NameLučištníci
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_6_DescVyrábí nefrit
-�
-5Base.Buildings.Building_Mayas_Workshop_Premium_2_DescOVyrábí masky předků, sluneční kameny, obřadní dýky a ozdobné čelenky
 T
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameZlatý vavřínový věnec
 -

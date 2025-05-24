@@ -7,8 +7,6 @@ R
 7Base.Buildings.Building_RomanEmpire_Farm_Premium_1_DescProduce moltissimo Cibo
 J
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_NamePozzo piccolo
-G
-3Base.Buildings.Building_Mayas_Aviary_Premium_1_NameVoliera lussuosa
 Õ
 Base.HeroClass.Defender_Desc¨I Difensori si lanciano nella mischia e proteggono i loro alleati.<br><line-height=50%><br></line-height><b><color=#3DA229>Forti</color> nella:</b><br>‚Ä¢<indent=5%><color=#3DA229>Campagna</color>, <color=#3DA229>Arena</color> e <color=#3DA229>Caccia al Tesoro</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Deboli</color> nelle:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Tempeste di Tesla</color>.</indent>
 P
@@ -35,20 +33,16 @@ V
 -Base.Units.Unit_FeudalAge_Player_Knights_Name	Cavalieri
 K
 1Base.Abilities.hero_battle_ability.MarcoPolo_NameEsplosione di Scoperte
-i
-0Base.Buildings.Building_Mayas_Home_Priest_1_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
+E
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFornace
 W
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NamePorto Lussuoso dei Marinai
-E
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 Y
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameCaserma della Fanteria
 N
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameArpionisti Verdeggianti
 z
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_DescAProduce una piccola quantit√† di Cibo in un breve lasso di tempo.
-[
-%Base.BuildingGroups.ritualCarver_NameIntagliatore per ritualiIntagliatori per rituali
 T
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameCaserma dei tiratori
 ù
@@ -116,12 +110,8 @@ Re Minosse
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_DescÇI Moli da Pesca Lussuosi mandano le barche a pescare tonnellate di pesce per rifornire tutti i tuoi Lavoratori e Marinai affamati.
 £
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_DescfInvia navi da spedizione che raccoglieranno tonnellate di Tesori in gioielli, Spezie, Oro o Ceramiche.
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_DescProduce Ossidiana
 v
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_NameMonumento alla Singolarit√†
-J
-0Base.Buildings.Building_Mayas_Home_Priest_4_NameAbitazione sacerdotale
 ë
 %Base.Units.Unit_ThomasAlvaEdison_DescÁThomas Alva Edison, il mago di Menlo Park, √® qui per brillare! Questo iconico inventore e uomo d'affari americano della fine del XIX e dell'inizio del XX secolo ha trasformato la tecnologia moderna con le sue numerose innovazioni.<br><br>Edison possedeva oltre 1.000 brevetti, tra cui quelli per il fonografo, la macchina da presa e la lampadina elettrica. I suoi laboratori di ricerca industriale rivoluzionarono il processo di innovazione, fungendo da modello per lo sviluppo tecnologico futuro.<br><br>L'ingegno e l'acume di Edison non solo trasformarono le industrie ma anche lo stile di vita moderno, lasciando un'eredit√† di creativit√† e perseveranza che continua a ispirare gli inventori di oggi. Era davvero estremamente "brillante"!
 ø
@@ -162,8 +152,8 @@ J
 1Base.Buildings.Building_China_Home_Average_5_NameAbitazione intermedia
 J
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_NameFattoria lussuosa
-é
-HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name¡<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
+§
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name◊<style=ability_label>Colpo a distanza</style>Yi Sun-Sin evoca la sua leggendaria flotta, lanciando una raffica di tre potenti palle di cannone contro l‚Äôeroe nemico con meno salute. Le prime due palle di cannone infliggono <style=basestat>{dmg_percentage}</style> danni. L'ultima infligge <style=basestat>{final_dmg_percentage}</style> danni e colpisce anche gli eroi infliggendo un ulteriore <style=basestat>{missing_hp_percentage}</style> dei loro punti vita mancanti.
 Z
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameCaserma per unit√† d'assedio
 Á
@@ -200,8 +190,6 @@ U
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameCaserma dei Tiratori
 ‹
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_Nameá<style=ability_label>Provocazione| Scudo</style>Provoca tutti i nemici per <style=basestat>{taunt_duration}</style>. Bismarck guadagna uno scudo pari al <style=basestat>{shield_percentage}</style> del suo danno base. Inoltre, fornisce uno scudo pari al <style=basestat>{shield_percentage_friendly}</style> del danno base di Bismarck all'unit√† amica con il minor HP. D√† priorit√† agli eroi.
-U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduce Pugnali rituali
 Y
 'Base.BuildingGroups.compactCulture_NameSito culturale ridottoSiti culturali ridotti
 W
@@ -229,8 +217,6 @@ Apicoltura
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescNL'Accademia degli Eroi produce Pergamene Esperienza al costo di Punti Ricerca.
 Z
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_DescProduce Zafferano.
-@
-"Base.BuildingTypes.ritualSite_NameSito ritualeSiti rituali
 X
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameCaserma per unit√† d'assedio
 r
@@ -357,14 +343,14 @@ S
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_2_NameCaserma per unit√† d'assedio
 M
 9Base.Technologies.Technology_Vikings_ImprovedFishing_NamePesca Migliorata
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_NameCava di ossidiana
 J
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameSala del consiglio
 I
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameFattoria rurale
 F
 3Base.Buildings.Building_MinoanEra_Farm_Rural_1_NameFattoria rurale
+_
+=Base.Units.Unit_FeudalAge_KnightsOfRoundtable_KingArthur_NameCavalieri della Tavola Rotonda
 ,
 Base.BuildingGroups.oasis_NameOasiOasi
 .
@@ -412,8 +398,6 @@ w
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc8Produce una gran quantit√† di Cibo per un certo periodo.
 O
 !Base.BuildingTypes.camelFarm_NameFattoria di cammelliFattorie di cammelli
-O
-3Base.Buildings.Building_Mayas_Aviary_Premium_1_DescProduce moltissime Piume
 H
 1Base.Buildings.Building_China_Home_Premium_6_NameAbitazione Lussuosa
 O
@@ -447,8 +431,8 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_NameFanteria 
 Cuauhtemoc
 Ã
 #Base.Units.Unit_WilliamWallace_Desc§Alba gu br√†th! William Wallace √® arrivato dalla Scozia del 13¬∞ secolo, pronto a combattere in una nuova Guerra di Indipendenza. A casa, le storie sulla sua leadership, il suo coraggio e la sua sfida all'oppressione risuonano nei cuori degli scozzesi.<br><br>Wallace cambi√≤ le sorti della Battaglia di Stirling Bridge, sconfiggendo gli Inglesi nonostante il numero notevolmente inferiore. Il suo sogno di libert√† si diffuse in tutta la Scozia, e in tanti si unirono alla lotta per un paese libero.<br><br>Anche se quando torner√† al suo tempo sar√† catturato e giustiziato, lo spirito di Wallace non vaciller√† mai. In tutta la Scozia, √® onorato come un combattente per la libert√† e un patriota, mentre la sua mossa speciale, il 'Wallace Wallop', √® ancora visibile nei bar di Glasgow fino ad oggi!
-~
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+á
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 @
 4Base.Technologies.Technology_StoneAge_Firemaker_NamePirogeno
 Q
@@ -487,8 +471,6 @@ EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_1_DescSblocca 
 @Base.Technologies.Technology_RomanEmpire_PastureImprovement_NameMiglioramento del pascolo
 à
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_DescKInvia navi da spedizione che raccoglieranno Tesori di Gioielli o di Spezie.
-j
-0Base.Buildings.Building_Mayas_Home_Worker_6_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 [
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameFormazione del baluardo
 J
@@ -547,8 +529,6 @@ Yi Sun-sin
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
 $Base.Heroes.hero.AbrahamLincoln_NameAbraham Lincoln
-i
-0Base.Buildings.Building_Mayas_Home_Priest_4_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
 ;
 %Base.Units.Unit_ThomasAlvaEdison_NameThomas Alva Edison
 O
@@ -579,8 +559,6 @@ $Base.Units.Unit_MiyamotoMusashi_DescÈSegui il cammino dei Due Cieli come Uno 
 Base.Heroes.hero.TigerLily_NameGiglio Tigrato
 h
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_Desc+Aumenta l'irrigazione degli edifici vicini.
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_1_NameCava di giada
 f
 7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Desc+Aumenta l'irrigazione degli edifici vicini.
 õ
@@ -601,8 +579,6 @@ P
 <Base.Technologies.Technology_ClassicGreece_DomesticPigs_NameMaiali domestici
 O
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameFamilia Regis
-V
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameIntagliatore per rituali
 N
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_NameAbitazione Piccola
 ¡
@@ -665,8 +641,6 @@ J
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameEditto Achemenide
 ;
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonida
-M
-0Base.Units.Unit_HighMiddleAges_Arabia_Heavy_NameFanteria Pesante Fatimide
 m
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc)Aumenta la felicit√† degli edifici vicini
 [
@@ -700,8 +674,6 @@ c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLiceo degli Studiosi
 @
  Base.BuildingTypes.goldMine_NameMiniera d'oroMiniere d'oro
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_4_NameCava di giada
 O
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_NameMiniera d'oro lussuosa
 w
@@ -857,7 +829,7 @@ H
 S
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NamePadronanza della lancia
 F
-;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFornace
 P
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_NameAbitazione intermedia
 
@@ -876,8 +848,6 @@ T
 <Base.Technologies.Technology_ByzantineEra_NatureSpirits_NameSpiriti della natura
 L
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_NameSala del consiglio
-M
-0Base.Buildings.Building_Mayas_Home_Worker_6_NameAbitazione dei lavoratori
 L
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_NameAbitazione piccola
 2
@@ -924,8 +894,6 @@ O
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name∆<style=ability_label>Attacco a Distanza</style>Lancia un kunai contro il nemico con gli HP pi√π bassi, infliggendo un danno pari al <style=basestat>{dmg_percentage}</style>. D√† priorit√† agli eroi.
 Q
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameArpionisti del Crepuscolo
-j
-0Base.Buildings.Building_Mayas_Home_Worker_1_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 {
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescBProduce moltissime Monete e aggiunge 2 Lavoratori alla tua citt√†.
 H
@@ -941,8 +909,6 @@ $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
 Abitazioni
 H
 1Base.Buildings.Building_China_Home_Premium_1_NameAbitazione lussuosa
-9
-#Base.BuildingGroups.chronicler_NameCronistaCronisti
 O
 :Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameCavalleria Nobile
 J
@@ -958,8 +924,6 @@ H
 2Base.Buildings.Building_StoneAge_Home_Small_1_NameAbitazione piccola
 H
 1Base.Buildings.Building_China_Home_Premium_3_NameAbitazione Lussuosa
-]
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescProduce Maschere degli antenati
 #
 Base.Cities.City_China_NameCina
 X
@@ -1154,8 +1118,6 @@ W
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
 A
-0Base.Buildings.Building_Mayas_Quarry_Jade_4_DescProduce Giada
-A
 /Base.TreasureHuntDifficulties.Difficulty_3_NameApprendista II
 \
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_NameColtivazione di papiro lussuosa
@@ -1189,10 +1151,10 @@ K
 ;Base.Buildings.Building_FeudalAge_Workshop_Carpenter_1_DescProduce Assi
 V
 &Base.BuildingGroups.spiceMerchant_NameMercante delle spezieMercanti delle spezie
-_
-EBase.Technologies.Technology_RomanEmpire_ShieldwallFortification_NameFortificazione muraria
 @
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_Name	Trapeziti
+_
+EBase.Technologies.Technology_RomanEmpire_ShieldwallFortification_NameFortificazione muraria
 F
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_NameFattoria rurale
 =
@@ -1248,12 +1210,8 @@ R
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_NameLavoratore di papiro
 Ñ
 6Base.Buildings.Building_IberianEra_Home_Average_3_DescJProduce una grossa pila di Monete e aggiunge 2 Lavoratori alla tua citt√†.
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_3_DescProduce Giada
 4
 ,Base.Technologies.Technology_Egypt_Ankh_NameAnkh
-J
-0Base.Buildings.Building_Mayas_Home_Priest_1_NameAbitazione sacerdotale
 ?
 5Base.Technologies.Technology_StoneAge_Slingshots_NameFionde
 P
@@ -1284,8 +1242,8 @@ O
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameCambiamento sociale
 =
 3Base.Technologies.Technology_EarlyRome_Velites_NameVeliti
-|
-8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+Ö
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
 è
@@ -1304,10 +1262,10 @@ Q
 Base.Units.Unit_MarieCurie_NameMarie Curie
 Ö
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescJProduce una grossa pila di Monete e aggiunge 2 Lavoratori alla tua citt√†.
+à
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 I
 0Base.Abilities.hero_battle_ability.HuaMulan_NameLa vendetta del Drago
-
-;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 W
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_NameCaserma della fanteria
 ´
@@ -1361,10 +1319,6 @@ B
 )Base.Regions.region.VolcanicJungle_6_NameCastelli di Castiglia
 S
 8Base.Technologies.Technology_Vikings_GlacierMastery_NameMaestria nel Ghiacciaio
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameCava di ossidiana
-M
-0Base.Buildings.Building_Mayas_Home_Worker_1_NameAbitazione dei lavoratori
 Y
 >Base.Technologies.Technology_FeudalAge_ImprovedBeekeeping_NameApicoltura perfezionata
 p
@@ -1387,14 +1341,10 @@ U
 =Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_NameSito culturale medio
 @
 4Base.Technologies.Technology_IberianEra_Tattoos_NameTatuaggi
-R
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_NameScultore di maschere
 w
 1Base.Buildings.Building_China_Home_Premium_3_DescBProduce moltissimi Wu Zhu e aggiunge 3 Lavoratori alla tua citt√†.
 =
 3Base.Technologies.Technology_China_PaddyFields_NameRisaie
-I
-2Base.Units.Unit_HighMiddleAges_Arabia_Cavalry_NameCavalleria Fatimide
 #
 Base.Units.Unit_Menes_NameMenes
 K
@@ -1425,8 +1375,8 @@ R
 ?Base.Technologies.Technology_ByzantineEra_PreciseChronicle_NameCronaca precisa
 {
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescAProduce moltissime Monete e aggiunge 2 Lavoratori alla tua citt√†
-P
-7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameTiratori Hohenstaufen
+R
+7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameArcieri di Hohenstaufen
 =
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSale
 ‰
@@ -1501,6 +1451,8 @@ UBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_TropicalFruitFar
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_6_DescProduce Bozzoli di Falena
 i
 2Base.Buildings.Building_Vikings_Home_Sailor_4_Desc3Produce Penny e aggiunge 2 marinai alla tua citt√†.
+O
+:Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Cavalry_NameCavalleria Nobile
 v
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Desc=Aumenta considerevolmente l'irrigazione degli edifici vicini.
 =
@@ -1529,8 +1481,6 @@ I
 7Base.Technologies.Technology_IberianEra_SunCompass_NameBussola solare
 a
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_3_NameCaserma della fanteria pesante
-D
-3Base.Buildings.Building_Mayas_Aviary_Average_2_DescProduce Piume
 '
 Base.Ages.FeudalAge_Decade	1000 D.C.
 $
@@ -1558,8 +1508,8 @@ c
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_3_NameCaserma della fanteria pesante
 Ó
 OBase.AbilityDescriptions.hero_battle_ability_description.NubianMercenary_1_Nameö<style=ability_label>Attacco Corpo a Corpo</style>Colpisce il bersaglio attuale due volte per un totale di <style=basestat>{dmg_percentage}</style> danni.
-Á
-TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Nameé<style=ability_label>Buff</style>Queen Seondeok unleashes her royal command, bestowing the largest cluster of allies with crowd control immunity for <style=basestat>{duration}</style>. Her inspiring aura enhances their attack speed by <style=basestat>{atk_speed_buff}</style>¬†and movement speed by <style=basestat>{move_speed_buff}</style>¬†across a wide radius of <style=basestat>{range}</style>.
+õ
+TBase.AbilityDescriptions.hero_battle_ability_description.QueenSeondeokOfSilla_1_Name¬<style=ability_label>Potenziamento</style>La Regina Seondeok scatena il suo comando reale, concedendo al gruppo pi√π numeroso di alleati l‚Äôimmunit√† agli effetti di controllo per <style=basestat>{duration}</style>. La sua aura ispiratrice aumenta la velocit√† d‚Äôattacco del <style=basestat>{atk_speed_buff}</style> e la velocit√† di movimento del <style=basestat>{move_speed_buff}</style> entro un ampio raggio di <style=basestat>{range}</style>.
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_1_DescProduce moltissimo Papiro
 Ü
@@ -1651,8 +1601,6 @@ M
 :Base.Technologies.Technology_FeudalAge_RidgeAndFurrow_NameTumuli e canali
 \
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_NameSito culturale ridotto
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_3_NameCava di giada
 ˆ
 GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name™<style=ability_label>Attacco Corpo a Corpo| Sanguinamento</style>Perfora il bersaglio attuale quattro volte, infliggendo danni crescenti con ogni colpo per un totale di <style=basestat>{dmg_percentage}</style> danni. Ogni colpo ha una probabilit√† del <style=basestat>{chance_percentage}</style> di far sanguinare l'avversario per <style=basestat>{dmg_percentage_bleed}</style> nel corso di <style=basestat>{duration}</style>.
 É
@@ -1682,8 +1630,6 @@ p
 |
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Desc>Produce una gran quantit√† di Cibo in un lungo lasso di tempo.
 P
-3Base.Buildings.Building_Mayas_Quarry_Premium_2_DescProduce Giada e Ossidiana
-P
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_NameAbitazione intermedia
 N
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_DescSblocca il trabucco
@@ -1691,12 +1637,10 @@ N
 %Base.Units.Unit_GeorgeWashington_NameGeorge Washington
 I
 4Base.Abilities.hero_battle_ability.TribalHealer_NameUnguento Curativo
-Z
-*Base.BuildingGroups.premiumRitualSite_NameSito rituale lussuosoSiti rituali lussuosi
 U
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NameRadura delle Falene
 C
-8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFurnace
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_NameFornace
 U
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_3_NameCaserma della fanteria
 O
@@ -1738,8 +1682,6 @@ f
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc+Aumenta l'irrigazione degli edifici vicini.
 ô
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescdLe unit√† di fanteria pesante sono ingombranti e impediscono il passaggio alle unit√† di cavalleria.
-C
-#Base.BuildingGroups.jadeQuarry_NameCava di giadaCave di giada
 V
 9Base.Technologies.Technology_MinoanEra_HeavyInfantry_NameAvanguardia del Minotauro
 o
@@ -1754,6 +1696,8 @@ K
 5Base.Buildings.Building_StoneAge_Farm_Domestic_1_NameFattoria cittadina
 ‰
 &Base.Units.Unit_ArtemisiaIOfCaria_DescπL‚Äôaria si riempir√† di frecce e grida, perch√© Artemisia I di Caria √® qui per te! Questa regina e comandante navale del V secolo a.C. ha lasciato il segno nella storia con la sua astuzia e brillante strategia.<br><br>Alleata fidata del re Serse durante le Guerre Persiane, Artemisia guid√≤ la sua flotta con ingegno e astuzia nella battaglia di Salamina contro i Greci, cambiando le vele della sua nave per ingannare i nemici. I suoi consigli e le sue abilit√† marittime le valsero il rispetto sia degli alleati che degli avversari.<br><br>Sfuggendo alle aspettative del suo tempo, l'eredit√† di Artemisia come leader coraggiosa e intelligente continua a ispirare, dimostrando l'impatto potente delle donne nella storia. Una versione di lei lavora come assassina di Tesla. La tua √® la versione buona‚Ä¶ o almeno lo speri!
+U
+;Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Infantry_NameScudieri del Cavaliere
 C
 /Base.Wonders.Wonder_Capital_HangingGardens_NameGiardini pensili
 X
@@ -1813,12 +1757,13 @@ v
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_2_Desc=Aumenta considerevolmente l'irrigazione degli edifici vicini.
 I
 3Base.Buildings.Building_EarlyRome_Home_Small_2_NameAbitazione piccola
-à
-IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name∫<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
+Ø
+IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name·<style=ability_label>Guarigione</style>L'Ouroboro conferisce al suo possessore il potere di risucchiare la vita, rubando una parte della cura ricevuta dagli eroi nemici tramite abilit√†. Il possessore ottiene <style=basestat>{heal_steal}</style> della guarigione destinata agli eroi nemici, trasformando la loro rigenerazione nella forza del possessore.
+-
+Base.Heroes.hero.Sacagawea_Name
+ Sacagawea
 i
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc*Aumenta la Felicit√† degli edifici vicini.
-D
-3Base.Buildings.Building_Mayas_Aviary_Average_3_DescProduce Piume
 å
 "Base.Units.Unit_JaguarWarrior_DescÂGli Aztechi credevano che la forza del Dio Tezcatlipoca fosse incarnata nel giaguaro, e i Guerrieri Giaguaro indossavano le sue pellicce per ottenere il suo potere.<br><br>I Guerrieri Giaguaro erano trattati come nobili all'interno della societ√† azteca, avendo dimostrato il loro valore sul campo di battaglia prendendo prigionieri. Con i loro bastoni dalle lame di ossidiana, combattevano quasi continuamente, poich√© la battaglia era la linfa vitale dell'impero azteco.<br><br>I Guerrieri Giaguaro esemplificano forse ancora oggi la guerra azteca. Combinando addestramento, cultura, religione e battaglia, si credeva che placassero gli stessi dei con la loro abilit√†. Per uomini vestiti con tute da animali, √® abbastanza impressionante!
 A
@@ -1833,8 +1778,6 @@ W
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_NameCaserma per unit√† d'assedio
 7
 #Base.Heroes.hero.OracleOfDephi_NameOracolo di Delfi
-S
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_DescProduce Pietre del sole
 I
 5Base.Abilities.hero_battle_ability.QueenBoudicca_NameVendetta Celtica
 9
@@ -1879,6 +1822,8 @@ i
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc)Aumenta la Felicit√† degli edifici vicini
 T
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_NameCaserma della fanteria
+9
+%Base.Heroes.hero.ThomasJefferson_NameThomas Jefferson
 Ü
 6Base.Buildings.Building_Vikings_Beehive_Average_1_DescLL'alveare produce miele delizioso usato per produrre idromele nella taverna.
 Ñ
@@ -1903,8 +1848,6 @@ Y
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameSito culturale medio
 E
 )Base.Regions.region.TeslaStormYellow_NameTempesta di Tesla Gialla
-i
-0Base.Buildings.Building_Mayas_Home_Priest_6_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
 k
 /Base.Buildings.Building_China_Home_Small_1_Desc8Produce Wu Zhu e aggiunge un Lavoratore alla tua citt√†.
 L
@@ -1913,8 +1856,6 @@ L
 Base.Units.Unit_Confucius_NameConfucio
 A
 5Base.Technologies.Technology_BronzeAge_Alliances_NameAlleanze
-2
-Base.BuildingTypes.aviary_NameVolieraVoliere
 -
 Base.Heroes.hero.RobinHood_Name
 Robin Hood
@@ -2031,8 +1972,6 @@ B
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_NamePadronanza dell'apicoltura
 N
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_NameScagliapietre
-D
-3Base.Buildings.Building_Mayas_Quarry_Premium_2_NameCava lussuosa
 ç
 3Base.Units.Unit_EarlyRome_Player_AuxiliaRiders_DescVLe unit√† di cavalleria sono molto veloci e si lanciano contro la retroguardia nemica.
 D
@@ -2085,8 +2024,8 @@ O
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 1
 Base.Ages.AgeOfTheFranks_NameEt√† dei Franchi
-ê
-LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Nameø<style=ability_label>Heal| Shield</style>The Holy Grail enhances the holder's healing capabilities, amplifying all healing by <style=basestat>{healing_amp}</style>. When a unit is healed beyond it's maximum hitpoints, <style=basestat>{heal_to_shield_conversion}</style> of the excess healing is converted into a shield.
+¨
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name€<style=ability_label>Guarigione| Scudo</style>Il Sacro Graal potenzia le capacit√† curative del portatore, amplificando tutte le cure del <style=basestat>{healing_amp}</style>. Quando un'unit√† viene curata oltre i suoi punti vita massimi, il <style=basestat>{heal_to_shield_conversion}</style> della cura in eccesso viene convertito in uno scudo.
 L
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_NameFattoria rurale
 R
@@ -2205,14 +2144,10 @@ T
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_NameSito culturale grande
 X
 ?Base.Technologies.Technology_ByzantineEra_ObsidianDeposits_NameDepositi di ossidiana
-D
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_NameCronista
 6
 #Base.Units.Unit_AbrahamLincoln_NameAbraham Lincoln
 S
 5Base.Units.Unit_StoneAge_Animal_SabertoothTigers_NameTigri dai denti a sciabola
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_NameCava di ossidiana
 ∞
 ;Base.Buildings.Building_AgeOfTheFranks_City_CityHall_1_DescqLa Sala del consiglio √® il centro della tua citt√†. Genera continuamente una piccola quantit√† di Monete e Cibo.
 [
@@ -2223,16 +2158,14 @@ P
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_NameCaserma dei tiratori
 X
 >Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_NameSito culturale ridotto
->
-3Base.Buildings.Building_Mayas_Aviary_Average_3_NameVoliera
 -
 "Base.Units.Unit_JaguarWarrior_NameOcelotl
 B
 "Base.BuildingGroups.smallWell_NamePozzo piccoloPozzi piccoli
-7
-#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
 w
 1Base.Buildings.Building_China_Home_Premium_4_DescBProduce moltissimi Wu Zhu e aggiunge 3 Lavoratori alla tua citt√†.
+7
+#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
 Ñ
 1Base.Buildings.Building_China_Home_Average_4_DescOProduce una grande quantit√† di Wu Zhu e aggiunge 5 Lavoratori alla tua citt√†.
 c
@@ -2273,12 +2206,12 @@ A
 6Base.Technologies.Technology_ClassicGreece_Column_NameColonna
 N
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_2_NameAbitazione piccola
+8
+$Base.Units.Unit_ThomasJefferson_NameThomas Jefferson
 `
 6Base.Buildings.Building_Vikings_Workshop_Tavern_1_Desc&La taverna produce idromele dal miele.
 >
 .Base.Abilities.hero_battle_ability.Inanna_NameColpo Rapido
-J
-0Base.Buildings.Building_Mayas_Home_Priest_6_NameAbitazione sacerdotale
 d
 *Base.BuildingGroups.premiumSailorPort_NamePorto dei marinai lussuosoPorti dei marinai lussuosi
 N
@@ -2376,7 +2309,7 @@ JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_5_Nameœ<s
 ´
 -Base.Units.Unit_EarlyRome_Player_Velites_DesczLe unit√† a distanza scagliano proiettili su grandi distanze e sono particolarmente efficaci contro le unit√† di fanteria.
 C
-8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFurnace
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_NameFornace
 K
 <Base.Technologies.Technology_HighMiddleAges_Precautions_NamePrecauzioni
 Q
@@ -2391,8 +2324,6 @@ L
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameThrall e Jarl
 <
 )Base.Regions.region.VolcanicJungle_3_NameColonia Inglese
-L
-5Base.Units.Unit_HighMiddleAges_Arabia_SittAlMulk_NameComandante Fatimide
 r
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc-Migliora la Felicit√† degli edifici adiacenti
 >
@@ -2573,8 +2504,6 @@ V
 :Base.Technologies.Technology_HighMiddleAges_CropSheds_NameCapannoni per i Raccolti
 ∞
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_DesczLe unit√† a distanza scagliano proiettili su grandi distanze e sono particolarmente efficaci contro le unit√† di fanteria.
-H
-2Base.Buildings.Building_Mayas_City_CityHall_1_NameSala del consiglio
 G
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameCavalcatori di tori
 õ
@@ -2632,6 +2561,8 @@ M
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_NameSentinelle di Carcassona
 l
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_Name$Organizzazione del gruppo migliorata
+¨
+$Base.Units.Unit_ThomasJefferson_DescÉScrivi una nazione usando una pergamena e una penna insieme a Thomas Jefferson! Questo statista del XVII e XVIII secolo ispir√≤ la Rivoluzione Americana, aprendo la strada alla nascita degli Stati Uniti d‚ÄôAmerica. A trentatr√© anni, scrisse la Dichiarazione di Indipendenza, ispirata agli ideali illuministi di libert√† e diritti individuali.<br><br>La fama di Thomas Jefferson raggiunse il suo apice quando divenne presidente degli Stati Uniti. Negozi√≥ con la Francia il territorio della Louisiana e, al momento dell‚Äôacquisto, incaric√≤ la spedizione di Lewis e Clark in quelle terre impervie, permettendo un‚Äôespansione americana che avrebbe raddoppiato le dimensioni degli Stati Uniti.<br><br>Oggi, Jefferson √® ricordato come un baluardo del pensiero liberale: un sostenitore del libero pensiero, della libert√† di parola e del razionalismo. Lincoln √® estasiato ogni volta che √® con lui!
 Å
 OBase.AbilityDescriptions.hero_battle_ability_description.MayanAstronomer_1_Name≠<style=ability_label>Colpo ad Area</style>Evoca energia celestiale per scatenarsi su un'unit√† nemica casuale, infliggendo un danno pari al <style=basestat>{dmg_percentage}</style>. L'impatto influisce anche sulle unit√† nemiche vicine entro un raggio di <style=basestat>{range}</style> dal bersaglio.
 ,
@@ -2667,12 +2598,8 @@ K
 $Base.Units.Unit_QueenElizabethI_DescÊMescola cannonate e preghiere con la Regina Elisabetta I! Questa monarca del XVI secolo ha governato l'Inghilterra per oltre quarant'anni, in un'epoca di stabilit√† e prosperit√† per il paese. Fu un'epoca di arti, guerre ed esplorazioni.<br><br>Elisabetta gest√¨ le sfide in patria e all'estero, superando il fanatismo religioso (anche se non senza bruciare alcune persone) e le guerre esterne. La sconfitta dell'Armada spagnola consolid√≤ il suo status di leader formidabile, mentre il suo patrocinio di personaggi come Shakespeare fece s√¨ che il suo governo non venisse mai dimenticato.<br><br>Conosciuta come la "Regina Vergine" per non essersi mai sposata, Elisabetta mantenne il suo potere e la sua indipendenza per tutta la durata del suo regno. La sua eredit√† √® fatta di forza, intelligenza e mecenatismo culturale, lasciando un segno indelebile nella storia inglese. Aveva anche una bocca a strisce per aver mangiato troppo zucchero: il suo nome √® l'anagramma di "Zebra Teeth is Filth"!
 W
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_NameTecniche di agguato
-F
-&Base.BuildingGroups.premiumQuarry_NameCava lussuosaCave lussuose
 ≠
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescqLa Sala del consiglio √® il centro della tua citt√†. Genera continuamente una piccola quantit√† di Monete e Cibo.
-H
-3Base.Units.Unit_HighMiddleAges_Arabia_Infantry_NameFanteria Fatimide
 l
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc)Aumenta la felicit√† degli edifici vicini
 _
@@ -2691,8 +2618,6 @@ I
 9Base.Technologies.Technology_RomanEmpire_UrbsAeterna_NameUrbs Aeterna
 9
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
-M
-0Base.Buildings.Building_Mayas_Home_Worker_4_NameAbitazione dei lavoratori
 q
 @Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc-Migliora la Felicit√† degli edifici adiacenti
 2
@@ -2735,6 +2660,8 @@ g
 ABase.Technologies.Technology_AgeOfTheFranks_BattleAxeMastery_Name"Padronanza dell'ascia da battaglia
 X
 <Base.Technologies.Technology_IberianEra_GambesonPadding_NameImbottitura del gambeson
+R
+8Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Siege_NameTrabucco del Cavaliere
 ı
 FBase.AbilityDescriptions.hero_battle_ability_description.Plato_15_Name™<style=ability_label>Malus| Veleno</style>Platone parla per allegorie, confondendo le unit√† nemiche e riducendo la loro precisione del <style=basestat>{accuracy_percentage}</style> e il loro ATT del <style=basestat>{atk_percentage}</style> dell'ATT di Platone per <style=basestat>{duration}</style>. Le unit√† colpite subiscono un danno del <style=basestat>{dmg_percentage}</style> per <style=basestat>{dmg_duration}</style>.
 C
@@ -2769,8 +2696,8 @@ G
 4Base.Abilities.hero_battle_ability.LouisPasteur_NameAiuto Alchemico
 V
 :Base.Technologies.Technology_FeudalAge_FaeringMastery_NamePadronanza delle f√¶ring
-|
-8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+Ö
+8Base.Buildings.Building_FeudalAge_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 \
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescSblocca la guardia del re
 Y
@@ -2810,8 +2737,6 @@ R
 O
 9Base.Technologies.Technology_IberianEra_ShockCharges_NameCariche elettriche
 I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_DescProduce Ossidiana
-I
 <Base.Technologies.Technology_KingdomOfSicily_Monastries_Name	Monasteri
 L
 9Base.Technologies.Technology_MinoanEra_CretanQuivers_NameFaretre cretesi
@@ -2849,6 +2774,8 @@ P
 1Base.Technologies.Technology_MinoanEra_Siege_NameLanciatore a Fionda Minoico
 e
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_NameCaserma della fanteria pesante
+µ
+LBase.AbilityDescriptions.hero_battle_ability_description.GuardianLion_1_Name‰<style=ability_label>Purificazione</style>Il Leone Guardiano conferisce al suo portatore la capacit√† di resistere al controllo, permettendogli di ignorare il prossimo stordimento ogni <style=basestat>{cooldown}</style> secondi.
 J
 6Base.Abilities.hero_battle_ability.WilliamWallace_NameCuore Coraggioso
 º
@@ -2880,8 +2807,6 @@ q
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_DescBProduce una piccola quantit√† di Cibo per un breve lasso di tempo.
 œ
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name¸<style=ability_label>Attacco Corpo a Corpo| Scudo</style>Pugnalando il bersaglio attuale da dietro il suo scudo, infligge <style=basestat>{dmg_percentage}</style> di danno e ottiene <style=basestat>{hp_percentage}</style> del suo Danno Base come scudo.
-D
-0Base.Units.Unit_HighMiddleAges_Arabia_Siege_NameAssedio Fatimide
 Q
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescSblocca gli hastati
 A
@@ -2927,14 +2852,10 @@ I
 1Base.Units.Unit_TreasureHunt_Red_Harpoonists_NameArpionisti Scarlatti
 ”
 MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_NameÅ<style=ability_label>Malus</style>Colpisce il gruppo pi√π grande di unit√† nemiche, riducendone la DIF del <style=basestat>{atk_percentage}</style> dell'ATT dell'Oracolo per <style=basestat>{duration}</style> in un raggio di <style=basestat>{range}</style>.
-É
-1Base.Buildings.Building_Mayas_Home_Premium_2_DescNProduce moltissimo Cacao e aggiunge 1 Lavoratore e 1 Sacerdote alla tua citt√†
 `
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_PirateDen_NameCovo dei pirati
 [
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_3_DescProduce Bozzoli di Falena
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_5_NameCava di giada
 º
 IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_NameÓ<style=ability_label>Attacco a Distanza| Attacco ad Area| Stordimento</style>Infligge <style=basestat>{dmg_percentage}</style> di danni al bersaglio attuale e lo stordisce per <style=basestat>{stun_duration}</style>. Le unit√† nemiche entro un raggio di <style=basestat>{range}</style> dal bersaglio ricevono <style=basestat>{dmg_percentage_around}</style> di danni.
 p
@@ -2959,8 +2880,6 @@ P
 :Base.Buildings.Building_Vikings_FishingPier_Average_5_DescfI moli da pesca inviano barche per pescare e dare da mangiare a tutti i lavoratori e marinai affamati.
 M
 4Base.Units.Unit_BronzeAge_SumerianEmpire_Inanna_NameLe Amazzoni di Inanna
-ü
-2Base.Buildings.Building_Mayas_City_CityHall_1_DesciLa Sala del consiglio √® il centro della tua citt√†. Genera continuamente una piccola quantit√† di Cacao.
 r
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_Desc:Produce una piccola quantit√† di Cibo in un breve periodo.
 =
@@ -3128,8 +3047,6 @@ I
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_4_DescGInvia navi da spedizione che raccoglieranno Tesori di Ceramica o d'Oro.
 o
 3Base.Buildings.Building_BronzeAge_Home_Small_1_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
-j
-0Base.Buildings.Building_Mayas_Home_Worker_4_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 L
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameLanciatori di Giavellotti
 à
@@ -3164,8 +3081,6 @@ z
 5Base.Units.Unit_RomanEmpire_GermanicTribes_Gedri_NameGedri
 M
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVortice Vitruviano
-:
-&Base.BuildingGroups.averageAviary_NameVolieraVoliere
 /
  Base.Units.Unit_SiouxShaman_NameToro Seduto
 x
@@ -3184,8 +3099,6 @@ m
 5Base.Buildings.Building_FeudalAge_Home_Average_3_DescJProduce una grossa pila di Monete e aggiunge 2 Lavoratori alla tua citt√†.
 L
 7Base.Technologies.Technology_FeudalAge_BurialSites_NameSiti di sepoltura
-D
-3Base.Buildings.Building_Mayas_Aviary_Average_1_DescProduce Piume
 l
 VBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Average_NameReattore del Vuoto
 J
@@ -3201,8 +3114,6 @@ O
 <Base.Technologies.Technology_AgeOfTheFranks_Skirmishers_NameSchermagliatori
 x
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_Desc>Produce una gran quantit√† di Cibo in un lungo lasso di tempo.
-M
-0Base.Buildings.Building_Mayas_Home_Worker_5_NameAbitazione dei lavoratori
 T
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NameLaboratorio del papiro
 6
@@ -3233,8 +3144,6 @@ H
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescKInvia navi da spedizione che raccoglieranno Tesori di Gioielli o di Spezie.
 h
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc+Aumenta l'irrigazione degli edifici vicini.
-S
-*Base.BuildingGroups.averageRitualSite_NameSito rituale medioSiti rituali medi
 d
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_3_NameCaserma della fanteria pesante
 K
@@ -3257,8 +3166,6 @@ E
 6Base.Technologies.Technology_FeudalAge_Pictograms_NamePittogrammi
 å
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Nameª<style=ability_label>Attacco Corpo a Corpo| Sanguinamento| Potenziamento</style>Colpisce il bersaglio attuale con la sua spada cinque volte, infliggendo danni crescenti ad ogni colpo per un totale di <style=basestat>{dmg_percentage}</style> danni. Ogni colpo ha una probabilit√† del <style=basestat>{chance_percentage}</style> di far sanguinare l'avversario per <style=basestat>{dmg_percentage_bleed}</style> danni nel corso di <style=basestat>{duration}</style>. Inoltre, aumenta il danno critico di Lancillotto del <style=basestat>{crit_dmg_percentage}</style> e la sua probabilit√† di colpo critico del <style=basestat>{crit_chance_percentage}</style> per <style=basestat>{buff_duration}</style>.
-ü
-2Base.Buildings.Building_Mayas_City_CityHall_2_DesciLa Sala del consiglio √® il centro della tua citt√†. Genera continuamente una piccola quantit√† di Cacao.
 T
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_NameAbitazione intermedia
 i
@@ -3285,8 +3192,8 @@ R
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_NameRovine riconvertite
 W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameCaserma della cavalleria
-V
-;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameComandante Hohenstaufen
+Y
+;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameSpadaccini di Hohenstaufen
 Q
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_DescProduce moltissimo Cibo
 O
@@ -3299,8 +3206,6 @@ O
 8Base.Technologies.Technology_FeudalAge_PlateBarding_NameBardatura a piastre
 F
 5Base.Buildings.Building_China_RiceFarm_Average_6_NameCampo di riso
-M
-5Base.Buildings.Building_Mayas_Workshop_Premium_1_NameLaboratorio lussuoso
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_2_NameCanale
 F
@@ -3309,8 +3214,6 @@ X
 ABase.Technologies.Technology_IberianEra_EquestrianExcellence_NameEccellenza equestre
 ç
 Base.Units.Unit_Leonidas_DescÎRiponi le lance e ascolta, perch√© questa notte onoriamo Leonida! Questo coraggioso Re di Sparta credeva di discendere dalla stirpe di Eracle, e le storie della sua ultima resistenza sono scritte nella pietra e nell'inchiostro attraverso la storia. <br><br>Con 300 spartani al suo fianco, combatt√© contro i Persiani durante l'invasione della Grecia nel V secolo, rispondendo alla chiamata della guerra quando altri temevano di opporsi. Questo atto di coraggio non √® mai stato dimenticato, rendendo Leonida un simbolo di eroismo in Grecia e oltre. <br><br>Lui e i suoi spartani furono uccisi fino all'ultimo alle Termopili, ma Leonida fu salvato, rispedito nell'et√† della pietra con un'amnesia da un certo Albert Einstein. Stranamente, invent√≤ accidentalmente gli occhiali da sole secoli prima del tempo: vuole sempre che i suoi uomini combattano con gli occhiali da sole.
-H
-1Base.Buildings.Building_Mayas_Home_Premium_2_NameAbitazione lussuosa
 O
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameBirrificio di Idromele
 &
@@ -3328,8 +3231,6 @@ W
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_DescBProduce moltissime Monete e aggiunge 2 Lavoratori alla tua citt√†.
 r
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_Desc:Produce una piccola quantit√† di Cibo in un breve periodo.
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_5_DescProduce Giada
 l
 1Base.Buildings.Building_Egypt_Home_Premium_6_Desc7Produce Deben e aggiunge un Lavoratore alla tua citt√†.
 6
@@ -3397,8 +3298,6 @@ n
 2Base.Buildings.Building_StoneAge_Home_Small_2_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
 Q
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescProduce Mosaici
-T
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduce Copricapi
 <
 &Base.Regions.region.FrozenFjord_4_NameForesta delle fate
 K
@@ -3531,8 +3430,6 @@ F
 <Base.Technologies.Technology_FeudalAge_PolearmManeuvers_NameManovre delle armi inastate
 J
 2Base.Units.Unit_StoneAge_Player_HeavyInfantry_NameSentinella di Bronzo
-j
-0Base.Buildings.Building_Mayas_Home_Worker_2_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 L
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_NameFattoria cittadina
 B
@@ -3565,8 +3462,6 @@ Y
 Base.Buildings.default_NameEdificioEdifici
 N
 5Base.Buildings.Building_FeudalAge_Home_Average_3_NameAbitazione intermedia
-O
-'Base.BuildingGroups.obsidianQuarry_NameCava di ossidianaCave di ossidiana
 a
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_2_NameCaserma della fanteria pesante
 H
@@ -3614,8 +3509,6 @@ l
 Hatshepsut
 o
 3Base.Buildings.Building_MinoanEra_Home_Small_1_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
-j
-0Base.Buildings.Building_Mayas_Home_Worker_5_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 Y
 @Base.Technologies.Technology_ByzantineEra_GregorianCalendar_NameCalendario gregoriano
 L
@@ -3626,8 +3519,6 @@ J
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_NameFattoria lussuosa
 Ø
 GBase.AbilityDescriptions.hero_battle_ability_description.Medusa_15_Name„<style=ability_label>Attacco ad Area| Stordimento| Veleno</style>Fissa il suo sguardo sul maggior numero di unit√† nemiche, applicando veleno a tutti i nemici in un raggio di <style=basestat>{range}</style>. Il veleno infligge <style=basestat>{dmg_percentage}</style> di danno nel corso di <style=basestat>{duration}</style>, riduce la Velocit√† di ATT di <style=basestat>{atk_speed_percentage}</style> e lascia le unit√† colpite stordite per <style=basestat>{stun_duration}</style>.
-H
-2Base.Buildings.Building_Mayas_City_CityHall_2_NameSala del consiglio
 â
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_DescJProduce una grossa pila di Monete e aggiunge 2 Lavoratori alla tua citt√†.
 G
@@ -3658,8 +3549,6 @@ C
 %Base.Units.Unit_BenjaminFranklin_Desc¥Benjamin Franklin √® qui per scatenare fulmini con le sue parole - e letteralmente anche! Questo polimata del XVIII secolo non solo fu uno dei padri fondatori degli Stati Uniti d'America, contribuendo a redigere la Dichiarazione di Indipendenza e la Costituzione, ma fu anche scrittore, inventore e scienziato.<br><br>Franklin fu uno dei primi esploratori nel campo dell'elettricit√†. Utilizz√≤ un aquilone per raccogliere il "fuoco elettrico" da una nuvola, dimostrando che i fulmini sono elettrici. Cos√¨, invent√≤ il parafulmine. Invent√≤ anche gli occhiali bifocali e studi√≤ gli oceani.<br><br>Ma Franklin √® forse pi√π famoso come diplomatico e scrittore. La sua abilit√† con le parole garant√¨ il supporto francese durante la Rivoluzione Americana ed √® rimasta immortalata in libri che sono ricordati ancora oggi. Ad esempio, potrebbe essere in grado di renderti ricco: fu lui a dire che le due certezze della vita sono la morte e le tasse!
 ﬁ
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Nameè<style=ability_label>Attacco ad Area| Guarigione| Potenziamento</style>Invoca l'assistenza divina mirando al gruppo pi√π grande di unit√† nemiche, infliggendo <style=basestat>{dmg_percentage}</style> danni in un raggio di <style=basestat>{range}</style>. Inoltre, guarisce tutte le unit√† amiche nella stessa area di <style=basestat>{hp_percentage}</style> danni base di Giovanna. Le unit√† amiche colpite guadagnano <style=basestat>{atk_percentage}</style> dell'ATT di Giovanna come ATT per <style=basestat>{duration}</style>.
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_2_DescProduce Giada
 U
 %Base.BuildingGroups.incenseMaker_NameProduttore di incensoProduttori di incenso
 Ü
@@ -3691,8 +3580,6 @@ $
 Base.HeroClass.Defender	Difensore
 H
 /Base.Continents.continent.EmeraldHighlands_NameAltopiani di Smeraldo
-j
-5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc1Produce Maschere degli antenati e Pietre del sole
 D
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescProduce Oro
 °
@@ -3705,8 +3592,8 @@ L
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_NameTagliapietre
 ]
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameInnovazione balistica
-R
-9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameFanteria Hohenstaufen
+]
+9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_Name Fanteria pesante di Hohenstaufen
 &
 Base.Ages.EarlyRome_Decade750 A.C.
 @
@@ -3766,8 +3653,6 @@ U
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameCaserma della cavalleria
 ¨
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DescqLa Sala del consiglio √® il centro della tua citt√†. Genera continuamente una piccola quantit√† di Monete e Cibo.
-i
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_Name&Fabbricante di copricapi per cerimonie
 &
 Base.Ages.FeudalAge_Start	1000 D.C.
 E
@@ -3916,8 +3801,6 @@ V
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_1_NameCaserma della fanteria
 O
 %Base.BuildingGroups.domesticFarm_NameFattoria cittadinaFattorie cittadine
-M
-0Base.Buildings.Building_Mayas_Home_Worker_2_NameAbitazione dei lavoratori
 N
 2Base.Abilities.hero_battle_ability.Hatshepsut_NameLa Tranquillit√† di Tebe
 p
@@ -3940,8 +3823,8 @@ X
 =Base.Technologies.Technology_IberianEra_SafetyMechanisms_NameMeccanismi di sicurezza
 X
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_DescProduce Ankh e Maschere d'oro
-K
-<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyal Rally
+L
+<Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRaduno Reale
 ^
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescSblocca gli schermagliatori
 k
@@ -3954,8 +3837,6 @@ A
 .Base.Abilities.hero_battle_ability.Geisha_NameColpo di Sakura
 ›
 Base.Units.Unit_Tansen_DescΩAssisti alla musica di Mian Tansen che richiama le piogge dal cielo! Questo musicista del XVI secolo era uno dei "Nove Gioielli" dell'imperatore Akbar, le persone pi√π speciali della corte indiana.<br><br>Mian Tansen (che significa "il dotto") ha creato la Gwalior Gharana, la prima scuola di musica dell'India settentrionale. Esibendosi fin dall'et√† di cinque anni, Tansen fu un cantante e un musicista esperto per tutta la vita.<br><br>Le sue leggende sono innumerevoli. Si dice che le sue canzoni abbiano domato gli elefanti selvatici e calmato gli uccelli, che abbiano acceso fuochi e evocato tempeste di pioggia. Gwalior, dove fond√≤ la sua scuola, √® nota ancora oggi come Citt√† della Musica! 
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescProduce Ossidiana
 x
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_DescAProduce una piccola quantit√† di Cibo in un breve lasso di tempo.
 j
@@ -3977,8 +3858,8 @@ D
 /Base.Abilities.hero_battle_ability.Dracula_NameEssenza Vampirica
 E
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_NameScriba
-v
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc;Aumenta considerevolmente la felicit√† degli edifici vicini
++
+Base.Units.Unit_Sacagawea_Name	Sacagawea
 I
 3Base.Buildings.Building_EarlyRome_Home_Small_1_NameAbitazione piccola
 J
@@ -4020,7 +3901,7 @@ N
 _
 ABase.Technologies.Technology_AgeOfTheFranks_PopulationGrowth_NameCrescita della popolazione
 D
-9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFurnace
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_NameFornace
 Y
 =Base.Buildings.Building_AgeOfTheFranks_Workshop_Scribe_1_DescProduce Sigilli di cera.
 Z
@@ -4039,8 +3920,6 @@ DBase.Technologies.Technology_ByzantineEra_CounterCavalryTactics_Name)Strategie
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_NameColtivazione di papiro lussuosa
 Q
 ;Base.Technologies.Technology_IberianEra_PerfectedHoney_NameMiele perfezionato
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_2_NameCava di giada
 1
 'Base.Continents.continent.Panganea_NamePangea
 u
@@ -4110,8 +3989,6 @@ P
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_NameAllevamento di asini
 Œ
 NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name˚<style=ability_label>Attacco ad Area| Malus</style>Colpisce il bersaglio corrente, infliggendo <style=basestat>{dmg_percentage}</style> danni a tutte le unit√† nemiche in un raggio d'azione di <style=basestat>{range}</style> intorno ad esso. La precisione delle unit√† colpite viene ridotta di <style=basestat>{accuracy_percentage}</style> per <style=basestat>{duration}</style>.
-i
-0Base.Buildings.Building_Mayas_Home_Priest_2_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
 Q
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameMura teodosiane
 C
@@ -4148,16 +4025,14 @@ I
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia Regis
 T
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameL'ascesa dei Vichinghi
-ß
-<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_DescgProduce Cenere e la Fornace pu√≤ anche essere utilizzata per acquisire pi√π Cenere convertendo risorse.
+â
+<Base.Buildings.Building_ClassicGreece_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 R
 4Base.Abilities.hero_battle_ability.AttilaTheHun_NameFreccia del Capo dell'Orda
 /
 $Base.Heroes.hero.EgyptianVizier_NameImhotep
 M
 8Base.Technologies.Technology_FeudalAge_FuneralAtSea_NameSepoltura in mare
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_DescProduce Ossidiana
 –
 #Base.Units.Unit_AbrahamLincoln_Desc®Combatti per la libert√† con Abraham Lincoln, il 16¬∞ Presidente degli Stati Uniti! Nel XIX secolo, questo statista guid√≤ la nazione attraverso la sua Guerra Civile e lavor√≤ instancabilmente per porre fine alla schiavit√π. Nato in una capanna di legno, le sue umili origini plasmarono profondamente il suo carattere e la sua leadership. <br><br> L'impegno di Lincoln per preservare l'Unione e l'emissione del Proclama di Emancipazione furono fondamentali nel rimodellare i valori della nazione. Conosciuto per la sua eloquenza, il suo Discorso di Gettysburg rimane uno dei discorsi pi√π famosi della storia americana. <br><br> Nonostante le sfide enormi, la leadership di Lincoln e la sua dedizione all'uguaglianza hanno lasciato un'impronta duratura. Il suo assassinio segn√≤ una fine tragica alla sua presidenza, ma non in questa linea temporale: √® scappato attraverso un portale temporale e si √® ritrovato nell'Et√† della Pietra!
 V
@@ -4198,8 +4073,6 @@ Louis Pasteur lancia una pozione sull'unit√† alleata pi√π ferita, curandola per 
 E
 7Base.Technologies.Technology_MinoanEra_Shepherding_Name
 Pastorizia
-|
-*Base.BuildingGroups.ceremonyOutfitter_Name&Fabbricante di copricapi per cerimonie&Fabbricante di copricapi per cerimonie
 +
 Base.Heroes.hero.Tansen_NameMian Tansen
 L
@@ -4250,8 +4123,8 @@ O
 !Base.HeroClass.SingleStriker_Desc‘Gli Attaccanti Singoli infliggono ingenti danni a singoli bersagli. Eccellono contro gli Eroi nemici.<br><line-height=50%><br></line-height><b><color=#3DA229>Forti</color> contro:</b><br>‚Ä¢<indent=5%><color=#3DA229>Eroi nemici</color> nella <color=#3DA229>Campagna</color>, <color=#3DA229>Arena</color> e <color=#3DA229>Caccia al Tesoro</color>.</indent><br>‚Ä¢<indent=5%><color=#3DA229>Tempeste di Tesla</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Deboli</color> contro:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Grandi Squadre</color> nella Campagna e Caccia al Tesoro.
 à
 :Base.Buildings.Building_HighMiddleAges_Home_Average_1_DescJProduce una grossa pila di Monete e aggiunge 2 Lavoratori alla tua citt√†.
-˚
-Base.Units.Unit_YiSunSin_DescŸFai tremare le foglie e le montagne con Yi Sun-sin! Questo ammiraglio coreano del XVI secolo combatt√© sotto la dinastia Joseon contro i giapponesi, non essendo mai stato sconfitto nelle battaglie navali. Addestrato fin dalla nascita come guerriero, Yi guid√≤ le forze verso innumerevoli vittorie fino a quando non fu incastrato da un generale anziano.<br><br> Una volta reintegrato, Yi ottenne incarichi di sempre maggiore importanza. Come ammiraglio alla sua prima esperienza, sconfisse i giapponesi a Okpo senza perdere una sola nave e svilupp√≤ la nave tartaruga, la celebre nave da guerra della dinastia Joseon.<br><br> Alla battaglia di Myeongnyang, Yi radun√≤ tredici navi da guerra. Attraverso le nebbie, colpirono, ingannando i giapponesi a cambiare le maree e avventurarsi in acque pericolose. I resoconti storici descrivono la nave ammiraglia dell'ammiraglio come un castello, in piedi in mezzo al mare, assicurando la vittoria coreana e il posto di Yi Sun-Sin nella storia.
+¸
+Base.Units.Unit_YiSunSin_Desc⁄Fai tremare le foglie e le montagne con Yi Sun-sin! Questo ammiraglio coreano del XVI secolo combatt√© sotto la dinastia Joseon contro i giapponesi, non essendo mai stato sconfitto nelle battaglie navali. Addestrato fin dalla nascita come guerriero, Yi guid√≤ le forze verso innumerevoli vittorie fino a quando non fu incastrato da un generale anziano.<br><br> Una volta reintegrato, Yi ottenne incarichi di sempre maggiore importanza. Come ammiraglio alla sua prima esperienza, sconfisse i giapponesi a Okpo senza perdere una sola nave e svilupp√≤ la nave testuggine, la celebre nave da guerra della dinastia Joseon.<br><br> Alla battaglia di Myeongnyang, Yi radun√≤ tredici navi da guerra. Attraverso le nebbie, colpirono, ingannando i giapponesi a cambiare le maree e avventurarsi in acque pericolose. I resoconti storici descrivono la nave ammiraglia dell'ammiraglio come un castello, in piedi in mezzo al mare, assicurando la vittoria coreana e il posto di Yi Sun-Sin nella storia.
 ò
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescdLe unit√† di fanteria pesante sono ingombranti e impediscono il passaggio alle unit√† di cavalleria.
 ∂
@@ -4343,10 +4216,10 @@ R
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_3_NameCaserma dei tiratori
 *
 Base.Units.Unit_Tansen_NameMian Tansen
+˙
+Base.Units.Unit_Sacagawea_Desc◊Traccia il futuro delle nazioni insieme a Sacagawea! Questa esploratrice Shoshone dei secoli XVII e XVIII fu l‚Äôinterprete della spedizione di Lewis e Clark, una missione per esplorare il Territorio della Louisiana su incarico di Thomas Jefferson. In quanto tale, assicur√≤ l‚Äôespansione verso ovest e il futuro degli Stati Uniti.<br><br>Incontratasi con i due esploratori al Forte Mandan, la guida di Sacagawea si rivel√≤ essenziale. La sua presenza contribu√¨ a rassicurare sull‚Äôintento pacifico della spedizione, e la sua conoscenza del territorio mantenne gli esploratori al sicuro.<br><br>Sacagawea √® ricordata come simbolo del coraggio delle donne dei nativi americani, onorata da romanzi e dalla storia. Aveva 25 anni, e sebbene molti credano che sia morta, la sua curiosit√† la port√≤ a un portale temporale nascosto sotto le montagne. Non le serv√¨ nemmeno Einstein per evocarla! Ora nel passato, esplora le valli e le colline di questo nuovo mondo, per sempre curiosa.
 W
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_NameCaserma per unit√† d'assedio
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_NameCava di ossidiana
 B
 5Base.Technologies.Technology_FeudalAge_TaflGames_Name	Hnefatafl
 Ã
@@ -4425,8 +4298,6 @@ N
 $Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 O
 5Base.Buildings.Building_Egypt_GoldMine_Premium_1_DescProduce moltissimo Oro
-J
-0Base.Buildings.Building_Mayas_Home_Priest_2_NameAbitazione sacerdotale
 4
 Base.BuildingGroups.MediumFarmFattoria cittadina
 @
@@ -4513,12 +4384,8 @@ O
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_NameMiniera d'oro lussuosa
 ê
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_DescNL'Accademia degli Eroi produce Pergamene Esperienza al costo di Punti Ricerca.
->
-3Base.Buildings.Building_Mayas_Aviary_Average_1_NameVoliera
 Ü
 6Base.Buildings.Building_Vikings_Beehive_Average_4_DescLL'Alveare produce miele delizioso usato per produrre idromele nella taverna.
-U
-#Base.BuildingGroups.priestHome_NameAbitazione sacerdotaleAbitazioni sacerdotali
 :
 1Base.Technologies.Technology_EarlyRome_Domus_NameDomus
 S
@@ -4561,8 +4428,8 @@ O
 5Base.Technologies.Technology_Vikings_MeadMastery_NameMaestria nell'Idromele
 8
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_NameFanti
-N
-6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameAssedio Hohenstaufen
+R
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Siege_NameTrabucco di Hohenstaufen
 |
 7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_DescAProduce una piccola quantit√† di Cibo in un breve lasso di tempo.
 Ö
@@ -4622,8 +4489,6 @@ K
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_NameOpliti
 Ö
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_DescAI Kheshig a cavallo sono arcieri agili e altamente specializzati.
-,
-Base.BuildingTypes.quarry_NameCavaCave
 E
 /Base.Buildings.Building_China_Home_Small_1_NameAbitazione piccola
 J
@@ -4671,7 +4536,7 @@ F
 W
 )Base.BuildingGroups.averageCamelFarm_NameFattoria di cammelliFattorie di cammelli
 H
-=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFurnace
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_NameFornace
 
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_2_DescCProduce una piccola quantit√† di Cibo in un breve periodo di tempo.
 b
@@ -4744,8 +4609,6 @@ S
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_3_NameCaserma dei tiratori
 0
 Base.Units.Unit_VikingJarl_NameErik il Rosso
-M
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_NameSito rituale medio
 P
 :Base.Technologies.Technology_IberianEra_FjordDominion_NameDominio dei fiordi
 9
@@ -4910,16 +4773,14 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name£<
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_DescKInvia navi da spedizione che raccoglieranno Tesori di Gioielli o di Spezie.
 >
 (Base.BuildingGroups.averageMerchant_NameMercanteMercanti
-G
-0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
+R
+0Base.Abilities.hero_battle_ability.YiSunSin_NameSbarramento di Navi Testuggine
 ≈
 Base.Units.Unit_RamsesII_Desc£Le pianure tremeranno sotto le ruote dei carri, perch√© Ramses il Grande ha unito la sua forza alla tua. Questo faraone del XIII secolo a.C. divenne famoso per le sue campagne contro gli Ittiti, i Nubiani e i Libici. La Battaglia di Kadesh contro gli Ittiti port√≤ a uno dei primi trattati di pace della storia.<br><br>Oltre ai suoi successi militari, Ramses II fu un costruttore prolifico che commission√≤ grandi strutture come i templi di Abu Simbel e il Ramesseum, lasciando per sempre il suo segno nel mondo.<br><br>Ramses II √® ricordato come il pi√π grande faraone del pi√π grande regno d'Egitto, il cui regno di 66 anni ha plasmato il patrimonio culturale e architettonico dell'Egitto. I greci lo chiamavano Ozymandias, nome con cui fu immortalato nella poesia. Quando vedi Ramses, inginocchiati!
 W
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameIntelaiatura in Legno
 @
 +Base.Regions.region.EmeraldHighlands_2_NameFeudo di Rosemont
-i
-0Base.Buildings.Building_Mayas_Home_Priest_3_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
 U
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_NameSistema a campo aperto
 T
@@ -4948,8 +4809,8 @@ S
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescSblocca i trapeziti
 ™
 Base.Units.Unit_TomoeGozen_DescÜFedelt√†. Bellezza. Vittoria. Questi sono i principi di Tomoe Gozen, samurai donna. Con la sua katana in mano e ben mille soldati dietro di lei, combatte nella Guerra di Genpei, sotto il comando di Minamoto no Yoshinaka.<br><br>Alla fine, tutti i soldati di Minamoto, tranne alcuni, lo abbandonarono, persino la sua stessa famiglia. Ma mai Tomoe Gozen. Mentre fuggivano da Kyoto di notte, due generali rivali tentarono di fermare la loro ritirata. Lei ne uccise uno e permise all'altro di vivere con la vergogna di essere stato battuto.<br><br>Anche se il resto della sua storia √® sconosciuto, non sar√† mai dimenticata. La sua lealt√† e la sua forza la rendono un emblema per chi combatte contro le aspettative e ancora oggi la sua storia viene raccontata in film e anime.
-Å
-=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+ä
+=Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 T
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_NameCaserma dei tiratori
 Q
@@ -4988,6 +4849,8 @@ _
 EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameFondamenta in Arenaria
 A
 #Base.BuildingGroups.stoneMason_NameTagliapietreTagliapietre
+Q
+9Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Archer_NameArceri del Cavaliere
 F
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_NameArcieri maya
 v
@@ -5032,8 +4895,6 @@ m
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name≤<style=ability_label>Attacco Corpo a Corpo| Stordimento</style>Colpisce abilmente il bersaglio attuale con il suo bastone, infliggendo <style=basestat>{dmg_percentage}</style> danni e avendo una probabilit√† del <style=basestat>{chance}</style> di lasciarlo stordito per <style=basestat>{duration}</style>.
 Ã
 &Base.Units.Unit_PhilipIIOfMacedon_Desc°Battaglia a fianco del visionario che ha messo in ginocchio la Grecia! Filippo II, un re macedone del IV secolo a.C., √® famoso per le sue prodezze militari e le sue conquiste, la figura di spicco dell'ascesa della Macedonia.<br><br>Assumendo il controllo del regno in un momento di crisi, Filippo sconfisse gli invasori fin dall'inizio del suo governo e poi introdusse la sua innovazione: la falange macedone, armata di picche lunghe 6 metri. Con un esercito superiore, condusse campagne contro la Grecia continentale, stringendo alleanze con le citt√†-stato pi√π importanti della penisola.<br><br>Alla sua morte, Filippo era un eroe di guerra con un occhio solo, il cui genio lo aveva visto unire la Grecia nella Lega di Corinto e si stava preparando a invadere la Persia quando fu assassinato. Neanche questo riusc√¨ a trattenerlo: fu divinizzato e venerato come un Dio, mentre suo figlio Alessandro continu√≤ la sua eredit√†.
->
-3Base.Buildings.Building_Mayas_Aviary_Average_2_NameVoliera
 5
 "Base.Units.Unit_QueenBoudicca_NameRegina Boudicca
 X
@@ -5114,8 +4975,6 @@ I
 3Base.Buildings.Building_BronzeAge_Home_Small_2_NameAbitazione piccola
 ’
 NBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_15_NameÇ<style=ability_label>Colpo ad Area</style>Causa un'esplosione sul bersaglio attuale, infliggendo un danno del <style=basestat>{dmg_percentage}</style> a tutte le unit√† nemiche entro un raggio di <style=basestat>{range}</style> e conferendo un Evasione del <style=basestat>{evasion_percentage}</style> per <style=basestat>{duration}</style> a tutte le unit√† amiche nello stesso raggio.
-S
-%Base.BuildingGroups.maskSculptor_NameScultore di maschereScultori di maschere
 [
 @Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_NameSito culturale lussuoso
 4
@@ -5133,8 +4992,8 @@ l
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc;Aumenta considerevolmente la Felicit√† degli edifici vicini
 O
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameTorre d'assedio
-W
-6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameFanteria Pesante Hohenstaufen
+T
+6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameAssalitori di Hohenstaufen
 I
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NamePompa idrica
 V
@@ -5153,10 +5012,6 @@ L
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_NameAbitazione lussuosa
 ›
 Base.Units.Unit_VikingJarl_DescπPartite: spiegate le vele e annusate il sale, perch√© stasera parliamo di Erik il Rosso. Questo esploratore della fine del X secolo √® famoso per aver fondato i primi insediamenti norreni in Groenlandia. Nato in Norvegia, fu esiliato in Islanda e poi in Groenlandia a causa del suo coinvolgimento in diversi conflitti.<br><br>Conosciuto per il suo spirito avventuroso e la sua leadership, Erik attravers√≤ le strade delle balene dell'Atlantico per fondare una colonia di successo in Groenlandia, attirando i coloni con i racconti di terre fertili. I suoi sforzi segnarono una significativa espansione dell'esplorazione norrena nell'Atlantico settentrionale.<br><br>L'eredit√† di Erik il Rosso rimane come leader pionieristico dell'epoca vichinga, evidenziando la natura avventurosa e resistente dell'esplorazione e della colonizzazione norrena. Ho sentito che ci sono anche Eric il Blu, Eric il Giallo, Eric il Verde e Eric il Viola: collezionali tutti!
-d
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc)Aumenta la felicit√† degli edifici vicini
-P
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameSito rituale lussuoso
 X
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NamePadronanza del ghiacciaio
 µ
@@ -5197,8 +5052,8 @@ I
 :Base.Technologies.Technology_ByzantineEra_Architekton_NameArchitekton
 ó
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name <style=ability_label>Calpestio</style>Leonida colpisce il suolo con forza, infliggendo <style=basestat>{dmg_percentage}</style> danni a tutti i nemici entro un raggio di <style=basestat>{range}</style>.
-}
-9Base.Buildings.Building_IberianEra_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+Ü
+9Base.Buildings.Building_IberianEra_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 I
 5Base.Units.Unit_ClassicGreece_ThePersians_Xerxes_NameCultisti di Ciro
 U
@@ -5231,8 +5086,6 @@ X
 ABase.Technologies.Technology_AgeOfTheFranks_XocolatlVirtuoso_NameMaestro di xocolatl
 «
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_15_Name<style=ability_label>Attacco ad Area| Potenziamento| Malus</style>Napoleone ordina uno colpo di cannone verso il gruppo pi√π numeroso di unit√† nemiche, infliggendo <style=basestat>{dmg_percentage}</style> danni in un raggio di <style=basestat>{range}</style>. Le unit√† colpite vedono la loro precisione ridotta del <style=basestat>{accuracy_percentage}</style> e i loro danni ridotti del <style=basestat>{atk_percentage}</style> per <style=basestat>{debuff_duration}</style>. Tutte le unit√† amichevoli guadagnano un'evasione del <style=basestat>{evasion_percentage}</style> per <style=basestat>{evasion_duration}</style>.
-U
-(Base.BuildingGroups.premiumWorkshop_NameLaboratorio lussuosoLaboratori lussuosi
 &
 Base.Heroes.hero.Inanna_NameInanna
 S
@@ -5249,6 +5102,8 @@ U
 @Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_DescProduce Segretari
 U
 ABase.Technologies.Technology_ClassicGreece_ImprovedFletching_NamePiume migliorate
+ª
+WBase.AbilityDescriptions.hero_battle_ability_description.TheAntikytheraMechanism_1_Nameﬂ<style=ability_label>Potenziamento </style>Il Meccanismo di Antikythera migliora in modo sofisticato le capacit√† in combattimento, estendendo la durata degli stordimenti di <style=basestat>{damage_duration_increase}</style>. Inoltre, amplifica i danni inflitti dal portatore ai bersagli storditi di <style=basestat>{damage_duration_increase}</style>.
 E
 /Base.Units.Unit_TreasureHunt_Blue_Corsairs_NameCorsari Celestiali
 G
@@ -5290,8 +5145,6 @@ O
 :Base.Technologies.Technology_BronzeAge_AncestralValor_NameValore ancestrale
 U
 9Base.Buildings.Building_Vikings_SailorPort_Premium_1_NameMolo d'attracco lussuoso
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduce Ossidiana
 W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCaserma della cavalleria
 
@@ -5313,8 +5166,6 @@ N
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_NamePorto dei Marinai
 W
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_NamePorto Lussuoso dei Marinai
-J
-0Base.Buildings.Building_Mayas_Home_Priest_3_NameAbitazione sacerdotale
 l
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_Desc+Raffina i Bozzoli di Falena in Fili di Seta
 I
@@ -5339,8 +5190,6 @@ Y
 =Base.Buildings.Building_ClassicGreece_Workshop_Artisan_1_DescProduce Anelli d'argento
 G
 :Base.Technologies.Technology_ClassicGreece_Philosophy_Name	Filosofia
-É
-1Base.Buildings.Building_Mayas_Home_Premium_1_DescNProduce moltissimo Cacao e aggiunge 1 Lavoratore e 1 Sacerdote alla tua citt√†
 .
 Base.Units.Unit_TomoeGozen_NameTomoe Gozen
 =
@@ -5360,8 +5209,6 @@ G
 8Base.Technologies.Technology_IberianEra_Crossbowmen_NameBalestrieri
 
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_DescBProduce una piccola quantit√† di Cibo per un breve lasso di tempo.
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameCava di ossidiana
 [
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameDecorazioni di marmo
 6
@@ -5372,8 +5219,6 @@ R
 0Base.Units.Unit_RomanEmpire_Player_Princeps_Name	Principes
 O
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameEconomia Portuale
-F
-1Base.Units.Unit_HighMiddleAges_Arabia_Ranged_NameTiratori Fatimidi
 ·
 Base.Units.Unit_KingMinos_DescæParla con Zeus e nascondi il filo rosso: il re Minosse √® qui! Questo leggendario sovrano della mitologia greca si crede abbia regnato nel II millennio a.C., famoso come il sovrano di Creta. <br><br>Celebrato per la sua saggezza e autorit√†, √® meglio conosciuto per aver commissionato la costruzione di un complesso labirinto per imprigionare il Minotauro, una creatura mitologica. <br><br>Il regno di Minosse √® intrecciato con affascinanti racconti di intrighi e avventure, come la storia di Dedalo e Icaro. La sua duratura eredit√† come un re temibile e misterioso continua ad incantare i narratori, intrecciando insieme fili di mito e storia antica. Non farti portare in un tour del suo labirinto!
 Z
@@ -5436,8 +5281,6 @@ x
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameStazione di irrigazione
 1
 Base.Units.Unit_JoanOfArc_NameGiovanna d'Arco
-M
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_NameSito rituale piccolo
 o
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
 z
@@ -5462,8 +5305,6 @@ E
 Base.Ages.DawnAge_NameAlba dell'umanit√†
 ç
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_DescVLe unit√† di cavalleria sono molto veloci e si lanciano contro la retroguardia nemica.
-V
-(Base.BuildingGroups.smallRitualSite_NameSito rituale piccoloSiti rituali piccoli
 [
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_DescProduce Bozzoli di Falena
 µ
@@ -5496,6 +5337,8 @@ T
 <Base.Technologies.Technology_Vikings_SuperiorBeekeeping_NameApicoltura Superiore
 \
 >Base.Technologies.Technology_MinoanEra_MysticBattleChants_NameCanti di battaglia mistici
+Y
+8Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Heavy_NameCavalieri con arma a due mani
 W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_NameLavorazione dell'Argilla
 C
@@ -5518,8 +5361,6 @@ Q
 <Base.Technologies.Technology_ByzantineEra_TrenchWarfare_NameGuerra di trincea
 W
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_NameCaserma per unit√† d'assedio
-J
-0Base.Buildings.Building_Mayas_Home_Priest_5_NameAbitazione sacerdotale
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameCanale
 V
@@ -5599,7 +5440,7 @@ G
 \
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_NameLaboratorio di porcellane
 I
->Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFurnace
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_NameFornace
 P
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_DescProduce moltissimo Cibo
 F
@@ -5686,8 +5527,6 @@ A
 "Base.Heroes.hero.RomanPraetor_NameEmialia Terzia
 ß
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name◊<style=ability_label>Tempesta</style>Qin Shi Huang evoca la sua Spada Spirituale che attraversa il campo di battaglia, infliggendo <style=basestat>{dmg_percentage}</style> danni alle unit√† nemiche e curando le unit√† alleate per <style=basestat>{heal_percentage}</style> del danno base di Qin Shi Huang per <style=basestat>{duration}</style>.
-j
-0Base.Buildings.Building_Mayas_Home_Worker_3_Desc6Produce Cacao e aggiunge un Lavoratore alla tua citt√†
 x
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_DescAProduce una piccola quantit√† di Cibo in un breve lasso di tempo.
 O
@@ -5735,8 +5574,6 @@ P
 =
 /Base.Units.Unit_MinoanEra_Minoan_KingMinos_Name
 Re Minosse
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_NameCava di ossidiana
 {
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_3_DescAProduce una piccola quantit√† di Cibo in un breve lasso di tempo.
 ö
@@ -5747,8 +5584,6 @@ z
 ;Base.Buildings.Building_StoneAge_CultureSite_Premium_1_Desc;Aumenta considerevolmente la Felicit√† degli edifici vicini
 l
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_NameFortuna scintillante
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_1_DescProduce Giada
 N
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_DescProduce Porte.
 W
@@ -5765,8 +5600,6 @@ T
 Base.Units.Unit_LouisXIV_Name	Luigi XIV
 J
 1Base.Buildings.Building_China_Home_Average_1_NameAbitazione intermedia
-H
-1Base.Buildings.Building_Mayas_Home_Premium_1_NameAbitazione lussuosa
 W
 ?Base.Buildings.Building_ByzantineEra_Special_HeroAcademy_1_NameAccademia degli eroi
 P
@@ -5791,8 +5624,6 @@ OBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Average_Name
 Base.Ages.BronzeAge_Start	3000 A.C.
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_NameCanale
-I
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescProduce Ossidiana
 E
 5Base.Buildings.Building_China_RiceFarm_Average_2_DescProduce Riso
 w
@@ -5806,8 +5637,6 @@ ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_NameSito cultura
 Re Minosse
 h
 ;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Desc)Aumenta la Felicit√† degli edifici vicini
-D
-3Base.Buildings.Building_Mayas_Quarry_Premium_1_NameCava lussuosa
 _
 =Base.Technologies.Technology_EarlyRome_SpearThrowMastery_NameMaestria nel tiro della lancia
 O
@@ -5883,14 +5712,12 @@ M
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_DescVLe unit√† di cavalleria sono molto veloci e si lanciano contro la retroguardia nemica.
 a
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameCaserma della fanteria pesante
+ä
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 ,
 Base.Units.Unit_Dracula_NameVlad Dracula
-Å
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
 I
 3Base.Buildings.Building_EarlyRome_Home_Small_3_NameAbitazione piccola
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_6_NameCava di giada
 ^
 ?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_NameEsplosione della produzione
 l
@@ -5903,10 +5730,6 @@ H
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_NameScriba
 ]
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_LongNine_NameCannone lungo
-b
-5Base.Buildings.Building_Mayas_RitualSite_Small_1_Desc)Aumenta la felicit√† degli edifici vicini
-M
-5Base.Buildings.Building_Mayas_Workshop_Premium_2_NameLaboratorio lussuoso
 ∞
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_DesczLe unit√† a distanza scagliano proiettili su grandi distanze e sono particolarmente efficaci contro le unit√† di fanteria.
 B
@@ -5936,8 +5759,6 @@ P
 5Base.Buildings.Building_China_RiceFarm_Premium_1_DescProduce moltissimo Riso
 I
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_3_NameFilatoio
-i
-0Base.Buildings.Building_Mayas_Home_Priest_5_Desc5Produce Cacao e aggiunge un Sacerdote alla tua citt√†
 \
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_DescRaffina il Caolino in Argilla
 N
@@ -6006,8 +5827,8 @@ T
 9Base.Technologies.Technology_FeudalAge_TimberFraming_NameCostruzione a graticcio
 W
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_NameBalestrieri corazzati
-Ç
->Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Desc@Produces Embers. Smelt in excess resources for additonal Embers.
+ã
+>Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_DescIProduce Braci. Fondi le risorse in eccesso per ottenere Braci aggiuntive.
 8
 $Base.Units.Unit_NubianMercenary_NameKandake di Nubia
 b
@@ -6116,8 +5937,6 @@ O
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_NameFattoria cittadina
 A
 7Base.Technologies.Technology_ClassicGreece_Temples_NameTempli
-M
-0Base.Buildings.Building_Mayas_Home_Worker_3_NameAbitazione dei lavoratori
 <
 2Base.Units.Unit_ClassicGreece_Player_Hoplites_NameOpliti
 V
@@ -6128,8 +5947,8 @@ K
 6Base.Buildings.Building_Arabia_Merchant_Premium_1_NameMercante lussuoso
 L
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_1_NameFattoria cittadina
-ò
-FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_NameÕ<style=ability_label>Colpo ad Area | Stordimento</style>Mozart orchestra una sinfonia risonante sul campo di battaglia, mirando alla zona pi√π densa di nemici per infliggere danni e stordirli. La sinfonia si rafforza a ogni utilizzo, raggiungendo il suo apice al terzo utilizzo.<br> <br>Primo Utilizzo: Infligge <style=basestat>{damage_a}</style> danni in un'area ridotta, stordendo per <style=basestat>{duration_a}</style> <br>Secondo Utilizzo: Infligge <style=basestat>{damage_b}</style> danni in un'area media, stordendo per <style=basestat>{duration_b}</style> <br>Terzo Utilizzo e successivi: Infligge <style=basestat>{damage_c}</style> danni in un'area media, stordendo per <style=basestat>{duration_c}</style>.
+†
+FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name’<style=ability_label>Colpo ad Area | Stordimento</style>Mozart orchestra una sinfonia risonante sul campo di battaglia, colpendo l‚Äôarea con la maggiore concentrazione di nemici per infliggere danni e stordimento. La sinfonia si rafforza a ogni utilizzo, raggiungendo l‚Äôapice al terzo uso. <br> <br>Primo Utilizzo: Infligge <style=basestat>{damage_a}</style> danni in un raggio di 1, stordendo per <style=basestat>{duration_a}</style>. Secondo Utilizzo: Infligge <style=basestat>{damage_b}</style> danni in un raggio di 2, stordendo per <style=basestat>{duration_b}</style>. Dal Terzo Utilizzo in poi: Infligge <style=basestat>{damage_c}</style> danni in un raggio di 3, stordendo per <style=basestat>{duration_c}</style>.
 M
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameScambio culturale
 L
@@ -6171,8 +5990,6 @@ c
 CBase.Technologies.Technology_AgeOfTheFranks_AdvancedJadeMining_NameEstrazione di giada avanzata
 W
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_NamePaladini di Carlo Magno
-P
-3Base.Buildings.Building_Mayas_Quarry_Premium_1_DescProduce Giada e Ossidiana
 H
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_Name	Ipaspisti
 ,
@@ -6224,8 +6041,6 @@ X
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_NameSito culturale medio
 ¨
 OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Nameÿ<style=ability_label>Provocazione| Scudo</style>Provoca tutti i nemici per <style=basestat>{taunt_duration}</style>. Bismarck guadagna uno scudo pari al <style=basestat>{shield_percentage}</style> del suo danno base.
-L
-&Base.BuildingGroups.premiumAviary_NameVoliera lussuosaVoliere lussuose
 g
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Desc$Sblocca le Avanguardie del Minotauro
 ˛
@@ -6248,8 +6063,8 @@ G
 4Base.Buildings.Building_IberianEra_Farm_Rural_2_NameFattoria rurale
 (
 Base.Ages.IberianEra_Decade	1050 D.C.
-F
-9Base.Technologies.Technology_ClassicGreece_Equipment_Name	Equipment
+L
+9Base.Technologies.Technology_ClassicGreece_Equipment_NameEquipaggiamento
 B
 4Base.Technologies.Technology_Vikings_Beekeeping_Name
 Apicoltura
@@ -6288,14 +6103,10 @@ BBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianArcher_NameArcieri Mer
 E
 #Base.BuildingTypes.cultureSite_NameSito culturaleSiti culturali
 H
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFurnace
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_NameFornace
 @
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Name
 Sagittarii
-A
-0Base.Buildings.Building_Mayas_Quarry_Jade_6_DescProduce Giada
-Ü
-5Base.Buildings.Building_Mayas_Workshop_Premium_2_DescMProduce Maschere degli antenati, Pietre del sole, Pugnali rituali e Copricapi
 G
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameAlloro dorato
 ,

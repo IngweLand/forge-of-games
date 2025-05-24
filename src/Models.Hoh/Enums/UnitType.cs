@@ -11,4 +11,6 @@ public enum UnitType
     Infantry,
     Ranged,
     Siege,
+    Spawner,
+    Gate,
 }
