@@ -11,6 +11,7 @@ public static class WorldTypeExtensions
             "world_type.tesla_storm" => WorldType.TeslaStorm,
             "world_type.campaign" => WorldType.Campaign,
             "world_type.dungeon" => WorldType.Dungeon,
+            "world_type.historic_battle" => WorldType.HistoricBattle,
             _ => throw new Exception($"Cannot map world type: {src}"),
         };
     }

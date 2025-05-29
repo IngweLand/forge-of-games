@@ -52,4 +52,5 @@ public enum UnitStatType
     SquadSpacingY,
     StatusEffectDurationAmp,
     StunDurationAmp,
+    StunDurationTakenAmp,
 }

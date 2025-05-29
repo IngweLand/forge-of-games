@@ -70,6 +70,7 @@ public static class BuildingSubtypeExtensions
             "beehiveRunestone" => BuildingGroup.BeehiveRunestone,
             "tavernRunestone" => BuildingGroup.TavernRunestone,
             "sailorPort" => BuildingGroup.SailorPort,
+            "furnace" => BuildingGroup.Furnace,
             _ => throw new Exception($"Cannot map building subtype: {value}"),
         };
     }

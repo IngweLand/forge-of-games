@@ -15,6 +15,7 @@ namespace Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 [ProtoInclude(108, typeof(BoostResourceComponent))]
 [ProtoInclude(109, typeof(CultureBoostComponent))]
 [ProtoInclude(110, typeof(LevelUpComponent))]
+[ProtoInclude(111, typeof(ResourceConversionComponent))]
 public abstract class ComponentBase
 {
 }

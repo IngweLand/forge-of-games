@@ -27,15 +27,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "CidoZXJvX2JhdHRsZV9hYmlsaXR5X2NvbXBvbmVudF9kdG8ucHJvdG8ibQod",
             "SGVyb0JhdHRsZUFiaWxpdHlDb21wb25lbnREVE8SFwoPaGVyb19hYmlsaXR5",
             "X2lkGAEgASgJEjMKBmxldmVscxgCIAMoCzIjLkhlcm9CYXR0bGVBYmlsaXR5",
-            "Q29tcG9uZW50TGV2ZWxEdG8icQoiSGVyb0JhdHRsZUFiaWxpdHlDb21wb25l",
-            "bnRMZXZlbER0bxISCgphYmlsaXR5X2lkGAEgASgJEgwKBGNvc3QYBCABKAUS",
-            "FAoMaXNfa2V5X2xldmVsGAUgASgIEhMKC2FiaWxpdHlfaWRzGAYgAygJQh+q",
-            "AhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Q29tcG9uZW50TGV2ZWxEdG8iXQoiSGVyb0JhdHRsZUFiaWxpdHlDb21wb25l",
+            "bnRMZXZlbER0bxIMCgRjb3N0GAQgASgFEhQKDGlzX2tleV9sZXZlbBgFIAEo",
+            "CBITCgthYmlsaXR5X2lkcxgGIAMoCUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4u",
+            "TW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentDTO.Parser, new[]{ "HeroAbilityId", "Levels" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentLevelDto), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentLevelDto.Parser, new[]{ "AbilityId", "Cost", "IsKeyLevel", "AbilityIds" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentLevelDto), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleAbilityComponentLevelDto.Parser, new[]{ "Cost", "IsKeyLevel", "AbilityIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -293,7 +293,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroBattleAbilityComponentLevelDto(HeroBattleAbilityComponentLevelDto other) : this() {
-      abilityId_ = other.abilityId_;
       cost_ = other.cost_;
       isKeyLevel_ = other.isKeyLevel_;
       abilityIds_ = other.abilityIds_.Clone();
@@ -304,18 +303,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroBattleAbilityComponentLevelDto Clone() {
       return new HeroBattleAbilityComponentLevelDto(this);
-    }
-
-    /// <summary>Field number for the "ability_id" field.</summary>
-    public const int AbilityIdFieldNumber = 1;
-    private string abilityId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string AbilityId {
-      get { return abilityId_; }
-      set {
-        abilityId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "cost" field.</summary>
@@ -368,7 +355,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AbilityId != other.AbilityId) return false;
       if (Cost != other.Cost) return false;
       if (IsKeyLevel != other.IsKeyLevel) return false;
       if(!abilityIds_.Equals(other.abilityIds_)) return false;
@@ -379,7 +365,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (AbilityId.Length != 0) hash ^= AbilityId.GetHashCode();
       if (Cost != 0) hash ^= Cost.GetHashCode();
       if (IsKeyLevel != false) hash ^= IsKeyLevel.GetHashCode();
       hash ^= abilityIds_.GetHashCode();
@@ -401,10 +386,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (AbilityId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(AbilityId);
-      }
       if (Cost != 0) {
         output.WriteRawTag(32);
         output.WriteInt32(Cost);
@@ -424,10 +405,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (AbilityId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(AbilityId);
-      }
       if (Cost != 0) {
         output.WriteRawTag(32);
         output.WriteInt32(Cost);
@@ -447,9 +424,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (AbilityId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(AbilityId);
-      }
       if (Cost != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cost);
       }
@@ -468,9 +442,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public void MergeFrom(HeroBattleAbilityComponentLevelDto other) {
       if (other == null) {
         return;
-      }
-      if (other.AbilityId.Length != 0) {
-        AbilityId = other.AbilityId;
       }
       if (other.Cost != 0) {
         Cost = other.Cost;
@@ -494,10 +465,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            AbilityId = input.ReadString();
-            break;
-          }
           case 32: {
             Cost = input.ReadInt32();
             break;
@@ -525,10 +492,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            AbilityId = input.ReadString();
-            break;
-          }
           case 32: {
             Cost = input.ReadInt32();
             break;

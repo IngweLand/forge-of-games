@@ -61,4 +61,5 @@ public enum RegionId
     VolcanicJungle_6,
     VolcanicJungle_7,
     VolcanicJungle_8,
+    SiegeOfOrleans,
 }

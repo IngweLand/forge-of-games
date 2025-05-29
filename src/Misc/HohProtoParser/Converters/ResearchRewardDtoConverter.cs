@@ -5,10 +5,11 @@ using Google.Protobuf.WellKnownTypes;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
+using Microsoft.Extensions.Logging;
 
 namespace HohProtoParser.Converters;
 
-public class ResearchRewardDtoConverter : ITypeConverter<RepeatedField<Any>, IReadOnlyCollection<ResearchRewardBase>>
+public class ResearchRewardDtoConverter(ILogger<ResearchRewardDtoConverter> logger) : ITypeConverter<RepeatedField<Any>, IReadOnlyCollection<ResearchRewardBase>>
 {
     public IReadOnlyCollection<ResearchRewardBase> Convert(RepeatedField<Any> source,
         IReadOnlyCollection<ResearchRewardBase> destination, ResolutionContext context)
@@ -63,7 +64,7 @@ public class ResearchRewardDtoConverter : ITypeConverter<RepeatedField<Any>, IRe
             }
             else
             {
-                throw new Exception($"Unknown research reward type: {any.TypeUrl}");
+                logger.LogWarning($"Unknown research reward type: {any.TypeUrl}");
             }
         }
 

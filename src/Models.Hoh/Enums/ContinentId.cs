@@ -17,4 +17,5 @@ public enum ContinentId
     TeslaStormRed,
     TeslaStormYellow,
     VolcanicJungle,
+    SiegeOfOrleans,
 }

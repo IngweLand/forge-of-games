@@ -80,6 +80,10 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
                 {
                     list.Add(mapper.Map<HeroAbilityTrainingComponent>(heroAbilityTrainingComponent[gdr.Id]));
                 }
+                else if (Any.GetTypeName(gdr.Type) == "ResourceConversionComponentDTO")
+                {
+                    
+                }
                 else
                 {
                     throw new Exception($"Unknown GameDesignReference type: {gdr.Type}");

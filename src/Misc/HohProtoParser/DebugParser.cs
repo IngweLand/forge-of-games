@@ -9,8 +9,11 @@ namespace Ingweland.Fog.HohProtoParser;
 
 public class DebugParser
 {
-    public DebugParser(string filepath)
+    private readonly IMapper _mapper;
+
+    public DebugParser(string filepath, IMapper mapper)
     {
+        _mapper = mapper;
         using var file = File.OpenRead(filepath);
         var container = GameDesignResponseDtoContainer.Parser.ParseFrom(file);
         var gdr = GameDesignResponseDTO.Parser.ParseFrom(container.Content.Value);
@@ -211,13 +214,12 @@ public class DebugParser
         File.WriteAllText("resource_definitions.txt", sb.ToString());
     }
 
-    private static void ProcessStartupBin()
+    private void ProcessStartupBin()
     {
         const string startupBin = @"D:\IngweLand\Projects\forge-of-games\resources\hoh\data\startup_10.01.25.bin";
         using var file = File.OpenRead(startupBin);
         var container = StartupDto.Parser.ParseFrom(file);
         var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile<StartupProfile>(); });
-        var mapper = mappingConfig.CreateMapper();
-        var cities = mapper.Map<IList<City>>(container.Cities);
+        var cities = _mapper.Map<IList<City>>(container.Cities);
     }
 }

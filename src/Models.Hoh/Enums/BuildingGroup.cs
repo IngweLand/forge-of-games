@@ -29,6 +29,7 @@ public enum BuildingGroup
     EvolvingGarden,
     ExpeditionPier,
     Fountain,
+    Furnace,
     Goldsmith,
     HeavyInfantryBarracks,
     HeroAcademy,

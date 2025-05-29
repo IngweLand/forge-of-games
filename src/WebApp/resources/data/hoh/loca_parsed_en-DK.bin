@@ -8,6 +8,8 @@ Q
 G
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_2_Name
 Small Well
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_1_NameLuxurious Aviary
 ¬
 Base.HeroClass.Defender_Desc°Defenders charge into the breach and protect their allies.<br><line-height=50%><br></line-height><b><color=#3DA229>Strong</color> against:</b><br>‚Ä¢<indent=5%><color=#3DA229>Campaign</color>, <color=#3DA229>Arena</color> and <color=#3DA229>Treasure Hunt</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Weak</color> against:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Tesla Storms</color>.</indent>
 T
@@ -34,6 +36,8 @@ P
 -Base.Units.Unit_FeudalAge_Player_Knights_NameKnights
 G
 1Base.Abilities.hero_battle_ability.MarcoPolo_NameBurst of discovery
+d
+0Base.Buildings.Building_Mayas_Home_Priest_1_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 E
 :Base.Buildings.Building_RomanEmpire_Special_Furnace_1_NameFurnace
 R
@@ -44,6 +48,8 @@ J
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_NameVerdant Harpoonists
 q
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
+F
+%Base.BuildingGroups.ritualCarver_NameRitual CarverRitual Carvers
 O
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameRanged Barracks
 ó
@@ -72,6 +78,8 @@ P
 RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_NameÆ<style=ability_label>Stomp</style>Stomps the ground, dealing <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of <style=basestat>{range}</style>.
 „
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Nameî<style=ability_label>Area Strike| Heal| Buff</style>Calls for divine assistance targeting the biggest cluster of enemy units, dealing <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. Also heals all friendly units in the same area by <style=basestat>{hp_percentage}</style> of Joan's base damage. Affected friendly units gain <style=basestat>{atk_percentage}</style> of Joan's ATK as ATK and <style=basestat>{atkspeed_percentage}</style> ATK Speed for <style=basestat>{duration}</style>.
+|
+1Base.Buildings.Building_Mayas_Home_Premium_6_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 J
 0Base.Abilities.hero_battle_ability.KarlMarx_NameManifesto Misdirection
 %
@@ -112,8 +120,12 @@ King Minos
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_DesckLuxurious fishing piers send out boats to catch tons of fish to supply all your hungry workers and sailors.
 ¢
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_DesceSend off expedition ships which will gather either tons of jewel-, spice-, gold- or ceramic Treasures
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_DescProduces Obsidian
 o
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_NameSingularity monument
+B
+0Base.Buildings.Building_Mayas_Home_Priest_4_NameCraftsman Home
 „
 %Base.Units.Unit_ThomasAlvaEdison_DescπThomas Alva Edison, the Wizard of Menlo Park, is here to shine! This iconic American inventor and businessman of the late 19th and early 20th centuries transformed modern technology with his numerous innovations.<br><br>Edison held over 1,000 patents, including those for the phonograph, the motion picture camera, and the electric light bulb. His industrial research labs revolutionized the process of innovation, serving as a model for future technological development.<br><br>Edison's ingenuity and acumen not only transformed industries but also the modern way of life, leaving a legacy of creativity and perseverance that continues to inspire inventors today. He truly was extremely 'bright'!
 ô
@@ -152,6 +164,8 @@ t
 ,Base.Units.Unit_TreasureHunt_Red_Cannon_NameScarlet Cannon
 I
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_2_NameMedium Home
+Ω
+JBase.AbilityDescriptions.hero_battle_ability_description.LadySixSky_1_NameÓ<style=ability_label>Summon| Taunt| Area Strike</style>Lady Six Sky summons a mystical totem at the center of the battlefield, compelling all enemies to focus their attacks on it. The totem possesses <style=basestat>{totem_hp}</style>¬†of Lady Six Sky's base damage as its health, and <style=basestat>{totem_atk_def}</style> of her attack and defense. Upon destruction, the totem releases a burst of spiritual energy, inflicting <style=basestat>{totem_explosion}</style>¬†damage to nearby foes.
 @
 1Base.Buildings.Building_China_Home_Average_5_NameMedium Home
 G
@@ -187,6 +201,8 @@ G
 Water Pump
 E
 8Base.Technologies.Technology_ByzantineEra_Shamanism_Name	Shamanism
+›
+Base.Units.Unit_LadySixSky_DescπLady Six Sky, a notable Maya queen of the 7th century CE, was instrumental in the revival and expansion of the Naranjo city-state in present-day Guatemala. Originally from the powerful city of Dos Pilas, she brought her royal lineage and influence to Naranjo.<br><br>Her reign is marked by successful military campaigns and political alliances that strengthened Naranjo's power in the region. Lady Six Sky also commissioned numerous monuments and inscriptions that celebrated her achievements and reinforced her authority.<br><br>Her leadership and strategic acumen left a lasting legacy, contributing significantly to the cultural and political landscape of the Maya civilization during her time.
 K
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameCeremonial Dress
 D
@@ -223,6 +239,8 @@ Beekeeping
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescLThe Hero Academy produces Experience Scrolls at the cost of Research Points.
 X
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_DescProduces Saffron
+?
+"Base.BuildingTypes.ritualSite_NameRitual SiteRitual Sites
 J
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameSiege Barracks
 d
@@ -282,6 +300,8 @@ V
 ?Base.Technologies.Technology_RomanEmpire_QuickReloadSystem_NameQuick Reload System
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_3_DescProduces a ton of Papyrus
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_3_NameMagma Temple
 3
 Base.Ages.KingdomOfSicily_NameKingdom of Sicily
 9
@@ -355,6 +375,10 @@ O
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_2_NameSiege Barracks
 M
 9Base.Technologies.Technology_Vikings_ImprovedFishing_NameImproved Fishing
+ü
+MBase.AbilityDescriptions.hero_battle_ability_description.PakalTheGreat_1_NameÕ<style=ability_label>Buff| Shield</style>Pakal the Great fortifies the largest cluster of allies, providing them with a protective shield worth <style=basestat>{shield_percentage}</style> of his base damage for <style=basestat>{shield_duration}</style>. Additionally, he bolsters their defense by increasing their defense by <style=basestat>{def_percentage}</style> for <style=basestat>{def_duration}</style> in a wide radius of <style=basestat>{range}</style>.
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_NameObsidian Quarry
 B
 4Base.Buildings.Building_Vikings_City_CityHall_1_Name
 Great Hall
@@ -488,11 +512,17 @@ W
 @Base.Technologies.Technology_RomanEmpire_PastureImprovement_NamePasture Improvement
 â
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_DescLSend off expedition ships which will gather either jewel- or spice treasures
+b
+0Base.Buildings.Building_Mayas_Home_Worker_6_Desc.Produces Cocoa and adds 2 Workers to your city
+C
+1Base.Buildings.Building_Mayas_Home_Premium_6_NameLuxurious Home
 U
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameBulwark Formation
 G
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_Name
 Small Well
+$
+Base.Units.Unit_ElCid_NameEl Cid
 K
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_3_NameRanged Barracks
 M
@@ -519,6 +549,8 @@ CBase.Technologies.Technology_AgeOfTheFranks_UrbanCombatProwess_NameUrban Comb
 %Base.Heroes.hero.NubianMercenary_NameKandake of Nubia
 [
 CBase.Technologies.Technology_AgeOfTheFranks_SiegeEngineTactics_NameSiege Engine Tactics
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_5_NameLuxurious Workshop
 >
 )Base.BuildingGroups.mediumIrrigation_NameChannelChannels
 G
@@ -547,6 +579,8 @@ Yi Sun-sin
 &Base.Heroes.hero.GeorgeWashington_NameGeorge Washington
 7
 $Base.Heroes.hero.AbrahamLincoln_NameAbraham Lincoln
+d
+0Base.Buildings.Building_Mayas_Home_Priest_4_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 ;
 %Base.Units.Unit_ThomasAlvaEdison_NameThomas Alva Edison
 L
@@ -573,11 +607,15 @@ H
 1Base.Abilities.hero_battle_ability.Confucius_NameConfucian Confusion
 Ø
 $Base.Units.Unit_MiyamotoMusashi_DescÜFollow the path of Two Heavens as One with Miyamoto Musashi! This legendary Japanese swordsman from the late 16th to early 17th century is celebrated for his status as a kenshi, a sword saint. He invented his own styles, and was nearly unmatched with the blade.<br><br>Musashi journeyed across Japan, on a Musha shugyo or Warrior's Quest. He fought in 62 duels and won them all, even winning one of them with a carved bit of oar. Before retiring, he fought in battles and duels alike, and taught many swordsmen.<br><br>His unique style and tactical genius set him apart, making him a revered figure in martial arts history. Beyond the battlefield, Musashi was also a philosopher and an artist, authoring 'The Book of Five Rings', a guide that continues to inspire with its wisdom on strategy and life. His legacy is a testament to the power of mastering one's craft. Just don't challenge him to a duel!
+<
+'Base.Regions.region.SiegeOfOrleans_NameSiege of Orl√©ans
 -
 Base.Heroes.hero.TigerLily_Name
 Tiger Lily
 k
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_Desc.Increases the irrigation of adjacent buildings
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_1_NameJade Quarry
 i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_3_Desc.Increases the irrigation of adjacent buildings
 â
@@ -599,6 +637,8 @@ M
 <Base.Technologies.Technology_ClassicGreece_DomesticPigs_NameDomestic Pigs
 O
 >Base.Technologies.Technology_KingdomOfSicily_FamiliaRegis_NameFamilia Regis
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_NameRitual Carver
 F
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Name
 Small home
@@ -698,6 +738,8 @@ KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameSc
 9
  Base.BuildingTypes.goldMine_Name	Gold Mine
 Gold Mines
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_4_NameJade Quarry
 L
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_NameLuxurious Gold Mine
 n
@@ -760,6 +802,8 @@ P
 :Base.Abilities.hero_battle_ability.LudwigVanBeethoven_NameOde to Destruction
 (
 Base.Units.Unit_Hoplit_Name	Miltiades
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_4_NameRitual Carver
 P
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Heavy_NameSicilian Bidenhaender
 ì
@@ -787,6 +831,8 @@ E
 6Base.Technologies.Technology_MinoanEra_LinenShirt_NameLinen Shirt
 E
 9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimoire
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameMask Sculptor
 @
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameViking Archers
 P
@@ -807,6 +853,8 @@ F
 *Base.Wonders.Wonder_Vikings_Yggdrasil_Name	Yggdrasil
 T
 @Base.Technologies.Technology_AgeOfTheFranks_DivineAscension_NameDivine Ascension
+ˇ
+JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name∞<style=ability_label>Summon| Debuff| Control</style>Montezuma conjures thorned vines that ensnare the furthest enemy, dragging them into melee range and dealing <style=basestat>{dmg_percentage}</style>¬†damage upon impact. All allied units instantly switch focus to this captured foe, ensuring no escape.
 €
 Base.Units.Unit_Menes_DescºHail Menes, the first mortal king of all Egypt. This great ruler of the 31st century BCE in ancient Egypt is credited with uniting Upper and Lower Egypt, thus becoming the first pharaoh of a unified Egyptian kingdom.<br><br>He established Memphis as the capital, strategically placed between Upper and Lower Egypt. His leadership marked the start of Egypt's First Dynasty, setting the stage for its cultural and political development.<br><br>Menes' legacy is the the birth of the Egyptian civilization, for he laid the foundation for one of history's greatest cultures. Unfortunately, he's currently rumored to be working with Tesla. Apparently, he wants to replace all of history with Ancient Egypt.
 K
@@ -875,6 +923,8 @@ N
 D
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_Name
 Great Hall
+?
+0Base.Buildings.Building_Mayas_Home_Worker_6_NameWorker Home
 D
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Name
 Small Home
@@ -900,6 +950,8 @@ O
 9Base.Abilities.hero_battle_ability.PhilipIIOfMacedon_NameShield of Defiance
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantine Infantry
+/
+ Base.Heroes.hero.MontezumaI_NameMontezuma I
 M
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameCavalry Barracks
 G
@@ -918,10 +970,14 @@ ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameIrrigation S
 #Base.Units.Unit_EgyptianVizier_Desc˚Become a God with Imhotep, the one who comes in peace! This advisor and architecture of the 27th century BCE oversaw the construction of the Step Pyramid at Saqqara, one of the earliest pyramids of all history.<br><br>In life, Imhotep was a mystery, a priest of Ra of whom little is known. In the years after, his fame grew, until he became deified: worshiped as a god of medicine and brother to the god Thoth.<br><br>This is how Imhotep was remembered for years. Even the Greeks supposedly worshiped him, and he was credited for ending floods in the Roman period. Ironically, it seems he was never even involved with medicine in life!
 N
 =Base.Technologies.Technology_HighMiddleAges_HeraldryPost_NameHeraldry Post
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_2_NameCrystal Spring
 ¯
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_NameÆ<style=ability_label>Ranged Strike</style>Throws a kunai at the enemy with the lowest current HP, dealing <style=basestat>{dmg_percentage}</style> damage. Prioritizes heroes.
 L
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameTwilight Harpoonists
+b
+0Base.Buildings.Building_Mayas_Home_Worker_1_Desc.Produces Cocoa and adds 2 Workers to your city
 p
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 C
@@ -938,6 +994,9 @@ C
 1Base.Buildings.Building_China_Home_Premium_1_NameLuxurious Home
 N
 :Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameKnightly cavalry
+>
+#Base.BuildingGroups.chronicler_Name
+ChroniclerChroniclers
 E
 5Base.Technologies.Technology_Vikings_HealingMead_NameHealing Mead
 ;
@@ -953,6 +1012,8 @@ i
 Small Home
 C
 1Base.Buildings.Building_China_Home_Premium_3_Nameluxurious Home
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_NameCeremony Outfitter
 $
 Base.Cities.City_China_NameChina
 W
@@ -1059,6 +1120,9 @@ J
 Lusterware
 \
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_2_NameHeavy Infantry Barracks
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_5_Name
+Chronicler
 I
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_3_NameSiege Barracks
 Z
@@ -1153,6 +1217,8 @@ R
 ?Base.Technologies.Technology_HighMiddleAges_ChivalricCodes_NameChivalric Codes
 5
 #Base.Heroes.hero.RagnarLodbrok_NameRagnar Lodbrok
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_4_DescProduces Jade
 @
 /Base.TreasureHuntDifficulties.Difficulty_3_NameApprentice II
 T
@@ -1222,6 +1288,8 @@ R
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_DescUnlocks Melites
 8
 -Base.Units.Unit_EarlyRome_Player_Velites_NameVelites
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_4_NameLuxurious Quarry
 E
 8Base.Technologies.Technology_ByzantineEra_Byzantium_Name	Byzantium
 ¶
@@ -1230,6 +1298,8 @@ C
 3Base.Technologies.Technology_Egypt_FinePapyrus_NameFine Papyrus
 G
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_NamePeaked Roofs
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameMagma Temple
 g
 7Base.TreasureHuntDifficultiesPanel.DifficultyUnlockInfo,Finish previous difficulty or reach age {0}!
 -
@@ -1249,8 +1319,12 @@ N
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_NamePapyrus Workshop
 w
 6Base.Buildings.Building_IberianEra_Home_Average_3_Desc=Produces a big pile of Coins and adds 2 Workers to your city.
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_3_DescProduces Jade
 4
 ,Base.Technologies.Technology_Egypt_Ankh_NameAnkh
+B
+0Base.Buildings.Building_Mayas_Home_Priest_1_NameCraftsman Home
 C
 5Base.Technologies.Technology_StoneAge_Slingshots_Name
 Slingshots
@@ -1360,6 +1434,10 @@ G
 )Base.Regions.region.VolcanicJungle_6_NameCastles of Castilla
 K
 8Base.Technologies.Technology_Vikings_GlacierMastery_NameGlacier Mastery
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidian Quarry
+?
+0Base.Buildings.Building_Mayas_Home_Worker_1_NameWorker Home
 U
 >Base.Technologies.Technology_FeudalAge_ImprovedBeekeeping_NameImproved Beekeeping
 s
@@ -1383,6 +1461,8 @@ V
 =Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_NameModerate Culture Site
 ?
 4Base.Technologies.Technology_IberianEra_Tattoos_NameTattoos
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_NameMask Sculptor
 m
 1Base.Buildings.Building_China_Home_Premium_3_Desc8Produces a ton of Wu Zhu and adds 3 workers to your city
 C
@@ -1396,6 +1476,8 @@ g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc&Refines Moth Cocoons into Silk Threads
 æ
 NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_NameÎ<style=ability_label>Buff</style>Whenever the holder lands a critical hit, their critical strike chance is increased by <style=basestat>{crit_buff}</style> for <style=basestat>{duration}</style>. This effect does not stack with itself.
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_4_NameLuxurious Aviary
 n
 2Base.Buildings.Building_Arabia_Home_Premium_1_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 r
@@ -1430,6 +1512,10 @@ W
 6Base.Buildings.Building_Arabia_Merchant_Average_1_DescProduces a big pile of Dirham
 {
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_Desc<Produces a big pile of Coins and adds 2 Workers to your city
+Ñ
+OBase.AbilityDescriptions.hero_battle_ability_description.ThomasJefferson_1_Name∞<style=ability_label>Soul Link| Debuff</style>Thomas Jefferson forms a spirit link with the enemy hero possessing the highest HP, lasting for <style=basestat>{duration}</style>. While linked, <style=basestat>{damage_transfer}</style>¬†of any damage Thomas receives is transferred to the linked enemy hero
+/
+Base.Units.Unit_LadySixSky_NameLady Six Sky
 W
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_1_NameIrrigation Station
 J
@@ -1476,6 +1562,8 @@ W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_6_DescRefines kaolin into clay
 V
 DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_NameSpice Merchant
+L
+5Base.Abilities.hero_battle_ability.PakalTheGreat_NameStoneguard Blessing
 U
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NamePorcelain workshop
 F
@@ -1527,6 +1615,8 @@ F
 7Base.Technologies.Technology_IberianEra_SunCompass_NameSun Compass
 Z
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_3_NameHeavy Infantry Barracks
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_2_DescProduces Feathers
 '
 Base.Ages.FeudalAge_Decade	1000 A.D.
 %
@@ -1609,6 +1699,10 @@ D
 7Base.Units.Unit_AgeOfTheFranks_Player_FrancArchers_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 
 5Base.Units.Unit_AgeOfTheFranks_Player_Caballarii_DescFCavalry Units are very fast and charge towards the enemies rear guard.
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_4_Desc0Produces both Jade and Obsidian at the same time
+ı
+IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Nameß<style=ability_label>Heal| Focus</style>Sacagawea tends to the wounded, healing the allied hero with the lowest health for <style=basestat>{heal_amt}</style>¬†of her base damage. She also imparts <style=basestat>{focus_amt}</style>¬†of her focus regeneration as immediate focus to the same ally.
 w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_5_Desc=The tavern produces mead and stockfish out of honey and fish.
 T
@@ -1639,6 +1733,8 @@ B
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_NameClubmen
 E
 8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	Carpenter
+B
+1Base.Abilities.hero_battle_ability.Sacagawea_NameGuiding Light
 ·
 KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_21_Nameë<style=ability_label>Stomp| Bleed| Stun</style>Tomoe strikes the ground with her spear, unleashing a shockwave that deals <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of <style=basestat>{range}</style>. Affected units have a <style=basestat>{bleed_chance}</style> chance to bleed for an additional <style=basestat>{bleed_percentage}</style> damage over <style=basestat>{bleed_duration}</style> and a <style=basestat>{stun_chance}</style> to be stunned for <style=basestat>{stun_duration}</style>.
 M
@@ -1647,6 +1743,8 @@ N
 :Base.Technologies.Technology_FeudalAge_RidgeAndFurrow_NameRidge and Furrow
 Z
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_NameCompact Culture Site
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_3_NameJade Quarry
 √
 GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name˜<style=ability_label>Melee Strike| Bleed</style>Pierces the current target four times, dealing increased damage with each stab for a total of <style=basestat>{dmg_percentage}</style> damage. Each stab has a <style=basestat>{chance_percentage}</style> chance to let the opponent bleed for <style=basestat>{dmg_percentage_bleed}</style> over <style=basestat>{duration}</style>.
 u
@@ -1677,12 +1775,16 @@ f
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc.Produces Coins and adds a Worker to your city.
 q
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_2_Desc3Produces a large amount of Food over a long period.
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_2_Desc0Produces both Jade and Obsidian at the same time
 F
 7Base.Buildings.Building_RomanEmpire_Home_Average_2_NameMedium Home
 L
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_DescUnlocks Trebuchet
 :
 %Base.Units.Unit_GeorgeWashington_NameGeorge Washington
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameRitual Carver
 E
 4Base.Abilities.hero_battle_ability.TribalHealer_NameHealing Salve
 L
@@ -1719,6 +1821,8 @@ W
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescUnlocks Hoplites
 T
 :Base.Buildings.Building_AgeOfTheFranks_Farm_Premium_1_DescProduces a ton of Food
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_5_NameLuxurious Quarry
 S
 &Base.BuildingGroups.littleCulture_NameLittle Culture SiteLittle Culture Sites
 :
@@ -1732,6 +1836,8 @@ i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc.Increases the irrigation of adjacent buildings
 á
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
+A
+#Base.BuildingGroups.jadeQuarry_NameJade QuarryJade Quarries
 P
 9Base.Technologies.Technology_MinoanEra_HeavyInfantry_NameMinotaur's Vanguard
 d
@@ -1811,8 +1917,12 @@ Small Home
 IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name∫<style=ability_label>Heal</style>The Ouroboros grants its holder the power to siphon life, stealing a portion of healing received by enemy heroes from hero abilities. The holder gains <style=basestat>{heal_steal}</style> of the heal intended for enemy heroes, turning their rejuvenation into the holder's strength.
 ,
 Base.Heroes.hero.Sacagawea_Name	Sacagawea
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_6_NameLuxurious Workshop
 h
 ;Base.Buildings.Building_IberianEra_CultureSite_Large_1_Desc)Improves Happiness of adjacent buildings.
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_3_DescProduces Feathers
 ¢
 "Base.Units.Unit_JaguarWarrior_Desc˚The Aztecs believed the strength of the God Tezcatlipoca was embodied in the jaguar, and the jaguar warriors wore their skins to gain their power.<br><br>Jaguar warriors were treated as nobles within Aztec society, having proven themselves on the battlefield by taking captives. With their obsidian-bladed clubs, they fought almost constantly, for battle was the lifeblood of the Aztec empire.<br><br>Jaguar warriors perhaps exemplify Aztec warfare to this day. Combining training, culture, religion, and battle, they were believed to appease the very gods with their skill. For men dressed in animal onesies, that's pretty impressive!
 A
@@ -1842,6 +1952,8 @@ Q
 >Base.Buildings.Building_ByzantineEra_Workshop_Carpenter_1_DescProduces Planks
 S
 =Base.Technologies.Technology_IberianEra_OrderOfCalatrava_NameOrder of Calatrava
+C
+1Base.Buildings.Building_Mayas_Home_Premium_4_NameLuxurious Home
 Z
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_CrowsInn_Name
 Crow's Inn
@@ -1898,6 +2010,8 @@ Z
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameModerate Culture Site
 ?
 )Base.Regions.region.TeslaStormYellow_NameYellow Tesla Storm
+d
+0Base.Buildings.Building_Mayas_Home_Priest_6_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 a
 /Base.Buildings.Building_China_Home_Small_1_Desc.Produces Wu Zhu and adds a Worker to your city
 C
@@ -1906,6 +2020,8 @@ C
 Base.Units.Unit_Confucius_Name	Confucius
 B
 5Base.Technologies.Technology_BronzeAge_Alliances_Name	Alliances
+2
+Base.BuildingTypes.aviary_NameAviaryAviaries
 -
 Base.Heroes.hero.RobinHood_Name
 Robin Hood
@@ -1915,6 +2031,8 @@ E
 6Base.Buildings.Building_IberianEra_Home_Average_2_NameMedium Home
 Q
 ;Base.Technologies.Technology_Vikings_FelagPartnerships_NameFelag Partnerships
+%
+Base.Heroes.hero.ElCid_NameEl Cid
 Q
 =Base.Technologies.Technology_RomanEmpire_ImprovedGladius_NameImproved Gladius
 B
@@ -2025,6 +2143,8 @@ O
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_NameStone Throwers
 ~
 3Base.Units.Unit_EarlyRome_Player_AuxiliaRiders_DescGCavalry Units are very fast and charge towards the enemies' rear guard.
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_2_NameLuxurious Quarry
 A
 2Base.Technologies.Technology_Egypt_GoldenMask_NameGolden Mask
 L
@@ -2105,6 +2225,8 @@ H
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name	Pavilions
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescProduces a ton of Papyrus
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_5_Desc0Produces both Jade and Obsidian at the same time
 D
 6Base.Technologies.Technology_IberianEra_MeadHalls_Name
 Mead Halls
@@ -2170,6 +2292,8 @@ c
 2Base.Buildings.Building_StoneAge_Home_Small_1_Desc-Produces Coins and adds a Worker to your city
 x
 =Base.Buildings.Building_IberianEra_CultureSite_Premium_1_Desc7Improves Happiness of adjacent buildings substantially.
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_3_NameLuxurious Workshop
 U
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_NamePorcelain workshop
 L
@@ -2200,8 +2324,13 @@ T
 ?Base.Technologies.Technology_ByzantineEra_ObsidianDeposits_NameObsidian Deposits
 6
 #Base.Units.Unit_AbrahamLincoln_NameAbraham Lincoln
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_Name
+Chronicler
 J
 5Base.Units.Unit_StoneAge_Animal_SabertoothTigers_NameSabertooth Tigers
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_NameObsidian Quarry
 ≠
 ;Base.Buildings.Building_AgeOfTheFranks_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
 S
@@ -2212,6 +2341,8 @@ K
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_NameRanged Barracks
 V
 >Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_NameCompact Culture Site
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_3_NameAviary
 -
 "Base.Units.Unit_JaguarWarrior_NameOcelotl
 =
@@ -2225,6 +2356,8 @@ r
 1Base.Buildings.Building_China_Home_Average_4_Desc=Produces a big pile of Wu Zhu and adds 5 workers to your city
 \
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_8_NameMinoan Watchtower
+|
+1Base.Buildings.Building_Mayas_Home_Premium_4_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 C
 3Base.Technologies.Technology_China_RefinedSilk_NameRefined Silk
 M
@@ -2269,6 +2402,8 @@ $Base.Units.Unit_ThomasJefferson_NameThomas Jefferson
 6Base.Buildings.Building_Vikings_Workshop_Tavern_1_Desc$The Tavern produces Mead from Honey.
 >
 .Base.Abilities.hero_battle_ability.Inanna_NameSwift Strike
+B
+0Base.Buildings.Building_Mayas_Home_Priest_6_NameCraftsman Home
 ]
 *Base.BuildingGroups.premiumSailorPort_NameLuxurious Sailing PortLuxurious Sailing Ports
 H
@@ -2444,6 +2579,8 @@ D
 Base.Units.Unit_JohnLocke_DescøFrom the University of Oxford, it's the father of liberalism, John Locke! This 17th-century English philosopher shaped modern political thought. In 'Two Treatises of Government,' he proposed natural rights - life, liberty, and property.<br><br>Locke's social contract theory influenced modern democracy, emphasizing that governments must be based on the consent of the governed and hold accountability to the people. His ideas underscored the importance of individual rights and government responsibilities.<br><br>In epistemology, Locke's 'An Essay Concerning Human Understanding' argued that knowledge comes from experience. His philosophy greatly impacted Western thought, shaping concepts of individual rights and the role of government. Lesser known is his skill on the battlefield, but he'll prove to you that he's Locked in!
 ,
 Base.Ages.ByzantineEra_NameByzantine Era
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_5_NameAviary
 û
 !Base.Units.Unit_VikingRaider_Desc¯Have no fear and fight bravely, for Freyd√≠s Eir√≠ksd√≥ttir will guard your back! This 11th century Viking is noted for her bold exploits and determination in the Norse sagas of Vinland.<br><br>As the daughter of Erik the Red, she embarked on voyages to Vinland, part of the North American coast, showcasing her determination and courage in the face of unknown lands. Freyd√≠s's legend includes stories of her fearlessly defending her settlement against adversaries.<br><br>Her tales, though steeped in myth, highlight the strength and tenacity of Viking women, contributing to a legacy of adventure and resilience in Norse history.
 J
@@ -2520,6 +2657,8 @@ Z
 :Base.Buildings.Building_ClassicGreece_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
 V
 @Base.Technologies.Technology_ByzantineEra_SpiritualAncestry_NameSpiritual Ancestry
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_2_NameLuxurious Aviary
 H
 9Base.Buildings.Building_Vikings_SailorPort_Average_3_NameSailor port
 Í
@@ -2572,6 +2711,8 @@ H
 Crop Sheds
 ü
 2Base.Units.Unit_IberianEra_Player_Crossbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
+?
+2Base.Buildings.Building_Mayas_City_CityHall_1_Name	City Hall
 >
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_Name
 Bullriders
@@ -2668,6 +2809,8 @@ P
 $Base.Units.Unit_QueenElizabethI_DescÓMix cannon-fire and prayer with Queen Elizabeth I! This 16th century monarch ruled England for over fourty years, in an era of stability and prosperity for the country. It was a time of arts, of war, and of exploration.<br><br>Elizabeth managed challenges at home and abroad, overcoming religious zealotry (though not without burning a few people), and external wars. Her defeat of the Spanish Armada solidified her status as a formidable leader, while her patronage of such people as Shakespeare meant her rule was never forgotten.<br><br>Known as the 'Virgin Queen' for never marrying, Elizabeth maintained her power and independence throughout her rule. Her legacy is one of strength, intelligence, and cultural patronage, leaving an indelible mark on English history. She also had a stripy mouth from eating too much sugar - her name is an anagram of 'Zebra Teeth is Filth'!
 U
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_NameAmbush Techniques
+N
+&Base.BuildingGroups.premiumQuarry_NameLuxurious QuarryLuxurious Quarries
 ™
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
 k
@@ -2688,6 +2831,8 @@ I
 9Base.Technologies.Technology_RomanEmpire_UrbsAeterna_NameUrbs Aeterna
 9
 $Base.Units.Unit_LeonardoDaVinci_NameLeonardo da Vinci
+?
+0Base.Buildings.Building_Mayas_Home_Worker_4_NameWorker Home
 l
 @Base.Buildings.Building_HighMiddleAges_CultureSite_Little_1_Desc(Improves happiness of adjacent buildings
 +
@@ -2782,6 +2927,8 @@ IBase.Technologies.Technology_KingdomOfSicily_AstronomicalInstruments_NameAstr
 A
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_Name
 Rural Farm
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_5_NameCrystal Spring
 ﬂ
 JBase.AbilityDescriptions.hero_battle_ability_description.Cornucopia_1_Nameê<style=ability_label>Shield</style>At the start of the wave, the holder gains <style=basestat>{shield}</style> of their base damage as a shield.
 a
@@ -2807,9 +2954,13 @@ F
 {
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_Desc<Produces a big pile of Coins and adds 2 Workers to your city
 H
+3Base.Buildings.Building_Mayas_Aviary_Average_5_DescProduces Feathers
+H
 9Base.Buildings.Building_ClassicGreece_Home_Average_2_NameMedium Home
 J
 9Base.Technologies.Technology_IberianEra_ShockCharges_NameShock Charges
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_DescProduces Obsidian
 K
 <Base.Technologies.Technology_KingdomOfSicily_Monastries_NameMonasteries
 K
@@ -2839,6 +2990,8 @@ M
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_DescProduces Papyrus
 G
 5Base.Buildings.Building_FeudalAge_Farm_Premium_1_NameLuxurious Farm
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_2_NameCeremony Outfitter
 ó
 IBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_1_Name…<style=ability_label>Taunt| Shield</style>Pounds his chest, taunting all enemies for <style=basestat>{taunt_duration}</style> and gaining <style=basestat>{shield_percentage}</style> of DEF as a shield.
 \
@@ -2882,6 +3035,8 @@ y
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Desc<Produces a small amount of Food over a short period of time.
 ¿
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_NameÌ<style=ability_label>Melee Strike| Shield</style>Stabs the current target from behind his shield, dealing <style=basestat>{dmg_percentage}</style> damage and gaining <style=basestat>{hp_percentage}</style> of his base damage as a shield.
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_2_NameMagma Temple
 M
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_DescUnlocks Hastati
 A
@@ -2906,6 +3061,8 @@ o
 4Base.Buildings.Building_StoneAge_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 R
 >Base.Technologies.Technology_ByzantineEra_ShieldedSaddles_NameShielded Saddles
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_NameMask Sculptor
 M
 <Base.Technologies.Technology_ClassicGreece_CropRotation_NameCrop Rotation
 -
@@ -2927,13 +3084,22 @@ H
 1Base.Units.Unit_TreasureHunt_Red_Harpoonists_NameScarlet Harpoonists
 √
 MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_NameÒ<style=ability_label>Debuff</style>Targets the biggest cluster of enemy units, reducing DEF by <style=basestat>{atk_percentage}</style> of the Oracle's ATK for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>.
+|
+1Base.Buildings.Building_Mayas_Home_Premium_2_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 [
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_PirateDen_Name
 Pirate Den
 W
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_3_Descproduces moth cocoons
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameRitual Carver
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_3_Name
+Chronicler
 °
 IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_Name”<style=ability_label>Ranged Strike| Area Strike| Stun</style>Deals <style=basestat>{dmg_percentage}</style> damage to the current target and stuns it for <style=basestat>{stun_duration}</style>. Enemy units within a radius of <style=basestat>{range}</style> around the target receive <style=basestat>{dmg_percentage_around}</style> damage.
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_5_NameJade Quarry
 s
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Desc.Increases the irrigation of adjacent buildings
 9
@@ -2957,6 +3123,8 @@ K
 :Base.Buildings.Building_Vikings_FishingPier_Average_5_DescUFishing Piers send out boats to catch fish to supply your hungry Workers and Sailors.
 H
 4Base.Units.Unit_BronzeAge_SumerianEmpire_Inanna_NameInanna's Amazons
+õ
+2Base.Buildings.Building_Mayas_City_CityHall_1_DesceThe Great Hall is the centre of your city. It continiously generates a small amount of Cocoa for you.
 t
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_Desc<Produces a small amount of Food over a short period of time.
 >
@@ -3013,6 +3181,8 @@ TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15
 LBase.AbilityDescriptions.hero_battle_ability_description.AttilaTheHun_1_NameÉ<style=ability_label>Ranged Strike| Recovery</style>Attila shoots a life-draining arrow at the furthest enemy target, dealing <style=basestat>{dmg_percentage}</style> damage and healing himself for <style=basestat>{heal_percentage}</style> of his base damage.
 R
 ?Base.Technologies.Technology_AgeOfTheFranks_AdvancedFodder_NameAdvanced Fodder
++
+Base.Cities.City_Mayas_NameMayan Empire
 S
 (Base.BuildingTypes.presetIrrigation_NameSpecial IrrigationSpecial Irrigations
 +
@@ -3129,6 +3299,8 @@ Water Pump
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_4_DescMSend off expedition ships which will gather either ceramic- or gold treasures
 d
 3Base.Buildings.Building_BronzeAge_Home_Small_1_Desc-Produces Coins and adds a Worker to your city
+b
+0Base.Buildings.Building_Mayas_Home_Worker_4_Desc.Produces Cocoa and adds 2 Workers to your city
 B
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameJavelin Hurlers
 z
@@ -3155,6 +3327,8 @@ T
 :Base.Buildings.Building_Vikings_FishingPier_Premium_2_NameLuxurious Fishing Pier
 f
 :Base.Buildings.Building_FeudalAge_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
+E
+2Base.Abilities.hero_battle_ability.LadySixSky_NameSkywarden Totem
 ü
 4Base.Buildings.Building_Vikings_City_CityHall_1_DescgThe Great Hall is the center of your city. It continuously generates a small amount of Pennies for you.
 C
@@ -3165,6 +3339,8 @@ q
 5Base.Units.Unit_RomanEmpire_GermanicTribes_Gedri_NameGedri
 K
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVitruvian Vortex
+:
+&Base.BuildingGroups.averageAviary_NameAviaryAviaries
 0
  Base.Units.Unit_SiouxShaman_NameSitting Bull
 q
@@ -3183,6 +3359,8 @@ v
 5Base.Buildings.Building_FeudalAge_Home_Average_3_Desc=Produces a big pile of Coins and adds 2 Workers to your city.
 G
 7Base.Technologies.Technology_FeudalAge_BurialSites_NameBurial Sites
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_1_DescProduces Feathers
 f
 VBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Average_NameVoid reactor
 H
@@ -3198,6 +3376,8 @@ K
 <Base.Technologies.Technology_AgeOfTheFranks_Skirmishers_NameSkirmishers
 q
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_Desc7Produces a large amount of Food in long period of time.
+?
+0Base.Buildings.Building_Mayas_Home_Worker_5_NameWorker Home
 N
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NamePapyrus Workshop
 6
@@ -3229,6 +3409,9 @@ U
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescLSend off expedition ships which will gather either jewel- or spice treasures
 k
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc.Increases the irrigation of adjacent buildings
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Name
+Chronicler
 ]
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_3_NameHeavy Infantry Barracks
 F
@@ -3244,6 +3427,8 @@ Small Home
 Base.Units.Unit_Hatshepsut_DescœWitness the King who was a Queen! Hatshepsut, one of ancient Egypt's most successful pharaohs, ruled during the 15th century BCE. She was the daughter of Thutmose I and rose to power as regent for her stepson, Thutmose III, eventually declaring herself pharaoh.<br><br>Her famous mortuary temple at Deir el-Bahri is just one of countless monuments from her reign, but Hatshepsut also focused on trade expeditions, notably to the Land of Punt, enhancing Egypt's wealth and influence.<br><br>Often depicted in the clothes of male pharaohs, Hatshepsut's legacy as a strong and effective ruler endures. Her story is shaped by the struggle against traditional gender roles, highlighting her significance in Egyptian history.
 \
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_NameHeavy Infantry Barracks
+Ñ
+Base.Units.Unit_MontezumaI_Desc‡Montezuma I, a prominent ruler of the Aztec Empire during the 15th century, greatly expanded the empire's territory and influence. His reign focused on military conquests, strengthening Tenochtitlan's dominance over the Valley of Mexico and beyond.<br><br>Montezuma I implemented significant infrastructure projects, such as building aqueducts to improve the water supply and enhancing the capital city's architecture and defenses. He also promoted religious and cultural developments, reinforcing the significance of the Aztec gods.<br><br>His leadership not only extended the empire's reach but also solidified the social and political structures of the Aztec civilization, leaving a lasting impact on its history and cultural legacy.
 A
 3Base.Buildings.Building_MinoanEra_Home_Small_1_Name
 Small Home
@@ -3254,10 +3439,14 @@ D
 Pictograms
 ª
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_NameÍ<style=ability_label>Melee Strike| Bleed| Buff</style>Swings his sword at his current target five times, dealing increased damage with each strike for a total of <style=basestat>{dmg_percentage}</style> damage. Each strike has a <style=basestat>{chance_percentage}</style> chance to let the opponent bleed for <style=basestat>{dmg_percentage_bleed}</style> over <style=basestat>{duration}</style>. Also increases Lancelot's critical damage by <style=basestat>{crit_dmg_percentage}</style> and his chance to critically hit by <style=basestat>{crit_chance_percentage}</style> for <style=basestat>{buff_duration}</style>.
+õ
+2Base.Buildings.Building_Mayas_City_CityHall_2_DesceThe Great Hall is the centre of your city. It continiously generates a small amount of Cocoa for you.
 J
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_NameMedium Home
 h
 <Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_4_NameAviary
 I
 8Base.Technologies.Technology_EarlyRome_SwordMastery_NameSword Mastery
 <
@@ -3295,6 +3484,10 @@ I
 8Base.Technologies.Technology_FeudalAge_PlateBarding_NamePlate Barding
 B
 5Base.Buildings.Building_China_RiceFarm_Average_6_Name	Rice Farm
+R
+6Base.Technologies.Technology_Mayas_RiseOfTheMayas_NameRise of the Mayan Empire
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_1_NameLuxurious Workshop
 B
 7Base.Buildings.Building_Egypt_Irrigation_Channel_2_NameChannel
 B
@@ -3303,6 +3496,8 @@ Z
 ABase.Technologies.Technology_IberianEra_EquestrianExcellence_NameEquestrian Excellence
 Ñ
 Base.Units.Unit_Leonidas_Desc‚Stow your spears and listen, for tonight we honor Leonidas! This courageous King of Sparta believed he was of the line of Heracles, and the stories of his last stand are written in stone and ink across history.<br><br>With 300 Spartans at his side, he fought the Persians in their 5th century invasion of Greece, answering the call of war when others feared to stand. This act of bravery has never been forgotten, making Leonidas a symbol of heroism in Greece and beyond.<br><br>He and his Spartans were slain to a man at Thermopylae, but Leonidas was saved, zapped back into the stone age with amnesia by one Albert Einstein. Strangely, he accidentally invented the sunglasses centuries early: he always wants his men to fight in shades.
+C
+1Base.Buildings.Building_Mayas_Home_Premium_2_NameLuxurious Home
 E
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameMead Brewery
 &
@@ -3320,6 +3515,8 @@ r
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 t
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_Desc<Produces a small amount of Food over a short period of time.
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_5_DescProduces Jade
 b
 1Base.Buildings.Building_Egypt_Home_Premium_6_Desc-Produces Deben and adds a Worker to your city
 6
@@ -3394,6 +3591,8 @@ R
 &Base.Regions.region.FrozenFjord_4_NameForest of the Fae
 F
 1Base.Units.Unit_TreasureHunt_Purple_Corsairs_NameTwilight Corsairs
+6
+#Base.Heroes.hero.PakalTheGreat_NamePakal the Great
 ¸
 FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name±<style=ability_label>Heal</style>Tansen transcends through his music, gaining a healing aura, which heals all allied units around him for up to <style=basestat>{heal_amount}</style> of Tansen's base damage over <style=basestat>{duration}</style>. While the ability is active, Tansen cannot attack or move.
 R
@@ -3436,6 +3635,8 @@ w
 Small Home
 ]
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_DescUnlocks Frankish Axethrowers
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_6_NameCrystal Spring
 0
  Base.Units.Unit_LeifErikson_NameLeif Erikson
 ~
@@ -3524,6 +3725,8 @@ Q
 <Base.Technologies.Technology_FeudalAge_PolearmManeuvers_NamePolearm Maneuvers
 E
 2Base.Units.Unit_StoneAge_Player_HeavyInfantry_NameBronze Sentinel
+b
+0Base.Buildings.Building_Mayas_Home_Worker_2_Desc.Produces Cocoa and adds 2 Workers to your city
 G
 6Base.Buildings.Building_EarlyRome_Farm_Domestic_2_NameDomestic Farm
 D
@@ -3555,6 +3758,12 @@ T
 Base.Buildings.default_NameBuilding	Buildings
 D
 5Base.Buildings.Building_FeudalAge_Home_Average_3_NameMedium Home
+D
+2Base.Abilities.hero_battle_ability.MontezumaI_NameNature's Grasp
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_3_NameCrystal Spring
+M
+'Base.BuildingGroups.obsidianQuarry_NameObsidian QuarryObsidian Quarries
 Z
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_2_NameHeavy Infantry Barracks
 H
@@ -3604,16 +3813,24 @@ b
 Hatshepsut
 d
 3Base.Buildings.Building_MinoanEra_Home_Small_1_Desc-Produces Coins and adds a Worker to your city
+b
+0Base.Buildings.Building_Mayas_Home_Worker_5_Desc.Produces Cocoa and adds 2 Workers to your city
 V
 @Base.Technologies.Technology_ByzantineEra_GregorianCalendar_NameGregorian Calendar
 O
 *Base.BuildingGroups.premiumIrrigation_NameLuxurious NoriaLuxurious Norias
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_4_DescProduces Feathers
 8
 -Base.Units.Unit_EarlyRome_Player_Hastati_NameHastati
 G
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_NameLuxurious Farm
+.
+Base.Units.Unit_MontezumaI_NameMontezuma I
 É
 GBase.AbilityDescriptions.hero_battle_ability_description.Medusa_15_Name∑<style=ability_label>Area Strike| Stun| Poison</style>Fixes her gaze at the biggest cluster of enemy units, applying poison to all enemies in a range of <style=basestat>{range}</style>. The poison deals <style=basestat>{dmg_percentage}</style> damage over <style=basestat>{duration}</style>, reduces ATK Speed by <style=basestat>{atk_speed_percentage}</style>, and leaves affected units stunned for <style=basestat>{stun_duration}</style>.
+?
+2Base.Buildings.Building_Mayas_City_CityHall_2_Name	City Hall
 {
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_2_Desc<Produces a big pile of Coins and adds 2 Workers to your city
 G
@@ -3640,10 +3857,14 @@ T
 <Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_NameCompact Culture Site
 E
 4Base.Units.Unit_StoneAge_SkullSmasherTribe_Grok_NameSkullsmashers
+5
+"Base.Units.Unit_PakalTheGreat_NamePakal the Great
 ò
 %Base.Units.Unit_BenjaminFranklin_DescÓBenjamin Franklin is here to fork lightning with his words - and literally as well! This 18th century polymath not only was a founding father of the United Sates of America, who helped draft the Declaration of Independence and the constitution, but was also an author, inventor, and scientist.<br><br>Franklin was an early explorer into the field of electricity. He used a kite to gather 'electric fire' from a cloud, proving that lightning is electrical. Thus, he invented the lightning rod. He also invented bifocal glasses and studied the oceans .<br><br>But Franklin is perhaps most famed as a diplomat and writer. Franklin's skill with words secured French support in the American Revolution and were captured in books that are remembered today. For example, he might be able to make you rich: it was he who first claimed the two certain things in life are death and taxes!
 ß
 JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Nameÿ<style=ability_label>Area Strike| Heal| Buff</style>Calls for divine assistance targeting the biggest cluster of enemy units, dealing <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. Also heals all friendly units in the same area by <style=basestat>{hp_percentage}</style> of Joan's base damage. Affected friendly units gain <style=basestat>{atk_percentage}</style> of Joan's ATK as ATK for <style=basestat>{duration}</style>.
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_2_DescProduces Jade
 F
 %Base.BuildingGroups.incenseMaker_NameIncense MakerIncense Makers
 x
@@ -3679,6 +3900,8 @@ J
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescProduces Gold Ore
 ü
 4Base.Buildings.Building_Vikings_City_CityHall_2_DescgThe Great Hall is the center of your city. It continuously generates a small amount of Pennies for you.
+0
+ Base.Heroes.hero.LadySixSky_NameLady Six Sky
 A
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameWorker Home
 I
@@ -3750,8 +3973,12 @@ M
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameCavalry Barracks
 ©
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_NameCeremony Outfitter
 &
 Base.Ages.FeudalAge_Start	1000 A.D.
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_4_NameCeremony Outfitter
 C
 0Base.Units.Unit_IberianEra_Vikings_Infantry_NameViking Infantry
 :
@@ -3804,6 +4031,8 @@ a
 /Base.Buildings.Building_China_Home_Small_6_Desc.Produces Wu Zhu and adds a Worker to your city
 È
 Base.Units.Unit_Lagertha_Desc«Let no one hold you back, for Lagertha, the legendary Viking shieldmaiden from the 9th century, has joined the Heroes of History! This warrior woman is celebrated for her bravery and strategic prowess in battle, fighting alongside her husband, Ragnar Lodbrok, and playing a crucial role in their military victories. Known for her combat skills, Lagertha inspired warriors with her fearlessness and leadership.<br><br>Beyond her martial prowess, she had a complex personal life, marked by her tumultuous relationship with Ragnar, whom she eventually divorced. According to legend, even after her separation from Ragnar, Lagertha maintained her influence and led her own troops to victory in subsequent battles.<br><br>Lagertha‚Äôs legacy as a powerful woman in Norse history and mythology continues to inspire and captivate audiences today.
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_NameMask Sculptor
 9
 $Base.Units.Unit_OttoVonBismarck_NameOtto von Bismarck
 [
@@ -3834,6 +4063,8 @@ P
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
 3
 !Base.Units.Unit_AttilaTheHun_NameAttila the Hun
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_4_NameMagma Temple
 %
 Base.Units.Unit_Medusa_NameMedusa
 5
@@ -3897,6 +4128,8 @@ Q
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_1_NameInfantry Barracks
 F
 %Base.BuildingGroups.domesticFarm_NameDomestic FarmDomestic Farms
+?
+0Base.Buildings.Building_Mayas_Home_Worker_2_NameWorker Home
 I
 2Base.Abilities.hero_battle_ability.Hatshepsut_NameThebes' Tranquility
 a
@@ -3931,10 +4164,14 @@ A
 6Base.Technologies.Technology_ByzantineEra_Jovians_NameJovians
 ?
 .Base.Abilities.hero_battle_ability.Geisha_NameSakura Strike
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_NameMask Sculptor
 ã
 Base.Units.Unit_Tansen_DescÎWitness Mian Tansen call down rains from the heavens with his music! This 16th-century musician was one of Emperor Akbar's 'Nine Jewels', the most special people of the court of India.<br><br>Mian Tansen (meaning 'the learned one') created the Gwalior Gharana, the first school of North Indian music. Performing since the age of five, Tansen was an accomplished singer and musician all his life.<br><br>His legends are countless. His songs are said to have tamed wild elephants and soothe birds, to start fires and summon rainstorms. Gwalior, where he established his school, is known as the City of Music to this day! 
 o
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescProduces Obsidian
 i
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc(Improves Happiness of adjacent buildings
 /
@@ -4016,6 +4253,8 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_NameLuxurious Papyrus Field
 N
 ;Base.Technologies.Technology_IberianEra_PerfectedHoney_NamePerfected Honey
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_2_NameJade Quarry
 3
 'Base.Continents.continent.Panganea_NamePanganea
 j
@@ -4077,6 +4316,8 @@ M
 7Base.Units.Unit_IberianEra_Player_OrderOfCalatrava_NameOrder of Calatrava
 R
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_1_NameKaolin Quarry
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_3_Desc0Produces both Jade and Obsidian at the same time
 L
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_2_NameRanged Barracks
 ı
@@ -4087,6 +4328,8 @@ H
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_NameDonkey Farms
 ∞
 NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name›<style=ability_label>Area Strike| Debuff</style>Takes a swipe at the current target, dealing <style=basestat>{dmg_percentage}</style> damage to all enemy units in a range of <style=basestat>{range}</style> around it. Affected units have their accuracy reduced by  <style=basestat>{accuracy_percentage}</style> for <style=basestat>{duration}</style>.
+d
+0Base.Buildings.Building_Mayas_Home_Priest_2_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 R
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameTheodosian Walls
 D
@@ -4131,6 +4374,8 @@ L
 $Base.Heroes.hero.EgyptianVizier_NameImhotep
 J
 8Base.Technologies.Technology_FeudalAge_FuneralAtSea_NameFuneral at Sea
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_DescProduces Obsidian
 ‘
 #Base.Units.Unit_AbrahamLincoln_Desc¨Fight for liberty with Abraham Lincoln, the 16th President of the United States! In the 19th century, this statesman led the nation through its Civil War and worked tirelessly to end slavery. Born in a log cabin, his humble beginnings profoundly shaped his character and leadership style.<br><br>Lincoln's commitment to preserving the Union and his issuance of the Emancipation Proclamation were pivotal in reshaping the nation's values. Known for his eloquence, his Gettysburg Address remains one of the most famous speeches in American history.<br><br>Despite facing immense challenges, Lincoln's leadership and dedication to equality have left a lasting impact. His assassination marked a tragic end to his presidency, but not in this timeline: he escaped through a time portal and landed up in the Stone Age!
 V
@@ -4155,6 +4400,8 @@ D
 Trebuchets
 G
 6Base.Technologies.Technology_Vikings_TavernBrawls_NameTavern Brawls
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_NameRitual Carver
 @
 1Base.Buildings.Building_China_Home_Average_4_NameMedium Home
 ™
@@ -4171,6 +4418,10 @@ LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_NameÍ
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_DescYFishing Piers send out boats to catch fish to supply all your hungry Workers and Sailors.
 F
 7Base.Technologies.Technology_MinoanEra_Shepherding_NameShepherding
+K
+7Base.Abilities.hero_battle_ability.ThomasJefferson_NameFounders‚Äô Pact
+U
+*Base.BuildingGroups.ceremonyOutfitter_NameCeremony OutfitterCeremony Outfitters
 +
 Base.Heroes.hero.Tansen_NameMian Tansen
 J
@@ -4188,6 +4439,8 @@ ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_Name	Carpenter
 Great Wall
 M
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_3_NameCavalry Barracks
+C
+1Base.Buildings.Building_Mayas_Home_Premium_5_NameLuxurious Home
 =
 %Base.Heroes.hero.MayanAstronomer_NameItzamnaaj Bahlam III
 I
@@ -4322,6 +4575,8 @@ M
 Base.Units.Unit_Sacagawea_DescáChart the future of nations alongside Sacagawea! This Shoshone explorer of the 17th and 18th centuries was the interpreter of the Lewis and Clark Expedition, a mission to explore the Louisiana Territory as commissioned by Thomas Jefferson. As such, she secured the western expansion and future of the United States.<br><br>Meeting with the two explorers at Fort Mandan, Sacagawea‚Äôs guidance would prove essential. Her presence helped reassure of the expedition‚Äôs peaceful intent, and her knowledge of the land kept the expeditioners safe.<br><br>Sacagawea is remembered as a symbol of the bravery of Native American women, honored by novels and by history. Aged 25, though many believe she died, her curiosity led her to a time portal hidden beneath the mountains. She didn‚Äôt even need Einstein to summon her! Now in the past, she explores the valleys and hills of this new world, forever curious.
 I
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_1_NameSiege Barracks
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_NameObsidian Quarry
 C
 5Base.Technologies.Technology_FeudalAge_TaflGames_Name
 Tafl Games
@@ -4347,6 +4602,10 @@ C
 6Base.Technologies.Technology_IberianEra_Castillos_Name	Castillos
 U
 *Base.BuildingGroups.irrigationStation_NameIrrigation StationIrrigation Stations
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_4_NameLuxurious Workshop
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_5_NameLuxurious Aviary
 E
 1Base.Technologies.Technology_EarlyRome_Siege_NameJavelin Catapult
 H
@@ -4403,8 +4662,12 @@ U
 $Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 S
 5Base.Buildings.Building_Egypt_GoldMine_Premium_1_DescProduces a ton of Gold Ore
+B
+0Base.Buildings.Building_Mayas_Home_Priest_2_NameCraftsman Home
 /
 Base.BuildingGroups.MediumFarmDomestic Farm
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_3_NameLuxurious Quarry
 >
 3Base.Technologies.Technology_FeudalAge_Knights_NameKnights
 A
@@ -4492,8 +4755,12 @@ L
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_NameLuxurious Gold Mine
 é
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_DescLThe Hero Academy produces Experience Scrolls at the cost of Research Points.
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_1_NameAviary
 ã
 6Base.Buildings.Building_Vikings_Beehive_Average_4_DescQThe Beehive produces delicious honey which is used to produce mead in the Tavern.
+F
+#Base.BuildingGroups.priestHome_NameCraftsman HomeCraftsman Homes
 :
 1Base.Technologies.Technology_EarlyRome_Domus_NameDomus
 K
@@ -4568,6 +4835,8 @@ R
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_2_NameCavalry barracks
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_5_NameOasis
+|
+1Base.Buildings.Building_Mayas_Home_Premium_5_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 u
 5Base.Buildings.Building_MinoanEra_Home_Average_2_Desc<Produces a big pile of Coins and adds 2 Workers to your city
 C
@@ -4600,6 +4869,8 @@ M
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_NameHoplites
 |
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_Desc8Kheshig Riders are highly specialized and agile Archers.
+2
+Base.BuildingTypes.quarry_NameQuarryQuarries
 =
 /Base.Buildings.Building_China_Home_Small_1_Name
 Small Home
@@ -4708,6 +4979,8 @@ Y
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_NameLuxurious Culture Site
 ◊
 "Base.Units.Unit_RagnarLodbrok_Desc∞Reave and raid, Ragnar Lodbrok! According to the Norse sagas, this 9th century hero and warrior king led daring assaults on England and France, a blend of history and myth.<br><br>A master strategist and fierce commander, Ragnar married the warrior Lagertha, and with her fathered Bjorn Ironside and Ivar the Boneless, who themselves are attested in legend. Reafan, the raven banner, a symbol of the god Odin, guided him in every battle.<br><br>Much as tales of Ragnar inspired the Vikings with stories of valor and daring, they still excite audiences today, on TV, games, and books. However, the oldest historical sources talk about 'her' sons. Is it possible Ragnar is secretly a woman?
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_5_NameMagma Temple
 :
 1Base.Technologies.Technology_MinoanEra_Winch_NameWinch
 ]
@@ -4724,6 +4997,8 @@ N
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_3_NameRanged Barracks
 /
 Base.Units.Unit_VikingJarl_NameErik the Red
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_1_NameCrystal Spring
 L
 :Base.Technologies.Technology_IberianEra_FjordDominion_NameFjord Dominion
 9
@@ -4831,6 +5106,8 @@ w
  Base.Ages.KingdomOfSicily_Decade	1100 A.D.
 ˚
 QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name•<style=ability_label>Recovery</style>When the holder faces fatal damage for the first time in a battle, their HP recovers to <style=basestat>{hp_percentage}</style>.
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_6_NameAviary
 ™
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_DeschSiege Units attack slowly and are weak to enemy attacks, but they impact a large area over a wide range.
 ?
@@ -4902,6 +5179,8 @@ P
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameTimber Framing
 ?
 +Base.Regions.region.EmeraldHighlands_2_NameRosemont Fiefdom
+d
+0Base.Buildings.Building_Mayas_Home_Priest_3_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 P
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_NameOpen Field System
 K
@@ -5015,10 +5294,15 @@ H
 3Base.Abilities.hero_battle_ability.SirLancelot_NameCamelot's Avenger
 l
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc(Improves Happiness of adjacent buildings
+,
+Base.Units.Unit_IsabellaI_Name
+Isabella I
 €
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameè<style=ability_label>Melee Strike| Stun</style>Skillfully strikes the current target with her staff, dealing <style=basestat>{dmg_percentage}</style> damage and having a <style=basestat>{chance}</style> chance to leave them stunned for <style=basestat>{duration}</style>.
 ‡
 &Base.Units.Unit_PhilipIIOfMacedon_DescµBattle alongside the visionary who brought Greece to heel! Philip II, a Macedonian king from the 4th century BC, is famed for his military prowess and his conquests, the figurehead of the rise of Macedon.<br><br>Taking control of the kingdom amid crisis, Philip defeated invaders at the very beginning of his rule, then made his own innovation: the Macedonian phalanx, armed with 6 meter long pikes. With a superior army, he led campaigns against the Grecian mainland, forging an alliance with key poleis on the peninsula.<br><br>By his death, Philip was a one eyed war hero, whose genius had seen him unite Greece into the League of Corinth, and was preparing to invade Persia when he was assassinated. Even that couldn't hold him back: he was deified and worshiped as a God, while his son Alexander continue his legacy.
+=
+3Base.Buildings.Building_Mayas_Aviary_Average_2_NameAviary
 4
 "Base.Units.Unit_QueenBoudicca_NameQueen Boudicca
 Z
@@ -5074,6 +5358,8 @@ P
 <Base.Technologies.Technology_IberianEra_VikingConsensus_NameViking Consensus
 Ÿ
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_NameÖ<style=ability_label>Invincibility| Buff</style>Provides Invincibility to all friendly units for <style=basestat>{duration}</style> and increases their DEF by <style=basestat>{def_percentage}</style> of Lincoln's DEF for <style=basestat>{buff_duration}</style>.
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_NameCeremony Outfitter
 M
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_2_NameCavalry Barracks
 C
@@ -5103,6 +5389,8 @@ A
 Small Home
 Æ
 NBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_15_Name€<style=ability_label>Area Strike</style>Causes an explosion on the current target, dealing <style=basestat>{dmg_percentage}</style> to all enemy units within a range of <style=basestat>{range}</style> and providing <style=basestat>{evasion_percentage}</style> evasion for <style=basestat>{duration}</style> to all friendly units in the same range.
+F
+%Base.BuildingGroups.maskSculptor_NameMask SculptorMask Sculptors
 Z
 @Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_NameLuxurious Culture Site
 4
@@ -5122,6 +5410,8 @@ K
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameSiege Tower
 N
 6Base.Units.Unit_HighMiddleAges_Hohenstaufen_Heavy_NameHohenstaufen Maulers
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_6_Desc0Produces both Jade and Obsidian at the same time
 G
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Name
 Water Pump
@@ -5141,6 +5431,8 @@ G
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_NameLuxurious Home
 Å
 Base.Units.Unit_VikingJarl_Desc›Set forth: unfurl the sails and smell the salt, for tonight we talk of Erik the Red. This explorer from the late 10th century is famous for founding the first Norse settlements in Greenland. Born in Norway, he was exiled to Iceland and later to Greenland due to his involvement in several conflicts.<br><br>Known for his adventurous spirit and leadership, Erik crossed the whale-roads of the Atlantic to establish a successful colony on Greenland, attracting settlers with tales of fertile land. His efforts marked a significant expansion of Norse exploration into the North Atlantic.<br><br>Erik the Red's legacy endures as a pioneering leader in the Viking Age, highlighting the adventurous and resilient nature of Norse exploration and settlement. I've heard there's also Eric the Blue, Eric the Yellow, Eric the Green, and Eric the Purple: collect them all!
+G
+7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameMagma Temple
 N
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NameGlacier Mastery
 §
@@ -5204,6 +5496,8 @@ I
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_2_NameSiege Barracks
 u
 5Base.Buildings.Building_BronzeAge_Home_Average_3_Desc<Produces a big pile of Coins and adds 2 Workers to your city
+I
+7Base.Buildings.Building_Mayas_RitualSite_Average_4_NameCrystal Spring
 1
 !Base.Heroes.hero.LeifErikson_NameLeif Erikson
 4
@@ -5219,6 +5513,8 @@ V
 ABase.Technologies.Technology_AgeOfTheFranks_XocolatlVirtuoso_NameXocolatl Virtuoso
 á
 RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_15_Name∞<style=ability_label>Area Strike| Buff| Debuff</style>Napoleon commands a cannon shot at the biggest cluster of enemy units, dealing <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. Affected units have their accuracy reduced by <style=basestat>{accuracy_percentage}</style> and their damage reduced by <style=basestat>{atk_percentage}</style> for <style=basestat>{debuff_duration}</style>. All friendly units gain <style=basestat>{evasion_percentage}</style> evasion for <style=basestat>{evasion_duration}</style>.
+S
+(Base.BuildingGroups.premiumWorkshop_NameLuxurious WorkshopLuxurious Workshops
 &
 Base.Heroes.hero.Inanna_NameInanna
 I
@@ -5264,6 +5560,8 @@ U
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMosaic
 ﬁ
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Nameì<style=ability_label>Melee Strike| Debuff</style>Strikes the current target twice, dealing a total of <style=basestat>{dmg_percentage}</style> damage to all enemy units within a range of <style=basestat>{range}</style>. Then Sun Tzu centers himself, causing an aura of calmness, reducing nearby enemies' ATK Speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>.
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_6_DescProduces Feathers
 ©
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_DesckLuxurious Fishing Piers send out boats to catch tons of fish to supply all your hungry Workers and Sailors.
 j
@@ -5279,6 +5577,8 @@ M
 :Base.Technologies.Technology_BronzeAge_AncestralValor_NameAncestral Valor
 S
 9Base.Buildings.Building_Vikings_SailorPort_Premium_1_NameLuxurious Sailing Port
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduces Obsidian
 O
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCavalry Barracks
 t
@@ -5301,6 +5601,8 @@ H
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_NameSailor port
 R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_NameLuxurious sailor port
+B
+0Base.Buildings.Building_Mayas_Home_Priest_3_NameCraftsman Home
 g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_Desc&Refines moth cocoons into silk threads
 I
@@ -5313,6 +5615,8 @@ R
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrange Plantation
 V
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescUnlocks infantrymen
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_3_NameLuxurious Aviary
 „
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Nameî<style=ability_label>Area Strike| Burn| Poison</style>Throws <style=basestat>{no_vials}</style> vials with unstable chemicals at random enemy units, dealing <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style> and leaving affected units burning and poisoned for a further <style=basestat>{debuff_percentage}</style> damage over <style=basestat>{duration}</style>.
 ˆ
@@ -5326,6 +5630,8 @@ V
 H
 :Base.Technologies.Technology_ClassicGreece_Philosophy_Name
 Philosophy
+|
+1Base.Buildings.Building_Mayas_Home_Premium_1_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 .
 Base.Units.Unit_TomoeGozen_NameTomoe Gozen
 <
@@ -5344,6 +5650,8 @@ G
 8Base.Technologies.Technology_IberianEra_Crossbowmen_NameCrossbowmen
 y
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_2_Desc<Produces a small amount of Food over a short period of time.
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameObsidian Quarry
 Y
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMarble Decorations
 6
@@ -5354,6 +5662,8 @@ H
 0Base.Units.Unit_RomanEmpire_Player_Princeps_NamePrinceps
 O
 :Base.Technologies.Technology_Vikings_HarbourEconomics_NameHarbour Economics
+G
+3Base.Buildings.Building_Mayas_Aviary_Premium_6_NameLuxurious Aviary
 æ
 Base.Units.Unit_KingMinos_DescõChat with Zeus and hide the red thread: King Minos is here! This legendary ruler from Greek mythology is believed to have reigned in the 2nd millennium BC, famed as the sovereign of Crete.<br><br>Celebrated for his wisdom and authority, he is best known for commissioning the construction of a complex labyrinth to imprison the Minotaur, a mythical beast.<br><br>Minos's reign is woven with captivating tales of intrigue and adventure, such as the story of Daedalus and Icarus.His enduring legacy as a formidable and mysterious king continues to enchant storytellers, weaving together threads of myth and ancient history. Don't let him take you on a tour of his maze!
 R
@@ -5413,6 +5723,8 @@ C
 $Base.BuildingGroups.averagePier_NameFishing PierFishing Piers
 o
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc8Produces a small amount of Food in short period of time.
+C
+1Base.Buildings.Building_Mayas_Home_Premium_3_NameLuxurious Home
 W
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_NameIrrigation Station
 -
@@ -5439,6 +5751,9 @@ C
 0Base.Abilities.hero_battle_ability.Leonidas_NameThis is Sparta!
 %
 Base.Ages.DawnAge_NameDawn of Man
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_Name
+Chronicler
 ~
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_DescGCavalry Units are very fast and charge towards the enemies' rear guard.
 W
@@ -5499,6 +5814,8 @@ N
 I
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_NameSiege Barracks
 B
+0Base.Buildings.Building_Mayas_Home_Priest_5_NameCraftsman Home
+B
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameChannel
 F
 %Base.BuildingGroups.silkWorkshop_NameSilk WorkshopSilk Workshops
@@ -5508,6 +5825,8 @@ K
 9Base.Abilities.hero_battle_ability.NapoleonBonaparte_NameCode of Battle
 Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_5_NameAmphitheatre
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_6_NameLuxurious Quarry
 H
 8Base.Technologies.Technology_IberianEra_MeadMastery_NameMead Mastery
 :
@@ -5623,6 +5942,8 @@ P
  Base.Heroes.hero.VanHelsing_NameAbraham Van Helsing
 G
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_NameDomestic Farm
+ó
+"Base.Units.Unit_PakalTheGreat_DescK'inich Janaab' Pakal, known as Pakal the Great, was a Maya king in the 7th century CE. He began ruling Palenque at 12 and led it to prosperity with his leadership.<br><br>Pakal is famed for his ambitious construction projects, including temples and palaces with intricate carvings. The Temple of the Inscriptions, his tomb, stands out for its significant architectural achievement and detailed sarcophagus lid.<br><br>His reign was marked by architectural innovation and political stability, fostering cultural growth in Palenque. Pakal's legacy remains as one of the most influential and celebrated rulers in Maya history.
 K
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_DescProduces Tunics
 x
@@ -5665,6 +5986,8 @@ G
 "Base.Heroes.hero.RomanPraetor_NameAemilia Tertia
 ò
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name»<style=ability_label>Stormcast</style>Qin Shi Huang summons his Spirit Sword that flies across the battlefield, damaging enemy units for <style=basestat>{dmg_percentage}</style> damage, and healing allied units for <style=basestat>{heal_percentage}</style> of Qin Shi Huang's base damage for  <style=basestat>{duration}</style>.
+b
+0Base.Buildings.Building_Mayas_Home_Worker_3_Desc.Produces Cocoa and adds 2 Workers to your city
 o
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_Desc8Produces a small amount of Food in short period of time.
 U
@@ -5714,6 +6037,8 @@ H
 =
 /Base.Units.Unit_MinoanEra_Minoan_KingMinos_Name
 King Minos
+G
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_NameObsidian Quarry
 t
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_3_Desc:Produces a small amount of Food in a short period of time.
 à
@@ -5724,10 +6049,14 @@ u
 ;Base.Buildings.Building_StoneAge_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
 i
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_NameSparkling Fortune
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_1_DescProduces Jade
 O
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_DescProduces Doors.
 I
 7Base.Buildings.Building_FeudalAge_Barracks_Siege_3_NameSiege Barracks
+K
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_NameMask Sculptor
 p
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 M
@@ -5740,6 +6069,8 @@ T
 Base.Units.Unit_LouisXIV_Name	Louis XIV
 @
 1Base.Buildings.Building_China_Home_Average_1_NameMedium Home
+C
+1Base.Buildings.Building_Mayas_Home_Premium_1_NameLuxurious Home
 O
 ?Base.Buildings.Building_ByzantineEra_Special_HeroAcademy_1_NameHero Academy
 K
@@ -5765,6 +6096,8 @@ OBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Average_Name
 Base.Ages.BronzeAge_Start	3000 B.C.
 B
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_NameChannel
+I
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescProduces Obsidian
 F
 5Base.Buildings.Building_China_RiceFarm_Average_2_DescProduces Rice
 m
@@ -5778,6 +6111,8 @@ ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_NameCompact Cult
 King Minos
 g
 ;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Desc(Improves Happiness of adjacent buildings
+G
+3Base.Buildings.Building_Mayas_Quarry_Premium_1_NameLuxurious Quarry
 T
 =Base.Technologies.Technology_EarlyRome_SpearThrowMastery_NameSpear Throw Mastery
 L
@@ -5791,6 +6126,9 @@ Q
 FBase.AbilityDescriptions.hero_battle_ability_description.Abacus_1_Name∞<style=ability_label>Buff</style>While the holder is above <style=basestat>{health_cutoff}</style> health, their evasion is increased by <style=basestat>{evasion_buff}</style>.
 o
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
+-
+Base.Heroes.hero.IsabellaI_Name
+Isabella I
 õ
 !Base.Units.Unit_LouisPasteur_DescıConquer diseases with Louis Pasteur, the father of Microbiology! This 19th century French scientist is famed for his discovery of the rabies vaccine, invention of pasteurization, and his theory of germs. <br><br> Pasteur is most known for injecting 9-year old Joseph Meister, who had been attacked by a rabid dog, with an inoculation for rabies. Months later, the boy remained healthy. Over the next year or so, Pasteur treated 350 others for the disease: only one contracted it. Yet, that is just a fraction of Pasteur's genius. He taught the heating of milk or wine to kill bacteria and the washing of hands before surgery, and set up the Pasteur Institute. <br><br> Today, he is followed by both fame and controversy. Many places in the world are named after this genius, but his notebooks reveal a sneaky side, deceiving and manipulating the truth in order to seem truly original. 
 U
@@ -5832,6 +6170,9 @@ L
 5Base.Buildings.Building_China_RiceFarm_Premium_6_Nameluxurious rice farm
 ì
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_DescUFishing Piers send out boats to catch fish to supply your hungry Workers and Sailors.
+F
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_Name
+Chronicler
 L
 ;Base.Technologies.Technology_ByzantineEra_SolarRituals_NameSolar Rituals
 B
@@ -5845,6 +6186,8 @@ A
 Rural Farm
 P
 >Base.Technologies.Technology_AgeOfTheFranks_SacredShrines_NameSacred Shrines
+K
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_NameRitual Carver
 M
 :Base.Technologies.Technology_FeudalAge_KnightTraining_NameKnight Training
 D
@@ -5856,6 +6199,8 @@ H
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_DescGCavalry Units are very fast and charge towards the enemies' rear guard.
 Z
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameHeavy Infantry Barracks
+|
+1Base.Buildings.Building_Mayas_Home_Premium_3_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 
 =Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc>Produces Embers. Smelt excess resources for additional Embers.
 ,
@@ -5863,8 +6208,12 @@ Z
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Name
 Small Home
+?
+0Base.Buildings.Building_Mayas_Quarry_Jade_6_NameJade Quarry
 R
 ?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_NameProduction Boom
+$
+Base.Ages.Mayas_NameMayan Empire
 b
 1Base.Buildings.Building_Egypt_Home_Premium_5_Desc-Produces Deben and adds a Worker to your city
 L
@@ -5875,6 +6224,8 @@ H
 >Base.Buildings.Building_KingdomOfSicily_Workshop_Scribe_1_NameScribe
 Y
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_LongNine_Name	Long Nine
+K
+5Base.Buildings.Building_Mayas_Workshop_Premium_2_NameLuxurious Workshop
 ü
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 B
@@ -5909,6 +6260,8 @@ Q
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_3_NameThread processor
 W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_Descrefines kaolin into clay
+d
+0Base.Buildings.Building_Mayas_Home_Priest_5_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 D
 5Base.Buildings.Building_EarlyRome_Home_Average_2_NameMedium Home
 T
@@ -5961,6 +6314,8 @@ S
 SBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_1_NameÇ<style=ability_label>Stomp| Recovery</style>Stomps the ground, dealing <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of <style=basestat>{range}</style> and recovering <style=basestat>{hp_percentage}</style> of his base damage.
 ”
 'Base.Units.Unit_MargaretIOfDenmark_DescßThey called her Semiramis of the North, the Lady King, or The First Great Queen, but above all, she was Queen Margaret I of Denmark. This ruler of the 14th and 15 centuries first became Queen of Norway, then later ruled over Denmark and Sweden, uniting Scandinavia through the Kalmar Union.<br><br>A famed diplomat, Margaret kept control of the union despite facing disloyal nobles and the church. Governing on behalf of her grandnephew, she consolidated power and enforced a stability that hadn't been seen for a generation.<br><br>Her reign, in the end, brought a peace and prosperity to Scandinavia that had been sorely missed. Margaret I is remembered as a great queen, the 'greatest before or since'. Even so, not all remember her so fondly: to her rival King Albert she was known as 'King Breechless!'
+U
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_3_NameCeremony Outfitter
 v
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
 &
@@ -6090,6 +6445,8 @@ J
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_1_NameDomestic Farm
 B
 7Base.Technologies.Technology_ClassicGreece_Temples_NameTemples
+?
+0Base.Buildings.Building_Mayas_Home_Worker_3_NameWorker Home
 >
 2Base.Units.Unit_ClassicGreece_Player_Hoplites_NameHoplites
 U
@@ -6143,6 +6500,8 @@ D
 CBase.Technologies.Technology_AgeOfTheFranks_AdvancedJadeMining_NameAdvanced Jade Mining
 V
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_NameCharlemagne's Paladins
+g
+3Base.Buildings.Building_Mayas_Quarry_Premium_1_Desc0Produces both Jade and Obsidian at the same time
 I
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_Name
 Hypaspists
@@ -6195,6 +6554,8 @@ Y
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_NameModerate Culture Site
 ô
 OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Name≈<style=ability_label>Taunt| Shield</style>Taunts all enemies for <style=basestat>{taunt_duration}</style>. Bismarck gains <style=basestat>{shield_percentage}</style> of his base damage as a shield.
+N
+&Base.BuildingGroups.premiumAviary_NameLuxurious AviaryLuxurious Aviaries
 _
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_DescUnlocks minotaur's vanguards
 ¥
@@ -6262,6 +6623,8 @@ H
 @
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Name
 Sagittarii
+A
+0Base.Buildings.Building_Mayas_Quarry_Jade_6_DescProduces Jade
 E
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameGold Laurel
 ,

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.HohProtoParser;
 
-public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogger<GameDesignDataParser> logger)
+public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMapper mapper, ILogger<GameDesignDataParser> logger)
 {
     private static readonly HashSet<string> HeroesToSkip = 
     [
@@ -62,13 +62,6 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
             opt.Items.Add(ContextKeys.HERO_ABILITY_TRAINING_COMPONENTS,
                 gdr.HeroAbilityTrainingComponents.ToDictionary(hatc => hatc.Id));
         });
-    }
-
-    private static IMapper ConfigureAutoMapper()
-    {
-        var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile<MappingProfile>(); });
-
-        return mappingConfig.CreateMapper();
     }
 
     private static IList<Building> CreateBuildings(IMapper mapper, GameDesignResponseDTO gdr,
@@ -227,9 +220,8 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, ILogge
             opt => { opt.Items.Add(ContextKeys.CONTINENTS, continents); });
     }
 
-    private static Data Parse(GameDesignResponseDTO gdr)
+    private Data Parse(GameDesignResponseDTO gdr)
     {
-        var mapper = ConfigureAutoMapper();
         var ages = mapper.Map<IList<Age>>(gdr.AgeDefinitions).ToDictionary(a => a.Id);
         var resources = mapper
             .Map<IList<Resource>>(gdr.ResourceDefinitions, opt => opt.Items.Add(ContextKeys.AGES, ages));
