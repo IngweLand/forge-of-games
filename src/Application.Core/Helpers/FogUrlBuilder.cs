@@ -42,6 +42,7 @@ public static class FogUrlBuilder
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
         public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
+        public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
         public const string BASE_TOOLS_PATH = "/tools";
@@ -49,6 +50,7 @@ public static class FogUrlBuilder
         public const string BASE_WONDERS_PATH = "/wonders";
         public const string BASE_HELP_PATH = "/help";
         public const string HELP_COMMAND_CENTER_PATH = BASE_HELP_PATH + "/command-center";
+        public const string HELP_EQUIPMENT_PATH = BASE_HELP_PATH + "/equipment";
         public const string HELP_CITY_PLANNER_SNAPSHOTS_PATH = BASE_HELP_PATH + "/city-planner-snapshots";
         public const string HELP_BROWSER_EXTENSION_PATH = BASE_HELP_PATH + "/browser-extension";
         public const string HELP_IMPORTING_IN_GAME_DATA_PATH = BASE_HELP_PATH + "/importing-hoh-data";

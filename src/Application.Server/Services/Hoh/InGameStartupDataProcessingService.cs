@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
@@ -38,10 +39,12 @@ public class InGameStartupDataProcessingService(
 
         var cities = await ImportInGameCities(startupDto);
         var profile = await ImportProfileAsync(startupDto, cities);
+        var equipment = await ImportEquipmentAsync(startupDto);
         return new InGameStartupData()
         {
             Cities = cities.ToList(),
             Profile = profile,
+            Equipment = equipment.ToList(),
         };
     }
 
@@ -111,5 +114,27 @@ public class InGameStartupDataProcessingService(
             logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
+    }
+    
+    private async Task<IList<EquipmentItem>> ImportEquipmentAsync(StartupDto startupDto)
+    {
+        var equipmentItems = new List<EquipmentItem>();
+
+        if (startupDto.Equipment == null)
+        {
+            return equipmentItems;
+        }
+        try
+        {
+            equipmentItems = mapper.Map<List<EquipmentItem>>(startupDto.Equipment.Equipments);
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to map equipment data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return equipmentItems;
     }
 }

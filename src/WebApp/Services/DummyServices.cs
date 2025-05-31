@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
@@ -37,6 +38,11 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
+    public ValueTask SaveEquipment(IReadOnlyCollection<EquipmentItem> equipment)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<bool> DeleteProfile(string profileId)
     {
         throw new NotImplementedException();
@@ -53,6 +59,11 @@ internal class DummyPersistenceService : IPersistenceService
     }
 
     public ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<IReadOnlyCollection<EquipmentItem>> GetEquipmentAsync()
     {
         throw new NotImplementedException();
     }

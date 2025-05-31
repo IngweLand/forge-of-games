@@ -14,6 +14,19 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
     {
         var currentPageUri = new Uri(navigationManager.Uri);
         var currentPageAbsolutePath = currentPageUri.AbsolutePath;
+        
+        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH))
+        {
+            return new PageMetadata
+            {
+                PageTitle = localizer[FogResource.CommandCenter_Equipment_PageTitle],
+                Description = localizer[FogResource.CommandCenter_Equipment_Meta_Description],
+                Keywords = localizer[FogResource.CommandCenter_Equipment_Meta_Keywords],
+                Title = localizer[FogResource.CommandCenter_Equipment_Title],
+                CurrentHomePath = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
+                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH
+            };
+        }
 
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_COMMAND_CENTER_PATH))
         {

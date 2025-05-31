@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum Calculation {
+  Calculation_ADD = 0;
+  Calculation_MULTIPLY = 1;
+}

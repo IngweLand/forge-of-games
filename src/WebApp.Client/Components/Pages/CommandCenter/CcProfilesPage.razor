@@ -12,6 +12,11 @@
             <img class="command-center-card-icon" src="images/icon_hud_heroes.png"/>
             <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_HeroPlaygrounds]</span>
         </div>
+        <div class="command-center-card command-center-action-card"
+             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)">
+            <img class="command-center-card-icon" src="images/icon_flat_equipment.png"/>
+            <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Equipment]</span>
+        </div>
         <div class="command-center-card command-center-action-card" @onclick="CreateNewProfile">
             <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
             <span class="command-center-card-label">@Loc[FogResource.CommandCenter_CreateProfile]</span>

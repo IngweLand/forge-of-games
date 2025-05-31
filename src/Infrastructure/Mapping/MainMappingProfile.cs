@@ -15,7 +15,8 @@ public class MainMappingProfile:Profile
         CreateMap<InGameStartupData, InGameStartupDataTableEntity>()
             .ForMember(dest => dest.CitiesData, opt => opt.Ignore())
             .ForMember(dest => dest.ProfileData, opt => opt.Ignore())
-            .ForMember(dest => dest.RelicsJson, opt => opt.Ignore());
+            .ForMember(dest => dest.RelicsJson, opt => opt.Ignore())
+            .ForMember(dest => dest.EquipmentData, opt => opt.Ignore());
         CreateMap<InGameStartupDataTableEntity, InGameStartupData>();
 
         CreateMap<PlayerRank, PlayerRankingTableEntity>()

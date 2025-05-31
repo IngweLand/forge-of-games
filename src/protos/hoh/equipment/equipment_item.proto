@@ -1,0 +1,35 @@
+syntax = "proto3";
+import "calculation.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+// Represents the core equipment item
+message EquipmentItemDto {
+  int32 id = 1;
+  string equipmentSlotTypeDefinitionId = 2;
+  string equipmentSetDefinitionId = 3;
+  string equipmentRarityDefinitionId = 4;
+  int32 level = 5;
+  string equippedOnHeroDefinitionId = 6;
+  bool isNew = 7;
+  EquipmentAttributeDto mainAttribute = 8;
+  repeated EquipmentAttributeDto subAttributes = 9;
+}
+
+// Represents a stat boost with detailed calculation and stat information
+message EquipmentStatBoostDto {
+  int32 order = 1;
+  Calculation calculation = 2;
+  string unitStatDefinitionId = 3;
+  float value = 4;
+  string unitStatAttributeDefinitionId = 6;
+}
+
+// Represents the main or sub attribute on the equipment
+message EquipmentAttributeDto {
+  string unitStatAttributeDefinitionId = 1;
+  EquipmentStatBoostDto statBoost = 2;
+  int32 unlockedAtLevel = 3;
+  bool unlocked = 4;
+  float rolledValue = 5;
+}

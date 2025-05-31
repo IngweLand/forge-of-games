@@ -1,8 +1,10 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Blazored.LocalStorage;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
 
@@ -11,7 +13,13 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     private const string CITY_DATA_KEY_PREFIX = "CityData";
     private const string PROFILE_DATA_KEY_PREFIX = "CommandCenterProfile";
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
+    private const string EQUIPMENT_DATA_KEY_PREFIX = "Equipment";
     private const string UI_SETTINGS = "UiSettings";
+
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new()
+    {
+        Converters = {new JsonStringEnumConverter()}
+    };
 
     public ValueTask SaveCity(HohCity city)
     {
@@ -81,6 +89,12 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
         return localStorageService.SetItemAsStringAsync(GetProfileKey(commandCenterProfile.Id), serializedProfile);
     }
 
+    public ValueTask SaveEquipment(IReadOnlyCollection<EquipmentItem> equipment)
+    {
+        var serializedProfile = JsonSerializer.Serialize(equipment, JsonSerializerOptions);
+        return localStorageService.SetItemAsStringAsync(EQUIPMENT_DATA_KEY_PREFIX, serializedProfile);
+    }
+
     public async ValueTask<bool> DeleteProfile(string profileId)
     {
         var key = GetProfileKey(profileId);
@@ -133,6 +147,18 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
         }
 
         return profiles ?? [];
+    }
+
+    public async ValueTask<IReadOnlyCollection<EquipmentItem>> GetEquipmentAsync()
+    {
+        List<EquipmentItem>? equipment = null;
+        var rawData = await localStorageService.GetItemAsStringAsync(EQUIPMENT_DATA_KEY_PREFIX);
+        if (!string.IsNullOrWhiteSpace(rawData))
+        {
+            equipment = JsonSerializer.Deserialize<List<EquipmentItem>>(rawData, JsonSerializerOptions);
+        }
+
+        return equipment ?? [];
     }
 
     public ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles)

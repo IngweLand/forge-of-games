@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Core.Helpers
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH)]
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="help-container">
+    <h3>Equipment | Command Center</h3>
+
+    <div class="help-info">
+        The Equipment section is a new addition to the Command Center. It provides a detailed view of all equipment you currently possess in the game. Use this page to review, compare, and sort through your gear with ease.
+    </div>
+
+    <div class="help-step">
+        <h5>Importing Your Equipment</h5>
+        <p>To populate the Equipment page with your in-game gear, you need to import your data using the browser extension you may already be familiar with. It's the same extension used for importing your City layout and Hero roster. If you haven’t installed it yet, check it here: <a href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Browser Extension Help</a></p>
+    </div>
+
+    <div class="help-step">
+        <h5>Staying in Sync</h5>
+        <p>You always have one active set of equipment data at a time. Each new import replaces the previous one. To keep your data up-to-date, simply export your game data again through the extension and then reload the page.</p>
+    </div>
+
+    <div class="help-step">
+        <h5>Using the Equipment Table</h5>
+        <p>Once imported, all your equipment is displayed in a sortable table format. Each item is shown along with its full set of properties, helping you quickly find what you need.</p>
+        <ul>
+            <li>Click on any column title to sort the table by that property</li>
+            <li>By default, the table is sorted first by <strong>Slot</strong>, then <strong>Rarity</strong>, and finally <strong>Level</strong></li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Viewing on Mobile</h5>
+        <p>The Equipment table is accessible on mobile devices. However, due to the number of data columns, the layout is best experienced on larger screens.</p>
+    </div>
+</div>

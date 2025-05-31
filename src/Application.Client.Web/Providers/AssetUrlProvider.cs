@@ -70,6 +70,10 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename});
     }
 
+    public string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet) =>
+        GetAssetUrl(assetsSettings.Value.HohIconsPath,
+            $"icon_equipmentset_{equipmentSet.ToString().ToLowerInvariant()}.png");
+
     private string GetAssetUrl(params string[] pathElements)
     {
         var cleanElements = pathElements

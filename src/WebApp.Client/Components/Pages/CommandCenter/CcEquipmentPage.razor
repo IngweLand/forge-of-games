@@ -1,0 +1,168 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)]
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits CommandCenterPageBase
+@if (IsInitialized)
+{
+    <div class="component-root">
+
+        @if (_equipment != null && _equipment.Count > 0)
+        {
+            <MudTable Items="@_equipment" SortLabel="Sort By" Dense="true" CustomHeader="true" Bordered="true"
+                      Breakpoint="Breakpoint.None"
+                      Height="0" Style="display: flex; flex-direction: column; flex: 1" ContainerStyle="flex-grow: 1"
+                      FixedHeader="true" HeaderClass="table-head-bordered" HorizontalScrollbar="true">
+                <HeaderContent>
+                    <MudTHeadRow>
+                        <MudTh colspan="5"></MudTh>
+                        <MudTh colspan="2">Main Attributes</MudTh>
+                        <MudTh colspan="8">Sub Attributes</MudTh>
+                    </MudTHeadRow>
+                    <MudTHeadRow>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquipmentSlotType)">
+                                Slot
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquipmentSet)">
+                                Set
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.StarCount)">
+                                Rarity
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.Level)">Level
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquippedOnHero)">
+                                Hero
+                            </MudTableSortLabel>
+                        </MudTh>
+
+                        @* main attributes *@
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.MainAttack?.Value)">ATK
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.MainDefense?.Value)">DEF
+                            </MudTableSortLabel>
+                        </MudTh>
+
+                        @* sub attributes *@
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubAttack?.Value)">ATK
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubAttackAmp?.Value)">ATK %
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubDefense?.Value)">DEF
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubDefenseAmp?.Value)">DEF %
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubHitPoints?.Value)">HP
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubHitPointsAmp?.Value)">HP %
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubBaseDamageAmp?.Value)">BASE
+                                DMG %
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh>
+                            <MudTableSortLabel
+                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubCritDamage?.Value)">CRIT DMG
+                            </MudTableSortLabel>
+                        </MudTh>
+                    </MudTHeadRow>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Slot"><img class="icon" src="@context.EquipmentSlotTypeIconUrl"/></MudTd>
+                    <MudTd DataLabel="Set"><img class="icon" src="@context.EquipmentSetIconUrl"/></MudTd>
+                    <MudTd DataLabel="Rarity">@context.StarCount ⭐</MudTd>
+                    <MudTd DataLabel="Level">@context.Level</MudTd>
+                    <MudTd DataLabel="Hero"><img class="avatar" src="@context.EquippedOnHeroPortraitUrl"/></MudTd>
+
+                    @* main attributes *@
+                    <MudTd
+                        DataLabel="Atk">@((MarkupString) (context.MainAttack?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.MainDefense?.FormattedValue ?? string.Empty))</MudTd>
+
+                    @* sub attributes *@
+                    <MudTd DataLabel="Def">@((MarkupString) (context.SubAttack?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubAttackAmp?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubDefense?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubDefenseAmp?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubHitPoints?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubHitPointsAmp?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubBaseDamageAmp?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd
+                        DataLabel="Def">@((MarkupString) (context.SubCritDamage?.FormattedValue ?? string.Empty))</MudTd>
+
+                </RowTemplate>
+            </MudTable>
+        }
+        else
+        {
+            <MudButton Style="align-self: center; justify-self: center" Variant="Variant.Filled"
+                       OnClick="() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH)">Import
+                Equipment
+            </MudButton>
+        }
+    </div>
+}
+else
+{
+    <LoadingIndicator/>
+}
+
+<style>
+    .mud-table-cell {
+        font-size: 12px !important;
+        padding-inline-start: 4px !important;
+        padding-inline-end: 4px !important;
+        padding: 6px !important;
+        white-space: nowrap !important;
+    }
+
+    .mud-table-sort-label-icon {
+        font-size: 12px !important;
+    }
+
+    th {
+        text-align: center !important;
+    }
+
+</style>

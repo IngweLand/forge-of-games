@@ -627,11 +627,56 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Optimize battle strategies in Heroes of History with the Command Center. Plan teams, analyze hero stats, and collaborate with alliances..
+        /// </summary>
+        public static string CommandCenter_Equipment_Meta_Description {
+            get {
+                return ResourceManager.GetString("CommandCenter.Equipment.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History battle planner, team strategy, hero progression, command center tool.
+        /// </summary>
+        public static string CommandCenter_Equipment_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CommandCenter.Equipment.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment | Command Center | Battle &amp; Team Planner | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CommandCenter_Equipment_PageTitle {
+            get {
+                return ResourceManager.GetString("CommandCenter.Equipment.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string CommandCenter_Equipment_Title {
+            get {
+                return ResourceManager.GetString("CommandCenter.Equipment.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import.
         /// </summary>
         public static string CommandCenter_Import {
             get {
                 return ResourceManager.GetString("CommandCenter.Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string CommandCenter_Menu_Equipment {
+            get {
+                return ResourceManager.GetString("CommandCenter.Menu.Equipment", resourceCulture);
             }
         }
         
@@ -1496,6 +1541,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string ImportInGameData_Options_Cities {
             get {
                 return ResourceManager.GetString("ImportInGameData.Options.Cities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string ImportInGameData_Options_Equipment {
+            get {
+                return ResourceManager.GetString("ImportInGameData.Options.Equipment", resourceCulture);
             }
         }
         

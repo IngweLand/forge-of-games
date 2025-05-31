@@ -1,10 +1,7 @@
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
@@ -14,9 +11,10 @@ public partial class ImportInGameStartupDataPage : FogPageBase
     private bool _isImporting = true;
     private bool _isLoading = true;
     private bool _shouldImportCities = true;
+    private bool _shouldImportEquipment = true;
     private bool _shouldImportProfile = true;
 
-    private bool _canImport => _shouldImportCities | _shouldImportProfile;
+    private bool _canImport => _shouldImportCities | _shouldImportProfile | _shouldImportEquipment;
 
     [Inject]
     private IPersistenceService PersistenceService { get; set; }
@@ -59,6 +57,11 @@ public partial class ImportInGameStartupDataPage : FogPageBase
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveCity(city);
             }
+        }
+
+        if (_shouldImportEquipment && _inGameStartupData?.Equipment is {Count: > 0})
+        {
+            await PersistenceService.SaveEquipment(_inGameStartupData.Equipment);
         }
 
         _isImporting = false;

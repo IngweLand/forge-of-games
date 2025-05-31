@@ -45,6 +45,12 @@ public class MainMenuService(NavigationManager navigationManager, IStringLocaliz
                         Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
                         ResourceKey = FogResource.CommandCenter_Menu_HeroPlaygrounds,
                         Icon = GetIconString("images/icon_hud_heroes.png")
+                    },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
+                        ResourceKey = FogResource.CommandCenter_Menu_Equipment,
+                        Icon = GetIconString("images/icon_flat_equipment.png")
                     }
                 }
             },
