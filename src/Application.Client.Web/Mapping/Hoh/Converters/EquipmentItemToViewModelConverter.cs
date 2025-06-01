@@ -32,40 +32,47 @@ public class EquipmentItemToViewModelConverter(
             MainAttack = CreateAttribute(source.MainAttribute, StatAttribute.Attack),
             MainDefense = CreateAttribute(source.MainAttribute, StatAttribute.Defense),
             SubAttack = CreateSubAttribute(source.SubAttributes, StatAttribute.Attack),
-            SubAttackAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.AttackBonus),
+            SubAttackAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.AttackBonus,
+                NumericValueType.Percentage),
             SubDefense = CreateSubAttribute(source.SubAttributes, StatAttribute.Defense),
-            SubDefenseAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.DefenseBonus),
+            SubDefenseAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.DefenseBonus,
+                NumericValueType.Percentage),
             SubHitPoints = CreateSubAttribute(source.SubAttributes, StatAttribute.MaxHitPoints),
-            SubHitPointsAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.MaxHitPointsBonus),
-            SubBaseDamageAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.BaseDamageBonus),
-            SubCritDamage = CreateSubAttribute(source.SubAttributes, StatAttribute.CritDamage),
+            SubHitPointsAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.MaxHitPointsBonus,
+                NumericValueType.Percentage),
+            SubBaseDamageAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.BaseDamageBonus,
+                NumericValueType.Percentage),
+            SubCritDamage = CreateSubAttribute(source.SubAttributes, StatAttribute.CritDamage,
+                NumericValueType.Percentage)
         };
     }
 
-    private static EquipmentItemAttributeViewModel? CreateAttribute(EquipmentAttribute attribute, StatAttribute targetAttribute)
+    private static EquipmentItemAttributeViewModel? CreateAttribute(EquipmentAttribute attribute,
+        StatAttribute targetAttribute, NumericValueType numericValueType = NumericValueType.Number)
     {
         if (attribute.StatBoost == null || attribute.StatAttribute != targetAttribute)
         {
             return null;
         }
 
-        var formattedValue = attribute.StatBoost.Calculation switch
+        var formattedValue = numericValueType switch
         {
-            Calculation.Multiply => (attribute.StatBoost.Value * 100).ToString("N1"),
+            NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
             _ => attribute.StatBoost.Value.ToString()
         };
 
         return new EquipmentItemAttributeViewModel()
         {
             Value = attribute.StatBoost.Value,
-            FormattedValue = formattedValue,
+            FormattedValue = formattedValue
         };
     }
-    
-    private static EquipmentItemSubAttributeViewModel? CreateSubAttribute(IEnumerable<EquipmentAttribute> attributes, StatAttribute targetAttribute)
+
+    private static EquipmentItemSubAttributeViewModel? CreateSubAttribute(IEnumerable<EquipmentAttribute> attributes,
+        StatAttribute targetAttribute, NumericValueType numericValueType = NumericValueType.Number)
     {
         var attribute = attributes.FirstOrDefault(ea => ea.StatAttribute == targetAttribute);
-        
+
         if (attribute == null)
         {
             return null;
@@ -74,9 +81,9 @@ public class EquipmentItemToViewModelConverter(
         var formattedValue = "?";
         if (attribute.StatBoost != null)
         {
-            formattedValue = attribute.StatBoost.Calculation switch
+            formattedValue = numericValueType switch
             {
-                Calculation.Multiply => (attribute.StatBoost.Value * 100).ToString("N1"),
+                NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
                 _ => attribute.StatBoost.Value.ToString()
             };
         }
