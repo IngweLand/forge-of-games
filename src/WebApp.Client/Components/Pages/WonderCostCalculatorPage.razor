@@ -28,18 +28,18 @@
             </MudSelect>
 
             @* wonder selector *@
-            @if (_selectedWonderGroup != null)
-            {
-                <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]"
-                           @bind-Value="@_selectedWonder" T="WonderBasicViewModel"
-                           SelectedValuesChanged="OnWonderSelectedValuesChanged" Variant="Variant.Outlined">
-
-                    @foreach (var wonder in _selectedWonderGroup.Wonders)
-                    {
-                        <MudSelectItem Value="wonder">@wonder.Name</MudSelectItem>
-                    }
-                </MudSelect>
-            }
+            @* @if (_selectedWonderGroup != null) *@
+            @* { *@
+            @*     <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]" *@
+            @*                @bind-Value="@_selectedWonder" T="WonderBasicViewModel" *@
+            @*                SelectedValuesChanged="OnWonderSelectedValuesChanged" Variant="Variant.Outlined"> *@
+            @* *@
+            @*         @foreach (var wonder in _selectedWonderGroup.Wonders) *@
+            @*         { *@
+            @*             <MudSelectItem Value="wonder">@wonder.Name</MudSelectItem> *@
+            @*         } *@
+            @*     </MudSelect> *@
+            @* } *@
 
             @* current level selector *@
             @if (_fromLevels != null)
@@ -138,7 +138,7 @@
         _fromLevels = new List<WonderLevelViewModel>() {WonderLevelViewModel.Blank}.Concat(buildings).ToList();
     }
 
-    private void OnCitiesSelectedValuesChanged()
+    private async Task OnCitiesSelectedValuesChanged()
     {
         _selectedWonder = null;
         _fromLevels = null;
@@ -146,6 +146,18 @@
         _currentLevel = null;
         _targetLevel = null;
         _costs = null;
+
+        _selectedWonder = _selectedWonderGroup!.Wonders.First();
+        _selectedWonderDetails = await CityUiService.GetWonderAsync(_selectedWonder!.Id);
+        if (_selectedWonderDetails == null)
+        {
+            return;
+        }
+
+        var buildings = _selectedWonderDetails.Levels
+            .Take(_selectedWonderDetails.Levels.Count - 1)
+            .ToList();
+        _fromLevels = new List<WonderLevelViewModel>() {WonderLevelViewModel.Blank}.Concat(buildings).ToList();
     }
 
 }
