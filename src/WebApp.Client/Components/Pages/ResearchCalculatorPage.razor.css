@@ -129,9 +129,3 @@ h4 {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
-
-@media (min-width: 992px) {
-    .step-description-container {
-        top: 56px;
-    }
-}
