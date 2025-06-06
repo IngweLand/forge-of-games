@@ -1,5 +1,4 @@
 using AutoMapper;
-using HohProtoParser.Helpers;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -7,11 +6,11 @@ using Ingweland.Fog.Models.Hoh.Entities.Units;
 
 namespace HohProtoParser.Converters;
 
-public class HeroBattleWaveDefinitionDtoConverter :ITypeConverter<HeroBattleWaveDefinitionDTO, BattleWave>
+public class HeroBattleWaveDefinitionDtoConverter : ITypeConverter<HeroBattleWaveDefinitionDTO, BattleWave>
 {
     public BattleWave Convert(HeroBattleWaveDefinitionDTO source, BattleWave destination, ResolutionContext context)
     {
-        var units = (IDictionary<string, Unit>)context.Items[ContextKeys.UNITS];
+        var units = (IDictionary<string, Unit>) context.Items[ContextKeys.UNITS];
         var squads = new List<BattleWaveSquadBase>();
         foreach (var squadDto in source.Squads)
         {
@@ -20,12 +19,12 @@ public class HeroBattleWaveDefinitionDtoConverter :ITypeConverter<HeroBattleWave
             {
                 case HeroBattleWaveSquadDto.SquadOneofCase.Hero:
                 {
-                    squad=context.Mapper.Map<BattleWaveHeroSquad>(squadDto.Hero);
+                    squad = context.Mapper.Map<BattleWaveHeroSquad>(squadDto.Hero);
                     break;
                 }
                 case HeroBattleWaveSquadDto.SquadOneofCase.Unit:
                 {
-                    squad=context.Mapper.Map<BattleWaveUnitSquad>((squadDto.Unit, units[squadDto.Unit.Id]));
+                    squad = context.Mapper.Map<BattleWaveUnitSquad>((squadDto.Unit, units[squadDto.Unit.Id]));
                     break;
                 }
                 case HeroBattleWaveSquadDto.SquadOneofCase.None:

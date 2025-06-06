@@ -30,6 +30,7 @@ public static class DependencyInjection
         services.AddScoped<IAllianceService, AllianceService>();
         services.AddScoped<IAllianceNameHistoryService, AllianceNameHistoryService>();
         services.AddScoped<IAllianceMembersService, AllianceMembersService>();
+        services.AddScoped<IPvpBattleService, PvpBattleService>();
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
         return services;

@@ -1,10 +1,10 @@
 using System.Collections.ObjectModel;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Factories;
@@ -47,7 +47,7 @@ public class UnitDtoFactory(IHohGameLocalizationService localizationService, ILo
         stats = stats.Concat(heroUnitType.BaseValues.Where(us => stats.All(us2 => us2.Type != us.Type))).ToList();
         return new UnitDto
         {
-            Name = localizationService.GetUnitName(StringParser.GetConcreteId(unit.Id)),
+            Name = localizationService.GetUnitName(HohStringParser.GetConcreteId(unit.Id)),
             AssetId = unit.Name,
             Color = unit.Color,
             Id = unit.Id,

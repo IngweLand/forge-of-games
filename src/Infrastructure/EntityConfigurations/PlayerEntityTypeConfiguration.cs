@@ -11,7 +11,7 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.ToTable("players");
 
         builder.HasKey(p => p.Id);
-        
+
         builder.Ignore(p => p.Key);
 
         builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
@@ -32,5 +32,9 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasMany(p => p.NameHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.AllianceNameHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.PvpRankings).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.PvpWins).WithOne(b => b.Winner).HasForeignKey(b => b.WinnerId)
+            .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(p => p.PvpLosses).WithOne(b => b.Loser).HasForeignKey(b => b.LoserId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

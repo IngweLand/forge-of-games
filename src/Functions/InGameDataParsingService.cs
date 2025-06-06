@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Microsoft.Extensions.Logging;
 
@@ -24,6 +25,13 @@ public class InGameDataParsingService(
         var data = DecodeInternal(inputData);
 
         return dataParsingService.ParsePvpRankings(data);
+    }
+
+    public IReadOnlyCollection<PvpBattle> ParsePvpBattles(string inputData)
+    {
+        var data = DecodeInternal(inputData);
+
+        return dataParsingService.ParsePvpBattles(data);
     }
 
     public AllianceRanks ParseAllianceRankings(string inputData)

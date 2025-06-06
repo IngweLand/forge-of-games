@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Microsoft.Extensions.Logging;
 
@@ -62,7 +63,25 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
 
         return mapper.Map<IReadOnlyCollection<PvpRank>>(ranksDto.Rankings);
     }
-    
+
+    public IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data)
+    {
+        PvpBattleHistoryResponseDto battlesDto;
+        try
+        {
+            var container = SingleItemCommunicationDto.Parser.ParseFrom(data);
+            battlesDto = container.PvpBattleHistoryResponse!;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse pvp battles data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<IReadOnlyCollection<PvpBattle>>(battlesDto.Battles);
+    }
+
     public Wakeup ParseWakeup(byte[] data)
     {
         CommunicationDto dto;

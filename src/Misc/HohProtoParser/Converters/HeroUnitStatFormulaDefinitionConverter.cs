@@ -1,13 +1,14 @@
 using System.Collections.ObjectModel;
 using AutoMapper;
-using HohProtoParser.Helpers;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace HohProtoParser.Converters;
 
-public class HeroUnitStatFormulaDefinitionConverter:ITypeConverter<HeroUnitStatFormulaDefinitionDTO, UnitStatFormulaData>
+public class
+    HeroUnitStatFormulaDefinitionConverter : ITypeConverter<HeroUnitStatFormulaDefinitionDTO, UnitStatFormulaData>
 {
     public UnitStatFormulaData Convert(HeroUnitStatFormulaDefinitionDTO source, UnitStatFormulaData destination,
         ResolutionContext context)
@@ -16,7 +17,7 @@ public class HeroUnitStatFormulaDefinitionConverter:ITypeConverter<HeroUnitStatF
         //rarityFactors = source.RarityUnits.ToDictionary(dto => dto.RarityId, dto => dto.Factors);
         return new UnitStatFormulaData()
         {
-            Type = StringParser.ParseEnumFromString<UnitStatFormulaType>(source.Id),
+            Type = HohStringParser.ParseEnumFromString<UnitStatFormulaType>(source.Id),
             BaseFactor = source.Unit.Normal,
             RarityFactors =
                 new ReadOnlyDictionary<string, UnitStatFormulaFactors>(

@@ -57,6 +57,12 @@ public class HohHelperResponseDtoToTablePkConverter(
                 }
                 break;
             }
+            
+            case "game/pvp/get-battle-history":
+            {
+                yield return tablePartitionKeyProvider.PvpBattles(worldId, date);
+                break;
+            }
         }
     }
 

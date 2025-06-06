@@ -10,7 +10,8 @@ public class EndpointValidator
             {"game/wakeup", ["alliance", "leaderboards"]},
             {"game/ranking/player", ["leaderboards"]},
             {"game/pvp/get-ranking", ["leaderboards"]},
-            {"game/ranking/alliance", ["leaderboards"]}
+            {"game/ranking/alliance", ["leaderboards"]},
+            {"game/pvp/get-battle-history", ["pvpBattles"]},
         };
 
     public bool ValidateEndpoint(string responseUrl, IEnumerable<string> collectionCategoryIds, out string errorMessage)

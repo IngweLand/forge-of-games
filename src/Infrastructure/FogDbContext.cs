@@ -18,6 +18,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<Alliance> Alliances { get; set; }
     public DbSet<AllianceRanking> AllianceRankings { get; set; }
     public DbSet<PlayerAllianceNameHistoryEntry> PlayerAllianceNameHistory { get; set; }
+    public DbSet<PvpBattle> PvpBattles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -32,5 +33,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new AllianceEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceNameHistoryEntryEntityTypeConfiguration());
+        builder.ApplyConfiguration(new PvpBattleEntityTypeConfiguration());
     }
 }

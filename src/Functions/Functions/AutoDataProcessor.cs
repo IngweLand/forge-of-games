@@ -6,11 +6,13 @@ using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using PvpBattle = Ingweland.Fog.Models.Hoh.Entities.Battle.PvpBattle;
 
 namespace Ingweland.Fog.Functions.Functions;
 
@@ -28,6 +30,7 @@ public class AutoDataProcessor(
     IAllianceRankingService allianceRankingService,
     IAllianceNameHistoryService allianceNameHistoryService,
     IAllianceMembersService allianceMembersService,
+    IPvpBattleService pvpBattleService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IMapper mapper,
     ILogger<AutoDataProcessor> logger,
@@ -44,6 +47,7 @@ public class AutoDataProcessor(
         var playerAggregates = new List<PlayerAggregate>(32000);
         var allianceAggregates = new List<AllianceAggregate>(16000);
         var allConfirmedAllianceMembers = new List<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int>)>();
+        var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("AutoDataProcessor started for date {date}", date);
         foreach (var gameWorld in gameWorldsProvider.GetGameWorlds())
@@ -84,6 +88,11 @@ public class AutoDataProcessor(
             logger.LogInformation("{count} confirmed alliance members retrieved for game world {gameWorldId}",
                 confirmedAllianceMembers.Count, gameWorld.Id);
             allConfirmedAllianceMembers.AddRange(confirmedAllianceMembers);
+            var pvpBattles = await GetPvpBattles(gameWorld.Id, date);
+            allPvpBattles.AddRange(pvpBattles);
+            logger.LogInformation("{count} pvp battles retrieved for game world {gameWorldId}",
+                pvpBattles.Count, gameWorld.Id);
+            
             // var athAllianceRankingWakeups =
             //     await GetWakeupsAsync(
             //         inGameRawDataTablePartitionKeyProvider.AthAllianceRankings(gameWorld.Id, date));
@@ -123,6 +132,20 @@ public class AutoDataProcessor(
             {
                 playerAggregates.Add(mapper.Map<PlayerAggregate>(t,
                     opt => { opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id; }));
+            }
+            
+            foreach (var t in pvpBattles)
+            {
+                playerAggregates.Add(mapper.Map<PlayerAggregate>(t.PvpBattle.Winner, opt =>
+                {
+                    opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
+                    opt.Items[ResolutionContextKeys.DATE] = date.ToDateTime(TimeOnly.MinValue);
+                }));
+                playerAggregates.Add(mapper.Map<PlayerAggregate>(t.PvpBattle.Loser, opt =>
+                {
+                    opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
+                    opt.Items[ResolutionContextKeys.DATE] = date.ToDateTime(TimeOnly.MinValue);
+                }));
             }
 
             foreach (var t in allianceRankings)
@@ -199,6 +222,10 @@ public class AutoDataProcessor(
         logger.LogInformation("Starting player alliance name history service update");
         await ExecuteSafeAsync(() => playerAllianceNameHistoryService.UpdateAsync(playerAggregates), "");
         logger.LogInformation("Completed player alliance name history service update");
+        
+        logger.LogInformation("Starting pvp battles service update");
+        await ExecuteSafeAsync(() => pvpBattleService.AddAsync(allPvpBattles), "");
+        logger.LogInformation("Completed pvp battles service update");
     }
 
     private async Task ExecuteSafeAsync(Func<Task> func, string errorMessage)
@@ -266,8 +293,30 @@ public class AutoDataProcessor(
                 logger.LogError(e, "Error parsing player raw data collected on {date}", rawData.CollectedAt);
             }
         }
-
+        
         return rankings;
+    }
+    
+    private async Task<List<(string WorldId,  PvpBattle PvpBattle)>> GetPvpBattles(string worldId, DateOnly date)
+    {
+        var pvpBattlesRawData = await ExecuteSafeAsync(
+            () => inGameRawDataTableRepository.GetAllAsync(
+                inGameRawDataTablePartitionKeyProvider.PvpBattles(worldId, date)),
+            $"Error getting pvp battles raw data for world {worldId} on {date}", []);
+        var pvpBattles = new List<(string WorldId, PvpBattle Battle)>();
+        foreach (var rawData in pvpBattlesRawData)
+        {
+            try
+            {
+                pvpBattles.AddRange(inGameDataParsingService.ParsePvpBattles(rawData.Base64Data).Select(src => (worldId, src)));
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error parsing pvp battles raw data collected on {date}", rawData.CollectedAt);
+            }
+        }
+
+        return pvpBattles;
     }
 
     private async Task<List<(DateTime CollectedAt, AllianceRank AllianceRank)>> GetAllianceRanking(string worldId,

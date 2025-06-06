@@ -1,15 +1,15 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Server.Helpers;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace Ingweland.Fog.Application.Server.Mapping.Hoh.Converters;
 
-public class EquipmentRarityValueConverter :IValueConverter<string, EquipmentRarity>
+public class EquipmentRarityValueConverter : IValueConverter<string, EquipmentRarity>
 {
     public EquipmentRarity Convert(string sourceMember, ResolutionContext context)
     {
-        var starCount = StringParser.GetConcreteId(sourceMember);
-        
+        var starCount = HohStringParser.GetConcreteId(sourceMember);
+
         return starCount switch
         {
             "3" => EquipmentRarity.Star_3,

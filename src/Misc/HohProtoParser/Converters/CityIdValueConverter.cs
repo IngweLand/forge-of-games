@@ -1,15 +1,15 @@
 using AutoMapper;
-using HohProtoParser.Helpers;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace HohProtoParser.Converters;
 
-public class CityIdValueConverter :IValueConverter<string, CityId>
+public class CityIdValueConverter : IValueConverter<string, CityId>
 {
     public CityId Convert(string sourceMember, ResolutionContext context)
     {
         return string.IsNullOrWhiteSpace(sourceMember)
             ? CityId.Undefined
-            : StringParser.ParseEnumFromString<CityId>(sourceMember, '_');
+            : HohStringParser.ParseEnumFromString<CityId>(sourceMember, '_');
     }
 }

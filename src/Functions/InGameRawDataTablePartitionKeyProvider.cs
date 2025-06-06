@@ -18,6 +18,11 @@ public class InGameRawDataTablePartitionKeyProvider
     {
         return WithWorldAndDate("pvp-rankings", worldId, date);
     }
+    
+    public string PvpBattles(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("pvp-battles", worldId, date);
+    }
 
     public string AthAllianceRankings(string worldId, DateOnly date)
     {

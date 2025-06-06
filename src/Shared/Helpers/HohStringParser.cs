@@ -1,6 +1,6 @@
-namespace HohProtoParser.Helpers;
+namespace Ingweland.Fog.Shared.Helpers;
 
-public static class StringParser
+public static class HohStringParser
 {
     public static TEnum ParseEnumFromString<TEnum>(string value) where TEnum : struct, Enum
     {

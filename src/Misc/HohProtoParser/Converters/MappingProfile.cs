@@ -2,7 +2,6 @@ using AutoMapper;
 using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using HohProtoParser.Extensions;
-using HohProtoParser.Helpers;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
@@ -12,6 +11,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace HohProtoParser.Converters;
 
@@ -28,18 +28,18 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.ResourceId, opt => opt.MapFrom(bbr => bbr.ResourceType));
         CreateMap<HeroUnitStatValueDefinitionDTO, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(husvd => StringParser.ParseEnumFromString<UnitStatType>(husvd.StatId)));
+                opt => opt.MapFrom(husvd => HohStringParser.ParseEnumFromString<UnitStatType>(husvd.StatId)));
         CreateMap<HeroUnitStatBaseValueDto, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitStatType>(src.StatId)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.StatId)));
         CreateMap<UnitStatDto, UnitStat>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitStatType>(src.Type)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.Type)));
         CreateMap<HeroUnitDefinitionDTO, Unit>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(hud => StringParser.ParseEnumFromString<UnitType>(hud.Type)))
+                opt => opt.MapFrom(hud => HohStringParser.ParseEnumFromString<UnitType>(hud.Type)))
             .ForMember(dest => dest.Color,
-                opt => opt.MapFrom(hud => StringParser.GetConcreteId(hud.Color).ToUnitColor()));
+                opt => opt.MapFrom(hud => HohStringParser.GetConcreteId(hud.Color).ToUnitColor()));
         CreateMap<BuildingUnitDto, BuildingUnit>()
             .ForMember(dest => dest.Unit, opt => opt.ConvertUsing(new UnitValueConverter(), bu => bu.Id));
         CreateMap<HeroBattleWaveHeroDetailsDto, BattleWaveHeroSquad>()
@@ -55,7 +55,7 @@ public class MappingProfile : Profile
         CreateMap<HeroProgressionCostResourceDto, HeroProgressionCostResource>();
         CreateMap<HeroProgressionCostDefinitionDTO, HeroProgressionCost>()
             .ForMember(dest => dest.Id,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<HeroProgressionCostId>(src.Id)))
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<HeroProgressionCostId>(src.Id)))
             .ForMember(dest => dest.LevelCosts,
                 opt => opt.MapFrom(src => Enumerable.ToDictionary(src.Cost, hpc => hpc.Level,
                     hpc => hpc.Resource)));
@@ -67,14 +67,15 @@ public class MappingProfile : Profile
         CreateMap<BattleAbilityDefinitionDescriptionItemDto, HeroAbilityDescriptionItem>();
         CreateMap<BattleAbilityDefinitionDescriptionItemValueDto, HeroAbilityDescriptionItemValue>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<NumericValueType>(src.Type)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<NumericValueType>(src.Type)));
         CreateMap<HeroBattleAbilityComponentLevelDto, HeroBattleAbilityComponentLevel>();
         CreateMap<WonderCrateDto, WonderCrate>();
         CreateMap<AwakeningLevelDto, AwakeningLevel>()
             .ForMember(dest => dest.IsPercentage, opt => opt.MapFrom(src => src.LevelValue.IsPercentage))
             .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.LevelValue.Value))
             .ForMember(dest => dest.StatType,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitStatType>(src.LevelValue.UnitStatId)));
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<UnitStatType>(src.LevelValue.UnitStatId)));
         CreateMap<ExpansionDefinitionDTO, Expansion>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
             .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type))
@@ -94,19 +95,20 @@ public class MappingProfile : Profile
                 opt => opt.MapFrom(src =>
                     src.LinkedExpansionComponent != null ? src.LinkedExpansionComponent.LinkedExpansionId : null));
         CreateMap<KeyValuePair<string, long>, UnitType>()
-            .ConvertUsing(src => StringParser.ParseEnumFromString<UnitType>(src.Key));
+            .ConvertUsing(src => HohStringParser.ParseEnumFromString<UnitType>(src.Key));
         CreateMap<KeyValuePair<string, long>, HeroClassId>()
-            .ConvertUsing(src => StringParser.ParseEnumFromString<HeroClassId>(src.Key));
+            .ConvertUsing(src => HohStringParser.ParseEnumFromString<HeroClassId>(src.Key));
         CreateMap<MapField<string, RegionRewardDto>, IReadOnlyDictionary<Difficulty, RegionReward>>()
             .ConvertUsing((src, _, context) =>
-                src.ToDictionary(kvp => StringParser.ParseEnumFromString<Difficulty>(kvp.Key),
+                src.ToDictionary(kvp => HohStringParser.ParseEnumFromString<Difficulty>(kvp.Key),
                     kvp => context.Mapper.Map<RegionReward>(kvp.Value)));
         CreateMap<MapField<string, EncounterDetailsDto>, IReadOnlyDictionary<Difficulty, EncounterDetails>>()
             .ConvertUsing((src, _, context) =>
-                src.ToDictionary(kvp => StringParser.ParseEnumFromString<Difficulty>(kvp.Key),
+                src.ToDictionary(kvp => HohStringParser.ParseEnumFromString<Difficulty>(kvp.Key),
                     kvp =>
                     {
-                        context.Items[ContextKeys.DIFFICULTY] = StringParser.ParseEnumFromString<Difficulty>(kvp.Key);
+                        context.Items[ContextKeys.DIFFICULTY] =
+                            HohStringParser.ParseEnumFromString<Difficulty>(kvp.Key);
                         return context.Mapper.Map<EncounterDetails>(kvp.Value);
                     }));
         CreateMap<EncounterDetailsDto, EncounterDetails>().ConvertUsing(new EncounterDetailsDtoConverter());
@@ -136,7 +138,7 @@ public class MappingProfile : Profile
         CreateMap<HeroAbilityTrainingComponentDTO, HeroAbilityTrainingComponent>();
         CreateMap<HeroBuildingBoostComponentDTO, HeroBuildingBoostComponent>()
             .ForMember(dest => dest.UnitType,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitType>(src.UnitType)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)));
         CreateMap<BoostResourceComponentDTO, BoostResourceComponent>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), br => br.City))
             .ForMember(dest => dest.ResourceId, opt =>
@@ -152,14 +154,14 @@ public class MappingProfile : Profile
         CreateMap<RepeatedField<Any>, IList<ComponentBase>>().ConvertUsing<ComponentDtoConverter>();
         CreateMap<HeroProgressionComponentDTO, HeroProgressionComponent>()
             .ForMember(dest => dest.Id,
-                opt => opt.MapFrom(hpc => StringParser.ParseEnumFromString<HeroStarClass>(hpc.Id)))
+                opt => opt.MapFrom(hpc => HohStringParser.ParseEnumFromString<HeroStarClass>(hpc.Id)))
             .ForMember(dest => dest.CostId,
-                opt => opt.MapFrom(hpc => StringParser.ParseEnumFromString<HeroProgressionCostId>(hpc.CostId)));
+                opt => opt.MapFrom(hpc => HohStringParser.ParseEnumFromString<HeroProgressionCostId>(hpc.CostId)));
         CreateMap<HeroBattleAbilityComponentDTO, HeroBattleAbilityComponent>();
         CreateMap<WonderLevelUpComponentDTO, WonderLevelUpComponent>().ConvertUsing(new WonderLevelCostsConverter());
         CreateMap<HeroAbilityTrainingComponentDTO, HeroAbilityTrainingComponent>()
             .ForMember(dest => dest.UnitType,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitType>(src.UnitType)));
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)));
         CreateMap<HeroAwakeningComponentDTO, HeroAwakeningComponent>();
         CreateMap<ResearchComponentDTO, ResearchComponent>()
             .ForMember(dest => dest.ParentTechnologies,
@@ -234,20 +236,20 @@ public class MappingProfile : Profile
         CreateMap<HeroBattleDefinitionDTO, BattleDetails>().ConvertUsing<HeroBattleDefinitionDtoConverter>();
         CreateMap<HeroDefinitionDTO, Hero>()
             .ForMember(dest => dest.Id,
-                opt => opt.MapFrom(hd => StringParser.GetConcreteId(hd.Id)))
+                opt => opt.MapFrom(hd => HohStringParser.GetConcreteId(hd.Id)))
             .ForMember(dest => dest.SupportUnitType,
-                opt => opt.MapFrom(hd => StringParser.ParseEnumFromString<UnitType>(hd.SupportUnitType)))
+                opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<UnitType>(hd.SupportUnitType)))
             .ForMember(dest => dest.ClassId,
-                opt => opt.MapFrom(hd => StringParser.ParseEnumFromString<HeroClassId>(hd.ClassId)));
+                opt => opt.MapFrom(hd => HohStringParser.ParseEnumFromString<HeroClassId>(hd.ClassId)));
         CreateMap<HeroBattleConstantsDefinitionDTO, UnitBattleConstants>()
             .ForMember(dest => dest.FormulaTypeToStatTypeMap, opt => opt.MapFrom(src =>
                 Enumerable.ToDictionary(src.StatToFormula,
-                    kvp => StringParser.ParseEnumFromString<UnitStatFormulaType>(kvp.Value),
-                    kvp => StringParser.ParseEnumFromString<UnitStatType>(kvp.Key)
+                    kvp => HohStringParser.ParseEnumFromString<UnitStatFormulaType>(kvp.Value),
+                    kvp => HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key)
                 )));
         CreateMap<HeroUnitStatFormulaDefinitionDTO, UnitStatFormulaData>()
             .ForMember(dest => dest.Type,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitStatFormulaType>(src.Id)))
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatFormulaType>(src.Id)))
             .ForMember(dest => dest.BaseFactor, opt => opt.MapFrom(src => src.Unit.Normal))
             .ForMember(dest => dest.RarityFactors,
                 opt => opt.MapFrom(src =>
@@ -270,7 +272,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Components, opt => opt.MapFrom(bd => bd.PackedComponents));
         CreateMap<HeroUnitTypeDefinitionDTO, HeroUnitType>()
             .ForMember(dest => dest.UnitType,
-                opt => opt.MapFrom(src => StringParser.ParseEnumFromString<UnitType>(src.UnitType)))
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)))
             .ForMember(dest => dest.BaseValues, opt => opt.MapFrom(src => src.UnitStats));
 
         // localization

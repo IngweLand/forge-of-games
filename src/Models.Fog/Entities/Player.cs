@@ -33,4 +33,6 @@ public class Player
     public Alliance? LedAlliance { get; set; }
     public required DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; set; }
+    public ICollection<PvpBattle> PvpWins { get; set; } = new List<PvpBattle>();
+    public ICollection<PvpBattle> PvpLosses { get; set; } = new List<PvpBattle>();
 }
