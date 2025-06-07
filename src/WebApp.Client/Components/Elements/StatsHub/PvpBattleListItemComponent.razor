@@ -1,0 +1,76 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Microsoft.Extensions.Localization
+@using MudBlazor.Utilities
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+@inject NavigationManager NavigationManager
+<div class="fog-container component-root">
+    <div class="player-container">
+        <div class="top-row top-row-player">
+            <div class="status-container player-status-container">
+                @if (Battle.IsVictory)
+                {
+                    <img class="player-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_victory")"/>
+                    <div class="@StatusLabelClassname">@Loc[FogResource.Common_Victory]</div>
+                }
+                else
+                {
+                    <img class="player-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_defeat")"/>
+                    <div class="@StatusLabelClassname">@Loc[FogResource.Common_Defeat]</div>
+                }
+            </div>
+        </div>
+        <div class="units-container">
+            @foreach (var unit in Battle.PlayerUnits)
+            {
+                <PvpBattleHeroItemComponent PvpUnit="unit"/>
+            }
+        </div>
+    </div>
+    <div class="opponent-container">
+        <div class="top-row opponent-top-container">
+            <div class="status-container opponent-status-container">
+                @if (Battle.IsVictory)
+                {
+                    <img class="opponent-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_victory")"/>
+                    <div class="@StatusLabelClassname">@Loc[FogResource.Common_Victory]</div>
+                }
+                else
+                {
+                    <img class="opponent-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_defeat")"/>
+                    <div class="@StatusLabelClassname">@Loc[FogResource.Common_Defeat]</div>
+                }
+            </div>
+            <div class="opponent-headline" @onclick="() => OnOpponentClick.InvokeAsync(Battle.Opponent.Id)">
+                <div class="player-name">@Battle.Opponent.Name</div>
+                <img class="avatar" src="@Battle.Opponent.AvatarUrl"/>
+            </div>
+        </div>
+        <div class="units-container opponent-bottom-container">
+            @foreach (var unit in Battle.OpponentUnits)
+            {
+                <PvpBattleHeroItemComponent PvpUnit="unit" OnClick="OnHeroClick"/>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required PvpBattleViewModel Battle { get; set; }
+
+    private string StatusLabelClassname => new CssBuilder("status-label")
+        .AddClass("victory", Battle.IsVictory)
+        .AddClass("defeat", !Battle.IsVictory)
+        .Build();
+
+    [Parameter]
+    public EventCallback<int> OnOpponentClick { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnHeroClick { get; set; }
+
+}

@@ -26,9 +26,13 @@ public class GetPlayerQueryHandler(IFogDbContext context, IPlayerWithRankingsFac
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
             .Include(p => p.AllianceNameHistory)
+            .Include(p => p.PvpWins.OrderByDescending(b => b.PerformedAt).Take(FogConstants.MaxDisplayedPvpBattles))
+            .ThenInclude(b => b.Loser)
+            .Include(p => p.PvpLosses.OrderByDescending(b => b.PerformedAt).Take(FogConstants.MaxDisplayedPvpBattles))
+            .ThenInclude(b => b.Winner)
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken: cancellationToken);
 
-        return player == null ? null : playerWithRankingsFactory.Create(player);
+        return player == null ? null : await playerWithRankingsFactory.CreateAsync(player);
     }
 }

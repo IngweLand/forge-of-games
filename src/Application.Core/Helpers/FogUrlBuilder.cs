@@ -79,6 +79,11 @@ public static class FogUrlBuilder
             return PLAYER_TEMPLATE.Replace("{playerId:int}", id.ToString());
         }
         
+        public static string HeroPlayground(string heroId)
+        {
+            return $"{COMMAND_CENTER_HERO_PLAYGROUNDS_PATH}/{heroId}";
+        }
+        
         public static string Alliance(int id)
         {
             return ALLIANCE_TEMPLATE.Replace("{allianceId:int}", id.ToString());

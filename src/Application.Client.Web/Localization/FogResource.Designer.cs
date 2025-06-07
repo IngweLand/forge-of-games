@@ -915,6 +915,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Defeat.
+        /// </summary>
+        public static string Common_Defeat {
+            get {
+                return ResourceManager.GetString("Common.Defeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Common_Delete {
@@ -1091,6 +1100,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Share {
             get {
                 return ResourceManager.GetString("Common.Share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Victory.
+        /// </summary>
+        public static string Common_Victory {
+            get {
+                return ResourceManager.GetString("Common.Victory", resourceCulture);
             }
         }
         
@@ -1820,6 +1838,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Player_Names {
             get {
                 return ResourceManager.GetString("StatsHub.Player.Names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arena battles.
+        /// </summary>
+        public static string StatsHub_Player_PvpBattles {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.PvpBattles", resourceCulture);
             }
         }
         

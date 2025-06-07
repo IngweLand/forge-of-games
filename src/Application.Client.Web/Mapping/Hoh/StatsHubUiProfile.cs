@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
 
@@ -38,15 +39,6 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
         CreateMap<PaginatedList<PlayerDto>, PaginatedList<PlayerViewModel>>();
-        CreateMap<PlayerWithRankings, PlayerWithRankingsViewModel>()
-            .ForMember(dest => dest.Ages, opt =>
-                opt.MapFrom((src, _, _, context) =>
-                {
-                    var ages = context.Items.GetRequiredItem<IReadOnlyDictionary<string, AgeDto>>(ResolutionContextKeys
-                        .AGES);
-                    return src.Ages.Select(
-                        a => new StatsTimedStringValue() {Date = a.Date, Value = ages[a.Value].Name});
-                }));
 
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.AvatarIconUrl,
@@ -64,5 +56,6 @@ public class StatsHubUiProfile : Profile
                 opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
             })
             .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader));
+
     }
 }

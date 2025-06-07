@@ -1,0 +1,111 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 4px;
+}
+
+.player-container, .opponent-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 100%;
+    gap: 4px;
+}
+
+.top-row {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    gap: 4px;
+    padding: 0 12px;
+}
+
+.opponent-headline{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.top-row-player {
+    display: none;
+}
+
+.opponent-top-container {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 32px;
+    user-select: none !important;
+}
+
+.player-name {
+    font-weight: 700;
+    color: var(--fog-text-on-container-color);
+    user-select: none !important;
+}
+
+.units-container {
+    display: flex;
+    gap: 2px;
+}
+
+.opponent-bottom-container {
+    justify-content: flex-end;
+}
+
+.status-label {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.victory {
+    color: #268a1c;
+}
+
+.defeat {
+    color: #c42626;
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.player-status-container {
+    display: none;
+}
+
+.opponent-status-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.player-status-icon, .opponent-status-icon {
+    height: 32px;
+    width: auto;
+    margin-top: -8px;
+}
+
+@media (min-width: 875px) {
+    .component-root {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .player-status-container {
+        display: flex;
+    }
+
+    .opponent-status-container {
+        display: none;
+    }
+
+    .top-row-player {
+        display: flex;
+    }
+}

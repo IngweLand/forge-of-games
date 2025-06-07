@@ -8,6 +8,7 @@ public class PlayerWithRankingsViewModel
     public IReadOnlyCollection<string> Alliances { get; init; } = Array.Empty<string>();
     public IReadOnlyCollection<string> Names { get; init; } = Array.Empty<string>();
     public required PlayerViewModel Player { get; init; }
-    public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
+    public IReadOnlyCollection<PvpBattleViewModel> PvpBattles { get; init; } = Array.Empty<PvpBattleViewModel>();
     public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
+    public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
 }

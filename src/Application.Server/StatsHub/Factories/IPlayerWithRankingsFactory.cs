@@ -5,5 +5,5 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public interface IPlayerWithRankingsFactory
 {
-    PlayerWithRankings Create(Player player);
+    Task<PlayerWithRankings> CreateAsync(Player player);
 }
