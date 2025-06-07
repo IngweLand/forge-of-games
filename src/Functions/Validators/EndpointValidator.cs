@@ -12,6 +12,7 @@ public class EndpointValidator
             {"game/pvp/get-ranking", ["leaderboards"]},
             {"game/ranking/alliance", ["leaderboards"]},
             {"game/pvp/get-battle-history", ["pvpBattles"]},
+            {"game/battle/hero/stats", ["battleStats"]},
         };
 
     public bool ValidateEndpoint(string responseUrl, IEnumerable<string> collectionCategoryIds, out string errorMessage)

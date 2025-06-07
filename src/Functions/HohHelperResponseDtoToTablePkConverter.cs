@@ -29,7 +29,7 @@ public class HohHelperResponseDtoToTablePkConverter(
                 yield return tablePartitionKeyProvider.AllianceRankings(worldId, date, allianceRankingType);
                 break;
             }
-            
+
             case "game/pvp/get-ranking":
             {
                 yield return tablePartitionKeyProvider.PvpRankings(worldId, date);
@@ -47,7 +47,7 @@ public class HohHelperResponseDtoToTablePkConverter(
                             yield return tablePartitionKeyProvider.AthAllianceRankings(worldId, date);
                             break;
                         }
-                        
+
                         case "alliance":
                         {
                             yield return tablePartitionKeyProvider.Alliance(worldId, date);
@@ -55,12 +55,19 @@ public class HohHelperResponseDtoToTablePkConverter(
                         }
                     }
                 }
+
                 break;
             }
-            
+
             case "game/pvp/get-battle-history":
             {
                 yield return tablePartitionKeyProvider.PvpBattles(worldId, date);
+                break;
+            }
+
+            case "game/battle/hero/stats":
+            {
+                yield return tablePartitionKeyProvider.BattleStats(worldId, date);
                 break;
             }
         }
