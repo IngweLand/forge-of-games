@@ -11,10 +11,11 @@ message PvpBattleHistoryResponseDto {
 }
 
 message PvpBattleDto {
-  PlayerDto winner = 1; 
-  PlayerDto loser = 2; 
-  repeated PvpUnitDto winner_units = 7;
-  repeated PvpUnitDto loser_units = 8;
+  PlayerDto player1 = 1; 
+  PlayerDto player2 = 2; 
+  int64 points_delta = 4;
+  repeated PvpUnitDto player1_units = 7;
+  repeated PvpUnitDto player2_units = 8;
   google.protobuf.Timestamp performed_at = 9;
   bytes id = 10;
 }

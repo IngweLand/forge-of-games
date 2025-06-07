@@ -27,7 +27,7 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
 
         return mapper.Map<PlayerRanks>(ranksDto);
     }
-    
+
     public AllianceRanks ParseAllianceRankings(byte[] data)
     {
         AllianceRanksDTO ranksDto;
@@ -79,7 +79,35 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
             throw new InvalidOperationException(msg, ex);
         }
 
-        return mapper.Map<IReadOnlyCollection<PvpBattle>>(battlesDto.Battles);
+        var battlesOwner = GetPvpBattlesOwner(battlesDto.Battles);
+
+        if (battlesOwner == -1)
+        {
+            logger.LogWarning("Could not identify the owner of pvp battles");
+            return [];
+        }
+
+        return (from battleDto in battlesDto.Battles
+            let player1IsOwner = battleDto.Player1.Id == battlesOwner
+            let isVictory = battleDto.PointsDelta > 0
+            let isPlayer1Winner = (player1IsOwner && isVictory) || (!player1IsOwner && !isVictory)
+            let winnerDto = isPlayer1Winner ? battleDto.Player1 : battleDto.Player2
+            let winnerUnitsDto = isPlayer1Winner ? battleDto.Player1Units : battleDto.Player2Units
+            let loserDto = isPlayer1Winner ? battleDto.Player2 : battleDto.Player1
+            let loserUnitsDto = isPlayer1Winner ? battleDto.Player2Units : battleDto.Player1Units
+            let winner = mapper.Map<HohPlayer>(winnerDto)
+            let winnerUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(winnerUnitsDto)
+            let loser = mapper.Map<HohPlayer>(loserDto)
+            let loserUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(loserUnitsDto)
+            select new PvpBattle()
+            {
+                Id = battleDto.Id.ToByteArray(),
+                Winner = winner,
+                Loser = loser,
+                WinnerUnits = winnerUnits,
+                LoserUnits = loserUnits,
+                PerformedAt = battleDto.PerformedAt.ToDateTime(),
+            }).ToList();
     }
 
     public Wakeup ParseWakeup(byte[] data)
@@ -97,5 +125,27 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         }
 
         return mapper.Map<Wakeup>(dto);
+    }
+
+    private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)
+    {
+        if (battles.Count == 0)
+        {
+            return -1;
+        }
+
+        var grouped = battles
+            .SelectMany(b => new int[] {b.Player1.Id, b.Player2.Id})
+            .GroupBy(n => n)
+            .ToDictionary(g => g.Key, g => g.Count());
+
+        var max = grouped.MaxBy(kvp => kvp.Value);
+
+        if (grouped.Count(kvp => kvp.Value == max.Value) > 1)
+        {
+            return -1;
+        }
+
+        return max.Key;
     }
 }

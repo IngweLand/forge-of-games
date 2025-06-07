@@ -29,25 +29,25 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "L3RpbWVzdGFtcC5wcm90byJ4ChtQdnBCYXR0bGVIaXN0b3J5UmVzcG9uc2VE",
             "dG8SHgoHYmF0dGxlcxgBIAMoCzINLlB2cEJhdHRsZUR0bxI5ChRwbGF5ZXJz",
             "X3RvX2FsbGlhbmNlcxgCIAMoCzIbLlB2cEJhdHRsZVBsYXllckFsbGlhbmNl",
-            "RHRvIsgBCgxQdnBCYXR0bGVEdG8SGgoGd2lubmVyGAEgASgLMgouUGxheWVy",
-            "RHRvEhkKBWxvc2VyGAIgASgLMgouUGxheWVyRHRvEiEKDHdpbm5lcl91bml0",
-            "cxgHIAMoCzILLlB2cFVuaXREdG8SIAoLbG9zZXJfdW5pdHMYCCADKAsyCy5Q",
-            "dnBVbml0RHRvEjAKDHBlcmZvcm1lZF9hdBgJIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5UaW1lc3RhbXASCgoCaWQYCiABKAwiTwoaUHZwQmF0dGxlUGxheWVy",
-            "QWxsaWFuY2VEdG8SEQoJcGxheWVyX2lkGAEgASgFEh4KCGFsbGlhbmNlGAIg",
-            "ASgLMgwuQWxsaWFuY2VEdG8iWAoKUHZwVW5pdER0bxIgCgRoZXJvGAIgASgL",
-            "MhIuUHZwVW5pdERldGFpbHNEdG8SKAoMc3VwcG9ydF91bml0GAMgASgLMhIu",
-            "UHZwVW5pdERldGFpbHNEdG8iPQoRUHZwVW5pdERldGFpbHNEdG8SKAoKYmFz",
-            "ZV9wcm9wcxgBIAEoCzIULlB2cFVuaXRCYXNlUHJvcHNEdG8icwoTUHZwVW5p",
-            "dEJhc2VQcm9wc0R0bxIKCgJpZBgBIAEoCRINCgVsZXZlbBgCIAEoBRIXCg9h",
-            "c2NlbnNpb25fbGV2ZWwYAyABKAUSEQoJYWJpbGl0aWVzGAQgAygJEhUKDWFi",
-            "aWxpdHlfbGV2ZWwYCSABKAVCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVs",
-            "cy5Ib2hiBnByb3RvMw=="));
+            "RHRvIuQBCgxQdnBCYXR0bGVEdG8SGwoHcGxheWVyMRgBIAEoCzIKLlBsYXll",
+            "ckR0bxIbCgdwbGF5ZXIyGAIgASgLMgouUGxheWVyRHRvEhQKDHBvaW50c19k",
+            "ZWx0YRgEIAEoAxIiCg1wbGF5ZXIxX3VuaXRzGAcgAygLMgsuUHZwVW5pdER0",
+            "bxIiCg1wbGF5ZXIyX3VuaXRzGAggAygLMgsuUHZwVW5pdER0bxIwCgxwZXJm",
+            "b3JtZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEgoK",
+            "AmlkGAogASgMIk8KGlB2cEJhdHRsZVBsYXllckFsbGlhbmNlRHRvEhEKCXBs",
+            "YXllcl9pZBgBIAEoBRIeCghhbGxpYW5jZRgCIAEoCzIMLkFsbGlhbmNlRHRv",
+            "IlgKClB2cFVuaXREdG8SIAoEaGVybxgCIAEoCzISLlB2cFVuaXREZXRhaWxz",
+            "RHRvEigKDHN1cHBvcnRfdW5pdBgDIAEoCzISLlB2cFVuaXREZXRhaWxzRHRv",
+            "Ij0KEVB2cFVuaXREZXRhaWxzRHRvEigKCmJhc2VfcHJvcHMYASABKAsyFC5Q",
+            "dnBVbml0QmFzZVByb3BzRHRvInMKE1B2cFVuaXRCYXNlUHJvcHNEdG8SCgoC",
+            "aWQYASABKAkSDQoFbGV2ZWwYAiABKAUSFwoPYXNjZW5zaW9uX2xldmVsGAMg",
+            "ASgFEhEKCWFiaWxpdGllcxgEIAMoCRIVCg1hYmlsaXR5X2xldmVsGAkgASgF",
+            "Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponseDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponseDto.Parser, new[]{ "Battles", "PlayersToAlliances" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto.Parser, new[]{ "Winner", "Loser", "WinnerUnits", "LoserUnits", "PerformedAt", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto.Parser, new[]{ "Player1", "Player2", "PointsDelta", "Player1Units", "Player2Units", "PerformedAt", "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattlePlayerAllianceDto.Parser, new[]{ "PlayerId", "Alliance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto.Parser, new[]{ "Hero", "SupportUnit" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDetailsDto.Parser, new[]{ "BaseProps" }, null, null, null, null),
@@ -298,10 +298,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PvpBattleDto(PvpBattleDto other) : this() {
-      winner_ = other.winner_ != null ? other.winner_.Clone() : null;
-      loser_ = other.loser_ != null ? other.loser_.Clone() : null;
-      winnerUnits_ = other.winnerUnits_.Clone();
-      loserUnits_ = other.loserUnits_.Clone();
+      player1_ = other.player1_ != null ? other.player1_.Clone() : null;
+      player2_ = other.player2_ != null ? other.player2_.Clone() : null;
+      pointsDelta_ = other.pointsDelta_;
+      player1Units_ = other.player1Units_.Clone();
+      player2Units_ = other.player2Units_.Clone();
       performedAt_ = other.performedAt_ != null ? other.performedAt_.Clone() : null;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -313,50 +314,62 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new PvpBattleDto(this);
     }
 
-    /// <summary>Field number for the "winner" field.</summary>
-    public const int WinnerFieldNumber = 1;
-    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto winner_;
+    /// <summary>Field number for the "player1" field.</summary>
+    public const int Player1FieldNumber = 1;
+    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto player1_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Winner {
-      get { return winner_; }
+    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Player1 {
+      get { return player1_; }
       set {
-        winner_ = value;
+        player1_ = value;
       }
     }
 
-    /// <summary>Field number for the "loser" field.</summary>
-    public const int LoserFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto loser_;
+    /// <summary>Field number for the "player2" field.</summary>
+    public const int Player2FieldNumber = 2;
+    private global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto player2_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Loser {
-      get { return loser_; }
+    public global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto Player2 {
+      get { return player2_; }
       set {
-        loser_ = value;
+        player2_ = value;
       }
     }
 
-    /// <summary>Field number for the "winner_units" field.</summary>
-    public const int WinnerUnitsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> _repeated_winnerUnits_codec
+    /// <summary>Field number for the "points_delta" field.</summary>
+    public const int PointsDeltaFieldNumber = 4;
+    private long pointsDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long PointsDelta {
+      get { return pointsDelta_; }
+      set {
+        pointsDelta_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player1_units" field.</summary>
+    public const int Player1UnitsFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> _repeated_player1Units_codec
         = pb::FieldCodec.ForMessage(58, global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> winnerUnits_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto>();
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> player1Units_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> WinnerUnits {
-      get { return winnerUnits_; }
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> Player1Units {
+      get { return player1Units_; }
     }
 
-    /// <summary>Field number for the "loser_units" field.</summary>
-    public const int LoserUnitsFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> _repeated_loserUnits_codec
+    /// <summary>Field number for the "player2_units" field.</summary>
+    public const int Player2UnitsFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> _repeated_player2Units_codec
         = pb::FieldCodec.ForMessage(66, global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> loserUnits_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto>();
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> player2Units_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> LoserUnits {
-      get { return loserUnits_; }
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.PvpUnitDto> Player2Units {
+      get { return player2Units_; }
     }
 
     /// <summary>Field number for the "performed_at" field.</summary>
@@ -398,10 +411,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Winner, other.Winner)) return false;
-      if (!object.Equals(Loser, other.Loser)) return false;
-      if(!winnerUnits_.Equals(other.winnerUnits_)) return false;
-      if(!loserUnits_.Equals(other.loserUnits_)) return false;
+      if (!object.Equals(Player1, other.Player1)) return false;
+      if (!object.Equals(Player2, other.Player2)) return false;
+      if (PointsDelta != other.PointsDelta) return false;
+      if(!player1Units_.Equals(other.player1Units_)) return false;
+      if(!player2Units_.Equals(other.player2Units_)) return false;
       if (!object.Equals(PerformedAt, other.PerformedAt)) return false;
       if (Id != other.Id) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -411,10 +425,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (winner_ != null) hash ^= Winner.GetHashCode();
-      if (loser_ != null) hash ^= Loser.GetHashCode();
-      hash ^= winnerUnits_.GetHashCode();
-      hash ^= loserUnits_.GetHashCode();
+      if (player1_ != null) hash ^= Player1.GetHashCode();
+      if (player2_ != null) hash ^= Player2.GetHashCode();
+      if (PointsDelta != 0L) hash ^= PointsDelta.GetHashCode();
+      hash ^= player1Units_.GetHashCode();
+      hash ^= player2Units_.GetHashCode();
       if (performedAt_ != null) hash ^= PerformedAt.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
@@ -435,16 +450,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (winner_ != null) {
+      if (player1_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Winner);
+        output.WriteMessage(Player1);
       }
-      if (loser_ != null) {
+      if (player2_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Loser);
+        output.WriteMessage(Player2);
       }
-      winnerUnits_.WriteTo(output, _repeated_winnerUnits_codec);
-      loserUnits_.WriteTo(output, _repeated_loserUnits_codec);
+      if (PointsDelta != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(PointsDelta);
+      }
+      player1Units_.WriteTo(output, _repeated_player1Units_codec);
+      player2Units_.WriteTo(output, _repeated_player2Units_codec);
       if (performedAt_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(PerformedAt);
@@ -463,16 +482,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (winner_ != null) {
+      if (player1_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Winner);
+        output.WriteMessage(Player1);
       }
-      if (loser_ != null) {
+      if (player2_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Loser);
+        output.WriteMessage(Player2);
       }
-      winnerUnits_.WriteTo(ref output, _repeated_winnerUnits_codec);
-      loserUnits_.WriteTo(ref output, _repeated_loserUnits_codec);
+      if (PointsDelta != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(PointsDelta);
+      }
+      player1Units_.WriteTo(ref output, _repeated_player1Units_codec);
+      player2Units_.WriteTo(ref output, _repeated_player2Units_codec);
       if (performedAt_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(PerformedAt);
@@ -491,14 +514,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (winner_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Winner);
+      if (player1_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player1);
       }
-      if (loser_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Loser);
+      if (player2_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player2);
       }
-      size += winnerUnits_.CalculateSize(_repeated_winnerUnits_codec);
-      size += loserUnits_.CalculateSize(_repeated_loserUnits_codec);
+      if (PointsDelta != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(PointsDelta);
+      }
+      size += player1Units_.CalculateSize(_repeated_player1Units_codec);
+      size += player2Units_.CalculateSize(_repeated_player2Units_codec);
       if (performedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PerformedAt);
       }
@@ -517,20 +543,23 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.winner_ != null) {
-        if (winner_ == null) {
-          Winner = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+      if (other.player1_ != null) {
+        if (player1_ == null) {
+          Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
         }
-        Winner.MergeFrom(other.Winner);
+        Player1.MergeFrom(other.Player1);
       }
-      if (other.loser_ != null) {
-        if (loser_ == null) {
-          Loser = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+      if (other.player2_ != null) {
+        if (player2_ == null) {
+          Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
         }
-        Loser.MergeFrom(other.Loser);
+        Player2.MergeFrom(other.Player2);
       }
-      winnerUnits_.Add(other.winnerUnits_);
-      loserUnits_.Add(other.loserUnits_);
+      if (other.PointsDelta != 0L) {
+        PointsDelta = other.PointsDelta;
+      }
+      player1Units_.Add(other.player1Units_);
+      player2Units_.Add(other.player2Units_);
       if (other.performedAt_ != null) {
         if (performedAt_ == null) {
           PerformedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -556,25 +585,29 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (winner_ == null) {
-              Winner = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (player1_ == null) {
+              Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Winner);
+            input.ReadMessage(Player1);
             break;
           }
           case 18: {
-            if (loser_ == null) {
-              Loser = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (player2_ == null) {
+              Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Loser);
+            input.ReadMessage(Player2);
+            break;
+          }
+          case 32: {
+            PointsDelta = input.ReadInt64();
             break;
           }
           case 58: {
-            winnerUnits_.AddEntriesFrom(input, _repeated_winnerUnits_codec);
+            player1Units_.AddEntriesFrom(input, _repeated_player1Units_codec);
             break;
           }
           case 66: {
-            loserUnits_.AddEntriesFrom(input, _repeated_loserUnits_codec);
+            player2Units_.AddEntriesFrom(input, _repeated_player2Units_codec);
             break;
           }
           case 74: {
@@ -604,25 +637,29 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (winner_ == null) {
-              Winner = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (player1_ == null) {
+              Player1 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Winner);
+            input.ReadMessage(Player1);
             break;
           }
           case 18: {
-            if (loser_ == null) {
-              Loser = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
+            if (player2_ == null) {
+              Player2 = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
             }
-            input.ReadMessage(Loser);
+            input.ReadMessage(Player2);
+            break;
+          }
+          case 32: {
+            PointsDelta = input.ReadInt64();
             break;
           }
           case 58: {
-            winnerUnits_.AddEntriesFrom(ref input, _repeated_winnerUnits_codec);
+            player1Units_.AddEntriesFrom(ref input, _repeated_player1Units_codec);
             break;
           }
           case 66: {
-            loserUnits_.AddEntriesFrom(ref input, _repeated_loserUnits_codec);
+            player2Units_.AddEntriesFrom(ref input, _repeated_player2Units_codec);
             break;
           }
           case 74: {
