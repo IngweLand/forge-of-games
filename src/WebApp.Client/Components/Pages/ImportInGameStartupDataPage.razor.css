@@ -16,3 +16,9 @@
     align-items: flex-start;
     padding: 12px;
 }
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

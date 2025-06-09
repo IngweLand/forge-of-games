@@ -1536,6 +1536,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View cities stats.
+        /// </summary>
+        public static string Import_ViewCitiesStats {
+            get {
+                return ResourceManager.GetString("Import.ViewCitiesStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import your in-game data.
         /// </summary>
         public static string ImportInGameData_Headline {

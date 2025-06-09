@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
@@ -15,6 +16,9 @@ public partial class ImportInGameStartupDataPage : FogPageBase
     private bool _shouldImportProfile = true;
 
     private bool _canImport => _shouldImportCities | _shouldImportProfile | _shouldImportEquipment;
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
 
     [Inject]
     private IPersistenceService PersistenceService { get; set; }
@@ -65,5 +69,20 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         }
 
         _isImporting = false;
+    }
+
+    private async Task ShowCitiesStats()
+    {
+        if (_inGameStartupData?.Cities != null)
+        {
+            foreach (var city in _inGameStartupData.Cities)
+            {
+                city.Id = Guid.NewGuid().ToString("N");
+            }
+
+            await PersistenceService.SaveTempCities(_inGameStartupData.Cities);
+
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
+        }
     }
 }

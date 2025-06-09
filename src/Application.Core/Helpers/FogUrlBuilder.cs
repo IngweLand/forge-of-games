@@ -73,6 +73,7 @@ public static class FogUrlBuilder
         public const string HOH_HELPER_CHROME_WEBSTORE_URL = "https://chromewebstore.google.com/detail/hoh-helper-forge-of-games/almhmnmbpfaonomgaconnmcogadnjndf";
         public const string HOH_HELPER_RELEASES_GITHUB_URL = HOH_HELPER_GITHUB_URL + "/releases";
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
+        public const string CITIES_STATS_PATH = "/cities-stats";
 
         public static string Player(int id)
         {

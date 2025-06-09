@@ -11,6 +11,7 @@ namespace Ingweland.Fog.WebApp.Client.Services;
 public class PersistenceService(ILocalStorageService localStorageService) : IPersistenceService
 {
     private const string CITY_DATA_KEY_PREFIX = "CityData";
+    private const string TEMP_CITY_DATA_KEY_PREFIX = "TEMP.CityData";
     private const string PROFILE_DATA_KEY_PREFIX = "CommandCenterProfile";
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
     private const string EQUIPMENT_DATA_KEY_PREFIX = "Equipment";
@@ -23,18 +24,7 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
 
     public ValueTask SaveCity(HohCity city)
     {
-        var nextId = city.Entities.Max(cme => cme.Id) + 1;
-        foreach (var hohCityMapEntity in city.Entities)
-        {
-            if (hohCityMapEntity.Id < 0)
-            {
-                hohCityMapEntity.Id = nextId;
-                nextId++;
-            }
-        }
-
-        var serializedCity = JsonSerializer.Serialize(city);
-        return localStorageService.SetItemAsStringAsync(GetCityKey(city.Id), serializedCity);
+        return DoSaveCity(GetCityKey(city.Id), city);
     }
 
     public async ValueTask<bool> DeleteCity(string cityId)
@@ -191,6 +181,65 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
         return localStorageService.SetItemAsStringAsync(UI_SETTINGS, serializedSettings);
     }
 
+    public async ValueTask SaveTempCities(IEnumerable<HohCity> cities)
+    {
+        await DeleteAllTempCities();
+        foreach (var city in cities)
+        {
+            await DoSaveCity(GetTempCityKey(city.Id), city);
+        }
+    }
+
+    public async ValueTask<IReadOnlyCollection<HohCity>> GetTempCities()
+    {
+        var keys = await localStorageService.KeysAsync();
+        var cityKeys = keys.Where(s => s.StartsWith(TEMP_CITY_DATA_KEY_PREFIX));
+        var cities = new List<HohCity>();
+        foreach (var cityKey in cityKeys)
+        {
+            var city = await DoLoadCity(cityKey);
+            if (city != null)
+            {
+                cities.Add(city);
+            }
+        }
+
+        return cities;
+    }
+
+    private async Task DeleteAllTempCities()
+    {
+        var keys = await localStorageService.KeysAsync();
+        var cityKeys = keys.Where(s => s.StartsWith(TEMP_CITY_DATA_KEY_PREFIX));
+        foreach (var key in cityKeys)
+        {
+            try
+            {
+                await localStorageService.RemoveItemAsync(key);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+    }
+
+    private ValueTask DoSaveCity(string key, HohCity city)
+    {
+        var nextId = city.Entities.Max(cme => cme.Id) + 1;
+        foreach (var hohCityMapEntity in city.Entities)
+        {
+            if (hohCityMapEntity.Id < 0)
+            {
+                hohCityMapEntity.Id = nextId;
+                nextId++;
+            }
+        }
+
+        var serializedCity = JsonSerializer.Serialize(city);
+        return localStorageService.SetItemAsStringAsync(key, serializedCity);
+    }
+
     private async ValueTask<HohCity?> DoLoadCity(string key)
     {
         var rawData = await localStorageService.GetItemAsStringAsync(key);
@@ -208,6 +257,11 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     private static string GetCityKey(string id)
     {
         return $"{CITY_DATA_KEY_PREFIX}.{id}";
+    }
+
+    private static string GetTempCityKey(string id)
+    {
+        return $"{TEMP_CITY_DATA_KEY_PREFIX}.{id}";
     }
 
     private static string GetProfileKey(string id)

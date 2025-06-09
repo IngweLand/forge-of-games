@@ -19,7 +19,9 @@ public interface IPersistenceService
     ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync();
     ValueTask<IReadOnlyCollection<EquipmentItem>> GetEquipmentAsync();
     ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles);
-    
+
     ValueTask<UiSettings> GetUiSettingsAsync();
     ValueTask SaveUiSettingsAsync(UiSettings settings);
+    ValueTask SaveTempCities(IEnumerable<HohCity> cities);
+    ValueTask<IReadOnlyCollection<HohCity>> GetTempCities();
 }

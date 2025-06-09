@@ -82,6 +82,16 @@ internal class DummyPersistenceService : IPersistenceService
     {
         throw new NotImplementedException();
     }
+
+    public ValueTask SaveTempCities(IEnumerable<HohCity> cities)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<IReadOnlyCollection<HohCity>> GetTempCities()
+    {
+        throw new NotImplementedException();
+    }
 }
 
 internal class DummyClientLocaleService : IClientLocaleService
