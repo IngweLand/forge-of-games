@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 import requests
 
-download_dir = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\downloads\14.05.25'
+download_dir = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\downloads'
 data_file = r'D:\IngweLand\Projects\forge-of-games-resources\hoh\assets\catalog.bin'
 cdn_root = 'https://heczz.innogamescdn.com/bundles/WebGL/'
 data_url_prefix = '00 00 00'
