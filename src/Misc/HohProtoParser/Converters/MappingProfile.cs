@@ -94,10 +94,10 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.LinkedExpansionId,
                 opt => opt.MapFrom(src =>
                     src.LinkedExpansionComponent != null ? src.LinkedExpansionComponent.LinkedExpansionId : null));
-        CreateMap<KeyValuePair<string, long>, UnitType>()
-            .ConvertUsing(src => HohStringParser.ParseEnumFromString<UnitType>(src.Key));
-        CreateMap<KeyValuePair<string, long>, HeroClassId>()
-            .ConvertUsing(src => HohStringParser.ParseEnumFromString<HeroClassId>(src.Key));
+        CreateMap<string, UnitType>()
+            .ConvertUsing(src => HohStringParser.ParseEnumFromString<UnitType>(src));
+        CreateMap<string, HeroClassId>()
+            .ConvertUsing(src => HohStringParser.ParseEnumFromString<HeroClassId>(src));
         CreateMap<MapField<string, RegionRewardDto>, IReadOnlyDictionary<Difficulty, RegionReward>>()
             .ConvertUsing((src, _, context) =>
                 src.ToDictionary(kvp => HohStringParser.ParseEnumFromString<Difficulty>(kvp.Key),

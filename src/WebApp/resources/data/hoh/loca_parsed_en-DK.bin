@@ -14,6 +14,8 @@ G
 Base.HeroClass.Defender_Desc°Defenders charge into the breach and protect their allies.<br><line-height=50%><br></line-height><b><color=#3DA229>Strong</color> against:</b><br>‚Ä¢<indent=5%><color=#3DA229>Campaign</color>, <color=#3DA229>Arena</color> and <color=#3DA229>Treasure Hunt</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Weak</color> against:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Tesla Storms</color>.</indent>
 T
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_NameEnhanced Paddy Fields
+M
+8Base.Technologies.Technology_Mayas_DaggerPerfection_NameDagger Perfection
 F
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_NameLuxurious Farm
 H
@@ -50,6 +52,8 @@ q
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
 F
 %Base.BuildingGroups.ritualCarver_NameRitual CarverRitual Carvers
+M
+8Base.Technologies.Technology_Mayas_PreciseChronicle_NamePrecise Chronicle
 O
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameRanged Barracks
 ó
@@ -70,6 +74,8 @@ F
 3Base.Units.Unit_IberianEra_Vikings_LeifErikson_NameLeif's Huskarls
 <
 2Base.Technologies.Technology_BronzeAge_Plough_NamePlough
+K
+7Base.Technologies.Technology_Mayas_ObsidianMastery_NameObsidian Mastery
 é
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_2_DescMSend off expedition ships which will gather either ceramic- or gold treasures
 P
@@ -533,6 +539,8 @@ S
 ?Base.Units.Unit_MinoanEra_EgyptianAcolytes_HyksosSureshots_NameHyksos Sureshots
 B
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_NameTailor
+>
+1Base.Technologies.Technology_Mayas_Shamanism_Name	Shamanism
 A
 2Base.Abilities.hero_battle_ability.MaoriChief_NameHaka Huddle
 [
@@ -686,6 +694,8 @@ f
 4Base.Buildings.Building_IberianEra_Home_Small_1_Desc.Produces Coins and adds a Worker to your city.
 i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc.Increases the irrigation of adjacent buildings
+A
+2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMaya Glyphs
 '
 Base.Ages.BronzeAge_Decade	3000 B.C.
 I
@@ -886,6 +896,8 @@ S
 G
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameFishing Nets
 I
+6Base.Technologies.Technology_Mayas_MayanConsensus_NameMayan Consensus
+I
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameLance Mastery
 F
 ;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_NameFurnace
@@ -963,6 +975,8 @@ L
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameTwilight Harpoonists
 p
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
+›
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Nameé<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style> and heals herself for <style=basestat>{self_heal}</style> of her base damage. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 C
 1Base.Abilities.hero_battle_ability.JoanOfArc_NameBeacon of Hope
 »
@@ -1341,6 +1355,8 @@ z
 8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc>Produces Embers. Smelt excess resources for additional Embers.
 ]
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameJolly Roger
+N
+7Base.Technologies.Technology_Mayas_PriestSchooling_NameCraftsmen Schooling
 Ó
 JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Nameü<style=ability_label>Summon | Burn</style>Throws his triangle ruler at the current target. For <style=basestat>{duration}</style>, the ruler will move across the battlefield in a triangular shape and deal up to <style=basestat>{dmg_percentage}</style> damage to nearby enemy units, and leaves the affected units burning for <style=basestat>{dmg_percentage_burn}</style> over <style=basestat>{burn_duration}</style>.
 
@@ -1700,6 +1716,8 @@ G
 Water PumpWater Pumps
 W
 $Base.BuildingGroups.premiumPier_NameLuxurious Fishing PierLuxurious Fishing Piers
+C
+3Base.Technologies.Technology_Mayas_RitualSites_NameRitual Sites
 *
  Base.BuildingGroups.GarmentMakerTailor
 L
@@ -1759,6 +1777,8 @@ K
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameRitual Carver
 E
 4Base.Abilities.hero_battle_ability.TribalHealer_NameHealing Salve
+[
+*Base.BuildingGroups.premiumRitualSite_NameLuxurious Ritual SiteLuxurious Ritual Sites
 L
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_Name
 moth glade
@@ -1789,6 +1809,8 @@ K
 7Base.Technologies.Technology_China_UrbanManagement_NameUrban Management
 M
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_3_NameSiege Barracks
+I
+6Base.Technologies.Technology_Mayas_HeaddressCraft_NameHeaddress Craft
 W
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescUnlocks Hoplites
 T
@@ -1806,6 +1828,8 @@ S
 Small HomeSmall Homes
 i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc.Increases the irrigation of adjacent buildings
+E
+4Base.Technologies.Technology_Mayas_SolarRituals_NameSolar Rituals
 á
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 A
@@ -1978,6 +2002,8 @@ A
 Rural Farm
 ]
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_DescProduces silk from silk threads
+B
+3Base.Technologies.Technology_Mayas_Birdkeeping_NameBirdkeeping
 Z
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameModerate Culture Site
 ?
@@ -2189,6 +2215,9 @@ C
 1Base.Technologies.Technology_China_Terracing_Name	Terracing
 B
 .Base.Units.Unit_IberianEra_Castilla_Heavy_NameCastillan Axemen
+@
+2Base.Technologies.Technology_Mayas_Aviculture_Name
+Aviculture
 4
 "Base.Units.Unit_BessieColeman_NameBessie Coleman
 H
@@ -2391,6 +2420,8 @@ A
 Great Hall
 `
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedMarketStands_NameImproved Market Stands
+G
+5Base.Technologies.Technology_Mayas_RitualMastery_NameRitual Mastery
 S
 @Base.Technologies.Technology_KingdomOfSicily_TerrainMastery_NameTerrain Mastery
 M
@@ -2680,6 +2711,8 @@ Crop Sheds
 >
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_Name
 Bullriders
+K
+7Base.Technologies.Technology_Mayas_ImprovedDaggers_NameImproved Daggers
 ˚
 LBase.AbilityDescriptions.hero_battle_ability_description.WilliamTell_10_Name™<style=ability_label>Ranged Strike| Buff</style>Aims his crossbow at the furthest target, shooting them for <style=basestat>{dmg_percentage}</style> damage and increasing his own ATK speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>. Prioritizes heroes.
 m
@@ -2777,6 +2810,8 @@ k
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
 W
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_DescUnlocks Billmen
+K
+7Base.Technologies.Technology_Mayas_DivineAscension_NameDivine Ascension
 K
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_NameSilk workshop
 R
@@ -2925,6 +2960,8 @@ K
 1Base.Buildings.Building_China_Home_Average_2_NameMedium Home
 v
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
+√
+EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name˘<style=ability_label>Area Strike| Debuff| Heal</style>El Cid thrusts his weapon forward in a piercing attack, striking through his current target and hitting enemies in a long range. Affected enemies take <style=basestat>{dmg_percentage}</style> damage and suffer an ATK reduction of <style=basestat>{attack_reduction}</style> for <style=basestat>{debuff_duration}</style>. Meanwhile, El Cid heals himself for <style=basestat>{heal_percentage}</style> of his base damage, fortifying his resolve in battle.
 F
 5Base.Technologies.Technology_Egypt_Mummification_NameMummification
 F
@@ -3269,6 +3306,8 @@ F
 :Base.Technologies.Technology_KingdomOfSicily_Channels_NameChannels
 A
 2Base.Buildings.Building_Vikings_Home_Sailor_6_NameSailor Home
+Z
+>Base.Technologies.Technology_Mayas_AdvancedObsidianMining_NameAdvanced Obsidian Mining
 F
 5Base.Buildings.Building_China_RiceFarm_Average_3_DescProduces Rice
 >
@@ -3361,6 +3400,8 @@ U
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescLSend off expedition ships which will gather either jewel- or spice treasures
 k
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc.Increases the irrigation of adjacent buildings
+G
+*Base.BuildingGroups.averageRitualSite_NameRitual SiteRitual Sites
 F
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Name
 Chronicler
@@ -3455,6 +3496,8 @@ E
 &
 Base.Ages.StoneAge_Start
 40000 B.C.
+G
+5Base.Technologies.Technology_Mayas_NatureSpirits_NameNature Spirits
 R
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHero Academy
 ∏
@@ -3520,6 +3563,8 @@ O
 :Base.Abilities.hero_battle_ability.GreekMathematician_NameAxiomatic Assault
 6
 #Base.Heroes.hero.CyrusTheGreat_NameCyrus the Great
+M
+8Base.Technologies.Technology_Mayas_PopulationGrowth_NamePopulation Growth
 W
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescUnlocks Billmen
 ?
@@ -3593,6 +3638,8 @@ I
 3Base.Buildings.Building_Vikings_Home_Premium_6_DescGProduces a ton of pennies and adds 2 workers and 2 sailors to your city
 `
 /Base.Buildings.Building_Egypt_Home_Small_5_Desc-Produces Deben and adds a Worker to your city
+^
+@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameBetter Obsidian Extraction
 µ
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_NameË<style=ability_label>Area Strike| Debuff| Burn</style>Summons a fiery dragon striking the location of the biggest cluster of enemy units three times, reducing DEF by <style=basestat>{def_percentage}</style> of Mulan's ATK each time and dealing a total of <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. Affected enemy units burn for a further <style=basestat>{dmg_percentage_burn}</style> damage over <style=basestat>{burn_duration}</style>.
 º
@@ -4280,6 +4327,8 @@ R
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameTheodosian Walls
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_NameFountain
+O
+9Base.Technologies.Technology_Mayas_SustainableMining_NameSustainable Mining
 n
 2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
 9
@@ -4288,6 +4337,9 @@ k
 3Base.Units.Unit_ByzantineEra_Player_Bucellarii_Desc4Infantry Units are most effective in the front rows.
 N
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_NameHero Academy
+?
+1Base.Technologies.Technology_Mayas_StateLaws_Name
+State Laws
 X
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_NameReinforced Handles
 ~
@@ -4540,10 +4592,14 @@ $
 'Base.Units.Unit_GreekMathematician_DescŸChart the rules that govern shapes with Euclid, the Father of Geometry! This Greek mathematician of the 3rd century BCE wrote mathematical treatises including 'Elements', a compilation of geometric knowledge that shaped Western Mathematics for centuries.<br><br>Within the 13 books of 'Elements', Euclid detailed much of geometry and math, including proofs for the Pythagorean Theorem and an analysis of prime numbers. This work is the foundation for Euclidian geometry, which would shape thought for the rest of history.<br><br>Euclid's life is a mystery, but his work is his legacy. Through a detailed, methodical, approach to reasoning and contributions that led to the development of the scientific method, Euclid truly changed the world. Indeed, it's said that the most studied book in the West is the Bible, but the second most is Euclid's 'Elements'!
 d
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Desc-Produces Coins and adds a Worker to your city
+K
+7Base.Technologies.Technology_Mayas_AstralAlignment_NameAstral Alignment
 *
 Base.Ages.ClassicGreece_Finish880 B.C.
 C
 6Base.Technologies.Technology_IberianEra_Castillos_Name	Castillos
+G
+5Base.Technologies.Technology_Mayas_SacredShrines_NameSacred Shrines
 U
 *Base.BuildingGroups.irrigationStation_NameIrrigation StationIrrigation Stations
 K
@@ -4642,6 +4698,8 @@ J
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_NameMinotaur's Vanguard
 K
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_NameSiege Barracks
+O
+9Base.Technologies.Technology_Mayas_SpiritualAncestry_NameSpiritual Ancestry
 j
 >Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
 H
@@ -4717,6 +4775,8 @@ G
 Base.Units.Unit_RamsesII_Name	Ramses II
 r
 3Base.Units.Unit_TreasureHunt_Red_DonkeyRaiders_Desc;Cavalry Units are very fast and charge towards the enemies.
+U
+<Base.Technologies.Technology_Mayas_SacrificialOfferings_NameSacrificial Offerings
 @
 2Base.Buildings.Building_StoneAge_Home_Small_2_Name
 Small Home
@@ -5001,6 +5061,8 @@ D
 7Base.Technologies.Technology_RomanEmpire_Legionary_Name	Legionary
 i
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc(Improves Happiness of adjacent buildings
+K
+7Base.Technologies.Technology_Mayas_EtchedLandmarks_NameEtched Landmarks
 D
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameMedium Home
 M
@@ -5028,6 +5090,8 @@ NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_VoodooHead_Name
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_NameÉ<style=ability_label>Burn</style>The flames of the torch increase burn damage dealt by the holder by <style=basestat>{burn_dmg_increase}</style>.
 Whenever the holder deals non-recurring damage to an enemy unit, they have a <style=basestat>{burn_chance}</style> chance to apply burn, dealing <style=basestat>{burn_dmg}</style> damage over <style=basestat>{burn_duration}</style> seconds.
 
+E
+4Base.Technologies.Technology_Mayas_StoneCarving_NameStone Carving
 4
 "Base.Units.Unit_AmeliaEarhart_NameAmelia Earhart
 R
@@ -5082,6 +5146,8 @@ d
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc-Produces Coins and adds a Worker to your city
 ,
 Base.Units.Unit_Shaolin_NameXueting Fuyu
+I
+6Base.Technologies.Technology_Mayas_FeatherMastery_NameFeather Mastery
 N
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_NamePapyrus Workshop
 <
@@ -5109,6 +5175,8 @@ G
 0Base.Abilities.hero_battle_ability.YiSunSin_NameTurtle Ship Barrage
 √
 Base.Units.Unit_RamsesII_Desc°The plains will quake under the wheels of chariots, for Ramses the Great has joined his might to yours. This Pharaoh from the 13th century BC grow famous for his campaigns against the Hittites, Nubians, and Libyans. The Battle of Kadesh against the Hittites resulted in one of history's first peace treaties.<br><br>In addition to his military achievements, Ramses II was a prolific builder who commissioned grand structures like the temples of Abu Simbel and the Ramesseum, leaving his mark on the world forever.<br><br>Ramses II is remembered as the greatest Pharaoh of the greatest kingdom of Egypt, his 66 year reign shaping Egypt's cultural and architectural heritage. The Greeks called him Ozymandias, by which name he was immortalized in poetry. When you see Ramses, you get down on your knees!
+<
+0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 P
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameTimber Framing
 ?
@@ -5164,6 +5232,8 @@ ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc.Increases th
 0
 "Base.BuildingGroups.SmallResidence
 Small Home
+C
+-Base.Abilities.hero_battle_ability.ElCid_NameKnight‚Äôs Requiem
 F
 %Base.BuildingGroups.coffeeBrewer_NameCoffee BrewerCoffee Brewers
 7
@@ -5212,6 +5282,8 @@ Q
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_NameThread processor
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_NameRanged Barracks
+è
+IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name¡<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style>. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 )
 Base.HeroClass.ManipulatorManipulator
 „
@@ -5224,6 +5296,8 @@ M
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_3_NameScholars Lyceum
 H
 3Base.Abilities.hero_battle_ability.SirLancelot_NameCamelot's Avenger
+E
+4Base.Technologies.Technology_Mayas_JadeDeposits_NameJade Deposits
 l
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc(Improves Happiness of adjacent buildings
 ,
@@ -5231,6 +5305,8 @@ l
 Isabella I
 €
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameè<style=ability_label>Melee Strike| Stun</style>Skillfully strikes the current target with her staff, dealing <style=basestat>{dmg_percentage}</style> damage and having a <style=basestat>{chance}</style> chance to leave them stunned for <style=basestat>{duration}</style>.
+R
+:Base.Technologies.Technology_Mayas_AdvancedJadeMining_NameAdvanced Jade Mining
 ‡
 &Base.Units.Unit_PhilipIIOfMacedon_DescµBattle alongside the visionary who brought Greece to heel! Philip II, a Macedonian king from the 4th century BC, is famed for his military prowess and his conquests, the figurehead of the rise of Macedon.<br><br>Taking control of the kingdom amid crisis, Philip defeated invaders at the very beginning of his rule, then made his own innovation: the Macedonian phalanx, armed with 6 meter long pikes. With a superior army, he led campaigns against the Grecian mainland, forging an alliance with key poleis on the peninsula.<br><br>By his death, Philip was a one eyed war hero, whose genius had seen him unite Greece into the League of Corinth, and was preparing to invade Persia when he was assassinated. Even that couldn't hold him back: he was deified and worshiped as a God, while his son Alexander continue his legacy.
 =
@@ -5303,6 +5379,8 @@ Blackbeard
 6Base.Buildings.Building_Vikings_Beehive_Average_5_DescQThe Beehive produces delicious honey which is used to produce mead in the Tavern.
 H
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_NameDomestic Farm
+K
+7Base.Technologies.Technology_Mayas_CurativeRituals_NameCurative Rituals
 Q
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameRanged Barracks
 A
@@ -5418,6 +5496,8 @@ Q
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_NameCavalry Barracks
 Ï
 Base.Units.Unit_Achilles_Desc Cross the wine-dark seas and behold Achilles, legendary warrior described in Homer's 'Iliad'. Dipped in the Styx as a baby, only his heel could be harmed. Battle-trained and invulnerable, thus he arrived at the Siege of Troy.<br><br>After the death of his lover Patroclus, Achilles sought out the opposing leader Hector in a blind rage. Though Hector was a mighty warrior and hero in his own right, he was no match for the might of Achilles.<br><br>Though he fell, his ankles pierced by arrows, at the gates of Troy, his actions in the siege proved instrumental, and his legend has inspired countless warriors, including Alexander the Great. Truly, nobody else shows how important it is to clean yourself all over!
+K
+7Base.Technologies.Technology_Mayas_ChocolateMaking_NameChocolate Making
 A
 2Base.Technologies.Technology_China_FloorPlans_NameFloor Plans
 I
@@ -5435,6 +5515,8 @@ DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameStaufer A
 A
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name
 Small Home
+K
+7Base.Technologies.Technology_Mayas_JadeProspecting_NameJade Prospecting
 ä
  Base.HeroClass.AreaAttacker_DescÂArea Attackers deal damage to all enemies in large areas. They excel against squads of smaller enemies.<br><line-height=50%><br></line-height><b><color=#3DA229>Strong</color> against:</b><br>‚Ä¢<indent=5%><color=#3DA229>Large Squads</color> in <color=#3DA229>Campaign</color>, <color=#3DA229>Treasure Hunt</color> and <color=#3DA229>Siege of Orl√©ans</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Weak</color> against:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Enemy Heroes</color> in Campaign, Arena and Treasure Hunt.</indent><br>‚Ä¢<indent=5%><color=#CD2A25>Tesla Storms.</color></indent>
 á
@@ -5443,6 +5525,8 @@ S
 (Base.BuildingGroups.premiumWorkshop_NameLuxurious WorkshopLuxurious Workshops
 &
 Base.Heroes.hero.Inanna_NameInanna
+<
+0Base.Technologies.Technology_Mayas_Divining_NameDivining
 I
 &Base.BuildingGroups.clayProcessor_NameClay ProcessorClay Processors
 n
@@ -5602,6 +5686,8 @@ G
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_NameMedium Home
 l
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc3Produces a large amount of Food over a long period.
+F
+1Base.Abilities.hero_battle_ability.IsabellaI_NameMajestic Defiance
 i
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc-Produces coins and adds a worker to your city
 i
@@ -5613,6 +5699,8 @@ I
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_2_NameSiege Barracks
 J
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_NameFishing Pier
+G
+5Base.Technologies.Technology_Mayas_RitualDaggers_NameRitual Daggers
 A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	Tar Ovens
 T
@@ -5741,8 +5829,12 @@ I
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_NameSiege Barracks
 B
 0Base.Buildings.Building_Mayas_Home_Priest_5_NameCraftsman Home
+U
+<Base.Technologies.Technology_Mayas_PerfectedHeaddresses_NamePerfected Headdresses
 B
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameChannel
+G
+5Base.Technologies.Technology_Mayas_AstralRituals_NameAstral Rituals
 F
 %Base.BuildingGroups.silkWorkshop_NameSilk WorkshopSilk Workshops
 T
@@ -5975,6 +6067,8 @@ i
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_NameSparkling Fortune
 A
 0Base.Buildings.Building_Mayas_Quarry_Jade_1_DescProduces Jade
+M
+8Base.Technologies.Technology_Mayas_ObsidianDeposits_NameObsidian Deposits
 O
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_DescProduces Doors.
 I
@@ -6044,6 +6138,8 @@ L
 D
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_Name
 Great Hall
+C
+3Base.Technologies.Technology_Mayas_JadeMastery_NameJade Mastery
 Q
 <Base.Technologies.Technology_BronzeAge_ThunderingGallop_NameThundering Gallop
 ˚
@@ -6074,6 +6170,8 @@ h
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc.Increases the irrigation of adjacent buildings
 Z
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameHeavy Infantry Barracks
+S
+;Base.Technologies.Technology_Mayas_ObsidianProspecting_NameObsidian Prospecting
 S
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_NameRations Efficiency
 ˆ
@@ -6392,6 +6490,8 @@ U
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_6_NamePorcelain workshop
 ê
 @Base.Buildings.Building_ClassicGreece_Special_HeroAcademy_1_DescLThe Hero Academy produces Experience Scrolls at the cost of Research Points.
+M
+8Base.Technologies.Technology_Mayas_XocolatlVirtuoso_NameXocolatl Virtuoso
 U
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_2_NameInfantry Barracks
 R
@@ -6412,6 +6512,8 @@ V
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_NameCharlemagne's Paladins
 g
 3Base.Buildings.Building_Mayas_Quarry_Premium_1_Desc0Produces both Jade and Obsidian at the same time
+V
+<Base.Technologies.Technology_Mayas_BetterJadeExtraction_NameBetter Jade Extraction
 I
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_Name
 Hypaspists

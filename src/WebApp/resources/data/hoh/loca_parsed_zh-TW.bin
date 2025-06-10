@@ -13,6 +13,8 @@ C
 Base.HeroClass.Defender_Desc�防御者衝入突破口並保護他們的盟友。<br><line-height=50%><br></line-height><color=#3DA229>強的</color>反對：<br> •<indent=5%><color=#3DA229>活動</color>,<color=#3DA229>競技場</color>和<color=#3DA229>尋寶</color>。</indent><br><line-height=50%><br></line-height><color=#CD2A25>虛弱的</color>反對：<br> •<indent=5%><color=#CD2A25>特斯拉風暴</color>。</indent>
 K
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_Name強化稻田
+M
+8Base.Technologies.Technology_Mayas_DaggerPerfection_NameDagger Perfection
 D
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_Name豪華農場
 I
@@ -49,6 +51,8 @@ T
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc短期生產少量食物。
 8
 %Base.BuildingGroups.ritualCarver_Name儀式雕刻師
+M
+8Base.Technologies.Technology_Mayas_PreciseChronicle_NamePrecise Chronicle
 L
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_Name弓兵軍營
 �
@@ -69,6 +73,8 @@ I
 3Base.Units.Unit_IberianEra_Vikings_LeifErikson_Name萊夫的親衛兵
 9
 2Base.Technologies.Technology_BronzeAge_Plough_Name犁
+K
+7Base.Technologies.Technology_Mayas_ObsidianMastery_NameObsidian Mastery
 k
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_2_Desc*派出探險船收集陶瓷或黃金珍品
 M
@@ -509,6 +515,8 @@ X
 ?Base.Units.Unit_MinoanEra_EgyptianAcolytes_HyksosSureshots_Name希克索斯神射手
 B
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_Name裁縫
+>
+1Base.Technologies.Technology_Mayas_Shamanism_Name	Shamanism
 B
 2Base.Abilities.hero_battle_ability.MaoriChief_Name哈卡集結
 Y
@@ -655,6 +663,8 @@ h
 4Base.Buildings.Building_IberianEra_Home_Small_1_Desc0為您的城市產生錢幣並提供一名工人
 V
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc提升相鄰建築的灌溉
+A
+2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMaya Glyphs
 '
 Base.Ages.BronzeAge_Decade	3000 B.C.
 N
@@ -845,6 +855,8 @@ P
  Base.Heroes.hero.TomoeGozen_Name	巴御前
 A
 7Base.Technologies.Technology_FeudalAge_FishingNets_Name漁網
+I
+6Base.Technologies.Technology_Mayas_MayanConsensus_NameMayan Consensus
 H
 8Base.Technologies.Technology_EarlyRome_LanceMastery_Name長槍精通
 E
@@ -921,6 +933,8 @@ G
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_Name暮光魚叉手
 m
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc4為您的城市產生許多錢幣並提供2名工人
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style> and heals herself for <style=basestat>{self_heal}</style> of her base damage. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 A
 1Base.Abilities.hero_battle_ability.JoanOfArc_Name希望燈塔
 �
@@ -1279,6 +1293,8 @@ I
 8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Desc?產生餘燼。熔煉多餘的資源以獲得額外的餘燼。
 ^
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_Name海盜旗幟
+N
+7Base.Technologies.Technology_Mayas_PriestSchooling_NameCraftsmen Schooling
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>召喚 | 燃燒</style>將三角尺投向當前目標。在接下來的 <style=basestat>{duration}</style> 內，三角尺將沿著戰場上的三角路徑移動，對附近的敵方單位造成最多 <style=basestat>{dmg_percentage}</style> 傷害，並使其燃燒，在 <style=basestat>{burn_duration}</style> 內額外造成 <style=basestat>{dmg_percentage_burn}</style> 傷害。
 
@@ -1629,6 +1645,8 @@ F
 "Base.BuildingGroups.waterPump_Name水泵
 :
 $Base.BuildingGroups.premiumPier_Name豪華捕魚碼頭
+C
+3Base.Technologies.Technology_Mayas_RitualSites_NameRitual Sites
 *
  Base.BuildingGroups.GarmentMaker裁縫
 E
@@ -1687,6 +1705,8 @@ M
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_Name儀式雕刻師
 D
 4Base.Abilities.hero_battle_ability.TribalHealer_Name治療藥膏
+[
+*Base.BuildingGroups.premiumRitualSite_NameLuxurious Ritual SiteLuxurious Ritual Sites
 N
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_Name蛾之林地
 B
@@ -1715,6 +1735,8 @@ G
 7Base.Technologies.Technology_China_UrbanManagement_Name城市管理
 Q
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_3_Name攻城兵器軍營
+I
+6Base.Technologies.Technology_Mayas_HeaddressCraft_NameHeaddress Craft
 _
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_Desc解鎖希臘重裝步兵
 P
@@ -1731,6 +1753,8 @@ F
 "Base.BuildingGroups.smallHome_Name小型家園
 V
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc提升相鄰建築的灌溉
+E
+4Base.Technologies.Technology_Mayas_SolarRituals_NameSolar Rituals
 �
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescZ重型步兵單位體型笨重，能夠阻擋騎兵，令後者無法藉助衝鋒穿過。
 6
@@ -1899,6 +1923,8 @@ C
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Name鄉村農場
 S
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_Desc用絲線製作絲綢
+B
+3Base.Technologies.Technology_Mayas_Birdkeeping_NameBirdkeeping
 W
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Name中型文明場所
 B
@@ -2103,6 +2129,9 @@ D
 1Base.Technologies.Technology_China_Terracing_Name梯田
 D
 .Base.Units.Unit_IberianEra_Castilla_Heavy_Name卡斯提亞斧兵
+@
+2Base.Technologies.Technology_Mayas_Aviculture_Name
+Aviculture
 7
 "Base.Units.Unit_BessieColeman_Name貝西·科爾曼
 E
@@ -2297,6 +2326,8 @@ B
 3Base.Buildings.Building_Arabia_City_CityHall_1_Name	大禮堂
 V
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedMarketStands_Name改進攤位
+G
+5Base.Technologies.Technology_Mayas_RitualMastery_NameRitual Mastery
 P
 @Base.Technologies.Technology_KingdomOfSicily_TerrainMastery_Name地形精通
 Q
@@ -2578,6 +2609,8 @@ M
 2Base.Buildings.Building_Mayas_City_CityHall_1_Name	市政廳
 @
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_Name公牛騎手
+K
+7Base.Technologies.Technology_Mayas_ImprovedDaggers_NameImproved Daggers
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.WilliamTell_10_Name�<style=ability_label>遠程打擊| 增益</style>瞄準最遠的目標，用弩射擊，造成<style=basestat>{dmg_percentage}</style>傷害，並提升自己的攻擊速度<style=basestat>{atk_speed_percentage}</style>，持續<style=basestat>{duration}</style>。優先攻擊英雄。
 U
@@ -2673,6 +2706,8 @@ P
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc提升相鄰建築的幸福
 T
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_Desc解鎖槍兵
+K
+7Base.Technologies.Technology_Mayas_DivineAscension_NameDivine Ascension
 J
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_Name絲綢工坊
 O
@@ -2817,6 +2852,8 @@ A
 1Base.Buildings.Building_China_Home_Average_2_Name中型家園
 a
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc!大幅提升相鄰建築的幸福
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name�<style=ability_label>Area Strike| Debuff| Heal</style>El Cid thrusts his weapon forward in a piercing attack, striking through his current target and hitting enemies in a long range. Affected enemies take <style=basestat>{dmg_percentage}</style> damage and suffer an ATK reduction of <style=basestat>{attack_reduction}</style> for <style=basestat>{debuff_duration}</style>. Meanwhile, El Cid heals himself for <style=basestat>{heal_percentage}</style> of his base damage, fortifying his resolve in battle.
 H
 5Base.Technologies.Technology_Egypt_Mummification_Name木乃伊製作
 G
@@ -3148,6 +3185,8 @@ D
 :Base.Technologies.Technology_KingdomOfSicily_Channels_Name水渠
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_6_Name水手家園
+Z
+>Base.Technologies.Technology_Mayas_AdvancedObsidianMining_NameAdvanced Obsidian Mining
 E
 5Base.Buildings.Building_China_RiceFarm_Average_3_Desc生產稻米
 =
@@ -3238,6 +3277,8 @@ g
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_Desc*派出探險船收集寶石或香料珍品
 X
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc提升相鄰建築的灌溉
+G
+*Base.BuildingGroups.averageRitualSite_NameRitual SiteRitual Sites
 H
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Name編年史家
 U
@@ -3327,6 +3368,8 @@ H
 &
 Base.Ages.StoneAge_Start
 40000 B.C.
+G
+5Base.Technologies.Technology_Mayas_NatureSpirits_NameNature Spirits
 R
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_Name英雄學院
 �
@@ -3389,6 +3432,8 @@ J
 :Base.Abilities.hero_battle_ability.GreekMathematician_Name公理突襲
 6
 #Base.Heroes.hero.CyrusTheGreat_Name居魯士大帝
+M
+8Base.Technologies.Technology_Mayas_PopulationGrowth_NamePopulation Growth
 T
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_Desc解鎖槍兵
 A
@@ -3459,6 +3504,8 @@ G
 3Base.Buildings.Building_Vikings_Home_Premium_6_DescE生產大量便士並為您的城市添加 2 名工人和 2 名水手
 c
 /Base.Buildings.Building_Egypt_Home_Small_5_Desc0為您的城市產生德本並提供一名工人
+^
+@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameBetter Obsidian Extraction
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>範圍打擊| 減益| 燃燒</style>召喚一條火龍三次攻擊敵軍最密集的位置，每次降低敵軍的防禦力<style=basestat>{def_percentage}</style>，並在<style=basestat>{range}</style>範圍內造成總計<style=basestat>{dmg_percentage}</style>的傷害。受影響的敵軍會在<style=basestat>{burn_duration}</style>內持續受到<style=basestat>{dmg_percentage_burn}</style>的燃燒傷害。
 �
@@ -4132,6 +4179,8 @@ T
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_Name西奧多西城墻
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Name噴泉
+O
+9Base.Technologies.Technology_Mayas_SustainableMining_NameSustainable Mining
 Q
 2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc短期生產少量食物。
 :
@@ -4140,6 +4189,9 @@ a
 3Base.Units.Unit_ByzantineEra_Player_Bucellarii_Desc*步兵位於前列可發揮最大作用。
 N
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_Name英雄學院
+?
+1Base.Technologies.Technology_Mayas_StateLaws_Name
+State Laws
 R
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_Name強化手柄
 |
@@ -4384,10 +4436,14 @@ n
 'Base.Units.Unit_GreekMathematician_Desc�與歐幾里得一起繪製形狀的規則吧！這位公元前3世紀的希臘數學家被稱為「幾何學之父」，他寫了多部數學著作，其中包括《幾何原本》，這本書彙編了幾何學的知識，並對西方數學影響深遠，持續了數個世紀。<br><br>在《幾何原本》的13卷中，歐幾里得詳細描述了大量的幾何學和數學內容，包括勾股定理的證明以及對質數的分析。這部作品為歐幾里得幾何學奠定了基礎，並對後世的思維方式產生了深遠的影響。<br><br>歐幾里得的生平仍然是個謎，但他的著作便是他的遺產。通過一種詳盡、條理分明的推理方法，以及他對科學方法發展的貢獻，歐幾里得無疑改變了世界。事實上，有人說西方最被研究的書籍是《聖經》，但第二本則是歐幾里得的《幾何原本》！
 g
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Desc0為您的城市產生錢幣並提供一名工人
+K
+7Base.Technologies.Technology_Mayas_AstralAlignment_NameAstral Alignment
 *
 Base.Ages.ClassicGreece_Finish880 B.C.
 @
 6Base.Technologies.Technology_IberianEra_Castillos_Name城堡
+G
+5Base.Technologies.Technology_Mayas_SacredShrines_NameSacred Shrines
 7
 *Base.BuildingGroups.irrigationStation_Name	灌溉站
 E
@@ -4482,6 +4538,8 @@ I
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_Name米諾陶的先鋒
 O
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_Name攻城兵器軍營
+O
+9Base.Technologies.Technology_Mayas_SpiritualAncestry_NameSpiritual Ancestry
 ]
 >Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc提升相鄰建築的幸福
 B
@@ -4554,6 +4612,8 @@ F
 Base.Units.Unit_RamsesII_Name拉美西斯二世
 �
 3Base.Units.Unit_TreasureHunt_Red_DonkeyRaiders_DescN騎兵單位極為迅速，可發揮衝鋒，直衝敵人後衛加以打擊。
+U
+<Base.Technologies.Technology_Mayas_SacrificialOfferings_NameSacrificial Offerings
 B
 2Base.Buildings.Building_StoneAge_Home_Small_2_Name小型家園
 Q
@@ -4824,6 +4884,8 @@ G
 7Base.Technologies.Technology_RomanEmpire_Legionary_Name軍團士兵
 \
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc提升相鄰建築的幸福
+K
+7Base.Technologies.Technology_Mayas_EtchedLandmarks_NameEtched Landmarks
 E
 5Base.Buildings.Building_BronzeAge_Home_Average_3_Name中型家園
 J
@@ -4850,6 +4912,8 @@ H
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>燃燒</style> 火炬的火焰使持有者造成的燃燒傷害增加 <style=basestat>{burn_dmg_increase}</style>。  
 當持有者對敵方單位造成非持續性傷害時，他們有 <style=basestat>{burn_chance}</style> 的機率觸發燃燒效果，在 <style=basestat>{burn_duration}</style> 秒內造成 <style=basestat>{burn_dmg}</style> 的燃燒傷害。
 
+E
+4Base.Technologies.Technology_Mayas_StoneCarving_NameStone Carving
 @
 "Base.Units.Unit_AmeliaEarhart_Name阿米莉亞·埃爾哈特
 M
@@ -4902,6 +4966,8 @@ g
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc0為您的城市產生錢幣並提供一名工人
 ,
 Base.Units.Unit_Shaolin_Name雪庭福裕
+I
+6Base.Technologies.Technology_Mayas_FeatherMastery_NameFeather Mastery
 M
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_Name紙莎草工坊
 >
@@ -4928,6 +4994,8 @@ g
 0Base.Abilities.hero_battle_ability.YiSunSin_Name龜船齊射
 �
 Base.Units.Unit_RamsesII_Desc�平原將在戰車的車輪下顫抖，因為拉美西斯二世的力量已與你的力量結合。這位來自公元前13世紀的法老以對抗赫梯人、努比亞人和利比亞人的戰爭而聞名。與赫梯的卡迪什戰役使他成為歷史上最早締結和平條約的領袖之一。<br><br>除了軍事成就外，拉美西斯二世還是一位多產的建築師，他委託建造了如阿布辛波古廟和拉美西斯神廟等宏偉建築，永遠在世界上留下了他的印記。<br><br>拉美西斯二世被記住為埃及最偉大的法老，他的66年統治塑造了埃及的文化和建築遺產。希臘人稱他為奧茲曼迪亞斯，並以這個名字在詩歌中使他不朽。當你見到拉美西斯時，別忘了跪下敬拜！
+<
+0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 N
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_Name木榫結構
 A
@@ -4982,6 +5050,8 @@ I
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc提升相鄰建築的灌溉
 2
 "Base.BuildingGroups.SmallResidence小型家園
+C
+-Base.Abilities.hero_battle_ability.ElCid_NameKnight’s Requiem
 2
 %Base.BuildingGroups.coffeeBrewer_Name	咖啡師
 A
@@ -5028,6 +5098,8 @@ P
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_Name絲線處理廠
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_Name遠程兵軍營
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name�<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style>. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 '
 Base.HeroClass.Manipulator	操縱者
 �
@@ -5040,12 +5112,16 @@ P
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_3_Name學者學院
 L
 3Base.Abilities.hero_battle_ability.SirLancelot_Name卡美洛的復仇者
+E
+4Base.Technologies.Technology_Mayas_JadeDeposits_NameJade Deposits
 _
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc提升相鄰建築的幸福
 4
 Base.Units.Unit_IsabellaI_Name伊莎貝拉一世
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>近戰攻擊| 暈眩</style>巧妙地用她的法杖攻擊當前目標，造成<style=basestat>{dmg_percentage}</style>傷害，並有<style=basestat>{chance}</style>的機率使其暈眩<style=basestat>{duration}</style>。
+R
+:Base.Technologies.Technology_Mayas_AdvancedJadeMining_NameAdvanced Jade Mining
 �
 &Base.Units.Unit_PhilipIIOfMacedon_Desc�與那位讓希臘臣服的遠見領袖並肩作戰！馬其頓腓力二世，這位公元前 4 世紀的國王，以其卓越的軍事才能和征服行動聞名，成為馬其頓崛起的象徵。<br><br>在王國面臨危機之際，腓力二世上位伊始便擊敗入侵者，並創新性地發明了 馬其頓方陣——配備 6 米長槍的強大步兵陣型。憑藉這支精銳部隊，他對希臘本土發動戰役，成功與半島上的重要城邦建立聯盟。<br><br>至他逝世時，腓力已成為獨眼的戰爭英雄，他的戰略天賦讓他成功將希臘統一於科林斯同盟之下，並準備遠征波斯，卻在計畫實施前遭到暗殺。然而，即便死亡也無法阻擋他的影響力——腓力二世被奉為神明，受到膜拜，而他的兒子亞歷山大則繼承了他的遺志，將馬其頓帝國推向巔峰。
 =
@@ -5116,6 +5192,8 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<sty
 6Base.Buildings.Building_Vikings_Beehive_Average_5_DescK蜂巢可生產美味的蜂蜜，而蜂蜜可在酒館中製作成蜜酒。
 G
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Name家庭農場
+K
+7Base.Technologies.Technology_Mayas_CurativeRituals_NameCurative Rituals
 N
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_Name弓兵軍營
 2
@@ -5224,6 +5302,8 @@ M
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_2_Name騎兵軍營
 �
 Base.Units.Unit_Achilles_Desc�跨越葡萄酒色的海洋，見證阿基里斯，荷馬《伊利亞特》中的傳奇戰士。年幼時被浸入斯提克斯河，只有他的腳踝能夠受到傷害。經過戰鬥訓練並無敵的他，這樣來到了特洛伊圍城戰。<br><br>在愛人帕特羅克羅斯死後，阿基里斯帶著盲目的怒火尋找對方的領袖赫克托耳。雖然赫克托耳是偉大的戰士和英雄，但他無法匹敵阿基里斯的強大。<br><br>雖然他在特洛伊城門被箭矢射中腳踝而死，但他在圍城戰中的行為起到了關鍵作用，他的傳奇啟發了無數戰士，包括亞歷山大大帝。無疑，沒有人比他更能展現保持全身清潔的重要性！
+K
+7Base.Technologies.Technology_Mayas_ChocolateMaking_NameChocolate Making
 E
 2Base.Technologies.Technology_China_FloorPlans_Name建築平面圖
 M
@@ -5240,6 +5320,8 @@ W
 DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_Name斯陶芬建築
 C
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name小型家園
+K
+7Base.Technologies.Technology_Mayas_JadeProspecting_NameJade Prospecting
 �
  Base.HeroClass.AreaAttacker_Desc�範圍攻擊者能對大範圍內的所有敵人造成傷害，對付成群的小型敵人特別擅長。<br><line-height=50%><br></line-height>
 <color=#3DA229>強勢對象：</color><br>•<indent=5%><color=#3DA229>大量敵軍</color>，例如在 <color=#3DA229>戰役模式</color>、<color=#3DA229>尋寶活動</color>與 <color=#3DA229>奧爾良圍城戰</color> 中。</indent><br><line-height=50%><br></line-height>
@@ -5250,6 +5332,8 @@ RBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_15_N
 (Base.BuildingGroups.premiumWorkshop_Name豪華工坊
 )
 Base.Heroes.hero.Inanna_Name	伊南娜
+<
+0Base.Technologies.Technology_Mayas_Divining_NameDivining
 6
 &Base.BuildingGroups.clayProcessor_Name製陶工坊
 a
@@ -5404,6 +5488,8 @@ H
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_Name中型家園
 T
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc長期生產大量食物。
+F
+1Base.Abilities.hero_battle_ability.IsabellaI_NameMajestic Defiance
 l
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc0生產錢幣並為你的城市增加 1 名工人
 d
@@ -5414,6 +5500,8 @@ M
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_2_Name攻城兵器軍營
 J
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_Name捕魚碼頭
+G
+5Base.Technologies.Technology_Mayas_RitualDaggers_NameRitual Daggers
 A
 4Base.Technologies.Technology_FeudalAge_TarOvens_Name	焦油爐
 P
@@ -5540,8 +5628,12 @@ M
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_Name攻城兵器軍營
 @
 0Base.Buildings.Building_Mayas_Home_Priest_5_Name工匠之家
+U
+<Base.Technologies.Technology_Mayas_PerfectedHeaddresses_NamePerfected Headdresses
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_Name水渠
+G
+5Base.Technologies.Technology_Mayas_AstralRituals_NameAstral Rituals
 5
 %Base.BuildingGroups.silkWorkshop_Name絲綢工坊
 P
@@ -5768,6 +5860,8 @@ d
 TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune_Name閃亮財富
 @
 0Base.Buildings.Building_Mayas_Quarry_Jade_1_Desc生產翡翠
+M
+8Base.Technologies.Technology_Mayas_ObsidianDeposits_NameObsidian Deposits
 L
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_Desc生產門扇
 M
@@ -5834,6 +5928,8 @@ E
 5Base.Buildings.Building_Egypt_GoldMine_Premium_3_Name豪華金礦
 C
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_Name	大禮堂
+C
+3Base.Technologies.Technology_Mayas_JadeMastery_NameJade Mastery
 L
 <Base.Technologies.Technology_BronzeAge_ThunderingGallop_Name雷霆奔馳
 �
@@ -5863,6 +5959,8 @@ U
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc提升相鄰建築的灌溉
 R
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Name重步兵軍營
+S
+;Base.Technologies.Technology_Mayas_ObsidianProspecting_NameObsidian Prospecting
 M
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_Name糧食效率
 �
@@ -6168,6 +6266,8 @@ O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_6_Name瓷器工坊
 z
 @Base.Buildings.Building_ClassicGreece_Special_HeroAcademy_1_Desc6英雄學院會消耗研究點數來生產經驗卷軸
+M
+8Base.Technologies.Technology_Mayas_XocolatlVirtuoso_NameXocolatl Virtuoso
 P
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_2_Name步兵軍營
 I
@@ -6188,6 +6288,8 @@ U
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_Name查理曼的聖騎士
 U
 3Base.Buildings.Building_Mayas_Quarry_Premium_1_Desc同時生產翡翠和黑曜石
+V
+<Base.Technologies.Technology_Mayas_BetterJadeExtraction_NameBetter Jade Extraction
 H
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_Name	近衛隊
 +

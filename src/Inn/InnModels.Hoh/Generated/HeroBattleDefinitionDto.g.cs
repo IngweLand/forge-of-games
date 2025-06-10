@@ -25,21 +25,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBoZXJvX2JhdHRsZV9kZWZpbml0aW9uX2R0by5wcm90bxoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byKqAwoXSGVyb0JhdHRsZURlZmluaXRpb25EVE8S",
+            "b3RvYnVmL2FueS5wcm90byLTAQoXSGVyb0JhdHRsZURlZmluaXRpb25EVE8S",
             "CgoCaWQYASABKAkSDQoFd2F2ZXMYAyADKAkSIAoYZGlzYWJsZWRfcGxheWVy",
-            "X3Nsb3RfaWRzGAUgASgMEk4KE3JlcXVpcmVkSGVyb0NsYXNzZXMYByADKAsy",
-            "MS5IZXJvQmF0dGxlRGVmaW5pdGlvbkRUTy5SZXF1aXJlZEhlcm9DbGFzc2Vz",
-            "RW50cnkSQAoicGFja2VkX2JhdHRsZV9zdWdnZXN0aW9uX2NvbXBvbmVudBgI",
-            "IAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSSgoRcmVxdWlyZWRIZXJvVHlw",
-            "ZXMYCSADKAsyLy5IZXJvQmF0dGxlRGVmaW5pdGlvbkRUTy5SZXF1aXJlZEhl",
-            "cm9UeXBlc0VudHJ5GjoKGFJlcXVpcmVkSGVyb0NsYXNzZXNFbnRyeRILCgNr",
-            "ZXkYASABKAkSDQoFdmFsdWUYAiABKAM6AjgBGjgKFlJlcXVpcmVkSGVyb1R5",
-            "cGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgDOgI4AUIfqgIc",
-            "SW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "X3Nsb3RfaWRzGAUgASgMEkAKInBhY2tlZF9iYXR0bGVfc3VnZ2VzdGlvbl9j",
+            "b21wb25lbnQYCCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55EhwKFHJlcXVp",
+            "cmVkSGVyb0NsYXNzSWRzGAwgAygJEhsKE3JlcXVpcmVkSGVyb1R5cGVJZHMY",
+            "DSADKAlCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleDefinitionDTO.Parser, new[]{ "Id", "Waves", "DisabledPlayerSlotIds", "RequiredHeroClasses", "PackedBattleSuggestionComponent", "RequiredHeroTypes" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleDefinitionDTO.Parser, new[]{ "Id", "Waves", "DisabledPlayerSlotIds", "PackedBattleSuggestionComponent", "RequiredHeroClassIds", "RequiredHeroTypeIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -84,9 +80,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       id_ = other.id_;
       waves_ = other.waves_.Clone();
       disabledPlayerSlotIds_ = other.disabledPlayerSlotIds_;
-      requiredHeroClasses_ = other.requiredHeroClasses_.Clone();
       packedBattleSuggestionComponent_ = other.packedBattleSuggestionComponent_ != null ? other.packedBattleSuggestionComponent_.Clone() : null;
-      requiredHeroTypes_ = other.requiredHeroTypes_.Clone();
+      requiredHeroClassIds_ = other.requiredHeroClassIds_.Clone();
+      requiredHeroTypeIds_ = other.requiredHeroTypeIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -131,17 +127,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "requiredHeroClasses" field.</summary>
-    public const int RequiredHeroClassesFieldNumber = 7;
-    private static readonly pbc::MapField<string, long>.Codec _map_requiredHeroClasses_codec
-        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt64(16, 0L), 58);
-    private readonly pbc::MapField<string, long> requiredHeroClasses_ = new pbc::MapField<string, long>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, long> RequiredHeroClasses {
-      get { return requiredHeroClasses_; }
-    }
-
     /// <summary>Field number for the "packed_battle_suggestion_component" field.</summary>
     public const int PackedBattleSuggestionComponentFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Any packedBattleSuggestionComponent_;
@@ -157,15 +142,26 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "requiredHeroTypes" field.</summary>
-    public const int RequiredHeroTypesFieldNumber = 9;
-    private static readonly pbc::MapField<string, long>.Codec _map_requiredHeroTypes_codec
-        = new pbc::MapField<string, long>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForInt64(16, 0L), 74);
-    private readonly pbc::MapField<string, long> requiredHeroTypes_ = new pbc::MapField<string, long>();
+    /// <summary>Field number for the "requiredHeroClassIds" field.</summary>
+    public const int RequiredHeroClassIdsFieldNumber = 12;
+    private static readonly pb::FieldCodec<string> _repeated_requiredHeroClassIds_codec
+        = pb::FieldCodec.ForString(98);
+    private readonly pbc::RepeatedField<string> requiredHeroClassIds_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, long> RequiredHeroTypes {
-      get { return requiredHeroTypes_; }
+    public pbc::RepeatedField<string> RequiredHeroClassIds {
+      get { return requiredHeroClassIds_; }
+    }
+
+    /// <summary>Field number for the "requiredHeroTypeIds" field.</summary>
+    public const int RequiredHeroTypeIdsFieldNumber = 13;
+    private static readonly pb::FieldCodec<string> _repeated_requiredHeroTypeIds_codec
+        = pb::FieldCodec.ForString(106);
+    private readonly pbc::RepeatedField<string> requiredHeroTypeIds_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> RequiredHeroTypeIds {
+      get { return requiredHeroTypeIds_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,9 +182,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id != other.Id) return false;
       if(!waves_.Equals(other.waves_)) return false;
       if (DisabledPlayerSlotIds != other.DisabledPlayerSlotIds) return false;
-      if (!RequiredHeroClasses.Equals(other.RequiredHeroClasses)) return false;
       if (!object.Equals(PackedBattleSuggestionComponent, other.PackedBattleSuggestionComponent)) return false;
-      if (!RequiredHeroTypes.Equals(other.RequiredHeroTypes)) return false;
+      if(!requiredHeroClassIds_.Equals(other.requiredHeroClassIds_)) return false;
+      if(!requiredHeroTypeIds_.Equals(other.requiredHeroTypeIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -199,9 +195,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       hash ^= waves_.GetHashCode();
       if (DisabledPlayerSlotIds.Length != 0) hash ^= DisabledPlayerSlotIds.GetHashCode();
-      hash ^= RequiredHeroClasses.GetHashCode();
       if (packedBattleSuggestionComponent_ != null) hash ^= PackedBattleSuggestionComponent.GetHashCode();
-      hash ^= RequiredHeroTypes.GetHashCode();
+      hash ^= requiredHeroClassIds_.GetHashCode();
+      hash ^= requiredHeroTypeIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -229,12 +225,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(42);
         output.WriteBytes(DisabledPlayerSlotIds);
       }
-      requiredHeroClasses_.WriteTo(output, _map_requiredHeroClasses_codec);
       if (packedBattleSuggestionComponent_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(PackedBattleSuggestionComponent);
       }
-      requiredHeroTypes_.WriteTo(output, _map_requiredHeroTypes_codec);
+      requiredHeroClassIds_.WriteTo(output, _repeated_requiredHeroClassIds_codec);
+      requiredHeroTypeIds_.WriteTo(output, _repeated_requiredHeroTypeIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -254,12 +250,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(42);
         output.WriteBytes(DisabledPlayerSlotIds);
       }
-      requiredHeroClasses_.WriteTo(ref output, _map_requiredHeroClasses_codec);
       if (packedBattleSuggestionComponent_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(PackedBattleSuggestionComponent);
       }
-      requiredHeroTypes_.WriteTo(ref output, _map_requiredHeroTypes_codec);
+      requiredHeroClassIds_.WriteTo(ref output, _repeated_requiredHeroClassIds_codec);
+      requiredHeroTypeIds_.WriteTo(ref output, _repeated_requiredHeroTypeIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -277,11 +273,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (DisabledPlayerSlotIds.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(DisabledPlayerSlotIds);
       }
-      size += requiredHeroClasses_.CalculateSize(_map_requiredHeroClasses_codec);
       if (packedBattleSuggestionComponent_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PackedBattleSuggestionComponent);
       }
-      size += requiredHeroTypes_.CalculateSize(_map_requiredHeroTypes_codec);
+      size += requiredHeroClassIds_.CalculateSize(_repeated_requiredHeroClassIds_codec);
+      size += requiredHeroTypeIds_.CalculateSize(_repeated_requiredHeroTypeIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -301,14 +297,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.DisabledPlayerSlotIds.Length != 0) {
         DisabledPlayerSlotIds = other.DisabledPlayerSlotIds;
       }
-      requiredHeroClasses_.MergeFrom(other.requiredHeroClasses_);
       if (other.packedBattleSuggestionComponent_ != null) {
         if (packedBattleSuggestionComponent_ == null) {
           PackedBattleSuggestionComponent = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         PackedBattleSuggestionComponent.MergeFrom(other.PackedBattleSuggestionComponent);
       }
-      requiredHeroTypes_.MergeFrom(other.requiredHeroTypes_);
+      requiredHeroClassIds_.Add(other.requiredHeroClassIds_);
+      requiredHeroTypeIds_.Add(other.requiredHeroTypeIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -336,10 +332,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             DisabledPlayerSlotIds = input.ReadBytes();
             break;
           }
-          case 58: {
-            requiredHeroClasses_.AddEntriesFrom(input, _map_requiredHeroClasses_codec);
-            break;
-          }
           case 66: {
             if (packedBattleSuggestionComponent_ == null) {
               PackedBattleSuggestionComponent = new global::Google.Protobuf.WellKnownTypes.Any();
@@ -347,8 +339,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             input.ReadMessage(PackedBattleSuggestionComponent);
             break;
           }
-          case 74: {
-            requiredHeroTypes_.AddEntriesFrom(input, _map_requiredHeroTypes_codec);
+          case 98: {
+            requiredHeroClassIds_.AddEntriesFrom(input, _repeated_requiredHeroClassIds_codec);
+            break;
+          }
+          case 106: {
+            requiredHeroTypeIds_.AddEntriesFrom(input, _repeated_requiredHeroTypeIds_codec);
             break;
           }
         }
@@ -378,10 +374,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             DisabledPlayerSlotIds = input.ReadBytes();
             break;
           }
-          case 58: {
-            requiredHeroClasses_.AddEntriesFrom(ref input, _map_requiredHeroClasses_codec);
-            break;
-          }
           case 66: {
             if (packedBattleSuggestionComponent_ == null) {
               PackedBattleSuggestionComponent = new global::Google.Protobuf.WellKnownTypes.Any();
@@ -389,8 +381,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             input.ReadMessage(PackedBattleSuggestionComponent);
             break;
           }
-          case 74: {
-            requiredHeroTypes_.AddEntriesFrom(ref input, _map_requiredHeroTypes_codec);
+          case 98: {
+            requiredHeroClassIds_.AddEntriesFrom(ref input, _repeated_requiredHeroClassIds_codec);
+            break;
+          }
+          case 106: {
+            requiredHeroTypeIds_.AddEntriesFrom(ref input, _repeated_requiredHeroTypeIds_codec);
             break;
           }
         }
