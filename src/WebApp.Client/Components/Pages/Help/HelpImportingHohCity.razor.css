@@ -1,0 +1,31 @@
+.method-selection {
+    padding: 12px;
+    background-color: #fff3cd;
+    border-radius: var(--fog-border-radius);
+    border-left: 4px solid #ffc107;
+}
+
+.method-selection h4 {
+    color: #856404;
+    margin-top: 0;
+}
+
+.method-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.security-note {
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: var(--fog-border-radius);
+    border-left: 4px solid #28a745;
+    margin-top: 16px;
+}
+
+.security-note h6 {
+    color: #155724;
+    margin-top: 0;
+}

@@ -22,10 +22,9 @@
                    OnClick="@(e => DrawerToggle())"/>
     <span class="nav-bar-title" @onclick="NavigateToCurrentHome">@_pageMetadata.Title</span>
     <MudSpacer/>
-    <MudTooltip Text="@Loc[FogResource.Navigation_SupportUs]">
-        <MudIconButton Icon="@Icons.Material.Outlined.VolunteerActivism"
-                       Color="Color.Inherit"
-                       OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SUPPORT_US_PATH))"/>
+    <MudTooltip Text="@Loc[FogResource.Common_Help]">
+        <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" 
+                       OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))"/>
     </MudTooltip>
     @if (_currentWidth > 575)
     {
@@ -40,10 +39,10 @@
                            OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_DISCORD_URL))"/>
 
         </MudTooltip>
-        <MudTooltip Text="@Loc[FogResource.Common_Help]">
-            <MudIconButton Icon="@Icons.Material.Outlined.Help"
+        <MudTooltip Text="@Loc[FogResource.Navigation_SupportUs]">
+            <MudIconButton Icon="@Icons.Material.Outlined.VolunteerActivism"
                            Color="Color.Inherit" Edge="Edge.End"
-                           OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))"/>
+                           OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SUPPORT_US_PATH))"/>
         </MudTooltip>
     }
     else
@@ -57,10 +56,10 @@
                          Color="Color.Inherit"
                          OnClick="@(() => OpenPage(FogUrlBuilder.PageRoutes.FOG_DISCORD_URL))">Discord
             </MudMenuItem>
-            <MudMenuItem Icon="@Icons.Material.Outlined.Help"
+            <MudMenuItem Icon="@Icons.Material.Outlined.VolunteerActivism"
                          Color="Color.Inherit" Edge="Edge.End"
-                         OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))">
-                @Loc[FogResource.Common_Help]
+                         OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SUPPORT_US_PATH))">
+                @Loc[FogResource.Navigation_SupportUs]
             </MudMenuItem>
         </MudMenu>
     }
