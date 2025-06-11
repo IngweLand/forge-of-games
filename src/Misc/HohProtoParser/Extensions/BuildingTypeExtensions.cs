@@ -25,6 +25,9 @@ public static class BuildingTypeExtensions
             "runestone" => BuildingType.Runestone,
             "beehive" => BuildingType.Beehive,
             "fishingPier" => BuildingType.FishingPier,
+            "quarry" => BuildingType.Quarry,
+            "aviary" => BuildingType.Aviary,
+            "ritualSite" => BuildingType.RitualSite,
             _ => throw new Exception($"Cannot map building type: {value}"),
         };
     }

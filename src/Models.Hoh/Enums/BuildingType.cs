@@ -6,6 +6,7 @@ namespace Ingweland.Fog.Models.Hoh.Enums;
 public enum BuildingType
 {
     Undefined = 0,
+    Aviary,
     Barracks,
     Beehive,
     CityHall,
@@ -19,7 +20,9 @@ public enum BuildingType
     Home,
     Irrigation,
     PapyrusField,
+    Quarry,
     RiceFarm,
+    RitualSite,
     Runestone,
     Special,
     Workshop,

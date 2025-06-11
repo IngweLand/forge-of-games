@@ -3,7 +3,6 @@ using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
@@ -21,7 +20,8 @@ public class CityUiService(
 
     public async Task<IReadOnlyCollection<CityBuildingGroupsViewModel>> GetCityBuildingGroupsAsync()
     {
-        var cityIds = new List<CityId> {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings};
+        var cityIds = new List<CityId>
+            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas};
         var result = new List<CityBuildingGroupsViewModel>();
         foreach (var cityId in cityIds)
         {

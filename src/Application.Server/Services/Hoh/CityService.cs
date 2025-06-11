@@ -28,7 +28,7 @@ public class CityService(
             BuildingType.Home, BuildingType.Farm, BuildingType.Barracks, BuildingType.Workshop,
             BuildingType.CultureSite, BuildingType.Special, BuildingType.Beehive, BuildingType.Irrigation,
             BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
-            BuildingType.RiceFarm,
+            BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry, BuildingType.RitualSite
         };
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         var categories = buildings.Where(b => types.Contains(b.Type)).DistinctBy(b => b.Group).GroupBy(b => b.Type);
@@ -51,6 +51,7 @@ public class CityService(
             WonderId.Yggdrasil, WonderId.DragonshipEllida, WonderId.Valhalla,
             WonderId.AbuSimbel, WonderId.CheopsPyramid, WonderId.GreatSphinx,
             WonderId.TerracottaArmy, WonderId.ForbiddenCity, WonderId.GreatWall,
+            WonderId.Tikal, WonderId.ChichenItza, WonderId.SayilPalace,
         };
         var wonders = new List<WonderBasicDto>();
         foreach (var wonderId in wonderIds)

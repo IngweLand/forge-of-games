@@ -25,6 +25,9 @@ public static class BuildingTypeExtensions
             BuildingType.Runestone => "runestone",
             BuildingType.Beehive => "beehive",
             BuildingType.FishingPier => "fishingPier",
+            BuildingType.Aviary => "aviary",
+            BuildingType.Quarry => "quarry",
+            BuildingType.RitualSite => "ritualSite",
             _ => string.Empty,
         };
     }

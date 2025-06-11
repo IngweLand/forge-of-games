@@ -11,4 +11,5 @@ public enum CityId
     China,
     Egypt,
     Vikings,
+    Mayas,
 }
