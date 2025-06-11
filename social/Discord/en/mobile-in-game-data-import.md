@@ -2,9 +2,9 @@
 
 Hey Heroes! 🚀 We're excited to bring a long-awaited update designed especially for **mobile users**.
 
-You can now **export your in-game data directly into Forge of Games on iOS**! View your city's stats, import heroes, and manage your equipment—all from your mobile device.
+You can now **export your in-game data directly into Forge of Games**! View your city's stats, import heroes, and manage your equipment—all from your mobile device.
 
-📱 **Mobile Users (iOS):**
+📱 **Mobile Users:**
 - Seamlessly export your game data
 - Instantly access city stats, heroes, and gear
 
@@ -13,4 +13,4 @@ You can now **export your in-game data directly into Forge of Games on iOS**! Vi
 - Just use the browser extension, export your data, and hit **"View Stats"**
 
 🔗 Get started now:
-👉 [How to import in-game data on iOS](https://forgeofgames.com/help/importing-hoh-data)  
+👉 [How to import in-game data](https://forgeofgames.com/help/importing-hoh-data)  

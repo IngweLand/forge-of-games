@@ -2,9 +2,9 @@
 
 Hey Helden! 🚀 Wir freuen uns, euch ein lang erwartetes Update präsentieren zu können – speziell für **mobile Nutzer**.
 
-Ab sofort könnt ihr **eure Spieldaten direkt in Forge of Games auf iOS exportieren**! Seht die Statistiken eurer Stadt, importiert Helden und verwaltet eure Ausrüstung – alles direkt von eurem Mobilgerät aus.
+Ab sofort könnt ihr **eure Spieldaten direkt in Forge of Games exportieren**! Seht die Statistiken eurer Stadt, importiert Helden und verwaltet eure Ausrüstung – alles direkt von eurem Mobilgerät aus.
 
-📱 **Mobile Nutzer (iOS):**
+📱 **Mobile Nutzer:**
 - Spieldaten nahtlos exportieren
 - Sofortiger Zugriff auf Stadtstatistiken, Helden und Ausrüstung
 
@@ -13,4 +13,4 @@ Ab sofort könnt ihr **eure Spieldaten direkt in Forge of Games auf iOS exportie
 - Einfach die Browser-Erweiterung nutzen, Daten exportieren und auf **„Statistiken anzeigen“** klicken
 
 🔗 Jetzt loslegen:
-👉 [So importierst du Spieldaten auf iOS](https://forgeofgames.com/help/importing-hoh-data)
+👉 [So importierst du Spieldaten](https://forgeofgames.com/help/importing-hoh-data)
