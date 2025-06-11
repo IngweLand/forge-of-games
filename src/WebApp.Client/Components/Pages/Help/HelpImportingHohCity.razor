@@ -7,9 +7,9 @@
 
     <div class="help-info">
         The City Planner and Command Center tools on Forge of Games let you manage, optimize,
-        and review your city layouts, hero rosters, and equipment with ease. To take full advantage of these
-        features, you’ll want to import your actual in-game data—so that what you see here matches
-        what’s in <em>Heroes of History</em>.
+        and review your city layouts, hero rosters, and equipment with ease. You can also view your city's statistics.
+        To take full advantage of these features, you’ll want to import your actual in-game data—so that what you see
+        here matches what’s in <em>Heroes of History</em>.
     </div>
 
     <div class="method-selection">
@@ -17,24 +17,29 @@
         <p>Select the method that best fits your device and preferences:</p>
 
         <div class="method-tabs">
-            <MudButton Style="text-transform: none" Variant="Variant.Filled" DropShadow="false"
-                       @onclick="() => _method = Method.iOS"
+            <MudButton Style="text-transform: none" Variant="Variant.Filled" @onclick="() => _method = Method.iOS"
                        Color="@(_method == Method.iOS ? Color.Primary : Color.Default)">iOS Mobile Script
             </MudButton>
-            <MudButton Style="text-transform: none" Variant="Variant.Filled" DropShadow="false"
-                       @onclick="() => _method = Method.Desktop"
+            <MudButton Style="text-transform: none" Variant="Variant.Filled" @onclick="() => _method = Method.Android"
+                       Color="@(_method == Method.Android ? Color.Primary : Color.Default)">Android Mobile Script
+            </MudButton>
+            <MudButton Style="text-transform: none" Variant="Variant.Filled" @onclick="() => _method = Method.Desktop"
                        Color="@(_method == Method.Desktop ? Color.Primary : Color.Default)">Desktop/Browser Extension
             </MudButton>
         </div>
 
         @if (_method == Method.Desktop)
         {
-            <p><strong>Best for:</strong> Desktop users playing on either the <em>Main</em> or <em>Beta</em> servers in Chrome or other Chromium-based browsers</p>
+            <p><strong>Best for:</strong> Desktop users playing on either the <em>Main</em> or <em>Beta</em> servers in
+                Chrome or other Chromium-based browsers</p>
+        }
+        else if (_method == Method.Android)
+        {
+            <p><strong>Best for:</strong> Android mobile users playing on the <em>Main</em> server</p>
         }
         else
         {
             <p><strong>Best for:</strong> iOS mobile users playing on the <em>Main</em> server</p>
-            <p><strong>Note:</strong> Support for the Android devices is planned for the future</p>
         }
 
     </div>
@@ -97,6 +102,93 @@
             </p>
         </div>
     }
+    else if (_method == Method.Android)
+    {
+        <div class="help-step">
+            <h5>Step 1: Install a Python Environment</h5>
+            <p>
+                The recommended way to run the script on Android is by using the <strong>Pydroid 3</strong> app.
+                <a href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3" target="_blank">Download
+                    Pydroid 3 from the Play Store</a>.
+            </p>
+            <p>
+                When first launching Pydroid 3, you may see a screen prompting you to start a free trial or buy the full
+                version.
+                Simply close that screen—the free version is sufficient for this script.
+            </p>
+            <p>
+                <em>Advanced users:</em> You may use any Python environment or editor available for Android,
+                as long as you are comfortable installing packages and running Python scripts manually.
+            </p>
+        </div>
+
+        <div class="help-step">
+            <h5>Step 2: Install the "requests" Library</h5>
+            <ol>
+                <li>Open Pydroid 3</li>
+                <li>Tap the <strong>☰ (hamburger menu)</strong> in the upper left</li>
+                <li>Select <strong>Pip</strong></li>
+                <li>Go to the <strong>Search Libraries</strong> tab</li>
+                <li>Type <code>requests</code> and tap <strong>Search</strong></li>
+                <li>From the results, find and install the one labeled exactly as <code>requests</code></li>
+            </ol>
+        </div>
+
+        <div class="help-step">
+            <h5>Step 3: Get the HoH Helper Mobile script</h5>
+            <p>You have two options to set up the script:</p>
+
+            <h6>Option A: Direct Download (Recommended)</h6>
+            <ol>
+                <li>
+                    <a href="https://github.com/IngweLand/hoh-helper-mobile/releases/download/1.0.0/hoh-helper.py"
+                       target="_blank">Click here to download the script file from the GitHub</a> on your Android device
+                </li>
+                <li>In Pydroid 3, tap the <strong>folder icon</strong> to open a file</li>
+                <li>When prompted, allow Pydroid to access your file system</li>
+                <li>Navigate to your downloaded script and open it</li>
+            </ol>
+
+            <h6>Option B: Manual Setup</h6>
+            <ol>
+                <li>Open script code in <a
+                        href="https://github.com/IngweLand/hoh-helper-mobile/blob/main/hoh-helper.py"
+                        target="_blank">our GitHub repository</a> in the browser
+                </li>
+                <li>Tap the three dots menu and select "Copy" to copy the script code</li>
+                <li>Return to Pydroid 3 and paste the code into your new script</li>
+            </ol>
+        </div>
+
+        <div class="help-step">
+            <h5>Step 4: Set Your Credentials</h5>
+            <p>
+                At the top of the script file, locate the <code>USERNAME</code> and <code>PASSWORD</code> variables.
+                Update these with your actual in-game login credentials.
+            </p>
+            <p>
+                You can now save the updated version to preserve changes (you will have to grant file system access if
+                you have not done it yet).
+            </p>
+            <div class="security-note">
+                <h6>🔒 Security Notice</h6>
+                <p>Your username, password, or any session data are <strong>never sent to Forge of Games</strong>. The
+                    script works similarly to how the original game loads your data, then sends only the game data (city
+                    layout, heroes, equipment etc.) to our servers for import.</p>
+            </div>
+        </div>
+
+        <div class="help-step">
+            <h5>Step 5: Run the Script</h5>
+            <p>
+                Tap the <strong>Run ▶</strong> button at the bottom of Pydroid 3.
+                A new log window will appear, showing the script’s progress.
+            </p>
+            <p>
+                Once the script finishes, it will open the webpage with the data import screen on Forge of Games.
+            </p>
+        </div>
+    }
     else
     {
         <div class="help-step">
@@ -146,7 +238,8 @@
                 alerts:</p>
 
             <ul>
-                <li><strong>Credentials not set:</strong> The script prompts you to enter your in-game login details.</li>
+                <li><strong>Credentials not set:</strong> The script prompts you to enter your in-game login details.
+                </li>
                 <ul>
                     <li>You can either type them manually or select them from your iOS keychain or password manager.
                     </li>
