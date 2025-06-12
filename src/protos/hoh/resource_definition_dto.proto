@@ -6,6 +6,6 @@ message ResourceDefinitionDTO {
   string id = 1;
   string type = 3;
   string age = 4;
-  string city = 5;
+  repeated string cities = 5;
   int32 u6 = 6;
 }

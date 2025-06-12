@@ -1,7 +1,5 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
@@ -9,6 +7,7 @@ using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
+using IMapper = AutoMapper.IMapper;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
@@ -44,24 +43,6 @@ public class CityService(
         return buildings.Count == 0 ? null : buildingGroupDtoFactory.Create(group, buildings.First().Type, buildings);
     }
 
-    public async Task<IReadOnlyCollection<WonderBasicDto>> GetWonderBasicDataAsync()
-    {
-        var wonderIds = new List<WonderId>()
-        {
-            WonderId.Yggdrasil, WonderId.DragonshipEllida, WonderId.Valhalla,
-            WonderId.AbuSimbel, WonderId.CheopsPyramid, WonderId.GreatSphinx,
-            WonderId.TerracottaArmy, WonderId.ForbiddenCity, WonderId.GreatWall,
-            WonderId.Tikal, WonderId.ChichenItza, WonderId.SayilPalace,
-        };
-        var wonders = new List<WonderBasicDto>();
-        foreach (var wonderId in wonderIds)
-        {
-            wonders.Add(mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(wonderId)));
-        }
-
-        return wonders;
-    }
-
     public async Task<WonderDto?> GetWonderAsync(WonderId id)
     {
         var wonder = await hohCoreDataRepository.GetWonderAsync(id);
@@ -78,7 +59,7 @@ public class CityService(
     {
         return hohCoreDataRepository.GetExpansions(cityId);
     }
-    
+
     public async Task<CityPlannerDataDto?> GetCityPlannerDataAsync(CityId cityId)
     {
         var city = await hohCoreDataRepository.GetCity(cityId);
@@ -87,14 +68,14 @@ public class CityService(
             logger.LogError($"Failed to get city by id: {cityId}");
             return default;
         }
-        
+
         var expansions = await hohCoreDataRepository.GetExpansions(cityId);
         var buildings = await GetBuildingsAsync(cityId);
         var customizations = await hohCoreDataRepository.GetBuildingCustomizations(cityId);
         var ages = await hohCoreDataRepository.GetAges();
         return cityPlannerDataFactory.Create(city, expansions, buildings, customizations, ages);
     }
-    
+
     public async Task<IReadOnlyCollection<BuildingDto>> GetBarracks(UnitType unitType)
     {
         var group = unitType.ToBuildingGroup();
@@ -113,5 +94,52 @@ public class CityService(
     {
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         return mapper.Map<List<BuildingDto>>(buildings);
+    }
+
+    public async Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<WonderBasicDto>>> GetWonderBasicDataAsync()
+    {
+        return new Dictionary<CityId, IReadOnlyCollection<WonderBasicDto>>()
+        {
+            {
+                CityId.China,
+                new List<WonderBasicDto>()
+                {
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.China_ForbiddenCity)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.China_GreatWall)),
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.China_TerracottaArmy))
+                }
+            },
+            {
+                CityId.Egypt,
+                new List<WonderBasicDto>()
+                {
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_AbuSimbel)),
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_CheopsPyramid)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_GreatSphinx))
+                }
+            },
+            {
+                CityId.Vikings,
+                new List<WonderBasicDto>()
+                {
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_DragonshipEllida)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_Valhalla)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_Yggdrasil))
+                }
+            },
+            {
+                CityId.Mayas_Tikal,
+                new List<WonderBasicDto>()
+                {
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_ChichenItza)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_SayilPalace)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_Tikal))
+                }
+            }
+        };
     }
 }

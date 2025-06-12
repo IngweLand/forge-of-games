@@ -13,7 +13,7 @@ message BuildingDefinitionDTO {
   int32 length = 4;
   // LevelUpComponentDTO
   repeated google.protobuf.Any packed_components = 5;
-  string city = 7;
+  repeated string cities = 7;
   string age = 9;
   string subtype = 10;
   BuildingBuffDetailsDto buff_details = 11;

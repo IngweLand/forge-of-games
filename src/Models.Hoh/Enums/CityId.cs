@@ -10,6 +10,8 @@ public enum CityId
     Capital,
     China,
     Egypt,
+    Mayas_ChichenItza,
+    Mayas_SayilPalace,
+    Mayas_Tikal,
     Vikings,
-    Mayas,
 }

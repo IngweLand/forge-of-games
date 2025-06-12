@@ -6,5 +6,5 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 message IncreaseBuildingLimitRewardDTO {
   string u1 = 1;
   BuildingGroupDto building_group = 3;
-  string city = 4;
+  repeated string cities = 4;
 }

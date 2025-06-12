@@ -5,5 +5,5 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message UnlockBuildingUpgradeRewardDTO {
     IdDto building_id = 1;
-    string city = 3;
+    repeated string cities = 3;
 }

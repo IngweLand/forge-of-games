@@ -18,7 +18,7 @@ public interface ICityService
     Task<BuildingGroupDto?> GetBuildingGroupAsync([AliasAs("cityId")] CityId cityId, [AliasAs("group")] BuildingGroup group);
 
     [Get("/city/wonders/basic")]
-    Task<IReadOnlyCollection<WonderBasicDto>> GetWonderBasicDataAsync();
+    Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<WonderBasicDto>>> GetWonderBasicDataAsync();
 
     [Get("/city/wonders/{id}")]
     Task<WonderDto?> GetWonderAsync([AliasAs("id")] WonderId id);

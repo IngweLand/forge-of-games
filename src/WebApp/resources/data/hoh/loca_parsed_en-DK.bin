@@ -107,6 +107,8 @@ A
 )Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
 Ì
 JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Nameû<style=ability_label>Buff</style>Mansa Musa targets the biggest cluster of friendly units, increasing their chance to critically hit by <style=basestat>{crit_percentage}</style>, their ATK by <style=basestat>{atk_percentage}</style> of Mansa Musa's ATK, and their critical damage by <style=basestat>{crit_dmg_percentage}</style> for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>.
+Å
+5Base.Buildings.Building_Mayas_Workshop_Premium_5_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
 C
 3Base.Technologies.Technology_China_BakedBricks_NameBaked Bricks
 J
@@ -216,6 +218,8 @@ P
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_NameRanged barracks
 ¿
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_NameÎ<style=ability_label>Taunt| Shield</style>Taunts all enemies for <style=basestat>{taunt_duration}</style>. Bismarck gains <style=basestat>{shield_percentage}</style> of his base damage as a shield. Also provides <style=basestat>{shield_percentage_friendly}</style> of Bismarck's base damage as a shield to the friendly unit with the lowest HP. Prioritizes heroes.
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduces Ritual Daggers
 V
 'Base.BuildingGroups.compactCulture_NameCompact Culture SiteCompact Culture Sites
 M
@@ -426,6 +430,8 @@ H
 8Base.Technologies.Technology_FeudalAge_Transhumance_NameTranshumance
 9
 &Base.Regions.region.DesertDelta_4_NameWartorn Rivulet
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_DescProduces Ancestor Masks
 >
 ,Base.Wonders.Wonder_Egypt_CheopsPyramid_NameCheops Pyramid
 T
@@ -439,6 +445,8 @@ v
 <
 !Base.BuildingTypes.camelFarm_Name
 Camel FarmCamel Farms
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_1_DescProduces a ton of Feathers
 C
 1Base.Buildings.Building_China_Home_Premium_6_Nameluxurious home
 N
@@ -593,6 +601,8 @@ I
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_5_DescMSend off expedition ships which will gather either ceramic- or gold treasures
 L
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_1_DescUnlocks Knights
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_DescProduces Headdresses
 M
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_1_NameClay Processor
 ±
@@ -939,6 +949,8 @@ J
 9Base.Buildings.Building_Vikings_SailorPort_Average_5_DescLSend off expedition ships which will gather either jewel- or spice treasures
 W
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSicilian Villetta
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_4_Desc(Improves Happiness of adjacent buildings
 ©
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHintkYou can choose to play any unlocked difficulty. The choice is locked once you complete the first encounter.
 O
@@ -1011,6 +1023,8 @@ C
 1Base.Buildings.Building_China_Home_Premium_3_Nameluxurious Home
 U
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_NameCeremony Outfitter
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescProduces Ancestor Masks
 $
 Base.Cities.City_China_NameChina
 W
@@ -1021,6 +1035,8 @@ O
 3Base.Technologies.Technology_BronzeAge_Archery_NameArchery
 Q
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_NameThread Processor
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_4_DescProduces a ton of Feathers
 +
 Base.BuildingGroups.SmallFarm
 Rural Farm
@@ -1150,6 +1166,8 @@ I
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_NameOasis
 '
 Base.Ages.IberianEra_Start	1050 A.D.
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_6_DescProduces a ton of Feathers
 ê
 PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Nameª<style=ability_label>Debuff | Ability Block</style>Inhibits all enemy units' ability to attack, decreasing their Accuracy by <style=basestat>{accuracy_percentage}</style>, their ATK Speed by <style=basestat>{atk_speed_percentage}</style>, and their ATK by <style=basestat>{atk_percentage}</style> of Franklin's ATK for <style=basestat>{duration}</style>. Also prevents enemies from using Abilities for <style=basestat>{block_duration}</style>.
 Z
@@ -1349,6 +1367,8 @@ O
 5Base.Buildings.Building_China_RiceFarm_Premium_3_Descproduces a ton of rice
 I
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameSocial Change
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_DescProduces Ritual Daggers
 >
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
 z
@@ -1702,6 +1722,8 @@ N
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_2_NameRanged Barracks
 `
 FBase.Technologies.Technology_KingdomOfSicily_ReinforcedKiteShield_NameReinforced Kite Shield
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc6Substantially improves Happiness of adjacent buildings
 B
 4Base.Buildings.Building_DawnAge_City_CityHall_1_Name
 Great Hall
@@ -1728,6 +1750,8 @@ E
 8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	Carpenter
 B
 1Base.Abilities.hero_battle_ability.Sacagawea_NameGuiding Light
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_5_Desc(Improves Happiness of adjacent buildings
 ·
 KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_21_Nameë<style=ability_label>Stomp| Bleed| Stun</style>Tomoe strikes the ground with her spear, unleashing a shockwave that deals <style=basestat>{dmg_percentage}</style> damage to all enemies within a range of <style=basestat>{range}</style>. Affected units have a <style=basestat>{bleed_chance}</style> chance to bleed for an additional <style=basestat>{bleed_percentage}</style> damage over <style=basestat>{bleed_duration}</style> and a <style=basestat>{stun_chance}</style> to be stunned for <style=basestat>{stun_duration}</style>.
 M
@@ -1777,8 +1801,8 @@ K
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameRitual Carver
 E
 4Base.Abilities.hero_battle_ability.TribalHealer_NameHealing Salve
-[
-*Base.BuildingGroups.premiumRitualSite_NameLuxurious Ritual SiteLuxurious Ritual Sites
+I
+*Base.BuildingGroups.premiumRitualSite_NameMagma TempleMagma Temples
 L
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_Name
 moth glade
@@ -1832,6 +1856,8 @@ E
 4Base.Technologies.Technology_Mayas_SolarRituals_NameSolar Rituals
 á
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc6Substantially improves Happiness of adjacent buildings
 A
 #Base.BuildingGroups.jadeQuarry_NameJade QuarryJade Quarries
 P
@@ -1898,8 +1924,12 @@ O
 JBase.AbilityDescriptions.hero_battle_ability_description.MaoriChief_1_Name˛<style=ability_label>Shield</style>Invokes the power of water targeting the biggest cluster of friendly units, providing <style=basestat>{shield_percentage}</style> of Te Wherowhero's Base Damage as a shield in a range of <style=basestat>{range}</style>.
 c
 QBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_TreasureTrove_NameTreasure Trove
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_DescProduces Ritual Daggers
 å
 <Base.Buildings.Building_FeudalAge_Special_HeroAcademy_1_DescLThe Hero Academy produces Experience Scrolls at the cost of Research Points.
+t
+5Base.Buildings.Building_Mayas_Workshop_Premium_3_Desc;Produces Ancestor Masks, Calendar Stones and Ritual Daggers
 C
 2Base.Buildings.Building_Vikings_Home_Worker_1_NameWorker's Home
 U
@@ -1934,6 +1964,8 @@ I
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_NameSiege Barracks
 7
 #Base.Heroes.hero.OracleOfDephi_NameOracle of Delphi
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_DescProduces Calendar Stones
 I
 5Base.Abilities.hero_battle_ability.QueenBoudicca_NameCeltic Vengeance
 :
@@ -2255,6 +2287,8 @@ O
 ;Base.Technologies.Technology_BronzeAge_CavalrySpearmen_NameMounted Spearmen
 D
 $Base.BuildingGroups.heroAcademy_NameHero AcademyHero Academies
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_2_Desc(Improves Happiness of adjacent buildings
 >
 &Base.Units.Unit_ArtemisiaIOfCaria_NameArtemisia I of Caria
 L
@@ -2315,6 +2349,8 @@ g
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 P
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMask of Tutankhamun
+Å
+5Base.Buildings.Building_Mayas_Workshop_Premium_6_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
 S
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePaper Packaging
 Q
@@ -2353,6 +2389,8 @@ r
 1Base.Buildings.Building_China_Home_Average_4_Desc=Produces a big pile of Wu Zhu and adds 5 workers to your city
 \
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_8_NameMinoan Watchtower
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_5_DescProduces Calendar Stones
 |
 1Base.Buildings.Building_Mayas_Home_Premium_4_DescGProduces a ton of Cocoa and adds 2 Workers and 1 Craftsman to your city
 C
@@ -2453,6 +2491,8 @@ R
 B
 4Base.Technologies.Technology_Vikings_Pictograms_Name
 Pictograms
+1
+!Base.Cities.City_Mayas_Tikal_NameMayan Empire
 J
 5Base.Abilities.hero_battle_ability.RagnarLodbrok_NameLion of the North
 :
@@ -2578,6 +2618,8 @@ D
 Base.Ages.ByzantineEra_NameByzantine Era
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_5_NameAviary
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_2_DescProduces Headdresses
 û
 !Base.Units.Unit_VikingRaider_Desc¯Have no fear and fight bravely, for Freyd√≠s Eir√≠ksd√≥ttir will guard your back! This 11th century Viking is noted for her bold exploits and determination in the Norse sagas of Vinland.<br><br>As the daughter of Erik the Red, she embarked on voyages to Vinland, part of the North American coast, showcasing her determination and courage in the face of unknown lands. Freyd√≠s's legend includes stories of her fearlessly defending her settlement against adversaries.<br><br>Her tales, though steeped in myth, highlight the strength and tenacity of Viking women, contributing to a legacy of adventure and resilience in Norse history.
 J
@@ -2652,6 +2694,8 @@ Z
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_1_NameHeavy Infantry Barracks
 ¨
 :Base.Buildings.Building_ClassicGreece_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_DescProduces Ancestor Masks
 G
 3Base.Buildings.Building_Mayas_Aviary_Premium_2_NameLuxurious Aviary
 H
@@ -2740,6 +2784,8 @@ RBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_1_N
 F
 8Base.Technologies.Technology_RomanEmpire_Sagittarii_Name
 Sagittarii
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_4_DescProduces Headdresses
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_Descproduces kaolin
 à
@@ -2785,6 +2831,8 @@ Z
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_3_NameHeavy Infantry Barracks
 O
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NamePlundering Raids
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_DescProduces Ancestor Masks
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSilver Bolts
 ˜
@@ -3063,6 +3111,8 @@ W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_3_Descrefines kaolin into clay
 K
 2Base.Units.Unit_TreasureHunt_Blue_Harpoonists_NameCelestial Harpoonists
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_2_DescProduces a ton of Feathers
 i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_2_Desc.Increases the irrigation of adjacent buildings
 b
@@ -3388,6 +3438,8 @@ M
 :Base.Technologies.Technology_EarlyRome_PilumPrecision_NamePilum Precision
 K
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_5_NameSilk workshop
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_5_DescProduces a ton of Feathers
 I
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_3_NameSiege Barracks
 j
@@ -3400,8 +3452,8 @@ U
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescLSend off expedition ships which will gather either jewel- or spice treasures
 k
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc.Increases the irrigation of adjacent buildings
-G
-*Base.BuildingGroups.averageRitualSite_NameRitual SiteRitual Sites
+M
+*Base.BuildingGroups.averageRitualSite_NameCrystal SpringCrystal Springs
 F
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Name
 Chronicler
@@ -3504,6 +3556,8 @@ BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHero Academ
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_NameÁ<style=ability_label>Buff</style>When the holder's hitpoints drop below <style=basestat>{hp_threshold}</style>, their defense is increased by <style=basestat>{defense_buff}</style> until the end of the current wave. Does not stack.
 R
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescProduces Doors
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_3_DescProduces Calendar Stones
 I
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_2_NameSiege Barracks
 r
@@ -3584,6 +3638,8 @@ c
 2Base.Buildings.Building_StoneAge_Home_Small_2_Desc-Produces Coins and adds a Worker to your city
 R
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescProduces Mosaics
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduces Headdresses
 ;
 &Base.Regions.region.FrozenFjord_4_NameForest of the Fae
 F
@@ -3642,6 +3698,8 @@ I
 @Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameBetter Obsidian Extraction
 µ
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_NameË<style=ability_label>Area Strike| Debuff| Burn</style>Summons a fiery dragon striking the location of the biggest cluster of enemy units three times, reducing DEF by <style=basestat>{def_percentage}</style> of Mulan's ATK each time and dealing a total of <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. Affected enemy units burn for a further <style=basestat>{dmg_percentage_burn}</style> damage over <style=basestat>{burn_duration}</style>.
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_4_Desc6Substantially improves Happiness of adjacent buildings
 º
 #Base.Units.Unit_OttomanGeneral_DescîYalla! Sail the seas with Hasan Pasha, son of the famed Ottoman admiral Hayreddin Barbarossa. This pirate and leader grow famous in the mid-16th century, serving as the Beylerbey of Algiers.<br><br>Following in his father's wave, Hasan Pasha strengthened Ottoman naval dominance in the Mediterranean by engaging in significant naval campaigns and corsair activities against European powers. His leadership secured Algiers as a central hub of Ottoman influence, cementing its status as a formidable power in North Africa.<br><br>His legacy is marked by his efforts to uphold Ottoman supremacy in maritime affairs, playing a crucial role during a time of intense regional and naval conflict. Pasha loves spicy food, which keeps upsetting the other Heroes of History, especially Joan of Arc!
 O
@@ -3749,6 +3807,8 @@ T
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_NameInfantry Barracks
 
 Base.HeroClass.GeniusGenius
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_DescProduces Ancestor Masks
 2
 Base.Buildings.default_NameBuilding	Buildings
 D
@@ -3891,6 +3951,8 @@ G
 Base.HeroClass.DefenderDefender
 D
 /Base.Continents.continent.EmeraldHighlands_NameEmerald Highlands
+d
+5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc+Produces Ancestor Masks and Calendar Stones
 J
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescProduces Gold Ore
 ü
@@ -3968,6 +4030,8 @@ M
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameCavalry Barracks
 ©
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DescnThe Great Hall is the center of your city. It continuously generates a small amount of Coins and Food for you.
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_DescProduces Ritual Daggers
 U
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_NameCeremony Outfitter
 &
@@ -4087,6 +4151,8 @@ B
 6Base.Buildings.Building_Arabia_Merchant_Average_2_NameMerchant
 C
 8Base.Technologies.Technology_AgeOfTheFranks_Scythes_NameScythes
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_DescProduces Ritual Daggers
 ﬁ
 LBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_1_Nameç<style=ability_label>Taunt| Invincibility| Burn</style>Invokes the power of Rome, taunting all enemies for <style=basestat>{taunt_duration}</style> and becoming invincible for <style=basestat>{invincibility_duration}</style>. Enemy units close to Caesar are affected by his fiery aura, burning them for <style=basestat>{dmg_percentage}</style> damage over <style=basestat>{burn_duration}</style>. 
 1
@@ -4187,6 +4253,8 @@ E
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_NameScribe
 +
 Base.Units.Unit_Sacagawea_Name	Sacagawea
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
 A
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Name
 Small Home
@@ -4200,6 +4268,8 @@ S
 @Base.Technologies.Technology_KingdomOfSicily_DomedSanctuary_NameDomed Sanctuary
 B
 6Base.Technologies.Technology_RomanEmpire_Princeps_NamePrinceps
+Å
+5Base.Buildings.Building_Mayas_Workshop_Premium_4_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
 i
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Desc.Increases the irrigation of adjacent buildings
 F
@@ -4619,6 +4689,8 @@ Small Well
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameMedium Home
 F
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_NameDomestic Farm
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_DescProduces Calendar Stones
 L
 <Base.Technologies.Technology_HighMiddleAges_MailBarding_NameMail Barding
 i
@@ -4927,6 +4999,8 @@ _
 Base.BuildingGroups.MarketplaceMarketplace
 ¯
 IBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_15_Name™<style=ability_label>Debuff| Burn</style>Targets the biggest cluster of enemy units, reducing accuracy by <style=basestat>{accuracy_percentage}</style> and ATK by <style=basestat>{atk_percentage}</style> of Marx's ATK for <style=basestat>{duration}</style> in a range of <style=basestat>{range}</style>. Affected units also burn for <style=basestat>{dmg_percentage}</style> damage over <style=basestat>{burn_duration}</style>.
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_DescProduces Headdresses
 π
 SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_Name·<style=ability_label>Area Strike| Stun| Burn</style>Directs a deafening sound towards the biggest cluster of enemy units, dealing <style=basestat>{dmg_percentage}</style> damage and stunning all enemies for <style=basestat>{stun_duration}</style> in a range of <style=basestat>{range}</style>. Affected units have a <style=basestat>{chance}</style> chance to burn, dealing a further <style=basestat>{burn_dmg_percentage}</style> damage over <style=basestat>{burn_duration}</style>.
 I
@@ -4944,6 +5018,8 @@ T
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameAdvanced Trebuchet
 t
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_2_Desc8Produces a small amount of Food in short period of time.
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_3_Desc(Improves Happiness of adjacent buildings
 P
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_6_NameExpedition pier
 @
@@ -5025,6 +5101,8 @@ o
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc8Produces a small amount of Food in short period of time.
 Ô
 IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name°<style=ability_label>Mind Control| Buff</style>Directs the Eye of Horus at the biggest cluster of enemy units, making them attack their allies for <style=basestat>{duration}</style>. Enemy units under Cleopatra's control gain <style=basestat>{attack_speed_percentage}</style> attack speed.
+W
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_3_DescProduces Headdresses
 O
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_1_NameInfantry Barracks
 D
@@ -5104,6 +5182,8 @@ w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc=The tavern produces mead and stockfish out of honey and fish.
 -
  Base.Ages.KingdomOfSicily_Decade	1100 A.D.
+7
+'Base.Cities.City_Mayas_ChichenItza_NameMayan Empire
 ˚
 QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name•<style=ability_label>Recovery</style>When the holder faces fatal damage for the first time in a battle, their HP recovers to <style=basestat>{hp_percentage}</style>.
 =
@@ -5185,6 +5265,8 @@ d
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc0Produces Cocoa and adds 2 Craftsmen to your city
 P
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_NameOpen Field System
+Q
+3Base.Buildings.Building_Mayas_Aviary_Premium_3_DescProduces a ton of Feathers
 K
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_NameSilk workshop
 v
@@ -5408,12 +5490,16 @@ I
 :Base.Technologies.Technology_ClassicGreece_SilverRing_NameSilver Ring
 ?
 'Base.Units.Unit_LudwigVanBeethoven_NameLudwig van Beethoven
+7
+'Base.Cities.City_Mayas_SayilPalace_NameMayan Empire
 D
 3Base.Technologies.Technology_China_InkAndBrush_NameInk and Brush
 g
 2Base.Buildings.Building_Vikings_Home_Worker_2_Desc1Produces Pennies and adds 2 Workers to your city.
 y
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_5_Desc6Substantially improves Happiness of adjacent buildings
 K
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameSiege Tower
 N
@@ -5437,6 +5523,8 @@ G
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_NameLuxurious Home
 Å
 Base.Units.Unit_VikingJarl_Desc›Set forth: unfurl the sails and smell the salt, for tonight we talk of Erik the Red. This explorer from the late 10th century is famous for founding the first Norse settlements in Greenland. Born in Norway, he was exiled to Iceland and later to Greenland due to his involvement in several conflicts.<br><br>Known for his adventurous spirit and leadership, Erik crossed the whale-roads of the Atlantic to establish a successful colony on Greenland, attracting settlers with tales of fertile land. His efforts marked a significant expansion of Norse exploration into the North Atlantic.<br><br>Erik the Red's legacy endures as a pioneering leader in the Viking Age, highlighting the adventurous and resilient nature of Norse exploration and settlement. I've heard there's also Eric the Blue, Eric the Yellow, Eric the Green, and Eric the Purple: collect them all!
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc(Improves Happiness of adjacent buildings
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameMagma Temple
 N
@@ -5727,6 +5815,8 @@ Q
 ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_NameHero Academy
 >
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_NameOasis
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_DescProduces Calendar Stones
 \
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_5_NameMinoan Watchtower
 K
@@ -6249,8 +6339,12 @@ B
 Cataphract
 ó
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name√<style=ability_label>Stomp| Shield| Buff</style>Performs a powerful sword attack, dealing <style=basestat>{dmg_percentage}</style> damage to all enemy units within a range of <style=basestat>{range}</style>. William Wallace gains <style=basestat>{shield_percentage}</style> of his base damage as a shield and increases his DEF by <style=basestat>{def_percentage}</style> for <style=basestat>{duration}</style>. Also grants <style=basestat>{shield_percentage_friendly}</style> of his base damage as a shield to all friendly units within a range of <style=basestat>{range}</style>.
+T
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_DescProduces Calendar Stones
 #
 Base.HeroClass.ChampionChampion
+U
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_4_DescProduces Ritual Daggers
 A
 3Base.Technologies.Technology_Vikings_MeadHalls_Name
 Mead Halls
@@ -6475,6 +6569,8 @@ G
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_NameLuxurious Home
 N
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_NameSiege Barracks
+U
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_DescProduces Ancestor Masks
 m
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc8Produces a small amount of Food in short period of time.
 Z
@@ -6552,6 +6648,10 @@ w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc=The Tavern produces Mead and Stockfish out of Honey and Fish.
 R
 ;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_NameLittle Culture Site
+c
+7Base.Buildings.Building_Mayas_RitualSite_Average_6_Desc(Improves Happiness of adjacent buildings
+q
+7Base.Buildings.Building_Mayas_RitualSite_Premium_3_Desc6Substantially improves Happiness of adjacent buildings
 Ÿ
 GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Nameç<style=ability_label>Melee Strike</style>Kicks the current target three times for a total of <style=basestat>{dmg_percentage}</style> damage.
 ^
@@ -6637,6 +6737,8 @@ H
 Sagittarii
 A
 0Base.Buildings.Building_Mayas_Quarry_Jade_6_DescProduces Jade
+t
+5Base.Buildings.Building_Mayas_Workshop_Premium_2_Desc;Produces Ancestor Masks, Calendar Stones and Ritual Daggers
 E
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameGold Laurel
 ,

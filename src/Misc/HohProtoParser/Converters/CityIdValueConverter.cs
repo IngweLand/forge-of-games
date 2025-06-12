@@ -10,6 +10,6 @@ public class CityIdValueConverter : IValueConverter<string, CityId>
     {
         return string.IsNullOrWhiteSpace(sourceMember)
             ? CityId.Undefined
-            : HohStringParser.ParseEnumFromString<CityId>(sourceMember, '_');
+            : HohStringParser.ParseEnumFromString2<CityId>(sourceMember, '_');
     }
 }

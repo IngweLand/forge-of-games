@@ -21,7 +21,7 @@ public class CityUiService(
     public async Task<IReadOnlyCollection<CityBuildingGroupsViewModel>> GetCityBuildingGroupsAsync()
     {
         var cityIds = new List<CityId>
-            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas};
+            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal};
         var result = new List<CityBuildingGroupsViewModel>();
         foreach (var cityId in cityIds)
         {
@@ -35,12 +35,10 @@ public class CityUiService(
     {
         var wonders = await cityService.GetWonderBasicDataAsync();
         return wonders
-            .OrderBy(wbd => wbd.CityName)
-            .GroupBy(wbd => wbd.CityId)
-            .Select(group => new WonderGroupViewModel
+            .Select(kvp => new WonderGroupViewModel
             {
-                CityId = group.Key, CityName = group.First().CityName,
-                Wonders = mapper.Map<IReadOnlyCollection<WonderBasicViewModel>>(group.OrderBy(wbd => wbd.WonderName)),
+                CityId = kvp.Key, CityName = kvp.Value.First().CityName,
+                Wonders = mapper.Map<IReadOnlyCollection<WonderBasicViewModel>>(kvp.Value.OrderBy(wbd => wbd.WonderName)),
             })
             .ToList();
     }

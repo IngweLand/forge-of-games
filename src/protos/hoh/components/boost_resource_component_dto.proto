@@ -7,6 +7,6 @@ message BoostResourceComponentDTO {
   double value = 2;
   string resource_id = 6;
   string resource_type = 7;
-  string city = 8;
+  repeated string cities = 8;
   string dynamic_value_id = 9;
 }

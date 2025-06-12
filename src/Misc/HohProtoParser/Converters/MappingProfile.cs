@@ -140,7 +140,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.UnitType,
                 opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)));
         CreateMap<BoostResourceComponentDTO, BoostResourceComponent>()
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), br => br.City))
+            .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), br => br.Cities))
             .ForMember(dest => dest.ResourceId, opt =>
             {
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.ResourceId));
@@ -206,7 +206,7 @@ public class MappingProfile : Profile
         CreateMap<EncounterDefinitionDTO, Encounter>().ConvertUsing<EncounterDefinitionDtoConverter>();
         CreateMap<RegionDefinitionDTO, Region>().ConvertUsing<RegionDefinitionConverter>();
         CreateMap<ResourceDefinitionDTO, Resource>()
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), rd => rd.City))
+            .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), rd => rd.Cities))
             .ForMember(dest => dest.Type, opt => opt.MapFrom(rd => rd.Type.ToResourceType()))
             .ForMember(
                 dest => dest.Age, opt =>
@@ -228,7 +228,7 @@ public class MappingProfile : Profile
                     opt.PreCondition(bd => !string.IsNullOrWhiteSpace(bd.Age));
                     opt.ConvertUsing(new AgeValueConverter(), bd => bd.Age);
                 })
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), bd => bd.City))
+            .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), bd => bd.Cities))
             .ForMember(dest => dest.Type, opt => opt.MapFrom(bd => bd.Type.ToBuildingType()))
             .ForMember(dest => dest.Group, opt => opt.MapFrom(bd => bd.Subtype.ToBuildingSubtype()))
             .ForMember(dest => dest.Components, opt => opt.MapFrom(bd => bd.PackedComponents));

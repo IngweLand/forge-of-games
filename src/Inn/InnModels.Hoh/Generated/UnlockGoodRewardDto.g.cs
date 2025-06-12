@@ -25,13 +25,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chx1bmxvY2tfZ29vZF9yZXdhcmRfZHRvLnByb3RvGgxpZF9kdG8ucHJvdG8i",
-            "RAoTVW5sb2NrR29vZFJld2FyZERUTxISCgJJZBgBIAEoCzIGLklkRHRvEgwK",
-            "BENpdHkYAiABKAkSCwoDQWdlGAMgASgJQh+qAhxJbmd3ZWxhbmQuRm9nLklu",
-            "bi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "RgoTVW5sb2NrR29vZFJld2FyZERUTxISCgJpZBgBIAEoCzIGLklkRHRvEg4K",
+            "BmNpdGllcxgCIAMoCRILCgNhZ2UYAyABKAlCH6oCHEluZ3dlbGFuZC5Gb2cu",
+            "SW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.IdDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.UnlockGoodRewardDTO), global::Ingweland.Fog.Inn.Models.Hoh.UnlockGoodRewardDTO.Parser, new[]{ "Id", "City", "Age" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.UnlockGoodRewardDTO), global::Ingweland.Fog.Inn.Models.Hoh.UnlockGoodRewardDTO.Parser, new[]{ "Id", "Cities", "Age" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,7 +74,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public UnlockGoodRewardDTO(UnlockGoodRewardDTO other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
-      city_ = other.city_;
+      cities_ = other.cities_.Clone();
       age_ = other.age_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -85,7 +85,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new UnlockGoodRewardDTO(this);
     }
 
-    /// <summary>Field number for the "Id" field.</summary>
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private global::Ingweland.Fog.Inn.Models.Hoh.IdDto id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -97,19 +97,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "City" field.</summary>
-    public const int CityFieldNumber = 2;
-    private string city_ = "";
+    /// <summary>Field number for the "cities" field.</summary>
+    public const int CitiesFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_cities_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> cities_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string City {
-      get { return city_; }
-      set {
-        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
+    public pbc::RepeatedField<string> Cities {
+      get { return cities_; }
     }
 
-    /// <summary>Field number for the "Age" field.</summary>
+    /// <summary>Field number for the "age" field.</summary>
     public const int AgeFieldNumber = 3;
     private string age_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -137,7 +136,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return true;
       }
       if (!object.Equals(Id, other.Id)) return false;
-      if (City != other.City) return false;
+      if(!cities_.Equals(other.cities_)) return false;
       if (Age != other.Age) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -147,7 +146,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
-      if (City.Length != 0) hash ^= City.GetHashCode();
+      hash ^= cities_.GetHashCode();
       if (Age.Length != 0) hash ^= Age.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -171,10 +170,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(City);
-      }
+      cities_.WriteTo(output, _repeated_cities_codec);
       if (Age.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Age);
@@ -193,10 +189,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(City);
-      }
+      cities_.WriteTo(ref output, _repeated_cities_codec);
       if (Age.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(Age);
@@ -214,9 +207,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (id_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
-      if (City.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
-      }
+      size += cities_.CalculateSize(_repeated_cities_codec);
       if (Age.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Age);
       }
@@ -238,9 +229,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         }
         Id.MergeFrom(other.Id);
       }
-      if (other.City.Length != 0) {
-        City = other.City;
-      }
+      cities_.Add(other.cities_);
       if (other.Age.Length != 0) {
         Age = other.Age;
       }
@@ -267,7 +256,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 18: {
-            City = input.ReadString();
+            cities_.AddEntriesFrom(input, _repeated_cities_codec);
             break;
           }
           case 26: {
@@ -297,7 +286,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 18: {
-            City = input.ReadString();
+            cities_.AddEntriesFrom(ref input, _repeated_cities_codec);
             break;
           }
           case 26: {

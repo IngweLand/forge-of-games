@@ -14,7 +14,7 @@ public class Building
     public BuildingBuffDetails? BuffDetails { get; init; }
 
     [ProtoMember(3)]
-    public CityId CityId { get; init; }
+    public HashSet<CityId> CityIds { get; init; } = [];
 
     [ProtoMember(4)]
     public required IList<ComponentBase> Components { get; init; }

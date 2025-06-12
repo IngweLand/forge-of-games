@@ -24,14 +24,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static ResourceDefinitionDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch1yZXNvdXJjZV9kZWZpbml0aW9uX2R0by5wcm90byJYChVSZXNvdXJjZURl",
+            "Ch1yZXNvdXJjZV9kZWZpbml0aW9uX2R0by5wcm90byJaChVSZXNvdXJjZURl",
             "ZmluaXRpb25EVE8SCgoCaWQYASABKAkSDAoEdHlwZRgDIAEoCRILCgNhZ2UY",
-            "BCABKAkSDAoEY2l0eRgFIAEoCRIKCgJ1NhgGIAEoBUIfqgIcSW5nd2VsYW5k",
-            "LkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "BCABKAkSDgoGY2l0aWVzGAUgAygJEgoKAnU2GAYgASgFQh+qAhxJbmd3ZWxh",
+            "bmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ResourceDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.ResourceDefinitionDTO.Parser, new[]{ "Id", "Type", "Age", "City", "U6" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ResourceDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.ResourceDefinitionDTO.Parser, new[]{ "Id", "Type", "Age", "Cities", "U6" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,7 +76,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       id_ = other.id_;
       type_ = other.type_;
       age_ = other.age_;
-      city_ = other.city_;
+      cities_ = other.cities_.Clone();
       u6_ = other.u6_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -123,16 +123,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "city" field.</summary>
-    public const int CityFieldNumber = 5;
-    private string city_ = "";
+    /// <summary>Field number for the "cities" field.</summary>
+    public const int CitiesFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_cities_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> cities_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string City {
-      get { return city_; }
-      set {
-        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
+    public pbc::RepeatedField<string> Cities {
+      get { return cities_; }
     }
 
     /// <summary>Field number for the "u6" field.</summary>
@@ -165,7 +164,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id != other.Id) return false;
       if (Type != other.Type) return false;
       if (Age != other.Age) return false;
-      if (City != other.City) return false;
+      if(!cities_.Equals(other.cities_)) return false;
       if (U6 != other.U6) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -177,7 +176,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (Age.Length != 0) hash ^= Age.GetHashCode();
-      if (City.Length != 0) hash ^= City.GetHashCode();
+      hash ^= cities_.GetHashCode();
       if (U6 != 0) hash ^= U6.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -209,10 +208,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(34);
         output.WriteString(Age);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(City);
-      }
+      cities_.WriteTo(output, _repeated_cities_codec);
       if (U6 != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(U6);
@@ -239,10 +235,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(34);
         output.WriteString(Age);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(City);
-      }
+      cities_.WriteTo(ref output, _repeated_cities_codec);
       if (U6 != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(U6);
@@ -266,9 +259,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Age.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Age);
       }
-      if (City.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
-      }
+      size += cities_.CalculateSize(_repeated_cities_codec);
       if (U6 != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(U6);
       }
@@ -293,9 +284,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.Age.Length != 0) {
         Age = other.Age;
       }
-      if (other.City.Length != 0) {
-        City = other.City;
-      }
+      cities_.Add(other.cities_);
       if (other.U6 != 0) {
         U6 = other.U6;
       }
@@ -327,7 +316,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 42: {
-            City = input.ReadString();
+            cities_.AddEntriesFrom(input, _repeated_cities_codec);
             break;
           }
           case 48: {
@@ -362,7 +351,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 42: {
-            City = input.ReadString();
+            cities_.AddEntriesFrom(ref input, _repeated_cities_codec);
             break;
           }
           case 48: {

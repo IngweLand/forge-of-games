@@ -8,7 +8,7 @@ namespace Ingweland.Fog.Models.Hoh.Entities.City;
 public class BoostResourceComponent : ComponentBase
 {
     [ProtoMember(1)]
-    public CityId CityId { get; init; }
+    public HashSet<CityId> CityIds { get; init; } = [];
 
     [ProtoMember(2)]
     public string? ResourceId { get; init; }

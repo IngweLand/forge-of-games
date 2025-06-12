@@ -8,5 +8,5 @@ message InstantUpgradeRewardDTO {
 //      }
   string target_building_id = 2;
   string building_group_id = 10;
-  string city = 11;
+  repeated string cities = 11;
 }

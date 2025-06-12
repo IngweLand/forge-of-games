@@ -42,7 +42,7 @@ public class BuildingViewModelFactory(
         {
             Id = source.Id,
             Name = source.Name,
-            AgeName = source.CityId == CityId.Capital ? source.Age?.Name : null,
+            AgeName = source.CityIds.Contains(CityId.Capital) ? source.Age?.Name : null,
             AgeColor = source.Age.ToCssColor(),
             Size = buildingSizeString,
             Level = source.Level,

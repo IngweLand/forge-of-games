@@ -13,7 +13,7 @@ public class WonderDtoFactory(IHohGameLocalizationService localizationService) :
         {
             Id = wonder.Id,
             CityName = localizationService.GetCityName(wonder.CityId),
-            WonderName = localizationService.GetWonderName($"{wonder.CityId}_{wonder.Id}"),
+            WonderName = localizationService.GetWonderName(wonder.Id.ToString()),
             Levels = wonder.LevelUpComponent.LevelCosts.OrderBy(wlc => wlc.Level)
                 .Select(wlc => new WonderLevelDto() {Cost = wlc.Crates}).ToList(),
         };

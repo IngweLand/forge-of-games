@@ -27,7 +27,7 @@ public class CityDefinitionMappingProfile : Profile
             .ForMember(dest => dest.CityName,
                 opt => opt.ConvertUsing<CityLocalizationConverter, CityId>(src => src.CityId))
             .ForMember(dest => dest.WonderName,
-                opt => opt.ConvertUsing<WonderNameLocalizationConverter, string>(src => $"{src.CityId}_{src.Id}"));
+                opt => opt.ConvertUsing<WonderNameLocalizationConverter, string>(src => src.Id.ToString()));
 
         CreateMap<BuildingCustomization, BuildingCustomizationDto>()
             .ForMember(dest => dest.Name,

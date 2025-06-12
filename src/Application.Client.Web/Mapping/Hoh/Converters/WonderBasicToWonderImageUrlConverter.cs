@@ -9,7 +9,7 @@ public class WonderBasicToWonderImageUrlConverter(IAssetUrlProvider assetUrlProv
 {
     public string Convert(WonderBasicDto sourceMember, ResolutionContext context)
     {
-        var imageId = $"banner_wonder_{sourceMember.CityId}_{sourceMember.Id}".ToLowerInvariant();
+        var imageId = $"banner_wonder_{sourceMember.Id}".ToLowerInvariant();
         return assetUrlProvider.GetHohImageUrl(imageId);
     }
 }

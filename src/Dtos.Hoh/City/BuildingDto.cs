@@ -20,7 +20,7 @@ public class BuildingDto
     public BuildingBuffDetails? BuffDetails { get; init; }
 
     [ProtoMember(3)]
-    public required CityId CityId { get; init; }
+    public required HashSet<CityId> CityIds { get; init; }
 
     [ProtoMember(4)]
     public required IReadOnlyCollection<ComponentBase> Components { get; init; }

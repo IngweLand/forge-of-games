@@ -13,6 +13,7 @@ message TechnologyDefinitionDTO {
   string city = 6;
   //ResearchComponentDTO
   google.protobuf.Any packed_research_component = 7;
+  repeated string cities = 8;
 }
 
 

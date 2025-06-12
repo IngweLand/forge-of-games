@@ -10,7 +10,7 @@ public class Resource
     public Age? Age { get; init; }
 
     [ProtoMember(2)]
-    public CityId CityId { get; init; }
+    public HashSet<CityId> CityIds { get; init; }
 
     [ProtoMember(3)]
     public required string Id { get; init; }

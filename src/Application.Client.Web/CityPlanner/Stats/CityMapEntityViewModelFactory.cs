@@ -64,7 +64,7 @@ public class CityMapEntityViewModelFactory(
             infoItems.Add(new IconLabelItemViewModel()
             {
                 Label = grantWorkerComponent.WorkerCount.ToString(),
-                IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityId),
+                IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityIds.First()),
             });
         }
 
@@ -106,7 +106,7 @@ public class CityMapEntityViewModelFactory(
                                 generalItems.Add(new IconLabelItemViewModel()
                                 {
                                     Label = productionStatsItem.WorkerCount.ToString(),
-                                    IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityId),
+                                    IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityIds.First()),
                                 });
                             }
 

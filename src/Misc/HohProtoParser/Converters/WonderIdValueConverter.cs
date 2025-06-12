@@ -10,6 +10,6 @@ public class WonderIdValueConverter : IValueConverter<string, WonderId>
     {
         return string.IsNullOrWhiteSpace(sourceMember)
             ? WonderId.Undefined
-            : HohStringParser.ParseEnumFromString<WonderId>(sourceMember, '_');
+            : HohStringParser.ParseEnumFromString2<WonderId>(sourceMember, '_');
     }
 }

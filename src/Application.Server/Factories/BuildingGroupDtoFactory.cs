@@ -19,7 +19,7 @@ public class BuildingGroupDtoFactory(IHohGameLocalizationService localizationSer
             Buildings = mapper.Map<List<BuildingDto>>(buildings),
             Type = type,
             TypeName = localizationService.GetBuildingType(type),
-            CityName = localizationService.GetCityName(buildings.First().CityId),
+            CityName = localizationService.GetCityName(buildings.First().CityIds.First()),
         };
     }
 }

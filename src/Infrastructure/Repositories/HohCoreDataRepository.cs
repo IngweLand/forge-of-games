@@ -92,7 +92,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     public async Task<IReadOnlyCollection<Building>> GetBuildingsAsync(CityId cityId)
     {
         var data = await dataProvider.GetDataAsync();
-        return data.Buildings.Where(b => b.CityId == cityId).ToList();
+        return data.Buildings.Where(b => b.CityIds.Contains(cityId)).ToList();
     }
 
     public async Task<IReadOnlyCollection<Technology>> GetTechnologiesAsync(CityId cityId)
@@ -112,7 +112,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     {
         var data = await dataProvider.GetDataAsync();
         return data.Buildings
-            .Where(b => b.CityId == cityId && b.Group == group).ToList();
+            .Where(b => b.CityIds.Contains(cityId) && b.Group == group).ToList();
     }
 
     public async Task<IReadOnlyCollection<TreasureHuntDifficultyData>> GetTreasureHuntDifficultiesAsync()
