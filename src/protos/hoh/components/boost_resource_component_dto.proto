@@ -4,9 +4,9 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message BoostResourceComponentDTO {
   string id = 1;
-  double value = 2;
+  optional double value = 2;
   string resource_id = 6;
   string resource_type = 7;
   repeated string cities = 8;
-  string dynamic_value_id = 9;
+  string dynamic_values_id = 9;
 }

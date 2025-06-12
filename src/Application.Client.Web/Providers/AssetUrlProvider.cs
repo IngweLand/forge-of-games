@@ -55,9 +55,6 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_{iconId}.png");
     }
 
-    public string GetHohWorkerIconUrl(CityId cityId) =>
-        GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_workers_city_{cityId.ToString().ToLowerInvariant()}.png");
-
     public string GetNotoSansFontUrl(string locale)
     {
         var filename = locale switch

@@ -89,7 +89,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.WellKnownTypes.Any.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> packedItems_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     /// <summary>
-    /// StartupResponseDTO, CityDTO, HeroPush, EquipmentPush
+    /// StartupResponseDTO, CityDTO, HeroPush, EquipmentPush, ReworkedWondersDTO
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

@@ -32,4 +32,7 @@ public class CityPlannerDataDto
 
     [ProtoMember(8)]
     public required IReadOnlyCollection<AgeDto> Ages { get; set; }
+
+    [ProtoMember(9)]
+    public required IReadOnlyCollection<WonderDto> Wonders { get; set; } = new List<WonderDto>();
 }

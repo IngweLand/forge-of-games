@@ -8,4 +8,5 @@ public sealed partial class StartupDto
     public HeroPush HeroPush => PackedItems.FindAndUnpackToList<HeroPush>().First();
     public RelicPush? RelicPush => PackedItems.FindAndUnpackToList<RelicPush>().FirstOrDefault();
     public EquipmentPush? Equipment => PackedItems.FindAndUnpackToList<EquipmentPush>().FirstOrDefault();
+    public ReworkedWondersDTO? Wonders => PackedItems.FindAndUnpackToList<ReworkedWondersDTO>().FirstOrDefault();
 }

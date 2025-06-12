@@ -112,6 +112,8 @@ public class MappingProfile : Profile
                         return context.Mapper.Map<EncounterDetails>(kvp.Value);
                     }));
         CreateMap<EncounterDetailsDto, EncounterDetails>().ConvertUsing(new EncounterDetailsDtoConverter());
+        CreateMap<BuildingLevelDynamicChangeDTO, Dictionary<int, float>>()
+            .ConvertUsing(new BuildingLevelDynamicChangeDtoConverter());
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -131,7 +133,8 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.BuildTime, opt => opt.MapFrom(uc => uc.BuildTime.Seconds))
             .ForMember(dest => dest.WorkerCount, opt => opt.MapFrom(uc => uc.WorkerCount.Count))
             .ForMember(dest => dest.Cost, opt => opt.MapFrom(uc => uc.Requirements.Cost));
-        CreateMap<GrantWorkerComponentDTO, GrantWorkerComponent>();
+        CreateMap<GrantWorkerComponentDTO, GrantWorkerComponent>()
+            .ConvertUsing(new GrantWorkerComponentTypeConverter());
         CreateMap<CultureComponentDTO, CultureComponent>().ConvertUsing(new CultureComponentTypeConverter());
         CreateMap<BuildingUnitProviderComponentDTO, BuildingUnitProviderComponent>()
             .ForMember(dest => dest.BuildingUnit, opt => opt.MapFrom(bupc => bupc.Unit));
@@ -140,17 +143,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.UnitType,
                 opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)));
         CreateMap<BoostResourceComponentDTO, BoostResourceComponent>()
-            .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), br => br.Cities))
-            .ForMember(dest => dest.ResourceId, opt =>
-            {
-                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.ResourceId));
-                opt.MapFrom(src => src.ResourceId);
-            })
-            .ForMember(dest => dest.ResourceType, opt =>
-            {
-                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.ResourceType));
-                opt.MapFrom(src => src.ResourceType.ToResourceType());
-            });
+            .ConvertUsing(new BoostResourceComponentTypeConverter());
         CreateMap<RepeatedField<Any>, IList<ComponentBase>>().ConvertUsing<ComponentDtoConverter>();
         CreateMap<HeroProgressionComponentDTO, HeroProgressionComponent>()
             .ForMember(dest => dest.Id,
@@ -257,7 +250,8 @@ public class MappingProfile : Profile
         CreateMap<BattleAbilityDefinitionDTO, HeroAbility>();
         CreateMap<ReworkedWonderDefinitionDTO, Wonder>()
             .ForMember(dest => dest.Id, opt => opt.ConvertUsing(new WonderIdValueConverter(), src => src.Id))
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId));
+            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
+            .ForMember(dest => dest.Components, opt => opt.MapFrom(src => src.PackedLevels));
         CreateMap<CityDefinitionDTO, CityDefinition>()
             .ForMember(dest => dest.Id, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.Id))
             .ForMember(dest => dest.BuildMenuTypes,

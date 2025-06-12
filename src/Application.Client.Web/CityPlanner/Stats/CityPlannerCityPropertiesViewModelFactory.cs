@@ -7,10 +7,10 @@ using Ingweland.Fog.Models.Hoh.Enums;
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
 public class CityPlannerCityPropertiesViewModelFactory(
-    IAssetUrlProvider assetUrlProvider,
     IHappinessStatsViewModelFactory happinessStatsViewModelFactory,
     IProductionStatsViewModelFactory productionStatsViewModelFactory,
-    IAreaStatsViewModelFactory areaStatsViewModelFactory)
+    IAreaStatsViewModelFactory areaStatsViewModelFactory,
+    IWorkerIconUrlProvider workerIconUrlProvider)
     : ICityPlannerCityPropertiesViewModelFactory
 {
     public CityPlannerCityPropertiesViewModel Create(CityId cityId, string name, AgeViewModel age, CityStats stats,
@@ -18,12 +18,13 @@ public class CityPlannerCityPropertiesViewModelFactory(
     {
         return new CityPlannerCityPropertiesViewModel()
         {
+            CityId = cityId,
             Name = name,
             Age = age,
             Workforce = new IconLabelItemViewModel()
             {
                 Label = $"{stats.ProvidedWorkersCount - stats.RequiredWorkersCount}/{stats.ProvidedWorkersCount}",
-                IconUrl = assetUrlProvider.GetHohWorkerIconUrl(cityId),
+                IconUrl = workerIconUrlProvider.GetIcon(cityId),
             },
             Happiness = happinessStatsViewModelFactory.Create(stats),
             Production = productionStatsViewModelFactory.Create(stats.Products),

@@ -27,9 +27,9 @@ public partial class CitiesStatsPage : FogPageBase
 
         var cities = await PersistenceService.GetTempCities();
         var citiesStats = new List<CityPlannerCityPropertiesViewModel>();
-        foreach (var city in cities)
+        foreach (var city in cities.OrderBy(c => c.InGameCityId))
         {
-            await CityPlanner.InitializeAsync(city);
+            await CityPlanner.InitializeAsync(city, true);
             if (CityPlanner.CityMapState.CityPropertiesViewModel != null)
             {
                 citiesStats.Add(CityPlanner.CityMapState.CityPropertiesViewModel);

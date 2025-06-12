@@ -23,7 +23,8 @@ public class CityMapEntityViewModelFactory(
     IAssetUrlProvider assetUrlProvider,
     IHohStorageIconUrlProvider storageIconUrlProvider,
     IHohResourceIconUrlProvider resourceIconUrlProvider,
-    IStringLocalizer<FogResource> localizer) : ICityMapEntityViewModelFactory
+    IStringLocalizer<FogResource> localizer,
+    IWorkerIconUrlProvider workerIconUrlProvider) : ICityMapEntityViewModelFactory
 {
     public CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
         BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations, AgeDto cityAge)
@@ -63,8 +64,8 @@ public class CityMapEntityViewModelFactory(
         {
             infoItems.Add(new IconLabelItemViewModel()
             {
-                Label = grantWorkerComponent.WorkerCount.ToString(),
-                IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityIds.First()),
+                Label = grantWorkerComponent.GetWorkerCount().ToString(),
+                IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First(), grantWorkerComponent.WorkerType),
             });
         }
 
@@ -106,7 +107,7 @@ public class CityMapEntityViewModelFactory(
                                 generalItems.Add(new IconLabelItemViewModel()
                                 {
                                     Label = productionStatsItem.WorkerCount.ToString(),
-                                    IconUrl = assetUrlProvider.GetHohWorkerIconUrl(building.CityIds.First()),
+                                    IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First()),
                                 });
                             }
 

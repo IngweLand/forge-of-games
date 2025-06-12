@@ -113,6 +113,7 @@ public static class DependencyInjection
         services.AddScoped<ICampaignDifficultyIconUrlProvider, CampaignDifficultyIconUrlProvider>();
         services.AddScoped<ICcEquipmentUiService, CcEquipmentUiService>();
         services.AddScoped<IEquipmentSlotTypeIconUrlProvider, EquipmentSlotTypeIconUrlProvider>();
+        services.AddScoped<IWorkerIconUrlProvider, WorkerIconUrlProvider>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         

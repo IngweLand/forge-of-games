@@ -1,23 +1,18 @@
-using AutoMapper;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
-using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityMapState(
     IBuildingLevelRangesFactory buildingLevelRangesFactory)
 {
-    public event Action? StateChanged;
     private readonly IList<CityMapEntity> _cityMapEntities = new List<CityMapEntity>();
     private readonly IList<CityMapEntity> _happinessConsumers = new List<CityMapEntity>();
     private readonly IList<CityMapEntity> _happinessProviders = new List<CityMapEntity>();
@@ -94,6 +89,9 @@ public class CityMapState(
         }
     }
 
+    public WonderDto? CityWonder { get; init; }
+    public int CityWonderLevel { get; set; }
+
     public IReadOnlyList<CityMapEntity> HappinessConsumers => _happinessConsumers.AsReadOnly();
     public IReadOnlyList<CityMapEntity> HappinessProviders => _happinessProviders.AsReadOnly();
     public required CityId InGameCityId { get; init; }
@@ -146,6 +144,7 @@ public class CityMapState(
     }
 
     public IReadOnlyDictionary<BuildingType, IList<CityMapEntity>> TypedEntities => _typedEntities.AsReadOnly();
+    public event Action? StateChanged;
 
     public void Add(CityMapEntity cityMapEntity)
     {

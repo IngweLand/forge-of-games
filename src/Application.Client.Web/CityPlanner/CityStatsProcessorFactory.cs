@@ -8,7 +8,7 @@ public class CityStatsProcessorFactory(IProductionStatsProcessorFactory producti
 {
     public StatsProcessor Create(CityMapState cityMapState)
     {
-        var productionStatsProcessor = productionStatsProcessorFactory.Create(cityMapState);
+        var productionStatsProcessor = productionStatsProcessorFactory.Create();
         return new StatsProcessor(cityMapState, productionStatsProcessor, cityStatsProcessorLogger);
     }
 }

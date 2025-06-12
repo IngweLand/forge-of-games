@@ -8,14 +8,14 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
     public IReadOnlyCollection<ICityMapEntityStats> Create(BuildingDto building)
     {
         var stats = new List<ICityMapEntityStats>();
-        
+
         stats.Add(new AreaProvider()
         {
             BuildingType = building.Type,
             BuildingGroup = building.Group,
             Area = building.Width * building.Length,
         });
-        
+
         if (building.BuffDetails != null)
         {
             stats.Add(new HappinessConsumer()
@@ -43,12 +43,12 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
             });
         }
 
-        var grantWorkerComponent = building.Components.OfType<GrantWorkerComponent>().FirstOrDefault();
-        if (grantWorkerComponent != null)
+        var grantWorkerComponents = building.Components.OfType<GrantWorkerComponent>().ToList();
+        if (grantWorkerComponents.Count > 0)
         {
             stats.Add(new WorkerProvider()
             {
-                WorkerCount = grantWorkerComponent.WorkerCount,
+                WorkerCount = grantWorkerComponents.Sum(src => src.GetWorkerCount()),
             });
         }
 

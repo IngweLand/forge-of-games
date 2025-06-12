@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
@@ -17,4 +18,7 @@ public class WonderDto
 
     [ProtoMember(4)]
     public required string WonderName { get; init; }
+    
+    [ProtoMember(5)]
+    public required IReadOnlyCollection<ComponentBase> Components { get; init; }
 }

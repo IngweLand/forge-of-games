@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
@@ -25,6 +26,7 @@ public class StatsProcessor(
         {
             return;
         }
+
         var intersections =
             cityMapState.HappinessProviders.Where(hp => target.Bounds.IntersectsWith(hp.OverflowBounds!.Value))
                 .ToList();
@@ -58,8 +60,24 @@ public class StatsProcessor(
     {
         foreach (var cme in cityMapState.CityMapEntities)
         {
-            productionStatsProcessor.UpdateProduction(cme, cityMapState);
+            var modifiers = GetModifiers();
+            if (modifiers == null)
+            {
+                productionStatsProcessor.UpdateProduction(cme);
+            }
+            else
+            {
+                productionStatsProcessor.UpdateProduction(cme, modifiers);
+            }
         }
+    }
+
+    private IReadOnlyDictionary<string, double>? GetModifiers()
+    {
+        var boostComponent = cityMapState.CityWonder?.Components.OfType<BoostResourceComponent>().ToList();
+        return boostComponent?.Count > 0
+            ? boostComponent.ToDictionary(src => src.ResourceId!, src => src.GetValue(cityMapState.CityWonderLevel))
+            : null;
     }
 
     public void UpdateStats(CityMapEntity target)
@@ -71,22 +89,36 @@ public class StatsProcessor(
             case BuildingType.Farm:
             case BuildingType.Barracks:
             case BuildingType.Workshop:
+            {
                 UpdateHappiness(target);
-                productionStatsProcessor.UpdateProduction(target, cityMapState);
+                var modifiers = GetModifiers();
+                if (modifiers == null)
+                {
+                    productionStatsProcessor.UpdateProduction(target);
+                }
+                else
+                {
+                    productionStatsProcessor.UpdateProduction(target, modifiers);
+                }
                 break;
+            }
             case BuildingType.Collectable:
             case BuildingType.CultureSite:
+            {
                 UpdateHappiness();
                 UpdateProduction();
                 break;
+            }
             case BuildingType.CityHall:
             case BuildingType.Evolving:
+            {
                 UpdateEvolvingBuildings();
                 UpdateHappiness();
                 UpdateProduction();
                 break;
+            }
         }
-        
-        cityMapState.CityStats =  CityStatsProcessor.Update(cityMapState.CityMapEntities);
+
+        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities);
     }
 }

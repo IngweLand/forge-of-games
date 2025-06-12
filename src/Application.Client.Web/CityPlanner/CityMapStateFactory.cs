@@ -4,10 +4,12 @@ using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
@@ -21,7 +23,8 @@ public class CityMapStateFactory(
         IReadOnlyCollection<BuildingCustomizationDto> buildingCustomizations,
         IReadOnlyCollection<BuildingSelectorTypesViewModel> buildingSelectorItems,
         IReadOnlyCollection<AgeDto> ages,
-        HohCity city)
+        HohCity city,
+        WonderDto? wonder)
     {
         var buildingDictionary = buildings.ToDictionary(b => b.Id);
         var age = ages.First(a => a.Id == city.AgeId);
@@ -35,6 +38,8 @@ public class CityMapStateFactory(
             CityName = city.Name,
             CityAge = age,
             Snapshots = city.Snapshots,
+            CityWonder = wonder,
+            CityWonderLevel = city.WonderLevel,
         };
         state.AddRange(city.Entities.Select(hohCityMapEntity =>
         {

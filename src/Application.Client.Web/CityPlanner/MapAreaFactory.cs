@@ -5,8 +5,8 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class MapAreaFactory : IMapAreaFactory
 {
-    public MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions)
+    public MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions)
     {
-        return new MapArea(expansionSize, expansions);
+        return new MapArea(expansionSize, expansions, unlockedExpansions);
     }
 }

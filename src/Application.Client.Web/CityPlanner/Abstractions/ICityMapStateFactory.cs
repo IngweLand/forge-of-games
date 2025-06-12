@@ -11,5 +11,6 @@ public interface ICityMapStateFactory
         IReadOnlyCollection<BuildingCustomizationDto> buildingCustomizations,
         IReadOnlyCollection<BuildingSelectorTypesViewModel> buildingSelectorItems,
         IReadOnlyCollection<AgeDto> ages,
-        HohCity city);
+        HohCity city,
+        WonderDto? wonder);
 }

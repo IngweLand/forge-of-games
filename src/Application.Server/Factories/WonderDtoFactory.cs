@@ -16,6 +16,7 @@ public class WonderDtoFactory(IHohGameLocalizationService localizationService) :
             WonderName = localizationService.GetWonderName(wonder.Id.ToString()),
             Levels = wonder.LevelUpComponent.LevelCosts.OrderBy(wlc => wlc.Level)
                 .Select(wlc => new WonderLevelDto() {Cost = wlc.Crates}).ToList(),
+            Components = wonder.Components.ToList(),
         };
     }
 }

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 
@@ -56,7 +57,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
 
         if (_shouldImportCities && _inGameStartupData?.Cities != null)
         {
-            foreach (var city in _inGameStartupData.Cities)
+            foreach (var city in _inGameStartupData.Cities.Where(src => src.InGameCityId == CityId.Capital))
             {
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveCity(city);

@@ -28,6 +28,7 @@ public class MapAreaRenderer
         _bottomLayerItems = bottomLayerExtensions.Select(CreateLayerItem).ToList();
         _topLayerItems = mapArea.Expansions.Where(e => !bottomLayerExtensions.Contains(e)).Select(CreateLayerItem)
             .ToList();
+        // _topLayerItems.AddRange(mapArea.LockedExpansions.Select(CreateLockedLayerItem));
 
         Bounds = grid.GridToScreen(new Rectangle(_mapArea.Bounds.X, _mapArea.Bounds.Y,
             _mapArea.Bounds.Width,
@@ -88,6 +89,17 @@ public class MapAreaRenderer
                 _mapArea.ExpansionSize,
                 _mapArea.ExpansionSize)).ToSKRect(),
             Paint = GetPaint(expansion),
+        };
+    }
+    
+    private LayerItem CreateLockedLayerItem(Expansion expansion)
+    {
+        return new LayerItem()
+        {
+            Rect = _grid.GridToScreen(new Rectangle(expansion.X, expansion.Y,
+                _mapArea.ExpansionSize,
+                _mapArea.ExpansionSize)).ToSKRect(),
+            Paint = _mapStyle.LockedExpansionPaint,
         };
     }
 

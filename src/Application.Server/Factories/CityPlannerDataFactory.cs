@@ -8,10 +8,11 @@ using Ingweland.Fog.Models.Hoh.Entities.City;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
-public class CityPlannerDataFactory(IMapper mapper) : ICityPlannerDataFactory
+public class CityPlannerDataFactory(IMapper mapper, IWonderDtoFactory wonderDtoFactory) : ICityPlannerDataFactory
 {
     public CityPlannerDataDto Create(CityDefinition cityDefinition, IReadOnlyCollection<Expansion> expansions,
-        IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations, IReadOnlyCollection<Age> ages)
+        IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations,
+        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders)
     {
         return new CityPlannerDataDto()
         {
@@ -23,6 +24,7 @@ public class CityPlannerDataFactory(IMapper mapper) : ICityPlannerDataFactory
             Buildings = buildings,
             BuildingCustomizations = mapper.Map<IReadOnlyList<BuildingCustomizationDto>>(customizations),
             Ages = mapper.Map<IReadOnlyList<AgeDto>>(ages),
+            Wonders = wonders.Select(wonderDtoFactory.Create).ToList(),
         };
     }
 }

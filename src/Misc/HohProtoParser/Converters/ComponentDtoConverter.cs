@@ -26,7 +26,7 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
             {
                 "InitComponentDTO", "MoveComponentDTO", "SellComponentDTO", "PinnedAgeComponentDTO",
                 "SubscriptionSlotComponentDTO", "RebuildConstructionComponentDTO",
-                "OriginComponentDTO",
+                "OriginComponentDTO", "WonderLevelUpComponentDTO", "BuildingBoostComponentDTO",
             };
             if (componentsToSkip.Any(s => any.TypeUrl.EndsWith(s)))
             {

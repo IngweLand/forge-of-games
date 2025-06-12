@@ -1,9 +1,11 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
 public class CityPlannerCityPropertiesViewModel
 {
+    public required CityId CityId { get; init; }
     public required AgeViewModel Age { get; set; }
     public required string Name { get; set; }
 

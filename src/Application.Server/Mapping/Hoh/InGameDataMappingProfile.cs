@@ -16,7 +16,9 @@ public class InGameDataMappingProfile : Profile
                 opt.MapFrom(src => src.CustomizationEntityId);
             });
         CreateMap<CityDTO, City>()
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId));
+            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
+            .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src=> src.ExpansionMapEntities));
         CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>();
+        CreateMap<ExpansionMapEntityDto, CityMapExpansion>();
     }
 }

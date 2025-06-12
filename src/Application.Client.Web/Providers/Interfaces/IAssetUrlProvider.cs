@@ -18,7 +18,6 @@ public interface IAssetUrlProvider
     string GetHohUnitStatIconUrl(UnitStatType unitStatType);
     string GetHohUnitVideoUrl(string assetId, string extension);
     string GetHohUnitVideoUrl(string assetId);
-    string GetHohWorkerIconUrl(CityId cityId);
     string GetNotoSansFontUrl(string locale);
     string GetImageUrl(string filename);
     string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet);

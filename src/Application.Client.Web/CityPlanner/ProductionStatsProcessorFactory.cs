@@ -4,8 +4,8 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class ProductionStatsProcessorFactory() : IProductionStatsProcessorFactory
 {
-    public ProductionStatsProcessor Create(CityMapState cityMapState)
+    public ProductionStatsProcessor Create()
     {
-        return new ProductionStatsProcessor(cityMapState);
+        return new ProductionStatsProcessor();
     }
 }

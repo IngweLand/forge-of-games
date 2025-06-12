@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
@@ -12,4 +13,7 @@ public class Wonder
     public required WonderId Id { get; init; }
     [ProtoMember(3)]
     public required WonderLevelUpComponent LevelUpComponent { get; init; }
+
+    [ProtoMember(4)]
+    public required IList<ComponentBase> Components { get; init; }
 }

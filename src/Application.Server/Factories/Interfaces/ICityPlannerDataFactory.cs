@@ -8,5 +8,6 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 public interface ICityPlannerDataFactory
 {
     CityPlannerDataDto Create(CityDefinition cityDefinition, IReadOnlyCollection<Expansion> expansions,
-        IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations, IReadOnlyCollection<Age> ages);
+        IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations,
+        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders);
 }

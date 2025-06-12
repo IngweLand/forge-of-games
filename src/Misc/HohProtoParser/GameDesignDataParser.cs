@@ -61,6 +61,7 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
                 gdr.HeroBuildingBoostComponents.ToDictionary(hbbc => hbbc.Id));
             opt.Items.Add(ContextKeys.HERO_ABILITY_TRAINING_COMPONENTS,
                 gdr.HeroAbilityTrainingComponents.ToDictionary(hatc => hatc.Id));
+            opt.Items.Add(ContextKeys.DYNAMIC_FLOAT_VALUE_DEFINITIONS, gdr.DynamicFloatValueDefinitions);
         });
     }
 
@@ -191,7 +192,14 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
 
     private static IList<Wonder> CreateWonders(IMapper mapper, GameDesignResponseDTO gdr)
     {
-        return mapper.Map<IList<Wonder>>(gdr.ReworkedWonderDefinitions);
+        return mapper.Map<IList<Wonder>>(gdr.ReworkedWonderDefinitions, opt =>
+        {
+            opt.Items.Add(ContextKeys.HERO_BUILDING_BOOST_COMPONENTS,
+                gdr.HeroBuildingBoostComponents.ToDictionary(hbbc => hbbc.Id));
+            opt.Items.Add(ContextKeys.HERO_ABILITY_TRAINING_COMPONENTS,
+                gdr.HeroAbilityTrainingComponents.ToDictionary(hatc => hatc.Id));
+            opt.Items.Add(ContextKeys.DYNAMIC_FLOAT_VALUE_DEFINITIONS, gdr.DynamicFloatValueDefinitions);
+        });
     }
 
     private static IList<World> CreateWorlds(IMapper mapper, GameDesignResponseDTO gdr, IDictionary<string, Age> ages,

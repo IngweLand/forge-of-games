@@ -24,15 +24,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static BoostResourceComponentDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiJib29zdF9yZXNvdXJjZV9jb21wb25lbnRfZHRvLnByb3RvIowBChlCb29z",
-            "dFJlc291cmNlQ29tcG9uZW50RFRPEgoKAmlkGAEgASgJEg0KBXZhbHVlGAIg",
-            "ASgBEhMKC3Jlc291cmNlX2lkGAYgASgJEhUKDXJlc291cmNlX3R5cGUYByAB",
-            "KAkSDgoGY2l0aWVzGAggAygJEhgKEGR5bmFtaWNfdmFsdWVfaWQYCSABKAlC",
-            "H6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "CiJib29zdF9yZXNvdXJjZV9jb21wb25lbnRfZHRvLnByb3RvIpwBChlCb29z",
+            "dFJlc291cmNlQ29tcG9uZW50RFRPEgoKAmlkGAEgASgJEhIKBXZhbHVlGAIg",
+            "ASgBSACIAQESEwoLcmVzb3VyY2VfaWQYBiABKAkSFQoNcmVzb3VyY2VfdHlw",
+            "ZRgHIAEoCRIOCgZjaXRpZXMYCCADKAkSGQoRZHluYW1pY192YWx1ZXNfaWQY",
+            "CSABKAlCCAoGX3ZhbHVlQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMu",
+            "SG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BoostResourceComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.BoostResourceComponentDTO.Parser, new[]{ "Id", "Value", "ResourceId", "ResourceType", "Cities", "DynamicValueId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BoostResourceComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.BoostResourceComponentDTO.Parser, new[]{ "Id", "Value", "ResourceId", "ResourceType", "Cities", "DynamicValuesId" }, new[]{ "Value" }, null, null, null)
           }));
     }
     #endregion
@@ -47,6 +48,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   {
     private static readonly pb::MessageParser<BoostResourceComponentDTO> _parser = new pb::MessageParser<BoostResourceComponentDTO>(() => new BoostResourceComponentDTO());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<BoostResourceComponentDTO> Parser { get { return _parser; } }
@@ -74,12 +76,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BoostResourceComponentDTO(BoostResourceComponentDTO other) : this() {
+      _hasBits0 = other._hasBits0;
       id_ = other.id_;
       value_ = other.value_;
       resourceId_ = other.resourceId_;
       resourceType_ = other.resourceType_;
       cities_ = other.cities_.Clone();
-      dynamicValueId_ = other.dynamicValueId_;
+      dynamicValuesId_ = other.dynamicValuesId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -103,14 +106,29 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 2;
+    private readonly static double ValueDefaultValue = 0D;
+
     private double value_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Value {
-      get { return value_; }
+      get { if ((_hasBits0 & 1) != 0) { return value_; } else { return ValueDefaultValue; } }
       set {
+        _hasBits0 |= 1;
         value_ = value;
       }
+    }
+    /// <summary>Gets whether the "value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasValue {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "value" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearValue() {
+      _hasBits0 &= ~1;
     }
 
     /// <summary>Field number for the "resource_id" field.</summary>
@@ -148,15 +166,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return cities_; }
     }
 
-    /// <summary>Field number for the "dynamic_value_id" field.</summary>
-    public const int DynamicValueIdFieldNumber = 9;
-    private string dynamicValueId_ = "";
+    /// <summary>Field number for the "dynamic_values_id" field.</summary>
+    public const int DynamicValuesIdFieldNumber = 9;
+    private string dynamicValuesId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DynamicValueId {
-      get { return dynamicValueId_; }
+    public string DynamicValuesId {
+      get { return dynamicValuesId_; }
       set {
-        dynamicValueId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        dynamicValuesId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -180,7 +198,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ResourceId != other.ResourceId) return false;
       if (ResourceType != other.ResourceType) return false;
       if(!cities_.Equals(other.cities_)) return false;
-      if (DynamicValueId != other.DynamicValueId) return false;
+      if (DynamicValuesId != other.DynamicValuesId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,11 +207,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Value != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
+      if (HasValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
       if (ResourceId.Length != 0) hash ^= ResourceId.GetHashCode();
       if (ResourceType.Length != 0) hash ^= ResourceType.GetHashCode();
       hash ^= cities_.GetHashCode();
-      if (DynamicValueId.Length != 0) hash ^= DynamicValueId.GetHashCode();
+      if (DynamicValuesId.Length != 0) hash ^= DynamicValuesId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -216,7 +234,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Value != 0D) {
+      if (HasValue) {
         output.WriteRawTag(17);
         output.WriteDouble(Value);
       }
@@ -229,9 +247,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteString(ResourceType);
       }
       cities_.WriteTo(output, _repeated_cities_codec);
-      if (DynamicValueId.Length != 0) {
+      if (DynamicValuesId.Length != 0) {
         output.WriteRawTag(74);
-        output.WriteString(DynamicValueId);
+        output.WriteString(DynamicValuesId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -247,7 +265,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Value != 0D) {
+      if (HasValue) {
         output.WriteRawTag(17);
         output.WriteDouble(Value);
       }
@@ -260,9 +278,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteString(ResourceType);
       }
       cities_.WriteTo(ref output, _repeated_cities_codec);
-      if (DynamicValueId.Length != 0) {
+      if (DynamicValuesId.Length != 0) {
         output.WriteRawTag(74);
-        output.WriteString(DynamicValueId);
+        output.WriteString(DynamicValuesId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -277,7 +295,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (Value != 0D) {
+      if (HasValue) {
         size += 1 + 8;
       }
       if (ResourceId.Length != 0) {
@@ -287,8 +305,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ResourceType);
       }
       size += cities_.CalculateSize(_repeated_cities_codec);
-      if (DynamicValueId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DynamicValueId);
+      if (DynamicValuesId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DynamicValuesId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -305,7 +323,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.Value != 0D) {
+      if (other.HasValue) {
         Value = other.Value;
       }
       if (other.ResourceId.Length != 0) {
@@ -315,8 +333,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         ResourceType = other.ResourceType;
       }
       cities_.Add(other.cities_);
-      if (other.DynamicValueId.Length != 0) {
-        DynamicValueId = other.DynamicValueId;
+      if (other.DynamicValuesId.Length != 0) {
+        DynamicValuesId = other.DynamicValuesId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -354,7 +372,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 74: {
-            DynamicValueId = input.ReadString();
+            DynamicValuesId = input.ReadString();
             break;
           }
         }
@@ -393,7 +411,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 74: {
-            DynamicValueId = input.ReadString();
+            DynamicValuesId = input.ReadString();
             break;
           }
         }

@@ -7,4 +7,5 @@ public class City
     public required int PlayerCityId { get; init; }
     public required CityId CityId { get; init; }
     public required IReadOnlyCollection<CityMapEntity> MapEntities { get; init; } = new List<CityMapEntity>();
+    public required IReadOnlyCollection<CityMapExpansion> OpenedExpansions { get; init; } = new List<CityMapExpansion>();
 }

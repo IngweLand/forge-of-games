@@ -21,7 +21,7 @@ public interface ICityPlanner
     void DeleteEntity(CityMapEntity entity);
     Task DeleteSnapshot(string id);
     Task InitializeAsync();
-    Task InitializeAsync(HohCity city);
+    Task InitializeAsync(HohCity city, bool removeLockedEntities = false);
     Task LoadSnapshot(string id);
     void MoveEntity(CityMapEntity entity, Point location);
     void RenderScene(SKCanvas canvas);

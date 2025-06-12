@@ -24,14 +24,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static GrantWorkerComponentDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBncmFudF93b3JrZXJfY29tcG9uZW50X2R0by5wcm90byJVChdHcmFudFdv",
-            "cmtlckNvbXBvbmVudERUTxIKCgJpZBgBIAEoCRIUCgx3b3JrZXJfY291bnQY",
-            "AiABKAUSGAoQZHluYW1pY192YWx1ZV9pZBgEIAEoCUIfqgIcSW5nd2VsYW5k",
-            "LkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "CiBncmFudF93b3JrZXJfY29tcG9uZW50X2R0by5wcm90bxoRd29ya2VyX3R5",
+            "cGUucHJvdG8ijgEKF0dyYW50V29ya2VyQ29tcG9uZW50RFRPEgoKAmlkGAEg",
+            "ASgJEhkKDHdvcmtlcl9jb3VudBgCIAEoBUgAiAEBEiAKC3dvcmtlcl90eXBl",
+            "GAMgASgOMgsuV29ya2VyVHlwZRIZChFkeW5hbWljX3ZhbHVlc19pZBgEIAEo",
+            "CUIPCg1fd29ya2VyX2NvdW50Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2Rl",
+            "bHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.WorkerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.GrantWorkerComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.GrantWorkerComponentDTO.Parser, new[]{ "Id", "WorkerCount", "DynamicValueId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.GrantWorkerComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.GrantWorkerComponentDTO.Parser, new[]{ "Id", "WorkerCount", "WorkerType", "DynamicValuesId" }, new[]{ "WorkerCount" }, null, null, null)
           }));
     }
     #endregion
@@ -46,6 +48,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   {
     private static readonly pb::MessageParser<GrantWorkerComponentDTO> _parser = new pb::MessageParser<GrantWorkerComponentDTO>(() => new GrantWorkerComponentDTO());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<GrantWorkerComponentDTO> Parser { get { return _parser; } }
@@ -73,9 +76,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GrantWorkerComponentDTO(GrantWorkerComponentDTO other) : this() {
+      _hasBits0 = other._hasBits0;
       id_ = other.id_;
       workerCount_ = other.workerCount_;
-      dynamicValueId_ = other.dynamicValueId_;
+      workerType_ = other.workerType_;
+      dynamicValuesId_ = other.dynamicValuesId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -99,25 +104,52 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "worker_count" field.</summary>
     public const int WorkerCountFieldNumber = 2;
+    private readonly static int WorkerCountDefaultValue = 0;
+
     private int workerCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int WorkerCount {
-      get { return workerCount_; }
+      get { if ((_hasBits0 & 1) != 0) { return workerCount_; } else { return WorkerCountDefaultValue; } }
       set {
+        _hasBits0 |= 1;
         workerCount_ = value;
       }
     }
-
-    /// <summary>Field number for the "dynamic_value_id" field.</summary>
-    public const int DynamicValueIdFieldNumber = 4;
-    private string dynamicValueId_ = "";
+    /// <summary>Gets whether the "worker_count" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string DynamicValueId {
-      get { return dynamicValueId_; }
+    public bool HasWorkerCount {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "worker_count" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearWorkerCount() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "worker_type" field.</summary>
+    public const int WorkerTypeFieldNumber = 3;
+    private global::Ingweland.Fog.Inn.Models.Hoh.WorkerType workerType_ = global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.WorkerType WorkerType {
+      get { return workerType_; }
       set {
-        dynamicValueId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        workerType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dynamic_values_id" field.</summary>
+    public const int DynamicValuesIdFieldNumber = 4;
+    private string dynamicValuesId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DynamicValuesId {
+      get { return dynamicValuesId_; }
+      set {
+        dynamicValuesId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -138,7 +170,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (Id != other.Id) return false;
       if (WorkerCount != other.WorkerCount) return false;
-      if (DynamicValueId != other.DynamicValueId) return false;
+      if (WorkerType != other.WorkerType) return false;
+      if (DynamicValuesId != other.DynamicValuesId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -147,8 +180,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (WorkerCount != 0) hash ^= WorkerCount.GetHashCode();
-      if (DynamicValueId.Length != 0) hash ^= DynamicValueId.GetHashCode();
+      if (HasWorkerCount) hash ^= WorkerCount.GetHashCode();
+      if (WorkerType != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) hash ^= WorkerType.GetHashCode();
+      if (DynamicValuesId.Length != 0) hash ^= DynamicValuesId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -171,13 +205,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (WorkerCount != 0) {
+      if (HasWorkerCount) {
         output.WriteRawTag(16);
         output.WriteInt32(WorkerCount);
       }
-      if (DynamicValueId.Length != 0) {
+      if (WorkerType != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) WorkerType);
+      }
+      if (DynamicValuesId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(DynamicValueId);
+        output.WriteString(DynamicValuesId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -193,13 +231,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (WorkerCount != 0) {
+      if (HasWorkerCount) {
         output.WriteRawTag(16);
         output.WriteInt32(WorkerCount);
       }
-      if (DynamicValueId.Length != 0) {
+      if (WorkerType != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) WorkerType);
+      }
+      if (DynamicValuesId.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(DynamicValueId);
+        output.WriteString(DynamicValuesId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,11 +256,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (WorkerCount != 0) {
+      if (HasWorkerCount) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(WorkerCount);
       }
-      if (DynamicValueId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DynamicValueId);
+      if (WorkerType != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WorkerType);
+      }
+      if (DynamicValuesId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DynamicValuesId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -235,11 +280,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.WorkerCount != 0) {
+      if (other.HasWorkerCount) {
         WorkerCount = other.WorkerCount;
       }
-      if (other.DynamicValueId.Length != 0) {
-        DynamicValueId = other.DynamicValueId;
+      if (other.WorkerType != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        WorkerType = other.WorkerType;
+      }
+      if (other.DynamicValuesId.Length != 0) {
+        DynamicValuesId = other.DynamicValuesId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -264,8 +312,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             WorkerCount = input.ReadInt32();
             break;
           }
+          case 24: {
+            WorkerType = (global::Ingweland.Fog.Inn.Models.Hoh.WorkerType) input.ReadEnum();
+            break;
+          }
           case 34: {
-            DynamicValueId = input.ReadString();
+            DynamicValuesId = input.ReadString();
             break;
           }
         }
@@ -291,8 +343,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             WorkerCount = input.ReadInt32();
             break;
           }
+          case 24: {
+            WorkerType = (global::Ingweland.Fog.Inn.Models.Hoh.WorkerType) input.ReadEnum();
+            break;
+          }
           case 34: {
-            DynamicValueId = input.ReadString();
+            DynamicValuesId = input.ReadString();
             break;
           }
         }

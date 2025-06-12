@@ -8,10 +8,11 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 public class MapArea : IMapArea
 {
     private IList<Rectangle> _blockedBounds;
+    private IList<Rectangle> _lockedBounds;
     private IList<Rectangle> _nonWaterSubtypeOpenExpansionBounds;
     private IList<Rectangle> _waterSubtypeOpenExpansionBounds;
 
-    public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions)
+    public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions)
     {
         ExpansionSize = expansionSize;
         Expansions = expansions;
@@ -21,7 +22,9 @@ public class MapArea : IMapArea
             .Concat(expansions.Where(e => e.Type == ExpansionType.DetachedConnector));
         _blockedBounds = allBlockedExpansions.Select(e => new Rectangle(e.X, e.Y, expansionSize, expansionSize))
             .ToList();
-        ActiveExpansions = expansions.Where(e => e.Type != ExpansionType.Blocker).ToList();
+        var usable = expansions.Where(e => e.Type != ExpansionType.Blocker).ToList();
+        LockedExpansions = usable.Where(e => !unlockedExpansions.Contains(e.Id)).ToList();
+        _lockedBounds = LockedExpansions.Select(e => new Rectangle(e.X, e.Y, expansionSize, expansionSize)).ToList();
         var openExpansions = expansions.Where(e => e.Type == ExpansionType.Undefined).ToList();
         _nonWaterSubtypeOpenExpansionBounds = openExpansions.Where(e => e.SubType != ExpansionSubType.Water)
             .Select(e => new Rectangle(e.X, e.Y, expansionSize, expansionSize))
@@ -47,7 +50,7 @@ public class MapArea : IMapArea
         Bounds = new Rectangle(minX, minY, width, height);
     }
 
-    public IReadOnlyCollection<Expansion> ActiveExpansions { get; }
+    public IReadOnlyCollection<Expansion> LockedExpansions { get; }
     public IReadOnlyCollection<Expansion> BlockedExpansions { get; }
     public Rectangle Bounds { get; }
     public int ExpansionSize { get; }
@@ -67,6 +70,11 @@ public class MapArea : IMapArea
     {
         return _blockedBounds.Any(blockedExpansionBounds => blockedExpansionBounds.IntersectsWith(bounds));
     }
+    
+    public bool IntersectsWithLocked(Rectangle bounds)
+    {
+        return _lockedBounds.Any(src => src.IntersectsWith(bounds));
+    }
 
     public bool CanBePlaced(CityMapEntity cityMapEntity)
     {
@@ -84,6 +92,11 @@ public class MapArea : IMapArea
         {
             return false;
         }
+        
+        // if (IntersectsWithLocked(cityMapEntity.Bounds))
+        // {
+        //     return false;
+        // }
 
         if (cityMapEntity.ExpansionSubType == ExpansionSubType.Undefined &&
             _waterSubtypeOpenExpansionBounds.Any(eb => eb.IntersectsWith(cityMapEntity.Bounds)))

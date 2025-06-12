@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ReworkedWondersDTO {
+  repeated ReworkedWonderDto wonders = 1;
+}
+
+message ReworkedWonderDto {
+  string id = 1;
+  bool is_active = 2;
+  int32 level = 3;
+}

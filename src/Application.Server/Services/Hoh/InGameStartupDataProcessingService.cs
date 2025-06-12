@@ -1,4 +1,5 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
@@ -8,6 +9,7 @@ using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -24,7 +26,7 @@ public class InGameStartupDataProcessingService(
     public async Task<InGameStartupData> ParseStartupData(string inputData)
     {
         var data = DecodeInternal(inputData);
-
+        
         StartupDto startupDto;
         try
         {
@@ -65,8 +67,9 @@ public class InGameStartupDataProcessingService(
         var cities = new List<HohCity>();
         foreach (var cityDto in cityDtos)
         {
-            //TODO: remove this check once we can do something with non-capital cities
-            if (cityDto.CityId != CityId.Capital)
+            // //TODO: remove this check once we can do something with non-capital cities
+            if (cityDto.CityId is not (CityId.Capital or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza
+                or CityId.Mayas_SayilPalace or CityId.China))
             {
                 continue;
             }
@@ -74,7 +77,20 @@ public class InGameStartupDataProcessingService(
             try
             {
                 var buildings = await coreDataRepository.GetBuildingsAsync(cityDto.CityId);
-                var city = cityFactory.Create(cityDto, buildings.ToDictionary(b => b.Id));
+                var wonderIds = cityDto.CityId.GetWonders();
+                var activeWonderDto = startupDto.Wonders?.Wonders.FirstOrDefault(src => src.IsActive);
+                var wonderId = WonderId.Undefined;
+                if (activeWonderDto != null)
+                {
+                    var activeWonderId = HohStringParser.ParseEnumFromString2<WonderId>(activeWonderDto.Id, '_');
+                    if (wonderIds.Contains(activeWonderId))
+                    {
+                        wonderId = activeWonderId;
+                    }
+                }
+               
+                var city = cityFactory.Create(cityDto, buildings.ToDictionary(b => b.Id), wonderId,
+                    activeWonderDto?.Level ?? 0);
                 cities.Add(city);
             }
             catch (Exception ex)
@@ -85,7 +101,7 @@ public class InGameStartupDataProcessingService(
 
         return cities;
     }
-
+    
     private async Task<BasicCommandCenterProfile> ImportProfileAsync(StartupDto startupDto, IEnumerable<HohCity> cities)
     {
         var barracksProfile = new BarracksProfile();
@@ -115,7 +131,7 @@ public class InGameStartupDataProcessingService(
             throw new InvalidOperationException(msg, ex);
         }
     }
-    
+
     private async Task<IList<EquipmentItem>> ImportEquipmentAsync(StartupDto startupDto)
     {
         var equipmentItems = new List<EquipmentItem>();
@@ -124,6 +140,7 @@ public class InGameStartupDataProcessingService(
         {
             return equipmentItems;
         }
+
         try
         {
             equipmentItems = mapper.Map<List<EquipmentItem>>(startupDto.Equipment.Equipments);

@@ -4,5 +4,5 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 
 public interface IMapAreaFactory
 {
-    MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions);
+    MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions);
 }

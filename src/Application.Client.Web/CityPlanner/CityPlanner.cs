@@ -70,7 +70,8 @@ public class CityPlanner(
         {
             city.Entities = snapshot.Entities;
             var state = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
-                PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city);
+                PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
+                cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
             var statsProcessor = cityStatsProcessorFactory.Create(state);
             statsProcessor.UpdateStats();
 
@@ -89,9 +90,9 @@ public class CityPlanner(
         return hohCityFactory.CreateNewCapital(cityName);
     }
 
-    public Task InitializeAsync(HohCity city)
+    public Task InitializeAsync(HohCity city, bool removeLockedEntities = false)
     {
-        return DoInitializeAsync(city);
+        return DoInitializeAsync(city, removeLockedEntities);
     }
 
     public async Task LoadSnapshot(string id)
@@ -388,7 +389,7 @@ public class CityPlanner(
         CityMapState.SelectedCityMapEntity = null;
     }
 
-    private async Task DoInitializeAsync(HohCity city)
+    private async Task DoInitializeAsync(HohCity city, bool removeLockedEntities = false)
     {
         if (!_cityPlannerDataCache.TryGetValue(city.InGameCityId, out var cityPlannerData))
         {
@@ -400,9 +401,22 @@ public class CityPlanner(
 
         commandManager.Reset();
         CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
-            PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city);
-        _mapArea = mapAreaFactory.Create(cityPlannerData.ExpansionSize, cityPlannerData.Expansions);
+            PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
+            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
+        _mapArea = mapAreaFactory.Create(cityPlannerData.ExpansionSize, cityPlannerData.Expansions,
+            city.UnlockedExpansions);
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
+        // TODO: should be remade once we add expansion managment
+        if (removeLockedEntities)
+        {
+            var lockedMapEntities = CityMapState.CityMapEntities.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
+                .ToList();
+            foreach (var lockedMapEntity in lockedMapEntities)
+            {
+                CityMapState.Remove(lockedMapEntity);
+            }
+        }
+
         _statsProcessor = cityStatsProcessorFactory.Create(CityMapState);
         _statsProcessor.UpdateStats();
         UpdateCityPropertiesViewModel();

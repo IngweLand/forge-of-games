@@ -4,12 +4,17 @@ using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
-public class ProductionStatsProcessor(CityMapState cityMapState) : IProductionStatsProcessor
+public class ProductionStatsProcessor() : IProductionStatsProcessor
 {
     private const int SECONDS_IN_HOUR = 3600;
     private const int SECONDS_IN_DAY = 24 * 3600;
 
-    public void UpdateProduction(CityMapEntity cityMapEntity, CityMapState cityMapState)
+    public void UpdateProduction(CityMapEntity cityMapEntity)
+    {
+        UpdateProduction(cityMapEntity, new Dictionary<string, double>());
+    }
+
+    public void UpdateProduction(CityMapEntity cityMapEntity, IReadOnlyDictionary<string, double> modifiers)
     {
         var productionProvider = cityMapEntity.FirstOrDefaultStat<ProductionProvider>();
         if (productionProvider == null)
@@ -25,8 +30,12 @@ public class ProductionStatsProcessor(CityMapState cityMapState) : IProductionSt
             foreach (var resourceProduct in productionComponent.Products.OfType<ResourceReward>())
             {
                 var defaultProductionAmount = resourceProduct.Amount;
-                var buffedProductionAmount = 0;
-                var hours = productionComponent.ProductionTime / SECONDS_IN_HOUR;
+                var totalProductionAmount = (double)defaultProductionAmount;
+                if (modifiers.TryGetValue(resourceProduct.ResourceId, out var modifier))
+                {
+                    totalProductionAmount += totalProductionAmount * (modifier / 100);
+                }
+                var hours = (float)productionComponent.ProductionTime / SECONDS_IN_HOUR;
                 if (happinessConsumer != null)
                 {
                     var buffedResource =
@@ -47,11 +56,7 @@ public class ProductionStatsProcessor(CityMapState cityMapState) : IProductionSt
                     }
 
                     var oneHourBonus = (int) Math.Floor(happinessConsumer.BuffDetails.Value * factor);
-                    buffedProductionAmount = defaultProductionAmount + oneHourBonus * hours;
-                }
-                else
-                {
-                    buffedProductionAmount = defaultProductionAmount;
+                    totalProductionAmount += oneHourBonus * hours;
                 }
 
                 products.Add(new ProductStatsItem()
@@ -61,21 +66,21 @@ public class ProductionStatsProcessor(CityMapState cityMapState) : IProductionSt
                     {
                         ProductionTime = productionComponent.ProductionTime,
                         Value = defaultProductionAmount,
-                        BuffedValue = buffedProductionAmount,
+                        BuffedValue = (int) totalProductionAmount,
                     },
 
                     OneHourProduction = new TimedProductStatsItem()
                     {
                         ProductionTime = SECONDS_IN_HOUR,
-                        Value = defaultProductionAmount / hours,
-                        BuffedValue = buffedProductionAmount / hours,
+                        Value = (int) (defaultProductionAmount / hours),
+                        BuffedValue = (int) (totalProductionAmount / hours),
                     },
 
                     OneDayProduction = new TimedProductStatsItem()
                     {
                         ProductionTime = SECONDS_IN_DAY,
-                        Value = defaultProductionAmount / hours * 24,
-                        BuffedValue = buffedProductionAmount / hours * 24,
+                        Value = (int) (defaultProductionAmount / hours * 24),
+                        BuffedValue = (int) (totalProductionAmount / hours * 24),
                     },
                 });
             }

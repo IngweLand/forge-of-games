@@ -5,7 +5,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 
 public interface IMapArea
 {
-    IReadOnlyCollection<Expansion> ActiveExpansions { get; }
+    IReadOnlyCollection<Expansion> LockedExpansions { get; }
     IReadOnlyCollection<Expansion> BlockedExpansions { get; }
     Rectangle Bounds { get; }
     int ExpansionSize { get; }

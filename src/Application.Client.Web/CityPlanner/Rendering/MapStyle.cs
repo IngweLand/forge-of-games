@@ -29,6 +29,13 @@ public class MapStyle
             },
         };
 
+    public SKPaint LockedExpansionPaint = new SKPaint()
+    {
+        Color = SKColors.Brown,
+        IsAntialias = true,
+        Style = SKPaintStyle.Fill,
+    };
+
     public IDictionary<ExpansionType, SKPaint> ExpansionPaints =
         new Dictionary<ExpansionType, SKPaint>()
         {
