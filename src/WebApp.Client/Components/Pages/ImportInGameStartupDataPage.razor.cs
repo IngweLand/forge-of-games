@@ -57,7 +57,8 @@ public partial class ImportInGameStartupDataPage : FogPageBase
 
         if (_shouldImportCities && _inGameStartupData?.Cities != null)
         {
-            foreach (var city in _inGameStartupData.Cities.Where(src => src.InGameCityId == CityId.Capital))
+            foreach (var city in _inGameStartupData.Cities.Where(src => src.InGameCityId is (CityId.Capital
+                         or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace)))
             {
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveCity(city);

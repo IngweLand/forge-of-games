@@ -28,8 +28,8 @@ public class StatsProcessor(
         }
 
         var intersections =
-            cityMapState.HappinessProviders.Where(hp => target.Bounds.IntersectsWith(hp.OverflowBounds!.Value))
-                .ToList();
+            cityMapState.HappinessProviders.Where(hp =>
+                !hp.ExcludeFromStats && target.Bounds.IntersectsWith(hp.OverflowBounds!.Value)).ToList();
         var age = cityMapState.CityAge;
         var happiness = intersections.Sum(cme =>
             cityMapState.Buildings[cme.CityEntityId].CultureComponent!.GetValue(age.Id, cme.Level));
@@ -89,6 +89,8 @@ public class StatsProcessor(
             case BuildingType.Farm:
             case BuildingType.Barracks:
             case BuildingType.Workshop:
+            case BuildingType.Aviary:
+            case BuildingType.Quarry:
             {
                 UpdateHappiness(target);
                 var modifiers = GetModifiers();
@@ -100,10 +102,12 @@ public class StatsProcessor(
                 {
                     productionStatsProcessor.UpdateProduction(target, modifiers);
                 }
+
                 break;
             }
             case BuildingType.Collectable:
             case BuildingType.CultureSite:
+            case BuildingType.RitualSite:
             {
                 UpdateHappiness();
                 UpdateProduction();

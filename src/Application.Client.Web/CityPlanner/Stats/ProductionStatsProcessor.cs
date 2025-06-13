@@ -22,6 +22,12 @@ public class ProductionStatsProcessor() : IProductionStatsProcessor
             return;
         }
 
+        if (cityMapEntity.ExcludeFromStats)
+        {
+            productionProvider.ProductionStatsItems = [];
+            return;
+        }
+
         var happinessConsumer = cityMapEntity.FirstOrDefaultStat<HappinessConsumer>();
         var productionItems = new List<ProductionStatsItem>();
         foreach (var productionComponent in productionProvider.ProductionComponents)

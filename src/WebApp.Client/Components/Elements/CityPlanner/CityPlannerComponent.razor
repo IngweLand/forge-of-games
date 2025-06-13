@@ -44,11 +44,9 @@
             <div class="toolbar-divider"></div>
             <div>
                 <MudIconButton Icon="@Icons.Material.Outlined.Cached" OnClick="Rotate" Class="fog-icon-light"
-                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
+                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
                 <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="Delete" Class="fog-icon-light"
-                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="SelectGroup" Class="fog-icon-light"
-                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
+                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
             </div>
             <MudSpacer/>
             @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@

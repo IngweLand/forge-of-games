@@ -29,10 +29,12 @@ public class BuildingTypeCssIconClassProvider : IBuildingTypeCssIconClassProvide
             BuildingType.Home => "building-type-icon-home",
             BuildingType.Irrigation => "",
             BuildingType.PapyrusField => "",
-            BuildingType.RiceFarm => "",
+            BuildingType.RiceFarm => "building-type-icon-rice-farm",
             BuildingType.Runestone => "",
             BuildingType.Special => "building-type-icon-special",
             BuildingType.Workshop => "building-type-icon-workshop",
+            BuildingType.Aviary => "building-type-icon-aviary",
+            BuildingType.Quarry => "building-type-icon-quarry",
             _ => default,
         };
     }

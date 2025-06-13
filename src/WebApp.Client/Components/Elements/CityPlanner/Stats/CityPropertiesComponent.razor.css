@@ -32,3 +32,12 @@
     min-width: 80px;
     text-align: center;
 }
+
+.wonder-level-selector-container
+{
+    display: flex;
+    gap: 6px;
+    padding: 0 12px 0 4px;
+    margin-bottom: 12px;
+    align-items: center;
+}

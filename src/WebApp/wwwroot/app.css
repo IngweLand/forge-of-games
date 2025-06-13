@@ -251,6 +251,18 @@ input[type="radio"]:checked {
 .building-type-icon-expedition-pier {
     background-image: url("images/icon_flat_expeditionPier.png");
 }
+.building-type-icon-quarry {
+    background-image: url("images/icon_flat_quarry.png");
+}
+.building-type-icon-aviary {
+    background-image: url("images/icon_flat_aviary.png");
+}
+.building-type-icon-rice-farm {
+    background-image: url("images/icon_flat_riceFarm.png");
+}
+.building-type-icon-expansion {
+    background-image: url("images/icon_flat_expansion.png");
+}
 
 .city-planner-appbar {
     grid-column: 1 / -1;  /* Spans full width (both columns) */
@@ -324,7 +336,7 @@ input[type="radio"]:checked {
     text-align: center;
     font-weight: 700;
     font-size: 12px;
-    max-width: 120px;
+    width: 120px;
 }
 /*city planner end*/
 

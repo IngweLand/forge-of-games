@@ -90,9 +90,9 @@ public class CityPlanner(
         return hohCityFactory.CreateNewCapital(cityName);
     }
 
-    public Task InitializeAsync(HohCity city, bool removeLockedEntities = false)
+    public Task InitializeAsync(HohCity city)
     {
-        return DoInitializeAsync(city, removeLockedEntities);
+        return DoInitializeAsync(city);
     }
 
     public async Task LoadSnapshot(string id)
@@ -234,7 +234,8 @@ public class CityPlanner(
             CityMapState.CityMapEntities.FirstOrDefault(cityMapEntity =>
                 cityMapEntity.Bounds.Contains(coordinates));
 
-        if (CityMapState.SelectedCityMapEntity != null && foundCityMapEntity == CityMapState.SelectedCityMapEntity)
+        if ((CityMapState.SelectedCityMapEntity != null && foundCityMapEntity == CityMapState.SelectedCityMapEntity) ||
+            (CityMapState.SelectedCityMapEntity == null && foundCityMapEntity == null))
         {
             cityMapEntity = null;
             return false;
@@ -249,6 +250,7 @@ public class CityPlanner(
     public void UpdateEntityState(CityMapEntity entity)
     {
         entity.CanBePlaced = CanBePlaced(entity);
+        entity.ExcludeFromStats = _mapArea.IntersectsWithLocked(entity.Bounds);
     }
 
     public bool CanBePlaced(CityMapEntity cityMapEntity)
@@ -354,13 +356,63 @@ public class CityPlanner(
         }
     }
 
+    public bool TryToggleExpansion(Point coordinates, out CityMapExpansion? expansion)
+    {
+        expansion = _mapArea.GetExpansion(coordinates);
+
+        if (expansion != null)
+        {
+            if (IntersectsWithBuilding(expansion))
+            {
+                expansion = null;
+            }
+            else
+            {
+                expansion.IsLocked = !expansion.IsLocked;
+                foreach (var cityMapEntity in CityMapState.CityMapEntities)
+                {
+                    cityMapEntity.ExcludeFromStats = _mapArea.IntersectsWithLocked(cityMapEntity.Bounds);
+                }
+
+                _statsProcessor.UpdateStats();
+                UpdateCityPropertiesViewModel();
+                StateHasChanged?.Invoke();
+            }
+        }
+
+        return expansion != null;
+    }
+
+    public void UpdateWonderLevel(int level)
+    {
+        if (CityMapState.CityWonderLevel == level)
+        {
+            return;
+        }
+
+        CityMapState.CityWonderLevel = level;
+        _statsProcessor.UpdateStats();
+        if (CityMapState.SelectedCityMapEntity == null)
+        {
+            UpdateCityPropertiesViewModel();
+        }
+        else
+        {
+            UpdateSelectedEntityViewModel();
+        }
+
+        StateHasChanged?.Invoke();
+    }
+
     private HohCity GetCity()
     {
         DeselectAll();
         UpdateSelectedEntityViewModel();
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots);
+            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots,
+            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id),
+            CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
 
     private void DeselectAll()
@@ -389,7 +441,7 @@ public class CityPlanner(
         CityMapState.SelectedCityMapEntity = null;
     }
 
-    private async Task DoInitializeAsync(HohCity city, bool removeLockedEntities = false)
+    private async Task DoInitializeAsync(HohCity city)
     {
         if (!_cityPlannerDataCache.TryGetValue(city.InGameCityId, out var cityPlannerData))
         {
@@ -406,15 +458,11 @@ public class CityPlanner(
         _mapArea = mapAreaFactory.Create(cityPlannerData.ExpansionSize, cityPlannerData.Expansions,
             city.UnlockedExpansions);
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
-        // TODO: should be remade once we add expansion managment
-        if (removeLockedEntities)
+        var lockedMapEntities = CityMapState.CityMapEntities.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
+            .ToList();
+        foreach (var lockedMapEntity in lockedMapEntities)
         {
-            var lockedMapEntities = CityMapState.CityMapEntities.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
-                .ToList();
-            foreach (var lockedMapEntity in lockedMapEntities)
-            {
-                CityMapState.Remove(lockedMapEntity);
-            }
+            lockedMapEntity.ExcludeFromStats = true;
         }
 
         _statsProcessor = cityStatsProcessorFactory.Create(CityMapState);
@@ -475,6 +523,12 @@ public class CityPlanner(
     {
         return CityMapState.CityMapEntities.Any(cityMapEntity =>
             cityMapEntity != targetEntity && cityMapEntity.Bounds.IntersectsWith(targetEntity.Bounds));
+    }
+
+    private bool IntersectsWithBuilding(CityMapExpansion expansion)
+    {
+        return CityMapState.CityMapEntities.Any(cityMapEntity =>
+            cityMapEntity.IsMovable && cityMapEntity.Bounds.IntersectsWith(expansion.Bounds));
     }
 
     private List<BuildingSelectorTypesViewModel> PrepareBuildingSelectorItems(CityPlannerDataDto cityPlannerData)

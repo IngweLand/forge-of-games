@@ -11,6 +11,9 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFactory) : ICityMapEntityFactory
 {
+    private readonly HashSet<BuildingType> _notMovableEntities =
+        [BuildingType.RitualSite, BuildingType.ExtractionPoint];
+
     private int _nextBuildingId = -1;
 
     public CityMapEntity Create(BuildingDto building, HohCityMapEntity hohCityMapEntity)
@@ -20,7 +23,8 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
         var cme = new CityMapEntity(hohCityMapEntity.Id, new Point(hohCityMapEntity.X, hohCityMapEntity.Y),
             new Size(building.Width, building.Length), name: building.Name, cityEntityId: building.Id,
             hohCityMapEntity.Level,
-            building.Type, building.Group, building.ExpansionSubType, overflowRange)
+            building.Type, building.Group, building.ExpansionSubType, overflowRange,
+            !_notMovableEntities.Contains(building.Type))
         {
             IsRotated = hohCityMapEntity.IsRotated,
             SelectedProductId = hohCityMapEntity.SelectedProductId,
@@ -44,8 +48,6 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
         _nextBuildingId--;
         return cme;
     }
-
-    
 
     private static int FindOverflowRange(BuildingDto building, int level)
     {

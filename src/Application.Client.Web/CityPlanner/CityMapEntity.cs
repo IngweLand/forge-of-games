@@ -12,7 +12,7 @@ public class CityMapEntity
 
     public CityMapEntity(int id, Point location, Size size, string name, string cityEntityId, int level,
         BuildingType buildingType, BuildingGroup buildingGroup, ExpansionSubType expansionSubType,
-        int overflowRange = -1)
+        int overflowRange = -1, bool isMovable = true)
     {
         Id = id;
         Location = location;
@@ -26,6 +26,7 @@ public class CityMapEntity
         Name = name;
         OverflowRange = overflowRange;
         UpdateBounds();
+        IsMovable = isMovable;
     }
 
     public Rectangle Bounds { get; private set; }
@@ -34,12 +35,16 @@ public class CityMapEntity
     public bool CanBePlaced { get; set; } = true;
     public string CityEntityId { get; }
     public string? CustomizationId { get; set; }
+
+    public bool ExcludeFromStats { get; set; }
     public ExpansionSubType ExpansionSubType { get; }
     public ExpansionType ExpansionType { get; }
 
     public float HappinessFraction { get; set; } = -1;
 
     public int Id { get; set; }
+
+    public bool IsMovable { get; init; } = true;
 
     public bool IsRotated
     {
@@ -105,7 +110,7 @@ public class CityMapEntity
     public CityMapEntity CloneWithLevel(string cityEntityId, int level, IReadOnlyCollection<ICityMapEntityStats> stats)
     {
         var newEntity = new CityMapEntity(Id, Location, Size, Name, cityEntityId, level, BuildingType, BuildingGroup,
-            ExpansionSubType, OverflowRange)
+            ExpansionSubType, OverflowRange, IsMovable)
         {
             Bounds = Bounds,
             CanBePlaced = CanBePlaced,
@@ -118,6 +123,7 @@ public class CityMapEntity
             SelectedProductId = SelectedProductId,
             CustomizationId = CustomizationId,
             Stats = stats,
+            ExcludeFromStats = ExcludeFromStats,
         };
 
         return newEntity;

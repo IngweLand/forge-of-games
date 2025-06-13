@@ -9,5 +9,6 @@ public interface IHohCityFactory
     HohCity CreateNewCapital(string cityName);
 
     HohCity Create(string id, CityId inGameCityId, string ageId, string name,
-        IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots);
+        IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,
+        IEnumerable<string> expansions, WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0);
 }

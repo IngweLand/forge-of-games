@@ -1,6 +1,5 @@
 using System.Drawing;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
@@ -10,8 +9,8 @@ public class CityMapEntityInteractionComponent(
     ICommandManager commandManager,
     ICityPlannerCommandFactory commandFactory) : ICityMapEntityInteractionComponent
 {
-    private PointF _initOffset;
     private Point _initialGridLocation;
+    private PointF _initOffset;
 
     public bool Start(PointF screenCoordinates)
     {
@@ -20,11 +19,11 @@ public class CityMapEntityInteractionComponent(
             return false;
         }
 
-        if(cityPlanner.CityMapState.SelectedCityMapEntity.CanBePlaced)
+        if (cityPlanner.CityMapState.SelectedCityMapEntity.CanBePlaced)
         {
             _initialGridLocation = cityPlanner.CityMapState.SelectedCityMapEntity.Location;
         }
-        
+
         var initScreenCoordinates = grid.GridToScreen(cityPlanner.CityMapState.SelectedCityMapEntity.Location);
         _initOffset = new PointF(initScreenCoordinates.X - screenCoordinates.X,
             initScreenCoordinates.Y - screenCoordinates.Y);
@@ -33,7 +32,7 @@ public class CityMapEntityInteractionComponent(
 
     public bool Drag(PointF screenDelta)
     {
-        if (cityPlanner.CityMapState.SelectedCityMapEntity == null)
+        if (cityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
         {
             return false;
         }
@@ -51,12 +50,14 @@ public class CityMapEntityInteractionComponent(
 
     public void End()
     {
-        if (cityPlanner.CityMapState.SelectedCityMapEntity == null || !cityPlanner.CanBePlaced(cityPlanner.CityMapState.SelectedCityMapEntity))
+        if (cityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true} ||
+            !cityPlanner.CanBePlaced(cityPlanner.CityMapState.SelectedCityMapEntity))
         {
             return;
         }
 
-        var cmd = commandFactory.CreateMoveEntityCommand(cityPlanner.CityMapState.SelectedCityMapEntity, _initialGridLocation);
+        var cmd = commandFactory.CreateMoveEntityCommand(cityPlanner.CityMapState.SelectedCityMapEntity,
+            _initialGridLocation);
         commandManager.ExecuteCommand(cmd);
     }
 }

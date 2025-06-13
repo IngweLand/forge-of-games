@@ -11,6 +11,11 @@ public static class CityStatsProcessor
         
         foreach (var cme in entities)
         {
+            if (cme.ExcludeFromStats)
+            {
+                continue;
+            }
+            
             var workerProvider = cme.FirstOrDefaultStat<WorkerProvider>();
             if (workerProvider != null)
             {

@@ -48,6 +48,30 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
                     Style = SKPaintStyle.Fill,
                 }
             },
+            {
+                BuildingType.RitualSite, new SKPaint()
+                {
+                    Color = SKColor.Parse("#A697E8"),
+                    IsAntialias = false,
+                    Style = SKPaintStyle.Fill,
+                }
+            },
+            {
+                BuildingType.Quarry, new SKPaint()
+                {
+                    Color = SKColor.Parse("#E8B995"),
+                    IsAntialias = false,
+                    Style = SKPaintStyle.Fill,
+                }
+            },
+            {
+                BuildingType.Aviary, new SKPaint()
+                {
+                    Color = SKColor.Parse("#CFE895"),
+                    IsAntialias = false,
+                    Style = SKPaintStyle.Fill,
+                }
+            },
         };
 
     public SKPaint CultureFillPaint { get; } = new()

@@ -134,7 +134,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private void Delete()
     {
-        if (CityPlanner.CityMapState.SelectedCityMapEntity == null)
+        if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
         {
             return;
         }
@@ -186,7 +186,10 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private void InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
-        CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY);
+        if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY))
+        {
+            _skCanvasView!.Invalidate();
+        }
     }
 
     private void InteractiveCanvasOnWheel(WheelEventArgs e)
@@ -274,7 +277,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private void Rotate()
     {
-        if (CityPlanner.CityMapState.SelectedCityMapEntity == null)
+        if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
         {
             return;
         }

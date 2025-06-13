@@ -53,7 +53,8 @@ public class CityPlannerInteractionManager(
         {
             _canBeTapEvent = false;
             var location = grid.ScreenToGrid(transformationComponent.GetTransformedCoordinates(x, y));
-            return cityPlanner.TrySelectCityMapEntity(location, out _);
+            var entityFound = cityPlanner.TrySelectCityMapEntity(location, out _);
+            return entityFound || cityPlanner.TryToggleExpansion(location, out _);
         }
 
         _canBeTapEvent = false;

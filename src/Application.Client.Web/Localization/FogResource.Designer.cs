@@ -1563,7 +1563,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Capital city.
+        ///   Looks up a localized string similar to Cities.
         /// </summary>
         public static string ImportInGameData_Options_Cities {
             get {

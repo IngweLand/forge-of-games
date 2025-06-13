@@ -236,14 +236,16 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
             }
         }
 
-        var serializedCity = JsonSerializer.Serialize(city);
+        var serializedCity = JsonSerializer.Serialize(city, JsonSerializerOptions);
         return localStorageService.SetItemAsStringAsync(key, serializedCity);
     }
 
     private async ValueTask<HohCity?> DoLoadCity(string key)
     {
         var rawData = await localStorageService.GetItemAsStringAsync(key);
-        return string.IsNullOrWhiteSpace(rawData) ? null : JsonSerializer.Deserialize<HohCity>(rawData);
+        return string.IsNullOrWhiteSpace(rawData)
+            ? null
+            : JsonSerializer.Deserialize<HohCity>(rawData, JsonSerializerOptions);
     }
 
     private async ValueTask<BasicCommandCenterProfile?> DoLoadProfile(string key)

@@ -1,8 +1,8 @@
 @rendermode InteractiveWebAssembly
-@using Ingweland.Fog.Application.Client.Web.CityPlanner
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Dtos.Hoh.City
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
@@ -13,6 +13,14 @@
     <div class="age-label" style="background-color: @Data.Age.Color">@Data.Age.Name</div>
     <div class="header-container">@Data.Name</div>
     <div class="main-container">
+        @if (CityPlanner.CityMapState.CityWonder != null)
+        {
+            <div class="wonder-level-selector-container">
+                <span class="entity-title">@CityPlanner.CityMapState.CityWonder.WonderName</span>
+                <BuildingLevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
+                                                SelectedLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+            </div>
+        }
         <CityProductionStatsComponent Data="@Data.Production"/>
         @if (Data.CityId is (CityId.Capital or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace))
         {
@@ -24,6 +32,8 @@
 </div>
 
 @code {
+
+    private readonly BuildingLevelRange _wonderLevelRange = new() {StartLevel = 0, EndLevel = 50};
 
     protected override void OnInitialized()
     {
@@ -52,4 +62,10 @@
     {
         CityPlanner.UpdateCustomization(item);
     }
+
+    private void OnWonderLevelChanged(int level)
+    {
+        CityPlanner.UpdateWonderLevel(level);
+    }
+
 }
