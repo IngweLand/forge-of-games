@@ -191,7 +191,6 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                         CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
                         Id = 2,
                         Level = 1,
-                        SelectedProductId = "Production1_Building_China_ExtractionPoint_MothGlade_1",
                         X = 19,
                         Y = -43
                     }

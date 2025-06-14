@@ -4,14 +4,16 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
 public static class ProductionProviderHelper
 {
+    private static readonly HashSet<BuildingType> SelectableProductBuildingTypes =
+    [
+        BuildingType.Farm, BuildingType.Workshop, BuildingType.ExtractionPoint, BuildingType.Beehive,
+        BuildingType.Quarry, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
+        BuildingType.RiceFarm,
+    ];
+
     public static bool CanSelectProduct(BuildingType buildingType, BuildingGroup buildingGroup)
     {
-        var canSelect = buildingType switch
-        {
-            BuildingType.Farm => true,
-            BuildingType.Workshop => true,
-            _ => false,
-        };
+        var canSelect = SelectableProductBuildingTypes.Contains(buildingType);
 
         if (!canSelect)
         {
@@ -19,7 +21,7 @@ public static class ProductionProviderHelper
             {
                 BuildingGroup.CollectableSchoolV2 => true,
                 BuildingGroup.CollectableArchitectsStudioV2 => true,
-                _ => false,
+                _ => false
             };
         }
 

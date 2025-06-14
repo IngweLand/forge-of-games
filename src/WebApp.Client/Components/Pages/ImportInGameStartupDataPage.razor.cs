@@ -10,7 +10,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 public partial class ImportInGameStartupDataPage : FogPageBase
 {
     private static readonly HashSet<CityId> AllowedCities =
-        [CityId.Capital, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace];
+        [CityId.Capital, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace, CityId.China];
 
     private InGameStartupData? _inGameStartupData;
     private bool _isImporting = true;

@@ -91,6 +91,8 @@ public class StatsProcessor(
             case BuildingType.Workshop:
             case BuildingType.Aviary:
             case BuildingType.Quarry:
+            case BuildingType.PapyrusField:
+            case BuildingType.GoldMine:
             {
                 UpdateHappiness(target);
                 var modifiers = GetModifiers();
@@ -119,6 +121,21 @@ public class StatsProcessor(
                 UpdateEvolvingBuildings();
                 UpdateHappiness();
                 UpdateProduction();
+                break;
+            }
+            case BuildingType.ExtractionPoint:
+            case BuildingType.RiceFarm:
+            case BuildingType.FishingPier:
+            {
+                var modifiers = GetModifiers();
+                if (modifiers == null)
+                {
+                    productionStatsProcessor.UpdateProduction(target);
+                }
+                else
+                {
+                    productionStatsProcessor.UpdateProduction(target, modifiers);
+                }
                 break;
             }
         }

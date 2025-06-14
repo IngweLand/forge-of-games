@@ -54,12 +54,12 @@ public class CityPlannerDataFactory(
                     .ToList()
             },
 
-            // new NewCityDialogItemDto
-            // {
-            //     CityId = CityId.China,
-            //     CityName = gameLocalizationService.GetCityName(CityId.China),
-            //     Wonders = wonders.Where(w => w.CityId == CityId.China).Select(wonderDtoFactory.Create).ToList()
-            // }
+            new NewCityDialogItemDto
+            {
+                CityId = CityId.China,
+                CityName = gameLocalizationService.GetCityName(CityId.China),
+                Wonders = wonders.Where(w => w.CityId == CityId.China).Select(wonderDtoFactory.Create).ToList()
+            }
         ];
     }
 }
