@@ -14,7 +14,7 @@ public class CityPlannerCityPropertiesViewModelFactory(
     : ICityPlannerCityPropertiesViewModelFactory
 {
     public CityPlannerCityPropertiesViewModel Create(CityId cityId, string name, AgeViewModel age, CityStats stats,
-        IEnumerable<BuildingDto> buildings)
+        IEnumerable<BuildingDto> buildings,string? wonderName = null, int wonderLevel = 0)
     {
         return new CityPlannerCityPropertiesViewModel()
         {
@@ -28,7 +28,9 @@ public class CityPlannerCityPropertiesViewModelFactory(
             },
             Happiness = happinessStatsViewModelFactory.Create(stats),
             Production = productionStatsViewModelFactory.Create(stats.Products),
-            Areas = areaStatsViewModelFactory.Create(stats, buildings)
+            Areas = areaStatsViewModelFactory.Create(stats, buildings),
+            WonderName = wonderName,
+            WonderLevel = wonderLevel,
         };
     }
 }

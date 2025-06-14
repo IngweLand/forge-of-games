@@ -53,6 +53,7 @@ public class CityPlanner(
     private MapAreaRenderer _mapAreaRenderer = null!;
     private StatsProcessor _statsProcessor = null!;
     public event Action? StateHasChanged;
+    public IReadOnlyCollection<NewCityDialogItemDto> NewCityDialogItems { get; private set; }
 
     public CityMapState CityMapState { get; private set; } = null!;
 
@@ -85,9 +86,9 @@ public class CityPlanner(
         return snapshotsComparisonViewModelFactory.Create(stats);
     }
 
-    public HohCity CreateNew(string cityName)
+    public HohCity CreateNew(NewCityRequest newCityRequest)
     {
-        return hohCityFactory.CreateNewCapital(cityName);
+        return hohCityFactory.Create(newCityRequest);
     }
 
     public Task InitializeAsync(HohCity city)
@@ -447,6 +448,7 @@ public class CityPlanner(
         {
             cityPlannerData = (await cityService.GetCityPlannerDataAsync(city.InGameCityId))!;
             _cityPlannerDataCache.Add(city.InGameCityId, cityPlannerData);
+            NewCityDialogItems = cityPlannerData.NewCityDialogItems;
         }
 
         await buildingRenderer.InitializeAsync();
@@ -591,7 +593,8 @@ public class CityPlanner(
         }
 
         CityMapState.CityPropertiesViewModel = cityPropertiesViewModelFactory.Create(CityMapState.InGameCityId,
-            CityMapState.CityName, age, CityMapState.CityStats, CityMapState.Buildings.Values);
+            CityMapState.CityName, age, CityMapState.CityStats, CityMapState.Buildings.Values,
+            CityMapState.CityWonder?.WonderName, CityMapState.CityWonderLevel);
     }
 
     private void UpdateSelectedEntityViewModel()

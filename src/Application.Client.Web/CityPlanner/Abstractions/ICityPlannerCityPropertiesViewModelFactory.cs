@@ -7,6 +7,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 
 public interface ICityPlannerCityPropertiesViewModelFactory
 {
-    CityPlannerCityPropertiesViewModel Create(CityId cityId, string name, AgeViewModel age, CityStats stats,
-        IEnumerable<BuildingDto> buildings);
+    CityPlannerCityPropertiesViewModel Create(CityId inGameCityId, string cityName, AgeViewModel age,
+        CityStats cityStats, IEnumerable<BuildingDto> buildingsValues, string? wonderName = null,
+        int wonderLevel = 0);
 }

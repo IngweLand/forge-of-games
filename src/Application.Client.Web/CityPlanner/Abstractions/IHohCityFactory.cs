@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 public interface IHohCityFactory
 {
     HohCity CreateNewCapital();
-    HohCity CreateNewCapital(string cityName);
+    HohCity Create(NewCityRequest newCityRequest);
 
     HohCity Create(string id, CityId inGameCityId, string ageId, string name,
         IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,

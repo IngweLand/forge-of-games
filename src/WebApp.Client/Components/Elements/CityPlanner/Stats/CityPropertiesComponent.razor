@@ -13,12 +13,19 @@
     <div class="age-label" style="background-color: @Data.Age.Color">@Data.Age.Name</div>
     <div class="header-container">@Data.Name</div>
     <div class="main-container">
-        @if (CityPlanner.CityMapState.CityWonder != null)
+        @if (Data.WonderName != null)
         {
             <div class="wonder-level-selector-container">
-                <span class="entity-title">@CityPlanner.CityMapState.CityWonder.WonderName</span>
-                <BuildingLevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
-                                                SelectedLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                <span class="entity-title">@Data.WonderName</span>
+                @if (Editable)
+                {
+                    <BuildingLevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
+                                                    SelectedLevel="@Data.WonderLevel"/>
+                }
+                else
+                {
+                    @($"{Loc[FogResource.Hoh_Lvl]} {Data.WonderLevel}") 
+                }
             </div>
         }
         <CityProductionStatsComponent Data="@Data.Production"/>
@@ -37,14 +44,17 @@
 
     protected override void OnInitialized()
     {
-        CityPlanner.CityMapState.StateChanged += CityMapStateOnStateChanged;
+        CityPlanner.StateHasChanged += CityPlannerOnStateChanged;
     }
 
-    private void CityMapStateOnStateChanged()
+    private void CityPlannerOnStateChanged()
     {
         StateHasChanged();
     }
 
+    [Parameter]
+    public bool Editable { get; set; } = true;
+    
     [Parameter]
     public CityPlannerCityPropertiesViewModel Data { get; set; } = null!;
 
@@ -55,12 +65,7 @@
 
     public void Dispose()
     {
-        CityPlanner.CityMapState.StateChanged -= CityMapStateOnStateChanged;
-    }
-
-    private void OnCustomizationItemChanged(BuildingCustomizationDto item)
-    {
-        CityPlanner.UpdateCustomization(item);
+        CityPlanner.StateHasChanged -= CityPlannerOnStateChanged;
     }
 
     private void OnWonderLevelChanged(int level)

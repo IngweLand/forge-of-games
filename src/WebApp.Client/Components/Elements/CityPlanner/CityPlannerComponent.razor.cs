@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
@@ -114,20 +115,21 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private async Task CreateNewCity()
     {
         var options = GetDefaultDialogOptions();
-        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, options);
+        var dialogParameters = new DialogParameters<CreateNewCityDialog>()
+            {{d => d.CityItems, CityPlanner.NewCityDialogItems}};
+        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, dialogParameters, options);
         var result = await dialog.Result;
         if (result == null || result.Canceled)
         {
             return;
         }
 
-        var cityName = result.Data as string;
-        if (string.IsNullOrWhiteSpace(cityName))
+        if (result.Data is not NewCityRequest newCityRequest)
         {
             return;
         }
 
-        var city = CityPlanner!.CreateNew(cityName);
+        var city = CityPlanner!.CreateNew(newCityRequest);
         await PersistenceService.SaveCity(city);
         await CityPlanner!.InitializeAsync(city);
     }

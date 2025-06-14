@@ -73,8 +73,8 @@ public class CityService(
         var buildings = await GetBuildingsAsync(cityId);
         var customizations = await hohCoreDataRepository.GetBuildingCustomizations(cityId);
         var ages = await hohCoreDataRepository.GetAges();
-        var wonders = await Task.WhenAll(cityId.GetWonders().Select(hohCoreDataRepository.GetWonderAsync));
-        return cityPlannerDataFactory.Create(city, expansions, buildings, customizations, ages, wonders!);
+        var wonders = await hohCoreDataRepository.GetWondersAsync();
+        return cityPlannerDataFactory.Create(city, expansions, buildings, customizations, ages, wonders);
     }
 
     public async Task<IReadOnlyCollection<BuildingDto>> GetBarracks(UnitType unitType)

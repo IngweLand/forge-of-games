@@ -16,7 +16,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         var data = await dataProvider.GetDataAsync();
         return data.Heroes.FirstOrDefault(h => h.Id == id);
     }
-    
+
     public async Task<Hero?> GetHeroByUnitIdAsync(string id)
     {
         var data = await dataProvider.GetDataAsync();
@@ -81,6 +81,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     {
         var data = await dataProvider.GetDataAsync();
         return data.UnitStatFormulaData;
+    }
+
+    public async Task<IReadOnlyCollection<Wonder>> GetWondersAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.Wonders;
     }
 
     public async Task<World?> GetWorldAsync(WorldId id)

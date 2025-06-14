@@ -226,13 +226,16 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
 
     private ValueTask DoSaveCity(string key, HohCity city)
     {
-        var nextId = city.Entities.Max(cme => cme.Id) + 1;
-        foreach (var hohCityMapEntity in city.Entities)
+        if (city.Entities.Count > 0)
         {
-            if (hohCityMapEntity.Id < 0)
+            var nextId = city.Entities.Max(cme => cme.Id) + 1;
+            foreach (var hohCityMapEntity in city.Entities)
             {
-                hohCityMapEntity.Id = nextId;
-                nextId++;
+                if (hohCityMapEntity.Id < 0)
+                {
+                    hohCityMapEntity.Id = nextId;
+                    nextId++;
+                }
             }
         }
 

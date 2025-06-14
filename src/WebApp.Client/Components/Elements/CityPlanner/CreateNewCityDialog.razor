@@ -1,5 +1,9 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Dtos.Hoh.City
+@using Ingweland.Fog.Dtos.Hoh.CityPlanner
+@using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <MudDialog Style="padding: 24px">
@@ -7,7 +11,7 @@
         <MudText Typo="Typo.h6">@Loc[FogResource.CityPlanner_CreateNewCity]</MudText>
     </TitleContent>
     <DialogContent>
-        <MudTextField T="string" 
+        <MudTextField T="string"
                       @bind-Value="@_inputText"
                       Label="@Loc[FogResource.CityPlanner_CityName]"
                       MaxLength="@FogConstants.NAME_MAX_CHARACTERS"
@@ -15,11 +19,28 @@
                       Immediate="true"
                       Validation="@(new Func<string, IEnumerable<string>>(ValidateInput))"
                       Required="true"/>
+        <MudSelect Label="@Loc[FogResource.Hoh_City]" Value="_selectedCity" T="NewCityDialogItemDto"
+                   Variant="Variant.Outlined" Margin="Margin.Dense" Dense="true" ValueChanged="CityOnCHanged">
+            @foreach (var item in CityItems)
+            {
+                <MudSelectItem Value="item">@item.CityName</MudSelectItem>
+            }
+        </MudSelect>
+        @if (_selectedCity.Wonders.Count > 1)
+        {
+            <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]" @bind-Value="_selectedWonder"
+                       T="WonderDto" Variant="Variant.Outlined" Margin="Margin.Dense" Dense="true">
+                @foreach (var wonder in _selectedCity.Wonders)
+                {
+                    <MudSelectItem Value="wonder">@wonder.WonderName</MudSelectItem>
+                }
+            </MudSelect>
+        }
     </DialogContent>
     <DialogActions>
         <MudButton OnClick="Cancel">@Loc[FogResource.Common_Cancel]</MudButton>
-        <MudButton Color="Color.Success" 
-                   OnClick="Create" 
+        <MudButton Color="Color.Success"
+                   OnClick="Create"
                    Disabled="@(!string.IsNullOrEmpty(ValidateInput(_inputText).FirstOrDefault()))">
             @Loc[FogResource.Common_Create]
         </MudButton>
@@ -27,11 +48,21 @@
 </MudDialog>
 
 @code {
-    
+    private NewCityDialogItemDto _selectedCity;
+    private WonderDto? _selectedWonder;
+
     [CascadingParameter]
     private IMudDialogInstance MudDialog { get; set; }
 
+    [Parameter]
+    public required IReadOnlyCollection<NewCityDialogItemDto> CityItems { get; set; }
+
     private string _inputText;
+
+    protected override void OnParametersSet()
+    {
+        _selectedCity = CityItems.First(src => src.CityId == CityId.Capital);
+    }
 
     private IEnumerable<string> ValidateInput(string input)
     {
@@ -53,6 +84,16 @@
             return;
         }
 
-        MudDialog.Close(DialogResult.Ok(_inputText));
+        MudDialog.Close(DialogResult.Ok(new NewCityRequest() {Name = _inputText, CityId = _selectedCity.CityId, WonderId = _selectedWonder?.Id ?? WonderId.Undefined}));
     }
+
+    private void CityOnCHanged(NewCityDialogItemDto selectedItem)
+    {
+        _selectedCity = selectedItem;
+        if (_selectedCity.Wonders.Count > 0)
+        {
+            _selectedWonder = _selectedCity.Wonders.First();
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 using System.Drawing;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using SkiaSharp;
@@ -11,12 +12,13 @@ public interface ICityPlanner
 {
     Rectangle Bounds { get; }
     CityMapState CityMapState { get; }
+    IReadOnlyCollection<NewCityDialogItemDto> NewCityDialogItems { get; }
     public event Action? StateHasChanged;
     CityMapEntity AddEntity(BuildingGroup buildingGroup);
     void AddEntity(CityMapEntity entity);
     bool CanBePlaced(CityMapEntity cityMapEntity);
     SnapshotsComparisonViewModel CompareSnapshots();
-    HohCity CreateNew(string cityName);
+    HohCity CreateNew(NewCityRequest newCityRequest);
     Task CreateSnapshot();
     void DeleteEntity(CityMapEntity entity);
     Task DeleteSnapshot(string id);

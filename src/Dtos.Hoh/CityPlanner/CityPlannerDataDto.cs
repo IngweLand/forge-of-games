@@ -35,4 +35,7 @@ public class CityPlannerDataDto
 
     [ProtoMember(9)]
     public required IReadOnlyCollection<WonderDto> Wonders { get; set; } = new List<WonderDto>();
+    
+    [ProtoMember(10)]
+    public required IReadOnlyCollection<NewCityDialogItemDto> NewCityDialogItems { get; set; }
 }

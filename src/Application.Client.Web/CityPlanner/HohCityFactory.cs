@@ -1,7 +1,7 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Constants;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
@@ -10,29 +10,21 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
 {
     public HohCity CreateNewCapital()
     {
-        return CreateNewCapital($"{CityId.Capital} - {DateTime.Now:g}");
+        return Create(new NewCityRequest() {Name = $"{CityId.Capital} - {DateTime.Now:g}", CityId = CityId.Capital});
     }
 
-    public HohCity CreateNewCapital(string cityName)
+    public HohCity Create(NewCityRequest newCityRequest)
     {
         return new HohCity()
         {
             Id = Guid.NewGuid().ToString(),
-            InGameCityId = CityId.Capital,
-            AgeId = AgeIds.BRONZE_AGE,
-            Entities = new List<HohCityMapEntity>()
-            {
-                new()
-                {
-                    Id = 0,
-                    CityEntityId = "Building_StoneAge_City_CityHall_1",
-                    Level = 2,
-                    X = 46,
-                    Y = -51,
-                },
-            },
-            Name = cityName,
-            UnlockedExpansions = InitCityConfigs.Expansions[CityId.Capital],
+            InGameCityId = newCityRequest.CityId,
+            AgeId = newCityRequest.CityId.ToDefaultAge(),
+            Entities = InitCityConfigs.MapEntities[newCityRequest.CityId],
+            Name = newCityRequest.Name,
+            UnlockedExpansions = InitCityConfigs.Expansions[newCityRequest.CityId],
+            WonderId = newCityRequest.WonderId,
+            UpdatedAt = DateTime.Now.ToLocalTime()
         };
     }
 
@@ -51,11 +43,162 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
             UnlockedExpansions = expansions.ToHashSet(),
             WonderId = cityWonderId,
             WonderLevel = cityWonderLevel,
+            UpdatedAt = DateTime.Now.ToLocalTime()
         };
     }
 
     private static class InitCityConfigs
     {
+        public static readonly Dictionary<CityId, List<HohCityMapEntity>> MapEntities =
+            new()
+            {
+                {
+                    CityId.Capital,
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_StoneAge_City_CityHall_1",
+                            Level = 2,
+                            X = 46,
+                            Y = -51
+                        }
+                    ]
+                },
+                {
+                    CityId.Mayas_ChichenItza,
+                    [
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Premium_1",
+                            Id = 0,
+                            Level = 1,
+                            X = 27,
+                            Y = -39
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 1,
+                            Level = 1,
+                            X = 44,
+                            Y = -26
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 2,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 43,
+                            Y = -35
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 3,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 23,
+                            Y = -47
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 4,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 24,
+                            Y = -30
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_City_CityHall_1",
+                            Id = 5,
+                            Level = 1,
+                            SelectedProductId = "Production1_Building_Mayas_City_CityHall_1",
+                            X = 34,
+                            Y = -39
+                        }
+                    ]
+                },
+                {
+                CityId.China,
+                [
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_City_CityHall_1",
+                        Id = 9,
+                        IsRotated = true,
+                        Level = 1,
+                        SelectedProductId = "Production1_Building_China_City_CityHall_1",
+                        X = 30,
+                        Y = -51
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                        Id = 17,
+                        IsRotated = true,
+                        Level = 1,
+                        X = 35,
+                        Y = -39
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                        Id = 18,
+                        Level = 1,
+                        X = 11,
+                        Y = -51
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                        Id = 19,
+                        Level = 1,
+                        X = 11,
+                        Y = -27
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                        Id = 20,
+                        IsRotated = true,
+                        Level = 1,
+                        X = 31,
+                        Y = -31
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                        Id = 21,
+                        IsRotated = true,
+                        Level = 1,
+                        X = 43,
+                        Y = -31
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                        Id = 22,
+                        IsRotated = true,
+                        Level = 1,
+                        X = 43,
+                        Y = -43
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                        Id = 23,
+                        Level = 1,
+                        X = 23,
+                        Y = -23
+                    },
+                    new HohCityMapEntity {
+                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                        Id = 2,
+                        Level = 1,
+                        SelectedProductId = "Production1_Building_China_ExtractionPoint_MothGlade_1",
+                        X = 19,
+                        Y = -43
+                    }
+                ]
+            },
+            };
+
         public static readonly Dictionary<CityId, HashSet<string>> Expansions =
             new()
             {
