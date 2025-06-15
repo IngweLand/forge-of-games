@@ -1,0 +1,43 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    clip-path: inset(0 0 0 0 round var(--fog-border-radius));
+}
+
+.main-container {
+    display: flex !important;
+    flex-direction: column;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.entity-title {
+    font-weight: 700;
+    font-size: 0.875rem;
+    flex-grow: 1;
+    text-align: center;
+    min-width: 0;
+}
+
+.header-container
+{
+    display: flex;
+    gap: 6px;
+    padding: 0 12px 0 4px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.age-label {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-dark-color);
+    font-size: 0.75rem;
+    font-weight: 200;
+    min-height: 22px;
+    min-width: 80px;
+    text-align: center;
+}

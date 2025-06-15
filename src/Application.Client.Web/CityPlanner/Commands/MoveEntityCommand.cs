@@ -6,14 +6,15 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 public class MoveEntityCommand(ICityPlanner cityPlanner, CityMapEntity entity, Point oldLocation) : IUndoableCommand
 {
     private readonly Point _newLocation = entity.Location;
+    private readonly int _entityId = entity.Id;
 
     public void Execute()
     {
-        cityPlanner.MoveEntity(entity, _newLocation);
+        cityPlanner.MoveEntity(_entityId, _newLocation);
     }
 
     public void Undo()
     {
-        cityPlanner.MoveEntity(entity, oldLocation);
+        cityPlanner.MoveEntity(_entityId, oldLocation);
     }
 }

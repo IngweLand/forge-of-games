@@ -33,6 +33,7 @@ public class CityPlanner(
     IBuildingRenderer buildingRenderer,
     IHohCityFactory hohCityFactory,
     ICityMapEntityViewModelFactory cityMapEntityViewModelFactory,
+    ICityMapBuildingGroupViewModelFactory cityMapBuildingGroupViewModelFactory,
     ILogger<CityPlanner> logger,
     ICityMapStateFactory cityMapStateFactory,
     IMapAreaRendererFactory mapAreaRendererFactory,
@@ -46,6 +47,8 @@ public class CityPlanner(
     IStringLocalizer<FogResource> localizer,
     IMapper mapper) : ICityPlanner
 {
+    public const int Version = 1;
+
     private IDictionary<CityId, CityPlannerDataDto>
         _cityPlannerDataCache = new Dictionary<CityId, CityPlannerDataDto>();
 
@@ -121,7 +124,7 @@ public class CityPlanner(
     public void RenderScene(SKCanvas canvas)
     {
         _mapAreaRenderer.Render(canvas);
-        buildingRenderer.RenderBuildings(canvas, CityMapState.CityMapEntities);
+        buildingRenderer.RenderBuildings(canvas, CityMapState.CityMapEntities.Values);
     }
 
     public Task CreateSnapshot()
@@ -157,8 +160,13 @@ public class CityPlanner(
         SelectCityMapEntity(entity);
     }
 
-    public void MoveEntity(CityMapEntity entity, Point location)
+    public void MoveEntity(int entityId, Point location)
     {
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+        {
+            return;
+        }
+        
         if (entity.Location == location)
         {
             return;
@@ -171,11 +179,16 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
-    public void DeleteEntity(CityMapEntity entity)
+    public void DeleteEntity(int entityId)
     {
         DeselectAll();
 
-        CityMapState.Remove(entity);
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+        {
+            return;
+        }
+        
+        CityMapState.Remove(entity.Id);
         _statsProcessor.UpdateStats();
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
@@ -210,8 +223,13 @@ public class CityPlanner(
         return !CityMapState.DeleteSnapshot(id) ? Task.CompletedTask : SaveCityAsync();
     }
 
-    public void RotateEntity(CityMapEntity entity)
+    public void RotateEntity(int entityId)
     {
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+        {
+            return;
+        }
+        
         entity.IsRotated = !entity.IsRotated;
         UpdateEntityState(entity);
         _statsProcessor.UpdateStats(entity);
@@ -230,22 +248,29 @@ public class CityPlanner(
         SelectGroup(building.Group);
     }
 
-    public bool TrySelectCityMapEntity(Point coordinates, out CityMapEntity? cityMapEntity)
+    public bool TrySelectCityMapEntity(Point coordinates)
     {
-        var foundCityMapEntity =
-            CityMapState.CityMapEntities.FirstOrDefault(cityMapEntity =>
-                cityMapEntity.Bounds.Contains(coordinates));
+        var foundEntity =
+            CityMapState.CityMapEntities.Values.FirstOrDefault(entity => entity.Bounds.Contains(coordinates));
 
-        if ((CityMapState.SelectedCityMapEntity != null && foundCityMapEntity == CityMapState.SelectedCityMapEntity) ||
-            (CityMapState.SelectedCityMapEntity == null && foundCityMapEntity == null))
+        if (foundEntity != null && foundEntity == CityMapState.SelectedCityMapEntity)
         {
-            cityMapEntity = null;
             return false;
         }
 
-        SelectCityMapEntity(foundCityMapEntity);
+        if (foundEntity == null && CityMapState.SelectedCityMapEntity == null &&
+            CityMapState.SelectedCityMapEntities == null)
+        {
+            return false;
+        }
 
-        cityMapEntity = foundCityMapEntity;
+        if (foundEntity != null)
+        {
+            SelectCityMapEntity(foundEntity);
+            return true;
+        }
+
+        DeselectAll();
         return true;
     }
 
@@ -272,36 +297,38 @@ public class CityPlanner(
 
     public CityMapEntity UpdateLevel(CityMapEntity entity, int level)
     {
-        var hasChanged = false;
         var newEntity = DoUpdateLevel(entity, level);
         SelectCityMapEntity(newEntity);
-        hasChanged = true;
-        // else if (CityMapState.SelectedCityMapEntities != null)
-        // {
-        //     foreach (var entity in CityMapState.SelectedCityMapEntities)
-        //     {
-        //         var newEntity = DoUpdateLevel(entity, level);
-        //         if (newEntity != null)
-        //         {
-        //             hasChanged = true;
-        //         }
-        //     }
-        //
-        //     if (hasChanged)
-        //     {
-        //         var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntities.First().CityEntityId];
-        //         SelectGroup(building.Group);
-        //     }
-        // }
 
-        if (hasChanged)
-        {
-            _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
-            UpdateSelectedEntityViewModel();
-            StateHasChanged?.Invoke();
-        }
+        _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
+        UpdateSelectedEntityViewModel();
+        StateHasChanged?.Invoke();
 
         return newEntity;
+    }
+
+    public void UpdateLevels(IReadOnlyDictionary<int, int> cityMapEntityIdToLevelMap)
+    {
+        string? cityEntityId = null;
+        foreach (var kvp in cityMapEntityIdToLevelMap)
+        {
+            if (!CityMapState.CityMapEntities.TryGetValue(kvp.Key, out var entity))
+            {
+                continue;
+            }
+
+            DoUpdateLevel(entity, kvp.Value);
+            cityEntityId = entity.CityEntityId;
+        }
+
+        if (cityEntityId == null)
+        {
+            return;
+        }
+
+        FinalizeGroupLevelUpdate(cityEntityId);
+
+        StateHasChanged?.Invoke();
     }
 
     public void UpdateCustomization(BuildingCustomizationDto customization)
@@ -358,9 +385,9 @@ public class CityPlanner(
         }
     }
 
-    public bool TryToggleExpansion(Point coordinates, out CityMapExpansion? expansion)
+    public bool TryToggleExpansion(Point coordinates)
     {
-        expansion = _mapArea.GetExpansion(coordinates);
+        var expansion = _mapArea.GetExpansion(coordinates);
 
         if (expansion != null)
         {
@@ -371,7 +398,7 @@ public class CityPlanner(
             else
             {
                 expansion.IsLocked = !expansion.IsLocked;
-                foreach (var cityMapEntity in CityMapState.CityMapEntities)
+                foreach (var cityMapEntity in CityMapState.CityMapEntities.Values)
                 {
                     cityMapEntity.ExcludeFromStats = _mapArea.IntersectsWithLocked(cityMapEntity.Bounds);
                 }
@@ -406,13 +433,20 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
+    private void FinalizeGroupLevelUpdate(string cityEntityId)
+    {
+        var building = CityMapState.Buildings[cityEntityId];
+        SelectGroup(building.Group);
+        _statsProcessor.UpdateStats();
+        UpdateSelectedCityMapBuildingGroupViewModel();
+    }
+
     private HohCity GetCity()
     {
         DeselectAll();
-        UpdateSelectedEntityViewModel();
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities, CityMapState.Snapshots,
+            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.Snapshots,
             _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id),
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
@@ -434,13 +468,15 @@ public class CityPlanner(
             // }
         }
 
-        foreach (var cityMapEntity in CityMapState.CityMapEntities)
+        foreach (var cityMapEntity in CityMapState.CityMapEntities.Values)
         {
             cityMapEntity.IsSelected = false;
         }
 
         CityMapState.SelectedCityMapEntities = null;
         CityMapState.SelectedCityMapEntity = null;
+        CityMapState.SelectedEntityViewModel = null;
+        CityMapState.SelectedCityMapBuildingGroupViewModel = null;
     }
 
     private async Task DoInitializeAsync(HohCity city)
@@ -462,7 +498,7 @@ public class CityPlanner(
             cityPlannerData.Expansions, city.UnlockedExpansions,
             cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
-        var lockedMapEntities = CityMapState.CityMapEntities.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
+        var lockedMapEntities = CityMapState.CityMapEntities.Values.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
             .ToList();
         foreach (var lockedMapEntity in lockedMapEntities)
         {
@@ -502,7 +538,7 @@ public class CityPlanner(
             newEntity = cityMapEntityFactory.Create(currentBuilding, currentEntity.Location, levelRange, level);
         }
 
-        CityMapState.Remove(currentEntity);
+        CityMapState.Remove(currentEntity.Id);
         CityMapState.Add(newEntity);
         return newEntity;
     }
@@ -526,13 +562,13 @@ public class CityPlanner(
 
     private bool IntersectsWithBuilding(CityMapEntity targetEntity)
     {
-        return CityMapState.CityMapEntities.Any(cityMapEntity =>
+        return CityMapState.CityMapEntities.Values.Any(cityMapEntity =>
             cityMapEntity != targetEntity && cityMapEntity.Bounds.IntersectsWith(targetEntity.Bounds));
     }
 
     private bool IntersectsWithBuilding(CityMapExpansion expansion)
     {
-        return CityMapState.CityMapEntities.Any(cityMapEntity =>
+        return CityMapState.CityMapEntities.Values.Any(cityMapEntity =>
             cityMapEntity.IsMovable && cityMapEntity.Bounds.IntersectsWith(expansion.Bounds));
     }
 
@@ -563,12 +599,9 @@ public class CityPlanner(
             return;
         }
 
-        foreach (var cityMapEntity in cityMapEntities)
-        {
-            cityMapEntity.IsSelected = true;
-        }
-
         CityMapState.SelectedCityMapEntities = cityMapEntities.AsReadOnly();
+        UpdateSelectedCityMapBuildingGroupViewModel();
+        StateHasChanged?.Invoke();
     }
 
     private void SelectCityMapEntity(CityMapEntity? cityMapEntity)
@@ -582,9 +615,15 @@ public class CityPlanner(
 
     private void SelectGroup(BuildingGroup buildingGroup)
     {
-        SelectCityMapEntities(CityMapState.CityMapEntities
+        var entities = CityMapState.CityMapEntities.Values
             .Where(cme => CityMapState.Buildings[cme.CityEntityId].Group == buildingGroup)
-            .ToList());
+            .ToList();
+        if (entities.Count < 2)
+        {
+            return;
+        }
+
+        SelectCityMapEntities(entities);
     }
 
     private void UpdateCityPropertiesViewModel()
@@ -613,7 +652,24 @@ public class CityPlanner(
         var customizations = CityMapState.BuildingCustomizations.Where(bc => bc.BuildingGroup == building.Group)
             .ToList();
         CityMapState.SelectedEntityViewModel = cityMapEntityViewModelFactory.Create(CityMapState.SelectedCityMapEntity,
-            building, levelRange, customizations, CityMapState.CityAge);
+            building, levelRange, customizations);
+        UpdateCityPropertiesViewModel();
+    }
+
+    private void UpdateSelectedCityMapBuildingGroupViewModel()
+    {
+        if (CityMapState.SelectedCityMapEntities == null)
+        {
+            CityMapState.SelectedCityMapBuildingGroupViewModel = null;
+            return;
+        }
+
+        var levelGroups = CityMapState.SelectedCityMapEntities.GroupBy(src => src.Level).ToList();
+        var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntities[0].CityEntityId];
+        var levelRange = CityMapState.BuildingLevelRanges![building.Group];
+        CityMapState.SelectedCityMapBuildingGroupViewModel = cityMapBuildingGroupViewModelFactory.Create(
+            building.Group, building.Name, levelGroups.Count == 1 ? building.Age : null,
+            levelGroups.Count == 1 ? levelGroups[0].Key : null, levelRange);
         UpdateCityPropertiesViewModel();
     }
 }

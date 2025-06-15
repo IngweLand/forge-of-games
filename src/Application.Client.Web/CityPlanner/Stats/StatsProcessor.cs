@@ -47,7 +47,7 @@ public class StatsProcessor(
         UpdateEvolvingBuildings();
         UpdateHappiness();
         UpdateProduction();
-        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities, mapAreaHappinessProviders);
+        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders);
     }
 
     private void UpdateEvolvingBuildings()
@@ -62,7 +62,7 @@ public class StatsProcessor(
 
     private void UpdateProduction()
     {
-        foreach (var cme in cityMapState.CityMapEntities)
+        foreach (var cme in cityMapState.CityMapEntities.Values)
         {
             var modifiers = GetModifiers();
             if (modifiers == null)
@@ -147,6 +147,6 @@ public class StatsProcessor(
             }
         }
 
-        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities, mapAreaHappinessProviders);
+        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders);
     }
 }

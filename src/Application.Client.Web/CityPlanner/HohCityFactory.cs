@@ -29,7 +29,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
     }
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
-        IReadOnlyCollection<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,
+        IEnumerable<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,
         IEnumerable<string> expansions, WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
     {
         return new HohCity()

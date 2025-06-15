@@ -44,7 +44,7 @@ public class CityMapEntityInteractionComponent(
             return false;
         }
 
-        cityPlanner.MoveEntity(cityPlanner.CityMapState.SelectedCityMapEntity, newLocation);
+        cityPlanner.MoveEntity(cityPlanner.CityMapState.SelectedCityMapEntity.Id, newLocation);
         return true;
     }
 

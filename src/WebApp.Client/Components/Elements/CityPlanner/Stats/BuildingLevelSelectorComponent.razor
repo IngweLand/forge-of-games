@@ -4,7 +4,7 @@
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root">
     <MudSelect Label="@Loc[FogResource.Hoh_Lvl]" Value="@SelectedLevel" ValueChanged="OnLevelChanged" T="int"
-               Variant="Variant.Outlined"  Margin="Margin.Dense" Dense="true">
+               Variant="Variant.Outlined"  Margin="Margin.Dense" Dense="true" Placeholder="---" Strict="true">
         @foreach (var level in Enumerable.Range(Levels.StartLevel, Levels.EndLevel - Levels.StartLevel + 1))
         {
             <MudSelectItem Value="level">@level</MudSelectItem>
@@ -18,7 +18,7 @@
     public BuildingLevelRange Levels { get; set; } = null!;
 
     [Parameter]
-    public int SelectedLevel { get; set; }
+    public int SelectedLevel { get; set; } = -1;
 
     [Parameter]
     public EventCallback<int> LevelChanged { get; set; }

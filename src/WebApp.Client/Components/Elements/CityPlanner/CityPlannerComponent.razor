@@ -47,6 +47,8 @@
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
                 <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="Delete" Class="fog-icon-light"
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="SelectGroup" Class="fog-icon-light"
+                               Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
             </div>
             <MudSpacer/>
             @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@
@@ -80,6 +82,11 @@
                         {
                             <CityMapEntityPropertiesComponent
                                 Building="@CityPlanner.CityMapState.SelectedEntityViewModel"/>
+                        }
+                        @if (CityPlanner!.CityMapState.SelectedCityMapBuildingGroupViewModel != null)
+                        {
+                            <CityMapBuildingGroupPropertiesComponent
+                                BuildingGroup="@CityPlanner.CityMapState.SelectedCityMapBuildingGroupViewModel"/>
                         }
                         @if (CityPlanner.CityMapState.CityPropertiesViewModel != null)
                         {

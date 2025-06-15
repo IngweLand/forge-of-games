@@ -20,24 +20,27 @@ public interface ICityPlanner
     SnapshotsComparisonViewModel CompareSnapshots();
     HohCity CreateNew(NewCityRequest newCityRequest);
     Task CreateSnapshot();
-    void DeleteEntity(CityMapEntity entity);
+    void DeleteEntity(int entityId);
     Task DeleteSnapshot(string id);
     Task InitializeAsync();
     Task InitializeAsync(HohCity city);
     Task LoadSnapshot(string id);
-    void MoveEntity(CityMapEntity entity, Point location);
+    void MoveEntity(int entityId, Point location);
     void RenderScene(SKCanvas canvas);
-    void RotateEntity(CityMapEntity entity);
+    void RotateEntity(int entityId);
     Task SaveCityAsync();
     Task SaveCityAsync(string newCityName);
     void SelectGroup();
-    bool TrySelectCityMapEntity(Point coordinates, out CityMapEntity? cityMapEntity);
+    bool TrySelectCityMapEntity(Point coordinates);
     void UpdateCustomization(BuildingCustomizationDto customization);
     void UpdateEntityState(CityMapEntity entity);
     CityMapEntity UpdateLevel(CityMapEntity entity, int level);
+
+    void UpdateLevels(IReadOnlyDictionary<int, int> mapEntityIdToOldLevelMap);
+
     void UpdateProduct(string productId);
     Task DeleteCityAsync();
 
-    bool TryToggleExpansion(Point coordinates, out CityMapExpansion? expansion);
+    bool TryToggleExpansion(Point coordinates);
     void UpdateWonderLevel(int level);
 }

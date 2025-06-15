@@ -27,7 +27,7 @@ public class CityMapEntityViewModelFactory(
     IWorkerIconUrlProvider workerIconUrlProvider) : ICityMapEntityViewModelFactory
 {
     public CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
-        BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations, AgeDto cityAge)
+        BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations)
     {
         var constructionComponentDto = building.Components.OfType<ConstructionComponent>().FirstOrDefault();
         ConstructionComponentViewModel? constructionComponent = null;

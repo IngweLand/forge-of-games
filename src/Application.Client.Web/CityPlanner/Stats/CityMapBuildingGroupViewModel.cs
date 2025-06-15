@@ -1,0 +1,16 @@
+using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Models.Hoh.Enums;
+
+namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
+
+public class CityMapBuildingGroupViewModel
+{
+    public AgeViewModel? Age { get; init; }
+    public required BuildingGroup BuildingGroup { get; init; }
+
+    public int? Level { get; init; }
+
+    public required BuildingLevelRange LevelRange { get; init; }
+    public required string Name { get; init; }
+}

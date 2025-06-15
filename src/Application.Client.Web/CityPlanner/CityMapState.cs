@@ -13,7 +13,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 public class CityMapState(
     IBuildingLevelRangesFactory buildingLevelRangesFactory)
 {
-    private readonly IList<CityMapEntity> _cityMapEntities = new List<CityMapEntity>();
+    private readonly Dictionary<int, CityMapEntity> _cityMapEntities = new ();
     private readonly IList<CityMapEntity> _happinessConsumers = new List<CityMapEntity>();
     private readonly IList<CityMapEntity> _happinessProviders = new List<CityMapEntity>();
     private readonly IList<HohCitySnapshot> _snapshots = new List<HohCitySnapshot>();
@@ -29,6 +29,8 @@ public class CityMapState(
     private CityStats _cityStats = new();
     private CityMapEntity? _selectedCityMapEntity;
     private CityMapEntityViewModel? _selectedEntityViewModel;
+    private CityMapBuildingGroupViewModel? _selectedCityMapBuildingGroupViewModel;
+    private IReadOnlyList<CityMapEntity>? _selectedCityMapEntities;
     public required IReadOnlyCollection<BuildingCustomizationDto> BuildingCustomizations { get; init; }
 
     public IReadOnlyDictionary<BuildingGroup, BuildingLevelRange>? BuildingLevelRanges
@@ -56,7 +58,7 @@ public class CityMapState(
 
     public required string CityId { get; init; }
 
-    public IReadOnlyList<CityMapEntity> CityMapEntities => _cityMapEntities.AsReadOnly();
+    public IReadOnlyDictionary<int, CityMapEntity> CityMapEntities => _cityMapEntities.AsReadOnly();
     public required string CityName { get; set; }
 
     public CityPlannerCityPropertiesViewModel? CityPropertiesViewModel
@@ -96,7 +98,32 @@ public class CityMapState(
     public IReadOnlyList<CityMapEntity> HappinessProviders => _happinessProviders.AsReadOnly();
     public required CityId InGameCityId { get; init; }
 
-    public IReadOnlyList<CityMapEntity>? SelectedCityMapEntities { get; set; }
+    public IReadOnlyList<CityMapEntity>? SelectedCityMapEntities
+    {
+        get => _selectedCityMapEntities;
+        set
+        {
+            if (_selectedCityMapEntities == value)
+            {
+                return;
+            }
+
+            _selectedCityMapEntities = value;
+            if (_selectedCityMapEntities != null)
+            {
+                foreach (var cityMapEntity in _selectedCityMapEntities)
+                {
+                    cityMapEntity.IsSelected = true;
+                }
+            }
+            else
+            {
+                _selectedCityMapBuildingGroupViewModel = null;
+            }
+
+            StateChanged?.Invoke();
+        }
+    }
 
     public CityMapEntity? SelectedCityMapEntity
     {
@@ -136,6 +163,21 @@ public class CityMapState(
             StateChanged?.Invoke();
         }
     }
+    
+    public CityMapBuildingGroupViewModel? SelectedCityMapBuildingGroupViewModel
+    {
+        get => _selectedCityMapBuildingGroupViewModel;
+        set
+        {
+            if (_selectedCityMapBuildingGroupViewModel == value)
+            {
+                return;
+            }
+
+            _selectedCityMapBuildingGroupViewModel = value;
+            StateChanged?.Invoke();
+        }
+    }
 
     public IReadOnlyCollection<HohCitySnapshot> Snapshots
     {
@@ -155,7 +197,7 @@ public class CityMapState(
                 _cityAge = building.Age!;
             }
 
-            _cityMapEntities.Add(cityMapEntity);
+            _cityMapEntities.Add(cityMapEntity.Id, cityMapEntity);
             if (cityMapEntity.HasStat<HappinessProvider>())
             {
                 _happinessProviders.Add(cityMapEntity);
@@ -210,14 +252,18 @@ public class CityMapState(
 
     public bool IsHappinessProvider(CityMapEntity entity) => _happinessProviders.Contains(entity);
 
-    public void Remove(CityMapEntity cityMapEntity)
+    public void Remove(int cityMapEntityId)
     {
-        _cityMapEntities.Remove(cityMapEntity);
-        _happinessProviders.Remove(cityMapEntity);
-        _happinessConsumers.Remove(cityMapEntity);
-        var building = Buildings[cityMapEntity.CityEntityId];
-        _typedEntities[building.Type].Remove(cityMapEntity);
-        if (cityMapEntity == _selectedCityMapEntity)
+        if (!_cityMapEntities.Remove(cityMapEntityId, out var foundEntity))
+        {
+            return;
+        }
+
+        _happinessProviders.Remove(foundEntity);
+        _happinessConsumers.Remove(foundEntity);
+        var building = Buildings[foundEntity.CityEntityId];
+        _typedEntities[building.Type].Remove(foundEntity);
+        if (foundEntity == _selectedCityMapEntity)
         {
             _selectedCityMapEntity = null;
         }

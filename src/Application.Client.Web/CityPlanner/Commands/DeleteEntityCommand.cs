@@ -7,7 +7,7 @@ public class DeleteEntityCommand(ICityPlanner cityPlanner, CityMapEntity entity)
 {
     public void Execute()
     {
-        cityPlanner.DeleteEntity(entity);
+        cityPlanner.DeleteEntity(entity.Id);
     }
 
     public void Undo()

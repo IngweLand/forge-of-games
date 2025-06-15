@@ -46,7 +46,7 @@ public class BuildingRenderer : IBuildingRenderer
         return _initializationTask;
     }
 
-    public void RenderBuildings(SKCanvas canvas, IReadOnlyList<CityMapEntity> entities)
+    public void RenderBuildings(SKCanvas canvas, IEnumerable<CityMapEntity> entities)
     {
         ThrowIfNotInitialized();
 

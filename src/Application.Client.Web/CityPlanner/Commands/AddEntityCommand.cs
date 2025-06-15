@@ -16,7 +16,7 @@ public class AddEntityCommand(ICityPlanner cityPlanner, BuildingGroup buildingGr
     {
         if (_addedEntity != null)
         {
-            cityPlanner.DeleteEntity(_addedEntity);
+            cityPlanner.DeleteEntity(_addedEntity.Id);
         }
     }
 }

@@ -114,6 +114,7 @@ public static class DependencyInjection
         services.AddScoped<ICcEquipmentUiService, CcEquipmentUiService>();
         services.AddScoped<IEquipmentSlotTypeIconUrlProvider, EquipmentSlotTypeIconUrlProvider>();
         services.AddScoped<IWorkerIconUrlProvider, WorkerIconUrlProvider>();
+        services.AddScoped<ICityMapBuildingGroupViewModelFactory, CityMapBuildingGroupViewModelFactory>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         

@@ -284,7 +284,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             return;
         }
 
-        var cmd = CommandFactory.CreateRotateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity);
+        var cmd = CommandFactory.CreateRotateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
         CommandManager.ExecuteCommand(cmd);
         _skCanvasView!.Invalidate();
     }

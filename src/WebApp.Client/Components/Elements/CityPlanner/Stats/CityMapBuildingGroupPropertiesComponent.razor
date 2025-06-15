@@ -1,0 +1,52 @@
+@rendermode InteractiveWebAssembly
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@implements IDisposable
+@inject ICityPlanner CityPlanner
+@inject IStringLocalizer<FogResource> Loc
+@inject ICommandManager CommandManager
+@inject ICityPlannerCommandFactory CommandFactory
+<div class="fog-container component-root">
+    <div class="age-label" style="background-color: @BuildingGroup.Age?.Color">@BuildingGroup.Age?.Name</div>
+    <div class="header-container">
+        <span class="entity-title">@BuildingGroup.Name</span>
+        <BuildingLevelSelectorComponent Levels="@BuildingGroup.LevelRange" LevelChanged="OnLevelChanged"
+                                        SelectedLevel="@(BuildingGroup.Level ?? -1)"/>
+    </div>
+</div>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        CityPlanner.CityMapState.StateChanged += CityMapStateOnStateChanged;
+    }
+
+    private void CityMapStateOnStateChanged()
+    {
+        StateHasChanged();
+    }
+
+    [Parameter]
+    public CityMapBuildingGroupViewModel BuildingGroup { get; set; } = null!;
+
+    private void OnLevelChanged(int level)
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntities == null)
+        {
+            return;
+        }
+
+        var cmd = CommandFactory.CreateChangeEntitiesLevelCommand(
+            CityPlanner.CityMapState.SelectedCityMapEntities, level);
+        CommandManager.ExecuteCommand(cmd);
+    }
+
+    public void Dispose()
+    {
+        CityPlanner.CityMapState.StateChanged -= CityMapStateOnStateChanged;
+    }
+
+}
