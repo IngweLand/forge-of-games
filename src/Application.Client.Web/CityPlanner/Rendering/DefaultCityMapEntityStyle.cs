@@ -5,74 +5,25 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 
 public class DefaultCityMapEntityStyle : ICityMapEntityStyle
 {
-    public IDictionary<BuildingType, SKPaint> BuildingTypePaints =
-        new Dictionary<BuildingType, SKPaint>()
+    private IDictionary<BuildingType, SKPaint> _buildingTypePaints =
+        new Dictionary<BuildingType, SKPaint>();
+
+    public SKPaint GetPaint(BuildingType buildingType)
+    {
+        if (!_buildingTypePaints.TryGetValue(buildingType, out var paint))
         {
+            paint = new SKPaint()
             {
-                BuildingType.CultureSite, new SKPaint()
-                {
-                    Color = SKColor.Parse("#A697E8"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Home, new SKPaint()
-                {
-                    Color = SKColor.Parse("#95BAE8"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Farm, new SKPaint()
-                {
-                    Color = SKColor.Parse("#CFE895"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Workshop, new SKPaint()
-                {
-                    Color = SKColor.Parse("#E8DF95"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Barracks, new SKPaint()
-                {
-                    Color = SKColor.Parse("#E8B995"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.RitualSite, new SKPaint()
-                {
-                    Color = SKColor.Parse("#A697E8"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Quarry, new SKPaint()
-                {
-                    Color = SKColor.Parse("#E8B995"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-            {
-                BuildingType.Aviary, new SKPaint()
-                {
-                    Color = SKColor.Parse("#CFE895"),
-                    IsAntialias = false,
-                    Style = SKPaintStyle.Fill,
-                }
-            },
-        };
+                Color = GetBuildingColor(buildingType),
+                IsAntialias = false,
+                Style = SKPaintStyle.Fill
+            };
+            _buildingTypePaints.Add(buildingType, paint);
+        }
+
+        return paint!;
+    }
+
 
     public SKPaint CultureFillPaint { get; } = new()
     {
@@ -157,13 +108,36 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
         IsAntialias = true,
     };
 
-    public SKPaint GetPaint(BuildingType buildingType)
+    private static SKColor GetBuildingColor(BuildingType buildingType)
     {
-        if (BuildingTypePaints.TryGetValue(buildingType, out var paint))
+        switch (buildingType)
         {
-            return paint;
-        }
+            case BuildingType.CultureSite:
+            case BuildingType.RitualSite:
+            case BuildingType.Irrigation:
+                return SKColor.Parse("#A697E8");
 
-        return DefaultFillPaint;
+            case BuildingType.Home:
+                return SKColor.Parse("#95BAE8");
+
+            case BuildingType.Farm:
+            case BuildingType.Aviary:
+            case BuildingType.Beehive:
+            case BuildingType.RiceFarm:
+                return SKColor.Parse("#CFE895");
+
+            case BuildingType.Workshop:
+                return SKColor.Parse("#E8DF95");
+
+            case BuildingType.Barracks:
+            case BuildingType.Quarry:
+            case BuildingType.GoldMine:
+            case BuildingType.PapyrusField:
+            case BuildingType.FishingPier:
+                return SKColor.Parse("#E8B995");
+
+            default:
+                return SKColor.Parse("#9B97A8");
+        }
     }
 }

@@ -1,5 +1,6 @@
 using System.Drawing;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -7,16 +8,19 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class MapArea : IMapArea
 {
+    private readonly IReadOnlyCollection<MapAreaHappinessProvider> _mapAreaHappinessProviders;
     private IList<Rectangle> _blockedBounds;
     private IReadOnlyCollection<Expansion> _blockedExpansions;
     private IList<Rectangle> _lockedBounds;
     private IList<Rectangle> _nonWaterSubtypeOpenExpansionBounds;
     private IList<Rectangle> _waterSubtypeOpenExpansionBounds;
 
-    public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions)
+    public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions,
+        IReadOnlyCollection<MapAreaHappinessProvider> mapAreaHappinessProviders)
     {
         ExpansionSize = expansionSize;
         Expansions = expansions;
+        MapAreaHappinessProviders = mapAreaHappinessProviders;
         _blockedExpansions = expansions.Where(e =>
             e.Type is ExpansionType.Blocker or ExpansionType.Connector or ExpansionType.DetachedConnector).ToList();
         _blockedBounds = _blockedExpansions.Select(e => new Rectangle(e.X, e.Y, expansionSize, expansionSize))
@@ -56,6 +60,8 @@ public class MapArea : IMapArea
         var width = maxX - minX + expansionSize;
         Bounds = new Rectangle(minX, minY, width, height);
     }
+
+    public IReadOnlyCollection<MapAreaHappinessProvider> MapAreaHappinessProviders { get; }
 
     public IReadOnlyCollection<CityMapExpansion> UsableExpansions { get; }
 

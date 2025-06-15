@@ -41,6 +41,7 @@ public class MapAreaRenderer
         var bottomLayerExpansions = mapArea.Expansions
             .Where(e => e.Type is ExpansionType.Undefined or ExpansionType.Linked).ToList();
         _bottomLayerItems = bottomLayerExpansions.Select(CreateLayerItem).ToList();
+        _bottomLayerItems.AddRange(CreateHappinessTiles());
         _topLayerItems = mapArea.Expansions.Where(e => !bottomLayerExpansions.Contains(e)).Select(CreateLayerItem)
             .ToList();
 
@@ -50,6 +51,15 @@ public class MapAreaRenderer
     }
 
     public Rectangle Bounds { get; }
+
+    private List<LayerItem> CreateHappinessTiles()
+    {
+        return _mapArea.MapAreaHappinessProviders.Select(src => new LayerItem()
+        {
+            Rect = _grid.GridToScreen(src.Bounds).ToSKRect(),
+            Paint = _mapStyle.HappinessPaint
+        }).ToList();
+    }
 
     private SKPaint GetPaint(Expansion expansion)
     {

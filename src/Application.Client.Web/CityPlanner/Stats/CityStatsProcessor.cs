@@ -1,21 +1,21 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
-using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
 public static class CityStatsProcessor
 {
-    public static CityStats Update(IEnumerable<CityMapEntity> entities)
+    public static CityStats Update(IEnumerable<CityMapEntity> entities,
+        IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders)
     {
         var stats = new CityStats();
-        
+
         foreach (var cme in entities)
         {
             if (cme.ExcludeFromStats)
             {
                 continue;
             }
-            
+
             var workerProvider = cme.FirstOrDefaultStat<WorkerProvider>();
             if (workerProvider != null)
             {
@@ -36,12 +36,14 @@ public static class CityStatsProcessor
                 }
                 else
                 {
-                    stats.RequiredWorkersCount += productionProvider.ProductionStatsItems.FirstOrDefault()?.WorkerCount ?? 0;
+                    stats.RequiredWorkersCount +=
+                        productionProvider.ProductionStatsItems.FirstOrDefault()?.WorkerCount ?? 0;
                 }
 
                 foreach (var productionStatsItem in productionProvider.ProductionStatsItems)
                 {
-                    if (!canSelectProduct || (canSelectProduct && productionStatsItem.ProductionId == cme.SelectedProductId))
+                    if (!canSelectProduct ||
+                        (canSelectProduct && productionStatsItem.ProductionId == cme.SelectedProductId))
                     {
                         foreach (var productStatsItem in productionStatsItem.Products)
                         {
@@ -64,7 +66,7 @@ public static class CityStatsProcessor
             {
                 stats.TotalAvailableHappiness += happinessProvider.Value;
             }
-            
+
             var happinessConsumer = cme.FirstOrDefaultStat<HappinessConsumer>();
             if (happinessConsumer != null)
             {
@@ -88,18 +90,22 @@ public static class CityStatsProcessor
                 {
                     stats.AreasByType.Add(areaProvider.BuildingType, 0);
                 }
+
                 typedArea += areaProvider.Area;
                 stats.AreasByType[areaProvider.BuildingType] = typedArea;
-                
+
                 if (!stats.AreasByGroup.TryGetValue(areaProvider.BuildingGroup, out var groupedArea))
                 {
                     stats.AreasByGroup.Add(areaProvider.BuildingGroup, 0);
                 }
+
                 groupedArea += areaProvider.Area;
                 stats.AreasByGroup[areaProvider.BuildingGroup] = groupedArea;
             }
         }
 
+        stats.TotalAvailableHappiness += mapAreaHappinessProviders.Sum(src => src.Value);
+        
         return stats;
     }
 }

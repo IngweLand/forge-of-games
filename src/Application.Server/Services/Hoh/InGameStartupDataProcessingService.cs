@@ -67,13 +67,6 @@ public class InGameStartupDataProcessingService(
         var cities = new List<HohCity>();
         foreach (var cityDto in cityDtos)
         {
-            // TODO: remove this check once we can do something with other cities
-            if (cityDto.CityId is not (CityId.Capital or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza
-                or CityId.Mayas_SayilPalace or CityId.China))
-            {
-                continue;
-            }
-
             try
             {
                 var buildings = await coreDataRepository.GetBuildingsAsync(cityDto.CityId);

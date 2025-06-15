@@ -101,7 +101,14 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
 
     private static IList<CityDefinition> CreateCities(IMapper mapper, GameDesignResponseDTO gdr)
     {
-        return mapper.Map<IList<CityDefinition>>(gdr.CityDefinitions);
+        return mapper.Map<IList<CityDefinition>>(gdr.CityDefinitions, opt =>
+        {
+            opt.Items.Add(ContextKeys.HERO_BUILDING_BOOST_COMPONENTS,
+                gdr.HeroBuildingBoostComponents.ToDictionary(hbbc => hbbc.Id));
+            opt.Items.Add(ContextKeys.HERO_ABILITY_TRAINING_COMPONENTS,
+                gdr.HeroAbilityTrainingComponents.ToDictionary(hatc => hatc.Id));
+            opt.Items.Add(ContextKeys.DYNAMIC_FLOAT_VALUE_DEFINITIONS, gdr.DynamicFloatValueDefinitions);
+        });
     }
 
     private static IList<Expansion> CreateExpansions(IMapper mapper, GameDesignResponseDTO gdr)

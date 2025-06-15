@@ -3,7 +3,6 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Models
-@using Ingweland.Fog.Dtos.Hoh.City
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @implements IDisposable
@@ -24,12 +23,12 @@
                 }
                 else
                 {
-                    @($"{Loc[FogResource.Hoh_Lvl]} {Data.WonderLevel}") 
+                    @($"{Loc[FogResource.Hoh_Lvl]} {Data.WonderLevel}")
                 }
             </div>
         }
         <CityProductionStatsComponent Data="@Data.Production"/>
-        @if (Data.CityId is (CityId.Capital or CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace))
+        @if (CitiesWithHappiness.Contains(Data.CityId))
         {
             <HappinessStatsComponent Data="@Data.Happiness"/>
         }
@@ -40,6 +39,9 @@
 
 @code {
 
+    private static readonly HashSet<CityId> CitiesWithHappiness = 
+        [CityId.Capital, CityId.Egypt, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace];
+    
     private readonly BuildingLevelRange _wonderLevelRange = new() {StartLevel = 0, EndLevel = 50};
 
     protected override void OnInitialized()
@@ -54,7 +56,7 @@
 
     [Parameter]
     public bool Editable { get; set; } = true;
-    
+
     [Parameter]
     public CityPlannerCityPropertiesViewModel Data { get; set; } = null!;
 

@@ -9,9 +9,6 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class ImportInGameStartupDataPage : FogPageBase
 {
-    private static readonly HashSet<CityId> AllowedCities =
-        [CityId.Capital, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace, CityId.China];
-
     private InGameStartupData? _inGameStartupData;
     private bool _isImporting = true;
     private bool _isLoading = true;
@@ -60,7 +57,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
 
         if (_shouldImportCities && _inGameStartupData?.Cities != null)
         {
-            foreach (var city in _inGameStartupData.Cities.Where(src => AllowedCities.Contains(src.InGameCityId)))
+            foreach (var city in _inGameStartupData.Cities)
             {
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveCity(city);

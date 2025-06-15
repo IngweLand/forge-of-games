@@ -26,7 +26,7 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
             {
                 "InitComponentDTO", "MoveComponentDTO", "SellComponentDTO", "PinnedAgeComponentDTO",
                 "SubscriptionSlotComponentDTO", "RebuildConstructionComponentDTO",
-                "OriginComponentDTO", "WonderLevelUpComponentDTO", "BuildingBoostComponentDTO",
+                "OriginComponentDTO", "WonderLevelUpComponentDTO", "BuildingBoostComponentDTO", "GameDesignReference",
             };
             if (componentsToSkip.Any(s => any.TypeUrl.EndsWith(s)))
             {
@@ -68,6 +68,10 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
             else if (any.Is(LevelUpComponentDTO.Descriptor))
             {
                 list.Add(mapper.Map<LevelUpComponent>(any.Unpack<LevelUpComponentDTO>()));
+            }
+            else if (any.Is(CityCultureAreaComponentDTO.Descriptor))
+            {
+                list.Add(mapper.Map<CityCultureAreaComponent>(any.Unpack<CityCultureAreaComponentDTO>()));
             }
             else if (any.Is(GameDesignReference.Descriptor))
             {

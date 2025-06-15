@@ -263,6 +263,21 @@ input[type="radio"]:checked {
 .building-type-icon-expansion {
     background-image: url("images/icon_flat_expansion.png");
 }
+.building-type-icon-gold-mine {
+    background-image: url("images/icon_flat_goldMine.png");
+}
+.building-type-icon-irrigation {
+    background-image: url("images/icon_flat_irrigation.png");
+}
+.building-type-icon-papyrus-field {
+    background-image: url("images/icon_flat_papyrusField.png");
+}
+.building-type-icon-beehive {
+    background-image: url("images/icon_flat_beehive.png");
+}
+.building-type-icon-fishing-pier {
+    background-image: url("images/icon_flat_fishingPier.png");
+}
 
 .city-planner-appbar {
     grid-column: 1 / -1;  /* Spans full width (both columns) */

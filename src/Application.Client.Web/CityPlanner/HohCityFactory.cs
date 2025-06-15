@@ -66,6 +66,33 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     ]
                 },
                 {
+                    CityId.Vikings,
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_Vikings_City_CityHall_1",
+                            Level = 1,
+                            IsRotated = true,
+                            X = 30,
+                            Y = -48
+                        }
+                    ]
+                },
+                {
+                    CityId.Egypt,
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_Egypt_City_CityHall_1",
+                            Level = 1,
+                            X = 46,
+                            Y = -51
+                        }
+                    ]
+                },
+                {
                     CityId.Mayas_ChichenItza,
                     [
                         new HohCityMapEntity

@@ -85,6 +85,13 @@ public class MapStyle
         StrokeWidth = 1
     };
 
+    public SKPaint HappinessPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#40A697E8"),
+        IsAntialias = false,
+        Style = SKPaintStyle.Fill
+    };
+
     public SKPaint LockedExpansionPaint { get; } = new()
     {
         Color = SKColor.Parse("#f5f5f5"),

@@ -73,7 +73,8 @@ public class CityPlanner(
             var state = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
                 PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
                 cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
-            var statsProcessor = cityStatsProcessorFactory.Create(state);
+            var statsProcessor = cityStatsProcessorFactory.Create(state,
+                cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
             statsProcessor.UpdateStats();
 
             stats.Add(snapshot, state.CityStats);
@@ -457,8 +458,9 @@ public class CityPlanner(
         CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
             PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
             cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
-        _mapArea = mapAreaFactory.Create(cityPlannerData.ExpansionSize, cityPlannerData.Expansions,
-            city.UnlockedExpansions);
+        _mapArea = mapAreaFactory.Create(cityPlannerData.City.InitConfigs.Grid.ExpansionSize,
+            cityPlannerData.Expansions, city.UnlockedExpansions,
+            cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
         var lockedMapEntities = CityMapState.CityMapEntities.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
             .ToList();
@@ -467,7 +469,8 @@ public class CityPlanner(
             lockedMapEntity.ExcludeFromStats = true;
         }
 
-        _statsProcessor = cityStatsProcessorFactory.Create(CityMapState);
+        _statsProcessor = cityStatsProcessorFactory.Create(CityMapState,
+            cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
         _statsProcessor.UpdateStats();
         UpdateCityPropertiesViewModel();
         StateHasChanged?.Invoke();
@@ -537,11 +540,11 @@ public class CityPlanner(
     {
         var buildings = cityPlannerData.Buildings;
         var types = buildings.GroupBy(b => b.Type).ToDictionary(g => g.Key);
-        var result = cityPlannerData.BuildMenuTypes.Where(bt => bt != BuildingType.Special).Select(buildingType =>
+        var result = cityPlannerData.City.BuildMenuTypes.Where(bt => bt != BuildingType.Special).Select(buildingType =>
             buildingSelectorTypesViewModelFactory.Create(buildingType,
                 types[buildingType].OrderBy(b => b.Width * b.Length).ThenBy(b => b.Name))).ToList();
         var otherTypes = types.Where(kvp =>
-                kvp.Key == BuildingType.Special || !cityPlannerData.BuildMenuTypes.Contains(kvp.Key))
+                kvp.Key == BuildingType.Special || !cityPlannerData.City.BuildMenuTypes.Contains(kvp.Key))
             .SelectMany(kvp => kvp.Value.ToList()).ToList();
         if (otherTypes.Count > 0)
         {

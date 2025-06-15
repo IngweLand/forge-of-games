@@ -23,10 +23,7 @@ public class CityPlannerDataFactory(
         var wonderIds = cityDefinition.Id.GetWonders();
         return new CityPlannerDataDto()
         {
-            Id = cityDefinition.Id,
-            BuildMenuTypes = cityDefinition.BuildMenuTypes,
-            ExpansionSize = cityDefinition.InitConfigs.Grid.ExpansionSize,
-            InitialExpansionIds = cityDefinition.InitConfigs.Grid.Expansions.Select(e => e.Id).ToList(),
+            City = cityDefinition,
             Expansions = expansions,
             Buildings = buildings,
             BuildingCustomizations = mapper.Map<IReadOnlyList<BuildingCustomizationDto>>(customizations),
@@ -59,6 +56,20 @@ public class CityPlannerDataFactory(
                 CityId = CityId.China,
                 CityName = gameLocalizationService.GetCityName(CityId.China),
                 Wonders = wonders.Where(w => w.CityId == CityId.China).Select(wonderDtoFactory.Create).ToList()
+            },
+            
+            new NewCityDialogItemDto
+            {
+                CityId = CityId.Vikings,
+                CityName = gameLocalizationService.GetCityName(CityId.Vikings),
+                Wonders = wonders.Where(w => w.CityId == CityId.Vikings).Select(wonderDtoFactory.Create).ToList()
+            },
+            
+            new NewCityDialogItemDto
+            {
+                CityId = CityId.Egypt,
+                CityName = gameLocalizationService.GetCityName(CityId.Egypt),
+                Wonders = wonders.Where(w => w.CityId == CityId.Egypt).Select(wonderDtoFactory.Create).ToList()
             }
         ];
     }

@@ -9,7 +9,8 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 public class StatsProcessor(
     CityMapState cityMapState,
     IProductionStatsProcessor productionStatsProcessor,
-    ILogger<StatsProcessor> logger)
+    ILogger<StatsProcessor> logger,
+    IReadOnlyCollection<MapAreaHappinessProvider> mapAreaHappinessProviders)
 {
     private void UpdateHappiness()
     {
@@ -33,9 +34,12 @@ public class StatsProcessor(
         var age = cityMapState.CityAge;
         var happiness = intersections.Sum(cme =>
             cityMapState.Buildings[cme.CityEntityId].CultureComponent!.GetValue(age.Id, cme.Level));
-        happinessConsumer.ConsumedHappiness = happiness;
+        var mapIntersections = mapAreaHappinessProviders.Where(hp => target.Bounds.IntersectsWith(hp.Bounds)).ToList();
+        var mapHappiness = mapIntersections.Sum(src => src.Value);
+        happinessConsumer.ConsumedHappiness = happiness + mapHappiness;
         target.HappinessFraction =
-            (float) happiness / cityMapState.Buildings[target.CityEntityId].BuffDetails!.Value;
+            (float) happinessConsumer.ConsumedHappiness /
+            cityMapState.Buildings[target.CityEntityId].BuffDetails!.Value;
     }
 
     public void UpdateStats()
@@ -43,7 +47,7 @@ public class StatsProcessor(
         UpdateEvolvingBuildings();
         UpdateHappiness();
         UpdateProduction();
-        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities);
+        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities, mapAreaHappinessProviders);
     }
 
     private void UpdateEvolvingBuildings()
@@ -110,6 +114,7 @@ public class StatsProcessor(
             case BuildingType.Collectable:
             case BuildingType.CultureSite:
             case BuildingType.RitualSite:
+            case BuildingType.Irrigation:
             {
                 UpdateHappiness();
                 UpdateProduction();
@@ -126,6 +131,7 @@ public class StatsProcessor(
             case BuildingType.ExtractionPoint:
             case BuildingType.RiceFarm:
             case BuildingType.FishingPier:
+            case BuildingType.Beehive:
             {
                 var modifiers = GetModifiers();
                 if (modifiers == null)
@@ -136,10 +142,11 @@ public class StatsProcessor(
                 {
                     productionStatsProcessor.UpdateProduction(target, modifiers);
                 }
+
                 break;
             }
         }
 
-        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities);
+        cityMapState.CityStats = CityStatsProcessor.Update(cityMapState.CityMapEntities, mapAreaHappinessProviders);
     }
 }

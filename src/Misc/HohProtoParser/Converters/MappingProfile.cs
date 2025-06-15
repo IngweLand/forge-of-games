@@ -167,6 +167,8 @@ public class MappingProfile : Profile
         CreateMap<CultureBoostComponentDTO, CultureBoostComponent>();
         CreateMap<LevelUpComponentDTO, LevelUpComponent>()
             .ForMember(dest => dest.StarLevels, opt => opt.MapFrom(src => src.StarLevels));
+        CreateMap<CityCultureAreaComponentDTO, CityCultureAreaComponent>()
+            .ForMember(dest => dest.Y, opt => opt.MapFrom(new CityCultureAreaYValueResolver()));
 
         // rewards
         CreateMap<DynamicActionChangeRewardDTO, DynamicActionChangeReward>();
@@ -256,7 +258,8 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.Id))
             .ForMember(dest => dest.BuildMenuTypes,
                 opt => opt.ConvertUsing(new BuildMenuTypesConverter(), src => src.BuildingMenuTypes))
-            .ForMember(dest => dest.InitConfigs, opt => opt.MapFrom(src => src.InitDefinition));
+            .ForMember(dest => dest.InitConfigs, opt => opt.MapFrom(src => src.InitDefinition))
+            .ForMember(dest => dest.Components, opt => opt.MapFrom(bd => bd.PackedComponents));
         CreateMap<CityInitDefinitionDTO, CityInitConfigs>()
             .ForMember(dest => dest.Grid, opt => opt.MapFrom(src => src.InitialGridComponent));
         CreateMap<BuildingCustomizationDefinitionDTO, BuildingCustomization>()

@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
@@ -12,4 +13,7 @@ public class CityDefinition
     public required CityId Id { get; init; }
     [ProtoMember(3)]
     public required CityInitConfigs InitConfigs { get; init; }
+
+    [ProtoMember(4)]
+    public required IList<ComponentBase> Components { get; init; } = new List<ComponentBase>();
 }
