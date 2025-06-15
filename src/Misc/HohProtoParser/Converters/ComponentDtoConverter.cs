@@ -26,7 +26,7 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
             {
                 "InitComponentDTO", "MoveComponentDTO", "SellComponentDTO", "PinnedAgeComponentDTO",
                 "SubscriptionSlotComponentDTO", "RebuildConstructionComponentDTO",
-                "OriginComponentDTO", "WonderLevelUpComponentDTO", "BuildingBoostComponentDTO", "GameDesignReference",
+                "OriginComponentDTO", "WonderLevelUpComponentDTO", "BuildingBoostComponentDTO"
             };
             if (componentsToSkip.Any(s => any.TypeUrl.EndsWith(s)))
             {
@@ -85,6 +85,10 @@ public class ComponentDtoConverter : ITypeConverter<RepeatedField<Any>, IList<Co
                     list.Add(mapper.Map<HeroAbilityTrainingComponent>(heroAbilityTrainingComponent[gdr.Id]));
                 }
                 else if (Any.GetTypeName(gdr.Type) == "ResourceConversionComponentDTO")
+                {
+                    
+                }
+                else if (Any.GetTypeName(gdr.Type) == "ConstructionSlotsDefinitionDTO")
                 {
                     
                 }
