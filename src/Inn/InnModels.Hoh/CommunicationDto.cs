@@ -10,7 +10,7 @@ public sealed partial class CommunicationDto
     public HeroBattleStatsResponse HeroBattleStatsResponse => PackedMessages.FindAndUnpack<HeroBattleStatsResponse>();
     public PvpGetRankingResponse PvpGetRankingResponse => PackedMessages.FindAndUnpack<PvpGetRankingResponse>();
     public AllianceMembersResponse AllianceMembersResponse => PackedMessages.FindAndUnpack<AllianceMembersResponse>();
-    public AlliancePush AlliancePush => PackedMessages.FindAndUnpack<AlliancePush>();
+    public AlliancePush? AlliancePush => PackedMessages.FindAndUnpackToList<AlliancePush>().FirstOrDefault();
 
     public IList<HeroTreasureHuntPlayerPointsPush> HeroTreasureHuntPlayerPointsPushs =>
         PackedMessages.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();

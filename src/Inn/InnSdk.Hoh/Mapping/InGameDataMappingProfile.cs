@@ -3,7 +3,6 @@ using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
-using Ingweland.Fog.Shared.Helpers;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Mapping;
 
@@ -35,7 +34,11 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.MemberCount, opt => opt.MapFrom(src => src.Alliance.MemberCount));
 
         CreateMap<CommunicationDto, Wakeup>()
-            .ForMember(dest => dest.Alliance, opt => opt.MapFrom(src => src.AlliancePush))
+            .ForMember(dest => dest.Alliance, opt =>
+            {
+                opt.PreCondition(src => src.AlliancePush != null);
+                opt.MapFrom(src => src.AlliancePush);
+            })
             .ForMember(dest => dest.AllianceWithMembers, opt => opt.MapFrom(src => src.AllianceMembersResponse))
             .ForMember(dest => dest.AthAllianceRankings,
                 opt => opt.MapFrom(src => src.HeroTreasureHuntAlliancePointsPushs))
