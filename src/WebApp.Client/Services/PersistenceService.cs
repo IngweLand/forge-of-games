@@ -11,6 +11,7 @@ namespace Ingweland.Fog.WebApp.Client.Services;
 public class PersistenceService(ILocalStorageService localStorageService) : IPersistenceService
 {
     private const string CITY_DATA_KEY_PREFIX = "CityData";
+    private const string BACKUP_CITY_DATA_KEY_PREFIX = "Backup.CityData";
     private const string TEMP_CITY_DATA_KEY_PREFIX = "TEMP.CityData";
     private const string PROFILE_DATA_KEY_PREFIX = "CommandCenterProfile";
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
@@ -25,6 +26,12 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     public ValueTask SaveCity(HohCity city)
     {
         return DoSaveCity(GetCityKey(city.Id), city);
+    }
+
+    public ValueTask SaveCityBackup(HohCityBackup cityBackup)
+    {
+        var serializedCity = JsonSerializer.Serialize(cityBackup, JsonSerializerOptions);
+        return localStorageService.SetItemAsStringAsync(GetCityBackupKey(cityBackup.City.Id), serializedCity);
     }
 
     public async ValueTask<bool> DeleteCity(string cityId)
@@ -262,6 +269,11 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
     private static string GetCityKey(string id)
     {
         return $"{CITY_DATA_KEY_PREFIX}.{id}";
+    }
+
+    private static string GetCityBackupKey(string id)
+    {
+        return $"{BACKUP_CITY_DATA_KEY_PREFIX}.{id}";
     }
 
     private static string GetTempCityKey(string id)

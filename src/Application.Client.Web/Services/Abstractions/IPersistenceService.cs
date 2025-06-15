@@ -24,4 +24,5 @@ public interface IPersistenceService
     ValueTask SaveUiSettingsAsync(UiSettings settings);
     ValueTask SaveTempCities(IEnumerable<HohCity> cities);
     ValueTask<IReadOnlyCollection<HohCity>> GetTempCities();
+    ValueTask SaveCityBackup(HohCityBackup cityBackup);
 }

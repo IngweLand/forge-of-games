@@ -15,4 +15,6 @@ public class HohCity
 
     public WonderId WonderId { get; set; }
     public int WonderLevel { get; set; }
+
+    public int CityPlannerVersion { get; set; }
 }
