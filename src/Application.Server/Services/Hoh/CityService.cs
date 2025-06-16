@@ -36,7 +36,8 @@ public class CityService(
             .ToList();
     }
 
-    public async Task<BuildingGroupDto?> GetBuildingGroupAsync(CityId cityId, BuildingGroup group)
+    public async Task<BuildingGroupDto?> GetBuildingGroupAsync(CityId cityId, BuildingGroup group,
+        CancellationToken cancellationToken = default)
     {
         var buildings = (await hohCoreDataRepository.GetGroupBuildingsAsync(cityId, group)).Where(b => b.Age.Index > 1)
             .OrderBy(b => b.Level).ToList();

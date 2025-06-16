@@ -1,0 +1,40 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+
+<div class="fog-container component-root">
+    <div class="section-title">@Loc[FogResource.Tools_BuildingCost_Name]</div>
+    <div class="main-container">
+        <span class="entity-title">@BuildingName</span>
+        @* current level selector *@
+        @if (_fromLevels != null)
+        {
+            <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
+                       Value="@_fromLevel" T="BuildingViewModel" ValueChanged="FromLevelOnValueChanged"
+                       Variant="Variant.Outlined" Dense="true">
+
+                @foreach (var building in _fromLevels)
+                {
+                    <BuildingLevelSelectItemComponent Data="building" Dense="true"/>
+                }
+            </MudSelect>
+        }
+
+        @* target level selector *@
+        @if (_toLevels != null)
+        {
+            <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" Value="@_toLevel" T="BuildingViewModel" 
+                       ValueChanged="ToLevelOnValueChanged" Variant="Variant.Outlined" Immediate="true" Strict="true">
+
+                @foreach (var building in _toLevels)
+                {
+                    <BuildingLevelSelectItemComponent Data="building" Dense="true"/>
+                }
+            </MudSelect>
+        }
+
+        @if (_costs != null)
+        {
+            <BuildingMultilevelCostComponent Costs="_costs" Dense="true"/>
+        }
+    </div>
+</div>

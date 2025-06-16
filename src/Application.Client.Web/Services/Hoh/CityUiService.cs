@@ -12,6 +12,8 @@ public class CityUiService(
     IWonderViewModelViewModelFactory wonderViewModelViewModelFactory,
     IMapper mapper) : ICityUiService
 {
+    private readonly Dictionary<string, BuildingGroupViewModel> _buildingGroupViewModelCache = new();
+
     public async Task<IReadOnlyCollection<BuildingTypeViewModel>> GetBuildingCategoriesAsync(CityId cityId)
     {
         var types = await cityService.GetBuildingCategoriesAsync(cityId);
@@ -21,7 +23,7 @@ public class CityUiService(
     public async Task<IReadOnlyCollection<CityBuildingGroupsViewModel>> GetCityBuildingGroupsAsync()
     {
         var cityIds = new List<CityId>
-            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal};
+            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal,};
         var result = new List<CityBuildingGroupsViewModel>();
         foreach (var cityId in cityIds)
         {
@@ -38,19 +40,30 @@ public class CityUiService(
             .Select(kvp => new WonderGroupViewModel
             {
                 CityId = kvp.Key, CityName = kvp.Value.First().CityName,
-                Wonders = mapper.Map<IReadOnlyCollection<WonderBasicViewModel>>(kvp.Value.OrderBy(wbd => wbd.WonderName)),
+                Wonders = mapper.Map<IReadOnlyCollection<WonderBasicViewModel>>(
+                    kvp.Value.OrderBy(wbd => wbd.WonderName)),
             })
             .ToList();
     }
 
-    public async Task<BuildingGroupViewModel?> GetBuildingGroupAsync(CityId cityId, BuildingGroup group)
+    public async Task<BuildingGroupViewModel?> GetBuildingGroupAsync(CityId cityId, BuildingGroup group,
+        CancellationToken cancellationToken = default)
     {
-        var buildingGroup = await cityService.GetBuildingGroupAsync(cityId, group);
+        var key = $"{cityId}_{group}";
+        if (_buildingGroupViewModelCache.TryGetValue(key, out var cached))
+        {
+            return cached;
+        }
+
+        var buildingGroup = await cityService.GetBuildingGroupAsync(cityId, group, cancellationToken);
         if (buildingGroup == null)
         {
             return null;
         }
-        return mapper.Map<BuildingGroupViewModel>(buildingGroup);
+
+        var vm = mapper.Map<BuildingGroupViewModel>(buildingGroup);
+        _buildingGroupViewModelCache.Add(key, vm);
+        return vm;
     }
 
     public async Task<WonderViewModel?> GetWonderAsync(WonderId id)

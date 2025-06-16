@@ -1,18 +1,19 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
+@using MudBlazor.Utilities
 <MudSelectItem Value="Data">
     <div class="data-items">
-        <div class="header-label level-label">@Data.Level</div>
+        <div class="@LevelLabelClass">@Data.Level</div>
         @if (Data.AgeName != null)
         {
-            <div class="header-label age-label" style="background-color: @Data.AgeColor">@Data.AgeName</div>
+            <div class="@AgeLabelClass" style="background-color: @Data.AgeColor">@Data.AgeName</div>
         }
         @if (Data.ConstructionComponent != null)
         {
-            <span class="material-symbols-outlined component-icon">construction</span>
+            <span class="@IconClass">construction</span>
         }
         @if (Data.UpgradeComponent != null)
         {
-            <span class="material-symbols-outlined component-icon">upgrade</span>
+            <span class="@IconClass">upgrade</span>
         }
     </div>
 </MudSelectItem>
@@ -20,4 +21,27 @@
 @code {
     [Parameter]
     public required BuildingViewModel Data { get; set; }
+    
+    [Parameter]
+    public bool Dense { get; set; } = false;
+
+    private string LevelLabelClass => new CssBuilder()
+        .AddClass("header-label")
+        .AddClass("header-label-dense", Dense)
+        .AddClass("level-label")
+        .AddClass("level-label-dense", Dense)
+        .Build();
+    
+    private string AgeLabelClass => new CssBuilder()
+        .AddClass("header-label")
+        .AddClass("header-label-dense", Dense)
+        .AddClass("age-label")
+        .AddClass("age-label-dense", Dense)
+        .Build();
+    
+    private string IconClass => new CssBuilder()
+        .AddClass("material-symbols-outlined")
+        .AddClass("component-icon")
+        .AddClass("component-icon-dense", Dense)
+        .Build();
 }

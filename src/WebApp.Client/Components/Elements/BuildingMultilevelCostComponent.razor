@@ -1,23 +1,24 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Tools
 @using Microsoft.Extensions.Localization
+@using MudBlazor.Utilities
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root">
-    <table class="table">
+    <table class="@TableClass">
         <thead>
         <tr>
-            <th >@Loc[FogResource.Hoh_Resource]</th>
-            <th >@Loc[FogResource.Hoh_Building_ConstructionCost]</th>
-            <th >@Loc[FogResource.Hoh_Building_UpgradeCost]</th>
+            <th class="@ThClass">@if(!Dense) @Loc[FogResource.Hoh_Resource]</th>
+            <th class="@ThClass">@(Dense?Loc[FogResource.Hoh_Building_Construction]:Loc[FogResource.Hoh_Building_ConstructionCost])</th>
+            <th class="@ThClass">@(Dense?Loc[FogResource.Hoh_Building_Upgrade]:Loc[FogResource.Hoh_Building_UpgradeCost])</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var item in Costs.Costs)
         {
             <tr>
-                <td><img src="@item.IconUrl" class="resource-icon"/></td>
-                <td class="cost-label">@item.ConstructionCost</td>
-                <td class="cost-label">@item.UpgradeCost</td>
+                <td><img src="@item.IconUrl" class="@ResourceIconClass"/></td>
+                <td class="@CostLabelClass">@item.ConstructionCost</td>
+                <td class="@CostLabelClass">@item.UpgradeCost</td>
             </tr>
         }
         </tbody>
@@ -28,5 +29,27 @@
 
     [Parameter]
     public required BuildingMultilevelCostViewModel Costs { get; set; }
+
+    [Parameter]
+    public bool Dense { get; set; } = false;
+
+    private string TableClass => new CssBuilder()
+        .AddClass("table")
+        .AddClass("table-dense", Dense)
+        .Build();
+    
+    private string ResourceIconClass => new CssBuilder()
+        .AddClass("resource-icon")
+        .AddClass("resource-icon-dense", Dense)
+        .Build();
+
+    private string CostLabelClass => new CssBuilder()
+        .AddClass("cost-label")
+        .AddClass("cost-label-dense", Dense)
+        .Build();
+
+    private string ThClass => new CssBuilder()
+        .AddClass("th-dense", Dense)
+        .Build();
 
 }

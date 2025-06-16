@@ -1329,11 +1329,29 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Construction.
+        /// </summary>
+        public static string Hoh_Building_Construction {
+            get {
+                return ResourceManager.GetString("Hoh.Building.Construction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Construction cost.
         /// </summary>
         public static string Hoh_Building_ConstructionCost {
             get {
                 return ResourceManager.GetString("Hoh.Building.ConstructionCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade.
+        /// </summary>
+        public static string Hoh_Building_Upgrade {
+            get {
+                return ResourceManager.GetString("Hoh.Building.Upgrade", resourceCulture);
             }
         }
         

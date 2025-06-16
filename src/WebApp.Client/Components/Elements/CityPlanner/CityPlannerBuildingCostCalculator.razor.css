@@ -1,0 +1,36 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    clip-path: inset(0 0 0 0 round var(--fog-border-radius));
+    gap: 8px;
+}
+
+.main-container {
+    display: flex !important;
+    flex-direction: column;
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 4px;
+}
+
+.section-title {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-container-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-height: 22px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.entity-title {
+    font-weight: 700;
+    font-size: 14px;
+    flex-grow: 1;
+    text-align: center;
+    min-width: 0;
+}

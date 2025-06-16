@@ -12,9 +12,20 @@
     vertical-align: center;
 }
 
+.resource-icon-dense {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: center;
+}
+
 .cost-label {
-    font-size: 1rem !important;
+    font-size: 16px;
     vertical-align: middle;
+}
+
+.cost-label-dense {
+    font-size: 12px;
 }
 
 th, td {
@@ -24,6 +35,14 @@ th {
    white-space: nowrap;
 }
 
+.th-dense {
+    font-size: 10px;
+}
+
 th:last-child {
     width: 100%;
+}
+
+.table-dense>:not(caption)>*>* {
+    padding: 2px 8px;
 }

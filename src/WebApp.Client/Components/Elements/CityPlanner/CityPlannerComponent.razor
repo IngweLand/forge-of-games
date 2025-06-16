@@ -1,5 +1,6 @@
-@using SkiaSharp.Views.Blazor
+@using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
 @using Position = MudBlazor.Position
 
 <MudPopoverProvider/>
@@ -100,6 +101,15 @@
                         <CityPlannerSnapshotsComponent OnCreate="CreateSnapshot" OnDelete="DeleteSnapshot"
                                                        OnLoad="LoadSnapshot" OnCompare="CompareSnapshots"
                                                        Snapshots="@CityPlanner!.CityMapState.Snapshots"/>
+                    </div>
+                </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
+                    <div class="city-planner-side-panel">
+                        <CityPlannerBuildingCostCalculator
+                            CityId="@CityPlanner!.CityMapState.InGameCityId"
+                            BuildingGroup="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
+                            FromLevel="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
+                            BuildingName="@CityPlanner!.CityMapState.SelectedCityMapEntity?.Name"/>
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">
