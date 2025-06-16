@@ -182,10 +182,10 @@ G
 HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name¡<style=ability_label>Ranged Strike</style>Yi Sun-Sin summons his legendary fleet, launching a barrage of three powerful cannonballs at the enemy hero with the lowest health. The first two cannonballs deal <style=basestat>{dmg_percentage}</style> damage. The final cannonball deals <style=basestat>{final_dmg_percentage}</style> damage and also damages heroes for an additional <style=basestat>{missing_hp_percentage}</style> of their missing health.
 L
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameSiege Barracks
-»
-JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name˘<style=ability_label>Heal| Focus</style>Draws energy from fertile ground, healing all friendly units by <style=basestat>{heal_percentage}</style> of her base damage and granting them <style=basestat>{focus_duration}</style> worth of focus instantly.
 _
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_2_NameHeavy Infantry Barracks
+Ω
+JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_NameÓ<style=ability_label>Heal| Focus</style>Draws energy from fertile ground, healing all friendly units by <style=basestat>{heal_percentage}</style> of her base damage and charging their abilities by <style=basestat>{focus_duration}</style>.
 N
 9Base.Abilities.hero_battle_ability.AztecTlacateccatl_NameSun God's Embrace
 J
@@ -524,11 +524,11 @@ b
 0Base.Buildings.Building_Mayas_Home_Worker_6_Desc.Produces Cocoa and adds 2 Workers to your city
 U
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameBulwark Formation
-$
-Base.Units.Unit_ElCid_NameEl Cid
 G
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_Name
 Small Well
+$
+Base.Units.Unit_ElCid_NameEl Cid
 K
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_3_NameRanged Barracks
 M
@@ -858,8 +858,8 @@ F
 9Base.Technologies.Technology_ClassicGreece_Carpentry_Name	Carpentry
 7
 *Base.Wonders.Wonder_Vikings_Yggdrasil_Name	Yggdrasil
-ˇ
-JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name∞<style=ability_label>Summon| Debuff| Control</style>Montezuma conjures thorned vines that ensnare the furthest enemy, dragging them into melee range and dealing <style=basestat>{dmg_percentage}</style>¬†damage upon impact. All allied units instantly switch focus to this captured foe, ensuring no escape.
+•
+JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name÷<style=ability_label>Control| Strike</style>Montezuma conjures thorned vines that ensnare the furthest enemy, dragging them into melee range and dealing <style=basestat>{dmg_percentage}</style>¬†damage upon impact.
 €
 Base.Units.Unit_Menes_DescºHail Menes, the first mortal king of all Egypt. This great ruler of the 31st century BCE in ancient Egypt is credited with uniting Upper and Lower Egypt, thus becoming the first pharaoh of a unified Egyptian kingdom.<br><br>He established Memphis as the capital, strategically placed between Upper and Lower Egypt. His leadership marked the start of Egypt's First Dynasty, setting the stage for its cultural and political development.<br><br>Menes' legacy is the the birth of the Egyptian civilization, for he laid the foundation for one of history's greatest cultures. Unfortunately, he's currently rumored to be working with Tesla. Apparently, he wants to replace all of history with Ancient Egypt.
 K
@@ -985,10 +985,10 @@ b
 0Base.Buildings.Building_Mayas_Home_Worker_1_Desc.Produces Cocoa and adds 2 Workers to your city
 L
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameTwilight Harpoonists
-p
-5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 ›
 JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Nameé<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style> and heals herself for <style=basestat>{self_heal}</style> of her base damage. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
+p
+5Base.Buildings.Building_BronzeAge_Home_Premium_1_Desc7Produces a ton of Coins and adds 2 Workers to your city
 C
 1Base.Abilities.hero_battle_ability.JoanOfArc_NameBeacon of Hope
 »
@@ -1712,8 +1712,8 @@ D
 5Base.Units.Unit_AgeOfTheFranks_Player_Caballarii_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 g
 3Base.Buildings.Building_Mayas_Quarry_Premium_4_Desc0Produces both Jade and Obsidian at the same time
-ı
-IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Nameß<style=ability_label>Heal| Focus</style>Sacagawea tends to the wounded, healing the allied hero with the lowest health for <style=basestat>{heal_amt}</style>¬†of her base damage. She also imparts <style=basestat>{focus_amt}</style>¬†of her focus regeneration as immediate focus to the same ally.
+◊
+IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Nameâ<style=ability_label>Heal| Focus</style>Sacagawea tends to the wounded, healing the allied hero with the lowest health for <style=basestat>{heal_amt}</style>¬†of her base damage. She also charges the ability of that ally by <style=basestat>{focus_duration}</style>.
 w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_5_Desc=The tavern produces mead and stockfish out of honey and fish.
 T
@@ -1801,8 +1801,8 @@ K
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameRitual Carver
 E
 4Base.Abilities.hero_battle_ability.TribalHealer_NameHealing Salve
-I
-*Base.BuildingGroups.premiumRitualSite_NameMagma TempleMagma Temples
+[
+*Base.BuildingGroups.premiumRitualSite_NameLuxurious Ritual SiteLuxurious Ritual Sites
 L
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_Name
 moth glade
@@ -2297,10 +2297,10 @@ N
 <Base.Technologies.Technology_ByzantineEra_SpiceMerchant_NameSpice Merchant
 D
 5Base.Buildings.Building_EarlyRome_Home_Average_1_NameMedium Home
->
-4Base.Technologies.Technology_RomanEmpire_Forums_NameForums
 H
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_NameDomestic Farm
+>
+4Base.Technologies.Technology_RomanEmpire_Forums_NameForums
 ≈
  Base.Units.Unit_Charlemagne_Desc†Kniuwen! You behold Charlemagne, from the 8th and 9th centuries, who ruled as King of the Franks and as Emperor of the Carolingian Empire.<br><br>With flair and ambition, he expanded his realm into a vast empire across Western and Central Europe, promoting religion and building the foundations for modern European states. Charlemagne also had a passion for culture and education, sparking the Carolingian Renaissance‚Äîa lively revival of art, learning, and religious reform.<br><br>His legacy as a unifying and visionary leader continues to leave a grand imprint on European identity and historical development. You could say he was the 'magne' event in the 9th century!
 Ñ
@@ -2381,10 +2381,10 @@ V
 =
 "Base.BuildingGroups.smallWell_Name
 Small WellSmall Wells
-m
-1Base.Buildings.Building_China_Home_Premium_4_Desc8Produces a ton of Wu Zhu and adds 3 workers to your city
 7
 #Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
+m
+1Base.Buildings.Building_China_Home_Premium_4_Desc8Produces a ton of Wu Zhu and adds 3 workers to your city
 r
 1Base.Buildings.Building_China_Home_Average_4_Desc=Produces a big pile of Wu Zhu and adds 5 workers to your city
 \
@@ -2468,8 +2468,8 @@ Q
 ?Base.Buildings.Building_FeudalAge_Workshop_SpiceMerchant_1_NameSpice Merchant
 K
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_NameSilk workshop
-€
-GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Nameè<style=ability_label>Melee Strike| Debuff| Buff</style>Sun Tzu strikes all enemy units around himself twice, dealing a total of <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. He then centers himself, causing an aura of calmness, reducing nearby enemies' ATK Speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>. All friendly units gain <style=basestat>{atk_speed_percentage_buff}</style> ATK Speed for <style=basestat>{duration}</style>.
+‹
+GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Nameê<style=ability_label>Melee Strike| Debuff| Buff</style>Sun Tzu strikes all enemy units around himself twice, dealing a total of <style=basestat>{dmg_percentage}</style> damage  in a range of <style=basestat>{range}</style>. He then centers himself, causing an aura of calmness, reducing nearby enemies' ATK Speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>. All friendly units gain <style=basestat>{atk_speed_percentage_buff}</style> ATK Speed for <style=basestat>{duration}</style>.
 9
  Base.BuildingTypes.riceFarm_Name	Rice Farm
 Rice Farms
@@ -3452,8 +3452,8 @@ U
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescLSend off expedition ships which will gather either jewel- or spice treasures
 k
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc.Increases the irrigation of adjacent buildings
-M
-*Base.BuildingGroups.averageRitualSite_NameCrystal SpringCrystal Springs
+G
+*Base.BuildingGroups.averageRitualSite_NameRitual SiteRitual Sites
 F
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Name
 Chronicler
@@ -5362,10 +5362,10 @@ u
 Base.Ages.MinoanEra_Finish	1600 B.C.
 Q
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_NameThread processor
+ê
+IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name¬<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style>. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>.
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_NameRanged Barracks
-è
-IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name¡<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style>. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 )
 Base.HeroClass.ManipulatorManipulator
 „
@@ -5459,10 +5459,10 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Nameä<sty
 Blackbeard
 ã
 6Base.Buildings.Building_Vikings_Beehive_Average_5_DescQThe Beehive produces delicious honey which is used to produce mead in the Tavern.
-H
-7Base.Buildings.Building_IberianEra_Farm_Domestic_3_NameDomestic Farm
 K
 7Base.Technologies.Technology_Mayas_CurativeRituals_NameCurative Rituals
+H
+7Base.Buildings.Building_IberianEra_Farm_Domestic_3_NameDomestic Farm
 Q
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameRanged Barracks
 A
@@ -5656,10 +5656,10 @@ U
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescUnlocks Siege Towers
 >
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMosaic
-÷
-FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Nameã<style=ability_label>Melee Strike| Debuff</style>Sun Tzu strikes all enemy units around himself twice, dealing a total of <style=basestat>{dmg_percentage}</style> damage in a range of <style=basestat>{range}</style>. He then centers himself, causing an aura of calmness, reducing nearby enemies' ATK Speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>.
 H
 3Base.Buildings.Building_Mayas_Aviary_Average_6_DescProduces Feathers
+◊
+FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Nameå<style=ability_label>Melee Strike| Debuff</style>Sun Tzu strikes all enemy units around himself twice, dealing a total of <style=basestat>{dmg_percentage}</style> damage  in a range of <style=basestat>{range}</style>. He then centers himself, causing an aura of calmness, reducing nearby enemies' ATK Speed by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style>.
 ©
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_DesckLuxurious Fishing Piers send out boats to catch tons of fish to supply all your hungry Workers and Sailors.
 j

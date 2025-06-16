@@ -13,8 +13,8 @@ H
 Base.HeroClass.Defender_Desc�Obrońcy wkraczają do akcji i chronią swoich sojuszników.<br><line-height=50%><br></line-height><b><color=#3DA229>Silni</color> przeciwko:</b><br>-<indent=5%><color=#3DA229>kampanii</color>, <color=#3DA229>arenie</color> i <color=#3DA229>poszukiwaniu skarbu</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Słabi</color> przeciwko:</b><br>-<indent=5%><color=#CD2A25>Burze Tesli</color>.</indent>
 U
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_NameUlepszone Pola Ryżowe
-M
-8Base.Technologies.Technology_Mayas_DaggerPerfection_NameDagger Perfection
+S
+8Base.Technologies.Technology_Mayas_DaggerPerfection_NameDoskonałość sztyletu
 N
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_NameLuksusowe gospodarstwo
 K
@@ -52,7 +52,7 @@ v
 �
 %Base.BuildingGroups.ritualCarver_NameWarsztat rytualnego rzeźbiarza Warsztaty rytualnego rzeźbiarzaWarsztat rytualnego rzeźbiarza
 M
-8Base.Technologies.Technology_Mayas_PreciseChronicle_NamePrecise Chronicle
+8Base.Technologies.Technology_Mayas_PreciseChronicle_NameDokładna kronika
 R
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_1_NameKoszary strzelców
 �
@@ -73,8 +73,8 @@ E
 3Base.Units.Unit_IberianEra_Vikings_LeifErikson_NameHuskarle Leifa
 ;
 2Base.Technologies.Technology_BronzeAge_Plough_NamePług
-K
-7Base.Technologies.Technology_Mayas_ObsidianMastery_NameObsidian Mastery
+P
+7Base.Technologies.Technology_Mayas_ObsidianMastery_NameMistrzostwo obsydianu
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_2_DescRWysyłaj statki ekspedycyjne, które będą zbierać Ceramiczne skarby lub Złoto.
 U
@@ -179,10 +179,11 @@ O
 HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>Dystansowe Uderzenie</style>Yi Sun-sin przywołuje swoją legendarną flotę i wystrzeliwuje trzy potężne kule armatnie we wrogiego bohatera o najniższym poziomie zdrowia. Pierwsze dwie kule zadają <style=basestat>{dmg_percentage}</style> obrażeń. Ostatnia kula armatnia zadaje <style=basestat>{final_dmg_percentage}</style> obrażenia, a także zadaje Bohaterom dodatkowe <style=basestat>{missing_hp_percentage}</style> brakujące zdrowie.
 R
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameKoszary oblężnicze
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>Leczenie| Skupienie</style>Czerpie energię z żyznej ziemi, leczy wszystkie przyjazne jednostki o <style=basestat>{heal_percentage}</style> jej bazowych obrażeń i natychmiast przyznaje im <style=basestat>{focus_duration}</style> skupienia.
 c
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_2_NameKoszary Ciężkiej Piechoty
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>Leczenie | Skupienie</style>
+Czerpie energię z żyznej ziemi, leczy wszystkie sojusznicze jednostki o <style=basestat>{heal_percentage}</style> wartości swoich bazowych obrażeń i ładuje ich zdolności o <style=basestat>{focus_duration}</style>.
 R
 9Base.Abilities.hero_battle_ability.AztecTlacateccatl_NameUścisk Boga Słońca
 K
@@ -507,10 +508,10 @@ m
 0Base.Buildings.Building_Mayas_Home_Worker_6_Desc9Produkuje kakao i dodaje 2 pracowników do Twojego miasta
 U
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameFormacja Bastionu
-$
-Base.Units.Unit_ElCid_NameEl Cid
 J
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_NameMała Studnia
+$
+Base.Units.Unit_ElCid_NameEl Cid
 N
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_3_NameKoszary strzelców
 T
@@ -530,7 +531,7 @@ X
 C
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_NameKrawiec
 >
-1Base.Technologies.Technology_Mayas_Shamanism_Name	Shamanism
+1Base.Technologies.Technology_Mayas_Shamanism_Name	Szamanizm
 G
 2Base.Abilities.hero_battle_ability.MaoriChief_NameHaka Zgromadzenie
 a
@@ -682,8 +683,8 @@ o
 4Base.Buildings.Building_IberianEra_Home_Small_1_Desc7Produkuje monety i dodaje do twojego miasta pracownika.
 f
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc+Zwiększa nawadnianie sąsiednich budynków
-A
-2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMaya Glyphs
+B
+2Base.Technologies.Technology_Mayas_MayaGlyphs_NameGlify Majów
 ,
 Base.Ages.BronzeAge_Decade3000 r. p.n.e.
 K
@@ -831,9 +832,9 @@ G
 Stolarstwo
 7
 *Base.Wonders.Wonder_Vikings_Yggdrasil_Name	Yggdrasil
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>Przywołanie | Osłabienie | Kontrola</style>
-Montezuma przyzywa cierniowe pnącza, które oplatają najdalszego wroga, przyciągając go do zasięgu walki wręcz i zadając <style=basestat>{dmg_percentage}</style> obrażeń przy uderzeniu. Wszystkie sojusznicze jednostki natychmiast koncentrują się na schwytanym przeciwniku, uniemożliwiając mu ucieczkę.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>Kontrola | Cios</style>
+Montezuma przyzywa cierniowe pnącza, które oplatają najdalszego wroga, przyciągając go do zasięgu walki wręcz i zadając <style=basestat>{dmg_percentage}</style> obrażeń w momencie uderzenia.
 �
 Base.Units.Unit_Menes_Desc�Hail Menes, pierwszy śmiertelny król całego Egiptu. Temu wielkiemu władcy starożytnego Egiptu z 31 wieku p.n.e. przypisuje się zjednoczenie Górnego i Dolnego Egiptu, stając się tym samym pierwszym faraonem zjednoczonego królestwa egipskiego.<br><br>Ustanowił Memfis jako stolicę, strategicznie położoną między Górnym i Dolnym Egiptem. Jego przywództwo oznaczało początek Pierwszej Dynastii Egiptu, przygotowując grunt pod jego rozwój kulturalny i polityczny.<br><br>Dziedzictwem Menesa są narodziny egipskiej cywilizacji, ponieważ położył podwaliny pod jedną z największych kultur w historii. Niestety, obecnie krążą pogłoski, że współpracuje z Teslą. Najwyraźniej chce zastąpić całą historię starożytnym Egiptem.
 N
@@ -879,8 +880,8 @@ W
  Base.Heroes.hero.TomoeGozen_NameTomoe Gozen
 I
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameSieci rybackie
-I
-6Base.Technologies.Technology_Mayas_MayanConsensus_NameMayan Consensus
+J
+6Base.Technologies.Technology_Mayas_MayanConsensus_NameKonsensus Majów
 Q
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameMistrzostwo Włóczni
 C
@@ -957,10 +958,11 @@ m
 0Base.Buildings.Building_Mayas_Home_Worker_1_Desc9Produkuje kakao i dodaje 2 pracowników do Twojego miasta
 N
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameZmierzchowi Harpunnicy
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Wyzwanie | Tarcza</style>
+Izabela przejmuje kontrolę nad polem bitwy, prowokując wszystkich wrogów na <style=basestat>{taunt_shield_duration}</style> oraz leczy się o <style=basestat>{self_heal}</style> wartości swoich bazowych obrażeń. Za każdego sprowokowanego przeciwnika otrzymuje tarczę równą <style=basestat>{shield_per_unit}</style> wartości swoich bazowych obrażeń, trwającą przez <style=basestat>{taunt_shield_duration}</style>.
 {
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescBProdukuje mnóstwo monet i dodaje do Twojego miasta 2 pracowników
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style> and heals herself for <style=basestat>{self_heal}</style> of her base damage. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 E
 1Base.Abilities.hero_battle_ability.JoanOfArc_NameLatarnia Nadziei
 �
@@ -1335,8 +1337,8 @@ U
 8Base.Buildings.Building_EarlyRome_Special_Furnace_1_DescGProdukcja iskier. Wytop nadmiar zasobów, aby uzyskać dodatkowe iskry.
 a
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_NameBandera piracka
-N
-7Base.Technologies.Technology_Mayas_PriestSchooling_NameCraftsmen Schooling
+U
+7Base.Technologies.Technology_Mayas_PriestSchooling_NameSzkolnictwo rzemieślnicze
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.Pythagoras_1_Name�<style=ability_label>Przywołanie | Spalenie</style>Rzuca swoją ekierką w aktualny cel. Przez <style=basestat>{duration}</style>, ekierka będzie podążać po polu bitwy kształtem trójkąta i zada do <style=basestat>{dmg_percentage}</style> obrażeń pobliskim wrogim jednostkom, pozostawiając je płonące przez <style=basestat>{dmg_percentage_burn}</style> ponad <style=basestat>{burn_duration}</style>.
 
@@ -1669,9 +1671,9 @@ B
 5Base.Units.Unit_AgeOfTheFranks_Player_Caballarii_DescNJednostki kawalerii są bardzo szybkie i szarżują tylne szeregi przeciwnika.
 `
 3Base.Buildings.Building_Mayas_Quarry_Premium_4_Desc)Produkuje jednocześnie jadeit i obsydian
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Name�<style=ability_label>Leczenie | Skupienie</style>
-Sacagawea pielęgnuje rannych, leczy sojuszniczego bohatera z najniższym poziomem zdrowia za <style=basestat>{heal_amt}</style> jej bazowych obrażeń. Dodatkowo przekazuje temu samemu sojusznikowi <style=basestat>{focus_amt}</style> regeneracji skupienia jako natychmiastowe skupienie.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Name�<style=ability_label>Leczenie | Skupienie</style>
+Sacagawea opatruje rannych, leczy bohatera sojuszniczego z najniższym poziomem zdrowia o wartość <style=basestat>{heal_amt}</style> bazowych obrażeń. Dodatkowo doładowuje zdolność tego sojusznika na <style=basestat>{focus_duration}</style>.
 r
 6Base.Buildings.Building_Vikings_Workshop_Tavern_5_Desc8Tawerna produkuje miód pitny i sztokfisz z miodu i ryb.
 T
@@ -1694,8 +1696,8 @@ L
 "Base.BuildingGroups.waterPump_NamePompa wodnaPompy wodnePomp wodnych
 s
 $Base.BuildingGroups.premiumPier_NameLuksusowe molo rybackieLuksusowe mola rybackieLuksusowych mol rybackich
-C
-3Base.Technologies.Technology_Mayas_RitualSites_NameRitual Sites
+G
+3Base.Technologies.Technology_Mayas_RitualSites_NameMiejsca rytualne
 +
  Base.BuildingGroups.GarmentMakerKrawiec
 L
@@ -1756,8 +1758,8 @@ O
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameWarsztat rytualnego rzeźbiarza
 H
 4Base.Abilities.hero_battle_ability.TribalHealer_NameMaść Lecznicza
-I
-*Base.BuildingGroups.premiumRitualSite_NameMagma TempleMagma Temples
+�
+*Base.BuildingGroups.premiumRitualSite_NameLuksusowe miejsce rytuałuLuksusowe miejsca rytuałuLuksusowych miejsc rytuału
 M
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NamePolana ćmy
 @
@@ -1787,8 +1789,8 @@ O
 7Base.Technologies.Technology_China_UrbanManagement_NameZarządzanie Miastem
 S
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_3_NameKoszary oblężnicze
-I
-6Base.Technologies.Technology_Mayas_HeaddressCraft_NameHeaddress Craft
+Q
+6Base.Technologies.Technology_Mayas_HeaddressCraft_NameRzemiosło pióropuszy 
 \
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescOdblokowuje Hoplitów
 [
@@ -1806,8 +1808,8 @@ K
 Małe domyMałych domów
 f
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc+Zwiększa nawadnianie sąsiednich budynków
-E
-4Base.Technologies.Technology_Mayas_SolarRituals_NameSolar Rituals
+K
+4Base.Technologies.Technology_Mayas_SolarRituals_NameRytuały słoneczne
 �
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescYJednostki ciężkiej piechoty są wytrwałe i nie przepuszczają szarży kawalerii wroga.
 q
@@ -1986,8 +1988,8 @@ L
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_NameGospodarstwo wiejskie
 `
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_Desc"Produkuje jedwab z nici jedwabnych
-B
-3Base.Technologies.Technology_Mayas_Birdkeeping_NameBirdkeeping
+F
+3Base.Technologies.Technology_Mayas_Birdkeeping_NameHodowla ptaków
 [
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameŚredni obiekt kultury
 A
@@ -2194,9 +2196,8 @@ C
 1Base.Technologies.Technology_China_Terracing_NameTarasowanie
 G
 .Base.Units.Unit_IberianEra_Castilla_Heavy_NameKastylijscy Topornicy
-@
-2Base.Technologies.Technology_Mayas_Aviculture_Name
-Aviculture
+E
+2Base.Technologies.Technology_Mayas_Aviculture_NameHodowla ptaków
 4
 "Base.Units.Unit_BessieColeman_NameBessie Coleman
 G
@@ -2245,10 +2246,10 @@ O
 <Base.Technologies.Technology_ByzantineEra_SpiceMerchant_NameKupiec przypraw
 D
 5Base.Buildings.Building_EarlyRome_Home_Average_1_NameŚredni dom
-<
-4Base.Technologies.Technology_RomanEmpire_Forums_NameFora
 N
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_NameGospodarstwo domowe
+<
+4Base.Technologies.Technology_RomanEmpire_Forums_NameFora
 �
  Base.Units.Unit_Charlemagne_Desc�Kniuwen! Oto Karol Wielki z VIII i IX wieku, który rządził jako król Franków i cesarz Imperium Karolińskiego.<br><br>Z polotem i ambicją rozszerzył swoje królestwo na rozległe imperium w Europie Zachodniej i Środkowej, promując religię i budując fundamenty dla nowoczesnych państw europejskich. Karol Wielki miał również pasję do kultury i edukacji, co zapoczątkowało renesans karoliński — ożywione odrodzenie sztuki, nauki i reformy religijnej.<br><br>Jego dziedzictwo jako jednoczącego i wizjonerskiego przywódcy nadal pozostawia wielki ślad na europejskiej tożsamości i rozwoju historycznym. Można powiedzieć, że był wydarzeniem „magne” w IX wieku!
 �
@@ -2326,10 +2327,10 @@ Z
 "Base.Units.Unit_JaguarWarrior_NameOcelotl
 R
 "Base.BuildingGroups.smallWell_NameMała studniaMałe studnieMałych studni
-
-1Base.Buildings.Building_China_Home_Premium_4_DescJProdukuje ogromne ilości Wu zhu i dodaje 3 pracowników do twojego miasta
 7
 #Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
+
+1Base.Buildings.Building_China_Home_Premium_4_DescJProdukuje ogromne ilości Wu zhu i dodaje 3 pracowników do twojego miasta
 {
 1Base.Buildings.Building_China_Home_Average_4_DescFProdukuje duży stos Wu zhu i dodaje 5 pracowników do Twojego miasta.
 f
@@ -2401,8 +2402,8 @@ E
 3Base.Buildings.Building_Arabia_City_CityHall_1_NameGłówny gmach
 c
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedMarketStands_NameUlepszone stoiska targowe
-G
-5Base.Technologies.Technology_Mayas_RitualMastery_NameRitual Mastery
+M
+5Base.Technologies.Technology_Mayas_RitualMastery_NameMistrzostwo rytualne
 V
 @Base.Technologies.Technology_KingdomOfSicily_TerrainMastery_NameMistrzostwo Terenu
 O
@@ -2411,9 +2412,9 @@ W
 ?Base.Buildings.Building_FeudalAge_Workshop_SpiceMerchant_1_NameHandlarz przyprawami
 O
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_4_NameWarsztat jedwabiu
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Name�<style=ability_label>Atak Wręcz | Osłabienie | Wzmocnienie</style>
-Sun Tzu dwukrotnie atakuje wszystkie wrogie jednostki wokół siebie, zadając łącznie <style=basestat>{dmg_percentage}</style> obrażeń w promieniu <style=basestat>{range}</style>. Następnie koncentruje się, tworząc aurę spokoju, która zmniejsza szybkość ataku pobliskich wrogów o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>. Wszystkie sojusznicze jednostki zyskują <style=basestat>{atk_speed_percentage_buff}</style> do szybkości ataku na <style=basestat>{duration}</style>.
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Name�<style=ability_label>Atak wręcz | Osłabienie | Wzmocnienie</style>
+Sun Tzu uderza wszystkie jednostki wrogów wokół siebie dwukrotnie, zadając łącznie <style=basestat>{dmg_percentage}</style> obrażeń w promieniu <style=basestat>{range}</style>. Następnie koncentruje się, tworząc aurę spokoju: zmniejsza szybkość ataku pobliskich wrogów o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>, a wszystkie sojusznicze jednostki zyskują <style=basestat>{atk_speed_percentage_buff}</style> szybkości ataku na <style=basestat>{duration}</style>.
 e
  Base.BuildingTypes.riceFarm_NameGospodarstwo ryżoweGospodarstwa ryżoweGospodarstw ryżowych
 �
@@ -2690,8 +2691,8 @@ M
 2Base.Buildings.Building_Mayas_City_CityHall_1_NameRatusz
 C
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameByczy jeźdźcy
-K
-7Base.Technologies.Technology_Mayas_ImprovedDaggers_NameImproved Daggers
+M
+7Base.Technologies.Technology_Mayas_ImprovedDaggers_NameUlepszone sztylety
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.WilliamTell_10_Name�<style=ability_label>Strzał dystansowy| Wzmocnienie</style>Celuje swoją kuszą w najdalszy cel, strzelając do niego za <style=basestat>{dmg_percentage}</style> obrażeń i zwiększając swoją prędkość ataku o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>. Priorytetuje bohaterów.
 v
@@ -2792,8 +2793,8 @@ n
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 [
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_DescOdblokuj Billmenów
-K
-7Base.Technologies.Technology_Mayas_DivineAscension_NameDivine Ascension
+F
+7Base.Technologies.Technology_Mayas_DivineAscension_NameBoski awans
 O
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_NameWarsztat jedwabiu
 U
@@ -2938,8 +2939,9 @@ R
 1Base.Buildings.Building_China_Home_Average_2_NameŚredni dom
 s
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc3Znacznie poprawia zadowolenie sąsiednich budynków
-�
-EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name�<style=ability_label>Area Strike| Debuff| Heal</style>El Cid thrusts his weapon forward in a piercing attack, striking through his current target and hitting enemies in a long range. Affected enemies take <style=basestat>{dmg_percentage}</style> damage and suffer an ATK reduction of <style=basestat>{attack_reduction}</style> for <style=basestat>{debuff_duration}</style>. Meanwhile, El Cid heals himself for <style=basestat>{heal_percentage}</style> of his base damage, fortifying his resolve in battle.
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name�<style=ability_label>Atak obszarowy | Osłabienie | Leczenie</style>
+El Cid popycha swoją broń w przód w przeszywającym ataku, trafiając nie tylko obecny cel, ale również przeciwników na długim dystansie. Trafieni wrogowie otrzymują <style=basestat>{dmg_percentage}</style> obrażeń oraz doświadczają redukcji ataku o <style=basestat>{attack_reduction}</style> na <style=basestat>{debuff_duration}</style>. Tymczasem El Cid leczy się za <style=basestat>{heal_percentage}</style> swojej bazowej wartości obrażeń, wzmacniając swoją determinację w walce.
 D
 5Base.Technologies.Technology_Egypt_Mummification_NameMumifikacja
 N
@@ -3278,8 +3280,8 @@ E
 :Base.Technologies.Technology_KingdomOfSicily_Channels_NameKanały
 C
 2Base.Buildings.Building_Vikings_Home_Sailor_6_NameDom żeglarzy
-Z
->Base.Technologies.Technology_Mayas_AdvancedObsidianMining_NameAdvanced Obsidian Mining
+b
+>Base.Technologies.Technology_Mayas_AdvancedObsidianMining_Name Zaawansowane wydobycie obsydianu
 G
 5Base.Buildings.Building_China_RiceFarm_Average_3_DescProdukuje ryż
 =
@@ -3374,8 +3376,8 @@ S
 9Base.Buildings.Building_Vikings_SailorPort_Average_6_Desc\Wyślij statki ekspedycyjne, które będą zbierać skarby w postaci klejnotów lub przypraw
 h
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc+Zwiększa nawadnianie sąsiednich budynków
-M
-*Base.BuildingGroups.averageRitualSite_NameCrystal SpringCrystal Springs
+a
+*Base.BuildingGroups.averageRitualSite_NameMiejsce rytuałuMiejsca rytuałuMiejsc rytuału
 K
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_NameKronikarski dom
 a
@@ -3465,8 +3467,8 @@ M
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameBrowar Miodu Pitnego
 ,
 Base.Ages.StoneAge_Start40 000 r. p.n.e.
-G
-5Base.Technologies.Technology_Mayas_NatureSpirits_NameNature Spirits
+E
+5Base.Technologies.Technology_Mayas_NatureSpirits_NameDuchy natury
 Y
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAkademia Bohaterów
 �
@@ -3532,8 +3534,8 @@ P
 :Base.Abilities.hero_battle_ability.GreekMathematician_NameAksjomatyczny Atak
 3
 #Base.Heroes.hero.CyrusTheGreat_NameCyrus Wielki
-M
-8Base.Technologies.Technology_Mayas_PopulationGrowth_NamePopulation Growth
+L
+8Base.Technologies.Technology_Mayas_PopulationGrowth_NameWzrost populacji
 [
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescOdblokuj Billmenów
 J
@@ -3606,8 +3608,8 @@ N
 3Base.Buildings.Building_Vikings_Home_Premium_6_DescOProdukuje tonę Groszy i dodaje 2 Pracowników i 2 Marynarzy do twojego Miasta.
 i
 /Base.Buildings.Building_Egypt_Home_Small_5_Desc6Produkuje debeny i dodaje do twojego miasta pracownika
-^
-@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameBetter Obsidian Extraction
+`
+@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameLepsze wydobywanie obsydianu
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>Atak Obszarowy| Osłabienie| Palenie</style>Przywołuje ognistego smoka, który trzykrotnie uderza w miejsce największego skupiska jednostek wroga, zmniejszając DEF o <style=basestat>{def_percentage}</style> wartości ATK Mulan za każdym razem i zadając łącznie <style=basestat>{dmg_percentage}</style> obrażeń w zasięgu <style=basestat>{range}</style>. Dotknięte jednostki wroga palą się, zadając dodatkowe <style=basestat>{dmg_percentage_burn}</style> obrażeń przez <style=basestat>{burn_duration}</style>.
 q
@@ -4299,8 +4301,8 @@ R
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameMury Teodezjusza
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_NameFontanna
-O
-9Base.Technologies.Technology_Mayas_SustainableMining_NameSustainable Mining
+V
+9Base.Technologies.Technology_Mayas_SustainableMining_NameZrównoważone górnictwo
 s
 2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc=Produkuje małą ilość żywności w krótkim okresie czasu.
 9
@@ -4309,9 +4311,8 @@ w
 3Base.Units.Unit_ByzantineEra_Player_Bucellarii_Desc@Jednostki piechoty są najskuteczniejsze w pierwszych szeregach.
 U
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_NameAkademia Bohaterów
-?
-1Base.Technologies.Technology_Mayas_StateLaws_Name
-State Laws
+B
+1Base.Technologies.Technology_Mayas_StateLaws_NamePrawa stanowe
 X
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_NameWzmocnione Uchwyty
 �
@@ -4559,14 +4560,14 @@ $
 'Base.Units.Unit_GreekMathematician_Desc�Wykreśl zasady rządzące kształtami z Euklidesem, ojcem geometrii! Ten grecki matematyk z III wieku p.n.e. napisał traktaty matematyczne, w tym „Elementy”, zbiór wiedzy geometrycznej, który ukształtował matematykę zachodnią przez stulecia.<br><br>W 13 księgach „Elementów” Euklides szczegółowo opisał wiele zagadnień geometrii i matematyki, w tym dowody twierdzenia Pitagorasa i analizę liczb pierwszych. Praca ta stanowi podstawę geometrii euklidesowej, która ukształtowała myślenie na resztę historii.<br><br>Życie Euklidesa jest tajemnicą, ale jego dzieło jest jego spuścizną. Dzięki szczegółowemu, metodycznemu podejściu do rozumowania i wkładowi, który doprowadził do rozwoju metody naukowej, Euklides naprawdę zmienił świat. Rzeczywiście, mówi się, że najczęściej studiowaną książką na Zachodzie jest Biblia, ale drugą najczęściej studiowaną książką są „Elementy” Euklidesa!
 m
 3Base.Buildings.Building_EarlyRome_Home_Small_1_Desc6Produkuje monety i dodaje do twojego miasta pracownika
-K
-7Base.Technologies.Technology_Mayas_AstralAlignment_NameAstral Alignment
+O
+7Base.Technologies.Technology_Mayas_AstralAlignment_NameWyrównanie astralne
 /
 Base.Ages.ClassicGreece_Finish880 r. p.n.e.
 C
 6Base.Technologies.Technology_IberianEra_Castillos_Name	Castillos
-G
-5Base.Technologies.Technology_Mayas_SacredShrines_NameSacred Shrines
+L
+5Base.Technologies.Technology_Mayas_SacredShrines_NameŚwięte sanktuaria
 h
 *Base.BuildingGroups.irrigationStation_NameStacja nawadnianiaStacje nawadnianiaStacji nawadniania
 K
@@ -4665,8 +4666,8 @@ J
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_NameAwangarda Minotaura
 Q
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_NameKoszary oblężnicze
-O
-9Base.Technologies.Technology_Mayas_SpiritualAncestry_NameSpiritual Ancestry
+P
+9Base.Technologies.Technology_Mayas_SpiritualAncestry_NameDuchowe pochodzenie
 m
 >Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 N
@@ -4739,8 +4740,8 @@ D
 Base.Units.Unit_RamsesII_Name	Ramzes II
 v
 3Base.Units.Unit_TreasureHunt_Red_DonkeyRaiders_Desc?Jednostki kawalerii są bardzo szybkie i szarżują na wrogów.
-U
-<Base.Technologies.Technology_Mayas_SacrificialOfferings_NameSacrificial Offerings
+O
+<Base.Technologies.Technology_Mayas_SacrificialOfferings_NameOfiary rytualne
 ?
 2Base.Buildings.Building_StoneAge_Home_Small_2_Name	Mały dom
 U
@@ -5023,8 +5024,8 @@ E
 Legionista
 l
 =Base.Buildings.Building_ByzantineEra_CultureSite_Large_1_Desc+Zwiększa zadowolenie sąsiednich budynków
-K
-7Base.Technologies.Technology_Mayas_EtchedLandmarks_NameEtched Landmarks
+L
+7Base.Technologies.Technology_Mayas_EtchedLandmarks_NameWydrapane zabytki
 D
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameŚredni dom
 K
@@ -5051,8 +5052,8 @@ NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_VoodooHead_Name
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>Obrażenia od poparzeń</style>Płomienie pochodni zwiększają obrażenia od poparzeń zadawane przez posiadacza o <style=basestat>{burn_dmg_increase}</style>.
 Za każdym razem, gdy posiadacz pochodni zada jednorazowe obrażenia wrogiej jednostce, ma <style=basestat>{burn_chance}</style> szansę na zastosowanie oparzenia, zadając <style=basestat>{burn_dmg}</style> obrażenia przez <style=basestat>{burn_duration}</style> sekund.
 
-E
-4Base.Technologies.Technology_Mayas_StoneCarving_NameStone Carving
+J
+4Base.Technologies.Technology_Mayas_StoneCarving_NameRzeźba w kamieniu
 4
 "Base.Units.Unit_AmeliaEarhart_NameAmelia Earhart
 Q
@@ -5107,8 +5108,8 @@ m
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Desc6Produkuje monety i dodaje do twojego miasta pracownika
 ,
 Base.Units.Unit_Shaolin_NameXueting Fuyu
-I
-6Base.Technologies.Technology_Mayas_FeatherMastery_NameFeather Mastery
+F
+6Base.Technologies.Technology_Mayas_FeatherMastery_NameSztuka piór
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_NameWarsztat Papirusu
 B
@@ -5195,8 +5196,8 @@ p
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_5_Desc+Zwiększa nawadnianie sąsiednich budynków
 /
 "Base.BuildingGroups.SmallResidence	Mały dom
-C
--Base.Abilities.hero_battle_ability.ElCid_NameKnight’s Requiem
+A
+-Base.Abilities.hero_battle_ability.ElCid_NameRycerski Requiem
 S
 %Base.BuildingGroups.coffeeBrewer_NamePalarnia kawyPalarnie kawyPalarni kawy
 7
@@ -5241,10 +5242,11 @@ m
 Base.Ages.MinoanEra_Finish1600 r. p.n.e.
 R
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_NamePrzetwórnia nici
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name�<style=ability_label>Wyzwanie | Tarcza</style>
+Izabela dowodzi polem bitwy, prowokując wszystkich wrogów na <style=basestat>{taunt_shield_duration}</style>. Za każdego sprowokowanego przeciwnika otrzymuje tarczę równą <style=basestat>{shield_per_unit}</style> wartości swoich bazowych obrażeń, która utrzymuje się przez <style=basestat>{taunt_shield_duration}</style>.
 N
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_NameKoszary strzelców
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name�<style=ability_label>Taunt| Shield</style>Isabella commands the battlefield, taunting all enemies for <style=basestat>{taunt_shield_duration}</style>. For each enemy taunted, she gains a shield worth <style=basestat>{shield_per_unit}</style> of her base damage, lasting for <style=basestat>{taunt_shield_duration}</style>
 )
 Base.HeroClass.ManipulatorManipulator
 �
@@ -5257,16 +5259,16 @@ O
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_3_NameLiceum Uczonych
 I
 3Base.Abilities.hero_battle_ability.SirLancelot_NameMściciel Camelotu
-E
-4Base.Technologies.Technology_Mayas_JadeDeposits_NameJade Deposits
+G
+4Base.Technologies.Technology_Mayas_JadeDeposits_NameZłoża jadeitu
 o
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc+Zwiększa zadowolenie sąsiednich budynków
 +
 Base.Units.Unit_IsabellaI_Name	Izabela I
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Atak wręcz| Ogłuszenie</style> Umiejętnie uderza obecny cel swoją laską, zadając <style=basestat>{dmg_percentage}</style> obrażeń i mając <style=basestat>{chance}</style> szans na ogłuszenie ich na <style=basestat>{duration}</style>.
-R
-:Base.Technologies.Technology_Mayas_AdvancedJadeMining_NameAdvanced Jade Mining
+\
+:Base.Technologies.Technology_Mayas_AdvancedJadeMining_NameZaawansowane wydobycie jadeitu
 �
 &Base.Units.Unit_PhilipIIOfMacedon_Desc�Walczyć u boku wizjonera, który ujarzmił Grecję! Filip II, król Macedonii z IV wieku p.n.e., jest słynny ze swojej wojskowej biegłości i podbojów, będąc symbolem wzrostu Macedonii. <br><br>Przejmując kontrolę nad królestwem w czasach kryzysu, Filip pokonał najeźdźców na początku swojej władzy, a następnie wprowadził swoją własną innowację: macedońską falangę, uzbrojoną w włócznie o długości 6 metrów. Dysponując potężną armią, prowadził kampanie przeciwko greckiemu kontynentowi, tworząc sojusz z kluczowymi polis półwyspu. <br><br>Po jego śmierci Filip był jednookim bohaterem wojennym, którego geniusz doprowadził do zjednoczenia Grecji w Związek Koryncki, a który przygotowywał się do inwazji na Persję, kiedy został zamordowany. Nawet to nie mogło go powstrzymać: został zdefiniowany jako bóg i czczony przez lud, a jego syn Aleksander kontynuował jego dziedzictwo.
 >
@@ -5335,10 +5337,10 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<sty
 Base.Units.Unit_Blackbeard_NameCzarnobrody
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_5_DescQUl daje pyszny miód, który jest używany do produkcji miodu pitnego w tawernie.
+M
+7Base.Technologies.Technology_Mayas_CurativeRituals_NameRytuały lecznicze
 N
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_NameGospodarstwo domowe
-K
-7Base.Technologies.Technology_Mayas_CurativeRituals_NameCurative Rituals
 T
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameKoszary strzelców
 \
@@ -5455,7 +5457,7 @@ R
 �
 Base.Units.Unit_Achilles_Desc�Przemierz ciemne od wina morza i ujrzyj Achillesa, legendarnego wojownika opisanego w "Iliadzie" Homera. Zanurzony w Styksie jako niemowlę, tylko jego pięta mogła zostać zraniona. Wyszkolony w bitwie i niewrażliwy, tak dotarł do oblężenia Troi.<br><br>Po śmierci swojego kochanka Patroklosa, Achilles w ślepej furii szukał wodza przeciwników, Hektora. Choć Hektor był potężnym wojownikiem i bohaterem, nie mógł się równać z potęgą Achillesa.<br><br>Choć zginął przebity strzałami u bram Troi, jego działania podczas oblężenia okazały się kluczowe, a jego legenda zainspirowała niezliczonych wojowników, w tym Aleksandra Wielkiego. Naprawdę, nikt inny nie pokazuje, jak ważne jest, aby oczyścić się w całości!
 K
-7Base.Technologies.Technology_Mayas_ChocolateMaking_NameChocolate Making
+7Base.Technologies.Technology_Mayas_ChocolateMaking_NameWyrób czekolady
 C
 2Base.Technologies.Technology_China_FloorPlans_NamePlany Pięter
 O
@@ -5472,8 +5474,8 @@ N
 DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameArchitektura Staufera
 @
 3Base.Buildings.Building_MinoanEra_Home_Small_3_Name	Mały dom
-K
-7Base.Technologies.Technology_Mayas_JadeProspecting_NameJade Prospecting
+O
+7Base.Technologies.Technology_Mayas_JadeProspecting_NamePoszukiwanie jadeitu
 �
  Base.HeroClass.AreaAttacker_Desc�Atakujący obszarowo zadają obrażenia wszystkim wrogom na dużych obszarach. Świetnie radzą sobie z oddziałami słabszych jednostek.<br><line-height=50%><br></line-height><b><color=#3DA229>Mocni</color> przeciwko:</b><br>•<indent=5%><color=#3DA229>dużym oddziałom</color> w <color=#3DA229>kampanii</color>, <color=#3DA229>poszukiwaniach skarbów</color> oraz <color=#3DA229>oblężeniu Orleanu</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Słabi</color> przeciwko:</b><br>•<indent=5%><color=#CD2A25>Bohaterom wroga</color> w kampanii, Arenie i poszukiwaniach skarbów.</indent><br>•<indent=5%><color=#CD2A25>Burze Tesli.</color></indent>
 �
@@ -5482,8 +5484,9 @@ l
 (Base.BuildingGroups.premiumWorkshop_NameLuksusowy warsztatLuksusowe warsztatyLuksusowych warsztatów
 &
 Base.Heroes.hero.Inanna_NameInanna
-<
-0Base.Technologies.Technology_Mayas_Divining_NameDivining
+>
+0Base.Technologies.Technology_Mayas_Divining_Name
+Wróżenie
 c
 &Base.BuildingGroups.clayProcessor_NamePrzetwórca glinyPrzetwórcy glinyPrzetwórców gliny
 j
@@ -5524,11 +5527,11 @@ M
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescOdblokowuje Wieże Oblężnicze
 ?
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMozaika
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Atak Wręcz | Osłabienie</style>
-Sun Tzu dwukrotnie atakuje wszystkie wrogie jednostki wokół siebie, zadając łącznie <style=basestat>{dmg_percentage}</style> obrażeń w promieniu <style=basestat>{range}</style>. Następnie koncentruje się, tworząc aurę spokoju, która zmniejsza szybkość ataku pobliskich wrogów o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>.
 G
 3Base.Buildings.Building_Mayas_Aviary_Average_6_DescProdukuje pióra
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Atak wręcz | Osłabienie</style>
+Sun Tzu uderza wszystkie jednostki wrogów wokół siebie dwukrotnie, zadając łącznie <style=basestat>{dmg_percentage}</style> obrażeń w promieniu <style=basestat>{range}</style>. Następnie koncentruje się, tworząc aurę spokoju, która zmniejsza szybkość ataku pobliskich wrogów o <style=basestat>{atk_speed_percentage}</style> na <style=basestat>{duration}</style>.
 �
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_DesczLuksusowe mola rybackie wysyłają łodzie, które łowią mnóstwo ryb dla wszystkich głodnych pracowników i marynarzy.
 m
@@ -5640,8 +5643,8 @@ G
 8Base.Buildings.Building_ByzantineEra_Home_Average_2_NameŚredni dom
 u
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Desc<Produkuje dużą ilość żywności w długim okresie czasu.
-F
-1Base.Abilities.hero_battle_ability.IsabellaI_NameMajestic Defiance
+G
+1Base.Abilities.hero_battle_ability.IsabellaI_NameMajestatyczny bunt
 s
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Desc7Produkuje monety i dodaje pracownika do Twojego miasta.
 k
@@ -5652,8 +5655,8 @@ O
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_2_NameKoszary oblężnicze
 K
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_NameMolo rybackie
-G
-5Base.Technologies.Technology_Mayas_RitualDaggers_NameRitual Daggers
+J
+5Base.Technologies.Technology_Mayas_RitualDaggers_NameSztylety rytualne
 F
 4Base.Technologies.Technology_FeudalAge_TarOvens_NamePiece smołowe
 T
@@ -5782,12 +5785,12 @@ O
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_NameKoszary oblężnicze
 F
 0Base.Buildings.Building_Mayas_Home_Priest_5_NameDom rzemieślniczy
-U
-<Base.Technologies.Technology_Mayas_PerfectedHeaddresses_NamePerfected Headdresses
+\
+<Base.Technologies.Technology_Mayas_PerfectedHeaddresses_NameUdoskonalone nakrycia głowy
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_1_NameKanał
-G
-5Base.Technologies.Technology_Mayas_AstralRituals_NameAstral Rituals
+J
+5Base.Technologies.Technology_Mayas_AstralRituals_NameRytuały astralne
 d
 %Base.BuildingGroups.silkWorkshop_NameWarsztat jedwabiuWarsztaty jedwabiuWarsztatów jedwabiu
 W
@@ -6017,7 +6020,7 @@ TBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SparklingFortune
 D
 0Base.Buildings.Building_Mayas_Quarry_Jade_1_DescProdukuje jadeit
 M
-8Base.Technologies.Technology_Mayas_ObsidianDeposits_NameObsidian Deposits
+8Base.Technologies.Technology_Mayas_ObsidianDeposits_NameZłoża obsydianu
 O
 <Base.Buildings.Building_IberianEra_Workshop_Carpenter_1_DescProdukuje drzwi
 O
@@ -6085,8 +6088,8 @@ R
 5Base.Buildings.Building_Egypt_GoldMine_Premium_3_NameLuksusowa kopalnia złota
 H
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_NameGłówny gmach
-C
-3Base.Technologies.Technology_Mayas_JadeMastery_NameJade Mastery
+J
+3Base.Technologies.Technology_Mayas_JadeMastery_NameMistrzostwo jadeitu
 O
 <Base.Technologies.Technology_BronzeAge_ThunderingGallop_NameGrzmiący Galop
 �
@@ -6115,8 +6118,8 @@ e
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc+Zwiększa nawodnienie sąsiednich budynków
 ^
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameKoszary ciężkiej piechoty
-S
-;Base.Technologies.Technology_Mayas_ObsidianProspecting_NameObsidian Prospecting
+U
+;Base.Technologies.Technology_Mayas_ObsidianProspecting_NamePoszukiwanie obsydianu
 R
 =Base.Technologies.Technology_EarlyRome_RationsEfficiency_NameWydajność Racji
 �
@@ -6430,8 +6433,8 @@ U
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_6_NameWarsztat porcelany
 �
 @Base.Buildings.Building_ClassicGreece_Special_HeroAcademy_1_DescKAkademia Bohaterów produkuje Zwoje Doświadczenia kosztem Punktów Badań.
-M
-8Base.Technologies.Technology_Mayas_XocolatlVirtuoso_NameXocolatl Virtuoso
+L
+8Base.Technologies.Technology_Mayas_XocolatlVirtuoso_NameWirtuoz Xocolatl
 T
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_2_NameKoszary piechoty
 R
@@ -6453,8 +6456,8 @@ Y
 <Base.Units.Unit_AgeOfTheFranks_Carolingians_Charlemagne_NamePaladyni Karola Wielkiego
 `
 3Base.Buildings.Building_Mayas_Quarry_Premium_1_Desc)Produkuje jednocześnie jadeit i obsydian
-V
-<Base.Technologies.Technology_Mayas_BetterJadeExtraction_NameBetter Jade Extraction
+Z
+<Base.Technologies.Technology_Mayas_BetterJadeExtraction_NameLepsze wydobywanie jadeitu
 J
 ;Base.Units.Unit_EarlyRome_MacedonianKingdom_Hypaspists_NameHipaspiści
 ,
