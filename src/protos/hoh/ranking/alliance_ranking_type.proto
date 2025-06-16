@@ -6,4 +6,7 @@ enum AllianceRankingType {
   AllianceRankingType_UNDEFINED = 0;
   AllianceRankingType_TOTAL_POINTS = 1;
   AllianceRankingType_RANKING_POINTS = 2;
+  AllianceRankingType_U1 = 4;
+  AllianceRankingType_U2 = 5;
+  AllianceRankingType_U3 = 6;
 }
