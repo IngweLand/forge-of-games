@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Alliance = Ingweland.Fog.Models.Fog.Entities.Alliance;
@@ -68,9 +69,13 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
 
                     if (date >= existingAlliance.UpdatedAt)
                     {
-                        existingAlliance.RankingPoints = allianceAggregate.RankingPoints!.Value;
-                        existingAlliance.Rank = allianceAggregate.Rank!.Value;
-                        existingAlliance.UpdatedAt = date;
+                        if (allianceAggregate.AllianceRankingType == AllianceRankingType.TotalPoints)
+                        {
+                            existingAlliance.RankingPoints = allianceAggregate.RankingPoints!.Value;
+                            existingAlliance.Rank = allianceAggregate.Rank!.Value;
+                            existingAlliance.UpdatedAt = date;
+                        }
+                        
                         if (allianceAggregate.RegisteredAt.HasValue)
                         {
                             existingAlliance.RegisteredAt = allianceAggregate.RegisteredAt!.Value;

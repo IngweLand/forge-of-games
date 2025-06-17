@@ -11,6 +11,7 @@ public class PlayerViewModel
     public required string Name { get; set; }
     public required string Rank { get; set; }
     public required string RankingPoints { get; set; }
+    public required string RankingPointsFormatted { get; set; }
     public required string UpdatedAt { get; set; }
     public required string WorldId { get; init; }
 }

@@ -20,7 +20,7 @@
     </div>
     <div class="points"
          style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
-        @Alliance.RankingPoints
+        @Alliance.RankingPointsFormatted
     </div>
     @if (Alliance.IsStale)
     {

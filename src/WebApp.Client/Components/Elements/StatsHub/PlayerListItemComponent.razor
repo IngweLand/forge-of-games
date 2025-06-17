@@ -26,7 +26,7 @@
     </div>
     <div class="points"
          style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
-        @Player.RankingPoints
+        @Player.RankingPointsFormatted
     </div>
     @if (Player.IsStale)
     {

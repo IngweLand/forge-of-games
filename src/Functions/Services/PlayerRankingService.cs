@@ -63,7 +63,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                         addedRankingCount++;
                     }
 
-                    if (playerAggregate.PlayerRankingType == PlayerRankingType.RankingPoints &&
+                    if (playerAggregate.PlayerRankingType == PlayerRankingType.PowerPoints &&
                         date >= existingPlayer.UpdatedAt)
                     {
                         existingPlayer.RankingPoints = playerAggregate.RankingPoints!.Value;

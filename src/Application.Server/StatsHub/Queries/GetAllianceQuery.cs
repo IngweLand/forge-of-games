@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
+using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,7 +30,8 @@ public class GetAllianceQueryHandler(
             .Include(p => p.MemberHistory)
             .Include(p => p.NameHistory)
             .Include(p => p.Leader)
-            .Include(p => p.Rankings.Where(pr => pr.CollectedAt > periodStartDate))
+            .Include(p =>
+                p.Rankings.Where(pr => pr.Type == AllianceRankingType.TotalPoints && pr.CollectedAt > periodStartDate))
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken: cancellationToken);
         if (alliance == null)

@@ -39,7 +39,7 @@ public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService)
         return new PlayerWithRankings()
         {
             Player = mapper.Map<PlayerDto>(player),
-            RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.RankingPoints),
+            RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.PowerPoints),
             PvpRankingPoints = CreateTimedIntValueCollection(player.PvpRankings),
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
             Alliances = alliances,

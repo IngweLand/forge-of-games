@@ -14,7 +14,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
         return new AllianceWithRankings()
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
-            RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.RankingPoints),
+            RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.TotalPoints),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
             CurrentMembers = currentMembers,
             PossibleMembers = possibleMembers,

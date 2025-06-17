@@ -9,6 +9,7 @@ public class AllianceViewModel
     public required string Name { get; set; }
     public required int Rank { get; set; }
     public required int RankingPoints { get; set; }
+    public required string RankingPointsFormatted { get; set; }
     public required string UpdatedAt { get; set; }
     public required string WorldId { get; init; }
 }

@@ -5,9 +5,9 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Formatters;
 
 namespace Ingweland.Fog.Application.Client.Web.Mapping.Hoh;
 
@@ -19,6 +19,9 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank == 0 ? "-" : src.Rank.ToString()))
             .ForMember(dest => dest.RankingPoints,
                 opt => opt.MapFrom(src => src.RankingPoints == 0 ? "-" : src.RankingPoints.ToString()))
+            .ForMember(dest => dest.RankingPointsFormatted,
+                opt => opt.MapFrom(src =>
+                    src.RankingPoints == 0 ? "-" : NumberFormatter.FormatCompactNumber(src.RankingPoints)))
             .ForMember(dest => dest.Age, opt =>
                 opt.MapFrom((src, _, _, context) =>
                 {
@@ -41,6 +44,8 @@ public class StatsHubUiProfile : Profile
         CreateMap<PaginatedList<PlayerDto>, PaginatedList<PlayerViewModel>>();
 
         CreateMap<AllianceDto, AllianceViewModel>()
+            .ForMember(dest => dest.RankingPointsFormatted,
+                opt => opt.MapFrom(src => NumberFormatter.FormatCompactNumber(src.RankingPoints)))
             .ForMember(dest => dest.AvatarIconUrl,
                 opt => opt.ConvertUsing<AllianceAvatarIconIdToUrlConverter, int>(src => src.AvatarIconId))
             .ForMember(dest => dest.AvatarBackgroundUrl,
@@ -56,6 +61,5 @@ public class StatsHubUiProfile : Profile
                 opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
             })
             .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader));
-
     }
 }

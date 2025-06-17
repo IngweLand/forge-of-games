@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
+using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,9 @@ public class GetPlayerQueryHandler(IFogDbContext context, IPlayerWithRankingsFac
         var periodStartDate = DateTime.UtcNow.AddDays(FogConstants.DisplayedStatsDays * -1);
         var periodStartDateOnly = DateOnly.FromDateTime(periodStartDate);
         var player = await context.Players.AsNoTracking()
-            .Include(p => p.Rankings.Where(pr => pr.CollectedAt > periodStartDateOnly))
+            .Include(p =>
+                p.Rankings.Where(pr =>
+                    pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt > periodStartDateOnly))
             .Include(p => p.PvpRankings.Where(pr => pr.CollectedAt > periodStartDate))
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
