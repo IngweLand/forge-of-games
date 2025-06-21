@@ -84,7 +84,7 @@ public class CityPlanner(
         }
 
         var currentStateSnapshot =
-            snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities),
+            snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities.Values),
                 localizer[FogResource.CityPlanner_Snapshots_Current]);
         stats.Add(currentStateSnapshot, CityMapState.CityStats);
         return snapshotsComparisonViewModelFactory.Create(stats);
@@ -134,7 +134,7 @@ public class CityPlanner(
             return Task.CompletedTask;
         }
 
-        var snapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities));
+        var snapshot = snapshotFactory.Create(mapper.Map<IList<HohCityMapEntity>>(CityMapState.CityMapEntities.Values));
         CityMapState.AddSnapshot(snapshot);
         return SaveCityAsync();
     }
