@@ -222,7 +222,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Historic Battle.
+        ///   Looks up a localized string similar to Historic Battles.
         /// </summary>
         public static string BattleType_HistoricBattle {
             get {
@@ -240,7 +240,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tesla.
+        ///   Looks up a localized string similar to Tesla Storms.
         /// </summary>
         public static string BattleType_TeslaStorm {
             get {
@@ -1878,7 +1878,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Check battles for different encounters and plan your hero team..
+        ///   Looks up a localized string similar to View real user-submitted battles in Heroes of History. Analyze hero setups and use filters to improve your team strategy with the Battle Log..
         /// </summary>
         public static string StatsHub_BattleLog_Meta_Description {
             get {
@@ -1887,7 +1887,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History battles, hero suggestion, hero team, battle squad, battle team.
+        ///   Looks up a localized string similar to Heroes of History, Battle Log, hero battles, team strategy, battle reports, combat stats, filter battles, hero composition, HoH Helper, game analytics.
         /// </summary>
         public static string StatsHub_BattleLog_Meta_Keywords {
             get {

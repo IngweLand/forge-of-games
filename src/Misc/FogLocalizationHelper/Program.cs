@@ -4,7 +4,7 @@ using Ingweland.Fog.Shared;
 using Ingweland.Fog.Shared.Localization;
 using Newtonsoft.Json;
 
-var searchKeys = new List<string>()
+var searchKeys = new HashSet<string>()
 {
     "Base.CampaignPanel.Campaign",
     "Base.QuestlinesPanel.EncounterOfRegion",
@@ -30,6 +30,11 @@ var searchKeys = new List<string>()
     "Base.Generic.Cancel",
     "Base.BuildingContextPanel.InfoTab",
     "Base.CampaignPanel.Battle",
+    "Base.UnlockableFeatures.Pvp",
+    "Base.HistoricBattlePanel.HistoricBattle",
+    "Base.TeslaStormsPanel.TeslaStorms",
+    "Base.CampaignPanel.Difficulty",
+    "Base.TreasureHuntDifficultiesPanel.Stage",
 };
 
 var result = new Dictionary<string, List<Translations>>();
@@ -50,7 +55,7 @@ File.WriteAllText("translations.json", JsonConvert.SerializeObject(result, Forma
 
 static string GetInputFilePath(string localeCode)
 {
-    var dir = @"D:\IngweLand\Projects\forge-of-games\resources\hoh\data\";
+    var dir = @"D:\IngweLand\Projects\forge-of-games\src\Misc\HohProtoParser\bin\Debug\net9.0\downloads\";
     var fileName = $"loca_{localeCode}.bin";
     return $"{dir}{fileName}";
 }
