@@ -57,6 +57,7 @@ public static class FogUrlBuilder
         public const string HELP_BROWSER_EXTENSION_PATH = BASE_HELP_PATH + "/browser-extension";
         public const string HELP_IMPORTING_IN_GAME_DATA_PATH = BASE_HELP_PATH + "/importing-hoh-data";
         public const string HELP_STATS_HUB_PATH = BASE_HELP_PATH + "/stats-hub";
+        public const string HELP_BATTLE_LOG_PATH = BASE_HELP_PATH + "/battle-log";
         public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{heroId}";
         public const string CAMPAIGN_REGION_TEMPLATE = BASE_CAMPAIGN_PATH + "/region/{regionId}";
         public const string BUILDING_TEMPLATE = BASE_BUILDINGS_PATH + "/{cityId}/{buildingGroup}";

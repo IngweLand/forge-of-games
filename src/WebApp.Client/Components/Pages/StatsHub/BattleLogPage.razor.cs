@@ -82,6 +82,6 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private void OnContributionPromptClick()
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH);
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH);
     }
 }

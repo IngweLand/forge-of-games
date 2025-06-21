@@ -50,7 +50,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 Keywords = localizer[FogResource.StatsHub_BattleLog_Meta_Keywords],
                 Title = localizer[FogResource.StatsHub_BattleLog_Title],
                 CurrentHomePath = FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH,
-                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH,
+                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH,
             };
         }
 

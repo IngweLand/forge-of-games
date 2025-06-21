@@ -1,0 +1,72 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>Battle Log: Learn from Real Fights</h3>
+
+    <div class="help-info">
+        The Battle Log is a part of the <a href="@FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH">Stats Hub</a>, focused
+        on detailed records of real battles in <em>Heroes of History</em>. Players submit these battle reports to help
+        others understand which team compositions work—and which don't.
+    </div>
+
+    <div class="help-step">
+        <h5>What Battle Log Shows</h5>
+        <p>
+            The page displays a list of real battles submitted by the community. For each battle, you can see the
+            participating heroes, their properties (like level and type), and the outcome. This helps you plan your own
+            teams more effectively.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Using the Filters</h5>
+        <p>
+            At the top of the Battle Log, use the form to search for specific encounters by selecting battle type,
+            difficulty, region, and other options.
+        </p>
+        <p>
+            You can also filter by hero units: click a shadowed portrait to select a hero, or click a selected one to
+            remove it. The search will return battles where <strong>all</strong> selected heroes were present.
+        </p>
+        <p>
+            After applying filters, you’ll see the most recent matching battles with hero details included.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Accessing the Battle Log</h5>
+        <p>
+            You can open the Battle Log from the main menu or via dedicated buttons at the top right of Campaign region
+            and Treasure Hunt stage pages.
+            When opened this way, the form will be pre-filled with the corresponding region or stage to help you search
+            faster.
+        </p>
+    </div>
+
+
+    <div class="help-step">
+        <h5>How You Can Contribute</h5>
+        <p>
+            Battle Log relies on battle data shared by players. Install the HoH Helper
+            extension, enable data collection, and play normally. Your data will
+            automatically be added to the pool, benefiting the entire community!
+        </p>
+        <p>
+            For step-by-step installation instructions, check out the
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">
+                HoH Helper Extension Guide
+            </a>.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Why It Matters</h5>
+        <p>
+            Seeing what worked—or failed—for other players is one of the best ways to improve. With more shared battles,
+            the suggestions and insights become stronger for the whole community.
+        </p>
+        <p><strong>Your data helps others, just like theirs helps you.</strong></p>
+    </div>
+</div>
