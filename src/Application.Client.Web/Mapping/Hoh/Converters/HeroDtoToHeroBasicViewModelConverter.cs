@@ -13,6 +13,7 @@ public class HeroDtoToHeroBasicViewModelConverter(IAssetUrlProvider assetUrlProv
         return new HeroBasicViewModel
         {
             Id = source.Id,
+            UnitId = source.Unit.Id,
             Name = source.Unit.Name,
             UnitColor = source.Unit.Color.ToCssColor(),
             UnitTypeIconUrl = assetUrlProvider.GetHohIconUrl(source.Unit.Type.GetTypeIconId()),

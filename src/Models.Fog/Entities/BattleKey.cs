@@ -1,8 +1,8 @@
 namespace Ingweland.Fog.Models.Fog.Entities;
 
-public record PvpBattleKey(string WorldId, byte[] InGameBattleId)
+public record BattleKey(string WorldId, byte[] InGameBattleId)
 {
-    public virtual bool Equals(PvpBattleKey? other)
+    public virtual bool Equals(BattleKey? other)
     {
         if (ReferenceEquals(this, other))
         {

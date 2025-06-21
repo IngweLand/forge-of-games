@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -20,6 +21,8 @@ public static class StatsApi
         
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
+        
+        api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
 
         return api;
     }
@@ -84,6 +87,15 @@ public static class StatsApi
             PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
         };
         var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<BattleSearchResult>, NotFound, BadRequest<string>>>
+        SearchBattlesAsync([AsParameters] StatsServices services, HttpContext context,
+            [FromBody] BattleSearchRequest request)
+    {
+        var result = await services.BattleService.SearchBattlesAsync(request);
 
         return TypedResults.Ok(result);
     }

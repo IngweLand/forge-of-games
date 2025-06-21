@@ -1,10 +1,18 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.TREASURE_HUNT_STAGE_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
+
+@using Ingweland.Fog.Dtos.Hoh.Battle
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-@inject ITreasureHuntUiService TreasureHuntUiService;
+@inject ITreasureHuntUiService TreasureHuntUiService
+@inject IBattleSearchRequestFactory BattleSearchRequestFactory
+@inject NavigationManager NavigationManager
+@inject IAssetUrlProvider AssetUrlProvider
 <PageTitle>@_pageTitle</PageTitle>
 @if (_stage != null)
 {
@@ -20,11 +28,18 @@
             <span class="encounter-section-title user-select-none">@Loc[FogResource.Hoh_Encounters]</span>
             <div class="options-container">
                 <div class="option-items right">
-                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
-                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldMore" OnClick="OnExpand"/>
-                    </MudTooltip>
-                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Aggregate]" Delay="500">
-                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldLess" OnClick="OnCollapse"/>
+                    <div class="units-grouping-control-buttons-container">
+                        <img src="@AssetUrlProvider.GetHohIconUrl("icon_unit_stat_SquadSpacing")">
+                        <MudTooltip Text="@UnitGroupingButtonTooltip" Delay="500">
+                            <MudToggleIconButton Icon="@Icons.Material.Filled.UnfoldMore"
+                                                 ToggledIcon="@Icons.Material.Filled.UnfoldLess"
+                                                 @bind-Toggled="_isExpanded"/>
+                        </MudTooltip>
+                    </div>
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_BattleLog]" Delay="500">
+                        <div class="battles-button" @onclick="NavigateToBattles">
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_pvp_results")">
+                        </div>
                     </MudTooltip>
                 </div>
             </div>
@@ -38,6 +53,10 @@
 
 
 @code {
+    
+    private string UnitGroupingButtonTooltip => _isExpanded
+        ? Loc[FogResource.Tooltip_Battle_Squads_Aggregate]
+        : Loc[FogResource.Tooltip_Battle_Squads_Disaggregate];
 
     [Parameter]
     public int Difficulty { get; set; }
@@ -64,14 +83,18 @@
         }
     }
 
-    private void OnExpand()
+    private void NavigateToBattles()
     {
-        _isExpanded = true;
-    }
+        var query = BattleSearchRequestFactory.CreateQueryParams(new BattleSearchRequest
+        {
+            BattleType = BattleType.TreasureHunt,
+            TreasureHuntDifficulty = Difficulty,
+            TreasureHuntStage = StageIndex,
+        });
 
-    private void OnCollapse()
-    {
-        _isExpanded = false;
+        NavigationManager.NavigateTo(
+            NavigationManager.GetUriWithQueryParameters(
+                FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query.AsReadOnly()), false);
     }
 
 }

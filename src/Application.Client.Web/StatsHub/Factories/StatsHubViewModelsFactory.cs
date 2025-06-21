@@ -3,14 +3,16 @@ using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Shared.Constants;
 
-namespace Ingweland.Fog.Application.Client.Web.StatsHub;
+namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 
 public class StatsHubViewModelsFactory(
     IMapper mapper,
@@ -41,14 +43,14 @@ public class StatsHubViewModelsFactory(
         IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
         IReadOnlyDictionary<string, AgeDto> ages)
     {
-        return new TopStatsViewModel()
+        return new TopStatsViewModel
         {
             MainWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(mainPlayers,
                 opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
             BetaWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(betaPlayers,
                 opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
             MainWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(mainAlliances),
-            BetaWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(betaAlliances)
+            BetaWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(betaAlliances),
         };
     }
 
@@ -76,7 +78,7 @@ public class StatsHubViewModelsFactory(
                 })
                 .OrderBy(uvm => uvm.Id)
                 .ToList();
-            battles.Add(new PvpBattleViewModel()
+            battles.Add(new PvpBattleViewModel
             {
                 Player = player,
                 Opponent = isVictory
@@ -86,31 +88,66 @@ public class StatsHubViewModelsFactory(
                         opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
                 IsVictory = isVictory,
                 PlayerUnits = isVictory ? winnerUnits : loserUnits,
-                OpponentUnits = isVictory ? loserUnits : winnerUnits
+                OpponentUnits = isVictory ? loserUnits : winnerUnits,
             });
         }
 
         return new PlayerWithRankingsViewModel
         {
             Player = player,
-            Ages = playerWithRankings.Ages.Select(a => new StatsTimedStringValue()
+            Ages = playerWithRankings.Ages.Select(a => new StatsTimedStringValue
                     {Date = a.Date, Value = ages[a.Value].Name})
                 .ToList(),
             Alliances = playerWithRankings.Alliances,
             Names = playerWithRankings.Names,
             PvpRankingPoints = playerWithRankings.PvpRankingPoints,
             RankingPoints = playerWithRankings.RankingPoints,
-            PvpBattles = battles
+            PvpBattles = battles,
         };
     }
 
-    private PvpUnitViewModel CreatePvpUnit(PvpUnit unit, HeroDto hero)
+    public BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
+        IReadOnlyDictionary<string, HeroDto> heroes)
+    {
+        return new BattleSummaryViewModel()
+        {
+            Id = summaryDto.Id,
+            ResultStatus = summaryDto.ResultStatus,
+            PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleViewModel(src, heroes[src.UnitId]))
+                .ToList(),
+        };
+    }
+
+    private BattleHeroViewModel CreateBattleViewModel(BattleSquadDto squad, HeroDto hero)
+    {
+        var levelSpecs = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count);
+        var level = levelSpecs.First(ls =>
+            ls.Level == squad.Level && ls.AscensionLevel == squad.AscensionLevel);
+
+        var pvpUnitViewModel = new BattleHeroViewModel
+        {
+            Id = hero.Id,
+            Name = hero.Unit.Name,
+            Level = level,
+            AbilityLevel = squad.AbilityLevel,
+            PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
+            StarCount = hero.StarClass.ToStarCount(),
+            UnitColor = hero.Unit.Color.ToCssColor(),
+            UnitClassIconUrl = assetUrlProvider.GetHohIconUrl(hero.ClassId.GetClassIconId()),
+            UnitTypeIconUrl =
+                assetUrlProvider.GetHohIconUrl(hero.Unit.Type.GetTypeIconId()),
+        };
+
+        return pvpUnitViewModel;
+    }
+
+    private BattleHeroViewModel CreatePvpUnit(PvpUnit unit, HeroDto hero)
     {
         var levelSpecs = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count);
         var level = levelSpecs.First(ls =>
             ls.Level == unit.Hero.Level && ls.AscensionLevel == unit.Hero.AscensionLevel);
 
-        var pvpUnitViewModel = new PvpUnitViewModel()
+        var pvpUnitViewModel = new BattleHeroViewModel
         {
             Id = hero.Id,
             Name = hero.Unit.Name,
@@ -121,7 +158,7 @@ public class StatsHubViewModelsFactory(
             UnitColor = hero.Unit.Color.ToCssColor(),
             UnitClassIconUrl = assetUrlProvider.GetHohIconUrl(hero.ClassId.GetClassIconId()),
             UnitTypeIconUrl =
-                assetUrlProvider.GetHohIconUrl(hero.Unit.Type.GetTypeIconId())
+                assetUrlProvider.GetHohIconUrl(hero.Unit.Type.GetTypeIconId()),
         };
 
         return pvpUnitViewModel;

@@ -70,6 +70,18 @@ public class HohHelperResponseDtoToTablePkConverter(
                 yield return tablePartitionKeyProvider.BattleStats(worldId, date);
                 break;
             }
+            
+            case "game/battle/hero/complete-wave":
+            {
+                yield return tablePartitionKeyProvider.BattleCompleteWave(worldId, date);
+                break;
+            }
+            
+            case "game/battle/hero/start":
+            {
+                yield return tablePartitionKeyProvider.BattleStart(worldId, date);
+                break;
+            }
         }
     }
 

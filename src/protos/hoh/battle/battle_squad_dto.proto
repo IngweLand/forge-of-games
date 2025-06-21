@@ -1,0 +1,30 @@
+syntax = "proto3";
+import "stat_boost_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BattleSquadDto {
+  int32 battlefield_slot = 1;
+  BattleUnitDto hero = 2;
+  BattleUnitDto unit = 3;
+}
+
+message BattleUnitDto {
+  BattleUnitPropertiesDto properties = 1;
+  BattleUnitStateDto unit_state = 2;
+}
+
+message BattleUnitPropertiesDto {
+  string unit_id = 1;
+  int32 level = 2;
+  int32 ascension_level = 3;
+  repeated string abilities = 4;
+  map<string, float> unit_stats_overrides = 5;
+  repeated StatBoostDto stat_boosts = 6;
+  int32 ability_level = 9;
+}
+
+message BattleUnitStateDto {
+  int32 in_battle_id = 1;
+  map<string, float> unit_stats = 2;
+}

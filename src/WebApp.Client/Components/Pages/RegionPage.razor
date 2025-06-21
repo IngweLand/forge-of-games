@@ -2,13 +2,19 @@
 @inject ICampaignUiService CampaignUiService;
 @inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
 @inject IPersistenceService PersistenceService
+@inject IBattleSearchRequestFactory BattleSearchRequestFactory
+@inject NavigationManager NavigationManager
+@inject IAssetUrlProvider AssetUrlProvider
+@using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Dtos.Hoh.Battle
 @using Ingweland.Fog.Models.Hoh.Enums
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <PageTitle>@_pageTitle</PageTitle>
@@ -34,11 +40,18 @@
                                Value="_isChecked" Label="@_difficultyLabel"/>
                 </div>
                 <div class="option-items right">
-                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Disaggregate]" Delay="500">
-                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldMore" OnClick="OnExpand"/>
-                    </MudTooltip>
-                    <MudTooltip Text="@Loc[FogResource.Tooltip_Battle_Squads_Aggregate]" Delay="500">
-                        <MudIconButton Icon="@Icons.Material.Filled.UnfoldLess" OnClick="OnCollapse"/>
+                    <div class="units-grouping-control-buttons-container">
+                        <img src="@AssetUrlProvider.GetHohIconUrl("icon_unit_stat_SquadSpacing")">
+                        <MudTooltip Text="@UnitGroupingButtonTooltip" Delay="500">
+                            <MudToggleIconButton Icon="@Icons.Material.Filled.UnfoldMore"
+                                                 ToggledIcon="@Icons.Material.Filled.UnfoldLess"
+                                                 @bind-Toggled="_isExpanded"/>
+                        </MudTooltip>
+                    </div>
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_BattleLog]" Delay="500">
+                        <div class="battles-button" @onclick="NavigateToBattles">
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_pvp_results")">
+                        </div>
                     </MudTooltip>
                 </div>
             </div>
@@ -63,6 +76,10 @@
     private string _difficultyLabel;
     private string _difficultyIcon;
     private bool _isChecked;
+
+    private string UnitGroupingButtonTooltip => _isExpanded
+        ? Loc[FogResource.Tooltip_Battle_Squads_Aggregate]
+        : Loc[FogResource.Tooltip_Battle_Squads_Disaggregate];
 
     private IReadOnlyCollection<IconLabelItemViewModel> _currentRewards = Array.Empty<IconLabelItemViewModel>();
 
@@ -97,18 +114,7 @@
         _isChecked = _difficulty == Difficulty.Hard;
         _difficultyIcon = CampaignDifficultyIconUrlProvider.GetIconUrl(_difficulty);
         _currentRewards = _region!.Rewards[_difficulty];
-        _difficultyLabel = _difficulty == Difficulty.Hard ?
-            Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
-    }
-
-    private void OnExpand()
-    {
-        _isExpanded = true;
-    }
-
-    private void OnCollapse()
-    {
-        _isExpanded = false;
+        _difficultyLabel = _difficulty == Difficulty.Hard ? Loc[FogResource.Battle_Difficulty_Hard] : Loc[FogResource.Battle_Difficulty_Normal];
     }
 
     private async Task OnDifficultyChange(bool isChecked)
@@ -122,6 +128,20 @@
             uiSettings.CampaignDifficulty = _difficulty;
             await PersistenceService.SaveUiSettingsAsync(uiSettings);
         }
+    }
+
+    private void NavigateToBattles()
+    {
+        var query = BattleSearchRequestFactory.CreateQueryParams(new BattleSearchRequest
+        {
+            BattleType = BattleType.Campaign,
+            CampaignRegion = _region!.RegionId,
+            Difficulty = _difficulty,
+        });
+
+        NavigationManager.NavigateTo(
+            NavigationManager.GetUriWithQueryParameters(
+                FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query.AsReadOnly()), false);
     }
 
 }

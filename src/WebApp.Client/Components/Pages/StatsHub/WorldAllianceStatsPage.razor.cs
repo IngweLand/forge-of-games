@@ -21,6 +21,7 @@ public partial class WorldAllianceStatsPage : WorldStatsPageBase<AllianceViewMod
     protected override Task<PaginatedList<AllianceViewModel>> GetData(int pageNumber)
     {
         Cts?.Cancel();
+        Cts?.Dispose();
         Cts = new CancellationTokenSource();
         
         return StatsHubUiService.GetAllianceStatsAsync(WorldId, pageNumber, Name, Cts.Token);

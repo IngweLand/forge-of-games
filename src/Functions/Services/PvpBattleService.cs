@@ -20,8 +20,8 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
     public async Task AddAsync(IEnumerable<(string WorldId, PvpBattle PvpBattle)> battles)
     {
         var unique = battles
-            .DistinctBy(t => new PvpBattleKey(t.WorldId, t.PvpBattle.Id))
-            .ToDictionary(t => new PvpBattleKey(t.WorldId, t.PvpBattle.Id), t => t.PvpBattle);
+            .DistinctBy(t => new BattleKey(t.WorldId, t.PvpBattle.Id))
+            .ToDictionary(t => new BattleKey(t.WorldId, t.PvpBattle.Id), t => t.PvpBattle);
         logger.LogInformation("{ValidCount} unique pvp battles after filtering", unique.Count);
         var existingBattleKeys =
             await GetExistingBattlesAsync(unique.Keys.Select(bk => bk.InGameBattleId).ToHashSet());
@@ -71,11 +71,11 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
         logger.LogInformation("SaveChangesAsync completed, added {AddedBattlesCount} pvp battles", newBattles.Count);
     }
 
-    private async Task<HashSet<PvpBattleKey>> GetExistingBattlesAsync(HashSet<byte[]> inGameBattleIds)
+    private async Task<HashSet<BattleKey>> GetExistingBattlesAsync(HashSet<byte[]> inGameBattleIds)
     {
         var existing = await context.PvpBattles
             .Where(p => inGameBattleIds.Contains(p.InGameBattleId))
-            .ProjectTo<PvpBattleKey>(mapper.ConfigurationProvider)
+            .ProjectTo<BattleKey>(mapper.ConfigurationProvider)
             .ToHashSetAsync();
         logger.LogInformation("GetExistingBattlesAsync found {Count} battles", existing.Count);
         return existing;

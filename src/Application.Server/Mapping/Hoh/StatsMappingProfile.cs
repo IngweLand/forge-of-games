@@ -21,6 +21,6 @@ public class StatsMappingProfile:Profile
             .ForMember(dest => dest.Rankings, opt => opt.Ignore());
         CreateMap<Alliance, AllianceDto>();
         
-        CreateMap<PvpBattle, PvpBattleKey>();
+        CreateMap<PvpBattle, BattleKey>();
     }
 }

@@ -22,6 +22,8 @@
 
 .option-items.right {
     justify-content: flex-end;
+    height: 52px;
+    gap: 12px;
 }
 
 .encounter-section-title {
@@ -33,5 +35,42 @@
 .difficulty-icon {
     width: 32px;
     height: 32px;
+    object-fit: contain;
+}
+
+.units-grouping-control-buttons-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.units-grouping-control-buttons-container > img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: -12px;
+}
+
+
+.battles-button {
+    background-color: var(--fog-button-secondary-color);
+    border-radius: var(--fog-border-radius);
+    padding: 0 8px;
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.battles-button:hover {
+    background-color: var(--fog-button-secondary-color-hover);
+}
+
+.battles-button > img
+{
+    width: 36px;
+    height: 36px;
     object-fit: contain;
 }

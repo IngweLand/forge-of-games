@@ -168,6 +168,96 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle Type.
+        /// </summary>
+        public static string BattleSelector_BattleType {
+            get {
+                return ResourceManager.GetString("BattleSelector.BattleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campaign Region.
+        /// </summary>
+        public static string BattleSelector_CampaignRegion {
+            get {
+                return ResourceManager.GetString("BattleSelector.CampaignRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Difficulty.
+        /// </summary>
+        public static string BattleSelector_Difficulty {
+            get {
+                return ResourceManager.GetString("BattleSelector.Difficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encounter.
+        /// </summary>
+        public static string BattleSelector_Encounter {
+            get {
+                return ResourceManager.GetString("BattleSelector.Encounter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stage.
+        /// </summary>
+        public static string BattleSelector_TreasureHuntStage {
+            get {
+                return ResourceManager.GetString("BattleSelector.TreasureHuntStage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Campaign.
+        /// </summary>
+        public static string BattleType_Campaign {
+            get {
+                return ResourceManager.GetString("BattleType.Campaign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Historic Battle.
+        /// </summary>
+        public static string BattleType_HistoricBattle {
+            get {
+                return ResourceManager.GetString("BattleType.HistoricBattle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arena.
+        /// </summary>
+        public static string BattleType_PvP {
+            get {
+                return ResourceManager.GetString("BattleType.PvP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tesla.
+        /// </summary>
+        public static string BattleType_TeslaStorm {
+            get {
+                return ResourceManager.GetString("BattleType.TeslaStorm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treasure Hunt.
+        /// </summary>
+        public static string BattleType_TreasureHunt {
+            get {
+                return ResourceManager.GetString("BattleType.TreasureHunt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forge of Games.
         /// </summary>
         public static string BrandName {
@@ -1779,11 +1869,74 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our game analytics are community-driven! Click this message to learn how to contribute!.
+        /// </summary>
+        public static string StatsHub_BattleLog_ContributePrompt {
+            get {
+                return ResourceManager.GetString("StatsHub.BattleLog.ContributePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check battles for different encounters and plan your hero team..
+        /// </summary>
+        public static string StatsHub_BattleLog_Meta_Description {
+            get {
+                return ResourceManager.GetString("StatsHub.BattleLog.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History battles, hero suggestion, hero team, battle squad, battle team.
+        /// </summary>
+        public static string StatsHub_BattleLog_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("StatsHub.BattleLog.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle Log | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string StatsHub_BattleLog_PageTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.BattleLog.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle log.
+        /// </summary>
+        public static string StatsHub_BattleLog_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.BattleLog.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;strong&gt;Can&apos;t find yourself or another player/alliance?&lt;/strong&gt; Our game analytics are community-driven! Click this message to learn how to contribute!.
         /// </summary>
         public static string StatsHub_ContributePrompt {
             get {
                 return ResourceManager.GetString("StatsHub.ContributePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle log.
+        /// </summary>
+        public static string StatsHub_Menu_BattleLog {
+            get {
+                return ResourceManager.GetString("StatsHub.Menu.BattleLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leaderboards.
+        /// </summary>
+        public static string StatsHub_Menu_Leaderboards {
+            get {
+                return ResourceManager.GetString("StatsHub.Menu.Leaderboards", resourceCulture);
             }
         }
         
@@ -2297,6 +2450,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Tooltip_Battle_Squads_Disaggregate {
             get {
                 return ResourceManager.GetString("Tooltip.Battle.Squads.Disaggregate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle log.
+        /// </summary>
+        public static string Tooltip_BattleLog {
+            get {
+                return ResourceManager.GetString("Tooltip.BattleLog", resourceCulture);
             }
         }
         

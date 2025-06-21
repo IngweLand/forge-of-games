@@ -1,16 +1,25 @@
+using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 
 public class StatsHubUiService(
     IStatsHubService statsHubService,
     ICommonService commonService,
-    IStatsHubViewModelsFactory statsHubViewModelsFactory) : IStatsHubUiService
+    IStatsHubViewModelsFactory statsHubViewModelsFactory,
+    IBattleLogFactories battleLogFactories,
+    ITreasureHuntUiService treasureHuntUiService,
+    ICampaignUiService campaignUiService,
+    IBattleService battleService,
+    IUnitUiService unitUiService,
+    IMapper mapper) : IStatsHubUiService
 {
     private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
         new Dictionary<int, AllianceWithRankingsViewModel>();
@@ -46,7 +55,7 @@ public class StatsHubUiService(
         {
             return _topStatsViewModel;
         }
-        
+
         await GetAgesAsync();
         var mainPlayersTask = statsHubService.GetPlayersAsync("un1");
         var betaPlayersTask = statsHubService.GetPlayersAsync("zz1");
@@ -55,7 +64,8 @@ public class StatsHubUiService(
 
         await Task.WhenAll(mainPlayersTask, betaPlayersTask, mainAlliancesTask, betaAlliancesTask);
 
-        _topStatsViewModel =  statsHubViewModelsFactory.CreateTopStats(mainPlayersTask.Result.Items, betaPlayersTask.Result.Items,
+        _topStatsViewModel = statsHubViewModelsFactory.CreateTopStats(mainPlayersTask.Result.Items,
+            betaPlayersTask.Result.Items,
             mainAlliancesTask.Result.Items, betaAlliancesTask.Result.Items, _ages!);
 
         return _topStatsViewModel;
@@ -73,6 +83,7 @@ public class StatsHubUiService(
         {
             return null;
         }
+
         await GetAgesAsync();
         var newViewModel = statsHubViewModelsFactory.CreateAlliance(alliance, _ages!);
         _concreteAlliances.Add(allianceId, newViewModel);
@@ -96,6 +107,25 @@ public class StatsHubUiService(
         var result =
             await statsHubService.GetPlayersAsync(worldId, pageNumber: pageNumber, name: playerName, ct: ct);
         return statsHubViewModelsFactory.CreatePlayers(result, _ages!);
+    }
+
+    public async Task<BattleSelectorViewModel> GetBattleSelectorViewModel()
+    {
+        var campaignTask = campaignUiService.GetCampaignContinentsBasicDataAsync();
+        var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
+        var heroesTask = unitUiService.GetHeroListAsync();
+        await Task.WhenAll([campaignTask, treasureHuntTask, heroesTask]);
+        return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
+            heroesTask.Result);
+    }
+
+    public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
+        BattleSearchRequest request, CancellationToken ct = default)
+    {
+        var result = await battleService.SearchBattlesAsync(request, ct);
+        var heroes = result.Heroes.ToDictionary(h => h.Unit.Id);
+        return result.Battles.Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes))
+            .ToList();
     }
 
     private async Task GetAgesAsync()

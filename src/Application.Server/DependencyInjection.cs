@@ -51,6 +51,9 @@ public static class DependencyInjection
         services.AddScoped<IPlayerWithRankingsFactory, PlayerWithRankingsFactory>();
         services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
+        services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
+        services.AddScoped<IBattleService, BattleService>();
+        services.AddScoped<IBattleSearchResultFactory, BattleSearchResultFactory>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()

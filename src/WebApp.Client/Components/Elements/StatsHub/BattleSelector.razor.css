@@ -1,0 +1,47 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 6px;
+}
+
+.units-container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-avatar {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--fog-border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+
+    .component-root {
+        gap: 12px;
+        padding: 12px;
+    }
+    
+    .options-container{
+        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+
+    .units-container {
+        gap: 12px;
+    }
+}

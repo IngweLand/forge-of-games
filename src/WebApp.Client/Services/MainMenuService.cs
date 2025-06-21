@@ -56,10 +56,25 @@ public class MainMenuService(NavigationManager navigationManager, IStringLocaliz
             },
             new()
             {
-                Href = FogUrlBuilder.PageRoutes.BASE_STATS_HUB_PATH,
                 ResourceKey = FogResource.StatsHub_Title,
-                Icon = GetIconString("images/monitoring_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg")
+                Icon = GetIconString("images/monitoring_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24.svg"),
+                Children = new List<NavMenuItem>
+                {
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.BASE_STATS_HUB_PATH,
+                        ResourceKey = FogResource.StatsHub_Menu_Leaderboards,
+                        Icon = GetIconString("images/icon_flat_rank.png"),
+                    },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH,
+                        ResourceKey = FogResource.StatsHub_Menu_BattleLog,
+                        Icon = GetIconString("images/icon_flat_pvp_results.png"),
+                    },
+                }
             },
+           
             new()
             {
                 Href = FogUrlBuilder.PageRoutes.BASE_TOOLS_PATH,

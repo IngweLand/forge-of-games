@@ -1,0 +1,27 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.options-container {
+    overflow: hidden;
+    position: relative;
+}
+.teams-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    padding: 0 2px;
+    gap: 10px 0;
+}
+
+.help-info {
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .teams-container {
+        gap: 18px;
+        padding: 0 12px;
+    }
+}

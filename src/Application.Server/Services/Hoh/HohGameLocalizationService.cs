@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.Enums.Hoh;
 using Ingweland.Fog.Application.Server.Extensions;
 using Ingweland.Fog.Application.Server.Helpers;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
-using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -17,6 +16,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Continents, HohLocalizationProperty.Name,
             $"continent.{id}");
         return GetValue(key) ?? id.ToString();
+    }
+
+    public string GetDifficultyName(Difficulty difficulty)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Difficulties, HohLocalizationProperty.Name,
+            $"difficulty.{difficulty}");
+        return GetValue(key) ?? difficulty.ToString();
     }
 
     public string GetTreasureHuntDifficulty(int difficulty)
@@ -105,6 +111,7 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         {
             name = "Building_BronzeAge_Collectable_SchoolV2_1";
         }
+
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Buildings, HohLocalizationProperty.Name,
             name);
         return GetValue(key) ?? name;
@@ -142,7 +149,8 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
 
     public string GetBuildingCustomizationName(string customizationId)
     {
-        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingCustomizations, HohLocalizationProperty.Name,
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingCustomizations,
+            HohLocalizationProperty.Name,
             customizationId);
         return GetValue(key) ?? customizationId;
     }

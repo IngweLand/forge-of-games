@@ -6,10 +6,11 @@ namespace Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 
 public interface IInGameDataParsingService
 {
-    PlayerRanks ParsePlayerRanking(string inputData);
-    IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData);
-    IReadOnlyCollection<PvpBattle> ParsePvpBattles(string inputData);
     AllianceRanks ParseAllianceRankings(string inputData);
+    BattleSummary ParseBattleWaveResult(string inputData);
     byte[] Decode(string inputData);
+    IReadOnlyCollection<PvpBattle> ParsePvpBattles(string inputData);
+    IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData);
+    PlayerRanks ParsePlayerRanking(string inputData);
     Wakeup ParseWakeup(string inputData);
 }

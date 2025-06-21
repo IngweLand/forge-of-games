@@ -24,27 +24,23 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static EquipmentItemReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChRlcXVpcG1lbnRfaXRlbS5wcm90bxoRY2FsY3VsYXRpb24ucHJvdG8irAIK",
-            "EEVxdWlwbWVudEl0ZW1EdG8SCgoCaWQYASABKAUSJQodZXF1aXBtZW50U2xv",
-            "dFR5cGVEZWZpbml0aW9uSWQYAiABKAkSIAoYZXF1aXBtZW50U2V0RGVmaW5p",
-            "dGlvbklkGAMgASgJEiMKG2VxdWlwbWVudFJhcml0eURlZmluaXRpb25JZBgE",
-            "IAEoCRINCgVsZXZlbBgFIAEoBRIiChplcXVpcHBlZE9uSGVyb0RlZmluaXRp",
-            "b25JZBgGIAEoCRINCgVpc05ldxgHIAEoCBItCg1tYWluQXR0cmlidXRlGAgg",
-            "ASgLMhYuRXF1aXBtZW50QXR0cmlidXRlRHRvEi0KDXN1YkF0dHJpYnV0ZXMY",
-            "CSADKAsyFi5FcXVpcG1lbnRBdHRyaWJ1dGVEdG8inQEKFUVxdWlwbWVudFN0",
-            "YXRCb29zdER0bxINCgVvcmRlchgBIAEoBRIhCgtjYWxjdWxhdGlvbhgCIAEo",
-            "DjIMLkNhbGN1bGF0aW9uEhwKFHVuaXRTdGF0RGVmaW5pdGlvbklkGAMgASgJ",
-            "Eg0KBXZhbHVlGAQgASgCEiUKHXVuaXRTdGF0QXR0cmlidXRlRGVmaW5pdGlv",
-            "bklkGAYgASgJIqkBChVFcXVpcG1lbnRBdHRyaWJ1dGVEdG8SJQoddW5pdFN0",
-            "YXRBdHRyaWJ1dGVEZWZpbml0aW9uSWQYASABKAkSKQoJc3RhdEJvb3N0GAIg",
-            "ASgLMhYuRXF1aXBtZW50U3RhdEJvb3N0RHRvEhcKD3VubG9ja2VkQXRMZXZl",
-            "bBgDIAEoBRIQCgh1bmxvY2tlZBgEIAEoCBITCgtyb2xsZWRWYWx1ZRgFIAEo",
-            "AkIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "ChRlcXVpcG1lbnRfaXRlbS5wcm90bxoUc3RhdF9ib29zdF9kdG8ucHJvdG8i",
+            "rAIKEEVxdWlwbWVudEl0ZW1EdG8SCgoCaWQYASABKAUSJQodZXF1aXBtZW50",
+            "U2xvdFR5cGVEZWZpbml0aW9uSWQYAiABKAkSIAoYZXF1aXBtZW50U2V0RGVm",
+            "aW5pdGlvbklkGAMgASgJEiMKG2VxdWlwbWVudFJhcml0eURlZmluaXRpb25J",
+            "ZBgEIAEoCRINCgVsZXZlbBgFIAEoBRIiChplcXVpcHBlZE9uSGVyb0RlZmlu",
+            "aXRpb25JZBgGIAEoCRINCgVpc05ldxgHIAEoCBItCg1tYWluQXR0cmlidXRl",
+            "GAggASgLMhYuRXF1aXBtZW50QXR0cmlidXRlRHRvEi0KDXN1YkF0dHJpYnV0",
+            "ZXMYCSADKAsyFi5FcXVpcG1lbnRBdHRyaWJ1dGVEdG8ioAEKFUVxdWlwbWVu",
+            "dEF0dHJpYnV0ZUR0bxIlCh11bml0U3RhdEF0dHJpYnV0ZURlZmluaXRpb25J",
+            "ZBgBIAEoCRIgCglzdGF0Qm9vc3QYAiABKAsyDS5TdGF0Qm9vc3REdG8SFwoP",
+            "dW5sb2NrZWRBdExldmVsGAMgASgFEhAKCHVubG9ja2VkGAQgASgIEhMKC3Jv",
+            "bGxlZFZhbHVlGAUgASgCQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMu",
+            "SG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.CalculationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemDto), global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemDto.Parser, new[]{ "Id", "EquipmentSlotTypeDefinitionId", "EquipmentSetDefinitionId", "EquipmentRarityDefinitionId", "Level", "EquippedOnHeroDefinitionId", "IsNew", "MainAttribute", "SubAttributes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto), global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto.Parser, new[]{ "Order", "Calculation", "UnitStatDefinitionId", "Value", "UnitStatAttributeDefinitionId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.EquipmentAttributeDto), global::Ingweland.Fog.Inn.Models.Hoh.EquipmentAttributeDto.Parser, new[]{ "UnitStatAttributeDefinitionId", "StatBoost", "UnlockedAtLevel", "Unlocked", "RolledValue" }, null, null, null, null)
           }));
     }
@@ -52,9 +48,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
   }
   #region Messages
-  /// <summary>
-  /// Represents the core equipment item
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class EquipmentItemDto : pb::IMessage<EquipmentItemDto>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -539,350 +532,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
   }
 
-  /// <summary>
-  /// Represents a stat boost with detailed calculation and stat information
-  /// </summary>
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EquipmentStatBoostDto : pb::IMessage<EquipmentStatBoostDto>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<EquipmentStatBoostDto> _parser = new pb::MessageParser<EquipmentStatBoostDto>(() => new EquipmentStatBoostDto());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EquipmentStatBoostDto> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EquipmentStatBoostDto() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EquipmentStatBoostDto(EquipmentStatBoostDto other) : this() {
-      order_ = other.order_;
-      calculation_ = other.calculation_;
-      unitStatDefinitionId_ = other.unitStatDefinitionId_;
-      value_ = other.value_;
-      unitStatAttributeDefinitionId_ = other.unitStatAttributeDefinitionId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EquipmentStatBoostDto Clone() {
-      return new EquipmentStatBoostDto(this);
-    }
-
-    /// <summary>Field number for the "order" field.</summary>
-    public const int OrderFieldNumber = 1;
-    private int order_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int Order {
-      get { return order_; }
-      set {
-        order_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "calculation" field.</summary>
-    public const int CalculationFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.Calculation calculation_ = global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.Calculation Calculation {
-      get { return calculation_; }
-      set {
-        calculation_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "unitStatDefinitionId" field.</summary>
-    public const int UnitStatDefinitionIdFieldNumber = 3;
-    private string unitStatDefinitionId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UnitStatDefinitionId {
-      get { return unitStatDefinitionId_; }
-      set {
-        unitStatDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 4;
-    private float value_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float Value {
-      get { return value_; }
-      set {
-        value_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "unitStatAttributeDefinitionId" field.</summary>
-    public const int UnitStatAttributeDefinitionIdFieldNumber = 6;
-    private string unitStatAttributeDefinitionId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UnitStatAttributeDefinitionId {
-      get { return unitStatAttributeDefinitionId_; }
-      set {
-        unitStatAttributeDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as EquipmentStatBoostDto);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EquipmentStatBoostDto other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Order != other.Order) return false;
-      if (Calculation != other.Calculation) return false;
-      if (UnitStatDefinitionId != other.UnitStatDefinitionId) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
-      if (UnitStatAttributeDefinitionId != other.UnitStatAttributeDefinitionId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Order != 0) hash ^= Order.GetHashCode();
-      if (Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) hash ^= Calculation.GetHashCode();
-      if (UnitStatDefinitionId.Length != 0) hash ^= UnitStatDefinitionId.GetHashCode();
-      if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
-      if (UnitStatAttributeDefinitionId.Length != 0) hash ^= UnitStatAttributeDefinitionId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Order != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Order);
-      }
-      if (Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Calculation);
-      }
-      if (UnitStatDefinitionId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(UnitStatDefinitionId);
-      }
-      if (Value != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Value);
-      }
-      if (UnitStatAttributeDefinitionId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(UnitStatAttributeDefinitionId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Order != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Order);
-      }
-      if (Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Calculation);
-      }
-      if (UnitStatDefinitionId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(UnitStatDefinitionId);
-      }
-      if (Value != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Value);
-      }
-      if (UnitStatAttributeDefinitionId.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(UnitStatAttributeDefinitionId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (Order != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Order);
-      }
-      if (Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Calculation);
-      }
-      if (UnitStatDefinitionId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UnitStatDefinitionId);
-      }
-      if (Value != 0F) {
-        size += 1 + 4;
-      }
-      if (UnitStatAttributeDefinitionId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UnitStatAttributeDefinitionId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EquipmentStatBoostDto other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Order != 0) {
-        Order = other.Order;
-      }
-      if (other.Calculation != global::Ingweland.Fog.Inn.Models.Hoh.Calculation.Add) {
-        Calculation = other.Calculation;
-      }
-      if (other.UnitStatDefinitionId.Length != 0) {
-        UnitStatDefinitionId = other.UnitStatDefinitionId;
-      }
-      if (other.Value != 0F) {
-        Value = other.Value;
-      }
-      if (other.UnitStatAttributeDefinitionId.Length != 0) {
-        UnitStatAttributeDefinitionId = other.UnitStatAttributeDefinitionId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            Order = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Calculation = (global::Ingweland.Fog.Inn.Models.Hoh.Calculation) input.ReadEnum();
-            break;
-          }
-          case 26: {
-            UnitStatDefinitionId = input.ReadString();
-            break;
-          }
-          case 37: {
-            Value = input.ReadFloat();
-            break;
-          }
-          case 50: {
-            UnitStatAttributeDefinitionId = input.ReadString();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            Order = input.ReadInt32();
-            break;
-          }
-          case 16: {
-            Calculation = (global::Ingweland.Fog.Inn.Models.Hoh.Calculation) input.ReadEnum();
-            break;
-          }
-          case 26: {
-            UnitStatDefinitionId = input.ReadString();
-            break;
-          }
-          case 37: {
-            Value = input.ReadFloat();
-            break;
-          }
-          case 50: {
-            UnitStatAttributeDefinitionId = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  /// <summary>
-  /// Represents the main or sub attribute on the equipment
-  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class EquipmentAttributeDto : pb::IMessage<EquipmentAttributeDto>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -898,7 +547,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -946,10 +595,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "statBoost" field.</summary>
     public const int StatBoostFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto statBoost_;
+    private global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto statBoost_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto StatBoost {
+    public global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto StatBoost {
       get { return statBoost_; }
       set {
         statBoost_ = value;
@@ -1134,7 +783,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.statBoost_ != null) {
         if (statBoost_ == null) {
-          StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto();
+          StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto();
         }
         StatBoost.MergeFrom(other.StatBoost);
       }
@@ -1168,7 +817,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 18: {
             if (statBoost_ == null) {
-              StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto();
+              StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto();
             }
             input.ReadMessage(StatBoost);
             break;
@@ -1206,7 +855,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 18: {
             if (statBoost_ == null) {
-              StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.EquipmentStatBoostDto();
+              StatBoost = new global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDto();
             }
             input.ReadMessage(StatBoost);
             break;

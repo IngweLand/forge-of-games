@@ -13,6 +13,7 @@ public class HeroBasicDtoFactory(IHohGameLocalizationService localizationService
         return new HeroBasicDto
         {
             Id = hero.Id,
+            UnitId = unit.Id,
             Name = localizationService.GetUnitName(HohStringParser.GetConcreteId(unit.Id)),
             AssetId = unit.Name,
             UnitType = unit.Type,

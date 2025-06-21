@@ -4,15 +4,15 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 
 public class PvpBattle
 {
-    private PvpBattleKey? _key;
+    private BattleKey? _key;
     public int Id { get; set; }
 
     public required byte[] InGameBattleId { get; set; }
 
     [JsonIgnore]
-    public PvpBattleKey Key
+    public BattleKey Key
     {
-        get { return _key ??= new PvpBattleKey(WorldId, InGameBattleId); }
+        get { return _key ??= new BattleKey(WorldId, InGameBattleId); }
     }
 
     public Player Loser { get; init; }

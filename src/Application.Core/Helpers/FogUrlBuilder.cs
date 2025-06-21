@@ -14,23 +14,25 @@ public static class FogUrlBuilder
     public static class ApiRoutes
     {
         private const string BASE_STATS_PATH = "stats";
-        
+
         public const string CAMPAIGN_CONTINENTS_BASIC_DATA_PATH = "/campaign/continents/basicData";
         public const string CAMPAIGN_REGION_TEMPLATE = "/campaign/regions/{regionId}";
 
         public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
         public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";
         public const string TREASURE_HUNT_STAGE_TEMPLATE = "/ath/difficulties/{difficulty:int}/stages/{stageIndex:int}";
-        
+
         public const string WIKI_EXTRACT = "/wiki/extract";
 
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
-        
+
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
         public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
         public const string ALLIANCE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/alliances/{allianceId}";
+
+        public const string BATTLE_LOG_SEARCH = "/battle-log/search";
     }
 
     public static class PageRoutes
@@ -62,7 +64,10 @@ public static class FogUrlBuilder
         public const string WONDER_COST_CALCULATOR_PATH = BASE_TOOLS_PATH + "/wonder-cost-calculator";
         public const string BUILDING_COST_CALCULATOR_PATH = BASE_TOOLS_PATH + "/building-cost-calculator";
         public const string WONDER_TEMPLATE = BASE_WONDERS_PATH + "/{wonderId}";
-        public const string TREASURE_HUNT_STAGE_TEMPLATE = BASE_TREASURE_HUNT_PATH + "/{difficulty:int}/{stageIndex:int}";
+
+        public const string TREASURE_HUNT_STAGE_TEMPLATE =
+            BASE_TREASURE_HUNT_PATH + "/{difficulty:int}/{stageIndex:int}";
+
         public const string SUPPORT_US_PATH = "/support-us";
         public const string WORLD_PLAYERS_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/players";
         public const string WORLD_ALLIANCES_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/alliances";
@@ -70,36 +75,40 @@ public static class FogUrlBuilder
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
         public const string FOG_GITHUB_URL = "https://github.com/IngweLand/forge-of-games";
         public const string HOH_HELPER_GITHUB_URL = "https://github.com/IngweLand/hoh-helper";
-        public const string HOH_HELPER_CHROME_WEBSTORE_URL = "https://chromewebstore.google.com/detail/hoh-helper-forge-of-games/almhmnmbpfaonomgaconnmcogadnjndf";
+
+        public const string HOH_HELPER_CHROME_WEBSTORE_URL =
+            "https://chromewebstore.google.com/detail/hoh-helper-forge-of-games/almhmnmbpfaonomgaconnmcogadnjndf";
+
         public const string HOH_HELPER_RELEASES_GITHUB_URL = HOH_HELPER_GITHUB_URL + "/releases";
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
         public const string CITIES_STATS_PATH = "/cities-stats";
+        public const string BATTLE_LOG_PATH = "/battle-log";
 
         public static string Player(int id)
         {
             return PLAYER_TEMPLATE.Replace("{playerId:int}", id.ToString());
         }
-        
+
         public static string HeroPlayground(string heroId)
         {
             return $"{COMMAND_CENTER_HERO_PLAYGROUNDS_PATH}/{heroId}";
         }
-        
+
         public static string Alliance(int id)
         {
             return ALLIANCE_TEMPLATE.Replace("{allianceId:int}", id.ToString());
         }
-        
+
         public static string SearchAlliance(string worldId, string name)
         {
             return $"{WORLD_ALLIANCES_TEMPLATE.Replace("{worldId}", worldId)}?name={Uri.EscapeDataString(name)}";
         }
-        
+
         public static string TreasureHuntStage(int difficulty, int stageIndex)
         {
             return BuildPath(BASE_TREASURE_HUNT_PATH, difficulty.ToString(), stageIndex.ToString());
         }
-        
+
         public static string WorldPlayers(string worldId)
         {
             if (string.IsNullOrWhiteSpace(worldId))
@@ -109,7 +118,7 @@ public static class FogUrlBuilder
 
             return WORLD_PLAYERS_TEMPLATE.Replace("{worldId}", worldId);
         }
-        
+
         public static string WorldAlliances(string worldId)
         {
             if (string.IsNullOrWhiteSpace(worldId))

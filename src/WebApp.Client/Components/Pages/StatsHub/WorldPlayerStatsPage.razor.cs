@@ -21,6 +21,7 @@ public partial class WorldPlayerStatsPage : WorldStatsPageBase<PlayerViewModel>
     protected override Task<PaginatedList<PlayerViewModel>> GetData(int pageNumber)
     {
         Cts?.Cancel();
+        Cts?.Dispose();
         Cts = new CancellationTokenSource();
         
         return StatsHubUiService.GetPlayerStatsAsync(WorldId, pageNumber, Name, Cts.Token);

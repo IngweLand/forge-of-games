@@ -6,5 +6,6 @@ public class RegionViewModel
 {
     public required IReadOnlyCollection<EncounterViewModel> Encounters { get; init; }
     public required string Name { get; init; }
+    public required RegionId RegionId { get; init; }
     public required IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>> Rewards { get; init; }
 }

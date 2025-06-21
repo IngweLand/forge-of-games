@@ -12,5 +12,6 @@ public class TreasureHuntDifficultyDataBasicDto
     public required string Name { get; init; }
 
     [ProtoMember(3)]
-    public required IReadOnlyCollection<TreasureHuntStageBasicDto> Stages { get; init; } = new List<TreasureHuntStageBasicDto>();
+    public required IReadOnlyCollection<TreasureHuntStageBasicDto> Stages { get; init; } =
+        new List<TreasureHuntStageBasicDto>();
 }

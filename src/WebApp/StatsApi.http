@@ -3,3 +3,18 @@ GET https://localhost:7082/api/hoh/stats/players?PageNumber=25
 
 ### Player
 GET https://localhost:7082/api/hoh/stats/worlds/zz1/players/441
+
+### Battles
+POST https://localhost:7082/api/hoh/battle-log/search
+Content-Type: application/json
+
+{
+  "battleType": 1,
+  "campaignRegion": 52,
+  "campaignRegionEncounter": 1,
+  "difficulty": 1,
+  "treasureHuntDifficulty": 0,
+  "treasureHuntEncounter": 0,
+  "treasureHuntStage": 0,
+  "unitIds": []
+}

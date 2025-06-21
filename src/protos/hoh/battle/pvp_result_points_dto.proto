@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PvpResultPointsDto {
+  int64 points_for_player = 1;
+  int64 points_for_enemy = 2;
+}

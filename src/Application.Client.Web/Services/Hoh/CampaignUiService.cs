@@ -17,10 +17,18 @@ public class CampaignUiService(
     IAssetUrlProvider assetUrlProvider,
     IMapper mapper) : ICampaignUiService
 {
+    private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
+
     public async Task<IReadOnlyCollection<ContinentBasicViewModel>> GetCampaignContinentsBasicDataAsync()
     {
+        if (_cachedContinents != null)
+        {
+            return _cachedContinents;
+        }
+
         var continents = await campaignService.GetCampaignContinentsBasicDataAsync();
-        return continentBasicViewModelFactory.CreateContinents(continents);
+        _cachedContinents = continentBasicViewModelFactory.CreateContinents(continents);
+        return _cachedContinents;
     }
 
     public async Task<RegionViewModel?> GetRegionAsync(string id)
@@ -40,7 +48,7 @@ public class CampaignUiService(
             .Select((e, index) => new EncounterViewModel
             {
                 Title = (index + 1).ToString(),
-                Details = e.Details.ToDictionary(kvp => kvp.Key, kvp => new EncounterDetailsViewModel()
+                Details = e.Details.ToDictionary(kvp => kvp.Key, kvp => new EncounterDetailsViewModel
                 {
                     Rewards = kvp.Value.Rewards.SelectMany(mapper.Map<IList<EncounterRewardViewModel>>).ToList(),
                     FirstTimeComletionBonus =
@@ -55,12 +63,12 @@ public class CampaignUiService(
                             AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
                                 .SelectMany(g =>
                                     battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units, region.Heroes))
-                                .ToList()
+                                .ToList(),
                         }).ToList().AsReadOnly(),
-                    AvailableHeroSlots = new IconLabelItemViewModel()
+                    AvailableHeroSlots = new IconLabelItemViewModel
                     {
                         IconUrl = "images/icon_hud_heroes.png",
-                        Label = kvp.Value.AvailableHeroSlots.ToString()
+                        Label = kvp.Value.AvailableHeroSlots.ToString(),
                     },
                     RequiredHeroClassIconUrls =
                         kvp.Value.RequiredHeroClasses.Select(hc =>
@@ -69,16 +77,17 @@ public class CampaignUiService(
                     RequiredHeroTypeIconUrls =
                         kvp.Value.RequiredHeroTypes.Select(ht =>
                             assetUrlProvider.GetHohIconUrl(
-                                $"{ht.GetTypeIconId()}_{UnitColor.Neutral.ToString().ToLowerInvariant()}")).ToList()
-                })
+                                $"{ht.GetTypeIconId()}_{UnitColor.Neutral.ToString().ToLowerInvariant()}")).ToList(),
+                }),
             })
             .ToList().AsReadOnly();
         return new RegionViewModel
         {
+            RegionId = region.Id,
             Name = $"{region.Index + 1}. {region.Name}",
             Encounters = encounters,
-            Rewards =
-                mapper.Map<IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>>>(region.Rewards)
+            Rewards = mapper.Map<IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>>>(
+                    region.Rewards),
         };
     }
 }

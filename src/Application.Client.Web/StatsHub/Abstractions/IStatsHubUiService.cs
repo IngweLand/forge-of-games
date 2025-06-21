@@ -1,4 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
@@ -16,4 +18,9 @@ public interface IStatsHubUiService
 
     Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int pageNumber = 1,
         string? allianceName = null, CancellationToken ct = default);
+
+    Task<BattleSelectorViewModel> GetBattleSelectorViewModel();
+
+    Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(BattleSearchRequest request,
+        CancellationToken ct = default);
 }

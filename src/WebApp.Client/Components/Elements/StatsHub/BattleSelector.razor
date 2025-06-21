@@ -1,0 +1,270 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Dtos.Hoh.Battle
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Microsoft.Extensions.Localization
+@using Syncfusion.Blazor.Data
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+@inject IDialogService DialogService
+
+<div class="component-root">
+    @if (ViewModel != null)
+    {
+        <div class="options-container">
+            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_BattleType]"
+                       Value="@SearchRequest.BattleType"
+                       T="BattleType" Strict="true" ToStringFunc="@(bt => ViewModel.BattleTypes[bt])"
+                       ValueChanged="BattleTypeOnChange" Variant="Variant.Outlined">
+                @foreach (var bt in ViewModel.BattleTypes)
+                {
+                    <MudSelectItem Value="@bt.Key">@bt.Value</MudSelectItem>
+                }
+            </MudSelect>
+            @if (SearchRequest.BattleType == BattleType.Campaign)
+            {
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Difficulty]"
+                           Value="@SearchRequest.Difficulty"
+                           T="Difficulty" Strict="true" ToStringFunc="@(src => ViewModel.Difficulties[src])"
+                           ValueChanged="DifficultyOnChange" Variant="Variant.Outlined">
+                    @foreach (var difficulty in ViewModel.Difficulties)
+                    {
+                        <MudSelectItem Value="@difficulty.Key">@difficulty.Value</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_CampaignRegion]"
+                           Value="@_selectedCampaignRegion"
+                           T="RegionBasicViewModel" Strict="true"
+                           ValueChanged="CampaignRegionOnChange" Variant="Variant.Outlined">
+                    @foreach (var continent in ViewModel.CampaignContinents)
+                    {
+                        <MudSelectItem T="RegionBasicViewModel"
+                                       Disabled="true"
+                                       Style="background-color: var(--fog-container-color); color: var(--fog-text-on-dark-color) !important;">
+                            @continent.Name
+                        </MudSelectItem>
+                        @foreach (var region in continent.Regions)
+                        {
+                            <MudSelectItem Value="@region">@region.Name</MudSelectItem>
+                        }
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true"
+                           Label="@Loc[FogResource.BattleSelector_Encounter]"
+                           Value="@SearchRequest.CampaignRegionEncounter"
+                           T="int" Strict="true"
+                           ValueChanged="CampaignRegionEncounterOnChange" Variant="Variant.Outlined">
+                    @foreach (var encounter in ViewModel.CampaignRegionEncounters)
+                    {
+                        <MudSelectItem Value="@encounter">@encounter</MudSelectItem>
+                    }
+                </MudSelect>
+            }
+            else if (SearchRequest.BattleType == BattleType.TreasureHunt)
+            {
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Difficulty]"
+                           Value="@SearchRequest.TreasureHuntDifficulty"
+                           T="int" Strict="true"
+                           ValueChanged="TreasureHuntDifficultyOnChange" Variant="Variant.Outlined">
+                    @foreach (var difficulty in ViewModel.TreasureHuntDifficulties)
+                    {
+                        <MudSelectItem Value="@difficulty.Difficulty">@difficulty.Name</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_TreasureHuntStage]"
+                           Value="@SearchRequest.TreasureHuntStage"
+                           T="int" Strict="true"
+                           ValueChanged="TreasureHuntStageOnChange" Variant="Variant.Outlined">
+                    @foreach (var stage in ViewModel.TreasureHuntDifficulties.FirstOrDefault(src => src.Difficulty == SearchRequest.TreasureHuntDifficulty)?.Stages ?? [])
+                    {
+                        <MudSelectItem Value="@stage.Index">@stage.Name</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Encounter]"
+                           Value="@SearchRequest.TreasureHuntEncounter"
+                           T="int" Strict="true"
+                           ValueChanged="TreasureHuntEncounterOnChange" Variant="Variant.Outlined">
+                    @foreach (var encounter in ViewModel.TreasureHuntEncounters)
+                    {
+                        <MudSelectItem Value="@encounter">@(encounter + 1)</MudSelectItem>
+                    }
+                </MudSelect>
+            }
+        </div>
+
+        <div class="units-container">
+            @foreach (var unit in SearchRequest.UnitIds)
+            {
+                <img class="hero-avatar" src="@ViewModel.Heroes.FirstOrDefault(src => src.UnitId == unit)?.PortraitUrl"
+                     @onclick="@(() => RemoveHero(unit))"/>
+            }
+            @if (SearchRequest.UnitIds.Count < MaxUnitCount)
+            {
+                <img class="hero-avatar" src="@AssetUrlProvider.GetHohUnitPortraitUrl("Unit_Unknown")"
+                     @onclick="AddHero"/>
+            }
+
+        </div>
+    }
+
+</div>
+
+<style>
+    /*mudblazor overrides*/
+    .mud-select .mud-select-input {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+</style>
+
+@code {
+
+    private const int MaxUnitCount = 5;
+    private RegionBasicViewModel? _selectedCampaignRegion;
+
+    [Parameter]
+    public required BattleSearchRequest SearchRequest { get; set; }
+
+    [Parameter]
+    public BattleSelectorViewModel? ViewModel
+    {
+        get => _viewModel;
+        set
+        {
+            if (_viewModel == value)
+            {
+                return;
+            }
+
+            _viewModel = value;
+
+            _regionViewModels = _viewModel?.CampaignContinents
+                .SelectMany(src => src.Regions)
+                .ToDictionary(src => src.Id) ?? [];
+        }
+    }
+
+    [Parameter]
+    public EventCallback<BattleSearchRequest> SearchRequestChanged { get; set; }
+
+    private Dictionary<RegionId, RegionBasicViewModel> _regionViewModels = [];
+    private BattleSelectorViewModel? _viewModel;
+
+    protected override void OnParametersSet()
+    {
+        if (ViewModel == null)
+        {
+            return;
+        }
+
+        if (!_regionViewModels.TryGetValue(SearchRequest.CampaignRegion, out _selectedCampaignRegion))
+        {
+            _selectedCampaignRegion = ViewModel.CampaignContinents.First().Regions.First();
+        }
+    }
+
+    private Task BattleTypeOnChange(BattleType newValue)
+    {
+        return SearchRequest.BattleType == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {BattleType = newValue});
+    }
+
+    private Task DifficultyOnChange(Difficulty newValue)
+    {
+        return SearchRequest.Difficulty == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {Difficulty = newValue});
+    }
+
+    private Task CampaignRegionOnChange(RegionBasicViewModel newValue)
+    {
+        return SearchRequest.CampaignRegion == newValue.Id
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {CampaignRegion = newValue.Id});
+    }
+
+    private Task CampaignRegionEncounterOnChange(int newValue)
+    {
+        return SearchRequest.CampaignRegionEncounter == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {CampaignRegionEncounter = newValue});
+    }
+
+    private Task TreasureHuntDifficultyOnChange(int newValue)
+    {
+        return SearchRequest.TreasureHuntDifficulty == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {TreasureHuntDifficulty = newValue});
+    }
+
+    private Task TreasureHuntStageOnChange(int newValue)
+    {
+        return SearchRequest.TreasureHuntStage == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {TreasureHuntStage = newValue});
+    }
+
+    private Task TreasureHuntEncounterOnChange(int newValue)
+    {
+        return SearchRequest.TreasureHuntEncounter == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {TreasureHuntEncounter = newValue});
+    }
+
+    private async Task AddHero()
+    {
+        var options = GetDefaultDialogOptions();
+
+        var parameters = new DialogParameters<CcAddHeroDialog> {{d => d.Heroes, ViewModel!.Heroes}};
+        var dialog = await DialogService.ShowAsync<CcAddHeroDialog>(null, parameters, options);
+        var result = await dialog.Result;
+        if (result == null || result.Canceled)
+        {
+            return;
+        }
+
+        var heroId = result.Data as string;
+        if (string.IsNullOrWhiteSpace(heroId))
+        {
+            return;
+        }
+
+        var unitId = ViewModel.Heroes.First(src => src.Id == heroId).UnitId;
+        var l = SearchRequest.UnitIds.ToList();
+        l.Add(unitId);
+        await SearchRequestChanged.InvokeAsync(SearchRequest with {UnitIds = l});
+    }
+
+    private static DialogOptions GetDefaultDialogOptions()
+    {
+        return new DialogOptions
+        {
+            MaxWidth = MaxWidth.Small,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            Position = DialogPosition.TopCenter,
+        };
+    }
+
+    private Task RemoveHero(string unitId)
+    {
+        var index = SearchRequest.UnitIds.IndexOf(unitId);
+        if (index == -1)
+        {
+            return Task.CompletedTask;
+        }
+
+        var l = SearchRequest.UnitIds.ToList();
+        l.RemoveAt(index);
+        return SearchRequestChanged.InvokeAsync(SearchRequest with {UnitIds = l});
+    }
+
+}

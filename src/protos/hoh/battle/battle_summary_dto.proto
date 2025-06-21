@@ -1,0 +1,59 @@
+syntax = "proto3";
+import "bin_id_dto.proto";
+import "player_dto.proto";
+import "alliance_dto.proto";
+import "pvp_result_points_dto.proto";
+import "google/protobuf/any.proto";
+import "battle_squad_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BattleSummaryDto {
+  BinIdDto battle_id = 1;
+  BattleResultStatusDto result_status = 2;
+  // HeroTreasureHuntEncounterLocationDTO, CampaignMapBattleLocationDTO, PvpBattleLocationDataDTO
+  // HistoricBattleLocationDTO,
+  google.protobuf.Any packed_encounter_location = 3;
+  string battle_definition_id = 4;
+  int32 next_wave_index = 5;
+  repeated BattleSquadDto player_squads = 6;
+  repeated BattleSquadDto enemy_squads = 7;
+}
+
+message BattleResultStatusDto {
+  BattleResultStatus status = 1;
+}
+
+message HeroTreasureHuntEncounterLocationDTO {
+  int32 treasure_hunt_event_id = 1;
+  int32 difficulty = 2;
+  int32 stage = 3;
+  int32 encounter = 4;
+}
+
+message CampaignMapBattleLocationDTO {
+  string difficulty = 1;
+  string encounter = 2;
+}
+
+message PvpBattleLocationDataDTO {
+  int32 pvp_event_id = 1;
+  string battle_definition_id = 2;
+  int32 enemy_id = 3;
+  PlayerDto enemy = 4;
+  AllianceDto enemy_alliance = 5;
+  int32 enemy_ranking_points = 6;
+  PvpResultPointsDto points_on_win = 8;
+  PvpResultPointsDto points_on_loss = 9;
+}
+
+message HistoricBattleLocationDTO {
+  string difficulty = 1;
+  string encounter = 2;
+}
+
+enum BattleResultStatus {
+  BattleResultStatus_UNDEFINED = 0;
+  BattleResultStatus_WIN = 1;
+  BattleResultStatus_DEFEAT = 2;
+}

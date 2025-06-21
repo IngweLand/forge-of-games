@@ -37,6 +37,21 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.ToTable("AlliancePlayer");
                 });
 
+            modelBuilder.Entity("BattleSummaryEntityBattleUnitEntity", b =>
+                {
+                    b.Property<int>("BattlesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BattlesId", "UnitsId");
+
+                    b.HasIndex("UnitsId");
+
+                    b.ToTable("battles_to_units", (string)null);
+                });
+
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Alliance", b =>
                 {
                     b.Property<int>("Id")
@@ -160,6 +175,86 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsDescending();
 
                     b.ToTable("alliance_rankings", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.BattleSummaryEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BattleDefinitionId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Difficulty")
+                        .HasColumnType("int");
+
+                    b.Property<string>("EnemySquads")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("InGameBattleId")
+                        .IsRequired()
+                        .HasColumnType("varbinary(900)");
+
+                    b.Property<string>("PlayerSquads")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ResultStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorldId")
+                        .IsRequired()
+                        .HasMaxLength(48)
+                        .HasColumnType("nvarchar(48)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BattleDefinitionId");
+
+                    b.HasIndex("Difficulty");
+
+                    b.HasIndex("InGameBattleId");
+
+                    b.HasIndex("ResultStatus");
+
+                    b.HasIndex("WorldId");
+
+                    b.HasIndex("WorldId", "InGameBattleId")
+                        .IsUnique();
+
+                    b.ToTable("battles", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.BattleUnitEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UnitId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Level");
+
+                    b.HasIndex("UnitId");
+
+                    b.HasIndex("UnitId", "Level")
+                        .IsUnique();
+
+                    b.ToTable("battle_units", (string)null);
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
@@ -435,6 +530,21 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
                         .WithMany()
                         .HasForeignKey("MemberHistoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BattleSummaryEntityBattleUnitEntity", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.BattleSummaryEntity", null)
+                        .WithMany()
+                        .HasForeignKey("BattlesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.BattleUnitEntity", null)
+                        .WithMany()
+                        .HasForeignKey("UnitsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

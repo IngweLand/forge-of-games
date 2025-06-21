@@ -20,6 +20,7 @@ public class HeroBasicDtoToViewModelConverter : ITypeConverter<HeroBasicDto, Her
         return new HeroBasicViewModel
         {
             Id = source.Id,
+            UnitId = source.UnitId,
             Name = source.Name,
             UnitColor = source.UnitColor.ToCssColor(),
             UnitTypeIconUrl = _assetUrlProvider.GetHohIconUrl(source.UnitType.GetTypeIconId()),

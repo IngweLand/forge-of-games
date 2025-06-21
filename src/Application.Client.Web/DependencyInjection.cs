@@ -19,6 +19,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
+using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.Factories;
@@ -115,6 +116,8 @@ public static class DependencyInjection
         services.AddScoped<IEquipmentSlotTypeIconUrlProvider, EquipmentSlotTypeIconUrlProvider>();
         services.AddScoped<IWorkerIconUrlProvider, WorkerIconUrlProvider>();
         services.AddScoped<ICityMapBuildingGroupViewModelFactory, CityMapBuildingGroupViewModelFactory>();
+        services.AddScoped<IBattleSearchRequestFactory, BattleSearchRequestFactory>();
+        services.AddScoped<IBattleLogFactories, BattleLogFactories>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         

@@ -33,6 +33,13 @@ public class InGameDataParsingService(
 
         return dataParsingService.ParsePvpBattles(data);
     }
+    
+    public BattleSummary ParseBattleWaveResult(string inputData)
+    {
+        var data = DecodeInternal(inputData);
+
+        return dataParsingService.ParseBattleWaveResult(data);
+    }
 
     public AllianceRanks ParseAllianceRankings(string inputData)
     {

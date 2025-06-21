@@ -12,15 +12,37 @@ public class TreasureHuntUiService(
     IMapper mapper)
     : ITreasureHuntUiService
 {
+    private readonly Dictionary<(int difficulty, int stageIndex), TreasureHuntStageViewModel> _stages = new();
+    private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+
     public async Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>> GetDifficultiesAsync()
     {
+        if (_difficulties != null)
+        {
+            return _difficulties;
+        }
+
         var difficulties = await treasureHuntService.GetDifficultiesAsync();
-        return mapper.Map<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>(difficulties);
+        _difficulties = mapper.Map<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>(difficulties);
+        return _difficulties;
     }
 
     public async Task<TreasureHuntStageViewModel?> GetStageAsync(int difficulty, int stageIndex)
     {
+        var key = (difficulty, stageIndex);
+        if (_stages.TryGetValue(key, out var cachedStage))
+        {
+            return cachedStage;
+        }
+
         var stage = await treasureHuntService.GetStageAsync(difficulty, stageIndex);
-        return stage == null ? null : treasureHuntStageViewModelFactory.Create(stage);
+        if (stage == null)
+        {
+            return null;
+        }
+
+        var stageViewModel = treasureHuntStageViewModelFactory.Create(stage);
+        _stages[key] = stageViewModel;
+        return stageViewModel;
     }
 }

@@ -1,8 +1,17 @@
 using AutoMapper;
+using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.InnSdk.Hoh.Mapping.Converters;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
+using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Mapping;
 
@@ -54,5 +63,79 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.Abilities, opt => opt.MapFrom(src => src.BaseProps.Abilities));
         CreateMap<PvpBattleDto, PvpBattle>()
             .ForMember(dest => dest.PerformedAt, opt => opt.MapFrom(src => src.PerformedAt.ToDateTime()));
+
+        CreateMap<EquipmentItemDto, EquipmentItem>()
+            .ForMember(dest => dest.EquippedOnHero, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.EquippedOnHeroDefinitionId));
+                opt.MapFrom(src => HohStringParser.GetConcreteId(src.EquippedOnHeroDefinitionId));
+            })
+            .ForMember(dest => dest.EquipmentSlotType,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<EquipmentSlotType>(src.EquipmentSlotTypeDefinitionId)))
+            .ForMember(dest => dest.EquipmentRarity,
+                opt => opt.ConvertUsing<EquipmentRarityValueConverter, string>(src => src.EquipmentRarityDefinitionId))
+            .ForMember(dest => dest.EquipmentSet,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<EquipmentSet>(src.EquipmentSetDefinitionId)));
+
+        CreateMap<EquipmentAttributeDto, EquipmentAttribute>()
+            .ForMember(dest => dest.StatAttribute,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId)));
+
+        CreateMap<CityMapEntityDto, CityMapEntity>()
+            .ForMember(dest => dest.CustomizationId, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.CustomizationEntityId));
+                opt.MapFrom(src => src.CustomizationEntityId);
+            });
+        CreateMap<CityDTO, City>()
+            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
+            .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities));
+        CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>();
+        CreateMap<ExpansionMapEntityDto, CityMapExpansion>();
+
+        CreateMap<StatBoostDto, StatBoost>()
+            .ForMember(dest => dest.UnitStatType,
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitStatType>(src.UnitStatDefinitionId)))
+            .ForMember(dest => dest.StatAttribute, opt =>
+            {
+                opt.PreCondition(src => src.HasUnitStatAttributeDefinitionId);
+                opt.MapFrom(
+                    src => HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId));
+            })
+            .ForMember(dest => dest.Calculation, opt => opt.MapFrom(src => src.Calculation));
+
+        CreateMap<PvpResultPointsDto, PvpResultPoints>();
+        CreateMap<BattleUnitStateDto, BattleUnitState>()
+            .ForMember(dest => dest.UnitStats,
+                opt => opt.MapFrom(src =>
+                    src.UnitStats.ToDictionary(kvp => HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key),
+                        kvp => kvp.Value)));
+        CreateMap<BattleUnitPropertiesDto, BattleUnitProperties>()
+            .ForMember(dest => dest.UnitStatsOverrides,
+                opt => opt.MapFrom(src =>
+                    src.UnitStatsOverrides.ToDictionary(kvp =>
+                        HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key), kvp => kvp.Value)));
+        CreateMap<BattleUnitDto, BattleUnit>()
+            .ForMember(dest => dest.UnitState, opt => opt.PreCondition(src => src.UnitState != null));
+        CreateMap<BattleSquadDto, BattleSquad>()
+            .ForMember(dest => dest.Hero, opt => opt.PreCondition(src => src.HasHero))
+            .ForMember(dest => dest.Unit, opt => opt.PreCondition(src => src.HasUnit));
+        CreateMap<CampaignMapBattleLocationDTO, CampaignMapBattleLocation>()
+            .ForMember(dest => dest.Difficulty,
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<Difficulty>(src.Difficulty)));
+        CreateMap<HistoricBattleLocationDTO, HistoricBattleLocation>()
+            .ForMember(dest => dest.Difficulty,
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<Difficulty>(src.Difficulty)));
+        CreateMap<HeroTreasureHuntEncounterLocationDTO, TreasureHuntEncounterLocation>();
+        CreateMap<PvpBattleLocationDataDTO, PvpBattleLocation>()
+            .ForMember(dest => dest.EnemyAlliance, opt => opt.PreCondition(src => src.EnemyAlliance != null));
+        CreateMap<Any, BattleLocationBase>().ConvertUsing<BattleLocationDtoConverter>();
+        CreateMap<BattleSummaryDto, BattleSummary>()
+            .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => src.BattleId.ToByteArray()))
+            .ForMember(dest => dest.ResultStatus, opt => opt.MapFrom(src => src.ResultStatus.Status))
+            .ForMember(dest => dest.Location, opt => opt.MapFrom(src => src.PackedEncounterLocation));
     }
 }

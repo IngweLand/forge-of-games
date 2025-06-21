@@ -20,4 +20,7 @@ public class HeroBasicDto
 
     [ProtoMember(5)]
     public required UnitType UnitType { get; set; }
+    
+    [ProtoMember(6)]
+    public required string UnitId { get; set; }
 }

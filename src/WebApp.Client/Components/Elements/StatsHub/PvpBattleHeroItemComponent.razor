@@ -1,24 +1,25 @@
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 <div class="cc-hero-collection-item user-select-none">
     <div class="avatar-section">
-        <img src="@PvpUnit.PortraitUrl"/>
-        <div class="rating">@(new string('★', PvpUnit.StarCount))</div>
+        <img src="@BattleHero.PortraitUrl"/>
+        <div class="rating">@(new string('★', BattleHero.StarCount))</div>
     </div>
     @* <div class="main-label">@PvpUnit.Name</div> *@
-    <div class="icon-label-container" style="background-color: @PvpUnit.UnitColor">
+    <div class="icon-label-container" style="background-color: @BattleHero.UnitColor">
         <div class="icons-container">
-            <img class="icon" src="@PvpUnit.UnitClassIconUrl"/>
-            <img class="icon" src="@PvpUnit.UnitTypeIconUrl"/>
+            <img class="icon" src="@BattleHero.UnitClassIconUrl"/>
+            <img class="icon" src="@BattleHero.UnitTypeIconUrl"/>
         </div>
-        <div class="icon-label">@PvpUnit.Level.Title</div>
-        <div class="icon-label">@PvpUnit.AbilityLevel</div>
+        <div class="icon-label">@BattleHero.Level.Title</div>
+        <div class="icon-label">@BattleHero.AbilityLevel</div>
     </div>
 </div>
 
 @code {
 
     [Parameter]
-    public required PvpUnitViewModel PvpUnit { get; set; }
+    public required BattleHeroViewModel BattleHero { get; set; }
 
     [Parameter]
     public EventCallback<string> OnClick { get; set; }

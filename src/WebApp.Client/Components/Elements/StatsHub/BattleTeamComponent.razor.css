@@ -1,0 +1,50 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    min-width: 200px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-row, .footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    height: 24px;
+    white-space: nowrap;
+}
+
+.header-row {
+    background-color: var(--fog-container-color);
+    color: var(--fog-text-on-container-color);
+    position: relative;
+}
+
+.content-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    min-height: 120px;
+    flex: 1;
+    padding: 4px 0;
+}
+
+.victory {
+    background-color: var(--fog-victory-color);
+    color: var(--fog-text-on-dark-color);
+}
+
+.defeat {
+    background-color: var(--fog-defeat-color);
+    color: var(--fog-text-on-dark-color);
+}
+
+@media (min-width: 576px) {
+
+    .header-row, .footer-row {
+        font-size: 14px;
+        height: 28px;
+    }
+}

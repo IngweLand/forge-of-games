@@ -1,8 +1,6 @@
-using Ingweland.Fog.Application.Client.Web.CityPlanner;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Services.Hoh;
-using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
@@ -45,14 +43,21 @@ internal static class DependencyInjection
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICampaignService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ITreasureHuntService>(services, baseAddress, refitSettings);
-        AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress);
-        AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress);
-        AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress);
-        AddRefitJsonApiClient<IStatsHubService>(services, baseAddress);
-        AddRefitJsonApiClient<IWikipediaService>(services, baseAddress);
+        
+        var refitJsonSettings = new RefitSettings
+        {
+            ContentSerializer = new SystemTextJsonContentSerializer(GetDefaultJsonSerializerOptions()),
+        };
+        AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IStatsHubService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IWikipediaService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IBattleService>(services, baseAddress, refitJsonSettings);
     }
 
-    private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress, RefitSettings settings)
+    private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,
+        RefitSettings settings)
         where T : class
     {
         services
@@ -70,16 +75,14 @@ internal static class DependencyInjection
                 options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
             });
     }
-    
-    private static void AddRefitJsonApiClient<T>(IServiceCollection services, string baseAddress)
+
+    private static void AddRefitJsonApiClient<T>(IServiceCollection services, string baseAddress,
+        RefitSettings settings)
         where T : class
     {
         services
-            .AddRefitClient<T>()
-            .ConfigureHttpClient(client =>
-            {
-                client.BaseAddress = new Uri($"{baseAddress}api/hoh");
-            })
+            .AddRefitClient<T>(settings)
+            .ConfigureHttpClient(client => { client.BaseAddress = new Uri($"{baseAddress}api/hoh"); })
             .AddStandardResilienceHandler(options =>
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
@@ -92,5 +95,17 @@ internal static class DependencyInjection
     {
         builder.Services.Configure<AssetsSettings>(
             builder.Configuration.GetSection("AssetsSettings"));
+    }
+
+    private static JsonSerializerOptions GetDefaultJsonSerializerOptions()
+    {
+        var jsonSerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        };
+        jsonSerializerOptions.Converters.Add(new ObjectToInferredTypesConverter());
+
+        return jsonSerializerOptions;
     }
 }

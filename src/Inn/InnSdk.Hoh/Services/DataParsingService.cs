@@ -46,6 +46,24 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         return mapper.Map<AllianceRanks>(ranksDto);
     }
 
+    public BattleSummary ParseBattleStart(byte[] data)
+    {
+        HeroStartBattleResponse dto;
+        try
+        {
+            var container = CommunicationDto.Parser.ParseFrom(data);
+            dto = container.HeroStartBattleResponse;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse hero start battle response data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<BattleSummary>(dto.Result);
+    }
+
     public IReadOnlyCollection<PvpRank> ParsePvpRankings(byte[] data)
     {
         PvpGetRankingResponse ranksDto;
@@ -62,6 +80,24 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         }
 
         return mapper.Map<IReadOnlyCollection<PvpRank>>(ranksDto.Rankings);
+    }
+    
+    public BattleSummary ParseBattleWaveResult(byte[] data)
+    {
+        HeroFinishWaveResponse dto;
+        try
+        {
+            var container = CommunicationDto.Parser.ParseFrom(data);
+            dto = container.HeroFinishWaveResponse;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse hero finish wave response data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<BattleSummary>(dto.Result);
     }
 
     public IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data)

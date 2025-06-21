@@ -62,11 +62,11 @@
 }
 
 .victory {
-    color: #268a1c;
+    color: var(--fog-victory-color);
 }
 
 .defeat {
-    color: #c42626;
+    color: var(--fog-defeat-color);
 }
 
 .status-container {
