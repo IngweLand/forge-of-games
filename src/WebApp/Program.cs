@@ -2,6 +2,7 @@ using Azure.Monitor.OpenTelemetry.AspNetCore;
 using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Infrastructure;
+using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.Shared;
 using Ingweland.Fog.Shared.Localization;
 using Ingweland.Fog.WebApp;
@@ -22,6 +23,7 @@ builder.AddWebAppServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddSharedServices();
+builder.Services.AddInnSdkServices();
 builder.Services.AddWebAppApplicationServices();
 builder.Services.AddLocalization();
 builder.Services.AddResponseCompression(options =>
