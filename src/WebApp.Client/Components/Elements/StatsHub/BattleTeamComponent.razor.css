@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    cursor: pointer;
     min-width: 200px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -31,6 +30,13 @@
     padding: 4px 0;
 }
 
+.stats-button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .victory {
     background-color: var(--fog-victory-color);
     color: var(--fog-text-on-dark-color);
@@ -39,6 +45,16 @@
 .defeat {
     background-color: var(--fog-defeat-color);
     color: var(--fog-text-on-dark-color);
+}
+
+.stats-button {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @media (min-width: 576px) {

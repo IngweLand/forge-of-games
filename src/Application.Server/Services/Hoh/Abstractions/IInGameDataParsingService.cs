@@ -8,6 +8,7 @@ public interface IInGameDataParsingService
 {
     AllianceRanks ParseAllianceRankings(string inputData);
     BattleSummary ParseBattleWaveResult(string inputData);
+    BattleStats ParseBattleStats(string inputData);
     byte[] Decode(string inputData);
     IReadOnlyCollection<PvpBattle> ParsePvpBattles(string inputData);
     IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData);

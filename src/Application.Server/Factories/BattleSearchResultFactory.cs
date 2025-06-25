@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
@@ -16,9 +17,18 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
         Converters = {new JsonStringEnumConverter()},
     };
 
-    public async Task<BattleSearchResult> Create(IReadOnlyCollection<BattleSummaryEntity> entities)
+    public async Task<BattleSearchResult> Create(IReadOnlyCollection<BattleSummaryEntity> entities,
+        IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
-        var battles = entities.Select(Create).ToList();
+        var battles = entities.Select(src =>
+        {
+            int? statsId = null;
+            if (existingStatsIds.TryGetValue(src.InGameBattleId, out var value))
+            {
+                statsId = value;
+            }
+            return Create(src, statsId);
+        }).ToList();
         var heroIds = battles.SelectMany(src => src.PlayerSquads.Select(s => s.UnitId)).ToHashSet();
         var heroTasks = heroIds.Select(unitService.GetHeroAsync);
         var heroes = await Task.WhenAll(heroTasks);
@@ -29,7 +39,7 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
         };
     }
 
-    private BattleSummaryDto Create(BattleSummaryEntity entity)
+    private BattleSummaryDto Create(BattleSummaryEntity entity, int? statsId)
     {
         var playerSquads =
             JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads, JsonSerializerOptions) ??
@@ -46,6 +56,7 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
             ResultStatus = entity.ResultStatus,
             PlayerSquads = playerSquadDtos,
             Difficulty = entity.Difficulty,
+            StatsId = statsId,
         };
     }
 }

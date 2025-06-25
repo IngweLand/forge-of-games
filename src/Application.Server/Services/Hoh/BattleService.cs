@@ -19,4 +19,11 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
 
         return await sender.Send(query, ct);
     }
+
+    public async Task<BattleStatsDto?> GetBattleStatsAsync(int battleStatsId, CancellationToken ct = default)
+    {
+        var query = new GetBattleStatsQuery(battleStatsId);
+
+        return await sender.Send(query, ct);
+    }
 }

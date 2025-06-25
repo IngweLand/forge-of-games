@@ -1,9 +1,11 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @using MudBlazor.Utilities
 @inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
 
 <div class="fog-container component-root user-select-none">
     <div class="@StatusContainerClassname">
@@ -18,6 +20,12 @@
                     break;
             }
         </span>
+        @if (Data.StatsId.HasValue)
+        {
+            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_battlestats")"
+                 @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
+        }
+
     </div>
     <div class="content-row">
         @foreach (var unit in Data.PlayerSquads)
@@ -31,7 +39,10 @@
 
     [Parameter]
     public BattleSummaryViewModel Data { get; set; }
-    
+
+    [Parameter]
+    public EventCallback<BattleSummaryViewModel> OnBattleStatsClicked { get; set; }
+
     private string StatusContainerClassname => new CssBuilder("header-row")
         .AddClass("victory", Data.ResultStatus == BattleResultStatus.Win)
         .AddClass("defeat", Data.ResultStatus == BattleResultStatus.Defeat)

@@ -13,4 +13,5 @@ public interface IDataParsingService
     IReadOnlyCollection<PvpRank> ParsePvpRankings(byte[] data);
     PlayerRanks ParsePlayerRankings(byte[] data);
     Wakeup ParseWakeup(byte[] data);
+    BattleStats ParseBattleStats(byte[] data);
 }

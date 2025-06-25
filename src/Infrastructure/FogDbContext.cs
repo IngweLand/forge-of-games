@@ -11,9 +11,9 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
-    public DbSet<BattleUnitEntity> BattleUnits { get; set; }
-
     public DbSet<PvpRanking> PvpRankings { get; set; }
+
+    public DbSet<BattleUnitEntity> BattleUnits { get; set; }
 
     public DbSet<BattleSummaryEntity> Battles { get; set; }
 
@@ -23,6 +23,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<AllianceRanking> AllianceRankings { get; set; }
     public DbSet<PlayerAllianceNameHistoryEntry> PlayerAllianceNameHistory { get; set; }
     public DbSet<PvpBattle> PvpBattles { get; set; }
+    public DbSet<BattleStatsEntity> BattleStats { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -40,5 +41,8 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PvpBattleEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleSummaryEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleUnitEntityTypeConfiguration());
+        builder.ApplyConfiguration(new BattleStatsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new BattleSquadStatsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new UnitBattleStatsEntityTypeConfiguration());
     }
 }

@@ -81,7 +81,7 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
 
         return mapper.Map<IReadOnlyCollection<PvpRank>>(ranksDto.Rankings);
     }
-    
+
     public BattleSummary ParseBattleWaveResult(byte[] data)
     {
         HeroFinishWaveResponse dto;
@@ -135,7 +135,7 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
             let winnerUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(winnerUnitsDto)
             let loser = mapper.Map<HohPlayer>(loserDto)
             let loserUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(loserUnitsDto)
-            select new PvpBattle()
+            select new PvpBattle
             {
                 Id = battleDto.Id.ToByteArray(),
                 Winner = winner,
@@ -163,6 +163,24 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         return mapper.Map<Wakeup>(dto);
     }
 
+    public BattleStats ParseBattleStats(byte[] data)
+    {
+        HeroBattleStatsResponse dto;
+        try
+        {
+            var container = CommunicationDto.Parser.ParseFrom(data);
+            dto = container.HeroBattleStatsResponse;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse hero battle stats response data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<BattleStats>(dto);
+    }
+
     private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)
     {
         if (battles.Count == 0)
@@ -171,7 +189,7 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         }
 
         var grouped = battles
-            .SelectMany(b => new int[] {b.Player1.Id, b.Player2.Id})
+            .SelectMany(b => new[] {b.Player1.Id, b.Player2.Id})
             .GroupBy(n => n)
             .ToDictionary(g => g.Key, g => g.Count());
 

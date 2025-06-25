@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,7 +27,7 @@ public class BattleSearchQueryHandler(IBattleSearchResultFactory battleSearchRes
             var unitIds = request.UnitIds.ToHashSet();
             battlesQuery = context.Battles.AsNoTracking()
                 .Where(b => b.BattleDefinitionId == request.BattleDefinitionId &&
-                            unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
+                    unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
         }
         else
         {
@@ -34,12 +35,16 @@ public class BattleSearchQueryHandler(IBattleSearchResultFactory battleSearchRes
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
         }
 
-
         var battles = await battlesQuery
             .OrderByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
             .ToListAsync(cancellationToken);
 
-        return await battleSearchResultFactory.Create(battles);
+        var battleIds = battles.Select(src => src.InGameBattleId).ToHashSet(StructuralByteArrayComparer.Instance);
+        var existingStatsIds = await context.BattleStats.AsNoTracking()
+            .Where(e => battleIds.Contains(e.InGameBattleId))
+            .ToDictionaryAsync(src => src.InGameBattleId, src => src.Id, StructuralByteArrayComparer.Instance,
+                cancellationToken);
+        return await battleSearchResultFactory.Create(battles, existingStatsIds);
     }
 }

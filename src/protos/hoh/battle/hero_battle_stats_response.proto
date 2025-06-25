@@ -4,16 +4,24 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroBattleStatsResponse {
   bytes battle_id = 1;
-  repeated UnitGroupBattleStatsDto team = 2;
-  repeated UnitGroupBattleStatsDto adversary = 3;
+  repeated BattleSquadStatsDto player_squads = 2;
+  repeated BattleSquadStatsDto enemy_squads = 3;
 }
 
-message UnitGroupBattleStatsDto {
+message BattleSquadStatsDto {
     optional UnitBattleStatsDto hero = 1;
     optional UnitBattleStatsDto support_unit = 2;
 }
 
 message UnitBattleStatsDto {
+  string unit_id = 1;
+  float attack = 2;
+  float defense = 3;
+  float heal = 4;
+  repeated UnitBattleStatsSubValueDto sub_values = 5;
+}
+
+message UnitBattleStatsSubValueDto {
   string unit_id = 1;
   float attack = 2;
   float defense = 3;

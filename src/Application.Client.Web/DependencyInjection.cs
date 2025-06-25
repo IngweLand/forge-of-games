@@ -118,6 +118,7 @@ public static class DependencyInjection
         services.AddScoped<ICityMapBuildingGroupViewModelFactory, CityMapBuildingGroupViewModelFactory>();
         services.AddScoped<IBattleSearchRequestFactory, BattleSearchRequestFactory>();
         services.AddScoped<IBattleLogFactories, BattleLogFactories>();
+        services.AddScoped<IBattleStatsViewModelFactory, BattleStatsViewModelFactory>();
         
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         

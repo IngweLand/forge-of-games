@@ -5,5 +5,6 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface IBattleSearchResultFactory
 {
-    Task<BattleSearchResult> Create(IReadOnlyCollection<BattleSummaryEntity> entities);
+    Task<BattleSearchResult> Create(IReadOnlyCollection<BattleSummaryEntity> entities,
+        IReadOnlyDictionary<byte[], int> existingStatsIds);
 }
