@@ -34,6 +34,7 @@ public class AutoDataProcessor(
     IPvpBattleService pvpBattleService,
     IBattleService battleService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
+    IBattleStatsService battleStatsService,
     IMapper mapper,
     ILogger<AutoDataProcessor> logger,
     DatabaseWarmUpService databaseWarmUpService)
@@ -54,6 +55,7 @@ public class AutoDataProcessor(
         var allConfirmedAllianceMembers = new List<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int>)>();
         var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
         var allBattleResults = new List<(string WorldId, BattleSummary BattleSummary)>();
+        var allBattleStats = new List<(string worldId, BattleStats battleStats)>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("AutoDataProcessor started for date {date}", date);
         foreach (var gameWorld in gameWorldsProvider.GetGameWorlds())
@@ -97,7 +99,12 @@ public class AutoDataProcessor(
             var battleResults = await GetBattleResults(gameWorld.Id, date);
             allBattleResults.AddRange(battleResults);
             logger.LogInformation("{count} battle results retrieved for game world {gameWorldId}",
-                pvpBattles.Count, gameWorld.Id);
+                battleResults.Count, gameWorld.Id);
+            
+            var battleStats = await GetBattleStats(gameWorld.Id, date);
+            allBattleStats.AddRange(battleStats);
+            logger.LogInformation("{count} battle stats retrieved for game world {gameWorldId}",
+                battleStats.Count, gameWorld.Id);
 
             // var athAllianceRankingWakeups =
             //     await GetWakeupsAsync(
@@ -249,6 +256,10 @@ public class AutoDataProcessor(
         logger.LogInformation("Starting battles service update");
         await ExecuteSafeAsync(() => battleService.AddAsync(allBattleResults), "");
         logger.LogInformation("Completed battles service update");
+        
+        logger.LogInformation("Starting battle stats update");
+        await ExecuteSafeAsync(() => battleStatsService.AddAsync(allBattleStats), "");
+        logger.LogInformation("Completed battles stats service update");
     }
 
     private async Task ExecuteSafeAsync(Func<Task> func, string errorMessage)
@@ -418,6 +429,30 @@ public class AutoDataProcessor(
             catch (Exception e)
             {
                 logger.LogError(e, "Error parsing battle complete wave raw data collected on {date}",
+                    rawData.CollectedAt);
+            }
+        }
+
+        return result;
+    }
+    
+    private async Task<List<(string worldId, BattleStats battleStats)>> GetBattleStats(string worldId,
+        DateOnly date)
+    {
+        var rawDataItems = await ExecuteSafeAsync(
+            () => inGameRawDataTableRepository.GetAllAsync(
+                inGameRawDataTablePartitionKeyProvider.BattleStats(worldId, date)),
+            $"Error getting battle stats raw data for world {worldId} on {date}", []);
+        var result = new List<(string worldId, BattleStats battleStats)>();
+        foreach (var rawData in rawDataItems)
+        {
+            try
+            {
+                result.Add((worldId, inGameDataParsingService.ParseBattleStats(rawData.Base64Data)));
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error parsing battle stats raw data collected on {date}",
                     rawData.CollectedAt);
             }
         }

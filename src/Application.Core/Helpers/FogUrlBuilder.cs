@@ -14,6 +14,7 @@ public static class FogUrlBuilder
     public static class ApiRoutes
     {
         private const string BASE_STATS_PATH = "stats";
+        private const string BASE_BATTLES_PATH = "battles";
 
         public const string CAMPAIGN_CONTINENTS_BASIC_DATA_PATH = "/campaign/continents/basicData";
         public const string CAMPAIGN_REGION_TEMPLATE = "/campaign/regions/{regionId}";
@@ -33,6 +34,9 @@ public static class FogUrlBuilder
         public const string ALLIANCE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/alliances/{allianceId}";
 
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
+        public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
+        public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
+
     }
 
     public static class PageRoutes

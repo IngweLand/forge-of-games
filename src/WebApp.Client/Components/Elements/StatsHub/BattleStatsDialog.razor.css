@@ -1,0 +1,107 @@
+.tables-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.avatar-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    padding: 4px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-color: var(--fog-container-color);
+}   
+
+.cell-top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cell-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.bottom-left,
+.bottom-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.cell-divider {
+    width: 1px;
+    border-left: 1px solid var(--fog-border-color);
+    height: 14px;
+}
+
+.battle-stats-table {
+    width: 100%;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    table-layout: fixed;
+}
+
+.stats-type-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.battle-stats-table>:not(caption)>*>*:has(>img) {
+    background-color: transparent;
+}
+
+.battle-stats-table>:not(caption)>*>* {
+    background-color: transparent;
+}
+
+thead {
+    border-bottom: none;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    border-bottom: 0;
+}
+th {
+    text-align: center;
+    padding: 6px 0;
+}
+
+td > * {
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+.player-header {
+    background-color: var(--fog-player-color);
+}
+.enemy-header {
+    background-color: var(--fog-enemy-color);
+}

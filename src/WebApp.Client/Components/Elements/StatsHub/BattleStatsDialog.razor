@@ -1,0 +1,82 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@inject IAssetUrlProvider AssetUrlProvider
+<MudDialog Gutters="false" ContentStyle="border-radius: 0; margin: 0" @onclick="Close">
+    <DialogContent>
+        <div class="tables-container">
+            @RenderSquadTable(Stats.PlayerSquads, "player-header")
+            @RenderSquadTable(Stats.EnemySquads, "enemy-header")
+        </div>
+    </DialogContent>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public BattleStatsViewModel Stats { get; set; } = BattleStatsViewModel.Blank;
+
+    private RenderFragment RenderSquadTable(IReadOnlyCollection<BattleStatsSquadViewModel> squads, string headerClass) => __builder =>
+    {
+        <table class="battle-stats-table">
+            <colgroup>
+                <col style="width: 46px;">
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead class="@headerClass">
+            <tr>
+                <th></th>
+                <th><img class="stats-type-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_unit_infantry")"/></th>
+                <th><img class="stats-type-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_class_defender")"/></th>
+                <th><img class="stats-type-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_class_healer")"/></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var squad in squads)
+            {
+                <tr>
+                    <td>
+                        <div class="avatar-cell">
+                            <img src="@(squad.HeroPortraitUrl ?? squad.SupportUnitPortraitUrl)" class="avatar-img"
+                                 style="border-width: @(GetAvatarBorderWidth(squad.HeroPortraitUrl != null))">
+                        </div>
+                    </td>
+                    <td>@(RenderCell(squad.AttackValue))</td>
+                    <td>@(RenderCell(squad.DefenseValue))</td>
+                    <td>@(RenderCell(squad.HealValue))</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    };
+
+    private RenderFragment RenderCell(BattleStatsValueViewModel? value) => __builder =>
+    {
+        if (value != null)
+        {
+            <div class="cell">
+                <div class="cell-top value-label">@value.TotalValue</div>
+                <div class="cell-bottom">
+                    <div class="bottom-left">@value.HeroValue</div>
+                    <div class="cell-divider"></div>
+                    <div class="bottom-right">@value.SupportUnitValue</div>
+                </div>
+            </div>
+        }
+    };
+
+    private string GetAvatarBorderWidth(bool isHero)
+    {
+        return isHero ? "2px" : "0";
+    }
+
+    private void Close()
+    {
+        MudDialog.Close();
+    }
+
+}

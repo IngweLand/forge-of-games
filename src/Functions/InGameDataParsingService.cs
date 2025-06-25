@@ -33,12 +33,19 @@ public class InGameDataParsingService(
 
         return dataParsingService.ParsePvpBattles(data);
     }
-    
+
     public BattleSummary ParseBattleWaveResult(string inputData)
     {
         var data = DecodeInternal(inputData);
 
         return dataParsingService.ParseBattleWaveResult(data);
+    }
+
+    public BattleStats ParseBattleStats(string inputData)
+    {
+        var data = DecodeInternal(inputData);
+
+        return dataParsingService.ParseBattleStats(data);
     }
 
     public AllianceRanks ParseAllianceRankings(string inputData)
@@ -47,7 +54,7 @@ public class InGameDataParsingService(
 
         return dataParsingService.ParseAllianceRankings(data);
     }
-    
+
     public Wakeup ParseWakeup(string inputData)
     {
         var data = DecodeInternal(inputData);

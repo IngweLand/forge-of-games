@@ -1,4 +1,3 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -19,7 +18,7 @@ public class StatsHubUiService(
     ICampaignUiService campaignUiService,
     IBattleService battleService,
     IUnitUiService unitUiService,
-    IMapper mapper) : IStatsHubUiService
+    IBattleStatsViewModelFactory battleStatsViewModelFactory) : IStatsHubUiService
 {
     private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
         new Dictionary<int, AllianceWithRankingsViewModel>();
@@ -95,7 +94,7 @@ public class StatsHubUiService(
         CancellationToken ct = default)
     {
         var result =
-            await statsHubService.GetAlliancesAsync(worldId, pageNumber: pageNumber, name: allianceName,
+            await statsHubService.GetAlliancesAsync(worldId, pageNumber, name: allianceName,
                 ct: ct);
         return statsHubViewModelsFactory.CreateAlliances(result);
     }
@@ -126,6 +125,18 @@ public class StatsHubUiService(
         var heroes = result.Heroes.ToDictionary(h => h.Unit.Id);
         return result.Battles.Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes))
             .ToList();
+    }
+
+    public async Task<BattleStatsViewModel> GetBattleStatsAsync(
+        int battleStatsId, CancellationToken ct = default)
+    {
+        var result = await battleService.GetBattleStatsAsync(battleStatsId, ct);
+        if (result == null)
+        {
+            return BattleStatsViewModel.Blank;
+        }
+
+        return battleStatsViewModelFactory.Create(result);
     }
 
     private async Task GetAgesAsync()

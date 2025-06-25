@@ -1,5 +1,6 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits StatsHubPageBase
@@ -21,7 +22,7 @@
     <div class="teams-container">
         @foreach (var battle in _battles)
         {
-            <BattleTeamComponent Data="@battle"/>
+            <BattleTeamComponent Data="@battle" OnBattleStatsClicked="OpenBattleStats"/>
         }
     </div>
 </div>

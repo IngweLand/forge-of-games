@@ -23,6 +23,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
         
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
 
         return api;
     }
@@ -35,6 +36,18 @@ public static class StatsApi
             PlayerId = playerId,
         };
         var result = await services.Mediator.Send(query);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<BattleStatsDto>, NotFound>>
+        GetBattleStatsAsync([AsParameters] StatsServices services, HttpContext context, int battleStatsId)
+    {
+        var result = await services.BattleService.GetBattleStatsAsync(battleStatsId);
         if (result == null)
         {
             return TypedResults.NotFound();

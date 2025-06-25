@@ -11,4 +11,5 @@ public class BattleSummaryDto
     public required int Id { get; init; }
     public required IReadOnlyCollection<BattleSquadDto> PlayerSquads { get; init; } = [];
     public required BattleResultStatus ResultStatus { get; init; }
+    public int? StatsId { get; set; }
 }

@@ -10,4 +10,5 @@ public class BattleSummaryViewModel
         new List<BattleHeroViewModel>();
 
     public required BattleResultStatus ResultStatus { get; set; }
+    public int? StatsId { get; init; }
 }
