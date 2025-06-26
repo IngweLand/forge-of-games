@@ -121,6 +121,8 @@ public static class HohApi
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_CONTINENTS_BASIC_DATA_PATH,
             GetCampaignContinentsBasicDataAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_REGION_TEMPLATE, GetCampaignRegionAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_REGION_BASIC_DATA_TEMPLATE,
+            GetCampaignRegionBasicDataAsync);
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
@@ -137,12 +139,12 @@ public static class HohApi
 
         api.MapPost("/inGameData/", ImportInGameDataAsync).RequireCors(PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY);
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
-        
+
         api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
 
         return api;
     }
-    
+
     private static async Task<Results<Ok<WikipediaResponseDto>, NotFound, BadRequest<string>>>
         GetWikiExtractAsync([AsParameters] HohServices services, HttpContext context,
             [FromQuery] string title, [FromQuery] string language)
@@ -323,6 +325,13 @@ public static class HohApi
         {
             WriteNotFoundToResponseAsync(context);
         }
+    }
+
+    private static async Task GetCampaignRegionBasicDataAsync([AsParameters] HohServices services,
+        HttpContext context, RegionId regionId)
+    {
+        var region = await services.CampaignService.GetRegionBasicDataAsync(regionId);
+        await WriteToResponseAsync(context, region, services.ProtobufSerializer);
     }
 
     private static async Task GetTreasureHuntStageAsync([AsParameters] HohServices services,

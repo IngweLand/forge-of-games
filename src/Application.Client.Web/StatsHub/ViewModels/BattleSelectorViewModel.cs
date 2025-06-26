@@ -15,6 +15,8 @@ public class BattleSelectorViewModel
     public required IReadOnlyDictionary<Difficulty, string> Difficulties { get; init; }
 
     public required IReadOnlyCollection<HeroBasicViewModel> Heroes { get; init; }
+    public IReadOnlyCollection<int> HistoricBattleEncounters { get; } = Enumerable.Range(1, 15).ToList();
+    public required IReadOnlyCollection<RegionBasicViewModel> HistoricBattleRegions { get; init; }
     public required IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> TreasureHuntDifficulties { get; init; }
     public IReadOnlyCollection<int> TreasureHuntEncounters { get; } = Enumerable.Range(0, 20).ToList();
 }

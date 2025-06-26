@@ -8,5 +8,6 @@ public interface IBattleLogFactories
 {
     BattleSelectorViewModel CreateBattleSelectorData(IReadOnlyCollection<ContinentBasicViewModel> campaignContinents,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
+        IReadOnlyCollection<RegionBasicViewModel> historicBattles,
         IReadOnlyCollection<HeroBasicViewModel> heroes);
 }

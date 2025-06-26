@@ -18,6 +18,7 @@ public static class FogUrlBuilder
 
         public const string CAMPAIGN_CONTINENTS_BASIC_DATA_PATH = "/campaign/continents/basicData";
         public const string CAMPAIGN_REGION_TEMPLATE = "/campaign/regions/{regionId}";
+        public const string CAMPAIGN_REGION_BASIC_DATA_TEMPLATE = "/campaign/regions/{regionId}/basicData";
 
         public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
         public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";

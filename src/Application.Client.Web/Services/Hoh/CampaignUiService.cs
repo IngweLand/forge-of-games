@@ -18,6 +18,7 @@ public class CampaignUiService(
     IMapper mapper) : ICampaignUiService
 {
     private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
+    private IReadOnlyCollection<RegionBasicViewModel>? _cachedHistoricBattles;
 
     public async Task<IReadOnlyCollection<ContinentBasicViewModel>> GetCampaignContinentsBasicDataAsync()
     {
@@ -29,6 +30,18 @@ public class CampaignUiService(
         var continents = await campaignService.GetCampaignContinentsBasicDataAsync();
         _cachedContinents = continentBasicViewModelFactory.CreateContinents(continents);
         return _cachedContinents;
+    }
+
+    public async Task<IReadOnlyCollection<RegionBasicViewModel>> GetHistoricBattlesBasicDataAsync()
+    {
+        if (_cachedHistoricBattles != null)
+        {
+            return _cachedHistoricBattles;
+        }
+
+        var siegeOfOrleans = await campaignService.GetRegionBasicDataAsync(RegionId.SiegeOfOrleans);
+        _cachedHistoricBattles = [mapper.Map<RegionBasicViewModel>(siegeOfOrleans)];
+        return _cachedHistoricBattles;
     }
 
     public async Task<RegionViewModel?> GetRegionAsync(string id)
@@ -87,7 +100,7 @@ public class CampaignUiService(
             Name = $"{region.Index + 1}. {region.Name}",
             Encounters = encounters,
             Rewards = mapper.Map<IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>>>(
-                    region.Rewards),
+                region.Rewards),
         };
     }
 }

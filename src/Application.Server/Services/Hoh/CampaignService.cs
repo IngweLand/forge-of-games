@@ -16,6 +16,7 @@ public class CampaignService(
     IUnitDtoFactory unitDtoFactory,
     IUnitService unitService,
     IMapper mapper,
+    IHohGameLocalizationService gameLocalizationService,
     ILogger<CampaignService> logger) : ICampaignService
 {
     public async Task<IReadOnlyCollection<ContinentBasicDto>> GetCampaignContinentsBasicDataAsync()
@@ -73,5 +74,14 @@ public class CampaignService(
         }
 
         return regionDtoFactory.Create(region, units, heroes);
+    }
+
+    public Task<RegionBasicDto> GetRegionBasicDataAsync(RegionId regionId)
+    {
+        return Task.FromResult(new RegionBasicDto
+        {
+            Id = regionId,
+            Name = gameLocalizationService.GetRegionName(regionId),
+        });
     }
 }

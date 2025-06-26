@@ -97,6 +97,28 @@
                     }
                 </MudSelect>
             }
+            else if (SearchRequest.BattleType == BattleType.HistoricBattle)
+            {
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Battle]"
+                           Value="@_selectedHistoricBattleRegion"
+                           T="RegionBasicViewModel" Strict="true"
+                           ValueChanged="HistoricBattleRegionOnChange" Variant="Variant.Outlined">
+                    @foreach (var region in ViewModel.HistoricBattleRegions)
+                    {
+                        <MudSelectItem Value="@region">@region.Name</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Encounter]"
+                           Value="@SearchRequest.HistoricBattleEncounter"
+                           T="int" Strict="true"
+                           ValueChanged="HistoricBattleEncounterOnChange" Variant="Variant.Outlined">
+                    @foreach (var encounter in ViewModel.HistoricBattleEncounters)
+                    {
+                        <MudSelectItem Value="@encounter">@encounter</MudSelectItem>
+                    }
+                </MudSelect>
+            }
         </div>
 
         <div class="units-container">
@@ -128,6 +150,7 @@
 
     private const int MaxUnitCount = 5;
     private RegionBasicViewModel? _selectedCampaignRegion;
+    private RegionBasicViewModel? _selectedHistoricBattleRegion;
 
     [Parameter]
     public required BattleSearchRequest SearchRequest { get; set; }
@@ -148,6 +171,9 @@
             _regionViewModels = _viewModel?.CampaignContinents
                 .SelectMany(src => src.Regions)
                 .ToDictionary(src => src.Id) ?? [];
+
+            _historicBattleRegionViewModels = _viewModel?.HistoricBattleRegions
+                .ToDictionary(src => src.Id) ?? [];
         }
     }
 
@@ -155,6 +181,7 @@
     public EventCallback<BattleSearchRequest> SearchRequestChanged { get; set; }
 
     private Dictionary<RegionId, RegionBasicViewModel> _regionViewModels = [];
+    private Dictionary<RegionId, RegionBasicViewModel> _historicBattleRegionViewModels = [];
     private BattleSelectorViewModel? _viewModel;
 
     protected override void OnParametersSet()
@@ -167,6 +194,11 @@
         if (!_regionViewModels.TryGetValue(SearchRequest.CampaignRegion, out _selectedCampaignRegion))
         {
             _selectedCampaignRegion = ViewModel.CampaignContinents.First().Regions.First();
+        }
+
+        if (!_historicBattleRegionViewModels.TryGetValue(SearchRequest.HistoricBattleRegion, out _selectedHistoricBattleRegion))
+        {
+            _selectedHistoricBattleRegion = ViewModel.HistoricBattleRegions.First();
         }
     }
 
@@ -189,6 +221,13 @@
         return SearchRequest.CampaignRegion == newValue.Id
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {CampaignRegion = newValue.Id});
+    }
+
+    private Task HistoricBattleRegionOnChange(RegionBasicViewModel newValue)
+    {
+        return SearchRequest.HistoricBattleRegion == newValue.Id
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {HistoricBattleRegion = newValue.Id});
     }
 
     private Task CampaignRegionEncounterOnChange(int newValue)
@@ -217,6 +256,13 @@
         return SearchRequest.TreasureHuntEncounter == newValue
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {TreasureHuntEncounter = newValue});
+    }
+
+    private Task HistoricBattleEncounterOnChange(int newValue)
+    {
+        return SearchRequest.HistoricBattleEncounter == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {HistoricBattleEncounter = newValue});
     }
 
     private async Task AddHero()

@@ -104,7 +104,7 @@ public class StatsHubUiService(
     {
         await GetAgesAsync();
         var result =
-            await statsHubService.GetPlayersAsync(worldId, pageNumber: pageNumber, name: playerName, ct: ct);
+            await statsHubService.GetPlayersAsync(worldId, pageNumber, name: playerName, ct: ct);
         return statsHubViewModelsFactory.CreatePlayers(result, _ages!);
     }
 
@@ -112,10 +112,11 @@ public class StatsHubUiService(
     {
         var campaignTask = campaignUiService.GetCampaignContinentsBasicDataAsync();
         var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
+        var historicBattlesTask = campaignUiService.GetHistoricBattlesBasicDataAsync();
         var heroesTask = unitUiService.GetHeroListAsync();
-        await Task.WhenAll([campaignTask, treasureHuntTask, heroesTask]);
+        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask);
         return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
-            heroesTask.Result);
+            historicBattlesTask.Result, heroesTask.Result);
     }
 
     public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
