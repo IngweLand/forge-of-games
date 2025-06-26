@@ -8,6 +8,7 @@ public static class EquipmentExtensions
     {
         return rarity switch
         {
+            EquipmentRarity.Star_2 => 2,
             EquipmentRarity.Star_3 => 3,
             EquipmentRarity.Star_4 => 4,
             EquipmentRarity.Star_5 => 5,
