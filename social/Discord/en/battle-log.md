@@ -5,6 +5,7 @@ Get insights from real player-submitted battles—see which hero setups succeed,
 
 ### 🔍 What You’ll Find:
 - 🧠 Community-submitted battles with hero details and outcomes
+- 📊 Battle stats
 - 🎯 Filters to find specific encounter or hero matchups
 - 🚀 Quick access from Campaign & Treasure Hunt pages with pre-filled filters
 
