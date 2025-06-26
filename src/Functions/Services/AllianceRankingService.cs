@@ -28,7 +28,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
         }
 
         var latestUnique = filtered
-            .GroupBy(p => (p.WorldId, p.InGameAllianceId, DateOnly.FromDateTime(p.CollectedAt)))
+            .GroupBy(p => (p.WorldId, p.InGameAllianceId, p.AllianceRankingType, DateOnly.FromDateTime(p.CollectedAt)))
             .Select(g => g.OrderByDescending(p => p.CollectedAt).First())
             .ToList();
         logger.LogInformation("Latest unique aggregates count: {Count}.", latestUnique.Count);
