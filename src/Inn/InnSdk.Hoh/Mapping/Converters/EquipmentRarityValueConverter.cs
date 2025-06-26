@@ -12,6 +12,7 @@ public class EquipmentRarityValueConverter : IValueConverter<string, EquipmentRa
 
         return starCount switch
         {
+            "2" => EquipmentRarity.Star_2,
             "3" => EquipmentRarity.Star_3,
             "4" => EquipmentRarity.Star_4,
             "5" => EquipmentRarity.Star_5,
