@@ -33,11 +33,14 @@ public static class DependencyInjection
         services.AddScoped<IStaticDataService, StaticDataService>();
         services.AddScoped<IRankingsService, RankingsService>();
         services.AddScoped<IDataParsingService, DataParsingService>();
+        services.AddScoped<IBattleService, BattleService>();
 
         services.AddScoped<Lazy<IStaticDataService>>(sp =>
             new Lazy<IStaticDataService>(sp.GetRequiredService<IStaticDataService>));
         services.AddScoped<Lazy<IRankingsService>>(sp =>
             new Lazy<IRankingsService>(sp.GetRequiredService<IRankingsService>));
+        services.AddScoped<Lazy<IBattleService>>(sp =>
+            new Lazy<IBattleService>(sp.GetRequiredService<IBattleService>));
 
         services.AddHttpClient<IWebAuthenticationService, WebAuthenticationService>()
             .AddSdkHttpClientResilienceHandler();

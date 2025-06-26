@@ -4,6 +4,7 @@ namespace Ingweland.Fog.InnSdk.Hoh.Abstractions;
 
 public interface IInnSdkClient
 {
-    IStaticDataService StaticDataService { get; }
+    IBattleService BattleService { get; }
     IRankingsService RankingsService { get; }
+    IStaticDataService StaticDataService { get; }
 }
