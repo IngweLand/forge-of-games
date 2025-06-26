@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Mapping.Hoh.Converters;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -31,5 +32,7 @@ public class CampaignUiProfile : Profile
             .ForMember(dst => dst.Subtitle, opt => opt.Ignore())
             .ForMember(dst => dst.IconUrl,
                 opt => opt.ConvertUsing<ResourceIdToIconUrlConverter, string>(src => src.ResourceId));
+
+        CreateMap<RegionBasicDto, RegionBasicViewModel>();
     }
 }

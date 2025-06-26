@@ -16,6 +16,7 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
         {
             BattleType.Campaign => CreateCampaignId(request, sb),
             BattleType.TreasureHunt => await CreateTreasureHuntId(request, sb),
+            BattleType.HistoricBattle => CreateHistoricBattleId(request, sb),
             _ => sb.ToString(),
         };
     }
@@ -34,12 +35,22 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
         return sb.ToString();
     }
 
+    private string CreateHistoricBattleId(BattleSearchRequest request, StringBuilder sb)
+    {
+        sb.Append(request.HistoricBattleRegion)
+            .Append('_')
+            .Append(request.HistoricBattleEncounter);
+
+        return sb.ToString();
+    }
+
     private async Task<string> CreateTreasureHuntId(BattleSearchRequest request, StringBuilder sb)
     {
-        if (request.TreasureHuntEncounter< 0)
+        if (request.TreasureHuntEncounter < 0)
         {
             return string.Empty;
         }
+
         var stage =
             await hohCoreDataRepository.GetTreasureHuntStageAsync(request.TreasureHuntDifficulty,
                 request.TreasureHuntStage);
@@ -53,7 +64,7 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
         {
             return string.Empty;
         }
-        
+
         return sb.Append("Encounter")
             .Append('_')
             .Append(request.TreasureHuntDifficulty)

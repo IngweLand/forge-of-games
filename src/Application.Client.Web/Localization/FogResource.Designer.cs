@@ -168,6 +168,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle.
+        /// </summary>
+        public static string BattleSelector_Battle {
+            get {
+                return ResourceManager.GetString("BattleSelector.Battle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle Type.
         /// </summary>
         public static string BattleSelector_BattleType {
