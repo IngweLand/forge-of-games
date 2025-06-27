@@ -9,4 +9,5 @@ public class PvpBattleViewModel
     public required bool IsVictory { get; init; }
     public required IReadOnlyCollection<BattleHeroViewModel> PlayerUnits { get; init; }
     public required IReadOnlyCollection<BattleHeroViewModel> OpponentUnits { get; init; }
+    public int? StatsId { get; init; }
 }

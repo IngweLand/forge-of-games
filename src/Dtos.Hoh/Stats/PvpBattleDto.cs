@@ -8,4 +8,5 @@ public class PvpBattleDto
     public required IReadOnlyCollection<PvpUnit> LoserUnits { get; init; }
     public required PlayerDto Winner { get; init; }
     public required IReadOnlyCollection<PvpUnit> WinnerUnits { get; init; }
+    public int? StatsId { get; set; }
 }

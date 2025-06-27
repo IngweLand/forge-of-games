@@ -16,7 +16,7 @@
 .top-row {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 44px;
     gap: 4px;
     padding: 0 12px;
 }
@@ -82,13 +82,27 @@
 .opponent-status-container {
     display: flex;
     flex: 1;
-    justify-content: center;
 }
 
 .player-status-icon, .opponent-status-icon {
     height: 32px;
     width: auto;
     margin-top: -8px;
+}
+
+
+.stats-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    width: 44px;
+    cursor: pointer;
+}
+
+.stats-icon {
+    height: 24px;
+    width: 24px;
 }
 
 @media (min-width: 875px) {

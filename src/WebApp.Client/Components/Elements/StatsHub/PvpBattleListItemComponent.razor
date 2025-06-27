@@ -5,7 +5,6 @@
 @using MudBlazor.Utilities
 @inject IStringLocalizer<FogResource> Loc
 @inject IAssetUrlProvider AssetUrlProvider
-@inject NavigationManager NavigationManager
 <div class="fog-container component-root">
     <div class="player-container">
         <div class="top-row top-row-player">
@@ -19,6 +18,12 @@
                 {
                     <img class="player-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_defeat")"/>
                     <div class="@StatusLabelClassname">@Loc[FogResource.Common_Defeat]</div>
+                }
+                @if (Battle.StatsId.HasValue)
+                {
+                    <div class="stats-button" @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Battle.StatsId))">
+                        <img class="stats-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_battlestats")"/>
+                    </div>
                 }
             </div>
         </div>
@@ -42,6 +47,12 @@
                     <img class="opponent-status-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_pvp_defeat")"/>
                     <div class="@StatusLabelClassname">@Loc[FogResource.Common_Defeat]</div>
                 }
+                @if (Battle.StatsId.HasValue)
+                {
+                    <div class="stats-button" @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Battle.StatsId))">
+                        <img class="stats-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_battlestats")"/>
+                    </div>
+                }
             </div>
             <div class="opponent-headline" @onclick="() => OnOpponentClick.InvokeAsync(Battle.Opponent.Id)">
                 <div class="player-name">@Battle.Opponent.Name</div>
@@ -61,6 +72,9 @@
 
     [Parameter]
     public required PvpBattleViewModel Battle { get; set; }
+
+    [Parameter]
+    public EventCallback<int?> OnBattleStatsClicked { get; set; }
 
     private string StatusLabelClassname => new CssBuilder("status-label")
         .AddClass("victory", Battle.IsVictory)

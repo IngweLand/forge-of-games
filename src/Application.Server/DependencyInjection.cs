@@ -55,6 +55,7 @@ public static class DependencyInjection
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<IBattleSearchResultFactory, BattleSearchResultFactory>();
         services.AddScoped<IBattleStatsDtoFactory, BattleStatsDtoFactory>();
+        services.AddScoped<IBattleQueryService, BattleQueryService>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()

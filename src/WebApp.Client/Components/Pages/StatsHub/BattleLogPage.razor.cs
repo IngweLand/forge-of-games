@@ -54,6 +54,9 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
     {
         await _battlesCts.CancelAsync();
         _battlesCts.Dispose();
+
+        await _battleStatsCts.CancelAsync();
+        _battleStatsCts.Dispose();
     }
 
     private async Task GetBattles(BattleSearchRequest request)

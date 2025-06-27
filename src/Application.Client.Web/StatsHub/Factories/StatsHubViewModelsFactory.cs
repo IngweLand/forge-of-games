@@ -89,6 +89,7 @@ public class StatsHubViewModelsFactory(
                 IsVictory = isVictory,
                 PlayerUnits = isVictory ? winnerUnits : loserUnits,
                 OpponentUnits = isVictory ? loserUnits : winnerUnits,
+                StatsId = pvpBattleDto.StatsId,
             });
         }
 

@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -13,7 +14,10 @@ public record GetPlayerQuery : IRequest<PlayerWithRankings?>
     public required int PlayerId { get; init; }
 }
 
-public class GetPlayerQueryHandler(IFogDbContext context, IPlayerWithRankingsFactory playerWithRankingsFactory)
+public class GetPlayerQueryHandler(
+    IFogDbContext context,
+    IPlayerWithRankingsFactory playerWithRankingsFactory,
+    IBattleQueryService battleQueryService)
     : IRequestHandler<GetPlayerQuery, PlayerWithRankings?>
 {
     public async Task<PlayerWithRankings?> Handle(GetPlayerQuery request, CancellationToken cancellationToken)
@@ -34,8 +38,20 @@ public class GetPlayerQueryHandler(IFogDbContext context, IPlayerWithRankingsFac
             .Include(p => p.PvpLosses.OrderByDescending(b => b.PerformedAt).Take(FogConstants.MaxDisplayedPvpBattles))
             .ThenInclude(b => b.Winner)
             .AsSplitQuery()
-            .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken: cancellationToken);
+            .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);
 
-        return player == null ? null : await playerWithRankingsFactory.CreateAsync(player);
+        if (player == null)
+        {
+            return null;
+        }
+
+        var pvpBattles = player.PvpWins.Concat(player.PvpLosses)
+            .OrderByDescending(b => b.PerformedAt)
+            .Take(FogConstants.MaxDisplayedPvpBattles)
+            .ToList();
+        var battleIds = pvpBattles.Select(src => src.InGameBattleId);
+        var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
+
+        return await playerWithRankingsFactory.CreateAsync(player, pvpBattles, existingStatsIds);
     }
 }

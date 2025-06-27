@@ -73,7 +73,8 @@
                         @foreach (var battle in _player.PvpBattles)
                         {
                             <PvpBattleListItemComponent Battle="@battle" OnOpponentClick="OnPlayerClicked"
-                                                        OnHeroClick="OnHeroClicked"/>
+                                                        OnHeroClick="OnHeroClicked"
+                                                        OnBattleStatsClicked="OpenBattleStats"/>
                         }
                     </div>
                 </div>

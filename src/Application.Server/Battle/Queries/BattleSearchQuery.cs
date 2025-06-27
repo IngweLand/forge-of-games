@@ -1,9 +1,9 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +15,10 @@ public record BattleSearchQuery : IRequest<BattleSearchResult>
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
 }
 
-public class BattleSearchQueryHandler(IBattleSearchResultFactory battleSearchResultFactory, IFogDbContext context)
+public class BattleSearchQueryHandler(
+    IBattleSearchResultFactory battleSearchResultFactory,
+    IFogDbContext context,
+    IBattleQueryService battleQueryService)
     : IRequestHandler<BattleSearchQuery, BattleSearchResult>
 {
     public async Task<BattleSearchResult> Handle(BattleSearchQuery request,
@@ -40,11 +43,8 @@ public class BattleSearchQueryHandler(IBattleSearchResultFactory battleSearchRes
             .Take(FogConstants.MaxDisplayedBattles)
             .ToListAsync(cancellationToken);
 
-        var battleIds = battles.Select(src => src.InGameBattleId).ToHashSet(StructuralByteArrayComparer.Instance);
-        var existingStatsIds = await context.BattleStats.AsNoTracking()
-            .Where(e => battleIds.Contains(e.InGameBattleId))
-            .ToDictionaryAsync(src => src.InGameBattleId, src => src.Id, StructuralByteArrayComparer.Instance,
-                cancellationToken);
+        var battleIds = battles.Select(src => src.InGameBattleId);
+        var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
         return await battleSearchResultFactory.Create(battles, existingStatsIds);
     }
 }
