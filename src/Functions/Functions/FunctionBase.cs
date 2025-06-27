@@ -81,6 +81,29 @@ public class FunctionBase(
 
         return result;
     }
+    
+    protected async Task<List<(string WorldId, PvpBattle PvpBattle)>> GetPvpBattles(string worldId, DateOnly date)
+    {
+        var pvpBattlesRawData = await ExecuteSafeAsync(
+            () => InGameRawDataTableRepository.GetAllAsync(
+                InGameRawDataTablePartitionKeyProvider.PvpBattles(worldId, date)),
+            $"Error getting pvp battles raw data for world {worldId} on {date}", []);
+        var pvpBattles = new List<(string WorldId, PvpBattle Battle)>();
+        foreach (var rawData in pvpBattlesRawData)
+        {
+            try
+            {
+                pvpBattles.AddRange(InGameDataParsingService.ParsePvpBattles(rawData.Base64Data)
+                    .Select(src => (worldId, src)));
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error parsing pvp battles raw data collected on {date}", rawData.CollectedAt);
+            }
+        }
+
+        return pvpBattles;
+    }
 
     protected async Task ExecuteSafeAsync(Func<Task> func, string errorMessage)
     {

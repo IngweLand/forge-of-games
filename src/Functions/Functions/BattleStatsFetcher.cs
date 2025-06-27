@@ -45,11 +45,16 @@ public class BattleStatsFetcher(
             var battleResults = await GetBattleResults(gameWorld.Id, date);
             var battleIds = battleResults.Select(t => t.BattleSummary.BattleId)
                 .ToHashSet(StructuralByteArrayComparer.Instance);
+            
+            var pvpBattles = await GetPvpBattles(gameWorld.Id, date);
+            var pvpBattleIds = pvpBattles.Select(t => t.PvpBattle.Id).ToHashSet(StructuralByteArrayComparer.Instance);
+            
+            var allBattleIds = battleIds.Union(pvpBattleIds).ToHashSet(StructuralByteArrayComparer.Instance);
             logger.LogInformation("{count} unique battle ids retrieved for game world {gameWorldId}",
-                battleIds.Count, gameWorld.Id);
+                allBattleIds.Count, gameWorld.Id);
 
             var battlesWithoutStats =
-                battleIds.Except(allBattleStatsIds, StructuralByteArrayComparer.Instance).ToList();
+                allBattleIds.Except(allBattleStatsIds, StructuralByteArrayComparer.Instance).ToList();
             logger.LogInformation("Found {count} battles without stats for game world {gameWorldId}",
                 battlesWithoutStats.Count, gameWorld.Id);
             await FetchBattleStats(gameWorld, battlesWithoutStats);
