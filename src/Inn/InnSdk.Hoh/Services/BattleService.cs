@@ -16,10 +16,16 @@ public class BattleService(
     IMapper mapper,
     ILogger<BattleService> logger) : IBattleService
 {
-    public async Task<BattleStats> GetBattleStats(GameWorldConfig world, byte[] battleId)
+    public Task<byte[]> GetBattleStatsRawDataAsync(GameWorldConfig world, byte[] battleId)
     {
+        logger.LogInformation("Fetching battle stats from {WorldId}", world.Id);
         var payload = mapper.Map<BattleStatsRequestDto>(battleId);
-        var data = await apiClient.SendForProtobufAsync(world, GameEndpoints.BattleStatsPath, payload.ToByteArray());
+        return apiClient.SendForProtobufAsync(world, GameEndpoints.BattleStatsPath, payload.ToByteArray());
+    }
+    
+    public async Task<BattleStats> GetBattleStatsAsync(GameWorldConfig world, byte[] battleId)
+    {
+        var data = await GetBattleStatsRawDataAsync(world, battleId);
         return dataParsingService.ParseBattleStats(data);
     }
 }

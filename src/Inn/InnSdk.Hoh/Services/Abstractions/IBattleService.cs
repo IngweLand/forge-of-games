@@ -5,5 +5,6 @@ namespace Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 
 public interface IBattleService
 {
-    Task<BattleStats> GetBattleStats(GameWorldConfig world, byte[] battleId);
+    Task<BattleStats> GetBattleStatsAsync(GameWorldConfig world, byte[] battleId);
+    Task<byte[]> GetBattleStatsRawDataAsync(GameWorldConfig world, byte[] battleId);
 }
