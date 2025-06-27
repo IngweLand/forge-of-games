@@ -1,10 +1,10 @@
 syntax = "proto3";
-import "bin_id_dto.proto";
 import "battle_summary_dto.proto";
+import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroStartBattleResponse {
-  BinIdDto battle_id = 1;
+  google.protobuf.BytesValue battle_id = 1;
   BattleSummaryDto result = 2;
 }

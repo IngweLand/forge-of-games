@@ -144,7 +144,6 @@ public class InGameDataMappingProfile : Profile
         CreateMap<UnitBattleStatsSubValueDto, UnitBattleStatsSubValue>();
 
         CreateMap<byte[], BattleStatsRequestDto>()
-            .ForMember(dest => dest.Battle,
-                opt => opt.MapFrom(src => new BattleIdWrapper() {BattleId = ByteString.CopyFrom(src)}));
+            .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => ByteString.CopyFrom(src)));
     }
 }

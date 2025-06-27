@@ -52,9 +52,7 @@ public class BattleStatsFetcher(
                 battleIds.Except(allBattleStatsIds, StructuralByteArrayComparer.Instance).ToList();
             logger.LogInformation("Found {count} battles without stats for game world {gameWorldId}",
                 battlesWithoutStats.Count, gameWorld.Id);
-            // TODO: remove this once we fix incorrect saving of battle id
-            var correctedBattleStatsIds = battlesWithoutStats.Select(src => src[2..]);
-            await FetchBattleStats(gameWorld, correctedBattleStatsIds);
+            await FetchBattleStats(gameWorld, battlesWithoutStats);
         }
 
         logger.LogInformation("Completed battles stats fetch.");

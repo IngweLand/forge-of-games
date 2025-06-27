@@ -24,13 +24,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static HeroFinishWaveResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch9oZXJvX2ZpbmlzaF93YXZlX3Jlc3BvbnNlLnByb3RvGhBiaW5faWRfZHRv",
-            "LnByb3RvGhhiYXR0bGVfc3VtbWFyeV9kdG8ucHJvdG8iWQoWSGVyb0Zpbmlz",
-            "aFdhdmVSZXNwb25zZRIcCgliYXR0bGVfaWQYASABKAsyCS5CaW5JZER0bxIh",
-            "CgZyZXN1bHQYAiABKAsyES5CYXR0bGVTdW1tYXJ5RHRvQh+qAhxJbmd3ZWxh",
-            "bmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Ch9oZXJvX2ZpbmlzaF93YXZlX3Jlc3BvbnNlLnByb3RvGh5nb29nbGUvcHJv",
+            "dG9idWYvd3JhcHBlcnMucHJvdG8aGGJhdHRsZV9zdW1tYXJ5X2R0by5wcm90",
+            "byJrChZIZXJvRmluaXNoV2F2ZVJlc3BvbnNlEi4KCWJhdHRsZV9pZBgBIAEo",
+            "CzIbLmdvb2dsZS5wcm90b2J1Zi5CeXRlc1ZhbHVlEiEKBnJlc3VsdBgCIAEo",
+            "CzIRLkJhdHRsZVN1bW1hcnlEdG9CH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1v",
+            "ZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.BinIdDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroFinishWaveResponse), global::Ingweland.Fog.Inn.Models.Hoh.HeroFinishWaveResponse.Parser, new[]{ "BattleId", "Result" }, null, null, null, null)
           }));
@@ -74,7 +75,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroFinishWaveResponse(HeroFinishWaveResponse other) : this() {
-      battleId_ = other.battleId_ != null ? other.battleId_.Clone() : null;
+      BattleId = other.BattleId;
       result_ = other.result_ != null ? other.result_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -87,15 +88,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "battle_id" field.</summary>
     public const int BattleIdFieldNumber = 1;
-    private global::Ingweland.Fog.Inn.Models.Hoh.BinIdDto battleId_;
+    private static readonly pb::FieldCodec<pb::ByteString> _single_battleId_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(10);
+    private pb::ByteString battleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.BinIdDto BattleId {
+    public pb::ByteString BattleId {
       get { return battleId_; }
       set {
         battleId_ = value;
       }
     }
+
 
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 2;
@@ -124,7 +127,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(BattleId, other.BattleId)) return false;
+      if (BattleId != other.BattleId) return false;
       if (!object.Equals(Result, other.Result)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -154,8 +157,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       output.WriteRawMessage(this);
     #else
       if (battleId_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BattleId);
+        _single_battleId_codec.WriteTagAndValue(output, BattleId);
       }
       if (result_ != null) {
         output.WriteRawTag(18);
@@ -172,8 +174,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       if (battleId_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(BattleId);
+        _single_battleId_codec.WriteTagAndValue(ref output, BattleId);
       }
       if (result_ != null) {
         output.WriteRawTag(18);
@@ -190,7 +191,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public int CalculateSize() {
       int size = 0;
       if (battleId_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BattleId);
+        size += _single_battleId_codec.CalculateSizeWithTag(BattleId);
       }
       if (result_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Result);
@@ -208,10 +209,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return;
       }
       if (other.battleId_ != null) {
-        if (battleId_ == null) {
-          BattleId = new global::Ingweland.Fog.Inn.Models.Hoh.BinIdDto();
+        if (battleId_ == null || other.BattleId != pb::ByteString.Empty) {
+          BattleId = other.BattleId;
         }
-        BattleId.MergeFrom(other.BattleId);
       }
       if (other.result_ != null) {
         if (result_ == null) {
@@ -235,10 +235,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (battleId_ == null) {
-              BattleId = new global::Ingweland.Fog.Inn.Models.Hoh.BinIdDto();
+            pb::ByteString value = _single_battleId_codec.Read(input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
             }
-            input.ReadMessage(BattleId);
             break;
           }
           case 18: {
@@ -264,10 +264,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (battleId_ == null) {
-              BattleId = new global::Ingweland.Fog.Inn.Models.Hoh.BinIdDto();
+            pb::ByteString value = _single_battleId_codec.Read(ref input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
             }
-            input.ReadMessage(BattleId);
             break;
           }
           case 18: {

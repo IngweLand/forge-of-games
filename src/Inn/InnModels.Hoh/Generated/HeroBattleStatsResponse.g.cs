@@ -24,21 +24,23 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static HeroBattleStatsResponseReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiBoZXJvX2JhdHRsZV9zdGF0c19yZXNwb25zZS5wcm90byKFAQoXSGVyb0Jh",
-            "dHRsZVN0YXRzUmVzcG9uc2USEQoJYmF0dGxlX2lkGAEgASgMEisKDXBsYXll",
-            "cl9zcXVhZHMYAiADKAsyFC5CYXR0bGVTcXVhZFN0YXRzRHRvEioKDGVuZW15",
-            "X3NxdWFkcxgDIAMoCzIULkJhdHRsZVNxdWFkU3RhdHNEdG8ihwEKE0JhdHRs",
-            "ZVNxdWFkU3RhdHNEdG8SJgoEaGVybxgBIAEoCzITLlVuaXRCYXR0bGVTdGF0",
-            "c0R0b0gAiAEBEi4KDHN1cHBvcnRfdW5pdBgCIAEoCzITLlVuaXRCYXR0bGVT",
-            "dGF0c0R0b0gBiAEBQgcKBV9oZXJvQg8KDV9zdXBwb3J0X3VuaXQihQEKElVu",
-            "aXRCYXR0bGVTdGF0c0R0bxIPCgd1bml0X2lkGAEgASgJEg4KBmF0dGFjaxgC",
-            "IAEoAhIPCgdkZWZlbnNlGAMgASgCEgwKBGhlYWwYBCABKAISLwoKc3ViX3Zh",
-            "bHVlcxgFIAMoCzIbLlVuaXRCYXR0bGVTdGF0c1N1YlZhbHVlRHRvIlwKGlVu",
-            "aXRCYXR0bGVTdGF0c1N1YlZhbHVlRHRvEg8KB3VuaXRfaWQYASABKAkSDgoG",
-            "YXR0YWNrGAIgASgCEg8KB2RlZmVuc2UYAyABKAISDAoEaGVhbBgEIAEoAkIf",
-            "qgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "CiBoZXJvX2JhdHRsZV9zdGF0c19yZXNwb25zZS5wcm90bxoeZ29vZ2xlL3By",
+            "b3RvYnVmL3dyYXBwZXJzLnByb3RvIqIBChdIZXJvQmF0dGxlU3RhdHNSZXNw",
+            "b25zZRIuCgliYXR0bGVfaWQYASABKAsyGy5nb29nbGUucHJvdG9idWYuQnl0",
+            "ZXNWYWx1ZRIrCg1wbGF5ZXJfc3F1YWRzGAIgAygLMhQuQmF0dGxlU3F1YWRT",
+            "dGF0c0R0bxIqCgxlbmVteV9zcXVhZHMYAyADKAsyFC5CYXR0bGVTcXVhZFN0",
+            "YXRzRHRvIocBChNCYXR0bGVTcXVhZFN0YXRzRHRvEiYKBGhlcm8YASABKAsy",
+            "Ey5Vbml0QmF0dGxlU3RhdHNEdG9IAIgBARIuCgxzdXBwb3J0X3VuaXQYAiAB",
+            "KAsyEy5Vbml0QmF0dGxlU3RhdHNEdG9IAYgBAUIHCgVfaGVyb0IPCg1fc3Vw",
+            "cG9ydF91bml0IoUBChJVbml0QmF0dGxlU3RhdHNEdG8SDwoHdW5pdF9pZBgB",
+            "IAEoCRIOCgZhdHRhY2sYAiABKAISDwoHZGVmZW5zZRgDIAEoAhIMCgRoZWFs",
+            "GAQgASgCEi8KCnN1Yl92YWx1ZXMYBSADKAsyGy5Vbml0QmF0dGxlU3RhdHNT",
+            "dWJWYWx1ZUR0byJcChpVbml0QmF0dGxlU3RhdHNTdWJWYWx1ZUR0bxIPCgd1",
+            "bml0X2lkGAEgASgJEg4KBmF0dGFjaxgCIAEoAhIPCgdkZWZlbnNlGAMgASgC",
+            "EgwKBGhlYWwYBCABKAJCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5I",
+            "b2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleStatsResponse), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleStatsResponse.Parser, new[]{ "BattleId", "PlayerSquads", "EnemySquads" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadStatsDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadStatsDto.Parser, new[]{ "Hero", "SupportUnit" }, new[]{ "Hero", "SupportUnit" }, null, null, null),
@@ -85,7 +87,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroBattleStatsResponse(HeroBattleStatsResponse other) : this() {
-      battleId_ = other.battleId_;
+      BattleId = other.BattleId;
       playerSquads_ = other.playerSquads_.Clone();
       enemySquads_ = other.enemySquads_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -99,15 +101,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "battle_id" field.</summary>
     public const int BattleIdFieldNumber = 1;
-    private pb::ByteString battleId_ = pb::ByteString.Empty;
+    private static readonly pb::FieldCodec<pb::ByteString> _single_battleId_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(10);
+    private pb::ByteString battleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString BattleId {
       get { return battleId_; }
       set {
-        battleId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        battleId_ = value;
       }
     }
+
 
     /// <summary>Field number for the "player_squads" field.</summary>
     public const int PlayerSquadsFieldNumber = 2;
@@ -156,7 +160,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (BattleId.Length != 0) hash ^= BattleId.GetHashCode();
+      if (battleId_ != null) hash ^= BattleId.GetHashCode();
       hash ^= playerSquads_.GetHashCode();
       hash ^= enemySquads_.GetHashCode();
       if (_unknownFields != null) {
@@ -177,9 +181,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (BattleId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(BattleId);
+      if (battleId_ != null) {
+        _single_battleId_codec.WriteTagAndValue(output, BattleId);
       }
       playerSquads_.WriteTo(output, _repeated_playerSquads_codec);
       enemySquads_.WriteTo(output, _repeated_enemySquads_codec);
@@ -193,9 +196,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BattleId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(BattleId);
+      if (battleId_ != null) {
+        _single_battleId_codec.WriteTagAndValue(ref output, BattleId);
       }
       playerSquads_.WriteTo(ref output, _repeated_playerSquads_codec);
       enemySquads_.WriteTo(ref output, _repeated_enemySquads_codec);
@@ -209,8 +211,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (BattleId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(BattleId);
+      if (battleId_ != null) {
+        size += _single_battleId_codec.CalculateSizeWithTag(BattleId);
       }
       size += playerSquads_.CalculateSize(_repeated_playerSquads_codec);
       size += enemySquads_.CalculateSize(_repeated_enemySquads_codec);
@@ -226,8 +228,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.BattleId.Length != 0) {
-        BattleId = other.BattleId;
+      if (other.battleId_ != null) {
+        if (battleId_ == null || other.BattleId != pb::ByteString.Empty) {
+          BattleId = other.BattleId;
+        }
       }
       playerSquads_.Add(other.playerSquads_);
       enemySquads_.Add(other.enemySquads_);
@@ -247,7 +251,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            BattleId = input.ReadBytes();
+            pb::ByteString value = _single_battleId_codec.Read(input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
+            }
             break;
           }
           case 18: {
@@ -274,7 +281,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            BattleId = input.ReadBytes();
+            pb::ByteString value = _single_battleId_codec.Read(ref input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
+            }
             break;
           }
           case 18: {

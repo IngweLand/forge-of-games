@@ -24,15 +24,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static BattleStatsRequestDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5iYXR0bGVfc3RhdHNfcmVxdWVzdF9kdG8ucHJvdG8iOQoVQmF0dGxlU3Rh",
-            "dHNSZXF1ZXN0RHRvEiAKBmJhdHRsZRgCIAEoCzIQLkJhdHRsZUlkV3JhcHBl",
-            "ciIkCg9CYXR0bGVJZFdyYXBwZXISEQoJYmF0dGxlX2lkGAEgASgMQh+qAhxJ",
-            "bmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Ch5iYXR0bGVfc3RhdHNfcmVxdWVzdF9kdG8ucHJvdG8aHmdvb2dsZS9wcm90",
+            "b2J1Zi93cmFwcGVycy5wcm90byJHChVCYXR0bGVTdGF0c1JlcXVlc3REdG8S",
+            "LgoJYmF0dGxlX2lkGAIgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkJ5dGVzVmFs",
+            "dWVCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleStatsRequestDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleStatsRequestDto.Parser, new[]{ "Battle" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper), global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper.Parser, new[]{ "BattleId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleStatsRequestDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleStatsRequestDto.Parser, new[]{ "BattleId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,7 +73,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public BattleStatsRequestDto(BattleStatsRequestDto other) : this() {
-      battle_ = other.battle_ != null ? other.battle_.Clone() : null;
+      BattleId = other.BattleId;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -84,17 +83,19 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new BattleStatsRequestDto(this);
     }
 
-    /// <summary>Field number for the "battle" field.</summary>
-    public const int BattleFieldNumber = 2;
-    private global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper battle_;
+    /// <summary>Field number for the "battle_id" field.</summary>
+    public const int BattleIdFieldNumber = 2;
+    private static readonly pb::FieldCodec<pb::ByteString> _single_battleId_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(18);
+    private pb::ByteString battleId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper Battle {
-      get { return battle_; }
+    public pb::ByteString BattleId {
+      get { return battleId_; }
       set {
-        battle_ = value;
+        battleId_ = value;
       }
     }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -111,7 +112,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Battle, other.Battle)) return false;
+      if (BattleId != other.BattleId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -119,7 +120,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (battle_ != null) hash ^= Battle.GetHashCode();
+      if (battleId_ != null) hash ^= BattleId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -138,9 +139,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (battle_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Battle);
+      if (battleId_ != null) {
+        _single_battleId_codec.WriteTagAndValue(output, BattleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -152,9 +152,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (battle_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Battle);
+      if (battleId_ != null) {
+        _single_battleId_codec.WriteTagAndValue(ref output, BattleId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -166,8 +165,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (battle_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Battle);
+      if (battleId_ != null) {
+        size += _single_battleId_codec.CalculateSizeWithTag(BattleId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -181,11 +180,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.battle_ != null) {
-        if (battle_ == null) {
-          Battle = new global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper();
+      if (other.battleId_ != null) {
+        if (battleId_ == null || other.BattleId != pb::ByteString.Empty) {
+          BattleId = other.BattleId;
         }
-        Battle.MergeFrom(other.Battle);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -203,10 +201,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 18: {
-            if (battle_ == null) {
-              Battle = new global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper();
+            pb::ByteString value = _single_battleId_codec.Read(input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
             }
-            input.ReadMessage(Battle);
             break;
           }
         }
@@ -225,200 +223,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 18: {
-            if (battle_ == null) {
-              Battle = new global::Ingweland.Fog.Inn.Models.Hoh.BattleIdWrapper();
+            pb::ByteString value = _single_battleId_codec.Read(ref input);
+            if (battleId_ == null || value != pb::ByteString.Empty) {
+              BattleId = value;
             }
-            input.ReadMessage(Battle);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class BattleIdWrapper : pb::IMessage<BattleIdWrapper>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<BattleIdWrapper> _parser = new pb::MessageParser<BattleIdWrapper>(() => new BattleIdWrapper());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<BattleIdWrapper> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleStatsRequestDtoReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BattleIdWrapper() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BattleIdWrapper(BattleIdWrapper other) : this() {
-      battleId_ = other.battleId_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public BattleIdWrapper Clone() {
-      return new BattleIdWrapper(this);
-    }
-
-    /// <summary>Field number for the "battle_id" field.</summary>
-    public const int BattleIdFieldNumber = 1;
-    private pb::ByteString battleId_ = pb::ByteString.Empty;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pb::ByteString BattleId {
-      get { return battleId_; }
-      set {
-        battleId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as BattleIdWrapper);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(BattleIdWrapper other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (BattleId != other.BattleId) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (BattleId.Length != 0) hash ^= BattleId.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (BattleId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(BattleId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (BattleId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteBytes(BattleId);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (BattleId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(BattleId);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(BattleIdWrapper other) {
-      if (other == null) {
-        return;
-      }
-      if (other.BattleId.Length != 0) {
-        BattleId = other.BattleId;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            BattleId = input.ReadBytes();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            BattleId = input.ReadBytes();
             break;
           }
         }

@@ -1,10 +1,9 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
+
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message BattleStatsRequestDto {
-  BattleIdWrapper battle = 2;
-}
-message BattleIdWrapper {
-  bytes battle_id = 1;
+  google.protobuf.BytesValue battle_id = 2;
 }

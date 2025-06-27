@@ -2,6 +2,7 @@ syntax = "proto3";
 import "player_dto.proto";
 import "alliance_dto.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -17,7 +18,7 @@ message PvpBattleDto {
   repeated PvpUnitDto player1_units = 7;
   repeated PvpUnitDto player2_units = 8;
   google.protobuf.Timestamp performed_at = 9;
-  bytes id = 10;
+  google.protobuf.BytesValue id = 10;
 }
 
 message PvpBattlePlayerAllianceDto {

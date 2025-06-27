@@ -1,15 +1,15 @@
 syntax = "proto3";
-import "bin_id_dto.proto";
 import "player_dto.proto";
 import "alliance_dto.proto";
 import "pvp_result_points_dto.proto";
 import "google/protobuf/any.proto";
 import "battle_squad_dto.proto";
+import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message BattleSummaryDto {
-  BinIdDto battle_id = 1;
+  google.protobuf.BytesValue battle_id = 1;
   BattleResultStatusDto result_status = 2;
   // HeroTreasureHuntEncounterLocationDTO, CampaignMapBattleLocationDTO, PvpBattleLocationDataDTO
   // HistoricBattleLocationDTO,

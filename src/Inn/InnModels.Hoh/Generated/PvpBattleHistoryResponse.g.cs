@@ -26,25 +26,27 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           string.Concat(
             "CiFwdnBfYmF0dGxlX2hpc3RvcnlfcmVzcG9uc2UucHJvdG8aEHBsYXllcl9k",
             "dG8ucHJvdG8aEmFsbGlhbmNlX2R0by5wcm90bxofZ29vZ2xlL3Byb3RvYnVm",
-            "L3RpbWVzdGFtcC5wcm90byJ4ChtQdnBCYXR0bGVIaXN0b3J5UmVzcG9uc2VE",
-            "dG8SHgoHYmF0dGxlcxgBIAMoCzINLlB2cEJhdHRsZUR0bxI5ChRwbGF5ZXJz",
-            "X3RvX2FsbGlhbmNlcxgCIAMoCzIbLlB2cEJhdHRsZVBsYXllckFsbGlhbmNl",
-            "RHRvIuQBCgxQdnBCYXR0bGVEdG8SGwoHcGxheWVyMRgBIAEoCzIKLlBsYXll",
-            "ckR0bxIbCgdwbGF5ZXIyGAIgASgLMgouUGxheWVyRHRvEhQKDHBvaW50c19k",
-            "ZWx0YRgEIAEoAxIiCg1wbGF5ZXIxX3VuaXRzGAcgAygLMgsuUHZwVW5pdER0",
-            "bxIiCg1wbGF5ZXIyX3VuaXRzGAggAygLMgsuUHZwVW5pdER0bxIwCgxwZXJm",
-            "b3JtZWRfYXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEgoK",
-            "AmlkGAogASgMIk8KGlB2cEJhdHRsZVBsYXllckFsbGlhbmNlRHRvEhEKCXBs",
-            "YXllcl9pZBgBIAEoBRIeCghhbGxpYW5jZRgCIAEoCzIMLkFsbGlhbmNlRHRv",
-            "IlgKClB2cFVuaXREdG8SIAoEaGVybxgCIAEoCzISLlB2cFVuaXREZXRhaWxz",
-            "RHRvEigKDHN1cHBvcnRfdW5pdBgDIAEoCzISLlB2cFVuaXREZXRhaWxzRHRv",
-            "Ij0KEVB2cFVuaXREZXRhaWxzRHRvEigKCmJhc2VfcHJvcHMYASABKAsyFC5Q",
-            "dnBVbml0QmFzZVByb3BzRHRvInMKE1B2cFVuaXRCYXNlUHJvcHNEdG8SCgoC",
-            "aWQYASABKAkSDQoFbGV2ZWwYAiABKAUSFwoPYXNjZW5zaW9uX2xldmVsGAMg",
-            "ASgFEhEKCWFiaWxpdGllcxgEIAMoCRIVCg1hYmlsaXR5X2xldmVsGAkgASgF",
-            "Qh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "L3RpbWVzdGFtcC5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL3dyYXBwZXJzLnBy",
+            "b3RvIngKG1B2cEJhdHRsZUhpc3RvcnlSZXNwb25zZUR0bxIeCgdiYXR0bGVz",
+            "GAEgAygLMg0uUHZwQmF0dGxlRHRvEjkKFHBsYXllcnNfdG9fYWxsaWFuY2Vz",
+            "GAIgAygLMhsuUHZwQmF0dGxlUGxheWVyQWxsaWFuY2VEdG8igQIKDFB2cEJh",
+            "dHRsZUR0bxIbCgdwbGF5ZXIxGAEgASgLMgouUGxheWVyRHRvEhsKB3BsYXll",
+            "cjIYAiABKAsyCi5QbGF5ZXJEdG8SFAoMcG9pbnRzX2RlbHRhGAQgASgDEiIK",
+            "DXBsYXllcjFfdW5pdHMYByADKAsyCy5QdnBVbml0RHRvEiIKDXBsYXllcjJf",
+            "dW5pdHMYCCADKAsyCy5QdnBVbml0RHRvEjAKDHBlcmZvcm1lZF9hdBgJIAEo",
+            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASJwoCaWQYCiABKAsyGy5n",
+            "b29nbGUucHJvdG9idWYuQnl0ZXNWYWx1ZSJPChpQdnBCYXR0bGVQbGF5ZXJB",
+            "bGxpYW5jZUR0bxIRCglwbGF5ZXJfaWQYASABKAUSHgoIYWxsaWFuY2UYAiAB",
+            "KAsyDC5BbGxpYW5jZUR0byJYCgpQdnBVbml0RHRvEiAKBGhlcm8YAiABKAsy",
+            "Ei5QdnBVbml0RGV0YWlsc0R0bxIoCgxzdXBwb3J0X3VuaXQYAyABKAsyEi5Q",
+            "dnBVbml0RGV0YWlsc0R0byI9ChFQdnBVbml0RGV0YWlsc0R0bxIoCgpiYXNl",
+            "X3Byb3BzGAEgASgLMhQuUHZwVW5pdEJhc2VQcm9wc0R0byJzChNQdnBVbml0",
+            "QmFzZVByb3BzRHRvEgoKAmlkGAEgASgJEg0KBWxldmVsGAIgASgFEhcKD2Fz",
+            "Y2Vuc2lvbl9sZXZlbBgDIAEoBRIRCglhYmlsaXRpZXMYBCADKAkSFQoNYWJp",
+            "bGl0eV9sZXZlbBgJIAEoBUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxz",
+            "LkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponseDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleHistoryResponseDto.Parser, new[]{ "Battles", "PlayersToAlliances" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleDto.Parser, new[]{ "Player1", "Player2", "PointsDelta", "Player1Units", "Player2Units", "PerformedAt", "Id" }, null, null, null, null),
@@ -304,7 +306,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       player1Units_ = other.player1Units_.Clone();
       player2Units_ = other.player2Units_.Clone();
       performedAt_ = other.performedAt_ != null ? other.performedAt_.Clone() : null;
-      id_ = other.id_;
+      Id = other.Id;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -386,15 +388,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 10;
-    private pb::ByteString id_ = pb::ByteString.Empty;
+    private static readonly pb::FieldCodec<pb::ByteString> _single_id_codec = pb::FieldCodec.ForClassWrapper<pb::ByteString>(82);
+    private pb::ByteString id_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString Id {
       get { return id_; }
       set {
-        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        id_ = value;
       }
     }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -431,7 +435,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       hash ^= player1Units_.GetHashCode();
       hash ^= player2Units_.GetHashCode();
       if (performedAt_ != null) hash ^= PerformedAt.GetHashCode();
-      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (id_ != null) hash ^= Id.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -468,9 +472,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(74);
         output.WriteMessage(PerformedAt);
       }
-      if (Id.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteBytes(Id);
+      if (id_ != null) {
+        _single_id_codec.WriteTagAndValue(output, Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -500,9 +503,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(74);
         output.WriteMessage(PerformedAt);
       }
-      if (Id.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteBytes(Id);
+      if (id_ != null) {
+        _single_id_codec.WriteTagAndValue(ref output, Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -528,8 +530,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (performedAt_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PerformedAt);
       }
-      if (Id.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Id);
+      if (id_ != null) {
+        size += _single_id_codec.CalculateSizeWithTag(Id);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -566,8 +568,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         }
         PerformedAt.MergeFrom(other.PerformedAt);
       }
-      if (other.Id.Length != 0) {
-        Id = other.Id;
+      if (other.id_ != null) {
+        if (id_ == null || other.Id != pb::ByteString.Empty) {
+          Id = other.Id;
+        }
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -618,7 +622,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 82: {
-            Id = input.ReadBytes();
+            pb::ByteString value = _single_id_codec.Read(input);
+            if (id_ == null || value != pb::ByteString.Empty) {
+              Id = value;
+            }
             break;
           }
         }
@@ -670,7 +677,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 82: {
-            Id = input.ReadBytes();
+            pb::ByteString value = _single_id_codec.Read(ref input);
+            if (id_ == null || value != pb::ByteString.Empty) {
+              Id = value;
+            }
             break;
           }
         }
