@@ -126,6 +126,7 @@ public static class HohApi
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTER_MAP_PATH, GetTreasureHuntEncounterMapAsync);
 
         api.MapProtobufGet("/ages", GetAgesAsync);
 
@@ -346,6 +347,12 @@ public static class HohApi
         {
             WriteNotFoundToResponseAsync(context);
         }
+    }
+
+    private static async Task GetTreasureHuntEncounterMapAsync([AsParameters] HohServices services, HttpContext context)
+    {
+        var map = await services.TreasureHuntService.GetBattleEncounterToIndexMapAsync();
+        await WriteToResponseAsync(context, map, services.ProtobufSerializer);
     }
 
     private static async Task GetCampaignContinentsBasicDataAsync([AsParameters] HohServices services,

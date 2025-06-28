@@ -23,6 +23,7 @@ public static class FogUrlBuilder
         public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
         public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";
         public const string TREASURE_HUNT_STAGE_TEMPLATE = "/ath/difficulties/{difficulty:int}/stages/{stageIndex:int}";
+        public const string TREASURE_HUNT_ENCOUNTER_MAP_PATH = "/ath/encounter-map";
 
         public const string WIKI_EXTRACT = "/wiki/extract";
 
@@ -37,7 +38,7 @@ public static class FogUrlBuilder
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
-
+        public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles";
     }
 
     public static class PageRoutes

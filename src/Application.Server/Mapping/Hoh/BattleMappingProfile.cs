@@ -13,6 +13,6 @@ public class BattleMappingProfile : Profile
         CreateMap<BattleSummaryEntity, BattleKey>();
 
         CreateMap<BattleSearchRequest, BattleSearchQuery>();
-        CreateMap<BattleUnitProperties, BattleSquadDto>();
+        CreateMap<BattleUnitProperties, BattleUnitDto>();
     }
 }

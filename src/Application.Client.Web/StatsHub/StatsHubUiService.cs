@@ -139,6 +139,12 @@ public class StatsHubUiService(
 
         return battleStatsViewModelFactory.Create(result);
     }
+    
+    public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default)
+    {
+        var unitBattles = await battleService.GetUnitBattlesAsync(unitId, ct);
+        return statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles);
+    }
 
     private async Task GetAgesAsync()
     {

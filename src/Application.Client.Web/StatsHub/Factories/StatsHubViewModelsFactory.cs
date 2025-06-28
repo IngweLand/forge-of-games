@@ -1,15 +1,18 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
@@ -17,7 +20,8 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 public class StatsHubViewModelsFactory(
     IMapper mapper,
     IAssetUrlProvider assetUrlProvider,
-    IHohHeroLevelSpecsProvider heroLevelSpecsProvider) : IStatsHubViewModelsFactory
+    IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
+    IResourceLocalizationService resourceLocalizationService) : IStatsHubViewModelsFactory
 {
     public PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages)
@@ -110,7 +114,7 @@ public class StatsHubViewModelsFactory(
     public BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
         IReadOnlyDictionary<string, HeroDto> heroes)
     {
-        return new BattleSummaryViewModel()
+        return new BattleSummaryViewModel
         {
             Id = summaryDto.Id,
             ResultStatus = summaryDto.ResultStatus,
@@ -120,18 +124,46 @@ public class StatsHubViewModelsFactory(
         };
     }
 
-    private BattleHeroViewModel CreateBattleViewModel(BattleSquadDto squad, HeroDto hero)
+    public IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
+        IReadOnlyCollection<UnitBattleDto> unitBattles)
+    {
+        var levelSpecs = heroLevelSpecsProvider.Get(500);
+
+        return unitBattles.Select(src =>
+            {
+                var level = levelSpecs.First(ls =>
+                    ls.Level == src.Unit.Level && ls.AscensionLevel == src.Unit.AscensionLevel);
+                var battleType = src.BattleDefinitionId.ToBattleType();
+                return new UnitBattleViewModel
+                {
+                    UnitId = src.Unit.UnitId,
+                    Level = level,
+                    AbilityLevel = src.Unit.AbilityLevel,
+                    AttackValue = (src.BattleStats?.Attack)?.ToString("N0") ?? string.Empty,
+                    DefenseValue = (src.BattleStats?.Defense)?.ToString("N0") ?? string.Empty,
+                    HealValue = (src.BattleStats?.Heal)?.ToString("N0") ?? string.Empty,
+                    BattleTypeName = resourceLocalizationService.Localize(battleType),
+                    BattleDefinitionId = src.BattleDefinitionId,
+                    BattleType = battleType,
+                    Difficulty = src.Difficulty,
+                };
+            })
+            .OrderBy(src => src.Level)
+            .ToList();
+    }
+
+    private BattleHeroViewModel CreateBattleViewModel(BattleUnitDto unit, HeroDto hero)
     {
         var levelSpecs = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count);
         var level = levelSpecs.First(ls =>
-            ls.Level == squad.Level && ls.AscensionLevel == squad.AscensionLevel);
+            ls.Level == unit.Level && ls.AscensionLevel == unit.AscensionLevel);
 
         var pvpUnitViewModel = new BattleHeroViewModel
         {
             Id = hero.Id,
             Name = hero.Unit.Name,
             Level = level,
-            AbilityLevel = squad.AbilityLevel,
+            AbilityLevel = unit.AbilityLevel,
             PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
             StarCount = hero.StarClass.ToStarCount(),
             UnitColor = hero.Unit.Color.ToCssColor(),

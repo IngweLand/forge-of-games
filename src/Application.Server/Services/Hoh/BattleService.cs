@@ -26,4 +26,11 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
 
         return await sender.Send(query, ct);
     }
+
+    public Task<IReadOnlyCollection<UnitBattleDto>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default)
+    {
+        var query = new GetUnitBattlesQuery(unitId);
+
+        return sender.Send(query, ct);
+    }
 }

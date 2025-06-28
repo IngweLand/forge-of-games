@@ -27,4 +27,7 @@ public interface IStatsHubViewModelsFactory
 
     BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
         IReadOnlyDictionary<string, HeroDto> heroes);
+
+    IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
+        IReadOnlyCollection<UnitBattleDto> unitBattles);
 }

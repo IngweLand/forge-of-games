@@ -46,4 +46,5 @@ public class HeroProfileViewModel
     public required string UnitTypeIconUrl { get; set; }
     public required string UnitTypeName { get; set; }
     public required string UnitTypeTintedIconUrl { get; set; }
+    public required string HeroUnitId { get; set; }
 }

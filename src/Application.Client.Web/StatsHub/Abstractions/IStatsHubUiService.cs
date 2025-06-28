@@ -25,4 +25,5 @@ public interface IStatsHubUiService
         CancellationToken ct = default);
 
     Task<BattleStatsViewModel> GetBattleStatsAsync(int battleStatsId, CancellationToken ct = default);
+    Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default);
 }

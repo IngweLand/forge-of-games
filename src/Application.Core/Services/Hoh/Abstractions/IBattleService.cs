@@ -11,5 +11,8 @@ public interface IBattleService
 
     [Get(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE_REFIT)]
     Task<BattleStatsDto?> GetBattleStatsAsync(int battleStatsId, CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE)]
+    Task<IReadOnlyCollection<UnitBattleDto>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default);
 
 }

@@ -140,8 +140,7 @@
         });
 
         NavigationManager.NavigateTo(
-            NavigationManager.GetUriWithQueryParameters(
-                FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query.AsReadOnly()), false);
+            NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);
     }
 
 }

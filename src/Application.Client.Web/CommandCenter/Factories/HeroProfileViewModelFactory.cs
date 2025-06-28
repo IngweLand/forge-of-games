@@ -52,6 +52,7 @@ public class HeroProfileViewModelFactory(
         {
             Id = profile.Id,
             HeroId = profile.HeroId,
+            HeroUnitId = hero.Unit.Id,
             Name = hero.Unit.Name,
             Level = level,
             AbilityLevel = profile.AbilityLevel,

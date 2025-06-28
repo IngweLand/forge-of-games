@@ -13,5 +13,5 @@ public record BattleSearchRequest
     public int TreasureHuntDifficulty { get; init; }
     public int TreasureHuntEncounter { get; init; }
     public int TreasureHuntStage { get; init; }
-    public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
+    public IReadOnlyCollection<string> UnitIds { get; init; } = [];
 }

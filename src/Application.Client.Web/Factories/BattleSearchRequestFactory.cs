@@ -14,6 +14,9 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
     private const string TreasureHuntDifficultyKey = "treasureHuntDifficulty";
     private const string TreasureHuntEncounterKey = "treasureHuntEncounter";
     private const string TreasureHuntStageKey = "treasureHuntStage";
+    private const string HistoricBattleRegionKey = "historicBattleRegion";
+    private const string HistoricBattleEncounterKey = "historicBattleEncounter";
+    private const string UnitIdKey = "unitId";
 
     private static readonly BattleSearchRequest DefaultInfo = new();
 
@@ -63,6 +66,15 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
         int.TryParse(query[TreasureHuntEncounterKey], out var treasureHuntEncounter);
         int.TryParse(query[TreasureHuntStageKey], out var treasureHuntStage);
 
+        var historicBattleRegionValue = query[HistoricBattleRegionKey];
+        if (string.IsNullOrWhiteSpace(historicBattleRegionValue) ||
+            !Enum.TryParse<RegionId>(historicBattleRegionValue, out var historicBattleRegionId))
+        {
+            historicBattleRegionId = DefaultInfo.HistoricBattleRegion;
+        }
+
+        int.TryParse(query[HistoricBattleEncounterKey], out var historicBattleEncounter);
+
         return new BattleSearchRequest
         {
             BattleType = battleType,
@@ -72,10 +84,13 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             TreasureHuntDifficulty = treasureHuntDifficulty,
             TreasureHuntEncounter = treasureHuntEncounter,
             TreasureHuntStage = treasureHuntStage,
+            HistoricBattleRegion = historicBattleRegionId,
+            HistoricBattleEncounter = historicBattleEncounter,
+            UnitIds = query.GetValues(UnitIdKey) ?? [],
         };
     }
 
-    public Dictionary<string, object?> CreateQueryParams(BattleSearchRequest request)
+    public IReadOnlyDictionary<string, object?> CreateQueryParams(BattleSearchRequest request)
     {
         return new Dictionary<string, object?>
         {
@@ -86,6 +101,59 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             [TreasureHuntDifficultyKey] = request.TreasureHuntDifficulty,
             [TreasureHuntEncounterKey] = request.TreasureHuntEncounter,
             [TreasureHuntStageKey] = request.TreasureHuntStage,
-        };
+            [HistoricBattleRegionKey] = request.HistoricBattleRegion.ToString(),
+            [HistoricBattleEncounterKey] = request.HistoricBattleEncounter,
+            [UnitIdKey] = request.UnitIds,
+        }.AsReadOnly();
+    }
+
+    public IReadOnlyDictionary<string, object?> CreateQueryParams(string battleDefinitionId, Difficulty difficulty,
+        BattleType battleType, IEnumerable<string>? unitIds, TreasureHuntEncounterMapDto? treasureHuntEncounterMap)
+    {
+        var queryParams = new Dictionary<string, object?>();
+        if (string.IsNullOrWhiteSpace(battleDefinitionId))
+        {
+            return queryParams;
+        }
+
+        queryParams.Add(BattleTypeKey, battleType.ToString());
+        queryParams.Add(DifficultyKey, difficulty.ToString());
+        const char delimiter = '_';
+        var battleDefinitionIdParts = battleDefinitionId.Split(delimiter);
+        if (battleType == BattleType.Campaign)
+        {
+            queryParams.Add(CampaignRegionKey, $"{battleDefinitionIdParts[0]}{delimiter}{battleDefinitionIdParts[1]}");
+            queryParams.Add(CampaignRegionEncounterKey, battleDefinitionIdParts[2]);
+        }
+
+        if (battleType == BattleType.TreasureHunt)
+        {
+            var athDifficulty = int.Parse(battleDefinitionIdParts[1]);
+            var athStage = int.Parse(battleDefinitionIdParts[2]);
+            var athEncounter = int.Parse(battleDefinitionIdParts[3]);
+            queryParams.Add(TreasureHuntDifficultyKey, athDifficulty);
+            queryParams.Add(TreasureHuntStageKey, athStage);
+            if (treasureHuntEncounterMap != null)
+            {
+                if (treasureHuntEncounterMap.BattleEncounterMap.TryGetValue((athDifficulty, athStage), out var map) &&
+                    map.TryGetValue(athEncounter, out var index))
+                {
+                    queryParams.Add(TreasureHuntEncounterKey, index);
+                }
+            }
+        }
+
+        if (battleType == BattleType.HistoricBattle)
+        {
+            queryParams.Add(HistoricBattleRegionKey, battleDefinitionIdParts[0]);
+            queryParams.Add(HistoricBattleEncounterKey, battleDefinitionIdParts[1]);
+        }
+
+        if (unitIds != null)
+        {
+            queryParams.Add(UnitIdKey, unitIds.ToHashSet().ToArray());
+        }
+
+        return queryParams.AsReadOnly();
     }
 }

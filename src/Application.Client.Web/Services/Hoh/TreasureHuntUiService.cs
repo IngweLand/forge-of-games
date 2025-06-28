@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 
@@ -12,6 +13,8 @@ public class TreasureHuntUiService(
     IMapper mapper)
     : ITreasureHuntUiService
 {
+    private TreasureHuntEncounterMapDto? _treasureHuntEncounterMap;
+
     private readonly Dictionary<(int difficulty, int stageIndex), TreasureHuntStageViewModel> _stages = new();
     private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
 
@@ -44,5 +47,16 @@ public class TreasureHuntUiService(
         var stageViewModel = treasureHuntStageViewModelFactory.Create(stage);
         _stages[key] = stageViewModel;
         return stageViewModel;
+    }
+
+    public async Task<TreasureHuntEncounterMapDto> GetBattleEncounterToIndexMapAsync()
+    {
+        if (_treasureHuntEncounterMap != null)
+        {
+            return _treasureHuntEncounterMap;
+        }
+
+        _treasureHuntEncounterMap = await treasureHuntService.GetBattleEncounterToIndexMapAsync();
+        return _treasureHuntEncounterMap;
     }
 }

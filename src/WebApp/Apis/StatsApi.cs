@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,12 +17,13 @@ public static class StatsApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
-        
+
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
-        
+
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE, GetUnitBattlesAsync);
 
         return api;
     }
@@ -31,7 +31,7 @@ public static class StatsApi
     private static async Task<Results<Ok<PlayerWithRankings>, NotFound, BadRequest<string>>>
         GetPlayerAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
     {
-        var query = new GetPlayerQuery()
+        var query = new GetPlayerQuery
         {
             PlayerId = playerId,
         };
@@ -43,7 +43,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Results<Ok<BattleStatsDto>, NotFound>>
         GetBattleStatsAsync([AsParameters] StatsServices services, HttpContext context, int battleStatsId)
     {
@@ -56,6 +56,14 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
+    private static async Task<Ok<IReadOnlyCollection<UnitBattleDto>>>
+        GetUnitBattlesAsync([AsParameters] StatsServices services, HttpContext context, string unitId)
+    {
+        var result = await services.BattleService.GetUnitBattlesAsync(unitId);
+
+        return TypedResults.Ok(result);
+    }
+
     private static async Task<Results<Ok<PaginatedList<PlayerDto>>, BadRequest<string>>>
         GetPlayersAsync([AsParameters] StatsServices services, HttpContext context,
             string worldId,
@@ -63,7 +71,7 @@ public static class StatsApi
             [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
             [FromQuery] string? name = null)
     {
-        var query = new GetPlayersWithPaginationQuery()
+        var query = new GetPlayersWithPaginationQuery
         {
             PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name,
         };
@@ -71,11 +79,11 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
         GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId)
     {
-        var query = new GetAllianceQuery()
+        var query = new GetAllianceQuery
         {
             AllianceId = allianceId,
         };
@@ -95,7 +103,7 @@ public static class StatsApi
             [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
             [FromQuery] string? name = null)
     {
-        var query = new GetAlliancesWithPaginationQuery()
+        var query = new GetAlliancesWithPaginationQuery
         {
             PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
         };
@@ -103,7 +111,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Results<Ok<BattleSearchResult>, NotFound, BadRequest<string>>>
         SearchBattlesAsync([AsParameters] StatsServices services, HttpContext context,
             [FromBody] BattleSearchRequest request)

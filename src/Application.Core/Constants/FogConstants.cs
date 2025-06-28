@@ -8,4 +8,5 @@ public static class FogConstants
     public static readonly int DisplayedStatsDays = 30;
     public static readonly int MaxDisplayedPvpBattles = 50;
     public static readonly int MaxDisplayedBattles = 30;
+    public static readonly int MaxDisplayedUnitBattles = 50;
 }

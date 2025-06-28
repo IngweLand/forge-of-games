@@ -9,7 +9,7 @@ public class BattleSummaryDto
     // Not for all battle locations
     public Difficulty Difficulty { get; init; }
     public required int Id { get; init; }
-    public required IReadOnlyCollection<BattleSquadDto> PlayerSquads { get; init; } = [];
+    public required IReadOnlyCollection<BattleUnitDto> PlayerSquads { get; init; } = [];
     public required BattleResultStatus ResultStatus { get; init; }
     public int? StatsId { get; set; }
 }

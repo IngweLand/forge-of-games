@@ -1,11 +1,15 @@
 @using System.Diagnostics.CodeAnalysis
-@using Ingweland.Fog.Application.Client.Web.CommandCenter
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Fog.Entities
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+@inject NavigationManager NavigationManager
 <div class="component-root">
     <div class="header-container">
         <div class="fog-container avatar-section">
@@ -41,7 +45,7 @@
         </div>
     </div>
 
-    <div class="fog-container options-container">
+    <div class="fog-container section-container options-container">
         <div class="selector-component">
             <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Main]" ToStringFunc="@(l => l?.Title)"
                        Value="@Profile.Level" T="HeroLevelSpecs"
@@ -87,7 +91,7 @@
             </div>
         }
     </div>
-    <div class="ability-container fog-container">
+    <div class="ability-container section-container fog-container">
         <div class="ability-description-container">
             <img src="@Profile.AbilityIconUrl"/>
             <span>@((MarkupString) Profile.AbilityDescription)</span>
@@ -98,7 +102,7 @@
     </div>
     @if (_progressionTargetLevels != null)
     {
-        <div class="progression-cost-container fog-container">
+        <div class="progression-cost-container section-container fog-container">
             <span class="progression-cost-title">@Loc[FogResource.Tools_HeroProgressionResourcesCalculator_Name]</span>
             <div class="selector-component">
                 <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" T="HeroLevelSpecs"
@@ -124,10 +128,76 @@
             }
         </div>
     }
+    <div class="fog-container unit-battles-container">
+        <span class="unit-battles-container-title">@Loc[FogResource.Unit_BattlesAndPerformance]</span>
+        @if (UnitBattles != null)
+        {
+            @if (UnitBattles.Count > 0)
+            {
+                <div class="unit-battles-table-container">
+                    <table class="unit-battles-table">
+                        <colgroup>
+                            <col style="width: 110px;"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-spacer-column"/>
+                            <col style="width: 32px;"/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>@Loc[FogResource.Hoh_Lvl]</th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_flat_unit_infantry")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_defender")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_healer")"/></th>
+                            <th/>
+                            <th/>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var group in UnitBattles.GroupBy(src => src.BattleTypeName))
+                        {
+                            <tr>
+                                <td class="battle-type-group" colspan="6">@group.Key</td>
+                            </tr>
+                            @foreach (var unitBattle in group)
+                            {
+                                <tr @onclick="@(() => OnUnitBattleClicked.InvokeAsync(unitBattle))">
+                                    <td>@unitBattle.Level.Title | @unitBattle.AbilityLevel</td>
+                                    <td>@unitBattle.AttackValue</td>
+                                    <td>@unitBattle.DefenseValue</td>
+                                    <td>@unitBattle.HealValue</td>
+                                    <td></td>
+                                    <td><span class="material-symbols-outlined">chevron_right</span></td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
+                    @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
+                </div>
+            }
+        }
+        else
+        {
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true"/>
+        }
+    </div>
 
     @if (Profile.SupportUnit != null)
     {
-        <div class="support-unit-container fog-container">
+        <div class="support-unit-container section-container fog-container">
             <img src="@Profile.SupportUnit.IconUrl"/>
             @foreach (var statItem in Profile.SupportUnit.StatsItems)
             {
@@ -139,6 +209,12 @@
 </div>
 
 @code {
+
+    [Parameter]
+    public IReadOnlyCollection<UnitBattleViewModel>? UnitBattles { get; set; }
+
+    [Parameter]
+    public EventCallback<UnitBattleViewModel> OnUnitBattleClicked { get; set; }
 
     private HeroLevelSpecs? _progressionTargetLevel;
 
@@ -225,7 +301,7 @@
 
     private HeroProfileStatsUpdateRequest CreateRequest()
     {
-        return new HeroProfileStatsUpdateRequest()
+        return new HeroProfileStatsUpdateRequest
         {
             HeroProfileId = Profile.Id,
             Level = Profile.Level,
@@ -239,12 +315,17 @@
     {
         //TODO: this is called on any profile change, which is not required.
         _progressionTargetLevel = targetLevel;
-        ProgressionTargetLevelChanged.InvokeAsync(new HeroProgressionCostRequest()
+        ProgressionTargetLevelChanged.InvokeAsync(new HeroProgressionCostRequest
         {
             HeroId = _profile.HeroId,
             CurrentLevel = _profile.Level,
             TargetLevel = targetLevel,
         });
+    }
+
+    private void OnContributionPromptClick()
+    {
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH);
     }
 
 }

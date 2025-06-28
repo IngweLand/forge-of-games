@@ -2526,6 +2526,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battles and performance.
+        /// </summary>
+        public static string Unit_BattlesAndPerformance {
+            get {
+                return ResourceManager.GetString("Unit.BattlesAndPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Explore the wonders of Heroes of History. View wonder levels, upgrade costs, and crate requirements for China, Egypt, and Vikings..
         /// </summary>
         public static string Wonder_Meta_Description {

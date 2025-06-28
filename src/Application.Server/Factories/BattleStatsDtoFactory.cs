@@ -43,7 +43,7 @@ public class BattleStatsDtoFactory(
         };
     }
 
-    private async Task<UnitBattleStatsDto> CreateUnitBattleStatsDto(UnitBattleStatsEntity entity)
+    public async Task<UnitBattleStatsDto> CreateUnitBattleStatsDto(UnitBattleStatsEntity entity)
     {
         var unit = await coreDataRepository.GetUnitAsync(entity.UnitId);
         return new UnitBattleStatsDto

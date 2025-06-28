@@ -44,17 +44,17 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
         var playerSquads =
             JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads, JsonSerializerOptions) ??
             [];
-        var playerSquadDtos = playerSquads
+        var playerBattleUnitDtos = playerSquads
             .Where(src => src.Hero != null)
             .OrderBy(src => src.BattlefieldSlot)
-            .Select(src => mapper.Map<BattleSquadDto>(src.Hero!.Properties))
+            .Select(src => mapper.Map<BattleUnitDto>(src.Hero!.Properties))
             .ToList();
         return new BattleSummaryDto
         {
             Id = entity.Id,
             BattleDefinitionId = entity.BattleDefinitionId,
             ResultStatus = entity.ResultStatus,
-            PlayerSquads = playerSquadDtos,
+            PlayerSquads = playerBattleUnitDtos,
             Difficulty = entity.Difficulty,
             StatsId = statsId,
         };

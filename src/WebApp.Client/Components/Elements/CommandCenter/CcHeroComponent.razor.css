@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 6px;
     gap: 6px;
+    margin-bottom: 12px;
 }
 
 .header-container {
@@ -120,19 +121,21 @@
     gap: 10px;
 }
 
-.options-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+.section-container{
+    display: flex;
     padding: 8px;
     gap: 8px;
 }
 
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    
+}
+
 .ability-container, .progression-cost-container{
-    display: flex;
     flex-direction: column;
-    gap: 8px;
     width: 100%;
-    padding: 8px;
 }
 
 .progression-cost-container{
@@ -140,10 +143,7 @@
 }
 
 .support-unit-container {
-    display: flex;
-    gap: 8px;
     width: 100%;
-    padding: 8px;
     font-size: 14px;
 }
 
@@ -181,6 +181,101 @@
     min-width: 140px;
 }
 
+.unit-battles-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.unit-battles-container-title{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fog-text-on-container-color);
+    margin: 8px;
+}
+
+.unit-battles-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    align-self: center;
+}
+
+table {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-type-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.battle-stats-table>:not(caption)>*>*:has(>img) {
+    background-color: transparent;
+}
+
+.battle-stats-table>:not(caption)>*>* {
+    background-color: transparent;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: none !important;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    text-align: center;
+}
+
+th {
+    padding: 6px 0;
+    background-color:  var(--fog-text-on-container-color) !important;
+    color: var(--fog-text-on-dark-color) !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    font-size: 12px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+td > * {
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.battle-type-group {
+    background-color: var(--fog-container-color);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 12px;
+    text-align: start;
+}
+
+.unit-battles-table-column {
+    width: 100%;
+}
+
+.unit-battles-table-spacer-column {
+    width: 0;
+    min-width: 0;
+}
+
+.help-info {
+    cursor: pointer;
+}
 
 @media (min-width: 576px) {
     .component-root{
@@ -223,12 +318,10 @@
         font-size: 20px;
     }
 
-
-    .options-container, .ability-container, .progression-cost-container{
+    .section-container{
         gap: 12px;
         padding: 12px;
     }
-
 
     .ability-description-container {
         gap: 12px;
@@ -253,5 +346,26 @@
 
     .progression-cost-items-container {
         gap: 24px;
+    }
+
+    .unit-battles-container-title{
+        font-size: 16px;
+        margin: 12px;
+    }
+    
+    .battle-type-group {
+        font-size: 12px;
+    }
+    td {
+        font-size: 14px;
+        padding: 4px 0;   
+    }
+
+    .unit-battles-table-column {
+        width: 140px;
+    }
+
+    .unit-battles-table-spacer-column {
+        width: 100%;
     }
 }

@@ -16,6 +16,8 @@ public class TreasureHuntService(
     IMapper mapper,
     ILogger<TreasureHuntService> logger) : ITreasureHuntService
 {
+    private TreasureHuntEncounterMapDto? _treasureHuntEncounterMap;
+
     public async Task<IReadOnlyCollection<TreasureHuntDifficultyDataBasicDto>> GetDifficultiesAsync()
     {
         var difficulties = await hohCoreDataRepository.GetTreasureHuntDifficultiesAsync();
@@ -55,5 +57,35 @@ public class TreasureHuntService(
         }
 
         return treasureHuntStageDtoFactory.Create(stage, difficulty, units, heroes);
+    }
+
+    public async Task<TreasureHuntEncounterMapDto> GetBattleEncounterToIndexMapAsync()
+    {
+        if (_treasureHuntEncounterMap != null)
+        {
+            return _treasureHuntEncounterMap;
+        }
+
+        var difficulties = await hohCoreDataRepository.GetTreasureHuntDifficultiesAsync();
+        var map = new Dictionary<(int difficulty, int stage), IReadOnlyDictionary<int, int>>();
+        foreach (var difficulty in difficulties)
+        {
+            foreach (var stageData in difficulty.Stages)
+            {
+                var key = (difficulty.Difficulty, stageData.Index);
+                var encounters = stageData.Battles.Select(b => int.Parse(b.Id[(b.Id.LastIndexOf('_') + 1)..])).Order()
+                    .ToList();
+                var index = 0;
+                var result = encounters.ToDictionary(encounter => encounter, _ => index++);
+                map[key] = result;
+            }
+        }
+
+        _treasureHuntEncounterMap = new TreasureHuntEncounterMapDto
+        {
+            BattleEncounterMap = map,
+        };
+
+        return _treasureHuntEncounterMap;
     }
 }

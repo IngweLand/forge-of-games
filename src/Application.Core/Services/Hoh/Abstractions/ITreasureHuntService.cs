@@ -11,4 +11,7 @@ public interface ITreasureHuntService
 
     [Get(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE_REFIT)]
     Task<TreasureHuntStageDto?> GetStageAsync(int difficulty, int stageIndex);
+
+    [Get(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTER_MAP_PATH)]
+    Task<TreasureHuntEncounterMapDto> GetBattleEncounterToIndexMapAsync();
 }

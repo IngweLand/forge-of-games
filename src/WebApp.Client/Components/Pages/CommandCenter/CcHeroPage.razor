@@ -8,7 +8,9 @@
     <CcHeroComponent ProgressionCost="@_progressionCost"
                             Profile="@_heroProfileViewModel"
                             ProgressionTargetLevelChanged="OnProgressionTargetLevelChanged"
-                            ValueChanged="UpdateProfile"/>
+                            ValueChanged="UpdateProfile"
+                            UnitBattles="@_unitBattles"
+                            OnUnitBattleClicked="OpenBattle"/>
 }
 
 @code {
