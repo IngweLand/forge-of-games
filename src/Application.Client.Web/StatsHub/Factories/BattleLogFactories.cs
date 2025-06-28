@@ -15,6 +15,7 @@ public class BattleLogFactories(
         IReadOnlyCollection<ContinentBasicViewModel> campaignContinents,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyCollection<RegionBasicViewModel> historicBattles,
+        IReadOnlyCollection<RegionBasicViewModel> teslaStormRegions,
         IReadOnlyCollection<HeroBasicViewModel> heroes)
     {
         return new BattleSelectorViewModel
@@ -24,6 +25,7 @@ public class BattleLogFactories(
                 {BattleType.Campaign, localizer[FogResource.BattleType_Campaign]},
                 {BattleType.TreasureHunt, localizer[FogResource.BattleType_TreasureHunt]},
                 {BattleType.HistoricBattle, localizer[FogResource.BattleType_HistoricBattle]},
+                {BattleType.TeslaStorm, localizer[FogResource.BattleType_TeslaStorm]},
             },
             CampaignContinents = campaignContinents,
             Difficulties = new Dictionary<Difficulty, string>
@@ -33,6 +35,7 @@ public class BattleLogFactories(
             },
             TreasureHuntDifficulties = treasureHuntDifficulties,
             HistoricBattleRegions = historicBattles,
+            TeslaStormRegions = teslaStormRegions,
             Heroes = heroes,
         };
     }

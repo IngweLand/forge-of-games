@@ -17,6 +17,7 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
             BattleType.Campaign => CreateCampaignId(request, sb),
             BattleType.TreasureHunt => await CreateTreasureHuntId(request, sb),
             BattleType.HistoricBattle => CreateHistoricBattleId(request, sb),
+            BattleType.TeslaStorm => CreateTeslaStormId(request, sb),
             _ => sb.ToString(),
         };
     }
@@ -31,6 +32,15 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
         {
             sb.Append("_Hard");
         }
+
+        return sb.ToString();
+    }
+
+    private string CreateTeslaStormId(BattleSearchRequest request, StringBuilder sb)
+    {
+        sb.Append(request.TeslaStormRegion)
+            .Append('_')
+            .Append(request.TeslaStormEncounter);
 
         return sb.ToString();
     }

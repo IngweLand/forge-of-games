@@ -9,5 +9,6 @@ public interface IBattleLogFactories
     BattleSelectorViewModel CreateBattleSelectorData(IReadOnlyCollection<ContinentBasicViewModel> campaignContinents,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyCollection<RegionBasicViewModel> historicBattles,
+        IReadOnlyCollection<RegionBasicViewModel> teslaStormRegions,
         IReadOnlyCollection<HeroBasicViewModel> heroes);
 }

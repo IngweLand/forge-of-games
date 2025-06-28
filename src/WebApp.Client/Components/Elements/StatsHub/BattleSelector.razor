@@ -119,6 +119,28 @@
                     }
                 </MudSelect>
             }
+            else if (SearchRequest.BattleType == BattleType.TeslaStorm)
+            {
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Battle]"
+                           Value="@_selectedTeslaStormRegion"
+                           T="RegionBasicViewModel" Strict="true"
+                           ValueChanged="TeslaRegionOnChange" Variant="Variant.Outlined">
+                    @foreach (var region in ViewModel.TeslaStormRegions)
+                    {
+                        <MudSelectItem Value="@region">@region.Name</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Encounter]"
+                           Value="@SearchRequest.TeslaStormEncounter"
+                           T="int" Strict="true"
+                           ValueChanged="TeslaStormEncounterOnChange" Variant="Variant.Outlined">
+                    @foreach (var encounter in ViewModel.TeslaStormEncounters)
+                    {
+                        <MudSelectItem Value="@encounter">@encounter</MudSelectItem>
+                    }
+                </MudSelect>
+            }
         </div>
 
         <div class="units-container">
@@ -151,6 +173,7 @@
     private const int MaxUnitCount = 5;
     private RegionBasicViewModel? _selectedCampaignRegion;
     private RegionBasicViewModel? _selectedHistoricBattleRegion;
+    private RegionBasicViewModel? _selectedTeslaStormRegion;
 
     [Parameter]
     public required BattleSearchRequest SearchRequest { get; set; }
@@ -174,6 +197,8 @@
 
             _historicBattleRegionViewModels = _viewModel?.HistoricBattleRegions
                 .ToDictionary(src => src.Id) ?? [];
+            _teslaStormRegionViewModels = _viewModel?.TeslaStormRegions
+                .ToDictionary(src => src.Id) ?? [];
         }
     }
 
@@ -182,6 +207,7 @@
 
     private Dictionary<RegionId, RegionBasicViewModel> _regionViewModels = [];
     private Dictionary<RegionId, RegionBasicViewModel> _historicBattleRegionViewModels = [];
+    private Dictionary<RegionId, RegionBasicViewModel> _teslaStormRegionViewModels = [];
     private BattleSelectorViewModel? _viewModel;
 
     protected override void OnParametersSet()
@@ -199,6 +225,11 @@
         if (!_historicBattleRegionViewModels.TryGetValue(SearchRequest.HistoricBattleRegion, out _selectedHistoricBattleRegion))
         {
             _selectedHistoricBattleRegion = ViewModel.HistoricBattleRegions.First();
+        }
+
+        if (!_teslaStormRegionViewModels.TryGetValue(SearchRequest.TeslaStormRegion, out _selectedTeslaStormRegion))
+        {
+            _selectedTeslaStormRegion = ViewModel.TeslaStormRegions.First();
         }
     }
 
@@ -228,6 +259,13 @@
         return SearchRequest.HistoricBattleRegion == newValue.Id
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {HistoricBattleRegion = newValue.Id});
+    }
+
+    private Task TeslaRegionOnChange(RegionBasicViewModel newValue)
+    {
+        return SearchRequest.TeslaStormRegion == newValue.Id
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {TeslaStormRegion = newValue.Id});
     }
 
     private Task CampaignRegionEncounterOnChange(int newValue)
@@ -263,6 +301,13 @@
         return SearchRequest.HistoricBattleEncounter == newValue
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {HistoricBattleEncounter = newValue});
+    }
+
+    private Task TeslaStormEncounterOnChange(int newValue)
+    {
+        return SearchRequest.TeslaStormEncounter == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {TeslaStormEncounter = newValue});
     }
 
     private async Task AddHero()

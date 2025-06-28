@@ -113,10 +113,12 @@ public class StatsHubUiService(
         var campaignTask = campaignUiService.GetCampaignContinentsBasicDataAsync();
         var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
         var historicBattlesTask = campaignUiService.GetHistoricBattlesBasicDataAsync();
+        var teslaStormTask = campaignUiService.GetTeslaStormRegionsBasicDataAsync();
         var heroesTask = unitUiService.GetHeroListAsync();
-        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask);
+        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask);
         return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
-            historicBattlesTask.Result, heroesTask.Result);
+            historicBattlesTask.Result, teslaStormTask.Result,
+            heroesTask.Result);
     }
 
     public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
@@ -139,8 +141,9 @@ public class StatsHubUiService(
 
         return battleStatsViewModelFactory.Create(result);
     }
-    
-    public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default)
+
+    public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId,
+        CancellationToken ct = default)
     {
         var unitBattles = await battleService.GetUnitBattlesAsync(unitId, ct);
         return statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles);

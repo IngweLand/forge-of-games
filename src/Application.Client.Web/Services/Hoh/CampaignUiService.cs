@@ -19,6 +19,7 @@ public class CampaignUiService(
 {
     private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
     private IReadOnlyCollection<RegionBasicViewModel>? _cachedHistoricBattles;
+    private IReadOnlyCollection<RegionBasicViewModel>? _cachedTeslaStormRegions;
 
     public async Task<IReadOnlyCollection<ContinentBasicViewModel>> GetCampaignContinentsBasicDataAsync()
     {
@@ -102,5 +103,28 @@ public class CampaignUiService(
             Rewards = mapper.Map<IReadOnlyDictionary<Difficulty, IReadOnlyCollection<IconLabelItemViewModel>>>(
                 region.Rewards),
         };
+    }
+
+    public async Task<IReadOnlyCollection<RegionBasicViewModel>> GetTeslaStormRegionsBasicDataAsync()
+    {
+        if (_cachedTeslaStormRegions != null)
+        {
+            return _cachedTeslaStormRegions;
+        }
+
+        var regions = new List<RegionId>
+        {
+            RegionId.TeslaStormBlue, RegionId.TeslaStormRed, RegionId.TeslaStormYellow, RegionId.TeslaStormGreen,
+            RegionId.TeslaStormPurple,
+        };
+
+        var list = new List<RegionBasicViewModel>();
+        foreach (var regionId in regions)
+        {
+            list.Add(mapper.Map<RegionBasicViewModel>(await campaignService.GetRegionBasicDataAsync(regionId)));
+        }
+
+        _cachedTeslaStormRegions = list.AsReadOnly();
+        return _cachedTeslaStormRegions;
     }
 }

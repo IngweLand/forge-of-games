@@ -7,4 +7,5 @@ public interface ICampaignUiService
     Task<RegionViewModel?> GetRegionAsync(string id);
     Task<IReadOnlyCollection<ContinentBasicViewModel>> GetCampaignContinentsBasicDataAsync();
     Task<IReadOnlyCollection<RegionBasicViewModel>> GetHistoricBattlesBasicDataAsync();
+    Task<IReadOnlyCollection<RegionBasicViewModel>> GetTeslaStormRegionsBasicDataAsync();
 }

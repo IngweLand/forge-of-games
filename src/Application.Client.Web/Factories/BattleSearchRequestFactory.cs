@@ -16,6 +16,8 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
     private const string TreasureHuntStageKey = "treasureHuntStage";
     private const string HistoricBattleRegionKey = "historicBattleRegion";
     private const string HistoricBattleEncounterKey = "historicBattleEncounter";
+    private const string TeslaStormRegionKey = "teslaStormRegion";
+    private const string TeslaStormEncounterKey = "teslaStormEncounter";
     private const string UnitIdKey = "unitId";
 
     private static readonly BattleSearchRequest DefaultInfo = new();
@@ -73,7 +75,26 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             historicBattleRegionId = DefaultInfo.HistoricBattleRegion;
         }
 
-        int.TryParse(query[HistoricBattleEncounterKey], out var historicBattleEncounter);
+        var historicBattleEncounterValue = query[HistoricBattleEncounterKey];
+        if (string.IsNullOrWhiteSpace(historicBattleEncounterValue) ||
+            !int.TryParse(historicBattleEncounterValue, out var historicBattleEncounter))
+        {
+            historicBattleEncounter = DefaultInfo.HistoricBattleEncounter;
+        }
+
+        var teslaStormRegionValue = query[TeslaStormRegionKey];
+        if (string.IsNullOrWhiteSpace(teslaStormRegionValue) ||
+            !Enum.TryParse<RegionId>(teslaStormRegionValue, out var teslaStormRegionId))
+        {
+            teslaStormRegionId = DefaultInfo.TeslaStormRegion;
+        }
+
+        var teslaStormEncounterValue = query[TeslaStormEncounterKey];
+        if (string.IsNullOrWhiteSpace(teslaStormEncounterValue) ||
+            !int.TryParse(teslaStormEncounterValue, out var teslaStormEncounter))
+        {
+            teslaStormEncounter = DefaultInfo.TeslaStormEncounter;
+        }
 
         return new BattleSearchRequest
         {
@@ -86,6 +107,8 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             TreasureHuntStage = treasureHuntStage,
             HistoricBattleRegion = historicBattleRegionId,
             HistoricBattleEncounter = historicBattleEncounter,
+            TeslaStormRegion = teslaStormRegionId,
+            TeslaStormEncounter = teslaStormEncounter,
             UnitIds = query.GetValues(UnitIdKey) ?? [],
         };
     }
@@ -103,6 +126,8 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             [TreasureHuntStageKey] = request.TreasureHuntStage,
             [HistoricBattleRegionKey] = request.HistoricBattleRegion.ToString(),
             [HistoricBattleEncounterKey] = request.HistoricBattleEncounter,
+            [TeslaStormRegionKey] = request.TeslaStormRegion.ToString(),
+            [TeslaStormEncounterKey] = request.TeslaStormEncounter,
             [UnitIdKey] = request.UnitIds,
         }.AsReadOnly();
     }
@@ -147,6 +172,12 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
         {
             queryParams.Add(HistoricBattleRegionKey, battleDefinitionIdParts[0]);
             queryParams.Add(HistoricBattleEncounterKey, battleDefinitionIdParts[1]);
+        }
+
+        if (battleType == BattleType.TeslaStorm)
+        {
+            queryParams.Add(TeslaStormRegionKey, battleDefinitionIdParts[0]);
+            queryParams.Add(TeslaStormEncounterKey, battleDefinitionIdParts[1]);
         }
 
         if (unitIds != null)
