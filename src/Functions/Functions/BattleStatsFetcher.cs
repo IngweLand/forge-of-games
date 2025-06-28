@@ -20,7 +20,7 @@ public class BattleStatsFetcher(
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
     [Function("BattleStatsFetcher")]
-    public async Task Run([TimerTrigger(" */23 * * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 */23 * * * *")] TimerInfo myTimer)
     {
         logger.LogInformation("BattleStatsFetcher started");
         var allBattleStatsIds = new HashSet<byte[]>(StructuralByteArrayComparer.Instance);
