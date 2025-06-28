@@ -6,7 +6,6 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Core.Helpers;
-using Ingweland.Fog.Dtos.Hoh.Battle;
 using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
@@ -16,8 +15,6 @@ public partial class CcHeroPage : CommandCenterPageBase, IAsyncDisposable
     private CancellationTokenSource _cts = new();
     private HeroProfileViewModel? _heroProfileViewModel;
     private IReadOnlyCollection<IconLabelItemViewModel>? _progressionCost;
-
-    private TreasureHuntEncounterMapDto? _treasureHuntEncounterMap;
 
     private IReadOnlyCollection<UnitBattleViewModel>? _unitBattles;
 
@@ -70,7 +67,6 @@ public partial class CcHeroPage : CommandCenterPageBase, IAsyncDisposable
             var encounterMapTask = TreasureHuntUiService.GetBattleEncounterToIndexMapAsync();
             await Task.WhenAll(unitBattlesTask, encounterMapTask);
             _unitBattles = unitBattlesTask.Result;
-            _treasureHuntEncounterMap = encounterMapTask.Result;
         }
     }
 
@@ -97,10 +93,11 @@ public partial class CcHeroPage : CommandCenterPageBase, IAsyncDisposable
         _cts.Dispose();
     }
 
-    private void OpenBattle(UnitBattleViewModel unitBattle)
+    private async Task OpenBattle(UnitBattleViewModel unitBattle)
     {
         var query = BattleSearchRequestFactory.CreateQueryParams(unitBattle.BattleDefinitionId, unitBattle.Difficulty,
-            unitBattle.BattleType, [unitBattle.UnitId, unitBattle.UnitId], _treasureHuntEncounterMap);
+            unitBattle.BattleType, [unitBattle.UnitId, unitBattle.UnitId],
+            await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
 
         NavigationManager.NavigateTo(
             NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);

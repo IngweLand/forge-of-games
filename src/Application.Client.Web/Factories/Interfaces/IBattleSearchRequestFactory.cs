@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -9,5 +10,6 @@ public interface IBattleSearchRequestFactory
     IReadOnlyDictionary<string, object?> CreateQueryParams(BattleSearchRequest request);
 
     IReadOnlyDictionary<string, object?> CreateQueryParams(string battleDefinitionId, Difficulty difficulty,
-        BattleType battleType, IEnumerable<string>? unitIds, TreasureHuntEncounterMapDto? treasureHuntEncounterMap);
+        BattleType battleType, IEnumerable<string>? unitIds,
+        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap);
 }

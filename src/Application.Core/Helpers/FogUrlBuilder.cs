@@ -23,7 +23,7 @@ public static class FogUrlBuilder
         public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
         public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";
         public const string TREASURE_HUNT_STAGE_TEMPLATE = "/ath/difficulties/{difficulty:int}/stages/{stageIndex:int}";
-        public const string TREASURE_HUNT_ENCOUNTER_MAP_PATH = "/ath/encounter-map";
+        public const string TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH = "/ath/encounter/basicData";
 
         public const string WIKI_EXTRACT = "/wiki/extract";
 

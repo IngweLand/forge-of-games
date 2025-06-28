@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using System.Web;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -133,7 +134,8 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
     }
 
     public IReadOnlyDictionary<string, object?> CreateQueryParams(string battleDefinitionId, Difficulty difficulty,
-        BattleType battleType, IEnumerable<string>? unitIds, TreasureHuntEncounterMapDto? treasureHuntEncounterMap)
+        BattleType battleType, IEnumerable<string>? unitIds,
+        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap)
     {
         var queryParams = new Dictionary<string, object?>();
         if (string.IsNullOrWhiteSpace(battleDefinitionId))
@@ -158,13 +160,10 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             var athEncounter = int.Parse(battleDefinitionIdParts[3]);
             queryParams.Add(TreasureHuntDifficultyKey, athDifficulty);
             queryParams.Add(TreasureHuntStageKey, athStage);
-            if (treasureHuntEncounterMap != null)
+            if (treasureHuntEncounterMap.TryGetValue((athDifficulty, athStage), out var map) &&
+                map.TryGetValue(athEncounter, out var index))
             {
-                if (treasureHuntEncounterMap.BattleEncounterMap.TryGetValue((athDifficulty, athStage), out var map) &&
-                    map.TryGetValue(athEncounter, out var index))
-                {
-                    queryParams.Add(TreasureHuntEncounterKey, index);
-                }
+                queryParams.Add(TreasureHuntEncounterKey, index);
             }
         }
 

@@ -1,9 +1,9 @@
+using System.Collections.ObjectModel;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Dtos.Hoh.Battle;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 
@@ -13,10 +13,9 @@ public class TreasureHuntUiService(
     IMapper mapper)
     : ITreasureHuntUiService
 {
-    private TreasureHuntEncounterMapDto? _treasureHuntEncounterMap;
-
     private readonly Dictionary<(int difficulty, int stageIndex), TreasureHuntStageViewModel> _stages = new();
     private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+    private IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>>? _treasureHuntEncounterMap;
 
     public async Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>> GetDifficultiesAsync()
     {
@@ -49,14 +48,20 @@ public class TreasureHuntUiService(
         return stageViewModel;
     }
 
-    public async Task<TreasureHuntEncounterMapDto> GetBattleEncounterToIndexMapAsync()
+    public async Task<IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>>>
+        GetBattleEncounterToIndexMapAsync()
     {
         if (_treasureHuntEncounterMap != null)
         {
             return _treasureHuntEncounterMap;
         }
 
-        _treasureHuntEncounterMap = await treasureHuntService.GetBattleEncounterToIndexMapAsync();
+        var encounters = await treasureHuntService.GetTreasureHuntEncountersBasicDataAsync();
+        _treasureHuntEncounterMap = encounters
+            .GroupBy(src => (src.Difficulty, src.Stage))
+            .ToDictionary(g => g.Key, g => g.ToDictionary(src => src.Encounter, src => src.Index).AsReadOnly())
+            .AsReadOnly();
+
         return _treasureHuntEncounterMap;
     }
 }
