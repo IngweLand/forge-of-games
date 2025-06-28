@@ -54,7 +54,8 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                 {
                     var date = DateOnly.FromDateTime(allianceAggregate.CollectedAt);
                     var existingRanking =
-                        existingAlliance.Rankings.FirstOrDefault(r => r.CollectedAt == date);
+                        existingAlliance.Rankings.FirstOrDefault(r =>
+                            r.CollectedAt == date && r.Type == allianceAggregate.AllianceRankingType);
                     if (existingRanking != null)
                     {
                         existingRanking.Points = allianceAggregate.RankingPoints!.Value;
@@ -75,7 +76,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                             existingAlliance.Rank = allianceAggregate.Rank!.Value;
                             existingAlliance.UpdatedAt = date;
                         }
-                        
+
                         if (allianceAggregate.RegisteredAt.HasValue)
                         {
                             existingAlliance.RegisteredAt = allianceAggregate.RegisteredAt!.Value;
@@ -94,6 +95,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                                 {
                                     oldLedAlliance.Leader = null;
                                 }
+
                                 existingAlliance.Leader = leader;
                             }
                         }
@@ -106,7 +108,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                     logger.LogWarning("Alliance with key {AllianceKey} not found.", allianceAggregate.Key);
                 }
             }
-            
+
             await context.SaveChangesAsync();
         }
 
