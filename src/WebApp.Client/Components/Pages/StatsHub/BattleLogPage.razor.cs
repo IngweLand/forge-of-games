@@ -18,6 +18,7 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private BattleSelectorViewModel? _battleSelectorViewModel;
     private CancellationTokenSource _battleStatsCts = new();
+    private bool _isDisposed;
 
     private bool _isLoading = true;
 
@@ -45,13 +46,24 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     protected override async Task OnParametersSetAsync()
     {
-        await base.OnParametersSetAsync();
+        if (_isDisposed)
+        {
+            return;
+        }
 
+        await base.OnParametersSetAsync();
         await GetBattles(BattleSearchRequestFactory.Create(NavigationManager.Uri));
     }
 
     protected virtual async ValueTask DisposeAsyncCore()
     {
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _isDisposed = true;
+
         await _battlesCts.CancelAsync();
         _battlesCts.Dispose();
 
@@ -61,15 +73,23 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private async Task GetBattles(BattleSearchRequest request)
     {
-        _isLoading = true;
+        if (_isDisposed)
+        {
+            return;
+        }
 
+        _isLoading = true;
         _battles = [];
 
         await _battlesCts.CancelAsync();
         _battlesCts.Dispose();
 
-        _battlesCts = new CancellationTokenSource();
+        if (_isDisposed)
+        {
+            return;
+        }
 
+        _battlesCts = new CancellationTokenSource();
         _battleSearchRequest = request;
 
         try
@@ -79,6 +99,11 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
         catch
         {
             // ignored
+        }
+
+        if (_isDisposed)
+        {
+            return;
         }
 
         _isLoading = false;
@@ -110,9 +135,15 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private async Task OpenBattleStats(BattleSummaryViewModel battle)
     {
+        if (_isDisposed || battle.StatsId == null)
+        {
+            return;
+        }
+
         await _battleStatsCts.CancelAsync();
         _battleStatsCts.Dispose();
-        if (battle.StatsId == null)
+
+        if (_isDisposed)
         {
             return;
         }
