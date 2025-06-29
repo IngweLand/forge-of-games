@@ -58,6 +58,7 @@ public static class FogUrlBuilder
         public const string BASE_WONDERS_PATH = "/wonders";
         public const string BASE_HELP_PATH = "/help";
         public const string HELP_COMMAND_CENTER_PATH = BASE_HELP_PATH + "/command-center";
+        public const string HELP_HERO_PLAYGROUNDS_PATH = HELP_COMMAND_CENTER_PATH + "/hero-playgrounds";
         public const string HELP_EQUIPMENT_PATH = BASE_HELP_PATH + "/equipment";
         public const string HELP_CITY_PLANNER_SNAPSHOTS_PATH = BASE_HELP_PATH + "/city-planner-snapshots";
         public const string HELP_BROWSER_EXTENSION_PATH = BASE_HELP_PATH + "/browser-extension";

@@ -27,6 +27,19 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 HelpPagePath = FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH
             };
         }
+        
+        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH))
+        {
+            return new PageMetadata
+            {
+                PageTitle = localizer[FogResource.CommandCenter_PageTitle],
+                Description = localizer[FogResource.CommandCenter_Meta_Description],
+                Keywords = localizer[FogResource.CommandCenter_Meta_Keywords],
+                Title = localizer[FogResource.CommandCenter_Menu_HeroPlaygrounds],
+                CurrentHomePath = FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
+                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_HERO_PLAYGROUNDS_PATH,
+            };
+        }
 
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_COMMAND_CENTER_PATH))
         {

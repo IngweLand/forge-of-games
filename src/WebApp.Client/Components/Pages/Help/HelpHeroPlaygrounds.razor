@@ -1,0 +1,67 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_HERO_PLAYGROUNDS_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>Hero Playgrounds Help Guide</h3>
+
+    <div class="help-info">
+        Hero Playgrounds is a powerful tool designed to explore and analyze all available heroes in the game. It lets
+        you simulate different hero configurations, understand how various levels and upgrades affect performance, and
+        plan your progression strategy in detail.
+    </div>
+
+    <div class="help-step">
+        <h5>Hero Overview</h5>
+        <p>
+            Each hero has a dedicated page that displays their main stats, including Attack, Defense, Hitpoints, and
+            other core attributes. These values change dynamically based on the configuration you set.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Customizing Hero Levels</h5>
+        <p>
+            Use the selectors at the top of the hero page to set:
+        </p>
+        <ul>
+            <li>Main Hero Level</li>
+            <li>Ability Level</li>
+            <li>Awakening Level</li>
+            <li>Barracks Level</li>
+        </ul>
+        <p> As you adjust any of these values, the hero's properties are updated in real time, allowing you to
+            experiment with different setups.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Progression Calculator</h5>
+        <p>
+            Plan your upgrades more efficiently using the built-in progression calculator. Simply set a target level,
+            and the calculator will show you all required resources to reach that level from the currently selected hero
+            level.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Battles and Performance</h5>
+        <p>
+            This section displays performance statistics from battles where the hero has been used. Each entry in the
+            table is clickable — selecting an item will take you directly to the battle log for further review and
+            analysis.
+        </p>
+        <p>
+            For more details, visit the
+            <a href="@FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH">Battle Log Help</a>.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Support Unit Details</h5>
+        <p>
+            Every hero page includes a section for the hero’s support unit. This section outlines the unit’s stats and
+            how it enhances the hero’s abilities.
+        </p>
+    </div>
+</div>
