@@ -13,6 +13,7 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
     {
         var query = new BattleSearchQuery
         {
+            BattleType = request.BattleType,
             BattleDefinitionId = await battleDefinitionIdFactory.Create(request),
             UnitIds = request.UnitIds,
         };

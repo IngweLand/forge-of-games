@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -146,7 +147,9 @@ public class StatsHubUiService(
         CancellationToken ct = default)
     {
         var unitBattles = await battleService.GetUnitBattlesAsync(unitId, ct);
-        return statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles);
+        var vms = statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles)
+            .OrderBy(x => x.BattleType.GetSortOrder());
+        return vms.ToList();
     }
 
     private async Task GetAgesAsync()

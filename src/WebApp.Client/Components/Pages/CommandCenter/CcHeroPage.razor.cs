@@ -66,7 +66,7 @@ public partial class CcHeroPage : CommandCenterPageBase, IAsyncDisposable
             var unitBattlesTask = StatsHubUiService.GetUnitBattlesAsync(_heroProfileViewModel.HeroUnitId, _cts.Token);
             var encounterMapTask = TreasureHuntUiService.GetBattleEncounterToIndexMapAsync();
             await Task.WhenAll(unitBattlesTask, encounterMapTask);
-            _unitBattles = unitBattlesTask.Result;
+            _unitBattles = await unitBattlesTask;
         }
     }
 

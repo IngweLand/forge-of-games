@@ -18,6 +18,7 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
             BattleType.TreasureHunt => await CreateTreasureHuntId(request, sb),
             BattleType.HistoricBattle => CreateHistoricBattleId(request, sb),
             BattleType.TeslaStorm => CreateTeslaStormId(request, sb),
+            BattleType.Pvp => "pvp",
             _ => sb.ToString(),
         };
     }

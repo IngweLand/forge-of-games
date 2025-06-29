@@ -4,6 +4,8 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +14,7 @@ namespace Ingweland.Fog.Application.Server.Battle.Queries;
 public record BattleSearchQuery : IRequest<BattleSearchResult>
 {
     public required string BattleDefinitionId { get; init; }
+    public required BattleType BattleType { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
 }
 
@@ -24,27 +27,60 @@ public class BattleSearchQueryHandler(
     public async Task<BattleSearchResult> Handle(BattleSearchQuery request,
         CancellationToken cancellationToken)
     {
-        IQueryable<BattleSummaryEntity> battlesQuery;
+        IQueryable<BattleSummaryEntity> playerBattlesQuery;
+        IQueryable<BattleSummaryEntity>? enemyBattlesQuery = null;
         if (request.UnitIds.Count > 0)
         {
             var unitIds = request.UnitIds.ToHashSet();
-            battlesQuery = context.Battles.AsNoTracking()
-                .Where(b => b.BattleDefinitionId == request.BattleDefinitionId &&
-                    unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
+            playerBattlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, BattleSquadSide.Player);
+            if (request.BattleType == BattleType.Pvp)
+            {
+                enemyBattlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, BattleSquadSide.Enemy);
+            }
         }
         else
         {
-            battlesQuery = context.Battles.AsNoTracking()
+            playerBattlesQuery = context.Battles.AsNoTracking()
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
         }
 
-        var battles = await battlesQuery
+        var playerBattles = await playerBattlesQuery
             .OrderByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
             .ToListAsync(cancellationToken);
+        var battleIds = playerBattles.Select(src => src.InGameBattleId);
+        List<BattleSummaryEntity>? enemyBattles = null;
+        if (enemyBattlesQuery != null)
+        {
+            enemyBattles = await enemyBattlesQuery
+                .OrderByDescending(src => src.Id)
+                .Take(FogConstants.MaxDisplayedBattles)
+                .ToListAsync(cancellationToken);
+            
+            battleIds = battleIds.Concat(enemyBattles.Select(b => b.InGameBattleId));
+        }
 
-        var battleIds = battles.Select(src => src.InGameBattleId);
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        return await battleSearchResultFactory.Create(battles, existingStatsIds);
+        var playerResult = await battleSearchResultFactory.Create(playerBattles, existingStatsIds);
+        if (enemyBattles == null)
+        {
+            return playerResult;
+        }
+
+        var enemyResult = await battleSearchResultFactory.Create(enemyBattles, existingStatsIds, BattleSquadSide.Enemy);
+        return new BattleSearchResult
+        {
+            Battles = playerResult.Battles.Concat(enemyResult.Battles).ToList(),
+            Heroes = playerResult.Heroes.Concat(enemyResult.Heroes).DistinctBy(h => h.Id).ToList(),
+        };
+
+    }
+
+    private IQueryable<BattleSummaryEntity> BuildBattleQuery(HashSet<string> unitIds, string battleDefinitionId,
+        BattleSquadSide side)
+    {
+        return context.Battles.AsNoTracking()
+            .Where(b => b.BattleDefinitionId == battleDefinitionId &&
+                unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId && u.Side == side)));
     }
 }

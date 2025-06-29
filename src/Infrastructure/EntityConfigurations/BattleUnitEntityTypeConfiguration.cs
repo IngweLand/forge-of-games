@@ -14,9 +14,11 @@ public class BattleUnitEntityTypeConfiguration : IEntityTypeConfiguration<Battle
         
         builder.Property(p => p.UnitId).IsRequired();
         builder.Property(p => p.Level).IsRequired();
+        builder.Property(p => p.Side).IsRequired();
         
         builder.HasIndex(p => p.UnitId);
         builder.HasIndex(p => p.Level);
-        builder.HasIndex(p => new {HeroId = p.UnitId, p.Level}).IsUnique();
+        builder.HasIndex(p => p.Side);
+        builder.HasIndex(p => new {HeroId = p.UnitId, p.Level, p.Side}).IsUnique();
     }
 }

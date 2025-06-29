@@ -4,6 +4,15 @@ namespace Ingweland.Fog.Application.Core.Extensions;
 
 public static class BattleTypeExtensions
 {
+    private static readonly Dictionary<BattleType, int> SortOrder = new()
+    {
+        {BattleType.Pvp, 1},
+        {BattleType.Campaign, 2},
+        {BattleType.TreasureHunt, 3},
+        {BattleType.HistoricBattle, 4},
+        {BattleType.TeslaStorm, 5},
+    };
+
     public static BattleType ToBattleType(this string src)
     {
         if (string.IsNullOrWhiteSpace(src))
@@ -34,5 +43,10 @@ public static class BattleTypeExtensions
         }
 
         return BattleType.Campaign;
+    }
+
+    public static int GetSortOrder(this BattleType battleType)
+    {
+        return SortOrder.GetValueOrDefault(battleType, int.MaxValue);
     }
 }

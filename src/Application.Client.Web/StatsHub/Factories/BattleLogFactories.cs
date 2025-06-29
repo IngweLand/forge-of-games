@@ -24,6 +24,7 @@ public class BattleLogFactories(
             {
                 {BattleType.Campaign, localizer[FogResource.BattleType_Campaign]},
                 {BattleType.TreasureHunt, localizer[FogResource.BattleType_TreasureHunt]},
+                {BattleType.Pvp, localizer[FogResource.BattleType_PvP]},
                 {BattleType.HistoricBattle, localizer[FogResource.BattleType_HistoricBattle]},
                 {BattleType.TeslaStorm, localizer[FogResource.BattleType_TeslaStorm]},
             },
