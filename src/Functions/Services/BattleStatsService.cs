@@ -54,11 +54,21 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
                         ];
                     }
 
-                    return src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
+                    var l = new List<BattleSquadStatsEntity>
+                    {
+                        new()
+                        {
+                            Side = BattleSquadSide.Player,
+                            Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                            SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                        },
+                    };
+                    l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
                     {
                         Side = BattleSquadSide.Player,
                         SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
-                    });
+                    }));
+                    return l;
                 });
                 var enemySquads = battleStats.EnemySquads.SelectMany(src =>
                 {
@@ -74,12 +84,22 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
                             },
                         ];
                     }
-
-                    return src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
+                    
+                    var l = new List<BattleSquadStatsEntity>
+                    {
+                        new()
+                        {
+                            Side = BattleSquadSide.Enemy,
+                            Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                            SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                        },
+                    };
+                    l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
                     {
                         Side = BattleSquadSide.Enemy,
                         SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
-                    });
+                    }));
+                    return l;
                 });
                 return new BattleStatsEntity
                 {
