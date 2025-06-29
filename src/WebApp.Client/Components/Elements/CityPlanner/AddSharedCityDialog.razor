@@ -1,0 +1,58 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<MudDialog Style="padding: 24px">
+    <TitleContent>
+        <MudText Typo="Typo.h6">@Loc[FogResource.CityPlanner_CreateNewCity]</MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudTextField T="string" 
+                      @bind-Value="@_inputText"
+                      Label="@Loc[FogResource.CityPlanner_CityName]"
+                      MaxLength="@FogConstants.NAME_MAX_CHARACTERS"
+                      Counter="@FogConstants.NAME_MAX_CHARACTERS"
+                      Immediate="true"
+                      Validation="@(new Func<string, IEnumerable<string>>(ValidateInput))"
+                      Required="true"/>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">@Loc[FogResource.Common_Cancel]</MudButton>
+        <MudButton Color="Color.Success" 
+                   OnClick="Create" 
+                   Disabled="@(!string.IsNullOrEmpty(ValidateInput(_inputText).FirstOrDefault()))">
+            @Loc[FogResource.Common_Create]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private string _inputText;
+
+    private IEnumerable<string> ValidateInput(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            yield return Loc[FogResource.CityPlanner_NameRequiredError];
+        else if (input.Length > FogConstants.NAME_MAX_CHARACTERS)
+            yield return Loc[FogResource.CityPlanner_NameTooLongError, FogConstants.NAME_MAX_CHARACTERS];
+    }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void Create()
+    {
+        if (string.IsNullOrWhiteSpace(_inputText))
+        {
+            return;
+        }
+
+        MudDialog.Close(DialogResult.Ok(_inputText));
+    }
+}

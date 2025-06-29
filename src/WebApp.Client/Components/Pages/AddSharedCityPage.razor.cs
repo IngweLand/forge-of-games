@@ -62,7 +62,7 @@ public partial class AddSharedCityPage : FogPageBase
             BackgroundClass = "dialog-blur-bg",
             Position = DialogPosition.TopCenter
         };
-        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, options);
+        var dialog = await DialogService.ShowAsync<AddSharedCityDialog>(null, options);
         var result = await dialog.Result;
         if (result == null || result.Canceled)
         {
