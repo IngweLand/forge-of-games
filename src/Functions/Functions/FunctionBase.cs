@@ -38,10 +38,7 @@ public class FunctionBase(
             {
                 var parsed = InGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
 
-                // pvp battles are not anonymous, thus we need to filter them out
-                if (parsed.BattleDefinitionId.Equals(Globals.PvpBattleId,
-                        StringComparison.InvariantCultureIgnoreCase) ||
-                    parsed.ResultStatus == BattleResultStatus.Undefined)
+                if (parsed.ResultStatus == BattleResultStatus.Undefined)
                 {
                     continue;
                 }

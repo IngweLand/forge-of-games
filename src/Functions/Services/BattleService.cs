@@ -5,6 +5,7 @@ using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Constants;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -28,8 +29,6 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
     public async Task AddAsync(IEnumerable<(string WorldId, BattleSummary BattleSummary)> battles)
     {
         var unique = battles
-            .Where(t => !t.BattleSummary.BattleDefinitionId.Equals(Globals.PvpBattleId,
-                StringComparison.InvariantCultureIgnoreCase))
             .DistinctBy(t => new BattleKey(t.WorldId, t.BattleSummary.BattleId))
             .ToDictionary(t => new BattleKey(t.WorldId, t.BattleSummary.BattleId), t => t.BattleSummary);
         logger.LogInformation("{ValidCount} unique battles after filtering", unique.Count);
@@ -46,18 +45,29 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
         logger.LogInformation("{NewBattlesCount} new battles identified", newBattleKeys.Count);
         var newBattlesData = unique.Where(kvp => newBattleKeys.Contains(kvp.Key)).ToList();
 
-        var allBattleUnits = newBattlesData
+        var allPlayerBattleUnits = newBattlesData
             .SelectMany(kvp => kvp.Value.PlayerSquads.Select(src => src.Hero))
             .Where(srs => srs != null)
-            .Select(src => (src!.Properties.UnitId, src.Properties.Level))
+            .Select(src => (src!.Properties.UnitId, src.Properties.Level, BattleSquadSide.Player))
             .ToList();
-        var battleUnits = await SaveAndGetBattleUnits(allBattleUnits);
+        var allEnemyBattleUnits = newBattlesData
+            .SelectMany(kvp => kvp.Value.EnemySquads.Select(src => src.Hero))
+            .Where(srs => srs != null)
+            .Select(src => (src!.Properties.UnitId, src.Properties.Level, BattleSquadSide.Enemy))
+            .ToList();
+        var playerBattleUnits = await SaveAndGetBattleUnits(allPlayerBattleUnits);
+        var enemyBattleUnits = await SaveAndGetBattleUnits(allEnemyBattleUnits);
+        var battleUnits = playerBattleUnits.Concat(enemyBattleUnits).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
         var newBattles = newBattlesData.Select(src =>
             {
-                var concreteBattleHeroKeys = src.Value.PlayerSquads
+                var concreteBattlePlayerHeroKeys = src.Value.PlayerSquads
                     .Where(bs => bs.Hero != null)
-                    .Select(bs => (bs.Hero!.Properties.UnitId, bs.Hero.Properties.Level));
+                    .Select(bs => (bs.Hero!.Properties.UnitId, bs.Hero.Properties.Level, BattleSquadSide.Player));
+                var concreteBattleEnemyHeroKeys = src.Value.EnemySquads
+                    .Where(bs => bs.Hero != null)
+                    .Select(bs => (bs.Hero!.Properties.UnitId, bs.Hero.Properties.Level, BattleSquadSide.Enemy));
+                var concreteBattleHeroKeys = concreteBattlePlayerHeroKeys.Concat(concreteBattleEnemyHeroKeys);
                 var concreteBattleHeroes = concreteBattleHeroKeys.Select(t => battleUnits[t]).ToList();
                 var difficulty = Difficulty.Undefined;
                 if (src.Value.Location is IBattleLocationWithDifficulty locationWithDifficulty)
@@ -99,8 +109,8 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
         return existing;
     }
 
-    private async Task<Dictionary<(string UnitId, int Level), BattleUnitEntity>> SaveAndGetBattleUnits(
-        List<(string UnitId, int Level)> battleUnitTuples)
+    private async Task<Dictionary<(string UnitId, int Level, BattleSquadSide Side), BattleUnitEntity>> SaveAndGetBattleUnits(
+        List<(string UnitId, int Level, BattleSquadSide Side)> battleUnitTuples)
     {
         if (battleUnitTuples.Count == 0)
         {
@@ -114,15 +124,16 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
             .Where(bh => unitIds.Contains(bh.UnitId))
             .ToListAsync();
         var existingKeys = candidateBattleHeroes
-            .Where(bh => unitLevelPairs.Contains((bh.UnitId, bh.Level)))
-            .Select(bh => (bh.UnitId, bh.Level)).ToHashSet();
+            .Where(bh => unitLevelPairs.Contains((bh.UnitId, bh.Level, bh.Side)))
+            .Select(bh => (bh.UnitId, bh.Level, bh.Side)).ToHashSet();
 
         var newBattleUnits = unitLevelPairs
-            .Where(pair => !existingKeys.Contains((pair.UnitId, pair.Level)))
+            .Where(pair => !existingKeys.Contains((pair.UnitId, pair.Level, pair.Side)))
             .Select(pair => new BattleUnitEntity
             {
                 UnitId = pair.UnitId,
                 Level = pair.Level,
+                Side = pair.Side,
             })
             .ToList();
 
@@ -137,7 +148,7 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
             .ToListAsync();
 
         return allBattleUnitCandidates
-            .Where(bh => unitLevelPairs.Contains((bh.UnitId, bh.Level)))
-            .ToDictionary(bh => (bh.UnitId, bh.Level));
+            .Where(bh => unitLevelPairs.Contains((bh.UnitId, bh.Level, bh.Side)))
+            .ToDictionary(bh => (bh.UnitId, bh.Level, bh.Side));
     }
 }
