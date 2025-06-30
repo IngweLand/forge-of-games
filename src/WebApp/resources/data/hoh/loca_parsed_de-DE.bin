@@ -17,10 +17,10 @@ L
 8Base.Technologies.Technology_Mayas_DaggerPerfection_NameDolch-Perfektion
 G
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_NameLuxuriöse Farm
-J
-9Base.Buildings.Building_Vikings_SailorPort_Average_2_NameSeemannshafen
 V
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_3_NameFernkämpfer-Kaserne
+J
+9Base.Buildings.Building_Vikings_SailorPort_Average_2_NameSeemannshafen
 z
 1Base.Buildings.Building_China_Home_Premium_6_DescEProduziert eine Tonne Wu Zhu und fügt deiner Stadt 3 Arbeiter hinzu 
 A
@@ -39,10 +39,10 @@ n
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc:Produziert Kakao und fügt deiner Stadt 2 Handwerker hinzu
 I
 1Base.Abilities.hero_battle_ability.MarcoPolo_NameWelle der Entdeckung
-G
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Name	Brennofen
 V
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_NameLuxuriöser Seemannshafen
+G
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Name	Brennofen
 U
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_NameInfanterie-Kaserne
 I
@@ -67,10 +67,10 @@ Z
 >Base.Buildings.Building_RomanEmpire_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 �
 1Base.Buildings.Building_China_Home_Average_2_DescOProduziert einen großen Haufen Wu Zhu und fügt deiner Stadt 5 Arbeiter hinzu.
-?
-6Base.Technologies.Technology_StoneAge_Cultivation_NameAnbau
 E
 3Base.Units.Unit_IberianEra_Vikings_LeifErikson_NameLeifs Huscarls
+?
+6Base.Technologies.Technology_StoneAge_Cultivation_NameAnbau
 ;
 2Base.Technologies.Technology_BronzeAge_Plough_NamePflug
 Q
@@ -81,8 +81,8 @@ N
 =Base.Units.Unit_ClassicGreece_ThePersians_GlaiveFighters_NameGlefekämpfer
 �
 RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_Name�<style=ability_label>Stampfen</style>Stampft auf den Boden und fügt allen Gegnern <style=basestat>{dmg_percentage}</style> Schaden in einem Umkreis von <style=basestat>{range}</style> zu.
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>Flächenschlag| Heilung| Buff</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem alle befreundeten Einheiten im selben Gebiet um <style=basestat>{hp_percentage}</style> von Joans Basisschaden. Betroffene befreundete Einheiten erhalten <style=basestat>{atk_percentage}</style> von Joans ATK als ATK und <style=basestat>{atkspeed_percentage}</style> ATK-Geschwindigkeit für <style=basestat>{duration}</style>.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>Flächenschlag| Heilung| Buff</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem die größte Ansammlung von Einheiten der eigenen Seite um <style=basestat>{hp_percentage}</style> des Basisschadens von Jeanne in einem Bereich von <style=basestat>{range}</style>. Betroffene befreundete Einheiten erhalten <style=basestat>{atk_percentage}</style> von Jeannes ATK als ATK und <style=basestat>{atkspeed_percentage}</style> ATK SPEED für <style=basestat>{duration}</style>.<br>In der <color=#FFCF2B>Belagerung von Orléans</color> erhält Jeanne <style=basestat>+100% ATK</style> und ihre <style=basestat>Fähigkeit</style> lädt <style=basestat>2s</style> schneller auf.
 �
 1Base.Buildings.Building_Mayas_Home_Premium_6_DescTProduziert eine Tonne Kakao und fügt deiner Stadt 2 Arbeiter und 1 Handwerker hinzu
 I
@@ -91,10 +91,10 @@ I
 Base.Units.Unit_Inanna_NameInanna
 B
 3Base.Technologies.Technology_Vikings_TaflGames_NameTafl-Spiele
-T
->Base.Buildings.Building_ClassicGreece_Barracks_Infantry_1_NameInfanterie-Kaserne
 L
 $Base.BuildingGroups.premiumHome_NameLuxuriöses HausLuxuriöse Häuser
+T
+>Base.Buildings.Building_ClassicGreece_Barracks_Infantry_1_NameInfanterie-Kaserne
 R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_2_NameKavallerie-Kaserne
 >
@@ -105,8 +105,8 @@ A
 )Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Name�<style=ability_label>Buff</style>Mansa Musa zielt auf die größte Ansammlung freundlicher Einheiten und erhöht deren Chance, kritisch zu treffen, um <style=basestat>{crit_percentage}</style>, ihre ATK um <style=basestat>{atk_percentage}</style> der ATK von Mansa Musa und ihren kritischen Schaden um <style=basestat>{crit_dmg_percentage}</style> für <style=basestat>{duration}</style> in einem Bereich von <style=basestat>{range}</style>.
-�
-5Base.Buildings.Building_Mayas_Workshop_Premium_5_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
+}
+5Base.Buildings.Building_Mayas_Workshop_Premium_5_DescDProduziert Ahnenmasken, Kalendersteine, Ritualdolche und Kopfschmuck
 G
 3Base.Technologies.Technology_China_BakedBricks_NameGebackene Ziegel
 Q
@@ -121,12 +121,12 @@ O
 %Base.BuildingGroups.kaolinQuarry_NameKaolin-SteinbruchKaolin-Steinbrüche
 /
 Base.Heroes.hero.KingMinos_NameKönig Minos
-�
-:Base.Buildings.Building_Vikings_FishingPier_Premium_6_Desc�Luxuriöse Angelstege schicken Boote aus, die tonnenweise Fisch fangen, um all deine hungrigen Arbeiter und Matrosen zu versorgen.
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_Desc`Entsende Expeditionsschiffe, die riesige Juwelen-, Gewürz-, Gold- oder Keramikschätze sammeln.
 K
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_DescProduziert Obsidian
+�
+:Base.Buildings.Building_Vikings_FishingPier_Premium_6_Desc�Luxuriöse Angelstege schicken Boote aus, die tonnenweise Fisch fangen, um all deine hungrigen Arbeiter und Matrosen zu versorgen.
 u
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_NameMonument der Singularität
 C
@@ -202,8 +202,8 @@ D
 #Base.BuildingGroups.sailorHome_NameSeemannshausSeemannshäuser
 H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_NameWasserpumpe
-�
-Base.Units.Unit_LadySixSky_Desc�Lady Six Sky, eine bedeutende Maya-Königin aus dem 7. Jahrhundert n. Chr., war maßgeblich an der Wiederbelebung und Erweiterung des Stadtstaates Naranjo im heutigen Guatemala beteiligt. Sie stammte ursprünglich aus der mächtigen Stadt Dos Pilas und brachte ihr königliches Geschlecht und ihren Einfluss nach Naranjo.<br><br>Ihre Herrschaft ist geprägt von erfolgreichen militärischen Feldzügen und politischen Bündnissen, die Naranjos Macht in der Region stärkten. Lady Six Sky gab auch zahlreiche Denkmäler und Inschriften in Auftrag, mit denen sie ihre Erfolge feierte und ihre Autorität stärkte.<br><br>Ihre Führungsqualitäten und ihr strategischer Scharfsinn hinterließen ein bleibendes Vermächtnis und trugen maßgeblich zur kulturellen und politischen Landschaft der Maya-Zivilisation ihrer Zeit bei.
+�
+Base.Units.Unit_LadySixSky_Desc�Erhebe dich mit Lady Six Sky über deine besiegten Feinde! Diese Maya-Königin aus dem 8. Jahrhundert ist berühmt für ihre Herrschaft über die Stadt Naranjo, und obwohl ihr Name unbekannt ist, ist ihre Legende nie vergessen worden. Aber sie wurde in der Stadt Dos Pilas geboren und kam erst später in Naranjo an.<br><br>Vom Tag ihrer Ankunft an war sie de facto die Herrscherin. Lady Six Sky nahm die Zügel der Macht in die Hand und richtete sie zum Himmel: Sie errichtete Stelen und führte religiöse Rituale nach dem Vorbild der Könige durch.<br><br>Ein Großteil der Geschichte von Lady Six Sky - das, was nicht in Stein gemeißelt wurde - ist verloren gegangen. Als lebende Verkörperung der Mondgöttin und des Maisgottes repräsentierte Lady Six Sky sowohl Königin als auch König, Sonne und Mond. Lady Six Skys epische Reise ist ein Beweis dafür, dass der Einfluss einer Königin so groß und beständig sein kann wie der Nachthimmel selbst!
 N
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameZeremonielles Kleid
 C
@@ -213,7 +213,7 @@ U
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_15_Name�<style=ability_label>Spott| Schild</style>Spottet alle Gegner für <style=basestat>{taunt_duration}</style>. Bismarck erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild. Verleiht außerdem <style=basestat>{shield_percentage_friendly}</style> des Basisschadens von Bismarck als Schild an die befreundete Einheit mit den niedrigsten HP. Priorisiert Helden.
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduziert Ritualdolche
 Z
 'Base.BuildingGroups.compactCulture_NameKompakte KulturstätteKompakte Kulturstätten
 W
@@ -303,10 +303,10 @@ G
 Base.Ages.KingdomOfSicily_NameKönigreich Sizilien
 ;
 &Base.Regions.region.DesertDelta_1_NameSandige Uferlinie
-H
-9Base.Buildings.Building_Egypt_PapyrusField_Average_5_NamePapyrusfeld
 >
 3Base.Technologies.Technology_MinoanEra_Stables_NameStälle
+H
+9Base.Buildings.Building_Egypt_PapyrusField_Average_5_NamePapyrusfeld
 g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_4_Desc&Veredelt Motten-Kokons zu Seidenfäden
 I
@@ -315,12 +315,12 @@ I
 !Base.BuildingGroups.RangedBarrackFernkämpfer-Kaserne
 E
 ,Base.Units.Unit_MinoanEra_Minoan_Axemen_NameMinoische Axtkämpfer
-K
-;Base.Technologies.Technology_RomanEmpire_CenturionsAim_NameCenturioziel
-C
-3Base.Buildings.Building_BronzeAge_Home_Small_1_NameKleines Haus
 �
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
+C
+3Base.Buildings.Building_BronzeAge_Home_Small_1_NameKleines Haus
+K
+;Base.Technologies.Technology_RomanEmpire_CenturionsAim_NameCenturioziel
 Z
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_NameKompakte Kulturstätte
 W
@@ -333,10 +333,10 @@ Y
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_DescStellt Langbogenschützen her
 =
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_NameOase
-W
-:Base.Buildings.Building_FeudalAge_Barracks_Infantry_1_DescSchaltet Axtkämpfer frei
 2
 (Base.Heroes.hero.GreekMathematician_NameEuklid
+W
+:Base.Buildings.Building_FeudalAge_Barracks_Infantry_1_DescSchaltet Axtkämpfer frei
 o
 /Base.Buildings.Building_Egypt_Home_Small_1_Desc<Stellt Deben her und fügt deiner Stadt einen Arbeiter hinzu
 H
@@ -389,10 +389,10 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameMinois
 3Base.Buildings.Building_Vikings_Home_Premium_2_DescUProduziert eine Tonne Pennies und fügt deiner Stadt 2 Arbeiter und 2 Matrosen hinzu.
 0
 Base.HeroClass.AreaAttackerFlächenangreifer
-�
-Base.Units.Unit_Hoplit_Desc�Nike! Miltiades, der strategische athenische General des 5. Jahrhunderts v. Chr., ist für seine Führung in der Schlacht von Marathon bekannt.<br><br>Als brillanter Taktiker führte Miltiades die athenischen Streitkräfte zu einem entscheidenden Sieg über die größere persische Armee, der entscheidend dazu beitrug, die Invasion Griechenlands zu verhindern und einen Wendepunkt im Krieg darstellte.<br><br>Später im Leben führte Miltiades eine Marine-Invasion an, doch er zog die Rache dem Befolgen von Befehlen vor. Trotz des Scheiterns dieser Invasion und seiner anschließenden Beschämung wird Miltiades als weiser und gerissener Staatsmann in Erinnerung bleiben.
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_NameBrunnen
+�
+Base.Units.Unit_Hoplit_Desc�Nike! Miltiades, der strategische athenische General des 5. Jahrhunderts v. Chr., ist für seine Führung in der Schlacht von Marathon bekannt.<br><br>Als brillanter Taktiker führte Miltiades die athenischen Streitkräfte zu einem entscheidenden Sieg über die größere persische Armee, der entscheidend dazu beitrug, die Invasion Griechenlands zu verhindern und einen Wendepunkt im Krieg darstellte.<br><br>Später im Leben führte Miltiades eine Marine-Invasion an, doch er zog die Rache dem Befolgen von Befehlen vor. Trotz des Scheiterns dieser Invasion und seiner anschließenden Beschämung wird Miltiades als weiser und gerissener Staatsmann in Erinnerung bleiben.
 H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_NameWasserpumpe
 A
@@ -413,8 +413,8 @@ G
 8Base.Technologies.Technology_FeudalAge_Transhumance_NameTranshumanz
 D
 &Base.Regions.region.DesertDelta_4_NameKriegsgeschundenes Rinnsal
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_DescProduziert Ahnenmasken
 >
 ,Base.Wonders.Wonder_Egypt_CheopsPyramid_NameCheopspyramide
 Y
@@ -427,14 +427,14 @@ s
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 ;
 !Base.BuildingTypes.camelFarm_Name	KamelfarmKamelfarmen
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_1_DescProduces a ton of Feathers
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_1_DescProduziert eine Tonne Federn
 E
 1Base.Buildings.Building_China_Home_Premium_6_NameLuxuriöses Haus
-\
-4Base.Buildings.Building_StoneAge_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
 k
 HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NameGrundlegendes Bewässerungsnetz
+\
+4Base.Buildings.Building_StoneAge_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 \
@@ -443,14 +443,14 @@ P
 $Base.BuildingGroups.averageHome_NameMittelgroßes HausMittelgroße Häuser
 �
 !Base.Units.Unit_RomanPraetor_Desc�Feiere wie die Römer mit Aemilia Tertia! Diese Gesellschaftsdame aus dem 2. Jahrhundert v. Chr. im alten Rom war die Frau von Scipio Africanus, dem berühmten General, der Hannibal im Zweiten Punischen Krieg besiegte. Durch ihre adlige Herkunft und ihre Heirat in eine der führenden Familien Roms verkörperte sie die Tugenden der römischen Matrone.<br><br>Sie unterstützte die militärische und politische Karriere ihres Mannes, während sie sich sich um den Haushalt und die Erziehung ihrer Kinder, darunter Cornelia Africana, die Mutter der Gracchi-Brüder, kümmerte.<br><br>Das Vermächtnis von Aemilia Tertia spiegelt die einflussreiche Rolle wider, die Frauen in der römischen Gesellschaft trotz ihrer begrenzten öffentlichen Präsenz einnehmen konnten.
-,
-Base.Heroes.hero.Geisha_NameYoshino Dayu
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_6_DeschDer Bienenstock produziert köstlichen Honig, der zur Herstellung von Met in der Taverne verwendet wird.
-�
-!Base.Units.Unit_TribalHealer_Desc�Verliere nicht die Hoffnung, denn Naya ist hat sich dir angeschlossen! Die junge Heilerin aus dem Höhlenclan hat sich mit ihren Heil- und Kräuterkenntnissen einen guten Ruf erarbeitet! Bevor sie den Heroes of History beitrat, half sie ihrem Clan, indem sie dessen Wunden und Krankheiten behandelte.<br><br>Seit sie den Helden beigetreten ist, löchert Naya Einstein mit wissenschaftlichen Fragen und lernt mit Leonidas zu kämpfen. Einstein wünschte, er hätte zu seiner Zeit mehr Schüler mit ihrem Enthusiasmus gehabt.<br><br>Obwohl ihr Ruf und Ruhm der anderen Helden fehlen, könnte Naya trotzdem die Zukunft verändern. Ob sie das schafft, hängt aber natürlich von dir ab!
+,
+Base.Heroes.hero.Geisha_NameYoshino Dayu
 T
 =Base.Technologies.Technology_RomanEmpire_HorseshoeAlloys_NameHufeisenlegierungen
+�
+!Base.Units.Unit_TribalHealer_Desc�Verliere nicht die Hoffnung, denn Naya ist hat sich dir angeschlossen! Die junge Heilerin aus dem Höhlenclan hat sich mit ihren Heil- und Kräuterkenntnissen einen guten Ruf erarbeitet! Bevor sie den Heroes of History beitrat, half sie ihrem Clan, indem sie dessen Wunden und Krankheiten behandelte.<br><br>Seit sie den Helden beigetreten ist, löchert Naya Einstein mit wissenschaftlichen Fragen und lernt mit Leonidas zu kämpfen. Einstein wünschte, er hätte zu seiner Zeit mehr Schüler mit ihrem Enthusiasmus gehabt.<br><br>Obwohl ihr Ruf und Ruhm der anderen Helden fehlen, könnte Naya trotzdem die Zukunft verändern. Ob sie das schafft, hängt aber natürlich von dir ab!
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_2_NameSeemannshaus
 A
@@ -497,18 +497,18 @@ d
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_1_DescSchaltet Familia Regis frei
 U
 @Base.Technologies.Technology_RomanEmpire_PastureImprovement_NameWeideverbesserung
+l
+0Base.Buildings.Building_Mayas_Home_Worker_6_Desc8Produziert Kakao und fügt deiner Stadt 2 Arbeiter hinzu
 �
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_DescGEntsende Expeditionsschiffe, die Juwelen- oder Gewürzschätze sammeln.
 E
 1Base.Buildings.Building_Mayas_Home_Premium_6_NameLuxuriöses Haus
-l
-0Base.Buildings.Building_Mayas_Home_Worker_6_Desc8Produziert Kakao und fügt deiner Stadt 2 Arbeiter hinzu
 U
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_NameBollwerkformation
-J
-9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_NameKleine Quelle
 $
 Base.Units.Unit_ElCid_NameEl Cid
+J
+9Base.Buildings.Building_Egypt_Irrigation_SmallWell_5_NameKleine Quelle
 P
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_3_NameFernkämpfer-Kaserne
 R
@@ -549,8 +549,8 @@ U
 ;Base.Buildings.Building_StoneAge_CultureSite_Compact_1_NameKompakte Kulturstätte
 I
 8Base.Technologies.Technology_BronzeAge_SacredGroves_NameHeilige Haine
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_1_Name�<style=ability_label>Flächenschlag| Heilung</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem die größte Ansammlung von befreundeten Einheiten um <style=basestat>{hp_percentage}</style> von Joans Basisschaden in einem Bereich von <style=basestat>{range}</style>.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_1_Name�<style=ability_label>Flächenschlag| Heilung</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem die größte Ansammlung von befreundeten Einheiten um <style=basestat>{hp_percentagel}</style> des Basisschadens von Jeanne in einem Bereich von <style=basestat>{range}</style>.<br>In der <color=#FFCF2B>Belagerung von Orléans</color> erhält Jeanne <style=basestat>+100% ATK</style> und ihre <style=basestat>Fähigkeit</style> lädt <style=basestat>2s</style> schneller auf.
 D
 5Base.Technologies.Technology_FeudalAge_Feudalism_NameFeudalismus
 b
@@ -578,14 +578,14 @@ I
 2Base.Abilities.hero_battle_ability.JaneAusten_NameStolz und Vorurteil
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_5_DescDEntsende Expeditionsschiffe, die Keramik- oder Goldschätze sammeln.
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_DescProduziert Kopfschmuck
 Q
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_1_DescSchaltet Ritter frei
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_DescProduces Headdresses
-N
-;Base.Buildings.Building_China_Workshop_ClayProcessor_1_NameTon-Verarbeiter
 �
 ,Base.Units.Unit_TreasureHunt_Red_Cannon_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben eine verheerende Wirkung auf mehrere Einheiten über eine große Reichweite.
+N
+;Base.Buildings.Building_China_Workshop_ClayProcessor_1_NameTon-Verarbeiter
 H
 9Base.Technologies.Technology_AgeOfTheFranks_Halberds_NameHellebarden
 �
@@ -596,8 +596,6 @@ M
 1Base.Abilities.hero_battle_ability.Confucius_NameKonfuzianische Konfusion
 �
 $Base.Units.Unit_MiyamotoMusashi_Desc�Folge dem Weg der zwei Himmel mit Miyamoto Musashi! Dieser legendäre japanische Schwertkämpfer aus dem späten 16. bis frühen 17. Jahrhundert wird für seinen Status als Kenshi, einem Schwertheiligen, gefeiert. Er erfand seine eigenen Stile und war im Umgang mit der Klinge nahezu unübertroffen.<br><br>Musashi reiste auf seiner Musha shugyo, der Suche des Kriegers, quer durch Japan. Er kämpfte in 62 Duellen und gewann sie alle, eines davon sogar mit einem geschnitzten Stück Ruder. Bevor er sich zur Ruhe setzte, kämpfte er in Schlachten und Duellen und unterrichtete viele Schwertkämpfer.<br><br>Sein einzigartiger Stil und sein taktisches Genie zeichneten ihn aus und machten ihn zu einer verehrten Figur in der Geschichte der Kampfkünste. Über das Schlachtfeld hinaus war Musashi auch Philosoph und Künstler. Er verfasste das "Buch der fünf Ringe", einen Leitfaden, der bis heute mit seinen Weisheiten über Strategie und Leben inspiriert. Sein Vermächtnis ist ein Beweis für die Macht, sein Handwerk zu beherrschen. Fordere ihn nur nicht zu einem Duell heraus!
-B
-'Base.Regions.region.SiegeOfOrleans_NameBelagerung von Orléans
 -
 Base.Heroes.hero.TigerLily_Name
 Tiger Lily
@@ -663,10 +661,10 @@ E
 1Base.Buildings.Building_Egypt_Home_Premium_2_NameLuxuriöses Haus
 y
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
-e
-GBase.Technologies.Technology_KingdomOfSicily_RefinedChainmailCoifs_NameVeredelte Kettenhemdhauben
 F
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_3_Name	Bauernhof
+e
+GBase.Technologies.Technology_KingdomOfSicily_RefinedChainmailCoifs_NameVeredelte Kettenhemdhauben
 T
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_DescSchaltet Kavallerie frei
 _
@@ -675,16 +673,16 @@ J
 8Base.Technologies.Technology_BronzeAge_SacredStones_NameHeilige Steine
 O
 6Base.Abilities.hero_battle_ability.AshokaTheGreat_NameDharmas Göttlichkeit
-w
-4Base.Buildings.Building_IberianEra_Home_Small_1_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 q
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
+w
+4Base.Buildings.Building_IberianEra_Home_Small_1_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 B
 2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMaya Glyphen
-+
-Base.Ages.BronzeAge_Decade3.000 v. Chr.
 K
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_NameAchämeniden-Edikt
++
+Base.Ages.BronzeAge_Decade3.000 v. Chr.
 <
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
 y
@@ -747,18 +745,18 @@ Handwerker
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 W
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_NameMittlere Kulturstätte
-�
-6Base.Buildings.Building_Vikings_Beehive_Average_3_DeschDer Bienenstock produziert köstlichen Honig, der zur Herstellung von Met in der Taverne verwendet wird.
 f
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_Desc$Schaltet Ritterliche Kavallerie frei
+�
+6Base.Buildings.Building_Vikings_Beehive_Average_3_DeschDer Bienenstock produziert köstlichen Honig, der zur Herstellung von Met in der Taverne verwendet wird.
 F
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_NameGoldschmied
 b
 MBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Small_NameWinterliches Haus
-U
-=Base.Technologies.Technology_IberianEra_VikingHomesteads_NameWikinger-Heimstätte
 B
 #Base.BuildingTypes.collectable_NameSammelobjektSammelobjekte
+U
+=Base.Technologies.Technology_IberianEra_VikingHomesteads_NameWikinger-Heimstätte
 L
 <Base.Technologies.Technology_AgeOfTheFranks_Aristocracy_NameAristokratie
 D
@@ -814,24 +812,24 @@ E
 9Base.Technologies.Technology_HighMiddleAges_Grimoire_NameGrimoire
 K
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameMaskenbildner
-I
-.Base.Units.Unit_IberianEra_Vikings_Archer_NameWikinger Bogenschützen
 T
 <Base.Technologies.Technology_IberianEra_MagneticCompass_NameMagnetischer Kompass
-}
-6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
+I
+.Base.Units.Unit_IberianEra_Vikings_Archer_NameWikinger Bogenschützen
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Plato_1_Name�<style=ability_label>Debuff</style>Platon spricht in Allegorien, die gegnerische Einheiten verwirren und ihre Genauigkeit um <style=basestat>{accuracy_percentage}</style> und ATK um <style=basestat>{atk_percentage}</style> der ATK von Platon für <style=basestat>{duration}</style> verringern.
+}
+6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 o
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc1Stellt Papyrusrollen und zeremonielle Kleider her
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_1_Name�<style=ability_label>Nahkampfangriff</style>Schlägt das aktuelle Ziel viermal für insgesamt <style=basestat>{dmg_percentage}</style> Schaden.
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Hoplit_1_Name�<style=ability_label>Nahkampfschlag</style>Durchbohrt das aktuelle Ziel mit einem Speer und fügt <style=basestat>{dmg_percentage}</style> Schaden zu.
-H
-9Base.Technologies.Technology_ClassicGreece_Carpentry_NameSchreinerei
 7
 *Base.Wonders.Wonder_Vikings_Yggdrasil_Name	Yggdrasil
+H
+9Base.Technologies.Technology_ClassicGreece_Carpentry_NameSchreinerei
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>Kontrolle| Schlag</style>Montezuma beschwört dornige Ranken, die den am weitesten entfernten Feind umschlingen, ihn in Nahkampf-Reichweite ziehen und beim Aufprall <style=basestat>{dmg_percentage}</style> Schaden verursachen.
 �
@@ -905,11 +903,11 @@ F
 0Base.Buildings.Building_Mayas_Home_Worker_6_NameArbeiterhaus
 F
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_NameKleines Haus
-0
- Base.Units.Unit_WilliamTell_NameWilhelm Tell
 A
 3Base.Technologies.Technology_IberianEra_Patios_Name
 Innenhöfe
+0
+ Base.Units.Unit_WilliamTell_NameWilhelm Tell
 o
 1Base.Buildings.Building_Arabia_Home_Medium_2_Desc:Stellt Dirham her und fügt deiner Stadt 2 Arbeiter hinzu.
 y
@@ -922,8 +920,8 @@ K
 9Base.Buildings.Building_Vikings_SailorPort_Average_5_DescGEntsende Expeditionsschiffe, die Juwelen- oder Gewürzschätze sammeln.
 \
 BBase.Technologies.Technology_KingdomOfSicily_SicilianVilletta_NameSizilianische Villetta
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_4_Desc(Improves Happiness of adjacent buildings
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_4_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 �
 :Base.TreasureHuntDifficultiesPanel.DifficultySelectionHint�Du kannst jede freigeschaltete Schwierigkeit spielen. Die Auswahl ist gesperrt, sobald du die erste Begegnung abgeschlossen hast. 
 O
@@ -932,20 +930,20 @@ _
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantinische Infanterie
 /
  Base.Heroes.hero.MontezumaI_NameMontezuma I
-O
-9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameKavallerie-Kaserne
 F
 .Base.Units.Unit_IberianEra_Castilla_ElCid_NameKastilische Söldner
+O
+9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameKavallerie-Kaserne
 R
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_2_NameBelagerungs-Kaserne
 ^
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_9_NameMinoischer Wachturm
 X
 ?Base.Technologies.Technology_Vikings_LongDistanceSeafaring_NameLangstrecken-Seefahrt
-9
-#Base.Regions.region.Panganea_5_NameGrasland von Sumer
 X
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_NameBewässerungsanlage
+9
+#Base.Regions.region.Panganea_5_NameGrasland von Sumer
 �
 #Base.Units.Unit_EgyptianVizier_Desc�Werde ein Gott mit Imhotep, dem, der in Frieden kommt! Dieser Berater und Baumeister aus dem 27. Jahrhundert v. Chr. überwachte den Bau der Stufenpyramide in Saqqara, eine der frühesten Pyramiden der Geschichte.<br><br>Zu Lebzeiten war Imhotep ein Mysterium, ein Priester des Ra, über den nur wenig bekannt ist. In den Jahren danach wuchs sein Ruhm, bis er vergöttert wurde: Er wurde als Gott der Medizin und Bruder des Gottes Thoth verehrt.<br><br>So wurde Imhotep jahrelang verehrt. Sogar die Griechen sollen ihn verehrt haben, und in der römischen Zeit wurde ihm das Ende der Überschwemmungen zugeschrieben. Ironischerweise scheint er sich zu Lebzeiten nicht einmal mit Medizin beschäftigt zu haben!
 I
@@ -958,10 +956,10 @@ l
 0Base.Buildings.Building_Mayas_Home_Worker_1_Desc8Produziert Kakao und fügt deiner Stadt 2 Arbeiter hinzu
 O
 4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_NameDämmerungs-Harpunisten
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Spott| Schild</style>Isabella beherrscht das Schlachtfeld, verspottet alle Gegner für <style=basestat>{taunt_shield_duration}</style> und heilt sich selbst für <style=basestat>{self_heal}</style> ihres Basisschadens. Für jeden verspotteten Gegner erhält sie einen Schild im Wert von <style=basestat>{shield_per_unit}</style> ihres Basisschadens, der für <style=basestat>{taunt_shield_duration}</style> anhält.
 �
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescLStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Spott| Schild</style>Isabella beherrscht das Schlachtfeld, verspottet alle Gegner für <style=basestat>{taunt_shield_duration}</style> und heilt sich selbst für <style=basestat>{self_heal}</style> ihres Basisschadens. Für jeden verspotteten Gegner erhält sie bis zum Ende der Welle einen Schild im Wert von <style=basestat>{shield_per_unit}</style> ihres Basisschadens.
 G
 1Base.Abilities.hero_battle_ability.JoanOfArc_NameFeuer der Hoffnung
 �
@@ -981,10 +979,10 @@ T
 :Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_NameRitterliche Kavallerie
 F
 5Base.Technologies.Technology_Vikings_HealingMead_NameHeilender Met
-=
-4Base.Technologies.Technology_AgeOfTheFranks_Ink_NameTinte
 B
 "Base.BuildingTypes.irrigation_NameBewässerungBewässerungen
+=
+4Base.Technologies.Technology_AgeOfTheFranks_Ink_NameTinte
 v
 =Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 B
@@ -993,8 +991,8 @@ E
 1Base.Buildings.Building_China_Home_Premium_3_NameLuxuriöses Haus
 W
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_NameZeremonie-Ausstatter
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_DescProduziert Ahnenmasken
 $
 Base.Cities.City_China_NameChina
 Y
@@ -1003,10 +1001,10 @@ P
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_2_NameInfanterie-Kaserne
 E
 3Base.Technologies.Technology_BronzeAge_Archery_NameBogenschießen
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_4_DescProduziert eine Tonne Federn
 N
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_NameFaden-Spinner
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_4_DescProduces a ton of Feathers
 )
 Base.BuildingGroups.SmallFarmPlantage
 �
@@ -1040,10 +1038,10 @@ R
 9Base.Abilities.hero_battle_ability.TorchOfPrometheus_NameFackel des Prometheus
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_NameBrunnen
-(
-Base.Units.Unit_Jester_Name	Triboulet
 A
 2Base.Technologies.Technology_StoneAge_Herding_NameViehhaltung
+(
+Base.Units.Unit_Jester_Name	Triboulet
 Q
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_NameMittelgroßes Haus
 @
@@ -1110,13 +1108,13 @@ R
 7Base.Units.Unit_KingdomOfSicily_NormanSicily_Siege_NameSizilianische Trebuchet
 C
 3Base.Buildings.Building_MinoanEra_Home_Small_2_NameKleines Haus
-y
-8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+_
+?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_DescProduziert Porzellan aus Ton
 <
 #Base.BuildingTypes.fishingPier_Name	Angelsteg
 Angelstege
-_
-?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_DescProduziert Porzellan aus Ton
+y
+8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 K
 :Base.Technologies.Technology_MinoanEra_GlyphicWarding_NameGlyphenschutz
 E
@@ -1131,8 +1129,8 @@ I
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_NameOase
 +
 Base.Ages.IberianEra_Start1.050 n. Chr.
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_6_DescProduces a ton of Feathers
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_6_DescProduziert eine Tonne Federn
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>Debuff| Fähigkeits-Blockade</style>Verhindert die Fähigkeit aller gegnerischen Einheiten anzugreifen und verringert ihre Genauigkeit um <style=basestat>{accuracy_percentage}</style>, ihre ATK-Geschwindigkeit um <style=basestat>{atk_speed_percentage}</style> und ihre ATK um <style=basestat>{atk_percentage}</style> der ATK von Franklin für <style=basestat>{duration}</style>. Außerdem hindert er Gegner für <style=basestat>{block_duration}</style> daran, Fähigkeiten einzusetzen.
 f
@@ -1141,10 +1139,10 @@ X
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_NameGewürzhändler
 z
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
-
-1Base.Buildings.Building_Egypt_Home_Premium_2_DescJStellt riesige Mengen an Deben her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 2Base.Buildings.Building_Egypt_City_CityHall_1_DescgDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Deben für dich.
+
+1Base.Buildings.Building_Egypt_Home_Premium_2_DescJStellt riesige Mengen an Deben her und fügt deiner Stadt 2 Arbeiter hinzu
 B
 2Base.Buildings.Building_StoneAge_Home_Small_3_NameKleines Haus
 B
@@ -1156,10 +1154,10 @@ q
 Steinkreis
 B
 6Base.Buildings.Building_Arabia_Merchant_Average_1_NameHändler
-_
-DBase.Technologies.Technology_AgeOfTheFranks_CarolingianCatapult_NameKarolingisches Katapult
 V
 <Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_DescStellt Steintafeln her
+_
+DBase.Technologies.Technology_AgeOfTheFranks_CarolingianCatapult_NameKarolingisches Katapult
 B
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Name	Bauernhof
 O
@@ -1276,16 +1274,16 @@ I
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_NameSpitze Dächer
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameMagma-Tempel
-z
-7Base.TreasureHuntDifficultiesPanel.DifficultyUnlockInfo?Beende die vorherige Schwierigkeit oder erreiche Zeitalter {0}!
 -
 Base.Units.Unit_Pythagoras_Name
 Pythagoras
-F
-/Base.Units.Unit_IberianEra_Vikings_Cavalry_NameWikinger Kavallerie
+z
+7Base.TreasureHuntDifficultiesPanel.DifficultyUnlockInfo?Beende die vorherige Schwierigkeit oder erreiche Zeitalter {0}!
 ,
 Base.BuildingTypes.Marketplace
 Marktplatz
+F
+/Base.Units.Unit_IberianEra_Vikings_Cavalry_NameWikinger Kavallerie
 [
 CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_NameCharter of Liberties
 G
@@ -1327,12 +1325,12 @@ B
 2Base.Buildings.Building_Vikings_Home_Worker_5_NameArbeiterhaus
 *
 Base.Heroes.hero.Lagertha_NameLagertha
-W
-5Base.Buildings.Building_China_RiceFarm_Premium_3_DescProduziert riesige Mengen Reis
 Z
 8Base.Technologies.Technology_BronzeAge_SocialChange_NameGesellschaftliche Veränderung
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_DescProduziert Ritualdolche
+W
+5Base.Buildings.Building_China_RiceFarm_Premium_3_DescProduziert riesige Mengen Reis
 >
 3Base.Technologies.Technology_EarlyRome_Velites_NameVelites
 �
@@ -1357,10 +1355,10 @@ J
 Base.Units.Unit_MarieCurie_NameMarie Curie
 �
 7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
-�
-;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 E
 0Base.Abilities.hero_battle_ability.HuaMulan_NameRache des Drachen
+�
+;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 S
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_NameInfanterie-Kaserne
 �
@@ -1397,10 +1395,10 @@ J
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_NameStrahlende Marodeure
 H
 4Base.Abilities.hero_battle_ability.JuliusCaesar_NameVeni, Vidi, Vici
-9
-"Base.BuildingGroups.ruralFarm_NamePlantage	Plantagen
 @
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_NameKanal
+9
+"Base.BuildingGroups.ruralFarm_NamePlantage	Plantagen
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>Gedankenkontrolle</style>Entfesselt ihr literarisches Genie und überzeugt eine gegnerische Einheit, ihre Verbündeten für <style=basestat>{duration}</style> anzugreifen. Während sie unter Janes Kontrolle steht, wird die ATK der gegnerischen Einheit um <style=basestat>{atk_percentage}</style> erhöht. Priorisiert Helden.
 6
@@ -1429,10 +1427,10 @@ G
 1Base.Buildings.Building_Egypt_Home_Average_3_NameMittelgroßes Haus
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Spott | Schild | Flächenschlag</style>Philipp II. von Makedonien erhält einen großen Schild im Wert von <style=basestat>{shield_percentage}</style> seines Basisschadens und verspottet alle gegnerischen Einheiten für <style=basestat>{taunt_duration}</style>. Nach <style=basestat>{detonation_time}</style> detoniert sein Schild und verursacht <style=basestat>{damage_percentage}</style> des verbleibenden Schildwerts als Schaden an allen gegnerischen Einheiten innerhalb eines Bereichs von <style=basestat>{range}</style>. Die Detonation verbraucht Philipps Schild.
-I
-(Base.BuildingGroups.smallIrrigation_NameKleine QuelleKleine Quellen
 H
 )Base.Units.Unit_QueenSeondeokOfSilla_NameKönigin Seondeok von Silla
+I
+(Base.BuildingGroups.smallIrrigation_NameKleine QuelleKleine Quellen
 P
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_NameInfanterie-Kaserne
 W
@@ -1446,10 +1444,10 @@ z
 A
 3Base.Technologies.Technology_China_PaddyFields_Name
 Reisfelder
-#
-Base.Units.Unit_Menes_NameMenes
 D
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_NamePlantage
+#
+Base.Units.Unit_Menes_NameMenes
 g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc&Veredelt Motten-Kokons zu Seidenfäden
 �
@@ -1476,18 +1474,18 @@ u
 6Base.Buildings.Building_IberianEra_Home_Premium_1_DescMStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
 X
 7Base.Units.Unit_HighMiddleAges_Hohenstaufen_Ranged_NameHohenstaufener Bogenschützen
-=
-5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSalz
 �
 Base.Units.Unit_Jester_Desc�Unterhalte Könige und trotze dem Tod mit Triboulet, dem berühmtesten Hofnarren der Geschichte! Im 15. und 15. Jahrhundert unterhielt dieser Narr die Monarchie mit seinem Witz und seiner Grobheit, während er sich durch die Komplexität des Hofes navigierte.<br><br>Geschichten über Triboulet unterstreichen seine Cleverness: Nachdem er die Frau von König François I. beleidigt hatte, wurde er mit dem Tod bedroht und gebeten, die Art der Hinrichtung zu wählen. Schnell antwortete er: "Ich möchte an Altersschwäche sterben".<br><br>Und das tat er dann auch, viele Jahre später. Triboulet gilt als archetypischer Narr, der zugleich weise, dumm und lustig ist. Mit ihm an deiner Seite werden deine Feinde vor Lachen sterben!
 =
+5Base.Technologies.Technology_AgeOfTheFranks_Salt_NameSalz
+=
 +Base.Units.Unit_EarlyRome_Player_Siege_NameSpeer-Katapult
-\
-6Base.Buildings.Building_Arabia_Merchant_Average_1_Desc"Stellt große Mengen an Dirham her
 �
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.ThomasJefferson_1_Name�<style=ability_label>Seelenverbindung| Debuff</style>Thomas Jefferson bildet eine Seelenverbindung mit dem gegnerischen Helden, der die höchsten HP besitzt, die <style=basestat>{duratin}</style> anhält. Während der Verbindung wird <style=basestat>{damage_transfer}</style> jeglichen Schadens, den Thomas erhält, auf den verbundenen gegnerischen Helden übertragen.
+\
+6Base.Buildings.Building_Arabia_Merchant_Average_1_Desc"Stellt große Mengen an Dirham her
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.ThomasJefferson_1_Name�<style=ability_label>Seelenverbindung| Debuff</style>Thomas Jefferson bildet eine Seelenverbindung mit dem gegnerischen Helden, der die höchsten HP besitzt, die <style=basestat>{duration}</style> anhält. Während der Verbindung wird <style=basestat>{damage_transfer}</style> jeglichen Schadens, den Thomas erhält, auf den verbundenen gegnerischen Helden übertragen.
 /
 Base.Units.Unit_LadySixSky_NameLady Six Sky
 X
@@ -1516,10 +1514,10 @@ Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_NameKavallerie-Kaserne
 K
 5Base.Buildings.Building_MinoanEra_Home_Average_1_NameMittelgroßes Haus
->
-*Base.Continents.continent.FrozenFjord_NameGefrorener Fjord
 ]
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
+>
+*Base.Continents.continent.FrozenFjord_NameGefrorener Fjord
 �
 !Base.Units.Unit_JuliusCaesar_Desc�Salve! Julius Caesar, der ewige Diktator von Rom, ist an deiner Seite! Dieser Staatsmann, Schriftsteller, General und Anführer aus dem ersten Jahrhundert, der für sein militärisches Genie und seine kühnen politischen Manöver bekannt war, erweiterte Roms Territorium durch bemerkenswerte Eroberungen wie Gallien und Britannien.<br><br>Unter den Augen Caesars eroberte die römische Armee weite Teile Europas und Nordafrikas. Gleichzeitig stieg er in der politischen Welt der römischen Republik auf und leitete Veränderungen ein, die ihr Ende herbeiführen sollten.<br><br>Caesars Schatten wirft einen großen Teil der Geschichte voraus: Zu seinen "Fans" gehören Napoleon Bonaparte und William Shakespeare. Die Wörter "Zar" und "Kaiser" stammen beide von seinem Namen ab. Seit er bei den Heroes of History angekommen ist, gibt Lincoln ihm Nachhilfe dabei, Freunden mit Messern auszuweichen!
 S
@@ -1542,10 +1540,10 @@ W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_NamePorzellan-Manufaktur
 D
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_NamePlantage
-I
-5Base.Abilities.hero_battle_ability.OracleOfDephi_NameOmen des Orakels
 ^
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc!Stellt Goldene Lorbeerkränze her
+I
+5Base.Abilities.hero_battle_ability.OracleOfDephi_NameOmen des Orakels
 z
 -Base.Units.Unit_IberianEra_Player_Jinete_DescIKavallerie-Einheiten sind schnell und greifen die Nachhut des Gegners an.
 V
@@ -1679,10 +1677,10 @@ T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_6_NameLuxuriöses Papyrusfeld
 S
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 f
 FBase.Technologies.Technology_KingdomOfSicily_ReinforcedKiteShield_NameVerstärkter Normannenschild
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc6Substantially improves Happiness of adjacent buildings
 D
 4Base.Buildings.Building_DawnAge_City_CityHall_1_NameGroße Halle
 G
@@ -1697,18 +1695,18 @@ T
 $Base.BuildingGroups.premiumPier_NameLuxuriöser AngelstegLuxuriöse Angelstege
 E
 3Base.Technologies.Technology_Mayas_RitualSites_NameRitualstätten
--
- Base.BuildingGroups.GarmentMaker	Schneider
 N
 5Base.Abilities.hero_battle_ability.AmeliaEarhart_NameTaktische Evakuierung
+-
+ Base.BuildingGroups.GarmentMaker	Schneider
 H
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_NameKeulenkrieger
-E
-8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	Schreiner
 D
 1Base.Abilities.hero_battle_ability.Sacagawea_NameLeitendes Licht
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_5_Desc(Improves Happiness of adjacent buildings
+E
+8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	Schreiner
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_5_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_21_Name�<style=ability_label>Stampfen| Blutung| Betäuben</style>Tomoe stößt ihren Speer auf den Boden und entfesselt eine Schockwelle, die allen Gegnern<style=basestat>{dmg_percentage}</style> Schaden in einem Umkreis von<style=basestat>{range}</style> zufügt. Betroffene Einheiten haben eine <style=basestat>{bleed_chance}</style> Chance, für zusätzlichen <style=basestat>{bleed_percentage}</style> Schaden über <style=basestat>{bleed_duration}</style> zu bluten und eine <style=basestat>{stun_chance}</style> Chance, für <style=basestat>{stun_duration}</style> betäubt zu werden.
 O
@@ -1760,8 +1758,8 @@ Q
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_NameRitueller Schnitzer
 F
 4Base.Abilities.hero_battle_ability.TribalHealer_NameHeilende Salve
-a
-*Base.BuildingGroups.premiumRitualSite_NameLuxuriöse RitualstätteLuxuriöse Ritualstätten
+H
+*Base.BuildingGroups.premiumRitualSite_NameMagma-TempelMagma-Tempel
 P
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_5_NameMottenlichtung
 E
@@ -1793,10 +1791,10 @@ R
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_3_NameBelagerungs-Kaserne
 N
 6Base.Technologies.Technology_Mayas_HeaddressCraft_NameKopfschmuck-Handwerk
-]
-CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescSchaltet Hopliten frei
 b
 :Base.Buildings.Building_AgeOfTheFranks_Farm_Premium_1_Desc$Stellt riesige Mengen an Nahrung her
+]
+CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescSchaltet Hopliten frei
 M
 3Base.Buildings.Building_Mayas_Quarry_Premium_5_NameLuxuriöser Steinbruch
 U
@@ -1813,8 +1811,8 @@ E
 4Base.Technologies.Technology_Mayas_SolarRituals_NameSonnenrituale
 �
 1Base.Units.Unit_RomanEmpire_Player_Legionary_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc6Substantially improves Happiness of adjacent buildings
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 I
 #Base.BuildingGroups.jadeQuarry_NameJade-SteinbruchJade-Steinbrüche
 P
@@ -1885,11 +1883,11 @@ JBase.AbilityDescriptions.hero_battle_ability_description.MaoriChief_1_Name�<s
 a
 QBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_TreasureTrove_NameSchatzkammer
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_DescProduziert Ritualdolche
 �
 <Base.Buildings.Building_FeudalAge_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
-t
-5Base.Buildings.Building_Mayas_Workshop_Premium_3_Desc;Produces Ancestor Masks, Calendar Stones and Ritual Daggers
+p
+5Base.Buildings.Building_Mayas_Workshop_Premium_3_Desc7Produziert Ahnenmasken, Kalendersteine und Ritualdolche
 B
 2Base.Buildings.Building_Vikings_Home_Worker_1_NameArbeiterhaus
 c
@@ -1914,16 +1912,16 @@ E
 6Base.Buildings.Building_Vikings_Beehive_Average_4_NameBienenstock
 E
 5Base.Units.Unit_MinoanEra_EgyptianAcolytes_Menes_NameKönig Menes
-L
-5Base.Buildings.Building_Egypt_GoldMine_Premium_4_NameLuxuriöse Goldmine
-y
-2Base.Units.Unit_StoneAge_Player_Spearfighters_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 N
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_NameBelagerungs-Kaserne
+y
+2Base.Units.Unit_StoneAge_Player_Spearfighters_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
+L
+5Base.Buildings.Building_Egypt_GoldMine_Premium_4_NameLuxuriöse Goldmine
 8
 #Base.Heroes.hero.OracleOfDephi_NameOrakel von Delphi
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_1_DescProduziert Kalendersteine
 H
 5Base.Abilities.hero_battle_ability.QueenBoudicca_NameKeltische Rache
 =
@@ -1970,10 +1968,10 @@ u
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 P
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_1_NameInfanterie-Kaserne
-9
-%Base.Heroes.hero.ThomasJefferson_NameThomas Jefferson
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_1_DeschDer Bienenstock produziert köstlichen Honig, der zur Herstellung von Met in der Taverne verwendet wird.
+9
+%Base.Heroes.hero.ThomasJefferson_NameThomas Jefferson
 �
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_DescGEntsende Expeditionsschiffe, die Juwelen- oder Gewürzschätze sammeln.
 H
@@ -2047,10 +2045,10 @@ I
 <Base.Technologies.Technology_KingdomOfSicily_WaterClock_Name	Wasseruhr
 y
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
-K
-:Base.Technologies.Technology_RomanEmpire_VillaRustica_NameVilla Rustica
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.ThomasAlvaEdison_1_Name�<style=ability_label>Teleport| Stampfen</style>Teleportiert sich in die größte Ansammlung gegnerischer Einheiten und verursacht bei der Ankunft eine Explosion. Die Explosion verursacht <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style>. Edison erhält dann <style=basestat>{attack_speed_buff}</style> Angriffsgeschwindigkeit für den Rest der Welle.
+K
+:Base.Technologies.Technology_RomanEmpire_VillaRustica_NameVilla Rustica
 �
 #Base.Units.Unit_RomanCenturion_Desc�Ave! Titus Pullo, ein römischer Soldat, der in Julius Caesars "Commentarii de Bello Gallico" erwähnt wird, ist vor allem für seine Darstellung im Zusammenhang mit den Gallischen Kriegen bekannt.<br><br>Pullo wird als Zenturio portraitiert und ist für seine Rivalität und Kameradschaft mit dem Zenturio Lucius Vorenus bekannt. Laut einer berühmten Erzählung griff Pullo mitten im Kampf gegen die Gallier ein, wo er seine Tapferkeit in einem freundschaftlichen Wettstreit mit Vorenus bewies und seine Courage und kriegerische Fähigkeiten zur Schau stellte.<br><br>Obwohl es nur wenige Details über Pullo in Caesars Schriften gibt, ist er zum Sinnbild für römischen militärischen Mut und Heldentum geworden und hat mit seinen waghalsigen Taten die Fantasie vieler Menschen beflügelt. Er ist wahrlich Speer-takulär!
 J
@@ -2061,19 +2059,19 @@ T
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_DescSchaltet Ballisten frei
 P
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_3_NameInfanterie-Kaserne
-C
-8Base.Units.Unit_EarlyRome_MacedonianKingdom_Peltast_NamePeltast
 J
 <Base.Technologies.Technology_StoneAge_DomesticatedGoats_Name
 Hausziegen
+C
+8Base.Units.Unit_EarlyRome_MacedonianKingdom_Peltast_NamePeltast
 �
  Base.Units.Unit_SiouxShaman_Desc�Setz dich mit Sitting Bull für deine Rechte und deine Zukunft ein! Dieser berühmte Anführer der Hunkpapa Lakota Sioux wurde für seinen Widerstand gegen die Politik und Kolonialisierungsbemühungen der US-Regierung im 19. Jahrhundert gefeiert. Er war für seine Weisheit und seine Führungsqualitäten bekannt und trug dazu bei, die Sioux-Stämme in einer Zeit intensiver Konflikte und Veränderungen zu vereinen.<br><br>Er spielte eine entscheidende Rolle im Kampf am Little Bighorn, wo Streitkräfte der Sioux und Cheyenne einen bedeutenden Sieg gegen die Truppen von General Custer errangen. Sitting Bull wurde zu einem Symbol für den Widerstand der Amerikanischen Ureinwohner und ihre Entschlossenheit, ihre Lebensweise zu bewahren.<br><br>Sein Vermächtnis bleibt als Symbol für Mut und kulturelle Standhaftigkeit im Angesicht von widriger Umstände bestehen. Obwohl er diskriminiert und unterdrückt wurde, kämpfte Sitting Bull - mit Worten und Waffen - wann immer es nötig war.
 ?
 /Base.Buildings.Building_Egypt_Home_Small_3_NameKleines Haus
-P
-<Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescStellt Togen her
 H
 5Base.Buildings.Building_China_RiceFarm_Average_5_DescProduziert Reis
+P
+<Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_DescStellt Togen her
 C
 .Base.Abilities.hero_battle_ability.Mozart_NameSymphonie Nr. 999
 C
@@ -2110,10 +2108,10 @@ B
 /Base.Wonders.Wonder_Capital_SherwoodForest_NameSherwood Forest
 F
 9Base.Technologies.Technology_EarlyRome_RearLivestock_Name	Viehzucht
-{
-BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 O
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_NameLuxuriöses Haus
+{
+BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 B
 3Base.Abilities.hero_battle_ability.QinShiHuang_NameGeistklinge
 H
@@ -2157,10 +2155,10 @@ S
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_3_NameKavallerie-Kaserne
 2
  Base.BuildingGroups.channel_NameKanalKanäle
-A
-6Base.Buildings.Building_Vikings_Workshop_Tavern_3_NameTaverne
 I
 7Base.Technologies.Technology_MinoanEra_IronPendant_NameEisenanhänger
+A
+6Base.Buildings.Building_Vikings_Workshop_Tavern_3_NameTaverne
 B
 2Base.Abilities.hero_battle_ability.TomoeGozen_NameSakura-Slash
 <
@@ -2179,10 +2177,10 @@ I
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 9
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heilung| Schild</style>Der Heilige Gral verbessert die Heilungsfähigkeiten des Besitzers und verstärkt alle Heilungen um <style=basestat>{healing_amp}</style>. Wenn eine Einheit über ihre maximalen Trefferpunkte hinaus geheilt wird, <style=basestat>{heal_to_shield_conversion}</style> wird die überschüssige Heilung in einen Schild konvertiert.
 6
 Base.Ages.AgeOfTheFranks_NameZeitalter der Franken
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>Heilungl| Schild</style>Der Heilige Gral verbessert die Heilungsfähigkeiten des Besitzers und verstärkt alle Heilungen um <style=basestat>{healing_amp}</style>. Wenn eine Einheit über ihre maximalen Trefferpunkte hinaus geheilt wird, <style=basestat>{heal_to_shield_conversion}</style> wird die überschüssige Heilung in einen Schild konvertiert.
 E
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_NamePlantage
 I
@@ -2241,8 +2239,8 @@ V
 ;Base.Technologies.Technology_BronzeAge_CavalrySpearmen_NameKavallerie-Speerträger
 G
 $Base.BuildingGroups.heroAcademy_NameHeldenakademieHeldenakademien
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_2_Desc(Improves Happiness of adjacent buildings
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_2_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 6
 &Base.Units.Unit_ArtemisiaIOfCaria_NameArtemisia I.
 O
@@ -2251,22 +2249,22 @@ O
 <Base.Technologies.Technology_ByzantineEra_SpiceMerchant_NameGewürzhändler
 K
 5Base.Buildings.Building_EarlyRome_Home_Average_1_NameMittelgroßes Haus
-D
-7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Name	Bauernhof
 =
 4Base.Technologies.Technology_RomanEmpire_Forums_NameForen
-�
- Base.Units.Unit_Charlemagne_Desc�Kniuwen! Du siehst Karl den Großen aus dem 8. und 9. Jahrhundert, der als König der Franken und als Kaiser des Karolingerreiches regierte.<br><br>Mit Gespür und Ehrgeiz baute er sein Reich zu einem riesigen Imperium in West- und Mitteleuropa aus, förderte die Religion und legte die Grundlagen für moderne europäische Staaten. Karl der Große hatte auch eine Leidenschaft für Kultur und Bildung und löste die karolingische Renaissance aus - eine lebendige Wiederbelebung von Kunst, Bildung und religiösen Reformen.<br><br>Sein Vermächtnis als vereinigender und visionärer Anführer prägt bis heute die europäische Identität und historische Entwicklung. Man könnte sagen, er war das "Große" Event des 9. Jahrhunderts!
+D
+7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Name	Bauernhof
 �
 %Base.Units.Unit_GeorgeWashington_Desc�Hier ist George Washington, der "Vater der Vereinigten Staaten von Amerika". Dieser Gründervater aus dem 18. Jahrhundert, der erste Präsident der Vereinigten Staaten, hat das Land für immer geprägt.<br><br>Washington führte die Kontinentalarmee im Amerikanischen Unabhängigkeitskrieg an und war der erste Präsident, der die Nation ins Leben rief. Der Traum von der Unabhängigkeit durchdrang seine Herrschaft: Unter seiner Führung versuchte Amerika, sich von der Parteipolitik und anderen Weltmächten zu distanzieren.<br><br>Washingtons Vermächtnis als militärischer und politischer Anführer inspiriert weiterhin und zeigt ein Leben, das dem Dienen, den Prinzipien und dem Schmieden eines neuen Weges für die Zukunft der Vereinigten Staaten gewidmet war. Er hatte auch eine Vorliebe für Eiscreme!
+�
+ Base.Units.Unit_Charlemagne_Desc�Kniuwen! Du siehst Karl den Großen aus dem 8. und 9. Jahrhundert, der als König der Franken und als Kaiser des Karolingerreiches regierte.<br><br>Mit Gespür und Ehrgeiz baute er sein Reich zu einem riesigen Imperium in West- und Mitteleuropa aus, förderte die Religion und legte die Grundlagen für moderne europäische Staaten. Karl der Große hatte auch eine Leidenschaft für Kultur und Bildung und löste die karolingische Renaissance aus - eine lebendige Wiederbelebung von Kunst, Bildung und religiösen Reformen.<br><br>Sein Vermächtnis als vereinigender und visionärer Anführer prägt bis heute die europäische Identität und historische Entwicklung. Man könnte sagen, er war das "Große" Event des 9. Jahrhunderts!
 V
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_1_NameInfanterie-Kaserne
 8
 #Base.BuildingGroups.MediumResidenceDurchschnittshaus
-X
-?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_1_DescSchaltet Triarii frei
 z
 1Base.Buildings.Building_China_Home_Premium_1_DescEProduziert eine Tonne Wu Zhu und fügt deiner Stadt 3 Arbeiter hinzu 
+X
+?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_1_DescSchaltet Triarii frei
 �
 Base.Units.Unit_KarlMarx_Desc�Wirf deine Ketten ab mit Karl Marx! Dieser deutsche Philosoph und Wirtschaftswissenschaftler aus dem 19. Jahrhundert veränderte das wirtschaftliche Denken für immer, indem er den Marxismus entwickelte, der den Kapitalismus kritisiert und für eine klassenlose Gesellschaft eintritt.<br><br>In "Das Kommunistische Manifest" und "Das Kapital" analysierte Marx die sozioökonomischen Kräfte, die die Gesellschaft prägen, und vertrat die Ansicht, dass "die Geschichte aller Gesellschaften ein Klassenkampf ist". In der Überzeugung, dass der Wandel unweigerlich kommen würde, versuchte Marx, die Ausbeutung der Arbeiter im Laufe der Geschichte aufzuzeigen.<br><br>Marx' Worte haben Revolutionen ausgelöst, Diktaturen inspiriert und Wohlfahrtsreformen angeregt. Von den Universitäten über die Börsen bis hin zu den Parlamenten werden der Marxismus und seine Lehren über den Staat auch heute noch heiß diskutiert. So oder so, man muss zugeben, dass er die Geschichte marxgeblich beeinflusst hat!
 D
@@ -2292,8 +2290,8 @@ I
 Mansa Musa
 D
 7Base.Technologies.Technology_RomanEmpire_Ballistas_Name	Ballisten
-�
-TBase.AbilityDescriptions.hero_battle_ability_description.GoldenRaftOfElDorado_1_Name�<style=ability_label>Summon | Buff</style>At the start of each wave, summon a Mayan Warrior at the wielder's current level. All Attack and Defense buffs provided by the wielder are increased by <style=basestat>{atkdef_buff_increase}</style> per relic level.
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.GoldenRaftOfElDorado_1_Name�<style=ability_label>Beschwörung | Buff</style>Beschwört zu Beginn jeder Welle einen Maya-Krieger auf der aktuellen Stufe des Trägers. Alle Angriffs- und Verteidigungsbuffs des Trägers werden um <style=basestat>{atkdef_buff_increase}</style> erhöht.
 �
 2Base.Units.Unit_HighMiddleAges_Player_Billmen_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 S
@@ -2304,8 +2302,8 @@ p
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescrSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen. 
 R
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMaske des Tutanchamun
-�
-5Base.Buildings.Building_Mayas_Workshop_Premium_6_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
+}
+5Base.Buildings.Building_Mayas_Workshop_Premium_6_DescDProduziert Ahnenmasken, Kalendersteine, Ritualdolche und Kopfschmuck
 T
 @Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapierverpackung
 S
@@ -2330,42 +2328,42 @@ X
 >Base.Buildings.Building_RomanEmpire_CultureSite_Compact_1_NameKompakte Kulturstätte
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_3_NameAviarium
--
-"Base.Units.Unit_JaguarWarrior_NameOcelotl
 C
 "Base.BuildingGroups.smallWell_NameKleine QuelleKleine Quellen
-7
-#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
+-
+"Base.Units.Unit_JaguarWarrior_NameOcelotl
 z
 1Base.Buildings.Building_China_Home_Premium_4_DescEProduziert eine Tonne Wu Zhu und fügt deiner Stadt 3 Arbeiter hinzu 
+7
+#Base.Units.Unit_VincentVanGogh_NameVincent van Gogh
 �
 1Base.Buildings.Building_China_Home_Average_4_DescOProduziert einen großen Haufen Wu Zhu und fügt deiner Stadt 5 Arbeiter hinzu.
 ^
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_8_NameMinoischer Wachturm
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_5_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_5_DescProduziert Kalendersteine
 �
 1Base.Buildings.Building_Mayas_Home_Premium_4_DescTProduziert eine Tonne Kakao und fügt deiner Stadt 2 Arbeiter und 1 Handwerker hinzu
 F
 3Base.Technologies.Technology_China_RefinedSilk_NameVeredelte Seide
 O
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_2_NameKavallerie-Kaserne
- 
-Base.Ages.Egypt_NameÄgypten
 Q
 6Base.Abilities.hero_battle_ability.AbrahamLincoln_NameSchutz des Präsidenten
+ 
+Base.Ages.Egypt_NameÄgypten
 I
 7Base.Technologies.Technology_Vikings_FjordDominion_NameFjord-Dominion
-W
-?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_NamePorzellan-Manufaktur
 V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_NameKaolin-Steinbruch
+W
+?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_NamePorzellan-Manufaktur
 L
 4Base.Units.Unit_KingdomOfSicily_Arabia_Infantry_NameArabische Infanterie
-G
-:Base.Buildings.Building_Vikings_FishingPier_Average_3_Name	Angelsteg
 �
 Base.Units.Unit_VanHelsing_Desc�Mach deine Armbrust bereit und wetze deine Pflöcke, Abraham Van Helsing ist auf der Jagd! In Bram Stokers Horrorroman "Dracula" aus dem 19. Jahrhundert schlüpft der Arzt in die Rolle eines Amateur-Vampirjägers und bringt vier von ihnen um!<br><br>Seitdem ist Van Helsing zu einer zunehmend mythologisierten Figur geworden; ein Berufs-Jäger, der im Hammer-Horror und in den Dracula-Verfilmungen berühmt wurde. Generationen von Van Helsings wurden gezeigt, wie sie für die Seite des Lichts kämpften.<br><br>Van Helsing hat sich seit seiner Erschaffung stark verändert. Einst war er ein einfacher Arzt und Universalgelehrter, heute ist diese schneidige Figur mit Armbrust und Pfählen in der Hand ein Synonym für Monstertötung. Warum sollte man sich nicht mit ihm anlegen? Er ist un-pfähl-bar!
+G
+:Base.Buildings.Building_Vikings_FishingPier_Average_3_Name	Angelsteg
 �
 -Base.Units.Unit_EarlyRome_Player_Triarii_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 H
@@ -2417,10 +2415,10 @@ L
 Sturmrufer
 R
 ?Base.Buildings.Building_FeudalAge_Workshop_SpiceMerchant_1_NameGewürzhändler
-L
-:Base.Buildings.Building_China_Workshop_SilkWorkshop_4_NameSeiden-Weberei
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_20_Name�<style=ability_label>Nahkampfangriff| Debuff| Buff</style>Sun Tzu schlägt zweimal auf alle feindlichen Einheiten um sich herum ein und verursacht dabei insgesamt <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style>. Dann fokussiert er sich auf sich selbst und verursacht eine Aura der Ruhe, die die Angriffsgeschwindigkeit der Gegner in der Nähe um <style=basestat>{atk_speed_percentage}</style> für <style=basestat>{duration}</style> reduziert. Alle befreundeten Einheiten erhalten <style=basestat>{atk_speed_percentage_buff}</style> Angriffgeschwindigkeit <style=basestat>{duration}</style>.
+L
+:Base.Buildings.Building_China_Workshop_SilkWorkshop_4_NameSeiden-Weberei
 :
  Base.BuildingTypes.riceFarm_Name	Reis-FarmReis-Farmen
 �
@@ -2439,8 +2437,9 @@ Y
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_DescSchaltet Arbalesten frei
 C
 4Base.Technologies.Technology_Vikings_Pictograms_NamePiktogramme
-1
-!Base.Cities.City_Mayas_Tikal_NameMayan Empire
+/
+!Base.Cities.City_Mayas_Tikal_Name
+Maya-Reich
 J
 5Base.Abilities.hero_battle_ability.RagnarLodbrok_NameLöwe des Nordens
 =
@@ -2493,22 +2492,22 @@ E
 8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Name	Brennofen
 S
 <Base.Technologies.Technology_HighMiddleAges_Precautions_NameVorsichtsmaßnahmen
+Z
+7Base.Buildings.Building_Egypt_Workshop_Goldsmith_1_DescStellt Ankhs und Goldmasken her
 H
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Name	Bauernhof
 F
 9Base.Units.Unit_RomanEmpire_GermanicTribes_Eoredeman_Name	Eoredemen
-Z
-7Base.Buildings.Building_Egypt_Workshop_Goldsmith_1_DescStellt Ankhs und Goldmasken her
 ]
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 S
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_NameLeibeigene und Jarls
 >
 )Base.Regions.region.VolcanicJungle_3_NameEnglische Kolonie
-z
-ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 =
 1Base.Units.Unit_ByzantineEra_Player_Catapult_NameKatapult
+z
+ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 H
 +Base.Wonders.Wonder_Capital_Lighthouse_NameLeuchtturm von Alexandria
 X
@@ -2566,10 +2565,10 @@ F
 Base.Ages.ByzantineEra_NameByzantinische Ära
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_5_NameAviarium
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_2_DescProduces Headdresses
-�
-Base.Units.Unit_ElCid_Desc�He fought for the Christians, he fought for the Muslims, and now he fights for you: El Cid has sworn to serve you. This knight and lord from the 11th Century is remembered as the ideal knight - brave, chivalrous, triumphant, and powerful — but his legend began under the name Rodrigo Díaz, a young soldier fighting for King Sancho II.<br><br>But these were tumultuous times for Castile. Sancho was slain, and his brother Alfonso ruled in his stead: a brother whom El Cid had fought against. Exiled, the knight joined the Muslims of Zaragoza, and led them time after time to victory. Here, he earned the name Al-saiyyid: the Master.<br><br>Years later, in Valencia, he became a lord, running the city independently. The city and its army was both Christian and Muslim, bringing El Cid's history to life in a pluralistic society. In Spain he is still known as 'the Champion', his greatest victories and final legend forged alongside his faithful horse, Babieca.
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_2_DescProduziert Kopfschmuck
+�
+Base.Units.Unit_ElCid_Desc�Er kämpfte für die Christen, er kämpfte für die Muslime, und jetzt kämpft er für dich: El Cid hat geschworen, dir zu dienen. Dieser Ritter und Herrscher aus dem 11. Jahrhundert gilt als der ideale Krieger - mutig, ritterlich, triumphierend und mächtig - aber seine Legende begann unter dem Namen Rodrigo Díaz, einem jungen Soldaten, der für König Sancho II. kämpfte.<br><br>Doch es waren stürmische Zeiten für Kastilien. Sancho wurde ermordet, und an seiner Stelle regierte sein Bruder Alfonso, gegen den El Cid gekämpft hatte. Im Exil schloss sich der Ritter den Muslimen von Zaragoza an und führte sie immer wieder zum Sieg. Hier erwarb er sich den Namen Al-saiyyid: der Meister.<br><br>Jahre später, in Valencia, wurde er zum Herrscher und regierte die Stadt unabhängig. Die Stadt und ihre Armee waren sowohl christlich als auch muslimisch, wodurch El Cids Geschichte in einer pluralistischen Gesellschaft lebendig wurde. In Spanien ist er immer noch als "der Champion" bekannt. Seine größten Siege und seine letzte Legende wurden an der Seite seines treuen Pferdes Babieca geschmiedet.
 �
 !Base.Units.Unit_VikingRaider_Desc�Hab keine Angst und kämpfe tapfer, denn Freydís Eiríksdóttir wird dir den Rücken freihalten! Diese Wikingerin aus dem 11. Jahrhundert ist in den nordischen Sagas von Vinland für ihre kühnen Heldentaten und ihre Entschlossenheit bekannt.<br><br>Als Tochter von Erik dem Roten unternahm sie Reisen nach Vinland, einem Teil der nordamerikanischen Küste, und stellte ihre Entschlossenheit und ihren Mut im Angesicht unbekannter Länder unter Beweis. Die Legende von Freydís erzählt, dass sie ihre Siedlung furchtlos gegen Feinde verteidigt hat.<br><br>Ihre mythenumwobenen Geschichten zeigen die Stärke und Zähigkeit der Wikingerfrauen und tragen zu einem Erbe an Abenteuern und Widerstandsfähigkeit in der nordischen Geschichte bei.
 H
@@ -2627,10 +2626,10 @@ F
 0Base.Abilities.hero_battle_ability.LouisXIV_NameRoi-Soleil's Gunst
 >
 3Base.Technologies.Technology_EarlyRome_Hastati_NameHastati
-`
-7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Desc%Schaltet Steinschleuderschützen frei
 V
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_2_NameFernkämpfer-Kaserne
+`
+7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Desc%Schaltet Steinschleuderschützen frei
 E
 'Base.Heroes.hero.PhilipIIOfMacedon_NamePhilipp II. von Makedonien
 6
@@ -2643,8 +2642,8 @@ IBase.AbilityDescriptions.hero_battle_ability_description.Hercules_20_Name�<st
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 �
 :Base.Buildings.Building_ClassicGreece_City_CityHall_1_DescuDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_DescProduziert Ahnenmasken
 K
 3Base.Buildings.Building_Mayas_Aviary_Premium_2_NameLuxuriöses Aviarium
 J
@@ -2730,8 +2729,8 @@ RBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_1_N
 F
 8Base.Technologies.Technology_RomanEmpire_Sagittarii_Name
 Sagittarii
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_4_DescProduces Headdresses
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_4_DescProduziert Kopfschmuck
 V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_DescProduziert Kaolin
 �
@@ -2778,8 +2777,8 @@ Y
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 R
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_NameÜberfall-Raubzüge
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_DescProduziert Ahnenmasken
 B
 2Base.Abilities.hero_battle_ability.VanHelsing_NameSilberbolzen
 �
@@ -2844,10 +2843,10 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_2_NameSchwere Inf
 9Base.Buildings.Building_ClassicGreece_Home_Premium_1_DescLStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 C
 *Base.Wonders.Wonder_Capital_Mausoleum_NameGrabmal von Maussolos
-Y
->Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameKarthagische Kavallerie
 s
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
+Y
+>Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameKarthagische Kavallerie
 Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_DescStellt Ankhs und Goldmasken her
 x
@@ -2868,10 +2867,10 @@ A
 7Base.Technologies.Technology_IberianEra_Eyeglasses_NameBrille
 +
 Base.Ages.FeudalAge_Finish1.000 n. Chr.
-R
-:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_NameGroße Kulturstätte
 J
 )Base.TreasureHuntDifficultiesPanel.HeaderSchatzjagd-Schwierigkeitsgrad
+R
+:Base.Buildings.Building_FeudalAge_CultureSite_Large_1_NameGroße Kulturstätte
 i
 WBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Moderate_NameWinterpyramide
 �
@@ -2900,10 +2899,10 @@ S
 8Base.Buildings.Building_FeudalAge_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 ]
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescSchaltet Königsgarde frei
-X
-@Base.Buildings.Building_KingdomOfSicily_CultureSite_Large_1_NameGroße Kulturstätte
 U
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_2_NameFernkämpfer-Kaserne
+X
+@Base.Buildings.Building_KingdomOfSicily_CultureSite_Large_1_NameGroße Kulturstätte
 f
 IBase.Technologies.Technology_KingdomOfSicily_AstronomicalInstruments_NameAstronomische Instrumente
 ?
@@ -2918,10 +2917,10 @@ p
 5Base.Buildings.Building_BronzeAge_Home_Average_2_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 U
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_NameKavallerie-Kaserne
-x
-6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 S
 <Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_NameBelagerungs-Kaserne
+x
+6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 A
 .Base.Abilities.hero_battle_ability.Jester_NameKonfetti-Kanone
 V
@@ -2934,10 +2933,10 @@ F
 Eselherden
 J
 7Base.Technologies.Technology_FeudalAge_Manorialism_NameGrundherschafft
-�
-;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 H
 3Base.Buildings.Building_Mayas_Aviary_Average_5_DescProduziert Federn
+�
+;Base.Buildings.Building_KingdomOfSicily_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 O
 9Base.Buildings.Building_ClassicGreece_Home_Average_2_NameMittelgroßes Haus
 K
@@ -2958,10 +2957,10 @@ F
 5Base.Technologies.Technology_Egypt_Mummification_NameMumifizierung
 F
 1Base.Abilities.hero_battle_ability.MansaMusa_NameGold-Coast-Gambit
-+
-Base.Heroes.hero.HuaMulan_Name	Hua Mulan
 N
 7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_NameBelagerungs-Kaserne
++
+Base.Heroes.hero.HuaMulan_Name	Hua Mulan
 s
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 J
@@ -3004,10 +3003,10 @@ B
 G
 9Base.Technologies.Technology_ByzantineEra_Bucellarii_Name
 Bucellarii
-,
-Base.Heroes.hero.Confucius_Name	Konfuzius
 K
 5Base.Buildings.Building_EarlyRome_Home_Average_3_NameMittelgroßes Haus
+,
+Base.Heroes.hero.Confucius_Name	Konfuzius
 w
 5Base.Buildings.Building_RomanEmpire_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 0
@@ -3028,10 +3027,10 @@ p
 2Base.Buildings.Building_Vikings_Home_Worker_3_Desc:Stellt Pennys her und fügt deiner Stadt 2 Arbeiter hinzu.
 =
 'Base.Regions.region.TeslaStormBlue_NameBlauer Tesla-Sturm
-O
-7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 �
 "Base.Units.Unit_CyrusTheGreat_Desc�Von Libyen bis Pakistan preisen sie Kyros den Großen, den Gründer des Achämenidenreiches, des größten Reiches, das die Welt je gesehen hat. Dieser Kaiser aus dem 6. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Kyros vereinigte die Stämme Persiens und vergrößerte dann sein Territorium über Kleinasien und Osteuropa. Die eroberten Satrapen durften ihre eigenen Religionen und Bräuche beibehalten, was Kyros' Erbe als weiser Anführer festigte.<br><br>Für die Juden war er ein Messias, für die Babylonier ein Befreier und ein Held für Alexander den Großen und Thomas Jefferson. Sein Ruhm ist im Iran manifestiert, und seine Güte im Kyros-Zylinder, einer Erklärung der Staatskunst und der Träume. Kyros war nicht nur ein begabter Staatsmann, er war auch auf dem Schlachtfeld sehr gerissen. Angeblich hat er seine Feinde vor einer Schlacht betrunken gemacht!
+O
+7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 3
 $Base.Heroes.hero.JapaneseShogun_NameKondo Isami
 v
@@ -3055,8 +3054,8 @@ U
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_3_DescVeredelt Kaolin zu Ton
 L
 2Base.Units.Unit_TreasureHunt_Blue_Harpoonists_NameHimmlische Harpunisten
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_2_DescProduces a ton of Feathers
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_2_DescProduziert eine Tonne Federn
 q
 7Base.Buildings.Building_Egypt_Irrigation_Channel_2_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 q
@@ -3077,10 +3076,10 @@ Q
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameRitueller Schnitzer
 D
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_3_NameChronist
-C
-0Base.Buildings.Building_Mayas_Quarry_Jade_5_NameJade-Steinbruch
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.JohnLocke_1_Name�<style=ability_label>Fernkampfangriff| Flächenangriff| Betäubung</style>Fügt dem aktuellen Ziel <style=basestat>{dmg_percentage}</style> Schaden zu und betäubt es für <style=basestat>{stun_duration}</style>. Feindliche Einheiten in einem Bereich von <style=basestat>{range}</style> um das Ziel herum erleiden <style=basestat>{dmg_percentage_around}</style> Schaden.
+C
+0Base.Buildings.Building_Mayas_Quarry_Jade_5_NameJade-Steinbruch
 {
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 9
@@ -3099,10 +3098,10 @@ K
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameMittlere Kulturstätte
 P
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_3_NameFernkämpfer-Kaserne
-�
-:Base.Buildings.Building_Vikings_FishingPier_Average_5_DesckAngelstege schicken Boote los, um Fische zu fangen und deine hungrigen Arbeiter und Seefahrer zu versorgen.
 H
 4Base.Units.Unit_BronzeAge_SumerianEmpire_Inanna_NameInannas Amazonen
+�
+:Base.Buildings.Building_Vikings_FishingPier_Average_5_DesckAngelstege schicken Boote los, um Fische zu fangen und deine hungrigen Arbeiter und Seefahrer zu versorgen.
 �
 2Base.Buildings.Building_Mayas_City_CityHall_1_DescfDie Große Halle ist das Zentrum deiner Stadt. Sie erzeugt ständig eine kleine Menge Kakao für dich.
 u
@@ -3139,10 +3138,10 @@ Y
 >Base.Technologies.Technology_BronzeAge_BronzeTippedSpears_NameSpeere mit Bronzespitze
 T
 <Base.TreasureHuntDifficultiesPanel.RankingPointsPerEncounterPunkte pro Begegnung
-Z
-@Base.Technologies.Technology_FeudalAge_BattlefieldArtillery_NameSchlachtfeldartillerie
 &
 Base.Heroes.hero.Medusa_NameMedusa
+Z
+@Base.Technologies.Technology_FeudalAge_BattlefieldArtillery_NameSchlachtfeldartillerie
 U
 ?Base.Technologies.Technology_ClassicGreece_ImprovedSaddles_NameVerbesserte Sattel
 K
@@ -3162,9 +3161,6 @@ Handwerker
 LBase.AbilityDescriptions.hero_battle_ability_description.AttilaTheHun_1_Name�<style=ability_label>Fernkampfangriff| Erholung</style>Attila schießt einen lebensentziehenden Pfeil auf das am weitesten entfernte gegnerische Ziel, verursacht <style=basestat>{dmg_percentage}</style> Schaden und heilt sich selbst für <style=basestat>{heal_percentage}</style> seines Basisschadens.
 [
 ?Base.Technologies.Technology_AgeOfTheFranks_AdvancedFodder_NameFortschrittliches Futter
-)
-Base.Cities.City_Mayas_Name
-Maya-Reich
 \
 (Base.BuildingTypes.presetIrrigation_NameSpezielle BewässerungSpezielle Bewässerungen
 .
@@ -3177,10 +3173,10 @@ KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_10_Name�<
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
 o
 6Base.Buildings.Building_Arabia_Irrigation_Oasis_1_Desc5Verbessert die Bewässerung von umliegenden Gebäuden
-F
-6Base.Buildings.Building_MinoanEra_City_CityHall_1_NameGroße Halle
 v
 3Base.Buildings.Building_FeudalAge_Home_Small_2_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
+F
+6Base.Buildings.Building_MinoanEra_City_CityHall_1_NameGroße Halle
 
 Base.HeroClass.HealerHeiler
 Q
@@ -3197,12 +3193,12 @@ L
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_1_NameMinoischer Wachturm
 1
  Base.BuildingGroups.BronzeStatueBronzebildnis
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Name�<style=ability_label>Dispel</style>When the hero lands a basic attack, there is a <style=basestat>{chance}</style> chance to dispel all positive buffs from the targeted unit.
-?
-/Base.Buildings.Building_Egypt_Home_Small_5_NameKleines Haus
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Name�<style=ability_label>Bannen</style>Wenn der Held einen Basisangriff ausführt, besteht eine <style=basestat>{chance}</style> Chance, alle positiven Buffs von der anvisierten Einheit zu entfernen.
 x
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+?
+/Base.Buildings.Building_Egypt_Home_Small_5_NameKleines Haus
 :
 (Base.Regions.region.EasternValley_4_NameTeslas Festung
 T
@@ -3218,10 +3214,10 @@ Veteran II
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_Desc�Carcassonne Wächter sind zusätzliche und vielseitige schwere Infanterieeinheiten für deine Armee. Ihre Werte passen sich automatisch nach deinem aktuellen Zeitalter an.
 H
 8Base.Technologies.Technology_EarlyRome_Marketplaces_NameMarktplätze
-O
-8Base.Technologies.Technology_China_KaolinProcessing_NameKaolin-Verarbeitung
 )
 Base.Ages.DawnAge_Start50.000 v. Chr.
+O
+8Base.Technologies.Technology_China_KaolinProcessing_NameKaolin-Verarbeitung
 _
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_NameWintermarkt
 �
@@ -3244,10 +3240,10 @@ N
 4Base.Units.Unit_TreasureHunt_Yellow_Harpoonists_NameStrahlende Harpunisten
 V
 :Base.Units.Unit_ClassicGreece_ThePersians_ShortBowmen_NamePersische Bogenschützen
-q
-2Base.Buildings.Building_Vikings_Home_Sailor_1_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
 W
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_NameGroße Kulturstätte
+q
+2Base.Buildings.Building_Vikings_Home_Sailor_1_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
 P
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 b
@@ -3376,22 +3372,22 @@ M
 :Base.Technologies.Technology_EarlyRome_PilumPrecision_NamePilumpräzision
 L
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_5_NameSeiden-Weberei
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_5_DescProduces a ton of Feathers
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_5_DescProduziert eine Tonne Federn
 N
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_3_NameBelagerungs-Kaserne
-w
-=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc6Verbessert die Zufriedenheit in umliegenden Gebäuden.
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_2_DescStellt Golderz her
+w
+=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc6Verbessert die Zufriedenheit in umliegenden Gebäuden.
 V
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_NameFélag-Partnerschaft
-�
-9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescGEntsende Expeditionsschiffe, die Juwelen- oder Gewürzschätze sammeln.
 s
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_6_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
-K
-*Base.BuildingGroups.averageRitualSite_NameRitualstätteRitualstätten
+�
+9Base.Buildings.Building_Vikings_SailorPort_Average_6_DescGEntsende Expeditionsschiffe, die Juwelen- oder Gewürzschätze sammeln.
+O
+*Base.BuildingGroups.averageRitualSite_NameKristall-QuelleKristall-Quellen
 D
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_NameChronist
 `
@@ -3406,10 +3402,10 @@ H
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_NameKleines Haus
 �
 Base.Units.Unit_Hatshepsut_Desc�Erlebe den König, der eine Königin war! Hatschepsut, eine der erfolgreichsten Pharaonen Ägyptens, regierte im 15. Jahrhundert vor Christus. Sie war die Tochter von Thutmose I. und stieg als Regentin für ihren Stiefsohn Thutmose III. zur Macht auf und erklärte sich schließlich selbst zum Pharao.<br><br>Ihr berühmter Totentempel in Deir el-Bahri ist nur eines von unzähligen Denkmälern aus ihrer Regierungszeit, aber Hatschepsut konzentrierte sich auch auf Handelsexpeditionen, vor allem in das Land Punt, und vergrößerte so Ägyptens Reichtum und Einfluss.<br><br>Hatschepsut wird oft in der Kleidung männlicher Pharaonen dargestellt, doch ihr Erbe als starke und effektive Herrscherin bleibt bestehen. Ihre Geschichte ist geprägt vom Kampf gegen traditionelle Geschlechterrollen, was ihre Bedeutung in der ägyptischen Geschichte unterstreicht.
-�
-Base.Units.Unit_MontezumaI_Desc�Montezuma I., ein bedeutender Herrscher des Aztekenreichs im 15. Jahrhundert, vergrößerte das Territorium und den Einfluss des Reichs erheblich. Seine Herrschaft konzentrierte sich auf militärische Eroberungen und stärkte die Vorherrschaft Tenochtitlans über das Tal von Mexiko und darüber hinaus.<br><br>Montezuma I. führte bedeutende Infrastrukturprojekte durch, wie den Bau von Aquädukten zur Verbesserung der Wasserversorgung und die Verbesserung der Architektur und der Verteidigungsanlagen der Hauptstadt. Er förderte auch religiöse und kulturelle Entwicklungen und stärkte die Bedeutung der aztekischen Götter.<br><br>Unter seiner Führung wurde nicht nur die Reichweite des Reiches erweitert, sondern auch die sozialen und politischen Strukturen der aztekischen Zivilisation gefestigt, was einen bleibenden Einfluss auf ihre Geschichte und ihr kulturelles Erbe hatte.
 _
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
+�	
+Base.Units.Unit_MontezumaI_Desc�Träger der Feuerkrone, Champion des Himmelsmeeres, Großer Redner: Es gibt keine Beinamen, die Montezuma, dem zweiten Kaiser der Azteken, nicht zustehen. Dieser Kaiser aus dem 14. Jahrhundert wird als Verkörperung des Aztekenreichs in all seiner Majestät und Brutalität in Erinnerung bleiben. Seine Krönung in Tenochtitlan war von großen Opfern geprägt, eine Tradition, die sein Regime nur noch verstärken sollte.<br><br>Eine der ersten Handlungen Montezumas bestand darin, sich mit zwei benachbarten Stadtstaaten zu verbünden. Dieses Dreierbündnis führte sowohl zu Eroberungen als auch zu Wohlstand: Aquädukte versorgten Tenochtitlan und ermöglichten der Stadt ein Wachstum, während das Reich immer mehr Teile Mexikos verschlang.<br><br>Dennoch war er in der Lage, seine politische Macht nicht nur als bloße Waffe einzusetzen. Montezumas Vermächtnis ist auch ein Vermächtnis des Glaubens: Er wird als Heldengott verehrt, und zu seiner Zeit wurden überall im Aztekenreich religiöse Schulen eingerichtet. Bei den Heroes of History ist er jedoch sehr verärgert darüber, dass alle denken, er sei sein Nachfahre, Montezuma II!
 C
 3Base.Buildings.Building_MinoanEra_Home_Small_1_NameKleines Haus
 t
@@ -3488,8 +3484,8 @@ BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHeldenakade
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Buff</style>Wenn die Trefferpunkte des Besitzers unter <style=basestat>{hp_threshold}</style> fallen, wird seine Verteidigung um <style=basestat>{defense_buff}</style> bis zum Ende der aktuellen Welle erhöht. Kann nicht gestapelt werden.
 U
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_DescStellt Türen her
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_3_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_3_DescProduziert Kalendersteine
 N
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_2_NameBelagerungs-Kaserne
 �
@@ -3557,9 +3553,9 @@ DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescSchaltet 
 F
 7Base.Technologies.Technology_Vikings_GlimaFighting_NameGlímakampf
 H
-(Base.BuildingGroups.threadProcessor_NameFaden-SpinnerFaden-Spinner
-H
 /Base.Wonders.Wonder_Capital_PalaceOfAachen_NameAachener Königspfalz
+H
+(Base.BuildingGroups.threadProcessor_NameFaden-SpinnerFaden-Spinner
 Z
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_DescSchaltet Kataphrakte frei
 s
@@ -3568,8 +3564,8 @@ t
 2Base.Buildings.Building_StoneAge_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 T
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescStellt Mosaike her
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduces Headdresses
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduziert Kopfschmuck
 6
 &Base.Regions.region.FrozenFjord_4_NameWald der Fae
 I
@@ -3580,10 +3576,10 @@ I
 FBase.AbilityDescriptions.hero_battle_ability_description.Tansen_1_Name�<style=ability_label>Heilen</style>Tansen transzendiert durch seine Musik und erhält eine heilende Aura, die alle verbündeten Einheiten um ihn herum für bis zu <style=basestat>{heal_amount}</style> des Basisschadens von Tansen über <style=basestat>{duration}</style> heilt. Solange die Fähigkeit aktiv ist, kann Tansen weder angreifen noch sich bewegen.
 V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_NameKaolin-Steinbruch
-C
-7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_NamePlantage
 Q
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_1_NameInfanterie-Kaserne
+C
+7Base.Buildings.Building_ClassicGreece_Farm_Rural_3_NamePlantage
 <
 4Base.Technologies.Technology_ClassicGreece_Toga_NameToga
 �
@@ -3607,10 +3603,10 @@ f
 H
 :Base.Technologies.Technology_MinoanEra_Administration_Name
 Verwaltung
-;
-#Base.Regions.region.Panganea_6_NameGefallene Hauptstadt
 �
 6Base.Buildings.Building_IberianEra_Home_Average_1_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
+;
+#Base.Regions.region.Panganea_6_NameGefallene Hauptstadt
 ?
 /Base.Buildings.Building_China_Home_Small_6_NameKleines Haus
 d
@@ -3627,8 +3623,8 @@ b
 @Base.Technologies.Technology_Mayas_BetterObsidianExtraction_NameVerbesserte Obsidian-Gewinnung
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>Flächenschlag| Debuff| Brennen</style>Beschwört einen feurigen Drachen, der dreimal den Standort der größten Ansammlung feindlicher Einheiten angreift und jedes Mal die DEF um <style=basestat>{def_percentage}</style> von Mulans ATK reduziert und insgesamt <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Betroffene gegnerische Einheiten brennen für einen weiteren <style=basestat>{dmg_percentage_burn}</style> Schaden über <style=basestat>{burn_duration}</style>.
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_4_Desc6Substantially improves Happiness of adjacent buildings
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_4_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 �
 #Base.Units.Unit_OttomanGeneral_Desc�Yalla! Segle mit Hasan Pascha, dem Sohn des berühmten osmanischen Admirals Hayreddin Barbarossa, über die Meere. Dieser Pirat und Anführer wurde in der Mitte des 16. Jahrhunderts als Beylerbey von Algier berühmt.<br><br>Hasan Pascha trat in die Fußstapfen seines Vaters und stärkte die Vorherrschaft der osmanischen Marine im Mittelmeer durch bedeutende Seekampagnen und Korsarenaktivitäten gegen europäische Mächte. Unter seiner Führung wurde Algier zu einem zentralen Knotenpunkt des osmanischen Einflusses und festigte seinen Status als mächtige Macht in Nordafrika.<br><br>Sein Vermächtnis ist geprägt von seinen Bemühungen, die osmanische Vormachtstellung in maritimen Angelegenheiten aufrechtzuerhalten, und er spielte eine entscheidende Rolle in einer Zeit intensiver regionaler und maritimer Konflikte. Pascha liebt scharfes Essen, was die anderen Heroes of History, vor allem Jeanne d'Arc, immer wieder aus der Fassung bringt!
 Q
@@ -3691,16 +3687,16 @@ W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_4_NamePorzellan-Manufaktur
 N
 9Base.Technologies.Technology_IberianEra_NorseHamlets_NameNordische Dörfer
-X
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_NameBewässerungsanlage
 Q
 9Base.Technologies.Technology_Egypt_EgyptianConsensus_NameKonsens der Ägypter
+X
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_NameBewässerungsanlage
 ~
 1Base.Buildings.Building_Egypt_Home_Average_2_DescIStellt große Mengen an Deben her und fügt deiner Stadt 2 Arbeiter hinzu
-S
-8Base.Technologies.Technology_China_PorcelainMastery_NamePorzellan-Meisterschaft
 C
 (Base.Regions.region.EasternValley_2_NameZerklüfteter Regenwald
+S
+8Base.Technologies.Technology_China_PorcelainMastery_NamePorzellan-Meisterschaft
 �
 (Base.Units.Unit_HermannTheCheruscan_Desc�Befreie deine Landsleute mit Hermann dem Cherusker! Dieser deutsche Krieger, auch bekannt als Arminius, fügte Rom im 1. Jahrhundert n. Chr. seine vielleicht größte Niederlage zu.<br><br>Hermann ist vor allem für die Schlacht im Teutoburger Wald bekannt, in der er eine Allianz germanischer Stämme zu einem entscheidenden Sieg über drei römische Legionen unter dem Kommando von Publius Quinctilius Varus führte. Dieser Hinterhalt stoppte die römische Expansion nach Germanien und gilt als Wendepunkt, der die Unabhängigkeit der Germanen vom Römischen Reich bewahrte.<br><br>Noch heute wird Hermann für seine strategische Brillanz und seine Rolle bei der Gestaltung der kulturellen und historischen Identität der germanischen Völker als Symbol des Widerstands gegen die Fremdherrschaft gefeiert.
 U
@@ -3715,10 +3711,10 @@ D
 8Base.Technologies.Technology_ClassicGreece_Hoplites_NameHopliten
 d
 BBase.Technologies.Technology_ByzantineEra_MobilityInnovations_NameInnovationen in der Mobilität
-+
-Base.Ages.StoneAge_Decade40.000 v. Chr.
 >
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_NamePedites
++
+Base.Ages.StoneAge_Decade40.000 v. Chr.
 I
 :Base.Technologies.Technology_AgeOfTheFranks_Patrimony_NamePatrimonium
 Q
@@ -3735,8 +3731,8 @@ U
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_NameInfanterie-Kaserne
 
 Base.HeroClass.GeniusGenie
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_DescProduziert Ahnenmasken
 1
 Base.Buildings.default_NameGebäudeGebäude
 K
@@ -3757,10 +3753,10 @@ A
 Logikbombe
 E
 6Base.Buildings.Building_Vikings_Beehive_Average_2_NameBienenstock
-W
-=Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_NameMittlere Kulturstätte
 [
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_NameKompakte Kulturstätte
+W
+=Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_NameMittlere Kulturstätte
 E
 6Base.Technologies.Technology_FeudalAge_SheepHerds_NameSchafherden
 �
@@ -3841,8 +3837,8 @@ G
 "Base.Units.Unit_PakalTheGreat_NamePakal der Große
 �
 %Base.Units.Unit_BenjaminFranklin_Desc�Benjamin Franklin ist hier, um mit seinen Worten die Blitze zu spalten - und das im wahrsten Sinne des Wortes! Dieser Universalgelehrte aus dem 18. Jahrhundert war nicht nur einer der Gründerväter der Vereinigten Staaten von Amerika, der an der Unabhängigkeitserklärung und der Verfassung mitgearbeitet hat, sondern auch ein Autor, Erfinder und Wissenschaftler.<br><br>Franklin war ein früher Entdecker auf dem Gebiet der Elektrizität. Er benutzte einen Drachen, um "elektrisches Feuer" aus einer Wolke zu sammeln und bewies damit, dass Blitze elektrisch sind. So erfand er den Blitzableiter. Außerdem erfand er die Zweistärkenbrille und erforschte die Ozeane.<br><br>Aber am berühmtesten ist Franklin vielleicht als Diplomat und Schriftsteller. Franklins Geschick mit Worten sicherte die französische Unterstützung in der Amerikanischen Revolution und wurde in Büchern festgehalten, an die man sich heute noch erinnert. Er könnte dich zum Beispiel reich machen: Er war es, der als Erster behauptete, dass die zwei sicheren Dinge im Leben der Tod und die Steuern sind!
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>Flächenschlag| Heilung| Buff</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem alle befreundeten Einheiten im selben Gebiet um <style=basestat>{hp_percentage}</style> von Joans Basisschaden. Betroffene befreundete Einheiten erhalten <style=basestat>{atk_percentage}</style> der ATK von Joan als ATK für <style=basestat>{duration}</style>.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>Flächenschlag| Heilung| Buff</style>Ruft göttlichen Beistand herbei, der auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. Heilt außerdem die größte Ansammlung von Einheiten der eigenen Seite um <style=basestat>{hp_percentage}</style> von Jeannes Basisschaden in einem Bereich von <style=basestat>{range}</style>. Betroffene befreundete Einheiten erhalten <style=basestat>{atk_percentage}</style> von Jeannes ATK als ATK für <style=basestat>{duration}</style>.<br>In der <color=#FFCF2B>Belagerung von Orléans</color> erhält Jeanne <style=basestat>+100% ATK</style> und ihre <style=basestat>Fähigkeit</style> lädt <style=basestat>2s</style> schneller auf.
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_2_DescProduziert Jade
 G
@@ -3876,8 +3872,8 @@ I
 Base.HeroClass.DefenderVerteidiger
 J
 /Base.Continents.continent.EmeraldHighlands_NameSmaragdgrünes Hochland
-d
-5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc+Produces Ancestor Masks and Calendar Stones
+b
+5Base.Buildings.Building_Mayas_Workshop_Premium_1_Desc)Produziert Ahnenmasken und Kalendersteine
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescStellt Golderz her
 �
@@ -3920,15 +3916,15 @@ X
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_DescSchaltet Bogenschützen frei
 U
 (Base.BuildingGroups.premiumMerchant_NameLuxuriöser HändlerLuxuriöse Händler
+e
+;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc&Schaltet Sarazenen-Bogenschützen frei
 N
 @Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_Name
 Arbalisten
-e
-;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc&Schaltet Sarazenen-Bogenschützen frei
-Q
-1Base.Abilities.hero_battle_ability.TigerLily_NameTiger Lily's Beschwichtigung
 C
 -Base.Abilities.hero_battle_ability.Ninja_NameFlüsternde Klinge
+Q
+1Base.Abilities.hero_battle_ability.TigerLily_NameTiger Lily's Beschwichtigung
 w
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 L
@@ -3949,12 +3945,12 @@ b
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 M
 0Base.Abilities.hero_battle_ability.Achilles_NameAchilles' letztes Gefecht
-O
-9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameKavallerie-Kaserne
 �
 7Base.Buildings.Building_IberianEra_City_CityHall_1_DescyDie große Halle ist das Zentrum deiner Stadt. Sie generiert stetig eine geringe Anzahl an Münzen und Nahrung für dich.
+O
+9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_NameKavallerie-Kaserne
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_DescProduziert Ritualdolche
 W
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_NameZeremonie-Ausstatter
 *
@@ -3978,16 +3974,16 @@ JBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_15_Name�<s
 -
 Base.Heroes.hero.DArtagnan_Name
 D'Artagnan
-:
-1Base.Technologies.Technology_FeudalAge_Sagas_NameSagas
 o
 1Base.Buildings.Building_Arabia_Home_Medium_3_Desc:Stellt Dirham her und fügt deiner Stadt 2 Arbeiter hinzu.
+:
+1Base.Technologies.Technology_FeudalAge_Sagas_NameSagas
 S
 <Base.Buildings.Building_HighMiddleAges_Barracks_Siege_3_NameBelagerungs-Kaserne
-B
-2Base.Buildings.Building_Egypt_City_CityHall_2_NameGroße Halle
 >
 4Base.Technologies.Technology_RomanEmpire_Turmae_NameTurmae
+B
+2Base.Buildings.Building_Egypt_City_CityHall_2_NameGroße Halle
 Q
 =Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_NameSchriftgelehrter
 P
@@ -4008,10 +4004,10 @@ M
 8Base.Technologies.Technology_Vikings_PerfectedHoney_NameVollendeter Honig
 T
 =Base.Technologies.Technology_RomanEmpire_EnhancedTorsion_NameVerbesserte Torsion
-p
-/Base.Buildings.Building_China_Home_Small_6_Desc=Stellt Wu Zhu her und fügt deiner Stadt einen Arbeiter hinzu
 �
 Base.Units.Unit_Lagertha_Desc�Lass dich von niemandem zurückhalten, denn Lagertha, die legendäre Schildmaid der Wikinger aus dem 9. Jahrhundert, hat sich den Heroes of History angeschlossen! Diese Kriegerin wird für ihre Tapferkeit und ihr strategisches Geschick in der Schlacht gefeiert. Sie kämpfte an der Seite ihres Mannes Ragnar Lodbrok und spielte eine entscheidende Rolle bei ihren militärischen Siegen. Lagertha war bekannt für ihre Kampffähigkeiten und inspirierte die Krieger mit ihrer Furchtlosigkeit und Führungsstärke.<br><br>Abgesehen von ihren kriegerischen Fähigkeiten hatte sie ein komplexes Privatleben, das von ihrer turbulenten Beziehung zu Ragnar geprägt war, von dem sie sich schließlich scheiden ließ. Der Legende nach behielt Lagertha auch nach ihrer Trennung von Ragnar ihren Einfluss und führte ihre eigenen Truppen in den folgenden Schlachten zum Sieg.<br><br>Lagerthas Vermächtnis als mächtige Frau in der nordischen Geschichte und Mythologie inspiriert und fesselt das Publikum auch heute noch.
+p
+/Base.Buildings.Building_China_Home_Small_6_Desc=Stellt Wu Zhu her und fügt deiner Stadt einen Arbeiter hinzu
 K
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_NameMaskenbildner
 9
@@ -4036,10 +4032,10 @@ u
 <Base.Buildings.Building_StoneAge_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 F
 1Base.Technologies.Technology_BronzeAge_Siege_NameSchleuderkatapult
-U
-=Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 @
 6Base.Technologies.Technology_ClassicGreece_Psiloi_NamePsiloi
+U
+=Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 8
 -Base.Units.Unit_MinoanEra_Player_Hippeis_NameHippeis
 =
@@ -4075,7 +4071,7 @@ B
 B
 8Base.Technologies.Technology_AgeOfTheFranks_Scythes_NameSensen
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_DescProduziert Ritualdolche
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_1_Name�<style=ability_label>Spott| Unverwundbarkeit| Brennen</style>Ruft die Macht Roms herbei, verspottet alle Feinde für <style=basestat>{taunt_duration}</style> und wird für <style=basestat>{invincibility_duration}</style> unbesiegbar. Feindliche Einheiten, die sich in der Nähe von Caesar aufhalten, werden von seiner feurigen Aura getroffen, die sie für <style=basestat>{dmg_percentage}</style> Schaden über <style=basestat>{burn_duration}</style> brennen lässt.
 2
@@ -4110,10 +4106,10 @@ G
 2Base.Units.Unit_StoneAge_Player_HeavyInfantry_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 R
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_1_NameInfanterie-Kaserne
-?
-%Base.BuildingGroups.domesticFarm_Name	BauernhofBauernhöfe
 @
 0Base.Buildings.Building_Mayas_Home_Worker_2_NameArbeiterhaus
+?
+%Base.BuildingGroups.domesticFarm_Name	BauernhofBauernhöfe
 J
 2Base.Abilities.hero_battle_ability.Hatshepsut_NameThebens Gelassenheit
 a
@@ -4138,12 +4134,12 @@ Z
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_DescStellt Ankhs und Goldmasken her
 M
 <Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_NameRoyale Rallye
-^
-?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescSchaltet Scharmützler frei
-p
-/Base.Buildings.Building_China_Home_Small_3_Desc=Stellt Wu Zhu her und fügt deiner Stadt einen Arbeiter hinzu
 O
 >Base.Technologies.Technology_KingdomOfSicily_SineQuadrant_NameSinusquadrant
+p
+/Base.Buildings.Building_China_Home_Small_3_Desc=Stellt Wu Zhu her und fügt deiner Stadt einen Arbeiter hinzu
+^
+?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescSchaltet Scharmützler frei
 B
 6Base.Technologies.Technology_ByzantineEra_Jovians_NameJovianer
 ?
@@ -4152,10 +4148,10 @@ K
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_NameMaskenbildner
 �
 Base.Units.Unit_Tansen_Desc�Werde Zeuge, wie Mian Tansen mit seiner Musik den Regen vom Himmel beschwört! Dieser Musiker aus dem 16. Jahrhundert war einer von Kaiser Akbars "Neun Juwelen", einer Reihe besonderer Menschen am indischen Hof.<br><br>Mian Tansen (was "der Gelehrte" bedeutet) gründete die Gwalior Gharana, die erste Schule der nordindischen Musik. Tansen trat bereits im Alter von fünf Jahren auf und war sein ganzes Leben lang ein ausgezeichneter Sänger und Musiker.<br><br>Es gibt unzählige Legenden über ihn. Seine Lieder sollen wilde Elefanten gezähmt und Vögel besänftigt, sowie Feuer entfacht und Regenstürme heraufbeschworen haben. Gwalior, wo er seine Schule gründete, ist bis heute als die Stadt der Musik bekannt!
-K
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescProduziert Obsidian
 t
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+K
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_DescProduziert Obsidian
 v
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 /
@@ -4177,8 +4173,8 @@ O
 ;Base.Buildings.Building_ByzantineEra_Workshop_Scribe_1_NameSchriftgelehrter
 +
 Base.Units.Unit_Sacagawea_Name	Sacagawea
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc6Substantially improves Happiness of adjacent buildings
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 C
 3Base.Buildings.Building_EarlyRome_Home_Small_1_NameKleines Haus
 G
@@ -4191,8 +4187,8 @@ S
 @Base.Technologies.Technology_KingdomOfSicily_DomedSanctuary_NameKuppelheiligtum
 B
 6Base.Technologies.Technology_RomanEmpire_Princeps_NamePrinceps
-�
-5Base.Buildings.Building_Mayas_Workshop_Premium_4_DescHProduces Ancestor Masks, Calendar Stones, Ritual Daggers and Headdresses
+}
+5Base.Buildings.Building_Mayas_Workshop_Premium_4_DescDProduziert Ahnenmasken, Kalendersteine, Ritualdolche und Kopfschmuck
 q
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 E
@@ -4230,10 +4226,10 @@ J
 :Base.Technologies.Technology_BronzeAge_MantletShields_NameBlendschilde
 P
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_3_NameFernkämpfer-Kaserne
-_
-DBase.Technologies.Technology_ByzantineEra_CounterCavalryTactics_NameTaktik gegen Kavallerie
 >
 5Base.Technologies.Technology_ClassicGreece_Agora_NameAgora
+_
+DBase.Technologies.Technology_ByzantineEra_CounterCavalryTactics_NameTaktik gegen Kavallerie
 �	
 "Base.Units.Unit_BessieColeman_Desc�Erhebe dich mit Bessie Coleman zu neuen Höhen und inspiriere die Unterdrückten! Die Fliegerin aus dem 20. Jahrhundert war die erste amerikanische Ureinwohnerin und die erste afroamerikanische Frau mit einer Pilotenlizenz und ist seither eine Inspiration für diese Gemeinschaften.<br><br>Als Coleman aufwuchs, waren Frauen und Schwarze in den amerikanischen Pilotenschulen nicht zugelassen. Entschlossen, zu fliegen, lernte Coleman Französisch und reiste nach Frankreich, um ihre internationale Pilotenlizenz zu erwerben und war damit der erste Schwarze Mensch mit einer solchen Lizenz. Sie kehrte nach Amerika zurück, wo sie auf Flugshows waghalsige Kunststücke vollbrachte, und kehrte dann nach Europa zurück, um weiter zu trainieren.<br><br>In den nächsten zehn Jahren wurde Bessie Coleman sehr beliebt und erhielt den Spitznamen "Queen Bess". Sie war eine lebende Inspiration für schwarze Flieger und setzte sich mit Worten und Taten für die Bürgerrechte ein. William J. Powell, ein weiterer schwarzer Flieger, behauptete, dass wir dank ihr "die Barrieren in uns selbst überwunden und uns getraut haben zu träumen".
 T
@@ -4282,10 +4278,10 @@ M
 #Base.Units.Unit_AshokaTheGreat_Desc�Mach deinen Streitwagen bereit und errichte Denkmäler, denn Ashoka der Große, der Geliebte der Götter, ist in den Krieg um die Zukunft eingetreten! Dieser für seine militärischen Eroberungen berühmte Kaiser aus dem 3. Jahrhundert v. Chr. dehnte sein Reich in vielen erfolgreichen Kampagnen über fast ganz Südasien aus.<br><br>Nach dem blutigen Kalinga-Krieg erlebte Ashoka eine Wandlung, indem er sich dem Buddhismus und seinen Prinzipien der Gewaltlosigkeit und des Mitgefühls zuwandte. Er förderte religiöse Toleranz und baute Krankenhäuser und Infrastruktur, um das Leben seiner Untertanen zu verbessern.<br><br>Ashoka ist berühmt für die Verbreitung des Buddhismus in ganz Indien, und sein Vermächtnis des Mitgefühls lebt weiter. Sein Rad bildet heute, 2000 Jahre später, den Mittelpunkt der indischen Flagge.
 ^
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_4_NameMinoischer Wachturm
-e
-@Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_Desc!Schaltet Orden von Calatrava frei
 y
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+e
+@Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_Desc!Schaltet Orden von Calatrava frei
 '
 Base.Cities.City_Egypt_NameÄgypten
 J
@@ -4304,28 +4300,28 @@ q
 3Base.Buildings.Building_Mayas_Quarry_Premium_3_Desc:Produziert sowohl Jade als auch Obsidian zur gleichen Zeit
 Q
 9Base.Buildings.Building_IberianEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
-�
-#Base.Units.Unit_AlbertEinstein_Desc�Entdecke den Grundcode des Universums mit Albert Einstein, dem berühmtesten Wissenschaftler der Geschichte. Dieser Physiker aus dem 20. Jahrhundert revolutionierte unser Verständnis des Universums mit bahnbrechenden Theoremen, die die Wissenschaft erschütterten - ein Riese, auf dessen Schultern die moderne Wissenschaft steht.<br><br>Einstein ist vor allem für die Entwicklung der Relativitätstheorie bekannt. Die Allgemeine Relativitätstheorie gilt als die schönste Gleichung, die je aufgestellt wurde. Sie beschreibt die Wechselwirkung zwischen Zeit, Raum und Schwerkraft und revolutionierte die Wissenschaft<br><br>Neben seinem wissenschaftlichen Genie war Einstein auch für sein Eintreten für Frieden und Bürgerrechte bekannt. Sein tiefgreifender Einfluss auf die Wissenschaft und die Menschheit inspiriert weiterhin die Neugierde und das Streben nach Wissen weltweit. In unserer Zeitlinie nahm Einstein eine aktivere Rolle ein. Er entdeckte Zeitreisen und wie man schwarze Löcher erzeugt! 
 H
 :Base.Technologies.Technology_KingdomOfSicily_Windmill_Name
 Windmühle
+�
+#Base.Units.Unit_AlbertEinstein_Desc�Entdecke den Grundcode des Universums mit Albert Einstein, dem berühmtesten Wissenschaftler der Geschichte. Dieser Physiker aus dem 20. Jahrhundert revolutionierte unser Verständnis des Universums mit bahnbrechenden Theoremen, die die Wissenschaft erschütterten - ein Riese, auf dessen Schultern die moderne Wissenschaft steht.<br><br>Einstein ist vor allem für die Entwicklung der Relativitätstheorie bekannt. Die Allgemeine Relativitätstheorie gilt als die schönste Gleichung, die je aufgestellt wurde. Sie beschreibt die Wechselwirkung zwischen Zeit, Raum und Schwerkraft und revolutionierte die Wissenschaft<br><br>Neben seinem wissenschaftlichen Genie war Einstein auch für sein Eintreten für Frieden und Bürgerrechte bekannt. Sein tiefgreifender Einfluss auf die Wissenschaft und die Menschheit inspiriert weiterhin die Neugierde und das Streben nach Wissen weltweit. In unserer Zeitlinie nahm Einstein eine aktivere Rolle ein. Er entdeckte Zeitreisen und wie man schwarze Löcher erzeugt! 
 F
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_Name
 Eselfarmen
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name�<style=ability_label>Flächenschlag| Debuff</style>Schlägt auf das aktuelle Ziel ein und verursacht <style=basestat>{dmg_percentage}</style> Schaden an allen gegnerischen Einheiten in einem Umkreis von <style=basestat>{range}</style>. Die Genauigkeit der betroffenen Einheiten wird um <style=basestat>{accuracy_percentage}</style> für <style=basestat>{duration}</style> reduziert.
 n
 0Base.Buildings.Building_Mayas_Home_Priest_2_Desc:Produziert Kakao und fügt deiner Stadt 2 Handwerker hinzu
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name�<style=ability_label>Flächenschlag| Debuff</style>Schlägt auf das aktuelle Ziel ein und verursacht <style=basestat>{dmg_percentage}</style> Schaden an allen gegnerischen Einheiten in einem Umkreis von <style=basestat>{range}</style>. Die Genauigkeit der betroffenen Einheiten wird um <style=basestat>{accuracy_percentage}</style> für <style=basestat>{duration}</style> reduziert.
 W
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_NameTheodosianische Mauer
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_NameBrunnen
 Q
 9Base.Technologies.Technology_Mayas_SustainableMining_NameNachhaltiger Bergbau
-s
-2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 H
 -Base.Units.Unit_StoneAge_Player_Slingers_NameSteinschleuderschützen
+s
+2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 z
 3Base.Units.Unit_ByzantineEra_Player_Bucellarii_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 P
@@ -4352,10 +4348,10 @@ _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_NameGelehrten-Lyzeum
 k
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc,Schaltet Hellenischen Bolzenschleuderer frei
-I
-8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia Regis
 S
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameAufstieg der Wikinger
+I
+8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_NameFamilia Regis
 �
 <Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 P
@@ -4477,10 +4473,10 @@ x
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 S
 9Base.Technologies.Technology_IberianEra_TavernBrawls_NameTavernen-Schlägereien
-G
-7Base.Buildings.Building_ClassicGreece_Home_Small_1_NameKleines Haus
 N
 =Base.Technologies.Technology_AgeOfTheFranks_LinguaFranca_NameLingua Franca
+G
+7Base.Buildings.Building_ClassicGreece_Home_Small_1_NameKleines Haus
 P
 :Base.Buildings.Building_FeudalAge_Barracks_Infantry_3_NameInfanterie-Kaserne
 G
@@ -4607,8 +4603,8 @@ G
 1Base.Buildings.Building_Arabia_Home_Medium_1_NameMittelgroßes Haus
 B
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Name	Bauernhof
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_DescProduziert Kalendersteine
 S
 <Base.Technologies.Technology_HighMiddleAges_MailBarding_NameKetten-Rossrüstung
 z
@@ -4659,10 +4655,10 @@ B
 $Base.BuildingTypes.papyrusField_NamePapyrusfeldPapyrusfelder
 H
 5Base.Buildings.Building_China_RiceFarm_Average_6_DescProduziert Reis
-I
-6Base.Buildings.Building_IberianEra_Farm_Premium_1_NameLuxuriöse Farm
 ,
 Base.Ages.IberianEra_Finish1.050 n. Chr.
+I
+6Base.Buildings.Building_IberianEra_Farm_Premium_1_NameLuxuriöse Farm
 F
 1Base.Abilities.hero_battle_ability.KingMinos_NameMinotaurus-Hüter
 R
@@ -4679,10 +4675,10 @@ B
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_NamePlantage
 g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc&Veredelt Motten-Kokons zu Seidenfäden
-E
-1Base.Buildings.Building_Egypt_Home_Premium_1_NameLuxuriöses Haus
 J
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_NameMinotaurus-Vortrupp
+E
+1Base.Buildings.Building_Egypt_Home_Premium_1_NameLuxuriöses Haus
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_NameBelagerungs-Kaserne
 S
@@ -4719,16 +4715,16 @@ E
 1Base.Buildings.Building_Egypt_Home_Premium_6_NameLuxuriöses Haus
 G
 3Base.Buildings.Building_Vikings_Home_Premium_3_NameLuxuriöses Haus
-T
-CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameTurnier-Tjost
 M
 @Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	Schreiner
+T
+CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_NameTurnier-Tjost
 x
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Desc<Verbessert die Bewässerung von umliegenden Gebäuden enorm.
-�
-Base.Units.Unit_Shaolin_Desc�Versammelt euch im Tempel und seid bereit zuzuhören, denn Xueting Fuyu ist hier, um zu lehren und zu kämpfen! Dieser prominente Chan-Mönch aus der Song-Dynastie war für seine spirituellen Einsichten und Lehren bekannt.<br><br>Als Schlüsselfigur bei der Wiederbelebung der Caodong-Schule legte er den Schwerpunkt auf Meditation und Achtsamkeit und konzentrierte sich auf direkte Erfahrung und persönliche Erleuchtung. Seine Lehren zogen zahlreiche Schüler an und verbreiteten den Chan-Buddhismus in dieser Zeit erheblich.<br><br>Fuyu veränderte auch die Kampfkunst für immer. Er lud alle Kampfkünstler Chinas zum Shaolin Tempel ein, wo sie gemeinsam trainierten und einen einheitlichen Stil entwickelten. Seither wird der Tempel als "Geburtsstätte der Kampfkünste" bezeichnet. Fuyus Einfluss ist noch heute in unzähligen Kampftechniken erkennbar.
 G
 7Base.Buildings.Building_ClassicGreece_Home_Small_2_NameKleines Haus
+�
+Base.Units.Unit_Shaolin_Desc�Versammelt euch im Tempel und seid bereit zuzuhören, denn Xueting Fuyu ist hier, um zu lehren und zu kämpfen! Dieser prominente Chan-Mönch aus der Song-Dynastie war für seine spirituellen Einsichten und Lehren bekannt.<br><br>Als Schlüsselfigur bei der Wiederbelebung der Caodong-Schule legte er den Schwerpunkt auf Meditation und Achtsamkeit und konzentrierte sich auf direkte Erfahrung und persönliche Erleuchtung. Seine Lehren zogen zahlreiche Schüler an und verbreiteten den Chan-Buddhismus in dieser Zeit erheblich.<br><br>Fuyu veränderte auch die Kampfkunst für immer. Er lud alle Kampfkünstler Chinas zum Shaolin Tempel ein, wo sie gemeinsam trainierten und einen einheitlichen Stil entwickelten. Seither wird der Tempel als "Geburtsstätte der Kampfkünste" bezeichnet. Fuyus Einfluss ist noch heute in unzähligen Kampftechniken erkennbar.
 ?
 /Base.Buildings.Building_Egypt_Home_Small_2_NameKleines Haus
 L
@@ -4767,10 +4763,10 @@ B
 2Base.Buildings.Building_StoneAge_Home_Small_2_NameKleines Haus
 T
 ABase.Technologies.Technology_KingdomOfSicily_MarketEconomics_NameMarktwirtschaft
-S
-=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_NameKavallerie-Kaserne
 F
 0Base.Units.Unit_FeudalAge_Player_Longbowmen_NameLangbogenschützen
+S
+=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_NameKavallerie-Kaserne
 R
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_NameBelagerungs-Kaserne
 I
@@ -4822,10 +4818,10 @@ B
 2Base.Buildings.Building_Vikings_Home_Sailor_3_NameSeemannshaus
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>Nahkampfschlag</style>Schlägt das aktuelle Ziel gekonnt mit ihrem Stab und fügt <style=basestat>{dmg_percentage}</style> Schaden zu.
-F
-%Base.BuildingGroups.papyrusPress_NamePapyruspressePapyruspressen
 t
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+F
+%Base.BuildingGroups.papyrusPress_NamePapyruspressePapyruspressen
 o
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_2_Desc1Stellt Papyrusrollen und zeremonielle Kleider her
 c
@@ -4883,21 +4879,21 @@ E
 !Base.BuildingGroups.cityHall_NameGroße HalleGroße Hallen
 /
  Base.Heroes.hero.JaneAusten_NameJane Austen
-+
-Base.Units.Unit_Geisha_NameYoshino Dayu
 G
 .Base.Abilities.hero_battle_ability.Hoplit_NameDurchbohrender Schlag
++
+Base.Units.Unit_Geisha_NameYoshino Dayu
 T
 ;Base.Units.Unit_AgeOfTheFranks_Merovingians_KingClovis_NameMerowingische Adelige
 W
 <Base.Technologies.Technology_Vikings_ImprovedBeekeeping_NameVerbesserte Bienenzucht
 A
 (Base.Units.Unit_HermannTheCheruscan_NameHermann der Cherusker
+C
+)Base.BuildingGroups.averageCamelFarm_Name	KamelfarmKamelfarmen
 G
 9Base.Technologies.Technology_ByzantineEra_Trapezites_Name
 Trapeziten
-C
-)Base.BuildingGroups.averageCamelFarm_Name	KamelfarmKamelfarmen
 J
 =Base.Buildings.Building_HighMiddleAges_Special_Furnace_1_Name	Brennofen
 y
@@ -4909,8 +4905,8 @@ _
 Marktplatz
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_15_Name�<style=ability_label>Debuff| Brennen</style>Zielt auf die größte Ansammlung feindlicher Einheiten und verringert die Genauigkeit um <style=basestat>{accuracy_percentage}</style> und die ATK um <style=basestat>{atk_percentage}</style> der ATK von Marx für <style=basestat>{duration}</style> in einem Bereich von <style=basestat>{range}</style>. Betroffene Einheiten brennen außerdem für <style=basestat>{dmg_percentage}</style> Schaden über <style=basestat>{burn_duration}</style>.
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_DescProduces Headdresses
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_DescProduziert Kopfschmuck
 �
 SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_Name�<style=ability_label>Flächenschlag| Betäubung| Brennen</style>Richtet einen ohrenbetäubenden Schall auf die größte Ansammlung feindlicher Einheiten, verursacht <style=basestat>{dmg_percentage}</style> Schaden und betäubt alle Feinde für <style=basestat>{stun_duration}</style> in einem Umkreis von <style=basestat>{range}</style>. Betroffene Einheiten haben eine <style=basestat>{chance}</style> Chance zu brennen, was weiteren <style=basestat>{burn_dmg_percentage}</style> Schaden über <style=basestat>{burn_duration}</style> verursacht.
 P
@@ -4921,14 +4917,14 @@ MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 6Base.Units.Unit_MinoanEra_Player_CompositeArchers_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 D
 3Base.Technologies.Technology_StoneAge_GoatPens_NameZiegenställe
-�
-Base.Units.Unit_Mozart_Desc�Inszeniere eine Oper und inspiriere Tausende mit Wolfgang Amadeus Mozart! Das musikalische Wunderkind aus dem 18. Jahrhundert trat vor Königen auf und beherrschte die Geige und das Keyboard - und das im Alter von fünf Jahren!<br><br>Im Alter von 25 Jahren hatte Mozart eine Fülle von Musikstücken produziert, darunter mehrere Symphonien, unzählige Konzerte und sogar eine erfolgreiche Oper. In Wien wurde er nun extrem berühmt, aber nicht extrem reich. <br> <br>In seinen letzten Jahren brachte Mozart viele seiner bekanntesten Werke heraus, darunter auch sein unvollendetes Requiem. Zu Lebzeiten war er ein berühmter Scherzkeks, der seinen Freunden oft Streiche spielte und viele inspirierte, darunter auch Ludwig van Beethoven, ein weiterer potenzieller Rekrut für die Heroes of History.
 \
 >Base.Technologies.Technology_IberianEra_AdvancedTrebuchet_NameFortschrittliche Trebuchet
+�
+Base.Units.Unit_Mozart_Desc�Inszeniere eine Oper und inspiriere Tausende mit Wolfgang Amadeus Mozart! Das musikalische Wunderkind aus dem 18. Jahrhundert trat vor Königen auf und beherrschte die Geige und das Keyboard - und das im Alter von fünf Jahren!<br><br>Im Alter von 25 Jahren hatte Mozart eine Fülle von Musikstücken produziert, darunter mehrere Symphonien, unzählige Konzerte und sogar eine erfolgreiche Oper. In Wien wurde er nun extrem berühmt, aber nicht extrem reich. <br> <br>In seinen letzten Jahren brachte Mozart viele seiner bekanntesten Werke heraus, darunter auch sein unvollendetes Requiem. Zu Lebzeiten war er ein berühmter Scherzkeks, der seinen Freunden oft Streiche spielte und viele inspirierte, darunter auch Ludwig van Beethoven, ein weiterer potenzieller Rekrut für die Heroes of History.
 y
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_2_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_3_Desc(Improves Happiness of adjacent buildings
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_3_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 Q
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_6_NameExpeditions-Steg
 A
@@ -4959,10 +4955,10 @@ B
 8Base.Technologies.Technology_KingdomOfSicily_Piazza_NamePiazza
 [
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
-�
-"Base.Units.Unit_RagnarLodbrok_Desc�Aufbruch und Überfall, Ragnar Lodbrok! Den nordischen Sagas zufolge führte dieser Held und Kriegerkönig aus dem 9. Jahrhundert waghalsige Angriffe auf England und Frankreich an - eine Mischung aus Geschichte und Mythos.<br><br>Als meisterhafter Stratege und kämpferischer Commander heiratete Ragnar die Kriegerin Lagertha und zeugte mit ihr Björn Ironside und Ivar den Knochenlosen, die selbst in der Sage aufgeführt sind. Reafan, das Rabenbanner, ein Symbol des Gottes Odin, leitete ihn in jeder Schlacht.<br><br>So wie die Geschichten von Ragnar die Wikinger mit ihrem Mut und ihrer Kühnheit inspirierten, begeistern sie auch heute noch das Publikum im Fernsehen, in Spielen und Büchern. In den ältesten historischen Quellen ist jedoch von "ihren" Söhnen die Rede. Ist es möglich, dass Ragnar insgeheim eine Frau ist?
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_5_NameMagma-Tempel
+�
+"Base.Units.Unit_RagnarLodbrok_Desc�Aufbruch und Überfall, Ragnar Lodbrok! Den nordischen Sagas zufolge führte dieser Held und Kriegerkönig aus dem 9. Jahrhundert waghalsige Angriffe auf England und Frankreich an - eine Mischung aus Geschichte und Mythos.<br><br>Als meisterhafter Stratege und kämpferischer Commander heiratete Ragnar die Kriegerin Lagertha und zeugte mit ihr Björn Ironside und Ivar den Knochenlosen, die selbst in der Sage aufgeführt sind. Reafan, das Rabenbanner, ein Symbol des Gottes Odin, leitete ihn in jeder Schlacht.<br><br>So wie die Geschichten von Ragnar die Wikinger mit ihrem Mut und ihrer Kühnheit inspirierten, begeistern sie auch heute noch das Publikum im Fernsehen, in Spielen und Büchern. In den ältesten historischen Quellen ist jedoch von "ihren" Söhnen die Rede. Ist es möglich, dass Ragnar insgeheim eine Frau ist?
 ;
 1Base.Technologies.Technology_MinoanEra_Winch_NameKurbel
 _
@@ -4973,10 +4969,10 @@ QBase.AbilityDescriptions.hero_battle_ability_description.ArtemisiaIOfCaria_1_Na
 'Base.Units.Unit_GreekMathematician_NameEuklid
 �
 'Base.Units.Unit_LudwigVanBeethoven_Desc�Komponiere eine Arie und bereite das Orchester vor, Ludwig van Beethoven ist bereit zu rocken! Dieser monumentale deutsche Komponist aus dem späten 18. und frühen 19. Jahrhundert ist der Mann, der die Brücke zwischen Klassik und Romantik in der westlichen Musik geschlagen hat.<br><br>Bekannt für seinen immensen Einfluss und seinen innovativen Geist, schuf Beethoven eine Reihe von Meisterwerken, darunter neun Symphonien, Klavierkonzerte und Streichquartette. Er verschob seinen Wohnsitz nach Wien und wurde schnell für sein außergewöhnliches Talent bekannt. Obwohl er sein Gehör verlor und seine eigenen Kompositionen nicht mehr hören konnte, komponierte er weiterhin einige seiner bewundernswertesten Werke, wie zum Beispiel die Neunte Symphonie.<br><br>Beethovens bleibendes Vermächtnis ist geprägt von seiner außergewöhnlichen Fähigkeit, tiefe Gefühle und Komplexität durch Musik zu vermitteln. Die vielleicht bekanntesten zwei Takte der gesamten Musik sind seine Schöpfung.
-s
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 S
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_3_NameFernkämpfer-Kaserne
+s
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 J
 7Base.Buildings.Building_Mayas_RitualSite_Average_1_NameKristall-Quelle
 0
@@ -4997,10 +4993,10 @@ C
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 (
 Base.Ages.Vikings_NameWikinger-Reich
-L
-<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameGilden-Feste
 `
 LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_NameGelehrten-Lyzeum
+L
+<Base.Technologies.Technology_HighMiddleAges_GuildFeasts_NameGilden-Feste
 B
 6Base.Technologies.Technology_ByzantineEra_Tillage_NameAckerbau
 ,
@@ -5011,8 +5007,8 @@ t
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name�<style=ability_label>Gedankenkontrolle| Buff</style>Richtet das Auge des Horus auf die größte Ansammlung feindlicher Einheiten, wodurch diese ihre Verbündeten für <style=basestat>{duration}</style> angreifen. Feindliche Einheiten unter Kleopatras Kontrolle erhalten <style=basestat>{attack_speed_percentage}</style> Angriffsgeschwindigkeit.
-W
-?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_3_DescProduces Headdresses
+Y
+?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_3_DescProduziert Kopfschmuck
 P
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_1_NameInfanterie-Kaserne
 A
@@ -5024,18 +5020,18 @@ L
 9Base.Buildings.Building_ClassicGreece_Farm_Premium_1_NameLuxuriöse Farm
 [
 ABase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianSiege_NameKarolingische Balliste
-H
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_NameWasserpumpe
 G
 3Base.TreasureHuntDifficultiesPanel.RecommendedPowerEmpfohlene Macht
+H
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_NameWasserpumpe
 w
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_3_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
 H
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_NameKleines Haus
-b
-DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 �
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
+b
+DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 �
 =Base.Buildings.Building_IberianEra_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
 E
@@ -5050,10 +5046,10 @@ O
 7Base.Technologies.Technology_Mayas_EtchedLandmarks_NameGeätzte Wahrzeichen
 K
 5Base.Buildings.Building_BronzeAge_Home_Average_3_NameMittelgroßes Haus
-M
-@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_Name	Schreiner
 U
 ?Base.Technologies.Technology_KingdomOfSicily_ArmoredPanels_NameGepanzerte Platten
+M
+@Base.Buildings.Building_HighMiddleAges_Workshop_Carpenter_1_Name	Schreiner
 <
 2Base.Technologies.Technology_RomanEmpire_Cape_NameUmhang
 J
@@ -5089,8 +5085,9 @@ x
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc>Die Taverne produziert Met und Stockfisch aus Honig und Fisch.
 0
  Base.Ages.KingdomOfSicily_Decade1100 n. Chr.
-7
-'Base.Cities.City_Mayas_ChichenItza_NameMayan Empire
+5
+'Base.Cities.City_Mayas_ChichenItza_Name
+Maya-Reich
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Name�<style=ability_label>Erholung</style>Wenn der Besitzer zum ersten Mal in einem Kampf tödlichen Schaden erleidet, erholen sich seine HP auf <style=basestat>{hp_percentage}</style>.
 ?
@@ -5161,10 +5158,10 @@ KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<
 (Base.BuildingGroups.averageMerchant_NameHändlerHändler
 R
 0Base.Abilities.hero_battle_ability.YiSunSin_NameSchildkrötenschiff-Sperrfeuer
-�
-Base.Units.Unit_RamsesII_Desc�Die Ebenen werden unter den Rädern der Streitwagen erbeben, denn Ramses der Große hat seine Macht mit deiner vereint. Dieser Pharao aus dem 13. Jahrhundert v. Chr. wurde durch seine Kampagnen gegen die Hethiter, Nubier und Libyer berühmt. Der Kampf von Kadesch gegen die Hethiter führte zu einem der ersten Friedensverträge der Geschichte.<br><br>Neben seinen militärischen Erfolgen war Ramses II. auch ein produktiver Baumeister, der großartige Bauwerke wie die Tempel von Abu Simbel und das Ramesseum in Auftrag gab und der Welt damit seinen Stempel aufdrückte.<br><br>Ramses II. gilt als der größte Pharao des größten Königreichs Ägyptens. Seine 66-jährige Herrschaft prägte das kulturelle und architektonische Erbe Ägyptens. Die Griechen nannten ihn Ozymandias, ein Name, unter dem er in der Dichtung unsterblich wurde. Wenn du Ramses siehst, gehst du auf die Knie!
 <
 0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
+�
+Base.Units.Unit_RamsesII_Desc�Die Ebenen werden unter den Rädern der Streitwagen erbeben, denn Ramses der Große hat seine Macht mit deiner vereint. Dieser Pharao aus dem 13. Jahrhundert v. Chr. wurde durch seine Kampagnen gegen die Hethiter, Nubier und Libyer berühmt. Der Kampf von Kadesch gegen die Hethiter führte zu einem der ersten Friedensverträge der Geschichte.<br><br>Neben seinen militärischen Erfolgen war Ramses II. auch ein produktiver Baumeister, der großartige Bauwerke wie die Tempel von Abu Simbel und das Ramesseum in Auftrag gab und der Welt damit seinen Stempel aufdrückte.<br><br>Ramses II. gilt als der größte Pharao des größten Königreichs Ägyptens. Seine 66-jährige Herrschaft prägte das kulturelle und architektonische Erbe Ägyptens. Die Griechen nannten ihn Ozymandias, ein Name, unter dem er in der Dichtung unsterblich wurde. Wenn du Ramses siehst, gehst du auf die Knie!
 M
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameFachwerkbau
 @
@@ -5173,8 +5170,8 @@ n
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc:Produziert Kakao und fügt deiner Stadt 2 Handwerker hinzu
 E
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_NameGewann
-Q
-3Base.Buildings.Building_Mayas_Aviary_Premium_3_DescProduces a ton of Feathers
+S
+3Base.Buildings.Building_Mayas_Aviary_Premium_3_DescProduziert eine Tonne Federn
 L
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_NameSeiden-Weberei
 |
@@ -5209,10 +5206,10 @@ T
 <Base.Buildings.Building_ClassicGreece_Barracks_Ranged_3_NameFernkämpfer-Kaserne
 P
 9Base.Technologies.Technology_Egypt_ExtractionMethods_NameExtraktionsmethoden
-A
-4Base.Technologies.Technology_Egypt_Preservation_Name	Erhaltung
 c
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
+A
+4Base.Technologies.Technology_Egypt_Preservation_Name	Erhaltung
 R
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_3_NameInfanterie-Kaserne
 P
@@ -5272,8 +5269,8 @@ u
 Base.Ages.MinoanEra_Finish1600 v. Chr.
 N
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_5_NameFaden-Spinner
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name�<style=ability_label>Spott| Schild</style>Isabella beherrscht das Schlachtfeld und verspottet alle Feinde für <style=basestat>{taunt_shield_duration}</style>. Für jeden verspotteten Gegner erhält sie einen Schild im Wert von <style=basestat>{shield_per_unit}</style> ihres Basisschadens, der für <style=basestat>{taunt_shield_duration}</style> anhält.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_1_Name�<style=ability_label>Spott| Schild</style>Isabella beherrscht das Schlachtfeld und verspottet alle Feinde für <style=basestat>{taunt_shield_duration}</style>. Für jeden verspotteten Gegner erhält sie bis zum Ende der Welle einen Schild im Wert von <style=basestat>{shield_per_unit}</style> ihres Basisschadens.
 P
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_NameFernkämpfer-Kaserne
 )
@@ -5286,10 +5283,10 @@ M
 :Base.Technologies.Technology_MinoanEra_BronzeAutomata_NameBronzeautomaten
 _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_3_NameGelehrten-Lyzeum
-G
-3Base.Abilities.hero_battle_ability.SirLancelot_NameRächer Camelots
 F
 4Base.Technologies.Technology_Mayas_JadeDeposits_NameJade-Vorkommen
+G
+3Base.Abilities.hero_battle_ability.SirLancelot_NameRächer Camelots
 y
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 ,
@@ -5375,10 +5372,10 @@ D
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Name	Bauernhof
 V
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_NameFernkämpfer-Kaserne
-?
-(Base.BuildingGroups.averageGoldMine_NameGoldmine	Goldminen
 S
 <Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_NameBelagerungs-Kaserne
+?
+(Base.BuildingGroups.averageGoldMine_NameGoldmine	Goldminen
 P
 :Base.Buildings.Building_HighMiddleAges_Home_Average_3_NameMittelgroßes Haus
 ;
@@ -5391,23 +5388,24 @@ E
 %Base.BuildingGroups.maskSculptor_NameMaskenbildnerMaskenbildner
 \
 @Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
-5
-&Base.Regions.region.FrozenFjord_6_NameSchwarzfeld
 H
 :Base.Technologies.Technology_ClassicGreece_SilverRing_Name
 Silberring
+5
+&Base.Regions.region.FrozenFjord_6_NameSchwarzfeld
+5
+'Base.Cities.City_Mayas_SayilPalace_Name
+Maya-Reich
 ?
 'Base.Units.Unit_LudwigVanBeethoven_NameLudwig van Beethoven
-7
-'Base.Cities.City_Mayas_SayilPalace_NameMayan Empire
 H
 3Base.Technologies.Technology_China_InkAndBrush_NameTusche und Pinsel
 p
 2Base.Buildings.Building_Vikings_Home_Worker_2_Desc:Stellt Pennys her und fügt deiner Stadt 2 Arbeiter hinzu.
 �
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_5_Desc6Substantially improves Happiness of adjacent buildings
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_5_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 O
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_NameBelagerungsturm
 R
@@ -5416,10 +5414,10 @@ q
 3Base.Buildings.Building_Mayas_Quarry_Premium_6_Desc:Produziert sowohl Jade als auch Obsidian zur gleichen Zeit
 H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_NameWasserpumpe
-a
-ABase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineArcher_NameByzantinische Bogenschützen
 v
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+a
+ABase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineArcher_NameByzantinische Bogenschützen
 0
 Base.Units.Unit_MaoriChief_NameTe Wherowhero
 w
@@ -5430,8 +5428,8 @@ I
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_NameLuxuriöses Haus
 �
 Base.Units.Unit_VikingJarl_Desc�Auf geht's: Entfaltet die Segel und riecht das Salz, denn heute Abend sprechen wir von Erik dem Roten. Dieser Entdecker aus dem späten 10. Jahrhundert ist berühmt für die Gründung der ersten nordischen Siedlungen in Grönland. Der gebürtige Norweger wurde wegen seiner Verwicklung in mehrere Konflikte nach Island und später nach Grönland verbannt.<br><br>Erik, der für seinen Abenteuergeist und seine Führungsqualitäten bekannt war, überquerte die Walstraßen des Atlantiks, um eine erfolgreiche Kolonie auf Grönland zu gründen, die Siedler mit Geschichten über fruchtbares Land anlockte. Seine Bemühungen markierten eine bedeutende Erweiterung der nordischen Erforschung des Nordatlantiks.<br><br>Erik der Rote gilt bis heute als Anführer der Wikingerzeit und verdeutlicht die abenteuerliche und widerstandsfähige Natur der nordischen Erkundung und Besiedlung. Ich habe gehört, dass es auch Erik den Blauen, Erik den Gelben, Erik den Grünen und Erik den Violetten gibt: Sammle sie alle!
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc(Improves Happiness of adjacent buildings
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_1_NameMagma-Tempel
 Q
@@ -5454,20 +5452,20 @@ a
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_1_DescSchaltet Schwertkämpfer frei
 G
 1Base.Buildings.Building_China_Home_Average_3_NameMittelgroßes Haus
-Z
-BBase.Technologies.Technology_KingdomOfSicily_PolychromeInlays_NamePolychrome Intarsien
 d
 DBase.Technologies.Technology_KingdomOfSicily_ArmoredCrossbowmen_NameGepanzerte Armbrustschützen
+Z
+BBase.Technologies.Technology_KingdomOfSicily_PolychromeInlays_NamePolychrome Intarsien
 K
 7Base.Technologies.Technology_China_DeepFoundations_NameTiefe Fundamente
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>Stampfen| Debuff| Seelenbindung</style>Stampft auf den Boden und fügt allen Gegnern <style=basestat>{dmg_percentage}</style>Schaden in einem Bereich von <style=basestat>{range}</style> zu und verringert ihre Genauigkeit um <style=basestat>{accuracy_percentage}</style> für <style=basestat>{duration}</style>. Verbindet außerdem die Seelen aller befreundeten Einheiten für <style=basestat>{duration_link}</style>. Seelenverbundene Einheiten teilen den eingehenden Schaden untereinander auf.
 ,
 Base.Heroes.hero.Spartacus_Name	Spartakus
-U
-=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 A
 7Base.Technologies.Technology_AgeOfTheFranks_Spades_NameSpaten
+U
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_NameFernkämpfer-Kaserne
 A
 8Base.Technologies.Technology_ClassicGreece_Concrete_NameBeton
 N
@@ -5553,18 +5551,18 @@ P
 >Base.Technologies.Technology_RomanEmpire_CenturionCommand_NameCenturiobefehl
 -
 #Base.Units.Unit_AshokaTheGreat_NameAshoka
-q
-2Base.Buildings.Building_Vikings_Home_Sailor_5_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
 B
 5Base.Buildings.Building_China_RiceFarm_Average_4_Name	Reis-Farm
+q
+2Base.Buildings.Building_Vikings_Home_Sailor_5_Desc;Stellt Pennys her und fügt deiner Stadt 2 Seefahrer hinzu.
 `
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescSchaltet Belagerungstürme frei
 >
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMosaik
-H
-3Base.Buildings.Building_Mayas_Aviary_Average_6_DescProduziert Federn
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Nahkampfangriff| Debuff</style>Sun Tzu schlägt zweimal auf alle gegnerischen Einheiten um sich herum ein und verursacht dabei insgesamt <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style>. Dann fokussiert er sich auf sich selbst und verursacht eine Aura der Ruhe, die die Angriffsgeschwindigkeit von Gegnern in der Nähe um <style=basestat>{atk_speed_percentage}</style> für <style=basestat>{duration}</style> reduziert.
+H
+3Base.Buildings.Building_Mayas_Aviary_Average_6_DescProduziert Federn
 �
 :Base.Buildings.Building_Vikings_FishingPier_Premium_1_Desc�Luxuriöse Angelstege schicken Boote los, um riesige Mengen an Fischen zu fangen und all deine hungrigen Arbeiter und Seefahrer zu versorgen.
 w
@@ -5594,10 +5592,10 @@ A
 Bucellarii
 ?
 2Base.Technologies.Technology_Egypt_WaterWheel_Name	Wasserrad
-3
-$Base.BuildingGroups.PremiumResidencePremiumhaus
 v
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
+3
+$Base.BuildingGroups.PremiumResidencePremiumhaus
 J
 9Base.Buildings.Building_Vikings_SailorPort_Average_4_NameSeemannshafen
 V
@@ -5614,10 +5612,10 @@ R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameKavallerie-Kaserne
 P
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrangenplantage
-^
-?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSchaltet Infanteristen frei
 K
 3Base.Buildings.Building_Mayas_Aviary_Premium_3_NameLuxuriöses Aviarium
+^
+?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSchaltet Infanteristen frei
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>Flächenschlag| Brennen| Vergiften</style>Wirft <style=basestat>{no_vials}</style> Fläschchen mit instabilen Chemikalien auf zufällige gegnerische Einheiten, die <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursachen und die betroffenen Einheiten für einen weiteren <style=basestat>{debuff_percentage}</style> Schaden über <style=basestat>{duration}</style> brennen und vergiften lassen.
 �
@@ -5638,10 +5636,10 @@ I
 /Base.TreasureHuntDifficulties.Difficulty_4_Name	Veteran I
 2
 !Base.Heroes.hero.QinShiHuang_NameQin Shi Huang
-�
-1Base.Buildings.Building_China_Home_Average_1_DescOProduziert einen großen Haufen Wu Zhu und fügt deiner Stadt 5 Arbeiter hinzu.
 Y
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_NameMittlere Kulturstätte
+�
+1Base.Buildings.Building_China_Home_Average_1_DescOProduziert einen großen Haufen Wu Zhu und fügt deiner Stadt 5 Arbeiter hinzu.
 �
 Base.Units.Unit_LouisXIV_Desc�Ludwig XIV. schlendert aus Versailles auf deinen Bildschirm! Der "Sonnenkönig" war im 17. Jahrhundert König von Frankreich und bekannt für die Einführung der absoluten Monarchie. Er konzentrierte die Macht auf die Krone, was sich im opulenten Palast von Versailles zeigte, der zum Herzstück seines Hofes wurde.<br><br>Ludwig XIV. vergrößerte den Einfluss Frankreichs durch militärische Kampagnen und Gebietsgewinne. Er war auch ein Mäzen der Künste und schuf und finanzierte spektakuläre Werke. Schon bald war Frankreich als dominante Macht bekannt, sowohl in kultureller als auch in anderer Hinsicht.<br><br>Ludwig ist als komplizierte Figur in Erinnerung geblieben: Balletttänzer, Kriegstreiber, Vater, Künstler, Mittelpunkt des Universums. Seine Eitelkeit war bekannt: Sein Haus in deiner Zivilisation hat fünfunddreißig Spiegel!
 f
@@ -5711,22 +5709,22 @@ D
 R
 :Base.Technologies.Technology_Vikings_VikingHomesteads_NameWikinger-Heimstätte
 S
-3Base.TreasureHuntDifficultiesPanel.CurrentlyPlayingDu spielst gerade Level {0}!
-S
 ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_NameHeldenakademie
+S
+3Base.TreasureHuntDifficultiesPanel.CurrentlyPlayingDu spielst gerade Level {0}!
 =
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_NameOase
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_DescProduziert Kalendersteine
 ^
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_5_NameMinoischer Wachturm
 I
 9Base.Technologies.Technology_FeudalAge_DomesticSheep_NameZahme Schafe
-`
-DBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianInfantry_NameKarolingische Infanterie
 =
 $Base.BuildingGroups.averagePier_Name	Angelsteg
 Angelstege
+`
+DBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianInfantry_NameKarolingische Infanterie
 t
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 E
@@ -5836,10 +5834,10 @@ Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_5_NameAmphitheater
 M
 3Base.Buildings.Building_Mayas_Quarry_Premium_6_NameLuxuriöser Steinbruch
-H
-8Base.Technologies.Technology_IberianEra_MeadMastery_NameMetexpertise
 9
 !Base.Units.Unit_TribalHealer_NameNaya vom Höhlenklan
+H
+8Base.Technologies.Technology_IberianEra_MeadMastery_NameMetexpertise
 �
 5Base.Buildings.Building_FeudalAge_Home_Premium_1_DescMStellt riesige Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu.
 A
@@ -5864,10 +5862,10 @@ g
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_3_Desc&Veredelt Motten-Kokons zu Seidenfäden
 9
 (Base.BuildingGroups.noriaIrrigation_NameNoriaNorias
-R
-:Base.Technologies.Technology_BronzeAge_StrongerFrames_NameStärkere Strukturen
 J
 6Base.Technologies.Technology_StoneAge_SacredSites_NameHeilige Stätten
+R
+:Base.Technologies.Technology_BronzeAge_StrongerFrames_NameStärkere Strukturen
 )
 Base.Units.Unit_Achilles_NameAchilles
 J
@@ -5876,32 +5874,32 @@ Q
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_2_NameInfanterie-Kaserne
 P
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_4_NameMottenlichtung
-E
-1Base.Buildings.Building_Egypt_Home_Premium_3_NameLuxuriöses Haus
 C
 (Base.Regions.region.EasternValley_3_NameÜbervolles Flussbecken
-<
-0Base.Units.Unit_RomanEmpire_Player_Ballista_NameBalliste
+E
+1Base.Buildings.Building_Egypt_Home_Premium_3_NameLuxuriöses Haus
 @
 +Base.Units.Unit_BronzeAge_Player_Siege_NameSchleuderkatapult
-v
-3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
+<
+0Base.Units.Unit_RomanEmpire_Player_Ballista_NameBalliste
 8
 'Base.Units.Unit_MargaretIOfDenmark_NameMargarethe I.
 |
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Desc=Stellt große Mengen an Nahrung in langen Zeitabständen her.
+v
+3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 X
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
-�
-$Base.Units.Unit_NubianMercenary_Desc�Die Kandakes von Nubien waren eine Reihe von Königinnen des Königreichs von Kusch, die den Imperien trotzten und Monumente bauten. Die erste Kandake regierte 200 v. Chr., die letzte 400 v. Chr. und viele sind für ihre Führungsrolle im Schloss und auf dem Schlachtfeld berühmt.<br><br>Viele der Kandakes haben eine andere krönende Errungenschaft. Ameniras fiel in das römische Ägypten ein und zwang sie, Kusch in Ruhe zu lassen, Aminatore baute Pyramiden in Meroe und Shanakdakhete errichtete Tempel.<br><br>Zusammen verkörpern die Kandakes eine antike Gleichberechtigung, die uns in der heutigen Welt überraschen könnte. Welche von ihnen ist deine Kandake? Ich bin mir nicht sicher. Warum fragst du sie nicht?
 7
 (Base.BuildingGroups.oasisIrrigation_NameOaseOasen
+�
+$Base.Units.Unit_NubianMercenary_Desc�Die Kandakes von Nubien waren eine Reihe von Königinnen des Königreichs von Kusch, die den Imperien trotzten und Monumente bauten. Die erste Kandake regierte 200 v. Chr., die letzte 400 v. Chr. und viele sind für ihre Führungsrolle im Schloss und auf dem Schlachtfeld berühmt.<br><br>Viele der Kandakes haben eine andere krönende Errungenschaft. Ameniras fiel in das römische Ägypten ein und zwang sie, Kusch in Ruhe zu lassen, Aminatore baute Pyramiden in Meroe und Shanakdakhete errichtete Tempel.<br><br>Zusammen verkörpern die Kandakes eine antike Gleichberechtigung, die uns in der heutigen Welt überraschen könnte. Welche von ihnen ist deine Kandake? Ich bin mir nicht sicher. Warum fragst du sie nicht?
 �
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
-G
-:Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 W
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_NamePorzellan-Manufaktur
+G
+:Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 K
 >Base.Buildings.Building_KingdomOfSicily_Special_Furnace_1_Name	Brennofen
 ]
@@ -5914,10 +5912,10 @@ A
 :Base.Buildings.Building_Vikings_FishingPier_Average_1_DescoAngelstege schicken Boote los, um Fische zu fangen und all deine hungrigen Arbeiter und Seefahrer zu versorgen.
 B
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_1_NamePlantage
--
-Base.Ages.ClassicGreece_Decade880 v. Chr.
 �
 1Base.Buildings.Building_China_Home_Average_3_DescOProduziert einen großen Haufen Wu Zhu und fügt deiner Stadt 5 Arbeiter hinzu.
+-
+Base.Ages.ClassicGreece_Decade880 v. Chr.
 w
 4Base.Buildings.Building_IberianEra_Home_Small_2_Desc?Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu.
 Z
@@ -5944,12 +5942,12 @@ G
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_1_Name�<style=ability_label>Flächenschlag</style>Erzeugt eine Explosion, die auf die größte Ansammlung feindlicher Einheiten zielt und <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> verursacht. 
 O
 9Base.Technologies.Technology_China_RammedEarthHouses_NameStampflehm-Häuser
-�
-"Base.Units.Unit_PakalTheGreat_Desc�K'inich Janaab' Pakal, bekannt als Pakal der Große, war ein Maya-König im 7. Jahrhundert nach Christus. Er begann seine Herrschaft in Palenque im Alter von 12 Jahren und führte die Stadt durch seine Führung zu Wohlstand.<br><br>Pakal ist berühmt für seine ehrgeizigen Bauprojekte, darunter Tempel und Paläste mit kunstvollen Schnitzereien. Der Tempel der Inschriften, sein Grab, besticht durch seine bedeutende architektonische Leistung und den detaillierten Sarkophagdeckel.<br><br>Seine Herrschaft war von architektonischer Innovation und politischer Stabilität geprägt und förderte das kulturelle Wachstum in Palenque. Pakals Vermächtnis bleibt als einer der einflussreichsten und gefeiertsten Herrscher in der Geschichte der Maya bestehen.
-7
- Base.Heroes.hero.VanHelsing_NameAbraham Van Helsing
 C
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Name	Bauernhof
+7
+ Base.Heroes.hero.VanHelsing_NameAbraham Van Helsing
+�
+"Base.Units.Unit_PakalTheGreat_Desc�Werde mit Pakal dem Großen zu den Bergen, auf denen Zivilisationen gebaut werden! Dieser Maya-König aus dem 7. Jahrhundert regierte 68 Jahre lang, aber er herrscht auch über seinen Tod hinaus über seinen Stadtstaat Palenque, denn er wurde zu einem der Götter der Stadt. Pakal wurde inmitten einer Krise geboren und übernahm die Herrschaft über Palenque im Alter von nur 12 Jahren, nachdem der vorherige Monarch und sein Erbe gestorben waren.<br><br>Als König kümmerte sich Pakal der Große darum, zu versöhnen, zu expandieren und zu bauen. Da er nicht von königlicher Abstammung war, ließ er die Errungenschaften rivalisierender Anwärter in jedes Denkmal der Stadt einmeißeln, auch in den Palast von Palenque.<br><br>Es ist vielleicht passend, dass derjenige, der die Geschichte in Stein gemeißelt hat, selbst darin verewigt wurde: Der Tempel der Inschriften, der als Pakals Grabkomplex gebaut wurde, enthielt große Tafeln, die die Geschichte des Maya-Volkes feierten, und in seinem Mittelpunkt den wunderschön verzierten Sarkophag selbst.
 N
 8Base.Buildings.Building_EarlyRome_Workshop_Tailor_1_DescStellt Tuniken her
 w
@@ -6018,10 +6016,10 @@ F
 6Base.Buildings.Building_ByzantineEra_Home_Small_1_NameKleines Haus
 F
 "Base.BuildingGroups.mothGlade_NameMottenlichtungMottenlichtungen
-S
-:Base.Buildings.Building_Vikings_FishingPier_Premium_1_NameLuxuriöser Angelsteg
 M
 7Base.Buildings.Building_RomanEmpire_Home_Average_3_NameMittelgroßes Haus
+S
+:Base.Buildings.Building_Vikings_FishingPier_Premium_1_NameLuxuriöser Angelsteg
 a
 CBase.Technologies.Technology_ClassicGreece_AdvancedProjectiles_NameFortschrittliche Geschosse
 X
@@ -6131,10 +6129,10 @@ t
 -
 Base.Heroes.hero.IsabellaI_Name
 Isabella I
-�
-!Base.Units.Unit_LouisPasteur_Desc�Besiege Krankheiten mit Louis Pasteur, dem Vater der Mikrobiologie! Dieser französische Wissenschaftler aus dem 19. Jahrhundert ist berühmt für die Erfindung des Tollwutimpfstoffs, die Erfindung der Pasteurisierung und seine Theorie über Keime. <br><br> Pasteur ist vor allem dafür bekannt, dass er dem 9-jährigen Joseph Meister, der von einem tollwütigen Hund angegriffen worden war, eine Tollwutimpfung verabreichte. Monate später war der Junge wieder gesund. Im Laufe des nächsten Jahres behandelte Pasteur 350 weitere Menschen gegen die Krankheit: Nur einer erkrankte. Doch das ist nur ein Bruchteil von Pasteurs Talent. Er lehrte das Erhitzen von Milch oder Wein, um Bakterien abzutöten, und das Waschen der Hände vor Operationen und gründete das Pasteur-Institut. <br><br> Heute wird er sowohl von Ruhm als auch von Kontroversen verfolgt. Viele Orte auf der Welt sind nach diesem Genie benannt, aber seine Notizbücher offenbaren eine hinterhältige Seite: Er täuschte und manipulierte die Wahrheit, um wirklich originell zu erscheinen. 
 b
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Desc%Schaltet berittene Speerkämpfer frei
+�
+!Base.Units.Unit_LouisPasteur_Desc�Besiege Krankheiten mit Louis Pasteur, dem Vater der Mikrobiologie! Dieser französische Wissenschaftler aus dem 19. Jahrhundert ist berühmt für die Erfindung des Tollwutimpfstoffs, die Erfindung der Pasteurisierung und seine Theorie über Keime. <br><br> Pasteur ist vor allem dafür bekannt, dass er dem 9-jährigen Joseph Meister, der von einem tollwütigen Hund angegriffen worden war, eine Tollwutimpfung verabreichte. Monate später war der Junge wieder gesund. Im Laufe des nächsten Jahres behandelte Pasteur 350 weitere Menschen gegen die Krankheit: Nur einer erkrankte. Doch das ist nur ein Bruchteil von Pasteurs Talent. Er lehrte das Erhitzen von Milch oder Wein, um Bakterien abzutöten, und das Waschen der Hände vor Operationen und gründete das Pasteur-Institut. <br><br> Heute wird er sowohl von Ruhm als auch von Kontroversen verfolgt. Viele Orte auf der Welt sind nach diesem Genie benannt, aber seine Notizbücher offenbaren eine hinterhältige Seite: Er täuschte und manipulierte die Wahrheit, um wirklich originell zu erscheinen. 
 I
 6Base.Abilities.hero_battle_ability.EgyptianVizier_NameWesir-Schleier 
 *
@@ -6167,10 +6165,10 @@ Q
 5Base.Buildings.Building_Egypt_GoldMine_Premium_5_Desc$Stellt riesige Mengen an Golderz her
 >
 &Base.Units.Unit_AlexanderTheGreat_NameAlexander der Große
-G
-:Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	Angelsteg
 M
 5Base.Buildings.Building_China_RiceFarm_Premium_6_NameLuxuriöse Reis-Farm
+G
+:Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	Angelsteg
 �
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_DesckAngelstege schicken Boote los, um Fische zu fangen und deine hungrigen Arbeiter und Seefahrer zu versorgen.
 D
@@ -6197,19 +6195,19 @@ H
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameSchwere Infanterie-Kaserne
 �
 1Base.Buildings.Building_Mayas_Home_Premium_3_DescTProduziert eine Tonne Kakao und fügt deiner Stadt 2 Arbeiter und 1 Handwerker hinzu
-�
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 ,
 Base.Units.Unit_Dracula_NameVlad Dracula
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Desc[Produziert Glut. Schmelze überschüssige Ressourcen ein, um zusätzliche Glut zu erzeugen.
 C
 3Base.Buildings.Building_EarlyRome_Home_Small_3_NameKleines Haus
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_6_NameJade-Steinbruch
-V
-?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_NameProduktionswachstum
 "
 Base.Ages.Mayas_Name
 Maya-Reich
+V
+?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_NameProduktionswachstum
 q
 1Base.Buildings.Building_Egypt_Home_Premium_5_Desc<Stellt Deben her und fügt deiner Stadt einen Arbeiter hinzu
 N
@@ -6227,17 +6225,17 @@ B
 Kataphrakt
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>Stampfen| Schild| Buff</style>Führt einen mächtigen Schwertangriff aus, der allen gegerischen Einheiten <style=basestat>{dmg_percentage}</style> Schaden in einem Bereich von <style=basestat>{range}</style> zufügt. William Wallace erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild und erhöht seine DEF um <style=basestat>{def_percentage}</style> für <style=basestat>{duration}</style>. Außerdem gibt er <style=basestat>{shield_percentage_friendly}</style> seines Basisschadens als Schild an alle befreundeten Einheiten in einem Bereich von <style=basestat>{range}</style>.
-T
-8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_DescProduces Calendar Stones
+U
+8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_DescProduziert Kalendersteine
 #
 Base.HeroClass.ChampionChampion
 U
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_4_DescProduces Ritual Daggers
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_4_DescProduziert Ritualdolche
+P
+>Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_NameMottenlichtung
 A
 3Base.Technologies.Technology_Vikings_MeadHalls_Name
 Met-Hallen
-P
->Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_NameMottenlichtung
 L
 5Base.Units.Unit_TreasureHunt_Green_DonkeyRaiders_NameGrüne Esel-Räuber
 ?
@@ -6266,12 +6264,12 @@ a
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_4_Desc$Stellt riesige Mengen an Papyrus her
 M
 ;Base.Technologies.Technology_RomanEmpire_CircusMaximus_NameCircus Maximus
-G
-3Base.Technologies.Technology_China_LaborDuties_NameArbeitspflichten
 M
 :Base.Buildings.Building_HighMiddleAges_Farm_Premium_1_NameLuxuriöse Farm
 ]
 BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_NameKarolingische Axtwerfer
+G
+3Base.Technologies.Technology_China_LaborDuties_NameArbeitspflichten
 D
 6Base.Technologies.Technology_FeudalAge_Manuscript_Name
 Manuskript
@@ -6455,16 +6453,16 @@ I
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_NameLuxuriöses Haus
 S
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_NameBelagerungs-Kaserne
-U
-:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_DescProduces Ancestor Masks
+T
+:Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_DescProduziert Ahnenmasken
 r
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc=Stellt kleine Mengen an Nahrung in kurzen Zeitabständen her.
 ]
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_NameSchwere Infanterie-Kaserne
-[
-@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameAkademische Abschlüsse
 �
 Base.HeroClass.Healer_Desc�Heiler heilen ihre Verbündeten. Sie <color=#3DA229>überragen in jedem Modus</color>, aber <color=#CD2A25>sind auf andere angewiesen, Schaden zu verursachen</color>.
+[
+@Base.Technologies.Technology_HighMiddleAges_AcademicDegrees_NameAkademische Abschlüsse
 +
 Base.Ages.StoneAge_Finish40.000 v. Chr.
 W
@@ -6512,10 +6510,10 @@ B
 5Base.Buildings.Building_China_RiceFarm_Average_2_Name	Reis-Farm
 V
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_DescProduziert Kaolin
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>Sturmwirbel | Blutung</style>Schießt Bolzen in Richtung der 3 nächstgelegenen gegnerischen Einheiten und fügt allen Einheiten im Pfad der Bolzen <style=basestat>{damage}</style> Schaden zu und lässt sie für einen <style=basestat>{bleed_damage}</style> Schaden über <style=basestat>{bleed_duration}</style> bluten. Priorisiert Helden.
 o
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc<Stellt Deben her und fügt deiner Stadt einen Arbeiter hinzu
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>Sturmwirbel | Blutung</style>Schießt Bolzen in Richtung der 3 nächstgelegenen gegnerischen Einheiten und fügt allen Einheiten im Pfad der Bolzen <style=basestat>{damage}</style> Schaden zu und lässt sie für einen <style=basestat>{bleed_damage}</style> Schaden über <style=basestat>{bleed_duration}</style> bluten. Priorisiert Helden.
 z
 ABase.Buildings.Building_AgeOfTheFranks_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 W
@@ -6530,12 +6528,12 @@ s
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
 x
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc>Die Taverne stellt Met und Stockfisch aus Honig und Fisch her.
+p
+7Base.Buildings.Building_Mayas_RitualSite_Average_6_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
 S
 ;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_NameKleine Kulturstätte
-c
-7Base.Buildings.Building_Mayas_RitualSite_Average_6_Desc(Improves Happiness of adjacent buildings
-q
-7Base.Buildings.Building_Mayas_RitualSite_Premium_3_Desc6Substantially improves Happiness of adjacent buildings
+z
+7Base.Buildings.Building_Mayas_RitualSite_Premium_3_Desc?Verbessert die Zufriedenheit in umliegenden Gebäuden erheblich
 �
 GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Name�<style=ability_label>Nahkampfangriff</style>Tritt das aktuelle Ziel dreimal für insgesamt <style=basestat>{dmg_percentage}</style> Schaden.
 _
@@ -6552,16 +6550,16 @@ Z
 OBase.AbilityDescriptions.hero_battle_ability_description.OttoVonBismarck_1_Name�<style=ability_label>Spott| Schild</style>Spottet alle Gegner für <style=basestat>{taunt_duration}</style>. Bismarck erhält <style=basestat>{shield_percentage}</style> seines Basisschadens als Schild.
 S
 &Base.BuildingGroups.premiumAviary_NameLuxuriöses AviariumLuxuriöse Aviarien
-�
-Base.Units.Unit_IsabellaI_Desc�A thousand choirs sing the name Isabella, Queen of Castille! This ruthless Spanish queen of the fourteen and fifteen hundreds began the Spanish Empire, in all its glory and its cruelty. Struggle defined her reign, even from the start: scheming bishops and marquises left court right after her ascension.<br> <br>They would soon return with an army. They clashed at the battle of Toro, and though both sides celebrated victory, it became clear that Isabella's rule was dominant. Soon, the rest of Spain would come to see the same thing: the Reconquista birthed an empire that would not be denied.<br><br>Isabella's legacy is mixed. Though Christopher Columbus' voyage to America brought wealth, it, along with the Spanish Inquisition and the Catholic dominance of Spain, led to suffering. For her part, Isabella really wants to be a saint, but the jury's still out!
+�
+Base.Units.Unit_IsabellaI_Desc�Tausend Chöre singen von Isabella, der Königin von Kastilien! Diese unbarmherzige spanische Königin des vierzehnten und fünfzehnten Jahrhunderts begründete das Spanische Reich in all seiner Pracht und Grausamkeit. Ihre Herrschaft war von Anfang an von Kämpfen geprägt: Intrigante Bischöfe und Markgrafen verließen den Hof gleich nach ihrer Thronbesteigung.<br> <br>Bald darauf kehrten sie mit einer Armee zurück. Sie trafen in der Schlacht von Toro aufeinander, und obwohl beide Seiten den Sieg feierten, wurde klar, dass Isabellas Herrschaft dominant war. Schon bald sollte auch das übrige Spanien erkennen, dass die Reconquista ein Reich hervorbrachte, das sich nicht aufhalten ließ.<br><br>Isabellas Erbe ist zwiespältig. Die Reise von Christoph Kolumbus nach Amerika brachte zwar Reichtum, aber zusammen mit der spanischen Inquisition und der katholischen Vorherrschaft in Spanien führte sie auch zu Leid. Isabella I. will unbedingt eine Heilige sein, aber das Urteil darüber steht noch aus!
 e
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Desc"Schaltet Minotaurus-Vortrupps frei
 �
 Base.Units.Unit_Ninja_Desc�Bewege dich von Schatten zu Schatten und halte deine Shuriken bereit! Mochizuki Chiyome, eine legendäre Figur aus dem Japan des 16. Jahrhunderts, ist dir beigetreten. Jahrhunderts. Gefeiert für ihre faszinierende Rolle als Organisatorin eines verdeckten Netzwerks weiblicher Ninjas, der Kunoichi, ist Chiyome ein Mysterium zwischen Geschichte und Mythos.<br><br>Als Frau eines Samurai wurde sie von ihrem Verwandten, dem Kriegsherrn Takeda Shingen, beauftragt, Informationen zu sammeln und Spionage zu betreiben. Mochizuki Chiyome trainierte und rekrutierte Frauen mit unterschiedlichem Hintergrund und schuf so ein effektives Netzwerk, das sich auf das Sammeln von Informationen, Infiltration und Tarnungstaktiken verstand.<br><br>Ihr Vermächtnis als Pionierin der Spionage unterstreicht die einzigartigen Beiträge der Frauen im feudalen Japan und hebt ihre vielfältigen Rollen jenseits traditioneller Erwartungen hervor.
-^
-'Base.BuildingGroups.premiumCulture_NameLuxuriöse KulturstätteLuxuriöse Kulturstätten
 N
 0Base.BuildingGroups.collectableAmphitheatre_NameAmphitheaterAmphitheater
+^
+'Base.BuildingGroups.premiumCulture_NameLuxuriöse KulturstätteLuxuriöse Kulturstätten
 O
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_NameKavallerie-Kaserne
 z
@@ -6590,10 +6588,10 @@ C
 &Base.Units.Unit_AlexanderTheGreat_Desc�Seht Alexander den Großen, unbesiegt, triumphierend, der beste General, den die Welt je gesehen hat! Dieser König aus dem 4. Jahrhundert v. Chr. ist berühmt dafür, dass er vor seinem frühen Tod weite Teile der Welt erobert hat.<br><br>Alexander bestieg den Thron im Alter von 20 Jahren, nachdem sein Vater ermordet worden war. Er erwies sich schnell als entschlossen: Er besiegte die Thraker und zerstörte den berühmten Stadtstaat Theben. Das brachte Griechenland wieder Frieden, und Alexander führte den Bund von Korinth an, um das achämenidische Persien zu erobern. Dieses berühmte Reich fiel vor ihm, aber Alexander war noch nicht fertig: Vor seinen Armeen knieten Syrien, Babylon, Iran und sogar Pakistan.<br><br>Alexander verlor nie eine Schlacht. Am Ende forderte seine eigene Armee die Rückkehr nach Hause. In Babylon, auf dem Heimweg (obwohl er auf dem Rückweg noch einige Eroberungen machte), hauchte Alexander sein Leben aus.<br><br>Innerhalb der Heroes of History ist Alexander ein wenig umstritten. Er genießt es, mit Achilles zu trinken, von Kyrus Lektionen zu erhalten und seinen Vater vorzuführen!
 F
 .Base.Abilities.hero_battle_ability.Medusa_NameVersteinernder Blick
-J
-ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameRutte
 W
 5Base.Buildings.Building_China_RiceFarm_Premium_6_DescProduziert riesige Mengen Reis
+J
+ABase.Technologies.Technology_HighMiddleAges_SpringaldEngines_NameRutte
 ^
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_NameLuxuriöse Kulturstätte
 M
@@ -6619,8 +6617,8 @@ J
 Sagittarii
 C
 0Base.Buildings.Building_Mayas_Quarry_Jade_6_DescProduziert Jade
-t
-5Base.Buildings.Building_Mayas_Workshop_Premium_2_Desc;Produces Ancestor Masks, Calendar Stones and Ritual Daggers
+p
+5Base.Buildings.Building_Mayas_Workshop_Premium_2_Desc7Produziert Ahnenmasken, Kalendersteine und Ritualdolche
 O
 6Base.Technologies.Technology_EarlyRome_GoldLaurel_NameGoldener Lorbeerkranz
 ,
