@@ -27,10 +27,22 @@
         }
 
     </div>
-    <div class="content-row">
-        @foreach (var unit in Data.PlayerSquads)
+    <div class="@TeamsClassname">
+        <div class="squads-row">
+            @foreach (var unit in Data.PlayerSquads)
+            {
+                <BattleHeroComponent BattleHero="unit"/>
+            }
+        </div>
+        @if(Data.EnemySquads.Count > 0)
         {
-            <BattleHeroComponent BattleHero="unit"/>
+            <span class="versus-label">vs</span>
+            <div class="squads-row">
+                @foreach (var unit in Data.EnemySquads)
+                {
+                    <BattleHeroComponent BattleHero="unit"/>
+                }
+            </div>
         }
     </div>
 </div>
@@ -46,6 +58,10 @@
     private string StatusContainerClassname => new CssBuilder("header-row")
         .AddClass("victory", Data.ResultStatus == BattleResultStatus.Win)
         .AddClass("defeat", Data.ResultStatus == BattleResultStatus.Defeat)
+        .Build();
+    
+    private string TeamsClassname => new CssBuilder("content-row")
+        .AddClass("content-row-two-teams", Data.EnemySquads.Count > 0)
         .Build();
 
 }

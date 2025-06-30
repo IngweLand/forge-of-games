@@ -27,60 +27,40 @@ public class BattleSearchQueryHandler(
     public async Task<BattleSearchResult> Handle(BattleSearchQuery request,
         CancellationToken cancellationToken)
     {
-        IQueryable<BattleSummaryEntity> playerBattlesQuery;
-        IQueryable<BattleSummaryEntity>? enemyBattlesQuery = null;
+        IQueryable<BattleSummaryEntity> battlesQuery;
         if (request.UnitIds.Count > 0)
         {
             var unitIds = request.UnitIds.ToHashSet();
-            playerBattlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, BattleSquadSide.Player);
-            if (request.BattleType == BattleType.Pvp)
-            {
-                enemyBattlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, BattleSquadSide.Enemy);
-            }
+            battlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, request.BattleType);
         }
         else
         {
-            playerBattlesQuery = context.Battles.AsNoTracking()
+            battlesQuery = context.Battles.AsNoTracking()
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
         }
 
-        var playerBattles = await playerBattlesQuery
+        var battles = await battlesQuery
             .OrderByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
             .ToListAsync(cancellationToken);
-        var battleIds = playerBattles.Select(src => src.InGameBattleId);
-        List<BattleSummaryEntity>? enemyBattles = null;
-        if (enemyBattlesQuery != null)
-        {
-            enemyBattles = await enemyBattlesQuery
-                .OrderByDescending(src => src.Id)
-                .Take(FogConstants.MaxDisplayedBattles)
-                .ToListAsync(cancellationToken);
-            
-            battleIds = battleIds.Concat(enemyBattles.Select(b => b.InGameBattleId));
-        }
+        var battleIds = battles.Select(src => src.InGameBattleId);
 
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        var playerResult = await battleSearchResultFactory.Create(playerBattles, existingStatsIds);
-        if (enemyBattles == null)
-        {
-            return playerResult;
-        }
-
-        var enemyResult = await battleSearchResultFactory.Create(enemyBattles, existingStatsIds, BattleSquadSide.Enemy);
-        return new BattleSearchResult
-        {
-            Battles = playerResult.Battles.Concat(enemyResult.Battles).ToList(),
-            Heroes = playerResult.Heroes.Concat(enemyResult.Heroes).DistinctBy(h => h.Id).ToList(),
-        };
-
+        return await battleSearchResultFactory.Create(battles, existingStatsIds, request.BattleType);
     }
 
     private IQueryable<BattleSummaryEntity> BuildBattleQuery(HashSet<string> unitIds, string battleDefinitionId,
-        BattleSquadSide side)
+        BattleType battleType)
     {
+        if (battleType == BattleType.Pvp)
+        {
+            return context.Battles.AsNoTracking()
+                .Where(b => b.BattleDefinitionId == battleDefinitionId &&
+                    unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
+        }
+       
         return context.Battles.AsNoTracking()
             .Where(b => b.BattleDefinitionId == battleDefinitionId &&
-                unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId && u.Side == side)));
+                unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId && u.Side == BattleSquadSide.Player)));
     }
 }

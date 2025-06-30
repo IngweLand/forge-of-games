@@ -120,6 +120,8 @@ public class StatsHubViewModelsFactory(
             ResultStatus = summaryDto.ResultStatus,
             PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleViewModel(src, heroes[src.UnitId]))
                 .ToList(),
+            EnemySquads = summaryDto.EnemySquads.Select(src => CreateBattleViewModel(src, heroes[src.UnitId]))
+                .ToList(),
             StatsId = summaryDto.StatsId,
         };
     }
