@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
+using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Functions.Services;

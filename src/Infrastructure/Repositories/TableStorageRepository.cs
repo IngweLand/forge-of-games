@@ -63,4 +63,9 @@ public class TableStorageRepository<T>(string connectionString, string tableName
     {
         await _tableClient.Value.DeleteEntityAsync(partitionKey, rowKey);
     }
+
+    public Task UpsertEntityAsync(T entity)
+    {
+        return _tableClient.Value.UpsertEntityAsync(entity, TableUpdateMode.Replace);
+    }
 }

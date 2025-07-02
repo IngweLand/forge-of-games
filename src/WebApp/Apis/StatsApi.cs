@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +18,7 @@ public static class StatsApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
@@ -35,6 +37,19 @@ public static class StatsApi
         {
             PlayerId = playerId,
         };
+        var result = await services.Mediator.Send(query);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<HohCity>, NotFound, BadRequest<string>>>
+        GetPlayerCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
+    {
+        var query = new GetPlayerCityQuery(playerId);
         var result = await services.Mediator.Send(query);
         if (result == null)
         {

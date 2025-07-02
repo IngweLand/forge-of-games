@@ -2076,6 +2076,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View city stats.
+        /// </summary>
+        public static string StatsHub_Player_ViewCityStats {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.ViewCityStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visit.
+        /// </summary>
+        public static string StatsHub_Player_Visit {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.Visit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to World.
         /// </summary>
         public static string StatsHub_Player_World {

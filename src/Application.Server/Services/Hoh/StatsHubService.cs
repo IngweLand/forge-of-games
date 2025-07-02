@@ -48,4 +48,10 @@ public class StatsHubService(ISender sender) : IStatsHubService
         };
         return sender.Send(query);
     }
+    
+    public Task<HohCity?> GetPlayerCityAsync(int playerId)
+    {
+        var query = new GetPlayerCityQuery(playerId);
+        return sender.Send(query);
+    }
 }

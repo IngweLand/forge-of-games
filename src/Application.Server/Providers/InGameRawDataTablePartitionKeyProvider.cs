@@ -1,6 +1,6 @@
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Functions;
+namespace Ingweland.Fog.Application.Server.Providers;
 
 public class InGameRawDataTablePartitionKeyProvider
 {
@@ -52,5 +52,10 @@ public class InGameRawDataTablePartitionKeyProvider
     private string WithWorldAndDate(string src, string worldId, DateOnly date)
     {
         return $"{src}_{worldId}_{date.ToString("O")}";
+    }
+
+    public string OtherCity(string worldId, DateOnly date)
+    {
+        return WithWorldAndDate("other-city", worldId, date);
     }
 }

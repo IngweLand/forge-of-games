@@ -23,7 +23,6 @@ var searchKeys = new HashSet<string>()
     "Base.Generic.MainCity",
     "Base.Generic.Resource",
     "Base.WorldWondersDetailPanel.WonderHeader",
-    "Base.BattleStatsPanel.Hero",
     "Base.ResearchTreePanel.Header",
     "Base.BuildingContextPanel.Customization",
     "Base.BuildingContextPanel.ProductionLabel",
@@ -35,6 +34,7 @@ var searchKeys = new HashSet<string>()
     "Base.TeslaStormsPanel.TeslaStorms",
     "Base.CampaignPanel.Difficulty",
     "Base.TreasureHuntDifficultiesPanel.Stage",
+    "Base.AllianceMemberContextPopover.Visit"
 };
 
 var result = new Dictionary<string, List<Translations>>();

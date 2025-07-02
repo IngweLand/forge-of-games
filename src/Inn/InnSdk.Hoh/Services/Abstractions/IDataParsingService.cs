@@ -1,5 +1,6 @@
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
@@ -14,4 +15,5 @@ public interface IDataParsingService
     PlayerRanks ParsePlayerRankings(byte[] data);
     Wakeup ParseWakeup(byte[] data);
     BattleStats ParseBattleStats(byte[] data);
+    OtherCity ParseOtherCity(byte[] data);
 }

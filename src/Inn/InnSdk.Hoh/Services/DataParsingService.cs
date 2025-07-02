@@ -3,6 +3,7 @@ using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Microsoft.Extensions.Logging;
 
@@ -179,6 +180,24 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         }
 
         return mapper.Map<BattleStats>(dto);
+    }
+
+    public OtherCity ParseOtherCity(byte[] data)
+    {
+        OtherCityDTO dto;
+        try
+        {
+            var container = CommunicationDto.Parser.ParseFrom(data);
+            dto = container.OtherCity;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse other city data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<OtherCity>(dto);
     }
 
     private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)

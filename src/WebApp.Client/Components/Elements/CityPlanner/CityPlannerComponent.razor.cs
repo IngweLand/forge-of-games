@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -30,6 +31,9 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     [Inject]
     public ICityPlannerInteractionManager CityPlannerInteractionManager { get; set; }
+
+    [Inject]
+    private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
     public CityPlannerSettings CityPlannerSettings { get; set; }
@@ -82,11 +86,19 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         CityPlannerSettings.StateChanged += CityPlannerSettingsOnStateChanged;
 
-        var savedCities = await PersistenceService.GetCities();
         var opened = false;
-        if (savedCities.Count > 0)
+        if (CityPlannerNavigationState.City != null)
         {
-            opened = await OpenCitiesDialog();
+            await CityPlanner.InitializeAsync(CityPlannerNavigationState.City);
+            opened = true;
+        }
+        else
+        {
+            var savedCities = await PersistenceService.GetCities();
+            if (savedCities.Count > 0)
+            {
+                opened = await OpenCitiesDialog();
+            }
         }
 
         if (!opened)
@@ -119,7 +131,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private async Task CreateNewCity()
     {
         var options = GetDefaultDialogOptions();
-        var dialogParameters = new DialogParameters<CreateNewCityDialog>()
+        var dialogParameters = new DialogParameters<CreateNewCityDialog>
             {{d => d.CityItems, CityPlanner.NewCityDialogItems}};
         var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, dialogParameters, options);
         var result = await dialog.Result;
@@ -163,7 +175,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             MaxWidth = MaxWidth.Small,
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
-            CloseButton = closeButton
+            CloseButton = closeButton,
         };
     }
 
@@ -249,7 +261,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     {
         var parameters = new DialogParameters
         {
-            {nameof(OpenCityDialog.Cities), await PersistenceService.GetCities()}
+            {nameof(OpenCityDialog.Cities), await PersistenceService.GetCities()},
         };
 
         var options = GetDefaultDialogOptions(true);
@@ -372,7 +384,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
             NoHeader = true,
-            CloseOnEscapeKey = true
+            CloseOnEscapeKey = true,
         };
         await DialogService.ShowAsync<SnapshotsComparisonComponent>(null, parameters, options);
     }

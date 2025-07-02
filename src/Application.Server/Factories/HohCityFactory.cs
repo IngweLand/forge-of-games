@@ -10,7 +10,7 @@ namespace Ingweland.Fog.Application.Server.Factories;
 public class HohCityFactory(IMapper mapper, IHohCitySnapshotFactory snapshotFactory) : IHohCityFactory
 {
     public HohCity Create(City inGameCity, IReadOnlyDictionary<string, Building> buildings, WonderId wonderId,
-        int wonderLevel)
+        int wonderLevel, string? name = null)
     {
         var cityHalls = buildings.Where(kvp => kvp.Value.Type == BuildingType.CityHall).Select(kvp => kvp.Value)
             .ToList();
@@ -32,7 +32,7 @@ public class HohCityFactory(IMapper mapper, IHohCitySnapshotFactory snapshotFact
             InGameCityId = inGameCity.CityId,
             AgeId = cityHall.Age!.Id,
             Entities = entities.AsReadOnly(),
-            Name = $"Import - {inGameCity.CityId} - {DateTime.Now:g}",
+            Name = name ?? $"Import - {inGameCity.CityId} - {DateTime.Now:g}",
             Snapshots = new List<HohCitySnapshot>() {snapshotFactory.Create(entities)},
             WonderId = wonderId,
             WonderLevel = wonderLevel,

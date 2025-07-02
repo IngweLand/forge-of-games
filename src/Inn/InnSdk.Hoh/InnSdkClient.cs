@@ -6,9 +6,11 @@ namespace Ingweland.Fog.InnSdk.Hoh;
 public class InnSdkClient(
     Lazy<IStaticDataService> staticDataService,
     Lazy<IRankingsService> rankingsService,
-    Lazy<IBattleService> battleService)
+    Lazy<IBattleService> battleService,
+    Lazy<ICityService> cityService)
     : IInnSdkClient
 {
+    public ICityService CityService => cityService.Value;
     public IBattleService BattleService => battleService.Value;
     public IRankingsService RankingsService => rankingsService.Value;
     public IStaticDataService StaticDataService => staticDataService.Value;

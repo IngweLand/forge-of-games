@@ -7,10 +7,12 @@ using Ingweland.Fog.Application.Core.Services.Hoh;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
+using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Polly;
@@ -24,6 +26,9 @@ public static class DependencyInjection
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly); });
+        
+        services.AddSingleton<InGameRawDataTablePartitionKeyProvider>();
+        services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();
@@ -57,6 +62,8 @@ public static class DependencyInjection
         services.AddScoped<IBattleStatsDtoFactory, BattleStatsDtoFactory>();
         services.AddScoped<IBattleQueryService, BattleQueryService>();
         services.AddScoped<IUnitBattleDtoFactory, UnitBattleDtoFactory>();
+        services.AddScoped<IInGameDataParsingService, InGameDataParsingService>();
+        services.AddScoped<IPlayerCityService, PlayerCityService>();
         services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()

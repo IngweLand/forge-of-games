@@ -1,10 +1,12 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers;
+using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Net;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
@@ -23,6 +25,7 @@ internal static class DependencyInjection
 
         services.AddSingleton<ITypeSafeMemoryCache, TypeSafeMemoryCache>();
 
+        services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IHeroBuilderService, HeroBuilderService>();
         services.AddScoped<IClientLocaleService, ClientLocaleService>();
         services.AddScoped<IJSInteropService, JSInteropService>();

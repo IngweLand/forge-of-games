@@ -20,6 +20,10 @@ p {
     gap: 12px;
 }
 
+.actions-container {
+    flex-direction: row;
+}
+
 .info-container {
     display: flex;
     padding: 12px;

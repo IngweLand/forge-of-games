@@ -9,4 +9,5 @@ public interface ITableStorageRepository<T>
     Task<T?> GetAsync(string partitionKey, string rowKey);
     Task UpdateAsync(T entity);
     Task UpsertRangeAsync(IEnumerable<T> entities);
+    Task UpsertEntityAsync(T entity);
 }

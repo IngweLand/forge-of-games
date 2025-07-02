@@ -9,7 +9,8 @@
 {
     <div class="page-container">
         <div class="fog-container info-container">
-            <img class="avatar" src="@_player.Player.AvatarUrl"/>
+                <img class="avatar" src="@_player.Player.AvatarUrl"/>
+
             <div class="details">
                 <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name
                 </div>
@@ -22,7 +23,8 @@
                     </div>
                 }
                 <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@_player.Player.WorldId</div>
-                <div><span
+                <div>
+                    <span
                         class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_player.Player.RankingPoints
                 </div>
                 <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@_player.Player.Rank</div>
@@ -30,6 +32,16 @@
                 <div><span class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@_player.Player.UpdatedAt
                 </div>
             </div>
+        </div>
+        <div class="fog-container section-container actions-container">
+            <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                       EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
+                @Loc[FogResource.StatsHub_Player_Visit]
+            </MudButton>
+            <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                       EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
+                @Loc[FogResource.StatsHub_Player_ViewCityStats]
+            </MudButton>
         </div>
         @if (_canShowChart)
         {

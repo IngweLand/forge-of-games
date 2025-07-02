@@ -18,6 +18,8 @@ public sealed partial class CommunicationDto
     public IList<HeroTreasureHuntPlayerPointsPush> HeroTreasureHuntPlayerPointsPushs =>
         PackedMessages.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();
 
+    public OtherCityDTO OtherCity => PackedMessages.FindAndUnpack<OtherCityDTO>();
+
     // TODO move the rest of messages here, e.g. game design
     public PlayerRanksDTO PlayerRanks => PackedMessages.FindAndUnpack<PlayerRanksDTO>();
     public PvpGetRankingResponse PvpGetRankingResponse => PackedMessages.FindAndUnpack<PvpGetRankingResponse>();

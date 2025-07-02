@@ -1,12 +1,12 @@
-using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Functions;
+namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
 public class InGameDataParsingService(
     IDataParsingService dataParsingService,
@@ -60,6 +60,13 @@ public class InGameDataParsingService(
         var data = DecodeInternal(inputData);
 
         return dataParsingService.ParseWakeup(data);
+    }
+
+    public OtherCity ParseOtherCity(string inputData)
+    {
+        var data = DecodeInternal(inputData);
+
+        return dataParsingService.ParseOtherCity(data);
     }
 
     public byte[] Decode(string inputData)

@@ -95,6 +95,10 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities));
         CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>();
         CreateMap<ExpansionMapEntityDto, CityMapExpansion>();
+        CreateMap<OtherCityDTO, OtherCity>()
+            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
+            .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities));
+        CreateMap<OtherCity, City>();
 
         CreateMap<StatBoostDto, StatBoost>()
             .ForMember(dest => dest.UnitStatType,

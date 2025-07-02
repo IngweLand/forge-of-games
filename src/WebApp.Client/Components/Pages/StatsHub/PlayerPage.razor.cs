@@ -1,5 +1,9 @@
+using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -10,10 +14,22 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
 {
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
+    private CancellationTokenSource _cityFetchCts = new();
+    private bool _fetchingCity;
+    private bool _isDisposed;
     private PlayerWithRankingsViewModel? _player;
 
     [Inject]
+    private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
+
+    [Inject]
     private IDialogService DialogService { get; set; }
+
+    [Inject]
+    private IPersistenceService PersistenceService { get; set; }
+
+    [Inject]
+    private IStatsHubService StatsHubService { get; set; }
 
     public async ValueTask DisposeAsync()
     {
@@ -34,6 +50,11 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
 
     protected override async Task OnParametersSetAsync()
     {
+        if (_isDisposed)
+        {
+            return;
+        }
+
         await base.OnParametersSetAsync();
 
         if (_player == null || _player.Player.Id != PlayerId)
@@ -47,6 +68,16 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
 
     protected virtual async ValueTask DisposeAsyncCore()
     {
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _isDisposed = true;
+
+        await _cityFetchCts.CancelAsync();
+        _cityFetchCts.Dispose();
+
         await _battleStatsCts.CancelAsync();
         _battleStatsCts.Dispose();
     }
@@ -87,6 +118,12 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
 
         _battleStatsCts = new CancellationTokenSource();
         var stats = await StatsHubUiService.GetBattleStatsAsync(battleStatsId.Value, _battleStatsCts.Token);
+
+        if (_isDisposed)
+        {
+            return;
+        }
+
         var options = GetDefaultDialogOptions();
 
         var parameters = new DialogParameters<BattleStatsDialog> {{d => d.Stats, stats}};
@@ -96,5 +133,66 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
     private void OnHeroClicked(string heroId)
     {
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HeroPlayground(heroId));
+    }
+
+    private async Task HandleCityOperation(Func<HohCity, Task> cityHandler)
+    {
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        await _cityFetchCts.CancelAsync();
+        _cityFetchCts.Dispose();
+
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _fetchingCity = true;
+        _cityFetchCts = new CancellationTokenSource();
+
+        try
+        {
+            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id);
+            if (_isDisposed || city == null)
+            {
+                return;
+            }
+
+            await cityHandler(city);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _fetchingCity = false;
+    }
+
+    private async Task VisitCity()
+    {
+        await HandleCityOperation(city =>
+        {
+            CityPlannerNavigationState.City = city;
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH);
+            return Task.CompletedTask;
+        });
+    }
+
+    private async Task ShowCityStats()
+    {
+        await HandleCityOperation(async city =>
+        {
+            city.Id = Guid.NewGuid().ToString("N");
+            await PersistenceService.SaveTempCities([city]);
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
+        });
     }
 }

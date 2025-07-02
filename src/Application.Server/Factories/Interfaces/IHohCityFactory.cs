@@ -6,5 +6,6 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface IHohCityFactory
 {
-    HohCity Create(City inGameCity, IReadOnlyDictionary<string, Building> buildings, WonderId wonderId, int wonderLevel);
+    HohCity Create(City inGameCity, IReadOnlyDictionary<string, Building> buildings, WonderId wonderId, int wonderLevel,
+        string? name = null);
 }

@@ -30,6 +30,8 @@ public static class FogUrlBuilder
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
+        public const string PLAYER_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/city";
+        public const string PLAYER_CITY_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/city";
 
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
         public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
