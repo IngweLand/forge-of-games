@@ -8,8 +8,8 @@
 
         @if (_equipment != null && _equipment.Count > 0)
         {
-            <MudTable Items="@_equipment" SortLabel="Sort By" Dense="true" CustomHeader="true" Bordered="true"
-                      Breakpoint="Breakpoint.None"
+            <MudTable ServerData="GetItems" SortLabel="Sort By" Dense="true" CustomHeader="true" Bordered="true"
+                      Breakpoint="Breakpoint.None" Virtualize="true"
                       Height="0" Style="display: flex; flex-direction: column; flex: 1" ContainerStyle="flex-grow: 1"
                       FixedHeader="true" HeaderClass="table-head-bordered" HorizontalScrollbar="true">
                 <HeaderContent>
@@ -20,83 +20,82 @@
                     </MudTHeadRow>
                     <MudTHeadRow>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquipmentSlotType)">
-                                Slot
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSlotType)">Slot
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquipmentSet)">
-                                Set
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSet)">Set
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.StarCount)">
-                                Rarity
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.StarCount)">Rarity
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.Level)">Level
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.Level)">Level
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel SortBy="new Func<EquipmentItemViewModel, object>(x => x.EquippedOnHero)">
-                                Hero
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquippedOnHero)">Hero
                             </MudTableSortLabel>
                         </MudTh>
 
                         @* main attributes *@
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.MainAttack?.Value)">ATK
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.MainAttack)">ATK
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.MainDefense?.Value)">DEF
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.MainDefense)">DEF
                             </MudTableSortLabel>
                         </MudTh>
 
                         @* sub attributes *@
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubAttack?.Value)">ATK
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttack)">ATK
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubAttackAmp?.Value)">ATK %
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackAmp)">ATK %
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubDefense?.Value)">DEF
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefense)">DEF
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubDefenseAmp?.Value)">DEF %
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefenseAmp)">DEF %
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubHitPoints?.Value)">HP
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPoints)">HP
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubHitPointsAmp?.Value)">HP %
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPointsAmp)">HP %
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubBaseDamageAmp?.Value)">BASE
-                                DMG %
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubBaseDamageAmp)">BASE DMG %
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
-                            <MudTableSortLabel
-                                SortBy="new Func<EquipmentItemViewModel, object>(x => x.SubCritDamage?.Value)">CRIT DMG
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritDamage)">CRIT DMG
                             </MudTableSortLabel>
                         </MudTh>
                     </MudTHeadRow>
