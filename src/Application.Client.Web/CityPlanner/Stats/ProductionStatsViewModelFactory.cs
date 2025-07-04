@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 

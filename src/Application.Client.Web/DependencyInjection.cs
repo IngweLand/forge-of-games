@@ -7,7 +7,6 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
@@ -20,8 +19,10 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
+using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Core.Factories;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Formatters;
@@ -36,6 +37,8 @@ public static class DependencyInjection
 {
     public static void AddWebAppApplicationServices(this IServiceCollection services)
     {
+        services.AddApplicationCoreServices();
+        
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddMemoryCache();
@@ -79,8 +82,6 @@ public static class DependencyInjection
         services.AddScoped<ICityPlannerInteractionManager, CityPlannerInteractionManager>();
         services.AddScoped<IMapGrid, MapGrid>();
         services.AddScoped<ICityMapEntityInteractionComponent, CityMapEntityInteractionComponent>();
-        services.AddScoped<ICityMapEntityFactory, CityMapEntityFactory>();
-        services.AddScoped<IMapAreaFactory, MapAreaFactory>();
         services.AddScoped<ICommandManager, CommandManager>();
         services.AddScoped<ICityPlannerCommandFactory, CityPlannerCommandFactory>();
         services.AddScoped<IBuildingViewModelFactory, BuildingViewModelFactory>();
@@ -89,9 +90,7 @@ public static class DependencyInjection
         services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<ICityMapStateFactory, CityMapStateFactory>();
         services.AddScoped<IMapAreaRendererFactory, MapAreaRendererFactory>();
-        services.AddScoped<ICityStatsProcessorFactory, CityStatsProcessorFactory>();
         services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
-        services.AddScoped<IProductionStatsProcessorFactory, ProductionStatsProcessorFactory>();
         services.AddScoped<ICityPlannerCityPropertiesViewModelFactory, CityPlannerCityPropertiesViewModelFactory>();
         services.AddScoped<IHappinessStatsViewModelFactory, HappinessStatsViewModelFactory>();
         services.AddScoped<IProductionStatsViewModelFactory, ProductionStatsViewModelFactory>();
@@ -120,8 +119,6 @@ public static class DependencyInjection
         services.AddScoped<IBattleLogFactories, BattleLogFactories>();
         services.AddScoped<IBattleStatsViewModelFactory, BattleStatsViewModelFactory>();
         services.AddScoped<IResourceLocalizationService, ResourceLocalizationService>();
-        
-        services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
         
         services.AddScoped<CityPlannerSettings>();
         

@@ -4,29 +4,30 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
-using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Localization;
-using Microsoft.Extensions.Logging;
 using SkiaSharp;
+using CityMapEntity = Ingweland.Fog.Application.Core.CityPlanner.CityMapEntity;
+using CityMapExpansion = Ingweland.Fog.Application.Core.CityPlanner.CityMapExpansion;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityPlanner(
-    ICityService cityService,
     IBuildingSelectorTypesViewModelFactory buildingSelectorTypesViewModelFactory,
     ICityMapEntityFactory cityMapEntityFactory,
     IMapAreaFactory mapAreaFactory,
@@ -34,7 +35,6 @@ public class CityPlanner(
     IHohCityFactory hohCityFactory,
     ICityMapEntityViewModelFactory cityMapEntityViewModelFactory,
     ICityMapBuildingGroupViewModelFactory cityMapBuildingGroupViewModelFactory,
-    ILogger<CityPlanner> logger,
     ICityMapStateFactory cityMapStateFactory,
     IMapAreaRendererFactory mapAreaRendererFactory,
     ICityStatsProcessorFactory cityStatsProcessorFactory,
@@ -45,12 +45,10 @@ public class CityPlanner(
     IPersistenceService persistenceService,
     ISnapshotsComparisonViewModelFactory snapshotsComparisonViewModelFactory,
     IStringLocalizer<FogResource> localizer,
+    ICityPlannerDataService cityPlannerDataService,
     IMapper mapper) : ICityPlanner
 {
     public const int Version = 1;
-
-    private IDictionary<CityId, CityPlannerDataDto>
-        _cityPlannerDataCache = new Dictionary<CityId, CityPlannerDataDto>();
 
     private MapArea _mapArea = null!;
     private MapAreaRenderer _mapAreaRenderer = null!;
@@ -65,9 +63,9 @@ public class CityPlanner(
         return DoInitializeAsync(hohCityFactory.CreateNewCapital());
     }
 
-    public SnapshotsComparisonViewModel CompareSnapshots()
+    public async Task<SnapshotsComparisonViewModel> CompareSnapshots()
     {
-        var cityPlannerData = _cityPlannerDataCache[CityMapState.InGameCityId];
+        var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(CityMapState.InGameCityId);
         var city = GetCity();
         var stats = new Dictionary<HohCitySnapshot, CityStats>();
         foreach (var snapshot in CityMapState.Snapshots)
@@ -78,9 +76,8 @@ public class CityPlanner(
                 cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
             var statsProcessor = cityStatsProcessorFactory.Create(state,
                 cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
-            statsProcessor.UpdateStats();
 
-            stats.Add(snapshot, state.CityStats);
+            stats.Add(snapshot, statsProcessor.UpdateStats());
         }
 
         var currentStateSnapshot =
@@ -148,7 +145,7 @@ public class CityPlanner(
         var cme = cityMapEntityFactory.Create(building, Point.Empty, levelRange);
         FindFreeLocation(cme);
         CityMapState.Add(cme);
-        _statsProcessor.UpdateStats(cme);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(cme);
         SelectCityMapEntity(cme);
         return cme;
     }
@@ -156,7 +153,7 @@ public class CityPlanner(
     public void AddEntity(CityMapEntity entity)
     {
         CityMapState.Add(entity);
-        _statsProcessor.UpdateStats(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
         SelectCityMapEntity(entity);
     }
 
@@ -166,7 +163,7 @@ public class CityPlanner(
         {
             return;
         }
-        
+
         if (entity.Location == location)
         {
             return;
@@ -174,7 +171,7 @@ public class CityPlanner(
 
         entity.Location = location;
         UpdateEntityState(entity);
-        _statsProcessor.UpdateStats(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
     }
@@ -187,9 +184,9 @@ public class CityPlanner(
         {
             return;
         }
-        
+
         CityMapState.Remove(entity.Id);
-        _statsProcessor.UpdateStats();
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
     }
@@ -229,10 +226,10 @@ public class CityPlanner(
         {
             return;
         }
-        
+
         entity.IsRotated = !entity.IsRotated;
         UpdateEntityState(entity);
-        _statsProcessor.UpdateStats(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
     }
@@ -300,7 +297,7 @@ public class CityPlanner(
         var newEntity = DoUpdateLevel(entity, level);
         SelectCityMapEntity(newEntity);
 
-        _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
 
@@ -347,7 +344,7 @@ public class CityPlanner(
             CityMapState.SelectedCityMapEntity.CustomizationId = customization.Id;
         }
 
-        _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
     }
@@ -379,7 +376,7 @@ public class CityPlanner(
 
         if (hasChanged)
         {
-            _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
+            CityMapState.CityStats = _statsProcessor.UpdateStats(CityMapState.SelectedCityMapEntity!);
             UpdateSelectedEntityViewModel();
             StateHasChanged?.Invoke();
         }
@@ -403,7 +400,7 @@ public class CityPlanner(
                     cityMapEntity.ExcludeFromStats = _mapArea.IntersectsWithLocked(cityMapEntity.Bounds);
                 }
 
-                _statsProcessor.UpdateStats();
+                CityMapState.CityStats = _statsProcessor.UpdateStats();
                 UpdateCityPropertiesViewModel();
                 StateHasChanged?.Invoke();
             }
@@ -420,7 +417,7 @@ public class CityPlanner(
         }
 
         CityMapState.CityWonderLevel = level;
-        _statsProcessor.UpdateStats();
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
         if (CityMapState.SelectedCityMapEntity == null)
         {
             UpdateCityPropertiesViewModel();
@@ -437,7 +434,7 @@ public class CityPlanner(
     {
         var building = CityMapState.Buildings[cityEntityId];
         SelectGroup(building.Group);
-        _statsProcessor.UpdateStats();
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
         UpdateSelectedCityMapBuildingGroupViewModel();
     }
 
@@ -481,12 +478,8 @@ public class CityPlanner(
 
     private async Task DoInitializeAsync(HohCity city)
     {
-        if (!_cityPlannerDataCache.TryGetValue(city.InGameCityId, out var cityPlannerData))
-        {
-            cityPlannerData = (await cityService.GetCityPlannerDataAsync(city.InGameCityId))!;
-            _cityPlannerDataCache.Add(city.InGameCityId, cityPlannerData);
-            NewCityDialogItems = cityPlannerData.NewCityDialogItems;
-        }
+        var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(city.InGameCityId);
+        NewCityDialogItems = cityPlannerData.NewCityDialogItems;
 
         await buildingRenderer.InitializeAsync();
 
@@ -507,7 +500,7 @@ public class CityPlanner(
 
         _statsProcessor = cityStatsProcessorFactory.Create(CityMapState,
             cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
-        _statsProcessor.UpdateStats();
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
         UpdateCityPropertiesViewModel();
         StateHasChanged?.Invoke();
     }

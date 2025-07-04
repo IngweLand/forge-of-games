@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;

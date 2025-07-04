@@ -375,7 +375,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private async Task CompareSnapshots()
     {
-        var viewModel = CityPlanner.CompareSnapshots();
+        var viewModel = await CityPlanner.CompareSnapshots();
 
         var parameters = new DialogParameters<SnapshotsComparisonComponent> {{src => src.Data, viewModel}};
 

@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
@@ -8,13 +7,17 @@ using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Localization;
+using CityMapEntity = Ingweland.Fog.Application.Core.CityPlanner.CityMapEntity;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 

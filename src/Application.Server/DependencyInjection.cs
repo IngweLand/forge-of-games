@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Calculators;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.Factories;
@@ -23,6 +24,8 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
+        services.AddApplicationCoreServices();
+        
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly); });
@@ -64,7 +67,6 @@ public static class DependencyInjection
         services.AddScoped<IUnitBattleDtoFactory, UnitBattleDtoFactory>();
         services.AddScoped<IInGameDataParsingService, InGameDataParsingService>();
         services.AddScoped<IPlayerCityService, PlayerCityService>();
-        services.TryAddScoped<IHohCitySnapshotFactory, HohCitySnapshotFactory>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 

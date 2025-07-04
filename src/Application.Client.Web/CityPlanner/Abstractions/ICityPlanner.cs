@@ -1,5 +1,6 @@
 using System.Drawing;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
+using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -17,7 +18,7 @@ public interface ICityPlanner
     CityMapEntity AddEntity(BuildingGroup buildingGroup);
     void AddEntity(CityMapEntity entity);
     bool CanBePlaced(CityMapEntity cityMapEntity);
-    SnapshotsComparisonViewModel CompareSnapshots();
+    Task<SnapshotsComparisonViewModel> CompareSnapshots();
     HohCity CreateNew(NewCityRequest newCityRequest);
     Task CreateSnapshot();
     void DeleteEntity(int entityId);
