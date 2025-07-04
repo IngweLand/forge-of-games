@@ -37,7 +37,7 @@ public class InGameBinDataTableRepository(
     public async Task SaveAsync(InGameBinData data)
     {
         logger.LogInformation("Starting to save in-game bin data: {@X}",
-            new {data.DataType, data.GameWorldId, data.PlayerId});
+            new {DataType = data.DataKey, data.GameWorldId, data.PlayerId});
 
         var entity = mapper.Map<InGameBinDataTableEntity>(data);
 
@@ -45,12 +45,12 @@ public class InGameBinDataTableRepository(
         {
             await tableStorageRepository.UpsertEntityAsync(entity);
             logger.LogInformation("Successfully saved in-game bin data: {@X}",
-                new {data.DataType, data.GameWorldId, data.PlayerId});
+                new {DataType = data.DataKey, data.GameWorldId, data.PlayerId});
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "Failed to save in-game bin data: {@X}",
-                new {data.DataType, data.GameWorldId, data.PlayerId});
+                new {DataType = data.DataKey, data.GameWorldId, data.PlayerId});
             throw;
         }
     }

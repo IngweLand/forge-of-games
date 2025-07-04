@@ -36,12 +36,12 @@ public class MainMappingProfile : Profile
             .ReverseMap();
 
         CreateMap<InGameBinData, InGameBinDataTableEntity>()
-            .ForMember(dest => dest.PartitionKey, opt => opt.MapFrom(src => src.DataType))
+            .ForMember(dest => dest.PartitionKey, opt => opt.MapFrom(src => src.DataKey))
             .ForMember(dest => dest.RowKey,
                 opt => opt.MapFrom(src =>
                     $"{src.GameWorldId}_{src.PlayerId}_{DateOnly.FromDateTime(src.CollectedAt).ToString("O")}"));
 
         CreateMap<InGameBinDataTableEntity, InGameBinData>()
-            .ForMember(dest => dest.DataType, opt => opt.MapFrom(src => src.PartitionKey));
+            .ForMember(dest => dest.DataKey, opt => opt.MapFrom(src => src.PartitionKey));
     }
 }
