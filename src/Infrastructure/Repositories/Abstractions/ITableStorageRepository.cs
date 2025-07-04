@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 
 public interface ITableStorageRepository<T>
@@ -10,4 +12,5 @@ public interface ITableStorageRepository<T>
     Task UpdateAsync(T entity);
     Task UpsertRangeAsync(IEnumerable<T> entities);
     Task UpsertEntityAsync(T entity);
+    Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter);
 }

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Azure;
 using Azure.Data.Tables;
 using Ingweland.Fog.Infrastructure.Entities;
@@ -67,5 +68,18 @@ public class TableStorageRepository<T>(string connectionString, string tableName
     public Task UpsertEntityAsync(T entity)
     {
         return _tableClient.Value.UpsertEntityAsync(entity, TableUpdateMode.Replace);
+    }
+
+    public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter)
+    {
+        var results = new List<T>();
+        var queryResults = _tableClient.Value.QueryAsync(filter);
+
+        await foreach (var entity in queryResults)
+        {
+            results.Add(entity);
+        }
+
+        return results;
     }
 }

@@ -8,7 +8,7 @@ using Ingweland.Fog.Shared.Extensions;
 
 namespace Ingweland.Fog.Infrastructure.Mapping;
 
-public class MainMappingProfile:Profile
+public class MainMappingProfile : Profile
 {
     public MainMappingProfile()
     {
@@ -24,15 +24,24 @@ public class MainMappingProfile:Profile
                 opt.MapFrom((_, _, _, context) =>
                     context.Items.GetRequiredItem<PlayerRankingType>(ResolutionContextKeys.PLAYER_RANKING_TYPE)))
             .ReverseMap();
-        
+
         CreateMap<AllianceRank, AllianceRankingTableEntity>()
             .ForMember(dest => dest.Type, opt =>
                 opt.MapFrom((_, _, _, context) =>
                     context.Items.GetRequiredItem<AllianceRankingType>(ResolutionContextKeys.ALLIANCE_RANKING_TYPE)))
             .ReverseMap();
-        
+
         CreateMap<InGameRawData, InGameRawDataTableEntity>()
             .ForMember(dest => dest.CompressedData, opt => opt.Ignore())
             .ReverseMap();
+
+        CreateMap<InGameBinData, InGameBinDataTableEntity>()
+            .ForMember(dest => dest.PartitionKey, opt => opt.MapFrom(src => src.DataType))
+            .ForMember(dest => dest.RowKey,
+                opt => opt.MapFrom(src =>
+                    $"{src.GameWorldId}_{src.PlayerId}_{DateOnly.FromDateTime(src.CollectedAt).ToString("O")}"));
+
+        CreateMap<InGameBinDataTableEntity, InGameBinData>()
+            .ForMember(dest => dest.DataType, opt => opt.MapFrom(src => src.PartitionKey));
     }
 }

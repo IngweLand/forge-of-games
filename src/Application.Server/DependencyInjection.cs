@@ -31,6 +31,7 @@ public static class DependencyInjection
         services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly); });
         
         services.AddSingleton<InGameRawDataTablePartitionKeyProvider>();
+        services.AddSingleton<InGameBinDataTablePartitionKeyProvider>();
         services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
 
         services.AddScoped<IUnitService, UnitService>();

@@ -40,6 +40,7 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
         services.AddScoped<IInGameRawDataTableRepository, InGameRawDataTableRepository>();
+        services.AddScoped<IInGameBinDataTableRepository, InGameBinDataTableRepository>();
 
         return services;
     }
@@ -72,6 +73,13 @@ public static class DependencyInjection
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
             return new TableStorageRepository<InGameRawDataTableEntity>(options.ConnectionString,
                 options.InGameRawDataTable);
+        });
+        
+        services.AddSingleton<ITableStorageRepository<InGameBinDataTableEntity>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new TableStorageRepository<InGameBinDataTableEntity>(options.ConnectionString,
+                options.InGameBinDataTable);
         });
 
         return services;
