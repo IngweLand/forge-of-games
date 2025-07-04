@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
@@ -88,7 +89,8 @@ public class PlayerCityService(
     {
         try
         {
-            return await innSdkClient.CityService.GetOtherCityRawDataAsync(gameWorld, playerId);
+            return await innSdkClient.CityService.GetOtherCityRawDataAsync(gameWorld, playerId,
+                CityId.Capital.ToInGameId());
         }
         catch (Exception e)
         {
