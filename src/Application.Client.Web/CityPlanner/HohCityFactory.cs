@@ -9,14 +9,15 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class HohCityFactory(IMapper mapper) : IHohCityFactory
 {
-    public HohCity CreateNewCapital()
+    public HohCity CreateNewCapital(int cityPlannerVersion)
     {
-        return Create(new NewCityRequest() {Name = $"{CityId.Capital} - {DateTime.Now:g}", CityId = CityId.Capital});
+        return Create(new NewCityRequest {Name = $"{CityId.Capital} - {DateTime.Now:g}", CityId = CityId.Capital},
+            cityPlannerVersion);
     }
 
-    public HohCity Create(NewCityRequest newCityRequest)
+    public HohCity Create(NewCityRequest newCityRequest, int cityPlannerVersion)
     {
-        return new HohCity()
+        return new HohCity
         {
             Id = Guid.NewGuid().ToString(),
             InGameCityId = newCityRequest.CityId,
@@ -25,15 +26,17 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
             Name = newCityRequest.Name,
             UnlockedExpansions = InitCityConfigs.Expansions[newCityRequest.CityId],
             WonderId = newCityRequest.WonderId,
-            UpdatedAt = DateTime.Now.ToLocalTime()
+            UpdatedAt = DateTime.Now.ToLocalTime(),
+            CityPlannerVersion = cityPlannerVersion,
         };
     }
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
         IEnumerable<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,
-        IEnumerable<string> expansions, WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
+        IEnumerable<string> expansions, int cityPlannerVersion, WonderId cityWonderId = WonderId.Undefined,
+        int cityWonderLevel = 0)
     {
-        return new HohCity()
+        return new HohCity
         {
             Id = id,
             InGameCityId = inGameCityId,
@@ -44,7 +47,8 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
             UnlockedExpansions = expansions.ToHashSet(),
             WonderId = cityWonderId,
             WonderLevel = cityWonderLevel,
-            UpdatedAt = DateTime.Now.ToLocalTime()
+            UpdatedAt = DateTime.Now.ToLocalTime(),
+            CityPlannerVersion = cityPlannerVersion,
         };
     }
 
@@ -62,8 +66,8 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             CityEntityId = "Building_StoneAge_City_CityHall_1",
                             Level = 2,
                             X = 46,
-                            Y = -51
-                        }
+                            Y = -51,
+                        },
                     ]
                 },
                 {
@@ -76,8 +80,8 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             Level = 1,
                             IsRotated = true,
                             X = 30,
-                            Y = -48
-                        }
+                            Y = -48,
+                        },
                     ]
                 },
                 {
@@ -89,8 +93,8 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             CityEntityId = "Building_Egypt_City_CityHall_1",
                             Level = 1,
                             X = 46,
-                            Y = -51
-                        }
+                            Y = -51,
+                        },
                     ]
                 },
                 {
@@ -102,7 +106,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             Id = 0,
                             Level = 1,
                             X = 27,
-                            Y = -39
+                            Y = -39,
                         },
                         new HohCityMapEntity
                         {
@@ -110,7 +114,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             Id = 1,
                             Level = 1,
                             X = 44,
-                            Y = -26
+                            Y = -26,
                         },
                         new HohCityMapEntity
                         {
@@ -119,7 +123,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             IsRotated = true,
                             Level = 1,
                             X = 43,
-                            Y = -35
+                            Y = -35,
                         },
                         new HohCityMapEntity
                         {
@@ -128,7 +132,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             IsRotated = true,
                             Level = 1,
                             X = 23,
-                            Y = -47
+                            Y = -47,
                         },
                         new HohCityMapEntity
                         {
@@ -137,7 +141,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             IsRotated = true,
                             Level = 1,
                             X = 24,
-                            Y = -30
+                            Y = -30,
                         },
                         new HohCityMapEntity
                         {
@@ -146,84 +150,93 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                             Level = 1,
                             SelectedProductId = "Production1_Building_Mayas_City_CityHall_1",
                             X = 34,
-                            Y = -39
-                        }
+                            Y = -39,
+                        },
                     ]
                 },
                 {
-                CityId.China,
-                [
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_City_CityHall_1",
-                        Id = 9,
-                        IsRotated = true,
-                        Level = 1,
-                        SelectedProductId = "Production1_Building_China_City_CityHall_1",
-                        X = 30,
-                        Y = -51
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
-                        Id = 17,
-                        IsRotated = true,
-                        Level = 1,
-                        X = 35,
-                        Y = -39
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
-                        Id = 18,
-                        Level = 1,
-                        X = 11,
-                        Y = -51
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
-                        Id = 19,
-                        Level = 1,
-                        X = 11,
-                        Y = -27
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
-                        Id = 20,
-                        IsRotated = true,
-                        Level = 1,
-                        X = 31,
-                        Y = -31
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
-                        Id = 21,
-                        IsRotated = true,
-                        Level = 1,
-                        X = 43,
-                        Y = -31
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
-                        Id = 22,
-                        IsRotated = true,
-                        Level = 1,
-                        X = 43,
-                        Y = -43
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
-                        Id = 23,
-                        Level = 1,
-                        X = 23,
-                        Y = -23
-                    },
-                    new HohCityMapEntity {
-                        CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
-                        Id = 2,
-                        Level = 1,
-                        X = 19,
-                        Y = -43
-                    }
-                ]
-            },
+                    CityId.China,
+                    [
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_City_CityHall_1",
+                            Id = 9,
+                            IsRotated = true,
+                            Level = 1,
+                            SelectedProductId = "Production1_Building_China_City_CityHall_1",
+                            X = 30,
+                            Y = -51,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                            Id = 17,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 35,
+                            Y = -39,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                            Id = 18,
+                            Level = 1,
+                            X = 11,
+                            Y = -51,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                            Id = 19,
+                            Level = 1,
+                            X = 11,
+                            Y = -27,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                            Id = 20,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 31,
+                            Y = -31,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                            Id = 21,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 43,
+                            Y = -31,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_KaolinQuarry_1",
+                            Id = 22,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 43,
+                            Y = -43,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                            Id = 23,
+                            Level = 1,
+                            X = 23,
+                            Y = -23,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_China_ExtractionPoint_MothGlade_1",
+                            Id = 2,
+                            Level = 1,
+                            X = 19,
+                            Y = -43,
+                        },
+                    ]
+                },
             };
 
         public static readonly Dictionary<CityId, HashSet<string>> Expansions =
@@ -234,14 +247,14 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Capital_1", "Expansion_Capital_2", "Expansion_Capital_3", "Expansion_Capital_4",
                         "Expansion_Capital_5", "Expansion_Capital_6", "Expansion_Capital_7", "Expansion_Capital_8",
-                        "Expansion_Capital_9"
+                        "Expansion_Capital_9",
                     ]
                 },
                 {
                     CityId.China,
                     [
                         "Expansion_China_1", "Expansion_China_2", "Expansion_China_3", "Expansion_China_4",
-                        "Expansion_China_5", "Expansion_China_6", "Expansion_China_7"
+                        "Expansion_China_5", "Expansion_China_6", "Expansion_China_7",
                     ]
                 },
                 {
@@ -249,7 +262,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Vikings_1", "Expansion_Vikings_2", "Expansion_Vikings_3", "Expansion_Vikings_4",
                         "Expansion_Vikings_5", "Expansion_Vikings_6", "Expansion_Vikings_7", "Expansion_Vikings_8",
-                        "Expansion_Vikings_9", "Expansion_Vikings_10"
+                        "Expansion_Vikings_9", "Expansion_Vikings_10",
                     ]
                 },
                 {
@@ -257,7 +270,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Egypt_1", "Expansion_Egypt_2", "Expansion_Egypt_3", "Expansion_Egypt_4",
                         "Expansion_Egypt_5", "Expansion_Egypt_6", "Expansion_Egypt_7", "Expansion_Egypt_8",
-                        "Expansion_Egypt_9"
+                        "Expansion_Egypt_9",
                     ]
                 },
                 {
@@ -265,7 +278,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Mayas_SayilPalace_1", "Expansion_Mayas_SayilPalace_2",
                         "Expansion_Mayas_SayilPalace_3", "Expansion_Mayas_SayilPalace_4",
-                        "Expansion_Mayas_SayilPalace_5"
+                        "Expansion_Mayas_SayilPalace_5",
                     ]
                 },
                 {
@@ -273,16 +286,16 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Mayas_ChichenItza_1", "Expansion_Mayas_ChichenItza_2",
                         "Expansion_Mayas_ChichenItza_3", "Expansion_Mayas_ChichenItza_4",
-                        "Expansion_Mayas_ChichenItza_5"
+                        "Expansion_Mayas_ChichenItza_5",
                     ]
                 },
                 {
                     CityId.Mayas_Tikal,
                     [
                         "Expansion_Mayas_Tikal_1", "Expansion_Mayas_Tikal_2", "Expansion_Mayas_Tikal_3",
-                        "Expansion_Mayas_Tikal_4", "Expansion_Mayas_Tikal_5"
+                        "Expansion_Mayas_Tikal_4", "Expansion_Mayas_Tikal_5",
                     ]
-                }
+                },
             };
     }
 }

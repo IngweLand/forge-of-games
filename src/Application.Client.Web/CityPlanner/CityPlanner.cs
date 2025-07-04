@@ -60,7 +60,7 @@ public class CityPlanner(
 
     public Task InitializeAsync()
     {
-        return DoInitializeAsync(hohCityFactory.CreateNewCapital());
+        return DoInitializeAsync(hohCityFactory.CreateNewCapital(Version));
     }
 
     public async Task<SnapshotsComparisonViewModel> CompareSnapshots()
@@ -89,7 +89,7 @@ public class CityPlanner(
 
     public HohCity CreateNew(NewCityRequest newCityRequest)
     {
-        return hohCityFactory.Create(newCityRequest);
+        return hohCityFactory.Create(newCityRequest, Version);
     }
 
     public Task InitializeAsync(HohCity city)
@@ -444,7 +444,7 @@ public class CityPlanner(
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
             CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.Snapshots,
-            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id),
+            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), Version,
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
 
