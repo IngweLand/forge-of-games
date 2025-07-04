@@ -26,16 +26,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           string.Concat(
             "ChRvdGhlcl9jaXR5X2R0by5wcm90bxoQcGxheWVyX2R0by5wcm90bxoZY2l0",
             "eV9tYXBfZW50aXR5X2R0by5wcm90bxoeZXhwYW5zaW9uX21hcF9lbnRpdHlf",
-            "ZHRvLnByb3RvIrQBCgxPdGhlckNpdHlEVE8SFgoOcGxheWVyX2NpdHlfaWQY",
-            "ASABKAUSGgoGcGxheWVyGAIgASgLMgouUGxheWVyRHRvEg8KB2NpdHlfaWQY",
-            "AyABKAkSJwoMbWFwX2VudGl0aWVzGAUgAygLMhEuQ2l0eU1hcEVudGl0eUR0",
-            "bxI2ChZleHBhbnNpb25fbWFwX2VudGl0aWVzGAYgAygLMhYuRXhwYW5zaW9u",
-            "TWFwRW50aXR5RHRvQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9o",
-            "YgZwcm90bzM="));
+            "ZHRvLnByb3RvGhpyZXdvcmtlZF93b25kZXJzX2R0by5wcm90byLrAQoMT3Ro",
+            "ZXJDaXR5RFRPEhYKDnBsYXllcl9jaXR5X2lkGAEgASgFEhoKBnBsYXllchgC",
+            "IAEoCzIKLlBsYXllckR0bxIPCgdjaXR5X2lkGAMgASgJEicKDG1hcF9lbnRp",
+            "dGllcxgFIAMoCzIRLkNpdHlNYXBFbnRpdHlEdG8SNgoWZXhwYW5zaW9uX21h",
+            "cF9lbnRpdGllcxgGIAMoCzIWLkV4cGFuc2lvbk1hcEVudGl0eUR0bxIpCgd3",
+            "b25kZXJzGAcgASgLMhMuUmV3b3JrZWRXb25kZXJzRFRPSACIAQFCCgoIX3dv",
+            "bmRlcnNCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.OtherCityDTO), global::Ingweland.Fog.Inn.Models.Hoh.OtherCityDTO.Parser, new[]{ "PlayerCityId", "Player", "CityId", "MapEntities", "ExpansionMapEntities" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.OtherCityDTO), global::Ingweland.Fog.Inn.Models.Hoh.OtherCityDTO.Parser, new[]{ "PlayerCityId", "Player", "CityId", "MapEntities", "ExpansionMapEntities", "Wonders" }, new[]{ "Wonders" }, null, null, null)
           }));
     }
     #endregion
@@ -82,6 +84,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       cityId_ = other.cityId_;
       mapEntities_ = other.mapEntities_.Clone();
       expansionMapEntities_ = other.expansionMapEntities_.Clone();
+      wonders_ = other.wonders_ != null ? other.wonders_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -149,6 +152,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return expansionMapEntities_; }
     }
 
+    /// <summary>Field number for the "wonders" field.</summary>
+    public const int WondersFieldNumber = 7;
+    private global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDTO wonders_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDTO Wonders {
+      get { return wonders_; }
+      set {
+        wonders_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -169,6 +184,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (CityId != other.CityId) return false;
       if(!mapEntities_.Equals(other.mapEntities_)) return false;
       if(!expansionMapEntities_.Equals(other.expansionMapEntities_)) return false;
+      if (!object.Equals(Wonders, other.Wonders)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -181,6 +197,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (CityId.Length != 0) hash ^= CityId.GetHashCode();
       hash ^= mapEntities_.GetHashCode();
       hash ^= expansionMapEntities_.GetHashCode();
+      if (wonders_ != null) hash ^= Wonders.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -213,6 +230,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       mapEntities_.WriteTo(output, _repeated_mapEntities_codec);
       expansionMapEntities_.WriteTo(output, _repeated_expansionMapEntities_codec);
+      if (wonders_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Wonders);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -237,6 +258,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       mapEntities_.WriteTo(ref output, _repeated_mapEntities_codec);
       expansionMapEntities_.WriteTo(ref output, _repeated_expansionMapEntities_codec);
+      if (wonders_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Wonders);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -258,6 +283,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       size += mapEntities_.CalculateSize(_repeated_mapEntities_codec);
       size += expansionMapEntities_.CalculateSize(_repeated_expansionMapEntities_codec);
+      if (wonders_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Wonders);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -284,6 +312,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       mapEntities_.Add(other.mapEntities_);
       expansionMapEntities_.Add(other.expansionMapEntities_);
+      if (other.wonders_ != null) {
+        if (wonders_ == null) {
+          Wonders = new global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDTO();
+        }
+        Wonders.MergeFrom(other.Wonders);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -322,6 +356,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             expansionMapEntities_.AddEntriesFrom(input, _repeated_expansionMapEntities_codec);
             break;
           }
+          case 58: {
+            if (wonders_ == null) {
+              Wonders = new global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDTO();
+            }
+            input.ReadMessage(Wonders);
+            break;
+          }
         }
       }
     #endif
@@ -358,6 +399,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 50: {
             expansionMapEntities_.AddEntriesFrom(ref input, _repeated_expansionMapEntities_codec);
+            break;
+          }
+          case 58: {
+            if (wonders_ == null) {
+              Wonders = new global::Ingweland.Fog.Inn.Models.Hoh.ReworkedWondersDTO();
+            }
+            input.ReadMessage(Wonders);
             break;
           }
         }

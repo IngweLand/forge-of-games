@@ -26,17 +26,23 @@ public class HohCityFactory(IMapper mapper, IHohCitySnapshotFactory snapshotFact
                 : buildings[entity.CityEntityId].Length);
         }
 
-        return new HohCity()
+        return new HohCity
         {
             Id = Guid.NewGuid().ToString(),
             InGameCityId = inGameCity.CityId,
             AgeId = cityHall.Age!.Id,
             Entities = entities.AsReadOnly(),
             Name = name ?? $"Import - {inGameCity.CityId} - {DateTime.Now:g}",
-            Snapshots = new List<HohCitySnapshot>() {snapshotFactory.Create(entities)},
+            Snapshots = new List<HohCitySnapshot> {snapshotFactory.Create(entities)},
             WonderId = wonderId,
             WonderLevel = wonderLevel,
             UnlockedExpansions = inGameCity.OpenedExpansions.Select(src => src.Id).ToHashSet(),
         };
+    }
+
+    public HohCity Create(OtherCity inGameCity, IReadOnlyDictionary<string, Building> buildings, string name)
+    {
+        var wonder = inGameCity.Wonders.FirstOrDefault();
+        return Create(inGameCity, buildings, wonder?.Id ?? WonderId.Undefined, wonder?.Level ?? 0, name);
     }
 }

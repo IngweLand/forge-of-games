@@ -2,6 +2,7 @@ syntax = "proto3";
 import "player_dto.proto";
 import "city_map_entity_dto.proto";
 import "expansion_map_entity_dto.proto";
+import "reworked_wonders_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -11,4 +12,5 @@ message OtherCityDTO {
   string city_id = 3;
   repeated CityMapEntityDto map_entities = 5;
   repeated ExpansionMapEntityDto expansion_map_entities = 6;
+  optional ReworkedWondersDTO wonders = 7;
 }

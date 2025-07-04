@@ -1,4 +1,3 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
@@ -20,7 +19,6 @@ public class PlayerCityService(
     IInGameDataParsingService inGameDataParsingService,
     IHohCoreDataRepository coreDataRepository,
     IHohCityFactory cityFactory,
-    IMapper mapper,
     IInnSdkClient innSdkClient,
     ILogger<PlayerCityService> logger) : IPlayerCityService
 {
@@ -53,10 +51,10 @@ public class PlayerCityService(
             return null;
         }
 
-        return await CreateCity(mapper.Map<City>(storedCity), playerName);
+        return await CreateCity(storedCity, playerName);
     }
 
-    private async Task<HohCity?> CreateCity(City cityDto, string playerName)
+    private async Task<HohCity?> CreateCity(OtherCity cityDto, string playerName)
     {
         try
         {

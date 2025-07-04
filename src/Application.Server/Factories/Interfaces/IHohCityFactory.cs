@@ -8,4 +8,6 @@ public interface IHohCityFactory
 {
     HohCity Create(City inGameCity, IReadOnlyDictionary<string, Building> buildings, WonderId wonderId, int wonderLevel,
         string? name = null);
+
+    HohCity Create(OtherCity inGameCity, IReadOnlyDictionary<string, Building> buildings, string name);
 }

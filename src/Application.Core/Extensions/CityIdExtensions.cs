@@ -27,7 +27,7 @@ public static class CityIdExtensions
             CityId.China => ChineseWonders,
             CityId.Egypt => EgyptianWonders,
             CityId.Vikings => VikingsWonders,
-            _ => Array.Empty<WonderId>()
+            _ => Array.Empty<WonderId>(),
         };
     }
 
@@ -41,7 +41,12 @@ public static class CityIdExtensions
             CityId.China => AgeIds.CHINA,
             CityId.Vikings => AgeIds.VIKINGS,
             CityId.Egypt => AgeIds.EGYPT,
-            _ => AgeIds.BRONZE_AGE
+            _ => AgeIds.BRONZE_AGE,
         };
+    }
+
+    public static string ToInGameId(this CityId cityId)
+    {
+        return $"City_{cityId}";
     }
 }

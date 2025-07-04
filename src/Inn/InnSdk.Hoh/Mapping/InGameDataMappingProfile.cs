@@ -97,8 +97,12 @@ public class InGameDataMappingProfile : Profile
         CreateMap<ExpansionMapEntityDto, CityMapExpansion>();
         CreateMap<OtherCityDTO, OtherCity>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
-            .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities));
-        CreateMap<OtherCity, City>();
+            .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities))
+            .ForMember(dest => dest.Wonders, opt =>
+            {
+                opt.PreCondition(src => src.Wonders != null && src.Wonders.Wonders.Count > 0);
+                opt.MapFrom(src => src.Wonders!.Wonders);
+            });
 
         CreateMap<StatBoostDto, StatBoost>()
             .ForMember(dest => dest.UnitStatType,
@@ -149,5 +153,8 @@ public class InGameDataMappingProfile : Profile
 
         CreateMap<byte[], BattleStatsRequestDto>()
             .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => ByteString.CopyFrom(src)));
+        
+        CreateMap<ReworkedWonderDto, CityWonder>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString2<WonderId>(src.Id, '_')));
     }
 }
