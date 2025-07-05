@@ -34,14 +34,5 @@ public class MainMappingProfile : Profile
         CreateMap<InGameRawData, InGameRawDataTableEntity>()
             .ForMember(dest => dest.CompressedData, opt => opt.Ignore())
             .ReverseMap();
-
-        CreateMap<InGameBinData, InGameBinDataTableEntity>()
-            .ForMember(dest => dest.PartitionKey, opt => opt.MapFrom(src => src.DataKey))
-            .ForMember(dest => dest.RowKey,
-                opt => opt.MapFrom(src =>
-                    $"{src.GameWorldId}_{src.PlayerId}_{DateOnly.FromDateTime(src.CollectedAt).ToString("O")}"));
-
-        CreateMap<InGameBinDataTableEntity, InGameBinData>()
-            .ForMember(dest => dest.DataKey, opt => opt.MapFrom(src => src.PartitionKey));
     }
 }

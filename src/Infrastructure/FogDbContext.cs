@@ -24,6 +24,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<PlayerAllianceNameHistoryEntry> PlayerAllianceNameHistory { get; set; }
     public DbSet<PvpBattle> PvpBattles { get; set; }
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
+    public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -44,5 +45,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new BattleStatsEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleSquadStatsEntityTypeConfiguration());
         builder.ApplyConfiguration(new UnitBattleStatsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new PlayerCitySnapshotEntityTypeConfiguration());
     }
 }

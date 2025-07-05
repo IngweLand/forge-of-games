@@ -8,6 +8,7 @@ using Ingweland.Fog.Infrastructure;
 using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
+using Ingweland.Fog.Shared;
 using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,11 +16,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 var builder = FunctionsApplication.CreateBuilder(args);
-builder.Configuration.AddUserSecrets<Program>(optional: true);
-builder.Services.Configure<HohServerCredentials>(
-    builder.Configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));
-builder.Services.Configure<StorageSettings>(
-    builder.Configuration.GetSection(StorageSettings.CONFIGURATION_PROPERTY_NAME));
+builder.AddConfigurations();
 
 builder.ConfigureFunctionsWebApplication();
 
@@ -29,6 +26,7 @@ builder.Services.AddInnSdkServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddApplicationServices();
+builder.Services.AddSharedServices();
 builder.Services.AddFunctionsServices();
 
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.

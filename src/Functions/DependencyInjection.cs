@@ -1,5 +1,11 @@
+using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.Functions.Validators;
+using Ingweland.Fog.Infrastructure.Repositories;
+using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
+using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
+using Microsoft.Azure.Functions.Worker.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using BattleService = Ingweland.Fog.Functions.Services.BattleService;
 
@@ -32,5 +38,16 @@ public static class DependencyInjection
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
         return services;
+    }
+    
+    public static void AddConfigurations(this FunctionsApplicationBuilder builder)
+    {
+        builder.Configuration.AddUserSecrets<Program>(optional: true);
+        builder.Services.Configure<HohServerCredentials>(
+            builder.Configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));
+        builder.Services.Configure<StorageSettings>(
+            builder.Configuration.GetSection(StorageSettings.CONFIGURATION_PROPERTY_NAME));
+        builder.Services.Configure<ResourceSettings>(
+            builder.Configuration.GetSection(ResourceSettings.CONFIGURATION_PROPERTY_NAME));
     }
 }

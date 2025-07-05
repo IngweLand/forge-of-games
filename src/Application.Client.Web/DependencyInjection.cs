@@ -20,16 +20,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core;
-using Ingweland.Fog.Application.Core.Calculators;
-using Ingweland.Fog.Application.Core.Calculators.Interfaces;
-using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
-using Ingweland.Fog.Application.Core.Factories;
-using Ingweland.Fog.Application.Core.Factories.Interfaces;
-using Ingweland.Fog.Application.Core.Formatters;
-using Ingweland.Fog.Application.Core.Formatters.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Polly;
 
 namespace Ingweland.Fog.Application.Client.Web;
 
@@ -38,21 +29,18 @@ public static class DependencyInjection
     public static void AddWebAppApplicationServices(this IServiceCollection services)
     {
         services.AddApplicationCoreServices();
-        
+
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddMemoryCache();
 
         services.AddSingleton<IHeroProgressionCalculators, HeroProgressionCalculators>();
-        services.AddSingleton<ICityCalculators, CityCalculators>();
-        services.AddSingleton<ITimeFormatters, TimeFormatters>();
+        
         services.AddSingleton<IBuildingTypeCssIconClassProvider, BuildingTypeCssIconClassProvider>();
         services.AddSingleton<ICityMapEntityStyle, DefaultCityMapEntityStyle>();
         services.AddSingleton<IHohHeroLevelSpecsProvider, HohHeroLevelSpecsProvider>();
         services.AddSingleton<IBuildingLevelRangesFactory, BuildingLevelRangesFactory>();
         services.AddSingleton<IUnitStatFactory, UnitStatFactory>();
-        services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
-        services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
         services.AddSingleton<IHohHeroSupportUnitProfileFactory, HohHeroSupportUnitProfileFactory>();
         services.AddSingleton<IHohHeroProfileFactory, HeroProfileFactory>();
         services.AddSingleton<IHohHeroProfileDtoFactory, HeroProfileDtoFactory>();
@@ -60,7 +48,7 @@ public static class DependencyInjection
         services.AddSingleton<ICcProfileTeamViewModelFactory, CcProfileTeamViewModelFactory>();
         services.AddSingleton<ICcProfileViewModelFactory, CcProfileViewModelFactory>();
         services.AddSingleton<IBarracksViewModelFactory, BarracksViewModelFactory>();
-        
+
         services.AddScoped<IAssetUrlProvider, AssetUrlProvider>();
         services.AddScoped<IHohResourceIconUrlProvider, HohResourceIconUrlProvider>();
         services.AddScoped<IBattleWaveSquadViewModelFactory, BattleWaveSquadViewModelFactory>();
@@ -90,7 +78,6 @@ public static class DependencyInjection
         services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<ICityMapStateFactory, CityMapStateFactory>();
         services.AddScoped<IMapAreaRendererFactory, MapAreaRendererFactory>();
-        services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
         services.AddScoped<ICityPlannerCityPropertiesViewModelFactory, CityPlannerCityPropertiesViewModelFactory>();
         services.AddScoped<IHappinessStatsViewModelFactory, HappinessStatsViewModelFactory>();
         services.AddScoped<IProductionStatsViewModelFactory, ProductionStatsViewModelFactory>();
@@ -119,9 +106,9 @@ public static class DependencyInjection
         services.AddScoped<IBattleLogFactories, BattleLogFactories>();
         services.AddScoped<IBattleStatsViewModelFactory, BattleStatsViewModelFactory>();
         services.AddScoped<IResourceLocalizationService, ResourceLocalizationService>();
-        
+
         services.AddScoped<CityPlannerSettings>();
-        
+
         services.AddHttpClient<IBuildingRenderer, BuildingRenderer>();
     }
 }

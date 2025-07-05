@@ -19,11 +19,13 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.Property(p => p.AllianceName).HasMaxLength(500);
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
         builder.Property(p => p.UpdatedAt).IsRequired();
+        builder.Property(p => p.IsPresentInGame).HasDefaultValue(true);
 
         builder.HasIndex(p => p.Name);
         builder.HasIndex(p => p.WorldId);
         builder.HasIndex(p => p.InGamePlayerId);
         builder.HasIndex(p => p.Age);
+        builder.HasIndex(p => p.IsPresentInGame);
         builder.HasIndex(p => p.RankingPoints).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();
 
@@ -36,5 +38,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
             .OnDelete(DeleteBehavior.Restrict);
         builder.HasMany(p => p.PvpLosses).WithOne(b => b.Loser).HasForeignKey(b => b.LoserId)
             .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(p => p.CitySnapshots).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
     }
 }

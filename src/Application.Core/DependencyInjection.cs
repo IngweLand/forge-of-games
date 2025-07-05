@@ -1,8 +1,13 @@
+using Ingweland.Fog.Application.Core.Calculators;
+using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Application.Core.Factories;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Formatters;
+using Ingweland.Fog.Application.Core.Formatters.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Core;
@@ -13,6 +18,12 @@ public static class DependencyInjection
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
         
+        services.AddSingleton<ICityCalculators, CityCalculators>();
+        services.AddSingleton<ITimeFormatters, TimeFormatters>();
+        
+        services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
+        services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
+        
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
         services.AddScoped<ICityMapStateCoreFactory, CityMapStateCoreFactory>();
         services.AddScoped<ICityStatsProcessorFactory, CityStatsProcessorFactory>();
@@ -21,5 +32,6 @@ public static class DependencyInjection
         services.AddScoped<ICityMapEntityFactory, CityMapEntityFactory>();
         services.AddScoped<IMapAreaFactory, MapAreaFactory>();
         services.AddScoped<IProductionStatsProcessorFactory, ProductionStatsProcessorFactory>();
+        services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
     }
 }

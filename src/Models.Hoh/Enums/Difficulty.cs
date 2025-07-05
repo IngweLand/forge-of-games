@@ -6,6 +6,6 @@ namespace Ingweland.Fog.Models.Hoh.Enums;
 public enum Difficulty
 {
     Undefined = 0,
-    Normal,
-    Hard,
+    Normal = 1,
+    Hard = 2,
 }
