@@ -1,0 +1,30 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="page-container">
+    <div class="action-buttons-container">
+        <div class="command-center-card command-center-action-card action-card" @onclick="CreateNewCity">
+            <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+            <span class="command-center-card-label">@Loc[FogResource.Common_Create]</span>
+        </div>
+
+        <div class="command-center-card command-center-action-card action-card"
+             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH)">
+            <span class="material-symbols-outlined command-center-card-icon">file_open</span>
+            <span class="card-label">@Loc[FogResource.CityPlanner_Import]</span>
+        </div>
+
+        <div class="command-center-card command-center-action-card action-card">
+            <span class="material-symbols-outlined command-center-card-icon">emoji_objects</span>
+            <span class="command-center-card-label">@Loc[FogResource.CityPlanner_Inspirations]</span>
+        </div>
+    </div>
+    <div class="items-container">
+        @foreach (var city in _cities)
+        {
+            <CityCard City="@city" OnClick="OpenCity"/>
+        }
+    </div>
+</div>

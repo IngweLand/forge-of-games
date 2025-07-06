@@ -106,6 +106,7 @@ public static class DependencyInjection
         services.AddScoped<IBattleLogFactories, BattleLogFactories>();
         services.AddScoped<IBattleStatsViewModelFactory, BattleStatsViewModelFactory>();
         services.AddScoped<IResourceLocalizationService, ResourceLocalizationService>();
+        services.AddScoped<ICommonUiService, CommonUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 

@@ -18,5 +18,7 @@ public class CityPlannerProfile :Profile
         CreateMap<CityCultureAreaComponent, MapAreaHappinessProvider>()
             .ForMember(dest => dest.Bounds,
                 opt => opt.MapFrom(src => new Rectangle(src.X, src.Y, src.Width, src.Height)));
+
+        CreateMap<HohCity, HohCityBasicData>();
     }
 }

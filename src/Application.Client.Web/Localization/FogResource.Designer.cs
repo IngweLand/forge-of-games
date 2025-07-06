@@ -528,6 +528,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inspirations.
+        /// </summary>
+        public static string CityPlanner_Inspirations {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plan and optimize your city in Heroes of History. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency..
         /// </summary>
         public static string CityPlanner_Meta_Description {

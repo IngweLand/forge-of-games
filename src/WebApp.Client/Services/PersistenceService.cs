@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using AutoMapper;
 using Blazored.LocalStorage;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -8,7 +9,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
 
-public class PersistenceService(ILocalStorageService localStorageService) : IPersistenceService
+public class PersistenceService(ILocalStorageService localStorageService, IMapper mapper) : IPersistenceService
 {
     private const string CITY_DATA_KEY_PREFIX = "CityData";
     private const string BACKUP_CITY_DATA_KEY_PREFIX = "Backup.CityData";
@@ -20,7 +21,7 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
 
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
-        Converters = {new JsonStringEnumConverter()}
+        Converters = {new JsonStringEnumConverter()},
     };
 
     public ValueTask SaveCity(HohCity city)
@@ -69,11 +70,7 @@ public class PersistenceService(ILocalStorageService localStorageService) : IPer
             var city = await DoLoadCity(cityKey);
             if (city != null)
             {
-                cities.Add(new HohCityBasicData()
-                {
-                    Id = city.Id,
-                    Name = city.Name
-                });
+                cities.Add(mapper.Map<HohCityBasicData>(city));
             }
         }
 

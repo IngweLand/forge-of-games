@@ -45,6 +45,20 @@ public static class CityIdExtensions
         };
     }
 
+    public static string GetIcon(this CityId cityId)
+    {
+        return cityId switch
+        {
+            CityId.Mayas_Tikal => "icon_city_crest_maya",
+            CityId.Mayas_ChichenItza => "icon_city_crest_maya",
+            CityId.Mayas_SayilPalace => "icon_city_crest_maya",
+            CityId.China => "icon_city_crest_china",
+            CityId.Vikings => "icon_city_crest_vikings",
+            CityId.Egypt => "icon_city_crest_egypt",
+            _ => string.Empty,
+        };
+    }
+
     public static string ToInGameId(this CityId cityId)
     {
         return $"City_{cityId}";

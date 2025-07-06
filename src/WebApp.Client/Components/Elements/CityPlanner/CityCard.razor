@@ -1,0 +1,47 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Application.Core.Extensions
+@using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Entities.City
+@using Ingweland.Fog.Models.Hoh.Enums
+@inject ICommonUiService CommonUiService
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="command-center-card" @onclick="() => OnClick.InvokeAsync(City.Id)">
+    <div class="top-container">
+        @if(_age != null)
+        {
+            <div class="age-label" style="background-color: @_age.Color">@_age.Name</div>
+        }
+        else
+        {
+            <img class="city-id-icon" src="@AssetUrlProvider.GetHohIconUrl(City.InGameCityId.GetIcon())"/>
+        }
+    </div>
+    <div class="main-container">
+        <span class="city-name">@City.Name</span>
+    </div>
+    <div class="bottom-container">
+        <span class="updated-at">@City.UpdatedAt.ToString("g")</span>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public required HohCityBasicData City { get; init; }
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+    private AgeViewModel? _age;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (City.InGameCityId == CityId.Capital)
+        {
+            _age = (await CommonUiService.GetAgesAsync())[City.AgeId];
+        }
+    }
+
+}

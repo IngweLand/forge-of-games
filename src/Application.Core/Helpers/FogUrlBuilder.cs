@@ -49,6 +49,7 @@ public static class FogUrlBuilder
         public const string BASE_BUILDINGS_PATH = "/buildings";
         public const string BASE_CAMPAIGN_PATH = "/campaign";
         public const string BASE_CITY_PLANNER_PATH = "/city-planner";
+        public const string CITY_PLANNER_APP_PATH = "/city-planner/app";
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
         public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";

@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
@@ -82,29 +81,17 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             return;
         }
 
+        if (CityPlannerNavigationState.City == null)
+        {
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
+            return;
+        }
+
         await LocalStorageBackupService.BackupCities(Application.Client.Web.CityPlanner.CityPlanner.Version);
 
         CityPlannerSettings.StateChanged += CityPlannerSettingsOnStateChanged;
 
-        var opened = false;
-        if (CityPlannerNavigationState.City != null)
-        {
-            await CityPlanner.InitializeAsync(CityPlannerNavigationState.City);
-            opened = true;
-        }
-        else
-        {
-            var savedCities = await PersistenceService.GetCities();
-            if (savedCities.Count > 0)
-            {
-                opened = await OpenCitiesDialog();
-            }
-        }
-
-        if (!opened)
-        {
-            await CityPlanner.InitializeAsync();
-        }
+        await CityPlanner.InitializeAsync(CityPlannerNavigationState.City);
 
         CityPlanner.StateHasChanged += CityPlannerOnStateHasHasChanged;
         _isInitialized = true;
@@ -128,28 +115,6 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         _skCanvasView!.Invalidate();
     }
 
-    private async Task CreateNewCity()
-    {
-        var options = GetDefaultDialogOptions();
-        var dialogParameters = new DialogParameters<CreateNewCityDialog>
-            {{d => d.CityItems, CityPlanner.NewCityDialogItems}};
-        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, dialogParameters, options);
-        var result = await dialog.Result;
-        if (result == null || result.Canceled)
-        {
-            return;
-        }
-
-        if (result.Data is not NewCityRequest newCityRequest)
-        {
-            return;
-        }
-
-        var city = CityPlanner!.CreateNew(newCityRequest);
-        await PersistenceService.SaveCity(city);
-        await CityPlanner!.InitializeAsync(city);
-    }
-
     private void Delete()
     {
         if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
@@ -166,22 +131,6 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     {
         CityPlannerInteractionManager.FitToScreen(_canvasSize);
         _skCanvasView!.Invalidate();
-    }
-
-    private static DialogOptions GetDefaultDialogOptions(bool closeButton = false)
-    {
-        return new DialogOptions
-        {
-            MaxWidth = MaxWidth.Small,
-            FullWidth = true,
-            BackgroundClass = "dialog-blur-bg",
-            CloseButton = closeButton,
-        };
-    }
-
-    private async Task OpenImportingHelpPage()
-    {
-        await JsInteropService.OpenUrlAsync(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH, "_blank");
     }
 
     private void InteractiveCanvasOnPointerDown(PointerEventArgs args)
@@ -255,36 +204,6 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
                 break;
             }
         }
-    }
-
-    private async Task<bool> OpenCitiesDialog()
-    {
-        var parameters = new DialogParameters
-        {
-            {nameof(OpenCityDialog.Cities), await PersistenceService.GetCities()},
-        };
-
-        var options = GetDefaultDialogOptions(true);
-        var dialog = await DialogService.ShowAsync<OpenCityDialog>(null, parameters, options);
-        var result = await dialog.Result;
-        if (result == null || result.Canceled)
-        {
-            return false;
-        }
-
-        if (result.Data is not HohCityBasicData cityBasicData)
-        {
-            return false;
-        }
-
-        var city = await PersistenceService.LoadCity(cityBasicData.Id);
-        if (city == null)
-        {
-            return false;
-        }
-
-        await CityPlanner!.InitializeAsync(city);
-        return true;
     }
 
     private void Redo()
@@ -392,5 +311,10 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private async Task DeleteSnapshot(string id)
     {
         await CityPlanner.DeleteSnapshot(id);
+    }
+
+    private void NavigateToDashboard()
+    {
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
     }
 }

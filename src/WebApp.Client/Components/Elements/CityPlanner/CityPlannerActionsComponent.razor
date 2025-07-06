@@ -1,11 +1,13 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Application.Core.Helpers
 @using Microsoft.Extensions.Localization
 @implements IDisposable
 @inject ICityPlanner CityPlanner
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
+@inject NavigationManager NavigationManager
 
 <div class="fog-container component-root">
     <div class="main-container">
@@ -58,6 +60,7 @@
     private async Task Delete()
     {
         await CityPlanner.DeleteCityAsync();
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
     }
 
     private async Task OnDeleteClicked()
