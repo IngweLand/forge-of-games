@@ -18,7 +18,7 @@ public class PlayerCitiesFetcher(
     private const int BatchSize = 100;
 
     [Function("PlayerCitiesFetcher")]
-    public async Task Run([TimerTrigger("0 */15 1-5 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 */20 1-5 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         logger.LogDebug("Database warm-up completed");
@@ -55,23 +55,23 @@ public class PlayerCitiesFetcher(
 
     private async Task<List<Player>> GetPlayers()
     {
-        var today = DateTime.UtcNow.ToDateOnly();
-        logger.LogDebug("Fetching players for date {Date}", today);
+        var monthAgo = DateTime.UtcNow.ToDateOnly().AddMonths(-1);
+        logger.LogDebug("Fetching players starting from from {Date}", monthAgo);
 
         var existingCities =
             await context.PlayerCitySnapshots
-                .Where(x => x.CityId == CityId.Capital && x.CollectedAt == today)
+                .Where(x => x.CityId == CityId.Capital && x.CollectedAt > monthAgo)
                 .Select(x => x.PlayerId)
                 .ToHashSetAsync();
 
-        logger.LogDebug("Found {ExistingCount} existing city snapshots for today", existingCities.Count);
+        logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
 
         var runs = 0;
         List<Player> players = [];
         while (runs < 10 && players.Count < BatchSize)
         {
             var p = await context.Players
-                .Where(x => x.WorldId == "zz1" && x.IsPresentInGame && (x.RankingPoints == null || x.RankingPoints > 1000))
+                .Where(x => x.WorldId == "zz1" && x.IsPresentInGame && x.RankingPoints > 1000)
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BatchSize)
                 .ToListAsync();

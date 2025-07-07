@@ -45,7 +45,7 @@ public class PlayersUpdater(
     private const int BatchSize = 100;
 
     [Function("PlayersUpdater")]
-    public async Task Run([TimerTrigger("0 */15 * * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 */15 1-5 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         logger.LogDebug("Database warm-up completed");
