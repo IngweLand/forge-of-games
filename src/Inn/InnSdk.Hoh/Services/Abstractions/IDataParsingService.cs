@@ -13,6 +13,7 @@ public interface IDataParsingService
     IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data);
     IReadOnlyCollection<PvpRank> ParsePvpRankings(byte[] data);
     PlayerRanks ParsePlayerRankings(byte[] data);
+    PlayerProfile ParsePlayerProfile(byte[] data);
     Wakeup ParseWakeup(byte[] data);
     BattleStats ParseBattleStats(byte[] data);
     OtherCity ParseOtherCity(byte[] data);

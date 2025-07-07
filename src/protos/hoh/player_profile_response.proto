@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message PlayerProfileResponse {
+  int32 player_id = 1;
+  PlayerWithAllianceDto player_with_alliance = 2;
+  int32 rank = 3;
+  int32 ranking_points = 4;
+}
+
+message PlayerWithAllianceDto {
+  int32 player_id = 1;
+  string player_name = 2;
+  string player_age = 3;
+  int32 player_avatar_id = 4;
+  optional int32 alliance_id = 5;
+  string alliance_name = 6;
+  int32 alliance_avatar_icon_id = 7;
+  int32 alliance_avatar_background_id = 8;
+}

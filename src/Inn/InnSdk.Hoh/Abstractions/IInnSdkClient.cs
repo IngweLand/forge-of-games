@@ -6,6 +6,7 @@ public interface IInnSdkClient
 {
     IBattleService BattleService { get; }
     ICityService CityService { get; }
+    IPlayerService PlayerService { get; }
     IRankingsService RankingsService { get; }
     IStaticDataService StaticDataService { get; }
 }

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message GetPlayerProfileRequestDto {
+  int32 player_id = 1;
+}

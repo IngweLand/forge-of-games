@@ -35,6 +35,7 @@ public static class DependencyInjection
         services.AddScoped<IDataParsingService, DataParsingService>();
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<ICityService, CityService>();
+        services.AddScoped<IPlayerService, PlayerService>();
 
         services.AddScoped<Lazy<IStaticDataService>>(sp =>
             new Lazy<IStaticDataService>(sp.GetRequiredService<IStaticDataService>));
@@ -44,6 +45,8 @@ public static class DependencyInjection
             new Lazy<IBattleService>(sp.GetRequiredService<IBattleService>));
         services.AddScoped<Lazy<ICityService>>(sp =>
             new Lazy<ICityService>(sp.GetRequiredService<ICityService>));
+        services.AddScoped<Lazy<IPlayerService>>(sp =>
+            new Lazy<IPlayerService>(sp.GetRequiredService<IPlayerService>));
 
         services.AddHttpClient<IWebAuthenticationService, WebAuthenticationService>()
             .AddSdkHttpClientResilienceHandler();

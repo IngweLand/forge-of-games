@@ -29,6 +29,24 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         return mapper.Map<PlayerRanks>(ranksDto);
     }
 
+    public PlayerProfile ParsePlayerProfile(byte[] data)
+    {
+        PlayerProfileResponse dto;
+        try
+        {
+            var container = CommunicationDto.Parser.ParseFrom(data);
+            dto = container.PlayerProfileResponse;
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse player profile response data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return mapper.Map<PlayerProfile>(dto);
+    }
+
     public AllianceRanks ParseAllianceRankings(byte[] data)
     {
         AllianceRanksDTO ranksDto;

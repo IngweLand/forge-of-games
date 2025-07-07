@@ -4,7 +4,6 @@ using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
 using Ingweland.Fog.InnSdk.Hoh.Net.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Services;

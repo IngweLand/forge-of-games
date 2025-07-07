@@ -156,5 +156,23 @@ public class InGameDataMappingProfile : Profile
         
         CreateMap<ReworkedWonderDto, CityWonder>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString2<WonderId>(src.Id, '_')));
+
+        CreateMap<PlayerProfileResponse, PlayerProfile>()
+            .ForMember(dest => dest.Player, opt => opt.MapFrom(src => src.PlayerWithAlliance))
+            .ForMember(dest => dest.Alliance, opt =>
+            {
+                opt.PreCondition(src => src.PlayerWithAlliance.HasAllianceId);
+                opt.MapFrom(src => src.PlayerWithAlliance);
+            });
+        CreateMap<PlayerWithAllianceDto, HohPlayer>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PlayerId))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.PlayerName))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.PlayerAge))
+            .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.PlayerAvatarId));
+        CreateMap<PlayerWithAllianceDto, HohAlliance>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AllianceId))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.AllianceName))
+            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.AllianceAvatarIconId))
+            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.AllianceAvatarBackgroundId));
     }
 }
