@@ -12,7 +12,6 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
@@ -104,7 +103,9 @@ public class StatsHubViewModelsFactory(
                     {Date = a.Date, Value = ages[a.Value].Name})
                 .ToList(),
             Alliances = playerWithRankings.Alliances,
-            Names = playerWithRankings.Names,
+            Names = playerWithRankings.Names.Count > 1
+                ? string.Join(", ", playerWithRankings.Names.Select(name => $"\"{name}\""))
+                : null,
             PvpRankingPoints = playerWithRankings.PvpRankingPoints,
             RankingPoints = playerWithRankings.RankingPoints,
             PvpBattles = battles,

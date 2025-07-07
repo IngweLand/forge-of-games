@@ -30,9 +30,10 @@ public class GetPlayersWithPaginationQueryHandler(IFogDbContext context, IMapper
             result = result.Where(p => p.WorldId == request.WorldId);
         }
         
-        if (!string.IsNullOrWhiteSpace(request.PlayerName))
+        var playerName = request.PlayerName?.Trim();
+        if (!string.IsNullOrWhiteSpace(playerName))
         {
-            result = result.Where(p => p.Name.Contains(request.PlayerName));
+            result = result.Where(p => p.Name.Contains(playerName));
         }
 
         return result

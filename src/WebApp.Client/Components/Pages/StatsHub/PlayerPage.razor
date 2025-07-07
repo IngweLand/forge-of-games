@@ -16,7 +16,7 @@
                 </div>
                 @if (_player.Player.AllianceName != null)
                 {
-                    <div class="user-select-none" style="cursor: pointer" @onclick="SearchAlliance">
+                    <div class="user-select-none" style="cursor: pointer" @onclick="() => SearchAlliance(_player.Player.AllianceName)">
                         <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
                         <span class="preserve-whitespace">"@_player.Player.AllianceName"</span>
                         <span class="material-symbols-outlined">link</span>
@@ -136,8 +136,8 @@
             <div class="strings-container">
                 @foreach (var alliance in _player.Alliances)
                 {
-                    <span class="name preserve-whitespace user-select-none" style="cursor: pointer"
-                          @onclick="SearchAlliance">"@alliance"</span>
+                    <span class="name-link preserve-whitespace user-select-none" style="cursor: pointer"
+                          @onclick="() => SearchAlliance(alliance)">"@alliance"</span>
                 }
             </div>
         </div>
@@ -157,15 +157,12 @@
             </MudTimeline>
         </div>
 
-        @if (_player.Names.Count > 1)
+        @if (_player.Names != null)
         {
             <div class="fog-container section-container">
                 <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
-                <div class="strings-container">
-                    @foreach (var name in _player.Names)
-                    {
-                        <span class="name preserve-whitespace">"@name"</span>
-                    }
+                <div >
+                    <span>@(string.Join(", ", _player.Names))</span>
                 </div>
             </div>
         }

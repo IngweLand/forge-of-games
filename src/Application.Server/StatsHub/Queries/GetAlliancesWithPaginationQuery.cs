@@ -30,13 +30,15 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
             result = result.Where(p => p.WorldId == request.WorldId);
         }
         
-        if (!string.IsNullOrWhiteSpace(request.AllianceName))
+        var allianceName = request.AllianceName?.Trim();
+        if (!string.IsNullOrWhiteSpace(allianceName))
         {
-            result = result.Where(p => p.Name.Contains(request.AllianceName));
+            result = result.Where(p => p.Name.Contains(allianceName));
         }
 
         return result
-            .OrderByDescending(p => p.UpdatedAt)
+            .OrderBy(p => p.Rank == 0)
+            .ThenByDescending(p => p.UpdatedAt)
             .ThenByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)

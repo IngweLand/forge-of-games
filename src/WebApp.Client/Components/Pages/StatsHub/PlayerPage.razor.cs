@@ -82,10 +82,9 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
         _battleStatsCts.Dispose();
     }
 
-    private void SearchAlliance()
+    private void SearchAlliance(string allianceName)
     {
-        NavigationManager.NavigateTo(
-            FogUrlBuilder.PageRoutes.SearchAlliance(_player!.Player.WorldId, _player.Player.AllianceName!));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SearchAlliance(_player!.Player.WorldId, allianceName));
     }
 
     private void OnPlayerClicked(int playerId)
