@@ -23,9 +23,15 @@ public class CommonUiService : ICommonUiService
         return _lazyAges.Value;
     }
 
+    public async Task<AgeViewModel?> GetAgeAsync(string ageId)
+    {
+        var ages = await _lazyAges.Value;
+        return ages.GetValueOrDefault(ageId);
+    }
+
     private async Task<IReadOnlyDictionary<string, AgeViewModel>> InitializeAges()
     {
         var ages = await _commonService.GetAgesAsync();
-        return _mapper.Map<IEnumerable<AgeViewModel>>(ages).ToDictionary(a => a.Id);
+        return _mapper.Map<IEnumerable<AgeViewModel>>(ages.OrderBy(x => x.Index)).ToDictionary(a => a.Id);
     }
 }

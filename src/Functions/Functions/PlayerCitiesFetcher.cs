@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -18,7 +19,7 @@ public class PlayerCitiesFetcher(
     public const int BatchSize = 100;
 
     [Function("PlayerCitiesFetcher")]
-    public async Task Run([TimerTrigger("0 0 */6 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 */15 1-5 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         logger.LogDebug("Database warm-up completed");
@@ -68,7 +69,7 @@ public class PlayerCitiesFetcher(
 
         var runs = 0;
         List<Player> players = [];
-        while (runs < 5 && players.Count < BatchSize)
+        while (runs < 10 && players.Count < BatchSize)
         {
             var p = await context.Players.Where(x => x.RankingPoints != null && x.RankingPoints > 1000)
                 .OrderBy(x => Guid.NewGuid())

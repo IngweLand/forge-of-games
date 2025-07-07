@@ -1,7 +1,9 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -26,6 +28,8 @@ public static class StatsApi
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE, GetUnitBattlesAsync);
+        api.MapPost(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOTS_SEARCH, SearchCityInspirationsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
 
         return api;
     }
@@ -45,7 +49,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Results<Ok<HohCity>, NotFound, BadRequest<string>>>
         GetPlayerCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
     {
@@ -63,6 +67,19 @@ public static class StatsApi
         GetBattleStatsAsync([AsParameters] StatsServices services, HttpContext context, int battleStatsId)
     {
         var result = await services.BattleService.GetBattleStatsAsync(battleStatsId);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<HohCity>, NotFound>>
+        GetPlayerCitySnapshotAsync([AsParameters] StatsServices services, HttpContext context, int snapshotId,
+            CancellationToken ct)
+    {
+        var result = await services.CityPlannerService.GetPlayerCitySnapshotAsync(snapshotId, ct);
         if (result == null)
         {
             return TypedResults.NotFound();
@@ -132,6 +149,15 @@ public static class StatsApi
             [FromBody] BattleSearchRequest request)
     {
         var result = await services.BattleService.SearchBattlesAsync(request);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>, BadRequest<string>>>
+        SearchCityInspirationsAsync([AsParameters] StatsServices services, HttpContext context,
+            [FromBody] CityInspirationsSearchRequest request)
+    {
+        var result = await services.CityPlannerService.GetInspirationsAsync(request);
 
         return TypedResults.Ok(result);
     }

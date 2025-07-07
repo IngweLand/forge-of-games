@@ -1,0 +1,23 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="component-root">
+    <div class="options-container fog-container">
+        <CityInspirationsSearchForm FormData="@_searchFormViewModel"  Request="@_searchRequest"
+                                    OnSearchClick="SearchFormOnSearchClick"/>
+        @if (_isLoading)
+        {
+            <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
+                               Indeterminate="true"/>
+        }
+    </div>
+
+    <div class="items-container">
+        @foreach (var inspiration in _inspirations)
+        {
+            <PlayerCitySnapshotCard Snapshot="@inspiration" OnClick="OpenCity"/>
+        }
+    </div>
+</div>

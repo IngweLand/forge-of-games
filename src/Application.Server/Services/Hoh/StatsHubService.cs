@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
@@ -13,16 +14,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
     public Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, int pageNumber = 1,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, string? name = null, CancellationToken ct = default)
     {
-        var query = new GetPlayersWithPaginationQuery()
+        var query = new GetPlayersWithPaginationQuery
         {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name
+            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name,
         };
         return sender.Send(query, ct);
     }
 
     public Task<AllianceWithRankings?> GetAllianceAsync(int allianceId)
     {
-        var query = new GetAllianceQuery()
+        var query = new GetAllianceQuery
         {
             AllianceId = allianceId,
         };
@@ -33,7 +34,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         string? name = null, CancellationToken ct = default)
     {
-        var query = new GetAlliancesWithPaginationQuery()
+        var query = new GetAlliancesWithPaginationQuery
         {
             PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
         };
@@ -42,13 +43,13 @@ public class StatsHubService(ISender sender) : IStatsHubService
 
     public Task<PlayerWithRankings?> GetPlayerAsync(int playerId)
     {
-        var query = new GetPlayerQuery()
+        var query = new GetPlayerQuery
         {
             PlayerId = playerId,
         };
         return sender.Send(query);
     }
-    
+
     public Task<HohCity?> GetPlayerCityAsync(int playerId)
     {
         var query = new GetPlayerCityQuery(playerId);

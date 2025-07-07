@@ -41,6 +41,10 @@ public static class FogUrlBuilder
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
         public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles";
+        
+        public const string PLAYER_CITY_SNAPSHOTS_SEARCH = "/playerCitySnapshots/search";
+        public const string PLAYER_CITY_SNAPSHOT_TEMPLATE = "/playerCitySnapshots/{snapshotId:int}";
+        public const string PLAYER_CITY_SNAPSHOT_TEMPLATE_REFIT = "/playerCitySnapshots/{snapshotId}";
     }
 
     public static class PageRoutes
@@ -49,7 +53,8 @@ public static class FogUrlBuilder
         public const string BASE_BUILDINGS_PATH = "/buildings";
         public const string BASE_CAMPAIGN_PATH = "/campaign";
         public const string BASE_CITY_PLANNER_PATH = "/city-planner";
-        public const string CITY_PLANNER_APP_PATH = "/city-planner/app";
+        public const string CITY_PLANNER_APP_PATH = BASE_CITY_PLANNER_PATH + "/app";
+        public const string CITY_PLANNER_INSPIRATIONS_PATH = BASE_CITY_PLANNER_PATH + "/inspirations";
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
         public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";

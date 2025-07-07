@@ -36,16 +36,15 @@
 
 .age-label {
     align-self: flex-start;
-    padding: 0 8px;
+    padding: 2px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--fog-container-color);
     border-bottom-right-radius: var(--fog-border-radius);
     color: var(--fog-text-on-dark-color);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 200;
-    height: 100%;
 }
 
 .city-id-icon {

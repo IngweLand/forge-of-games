@@ -39,7 +39,7 @@ public partial class CityPlannerDashboardPage : FogPageBase
             return;
         }
 
-        _cities = (await PersistenceService.GetCities()).OrderByDescending(x => x.UpdatedAt).ToList();
+        _cities = await PersistenceService.GetCities();
     }
 
     private void NavigateTo(string path)

@@ -1,10 +1,24 @@
-<div class="d-inline-flex flex-column align-items-center value-container">
-    <img src="@IconUrl" class="object-fit-contain value-icon">
+@using MudBlazor.Utilities
+@using Size = MudBlazor.Size
+<div class="@ValueContainerClass">
+    <img src="@IconUrl" class="@ValueIconClass">
 </div>
 
 @code {
 
     [Parameter]
+    [EditorRequired]
     public string IconUrl { get; set; }
+
+    [Parameter]
+    public Size Size { get; set; } = Size.Medium;
+
+    private string ValueContainerClass => new CssBuilder("value-container")
+        .AddClass($"value-container-size-{Size.ToDescriptionString()}")
+        .Build();
+
+    private string ValueIconClass => new CssBuilder("value-icon")
+        .AddClass($"value-icon-size-{Size.ToDescriptionString()}")
+        .Build();
 
 }

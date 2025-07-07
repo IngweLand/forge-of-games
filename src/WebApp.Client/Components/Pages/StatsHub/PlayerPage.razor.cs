@@ -181,7 +181,7 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
         await HandleCityOperation(city =>
         {
             CityPlannerNavigationState.City = city;
-            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH);
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
             return Task.CompletedTask;
         });
     }

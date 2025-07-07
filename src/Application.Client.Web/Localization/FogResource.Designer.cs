@@ -537,6 +537,69 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coins.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Coins {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Coins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Food.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Food {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_Age {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow premium buildings.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_AllowPremium {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.AllowPremium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expansions.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_Expansions {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.Expansions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preference.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_Preference {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.Preference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Goods.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Goods {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Goods", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plan and optimize your city in Heroes of History. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency..
         /// </summary>
         public static string CityPlanner_Meta_Description {

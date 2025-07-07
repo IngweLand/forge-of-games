@@ -1,0 +1,91 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.WebApp.Client.Models
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+
+<div class="component-root">
+    @if (FormData != null && Request != null)
+    {
+        <div class="options-container">
+            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Age]"
+                       @bind-Value="Request.Age"
+                       T="AgeViewModel" Strict="true" ToStringFunc="@(x => x?.Name)"
+                       Variant="Variant.Outlined">
+                @foreach (var age in FormData.Ages)
+                {
+                    <MudSelectItem Value="@age">@age.Name</MudSelectItem>
+                }
+            </MudSelect>
+            <MudSelect Margin="Margin.Dense" Dense="true"
+                       Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Preference]"
+                       @bind-Value="Request.SearchPreference"
+                       T="CitySnapshotSearchPreferenceViewModel" Strict="true" ToStringFunc="@(x => x?.Name)"
+                       Variant="Variant.Outlined">
+                @foreach (var preference in FormData.SearchPreferences)
+                {
+                    <MudSelectItem Value="@preference">@preference.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudSelect Margin="Margin.Dense" Dense="true" Clearable="true"
+                       Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Expansions]"
+                       @bind-Value="Request.City" ToStringFunc="@(x => x?.Name)"
+                       T="HohCityBasicData"
+                       Variant="Variant.Outlined">
+                @foreach (var city in FormData.Cities)
+                {
+                    <MudSelectItem Value="@city">@city.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudCheckBox Dense="true" @bind-Value="Request.AllowPremium" Style="font-size: 12px !important;"
+                         Label="@Loc[FogResource.CityPlanner_Inspirations_Form_AllowPremium]"/>
+        </div>
+        <MudButton Color="Color.Primary" Style="align-self: flex-start" OnClick="OnSearchClick" Variant="Variant.Filled"
+                   Disabled="@(!ValidateForm())">
+            @Loc[FogResource.Common_Search]
+        </MudButton>
+    }
+
+</div>
+
+<style>
+    /*mudblazor overrides*/
+    .mud-select .mud-select-input {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+
+    .mud-typography-body1 {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+
+    .mud-input-label-outlined.mud-input-label-margin-dense {
+        transform: translate(14px, 8px) scale(1);
+    }
+</style>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public CityInspirationsSearchFormRequest? Request { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public CityInspirationsSearchFormViewModel? FormData { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public EventCallback OnSearchClick { get; set; }
+
+    private bool ValidateForm()
+    {
+        return Request?.Age != null;
+    }
+}

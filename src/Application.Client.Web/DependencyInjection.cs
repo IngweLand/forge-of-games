@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.Calculators.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
+using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
@@ -107,6 +108,8 @@ public static class DependencyInjection
         services.AddScoped<IBattleStatsViewModelFactory, BattleStatsViewModelFactory>();
         services.AddScoped<IResourceLocalizationService, ResourceLocalizationService>();
         services.AddScoped<ICommonUiService, CommonUiService>();
+        services.AddScoped<ICityInspirationsUiService, CityInspirationsUiService>();
+        services.AddScoped<IPlayerCitySnapshotViewModelFactory, PlayerCitySnapshotViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

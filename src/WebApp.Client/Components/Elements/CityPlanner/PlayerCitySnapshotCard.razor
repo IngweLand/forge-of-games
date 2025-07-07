@@ -1,0 +1,42 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Application.Core.Extensions
+@using Size = MudBlazor.Size
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="command-center-card" @onclick="() => OnClick.InvokeAsync(Snapshot.Id)">
+    <div class="top-container">
+        @if (Snapshot.Age != AgeViewModel.Blank)
+        {
+            <div class="age-label" style="background-color: @Snapshot.Age.Color">@Snapshot.Age.Name</div>
+        }
+        else
+        {
+            <img class="city-id-icon" src="@AssetUrlProvider.GetHohIconUrl(Snapshot.CityId.GetIcon())"/>
+        }
+        @if (Snapshot.Premium != null)
+        {
+            <img class="premium-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_premium")"/>
+        }
+    </div>
+    <div class="main-container">
+       
+        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Food"/>
+        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Coins"/>
+        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Goods"/>
+    </div>
+    <div class="bottom-container">
+        <span class="player-name">@Snapshot.PlayerName</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required PlayerCitySnapshotBasicViewModel Snapshot { get; init; }
+
+    [Parameter]
+    public EventCallback<int> OnClick { get; set; }
+
+}

@@ -446,6 +446,10 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AgeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("CityId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -469,13 +473,19 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<bool>("HasPremiumBuildings")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("OpenedExpansionsHash")
-                        .HasColumnType("decimal(20,0)");
+                    b.Property<string>("OpenedExpansionsHash")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .IsUnicode(false)
+                        .HasColumnType("char(16)")
+                        .IsFixedLength();
 
                     b.Property<int>("PlayerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AgeId");
 
                     b.HasIndex("CityId");
 

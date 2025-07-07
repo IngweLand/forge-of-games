@@ -16,7 +16,8 @@
             <span class="card-label">@Loc[FogResource.CityPlanner_Import]</span>
         </div>
 
-        <div class="command-center-card command-center-action-card action-card">
+        <div class="command-center-card command-center-action-card action-card"
+             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH)">
             <span class="material-symbols-outlined command-center-card-icon">emoji_objects</span>
             <span class="command-center-card-label">@Loc[FogResource.CityPlanner_Inspirations]</span>
         </div>

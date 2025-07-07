@@ -1,0 +1,55 @@
+.command-center-card {
+    padding: 0;
+    overflow: hidden;
+}
+.top-container, .bottom-container, .main-container{
+    display: flex;
+    width: 100%;
+}
+
+.top-container {
+    height: 20px;
+    padding: 0;
+    justify-content: space-between;
+}
+
+.main-container {
+    flex: 1;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 12px;
+}
+
+.bottom-container {
+    justify-content: flex-end;
+    padding: 0 4px;
+}
+
+.city-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.player-name {
+    font-size: 10px;
+    color: var(--fog-text-secondary-color);
+}
+
+.age-label {
+    align-self: flex-start;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-dark-color);
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.city-id-icon, .premium-icon{
+    height: 100%;
+    margin: 2px 2px 0 2px;
+    object-fit: contain;
+}

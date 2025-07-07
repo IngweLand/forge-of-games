@@ -1,11 +1,32 @@
 .value-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--fog-surface-color);
     border-radius: var(--fog-border-radius);
     border: 1px solid var(--fog-container-color);
-    padding: 8px;
+
 }
 
 .value-icon {
+    object-fit: contain;
+}
+
+.value-container-size-medium, .value-container-size-large {
+    padding: 8px;
+}
+
+.value-icon-size-medium, .value-icon-size-large {
     width: 36px;
     height: 36px;
 }
+
+.value-container-size-small {
+    padding: 4px;
+}
+
+.value-icon-size-small {
+    width: 18px;
+    height: 18px;
+}
+

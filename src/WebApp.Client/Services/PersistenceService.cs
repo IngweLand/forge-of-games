@@ -74,7 +74,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
             }
         }
 
-        return cities;
+        return cities.OrderByDescending(x => x.UpdatedAt).ToList();
     }
 
     public ValueTask SaveProfile(BasicCommandCenterProfile commandCenterProfile)

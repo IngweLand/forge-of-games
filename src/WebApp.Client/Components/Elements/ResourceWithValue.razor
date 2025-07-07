@@ -1,12 +1,29 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
-<div class="d-inline-flex flex-column align-items-center value-container">
-    <img src="@ResourceValue.IconUrl" alt="resource icon" class="object-fit-contain value-icon">
-    <span class="fw-bold fs-6 text-nowrap user-select-none">@ResourceValue.Label</span>
+@using MudBlazor.Utilities
+@using Size = MudBlazor.Size
+<div class="@ValueContainerClass">
+    <img src="@ResourceValue.IconUrl" alt="resource icon" class="@ValueIconClass">
+    <span class="@LabelClass">@ResourceValue.Label</span>
 </div>
 
 @code {
 
     [Parameter]
+    [EditorRequired]
     public IconLabelItemViewModel ResourceValue { get; set; }
 
+    [Parameter]
+    public Size Size { get; set; } = Size.Medium;
+    
+    private string ValueContainerClass => new CssBuilder("value-container")
+        .AddClass($"value-container-size-{Size.ToDescriptionString()}")
+        .Build();
+    
+    private string ValueIconClass => new CssBuilder("value-icon")
+        .AddClass($"value-icon-size-{Size.ToDescriptionString()}")
+        .Build();
+    
+    private string LabelClass => new CssBuilder("label")
+        .AddClass($"label-size-{Size.ToDescriptionString()}")
+        .Build();
 }

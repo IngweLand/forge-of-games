@@ -1,7 +1,7 @@
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+namespace Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 
 public interface IPlayerCityService
 {

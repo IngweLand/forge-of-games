@@ -8,6 +8,8 @@ using Ingweland.Fog.Application.Core.Factories;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Formatters;
 using Ingweland.Fog.Application.Core.Formatters.Interfaces;
+using Ingweland.Fog.Application.Core.Interfaces;
+using Ingweland.Fog.Application.Core.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Core;
@@ -20,6 +22,7 @@ public static class DependencyInjection
         
         services.AddSingleton<ICityCalculators, CityCalculators>();
         services.AddSingleton<ITimeFormatters, TimeFormatters>();
+        services.AddSingleton<ICityExpansionsHasher, CityExpansionsHasher>();
         
         services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
         services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();

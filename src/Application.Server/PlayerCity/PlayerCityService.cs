@@ -1,10 +1,11 @@
 using System.Collections.Concurrent;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Extensions;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
-using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
@@ -16,7 +17,7 @@ using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Server.PlayerCity;
 
 public class PlayerCityService : IPlayerCityService
 {
@@ -56,6 +57,88 @@ public class PlayerCityService : IPlayerCityService
     }
 
     private static DateOnly Today => DateTime.UtcNow.ToDateOnly();
+
+    public async Task<byte[]?> FetchCityAsync(string gameWorldId, int inGamePlayerId, CityId cityId = CityId.Capital)
+    {
+        var gameWorld = _gameWorldsProvider.GetGameWorlds().FirstOrDefault(config => config.Id == gameWorldId);
+        if (gameWorld == null)
+        {
+            _logger.LogWarning("GameWorld with ID {GameWorldId} not found.", gameWorldId);
+            return null;
+        }
+
+        byte[] data;
+        try
+        {
+            data = await _innSdkClient.CityService.GetOtherCityRawDataAsync(gameWorld, inGamePlayerId,
+                cityId.ToInGameId());
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, "Error fetching city: {@Data}",
+                new {GameWorldId = gameWorld.Id, playerId = inGamePlayerId});
+            return null;
+        }
+
+        return TryParseCity(data, gameWorld.Id, inGamePlayerId) == null ? null : data;
+    }
+
+    public async Task<PlayerCitySnapshot?> SaveCityAsync(int playerId, byte[] data)
+    {
+        var otherCity = _dataParsingService.ParseOtherCity(data);
+
+        var existing = await GetCityAsync(playerId, otherCity.CityId, Today);
+
+        if (existing != null)
+        {
+            return existing;
+        }
+
+        var city = await CreateCity(otherCity, string.Empty);
+        if (city == null)
+        {
+            return null;
+        }
+
+        var cityStats = await _cityStatsCalculator.Calculate(city);
+
+        var listOfGoods = await _listOfGoodsLazy.Value;
+
+        cityStats.Products.TryGetValue("coins", out var coins);
+        cityStats.Products.TryGetValue("food", out var food);
+        var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
+        var citySnapshot = new PlayerCitySnapshot
+        {
+            PlayerId = playerId,
+            CityId = city.InGameCityId,
+            AgeId = city.AgeId,
+            CollectedAt = Today,
+            Data = data,
+            Coins = coins?.Default ?? 0,
+            Food = food?.Default ?? 0,
+            Goods = goods,
+            OpenedExpansionsHash = _cityExpansionsHasher.Compute(city.UnlockedExpansions),
+            HasPremiumBuildings = city.Entities.Any(x =>
+                x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase)),
+        };
+
+        _context.PlayerCitySnapshots.Add(citySnapshot);
+        await _context.SaveChangesAsync();
+
+        return citySnapshot;
+    }
+
+    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly? date = null)
+    {
+        if (date == null)
+        {
+            return _context.PlayerCitySnapshots.Where(x => x.PlayerId == playerId && x.CityId == cityId)
+                .OrderByDescending(x => x.CollectedAt).FirstOrDefaultAsync();
+        }
+
+        return _context.PlayerCitySnapshots.FirstOrDefaultAsync(x =>
+            x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
+    }
 
     private async Task<List<Building>> GetBuildingsWithCacheAsync(CityId cityId)
     {
@@ -122,86 +205,5 @@ public class PlayerCityService : IPlayerCityService
             _logger.LogError(e, "Error parsing city raw data: {@Data}", new {Date = Today, gameWorldId, playerId});
             return null;
         }
-    }
-
-    public async Task<byte[]?> FetchCityAsync(string gameWorldId, int inGamePlayerId, CityId cityId = CityId.Capital)
-    {
-        var gameWorld = _gameWorldsProvider.GetGameWorlds().FirstOrDefault(config => config.Id == gameWorldId);
-        if (gameWorld == null)
-        {
-            _logger.LogWarning("GameWorld with ID {GameWorldId} not found.", gameWorldId);
-            return null;
-        }
-
-        byte[] data;
-        try
-        {
-            data = await _innSdkClient.CityService.GetOtherCityRawDataAsync(gameWorld, inGamePlayerId,
-                cityId.ToInGameId());
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e, "Error fetching city: {@Data}",
-                new {GameWorldId = gameWorld.Id, playerId = inGamePlayerId});
-            return null;
-        }
-
-        return TryParseCity(data, gameWorld.Id, inGamePlayerId) == null ? null : data;
-    }
-
-    public async Task<PlayerCitySnapshot?> SaveCityAsync(int playerId, byte[] data)
-    {
-        var otherCity = _dataParsingService.ParseOtherCity(data);
-
-        var existing = await GetCityAsync(playerId, otherCity.CityId, Today);
-
-        if (existing != null)
-        {
-            return existing;
-        }
-
-        var city = await CreateCity(otherCity, string.Empty);
-        if (city == null)
-        {
-            return null;
-        }
-
-        var cityStats = await _cityStatsCalculator.Calculate(city);
-
-        var listOfGoods = await _listOfGoodsLazy.Value;
-
-        cityStats.Products.TryGetValue("coins", out var coins);
-        cityStats.Products.TryGetValue("food", out var food);
-        var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
-        var citySnapshot = new PlayerCitySnapshot
-        {
-            PlayerId = playerId,
-            CityId = city!.InGameCityId,
-            CollectedAt = Today,
-            Data = data,
-            Coins = coins?.Default ?? 0,
-            Food = food?.Default ?? 0,
-            Goods = goods,
-            OpenedExpansionsHash = _cityExpansionsHasher.Compute(city.UnlockedExpansions),
-            HasPremiumBuildings = city.Entities.Any(x =>
-                x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase)),
-        };
-
-        _context.PlayerCitySnapshots.Add(citySnapshot);
-        await _context.SaveChangesAsync();
-
-        return citySnapshot;
-    }
-
-    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly? date = null)
-    {
-        if (date == null)
-        {
-            return _context.PlayerCitySnapshots.Where(x => x.PlayerId == playerId && x.CityId == cityId)
-                .OrderByDescending(x => x.CollectedAt).FirstOrDefaultAsync();
-        }
-
-        return _context.PlayerCitySnapshots.FirstOrDefaultAsync(x =>
-            x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }
 }
