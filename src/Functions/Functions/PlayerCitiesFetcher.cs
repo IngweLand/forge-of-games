@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
-using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
@@ -71,7 +70,8 @@ public class PlayerCitiesFetcher(
         List<Player> players = [];
         while (runs < 10 && players.Count < BatchSize)
         {
-            var p = await context.Players.Where(x => x.RankingPoints != null && x.RankingPoints > 1000)
+            var p = await context.Players
+                .Where(x => x.WorldId == "zz1" && (x.RankingPoints == null || x.RankingPoints > 1000))
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BatchSize)
                 .ToListAsync();

@@ -33,16 +33,19 @@
                 </div>
             </div>
         </div>
-        <div class="fog-container section-container actions-container">
-            <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
-                       EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
-                @Loc[FogResource.StatsHub_Player_Visit]
-            </MudButton>
-            <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
-                       EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
-                @Loc[FogResource.StatsHub_Player_ViewCityStats]
-            </MudButton>
-        </div>
+        @if(_player.Player.WorldId == "zz1")
+        {
+            <div class="fog-container section-container actions-container">
+                <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                           EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
+                    @Loc[FogResource.StatsHub_Player_Visit]
+                </MudButton>
+                <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                           EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
+                    @Loc[FogResource.StatsHub_Player_ViewCityStats]
+                </MudButton>
+            </div>
+        }
         @if (_canShowChart)
         {
             <div class="fog-container section-container ranking-points-chart-container">
