@@ -144,20 +144,30 @@ public class PlayersUpdater(
         logger.LogInformation("Completed alliance members updater service update");
     }
 
-    private Task<List<Player>> GetPlayers(string gameWorldId)
+    private async Task<List<Player>> GetPlayers(string gameWorldId)
     {
         logger.LogDebug("Fetching players");
 
         var today = DateTime.UtcNow.ToDateOnly();
         var yesterday = today.AddDays(-1);
 
-        return context.Players
+        var players = await context.Players
             .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId)
-            .Where(x =>
-                ((x.Rank == null || x.RankingPoints == null || x.CurrentAlliance == null) && x.UpdatedAt < today) ||
-                x.UpdatedAt < yesterday)
+            .Where(x => (x.Rank == null || x.RankingPoints == null ||
+                (x.AllianceName != null && x.CurrentAlliance == null)) && x.UpdatedAt < today)
             .Take(BatchSize)
             .ToListAsync();
+
+        if (players.Count < BatchSize)
+        {
+            players.AddRange(await context.Players
+                .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId && x.UpdatedAt < yesterday)
+                .OrderByDescending(x => x.RankingPoints)
+                .Take(BatchSize)
+                .ToListAsync());
+        }
+
+        return players.Take(BatchSize).ToList();
     }
 
     private async Task<PlayerProfile?> FetchProfile(GameWorldConfig gameWorldConfig, Player player)
