@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
@@ -87,7 +88,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             return;
         }
 
-        await LocalStorageBackupService.BackupCities(Application.Client.Web.CityPlanner.CityPlanner.Version);
+        await LocalStorageBackupService.BackupCities(FogConstants.CITY_PLANNER_VERSION);
 
         CityPlannerSettings.StateChanged += CityPlannerSettingsOnStateChanged;
 

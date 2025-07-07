@@ -48,8 +48,6 @@ public class CityPlanner(
     ICityPlannerDataService cityPlannerDataService,
     IMapper mapper) : ICityPlanner
 {
-    public const int Version = 1;
-
     private MapArea _mapArea = null!;
     private MapAreaRenderer _mapAreaRenderer = null!;
     private StatsProcessor _statsProcessor = null!;
@@ -60,7 +58,7 @@ public class CityPlanner(
 
     public Task InitializeAsync()
     {
-        return DoInitializeAsync(hohCityFactory.CreateNewCapital(Version));
+        return DoInitializeAsync(hohCityFactory.CreateNewCapital(FogConstants.CITY_PLANNER_VERSION));
     }
 
     public async Task<SnapshotsComparisonViewModel> CompareSnapshots()
@@ -89,7 +87,7 @@ public class CityPlanner(
 
     public HohCity CreateNew(NewCityRequest newCityRequest)
     {
-        return hohCityFactory.Create(newCityRequest, Version);
+        return hohCityFactory.Create(newCityRequest, FogConstants.CITY_PLANNER_VERSION);
     }
 
     public Task InitializeAsync(HohCity city)
@@ -444,7 +442,7 @@ public class CityPlanner(
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
             CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.Snapshots,
-            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), Version,
+            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
 
