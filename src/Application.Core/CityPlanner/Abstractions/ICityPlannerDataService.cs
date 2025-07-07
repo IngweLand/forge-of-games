@@ -6,4 +6,5 @@ namespace Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 public interface ICityPlannerDataService
 {
     Task<CityPlannerDataDto> GetCityPlannerDataAsync(CityId cityId);
+    Task<IReadOnlyCollection<NewCityDialogItemDto>> GetNewCityDialogItemsAsync();
 }

@@ -13,7 +13,6 @@ public interface ICityPlanner
 {
     Rectangle Bounds { get; }
     CityMapState CityMapState { get; }
-    IReadOnlyCollection<NewCityDialogItemDto> NewCityDialogItems { get; }
     public event Action? StateHasChanged;
     CityMapEntity AddEntity(BuildingGroup buildingGroup);
     void AddEntity(CityMapEntity entity);

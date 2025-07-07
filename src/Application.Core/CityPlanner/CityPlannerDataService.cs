@@ -19,4 +19,14 @@ public class CityPlannerDataService(ICityService cityService) : ICityPlannerData
 
         return cityPlannerData;
     }
+    
+    public async Task<IReadOnlyCollection<NewCityDialogItemDto>> GetNewCityDialogItemsAsync()
+    {
+        if (_cityPlannerDataCache.Count == 0)
+        {
+            await GetCityPlannerDataAsync(CityId.Capital);
+        }
+
+        return _cityPlannerDataCache.First().Value.NewCityDialogItems;
+    }
 }

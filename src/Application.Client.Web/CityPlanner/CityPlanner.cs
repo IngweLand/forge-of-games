@@ -52,7 +52,6 @@ public class CityPlanner(
     private MapAreaRenderer _mapAreaRenderer = null!;
     private StatsProcessor _statsProcessor = null!;
     public event Action? StateHasChanged;
-    public IReadOnlyCollection<NewCityDialogItemDto> NewCityDialogItems { get; private set; }
 
     public CityMapState CityMapState { get; private set; } = null!;
 
@@ -477,7 +476,6 @@ public class CityPlanner(
     private async Task DoInitializeAsync(HohCity city)
     {
         var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(city.InGameCityId);
-        NewCityDialogItems = cityPlannerData.NewCityDialogItems;
 
         await buildingRenderer.InitializeAsync();
 

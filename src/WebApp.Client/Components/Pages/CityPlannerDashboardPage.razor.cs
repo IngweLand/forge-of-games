@@ -62,9 +62,7 @@ public partial class CityPlannerDashboardPage : FogPageBase
     private async Task CreateNewCity()
     {
         var options = GetDefaultDialogOptions();
-        var dialogParameters = new DialogParameters<CreateNewCityDialog>
-            {{d => d.CityItems, CityPlanner.NewCityDialogItems}};
-        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, dialogParameters, options);
+        var dialog = await DialogService.ShowAsync<CreateNewCityDialog>(null, options);
         var result = await dialog.Result;
         if (result == null || result.Canceled)
         {
@@ -78,7 +76,7 @@ public partial class CityPlannerDashboardPage : FogPageBase
 
         var city = CityPlanner.CreateNew(newCityRequest);
         await PersistenceService.SaveCity(city);
-        
+
         CityPlannerNavigationState.City = city;
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
