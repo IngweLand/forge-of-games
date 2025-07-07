@@ -47,8 +47,8 @@ else
 {
     builder.Services.AddLogging(logging =>
     {
-        logging.SetMinimumLevel(LogLevel.Information);
-        logging.AddFilter("Microsoft.EntityFrameworkCore", LogLevel.Warning);
+        logging.SetMinimumLevel(LogLevel.Warning);
+        logging.AddFilter("Ingweland", LogLevel.Information);
     });
 }
 
