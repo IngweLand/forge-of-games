@@ -39,10 +39,10 @@ public class GetAllianceQueryHandler(
             return null;
         }
 
-        var members = alliance.Members.OrderByDescending(p => p.RankingPoints).ThenBy(p => p.Rank).ToList();
+        var members = alliance.Members.Where(p => p.IsPresentInGame).OrderByDescending(p => p.RankingPoints).ThenBy(p => p.Rank).ToList();
         var memberIds = members.Select(p => p.Id).ToHashSet();
         var possibleMembers = await context.Players.AsNoTracking()
-            .Where(p => p.AllianceName == alliance.Name && !memberIds.Contains(p.Id))
+            .Where(p => p.IsPresentInGame && p.AllianceName == alliance.Name && !memberIds.Contains(p.Id))
             .OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
