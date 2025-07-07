@@ -69,6 +69,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                         existingPlayer.RankingPoints = playerAggregate.RankingPoints!.Value;
                         existingPlayer.Rank = playerAggregate.Rank!.Value;
                         existingPlayer.UpdatedAt = date;
+                        existingPlayer.IsPresentInGame = true;
                         updatedPlayerCount++;
                     }
                 }

@@ -15,7 +15,7 @@ public class PlayerCitiesFetcher(
     IPlayerCityService playerCityService,
     ILogger<PlayerCitiesFetcher> logger)
 {
-    public const int BatchSize = 100;
+    private const int BatchSize = 100;
 
     [Function("PlayerCitiesFetcher")]
     public async Task Run([TimerTrigger("0 */15 1-5 * * *")] TimerInfo myTimer)
@@ -71,7 +71,7 @@ public class PlayerCitiesFetcher(
         while (runs < 10 && players.Count < BatchSize)
         {
             var p = await context.Players
-                .Where(x => x.WorldId == "zz1" && (x.RankingPoints == null || x.RankingPoints > 1000))
+                .Where(x => x.WorldId == "zz1" && x.IsPresentInGame && (x.RankingPoints == null || x.RankingPoints > 1000))
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BatchSize)
                 .ToListAsync();

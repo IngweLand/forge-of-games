@@ -135,6 +135,7 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                     if (existingPlayer.AllianceHistory.All(a => a.Id != existingAlliance.Id))
                     {
                         existingPlayer.AllianceHistory.Add(existingAlliance);
+                        existingPlayer.IsPresentInGame = true;
                     }
 
                     if (!confirmedUpdateDates.TryGetValue(t.AllianceKey, out var confirmedUpdateDate) ||
@@ -142,6 +143,7 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                     {
                         existingPlayer.CurrentAlliance = existingAlliance;
                         existingPlayer.AllianceName = existingAlliance.Name;
+                        existingPlayer.IsPresentInGame = true;
                     }
                 }
             }

@@ -95,6 +95,32 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.WorldId, opt =>
                 opt.MapFrom((_, _, _, context) =>
                     context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
+        
+        CreateMap<PlayerProfile, PlayerAggregate>()
+            .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Player.Id))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Player.Age))
+            .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.Player.AvatarId))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Player.Name))
+            .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank))
+            .ForMember(dest => dest.RankingPoints, opt => opt.MapFrom(src => src.RankingPoints))
+            .ForMember(dest => dest.InGameAllianceId, opt =>
+            {
+                opt.PreCondition(x => x.Alliance != null);
+                opt.MapFrom(src => src.Alliance!.Id);
+            })
+            .ForMember(dest => dest.AllianceName, opt => 
+            {
+                opt.PreCondition(x => x.Alliance != null);
+                opt.MapFrom(src => src.Alliance!.Name);
+            })
+            .ForMember(dest => dest.PlayerRankingType, opt =>
+                opt.MapFrom((_, _, _, context) =>
+                    context.Items.GetRequiredItem<PlayerRankingType>(ResolutionContextKeys.PLAYER_RANKING_TYPE)))
+            .ForMember(dest => dest.CollectedAt, opt =>
+                opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<DateTime>(ResolutionContextKeys.DATE)))
+            .ForMember(dest => dest.WorldId, opt =>
+                opt.MapFrom((_, _, _, context) =>
+                    context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
 
         // from aggregate
 
