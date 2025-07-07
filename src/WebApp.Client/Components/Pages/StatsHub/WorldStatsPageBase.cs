@@ -52,6 +52,15 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
         {
             return;
         }
+        catch (Refit.ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+            return;
+        }
+        catch (Exception ex)
+        {
+            await Console.Error.WriteLineAsync($"Unexpected error: {ex}");
+            return;
+        }
 
         CalculatedPageNumber = pageNumber;
         NameSearchString = Name;
