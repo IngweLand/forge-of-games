@@ -1,0 +1,27 @@
+Translate the following .resx tags into the following locales:
+cs-CZ, de-DE, es-ES, fr-FR, it-IT, ja-JP, nl-NL, pl-PL, zh-TW.
+
+Instructions:
+
+1) Grammar check: Before translating, review the English values in the .resx file for any grammatical errors.
+
+	- If you identify any issues, list them clearly and pause processing.
+
+	- Do not perform any translations until further instructions are given in response.
+
+2) Refer to translations.json as the primary source of truth. It contains all locales, including English. Each entry has a Key and a Strings object. The Key is internal and not related to the .resx keys. Strings contains a singular and optionally plural form.
+
+3) For each value in the .resx file, perform an exact match against the English strings in translations.json. If a match is found, use the associated key to retrieve translations for the required locales.
+
+4) If no exact match is found, attempt a partial match. Use the result as contextual guidance only. Do not copy the value directly—either adapt it or translate it based on context.
+
+5) If no match (exact or partial) is found, translate the entry independently.
+
+Output format:
+Provide the translation for each locale inside a code block, labeled with the locale code as the language identifier (e.g., ````cs-CZ```). Do not include comments (neither in reply nor inside code blocks) or explanations—only the translation content.
+
+------------resx content start-----------------
+
+
+
+------------resx content end-----------------
