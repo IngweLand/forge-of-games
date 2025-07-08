@@ -11,13 +11,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.HohProtoParser;
 
-public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMapper mapper, ILogger<GameDesignDataParser> logger)
+public class GameDesignDataParser(
+    IProtobufSerializer protobufSerializer,
+    IMapper mapper,
+    ILogger<GameDesignDataParser> logger)
 {
-    private static readonly HashSet<string> HeroesToSkip = 
+    private static readonly HashSet<string> HeroesToSkip =
     [
     ];
 
-    public void Parse(string input, string? outputDirectory)
+    public void Parse(string input, IList<string> outputDirectories)
     {
         if (HeroesToSkip.Count > 0)
         {
@@ -32,20 +35,19 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
         }
 
         logger.LogInformation("Starting parsing game design data.");
-        var filename = "data.bin";
-        var outputFilePath = filename;
-        if (outputDirectory != null)
-        {
-            Directory.CreateDirectory(outputDirectory);
-            outputFilePath = Path.Combine(outputDirectory, filename);
-        }
 
-        logger.LogInformation($"Input file: {input}. Output file: {outputFilePath}.");
         using var file = File.OpenRead(input);
         var container = GameDesignResponseDtoContainer.Parser.ParseFrom(file);
         var gdr = GameDesignResponseDTO.Parser.ParseFrom(container.Content.Value);
         var data = Parse(gdr);
-        protobufSerializer.SerializeToFile(data, outputFilePath);
+        const string filename = "data.bin";
+        foreach (var outDir in outputDirectories)
+        {
+            Directory.CreateDirectory(outDir);
+            var outputFilePath = Path.Combine(outDir, filename);
+            protobufSerializer.SerializeToFile(data, outputFilePath);
+        }
+
         logger.LogInformation("Completed parsing game design data.");
     }
 
@@ -176,7 +178,7 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
                         var parts = bd.Id.Split('_');
                         return parts[^2] == i.ToString();
                     });
-                stages.Add(new TreasureHuntStage()
+                stages.Add(new TreasureHuntStage
                 {
                     Index = i,
                     Battles = stageBattles.OrderBy(bd =>
@@ -187,7 +189,7 @@ public class GameDesignDataParser(IProtobufSerializer protobufSerializer, IMappe
                 });
             }
 
-            difficulties.Add(new TreasureHuntDifficultyData()
+            difficulties.Add(new TreasureHuntDifficultyData
             {
                 Difficulty = int.Parse(difficultyLevel),
                 Stages = stages,

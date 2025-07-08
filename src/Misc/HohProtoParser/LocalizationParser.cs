@@ -13,8 +13,6 @@ namespace Ingweland.Fog.HohProtoParser;
 
 public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSerializer, ILogger<LocalizationParser> logger)
 {
-    private const string DEFAULT_OUTPUT_DIRECTORY = "parsed-localizations";
-
     private static readonly IList<string> UsedLocalizationCategories = new List<string>()
     {
         HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Abilities, string.Empty),
@@ -38,22 +36,9 @@ public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSeri
         HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Difficulties, string.Empty),
     };
 
-    public void Parse(string? inputDirectory, string? outputDirectory)
+    public void Parse(string? inputDirectory, IList<string> outputDirectories)
     {
         logger.LogInformation($"Starting parsing localization files: {string.Join(", ", HohSupportedCultures.AllCultures)}");
-
-        var outDir = string.IsNullOrWhiteSpace(outputDirectory) ? DEFAULT_OUTPUT_DIRECTORY : outputDirectory;
-        try
-        {
-            Directory.CreateDirectory(outDir);
-        }
-        catch (Exception e)
-        {
-            logger.LogCritical(e, $"Could not create output directory: {outDir}");
-            throw;
-        }
-
-        logger.LogInformation($"Input directory: {inputDirectory}. Output directory: {outDir}.");
 
         foreach (var localeCode in HohSupportedCultures.AllCultures)
         {
@@ -74,8 +59,12 @@ public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSeri
                     Entries = data.Entries.Where(kvp => UsedLocalizationCategories.Any(s => kvp.Key.StartsWith(s)))
                         .ToDictionary(kvp => kvp.Key, kvp => kvp.Value),
                 };
-                var outputFilePath = GetOutputFilePath(outDir, localeCode);
-                protobufSerializer.SerializeToFile(filteredData, outputFilePath);
+                foreach (var outDir in outputDirectories)
+                {
+                    Directory.CreateDirectory(outDir);
+                    var outputFilePath = GetOutputFilePath(outDir, localeCode);
+                    protobufSerializer.SerializeToFile(filteredData, outputFilePath);
+                }
             }
             catch (Exception e)
             {
