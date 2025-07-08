@@ -18,6 +18,8 @@ public static class StatsApi
     {
         var api = app.MapGroup("api/hoh");
 
+        api.MapGet(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH, GetAllLeaderboardTopItemsAsync);
+
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
@@ -46,6 +48,15 @@ public static class StatsApi
         {
             return TypedResults.NotFound();
         }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<LeaderboardTopItemsDto>, BadRequest<string>>>
+        GetAllLeaderboardTopItemsAsync([AsParameters] StatsServices services, HttpContext context,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetAllLeaderboardTopItemsAsync(ct);
 
         return TypedResults.Ok(result);
     }

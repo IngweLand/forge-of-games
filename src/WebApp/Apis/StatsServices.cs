@@ -7,10 +7,12 @@ public class StatsServices(
     ILogger<StatsServices> logger,
     IBattleService battleService,
     ICityPlannerService cityPlannerService,
+    IStatsHubService statsHubService,
     IMediator mediator)
 {
     public IBattleService BattleService { get; } = battleService;
     public ICityPlannerService CityPlannerService { get; } = cityPlannerService;
     public ILogger<StatsServices> Logger { get; } = logger;
     public IMediator Mediator { get; } = mediator;
+    public IStatsHubService StatsHubService { get; } = statsHubService;
 }

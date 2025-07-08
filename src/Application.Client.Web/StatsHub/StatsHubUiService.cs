@@ -57,16 +57,12 @@ public class StatsHubUiService(
         }
 
         await GetAgesAsync();
-        var mainPlayersTask = statsHubService.GetPlayersAsync("un1");
-        var betaPlayersTask = statsHubService.GetPlayersAsync("zz1");
-        var mainAlliancesTask = statsHubService.GetAlliancesAsync("un1");
-        var betaAlliancesTask = statsHubService.GetAlliancesAsync("zz1");
 
-        await Task.WhenAll(mainPlayersTask, betaPlayersTask, mainAlliancesTask, betaAlliancesTask);
+        var topItems = await statsHubService.GetAllLeaderboardTopItemsAsync();
 
-        _topStatsViewModel = statsHubViewModelsFactory.CreateTopStats(mainPlayersTask.Result.Items,
-            betaPlayersTask.Result.Items,
-            mainAlliancesTask.Result.Items, betaAlliancesTask.Result.Items, _ages!);
+        _topStatsViewModel = statsHubViewModelsFactory.CreateTopStats(topItems.MainWorldPlayers.Items,
+            topItems.BetaWorldPlayers.Items,
+            topItems.MainWorldAlliances.Items, topItems.BetaWorldAlliances.Items, _ages!);
 
         return _topStatsViewModel;
     }

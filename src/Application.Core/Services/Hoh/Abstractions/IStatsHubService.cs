@@ -27,4 +27,7 @@ public interface IStatsHubService
     Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int pageNumber = 1,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH)]
+    Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default);
 }

@@ -27,6 +27,8 @@ public static class FogUrlBuilder
 
         public const string WIKI_EXTRACT = "/wiki/extract";
 
+        public const string ALL_LEADERBOARD_TOP_ITEMS_PATH = "/" + BASE_STATS_PATH + "/leaderboards/top";
+        
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
