@@ -16,10 +16,10 @@ public partial class CityPlannerDashboardPage : FogPageBase
     private IReadOnlyCollection<HohCityBasicData> _cities = [];
 
     [Inject]
-    public ICityPlanner CityPlanner { get; set; }
+    private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
-    private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
+    private ICityPlannerUiService CityPlannerUiService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
@@ -74,7 +74,7 @@ public partial class CityPlannerDashboardPage : FogPageBase
             return;
         }
 
-        var city = CityPlanner.CreateNew(newCityRequest);
+        var city = CityPlannerUiService.CreateNew(newCityRequest);
         await PersistenceService.SaveCity(city);
 
         CityPlannerNavigationState.City = city;

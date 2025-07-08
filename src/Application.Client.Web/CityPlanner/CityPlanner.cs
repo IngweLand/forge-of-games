@@ -84,11 +84,6 @@ public class CityPlanner(
         return snapshotsComparisonViewModelFactory.Create(stats);
     }
 
-    public HohCity CreateNew(NewCityRequest newCityRequest)
-    {
-        return hohCityFactory.Create(newCityRequest, FogConstants.CITY_PLANNER_VERSION);
-    }
-
     public Task InitializeAsync(HohCity city)
     {
         return DoInitializeAsync(city);

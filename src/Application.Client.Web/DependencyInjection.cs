@@ -110,6 +110,7 @@ public static class DependencyInjection
         services.AddScoped<ICommonUiService, CommonUiService>();
         services.AddScoped<ICityInspirationsUiService, CityInspirationsUiService>();
         services.AddScoped<IPlayerCitySnapshotViewModelFactory, PlayerCitySnapshotViewModelFactory>();
+        services.AddScoped<ICityPlannerUiService, CityPlannerUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 

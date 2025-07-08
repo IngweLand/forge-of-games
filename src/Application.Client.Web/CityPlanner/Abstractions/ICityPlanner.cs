@@ -18,7 +18,6 @@ public interface ICityPlanner
     void AddEntity(CityMapEntity entity);
     bool CanBePlaced(CityMapEntity cityMapEntity);
     Task<SnapshotsComparisonViewModel> CompareSnapshots();
-    HohCity CreateNew(NewCityRequest newCityRequest);
     Task CreateSnapshot();
     void DeleteEntity(int entityId);
     Task DeleteSnapshot(string id);
