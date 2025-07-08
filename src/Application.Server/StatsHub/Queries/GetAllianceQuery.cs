@@ -33,20 +33,22 @@ public class GetAllianceQueryHandler(
             .Include(p =>
                 p.Rankings.Where(pr => pr.Type == AllianceRankingType.TotalPoints && pr.CollectedAt > periodStartDate))
             .AsSplitQuery()
-            .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken: cancellationToken);
+            .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken);
         if (alliance == null)
         {
             return null;
         }
 
-        var members = alliance.Members.Where(p => p.IsPresentInGame).OrderByDescending(p => p.RankingPoints).ThenBy(p => p.Rank).ToList();
+        var members = alliance.Members.Where(p => p.IsPresentInGame).OrderByDescending(p => p.RankingPoints)
+            .ThenBy(p => p.Rank).ToList();
         var memberIds = members.Select(p => p.Id).ToHashSet();
         var possibleMembers = await context.Players.AsNoTracking()
-            .Where(p => p.IsPresentInGame && p.AllianceName == alliance.Name && !memberIds.Contains(p.Id))
+            .Where(p => p.IsPresentInGame && p.WorldId == alliance.WorldId && p.AllianceName == alliance.Name &&
+                !memberIds.Contains(p.Id))
             .OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
-            .ToListAsync(cancellationToken: cancellationToken);
+            .ToListAsync(cancellationToken);
 
         return allianceWithRankingsFactory.Create(alliance, mapper.Map<IReadOnlyCollection<PlayerDto>>(members),
             possibleMembers);
