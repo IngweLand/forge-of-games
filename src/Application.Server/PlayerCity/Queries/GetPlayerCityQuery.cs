@@ -13,7 +13,8 @@ public record GetPlayerCityQuery(int PlayerId) : IRequest<HohCity?>;
 public class GetPlayerCityQueryHandler(
     IFogDbContext context,
     IPlayerCityService playerCityService,
-    IHohCityCreationService cityCreationService)
+    IHohCityCreationService cityCreationService,
+    IFailedPlayerCityFetchesCache failedFetchesCache)
     : IRequestHandler<GetPlayerCityQuery, HohCity?>
 {
     public async Task<HohCity?> Handle(GetPlayerCityQuery request, CancellationToken cancellationToken)
@@ -31,9 +32,15 @@ public class GetPlayerCityQueryHandler(
             return await cityCreationService.Create(existingCity, player.Name);
         }
 
+        if (failedFetchesCache.IsFailedFetch(player.Key))
+        {
+            return null;
+        }
+
         var fetchedCity = await playerCityService.FetchCityAsync(player.WorldId, player.InGamePlayerId);
         if (fetchedCity == null)
         {
+            failedFetchesCache.AddFailedFetch(player.Key);
             return null;
         }
 

@@ -29,6 +29,7 @@ public static class DependencyInjection
         services.AddSingleton<InGameRawDataTablePartitionKeyProvider>();
         services.AddSingleton<InGameBinDataTablePartitionKeyProvider>();
         services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
+        services.AddSingleton<IFailedPlayerCityFetchesCache, FailedPlayerCityFetchesCache>();
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();
