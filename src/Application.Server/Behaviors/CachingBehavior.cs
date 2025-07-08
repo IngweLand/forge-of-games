@@ -27,7 +27,7 @@ public class CachingBehavior<TRequest, TResponse>(
 
         var cacheEntryOptions = new MemoryCacheEntryOptions
         {
-            AbsoluteExpiration = response != null ? request.GetExpiration() : DateTimeOffset.UtcNow.AddHours(1),
+            AbsoluteExpiration = response != null ? request.GetExpiration() : DateTimeOffset.UtcNow.AddMinutes(15),
         };
 
         cache.Set(request.CacheKey, response, cacheEntryOptions);
