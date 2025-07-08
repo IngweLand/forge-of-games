@@ -41,26 +41,9 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public async Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default)
+    public Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default)
     {
-        try
-        {
-            var mainPlayers = await GetPlayersAsync("un1", ct: ct);
-            var betaPlayers = await GetPlayersAsync("zz1", ct: ct);
-            var mainAlliances = await GetAlliancesAsync("un1", ct: ct);
-            var betaAlliances = await GetAlliancesAsync("zz1", ct: ct);
-            return new LeaderboardTopItemsDto
-            {
-                MainWorldPlayers = mainPlayers,
-                BetaWorldPlayers = betaPlayers,
-                MainWorldAlliances = mainAlliances,
-                BetaWorldAlliances = betaAlliances,
-            };
-        }
-        catch
-        {
-            return LeaderboardTopItemsDto.Blank;
-        }
+        return sender.Send(new GetAllLeaderboardTopItemsQuery(), ct);
     }
 
     public Task<PlayerWithRankings?> GetPlayerAsync(int playerId)

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Behaviors;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity;
@@ -11,6 +12,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
 
@@ -24,7 +26,11 @@ public static class DependencyInjection
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
-        services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly); });
+        services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
+        });
 
         services.AddSingleton<InGameRawDataTablePartitionKeyProvider>();
         services.AddSingleton<InGameBinDataTablePartitionKeyProvider>();

@@ -6,7 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
-public record GetBattleStatsQuery(int Id) : IRequest<BattleStatsDto?>;
+public record GetBattleStatsQuery(int Id) : IRequest<BattleStatsDto?>, ICacheableRequest
+{
+    public string CacheKey => $"BattleStats_{Id}";
+    public TimeSpan? Duration => TimeSpan.FromDays(1);
+    public DateTimeOffset? Expiration { get; }
+}
 
 public class GetBattleStatsQueryHandler(IBattleStatsDtoFactory battleStatsDtoFactory, IFogDbContext context)
     : IRequestHandler<GetBattleStatsQuery, BattleStatsDto?>

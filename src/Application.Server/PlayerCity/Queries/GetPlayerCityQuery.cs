@@ -3,12 +3,18 @@ using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
-public record GetPlayerCityQuery(int PlayerId) : IRequest<HohCity?>;
+public record GetPlayerCityQuery(int PlayerId) : IRequest<HohCity?>, ICacheableRequest
+{
+    public string CacheKey => $"PlayerCity_{PlayerId}";
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+}
 
 public class GetPlayerCityQueryHandler(
     IFogDbContext context,

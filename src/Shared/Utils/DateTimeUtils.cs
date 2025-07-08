@@ -18,4 +18,9 @@ public static class DateTimeUtils
         var timeZone = DateTimeZoneProviders.Tzdb.GetZoneOrNull(ianaTimeZoneId) ?? DateTimeZoneProviders.Tzdb["UTC"];
         return utcInstant.InZone(timeZone);
     }
+    
+    public static DateTime GetNextMidnightUtc()
+    {
+        return DateTime.UtcNow.Date.AddDays(1).ToUniversalTime();
+    }
 }

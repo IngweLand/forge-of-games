@@ -3,12 +3,18 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
-public record GetUnitBattlesQuery(string UnitId) : IRequest<IReadOnlyCollection<UnitBattleDto>>;
+public record GetUnitBattlesQuery(string UnitId) : IRequest<IReadOnlyCollection<UnitBattleDto>>, ICacheableRequest
+{
+    public string CacheKey => $"UnitBattles_{UnitId}";
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+}
 
 public class GetUnitBattlesQueryHandler(
     IUnitBattleDtoFactory unitBattleDtoFactory,
@@ -23,6 +29,7 @@ public class GetUnitBattlesQueryHandler(
         {
             return [];
         }
+
         var allBattles = await context.BattleUnits.AsNoTracking()
             .Where(bue => bue.UnitId == request.UnitId)
             .SelectMany(bue => bue.Battles)
@@ -46,11 +53,11 @@ public class GetUnitBattlesQueryHandler(
         }).ToList();
         return averaged.Take(FogConstants.MaxDisplayedUnitBattles).ToList();
     }
-    
+
     private UnitBattleDto CreateAverage(IList<UnitBattleDto> dtos)
     {
         var first = dtos.First();
-        var averageStats = new UnitBattleStatsDto()
+        var averageStats = new UnitBattleStatsDto
         {
             Name = first.BattleStats!.Name,
             AssetId = first.BattleStats.AssetId,
@@ -59,6 +66,6 @@ public class GetUnitBattlesQueryHandler(
             Defense = dtos.Average(src => src.BattleStats!.Defense),
             Heal = dtos.Average(src => src.BattleStats!.Heal),
         };
-        return first with { BattleStats = averageStats };
+        return first with {BattleStats = averageStats};
     }
 }

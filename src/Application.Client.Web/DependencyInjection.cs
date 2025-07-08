@@ -33,7 +33,10 @@ public static class DependencyInjection
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
-        services.AddMemoryCache();
+        services.AddMemoryCache(options =>
+        {
+            options.ExpirationScanFrequency = TimeSpan.FromMinutes(5);
+        });
 
         services.AddSingleton<IHeroProgressionCalculators, HeroProgressionCalculators>();
         

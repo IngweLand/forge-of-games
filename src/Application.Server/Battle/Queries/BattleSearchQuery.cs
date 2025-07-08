@@ -6,16 +6,20 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
-public record BattleSearchQuery : IRequest<BattleSearchResult>
+public record BattleSearchQuery : IRequest<BattleSearchResult>, ICacheableRequest
 {
     public required string BattleDefinitionId { get; init; }
     public required BattleType BattleType { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
+    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}";
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
 
 public class BattleSearchQueryHandler(
@@ -58,9 +62,10 @@ public class BattleSearchQueryHandler(
                 .Where(b => b.BattleDefinitionId == battleDefinitionId &&
                     unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
         }
-       
+
         return context.Battles.AsNoTracking()
             .Where(b => b.BattleDefinitionId == battleDefinitionId &&
-                unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId && u.Side == BattleSquadSide.Player)));
+                unitIds.All(requiredId =>
+                    b.Units.Any(u => u.UnitId == requiredId && u.Side == BattleSquadSide.Player)));
     }
 }

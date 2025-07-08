@@ -5,14 +5,18 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetAllianceQuery : IRequest<AllianceWithRankings?>
+public record GetAllianceQuery : IRequest<AllianceWithRankings?>, ICacheableRequest
 {
     public required int AllianceId { get; init; }
+    public string CacheKey => $"AllianceWithRanking_{AllianceId}";
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
 
 public class GetAllianceQueryHandler(

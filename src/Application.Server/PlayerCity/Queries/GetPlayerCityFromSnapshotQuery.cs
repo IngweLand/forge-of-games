@@ -1,12 +1,18 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
-public record GetPlayerCityFromSnapshotQuery(int SnapshotId) : IRequest<HohCity?>;
+public record GetPlayerCityFromSnapshotQuery(int SnapshotId) : IRequest<HohCity?>, ICacheableRequest
+{
+    public string CacheKey => $"PlayerCityFromSnapshot_{SnapshotId}";
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+}
 
 public class GetPlayerCityFromSnapshotQueryHandler(
     IFogDbContext context,
