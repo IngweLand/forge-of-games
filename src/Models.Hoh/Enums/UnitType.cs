@@ -13,4 +13,5 @@ public enum UnitType
     Siege,
     Spawner,
     Gate,
+    Ally,
 }

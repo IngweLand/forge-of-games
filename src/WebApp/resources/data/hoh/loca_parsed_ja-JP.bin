@@ -243,6 +243,8 @@ DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_Descサフラ
 "Base.BuildingTypes.ritualSite_Name儀式の場
 K
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_Name攻城兵兵舎
+�
+ Base.Units.Unit_OdaNobunaga_Desc�Bring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as “The Fool of Owari” for his wild youth, but he soon showed his true cunning—and no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner—a feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga’s impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying—Oda Nobunaga always played to win!
 l
 ,Base.Units.Unit_FeudalAge_Player_Axemen_Desc<歩兵ユニットは前列で最も効果を発揮する。
 J
@@ -681,6 +683,8 @@ C
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Nameレオニダス
 h
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
+0
+ Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 N
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_Name保存技術
 s
@@ -1963,6 +1967,8 @@ C
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Name中規模な文化遺産
 <
 )Base.Regions.region.TeslaStormYellow_Name黄ストーム
+�
+Base.Units.Unit_LadyKasuga_Desc�Guide the shogun from the shadows with Lady Kasuga! Known formally as Kasuga no Tsubone, this remarkable noblewoman of early 17th-century Japan became one of the most influential figures in the shogunate’s inner circle. Born in 1579, she joined the Tokugawa family as a lady-in-waiting and quickly earned the trust of Tokugawa Iemitsu, the third shogun of the dynasty.<br><br>Lady Kasuga served as the shogun’s wet nurse, advisor, and political mastermind—the power behind the screens. She’s especially famed for organizing the Ooku, the shogunal women’s quarters, and for her diplomatic skills: negotiating with daimyo, securing alliances, and overseeing courtly etiquette with both iron discipline and a keen sense of humor.<br><br>Her subtle influence helped sustain Tokugawa rule with style, wit, and steely resolve. To the samurai outside, it may have seemed all quiet in the inner chambers, but Lady Kasuga’s legacy reminds us—the real power often works in secret!
 q
 0Base.Buildings.Building_Mayas_Home_Priest_6_Desc=カカオ豆を生産し、都市に職人を2人追加する
 p
@@ -3078,6 +3084,8 @@ K
 5Base.Technologies.Technology_Vikings_DragonBoats_Name竜船
 l
 8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc0隣の建物の灌漑用水を大幅に増やす
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Nameu<style=ability_label>Focus</style>At the start of the wave, grants the wielder <style=basestat>{focus}</style> Focus.
 X
 3Base.Units.Unit_KingdomOfSicily_Arabia_Cavalry_Name!アラブのドロメダリ騎兵
 �	
@@ -3168,6 +3176,8 @@ N
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬の市場
 �
 Base.Units.Unit_Confucius_Desc�統治を学び、舞姫たちを脇に置いて、孔子の教えを深めよう！紀元前６世紀から５世紀にかけて活躍した中国の哲学者、孔子は、その思想によって中国の文化と社会に深い影響を与えた。『論語』にまとめられた教えは、道徳、孝行、そして社会の調和の重要性を説いている。<br><br>孝行や年長者への敬意、教育の大切さといった美徳を提唱し、個人と国家の行動指針となる倫理的な枠組みを築こうとした。その哲学では、社会秩序を維持するために義と礼の重要性が強調されている。<br><br>孔子の思想は、中国の歴史や文化の基盤となり、今もなお東洋の哲学や社会的実践に深く影響を与え続けている。
+.
+Base.Units.Unit_LadyKasuga_NameLady Kasuga
 i
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 P
@@ -3866,6 +3876,8 @@ v
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 I
 6Base.Buildings.Building_IberianEra_Home_Average_1_Name大きな住宅
+1
+!Base.Heroes.hero.OdaNobunaga_NameOda Nobunaga
 �
 2Base.Buildings.Building_China_City_CityHall_2_Descr都市の中心部にある大ホール。ここでは、少量ながら五銖銭を継続的に収集できる。
 �
@@ -5459,6 +5471,8 @@ b
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_Desc!攻城塔をアンロックする
 D
 4Base.Technologies.Technology_RomanEmpire_Mosaic_Nameモザイク
+/
+ Base.Heroes.hero.LadyKasuga_NameLady Kasuga
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>近接攻撃・弱体化</style>孫氏が自分の周囲<style=basestat>{range}</style>の範囲内にいる敵ユニットに2回攻撃を加え、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、静穏のオーラを発生させ、近くの敵ユニットの攻撃速度を<style=basestat>{duration}</style>の間<style=basestat>{atk_speed_percentage}</style>低下させる。
 L
@@ -5885,6 +5899,8 @@ G
 "Base.Heroes.hero.RomanPraetor_Name!アエミリア・テルティア
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。同時に、味方ユニットを<style=basestat>{duration}</style>の間、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Immunity</style>Grants protection from crowd control effects once every <style=basestat>{cooldown}</style> seconds.<br>Crowd control effects include Taunts, Mind Controls, Stuns, Ability Blocks, Attack Speed Slows, Movement Speed Slows, and Accuracy Reductions.
 t
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc@カカオ豆を生産し、都市に労働者を2人追加する
 p

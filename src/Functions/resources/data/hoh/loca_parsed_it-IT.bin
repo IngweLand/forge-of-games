@@ -250,6 +250,8 @@ DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_DescProduce Z
 "Base.BuildingTypes.ritualSite_NameSito RitualeSiti Rituali
 X
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameCaserma per unità d'assedio
+�
+ Base.Units.Unit_OdaNobunaga_Desc�Bring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as “The Fool of Owari” for his wild youth, but he soon showed his true cunning—and no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner—a feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga’s impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying—Oda Nobunaga always played to win!
 r
 ,Base.Units.Unit_FeudalAge_Player_Axemen_DescBLe unità di fanteria sono maggiormente efficaci nelle prime file.
 T
@@ -700,6 +702,8 @@ J
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonida
 m
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc)Aumenta la felicità degli edifici vicini
+0
+ Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 O
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_NameConservazione
 l
@@ -2005,6 +2009,8 @@ Y
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameSito culturale medio
 E
 )Base.Regions.region.TeslaStormYellow_NameTempesta di Tesla Gialla
+�
+Base.Units.Unit_LadyKasuga_Desc�Guide the shogun from the shadows with Lady Kasuga! Known formally as Kasuga no Tsubone, this remarkable noblewoman of early 17th-century Japan became one of the most influential figures in the shogunate’s inner circle. Born in 1579, she joined the Tokugawa family as a lady-in-waiting and quickly earned the trust of Tokugawa Iemitsu, the third shogun of the dynasty.<br><br>Lady Kasuga served as the shogun’s wet nurse, advisor, and political mastermind—the power behind the screens. She’s especially famed for organizing the Ooku, the shogunal women’s quarters, and for her diplomatic skills: negotiating with daimyo, securing alliances, and overseeing courtly etiquette with both iron discipline and a keen sense of humor.<br><br>Her subtle influence helped sustain Tokugawa rule with style, wit, and steely resolve. To the samurai outside, it may have seemed all quiet in the inner chambers, but Lady Kasuga’s legacy reminds us—the real power often works in secret!
 h
 0Base.Buildings.Building_Mayas_Home_Priest_6_Desc4Produce Cacao e aggiunge 2 Artigiani alla tua città
 k
@@ -3132,6 +3138,8 @@ E
 5Base.Technologies.Technology_Vikings_DragonBoats_NameBarche Drago
 y
 8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc=Aumenta considerevolmente l'irrigazione degli edifici vicini.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Nameu<style=ability_label>Focus</style>At the start of the wave, grants the wielder <style=basestat>{focus}</style> Focus.
 F
 3Base.Units.Unit_KingdomOfSicily_Arabia_Cavalry_NameDromedari Arabi
 �	
@@ -3223,6 +3231,8 @@ e
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_NameMercato Invernale
 �
 Base.Units.Unit_Confucius_Desc�Impara a governare e nascondi le ragazze che danzano: Confucio è qui. Questo filosofo cinese altamente influente del VI e V secolo a.C. ha plasmato il pensiero e la cultura cinese con i suoi insegnamenti. Raccolti nelle "Analects", essi pongono l'accento sulla moralità, sulla lealtà familiare e sull'importanza dell'armonia sociale.<br><br>Conosciuto per aver promosso virtù come la pietà filiale, il rispetto per gli anziani e l'importanza dell'istruzione, Confucio mirava a creare una cornice etica per la condotta personale e governativa. La sua filosofia sottolinea i ruoli della giustizia e della correttezza nel mantenere l'ordine sociale.<br><br>Confucio rimane una figura fondamentale nella storia cinese, con i suoi principi che continuano a influenzare la filosofia orientale, la cultura e le pratiche sociali in tutto il mondo.
+.
+Base.Units.Unit_LadyKasuga_NameLady Kasuga
 n
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc)Aumenta la Felicità degli edifici vicini
 L
@@ -3935,6 +3945,8 @@ q
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc8Produce Monete e aggiunge un Lavoratore alla tua città.
 O
 6Base.Buildings.Building_IberianEra_Home_Average_1_NameAbitazione intermedia
+1
+!Base.Heroes.hero.OdaNobunaga_NameOda Nobunaga
 �
 2Base.Buildings.Building_China_City_CityHall_2_DescqLa Sala del Consiglio è il centro della tua città. Genera continuamente una piccola quantità di Wu Zhu per te.
 �
@@ -5545,6 +5557,8 @@ i
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescSblocca le torri d'assedio
 ?
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMosaico
+/
+ Base.Heroes.hero.LadyKasuga_NameLady Kasuga
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Attacco Corpo a Corpo| Malus</style>
 Sun Tzu colpisce due volte tutte le unità nemiche intorno a sé, infliggendo un totale di <style=basestat>{dmg_percentage}</style> danni in un raggio di <style=basestat>{range}</style>. Poi si concentra, creando un'aura di calma che riduce la velocità d'attacco dei nemici vicini del <style=basestat>{atk_speed_percentage}</style> per <style=basestat>{duration}</style>.
@@ -5976,6 +5990,8 @@ A
 "Base.Heroes.hero.RomanPraetor_NameEmialia Terzia
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Tempesta</style>Qin Shi Huang evoca la sua Spada Spirituale che attraversa il campo di battaglia, infliggendo <style=basestat>{dmg_percentage}</style> danni alle unità nemiche e curando le unità alleate per <style=basestat>{heal_percentage}</style> del danno base di Qin Shi Huang per <style=basestat>{duration}</style>.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Immunity</style>Grants protection from crowd control effects once every <style=basestat>{cooldown}</style> seconds.<br>Crowd control effects include Taunts, Mind Controls, Stuns, Ability Blocks, Attack Speed Slows, Movement Speed Slows, and Accuracy Reductions.
 i
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc5Produce Cacao e aggiunge 2 Lavoratori alla tua città
 x

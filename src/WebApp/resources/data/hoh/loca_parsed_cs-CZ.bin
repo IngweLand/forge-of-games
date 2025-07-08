@@ -245,6 +245,8 @@ DBase.Buildings.Building_AgeOfTheFranks_Workshop_SpiceMerchant_1_DescProdukuje
 "Base.BuildingTypes.ritualSite_NameObřadní místoObřadní místaObřadních míst
 Z
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameKasárny obléhacích jednotek
+�
+ Base.Units.Unit_OdaNobunaga_Desc�Bring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as “The Fool of Owari” for his wild youth, but he soon showed his true cunning—and no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner—a feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga’s impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying—Oda Nobunaga always played to win!
 k
 ,Base.Units.Unit_FeudalAge_Player_Axemen_Desc;Jednotky pěchoty jsou nejefektivnější v přední linii.
 O
@@ -695,6 +697,8 @@ M
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
 h
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
+0
+ Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 L
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_Name
 Konzervace
@@ -2015,6 +2019,8 @@ a
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameStřední kulturní památka
 A
 )Base.Regions.region.TeslaStormYellow_NameŽlutá Tesla bouře
+�
+Base.Units.Unit_LadyKasuga_Desc�Guide the shogun from the shadows with Lady Kasuga! Known formally as Kasuga no Tsubone, this remarkable noblewoman of early 17th-century Japan became one of the most influential figures in the shogunate’s inner circle. Born in 1579, she joined the Tokugawa family as a lady-in-waiting and quickly earned the trust of Tokugawa Iemitsu, the third shogun of the dynasty.<br><br>Lady Kasuga served as the shogun’s wet nurse, advisor, and political mastermind—the power behind the screens. She’s especially famed for organizing the Ooku, the shogunal women’s quarters, and for her diplomatic skills: negotiating with daimyo, securing alliances, and overseeing courtly etiquette with both iron discipline and a keen sense of humor.<br><br>Her subtle influence helped sustain Tokugawa rule with style, wit, and steely resolve. To the samurai outside, it may have seemed all quiet in the inner chambers, but Lady Kasuga’s legacy reminds us—the real power often works in secret!
 i
 0Base.Buildings.Building_Mayas_Home_Priest_6_Desc5Vyrábí kakao a přidává do města 2 řemeslníky.
 b
@@ -3149,6 +3155,8 @@ F
 5Base.Technologies.Technology_Vikings_DragonBoats_NameDračí lodě
 j
 8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc.Výrazně zvýší zavlažení okolních budov
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Nameu<style=ability_label>Focus</style>At the start of the wave, grants the wielder <style=basestat>{focus}</style> Focus.
 L
 3Base.Units.Unit_KingdomOfSicily_Arabia_Cavalry_NameArabští dromedáři
 �	
@@ -3241,6 +3249,8 @@ PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Nam
 Zimní trh
 �
 Base.Units.Unit_Confucius_Desc�Naučte se vládnout a schovejte tančící dívky: Konfucius je tady. Tento velmi vlivný čínský filozof z 6. až 5. století př. n. l. svým učením formoval čínské myšlení a kulturu. Ta jsou sepsána v "Analektech" a zdůrazňují morálku, rodinnou věrnost a důležitost společenské harmonie.<br><br>Konfucius, známý pro obhajobu ctností, jako je synovská zbožnost, úcta ke starším a důležitost vzdělání, se snažil vytvořit etický rámec pro osobní i vládní jednání. Jeho filozofie zdůrazňuje roli spravedlnosti a slušnosti při udržování společenského řádu.<br><br>Konfucius je dodnes základní postavou čínských dějin a jeho zásady nadále ovlivňují východní filozofii, kulturu a společenskou praxi po celém světě.
+.
+Base.Units.Unit_LadyKasuga_NameLady Kasuga
 i
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc$Zvyšuje spokojenost okolních budov
 H
@@ -3951,6 +3961,8 @@ g
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc.Vyrábí mince a přidá pracovníka do města
 H
 6Base.Buildings.Building_IberianEra_Home_Average_1_NameStřední dům
+1
+!Base.Heroes.hero.OdaNobunaga_NameOda Nobunaga
 �
 2Base.Buildings.Building_China_City_CityHall_2_DescNRadnice je středem tvého města. Neustále generuje malé množství Wu Zhu.
 �
@@ -5585,6 +5597,8 @@ Z
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescOdemkne obléhací věže
 ?
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMozaika
+/
+ Base.Heroes.hero.LadyKasuga_NameLady Kasuga
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>Úder na blízko | Oslabení</style>Sun Tzu zasáhne všechny nepřátelské jednotky kolem sebe dvakrát, čímž způsobí celkové poškození <style=basestat>{dmg_percentage}</style> v okruhu <style=basestat>{range}</style>. Poté se soustředí a vytvoří auru klidu, která snižuje rychlost útoku okolních nepřátel o <style=basestat>{atk_speed_percentage}</style> po dobu <style=basestat>{duration}</style>.
 F
@@ -6018,6 +6032,8 @@ F
 "Base.Heroes.hero.RomanPraetor_NameAemilia Tertia
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Úder bouře</style>Císař Čchin vyvolá svůj duchovní meč, který letí přes bojiště, způsobuje nepřátelským jednotkám <style=basestat>{dmg_percentage}</style> poškození a léčí spojenecké jednotky za <style=basestat>{heal_percentage}</style> z císařova základního poškození po dobu <style=basestat>{duration}</style>.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Immunity</style>Grants protection from crowd control effects once every <style=basestat>{cooldown}</style> seconds.<br>Crowd control effects include Taunts, Mind Controls, Stuns, Ability Blocks, Attack Speed Slows, Movement Speed Slows, and Accuracy Reductions.
 h
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc4Vyrábí kakao a přidává do města 2 pracovníky.
 s

@@ -248,6 +248,8 @@ F
 "Base.BuildingTypes.ritualSite_NameRituele plaatsRituele plaatsen
 N
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameBelegeringskazerne
+ò
+ Base.Units.Unit_OdaNobunaga_DescÛBring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as ‚ÄúThe Fool of Owari‚Äù for his wild youth, but he soon showed his true cunning‚Äîand no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner‚Äîa feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga‚Äôs impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying‚ÄîOda Nobunaga always played to win!
 m
 ,Base.Units.Unit_FeudalAge_Player_Axemen_Desc=Infanterie-eenheden zijn het meest effectief in de voorhoede.
 O
@@ -699,6 +701,8 @@ M
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_NameLeonidas
 w
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Desc3Verbetert de tevredenheid van aangrenzende gebouwen
+0
+ Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 N
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_NameConservering
 m
@@ -2009,6 +2013,8 @@ b
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
 =
 )Base.Regions.region.TeslaStormYellow_NameGele Tesla Storm
+¸
+Base.Units.Unit_LadyKasuga_DescÿGuide the shogun from the shadows with Lady Kasuga! Known formally as Kasuga no Tsubone, this remarkable noblewoman of early 17th-century Japan became one of the most influential figures in the shogunate‚Äôs inner circle. Born in 1579, she joined the Tokugawa family as a lady-in-waiting and quickly earned the trust of Tokugawa Iemitsu, the third shogun of the dynasty.<br><br>Lady Kasuga served as the shogun‚Äôs wet nurse, advisor, and political mastermind‚Äîthe power behind the screens. She‚Äôs especially famed for organizing the Ooku, the shogunal women‚Äôs quarters, and for her diplomatic skills: negotiating with daimyo, securing alliances, and overseeing courtly etiquette with both iron discipline and a keen sense of humor.<br><br>Her subtle influence helped sustain Tokugawa rule with style, wit, and steely resolve. To the samurai outside, it may have seemed all quiet in the inner chambers, but Lady Kasuga‚Äôs legacy reminds us‚Äîthe real power often works in secret!
 o
 0Base.Buildings.Building_Mayas_Home_Priest_6_Desc;Produceert cacao en voegt 2 ambachtslieden toe aan je stad.
 j
@@ -3153,6 +3159,8 @@ D
 5Base.Technologies.Technology_Vikings_DragonBoats_NameDrakenboten
 w
 8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc;Verhoogt de irrigatie van aangrenzende gebouwen aanzienlijk
+«
+NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Nameu<style=ability_label>Focus</style>At the start of the wave, grants the wielder <style=basestat>{focus}</style> Focus.
 N
 3Base.Units.Unit_KingdomOfSicily_Arabia_Cavalry_NameArabische Dromedarissen
 Ç
@@ -3245,6 +3253,8 @@ _
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_NameWintermarkt
 É
 Base.Units.Unit_Confucius_Desc‡Leer heersen en verberg de dansende meisjes: Confucius is hier. Deze zeer invloedrijke Chinees filosoof uit de 6e tot 5e eeuw voor Christus heeft met zijn leerstellingen vorm gegeven aan het Chinees denken en de Chinees cultuur. Ze zijn samengebracht in de 'Analecten' en benadrukken moraliteit, loyaliteit aan de familie en het belang van sociale harmonie.<br><br>Confucius, die bekend staat om zijn pleidooien voor deugden als kinderlijke vroomheid, respect voor ouderen en het belang van onderwijs, wilde een ethisch kader scheppen voor persoonlijk en bestuurlijk gedrag. Zijn filosofie benadrukt de rol van rechtschapenheid en fatsoen bij het handhaven van de maatschappelijke orde.<br><br>Confucius staat nog steeds aan de basis van de Chinees geschiedenis en zijn principes blijven de Oosterse filosofie, cultuur en sociale gebruiken wereldwijd be√Ønvloeden.
+.
+Base.Units.Unit_LadyKasuga_NameLady Kasuga
 w
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 D
@@ -3958,6 +3968,8 @@ p
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
 L
 6Base.Buildings.Building_IberianEra_Home_Average_1_NameMiddelgrote woning
+1
+!Base.Heroes.hero.OdaNobunaga_NameOda Nobunaga
 †
 2Base.Buildings.Building_China_City_CityHall_2_DescjDe Grote Zaal is het centrum van je stad. Het genereert voortdurend een kleine hoeveelheid Wu Zhu voor je.
 £
@@ -5585,6 +5597,8 @@ j
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_DescOntgrendelt Belegeringstorens
 @
 4Base.Technologies.Technology_RomanEmpire_Mosaic_NameMoza√Øek
+/
+ Base.Heroes.hero.LadyKasuga_NameLady Kasuga
 ì
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name»<style=ability_label>Slag Strike| Debuff</style>Sun Tzu treft alle vijandelijke eenheden om zich heen twee keer en richt daarbij in totaal <style=basestat>{dmg_percentage}</style> schade aan in een bereik van <style=basestat>{bereik}</style>. Dan centreert hij zichzelf en veroorzaakt een aura van kalmte, die de AANV. SNELHEID van vijanden in de buurt vermindert met <style=basestat>{atk_speed_percentage}</style> gedurende <style=basestat>{duur}</style>.
 G
@@ -6019,6 +6033,8 @@ D
 "Base.Heroes.hero.RomanPraetor_NameAemilia Tertia
 Ø
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Nameﬂ<style=ability_label>Stormoproeper</style>Qin Shi Huang roept zijn Geestzwaard op dat over het slagveld vliegt, vijandelijke eenheden beschadigt voor <style=basestat>{dmg_percentage}</style> schade, en geallieerde eenheden geneest voor <style=basestat>{heal_percentage}</style> van Qin Shi Huang's basis schade voor <style=basestat>{duration}</style>.
+Ì
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Nameö<style=ability_label>Immunity</style>Grants protection from crowd control effects once every <style=basestat>{cooldown}</style> seconds.<br>Crowd control effects include Taunts, Mind Controls, Stuns, Ability Blocks, Attack Speed Slows, Movement Speed Slows, and Accuracy Reductions.
 i
 0Base.Buildings.Building_Mayas_Home_Worker_3_Desc5Produceert cacao en voegt 2 arbeiders toe aan je stad
 o
