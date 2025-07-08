@@ -11,7 +11,7 @@
     @if (FormData != null && Request != null)
     {
         <div class="options-container">
-            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Age]"
+            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Common_Age]"
                        @bind-Value="Request.Age"
                        T="AgeViewModel" Strict="true" ToStringFunc="@(x => x?.Name)"
                        Variant="Variant.Outlined">

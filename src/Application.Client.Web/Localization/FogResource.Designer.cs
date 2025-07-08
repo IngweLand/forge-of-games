@@ -555,15 +555,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Age.
-        /// </summary>
-        public static string CityPlanner_Inspirations_Form_Age {
-            get {
-                return ResourceManager.GetString("CityPlanner.Inspirations.Form.Age", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Allow premium buildings.
         /// </summary>
         public static string CityPlanner_Inspirations_Form_AllowPremium {
@@ -1046,6 +1037,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_24hrs {
             get {
                 return ResourceManager.GetString("Common.24hrs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string Common_Age {
+            get {
+                return ResourceManager.GetString("Common.Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ages.
+        /// </summary>
+        public static string Common_Ages {
+            get {
+                return ResourceManager.GetString("Common.Ages", resourceCulture);
             }
         }
         
@@ -2054,24 +2063,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_PageTitle {
             get {
                 return ResourceManager.GetString("StatsHub.PageTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Age.
-        /// </summary>
-        public static string StatsHub_Player_Age {
-            get {
-                return ResourceManager.GetString("StatsHub.Player.Age", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ages.
-        /// </summary>
-        public static string StatsHub_Player_Ages {
-            get {
-                return ResourceManager.GetString("StatsHub.Player.Ages", resourceCulture);
             }
         }
         

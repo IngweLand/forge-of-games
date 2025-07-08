@@ -34,7 +34,12 @@ var searchKeys = new HashSet<string>()
     "Base.TeslaStormsPanel.TeslaStorms",
     "Base.CampaignPanel.Difficulty",
     "Base.TreasureHuntDifficultiesPanel.Stage",
-    "Base.AllianceMemberContextPopover.Visit"
+    "Base.AllianceMemberContextPopover.Visit",
+    "Base.Resources.coins_Name",
+    "Base.Resources.food_Name",
+    "Base.Generic.Good",
+    "Base.BuildPanel.ExpansionCategory",
+    "Base.ExpansionPopup.PremiumHeader",
 };
 
 var result = new Dictionary<string, List<Translations>>();

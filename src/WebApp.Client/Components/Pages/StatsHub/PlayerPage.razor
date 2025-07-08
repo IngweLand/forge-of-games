@@ -28,7 +28,7 @@
                         class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_player.Player.RankingPoints
                 </div>
                 <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@_player.Player.Rank</div>
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_Age]: </span>@_player.Player.Age</div>
+                <div><span class="label">@Loc[FogResource.Common_Age]: </span>@_player.Player.Age</div>
                 <div><span class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@_player.Player.UpdatedAt
                 </div>
             </div>
@@ -159,7 +159,7 @@
         </div>
 
         <div class="fog-container section-container">
-            <span class="section-title">@Loc[FogResource.StatsHub_Player_Ages]</span>
+            <span class="section-title">@Loc[FogResource.Common_Ages]</span>
             <MudTimeline TimelinePosition="TimelinePosition.Start">
                 @foreach (var age in _player.Ages)
                 {
