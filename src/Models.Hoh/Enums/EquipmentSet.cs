@@ -2,13 +2,18 @@ namespace Ingweland.Fog.Models.Hoh.Enums;
 
 public enum EquipmentSet
 {
-    Archer,
+    Assassin,
     Bard,
-    Hunter,
-    Musketeer,
-    Samurai,
-    Shaman,
-    Squire,
-    Warrior,
     Worker,
+    Hunter,
+    Squire,
+    Shaman,
+    Samurai,
+    Warrior,
+    Musketeer,
+    Ninja,
+    Archer,
+    Knight,
+    Monk,
+    Scientist,
 }
