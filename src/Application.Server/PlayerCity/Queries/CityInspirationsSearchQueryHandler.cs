@@ -1,5 +1,4 @@
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
@@ -44,8 +43,19 @@ public class CityInspirationsSearchQueryHandler(IFogDbContext context, IMapper m
             CitySnapshotSearchPreference.Food => query.OrderByDescending(x => x.Food),
             _ => query.OrderByDescending(x => x.Food),
         };
-        return await query.Take(FogConstants.MaxPlayerCitySnapshotSearchResults)
-            .ProjectTo<PlayerCitySnapshotBasicDto>(mapper.ConfigurationProvider)
+        var result = await query.Take(FogConstants.MaxPlayerCitySnapshotSearchResults)
             .ToListAsync(cancellationToken);
+
+        var deduplicated = result.DistinctBy(x => new
+        {
+            x.CityId,
+            x.AgeId,
+            x.OpenedExpansionsHash,
+            x.HasPremiumBuildings,
+            x.Coins,
+            x.Food,
+            x.Goods,
+        });
+        return mapper.Map<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>(deduplicated);
     }
 }
