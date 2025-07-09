@@ -36,6 +36,7 @@ public class HohCityFactory(IMapper mapper, IHohCitySnapshotFactory snapshotFact
             Snapshots = new List<HohCitySnapshot> {snapshotFactory.Create(entities)},
             WonderId = wonderId,
             WonderLevel = wonderLevel,
+            UpdatedAt = DateTime.UtcNow,
             UnlockedExpansions = inGameCity.OpenedExpansions.Select(src => src.Id).ToHashSet(),
         };
     }

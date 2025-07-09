@@ -11,7 +11,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
 {
     public HohCity CreateNewCapital(int cityPlannerVersion)
     {
-        return Create(new NewCityRequest {Name = $"{CityId.Capital} - {DateTime.Now:g}", CityId = CityId.Capital},
+        return Create(new NewCityRequest {Name = $"{CityId.Capital}", CityId = CityId.Capital},
             cityPlannerVersion);
     }
 
