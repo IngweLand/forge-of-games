@@ -9,7 +9,14 @@ using Microsoft.EntityFrameworkCore;
 namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
 public record CityInspirationsSearchQuery(CityInspirationsSearchRequest Request)
-    : IRequest<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>;
+    : IRequest<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>, ICacheableRequest
+{
+    public string CacheKey => $"CityInspirationsSearch_{Request.CityId}_{Request.AgeId}_{Request.SearchPreference}_{
+        Request.AllowPremiumEntities}_{Request.OpenedExpansionsHash}";
+
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public DateTimeOffset? Expiration { get; }
+}
 
 public class CityInspirationsSearchQueryHandler(IFogDbContext context, IMapper mapper)
     : IRequestHandler<CityInspirationsSearchQuery,

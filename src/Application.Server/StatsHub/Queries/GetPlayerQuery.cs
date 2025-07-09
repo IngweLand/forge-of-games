@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +13,8 @@ public record GetPlayerQuery : IRequest<PlayerWithRankings?>, ICacheableRequest
 {
     public required int PlayerId { get; init; }
     public string CacheKey => $"PlayerWithRanking_{PlayerId}";
-    public TimeSpan? Duration { get; }
-    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+    public TimeSpan? Duration => TimeSpan.FromHours(6);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class GetPlayerQueryHandler(
