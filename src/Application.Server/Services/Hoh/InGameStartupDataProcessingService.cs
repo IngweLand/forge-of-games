@@ -61,7 +61,7 @@ public class InGameStartupDataProcessingService(
         {
             const string msg = "Failed to map cities data";
             logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
+            return [];
         }
 
         var cities = new List<HohCity>();
@@ -95,7 +95,7 @@ public class InGameStartupDataProcessingService(
         return cities;
     }
     
-    private async Task<BasicCommandCenterProfile> ImportProfileAsync(StartupDto startupDto, IEnumerable<HohCity> cities)
+    private async Task<BasicCommandCenterProfile?> ImportProfileAsync(StartupDto startupDto, IEnumerable<HohCity> cities)
     {
         var barracksProfile = new BarracksProfile();
         var capital = cities.FirstOrDefault(c => c.InGameCityId == CityId.Capital);
@@ -114,15 +114,15 @@ public class InGameStartupDataProcessingService(
         {
             heroes = mapper.Map<IReadOnlyCollection<BasicHeroProfile>>(startupDto.HeroPush.Unlocked);
 
-            var profile = commandCenterProfileFactory.Create(heroes, barracksProfile);
-            return profile;
+            return commandCenterProfileFactory.Create(heroes, barracksProfile);
         }
         catch (Exception ex)
         {
             const string msg = "Failed to map heroes data";
             logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
         }
+
+        return null;
     }
 
     private async Task<IList<EquipmentItem>> ImportEquipmentAsync(StartupDto startupDto)
@@ -142,7 +142,6 @@ public class InGameStartupDataProcessingService(
         {
             const string msg = "Failed to map equipment data";
             logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
         }
 
         return equipmentItems;
