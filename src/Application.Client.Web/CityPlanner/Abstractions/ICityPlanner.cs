@@ -2,7 +2,6 @@ using System.Drawing;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Dtos.Hoh.City;
-using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using SkiaSharp;
@@ -20,6 +19,10 @@ public interface ICityPlanner
     Task<SnapshotsComparisonViewModel> CompareSnapshots();
     Task CreateSnapshot();
     void DeleteEntity(int entityId);
+    void MoveToInventory(IReadOnlySet<int> entityIds);
+    void MoveFromInventory(BuildingGroup buildingGroup);
+    void MoveAllToInventory();
+    void PurgeInventory();
     Task DeleteSnapshot(string id);
     Task InitializeAsync();
     Task InitializeAsync(HohCity city);

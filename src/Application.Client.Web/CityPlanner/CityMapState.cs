@@ -12,13 +12,16 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 public class CityMapState(
     IBuildingLevelRangesFactory buildingLevelRangesFactory) : CityMapStateCore
 {
+    private readonly List<CityMapEntity> _inventoryBuildings = [];
     private readonly IList<HohCitySnapshot> _snapshots = new List<HohCitySnapshot>();
 
     private IReadOnlyDictionary<BuildingGroup, BuildingLevelRange>? _buildingLevelRanges;
+    private readonly IReadOnlyCollection<BuildingSelectorTypesViewModel> _buildingSelectorItems = [];
 
     private CityPlannerCityPropertiesViewModel? _cityPropertiesViewModel;
 
     private CityStats _cityStats = new();
+    private Dictionary<BuildingGroup, BuildingSelectorItemViewModel> _flattenedBuildingSelectorItems = [];
     private CityMapBuildingGroupViewModel? _selectedCityMapBuildingGroupViewModel;
     private IReadOnlyList<CityMapEntity>? _selectedCityMapEntities;
     private CityMapEntity? _selectedCityMapEntity;
@@ -39,7 +42,17 @@ public class CityMapState(
         private set => _buildingLevelRanges = value;
     }
 
-    public required IReadOnlyCollection<BuildingSelectorTypesViewModel> BuildingSelectorItems { get; init; }
+    public required IReadOnlyCollection<BuildingSelectorTypesViewModel> BuildingSelectorItems
+    {
+        get => _buildingSelectorItems;
+        init
+        {
+            _buildingSelectorItems = value;
+            _flattenedBuildingSelectorItems = _buildingSelectorItems
+                .SelectMany(x => x.BuildingGroups)
+                .ToDictionary(x => x.BuildingGroup);
+        }
+    }
 
     public required string CityId { get; init; }
 
@@ -74,6 +87,8 @@ public class CityMapState(
     }
 
     public required CityId InGameCityId { get; init; }
+
+    public IReadOnlyCollection<CityMapEntity> InventoryBuildings => _inventoryBuildings.AsReadOnly();
 
     public CityMapBuildingGroupViewModel? SelectedCityMapBuildingGroupViewModel
     {
@@ -160,6 +175,47 @@ public class CityMapState(
     {
         get => _snapshots.AsReadOnly();
         init => _snapshots = value.OrderBy(src => src.CreatedDateUtc).ToList();
+    }
+
+    public void AddToInventory(CityMapEntity entity)
+    {
+        _inventoryBuildings.Add(entity);
+        _flattenedBuildingSelectorItems[entity.BuildingGroup].Count++;
+        StateChanged?.Invoke();
+    }
+    
+    public void AddToInventory(IEnumerable<CityMapEntity> entities)
+    {
+        foreach (var entity in entities)
+        {
+            _inventoryBuildings.Add(entity);
+            _flattenedBuildingSelectorItems[entity.BuildingGroup].Count++;
+        }
+        
+        StateChanged?.Invoke();
+    }
+    
+    public CityMapEntity? RemoveFromInventory(int entityId)
+    {
+        var entity = _inventoryBuildings.FirstOrDefault(e => e.Id == entityId);
+        if (entity == null)
+        {
+            return null;
+        }
+        _inventoryBuildings.Remove(entity);
+        _flattenedBuildingSelectorItems[entity.BuildingGroup].Count--;
+        StateChanged?.Invoke();
+        return entity;
+    }
+    
+    public void PurgeInventory()
+    {
+        _inventoryBuildings.Clear();
+        foreach (var item in _flattenedBuildingSelectorItems.Values)
+        {
+            item.Count = 0;
+        }
+        StateChanged?.Invoke();   
     }
 
     public event Action? StateChanged;

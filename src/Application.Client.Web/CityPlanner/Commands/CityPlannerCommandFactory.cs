@@ -22,6 +22,26 @@ public class CityPlannerCommandFactory(ICityPlanner cityPlanner) : ICityPlannerC
         return new RotateEntityCommand(cityPlanner, cityMapEntityId);
     }
 
+    public IUndoableCommand CreateMoveToInventoryCommand(IReadOnlySet<int> cityMapEntityIds)
+    {
+        return new MoveToInventoryCommand(cityPlanner, cityMapEntityIds);
+    }
+
+    public IUndoableCommand CreateMoveAllToInventoryCommand()
+    {
+        return new MoveAllToInventoryCommand(cityPlanner);
+    }
+
+    public IUndoableCommand CreatePurgeInventoryCommand()
+    {
+        return new PurgeInventoryCommand(cityPlanner);
+    }
+
+    public IUndoableCommand CreateMoveFromInventoryCommand(BuildingGroup buildingGroup)
+    {
+        return new MoveFromInventoryCommand(cityPlanner, buildingGroup);
+    }
+
     public IUndoableCommand CreateMoveEntityCommand(CityMapEntity entity, Point oldLocation)
     {
         return new MoveEntityCommand(cityPlanner, entity, oldLocation);

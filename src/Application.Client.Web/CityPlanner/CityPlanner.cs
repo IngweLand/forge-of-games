@@ -183,6 +183,57 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
+    public void MoveToInventory(IReadOnlySet<int> entityIds)
+    {
+        DeselectAll();
+
+        foreach (var entityId in entityIds)
+        {
+            if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+            {
+                continue;
+            }
+
+            CityMapState.Remove(entity.Id);
+            CityMapState.AddToInventory(entity);
+        }
+
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
+        UpdateSelectedEntityViewModel();
+        StateHasChanged?.Invoke();
+    }
+
+    public void MoveAllToInventory()
+    {
+        DeselectAll();
+
+        foreach (var entity in CityMapState.CityMapEntities.Values)
+        {
+            CityMapState.Remove(entity.Id);
+            CityMapState.AddToInventory(entity);
+        }
+
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
+        UpdateSelectedEntityViewModel();
+        StateHasChanged?.Invoke();
+    }
+
+    public void MoveFromInventory(BuildingGroup buildingGroup)
+    {
+        var entity = CityMapState.InventoryBuildings.FirstOrDefault(x => x.BuildingGroup == buildingGroup);
+        if (entity == null)
+        {
+            return;
+        }
+
+        CityMapState.RemoveFromInventory(entity.Id);
+
+        FindFreeLocation(entity, true);
+        CityMapState.Add(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
+        SelectCityMapEntity(entity);
+    }
+
     public async Task SaveCityAsync()
     {
         await persistenceService.SaveCity(GetCity());
@@ -422,6 +473,11 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
+    public void PurgeInventory()
+    {
+        CityMapState.PurgeInventory();
+    }
+
     private void FinalizeGroupLevelUpdate(string cityEntityId)
     {
         var building = CityMapState.Buildings[cityEntityId];
@@ -435,7 +491,7 @@ public class CityPlanner(
         DeselectAll();
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.Snapshots,
+            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings, CityMapState.Snapshots,
             _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }

@@ -5,9 +5,12 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 public class HohCity
 {
     public required string AgeId { get; set; }
+
+    public int CityPlannerVersion { get; set; }
     public IReadOnlyCollection<HohCityMapEntity> Entities { get; set; } = new List<HohCityMapEntity>();
     public required string Id { get; set; }
     public CityId InGameCityId { get; set; }
+    public IReadOnlyCollection<HohCityMapEntity> InventoryBuildings { get; set; } = new List<HohCityMapEntity>();
     public required string Name { get; set; }
     public IReadOnlyCollection<HohCitySnapshot> Snapshots { get; init; } = new List<HohCitySnapshot>();
     public HashSet<string> UnlockedExpansions { get; set; } = [];
@@ -15,6 +18,4 @@ public class HohCity
 
     public WonderId WonderId { get; set; }
     public int WonderLevel { get; set; }
-
-    public int CityPlannerVersion { get; set; }
 }

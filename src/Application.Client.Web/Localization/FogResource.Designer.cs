@@ -645,6 +645,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to remove all buildings from the inventory?.
+        /// </summary>
+        public static string CityPlanner_PurgeInventoryConfirmation {
+            get {
+                return ResourceManager.GetString("CityPlanner.PurgeInventoryConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Layout.
         /// </summary>
         public static string CityPlanner_Settings_Layout {

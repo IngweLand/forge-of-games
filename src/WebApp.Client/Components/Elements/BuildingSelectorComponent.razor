@@ -10,11 +10,22 @@
         @foreach (var buildingType in Items)
         {
             <MudTabPanel Class="buildings-selector-tabs" Icon="@buildingType.Icon">
-                <div class="city-planner-side-panel">
+                <div class="city-planner-side-panel user-select-none" style="width: 140px">
                     @foreach (var buildingGroup in buildingType.BuildingGroups)
                     {
-                        <div class="building-selector-item user-select-none"
-                             @onclick="@(_ => OnItemClick(buildingGroup))">@buildingGroup.Label</div>
+                        @if (!IsInventory)
+                        {
+                            <div class="building-selector-item user-select-none"
+                                 @onclick="@(_ => OnItemClick(buildingGroup))">@buildingGroup.Label</div>
+                        }
+                        else if (buildingGroup.Count > 0)
+                        {
+                            <MudBadge Origin="Origin.TopRight" Content="@buildingGroup.Count" Color="Color.Primary"
+                                      Overlap="true" Class="user-select-none" BadgeClass="user-select-none">
+                                <div class="building-selector-item user-select-none"
+                                     @onclick="@(_ => OnItemClick(buildingGroup))">@buildingGroup.Label</div>
+                            </MudBadge>
+                        }
                     }
                 </div>
             </MudTabPanel>
@@ -25,15 +36,22 @@
     .mud-tab-slider {
         width: 6px !important;
     }
+    .mud-badge.mud-badge-top.right.mud-badge-overlap {
+        inset: auto auto calc(100% - 12px) calc(100% - 18px) !important;
+    }
 </style>
 
 @code {
 
     [Parameter]
+    [EditorRequired]
     public IReadOnlyCollection<BuildingSelectorTypesViewModel>? Items { get; set; }
 
     [Parameter]
     public EventCallback<BuildingGroup> ItemClicked { get; set; }
+
+    [Parameter]
+    public bool IsInventory { get; set; }
 
     private Task OnItemClick(BuildingSelectorItemViewModel buildingGroup)
     {

@@ -35,13 +35,13 @@
                 <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="ZoomIn" Class="fog-icon-light"/>
                 <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="FitToScreen" Class="fog-icon-light"/>
             </div>
-            <div class="toolbar-divider"></div>
-            <div>
-                <MudIconButton Icon="@Icons.Material.Outlined.Undo" OnClick="Undo" Class="fog-icon-light"
-                               Disabled="@(!CommandManager.CanUndo)"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.Redo" OnClick="Redo" Class="fog-icon-light"
-                               Disabled="@(!CommandManager.CanRedo)"/>
-            </div>
+            @* <div class="toolbar-divider"></div> *@
+            @* <div> *@
+            @*     <MudIconButton Icon="@Icons.Material.Outlined.Undo" OnClick="Undo" Class="fog-icon-light" *@
+            @*                    Disabled="@(!CommandManager.CanUndo)"/> *@
+            @*     <MudIconButton Icon="@Icons.Material.Outlined.Redo" OnClick="Redo" Class="fog-icon-light" *@
+            @*                    Disabled="@(!CommandManager.CanRedo)"/> *@
+            @* </div> *@
             <div class="toolbar-divider"></div>
             <div>
                 <MudIconButton Icon="@Icons.Material.Outlined.Cached" OnClick="Rotate" Class="fog-icon-light"
@@ -51,6 +51,22 @@
                 <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="SelectGroup" Class="fog-icon-light"
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
             </div>
+            <div class="toolbar-divider"></div>
+            <MudToggleIconButton Icon="material-symbols-outlined/shelves" ToggledColor="Color.Error"
+                                 @bind-Toggled="_inventoryIsActive"
+                                 Color="Color.Primary" Variant="Variant.Filled" DropShadow="false"
+                                 ToggledVariant="Variant.Filled"/>
+            <MudIconButton
+                Icon="@(CityPlanner.CityMapState.SelectedCityMapEntities != null ? "material-symbols-outlined/stat_minus_2" : "material-symbols-outlined/stat_minus_1")"
+                Class="fog-icon-light"
+                OnClick="MoveToInventory"
+                Disabled="@(!_inventoryIsActive || (CityPlanner.CityMapState.SelectedCityMapEntity == null && CityPlanner.CityMapState.SelectedCityMapEntities == null))"/>
+            <MudIconButton Icon="material-symbols-outlined/stat_minus_3" Class="fog-icon-light"
+                           OnClick="MoveAllToInventory"
+                           Disabled="@(!_inventoryIsActive)"/>
+            <MudIconButton Icon="@Icons.Material.Outlined.DeleteSweep" Class="fog-icon-light"
+                           OnClick="PurgeInventory"
+                           Disabled="@(!_inventoryIsActive || CityPlanner.CityMapState.InventoryBuildings.Count == 0)"/>
             <MudSpacer/>
             @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@
             @* <div class="toolbar-divider"></div> *@
@@ -62,7 +78,7 @@
         </MudAppBar>
         @if (_leftPanelIsVisible)
         {
-            <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked"
+            <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked" IsInventory="@_inventoryIsActive"
                                        Items="@CityPlanner?.CityMapState.BuildingSelectorItems"/>
         }
 

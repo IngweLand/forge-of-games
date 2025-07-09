@@ -32,9 +32,9 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
     }
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
-        IEnumerable<CityMapEntity> entities, IReadOnlyCollection<HohCitySnapshot> snapshots,
-        IEnumerable<string> expansions, int cityPlannerVersion, WonderId cityWonderId = WonderId.Undefined,
-        int cityWonderLevel = 0)
+        IEnumerable<CityMapEntity> entities, IEnumerable<CityMapEntity> inventoryBuildings,
+        IReadOnlyCollection<HohCitySnapshot> snapshots, IEnumerable<string> expansions, int cityPlannerVersion,
+        WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
     {
         return new HohCity
         {
@@ -42,6 +42,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
             InGameCityId = inGameCityId,
             AgeId = ageId,
             Entities = mapper.Map<IReadOnlyCollection<HohCityMapEntity>>(entities),
+            InventoryBuildings = mapper.Map<IReadOnlyCollection<HohCityMapEntity>>(inventoryBuildings),
             Name = name,
             Snapshots = snapshots,
             UnlockedExpansions = expansions.ToHashSet(),

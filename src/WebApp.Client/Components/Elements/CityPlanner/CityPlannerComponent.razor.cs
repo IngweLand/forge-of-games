@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Constants;
@@ -10,6 +11,7 @@ using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.Extensions.Localization;
 using MudBlazor;
 using SkiaSharp.Views.Blazor;
 using Size = System.Drawing.Size;
@@ -21,6 +23,8 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 {
     private Size _canvasSize = Size.Empty;
     private bool _fitOnPaint = true;
+
+    private bool _inventoryIsActive;
     private bool _isInitialized;
     private bool _leftPanelIsVisible = true;
     private bool _rightPanelIsVisible = true;
@@ -52,6 +56,9 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     [Inject]
     private IJSInteropService JsInteropService { get; set; }
+
+    [Inject]
+    public IStringLocalizer<FogResource> Loc { get; set; }
 
     [Inject]
     public ILocalStorageBackupService LocalStorageBackupService { get; set; }
@@ -100,9 +107,17 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private void BuildingSelectorOnItemClicked(BuildingGroup buildingGroup)
     {
-        var cmd = CommandFactory.CreateAddBuildingCommand(buildingGroup);
-        CommandManager.ExecuteCommand(cmd);
-        _skCanvasView!.Invalidate();
+        if (_inventoryIsActive)
+        {
+            var cmd = CommandFactory.CreateMoveFromInventoryCommand(buildingGroup);
+            CommandManager.ExecuteCommand(cmd);
+        }
+        else
+        {
+            var cmd = CommandFactory.CreateAddBuildingCommand(buildingGroup);
+            CommandManager.ExecuteCommand(cmd);
+            _skCanvasView!.Invalidate();
+        }
     }
 
     private void CityPlannerOnStateHasHasChanged()
@@ -126,6 +141,33 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         var cmd = CommandFactory.CreateDeleteEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity);
         CommandManager.ExecuteCommand(cmd);
         _skCanvasView!.Invalidate();
+    }
+
+    private void MoveToInventory()
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntities != null)
+        {
+            CommandManager.ExecuteCommand(CommandFactory.CreateMoveToInventoryCommand(CityPlanner.CityMapState
+                .SelectedCityMapEntities.Select(x => x.Id).ToHashSet()));
+        }
+        else
+        {
+            if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
+            {
+                return;
+            }
+
+            CommandManager.ExecuteCommand(
+                CommandFactory.CreateMoveToInventoryCommand(new HashSet<int>([
+                    CityPlanner.CityMapState.SelectedCityMapEntity.Id,
+                ])));
+        }
+    }
+
+    private void MoveAllToInventory()
+    {
+        var cmd = CommandFactory.CreateMoveAllToInventoryCommand();
+        CommandManager.ExecuteCommand(cmd);
     }
 
     private void FitToScreen()
@@ -317,5 +359,17 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private void NavigateToDashboard()
     {
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
+    }
+
+    private async Task PurgeInventory()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.CityPlanner_PurgeInventoryConfirmation],
+            Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null)
+        {
+            CommandManager.ExecuteCommand(CommandFactory.CreatePurgeInventoryCommand());
+        }
     }
 }

@@ -47,6 +47,11 @@ public class CityMapStateFactory(
             var building = buildings.First(b => b.Id == hohCityMapEntity.CityEntityId);
             return cityMapEntityFactory.Create(building, hohCityMapEntity);
         }));
+        state.AddToInventory(city.InventoryBuildings.Select(hohCityMapEntity =>
+        {
+            var building = buildings.First(b => b.Id == hohCityMapEntity.CityEntityId);
+            return cityMapEntityFactory.Create(building, hohCityMapEntity);
+        }));
         return state;
     }
 }
