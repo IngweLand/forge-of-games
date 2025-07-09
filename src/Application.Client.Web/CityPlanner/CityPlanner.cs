@@ -527,8 +527,13 @@ public class CityPlanner(
         return newEntity;
     }
 
-    private void FindFreeLocation(CityMapEntity cityMapEntity)
+    private void FindFreeLocation(CityMapEntity cityMapEntity, bool tryCurrentLocation = false)
     {
+        if (tryCurrentLocation && CanBePlaced(cityMapEntity))
+        {
+            return;
+        }
+
         for (var i = _mapArea.Bounds.Y; i < _mapArea.Bounds.Bottom; i++)
         {
             for (var j = _mapArea.Bounds.X; j < _mapArea.Bounds.Right; j++)
@@ -541,7 +546,20 @@ public class CityPlanner(
             }
         }
 
-        cityMapEntity.Location = new Point(_mapArea.Bounds.X - cityMapEntity.Bounds.Width - 1, _mapArea.Bounds.Y);
+        var x = _mapArea.Bounds.X - cityMapEntity.Bounds.Width - 1;
+        while (true)
+        {
+            for (var y = _mapArea.Bounds.Y; y < _mapArea.Bounds.Bottom; y++)
+            {
+                cityMapEntity.Location = new Point(x, y);
+                if (CanBePlaced(cityMapEntity))
+                {
+                    return;
+                }
+            }
+
+            x--;
+        }
     }
 
     private bool IntersectsWithBuilding(CityMapEntity targetEntity)
