@@ -8,6 +8,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
+using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.WebApp.Services;
 
@@ -135,6 +136,11 @@ internal class DummyJSInteropService : IJSInteropService
     }
 
     public ValueTask ShowLoadingIndicatorAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask ScrollTo(ElementReference target, int position, bool smooth = false)
     {
         throw new NotImplementedException();
     }

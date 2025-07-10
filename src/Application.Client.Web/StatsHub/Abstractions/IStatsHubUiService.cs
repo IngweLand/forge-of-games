@@ -9,14 +9,14 @@ public interface IStatsHubUiService
 {
     Task<PlayerWithRankingsViewModel?> GetPlayerAsync(int playerId);
 
-    Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int pageNumber = 1,
+    Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int startIndex, int pageSize,
         string? playerName = null, CancellationToken ct = default);
 
     Task<TopStatsViewModel> GetTopStatsAsync();
 
     Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId);
 
-    Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int pageNumber = 1,
+    Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
         string? allianceName = null, CancellationToken ct = default);
 
     Task<BattleSelectorViewModel> GetBattleSelectorViewModel();

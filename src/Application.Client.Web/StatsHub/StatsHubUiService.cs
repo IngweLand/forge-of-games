@@ -86,22 +86,20 @@ public class StatsHubUiService(
         return newViewModel;
     }
 
-    public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int pageNumber = 1,
-        string? allianceName = null,
-        CancellationToken ct = default)
+    public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
+        string? allianceName = null, CancellationToken ct = default)
     {
         var result =
-            await statsHubService.GetAlliancesAsync(worldId, pageNumber, name: allianceName,
-                ct: ct);
+            await statsHubService.GetAlliancesAsync(worldId, startIndex, pageSize, name: allianceName, ct: ct);
         return statsHubViewModelsFactory.CreateAlliances(result);
     }
 
-    public async Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int pageNumber = 1,
+    public async Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int startIndex, int pageSize,
         string? playerName = null, CancellationToken ct = default)
     {
         await GetAgesAsync();
         var result =
-            await statsHubService.GetPlayersAsync(worldId, pageNumber, name: playerName, ct: ct);
+            await statsHubService.GetPlayersAsync(worldId, startIndex, pageSize, name: playerName, ct: ct);
         return statsHubViewModelsFactory.CreatePlayers(result, _ages!);
     }
 

@@ -10,9 +10,9 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
 public record GetPlayersWithPaginationQuery : IRequest<PaginatedList<PlayerDto>>
 {
-    public int PageNumber { get; init; }
+    public int StartIndex { get; init; }
     public int PageSize { get; init; }
-    public string? PlayerName { get; init; }
+    public string? Name { get; init; }
     public string? WorldId { get; init; }
 }
 
@@ -23,14 +23,14 @@ public class GetPlayersWithPaginationQueryHandler(IFogDbContext context, IMapper
         CancellationToken cancellationToken)
     {
         // TODO implement validator instead
-        var pageSize = request.PageSize > 20 ? 20 : request.PageSize;
+        var pageSize = request.PageSize > 100 ? 100 :request.PageSize;
         var result = context.Players.Where(p => p.IsPresentInGame);
         if (request.WorldId != null)
         {
             result = result.Where(p => p.WorldId == request.WorldId);
         }
         
-        var playerName = request.PlayerName?.Trim();
+        var playerName = request.Name?.Trim();
         if (!string.IsNullOrWhiteSpace(playerName))
         {
             result = result.Where(p => p.Name.Contains(playerName));
@@ -40,6 +40,6 @@ public class GetPlayersWithPaginationQueryHandler(IFogDbContext context, IMapper
             .OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
-            .ToPaginatedListAsync(request.PageNumber, pageSize, cancellationToken);
+            .ToPaginatedListAsync(request.StartIndex, pageSize, cancellationToken);
     }
 }

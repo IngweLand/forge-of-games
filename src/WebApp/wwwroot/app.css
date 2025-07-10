@@ -47,6 +47,8 @@
     /*values*/
     --fog-border-radius: 0.5rem;
     --main-font-family: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --main-content-padding: 8px;
+    --main-content-padding-576: 12px;
 }
 
 html {
@@ -222,7 +224,8 @@ input[type="radio"]:checked {
 .main-layout-main-content {
     display: flex;
     flex-direction: column;
-    padding: 8px !important;
+    padding: var(--main-content-padding) !important;
+    position: relative;
 }
 
 /*city planner start*/
@@ -387,7 +390,7 @@ input[type="radio"]:checked {
 .static-main-layout-main-content {
     display: flex;
     flex-direction: column;
-    padding: 8px !important;
+    padding: var(--main-content-padding) !important;
 }
 
 .command-center-grid-container {
@@ -516,11 +519,11 @@ img.command-center-card-icon {
 
 @media (min-width: 576px) {
     .main-layout-main-content {
-        padding: 12px !important;
+        padding: var(--main-content-padding-576) !important;
     }
     
     .static-main-layout-main-content {
-        padding: 12px !important;
+        padding: var(--main-content-padding-576) !important;
     }
 
     .cc-page-container {

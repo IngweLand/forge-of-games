@@ -110,20 +110,20 @@ window.Fog.Webapp.Common = {
         // Set the height
         inputDiv.style.height = `${availableHeight}px`;
     },
-    
-    resetScrollPosition: function (){
+
+    resetScrollPosition: function () {
         window.scrollTo(0, 1);
         window.scrollTo(0, 0);
     },
 
-    hidePageLoadingIndicator:  () => {
+    hidePageLoadingIndicator: () => {
         const loadingElement = document.getElementById('page-loading-indicator');
         if (loadingElement) {
             loadingElement.style.display = 'none';
         }
     },
 
-    showPageLoadingIndicator:  () => {
+    showPageLoadingIndicator: () => {
         const loadingElement = document.getElementById('page-loading-indicator');
         if (loadingElement) {
             loadingElement.style.display = 'flex';
@@ -139,9 +139,17 @@ window.Fog.Webapp.Common = {
             return false;
         }
     },
-    
+
     isMobile: () => {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     },
+
+    scrollTo: (elem, position, smooth) => {
+        let behavior = 'instant';
+        if (smooth === true) {
+            behavior = 'smooth'
+        }
+        elem.scrollTo({top: position, behavior: behavior});
+    }
 };
 

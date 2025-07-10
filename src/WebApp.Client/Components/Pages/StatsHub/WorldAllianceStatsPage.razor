@@ -5,9 +5,8 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent Items="@Items" PageNumber="@CalculatedPageNumber" Title="@Title"
-                                 OnPageChanged="OnPageChanged" OnSearch="Search"
-                                 IsLoading="@IsLoading" NameSearchString="@NameSearchString">
+    <PaginatedStatsListComponent Title="@Title" OnSearch="Search" ItemsProviderDelegate="GetDataAsync"
+                                 NameSearchString="@NameSearchString">
         <ItemTemplate >
             <AllianceListItemComponent Alliance="@context" OnClick="OnItemClicked" />
         </ItemTemplate>

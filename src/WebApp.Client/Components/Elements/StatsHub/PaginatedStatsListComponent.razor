@@ -1,16 +1,14 @@
 @inject IStringLocalizer<FogResource> Loc
-@using Blazored.LocalStorage
-@using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Core.Helpers
-@using Ingweland.Fog.Models.Fog
-@using Ingweland.Fog.Shared.Constants
-@using Ingweland.Fog.WebApp.Client.Services.Abstractions
-@using Microsoft.Extensions.Localization
-@using Size = MudBlazor.Size
 @inject IJSInteropService JsInteropService
 @inject NavigationManager NavigationManager
 @inject ILocalStorageService LocalStorageService
 @typeparam TItem
+@using Blazored.LocalStorage
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
+@using Microsoft.Extensions.Localization
+@implements IAsyncDisposable
 <div class="content-wrapper">
     @if (_shouldShowContributionPrompt)
     {
@@ -22,39 +20,29 @@
     <div class="fog-container section">
         <div class="top-container">
             <span class="title">@Title</span>
-            <MudIconButton Icon="@Icons.Material.Filled.Search" OnClick="ToggleSearchForm"/>
-            @if (IsLoading)
+            @if (_isLoading)
             {
                 <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
                                    Indeterminate="true"/>
             }
         </div>
-        <MudCollapse Expanded="@_searchFormIsExpanded">
-            <div class="search-form">
-                <MudTextField @ref="@_nameSearchField" OnKeyDown="SearchTextFieldOnKeyDown"
-                              @bind-Value="@NameSearchString" Label="@Loc[FogResource.StatsHub_NameSearchField_Label]"
-                              Variant="Variant.Outlined" Immediate="true" Clearable="true"
-                              OnClearButtonClick="Search"/>
-                <MudButton Variant="Variant.Filled" OnClick="Search" Style="align-self: end"
-                           Disabled="@(string.IsNullOrWhiteSpace(NameSearchString))"
-                           Color="Color.Primary">@Loc[FogResource.Common_Search]</MudButton>
-            </div>
-
-        </MudCollapse>
-        <div class="items-container">
-
-            @if (Items != null)
-            {
-                @foreach (var item in Items.Items)
-                {
-                    @ItemTemplate(item)
-                }
-            }
-
+        <div class="search-form">
+            <MudTextField @ref="@_nameSearchField" DebounceInterval="500" OnDebounceIntervalElapsed="OnSearch"
+                          Value="@_nameSearchString" Label="@Loc[FogResource.StatsHub_NameSearchField_Label]"
+                          Variant="Variant.Outlined" Immediate="true" Clearable="true"
+                          AdornmentIcon="@Icons.Material.Filled.Search" Adornment="Adornment.End"
+                          OnClearButtonClick="OnClearButtonClick"/>
         </div>
-        <div class="pagination-container">
-            <MudPagination Count="@(Items?.TotalPages ?? 0)" Selected="@PageNumber"
-                           Disabled="@(Items == null)" Size="Size.Large" SelectedChanged="OnPageChanged"/>
+        <div class="items-container" @ref="_itemsContainer">
+
+            <Virtualize Context="item" @ref="_virtualizeComponent" ItemsProvider="GetItemsAsync" OverscanCount="10">
+                <ItemContent>
+                    @ItemTemplate(item)
+                </ItemContent>
+                <Placeholder>
+                    <ListItemPlaceholder/>
+                </Placeholder>
+            </Virtualize>
         </div>
 
     </div>
@@ -62,80 +50,106 @@
 
 @code {
 
-    [Parameter, EditorRequired]
+    private const string CONTRIBUTION_PROMPT_CLICKED_KEY = "ContributionPromptClicked";
+    private const int DEBOUNCE_INTERVAL = 150;
+
+    private bool _shouldShowContributionPrompt = true;
+    private Virtualize<TItem>? _virtualizeComponent;
+    private ElementReference _itemsContainer;
+    private bool _isLoading;
+    private MudTextField<string> _nameSearchField = null!;
+    private string? _nameSearchString;
+    private readonly ItemsProviderResult<TItem> _emptyResult = new([], 0);
+    private CancellationTokenSource? _currentRequestTokenSource;
+
+    [Parameter]
+    [EditorRequired]
     public RenderFragment<TItem> ItemTemplate { get; set; }
 
-    [Parameter, EditorRequired]
-    public PaginatedList<TItem>? Items { get; set; }
-
-    [Parameter, EditorRequired]
-    public int PageNumber { get; set; }
-
-    [Parameter, EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public string Title { get; set; }
 
-    [Parameter, EditorRequired]
-    public EventCallback<int> OnPageChanged { get; set; }
-
-    [Parameter, EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public EventCallback<string> OnSearch { get; set; }
 
-    [Parameter, EditorRequired]
-    public bool IsLoading { get; set; }
-
-    [Parameter, EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public string? NameSearchString
     {
         get => _nameSearchString;
         set
         {
-            _nameSearchString = value;
-            if (!string.IsNullOrWhiteSpace(_nameSearchString))
+            if (_nameSearchString == value)
             {
-                _searchFormIsExpanded = true;
+                return;
+            }
+
+            _nameSearchString = value;
+
+            if (_virtualizeComponent != null)
+            {
+                Console.Out.WriteLine("NameSearchString");
+                InvokeAsync(async () =>
+                {
+                    await JsInteropService.ScrollTo(_itemsContainer, 0);
+                    await _virtualizeComponent.RefreshDataAsync();
+                    StateHasChanged();
+                });
             }
         }
     }
 
-    private bool _searchFormIsExpanded;
-    private MudTextField<string> _nameSearchField = null!;
-    private string? _nameSearchString;
+    [Parameter]
+    [EditorRequired]
+    public ItemsProviderDelegate<TItem> ItemsProviderDelegate { get; set; }
 
-    private async Task ToggleSearchForm()
+    private async ValueTask<ItemsProviderResult<TItem>> GetItemsAsync(ItemsProviderRequest request)
     {
-        _searchFormIsExpanded = !_searchFormIsExpanded;
-        if (_searchFormIsExpanded)
+        if (_currentRequestTokenSource != null)
         {
-            await _nameSearchField.FocusAsync();
+            await _currentRequestTokenSource.CancelAsync();
+        }
+
+        _currentRequestTokenSource = new CancellationTokenSource();
+
+        try
+        {
+            await Task.Delay(DEBOUNCE_INTERVAL, _currentRequestTokenSource.Token);
+
+            _isLoading = true;
+            StateHasChanged();
+
+            var result = await ItemsProviderDelegate.Invoke(request);
+            _isLoading = false;
+            StateHasChanged();
+            return result;
+        }
+        catch (OperationCanceledException)
+        {
+            return _emptyResult;
         }
     }
 
-    private Task SearchTextFieldOnKeyDown(KeyboardEventArgs args)
-    {
-        return args.Key == KeyboardKeys.Enter ? OnSearch.InvokeAsync(NameSearchString) : Task.CompletedTask;
-    }
-
-    private async Task Search()
+    private async Task OnClearButtonClick()
     {
         if (await JsInteropService.IsMobileAsync())
         {
             await _nameSearchField.BlurAsync();
         }
 
-        await OnSearch.InvokeAsync(NameSearchString);
+        await OnSearch.InvokeAsync();
     }
 
     private async Task OnContributionPromptClick()
     {
         _shouldShowContributionPrompt = false;
 
-        await LocalStorageService.SetItemAsync(ContributionPromptClickedKey, true);
+        await LocalStorageService.SetItemAsync(CONTRIBUTION_PROMPT_CLICKED_KEY, true);
 
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH);
     }
-
-    private bool _shouldShowContributionPrompt = true;
-    private const string ContributionPromptClickedKey = "ContributionPromptClicked";
 
     protected override async Task OnInitializedAsync()
     {
@@ -144,7 +158,12 @@
             return;
         }
 
-        _shouldShowContributionPrompt = !await LocalStorageService.GetItemAsync<bool>(ContributionPromptClickedKey);
+        _shouldShowContributionPrompt = !await LocalStorageService.GetItemAsync<bool>(CONTRIBUTION_PROMPT_CLICKED_KEY);
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        _currentRequestTokenSource?.Dispose();
     }
 
 }

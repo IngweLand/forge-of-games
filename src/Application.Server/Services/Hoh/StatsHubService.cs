@@ -11,12 +11,12 @@ namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
 public class StatsHubService(ISender sender) : IStatsHubService
 {
-    public Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, int pageNumber = 1,
+    public Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, int startIndex,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, string? name = null, CancellationToken ct = default)
     {
         var query = new GetPlayersWithPaginationQuery
         {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name,
+            StartIndex = startIndex, PageSize = pageSize, WorldId = worldId, Name = name,
         };
         return sender.Send(query, ct);
     }
@@ -30,13 +30,13 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query);
     }
 
-    public Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, int pageNumber = 1,
+    public Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, int startIndex,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         string? name = null, CancellationToken ct = default)
     {
         var query = new GetAlliancesWithPaginationQuery
         {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
+            StartIndex = startIndex, PageSize = pageSize, WorldId = worldId, Name = name,
         };
         return sender.Send(query, ct);
     }

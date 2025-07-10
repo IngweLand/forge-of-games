@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Components;
+
 namespace Ingweland.Fog.WebApp.Client.Services.Abstractions;
 
 public interface IJSInteropService
@@ -8,4 +10,5 @@ public interface IJSInteropService
     ValueTask HideLoadingIndicatorAsync();
     ValueTask ResetScrollPositionAsync();
     ValueTask ShowLoadingIndicatorAsync();
+    ValueTask ScrollTo(ElementReference target, int position, bool smooth = false);
 }

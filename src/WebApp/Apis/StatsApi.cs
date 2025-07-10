@@ -109,16 +109,9 @@ public static class StatsApi
 
     private static async Task<Results<Ok<PaginatedList<PlayerDto>>, BadRequest<string>>>
         GetPlayersAsync([AsParameters] StatsServices services, HttpContext context,
-            string worldId,
-            [FromQuery] int pageNumber = 1,
-            [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
-            [FromQuery] string? name = null)
+            [AsParameters] GetPlayersWithPaginationQuery query, CancellationToken ct = default)
     {
-        var query = new GetPlayersWithPaginationQuery
-        {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, PlayerName = name,
-        };
-        var result = await services.Mediator.Send(query);
+        var result = await services.Mediator.Send(query, ct);
 
         return TypedResults.Ok(result);
     }
@@ -141,16 +134,10 @@ public static class StatsApi
 
     private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
         GetAlliancesAsync([AsParameters] StatsServices services, HttpContext context,
-            string worldId,
-            [FromQuery] int pageNumber = 1,
-            [FromQuery] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
-            [FromQuery] string? name = null)
+            [AsParameters] GetAlliancesWithPaginationQuery query,
+            CancellationToken ct = default)
     {
-        var query = new GetAlliancesWithPaginationQuery
-        {
-            PageNumber = pageNumber, PageSize = pageSize, WorldId = worldId, AllianceName = name,
-        };
-        var result = await services.Mediator.Send(query);
+        var result = await services.Mediator.Send(query, ct);
 
         return TypedResults.Ok(result);
     }

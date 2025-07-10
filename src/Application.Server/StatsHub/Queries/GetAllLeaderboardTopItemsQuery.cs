@@ -20,10 +20,14 @@ public class
     public async Task<LeaderboardTopItemsDto> Handle(GetAllLeaderboardTopItemsQuery request,
         CancellationToken cancellationToken)
     {
-        var mainPlayers = await statsHubService.GetPlayersAsync("un1", ct: cancellationToken);
-        var betaPlayers = await statsHubService.GetPlayersAsync("zz1", ct: cancellationToken);
-        var mainAlliances = await statsHubService.GetAlliancesAsync("un1", ct: cancellationToken);
-        var betaAlliances = await statsHubService.GetAlliancesAsync("zz1", ct: cancellationToken);
+        var mainPlayers =
+            await statsHubService.GetPlayersAsync("un1", ct: cancellationToken);
+        var betaPlayers =
+            await statsHubService.GetPlayersAsync("zz1", ct: cancellationToken);
+        var mainAlliances =
+            await statsHubService.GetAlliancesAsync("un1", ct: cancellationToken);
+        var betaAlliances =
+            await statsHubService.GetAlliancesAsync("zz1", ct: cancellationToken);
         return new LeaderboardTopItemsDto
         {
             MainWorldPlayers = mainPlayers,

@@ -1,4 +1,5 @@
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
@@ -18,6 +19,11 @@ public class JSInteropService(IJSRuntime jsRuntime) : IJSInteropService
     public ValueTask ShowLoadingIndicatorAsync()
     {
         return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.showPageLoadingIndicator");
+    }
+
+    public ValueTask ScrollTo(ElementReference target, int position, bool smooth = false)
+    {
+        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.scrollTo", target, position, smooth);
     }
 
     public ValueTask<bool> CopyToClipboardAsync(string payload)

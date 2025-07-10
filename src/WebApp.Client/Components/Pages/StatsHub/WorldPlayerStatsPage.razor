@@ -5,11 +5,10 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent Items="@Items" PageNumber="@CalculatedPageNumber" Title="@Title"
-                                 OnPageChanged="OnPageChanged" OnSearch="Search"
-                                 IsLoading="@IsLoading" NameSearchString="@NameSearchString">
-        <ItemTemplate >
-            <PlayerListItemComponent Player="@context" OnClick="OnItemClicked" />
+    <PaginatedStatsListComponent Title="@Title" OnSearch="Search" ItemsProviderDelegate="GetDataAsync"
+                                 NameSearchString="@NameSearchString">
+        <ItemTemplate>
+            <PlayerListItemComponent Player="@context" OnClick="OnItemClicked"/>
         </ItemTemplate>
     </PaginatedStatsListComponent>
 }

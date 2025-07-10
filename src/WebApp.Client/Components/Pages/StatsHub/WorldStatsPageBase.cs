@@ -1,24 +1,19 @@
 using Ingweland.Fog.Models.Fog;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web.Virtualization;
+using Refit;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
 public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 {
     private bool _isNavigatingAway;
-    protected PaginatedList<TItem>? Items { get; private set; }
-    protected int CalculatedPageNumber { get; private set; } = 1;
-    protected CancellationTokenSource? Cts { get; set; }
-    protected bool IsLoading { get; private set; } = true;
-    protected string? NameSearchString { get; private set; }
 
     [Parameter]
     [SupplyParameterFromQuery]
     public string? Name { get; set; }
 
-    [Parameter]
-    [SupplyParameterFromQuery]
-    public int? PageNumber { get; set; }
+    protected string? NameSearchString { get; private set; }
 
     protected string Title { get; private set; }
 
@@ -34,38 +29,9 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
         await base.OnParametersSetAsync();
 
-        IsLoading = true;
-
         Title = GetTitle();
 
-        var pageNumber = 1;
-        if (PageNumber is > 1)
-        {
-            pageNumber = PageNumber.Value;
-        }
-
-        try
-        {
-            Items = await LoadWithPersistenceAsync(GetPersistenceKey(), async () => await GetData(pageNumber));
-        }
-        catch (OperationCanceledException _)
-        {
-            return;
-        }
-        catch (Refit.ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
-        {
-            return;
-        }
-        catch (Exception ex)
-        {
-            await Console.Error.WriteLineAsync($"Unexpected error: {ex}");
-            return;
-        }
-
-        CalculatedPageNumber = pageNumber;
         NameSearchString = Name;
-
-        IsLoading = false;
 
         if (OperatingSystem.IsBrowser())
         {
@@ -75,39 +41,41 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
     protected abstract string GetTitle();
 
-    protected abstract Task<PaginatedList<TItem>> GetData(int pageNumber);
+    protected abstract ValueTask<PaginatedList<TItem>> FetchDataAsync(ItemsProviderRequest request);
 
-    private string GetPersistenceKey()
+    protected async ValueTask<ItemsProviderResult<TItem>> GetDataAsync(ItemsProviderRequest request)
     {
-        return $"{nameof(Items)}_{PageNumber}_{Name}";
+        try
+        {
+            var result = await FetchDataAsync(request);
+            return new ItemsProviderResult<TItem>(result.Items, result.TotalCount);
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+        }
+        catch (Exception ex)
+        {
+            await Console.Error.WriteLineAsync($"Unexpected error: {ex}");
+        }
+
+        return new ItemsProviderResult<TItem>([], 0);
     }
 
-    private void NavigateWithQuery(int pageNumber)
+    private void NavigateWithQuery(string? nameSearchString)
     {
-        Cts?.Cancel();
-
-        var query = new Dictionary<string, object?>()
+        var query = new Dictionary<string, object?>
         {
-            {nameof(PageNumber), pageNumber},
-            {nameof(Name), NameSearchString}
+            {nameof(Name), nameSearchString},
         };
 
         NavigationManager.NavigateTo(NavigationManager.GetUriWithQueryParameters(query), false);
     }
 
-    protected void OnPageChanged(int pageNumber)
-    {
-        if (pageNumber == PageNumber || (pageNumber == 1 && !PageNumber.HasValue))
-        {
-            return;
-        }
-
-        NavigateWithQuery(pageNumber);
-    }
-
     protected void OnItemClicked(TItem item)
     {
-        Cts?.Cancel();
         _isNavigatingAway = true;
         NavigateToItemPage(item);
     }
@@ -116,7 +84,7 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
     protected void Search(string? name)
     {
-        NameSearchString = name;
-        NavigateWithQuery(1);
+        Console.Out.WriteLine("Search(string? name)");
+        NavigateWithQuery(name);
     }
 }

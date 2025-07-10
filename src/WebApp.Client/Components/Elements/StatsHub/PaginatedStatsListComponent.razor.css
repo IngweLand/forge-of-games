@@ -2,12 +2,20 @@
     padding-left: 0 !important;
 }
 
-.content-wrapper{
+.content-wrapper {
     display: flex;
     flex-direction: column;
     align-self: center;
     gap: 8px;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: var(--main-content-padding);
 }
 
 .section {
@@ -15,8 +23,9 @@
     flex-direction: column;
     align-self: center;
     width: 100%;
-    max-width: 650px;
+    max-width: 1200px;
     overflow: hidden;
+    flex: 1;
 }
 
 .help-info {
@@ -46,7 +55,8 @@
     align-items: stretch;
     align-self: stretch;
     container-type: inline-size;
-    min-height: 350px;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .pagination-container {
@@ -67,10 +77,11 @@
 }
 
 @media (min-width: 576px) {
-    .content-wrapper{
+    .content-wrapper {
         gap: 12px;
+        padding: var(--main-content-padding-576);
     }
-    
+
     .top-container {
         padding: 12px;
     }

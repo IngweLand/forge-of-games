@@ -10,9 +10,9 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
 public record GetAlliancesWithPaginationQuery : IRequest<PaginatedList<AllianceDto>>
 {
-    public int PageNumber { get; init; }
+    public int StartIndex { get; init; }
     public int PageSize { get; init; }
-    public string? AllianceName { get; init; }
+    public string? Name { get; init; }
     public string? WorldId { get; init; }
 }
 
@@ -23,14 +23,14 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
         CancellationToken cancellationToken)
     {
         // TODO implement validator instead
-        var pageSize = request.PageSize > 20 ? 20 : request.PageSize;
+        var pageSize = request.PageSize > 100 ? 100 :request.PageSize;
         var result = context.Alliances.AsQueryable();
         if (request.WorldId != null)
         {
             result = result.Where(p => p.WorldId == request.WorldId);
         }
         
-        var allianceName = request.AllianceName?.Trim();
+        var allianceName = request.Name?.Trim();
         if (!string.IsNullOrWhiteSpace(allianceName))
         {
             result = result.Where(p => p.Name.Contains(allianceName));
@@ -42,6 +42,6 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
             .ThenByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)
-            .ToPaginatedListAsync(request.PageNumber, pageSize, cancellationToken);
+            .ToPaginatedListAsync(request.StartIndex, pageSize, cancellationToken);
     }
 }

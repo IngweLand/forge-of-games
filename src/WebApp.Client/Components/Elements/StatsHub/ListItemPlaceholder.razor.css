@@ -1,0 +1,49 @@
+.component-root {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    border-bottom: 1px solid var(--fog-border-color);
+    flex-shrink: 0;
+}
+
+.rank {
+    min-width: 32px;
+    flex-shrink: 0;
+}
+
+.avatar-container {
+    width: 36px;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2px 2px 2px 6px;
+    min-width: 0;
+    gap: 2px;
+}
+
+@container (min-width: 470px) {
+    .component-root {
+        height: 56px;
+    }
+
+    .rank {
+        min-width: 40px;
+    }
+
+    .avatar-container {
+        width: 42px;
+    }
+
+    .content {
+        padding: 0 4px 0 12px;
+        gap: 4px;
+    }
+}

@@ -16,7 +16,7 @@ public interface IStatsHubService
     Task<HohCity?> GetPlayerCityAsync(int playerId);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE)]
-    Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, [Query] int pageNumber = 1,
+    Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
 
@@ -24,7 +24,7 @@ public interface IStatsHubService
     Task<AllianceWithRankings?> GetAllianceAsync(int allianceId);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE)]
-    Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int pageNumber = 1,
+    Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
     

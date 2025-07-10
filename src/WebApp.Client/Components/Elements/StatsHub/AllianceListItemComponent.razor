@@ -11,14 +11,11 @@
         <img class="avatar-icon" src="@Alliance.AvatarIconUrl"/>
     </div>
     <div class="content">
-        <div class="content-top">
             <span class="content-label">
                 @Alliance.Name
             </span>
-        </div>
     </div>
-    <div class="points"
-         style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+    <div class="points" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
         @Alliance.RankingPointsFormatted
     </div>
     @if (Alliance.IsStale)
