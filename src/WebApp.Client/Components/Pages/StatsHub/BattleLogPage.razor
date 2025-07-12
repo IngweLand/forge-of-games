@@ -22,7 +22,7 @@
     <div class="teams-container">
         @foreach (var battle in _battles)
         {
-            <BattleTeamComponent Data="@battle" OnBattleStatsClicked="OpenBattleStats"/>
+            <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile" OnBattleStatsClicked="OpenBattleStats"/>
         }
     </div>
 </div>

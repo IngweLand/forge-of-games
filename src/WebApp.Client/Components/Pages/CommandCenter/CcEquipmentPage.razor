@@ -1,4 +1,5 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits CommandCenterPageBase
@@ -15,87 +16,102 @@
                 <HeaderContent>
                     <MudTHeadRow>
                         <MudTh colspan="5"></MudTh>
-                        <MudTh colspan="2">Main Attributes</MudTh>
-                        <MudTh colspan="8">Sub Attributes</MudTh>
+                        <MudTh colspan="2">@Loc[FogResource.Equipment_MainAttributes]</MudTh>
+                        <MudTh colspan="8">@Loc[FogResource.Equipment_SubAttributes]</MudTh>
                     </MudTHeadRow>
                     <MudTHeadRow>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSlotType)">Slot
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSlotType)">
+                                @Loc[FogResource.Equipment_Slot]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSet)">Set
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSet)">
+                                @Loc[FogResource.Equipment_Set]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.StarCount)">Rarity
+                                               SortLabel="@nameof(EquipmentItemViewModel.StarCount)">
+                                ⭐
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.Level)">Level
+                                               SortLabel="@nameof(EquipmentItemViewModel.Level)">
+                                @Loc[FogResource.Hoh_Lvl]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquippedOnHero)">Hero
+                                               SortLabel="@nameof(EquipmentItemViewModel.EquippedOnHero)">
+                                @Loc[FogResource.Hoh_Hero]
                             </MudTableSortLabel>
                         </MudTh>
 
                         @* main attributes *@
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.MainAttack)">ATK
+                                               SortLabel="@nameof(EquipmentItemViewModel.MainAttack)">
+                                @Loc[FogResource.UnitStats_AttackAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.MainDefense)">DEF
+                                               SortLabel="@nameof(EquipmentItemViewModel.MainDefense)">
+                                @Loc[FogResource.UnitStats_DefenseAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
 
                         @* sub attributes *@
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttack)">ATK
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttack)">
+                                @Loc[FogResource.UnitStats_AttackAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackAmp)">ATK %
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackAmp)">
+                                @Loc[FogResource.UnitStats_AttackPercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefense)">DEF
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefense)">
+                                @Loc[FogResource.UnitStats_DefenseAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefenseAmp)">DEF %
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefenseAmp)">
+                                @Loc[FogResource.UnitStats_DefensePercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPoints)">HP
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPoints)">
+                                @Loc[FogResource.UnitStats_MaxHitPointsAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPointsAmp)">HP %
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPointsAmp)">
+                                @Loc[FogResource.UnitStats_MaxHitPointsPercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubBaseDamageAmp)">BASE DMG %
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubBaseDamageAmp)">
+                                @Loc[FogResource.UnitStats_BaseDamagePercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                         <MudTh>
                             <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritDamage)">CRIT DMG
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritDamage)">
+                                @Loc[FogResource.UnitStats_CritDamageAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
                     </MudTHeadRow>
@@ -136,8 +152,8 @@
         else
         {
             <MudButton Style="align-self: center; justify-self: center" Variant="Variant.Filled"
-                       OnClick="() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH)">Import
-                Equipment
+                       OnClick="() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH)">
+                @Loc[FogResource.Equipment_ImportEquipment]
             </MudButton>
         }
     </div>

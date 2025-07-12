@@ -1,5 +1,5 @@
-@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
-<div class="cc-hero-collection-item user-select-none">
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+<div class="cc-hero-collection-item user-select-none" onclick="@(() => OnClick.InvokeAsync(BattleHero))">
     <div class="avatar-section">
         <img src="@BattleHero.PortraitUrl"/>
         <div class="rating">@(new string('★', BattleHero.StarCount))</div>
@@ -18,9 +18,9 @@
 @code {
 
     [Parameter]
-    public required BattleHeroViewModel BattleHero { get; set; }
+    public required HeroProfileViewModel BattleHero { get; set; }
 
     [Parameter]
-    public EventCallback<string> OnClick { get; set; }
+    public EventCallback<HeroProfileViewModel> OnClick { get; set; }
 
 }

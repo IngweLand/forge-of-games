@@ -1,8 +1,9 @@
+using System.Collections.ObjectModel;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
@@ -12,10 +13,10 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 
 public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFactory
 {
-    public IReadOnlyDictionary<UnitStatType, float> CreateMainHeroStats(HeroDto hero,
+    public IReadOnlyDictionary<UnitStatType, float> CreateHeroStats(HeroDto hero,
         int level, int ascensionLevel, int awakeningLevel, BuildingDto? barracks)
     {
-       var stats = new Dictionary<UnitStatType, float>();
+        var stats = new Dictionary<UnitStatType, float>();
         foreach (var unitStat in hero.Unit.Stats)
         {
             switch (unitStat.Type)
@@ -25,7 +26,8 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
                 case UnitStatType.MaxHitPoints:
                 case UnitStatType.BaseDamage:
                 {
-                    stats.Add(unitStat.Type,  CreateHeroLevelStat(unitStat.Type, hero, level,ascensionLevel, awakeningLevel, barracks));
+                    stats.Add(unitStat.Type,
+                        CreateHeroLevelStat(unitStat.Type, hero, level, ascensionLevel, awakeningLevel, barracks));
                     break;
                 }
                 default:
@@ -35,14 +37,14 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
                 }
             }
         }
-            
+
         return stats;
     }
 
     public IReadOnlyDictionary<UnitStatType, float> CreateMainSupportUnitStats(IUnit unit, int level,
         IReadOnlyDictionary<UnitStatType, UnitStatFormulaFactors> statCalculationFactors)
     {
-        var stats = new Dictionary<UnitStatType, float>()
+        var stats = new Dictionary<UnitStatType, float>
         {
             {
                 UnitStatType.Attack,
@@ -62,6 +64,85 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
             },
         };
         return stats;
+    }
+
+    public IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> CreateHeroStats(
+        HeroDto hero, int level, int ascensionLevel, IReadOnlyCollection<StatBoost> boosts, BuildingDto? barracks)
+    {
+        var stats = new Dictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>();
+        foreach (var unitStat in hero.Unit.Stats)
+        {
+            float unitStatValue;
+            switch (unitStat.Type)
+            {
+                case UnitStatType.Attack:
+                case UnitStatType.Defense:
+                case UnitStatType.MaxHitPoints:
+                case UnitStatType.BaseDamage:
+                {
+                    unitStatValue = CreateHeroLevelStat(unitStat.Type, hero, level, ascensionLevel, 0, null);
+                    break;
+                }
+                default:
+                {
+                    unitStatValue = hero.Unit.Stats.First(us => us.Type == unitStat.Type).Value;
+                    break;
+                }
+            }
+
+            var values = new Dictionary<UnitStatSource, float> {{UnitStatSource.Base, unitStatValue}};
+
+            var unitStatBoosts = boosts.Where(x => x.UnitStatType == unitStat.Type).OrderBy(x => x.Order);
+            foreach (var boost in unitStatBoosts)
+            {
+                var boostedValue = 0.0f;
+                switch (boost.Calculation)
+                {
+                    case Calculation.Add:
+                        boostedValue = boost.Value;
+                        break;
+                    case Calculation.Multiply:
+                        boostedValue = unitStatValue * boost.Value;
+                        break;
+                }
+
+                if (boost.StatAttribute != null)
+                {
+                    values.TryAdd(UnitStatSource.Equipment, 0);
+
+                    values[UnitStatSource.Equipment] += boostedValue;
+                }
+                else
+                {
+                    values.TryAdd(UnitStatSource.Unknown, 0);
+
+                    values[UnitStatSource.Unknown] += boostedValue;
+                }
+                
+            }
+
+            var barracksStat = barracks?.Components
+                .OfType<HeroBuildingBoostComponent>()
+                .FirstOrDefault()
+                ?.UnitStats
+                .FirstOrDefault(us => us.Type == unitStat.Type);
+            if (barracksStat != null)
+            {
+                values[UnitStatSource.Barracks] = barracksStat.Value;
+                var adjusted = values[UnitStatSource.Unknown] - barracksStat.Value;
+                if (adjusted == 0)
+                {
+                    values.Remove(UnitStatSource.Unknown);
+                }
+                else
+                {
+                    values[UnitStatSource.Unknown] = adjusted;
+                }
+            }
+            stats[unitStat.Type] = new ReadOnlyDictionary<UnitStatSource, float>(values);
+        }
+
+        return new ReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>(stats);
     }
 
     private float CreateSupportUnitLevelStat(UnitStatType unitStatType, IUnit unit, int level,
@@ -92,15 +173,16 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
             hero.Unit.Stats.First(us => us.Type == unitStatType).Value,
             hero.Unit.StatCalculationFactors[unitStatType], awakeningLevels, barracksValue);
     }
-    
+
     private float ApplyAwakening(UnitStatType unitStatType, HeroDto hero, int awakeningLevel)
     {
         var awakeningLevels = GetAwakeningLevels(unitStatType, hero, awakeningLevel);
         var value = hero.Unit.Stats.First(us => us.Type == unitStatType).Value;
         return awakeningLevels.Count == 0 ? value : statCalculators.ApplyAwakening(value, awakeningLevels);
     }
-    
-    private IReadOnlyCollection<AwakeningLevel> GetAwakeningLevels(UnitStatType unitStatType, HeroDto hero, int awakeningLevel)
+
+    private IReadOnlyCollection<AwakeningLevel> GetAwakeningLevels(UnitStatType unitStatType, HeroDto hero,
+        int awakeningLevel)
     {
         return hero.AwakeningComponent.Levels.Take(awakeningLevel)
             .Where(al => al.StatType == unitStatType).ToList();

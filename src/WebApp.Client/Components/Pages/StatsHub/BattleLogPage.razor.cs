@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
@@ -154,5 +155,13 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
         var parameters = new DialogParameters<BattleStatsDialog> {{d => d.Stats, stats}};
         await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
+    }
+    
+    private async Task OpenBattleSquadProfile(HeroProfileViewModel hero)
+    {
+        var options = GetDefaultDialogOptions();
+
+        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, hero}};
+        await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
     }
 }

@@ -6,7 +6,9 @@ using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 
@@ -19,6 +21,7 @@ public class StatsHubUiService(
     ICampaignUiService campaignUiService,
     IBattleService battleService,
     IUnitUiService unitUiService,
+    ICityService cityService,
     IBattleStatsViewModelFactory battleStatsViewModelFactory) : IStatsHubUiService
 {
     private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
@@ -28,6 +31,8 @@ public class StatsHubUiService(
         new Dictionary<int, PlayerWithRankingsViewModel>();
 
     private IReadOnlyDictionary<string, AgeDto>? _ages;
+
+    private IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>? _barracks;
     private TopStatsViewModel? _topStatsViewModel;
 
     public async Task<PlayerWithRankingsViewModel?> GetPlayerAsync(int playerId)
@@ -86,11 +91,12 @@ public class StatsHubUiService(
         return newViewModel;
     }
 
-    public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
+    public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex,
+        int pageSize,
         string? allianceName = null, CancellationToken ct = default)
     {
         var result =
-            await statsHubService.GetAlliancesAsync(worldId, startIndex, pageSize, name: allianceName, ct: ct);
+            await statsHubService.GetAlliancesAsync(worldId, startIndex, pageSize, allianceName, ct);
         return statsHubViewModelsFactory.CreateAlliances(result);
     }
 
@@ -99,7 +105,7 @@ public class StatsHubUiService(
     {
         await GetAgesAsync();
         var result =
-            await statsHubService.GetPlayersAsync(worldId, startIndex, pageSize, name: playerName, ct: ct);
+            await statsHubService.GetPlayersAsync(worldId, startIndex, pageSize, playerName, ct);
         return statsHubViewModelsFactory.CreatePlayers(result, _ages!);
     }
 
@@ -119,9 +125,12 @@ public class StatsHubUiService(
     public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
         BattleSearchRequest request, CancellationToken ct = default)
     {
+        await GetBarracksAsync();
+
         var result = await battleService.SearchBattlesAsync(request, ct);
         var heroes = result.Heroes.ToDictionary(h => h.Unit.Id);
-        return result.Battles.Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes))
+        return result.Battles
+            .Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, _barracks))
             .ToList();
     }
 
@@ -154,5 +163,28 @@ public class StatsHubUiService(
         }
 
         _ages = (await commonService.GetAgesAsync()).ToDictionary(a => a.Id);
+    }
+
+    private async Task GetBarracksAsync()
+    {
+        if (_barracks != null)
+        {
+            return;
+        }
+
+        var barracks = await cityService.GetAllBarracks();
+        var temp = new Dictionary<(string unitId, int unitLevel), BuildingDto>();
+        foreach (var b in barracks)
+        {
+            var component = b.Components.OfType<BuildingUnitProviderComponent>().FirstOrDefault();
+            if (component == null)
+            {
+                continue;
+            }
+
+            temp.Add((component.BuildingUnit.Unit.Id, component.BuildingUnit.Level), b);
+        }
+
+        _barracks = temp;
     }
 }

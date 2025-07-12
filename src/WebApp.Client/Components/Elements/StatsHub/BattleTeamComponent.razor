@@ -1,3 +1,4 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
@@ -31,7 +32,7 @@
         <div class="squads-row">
             @foreach (var unit in Data.PlayerSquads)
             {
-                <BattleHeroComponent BattleHero="unit"/>
+                <BattleHeroComponent OnClick="OnHeroClicked" BattleHero="unit"/>
             }
         </div>
         @if(Data.EnemySquads.Count > 0)
@@ -40,7 +41,7 @@
             <div class="squads-row">
                 @foreach (var unit in Data.EnemySquads)
                 {
-                    <BattleHeroComponent BattleHero="unit"/>
+                    <BattleHeroComponent OnClick="OnHeroClicked" BattleHero="unit"/>
                 }
             </div>
         }
@@ -54,6 +55,9 @@
 
     [Parameter]
     public EventCallback<BattleSummaryViewModel> OnBattleStatsClicked { get; set; }
+    
+    [Parameter]
+    public EventCallback<HeroProfileViewModel> OnHeroClicked { get; set; }
 
     private string StatusContainerClassname => new CssBuilder("header-row")
         .AddClass("victory", Data.ResultStatus == BattleResultStatus.Win)

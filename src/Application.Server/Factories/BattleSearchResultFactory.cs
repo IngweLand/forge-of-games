@@ -1,12 +1,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoMapper;
-using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -32,12 +30,14 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
 
             return Create(src, statsId, battleType);
         }).ToList();
-        var heroIds = battles.SelectMany(src => src.PlayerSquads.Select(s => s.UnitId));
+        var heroIds = battles.SelectMany(src => src.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
         if (battleType == BattleType.Pvp)
         {
-            heroIds = heroIds.Concat(battles.SelectMany(src => src.EnemySquads.Select(s => s.UnitId)));
+            heroIds = heroIds.Concat(battles.SelectMany(src =>
+                src.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null)));
         }
-        var heroTasks = heroIds.ToHashSet().Select(unitService.GetHeroAsync);
+
+        var heroTasks = heroIds.ToHashSet().Select(unitService.GetHeroAsync!);
         var heroes = await Task.WhenAll(heroTasks);
         return new BattleSearchResult
         {
@@ -61,15 +61,15 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
         var playerBattleUnitDtos = playerSquads
             .Where(src => src.Hero != null)
             .OrderBy(src => src.BattlefieldSlot)
-            .Select(src => mapper.Map<BattleUnitDto>(src.Hero!.Properties))
+            .Select(mapper.Map<BattleSquadDto>)
             .ToList();
-        
+
         var enemyBattleUnitDtos = enemySquads?
             .Where(src => src.Hero != null)
             .OrderBy(src => src.BattlefieldSlot)
-            .Select(src => mapper.Map<BattleUnitDto>(src.Hero!.Properties))
+            .Select(mapper.Map<BattleSquadDto>)
             .ToList() ?? [];
-        
+
         return new BattleSummaryDto
         {
             Id = entity.Id,

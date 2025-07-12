@@ -1,10 +1,8 @@
-﻿using System.Text.Json;
-using Ingweland.Fog.Inn.Models.Hoh;
-using Ingweland.Fog.Shared;
+﻿using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Shared.Localization;
 using Newtonsoft.Json;
 
-var searchKeys = new HashSet<string>()
+var searchKeys = new HashSet<string>
 {
     "Base.CampaignPanel.Campaign",
     "Base.QuestlinesPanel.EncounterOfRegion",
@@ -40,6 +38,21 @@ var searchKeys = new HashSet<string>()
     "Base.Generic.Good",
     "Base.BuildPanel.ExpansionCategory",
     "Base.ExpansionPopup.PremiumHeader",
+    "Base.HeroPanel.BaseStats",
+    "Base.HeroPanel.Equipment",
+    "Base.EquipmentFilterPopover.SelectMainAttributes",
+    "Base.EquipmentFilterPopover.SelectSubAttributes",
+    "SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKED",
+    "Base.EquipmentSets.equipment_set.Knight_Name",
+    "Base.EquipmentFilterPopover.RarityAndEnhancementLevel",
+    "Base.UnitStats.unit_stat.Attack_Percent_Abbrev",
+    "Base.UnitStats.unit_stat.Attack_Abbrev",
+    "Base.UnitStats.unit_stat.Defense_Percent_Abbrev",
+    "Base.UnitStats.unit_stat.Defense_Abbrev",
+    "Base.UnitStats.unit_stat.MaxHitPoints_Abbrev",
+    "Base.UnitStats.unit_stat.MaxHitPoints_Percent_Abbrev",
+    "Base.UnitStats.unit_stat.BaseDamage_Percent_Abbrev",
+    "Base.UnitStats.unit_stat.CritDamage_Abbrev",
 };
 
 var result = new Dictionary<string, List<Translations>>();
@@ -51,11 +64,12 @@ foreach (var localeCode in HohSupportedCultures.AllCultures)
     var data = LocaResponseContainer.Parser.ParseFrom(localizationFile).Data.Entries
         .ToDictionary(entry => entry.Key, entry => entry.Values);
 
-    var translations = searchKeys.Select(searchKey => new Translations() {Key = searchKey, Strings = data[searchKey]})
+    var translations = searchKeys.Select(searchKey => new Translations {Key = searchKey, Strings = data[searchKey]})
         .ToList();
 
     result.Add(localeCode, translations);
 }
+
 File.WriteAllText("translations.json", JsonConvert.SerializeObject(result, Formatting.Indented));
 
 static string GetInputFilePath(string localeCode)

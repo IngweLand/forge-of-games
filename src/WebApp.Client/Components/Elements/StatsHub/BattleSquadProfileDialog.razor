@@ -1,0 +1,97 @@
+@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Fog.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+<MudDialog Gutters="false" ContentStyle="border-radius: 0; margin: 0" @onclick="Close">
+    <DialogContent>
+        <div class="main-container">
+            <div class="header-container">
+                <div class="avatar-section">
+                    <div class="avatar-container">
+                        <img src="@HeroProfile.PortraitUrl"/>
+                        <div class="rating">@(new string('★', HeroProfile.StarCount))</div>
+                    </div>
+                </div>
+                <div class="header-content">
+                    <div class="hero-name">@HeroProfile.Name</div>
+                    <div class="divider"></div>
+                    <div class="hero-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.Level.Title}")</div>
+                </div>
+
+            </div>
+
+            <table class="battle-stats-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>@Loc[FogResource.BattleSquad_Stats_BaseStats]</th>
+                    <th>@Loc[FogResource.BattleSquad_Stats_Barracks]</th>
+                    <th>@Loc[FogResource.BattleSquad_Stats_Equipment]</th>
+                    <th>@Loc[FogResource.BattleSquad_Stats_Other]</th>
+                    <th>@Loc[FogResource.BattleSquad_Stats_Total]</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var statItem in HeroProfile.StatsBreakdown)
+                {
+                    <tr>
+                        <td>
+                            <div>
+                                <img src="@statItem.IconUrl" class="stat-icon">
+                            </div>
+                        </td>
+                        <td>@statItem.Values.GetValueOrDefault(UnitStatSource.Base, string.Empty)</td>
+                        <td>@statItem.Values.GetValueOrDefault(UnitStatSource.Barracks, string.Empty)</td>
+                        <td>@statItem.Values.GetValueOrDefault(UnitStatSource.Equipment, string.Empty)</td>
+                        <td>@statItem.Values.GetValueOrDefault(UnitStatSource.Unknown, string.Empty)</td>
+                        <td>@statItem.TotalValue</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+
+            <div class="ability-container">
+                <div class="ability-icon-container">
+                    <img src="@HeroProfile.AbilityIconUrl"/>
+                    <span class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.AbilityLevel}")</span>
+                </div>
+                <span>@((MarkupString) HeroProfile.AbilityDescription)</span>
+            </div>
+
+            @if (HeroProfile.SupportUnit != null)
+            {
+                <div class="support-unit-container">
+                    <img src="@HeroProfile.SupportUnit.IconUrl"/>
+                    @foreach (var statItem in HeroProfile.SupportUnit.StatsItems)
+                    {
+                        <CcHeroStatsItemComponent Size="Size.Small" StatItem="@statItem"/>
+                    }
+                </div>
+            }
+        </div>
+    </DialogContent>
+</MudDialog>
+
+<style>
+    .hero-ability-basestat {
+        color: var(--ability-stat-on-dark-color) !important;
+    }
+</style>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public HeroProfileViewModel HeroProfile { get; set; }
+
+    private void Close()
+    {
+        MudDialog.Close();
+    }
+
+}

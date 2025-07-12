@@ -20,12 +20,14 @@ public class HeroProfileViewModel
     public IReadOnlyCollection<int>? BarracksLevels { get; init; }
     public required string HeroId { get; init; }
     public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; set; }
+    public required string HeroUnitId { get; set; }
     public required string Id { get; init; }
     public required HeroLevelSpecs Level { get; init; }
     public required string Name { get; init; }
     public required string PortraitUrl { get; init; }
     public required int Power { get; init; }
     public int StarCount { get; init; }
+    public IReadOnlyCollection<UnitStatBreakdownViewModel> StatsBreakdown { get; init; } = [];
     public required IReadOnlyCollection<IconLabelItemViewModel> StatsItems { get; set; }
     public required HeroSupportUnitViewModel? SupportUnit { get; init; }
 
@@ -46,5 +48,4 @@ public class HeroProfileViewModel
     public required string UnitTypeIconUrl { get; set; }
     public required string UnitTypeName { get; set; }
     public required string UnitTypeTintedIconUrl { get; set; }
-    public required string HeroUnitId { get; set; }
 }

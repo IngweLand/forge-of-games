@@ -27,7 +27,7 @@ public class CityService(
             BuildingType.Home, BuildingType.Farm, BuildingType.Barracks, BuildingType.Workshop,
             BuildingType.CultureSite, BuildingType.Special, BuildingType.Beehive, BuildingType.Irrigation,
             BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
-            BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry, BuildingType.RitualSite
+            BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry, BuildingType.RitualSite,
         };
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         var categories = buildings.Where(b => types.Contains(b.Type)).DistinctBy(b => b.Group).GroupBy(b => b.Type);
@@ -100,48 +100,62 @@ public class CityService(
 
     public async Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<WonderBasicDto>>> GetWonderBasicDataAsync()
     {
-        return new Dictionary<CityId, IReadOnlyCollection<WonderBasicDto>>()
+        return new Dictionary<CityId, IReadOnlyCollection<WonderBasicDto>>
         {
             {
                 CityId.China,
-                new List<WonderBasicDto>()
+                new List<WonderBasicDto>
                 {
                     mapper.Map<WonderBasicDto>(
                         await hohCoreDataRepository.GetWonderAsync(WonderId.China_ForbiddenCity)),
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.China_GreatWall)),
                     mapper.Map<WonderBasicDto>(
-                        await hohCoreDataRepository.GetWonderAsync(WonderId.China_TerracottaArmy))
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.China_TerracottaArmy)),
                 }
             },
             {
                 CityId.Egypt,
-                new List<WonderBasicDto>()
+                new List<WonderBasicDto>
                 {
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_AbuSimbel)),
                     mapper.Map<WonderBasicDto>(
                         await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_CheopsPyramid)),
-                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_GreatSphinx))
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Egypt_GreatSphinx)),
                 }
             },
             {
                 CityId.Vikings,
-                new List<WonderBasicDto>()
+                new List<WonderBasicDto>
                 {
                     mapper.Map<WonderBasicDto>(
                         await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_DragonshipEllida)),
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_Valhalla)),
-                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_Yggdrasil))
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Vikings_Yggdrasil)),
                 }
             },
             {
                 CityId.Mayas_Tikal,
-                new List<WonderBasicDto>()
+                new List<WonderBasicDto>
                 {
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_ChichenItza)),
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_SayilPalace)),
-                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_Tikal))
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_Tikal)),
                 }
-            }
+            },
         };
+    }
+
+    public async Task<IReadOnlyCollection<BuildingDto>> GetAllBarracks()
+    {
+        var unitTypes = new List<UnitType>
+            {UnitType.Cavalry, UnitType.HeavyInfantry, UnitType.Infantry, UnitType.Ranged, UnitType.Siege};
+
+        var barracks = new List<BuildingDto>();
+        foreach (var unitType in unitTypes)
+        {
+            barracks.AddRange(await GetBarracks(unitType));
+        }
+
+        return barracks;
     }
 }

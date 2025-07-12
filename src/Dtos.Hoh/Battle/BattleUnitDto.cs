@@ -1,3 +1,6 @@
+using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Enums;
+
 namespace Ingweland.Fog.Dtos.Hoh.Battle;
 
 public record BattleUnitDto
@@ -8,9 +11,16 @@ public record BattleUnitDto
 
     public int AscensionLevel { get; init; }
 
+    public required IReadOnlyDictionary<UnitStatType, float> FinalState { get; init; } = new Dictionary<UnitStatType, float>();
+
     public int Level { get; init; }
 
+    public required IReadOnlyCollection<StatBoost> StatBoosts { get; init; } = new List<StatBoost>();
+
     public required string UnitId { get; init; }
+
+    public IReadOnlyDictionary<UnitStatType, float> UnitStatsOverrides { get; init; } =
+        new Dictionary<UnitStatType, float>();
 
     public virtual bool Equals(BattleUnitDto? other)
     {

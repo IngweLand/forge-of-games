@@ -107,6 +107,7 @@ public static class HohApi
         api.MapProtobufGet("/heroes/{heroId}", GetHeroAsync);
         api.MapProtobufGet("/heroes/{heroId}/ability", GetHeroAbilityAsync);
 
+        api.MapProtobufGet("/city/barracks", GetAllBarracksAsync);
         api.MapProtobufGet("/city/barracks/{unitType}", GetBarracksAsync);
         api.MapProtobufGet("/city/buildingCategories/{cityId}", GetBuildingCategoriesAsync);
         api.MapProtobufGet("/city/buildingGroup/{cityId}/{group}", GetBuildingGroupAsync);
@@ -212,6 +213,13 @@ public static class HohApi
         HttpContext context, UnitType unitType)
     {
         var barracks = await services.CityService.GetBarracks(unitType);
+
+        await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
+    }
+    
+    private static async Task GetAllBarracksAsync([AsParameters] HohServices services, HttpContext context)
+    {
+        var barracks = await services.CityService.GetAllBarracks();
 
         await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
     }

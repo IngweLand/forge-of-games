@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Models.Fog.Entities;
@@ -16,6 +17,8 @@ public class HeroProfile
     public required IReadOnlyDictionary<UnitStatType, float> Stats { get; set; } =
         new Dictionary<UnitStatType, float>();
 
+    public IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> StatsBreakdown { get; set; } =
+        new Dictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>();
     public required float AbilityChargeTime { get; init; }
     public required float AbilityInitialChargeTime { get; init; }
 

@@ -222,6 +222,51 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Barracks.
+        /// </summary>
+        public static string BattleSquad_Stats_Barracks {
+            get {
+                return ResourceManager.GetString("BattleSquad.Stats.Barracks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base stats.
+        /// </summary>
+        public static string BattleSquad_Stats_BaseStats {
+            get {
+                return ResourceManager.GetString("BattleSquad.Stats.BaseStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment.
+        /// </summary>
+        public static string BattleSquad_Stats_Equipment {
+            get {
+                return ResourceManager.GetString("BattleSquad.Stats.Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string BattleSquad_Stats_Other {
+            get {
+                return ResourceManager.GetString("BattleSquad.Stats.Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string BattleSquad_Stats_Total {
+            get {
+                return ResourceManager.GetString("BattleSquad.Stats.Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campaign.
         /// </summary>
         public static string BattleType_Campaign {
@@ -1298,6 +1343,60 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Victory {
             get {
                 return ResourceManager.GetString("Common.Victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Equipment.
+        /// </summary>
+        public static string Equipment_ImportEquipment {
+            get {
+                return ResourceManager.GetString("Equipment.ImportEquipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main Attributes.
+        /// </summary>
+        public static string Equipment_MainAttributes {
+            get {
+                return ResourceManager.GetString("Equipment.MainAttributes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rarity.
+        /// </summary>
+        public static string Equipment_Rarity {
+            get {
+                return ResourceManager.GetString("Equipment.Rarity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set.
+        /// </summary>
+        public static string Equipment_Set {
+            get {
+                return ResourceManager.GetString("Equipment.Set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Slot.
+        /// </summary>
+        public static string Equipment_Slot {
+            get {
+                return ResourceManager.GetString("Equipment.Slot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sub Attributes.
+        /// </summary>
+        public static string Equipment_SubAttributes {
+            get {
+                return ResourceManager.GetString("Equipment.SubAttributes", resourceCulture);
             }
         }
         
@@ -2621,6 +2720,78 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Unit_BattlesAndPerformance {
             get {
                 return ResourceManager.GetString("Unit.BattlesAndPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ATK.
+        /// </summary>
+        public static string UnitStats_AttackAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.AttackAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ATK %.
+        /// </summary>
+        public static string UnitStats_AttackPercentAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.AttackPercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base DMG %.
+        /// </summary>
+        public static string UnitStats_BaseDamagePercentAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.BaseDamagePercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRIT DMG.
+        /// </summary>
+        public static string UnitStats_CritDamageAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.CritDamageAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DEF.
+        /// </summary>
+        public static string UnitStats_DefenseAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.DefenseAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DEF %.
+        /// </summary>
+        public static string UnitStats_DefensePercentAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.DefensePercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HP.
+        /// </summary>
+        public static string UnitStats_MaxHitPointsAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.MaxHitPointsAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HP %.
+        /// </summary>
+        public static string UnitStats_MaxHitPointsPercentAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.MaxHitPointsPercentAbbrev", resourceCulture);
             }
         }
         

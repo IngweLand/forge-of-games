@@ -43,6 +43,8 @@
     --fog-defeat-color: #c42626;
     --fog-player-color: #3672be;
     --fog-enemy-color: #ba3a36;
+    --ability-stat-color: #54A1FF;
+    --ability-stat-on-dark-color: #70ddff;
 
     /*values*/
     --fog-border-radius: 0.5rem;
@@ -209,7 +211,7 @@ input[type="radio"]:checked {
 }
 
 .hero-ability-basestat {
-    color: var(--fog-accent-color);
+    color: var(--ability-stat-color);
     font-weight: 700 !important;
 }
 

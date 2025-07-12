@@ -32,4 +32,7 @@ public interface ICityService
 
     [Get("/cityPlanner/data/{cityId}")]
     Task<CityPlannerDataDto?> GetCityPlannerDataAsync([AliasAs("cityId")] CityId cityId);
+
+    [Get("/city/barracks")]
+    Task<IReadOnlyCollection<BuildingDto>> GetAllBarracks();
 }

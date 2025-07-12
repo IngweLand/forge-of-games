@@ -1,4 +1,6 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -8,6 +10,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
@@ -20,7 +23,9 @@ public class StatsHubViewModelsFactory(
     IMapper mapper,
     IAssetUrlProvider assetUrlProvider,
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
-    IResourceLocalizationService resourceLocalizationService) : IStatsHubViewModelsFactory
+    IResourceLocalizationService resourceLocalizationService,
+    IHohHeroProfileFactory heroProfileFactory,
+    IHohHeroProfileViewModelFactory heroProfileViewModelFactory) : IStatsHubViewModelsFactory
 {
     public PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages)
@@ -112,21 +117,6 @@ public class StatsHubViewModelsFactory(
         };
     }
 
-    public BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
-        IReadOnlyDictionary<string, HeroDto> heroes)
-    {
-        return new BattleSummaryViewModel
-        {
-            Id = summaryDto.Id,
-            ResultStatus = summaryDto.ResultStatus,
-            PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleViewModel(src, heroes[src.UnitId]))
-                .ToList(),
-            EnemySquads = summaryDto.EnemySquads.Select(src => CreateBattleViewModel(src, heroes[src.UnitId]))
-                .ToList(),
-            StatsId = summaryDto.StatsId,
-        };
-    }
-
     public IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
         IReadOnlyCollection<UnitBattleDto> unitBattles)
     {
@@ -155,27 +145,35 @@ public class StatsHubViewModelsFactory(
             .ToList();
     }
 
-    private BattleHeroViewModel CreateBattleViewModel(BattleUnitDto unit, HeroDto hero)
+    public BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
+        IReadOnlyDictionary<string, HeroDto> heroes,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
     {
-        var levelSpecs = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count);
-        var level = levelSpecs.First(ls =>
-            ls.Level == unit.Level && ls.AscensionLevel == unit.AscensionLevel);
-
-        var pvpUnitViewModel = new BattleHeroViewModel
+        return new BattleSummaryViewModel
         {
-            Id = hero.Id,
-            Name = hero.Unit.Name,
-            Level = level,
-            AbilityLevel = unit.AbilityLevel,
-            PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
-            StarCount = hero.StarClass.ToStarCount(),
-            UnitColor = hero.Unit.Color.ToCssColor(),
-            UnitClassIconUrl = assetUrlProvider.GetHohIconUrl(hero.ClassId.GetClassIconId()),
-            UnitTypeIconUrl =
-                assetUrlProvider.GetHohIconUrl(hero.Unit.Type.GetTypeIconId()),
+            Id = summaryDto.Id,
+            ResultStatus = summaryDto.ResultStatus,
+            PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleViewModel(src, heroes, barracks))
+                .ToList(),
+            EnemySquads = summaryDto.EnemySquads.Select(src => CreateBattleViewModel(src, heroes, barracks))
+                .ToList(),
+            StatsId = summaryDto.StatsId,
         };
+    }
 
-        return pvpUnitViewModel;
+    private HeroProfileViewModel CreateBattleViewModel(BattleSquadDto squad,
+        IReadOnlyDictionary<string, HeroDto> heroes,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+    {
+        var hero = heroes[squad.Hero!.UnitId];
+        BuildingDto? concreteBarracks = null;
+        if (squad.Unit != null)
+        {
+            barracks.TryGetValue((squad.Unit.UnitId, squad.Unit.Level), out concreteBarracks);
+        }
+
+        var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
+        return heroProfileViewModelFactory.CreateForCommandCenterProfile(profile, hero);
     }
 
     private BattleHeroViewModel CreatePvpUnit(PvpUnit unit, HeroDto hero)
