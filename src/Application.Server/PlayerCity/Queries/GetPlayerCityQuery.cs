@@ -31,11 +31,10 @@ public class GetPlayerCityQueryHandler(
             return null;
         }
 
-        var existingCity =
-            await playerCityService.GetCityAsync(player.Id, CityId.Capital, DateTime.UtcNow.ToDateOnly());
+        var existingCity = await GetCityAsync(player.Id, player.Name, CityId.Capital, DateTime.UtcNow.ToDateOnly());
         if (existingCity != null)
         {
-            return await cityCreationService.Create(existingCity, player.Name);
+            return existingCity;
         }
 
         if (failedFetchesCache.IsFailedFetch(player.Key))
@@ -47,15 +46,26 @@ public class GetPlayerCityQueryHandler(
         if (fetchedCity == null)
         {
             failedFetchesCache.AddFailedFetch(player.Key);
-            return null;
+            return await GetCityAsync(player.Id, player.Name, CityId.Capital, null);
         }
 
         var savedCity = await playerCityService.SaveCityAsync(player.Id, fetchedCity);
         if (savedCity == null)
         {
-            return null;
+            return await GetCityAsync(player.Id, player.Name, CityId.Capital, null);
         }
 
         return await cityCreationService.Create(savedCity, player.Name);
+    }
+
+    private async Task<HohCity?> GetCityAsync(int playerId, string playerName, CityId cityId, DateOnly? date)
+    {
+        var existingCity = await playerCityService.GetCityAsync(playerId, cityId, date);
+        if (existingCity != null)
+        {
+            return await cityCreationService.Create(existingCity, playerName);
+        }
+
+        return null;
     }
 }
