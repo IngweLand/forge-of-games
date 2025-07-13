@@ -22,7 +22,7 @@ public class UnitService(
         var hero = await hohCoreDataRepository.GetHeroAsync(id) ?? await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
         if (hero == null)
         {
-            logger.LogError($"Could not find hero with id {id}");
+            logger.LogDebug($"Could not find hero with id {id}");
             return null;
         }
 
