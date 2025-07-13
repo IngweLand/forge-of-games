@@ -1,0 +1,20 @@
+@using System.Globalization
+@if (Value.HasValue && FormattedValue != null)
+{
+    <div class="main-container">
+        <span class="value-label">@FormattedValue</span>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: @(Value.Value.ToString(CultureInfo.InvariantCulture))%"></div>
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public required string? FormattedValue { get; init; }
+
+    [Parameter]
+    public required float? Value { get; set; }
+
+}

@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @inherits CommandCenterPageBase
 @if (IsInitialized)
 {
@@ -66,49 +67,49 @@
                         </MudTh>
 
                         @* sub attributes *@
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubAttack)">
                                 @Loc[FogResource.UnitStats_AttackAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubAttackAmp)">
                                 @Loc[FogResource.UnitStats_AttackPercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubDefense)">
                                 @Loc[FogResource.UnitStats_DefenseAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubDefenseAmp)">
                                 @Loc[FogResource.UnitStats_DefensePercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubHitPoints)">
                                 @Loc[FogResource.UnitStats_MaxHitPointsAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubHitPointsAmp)">
                                 @Loc[FogResource.UnitStats_MaxHitPointsPercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubBaseDamageAmp)">
                                 @Loc[FogResource.UnitStats_BaseDamagePercentAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
-                        <MudTh>
+                        <MudTh Class="sub-attribute-th">
                             <MudTableSortLabel T="EquipmentItemViewModel"
                                                SortLabel="@nameof(EquipmentItemViewModel.SubCritDamage)">
                                 @Loc[FogResource.UnitStats_CritDamageAbbrev]
@@ -117,34 +118,74 @@
                     </MudTHeadRow>
                 </HeaderContent>
                 <RowTemplate>
-                    <MudTd DataLabel="Slot"><img class="icon" src="@context.EquipmentSlotTypeIconUrl"/></MudTd>
-                    <MudTd DataLabel="Set"><img class="icon" src="@context.EquipmentSetIconUrl"/></MudTd>
-                    <MudTd DataLabel="Rarity">@context.StarCount ⭐</MudTd>
-                    <MudTd DataLabel="Level">@context.Level</MudTd>
-                    <MudTd DataLabel="Hero"><img class="avatar" src="@context.EquippedOnHeroPortraitUrl"/></MudTd>
+                    <MudTd><img class="icon" src="@context.EquipmentSlotTypeIconUrl"/></MudTd>
+                    <MudTd><img class="icon" src="@context.EquipmentSetIconUrl"/></MudTd>
+                    <MudTd>@context.StarCount ⭐</MudTd>
+                    <MudTd>@context.Level</MudTd>
+                    <MudTd><img class="avatar" src="@context.EquippedOnHeroPortraitUrl"/></MudTd>
 
                     @* main attributes *@
-                    <MudTd
-                        DataLabel="Atk">@((MarkupString) (context.MainAttack?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.MainDefense?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd>@((MarkupString) (context.MainAttack?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd>@((MarkupString) (context.MainDefense?.FormattedValue ?? string.Empty))</MudTd>
 
                     @* sub attributes *@
-                    <MudTd DataLabel="Def">@((MarkupString) (context.SubAttack?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubAttackAmp?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubDefense?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubDefenseAmp?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubHitPoints?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubHitPointsAmp?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubBaseDamageAmp?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd
-                        DataLabel="Def">@((MarkupString) (context.SubCritDamage?.FormattedValue ?? string.Empty))</MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubAttack?.RolledValuePercent"
+                                                           FormattedValue="@context.SubAttack?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubAttack?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubAttackAmp?.RolledValuePercent"
+                                                           FormattedValue="@context.SubAttackAmp?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubAttackAmp?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubDefense?.RolledValuePercent"
+                                                           FormattedValue="@context.SubDefense?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubDefense?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubDefenseAmp?.RolledValuePercent"
+                                                           FormattedValue="@context.SubDefenseAmp?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubDefenseAmp?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubHitPoints?.RolledValuePercent"
+                                                           FormattedValue="@context.SubHitPoints?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubHitPoints?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubHitPointsAmp?.RolledValuePercent"
+                                                           FormattedValue="@context.SubHitPointsAmp?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubHitPointsAmp?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubBaseDamageAmp?.RolledValuePercent"
+                                                           FormattedValue="@context.SubBaseDamageAmp?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubBaseDamageAmp?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent Value="@context.SubCritDamage?.RolledValuePercent"
+                                                           FormattedValue="@context.SubCritDamage?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubCritDamage?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+
 
                 </RowTemplate>
             </MudTable>
@@ -178,6 +219,15 @@ else
 
     th {
         text-align: center !important;
+    }
+
+    .sub-attribute-cell {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        height: 32px;
     }
 
 </style>

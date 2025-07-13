@@ -1,3 +1,4 @@
+using System.Globalization;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -17,7 +18,7 @@ public class EquipmentItemToViewModelConverter(
     {
         var heroAssetId = source.EquippedOnHero != null ? $"Unit_{source.EquippedOnHero}" : null;
 
-        return new EquipmentItemViewModel()
+        return new EquipmentItemViewModel
         {
             Id = source.Id,
             EquipmentSlotType = source.EquipmentSlotType,
@@ -43,7 +44,7 @@ public class EquipmentItemToViewModelConverter(
             SubBaseDamageAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.BaseDamageBonus,
                 NumericValueType.Percentage),
             SubCritDamage = CreateSubAttribute(source.SubAttributes, StatAttribute.CritDamage,
-                NumericValueType.Percentage)
+                NumericValueType.Percentage),
         };
     }
 
@@ -58,13 +59,13 @@ public class EquipmentItemToViewModelConverter(
         var formattedValue = numericValueType switch
         {
             NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
-            _ => attribute.StatBoost.Value.ToString()
+            _ => attribute.StatBoost.Value.ToString(),
         };
 
-        return new EquipmentItemAttributeViewModel()
+        return new EquipmentItemAttributeViewModel
         {
             Value = attribute.StatBoost.Value,
-            FormattedValue = formattedValue
+            FormattedValue = formattedValue,
         };
     }
 
@@ -84,18 +85,20 @@ public class EquipmentItemToViewModelConverter(
             formattedValue = numericValueType switch
             {
                 NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
-                _ => attribute.StatBoost.Value.ToString()
+                _ => attribute.StatBoost.Value.ToString(CultureInfo.InvariantCulture),
             };
         }
 
         formattedValue += $"<sup style=\"font-size: 8px;\"> lvl {attribute.UnlockedAtLevel}</sup>";
 
-        return new EquipmentItemSubAttributeViewModel()
+        return new EquipmentItemSubAttributeViewModel
         {
             Value = attribute.StatBoost?.Value,
             FormattedValue = formattedValue,
             UnlockedAtLevel = attribute.UnlockedAtLevel,
-            Unlocked = attribute.Unlocked
+            Unlocked = attribute.Unlocked,
+            RolledValuePercent = attribute.Unlocked ? attribute.RolledValue * 100 : 0,
+            FormattedRolledValue = attribute.Unlocked ? attribute.RolledValue.ToString("P1") : null,
         };
     }
 }
