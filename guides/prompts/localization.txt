@@ -6,7 +6,7 @@ Instructions:
 1) Grammar check: Before translating, review the English values in the .resx file for any grammatical errors.
 
 	- If you identify any issues, list them clearly and pause processing.
-
+	- If mistakes are absent, proceed with translation without asking.
 	- Do not perform any translations until further instructions are given in response.
 
 2) Refer to translations.json as the primary source of truth. It contains all locales, including English. Each entry has a Key and a Strings object. The Key is internal and not related to the .resx keys. Strings contains a singular and optionally plural form.
