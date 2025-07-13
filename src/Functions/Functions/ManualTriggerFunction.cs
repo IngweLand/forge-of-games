@@ -3,11 +3,11 @@ using Microsoft.Azure.Functions.Worker;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class ManualProcessor(IPvpBattlesBulkUpdater pvpBattlesBulkUpdater)
+public class ManualTriggerFunction(ITopPlayersCityFetcher topPlayersCityFetcher)
 {
-    [Function("ManualProcessor")]
+    [Function("ManualTriggerFunction")]
     public async Task Run([TimerTrigger("0 0 0 1 1 1", RunOnStartup = false)] TimerInfo myTimer)
     {
-        await pvpBattlesBulkUpdater.RunAsync();
+        await topPlayersCityFetcher.RunAsync();
     }
 }

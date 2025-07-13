@@ -21,7 +21,7 @@ public class BattleStatsFetcher(
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
     [Function("BattleStatsFetcher")]
-    public async Task Run([TimerTrigger("0 50 * * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 50 6-23/1 * * *")] TimerInfo myTimer)
     {
         logger.LogInformation("BattleStatsFetcher started");
         var allBattleStatsIds = new HashSet<byte[]>(StructuralByteArrayComparer.Instance);
@@ -68,6 +68,7 @@ public class BattleStatsFetcher(
     {
         foreach (var battleId in battleIds)
         {
+            await Task.Delay(500);
             byte[] data;
             var battleIdString = Convert.ToBase64String(battleId);
             try

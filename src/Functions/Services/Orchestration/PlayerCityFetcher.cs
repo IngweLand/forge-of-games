@@ -1,36 +1,37 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
+using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
-using Microsoft.Azure.Functions.Worker;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Functions.Functions;
+namespace Ingweland.Fog.Functions.Services.Orchestration;
 
-public class PlayerCitiesFetcher(
+public class PlayerCityFetcher(
     DatabaseWarmUpService databaseWarmUpService,
     IFogDbContext context,
     IPlayerCityService playerCityService,
-    ILogger<PlayerCitiesFetcher> logger)
+    ILogger<PlayerCityFetcher> logger) : IPlayerCityFetcher
 {
-    private const int BatchSize = 100;
+    protected const int BATCH_SIZE = 100;
+    protected IFogDbContext Context { get; } = context;
+    protected ILogger<PlayerCityFetcher> Logger { get; } = logger;
 
-    [Function("PlayerCitiesFetcher")]
-    public async Task Run([TimerTrigger("0 */20 1-5 * * *")] TimerInfo myTimer)
+    public async Task RunAsync()
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
-        logger.LogDebug("Database warm-up completed");
+        Logger.LogDebug("Database warm-up completed");
 
         var players = await GetPlayers();
-        logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
+        Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
 
         var successCount = 0;
         foreach (var player in players)
         {
-            logger.LogDebug("Processing player {PlayerId} from world {WorldId}", player.Id, player.WorldId);
-
+            Logger.LogDebug("Processing player {PlayerId} from world {WorldId}", player.Id, player.WorldId);
+            var delayTask = Task.Delay(1000);
             try
             {
                 var success = await FetchCity(player);
@@ -41,49 +42,49 @@ public class PlayerCitiesFetcher(
             }
             catch (Exception e)
             {
-                logger.LogError(e, "Error processing player {PlayerId} from world {WorldId}: {ErrorMessage}",
+                Logger.LogError(e, "Error processing player {PlayerId} from world {WorldId}: {ErrorMessage}",
                     player.Id, player.WorldId, e.Message);
             }
 
-            await Task.Delay(1000);
+            await delayTask;
         }
 
-        logger.LogInformation(
+        Logger.LogInformation(
             "PlayerCitiesFetcher completed. Processed {TotalPlayers} players, {SuccessCount} successful",
             players.Count, successCount);
     }
 
-    private async Task<List<Player>> GetPlayers()
+    protected virtual async Task<List<Player>> GetPlayers()
     {
         var monthAgo = DateTime.UtcNow.ToDateOnly().AddMonths(-1);
-        logger.LogDebug("Fetching players starting from from {Date}", monthAgo);
+        Logger.LogDebug("Fetching players starting from from {Date}", monthAgo);
 
         var existingCities =
-            await context.PlayerCitySnapshots
+            await Context.PlayerCitySnapshots
                 .Where(x => x.CityId == CityId.Capital && x.CollectedAt > monthAgo)
                 .Select(x => x.PlayerId)
                 .ToHashSetAsync();
 
-        logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
+        Logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
 
         var runs = 0;
         List<Player> players = [];
-        while (runs < 10 && players.Count < BatchSize)
+        while (runs < 10 && players.Count < BATCH_SIZE)
         {
-            var p = await context.Players
-                .Where(x => x.WorldId == "zz1" && x.IsPresentInGame && x.RankingPoints > 1000)
+            var p = await Context.Players
+                .Where(x => x.IsPresentInGame && x.RankingPoints > 1000)
                 .OrderBy(x => Guid.NewGuid())
-                .Take(BatchSize)
+                .Take(BATCH_SIZE)
                 .ToListAsync();
             players.AddRange(p.Where(x => !existingCities.Contains(x.Id)));
             runs++;
 
-            logger.LogDebug("Fetch attempt {RunNumber}: Retrieved {NewPlayers} new players",
+            Logger.LogDebug("Fetch attempt {RunNumber}: Retrieved {NewPlayers} new players",
                 runs, players.Count);
         }
 
-        var result = players.Take(BatchSize).ToList();
-        logger.LogInformation("Final player selection complete. Selected {PlayerCount} players after {Runs} runs",
+        var result = players.Take(BATCH_SIZE).ToList();
+        Logger.LogInformation("Final player selection complete. Selected {PlayerCount} players after {Runs} runs",
             result.Count, runs);
 
         return result;
@@ -94,7 +95,7 @@ public class PlayerCitiesFetcher(
         var fetchedCity = await playerCityService.FetchCityAsync(player.WorldId, player.InGamePlayerId);
         if (fetchedCity == null)
         {
-            logger.LogWarning("Failed to fetch city for player {PlayerId} from world {WorldId}",
+            Logger.LogWarning("Failed to fetch city for player {PlayerId} from world {WorldId}",
                 player.Id, player.WorldId);
             return false;
         }
@@ -102,12 +103,12 @@ public class PlayerCitiesFetcher(
         var savedCity = await playerCityService.SaveCityAsync(player.Id, fetchedCity);
         if (savedCity == null)
         {
-            logger.LogError("Failed to save city for player {PlayerId} from world {WorldId}",
+            Logger.LogError("Failed to save city for player {PlayerId} from world {WorldId}",
                 player.Id, player.WorldId);
             return false;
         }
 
-        logger.LogDebug("Successfully processed city for player {PlayerId} from world {WorldId}",
+        Logger.LogDebug("Successfully processed city for player {PlayerId} from world {WorldId}",
             player.Id, player.WorldId);
         return true;
     }

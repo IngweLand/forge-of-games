@@ -6,7 +6,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Functions.Services.Orchestration;
+namespace Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
 
 public abstract class OrchestratorBase(
     IGameWorldsProvider gameWorldsProvider,

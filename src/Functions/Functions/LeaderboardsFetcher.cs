@@ -28,7 +28,7 @@ public class LeaderboardsFetcher(
         [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
 
     [Function("LeaderboardsFetcher")]
-    public async Task Run([TimerTrigger("0 30 23 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 57 23 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 

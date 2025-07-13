@@ -1,5 +1,5 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface IPvpBattlesBulkUpdater : IOrchestratorBase
+public interface IPlayersUpdateManager : IOrchestratorBase
 {
 }
