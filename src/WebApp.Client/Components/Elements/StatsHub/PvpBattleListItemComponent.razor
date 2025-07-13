@@ -1,6 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Microsoft.Extensions.Localization
 @using MudBlazor.Utilities
 @inject IStringLocalizer<FogResource> Loc
@@ -22,7 +23,7 @@
                 @if (Battle.StatsId.HasValue)
                 {
                     <div class="stats-button" @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Battle.StatsId))">
-                        <img class="stats-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_battlestats")"/>
+                        <img class="stats-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"/>
                     </div>
                 }
             </div>
@@ -30,7 +31,7 @@
         <div class="units-container">
             @foreach (var unit in Battle.PlayerUnits)
             {
-                <PvpBattleHeroItemComponent BattleHero="unit"/>
+                <BattleSquadComponent ShowHeroName="false" OnClick="OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
     </div>
@@ -62,7 +63,7 @@
         <div class="units-container opponent-bottom-container">
             @foreach (var unit in Battle.OpponentUnits)
             {
-                <PvpBattleHeroItemComponent BattleHero="unit" OnClick="OnHeroClick"/>
+                <BattleSquadComponent ShowHeroName="false" OnClick="OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
     </div>
@@ -85,6 +86,6 @@
     public EventCallback<int> OnOpponentClick { get; set; }
 
     [Parameter]
-    public EventCallback<string> OnHeroClick { get; set; }
+    public EventCallback<BattleSquadViewModel> OnHeroClicked { get; set; }
 
 }

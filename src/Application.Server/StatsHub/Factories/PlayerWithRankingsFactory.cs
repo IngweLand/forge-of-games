@@ -1,6 +1,8 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -11,6 +13,10 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService) : IPlayerWithRankingsFactory
 {
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new()
+    {
+        Converters = {new JsonStringEnumConverter()},
+    };
     public async Task<PlayerWithRankings?> CreateAsync(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
         IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
@@ -28,19 +34,22 @@ public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService)
                 {
                     statsId = value;
                 }
-
+                var winnerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(b.WinnerUnits,
+                    JsonSerializerOptions) ?? [];
+                var loserSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(b.LoserUnits,
+                    JsonSerializerOptions) ?? [];
                 return new PvpBattleDto
                 {
                     Winner = mapper.Map<PlayerDto>(b.Winner),
                     Loser = mapper.Map<PlayerDto>(b.Loser),
-                    WinnerUnits = JsonSerializer.Deserialize<IReadOnlyCollection<PvpUnit>>(b.WinnerUnits)!,
-                    LoserUnits = JsonSerializer.Deserialize<IReadOnlyCollection<PvpUnit>>(b.LoserUnits)!,
+                    WinnerUnits = mapper.Map<IReadOnlyCollection<BattleSquadDto>>(winnerSquads),
+                    LoserUnits = mapper.Map<IReadOnlyCollection<BattleSquadDto>>(loserSquads),
                     StatsId = statsId,
                 };
             })
             .ToList();
-        var heroIds = pvpBattleDtos.SelectMany(b => b.WinnerUnits.Select(u => u.Hero.Id))
-            .Concat(pvpBattleDtos.SelectMany(b => b.LoserUnits.Select(u => u.Hero.Id)))
+        var heroIds = pvpBattleDtos.SelectMany(b => b.WinnerUnits.Select(u => u.Hero!.UnitId))
+            .Concat(pvpBattleDtos.SelectMany(b => b.LoserUnits.Select(u => u.Hero!.UnitId)))
             .ToHashSet();
         var heroTasks = heroIds.Select(unitService.GetHeroAsync);
         var heroes = await Task.WhenAll(heroTasks);

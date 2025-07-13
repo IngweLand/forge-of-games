@@ -3,6 +3,7 @@ import "player_dto.proto";
 import "alliance_dto.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
+import "battle_squad_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -15,8 +16,8 @@ message PvpBattleDto {
   PlayerDto player1 = 1; 
   PlayerDto player2 = 2; 
   int64 points_delta = 4;
-  repeated PvpUnitDto player1_units = 7;
-  repeated PvpUnitDto player2_units = 8;
+  repeated BattleSquadDto player1_units = 7;
+  repeated BattleSquadDto player2_units = 8;
   google.protobuf.Timestamp performed_at = 9;
   google.protobuf.BytesValue id = 10;
 }
@@ -26,19 +27,3 @@ message PvpBattlePlayerAllianceDto {
   AllianceDto alliance = 2;
 }
 
-message PvpUnitDto {
-  PvpUnitDetailsDto hero = 2;
-  PvpUnitDetailsDto support_unit = 3;
-}
-
-message PvpUnitDetailsDto {
-  PvpUnitBasePropsDto base_props = 1;
-}
-
-message PvpUnitBasePropsDto {
-  string id = 1;
-  int32 level = 2;
-  int32 ascension_level = 3;
-  repeated string abilities = 4;
-  int32 ability_level = 9;
-}

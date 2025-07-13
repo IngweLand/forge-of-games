@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -17,6 +18,11 @@ public interface IPvpBattleService
 public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<PvpBattleService> logger)
     : IPvpBattleService
 {
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new()
+    {
+        Converters = {new JsonStringEnumConverter()},
+    };
+
     public async Task AddAsync(IEnumerable<(string WorldId, PvpBattle PvpBattle)> battles)
     {
         var unique = battles
@@ -31,10 +37,10 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
         var newBattlePlayerKeys = newBattleKeys.SelectMany(k =>
         {
             var battle = unique[k];
-            return new List<PlayerKey>()
+            return new List<PlayerKey>
             {
                 new(k.WorldId, battle.Winner.Id),
-                new(k.WorldId, battle.Loser.Id)
+                new(k.WorldId, battle.Loser.Id),
             };
         });
         var existingPlayers =
@@ -58,10 +64,10 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
                     WorldId = k.WorldId,
                     InGameBattleId = battle.Id,
                     PerformedAt = battle.PerformedAt,
-                    WinnerUnits = JsonSerializer.Serialize(battle.WinnerUnits),
-                    LoserUnits = JsonSerializer.Serialize(battle.LoserUnits),
+                    WinnerUnits = JsonSerializer.Serialize(battle.WinnerUnits, JsonSerializerOptions),
+                    LoserUnits = JsonSerializer.Serialize(battle.LoserUnits, JsonSerializerOptions),
                     WinnerId = winnerId,
-                    LoserId = loserId
+                    LoserId = loserId,
                 };
             })
             .Where(b => b != null)

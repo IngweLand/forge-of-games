@@ -4,23 +4,23 @@ using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 
-public class HeroProfileViewModel
+public record HeroProfileViewModel
 {
     public required string AbilityChargeTime { get; init; }
     public required string AbilityDescription { get; init; }
 
     public required string AbilityIconUrl { get; init; }
-    public required float AbilityInitialChargePercentage { get; set; }
+    public required float AbilityInitialChargePercentage { get; init; }
     public required string AbilityInitialChargeTime { get; init; }
     public required int AbilityLevel { get; init; }
-    public required IReadOnlyCollection<int> AbilityLevels { get; set; }
+    public required IReadOnlyCollection<int> AbilityLevels { get; init; }
     public required int AwakeningLevel { get; init; }
-    public required IReadOnlyCollection<int> AwakeningLevels { get; set; }
-    public required int BarracksLevel { get; set; }
+    public required IReadOnlyCollection<int> AwakeningLevels { get; init; }
+    public required int BarracksLevel { get; init; }
     public IReadOnlyCollection<int>? BarracksLevels { get; init; }
     public required string HeroId { get; init; }
-    public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; set; }
-    public required string HeroUnitId { get; set; }
+    public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; init; }
+    public required string HeroUnitId { get; init; }
     public required string Id { get; init; }
     public required HeroLevelSpecs Level { get; init; }
     public required string Name { get; init; }
@@ -28,7 +28,7 @@ public class HeroProfileViewModel
     public required int Power { get; init; }
     public int StarCount { get; init; }
     public IReadOnlyCollection<UnitStatBreakdownViewModel> StatsBreakdown { get; init; } = [];
-    public required IReadOnlyCollection<IconLabelItemViewModel> StatsItems { get; set; }
+    public required IReadOnlyCollection<IconLabelItemViewModel> StatsItems { get; init; }
     public required HeroSupportUnitViewModel? SupportUnit { get; init; }
 
     public int TotalPower
@@ -40,12 +40,12 @@ public class HeroProfileViewModel
         }
     }
 
-    public required string UnitClassIconUrl { get; set; }
+    public required string UnitClassIconUrl { get; init; }
 
-    public required string UnitClassName { get; set; }
-    public required string UnitClassTintedIconUrl { get; set; }
+    public required string UnitClassName { get; init; }
+    public required string UnitClassTintedIconUrl { get; init; }
     public required string UnitColor { get; init; }
-    public required string UnitTypeIconUrl { get; set; }
-    public required string UnitTypeName { get; set; }
-    public required string UnitTypeTintedIconUrl { get; set; }
+    public required string UnitTypeIconUrl { get; init; }
+    public required string UnitTypeName { get; init; }
+    public required string UnitTypeTintedIconUrl { get; init; }
 }

@@ -1,0 +1,52 @@
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="cc-hero-collection-item user-select-none" onclick="@(() => OnClick.InvokeAsync(BattleSquad))">
+    <div class="avatar-section">
+        <img src="@BattleSquad.PortraitUrl"/>
+        <div class="rating">@(new string('★', BattleSquad.StarCount))</div>
+    </div>
+    @if (ShowHeroName)
+    {
+        <div class="main-label">@BattleSquad.Name</div>
+    }
+    <div class="icon-label-container" style="background-color: @BattleSquad.UnitColor">
+        <div class="icons-container">
+            <img class="icon" src="@BattleSquad.UnitClassIconUrl"/>
+            <img class="icon" src="@BattleSquad.UnitTypeIconUrl"/>
+        </div>
+        <div class="icon-label">@BattleSquad.Level.Title</div>
+        <div class="icon-label">@BattleSquad.AbilityLevel</div>
+    </div>
+    @if (ShowResultState)
+    {
+        <div class="bottom-container">
+            @if (BattleSquad.IsDead)
+            {
+                <img class="hp-icon" src="@AssetUrlProvider.GetHohIconUrl("DefeatSkull")"/>
+            }
+            else
+            {
+                <img class="hp-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_unit_stat_MaxHitPoints")"/>
+                <div class="hp-label">@BattleSquad.FinalHitPointsPercent</div>
+            }
+
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter][EditorRequired]
+    public required BattleSquadViewModel BattleSquad { get; set; }
+
+    [Parameter]
+    public EventCallback<BattleSquadViewModel> OnClick { get; set; }
+
+    [Parameter]
+    public bool ShowHeroName { get; set; } = true;
+
+    [Parameter]
+    public bool ShowResultState { get; set; } = true;
+
+}

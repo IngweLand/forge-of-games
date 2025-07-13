@@ -76,3 +76,25 @@
     text-align: center;
     color: var(--fog-text-on-dark-color);
 }
+
+.bottom-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    background-color: var(--fog-text-color);
+    width: 100%;
+    height: 30px;
+}
+
+.hp-icon {
+    width: 12px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.hp-label {
+    font-size: 10px;
+    text-align: center;
+    color: var(--fog-text-on-dark-color);
+}

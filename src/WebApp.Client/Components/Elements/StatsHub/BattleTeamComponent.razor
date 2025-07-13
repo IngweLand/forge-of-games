@@ -1,4 +1,3 @@
-@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
@@ -23,7 +22,7 @@
         </span>
         @if (Data.StatsId.HasValue)
         {
-            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_battlestats")"
+            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"
                  @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
         }
 
@@ -32,16 +31,17 @@
         <div class="squads-row">
             @foreach (var unit in Data.PlayerSquads)
             {
-                <BattleHeroComponent OnClick="OnHeroClicked" BattleHero="unit"/>
+                <BattleSquadComponent ShowResultState="@(Data.BattleType != BattleType.HistoricBattle)"
+                                      OnClick="OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
-        @if(Data.EnemySquads.Count > 0)
+        @if (Data.EnemySquads.Count > 0)
         {
             <span class="versus-label">vs</span>
             <div class="squads-row">
                 @foreach (var unit in Data.EnemySquads)
                 {
-                    <BattleHeroComponent OnClick="OnHeroClicked" BattleHero="unit"/>
+                    <BattleSquadComponent OnClick="OnHeroClicked" BattleSquad="unit"/>
                 }
             </div>
         }
@@ -55,15 +55,15 @@
 
     [Parameter]
     public EventCallback<BattleSummaryViewModel> OnBattleStatsClicked { get; set; }
-    
+
     [Parameter]
-    public EventCallback<HeroProfileViewModel> OnHeroClicked { get; set; }
+    public EventCallback<BattleSquadViewModel> OnHeroClicked { get; set; }
 
     private string StatusContainerClassname => new CssBuilder("header-row")
         .AddClass("victory", Data.ResultStatus == BattleResultStatus.Win)
         .AddClass("defeat", Data.ResultStatus == BattleResultStatus.Defeat)
         .Build();
-    
+
     private string TeamsClassname => new CssBuilder("content-row")
         .AddClass("content-row-two-teams", Data.EnemySquads.Count > 0)
         .Build();

@@ -157,11 +157,11 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
         await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
     }
     
-    private async Task OpenBattleSquadProfile(HeroProfileViewModel hero)
+    private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
     {
         var options = GetDefaultDialogOptions();
 
-        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, hero}};
+        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, squad}};
         await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
     }
 }

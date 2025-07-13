@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -129,11 +130,6 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
         await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
     }
 
-    private void OnHeroClicked(string heroId)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HeroPlayground(heroId));
-    }
-
     private async Task HandleCityOperation(Func<HohCity, Task> cityHandler)
     {
         if (_isDisposed)
@@ -193,5 +189,13 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
             await PersistenceService.SaveTempCities([city]);
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
         });
+    }
+    
+    private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
+    {
+        var options = GetDefaultDialogOptions();
+
+        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, squad}};
+        await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
     }
 }

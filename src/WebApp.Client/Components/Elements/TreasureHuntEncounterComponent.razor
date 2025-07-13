@@ -21,7 +21,7 @@
             @foreach (var squad in IsExpanded ? wave.Squads : wave.AggregatedSquads)
             {
                 <div class="col-12 col-lg-6 col-xxl-4">
-                    <BattleSquadComponent Squad="@squad"></BattleSquadComponent>
+                    <CampaignSquadComponent Squad="@squad"></CampaignSquadComponent>
                 </div>
             }
         </div>

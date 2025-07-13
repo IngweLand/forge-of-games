@@ -43,13 +43,14 @@ public class StatsHubUiService(
         }
 
         await GetAgesAsync();
+        await GetBarracksAsync();
         var player = await statsHubService.GetPlayerAsync(playerId);
         if (player == null)
         {
             return null;
         }
 
-        var newViewModel = statsHubViewModelsFactory.CreatePlayer(player, _ages!);
+        var newViewModel = statsHubViewModelsFactory.CreatePlayer(player, _ages!, _barracks!);
         _concretePlayers.Add(playerId, newViewModel);
         return newViewModel;
     }

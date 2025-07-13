@@ -79,6 +79,7 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
             EnemySquads = enemyBattleUnitDtos,
             Difficulty = entity.Difficulty,
             StatsId = statsId,
+            BattleType = battleType,
         };
     }
 }

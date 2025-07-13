@@ -1,5 +1,7 @@
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Functions.Services;
+using Ingweland.Fog.Functions.Services.Interfaces;
+using Ingweland.Fog.Functions.Services.Orchestration;
 using Ingweland.Fog.Functions.Validators;
 using Ingweland.Fog.Infrastructure.Repositories;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
@@ -37,6 +39,8 @@ public static class DependencyInjection
         services.AddScoped<IBattleStatsService, BattleStatsService>();
         services.AddScoped<IPlayerStatusUpdaterService, PlayerStatusUpdaterService>();
         services.AddScoped<IAllianceMembersUpdaterService, AllianceMembersUpdaterService>();
+        services.AddScoped<IPvpBattlesBulkUpdater, PvpBattlesBulkUpdater>();
+        
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
         return services;

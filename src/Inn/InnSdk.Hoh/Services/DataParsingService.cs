@@ -151,9 +151,9 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
             let loserDto = isPlayer1Winner ? battleDto.Player2 : battleDto.Player1
             let loserUnitsDto = isPlayer1Winner ? battleDto.Player2Units : battleDto.Player1Units
             let winner = mapper.Map<HohPlayer>(winnerDto)
-            let winnerUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(winnerUnitsDto)
+            let winnerUnits = mapper.Map<IReadOnlyCollection<BattleSquad>>(winnerUnitsDto)
             let loser = mapper.Map<HohPlayer>(loserDto)
-            let loserUnits = mapper.Map<IReadOnlyCollection<PvpUnit>>(loserUnitsDto)
+            let loserUnits = mapper.Map<IReadOnlyCollection<BattleSquad>>(loserUnitsDto)
             select new PvpBattle
             {
                 Id = battleDto.Id.ToByteArray(),

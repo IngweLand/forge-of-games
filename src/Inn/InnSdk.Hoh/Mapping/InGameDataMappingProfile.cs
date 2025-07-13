@@ -54,13 +54,6 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AthPlayerRankings,
                 opt => opt.MapFrom(src => src.HeroTreasureHuntPlayerPointsPushs));
 
-        CreateMap<PvpUnitDto, PvpUnit>();
-        CreateMap<PvpUnitDetailsDto, PvpUnitDetails>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BaseProps.Id))
-            .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.BaseProps.Level))
-            .ForMember(dest => dest.AscensionLevel, opt => opt.MapFrom(src => src.BaseProps.AscensionLevel))
-            .ForMember(dest => dest.AbilityLevel, opt => opt.MapFrom(src => src.BaseProps.AbilityLevel))
-            .ForMember(dest => dest.Abilities, opt => opt.MapFrom(src => src.BaseProps.Abilities));
         CreateMap<PvpBattleDto, PvpBattle>()
             .ForMember(dest => dest.PerformedAt, opt => opt.MapFrom(src => src.PerformedAt.ToDateTime()));
 
