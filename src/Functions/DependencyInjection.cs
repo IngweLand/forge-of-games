@@ -44,6 +44,7 @@ public static class DependencyInjection
         services.AddScoped<ITopPlayersUpdateManager, TopPlayersUpdateManager>();
         services.AddScoped<IPlayerCityFetcher, PlayerCityFetcher>();
         services.AddScoped<ITopPlayersCityFetcher, TopPlayersCityFetcher>();
+        services.AddScoped<ITopAllianceMembersUpdateManager, TopAllianceMembersUpdateManager>();
         
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

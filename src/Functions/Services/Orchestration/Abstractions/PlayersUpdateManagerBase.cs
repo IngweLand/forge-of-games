@@ -90,6 +90,10 @@ namespace Ingweland.Fog.Functions.Services.Orchestration.Abstractions
             logger.LogInformation(
                 "Total player aggregates: {count}, Total alliance aggregates: {count}, Total removed players: {count}",
                 playerAggregates.Count, allianceAggregates.Count, removedPlayers.Count);
+            if (playerAggregates.Count == 0 && allianceAggregates.Count == 0 && removedPlayers.Count == 0)
+            {
+                return;
+            }
 
             logger.LogInformation("Starting alliance service update");
             await ExecuteSafeAsync(() => allianceService.AddAsync(allianceAggregates), "");
