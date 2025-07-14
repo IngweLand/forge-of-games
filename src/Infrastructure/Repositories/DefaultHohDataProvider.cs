@@ -53,20 +53,35 @@ public class DefaultHohDataProvider : IHohDataProvider, IDisposable
 
     private async Task<Data> ReloadDataAsync(ResourceSettings options)
     {
-        try
-        {
-            _logger.LogInformation("Starting data reload...");
+        const int maxRetries = 5;
+        const int baseDelayMilliseconds = 500;
 
-            var data = await LoadAsync(options);
-            _logger.LogInformation("Data reload completed successfully");
-            return data;
-        }
-        catch (Exception ex)
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
         {
-            _logger.LogError(ex, "Error reloading data");
-            throw;
+            try
+            {
+                _logger.LogInformation("Attempt {Attempt} to reload hoh core data...", attempt);
+                var data = await LoadAsync(options);
+                _logger.LogInformation("Hoh core data reload completed successfully on attempt {Attempt}", attempt);
+                return data;
+            }
+            catch (Exception ex) when (attempt < maxRetries)
+            {
+                int delay = baseDelayMilliseconds * (int)Math.Pow(2, attempt - 1); // exponential backoff
+                _logger.LogWarning(ex, "Attempt {Attempt} failed. Retrying in {Delay} ms...", attempt, delay);
+                await Task.Delay(delay);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "All attempts to reload hoh core data failed.");
+                throw;
+            }
         }
+
+        // Should never reach here due to throw in last catch block
+        throw new InvalidOperationException("Failed to load hoh core data after all retry attempts.");
     }
+
 
     private async Task<Data> LoadAsync(ResourceSettings options)
     {

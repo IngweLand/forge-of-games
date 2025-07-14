@@ -40,17 +40,32 @@ public abstract class HohCoreDataRepositoryBase<TConcreteRepository> : IDisposab
     protected abstract void Load(ResourceSettings options);
     private void ReloadData(ResourceSettings options)
     {
-        try
-        {
-            Logger.LogInformation("Starting data reload...");
+        const int maxRetries = 5;
+        const int baseDelayMilliseconds = 500;
 
-            Load(options);
-
-            Logger.LogInformation("Data reload completed successfully");
-        }
-        catch (Exception ex)
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
         {
-            Logger.LogError(ex, "Error reloading data");
+            try
+            {
+                Logger.LogInformation("Attempt {Attempt}: Starting data reload...", attempt);
+
+                Load(options);
+
+                Logger.LogInformation("Data reload completed successfully on attempt {Attempt}", attempt);
+                return;
+            }
+            catch (Exception ex) when (attempt < maxRetries)
+            {
+                int delay = baseDelayMilliseconds * (int)Math.Pow(2, attempt - 1);
+                Logger.LogWarning(ex, "Attempt {Attempt} failed. Retrying in {Delay} ms...", attempt, delay);
+                Thread.Sleep(delay);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "All attempts to reload data failed.");
+                throw;
+            }
         }
     }
+
 }
