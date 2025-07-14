@@ -8,6 +8,8 @@ public interface IAssetUrlProvider
     string GetHohIconUrl(string assetId, string extension);
     string GetHohIconUrl(string assetId);
     string GetHohImageUrl(string assetId, string extension);
+    string GetIconUrl(string assetId);
+    string GetIconUrl(string assetId, string extension);
     string GetHohImageUrl(string assetId);
     string GetHohPlayerAvatarUrl(string avatarId);
     string GetHohTechnologyImageUrl(string assetId, string extension);

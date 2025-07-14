@@ -25,6 +25,12 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
     public string GetHohImageUrl(string assetId, string extension)
         => GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}{extension}");
 
+    public string GetIconUrl(string assetId)
+        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}.png");
+
+    public string GetIconUrl(string assetId, string extension)
+        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}{extension}");
+
     public string GetHohImageUrl(string assetId)
         => GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}.png");
 

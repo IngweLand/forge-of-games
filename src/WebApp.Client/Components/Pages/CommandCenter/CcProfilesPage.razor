@@ -1,20 +1,22 @@
 @page "/command-center"
 @page "/command-center/profiles"
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits CommandCenterPageBase
+@inject IAssetUrlProvider AssetUrlProvider
 
 @if (IsInitialized)
 {
     <div class="command-center-grid-container">
         <div class="command-center-card command-center-action-card"
              @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH)">
-            <img class="command-center-card-icon" src="images/icon_hud_heroes.png"/>
+            <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_heroes")"/>
             <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_HeroPlaygrounds]</span>
         </div>
         <div class="command-center-card command-center-action-card"
              @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)">
-            <img class="command-center-card-icon" src="images/icon_flat_equipment.png"/>
+            <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_equipment")"/>
             <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Equipment]</span>
         </div>
         <div class="command-center-card command-center-action-card" @onclick="CreateNewProfile">

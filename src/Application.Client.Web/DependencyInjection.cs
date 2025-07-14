@@ -40,7 +40,6 @@ public static class DependencyInjection
 
         services.AddSingleton<IHeroProgressionCalculators, HeroProgressionCalculators>();
         
-        services.AddSingleton<IBuildingTypeCssIconClassProvider, BuildingTypeCssIconClassProvider>();
         services.AddSingleton<ICityMapEntityStyle, DefaultCityMapEntityStyle>();
         services.AddSingleton<IHohHeroLevelSpecsProvider, HohHeroLevelSpecsProvider>();
         services.AddSingleton<IBuildingLevelRangesFactory, BuildingLevelRangesFactory>();

@@ -81,7 +81,7 @@ public class CampaignUiService(
                         }).ToList().AsReadOnly(),
                     AvailableHeroSlots = new IconLabelItemViewModel
                     {
-                        IconUrl = "images/icon_hud_heroes.png",
+                        IconUrl = assetUrlProvider.GetHohIconUrl("icon_hud_heroes"),
                         Label = kvp.Value.AvailableHeroSlots.ToString(),
                     },
                     RequiredHeroClassIconUrls =

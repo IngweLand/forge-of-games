@@ -36,10 +36,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="wwwroot\lib\" />
-    </ItemGroup>
-
-    <ItemGroup>
         <None Update="resources\data\hoh\data.bin">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>

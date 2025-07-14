@@ -231,62 +231,6 @@ input[type="radio"]:checked {
 }
 
 /*city planner start*/
-.building-type-icon {
-    display: inline-block; 
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-}
-.building-type-icon-home {
-    background-image: url("images/icon_flat_home.png");
-}
-.building-type-icon-farm {
-    background-image: url("images/icon_flat_farm.png");
-}
-.building-type-icon-barracks {
-    background-image: url("images/icon_flat_barracks.png");
-}
-.building-type-icon-culture-site {
-    background-image: url("images/icon_flat_cultureSite.png");
-}
-.building-type-icon-special {
-    background-image: url("images/icon_flat_special.png");
-}
-.building-type-icon-workshop {
-    background-image: url("images/icon_flat_workshop.png");
-}
-.building-type-icon-expedition-pier {
-    background-image: url("images/icon_flat_expeditionPier.png");
-}
-.building-type-icon-quarry {
-    background-image: url("images/icon_flat_quarry.png");
-}
-.building-type-icon-aviary {
-    background-image: url("images/icon_flat_aviary.png");
-}
-.building-type-icon-rice-farm {
-    background-image: url("images/icon_flat_riceFarm.png");
-}
-.building-type-icon-expansion {
-    background-image: url("images/icon_flat_expansion.png");
-}
-.building-type-icon-gold-mine {
-    background-image: url("images/icon_flat_goldMine.png");
-}
-.building-type-icon-irrigation {
-    background-image: url("images/icon_flat_irrigation.png");
-}
-.building-type-icon-papyrus-field {
-    background-image: url("images/icon_flat_papyrusField.png");
-}
-.building-type-icon-beehive {
-    background-image: url("images/icon_flat_beehive.png");
-}
-.building-type-icon-fishing-pier {
-    background-image: url("images/icon_flat_fishingPier.png");
-}
 
 .city-planner-appbar {
     grid-column: 1 / -1;  /* Spans full width (both columns) */
