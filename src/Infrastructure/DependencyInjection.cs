@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
@@ -33,9 +34,8 @@ public static class DependencyInjection
 
         services.AddTableStorage();
 
-        services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
-        services.TryAddSingleton<IHohDataProvider, DefaultHohDataProvider>();
+        services.AddSingleton<IHohDataProvider, DefaultHohDataProvider>();
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();

@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Core.Extensions;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;

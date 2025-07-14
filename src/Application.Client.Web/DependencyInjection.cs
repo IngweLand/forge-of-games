@@ -21,7 +21,9 @@ using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Ingweland.Fog.Application.Client.Web;
 
@@ -32,11 +34,6 @@ public static class DependencyInjection
         services.AddApplicationCoreServices();
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-
-        services.AddMemoryCache(options =>
-        {
-            options.ExpirationScanFrequency = TimeSpan.FromMinutes(5);
-        });
 
         services.AddSingleton<IHeroProgressionCalculators, HeroProgressionCalculators>();
         
@@ -51,6 +48,8 @@ public static class DependencyInjection
         services.AddSingleton<ICcProfileTeamViewModelFactory, CcProfileTeamViewModelFactory>();
         services.AddSingleton<ICcProfileViewModelFactory, CcProfileViewModelFactory>();
         services.AddSingleton<IBarracksViewModelFactory, BarracksViewModelFactory>();
+        services.TryAddSingleton<IHohDataProvider, WebClientHohDataProvider>();
+        services.TryAddSingleton<IHohGameLocalizationDataRepository, WebClientHohGameLocalizationDataRepository>();
 
         services.AddScoped<IAssetUrlProvider, AssetUrlProvider>();
         services.AddScoped<IHohResourceIconUrlProvider, HohResourceIconUrlProvider>();
@@ -113,7 +112,7 @@ public static class DependencyInjection
         services.AddScoped<ICityInspirationsUiService, CityInspirationsUiService>();
         services.AddScoped<IPlayerCitySnapshotViewModelFactory, PlayerCitySnapshotViewModelFactory>();
         services.AddScoped<ICityPlannerUiService, CityPlannerUiService>();
-
+        
         services.AddScoped<CityPlannerSettings>();
 
         services.AddHttpClient<IBuildingRenderer, BuildingRenderer>();

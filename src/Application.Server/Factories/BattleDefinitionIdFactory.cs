@@ -1,4 +1,5 @@
 using System.Text;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;

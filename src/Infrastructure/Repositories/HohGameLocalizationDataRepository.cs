@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
@@ -26,6 +27,11 @@ public class HohGameLocalizationDataRepository(
         return _data.TryGetValue(cultureCode, out var localizationData)
             ? localizationData.Entries
             : _data[HohSupportedCultures.DefaultCulture].Entries;
+    }
+
+    public Task InitializeAsync()
+    {
+        throw new NotImplementedException();
     }
 
     private string GetDataFilePath(ResourceSettings options, string culture)

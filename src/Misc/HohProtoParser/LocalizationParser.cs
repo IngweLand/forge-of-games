@@ -1,6 +1,6 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Server.Enums.Hoh;
-using Ingweland.Fog.Application.Server.Helpers;
+using Ingweland.Fog.Application.Core.Enums.Hoh;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Shared;

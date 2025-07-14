@@ -1,5 +1,4 @@
 ﻿@using System.Globalization
-@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.WebApp.Client.Components
 @inject IWebHostEnvironment Environment
 
@@ -51,12 +50,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="@Assets["images/favicons/icon32.png"]">
     <link rel="icon" type="image/png" sizes="48x48" href="@Assets["images/favicons/icon48.png"]">
     <link rel="icon" type="image/png" sizes="128x128" href="@Assets["images/favicons/icon128.png"]">
-    <HeadOutlet @rendermode="InteractiveWebAssembly"/>
+    <HeadOutlet @rendermode="@(new InteractiveWebAssemblyRenderMode(prerender:false))"/>
     <PageTitle>Forge of Games - Your Ultimate Guide to Heroes of History</PageTitle>
 </head>
 
 <body>
-<Routes @rendermode="InteractiveWebAssembly"/>
+<Routes @rendermode="@(new InteractiveWebAssemblyRenderMode(prerender:false))"/>
 <script src="@Assets["_content/Syncfusion.Blazor.Core/scripts/syncfusion-blazor.min.js"]" type="text/javascript"></script>
 <script src="_framework/blazor.web.js"></script>
 <script src="@Assets["_content/MudBlazor/MudBlazor.min.js"]"></script>
@@ -64,3 +63,4 @@
 </body>
 
 </html>
+

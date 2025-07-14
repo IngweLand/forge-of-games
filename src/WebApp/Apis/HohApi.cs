@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -7,6 +8,7 @@ using Ingweland.Fog.WebApp.Constants;
 using Ingweland.Fog.WebApp.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Ingweland.Fog.WebApp.Apis;
 
@@ -127,7 +129,8 @@ public static class HohApi
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
-        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH, GetTreasureHuntEncountersBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH,
+            GetTreasureHuntEncountersBasicDataAsync);
 
         api.MapProtobufGet("/ages", GetAgesAsync);
 
@@ -143,6 +146,9 @@ public static class HohApi
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
+
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.HOH_CORE_DATA_PATH, GetHohCoreDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.HOH_LOCALIZATION_DATA_TEMPLATE, GetHohLocalizationDataAsync);
 
         return api;
     }
@@ -216,7 +222,7 @@ public static class HohApi
 
         await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
     }
-    
+
     private static async Task GetAllBarracksAsync([AsParameters] HohServices services, HttpContext context)
     {
         var barracks = await services.CityService.GetAllBarracks();
@@ -269,6 +275,26 @@ public static class HohApi
         var cpd = await services.CommandCenterService.GetCommandCenterDataAsync();
 
         await WriteToResponseAsync(context, cpd, services.ProtobufSerializer);
+    }
+
+    private static async Task GetHohCoreDataAsync(IOptions<ResourceSettings> options,
+        HttpContext context)
+    {
+        var path = $"{options.Value.BaseUrl}/{options.Value.HohDataPath}";
+        var bytes = await File.ReadAllBytesAsync(path);
+        context.Response.ContentType = "application/x-protobuf";
+        context.Response.StatusCode = StatusCodes.Status200OK;
+        await context.Response.Body.WriteAsync(bytes);
+    }
+    
+    private static async Task GetHohLocalizationDataAsync(IOptions<ResourceSettings> options,
+        HttpContext context, string culture)
+    {
+        var path = $"{options.Value.BaseUrl}/{options.Value.HohLocalizationsDirectory}/loca_parsed_{culture}.bin";
+        var bytes = await File.ReadAllBytesAsync(path);
+        context.Response.ContentType = "application/x-protobuf";
+        context.Response.StatusCode = StatusCodes.Status200OK;
+        await context.Response.Body.WriteAsync(bytes);
     }
 
     private static async Task GetExpansionsAsync([AsParameters] HohServices services,
@@ -357,7 +383,8 @@ public static class HohApi
         }
     }
 
-    private static async Task GetTreasureHuntEncountersBasicDataAsync([AsParameters] HohServices services, HttpContext context)
+    private static async Task GetTreasureHuntEncountersBasicDataAsync([AsParameters] HohServices services,
+        HttpContext context)
     {
         var map = await services.TreasureHuntService.GetTreasureHuntEncountersBasicDataAsync();
         await WriteToResponseAsync(context, map, services.ProtobufSerializer);

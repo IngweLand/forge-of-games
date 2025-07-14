@@ -1,5 +1,8 @@
 using Ingweland.Fog.Application.Core;
+using Ingweland.Fog.Application.Core.Factories;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services;
+using Ingweland.Fog.Application.Core.Services.Hoh;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Behaviors;
 using Ingweland.Fog.Application.Server.Factories;
@@ -25,6 +28,11 @@ public static class DependencyInjection
         services.AddApplicationCoreServices();
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
+        
+        services.AddMemoryCache(options =>
+        {
+            options.ExpirationScanFrequency = TimeSpan.FromMinutes(5);
+        });
 
         services.AddMediatR(cfg =>
         {
@@ -37,26 +45,10 @@ public static class DependencyInjection
         services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
         services.AddSingleton<IFailedPlayerCityFetchesCache, FailedPlayerCityFetchesCache>();
 
-        services.AddScoped<IUnitService, UnitService>();
-        services.AddScoped<ICampaignService, CampaignService>();
-        services.AddScoped<IHohGameLocalizationService, HohGameLocalizationService>();
-        services.AddScoped<IHeroBasicDtoFactory, HeroBasicDtoFactory>();
-        services.AddScoped<IUnitDtoFactory, UnitDtoFactory>();
-        services.AddScoped<IHeroDtoFactory, HeroDtoFactory>();
-        services.AddScoped<IRegionDtoFactory, RegionDtoFactory>();
-        services.AddScoped<ICityService, CityService>();
-        services.AddScoped<IBuildingTypeDtoFactory, BuildingTypeDtoFactory>();
-        services.AddScoped<IBuildingGroupDtoFactory, BuildingGroupDtoFactory>();
-        services.AddScoped<ITreasureHuntService, TreasureHuntService>();
-        services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
-        services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();
-        services.AddScoped<IWonderDtoFactory, WonderDtoFactory>();
-        services.AddScoped<IResearchService, ResearchService>();
-        services.AddScoped<ICommonService, CommonService>();
-        services.AddScoped<ICityPlannerDataFactory, CityPlannerDataFactory>();
+       
         services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
-        services.AddScoped<ICommandCenterService, CommandCenterService>();
+       
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
         services.AddScoped<IPlayerWithRankingsFactory, PlayerWithRankingsFactory>();

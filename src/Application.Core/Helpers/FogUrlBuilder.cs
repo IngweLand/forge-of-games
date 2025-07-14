@@ -28,7 +28,7 @@ public static class FogUrlBuilder
         public const string WIKI_EXTRACT = "/wiki/extract";
 
         public const string ALL_LEADERBOARD_TOP_ITEMS_PATH = "/" + BASE_STATS_PATH + "/leaderboards/top";
-        
+
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
@@ -43,10 +43,15 @@ public static class FogUrlBuilder
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
         public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles";
-        
+
         public const string PLAYER_CITY_SNAPSHOTS_SEARCH = "/playerCitySnapshots/search";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE = "/playerCitySnapshots/{snapshotId:int}";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE_REFIT = "/playerCitySnapshots/{snapshotId}";
+        
+        public const string HOH_CORE_DATA_PATH = "coreData";
+        public const string HOH_LOCALIZATION_DATA_PATH = "localizationData";
+        public const string HOH_LOCALIZATION_DATA_TEMPLATE = "localizationData/{culture}";
+        public const string HOH_CORE_DATA_VERSION_PATH = "/coreData/version";
     }
 
     public static class PageRoutes
