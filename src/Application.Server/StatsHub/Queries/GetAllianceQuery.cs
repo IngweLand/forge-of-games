@@ -47,7 +47,7 @@ public class GetAllianceQueryHandler(
         var memberIds = members.Select(p => p.Id).ToHashSet();
         var possibleMembers = await context.Players.AsNoTracking()
             .Where(p => p.IsPresentInGame && p.WorldId == alliance.WorldId && p.AllianceName == alliance.Name &&
-                !memberIds.Contains(p.Id))
+                p.CurrentAlliance == null && !memberIds.Contains(p.Id))
             .OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank)
             .ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
