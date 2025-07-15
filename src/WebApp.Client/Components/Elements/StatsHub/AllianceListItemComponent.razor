@@ -3,9 +3,9 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Alliance)">
-    <div class="rank" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
-        @Alliance.Rank
-    </div>
+    @* <div class="rank" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")"> *@
+    @*     @Alliance.Rank *@
+    @* </div> *@
     <div class="avatar-container">
         <img class="avatar-background" src="@Alliance.AvatarBackgroundUrl"/>
         <img class="avatar-icon" src="@Alliance.AvatarIconUrl"/>

@@ -3,9 +3,9 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Player)">
-    <div class="rank" style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")">
-        @Player.Rank
-    </div>
+    @* <div class="rank" style="color: @(Player.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")"> *@
+    @*     @Player.Rank *@
+    @* </div> *@
     <div class="avatar-container">
         <img class="avatar" src="@Player.AvatarUrl"/>
     </div>
