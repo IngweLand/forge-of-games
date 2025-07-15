@@ -9,8 +9,8 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 public record GetAllLeaderboardTopItemsQuery : IRequest<LeaderboardTopItemsDto>, ICacheableRequest
 {
     public string CacheKey => "LeaderboardTopItems";
-    public TimeSpan? Duration { get; }
-    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+    public TimeSpan? Duration => TimeSpan.FromHours(6);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class

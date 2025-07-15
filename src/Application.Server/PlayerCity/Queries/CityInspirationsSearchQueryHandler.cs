@@ -14,7 +14,7 @@ public record CityInspirationsSearchQuery(CityInspirationsSearchRequest Request)
     public string CacheKey => $"CityInspirationsSearch_{Request.CityId}_{Request.AgeId}_{Request.SearchPreference}_{
         Request.AllowPremiumEntities}_{Request.OpenedExpansionsHash}";
 
-    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public TimeSpan? Duration => TimeSpan.FromHours(6);
     public DateTimeOffset? Expiration { get; }
 }
 
