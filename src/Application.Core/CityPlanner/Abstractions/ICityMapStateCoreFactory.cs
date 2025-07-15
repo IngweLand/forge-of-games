@@ -9,5 +9,6 @@ public interface ICityMapStateCoreFactory
     CityMapStateCore Create(IReadOnlyCollection<BuildingDto> buildings,
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
+        IMapArea mapArea,
         WonderDto? wonder);
 }

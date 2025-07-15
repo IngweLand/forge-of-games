@@ -117,9 +117,11 @@ public class PlayerCityService : IPlayerCityService
             Coins = coins?.Default ?? 0,
             Food = food?.Default ?? 0,
             Goods = goods,
+            HappinessUsageRatio = cityStats.HappinessUsageRatio,
             OpenedExpansionsHash = _cityExpansionsHasher.Compute(city.UnlockedExpansions),
             HasPremiumBuildings = city.Entities.Any(x =>
                 x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase)),
+            TotalArea = cityStats.TotalArea,
         };
 
         _context.PlayerCitySnapshots.Add(citySnapshot);

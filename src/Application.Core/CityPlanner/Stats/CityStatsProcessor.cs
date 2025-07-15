@@ -5,7 +5,8 @@ namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 public static class CityStatsProcessor
 {
     public static CityStats Update(IEnumerable<CityMapEntity> entities,
-        IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders)
+        IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
+        IEnumerable<CityMapExpansion> openExpansions)
     {
         var stats = new CityStats();
 
@@ -105,6 +106,7 @@ public static class CityStatsProcessor
         }
 
         stats.TotalAvailableHappiness += mapAreaHappinessProviders.Sum(src => src.Value);
+        stats.TotalArea = openExpansions.Select(x => x.Bounds).Sum(x => x.Width * x.Height);
         
         return stats;
     }

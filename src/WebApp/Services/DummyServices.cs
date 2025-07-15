@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.WebApp.Client.Models;
@@ -15,6 +16,16 @@ namespace Ingweland.Fog.WebApp.Services;
 internal class DummyPersistenceService : IPersistenceService
 {
     public ValueTask SaveCity(HohCity city)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync()
     {
         throw new NotImplementedException();
     }

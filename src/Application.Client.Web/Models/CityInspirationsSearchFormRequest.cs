@@ -2,7 +2,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 
-namespace Ingweland.Fog.WebApp.Client.Models;
+namespace Ingweland.Fog.Application.Client.Web.Models;
 
 public class CityInspirationsSearchFormRequest
 {

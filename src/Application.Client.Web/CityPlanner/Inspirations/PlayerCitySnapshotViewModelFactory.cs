@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
@@ -38,6 +39,16 @@ public class PlayerCitySnapshotViewModelFactory(IAssetUrlProvider assetUrlProvid
                     IconUrl = assetUrlProvider.GetHohIconUrl("icon_premium"),
                 }
                 : null,
+            HappinessUsageRatio = new IconLabelItemViewModel
+                {
+                    Label = snapshot.HappinessUsageRatio.ToString("F2"),
+                    IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_culture_boost"),
+                },
+            TotalArea = new IconLabelItemViewModel
+            {
+                Label = snapshot.TotalArea.ToString(CultureInfo.InvariantCulture),
+                IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_expansion_dark"),
+            },
         };
     }
 }

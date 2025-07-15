@@ -35,10 +35,13 @@ public class PlayerCitySnapshot
 
     public int Food { get; set; }
     public int Goods { get; set; }
+
+    public float HappinessUsageRatio { get; set; }
     public bool HasPremiumBuildings { get; set; }
     public int Id { get; set; }
     public required string OpenedExpansionsHash { get; set; }
     public Player Player { get; set; } = null!;
 
     public int PlayerId { get; set; }
+    public required int TotalArea { get; set; }
 }

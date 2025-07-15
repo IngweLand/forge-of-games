@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -12,5 +13,6 @@ public interface ICityMapStateFactory
         IReadOnlyCollection<BuildingSelectorTypesViewModel> buildingSelectorItems,
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
+        IMapArea mapArea,
         WonderDto? wonder);
 }

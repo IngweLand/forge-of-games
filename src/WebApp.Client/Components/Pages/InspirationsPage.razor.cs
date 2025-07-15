@@ -9,7 +9,6 @@ using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
-using Ingweland.Fog.WebApp.Client.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages;
@@ -19,7 +18,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
     private CancellationTokenSource _cts = new();
     private IReadOnlyCollection<PlayerCitySnapshotBasicViewModel> _inspirations = [];
     private bool _isDisposed;
-    private bool _isLoading;
+    private bool _isLoading = true;
     private CityInspirationsSearchFormViewModel? _searchFormViewModel;
     private CityInspirationsSearchFormRequest? _searchRequest;
 
@@ -54,11 +53,32 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
         }
 
         _searchFormViewModel = await CityInspirationsUiService.GetSearchFormDataAsync();
-        _searchRequest = new CityInspirationsSearchFormRequest
+        var savedRequest = await PersistenceService.GetCityInspirationsRequestAsync();
+        if (savedRequest != null)
         {
-            Age = _searchFormViewModel.Ages.FirstOrDefault(),
-            SearchPreference = _searchFormViewModel.SearchPreferences.FirstOrDefault(),
-        };
+            _searchRequest = new CityInspirationsSearchFormRequest
+            {
+                Age = _searchFormViewModel!.Ages.FirstOrDefault(x => x.Id == savedRequest.Age?.Id) ??
+                    _searchFormViewModel.Ages.FirstOrDefault(),
+                SearchPreference =
+                    _searchFormViewModel.SearchPreferences.FirstOrDefault(x =>
+                        x.Value == savedRequest.SearchPreference?.Value) ??
+                    _searchFormViewModel.SearchPreferences.FirstOrDefault(),
+                AllowPremium = savedRequest.AllowPremium,
+                City = _searchFormViewModel.Cities.FirstOrDefault(x => x.Id == savedRequest.City?.Id),
+            };
+        }
+        else
+        {
+            _searchRequest = new CityInspirationsSearchFormRequest
+            {
+                Age = _searchFormViewModel!.Ages.FirstOrDefault(),
+                SearchPreference = _searchFormViewModel.SearchPreferences.FirstOrDefault(),
+            };
+        }
+
+        var request = await BuildSearchRequest();
+        await GetBattles(request);
     }
 
     protected virtual async ValueTask DisposeAsyncCore()
@@ -76,26 +96,36 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     private async Task SearchFormOnSearchClick()
     {
+        var request = await BuildSearchRequest();
+        var getBattlesTask = GetBattles(request);
+        await PersistenceService.SaveCityInspirationsRequestAsync(_searchRequest!);
+        await getBattlesTask;
+    }
+
+    private async Task<CityInspirationsSearchRequest> BuildSearchRequest()
+    {
         string? expansionsHash = null;
+        var totalArea = 0;
         if (_searchRequest?.City != null)
         {
             var city = await PersistenceService.LoadCity(_searchRequest.City.Id);
             if (city != null)
             {
                 expansionsHash = ExpansionsHasher.Compute(city.UnlockedExpansions);
+                totalArea = await CityInspirationsUiService.CalculateTotalAreaAsync(city.InGameCityId,
+                    city.UnlockedExpansions.Count);
             }
         }
 
-        var request = new CityInspirationsSearchRequest
+        return new CityInspirationsSearchRequest
         {
             AgeId = _searchRequest!.Age!.Id,
             CityId = CityId.Capital,
             AllowPremiumEntities = _searchRequest.AllowPremium,
             SearchPreference = _searchRequest.SearchPreference?.Value ?? CitySnapshotSearchPreference.Food,
             OpenedExpansionsHash = expansionsHash,
+            TotalArea = totalArea,
         };
-
-        await GetBattles(request);
     }
 
     private async Task GetBattles(CityInspirationsSearchRequest request)

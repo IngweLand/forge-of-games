@@ -3,10 +3,12 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations;
 
@@ -15,6 +17,7 @@ public class CityInspirationsUiService(
     IPersistenceService persistenceService,
     ICityPlannerService cityPlannerService,
     IPlayerCitySnapshotViewModelFactory playerCitySnapshotViewModelFactory,
+    ICityPlannerDataService cityPlannerDataService,
     IMapper mapper) : ICityInspirationsUiService
 {
     private static readonly List<CitySnapshotSearchPreference> SearchPreferences =
@@ -51,5 +54,13 @@ public class CityInspirationsUiService(
     public Task<HohCity?> GetPlayerCitySnapshotAsync(int snapshotId, CancellationToken ct = default)
     {
         return cityPlannerService.GetPlayerCitySnapshotAsync(snapshotId, ct);
+    }
+
+    public async Task<int> CalculateTotalAreaAsync(CityId cityId, int expansionCount)
+    {
+        var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(cityId);
+        var expansionSize = cityPlannerData.City.InitConfigs.Grid.ExpansionSize *
+            cityPlannerData.City.InitConfigs.Grid.ExpansionSize;
+        return expansionSize * expansionCount;
     }
 }

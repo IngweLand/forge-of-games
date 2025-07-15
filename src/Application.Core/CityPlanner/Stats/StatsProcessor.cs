@@ -2,7 +2,6 @@ using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
@@ -46,7 +45,8 @@ public class StatsProcessor(
         UpdateEvolvingBuildings();
         UpdateHappiness();
         UpdateProduction();
-        return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders);
+        return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
+            cityMapState.OpenExpansions);
     }
 
     private void UpdateEvolvingBuildings()
@@ -146,6 +146,7 @@ public class StatsProcessor(
             }
         }
 
-        return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders);
+        return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
+            cityMapState.OpenExpansions);
     }
 }

@@ -5,15 +5,20 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 @inject IHohStorageIconUrlProvider StorageIconUrlProvider
+@inject IAssetUrlProvider AssetUrlProvider
 <div class="component-root">
     <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Area]" OnClick="OnHeaderClick"/>
     <MudCollapse Expanded="_expanded">
         <div class="main-container">
             <div class="areas-by-type-items-container">
+                <div class="value-container">
+                    <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_expansion")" class="value-icon">
+                    <span class="value-label user-select-none">@Data.TotalArea</span>
+                </div>
                 @foreach (var item in Data.AreasByType)
                 {
                     <div class="value-container">
-                        <img src="@item.IconUrl" alt="resource icon" class="value-icon">
+                        <img src="@item.IconUrl" class="value-icon">
                         <span class="value-label user-select-none">@item.Label</span>
                     </div>
                 }

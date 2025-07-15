@@ -25,11 +25,12 @@ public class CityMapStateFactory(
         IReadOnlyCollection<BuildingSelectorTypesViewModel> buildingSelectorItems,
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
+        IMapArea mapArea,
         WonderDto? wonder)
     {
         var buildingDictionary = buildings.ToDictionary(b => b.Id);
         var age = ages.First(a => a.Id == city.AgeId);
-        var state = new CityMapState(buildingLevelRangesFactory)
+        var state = new CityMapState(buildingLevelRangesFactory, mapArea)
         {
             Buildings = buildingDictionary,
             BuildingCustomizations = buildingCustomizations,

@@ -20,10 +20,27 @@
         }
     </div>
     <div class="main-container">
-       
-        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Food"/>
-        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Coins"/>
-        <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Goods"/>
+
+        <div class="main-container-row">
+            @if (Snapshot.Food != null)
+            {
+                <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Food"/>
+            }
+            @if (Snapshot.Coins != null)
+            {
+                <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Coins"/>
+            }
+            @if (Snapshot.Goods != null)
+            {
+                <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.Goods"/>
+            }
+        </div>
+
+        <div class="main-container-row">
+            <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.HappinessUsageRatio"/>
+            <ResourceWithValue Size="Size.Small" ResourceValue="@Snapshot.TotalArea"/>
+        </div>
+
     </div>
     <div class="bottom-container">
         <span class="player-name">@Snapshot.PlayerName</span>

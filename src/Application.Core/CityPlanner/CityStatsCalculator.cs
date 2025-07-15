@@ -15,12 +15,12 @@ public class CityStatsCalculator(
     {
         var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(city.InGameCityId);
 
-        var cityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, 
-            cityPlannerData.Ages, city,
-            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
         var mapArea = mapAreaFactory.Create(cityPlannerData.City.InitConfigs.Grid.ExpansionSize,
             cityPlannerData.Expansions, city.UnlockedExpansions,
             cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
+        var cityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, 
+            cityPlannerData.Ages, city, mapArea,
+            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
         var lockedMapEntities = cityMapState.CityMapEntities.Values.Where(e => mapArea.IntersectsWithLocked(e.Bounds))
             .ToList();
         foreach (var lockedMapEntity in lockedMapEntities)

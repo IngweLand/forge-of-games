@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 
@@ -7,6 +8,8 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 public interface IPersistenceService
 {
     ValueTask SaveCity(HohCity city);
+    ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request);
+    ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync();
     ValueTask<bool> DeleteCity(string cityId);
     ValueTask<HohCity?> LoadCity(string cityId);
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities();

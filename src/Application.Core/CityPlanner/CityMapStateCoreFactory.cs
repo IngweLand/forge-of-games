@@ -10,11 +10,12 @@ public class CityMapStateCoreFactory(ICityMapEntityFactory cityMapEntityFactory)
     public CityMapStateCore Create(IReadOnlyCollection<BuildingDto> buildings,
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
+        IMapArea mapArea,
         WonderDto? wonder)
     {
         var buildingDictionary = buildings.ToDictionary(b => b.Id);
         var age = ages.First(a => a.Id == city.AgeId);
-        var state = new CityMapStateCore
+        var state = new CityMapStateCore(mapArea)
         {
             Buildings = buildingDictionary,
             CityName = city.Name,

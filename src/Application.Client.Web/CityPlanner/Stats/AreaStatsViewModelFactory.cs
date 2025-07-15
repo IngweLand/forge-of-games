@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -52,6 +53,7 @@ public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingType
         {
             AreasByType = areasByType,
             AreasByGroup = areasByGroup,
+            TotalArea = stats.TotalArea.ToString(CultureInfo.InvariantCulture),
         };
     }
 }

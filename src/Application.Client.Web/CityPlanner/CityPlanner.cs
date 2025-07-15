@@ -69,7 +69,7 @@ public class CityPlanner(
         {
             city.Entities = snapshot.Entities;
             var state = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
-                PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
+                PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city, _mapArea,
                 cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
             var statsProcessor = cityStatsProcessorFactory.Create(state,
                 cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
@@ -531,12 +531,12 @@ public class CityPlanner(
         await buildingRenderer.InitializeAsync();
 
         commandManager.Reset();
-        CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
-            PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city,
-            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
         _mapArea = mapAreaFactory.Create(cityPlannerData.City.InitConfigs.Grid.ExpansionSize,
             cityPlannerData.Expansions, city.UnlockedExpansions,
             cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
+        CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
+            PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city, _mapArea,
+            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
         var lockedMapEntities = CityMapState.CityMapEntities.Values.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
             .ToList();

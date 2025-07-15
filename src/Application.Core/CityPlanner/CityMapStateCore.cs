@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 using Ingweland.Fog.Dtos.Hoh;
@@ -6,7 +7,7 @@ using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner;
 
-public class CityMapStateCore
+public class CityMapStateCore(IMapArea mapArea)
 {
     private readonly Dictionary<int, CityMapEntity> _cityMapEntities = new();
     private readonly IList<CityMapEntity> _happinessConsumers = new List<CityMapEntity>();
@@ -33,6 +34,7 @@ public class CityMapStateCore
 
     public IReadOnlyList<CityMapEntity> HappinessConsumers => _happinessConsumers.AsReadOnly();
     public IReadOnlyList<CityMapEntity> HappinessProviders => _happinessProviders.AsReadOnly();
+    public IEnumerable<CityMapExpansion> OpenExpansions => mapArea.OpenExpansions;
 
     public IReadOnlyDictionary<BuildingType, IList<CityMapEntity>> TypedEntities => _typedEntities.AsReadOnly();
 
@@ -86,9 +88,9 @@ public class CityMapStateCore
         var building = Buildings[foundEntity.CityEntityId];
         _typedEntities[building.Type].Remove(foundEntity);
 
-       OnAfterRemove(foundEntity);
+        OnAfterRemove(foundEntity);
     }
-    
+
     protected virtual void OnAfterRemove(CityMapEntity removedEntity)
     {
     }

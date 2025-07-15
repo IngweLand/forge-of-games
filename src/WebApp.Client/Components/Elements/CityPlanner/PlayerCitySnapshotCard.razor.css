@@ -14,10 +14,20 @@
 }
 
 .main-container {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0 12px;
+    padding: 6px 0;
+    gap: 6px;
+}
+
+.main-container-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
 }
 
 .bottom-container {

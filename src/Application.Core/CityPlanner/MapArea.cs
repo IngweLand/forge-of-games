@@ -8,12 +8,12 @@ namespace Ingweland.Fog.Application.Core.CityPlanner;
 
 public class MapArea : IMapArea
 {
+    private readonly IList<Rectangle> _blockedBounds;
+    private readonly IReadOnlyCollection<Expansion> _blockedExpansions;
     private readonly IReadOnlyCollection<MapAreaHappinessProvider> _mapAreaHappinessProviders;
-    private IList<Rectangle> _blockedBounds;
-    private IReadOnlyCollection<Expansion> _blockedExpansions;
+    private readonly IList<Rectangle> _nonWaterSubtypeOpenExpansionBounds;
+    private readonly IList<Rectangle> _waterSubtypeOpenExpansionBounds;
     private IList<Rectangle> _lockedBounds;
-    private IList<Rectangle> _nonWaterSubtypeOpenExpansionBounds;
-    private IList<Rectangle> _waterSubtypeOpenExpansionBounds;
 
     public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions,
         IReadOnlyCollection<MapAreaHappinessProvider> mapAreaHappinessProviders)
@@ -25,7 +25,7 @@ public class MapArea : IMapArea
             e.Type is ExpansionType.Blocker or ExpansionType.Connector or ExpansionType.DetachedConnector).ToList();
         _blockedBounds = _blockedExpansions.Select(e => new Rectangle(e.X, e.Y, expansionSize, expansionSize))
             .ToList();
-        UsableExpansions = expansions.Where(e => !_blockedExpansions.Contains(e)).Select(e => new CityMapExpansion()
+        UsableExpansions = expansions.Where(e => !_blockedExpansions.Contains(e)).Select(e => new CityMapExpansion
             {Id = e.Id, Bounds = new Rectangle(e.X, e.Y, ExpansionSize, ExpansionSize)}).ToList();
         if (unlockedExpansions.Count > 0)
         {
@@ -64,6 +64,7 @@ public class MapArea : IMapArea
     public IReadOnlyCollection<MapAreaHappinessProvider> MapAreaHappinessProviders { get; }
 
     public IReadOnlyCollection<CityMapExpansion> UsableExpansions { get; }
+    public IEnumerable<CityMapExpansion> OpenExpansions => UsableExpansions.Where(e => !e.IsLocked);
 
     public IEnumerable<CityMapExpansion> LockedExpansions => UsableExpansions.Where(e => e.IsLocked);
     public Rectangle Bounds { get; }

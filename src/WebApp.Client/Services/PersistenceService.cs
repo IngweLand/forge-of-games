@@ -18,6 +18,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
     private const string EQUIPMENT_DATA_KEY_PREFIX = "Equipment";
     private const string UI_SETTINGS = "UiSettings";
+    private const string CITY_INSPIRATIONS_REQUEST = "CityInspirationsRequest";
 
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
@@ -27,6 +28,20 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     public ValueTask SaveCity(HohCity city)
     {
         return DoSaveCity(GetCityKey(city.Id), city);
+    }
+
+    public ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request)
+    {
+        var serializedRequest = JsonSerializer.Serialize(request, JsonSerializerOptions);
+        return localStorageService.SetItemAsStringAsync(CITY_INSPIRATIONS_REQUEST, serializedRequest);
+    }
+
+    public async ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync()
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(CITY_INSPIRATIONS_REQUEST);
+        return !string.IsNullOrWhiteSpace(rawData)
+            ? JsonSerializer.Deserialize<CityInspirationsSearchFormRequest>(rawData, JsonSerializerOptions)
+            : null;
     }
 
     public ValueTask SaveCityBackup(HohCityBackup cityBackup)

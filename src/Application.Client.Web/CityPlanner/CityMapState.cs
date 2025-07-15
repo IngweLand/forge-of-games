@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -10,7 +11,7 @@ using Ingweland.Fog.Models.Hoh.Enums;
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityMapState(
-    IBuildingLevelRangesFactory buildingLevelRangesFactory) : CityMapStateCore
+    IBuildingLevelRangesFactory buildingLevelRangesFactory, IMapArea mapArea) : CityMapStateCore(mapArea)
 {
     private readonly List<CityMapEntity> _inventoryBuildings = [];
     private readonly IList<HohCitySnapshot> _snapshots = new List<HohCitySnapshot>();
