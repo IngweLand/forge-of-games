@@ -9,14 +9,15 @@
 {
     <div class="page-container">
         <div class="fog-container info-container">
-                <img class="avatar" src="@_player.Player.AvatarUrl"/>
+            <img class="avatar" src="@_player.Player.AvatarUrl"/>
 
             <div class="details">
                 <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name
                 </div>
                 @if (_player.Player.AllianceName != null)
                 {
-                    <div class="user-select-none" style="cursor: pointer" @onclick="() => SearchAlliance(_player.Player.AllianceName)">
+                    <div class="user-select-none" style="cursor: pointer"
+                         @onclick="() => SearchAlliance(_player.Player.AllianceName)">
                         <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
                         <span class="preserve-whitespace">"@_player.Player.AllianceName"</span>
                         <span class="material-symbols-outlined">link</span>
@@ -33,35 +34,32 @@
                 </div>
             </div>
         </div>
-        @if(_player.Player.WorldId == "zz1")
-        {
-            <div class="fog-container section-container actions-container">
-                <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
-                           EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
-                    @if (_fetchingCity)
-                    {
-                        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
-                        <MudText Class="ms-2">@Loc[FogResource.StatsHub_Player_Visit]</MudText>
-                    }
-                    else
-                    {
-                        <MudText>@Loc[FogResource.StatsHub_Player_Visit]</MudText>
-                    }
-                </MudButton>
-                <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
-                           EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
-                    @if (_fetchingCity)
-                    {
-                        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
-                        <MudText Class="ms-2">@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
-                    }
-                    else
-                    {
-                        <MudText>@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
-                    }
-                </MudButton>
-            </div>
-        }
+        <div class="fog-container section-container actions-container">
+            <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                       EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
+                @if (_fetchingCity)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                    <MudText Class="ms-2">@Loc[FogResource.StatsHub_Player_Visit]</MudText>
+                }
+                else
+                {
+                    <MudText>@Loc[FogResource.StatsHub_Player_Visit]</MudText>
+                }
+            </MudButton>
+            <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+                       EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
+                @if (_fetchingCity)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                    <MudText Class="ms-2">@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
+                }
+                else
+                {
+                    <MudText>@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
+                }
+            </MudButton>
+        </div>
         @if (_canShowChart)
         {
             <div class="fog-container section-container ranking-points-chart-container">
@@ -177,7 +175,7 @@
         {
             <div class="fog-container section-container">
                 <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
-                <div >
+                <div>
                     <span>@(string.Join(", ", _player.Names))</span>
                 </div>
             </div>
