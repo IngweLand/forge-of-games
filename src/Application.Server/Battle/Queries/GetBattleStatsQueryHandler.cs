@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -8,7 +9,7 @@ namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
 public record GetBattleStatsQuery(int Id) : IRequest<BattleStatsDto?>, ICacheableRequest
 {
-    public string CacheKey => $"BattleStats_{Id}";
+    public string CacheKey => $"BattleStats_{Id}_{CultureInfo.CurrentCulture.Name}";
     public TimeSpan? Duration => TimeSpan.FromDays(1);
     public DateTimeOffset? Expiration { get; }
 }

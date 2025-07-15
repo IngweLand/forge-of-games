@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -11,7 +12,7 @@ namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
 public record GetUnitBattlesQuery(string UnitId) : IRequest<IReadOnlyCollection<UnitBattleDto>>, ICacheableRequest
 {
-    public string CacheKey => $"UnitBattles_{UnitId}";
+    public string CacheKey => $"UnitBattles_{UnitId}_{CultureInfo.CurrentCulture.Name}";
     public TimeSpan? Duration { get; }
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }

@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
@@ -12,7 +13,7 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 public record GetPlayerQuery : IRequest<PlayerWithRankings?>, ICacheableRequest
 {
     public required int PlayerId { get; init; }
-    public string CacheKey => $"PlayerWithRanking_{PlayerId}";
+    public string CacheKey => $"PlayerWithRanking_{PlayerId}_{CultureInfo.CurrentCulture.Name}";
     public TimeSpan? Duration => TimeSpan.FromHours(6);
     public DateTimeOffset? Expiration { get; }
 }

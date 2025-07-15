@@ -1,3 +1,4 @@
+using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -17,7 +18,10 @@ public record BattleSearchQuery : IRequest<BattleSearchResult>, ICacheableReques
     public required string BattleDefinitionId { get; init; }
     public required BattleType BattleType { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
-    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}";
+
+    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}_{
+        CultureInfo.CurrentCulture.Name}";
+
     public TimeSpan? Duration { get; }
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
