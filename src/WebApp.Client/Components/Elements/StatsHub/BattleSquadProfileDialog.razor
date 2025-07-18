@@ -4,6 +4,7 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @inject IStringLocalizer<FogResource> Loc
 <MudDialog Gutters="false" ContentStyle="border-radius: 0; margin: 0" @onclick="Close">
     <DialogContent>
@@ -55,10 +56,10 @@
 
             <div class="ability-container">
                 <div class="ability-icon-container">
-                    <img src="@HeroProfile.AbilityIconUrl"/>
-                    <span class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.AbilityLevel}")</span>
+                    <img src="@HeroProfile.Ability.IconUrl"/>
+                    <span class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.Identifier.AbilityLevel}")</span>
                 </div>
-                <span>@((MarkupString) HeroProfile.AbilityDescription)</span>
+                <span>@((MarkupString) HeroProfile.Ability.Level.Description)</span>
             </div>
 
             @if (HeroProfile.SupportUnit != null)
@@ -67,7 +68,7 @@
                     <img src="@HeroProfile.SupportUnit.IconUrl"/>
                     @foreach (var statItem in HeroProfile.SupportUnit.StatsItems)
                     {
-                        <CcHeroStatsItemComponent Size="Size.Small" StatItem="@statItem"/>
+                        <HeroStatsItemComponent Size="Size.Small" StatItem="@statItem"/>
                     }
                 </div>
             }

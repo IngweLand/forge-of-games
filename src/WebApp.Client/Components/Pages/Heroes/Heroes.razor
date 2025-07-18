@@ -1,0 +1,37 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@inject IHeroProfileUiService HeroProfileUiService
+@inject NavigationManager NavigationManager
+@if (_heroes != null)
+{
+    <div class="component-root">
+        @foreach (var hero in _heroes)
+        {
+            <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+        }
+    </div>
+}
+
+@code {
+    private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _heroes = await LoadWithPersistenceAsync(
+            nameof(_heroes),
+            async () => await HeroProfileUiService.GetHeroes()
+        );
+    }
+
+    private void OpenHeroPage(string heroId)
+    {
+        NavigationManager.NavigateTo($"{NavigationManager.Uri}/{heroId}");
+    }
+
+}

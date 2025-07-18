@@ -8,14 +8,9 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 
 public interface ICommandCenterUiService
 {
-    event Action? StateHasChanged;
-    CommandCenterDataDto CommandCenterData { get; }
-    public CommandCenterProfile? CurrentProfile { get; set; }
-    IReadOnlyDictionary<string, HeroDto> Heroes { get; }
-    IReadOnlyCollection<IconLabelItemViewModel> CalculateHeroProgressionCost(HeroProgressionCostRequest request);
     Task<string> CreateProfileAsync(string profileName);
     Task<string> CreateProfileAsync(string profileName, BasicCommandCenterProfile profileDto);
-    Task<bool> DeleteProfileAsync(string profileId);
+    ValueTask<bool> DeleteProfileAsync(string profileId);
     Task EnsureInitializedAsync();
     Task<IReadOnlyCollection<CcProfileBasicsViewModel>> GetProfiles();
 }

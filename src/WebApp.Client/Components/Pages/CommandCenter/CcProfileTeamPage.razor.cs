@@ -7,23 +7,24 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 public partial class CcProfileTeamPage : CcProfilePageBase
 {
     private CcProfileTeamViewModel? _team;
+
     protected override async Task HandleOnParametersSetAsync()
     {
         await base.HandleOnParametersSetAsync();
-        
-        _team = await ProfileUiService.GetTeamAsync(ProfileId, TeamId);
+
+        _team = ProfileUiService.GetTeam(TeamId);
     }
 
     protected override async Task HandleProfileUiServiceOnChangeAsync()
     {
         await base.HandleProfileUiServiceOnChangeAsync();
-        _team = await ProfileUiService.GetTeamAsync(ProfileId, TeamId);
+        _team = ProfileUiService.GetTeam(TeamId);
         StateHasChanged();
     }
 
     private async Task AddHero()
     {
-        var heroes = await ProfileUiService.GetAddableHeroesForTeamAsync(ProfileId, TeamId);
+        var heroes = ProfileUiService.GetAddableHeroesForTeam(TeamId);
         if (heroes.Count == 0)
         {
             return;
@@ -45,17 +46,16 @@ public partial class CcProfileTeamPage : CcProfilePageBase
             return;
         }
 
-        await ProfileUiService.AddHeroToTeamAsync(ProfileId, TeamId, heroId);
+        await ProfileUiService.AddHeroToTeamAsync(TeamId, heroId);
     }
 
-    private void OnHeroProfileSelected(string heroProfileId)
+    private void OnHeroProfileSelected(string heroId)
     {
-        NavigationManager.NavigateTo($"/command-center/profiles/{ProfileId}/heroes/{heroProfileId}"); 
+        NavigationManager.NavigateTo($"/command-center/profiles/{ProfileId}/heroes/{heroId}");
     }
 
-    private async Task RemoveHero(string heroProfileId)
+    private async Task RemoveHero(string heroId)
     {
-        await ProfileUiService.RemoveHeroFromTeamAsync(ProfileId, TeamId, heroProfileId);
+        await ProfileUiService.RemoveHeroFromTeamAsync(TeamId, heroId);
     }
 }
-

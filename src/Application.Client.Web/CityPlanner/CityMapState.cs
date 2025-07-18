@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;

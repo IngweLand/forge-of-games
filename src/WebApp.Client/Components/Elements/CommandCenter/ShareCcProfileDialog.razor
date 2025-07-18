@@ -1,14 +1,13 @@
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
-@using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions
 @using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 @inject ICcProfileUiService ProfileUiService
 @inject ICommandCenterProfileSharingService CommandCenterProfileSharingService
 @inject IJSInteropService JSInteropService
-@inject NavigationManager NavigationManager
+@inject ILogger<ShareCcProfileDialog> Logger
 <MudDialog DefaultFocus="DefaultFocus.FirstChild">
     <DialogContent>
         @if (_isLoading)
@@ -37,7 +36,7 @@
 
     [CascadingParameter]
     private IMudDialogInstance MudDialog { get; set; }
-
+    
     [Parameter]
     public required string ProfileId { get; set; }
 
@@ -55,17 +54,13 @@
         try
         {
             _isLoading = true;
-            var profileDto = await ProfileUiService.GetProfileDtoAsync(ProfileId);
-            if (profileDto != null)
-            {
-                var sharingResult = await CommandCenterProfileSharingService.ShareAsync(profileDto);
-
-                _link = sharingResult.WebResourceUrl;
-            }
+            var profileDto = ProfileUiService.GetProfileDto();
+            var sharingResult = await CommandCenterProfileSharingService.ShareAsync(profileDto);
+            _link = sharingResult.WebResourceUrl;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Logger.LogError(e, "Error happened when sharing the command center profile.");
         }
         finally
         {

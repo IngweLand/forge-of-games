@@ -1,0 +1,22 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+<div class="cc-hero-collection-item user-select-none" @onclick="() => OnClick.InvokeAsync(Hero.Id)">
+    <div class="avatar-section">
+        <img src="@Hero.PortraitUrl"/>
+        <div class="rating">@(new string('★', Hero.StarCount))</div>
+    </div>
+    <div class="main-label">@Hero.Name</div>
+    <div class="icon-label-container" style="background-color: @Hero.UnitColor">
+        <img class="icon" src="@Hero.UnitClassIconUrl"/>
+        <img class="icon" src="@Hero.UnitTypeIconUrl"/>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required HeroBasicViewModel Hero { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+}

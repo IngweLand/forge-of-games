@@ -25,6 +25,8 @@ public class HeroBasicDtoToViewModelConverter : ITypeConverter<HeroBasicDto, Her
             UnitColor = source.UnitColor.ToCssColor(),
             UnitTypeIconUrl = _assetUrlProvider.GetHohIconUrl(source.UnitType.GetTypeIconId()),
             PortraitUrl = _assetUrlProvider.GetHohUnitPortraitUrl(source.AssetId),
+            StarCount = source.StarClass.ToStarCount(),
+            UnitClassIconUrl = _assetUrlProvider.GetHohIconUrl(source.ClassId.GetClassIconId()),
         };
     }
 }

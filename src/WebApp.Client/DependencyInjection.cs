@@ -1,16 +1,13 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers;
-using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Net;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
-using Ingweland.Fog.WebApp.Client.Utilities;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Polly;
 using Refit;
@@ -23,10 +20,7 @@ internal static class DependencyInjection
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
-        services.AddSingleton<ITypeSafeMemoryCache, TypeSafeMemoryCache>();
-
         services.AddScoped<CityPlannerNavigationState>();
-        services.AddScoped<IHeroBuilderService, HeroBuilderService>();
         services.AddScoped<IClientLocaleService, ClientLocaleService>();
         services.AddScoped<IJSInteropService, JSInteropService>();
         services.AddScoped<IClipboardService, ClipboardService>();
@@ -46,7 +40,7 @@ internal static class DependencyInjection
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICampaignService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ITreasureHuntService>(services, baseAddress, refitSettings);
-        
+
         var refitJsonSettings = new RefitSettings
         {
             ContentSerializer = new SystemTextJsonContentSerializer(GetDefaultJsonSerializerOptions()),

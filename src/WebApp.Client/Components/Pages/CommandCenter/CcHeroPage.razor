@@ -1,24 +1,19 @@
-@page "/command-center/profiles/{ProfileId}/heroes/{HeroProfileId}"
-@page "/command-center/playgrounds/heroes/{HeroProfileId}"
+@page "/command-center/profiles/{profileId}/heroes/{heroId}"
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
-@using Ingweland.Fog.WebApp.Client.Components.Elements
-@inherits CommandCenterPageBase
-@if (IsInitialized && _heroProfileViewModel != null)
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@inherits CcProfilePageBase
+@if (IsInitialized && _heroProfileIdentifier != null)
 {
-    <CcHeroComponent ProgressionCost="@_progressionCost"
-                            Profile="@_heroProfileViewModel"
-                            ProgressionTargetLevelChanged="OnProgressionTargetLevelChanged"
-                            ValueChanged="UpdateProfile"
-                            UnitBattles="@_unitBattles"
-                            OnUnitBattleClicked="OpenBattle"/>
+    <div class="cc-page-container">
+        <CcPageTitle Title="@Profile!.Name"/>
+
+        <HeroComponent ShowBarracksSelector="false" InitProfile="@_heroProfileIdentifier" OnProfileUpdate="SaveProfile"/>
+    </div>
 }
 
 @code {
 
     [Parameter]
-    public required string? ProfileId { get; set; }
-
-    [Parameter]
-    public required string HeroProfileId { get; set; }
+    public required string HeroId { get; set; }
 
 }

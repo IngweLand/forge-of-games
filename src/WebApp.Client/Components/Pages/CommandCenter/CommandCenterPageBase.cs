@@ -24,10 +24,6 @@ public abstract class CommandCenterPageBase : FogPageBase
         if (disposing)
         {
             Snackbar.Dispose();
-            if (IsInitialized)
-            {
-                CommandCenterUiService.StateHasChanged -= CommandCenterUiServiceOnStateHasChanged;
-            }
         }
         
         base.Dispose(disposing);
@@ -76,14 +72,8 @@ public abstract class CommandCenterPageBase : FogPageBase
         JsInteropService.ResetScrollPositionAsync();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         await CommandCenterUiService.EnsureInitializedAsync();
-        CommandCenterUiService.StateHasChanged += CommandCenterUiServiceOnStateHasChanged;
         await HandleOnInitializedAsync();
         IsInitialized = true;
         await JsInteropService.HideLoadingIndicatorAsync();
-    }
-    
-    private void CommandCenterUiServiceOnStateHasChanged()
-    {
-       StateHasChanged();
     }
 }

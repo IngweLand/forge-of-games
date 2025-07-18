@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.Caching;
+using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Calculators;
 using Ingweland.Fog.Application.Client.Web.Calculators.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
@@ -13,6 +15,8 @@ using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter;
+using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh;
@@ -21,6 +25,8 @@ using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core;
+using Ingweland.Fog.Application.Core.Factories;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Client.Web;
@@ -33,20 +39,17 @@ public static class DependencyInjection
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
-        services.AddMemoryCache(options =>
-        {
-            options.ExpirationScanFrequency = TimeSpan.FromMinutes(5);
-        });
+        services.AddMemoryCache(options => { options.ExpirationScanFrequency = TimeSpan.FromMinutes(5); });
 
         services.AddSingleton<IHeroProgressionCalculators, HeroProgressionCalculators>();
-        
+
         services.AddSingleton<ICityMapEntityStyle, DefaultCityMapEntityStyle>();
         services.AddSingleton<IHohHeroLevelSpecsProvider, HohHeroLevelSpecsProvider>();
         services.AddSingleton<IBuildingLevelRangesFactory, BuildingLevelRangesFactory>();
         services.AddSingleton<IUnitStatFactory, UnitStatFactory>();
-        services.AddSingleton<IHohHeroSupportUnitProfileFactory, HohHeroSupportUnitProfileFactory>();
+        services.AddSingleton<IHeroSupportUnitProfileFactory, HeroSupportUnitProfileFactory>();
         services.AddSingleton<IHohHeroProfileFactory, HeroProfileFactory>();
-        services.AddSingleton<IHohHeroProfileDtoFactory, HeroProfileDtoFactory>();
+        services.AddSingleton<IHeroProfileIdentifierFactory, HeroProfileIdentifierFactory>();
         services.AddSingleton<IHohCommandCenterTeamFactory, CcProfileTeamFactory>();
         services.AddSingleton<ICcProfileTeamViewModelFactory, CcProfileTeamViewModelFactory>();
         services.AddSingleton<ICcProfileViewModelFactory, CcProfileViewModelFactory>();
@@ -90,7 +93,7 @@ public static class DependencyInjection
         services.AddScoped<IHohHeroProfileViewModelFactory, HeroProfileViewModelFactory>();
         services.AddScoped<IHohCommandCenterProfileFactory, CcProfileFactory>();
         services.AddScoped<ICcProfileUiService, CcProfileUiService>();
-        services.AddScoped<ICcHeroesPlaygroundUiService, CcHeroesPlaygroundUiService>();
+        services.AddScoped<IHeroProfileUiService, HeroProfileUiService>();
         services.AddScoped<ISnapshotsComparisonViewModelFactory, SnapshotsComparisonViewModelFactory>();
         services.AddScoped<IHohPlayerAvatarUrlProvider, HohPlayerAvatarUrlProvider>();
         services.AddScoped<IAllianceAvatarUrlProvider, AllianceAvatarUrlProvider>();
@@ -98,7 +101,6 @@ public static class DependencyInjection
         services.AddScoped<IStatsHubUiService, StatsHubUiService>();
         services.AddScoped<ICampaignUiService, CampaignUiService>();
         services.AddScoped<ITreasureHuntUiService, TreasureHuntUiService>();
-        services.AddScoped<IUnitUiService, UnitUiService>();
         services.AddScoped<ICityUiService, CityUiService>();
         services.AddScoped<ICampaignDifficultyIconUrlProvider, CampaignDifficultyIconUrlProvider>();
         services.AddScoped<ICcEquipmentUiService, CcEquipmentUiService>();
@@ -113,6 +115,8 @@ public static class DependencyInjection
         services.AddScoped<ICityInspirationsUiService, CityInspirationsUiService>();
         services.AddScoped<IPlayerCitySnapshotViewModelFactory, PlayerCitySnapshotViewModelFactory>();
         services.AddScoped<ICityPlannerUiService, CityPlannerUiService>();
+        services.AddScoped<IHohCoreDataCache, HohCoreDataCache>();
+        services.AddScoped<ICcMigrationManager, CcMigrationManager>();
 
         services.AddScoped<CityPlannerSettings>();
 

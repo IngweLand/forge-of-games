@@ -5,23 +5,18 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 
 public class HeroProfile
 {
-    public required int AbilityLevel { get; set; }
-
-    public required int AscensionLevel { get; set; }
-    public required int AwakeningLevel { get; set; }
-    public required string HeroId { get; init; }
-    public required string Id { get; init; }
-    public required int Level { get; set; }
-    public required int BarracksLevel { get; set; }
-
-    public required IReadOnlyDictionary<UnitStatType, float> Stats { get; set; } =
-        new Dictionary<UnitStatType, float>();
-
-    public IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> StatsBreakdown { get; set; } =
-        new Dictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>();
     public required float AbilityChargeTime { get; init; }
     public required float AbilityInitialChargeTime { get; init; }
 
-    public required double Power { get; set; }
-    public required HeroSupportUnitProfile SupportUnitProfile { get; set; }
+    public required HeroProfileIdentifier Identifier { get; init; }
+
+    public required double Power { get; init; }
+
+    public required IReadOnlyDictionary<UnitStatType, float> Stats { get; init; } =
+        new Dictionary<UnitStatType, float>();
+
+    public IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> StatsBreakdown { get; init; } =
+        new Dictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>();
+
+    public required HeroSupportUnitProfile SupportUnitProfile { get; init; }
 }

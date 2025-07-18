@@ -39,7 +39,7 @@ public partial class CcProfilePage : CcProfilePageBase
             return;
         }
 
-        var teamId = await ProfileUiService.CreateTeamAsync(ProfileId, profileName);
+        var teamId = await ProfileUiService.CreateTeamAsync(profileName);
         if (teamId == null)
         {
             return;
@@ -50,7 +50,7 @@ public partial class CcProfilePage : CcProfilePageBase
 
     private async Task DeleteTeam(string teamId)
     {
-        await ProfileUiService.DeleteTeamAsync(ProfileId, teamId);
+        await ProfileUiService.DeleteTeamAsync(teamId);
     }
 
     private void OpenProfileBarracks()

@@ -9,8 +9,7 @@ public class CommandCenterMappingProfile : Profile
 {
     public CommandCenterMappingProfile()
     {
-        CreateMap<HeroProfile, BasicHeroProfile>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(_ => Guid.NewGuid().ToString("N")))
+        CreateMap<HeroProfile, HeroProfileIdentifier>()
             .ForMember(dest => dest.HeroId, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.HeroId)));
     }
 }

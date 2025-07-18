@@ -1,0 +1,18 @@
+.component-root{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 12px 2px;
+}
+
+@media (min-width: 576px) {
+    .component-root{
+        gap: 16px 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .component-root{
+        gap: 24px 8px;
+    }
+}

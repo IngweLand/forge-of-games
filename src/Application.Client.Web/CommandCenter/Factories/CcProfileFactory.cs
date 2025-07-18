@@ -1,6 +1,8 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Extensions;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Dtos.Hoh.Units;
@@ -23,7 +25,7 @@ public class CcProfileFactory(IHohHeroProfileFactory heroProfileFactory, IMapper
             var heroBarracks = barracks.First(b =>
                 b.Group == group && b.Level == profile.BarracksProfile.Levels[group]);
             return heroProfileFactory.Create(src, hero, heroBarracks);
-        }).ToDictionary(hp => hp.Id);
+        }).ToDictionary(hp => hp.Identifier.HeroId);
 
         return profile;
     }

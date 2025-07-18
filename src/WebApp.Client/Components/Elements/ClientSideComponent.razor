@@ -1,0 +1,36 @@
+<div class="fog-container component-root">
+    @if (Title != null)
+    {
+        <span class="title">@Title</span>
+    }
+    @if (_isBrowser)
+    {
+        @Content
+    }
+    @if (!_isBrowser || IsLoading)
+    {
+        <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required RenderFragment Content { get; set; }
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public bool IsLoading { get; set; }
+
+    private bool _isBrowser;
+
+    protected override void OnInitialized()
+    {
+        _isBrowser = OperatingSystem.IsBrowser();
+    }
+
+}

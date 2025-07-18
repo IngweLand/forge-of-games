@@ -9,13 +9,13 @@ public class CcProfileTeamViewModelFactory : ICcProfileTeamViewModelFactory
     public CcProfileTeamViewModel Create(CommandCenterProfileTeam team,
         IReadOnlyDictionary<string, HeroProfileViewModel> viewModels)
     {
-        if (team.HeroProfileIds.Any(id => !viewModels.ContainsKey(id)))
+        if (team.HeroIds.Any(id => !viewModels.ContainsKey(id)))
         {
             throw new ArgumentException("One or more hero profile IDs not found in view models dictionary",
                 nameof(viewModels));
         }
 
-        var heroes = team.HeroProfileIds.Select(id => viewModels[id]).ToList();
+        var heroes = team.HeroIds.Select(id => viewModels[id]).ToList();
         var power = heroes.Sum(hp => hp.TotalPower);
         return new CcProfileTeamViewModel()
         {

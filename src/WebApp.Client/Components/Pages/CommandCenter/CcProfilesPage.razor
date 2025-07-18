@@ -8,34 +8,39 @@
 
 @if (IsInitialized)
 {
-    <div class="command-center-grid-container">
-        <div class="command-center-card command-center-action-card"
-             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH)">
-            <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_heroes")"/>
-            <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_HeroPlaygrounds]</span>
-        </div>
-        <div class="command-center-card command-center-action-card"
-             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)">
-            <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_equipment")"/>
-            <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Equipment]</span>
-        </div>
-        <div class="command-center-card command-center-action-card" @onclick="CreateNewProfile">
-            <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
-            <span class="command-center-card-label">@Loc[FogResource.CommandCenter_CreateProfile]</span>
-        </div>
-
-        <div class="command-center-card command-center-action-card"
-             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH)">
-            <span class="material-symbols-outlined command-center-card-icon">file_open</span>
-            <span class="card-label">@Loc[FogResource.CommandCenter_Import]</span>
-        </div>
-
-        @foreach (var profile in _profiles)
-        {
-            <div class="command-center-card" @onclick="() => OpenProfile(profile.Id)">
-                <span class="command-center-card-label">@profile.Name</span>
+    <div class="page-container">
+        <div class="action-buttons-container">
+            <div class="command-center-card command-center-action-card action-card" @onclick="CreateNewProfile">
+                <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_CreateProfile]</span>
             </div>
-        }
+
+            <div class="command-center-card command-center-action-card action-card"
+                 @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH)">
+                <span class="material-symbols-outlined command-center-card-icon">file_open</span>
+                <span class="card-label">@Loc[FogResource.CommandCenter_Import]</span>
+            </div>
+            
+            <div class="command-center-card command-center-action-card action-card"
+                 @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)">
+                <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_equipment")"/>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Equipment]</span>
+            </div>
+            
+            <div class="command-center-card command-center-action-card action-card"
+                 @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)">
+                <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_heroes")"/>
+                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Heroes]</span>
+            </div>
+        </div>
+        <div class="items-container">
+            @foreach (var profile in _profiles)
+            {
+                <div class="command-center-card" @onclick="() => OpenProfile(profile.Id)">
+                    <span class="command-center-card-label">@profile.Name</span>
+                </div>
+            }
+        </div>
     </div>
 }
 else

@@ -8,32 +8,27 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 
 public class HeroAbilityViewModelFactory(IAssetUrlProvider assetUrlProvider) : IHeroAbilityViewModelFactory
 {
-    public HeroAbilityViewModel Create(HeroAbilityDto heroAbilityDto)
+    public HeroAbilityViewModel Create(HeroAbilityDto heroAbilityDto, int level, float abilityChargeTime,
+        float abilityInitialChargeTime)
     {
-        var levels = new List<HeroAbilityLevelViewModel>();
-        HeroAbilityText abilityText = null!;
-        foreach (var levelDto in heroAbilityDto.Levels.OrderBy(l => l.Level))
-        {
-            if (levelDto.Description != null)
-            {
-                abilityText = new HeroAbilityText(levelDto.Description);
-            }
-
-            var level = new HeroAbilityLevelViewModel
-            {
-                Title = abilityText.Title,
-                Description = abilityText.GetDescription(levelDto.DescriptionItems),
-                Cost = levelDto.Cost,
-                Level = levelDto.Level,
-            };
-            levels.Add(level);
-        }
-
+        var abilityLevels = heroAbilityDto.Levels.Take(level).ToList();
+        var abilityText = new HeroAbilityText(abilityLevels.Last(hal => hal.Description != null).Description!);
+        var lastLevel = abilityLevels.Last();
         return new HeroAbilityViewModel
         {
             IconUrl = assetUrlProvider.GetHohHeroAbilityIconUrl(heroAbilityDto.Id),
             Name = heroAbilityDto.Name,
-            Levels = levels,
+            Level = new HeroAbilityLevelViewModel
+            {
+                Title = abilityText.Title,
+                Description = abilityText.GetDescription(lastLevel.DescriptionItems),
+                Cost = lastLevel.Cost,
+                Level = lastLevel.Level,
+            },
+            ChargeTime = $"{abilityChargeTime:F1}s",
+            InitialChargeTime = $"{abilityInitialChargeTime:F1}s",
+            InitialChargePercentage = MathF.Round(
+                (abilityChargeTime - abilityInitialChargeTime) / abilityChargeTime * 100),
         };
     }
 }

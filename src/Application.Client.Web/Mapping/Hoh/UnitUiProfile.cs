@@ -13,7 +13,6 @@ public class UnitUiProfile : Profile
     {
         CreateMap<HeroBasicDto, HeroBasicViewModel>().ConvertUsing<HeroBasicDtoToViewModelConverter>();
         CreateMap<HeroDto, HeroBasicViewModel>().ConvertUsing<HeroDtoToHeroBasicViewModelConverter>();
-        CreateMap<HeroDto, HeroViewModel>().ConvertUsing<HeroDtoToViewModelConverter>();
         CreateMap<HeroProgressionCostResource, IReadOnlyCollection<IconLabelItemViewModel>>()
             .ConvertUsing<HeroProgressionCostResourceToResourceAmountsConverter>();
     }

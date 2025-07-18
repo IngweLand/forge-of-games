@@ -1,0 +1,110 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    gap: 6px;
+}
+
+.header-container {
+    display: flex;
+    gap: 8px;
+}
+
+.header-container > img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--fog-border-color);
+    border-radius: var(--fog-border-radius);
+    overflow: hidden;
+}
+
+.header-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.ability-name {
+    color: var(--fog-text-on-container-color);
+    font-weight: 700 ;
+    font-size: 14px;
+}
+
+.cost-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    color: var(--fog-text-color);
+    font-size: 12px;
+}
+
+.cost-container > img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    align-items: center;
+}
+
+.ability-level-title {
+    color: var(--fog-text-accent-color);
+    font-weight: 700 ;
+    font-size: 12px;
+}
+
+.ability-level-description {
+    font-size: 14px;
+}
+
+.ability-level-description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+@media (min-width: 576px) {
+    .component-root {
+        gap: 8px;
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+
+    .ability-name {
+        font-size: 16px;
+    }
+
+    .cost-container {
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .cost-container > img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .header-container > img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .header-container > div {
+        gap: 6px;
+    }
+
+    .ability-level-title {
+        font-size: 14px;
+    }
+
+    .ability-level-description {
+        font-size: 16px;
+    }
+    
+    .ability-level-description-container {
+        gap: 4px;
+    }
+}

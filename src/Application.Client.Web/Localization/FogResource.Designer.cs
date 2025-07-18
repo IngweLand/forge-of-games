@@ -861,7 +861,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Equipment | Command Center | Battle &amp; Team Planner | Heroes of History | Forge of Games.
+        ///   Looks up a localized string similar to Equipment | Command Center | Heroes of History | Forge of Games.
         /// </summary>
         public static string CommandCenter_Equipment_PageTitle {
             get {
@@ -902,15 +902,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CommandCenter_Menu_Heroes {
             get {
                 return ResourceManager.GetString("CommandCenter.Menu.Heroes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hero Playgrounds.
-        /// </summary>
-        public static string CommandCenter_Menu_HeroPlaygrounds {
-            get {
-                return ResourceManager.GetString("CommandCenter.Menu.HeroPlaygrounds", resourceCulture);
             }
         }
         
@@ -1343,6 +1334,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Victory {
             get {
                 return ResourceManager.GetString("Common.Victory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wikipedia.
+        /// </summary>
+        public static string Common_Wikipedia {
+            get {
+                return ResourceManager.GetString("Common.Wikipedia", resourceCulture);
             }
         }
         

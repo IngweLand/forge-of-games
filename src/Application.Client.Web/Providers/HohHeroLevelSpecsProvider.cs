@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.Factories;
+using System.Collections.Concurrent;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 
@@ -8,23 +8,22 @@ public class HohHeroLevelSpecsProvider : IHohHeroLevelSpecsProvider
 {
     private const int ASCENSION_PERIOD = 10;
 
-    private IDictionary<int, IReadOnlyCollection<HeroLevelSpecs>> _levelSpecs =
-        new Dictionary<int, IReadOnlyCollection<HeroLevelSpecs>>();
+    private readonly ConcurrentDictionary<int, IReadOnlyCollection<HeroLevelSpecs>> _levelSpecs = new();
 
     public IReadOnlyCollection<HeroLevelSpecs> Get(int maxLevel)
     {
-        if (_levelSpecs.TryGetValue(maxLevel, out var levelSpecs))
-        {
-            return levelSpecs;
-        }
+        return _levelSpecs.GetOrAdd(maxLevel, SpecsFactory);
+    }
 
-        List<HeroLevelSpecs> levels = new();
+    private static IReadOnlyCollection<HeroLevelSpecs> SpecsFactory(int maxLevel)
+    {
+        List<HeroLevelSpecs> levels = [];
         var ascensionLevel = 0;
         for (var i = 1; i < maxLevel + 1; i++)
         {
             if (i % ASCENSION_PERIOD == 0 && i < maxLevel)
             {
-                levels.Add(new HeroLevelSpecs()
+                levels.Add(new HeroLevelSpecs
                 {
                     Title = $"{i} > {i + 10}",
                     Level = i,
@@ -34,7 +33,7 @@ public class HohHeroLevelSpecsProvider : IHohHeroLevelSpecsProvider
                 ascensionLevel = i / ASCENSION_PERIOD;
             }
 
-            levels.Add(new HeroLevelSpecs()
+            levels.Add(new HeroLevelSpecs
             {
                 Title = i.ToString(),
                 Level = i,
@@ -42,7 +41,6 @@ public class HohHeroLevelSpecsProvider : IHohHeroLevelSpecsProvider
             });
         }
 
-        _levelSpecs.Add(maxLevel, levels);
         return levels;
     }
 }

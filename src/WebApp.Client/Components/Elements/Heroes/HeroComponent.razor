@@ -1,0 +1,213 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Size = MudBlazor.Size
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@if (_profile != null)
+{
+    <div class="component-root">
+        <div class="header-container">
+            <div class="fog-container avatar-section">
+                <div class="avatar-container">
+                    <img src="@_profile.PortraitUrl"/>
+                    <div class="rating">@(new string('★', _profile.StarCount))</div>
+                </div>
+                <div class="power-label">@_profile.TotalPower</div>
+            </div>
+            <div class="fog-container header-content">
+                <div class="hero-name">@_profile.Name</div>
+                <div class="hero-icons-section">
+                    <div class="hero-icons-section-item-container">
+                        <div class="hero-icons-section-item">
+                            <img src="@_profile.UnitClassTintedIconUrl" class="hero-icons-section-icon"/>
+                            <span class="hero-icons-section-label">@_profile.UnitClassName</span>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="hero-icons-section-item-container">
+                        <div class="hero-icons-section-item">
+                            <img src="@_profile.UnitTypeTintedIconUrl" class="hero-icons-section-icon"/>
+                            <span class="hero-icons-section-label">@_profile.UnitTypeName</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-stats-section">
+                    @foreach (var statItem in _profile.StatsItems)
+                    {
+                        <HeroStatsItemComponent StatItem="@statItem"/>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="fog-container section-container options-container">
+            <div class="selector-component">
+                <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Main]" ToStringFunc="@(l => l?.Title)"
+                           Value="@_profile.Level" T="HeroLevelSpecs"
+                           ValueChanged="OnLevelValueChanged" Variant="Variant.Outlined">
+                    @foreach (var level in _profile.HeroLevels)
+                    {
+                        <MudSelectItem Value="level">@level.Title</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            <div class="selector-component">
+                <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Ability]" T="int"
+                           Value="@_profile.Identifier.AbilityLevel"
+                           ValueChanged="OnAbilityLevelValueChanged" Variant="Variant.Outlined">
+                    @foreach (var level in _profile.AbilityLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            <div class="selector-component">
+                <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Awakening]" T="int"
+                           Value="@_profile.Identifier.AwakeningLevel"
+                           ValueChanged="OnAwakeningValueChanged"
+                           Variant="Variant.Outlined">
+                    @foreach (var level in _profile.AwakeningLevels)
+                    {
+                        <MudSelectItem Value="level">@level</MudSelectItem>
+                    }
+                </MudSelect>
+            </div>
+            @if (ShowBarracksSelector)
+            {
+                <div class="selector-component">
+                    <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Barracks]"
+                               ValueChanged="OnBarracksLevelChanged"
+                               T="int" Value="@_profile.Identifier.BarracksLevel"
+                               Variant="Variant.Outlined">
+
+                        @foreach (var level in _profile.BarracksLevels)
+                        {
+                            <MudSelectItem Value="level">@level</MudSelectItem>
+                        }
+                    </MudSelect>
+                </div>
+            }
+        </div>
+
+        <div class="ability-container section-container fog-container">
+            <HeroAbilityComponent Ability="@_profile.Ability"/>
+        </div>
+        @if (_progressionTargetLevels != null)
+        {
+            <div class="progression-cost-container section-container fog-container">
+                <span
+                    class="progression-cost-title">@Loc[FogResource.Tools_HeroProgressionResourcesCalculator_Name]</span>
+                <div class="selector-component">
+                    <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" T="HeroLevelSpecs"
+                               ValueChanged="OnProgressionTargetLevelChanged" Value="@_progressionTargetLevel"
+                               ToStringFunc="@(l => l == null ? null : l.Title)"
+                               Variant="Variant.Outlined">
+
+                        @foreach (var level in _progressionTargetLevels)
+                        {
+                            <MudSelectItem Value="level">@level.Title</MudSelectItem>
+                        }
+                    </MudSelect>
+                </div>
+
+                @if (_progressionCost != null)
+                {
+                    <div class="progression-cost-items-container">
+                        @foreach (var cost in _progressionCost)
+                        {
+                            <HorizontalIconLabelComponent Item="cost"/>
+                        }
+                    </div>
+                }
+            </div>
+        }
+        @if (_profile.SupportUnit != null)
+        {
+            <div class="support-unit-container section-container fog-container">
+                <img src="@_profile.SupportUnit.IconUrl"/>
+                @foreach (var statItem in _profile.SupportUnit.StatsItems)
+                {
+                    <HeroStatsItemComponent StatItem="@statItem"/>
+                }
+            </div>
+        }
+
+        <div class="fog-container unit-battles-container">
+            <span class="unit-battles-container-title">@Loc[FogResource.Unit_BattlesAndPerformance]</span>
+            @if (_unitBattles != null)
+            {
+                @if (_unitBattles.Count > 0)
+                {
+                    <MudToggleGroup T="BattleType" Size="Size.Small" @bind-Value="_selectedBattleType"
+                                    Style="align-self: center" Color="Color.Secondary">
+                        @foreach (var group in _unitBattles)
+                        {
+                            <MudToggleItem Value="@group.Key" Text="@group.Value.First().BattleTypeName"
+                                           Class="unit-battle-type-selector qwerty"/>
+                        }
+
+                    </MudToggleGroup>
+                    <table class="unit-battles-table">
+                        <colgroup>
+                            <col style="width: 110px;"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-spacer-column"/>
+                            <col style="width: 32px;"/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>@Loc[FogResource.Hoh_Lvl]</th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_flat_unit_infantry_neutral")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_defender_neutral")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_healer_neutral")"/></th>
+                            <th/>
+                            <th/>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var unitBattle in _unitBattles.GetValueOrDefault(_selectedBattleType, []))
+                        {
+                            <tr @onclick="@(() => OpenBattle(unitBattle))">
+                                <td>@unitBattle.Level.Title | @unitBattle.AbilityLevel</td>
+                                <td>@unitBattle.AttackValue</td>
+                                <td>@unitBattle.DefenseValue</td>
+                                <td>@unitBattle.HealValue</td>
+                                <td></td>
+                                <td><span class="material-symbols-outlined">chevron_right</span></td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
+                        @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
+                    </div>
+                }
+            }
+            else
+            {
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            }
+        </div>
+
+        <WikiAbstractComponent SearchString="@_profile.Name"/>
+
+    </div>
+}
+<style>
+    .unit-battle-type-selector {
+        text-transform: none !important;
+        font-weight: 700 !important;
+        font-size: 12px !important;
+    }
+</style>

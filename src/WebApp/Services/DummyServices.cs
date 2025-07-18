@@ -45,7 +45,7 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
-    public ValueTask SaveProfile(BasicCommandCenterProfile commandCenterProfile)
+    public ValueTask SaveCommandCenterProfile(BasicCommandCenterProfile commandCenterProfile)
     {
         throw new NotImplementedException();
     }
@@ -70,7 +70,7 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
-    public ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync()
+    public ValueTask<HeroProfileIdentifier?> GetHeroProfileAsync(string heroId)
     {
         throw new NotImplementedException();
     }
@@ -80,7 +80,7 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
-    public ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles)
+    public ValueTask SaveHeroProfileAsync(HeroProfileIdentifier profile)
     {
         throw new NotImplementedException();
     }

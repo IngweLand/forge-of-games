@@ -18,6 +18,8 @@ public class HeroDtoToHeroBasicViewModelConverter(IAssetUrlProvider assetUrlProv
             UnitColor = source.Unit.Color.ToCssColor(),
             UnitTypeIconUrl = assetUrlProvider.GetHohIconUrl(source.Unit.Type.GetTypeIconId()),
             PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(source.Unit.AssetId),
+            StarCount = source.StarClass.ToStarCount(),
+            UnitClassIconUrl = assetUrlProvider.GetHohIconUrl(source.ClassId.GetClassIconId()),
         };
     }
 }

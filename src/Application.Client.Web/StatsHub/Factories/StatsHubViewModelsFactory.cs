@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
@@ -12,6 +13,7 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
@@ -19,7 +21,6 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 
 public class StatsHubViewModelsFactory(
     IMapper mapper,
-    IAssetUrlProvider assetUrlProvider,
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IResourceLocalizationService resourceLocalizationService,
     IHohHeroProfileFactory heroProfileFactory,
@@ -72,10 +73,10 @@ public class StatsHubViewModelsFactory(
         {
             var isVictory = pvpBattleDto.Winner.Id == playerWithRankings.Player.Id;
             var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroes, barracks))
-                .OrderBy(uvm => uvm.Id)
+                .OrderBy(uvm => uvm.Identifier.HeroId)
                 .ToList();
             var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroes, barracks))
-                .OrderBy(uvm => uvm.Id)
+                .OrderBy(uvm => uvm.Identifier.HeroId)
                 .ToList();
             battles.Add(new PvpBattleViewModel
             {
@@ -165,7 +166,7 @@ public class StatsHubViewModelsFactory(
         }
 
         var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
-        var profileVm = heroProfileViewModelFactory.CreateForCommandCenterProfile(profile, hero);
+        var profileVm = heroProfileViewModelFactory.Create(profile, hero, BuildingLevelRange.Empty);
         string? finalHitPointsPercent = null;
         var isDead = false;
         if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))

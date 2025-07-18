@@ -4,11 +4,8 @@ using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
-using Ingweland.Fog.Application.Core.Extensions;
-using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
@@ -19,8 +16,8 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
 public class HeroProfileViewModelFactory(
     IAssetUrlProvider assetUrlProvider,
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
-    IBuildingLevelRangesFactory buildingLevelRangesFactory,
-    IHeroSupportUnitViewModelFactory heroSupportUnitViewModelFactory) : IHohHeroProfileViewModelFactory
+    IHeroSupportUnitViewModelFactory heroSupportUnitViewModelFactory,
+    IHeroAbilityViewModelFactory abilityViewModelFactory) : IHohHeroProfileViewModelFactory
 {
     private const int DEFAULT_HITS_PER_MINUTE = 60;
 
@@ -55,43 +52,13 @@ public class HeroProfileViewModelFactory(
         UnitStatType.Evasion,
     ];
 
-    public HeroProfileViewModel CreateForCommandCenterProfile(HeroProfile profile, HeroDto hero)
+    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, BuildingLevelRange barracksRanges)
     {
-        return Create(profile, hero, null);
-    }
-
-    public HeroProfileViewModel CreateForPlayground(HeroProfile profile, HeroDto hero,
-        IReadOnlyCollection<BuildingDto> barracks)
-    {
-        return Create(profile, hero, barracks);
-    }
-
-    private HeroProfileViewModel Create(HeroProfile profile, HeroDto hero,
-        IReadOnlyCollection<BuildingDto>? barracks)
-    {
-        var levelSpecs = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count);
-        var level = levelSpecs.First(ls => ls.Level == profile.Level && ls.AscensionLevel == profile.AscensionLevel);
-        var group = hero.Unit.Type.ToBuildingGroup();
-        IReadOnlyCollection<int>? barracksLevels = null;
-        if (barracks != null)
-        {
-            var ranges = buildingLevelRangesFactory.Create(barracks);
-            var barracksRanges = ranges[group];
-            barracksLevels = Enumerable.Range(barracksRanges.StartLevel,
-                barracksRanges.EndLevel - barracksRanges.StartLevel + 1).ToList();
-        }
-
-        var abilityLevels = hero.Ability.Levels.Take(profile.AbilityLevel).ToList();
-        var abilityText = new HeroAbilityText(abilityLevels.Last(hal => hal.Description != null).Description!);
         var profileViewModel = new HeroProfileViewModel
         {
-            Id = profile.Id,
-            HeroId = profile.HeroId,
+            Identifier = profile.Identifier,
             HeroUnitId = hero.Unit.Id,
             Name = hero.Unit.Name,
-            Level = level,
-            AbilityLevel = profile.AbilityLevel,
-            AwakeningLevel = profile.AwakeningLevel,
             PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
             StarCount = hero.StarClass.ToStarCount(),
             UnitColor = hero.Unit.Color.ToCssColor(),
@@ -111,16 +78,14 @@ public class HeroProfileViewModelFactory(
             HeroLevels = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count),
             AbilityLevels = Enumerable.Range(1, hero.Ability.Levels.Count).ToList(),
             AwakeningLevels = Enumerable.Range(0, 6).ToList(),
-            BarracksLevels = barracksLevels,
-            BarracksLevel = profile.BarracksLevel,
+            BarracksLevels = Enumerable
+                .Range(barracksRanges.StartLevel, barracksRanges.EndLevel - barracksRanges.StartLevel + 1)
+                .ToList(),
             StatsItems = CreateMainStatsItems(profile.Stats),
             StatsBreakdown = CreateStatsBreakdownItems(profile.StatsBreakdown),
-            AbilityDescription = abilityText.GetDescription(abilityLevels.Last().DescriptionItems),
-            AbilityIconUrl = assetUrlProvider.GetHohHeroAbilityIconUrl(hero.Ability.Id),
-            AbilityChargeTime = $"{profile.AbilityChargeTime:F1}s",
-            AbilityInitialChargeTime = $"{profile.AbilityInitialChargeTime:F1}s",
-            AbilityInitialChargePercentage = MathF.Round(
-                (profile.AbilityChargeTime - profile.AbilityInitialChargeTime) / profile.AbilityChargeTime * 100),
+            VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),
+            Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
+                profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
         };
 
         return profileViewModel;

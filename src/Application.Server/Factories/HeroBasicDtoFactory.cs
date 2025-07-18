@@ -18,6 +18,8 @@ public class HeroBasicDtoFactory(IHohGameLocalizationService localizationService
             AssetId = unit.Name,
             UnitType = unit.Type,
             UnitColor = unit.Color,
+            ClassId = hero.ClassId,
+            StarClass = hero.ProgressionComponent.Id,
         };
     }
 }

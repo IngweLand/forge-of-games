@@ -52,7 +52,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         if (_shouldImportProfile && _inGameStartupData?.Profile != null)
         {
             _inGameStartupData.Profile.Id = Guid.NewGuid().ToString("N");
-            await PersistenceService.SaveProfile(_inGameStartupData.Profile);
+            await PersistenceService.SaveCommandCenterProfile(_inGameStartupData.Profile);
         }
 
         if (_shouldImportCities && _inGameStartupData?.Cities != null)

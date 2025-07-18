@@ -105,7 +105,6 @@ public static class HohApi
 
         api.MapProtobufGet("/heroes/basic", GetHeroesBasicDataAsync);
         api.MapProtobufGet("/heroes/{heroId}", GetHeroAsync);
-        api.MapProtobufGet("/heroes/{heroId}/ability", GetHeroAbilityAsync);
 
         api.MapProtobufGet("/city/barracks", GetAllBarracksAsync);
         api.MapProtobufGet("/city/barracks/{unitType}", GetBarracksAsync);
@@ -277,20 +276,6 @@ public static class HohApi
         var types = await services.CityService.GetExpansionsAsync(cityId);
 
         await WriteToResponseAsync(context, types, services.ProtobufSerializer);
-    }
-
-    private static async Task GetHeroAbilityAsync([AsParameters] HohServices services,
-        HttpContext context, string heroId)
-    {
-        var ability = await services.UnitService.GetHeroAbilityAsync(heroId);
-        if (ability == null)
-        {
-            services.Logger.LogError($"{nameof(GetHeroAsync)} - Could not find ability for the hero with id {heroId}");
-            context.Response.StatusCode = StatusCodes.Status404NotFound;
-            return;
-        }
-
-        await WriteToResponseAsync(context, ability, services.ProtobufSerializer);
     }
 
     private static async Task GetHeroAsync([AsParameters] HohServices services,

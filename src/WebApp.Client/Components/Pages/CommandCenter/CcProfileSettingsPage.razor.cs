@@ -23,33 +23,33 @@ public partial class CcProfileSettingsPage : CcProfilePageBase
     protected override async Task HandleOnParametersSetAsync()
     {
         await base.HandleOnParametersSetAsync();
-        
-        _profileSettings = await ProfileUiService.GetSettingsAsync(ProfileId);
+
+        _profileSettings = ProfileUiService.GetSettings();
     }
 
     private async Task SaveSettings()
     {
-        await ProfileUiService.UpdateProfileSettingsAsync(ProfileId, _profileSettings!);
+        await ProfileUiService.UpdateProfileSettingsAsync(_profileSettings!);
     }
 
     private async Task DeleteProfile()
     {
         var success = await CommandCenterUiService.DeleteProfileAsync(ProfileId);
-        if(success)
+        if (success)
         {
             NavigationManager.NavigateTo("command-center/profiles", false, true);
         }
     }
+
     private async Task OnDeleteProfileClicked()
     {
         var result = await DialogService.ShowMessageBox(
             null,
             Loc[FogResource.Common_DeleteConfirmation, Profile!.Name],
-            yesText: Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+            Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
         if (result != null)
         {
             await DeleteProfile();
         }
     }
 }
-

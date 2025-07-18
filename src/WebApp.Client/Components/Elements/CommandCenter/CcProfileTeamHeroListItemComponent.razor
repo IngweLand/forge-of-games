@@ -1,10 +1,11 @@
-@using Ingweland.Fog.Application.Client.Web.CommandCenter
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Microsoft.Extensions.Localization
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
-<div class="fog-container component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
+<div class="fog-container component-root user-select-none"
+     @onclick="() => OnClick.InvokeAsync(Profile.Identifier.HeroId)">
     <div class="more-menu">
         <MudIconButton Icon="@Icons.Material.Filled.Delete" OnClick="OnDeleteClicked"/>
     </div>
@@ -22,7 +23,7 @@
                 <div class="hero-icons-section-item-container">
                     <div class="hero-icons-section-item">
                         <span
-                            class="hero-levels-label">@($"{Profile.Level.Title} | {Profile.AbilityLevel} | {Profile.AwakeningLevel}")</span>
+                            class="hero-levels-label">@($"{Profile.Level.Title} | {Profile.Identifier.AbilityLevel} | {Profile.Identifier.AwakeningLevel}")</span>
                     </div>
                 </div>
                 <div class="divider"></div>
@@ -41,14 +42,10 @@
                 </div>
             </div>
             <div class="ability-container">
-                @* <div class="ability-description-container"> *@
-                @*     <img src="@Profile.AbilityIconUrl"/> *@
-                @*     <span>@((MarkupString) Profile.AbilityDescription)</span> *@
-                @* </div> *@
                 <AbilityChargeComponent Dense="true"
-                                        AbilityInitialChargePercentage="@Profile.AbilityInitialChargePercentage"
-                                        AbilityChargeTime="@Profile.AbilityChargeTime"
-                                        AbilityInitialChargeTime="@Profile.AbilityInitialChargeTime"></AbilityChargeComponent>
+                                        AbilityInitialChargePercentage="@Profile.Ability.InitialChargePercentage"
+                                        AbilityChargeTime="@Profile.Ability.ChargeTime"
+                                        AbilityInitialChargeTime="@Profile.Ability.InitialChargeTime"/>
             </div>
         </div>
     </div>
@@ -64,16 +61,16 @@
 
     [Parameter]
     public EventCallback<string> OnDelete { get; set; }
-    
+
     private async Task OnDeleteClicked()
     {
         var result = await DialogService.ShowMessageBox(
             null,
             Loc[FogResource.CommandCenter_RemoveHeroDialog_Message, Profile.Name],
-            yesText: Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);
+            Loc[FogResource.Common_Remove], cancelText: Loc[FogResource.Common_Cancel]);
         if (result != null)
         {
-            await OnDelete.InvokeAsync(Profile.Id);
+            await OnDelete.InvokeAsync(Profile.Identifier.HeroId);
         }
     }
 

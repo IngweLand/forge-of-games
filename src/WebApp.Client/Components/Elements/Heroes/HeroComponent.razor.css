@@ -1,0 +1,370 @@
+.component-root{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.header-container {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+
+.avatar-section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 80px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 100%;
+}
+
+.avatar-container > img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    aspect-ratio: 9/10;
+}
+
+.power-label {
+    background-color: var(--fog-text-color);
+    color: var(--fog-text-on-dark-color);
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.rating {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px black;
+    font-size: 12px;
+}
+
+.header-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 6px;
+}
+
+.hero-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-icons-section {
+    display: flex;
+    height: auto;
+    align-self: center;
+    border-top: 1px solid var(--fog-border-color);
+    padding: 6px;
+    width: 100%;
+}
+
+.hero-icons-section-item-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-icons-section-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-icons-section-icon {
+    width: auto;
+    height: auto;
+    max-width: 18px;
+    max-height: 18px;
+    object-fit: contain;
+}
+
+.hero-icons-section-label {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+.hero-stats-section{
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-container{
+    display: flex;
+    padding: 8px;
+    gap: 8px;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    
+}
+
+.ability-container, .progression-cost-container{
+    flex-direction: column;
+    width: 100%;
+}
+
+.progression-cost-container{
+    align-items: flex-start;
+}
+
+.support-unit-container {
+    width: 100%;
+    font-size: 14px;
+}
+
+.ability-description-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.support-unit-container > img, .ability-description-container > img {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--fog-border-color);
+    border-radius: var(--fog-border-radius);
+    overflow: hidden;
+}
+
+.progression-cost-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fog-text-on-container-color);
+}
+
+.progression-cost-items-container {
+    display: flex;
+    flex-flow: wrap;
+    gap: 12px;
+    align-items: end;
+}
+
+.selector-component{
+    min-width: 140px;
+}
+
+.unit-battles-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.unit-battles-container-title{
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fog-text-on-container-color);
+    margin: 8px;
+}
+
+table {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-type-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.battle-stats-table>:not(caption)>*>*:has(>img) {
+    background-color: transparent;
+}
+
+.battle-stats-table>:not(caption)>*>* {
+    background-color: transparent;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: none !important;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    text-align: center;
+}
+
+th {
+    padding: 6px 0;
+    background-color:  var(--fog-container-color) !important;
+    color: var(--fog-text-color) !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    font-size: 12px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+td > * {
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.battle-type-group {
+    background-color: var(--fog-container-color);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 12px;
+    text-align: start;
+}
+
+.unit-battles-table-column {
+    width: 100%;
+}
+
+.unit-battles-table-spacer-column {
+    width: 0;
+    min-width: 0;
+}
+
+.help-info {
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .component-root{
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .avatar-section {
+        width: 120px;
+    }
+
+    .hero-name {
+        font-size: 20px;
+    }
+
+    .hero-icons-section {
+        padding: 12px;
+    }
+
+    .hero-icons-section-label {
+        font-size: 14px;
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+
+    .rating {
+        font-size: 20px;
+    }
+
+    .hero-icons-section-icon {
+        max-width: 24px;
+        max-height: 24px;
+    }
+
+    .power-label {
+        padding: 8px 0;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .section-container{
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .ability-description-container {
+        gap: 12px;
+        font-size: 16px;
+    }
+    
+    .support-unit-container {
+        gap: 12px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .support-unit-container > img, .ability-description-container > img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .progression-cost-title {
+        font-size: 16px;
+        font-weight: 700 ;
+    }
+
+    .progression-cost-items-container {
+        gap: 24px;
+    }
+
+    .unit-battles-container {
+        gap: 12px;
+    }
+    
+    .unit-battles-container-title{
+        font-size: 16px;
+        margin: 12px;
+    }
+    
+    .battle-type-group {
+        font-size: 12px;
+    }
+    td {
+        font-size: 14px;
+        padding: 4px 0;   
+    }
+
+    .unit-battles-table-column {
+        width: 140px;
+    }
+
+    .unit-battles-table-spacer-column {
+        width: 100%;
+    }
+}

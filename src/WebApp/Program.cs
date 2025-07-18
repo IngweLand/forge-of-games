@@ -1,5 +1,6 @@
 using Azure.Monitor.OpenTelemetry.AspNetCore;
 using Ingweland.Fog.Application.Client.Web;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Infrastructure;
 using Ingweland.Fog.InnSdk.Hoh;
@@ -35,14 +36,25 @@ builder.Services.AddResponseCompression(options =>
 });
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY,
-        policy =>
-        {
-            policy.WithOrigins("*").WithMethods("POST", "OPTIONS").AllowAnyHeader();
-        });
+    options.AddPolicy(PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY,
+        policy => { policy.WithOrigins("*").WithMethods("POST", "OPTIONS").AllowAnyHeader(); });
 });
 builder.Services.AddOpenTelemetry().UseAzureMonitor();
 var app = builder.Build();
+
+app.Use(async (context, next) =>
+{
+    //TODO: add redirection from HELP_HERO_PLAYGROUNDS_PATH
+    if (context.Request.Path.Equals(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
+            StringComparison.OrdinalIgnoreCase))
+    {
+        context.Response.Redirect(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH, true);
+    }
+    else
+    {
+        await next();
+    }
+});
 
 app.UseResponseCompression();
 

@@ -1,0 +1,81 @@
+@using System.Globalization
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Services
+@using Ingweland.Fog.Dtos.Hoh
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+@inject IWikipediaService WikipediaService;
+@inject IJSInteropService JsInteropService
+@if (_showInfoContainer)
+{
+    <ClientSideComponent Title="@($"{Loc[FogResource.Common_Wikipedia]}🌐")" IsLoading="_isLoading">
+        <Content>
+            <div class="info-container">
+                @if (_wikipediaResponse != null)
+                {
+                    <div> @_wikipediaResponse.Extract</div>
+                    @if (_wikiUrl != null)
+                    {
+                        <MudButton Size="Size.Small" Color="Color.Secondary" Variant="Variant.Filled"
+                                   Style="align-self: flex-end;"
+                                   OnClick="OpenWikipedia">@Loc[FogResource.Common_ReadMore]</MudButton>
+                    }
+                }
+            </div>
+        </Content>
+    </ClientSideComponent>
+}
+
+@code {
+
+    private WikipediaResponseDto? _wikipediaResponse;
+    private string? _wikiUrl;
+    private bool _showInfoContainer = true;
+    private bool _isLoading = true;
+
+    [Parameter]
+    [EditorRequired]
+    public required string SearchString { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(SearchString))
+        {
+            _isLoading = false;
+            return;
+        }
+
+        try
+        {
+            _wikipediaResponse = await WikipediaService
+                .GetArticleAbstractAsync(SearchString, CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+            if (_wikipediaResponse != null)
+            {
+                _wikiUrl = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS() ? _wikipediaResponse.MobileUrl : _wikipediaResponse.DesktopUrl;
+            }
+            else
+            {
+                _showInfoContainer = false;
+            }
+        }
+        catch (Exception e)
+        {
+            // ignore
+        }
+
+        _isLoading = false;
+    }
+
+    private Task OpenWikipedia()
+    {
+        return JsInteropService.OpenUrlAsync(_wikiUrl!, "_blank").AsTask();
+    }
+
+}

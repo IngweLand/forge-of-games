@@ -109,10 +109,10 @@ public class InGameStartupDataProcessingService(
             logger.LogError("Could not find the capital city during heroes import");
         }
 
-        IReadOnlyCollection<BasicHeroProfile> heroes;
+        IReadOnlyCollection<HeroProfileIdentifier> heroes;
         try
         {
-            heroes = mapper.Map<IReadOnlyCollection<BasicHeroProfile>>(startupDto.HeroPush.Unlocked);
+            heroes = mapper.Map<IReadOnlyCollection<HeroProfileIdentifier>>(startupDto.HeroPush.Unlocked);
 
             return commandCenterProfileFactory.Create(heroes, barracksProfile);
         }

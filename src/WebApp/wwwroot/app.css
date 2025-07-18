@@ -339,13 +339,6 @@ input[type="radio"]:checked {
     padding: var(--main-content-padding) !important;
 }
 
-.command-center-grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 12px;
-    padding: 12px;
-}
-
 .command-center-card {
     background-color: var(--fog-surface-color);
     border-radius: var(--fog-border-radius);

@@ -1,0 +1,48 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HERO_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<PageTitle>@_pageTitle</PageTitle>
+@if (_heroProfileIdentifier != null)
+{
+    <HeroComponent InitProfile="@_heroProfileIdentifier" OnProfileUpdate="SaveProfile"/>
+}
+
+@code {
+
+    private HeroProfileIdentifier? _heroProfileIdentifier;
+
+    [Parameter]
+    public required string HeroId { get; set; }
+
+    [Inject]
+    private IHeroProfileUiService HeroProfileUiService { get; set; } = null!;
+
+    private string _pageTitle = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        _pageTitle = await LoadWithPersistenceAsync(nameof(_pageTitle),
+            async () =>
+            {
+                var hero = await HeroProfileUiService.GetHeroAsync(HeroId);
+                return hero != null ?
+                    Loc[FogResource.Hero_PageTitle, hero.Unit.Name].ToString() :
+                    Loc[FogResource.Hero_PageTitle, HeroId].ToString();
+            }) ?? string.Empty;
+
+        _heroProfileIdentifier = await HeroProfileUiService.GetHeroProfileIdentifierAsync(HeroId);
+        // _heroProfileIdentifier = await LoadWithPersistenceAsync(nameof(_heroProfileIdentifier),
+        //     () => HeroProfileUiService.GetHeroProfileIdentifierAsync(HeroId));
+    }
+
+    private void SaveProfile(HeroProfileIdentifier identifier)
+    {
+        HeroProfileUiService.SaveHeroProfile(identifier);
+    }
+
+}

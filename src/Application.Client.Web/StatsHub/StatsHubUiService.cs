@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -20,7 +21,7 @@ public class StatsHubUiService(
     ITreasureHuntUiService treasureHuntUiService,
     ICampaignUiService campaignUiService,
     IBattleService battleService,
-    IUnitUiService unitUiService,
+    IHeroProfileUiService heroProfileUiService,
     ICityService cityService,
     IBattleStatsViewModelFactory battleStatsViewModelFactory) : IStatsHubUiService
 {
@@ -116,7 +117,7 @@ public class StatsHubUiService(
         var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
         var historicBattlesTask = campaignUiService.GetHistoricBattlesBasicDataAsync();
         var teslaStormTask = campaignUiService.GetTeslaStormRegionsBasicDataAsync();
-        var heroesTask = unitUiService.GetHeroListAsync();
+        var heroesTask = heroProfileUiService.GetHeroes();
         await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask);
         return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
             historicBattlesTask.Result, teslaStormTask.Result,
@@ -131,7 +132,7 @@ public class StatsHubUiService(
         var result = await battleService.SearchBattlesAsync(request, ct);
         var heroes = result.Heroes.ToDictionary(h => h.Unit.Id);
         return result.Battles
-            .Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, _barracks))
+            .Select(src => statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, _barracks!))
             .ToList();
     }
 

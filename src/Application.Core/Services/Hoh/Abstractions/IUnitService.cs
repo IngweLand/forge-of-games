@@ -10,7 +10,4 @@ public interface IUnitService
 
     [Get("/heroes/basic")]
     Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync();
-
-    [Get("/heroes/{heroId}/ability")]
-    Task<HeroAbilityDto?> GetHeroAbilityAsync(string heroId);
 }

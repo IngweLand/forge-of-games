@@ -23,6 +23,8 @@ public static class DependencyInjection
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddApplicationCoreServices();
+        
+        services.AddLazyCache();
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
@@ -36,6 +38,7 @@ public static class DependencyInjection
         services.AddSingleton<InGameBinDataTablePartitionKeyProvider>();
         services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
         services.AddSingleton<IFailedPlayerCityFetchesCache, FailedPlayerCityFetchesCache>();
+        services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();

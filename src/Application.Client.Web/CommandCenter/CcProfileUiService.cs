@@ -1,13 +1,14 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh.City;
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -21,238 +22,119 @@ public class CcProfileUiService(
     IPersistenceService persistenceService,
     IHohHeroProfileViewModelFactory heroProfileViewModelFactory,
     IHohHeroProfileFactory heroProfileFactory,
-    IHohHeroProfileDtoFactory heroProfileDtoFactory,
+    IHeroProfileIdentifierFactory heroProfileIdentifierFactory,
     ICcProfileViewModelFactory profileViewModelFactory,
     ICcProfileTeamViewModelFactory profileTeamViewModelFactory,
     IBarracksViewModelFactory barracksViewModelFactory,
+    IHohCoreDataCache coreDataCache,
+    ICcMigrationManager migrationManager,
     IMapper mapper) : ICcProfileUiService
 {
-    public event Action? StateHasChanged;
     private IReadOnlyDictionary<BuildingGroup, CcBarracksViewModel>? _barracksViewModels;
+    private CommandCenterProfile? _currentProfile;
 
     private IDictionary<string, HeroProfileViewModel> _heroProfileViewModels =
         new Dictionary<string, HeroProfileViewModel>();
 
-    public async Task<CcProfileViewModel?> GetProfileAsync(string profileId)
-    {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return null;
-        }
+    public event Action? StateHasChanged;
 
-        return profileViewModelFactory.Create(commandCenterUiService.CurrentProfile!, _heroProfileViewModels.AsReadOnly());
+    public BasicCommandCenterProfile GetProfileDto()
+    {
+        EnsureInitialized();
+        return mapper.Map<BasicCommandCenterProfile>(_currentProfile);
     }
 
-    public async Task<BasicCommandCenterProfile?> GetProfileDtoAsync(string profileId)
+    public async Task<bool> UpdateProfileSettingsAsync(CcProfileSettings profileSettings)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return null;
-        }
+        EnsureInitialized();
 
-        return mapper.Map<BasicCommandCenterProfile>(commandCenterUiService.CurrentProfile);
-    }
-    
-    public async Task<bool> UpdateProfileSettingsAsync(string profileId, CcProfileSettings profileSettings)
-    {
         if (string.IsNullOrWhiteSpace(profileSettings.Name))
         {
             return false;
         }
-        
-        if (!await EnsureInitializedAsync(profileId))
+
+        if (_currentProfile!.Name == profileSettings.Name)
         {
             return false;
         }
 
-        if (commandCenterUiService.CurrentProfile!.Name == profileSettings.Name)
-        {
-            return false;
-        }
-
-        commandCenterUiService.CurrentProfile.Name = profileSettings.Name;
+        _currentProfile.Name = profileSettings.Name;
         await SaveCurrentProfile();
         NotifyStateChanged();
         return true;
     }
 
-    public async Task<IReadOnlyCollection<CcBarracksViewModel>> GetBarracks(string profileId)
+    public IReadOnlyCollection<CcBarracksViewModel> GetBarracks()
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return [];
-        }
-        
-        _barracksViewModels ??= barracksViewModelFactory.Create(commandCenterUiService.CommandCenterData.Barracks);
+        EnsureInitialized();
 
-        foreach (var barracksProfileLevel in commandCenterUiService.CurrentProfile!.BarracksProfile.Levels)
+        _barracksViewModels ??=
+            barracksViewModelFactory.Create(coreDataCache.GetAllBarracks().SelectMany(x => x.Value).ToList());
+
+        foreach (var barracksProfileLevel in _currentProfile!.BarracksProfile.Levels)
         {
             _barracksViewModels[barracksProfileLevel.Key].SelectedLevel = barracksProfileLevel.Value;
         }
 
         return _barracksViewModels.Values.ToList();
     }
-    
-    public async Task UpdateBarracks(string profileId, CcBarracksViewModel barracks)
-    {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return ;
-        }
 
-        commandCenterUiService.CurrentProfile!.BarracksProfile.Levels[barracks.Group] = barracks.SelectedLevel;
+    public async Task UpdateBarracksAsync(CcBarracksViewModel barracks)
+    {
+        EnsureInitialized();
+
+        _currentProfile!.BarracksProfile.Levels[barracks.Group] = barracks.SelectedLevel;
         await SaveCurrentProfile();
-        UpdateHeroProfilesForBarracksChange(barracks.Group, barracks.SelectedLevel);
-        NotifyStateChanged();
-    }
-    
-    private void UpdateHeroProfilesForBarracksChange(BuildingGroup barracks, int level)
-    {
-        var updatable = new HashSet<string>();
-        foreach (var heroProfile in commandCenterUiService.CurrentProfile!.Heroes.Values)
-        {
-            var hero = commandCenterUiService.Heroes[heroProfile.HeroId];
-            var group = hero.Unit.Type.ToBuildingGroup();
-            if (group != barracks)
-            {
-                continue;
-            }
-
-            updatable.Add(heroProfile.Id);
-        }
-
-        foreach (var id in updatable)
-        {
-            var heroProfile = commandCenterUiService.CurrentProfile!.Heroes[id];
-            var hero = commandCenterUiService.Heroes[heroProfile.HeroId];
-            var heroBarracks = commandCenterUiService.CommandCenterData.Barracks.First(b =>
-                b.Group == barracks && b.Level == level);
-            _ = UpdateHeroProfile(heroProfile, hero, heroBarracks);
-        }
-    }
-
-    public async Task<IReadOnlyCollection<HeroProfileViewModel>> GetProfileHeroesAsync(string profileId)
-    {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return [];
-        }
-
-        return _heroProfileViewModels.Values.ToList().AsReadOnly();
-    }
-
-    public async Task AddHeroAsync(string profileId, string heroId)
-    {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return;
-        }
-
-        if (commandCenterUiService.CurrentProfile!.Heroes.Values.Any(hp => hp.HeroId == heroId))
-        {
-            return;
-        }
-
-        var newHeroProfileDto = heroProfileDtoFactory.Create(heroId);
-        var hero = commandCenterUiService.Heroes[heroId];
-        var group = hero.Unit.Type.ToBuildingGroup();
-        var heroBarracks = commandCenterUiService.CommandCenterData.Barracks.First(b =>
-            b.Group == group && b.Level == commandCenterUiService.CurrentProfile.BarracksProfile.Levels[group]);
-        var newHeroProfile = heroProfileFactory.Create(newHeroProfileDto, hero, heroBarracks);
-        var vm = CreateHeroProfileViewModel(newHeroProfile);
-        commandCenterUiService.CurrentProfile.Heroes.Add(newHeroProfile.Id, newHeroProfile);
-        _heroProfileViewModels.Add(newHeroProfile.Id, vm);
-        await SaveCurrentProfile();
-
+        await UpdateHeroProfilesForBarracksChange(barracks.Group, barracks.SelectedLevel);
         NotifyStateChanged();
     }
 
-    public async Task RemoveHeroFromProfileAsync(string profileId, string heroProfileId)
+    public CcProfileSettings GetSettings()
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return;
-        }
+        EnsureInitialized();
 
-        if (!commandCenterUiService.CurrentProfile!.Heroes.ContainsKey(heroProfileId))
-        {
-            return;
-        }
-
-        commandCenterUiService.CurrentProfile.Heroes.Remove(heroProfileId);
-        foreach (var team in commandCenterUiService.CurrentProfile.Teams.Values)
-        {
-            team.HeroProfileIds.Remove(heroProfileId);
-        }
-
-        _heroProfileViewModels.Remove(heroProfileId);
-
-        await SaveCurrentProfile();
-
-        NotifyStateChanged();
-    }
-    
-    public async Task<CcProfileSettings?> GetSettingsAsync(string profileId)
-    {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return null;
-        }
-
-        return mapper.Map<CcProfileSettings>(commandCenterUiService.CurrentProfile);
+        return mapper.Map<CcProfileSettings>(_currentProfile);
     }
 
-    public async Task DeleteTeamAsync(string profileId, string teamId)
+    public async Task DeleteTeamAsync(string teamId)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return;
-        }
+        EnsureInitialized();
 
-        commandCenterUiService.CurrentProfile!.Teams.Remove(teamId);
+        _currentProfile!.Teams.Remove(teamId);
         await SaveCurrentProfile();
         NotifyStateChanged();
     }
 
-    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetAddableHeroesForProfileAsync(string profileId)
+    public IReadOnlyCollection<HeroBasicViewModel> GetAddableHeroesForProfile()
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return [];
-        }
+        EnsureInitialized();
 
-        return commandCenterUiService.Heroes.Values
-            .Where(h => commandCenterUiService.CurrentProfile!.Heroes.Values.All(hp => hp.HeroId != h.Id))
+        return coreDataCache.GetAllHeroes().Values
+            .Where(h => !_currentProfile!.Heroes.ContainsKey(h.Id))
             .Select(mapper.Map<HeroBasicViewModel>)
             .OrderBy(h => h.Name)
             .ToList();
     }
 
-    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetAddableHeroesForTeamAsync(string profileId,
-        string teamId)
+    public IReadOnlyCollection<HeroBasicViewModel> GetAddableHeroesForTeam(string teamId)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return [];
-        }
+        EnsureInitialized();
 
-        var heroIds = commandCenterUiService.CurrentProfile!.Heroes.Values.Where(h => !commandCenterUiService.CurrentProfile!.Teams[teamId].HeroProfileIds.Contains(h.Id))
-            .Select(p => p.HeroId).ToHashSet();
-        return commandCenterUiService.Heroes.Values
+        var heroIds = _currentProfile!.Heroes.Values
+            .Where(h => !_currentProfile.Teams[teamId].HeroIds.Contains(h.Identifier.HeroId))
+            .Select(p => p.Identifier.HeroId).ToHashSet();
+        return coreDataCache.GetAllHeroes().Values
             .Where(h => heroIds.Contains(h.Id))
             .Select(mapper.Map<HeroBasicViewModel>)
             .OrderBy(h => h.Name)
             .ToList();
     }
 
-    public async Task<CcProfileTeamViewModel?> GetTeamAsync(string profileId, string teamId)
+    public CcProfileTeamViewModel? GetTeam(string teamId)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return null;
-        }
+        EnsureInitialized();
 
-        if (!commandCenterUiService.CurrentProfile!.Teams.TryGetValue(teamId, out var team))
+        if (!_currentProfile!.Teams.TryGetValue(teamId, out var team))
         {
             return null;
         }
@@ -260,138 +142,220 @@ public class CcProfileUiService(
         return profileTeamViewModelFactory.Create(team, _heroProfileViewModels.AsReadOnly());
     }
 
-    public async Task RemoveHeroFromTeamAsync(string profileId, string teamId, string heroProfileId)
+    public async Task RemoveHeroFromTeamAsync(string teamId, string heroProfileId)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return;
-        }
+        EnsureInitialized();
 
-        commandCenterUiService.CurrentProfile!.Teams[teamId].HeroProfileIds.Remove(heroProfileId);
-        await SaveCurrentProfile();
-        NotifyStateChanged();
+        if (_currentProfile!.Teams[teamId].HeroIds.Remove(heroProfileId))
+        {
+            await SaveCurrentProfile();
+            NotifyStateChanged();
+        }
     }
 
-    public async Task<string?> CreateTeamAsync(string profileId, string teamName)
+    public async Task<string?> CreateTeamAsync(string teamName)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return null;
-        }
+        EnsureInitialized();
 
         var team = commandCenterTeamFactory.Create(teamName);
-        commandCenterUiService.CurrentProfile!.Teams.Add(team.Id, team);
+        _currentProfile!.Teams.Add(team.Id, team);
         await SaveCurrentProfile();
         NotifyStateChanged();
         return team.Id;
     }
 
-    public async Task AddHeroToTeamAsync(string profileId, string teamId, string heroId)
+    public async Task AddHeroToTeamAsync(string teamId, string heroId)
     {
-        if (!await EnsureInitializedAsync(profileId))
-        {
-            return;
-        }
+        EnsureInitialized();
 
-        var heroProfile = commandCenterUiService.CurrentProfile!.Heroes.Values.FirstOrDefault(hp => hp.HeroId == heroId);
+        var heroProfile = _currentProfile!.Heroes.Values.FirstOrDefault(hp => hp.Identifier.HeroId == heroId);
         if (heroProfile == null)
         {
             return;
         }
 
-        if (!commandCenterUiService.CurrentProfile.Teams.TryGetValue(teamId, out var team))
+        if (!_currentProfile.Teams.TryGetValue(teamId, out var team))
         {
             return;
         }
 
-        if (team.HeroProfileIds.Contains(heroProfile.Id) || team.HeroProfileIds.Count >= HohConstants.MAX_TEAM_MEMBERS)
+        if (team.HeroIds.Contains(heroProfile.Identifier.HeroId) ||
+            team.HeroIds.Count >= HohConstants.MAX_TEAM_MEMBERS)
         {
             return;
         }
 
-        team.HeroProfileIds.Add(heroProfile.Id);
+        team.HeroIds.Add(heroProfile.Identifier.HeroId);
         await SaveCurrentProfile();
 
         NotifyStateChanged();
     }
 
-    public async Task<HeroProfileViewModel?> GetHeroProfileAsync(string profileId, string heroProfileId)
+    public async Task UpdateHeroProfileAsync(HeroProfileIdentifier identifier)
     {
-        if (!await EnsureInitializedAsync(profileId))
+        EnsureInitialized();
+
+        if (!_currentProfile!.Heroes.ContainsKey(identifier.HeroId))
         {
-            return null;
+            throw new InvalidOperationException("Hero profile not found.");
         }
 
-        return _heroProfileViewModels.TryGetValue(heroProfileId, out var heroProfile) ? heroProfile : null;
-    }
-
-    public HeroProfileViewModel? UpdateHeroProfile(HeroProfileStatsUpdateRequest request)
-    {
-        if (commandCenterUiService.CurrentProfile == null || !commandCenterUiService.CurrentProfile.Heroes.TryGetValue(request.HeroProfileId, out var heroProfile))
+        var hero = await coreDataCache.GetHeroAsync(identifier.HeroId);
+        if (hero == null)
         {
-            return null;
+            throw new InvalidOperationException("Hero not found.");
         }
 
-        heroProfile!.Level = request.Level.Level;
-        heroProfile.AscensionLevel = request.Level.AscensionLevel;
-        heroProfile.AbilityLevel = request.AbilityLevel;
-        heroProfile.AwakeningLevel = request.AwakeningLevel;
-        heroProfile.BarracksLevel = request.BarracksLevel;
+        var barracks = await coreDataCache.GetBarracks(hero.Unit.Type);
+        var heroBarracks = barracks.First(b => b.Level == identifier.BarracksLevel);
+        _ = await UpdateHeroProfile(identifier, hero, heroBarracks);
 
-        var hero = commandCenterUiService.Heroes[heroProfile.HeroId];
-        var group = hero.Unit.Type.ToBuildingGroup();
-        var heroBarracks = commandCenterUiService.CommandCenterData.Barracks.First(b =>
-            b.Group == group && b.Level == request.BarracksLevel);
-        var newViewModel = UpdateHeroProfile(heroProfile, hero, heroBarracks);
-
-        Task.Run(async () => { await SaveCurrentProfile(); });
-
-        return newViewModel;
-    }
-    
-    private HeroProfileViewModel UpdateHeroProfile(HeroProfile heroProfile, HeroDto hero, BuildingDto barracks)
-    {
-        var newHeroProfile = heroProfileFactory.Create(heroProfile, hero, barracks);
-        var newViewModel = CreateHeroProfileViewModel(newHeroProfile);
-        commandCenterUiService.CurrentProfile!.Heroes.Remove(heroProfile.Id);
-        commandCenterUiService.CurrentProfile.Heroes.Add(newHeroProfile.Id, newHeroProfile);
-        _heroProfileViewModels.Remove(heroProfile.Id);
-        _heroProfileViewModels.Add(newHeroProfile.Id, newViewModel);
-        return newViewModel;
+        await SaveCurrentProfile();
     }
 
-    private HeroProfileViewModel CreateHeroProfileViewModel(HeroProfile heroProfile)
+    public async Task<CcProfileViewModel?> InitializedAsync(string profileId)
     {
-        var hero = commandCenterUiService.Heroes[heroProfile.HeroId];
-        return heroProfileViewModelFactory.CreateForCommandCenterProfile(heroProfile, hero);
-    }
-    
-    private async Task<bool> EnsureInitializedAsync(string profileId)
-    {
-        if (commandCenterUiService.CurrentProfile != null && commandCenterUiService.CurrentProfile.Id == profileId)
+        if (_currentProfile != null && _currentProfile.Id == profileId)
         {
-            return true;
+            return profileViewModelFactory.Create(_currentProfile, _heroProfileViewModels.AsReadOnly());
         }
 
         await commandCenterUiService.EnsureInitializedAsync();
 
-        commandCenterUiService.CurrentProfile = null;
+        _currentProfile = null;
         _heroProfileViewModels.Clear();
 
         var profileDto = await persistenceService.LoadProfile(profileId);
 
         if (profileDto == null)
         {
-            return false;
+            return null;
         }
 
-        var profile = commandCenterProfileFactory.Create(profileDto, commandCenterUiService.Heroes,
-            commandCenterUiService.CommandCenterData.Barracks);
+        profileDto = migrationManager.Migrate(profileDto);
 
-        var profileViewModels = profile.Heroes.Values.Select(CreateHeroProfileViewModel).ToList();
-        commandCenterUiService.CurrentProfile = profile;
-        _heroProfileViewModels = profileViewModels.ToDictionary(hp => hp.Id);
-        return true;
+        var profile = commandCenterProfileFactory.Create(profileDto, coreDataCache.GetAllHeroes(),
+            coreDataCache.GetAllBarracks().SelectMany(x => x.Value).ToList());
+
+        List<HeroProfileViewModel> profileViewModels = [];
+        foreach (var heroProfile in profile.Heroes.Values)
+        {
+            profileViewModels.Add(await CreateHeroProfileViewModel(heroProfile));
+        }
+
+        _currentProfile = profile;
+        _heroProfileViewModels = profileViewModels.ToDictionary(hp => hp.Identifier.HeroId);
+
+        return profileViewModelFactory.Create(_currentProfile, _heroProfileViewModels.AsReadOnly());
+    }
+
+    public CcProfileViewModel GetCurrentProfile()
+    {
+        EnsureInitialized();
+        return profileViewModelFactory.Create(_currentProfile!, _heroProfileViewModels.AsReadOnly());
+    }
+
+    public async Task<IReadOnlyCollection<HeroProfileViewModel>> GetProfileHeroesAsync()
+    {
+        EnsureInitialized();
+
+        return _heroProfileViewModels.Values.ToList().AsReadOnly();
+    }
+
+    public async Task AddHeroAsync(string heroId)
+    {
+        EnsureInitialized();
+
+        if (_currentProfile!.Heroes.ContainsKey(heroId))
+        {
+            return;
+        }
+
+        var newHeroProfileDto = heroProfileIdentifierFactory.Create(heroId);
+        var hero = await coreDataCache.GetHeroAsync(heroId);
+        var group = hero!.Unit.Type.ToBuildingGroup();
+        var barracks = await coreDataCache.GetBarracks(hero.Unit.Type);
+        var heroBarracks =
+            barracks.First(b => b.Level == _currentProfile.BarracksProfile.Levels[group]);
+        var newHeroProfile = heroProfileFactory.Create(newHeroProfileDto, hero, heroBarracks);
+        var vm = await CreateHeroProfileViewModel(newHeroProfile);
+        _currentProfile.Heroes.Add(newHeroProfile.Identifier.HeroId, newHeroProfile);
+        _heroProfileViewModels.Add(newHeroProfile.Identifier.HeroId, vm);
+        await SaveCurrentProfile();
+
+        NotifyStateChanged();
+    }
+
+    public async Task RemoveHeroFromProfileAsync(string heroId)
+    {
+        EnsureInitialized();
+
+        if (!_currentProfile!.Heroes.Remove(heroId))
+        {
+            return;
+        }
+
+        foreach (var team in _currentProfile.Teams.Values)
+        {
+            team.HeroIds.Remove(heroId);
+        }
+
+        _heroProfileViewModels.Remove(heroId);
+
+        await SaveCurrentProfile();
+
+        NotifyStateChanged();
+    }
+
+    public async Task<HeroProfileIdentifier> GetHeroProfileIdentifierAsync(string heroId)
+    {
+        EnsureInitialized();
+        var hero = await coreDataCache.GetHeroAsync(heroId);
+        var barracksLevel = _currentProfile!.BarracksProfile.Levels[hero!.Unit.Type.ToBuildingGroup()];
+        return _currentProfile!.Heroes.Values.First(hp => hp.Identifier.HeroId == heroId).Identifier with
+        {
+            BarracksLevel = barracksLevel,
+        };
+    }
+
+    private void EnsureInitialized()
+    {
+        if (_currentProfile == null)
+        {
+            throw new InvalidOperationException("Current profile not initialized.");
+        }
+    }
+
+    private async Task UpdateHeroProfilesForBarracksChange(BuildingGroup barracks, int level)
+    {
+        foreach (var heroProfile in _currentProfile!.Heroes.Values)
+        {
+            var hero = await coreDataCache.GetHeroAsync(heroProfile.Identifier.HeroId);
+            var group = hero!.Unit.Type.ToBuildingGroup();
+            if (group != barracks)
+            {
+                continue;
+            }
+
+            var heroBarracks = (await coreDataCache.GetBarracks(hero.Unit.Type)).First(b => b.Level == level);
+            _ = UpdateHeroProfile(heroProfile.Identifier, hero, heroBarracks);
+        }
+    }
+
+    private async Task<HeroProfileViewModel> UpdateHeroProfile(HeroProfileIdentifier identifier, HeroDto hero,
+        BuildingDto barracks)
+    {
+        var newHeroProfile = heroProfileFactory.Create(identifier, hero, barracks);
+        var newViewModel = await CreateHeroProfileViewModel(newHeroProfile);
+        _currentProfile!.Heroes[identifier.HeroId] = newHeroProfile;
+        _heroProfileViewModels[identifier.HeroId] = newViewModel;
+        return newViewModel;
+    }
+
+    private async Task<HeroProfileViewModel> CreateHeroProfileViewModel(HeroProfile heroProfile)
+    {
+        var hero = await coreDataCache.GetHeroAsync(heroProfile.Identifier.HeroId);
+        return heroProfileViewModelFactory.Create(heroProfile, hero!, BuildingLevelRange.Empty);
     }
 
     private void NotifyStateChanged()
@@ -401,6 +365,6 @@ public class CcProfileUiService(
 
     private ValueTask SaveCurrentProfile()
     {
-        return persistenceService.SaveProfile(mapper.Map<BasicCommandCenterProfile>(commandCenterUiService.CurrentProfile));
+        return persistenceService.SaveCommandCenterProfile(mapper.Map<BasicCommandCenterProfile>(_currentProfile));
     }
 }

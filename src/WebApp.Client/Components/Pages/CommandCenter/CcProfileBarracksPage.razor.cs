@@ -9,12 +9,12 @@ public partial class CcProfileBarracksPage : CcProfilePageBase
     {
         await base.HandleOnParametersSetAsync();
         
-        _barracks = await ProfileUiService.GetBarracks(ProfileId);
+        _barracks = ProfileUiService.GetBarracks();
     }
 
     private async Task OnBarracksLevelChanged(CcBarracksViewModel barracks)
     {
-        await ProfileUiService.UpdateBarracks(ProfileId, barracks);
+        await ProfileUiService.UpdateBarracksAsync(barracks);
     }
 }
 

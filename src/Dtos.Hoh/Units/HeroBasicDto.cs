@@ -23,4 +23,8 @@ public class HeroBasicDto
     
     [ProtoMember(6)]
     public required string UnitId { get; set; }
+    [ProtoMember(7)]
+    public required HeroStarClass StarClass { get; init; }
+    [ProtoMember(8)]
+    public required HeroClassId ClassId { get; init; }
 }

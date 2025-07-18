@@ -18,7 +18,7 @@ public abstract class CcProfilePageBase : CommandCenterPageBase
     {
         await base.HandleOnParametersSetAsync();
 
-        var profile = await ProfileUiService.GetProfileAsync(ProfileId);
+        var profile = await ProfileUiService.InitializedAsync(ProfileId);
         if (profile == null)
         {
             NavigationManager.NavigateTo($"command-center/profiles", false, true);
@@ -35,17 +35,19 @@ public abstract class CcProfilePageBase : CommandCenterPageBase
         _ = InvokeAsync(HandleProfileUiServiceOnChangeAsync);
     }
 
-    protected virtual async Task HandleProfileUiServiceOnChangeAsync()
+    protected virtual Task HandleProfileUiServiceOnChangeAsync()
     {
         try 
         {
-            Profile = await ProfileUiService.GetProfileAsync(ProfileId);
+            Profile = ProfileUiService.GetCurrentProfile();
             StateHasChanged();
         }
         catch (Exception e)
         {
             // Handle or log the exception
         }
+        
+        return Task.CompletedTask;
     }
 
     protected override void Dispose(bool disposing)

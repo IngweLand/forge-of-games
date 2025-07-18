@@ -2,7 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using MudBlazor.Utilities
 @using Size = MudBlazor.Size
-<div class="@Classname" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
+<div class="@Classname" @onclick="() => OnClick.InvokeAsync(Profile.Identifier.HeroId)">
     <div class="avatar-section">
         <img src="@Profile.PortraitUrl"/>
         <div class="rating">@(new string('★', Profile.StarCount))</div>
@@ -12,7 +12,7 @@
         <img class="@IconClassname" src="@Profile.UnitClassIconUrl"/>
         @if (!Dense)
         {
-            <div class="icon-label">@($"{Profile.Level.Title} | {Profile.AbilityLevel}")</div>
+            <div class="icon-label">@($"{Profile.Level.Title} | {Profile.Identifier.AbilityLevel}")</div>
         }
         else
         {

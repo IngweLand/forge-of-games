@@ -45,12 +45,6 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                     },
                     new()
                     {
-                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
-                        ResourceKey = FogResource.CommandCenter_Menu_HeroPlaygrounds,
-                        Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_hud_heroes")),
-                    },
-                    new()
-                    {
                         Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
                         ResourceKey = FogResource.CommandCenter_Menu_Equipment,
                         Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_equipment")),

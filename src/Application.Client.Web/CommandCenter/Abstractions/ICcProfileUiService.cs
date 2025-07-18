@@ -1,6 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
@@ -8,22 +8,24 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 public interface ICcProfileUiService
 {
     event Action? StateHasChanged;
-    Task AddHeroAsync(string profileId, string heroId);
-    Task AddHeroToTeamAsync(string profileId, string teamId, string heroId);
-    Task<string?> CreateTeamAsync(string profileId, string teamName);
-    Task DeleteTeamAsync(string profileId, string teamId);
-    Task<IReadOnlyCollection<HeroBasicViewModel>> GetAddableHeroesForProfileAsync(string profileId);
-    Task<IReadOnlyCollection<HeroBasicViewModel>> GetAddableHeroesForTeamAsync(string profileId, string teamId);
-    Task<IReadOnlyCollection<CcBarracksViewModel>> GetBarracks(string profileId);
-    Task<HeroProfileViewModel?> GetHeroProfileAsync(string profileId, string heroProfileId);
-    Task<CcProfileViewModel?> GetProfileAsync(string profileId);
-    Task<BasicCommandCenterProfile?> GetProfileDtoAsync(string profileId);
-    Task<IReadOnlyCollection<HeroProfileViewModel>> GetProfileHeroesAsync(string profileId);
-    Task<CcProfileTeamViewModel?> GetTeamAsync(string profileId, string teamId);
-    Task RemoveHeroFromProfileAsync(string profileId, string heroProfileId);
-    Task RemoveHeroFromTeamAsync(string profileId, string teamId, string heroProfileId);
-    Task<bool> UpdateProfileSettingsAsync(string profileId, CcProfileSettings profileSettings);
-    Task UpdateBarracks(string profileId, CcBarracksViewModel barracks);
-    HeroProfileViewModel? UpdateHeroProfile(HeroProfileStatsUpdateRequest request);
-    Task<CcProfileSettings?> GetSettingsAsync(string profileId);
+    BasicCommandCenterProfile GetProfileDto();
+    Task<bool> UpdateProfileSettingsAsync(CcProfileSettings profileSettings);
+    IReadOnlyCollection<CcBarracksViewModel> GetBarracks();
+    Task UpdateBarracksAsync(CcBarracksViewModel barracks);
+    CcProfileSettings GetSettings();
+    Task DeleteTeamAsync(string teamId);
+    IReadOnlyCollection<HeroBasicViewModel> GetAddableHeroesForProfile();
+    IReadOnlyCollection<HeroBasicViewModel> GetAddableHeroesForTeam(string teamId);
+    CcProfileTeamViewModel? GetTeam(string teamId);
+    Task RemoveHeroFromTeamAsync(string teamId, string heroProfileId);
+    Task<string?> CreateTeamAsync(string teamName);
+    Task AddHeroToTeamAsync(string teamId, string heroId);
+
+    Task<HeroProfileIdentifier> GetHeroProfileIdentifierAsync(string heroId);
+    Task UpdateHeroProfileAsync(HeroProfileIdentifier identifier);
+    Task<CcProfileViewModel?> InitializedAsync(string profileId);
+    CcProfileViewModel GetCurrentProfile();
+    Task<IReadOnlyCollection<HeroProfileViewModel>> GetProfileHeroesAsync();
+    Task AddHeroAsync(string heroId);
+    Task RemoveHeroFromProfileAsync(string heroId);
 }

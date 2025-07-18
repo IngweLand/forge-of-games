@@ -1,10 +1,10 @@
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using LazyCache;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -14,12 +14,46 @@ public class UnitService(
     ILogger<UnitService> logger,
     IHeroBasicDtoFactory heroBasicDtoFactory,
     IHeroDtoFactory heroDtoFactory,
-    IHeroAbilityDtoFactory heroAbilityDtoFactory)
+    IHeroAbilityDtoFactory heroAbilityDtoFactory,
+    IAppCache appCache,
+    ICacheKeyFactory cacheKeyFactory)
     : IUnitService
 {
-    public async Task<HeroDto?> GetHeroAsync(string id)
+    public Task<HeroDto?> GetHeroAsync(string id)
     {
-        var hero = await hohCoreDataRepository.GetHeroAsync(id) ?? await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
+        return appCache.GetOrAddAsync(cacheKeyFactory.HeroDto(id), () => CreateHeroAsync(id),
+            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+    }
+
+    public Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync()
+    {
+        return appCache.GetOrAddAsync(cacheKeyFactory.HeroesBasicData(), CreateHeroesBasicDataAsync,
+            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+    }
+
+    private async Task<IReadOnlyCollection<HeroBasicDto>> CreateHeroesBasicDataAsync()
+    {
+        var heroes = new List<HeroBasicDto>();
+        foreach (var hero in await hohCoreDataRepository.GetHeroesAsync())
+        {
+            var unit = await hohCoreDataRepository.GetUnitAsync(hero.UnitId);
+            if (unit == null)
+            {
+                logger.LogError($"Could not find unit {hero.UnitId} for the hero with id {hero.Id}");
+                continue;
+            }
+
+            heroes.Add(heroBasicDtoFactory.Create(hero, unit));
+        }
+
+        return heroes.OrderBy(h => h.Name).ToList().AsReadOnly();
+    }
+
+    private async Task<HeroDto?> CreateHeroAsync(string id)
+    {
+        Console.Out.WriteLine("CreateHeroAsync");
+        var hero = await hohCoreDataRepository.GetHeroAsync(id) ??
+            await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
         if (hero == null)
         {
             logger.LogDebug($"Could not find hero with id {id}");
@@ -37,7 +71,8 @@ public class UnitService(
             await hohCoreDataRepository.GetHeroProgressionCostsAsync(hero.ProgressionComponent.CostId);
         if (progressionCosts == null)
         {
-            logger.LogError($"Could not find progression costs {hero.ProgressionComponent.CostId} for the hero with id {
+            logger.LogError($"Could not find progression costs {hero.ProgressionComponent.CostId
+            } for the hero with id {
                 id}");
             return null;
         }
@@ -52,7 +87,7 @@ public class UnitService(
                     id}");
             return null;
         }
-        
+
         var awakeningComponent =
             await hohCoreDataRepository.GetHeroAwakeningComponentAsync(hero.AwakeningId);
         if (awakeningComponent == null)
@@ -67,7 +102,7 @@ public class UnitService(
         {
             return null;
         }
-        
+
         var sortedProgressionCosts = progressionCosts.LevelCosts.OrderBy(kvp => kvp.Key).Select(kvp => kvp.Value)
             .ToList()
             .AsReadOnly();
@@ -75,7 +110,7 @@ public class UnitService(
 
         var units = await hohCoreDataRepository.GetUnitsAsync(hero.SupportUnitType);
         var baseSupportUnit = units.Single(u => u.Id.StartsWith("unit.Unit_StoneAge_Player"));
-        
+
         return heroDtoFactory.Create(hero, unit, sortedProgressionCosts, sortedAscensionCosts,
             await hohCoreDataRepository.GetUnitStatFormulaData(),
             await hohCoreDataRepository.GetUnitBattleConstants(),
@@ -85,19 +120,7 @@ public class UnitService(
             await hohCoreDataRepository.GetHeroUnitType(unit.Type));
     }
 
-    public async Task<HeroAbilityDto?> GetHeroAbilityAsync(string heroId)
-    {
-        var hero = await hohCoreDataRepository.GetHeroAsync(heroId);
-        if (hero == null)
-        {
-            logger.LogError($"Could not find hero with id {heroId}");
-            return null;
-        }
-
-        return await GetHeroAbilityAsync(hero);
-    }
-    
-    public async Task<HeroAbilityDto?> GetHeroAbilityAsync(Hero hero)
+    private async Task<HeroAbilityDto?> GetHeroAbilityAsync(Hero hero)
     {
         var abilityComponent = await hohCoreDataRepository.GetHeroAbilityComponentAsync(hero.AbilityId);
         if (abilityComponent == null)
@@ -121,23 +144,5 @@ public class UnitService(
         }
 
         return heroAbilityDtoFactory.Create(abilityComponent, abilities);
-    }
-
-    public async Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync()
-    {
-        var heroes = new List<HeroBasicDto>();
-        foreach (var hero in await hohCoreDataRepository.GetHeroesAsync())
-        {
-            var unit = await hohCoreDataRepository.GetUnitAsync(hero.UnitId);
-            if (unit == null)
-            {
-                logger.LogError($"Could not find unit {hero.UnitId} for the hero with id {hero.Id}");
-                continue;
-            }
-
-            heroes.Add(heroBasicDtoFactory.Create(hero, unit));
-        }
-
-        return heroes.OrderBy(h => h.Name).ToList().AsReadOnly();
     }
 }

@@ -1,9 +1,9 @@
 namespace Ingweland.Fog.Models.Fog.Entities;
 
-public class BasicCommandCenterProfile
+public class BasicCommandCenterProfile : VersionedModel
 {
     public required BarracksProfile BarracksProfile { get; init; }
-    public IList<BasicHeroProfile> Heroes { get; init; } = new List<BasicHeroProfile>();
+    public IList<HeroProfileIdentifier> Heroes { get; init; } = new List<HeroProfileIdentifier>();
     public required string Id { get; set; }
     public required string Name { get; set; }
     public IList<CommandCenterProfileTeam> Teams { get; init; } = new List<CommandCenterProfileTeam>();

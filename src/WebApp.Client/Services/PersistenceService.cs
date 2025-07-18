@@ -92,7 +92,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         return cities.OrderByDescending(x => x.UpdatedAt).ToList();
     }
 
-    public ValueTask SaveProfile(BasicCommandCenterProfile commandCenterProfile)
+    public ValueTask SaveCommandCenterProfile(BasicCommandCenterProfile commandCenterProfile)
     {
         var serializedProfile = JsonSerializer.Serialize(commandCenterProfile);
         return localStorageService.SetItemAsStringAsync(GetProfileKey(commandCenterProfile.Id), serializedProfile);
@@ -146,16 +146,12 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         return profiles;
     }
 
-    public async ValueTask<IReadOnlyDictionary<string, HeroPlaygroundProfile>> GetHeroPlaygroundProfilesAsync()
+    public async ValueTask<HeroProfileIdentifier?> GetHeroProfileAsync(string heroId)
     {
-        Dictionary<string, HeroPlaygroundProfile>? profiles = null;
-        var rawData = await localStorageService.GetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX);
-        if (!string.IsNullOrWhiteSpace(rawData))
-        {
-            profiles = JsonSerializer.Deserialize<Dictionary<string, HeroPlaygroundProfile>>(rawData);
-        }
+        var profiles = await GetHeroProfilesAsync();
 
-        return profiles ?? [];
+        profiles.TryGetValue(heroId, out var profile);
+        return profile;
     }
 
     public async ValueTask<IReadOnlyCollection<EquipmentItem>> GetEquipmentAsync()
@@ -168,12 +164,6 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         }
 
         return equipment ?? [];
-    }
-
-    public ValueTask SaveHeroPlaygroundProfilesAsync(IReadOnlyDictionary<string, HeroPlaygroundProfile> profiles)
-    {
-        var serializedProfile = JsonSerializer.Serialize(profiles);
-        return localStorageService.SetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX, serializedProfile);
     }
 
     public async ValueTask<UiSettings> GetUiSettingsAsync()
@@ -224,6 +214,25 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         }
 
         return cities;
+    }
+
+    public async ValueTask SaveHeroProfileAsync(HeroProfileIdentifier profile)
+    {
+        var profiles = await GetHeroProfilesAsync();
+        profiles[profile.HeroId] = profile;
+        var serializedProfile = JsonSerializer.Serialize(profiles);
+        await localStorageService.SetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX, serializedProfile);
+    }
+
+    private async ValueTask<Dictionary<string, HeroProfileIdentifier>> GetHeroProfilesAsync()
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX);
+        if (!string.IsNullOrWhiteSpace(rawData))
+        {
+            return JsonSerializer.Deserialize<Dictionary<string, HeroProfileIdentifier>>(rawData) ?? [];
+        }
+
+        return [];
     }
 
     private async Task DeleteAllTempCities()
