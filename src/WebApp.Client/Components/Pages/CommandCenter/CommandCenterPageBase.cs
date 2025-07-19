@@ -1,4 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -13,6 +15,11 @@ public abstract class CommandCenterPageBase : FogPageBase
     [Inject]
     protected IDialogService DialogService { get; set; }
 
+    protected bool IsInitialized { get; set; }
+
+    [Inject]
+    private ILocalStorageBackupService LocalStorageBackupService { get; set; }
+
     [Inject]
     protected NavigationManager NavigationManager { get; set; }
 
@@ -25,7 +32,7 @@ public abstract class CommandCenterPageBase : FogPageBase
         {
             Snackbar.Dispose();
         }
-        
+
         base.Dispose(disposing);
     }
 
@@ -43,7 +50,7 @@ public abstract class CommandCenterPageBase : FogPageBase
     {
         return Task.CompletedTask;
     }
-    
+
     protected virtual Task HandleOnInitializedAsync()
     {
         return Task.CompletedTask;
@@ -59,7 +66,6 @@ public abstract class CommandCenterPageBase : FogPageBase
             Position = DialogPosition.TopCenter,
         };
     }
-    protected bool IsInitialized { get; set; }
 
     protected sealed override async Task OnInitializedAsync()
     {
@@ -67,7 +73,9 @@ public abstract class CommandCenterPageBase : FogPageBase
         {
             return;
         }
-        
+
+        await LocalStorageBackupService.BackupCommandCenterProfiles(FogConstants.COMMAND_CENTER_VERSION);
+
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         JsInteropService.ResetScrollPositionAsync();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed

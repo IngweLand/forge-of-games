@@ -17,6 +17,7 @@ public class CommandCenterProfileFactory : ICommandCenterProfileFactory
             Heroes = heroes.ToList(),
             BarracksProfile = barracksProfile,
             SchemaVersion = FogConstants.CC_UI_PROFILE_SCHEME_VERSION,
+            CommandCenterVersion = FogConstants.COMMAND_CENTER_VERSION,
         };
     }
 }

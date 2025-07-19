@@ -8,4 +8,5 @@ public class BasicCommandCenterProfile : VersionedModel
     public required string Name { get; set; }
     public IList<CommandCenterProfileTeam> Teams { get; init; } = new List<CommandCenterProfileTeam>();
 
+    public int CommandCenterVersion { get; set; }
 }

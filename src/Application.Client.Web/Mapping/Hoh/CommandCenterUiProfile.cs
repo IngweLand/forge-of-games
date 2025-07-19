@@ -16,7 +16,8 @@ public class CommandCenterUiProfile : Profile
         CreateMap<CommandCenterProfile, BasicCommandCenterProfile>()
             .ForMember(dest => dest.Heroes, opt => opt.MapFrom(src => src.Heroes.Values.Select(x => x.Identifier)))
             .ForMember(dest => dest.Teams, opt => opt.MapFrom(src => src.Teams.Values))
-            .ForMember(dest => dest.SchemaVersion, opt => opt.MapFrom(src => FogConstants.CC_UI_PROFILE_SCHEME_VERSION));
+            .ForMember(dest => dest.SchemaVersion, opt => opt.MapFrom(src => FogConstants.CC_UI_PROFILE_SCHEME_VERSION))
+            .ForMember(dest => dest.CommandCenterVersion, opt => opt.MapFrom(src => FogConstants.COMMAND_CENTER_VERSION));
         CreateMap<BasicCommandCenterProfile, CommandCenterProfile>()
             .ForMember(dest => dest.Heroes, opt => opt.Ignore());
         CreateMap<CommandCenterProfile, CcProfileBasicsViewModel>();

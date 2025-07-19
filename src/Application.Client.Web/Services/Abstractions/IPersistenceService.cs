@@ -27,4 +27,5 @@ public interface IPersistenceService
     ValueTask SaveTempCities(IEnumerable<HohCity> cities);
     ValueTask<IReadOnlyCollection<HohCity>> GetTempCities();
     ValueTask SaveCityBackup(HohCityBackup cityBackup);
+    ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup);
 }

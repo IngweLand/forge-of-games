@@ -13,6 +13,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
 {
     private const string CITY_DATA_KEY_PREFIX = "CityData";
     private const string BACKUP_CITY_DATA_KEY_PREFIX = "Backup.CityData";
+    private const string BACKUP_COMMAND_CENTER_PROFILE_KEY_PREFIX = "Backup.CommandCenterProfile";
     private const string TEMP_CITY_DATA_KEY_PREFIX = "TEMP.CityData";
     private const string PROFILE_DATA_KEY_PREFIX = "CommandCenterProfile";
     private const string HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX = "HeroPlaygroundProfilesData";
@@ -48,6 +49,13 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     {
         var serializedCity = JsonSerializer.Serialize(cityBackup, JsonSerializerOptions);
         return localStorageService.SetItemAsStringAsync(GetCityBackupKey(cityBackup.City.Id), serializedCity);
+    }
+
+    public ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup)
+    {
+        var serializedCity = JsonSerializer.Serialize(backup, JsonSerializerOptions);
+        return localStorageService.SetItemAsStringAsync(GetCommandCenterProfileBackupKey(backup.Profile.Id),
+            serializedCity);
     }
 
     public async ValueTask<bool> DeleteCity(string cityId)
@@ -295,6 +303,11 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private static string GetCityBackupKey(string id)
     {
         return $"{BACKUP_CITY_DATA_KEY_PREFIX}.{id}";
+    }
+
+    private static string GetCommandCenterProfileBackupKey(string id)
+    {
+        return $"{BACKUP_COMMAND_CENTER_PROFILE_KEY_PREFIX}.{id}";
     }
 
     private static string GetTempCityKey(string id)

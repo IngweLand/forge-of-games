@@ -24,6 +24,7 @@ public class CcMigration0To1 : IMigration<BasicCommandCenterProfile>
             BarracksProfile = model.BarracksProfile,
             Heroes = model.Heroes,
             Teams = teams,
+            CommandCenterVersion = model.CommandCenterVersion,
             SchemaVersion = ToVersion,
         };
     }

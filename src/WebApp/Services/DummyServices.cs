@@ -109,6 +109,11 @@ internal class DummyPersistenceService : IPersistenceService
     {
         throw new NotImplementedException();
     }
+
+    public ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 internal class DummyClientLocaleService : IClientLocaleService
@@ -219,6 +224,11 @@ internal class DummyCommandCenterProfileSharingService : ICommandCenterProfileSh
 internal class DummyLocalStorageBackupService : ILocalStorageBackupService
 {
     public ValueTask BackupCities(int currentCityPlannerVersion)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask BackupCommandCenterProfiles(int currentCommandCenterVersion)
     {
         throw new NotImplementedException();
     }
