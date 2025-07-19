@@ -1,10 +1,10 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
-using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
@@ -44,6 +44,9 @@ public partial class HeroComponent : ComponentBase
     [Parameter]
     public EventCallback<HeroProfileIdentifier> OnProfileUpdate { get; set; }
 
+    [Inject]
+    private IPersistenceService PersistenceService { get; set; }
+
     [Parameter]
     public bool ShowBarracksSelector { get; set; } = true;
 
@@ -58,6 +61,7 @@ public partial class HeroComponent : ComponentBase
 
         if (OperatingSystem.IsBrowser())
         {
+            _showVideoAvatar = (await PersistenceService.GetUiSettingsAsync()).ShowHeroVideoAvatar;
             await JsInteropService.HideLoadingIndicatorAsync();
             StateHasChanged();
         }
@@ -157,7 +161,7 @@ public partial class HeroComponent : ComponentBase
         _progressionCost = await HeroProfileUiService.CalculateHeroProgressionCost(request);
     }
 
-    private void ToggleAvatarSource()
+    private async Task ToggleAvatarSource()
     {
         if (!_showVideoAvatar && (_isVideoAvatarLoadFailed || _profile?.VideoUrl == null))
         {
@@ -165,6 +169,13 @@ public partial class HeroComponent : ComponentBase
         }
 
         _showVideoAvatar = !_showVideoAvatar;
+
+        if (OperatingSystem.IsBrowser())
+        {
+            var uiSettings = await PersistenceService.GetUiSettingsAsync();
+            uiSettings.ShowHeroVideoAvatar = _showVideoAvatar;
+            await PersistenceService.SaveUiSettingsAsync(uiSettings);
+        }
     }
 
     private void OnVideoError()
