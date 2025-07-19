@@ -14,6 +14,7 @@ public class HeroAbilityViewModelFactory(IAssetUrlProvider assetUrlProvider) : I
         var abilityLevels = heroAbilityDto.Levels.Take(level).ToList();
         var abilityText = new HeroAbilityText(abilityLevels.Last(hal => hal.Description != null).Description!);
         var lastLevel = abilityLevels.Last();
+        var cost = abilityLevels.Count > 1 ? abilityLevels[^2].Cost : 0;
         return new HeroAbilityViewModel
         {
             IconUrl = assetUrlProvider.GetHohHeroAbilityIconUrl(heroAbilityDto.Id),
@@ -22,7 +23,7 @@ public class HeroAbilityViewModelFactory(IAssetUrlProvider assetUrlProvider) : I
             {
                 Title = abilityText.Title,
                 Description = abilityText.GetDescription(lastLevel.DescriptionItems),
-                Cost = lastLevel.Cost,
+                Cost = cost,
                 Level = lastLevel.Level,
             },
             ChargeTime = $"{abilityChargeTime:F1}s",
