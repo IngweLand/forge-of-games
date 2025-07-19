@@ -1,11 +1,13 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.RESEARCH_CALCULATOR_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IResearchCalculatorService ResearchCalculatorService
+@inject IPersistenceService PersistenceService
 @if (_ageTechnologies != null)
 {
     <div class="content-wrapper vertical-layout" id="scrollable-container">
@@ -57,10 +59,14 @@
         }
 
         <div class="navigation-buttons-container">
-            <div class="btn navigation-btn" style="visibility: @(_previousBtnIsVisible ? "visible" : "hidden")"
-                 @onclick="PreviousBtnOnClicked">@Loc[FogResource.Common_Previous] </div>
-            <div class="btn navigation-btn" style="visibility: @(_nextBtnIsVisible ? "visible" : "hidden")"
-                 @onclick="NextBtnOnClicked">@Loc[FogResource.Common_Next]</div>
+            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="PreviousBtnOnClicked"
+                       Disabled="@(!_previousBtnIsEnabled)">
+                @Loc[FogResource.Common_Previous]
+            </MudButton>
+            <MudButton Color="Color.Success" Variant="Variant.Filled" OnClick="NextBtnOnClicked"
+                       Disabled="@(!_nextBtnIsEnabled)">
+                @Loc[FogResource.Common_Next]
+            </MudButton>
         </div>
 
     </div>
@@ -69,8 +75,8 @@
 @code {
     private IReadOnlyCollection<AgeTechnologiesViewModel>? _ageTechnologies;
     private Step _currentStep = Step.SelectOpen;
-    private bool _previousBtnIsVisible;
-    private bool _nextBtnIsVisible;
+    private bool _previousBtnIsEnabled;
+    private bool _nextBtnIsEnabled;
     private string _stepDescription = "1";
     private string _step2BgColor = "";
     private string _step3BgColor = "";
@@ -79,14 +85,38 @@
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        
-        _ageTechnologies = await LoadWithPersistenceAsync(nameof(_ageTechnologies),
-            async () => await ResearchCalculatorService.GetTechnologiesAsync(CityId.Capital));
-        _ageTechnologies!.First().IsListOpen = true;
-        if (OperatingSystem.IsBrowser())
+
+        //TODO This results in double loading because we do not utilize pre-rendered data.
+        //The service should be refactored to fix this. Keep this for now to get pre-rendered result for SEO.
+        _ageTechnologies = await ResearchCalculatorService.InitializeAsync(CityId.Capital);
+
+        if (!OperatingSystem.IsBrowser() || _ageTechnologies == null)
         {
-            UpdateUiForStep();
+            return;
         }
+
+        var openTechs = await PersistenceService.GetOpenTechnologies(CityId.Capital);
+        if (openTechs.Count > 0)
+        {
+            ResearchCalculatorService.SelectOpenTechnologies(openTechs);
+            foreach (var ageTechnologies in _ageTechnologies)
+            {
+                if (ageTechnologies.Technologies.All(x => x.State is
+                        ResearchCalculatorTechnologyState.Open or ResearchCalculatorTechnologyState.SelectedOpen))
+                {
+                    continue;
+                }
+
+                ageTechnologies.IsListOpen = true;
+                break;
+            }
+        }
+        else
+        {
+            _ageTechnologies.First().IsListOpen = true;
+        }
+
+        await UpdateUiForStep();
     }
 
     private void OnClicked(ResearchCalculatorTechnologyViewModel item)
@@ -113,7 +143,7 @@
         Results,
     }
 
-    private void PreviousBtnOnClicked()
+    private Task PreviousBtnOnClicked()
     {
         _currentStep = _currentStep switch
         {
@@ -121,10 +151,10 @@
             Step.Results => Step.SelectTarget,
             _ => _currentStep,
         };
-        UpdateUiForStep();
+        return UpdateUiForStep();
     }
 
-    private void NextBtnOnClicked()
+    private Task NextBtnOnClicked()
     {
         _currentStep = _currentStep switch
         {
@@ -132,17 +162,17 @@
             Step.SelectTarget => Step.Results,
             _ => _currentStep,
         };
-        UpdateUiForStep();
+        return UpdateUiForStep();
     }
 
-    private void UpdateUiForStep()
+    private async Task UpdateUiForStep()
     {
         switch (_currentStep)
         {
             case Step.SelectOpen:
             {
-                _nextBtnIsVisible = true;
-                _previousBtnIsVisible = false;
+                _nextBtnIsEnabled = true;
+                _previousBtnIsEnabled = false;
                 _stepDescription = Loc[FogResource.Tools_ResearchCalculator_SelectOpenTech];
                 ResearchCalculatorService.ClearTargetTechnologies();
                 _cost = null;
@@ -152,8 +182,8 @@
             }
             case Step.SelectTarget:
             {
-                _nextBtnIsVisible = true;
-                _previousBtnIsVisible = true;
+                _nextBtnIsEnabled = true;
+                _previousBtnIsEnabled = true;
                 _stepDescription = Loc[FogResource.Tools_ResearchCalculator_SelectTargetTech];
                 _cost = null;
                 _step2BgColor = "var(--fog-stepper-active-color)";
@@ -162,10 +192,10 @@
             }
             case Step.Results:
             {
-                _nextBtnIsVisible = false;
-                _previousBtnIsVisible = true;
+                _nextBtnIsEnabled = false;
+                _previousBtnIsEnabled = true;
                 _stepDescription = Loc[FogResource.Tools_ResearchCalculator_Result];
-                _cost = ResearchCalculatorService.CalculateCost();
+                _cost = await ResearchCalculatorService.CalculateCost();
                 _step2BgColor = "var(--fog-stepper-active-color)";
                 _step3BgColor = "var(--fog-stepper-active-color)";
                 break;

@@ -4,4 +4,6 @@ public interface ICacheKeyFactory
 {
     string HeroDto(string heroId);
     string HeroesBasicData();
+    string HohAges();
+    string HohResources();
 }

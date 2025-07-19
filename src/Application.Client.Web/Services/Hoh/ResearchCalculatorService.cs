@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research;
@@ -14,17 +15,20 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 public class ResearchCalculatorService(
     IMapper mapper,
     IResearchService researchService,
-    IAgeTechnologiesFactory ageTechnologiesFactory)
+    IAgeTechnologiesFactory ageTechnologiesFactory,
+    ICommonService commonService,
+    IPersistenceService persistenceService)
     : IResearchCalculatorService
 {
     private CityId _currentCity;
     private BidirectionalGraph<string, Edge<string>> _currentGraph = null!;
     private HashSet<string> _openTechnologies = [];
-    private HashSet<string> _targetTechnologies = [];
-    private Dictionary<CityId, Dictionary<string, TechnologyDto>> _technologies = new();
+    private Dictionary<string, int>? _resourcesOrder;
+    private readonly HashSet<string> _targetTechnologies = [];
+    private readonly Dictionary<CityId, Dictionary<string, TechnologyDto>> _technologies = new();
     private Dictionary<string, ResearchCalculatorTechnologyViewModel> _techViewModels = null!;
 
-    public async Task<IReadOnlyCollection<AgeTechnologiesViewModel>> GetTechnologiesAsync(CityId cityId)
+    public async Task<IReadOnlyCollection<AgeTechnologiesViewModel>> InitializeAsync(CityId cityId)
     {
         _currentCity = cityId;
         if (!_technologies.TryGetValue(cityId, out var technologies))
@@ -49,7 +53,7 @@ public class ResearchCalculatorService(
         _techViewModels = viewModel.SelectMany(src => src.Technologies).ToDictionary(t => t.Id);
         return viewModel;
     }
-
+    
     public void SelectOpenTechnologies(string selectedTechnologyId)
     {
         var ancestors = GetAncestors(selectedTechnologyId);
@@ -57,6 +61,8 @@ public class ResearchCalculatorService(
         _openTechnologies.Add(selectedTechnologyId);
         _openTechnologies.ExceptWith(descendants);
         _openTechnologies.UnionWith(ancestors);
+
+        Task.Run(async () => await persistenceService.SaveOpenTechnologies(CityId.Capital, _openTechnologies));
 
         foreach (var openTech in _openTechnologies)
         {
@@ -66,6 +72,23 @@ public class ResearchCalculatorService(
         foreach (var descendant in descendants)
         {
             _techViewModels[descendant].State = ResearchCalculatorTechnologyState.None;
+        }
+    }
+    
+    public void SelectOpenTechnologies(IEnumerable<string> selectedTechnologyIds)
+    {
+        _openTechnologies = new HashSet<string>(selectedTechnologyIds);
+        
+        Task.Run(async () => await persistenceService.SaveOpenTechnologies(CityId.Capital, _openTechnologies));
+
+        foreach (var vm in _techViewModels.Values)
+        {
+            vm.State = ResearchCalculatorTechnologyState.None;
+        }
+        
+        foreach (var openTech in _openTechnologies)
+        {
+            _techViewModels[openTech].State = ResearchCalculatorTechnologyState.Open;
         }
     }
 
@@ -112,21 +135,38 @@ public class ResearchCalculatorService(
         _targetTechnologies.Clear();
     }
 
-    public ResearchCostViewModel CalculateCost()
+    public async Task<ResearchCostViewModel> CalculateCost()
     {
         var cityTechnologies = _technologies[_currentCity];
         var targetTechnologies = _targetTechnologies.Select(tech => cityTechnologies[tech]).ToList();
         var cost = targetTechnologies.SelectMany(t => t.Costs).GroupBy(ra => ra.ResourceId)
-            .Select(g => new ResourceAmount()
+            .Select(g => new ResourceAmount
             {
                 ResourceId = g.Key,
                 Amount = g.Sum(ra => ra.Amount),
-            }).ToList();
+            });
 
-        return new ResearchCostViewModel()
+        await LoadResourcesAsync();
+        cost = cost.OrderBy(x => _resourcesOrder!.GetValueOrDefault(x.ResourceId, int.MaxValue)).ToList();
+
+        return new ResearchCostViewModel
         {
             Cost = mapper.Map<IReadOnlyCollection<IconLabelItemViewModel>>(cost),
         };
+    }
+
+    private async Task LoadResourcesAsync()
+    {
+        if (_resourcesOrder != null)
+        {
+            return;
+        }
+
+        _resourcesOrder = (await commonService.GetResourceAsync())
+            .OrderBy(x => x.Age?.Index ?? int.MaxValue)
+            .ThenBy(x => x.Type)
+            .Select((resource, index) => new {resource.Id, index})
+            .ToDictionary(x => x.Id, x => x.index);
     }
 
     private void CreateGraph(ICollection<TechnologyDto> technologies)

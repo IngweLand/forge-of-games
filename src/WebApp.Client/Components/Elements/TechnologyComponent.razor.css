@@ -5,7 +5,7 @@
     --fog-open-tech-color: #CFFCEF;
 
     overflow: hidden;
-    height: 56px;
+    height: 46px;
     padding: 4px 8px 4px 4px;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .icon {
-    height: 36px;
+    height: 28px;
     flex-shrink: 0;
 }
 
@@ -26,6 +26,15 @@
     color: var(--fog-text-color);
 }
 
+@media (min-width: 576px) {
+    .component-root {
+        height: 56px;
+    }
+
+    .icon {
+        height: 36px;
+    }
+}
 @media (min-width: 768px) {
     .label {
         font-size: 1rem;

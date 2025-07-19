@@ -47,6 +47,9 @@ public static class FogUrlBuilder
         public const string PLAYER_CITY_SNAPSHOTS_SEARCH = "/playerCitySnapshots/search";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE = "/playerCitySnapshots/{snapshotId:int}";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE_REFIT = "/playerCitySnapshots/{snapshotId}";
+
+        public const string COMMON_AGES = "/common/ages";
+        public const string COMMON_RESOURCES = "/common/resources";
     }
 
     public static class PageRoutes

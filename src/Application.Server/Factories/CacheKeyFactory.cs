@@ -13,4 +13,14 @@ public class CacheKeyFactory : ICacheKeyFactory
     {
         return "heroes-basic-data";
     }
+
+    public string HohAges()
+    {
+        return "hoh-ages";
+    }
+
+    public string HohResources()
+    {
+        return "hoh-resources";
+    }
 }

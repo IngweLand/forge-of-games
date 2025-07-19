@@ -6,6 +6,7 @@ using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
@@ -111,6 +112,16 @@ internal class DummyPersistenceService : IPersistenceService
     }
 
     public ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId)
     {
         throw new NotImplementedException();
     }

@@ -95,6 +95,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.Worlds.FirstOrDefault(w => w.Id == id);
     }
 
+    public async Task<IReadOnlyCollection<Resource>> GetResources()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.Resources;
+    }
+
     public async Task<IReadOnlyCollection<Building>> GetBuildingsAsync(CityId cityId)
     {
         var data = await dataProvider.GetDataAsync();

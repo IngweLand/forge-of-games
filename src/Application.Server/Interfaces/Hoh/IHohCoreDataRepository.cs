@@ -35,4 +35,5 @@ public interface IHohCoreDataRepository
     Task<UnitBattleConstants> GetUnitBattleConstants();
     Task<Wonder?> GetWonderAsync(WonderId id);
     Task<World?> GetWorldAsync(WorldId id);
+    Task<IReadOnlyCollection<Resource>> GetResources();
 }

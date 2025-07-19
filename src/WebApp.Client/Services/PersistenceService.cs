@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
 
@@ -20,6 +21,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private const string EQUIPMENT_DATA_KEY_PREFIX = "Equipment";
     private const string UI_SETTINGS = "UiSettings";
     private const string CITY_INSPIRATIONS_REQUEST = "CityInspirationsRequest";
+    private const string OPEN_TECHNOLOGIES = "OpenTechnologies";
 
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
@@ -56,6 +58,20 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         var serializedCity = JsonSerializer.Serialize(backup, JsonSerializerOptions);
         return localStorageService.SetItemAsStringAsync(GetCommandCenterProfileBackupKey(backup.Profile.Id),
             serializedCity);
+    }
+
+    public async ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies)
+    {
+        var allTechs = await GetAllOpenTechnologiesAsync();
+        allTechs[cityId] = openTechnologies;
+        var serializedCity = JsonSerializer.Serialize(allTechs, JsonSerializerOptions);
+        await localStorageService.SetItemAsStringAsync(OPEN_TECHNOLOGIES, serializedCity);
+    }
+
+    public async ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId)
+    {
+        var allTechs = await GetAllOpenTechnologiesAsync();
+        return allTechs.GetValueOrDefault(cityId, []);
     }
 
     public async ValueTask<bool> DeleteCity(string cityId)
@@ -238,6 +254,17 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         if (!string.IsNullOrWhiteSpace(rawData))
         {
             return JsonSerializer.Deserialize<Dictionary<string, HeroProfileIdentifier>>(rawData) ?? [];
+        }
+
+        return [];
+    }
+
+    private async ValueTask<Dictionary<CityId, IReadOnlyCollection<string>>> GetAllOpenTechnologiesAsync()
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(OPEN_TECHNOLOGIES);
+        if (!string.IsNullOrWhiteSpace(rawData))
+        {
+            return JsonSerializer.Deserialize<Dictionary<CityId, IReadOnlyCollection<string>>>(rawData) ?? [];
         }
 
         return [];

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 
@@ -28,4 +29,7 @@ public interface IPersistenceService
     ValueTask<IReadOnlyCollection<HohCity>> GetTempCities();
     ValueTask SaveCityBackup(HohCityBackup cityBackup);
     ValueTask SaveCommandCenterProfileBackup(CommandCenterProfileBackup backup);
+
+    ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies);
+    ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId);
 }

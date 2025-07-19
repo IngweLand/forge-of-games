@@ -126,9 +126,11 @@ public static class HohApi
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
-        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH, GetTreasureHuntEncountersBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH,
+            GetTreasureHuntEncountersBasicDataAsync);
 
-        api.MapProtobufGet("/ages", GetAgesAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_AGES, GetAgesAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_RESOURCES, GetResourcesAsync);
 
         api.MapProtobufGet("/cityPlanner/data/{cityId}", GetCityPlannerDataAsync);
         api.MapPost("/cityPlanner/sharedCities", ShareCityAsync);
@@ -208,6 +210,13 @@ public static class HohApi
         await WriteToResponseAsync(context, ages, services.ProtobufSerializer);
     }
 
+    private static async Task GetResourcesAsync([AsParameters] HohServices services,
+        HttpContext context)
+    {
+        var ages = await services.CommonService.GetResourceAsync();
+        await WriteToResponseAsync(context, ages, services.ProtobufSerializer);
+    }
+
     private static async Task GetBarracksAsync([AsParameters] HohServices services,
         HttpContext context, UnitType unitType)
     {
@@ -215,7 +224,7 @@ public static class HohApi
 
         await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
     }
-    
+
     private static async Task GetAllBarracksAsync([AsParameters] HohServices services, HttpContext context)
     {
         var barracks = await services.CityService.GetAllBarracks();
@@ -342,7 +351,8 @@ public static class HohApi
         }
     }
 
-    private static async Task GetTreasureHuntEncountersBasicDataAsync([AsParameters] HohServices services, HttpContext context)
+    private static async Task GetTreasureHuntEncountersBasicDataAsync([AsParameters] HohServices services,
+        HttpContext context)
     {
         var map = await services.TreasureHuntService.GetTreasureHuntEncountersBasicDataAsync();
         await WriteToResponseAsync(context, map, services.ProtobufSerializer);
