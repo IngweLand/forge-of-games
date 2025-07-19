@@ -19,6 +19,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.Heroes;
 public partial class HeroComponent : ComponentBase
 {
     private HeroProfileIdentifier? _initProfile;
+    private bool _isVideoAvatarLoadFailed;
     private HeroProfileViewModel? _profile;
     private IReadOnlyCollection<IconLabelItemViewModel>? _progressionCost;
 
@@ -26,6 +27,8 @@ public partial class HeroComponent : ComponentBase
 
     private IList<HeroLevelSpecs>? _progressionTargetLevels;
     private BattleType _selectedBattleType;
+
+    private bool _showVideoAvatar;
     private IReadOnlyDictionary<BattleType, IReadOnlyCollection<UnitBattleViewModel>>? _unitBattles;
 
     [Inject]
@@ -193,5 +196,21 @@ public partial class HeroComponent : ComponentBase
 
         NavigationManager.NavigateTo(
             NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);
+    }
+
+    private void ToggleAvatarSource()
+    {
+        if (!_showVideoAvatar && (_isVideoAvatarLoadFailed || _profile?.VideoUrl == null))
+        {
+            return;
+        }
+
+        _showVideoAvatar = !_showVideoAvatar;
+    }
+
+    private void OnVideoError()
+    {
+        _isVideoAvatarLoadFailed = true;
+        _showVideoAvatar = false;
     }
 }

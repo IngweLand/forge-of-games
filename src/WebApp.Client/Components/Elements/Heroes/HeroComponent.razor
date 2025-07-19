@@ -7,9 +7,26 @@
 {
     <div class="component-root">
         <div class="header-container">
-            <div class="fog-container avatar-section">
+            <div class="fog-container avatar-section" @onclick="ToggleAvatarSource">
                 <div class="avatar-container">
-                    <img src="@_profile.PortraitUrl"/>
+                    @if(_showVideoAvatar)
+                    {
+                        <video autoplay loop muted playsinline @onerror="OnVideoError">
+                            <source src="@_profile.VideoUrl" type="video/mp4" @onerror="OnVideoError">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="hover-icon">
+                            <span class="material-symbols-outlined material-icons">photo_camera</span>
+                        </div>
+                    }
+                    else
+                    {
+                        <img src="@_profile.PortraitUrl"/>
+                        <div class="hover-icon">
+                            <span class="material-symbols-outlined material-icons">videocam</span>
+                        </div>
+                    }
+                    
                     <div class="rating">@(new string('★', _profile.StarCount))</div>
                 </div>
                 <div class="power-label">@_profile.TotalPower</div>
