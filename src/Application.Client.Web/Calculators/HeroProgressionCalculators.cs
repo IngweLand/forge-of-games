@@ -9,6 +9,59 @@ namespace Ingweland.Fog.Application.Client.Web.Calculators;
 
 public class HeroProgressionCalculators(ILogger<HeroProgressionCalculators> logger) : IHeroProgressionCalculators
 {
+    private static readonly Dictionary<string, int> AscensionMaterialsOrder = new List<string>
+        {
+            "resource.hero_xp",
+            "food",
+
+            "purple_crest_common",
+            "red_crest_common",
+            "green_crest_common",
+            "yellow_crest_common",
+            "blue_crest_common",
+
+            "purple_crest_enhanced",
+            "red_crest_enhanced",
+            "green_crest_enhanced",
+            "yellow_crest_enhanced",
+            "blue_crest_enhanced",
+
+            "purple_crest_superior",
+            "red_crest_superior",
+            "green_crest_superior",
+            "yellow_crest_superior",
+            "blue_crest_superior",
+
+            "purple_crest_epic",
+            "red_crest_epic",
+            "green_crest_epic",
+            "yellow_crest_epic",
+            "blue_crest_epic",
+
+            "shadow_dial",
+            "war_horn",
+            "fragrant_potpourri",
+
+            "charta_terrestre",
+            "crested_guidon",
+            "herbal_poultice",
+
+            "travelers_compass",
+            "gilded_pennant",
+            "hortus_sanitatis",
+
+            "astrolabe_majesticum",
+            "imperial_war_drum",
+            "philosophers_stone",
+
+            "folio_of_enlightenment",
+            "tesla_core",
+            "stardust_quartz",
+            "prism_of_fate",
+            "lantern_of_vigilance",
+        }.Select((resource, index) => new {resource, index})
+        .ToDictionary(x => x.resource, x => x.index);
+
     public int CalculateDependentCost(HeroProgressionCostResource src)
     {
         return (int) Math.Round(src.Amount * src.ResourceFactor);
@@ -66,7 +119,8 @@ public class HeroProgressionCalculators(ILogger<HeroProgressionCalculators> logg
 
         return total
             .GroupBy(ra => ra.ResourceId)
-            .Select(g => new ResourceAmount {ResourceId = g.Key, Amount = g.Sum(ra => ra.Amount)})
+            .Select(g => { return new ResourceAmount {ResourceId = g.Key, Amount = g.Sum(ra => ra.Amount)}; })
+            .OrderBy(x => AscensionMaterialsOrder.GetValueOrDefault(x.ResourceId, int.MaxValue))
             .ToList();
     }
 
