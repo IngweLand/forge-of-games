@@ -79,8 +79,6 @@ public class ResearchCalculatorService(
     {
         _openTechnologies = new HashSet<string>(selectedTechnologyIds);
         
-        Task.Run(async () => await persistenceService.SaveOpenTechnologies(CityId.Capital, _openTechnologies));
-
         foreach (var vm in _techViewModels.Values)
         {
             vm.State = ResearchCalculatorTechnologyState.None;

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
@@ -30,7 +31,7 @@ public class InGameStartupDataRepository(
             }
 
             logger.LogInformation("Successfully retrieved saved data {Id}", inGameStartupDataId);
-            return mapper.Map<InGameStartupData>(entity);
+            return entity.InGameStartupData;
         }
         catch (Exception ex)
         {
@@ -44,9 +45,13 @@ public class InGameStartupDataRepository(
         logger.LogInformation("Starting to save startup data");
 
         var rowKey = Guid.NewGuid().ToString("N");
-        var entity = mapper.Map<InGameStartupDataTableEntity>(data);
-        entity.PartitionKey = PartitionKey;
-        entity.RowKey = rowKey;
+        var entity = new InGameStartupDataTableEntity
+        {
+            PartitionKey = PartitionKey,
+            RowKey = rowKey,
+            InGameStartupData = data,
+            CollectedAt = DateTime.UtcNow,
+        };
 
         try
         {

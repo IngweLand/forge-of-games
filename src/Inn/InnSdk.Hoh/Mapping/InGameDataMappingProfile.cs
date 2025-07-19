@@ -9,6 +9,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
+using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
@@ -167,5 +168,7 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.AllianceName))
             .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.AllianceAvatarIconId))
             .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.AllianceAvatarBackgroundId));
+
+        CreateMap<ResearchStateTechnologyDto, ResearchStateTechnology>();
     }
 }

@@ -15,8 +15,10 @@ public partial class ImportInGameStartupDataPage : FogPageBase
     private bool _shouldImportCities = true;
     private bool _shouldImportEquipment = true;
     private bool _shouldImportProfile = true;
+    private bool _shouldImportResearchState = true;
 
-    private bool _canImport => _shouldImportCities | _shouldImportProfile | _shouldImportEquipment;
+    private bool _canImport =>
+        _shouldImportCities | _shouldImportProfile | _shouldImportEquipment | _shouldImportResearchState;
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
@@ -67,6 +69,20 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         if (_shouldImportEquipment && _inGameStartupData?.Equipment is {Count: > 0})
         {
             await PersistenceService.SaveEquipment(_inGameStartupData.Equipment);
+        }
+
+        if (_shouldImportResearchState && _inGameStartupData?.ResearchState is {Count: > 0})
+        {
+            foreach (var kvp in _inGameStartupData.ResearchState)
+            {
+                var unlocked = kvp.Value.Where(x => x.State == TechnologyState.Unlocked).Select(x => x.TechnologyId).ToList();
+                if(unlocked.Count == 0)
+                {
+                    continue;
+                }
+                await PersistenceService.SaveOpenTechnologies(kvp.Key, unlocked);
+            }
+           
         }
 
         _isImporting = false;

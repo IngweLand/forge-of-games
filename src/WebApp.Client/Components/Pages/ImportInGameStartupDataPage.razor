@@ -25,6 +25,9 @@
                     @bind-Value="@_shouldImportProfile">@Loc[FogResource.ImportInGameData_Options_Profile]</MudCheckBox>
                 <MudCheckBox
                     @bind-Value="@_shouldImportEquipment">@Loc[FogResource.ImportInGameData_Options_Equipment]</MudCheckBox>
+                <MudCheckBox
+                    @bind-Value="@_shouldImportResearchState">@Loc[FogResource.ImportInGameData_Options_ResearchState]</MudCheckBox>
+                
                 <div class="buttons-container">
                     <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="ImportData"
                                Disabled="@(!_canImport)">@Loc[FogResource.Common_Import]</MudButton>

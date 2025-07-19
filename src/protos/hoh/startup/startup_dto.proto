@@ -5,6 +5,6 @@ import "google/protobuf/any.proto";
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message StartupDto {
-  // StartupResponseDTO, CityDTO, HeroPush, EquipmentPush, ReworkedWondersDTO
+  // StartupResponseDTO, CityDTO, HeroPush, EquipmentPush, ReworkedWondersDTO, ResearchStateDTO
   repeated google.protobuf.Any packed_items = 1;
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "technology_state.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message ResearchStateDTO {
+  repeated ResearchStateTechnologyDto technologies = 1;
+}
+
+message ResearchStateTechnologyDto {
+  string technology_id = 2;
+  TechnologyState state = 3;
+}

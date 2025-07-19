@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum TechnologyState {
+  TechnologyState_UNDEFINED = 0;
+  TechnologyState_UNLOCKING = 1;
+  TechnologyState_UNLOCKED = 2;
+}

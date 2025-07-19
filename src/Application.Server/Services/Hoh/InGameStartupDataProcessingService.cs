@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Core.Extensions;
-using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
@@ -8,6 +7,7 @@ using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
 using Microsoft.Extensions.Logging;
@@ -26,7 +26,7 @@ public class InGameStartupDataProcessingService(
     public async Task<InGameStartupData> ParseStartupData(string inputData)
     {
         var data = DecodeInternal(inputData);
-        
+
         StartupDto startupDto;
         try
         {
@@ -42,11 +42,13 @@ public class InGameStartupDataProcessingService(
         var cities = await ImportInGameCities(startupDto);
         var profile = await ImportProfileAsync(startupDto, cities);
         var equipment = await ImportEquipmentAsync(startupDto);
-        return new InGameStartupData()
+        var researchState = await ImportResearchState(startupDto);
+        return new InGameStartupData
         {
             Cities = cities.ToList(),
             Profile = profile,
             Equipment = equipment.ToList(),
+            ResearchState = researchState,
         };
     }
 
@@ -81,7 +83,7 @@ public class InGameStartupDataProcessingService(
                         wonderId = activeWonderId;
                     }
                 }
-               
+
                 var city = cityFactory.Create(cityDto, buildings.ToDictionary(b => b.Id), wonderId,
                     activeWonderDto?.Level ?? 0);
                 cities.Add(city);
@@ -94,8 +96,9 @@ public class InGameStartupDataProcessingService(
 
         return cities;
     }
-    
-    private async Task<BasicCommandCenterProfile?> ImportProfileAsync(StartupDto startupDto, IEnumerable<HohCity> cities)
+
+    private async Task<BasicCommandCenterProfile?> ImportProfileAsync(StartupDto startupDto,
+        IEnumerable<HohCity> cities)
     {
         var barracksProfile = new BarracksProfile();
         var capital = cities.FirstOrDefault(c => c.InGameCityId == CityId.Capital);
@@ -145,5 +148,31 @@ public class InGameStartupDataProcessingService(
         }
 
         return equipmentItems;
+    }
+
+    private async Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>> ImportResearchState(
+        StartupDto startupDto)
+    {
+        var researchItems = new Dictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>();
+        if (startupDto.ResearchState == null)
+        {
+            return researchItems;
+        }
+
+        
+        try
+        {
+            var items = mapper.Map<List<ResearchStateTechnology>>(startupDto.ResearchState.Technologies);
+            var capitalTechnologies = (await coreDataRepository.GetTechnologiesAsync(CityId.Capital)).Select(x => x.Id)
+                .ToHashSet();
+            researchItems[CityId.Capital] = items.Where(x => capitalTechnologies.Contains(x.TechnologyId)).ToList();
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to map research state data";
+            logger.LogError(ex, msg);
+        }
+
+        return researchItems;
     }
 }

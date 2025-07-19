@@ -1896,6 +1896,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Research state.
+        /// </summary>
+        public static string ImportInGameData_Options_ResearchState {
+            get {
+                return ResourceManager.GetString("ImportInGameData.Options.ResearchState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data has been imported successfully. Open City planner or Command center to see it..
         /// </summary>
         public static string ImportInGameData_SuccessMessage {

@@ -12,13 +12,6 @@ public class MainMappingProfile : Profile
 {
     public MainMappingProfile()
     {
-        CreateMap<InGameStartupData, InGameStartupDataTableEntity>()
-            .ForMember(dest => dest.CitiesData, opt => opt.Ignore())
-            .ForMember(dest => dest.ProfileData, opt => opt.Ignore())
-            .ForMember(dest => dest.RelicsJson, opt => opt.Ignore())
-            .ForMember(dest => dest.EquipmentData, opt => opt.Ignore());
-        CreateMap<InGameStartupDataTableEntity, InGameStartupData>();
-
         CreateMap<PlayerRank, PlayerRankingTableEntity>()
             .ForMember(dest => dest.Type, opt =>
                 opt.MapFrom((_, _, _, context) =>
@@ -32,6 +25,10 @@ public class MainMappingProfile : Profile
             .ReverseMap();
 
         CreateMap<InGameRawData, InGameRawDataTableEntity>()
+            .ForMember(dest => dest.CompressedData, opt => opt.Ignore())
+            .ReverseMap();
+        
+        CreateMap<InGameRawData, InGameStartupDataTableEntity>()
             .ForMember(dest => dest.CompressedData, opt => opt.Ignore())
             .ReverseMap();
     }
