@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 
@@ -9,7 +10,7 @@ public record HeroProfileViewModel
     public required HeroAbilityViewModel Ability { get; init; }
     public required IReadOnlyCollection<int> AbilityLevels { get; init; }
     public required IReadOnlyCollection<int> AwakeningLevels { get; init; }
-    public IReadOnlyCollection<int>? BarracksLevels { get; init; }
+    public IReadOnlyCollection<BuildingViewModel> BarracksLevels { get; init; } = [];
     public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; init; }
     public required string HeroUnitId { get; init; }
     public required HeroProfileIdentifier Identifier { get; init; }

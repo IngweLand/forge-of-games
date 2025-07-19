@@ -7,5 +7,5 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 
 public interface IHohHeroProfileViewModelFactory
 {
-    HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, BuildingLevelRange barracksRanges);
+    HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks);
 }

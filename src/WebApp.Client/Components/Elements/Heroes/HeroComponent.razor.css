@@ -164,9 +164,8 @@
 }
 
 .options-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .ability-container, .progression-cost-container{
@@ -214,7 +213,7 @@
 }
 
 .selector-component{
-    min-width: 140px;
+    min-width: 130px;
 }
 
 .unit-battles-container {

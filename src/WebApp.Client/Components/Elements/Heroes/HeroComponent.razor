@@ -1,15 +1,16 @@
+@using System.Globalization
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Size = MudBlazor.Size
-@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @if (_profile != null)
 {
     <div class="component-root">
         <div class="header-container">
             <div class="fog-container avatar-section" @onclick="ToggleAvatarSource">
                 <div class="avatar-container">
-                    @if(_showVideoAvatar)
+                    @if (_showVideoAvatar)
                     {
                         <video autoplay loop muted playsinline @onerror="OnVideoError">
                             <source src="@_profile.VideoUrl" type="video/mp4" @onerror="OnVideoError">
@@ -26,7 +27,7 @@
                             <span class="material-symbols-outlined material-icons">videocam</span>
                         </div>
                     }
-                    
+
                     <div class="rating">@(new string('★', _profile.StarCount))</div>
                 </div>
                 <div class="power-label">@_profile.TotalPower</div>
@@ -94,12 +95,13 @@
                 <div class="selector-component">
                     <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Barracks]"
                                ValueChanged="OnBarracksLevelChanged"
-                               T="int" Value="@_profile.Identifier.BarracksLevel"
+                               T="BuildingViewModel" RelativeWidth="DropdownWidth.Adaptive"
+                               ToStringFunc="@(x => x?.Level.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
+                               Value="@(_profile.BarracksLevels.FirstOrDefault(x => x.Level == _profile.Identifier.BarracksLevel))"
                                Variant="Variant.Outlined">
-
                         @foreach (var level in _profile.BarracksLevels)
                         {
-                            <MudSelectItem Value="level">@level</MudSelectItem>
+                            <BuildingLevelSelectItemComponent Dense="true" Data="level"/>
                         }
                     </MudSelect>
                 </div>
@@ -226,5 +228,11 @@
         text-transform: none !important;
         font-weight: 700 !important;
         font-size: 12px !important;
+    }
+    
+    .mud-input>div.mud-input-root {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: flex-start;
     }
 </style>

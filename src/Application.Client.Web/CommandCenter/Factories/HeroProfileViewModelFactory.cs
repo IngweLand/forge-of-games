@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
@@ -17,7 +18,8 @@ public class HeroProfileViewModelFactory(
     IAssetUrlProvider assetUrlProvider,
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IHeroSupportUnitViewModelFactory heroSupportUnitViewModelFactory,
-    IHeroAbilityViewModelFactory abilityViewModelFactory) : IHohHeroProfileViewModelFactory
+    IHeroAbilityViewModelFactory abilityViewModelFactory,
+    IBuildingViewModelFactory buildingViewModelFactory) : IHohHeroProfileViewModelFactory
 {
     private const int DEFAULT_HITS_PER_MINUTE = 60;
 
@@ -52,7 +54,7 @@ public class HeroProfileViewModelFactory(
         UnitStatType.Evasion,
     ];
 
-    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, BuildingLevelRange barracksRanges)
+    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks)
     {
         var profileViewModel = new HeroProfileViewModel
         {
@@ -78,9 +80,7 @@ public class HeroProfileViewModelFactory(
             HeroLevels = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count),
             AbilityLevels = Enumerable.Range(1, hero.Ability.Levels.Count).ToList(),
             AwakeningLevels = Enumerable.Range(0, 6).ToList(),
-            BarracksLevels = Enumerable
-                .Range(barracksRanges.StartLevel, barracksRanges.EndLevel - barracksRanges.StartLevel + 1)
-                .ToList(),
+            BarracksLevels = barracks.OrderBy(b => b.Level).Select(buildingViewModelFactory.Create).ToList(),
             StatsItems = CreateMainStatsItems(profile.Stats),
             StatsBreakdown = CreateStatsBreakdownItems(profile.StatsBreakdown),
             VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),

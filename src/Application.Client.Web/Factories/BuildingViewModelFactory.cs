@@ -15,11 +15,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
 
-public class BuildingViewModelFactory(
-    IMapper mapper,
-    IAssetUrlProvider assetUrlProvider,
-    IHohStorageIconUrlProvider storageIconUrlProvider,
-    IStringLocalizer<FogResource> localizer) : IBuildingViewModelFactory
+public class BuildingViewModelFactory(IMapper mapper) : IBuildingViewModelFactory
 {
     public BuildingViewModel Create(BuildingDto source)
     {

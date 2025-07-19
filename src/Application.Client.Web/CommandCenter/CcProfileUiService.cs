@@ -355,7 +355,7 @@ public class CcProfileUiService(
     private async Task<HeroProfileViewModel> CreateHeroProfileViewModel(HeroProfile heroProfile)
     {
         var hero = await coreDataCache.GetHeroAsync(heroProfile.Identifier.HeroId);
-        return heroProfileViewModelFactory.Create(heroProfile, hero!, BuildingLevelRange.Empty);
+        return heroProfileViewModelFactory.Create(heroProfile, hero!, []);
     }
 
     private void NotifyStateChanged()

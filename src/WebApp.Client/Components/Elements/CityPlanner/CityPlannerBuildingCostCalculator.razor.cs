@@ -147,7 +147,7 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
         _toLevel = _toLevels?.First();
         CalculateCost();
 
-        // We need this for a proper rendering in case our async calls in this method runs synchronously.
+        // We need this for a proper rendering in case our async calls in this method run synchronously.
         await Task.Yield();
     }
 }

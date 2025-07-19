@@ -7,6 +7,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -104,6 +105,8 @@ public partial class HeroComponent : ComponentBase
 
         _profile = await HeroProfileUiService.GetHeroProfileAsync(InitProfile);
         await UpdateProgressionTargetLevels();
+        
+        StateHasChanged();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -140,10 +143,10 @@ public partial class HeroComponent : ComponentBase
         return UpdateProfile(request with {Level = level.Level, AscensionLevel = level.AscensionLevel});
     }
 
-    private Task OnBarracksLevelChanged(int level)
+    private Task OnBarracksLevelChanged(BuildingViewModel barracks)
     {
         var request = CreateRequest();
-        return UpdateProfile(request with {BarracksLevel = level});
+        return UpdateProfile(request with {BarracksLevel = barracks.Level});
     }
 
     private Task OnAwakeningValueChanged(int level)

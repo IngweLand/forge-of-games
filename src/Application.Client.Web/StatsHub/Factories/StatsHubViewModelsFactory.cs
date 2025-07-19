@@ -166,7 +166,7 @@ public class StatsHubViewModelsFactory(
         }
 
         var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
-        var profileVm = heroProfileViewModelFactory.Create(profile, hero, BuildingLevelRange.Empty);
+        var profileVm = heroProfileViewModelFactory.Create(profile, hero, []);
         string? finalHitPointsPercent = null;
         var isDead = false;
         if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))

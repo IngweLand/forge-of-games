@@ -99,10 +99,9 @@ public class HeroProfileUiService : IHeroProfileUiService
         }
 
         var barracks = await _coreDataCache.GetBarracks(hero.Unit.Type);
-        var barracksLevels = GetBarracksLevels(barracks, hero.Unit.Type);
         var profile = _hohHeroProfileFactory.Create(identifier, hero,
             barracks.FirstOrDefault(x => x.Level == identifier.BarracksLevel));
-        return _heroProfileViewModelFactory.Create(profile, hero, barracksLevels);
+        return _heroProfileViewModelFactory.Create(profile, hero, barracks);
     }
 
     public async Task<IReadOnlyCollection<IconLabelItemViewModel>> CalculateHeroProgressionCost(
