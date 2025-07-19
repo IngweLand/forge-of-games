@@ -9,6 +9,7 @@ public interface IHeroProgressionCalculators
 {
     int CalculateDependentCost(HeroProgressionCostResource src);
 
-    IReadOnlyCollection<ResourceAmount> CalculateProgressionCost(HeroDto hero, HeroLevelSpecs from,
-        HeroLevelSpecs to);
+    IReadOnlyCollection<ResourceAmount> CalculateProgressionCost(HeroDto hero, HeroLevelSpecs from, HeroLevelSpecs to);
+
+    int CalculateAbilityCost(HeroAbilityDto heroAbility, int from, int to);
 }

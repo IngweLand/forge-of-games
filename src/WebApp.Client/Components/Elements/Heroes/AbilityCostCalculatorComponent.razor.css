@@ -1,0 +1,15 @@
+.component-root {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.selector-component {
+    min-width: 130px;
+}
+
+@media (min-width: 576px) {
+    .component-root {
+        gap: 16px;
+    }
+}

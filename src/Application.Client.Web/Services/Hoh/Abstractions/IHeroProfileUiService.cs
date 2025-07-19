@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Units;
@@ -14,6 +15,8 @@ public interface IHeroProfileUiService
 
     Task<IReadOnlyCollection<IconLabelItemViewModel>> CalculateHeroProgressionCost(
         HeroProgressionCostRequest request);
+    
+    Task<IconLabelItemViewModel> CalculateAbilityCostAsync(AbilityCostRequest request);
 
     void SaveHeroProfile(HeroProfileIdentifier identifier);
     Task<HeroDto?> GetHeroAsync(string heroId);

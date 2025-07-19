@@ -1,0 +1,85 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Microsoft.Extensions.Localization
+@if (_targetLevels.Count > 0)
+{
+    <div class="component-root">
+        <div class="selector-component">
+            <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" T="int"
+                       ValueChanged="OnProgressionTargetLevelChanged" Value="@_targetLevel"
+                       Variant="Variant.Outlined">
+
+                @foreach (var level in _targetLevels)
+                {
+                    <MudSelectItem Value="level">@level</MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+
+        @if (_progressionCost != null)
+        {
+                <HorizontalIconLabelComponent Item="_progressionCost"/>
+        }
+    </div>
+   
+}
+
+@code {
+
+    private int _targetLevel;
+    private List<int> _targetLevels = [];
+
+    private IconLabelItemViewModel? _progressionCost;
+
+    [Inject]
+    private IStringLocalizer<FogResource> Loc { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<int> Levels { get; set; } = [];
+
+    [Inject]
+    private IHeroProfileUiService HeroProfileUiService { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string HeroId { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required int CurrentLevel { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        _targetLevels = Levels.Skip(CurrentLevel).ToList();
+
+        if (_targetLevels.Count == 0)
+        {
+            return;
+        }
+
+        var first = _targetLevels[0];
+        if (_targetLevel < first)
+        {
+            _targetLevel = first;
+        }
+
+        await OnProgressionTargetLevelChanged(_targetLevel);
+    }
+
+    private async Task OnProgressionTargetLevelChanged(int targetLevel)
+    {
+        _targetLevel = targetLevel;
+        var request = new AbilityCostRequest
+        {
+            HeroId = HeroId,
+            CurrentLevel = CurrentLevel,
+            TargetLevel = targetLevel,
+        };
+
+        _progressionCost = await HeroProfileUiService.CalculateAbilityCostAsync(request);
+    }
+
+}

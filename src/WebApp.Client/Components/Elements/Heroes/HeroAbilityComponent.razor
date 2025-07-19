@@ -1,22 +1,14 @@
-@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
-@inject IAssetUrlProvider AssetUrlProvider;
 <div class="component-root">
     <div class="header-container">
         <img src="@Ability.IconUrl"/>
         <div>
             <div class="ability-name">@Ability.Name</div>
-            <div class="cost-container">
-                <img src="@AssetUrlProvider.GetHohIconUrl("icon_mastery_points")"/>
-                <div>@Ability.Level.Cost</div>
-            </div>
+            <div class="ability-level-title">@Ability.Level.Title</div>
         </div>
     </div>
 
-    <div class="ability-description">
-        <div class="ability-level-title">@Ability.Level.Title</div>
-        <div class="ability-level-description">@((MarkupString) Ability.Level.Description)</div>
-    </div>
+    <div class="ability-level-description">@((MarkupString) Ability.Level.Description)</div>
 
     <AbilityChargeComponent AbilityInitialChargePercentage="@Ability.InitialChargePercentage"
                             AbilityChargeTime="@Ability.ChargeTime"

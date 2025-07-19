@@ -33,21 +33,6 @@
     font-size: 14px;
 }
 
-.cost-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-    color: var(--fog-text-color);
-    font-size: 12px;
-}
-
-.cost-container > img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    align-items: center;
-}
-
 .ability-level-title {
     color: var(--fog-text-accent-color);
     font-weight: 700 ;
@@ -56,12 +41,6 @@
 
 .ability-level-description {
     font-size: 14px;
-}
-
-.ability-level-description-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
 }
 
 @media (min-width: 576px) {
@@ -77,16 +56,6 @@
         font-size: 16px;
     }
 
-    .cost-container {
-        gap: 4px;
-        font-size: 14px;
-    }
-
-    .cost-container > img {
-        width: 24px;
-        height: 24px;
-    }
-    
     .header-container > img {
         width: 64px;
         height: 64px;
@@ -102,9 +71,5 @@
 
     .ability-level-description {
         font-size: 16px;
-    }
-    
-    .ability-level-description-container {
-        gap: 4px;
     }
 }

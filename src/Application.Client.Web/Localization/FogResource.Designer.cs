@@ -2463,6 +2463,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ability cost calculator.
+        /// </summary>
+        public static string Tools_AbilityCostCalculator_Name {
+            get {
+                return ResourceManager.GetString("Tools.AbilityCostCalculator.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Calculate the resources needed to build or upgrade a building..
         /// </summary>
         public static string Tools_BuildingCost_Description {

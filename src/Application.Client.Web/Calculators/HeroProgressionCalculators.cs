@@ -3,10 +3,11 @@ using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.Calculators;
 
-public class HeroProgressionCalculators : IHeroProgressionCalculators
+public class HeroProgressionCalculators(ILogger<HeroProgressionCalculators> logger) : IHeroProgressionCalculators
 {
     public int CalculateDependentCost(HeroProgressionCostResource src)
     {
@@ -25,12 +26,12 @@ public class HeroProgressionCalculators : IHeroProgressionCalculators
                 .Take(to.Level - i - 1)
                 .SelectMany(src => new[]
                 {
-                    new ResourceAmount()
+                    new ResourceAmount
                     {
                         ResourceId = "resource.hero_xp",
                         Amount = src.Amount,
                     },
-                    new ResourceAmount()
+                    new ResourceAmount
                     {
                         ResourceId = src.ResourceId,
                         Amount = CalculateDependentCost(src),
@@ -65,7 +66,23 @@ public class HeroProgressionCalculators : IHeroProgressionCalculators
 
         return total
             .GroupBy(ra => ra.ResourceId)
-            .Select(g => new ResourceAmount() {ResourceId = g.Key, Amount = g.Sum(ra => ra.Amount)})
+            .Select(g => new ResourceAmount {ResourceId = g.Key, Amount = g.Sum(ra => ra.Amount)})
             .ToList();
+    }
+
+    public int CalculateAbilityCost(HeroAbilityDto heroAbility, int from, int to)
+    {
+        if (from < 1)
+        {
+            logger.LogWarning("Invalid from level {from}. Expected minimum 1.", from);
+            return 0;
+        }
+
+        if (to <= from)
+        {
+            logger.LogWarning("To level {to} must be greater than from level {from}.", from, to);
+        }
+
+        return heroAbility.Levels.Skip(from - 1).Take(to - from).Sum(x => x.Cost);
     }
 }

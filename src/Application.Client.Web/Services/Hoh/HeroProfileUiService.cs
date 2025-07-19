@@ -1,9 +1,12 @@
+using System.Globalization;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Calculators.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
@@ -19,12 +22,13 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 
 public class HeroProfileUiService : IHeroProfileUiService
 {
+    private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly IBuildingLevelRangesFactory _buildingLevelRangesFactory;
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly Lazy<Task<IReadOnlyCollection<HeroBasicViewModel>>> _heroList;
+    private readonly IHeroProfileIdentifierFactory _heroProfileIdentifierFactory;
     private readonly IHohHeroProfileViewModelFactory _heroProfileViewModelFactory;
     private readonly IHeroProgressionCalculators _heroProgressionCalculators;
-    private readonly IHeroProfileIdentifierFactory _heroProfileIdentifierFactory;
     private readonly IHohHeroProfileFactory _hohHeroProfileFactory;
     private readonly IMapper _mapper;
     private readonly IPersistenceService _persistenceService;
@@ -39,6 +43,7 @@ public class HeroProfileUiService : IHeroProfileUiService
         IHohCoreDataCache coreDataCache,
         IHeroProgressionCalculators heroProgressionCalculators,
         IHeroProfileIdentifierFactory heroProfileIdentifierFactory,
+        IAssetUrlProvider assetUrlProvider,
         IMapper mapper)
     {
         _persistenceService = persistenceService;
@@ -49,9 +54,27 @@ public class HeroProfileUiService : IHeroProfileUiService
         _coreDataCache = coreDataCache;
         _heroProgressionCalculators = heroProgressionCalculators;
         _heroProfileIdentifierFactory = heroProfileIdentifierFactory;
+        _assetUrlProvider = assetUrlProvider;
         _mapper = mapper;
 
         _heroList = new Lazy<Task<IReadOnlyCollection<HeroBasicViewModel>>>(DoGetHeroesAsync);
+    }
+
+    public async Task<IconLabelItemViewModel> CalculateAbilityCostAsync(AbilityCostRequest request)
+    {
+        var hero = await _coreDataCache.GetHeroAsync(request.HeroId);
+        if (hero == null)
+        {
+            return IconLabelItemViewModel.Blank;
+        }
+
+        return new IconLabelItemViewModel
+        {
+            Label = _heroProgressionCalculators
+                .CalculateAbilityCost(hero.Ability, request.CurrentLevel, request.TargetLevel)
+                .ToString("N0"),
+            IconUrl = _assetUrlProvider.GetHohIconUrl("icon_mastery_points"),
+        };
     }
 
     public void SaveHeroProfile(HeroProfileIdentifier identifier)
@@ -63,7 +86,7 @@ public class HeroProfileUiService : IHeroProfileUiService
     {
         return _heroList.Value;
     }
-    
+
     public Task<HeroDto?> GetHeroAsync(string heroId)
     {
         return _coreDataCache.GetHeroAsync(heroId);
@@ -85,11 +108,11 @@ public class HeroProfileUiService : IHeroProfileUiService
                 return savedProfile;
             }
         }
-        
+
         var barracks = await _coreDataCache.GetBarracks(hero.Unit.Type);
         return _heroProfileIdentifierFactory.Create(hero.Id, barracks.OrderBy(x => x.Level).First().Level);
     }
-    
+
     public async Task<HeroProfileViewModel?> GetHeroProfileAsync(HeroProfileIdentifier identifier)
     {
         var hero = await _coreDataCache.GetHeroAsync(identifier.HeroId);

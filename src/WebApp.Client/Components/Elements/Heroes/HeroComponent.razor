@@ -111,15 +111,17 @@
         <div class="ability-container section-container fog-container">
             <HeroAbilityComponent Ability="@_profile.Ability"/>
         </div>
-        @if (_progressionTargetLevels != null)
-        {
-            <div class="progression-cost-container section-container fog-container">
-                <span
-                    class="progression-cost-title">@Loc[FogResource.Tools_HeroProgressionResourcesCalculator_Name]</span>
+
+
+        <div class="progression-cost-container section-container fog-container">
+            <span
+                class="progression-cost-title">@Loc[FogResource.Tools_HeroProgressionResourcesCalculator_Name]</span>
+            @if (_progressionTargetLevels != null)
+            {
                 <div class="selector-component">
                     <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" T="HeroLevelSpecs"
                                ValueChanged="OnProgressionTargetLevelChanged" Value="@_progressionTargetLevel"
-                               ToStringFunc="@(l => l == null ? null : l.Title)"
+                               ToStringFunc="@(l => l?.Title)"
                                Variant="Variant.Outlined">
 
                         @foreach (var level in _progressionTargetLevels)
@@ -138,8 +140,17 @@
                         }
                     </div>
                 }
-            </div>
-        }
+            }
+        </div>
+
+        <div class="progression-cost-container section-container fog-container">
+            <span
+                class="progression-cost-title">@Loc[FogResource.Tools_AbilityCostCalculator_Name]</span>
+            <AbilityCostCalculatorComponent HeroId="@_profile.Identifier.HeroId" Levels="@_profile.AbilityLevels"
+                                            CurrentLevel="@_profile.Identifier.AbilityLevel"/>
+        </div>
+
+
         @if (_profile.SupportUnit != null)
         {
             <div class="support-unit-container section-container fog-container">
@@ -229,8 +240,8 @@
         font-weight: 700 !important;
         font-size: 12px !important;
     }
-    
-    .mud-input>div.mud-input-root {
+
+    .mud-input > div.mud-input-root {
         display: inline-flex !important;
         align-items: center;
         justify-content: flex-start;
