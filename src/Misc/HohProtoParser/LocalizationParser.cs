@@ -34,6 +34,7 @@ public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSeri
         HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Wonders, string.Empty),
         HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Technologies, string.Empty),
         HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Difficulties, string.Empty),
+        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Resources, string.Empty),
     };
 
     public void Parse(string? inputDirectory, IList<string> outputDirectories)

@@ -51,7 +51,7 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Wonders, HohLocalizationProperty.Name,
             $"Wonder_{id}");
-        return GetValue(key) ?? id.ToString();
+        return GetValue(key) ?? id;
     }
 
     public string GetHeroName(string id)
@@ -66,6 +66,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Regions, HohLocalizationProperty.Name,
             $"region.{id}");
         return GetValue(key) ?? id.ToString();
+    }
+
+    public string GetResourceName(string resourceId)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Resources, HohLocalizationProperty.Name,
+            resourceId);
+        return GetValue(key) ?? resourceId;
     }
 
     public string GetUnitName(string name)
