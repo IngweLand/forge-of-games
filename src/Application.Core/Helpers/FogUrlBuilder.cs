@@ -42,7 +42,7 @@ public static class FogUrlBuilder
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
-        public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles";
+        public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles/{battleType}";
         
         public const string PLAYER_CITY_SNAPSHOTS_SEARCH = "/playerCitySnapshots/search";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE = "/playerCitySnapshots/{snapshotId:int}";

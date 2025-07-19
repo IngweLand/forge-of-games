@@ -216,97 +216,6 @@
     min-width: 130px;
 }
 
-.unit-battles-container {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.unit-battles-container-title{
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--fog-text-on-container-color);
-    margin: 8px;
-}
-
-table {
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.stats-type-icon {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
-
-.battle-stats-table>:not(caption)>*>*:has(>img) {
-    background-color: transparent;
-}
-
-.battle-stats-table>:not(caption)>*>* {
-    background-color: transparent;
-}
-
-tbody, td, tfoot, th, thead, tr {
-    border: none !important;
-}
-
-th, td {
-    color: var(--fog-text-color) !important;
-    text-align: center;
-}
-
-th {
-    padding: 6px 0;
-    background-color:  var(--fog-container-color) !important;
-    color: var(--fog-text-color) !important;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-td {
-    font-size: 12px;
-    padding: 8px 0;
-    cursor: pointer;
-}
-
-td > * {
-    vertical-align: middle;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9fafb;
-}
-
-.battle-type-group {
-    background-color: var(--fog-container-color);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 12px;
-    text-align: start;
-}
-
-.unit-battles-table-column {
-    width: 100%;
-}
-
-.unit-battles-table-spacer-column {
-    width: 0;
-    min-width: 0;
-}
-
-.help-info {
-    cursor: pointer;
-}
-
 @media (min-width: 576px) {
     .component-root{
         padding: 12px;
@@ -376,30 +285,5 @@ tbody tr:nth-child(even) {
 
     .progression-cost-items-container {
         gap: 24px;
-    }
-
-    .unit-battles-container {
-        gap: 12px;
-    }
-    
-    .unit-battles-container-title{
-        font-size: 16px;
-        margin: 12px;
-    }
-    
-    .battle-type-group {
-        font-size: 12px;
-    }
-    td {
-        font-size: 14px;
-        padding: 4px 0;   
-    }
-
-    .unit-battles-table-column {
-        width: 140px;
-    }
-
-    .unit-battles-table-spacer-column {
-        width: 100%;
     }
 }

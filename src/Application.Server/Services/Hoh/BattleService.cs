@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Battle.Queries;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -28,9 +29,10 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
         return await sender.Send(query, ct);
     }
 
-    public Task<IReadOnlyCollection<UnitBattleDto>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default)
+    public Task<IReadOnlyCollection<UnitBattleDto>> GetUnitBattlesAsync(string unitId, BattleType battleType,
+        CancellationToken ct = default)
     {
-        var query = new GetUnitBattlesQuery(unitId);
+        var query = new GetUnitBattlesQuery(unitId, battleType);
 
         return sender.Send(query, ct);
     }

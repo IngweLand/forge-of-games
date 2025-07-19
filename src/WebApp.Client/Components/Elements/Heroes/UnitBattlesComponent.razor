@@ -1,0 +1,79 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Size = MudBlazor.Size
+<ClientSideComponent Class="fog-container" IsLoading="@_isLoading" Title="@Loc[FogResource.Unit_BattlesAndPerformance]">
+    <Content>
+        <div class="unit-battles-container">
+            <MudToggleGroup T="BattleType" Size="Size.Small" Value="@_selectedBattleType" ValueChanged="GetBattles"
+                            Class="unit-battle-type-selector" Color="Color.Secondary">
+                @foreach (var battleTypeViewModel in _unitBattleTypes)
+                {
+                    <MudToggleItem Value="@battleTypeViewModel.BattleType" Text="@battleTypeViewModel.BattleTypeName"
+                                   Class="unit-battle-type-selector-item"/>
+                }
+            </MudToggleGroup>
+            @if (_unitBattles != null)
+            {
+                @if (_unitBattles.Count > 0)
+                {
+                    <table class="unit-battles-table" disabled>
+                        <colgroup>
+                            <col style="width: 110px;"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-column"/>
+                            <col class="unit-battles-table-spacer-column"/>
+                            <col style="width: 32px;"/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>@Loc[FogResource.Hoh_Lvl]</th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_flat_unit_infantry_neutral")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_defender_neutral")"/></th>
+                            <th>
+                                <img class="stats-type-icon"
+                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_healer_neutral")"/></th>
+                            <th/>
+                            <th/>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var unitBattle in _unitBattles)
+                        {
+                            <tr @onclick="@(() => OpenBattle(unitBattle))">
+                                @if(!_isLoading)
+                                {
+                                    <td>@unitBattle.Level.Title | @unitBattle.AbilityLevel</td>
+                                    <td>@unitBattle.AttackValue</td>
+                                    <td>@unitBattle.DefenseValue</td>
+                                    <td>@unitBattle.HealValue</td>
+                                    <td></td>
+                                    <td><span class="material-symbols-outlined">chevron_right</span></td>
+                                }
+                                else
+                                {
+                                    <td colspan="6">
+                                        <div Class="table-cell-placeholder">
+                                            <MudSkeleton  Animation="Animation.Wave" Width="100%" Height="100%" />
+                                        </div>
+                                    </td>
+                                }
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                }
+                else if(!_isLoading)
+                {
+                    <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
+                        @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
+                    </div>
+                }
+            }
+        </div>
+    </Content>
+</ClientSideComponent>

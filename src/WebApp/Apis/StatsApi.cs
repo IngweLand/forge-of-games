@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
@@ -7,6 +6,7 @@ using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -100,9 +100,10 @@ public static class StatsApi
     }
 
     private static async Task<Ok<IReadOnlyCollection<UnitBattleDto>>>
-        GetUnitBattlesAsync([AsParameters] StatsServices services, HttpContext context, string unitId)
+        GetUnitBattlesAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
+            BattleType battleType, CancellationToken ct = default)
     {
-        var result = await services.BattleService.GetUnitBattlesAsync(unitId);
+        var result = await services.BattleService.GetUnitBattlesAsync(unitId, battleType, ct);
 
         return TypedResults.Ok(result);
     }

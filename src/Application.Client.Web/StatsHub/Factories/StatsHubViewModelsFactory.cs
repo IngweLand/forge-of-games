@@ -13,7 +13,6 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
@@ -152,6 +151,15 @@ public class StatsHubViewModelsFactory(
             StatsId = summaryDto.StatsId,
             BattleType = summaryDto.BattleType,
         };
+    }
+
+    public IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes)
+    {
+        return unitBattleTypes.ToHashSet().Select(battleType => new UnitBattleTypeViewModel
+        {
+            BattleTypeName = resourceLocalizationService.Localize(battleType),
+            BattleType = battleType,
+        }).ToList();
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,

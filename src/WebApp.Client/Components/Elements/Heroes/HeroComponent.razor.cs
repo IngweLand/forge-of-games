@@ -1,16 +1,11 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
-using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
-using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
@@ -23,20 +18,9 @@ public partial class HeroComponent : ComponentBase
     private bool _isVideoAvatarLoadFailed;
     private HeroProfileViewModel? _profile;
     private IReadOnlyCollection<IconLabelItemViewModel>? _progressionCost;
-
     private HeroLevelSpecs? _progressionTargetLevel;
-
     private IList<HeroLevelSpecs>? _progressionTargetLevels;
-    private BattleType _selectedBattleType;
-
     private bool _showVideoAvatar;
-    private IReadOnlyDictionary<BattleType, IReadOnlyCollection<UnitBattleViewModel>>? _unitBattles;
-
-    [Inject]
-    private IAssetUrlProvider AssetUrlProvider { get; set; }
-
-    [Inject]
-    private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
 
     [Inject]
     private IHeroProfileIdentifierFactory HeroProfileIdentifierFactory { get; set; }
@@ -63,12 +47,6 @@ public partial class HeroComponent : ComponentBase
     [Parameter]
     public bool ShowBarracksSelector { get; set; } = true;
 
-    [Inject]
-    private IStatsHubUiService StatsHubUiService { get; set; }
-
-    [Inject]
-    private ITreasureHuntUiService TreasureHuntUiService { get; set; }
-
     protected override async Task OnInitializedAsync()
     {
         _profile = await HeroProfileUiService.GetHeroProfileAsync(InitProfile);
@@ -85,13 +63,6 @@ public partial class HeroComponent : ComponentBase
         }
 
         await UpdateProgressionTargetLevels();
-
-        var unitBattlesTask = StatsHubUiService.GetUnitBattlesAsync(_profile.HeroUnitId);
-        var encounterMapTask = TreasureHuntUiService.GetBattleEncounterToIndexMapAsync();
-        await Task.WhenAll(unitBattlesTask, encounterMapTask);
-        _unitBattles = (await unitBattlesTask).GroupBy(x => x.BattleType)
-            .ToDictionary(x => x.Key, x => (IReadOnlyCollection<UnitBattleViewModel>) x.ToList().AsReadOnly());
-        _selectedBattleType = _unitBattles?.FirstOrDefault().Key ?? BattleType.Undefined;
     }
 
     protected override async Task OnParametersSetAsync()
@@ -105,7 +76,7 @@ public partial class HeroComponent : ComponentBase
 
         _profile = await HeroProfileUiService.GetHeroProfileAsync(InitProfile);
         await UpdateProgressionTargetLevels();
-        
+
         StateHasChanged();
     }
 
@@ -184,21 +155,6 @@ public partial class HeroComponent : ComponentBase
         };
 
         _progressionCost = await HeroProfileUiService.CalculateHeroProgressionCost(request);
-    }
-
-    private void OnContributionPromptClick()
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH);
-    }
-
-    private async Task OpenBattle(UnitBattleViewModel unitBattle)
-    {
-        var query = BattleSearchRequestFactory.CreateQueryParams(unitBattle.BattleDefinitionId, unitBattle.Difficulty,
-            unitBattle.BattleType, [unitBattle.UnitId, unitBattle.UnitId],
-            await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
-
-        NavigationManager.NavigateTo(
-            NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);
     }
 
     private void ToggleAvatarSource()

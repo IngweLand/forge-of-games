@@ -1,0 +1,135 @@
+.unit-battles-table-column {
+    width: 100%;
+}
+
+.unit-battles-table-spacer-column {
+    width: 0;
+    min-width: 0;
+}
+
+.unit-battles-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+table {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-type-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.battle-stats-table > :not(caption) > * > *:has(>img) {
+    background-color: transparent;
+}
+
+.battle-stats-table > :not(caption) > * > * {
+    background-color: transparent;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: none !important;
+}
+
+th, td {
+    color: var(--fog-text-color) !important;
+    text-align: center;
+}
+
+th {
+    padding: 6px 0;
+    background-color: var(--fog-container-color) !important;
+    color: var(--fog-text-color) !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    font-size: 12px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+td > * {
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.help-info {
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+::deep .unit-battle-type-selector-item {
+    text-transform: none !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+}
+
+::deep .unit-battle-type-selector {
+    align-self: center;
+    margin: 0 8px;
+}
+
+::deep .table-cell-placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    height: 24px; 
+    padding: 0 8px;
+}
+
+@media (min-width: 576px) {
+    .unit-battles-table-column {
+        width: 140px;
+    }
+
+    .unit-battles-table-spacer-column {
+        width: 100%;
+    }
+
+    .unit-battles-container {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .battle-type-group {
+        font-size: 12px;
+    }
+
+    td {
+        font-size: 14px;
+        padding: 4px 0;
+    }
+
+    ::deep .unit-battle-type-selector-item {
+        font-size: 12px !important;
+    }
+
+    .help-info {
+        margin: 0 12px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .unit-battles-container {
+        gap: 12px;
+        padding: 0 0 12px 0;
+    }
+}

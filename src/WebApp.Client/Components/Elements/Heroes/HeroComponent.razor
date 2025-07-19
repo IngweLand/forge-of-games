@@ -2,8 +2,6 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
 @using Ingweland.Fog.Models.Fog.Entities
-@using Ingweland.Fog.Models.Hoh.Enums
-@using Size = MudBlazor.Size
 @if (_profile != null)
 {
     <div class="component-root">
@@ -162,85 +160,13 @@
             </div>
         }
 
-        <div class="fog-container unit-battles-container">
-            <span class="unit-battles-container-title">@Loc[FogResource.Unit_BattlesAndPerformance]</span>
-            @if (_unitBattles != null)
-            {
-                @if (_unitBattles.Count > 0)
-                {
-                    <MudToggleGroup T="BattleType" Size="Size.Small" @bind-Value="_selectedBattleType"
-                                    Style="align-self: center" Color="Color.Secondary">
-                        @foreach (var group in _unitBattles)
-                        {
-                            <MudToggleItem Value="@group.Key" Text="@group.Value.First().BattleTypeName"
-                                           Class="unit-battle-type-selector qwerty"/>
-                        }
-
-                    </MudToggleGroup>
-                    <table class="unit-battles-table">
-                        <colgroup>
-                            <col style="width: 110px;"/>
-                            <col class="unit-battles-table-column"/>
-                            <col class="unit-battles-table-column"/>
-                            <col class="unit-battles-table-column"/>
-                            <col class="unit-battles-table-spacer-column"/>
-                            <col style="width: 32px;"/>
-                        </colgroup>
-                        <thead>
-                        <tr>
-                            <th>@Loc[FogResource.Hoh_Lvl]</th>
-                            <th>
-                                <img class="stats-type-icon"
-                                     src="@AssetUrlProvider.GetHohIconUrl("icon_flat_unit_infantry_neutral")"/></th>
-                            <th>
-                                <img class="stats-type-icon"
-                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_defender_neutral")"/></th>
-                            <th>
-                                <img class="stats-type-icon"
-                                     src="@AssetUrlProvider.GetHohIconUrl("icon_class_healer_neutral")"/></th>
-                            <th/>
-                            <th/>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach (var unitBattle in _unitBattles.GetValueOrDefault(_selectedBattleType, []))
-                        {
-                            <tr @onclick="@(() => OpenBattle(unitBattle))">
-                                <td>@unitBattle.Level.Title | @unitBattle.AbilityLevel</td>
-                                <td>@unitBattle.AttackValue</td>
-                                <td>@unitBattle.DefenseValue</td>
-                                <td>@unitBattle.HealValue</td>
-                                <td></td>
-                                <td><span class="material-symbols-outlined">chevron_right</span></td>
-                            </tr>
-                        }
-                        </tbody>
-                    </table>
-                }
-                else
-                {
-                    <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
-                        @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
-                    </div>
-                }
-            }
-            else
-            {
-                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
-            }
-        </div>
+        <UnitBattlesComponent UnitId="@_profile.HeroUnitId"/>
 
         <WikiAbstractComponent SearchString="@_profile.Name"/>
 
     </div>
 }
 <style>
-    .unit-battle-type-selector {
-        text-transform: none !important;
-        font-weight: 700 !important;
-        font-size: 12px !important;
-    }
-
     .mud-input > div.mud-input-root {
         display: inline-flex !important;
         align-items: center;

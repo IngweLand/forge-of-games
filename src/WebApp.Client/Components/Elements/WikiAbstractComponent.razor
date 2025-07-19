@@ -10,7 +10,8 @@
 @inject IJSInteropService JsInteropService
 @if (_showInfoContainer)
 {
-    <ClientSideComponent Title="@($"{Loc[FogResource.Common_Wikipedia]}🌐")" IsLoading="_isLoading">
+    <ClientSideComponent Class="fog-container" Title="@($"{Loc[FogResource.Common_Wikipedia]}🌐")"
+                         IsLoading="_isLoading">
         <Content>
             <div class="info-container">
                 @if (_wikipediaResponse != null)

@@ -6,7 +6,7 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
@@ -34,4 +34,6 @@ public interface IStatsHubViewModelsFactory
 
     IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
         IReadOnlyCollection<UnitBattleDto> unitBattles);
+
+    IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
 }

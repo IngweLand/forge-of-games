@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
@@ -25,5 +26,7 @@ public interface IStatsHubUiService
         CancellationToken ct = default);
 
     Task<BattleStatsViewModel> GetBattleStatsAsync(int battleStatsId, CancellationToken ct = default);
-    Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId, CancellationToken ct = default);
+    Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId, BattleType battleType,
+        CancellationToken ct = default);
+    IReadOnlyCollection<UnitBattleTypeViewModel> GetUnitBattleTypes();
 }

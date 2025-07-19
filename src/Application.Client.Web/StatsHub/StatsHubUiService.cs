@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -10,6 +9,7 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 
@@ -30,6 +30,11 @@ public class StatsHubUiService(
 
     private readonly IDictionary<int, PlayerWithRankingsViewModel> _concretePlayers =
         new Dictionary<int, PlayerWithRankingsViewModel>();
+
+    private readonly HashSet<BattleType> _unitBattleTypes =
+    [
+        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm,
+    ];
 
     private IReadOnlyDictionary<string, AgeDto>? _ages;
 
@@ -124,6 +129,11 @@ public class StatsHubUiService(
             heroesTask.Result);
     }
 
+    public IReadOnlyCollection<UnitBattleTypeViewModel> GetUnitBattleTypes()
+    {
+        return statsHubViewModelsFactory.CreateUnitBattleTypes(_unitBattleTypes.OrderBy(x => x.GetSortOrder()));
+    }
+
     public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
         BattleSearchRequest request, CancellationToken ct = default)
     {
@@ -149,9 +159,9 @@ public class StatsHubUiService(
     }
 
     public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId,
-        CancellationToken ct = default)
+        BattleType battleType, CancellationToken ct = default)
     {
-        var unitBattles = await battleService.GetUnitBattlesAsync(unitId, ct);
+        var unitBattles = await battleService.GetUnitBattlesAsync(unitId, battleType, ct);
         var vms = statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles)
             .OrderBy(x => x.BattleType.GetSortOrder());
         return vms.ToList();
