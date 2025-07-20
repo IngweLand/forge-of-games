@@ -1,3 +1,4 @@
+using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
 using Ingweland.Fog.InnSdk.Hoh.Factories.Interfaces;
@@ -9,7 +10,8 @@ namespace Ingweland.Fog.InnSdk.Hoh.Services;
 public class StaticDataService(
     IGameApiClient apiClient,
     IGameDesignRequestPayloadFactory gameDesignRequestPayloadFactory,
-    ILocalizationRequestPayloadFactory localizationRequestPayloadFactory) : IStaticDataService
+    ILocalizationRequestPayloadFactory localizationRequestPayloadFactory,
+    IDataParsingService dataParsingService) : IStaticDataService
 {
     public Task<string> GetGameDesignJsonAsync(GameWorldConfig world)
     {
@@ -33,5 +35,21 @@ public class StaticDataService(
     {
         var payload = localizationRequestPayloadFactory.Create(locale);
         return apiClient.SendForProtobufAsync(world, GameEndpoints.LocaPath, payload);
+    }
+    
+    public Task<byte[]> GetStartupRawDataAsync(GameWorldConfig world)
+    {
+        return apiClient.SendForProtobufAsync(world, GameEndpoints.StartupPath, []);
+    }
+
+    public async Task<StartupDto> GetStartupDataAsync(GameWorldConfig world)
+    {
+        var data = await GetStartupRawDataAsync(world);
+        return dataParsingService.ParseStartupData(data);
+    }
+    
+    public Task<string> GetStartupJsonAsync(GameWorldConfig world)
+    {
+        return apiClient.SendForJsonAsync(world, GameEndpoints.StartupPath,[]);
     }
 }

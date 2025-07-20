@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Entities.City;
@@ -35,4 +36,7 @@ public interface ICityService
 
     [Get("/city/barracks")]
     Task<IReadOnlyCollection<BuildingDto>> GetAllBarracks();
+
+    [Get(FogUrlBuilder.ApiRoutes.COMMON_CITIES)]
+    Task<IReadOnlyCollection<CityDto>> GetCitiesAsync();
 }

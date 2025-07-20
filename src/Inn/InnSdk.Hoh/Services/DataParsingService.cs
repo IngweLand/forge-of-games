@@ -65,6 +65,23 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         return mapper.Map<AllianceRanks>(ranksDto);
     }
 
+    public StartupDto ParseStartupData(byte[] data)
+    {
+        StartupDto startupDto;
+        try
+        {
+            startupDto = StartupDto.Parser.ParseFrom(data);
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse startup data";
+            logger.LogError(ex, msg);
+            throw new InvalidOperationException(msg, ex);
+        }
+
+        return startupDto;
+    }
+
     public BattleSummary ParseBattleStart(byte[] data)
     {
         HeroStartBattleResponse dto;

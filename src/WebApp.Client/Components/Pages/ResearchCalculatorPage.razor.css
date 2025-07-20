@@ -1,11 +1,19 @@
 .content-wrapper {
+    gap: 6px;
+    
     --fog-stepper-active-color: #DEC78E;
     --fog-stepper-inactive-color: #F0F0F0;
 }
 
-.vertical-layout
-{
-    display: flex !important;
+.section-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.vertical-layout {
+    display: flex;
     flex-direction: column;
 }
 
@@ -14,11 +22,18 @@
 }
 
 .items-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 10px;
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
     margin-bottom: 12px;
+    gap: 6px;
+}
+
+.item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
 }
 
 .age-header {
@@ -48,10 +63,7 @@
     top: 0;
     gap: 10px;
     width: 100%;
-    padding-top: 24px;
-    padding-bottom: 16px;
     align-items: center;
-    background-color: var(--fog-background-color);
 }
 
 .stepper {
@@ -62,7 +74,9 @@
     justify-content: space-evenly;
     padding-right: 24px;
     padding-left: 24px;
+    max-width: 576px;
 }
+
 .step-number {
     flex-shrink: 0;
     width: 28px;
@@ -76,7 +90,7 @@
 }
 
 hr {
-   width: 100%; 
+    width: 100%;
 }
 
 .step-description {
@@ -97,12 +111,6 @@ hr {
     color: var(--fog-text-on-background-color);
 }
 
-.cost-container {
-    display: grid;
-    align-items: center;
-    width: 100%;
-}
-
 .cost-items-container {
     display: flex;
     flex-flow: wrap;
@@ -114,6 +122,7 @@ hr {
 
 h4 {
     color: var(--fog-text-on-background-color);
+    align-self: center;
 }
 
 .navigation-btn {
@@ -123,9 +132,42 @@ h4 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
+::deep .unit-battle-type-selector-item {
+    text-transform: none !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+}
+
+::deep .unit-battle-type-selector {
+    align-self: center;
+    margin: 0 8px;
+}
+
+@media (min-width: 576px) {
+    .content-wrapper {
+        gap: 12px;
+    }
+    
+    .section-container {
+        padding: 12px;
+    }
+
+    ::deep .unit-battle-type-selector-item {
+        font-size: 12px !important;
+    }
+
+    .items-container {
+        gap: 12px;
+    }
+}
+
 @media (min-width: 768px) {
     .items-container {
         gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .item-row {
+        justify-content: center;
+        gap: 16px;
     }
 }

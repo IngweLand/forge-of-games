@@ -10,5 +10,5 @@ public interface ICommonService
     Task<IReadOnlyCollection<AgeDto>> GetAgesAsync();
 
     [Get(FogUrlBuilder.ApiRoutes.COMMON_RESOURCES)]
-    Task<IReadOnlyCollection<ResourceDto>> GetResourceAsync();
+    Task<IReadOnlyCollection<ResourceDto>> GetResourcesAsync();
 }

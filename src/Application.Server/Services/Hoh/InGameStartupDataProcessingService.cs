@@ -163,9 +163,21 @@ public class InGameStartupDataProcessingService(
         try
         {
             var items = mapper.Map<List<ResearchStateTechnology>>(startupDto.ResearchState.Technologies);
-            var capitalTechnologies = (await coreDataRepository.GetTechnologiesAsync(CityId.Capital)).Select(x => x.Id)
-                .ToHashSet();
-            researchItems[CityId.Capital] = items.Where(x => capitalTechnologies.Contains(x.TechnologyId)).ToList();
+            foreach (var cityId in Enum.GetValues<CityId>())
+            {
+                if (cityId == CityId.Undefined)
+                {
+                    continue;
+                }
+                var technologies = (await coreDataRepository.GetTechnologiesAsync(cityId)).Select(x => x.Id)
+                    .ToHashSet();
+                if (technologies.Count == 0)
+                {
+                    continue;
+                }
+                researchItems[cityId] = items.Where(x => technologies.Contains(x.TechnologyId)).ToList();
+            }
+            
         }
         catch (Exception ex)
         {

@@ -32,5 +32,10 @@ public class CityDefinitionMappingProfile : Profile
         CreateMap<BuildingCustomization, BuildingCustomizationDto>()
             .ForMember(dest => dest.Name,
                 opt => opt.ConvertUsing<BuildingCustomizationNameLocalizationConverter, string>(src => src.Id));
+
+        CreateMap<CityId, CityDto>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src))
+            .ForMember(dest => dest.Name,
+                opt => opt.ConvertUsing<CityLocalizationConverter, CityId>(src => src));
     }
 }

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+import "technology_definition_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message InGameEventPush {
+  repeated InGameEventDto events = 1;
+}
+
+message InGameEventDto {
+  int32 id = 1;
+  InGameEventDefinitionDto event_definition = 2;
+  google.protobuf.Timestamp start = 3;
+  google.protobuf.Timestamp end = 4;
+  InGameEventState state = 6;
+}
+
+message InGameEventDefinitionDto {
+  string id = 1;
+  // EventCityComponentDTO
+  repeated google.protobuf.Any packed_components = 2;
+}
+
+message EventCityComponentDTO {
+  string id = 1;
+  string cityDefinitionId = 2;
+  repeated TechnologyDefinitionDTO technologies = 3;
+}
+
+enum InGameEventState {
+    InGameEvent_UNDEFINED = 0;
+    InGameEvent_PREPARED = 1;
+    InGameEvent_ACTIVE = 2;
+    InGameEvent_ENDED = 3;
+}

@@ -25,7 +25,7 @@ public class CommonService(
             DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
     }
 
-    public Task<IReadOnlyCollection<ResourceDto>> GetResourceAsync()
+    public Task<IReadOnlyCollection<ResourceDto>> GetResourcesAsync()
     {
         return appCache.GetOrAddAsync(cacheKeyFactory.HohResources(), async () =>
             {

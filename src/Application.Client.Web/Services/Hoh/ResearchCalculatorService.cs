@@ -4,7 +4,9 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Research;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -17,20 +19,27 @@ public class ResearchCalculatorService(
     IResearchService researchService,
     IAgeTechnologiesFactory ageTechnologiesFactory,
     ICommonService commonService,
-    IPersistenceService persistenceService)
+    IPersistenceService persistenceService,
+    ICityService cityService)
     : IResearchCalculatorService
 {
+    private readonly HashSet<string> _targetTechnologies = [];
+    private readonly Dictionary<CityId, Dictionary<string, TechnologyDto>> _technologies = new();
     private CityId _currentCity;
     private BidirectionalGraph<string, Edge<string>> _currentGraph = null!;
     private HashSet<string> _openTechnologies = [];
     private Dictionary<string, int>? _resourcesOrder;
-    private readonly HashSet<string> _targetTechnologies = [];
-    private readonly Dictionary<CityId, Dictionary<string, TechnologyDto>> _technologies = new();
     private Dictionary<string, ResearchCalculatorTechnologyViewModel> _techViewModels = null!;
+
+    public Task<IReadOnlyCollection<CityDto>> GetCitiesAsync()
+    {
+        return cityService.GetCitiesAsync();
+    }
 
     public async Task<IReadOnlyCollection<AgeTechnologiesViewModel>> InitializeAsync(CityId cityId)
     {
-        _currentCity = cityId;
+        _currentCity = cityId.ToDefaultTechnologyCity();
+
         if (!_technologies.TryGetValue(cityId, out var technologies))
         {
             var unprocessedTechnologies = await researchService.GetTechnologiesAsync(cityId);
@@ -45,15 +54,16 @@ public class ResearchCalculatorService(
         foreach (var g in ageGroups)
         {
             var age = g.First().Age;
-            var sorted = g.OrderBy(t => t.HorizontalIndex).ThenBy(t => t.VerticalIndex);
-            viewModel.Add(ageTechnologiesFactory.Create(sorted, age));
+            viewModel.Add(ageTechnologiesFactory.Create(g, age));
         }
 
         CreateGraph(technologies.Values);
         _techViewModels = viewModel.SelectMany(src => src.Technologies).ToDictionary(t => t.Id);
+        _openTechnologies.Clear();
+        _targetTechnologies.Clear();
         return viewModel;
     }
-    
+
     public void SelectOpenTechnologies(string selectedTechnologyId)
     {
         var ancestors = GetAncestors(selectedTechnologyId);
@@ -62,7 +72,8 @@ public class ResearchCalculatorService(
         _openTechnologies.ExceptWith(descendants);
         _openTechnologies.UnionWith(ancestors);
 
-        Task.Run(async () => await persistenceService.SaveOpenTechnologies(CityId.Capital, _openTechnologies));
+        Task.Run(async () =>
+            await persistenceService.SaveOpenTechnologies(_currentCity, _openTechnologies));
 
         foreach (var openTech in _openTechnologies)
         {
@@ -74,16 +85,16 @@ public class ResearchCalculatorService(
             _techViewModels[descendant].State = ResearchCalculatorTechnologyState.None;
         }
     }
-    
+
     public void SelectOpenTechnologies(IEnumerable<string> selectedTechnologyIds)
     {
         _openTechnologies = new HashSet<string>(selectedTechnologyIds);
-        
+
         foreach (var vm in _techViewModels.Values)
         {
             vm.State = ResearchCalculatorTechnologyState.None;
         }
-        
+
         foreach (var openTech in _openTechnologies)
         {
             _techViewModels[openTech].State = ResearchCalculatorTechnologyState.Open;
@@ -160,7 +171,7 @@ public class ResearchCalculatorService(
             return;
         }
 
-        _resourcesOrder = (await commonService.GetResourceAsync())
+        _resourcesOrder = (await commonService.GetResourcesAsync())
             .OrderBy(x => x.Age?.Index ?? int.MaxValue)
             .ThenBy(x => x.Type)
             .Select((resource, index) => new {resource.Id, index})

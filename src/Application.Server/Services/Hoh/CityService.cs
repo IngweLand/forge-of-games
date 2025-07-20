@@ -158,4 +158,11 @@ public class CityService(
 
         return barracks;
     }
+
+    public Task<IReadOnlyCollection<CityDto>> GetCitiesAsync()
+    {
+        var cityIds = new List<CityId>
+            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity()};
+        return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
+    }
 }

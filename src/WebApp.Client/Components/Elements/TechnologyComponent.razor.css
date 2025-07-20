@@ -5,11 +5,14 @@
     --fog-open-tech-color: #CFFCEF;
 
     overflow: hidden;
-    height: 46px;
-    padding: 4px 8px 4px 4px;
+    width: 85px;
+    height: auto;
+    padding: 4px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     cursor: pointer;
 }
 
@@ -22,25 +25,34 @@
     flex: 1;
     word-wrap: break-word;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 12px;
+    align-content: center;
     color: var(--fog-text-color);
 }
 
 @media (min-width: 576px) {
     .component-root {
-        height: 56px;
+        height: 46px;
+        padding: 4px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        width: auto;
     }
 
     .icon {
-        height: 36px;
+        height: 32px;
+    }
+
+    .label {
+        flex: 1;
+        font-size: 14px;
     }
 }
-@media (min-width: 768px) {
-    .label {
-        font-size: 1rem;
-    }
 
-    .icon {
-        height: 100%;
+@media (min-width: 768px) {
+    .component-root {
+        padding: 4px 8px;
     }
 }

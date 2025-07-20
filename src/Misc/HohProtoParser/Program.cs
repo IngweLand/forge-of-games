@@ -39,12 +39,12 @@ var serviceProvider = services.BuildServiceProvider();
 
 var downloader = serviceProvider.GetRequiredService<IDownloader>();
 var downloadResult = await downloader.DownloadAsync("downloads");
-
+downloadResult.StartupFileNames = ["startup1.bin", "startup2.bin", "startup3.bin"];
 var webAppOutputDir = @"D:\IngweLand\Projects\forge-of-games\src\WebApp\resources\data\hoh";
 var functionsAppOutputDir = @"D:\IngweLand\Projects\forge-of-games\src\Functions\resources\data\hoh";
 var localizationParser = serviceProvider.GetRequiredService<LocalizationParser>();
 localizationParser.Parse(downloadResult.Directory,[webAppOutputDir, functionsAppOutputDir]);
 var gameDesignDataParser = serviceProvider.GetRequiredService<GameDesignDataParser>();
-gameDesignDataParser.Parse(Path.Combine(downloadResult.Directory, downloadResult.GamedesignFileName), [webAppOutputDir, functionsAppOutputDir]);
+gameDesignDataParser.Parse(downloadResult, [webAppOutputDir, functionsAppOutputDir]);
 
 Console.Out.WriteLine("DONE");

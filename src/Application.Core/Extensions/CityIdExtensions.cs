@@ -45,6 +45,13 @@ public static class CityIdExtensions
         };
     }
 
+    public static CityId ToDefaultTechnologyCity(this CityId cityId)
+    {
+        return cityId is CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace
+            ? CityId.Mayas_ChichenItza
+            : cityId;
+    }
+
     public static string GetIcon(this CityId cityId)
     {
         return cityId switch

@@ -28,14 +28,14 @@ public class Downloader(IInnSdkClient sdkClient) : IDownloader
         result.GamedesignFileName = filename;
         filename = $"gamedesign_{DateTime.Today:dd.MM.yy}.json";
         await DownloadJsonGamedesign(filename);
+        
+        filename = $"startup_{DateTime.Today:dd.MM.yy}.bin";
+        await DownloadProtobufStartup(filename);
+        result.StartupFileNames = [filename];
+        filename = $"startup_{DateTime.Today:dd.MM.yy}.json";
+        await DownloadJsonStartup(filename);
 
         return result;
-    }
-
-    private async Task DownloadJsonGamedesign(string filename)
-    {
-        await File.WriteAllTextAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
-            await sdkClient.StaticDataService.GetGameDesignJsonAsync(_betaWorldConfig));
     }
 
     private async Task DownloadJsonLocale()
@@ -60,5 +60,23 @@ public class Downloader(IInnSdkClient sdkClient) : IDownloader
     {
         await File.WriteAllBytesAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
             await sdkClient.StaticDataService.GetGameDesignProtobufAsync(_betaWorldConfig));
+    }
+    
+    private async Task DownloadJsonGamedesign(string filename)
+    {
+        await File.WriteAllTextAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
+            await sdkClient.StaticDataService.GetGameDesignJsonAsync(_betaWorldConfig));
+    }
+    
+    private async Task DownloadProtobufStartup(string filename)
+    {
+        await File.WriteAllBytesAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
+            await sdkClient.StaticDataService.GetStartupRawDataAsync(_betaWorldConfig));
+    }
+    
+    private async Task DownloadJsonStartup(string filename)
+    {
+        await File.WriteAllTextAsync(Path.Combine(DEFAULT_DIRECTORY, filename),
+            await sdkClient.StaticDataService.GetStartupJsonAsync(_betaWorldConfig));
     }
 }

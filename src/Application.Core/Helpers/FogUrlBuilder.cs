@@ -50,6 +50,7 @@ public static class FogUrlBuilder
 
         public const string COMMON_AGES = "/common/ages";
         public const string COMMON_RESOURCES = "/common/resources";
+        public const string COMMON_CITIES = "/common/cities";
     }
 
     public static class PageRoutes

@@ -20,7 +20,7 @@ public class GameDesignDataParser(
     [
     ];
 
-    public void Parse(string input, IList<string> outputDirectories)
+    public void Parse(DownloadResult downloadResult, IList<string> outputDirectories)
     {
         if (HeroesToSkip.Count > 0)
         {
@@ -36,10 +36,18 @@ public class GameDesignDataParser(
 
         logger.LogInformation("Starting parsing game design data.");
 
-        using var file = File.OpenRead(input);
-        var container = GameDesignResponseDtoContainer.Parser.ParseFrom(file);
-        var gdr = GameDesignResponseDTO.Parser.ParseFrom(container.Content.Value);
-        var data = Parse(gdr);
+        using var gdrFile = File.OpenRead(Path.Combine(downloadResult.Directory, downloadResult.GamedesignFileName));
+        var gdrContainer = GameDesignResponseDtoContainer.Parser.ParseFrom(gdrFile);
+        var gdr = GameDesignResponseDTO.Parser.ParseFrom(gdrContainer.Content.Value);
+        
+        var startups = new List<StartupDto>();
+        foreach (var startupFileName in downloadResult.StartupFileNames)
+        {
+            using var startupFile = File.OpenRead(Path.Combine(downloadResult.Directory, startupFileName));
+            startups.AddRange(StartupDto.Parser.ParseFrom(startupFile));
+        }
+        
+        var data = Parse(gdr, startups);
         const string filename = "data.bin";
         foreach (var outDir in outputDirectories)
         {
@@ -136,9 +144,16 @@ public class GameDesignDataParser(
     }
 
     private static IList<Technology> CreateTechnologies(IMapper mapper, GameDesignResponseDTO gdr,
+        List<StartupDto> startups,
         IDictionary<string, Age> ages)
     {
-        return mapper.Map<IList<Technology>>(gdr.TechnologyDefinitions,
+        var startupTechnologies =
+            startups.SelectMany(x =>
+                x.InGameEvents.SelectMany(y =>
+                    y.EventDefinition.EventCityComponents.SelectMany(h => h.Technologies)))
+                .DistinctBy(x => x.Id);
+        var allTechs = gdr.TechnologyDefinitions.Concat(startupTechnologies);
+        return mapper.Map<IList<Technology>>(allTechs,
             opt => { opt.Items.Add(ContextKeys.AGES, ages); });
     }
 
@@ -237,14 +252,14 @@ public class GameDesignDataParser(
             opt => { opt.Items.Add(ContextKeys.CONTINENTS, continents); });
     }
 
-    private Data Parse(GameDesignResponseDTO gdr)
+    private Data Parse(GameDesignResponseDTO gdr, List<StartupDto> startups)
     {
         var ages = mapper.Map<IList<Age>>(gdr.AgeDefinitions).ToDictionary(a => a.Id);
         var resources = mapper
             .Map<IList<Resource>>(gdr.ResourceDefinitions, opt => opt.Items.Add(ContextKeys.AGES, ages));
         var units = mapper.Map<IList<Unit>>(gdr.HeroUnitDefinitions).ToDictionary(r => r.Id);
         var worlds = CreateWorlds(mapper, gdr, ages, units);
-        var technologies = CreateTechnologies(mapper, gdr, ages);
+        var technologies = CreateTechnologies(mapper, gdr, startups, ages);
         var buildings = CreateBuildings(mapper, gdr, ages, units);
         var heroAbilities = CreateHeroAbilities(mapper, gdr);
         var heroAbilityComponents = CreateHeroAbilityComponents(mapper, gdr);

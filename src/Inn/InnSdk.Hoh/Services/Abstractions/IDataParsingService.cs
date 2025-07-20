@@ -1,3 +1,4 @@
+using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
@@ -8,6 +9,7 @@ namespace Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 public interface IDataParsingService
 {
     AllianceRanks ParseAllianceRankings(byte[] data);
+    StartupDto ParseStartupData(byte[] data);
     BattleSummary ParseBattleStart(byte[] data);
     BattleSummary ParseBattleWaveResult(byte[] data);
     IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data);
