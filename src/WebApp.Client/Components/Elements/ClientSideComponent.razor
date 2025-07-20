@@ -2,7 +2,7 @@
 <div class="@Classname">
     @if (Title != null)
     {
-        <span class="title">@Title</span>
+        <span class="@TitleClassname">@Title</span>
     }
     @if (_isBrowser)
     {
@@ -10,7 +10,9 @@
     }
     @if (!_isBrowser || IsLoading)
     {
-        <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+        <div class="loading-indicator">
+            <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+        </div>
     }
 
 </div>
@@ -29,6 +31,9 @@
 
     [Parameter]
     public string? Class { get; set; }
+    
+    [Parameter]
+    public string? TitleClass { get; set; }
 
     private bool _isBrowser;
 
@@ -40,6 +45,11 @@
     private string Classname =>
         new CssBuilder("component-root")
             .AddClass(Class)
+            .Build();
+    
+    private string TitleClassname =>
+        new CssBuilder("title")
+            .AddClass(TitleClass)
             .Build();
 
 }

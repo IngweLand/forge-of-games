@@ -21,8 +21,10 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH, GetAllLeaderboardTopItemsAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PROFILE_TEMPLATE, GetPlayerProfileAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE, GetPlayerBattlesAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
@@ -36,14 +38,15 @@ public static class StatsApi
         return api;
     }
 
-    private static async Task<Results<Ok<PlayerWithRankings>, NotFound, BadRequest<string>>>
-        GetPlayerAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
+    private static async Task<Results<Ok<PlayerProfile>, NotFound, BadRequest<string>>>
+        GetPlayerProfileAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
     {
-        var query = new GetPlayerQuery
+        var query = new GetPlayerProfileQuery
         {
             PlayerId = playerId,
         };
-        var result = await services.Mediator.Send(query);
+        var result = await services.Mediator.Send(query, ct);
         if (result == null)
         {
             return TypedResults.NotFound();
@@ -62,10 +65,11 @@ public static class StatsApi
     }
 
     private static async Task<Results<Ok<HohCity>, NotFound, BadRequest<string>>>
-        GetPlayerCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId)
+        GetPlayerCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
     {
         var query = new GetPlayerCityQuery(playerId);
-        var result = await services.Mediator.Send(query);
+        var result = await services.Mediator.Send(query, ct);
         if (result == null)
         {
             return TypedResults.NotFound();
@@ -75,9 +79,10 @@ public static class StatsApi
     }
 
     private static async Task<Results<Ok<BattleStatsDto>, NotFound>>
-        GetBattleStatsAsync([AsParameters] StatsServices services, HttpContext context, int battleStatsId)
+        GetBattleStatsAsync([AsParameters] StatsServices services, HttpContext context, int battleStatsId,
+            CancellationToken ct = default)
     {
-        var result = await services.BattleService.GetBattleStatsAsync(battleStatsId);
+        var result = await services.BattleService.GetBattleStatsAsync(battleStatsId, ct);
         if (result == null)
         {
             return TypedResults.NotFound();
@@ -95,6 +100,29 @@ public static class StatsApi
         {
             return TypedResults.NotFound();
         }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<PlayerDto>, NotFound>>
+        GetPlayerAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct)
+    {
+        var result = await services.StatsHubService.GetPlayerAsync(playerId, ct);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<PaginatedList<PvpBattleDto>>>
+        GetPlayerBattlesAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetPlayerBattlesQuery query,
+            CancellationToken ct)
+    {
+        var result = await services.Mediator.Send(query, ct);
 
         return TypedResults.Ok(result);
     }
@@ -118,13 +146,14 @@ public static class StatsApi
     }
 
     private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
-        GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId)
+        GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
+            CancellationToken ct = default)
     {
         var query = new GetAllianceQuery
         {
             AllianceId = allianceId,
         };
-        var result = await services.Mediator.Send(query);
+        var result = await services.Mediator.Send(query, ct);
         if (result == null)
         {
             return TypedResults.NotFound();
@@ -145,18 +174,18 @@ public static class StatsApi
 
     private static async Task<Results<Ok<BattleSearchResult>, NotFound, BadRequest<string>>>
         SearchBattlesAsync([AsParameters] StatsServices services, HttpContext context,
-            [FromBody] BattleSearchRequest request)
+            [FromBody] BattleSearchRequest request, CancellationToken ct = default)
     {
-        var result = await services.BattleService.SearchBattlesAsync(request);
+        var result = await services.BattleService.SearchBattlesAsync(request, ct);
 
         return TypedResults.Ok(result);
     }
 
     private static async Task<Results<Ok<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>, BadRequest<string>>>
         SearchCityInspirationsAsync([AsParameters] StatsServices services, HttpContext context,
-            [FromBody] CityInspirationsSearchRequest request)
+            [FromBody] CityInspirationsSearchRequest request, CancellationToken ct = default)
     {
-        var result = await services.CityPlannerService.GetInspirationsAsync(request);
+        var result = await services.CityPlannerService.GetInspirationsAsync(request, ct);
 
         return TypedResults.Ok(result);
     }

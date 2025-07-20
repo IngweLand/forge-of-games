@@ -1,4 +1,4 @@
-@attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_TEMPLATE)]
+@attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_PROFILE_TEMPLATE)]
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
@@ -8,32 +8,7 @@
 @if (IsInitialized && _player != null)
 {
     <div class="page-container">
-        <div class="fog-container info-container">
-            <img class="avatar" src="@_player.Player.AvatarUrl"/>
-
-            <div class="details">
-                <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@_player.Player.Name
-                </div>
-                @if (_player.Player.AllianceName != null)
-                {
-                    <div class="user-select-none" style="cursor: pointer"
-                         @onclick="() => SearchAlliance(_player.Player.AllianceName)">
-                        <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
-                        <span class="preserve-whitespace">"@_player.Player.AllianceName"</span>
-                        <span class="material-symbols-outlined">link</span>
-                    </div>
-                }
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@_player.Player.WorldId</div>
-                <div>
-                    <span
-                        class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@_player.Player.RankingPoints
-                </div>
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@_player.Player.Rank</div>
-                <div><span class="label">@Loc[FogResource.Common_Age]: </span>@_player.Player.Age</div>
-                <div><span class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@_player.Player.UpdatedAt
-                </div>
-            </div>
-        </div>
+        <PlayerInfoComponent Player="@_player.Player" OnAllianceClicked="SearchAlliance"/>
         <div class="fog-container section-container actions-container">
             <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
                        EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
@@ -98,14 +73,14 @@
             {
                 <div class="fog-container section-container">
                     <span class="section-title">@Loc[FogResource.StatsHub_Player_PvpBattles]</span>
-                    <div class="pvp-battles-list">
-                        @foreach (var battle in _player.PvpBattles)
-                        {
-                            <PvpBattleListItemComponent Battle="@battle" OnOpponentClick="OnPlayerClicked"
-                                                        OnHeroClicked="OpenBattleSquadProfile"
-                                                        OnBattleStatsClicked="OpenBattleStats"/>
-                        }
-                    </div>
+                    @foreach (var battle in _player.PvpBattles)
+                    {
+                        <PvpBattleListItemComponent Battle="@battle" OnOpponentClick="OnPlayerClicked"
+                                                    OnHeroClicked="OpenBattleSquadProfile"
+                                                    OnBattleStatsClicked="OpenBattleStats"/>
+                    }
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="align-self: flex-end"
+                               OnClick="NavigateToBattlesScreen">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
                 </div>
             }
 

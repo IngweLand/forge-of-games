@@ -2,7 +2,7 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
-public class PlayerWithRankingsViewModel
+public class PlayerProfileViewModel
 {
     public IReadOnlyCollection<StatsTimedStringValue> Ages { get; init; } = Array.Empty<StatsTimedStringValue>();
     public IReadOnlyCollection<string> Alliances { get; init; } = Array.Empty<string>();

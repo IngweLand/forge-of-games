@@ -1,0 +1,47 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Microsoft.Extensions.Localization
+<div class="fog-container info-container">
+    <img class="avatar" src="@Player?.AvatarUrl"/>
+
+    <div class="details">
+        <div><span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>@Player?.Name
+        </div>
+        @if (Player?.AllianceName != null)
+        {
+            <div class="user-select-none" style="cursor: pointer"
+                 @onclick="() => HandleAllianceClicked(Player?.AllianceName)">
+                <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
+                <span class="preserve-whitespace">"@Player?.AllianceName"</span>
+                <span class="material-symbols-outlined">link</span>
+            </div>
+        }
+        <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@Player?.WorldId</div>
+        <div>
+                    <span
+                        class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@Player?.RankingPoints
+        </div>
+        <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@Player?.Rank</div>
+        <div><span class="label">@Loc[FogResource.Common_Age]: </span>@Player?.Age</div>
+        <div><span class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@Player?.UpdatedAt
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Inject]
+    private IStringLocalizer<FogResource> Loc { get; set; } = null!;
+
+    [Parameter][EditorRequired]
+    public PlayerViewModel? Player { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnAllianceClicked { get; set; }
+
+    private Task HandleAllianceClicked(string? allianceName)
+    {
+        return string.IsNullOrWhiteSpace(allianceName) ? Task.CompletedTask : OnAllianceClicked.InvokeAsync(allianceName);
+    }
+
+}

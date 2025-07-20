@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 8px;
     padding: 4px;
+    height: 374px;
+    flex-shrink: 0;
 }
 
 .player-container, .opponent-container {
@@ -109,6 +111,7 @@
     .component-root {
         flex-direction: row;
         gap: 0;
+        height: 212px;
     }
 
     .player-status-container {

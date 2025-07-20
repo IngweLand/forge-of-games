@@ -32,8 +32,12 @@ public static class FogUrlBuilder
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
+        public const string PLAYER_PROFILE_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/profile";
+        public const string PLAYER_PROFILE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/profile";
         public const string PLAYER_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/city";
         public const string PLAYER_CITY_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/city";
+        public const string PLAYER_BATTLES_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/battles";
+        public const string PLAYER_BATTLES_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/battles";
 
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
         public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
@@ -93,7 +97,8 @@ public static class FogUrlBuilder
         public const string SUPPORT_US_PATH = "/support-us";
         public const string WORLD_PLAYERS_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/players";
         public const string WORLD_ALLIANCES_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/alliances";
-        public const string PLAYER_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}";
+        public const string PLAYER_PROFILE_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/profile";
+        public const string PLAYER_BATTLES_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/battles";
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
         public const string FOG_GITHUB_URL = "https://github.com/IngweLand/forge-of-games";
         public const string HOH_HELPER_GITHUB_URL = "https://github.com/IngweLand/hoh-helper";
@@ -108,7 +113,7 @@ public static class FogUrlBuilder
 
         public static string Player(int id)
         {
-            return PLAYER_TEMPLATE.Replace("{playerId:int}", id.ToString());
+            return PLAYER_PROFILE_TEMPLATE.Replace("{playerId:int}", id.ToString());
         }
 
         public static string HeroPlayground(string heroId)
@@ -149,6 +154,11 @@ public static class FogUrlBuilder
             }
 
             return WORLD_ALLIANCES_TEMPLATE.Replace("{worldId}", worldId);
+        }
+        
+        public static string PlayerBattles(int playerId)
+        {
+            return PLAYER_BATTLES_TEMPLATE.Replace("{playerId:int}", playerId.ToString());
         }
     }
 }

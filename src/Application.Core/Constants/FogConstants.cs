@@ -9,7 +9,7 @@ public static class FogConstants
     public const int COMMAND_CENTER_VERSION = 1;
     public static readonly int MaxHohCitySnapshots = 5;
     public static readonly int DisplayedStatsDays = 30;
-    public static readonly int MaxDisplayedPvpBattles = 50;
+    public static readonly int DefaultPlayerProfileDisplayedBattleCount = 2;
     public static readonly int MaxDisplayedBattles = 30;
     public static readonly int MaxDisplayedUnitBattles = 30;
     public static readonly int MaxPlayerCitySnapshotSearchResults = 30;

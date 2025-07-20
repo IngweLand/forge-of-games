@@ -8,8 +8,11 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
 public interface IStatsHubUiService
 {
-    Task<PlayerWithRankingsViewModel?> GetPlayerAsync(int playerId);
-
+    Task<PlayerProfileViewModel?> GetPlayerProfileAsync(int playerId);
+    Task<PlayerViewModel?> GetPlayerAsync(int playerId, CancellationToken ct = default);
+    Task<PaginatedList<PvpBattleViewModel>> GetPlayerBattlesAsync(PlayerViewModel player, int startIndex, int count,
+        CancellationToken ct = default);
+    
     Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int startIndex, int pageSize,
         string? playerName = null, CancellationToken ct = default);
 

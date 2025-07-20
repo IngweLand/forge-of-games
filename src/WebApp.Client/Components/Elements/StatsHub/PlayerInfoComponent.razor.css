@@ -1,0 +1,47 @@
+.info-container {
+    display: flex;
+    padding: 12px;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 64px;
+    margin-right: 12px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    font-size: 12px;
+}
+
+.label {
+    font-weight: 700;
+}
+
+.preserve-whitespace {
+    white-space: pre;
+}
+
+.material-symbols-outlined{
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+@media (min-width: 576px) {
+
+    .info-container {
+        padding: 16px;
+    }
+
+    .avatar {
+        width: 80px;
+        margin-right: 20px;
+    }
+
+    .details {
+        gap: 4px;
+    }
+}

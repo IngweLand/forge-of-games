@@ -1,61 +1,25 @@
-using System.Globalization;
-using Ingweland.Fog.Application.Core.Constants;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
-using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
-using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetPlayerQuery : IRequest<PlayerWithRankings?>, ICacheableRequest
+public record GetPlayerQuery(int PlayerId) : IRequest<PlayerDto?>, ICacheableRequest
 {
-    public required int PlayerId { get; init; }
-    public string CacheKey => $"PlayerWithRanking_{PlayerId}_{CultureInfo.CurrentCulture.Name}";
+    public string CacheKey => $"Player_{PlayerId}";
     public TimeSpan? Duration => TimeSpan.FromHours(6);
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetPlayerQueryHandler(
-    IFogDbContext context,
-    IPlayerWithRankingsFactory playerWithRankingsFactory,
-    IBattleQueryService battleQueryService)
-    : IRequestHandler<GetPlayerQuery, PlayerWithRankings?>
+public class GetPlayerQueryHandler(IFogDbContext context, IMapper mapper)
+    : IRequestHandler<GetPlayerQuery, PlayerDto?>
 {
-    public async Task<PlayerWithRankings?> Handle(GetPlayerQuery request, CancellationToken cancellationToken)
+    public Task<PlayerDto?> Handle(GetPlayerQuery request, CancellationToken cancellationToken)
     {
-        var periodStartDate = DateTime.UtcNow.AddDays(FogConstants.DisplayedStatsDays * -1);
-        var periodStartDateOnly = DateOnly.FromDateTime(periodStartDate);
-        var player = await context.Players.AsNoTracking()
-            .Include(p =>
-                p.Rankings.Where(pr =>
-                    pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt > periodStartDateOnly))
-            .Include(p => p.PvpRankings.Where(pr => pr.CollectedAt > periodStartDate))
-            .Include(p => p.NameHistory)
-            .Include(p => p.AgeHistory)
-            .Include(p => p.AllianceHistory)
-            .Include(p => p.AllianceNameHistory)
-            .Include(p => p.PvpWins.OrderByDescending(b => b.PerformedAt).Take(FogConstants.MaxDisplayedPvpBattles))
-            .ThenInclude(b => b.Loser)
-            .Include(p => p.PvpLosses.OrderByDescending(b => b.PerformedAt).Take(FogConstants.MaxDisplayedPvpBattles))
-            .ThenInclude(b => b.Winner)
-            .AsSplitQuery()
-            .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);
-
-        if (player == null)
-        {
-            return null;
-        }
-
-        var pvpBattles = player.PvpWins.Concat(player.PvpLosses)
-            .OrderByDescending(b => b.PerformedAt)
-            .Take(FogConstants.MaxDisplayedPvpBattles)
-            .ToList();
-        var battleIds = pvpBattles.Select(src => src.InGameBattleId);
-        var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-
-        return await playerWithRankingsFactory.CreateAsync(player, pvpBattles, existingStatsIds);
+        return context.Players.ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
+            .FirstOrDefaultAsync(x => x.Id == request.PlayerId, cancellationToken);
     }
 }

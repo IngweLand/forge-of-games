@@ -1,0 +1,41 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_BATTLES_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@inherits StatsHubPageBase
+
+@if (IsInitialized && _player != null)
+{
+    <div class="page-container">
+        <PlayerInfoComponent Player="_player" OnAllianceClicked="SearchAlliance"/>
+        <div class="fog-container section-container">
+            @if (_isLoadingBattles)
+            {
+                <div class="loading-indicator">
+                    <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+                </div>
+            }
+            <span class="section-title">@Loc[FogResource.StatsHub_Player_PvpBattles]</span>
+            @if (_isBrowser)
+            {
+                <div class="items-container">
+                    <Virtualize TItem="PvpBattleViewModel" ItemsProvider="GetBattles" OverscanCount="1" ItemSize="212">
+                        <ItemContent>
+                            <PvpBattleListItemComponent Battle="@context" OnOpponentClick="OnPlayerClicked"
+                                                        OnHeroClicked="OpenBattleSquadProfile"
+                                                        OnBattleStatsClicked="OpenBattleStats"/>
+                        </ItemContent>
+                        <Placeholder>
+                            <PvpBattlePlaceholderComponent/>
+                        </Placeholder>
+                    </Virtualize>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <LoadingIndicator/>
+}

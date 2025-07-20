@@ -24,31 +24,8 @@ p {
     flex-direction: row;
 }
 
-.info-container {
-    display: flex;
-    padding: 12px;
-    align-items: flex-start;
-}
-
 .ranking-points-chart-container {
     gap: 0;
-}
-
-.avatar {
-    width: 64px;
-    margin-right: 12px;
-}
-
-.details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2px;
-    font-size: 12px;
-}
-
-.label {
-    font-weight: 700;
 }
 
 .chart-labels {
@@ -86,14 +63,6 @@ p {
     vertical-align: middle;
 }
 
-.pvp-battles-list {
-    height: 500px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -105,25 +74,8 @@ p {
         gap: 16px;
     }
 
-    .info-container {
-        padding: 16px;
-    }
-    
     .ranking-points-chart-container {
         gap: 0;
-    }
-
-    .avatar {
-        width: 80px;
-        margin-right: 20px;
-    }
-
-    .details {
-        gap: 4px;
-    }
-
-    .label {
-        font-weight: 700;
     }
 
     .section-title {

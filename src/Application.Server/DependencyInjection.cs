@@ -62,7 +62,7 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
-        services.AddScoped<IPlayerWithRankingsFactory, PlayerWithRankingsFactory>();
+        services.AddScoped<IPlayerProfileFactory, PlayerProfileFactory>();
         services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
         services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
@@ -76,6 +76,7 @@ public static class DependencyInjection
         services.AddScoped<ICityPlannerService, CityPlannerService>();
         services.AddScoped<IHohCityCreationService, HohCityCreationService>();
         services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
+        services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>

@@ -1,0 +1,42 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    height: 374px;
+    flex-shrink: 0;
+    padding: 4px;
+}
+
+.item {
+    width: 80%;
+    height: 40%;
+    border-radius: var(--fog-border-radius);
+    overflow: hidden;
+}
+
+.item1 {
+    align-self: flex-start;
+}
+
+.item2 {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+@media (min-width: 875px) {
+    .component-root {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 212px;
+    }
+
+    .item {
+        width: 40%;
+        height: 75%;
+    }
+
+    .item1, .item2 {
+        margin-top: 0;
+        align-self: auto;
+    }
+}

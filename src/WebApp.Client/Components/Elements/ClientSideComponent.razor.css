@@ -1,7 +1,7 @@
 .component-root {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .title{
@@ -10,6 +10,16 @@
     color: var(--fog-text-on-container-color);
     margin-top: 8px;
     margin-left: 8px;
+}
+
+.loading-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: var(--fog-border-radius);
+    border-bottom-right-radius: var(--fog-border-radius);
+    overflow: hidden;
 }
 
 @media (min-width: 576px) {

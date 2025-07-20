@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
@@ -60,50 +61,27 @@ public class StatsHubViewModelsFactory(
         };
     }
 
-    public PlayerWithRankingsViewModel CreatePlayer(PlayerWithRankings playerWithRankings,
-        IReadOnlyDictionary<string, AgeDto> ages,
+    public PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
+        IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
     {
-        var battles = new List<PvpBattleViewModel>();
-        var player = mapper.Map<PlayerViewModel>(playerWithRankings.Player,
+        var player = mapper.Map<PlayerViewModel>(playerProfile.Player,
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
-        var heroes = playerWithRankings.Heroes.ToDictionary(h => h.Unit.Id);
-        foreach (var pvpBattleDto in playerWithRankings.PvpBattles)
-        {
-            var isVictory = pvpBattleDto.Winner.Id == playerWithRankings.Player.Id;
-            var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroes, barracks))
-                .OrderBy(uvm => uvm.Identifier.HeroId)
-                .ToList();
-            var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroes, barracks))
-                .OrderBy(uvm => uvm.Identifier.HeroId)
-                .ToList();
-            battles.Add(new PvpBattleViewModel
-            {
-                Player = player,
-                Opponent = isVictory
-                    ? mapper.Map<PlayerViewModel>(pvpBattleDto.Loser,
-                        opt => { opt.Items[ResolutionContextKeys.AGES] = ages; })
-                    : mapper.Map<PlayerViewModel>(pvpBattleDto.Winner,
-                        opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
-                IsVictory = isVictory,
-                PlayerUnits = isVictory ? winnerUnits : loserUnits,
-                OpponentUnits = isVictory ? loserUnits : winnerUnits,
-                StatsId = pvpBattleDto.StatsId,
-            });
-        }
+        var battles = playerProfile.PvpBattles
+            .Select(x => CreatePvpBattle(player, x, heroes, ages, barracks)).ToList();
 
-        return new PlayerWithRankingsViewModel
+        return new PlayerProfileViewModel
         {
             Player = player,
-            Ages = playerWithRankings.Ages.Select(a => new StatsTimedStringValue
+            Ages = playerProfile.Ages.Select(a => new StatsTimedStringValue
                     {Date = a.Date, Value = ages[a.Value].Name})
                 .ToList(),
-            Alliances = playerWithRankings.Alliances,
-            Names = playerWithRankings.Names.Count > 1
-                ? string.Join(", ", playerWithRankings.Names.Select(name => $"\"{name}\""))
+            Alliances = playerProfile.Alliances,
+            Names = playerProfile.Names.Count > 1
+                ? string.Join(", ", playerProfile.Names.Select(name => $"\"{name}\""))
                 : null,
-            PvpRankingPoints = playerWithRankings.PvpRankingPoints,
-            RankingPoints = playerWithRankings.RankingPoints,
+            PvpRankingPoints = playerProfile.PvpRankingPoints,
+            RankingPoints = playerProfile.RankingPoints,
             PvpBattles = battles,
         };
     }
@@ -160,6 +138,35 @@ public class StatsHubViewModelsFactory(
             BattleTypeName = resourceLocalizationService.Localize(battleType),
             BattleType = battleType,
         }).ToList();
+    }
+
+    public PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
+        IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+    {
+        var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
+
+        var isVictory = pvpBattleDto.Winner.Id == player.Id;
+        var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks))
+            .OrderBy(uvm => uvm.Identifier.HeroId)
+            .ToList();
+        var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks))
+            .OrderBy(uvm => uvm.Identifier.HeroId)
+            .ToList();
+
+        return new PvpBattleViewModel
+        {
+            Player = player,
+            Opponent = isVictory
+                ? mapper.Map<PlayerViewModel>(pvpBattleDto.Loser,
+                    opt => { opt.Items[ResolutionContextKeys.AGES] = ages; })
+                : mapper.Map<PlayerViewModel>(pvpBattleDto.Winner,
+                    opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
+            IsVictory = isVictory,
+            PlayerUnits = isVictory ? winnerUnits : loserUnits,
+            OpponentUnits = isVictory ? loserUnits : winnerUnits,
+            StatsId = pvpBattleDto.StatsId,
+        };
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,

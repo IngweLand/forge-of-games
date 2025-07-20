@@ -51,7 +51,6 @@ public class UnitService(
 
     private async Task<HeroDto?> CreateHeroAsync(string id)
     {
-        Console.Out.WriteLine("CreateHeroAsync");
         var hero = await hohCoreDataRepository.GetHeroAsync(id) ??
             await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
         if (hero == null)

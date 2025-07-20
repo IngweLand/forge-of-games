@@ -11,14 +11,14 @@ using MudBlazor;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
-public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
+public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 {
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
     private CancellationTokenSource _cityFetchCts = new();
     private bool _fetchingCity;
     private bool _isDisposed;
-    private PlayerWithRankingsViewModel? _player;
+    private PlayerProfileViewModel? _player;
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -62,7 +62,7 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
         {
             IsInitialized = false;
             _player = await LoadWithPersistenceAsync(nameof(_player),
-                () => StatsHubUiService.GetPlayerAsync(PlayerId));
+                () => StatsHubUiService.GetPlayerProfileAsync(PlayerId));
             IsInitialized = true;
         }
     }
@@ -197,5 +197,10 @@ public partial class PlayerPage : StatsHubPageBase, IAsyncDisposable
 
         var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, squad}};
         await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
+    }
+
+    private void NavigateToBattlesScreen()
+    {
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.PlayerBattles(PlayerId));
     }
 }

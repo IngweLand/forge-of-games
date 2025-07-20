@@ -1,3 +1,5 @@
+using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -7,9 +9,11 @@ using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Constants;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 
@@ -23,13 +27,18 @@ public class StatsHubUiService(
     IBattleService battleService,
     IHeroProfileUiService heroProfileUiService,
     ICityService cityService,
-    IBattleStatsViewModelFactory battleStatsViewModelFactory) : IStatsHubUiService
+    IBattleStatsViewModelFactory battleStatsViewModelFactory,
+    IHohCoreDataCache coreDataCache,
+    IMapper mapper) : IStatsHubUiService
 {
     private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
         new Dictionary<int, AllianceWithRankingsViewModel>();
 
-    private readonly IDictionary<int, PlayerWithRankingsViewModel> _concretePlayers =
-        new Dictionary<int, PlayerWithRankingsViewModel>();
+    private readonly IDictionary<int, PlayerProfileViewModel> _concretePlayerProfiles =
+        new Dictionary<int, PlayerProfileViewModel>();
+
+    private readonly IDictionary<int, PlayerViewModel> _concretePlayers =
+        new Dictionary<int, PlayerViewModel>();
 
     private readonly HashSet<BattleType> _unitBattleTypes =
     [
@@ -41,7 +50,31 @@ public class StatsHubUiService(
     private IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>? _barracks;
     private TopStatsViewModel? _topStatsViewModel;
 
-    public async Task<PlayerWithRankingsViewModel?> GetPlayerAsync(int playerId)
+    public async Task<PlayerProfileViewModel?> GetPlayerProfileAsync(int playerId)
+    {
+        if (_concretePlayerProfiles.TryGetValue(playerId, out var playerViewModel))
+        {
+            return playerViewModel;
+        }
+
+        await GetAgesAsync();
+        await GetBarracksAsync();
+        var player = await statsHubService.GetPlayerProfileAsync(playerId);
+        if (player == null)
+        {
+            return null;
+        }
+
+        var heroIds = player.PvpBattles.SelectMany(b =>
+                b.WinnerUnits.Select(u => u.Hero!.UnitId).Concat(b.LoserUnits.Select(u => u.Hero!.UnitId)))
+            .ToHashSet();
+        var heroes = await GetAllBattleHeroes(heroIds);
+        var newViewModel = statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, _ages!, _barracks!);
+        _concretePlayerProfiles.Add(playerId, newViewModel);
+        return newViewModel;
+    }
+
+    public async Task<PlayerViewModel?> GetPlayerAsync(int playerId, CancellationToken ct = default)
     {
         if (_concretePlayers.TryGetValue(playerId, out var playerViewModel))
         {
@@ -49,16 +82,34 @@ public class StatsHubUiService(
         }
 
         await GetAgesAsync();
-        await GetBarracksAsync();
-        var player = await statsHubService.GetPlayerAsync(playerId);
+        var player = await statsHubService.GetPlayerAsync(playerId, ct);
         if (player == null)
         {
             return null;
         }
 
-        var newViewModel = statsHubViewModelsFactory.CreatePlayer(player, _ages!, _barracks!);
+        var newViewModel =
+            mapper.Map<PlayerViewModel>(player, opt => { opt.Items[ResolutionContextKeys.AGES] = _ages; });
+        ;
         _concretePlayers.Add(playerId, newViewModel);
         return newViewModel;
+    }
+
+    public async Task<PaginatedList<PvpBattleViewModel>> GetPlayerBattlesAsync(PlayerViewModel player,
+        int startIndex, int count,
+        CancellationToken ct = default)
+    {
+        await GetAgesAsync();
+        await GetBarracksAsync();
+        var result = await statsHubService.GetPlayerBattlesAsync(player.Id, startIndex, count, ct);
+
+        var heroIds = result.Items.SelectMany(b => b.WinnerUnits.Select(u => u.Hero!.UnitId))
+            .Concat(result.Items.SelectMany(b => b.LoserUnits.Select(u => u.Hero!.UnitId)))
+            .ToHashSet();
+        var heroes = await GetAllBattleHeroes(heroIds);
+        var newBattles = result.Items.Select(x =>
+            statsHubViewModelsFactory.CreatePvpBattle(player, x, heroes, _ages!, _barracks!)).ToList();
+        return new PaginatedList<PvpBattleViewModel>(newBattles, result.StartIndex, result.TotalCount);
     }
 
     public async Task<TopStatsViewModel> GetTopStatsAsync()
@@ -165,6 +216,12 @@ public class StatsHubUiService(
         var vms = statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles)
             .OrderBy(x => x.BattleType.GetSortOrder());
         return vms.ToList();
+    }
+
+    private async Task<List<HeroDto>> GetAllBattleHeroes(HashSet<string> heroIds)
+    {
+        var heroTasks = heroIds.Select(coreDataCache.GetHeroAsync);
+        return (await Task.WhenAll(heroTasks)).Where(x => x != null).ToList()!;
     }
 
     private async Task GetAgesAsync()

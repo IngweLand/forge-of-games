@@ -1,23 +1,15 @@
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using AutoMapper;
-using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 using PvpBattle = Ingweland.Fog.Models.Fog.Entities.PvpBattle;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService) : IPlayerWithRankingsFactory
+public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBattlesFactory)
+    : IPlayerProfileFactory
 {
-    private static readonly JsonSerializerOptions JsonSerializerOptions = new()
-    {
-        Converters = {new JsonStringEnumConverter()},
-    };
-    public async Task<PlayerWithRankings?> CreateAsync(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
+    public PlayerProfile Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
         IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
         var alliances = player.AllianceHistory.Select(a => a.Name)
@@ -26,35 +18,18 @@ public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService)
             .Order()
             .ToList();
 
-        var pvpBattleDtos = pvpBattles
-            .Select(b =>
+        var battles = pvpBattles.Select(x =>
+        {
+            int? statsId = null;
+            if (existingStatsIds.TryGetValue(x.InGameBattleId, out var value))
             {
-                int? statsId = null;
-                if (existingStatsIds.TryGetValue(b.InGameBattleId, out var value))
-                {
-                    statsId = value;
-                }
-                var winnerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(b.WinnerUnits,
-                    JsonSerializerOptions) ?? [];
-                var loserSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(b.LoserUnits,
-                    JsonSerializerOptions) ?? [];
-                return new PvpBattleDto
-                {
-                    Winner = mapper.Map<PlayerDto>(b.Winner),
-                    Loser = mapper.Map<PlayerDto>(b.Loser),
-                    WinnerUnits = mapper.Map<IReadOnlyCollection<BattleSquadDto>>(winnerSquads),
-                    LoserUnits = mapper.Map<IReadOnlyCollection<BattleSquadDto>>(loserSquads),
-                    StatsId = statsId,
-                };
-            })
-            .ToList();
-        var heroIds = pvpBattleDtos.SelectMany(b => b.WinnerUnits.Select(u => u.Hero!.UnitId))
-            .Concat(pvpBattleDtos.SelectMany(b => b.LoserUnits.Select(u => u.Hero!.UnitId)))
-            .ToHashSet();
-        var heroTasks = heroIds.Select(unitService.GetHeroAsync);
-        var heroes = await Task.WhenAll(heroTasks);
+                statsId = value;
+            }
 
-        return new PlayerWithRankings
+            return playerBattlesFactory.Create(x, statsId);
+        }).ToList();
+        
+        return new PlayerProfile
         {
             Player = mapper.Map<PlayerDto>(player),
             RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.PowerPoints),
@@ -62,8 +37,7 @@ public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService)
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
             Alliances = alliances,
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
-            PvpBattles = pvpBattleDtos,
-            Heroes = heroes!,
+            PvpBattles = battles,
         };
     }
 
@@ -96,11 +70,5 @@ public class PlayerWithRankingsFactory(IMapper mapper, IUnitService unitService)
             .Select(entry => new StatsTimedStringValue
                 {Value = valueSelector(entry) ?? string.Empty, Date = DateOnly.FromDateTime(entry.ChangedAt)})
             .ToList();
-    }
-
-    private class TempHistoryEntry : IHistoryEntry
-    {
-        public string? Value { get; init; }
-        public DateTime ChangedAt { get; set; }
     }
 }

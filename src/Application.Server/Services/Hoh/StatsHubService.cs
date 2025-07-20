@@ -21,13 +21,13 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<AllianceWithRankings?> GetAllianceAsync(int allianceId)
+    public Task<AllianceWithRankings?> GetAllianceAsync(int allianceId, CancellationToken ct = default)
     {
         var query = new GetAllianceQuery
         {
             AllianceId = allianceId,
         };
-        return sender.Send(query);
+        return sender.Send(query, ct);
     }
 
     public Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, int startIndex,
@@ -46,18 +46,36 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(new GetAllLeaderboardTopItemsQuery(), ct);
     }
 
-    public Task<PlayerWithRankings?> GetPlayerAsync(int playerId)
+    public Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, int startIndex = 0,
+        int count = FogConstants.DEFAULT_STATS_PAGE_SIZE, CancellationToken ct = default)
     {
-        var query = new GetPlayerQuery
+        var query = new GetPlayerBattlesQuery()
+        {
+            PlayerId = playerId,
+            StartIndex = startIndex,
+            Count = count,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<PlayerDto?> GetPlayerAsync(int playerId, CancellationToken ct = default)
+    {
+        var query = new GetPlayerQuery(playerId);
+        return sender.Send(query, ct);
+    }
+
+    public Task<PlayerProfile?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default)
+    {
+        var query = new GetPlayerProfileQuery
         {
             PlayerId = playerId,
         };
-        return sender.Send(query);
+        return sender.Send(query, ct);
     }
 
-    public Task<HohCity?> GetPlayerCityAsync(int playerId)
+    public Task<HohCity?> GetPlayerCityAsync(int playerId, CancellationToken ct = default)
     {
         var query = new GetPlayerCityQuery(playerId);
-        return sender.Send(query);
+        return sender.Send(query, ct);
     }
 }

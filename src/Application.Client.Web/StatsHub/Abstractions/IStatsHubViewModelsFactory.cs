@@ -12,8 +12,8 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
 public interface IStatsHubViewModelsFactory
 {
-    PlayerWithRankingsViewModel CreatePlayer(PlayerWithRankings playerWithRankings,
-        IReadOnlyDictionary<string, AgeDto> ages,
+    PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
+        IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks);
 
     PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
@@ -36,4 +36,8 @@ public interface IStatsHubViewModelsFactory
         IReadOnlyCollection<UnitBattleDto> unitBattles);
 
     IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
+
+    PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
+        IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks);
 }
