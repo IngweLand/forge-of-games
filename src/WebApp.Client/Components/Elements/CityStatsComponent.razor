@@ -1,13 +1,23 @@
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
-using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
-using Microsoft.AspNetCore.Components;
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+<div class="main-container">
 
-namespace Ingweland.Fog.WebApp.Client.Components.Pages;
+    @if (_citiesStats != null)
+    {
+        @foreach (var cityStats in _citiesStats)
+        {
+            <CityPropertiesComponent Data="@cityStats" Editable="false"/>
+        }
+    }
+    else
+    {
+        <LoadingIndicator/>
+    }
+</div>
 
-public partial class CitiesStatsPage : FogPageBase
-{
+@code {
     private IReadOnlyCollection<CityPlannerCityPropertiesViewModel>? _citiesStats;
 
     [Inject]
@@ -38,4 +48,5 @@ public partial class CitiesStatsPage : FogPageBase
 
         _citiesStats = citiesStats;
     }
+
 }

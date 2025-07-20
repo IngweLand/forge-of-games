@@ -1,19 +1,18 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH)]
 @using Ingweland.Fog.Application.Core.Helpers
-@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-<div class="main-container">
+@if (_isBrowser)
+{
+    <CityStatsComponent/>
+}
 
-    @if (_citiesStats != null)
+@code
+{
+    private bool _isBrowser;
+
+    protected override void OnInitialized()
     {
-        @foreach (var cityStats in _citiesStats)
-        {
-            <CityPropertiesComponent Data="@cityStats" Editable="false"/>
-        }
+        _isBrowser = OperatingSystem.IsBrowser();
     }
-    else
-    {
-        <LoadingIndicator/>
-    }
-</div>
+}
     
