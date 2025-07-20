@@ -30,6 +30,7 @@ public class HeroProfileIdentifierFactory : IHeroProfileIdentifierFactory
             HeroId = heroId,
             Level = battleUnit.Level,
             AscensionLevel = battleUnit.AscensionLevel,
+            AbilityLevel = battleUnit.AbilityLevel,
             AwakeningLevel = 0,
             BarracksLevel = barracksLevel,
         };
