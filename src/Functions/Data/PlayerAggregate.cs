@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using AutoMapper.Configuration.Annotations;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Functions.Data;
@@ -14,6 +15,8 @@ public class PlayerAggregate
     public required DateTime CollectedAt { get; set; }
     public int? InGameAllianceId { get; set; }
     public required int InGamePlayerId { get; set; } = -1;
+
+    public IReadOnlyCollection<ProfileSquad> ProfileSquads { get; set; } = [];
 
     [JsonIgnore]
     [Ignore]
@@ -42,6 +45,11 @@ public class PlayerAggregate
     public bool CanBeConvertedToPvpRanking()
     {
         return HasRequiredPropertiesSet() && PvpRank != null && PvpRankingPoints != null;
+    }
+    
+    public bool CanUpdateHeroes()
+    {
+        return HasRequiredPropertiesSet() && ProfileSquads.Count > 0;
     }
     
     private bool HasRequiredPropertiesSet()

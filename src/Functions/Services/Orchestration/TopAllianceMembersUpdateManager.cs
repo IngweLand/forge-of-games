@@ -32,6 +32,7 @@ public class TopAllianceMembersUpdateManager(
     IPlayerStatusUpdaterService playerStatusUpdaterService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IAllianceMembersUpdaterService allianceMembersUpdaterService,
+    IPlayerSquadsUpdater playerSquadsUpdater,
     IMapper mapper,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<TopAllianceMembersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, innSdkClient,
@@ -39,7 +40,8 @@ public class TopAllianceMembersUpdateManager(
         playerService, playerAgeHistoryService, playerNameHistoryService, allianceService,
         playerAllianceNameHistoryService,
         allianceRankingService, allianceNameHistoryService, playerStatusUpdaterService,
-        inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, mapper, databaseWarmUpService, logger),
+        inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, mapper,
+        databaseWarmUpService, logger),
     ITopAllianceMembersUpdateManager
 {
     private const int BATCH_SIZE = 120;

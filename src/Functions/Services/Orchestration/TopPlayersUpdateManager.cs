@@ -32,17 +32,20 @@ public class TopPlayersUpdateManager(
     IPlayerStatusUpdaterService playerStatusUpdaterService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IAllianceMembersUpdaterService allianceMembersUpdaterService,
+    IPlayerSquadsUpdater playerSquadsUpdater,
     IMapper mapper,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<TopPlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, innSdkClient,
     playerRankingService, pvpRankingService, inGameRawDataTableRepository, inGameDataParsingService,
     playerService, playerAgeHistoryService, playerNameHistoryService, allianceService, playerAllianceNameHistoryService,
     allianceRankingService, allianceNameHistoryService, playerStatusUpdaterService,
-    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, mapper, databaseWarmUpService, logger), ITopPlayersUpdateManager
+    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, mapper,
+    databaseWarmUpService, logger), ITopPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
     private const int TOP_SKIP_COUNT = 100;
     private const int TOP_RANK_LIMIT = 500;
+
     protected override Task<List<Player>> GetPlayers(string gameWorldId)
     {
         logger.LogDebug("Fetching players");

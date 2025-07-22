@@ -103,6 +103,7 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Player.Name))
             .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank))
             .ForMember(dest => dest.RankingPoints, opt => opt.MapFrom(src => src.RankingPoints))
+            .ForMember(dest => dest.ProfileSquads, opt => opt.MapFrom(src => src.Squads))
             .ForMember(dest => dest.InGameAllianceId, opt =>
             {
                 opt.PreCondition(x => x.Alliance != null);
@@ -139,5 +140,15 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank))
             .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.AllianceRankingType))
             .ForMember(dest => dest.CollectedAt, opt => opt.MapFrom(src => DateOnly.FromDateTime(src.CollectedAt)));
+
+        CreateMap<ProfileSquad, ProfileSquadEntity>()
+            .ForMember(dest => dest.UnitId, opt => opt.MapFrom(src => src.Hero.UnitId))
+            .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.Hero.Level))
+            .ForMember(dest => dest.AscensionLevel, opt => opt.MapFrom(src => src.Hero.AscensionLevel))
+            .ForMember(dest => dest.AbilityLevel, opt => opt.MapFrom(src => src.Hero.AbilityLevel))
+            .ForMember(dest => dest.Hero, opt => opt.MapFrom(src => src.Hero))
+            .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(src => src.SupportUnit))
+            .ForMember(dest => dest.CollectedAt, opt =>
+                opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<DateOnly>(ResolutionContextKeys.DATE)));
     }
 }

@@ -139,6 +139,7 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => src.BattleId.ToByteArray()))
             .ForMember(dest => dest.ResultStatus, opt => opt.MapFrom(src => src.ResultStatus.Status))
             .ForMember(dest => dest.Location, opt => opt.MapFrom(src => src.PackedEncounterLocation));
+        CreateMap<ProfileSquadDto, ProfileSquad>();
 
         CreateMap<HeroBattleStatsResponse, BattleStats>();
         CreateMap<BattleSquadStatsDto, BattleSquadStats>();

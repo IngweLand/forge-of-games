@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "battle_squad_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -7,6 +8,13 @@ message PlayerProfileResponse {
   PlayerWithAllianceDto player_with_alliance = 2;
   int32 rank = 3;
   int32 ranking_points = 4;
+  repeated ProfileSquadDto squads = 5;
+}
+
+message ProfileSquadDto {
+  int32 place = 1;
+  BattleUnitPropertiesDto hero = 2;
+  BattleUnitPropertiesDto support_unit = 3;
 }
 
 message PlayerWithAllianceDto {

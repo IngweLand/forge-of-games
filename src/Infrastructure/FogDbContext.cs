@@ -25,6 +25,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<PvpBattle> PvpBattles { get; set; }
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
     public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
+    public DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -46,5 +47,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new BattleSquadStatsEntityTypeConfiguration());
         builder.ApplyConfiguration(new UnitBattleStatsEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerCitySnapshotEntityTypeConfiguration());
+        builder.ApplyConfiguration(new ProfileSquadEntityTypeConfiguration());
     }
 }

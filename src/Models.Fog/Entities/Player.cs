@@ -40,4 +40,6 @@ public class Player
     public ICollection<PlayerRanking> Rankings { get; set; } = new List<PlayerRanking>();
     public required DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; set; }
+
+    public ICollection<ProfileSquadEntity> Squads { get; set; } = new List<ProfileSquadEntity>();
 }

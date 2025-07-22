@@ -31,6 +31,7 @@ namespace Ingweland.Fog.Functions.Services.Orchestration.Abstractions
         IPlayerStatusUpdaterService playerStatusUpdaterService,
         InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
         IAllianceMembersUpdaterService allianceMembersUpdaterService,
+        IPlayerSquadsUpdater playerSquadsUpdater,
         IMapper mapper,
         DatabaseWarmUpService databaseWarmUpService,
         ILogger<PlayersUpdateManagerBase> logger) : OrchestratorBase(gameWorldsProvider, inGameRawDataTableRepository,
@@ -138,6 +139,10 @@ namespace Ingweland.Fog.Functions.Services.Orchestration.Abstractions
             logger.LogInformation("Starting alliance members updater service update");
             await ExecuteSafeAsync(() => allianceMembersUpdaterService.UpdateAsync(playerAggregates), "");
             logger.LogInformation("Completed alliance members updater service update");
+            
+            logger.LogInformation("Starting player squads updater service");
+            await ExecuteSafeAsync(() => playerSquadsUpdater.AddOrUpdateAsync(playerAggregates), "");
+            logger.LogInformation("Completed player squads updater service");
         }
 
         protected abstract Task<List<Player>> GetPlayers(string gameWorldId);

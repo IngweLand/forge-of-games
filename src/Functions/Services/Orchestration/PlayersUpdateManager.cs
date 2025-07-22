@@ -32,13 +32,15 @@ public class PlayersUpdateManager(
     IPlayerStatusUpdaterService playerStatusUpdaterService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IAllianceMembersUpdaterService allianceMembersUpdaterService,
+    IPlayerSquadsUpdater playerSquadsUpdater,
     IMapper mapper,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, innSdkClient,
     playerRankingService, pvpRankingService, inGameRawDataTableRepository, inGameDataParsingService,
     playerService, playerAgeHistoryService, playerNameHistoryService, allianceService, playerAllianceNameHistoryService,
     allianceRankingService, allianceNameHistoryService, playerStatusUpdaterService,
-    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, mapper, databaseWarmUpService, logger), IPlayersUpdateManager
+    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, mapper,
+    databaseWarmUpService, logger), IPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
 
