@@ -20,7 +20,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
         var overflowRange = FindOverflowRange(building, hohCityMapEntity.Level);
 
         var cme = new CityMapEntity(hohCityMapEntity.Id, new Point(hohCityMapEntity.X, hohCityMapEntity.Y),
-            new Size(building.Width, building.Length), name: building.Name, cityEntityId: building.Id,
+            new Size(building.Width, building.Length), building.Name, building.Id,
             hohCityMapEntity.Level,
             building.Type, building.Group, building.ExpansionSubType, overflowRange,
             !_notMovableEntities.Contains(building.Type))
@@ -39,10 +39,30 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
         var overflowRange = FindOverflowRange(building, level);
 
         var cme = new CityMapEntity(_nextBuildingId, location, new Size(building.Width, building.Length),
-            name: building.Name,
-            cityEntityId: building.Id, level, building.Type, building.Group, building.ExpansionSubType, overflowRange)
+            building.Name, building.Id, level, building.Type, building.Group, building.ExpansionSubType, overflowRange)
         {
             Stats = mapEntityStatsFactory.Create(building),
+        };
+        _nextBuildingId--;
+        return cme;
+    }
+
+    public CityMapEntity Duplicate(CityMapEntity sourceEntity, BuildingDto building)
+    {
+        if (sourceEntity.CityEntityId != building.Id)
+        {
+            throw new InvalidOperationException($"Source entity ID {sourceEntity.CityEntityId
+            } does not match building ID {building.Id}");
+        }
+
+        var cme = new CityMapEntity(_nextBuildingId, sourceEntity.Location, new Size(building.Width, building.Length),
+            building.Name, building.Id, sourceEntity.Level, building.Type, building.Group, building.ExpansionSubType,
+            sourceEntity.OverflowRange)
+        {
+            Stats = mapEntityStatsFactory.Create(building),
+            IsRotated = sourceEntity.IsRotated,
+            CustomizationId = sourceEntity.CustomizationId,
+            SelectedProductId = sourceEntity.SelectedProductId,
         };
         _nextBuildingId--;
         return cme;

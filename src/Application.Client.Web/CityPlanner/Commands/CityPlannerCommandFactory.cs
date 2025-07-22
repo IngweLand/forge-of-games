@@ -22,6 +22,11 @@ public class CityPlannerCommandFactory(ICityPlanner cityPlanner) : ICityPlannerC
         return new RotateEntityCommand(cityPlanner, cityMapEntityId);
     }
 
+    public IUndoableCommand CreateDuplicateEntityCommand(int cityMapEntityId)
+    {
+        return new DuplicateEntityCommand(cityPlanner, cityMapEntityId);
+    }
+
     public IUndoableCommand CreateMoveToInventoryCommand(IReadOnlySet<int> cityMapEntityIds)
     {
         return new MoveToInventoryCommand(cityPlanner, cityMapEntityIds);

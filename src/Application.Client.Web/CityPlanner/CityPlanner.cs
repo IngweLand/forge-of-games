@@ -234,6 +234,27 @@ public class CityPlanner(
         SelectCityMapEntity(entity);
     }
 
+    public CityMapEntity? DuplicateEntity(int entityId)
+    {
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity) || !entity.IsMovable)
+        {
+            return null;
+        }
+
+        var building = CityMapState.Buildings[entity.CityEntityId];
+        var cme = cityMapEntityFactory.Duplicate(entity, building);
+        
+        var placed = FindNextFreeLocation(cme);
+        if (!placed)
+        {
+            FindFreeLocation(cme);
+        }
+        CityMapState.Add(cme);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(cme);
+        SelectCityMapEntity(cme);
+        return cme;
+    }
+
     public async Task SaveCityAsync()
     {
         await persistenceService.SaveCity(GetCity());
@@ -616,6 +637,23 @@ public class CityPlanner(
 
             x--;
         }
+    }
+    
+    private bool FindNextFreeLocation(CityMapEntity cityMapEntity)
+    {
+        for (var i = cityMapEntity.Location.Y; i < _mapArea.Bounds.Bottom; i++)
+        {
+            for (var j = cityMapEntity.Location.X; j < _mapArea.Bounds.Right; j++)
+            {
+                cityMapEntity.Location = new Point(j, i);
+                if (CanBePlaced(cityMapEntity))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private bool IntersectsWithBuilding(CityMapEntity targetEntity)

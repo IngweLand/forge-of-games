@@ -9,6 +9,7 @@ public interface ICityPlannerCommandFactory
     IUndoableCommand CreateAddBuildingCommand(BuildingGroup buildingGroup);
     IUndoableCommand CreateDeleteEntityCommand(CityMapEntity entity);
     IUndoableCommand CreateRotateEntityCommand(int cityMapEntityId);
+    IUndoableCommand CreateDuplicateEntityCommand(int cityMapEntityId);
     IUndoableCommand CreateMoveToInventoryCommand(IReadOnlySet<int> cityMapEntityIds);
     IUndoableCommand CreateMoveAllToInventoryCommand();
     IUndoableCommand CreatePurgeInventoryCommand();

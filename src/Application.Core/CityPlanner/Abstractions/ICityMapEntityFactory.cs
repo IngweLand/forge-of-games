@@ -8,4 +8,5 @@ public interface ICityMapEntityFactory
 {
     CityMapEntity Create(BuildingDto building, Point location, BuildingLevelRange levelRange, int level = -1);
     CityMapEntity Create(BuildingDto building, HohCityMapEntity hohCityMapEntity);
+    CityMapEntity Duplicate(CityMapEntity sourceEntity, BuildingDto building);
 }

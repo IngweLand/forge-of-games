@@ -246,6 +246,12 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
                 Rotate();
                 break;
             }
+            
+            case "KeyD":
+            {
+                Duplicate();
+                break;
+            }
         }
     }
 
@@ -263,6 +269,18 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         }
 
         var cmd = CommandFactory.CreateRotateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
+        CommandManager.ExecuteCommand(cmd);
+        _skCanvasView!.Invalidate();
+    }
+    
+    private void Duplicate()
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})
+        {
+            return;
+        }
+
+        var cmd = CommandFactory.CreateDuplicateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
         CommandManager.ExecuteCommand(cmd);
         _skCanvasView!.Invalidate();
     }
