@@ -49,27 +49,18 @@ public class CityInspirationsSearchQueryHandler(IFogDbContext context, IMapper m
             return [];
         }
 
-        var deduplicated = result.DistinctBy(x => new
-        {
-            x.CityId,
-            x.AgeId,
-            x.OpenedExpansionsHash,
-            x.HasPremiumBuildings,
-            x.Coins,
-            x.Food,
-            x.Goods,
-        });
-        return mapper.Map<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>(deduplicated);
+        var distinct = result
+            .GroupBy(x => x.PlayerId)
+            .Select(g => g.OrderByDescending(x => x.CollectedAt).First())
+            .Take(FogConstants.MaxPlayerCitySnapshotSearchResults);
+
+        return mapper.Map<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>(distinct);
     }
 
     private IQueryable<PlayerCitySnapshot> BuildQuery(IQueryable<PlayerCitySnapshot> query,
         CityInspirationsSearchQuery request)
     {
-        if (request.Request.AllowPremiumEntities)
-        {
-            query = query.Where(x => x.HasPremiumBuildings || !x.HasPremiumBuildings);
-        }
-        else
+        if (!request.Request.AllowPremiumEntities)
         {
             query = query.Where(x => !x.HasPremiumBuildings);
         }
@@ -81,8 +72,6 @@ public class CityInspirationsSearchQueryHandler(IFogDbContext context, IMapper m
             CitySnapshotSearchPreference.Food => query.OrderByDescending(x => x.Food),
             _ => query.OrderByDescending(x => x.Food),
         };
-
-        query = query.Take(FogConstants.MaxPlayerCitySnapshotSearchResults);
 
         return query;
     }
