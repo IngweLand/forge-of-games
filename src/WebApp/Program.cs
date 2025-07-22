@@ -45,7 +45,7 @@ var app = builder.Build();
 app.Use(async (context, next) =>
 {
     //TODO: add redirection from HELP_HERO_PLAYGROUNDS_PATH
-    if (context.Request.Path.Equals(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
+    if (context.Request.Path.ToString().Contains(FogUrlBuilder.PageRoutes.COMMAND_CENTER_HERO_PLAYGROUNDS_PATH,
             StringComparison.OrdinalIgnoreCase))
     {
         context.Response.Redirect(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH, true);
