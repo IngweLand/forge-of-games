@@ -166,12 +166,12 @@ public class InGameDataMappingProfile : Profile
             })
             .ForMember(dest => dest.PvpTier, opt =>
             {
-                opt.PreCondition(src => src.HasPvpTier);
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.PvpTier));
                 opt.MapFrom(src => src.PvpTier);
             })
             .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
             {
-                opt.PreCondition(src => src.HasTreasureHuntDifficulty);
+                opt.PreCondition(src => src.HasTreasureHuntDifficulty && src.TreasureHuntDifficulty >= 0);
                 opt.MapFrom(src => src.TreasureHuntDifficulty);
             });
         CreateMap<PlayerWithAllianceDto, HohPlayer>()

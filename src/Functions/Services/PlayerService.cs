@@ -39,6 +39,8 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
                 Age = playerAggregate.Age!,
                 AvatarId = playerAggregate.AvatarId ?? 0,
                 UpdatedAt = DateOnly.FromDateTime(playerAggregate.CollectedAt),
+                TreasureHuntDifficulty = playerAggregate.TreasureHuntDifficulty,
+                PvpTier = playerAggregate.PvpTier,
             };
         }).ToList();
         context.Players.AddRange(newPlayersList);

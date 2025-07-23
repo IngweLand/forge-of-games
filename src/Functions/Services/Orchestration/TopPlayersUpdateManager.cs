@@ -33,13 +33,14 @@ public class TopPlayersUpdateManager(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IAllianceMembersUpdaterService allianceMembersUpdaterService,
     IPlayerSquadsUpdater playerSquadsUpdater,
+    IPlayerUpdater playerUpdater,
     IMapper mapper,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<TopPlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, innSdkClient,
     playerRankingService, pvpRankingService, inGameRawDataTableRepository, inGameDataParsingService,
     playerService, playerAgeHistoryService, playerNameHistoryService, allianceService, playerAllianceNameHistoryService,
     allianceRankingService, allianceNameHistoryService, playerStatusUpdaterService,
-    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, mapper,
+    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, playerUpdater, mapper,
     databaseWarmUpService, logger), ITopPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;

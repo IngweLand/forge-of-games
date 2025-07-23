@@ -9,6 +9,7 @@ public class PlayerDto
     public required string Name { get; set; }
     public int Rank { get; set; }
     public int RankingPoints { get; set; }
+    public int? TreasureHuntDifficulty { get; set; }
     public required DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; init; }
 }

@@ -34,12 +34,15 @@ public class Player
     public ICollection<PlayerNameHistoryEntry> NameHistory { get; set; } = new List<PlayerNameHistoryEntry>();
     public ICollection<PvpBattle> PvpLosses { get; set; } = new List<PvpBattle>();
     public ICollection<PvpRanking> PvpRankings { get; set; } = new List<PvpRanking>();
+
+    public string? PvpTier { get; set; }
     public ICollection<PvpBattle> PvpWins { get; set; } = new List<PvpBattle>();
     public int? Rank { get; set; }
     public int? RankingPoints { get; set; }
     public ICollection<PlayerRanking> Rankings { get; set; } = new List<PlayerRanking>();
-    public required DateOnly UpdatedAt { get; set; }
-    public required string WorldId { get; set; }
 
     public ICollection<ProfileSquadEntity> Squads { get; set; } = new List<ProfileSquadEntity>();
+    public int? TreasureHuntDifficulty { get; set; }
+    public required DateOnly UpdatedAt { get; set; }
+    public required string WorldId { get; set; }
 }
