@@ -6,6 +6,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace Ingweland.Fog.Functions.Mapping;
 
@@ -16,6 +17,7 @@ public class AggregateDataMappingProfile : Profile
         // to aggregate
         CreateMap<PlayerRank, PlayerAggregate>()
             .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Age)))
             .ForMember(dest => dest.RankingPoints, opt => opt.MapFrom(src => src.Points))
             .ForMember(dest => dest.AllianceName, opt => opt.MapFrom(src => src.AllianceName ?? string.Empty))
             .ForMember(dest => dest.PlayerRankingType, opt =>
@@ -29,7 +31,7 @@ public class AggregateDataMappingProfile : Profile
 
         CreateMap<PvpRank, PlayerAggregate>()
             .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Player.Id))
-            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Player.Age))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Player.Age)))
             .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.Player.AvatarId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Player.Name))
             .ForMember(dest => dest.AllianceName,
@@ -49,7 +51,7 @@ public class AggregateDataMappingProfile : Profile
 
         CreateMap<HohPlayer, PlayerAggregate>()
             .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Age)))
             .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.AvatarId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.CollectedAt, opt =>
@@ -98,7 +100,7 @@ public class AggregateDataMappingProfile : Profile
         
         CreateMap<PlayerProfile, PlayerAggregate>()
             .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Player.Id))
-            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Player.Age))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Player.Age)))
             .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.Player.AvatarId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Player.Name))
             .ForMember(dest => dest.Rank, opt => opt.MapFrom(src => src.Rank))

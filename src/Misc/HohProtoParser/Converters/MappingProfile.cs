@@ -272,6 +272,7 @@ public class MappingProfile : Profile
         CreateMap<CityInitDefinitionDTO, CityInitConfigs>()
             .ForMember(dest => dest.Grid, opt => opt.MapFrom(src => src.InitialGridComponent));
         CreateMap<BuildingCustomizationDefinitionDTO, BuildingCustomization>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)))
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
             .ForMember(dest => dest.BuildingGroup, opt => opt.MapFrom(src => src.Subtype.ToBuildingSubtype()))
             .ForMember(dest => dest.Duration, opt => opt.MapFrom(src => src.Duration.Seconds))

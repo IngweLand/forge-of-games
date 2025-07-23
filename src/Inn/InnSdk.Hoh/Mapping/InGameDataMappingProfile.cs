@@ -29,7 +29,8 @@ public class InGameDataMappingProfile : Profile
         CreateMap<AllianceRanksDTO, AllianceRanks>();
 
         CreateMap<PvpRankDto, PvpRank>();
-        CreateMap<PlayerDto, HohPlayer>();
+        CreateMap<PlayerDto, HohPlayer>()
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Age)));
         CreateMap<AllianceDto, HohAlliance>();
         CreateMap<AllianceMembersResponse, AllianceWithMembers>();
         CreateMap<AllianceMemberDto, AllianceMember>();
@@ -79,16 +80,19 @@ public class InGameDataMappingProfile : Profile
                     HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId)));
 
         CreateMap<CityMapEntityDto, CityMapEntity>()
+            .ForMember(dest => dest.CityEntityId,
+                opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.CityEntityId)))
             .ForMember(dest => dest.CustomizationId, opt =>
             {
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.CustomizationEntityId));
-                opt.MapFrom(src => src.CustomizationEntityId);
+                opt.MapFrom(src => HohStringParser.GetConcreteId(src.CustomizationEntityId));
             });
         CreateMap<CityDTO, City>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
             .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities));
         CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>();
-        CreateMap<ExpansionMapEntityDto, CityMapExpansion>();
+        CreateMap<ExpansionMapEntityDto, CityMapExpansion>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)));
         CreateMap<OtherCityDTO, OtherCity>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
             .ForMember(dest => dest.OpenedExpansions, opt => opt.MapFrom(src => src.ExpansionMapEntities))
@@ -104,8 +108,8 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.StatAttribute, opt =>
             {
                 opt.PreCondition(src => src.HasUnitStatAttributeDefinitionId);
-                opt.MapFrom(
-                    src => HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId));
+                opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<StatAttribute>(src.UnitStatAttributeDefinitionId));
             })
             .ForMember(dest => dest.Calculation, opt => opt.MapFrom(src => src.Calculation));
 
@@ -148,9 +152,10 @@ public class InGameDataMappingProfile : Profile
 
         CreateMap<byte[], BattleStatsRequestDto>()
             .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => ByteString.CopyFrom(src)));
-        
+
         CreateMap<ReworkedWonderDto, CityWonder>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString2<WonderId>(src.Id, '_')));
+            .ForMember(dest => dest.Id,
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString2<WonderId>(src.Id, '_')));
 
         CreateMap<PlayerProfileResponse, PlayerProfile>()
             .ForMember(dest => dest.Player, opt => opt.MapFrom(src => src.PlayerWithAlliance))
@@ -162,7 +167,7 @@ public class InGameDataMappingProfile : Profile
         CreateMap<PlayerWithAllianceDto, HohPlayer>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PlayerId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.PlayerName))
-            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.PlayerAge))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.PlayerAge)))
             .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.PlayerAvatarId));
         CreateMap<PlayerWithAllianceDto, HohAlliance>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AllianceId))
