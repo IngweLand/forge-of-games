@@ -288,8 +288,8 @@ $
 Base.Resources.jasper_Name碧玉
 N
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_Name攻城兵器軍營
-�
- Base.Units.Unit_OdaNobunaga_Desc�Bring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as “The Fool of Owari” for his wild youth, but he soon showed his true cunning - and no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner - a feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga’s impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying - Oda Nobunaga always played to win!
+�
+ Base.Units.Unit_OdaNobunaga_Desc�讓火與雷降臨戰場吧！與織田信長一同出征！這位 16 世紀的日本傳奇大名，是一位才智卓絕、手段強硬的統一者。他的野心與行動，為結束長達數世紀的戰國亂世奠定了基礎。信長誕生於 1534 年，年輕時因舉止狂放被譏為「尾張的大傻瓜」，但他很快展現出驚人的謀略——讓所有嘲笑他的人啞口無言。<br><br>織田信長將火繩槍大規模引入戰爭，憑藉精妙的戰術與壓倒性的火力打敗眾多強敵（有時還伴隨戲劇性的場面）。他曾燒毀比叡山擊潰僧兵、剷除有力大名，甚至立志將整個日本納入旗下——這個夢想差點在 1582 年本能寺之變前實現。<br><br>雖然他的結局伴隨火光與背叛，但織田信長的影響力並未隨之熄滅。他為德川幕府鋪路，也為現代日本的雛形立下根基。無懼、叛逆、令人震懾——織田信長從不打無準備之仗，因為他天生為勝利而戰！
 Z
 ,Base.Units.Unit_FeudalAge_Player_Axemen_Desc*步兵位於前列可發揮最大作用。
 J
@@ -1190,7 +1190,7 @@ i
 8
 (Base.Regions.region.EasternValley_1_Name熱帶海岸
 �
-5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Desc�這種稀有資源可以讓你升級聖物<nobr><style=legendary>穆伊斯卡木筏</nobr></style>。<br>它可以在某些活動中與聖物之塵一起作為獎勵獲得。
+5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Desc�這種稀有資源可以讓你升級聖物<nobr><style=legendary>穆伊斯卡金筏</nobr></style>。<br>它可以在某些活動中與聖物之塵一起作為獎勵獲得。
 B
 $Base.Heroes.hero.AlbertEinstein_Name阿爾伯特·愛因斯坦
 4
@@ -3762,10 +3762,10 @@ H
 &Base.Resources.fragrant_potpourri_Name芳香乾花
 :
 $Base.Resources.hero.OdaNobunaga_Name織田信長精華
-T
-Base.Resources.goblet_Desc6高腳杯是可以在工匠等級 5 生產的商品。
 `
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬季市場
+T
+Base.Resources.goblet_Desc6高腳杯是可以在工匠等級 5 生產的商品。
 �
 Base.Units.Unit_Confucius_Desc�學習統治之道，且藏起舞女：孔子來了。這位公元前6至5世紀的中國哲學家，以其教義深刻影響了中國的思想與文化。他的教義匯編成《論語》，其中強調道德、家庭忠誠和社會和諧的重要性。<br><br>孔子以提倡孝道、尊老和教育的重要性而聞名，他旨在為個人和政府行為創造一套道德框架。他的哲學強調義與禮在維護社會秩序中的重要角色。<br><br>孔子作為中國歷史的基石人物，其原則至今仍對東方哲學、文化及全球的社會實踐產生深遠影響。
 ,
@@ -7036,8 +7036,8 @@ O
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>風暴召喚</style> 秦始皇召喚他的靈劍，穿越戰場對敵方單位造成 <style=basestat>{dmg_percentage}</style> 的傷害，並為友方單位恢復相當於秦始皇基礎傷害 <style=basestat>{heal_percentage}</style> 的生命值，持續 <style=basestat>{duration}</style>。
 7
 'Base.Resources.hero.AbrahamLincoln_Name林肯精華
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>免疫</style>每隔 <style=basestat>{cooldown}</style> 秒，獲得一次免疫控場效果的保護。<br>控場效果包括：嘲諷、心智控制、暈眩、技能封鎖、攻速減緩、移速減緩，以及命中率降低。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc enhances the recovery of its wielder, improving all healing they receive by <style=basestat>{heal_amp}</style>
 U
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_Name獎盃點數
 d

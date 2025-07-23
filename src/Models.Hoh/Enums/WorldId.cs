@@ -13,4 +13,5 @@ public enum WorldId
     TeslaStormRed,
     TeslaStormYellow,
     SiegeOfOrleans,
+    SpartasLastStand,
 }

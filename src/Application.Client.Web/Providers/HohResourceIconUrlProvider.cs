@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Shared.Helpers;
 using ResourceType = Ingweland.Fog.Models.Hoh.Enums.ResourceType;
 
 namespace Ingweland.Fog.Application.Client.Web.Providers;
@@ -14,12 +15,11 @@ public class HohResourceIconUrlProvider : IHohResourceIconUrlProvider
 
     public string GetIconUrl(string resourceId)
     {
-        var id = resourceId switch
+        var concreteId = HohStringParser.GetConcreteId(resourceId);
+        var id = concreteId switch
         {
-            "resource.hero_xp" => "icon_hero_xp",
-            "resource.mastery_points" => "icon_mastery_points",
             "good" => "icon_good_storage",
-            _ => $"icon_{resourceId}",
+            _ => $"icon_{concreteId}",
         };
 
         return _assetUrlProvider.GetHohIconUrl(id);

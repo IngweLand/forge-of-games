@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace HohProtoParser.Converters;
 
@@ -30,7 +31,7 @@ public class CultureComponentTypeConverter : ITypeConverter<CultureComponentDTO,
                 var ageLevelDefinitionId = ageValue.PackedThen.Unpack<DynamicFloatValueDTO>().DynamicValueId;
                 var ageLevelDefinitions = dynamicDefinitions.First(src => src.Id == ageLevelDefinitionId);
                 ProcessValues(ageLevelDefinitions, ageLevelValues);
-                values.Add(ageValue.When, ageLevelValues);
+                values.Add(HohStringParser.GetConcreteId(ageValue.When), ageLevelValues);
             }
 
             var importantAges = ages.Where(kvp => kvp.Value.Index is > 1 and < 30 && kvp.Value.Id != "ComingSoon")

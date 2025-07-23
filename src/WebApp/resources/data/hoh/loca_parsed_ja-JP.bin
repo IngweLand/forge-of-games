@@ -3756,10 +3756,10 @@ N
 &Base.Resources.fragrant_potpourri_Name	香り袋
 =
 $Base.Resources.hero.OdaNobunaga_Name織田信長の精髄
-^
-Base.Resources.goblet_Desc@ゴブレットはレベル5の職人工房で生産できる。
 `
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬の市場
+^
+Base.Resources.goblet_Desc@ゴブレットはレベル5の職人工房で生産できる。
 �
 Base.Units.Unit_Confucius_Desc�統治を学び、舞姫たちを脇に置いて、孔子の教えを深めよう！紀元前６世紀から５世紀にかけて活躍した中国の哲学者、孔子は、その思想によって中国の文化と社会に深い影響を与えた。『論語』にまとめられた教えは、道徳、孝行、そして社会の調和の重要性を説いている。<br><br>孝行や年長者への敬意、教育の大切さといった美徳を提唱し、個人と国家の行動指針となる倫理的な枠組みを築こうとした。その哲学では、社会秩序を維持するために義と礼の重要性が強調されている。<br><br>孔子の思想は、中国の歴史や文化の基盤となり、今もなお東洋の哲学や社会的実践に深く影響を与え続けている。
 ,
@@ -6763,8 +6763,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�
 *Base.Units.Unit_EarlyRome_Huns_Attila_Name血の騎士団
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_Nameビザンツ弩砲
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを召喚し、最大3体の敵ユニットを攻撃させ、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、ドラキュラは自身の基礎ダメージの<style=basestat>{heal_per_unit}</style>分を回復する。
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを呼び出し、最大3体の敵ユニットを攻撃させ、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、ドラキュラは自身の基礎ダメージの<style=basestat>{heal_per_unit}</style>分を回復する。
 G
 4Base.Technologies.Technology_RomanEmpire_Goblet_Nameゴブレット
 Z
@@ -7027,8 +7027,8 @@ G
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与えると同時に、味方ユニットを<style=basestat>{duration}</style>の間、始皇帝の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
 X
 'Base.Resources.hero.AbrahamLincoln_Name-エイブラハム・リンカーンの精髄
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>免疫</style><style=basestat>{cooldown}</style>秒ごとに、行動制限を防ぐ。<br>行動制限には、挑発、精神支配、気絶、アビリティ封鎖、攻撃速度低下、移動速度低下、命中率低下が含まれる。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc enhances the recovery of its wielder, improving all healing they receive by <style=basestat>{heal_amp}</style>
 [
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_Name挑戦ポイント
 t

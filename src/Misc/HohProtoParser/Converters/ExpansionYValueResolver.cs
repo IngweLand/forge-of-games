@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace HohProtoParser.Converters;
 
@@ -9,7 +10,7 @@ public class ExpansionYValueResolver:IValueResolver<ExpansionDefinitionDTO, Expa
 {
     public int Resolve(ExpansionDefinitionDTO source, ExpansionBasicData destination, int destMember, ResolutionContext context)
     {
-        var expansionSize = GetExpansionSize(source.CityId);
+        var expansionSize = GetExpansionSize(HohStringParser.GetConcreteId(source.CityId));
         return -source.Y - expansionSize;
     }
     

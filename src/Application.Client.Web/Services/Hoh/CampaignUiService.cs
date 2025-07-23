@@ -41,7 +41,9 @@ public class CampaignUiService(
         }
 
         var siegeOfOrleans = await campaignService.GetRegionBasicDataAsync(RegionId.SiegeOfOrleans);
-        _cachedHistoricBattles = [mapper.Map<RegionBasicViewModel>(siegeOfOrleans)];
+        var spartasLastStand = await campaignService.GetRegionBasicDataAsync(RegionId.SpartasLastStand);
+        _cachedHistoricBattles =
+            [mapper.Map<RegionBasicViewModel>(siegeOfOrleans), mapper.Map<RegionBasicViewModel>(spartasLastStand)];
         return _cachedHistoricBattles;
     }
 
