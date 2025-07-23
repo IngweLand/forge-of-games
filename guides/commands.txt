@@ -1,0 +1,3 @@
+# Renaming of portrait icons
+Get-ChildItem -Filter "player_portrait_*.png" | Where-Object { $_.Name -match "^player_portrait_(\d+)_.*\.png$" } | Rename-Item -NewName { "player_portrait_$($matches[1]).png" }
+
