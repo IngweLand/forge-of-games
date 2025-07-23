@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
@@ -20,8 +21,11 @@ public interface IStatsHubViewModelsFactory
         IReadOnlyDictionary<string, AgeDto> ages);
 
     TopStatsViewModel CreateTopStats(IReadOnlyCollection<PlayerDto> mainPlayers,
-        IReadOnlyCollection<PlayerDto> betaPlayers, IReadOnlyCollection<AllianceDto> mainAlliances,
-        IReadOnlyCollection<AllianceDto> betaAlliances, IReadOnlyDictionary<string, AgeDto> ages);
+        IReadOnlyCollection<PlayerDto> betaPlayers,
+        IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
+        IReadOnlyCollection<string> topHeroes,
+        IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyCollection<HeroBasicViewModel> heroes);
 
     AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
         IReadOnlyDictionary<string, AgeDto> ages);

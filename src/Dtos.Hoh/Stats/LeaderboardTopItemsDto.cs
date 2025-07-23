@@ -8,4 +8,5 @@ public class LeaderboardTopItemsDto
     public PaginatedList<PlayerDto> BetaWorldPlayers { get; init; } = PaginatedList<PlayerDto>.Empty;
     public PaginatedList<AllianceDto> MainWorldAlliances { get; init; } = PaginatedList<AllianceDto>.Empty;
     public PaginatedList<PlayerDto> MainWorldPlayers { get; init; } = PaginatedList<PlayerDto>.Empty;
+    public IReadOnlyCollection<string> TopHeroes { get; init; } = [];
 }

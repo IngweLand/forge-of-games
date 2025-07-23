@@ -125,7 +125,8 @@ public class StatsHubUiService(
 
         _topStatsViewModel = statsHubViewModelsFactory.CreateTopStats(topItems.MainWorldPlayers.Items,
             topItems.BetaWorldPlayers.Items,
-            topItems.MainWorldAlliances.Items, topItems.BetaWorldAlliances.Items, _ages!);
+            topItems.MainWorldAlliances.Items, topItems.BetaWorldAlliances.Items, topItems.TopHeroes, _ages!,
+            await heroProfileUiService.GetHeroes());
 
         return _topStatsViewModel;
     }

@@ -37,4 +37,7 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH)]
     Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH)]
+    Task<IReadOnlyCollection<string>> GetTopHeroesAsync(CancellationToken ct = default);
 }

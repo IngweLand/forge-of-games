@@ -7,6 +7,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -48,8 +49,11 @@ public class StatsHubViewModelsFactory(
     public TopStatsViewModel CreateTopStats(IReadOnlyCollection<PlayerDto> mainPlayers,
         IReadOnlyCollection<PlayerDto> betaPlayers,
         IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
-        IReadOnlyDictionary<string, AgeDto> ages)
+        IReadOnlyCollection<string> topHeroes,
+        IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyCollection<HeroBasicViewModel> heroes)
     {
+        var heroesDic = heroes.ToDictionary(h => h.UnitId);
         return new TopStatsViewModel
         {
             MainWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(mainPlayers,
@@ -58,6 +62,7 @@ public class StatsHubViewModelsFactory(
                 opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
             MainWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(mainAlliances),
             BetaWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(betaAlliances),
+            Heroes = topHeroes.Select(x => heroesDic[x]).ToList(),
         };
     }
 

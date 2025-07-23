@@ -46,10 +46,15 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(new GetAllLeaderboardTopItemsQuery(), ct);
     }
 
+    public Task<IReadOnlyCollection<string>> GetTopHeroesAsync(CancellationToken ct = default)
+    {
+        return sender.Send(new GetTopHeroesQuery(), ct);
+    }
+
     public Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, int startIndex = 0,
         int count = FogConstants.DEFAULT_STATS_PAGE_SIZE, CancellationToken ct = default)
     {
-        var query = new GetPlayerBattlesQuery()
+        var query = new GetPlayerBattlesQuery
         {
             PlayerId = playerId,
             StartIndex = startIndex,

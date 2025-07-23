@@ -55,6 +55,8 @@ public static class FogUrlBuilder
         public const string COMMON_AGES = "/common/ages";
         public const string COMMON_RESOURCES = "/common/resources";
         public const string COMMON_CITIES = "/common/cities";
+        
+        public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
     }
 
     public static class PageRoutes
@@ -116,9 +118,9 @@ public static class FogUrlBuilder
             return PLAYER_PROFILE_TEMPLATE.Replace("{playerId:int}", id.ToString());
         }
 
-        public static string HeroPlayground(string heroId)
+        public static string Hero(string heroId)
         {
-            return $"{COMMAND_CENTER_HERO_PLAYGROUNDS_PATH}/{heroId}";
+            return HERO_TEMPLATE.Replace("{heroId}", heroId);
         }
 
         public static string Alliance(int id)

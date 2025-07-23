@@ -2292,6 +2292,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Top heroes.
+        /// </summary>
+        public static string StatsHub_TopHeroesListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.TopHeroesListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updated on {0}.
         /// </summary>
         public static string StatsHub_UpdatedOn {

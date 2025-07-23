@@ -32,6 +32,13 @@
                 Alliances="@_topStats?.BetaWorldAlliances"/>
 
         </div>
+        
+        <div class="column">
+            <TopHeroesComponent
+                Title="@Loc[FogResource.StatsHub_TopHeroesListTitle]"
+                Heroes="@_topStats?.Heroes"/>
+
+        </div>
     </div>
 }
 else
