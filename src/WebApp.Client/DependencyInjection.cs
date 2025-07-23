@@ -80,7 +80,10 @@ internal static class DependencyInjection
     {
         services
             .AddRefitClient<T>(settings)
-            .ConfigureHttpClient(client => { client.BaseAddress = new Uri($"{baseAddress}api/hoh"); })
+            .ConfigureHttpClient(client =>
+            {
+                client.BaseAddress = new Uri($"{baseAddress}api/hoh");
+            })
             .AddStandardResilienceHandler(options =>
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
