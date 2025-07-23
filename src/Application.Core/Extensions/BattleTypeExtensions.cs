@@ -46,18 +46,6 @@ public static class BattleTypeExtensions
         return BattleType.Campaign;
     }
 
-    public static string GetPrefixForBattleType(this BattleType battleType)
-    {
-        return battleType switch
-        {
-            BattleType.HistoricBattle => nameof(RegionId.SiegeOfOrleans),
-            BattleType.TreasureHunt => "encounter_",
-            BattleType.TeslaStorm => "teslastorm",
-            BattleType.Pvp => "pvp",
-            _ => "",
-        };
-    }
-
     public static int GetSortOrder(this BattleType battleType)
     {
         return SortOrder.GetValueOrDefault(battleType, int.MaxValue);

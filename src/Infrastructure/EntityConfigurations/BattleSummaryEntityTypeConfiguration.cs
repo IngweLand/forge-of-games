@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -14,7 +15,6 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
 
         builder.Ignore(p => p.Key);
 
-
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
         builder.Property(p => p.BattleDefinitionId).IsRequired();
         builder.Property(p => p.PlayerSquads).IsRequired();
@@ -22,12 +22,14 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.Property(p => p.InGameBattleId).IsRequired();
         builder.Property(p => p.ResultStatus).IsRequired();
         builder.Property(p => p.WorldId).IsRequired();
+        builder.Property(p => p.BattleType).IsRequired().HasConversion<string>().HasDefaultValue(BattleType.Undefined);
 
         builder.HasIndex(p => p.WorldId);
         builder.HasIndex(p => p.InGameBattleId);
         builder.HasIndex(p => p.BattleDefinitionId);
         builder.HasIndex(p => p.ResultStatus);
         builder.HasIndex(p => p.Difficulty);
+        builder.HasIndex(p => p.BattleType);
         builder.HasIndex(p => new {p.WorldId, p.InGameBattleId}).IsUnique();
 
         builder.HasMany(b => b.Units).WithMany(h => h.Battles).UsingEntity(j => j.ToTable("battles_to_units"));

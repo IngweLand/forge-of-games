@@ -58,54 +58,17 @@ public class GetUnitBattlesQueryHandler(
     private async Task<List<BattleSummaryEntity>> GetBattles(string unitId, BattleType battleType,
         CancellationToken cancellationToken)
     {
-        var limit = FogConstants.MaxDisplayedUnitBattles * 2;
-        
-        List<BattleSummaryEntity> allBattles = [];
-        var initQuery = context.BattleUnits.AsNoTracking()
+        var battles = await context.BattleUnits.AsNoTracking()
             .Where(bue => bue.UnitId == unitId)
             .SelectMany(bue => bue.Battles)
-            .OrderByDescending(bse => bse.Id);
+            .OrderByDescending(bse => bse.Id)
+            .Where(x => x.BattleType == battleType)
+            .Take(FogConstants.MaxDisplayedUnitBattles * 2)
+            .ToListAsync(cancellationToken);
 
-        var battleTypePrefix = battleType.GetPrefixForBattleType();
-        if (!string.IsNullOrWhiteSpace(battleTypePrefix))
-        {
-            allBattles = await initQuery
-                .Where(x => x.BattleDefinitionId.StartsWith(battleTypePrefix))
-                .Take(limit)
-                .ToListAsync(cancellationToken);
+        logger.LogDebug("Battle selection complete. Selected {Battles} battles.", battles.Count);
 
-            logger.LogInformation("Final battle selection complete. Selected {Battles} battles with prefix search.",
-                allBattles.Count);
-
-            return allBattles;
-        }
-
-        var currentRun = 0;
-
-        while (allBattles.Count < FogConstants.MaxDisplayedUnitBattles)
-        {
-            var batch = await initQuery
-                .Skip(currentRun * limit)
-                .Take(limit)
-                .ToListAsync(cancellationToken);
-
-            if (batch.Count == 0)
-            {
-                break;
-            }
-
-            allBattles.AddRange(batch.Where(b => b.BattleDefinitionId.ToBattleType() == battleType));
-
-            logger.LogDebug("Fetch attempt {RunNumber}: Retrieved {Battles} battles.",
-                currentRun + 1, allBattles.Count);
-            
-            currentRun++;
-        }
-
-        logger.LogInformation("Final battle selection complete. Selected {Battles} battles after {Runs} runs.",
-            allBattles.Count, currentRun);
-
-        return allBattles.ToList();
+        return battles;
     }
 
     private static UnitBattleDto CreateAverage(List<UnitBattleDto> dtos)

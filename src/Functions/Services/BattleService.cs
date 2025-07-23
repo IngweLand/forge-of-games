@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Constants;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -91,6 +92,7 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
                     Difficulty = difficulty,
                     PlayerSquads = JsonSerializer.Serialize(src.Value.PlayerSquads, JsonSerializerOptions),
                     EnemySquads = JsonSerializer.Serialize(src.Value.EnemySquads, JsonSerializerOptions),
+                    BattleType = battleDefinitionId.ToBattleType(),
                 };
             })
             .ToList();

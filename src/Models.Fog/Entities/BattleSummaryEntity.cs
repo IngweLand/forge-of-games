@@ -11,6 +11,8 @@ public class BattleSummaryEntity
 
     public required string BattleDefinitionId { get; set; }
 
+    public required BattleType BattleType { get; set; }
+
     // Not for all battle locations
     public Difficulty Difficulty { get; set; }
 
