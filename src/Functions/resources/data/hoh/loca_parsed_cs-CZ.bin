@@ -13,6 +13,8 @@ H
 3Base.Buildings.Building_Mayas_Aviary_Premium_1_NameLuxusní voliéra
 �
 Base.HeroClass.Defender_Desc�Obránci se vrhají do útoku a chrání své spojence.<br><line-height=50%><br></line-height><b><color=#3DA229>Silní</color> proti:</b><br>-<indent=5%><color=#3DA229>Kampaň</color>, <color=#3DA229>aréna</color> a <color=#3DA229>Honba za pokladem</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Slabí</color> proti:</b><br>-<indent=5%><color=#CD2A25>Tesla bouře</color>.</indent>
+0
+!Base.Heroes.hero.Nostradamus_NameNostradamus
 Y
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_NameVylepšená rýžová pole
 L
@@ -35,6 +37,8 @@ O
 6Base.Technologies.Technology_China_DrylandFarming_NameSuché zemědělství
 �
 "Base.Resources.spice_treasure_DesciPoklady s kořením jsou rafinovaným zdrojem. Lze je vyrábět v přístavech a luxusních přístavech.
+2
+!Base.Units.Unit_HarryHoudini_NameHarry Houdini
 E
 6Base.Buildings.Building_Vikings_Beehive_Average_6_NameVčelí úl
 Q
@@ -326,6 +330,8 @@ J
 8Base.Technologies.Technology_FeudalAge_RunicWriting_NameRunové písmo
 r
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Desc;Jednotky pěchoty jsou nejefektivnější v přední linii.
+�
+ Base.Regions.SiegeOfOrleans_Desc�It is May 1429, the ninety-first year of the Hundred Years’ War. English forces have been pushing into France, and six months ago they reached Orléans, a walled city on the banks of the river Loire. For the English assault to continue, the city must fall. So for the last six months the enemy has been building fortifications while cannons roar by night. For six months food has been scarce. For six months hope has been gone.<br><br>Joan of Arc was supposed to save them. In our world, the warrior-saint, her banner and her head held high, entered Orléans, and with her she brought food and safety and hope. But here, she never arrived. The city is on its last legs, and it falls to the Heroes of History to save the city without her. The people are ready, but the English are coming. One last battle must be fought, one battle to save Orléans, one battle to let France reclaim her freedom.
 ;
 )Base.Wonders.Wonder_Capital_Colossus_NameRhodský kolos
 a
@@ -609,6 +615,8 @@ T
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_DescOdemkne pomocné jezdce
 1
 Base.Resources.hero.Plato_NameEsence Platóna
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage and healing himself between <style=basestat>{min_heal}</style> and <style=basestat>{max_heal}</style> of his base damage, based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
  
 Base.Resources.fish_NameRyby
 ]
@@ -739,6 +747,8 @@ F
  Base.BuildingTypes.cityHall_NameRadniceRadniceRadnic
 M
 9Base.Buildings.Building_Egypt_PapyrusField_Average_2_DescVyrábí papyrus
+�
+%Base.Resources.hero.HarryHoudini_DesccUsed to increase the Awakening Level of Harry Houdini and thus unlock more powerful battle bonuses.
 O
 4Base.Resources.event_space_grand_prize_progress_NameProgres k hlavní ceně
 O
@@ -1556,6 +1566,8 @@ ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_NameKaolínový 
 Base.Heroes.hero.Hoplit_Name	Miltiades
 �
 #Base.Resources.hero.Hatshepsut_DescmPoužívá se ke zvýšení úrovně probuzení Hatšepsut a tím odemknutí silnějších bojových bonusů.
+�
+!Base.Units.Unit_HarryHoudini_Desc�Slip the locks and dazzle the crowd with Harry Houdini, the ultimate escape artist! Born Erik Weisz in 19th-century Hungary and raised in America, Houdini transformed himself from a struggling sideshow performer into a global sensation, stunning audiences by slipping out of handcuffs, jail cells, straitjackets, and even sealed tanks of water with seemingly supernatural skill.<br><br>Houdini’s feats were the talk of vaudeville and the toast of royalty, and his boundless showmanship made him a legend in the world of magic. But he wasn’t just about spectacle - he dedicated himself to debunking fraudulent mediums, exposing those who preyed on grief with false spiritualism. His legacy as a master of illusion and advocate for honesty survives to this day, though no one has yet found the secret for escaping his level of flair, or his now legendary locked trunks!
 [
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_NameKasárny obléhacích jednotek
 K
@@ -1837,6 +1849,8 @@ g
 LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>Oslabení</style> Cílí na největší shluk nepřátelských jednotek, snižuje ÚTOK o <style=basestat>{atk_percentage}</style> z ÚTOKU Aemilie Tertie na dobu <style=basestat>{duration}</style> v dosahu <style=basestat>{range}</style>.
 Y
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_DescProdukuje chilli
+5
+ Base.Regions.SiegeOfOrleans_NameSiege of Orléans
 =
 2Base.Buildings.Building_Egypt_City_CityHall_1_NameRadnice
 d
@@ -2553,6 +2567,8 @@ P
 Base.Units.Unit_DArtagnan_Desc�Enchanté! Charles de Batz de Castelmore d'Artagnan, kapitán gardových mušketýrů Ludvíka XIV., k vašim službám! D'Artagnan (jak mu budeme říkat, abychom ušetřili místo) byl francouzský mušketýr 17. století, jehož legenda byla rozšířena v románu Alexandra Dumase "Tři mušketýři".<br><br>D'Artagnan pocházel z poměrně skromných poměrů (byl jen drobným šlechticem), sloužil jako špeh, mušketýr a guvernér, Proslavil se zatčením směšně bohatého Nicolase Fouqueta, kterého osobně hlídal: kohokoli jiného mohl podplatit.<br><br>D'Artagnanův život byl značně přehnaný v románu "Les mémoires de M. d'Artagnan", který byl zase značně přehnaný v románu "Tři mušketýři" od Alexandra Dumase. Tato verze - rytířský, švihácký hrdina - žije dodnes. D'Artagnan byl možná trochu nudnější. Neustále vyzývá Leonida k soutěži o nejdelší jméno. Leonidas nechápe, proč pokaždé prohraje!
 P
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_NamePosvátná jednotka
+a
+3Base.Abilities.hero_battle_ability.OdaNobunaga_Name*Calm Before The Storm & Heavenly Execution
 D
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_NameRadnice
 o
@@ -2621,6 +2637,8 @@ L
 Base.Resources.cape_NameKápě
 X
 'Base.BuildingTypes.extractionPoint_NameMísto těžbyMísta těžbyMíst těžby
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 ?
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name
 Legionář
@@ -3094,6 +3112,8 @@ J
 6Base.Technologies.Technology_MinoanEra_MarbleBust_NameMramorová busta
 `
 Base.Resources.cape_DescDKápě jsou zboží, které lze vyrábět u krejčího - úroveň 5.
+3
+"Base.Heroes.hero.HarryHoudini_NameHarry Houdini
 D
 9Base.Technologies.Technology_KingdomOfSicily_Pedites_NamePedité
 I
@@ -3209,6 +3229,8 @@ r
 Base.Heroes.hero.Dracula_NameVlad Drákula
 O
  Base.BuildingGroups.artisan_NameŘemeslníkŘemeslnictvíŘemeslnictví
+A
+%Base.Resources.hero.HarryHoudini_NameEssence of Harry Houdini
 U
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameAkademie hrdinů
 �
@@ -3807,11 +3829,11 @@ Q
 &Base.Resources.fragrant_potpourri_NameVoňavé bylinky
 ;
 $Base.Resources.hero.OdaNobunaga_NameEsence Oda Nobunaga
+h
+Base.Resources.goblet_DescJPoháry jsou zboží, které lze vyrábět v řemeslnících - úroveň 5.
 ^
 PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name
 Zimní trh
-h
-Base.Resources.goblet_DescJPoháry jsou zboží, které lze vyrábět v řemeslnících - úroveň 5.
 �
 Base.Units.Unit_Confucius_Desc�Naučte se vládnout a schovejte tančící dívky: Konfucius je tady. Tento velmi vlivný čínský filozof z 6. až 5. století př. n. l. svým učením formoval čínské myšlení a kulturu. Ta jsou sepsána v "Analektech" a zdůrazňují morálku, rodinnou věrnost a důležitost společenské harmonie.<br><br>Konfucius, známý pro obhajobu ctností, jako je synovská zbožnost, úcta ke starším a důležitost vzdělání, se snažil vytvořit etický rámec pro osobní i vládní jednání. Jeho filozofie zdůrazňuje roli spravedlnosti a slušnosti při udržování společenského řádu.<br><br>Konfucius je dodnes základní postavou čínských dějin a jeho zásady nadále ovlivňují východní filozofii, kulturu a společenskou praxi po celém světě.
 .
@@ -4374,6 +4396,8 @@ H
 5Base.Buildings.Building_China_RiceFarm_Average_3_NameRýžová farma
 1
 !Base.Heroes.hero.WilliamTell_NameWilliam Tell
+�
+$Base.Resources.hero.Nostradamus_DescaUsed to increase the Awakening Level of Nostradamus and thus unlock more powerful battle bonuses.
 V
 @Base.Technologies.Technology_ByzantineEra_CrossgroinedVault_NameKřížová klenba
 �
@@ -4623,6 +4647,8 @@ M
  Base.Heroes.hero.LadySixSky_NameLady Six Sky
 �
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc�Tento vzácný zdroj vám umožní vylepšit relikvii <nobr><style=legendary>Prométheova pochodeň</style></nobr>.<br>Lze ho získat spolu s prachem relikvií jako odměnu v určitých událostech.
+�
+ Base.Units.Unit_Nostradamus_Desc�Unlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les Prophéties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus’ reputation reached the highest circles - he even read the fortunes of Catherine de’ Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
 F
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameDům pracovníka
 K
@@ -4894,6 +4920,8 @@ Q
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Posílení | Krvácení</style>Zvyšuje poškození hrdiny proti krvácejícím cílům o <style=basestat>{damage_increase_per_relic_level}</style>. Kromě toho má poškození nepřítele šanci <style=basestat>{bleed_chance_percentage}</style> způsobit krvácení, které způsobuje <style=basestat>{bleed_percentage_per_relic_level}</style> poškození za sekundu po dobu <style=basestat>{bleed_duration}</style>.
 ]
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatické řízení
+>
+$Base.Resources.hero.Nostradamus_NameEssence of Nostradamus
 C
 1Base.Buildings.Building_Egypt_Home_Average_2_NameStřední dům
 �
@@ -5920,6 +5948,8 @@ M
 :Base.Technologies.Technology_IberianEra_FjordDominion_NameKrajina fjordů
 6
 &Base.Regions.region.DesertDelta_6_NameSrdce Sparty
+E
+2Base.Abilities.hero_battle_ability.LadyKasuga_NameMoonlight Favor
 Y
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_NameMalá kulturní památka
 w
@@ -6071,6 +6101,8 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameKasárny t�
 )Base.Units.Unit_QueenSeondeokOfSilla_Desc�Vraťte hvězdy na oblohu s královnou Sondok ze Silly! Tato vůbec první královna starověké Koreje usedla na trůn v 7. století. Po svém nástupu na trůn se postarala o chudé, nemocné a staré lidi. Tato láska k obyvatelstvu určovala její vládu.<br> <br>Královna Sondok procházela konflikty i mír s obratností, vírou a milostí. Silla byla obohacena o spojenectví, velké pagody a observatoře. Příběhy o její velkoleposti jsou zaznamenány v Samguk Yusa a dalších historických textech. <br><br>Odkazem Sondok je samotná Korea. Její spojenectví s Tangy vedlo k prvnímu sjednocení Koreje pod vládou Silla a ona zasela semínka pro rozkvět kultury království. Podle některých příběhů měla Sondok věštecké schopnosti. Díky býčím žábám a obrazům květin se její legenda rozrostla. Schválně, jestli to dokážeš: Na podzim přistane vrána na býčích rozích! Co by to mohlo znamenat?
 @
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameRadnice
+9
+"Base.Regions.SpartasLastStand_NameSparta's Last Stand
 A
 &Base.Resources.hero.PakalTheGreat_NameEsence Pakala Velikého
 �
@@ -6303,6 +6335,8 @@ s
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc.Výrazně zvyšuje spokojenost okolních budov
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_NameŠkola
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>Shield| Buff</style>Lady Kasuga imbues the power of Moonlight into an ally, granting them a shield worth <style=basestat>{shield_value}</style> of her base damage and increasing their critical strike chance by <style=basestat>{crit_chance_buff}</style>. The critical chance buff lasts for <style=basestat>{crit_chance_buff_duration}</style>.
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>Úder na blízko | Krvácení</style>Švihá mečem na svůj aktuální cíl pětkrát, přičemž každým úderem způsobí zvýšené poškození, celkem <style=basestat>{dmg_percentage}</style> poškození. Každý úder má <style=basestat>{chance_percentage}</style> šanci způsobit, že protivník bude krvácet a utrpí <style=basestat>{dmg_percentage_bleed}</style> poškození během <style=basestat>{duration}</style>.
 G
@@ -6624,6 +6658,8 @@ Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameKasárny kavalerie
 w
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc;Vyrábí malé množství jídla během krátkého období.
+�
+"Base.Regions.SpartasLastStand_Desc�It is August 480 BC, the Second Persian invasion of Greece is underway. King Xerxes of Persia leads a massive army, intent on conquering all of Greece. The narrow pass at Thermopylae, the 'Hot Gates', becomes the chosen battleground. Here, King Leonidas of Sparta stands with 300 of his finest warriors, ready to defend their land to the last breath.<br><br>For days, they withstand wave after wave of Persian attacks, their phalanx holding firm against the overwhelming numbers. Leonidas fights not just for Sparta, but for all of Greece, knowing that their stand buys crucial time for the Greek city-states to unite against the invader. <br><br>In our world, their valiant sacrifice became a symbol of courage and resistance. They were never meant to die on that day. Now, their fate is in your hands. The Heroes of History are summoned to tip the scales of destiny. With your arrival, Leonidas and his 300 are not merely holding the line. They are poised to rewrite history.
 *
 Base.Resources.porcelain_Name	Porcelán
 G
@@ -7125,8 +7161,8 @@ i
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>Úder bouře</style>Císař Čchin vyvolá svůj duchovní meč, který letí přes bojiště, způsobuje nepřátelským jednotkám <style=basestat>{dmg_percentage}</style> poškození a léčí spojenecké jednotky za <style=basestat>{heal_percentage}</style> z císařova základního poškození po dobu <style=basestat>{duration}</style>.
 C
 'Base.Resources.hero.AbrahamLincoln_NameEsence Abrahama Lincolna
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc increases the healing taken from any source by <style=basestat>{heal_amp}</style>
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Imunita</style>Poskytuje ochranu před efekty kontroly davu jednou za <style=basestat>{cooldown}</style> sekund.<br>Efekty ovládání davu zahrnují provokace, ovládání mysli, omráčení, blokování schopností, zpomalení rychlosti útoku, zpomalení rychlosti pohybu a snížení přesnosti.
 y
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_NameTrofejní bodTrofejní bodyTrofejních bodů
 h
@@ -7145,6 +7181,8 @@ H
 5Base.Buildings.Building_China_RiceFarm_Average_4_DescVyrábí rýži
 G
 2Base.Buildings.Building_Vikings_Home_Sailor_5_NameDům námořníka
+/
+ Base.Units.Unit_Nostradamus_NameNostradamus
 K
 7Base.Technologies.Technology_Vikings_SkaldicPoetry_NameSkaldská poezie
 R

@@ -13,6 +13,8 @@ C
 3Base.Buildings.Building_Mayas_Aviary_Premium_1_Name豪華鳥舍
 �
 Base.HeroClass.Defender_Desc�防禦者衝入突破口並保護他們的盟友。<br><line-height=50%><br></line-height><color=#3DA229>強的</color>反對：<br> •<indent=5%><color=#3DA229>活動</color>,<color=#3DA229>競技場</color>和<color=#3DA229>尋寶</color>。</indent><br><line-height=50%><br></line-height><color=#CD2A25>虛弱的</color>反對：<br> •<indent=5%><color=#CD2A25>特斯拉風暴</color>。</indent>
+0
+!Base.Heroes.hero.Nostradamus_NameNostradamus
 K
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_Name強化稻田
 H
@@ -35,6 +37,8 @@ F
 6Base.Technologies.Technology_China_DrylandFarming_Name旱地農業
 �
 "Base.Resources.spice_treasure_Desc`香料珍品是一種精緻的資源。它們可以在水手港口和豪華水手港口生產。
+2
+!Base.Units.Unit_HarryHoudini_NameHarry Houdini
 @
 6Base.Buildings.Building_Vikings_Beehive_Average_6_Name蜂巢
 M
@@ -284,8 +288,8 @@ $
 Base.Resources.jasper_Name碧玉
 N
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_Name攻城兵器軍營
-�
- Base.Units.Unit_OdaNobunaga_Desc�讓火與雷降臨戰場吧！與織田信長一同出征！這位 16 世紀的日本傳奇大名，是一位才智卓絕、手段強硬的統一者。他的野心與行動，為結束長達數世紀的戰國亂世奠定了基礎。信長誕生於 1534 年，年輕時因舉止狂放被譏為「尾張的大傻瓜」，但他很快展現出驚人的謀略——讓所有嘲笑他的人啞口無言。<br><br>織田信長將火繩槍大規模引入戰爭，憑藉精妙的戰術與壓倒性的火力打敗眾多強敵（有時還伴隨戲劇性的場面）。他曾燒毀比叡山擊潰僧兵、剷除有力大名，甚至立志將整個日本納入旗下——這個夢想差點在 1582 年本能寺之變前實現。<br><br>雖然他的結局伴隨火光與背叛，但織田信長的影響力並未隨之熄滅。他為德川幕府鋪路，也為現代日本的雛形立下根基。無懼、叛逆、令人震懾——織田信長從不打無準備之仗，因為他天生為勝利而戰！
+�
+ Base.Units.Unit_OdaNobunaga_Desc�Bring fire and thunder to the battlefield with Oda Nobunaga! This legendary daimyo of 16th-century Japan was a brilliant, ruthless unifier whose ambition set the stage for the end of centuries of civil war. Born in 1534, Nobunaga quickly gained a reputation as “The Fool of Owari” for his wild youth, but he soon showed his true cunning - and no one laughed for long.<br><br>Nobunaga introduced firearms into Japanese warfare in a big way, defeating his rivals with both strategy and superior firepower (and occasionally a bit of dramatic flair). He destroyed Buddhist warrior-monks at Mount Hiei, toppled powerful clans, and even dreamed of unifying the nation under his banner - a feat nearly achieved before his dramatic betrayal at Honno-ji in 1582.<br><br>Although his story ended in flames, Nobunaga’s impact was anything but fleeting: he paved the way for the Tokugawa shogunate and the Japan we know today. Fearless, unconventional, and occasionally terrifying - Oda Nobunaga always played to win!
 Z
 ,Base.Units.Unit_FeudalAge_Player_Axemen_Desc*步兵位於前列可發揮最大作用。
 J
@@ -322,6 +326,8 @@ H
 8Base.Technologies.Technology_FeudalAge_RunicWriting_Name符文文字
 a
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Desc*步兵位於前列可發揮最大作用。
+�
+ Base.Regions.SiegeOfOrleans_Desc�It is May 1429, the ninety-first year of the Hundred Years’ War. English forces have been pushing into France, and six months ago they reached Orléans, a walled city on the banks of the river Loire. For the English assault to continue, the city must fall. So for the last six months the enemy has been building fortifications while cannons roar by night. For six months food has been scarce. For six months hope has been gone.<br><br>Joan of Arc was supposed to save them. In our world, the warrior-saint, her banner and her head held high, entered Orléans, and with her she brought food and safety and hope. But here, she never arrived. The city is on its last legs, and it falls to the Heroes of History to save the city without her. The people are ready, but the English are coming. One last battle must be fought, one battle to save Orléans, one battle to let France reclaim her freedom.
 E
 )Base.Wonders.Wonder_Capital_Colossus_Name羅德島太陽神銅像
 `
@@ -602,6 +608,8 @@ O
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_Desc解鎖輔助騎兵
 1
 Base.Resources.hero.Plato_Name柏拉圖精華
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage and healing himself between <style=basestat>{min_heal}</style> and <style=basestat>{max_heal}</style> of his base damage, based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 
 Base.Resources.fish_Name魚
 X
@@ -729,6 +737,8 @@ A
  Base.BuildingTypes.cityHall_Name	市政廳
 L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_2_Desc生產紙莎草
+�
+%Base.Resources.hero.HarryHoudini_DesccUsed to increase the Awakening Level of Harry Houdini and thus unlock more powerful battle bonuses.
 D
 4Base.Resources.event_space_grand_prize_progress_Name大獎進度
 Q
@@ -1180,7 +1190,7 @@ i
 8
 (Base.Regions.region.EasternValley_1_Name熱帶海岸
 �
-5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Desc�這種稀有資源可以讓你升級聖物<nobr><style=legendary>穆伊斯卡金筏</nobr></style>。<br>它可以在某些活動中與聖物之塵一起作為獎勵獲得。
+5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Desc�這種稀有資源可以讓你升級聖物<nobr><style=legendary>穆伊斯卡木筏</nobr></style>。<br>它可以在某些活動中與聖物之塵一起作為獎勵獲得。
 B
 $Base.Heroes.hero.AlbertEinstein_Name阿爾伯特·愛因斯坦
 4
@@ -1521,6 +1531,8 @@ ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_Name陶土採掘
 Base.Heroes.hero.Hoplit_Name米提亞德斯
 {
 #Base.Resources.hero.Hatshepsut_DescT用於提升哈特謝普蘇的覺醒等級，從而解鎖更強大的戰鬥加成。
+�
+!Base.Units.Unit_HarryHoudini_Desc�Slip the locks and dazzle the crowd with Harry Houdini, the ultimate escape artist! Born Erik Weisz in 19th-century Hungary and raised in America, Houdini transformed himself from a struggling sideshow performer into a global sensation, stunning audiences by slipping out of handcuffs, jail cells, straitjackets, and even sealed tanks of water with seemingly supernatural skill.<br><br>Houdini’s feats were the talk of vaudeville and the toast of royalty, and his boundless showmanship made him a legend in the world of magic. But he wasn’t just about spectacle - he dedicated himself to debunking fraudulent mediums, exposing those who preyed on grief with false spiritualism. His legacy as a master of illusion and advocate for honesty survives to this day, though no one has yet found the secret for escaping his level of flair, or his now legendary locked trunks!
 O
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_Name攻城兵器軍營
 H
@@ -1799,6 +1811,8 @@ Z
 LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>減益效果</style>針對最大的敵軍團體，降低其攻擊力，數值為艾米莉亞·特爾提亞攻擊力的<style=basestat>{atk_percentage}</style>，持續<style=basestat>{duration}</style>，範圍為<style=basestat>{range}</style>。
 U
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Desc生產辣椒
+5
+ Base.Regions.SiegeOfOrleans_NameSiege of Orléans
 ?
 2Base.Buildings.Building_Egypt_City_CityHall_1_Name	大禮堂
 f
@@ -2499,6 +2513,8 @@ M
 Base.Units.Unit_DArtagnan_Desc�幸會！查爾斯‧德‧巴茨‧德‧卡斯特爾莫爾‧達太安，法王路易十四的御前火槍隊隊長，隨時為您效勞！達太安（為了節省空間，我們就這樣稱呼他）是17世紀的法國火槍手，他的傳奇因亞歷山大‧仲馬的小說《三劍客》而廣為流傳。<br><br>從相對卑微的出身（僅為小貴族）到成為間諜、火槍手及省督，達太安以其軍事才能和忠誠聞名。他最著名的事蹟之一是逮捕了極為富有的尼古拉‧富凱，並親自監視他，因為任何其他人都可能被賄賂。<br><br>達太安的生平在《達太安回憶錄》中被極大誇飾，而該書又成為仲馬小說《三劍客》的靈感來源。在文學的渲染下，達太安化身為英勇無畏、瀟灑俠義的傳奇人物，這個形象至今仍然深植人心。至於真實的達太安，或許沒有那麼戲劇化。他最近熱衷於和列奧尼達斯比拚「名字最長」的比賽，列奧尼達斯一直搞不懂，為什麼每次都輸！
 C
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_Name聖隊
+a
+3Base.Abilities.hero_battle_ability.OdaNobunaga_Name*Calm Before The Storm & Heavenly Execution
 F
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_Name	大禮堂
 m
@@ -2567,6 +2583,8 @@ w
 Base.Resources.cape_Name斗篷
 4
 'Base.BuildingTypes.extractionPoint_Name	提取點
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 A
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name軍團士兵
 G
@@ -3034,6 +3052,8 @@ I
 6Base.Technologies.Technology_MinoanEra_MarbleBust_Name大理石雕像
 M
 Base.Resources.cape_Desc1斗篷是可以在裁縫 - 等級5生產的商品
+3
+"Base.Heroes.hero.HarryHoudini_NameHarry Houdini
 C
 9Base.Technologies.Technology_KingdomOfSicily_Pedites_Name步兵
 F
@@ -3148,6 +3168,8 @@ Q
 Base.Heroes.hero.Dracula_Name弗拉德·德古拉
 *
  Base.BuildingGroups.artisan_Name工匠
+A
+%Base.Resources.hero.HarryHoudini_NameEssence of Harry Houdini
 Q
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Name英雄學院
 �
@@ -3740,10 +3762,10 @@ H
 &Base.Resources.fragrant_potpourri_Name芳香乾花
 :
 $Base.Resources.hero.OdaNobunaga_Name織田信長精華
-`
-PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬季市場
 T
 Base.Resources.goblet_Desc6高腳杯是可以在工匠等級 5 生產的商品。
+`
+PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬季市場
 �
 Base.Units.Unit_Confucius_Desc�學習統治之道，且藏起舞女：孔子來了。這位公元前6至5世紀的中國哲學家，以其教義深刻影響了中國的思想與文化。他的教義匯編成《論語》，其中強調道德、家庭忠誠和社會和諧的重要性。<br><br>孔子以提倡孝道、尊老和教育的重要性而聞名，他旨在為個人和政府行為創造一套道德框架。他的哲學強調義與禮在維護社會秩序中的重要角色。<br><br>孔子作為中國歷史的基石人物，其原則至今仍對東方哲學、文化及全球的社會實踐產生深遠影響。
 ,
@@ -4299,6 +4321,8 @@ d
 5Base.Buildings.Building_China_RiceFarm_Average_3_Name稻田
 3
 !Base.Heroes.hero.WilliamTell_Name威廉·泰爾
+�
+$Base.Resources.hero.Nostradamus_DescaUsed to increase the Awakening Level of Nostradamus and thus unlock more powerful battle bonuses.
 P
 @Base.Technologies.Technology_ByzantineEra_CrossgroinedVault_Name十字拱頂
 e
@@ -4546,6 +4570,8 @@ q
  Base.Heroes.hero.LadySixSky_Name六天夫人
 �
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc�這種稀有資源可以讓你升級聖物<nobr><style=legendary>普羅米修斯火炬</nobr></style>。<br>它可以在某些活動中與聖物之塵一起作為獎勵獲得。
+�
+ Base.Units.Unit_Nostradamus_Desc�Unlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les Prophéties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus’ reputation reached the highest circles - he even read the fortunes of Catherine de’ Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
 B
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name工人之家
 H
@@ -4811,6 +4837,8 @@ N
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>增益 | 流血</style>對流血目標造成的傷害提高 <style=basestat>{damage_increase_per_relic_level}</style>。此外，對敵人造成傷害時有 <style=basestat>{bleed_chance_percentage}</style> 機率施加流血效果，造成每秒 <style=basestat>{bleed_percentage_per_relic_level}</style> 傷害，持續 <style=basestat>{bleed_duration}</style>。
 S
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_Name自動控制
+>
+$Base.Resources.hero.Nostradamus_NameEssence of Nostradamus
 A
 1Base.Buildings.Building_Egypt_Home_Average_2_Name中型家園
 �
@@ -5818,6 +5846,8 @@ J
 :Base.Technologies.Technology_IberianEra_FjordDominion_Name峽灣支配
 9
 &Base.Regions.region.DesertDelta_6_Name斯巴達之心
+E
+2Base.Abilities.hero_battle_ability.LadyKasuga_NameMoonlight Favor
 S
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Name小型文明場所
 W
@@ -5964,6 +5994,8 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Name重步兵�
 )Base.Units.Unit_QueenSeondeokOfSilla_Desc�與新羅善德女王一同將星辰歸還天際吧！公元 7 世紀，這位古代朝鮮歷史上首位女性君主登基。即位後，她安排照顧貧弱、病患與老人，這份對百姓的仁愛成為她統治的核心精神。<br><br>善德女王以信念與智慧在戰爭與和平之間靈活應對，使新羅在她的領導下建立起強大同盟、建造壯麗的佛塔與天文觀測台。關於她的傳說被記錄於《三國遺事》與其他史書之中。<br><br>善德的遺產，就是韓國本身。她與唐朝的聯盟促成了新羅對朝鮮半島的首次統一，也為日後三國文化的盛放奠定基礎。傳說她擁有預言之力，能從蛙鳴與花圖中窺見未來。現在，換你來試試吧：秋天裡，烏鴉將停落在牛角上——這會意味著什麼呢？
 B
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name	大禮堂
+9
+"Base.Regions.SpartasLastStand_NameSparta's Last Stand
 ?
 &Base.Resources.hero.PakalTheGreat_Name帕卡爾大帝精華
 v
@@ -6188,6 +6220,8 @@ f
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc!大幅提升相鄰建築的幸福
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_Name學校
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>Shield| Buff</style>Lady Kasuga imbues the power of Moonlight into an ally, granting them a shield worth <style=basestat>{shield_value}</style> of her base damage and increasing their critical strike chance by <style=basestat>{crit_chance_buff}</style>. The critical chance buff lasts for <style=basestat>{crit_chance_buff_duration}</style>.
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>Melee Strike| Bleed</style>揮劍攻擊當前目標五次，每次攻擊造成更高的傷害，總共造成<style=basestat>{dmg_percentage}</style>傷害。每次攻擊有<style=basestat>{chance_percentage}</style>的機率讓敵手流血，造成<style=basestat>{dmg_percentage_bleed}</style>的持續傷害，持續<style=basestat>{duration}</style>。
 @
@@ -6506,6 +6540,8 @@ K
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_Name騎兵軍營
 W
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc短期生產少量食物。
+�
+"Base.Regions.SpartasLastStand_Desc�It is August 480 BC, the Second Persian invasion of Greece is underway. King Xerxes of Persia leads a massive army, intent on conquering all of Greece. The narrow pass at Thermopylae, the 'Hot Gates', becomes the chosen battleground. Here, King Leonidas of Sparta stands with 300 of his finest warriors, ready to defend their land to the last breath.<br><br>For days, they withstand wave after wave of Persian attacks, their phalanx holding firm against the overwhelming numbers. Leonidas fights not just for Sparta, but for all of Greece, knowing that their stand buys crucial time for the Greek city-states to unite against the invader. <br><br>In our world, their valiant sacrifice became a symbol of courage and resistance. They were never meant to die on that day. Now, their fate is in your hands. The Heroes of History are summoned to tip the scales of destiny. With your arrival, Leonidas and his 300 are not merely holding the line. They are poised to rewrite history.
 '
 Base.Resources.porcelain_Name瓷器
 C
@@ -7000,8 +7036,8 @@ O
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>風暴召喚</style> 秦始皇召喚他的靈劍，穿越戰場對敵方單位造成 <style=basestat>{dmg_percentage}</style> 的傷害，並為友方單位恢復相當於秦始皇基礎傷害 <style=basestat>{heal_percentage}</style> 的生命值，持續 <style=basestat>{duration}</style>。
 7
 'Base.Resources.hero.AbrahamLincoln_Name林肯精華
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc increases the healing taken from any source by <style=basestat>{heal_amp}</style>
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>免疫</style>每隔 <style=basestat>{cooldown}</style> 秒，獲得一次免疫控場效果的保護。<br>控場效果包括：嘲諷、心智控制、暈眩、技能封鎖、攻速減緩、移速減緩，以及命中率降低。
 U
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_Name獎盃點數
 d
@@ -7020,6 +7056,8 @@ E
 5Base.Buildings.Building_China_RiceFarm_Average_4_Desc生產稻米
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_5_Name水手家園
+/
+ Base.Units.Unit_Nostradamus_NameNostradamus
 J
 7Base.Technologies.Technology_Vikings_SkaldicPoetry_Name多魯德之歌
 E

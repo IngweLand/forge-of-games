@@ -13,6 +13,8 @@ F
 3Base.Buildings.Building_Mayas_Aviary_Premium_1_Name豪華な鳥舎
 �
 Base.HeroClass.Defender_Desc�守護者は最前線で戦い、味方を守る役割を担う盾となる。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>、<color=#3DA229>闘技場</color>、<color=#3DA229>宝探し</color></indent><br><line-height=50%><br></line-height><color=#CD2A25>不利</color>：<br>•<indent=5%><color=#CD2A25>テスラストーム</color></indent>
+0
+!Base.Heroes.hero.Nostradamus_NameNostradamus
 N
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_Name改良型水田
 K
@@ -35,6 +37,8 @@ I
 6Base.Technologies.Technology_China_DrylandFarming_Name乾燥地農業
 �
 "Base.Resources.spice_treasure_Desci香辛料の宝物は加工された資源で、水夫の港と豪華な水夫の港で生産できる。
+2
+!Base.Units.Unit_HarryHoudini_NameHarry Houdini
 C
 6Base.Buildings.Building_Vikings_Beehive_Average_6_Name	養蜂場
 M
@@ -321,6 +325,8 @@ K
 8Base.Technologies.Technology_FeudalAge_RunicWriting_Nameルーン文字
 s
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Desc<歩兵ユニットは前列で最も効果を発揮する。
+�
+ Base.Regions.SiegeOfOrleans_Desc�It is May 1429, the ninety-first year of the Hundred Years’ War. English forces have been pushing into France, and six months ago they reached Orléans, a walled city on the banks of the river Loire. For the English assault to continue, the city must fall. So for the last six months the enemy has been building fortifications while cannons roar by night. For six months food has been scarce. For six months hope has been gone.<br><br>Joan of Arc was supposed to save them. In our world, the warrior-saint, her banner and her head held high, entered Orléans, and with her she brought food and safety and hope. But here, she never arrived. The city is on its last legs, and it falls to the Heroes of History to save the city without her. The people are ready, but the English are coming. One last battle must be fought, one battle to save Orléans, one battle to let France reclaim her freedom.
 B
 )Base.Wonders.Wonder_Capital_Colossus_Nameロドス島の巨像
 ]
@@ -601,6 +607,8 @@ a
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_Desc$補助騎兵をアンロックする
 7
 Base.Resources.hero.Plato_Nameプラトンの精髄
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage and healing himself between <style=basestat>{min_heal}</style> and <style=basestat>{max_heal}</style> of his base damage, based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 
 Base.Resources.fish_Name魚
 X
@@ -727,6 +735,8 @@ C
  Base.BuildingTypes.cityHall_Name	市庁舎
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_2_Descパピルスを生産する
+�
+%Base.Resources.hero.HarryHoudini_DesccUsed to increase the Awakening Level of Harry Houdini and thus unlock more powerful battle bonuses.
 J
 4Base.Resources.event_space_grand_prize_progress_Name進行ポイント
 Q
@@ -1519,6 +1529,8 @@ ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_Nameカオリン
 Base.Heroes.hero.Hoplit_Nameミルティアデス
 �
 #Base.Resources.hero.Hatshepsut_Desc�ハトシェプストの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+�
+!Base.Units.Unit_HarryHoudini_Desc�Slip the locks and dazzle the crowd with Harry Houdini, the ultimate escape artist! Born Erik Weisz in 19th-century Hungary and raised in America, Houdini transformed himself from a struggling sideshow performer into a global sensation, stunning audiences by slipping out of handcuffs, jail cells, straitjackets, and even sealed tanks of water with seemingly supernatural skill.<br><br>Houdini’s feats were the talk of vaudeville and the toast of royalty, and his boundless showmanship made him a legend in the world of magic. But he wasn’t just about spectacle - he dedicated himself to debunking fraudulent mediums, exposing those who preyed on grief with false spiritualism. His legacy as a master of illusion and advocate for honesty survives to this day, though no one has yet found the secret for escaping his level of flair, or his now legendary locked trunks!
 L
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_Name攻城兵兵舎
 H
@@ -1797,6 +1809,8 @@ B
 LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の攻撃力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 a
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Desc唐辛子を生産する
+5
+ Base.Regions.SiegeOfOrleans_NameSiege of Orléans
 B
 2Base.Buildings.Building_Egypt_City_CityHall_1_Name大ホール
 s
@@ -2497,6 +2511,8 @@ S
 Base.Units.Unit_DArtagnan_Desc�ルイ１４世の銃士隊長として知られる１７世紀のフランス銃士、シャルル・ド・バッツ＝カステルモール、通称ダルタニャン。アレクサンドル・デュマの『三銃士』で広まった伝説を持つこの人物は、地方の小貴族の出身であり、スパイ、銃士、そして知事としても活躍した。<br><br>特にルイ１４世の下で銃士隊長として仕え、巨万の富を誇るニコラ・フーケの逮捕で名を馳せた。フーケの警護を担当しながらも、賄賂を受け取ることなく任務を遂行し、その忠誠心を示した。<br><br>ダルタニャンの生涯は『ダルタニャン回想録』で誇張され、その後『三銃士』でさらに劇的に描かれた。物語の中では騎士道精神あふれる冒険者として広く知られているが、実際の人生はもう少し静かなものだったのかもしれない。レオニダスと「名前が一番長い競争」を繰り返していたが、毎回ダルタニャンが勝つ理由をレオニダスは最後まで理解できなかったようだ。
 L
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_Name聖なる軍団
+a
+3Base.Abilities.hero_battle_ability.OdaNobunaga_Name*Calm Before The Storm & Heavenly Execution
 I
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_Name大ホール
 �
@@ -2565,6 +2581,8 @@ M
 Base.Resources.cape_Name	マント
 4
 'Base.BuildingTypes.extractionPoint_Name	採取場
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 >
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name	軍団兵
 D
@@ -3030,6 +3048,8 @@ L
 6Base.Technologies.Technology_MinoanEra_MarbleBust_Name大理石の胸像
 S
 Base.Resources.cape_Desc7マントはレベル5の仕立屋で生産できる。
+3
+"Base.Heroes.hero.HarryHoudini_NameHarry Houdini
 O
 9Base.Technologies.Technology_KingdomOfSicily_Pedites_Nameシチリア歩兵
 F
@@ -3144,6 +3164,8 @@ o
 Base.Heroes.hero.Dracula_Nameヴラド・ドラキュラ
 0
  Base.BuildingGroups.artisan_Name職人工房
+A
+%Base.Resources.hero.HarryHoudini_NameEssence of Harry Houdini
 W
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Nameヒーロー学堂
 �
@@ -3734,10 +3756,10 @@ N
 &Base.Resources.fragrant_potpourri_Name	香り袋
 =
 $Base.Resources.hero.OdaNobunaga_Name織田信長の精髄
-`
-PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬の市場
 ^
 Base.Resources.goblet_Desc@ゴブレットはレベル5の職人工房で生産できる。
+`
+PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_Name冬の市場
 �
 Base.Units.Unit_Confucius_Desc�統治を学び、舞姫たちを脇に置いて、孔子の教えを深めよう！紀元前６世紀から５世紀にかけて活躍した中国の哲学者、孔子は、その思想によって中国の文化と社会に深い影響を与えた。『論語』にまとめられた教えは、道徳、孝行、そして社会の調和の重要性を説いている。<br><br>孝行や年長者への敬意、教育の大切さといった美徳を提唱し、個人と国家の行動指針となる倫理的な枠組みを築こうとした。その哲学では、社会秩序を維持するために義と礼の重要性が強調されている。<br><br>孔子の思想は、中国の歴史や文化の基盤となり、今もなお東洋の哲学や社会的実践に深く影響を与え続けている。
 ,
@@ -4292,6 +4314,8 @@ B
 5Base.Buildings.Building_China_RiceFarm_Average_3_Name	米農場
 =
 !Base.Heroes.hero.WilliamTell_Nameウィリアム・テル
+�
+$Base.Resources.hero.Nostradamus_DescaUsed to increase the Awakening Level of Nostradamus and thus unlock more powerful battle bonuses.
 S
 @Base.Technologies.Technology_ByzantineEra_CrossgroinedVault_Nameアーチ天井
 l
@@ -4538,6 +4562,8 @@ H
  Base.Heroes.hero.LadySixSky_Name$レディ・シックス・スカイ
 �
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc�レジェンダリー遺物、<nobr><style=legendary>プロメテウスの松明</style></nobr>を強化するレアな資源。<br>遺物の粉とともに、一部のイベントから報酬として獲得できる。
+�
+ Base.Units.Unit_Nostradamus_Desc�Unlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les Prophéties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus’ reputation reached the highest circles - he even read the fortunes of Catherine de’ Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name労働者の家
 H
@@ -4802,6 +4828,8 @@ G
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>強化・出血</style>出血状態の敵に対するダメージを<style=basestat>{damage_increase_per_relic_level}</style>増加させる。さらに、ヒーローが敵にダメージを与えるたびに<style=basestat>{bleed_chance_percentage}</style>の確率で出血を付与し、<style=basestat>{bleed_duration}</style>の間、毎秒<style=basestat>{bleed_percentage_per_relic_level}</style>の継続ダメージを与える。
 S
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_Name自動機構
+>
+$Base.Resources.hero.Nostradamus_NameEssence of Nostradamus
 D
 1Base.Buildings.Building_Egypt_Home_Average_2_Name大きな住宅
 �
@@ -5811,6 +5839,8 @@ V
 :Base.Technologies.Technology_IberianEra_FjordDominion_Nameフィヨルドの統治
 ?
 &Base.Regions.region.DesertDelta_6_Nameスパルタの中心
+E
+2Base.Abilities.hero_battle_ability.LadyKasuga_NameMoonlight Favor
 \
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Name極小規模な文化遺産
 u
@@ -5957,6 +5987,8 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Name重歩兵�
 )Base.Units.Unit_QueenSeondeokOfSilla_Desc�新羅の善徳女王と共に、星を空へと還そう！７世紀、古代朝鮮初の女王として即位した善徳は、貧しい者、病める者、年老いた者を守る政策を打ち出し、慈愛をもって民を治めた。<br> <br>卓越した外交手腕と深い信仰心、そして優雅さを備え、戦と平和の舵を巧みに取った新羅は、同盟の締結、巨大な仏塔の建立、天文台の建設によって繁栄を極める。その功績は『三国遺事』などの歴史書に詳しく記されている。<br><br>善徳女王が遺した真の遺産は、朝鮮半島そのものである。唐との同盟を通じて統一への礎を築き、後の文化的開花へとつながる種を蒔いた。伝説によれば、彼女は未来を予知する力を持ち、カエルの鳴き声や花の絵から運命を読み取ったともいう。「秋になれば、カラスが牛の角に止まる」そう語り残された謎めいた予言、その真意を読み解ける者は、果たして現れるのだろうか？
 E
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name大ホール
+9
+"Base.Regions.SpartasLastStand_NameSparta's Last Stand
 ?
 &Base.Resources.hero.PakalTheGreat_Nameパカル王の精髄
 �
@@ -6181,6 +6213,8 @@ r
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_Name学校
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>Shield| Buff</style>Lady Kasuga imbues the power of Moonlight into an ally, granting them a shield worth <style=basestat>{shield_value}</style> of her base damage and increasing their critical strike chance by <style=basestat>{crit_chance_buff}</style>. The critical chance buff lasts for <style=basestat>{crit_chance_buff_duration}</style>.
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。
 =
@@ -6497,6 +6531,8 @@ K
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_Name騎兵兵舎
 u
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
+�
+"Base.Regions.SpartasLastStand_Desc�It is August 480 BC, the Second Persian invasion of Greece is underway. King Xerxes of Persia leads a massive army, intent on conquering all of Greece. The narrow pass at Thermopylae, the 'Hot Gates', becomes the chosen battleground. Here, King Leonidas of Sparta stands with 300 of his finest warriors, ready to defend their land to the last breath.<br><br>For days, they withstand wave after wave of Persian attacks, their phalanx holding firm against the overwhelming numbers. Leonidas fights not just for Sparta, but for all of Greece, knowing that their stand buys crucial time for the Greek city-states to unite against the invader. <br><br>In our world, their valiant sacrifice became a symbol of courage and resistance. They were never meant to die on that day. Now, their fate is in your hands. The Heroes of History are summoned to tip the scales of destiny. With your arrival, Leonidas and his 300 are not merely holding the line. They are poised to rewrite history.
 '
 Base.Resources.porcelain_Name磁器
 C
@@ -6727,8 +6763,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�
 *Base.Units.Unit_EarlyRome_Huns_Attila_Name血の騎士団
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_Nameビザンツ弩砲
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを呼び出し、最大3体の敵ユニットを攻撃させ、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、ドラキュラは自身の基礎ダメージの<style=basestat>{heal_per_unit}</style>分を回復する。
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを召喚し、最大3体の敵ユニットを攻撃させ、<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、ドラキュラは自身の基礎ダメージの<style=basestat>{heal_per_unit}</style>分を回復する。
 G
 4Base.Technologies.Technology_RomanEmpire_Goblet_Nameゴブレット
 Z
@@ -6991,8 +7027,8 @@ G
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与えると同時に、味方ユニットを<style=basestat>{duration}</style>の間、始皇帝の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
 X
 'Base.Resources.hero.AbrahamLincoln_Name-エイブラハム・リンカーンの精髄
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc increases the healing taken from any source by <style=basestat>{heal_amp}</style>
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>免疫</style><style=basestat>{cooldown}</style>秒ごとに、行動制限を防ぐ。<br>行動制限には、挑発、精神支配、気絶、アビリティ封鎖、攻撃速度低下、移動速度低下、命中率低下が含まれる。
 [
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_Name挑戦ポイント
 t
@@ -7011,6 +7047,8 @@ K
 5Base.Buildings.Building_China_RiceFarm_Average_4_Desc米を生産する
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_5_Name水夫の家
+/
+ Base.Units.Unit_Nostradamus_NameNostradamus
 D
 7Base.Technologies.Technology_Vikings_SkaldicPoetry_Name	吟唱詩
 K

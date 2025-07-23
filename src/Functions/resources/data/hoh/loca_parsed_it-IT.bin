@@ -13,6 +13,8 @@ G
 3Base.Buildings.Building_Mayas_Aviary_Premium_1_NameVoliera di Lusso
 Õ
 Base.HeroClass.Defender_Desc¨I Difensori si lanciano nella mischia e proteggono i loro alleati.<br><line-height=50%><br></line-height><b><color=#3DA229>Forti</color> nella:</b><br>‚Ä¢<indent=5%><color=#3DA229>Campagna</color>, <color=#3DA229>Arena</color> e <color=#3DA229>Caccia al Tesoro</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Deboli</color> nelle:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Tempeste di Tesla</color>.</indent>
+0
+!Base.Heroes.hero.Nostradamus_NameNostradamus
 P
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_NameRisaie Potenziate
 R
@@ -35,6 +37,8 @@ F
 6Base.Technologies.Technology_China_DrylandFarming_NameAridocoltura
 §
 "Base.Resources.spice_treasure_Desc~I Tesori di Spezie sono una risorsa raffinata. Possono essere prodotti nei Porti dei Marinai e nei Porti dei Marinai Lussuosi.
+2
+!Base.Units.Unit_HarryHoudini_NameHarry Houdini
 A
 6Base.Buildings.Building_Vikings_Beehive_Average_6_NameAlveare
 V
@@ -328,6 +332,8 @@ L
 8Base.Technologies.Technology_FeudalAge_RunicWriting_NameScrittura runica
 y
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_DescBLe unit√† di fanteria sono maggiormente efficaci nelle prime file.
+•
+ Base.Regions.SiegeOfOrleans_DescÄIt is May 1429, the ninety-first year of the Hundred Years‚Äô War. English forces have been pushing into France, and six months ago they reached Orl√©ans, a walled city on the banks of the river Loire. For the English assault to continue, the city must fall. So for the last six months the enemy has been building fortifications while cannons roar by night. For six months food has been scarce. For six months hope has been gone.<br><br>Joan of Arc was supposed to save them. In our world, the warrior-saint, her banner and her head held high, entered Orl√©ans, and with her she brought food and safety and hope. But here, she never arrived. The city is on its last legs, and it falls to the Heroes of History to save the city without her. The people are ready, but the English are coming. One last battle must be fought, one battle to save Orl√©ans, one battle to let France reclaim her freedom.
 <
 )Base.Wonders.Wonder_Capital_Colossus_NameColosso di Rodi
 b
@@ -613,6 +619,8 @@ X
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_DescSblocca i cavalieri auxilia
 4
 Base.Resources.hero.Plato_NameEssenza di Platone
+–
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Nameˇ<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage and healing himself between <style=basestat>{min_heal}</style> and <style=basestat>{max_heal}</style> of his base damage, based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 !
 Base.Resources.fish_NamePesce
 Y
@@ -744,6 +752,8 @@ N
  Base.BuildingTypes.cityHall_Name	MunicipioMunicipi
 K
 9Base.Buildings.Building_Egypt_PapyrusField_Average_2_DescProduce Papiro
+å
+%Base.Resources.hero.HarryHoudini_DesccUsed to increase the Awakening Level of Harry Houdini and thus unlock more powerful battle bonuses.
 Y
 4Base.Resources.event_space_grand_prize_progress_Name!Progresso verso il Grande Premio 
 O
@@ -1549,6 +1559,8 @@ ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_NameCava di Caol
 Base.Heroes.hero.Hoplit_NameMilziade
 ç
 #Base.Resources.hero.Hatshepsut_DescfServe per aumentare il Livello di Risveglio di Hatshepsut e sbloccare bonus di battaglia pi√π potenti.
+ç
+!Base.Units.Unit_HarryHoudini_DescÁSlip the locks and dazzle the crowd with Harry Houdini, the ultimate escape artist! Born Erik Weisz in 19th-century Hungary and raised in America, Houdini transformed himself from a struggling sideshow performer into a global sensation, stunning audiences by slipping out of handcuffs, jail cells, straitjackets, and even sealed tanks of water with seemingly supernatural skill.<br><br>Houdini‚Äôs feats were the talk of vaudeville and the toast of royalty, and his boundless showmanship made him a legend in the world of magic. But he wasn‚Äôt just about spectacle - he dedicated himself to debunking fraudulent mediums, exposing those who preyed on grief with false spiritualism. His legacy as a master of illusion and advocate for honesty survives to this day, though no one has yet found the secret for escaping his level of flair, or his now legendary locked trunks!
 Y
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_NameCaserma per unit√† d'assedio
 N
@@ -1828,6 +1840,8 @@ v
 LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_NameÇ<style=ability_label>Malus</style>Colpisce il gruppo pi√π grande di unit√† nemiche, riducendo l'ATT del <style=basestat>{atk_percentage}</style> dell'ATT di Emilia Terzia per <style=basestat>{duration}</style> in un raggio di <style=basestat>{range}</style>.
 ]
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_DescProduce Peperoncini.
+5
+ Base.Regions.SiegeOfOrleans_NameSiege of Orl√©ans
 H
 2Base.Buildings.Building_Egypt_City_CityHall_1_NameSala del consiglio
 n
@@ -2541,6 +2555,8 @@ Q
 Base.Units.Unit_DArtagnan_Desc—Enchant√©! Charles de Batz de Castelmore d'Artagnan, Capitano dei Moschettieri della Guardia di Luigi XIV, al vostro servizio! D'Artagnan (come lo chiameremo per comodit√†) era un moschettiere francese del XVII secolo la cui leggenda √® stata ampliata nel romanzo di Alexandre Dumas, I Tre Moschettieri.<br><br>Partito da umili origini (era solo un nobile minore), D'Artagnan serv√¨ come spia, moschettiere e governatore. Fu famoso per l'arresto del ricchissimo Nicolas Fouquet, che sorvegliava personalmente: gli altri potevano essere corrotti.<br><br>La vita di D'Artagnan √® stata fortemente esagerata nel romanzo Les m√©moires de M. d'Artagnan, che a sua volta √® stata esagerata nel romanzo I Tre Moschettieri di Alexandre Dumas. Questa versione ‚Äì un cavaliere, spadaccino, eroe ‚Äì continua a vivere ancora oggi. D'Artagnan era forse un po' pi√π noioso. Continua a sfidare Leonida in una competizione sul "nome pi√π lungo". Leonida non capisce perch√© perde ogni volta!
 J
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_NameSchiera Sacra
+a
+3Base.Abilities.hero_battle_ability.OdaNobunaga_Name*Calm Before The Storm & Heavenly Execution
 O
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_NameSala del consiglio
 É
@@ -2612,6 +2628,8 @@ $
 Base.Resources.cape_NameMantello
 S
 'Base.BuildingTypes.extractionPoint_NamePunto di estrazionePunti di estrazione
+’
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_NameÖ<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
 ?
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name
 Legionario
@@ -3081,6 +3099,8 @@ H
 6Base.Technologies.Technology_MinoanEra_MarbleBust_NameBusto di marmo
 c
 Base.Resources.cape_DescGI Mantelli sono beni che possono essere prodotti dai Sarti - Livello 5.
+3
+"Base.Heroes.hero.HarryHoudini_NameHarry Houdini
 D
 9Base.Technologies.Technology_KingdomOfSicily_Pedites_NamePedites
 K
@@ -3195,6 +3215,8 @@ w
 Base.Heroes.hero.Dracula_NameVlad Dracula
 8
  Base.BuildingGroups.artisan_Name	Artigiano	Artigiani
+A
+%Base.Resources.hero.HarryHoudini_NameEssence of Harry Houdini
 Y
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_NameAccademia degli eroi
 º
@@ -3794,10 +3816,10 @@ S
 &Base.Resources.fragrant_potpourri_NamePot-pourri profumato
 ?
 $Base.Resources.hero.OdaNobunaga_NameEssenza di Oda Nobunaga
-e
-PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_NameMercato Invernale
 i
 Base.Resources.goblet_DescKI calici sono beni che possono essere prodotti dagli Artigiani - Livello 5.
+e
+PBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Domestic_NameMercato Invernale
 Ô
 Base.Units.Unit_Confucius_DescÃImpara a governare e nascondi le ragazze che danzano: Confucio √® qui. Questo filosofo cinese altamente influente del VI e V secolo a.C. ha plasmato il pensiero e la cultura cinese con i suoi insegnamenti. Raccolti nelle "Analects", essi pongono l'accento sulla moralit√†, sulla lealt√† familiare e sull'importanza dell'armonia sociale.<br><br>Conosciuto per aver promosso virt√π come la piet√† filiale, il rispetto per gli anziani e l'importanza dell'istruzione, Confucio mirava a creare una cornice etica per la condotta personale e governativa. La sua filosofia sottolinea i ruoli della giustizia e della correttezza nel mantenere l'ordine sociale.<br><br>Confucio rimane una figura fondamentale nella storia cinese, con i suoi principi che continuano a influenzare la filosofia orientale, la cultura e le pratiche sociali in tutto il mondo.
 .
@@ -4356,6 +4378,8 @@ F
 5Base.Buildings.Building_China_RiceFarm_Average_3_NameCampo di riso
 3
 !Base.Heroes.hero.WilliamTell_NameGuglielmo Tell
+â
+$Base.Resources.hero.Nostradamus_DescaUsed to increase the Awakening Level of Nostradamus and thus unlock more powerful battle bonuses.
 T
 @Base.Technologies.Technology_ByzantineEra_CrossgroinedVault_NameVolta a crociera
 Ö
@@ -4612,6 +4636,8 @@ D
  Base.Heroes.hero.LadySixSky_NameLady Six Sky
 ä
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc”Questa risorsa rara ti consente di potenziare la Reliquia <nobr><style=legendary>Torcia di Prometeo</style></nobr>.<br>Pu√≤ essere ottenuta insieme alla polvere di reliquia come ricompensa in determinati eventi.
+ß
+ Base.Units.Unit_Nostradamus_DescÇUnlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les Proph√©ties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus‚Äô reputation reached the highest circles - he even read the fortunes of Catherine de‚Äô Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
 O
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameAbitazione dei lavoratori
 N
@@ -4881,6 +4907,8 @@ O
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name <style=ability_label>Potenziamento | Sanguinamento</style>Aumenta il danno dell'eroe contro i bersagli sanguinanti di <style=basestat>{damage_increase_per_relic_level}</style>. Inoltre, danneggiare un nemico ha una probabilit√† del <style=basestat>{bleed_chance_percentage}</style> di infliggere sanguinamento, causando <style=basestat>{bleed_percentage_per_relic_level}</style> di danno al secondo per una durata di <style=basestat>{bleed_duration}</style>.
 [
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameControllo automatico
+>
+$Base.Resources.hero.Nostradamus_NameEssence of Nostradamus
 J
 1Base.Buildings.Building_Egypt_Home_Average_2_NameAbitazione intermedia
 ö
@@ -5899,6 +5927,8 @@ P
 :Base.Technologies.Technology_IberianEra_FjordDominion_NameDominio dei fiordi
 9
 &Base.Regions.region.DesertDelta_6_NameCuore di Sparta
+E
+2Base.Abilities.hero_battle_ability.LadyKasuga_NameMoonlight Favor
 W
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_NameSito culturale piccolo
 v
@@ -6046,6 +6076,8 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_NameCaserma del
 )Base.Units.Unit_QueenSeondeokOfSilla_Desc´Riporta le stelle in cielo con la Regina Seondeok di Silla! Nel VII secolo, questa prima regina dell'antica Corea sal√¨ al trono. Al momento della sua ascesa, si prese cura dei poveri, dei malati e degli anziani. L'amore per il suo popolo definir√† il suo governo. <br> <br> La regina Seondeok affront√≤ i conflitti e la pace con abilit√†, fede e grazia. Silla si arricch√¨ di alleanze, grandi pagode e osservatori. Le storie sulla sua magnificenza sono riportate nel Samguk Yusa e in altri testi storici. <br><br>L'eredit√† di Seondeok √® la Corea stessa. La sua alleanza con i Tang port√≤ alla prima unificazione della Corea sotto Silla e gett√≤ i semi per la fioritura della cultura dei regni. Secondo alcune storie, Seondeok aveva il dono della profezia. Grazie alle rane toro e alle immagini di fiori, la sua leggenda √® cresciuta. Vediamo se ci riesci: in autunno, il corvo si poser√† sulle corna del toro! Cosa potrebbe significare?
 K
 5Base.Buildings.Building_StoneAge_City_CityHall_1_NameSala del consiglio
+9
+"Base.Regions.SpartasLastStand_NameSparta's Last Stand
 D
 &Base.Resources.hero.PakalTheGreat_NameEssenza di Pakal il Grande
 ï
@@ -6272,6 +6304,8 @@ X
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc<Aumenta considerevolmente la Felicit√† degli edifici vicini 
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_NameScuola
+∫
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_NameÎ<style=ability_label>Shield| Buff</style>Lady Kasuga imbues the power of Moonlight into an ally, granting them a shield worth <style=basestat>{shield_value}</style>¬†of her base damage and increasing their critical strike chance by <style=basestat>{crit_chance_buff}</style>. The critical chance buff lasts for <style=basestat>{crit_chance_buff_duration}</style>.
 ê
 KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name¿<style=ability_label>Attacco Corpo a Corpo| Sanguinamento</style>Colpisce il bersaglio attuale con la sua spada cinque volte, infliggendo danni crescenti ad ogni colpo per un totale di <style=basestat>{dmg_percentage}</style> danni. Ogni colpo ha una probabilit√† del <style=basestat>{chance_percentage}</style> di far sanguinare l'avversario per <style=basestat>{dmg_percentage_bleed}</style> danni nel corso di <style=basestat>{duration}</style>.
 B
@@ -6592,6 +6626,8 @@ W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCaserma della cavalleria
 
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_DescCProduce una piccola quantit√† di Cibo in un breve periodo di tempo.
+¯
+"Base.Regions.SpartasLastStand_Desc—It is August 480 BC, the Second Persian invasion of Greece is underway. King Xerxes of Persia leads a massive army, intent on conquering all of Greece. The narrow pass at Thermopylae, the 'Hot Gates', becomes the chosen battleground. Here, King Leonidas of Sparta stands with 300 of his finest warriors, ready to defend their land to the last breath.<br><br>For days, they withstand wave after wave of Persian attacks, their phalanx holding firm against the overwhelming numbers. Leonidas fights not just for Sparta, but for all of Greece, knowing that their stand buys crucial time for the Greek city-states to unite against the invader. <br><br>In our world, their valiant sacrifice became a symbol of courage and resistance. They were never meant to die on that day. Now, their fate is in your hands. The Heroes of History are summoned to tip the scales of destiny. With your arrival, Leonidas and his 300 are not merely holding the line. They are poised to rewrite history.
 +
 Base.Resources.porcelain_Name
 Porcellana
@@ -7091,8 +7127,8 @@ A
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name◊<style=ability_label>Tempesta</style>Qin Shi Huang evoca la sua Spada Spirituale che attraversa il campo di battaglia, infliggendo <style=basestat>{dmg_percentage}</style> danni alle unit√† nemiche e curando le unit√† alleate per <style=basestat>{heal_percentage}</style> del danno base di Qin Shi Huang per <style=basestat>{duration}</style>.
 E
 'Base.Resources.hero.AbrahamLincoln_NameEssenza di Abraham Lincoln
-÷
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_NameÉ<style=ability_label>Recovery</style>The Sky Disc increases the healing taken from any source by <style=basestat>{heal_amp}</style>
+’
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_NameÇ<style=ability_label>Immunit√†</style>Conferisce protezione dagli effetti di controllo di massa una volta ogni <style=basestat>{cooldown}</style> secondi.<br>Gli effetti di controllo di massa includono Provocazione, Controllo Mentale, Stordimento, Blocco delle Abilit√†, Rallentamento della Velocit√† d‚ÄôAttacco, Rallentamento della Velocit√† di Movimento e Riduzioni della Precisione.
 c
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_NamePunto TrofeoPunti Trofeo
 i
@@ -7111,6 +7147,8 @@ E
 5Base.Buildings.Building_China_RiceFarm_Average_4_DescProduce Riso
 L
 2Base.Buildings.Building_Vikings_Home_Sailor_5_NameAbitazione dei marinai
+/
+ Base.Units.Unit_Nostradamus_NameNostradamus
 J
 7Base.Technologies.Technology_Vikings_SkaldicPoetry_NamePoesia Scaldica
 U
