@@ -9,6 +9,8 @@ message PlayerProfileResponse {
   int32 rank = 3;
   int32 ranking_points = 4;
   repeated ProfileSquadDto squads = 5;
+  optional string pvp_tier = 6;
+  optional int32 treasure_hunt_difficulty = 7;
 }
 
 message ProfileSquadDto {

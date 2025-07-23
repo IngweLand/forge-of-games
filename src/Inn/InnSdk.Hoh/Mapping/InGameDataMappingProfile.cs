@@ -163,6 +163,16 @@ public class InGameDataMappingProfile : Profile
             {
                 opt.PreCondition(src => src.PlayerWithAlliance.HasAllianceId);
                 opt.MapFrom(src => src.PlayerWithAlliance);
+            })
+            .ForMember(dest => dest.PvpTier, opt =>
+            {
+                opt.PreCondition(src => src.HasPvpTier);
+                opt.MapFrom(src => src.PvpTier);
+            })
+            .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
+            {
+                opt.PreCondition(src => src.HasTreasureHuntDifficulty);
+                opt.MapFrom(src => src.TreasureHuntDifficulty);
             });
         CreateMap<PlayerWithAllianceDto, HohPlayer>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PlayerId))
