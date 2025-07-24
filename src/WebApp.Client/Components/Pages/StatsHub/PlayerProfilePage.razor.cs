@@ -19,6 +19,8 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private bool _fetchingCity;
     private bool _isDisposed;
     private PlayerProfileViewModel? _player;
+    private bool _pvpChartIsExpanded;
+    private bool _rankingChartIsExpanded;
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -190,7 +192,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
         });
     }
-    
+
     private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
     {
         var options = GetDefaultDialogOptions();
