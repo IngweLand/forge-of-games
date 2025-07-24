@@ -46,7 +46,6 @@ public class PlayerUpdater(IFogDbContext context, ILogger<PlayerRankingService> 
     {
         logger.LogDebug("Querying existing players for {IdCount} in-game player IDs.", inGamePlayerIds.Count);
         var existing = await context.Players
-            .Include(x => x.Squads)
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
             .ToListAsync();
         logger.LogDebug("Query returned {ExistingCount} existing players.", existing.Count);

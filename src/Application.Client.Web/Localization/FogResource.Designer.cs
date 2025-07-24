@@ -2310,6 +2310,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Level range.
+        /// </summary>
+        public static string StatsHub_TopHeroes_Form_LevelRange {
+            get {
+                return ResourceManager.GetString("StatsHub.TopHeroes.Form.LevelRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Top heroes.
         /// </summary>
         public static string StatsHub_TopHeroesListTitle {

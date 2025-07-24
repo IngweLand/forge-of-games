@@ -13,10 +13,10 @@
             <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
         }
     </div>
-    @* <div class="button-container"> *@
-    @*     <MudButton Variant="Variant.Filled" Color="Color.Primary" *@
-    @*                Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton> *@
-    @* </div> *@
+    <div class="button-container">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                   Href="@FogUrlBuilder.PageRoutes.TOP_HEROES_PATH">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+    </div>
 
 </div>
 
@@ -24,9 +24,6 @@
 
     [Parameter]
     public required string Title { get; set; }
-
-    [Parameter]
-    public required string ViewAllUrl { get; set; }
 
     [Parameter][EditorRequired]
     public required IReadOnlyCollection<HeroBasicViewModel> Heroes { get; init; }

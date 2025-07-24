@@ -47,6 +47,7 @@ public class PlayerSquadsUpdater(IFogDbContext context, IMapper mapper, ILogger<
             var newSquads = mapper.Map<List<ProfileSquadEntity>>(playerAggregate.ProfileSquads, opt =>
             {
                 opt.Items[ResolutionContextKeys.DATE] = playerAggregate.CollectedAt.ToDateOnly();
+                opt.Items[ResolutionContextKeys.AGE] = playerAggregate.Age!;
             });
             
             logger.LogDebug("Processing squads for player {@PlayerKey}", playerAggregate.Key);
@@ -66,6 +67,7 @@ public class PlayerSquadsUpdater(IFogDbContext context, IMapper mapper, ILogger<
                     squad.AbilityLevel = squad.AbilityLevel;
                     squad.Hero = squad.Hero;
                     squad.SupportUnit = squad.SupportUnit;
+                    squad.Age = playerAggregate.Age!;
                     updatedSquadsCount++;
                 }
             }

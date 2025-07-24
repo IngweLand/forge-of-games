@@ -24,8 +24,10 @@
     flex-wrap: wrap;
     margin-bottom: 16px;
     justify-content: space-evenly;
+    align-items: center;
     gap: 4px;
     padding: 4px;
+    flex: 1;
 }
 
 .button-container {

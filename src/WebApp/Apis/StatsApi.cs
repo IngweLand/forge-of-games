@@ -20,6 +20,8 @@ public static class StatsApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH, GetAllLeaderboardTopItemsAsync);
 
+        api.MapGet(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH, GetTopHeroesAsync);
+
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PROFILE_TEMPLATE, GetPlayerProfileAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
@@ -60,6 +62,15 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetAllLeaderboardTopItemsAsync(ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<IReadOnlyCollection<string>>, BadRequest<string>>>
+        GetTopHeroesAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetTopHeroesQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
 
         return TypedResults.Ok(result);
     }

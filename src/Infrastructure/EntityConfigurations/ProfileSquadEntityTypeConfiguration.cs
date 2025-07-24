@@ -23,8 +23,10 @@ public class ProfileSquadEntityTypeConfiguration : IEntityTypeConfiguration<Prof
         builder.Property(p => p.SerializedHero).IsRequired();
         builder.Property(p => p.SerializedSupportUnit).IsRequired();
         builder.Property(p => p.CollectedAt).IsRequired();
+        builder.Property(p => p.Age).IsRequired();
 
         builder.HasIndex(p => p.UnitId);
+        builder.HasIndex(p => p.Age);
         builder.HasIndex(p => p.CollectedAt).IsDescending();
         builder.HasIndex(p => new {p.PlayerId, p.UnitId, p.CollectedAt}).IsUnique();
     }

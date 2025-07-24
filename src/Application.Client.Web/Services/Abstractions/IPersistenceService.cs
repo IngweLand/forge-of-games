@@ -10,6 +10,8 @@ public interface IPersistenceService
     ValueTask SaveCity(HohCity city);
     ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request);
     ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync();
+    ValueTask SaveTopHeroesRequestAsync(TopHeroesSearchFormRequest request);
+    ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync();
     ValueTask<bool> DeleteCity(string cityId);
     ValueTask<HohCity?> LoadCity(string cityId);
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities();

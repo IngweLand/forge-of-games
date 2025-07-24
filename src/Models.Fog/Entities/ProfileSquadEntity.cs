@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -15,6 +14,8 @@ public class ProfileSquadEntity
 
     private ProfileSquadKey? _key;
     public required int AbilityLevel { get; set; }
+
+    public required string Age { get; set; }
     public required int AscensionLevel { get; set; }
 
     public DateOnly CollectedAt { get; set; }

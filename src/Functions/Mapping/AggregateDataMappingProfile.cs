@@ -150,6 +150,8 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.AbilityLevel, opt => opt.MapFrom(src => src.Hero.AbilityLevel))
             .ForMember(dest => dest.Hero, opt => opt.MapFrom(src => src.Hero))
             .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(src => src.SupportUnit))
+            .ForMember(dest => dest.Age, opt =>
+                opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<string>(ResolutionContextKeys.AGE)))
             .ForMember(dest => dest.CollectedAt, opt =>
                 opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<DateOnly>(ResolutionContextKeys.DATE)));
     }

@@ -1,11 +1,9 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
-using Ingweland.Fog.InnSdk.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Shared.Extensions;
@@ -17,30 +15,14 @@ namespace Ingweland.Fog.Functions.Services.Orchestration;
 public class PlayersUpdateManager(
     IGameWorldsProvider gameWorldsProvider,
     IFogDbContext context,
-    IInnSdkClient innSdkClient,
-    IPlayerRankingService playerRankingService,
-    IPvpRankingService pvpRankingService,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerService playerService,
-    IPlayerAgeHistoryService playerAgeHistoryService,
-    IPlayerNameHistoryService playerNameHistoryService,
-    IAllianceService allianceService,
-    IPlayerAllianceNameHistoryService playerAllianceNameHistoryService,
-    IAllianceRankingService allianceRankingService,
-    IAllianceNameHistoryService allianceNameHistoryService,
     IPlayerStatusUpdaterService playerStatusUpdaterService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IAllianceMembersUpdaterService allianceMembersUpdaterService,
-    IPlayerSquadsUpdater playerSquadsUpdater,
-    IPlayerUpdater playerUpdater,
-    IMapper mapper,
+    IPlayerProfileService playerProfileService,
     DatabaseWarmUpService databaseWarmUpService,
-    ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, innSdkClient,
-    playerRankingService, pvpRankingService, inGameRawDataTableRepository, inGameDataParsingService,
-    playerService, playerAgeHistoryService, playerNameHistoryService, allianceService, playerAllianceNameHistoryService,
-    allianceRankingService, allianceNameHistoryService, playerStatusUpdaterService,
-    inGameRawDataTablePartitionKeyProvider, allianceMembersUpdaterService, playerSquadsUpdater, playerUpdater, mapper,
+    ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
+    inGameDataParsingService, playerStatusUpdaterService, inGameRawDataTablePartitionKeyProvider, playerProfileService,
     databaseWarmUpService, logger), IPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;

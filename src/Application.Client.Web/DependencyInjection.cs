@@ -117,6 +117,7 @@ public static class DependencyInjection
         services.AddScoped<ICityPlannerUiService, CityPlannerUiService>();
         services.AddScoped<IHohCoreDataCache, HohCoreDataCache>();
         services.AddScoped<ICcMigrationManager, CcMigrationManager>();
+        services.AddScoped<ITopHeroesUiService, TopHeroesUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 

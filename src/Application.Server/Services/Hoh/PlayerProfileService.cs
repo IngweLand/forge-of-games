@@ -89,6 +89,7 @@ public class PlayerProfileService(
                     CollectedAt = collectedAt,
                     Hero = squad.Hero,
                     SupportUnit = squad.SupportUnit,
+                    Age = player.Age,
                 });
                 addedCount++;
             }
@@ -99,6 +100,7 @@ public class PlayerProfileService(
                 existingSquad.AbilityLevel = squad.Hero.AbilityLevel;
                 existingSquad.Hero = squad.Hero;
                 existingSquad.SupportUnit = squad.SupportUnit;
+                existingSquad.Age = player.Age;
                 updatedCount++;
             }
         }

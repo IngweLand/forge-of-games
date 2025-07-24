@@ -51,7 +51,7 @@ public class PlayerAggregate
 
     public bool CanUpdateHeroes()
     {
-        return HasRequiredPropertiesSet() && ProfileSquads.Count > 0;
+        return HasRequiredPropertiesSet() && ProfileSquads.Count > 0 && Age != null;
     }
 
     public bool HasRequiredPropertiesSet()

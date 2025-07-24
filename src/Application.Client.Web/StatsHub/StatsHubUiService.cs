@@ -165,7 +165,8 @@ public class StatsHubUiService : IStatsHubUiService
 
         _topStatsViewModel = _statsHubViewModelsFactory.CreateTopStats(topItems.MainWorldPlayers.Items,
             topItems.BetaWorldPlayers.Items,
-            topItems.MainWorldAlliances.Items, topItems.BetaWorldAlliances.Items, topItems.TopHeroes, await _ages.Value,
+            topItems.MainWorldAlliances.Items, topItems.BetaWorldAlliances.Items, topItems.TopHeroes.Take(6).ToList(),
+            await _ages.Value,
             await _heroProfileUiService.GetHeroes());
 
         return _topStatsViewModel;

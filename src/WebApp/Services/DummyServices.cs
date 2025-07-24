@@ -1,14 +1,11 @@
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
-using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Models;
-using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 
@@ -27,6 +24,16 @@ internal class DummyPersistenceService : IPersistenceService
     }
 
     public ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveTopHeroesRequestAsync(TopHeroesSearchFormRequest request)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync()
     {
         throw new NotImplementedException();
     }

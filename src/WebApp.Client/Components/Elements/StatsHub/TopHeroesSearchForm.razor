@@ -1,0 +1,94 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+
+<div class="component-root">
+    @if (FormData != null && Request != null)
+    {
+        <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Common_Age]"
+                   Value="@_selectedAge" Clearable="true" ValueChanged="OnAgeChanged"
+                   T="AgeViewModel" ToStringFunc="@(x => x?.Name)"
+                   Variant="Variant.Outlined">
+            @foreach (var age in FormData.Ages)
+            {
+                <MudSelectItem Value="@age">@age.Name</MudSelectItem>
+            }
+        </MudSelect>
+
+        <MudSelect Margin="Margin.Dense" Dense="true" Clearable="true"
+                   Label="@Loc[FogResource.StatsHub_TopHeroes_Form_LevelRange]"
+                   Value="@_selectedRange"
+                   T="HeroLevelRange" ValueChanged="OnRangeChanged"
+                   Variant="Variant.Outlined">
+            @foreach (var range in FormData.LevelRanges)
+            {
+                <MudSelectItem Value="@range">@range</MudSelectItem>
+            }
+        </MudSelect>
+    }
+
+</div>
+
+<style>
+    /*mudblazor overrides*/
+    .mud-select .mud-select-input {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+
+    .mud-typography-body1 {
+        font-size: 12px !important;
+        font-weight: 500 !important;
+    }
+
+    .mud-input-label-outlined.mud-input-label-margin-dense {
+        transform: translate(14px, 8px) scale(1);
+    }
+</style>
+
+@code {
+
+    private AgeViewModel? _selectedAge;
+    private HeroLevelRange? _selectedRange;
+
+    [Parameter]
+    [EditorRequired]
+    public TopHeroesSearchFormRequest? Request { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public TopHeroesSearchFormViewModel? FormData { get; set; }
+
+    [Parameter]
+    public EventCallback<TopHeroesSearchFormRequest> SearchRequestChanged { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (FormData == null || Request == null)
+        {
+            return;
+        }
+
+        _selectedAge = Request.Age;
+        _selectedRange = Request.LevelRange;
+    }
+
+    private Task OnAgeChanged(AgeViewModel? newValue)
+    {
+        return Request!.Age?.Id == newValue?.Id
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(Request with {Age = newValue});
+    }
+
+    private Task OnRangeChanged(HeroLevelRange? newValue)
+    {
+        return Request!.LevelRange == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(Request with {LevelRange = newValue});
+    }
+
+}

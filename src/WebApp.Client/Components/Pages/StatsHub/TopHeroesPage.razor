@@ -1,0 +1,28 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.TOP_HEROES_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@inherits StatsHubPageBase
+
+<div class="fog-container page-container">
+    <div class="top-container">
+        <span class="title">@Loc[FogResource.StatsHub_TopHeroesListTitle]</span>
+        @if (_isLoading)
+        {
+            <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
+                               Indeterminate="true"/>
+        }
+    </div>
+    <div class="search-form">
+        <TopHeroesSearchForm FormData="@_searchFormData" SearchRequestChanged="GetHeroes"
+                             Request="@_searchRequest"></TopHeroesSearchForm>
+    </div>
+    <div class="items-container">
+        @foreach (var hero in _heroes)
+        {
+            <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+        }
+    </div>
+
+</div>

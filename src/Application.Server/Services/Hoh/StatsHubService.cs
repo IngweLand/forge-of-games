@@ -46,11 +46,6 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(new GetAllLeaderboardTopItemsQuery(), ct);
     }
 
-    public Task<IReadOnlyCollection<string>> GetTopHeroesAsync(CancellationToken ct = default)
-    {
-        return sender.Send(new GetTopHeroesQuery(), ct);
-    }
-
     public Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, int startIndex = 0,
         int count = FogConstants.DEFAULT_STATS_PAGE_SIZE, CancellationToken ct = default)
     {
@@ -82,5 +77,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
     {
         var query = new GetPlayerCityQuery(playerId);
         return sender.Send(query, ct);
+    }
+
+    public Task<IReadOnlyCollection<string>> GetTopHeroesAsync(string? ageId = null, int? fromLevel = null,
+        int? toLevel  = null, CancellationToken ct = default)
+    {
+        return sender.Send(new GetTopHeroesQuery
+        {
+            AgeId = ageId,
+            FromLevel = fromLevel,
+            ToLevel = toLevel,
+        }, ct);
     }
 }

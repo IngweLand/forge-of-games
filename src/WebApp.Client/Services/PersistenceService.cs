@@ -21,6 +21,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private const string EQUIPMENT_DATA_KEY_PREFIX = "Equipment";
     private const string UI_SETTINGS = "UiSettings";
     private const string CITY_INSPIRATIONS_REQUEST = "CityInspirationsRequest";
+    private const string TOP_HEROES_REQUEST = "TopHeroesRequest";
     private const string OPEN_TECHNOLOGIES = "OpenTechnologies";
 
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
@@ -44,6 +45,20 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         var rawData = await localStorageService.GetItemAsStringAsync(CITY_INSPIRATIONS_REQUEST);
         return !string.IsNullOrWhiteSpace(rawData)
             ? JsonSerializer.Deserialize<CityInspirationsSearchFormRequest>(rawData, JsonSerializerOptions)
+            : null;
+    }
+
+    public ValueTask SaveTopHeroesRequestAsync(TopHeroesSearchFormRequest request)
+    {
+        var serializedRequest = JsonSerializer.Serialize(request, JsonSerializerOptions);
+        return localStorageService.SetItemAsStringAsync(TOP_HEROES_REQUEST, serializedRequest);
+    }
+
+    public async ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync()
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(TOP_HEROES_REQUEST);
+        return !string.IsNullOrWhiteSpace(rawData)
+            ? JsonSerializer.Deserialize<TopHeroesSearchFormRequest>(rawData, JsonSerializerOptions)
             : null;
     }
 
