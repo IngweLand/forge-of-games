@@ -22,7 +22,6 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeDto>>> _ages;
     private readonly Lazy<Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>>> _barracks;
     private readonly IBattleLogFactories _battleLogFactories;
-    private readonly ITreasureHuntUiService _treasureHuntUiService;
     private readonly IBattleService _battleService;
     private readonly IBattleStatsViewModelFactory _battleStatsViewModelFactory;
     private readonly ICampaignUiService _campaignUiService;
@@ -44,6 +43,7 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly Lazy<Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>> _treasureHuntDifficulties;
+    private readonly ITreasureHuntUiService _treasureHuntUiService;
 
     private readonly HashSet<BattleType> _unitBattleTypes =
     [
@@ -228,7 +228,17 @@ public class StatsHubUiService : IStatsHubUiService
     {
         var barracks = await _barracks.Value;
         var result = await _battleService.SearchBattlesAsync(request, ct);
-        var heroes = result.Heroes.ToDictionary(h => h.Unit.Id);
+
+        var heroIds =
+            result.Battles.SelectMany(src => src.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
+        if (request.BattleType == BattleType.Pvp)
+        {
+            heroIds = heroIds.Concat(result.Battles.SelectMany(src =>
+                src.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null)));
+        }
+
+        var heroes = (await GetAllBattleHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
+
         return result.Battles
             .Select(src => _statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, barracks))
             .ToList();

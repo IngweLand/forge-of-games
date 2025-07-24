@@ -10,7 +10,7 @@ using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
-public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper) : IBattleSearchResultFactory
+public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFactory
 {
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
@@ -30,19 +30,10 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
 
             return Create(src, statsId, battleType);
         }).ToList();
-        var heroIds = battles.SelectMany(src => src.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
-        if (battleType == BattleType.Pvp)
-        {
-            heroIds = heroIds.Concat(battles.SelectMany(src =>
-                src.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null)));
-        }
 
-        var heroTasks = heroIds.ToHashSet().Select(unitService.GetHeroAsync!);
-        var heroes = await Task.WhenAll(heroTasks);
         return new BattleSearchResult
         {
             Battles = battles,
-            Heroes = heroes.Where(x => x != null).ToList()!,
         };
     }
 
