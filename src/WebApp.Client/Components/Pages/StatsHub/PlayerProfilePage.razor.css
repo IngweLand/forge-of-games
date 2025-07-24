@@ -72,6 +72,12 @@ p {
     vertical-align: middle;
 }
 
+.top-heroes-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2px;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;

@@ -1,4 +1,5 @@
 using AutoMapper;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -28,7 +29,7 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
 
             return playerBattlesFactory.Create(x, statsId);
         }).ToList();
-        
+
         return new PlayerProfile
         {
             Player = mapper.Map<PlayerDto>(player),
@@ -39,6 +40,7 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
             PvpBattles = battles,
             TreasureHuntDifficulty = player.TreasureHuntDifficulty,
+            Squads = mapper.Map<IReadOnlyCollection<ProfileSquadDto>>(player.Squads),
         };
     }
 

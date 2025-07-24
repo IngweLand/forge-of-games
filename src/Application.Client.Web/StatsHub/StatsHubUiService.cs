@@ -99,6 +99,7 @@ public class StatsHubUiService : IStatsHubUiService
 
         var heroIds = player.PvpBattles.SelectMany(b =>
                 b.WinnerUnits.Select(u => u.Hero!.UnitId).Concat(b.LoserUnits.Select(u => u.Hero!.UnitId)))
+            .Concat(player.Squads.Select(x => x.Hero.UnitId))
             .ToHashSet();
         var heroes = await GetAllBattleHeroes(heroIds);
         var treasureHuntDifficulties = await _treasureHuntDifficulties.Value;

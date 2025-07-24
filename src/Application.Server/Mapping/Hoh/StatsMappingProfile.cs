@@ -1,4 +1,5 @@
 using AutoMapper;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 
@@ -22,5 +23,7 @@ public class StatsMappingProfile:Profile
         CreateMap<Alliance, AllianceDto>();
         
         CreateMap<PvpBattle, BattleKey>();
+
+        CreateMap<ProfileSquadEntity, ProfileSquadDto>();
     }
 }

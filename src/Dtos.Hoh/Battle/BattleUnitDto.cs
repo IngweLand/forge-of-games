@@ -1,17 +1,19 @@
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Dtos.Hoh.Battle;
 
-public record BattleUnitDto
+public record BattleUnitDto : IBattleUnitProperties
 {
+    public required IReadOnlyDictionary<UnitStatType, float> FinalState { get; init; } =
+        new Dictionary<UnitStatType, float>();
+
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();
 
     public int AbilityLevel { get; init; }
 
     public int AscensionLevel { get; init; }
-
-    public required IReadOnlyDictionary<UnitStatType, float> FinalState { get; init; } = new Dictionary<UnitStatType, float>();
 
     public int Level { get; init; }
 

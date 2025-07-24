@@ -30,21 +30,31 @@ public class GetPlayerProfileQueryHandler(
 {
     public async Task<PlayerProfile?> Handle(GetPlayerProfileQuery request, CancellationToken cancellationToken)
     {
+        logger.LogDebug("Processing GetPlayerProfileQuery for PlayerId: {PlayerId}", request.PlayerId);
+        
         var existingPlayer = await context.Players.FindAsync(request.PlayerId, cancellationToken);
         if (existingPlayer == null)
         {
+            logger.LogInformation("Player with ID {PlayerId} not found", request.PlayerId);
             return null;
         }
 
         var today = DateTime.UtcNow.ToDateOnly();
         if (existingPlayer.UpdatedAt < today)
         {
+            logger.LogDebug("Player profile for ID {PlayerId} needs update (UpdatedAt: {UpdatedAt}, Today: {Today})", 
+                request.PlayerId, existingPlayer.UpdatedAt, today);
             try
             {
                 var newProfile = await playerProfileService.FetchProfile(existingPlayer.Key);
                 if (newProfile != null)
                 {
+                    logger.LogDebug("New profile fetched for player {PlayerId}, updating data", request.PlayerId);
                     await playerProfileService.UpsertPlayer(newProfile, existingPlayer.WorldId);
+                }
+                else
+                {
+                    logger.LogDebug("No new profile data available for player {PlayerId}", request.PlayerId);
                 }
             }
             catch (Exception e)
@@ -54,6 +64,7 @@ public class GetPlayerProfileQueryHandler(
             }
         }
 
+        logger.LogDebug("Retrieving detailed player data for {PlayerId}", request.PlayerId);
         var periodStartDate = DateTime.UtcNow.AddDays(FogConstants.DisplayedStatsDays * -1);
         var periodStartDateOnly = DateOnly.FromDateTime(periodStartDate);
         var player = await context.Players.AsNoTracking()
@@ -73,21 +84,31 @@ public class GetPlayerProfileQueryHandler(
                 p.PvpLosses.OrderByDescending(b => b.PerformedAt)
                     .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
             .ThenInclude(b => b.Winner)
+            .Include(p =>
+                p.Squads.OrderByDescending(x => x.CollectedAt).Take(FogConstants.PLAYER_PROFILE_TOP_HEROES_COUNT))
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);
 
         if (player == null)
         {
+            logger.LogWarning("Detailed player data not found for {PlayerId} after attempting to retrieve it", request.PlayerId);
             return null;
         }
 
+        logger.LogDebug("Processing PVP battles for player {PlayerId}", request.PlayerId);
         var pvpBattles = player.PvpWins.Concat(player.PvpLosses)
             .OrderByDescending(b => b.PerformedAt)
             .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount)
             .ToList();
+        
+        logger.LogDebug("Found {BattleCount} PVP battles for player {PlayerId}", pvpBattles.Count, request.PlayerId);
         var battleIds = pvpBattles.Select(src => src.InGameBattleId);
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
+        logger.LogDebug("Retrieved {StatsCount} battle stats IDs for player {PlayerId}", existingStatsIds.Count, request.PlayerId);
 
-        return playerProfileFactory.Create(player, pvpBattles, existingStatsIds);
+        logger.LogDebug("Creating player profile for {PlayerId}", request.PlayerId);
+        var result = playerProfileFactory.Create(player, pvpBattles, existingStatsIds);
+        logger.LogInformation("Successfully created profile for player {PlayerId}", request.PlayerId);
+        return result;
     }
 }

@@ -43,10 +43,10 @@ public class ProfileSquadEntity
     public int PlayerId { get; set; }
 
     [JsonIgnore]
-    public required string SerializedHero { get; set; }
+    public string SerializedHero { get; set; }
 
     [JsonIgnore]
-    public required string SerializedSupportUnit { get; set; }
+    public string SerializedSupportUnit { get; set; }
 
     public BattleUnitProperties SupportUnit
     {

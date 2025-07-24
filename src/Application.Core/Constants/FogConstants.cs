@@ -8,6 +8,7 @@ public static class FogConstants
     public const int CC_UI_PROFILE_SCHEME_VERSION = 1;
     public const int COMMAND_CENTER_VERSION = 1;
     public const int TOP_HEROES_COUNT = 9;
+    public const int PLAYER_PROFILE_TOP_HEROES_COUNT = 5;
     public static readonly int MaxHohCitySnapshots = 5;
     public static readonly int DisplayedStatsDays = 30;
     public static readonly int DefaultPlayerProfileDisplayedBattleCount = 2;

@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -193,14 +194,14 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         });
     }
 
-    private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
+    private async Task OpenBattleSquadProfile(HeroProfileViewModel squad)
     {
         var options = GetDefaultDialogOptions();
 
-        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, squad}};
-        await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
+        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};
+        await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
     }
-
+    
     private void NavigateToBattlesScreen()
     {
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.PlayerBattles(PlayerId));

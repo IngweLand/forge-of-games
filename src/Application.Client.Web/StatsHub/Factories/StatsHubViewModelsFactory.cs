@@ -1,6 +1,6 @@
-using System.Collections.ObjectModel;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -75,7 +75,7 @@ public class StatsHubViewModelsFactory(
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
         var battles = playerProfile.PvpBattles
             .Select(x => CreatePvpBattle(player, x, heroes, ages, barracks)).ToList();
-
+        var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
         return new PlayerProfileViewModel
         {
             Player = player,
@@ -91,6 +91,7 @@ public class StatsHubViewModelsFactory(
             PvpBattles = battles,
             TreasureHuntDifficulty = treasureHuntDifficulty,
             TreasureHuntMaxPoints = treasureHuntMaxPoints,
+            Squads = playerProfile.Squads.Select(src => CreateProfileSquad(src, heroesDic, barracks)).ToList(),
         };
     }
 
@@ -199,5 +200,16 @@ public class StatsHubViewModelsFactory(
         }
 
         return new BattleSquadViewModel(profileVm, finalHitPointsPercent, isDead);
+    }
+
+    private HeroProfileViewModel CreateProfileSquad(ProfileSquadDto squad,
+        IReadOnlyDictionary<string, HeroDto> heroes,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+    {
+        var hero = heroes[squad.Hero.UnitId];
+        barracks.TryGetValue((squad.SupportUnit.UnitId, squad.SupportUnit.Level), out var concreteBarracks);
+
+        var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
+        return heroProfileViewModelFactory.Create(profile, hero, []);
     }
 }

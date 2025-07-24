@@ -5,6 +5,7 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
@@ -48,7 +49,7 @@ public class HeroProfileFactory(
         };
     }
 
-    public HeroProfile Create(BattleUnitDto battleUnit, HeroDto hero, BuildingDto? barracks)
+    public HeroProfile Create(IBattleUnitProperties battleUnit, HeroDto hero, BuildingDto? barracks)
     {
         var stats = unitStatFactory.CreateHeroStats(hero, battleUnit.Level, battleUnit.AscensionLevel,
             battleUnit.StatBoosts, barracks);

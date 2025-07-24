@@ -42,6 +42,21 @@
                                                  Difficulty="@_player.TreasureHuntDifficulty"/>
             </div>
         }
+
+        @if (_player.Squads.Count > 0)
+        {
+            <div class="fog-container section-container">
+                <span class="section-title">@Loc[FogResource.StatsHub_Player_TopHeroes]</span>
+                <div class="top-heroes-container">
+                    @foreach (var squad in _player.Squads)
+                    {
+                        <ProfileSquadComponent HeroProfile="@squad" HasShadow="true"
+                                               OnClick="OpenBattleSquadProfile"></ProfileSquadComponent>
+                    }
+                </div>
+            </div>
+        }
+
         @if (_canShowChart)
         {
             <div class="fog-container section-container ranking-points-chart-container">

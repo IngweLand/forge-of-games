@@ -1,4 +1,4 @@
-using Ingweland.Fog.Dtos.Hoh.Units;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 
 namespace Ingweland.Fog.Dtos.Hoh.Stats;
 
@@ -11,5 +11,6 @@ public class PlayerProfile
     public IReadOnlyCollection<PvpBattleDto> PvpBattles { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];
+    public IReadOnlyCollection<ProfileSquadDto> Squads { get; set; } = [];
     public int? TreasureHuntDifficulty { get; set; }
 }

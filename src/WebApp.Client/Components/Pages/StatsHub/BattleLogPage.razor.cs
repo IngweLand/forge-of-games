@@ -161,7 +161,7 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
     {
         var options = GetDefaultDialogOptions();
 
-        var parameters = new DialogParameters<BattleSquadProfileDialog> {{d => d.HeroProfile, squad}};
-        await DialogService.ShowAsync<BattleSquadProfileDialog>(null, parameters, options);
+        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};
+        await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
     }
 }

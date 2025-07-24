@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 
@@ -9,6 +10,7 @@ public class PlayerProfileViewModel
     public IReadOnlyCollection<string> Alliances { get; init; } = [];
     public string? Names { get; init; }
     public required PlayerViewModel Player { get; init; }
+    public IReadOnlyCollection<HeroProfileViewModel> Squads { get; init; } = [];
     public IReadOnlyCollection<PvpBattleViewModel> PvpBattles { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];

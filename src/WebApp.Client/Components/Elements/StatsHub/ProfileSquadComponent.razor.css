@@ -1,0 +1,86 @@
+.component-root  {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-border-color);
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 70px;
+    min-width: 60px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.component-shadow {
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.avatar-section {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.avatar-section > img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.rating {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 2px 4px black;
+    font-size: 10px;
+}
+
+.main-label {
+    font-size: 10px;
+    white-space: normal;
+    width: 100%;
+    flex-grow: 1;
+    padding: 2px;
+    text-align: center;
+    align-content: center;
+}
+
+.icon-label-container {
+    padding: 4px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: auto;
+    padding: 2px 0;
+    width: 100%;
+}
+
+.icon {
+    width: 12px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.icon-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--fog-text-on-dark-color);
+}

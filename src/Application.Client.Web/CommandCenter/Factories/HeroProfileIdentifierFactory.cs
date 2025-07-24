@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 
 namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
 
@@ -23,7 +24,7 @@ public class HeroProfileIdentifierFactory : IHeroProfileIdentifierFactory
         };
     }
 
-    public HeroProfileIdentifier Create(string heroId, BattleUnitDto battleUnit, int barracksLevel)
+    public HeroProfileIdentifier Create(string heroId, IBattleUnitProperties battleUnit, int barracksLevel)
     {
         return new HeroProfileIdentifier
         {
