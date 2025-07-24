@@ -97,9 +97,9 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
         {
             _battles = await StatsHubUiService.SearchBattles(request, _battlesCts.Token);
         }
-        catch
+        catch (Exception e)
         {
-            // ignored
+            Console.Error.WriteLine(e);
         }
 
         if (_isDisposed)

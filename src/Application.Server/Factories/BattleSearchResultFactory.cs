@@ -58,8 +58,9 @@ public class BattleSearchResultFactory(IUnitService unitService, IMapper mapper)
         var playerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads,
             JsonSerializerOptions) ?? [];
 
+        // This is ugly, I know. We suddenly got a Hero, which is not a hero, but just a unit...
         var playerBattleUnitDtos = playerSquads
-            .Where(src => src.Hero != null)
+            .Where(src => src.Hero != null && src.Hero.Properties.UnitId != "unit.Unit_SpartasLastStand_Leonidas_1")
             .OrderBy(src => src.BattlefieldSlot)
             .Select(mapper.Map<BattleSquadDto>)
             .ToList();
