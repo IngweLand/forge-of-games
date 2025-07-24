@@ -38,6 +38,7 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
             Alliances = alliances,
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
             PvpBattles = battles,
+            TreasureHuntDifficulty = player.TreasureHuntDifficulty,
         };
     }
 

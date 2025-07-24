@@ -68,7 +68,8 @@ public class StatsHubViewModelsFactory(
 
     public PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints)
     {
         var player = mapper.Map<PlayerViewModel>(playerProfile.Player,
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
@@ -88,6 +89,8 @@ public class StatsHubViewModelsFactory(
             PvpRankingPoints = playerProfile.PvpRankingPoints,
             RankingPoints = playerProfile.RankingPoints,
             PvpBattles = battles,
+            TreasureHuntDifficulty = treasureHuntDifficulty,
+            TreasureHuntMaxPoints = treasureHuntMaxPoints,
         };
     }
 

@@ -35,6 +35,13 @@
                 }
             </MudButton>
         </div>
+        @if (_player.TreasureHuntDifficulty != null)
+        {
+            <div class="fog-container section-container" style="align-items: flex-start;">
+                <TreasureHuntDifficultyComponent MaxPoints="@_player.TreasureHuntMaxPoints"
+                                                 Difficulty="@_player.TreasureHuntDifficulty"/>
+            </div>
+        }
         @if (_canShowChart)
         {
             <div class="fog-container section-container ranking-points-chart-container">

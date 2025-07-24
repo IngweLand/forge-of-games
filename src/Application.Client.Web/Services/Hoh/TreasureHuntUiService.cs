@@ -17,6 +17,11 @@ public class TreasureHuntUiService(
     private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
     private IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>>? _treasureHuntEncounterMap;
 
+    public int GetDifficultyMaxProgressPoints(int difficulty)
+    {
+        return (10 + 5 * difficulty) * 80;
+    }
+
     public async Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>> GetDifficultiesAsync()
     {
         if (_difficulties != null)

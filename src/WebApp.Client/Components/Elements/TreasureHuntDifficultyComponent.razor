@@ -1,0 +1,25 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="fog-container grid-container">
+    <div class="icon">
+        <img src="@Difficulty?.IconUrl"/>
+    </div>
+    <div class="title">
+        @Difficulty?.Name
+    </div>
+    <div class="max-points">
+        <span>@Loc[FogResource.Common_Max]:</span> <span>@MaxPoints</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter][EditorRequired]
+    public required TreasureHuntDifficultyBasicViewModel? Difficulty { get; set; }
+
+    [Parameter][EditorRequired]
+    public required int MaxPoints { get; set; }
+
+}

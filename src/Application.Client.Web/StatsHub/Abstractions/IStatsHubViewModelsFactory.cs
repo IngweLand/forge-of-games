@@ -15,7 +15,8 @@ public interface IStatsHubViewModelsFactory
 {
     PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks);
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints);
 
     PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages);
