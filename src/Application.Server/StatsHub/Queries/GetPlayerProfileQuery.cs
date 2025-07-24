@@ -5,8 +5,10 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
@@ -21,11 +23,37 @@ public record GetPlayerProfileQuery : IRequest<PlayerProfile?>, ICacheableReques
 public class GetPlayerProfileQueryHandler(
     IFogDbContext context,
     IPlayerProfileFactory playerProfileFactory,
-    IBattleQueryService battleQueryService)
+    IBattleQueryService battleQueryService,
+    IPlayerProfileService playerProfileService,
+    ILogger<GetPlayerProfileQueryHandler> logger)
     : IRequestHandler<GetPlayerProfileQuery, PlayerProfile?>
 {
     public async Task<PlayerProfile?> Handle(GetPlayerProfileQuery request, CancellationToken cancellationToken)
     {
+        var existingPlayer = await context.Players.FindAsync(request.PlayerId, cancellationToken);
+        if (existingPlayer == null)
+        {
+            return null;
+        }
+
+        var today = DateTime.UtcNow.ToDateOnly();
+        if (existingPlayer.UpdatedAt < today)
+        {
+            try
+            {
+                var newProfile = await playerProfileService.FetchProfile(existingPlayer.Key);
+                if (newProfile != null)
+                {
+                    await playerProfileService.UpsertPlayer(newProfile, existingPlayer.WorldId);
+                }
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error while fetching or updating player profile for player ID {@PlayerKey}",
+                    existingPlayer.Key);
+            }
+        }
+
         var periodStartDate = DateTime.UtcNow.AddDays(FogConstants.DisplayedStatsDays * -1);
         var periodStartDateOnly = DateOnly.FromDateTime(periodStartDate);
         var player = await context.Players.AsNoTracking()
@@ -37,9 +65,13 @@ public class GetPlayerProfileQueryHandler(
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
             .Include(p => p.AllianceNameHistory)
-            .Include(p => p.PvpWins.OrderByDescending(b => b.PerformedAt).Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
+            .Include(p =>
+                p.PvpWins.OrderByDescending(b => b.PerformedAt)
+                    .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
             .ThenInclude(b => b.Loser)
-            .Include(p => p.PvpLosses.OrderByDescending(b => b.PerformedAt).Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
+            .Include(p =>
+                p.PvpLosses.OrderByDescending(b => b.PerformedAt)
+                    .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
             .ThenInclude(b => b.Winner)
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);

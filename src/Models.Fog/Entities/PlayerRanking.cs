@@ -10,5 +10,5 @@ public class PlayerRanking
     public required int Points { get; set; }
     public required int Rank { get; set; }
     public required PlayerRankingType Type { get; set; }
-    public required int PlayerId { get; set; }
+    public int PlayerId { get; set; }
 }

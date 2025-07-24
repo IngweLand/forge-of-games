@@ -5,8 +5,8 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 public class Alliance
 {
     private AllianceKey? _key;
-    public int AvatarBackgroundId { get; init; }
-    public int AvatarIconId { get; init; }
+    public int AvatarBackgroundId { get; set; }
+    public int AvatarIconId { get; set; }
     public int Id { get; set; }
     public required int InGameAllianceId { get; set; }
 

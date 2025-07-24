@@ -77,6 +77,7 @@ public static class DependencyInjection
         services.AddScoped<IHohCityCreationService, HohCityCreationService>();
         services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
         services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
+        services.AddScoped<IPlayerProfileService, PlayerProfileService>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>
