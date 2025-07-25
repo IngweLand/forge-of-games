@@ -14,7 +14,7 @@ public record GetAllianceQuery : IRequest<AllianceWithRankings?>, ICacheableRequ
 {
     public required int AllianceId { get; init; }
     public string CacheKey => $"AllianceWithRanking_{AllianceId}";
-    public TimeSpan? Duration => TimeSpan.FromHours(6);
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
 

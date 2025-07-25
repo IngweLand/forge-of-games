@@ -8,11 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetPlayerBattlesQuery : IRequest<PaginatedList<PvpBattleDto>>
+public record GetPlayerBattlesQuery : IRequest<PaginatedList<PvpBattleDto>>, ICacheableRequest
 {
     public int Count { get; init; }
     public required int PlayerId { get; init; }
     public int StartIndex { get; init; }
+    public string CacheKey => $"PlayerBattles_{PlayerId}_{StartIndex}_{Count}";
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class GetPlayerBattlesQueryHandler(
@@ -53,7 +56,7 @@ public class GetPlayerBattlesQueryHandler(
 
             return playerBattlesFactory.Create(x, statsId);
         }).ToList();
-        
+
         return new PaginatedList<PvpBattleDto>(battleDtos, request.StartIndex, count);
     }
 }

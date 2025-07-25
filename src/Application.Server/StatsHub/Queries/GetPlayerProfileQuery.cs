@@ -16,7 +16,7 @@ public record GetPlayerProfileQuery : IRequest<PlayerProfile?>, ICacheableReques
 {
     public required int PlayerId { get; init; }
     public string CacheKey => $"PlayerProfile_{PlayerId}_{CultureInfo.CurrentCulture.Name}";
-    public TimeSpan? Duration => TimeSpan.FromHours(6);
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
 

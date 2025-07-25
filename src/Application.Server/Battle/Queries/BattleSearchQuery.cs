@@ -19,11 +19,10 @@ public record BattleSearchQuery : IRequest<BattleSearchResult>, ICacheableReques
     public required BattleType BattleType { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
 
-    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}_{
-        CultureInfo.CurrentCulture.Name}";
+    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}";
 
-    public TimeSpan? Duration { get; }
-    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class BattleSearchQueryHandler(

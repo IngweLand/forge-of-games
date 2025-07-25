@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -16,8 +17,8 @@ public record CityInspirationsSearchQuery(CityInspirationsSearchRequest Request)
     public string CacheKey => $"CityInspirationsSearch_{Request.CityId}_{Request.AgeId}_{Request.SearchPreference}_{
         Request.AllowPremiumEntities}_{Request.OpenedExpansionsHash}_{Request.TotalArea}";
 
-    public TimeSpan? Duration => TimeSpan.FromHours(6);
-    public DateTimeOffset? Expiration { get; }
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
 
 public class CityInspirationsSearchQueryHandler(

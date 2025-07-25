@@ -10,7 +10,7 @@ namespace Ingweland.Fog.Application.Server.Battle.Queries;
 public record GetBattleStatsQuery(int Id) : IRequest<BattleStatsDto?>, ICacheableRequest
 {
     public string CacheKey => $"BattleStats_{Id}_{CultureInfo.CurrentCulture.Name}";
-    public TimeSpan? Duration => TimeSpan.FromDays(1);
+    public TimeSpan? Duration => TimeSpan.FromDays(30);
     public DateTimeOffset? Expiration { get; }
 }
 

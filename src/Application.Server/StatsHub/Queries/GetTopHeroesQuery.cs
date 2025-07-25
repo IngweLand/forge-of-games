@@ -13,8 +13,8 @@ public record GetTopHeroesQuery : IRequest<IReadOnlyCollection<string>>, ICachea
     public int? FromLevel { get; init; } = 0;
     public int? ToLevel { get; init; } = int.MaxValue;
     public string CacheKey => $"TopHeroes-{AgeId}-{FromLevel}-{ToLevel}";
-    public TimeSpan? Duration { get; }
-    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc().AddHours(6);
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class GetTopHeroesQueryHandler(IFogDbContext context)

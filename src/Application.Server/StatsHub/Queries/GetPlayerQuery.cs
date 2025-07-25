@@ -10,7 +10,7 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 public record GetPlayerQuery(int PlayerId) : IRequest<PlayerDto?>, ICacheableRequest
 {
     public string CacheKey => $"Player_{PlayerId}";
-    public TimeSpan? Duration => TimeSpan.FromHours(6);
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
 
