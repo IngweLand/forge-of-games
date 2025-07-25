@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Azure.Monitor.OpenTelemetry.AspNetCore;
 using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Core.Helpers;
@@ -10,6 +11,7 @@ using Ingweland.Fog.WebApp;
 using Ingweland.Fog.WebApp.Apis;
 using Ingweland.Fog.WebApp.Components;
 using Ingweland.Fog.WebApp.Constants;
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.AspNetCore.ResponseCompression;
 using MudBlazor.Services;
 
@@ -38,6 +40,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY,
         policy => { policy.WithOrigins("*").WithMethods("POST", "OPTIONS").AllowAnyHeader(); });
+});
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
 });
 builder.Services.AddOpenTelemetry().UseAzureMonitor();
 var app = builder.Build();
