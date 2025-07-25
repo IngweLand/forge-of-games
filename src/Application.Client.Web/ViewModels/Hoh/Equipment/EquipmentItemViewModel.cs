@@ -4,6 +4,8 @@ namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
 
 public class EquipmentItemViewModel
 {
+    public EquipmentItemSubAttributeViewModel? SubAttackSpeed { get; init; }
+    public EquipmentItemSubAttributeViewModel? SubCritChance { get; init; }
     public EquipmentSet EquipmentSet { get; init; }
     public required string EquipmentSetIconUrl { get; init; }
     public EquipmentSlotType EquipmentSlotType { get; init; }
@@ -11,6 +13,7 @@ public class EquipmentItemViewModel
     public string? EquippedOnHero { get; init; }
     public string? EquippedOnHeroPortraitUrl { get; init; }
     public int Id { get; init; }
+    public EquipmentItemSubAttributeViewModel? SubInitialFocusInSecondsBonus { get; init; }
     public int Level { get; init; }
 
     public EquipmentItemAttributeViewModel? MainAttack { get; init; }

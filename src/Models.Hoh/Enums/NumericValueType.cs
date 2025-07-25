@@ -6,4 +6,5 @@ public enum NumericValueType
     Duration,
     Percentage,
     Number,
+    Speed,
 }

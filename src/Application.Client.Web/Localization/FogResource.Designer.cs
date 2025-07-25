@@ -2814,11 +2814,29 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ATK SPEED.
+        /// </summary>
+        public static string UnitStats_AttackSpeedAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.AttackSpeedAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Base DMG %.
         /// </summary>
         public static string UnitStats_BaseDamagePercentAbbrev {
             get {
                 return ResourceManager.GetString("UnitStats.BaseDamagePercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CRIT CHANCE.
+        /// </summary>
+        public static string UnitStats_CritChanceAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.CritChanceAbbrev", resourceCulture);
             }
         }
         
@@ -2846,6 +2864,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string UnitStats_DefensePercentAbbrev {
             get {
                 return ResourceManager.GetString("UnitStats.DefensePercentAbbrev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INITIAL CHARGE.
+        /// </summary>
+        public static string UnitStats_InitialFocusInSecondsBonusAbbrev {
+            get {
+                return ResourceManager.GetString("UnitStats.InitialFocusInSecondsBonusAbbrev", resourceCulture);
             }
         }
         

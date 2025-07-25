@@ -53,6 +53,9 @@ var searchKeys = new HashSet<string>
     "Base.UnitStats.unit_stat.MaxHitPoints_Percent_Abbrev",
     "Base.UnitStats.unit_stat.BaseDamage_Percent_Abbrev",
     "Base.UnitStats.unit_stat.CritDamage_Abbrev",
+    "Base.UnitStats.unit_stat.InitialFocusInSecondsBonus_Abbrev",
+    "Base.UnitStats.unit_stat.CritChance_Abbrev",
+    "Base.UnitStats.unit_stat.AttackSpeed_Abbrev",
 };
 
 var result = new Dictionary<string, List<Translations>>();

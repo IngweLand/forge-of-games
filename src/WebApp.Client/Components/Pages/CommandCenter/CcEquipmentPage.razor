@@ -18,7 +18,7 @@
                     <MudTHeadRow>
                         <MudTh colspan="5"></MudTh>
                         <MudTh colspan="2">@Loc[FogResource.Equipment_MainAttributes]</MudTh>
-                        <MudTh colspan="8">@Loc[FogResource.Equipment_SubAttributes]</MudTh>
+                        <MudTh colspan="11">@Loc[FogResource.Equipment_SubAttributes]</MudTh>
                     </MudTHeadRow>
                     <MudTHeadRow>
                         <MudTh>
@@ -115,6 +115,24 @@
                                 @Loc[FogResource.UnitStats_CritDamageAbbrev]
                             </MudTableSortLabel>
                         </MudTh>
+                        <MudTh Class="sub-attribute-th">
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubInitialFocusInSecondsBonus)">
+                                @Loc[FogResource.UnitStats_InitialFocusInSecondsBonusAbbrev]
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh Class="sub-attribute-th">
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritChance)">
+                                @Loc[FogResource.UnitStats_CritChanceAbbrev]
+                            </MudTableSortLabel>
+                        </MudTh>
+                        <MudTh Class="sub-attribute-th">
+                            <MudTableSortLabel T="EquipmentItemViewModel"
+                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackSpeed)">
+                                @Loc[FogResource.UnitStats_AttackSpeedAbbrev]
+                            </MudTableSortLabel>
+                        </MudTh>
                     </MudTHeadRow>
                 </HeaderContent>
                 <RowTemplate>
@@ -185,7 +203,30 @@
                             <span>@((MarkupString) (context.SubCritDamage?.FormattedValue ?? string.Empty))</span>
                         </div>
                     </MudTd>
-
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent
+                                Value="@context.SubInitialFocusInSecondsBonus?.RolledValuePercent"
+                                FormattedValue="@context.SubInitialFocusInSecondsBonus?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubInitialFocusInSecondsBonus?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent
+                                Value="@context.SubCritChance?.RolledValuePercent"
+                                FormattedValue="@context.SubCritChance?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubCritChance?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
+                    <MudTd>
+                        <div class="sub-attribute-cell">
+                            <EquipmentRolledValueComponent
+                                Value="@context.SubAttackSpeed?.RolledValuePercent"
+                                FormattedValue="@context.SubAttackSpeed?.FormattedRolledValue"/>
+                            <span>@((MarkupString) (context.SubAttackSpeed?.FormattedValue ?? string.Empty))</span>
+                        </div>
+                    </MudTd>
 
                 </RowTemplate>
             </MudTable>

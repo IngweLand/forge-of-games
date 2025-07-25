@@ -66,6 +66,13 @@ public partial class CcEquipmentPage : CommandCenterPageBase
                 state.SortDirection),
             nameof(EquipmentItemViewModel.SubCritDamage) => HandleSubAttributeSort(_equipment, x => x.SubCritDamage,
                 state.SortDirection),
+            nameof(EquipmentItemViewModel.SubInitialFocusInSecondsBonus) => HandleSubAttributeSort(_equipment,
+                x => x.SubInitialFocusInSecondsBonus,
+                state.SortDirection),
+            nameof(EquipmentItemViewModel.SubCritChance) => HandleSubAttributeSort(_equipment, x => x.SubCritChance,
+                state.SortDirection),
+            nameof(EquipmentItemViewModel.SubAttackSpeed) => HandleSubAttributeSort(_equipment, x => x.SubAttackSpeed,
+                state.SortDirection),
             _ => _equipment,
         };
 

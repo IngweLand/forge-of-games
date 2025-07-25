@@ -45,6 +45,10 @@ public class EquipmentItemToViewModelConverter(
                 NumericValueType.Percentage),
             SubCritDamage = CreateSubAttribute(source.SubAttributes, StatAttribute.CritDamage,
                 NumericValueType.Percentage),
+            SubInitialFocusInSecondsBonus = CreateSubAttribute(source.SubAttributes, StatAttribute.InitialFocusInSecondsBonus,
+                NumericValueType.Duration),
+            SubCritChance = CreateSubAttribute(source.SubAttributes, StatAttribute.CritChance, NumericValueType.Percentage),
+            SubAttackSpeed = CreateSubAttribute(source.SubAttributes, StatAttribute.AttackSpeed, NumericValueType.Speed),
         };
     }
 
@@ -56,11 +60,7 @@ public class EquipmentItemToViewModelConverter(
             return null;
         }
 
-        var formattedValue = numericValueType switch
-        {
-            NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
-            _ => attribute.StatBoost.Value.ToString(),
-        };
+        var formattedValue = numericValueType.ToFormatedString(attribute.StatBoost.Value);
 
         return new EquipmentItemAttributeViewModel
         {
@@ -82,11 +82,7 @@ public class EquipmentItemToViewModelConverter(
         var formattedValue = "?";
         if (attribute.StatBoost != null)
         {
-            formattedValue = numericValueType switch
-            {
-                NumericValueType.Percentage => (attribute.StatBoost.Value * 100).ToString("N1"),
-                _ => attribute.StatBoost.Value.ToString(CultureInfo.InvariantCulture),
-            };
+            formattedValue = numericValueType.ToFormatedString(attribute.StatBoost.Value);
         }
 
         formattedValue += $"<sup style=\"font-size: 8px;\"> lvl {attribute.UnlockedAtLevel}</sup>";
