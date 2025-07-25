@@ -14,7 +14,6 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
         IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
         var alliances = player.AllianceHistory.Select(a => a.Name)
-            .Concat(player.AllianceNameHistory.Select(n => n.AllianceName))
             .ToHashSet()
             .Order()
             .ToList();

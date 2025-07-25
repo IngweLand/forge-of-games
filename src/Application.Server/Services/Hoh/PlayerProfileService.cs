@@ -135,7 +135,6 @@ public class PlayerProfileService(
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
-            .Include(p => p.AllianceNameHistory)
             .Include(p => p.Squads.Where(x => x.CollectedAt == today))
             .AsSplitQuery()
             .FirstOrDefaultAsync(x => x.InGamePlayerId == profile.Player.Id && x.WorldId == worldId);

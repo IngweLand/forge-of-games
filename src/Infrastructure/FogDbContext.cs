@@ -21,7 +21,6 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<Player> Players { get; set; }
     public DbSet<Alliance> Alliances { get; set; }
     public DbSet<AllianceRanking> AllianceRankings { get; set; }
-    public DbSet<PlayerAllianceNameHistoryEntry> PlayerAllianceNameHistory { get; set; }
     public DbSet<PvpBattle> PvpBattles { get; set; }
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
     public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
@@ -36,7 +35,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PvpRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerNameHistoryEntryEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerAgeHistoryEntryEntityTypeConfiguration());
-        builder.ApplyConfiguration(new PlayerAllianceNameHistoryEntryEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceNameHistoryEntryEntityTypeConfiguration());

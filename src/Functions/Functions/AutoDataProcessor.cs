@@ -27,7 +27,6 @@ public class AutoDataProcessor(
     IPlayerAgeHistoryService playerAgeHistoryService,
     IPlayerNameHistoryService playerNameHistoryService,
     IAllianceService allianceService,
-    IPlayerAllianceNameHistoryService playerAllianceNameHistoryService,
     IAllianceRankingService allianceRankingService,
     IAllianceNameHistoryService allianceNameHistoryService,
     IAllianceMembersService allianceMembersService,
@@ -245,10 +244,6 @@ public class AutoDataProcessor(
         logger.LogInformation("Starting player age history service update");
         await ExecuteSafeAsync(() => playerAgeHistoryService.UpdateAsync(playerAggregates), "");
         logger.LogInformation("Completed player age history service update");
-
-        logger.LogInformation("Starting player alliance name history service update");
-        await ExecuteSafeAsync(() => playerAllianceNameHistoryService.UpdateAsync(playerAggregates), "");
-        logger.LogInformation("Completed player alliance name history service update");
 
         logger.LogInformation("Starting pvp battles service update");
         await ExecuteSafeAsync(() => pvpBattleService.AddAsync(allPvpBattles), "");

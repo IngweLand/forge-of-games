@@ -11,9 +11,6 @@ public class Player
 
     public string? AllianceName { get; set; }
 
-    public ICollection<PlayerAllianceNameHistoryEntry> AllianceNameHistory { get; set; } =
-        new List<PlayerAllianceNameHistoryEntry>();
-
     public int AvatarId { get; set; }
     public ICollection<PlayerCitySnapshot> CitySnapshots { get; set; } = new List<PlayerCitySnapshot>();
     public Alliance? CurrentAlliance { get; set; }

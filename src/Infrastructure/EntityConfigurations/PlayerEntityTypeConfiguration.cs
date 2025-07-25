@@ -32,7 +32,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.AgeHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.NameHistory).WithOne().HasForeignKey(p => p.PlayerId);
-        builder.HasMany(p => p.AllianceNameHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.PvpRankings).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.PvpWins).WithOne(b => b.Winner).HasForeignKey(b => b.WinnerId)
             .OnDelete(DeleteBehavior.Restrict);

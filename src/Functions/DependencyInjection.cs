@@ -3,8 +3,6 @@ using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration;
 using Ingweland.Fog.Functions.Validators;
-using Ingweland.Fog.Infrastructure.Repositories;
-using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.Configuration;
@@ -29,7 +27,6 @@ public static class DependencyInjection
         services.AddScoped<IPlayerService, PlayerService>();
         services.AddScoped<IPlayerAgeHistoryService, PlayerAgeHistoryService>();
         services.AddScoped<IPlayerNameHistoryService, PlayerNameHistoryService>();
-        services.AddScoped<IPlayerAllianceNameHistoryService, PlayerAllianceNameHistoryService>();
         services.AddScoped<IAllianceRankingService, AllianceRankingService>();
         services.AddScoped<IAllianceService, AllianceService>();
         services.AddScoped<IAllianceNameHistoryService, AllianceNameHistoryService>();
@@ -48,12 +45,12 @@ public static class DependencyInjection
         services.AddScoped<ICultureUsageRatioUpdater, CultureUsageRatioUpdater>();
         services.AddScoped<IPlayerSquadsUpdater, PlayerSquadsUpdater>();
         services.AddScoped<IPlayerUpdater, PlayerUpdater>();
-        
+
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
         return services;
     }
-    
+
     public static void AddConfigurations(this FunctionsApplicationBuilder builder)
     {
         builder.Configuration.AddUserSecrets<Program>(optional: true);
