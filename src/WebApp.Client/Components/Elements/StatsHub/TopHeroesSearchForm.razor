@@ -3,12 +3,23 @@
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Fog.Enums
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 
 <div class="component-root">
     @if (FormData != null && Request != null)
     {
+        <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.StatsHub_HeroInsights_Form_Mode]"
+                   Value="@_selectedMode" Strict="true" ValueChanged="OnModeChanged"
+                   T="HeroInsightsModeViewModel" ToStringFunc="@(x => x?.Name)"
+                   Variant="Variant.Outlined">
+            @foreach (var mode in FormData.Modes)
+            {
+                <MudSelectItem Value="@mode">@mode.Name</MudSelectItem>
+            }
+        </MudSelect>
+
         <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Common_Age]"
                    Value="@_selectedAge" Clearable="true" ValueChanged="OnAgeChanged"
                    T="AgeViewModel" ToStringFunc="@(x => x?.Name)"
@@ -19,16 +30,19 @@
             }
         </MudSelect>
 
-        <MudSelect Margin="Margin.Dense" Dense="true" Clearable="true"
-                   Label="@Loc[FogResource.StatsHub_TopHeroes_Form_LevelRange]"
-                   Value="@_selectedRange"
-                   T="HeroLevelRange" ValueChanged="OnRangeChanged"
-                   Variant="Variant.Outlined">
-            @foreach (var range in FormData.LevelRanges)
-            {
-                <MudSelectItem Value="@range">@range</MudSelectItem>
-            }
-        </MudSelect>
+        @if (_selectedMode.Mode == HeroInsightsMode.MostPopular)
+        {
+            <MudSelect Margin="Margin.Dense" Dense="true" Clearable="true"
+                       Label="@Loc[FogResource.StatsHub_HeroInsights_Form_LevelRange]"
+                       Value="@_selectedRange"
+                       T="HeroLevelRange" ValueChanged="OnRangeChanged"
+                       Variant="Variant.Outlined">
+                @foreach (var range in FormData.LevelRanges)
+                {
+                    <MudSelectItem Value="@range">@range</MudSelectItem>
+                }
+            </MudSelect>
+        }
     }
 
 </div>
@@ -54,6 +68,7 @@
 
     private AgeViewModel? _selectedAge;
     private HeroLevelRange? _selectedRange;
+    private HeroInsightsModeViewModel _selectedMode = null!;
 
     [Parameter]
     [EditorRequired]
@@ -75,6 +90,7 @@
 
         _selectedAge = Request.Age;
         _selectedRange = Request.LevelRange;
+        _selectedMode = Request.Mode;
     }
 
     private Task OnAgeChanged(AgeViewModel? newValue)
@@ -89,6 +105,13 @@
         return Request!.LevelRange == newValue
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(Request with {LevelRange = newValue});
+    }
+
+    private Task OnModeChanged(HeroInsightsModeViewModel newValue)
+    {
+        return Request!.Mode == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(Request with {Mode = newValue});
     }
 
 }

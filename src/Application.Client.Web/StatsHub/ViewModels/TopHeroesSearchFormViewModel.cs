@@ -7,4 +7,5 @@ public class TopHeroesSearchFormViewModel
 {
     public required IReadOnlyCollection<AgeViewModel> Ages { get; init; }
     public required IReadOnlyCollection<HeroLevelRange> LevelRanges { get; init; }
+    public required IReadOnlyCollection<HeroInsightsModeViewModel> Modes { get; init; }
 }

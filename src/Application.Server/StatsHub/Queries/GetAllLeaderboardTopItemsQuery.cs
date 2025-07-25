@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Stats;
+using Ingweland.Fog.Models.Fog.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
@@ -27,7 +28,7 @@ public class
             await statsHubService.GetAlliancesAsync("un1", ct: cancellationToken);
         var betaAlliances =
             await statsHubService.GetAlliancesAsync("zz1", ct: cancellationToken);
-        var topHeroes = await statsHubService.GetTopHeroesAsync(ct: cancellationToken);
+        var topHeroes = await statsHubService.GetTopHeroesAsync(HeroInsightsMode.MostPopular, ct: cancellationToken);
         return new LeaderboardTopItemsDto
         {
             MainWorldPlayers = mainPlayers,

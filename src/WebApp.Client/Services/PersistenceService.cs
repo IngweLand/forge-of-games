@@ -57,9 +57,19 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     public async ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync()
     {
         var rawData = await localStorageService.GetItemAsStringAsync(TOP_HEROES_REQUEST);
-        return !string.IsNullOrWhiteSpace(rawData)
-            ? JsonSerializer.Deserialize<TopHeroesSearchFormRequest>(rawData, JsonSerializerOptions)
-            : null;
+        if (string.IsNullOrWhiteSpace(rawData))
+        {
+            return null;
+        }
+
+        try
+        {
+            return JsonSerializer.Deserialize<TopHeroesSearchFormRequest>(rawData, JsonSerializerOptions);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
     public ValueTask SaveCityBackup(HohCityBackup cityBackup)

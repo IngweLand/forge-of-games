@@ -999,10 +999,6 @@
         <value>Research state</value>
     </data>
     
-    <data name="StatsHub.TopHeroesListTitle" xml:space="preserve">
-        <value>Top heroes</value>
-    </data>
-    
     <data name="Common.Max" xml:space="preserve">
         <value>Max</value>
     </data>
@@ -1010,7 +1006,20 @@
     <data name="StatsHub.Player.TopHeroes" xml:space="preserve">
         <value>Top heroes</value>
     </data>
-    <data name="StatsHub.TopHeroes.Form.LevelRange" xml:space="preserve">
+    
+    <data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
+        <value>Hero Insights</value>
+    </data>
+    <data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
         <value>Level range</value>
+    </data>
+    <data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
+        <value>Mode</value>
+    </data>
+    <data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
+        <value>Top 5 levels</value>
+    </data>
+    <data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
+        <value>Most popular</value>
     </data>
 </root>

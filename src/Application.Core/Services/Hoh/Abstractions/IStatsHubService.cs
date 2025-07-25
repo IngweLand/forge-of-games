@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Refit;
 
 namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
@@ -39,6 +40,6 @@ public interface IStatsHubService
     Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH)]
-    Task<IReadOnlyCollection<string>> GetTopHeroesAsync([Query] string? ageId = null, [Query] int? fromLevel = null,
-        [Query] int? toLevel = null, CancellationToken ct = default);
+    Task<IReadOnlyCollection<string>> GetTopHeroesAsync([Query] HeroInsightsMode mode, [Query] string? ageId = null,
+        [Query] int? fromLevel = null, [Query] int? toLevel = null, CancellationToken ct = default);
 }

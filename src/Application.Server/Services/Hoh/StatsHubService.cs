@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -79,14 +80,15 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<IReadOnlyCollection<string>> GetTopHeroesAsync(string? ageId = null, int? fromLevel = null,
-        int? toLevel  = null, CancellationToken ct = default)
+    public Task<IReadOnlyCollection<string>> GetTopHeroesAsync(HeroInsightsMode mode, string? ageId = null,
+        int? fromLevel = null, int? toLevel = null, CancellationToken ct = default)
     {
         return sender.Send(new GetTopHeroesQuery
         {
             AgeId = ageId,
             FromLevel = fromLevel,
             ToLevel = toLevel,
+            Mode = mode,
         }, ct);
     }
 }

@@ -53,11 +53,16 @@ public partial class TopHeroesPage : StatsHubPageBase, IAsyncDisposable
             {
                 Age = _searchFormData.Ages.FirstOrDefault(x => x.Id == savedRequest.Age?.Id),
                 LevelRange = _searchFormData.LevelRanges.FirstOrDefault(x => x == savedRequest.LevelRange),
+                Mode = _searchFormData.Modes.FirstOrDefault(x => x.Mode == savedRequest.Mode.Mode) ??
+                    _searchFormData.Modes.First(),
             };
         }
         else
         {
-            searchRequest = new TopHeroesSearchFormRequest();
+            searchRequest = new TopHeroesSearchFormRequest
+            {
+                Mode = _searchFormData.Modes.First(),
+            };
         }
 
         await GetHeroes(searchRequest);
@@ -82,8 +87,8 @@ public partial class TopHeroesPage : StatsHubPageBase, IAsyncDisposable
 
         try
         {
-            _heroes = await TopHeroesUiService.GetTopHeroes(_searchRequest.Age?.Id, _searchRequest.LevelRange,
-                _heroesCts.Token);
+            _heroes = await TopHeroesUiService.GetTopHeroes(_searchRequest.Mode.Mode, _searchRequest.Age?.Id,
+                _searchRequest.LevelRange, _heroesCts.Token);
         }
         catch (OperationCanceledException _)
         {

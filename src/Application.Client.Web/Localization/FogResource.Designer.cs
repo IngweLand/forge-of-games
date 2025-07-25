@@ -2139,6 +2139,51 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Level range.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Form_LevelRange {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Form.LevelRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mode.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Form_Mode {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Form.Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hero Insights.
+        /// </summary>
+        public static string StatsHub_HeroInsights_ListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.ListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Most popular.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_MostPopular {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.MostPopular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5 levels.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_Top {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle log.
         /// </summary>
         public static string StatsHub_Menu_BattleLog {
@@ -2306,24 +2351,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Title {
             get {
                 return ResourceManager.GetString("StatsHub.Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Level range.
-        /// </summary>
-        public static string StatsHub_TopHeroes_Form_LevelRange {
-            get {
-                return ResourceManager.GetString("StatsHub.TopHeroes.Form.LevelRange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Top heroes.
-        /// </summary>
-        public static string StatsHub_TopHeroesListTitle {
-            get {
-                return ResourceManager.GetString("StatsHub.TopHeroesListTitle", resourceCulture);
             }
         }
         
