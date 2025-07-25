@@ -14,7 +14,7 @@ public class TopHeroesUiService(
     : ITopHeroesUiService
 {
     private readonly IReadOnlyCollection<HeroLevelRange> _levelRanges =
-        [new(-1, 59), new(60, 79), new(80, 99), new(100, 119), new(120, -1)];
+        [new(null, 59), new(60, 79), new(80, 99), new(100, 119), new(120, null)];
 
     public async Task<TopHeroesSearchFormViewModel> GetTopHeroesSearchFormDataAsync()
     {
