@@ -42,6 +42,8 @@ public class HeroProfileViewModelFactory(
         UnitStatType.CritChance,
         UnitStatType.CritDamage,
         UnitStatType.SingleTargetDamageAmp,
+        UnitStatType.AoeDamageAmp,
+        UnitStatType.BasicAttackDamageAmp,
         UnitStatType.HealTakenAmp,
     ];
 
