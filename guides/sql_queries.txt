@@ -1,0 +1,22 @@
+-- Top heroes filter
+WITH FilteredProfileSquads AS (
+    SELECT *
+    FROM dbo.profile_squads
+    WHERE Age Like '%Roman%' and Level >=80 and Level < 100
+),
+     LatestTimestamps AS (
+         SELECT PlayerId, MAX(CollectedAt) AS LatestCollectedAt
+         FROM FilteredProfileSquads
+         GROUP BY PlayerId
+     ),
+     LatestUnits AS (
+         SELECT fps.UnitId
+         FROM FilteredProfileSquads fps
+                  JOIN LatestTimestamps lt
+                       ON fps.PlayerId = lt.PlayerId AND fps.CollectedAt = lt.LatestCollectedAt
+     )
+SELECT UnitId, COUNT(*) AS Count
+FROM LatestUnits
+GROUP BY UnitId
+ORDER BY Count DESC
+OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
