@@ -123,15 +123,15 @@ public class StatsHubUiService : IStatsHubUiService
             return playerViewModel;
         }
 
-        await GetAgesAsync();
         var player = await _statsHubService.GetPlayerAsync(playerId, ct);
         if (player == null)
         {
             return null;
         }
 
+        var ages = await _ages.Value;
         var newViewModel =
-            _mapper.Map<PlayerViewModel>(player, opt => { opt.Items[ResolutionContextKeys.AGES] = _ages; });
+            _mapper.Map<PlayerViewModel>(player, opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
         ;
         _concretePlayers.Add(playerId, newViewModel);
         return newViewModel;
