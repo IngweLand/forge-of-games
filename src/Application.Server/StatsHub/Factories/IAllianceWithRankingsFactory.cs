@@ -5,6 +5,5 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public interface IAllianceWithRankingsFactory
 {
-    AllianceWithRankings Create(Alliance alliance, IReadOnlyCollection<PlayerDto> currentMembers,
-        IReadOnlyCollection<PlayerDto> possibleMembers);
+    AllianceWithRankings Create(Alliance alliance, IReadOnlyCollection<PlayerDto> currentMembers);
 }

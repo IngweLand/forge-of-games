@@ -7,7 +7,7 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 public class PlayerProfileViewModel
 {
     public IReadOnlyCollection<StatsTimedStringValue> Ages { get; init; } = [];
-    public IReadOnlyCollection<string> Alliances { get; init; } = [];
+    public IReadOnlyCollection<AllianceViewModel> Alliances { get; init; } = [];
     public string? Names { get; init; }
     public required PlayerViewModel Player { get; init; }
     public IReadOnlyCollection<HeroProfileViewModel> Squads { get; init; } = [];

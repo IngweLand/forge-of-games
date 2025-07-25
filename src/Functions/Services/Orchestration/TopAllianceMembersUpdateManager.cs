@@ -40,27 +40,10 @@ public class TopAllianceMembersUpdateManager(
             .OrderByDescending(x => x.RankingPoints)
             .Take(TOP_RANK_LIMIT)
             .ToListAsync();
-        var allMembers = alliances.SelectMany(x => x.Members).ToList();
-        var members = allMembers.Where(x => x.IsPresentInGame && x.UpdatedAt < today).ToList();
-        if (members.Count >= BATCH_SIZE)
-        {
-            return members.Take(BATCH_SIZE).ToList();
-        }
-
-        var allMemberIds = allMembers.Select(p => p.Id).ToHashSet();
-        foreach (var alliance in alliances)
-        {
-            var possibleMembers = await context.Players
-                .Where(p => p.IsPresentInGame && p.WorldId == alliance.WorldId && p.AllianceName == alliance.Name &&
-                    p.UpdatedAt < today && !allMemberIds.Contains(p.Id))
-                .ToListAsync();
-            members.AddRange(possibleMembers);
-            if (members.Count >= BATCH_SIZE)
-            {
-                return members.Take(BATCH_SIZE).ToList();
-            }
-        }
-
-        return members.Take(BATCH_SIZE).ToList();
+        return alliances
+            .SelectMany(x => x.Members)
+            .Where(x => x.UpdatedAt < today)
+            .Take(BATCH_SIZE)
+            .ToList();
     }
 }

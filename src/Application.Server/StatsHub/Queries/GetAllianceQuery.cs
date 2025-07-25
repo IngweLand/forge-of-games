@@ -30,7 +30,6 @@ public class GetAllianceQueryHandler(
 
         var alliance = await context.Alliances.AsNoTracking()
             .Include(p => p.Members)
-            .Include(p => p.MemberHistory)
             .Include(p => p.NameHistory)
             .Include(p => p.Leader)
             .Include(p =>
@@ -44,16 +43,7 @@ public class GetAllianceQueryHandler(
 
         var members = alliance.Members.Where(p => p.IsPresentInGame).OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank).ToList();
-        var memberIds = members.Select(p => p.Id).ToHashSet();
-        var possibleMembers = await context.Players.AsNoTracking()
-            .Where(p => p.IsPresentInGame && p.WorldId == alliance.WorldId && p.AllianceName == alliance.Name &&
-                p.CurrentAlliance == null && !memberIds.Contains(p.Id))
-            .OrderByDescending(p => p.RankingPoints)
-            .ThenBy(p => p.Rank)
-            .ProjectTo<PlayerDto>(mapper.ConfigurationProvider)
-            .ToListAsync(cancellationToken);
 
-        return allianceWithRankingsFactory.Create(alliance, mapper.Map<IReadOnlyCollection<PlayerDto>>(members),
-            possibleMembers);
+        return allianceWithRankingsFactory.Create(alliance, mapper.Map<IReadOnlyCollection<PlayerDto>>(members));
     }
 }

@@ -14,10 +14,10 @@
             <span class="content-label">
                 @Player.Name
             </span>
-            @if (Player.AllianceName != null)
+            @if (Player.Alliance?.Name != null)
             {
                 <span class="alliance-label">|</span>
-                <span class="alliance-label">@Player.AllianceName</span>
+                <span class="alliance-label">@Player.Alliance.Name</span>
             }
 
         </div>

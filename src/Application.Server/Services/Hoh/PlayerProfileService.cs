@@ -176,15 +176,12 @@ public class PlayerProfileService(
                 logger.LogDebug("Added alliance {AllianceId} to history for player {PlayerId}",
                     existingAlliance.Id, profile.Player.Id);
             }
-
-            modifiedPlayer.AllianceName = existingAlliance.Name;
         }
         else
         {
             logger.LogDebug("Clearing alliance for player {PlayerId}", profile.Player.Id);
             modifiedPlayer.CurrentAlliance = null;
             modifiedPlayer.LedAlliance = null;
-            modifiedPlayer.AllianceName = null;
         }
 
         modifiedPlayer.AvatarId = profile.Player.AvatarId;

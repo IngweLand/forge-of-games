@@ -32,20 +32,19 @@ public class PlayersUpdateManager(
         logger.LogDebug("Fetching players");
 
         var today = DateTime.UtcNow.ToDateOnly();
-        var yesterday = today.AddDays(-1);
+        var week = today.AddDays(-7);
 
         var players = await context.Players
             .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId)
-            .Where(x => (x.Rank == null || x.RankingPoints == null ||
-                (x.AllianceName != null && x.CurrentAlliance == null)) && x.UpdatedAt < today)
+            .Where(x => (x.Rank == null || x.RankingPoints == null) && x.UpdatedAt < today)
             .Take(BATCH_SIZE)
             .ToListAsync();
 
         if (players.Count < BATCH_SIZE)
         {
             players.AddRange(await context.Players
-                .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId && x.UpdatedAt < yesterday)
-                .OrderByDescending(x => x.RankingPoints)
+                .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId && x.UpdatedAt < week)
+                .OrderBy(x => x.UpdatedAt)
                 .Take(BATCH_SIZE)
                 .ToListAsync());
         }

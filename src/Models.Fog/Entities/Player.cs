@@ -9,8 +9,6 @@ public class Player
     public ICollection<PlayerAgeHistoryEntry> AgeHistory { get; set; } = new List<PlayerAgeHistoryEntry>();
     public ICollection<Alliance> AllianceHistory { get; set; } = new List<Alliance>();
 
-    public string? AllianceName { get; set; }
-
     public int AvatarId { get; set; }
     public ICollection<PlayerCitySnapshot> CitySnapshots { get; set; } = new List<PlayerCitySnapshot>();
     public Alliance? CurrentAlliance { get; set; }

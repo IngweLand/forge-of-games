@@ -22,6 +22,8 @@ public class PlayerStatusUpdaterService(IFogDbContext context, ILogger<PlayerSta
                 continue;
             }
 
+            player.CurrentAlliance = null;
+            player.LedAlliance = null;
             player.IsPresentInGame = false;
         }
 

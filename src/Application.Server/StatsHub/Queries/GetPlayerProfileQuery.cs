@@ -75,6 +75,7 @@ public class GetPlayerProfileQueryHandler(
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
+            .Include(p => p.CurrentAlliance)
             .Include(p =>
                 p.PvpWins.OrderByDescending(b => b.PerformedAt)
                     .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))

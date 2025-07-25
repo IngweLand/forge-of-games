@@ -8,8 +8,7 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankingsFactory
 {
-    public AllianceWithRankings Create(Alliance alliance, IReadOnlyCollection<PlayerDto> currentMembers,
-        IReadOnlyCollection<PlayerDto> possibleMembers)
+    public AllianceWithRankings Create(Alliance alliance, IReadOnlyCollection<PlayerDto> currentMembers)
     {
         return new AllianceWithRankings()
         {
@@ -17,7 +16,6 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.TotalPoints),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
             CurrentMembers = currentMembers,
-            PossibleMembers = possibleMembers,
             RegisteredAt = alliance.RegisteredAt?.ToDateOnly(),
             Leader = alliance.Leader != null ? mapper.Map<PlayerDto>(alliance.Leader) : null
         };

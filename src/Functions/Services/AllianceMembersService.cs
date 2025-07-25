@@ -67,7 +67,6 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                             }
 
                             existingAlliance.Members.Add(existingPlayer);
-                            existingPlayer.AllianceName = existingAlliance.Name;
                         }
 
                         confirmedUpdateDates[t.AllianceKey] = t.CollectedAt;
@@ -142,7 +141,6 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                         t.CollectedAt > confirmedUpdateDate)
                     {
                         existingPlayer.CurrentAlliance = existingAlliance;
-                        existingPlayer.AllianceName = existingAlliance.Name;
                         existingPlayer.IsPresentInGame = true;
                     }
                 }

@@ -111,19 +111,6 @@
                 </div>
             </div>
         }
-        @if (_alliance.PossibleMembers.Count > 0)
-        {
-            <div class="fog-container section-container">
-                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_PossibleMembers]</span>
-                <div class="members-container">
-                    @foreach (var player in _alliance.PossibleMembers)
-                    {
-                        <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
-                    }
-                </div>
-            </div>
-        }
-
     </div>
 }
 else

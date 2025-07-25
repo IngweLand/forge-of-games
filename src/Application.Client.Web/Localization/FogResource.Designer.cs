@@ -2067,15 +2067,6 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Possible Members.
-        /// </summary>
-        public static string StatsHub_Alliance_PossibleMembers {
-            get {
-                return ResourceManager.GetString("StatsHub.Alliance.PossibleMembers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Registered on.
         /// </summary>
         public static string StatsHub_Alliance_RegisteredOn_Label {

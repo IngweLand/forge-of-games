@@ -3,7 +3,7 @@ namespace Ingweland.Fog.Dtos.Hoh.Stats;
 public class PlayerDto
 {
     public required string Age { get; set; }
-    public string? AllianceName { get; init; }
+    public AllianceDto? Alliance { get; init; }
     public int AvatarId { get; set; }
     public required int Id { get; init; }
     public required string Name { get; set; }

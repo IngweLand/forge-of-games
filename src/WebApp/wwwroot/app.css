@@ -71,6 +71,11 @@ a, .btn-link {
     color: var(--fog-link-color);
 }
 
+.anchor-inherited-style {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
 .btn, .btn-primary, .btn-sm, .btn-lg, .btn-xl {
     color: var(--fog-text-on-dark-color);
     background-color: var(--fog-button-color);

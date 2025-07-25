@@ -13,9 +13,9 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
     public PlayerProfile Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
         IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
-        var alliances = player.AllianceHistory.Select(a => a.Name)
-            .ToHashSet()
-            .Order()
+        var uniqueAlliances = player.AllianceHistory
+            .DistinctBy(x => x.Id)
+            .OrderBy(x => x.Name)
             .ToList();
 
         var battles = pvpBattles.Select(x =>
@@ -35,7 +35,7 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
             RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.PowerPoints),
             PvpRankingPoints = CreateTimedIntValueCollection(player.PvpRankings),
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
-            Alliances = alliances,
+            Alliances = mapper.Map<IReadOnlyCollection<AllianceDto>>(uniqueAlliances),
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
             PvpBattles = battles,
             TreasureHuntDifficulty = player.TreasureHuntDifficulty,

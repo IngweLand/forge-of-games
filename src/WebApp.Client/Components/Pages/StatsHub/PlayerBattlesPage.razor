@@ -8,7 +8,7 @@
 @if (IsInitialized && _player != null)
 {
     <div class="page-container">
-        <PlayerInfoComponent Player="_player" OnAllianceClicked="SearchAlliance"/>
+        <PlayerInfoComponent Player="_player"/>
         <div class="fog-container section-container">
             @if (_isLoadingBattles)
             {

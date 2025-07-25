@@ -37,7 +37,6 @@ public class AllianceMembersUpdaterService(IFogDbContext context, ILogger<Allian
             {
                 player.CurrentAlliance = null;
                 player.LedAlliance = null;
-                player.AllianceName = null;
                 player.UpdatedAt = p.CollectedAt.ToDateOnly();
             }
             else
@@ -48,7 +47,6 @@ public class AllianceMembersUpdaterService(IFogDbContext context, ILogger<Allian
                 if (alliance != null)
                 {
                     player.CurrentAlliance = alliance;
-                    player.AllianceName = alliance.Name;
                     if (player.AllianceHistory.All(a => a.Id != alliance.Id))
                     {
                         player.AllianceHistory.Add(alliance);

@@ -82,7 +82,7 @@ public class StatsHubViewModelsFactory(
             Ages = playerProfile.Ages.Select(a => new StatsTimedStringValue
                     {Date = a.Date, Value = ages[a.Value].Name})
                 .ToList(),
-            Alliances = playerProfile.Alliances,
+            Alliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(playerProfile.Alliances),
             Names = playerProfile.Names.Count > 1
                 ? string.Join(", ", playerProfile.Names.Select(name => $"\"{name}\""))
                 : null,

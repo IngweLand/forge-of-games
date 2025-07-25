@@ -86,11 +86,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         _battleStatsCts.Dispose();
     }
 
-    private void SearchAlliance(string allianceName)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SearchAlliance(_player!.Player.WorldId, allianceName));
-    }
-
     private void OnPlayerClicked(int playerId)
     {
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(playerId));

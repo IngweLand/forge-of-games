@@ -166,14 +166,4 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
             await _battlesCts.CancelAsync();
         }
     }
-
-    private void SearchAlliance(string allianceName)
-    {
-        if (_player == null)
-        {
-            return;
-        }
-
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.SearchAlliance(_player.WorldId, allianceName));
-    }
 }

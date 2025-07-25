@@ -5,7 +5,7 @@ namespace Ingweland.Fog.Dtos.Hoh.Stats;
 public class PlayerProfile
 {
     public IReadOnlyCollection<StatsTimedStringValue> Ages { get; init; } = [];
-    public IReadOnlyCollection<string> Alliances { get; init; } = [];
+    public IReadOnlyCollection<AllianceDto> Alliances { get; init; } = [];
     public IReadOnlyCollection<string> Names { get; init; } = [];
     public required PlayerDto Player { get; init; }
     public IReadOnlyCollection<PvpBattleDto> PvpBattles { get; init; } = [];
