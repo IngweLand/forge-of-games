@@ -6,7 +6,7 @@ public record UnitBattleDto
 {
     public required string BattleDefinitionId { get; init; }
     public UnitBattleStatsDto? BattleStats { get; init; }
-    public required Difficulty Difficulty { get; init; }
+    public Difficulty Difficulty { get; init; }
     public required BattleUnitDto Unit { get; init; }
     public required string UnitName { get; init; }
 
