@@ -9,8 +9,12 @@ public class EquipmentSlotTypeIconUrlProvider(IAssetUrlProvider assetUrlProvider
     {
         var id = equipmentSlotType switch
         {
-            EquipmentSlotType.Garment => "icon_flat_equipment_slot_armour",
-            EquipmentSlotType.Hand => "icon_flat_equipment_slot_armour_weapon",
+            EquipmentSlotType.Garment => "icon_flat_equipment_slot_armour_neutral",
+            EquipmentSlotType.Hand => "icon_flat_equipment_slot_armour_weapon_neutral",
+            EquipmentSlotType.Undefined => "icon_flat_equipment_slot_armour_weapon_neutral",
+            EquipmentSlotType.Ring => "icon_flat_equipment_slot_armour_ring_neutral",
+            EquipmentSlotType.Hat => "icon_flat_equipment_slot_hat_neutral",
+            EquipmentSlotType.Neck => "icon_flat_equipment_slot_neck_neutral",
             _ => "",
         };
 

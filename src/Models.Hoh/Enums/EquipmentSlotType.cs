@@ -2,6 +2,10 @@ namespace Ingweland.Fog.Models.Hoh.Enums;
 
 public enum EquipmentSlotType
 {
+    Undefined = 0,
     Hand,
-    Garment
+    Garment,
+    Ring,
+    Hat,
+    Neck,
 }
