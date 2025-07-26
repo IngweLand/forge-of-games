@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Extensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
@@ -24,7 +25,7 @@ public class GetPlayersWithPaginationQueryHandler(IFogDbContext context, IMapper
     {
         // TODO implement validator instead
         var pageSize = request.PageSize > 100 ? 100 :request.PageSize;
-        var result = context.Players.Where(p => p.IsPresentInGame);
+        var result = context.Players.Where(p => p.Status == PlayerStatus.Active);
         if (request.WorldId != null)
         {
             result = result.Where(p => p.WorldId == request.WorldId);

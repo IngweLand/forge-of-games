@@ -66,7 +66,7 @@ public class StatsHubViewModelsFactory(
         };
     }
 
-    public PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
+    public PlayerProfileViewModel CreatePlayerProfile(PlayerProfileDto playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
         TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints)

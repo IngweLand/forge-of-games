@@ -2,10 +2,12 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -17,12 +19,12 @@ public class PlayersUpdateManager(
     IFogDbContext context,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerStatusUpdaterService playerStatusUpdaterService,
+    IFogPlayerService playerService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IPlayerProfileService playerProfileService,
+    IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
-    inGameDataParsingService, playerStatusUpdaterService, inGameRawDataTablePartitionKeyProvider, playerProfileService,
+    inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
     databaseWarmUpService, logger), IPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
@@ -35,7 +37,7 @@ public class PlayersUpdateManager(
         var week = today.AddDays(-7);
 
         var players = await context.Players
-            .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId)
+            .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId)
             .Where(x => (x.Rank == null || x.RankingPoints == null) && x.UpdatedAt < today)
             .Take(BATCH_SIZE)
             .ToListAsync();
@@ -43,7 +45,7 @@ public class PlayersUpdateManager(
         if (players.Count < BATCH_SIZE)
         {
             players.AddRange(await context.Players
-                .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId && x.UpdatedAt < week)
+                .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId && x.UpdatedAt < week)
                 .OrderBy(x => x.UpdatedAt)
                 .Take(BATCH_SIZE)
                 .ToListAsync());

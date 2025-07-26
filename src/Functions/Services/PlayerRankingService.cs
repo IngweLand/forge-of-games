@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -69,7 +70,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                         existingPlayer.RankingPoints = playerAggregate.RankingPoints!.Value;
                         existingPlayer.Rank = playerAggregate.Rank!.Value;
                         existingPlayer.UpdatedAt = date;
-                        existingPlayer.IsPresentInGame = true;
+                        existingPlayer.Status = PlayerStatus.Active;
                         updatedPlayerCount++;
                     }
                 }

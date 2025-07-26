@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Ingweland.Fog.Models.Fog.Enums;
 
 namespace Ingweland.Fog.Models.Fog.Entities;
 
@@ -15,6 +16,7 @@ public class Player
     public int Id { get; set; }
     public required int InGamePlayerId { get; set; }
 
+    [Obsolete]
     public bool IsPresentInGame { get; set; } = true;
 
     [JsonIgnore]
@@ -37,6 +39,7 @@ public class Player
     public ICollection<PlayerRanking> Rankings { get; set; } = new List<PlayerRanking>();
 
     public ICollection<ProfileSquadEntity> Squads { get; set; } = new List<ProfileSquadEntity>();
+    public required PlayerStatus Status { get; set; }
     public int? TreasureHuntDifficulty { get; set; }
     public required DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; set; }

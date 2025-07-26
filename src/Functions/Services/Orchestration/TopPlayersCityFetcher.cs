@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +30,7 @@ public class TopPlayersCityFetcher(
         Logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
 
         var players = await Context.Players
-            .Where(x => x.WorldId == "un1" && x.IsPresentInGame)
+            .Where(x => x.WorldId == "un1" && x.Status == PlayerStatus.Active)
             .OrderByDescending(x => x.RankingPoints)
             .Take(BATCH_SIZE)
             .ToListAsync();

@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -41,7 +42,7 @@ public class GetAllianceQueryHandler(
             return null;
         }
 
-        var members = alliance.Members.Where(p => p.IsPresentInGame).OrderByDescending(p => p.RankingPoints)
+        var members = alliance.Members.Where(p => p.Status == PlayerStatus.Active).OrderByDescending(p => p.RankingPoints)
             .ThenBy(p => p.Rank).ToList();
 
         return allianceWithRankingsFactory.Create(alliance, mapper.Map<IReadOnlyCollection<PlayerDto>>(members));

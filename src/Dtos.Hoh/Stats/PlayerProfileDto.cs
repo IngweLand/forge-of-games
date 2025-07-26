@@ -2,7 +2,7 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 
 namespace Ingweland.Fog.Dtos.Hoh.Stats;
 
-public class PlayerProfile
+public class PlayerProfileDto
 {
     public IReadOnlyCollection<StatsTimedStringValue> Ages { get; init; } = [];
     public IReadOnlyCollection<AllianceDto> Alliances { get; init; } = [];

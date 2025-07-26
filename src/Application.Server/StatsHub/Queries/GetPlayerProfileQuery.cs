@@ -2,8 +2,11 @@ using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
+using Ingweland.Fog.InnSdk.Hoh.Errors;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using MediatR;
@@ -12,7 +15,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetPlayerProfileQuery : IRequest<PlayerProfile?>, ICacheableRequest
+public record GetPlayerProfileQuery : IRequest<PlayerProfileDto?>, ICacheableRequest
 {
     public required int PlayerId { get; init; }
     public string CacheKey => $"PlayerProfile_{PlayerId}_{CultureInfo.CurrentCulture.Name}";
@@ -22,16 +25,17 @@ public record GetPlayerProfileQuery : IRequest<PlayerProfile?>, ICacheableReques
 
 public class GetPlayerProfileQueryHandler(
     IFogDbContext context,
-    IPlayerProfileFactory playerProfileFactory,
+    IPlayerProfileDtoFactory playerProfileDtoFactory,
     IBattleQueryService battleQueryService,
-    IPlayerProfileService playerProfileService,
+    IInGamePlayerService inGamePlayerService,
+    IFogPlayerService playerService,
     ILogger<GetPlayerProfileQueryHandler> logger)
-    : IRequestHandler<GetPlayerProfileQuery, PlayerProfile?>
+    : IRequestHandler<GetPlayerProfileQuery, PlayerProfileDto?>
 {
-    public async Task<PlayerProfile?> Handle(GetPlayerProfileQuery request, CancellationToken cancellationToken)
+    public async Task<PlayerProfileDto?> Handle(GetPlayerProfileQuery request, CancellationToken cancellationToken)
     {
         logger.LogDebug("Processing GetPlayerProfileQuery for PlayerId: {PlayerId}", request.PlayerId);
-        
+
         var existingPlayer = await context.Players.FindAsync(request.PlayerId, cancellationToken);
         if (existingPlayer == null)
         {
@@ -42,25 +46,23 @@ public class GetPlayerProfileQueryHandler(
         var today = DateTime.UtcNow.ToDateOnly();
         if (existingPlayer.UpdatedAt < today)
         {
-            logger.LogDebug("Player profile for ID {PlayerId} needs update (UpdatedAt: {UpdatedAt}, Today: {Today})", 
+            logger.LogDebug("Player profile for ID {PlayerId} needs update (UpdatedAt: {UpdatedAt}, Today: {Today})",
                 request.PlayerId, existingPlayer.UpdatedAt, today);
-            try
+            var newProfileResult = await inGamePlayerService.FetchProfile(existingPlayer.Key);
+            if (newProfileResult.IsSuccess)
             {
-                var newProfile = await playerProfileService.FetchProfile(existingPlayer.Key);
-                if (newProfile != null)
-                {
-                    logger.LogDebug("New profile fetched for player {PlayerId}, updating data", request.PlayerId);
-                    await playerProfileService.UpsertPlayer(newProfile, existingPlayer.WorldId);
-                }
-                else
-                {
-                    logger.LogDebug("No new profile data available for player {PlayerId}", request.PlayerId);
-                }
+                logger.LogDebug("New profile fetched for player {PlayerId}, updating data", request.PlayerId);
+                await playerService.UpsertPlayer(newProfileResult.Value, existingPlayer.WorldId);
             }
-            catch (Exception e)
+            else if (newProfileResult.HasError<PlayerNotFoundError>())
             {
-                logger.LogError(e, "Error while fetching or updating player profile for player ID {@PlayerKey}",
-                    existingPlayer.Key);
+                await playerService.UpdateStatusAsync(existingPlayer.Id, PlayerStatus.Missing, cancellationToken);
+            }
+            else
+            {
+                logger.LogError(
+                    "Error while fetching or updating player profile for player {@PlayerKey}. Errors: {Errors}",
+                    existingPlayer.Key, newProfileResult.Errors);
             }
         }
 
@@ -84,14 +86,14 @@ public class GetPlayerProfileQueryHandler(
                 p.PvpLosses.OrderByDescending(b => b.PerformedAt)
                     .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
             .ThenInclude(b => b.Winner)
-            .Include(p =>
-                p.Squads.OrderByDescending(x => x.CollectedAt).Take(FogConstants.PLAYER_PROFILE_TOP_HEROES_COUNT))
+            .Include(p => p.Squads)
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);
 
         if (player == null)
         {
-            logger.LogWarning("Detailed player data not found for {PlayerId} after attempting to retrieve it", request.PlayerId);
+            logger.LogWarning("Detailed player data not found for {PlayerId} after attempting to retrieve it",
+                request.PlayerId);
             return null;
         }
 
@@ -100,14 +102,15 @@ public class GetPlayerProfileQueryHandler(
             .OrderByDescending(b => b.PerformedAt)
             .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount)
             .ToList();
-        
+
         logger.LogDebug("Found {BattleCount} PVP battles for player {PlayerId}", pvpBattles.Count, request.PlayerId);
         var battleIds = pvpBattles.Select(src => src.InGameBattleId);
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        logger.LogDebug("Retrieved {StatsCount} battle stats IDs for player {PlayerId}", existingStatsIds.Count, request.PlayerId);
+        logger.LogDebug("Retrieved {StatsCount} battle stats IDs for player {PlayerId}", existingStatsIds.Count,
+            request.PlayerId);
 
         logger.LogDebug("Creating player profile for {PlayerId}", request.PlayerId);
-        var result = playerProfileFactory.Create(player, pvpBattles, existingStatsIds);
+        var result = playerProfileDtoFactory.Create(player, pvpBattles, existingStatsIds);
         logger.LogInformation("Successfully created profile for player {PlayerId}", request.PlayerId);
         return result;
     }

@@ -65,7 +65,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<PlayerProfile?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default)
+    public Task<PlayerProfileDto?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default)
     {
         var query = new GetPlayerProfileQuery
         {

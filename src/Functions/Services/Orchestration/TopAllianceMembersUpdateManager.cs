@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
@@ -17,12 +18,12 @@ public class TopAllianceMembersUpdateManager(
     IFogDbContext context,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerStatusUpdaterService playerStatusUpdaterService,
+    IFogPlayerService playerService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IPlayerProfileService playerProfileService,
+    IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
-    inGameDataParsingService, playerStatusUpdaterService, inGameRawDataTablePartitionKeyProvider, playerProfileService,
+    inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
     databaseWarmUpService, logger), ITopAllianceMembersUpdateManager
 {
     private const int BATCH_SIZE = 120;

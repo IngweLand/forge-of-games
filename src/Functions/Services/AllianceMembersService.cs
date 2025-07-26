@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Player = Ingweland.Fog.Models.Fog.Entities.Player;
@@ -134,14 +135,14 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                     if (existingPlayer.AllianceHistory.All(a => a.Id != existingAlliance.Id))
                     {
                         existingPlayer.AllianceHistory.Add(existingAlliance);
-                        existingPlayer.IsPresentInGame = true;
+                        existingPlayer.Status = PlayerStatus.Active;
                     }
 
                     if (!confirmedUpdateDates.TryGetValue(t.AllianceKey, out var confirmedUpdateDate) ||
                         t.CollectedAt > confirmedUpdateDate)
                     {
                         existingPlayer.CurrentAlliance = existingAlliance;
-                        existingPlayer.IsPresentInGame = true;
+                        existingPlayer.Status = PlayerStatus.Active;
                     }
                 }
             }

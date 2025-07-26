@@ -1,5 +1,9 @@
 using AutoMapper;
+using FluentResults;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.Inn.Models.Hoh.Errors;
+using Ingweland.Fog.Inn.Models.Hoh.Extensions;
+using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -29,22 +33,16 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         return mapper.Map<PlayerRanks>(ranksDto);
     }
 
-    public PlayerProfile ParsePlayerProfile(byte[] data)
+    public Result<PlayerProfile> ParsePlayerProfile(byte[] data)
     {
-        PlayerProfileResponse dto;
-        try
-        {
-            var container = CommunicationDto.Parser.ParseFrom(data);
-            dto = container.PlayerProfileResponse;
-        }
-        catch (Exception ex)
-        {
-            const string msg = "Failed to parse player profile response data";
-            logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
-        }
-
-        return mapper.Map<PlayerProfile>(dto);
+        return ParseCommunicationDto(data)
+            .Bind(container => container.PackedMessages.FindAndUnpackToResult<PlayerProfileResponse>())
+            .Bind(dto =>
+            {
+                return Result.Try(() => mapper.Map<PlayerProfile>(dto),
+                    e => new HohMappingError(
+                        $"Failed to map {nameof(PlayerProfileResponse)} to {nameof(PlayerProfile)}", e));
+            });
     }
 
     public AllianceRanks ParseAllianceRankings(byte[] data)
@@ -233,6 +231,12 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         }
 
         return mapper.Map<OtherCity>(dto);
+    }
+
+    private static Result<CommunicationDto> ParseCommunicationDto(byte[] data)
+    {
+        return Result.Try(() => CommunicationDto.Parser.ParseFrom(data),
+            e => new HohProtobufParsingError(ProtobufParsingStage.BinaryDeserialization, nameof(CommunicationDto), e));
     }
 
     private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)

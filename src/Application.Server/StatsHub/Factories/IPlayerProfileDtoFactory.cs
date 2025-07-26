@@ -3,8 +3,8 @@ using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public interface IPlayerProfileFactory
+public interface IPlayerProfileDtoFactory
 {
-    PlayerProfile Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
+    PlayerProfileDto Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
         IReadOnlyDictionary<byte[], int> existingStatsIds);
 }

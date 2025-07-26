@@ -34,7 +34,6 @@ public static class DependencyInjection
         services.AddScoped<IPvpBattleService, PvpBattleService>();
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<IBattleStatsService, BattleStatsService>();
-        services.AddScoped<IPlayerStatusUpdaterService, PlayerStatusUpdaterService>();
         services.AddScoped<IAllianceMembersUpdaterService, AllianceMembersUpdaterService>();
         services.AddScoped<IPvpBattlesBulkUpdater, PvpBattlesBulkUpdater>();
         services.AddScoped<IPlayersUpdateManager, PlayersUpdateManager>();
@@ -43,7 +42,6 @@ public static class DependencyInjection
         services.AddScoped<ITopPlayersCityFetcher, TopPlayersCityFetcher>();
         services.AddScoped<ITopAllianceMembersUpdateManager, TopAllianceMembersUpdateManager>();
         services.AddScoped<ICultureUsageRatioUpdater, CultureUsageRatioUpdater>();
-        services.AddScoped<IPlayerSquadsUpdater, PlayerSquadsUpdater>();
         services.AddScoped<IPlayerUpdater, PlayerUpdater>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();

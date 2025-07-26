@@ -7,10 +7,10 @@ using PvpBattle = Ingweland.Fog.Models.Fog.Entities.PvpBattle;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBattlesFactory)
-    : IPlayerProfileFactory
+public class PlayerProfileDtoFactory(IMapper mapper, IPlayerBattlesFactory playerBattlesFactory)
+    : IPlayerProfileDtoFactory
 {
-    public PlayerProfile Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
+    public PlayerProfileDto Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
         IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
         var uniqueAlliances = player.AllianceHistory
@@ -29,7 +29,7 @@ public class PlayerProfileFactory(IMapper mapper, IPlayerBattlesFactory playerBa
             return playerBattlesFactory.Create(x, statsId);
         }).ToList();
 
-        return new PlayerProfile
+        return new PlayerProfileDto
         {
             Player = mapper.Map<PlayerDto>(player),
             RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.PowerPoints),

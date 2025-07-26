@@ -11,7 +11,7 @@ namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 public interface IStatsHubService
 {
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PROFILE_TEMPLATE_REFIT)]
-    Task<PlayerProfile?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default);
+    Task<PlayerProfileDto?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE_REFIT)]
     Task<HohCity?> GetPlayerCityAsync(int playerId, CancellationToken ct = default);

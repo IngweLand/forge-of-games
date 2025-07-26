@@ -40,30 +40,18 @@ public class GetTopHeroesQueryHandler(IFogDbContext context)
             initQuery = initQuery.Where(x => x.Age == request.AgeId);
         }
 
-        var playerGroupsQuery = initQuery
-            .GroupBy(ps => ps.PlayerId)
-            .Select(g => new
-            {
-                PlayerId = g.Key,
-                LatestCollectedAt = g.Max(ps => ps.CollectedAt),
-            })
-            .Join(initQuery,
-                lt => new {lt.PlayerId, CollectedAt = lt.LatestCollectedAt},
-                ps => new {ps.PlayerId, ps.CollectedAt},
-                (lt, ps) => ps);
-
         List<string> result;
         switch (request.Mode)
         {
             case HeroInsightsMode.Top:
             {
-                var topLevels = await playerGroupsQuery
+                var topLevels = await initQuery
                     .GroupBy(x => x.Level)
                     .OrderByDescending(g => g.Key)
                     .Select(g => g.Key)
                     .Take(FogConstants.MAX_TOP_HERO_LEVELS_TO_RETURN)
                     .ToHashSetAsync(cancellationToken);
-                result = await playerGroupsQuery
+                result = await initQuery
                     .Where(x => topLevels.Contains(x.Level))
                     .Select(x => x.UnitId)
                     .ToListAsync(cancellationToken);
@@ -71,7 +59,7 @@ public class GetTopHeroesQueryHandler(IFogDbContext context)
             }
             default:
             {
-                result = await playerGroupsQuery
+                result = await initQuery
                     .GroupBy(x => x.UnitId)
                     .Select(g => new {UnitId = g.Key, Count = g.Count()})
                     .OrderByDescending(g => g.Count)

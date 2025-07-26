@@ -13,7 +13,7 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
 public interface IStatsHubViewModelsFactory
 {
-    PlayerProfileViewModel CreatePlayerProfile(PlayerProfile playerProfile,
+    PlayerProfileViewModel CreatePlayerProfile(PlayerProfileDto playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
         TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints);

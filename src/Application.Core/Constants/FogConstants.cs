@@ -9,9 +9,8 @@ public static class FogConstants
     public const int COMMAND_CENTER_VERSION = 1;
     public const int MAX_TOP_HERO_LEVELS_TO_RETURN = 5;
     public const int MAX_MOST_POPULAR_HEROES_TO_RETURN = 10;
-    public const int TOP_HEROES_LOOKBACK_DAYS = 30;
+    public const int TOP_HEROES_LOOKBACK_DAYS = 14;
 
-    public const int PLAYER_PROFILE_TOP_HEROES_COUNT = 5;
     public static readonly int MaxHohCitySnapshots = 5;
     public static readonly int DisplayedStatsDays = 30;
     public static readonly int DefaultPlayerProfileDisplayedBattleCount = 2;

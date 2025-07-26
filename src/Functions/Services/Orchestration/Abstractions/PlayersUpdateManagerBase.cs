@@ -1,12 +1,11 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
-using Ingweland.Fog.InnSdk.Hoh.Abstractions;
-using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
+using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
@@ -15,9 +14,9 @@ public abstract class PlayersUpdateManagerBase(
     IGameWorldsProvider gameWorldsProvider,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerStatusUpdaterService playerStatusUpdaterService,
+    IFogPlayerService playerService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IPlayerProfileService playerProfileService,
+    IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManagerBase> logger) : OrchestratorBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
@@ -36,19 +35,19 @@ public abstract class PlayersUpdateManagerBase(
             {
                 logger.LogDebug("Processing player {@Player}", player.Key);
                 var delayTask = Task.Delay(1000);
-                var profile = await playerProfileService.FetchProfile(player.Key);
-                if (profile != null)
+                var profile = await inGamePlayerService.FetchProfile(player.Key);
+                if (profile.IsSuccess)
                 {
                     try
                     {
-                        await playerProfileService.UpsertPlayer(profile, gameWorld.Id);
+                        await playerService.UpsertPlayer(profile.Value, gameWorld.Id);
                     }
                     catch
                     {
                         //ignore
                     }
                 }
-                else
+                else if (profile.HasError<PlayerNotFoundError>())
                 {
                     removedPlayers.Add(player.Id);
                 }
@@ -61,7 +60,9 @@ public abstract class PlayersUpdateManagerBase(
         {
             logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
                 removedPlayers.Count);
-            await ExecuteSafeAsync(() => playerStatusUpdaterService.UpdateAsync(removedPlayers), "");
+            await ExecuteSafeAsync(
+                () => playerService.UpdateStatusAsync(removedPlayers, PlayerStatus.Missing, CancellationToken.None),
+                "");
             logger.LogInformation("Completed player status updater service update");
         }
     }

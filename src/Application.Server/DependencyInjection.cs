@@ -10,6 +10,7 @@ using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using MediatR;
@@ -62,7 +63,7 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
-        services.AddScoped<IPlayerProfileFactory, PlayerProfileFactory>();
+        services.AddScoped<IPlayerProfileDtoFactory, PlayerProfileDtoFactory>();
         services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
         services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
@@ -77,7 +78,8 @@ public static class DependencyInjection
         services.AddScoped<IHohCityCreationService, HohCityCreationService>();
         services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
         services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
-        services.AddScoped<IPlayerProfileService, PlayerProfileService>();
+        services.AddScoped<IInGamePlayerService, InGamePlayerService>();
+        services.AddScoped<IFogPlayerService, FogPlayerService>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>

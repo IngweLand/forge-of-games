@@ -2,10 +2,12 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -17,12 +19,12 @@ public class TopPlayersUpdateManager(
     IFogDbContext context,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerStatusUpdaterService playerStatusUpdaterService,
+    IFogPlayerService playerService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IPlayerProfileService playerProfileService,
+    IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
-    inGameDataParsingService, playerStatusUpdaterService, inGameRawDataTablePartitionKeyProvider, playerProfileService,
+    inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
     databaseWarmUpService, logger), ITopPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
@@ -35,7 +37,7 @@ public class TopPlayersUpdateManager(
         var today = DateTime.UtcNow.ToDateOnly();
 
         return context.Players
-            .Where(x => x.IsPresentInGame && x.WorldId == gameWorldId)
+            .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId)
             .OrderByDescending(x => x.RankingPoints)
             .Take(TOP_RANK_LIMIT)
             .Where(x => x.UpdatedAt < today)

@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Player = Ingweland.Fog.Models.Fog.Entities.Player;
@@ -41,6 +42,7 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
                 UpdatedAt = DateOnly.FromDateTime(playerAggregate.CollectedAt),
                 TreasureHuntDifficulty = playerAggregate.TreasureHuntDifficulty,
                 PvpTier = playerAggregate.PvpTier,
+                Status = PlayerStatus.Active,
             };
         }).ToList();
         context.Players.AddRange(newPlayersList);

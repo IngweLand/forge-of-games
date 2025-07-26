@@ -40,7 +40,7 @@ public static class StatsApi
         return api;
     }
 
-    private static async Task<Results<Ok<PlayerProfile>, NotFound, BadRequest<string>>>
+    private static async Task<Results<Ok<PlayerProfileDto>, NotFound, BadRequest<string>>>
         GetPlayerProfileAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
             CancellationToken ct = default)
     {
