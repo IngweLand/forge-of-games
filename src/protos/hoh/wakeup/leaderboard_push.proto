@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "player_with_alliance_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message LeaderboardPush {
+  LeaderboardDto leaderboard = 1;
+}
+
+message LeaderboardDto {
+  int32 group_id = 1;
+  repeated LeaderboardItemDto participants = 2;
+}
+
+message LeaderboardItemDto {
+  int32 points = 1;
+  google.protobuf.Timestamp updated_at = 2;
+  PlayerWithAllianceDto player = 10;
+}

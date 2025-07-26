@@ -54,7 +54,12 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AthAllianceRankings,
                 opt => opt.MapFrom(src => src.HeroTreasureHuntAlliancePointsPushs))
             .ForMember(dest => dest.AthPlayerRankings,
-                opt => opt.MapFrom(src => src.HeroTreasureHuntPlayerPointsPushs));
+                opt => opt.MapFrom(src => src.HeroTreasureHuntPlayerPointsPushs))
+            .ForMember(dest => dest.Leaderboard, opt =>
+            {
+                opt.PreCondition(src => src.LeaderboardPush != null);
+                opt.MapFrom(src => src.LeaderboardPush);
+            });
 
         CreateMap<PvpBattleDto, PvpBattle>()
             .ForMember(dest => dest.PerformedAt, opt => opt.MapFrom(src => src.PerformedAt.ToDateTime()));
@@ -186,5 +191,12 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.AllianceAvatarBackgroundId));
 
         CreateMap<ResearchStateTechnologyDto, ResearchStateTechnology>();
+
+        CreateMap<PlayerWithAllianceDto, (HohPlayer Player, HohAlliance Alliance)>()
+            .ForMember(dest => dest.Player, opt => opt.MapFrom(src => src))
+            .ForMember(dest => dest.Alliance, opt => opt.MapFrom(src => src));
+        CreateMap<LeaderboardPush, Leaderboard>()
+            .ForMember(dest => dest.Participants,
+                opt => opt.MapFrom(src => src.Leaderboard.Participants.Select(x => x.Player)));
     }
 }

@@ -124,6 +124,27 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.WorldId, opt =>
                 opt.MapFrom((_, _, _, context) =>
                     context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
+        
+        CreateMap<(HohPlayer Player, HohAlliance? Alliance), PlayerAggregate>()
+            .ForMember(dest => dest.InGamePlayerId, opt => opt.MapFrom(src => src.Player.Id))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Player.Age)))
+            .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(src => src.Player.AvatarId))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Player.Name))
+            .ForMember(dest => dest.InGameAllianceId, opt =>
+            {
+                opt.PreCondition(x => x.Alliance != null);
+                opt.MapFrom(src => src.Alliance!.Id);
+            })
+            .ForMember(dest => dest.AllianceName, opt => 
+            {
+                opt.PreCondition(x => x.Alliance != null);
+                opt.MapFrom(src => src.Alliance!.Name);
+            })
+            .ForMember(dest => dest.CollectedAt, opt =>
+                opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<DateTime>(ResolutionContextKeys.DATE)))
+            .ForMember(dest => dest.WorldId, opt =>
+                opt.MapFrom((_, _, _, context) =>
+                    context.Items.GetRequiredItem<string>(ResolutionContextKeys.WORLD_ID)));
 
         // from aggregate
 

@@ -74,6 +74,19 @@ public class AutoDataProcessor(
                 .ToList();
             logger.LogInformation("{count} alliances retrieved for game world {gameWorldId}",
                 alliances.Count, gameWorld.Id);
+            
+            var leaderboardParticipants = allianceWakeups
+                .Where(t => t.Wakeup.Leaderboard != null)
+                .SelectMany(t => t.Wakeup.Leaderboard!.Participants.Select(x => (t.CollectedAt, Participant:x)))
+                .ToList();
+            var leaderboardParticipantAlliances = leaderboardParticipants
+                .Select(t => (t.CollectedAt, t.Participant.Alliance))
+                .Where(t => t.Alliance != null)
+                .ToList();
+            alliances = alliances.Concat(leaderboardParticipantAlliances!).ToList();
+            logger.LogInformation("{count} alliances retrieved from leaderboards for game world {gameWorldId}",
+                leaderboardParticipantAlliances.Count, gameWorld.Id);
+            
             var alliancesMembers = allianceWakeups
                 .Where(t => t.Wakeup.AllianceWithMembers != null)
                 .SelectMany(t => t.Wakeup.AllianceWithMembers!.Members.Select(m =>
@@ -196,6 +209,15 @@ public class AutoDataProcessor(
             foreach (var t in alliances)
             {
                 allianceAggregates.Add(mapper.Map<AllianceAggregate>(t.Alliance, opt =>
+                {
+                    opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
+                    opt.Items[ResolutionContextKeys.DATE] = t.CollectedAt;
+                }));
+            }
+            
+            foreach (var t in leaderboardParticipants)
+            {
+                playerAggregates.Add(mapper.Map<PlayerAggregate>(t.Participant, opt =>
                 {
                     opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
                     opt.Items[ResolutionContextKeys.DATE] = t.CollectedAt;
