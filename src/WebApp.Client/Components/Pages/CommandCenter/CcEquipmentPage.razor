@@ -2,234 +2,78 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @inherits CommandCenterPageBase
 @if (IsInitialized)
 {
     <div class="component-root">
 
-        @if (_equipment != null && _equipment.Count > 0)
+        @if (_equipment is {Count: > 0})
         {
-            <MudTable ServerData="GetItems" SortLabel="Sort By" Dense="true" CustomHeader="true" Bordered="true"
-                      Breakpoint="Breakpoint.None" Virtualize="true"
-                      Height="0" Style="display: flex; flex-direction: column; flex: 1" ContainerStyle="flex-grow: 1"
-                      FixedHeader="true" HeaderClass="table-head-bordered" HorizontalScrollbar="true">
-                <HeaderContent>
-                    <MudTHeadRow>
-                        <MudTh colspan="5"></MudTh>
-                        <MudTh colspan="2">@Loc[FogResource.Equipment_MainAttributes]</MudTh>
-                        <MudTh colspan="11">@Loc[FogResource.Equipment_SubAttributes]</MudTh>
-                    </MudTHeadRow>
-                    <MudTHeadRow>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSlotType)">
-                                @Loc[FogResource.Equipment_Slot]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquipmentSet)">
-                                @Loc[FogResource.Equipment_Set]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.StarCount)">
-                                ⭐
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.Level)">
-                                @Loc[FogResource.Hoh_Lvl]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.EquippedOnHero)">
-                                @Loc[FogResource.Hoh_Hero]
-                            </MudTableSortLabel>
-                        </MudTh>
-
-                        @* main attributes *@
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.MainAttack)">
-                                @Loc[FogResource.UnitStats_AttackAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh>
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.MainDefense)">
-                                @Loc[FogResource.UnitStats_DefenseAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-
-                        @* sub attributes *@
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttack)">
-                                @Loc[FogResource.UnitStats_AttackAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackAmp)">
-                                @Loc[FogResource.UnitStats_AttackPercentAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefense)">
-                                @Loc[FogResource.UnitStats_DefenseAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubDefenseAmp)">
-                                @Loc[FogResource.UnitStats_DefensePercentAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPoints)">
-                                @Loc[FogResource.UnitStats_MaxHitPointsAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubHitPointsAmp)">
-                                @Loc[FogResource.UnitStats_MaxHitPointsPercentAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubBaseDamageAmp)">
-                                @Loc[FogResource.UnitStats_BaseDamagePercentAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritDamage)">
-                                @Loc[FogResource.UnitStats_CritDamageAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubInitialFocusInSecondsBonus)">
-                                @Loc[FogResource.UnitStats_InitialFocusInSecondsBonusAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubCritChance)">
-                                @Loc[FogResource.UnitStats_CritChanceAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                        <MudTh Class="sub-attribute-th">
-                            <MudTableSortLabel T="EquipmentItemViewModel"
-                                               SortLabel="@nameof(EquipmentItemViewModel.SubAttackSpeed)">
-                                @Loc[FogResource.UnitStats_AttackSpeedAbbrev]
-                            </MudTableSortLabel>
-                        </MudTh>
-                    </MudTHeadRow>
-                </HeaderContent>
-                <RowTemplate>
-                    <MudTd><img class="icon" src="@context.EquipmentSlotTypeIconUrl"/></MudTd>
-                    <MudTd><img class="icon" src="@context.EquipmentSetIconUrl"/></MudTd>
-                    <MudTd>@context.StarCount ⭐</MudTd>
-                    <MudTd>@context.Level</MudTd>
-                    <MudTd><img class="avatar" src="@context.EquippedOnHeroPortraitUrl"/></MudTd>
+            <MudDataGrid DragDropColumnReordering="false" Filterable="false" Hideable="true" ShowMenuIcon="true"
+                         Groupable="false"
+                         Items="@_equipment" Height="0" Style="display: flex; flex-direction: column; flex: 1; "
+                         Virtualize="true" HeaderClass="table-head-bordered" HorizontalScrollbar="true" Bordered="true"
+                         Dense="true" FixedHeader="true">
+                <Columns>
+                    <PropertyColumn Filterable="true" Property="x => x.EquipmentSlotType" Groupable="true"
+                                    Title="@Loc[FogResource.Equipment_Slot]">
+                        <CellTemplate>
+                            <img class="icon" src="@context.Item.EquipmentSlotTypeIconUrl"/>
+                        </CellTemplate>
+                    </PropertyColumn>
+                    <PropertyColumn Filterable="true" Property="x => x.EquipmentSet" Groupable="true"
+                                    Title="@Loc[FogResource.Equipment_Set]">
+                        <CellTemplate>
+                            <img class="icon" src="@context.Item.EquipmentSetIconUrl"/>
+                        </CellTemplate>
+                    </PropertyColumn>
+                    <PropertyColumn Filterable="true" Property="x => x.StarCount" Groupable="true" Title="⭐">
+                        <CellTemplate>
+                            @context.Item.StarCount ⭐
+                        </CellTemplate>
+                    </PropertyColumn>
+                    <PropertyColumn Filterable="true" Property="x => x.Level" Groupable="true"
+                                    Title="@Loc[FogResource.Hoh_Lvl]">
+                        <CellTemplate>
+                            @context.Item.Level
+                        </CellTemplate>
+                    </PropertyColumn>
+                    <PropertyColumn Property="x => x.EquippedOnHero" Groupable="true"
+                                    Title="@Loc[FogResource.Hoh_Hero]">
+                        <CellTemplate>
+                            <img class="avatar" src="@context.Item.EquippedOnHeroPortraitUrl"/>
+                        </CellTemplate>
+                    </PropertyColumn>
 
                     @* main attributes *@
-                    <MudTd>@((MarkupString) (context.MainAttack?.FormattedValue ?? string.Empty))</MudTd>
-                    <MudTd>@((MarkupString) (context.MainDefense?.FormattedValue ?? string.Empty))</MudTd>
+                    @foreach (var statAttribute in _attributes)
+                    {
+                        <PropertyColumn T="EquipmentItemViewModel" TProperty="EquipmentItemAttributeViewModel?"
+                                        Property="x => GetMainAttributeProperty(x, statAttribute.StatAttribute)"
+                                        Title="@statAttribute.Title"
+                                        HeaderStyle="background-color: var(--fog-container-color);">
+                            <CellTemplate>
+                                @GetMainAttributeValue(context.Item, statAttribute.StatAttribute)
+                            </CellTemplate>
+                        </PropertyColumn>
+                    }
 
                     @* sub attributes *@
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubAttack?.RolledValuePercent"
-                                                           FormattedValue="@context.SubAttack?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubAttack?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubAttackAmp?.RolledValuePercent"
-                                                           FormattedValue="@context.SubAttackAmp?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubAttackAmp?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubDefense?.RolledValuePercent"
-                                                           FormattedValue="@context.SubDefense?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubDefense?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubDefenseAmp?.RolledValuePercent"
-                                                           FormattedValue="@context.SubDefenseAmp?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubDefenseAmp?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubHitPoints?.RolledValuePercent"
-                                                           FormattedValue="@context.SubHitPoints?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubHitPoints?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubHitPointsAmp?.RolledValuePercent"
-                                                           FormattedValue="@context.SubHitPointsAmp?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubHitPointsAmp?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubBaseDamageAmp?.RolledValuePercent"
-                                                           FormattedValue="@context.SubBaseDamageAmp?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubBaseDamageAmp?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent Value="@context.SubCritDamage?.RolledValuePercent"
-                                                           FormattedValue="@context.SubCritDamage?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubCritDamage?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent
-                                Value="@context.SubInitialFocusInSecondsBonus?.RolledValuePercent"
-                                FormattedValue="@context.SubInitialFocusInSecondsBonus?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubInitialFocusInSecondsBonus?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent
-                                Value="@context.SubCritChance?.RolledValuePercent"
-                                FormattedValue="@context.SubCritChance?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubCritChance?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
-                    <MudTd>
-                        <div class="sub-attribute-cell">
-                            <EquipmentRolledValueComponent
-                                Value="@context.SubAttackSpeed?.RolledValuePercent"
-                                FormattedValue="@context.SubAttackSpeed?.FormattedRolledValue"/>
-                            <span>@((MarkupString) (context.SubAttackSpeed?.FormattedValue ?? string.Empty))</span>
-                        </div>
-                    </MudTd>
+                    @foreach (var statAttribute in _attributes)
+                    {
+                        <PropertyColumn T="EquipmentItemViewModel" TProperty="EquipmentItemSubAttributeViewModel?"
+                                        Property="x => GetSubAttributeProperty(x, statAttribute.StatAttribute)"
+                                        Title="@statAttribute.Title">
+                            <CellTemplate>
+                                @RenderCell(context.Item, statAttribute.StatAttribute)
 
-                </RowTemplate>
-            </MudTable>
+                            </CellTemplate>
+                        </PropertyColumn>
+                    }
+                </Columns>
+            </MudDataGrid>
         }
         else
         {
@@ -246,6 +90,11 @@ else
 }
 
 <style>
+    .mud-table-container {
+        flex-grow: 1 !important;
+        width: 100% !important;
+    }
+
     .mud-table-cell {
         font-size: 12px !important;
         padding-inline-start: 4px !important;
@@ -271,4 +120,23 @@ else
         height: 32px;
     }
 
+    .mud-toolbar {
+        height: auto !important;
+        padding-bottom: 4px !important;
+    }
+
 </style>
+
+@code
+{
+    private RenderFragment RenderCell(EquipmentItemViewModel item, StatAttribute statAttribute) => __builder =>
+    {
+        var subAttributeVm = item.SubAttributes.GetValueOrDefault(statAttribute, null);
+        <div class="sub-attribute-cell">
+            <EquipmentRolledValueComponent
+                Value="@subAttributeVm?.RolledValuePercent"
+                FormattedValue="@subAttributeVm?.FormattedRolledValue"/>
+            <span>@((MarkupString) (subAttributeVm?.FormattedValue ?? string.Empty))</span>
+        </div>
+    };
+}

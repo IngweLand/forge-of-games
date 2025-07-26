@@ -1,5 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
@@ -7,7 +9,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
 public partial class CcEquipmentPage : CommandCenterPageBase
 {
-    private TableData<EquipmentItemViewModel> _defaultTableData;
+    private IReadOnlyCollection<(StatAttribute StatAttribute, string Title)> _attributes = [];
     private IReadOnlyCollection<EquipmentItemViewModel>? _equipment;
 
     [Inject]
@@ -18,65 +20,53 @@ public partial class CcEquipmentPage : CommandCenterPageBase
         await base.HandleOnInitializedAsync();
 
         _equipment = await EquipmentUiService.GetEquipmentAsync();
-
-        _defaultTableData = new TableData<EquipmentItemViewModel> {TotalItems = _equipment.Count, Items = _equipment};
     }
 
-    private Task<TableData<EquipmentItemViewModel>> GetItems(TableState state, CancellationToken token)
+    protected override void OnInitialized()
     {
-        if (_equipment == null)
-        {
-            return Task.FromResult(new TableData<EquipmentItemViewModel>());
-        }
+        base.OnInitialized();
 
-        if (state.SortDirection == SortDirection.None)
+        _attributes = new List<(StatAttribute, string )>
         {
-            return Task.FromResult(_defaultTableData);
-        }
-
-        var data = state.SortLabel switch
-        {
-            nameof(EquipmentItemViewModel.EquipmentSlotType) => _equipment.OrderByDirection(state.SortDirection,
-                x => x.EquipmentSlotType),
-            nameof(EquipmentItemViewModel.EquipmentSet) => _equipment.OrderByDirection(state.SortDirection,
-                x => x.EquipmentSet),
-            nameof(EquipmentItemViewModel.StarCount) => _equipment.OrderByDirection(state.SortDirection,
-                x => x.StarCount),
-            nameof(EquipmentItemViewModel.Level) => _equipment.OrderByDirection(state.SortDirection, x => x.Level),
-            nameof(EquipmentItemViewModel.EquippedOnHero) => _equipment.OrderByDirection(state.SortDirection,
-                x => x.EquippedOnHero),
-            nameof(EquipmentItemViewModel.MainAttack) => HandleAttributeSort(_equipment, x => x.MainAttack,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.MainDefense) => HandleAttributeSort(_equipment, x => x.MainDefense,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubAttack) => HandleSubAttributeSort(_equipment, x => x.SubAttack,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubAttackAmp) => HandleSubAttributeSort(_equipment, x => x.SubAttackAmp,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubDefense) => HandleSubAttributeSort(_equipment, x => x.SubDefense,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubDefenseAmp) => HandleSubAttributeSort(_equipment, x => x.SubDefenseAmp,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubHitPoints) => HandleSubAttributeSort(_equipment, x => x.SubHitPoints,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubHitPointsAmp) => HandleSubAttributeSort(_equipment, x => x.SubHitPointsAmp,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubBaseDamageAmp) => HandleSubAttributeSort(_equipment,
-                x => x.SubBaseDamageAmp,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubCritDamage) => HandleSubAttributeSort(_equipment, x => x.SubCritDamage,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubInitialFocusInSecondsBonus) => HandleSubAttributeSort(_equipment,
-                x => x.SubInitialFocusInSecondsBonus,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubCritChance) => HandleSubAttributeSort(_equipment, x => x.SubCritChance,
-                state.SortDirection),
-            nameof(EquipmentItemViewModel.SubAttackSpeed) => HandleSubAttributeSort(_equipment, x => x.SubAttackSpeed,
-                state.SortDirection),
-            _ => _equipment,
+            (StatAttribute.Attack, Loc[FogResource.UnitStats_AttackAbbrev]),
+            (StatAttribute.AttackBonus, Loc[FogResource.UnitStats_AttackPercentAbbrev]),
+            (StatAttribute.Defense, Loc[FogResource.UnitStats_DefenseAbbrev]),
+            (StatAttribute.DefenseBonus, Loc[FogResource.UnitStats_DefensePercentAbbrev]),
+            (StatAttribute.MaxHitPoints, Loc[FogResource.UnitStats_MaxHitPointsAbbrev]),
+            (StatAttribute.MaxHitPointsBonus, Loc[FogResource.UnitStats_MaxHitPointsPercentAbbrev]),
+            (StatAttribute.BaseDamageBonus, Loc[FogResource.UnitStats_BaseDamagePercentAbbrev]),
+            (StatAttribute.CritChance, Loc[FogResource.UnitStats_CritChanceAbbrev]),
+            (StatAttribute.CritDamage, Loc[FogResource.UnitStats_CritDamageAbbrev]),
+            (StatAttribute.InitialFocusInSecondsBonus, Loc[FogResource.UnitStats_InitialFocusInSecondsBonusAbbrev]),
+            (StatAttribute.AttackSpeed, Loc[FogResource.UnitStats_AttackSpeedAbbrev]),
         };
+    }
 
-        return Task.FromResult(new TableData<EquipmentItemViewModel> {TotalItems = _equipment.Count, Items = data});
+    private static EquipmentItemAttributeViewModel? GetMainAttributeProperty(
+        EquipmentItemViewModel item, StatAttribute statAttribute)
+    {
+        if (item.MainAttribute.StatAttribute == statAttribute)
+        {
+            return item.MainAttribute;
+        }
+
+        return null;
+    }
+
+    private static EquipmentItemSubAttributeViewModel? GetSubAttributeProperty(
+        EquipmentItemViewModel item, StatAttribute statAttribute)
+    {
+        return item.SubAttributes.GetValueOrDefault(statAttribute, null);
+    }
+
+    private static MarkupString GetMainAttributeValue(EquipmentItemViewModel item, StatAttribute statAttribute)
+    {
+        if (item.MainAttribute.StatAttribute == statAttribute)
+        {
+            return (MarkupString) (item.MainAttribute.FormattedValue ?? string.Empty);
+        }
+
+        return new MarkupString();
     }
 
     private static (IEnumerable<T> Matched, IEnumerable<T> NotMatched) SplitByCondition<T>(IEnumerable<T> source,

@@ -1,4 +1,3 @@
-using System.Globalization;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -13,11 +12,28 @@ public class EquipmentItemToViewModelConverter(
     IEquipmentSlotTypeIconUrlProvider equipmentSlotTypeIconUrlProvider)
     : ITypeConverter<EquipmentItem, EquipmentItemViewModel>
 {
+    private static readonly Dictionary<StatAttribute, NumericValueType> StatToNumericValueTypeMap = new()
+    {
+        {StatAttribute.Attack, NumericValueType.Number},
+        {StatAttribute.AttackBonus, NumericValueType.Percentage},
+        {StatAttribute.Defense, NumericValueType.Number},
+        {StatAttribute.DefenseBonus, NumericValueType.Percentage},
+        {StatAttribute.MaxHitPoints, NumericValueType.Number},
+        {StatAttribute.MaxHitPointsBonus, NumericValueType.Percentage},
+        {StatAttribute.BaseDamageBonus, NumericValueType.Percentage},
+        {StatAttribute.CritDamage, NumericValueType.Percentage},
+        {StatAttribute.InitialFocusInSecondsBonus, NumericValueType.Duration},
+        {StatAttribute.CritChance, NumericValueType.Percentage},
+        {StatAttribute.AttackSpeed, NumericValueType.Speed},
+    };
+
     public EquipmentItemViewModel Convert(EquipmentItem source, EquipmentItemViewModel destination,
         ResolutionContext context)
     {
         var heroAssetId = source.EquippedOnHero != null ? $"Unit_{source.EquippedOnHero}" : null;
 
+        var subAttributes = StatToNumericValueTypeMap.Keys.ToDictionary(statAttribute => statAttribute,
+            statAttribute => CreateSubAttribute(source.SubAttributes, statAttribute));
         return new EquipmentItemViewModel
         {
             Id = source.Id,
@@ -30,47 +46,28 @@ public class EquipmentItemToViewModelConverter(
                 heroAssetId != null ? assetUrlProvider.GetHohUnitPortraitUrl(heroAssetId) : null,
             EquipmentSetIconUrl = assetUrlProvider.GetHohEquipmentSetIconUrl(source.EquipmentSet),
             EquipmentSlotTypeIconUrl = equipmentSlotTypeIconUrlProvider.GetIconUrl(source.EquipmentSlotType),
-            MainAttack = CreateAttribute(source.MainAttribute, StatAttribute.Attack),
-            MainDefense = CreateAttribute(source.MainAttribute, StatAttribute.Defense),
-            SubAttack = CreateSubAttribute(source.SubAttributes, StatAttribute.Attack),
-            SubAttackAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.AttackBonus,
-                NumericValueType.Percentage),
-            SubDefense = CreateSubAttribute(source.SubAttributes, StatAttribute.Defense),
-            SubDefenseAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.DefenseBonus,
-                NumericValueType.Percentage),
-            SubHitPoints = CreateSubAttribute(source.SubAttributes, StatAttribute.MaxHitPoints),
-            SubHitPointsAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.MaxHitPointsBonus,
-                NumericValueType.Percentage),
-            SubBaseDamageAmp = CreateSubAttribute(source.SubAttributes, StatAttribute.BaseDamageBonus,
-                NumericValueType.Percentage),
-            SubCritDamage = CreateSubAttribute(source.SubAttributes, StatAttribute.CritDamage,
-                NumericValueType.Percentage),
-            SubInitialFocusInSecondsBonus = CreateSubAttribute(source.SubAttributes, StatAttribute.InitialFocusInSecondsBonus,
-                NumericValueType.Duration),
-            SubCritChance = CreateSubAttribute(source.SubAttributes, StatAttribute.CritChance, NumericValueType.Percentage),
-            SubAttackSpeed = CreateSubAttribute(source.SubAttributes, StatAttribute.AttackSpeed, NumericValueType.Speed),
+            MainAttribute = CreateAttribute(source.MainAttribute),
+            SubAttributes = subAttributes,
         };
     }
 
-    private static EquipmentItemAttributeViewModel? CreateAttribute(EquipmentAttribute attribute,
-        StatAttribute targetAttribute, NumericValueType numericValueType = NumericValueType.Number)
+    private static EquipmentItemAttributeViewModel CreateAttribute(EquipmentAttribute attribute)
     {
-        if (attribute.StatBoost == null || attribute.StatAttribute != targetAttribute)
-        {
-            return null;
-        }
+        var numericValueType =
+            StatToNumericValueTypeMap.GetValueOrDefault(attribute.StatAttribute, NumericValueType.Number);
 
-        var formattedValue = numericValueType.ToFormatedString(attribute.StatBoost.Value);
+        var formattedValue = numericValueType.ToFormatedString(attribute.StatBoost!.Value);
 
         return new EquipmentItemAttributeViewModel
         {
             Value = attribute.StatBoost.Value,
             FormattedValue = formattedValue,
+            StatAttribute = attribute.StatAttribute,
         };
     }
 
     private static EquipmentItemSubAttributeViewModel? CreateSubAttribute(IEnumerable<EquipmentAttribute> attributes,
-        StatAttribute targetAttribute, NumericValueType numericValueType = NumericValueType.Number)
+        StatAttribute targetAttribute)
     {
         var attribute = attributes.FirstOrDefault(ea => ea.StatAttribute == targetAttribute);
 
@@ -82,6 +79,8 @@ public class EquipmentItemToViewModelConverter(
         var formattedValue = "?";
         if (attribute.StatBoost != null)
         {
+            var numericValueType =
+                StatToNumericValueTypeMap.GetValueOrDefault(attribute.StatAttribute, NumericValueType.Number);
             formattedValue = numericValueType.ToFormatedString(attribute.StatBoost.Value);
         }
 

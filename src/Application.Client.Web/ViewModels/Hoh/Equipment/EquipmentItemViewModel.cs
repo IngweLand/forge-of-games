@@ -4,8 +4,6 @@ namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
 
 public class EquipmentItemViewModel
 {
-    public EquipmentItemSubAttributeViewModel? SubAttackSpeed { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubCritChance { get; init; }
     public EquipmentSet EquipmentSet { get; init; }
     public required string EquipmentSetIconUrl { get; init; }
     public EquipmentSlotType EquipmentSlotType { get; init; }
@@ -13,30 +11,36 @@ public class EquipmentItemViewModel
     public string? EquippedOnHero { get; init; }
     public string? EquippedOnHeroPortraitUrl { get; init; }
     public int Id { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubInitialFocusInSecondsBonus { get; init; }
     public int Level { get; init; }
 
-    public EquipmentItemAttributeViewModel? MainAttack { get; init; }
-    public EquipmentItemAttributeViewModel? MainDefense { get; init; }
+    public required EquipmentItemAttributeViewModel MainAttribute { get; init; }
     public int StarCount { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubAttack { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubAttackAmp { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubBaseDamageAmp { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubCritDamage { get; init; }
-
-    public EquipmentItemSubAttributeViewModel? SubDefense { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubDefenseAmp { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubHitPoints { get; init; }
-    public EquipmentItemSubAttributeViewModel? SubHitPointsAmp { get; init; }
+    public required IReadOnlyDictionary<StatAttribute, EquipmentItemSubAttributeViewModel?> SubAttributes { get; init; }
 }
 
-public class EquipmentItemAttributeViewModel
+public class EquipmentItemAttributeViewModel : IComparable<EquipmentItemAttributeViewModel>, IComparable
 {
     public string? FormattedValue { get; init; }
+    public required StatAttribute StatAttribute { get; init; }
     public float Value { get; init; }
+
+    public int CompareTo(object? obj)
+    {
+        if (obj is EquipmentItemAttributeViewModel other)
+        {
+            return CompareTo(other);
+        }
+
+        return obj is null ? 1 : -1;
+    }
+
+    public int CompareTo(EquipmentItemAttributeViewModel? other)
+    {
+        return other is null ? 1 : Value.CompareTo(other.Value);
+    }
 }
 
-public class EquipmentItemSubAttributeViewModel
+public class EquipmentItemSubAttributeViewModel : IComparable<EquipmentItemSubAttributeViewModel>, IComparable
 {
     public string? FormattedRolledValue { get; init; }
     public string? FormattedValue { get; init; }
@@ -44,4 +48,39 @@ public class EquipmentItemSubAttributeViewModel
     public bool Unlocked { get; set; }
     public int UnlockedAtLevel { get; init; }
     public float? Value { get; init; }
+
+    public int CompareTo(object? obj)
+    {
+        if (obj is EquipmentItemSubAttributeViewModel other)
+        {
+            return CompareTo(other);
+        }
+
+        return obj is null ? 1 : -1;
+    }
+
+    public int CompareTo(EquipmentItemSubAttributeViewModel? other)
+    {
+        if (other is null)
+        {
+            return 1;
+        }
+
+        if (Value is null && other.Value is null)
+        {
+            return 0;
+        }
+
+        if (Value is null)
+        {
+            return -1;
+        }
+
+        if (other.Value is null)
+        {
+            return 1;
+        }
+
+        return Value.Value.CompareTo(other.Value.Value);
+    }
 }
