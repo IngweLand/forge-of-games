@@ -16,9 +16,6 @@ public class Player
     public int Id { get; set; }
     public required int InGamePlayerId { get; set; }
 
-    [Obsolete]
-    public bool IsPresentInGame { get; set; } = true;
-
     [JsonIgnore]
     public PlayerKey Key
     {
