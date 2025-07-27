@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace Ingweland.Fog.WebApp.Client.Services.Abstractions;
+namespace Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 
 public interface IJSInteropService
 {
@@ -11,4 +11,5 @@ public interface IJSInteropService
     ValueTask ResetScrollPositionAsync();
     ValueTask ShowLoadingIndicatorAsync();
     ValueTask ScrollTo(ElementReference target, int position, bool smooth = false);
+    ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters);
 }

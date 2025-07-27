@@ -153,3 +153,9 @@ window.Fog.Webapp.Common = {
     }
 };
 
+window.Fog.Webapp.Analytics = {
+    gtag: window.gtag || function() {
+        dataLayer.push(arguments);
+    },
+}
+

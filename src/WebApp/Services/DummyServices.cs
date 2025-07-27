@@ -179,6 +179,11 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
+    public ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<bool> IsMobileAsync()
     {
         throw new NotImplementedException();

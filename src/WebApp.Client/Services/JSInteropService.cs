@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
@@ -39,5 +40,10 @@ public class JSInteropService(IJSRuntime jsRuntime) : IJSInteropService
     public ValueTask OpenUrlAsync(string url, string target)
     {
         return jsRuntime.InvokeVoidAsync("open", url, target);
+    }
+    
+    public ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters)
+    {
+        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Analytics.gtag", command, target, parameters);
     }
 }

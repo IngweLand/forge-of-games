@@ -11,7 +11,8 @@
         @if (Player?.Alliance != null)
         {
             <a href="@FogUrlBuilder.PageRoutes.Alliance(Player.Alliance.Id)" class="anchor-inherited-style">
-                <div class="user-select-none" style="cursor: pointer">
+                <div class="user-select-none" style="cursor: pointer"
+                     @onclick="() => OnAllianceClicked.InvokeAsync(Player.Alliance.Id)">
                     <span class="label">@Loc[FogResource.StatsHub_Player_Alliance]: </span>
                     <span class="preserve-whitespace">"@Player.Alliance.Name"</span>
                     <span class="material-symbols-outlined">link</span>
@@ -38,5 +39,8 @@
     [Parameter]
     [EditorRequired]
     public PlayerViewModel? Player { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnAllianceClicked { get; set; }
 
 }

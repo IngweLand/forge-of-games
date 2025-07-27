@@ -8,7 +8,7 @@
 @if (IsInitialized && _player != null)
 {
     <div class="page-container">
-        <PlayerInfoComponent Player="@_player.Player"/>
+        <PlayerInfoComponent Player="@_player.Player" OnAllianceClicked="OnPlayerInfoAllianceClicked"/>
         <div class="fog-container section-container actions-container">
             <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
                        EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
@@ -51,7 +51,7 @@
                     @foreach (var squad in _player.Squads)
                     {
                         <ProfileSquadComponent HeroProfile="@squad" HasShadow="true"
-                                               OnClick="OpenBattleSquadProfile"></ProfileSquadComponent>
+                                               OnClick="OnProfileSquadClicked"></ProfileSquadComponent>
                     }
                 </div>
             </div>
@@ -61,7 +61,7 @@
         {
             <div class="fog-container section-container ranking-points-chart-container">
                 <div class="section-title expandable-section-title"
-                     @onclick="() => _rankingChartIsExpanded = !_rankingChartIsExpanded">
+                     @onclick="ToggleRankingChart">
                     <span>@Loc[FogResource.StatsHub_Player_RankingPoints]</span>
                     @if (_rankingChartIsExpanded)
                     {
@@ -113,7 +113,7 @@
                     @foreach (var battle in _player.PvpBattles)
                     {
                         <PvpBattleListItemComponent Battle="@battle" OnOpponentClick="OnPlayerClicked"
-                                                    OnHeroClicked="OpenBattleSquadProfile"
+                                                    OnHeroClicked="OnPvpBattleSquadClicked"
                                                     OnBattleStatsClicked="OpenBattleStats"/>
                     }
                     <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="align-self: flex-end"
@@ -125,7 +125,7 @@
             {
                 <div class="fog-container section-container ranking-points-chart-container">
                     <div class="section-title expandable-section-title"
-                         @onclick="() => _pvpChartIsExpanded = !_pvpChartIsExpanded">
+                         @onclick="TogglePvpChart">
                         <span>@Loc[FogResource.StatsHub_Player_PvpRankingPoints]</span>
                         @if (_pvpChartIsExpanded)
                         {
@@ -179,7 +179,8 @@
                 <div class="alliances-container">
                     @foreach (var alliance in _player.Alliances)
                     {
-                        <a href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)" class="anchor-inherited-style">
+                        <a href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)" class="anchor-inherited-style"
+                           @onclick="() => OnAllianceClicked(alliance.Id)">
                             <AllianceListItemComponent Alliance="@alliance"/>
                         </a>
                     }

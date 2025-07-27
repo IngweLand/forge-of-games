@@ -1,3 +1,6 @@
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Analytics.Pages;
 using Ingweland.Fog.Application.Client.Web.Caching;
 using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Calculators;
@@ -118,6 +121,8 @@ public static class DependencyInjection
         services.AddScoped<IHohCoreDataCache, HohCoreDataCache>();
         services.AddScoped<ICcMigrationManager, CcMigrationManager>();
         services.AddScoped<ITopHeroesUiService, TopHeroesUiService>();
+        services.AddScoped<IAnalyticsService, GoogleAnalyticsService>();
+        services.AddScoped<IPlayerProfilePageAnalyticsService, PlayerProfilePageAnalyticsService>();
 
         services.AddScoped<CityPlannerSettings>();
 
