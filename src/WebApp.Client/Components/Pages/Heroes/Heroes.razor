@@ -1,4 +1,5 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Ingweland.Fog.Application.Core.Helpers
@@ -6,32 +7,69 @@
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IHeroProfileUiService HeroProfileUiService
 @inject NavigationManager NavigationManager
-@if (_heroes != null)
+@if (_allHeroes != null)
 {
     <div class="component-root">
-        @foreach (var hero in _heroes)
-        {
-            <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
-        }
+        <div class="hero-name-container">
+            <MudTextField Variant="Variant.Outlined" DebounceInterval="300" T="string" Immediate="true"
+                          Label="@Loc[FogResource.HeroSearchInput_Label]" Clearable="true"
+                          AdornmentIcon="@Icons.Material.Outlined.Search" Adornment="Adornment.End"
+                          AdornmentColor="Color.Inherit"
+                          Style="background-color: var(--fog-surface-color)"
+                          Value="@_heroSearchString" ValueChanged="@(s => OnHeroNameInputChanged(s))"/>
+        </div>
+        <div class="heroes-container">
+            @foreach (var hero in _heroes)
+            {
+                <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+            }
+        </div>
     </div>
 }
 
 @code {
-    private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
+    private IReadOnlyCollection<HeroBasicViewModel>? _allHeroes;
+    private List<HeroBasicViewModel> _heroes = [];
+    private string _heroSearchString = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
 
-        _heroes = await LoadWithPersistenceAsync(
-            nameof(_heroes),
+        _allHeroes = await LoadWithPersistenceAsync(
+            nameof(_allHeroes),
             async () => await HeroProfileUiService.GetHeroes()
         );
+
+        _heroes = _allHeroes?.ToList() ?? [];
     }
 
     private void OpenHeroPage(string heroId)
     {
         NavigationManager.NavigateTo($"{NavigationManager.Uri}/{heroId}");
+    }
+
+    private void OnHeroNameInputChanged(string value)
+    {
+        if (_heroSearchString == value)
+        {
+            return;
+        }
+        _heroSearchString = value;
+        Search();
+    }
+
+    private void Search()
+    {
+        if (_allHeroes == null || _allHeroes.Count == 0)
+        {
+            return;
+        }
+
+        _heroes = string.IsNullOrWhiteSpace(_heroSearchString)
+            ? _allHeroes.ToList()
+            : _allHeroes.Where(x => x.Name.Contains(_heroSearchString, StringComparison.InvariantCultureIgnoreCase))
+                .ToList();
     }
 
 }

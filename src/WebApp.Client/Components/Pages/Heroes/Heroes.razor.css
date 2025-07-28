@@ -1,4 +1,18 @@
-.component-root{
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.hero-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+
+.heroes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -6,13 +20,18 @@
 }
 
 @media (min-width: 576px) {
-    .component-root{
+    .component-root {
+        gap: 12px;
+    }
+
+    .heroes-container {
         gap: 16px 4px;
     }
 }
 
 @media (min-width: 768px) {
-    .component-root{
+
+    .heroes-container {
         gap: 24px 8px;
     }
 }

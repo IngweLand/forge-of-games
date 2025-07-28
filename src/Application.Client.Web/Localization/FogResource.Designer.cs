@@ -1599,6 +1599,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hero name.
+        /// </summary>
+        public static string HeroSearchInput_Label {
+            get {
+                return ResourceManager.GetString("HeroSearchInput.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pick a hero. Start typing the name or select from the list..
         /// </summary>
         public static string HeroSelector_HelperText {
