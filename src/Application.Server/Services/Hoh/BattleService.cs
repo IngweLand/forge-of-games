@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Battle.Queries;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
@@ -15,7 +16,7 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
         var query = new BattleSearchQuery
         {
             BattleType = request.BattleType,
-            BattleDefinitionId = await battleDefinitionIdFactory.Create(request),
+            BattleDefinitionId = battleDefinitionIdFactory.Create(request),
             UnitIds = request.UnitIds,
         };
 

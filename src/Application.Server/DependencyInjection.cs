@@ -24,7 +24,7 @@ public static class DependencyInjection
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddApplicationCoreServices();
-        
+
         services.AddLazyCache();
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
@@ -66,7 +66,6 @@ public static class DependencyInjection
         services.AddScoped<IPlayerProfileDtoFactory, PlayerProfileDtoFactory>();
         services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
-        services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<IBattleSearchResultFactory, BattleSearchResultFactory>();
         services.AddScoped<IBattleStatsDtoFactory, BattleStatsDtoFactory>();

@@ -124,6 +124,7 @@ public static class DependencyInjection
         services.AddScoped<IAnalyticsService, GoogleAnalyticsService>();
         services.AddScoped<IPlayerProfilePageAnalyticsService, PlayerProfilePageAnalyticsService>();
         services.AddScoped<IHeroComponentAnalyticsService, HeroComponentAnalyticsService>();
+        services.AddScoped<IBattleLogPageAnalyticsService, BattleLogPageAnalyticsService>();
 
         services.AddScoped<CityPlannerSettings>();
 

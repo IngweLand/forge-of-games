@@ -13,6 +13,12 @@ public static class AnalyticsParams
     public const string SOURCE = "source";
     public const string STATE = "state";
     public const string UNIT_ID = "unit_id";
+    public const string HERO1 = "hero1";
+    public const string HERO2 = "hero2";
+    public const string HERO3 = "hero3";
+    public const string HERO4 = "hero4";
+    public const string HERO5 = "hero5";
+    public const string HEROES = "heroes";
 
     public static class Values
     {

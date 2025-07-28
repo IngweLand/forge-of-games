@@ -19,14 +19,14 @@ public static class DependencyInjection
     public static void AddApplicationCoreServices(this IServiceCollection services)
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-        
+
         services.AddSingleton<ICityCalculators, CityCalculators>();
         services.AddSingleton<ITimeFormatters, TimeFormatters>();
         services.AddSingleton<ICityExpansionsHasher, CityExpansionsHasher>();
-        
+
         services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
         services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
-        
+
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
         services.AddScoped<ICityMapStateCoreFactory, CityMapStateCoreFactory>();
         services.AddScoped<ICityStatsProcessorFactory, CityStatsProcessorFactory>();
@@ -36,5 +36,6 @@ public static class DependencyInjection
         services.AddScoped<IMapAreaFactory, MapAreaFactory>();
         services.AddScoped<IProductionStatsProcessorFactory, ProductionStatsProcessorFactory>();
         services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
+        services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
     }
 }

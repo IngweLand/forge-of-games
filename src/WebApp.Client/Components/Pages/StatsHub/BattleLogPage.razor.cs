@@ -1,4 +1,5 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
@@ -12,6 +13,11 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
 public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 {
+    private readonly Dictionary<string, object> _defaultAnalyticsParameters = new()
+    {
+        {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.BATTLE_LOG},
+    };
+
     private IReadOnlyCollection<BattleSummaryViewModel> _battles = [];
 
     private CancellationTokenSource _battlesCts = new();
@@ -19,9 +25,13 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private BattleSelectorViewModel? _battleSelectorViewModel;
     private CancellationTokenSource _battleStatsCts = new();
+
     private bool _isDisposed;
 
     private bool _isLoading = true;
+
+    [Inject]
+    public IBattleLogPageAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
@@ -112,6 +122,8 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
 
     private Task BattleSelectorOnValueChanged(BattleSearchRequest newValue)
     {
+        AnalyticsService.TrackFormChange(newValue, _defaultAnalyticsParameters);
+
         return GetBattles(newValue);
     }
 
@@ -141,6 +153,9 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
             return;
         }
 
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_BATTLE_STATS, _defaultAnalyticsParameters,
+            new Dictionary<string, object> {{AnalyticsParams.FOG_BATTLE_ID, battle.StatsId.Value}});
+
         await _battleStatsCts.CancelAsync();
         _battleStatsCts.Dispose();
 
@@ -156,9 +171,12 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
         var parameters = new DialogParameters<BattleStatsDialog> {{d => d.Stats, stats}};
         await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
     }
-    
+
     private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
     {
+        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
+            squad.HeroUnitId);
+
         var options = GetDefaultDialogOptions();
 
         var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};

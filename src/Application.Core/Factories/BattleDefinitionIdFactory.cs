@@ -1,21 +1,21 @@
 using System.Text;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Application.Server.Factories;
+namespace Ingweland.Fog.Application.Core.Factories;
 
-public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataRepository) : IBattleDefinitionIdFactory
+public class BattleDefinitionIdFactory : IBattleDefinitionIdFactory
 {
-    public async Task<string> Create(BattleSearchRequest request)
+    public string Create(BattleSearchRequest request)
     {
         var sb = new StringBuilder();
 
         return request.BattleType switch
         {
             BattleType.Campaign => CreateCampaignId(request, sb),
-            BattleType.TreasureHunt => await CreateTreasureHuntId(request, sb),
+            BattleType.TreasureHunt => CreateTreasureHuntId(request, sb),
             BattleType.HistoricBattle => CreateHistoricBattleId(request, sb),
             BattleType.TeslaStorm => CreateTeslaStormId(request, sb),
             BattleType.Pvp => "pvp",
@@ -55,22 +55,20 @@ public class BattleDefinitionIdFactory(IHohCoreDataRepository hohCoreDataReposit
         return sb.ToString();
     }
 
-    private async Task<string> CreateTreasureHuntId(BattleSearchRequest request, StringBuilder sb)
+    private string CreateTreasureHuntId(BattleSearchRequest request, StringBuilder sb)
     {
         if (request.TreasureHuntEncounter < 0)
         {
             return string.Empty;
         }
 
-        var stage =
-            await hohCoreDataRepository.GetTreasureHuntStageAsync(request.TreasureHuntDifficulty,
-                request.TreasureHuntStage);
-        if (stage == null)
+        var stage = TreasureHuntBattleEncounters.GetStage(request.TreasureHuntDifficulty, request.TreasureHuntStage);
+        if (stage.Count == 0)
         {
             return string.Empty;
         }
 
-        var encounters = stage.Battles.Select(b => int.Parse(b.Id[(b.Id.LastIndexOf('_') + 1)..])).Order().ToList();
+        var encounters = stage.Select(x => int.Parse(x[(x.LastIndexOf('_') + 1)..])).Order().ToList();
         if (encounters.Count < request.TreasureHuntEncounter)
         {
             return string.Empty;
