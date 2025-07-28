@@ -13,56 +13,56 @@ F
 3Base.Buildings.Building_Mayas_Aviary_Premium_1_Name豪華な鳥舎
 �
 Base.HeroClass.Defender_Desc�守護者は最前線で戦い、味方を守る役割を担う盾となる。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>、<color=#3DA229>闘技場</color>、<color=#3DA229>宝探し</color></indent><br><line-height=50%><br></line-height><color=#CD2A25>不利</color>：<br>•<indent=5%><color=#CD2A25>テスラストーム</color></indent>
-0
-!Base.Heroes.hero.Nostradamus_NameNostradamus
+:
+!Base.Heroes.hero.Nostradamus_Nameノストラダムス
 N
 ;Base.Technologies.Technology_China_EnhancedPaddyFields_Name改良型水田
 K
 8Base.Technologies.Technology_Mayas_DaggerPerfection_Name短剣の精練
 G
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_Name豪華な農場
-Q
->Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_3_Name射撃兵兵舎
 I
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_Name水夫の港
+Q
+>Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_3_Name射撃兵兵舎
 ~
 1Base.Buildings.Building_China_Home_Premium_6_DescI山ほどの五銖銭を生産し、都市に労働者を3人追加する
 :
 -Base.Wonders.Wonder_China_TerracottaArmy_Name	兵馬俑
-M
-%Base.Resources.hero.JuliusCaesar_Name$ユリウス・カエサルの精髄
 F
 !Base.Units.Unit_RomanPraetor_Name!アエミリア・テルティア
+M
+%Base.Resources.hero.JuliusCaesar_Name$ユリウス・カエサルの精髄
 I
 6Base.Technologies.Technology_China_DrylandFarming_Name乾燥地農業
 �
 "Base.Resources.spice_treasure_Desci香辛料の宝物は加工された資源で、水夫の港と豪華な水夫の港で生産できる。
-2
-!Base.Units.Unit_HarryHoudini_NameHarry Houdini
+C
+!Base.Units.Unit_HarryHoudini_Nameハリー・フーディーニ
 C
 6Base.Buildings.Building_Vikings_Beehive_Average_6_Name	養蜂場
 M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_5_Name遠征桟橋
-7
--Base.Units.Unit_FeudalAge_Player_Knights_Name騎士
-D
-1Base.Abilities.hero_battle_ability.MarcoPolo_Name発見の閃光
 q
 0Base.Buildings.Building_Mayas_Home_Priest_1_Desc=カカオ豆を生産し、都市に職人を2人追加する
+D
+1Base.Abilities.hero_battle_ability.MarcoPolo_Name発見の閃光
+7
+-Base.Units.Unit_FeudalAge_Player_Knights_Name騎士
 ;
 "Base.Resources.hero.KingMinos_Nameミノス王の精髄
-G
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Name	鍛冶炉
 R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_6_Name豪華な水夫の港
+G
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Name	鍛冶炉
 O
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_3_Name歩兵兵舎
 F
 3Base.Units.Unit_TreasureHunt_Green_Harpoonists_Name翠緑の銛隊
-r
-5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 ;
 %Base.BuildingGroups.ritualCarver_Name儀式彫刻工房
+r
+5Base.Buildings.Building_RomanEmpire_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 �
 -Base.Resources.hero.QueenSeondeokOfSilla_Descx善徳女王の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 N
@@ -107,16 +107,16 @@ C
 0Base.Abilities.hero_battle_ability.KarlMarx_Name宣言の欺瞞
 I
 $Base.Resources.hero.WilliamTell_Name!ウィリアム・テルの精髄
-+
-Base.Units.Unit_Inanna_Nameイナンナ
 F
 3Base.Technologies.Technology_Vikings_TaflGames_Nameタフル遊戯
++
+Base.Units.Unit_Inanna_Nameイナンナ
 �
 Base.Resources.papyrus_Descuパピルスは加工資源を作るために使われる重要な資源で、パピルス農場で生産される。
-7
-$Base.BuildingGroups.premiumHome_Name豪華な住宅
 N
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_1_Name歩兵兵舎
+7
+$Base.BuildingGroups.premiumHome_Name豪華な住宅
 L
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_2_Name騎兵兵舎
 D
@@ -141,26 +141,26 @@ I
 5Base.Technologies.Technology_Vikings_BurialSites_Name墓地
 c
 ;Base.Buildings.Building_StoneAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
->
-%Base.BuildingGroups.kaolinQuarry_Nameカオリン採石場
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.RamsesII_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内で<style=basestat>{duration}</style>の間、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、移動速度を<style=basestat>{move_percentage}</style>、命中率を<style=basestat>{accuracy_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。
+>
+%Base.BuildingGroups.kaolinQuarry_Nameカオリン採石場
 /
 Base.Heroes.hero.KingMinos_Nameミノス王
 �
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Descu豪華な漁桟橋では船を送り出し、山ほどの魚を捕って空腹の労働者と水夫に提供する。
-�
-9Base.Buildings.Building_Vikings_SailorPort_Premium_3_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
 P
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_Desc黒曜石を生産する
+�
+9Base.Buildings.Building_Vikings_SailorPort_Premium_3_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
 j
 WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domestic_Name特異点の碑
 @
 0Base.Buildings.Building_Mayas_Home_Priest_4_Name職人の家
-�
-%Base.Units.Unit_ThomasAlvaEdison_Desc�メンローパークの魔術師、トーマス・アルバ・エジソンが輝きをもたらす。１９世紀後半から20世紀初頭にかけて活躍し、数々の発明で技術と産業を大きく変えた。<br><br>蓄音機、映画カメラ、電球をはじめ、一千以上の特許を取得し、研究所を拠点に革新的な技術開発を推進。産業研究の先駆けとなり、後の技術革新にも大きな影響を与えた。<br><br>発想力と実行力で人々の暮らしを一変させ、その功績は今もなお受け継がれている。まさに、暗闇を照らした発明家だった。
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Achilles_1_Name�<style=ability_label>近接攻撃・強化</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。驚異的な力を発揮し、アキレスの攻撃速度が<style=basestat>{atk_speed_duration}</style>の間<style=basestat>{atk_speed_percentage}</style>上昇する。
+�
+%Base.Units.Unit_ThomasAlvaEdison_Desc�メンローパークの魔術師、トーマス・アルバ・エジソンが輝きをもたらす。１９世紀後半から20世紀初頭にかけて活躍し、数々の発明で技術と産業を大きく変えた。<br><br>蓄音機、映画カメラ、電球をはじめ、一千以上の特許を取得し、研究所を拠点に革新的な技術開発を推進。産業研究の先駆けとなり、後の技術革新にも大きな影響を与えた。<br><br>発想力と実行力で人々の暮らしを一変させ、その功績は今もなお受け継がれている。まさに、暗闇を照らした発明家だった。
 F
 6Base.Technologies.Technology_EarlyRome_Municipium_Name自治都市
 =
@@ -211,10 +211,10 @@ H
 HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_Name�<style=ability_label>遠隔攻撃</style>李舜臣が伝説の艦隊を召喚し、体力が最も少ない敵ヒーローに向けて強力な砲弾を三発撃ち込む。最初の二発は<style=basestat>{dmg_percentage}</style>のダメージを与える。最後の砲弾は<style=basestat>{final_dmg_percentage}</style>のダメージに加えて、対象の減っている体力の<style=basestat>{missing_hp_percentage}</style>分に相当する追加ダメージを与える。
 M
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_Name攻城兵兵舎
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>回復・集中</style>肥沃な大地からエネルギーを引き出し、味方ユニット全体を自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復し、ヒーローたちのアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
 W
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_2_Name重歩兵兵舎
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>回復・集中</style>肥沃な大地からエネルギーを引き出し、味方ユニット全体を自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復し、ヒーローたちのアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
 O
 9Base.Abilities.hero_battle_ability.AztecTlacateccatl_Name太陽神の抱擁
 G
@@ -228,9 +228,9 @@ y
 <
 #Base.Regions.region.Panganea_2_Name頭蓋砕きの領域
 N
->Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_3_Name騎兵兵舎
-N
 5Base.Units.Unit_MinoanEra_Spartans_XiphosCavalry_Nameザイフォス騎兵
+N
+>Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_3_Name騎兵兵舎
 3
 #Base.BuildingGroups.sailorHome_Name水夫の家
 I
@@ -305,10 +305,10 @@ v
 9Base.Buildings.Building_ByzantineEra_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 F
 3Base.Buildings.Building_FeudalAge_Home_Small_2_Name小さな住宅
-5
-Base.Heroes.hero.Cleopatra_Nameクレオパトラ
 L
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_3_Name小さな住宅
+5
+Base.Heroes.hero.Cleopatra_Nameクレオパトラ
 G
 %Base.Resources.purple_crest_epic_Name紫色の真夜中クレスト
 �
@@ -323,14 +323,14 @@ H
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_Name騎兵兵舎
 K
 8Base.Technologies.Technology_FeudalAge_RunicWriting_Nameルーン文字
+�
+ Base.Regions.SiegeOfOrleans_Desc�１４２９年５月、百年戦争が始まってから９１年目の春。イングランド軍の侵攻は勢いを増し、６ヶ月前にはロワール川沿いの要塞都市オルレアンにまで迫った。この街を失えば、敵の進軍を止めることはできない。以来、夜な夜な砲声が響き、敵の築く砦は日に日に増えていった。街では食料が尽きかけ、希望もほとんど残されていない。<br><br>本来なら、ジャンヌ・ダルクが現れるはずだった。私たちの知る歴史では、聖なる戦士が旗を掲げてオルレアンに入り、食料と安堵、そして希望をもたらした。だがこの世界では、彼女は姿を見せなかった。街は今、崩壊寸前にある。すべては歴史のヒーローたちに託された。住民たちは覚悟を決めているが、敵はすでに目前に迫っている。今まさに最後の戦いが始まろうとしている。オルレアンを救うため、そしてフランスが再び自由を手にするための戦いが。
 s
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Desc<歩兵ユニットは前列で最も効果を発揮する。
-�
- Base.Regions.SiegeOfOrleans_Desc�It is May 1429, the ninety-first year of the Hundred Years’ War. English forces have been pushing into France, and six months ago they reached Orléans, a walled city on the banks of the river Loire. For the English assault to continue, the city must fall. So for the last six months the enemy has been building fortifications while cannons roar by night. For six months food has been scarce. For six months hope has been gone.<br><br>Joan of Arc was supposed to save them. In our world, the warrior-saint, her banner and her head held high, entered Orléans, and with her she brought food and safety and hope. But here, she never arrived. The city is on its last legs, and it falls to the Heroes of History to save the city without her. The people are ready, but the English are coming. One last battle must be fought, one battle to save Orléans, one battle to let France reclaim her freedom.
-B
-)Base.Wonders.Wonder_Capital_Colossus_Nameロドス島の巨像
 ]
 MBase.BuildingCustomizations.BuildingCustomization_EventWinter_Farm_Rural_Name凍った池
+B
+)Base.Wonders.Wonder_Capital_Colossus_Nameロドス島の巨像
 _
 @Base.Buildings.Building_AgeOfTheFranks_CultureSite_Little_1_Name極小規模な文化遺産
 )
@@ -351,16 +351,16 @@ J
 Base.Ages.KingdomOfSicily_Nameシチリア王国時代
 9
 &Base.Regions.region.DesertDelta_1_Name砂の海岸線
-L
-9Base.Buildings.Building_Egypt_PapyrusField_Average_5_Nameパピルス畑
 =
 3Base.Technologies.Technology_MinoanEra_Stables_Name厩舎
+L
+9Base.Buildings.Building_Egypt_PapyrusField_Average_5_Nameパピルス畑
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_4_Desc$蚕の繭から絹糸を生産する
-�
-)Base.Resources.hero.ThomasAlvaEdison_Desc�トーマス・エジソンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 M
 :Base.Technologies.Technology_IberianEra_GlimaFighting_Nameグリマ格闘
+�
+)Base.Resources.hero.ThomasAlvaEdison_Desc�トーマス・エジソンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 4
 !Base.BuildingGroups.RangedBarrack射撃兵兵舎
 6
@@ -369,12 +369,12 @@ v
 WBase.Resources.BuildingPiece_Building_ClassicGreece_Collectable_ArchitectsStudio_1_Name哲学者の館のピース
 B
 ,Base.Units.Unit_MinoanEra_Minoan_Axemen_Nameミノア斧使い
-s
-BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
-F
-3Base.Buildings.Building_BronzeAge_Home_Small_1_Name小さな住宅
 N
 ;Base.Technologies.Technology_RomanEmpire_CenturionsAim_Name百人隊射手
+F
+3Base.Buildings.Building_BronzeAge_Home_Small_1_Name小さな住宅
+s
+BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 \
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Name小規模な文化遺産
 c
@@ -389,12 +389,12 @@ T
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_1_Desc大弓兵を生産する
 E
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_3_Nameオアシス
+>
+(Base.Heroes.hero.GreekMathematician_Nameユークリッド
 \
 :Base.Buildings.Building_FeudalAge_Barracks_Infantry_1_Desc斧兵をアンロックする
 D
 +Base.Resources.event_maliempire_tokens_Nameディナール金貨
->
-(Base.Heroes.hero.GreekMathematician_Nameユークリッド
 p
 /Base.Buildings.Building_Egypt_Home_Small_1_Desc=デベンを生産し、都市に労働者を1人追加する
 K
@@ -453,10 +453,10 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_Nameミノ
 *Base.Resources.hero.AlexanderTheGreat_Desc�アレクサンドロス大王の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 .
 Base.HeroClass.AreaAttacker範囲攻撃者
-B
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Name噴水
 �
 Base.Units.Unit_Hoplit_Desc�ミルティアデス、５世紀のアテナイの軍人。マラトンの戦いでの指導力により名を馳せた英雄。<br><br>優れた戦術家としてアテナイ軍を率い、数で勝るペルシャ軍に決定的な勝利を収めた。この勝利はギリシャ侵攻を防ぎ、戦争の流れを大きく変える転換点となった。<br><br>その後、海上侵攻を指揮するも、命令に従わず復讐を優先する道を選んだ。作戦は失敗に終わり、結果的に不名誉な結末を迎えたが、賢明で狡猾な戦略家として今も記憶されている。
+B
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Name噴水
 I
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_4_Name水ポンプ
 @
@@ -533,10 +533,10 @@ DBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianInfantry_Nameメロヴ
 &Base.Units.Unit_AztecTlacateccatl_Nameクアウテモック
 �
 #Base.Units.Unit_WilliamWallace_Desc�１３世紀のスコットランドから、ウィリアム・ウォレスが新たな独立戦争に挑むために登場。故郷では、その指導力、勇気、反抗の物語がスコットランド人の心に深く刻まれている。<br><br>スターリング・ブリッジの戦いでは、圧倒的に不利な状況にもかかわらず英軍を撃退し、戦局を一変させた。自由への夢はスコットランド全土に広がり、多くの者が独立を求めて立ち上がった。<br><br>時代に戻ると捕らえられ、処刑される運命だが、その精神は決して揺るがない。スコットランド全土で、自由の戦士、愛国者として讃えられ、今もなおその名は語り継がれている。
-�
-:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 w
 "Base.Resources.material_naval_DescQ海洋系の世界遺産のアップグレードに使用する特別な素材。
+�
+:Base.Buildings.Building_RomanEmpire_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 F
 -Base.Resources.hero.QueenSeondeokOfSilla_Name善徳女王の精髄
 L
@@ -573,14 +573,14 @@ Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_6_Desc金鉱石を生産する
 j
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_1_Desc!重装兵をアンロックする
-V
-@Base.Technologies.Technology_RomanEmpire_PastureImprovement_Name牧草地の改良
-t
-0Base.Buildings.Building_Mayas_Home_Worker_6_Desc@カカオ豆を生産し、都市に労働者を2人追加する
 �
 9Base.Buildings.Building_Vikings_SailorPort_Average_2_DescH宝石と香辛料の宝物を集める遠征隊の船を出航させる
+V
+@Base.Technologies.Technology_RomanEmpire_PastureImprovement_Name牧草地の改良
 D
 1Base.Buildings.Building_Mayas_Home_Premium_6_Name豪華な住宅
+t
+0Base.Buildings.Building_Mayas_Home_Worker_6_Desc@カカオ豆を生産し、都市に労働者を2人追加する
 P
 @Base.Technologies.Technology_ClassicGreece_BulwarkFormation_Name防御陣形
 0
@@ -607,8 +607,8 @@ a
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_Desc$補助騎兵をアンロックする
 7
 Base.Resources.hero.Plato_Nameプラトンの精髄
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage and healing himself between <style=basestat>{min_heal}</style> and <style=basestat>{max_heal}</style> of his base damage, based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>集中・溜め攻撃・自己回復</style>嵐の寸前：自身の攻撃と移動をすべて停止し、最大<style=basestat>{charge_duration}</style>の間、力を蓄える。この間にいつでも「天の裁き」を発動できる。<br>天の裁き：体力が最も高い敵ユニットを狙い、集中時間に応じて<style=basestat>{min_dmg}</style>〜<style=basestat>{max_dmg}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{min_heal}</style>〜<style=basestat>{max_heal}</style>分の体力を回復する。発動後、アビリティは「嵐の寸前」に戻る。
 
 Base.Resources.fish_Name魚
 X
@@ -669,18 +669,18 @@ E
 2Base.Abilities.hero_battle_ability.JaneAusten_Name高慢と偏見
 D
 "Base.Resources.hero.TigerLily_Nameタイガーリリーの精髄
-�
-'Base.Resources.hero.AbrahamLincoln_Desc�エイブラハム・リンカーンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_5_DescE陶器と黄金の宝物を集める遠征隊の船を出航させる
+�
+'Base.Resources.hero.AbrahamLincoln_Desc�エイブラハム・リンカーンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 [
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_5_Desc頭飾りを生産する
 [
 9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_1_Desc騎士をアンロックする
-N
-;Base.Buildings.Building_China_Workshop_ClayProcessor_1_Name粘土加工所
 �
 ,Base.Units.Unit_TreasureHunt_Red_Cannon_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
+N
+;Base.Buildings.Building_China_Workshop_ClayProcessor_1_Name粘土加工所
 C
 9Base.Technologies.Technology_AgeOfTheFranks_Halberds_Name鉾兵
 �
@@ -735,8 +735,8 @@ C
  Base.BuildingTypes.cityHall_Name	市庁舎
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_2_Descパピルスを生産する
-�
-%Base.Resources.hero.HarryHoudini_DesccUsed to increase the Awakening Level of Harry Houdini and thus unlock more powerful battle bonuses.
+�
+%Base.Resources.hero.HarryHoudini_Desc�ハリー・フーディーニの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 J
 4Base.Resources.event_space_grand_prize_progress_Name進行ポイント
 Q
@@ -765,10 +765,10 @@ D
 1Base.Buildings.Building_Egypt_Home_Premium_2_Name豪華な住宅
 u
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
-I
-9Base.Buildings.Building_ByzantineEra_Farm_Domestic_3_Name畜産農場
 f
 GBase.Technologies.Technology_KingdomOfSicily_RefinedChainmailCoifs_Name鎖帷子フード改良型
+I
+9Base.Buildings.Building_ByzantineEra_Farm_Domestic_3_Name畜産農場
 Z
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_Desc騎兵をアンロックする
 ^
@@ -777,16 +777,16 @@ H
 8Base.Technologies.Technology_BronzeAge_SacredStones_Name聖なる石
 L
 6Base.Abilities.hero_battle_ability.AshokaTheGreat_Nameダルマの神性
-u
-4Base.Buildings.Building_IberianEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 b
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Desc'隣の建物の灌漑用水を増やす
+u
+4Base.Buildings.Building_IberianEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 B
 2Base.Technologies.Technology_Mayas_MayaGlyphs_Nameマヤ文字
-T
-5Base.Abilities.hero_battle_ability.CyrusTheGreat_Nameアケメネス朝の勅令
 .
 Base.Ages.BronzeAge_Decade紀元前3000年
+T
+5Base.Abilities.hero_battle_ability.CyrusTheGreat_Nameアケメネス朝の勅令
 C
 0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Nameレオニダス
 h
@@ -851,10 +851,10 @@ B
 5Base.Technologies.Technology_RomanEmpire_Swinery_Name	養豚場
 Z
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Name極小規模な文化遺産
-M
-:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_Name豪華な住宅
 7
 *Base.Resources.event_worldfair_tokens_Name	発見書
+M
+:Base.Buildings.Building_HighMiddleAges_Home_Premium_1_Name豪華な住宅
 f
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 =
@@ -863,18 +863,18 @@ x
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 Y
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_Name中規模な文化遺産
-�
-6Base.Buildings.Building_Vikings_Beehive_Average_3_Desc`養蜂場で生産された美味しい蜂蜜は、酒場で蜂蜜酒の醸造に使われる。
 i
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_1_Desc'騎士団騎兵をアンロックする
+�
+6Base.Buildings.Building_Vikings_Beehive_Average_3_Desc`養蜂場で生産された美味しい蜂蜜は、酒場で蜂蜜酒の醸造に使われる。
 J
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_6_Name金細工工房
 Z
 MBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Small_Name	冬の家
-0
-#Base.BuildingTypes.collectable_Name	収集系
 Y
 =Base.Technologies.Technology_IberianEra_VikingHomesteads_Nameヴァイキング農場
+0
+#Base.BuildingTypes.collectable_Name	収集系
 L
 <Base.Technologies.Technology_AgeOfTheFranks_Aristocracy_Name貴族階級
 H
@@ -891,10 +891,10 @@ F
 3Base.Buildings.Building_Vikings_Home_Premium_2_Name豪華な住宅
 D
 1Base.Buildings.Building_Egypt_Home_Premium_5_Name豪華な住宅
-}
-4Base.Units.Unit_ClassicGreece_Player_Cataphract_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 =
 0Base.Units.Unit_ByzantineEra_Player_Jovians_Name	親衛兵
+}
+4Base.Units.Unit_ClassicGreece_Player_Cataphract_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 U
 *Base.Resources.hero.AlexanderTheGreat_Name'アレクサンドロス大王の精髄
 J
@@ -913,10 +913,10 @@ d
 "Base.Resources.alabaster_idol_Name白の偶像
 p
 3Base.Buildings.Building_MinoanEra_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
-l
-8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Desc0隣の建物の灌漑用水を大幅に増やす
 j
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_Nameテスラコイル
+l
+8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Desc0隣の建物の灌漑用水を大幅に増やす
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�<style=ability_label>範囲攻撃</style>現在のターゲットに爆発を起こし、<style=basestat>{range}</style>の範囲内の敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
 �
@@ -931,10 +931,10 @@ I
 (Base.BuildingGroups.premiumGoldMine_Name豪華な金鉱
 3
 &Base.Difficulties.difficulty.Hard_Name	ハード
-I
-6Base.Technologies.Technology_MinoanEra_LinenShirt_Name麻のシャツ
 F
 9Base.Technologies.Technology_HighMiddleAges_Grimoire_Name	魔道書
+I
+6Base.Technologies.Technology_MinoanEra_LinenShirt_Name麻のシャツ
 J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_Name仮面工房
 L
@@ -951,10 +951,10 @@ t
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc6パピルス巻物と儀式用の衣装を生産する
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_1_Name�<style=ability_label>近接攻撃</style>現在のターゲットを4回攻撃し、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。
-@
-*Base.Wonders.Wonder_Vikings_Yggdrasil_Nameユグドラシル
 I
 9Base.Technologies.Technology_ClassicGreece_Carpentry_Name大工技術
+@
+*Base.Wonders.Wonder_Vikings_Yggdrasil_Nameユグドラシル
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Hoplit_1_Name�<style=ability_label>近接攻撃</style>槍で現在のターゲットを突き刺し、<style=basestat>{dmg_percentage}</style>のダメージを与える。
 �
@@ -1025,10 +1025,10 @@ v
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
 6
 &Base.Regions.region.FrozenFjord_3_Name乙女の湖
-H
-2Base.Units.Unit_TreasureHunt_Purple_Marauders_Name黄昏の襲撃隊
 �
 Base.Units.Unit_MarieCurie_Desc�マリー・キュリーは、科学の歴史を永遠に変えた。１９世紀末から２０世紀初頭に活躍したポーランド出身の先駆的な科学者で、自然界に対する理解を根本から変える成果を上げた。ポロニウムとラジウムを発見し、放射能という分野を確立。この言葉を名付けたのもキュリー自身だった。<br><br>物理学と化学でノーベル賞を受賞し、女性として初めてノーベル賞を受けた人物であり、異なる２つの科学分野でノーベル賞を受賞した唯一の人でもある。研究成果は、医療や核物理学の発展に大きな影響を与えた。<br><br>発見による利益をほとんど得ることなく、特許も取得しなかったが、放射能は独自の産業を築き上げた。生涯にわたり科学と祖国に尽力し、その遺産は今もなお、元素名、科学的測定方法、そしてパリの街角に刻まれている。まさに、心と知恵を「輝かせた」と言えるだろう。
+H
+2Base.Units.Unit_TreasureHunt_Purple_Marauders_Name黄昏の襲撃隊
 P
 =Base.Technologies.Technology_ByzantineEra_ImprovedLorica_Name改良型胸甲
 _
@@ -1039,18 +1039,18 @@ C
 0Base.Buildings.Building_Mayas_Home_Worker_6_Name労働者の家
 x
 #Base.Resources.material_palace_DescQ宮殿系の世界遺産のアップグレードに使用する特別な素材。
-A
-Base.Resources.hero.Hoplit_Nameミルティアデスの精髄
 I
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Name小さな住宅
+A
+Base.Resources.hero.Hoplit_Nameミルティアデスの精髄
 <
  Base.Units.Unit_WilliamTell_Nameウィリアム・テル
 =
 3Base.Technologies.Technology_IberianEra_Patios_Name中庭
-4
-!Base.Resources.gold_treasure_Name黄金の宝物
 x
 1Base.Buildings.Building_Arabia_Home_Medium_2_DescCディルハムを生産し、都市に労働者2人を追加する
+4
+!Base.Resources.gold_treasure_Name黄金の宝物
 �
 5Base.Buildings.Building_Arabia_Workshop_Coffee_1_Desc`コーヒー醸造所では、コーヒー豆と黄銅を使ってコーヒーが造られる。
 w
@@ -1087,12 +1087,12 @@ c
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_9_Nameミノアの見張り塔
 R
 ?Base.Technologies.Technology_Vikings_LongDistanceSeafaring_Name長距離航海
-]
-ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_Name灌漑ステーション
 <
 #Base.Regions.region.Panganea_5_Nameシュメール草原
 �
 &Base.Resources.hero.JaguarWarrior_Desc{オセロトルの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+]
+ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_2_Name灌漑ステーション
 :
 !Base.Resources.prism_of_fate_Name運命のプリズム
 �
@@ -1107,16 +1107,16 @@ G
 EBase.AbilityDescriptions.hero_battle_ability_description.Ninja_1_Name�<style=ability_label>遠隔攻撃</style>体力が最も低い敵にクナイを投げ、<style=basestat>{dmg_percentage}</style>のダメージを与える。ヒーローを優先する。
 %
 Base.Resources.silk_Name	絹織物
-G
-4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_Name黄昏の銛隊
-X
-Base.Resources.ink_Desc=インクはレベル2以上の書記屋で生産できる。
 t
 0Base.Buildings.Building_Mayas_Home_Worker_1_Desc@カカオ豆を生産し、都市に労働者を2人追加する
+X
+Base.Resources.ink_Desc=インクはレベル2以上の書記屋で生産できる。
+G
+4Base.Units.Unit_TreasureHunt_Purple_Harpoonists_Name黄昏の銛隊
 �
 (Base.Resources.astrolabe_majesticum_Descaヒーロー昇進に使用する<style=legendary>レジェンダリー</style>な昇進素材。
 �
-JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>挑発・自己回復・シールド</style>イサベラが戦場を掌握し、<style=basestat>{taunt_shield_duration}</style>の間、敵ユニット全体を挑発し、自身の基礎ダメージの<style=basestat>{self_heal}</style>分回復する。挑発した敵1体につき、基礎ダメージの<style=basestat>{shield_per_unit}</style>に相当するシールドを獲得し、それはウェーブ終了まで持続する。
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>挑発・シールド・自己回復</style>イサベラが戦場を掌握し、<style=basestat>{taunt_shield_duration}</style>の間、敵ユニット全体を挑発し、自身の基礎ダメージの<style=basestat>{self_heal}</style>分回復する。挑発した敵1体につき、基礎ダメージの<style=basestat>{shield_per_unit}</style>に相当するシールドを獲得し、それはウェーブ終了まで持続する。
 �
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 D
@@ -1131,10 +1131,10 @@ $Base.Wonders.Wonder_Mayas_Tikal_Nameティカル
 Base.BuildingTypes.Residence住宅
 D
 1Base.Buildings.Building_China_Home_Premium_1_Name豪華な住宅
-M
-:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_Name騎士団騎兵
 0
 #Base.BuildingGroups.chronicler_Name	暦職人
+M
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_Name騎士団騎兵
 K
 5Base.Technologies.Technology_Vikings_HealingMead_Name回復の蜂蜜酒
 A
@@ -1249,10 +1249,10 @@ E
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Name深紅の襲撃隊
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
-J
-7Base.Buildings.Building_BronzeAge_Barracks_Siege_3_Name攻城兵兵舎
 `
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_Desc$複合弓兵をアンロックする
+J
+7Base.Buildings.Building_BronzeAge_Barracks_Siege_3_Name攻城兵兵舎
 �
 SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
 .
@@ -1261,10 +1261,10 @@ e
 UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Little_Name雪だるま
 A
 "Base.Heroes.hero.LouisPasteur_Nameルイ・パストゥール
-N
->Base.Technologies.Technology_AgeOfTheFranks_ImprovedReins_Name強化手綱
 _
 @Base.Buildings.Building_IberianEra_Workshop_SpiceMerchant_1_Descサフランを生産する
+N
+>Base.Technologies.Technology_AgeOfTheFranks_ImprovedReins_Name強化手綱
 N
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_6_Name粘土加工所
 @
@@ -1321,10 +1321,10 @@ i
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Nameスパイス工房
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
-~
-1Base.Buildings.Building_Egypt_Home_Premium_2_DescI山ほどのデベンを生産し、都市に労働者を2人追加する
 �
 2Base.Buildings.Building_Egypt_City_CityHall_1_Descr都市の中心部にある大ホール。ここでは、少量ながらデベンを継続的に収集できる。
+~
+1Base.Buildings.Building_Egypt_Home_Premium_2_DescI山ほどのデベンを生産し、都市に労働者を2人追加する
 E
 2Base.Buildings.Building_StoneAge_Home_Small_3_Name小さな住宅
 E
@@ -1339,10 +1339,10 @@ $Base.Resources.barrel_TechnologyName樽
 6Base.Buildings.Building_Arabia_Merchant_Average_1_Name商店
 #
 Base.Resources.herbs_Name薬草
-U
-<Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_Desc石碑を生産する
 c
 DBase.Technologies.Technology_AgeOfTheFranks_CarolingianCatapult_Nameカロリングの投石機
+U
+<Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_Desc石碑を生産する
 E
 5Base.Buildings.Building_StoneAge_Farm_Domestic_2_Name畜産農場
 P
@@ -1431,10 +1431,10 @@ T
 ;Base.Buildings.Building_FeudalAge_Workshop_Carpenter_1_Desc板材を生産する
 <
 &Base.BuildingGroups.spiceMerchant_Nameスパイス工房
-C
-3Base.Units.Unit_ByzantineEra_Player_Trapezites_Name襲撃騎兵
 X
 EBase.Technologies.Technology_RomanEmpire_ShieldwallFortification_Name盾防御強化
+C
+3Base.Units.Unit_ByzantineEra_Player_Trapezites_Name襲撃騎兵
 C
 3Base.Buildings.Building_BronzeAge_Farm_Rural_3_Name小作農場
 K
@@ -1453,10 +1453,10 @@ f
 "Base.Resources.alabaster_idol_Desc@白の偶像はレベル1以上の石工房で生産できる。
 L
 -Base.Units.Unit_IberianEra_Vikings_Heavy_Nameヴァイキング狂戦士
-*
-Base.Units.Unit_Plato_Nameプラトン
 X
 <Base.Buildings.Building_RomanEmpire_CultureSite_Large_1_Name大規模な文化遺産
+*
+Base.Units.Unit_Plato_Nameプラトン
 C
 9Base.Technologies.Technology_ClassicGreece_Education_Name教育
 D
@@ -1481,14 +1481,14 @@ D
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_Name	尖屋根
 J
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Name溶岩の神殿
-n
-7Base.TreasureHuntDifficultiesPanel.DifficultyUnlockInfo3前の難易度をクリアするか{0}に到達！
 2
 Base.Units.Unit_Pythagoras_Nameピタゴラス
-K
-/Base.Units.Unit_IberianEra_Vikings_Cavalry_Nameヴァイキング騎兵
+n
+7Base.TreasureHuntDifficultiesPanel.DifficultyUnlockInfo3前の難易度をクリアするか{0}に到達！
 (
 Base.BuildingTypes.Marketplace市場
+K
+/Base.Units.Unit_IberianEra_Vikings_Cavalry_Nameヴァイキング騎兵
 V
 CBase.Technologies.Technology_HighMiddleAges_CharterOfLiberties_Name自由の憲章
 @
@@ -1525,30 +1525,30 @@ v
 Base.Units.Unit_MarcoPolo_Desc�風を受けて帆が膨らむ。マルコ・ポーロの旅が、今、目の前に広がる！アジアを広範囲に渡って旅した１３世紀のヴェネツィアの探検家であり、その旅行記によって歴史に名を刻んだ。<br><br>１７歳の時、父と叔父と共にシルクロードを旅し、最終的に中国のクビライ・カーンの宮廷に到達。ヴェネツィアに戻るまでの数十年間、東洋の宮廷で暮らし、各地を巡ったとされる。マルコ・ポーロの鮮やかな記述はヨーロッパ人の想像力を刺激し、東洋への知識と興味を深めるきっかけとなった。<br><br>残された記録の信憑性には議論があるものの、その旅がヨーロッパにおける東方への探求心を生み出したことは間違いない。後の探検家たちに影響を与え、カタルーニャ地図などの偉大な地図の制作にもつながった。その名は今なお語り継がれ、学術的な議論から子供たちの遊びに至るまで、多くの場面に残され
 Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_6_Nameカオリン採石場
-5
-Base.Heroes.hero.Hoplit_Nameミルティアデス
 �
 #Base.Resources.hero.Hatshepsut_Desc�ハトシェプストの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-�
-!Base.Units.Unit_HarryHoudini_Desc�Slip the locks and dazzle the crowd with Harry Houdini, the ultimate escape artist! Born Erik Weisz in 19th-century Hungary and raised in America, Houdini transformed himself from a struggling sideshow performer into a global sensation, stunning audiences by slipping out of handcuffs, jail cells, straitjackets, and even sealed tanks of water with seemingly supernatural skill.<br><br>Houdini’s feats were the talk of vaudeville and the toast of royalty, and his boundless showmanship made him a legend in the world of magic. But he wasn’t just about spectacle - he dedicated himself to debunking fraudulent mediums, exposing those who preyed on grief with false spiritualism. His legacy as a master of illusion and advocate for honesty survives to this day, though no one has yet found the secret for escaping his level of flair, or his now legendary locked trunks!
-L
-9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_Name攻城兵兵舎
+5
+Base.Heroes.hero.Hoplit_Nameミルティアデス
+�
+!Base.Units.Unit_HarryHoudini_Desc�脱出王ハリー・フーディーニとともに、錠をすり抜け、観客の心を奪おう！１９世紀のハンガリーにヴァイス・エリクとして生まれ、アメリカで育ったフーディーニは、下積みの見世物芸人から世界を驚かすスーパースターへと成長した。手錠や独房、拘束衣、密閉された水槽からも難なく脱出し、まるで超常的な力を操るかのように人々を魅了した。<br><br>その驚異的な芸の数々は舞台界で大きな話題を呼び、王侯貴族すら唸らせた。圧巻の演出と存在感で観客を引き込み、奇術の世界に名を刻むこととなった。さらに、偽の霊能力を名乗り悲しみに付け込む詐欺師を暴き、真実を守ることにも力を注いだ。幻術の名手として、そして誠実さの象徴として残した足跡は、今も色あせていない。フーディーニが築き上げた華やかさや謎に満ちた鍵付きトランクの脱出芸は、いまだ誰ひとり再現できていない。
 H
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Name畜産農場
+L
+9Base.Buildings.Building_RomanEmpire_Barracks_Siege_3_Name攻城兵兵舎
 E
 2Base.Buildings.Building_Vikings_Home_Worker_5_Name労働者の家
 .
 Base.Heroes.hero.Lagertha_Nameラゲルタ
-H
-8Base.Technologies.Technology_BronzeAge_SocialChange_Name社会変革
-\
-:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_Desc儀式用の短剣生産する
 W
 5Base.Buildings.Building_China_RiceFarm_Premium_3_Desc山ほどの米を生産する
-�
-8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
+\
+:Base.Buildings.Building_Mayas_Workshop_RitualCarver_6_Desc儀式用の短剣生産する
+H
+8Base.Technologies.Technology_BronzeAge_SocialChange_Name社会変革
 C
 3Base.Technologies.Technology_EarlyRome_Velites_Name投槍散兵
+�
+8Base.Buildings.Building_EarlyRome_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 [
 NBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_JollyRoger_Name	海賊旗
 G
@@ -1567,12 +1567,12 @@ F
 6Base.Technologies.Technology_BronzeAge_SilentDraw_Name静音引き
 ;
 Base.Units.Unit_MarieCurie_Nameマリー・キュリー
-�
-7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
-@
-0Base.Abilities.hero_battle_ability.HuaMulan_Name龍の復讐
 �
 ;Base.Buildings.Building_ByzantineEra_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
+@
+0Base.Abilities.hero_battle_ability.HuaMulan_Name龍の復讐
+�
+7Base.Buildings.Building_RomanEmpire_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 M
 =Base.Buildings.Building_ByzantineEra_Barracks_Infantry_1_Name歩兵兵舎
 �
@@ -1659,10 +1659,10 @@ J
 :Base.Buildings.Building_EarlyRome_Barracks_Infantry_3_Name歩兵兵舎
 �
 #Base.Resources.hero.MontezumaI_Desc�モクテスマ１世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-A
-4Base.Technologies.Technology_IberianEra_Tattoos_Name	入れ墨
 Y
 =Base.Buildings.Building_EarlyRome_CultureSite_Moderate_1_Name中規模な文化遺産
+A
+4Base.Technologies.Technology_IberianEra_Tattoos_Name	入れ墨
 J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_1_Name仮面工房
 ~
@@ -1671,14 +1671,14 @@ J
 3Base.Technologies.Technology_China_PaddyFields_Name水田
 �
 &Base.Resources.hero.QueenBoudicca_Desc�ブーディカ女王の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-'
-Base.Units.Unit_Menes_Name	メネス
 H
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_1_Name小作農場
 �
 )Base.Resources.purple_crest_enhanced_DescT紫色のヒーローを昇進させるには、紫色のクレストが必要だ。
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_1_Desc$蚕の繭から絹糸を生産する
+'
+Base.Units.Unit_Menes_Name	メネス
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.AquilaStandard_1_Name�<style=ability_label>強化</style>所持ヒーローがクリティカルヒットに成功すると、<style=basestat>{duration}</style>の間、クリティカル率が<style=basestat>{crit_buff}</style>上昇する。効果は重複しない。
 F
@@ -1695,10 +1695,10 @@ N
 (Base.Resources.green_crest_enhanced_DescT緑色のヒーローを昇進させるには、緑色のクレストが必要だ。
 Z
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_Desc!山ほどの食料を生産する
+T
+5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Nameムイスカの筏の刻印
 B
 8Base.Technologies.Technology_HighMiddleAges_Billmen_Name戟兵
-K
-5Base.Resources.UpgradeToken_GoldenRaftOfElDorado_Nameムイスカの筏
 [
 BBase.Buildings.Building_ByzantineEra_Workshop_SpiceMerchant_1_Desc胡椒を生産する
 t
@@ -1711,20 +1711,20 @@ b
 5Base.Technologies.Technology_AgeOfTheFranks_Salt_Name塩
 �
 Base.Units.Unit_Jester_Desc�王たちを楽しませ、死をも恐れず挑んだ歴史上最も有名な道化師、トリブレ！１５世紀から１６世紀にかけて宮廷で活躍し、機知に富んだ言動と下品なユーモアで王族を楽しませながら、宮廷内の複雑な人間関係を巧みに渡り歩いた。<br><br>トリブレにまつわる逸話の中でも、その機転が光るエピソードがある。フランソワ１世の妻を侮辱したため死刑を宣告され、処刑方法を選ぶように言われると、即座に「老衰で死にます」と答えたという。<br><br>そして実際、何年も後に老衰で亡くなった。トリブレは、賢さと愚かさ、そしてユーモアを兼ね備えた道化師の典型として今も語り継がれている。トリブレさえいれば、敵も笑い転げて戦意を失ってしまうかもしれない！
-;
-+Base.Units.Unit_EarlyRome_Player_Siege_Name槍投石機
 (
 Base.Resources.pennies_Name	ペニー
+;
++Base.Units.Unit_EarlyRome_Player_Siege_Name槍投石機
 K
 5Base.Resources.event_leaderboard_winter_trophies_Name挑戦ポイント
 �
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 g
 6Base.Buildings.Building_Arabia_Merchant_Average_1_Desc-たくさんのディルハムを生産する
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.ThomasJefferson_1_Name�<style=ability_label>魂リンク・弱体化</style>ジェファーソンは、体力が最も高い敵ヒーローと<style=basestat>{duration}</style>の間、魂のリンクを結ぶ。リンク中、受けたダメージの<style=basestat>{damage_transfer}</style>分がその敵ヒーローに転送される。
 G
 Base.Units.Unit_LadySixSky_Name$レディ・シックス・スカイ
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.ThomasJefferson_1_Name�<style=ability_label>魂リンク・弱体化</style>ジェファーソンは、体力が最も高い敵ヒーローと<style=basestat>{duration}</style>の間、魂のリンクを結ぶ。リンク中、受けたダメージの<style=basestat>{damage_transfer}</style>分がその敵ヒーローに転送される。
 Q
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_1_Name灌漑施設
 Q
@@ -1767,10 +1767,10 @@ J
 7Base.Technologies.Technology_ByzantineEra_Catapult_Nameカタパルト
 .
 Base.Ages.AgeOfTheFranks_Start西暦550年
-D
-:Base.Units.Unit_RomanEmpire_Carthaginians_WarElephant_Name戦象
 R
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_Nameヒーロー学堂
+D
+:Base.Units.Unit_RomanEmpire_Carthaginians_WarElephant_Name戦象
 f
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_6_Desc'カオリンから粘土を生産する
 Z
@@ -1781,10 +1781,10 @@ O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_3_Name磁器工房
 H
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_1_Name小作農場
-^
-9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc!黄金の月桂樹を生産する
 H
 5Base.Abilities.hero_battle_ability.OracleOfDephi_Name神託の予兆
+^
+9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Desc!黄金の月桂樹を生産する
 v
 -Base.Units.Unit_IberianEra_Player_Jinete_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 M
@@ -1809,8 +1809,8 @@ B
 LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の攻撃力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 a
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Desc唐辛子を生産する
-5
- Base.Regions.SiegeOfOrleans_NameSiege of Orléans
+<
+ Base.Regions.SiegeOfOrleans_Nameオルレアン包囲戦
 B
 2Base.Buildings.Building_Egypt_City_CityHall_1_Name大ホール
 s
@@ -1935,10 +1935,10 @@ U
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_6_Name豪華なパピルス畑
 N
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_2_Name射撃兵兵舎
-V
-FBase.Technologies.Technology_KingdomOfSicily_ReinforcedKiteShield_Nameカイト盾
 h
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc-隣の建物の幸福度を大幅に上げる
+V
+FBase.Technologies.Technology_KingdomOfSicily_ReinforcedKiteShield_Nameカイト盾
 D
 4Base.Buildings.Building_DawnAge_City_CityHall_1_Name大ホール
 J
@@ -1959,10 +1959,10 @@ E
 5Base.Abilities.hero_battle_ability.AmeliaEarhart_Name緊急避難
 G
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_Name棍棒使い
-A
-1Base.Abilities.hero_battle_ability.Sacagawea_Name導きの光
 E
 8Base.Technologies.Technology_ByzantineEra_Carpenter_Name	木工房
+A
+1Base.Abilities.hero_battle_ability.Sacagawea_Name導きの光
 _
 7Base.Buildings.Building_Mayas_RitualSite_Average_5_Desc$隣の建物の幸福度を上げる
 X
@@ -1995,10 +1995,10 @@ S
 #Base.Regions.region.Panganea_4_Name凍てついた台地
 ?
 5Base.Technologies.Technology_MinoanEra_Millstone_Name石臼
-F
-$Base.Resources.green_crest_epic_Name緑色の真夜中クレスト
 4
 Base.Heroes.hero.RamsesII_Nameラムセス２世
+F
+$Base.Resources.green_crest_epic_Name緑色の真夜中クレスト
 �
 *Base.Resources.etruscan_bronze_mirror_Descl特定の古代ローマ時代の技術を研究するために使われる、芸術的に作られた鏡。
 I
@@ -2083,10 +2083,10 @@ b
 7Base.Buildings.Building_Egypt_Irrigation_Channel_4_Desc'隣の建物の灌漑用水を増やす
 G
 4Base.Technologies.Technology_Mayas_SolarRituals_Name太陽の儀式
-�
-1Base.Units.Unit_RomanEmpire_Player_Legionary_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 J
 4Base.Resources.event_leaderboard_space_trophies_Name挑戦ポイント
+�
+1Base.Units.Unit_RomanEmpire_Player_Legionary_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 h
 7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc-隣の建物の幸福度を大幅に上げる
 9
@@ -2141,10 +2141,10 @@ R
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_2_Name重歩兵兵舎
 �
 )Base.Resources.purple_crest_superior_DescT紫色のヒーローを昇進させるには、紫色のクレストが必要だ。
-9
-&Base.BuildingGroups.siegeBarracks_Name攻城兵兵舎
 f
 Base.Resources.linen_shirt_DescC麻のシャツはレベル2以上の仕立屋で生産できる。
+9
+&Base.BuildingGroups.siegeBarracks_Name攻城兵兵舎
 D
 (Base.BuildingGroups.moderateCulture_Name中規模な文化遺産
 H
@@ -2169,10 +2169,10 @@ a
 QBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_TreasureTrove_Name埋蔵財宝
 \
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_Desc儀式用の短剣生産する
-y
-<Base.Buildings.Building_FeudalAge_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
 {
 5Base.Buildings.Building_Mayas_Workshop_Premium_3_DescB先祖の仮面、太陽の石、儀式用の短剣を生産する
+y
+<Base.Buildings.Building_FeudalAge_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
 E
 2Base.Buildings.Building_Vikings_Home_Worker_1_Name労働者の家
 `
@@ -2203,10 +2203,10 @@ C
 6Base.Buildings.Building_Vikings_Beehive_Average_4_Name	養蜂場
 E
 5Base.Units.Unit_MinoanEra_EgyptianAcolytes_Menes_Nameメネス王
-r
-2Base.Units.Unit_StoneAge_Player_Spearfighters_Desc<歩兵ユニットは前列で最も効果を発揮する。
 J
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Name攻城兵兵舎
+r
+2Base.Units.Unit_StoneAge_Player_Spearfighters_Desc<歩兵ユニットは前列で最も効果を発揮する。
 H
 5Base.Buildings.Building_Egypt_GoldMine_Premium_4_Name豪華な金鉱
 ]
@@ -2241,18 +2241,18 @@ $Base.Resources.hero.QinShiHuang_Name始皇帝の精髄
 LBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_CrowsInn_Nameカラス亭
 L
 6Base.Abilities.hero_battle_ability.JapaneseShogun_Name池田屋の闇刃
-?
-/Base.TreasureHuntDifficulties.Difficulty_0_Name見習い１
 A
 "Base.Resources.hero.Sacagawea_Nameサカガウィアの精髄
+?
+/Base.TreasureHuntDifficulties.Difficulty_0_Name見習い１
 �
 #Base.Resources.hero.Blackbeard_Descu黒ひげの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 P
 Base.Resources.tome_Desc4書物はレベル5の書記屋で生産できる。
-~
-&Base.Resources.red_crest_superior_DescT赤色のヒーローを昇進させるには、赤色のクレストが必要だ。
 e
 :Base.Buildings.Building_RomanEmpire_Barracks_Ranged_1_Desc'ローマ弓兵をアンロックする
+~
+&Base.Resources.red_crest_superior_DescT赤色のヒーローを昇進させるには、赤色のクレストが必要だ。
 d
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Desc!粘土から磁器を生産する
 x
@@ -2285,20 +2285,20 @@ M
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_DescH宝石と香辛料の宝物を集める遠征隊の船を出航させる
 K
 5Base.Buildings.Building_China_RiceFarm_Average_1_Desc米を生産する
-�
-$Base.Units.Unit_MayanAstronomer_Desc�力の象徴として、イツァムナー・バハラム３世、盾のジャガーと共に記念碑を築こう！７世紀にヤシュチランの王位に就き、軍事力と政治的策略で統治を行ったマヤの王。<br><br>治世中、王国全体に石碑や寺院を築き、勝ち取った栄光と権威を示した。これらの精緻な彫刻には、王とその民が経験した重要な出来事や儀式、神話が刻まれ、失われた文明の一端を今に伝えている。<br><br>こうした芸術的な記録は、イツァムナーの遺産として石に刻まれ、ヤシュチランがマヤ文明の中でどれほど発展していたかを物語っている。歴史上、最も優れた高齢の将軍の一人とも言えるかもしれない。８０代になってもなお戦い続けたというのだから。
 |
 Base.Resources.greek_lyre_DescZ特定の古代ギリシャ時代の技術を研究するために使われる弦楽器。
+�
+$Base.Units.Unit_MayanAstronomer_Desc�力の象徴として、イツァムナー・バハラム３世、盾のジャガーと共に記念碑を築こう！７世紀にヤシュチランの王位に就き、軍事力と政治的策略で統治を行ったマヤの王。<br><br>治世中、王国全体に石碑や寺院を築き、勝ち取った栄光と権威を示した。これらの精緻な彫刻には、王とその民が経験した重要な出来事や儀式、神話が刻まれ、失われた文明の一端を今に伝えている。<br><br>こうした芸術的な記録は、イツァムナーの遺産として石に刻まれ、ヤシュチランがマヤ文明の中でどれほど発展していたかを物語っている。歴史上、最も優れた高齢の将軍の一人とも言えるかもしれない。８０代になってもなお戦い続けたというのだから。
 �
 %Base.Resources.hero.VikingRaider_Desc~フレイディスの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_4_Name円形劇場
 !
 Base.BuildingTypes.Good工房
-�
-$Base.Resources.hero.LeifErikson_Desc�レイフ・エリクソンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 N
 2Base.Abilities.hero_battle_ability.Pythagoras_Nameピタゴラスの定理
+�
+$Base.Resources.hero.LeifErikson_Desc�レイフ・エリクソンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 C
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Name小作農場
 b
@@ -2391,10 +2391,10 @@ L
  Base.Units.Unit_SiouxShaman_Desc�自らの権利と未来を守るために立ち上がったハンクパパ族の戦士、シッティング・ブル。１９世紀、アメリカ政府の圧力に抗い、知恵と統率力をもって部族をまとめ上げた。<br><br>リトルビッグホーンの戦いでは、スー族とシャイアン族の戦士たちとともに、カスター将軍の部隊に歴史的な勝利を収めた。その名は、ネイティブ・アメリカンの抵抗と誇りの象徴として刻まれることとなった。<br><br>苦境の中でも文化と誇りを守り続け、その遺志は今も受け継がれている。差別や圧力に晒されながらも、必要とあれば言葉と武器の両方で戦い続けた。
 B
 /Base.Buildings.Building_Egypt_Home_Small_3_Name小さな住宅
-K
-5Base.Buildings.Building_China_RiceFarm_Average_5_Desc米を生産する
 X
 <Base.Buildings.Building_ClassicGreece_Workshop_Tailor_1_Descトーガを生産する
+K
+5Base.Buildings.Building_China_RiceFarm_Average_5_Desc米を生産する
 F
 $Base.Resources.red_crest_common_Name赤色のコモンクレスト
 D
@@ -2441,10 +2441,10 @@ K
 /Base.Wonders.Wonder_Capital_SherwoodForest_Nameシャーウッドの森
 I
 9Base.Technologies.Technology_EarlyRome_RearLivestock_Name家畜飼育
-N
-;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Name豪華な住宅
 j
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
+N
+;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Name豪華な住宅
 =
 3Base.Abilities.hero_battle_ability.QinShiHuang_Name霊剣
 L
@@ -2459,10 +2459,10 @@ Q
 >Base.Technologies.Technology_IberianEra_BeekeepingMastery_Name養蜂の熟練
 M
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_Name投石使い
-I
-3Base.Buildings.Building_Mayas_Quarry_Premium_2_Name豪華な採掘場
 |
 3Base.Units.Unit_EarlyRome_Player_AuxiliaRiders_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
+I
+3Base.Buildings.Building_Mayas_Quarry_Premium_2_Name豪華な採掘場
 -
 #Base.Resources.herbs_TechnologyName薬草
 E
@@ -2493,10 +2493,10 @@ M
 =Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_3_Name騎兵兵舎
 *
  Base.BuildingGroups.channel_Name水路
-@
-6Base.Buildings.Building_Vikings_Workshop_Tavern_3_Name酒場
 G
 7Base.Technologies.Technology_MinoanEra_IronPendant_Name鉄の飾り
+@
+6Base.Buildings.Building_Vikings_Workshop_Tavern_3_Name酒場
 ?
 2Base.Abilities.hero_battle_ability.TomoeGozen_Name	桜斬り
 9
@@ -2511,18 +2511,18 @@ S
 Base.Units.Unit_DArtagnan_Desc�ルイ１４世の銃士隊長として知られる１７世紀のフランス銃士、シャルル・ド・バッツ＝カステルモール、通称ダルタニャン。アレクサンドル・デュマの『三銃士』で広まった伝説を持つこの人物は、地方の小貴族の出身であり、スパイ、銃士、そして知事としても活躍した。<br><br>特にルイ１４世の下で銃士隊長として仕え、巨万の富を誇るニコラ・フーケの逮捕で名を馳せた。フーケの警護を担当しながらも、賄賂を受け取ることなく任務を遂行し、その忠誠心を示した。<br><br>ダルタニャンの生涯は『ダルタニャン回想録』で誇張され、その後『三銃士』でさらに劇的に描かれた。物語の中では騎士道精神あふれる冒険者として広く知られているが、実際の人生はもう少し静かなものだったのかもしれない。レオニダスと「名前が一番長い競争」を繰り返していたが、毎回ダルタニャンが勝つ理由をレオニダスは最後まで理解できなかったようだ。
 L
 9Base.Units.Unit_RomanEmpire_Carthaginians_SacredBand_Name聖なる軍団
-a
-3Base.Abilities.hero_battle_ability.OdaNobunaga_Name*Calm Before The Storm & Heavenly Execution
+R
+3Base.Abilities.hero_battle_ability.OdaNobunaga_Name嵐の寸前／天の裁き
 I
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_Name大ホール
 �
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 7
 !Base.Units.Unit_VikingRaider_Nameフレイディス
-9
-Base.Ages.AgeOfTheFranks_Nameフランク王国時代
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>回復・シールド</style>聖杯は維持ヒーローの回復効果を<style=basestat>{healing_amp}</style>増加させる。回復量が対象の最大体力を超えた場合、その超過分の<style=basestat>{heal_to_shield_conversion}</style>がシールドとして付与される。
+9
+Base.Ages.AgeOfTheFranks_Nameフランク王国時代
 I
 9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_1_Name小作農場
 )
@@ -2555,10 +2555,10 @@ D
 "Base.Units.Unit_BessieColeman_Nameベッシー・コールマン
 K
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name仮設小屋
-/
-"Base.Resources.crested_guidon_Name	紋章旗
 d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc'山ほどのパピルスを生産する
+/
+"Base.Resources.crested_guidon_Name	紋章旗
 d
 3Base.Buildings.Building_Mayas_Quarry_Premium_5_Desc-ヒスイと黒曜石を同時に生産する
 F
@@ -2569,10 +2569,10 @@ A
 "Base.Units.Unit_OracleOfDephi_Nameデルフォイの神託者
 z
 "Base.Resources.red_crest_epic_DescT赤色のヒーローを昇進させるには、赤色のクレストが必要だ。
-<
-/Base.TreasureHuntDifficulties.Difficulty_7_Name	達人２
 N
 2Base.Abilities.hero_battle_ability.Blackbeard_Name樽投げ・火の試練
+<
+/Base.TreasureHuntDifficulties.Difficulty_7_Name	達人２
 M
 :Base.Abilities.hero_battle_ability.MargaretIOfDenmark_Name北欧の新星
 �
@@ -2581,8 +2581,8 @@ M
 Base.Resources.cape_Name	マント
 4
 'Base.BuildingTypes.extractionPoint_Name	採取場
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Focus| Charged Strike</style>Calm before the Storm: Nobunaga halts all attacks and movement as he focuses his power for up to <style=basestat>{charge_duration}</style>. During this time, he can choose to activate Heavenly Execution.<br>Heavenly Execution: Nobunaga targets the enemy with the highest HP, dealing between <style=basestat>{min_dmg}</style> and <style=basestat>{max_dmg}</style> damage based on how long the ability was charged for. The ability then reverts to Calm Before The Storm.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>集中・溜め攻撃</style>嵐の寸前：自身の攻撃と移動をすべて停止し、最大<style=basestat>{charge_duration}</style>の間、力を蓄える。この間にいつでも「天の裁き」を発動できる。<br>天の裁き：体力が最も高い敵ユニットを狙い、集中時間に応じて<style=basestat>{min_dmg}</style>〜<style=basestat>{max_dmg}</style>のダメージを与える。発動後、アビリティは「嵐の寸前」に戻る。
 >
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name	軍団兵
 D
@@ -2595,10 +2595,10 @@ K
 JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>弱体化・燃焼</style>樽投げ：黒ひげは敵ユニットの最大集団にラム酒の樽を投げる。<style=basestat>{debuff_duration}</style>の間、範囲内の敵の攻撃速度を<style=basestat>{attackspeed_debuff}</style>、移動速度を<style=basestat>{movespeed_debuff}</style>低下させる。影響を受けた敵は<style=basestat>{doused_duration}</style>の間、燃えやすい状態になる。12秒経過すると、アビリティは火の試練に変化する。<br>火の試練：黒ひげは現在のターゲットに銃撃を加え、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_damage}</style>の燃焼ダメージを与える。このアビリティは8秒後に再び樽投げに変化する。<br>燃えやすい状態の敵に燃焼ダメージが与えられると、爆発して周囲の敵に燃焼効果が拡散され、対象の燃えやすい状態が解除される。
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>遠隔攻撃・毒</style>最も遠い敵に矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、<style=basestat>{poison_duration}</style>の間<style=basestat>{poison_percentage}</style>の毒ダメージを与える。ヒーローを優先する。
-H
-;Base.Technologies.Technology_BronzeAge_CavalrySpearmen_Name	槍騎兵
 B
 &Base.Resources.hero.JaguarWarrior_Nameオセロトルの精髄
+H
+;Base.Technologies.Technology_BronzeAge_CavalrySpearmen_Name	槍騎兵
 :
 $Base.BuildingGroups.heroAcademy_Nameヒーロー学堂
 _
@@ -2617,12 +2617,12 @@ H
 $Base.Resources.roman_cameo_ring_Nameカメオリング
 G
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Name畜産農場
-G
-4Base.Technologies.Technology_RomanEmpire_Forums_Nameフォーラム
-�
-%Base.Units.Unit_GeorgeWashington_Desc�アメリカ合衆国の父、ジョージ・ワシントン！１８世紀の建国の父であり、アメリカ合衆国初代大統領として、この国の基盤を築いた人物だ。<br><br>アメリカ独立戦争では大陸軍を指揮し、その後、初代大統領として国の誕生を導いた。ワシントンの指導のもと、アメリカは独立を達成し、党派政治や外部勢力から距離を置き、独自の道を歩み始めた。<br><br>軍事指導者、政治家としての功績は今も多くの人々に影響を与え、奉仕と信念、新しい国を築いたその生き様は、アメリカ合衆国の未来を形作った。ちなみに、アイスクリームも大好きだったと言われている！
+D
+4Base.Technologies.Technology_RomanEmpire_Forums_Nameフォルム
 �
  Base.Units.Unit_Charlemagne_Desc�カール大帝、またはシャルルマーニュは、８世紀から９世紀にかけてフランク王国を支配し、カロリング帝国の皇帝として歴史に名を刻んだ。卓越した指導力と野心により、西欧と中央ヨーロッパに広がる広大な帝国を築き、宗教の発展を推進し、現代ヨーロッパ国家の基盤を形作った。<br><br>また、文化や教育にも深い関心を持ち、カロリング朝ルネサンスを引き起こした。芸術や学問、宗教改革を活性化させ、その影響は今も続いている。<br><br>統一と先見の明を持つ指導者としての遺産は、ヨーロッパのアイデンティティと歴史的発展に今なお大きな足跡を残している。9世紀のヨーロッパを形作った存在として、その名は語り継がれ続けている。
+�
+%Base.Units.Unit_GeorgeWashington_Desc�アメリカ合衆国の父、ジョージ・ワシントン！１８世紀の建国の父であり、アメリカ合衆国初代大統領として、この国の基盤を築いた人物だ。<br><br>アメリカ独立戦争では大陸軍を指揮し、その後、初代大統領として国の誕生を導いた。ワシントンの指導のもと、アメリカは独立を達成し、党派政治や外部勢力から距離を置き、独自の道を歩み始めた。<br><br>軍事指導者、政治家としての功績は今も多くの人々に影響を与え、奉仕と信念、新しい国を築いたその生き様は、アメリカ合衆国の未来を形作った。ちなみに、アイスクリームも大好きだったと言われている！
 2
 Base.Resources.linen_shirt_Name麻のシャツ
 P
@@ -2657,22 +2657,22 @@ L
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_1_Name小さな住宅
 L
 $Base.Resources.hero.SiouxShaman_Name$シッティング・ブルの精髄
-{
- Base.Resources.lapis_lazuli_DescW特定の青銅器時代の技術を研究するために使われる貴重な宝石。
 ?
 )Base.Resources.gold_laurel_TechnologyName黄金の月桂樹
+{
+ Base.Resources.lapis_lazuli_DescW特定の青銅器時代の技術を研究するために使われる貴重な宝石。
 *
 Base.Resources.secretary_Name	事務机
 7
 Base.Units.Unit_MansaMusa_Nameマンサ・ムーサ
-;
-Base.Resources.hero.Medusa_Nameメデューサの精髄
 F
 !Base.Resources.hero.KarlMarx_Name!カール・マルクスの精髄
+;
+Base.Resources.hero.Medusa_Nameメデューサの精髄
 G
 7Base.Technologies.Technology_RomanEmpire_Ballistas_Nameバリスタ
-�
-TBase.AbilityDescriptions.hero_battle_ability_description.GoldenRaftOfElDorado_1_Name�<style=ability_label>召喚・強化</style>各ウェーブの開始時に、所持ヒーローのレベルに応じてマヤの戦士を召喚する。所持ヒーローによる攻撃力と防御力の強化効果は、遺物のレベルごとに<style=basestat>{atkdef_buff_increase}</style>増加する。
+�
+TBase.AbilityDescriptions.hero_battle_ability_description.GoldenRaftOfElDorado_1_Name�<style=ability_label>召喚・強化</style>各ウェーブの開始時に、所持ヒーローのレベルに応じてマヤの戦士を召喚する。さらに、所持ヒーローによる攻撃力と防御力の強化効果は<style=basestat>{atkdef_buff_increase}</style>増加する。
 �
 2Base.Units.Unit_HighMiddleAges_Player_Billmen_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 O
@@ -2717,10 +2717,10 @@ Z
 "Base.BuildingGroups.smallWell_Name小さな井戸
 5
 "Base.Units.Unit_JaguarWarrior_Nameオセロトル
-<
-#Base.Units.Unit_VincentVanGogh_Nameファン・ゴッホ
 ~
 1Base.Buildings.Building_China_Home_Premium_4_DescI山ほどの五銖銭を生産し、都市に労働者を3人追加する
+<
+#Base.Units.Unit_VincentVanGogh_Nameファン・ゴッホ
 �
 1Base.Buildings.Building_China_Home_Average_4_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
 c
@@ -2733,10 +2733,10 @@ W
 1Base.Buildings.Building_Mayas_Home_Premium_4_DescY山ほどのカカオ豆を生産し、都市に労働者2人と職人1人を追加する
 I
 3Base.Technologies.Technology_China_RefinedSilk_Name加工された絹
-I
-9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_2_Name騎兵兵舎
 -
  Base.Resources.moth_cocoons_Name	蚕の繭
+I
+9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_2_Name騎兵兵舎
 #
 Base.Resources.agate_Name瑪瑙
 L
@@ -2747,18 +2747,18 @@ S
 7Base.Technologies.Technology_Vikings_FjordDominion_Nameフィヨルドの統治
 9
 #Base.Resources.hero.Blackbeard_Name黒ひげの精髄
-O
-?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Name磁器工房
 Z
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_Nameカオリン採石場
+O
+?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Name磁器工房
 J
 4Base.Units.Unit_KingdomOfSicily_Arabia_Infantry_Nameアラビア歩兵
 �
 "Base.Resources.hero.Sacagawea_Desc~サカガウィアの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-�
-Base.Units.Unit_VanHelsing_Desc�クロスボウを手にし、杭を握る。エイブラハム・ヴァン・ヘルシングが狩りに挑む。１９世紀のブラム・ストーカーのホラー小説『ドラキュラ』に登場する医師であり、素人ながらも4体の吸血鬼を討ち取ったハンター。<br><br>その後、ヴァン・ヘルシングは伝説的な存在となり、『ドラキュラ』の映画化やホラー作品を通じて名を馳せることに。世代を超え、その名を継ぐ者たちが闇に立ち向かってきた。<br><br>誕生当初は医師であり博学者として描かれたが、今では怪物退治の象徴的な存在となった。戦いの場だけでなく、食事にもこだわるようで、好物はもちろんヘルシーなものらしい。
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_3_Name	漁桟橋
+�
+Base.Units.Unit_VanHelsing_Desc�クロスボウを手にし、杭を握る。エイブラハム・ヴァン・ヘルシングが狩りに挑む。１９世紀のブラム・ストーカーのホラー小説『ドラキュラ』に登場する医師であり、素人ながらも4体の吸血鬼を討ち取ったハンター。<br><br>その後、ヴァン・ヘルシングは伝説的な存在となり、『ドラキュラ』の映画化やホラー作品を通じて名を馳せることに。世代を超え、その名を継ぐ者たちが闇に立ち向かってきた。<br><br>誕生当初は医師であり博学者として描かれたが、今では怪物退治の象徴的な存在となった。戦いの場だけでなく、食事にもこだわるようで、好物はもちろんヘルシーなものらしい。
 �
 -Base.Units.Unit_EarlyRome_Player_Triarii_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 K
@@ -2789,10 +2789,10 @@ C
 *Base.BuildingGroups.premiumSailorPort_Name豪華な水夫の港
 I
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_Name水夫の港
-K
-8Base.Abilities.hero_battle_ability.BenjaminFranklin_Name凧の導き手
 �
 Base.Resources.hero.Tansen_Desc�ミアン・タンセンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+K
+8Base.Abilities.hero_battle_ability.BenjaminFranklin_Name凧の導き手
 I
 <Base.Buildings.Building_EarlyRome_Workshop_StoneMason_1_Name	石工房
 B
@@ -2855,10 +2855,10 @@ F
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_2_Name畜産農場
 �
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
-3
-)Base.Resources.DYN_WONDER_material_2_Name素材
 �
 *Base.Resources.hero.PhilipIIOfMacedon_Desc�フィリッポス２世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+3
+)Base.Resources.DYN_WONDER_material_2_Name素材
 F
 0Base.Units.Unit_EarlyRome_Huns_KassaiBowmen_Nameカッサイ弓兵
 ?
@@ -2911,20 +2911,20 @@ L
 <Base.Technologies.Technology_HighMiddleAges_Precautions_Name予防措置
 U
 9Base.Units.Unit_RomanEmpire_GermanicTribes_Eoredeman_Nameエオレデメン戦士
-K
-;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Name畜産農場
 e
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_1_Desc*アンクと黄金の仮面を生産する
+K
+;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_3_Name畜産農場
 R
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 Q
 ;Base.Technologies.Technology_FeudalAge_ThrallsAndKarls_Name奴隷と自由民
 H
 )Base.Regions.region.VolcanicJungle_3_Nameイングランド植民地
-D
-1Base.Units.Unit_ByzantineEra_Player_Catapult_Nameカタパルト
 i
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
+D
+1Base.Units.Unit_ByzantineEra_Player_Catapult_Nameカタパルト
 S
 +Base.Wonders.Wonder_Capital_Lighthouse_Name$アレクサンドリアの大灯台
 U
@@ -3032,24 +3032,24 @@ C
 6Base.Technologies.Technology_FeudalAge_KingsGuard_Name	近衛兵
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.MarcoPolo_1_Name�<style=ability_label>瞬間移動・踏みつけ</style>敵ユニットの最大集団にテレポートし、着地と同時に爆発を引き起こす。爆発は<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
-�
-Base.Resources.hero.Plato_Descxプラトンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
 ;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
+�
+Base.Resources.hero.Plato_Descxプラトンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
 "Base.Units.Unit_OracleOfDephi_Desc�カスタリアの泉に身を浸し、カッソティスの聖なる水を口にし、山羊を捧げる時が来た。デルフォイの神託者が予言を告げるのだ！紀元前８世紀から、人々はアポロン神殿を訪れ、未来の囁きに耳を傾けた。<br><br>神託を告げるのはピュティアと呼ばれる最高女祭司。その言葉は神々の意志として伝えられ、戦争、政治、植民政策など、重大な決断に影響を与えた。王から庶民まで、８００年以上にわたり助言を求め続けた。<br><br>デルフォイの神託者は、ギリシャ文化の中心にあり、宗教、政治、社会が交差する存在だった。記録に残る５００以上の神託のうち、半数以上が的中したとされる。テスラに勝てるか尋ねたところ、「続けることこそが勝利の鍵」とのお告げが下ったようだ。
-H
-5Base.Buildings.Building_RomanEmpire_Home_Small_2_Name小さな住宅
 @
 6Base.Technologies.Technology_StoneAge_Agriculture_Name農業
+H
+5Base.Buildings.Building_RomanEmpire_Home_Small_2_Name小さな住宅
 �
 5Base.Buildings.Building_EarlyRome_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 L
 6Base.Technologies.Technology_MinoanEra_MarbleBust_Name大理石の胸像
+D
+"Base.Heroes.hero.HarryHoudini_Nameハリー・フーディーニ
 S
 Base.Resources.cape_Desc7マントはレベル5の仕立屋で生産できる。
-3
-"Base.Heroes.hero.HarryHoudini_NameHarry Houdini
 O
 9Base.Technologies.Technology_KingdomOfSicily_Pedites_Nameシチリア歩兵
 F
@@ -3160,12 +3160,12 @@ K
 )Base.Resources.yellow_crest_superior_Name黄色の優れたクレスト
 o
 2Base.Buildings.Building_StoneAge_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
-<
-Base.Heroes.hero.Dracula_Nameヴラド・ドラキュラ
 0
  Base.BuildingGroups.artisan_Name職人工房
-A
-%Base.Resources.hero.HarryHoudini_NameEssence of Harry Houdini
+<
+Base.Heroes.hero.Dracula_Nameヴラド・ドラキュラ
+P
+%Base.Resources.hero.HarryHoudini_Name'ハリー・フーディーニの精髄
 W
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Nameヒーロー学堂
 �
@@ -3226,18 +3226,18 @@ D
 $Base.Resources.hero.OdaNobunaga_Descx織田信長の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 8
 Base.Heroes.hero.JohnLocke_Nameジョン・ロック
-,
-Base.Resources.tunic_Nameチュニック
 �
 3Base.Buildings.Building_Arabia_City_CityHall_1_Descx都市の中心部にある大ホール。ここでは、少量ながらディルハムを継続的に収集できる。
+,
+Base.Resources.tunic_Nameチュニック
 [
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Name小規模な文化遺産
-J
-(Base.Resources.rift_token_legendary_Nameレジェンダリー反物質
-R
-?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 N
 ;Base.Technologies.Technology_FeudalAge_PlunderingRaids_Name襲撃と略奪
+R
+?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_3_Name重歩兵兵舎
+J
+(Base.Resources.rift_token_legendary_Nameレジェンダリー反物質
 \
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_Desc先祖の仮面を生産する
 �
@@ -3260,22 +3260,22 @@ L
 6Base.Abilities.hero_battle_ability.AlbertEinstein_Name全ては相対的
 �
 $Base.Units.Unit_QueenElizabethI_Desc�砲声と祈りが響いた時代を生きた女王、エリザベス１世。１６世紀のイングランドを４０年以上にわたり統治し、国に安定と繁栄をもたらした。芸術が花開き、戦乱が渦巻き、大航海時代が幕を開けた激動の時代でもあった。<br><br>国内外の試練に立ち向かい、宗教対立を乗り越え（その過程で犠牲がなかったわけではないが）、幾多の戦争を切り抜いた。スペイン無敵艦隊を打ち破り、強固な統治者としての名声を確立。シェイクスピアらを支援し、その時代を文化的にも黄金期へと導いた。<br><br>「ヴァージン・クイーン」として知られ、一度も結婚せず、最後まで権力と独立を貫いた。知性と統率力を兼ね備え、文化と政治の両面で大きな足跡を残した。そして、甘いものを好みすぎたあまり、歯の状態は最悪だったとも言われている。当時の歯科医にとっては、最も厄介な患者だったのかもしれない。
-P
-@Base.Technologies.Technology_ClassicGreece_AmbushTechniques_Name奇襲技術
 <
 &Base.BuildingGroups.premiumQuarry_Name豪華な採掘場
+P
+@Base.Technologies.Technology_ClassicGreece_AmbushTechniques_Name奇襲技術
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 g
 ?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 f
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_2_Desc戟兵をアンロックする
-J
-7Base.Technologies.Technology_Mayas_DivineAscension_Name神聖な昇華
-�
->Base.Resources.event_leaderboard_forge_of_vulcan_trophies_Desc`指定タスクをクリアして、このチャレンジで挑戦ポイントを集めよう。
+M
+7Base.Technologies.Technology_Mayas_DivineAscension_Name神聖なる昇華
 G
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_6_Name	絹工房
+�
+>Base.Resources.event_leaderboard_forge_of_vulcan_trophies_Desc`指定タスクをクリアして、このチャレンジで挑戦ポイントを集めよう。
 R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_5_Name豪華な水夫の港
 L
@@ -3284,8 +3284,8 @@ Z
 ABase.Units.Unit_EarlyRome_MacedonianKingdom_MacedonianBowmen_Nameマケドニア弓兵
 Q
 >Base.Technologies.Technology_BronzeAge_TribalMarksmanship_Name部族の射手
-L
-9Base.Technologies.Technology_RomanEmpire_UrbsAeterna_Name永遠の都市
+I
+9Base.Technologies.Technology_RomanEmpire_UrbsAeterna_Name永遠の都
 L
 $Base.Units.Unit_LeonardoDaVinci_Name$レオナルド・ダ・ヴィンチ
 C
@@ -3296,16 +3296,16 @@ h
 Base.BuildingTypes.farm_Name農場
 M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_4_Name遠征桟橋
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_5_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。
 F
 3Base.Abilities.hero_battle_ability.WilliamTell_Nameリンゴ割り
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_5_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは、攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇し、攻撃力がクレオパトラの攻撃力の<style=basestat>{attack_percentage}</style>分上昇する。
 s
 6Base.Buildings.Building_MinoanEra_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
-M
-:Base.Buildings.Building_AgeOfTheFranks_Home_Average_1_Name大きな住宅
 N
 ;Base.Technologies.Technology_IberianEra_FishingMastery_Name釣りの熟練
+M
+:Base.Buildings.Building_AgeOfTheFranks_Home_Average_1_Name大きな住宅
 U
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_2_Name重歩兵兵舎
 @
@@ -3398,10 +3398,10 @@ p
 5Base.Buildings.Building_BronzeAge_Home_Average_2_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 O
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_3_Name騎兵兵舎
-O
-<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_Name攻城兵兵舎
 w
 6Base.Buildings.Building_ByzantineEra_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
+O
+<Base.Buildings.Building_HighMiddleAges_Barracks_Siege_2_Name攻城兵兵舎
 >
 .Base.Abilities.hero_battle_ability.Jester_Name紙吹雪砲
 X
@@ -3448,20 +3448,20 @@ E
 5Base.Technologies.Technology_Egypt_Mummification_Nameミイラ化
 J
 1Base.Abilities.hero_battle_ability.MansaMusa_Name黄金海岸の策略
-J
-7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_Name攻城兵兵舎
 +
 Base.Heroes.hero.HuaMulan_Name	花木蘭
+J
+7Base.Buildings.Building_BronzeAge_Barracks_Siege_1_Name攻城兵兵舎
 b
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 J
+:Base.Technologies.Technology_EarlyRome_TacticalCharge_Name戦術突撃
+J
 :Base.Buildings.Building_ClassicGreece_City_CityHall_1_Name大ホール
 J
-:Base.Technologies.Technology_EarlyRome_TacticalCharge_Name戦術突撃
+(Base.Resources.hero.QueenElizabethI_Nameエリザベス１世の精髄
 j
 BBase.Buildings.Building_AgeOfTheFranks_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
-J
-(Base.Resources.hero.QueenElizabethI_Nameエリザベス１世の精髄
 7
 !Base.Resources.hero.YiSunSin_Name李舜臣の精髄
 X
@@ -3528,12 +3528,12 @@ s
 2Base.Buildings.Building_Vikings_Home_Worker_3_Desc=ペニーを生産し、都市に労働者を2人追加する
 :
 'Base.Regions.region.TeslaStormBlue_Name青ストーム
-1
-$Base.Heroes.hero.JapaneseShogun_Name	近藤勇
 J
 7Base.Buildings.Building_StoneAge_Barracks_Ranged_1_Name射撃兵兵舎
 �
 "Base.Units.Unit_CyrusTheGreat_Desc�キュロス大王は、リビアからパキスタンまで讃えられている。アケメネス朝を築き、世界史上最も広大な帝国の一つを作り上げた。６世紀の皇帝キュロスは、その卓越した軍事力と戦略的天才で名高い。<br><br>ペルシャの部族を統一し、アジア小部や東ヨーロッパにまで領土を拡大。征服したサトラップでは、それぞれの宗教や習慣を尊重し、賢明な統治者としての名声を確立した。<br><br>ユダヤ人にとっては救世主、バビロニア人にとっては解放者、アレクサンドロス大王やトーマス・ジェファーソンにとっては英雄とされ、その名声は今なおイランで語り継がれている。その慈悲深さは「キュロスの円筒」にも記録され、政治手腕と優れた人道的姿勢を示している。政治家としての才覚だけでなく、戦場でも狡猾さを発揮したと言われ、ある戦闘では敵を酔わせてから攻撃を仕掛けたとも伝えられている。
+1
+$Base.Heroes.hero.JapaneseShogun_Name	近藤勇
 r
 5Base.Buildings.Building_StoneAge_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
 E
@@ -3650,8 +3650,8 @@ K
 Base.Resources.grimoire_Name	魔道書
 l
 8Base.Buildings.Building_Arabia_Irrigation_Premium_1_Desc0隣の建物の灌漑用水を大幅に増やす
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Name�<style=ability_label>集中</style>ウェーブ開始時に、所持ヒーローに<style=basestat>{focus}</style>の集中力を付与する。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.LunarMeteorite_1_Name�<style=ability_label>アビリティチャージ</style>各ウェーブ開始時に、アビリティのチャージを通常のチャージ時間の<style=basestat>{focus}</style>分進める。
 X
 Base.Resources.mosaic_Desc:モザイクはレベル5の石工房で生産できる。
 I
@@ -3664,10 +3664,10 @@ K
 >Base.Technologies.Technology_BronzeAge_BronzeTippedSpears_Name	青銅槍
 [
 <Base.TreasureHuntDifficultiesPanel.RankingPointsPerEncounter対決ごとのポイント
-P
-@Base.Technologies.Technology_FeudalAge_BattlefieldArtillery_Name戦場砲兵
 /
 Base.Heroes.hero.Medusa_Nameメデューサ
+P
+@Base.Technologies.Technology_FeudalAge_BattlefieldArtillery_Name戦場砲兵
 O
 ?Base.Technologies.Technology_ClassicGreece_ImprovedSaddles_Name鞍の改良
 "
@@ -3690,10 +3690,10 @@ TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15
 LBase.AbilityDescriptions.hero_battle_ability_description.AttilaTheHun_1_Name�<style=ability_label>遠隔攻撃・自己回復</style>アッティラは最も遠い敵をターゲットにライフドレインの矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
 O
 ?Base.Technologies.Technology_AgeOfTheFranks_AdvancedFodder_Name上質飼料
-/
-Base.Ages.AgeOfTheFranks_Decade西暦550年
 ;
 (Base.BuildingTypes.presetIrrigation_Name特別な灌漑
+/
+Base.Ages.AgeOfTheFranks_Decade西暦550年
 I
 9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_3_Name騎兵兵舎
 �
@@ -3702,10 +3702,10 @@ KBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_10_Name�<
 ABase.Buildings.Building_AgeOfTheFranks_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
 a
 6Base.Buildings.Building_Arabia_Irrigation_Oasis_1_Desc'隣の建物の灌漑用水を増やす
-F
-6Base.Buildings.Building_MinoanEra_City_CityHall_1_Name大ホール
 t
 3Base.Buildings.Building_FeudalAge_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
+F
+6Base.Buildings.Building_MinoanEra_City_CityHall_1_Name大ホール
 "
 Base.HeroClass.Healer	回復師
 M
@@ -3722,18 +3722,18 @@ c
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_1_Nameミノアの見張り塔
 �
 Base.Resources.mead_Descf蜂蜜酒は加工資源を作るために使われる重要な資源で、酒場で生産される。
+*
+ Base.BuildingGroups.BronzeStatue銅像
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Name�<style=ability_label>強化解除</style>所持ヒーローが基本攻撃を当てると、<style=basestat>{chance}</style>の確率で対象ユニットのステータス強化をすべて解除する。<br>解除される強化には、攻撃力、防御力、攻撃速度、移動速度、回避率、クリティカル率、クリティカルダメージが含まれる。
 |
 Base.Resources.emerald_Desc]特定の古代ローマ時代の技術を研究するために使われる貴重な宝石。
-*
- Base.BuildingGroups.BronzeStatue銅像
 (
 Base.Resources.greek_lyre_Nameリラ
-g
-?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 B
 /Base.Buildings.Building_Egypt_Home_Small_5_Name小さな住宅
+g
+?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 >
 (Base.Regions.region.EasternValley_4_Nameテスラの要塞
 U
@@ -3748,10 +3748,10 @@ B
 8Base.Technologies.Technology_EarlyRome_Marketplaces_Name市場
 �
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_Desc�カルカソンヌ歩哨兵は追加の多用途な重歩兵ユニットで、その強さは現在の時代に応じて自動的に強化される。
-N
-8Base.Technologies.Technology_China_KaolinProcessing_Nameカオリン加工
 +
 Base.Ages.DawnAge_Start紀元前5万年
+N
+8Base.Technologies.Technology_China_KaolinProcessing_Nameカオリン加工
 3
 &Base.Resources.fragrant_potpourri_Name	香り袋
 =
@@ -3784,10 +3784,10 @@ G
 4Base.Units.Unit_TreasureHunt_Yellow_Harpoonists_Name輝光の銛隊
 P
 :Base.Units.Unit_ClassicGreece_ThePersians_ShortBowmen_Nameペルシャ弓兵
-[
-?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Name大規模な文化遺産
 p
 2Base.Buildings.Building_Vikings_Home_Sailor_1_Desc:ペニーを生産し、都市に水夫を2人追加する
+[
+?Base.Buildings.Building_AgeOfTheFranks_CultureSite_Large_1_Name大規模な文化遺産
 T
 >Base.Resources.event_leaderboard_forge_of_vulcan_trophies_Name挑戦ポイント
 K
@@ -3850,10 +3850,10 @@ K
 /Base.Units.Unit_FeudalAge_Player_Trebuchet_Nameトレビュシェット
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_2_Name豪華な漁桟橋
-4
-Base.Resources.wonder_orb_Name神秘のオーブ
 b
 :Base.Buildings.Building_FeudalAge_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
+4
+Base.Resources.wonder_orb_Name神秘のオーブ
 K
 2Base.Abilities.hero_battle_ability.LadySixSky_Name聖なるトーテム
 �
@@ -3948,10 +3948,10 @@ X
 3Base.Buildings.Building_Mayas_Aviary_Premium_5_Desc!山ほどの羽根を生産する
 J
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_3_Name攻城兵兵舎
-e
-=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_2_Desc金鉱石を生産する
+e
+=Base.Buildings.Building_IberianEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 K
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_Name	協同体
 �
@@ -3968,10 +3968,10 @@ U
 BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 G
 4Base.Buildings.Building_StoneAge_Home_Premium_1_Name豪華な住宅
-�
-(Base.Resources.hero.QueenElizabethI_Desc�エリザベス１世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 .
 !Base.Resources.hero.YiSunSin_Desc	李舜臣
+�
+(Base.Resources.hero.QueenElizabethI_Desc�エリザベス１世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 r
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
 h
@@ -3986,10 +3986,10 @@ $
 Base.Units.Unit_MontezumaI_Desc�	火の冠を戴き、空の海の覇者と讃えられ、大いなる語り手として知られたアステカ第２代皇帝モクテスマは、栄光と苛烈さを併せ持つ帝国の象徴として記憶されている。テノチティトランでの即位は壮大な生け贄の儀式によって飾られ、その後の治世でもこの習わしはさらに強まっていった。<br><br>即位後まもなく、周辺の二都市国家と手を結び、三国同盟を築いたことによって、征服と繁栄の時代が始まる。水路がテノチティトランへ水を引き込み、都市は拡大を続けながら、帝国の版図はメキシコ全域へと広がっていった。<br><br>だが、力を誇示するだけではなく、政治の手腕にも長けていたことが、その治世をより際立たせている。信仰の面でも深く関わり、神格化された人物として語られるようになり、帝国各地に宗教学校が設けられた。…とはいえ、ヒーローズオブヒストリーでは、なぜかよく後の皇帝モクテスマ２世と勘違いされていて、少し不満げな様子だ。
 T
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_Name重歩兵兵舎
-F
-3Base.Buildings.Building_MinoanEra_Home_Small_1_Name小さな住宅
 m
 -Base.Units.Unit_EarlyRome_Player_Hastati_Desc<歩兵ユニットは前列で最も効果を発揮する。
+F
+3Base.Buildings.Building_MinoanEra_Home_Small_1_Name小さな住宅
 L
 6Base.Technologies.Technology_FeudalAge_Pictograms_Nameピクトグラム
 �
@@ -4020,10 +4020,10 @@ U
 EBase.Technologies.Technology_HighMiddleAges_PikeformationTactics_Name槍衾戦術
 ;
 "Base.Heroes.hero.TribalHealer_Name洞窟一族のナヤ
-I
-9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Name小作農場
 8
 .Base.Technologies.Technology_Egypt_Joists_Name根太
+I
+9Base.Buildings.Building_KingdomOfSicily_Farm_Rural_3_Name小作農場
 N
 ;Base.Technologies.Technology_FeudalAge_RepurposedRuins_Name廃墟再利用
 K
@@ -4068,10 +4068,10 @@ A
 (Base.Resources.hero.MiyamotoMusashi_Name宮本武蔵の精髄
 D
 1Base.Buildings.Building_Mayas_Home_Premium_2_Name豪華な住宅
-K
-5Base.Technologies.Technology_Vikings_MeadBrewery_Name蜂蜜酒の醸造
 ,
 Base.Ages.StoneAge_Start紀元前4万年
+K
+5Base.Technologies.Technology_Vikings_MeadBrewery_Name蜂蜜酒の醸造
 &
 Base.Resources.feathers_Name羽根
 H
@@ -4134,10 +4134,10 @@ G
 7Base.Buildings.Building_IberianEra_City_CityHall_1_Name大ホール
 �
 0Base.Units.Unit_FeudalAge_Player_Longbowmen_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
-G
-7Base.Technologies.Technology_EarlyRome_WarMachines_Name戦闘機械
 0
 #Base.Units.Unit_JapaneseShogun_Name	近藤勇
+G
+7Base.Technologies.Technology_EarlyRome_WarMachines_Name戦闘機械
 F
 3Base.TreasureHuntDifficultiesPanel.HighlightRewards注目の報酬
 I
@@ -4234,12 +4234,12 @@ J
 Base.Resources.mead_Name	蜂蜜酒
 �
 Base.Resources.honey_Descf蜂蜜は加工資源を作るために使われる重要な資源で、養蜂場で生産される。
-�
-6Base.Buildings.Building_IberianEra_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 B
 /Base.Buildings.Building_China_Home_Small_6_Name小さな住宅
 3
 #Base.Regions.region.Panganea_6_Name滅びた都
+�
+6Base.Buildings.Building_IberianEra_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 t
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_Desc3フランクの斧投擲兵をアンロックする
 G
@@ -4250,10 +4250,10 @@ G
 3Base.Buildings.Building_Vikings_Home_Premium_6_DescV山ほどのペニーを生産し、都市に労働者2人と水夫2人を追加する
 p
 /Base.Buildings.Building_Egypt_Home_Small_5_Desc=デベンを生産し、都市に労働者を1人追加する
-\
-@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_Name黒曜石採取の改善
 A
 (Base.Resources.negotiation_wildcard_Name交渉ジョーカー
+\
+@Base.Technologies.Technology_Mayas_BetterObsidianExtraction_Name黒曜石採取の改善
 �
 Base.Resources.gold_ore_Descf金鉱石は加工資源を作るために使われる重要な資源で、金鉱で採掘される。
 +
@@ -4314,8 +4314,8 @@ B
 5Base.Buildings.Building_China_RiceFarm_Average_3_Name	米農場
 =
 !Base.Heroes.hero.WilliamTell_Nameウィリアム・テル
-�
-$Base.Resources.hero.Nostradamus_DescaUsed to increase the Awakening Level of Nostradamus and thus unlock more powerful battle bonuses.
+�
+$Base.Resources.hero.Nostradamus_Desc�ノストラダムスの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 S
 @Base.Technologies.Technology_ByzantineEra_CrossgroinedVault_Nameアーチ天井
 l
@@ -4362,10 +4362,10 @@ H
 8Base.Technologies.Technology_ClassicGreece_Hoplites_Name装甲歩兵
 X
 BBase.Technologies.Technology_ByzantineEra_MobilityInnovations_Name移動技術革新
--
-Base.Ages.StoneAge_Decade紀元前4万年
 I
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_Nameシチリア歩兵
+-
+Base.Ages.StoneAge_Decade紀元前4万年
 J
 :Base.Technologies.Technology_AgeOfTheFranks_Patrimony_Name世襲財産
 `
@@ -4450,10 +4450,10 @@ G
 Base.Resources.rice_Name米
 r
 1Base.Buildings.Building_Egypt_Home_Premium_3_Desc=デベンを生産し、都市に労働者を1人追加する
-]
-Base.Resources.chili_Desc@唐辛子はレベル5のスパイス工房で生産できる。
 8
 Base.Units.Unit_Hatshepsut_Nameハトシェプスト
+]
+Base.Resources.chili_Desc@唐辛子はレベル5のスパイス工房で生産できる。
 t
 3Base.Buildings.Building_MinoanEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 t
@@ -4562,8 +4562,8 @@ H
  Base.Heroes.hero.LadySixSky_Name$レディ・シックス・スカイ
 �
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc�レジェンダリー遺物、<nobr><style=legendary>プロメテウスの松明</style></nobr>を強化するレアな資源。<br>遺物の粉とともに、一部のイベントから報酬として獲得できる。
-�
- Base.Units.Unit_Nostradamus_Desc�Unlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les Prophéties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus’ reputation reached the highest circles - he even read the fortunes of Catherine de’ Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
+�	
+ Base.Units.Unit_Nostradamus_Desc�	伝説の予言者ノストラダムスとともに、運命の謎を解き明かそう！１５０３年に生まれたミシェル・ノストラダムスは、ペストの流行時に勇敢に立ち向かった医師として名を上げたが、後世に語り継がれることとなったのは、やはりその神秘的な予言だった。著書『予言集』には、意味深で謎めいた詩が数多く記されており、その真意をめぐって、世代を超えてさまざまな解釈が繰り返されてきた。破滅的な戦争や帝王たちの栄枯盛衰と結びつけられることも多い。<br><br>その評判は王侯貴族のあいだにも広まり、フランス王妃カトリーヌ・ド・メディシスの運命を占ったとも言われている。青銅の器を覗き込んでいたという説もあれば、星々に答えを求めていたという話もあり、占星術と詩的な謎を融合させた手法は、今もなお信奉者と懐疑派の双方を惹きつけてやまない。ヒーローたちのあいだでは、ノストラダムスは占いの器から決して離れず、夜が更けるころには、手帳が勝手に予言を書き始めるらしい。
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name労働者の家
 H
@@ -4600,10 +4600,10 @@ D
 Base.Ages.MinoanEra_Decade紀元前1600年
 K
 5Base.Resources.event_winter_grand_prize_progress_Name進行ポイント
-�
-)Base.Resources.yellow_crest_enhanced_DescT黄色のヒーローを昇進させるには、黄色のクレストが必要だ。
 s
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
+�
+)Base.Resources.yellow_crest_enhanced_DescT黄色のヒーローを昇進させるには、黄色のクレストが必要だ。
 Z
 8Base.Buildings.Building_BronzeAge_Barracks_Ranged_1_Desc弓兵をアンロックする
 ;
@@ -4612,10 +4612,10 @@ i
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc*サラセン弓兵をアンロックする
 J
 @Base.Technologies.Technology_HighMiddleAges_ArbalestWeapons_Name弩兵
-=
--Base.Abilities.hero_battle_ability.Ninja_Name囁きの刃
 S
 1Base.Abilities.hero_battle_ability.TigerLily_Nameタイガーリリーの平定
+=
+-Base.Abilities.hero_battle_ability.Ninja_Name囁きの刃
 v
 5Base.Buildings.Building_RomanEmpire_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 I
@@ -4644,10 +4644,10 @@ N
 &Base.Resources.hero.OracleOfDephi_Name$デルフォイの神託者の精髄
 �
 (Base.Resources.hero.MiyamotoMusashi_Descx宮本武蔵の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-I
-9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_Name騎兵兵舎
 �
 7Base.Buildings.Building_IberianEra_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
+I
+9Base.Buildings.Building_FeudalAge_Barracks_Cavalry_3_Name騎兵兵舎
 \
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_Desc儀式用の短剣生産する
 Q
@@ -4656,10 +4656,10 @@ O
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_Name祭服工房
 *
 Base.Ages.FeudalAge_Start西暦1000年
-6
- Base.Resources.arena_medals_Name闘技場メダル
 O
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_4_Name祭服工房
+6
+ Base.Resources.arena_medals_Name闘技場メダル
 L
 0Base.Units.Unit_IberianEra_Vikings_Infantry_Nameヴァイキング歩兵
 D
@@ -4693,15 +4693,15 @@ G
 :
 !Base.Resources.hero.Lagertha_Nameラゲルタの精髄
 J
-:Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_Name騎兵兵舎
-J
 =Base.Buildings.Building_HighMiddleAges_Workshop_Scribe_1_Name	書記屋
-Y
-(Base.Resources.hero.LeonardoDaVinci_Name-レオナルド・ダ・ヴィンチの精髄
+J
+:Base.Buildings.Building_IberianEra_Barracks_Cavalry_3_Name騎兵兵舎
 D
 1Base.Buildings.Building_Egypt_Home_Average_5_Name大きな住宅
 B
 5Base.Technologies.Technology_ByzantineEra_Scribe_Name	書記屋
+Y
+(Base.Resources.hero.LeonardoDaVinci_Name-レオナルド・ダ・ヴィンチの精髄
 A
 4Base.Technologies.Technology_EarlyRome_Sewerage_Name	下水道
 V
@@ -4718,10 +4718,10 @@ K
 Base.Resources.pvp_energy_Desci闘技場トークンは闘技場で戦うために必要だ。時間が経つと自動で回復する。
 M
 =Base.Technologies.Technology_RomanEmpire_EnhancedTorsion_Name強化機構
-�
-Base.Units.Unit_Lagertha_Desc�誰にも止めさせることなく、ラゲルタが歴史のヒーローたちに加わった！９世紀の伝説的なヴァイキングの女戦士であるラゲルタは、その勇敢さと戦術的な才能で知られ、夫ラグナル・ロズブロークと共に戦い、数々の軍事的勝利に貢献した。戦闘技術に優れ、恐れ知らずの姿勢と指導力で戦士たちを鼓舞した。<br><br>戦士としての腕前だけでなく、個人的な生活も複雑で、特にラグナルとの波乱に満ちた関係が知られている。最終的にラグナルと離婚したものの、伝説によると、その後も影響力を保ち、自らの軍を率いて次々と戦いで勝利を収めたと言われている。<br><br>北欧神話と歴史における力強い女性としてのラゲルタの遺産は、今もなお多くの人々にインスピレーションを与え、魅了し続けている。
 p
 /Base.Buildings.Building_China_Home_Small_6_Desc=五銖銭を生産し、都市に労働者を1人追加する
+�
+Base.Units.Unit_Lagertha_Desc�誰にも止めさせることなく、ラゲルタが歴史のヒーローたちに加わった！９世紀の伝説的なヴァイキングの女戦士であるラゲルタは、その勇敢さと戦術的な才能で知られ、夫ラグナル・ロズブロークと共に戦い、数々の軍事的勝利に貢献した。戦闘技術に優れ、恐れ知らずの姿勢と指導力で戦士たちを鼓舞した。<br><br>戦士としての腕前だけでなく、個人的な生活も複雑で、特にラグナルとの波乱に満ちた関係が知られている。最終的にラグナルと離婚したものの、伝説によると、その後も影響力を保ち、自らの軍を率いて次々と戦いで勝利を収めたと言われている。<br><br>北欧神話と歴史における力強い女性としてのラゲルタの遺産は、今もなお多くの人々にインスピレーションを与え、魅了し続けている。
 J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_5_Name仮面工房
 R
@@ -4732,10 +4732,10 @@ ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_Nameメロヴィ
 !Base.Units.Unit_LouisPasteur_Nameルイ・パストゥール
 1
  Base.Ages.KingdomOfSicily_Finish西暦1100年
-)
-Base.Resources.gold_ore_Name	金鉱石
 K
 ;Base.Technologies.Technology_IberianEra_BraceMechanism_Name固定機構
+)
+Base.Resources.gold_ore_Name	金鉱石
 E
 )Base.Regions.region.VolcanicJungle_4_Name新ビザンティウム
 <
@@ -4828,18 +4828,18 @@ G
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>強化・出血</style>出血状態の敵に対するダメージを<style=basestat>{damage_increase_per_relic_level}</style>増加させる。さらに、ヒーローが敵にダメージを与えるたびに<style=basestat>{bleed_chance_percentage}</style>の確率で出血を付与し、<style=basestat>{bleed_duration}</style>の間、毎秒<style=basestat>{bleed_percentage_per_relic_level}</style>の継続ダメージを与える。
 S
 CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_Name自動機構
->
-$Base.Resources.hero.Nostradamus_NameEssence of Nostradamus
+F
+$Base.Resources.hero.Nostradamus_Nameノストラダムスの精髄
 D
 1Base.Buildings.Building_Egypt_Home_Average_2_Name大きな住宅
 �
 2Base.Units.Unit_StoneAge_Player_HeavyInfantry_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 L
 <Base.Buildings.Building_RomanEmpire_Barracks_Infantry_1_Name歩兵兵舎
-C
-0Base.Buildings.Building_Mayas_Home_Worker_2_Name労働者の家
 5
 %Base.BuildingGroups.domesticFarm_Name畜産農場
+C
+0Base.Buildings.Building_Mayas_Home_Worker_2_Name労働者の家
 K
 2Base.Abilities.hero_battle_ability.Hatshepsut_Nameテーベの静けさ
 H
@@ -4853,21 +4853,21 @@ ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_Desc'隣の建物
 V
 @Base.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineRider_Nameビザンツ騎兵
 I
-9Base.Technologies.Technology_RomanEmpire_VillaUrbana_Name都市邸宅
+9Base.Technologies.Technology_RomanEmpire_VillaUrbana_Name郊外邸宅
 E
 8Base.Buildings.Building_MinoanEra_Workshop_Tailor_1_Name	仕立屋
-M
-=Base.Technologies.Technology_IberianEra_SafetyMechanisms_Name安全機構
 K
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_1_Name射撃兵兵舎
+M
+=Base.Technologies.Technology_IberianEra_SafetyMechanisms_Name安全機構
 e
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_Desc*アンクと黄金の仮面を生産する
 L
 <Base.Abilities.hero_battle_ability.QueenSeondeokOfSilla_Name王の号令
-p
-/Base.Buildings.Building_China_Home_Small_3_Desc=五銖銭を生産し、都市に労働者を1人追加する
 Q
 >Base.Technologies.Technology_KingdomOfSicily_SineQuadrant_Name正弦測定器
+p
+/Base.Buildings.Building_China_Home_Small_3_Desc=五銖銭を生産し、都市に労働者を1人追加する
 a
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_Desc散兵をアンロックする
 C
@@ -4880,10 +4880,10 @@ J
 Base.Units.Unit_Tansen_Desc�天から雨を呼び、旋律で世界を揺るがす音楽家、ミアン・タンセン。１６世紀のインドに生き、皇帝アクバルに仕えた「九宝」のひとりとして宮廷にその名を刻んだ。<br><br>「学識ある者」を意味する名を持ち、北インド音楽の最初の流派とされるグワリオル・ガラナを創設。５歳の頃から音楽を学び、生涯にわたり卓越した歌声と技を磨き続けた。<br><br>伝説は数知れず、歌声で野生の象を鎮め、鳥を和ませ、火を灯し、雨を降らせたとも語られる。その音楽の遺産は今も受け継がれ、タンセンが学びを築いたグワリオルは「音楽の都」として知られている。
 ;
 %Base.Resources.travelers_compass_Name旅人の羅針盤
-P
-4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_Desc黒曜石を生産する
 p
 3Base.Buildings.Building_EarlyRome_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
+P
+4Base.Buildings.Building_Mayas_Quarry_Obsidian_1_Desc黒曜石を生産する
 e
 =Base.Buildings.Building_BronzeAge_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
 9
@@ -4970,10 +4970,10 @@ D
 :Base.Technologies.Technology_BronzeAge_MantletShields_Name防盾
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_3_Name射撃兵兵舎
-B
-5Base.Technologies.Technology_ClassicGreece_Agora_Name	アゴラ
 W
 DBase.Technologies.Technology_ByzantineEra_CounterCavalryTactics_Name対騎兵戦術
+B
+5Base.Technologies.Technology_ClassicGreece_Agora_Name	アゴラ
 �
 
 "Base.Units.Unit_BessieColeman_Desc�
@@ -5042,10 +5042,10 @@ c
 GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_4_Nameミノアの見張り塔
 3
 &Base.Resources.grimoire_TechnologyName	魔道書
-h
-@Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_Desc$戦闘騎兵をアンロックする
 u
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
+h
+@Base.Buildings.Building_IberianEra_Barracks_HeavyInfantry_1_Desc$戦闘騎兵をアンロックする
 +
 Base.Cities.City_Egypt_Nameエジプト
 @
@@ -5070,12 +5070,12 @@ D
 :Base.Technologies.Technology_KingdomOfSicily_Windmill_Name風車
 H
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_Nameロバ農場
+5
+%Base.Resources.material_fortress_Name要塞素材
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.JapaneseShogun_1_Name�<style=ability_label>範囲攻撃・弱体化</style>現在のターゲットを攻撃し、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、命中率が<style=basestat>{accuracy_percentage}</style>低下する。
 q
 0Base.Buildings.Building_Mayas_Home_Priest_2_Desc=カカオ豆を生産し、都市に職人を2人追加する
-5
-%Base.Resources.material_fortress_Name要塞素材
 ]
 >Base.Technologies.Technology_ByzantineEra_TheodosianWalls_Nameテオドシウスの城壁
 B
@@ -5086,10 +5086,10 @@ O
 -Base.Units.Unit_StoneAge_Player_Slingers_Name	投石兵
 o
 2Base.Buildings.Building_StoneAge_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
-�
-+Base.Resources.hero.GreekMathematician_Desc~ユークリッドの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 s
 3Base.Units.Unit_ByzantineEra_Player_Bucellarii_Desc<歩兵ユニットは前列で最も効果を発揮する。
+�
++Base.Resources.hero.GreekMathematician_Desc~ユークリッドの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 T
 >Base.Buildings.Building_RomanEmpire_Special_HeroAcademy_1_Nameヒーロー学堂
 ;
@@ -5114,10 +5114,10 @@ c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_Name哲学者の館
 i
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc*ギリシャ弩砲をアンロックする
-E
-8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_Name	重装兵
 Y
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_Nameヴァイキングの台頭
+E
+8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_Name	重装兵
 �
 <Base.Buildings.Building_ClassicGreece_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 D
@@ -5152,10 +5152,10 @@ o
 /Base.Units.Unit_BronzeAge_Player_Swordsmen_Desc<歩兵ユニットは前列で最も効果を発揮する。
 R
 6Base.Technologies.Technology_FeudalAge_Trebuchets_Nameトレビュシェット
-I
-6Base.Technologies.Technology_Vikings_TavernBrawls_Name酒場の乱闘
 P
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_5_Name儀式彫刻工房
+I
+6Base.Technologies.Technology_Vikings_TavernBrawls_Name酒場の乱闘
 D
 1Base.Buildings.Building_China_Home_Average_4_Name大きな住宅
 �
@@ -5226,12 +5226,12 @@ P
 QBase.AbilityDescriptions.hero_battle_ability_description.NapoleonBonaparte_1_Name�<style=ability_label>範囲攻撃・強化・弱体化</style>敵ユニットの最大集団に大砲を放ち、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{debuff_duration}</style>の間、命中率が<style=basestat>{accuracy_percentage}</style>低下する。同時に、<style=basestat>{evasion_duration}</style>の間、味方ユニット全体の回避率が<style=basestat>{evasion_percentage}</style>上昇する。
 =
 3Base.Technologies.Technology_BronzeAge_Chariot_Name戦車
-C
-'Base.Resources.hero.EgyptianVizier_Nameイムホテプの精髄
-N
-/Base.Units.Unit_IberianEra_Castilla_Archer_Nameカスティーリャ弓兵
 X
 <Base.Buildings.Building_StoneAge_CultureSite_Moderate_1_Name中規模な文化遺産
+N
+/Base.Units.Unit_IberianEra_Castilla_Archer_Nameカスティーリャ弓兵
+C
+'Base.Resources.hero.EgyptianVizier_Nameイムホテプの精髄
 L
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_1_Name小さな井戸
 F
@@ -5247,18 +5247,18 @@ F
 0Base.Units.Unit_MinoanEra_Spartans_Hoplites_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
 �
 Base.Units.Unit_Medusa_Desc�目をそらすのだ！ギリシャ神話に名を刻む三姉妹のゴルゴンの一人、メデューサ。本来は伝令として遣わされたが、歴史のヒーローたちに加わることとなった。蛇の髪を持ち、目を合わせた者を石に変える力を持つこの怪物は、かつては美しい女性だった。しかし、女神アテナの神殿を汚した罰として呪われ、その姿を変えられた。<br><br>メデューサの物語は、変貌と復讐の象徴でもある。神話では、アテナの助言を受けたペルセウスが鏡の盾を使い、首をはねたとされる。その首は護符となり、古代ギリシャでは災厄を退ける象徴とされた。<br><br>だが、それがすべてではない。最後の瞬間、テスラによって石器時代に転送され、「究極の科学実験」として扱われていた。そして今、解き放たれたメデューサが求めるのは、ただひとつ――復讐。
--
-Base.Heroes.hero.Shaolin_Name雪庭福裕
 G
 7Base.Technologies.Technology_HighMiddleAges_Bodkin_Nameボドキン
+-
+Base.Heroes.hero.Shaolin_Name雪庭福裕
 g
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
 L
 9Base.Technologies.Technology_IberianEra_TavernBrawls_Name酒場の乱闘
 J
-7Base.Buildings.Building_ClassicGreece_Home_Small_1_Name小さな住宅
-J
 =Base.Technologies.Technology_AgeOfTheFranks_LinguaFranca_Name	共通語
+J
+7Base.Buildings.Building_ClassicGreece_Home_Small_1_Name小さな住宅
 J
 :Base.Buildings.Building_FeudalAge_Barracks_Infantry_3_Name歩兵兵舎
 F
@@ -5281,10 +5281,10 @@ P
 @Base.Technologies.Technology_IberianEra_DomesticatedDonkeys_Name飼育ロバ
 H
 ,Base.Wonders.Wonder_Capital_HagiaSophia_Nameハギア・ソフィア
-U
-?Base.Technologies.Technology_RomanEmpire_AlloyedArrowheads_Name合金の矢じり
 u
 8Base.Buildings.Building_IberianEra_Barracks_Siege_1_Desc9改良型トレビュシェットをアンロックする
+U
+?Base.Technologies.Technology_RomanEmpire_AlloyedArrowheads_Name合金の矢じり
 \
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_Desc鎌剣をアンロックする
 ~
@@ -5401,10 +5401,10 @@ E
 5Base.Buildings.Building_StoneAge_Farm_Domestic_3_Name畜産農場
 W
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_6_Desc太陽の石を生産する
-F
-<Base.Technologies.Technology_HighMiddleAges_MailBarding_Name馬鎧
 y
 "Base.Resources.gilded_pennant_DescSヒーロー昇進に使用する<style=epic>エピック</style>な昇進素材。
+F
+<Base.Technologies.Technology_HighMiddleAges_MailBarding_Name馬鎧
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 Q
@@ -5453,10 +5453,10 @@ T
 %Base.Resources.imperial_war_drum_Descaヒーロー昇進に使用する<style=legendary>レジェンダリー</style>な昇進素材。
 2
 Base.Resources.hero.SunTzu_Name孫子の精髄
-z
-%Base.Resources.material_fortress_DescQ要塞系の世界遺産のアップグレードに使用する特別な素材。
 ]
 5Base.Buildings.Building_Egypt_GoldMine_Premium_1_Desc$山ほどの金鉱石を生産する
+z
+%Base.Resources.material_fortress_DescQ要塞系の世界遺産のアップグレードに使用する特別な素材。
 @
 0Base.Buildings.Building_Mayas_Home_Priest_2_Name職人の家
 �
@@ -5473,10 +5473,10 @@ F
 $Base.BuildingTypes.papyrusField_Nameパピルス畑
 K
 5Base.Buildings.Building_China_RiceFarm_Average_6_Desc米を生産する
-,
-Base.Ages.IberianEra_Finish西暦1050年
 I
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_Name豪華な農場
+,
+Base.Ages.IberianEra_Finish西暦1050年
 �
 (Base.Resources.hero.OttoVonBismarck_Desc�オットー・フォン・ビスマルクの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 S
@@ -5491,10 +5491,10 @@ L
 Base.UnitTypes.Ranged_Name	射撃兵
 �
 $Base.Resources.hero.SirLancelot_Desc�ランスロット卿の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-6
-,Base.Continents.continent.EasternValley_Name東谷
 x
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
+6
+,Base.Continents.continent.EasternValley_Name東谷
 C
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Name小作農場
 e
@@ -5507,26 +5507,26 @@ L
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_2_Name攻城兵兵舎
 I
 9Base.Technologies.Technology_Mayas_SpiritualAncestry_Name祖霊信仰
-E
-/Base.Units.Unit_ClassicGreece_Player_Siege_Nameギリシャ弩砲
 f
 >Base.Buildings.Building_ClassicGreece_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
+E
+/Base.Units.Unit_ClassicGreece_Player_Siege_Nameギリシャ弩砲
 D
 4Base.Units.Unit_MinoanEra_Minoan_SarissaHurlers_Name長槍使い
 <
 /Base.Abilities.hero_battle_ability.Shaolin_Name	龍撃蹴
 B
 2Base.Buildings.Building_StoneAge_Farm_Rural_3_Name小作農場
-<
-&Base.Regions.region.DesertDelta_3_Name夕暮れの要塞
 Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_2_Name円形劇場
+<
+&Base.Regions.region.DesertDelta_3_Name夕暮れの要塞
 R
 <Base.Technologies.Technology_IberianEra_ImprovedFishing_Name釣技術の向上
-?
-#Base.Units.Unit_AlbertEinstein_Nameアインシュタイン
 �
 7Base.Units.Unit_IberianEra_Player_OrderOfCalatrava_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
+?
+#Base.Units.Unit_AlbertEinstein_Nameアインシュタイン
 )
 Base.BuildingTypes.default_Name建物
 @
@@ -5539,16 +5539,16 @@ D
 1Base.Buildings.Building_Egypt_Home_Premium_6_Name豪華な住宅
 F
 3Base.Buildings.Building_Vikings_Home_Premium_3_Name豪華な住宅
-M
-@Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	木工房
 V
 CBase.Technologies.Technology_HighMiddleAges_TournamentJousting_Name馬上槍試合
+M
+@Base.Buildings.Building_AgeOfTheFranks_Workshop_Carpenter_1_Name	木工房
 l
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_4_Desc0隣の建物の灌漑用水を大幅に増やす
-J
-7Base.Buildings.Building_ClassicGreece_Home_Small_2_Name小さな住宅
 �
 Base.Units.Unit_Shaolin_Desc�寺に人々が集まり、雪庭福裕の教えに耳を傾ける。宋代に名を馳せた禅僧であり、その深い精神的洞察と教えによって広く知られる。<br><br>曹洞宗の復興において重要な役割を果たし、瞑想と気づきを重んじ、直接的な体験と個人の悟りを説いた。その教えは多くの弟子を惹きつけ、禅仏教の広がりに大きく貢献した。<br><br>また、武術の発展にも影響を与えたとされ、中国各地の武芸者を少林寺に招き、ともに修練を重ね、一つの武術体系を築いた。その後、少林寺は「武術の発祥地」として語り継がれるようになった。雪庭福裕の志は、今もなお無数の型や技の中に息づいている。
+J
+7Base.Buildings.Building_ClassicGreece_Home_Small_2_Name小さな住宅
 B
 /Base.Buildings.Building_Egypt_Home_Small_2_Name小さな住宅
 H
@@ -5591,14 +5591,14 @@ E
 2Base.Buildings.Building_StoneAge_Home_Small_2_Name小さな住宅
 Q
 ABase.Technologies.Technology_KingdomOfSicily_MarketEconomics_Name市場取引
-M
-=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_Name騎兵兵舎
 =
 0Base.Units.Unit_FeudalAge_Player_Longbowmen_Name	大弓兵
-}
-Base.Resources.shadow_dial_DescZヒーロー昇進に使用する<style=uncommon>アンコモン</style>な昇進素材。
+M
+=Base.Buildings.Building_ClassicGreece_Barracks_Cavalry_1_Name騎兵兵舎
 N
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Name攻城兵兵舎
+}
+Base.Resources.shadow_dial_DescZヒーロー昇進に使用する<style=uncommon>アンコモン</style>な昇進素材。
 L
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_2_Name畜産農場
 I
@@ -5635,10 +5635,10 @@ c
 ABase.Buildings.Building_KingdomOfSicily_Workshop_Carpenter_1_Desc衣裳箪笥を生産する
 ?
 #Base.Resources.hero.Pythagoras_Nameピタゴラスの精髄
-X
-<Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Name小規模な文化遺産
 R
 BBase.Technologies.Technology_HighMiddleAges_GunpowderWeaponry_Name火薬兵器
+X
+<Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Name小規模な文化遺産
 ?
 2Base.Technologies.Technology_IberianEra_Masia_Name	農村館
 N
@@ -5659,10 +5659,10 @@ B
 FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>近接攻撃</style>杖で現在のターゲットを打ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。
 L
 $Base.Resources.hero.LeifErikson_Name$レイフ・エリクソンの精髄
-p
-3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
 >
 %Base.BuildingGroups.papyrusPress_Nameパピルス製造所
+p
+3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
 h
 Base.Resources.saffron_DescIサフランはレベル4以上のスパイス工房で生産できる。
 t
@@ -5707,10 +5707,10 @@ L
 'Base.Resources.hero.EgyptianVizier_Desc{イムホテプの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_3_Name噴水
-g
-9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_1_Desc*ギリシャ騎兵をアンロックする
 .
 $Base.Resources.planks_TechnologyName板材
+g
+9Base.Buildings.Building_MinoanEra_Barracks_Cavalry_1_Desc*ギリシャ騎兵をアンロックする
 K
 8Base.Buildings.Building_IberianEra_Barracks_Siege_1_Name攻城兵兵舎
 B
@@ -5805,10 +5805,10 @@ U
 3Base.Technologies.Technology_China_DynasticLaw_Name	王朝法
 �
 5Base.Buildings.Building_EarlyRome_Home_Average_2_DescLたくさんのコインを生産し、都市に労働者を2人追加する
-7
-$Base.Resources.ceramic_treasure_Name陶器の宝物
 P
 =Base.Technologies.Technology_MinoanEra_CeramicArmorcraft_Name陶器鎧製作
+7
+$Base.Resources.ceramic_treasure_Name陶器の宝物
 E
 8Base.Technologies.Technology_KingdomOfSicily_Piazza_Name	市広場
 X
@@ -5827,10 +5827,10 @@ QBase.AbilityDescriptions.hero_battle_ability_description.ArtemisiaIOfCaria_1_Na
 'Base.Units.Unit_GreekMathematician_Nameユークリッド
 �
 'Base.Units.Unit_LudwigVanBeethoven_Desc�オーケストラを整え、アリアを奏でよう！ルートヴィヒ・ヴァン・ベートーヴェンが登場する！１８世紀末から１９世紀初頭のドイツの偉大な作曲家で、クラシック音楽とロマン派音楽を繋げた人物として知られている。<br><br>その革新性と圧倒的な影響力で知られ、９つの交響曲をはじめ、ピアノ協奏曲や弦楽四重奏など、多くの名作を生み出した。ウィーンに移り住むと、その卓越した才能がすぐに広く認められることとなった。聴力を失っても創作を続け、『交響曲第９番』をはじめとする数々の傑作を残した。<br><br>ベートーヴェンの遺産は、音楽を通して深い感情と複雑さを表現し続けたことにあり、その影響は今なお色あせることがない。おそらく、音楽史上最も有名な二小節も、この天才の手によるものだろう。
-d
-9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc'隣の建物の灌漑用水を増やす
 N
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_3_Name射撃兵兵舎
+d
+9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc'隣の建物の灌漑用水を増やす
 ;
 Base.Units.Unit_VikingJarl_Name赤毛のエイリーク
 G
@@ -5839,8 +5839,8 @@ V
 :Base.Technologies.Technology_IberianEra_FjordDominion_Nameフィヨルドの統治
 ?
 &Base.Regions.region.DesertDelta_6_Nameスパルタの中心
-E
-2Base.Abilities.hero_battle_ability.LadyKasuga_NameMoonlight Favor
+B
+2Base.Abilities.hero_battle_ability.LadyKasuga_Name月の導き
 \
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Name極小規模な文化遺産
 u
@@ -5863,10 +5863,10 @@ LBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_10_Name�
 6Base.Technologies.Technology_ByzantineEra_Tillage_Name耕起
 -
 Base.Ages.ByzantineEra_Decade西暦330年
-x
-1Base.Buildings.Building_Arabia_Home_Medium_1_DescCディルハムを生産し、都市に労働者2人を追加する
 p
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
+x
+1Base.Buildings.Building_Arabia_Home_Medium_1_DescCディルハムを生産し、都市に労働者2人を追加する
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Cleopatra_1_Name�<style=ability_label>精神支配・強化</style>ホルスの目を敵ユニットの最大集団に向け、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃速度が<style=basestat>{attack_speed_percentage}</style>上昇する。
 [
@@ -5881,10 +5881,10 @@ L
 9Base.Buildings.Building_ClassicGreece_Farm_Premium_1_Name豪華な農場
 Z
 ABase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianSiege_Nameカロリング弩砲
-C
-3Base.TreasureHuntDifficultiesPanel.RecommendedPower推奨戦力
 I
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_6_Name水ポンプ
+C
+3Base.TreasureHuntDifficultiesPanel.RecommendedPower推奨戦力
 X
 *Base.Resources.hero.NapoleonBonaparte_Name*ナポレオン・ボナパルトの精髄
 s
@@ -5973,8 +5973,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Na
 Base.Ages.ComingSoon_Name近日公開！
 U
 5Base.TreasureHuntDifficultiesPanel.ExhaustionDuration疲労状態：{0}回休戦 
-J
-:Base.Technologies.Technology_ByzantineEra_Polyculture_Name複合栽培
+D
+:Base.Technologies.Technology_ByzantineEra_Polyculture_Name混作
 @
 6Base.Technologies.Technology_KingdomOfSicily_Tome_Name書物
 J
@@ -5987,8 +5987,8 @@ BBase.Buildings.Building_ByzantineEra_Barracks_HeavyInfantry_1_Name重歩兵�
 )Base.Units.Unit_QueenSeondeokOfSilla_Desc�新羅の善徳女王と共に、星を空へと還そう！７世紀、古代朝鮮初の女王として即位した善徳は、貧しい者、病める者、年老いた者を守る政策を打ち出し、慈愛をもって民を治めた。<br> <br>卓越した外交手腕と深い信仰心、そして優雅さを備え、戦と平和の舵を巧みに取った新羅は、同盟の締結、巨大な仏塔の建立、天文台の建設によって繁栄を極める。その功績は『三国遺事』などの歴史書に詳しく記されている。<br><br>善徳女王が遺した真の遺産は、朝鮮半島そのものである。唐との同盟を通じて統一への礎を築き、後の文化的開花へとつながる種を蒔いた。伝説によれば、彼女は未来を予知する力を持ち、カエルの鳴き声や花の絵から運命を読み取ったともいう。「秋になれば、カラスが牛の角に止まる」そう語り残された謎めいた予言、その真意を読み解ける者は、果たして現れるのだろうか？
 E
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Name大ホール
-9
-"Base.Regions.SpartasLastStand_NameSparta's Last Stand
+A
+"Base.Regions.SpartasLastStand_Nameスパルタ最後の戦い
 ?
 &Base.Resources.hero.PakalTheGreat_Nameパカル王の精髄
 �
@@ -6013,10 +6013,10 @@ I
 6Base.Technologies.Technology_Mayas_FeatherMastery_Name羽根の熟練
 P
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_3_Nameパピルス工房
-N
-ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_Name	家畜祭
 >
 4Base.Technologies.Technology_ClassicGreece_Math_Name数学
+N
+ABase.Technologies.Technology_HighMiddleAges_LivestockFairage_Name	家畜祭
 E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_Name小作農場
 x
@@ -6041,10 +6041,10 @@ I
 'Base.Resources.hero.VincentVanGogh_Nameファン・ゴッホの精髄
 F
 0Base.Abilities.hero_battle_ability.YiSunSin_Name亀甲船の砲撃
-C
-0Base.Technologies.Technology_Mayas_Xocolatl_Name古代カカオ
 �
 Base.Units.Unit_RamsesII_Desc�戦車の轟音が大地を揺るがす。偉大なるラムセスが、その力を示す時が来た。紀元前１３世紀のファラオとして、ヒッタイト、ヌビア、リビアへの遠征で名を馳せ、カデシュの戦いではヒッタイトと歴史上初の和平条約の一つを結んだ。<br><br>軍事的な功績に加え、壮大な建築事業を推進し、アブ・シンベル神殿やラムセウムといった記念碑を築き、その名を永遠に刻んだ。<br><br>エジプト史上、最も偉大な王の一人とされ、６６年に及ぶ治世は文化や建築に計り知れない影響を与えた。ギリシャ人はラムセスを「オジマンディアス」と呼び、その名は詩の中で不滅となった。ラムセスを前にしたなら、ひざまずくしかない！
+C
+0Base.Technologies.Technology_Mayas_Xocolatl_Name古代カカオ
 N
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_Name木組構造
 D
@@ -6053,10 +6053,10 @@ q
 0Base.Buildings.Building_Mayas_Home_Priest_3_Desc=カカオ豆を生産し、都市に職人を2人追加する
 Q
 ;Base.Technologies.Technology_FeudalAge_OpenFieldSystem_Name開放耕地制度
-X
-3Base.Buildings.Building_Mayas_Aviary_Premium_3_Desc!山ほどの羽根を生産する
 G
 %Base.Resources.hero.TribalHealer_Name洞窟一族のナヤの精髄
+X
+3Base.Buildings.Building_Mayas_Aviary_Premium_3_Desc!山ほどの羽根を生産する
 G
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_3_Name	絹工房
 x
@@ -6073,10 +6073,10 @@ V
 @Base.Buildings.Building_ClassicGreece_Special_HeroAcademy_1_Nameヒーロー学堂
 �
  Base.Resources.hero.Dracula_Desc�ヴラド・ドラキュラの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-&
-Base.UnitTypes.Infantry_Name歩兵
 M
 =Base.Buildings.Building_ClassicGreece_Workshop_Artisan_1_Name職人工房
+&
+Base.UnitTypes.Infantry_Name歩兵
 p
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc0カロリング投石機をアンロックする
 y
@@ -6129,10 +6129,10 @@ B
 5Base.Abilities.hero_battle_ability.BessieColeman_Name	煙幕弾
 I
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_Name職人工房
-X
-EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_Name砂岩の基礎
 4
 Base.Resources.hero.Menes_Nameメネスの精髄
+X
+EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_Name砂岩の基礎
 0
 #Base.BuildingGroups.stoneMason_Name	石工房
 O
@@ -6155,10 +6155,10 @@ G
 4Base.Units.Unit_ByzantineEra_Mayas_QueenXochitl_Name刃の舞い手
 L
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Name小さな井戸
-/
-"Base.Resources.cape_TechnologyName	マント
 9
 #Base.Resources.herbal_poultice_Name癒やしの湿布
+/
+"Base.Resources.cape_TechnologyName	マント
 x
 #Base.Resources.material_temple_DescQ神殿系の世界遺産のアップグレードに使用する特別な素材。
 i
@@ -6213,8 +6213,8 @@ r
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 G
 =Base.Buildings.Building_BronzeAge_Collectable_SchoolV2_1_Name学校
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>Shield| Buff</style>Lady Kasuga imbues the power of Moonlight into an ally, granting them a shield worth <style=basestat>{shield_value}</style> of her base damage and increasing their critical strike chance by <style=basestat>{crit_chance_buff}</style>. The critical chance buff lasts for <style=basestat>{crit_chance_buff_duration}</style>.
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>シールド・強化</style>味方1人に月光の力を与え、自身の基礎ダメージの<style=basestat>{shield_value}</style>分のシールドを付与し、さらに<style=basestat>{crit_chance_buff_duration}</style>の間、クリティカル率を<style=basestat>{crit_chance_buff}</style>上昇させる。
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_1_Name�<style=ability_label>近接攻撃・出血</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。
 =
@@ -6223,12 +6223,12 @@ b
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc'隣の建物の灌漑用水を増やす
 7
 -Base.Units.Unit_BronzeAge_Player_Archers_Name弓兵
-K
-8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_Name射撃兵兵舎
-I
-'Base.Resources.blue_crest_superior_Name青色の優れたクレスト
 v
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_Desc<歩兵ユニットは前列で最も効果を発揮する。
+I
+'Base.Resources.blue_crest_superior_Name青色の優れたクレスト
+K
+8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_Name射撃兵兵舎
 G
 1Base.Abilities.hero_battle_ability.Spartacus_Name残忍な剣闘士
 K
@@ -6244,9 +6244,9 @@ K
 9
 /Base.Technologies.Technology_Egypt_Storage_Name倉庫
 O
-*Base.Resources.hero.ArtemisiaIOfCaria_Name!アルテミシア１世の精髄
-O
 6Base.Abilities.hero_battle_ability.OttomanGeneral_Nameオスマンの堅守
+O
+*Base.Resources.hero.ArtemisiaIOfCaria_Name!アルテミシア１世の精髄
 �
 Base.Units.Unit_JoanOfArc_Desc�旗を高く掲げ、気持ちはさらに高く！歴史を変えたオルレアンの少女、ジャンヌ・ダルク。信念と献身で軍を導き、戦局を一変させた。農民の少女から軍の指導者へと成長し、神の声に導かれていると信じていた。<br><br>象徴的な旗を掲げ、フランス軍を鼓舞したジャンヌは、特にオルレアンの戦いで大きな勝利を収めた。その情熱と決意は、信仰、戦争、フランスそのものの象徴となった。<br><br>勇気の象徴として今も語り継がれており、どんな出自であれ、誰もが数千人を鼓舞できることを教えてくれる。イギリス軍によって命を奪われるはずだったが、処刑の代わりに誤って時空ポータルを開いてしまい、過去へと送り込まれ、そこでアインシュタインと出会うこととなった。
 �
@@ -6263,10 +6263,10 @@ I
 +Base.Units.Unit_MinoanEra_Player_Siege_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
 H
 8Base.Technologies.Technology_FeudalAge_SinewBacking_Name腱の補強
-[
-<Base.Technologies.Technology_IberianEra_VikingConsensus_Nameヴァイキングの連携
 F
 0Base.Units.Unit_TreasureHunt_Blue_Marauders_Name蒼天の襲撃隊
+[
+<Base.Technologies.Technology_IberianEra_VikingConsensus_Nameヴァイキングの連携
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>無敵・強化</style>味方ユニット全体に<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力を自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 O
@@ -6286,15 +6286,15 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<sty
 G
 7Base.Buildings.Building_IberianEra_Farm_Domestic_3_Name畜産農場
 J
-7Base.Technologies.Technology_Mayas_CurativeRituals_Name治癒の儀式
+7Base.Technologies.Technology_Mayas_CurativeRituals_Name治療の儀式
 Q
 >Base.Buildings.Building_KingdomOfSicily_Barracks_Ranged_1_Name射撃兵兵舎
 2
 (Base.BuildingGroups.averageGoldMine_Name金鉱
-M
-:Base.Buildings.Building_HighMiddleAges_Home_Average_3_Name大きな住宅
 O
 <Base.Buildings.Building_HighMiddleAges_Barracks_Siege_1_Name攻城兵兵舎
+M
+:Base.Buildings.Building_HighMiddleAges_Home_Average_3_Name大きな住宅
 B
 )Base.Regions.region.VolcanicJungle_2_Name黒曜石の闘技場
 �
@@ -6309,28 +6309,28 @@ NBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_15_Name
 %Base.BuildingGroups.maskSculptor_Name仮面工房
 Y
 @Base.Buildings.Building_ClassicGreece_CultureSite_Premium_1_Name豪華な文化遺産
-J
-:Base.Technologies.Technology_ClassicGreece_SilverRing_Name銀の指輪
 6
 &Base.Regions.region.FrozenFjord_6_Name黒の野原
-@
-'Base.Units.Unit_LudwigVanBeethoven_Nameベートーヴェン
+J
+:Base.Technologies.Technology_ClassicGreece_SilverRing_Name銀の指輪
 7
 'Base.Cities.City_Mayas_SayilPalace_Nameマヤ帝国
+@
+'Base.Units.Unit_LudwigVanBeethoven_Nameベートーヴェン
 �
 *Base.Resources.hero.AztecTlacateccatl_Desc�クアウテモックの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
 #Base.Resources.frankish_fibula_Descf特定のフランク王国時代の技術を研究するために使われる、中世の宝飾品。
 @
 3Base.Technologies.Technology_China_InkAndBrush_Name	筆と墨
-p
-?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 s
 2Base.Buildings.Building_Vikings_Home_Worker_2_Desc=ペニーを生産し、都市に労働者を2人追加する
-h
-7Base.Buildings.Building_Mayas_RitualSite_Premium_5_Desc-隣の建物の幸福度を大幅に上げる
+p
+?Base.Buildings.Building_ByzantineEra_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 �
 $Base.Resources.ceramic_treasure_Descy陶器の宝物は加工された資源で、レベル1以上の遠征桟橋と豪華な水夫の港で生産できる。
+h
+7Base.Buildings.Building_Mayas_RitualSite_Premium_5_Desc-隣の建物の幸福度を大幅に上げる
 I
 <Base.Technologies.Technology_KingdomOfSicily_SiegeTower_Name	攻城塔
 $
@@ -6345,10 +6345,10 @@ W
 ABase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineArcher_Nameビザンツ弓兵
 e
 =Base.Buildings.Building_RomanEmpire_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
-5
-Base.Units.Unit_MaoriChief_Nameポタタウ１世
 s
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
+5
+Base.Units.Unit_MaoriChief_Nameポタタウ１世
 '
 Base.Ages.StoneAge_Name石器時代
 H
@@ -6385,20 +6385,20 @@ F
 :Base.Buildings.Building_BronzeAge_Barracks_Infantry_1_Desc剣兵をアンロックする
 D
 1Base.Buildings.Building_China_Home_Average_3_Name大きな住宅
-T
-DBase.Technologies.Technology_KingdomOfSicily_ArmoredCrossbowmen_Name重装弩兵
 R
 BBase.Technologies.Technology_KingdomOfSicily_PolychromeInlays_Name多色象嵌
+T
+DBase.Technologies.Technology_KingdomOfSicily_ArmoredCrossbowmen_Name重装弩兵
 G
 7Base.Technologies.Technology_China_DeepFoundations_Name深い基礎
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>踏みつけ・弱体化・魂リンク</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>低下させる。さらに、味方ユニット全体は魂リンク状態となり、<style=basestat>{duration_link}</style>の間、受けたダメージを分担する。
 5
 Base.Heroes.hero.Spartacus_Nameスパルタクス
-P
-=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_Name射撃兵兵舎
 >
 7Base.Technologies.Technology_AgeOfTheFranks_Spades_Name鋤
+P
+=Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_Name射撃兵兵舎
 N
 8Base.Technologies.Technology_ClassicGreece_Concrete_Nameコンクリート
 M
@@ -6497,10 +6497,10 @@ T
  Base.BuildingTypes.workshop_Name工房
 9
 #Base.Units.Unit_AshokaTheGreat_Nameアショーカ王
-B
-5Base.Buildings.Building_China_RiceFarm_Average_4_Name	米農場
 p
 2Base.Buildings.Building_Vikings_Home_Sailor_5_Desc:ペニーを生産し、都市に水夫を2人追加する
+B
+5Base.Buildings.Building_China_RiceFarm_Average_4_Name	米農場
 b
 =Base.Buildings.Building_KingdomOfSicily_Barracks_Siege_1_Desc!攻城塔をアンロックする
 D
@@ -6523,16 +6523,16 @@ J
 :Base.Buildings.Building_FeudalAge_Barracks_Infantry_2_Name歩兵兵舎
 M
 :Base.Technologies.Technology_BronzeAge_AncestralValor_Name祖先の武勇
-R
-9Base.Buildings.Building_Vikings_SailorPort_Premium_1_Name豪華な水夫の港
 P
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_Desc黒曜石を生産する
+R
+9Base.Buildings.Building_Vikings_SailorPort_Premium_1_Name豪華な水夫の港
 K
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_Name騎兵兵舎
 u
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
-�
-"Base.Regions.SpartasLastStand_Desc�It is August 480 BC, the Second Persian invasion of Greece is underway. King Xerxes of Persia leads a massive army, intent on conquering all of Greece. The narrow pass at Thermopylae, the 'Hot Gates', becomes the chosen battleground. Here, King Leonidas of Sparta stands with 300 of his finest warriors, ready to defend their land to the last breath.<br><br>For days, they withstand wave after wave of Persian attacks, their phalanx holding firm against the overwhelming numbers. Leonidas fights not just for Sparta, but for all of Greece, knowing that their stand buys crucial time for the Greek city-states to unite against the invader. <br><br>In our world, their valiant sacrifice became a symbol of courage and resistance. They were never meant to die on that day. Now, their fate is in your hands. The Heroes of History are summoned to tip the scales of destiny. With your arrival, Leonidas and his 300 are not merely holding the line. They are poised to rewrite history.
+�	
+"Base.Regions.SpartasLastStand_Desc�	紀元前４８０年８月。ペルシアによるギリシア侵攻の第二波が進行し、王クセルクセスは全ギリシアの征服を目指して、圧倒的な軍勢を率いながら前進を続けていた。戦場となったのは、狭く険しい「熱い通路」として知られるテルモピュライだ。そこにスパルタ王レオニダスが三百人隊を率いて立ちはだかり、最後の一息まで祖国を守り抜く覚悟を固めていた。<br><br>幾日にもわたってペルシアの猛攻が続いたが、密集したファランクスは崩れず、抗戦はギリシア全土のために貴重な時間を稼ぐ役割を果たした。戦いの意味は、もはやスパルタ一国にとどまらなかった。<br><br>私たちの知る歴史では、この犠牲は勇気と抵抗の象徴となった。だが、歴史は今まさに書き換えられようとしている。歴史のヒーローたちが呼び出され、運命の歯車が静かに軋み始める。三百人隊の盾は、もはや時間を稼ぐためだけのものではない。ここから反撃が始まるのだ。
 '
 Base.Resources.porcelain_Name磁器
 C
@@ -6603,10 +6603,10 @@ $
 /Base.TreasureHuntDifficulties.Difficulty_4_Name熟練者１
 .
 !Base.Heroes.hero.QinShiHuang_Name	始皇帝
-�
-1Base.Buildings.Building_China_Home_Average_1_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
 [
 ?Base.Buildings.Building_RomanEmpire_CultureSite_Moderate_1_Name中規模な文化遺産
+�
+1Base.Buildings.Building_China_Home_Average_1_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
 �
 Base.Units.Unit_LouisXIV_Desc�ヴェルサイユ宮殿から現れたのは、ルイ１４世！「太陽王」として知られるこの１７世紀のフランス王は、絶対王政を確立したことで有名だ。権力を王冠に集中させ、その象徴となったのが豪華なヴェルサイユ宮殿で、ここは宮廷の中心地となった。<br><br>ルイ１４世は軍事遠征と領土拡大を通じてフランスの影響力を強化しただけでなく、芸術を支援し、多くの壮大な作品を生み出すために資金を提供した。これにより、フランスは文化的、政治的にも支配的な強国として名を馳せることとなった。<br><br>バレエダンサーとしても知られ、戦争の指導者、父親、芸術の保護者としての顔を持ち、自らを国家の中心と考えていた複雑な人物として記憶されている。その虚栄心は広く知られており、ヴェルサイユ宮殿にはなんと３５枚の鏡が飾られていたという。
 i
@@ -6631,10 +6631,10 @@ D
 "Base.Units.Unit_UlyssesSGrant_Nameユリシーズ・グラント
 �
 Base.Resources.hero.Menes_Descuメネスの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-L
-9Base.Buildings.Building_ClassicGreece_Home_Average_1_Name大きな住宅
 �
 )Base.Resources.iberian_torc_necklace_DescZ特定のイベリア時代の技術を研究するために使われる黄金の首輪。
+L
+9Base.Buildings.Building_ClassicGreece_Home_Average_1_Name大きな住宅
 C
 0Base.Units.Unit_RomanEmpire_Player_Princeps_Nameローマ剣兵
 J
@@ -6695,10 +6695,10 @@ B
 &Base.Units.Unit_PhilipIIOfMacedon_Nameフィリッポス２世
 V
 :Base.Technologies.Technology_Vikings_VikingHomesteads_Nameヴァイキング農場
-W
-ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_Nameヒーロー学堂
 [
 3Base.TreasureHuntDifficultiesPanel.CurrentlyPlaying$現在プレイ中のレベル：{0}
+W
+ABase.Buildings.Building_HighMiddleAges_Special_HeroAcademy_1_Nameヒーロー学堂
 E
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_1_Nameオアシス
 W
@@ -6751,10 +6751,10 @@ E
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_Name	暦職人
 |
 3Base.Units.Unit_ByzantineEra_Player_Trapezites_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
-�
-$Base.Resources.cloisonne_enamel_Desc�特定の高中世時代の技術を研究するために使われる、ガラス象嵌で彩られた色鮮やかな装飾金工品。
 Z
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_Desc蚕の繭を生産する
+�
+$Base.Resources.cloisonne_enamel_Desc�特定の高中世時代の技術を研究するために使われる、ガラス象嵌で彩られた色鮮やかな装飾金工品。
 S
 %Base.Resources.hero.RomanPraetor_Name*アエミリア・テルティアの精髄
 �
@@ -6843,26 +6843,26 @@ I
 !Base.Units.Unit_TribalHealer_Name洞窟一族のナヤ
 N
 8Base.Technologies.Technology_IberianEra_MeadMastery_Name蜂蜜酒の熟練
-�
-5Base.Buildings.Building_FeudalAge_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 �
 Base.Resources.hero.Jester_Descxトリブレの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+�
+5Base.Buildings.Building_FeudalAge_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 =
 -Base.Continents.continent.VolcanicJungle_Name火山樹海
 A
 1Base.Abilities.hero_battle_ability.AnneBonny_Name渦の旋律
 �
 Base.Units.Unit_MaoriChief_Desc�歴史のヒーローたちに加わるのは、初代マオリ王、ポタタウ・テ・フェロフェロ！１９世紀のニュージーランドでワイカト部族の首長として名を馳せ、卓越した指導力と戦の腕前でイギリスとの交渉を行い、多くの民を統一した。<br><br>変革の時代に生まれ、ヨーロッパ人の入植が進む中で、マオリの土地と文化を守るために尽力。年を重ねると、マオリ王運動から王位を受けることを提案され、最終的にそれを受け入れ、マオリの団結と主権の強化を目指した。<br><br>テ・ウェロウェロは、マオリの歴史において今もなお重要な存在であり、変化の時代に民を守り、マオリとしてのアイデンティティを象徴する人物となった。その築いた王朝は現在も続いている。
-Y
-CBase.Technologies.Technology_AgeOfTheFranks_EliteRiderTraining_Name精鋭騎兵訓練
 E
 2Base.Buildings.Building_Vikings_Home_Worker_2_Name労働者の家
+Y
+CBase.Technologies.Technology_AgeOfTheFranks_EliteRiderTraining_Name精鋭騎兵訓練
 p
 2Base.Buildings.Building_Vikings_Home_Sailor_2_Desc:ペニーを生産し、都市に水夫を2人追加する
-�
- Base.Resources.silk_threads_Descu絹糸は糸加工所で蚕の繭から加工される中間資源で、絹織物を作るために使用される。
 �
 #Base.Resources.hero.LadyKasuga_Descu春日局の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+�
+ Base.Resources.silk_threads_Descu絹糸は糸加工所で蚕の繭から加工される中間資源で、絹織物を作るために使用される。
 a
 <Base.Buildings.Building_MinoanEra_Workshop_StoneMason_1_Desc!大理石の胸像を生産する
 D
@@ -6881,10 +6881,10 @@ I
 "Base.Resources.material_naval_Name海洋素材
 -
 Base.Units.Unit_Achilles_Nameアキレス
-�
-"Base.Resources.byzantine_ewer_Desc�特定のビザンツ帝国時代の技術を研究するために使われる、芸術的に作られた花瓶型の水差し。
 J
 :Base.Technologies.Technology_AgeOfTheFranks_Goatherds_Nameヤギ牧者
+�
+"Base.Resources.byzantine_ewer_Desc�特定のビザンツ帝国時代の技術を研究するために使われる、芸術的に作られた花瓶型の水差し。
 K
 ;Base.Buildings.Building_IberianEra_Barracks_Infantry_2_Name歩兵兵舎
 T
@@ -6899,24 +6899,24 @@ D
 0Base.Units.Unit_RomanEmpire_Player_Ballista_Nameバリスタ
 D
 +Base.Units.Unit_BronzeAge_Player_Siege_Nameスリング投石機
+C
+'Base.Units.Unit_MargaretIOfDenmark_Nameマーガレット１世
 t
 3Base.Buildings.Building_FeudalAge_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 x
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
-C
-'Base.Units.Unit_MargaretIOfDenmark_Nameマーガレット１世
 U
 <Base.Buildings.Building_EarlyRome_CultureSite_Premium_1_Name豪華な文化遺産
-8
-(Base.BuildingGroups.oasisIrrigation_Nameオアシス
 �
 $Base.Units.Unit_NubianMercenary_Desc�ヌビアのカンダケたちは、クシュ王国を統べ、帝国に抗い、壮大な遺産を築いた女王たち。最初のカンダケが即位したのは紀元前２００年、最後のカンダケは紀元前４００年とされ、宮廷でも戦場でも統率力を示した。<br><br>それぞれが異なる偉業を残している。アマニレナスはローマ領エジプトへ侵攻し、クシュを守るためにローマ軍を撤退させた。アマニタレはメロエにピラミッドを築き、シャナクダケトは壮麗な神殿を建設した。<br><br>カンダケたちの足跡は、現代の視点から見ても驚くほど進んだ社会の姿を映し出している。どのカンダケの名が響くのか…それは歴史が示している。
+8
+(Base.BuildingGroups.oasisIrrigation_Nameオアシス
+O
+?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_Name磁器工房
 V
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Nameプロドロモイ騎兵
 �
 >Base.Units.Unit_KingdomOfSicily_Player_ArmoredCrossbowmen_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
-O
-?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_1_Name磁器工房
 &
 Base.Resources.chili_Name	唐辛子
 K
@@ -6925,18 +6925,18 @@ Z
 5Base.Buildings.Building_BronzeAge_Farm_Premium_1_Desc!山ほどの食料を生産する
 ?
 5Base.Buildings.Building_Egypt_GoldMine_Average_6_Name金鉱
-�
-:Base.Buildings.Building_Vikings_FishingPier_Average_1_Desc`漁桟橋では船を送り出し、魚を捕って空腹の労働者と水夫に提供する。
 >
 1Base.Technologies.Technology_Vikings_Tattoos_Name	入れ墨
+�
+:Base.Buildings.Building_Vikings_FishingPier_Average_1_Desc`漁桟橋では船を送り出し、魚を捕って空腹の労働者と水夫に提供する。
 Q
 /Base.Resources.UpgradeToken_SkyDiscOfNebra_Nameネブラディスクの刻印
 F
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_1_Name小作農場
-1
-Base.Ages.ClassicGreece_Decade紀元前880年
 �
 1Base.Buildings.Building_China_Home_Average_3_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
+1
+Base.Ages.ClassicGreece_Decade紀元前880年
 u
 4Base.Buildings.Building_IberianEra_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
 c
@@ -6951,10 +6951,10 @@ I
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
 _
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_1_Desc弩兵をアンロックする
-L
-9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_Name王室の弩兵
 K
 5Base.Buildings.Building_China_RiceFarm_Premium_4_Name豪華な米農場
+L
+9Base.Units.Unit_KingdomOfSicily_NormanSicily_RogerII_Name王室の弩兵
 L
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_3_Name騎兵兵舎
 D
@@ -6967,10 +6967,10 @@ I
 9Base.Technologies.Technology_China_RammedEarthHouses_Name版築住宅
 �
 "Base.Resources.hero.DArtagnan_Desc~ダルタニャンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-�	
-"Base.Units.Unit_PakalTheGreat_Desc�文明の礎を築いた王、パカルとともに歩もう。７世紀のマヤで即位したこの王は、６８年もの長きにわたってパレンケを治め、死後は都市の神として祀られることとなった。前王とその後継者が相次いで世を去るなか、わずか１２歳で王に即位し、混乱の中で都市の未来を背負うことになる。<br><br>治世の中で関係を整え、領土を広げ、都市を発展させながら、政治と建築の両面に力を注いでいった。王族の血を引いていなかったため、自身の正統性を示すために、パレンケの宮殿をはじめとする多くの建築に、歴代の王の功績を刻み込んでいった。<br><br>石に歴史を刻んだその人物が、やがて自身の物語を石に残すことになったのは、ごく自然な流れだったのかもしれない。自身の墓所として建てられた「碑文の神殿」には、マヤの歴史を讃える巨大な石板が並び、その中心には繊細な装飾が施された石棺が静かに納められている。
 ?
  Base.Heroes.hero.VanHelsing_Nameヴァン・ヘルシング
+�	
+"Base.Units.Unit_PakalTheGreat_Desc�文明の礎を築いた王、パカルとともに歩もう。７世紀のマヤで即位したこの王は、６８年もの長きにわたってパレンケを治め、死後は都市の神として祀られることとなった。前王とその後継者が相次いで世を去るなか、わずか１２歳で王に即位し、混乱の中で都市の未来を背負うことになる。<br><br>治世の中で関係を整え、領土を広げ、都市を発展させながら、政治と建築の両面に力を注いでいった。王族の血を引いていなかったため、自身の正統性を示すために、パレンケの宮殿をはじめとする多くの建築に、歴代の王の功績を刻み込んでいった。<br><br>石に歴史を刻んだその人物が、やがて自身の物語を石に残すことになったのは、ごく自然な流れだったのかもしれない。自身の墓所として建てられた「碑文の神殿」には、マヤの歴史を讃える巨大な石板が並び、その中心には繊細な装飾が施された石棺が静かに納められている。
 F
 6Base.Buildings.Building_BronzeAge_Farm_Domestic_3_Name畜産農場
 �
@@ -7019,16 +7019,16 @@ H
 )Base.Resources.event_nautical_tokens_Name錨コイン
 C
 'Base.Heroes.hero.ArtemisiaIOfCaria_Nameアルテミシア１世
-G
-"Base.Heroes.hero.RomanPraetor_Name!アエミリア・テルティア
 9
 &Base.Regions.region.TeslaStormRed_Name赤ストーム
+G
+"Base.Heroes.hero.RomanPraetor_Name!アエミリア・テルティア
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与えると同時に、味方ユニットを<style=basestat>{duration}</style>の間、始皇帝の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
 X
 'Base.Resources.hero.AbrahamLincoln_Name-エイブラハム・リンカーンの精髄
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Recovery</style>The Sky Disc enhances the recovery of its wielder, improving all healing they receive by <style=basestat>{heal_amp}</style>
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>自己回復</style>ネブラディスクは、所持ヒーローの受ける回復量を<style=basestat>{heal_amp}</style>増加させる。
 [
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_Name挑戦ポイント
 t
@@ -7043,12 +7043,12 @@ X
 $Base.Heroes.hero.AshokaTheGreat_Nameアショーカ王
 �
 Base.Resources.wu_zhu_Descf五銖銭は中華都市の開発に欠かせない資源で、住宅で自動的に生成される。
-K
-5Base.Buildings.Building_China_RiceFarm_Average_4_Desc米を生産する
 B
 2Base.Buildings.Building_Vikings_Home_Sailor_5_Name水夫の家
-/
- Base.Units.Unit_Nostradamus_NameNostradamus
+9
+ Base.Units.Unit_Nostradamus_Nameノストラダムス
+K
+5Base.Buildings.Building_China_RiceFarm_Average_4_Desc米を生産する
 D
 7Base.Technologies.Technology_Vikings_SkaldicPoetry_Name	吟唱詩
 K
@@ -7081,10 +7081,10 @@ f
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_Desc'ローマ騎兵をアンロックする
 9
 #Base.Regions.region.Panganea_3_Name静けさの湿地
-K
-5Base.Abilities.hero_battle_ability.JaguarWarrior_Name密林の捕食者
 y
 Base.Resources.porcelain_DescX磁器は加工された資源で、レベル1以上の磁器工房で生産できる。
+K
+5Base.Abilities.hero_battle_ability.JaguarWarrior_Name密林の捕食者
 ?
 /Base.Units.Unit_MinoanEra_Minoan_KingMinos_Nameミノス王
 �
@@ -7127,10 +7127,10 @@ N
 ;Base.Technologies.Technology_FeudalAge_HeavyDrawWeight_Name強弓の張力
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_Name豪華な漁桟橋
-D
-1Base.Buildings.Building_China_Home_Average_1_Name大きな住宅
 0
 Base.Units.Unit_LouisXIV_Nameルイ１４世
+D
+1Base.Buildings.Building_China_Home_Average_1_Name大きな住宅
 D
 1Base.Buildings.Building_Mayas_Home_Premium_1_Name豪華な住宅
 U
@@ -7163,10 +7163,10 @@ OBase.BuildingCustomizations.BuildingCustomization_EventWinter_Home_Average_Name
 Base.Ages.BronzeAge_Start紀元前3000年
 <
 )Base.Resources.iberian_torc_necklace_Nameネックレス
-�
-8Base.Resources.UpgradeToken_TheAntikytheraMechanism_Desc�レジェンダリー遺物、<nobr><style=legendary>アンティキティラの機械</style></nobr>を強化するレアな資源。<br>遺物の粉とともに、一部のイベントから報酬として獲得できる。
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_6_Name水路
+�
+8Base.Resources.UpgradeToken_TheAntikytheraMechanism_Desc�レジェンダリー遺物、<nobr><style=legendary>アンティキティラの機械</style></nobr>を強化するレアな資源。<br>遺物の粉とともに、一部のイベントから報酬として獲得できる。
 P
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_Desc黒曜石を生産する
 K
@@ -7205,10 +7205,10 @@ p
 3Base.Buildings.Building_FeudalAge_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 5
 Base.Heroes.hero.IsabellaI_Nameイサベル１世
-�
-!Base.Units.Unit_LouisPasteur_Desc�微生物学の父ルイ・パストゥールと共に病と戦おう！１９世紀フランスを代表するこの科学者は、狂犬病ワクチンの開発、低温殺菌法の発明、病原菌説の提唱で歴史を変えた。<br><br> 最も知られるエピソードは、狂犬病に感染した９歳の少年ジョゼフ・マイスターへのワクチン投与だ。少年は数か月後も健康を維持し、その後1年でパストゥールが治療した３５０人のうち、発症者はわずか１人だった。だがこれは偉業の一端に過ぎない。牛乳やワインの加熱殺菌法を確立し、手術前の手洗い習慣を普及させ、パストゥール研究所を創設し、医学の礎を築いた。<br><br>現代でもその名は世界中の研究所や通りに刻まれるが、残された手記からは「独創性」を強調するためのデータの取捨選択や事実の歪曲が浮かび上がる。天才の光と影——科学の進歩に捧げた情熱と、栄光への執着が交錯する複雑な肖像が浮かび上がる。
 ^
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Desc!槍騎兵をアンロックする
+�
+!Base.Units.Unit_LouisPasteur_Desc�微生物学の父ルイ・パストゥールと共に病と戦おう！１９世紀フランスを代表するこの科学者は、狂犬病ワクチンの開発、低温殺菌法の発明、病原菌説の提唱で歴史を変えた。<br><br> 最も知られるエピソードは、狂犬病に感染した９歳の少年ジョゼフ・マイスターへのワクチン投与だ。少年は数か月後も健康を維持し、その後1年でパストゥールが治療した３５０人のうち、発症者はわずか１人だった。だがこれは偉業の一端に過ぎない。牛乳やワインの加熱殺菌法を確立し、手術前の手洗い習慣を普及させ、パストゥール研究所を創設し、医学の礎を築いた。<br><br>現代でもその名は世界中の研究所や通りに刻まれるが、残された手記からは「独創性」を強調するためのデータの取捨選択や事実の歪曲が浮かび上がる。天才の光と影——科学の進歩に捧げた情熱と、栄光への執着が交錯する複雑な肖像が浮かび上がる。
 I
 6Base.Abilities.hero_battle_ability.EgyptianVizier_Name宰相の呪縛
 ,
@@ -7245,10 +7245,10 @@ M
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_2_Name攻城兵兵舎
 H
 &Base.Units.Unit_AlexanderTheGreat_Nameアレクサンドロス大王
-G
-:Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	漁桟橋
 K
 5Base.Buildings.Building_China_RiceFarm_Premium_6_Name豪華な米農場
+G
+:Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	漁桟橋
 E
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_Name	暦職人
 �
@@ -7277,22 +7277,22 @@ R
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 �
 1Base.Buildings.Building_Mayas_Home_Premium_3_DescY山ほどのカカオ豆を生産し、都市に労働者2人と職人1人を追加する
-�
-=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 ;
 Base.Units.Unit_Dracula_Nameヴラド・ドラキュラ
+�
+=Base.Buildings.Building_AgeOfTheFranks_Special_Furnace_1_Descc残火を生産する。余分な資源を溶解することで追加の残火を獲得できる。
 F
 3Base.Buildings.Building_EarlyRome_Home_Small_3_Name小さな住宅
-F
-0Base.Buildings.Building_Mayas_Quarry_Jade_6_Nameヒスイ採掘場
 ]
 2Base.Resources.UpgradeToken_MaskOfTutankhamun_Name'ツタンカーメンの仮面の刻印
+F
+0Base.Buildings.Building_Mayas_Quarry_Jade_6_Nameヒスイ採掘場
 R
 ?Base.Technologies.Technology_AgeOfTheFranks_ProductionBoom_Name生産ブーム
-$
-Base.Ages.Mayas_Nameマヤ帝国
 �
 Base.Resources.spessartine_Desc`特定のフランク王国時代の技術を研究するために使われる貴重な宝石。
+$
+Base.Ages.Mayas_Nameマヤ帝国
 r
 1Base.Buildings.Building_Egypt_Home_Premium_5_Desc=デベンを生産し、都市に労働者を1人追加する
 �
@@ -7313,10 +7313,10 @@ A
 4Base.Units.Unit_ClassicGreece_Player_Cataphract_Name	重騎兵
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>踏みつけ・シールド・強化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、自身の基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
-5
-Base.Resources.marble_bust_Name大理石の胸像
 W
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_Desc太陽の石を生産する
+5
+Base.Resources.marble_bust_Name大理石の胸像
 !
 Base.HeroClass.Champion勇者
 \
@@ -7329,36 +7329,36 @@ C
 3Base.Technologies.Technology_Vikings_MeadHalls_Name蜂蜜酒館
 N
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_2_Name蚕の湿地
-B
-/Base.Buildings.Building_China_Home_Small_3_Name小さな住宅
 K
 5Base.Units.Unit_TreasureHunt_Green_DonkeyRaiders_Name翠緑の騎馬隊
+B
+/Base.Buildings.Building_China_Home_Small_3_Name小さな住宅
 K
 5Base.Technologies.Technology_Egypt_PapyrusScroll_Nameパピルス巻物
 `
 ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_Name極小規模な文化遺産
 L
 9Base.Buildings.Building_ClassicGreece_Home_Average_3_Name大きな住宅
-W
-5Base.Buildings.Building_China_RiceFarm_Premium_1_Desc山ほどの米を生産する
 /
 Base.HeroClass.SingleStriker単体攻撃者
+W
+5Base.Buildings.Building_China_RiceFarm_Premium_1_Desc山ほどの米を生産する
 M
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_3_Name糸加工所
-q
-0Base.Buildings.Building_Mayas_Home_Priest_5_Desc=カカオ豆を生産し、都市に職人を2人追加する
 f
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_4_Desc'カオリンから粘土を生産する
+q
+0Base.Buildings.Building_Mayas_Home_Priest_5_Desc=カカオ豆を生産し、都市に職人を2人追加する
 H
 5Base.Buildings.Building_EarlyRome_Home_Average_2_Name大きな住宅
 _
 7Base.Buildings.Building_EarlyRome_Barracks_Siege_1_Desc$槍投石機をアンロックする
 d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_4_Desc'山ほどのパピルスを生産する
-N
-;Base.Technologies.Technology_RomanEmpire_CircusMaximus_Name戦車競技場
 1
 $Base.Resources.charta_terrestre_Name	地図帳
+N
+;Base.Technologies.Technology_RomanEmpire_CircusMaximus_Name戦車競技場
 ^
 BBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianArcher_Nameカロリング斧投兵
 =
@@ -7383,10 +7383,10 @@ R
 9Base.Buildings.Building_IberianEra_Workshop_Scribe_1_Desc封蝋を生産する
 I
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_Name小さな家
-^
-KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_6_Name哲学者の館
 6
 #Base.BuildingGroups.workerHome_Name労働者の家
+^
+KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_6_Name哲学者の館
 W
 GBase.Technologies.Technology_KingdomOfSicily_CouchedSpearTechnique_Name槍構え術
 t
@@ -7499,10 +7499,10 @@ k
 OBase.Resources.BuildingPiece_Building_BronzeAge_Collectable_Amphitheatre_1_Name円形劇場のピース
 E
 &Base.Resources.red_crest_enhanced_Name赤色の強化クレスト
-V
-@Base.Technologies.Technology_AgeOfTheFranks_RegnumFrancorum_Nameフランク王国
 �
 5Base.Buildings.Building_EarlyRome_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
+V
+@Base.Technologies.Technology_AgeOfTheFranks_RegnumFrancorum_Nameフランク王国
 S
 :Base.Units.Unit_MinoanEra_EgyptianAcolytes_Dromedarii_Nameドロメダリ騎兵
 K
@@ -7549,10 +7549,10 @@ e
 5Base.Buildings.Building_StoneAge_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 H
 8Base.Technologies.Technology_KingdomOfSicily_Bazaar_Nameバザール
-w
-6Base.Buildings.Building_ByzantineEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.QueenBoudicca_1_Name�<style=ability_label>遠隔攻撃・気絶</style>最も遠いターゲットに槍を投げ、<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間気絶させる。ヒーローを優先する。
+w
+6Base.Buildings.Building_ByzantineEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 "
 Base.Resources.wool_Name羊毛
 [
@@ -7591,10 +7591,10 @@ O
 Base.Resources.headdress_DescZ頭飾りは加工された資源で、祭服工房と豪華な工房で生産できる。
 �
 %Base.Resources.hero.TribalHealer_Desc�洞窟一族のナヤの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
-�
-Base.Resources.kaolin_Desc{カオリンは加工資源を作るために使われる重要な資源で、カオリン採石場から採掘される。
 n
 1Base.Buildings.Building_DawnAge_Farm_Rural_1_Desc9短期間にわたって少量の食料を生産する。
+�
+Base.Resources.kaolin_Desc{カオリンは加工資源を作るために使われる重要な資源で、カオリン採石場から採掘される。
 R
 ?Base.Buildings.Building_EarlyRome_Barracks_HeavyInfantry_2_Name重歩兵兵舎
 �
@@ -7655,12 +7655,12 @@ G
 7Base.Buildings.Building_IberianEra_Farm_Domestic_1_Name畜産農場
 B
 5Base.Buildings.Building_China_RiceFarm_Average_2_Name	米農場
-`
-ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Descカオリンを生産する
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>嵐術・出血</style>最も近い敵ユニット3体の方向に矢を発射する。矢が通過した経路上のすべての敵に<style=basestat>{damage}</style>ダメージを与え、さらに<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。ヒーローを優先する。
 p
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc=デベンを生産し、都市に労働者を1人追加する
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>嵐術・出血</style>最も近い敵ユニット3体の方向に矢を発射する。矢が通過した経路上のすべての敵に<style=basestat>{damage}</style>のダメージを与え、さらに<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。ヒーローを優先する。
+`
+ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Descカオリンを生産する
 z
 Base.Resources.ankh_Desc^アンクは加工された資源で、レベル1以上の金細工工房で生産できる。
 �
@@ -7679,10 +7679,10 @@ d
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc'隣の建物の灌漑用水を増やす
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
-Z
-;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Name極小規模な文化遺産
 _
 7Base.Buildings.Building_Mayas_RitualSite_Average_6_Desc$隣の建物の幸福度を上げる
+Z
+;Base.Buildings.Building_FeudalAge_CultureSite_Little_1_Name極小規模な文化遺産
 O
 -Base.Resources.rift_token_vikings_common_Nameヴァイキングの反物質
 h
@@ -7695,10 +7695,10 @@ M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_Name遠征桟橋
 C
 *Base.Units.Unit_StoneAge_Player_Siege_Nameスリング投石機
-?
-5Base.Technologies.Technology_Vikings_FishingNets_Name漁網
 �
 Base.Resources.hero.Mozart_Desc~モーツァルトの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+?
+5Base.Technologies.Technology_Vikings_FishingNets_Name漁網
 \
 @Base.Buildings.Building_ByzantineEra_CultureSite_Moderate_1_Name中規模な文化遺産
 �
@@ -7715,15 +7715,15 @@ m
 M
 %Base.Resources.hero.AttilaTheHun_Name$フン族のアッティラの精髄
 @
-'Base.BuildingGroups.premiumCulture_Name豪華な文化遺産
-@
 0Base.BuildingGroups.collectableAmphitheatre_Name円形劇場
+@
+'Base.BuildingGroups.premiumCulture_Name豪華な文化遺産
 I
 9Base.Buildings.Building_BronzeAge_Barracks_Cavalry_1_Name騎兵兵舎
-6
-#Base.Resources.tunic_TechnologyNameチュニック
 s
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_Desc<歩兵ユニットは前列で最も効果を発揮する。
+6
+#Base.Resources.tunic_TechnologyNameチュニック
 Z
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Name豪華な文化遺産
 I
@@ -7766,10 +7766,10 @@ X
 Base.Resources.column_Desc:石柱はレベル3以上の石工房で生産できる。
 �
 0Base.Units.Unit_FeudalAge_Player_KingsGuard_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
-�
-1Base.Units.Unit_ClassicGreece_Player_Toxotai_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 ^
 BBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianArcher_Nameメロヴィング弓兵
+�
+1Base.Units.Unit_ClassicGreece_Player_Toxotai_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 o
 Base.HeroClass.Genius_DescQ天才は攻撃ヒーローで、爆発を引き起こす力に優れている。
 3
