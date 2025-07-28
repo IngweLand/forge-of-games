@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations;
 using Ingweland.Fog.Application.Client.Web.Models;
@@ -15,12 +17,19 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 {
+    private readonly Dictionary<string, object> _defaultAnalyticsParameters = new()
+        {{AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.CITY_INSPIRATIONS}};
+
     private CancellationTokenSource _cts = new();
+
     private IReadOnlyCollection<PlayerCitySnapshotBasicViewModel> _inspirations = [];
     private bool _isDisposed;
     private bool _isLoading = true;
     private CityInspirationsSearchFormViewModel? _searchFormViewModel;
     private CityInspirationsSearchFormRequest? _searchRequest;
+
+    [Inject]
+    public IInspirationsPageAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     public ICityInspirationsUiService CityInspirationsUiService { get; set; }
@@ -78,7 +87,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
         }
 
         var request = await BuildSearchRequest();
-        await GetBattles(request);
+        await GetInspirations(request);
     }
 
     protected virtual async ValueTask DisposeAsyncCore()
@@ -97,7 +106,8 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
     private async Task SearchFormOnSearchClick()
     {
         var request = await BuildSearchRequest();
-        var getBattlesTask = GetBattles(request);
+        AnalyticsService.TrackSearch(request, _defaultAnalyticsParameters);
+        var getBattlesTask = GetInspirations(request);
         await PersistenceService.SaveCityInspirationsRequestAsync(_searchRequest!);
         await getBattlesTask;
     }
@@ -128,7 +138,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
         };
     }
 
-    private async Task GetBattles(CityInspirationsSearchRequest request)
+    private async Task GetInspirations(CityInspirationsSearchRequest request)
     {
         if (_isDisposed)
         {
@@ -206,12 +216,15 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     private async Task OpenCity(int snapshotId)
     {
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters);
         var city = await GetCity(snapshotId);
         if (city == null)
         {
+            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters);
             return;
         }
 
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters);
         CityPlannerNavigationState.City = city;
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }

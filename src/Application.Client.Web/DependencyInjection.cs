@@ -28,8 +28,6 @@ using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core;
-using Ingweland.Fog.Application.Core.Factories;
-using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Client.Web;
@@ -125,6 +123,7 @@ public static class DependencyInjection
         services.AddScoped<IPlayerProfilePageAnalyticsService, PlayerProfilePageAnalyticsService>();
         services.AddScoped<IHeroComponentAnalyticsService, HeroComponentAnalyticsService>();
         services.AddScoped<IBattleLogPageAnalyticsService, BattleLogPageAnalyticsService>();
+        services.AddScoped<IInspirationsPageAnalyticsService, InspirationsPageAnalyticsService>();
 
         services.AddScoped<CityPlannerSettings>();
 

@@ -2,23 +2,28 @@ namespace Ingweland.Fog.Application.Client.Web.Analytics;
 
 public static class AnalyticsParams
 {
+    public const string AGE_ID = "age_id";
     public const string AVATAR_SOURCE = "avatar_source";
     public const string BATTLE_DEFINITION_ID = "battle_definition_id";
     public const string BATTLE_TYPE = "battle_type";
+    public const string CITY_ID = "city_id";
+    public const string EXPANSIONS = "expansions";
     public const string FOG_ALLIANCE_ID = "fog_alliance_id";
     public const string FOG_BATTLE_ID = "fog_battle_id";
     public const string FOG_PLAYER_ID = "fog_player_id";
-    public const string LEVEL = "level";
-    public const string LOCATION = "location";
-    public const string SOURCE = "source";
-    public const string STATE = "state";
-    public const string UNIT_ID = "unit_id";
     public const string HERO1 = "hero1";
     public const string HERO2 = "hero2";
     public const string HERO3 = "hero3";
     public const string HERO4 = "hero4";
     public const string HERO5 = "hero5";
     public const string HEROES = "heroes";
+    public const string LEVEL = "level";
+    public const string LOCATION = "location";
+    public const string PREMIUM = "premium";
+    public const string SEARCH_PREFERENCE = "search_preference";
+    public const string SOURCE = "source";
+    public const string STATE = "state";
+    public const string UNIT_ID = "unit_id";
 
     public static class Values
     {
