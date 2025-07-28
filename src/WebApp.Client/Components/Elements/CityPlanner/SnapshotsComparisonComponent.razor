@@ -1,8 +1,6 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots
-@using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
-@using Microsoft.Extensions.Localization
-@inject IHohStorageIconUrlProvider StorageIconUrlProvider
+@inject IAssetUrlProvider AssetUrlProvider
 <MudDialog Style="max-width: max-content">
     <DialogContent>
         <table class="table">
@@ -16,16 +14,17 @@
             <tbody>
             <tr>
                 <td colspan="@(Data.SnapshotNames.Count + 1)">
-                    <img src="@StorageIconUrlProvider.GetIconUrl(string.Empty)" class="icon"/></td>
+                    <img src="@AssetUrlProvider.GetHohIconUrl("icon_storage")" class="icon"/></td>
             </tr>
             @foreach (var row in Data.Production)
             {
                 <tr class="user-select-none">
 
-                    <td ><img src="@row.Header" class="icon"/></td>
+                    <td><img src="@row.Header" class="icon"/></td>
                     @foreach (var cell in row.Cells)
                     {
-                        <td class="row-label" style="background-color: @(cell.IsLargest?"#CFFCEF":"transparent")">@cell.Value</td>
+                        <td class="row-label"
+                            style="background-color: @(cell.IsLargest ? "#CFFCEF" : "transparent")">@cell.Value</td>
                     }
 
                 </tr>
@@ -42,4 +41,5 @@
 
     [Parameter]
     public SnapshotsComparisonViewModel Data { get; set; }
+
 }

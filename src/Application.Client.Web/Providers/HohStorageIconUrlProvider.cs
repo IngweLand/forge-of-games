@@ -16,10 +16,10 @@ public class HohStorageIconUrlProvider : IHohStorageIconUrlProvider
     {
         var id = resourceId switch
         {
-            "coins" => "icon_gold_storage",
-            "food" => "icon_food_storage",
-            "good" => "icon_good_storage",
-            _ => $"icon_storage",
+            "resource.coins" => "icon_gold_storage",
+            "resource.food" => "icon_food_storage",
+            "resource.good" => "icon_good_storage",
+            _ => "icon_storage",
         };
 
         return _assetUrlProvider.GetHohIconUrl(id);

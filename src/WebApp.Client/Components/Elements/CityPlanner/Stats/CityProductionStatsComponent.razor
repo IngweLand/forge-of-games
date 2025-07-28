@@ -1,11 +1,9 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Client.Web.Providers
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
-@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
-@inject IHohStorageIconUrlProvider StorageIconUrlProvider
+@inject IAssetUrlProvider AssetUrlProvider
 <div class="component-root">
     <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Production]" OnClick="OnHeaderClick"/>
     <MudCollapse Expanded="_expanded">
@@ -13,7 +11,7 @@
             <thead>
             <tr>
                 <th/>
-                <th><img src="@StorageIconUrlProvider.GetIconUrl(string.Empty)" class="resource-icon"/></th>
+                <th><img src="@AssetUrlProvider.GetHohIconUrl("icon_storage")" class="resource-icon"/></th>
                 <th>@Loc[FogResource.Common_1h]</th>
                 <th>@Loc[FogResource.Common_24hrs]</th>
             </tr>
@@ -37,10 +35,12 @@
 
     [Parameter]
     public required ProductionStatsViewModel Data { get; set; }
-    
+
     bool _expanded = true;
 
-    private void OnHeaderClick() {
+    private void OnHeaderClick()
+    {
         _expanded = !_expanded;
     }
+
 }

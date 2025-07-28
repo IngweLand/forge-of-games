@@ -104,8 +104,8 @@ public class PlayerCityService : IPlayerCityService
 
         var listOfGoods = await _listOfGoodsLazy.Value;
 
-        cityStats.Products.TryGetValue("coins", out var coins);
-        cityStats.Products.TryGetValue("food", out var food);
+        cityStats.Products.TryGetValue("resource.coins", out var coins);
+        cityStats.Products.TryGetValue("resource.food", out var food);
         var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
         var citySnapshot = new PlayerCitySnapshot
         {
@@ -173,7 +173,7 @@ public class PlayerCityService : IPlayerCityService
 
         var resourcesToIgnore = new HashSet<string>
         {
-            "coins", "food", "resource.mastery_points", "resource.hero_xp", "embers",
+            "resource.coins", "resource.food", "resource.mastery_points", "resource.hero_xp", "resource.embers",
         };
         set.ExceptWith(resourcesToIgnore);
         return set;
