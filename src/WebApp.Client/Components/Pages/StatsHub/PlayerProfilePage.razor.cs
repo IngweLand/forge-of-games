@@ -19,7 +19,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
     private CancellationTokenSource _cityFetchCts = new();
-    private Dictionary<string, object> _defaultParameters = [];
+    private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _fetchingCity;
     private bool _isDisposed;
     private PlayerProfileViewModel? _player;
@@ -76,7 +76,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             _player = await LoadWithPersistenceAsync(nameof(_player),
                 () => StatsHubUiService.GetPlayerProfileAsync(PlayerId));
 
-            _defaultParameters = new Dictionary<string, object>
+            _defaultAnalyticsParameters = new Dictionary<string, object>
             {
                 {AnalyticsParams.FOG_PLAYER_ID, _player!.Player.Id},
                 {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.PLAYER_PROFILE},
@@ -104,7 +104,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     private void OnPlayerClicked(int playerId)
     {
-        AnalyticsService.TrackEvent(AnalyticsEvents.NAVIGATE_PLAYER_PROFILE, _defaultParameters,
+        AnalyticsService.TrackEvent(AnalyticsEvents.NAVIGATE_PLAYER_PROFILE, _defaultAnalyticsParameters,
             new Dictionary<string, object> {{AnalyticsParams.SOURCE, AnalyticsParams.Values.Sources.PVP_BATTLE}});
 
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(playerId));
@@ -133,7 +133,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             return;
         }
 
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_BATTLE_STATS, _defaultParameters,
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_BATTLE_STATS, _defaultAnalyticsParameters,
             new Dictionary<string, object> {{AnalyticsParams.FOG_BATTLE_ID, battleStatsId}});
 
         _battleStatsCts = new CancellationTokenSource();
@@ -200,39 +200,39 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     private async Task VisitCity()
     {
-        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultParameters);
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters);
 
         await HandleCityOperation(city =>
             {
-                AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultParameters);
+                AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters);
 
                 CityPlannerNavigationState.City = city;
                 NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
                 return Task.CompletedTask;
             },
-            () => AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultParameters));
+            () => AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters));
     }
 
     private async Task ShowCityStats()
     {
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_INIT, _defaultParameters);
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_INIT, _defaultAnalyticsParameters);
 
         await HandleCityOperation(async city =>
             {
-                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultParameters);
+                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultAnalyticsParameters);
 
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveTempCities([city]);
                 NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
             },
-            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultParameters));
+            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters));
     }
 
     private void ToggleRankingChart()
     {
         _rankingChartIsExpanded = !_rankingChartIsExpanded;
 
-        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultParameters,
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PLAYER_RANKING_CHART, _rankingChartIsExpanded);
     }
 
@@ -240,7 +240,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     {
         _pvpChartIsExpanded = !_pvpChartIsExpanded;
 
-        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultParameters,
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PLAYER_PVP_RANKING_CHART, _pvpChartIsExpanded);
     }
 
@@ -259,19 +259,19 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     private void OnPlayerInfoAllianceClicked(int allianceId)
     {
-        AnalyticsService.TrackAllianceNavigation(AnalyticsEvents.NAVIGATE_ALLIANCE, _defaultParameters,
+        AnalyticsService.TrackAllianceNavigation(AnalyticsEvents.NAVIGATE_ALLIANCE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PLAYER_INFO_COMPONENT, allianceId);
     }
 
     private void OnAllianceClicked(int allianceId)
     {
-        AnalyticsService.TrackAllianceNavigation(AnalyticsEvents.NAVIGATE_ALLIANCE, _defaultParameters,
+        AnalyticsService.TrackAllianceNavigation(AnalyticsEvents.NAVIGATE_ALLIANCE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.ALLIANCE_LIST, allianceId);
     }
 
     private Task OnProfileSquadClicked(HeroProfileViewModel profile)
     {
-        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultParameters,
+        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.TOP_HEROES, profile.HeroUnitId);
 
         return OpenBattleSquadProfile(profile);
@@ -279,7 +279,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     private Task OnPvpBattleSquadClicked(BattleSquadViewModel squad)
     {
-        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultParameters,
+        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PVP_BATTLE, squad.HeroUnitId);
 
         return OpenBattleSquadProfile(squad);

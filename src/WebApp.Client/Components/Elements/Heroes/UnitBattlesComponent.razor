@@ -4,7 +4,8 @@
 <ClientSideComponent Class="fog-container" IsLoading="@_isLoading" Title="@Loc[FogResource.Unit_BattlesAndPerformance]">
     <Content>
         <div class="unit-battles-container">
-            <MudToggleGroup T="BattleType" Size="Size.Small" Value="@_selectedBattleType" ValueChanged="GetBattles"
+            <MudToggleGroup T="BattleType" Size="Size.Small" Value="@_selectedBattleType"
+                            ValueChanged="OnBattleTypeChanged"
                             Class="unit-battle-type-selector" Color="Color.Secondary">
                 @foreach (var battleTypeViewModel in _unitBattleTypes)
                 {
@@ -45,7 +46,7 @@
                         @foreach (var unitBattle in _unitBattles)
                         {
                             <tr @onclick="@(() => OpenBattle(unitBattle))">
-                                @if(!_isLoading)
+                                @if (!_isLoading)
                                 {
                                     <td>@unitBattle.Level.Title | @unitBattle.AbilityLevel</td>
                                     <td>@unitBattle.AttackValue</td>
@@ -58,7 +59,7 @@
                                 {
                                     <td colspan="6">
                                         <div Class="table-cell-placeholder">
-                                            <MudSkeleton  Animation="Animation.Wave" Width="100%" Height="100%" />
+                                            <MudSkeleton Animation="Animation.Wave" Width="100%" Height="100%"/>
                                         </div>
                                     </td>
                                 }
@@ -67,7 +68,7 @@
                         </tbody>
                     </table>
                 }
-                else if(!_isLoading)
+                else if (!_isLoading)
                 {
                     <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
                         @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]

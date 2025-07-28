@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Localization;
@@ -6,7 +8,6 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 
@@ -14,6 +15,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.Heroes;
 
 public partial class HeroComponent : ComponentBase
 {
+    private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private HeroProfileIdentifier? _initProfile;
     private bool _isVideoAvatarLoadFailed;
     private HeroProfileViewModel? _profile;
@@ -21,6 +23,12 @@ public partial class HeroComponent : ComponentBase
     private HeroLevelSpecs? _progressionTargetLevel;
     private IList<HeroLevelSpecs>? _progressionTargetLevels;
     private bool _showVideoAvatar;
+
+    [Parameter]
+    public string AnalyticsLocation { get; set; } = AnalyticsParams.Values.Locations.HERO_COMPONENT;
+
+    [Inject]
+    private IHeroComponentAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     private IHeroProfileIdentifierFactory HeroProfileIdentifierFactory { get; set; }
@@ -78,7 +86,17 @@ public partial class HeroComponent : ComponentBase
 
         _initProfile ??= InitProfile;
 
+        _defaultAnalyticsParameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.LOCATION, AnalyticsLocation},
+        };
+
         _profile = await HeroProfileUiService.GetHeroProfileAsync(InitProfile);
+        if (_profile != null)
+        {
+            _defaultAnalyticsParameters.Add(AnalyticsParams.UNIT_ID, _profile.HeroUnitId);
+        }
+
         await UpdateProgressionTargetLevels();
 
         StateHasChanged();
@@ -93,14 +111,25 @@ public partial class HeroComponent : ComponentBase
         }
     }
 
-    private async Task UpdateProgressionTargetLevels()
+    private void OnAbilityCalculatorTargetLevelChanged(int targetLevel)
     {
+        AnalyticsService.TrackEvent(AnalyticsEvents.PICK_ABILITY_TARGET_LEVEL, _defaultAnalyticsParameters,
+            new Dictionary<string, object> {{AnalyticsParams.LEVEL, targetLevel}});
+    }
+
+    private Task UpdateProgressionTargetLevels()
+    {
+        if (_profile == null)
+        {
+            return Task.CompletedTask;
+        }
+
         var targetLevels = _profile.HeroLevels.SkipWhile(l => l <= _profile.Level).ToList();
         if (targetLevels.Count == 0)
         {
             _progressionTargetLevels = null;
             _progressionTargetLevel = null;
-            return;
+            return Task.CompletedTask;
         }
 
         _progressionTargetLevels = targetLevels;
@@ -109,7 +138,33 @@ public partial class HeroComponent : ComponentBase
             _progressionTargetLevel = targetLevels[0];
         }
 
-        await OnProgressionTargetLevelChanged(_progressionTargetLevel!);
+        return UpdateProgressionCost();
+    }
+
+    private async Task UpdateProgressionCost()
+    {
+        if (_profile == null || _progressionTargetLevel == null)
+        {
+            return;
+        }
+
+        var request = new HeroProgressionCostRequest
+        {
+            HeroId = _profile.Identifier.HeroId,
+            CurrentLevel = _profile.Level,
+            TargetLevel = _progressionTargetLevel,
+        };
+
+        _progressionCost = await HeroProfileUiService.CalculateHeroProgressionCost(request);
+    }
+
+    private Task OnProgressionTargetLevelChanged(HeroLevelSpecs targetLevel)
+    {
+        _progressionTargetLevel = targetLevel;
+
+        AnalyticsService.TrackProgressionCalculatorEvent(_defaultAnalyticsParameters, _progressionTargetLevel);
+
+        return UpdateProgressionCost();
     }
 
     private Task OnLevelValueChanged(HeroLevelSpecs level)
@@ -146,19 +201,7 @@ public partial class HeroComponent : ComponentBase
         _profile = await HeroProfileUiService.GetHeroProfileAsync(identifier);
         await UpdateProgressionTargetLevels();
         await OnProfileUpdate.InvokeAsync(identifier);
-    }
-
-    private async Task OnProgressionTargetLevelChanged(HeroLevelSpecs targetLevel)
-    {
-        _progressionTargetLevel = targetLevel;
-        var request = new HeroProgressionCostRequest
-        {
-            HeroId = _profile.Identifier.HeroId,
-            CurrentLevel = _profile.Level,
-            TargetLevel = targetLevel,
-        };
-
-        _progressionCost = await HeroProfileUiService.CalculateHeroProgressionCost(request);
+        AnalyticsService.TrackHeroLevelChange(_defaultAnalyticsParameters, identifier);
     }
 
     private async Task ToggleAvatarSource()
@@ -170,6 +213,16 @@ public partial class HeroComponent : ComponentBase
 
         _showVideoAvatar = !_showVideoAvatar;
 
+        AnalyticsService.TrackEvent(AnalyticsEvents.TOGGLE_HERO_AVATAR_SOURCE, _defaultAnalyticsParameters,
+            new Dictionary<string, object>
+            {
+                {
+                    AnalyticsParams.AVATAR_SOURCE,
+                    _showVideoAvatar
+                        ? AnalyticsParams.Values.AvatarSources.VIDEO
+                        : AnalyticsParams.Values.AvatarSources.IMAGE
+                },
+            });
         if (OperatingSystem.IsBrowser())
         {
             var uiSettings = await PersistenceService.GetUiSettingsAsync();

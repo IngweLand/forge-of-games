@@ -20,10 +20,9 @@
 
         @if (_progressionCost != null)
         {
-                <HorizontalIconLabelComponent Item="_progressionCost"/>
+            <HorizontalIconLabelComponent Item="_progressionCost"/>
         }
     </div>
-   
 }
 
 @code {
@@ -51,6 +50,9 @@
     [EditorRequired]
     public required int CurrentLevel { get; set; }
 
+    [Parameter]
+    public EventCallback<int> OnTargetLevelChanged { get; set; }
+
     protected override async Task OnParametersSetAsync()
     {
         _targetLevels = Levels.Skip(CurrentLevel).ToList();
@@ -66,17 +68,22 @@
             _targetLevel = first;
         }
 
-        await OnProgressionTargetLevelChanged(_targetLevel);
+        await Update();
     }
 
     private async Task OnProgressionTargetLevelChanged(int targetLevel)
     {
         _targetLevel = targetLevel;
+        await OnTargetLevelChanged.InvokeAsync(_targetLevel);
+    }
+
+    private async Task Update()
+    {
         var request = new AbilityCostRequest
         {
             HeroId = HeroId,
             CurrentLevel = CurrentLevel,
-            TargetLevel = targetLevel,
+            TargetLevel = _targetLevel,
         };
 
         _progressionCost = await HeroProfileUiService.CalculateAbilityCostAsync(request);

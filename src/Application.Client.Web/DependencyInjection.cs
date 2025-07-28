@@ -123,6 +123,7 @@ public static class DependencyInjection
         services.AddScoped<ITopHeroesUiService, TopHeroesUiService>();
         services.AddScoped<IAnalyticsService, GoogleAnalyticsService>();
         services.AddScoped<IPlayerProfilePageAnalyticsService, PlayerProfilePageAnalyticsService>();
+        services.AddScoped<IHeroComponentAnalyticsService, HeroComponentAnalyticsService>();
 
         services.AddScoped<CityPlannerSettings>();
 

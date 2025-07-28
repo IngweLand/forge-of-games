@@ -14,7 +14,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 
 public partial class CcHeroPage : CcProfilePageBase
 {
-    private HeroProfileIdentifier _heroProfileIdentifier;
+    private HeroProfileIdentifier? _heroProfileIdentifier;
 
     [Inject]
     private ICcProfileUiService CcProfileUiService { get; set; }

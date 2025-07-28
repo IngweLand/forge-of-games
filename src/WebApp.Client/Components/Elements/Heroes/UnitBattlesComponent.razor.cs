@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -20,6 +22,13 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
     private BattleType _selectedBattleType;
     private IReadOnlyCollection<UnitBattleViewModel>? _unitBattles;
     private IReadOnlyCollection<UnitBattleTypeViewModel> _unitBattleTypes = [];
+
+    [Parameter]
+    public IReadOnlyDictionary<string, object> AdditionalAnalyticsParams { get; set; } =
+        new Dictionary<string, object>();
+
+    [Inject]
+    private IAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     private IAssetUrlProvider AssetUrlProvider { get; set; }
@@ -54,6 +63,20 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         }
     }
 
+    private void TrackEvent(string eventName, Dictionary<string, object> eventParams)
+    {
+        var allParameters = new Dictionary<string, object>(AdditionalAnalyticsParams);
+        foreach (var eventParam in eventParams)
+        {
+            allParameters[eventParam.Key] = eventParam.Value;
+        }
+
+        allParameters[AnalyticsParams.UNIT_ID] = UnitId;
+        allParameters[AnalyticsParams.SOURCE] = AnalyticsParams.Values.Sources.UNIT_BATTLES_COMPONENTS;
+
+        _ = AnalyticsService.TrackEvent(eventName, allParameters);
+    }
+
     protected override async Task OnInitializedAsync()
     {
         if (!OperatingSystem.IsBrowser())
@@ -76,6 +99,14 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         _lastUnitId = UnitId;
 
         await GetBattles(_selectedBattleType);
+    }
+
+    private Task OnBattleTypeChanged(BattleType battleType)
+    {
+        TrackEvent(AnalyticsEvents.SELECT_HERO_BATTLE_TYPE, new Dictionary<string, object>
+            {{AnalyticsParams.BATTLE_TYPE, battleType.ToString()}});
+
+        return GetBattles(battleType);
     }
 
     private async Task GetBattles(BattleType battleType)
@@ -116,9 +147,15 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         {
             return;
         }
+
         var query = BattleSearchRequestFactory.CreateQueryParams(unitBattle.BattleDefinitionId, unitBattle.Difficulty,
             unitBattle.BattleType, [unitBattle.UnitId, unitBattle.UnitId],
             await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
+
+        TrackEvent(AnalyticsEvents.NAVIGATE_HERO_BATTLE, new Dictionary<string, object>
+        {
+            {AnalyticsParams.BATTLE_DEFINITION_ID, unitBattle.BattleDefinitionId},
+        });
 
         NavigationManager.NavigateTo(
             NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);

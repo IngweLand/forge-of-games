@@ -1,4 +1,5 @@
 @page "/command-center/profiles/{profileId}/heroes/{heroId}"
+@using Ingweland.Fog.Application.Client.Web.Analytics
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @inherits CcProfilePageBase
@@ -7,7 +8,8 @@
     <div class="cc-page-container">
         <CcPageTitle Title="@Profile!.Name"/>
 
-        <HeroComponent ShowBarracksSelector="false" InitProfile="@_heroProfileIdentifier" OnProfileUpdate="SaveProfile"/>
+        <HeroComponent ShowBarracksSelector="false" InitProfile="@_heroProfileIdentifier" OnProfileUpdate="SaveProfile"
+                       AnalyticsLocation="@AnalyticsParams.Values.Locations.COMMAND_CENTER_PROFILE"/>
     </div>
 }
 

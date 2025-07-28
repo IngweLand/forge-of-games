@@ -145,7 +145,8 @@
             <span
                 class="progression-cost-title">@Loc[FogResource.Tools_AbilityCostCalculator_Name]</span>
             <AbilityCostCalculatorComponent HeroId="@_profile.Identifier.HeroId" Levels="@_profile.AbilityLevels"
-                                            CurrentLevel="@_profile.Identifier.AbilityLevel"/>
+                                            CurrentLevel="@_profile.Identifier.AbilityLevel"
+                                            OnTargetLevelChanged="OnAbilityCalculatorTargetLevelChanged"/>
         </div>
 
 
@@ -160,7 +161,7 @@
             </div>
         }
 
-        <UnitBattlesComponent UnitId="@_profile.HeroUnitId"/>
+        <UnitBattlesComponent UnitId="@_profile.HeroUnitId" AdditionalAnalyticsParams="_defaultAnalyticsParameters"/>
 
         <WikiAbstractComponent SearchString="@_profile.Name"/>
 
