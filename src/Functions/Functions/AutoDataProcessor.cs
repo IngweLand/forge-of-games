@@ -53,9 +53,6 @@ public class AutoDataProcessor(
         var playerAggregates = new List<PlayerAggregate>(32000);
         var allianceAggregates = new List<AllianceAggregate>(16000);
         var allConfirmedAllianceMembers = new List<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int>)>();
-        var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
-        var allBattleResults = new List<(string WorldId, BattleSummary BattleSummary)>();
-        var allBattleStats = new List<(string worldId, BattleStats battleStats)>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("AutoDataProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
@@ -105,19 +102,8 @@ public class AutoDataProcessor(
             allConfirmedAllianceMembers.AddRange(confirmedAllianceMembers);
 
             var pvpBattles = await GetPvpBattles(gameWorld.Id, date);
-            allPvpBattles.AddRange(pvpBattles);
             logger.LogInformation("{count} pvp battles retrieved for game world {gameWorldId}",
                 pvpBattles.Count, gameWorld.Id);
-
-            var battleResults = await GetBattleResults(gameWorld.Id, date);
-            allBattleResults.AddRange(battleResults);
-            logger.LogInformation("{count} battle results retrieved for game world {gameWorldId}",
-                battleResults.Count, gameWorld.Id);
-
-            var battleStats = await GetBattleStats(gameWorld.Id, date);
-            allBattleStats.AddRange(battleStats);
-            logger.LogInformation("{count} battle stats retrieved for game world {gameWorldId}",
-                battleStats.Count, gameWorld.Id);
 
             // var athAllianceRankingWakeups =
             //     await GetWakeupsAsync(
@@ -266,18 +252,6 @@ public class AutoDataProcessor(
         logger.LogInformation("Starting player age history service update");
         await ExecuteSafeAsync(() => playerAgeHistoryService.UpdateAsync(playerAggregates), "");
         logger.LogInformation("Completed player age history service update");
-
-        logger.LogInformation("Starting pvp battles service update");
-        await ExecuteSafeAsync(() => pvpBattleService.AddAsync(allPvpBattles), "");
-        logger.LogInformation("Completed pvp battles service update");
-
-        logger.LogInformation("Starting battles service update");
-        await ExecuteSafeAsync(() => battleService.AddAsync(allBattleResults), "");
-        logger.LogInformation("Completed battles service update");
-
-        logger.LogInformation("Starting battle stats update");
-        await ExecuteSafeAsync(() => battleStatsService.AddAsync(allBattleStats), "");
-        logger.LogInformation("Completed battles stats service update");
     }
 
     private async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey)

@@ -109,8 +109,14 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
             })
             .Where(src => src.Squads.Count > 0)
             .ToList();
-        context.BattleStats.AddRange(newStats);
-        await context.SaveChangesAsync();
+        
+        foreach (var chunk in newStats.Chunk(100))
+        {
+            logger.LogInformation("Processing chunk of battle stats with {ChunkSize} items", chunk.Length);
+            context.BattleStats.AddRange(chunk);
+            await context.SaveChangesAsync();
+        }
+        
         logger.LogInformation("SaveChangesAsync completed, added {AddedBattleStatsCount} battle stats", newStats.Count);
     }
 

@@ -72,8 +72,14 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
             })
             .Where(b => b != null)
             .ToList();
-        context.PvpBattles.AddRange(newBattles!);
-        await context.SaveChangesAsync();
+        
+        foreach (var chunk in newBattles.Chunk(200))
+        {
+            logger.LogInformation("Processing chunk of pvp battles with {ChunkSize} items", chunk.Length);
+            context.PvpBattles.AddRange(chunk!);
+            await context.SaveChangesAsync();
+        }
+        
         logger.LogInformation("SaveChangesAsync completed, added {AddedBattlesCount} pvp battles", newBattles.Count);
     }
 
