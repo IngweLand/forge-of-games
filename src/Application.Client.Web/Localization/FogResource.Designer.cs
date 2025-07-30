@@ -2517,7 +2517,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you find our tools helpful, consider supporting the project with a small donation..
+        ///   Looks up a localized string similar to If you find our tools helpful, consider supporting the project with a donation..
         /// </summary>
         public static string SupportUs_Message {
             get {
@@ -2549,6 +2549,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string SupportUs_PageTitle {
             get {
                 return ResourceManager.GetString("SupportUs.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We are on Patreon.
+        /// </summary>
+        public static string SupportUs_Patreon_Title {
+            get {
+                return ResourceManager.GetString("SupportUs.Patreon.Title", resourceCulture);
             }
         }
         
