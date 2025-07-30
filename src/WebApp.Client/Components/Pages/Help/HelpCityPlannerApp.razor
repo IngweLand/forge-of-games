@@ -1,0 +1,281 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>City Planner App Help Guide</h3>
+
+    <div class="help-info">
+        The City Planner is a layout management tool that allows you to design, organize, and optimize your city. You
+        can place and rearrange buildings, manage city properties, and experiment with layouts using snapshots and the
+        inventory system.
+    </div>
+
+    <div class="help-step">
+        <h5>Main Layout Area</h5>
+        <p>
+            The central working area represents your city bounds. You can <strong>open or close expansions</strong> by
+            clicking on them. Buildings can be placed inside open expansions or outside the city limits.
+        </p>
+        <p>
+            Each building type has a distinct color. Buildings include two labels: <strong>name</strong> and <strong>level</strong>.
+            Cultural buildings do not display names and are colored violet.
+        </p>
+        <p>
+            Buildings whose production is affected by happiness have a small <strong>happiness indicator disc</strong>.
+            A fully violet disc means maximum happiness boost; a quarter-filled disc means 25% of the maximum bonus.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Top Toolbar</h5>
+        <p>
+            The top toolbar includes key tools:
+        </p>
+        <ul style="line-height: 2">
+            <li><span class="material-symbols-outlined help-icon-inline">left_panel_close</span>, <span
+                    class="material-symbols-outlined help-icon-inline">left_panel_open</span>, <span
+                    class="material-symbols-outlined help-icon-inline">right_panel_close</span>, <span
+                    class="material-symbols-outlined help-icon-inline">right_panel_open</span> — Show/hide left and
+                right panels
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">dashboard</span> — Navigate to <a
+                    href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH">City Planner Dashboard</a></li>
+            <li><span class="material-symbols-outlined help-icon-inline">save</span> — Save city layout</li>
+            <li><span class="material-symbols-outlined help-icon-inline">zoom_out</span>, <span
+                    class="material-symbols-outlined help-icon-inline">zoom_in</span> — Zoom out/in
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">fit_screen</span> — Fit layout to screen</li>
+            <li><span class="material-symbols-outlined help-icon-inline">cached</span> — Rotate selected building</li>
+            <li><span class="material-symbols-outlined help-icon-inline">delete</span> — Delete selected building</li>
+            <li><span class="material-symbols-outlined help-icon-inline">select_all</span> — Select all buildings of the
+                same group (e.g., all small homes)
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">shelves</span> — Toggle Inventory</li>
+            <li><span class="material-symbols-outlined help-icon-inline">stat_minus_1</span> — Move selected building to
+                Inventory
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">stat_minus_2</span> — Move selected building
+                group to Inventory
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">stat_minus_3</span> — Move all buildings to
+                Inventory
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">delete_sweep</span> — Remove all buildings from
+                Inventory
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Keyboard Shortcuts</h5>
+        <p>
+            City Planner supports a few useful keyboard shortcuts:
+        </p>
+        <ul>
+            <li><kbd>Delete</kbd> / <kbd>Backspace</kbd> — Delete the selected building</li>
+            <li><kbd>R</kbd> — Rotate the selected building</li>
+            <li><kbd>D</kbd> — Duplicate the selected building</li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Construction Menu (Left Panel)</h5>
+        <p>
+            The left panel lists all available buildings for your current city, organized by type. When Inventory is
+            active, this panel displays stored buildings instead.
+        </p>
+        <p>
+            To place a building, click its item. It will be placed in the first fitting position (starting from the
+            top-left), or outside the layout if no space is found.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Right Panel Overview</h5>
+        <p>
+            The right panel is a dynamic area that provides detailed information and tools depending
+            on the menu you select. At the top of the panel, you'll find a vertical list of icon buttons — each one
+            opens a different view inside the panel. Only one menu is active at a time.
+        </p>
+        <p>
+            The following menus are available:
+        </p>
+        <ul>
+            <li>
+                <span class="material-symbols-outlined help-icon-inline">analytics</span>
+                <strong>Properties</strong> — Shows detailed stats for selected buildings and city-wide data.
+            </li>
+            <li>
+                <span class="material-symbols-outlined help-icon-inline">view_list</span>
+                <strong>Snapshots</strong> — Manage saved layout states and compare city production between them. <a
+                    href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_SNAPSHOTS_PATH">Snapshots help guide.</a>
+            </li>
+            <li>
+                <i class="fas fa-calculator help-icon-inline-font-awesome"></i>
+                <strong>Calculators</strong> — Building cost calculator.
+            </li>
+            <li>
+                <span class="material-symbols-outlined help-icon-inline">settings</span>
+                <strong>Settings</strong> — Layout visibility options, city rename, share, and delete actions.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Properties <span class="material-symbols-outlined help-icon-inline">analytics</span></h5>
+        <p>
+            This view displays detailed information about the selected building, selected group of buildings, or the
+            entire city. The content changes depending on what is selected.
+        </p>
+        <ul>
+            <li><strong>Selected Building</strong>:
+                <ul>
+                    <li>Building age</li>
+                    <li>Building name</li>
+                    <li>Level dropdown — allows changing the building's level</li>
+                    <li><strong>Info section</strong> — shows general building information such as size</li>
+                    <li><strong>Production section</strong> (if applicable):
+                        <ul>
+                            <li>Displays happiness level indicator: how much happiness affects this building's
+                                production
+                            </li>
+                            <li>Worker count required</li>
+                            <li>Storage production — the maximum amount of product this building can store</li>
+                            <li>Production table — shows production values for 1h and 24h</li>
+                            <li>If the building allows selecting/toggling production, the product can be chosen or
+                                disabled by clicking on the selected item
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Customization section</strong> — visible if the building supports customizations; purely
+                        informative right now (no effect on calculations)
+                    </li>
+                </ul>
+            </li>
+
+            <li><strong>Selected Group</strong>:
+                <ul>
+                    <li>Shared age is shown if all buildings have the same age</li>
+                    <li>Building name</li>
+                    <li>Level dropdown — empty if selected buildings have different levels; selecting a level here
+                        applies it to all
+                    </li>
+                </ul>
+            </li>
+
+            <li><strong>City Properties</strong>:
+                <ul>
+                    <li>City name</li>
+                    <li>
+                        <strong>Allied City</strong> (if applicable):
+                        <ul>
+                            <li>Displays the selected Wonder's name</li>
+                            <li>Includes a dropdown to change the Wonder's level</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Production section</strong>:
+                        <ul>
+                            <li>Detailed table of all production</li>
+                            <li>Storage, 1h, and 24h columns</li>
+                        </ul>
+                    </li>
+                    <li><strong>Culture section</strong>:
+                        <ul>
+                            <li>Total available happiness</li>
+                            <li>Total consumed happiness</li>
+                            <li>Utilization ratio — how efficiently happiness buildings are used</li>
+                            <li>Smaller unmet needs and higher ratios are better</li>
+                        </ul>
+                    </li>
+                    <li><strong>Area section</strong>:
+                        <ul>
+                            <li>Total area used per building type</li>
+                            <li>Total area of open expansions</li>
+                            <li>Detailed breakdown by building group</li>
+                        </ul>
+                    </li>
+                    <li><strong>Workforce section</strong>:
+                        <ul>
+                            <li>Available worker count</li>
+                            <li>Occupied worker count</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>All sections can be collapsed by clicking on their headers.</p>
+            </li>
+            <li>
+                <strong>City Age</strong>:
+                <ul>
+                    <li>The city's age is determined by the age of the City Hall building</li>
+                    <li>Some buildings behave differently depending on city age — for example, the <em>Fountain of Youth</em></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="help-step">
+        <h5>Snapshots <span class="material-symbols-outlined help-icon-inline">view_list</span></h5>
+        <p>
+            Allows you to save and compare different city layouts. Great for planning before committing to major
+            changes. Learn more in the <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_SNAPSHOTS_PATH">Snapshots Help</a>.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Building Cost Calculator <i class="fas fa-calculator"></i></h5>
+        <p>
+            The same calculator found in the <a href="@FogUrlBuilder.PageRoutes.HELP_TOOLS_PATH">Tools</a>. When one building is selected, it shows its
+            current
+            level and next possible level. You can adjust both to calculate construction/upgrade costs.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Settings <span class="material-symbols-outlined help-icon-inline">settings</span></h5>
+        <ul>
+            <li>Toggle visibility of building names and levels</li>
+            <li>Change city name</li>
+            <li>Share or delete the city</li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Saving and Sharing</h5>
+        <p>
+            <strong>No auto-save!</strong> Be sure to save often to avoid losing progress. Saves are stored in your
+            browser’s local storage, including layout, snapshots, and inventory.
+        </p>
+        <p>
+            To share a layout, open the Settings menu and click <strong>Share</strong>. In the dialog, press <strong>Create
+                Link</strong>, then copy the link. On opening, the recipient will be asked for a city name before saving
+            the layout to their device.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Inventory System</h5>
+        <p>
+            Inventory helps you temporarily remove buildings from the layout and reuse them easily:
+        </p>
+        <ul>
+            <li>Toggle Inventory: <span class="material-symbols-outlined help-icon-inline">shelves</span></li>
+            <li>Add selected building: <span class="material-symbols-outlined help-icon-inline">stat_minus_1</span></li>
+            <li>Add selected building group: <span
+                    class="material-symbols-outlined help-icon-inline">stat_minus_2</span></li>
+            <li>Add all: <span class="material-symbols-outlined help-icon-inline">stat_minus_3</span></li>
+            <li>Remove all (clear inventory): <span
+                    class="material-symbols-outlined help-icon-inline">delete_sweep</span></li>
+        </ul>
+        <p>
+            When active, the left panel shows stored buildings. Clicking a stored item places it at its original
+            location if available; otherwise, the next fitting spot or outside layout.
+        </p>
+        <p>
+            Inventory data is saved with the city.
+        </p>
+    </div>
+</div>

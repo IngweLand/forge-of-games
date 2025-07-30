@@ -1,0 +1,126 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_PLAYER_PROFILE_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>Player Profile Help Guide</h3>
+
+    <div class="help-info">
+        The Player Profile page provides a detailed overview of an individual player's progress, performance, and
+        history. It combines general stats, interactive elements, historical data, and visual insights to help you
+        analyze any player across multiple dimensions.
+    </div>
+
+    <div class="help-step">
+        <h5>General Information</h5>
+        <p>
+            The top section of the profile shows:
+        </p>
+        <ul>
+            <li>Player avatar and name</li>
+            <li>Current alliance (if any) — clickable and links to the
+                <a href="@FogUrlBuilder.PageRoutes.HELP_ALLIANCE_PROFILE_PATH">Alliance Profile page</a></li>
+            <li>World</li>
+            <li>Current ranking position and ranking points</li>
+            <li>Player’s age</li>
+            <li>Date of the last data update</li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Action Buttons</h5>
+        <p>
+            Below the general information, there are two main action buttons:
+        </p>
+        <ul>
+            <li><strong>Visit</strong> — Opens the player's Capital city in the <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH">City Planner</a>. This
+                feature is only available on larger screens. Note that city layouts are cached and might be slightly
+                outdated. If the button re-enables but does not redirect, an error likely occurred or the city could not
+                be fetched.
+            </li>
+            <li><strong>View City Stats</strong> — Opens the city stats page (available on all devices), showing
+                detailed statistics for the player’s city. Caching and error notes from the Visit button apply here as
+                well.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Player State</h5>
+        <p>
+            This section displays current player-specific properties. At the moment, it shows:
+        </p>
+        <ul>
+            <li><strong>Treasure Hunt Difficulty</strong> — Visible if the player participates in the ongoing <a
+                    href="@FogUrlBuilder.PageRoutes.BASE_TREASURE_HUNT_PATH">Treasure Hunt</a> event. Includes the maximum achievable points for the displayed
+                difficulty level.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Top Heroes</h5>
+        <p>
+            A showcase of the player’s top-performing heroes. Click on any hero to see their individual stats and
+            details.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Ranking Points Chart</h5>
+        <p>
+            A monthly chart illustrates the players’s progression in ranking points over time. It is collapsed by
+            default and can be expanded by clicking its header.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Recent Arena Battles</h5>
+        <p>
+            Displays the last two Arena battles submitted by the player. Each battle is shown with two panels:
+        </p>
+        <ul>
+            <li><strong>Left (top on smaller devices) part</strong> — Player’s team</li>
+            <li><strong>Right (bottom on smaller devices) part</strong> — Opponent’s team</li>
+        </ul>
+        <p>
+            You can:
+        </p>
+        <ul>
+            <li>Click any hero to view its full properties</li>
+            <li>Click on a dedicated button to see detailed battle stats (if available)</li>
+            <li>Click the opponent’s name to go to their Player Profile</li>
+        </ul>
+        <p>
+            A <strong>View All</strong> button is also available to explore all recorded Arena battles for that player.
+        </p>
+        <p>
+            This section only appears if the player has submitted their Arena battles using the <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">browser
+                extension</a>.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Arena Ranking Chart</h5>
+        <p>
+            If available, this section shows a collapsed chart of the player's Arena ranking history. It behaves
+            similarly to the Monthly Ranking Chart.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Alliance History</h5>
+        <p>
+            A list of all current and past alliances the player has been a member of. Clicking on any item will navigate
+            to the relevant <a href="@FogUrlBuilder.PageRoutes.HELP_ALLIANCE_PROFILE_PATH">Alliance Profile</a> page.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Age Timeline</h5>
+        <p>
+            A chronological display of the player’s progression through in-game ages. This reflects their research
+            achievements and technological progress.
+        </p>
+    </div>
+</div>

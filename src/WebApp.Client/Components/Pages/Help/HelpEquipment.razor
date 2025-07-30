@@ -1,38 +1,102 @@
-@using Ingweland.Fog.Application.Core.Helpers
 @attribute [Route(FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="help-container">
-    <h3>Equipment | Command Center</h3>
+    <h3>Equipment</h3>
 
     <div class="help-info">
-        The Equipment section is a new addition to the Command Center. It provides a detailed view of all equipment you currently possess in the game. Use this page to review, compare, and sort through your gear with ease.
+        The Equipment section provides a detailed view of all equipment you
+        currently possess in the game. Use this page to review, compare, and sort through your gear with ease.
     </div>
 
     <div class="help-step">
-        <h5>Importing Your Equipment</h5>
+        <h5>Getting Started</h5>
         <p>
-            Want to see your in-game gear on the Equipment page? Start by importing your data from the game.
-            <a href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Click here to learn how.</a>
+            Start by importing your data from the game. <a
+                href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Click here to learn how.</a>
         </p>
+    </div>
 
+    <div class="help-step">
+        <h5>Viewing Your Equipment</h5>
+        <p>
+            Once imported, your equipment is displayed in a dynamic table format. Each column is sortable—click on a
+            column header to sort by that attribute.
+            You can sort by multiple columns by holding the <kbd>Ctrl</kbd> key while selecting additional
+            headers.
+        </p>
+        <p>
+            Some columns also support filtering to help you quickly narrow down specific items or stats.
+        </p>
+        <p>By default, the table is sorted first by <strong>Slot</strong>, then <strong>Rarity</strong>, and
+            finally <strong>Level</strong></p>
+    </div>
+
+    <div class="help-step">
+        <h5>Table Options and Customization</h5>
+        <p>
+            In the top-right corner of the table, you'll find a settings button <span
+                class="material-symbols-outlined help-icon-inline">settings</span>. Clicking it opens a menu where
+            you can:
+        </p>
+        <ul>
+            <li>Toggle visibility of any table column</li>
+            <li>Sort columns from the menu</li>
+            <li>Group items by categorical values</li>
+        </ul>
+        <p>
+            These features allow you to tailor the view to your needs—whether you're focusing on optimization or just
+            browsing your collection.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Understanding Attributes</h5>
+        <p>
+            Each equipment item contains two types of attributes:
+        </p>
+        <ul>
+            <li>
+                <strong>Main Attributes:</strong> These are predefined and based on the equipment’s level. In the table,
+                their column headers are styled with a colored background to make them stand out.
+            </li>
+            <li>
+                <strong>Sub-Attributes:</strong> These are randomly selected and always exclude the item’s main
+                attribute. Each item can unlock several sub-attributes as it levels up.
+            </li>
+        </ul>
+        <p>
+            For sub-attributes that are not yet unlocked, the table displays a question mark <span
+                class="material-symbols-outlined help-icon-inline" style="font-size: 20px">question_mark</span> along with the level
+            at which they will become available.
+        </p>
+        <p>
+            For sub-attributes that are already unlocked, the table shows:
+        </p>
+        <ul>
+            <li>The current value</li>
+            <li>The level at which it was unlocked</li>
+            <li>
+                A progress bar with percentage value that visualizes how the rolled value compares to the maximum
+                possible for that sub-attribute
+            </li>
+        </ul>
+        <p>
+            This system makes it easy to evaluate the strength and potential of each piece of equipment at a glance.
+        </p>
     </div>
 
     <div class="help-step">
         <h5>Staying in Sync</h5>
-        <p>You always have one active set of equipment data at a time. Each new import replaces the previous one. To keep your data up-to-date, simply export your game data again through the extension and then reload the page.</p>
-    </div>
-
-    <div class="help-step">
-        <h5>Using the Equipment Table</h5>
-        <p>Once imported, all your equipment is displayed in a sortable table format. Each item is shown along with its full set of properties, helping you quickly find what you need.</p>
-        <ul>
-            <li>Click on any column title to sort the table by that property</li>
-            <li>By default, the table is sorted first by <strong>Slot</strong>, then <strong>Rarity</strong>, and finally <strong>Level</strong></li>
-        </ul>
+        <p>You always have one active set of equipment data at a time. Each new import replaces the previous one. To
+            keep your data up-to-date, simply export your game data again and then reload the page.</p>
     </div>
 
     <div class="help-step">
         <h5>Viewing on Mobile</h5>
-        <p>The Equipment table is accessible on mobile devices. However, due to the number of data columns, the layout is best experienced on larger screens.</p>
+        <p>The Equipment table is accessible on mobile devices. However, due to the number of data columns, the layout
+            is best experienced on larger screens.</p>
     </div>
 </div>
+
+

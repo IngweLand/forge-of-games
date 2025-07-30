@@ -1,0 +1,112 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>City Planner General Guide</h3>
+
+    <div class="help-info">
+        The City Planner is a comprehensive tool designed to help you construct and optimize the layout of your capital
+        and allied culture cities. It provides detailed statistics about production, building usage, happiness
+        efficiency, and more — making it ideal for maximizing your city’s potential.
+    </div>
+
+    <div class="help-step">
+        <h5>City Planner Dashboard</h5>
+        <p>
+            The dashboard is the central place to manage all your saved cities.
+        </p>
+        <p>
+            You can <strong>create a new city</strong> by clicking the <em>Create</em> button. You'll name the city,
+            choose its type (Capital or Allied Culture), and if it's an allied city, select the associated Wonder.
+            <strong>Note:</strong> The Wonder selection affects stats and cannot be changed later.
+        </p>
+        <p>
+            Apart from creating a city from scratch, there are other ways to get city layouts:
+        </p>
+        <ul>
+            <li><strong>Import your own cities</strong> using in-game data — see <a
+                    href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Importing Game Data Help</a>.
+            </li>
+            <li><strong>Visit another player's city</strong> by going to their profile and clicking the <em>Visit</em>
+                button — see <a href="@FogUrlBuilder.PageRoutes.HELP_PLAYER_PROFILE_PATH">Player Profile Help</a>. You
+                can then save that city to your dashboard.
+            </li>
+        </ul>
+        <p>
+            All city layouts are stored locally in your browser. The full City Planner app is only available on larger
+            screens.
+        </p>
+    </div>
+
+
+    <div class="help-step">
+        <h5>Viewing City Stats</h5>
+        <p>
+            The City Stats view is a dedicated page that shows only the detailed statistics of a city — without
+            any layout or planning functionality. It presents the same properties panel found in the
+            <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH">City Planner App</a>, but is focused solely
+            on metrics.
+        </p>
+        <p>
+            This view is accessible on all devices and is especially mobile-friendly.
+        </p>
+        <p>
+            You can access the City Stats view from:
+        </p>
+        <ul>
+            <li>The <em>View City Stats</em> button after importing in-game data — see <a
+                    href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Importing Game Data Help</a>.
+            </li>
+            <li>The <em>View City Stats</em> button on any <a href="@FogUrlBuilder.PageRoutes.HELP_PLAYER_PROFILE_PATH">Player
+                    Profile</a>.
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="help-step">
+        <h5>City Planning Tools</h5>
+        <p>
+            Several built-in tools are available within the planner to support smarter decisions:
+        </p>
+        <ul>
+            <li><strong>Production Comparison:</strong> Save snapshots of different layouts and compare their production
+                stats side by side.
+            </li>
+            <li><strong>Building Cost Calculator:</strong> Estimate resource costs required to construct or upgrade the
+                building.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Inspirations Page</h5>
+        <p>
+            The Inspirations page showcases high-efficiency layouts created by other players. Access it from the City
+            Planner dashboard and follow these steps:
+        </p>
+        <ol>
+            <li>Select the city age.</li>
+            <li>Choose your preferred resource focus: 🥗 <em>food</em>, 💰 <em>coins</em>, or 🏭 <em>goods</em>.</li>
+            <li>Optionally enable the <em>Allow premium buildings</em> toggle to include such layouts in results.</li>
+            <li>You can use one of your own saved cities as an expansion template for searches. If no exact match is
+                found, the system uses total area to find close results.
+            </li>
+            <li>Click <em>Search</em>.</li>
+        </ol>
+        <p>
+            Each result shows:
+        </p>
+        <ul>
+            <li>Production values</li>
+            <li>Total city area</li>
+            <li>Happiness Usage Ratio (efficiency indicator)</li>
+            <li>Player name</li>
+        </ul>
+        <p>
+            Click any result to open it directly in the <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH">City
+                Planner App</a>. Your search filters will be remembered on return visits.
+        </p>
+    </div>
+</div>

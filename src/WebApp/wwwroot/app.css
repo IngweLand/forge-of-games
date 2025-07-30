@@ -45,6 +45,10 @@
     --fog-enemy-color: #ba3a36;
     --ability-stat-color: #54A1FF;
     --ability-stat-on-dark-color: #70ddff;
+    --fog-target-tech-color: #FCF0CE;
+    --fog-selected-target-tech-color: #F4E8C8;
+    --fog-selected-open-tech-color: #ACD2C7;
+    --fog-open-tech-color: #CFFCEF;
 
     /*values*/
     --fog-border-radius: 0.5rem;
@@ -455,6 +459,17 @@ img.command-center-card-icon {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.help-icon-inline {
+    vertical-align: middle;
+}
+
+.help-icon-inline-font-awesome {
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 

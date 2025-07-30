@@ -1,0 +1,118 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_TOOLS_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>Tools Help Guide</h3>
+
+    <div class="help-info">
+        The game offers several powerful calculators to assist with planning your development and managing resources.
+        These tools work independently and can significantly optimize your strategic decisions.
+    </div>
+
+    <div class="help-step">
+        <h5>Research Calculator</h5>
+        <p>
+            This calculator helps estimate the total resources needed to progress from your current technology to any
+            future tech goals.
+            Supports both <strong>capital city</strong> and <strong>allied culture cities</strong>.
+        </p>
+        <p>
+            The tech tree is displayed vertically and organized by age. Capital city trees feature collapsible age
+            sections for easier navigation.
+        </p>
+
+        <p>The calculator workflow consists of three steps. You navigate between these steps by clicking
+            <strong>Next</strong> or <strong>Previous</strong> buttons at the bottom:</p>
+        <ol>
+            <li>
+                <strong>Select Opened Technologies:</strong> You can only select the latest techs you’ve unlocked. All
+                prerequisites will be auto-selected and marked with a <span
+                    style="background-color: var(--fog-open-tech-color); padding: 0 4px;">green</span> background.
+            </li>
+            <li>
+                <strong>Select Target Technologies:</strong> Again, only the final technologies can be picked, and their
+                dependencies are auto-marked. Targets are shown with a <span
+                    style="background-color: var(--fog-target-tech-color); padding: 0 4px;">beige</span> background.
+            </li>
+            <li>
+                <strong>View Resource Requirements:</strong> A summarized resource list is generated, sorted by
+                resource age.
+            </li>
+        </ol>
+
+        <p>
+            You can choose technologies across multiple ages—for example, calculating from the first to the last tech
+            provides the cost to complete the full tech tree.
+        </p>
+
+        <p>
+            Your opened technologies are saved in the browser's local storage, so they will be restored automatically
+            next time.
+        </p>
+
+        <p>
+            You can also import currently opened technologies from the game. <a
+                href="@FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH">Read how to do that.</a>
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Building Cost Calculator</h5>
+        <p>
+            This tool allows you to analyze the cost of constructing or upgrading buildings within a specific city. This
+            calculator is also integrated directly into the <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH">City
+                Planner</a>. To begin, select:
+        </p>
+        <ul>
+            <li>City</li>
+            <li>Building</li>
+            <li>Current Level</li>
+            <li>Target Level</li>
+        </ul>
+        <p>
+            Special icons next to each level indicate their availability:
+        </p>
+        <ul>
+            <li><span class="material-symbols-outlined help-icon-inline">construction</span> – level can be constructed
+                directly
+            </li>
+            <li><span class="material-symbols-outlined help-icon-inline">upgrade</span> – level can only be reached via
+                upgrade
+            </li>
+        </ul>
+        <p>
+            The results are displayed in a table showing both required <strong>time</strong> and
+            <strong>resources</strong>.
+            Two cost columns are presented:
+        </p>
+        <ul>
+            <li><strong>Construction Cost</strong> – from scratch to target level, considering the nearest constructible
+                level and any upgrade-only steps.
+            </li>
+            <li><strong>Upgrade Cost</strong> – step-by-step from the current to target level.</li>
+        </ul>
+        <p>
+            This distinction helps determine whether to upgrade or demolish and rebuild.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>World Wonder Calculator</h5>
+        <p>
+            Easily calculate the total number of <strong>resources</strong> needed to progress your world wonder in a
+            given city.
+            Simply select the city and define:
+        </p>
+        <ul>
+            <li>Current Level</li>
+            <li>Target Level</li>
+        </ul>
+        <p>
+            The calculator will output the total resources required for that upgrade and the basket count which will be
+            filled.
+        </p>
+    </div>
+
+
+</div>

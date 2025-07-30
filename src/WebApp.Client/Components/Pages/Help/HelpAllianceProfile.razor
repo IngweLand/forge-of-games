@@ -1,0 +1,53 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_ALLIANCE_PROFILE_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>Alliance Profile Help Guide</h3>
+
+    <div class="help-info">
+        The Alliance Profile page offers a detailed overview of any alliance recorded in the game. It includes visual,
+        historical, and statistical data, allowing you to explore the alliance's structure, performance, and changes
+        over time.
+    </div>
+
+    <div class="help-step">
+        <h5>General Information</h5>
+        <p>
+            The top section of the profile shows:
+        </p>
+        <ul>
+            <li>Alliance avatar and name</li>
+            <li>Current leader (if known)</li>
+            <li>World</li>
+            <li>Current ranking position and ranking points</li>
+            <li>Date of registration</li>
+            <li>Date of last data update</li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Ranking Points Chart</h5>
+        <p>
+            A monthly chart illustrates the alliance’s progression in ranking points over time. This visual trend helps
+            you understand whether the alliance is rising, plateauing, or declining in performance.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Name History Timeline</h5>
+        <p>
+            Alliances may change names throughout their lifetime. The timeline records every known name change along
+            with the corresponding dates, giving you a full naming history.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Member List</h5>
+        <p>
+            The bottom section lists all current alliance members. Each member name is clickable and links to the
+            <a href="@FogUrlBuilder.PageRoutes.HELP_PLAYER_PROFILE_PATH">Player Profile page</a>, where
+            detailed player information can be explored.
+        </p>
+    </div>
+</div>

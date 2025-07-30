@@ -1,4 +1,4 @@
-@attribute [Route(FogUrlBuilder.PageRoutes.HELP_HERO_PLAYGROUNDS_PATH)]
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_HERO_PROFILE_PATH)]
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 
@@ -20,6 +20,27 @@
     </div>
 
     <div class="help-step">
+        <h5>General Hero Information</h5>
+        <p>
+            At the top of the profile, you’ll find the hero's avatar, their classes, and core
+            combat stats:
+        </p>
+        <ul>
+            <li><strong>Attack</strong> – base offensive strength</li>
+            <li><strong>Defense</strong> – damage mitigation capability</li>
+            <li><strong>Max Hit Points</strong> – total health pool</li>
+            <li><strong>Base Damage</strong> – average damage dealt per hit</li>
+        </ul>
+        <p>
+            The hero avatar is interactive — click on it to toggle between a static image and a short video preview, if
+            available.
+        </p>
+        <p>
+            All values in this section change dynamically based on the configuration you set.
+        </p>
+    </div>
+
+    <div class="help-step">
         <h5>Customizing Hero Levels</h5>
         <p>
             Use the selectors at the top of the hero page to set:
@@ -31,7 +52,20 @@
             <li>Barracks Level</li>
         </ul>
         <p> As you adjust any of these values, the hero's properties are updated in real time, allowing you to
-            experiment with different setups.
+            experiment with different setups. The level selectors are saved automatically. When you return to this
+            hero's profile, your most recently selected levels will be restored, so you can continue where you left off.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Hero Ability Overview</h5>
+        <p>
+            This section displays the currently selected ability level for the hero. You'll see detailed information
+            about what the ability does at that level.
+        </p>
+        <p>
+            A progress bar below shows how quickly the ability charges — highlighting both the initial charge time and
+            the recurring recharge interval.
         </p>
     </div>
 
@@ -41,6 +75,15 @@
             Plan your upgrades more efficiently using the built-in progression calculator. Simply set a target level,
             and the calculator will show you all required resources to reach that level from the currently selected hero
             level.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Ability Cost Calculator</h5>
+        <p>
+            Use the ability cost calculator to determine how many mastery points you’ll need to reach a chosen target
+            ability level. Simply pick your desired level, and the calculator will compute the cost from your current
+            selected level.
         </p>
     </div>
 
@@ -62,6 +105,14 @@
         <p>
             Every hero page includes a section for the hero’s support unit. This section outlines the unit’s stats and
             how it enhances the hero’s abilities.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Wikipedia Extract</h5>
+        <p>
+            The final section shows a summary extracted directly from Wikipedia for the hero. Click <strong>Read
+                More</strong> to visit the full article and explore additional context.
         </p>
     </div>
 </div>

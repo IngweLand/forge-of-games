@@ -2175,7 +2175,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Top 5 levels.
+        ///   Looks up a localized string similar to Highest-Level.
         /// </summary>
         public static string StatsHub_HeroInsights_Mode_Top {
             get {
