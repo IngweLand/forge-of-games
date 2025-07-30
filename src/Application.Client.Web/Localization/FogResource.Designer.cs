@@ -879,7 +879,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Optimize battle strategies in Heroes of History with the Command Center. Plan teams, analyze hero stats, and collaborate with alliances..
+        ///   Looks up a localized string similar to View all your equipment and their properties in a single sortable table..
         /// </summary>
         public static string CommandCenter_Equipment_Meta_Description {
             get {
@@ -888,7 +888,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History battle planner, team strategy, hero progression, command center tool.
+        ///   Looks up a localized string similar to Heroes of History equipment, equipment configurator, equipment table, equipment properties, equipment sets.
         /// </summary>
         public static string CommandCenter_Equipment_Meta_Keywords {
             get {
@@ -897,7 +897,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Equipment | Command Center | Heroes of History | Forge of Games.
+        ///   Looks up a localized string similar to Equipment | Heroes of History | Forge of Games.
         /// </summary>
         public static string CommandCenter_Equipment_PageTitle {
             get {
