@@ -1,3 +1,4 @@
+@using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using SkiaSharp.Views.Blazor
@@ -70,6 +71,8 @@
             <MudSpacer/>
             @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@
             @* <div class="toolbar-divider"></div> *@
+            <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" 
+                           Href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH" Target="_blank"/>
             <MudToggleIconButton Icon="material-symbols-outlined/right_panel_open"
                                  Color="Color.Inherit" Toggled="@_rightPanelIsVisible"
                                  ToggledIcon="material-symbols-outlined/right_panel_close"

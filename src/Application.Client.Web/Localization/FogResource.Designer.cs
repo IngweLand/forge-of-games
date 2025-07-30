@@ -636,6 +636,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View the best city layouts created by other players in Heroes of History. Plan and optimize your city. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency..
+        /// </summary>
+        public static string CityPlanner_Inspirations_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city planner, city layout, city layout example, best city layout, city optimization, city layout optimization, city max production.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Layout Inspirations | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityPlanner_Inspirations_PageTitle {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Layout Inspirations.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Title {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plan and optimize your city in Heroes of History. Import in-game data, manage multiple layouts, analyze production stats, and maximize efficiency..
         /// </summary>
         public static string CityPlanner_Meta_Description {
@@ -2085,6 +2121,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alliance Profile | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string StatsHub_AllianceProfile_PageTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.AllianceProfile.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alliance Profile.
+        /// </summary>
+        public static string StatsHub_AllianceProfile_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.AllianceProfile.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our game analytics are community-driven! Click this message to learn how to contribute!.
         /// </summary>
         public static string StatsHub_BattleLog_ContributePrompt {
@@ -2342,6 +2396,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Player_World {
             get {
                 return ResourceManager.GetString("StatsHub.Player.World", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Profile | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string StatsHub_PlayerProfile_PageTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.PlayerProfile.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player Profile.
+        /// </summary>
+        public static string StatsHub_PlayerProfile_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.PlayerProfile.Title", resourceCulture);
             }
         }
         
