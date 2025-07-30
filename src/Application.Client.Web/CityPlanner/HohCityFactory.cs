@@ -17,12 +17,18 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
 
     public HohCity Create(NewCityRequest newCityRequest, int cityPlannerVersion)
     {
+        var searchId = newCityRequest.CityId.ToString();
+        if (newCityRequest.CityId is CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace or CityId.Mayas_Tikal)
+        {
+            searchId = newCityRequest.WonderId.ToString();
+        }
+
         return new HohCity
         {
             Id = Guid.NewGuid().ToString(),
             InGameCityId = newCityRequest.CityId,
             AgeId = newCityRequest.CityId.ToDefaultAge(),
-            Entities = InitCityConfigs.MapEntities[newCityRequest.CityId],
+            Entities = InitCityConfigs.MapEntities[searchId],
             Name = newCityRequest.Name,
             UnlockedExpansions = InitCityConfigs.Expansions[newCityRequest.CityId],
             WonderId = newCityRequest.WonderId,
@@ -55,11 +61,11 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
 
     private static class InitCityConfigs
     {
-        public static readonly Dictionary<CityId, List<HohCityMapEntity>> MapEntities =
+        public static readonly Dictionary<string, List<HohCityMapEntity>> MapEntities =
             new()
             {
                 {
-                    CityId.Capital,
+                    nameof(CityId.Capital),
                     [
                         new HohCityMapEntity
                         {
@@ -72,7 +78,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     ]
                 },
                 {
-                    CityId.Vikings,
+                    nameof(CityId.Vikings),
                     [
                         new HohCityMapEntity
                         {
@@ -86,7 +92,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     ]
                 },
                 {
-                    CityId.Egypt,
+                    nameof(CityId.Egypt),
                     [
                         new HohCityMapEntity
                         {
@@ -99,7 +105,7 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     ]
                 },
                 {
-                    CityId.Mayas_ChichenItza,
+                    nameof(WonderId.Mayas_ChichenItza),
                     [
                         new HohCityMapEntity
                         {
@@ -156,7 +162,120 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     ]
                 },
                 {
-                    CityId.China,
+                    nameof(WonderId.Mayas_Tikal),
+                    [
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Premium_1",
+                            Id = 0,
+                            Level = 1,
+                            X = 23,
+                            Y = -38,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 1,
+                            Level = 1,
+                            X = 40,
+                            Y = -30,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 2,
+                            Level = 1,
+                            X = 24,
+                            Y = -27,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 3,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 44,
+                            Y = -38,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 4,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 28,
+                            Y = -46,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_City_CityHall_1",
+                            Id = 5,
+                            Level = 1,
+                            SelectedProductId = "Production1_Building_Mayas_City_CityHall_1",
+                            X = 34,
+                            Y = -39,
+                        },
+                    ]
+                },
+                {
+                    nameof(WonderId.Mayas_SayilPalace),
+                    [
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Premium_1",
+                            Id = 0,
+                            Level = 1,
+                            X = 36,
+                            Y = -26,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 1,
+                            Level = 1,
+                            X = 36,
+                            Y = -47,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 2,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 44,
+                            Y = -47,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 3,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 27,
+                            Y = -30,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_RitualSite_Average_1",
+                            Id = 4,
+                            IsRotated = true,
+                            Level = 1,
+                            X = 44,
+                            Y = -31,
+                        },
+                        new HohCityMapEntity
+                        {
+                            CityEntityId = "Building_Mayas_City_CityHall_1",
+                            Id = 5,
+                            Level = 1,
+                            SelectedProductId = "Production1_Building_Mayas_City_CityHall_1",
+                            X = 34,
+                            Y = -39,
+                        },
+                    ]
+                },
+                {
+                    nameof(CityId.China),
                     [
                         new HohCityMapEntity
                         {

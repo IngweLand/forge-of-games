@@ -21,7 +21,7 @@ public class CityPlannerDataFactory(
         IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders)
     {
         var wonderIds = cityDefinition.Id.GetWonders();
-        return new CityPlannerDataDto()
+        return new CityPlannerDataDto
         {
             City = cityDefinition,
             Expansions = expansions,
@@ -35,42 +35,43 @@ public class CityPlannerDataFactory(
 
     private List<NewCityDialogItemDto> CreateDialogItems(IReadOnlyCollection<Wonder> wonders)
     {
+        var mayaWonderIds = CityId.Mayas_Tikal.GetWonders();
         return
         [
             new NewCityDialogItemDto
             {
                 CityId = CityId.Capital,
-                CityName = gameLocalizationService.GetCityName(CityId.Capital)
+                CityName = gameLocalizationService.GetCityName(CityId.Capital),
             },
 
             new NewCityDialogItemDto
             {
                 CityId = CityId.Mayas_ChichenItza,
                 CityName = gameLocalizationService.GetCityName(CityId.Mayas_ChichenItza),
-                Wonders = wonders.Where(w => w.CityId == CityId.Mayas_ChichenItza).Select(wonderDtoFactory.Create)
-                    .ToList()
+                Wonders = wonders.Where(w => mayaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
+                    .ToList(),
             },
 
             new NewCityDialogItemDto
             {
                 CityId = CityId.China,
                 CityName = gameLocalizationService.GetCityName(CityId.China),
-                Wonders = wonders.Where(w => w.CityId == CityId.China).Select(wonderDtoFactory.Create).ToList()
+                Wonders = wonders.Where(w => w.CityId == CityId.China).Select(wonderDtoFactory.Create).ToList(),
             },
-            
+
             new NewCityDialogItemDto
             {
                 CityId = CityId.Vikings,
                 CityName = gameLocalizationService.GetCityName(CityId.Vikings),
-                Wonders = wonders.Where(w => w.CityId == CityId.Vikings).Select(wonderDtoFactory.Create).ToList()
+                Wonders = wonders.Where(w => w.CityId == CityId.Vikings).Select(wonderDtoFactory.Create).ToList(),
             },
-            
+
             new NewCityDialogItemDto
             {
                 CityId = CityId.Egypt,
                 CityName = gameLocalizationService.GetCityName(CityId.Egypt),
-                Wonders = wonders.Where(w => w.CityId == CityId.Egypt).Select(wonderDtoFactory.Create).ToList()
-            }
+                Wonders = wonders.Where(w => w.CityId == CityId.Egypt).Select(wonderDtoFactory.Create).ToList(),
+            },
         ];
     }
 }
