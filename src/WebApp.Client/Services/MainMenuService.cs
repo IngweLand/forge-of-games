@@ -31,25 +31,9 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
             },
             new()
             {
-                ResourceKey = FogResource.CommandCenter_Title,
-                Icon = GetIconString(assetUrlProvider.GetIconUrl("target_32dp_FBE0C6_FILL0_wght400_GRAD0_opsz40",
-                    ".svg")),
-                Children = new List<NavMenuItem>
-                {
-                    new()
-                    {
-                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_PROFILES_PATH,
-                        ResourceKey = FogResource.CommandCenter_Menu_Profiles,
-                        Icon = GetIconString(
-                            assetUrlProvider.GetIconUrl("target_32dp_FBE0C6_FILL0_wght400_GRAD0_opsz40", ".svg")),
-                    },
-                    new()
-                    {
-                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
-                        ResourceKey = FogResource.CommandCenter_Menu_Equipment,
-                        Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_equipment")),
-                    },
-                },
+                Href = FogUrlBuilder.PageRoutes.BASE_HEROES_PATH,
+                ResourceKey = FogResource.Hoh_Heroes,
+                Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_hud_heroes")),
             },
             new()
             {
@@ -72,19 +56,34 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                     },
                 },
             },
-
+            new()
+            {
+                ResourceKey = FogResource.CommandCenter_Title,
+                Icon = GetIconString(assetUrlProvider.GetIconUrl("target_32dp_FBE0C6_FILL0_wght400_GRAD0_opsz40",
+                    ".svg")),
+                Children = new List<NavMenuItem>
+                {
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_PROFILES_PATH,
+                        ResourceKey = FogResource.CommandCenter_Menu_Profiles,
+                        Icon = GetIconString(
+                            assetUrlProvider.GetIconUrl("target_32dp_FBE0C6_FILL0_wght400_GRAD0_opsz40", ".svg")),
+                    },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
+                        ResourceKey = FogResource.CommandCenter_Menu_Equipment,
+                        Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_equipment")),
+                    },
+                },
+            },
             new()
             {
                 Href = FogUrlBuilder.PageRoutes.BASE_TOOLS_PATH,
                 ResourceKey = FogResource.Navigation_Tools,
                 Icon = GetIconString(
                     assetUrlProvider.GetIconUrl("construction_28dp_FBE0C6_FILL0_wght700_GRAD200_opsz24")),
-            },
-            new()
-            {
-                Href = FogUrlBuilder.PageRoutes.BASE_HEROES_PATH,
-                ResourceKey = FogResource.Hoh_Heroes,
-                Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_hud_heroes")),
             },
             new()
             {

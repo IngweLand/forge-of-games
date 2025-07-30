@@ -1,12 +1,27 @@
-.card {
-    overflow: hidden;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
-    background-color: var(--fog-container-color);
-    border: none;
+.banner-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.card:hover img {
-    filter: grayscale(100%);
+.banner-grid .anchor-inherited-style {
+    flex: 1 1 350px;
+    min-width: 350px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card {
+    overflow: hidden;
+    background-color: var(--fog-container-color);
+    border: none;
+    width: 100%;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.banner-grid .anchor-inherited-style:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -16,6 +31,7 @@
     filter: grayscale(0%);
     transition: filter 0.3s ease;
     object-position: bottom;
+    display: block;
 }
 
 .card .title {
@@ -28,7 +44,9 @@
     color: var(--fog-text-on-container-color);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+@media (max-width: 768px) {
+    .banner-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
