@@ -1,10 +1,12 @@
+@implements IDisposable
 @using Ingweland.Fog.Application.Client.Web.Models
-@using Ingweland.Fog.WebApp.Client.Components.Elements
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.WebApp.Client.Constants
 @using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Ingweland.Fog.WebApp.Client.Theme
-@implements IDisposable
 @inherits LayoutComponentBase
 @inject IPageMetadataService PageMetadataService
+@inject IPersistenceService PersistenceService
 <HeadContent>
     <meta name="description" content="@_pageMetadata.Description">
     <meta name="keywords" content="@_pageMetadata.Keywords">
@@ -18,14 +20,21 @@
     <NavBar/>
     <MudMainContent Class="main-layout-main-content">
         <ErrorBoundary>
+            @if (_shouldShowAnnouncement)
+            {
+                <GlobalAnnouncementComponent PersistenceKey="@PersistenceKeys.PATREON_ANNOUNCEMENT_CONSUMED"
+                                             OnAnnouncementConsumed="@(() => _shouldShowAnnouncement = false)"/>
+            }
             @Body
         </ErrorBoundary>
     </MudMainContent>
 </MudLayout>
+
 @code
 {
     private PageMetadata _pageMetadata = null!;
-    
+    private bool _shouldShowAnnouncement;
+
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
@@ -36,6 +45,20 @@
         if (RendererInfo.IsInteractive)
         {
             NavigationManager.LocationChanged += NavigationManagerOnLocationChanged;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            var show = !await PersistenceService
+                .GetItemAsync<bool>(PersistenceKeys.PATREON_ANNOUNCEMENT_CONSUMED);
+            if (_shouldShowAnnouncement != show)
+            {
+                _shouldShowAnnouncement = show;
+                StateHasChanged();
+            }
         }
     }
 

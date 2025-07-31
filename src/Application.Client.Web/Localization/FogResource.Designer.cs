@@ -150,6 +150,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We are on Patreon! If you&apos;ve found our project useful and want to help keep it online and evolving, your support means a lot!.
+        /// </summary>
+        public static string Announcement_Patreon {
+            get {
+                return ResourceManager.GetString("Announcement.Patreon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nah, not today..
+        /// </summary>
+        public static string Announcement_Patreon_Cancel {
+            get {
+                return ResourceManager.GetString("Announcement.Patreon.Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sure, I want to help!.
+        /// </summary>
+        public static string Announcement_Patreon_OK {
+            get {
+                return ResourceManager.GetString("Announcement.Patreon.OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hard.
         /// </summary>
         public static string Battle_Difficulty_Hard {

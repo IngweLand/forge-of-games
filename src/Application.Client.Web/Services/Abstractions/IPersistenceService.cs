@@ -34,4 +34,7 @@ public interface IPersistenceService
 
     ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies);
     ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId);
+    
+    ValueTask SetItemAsync<T>(string key, T value);
+    ValueTask<T?> GetItemAsync<T>(string key);
 }

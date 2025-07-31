@@ -119,6 +119,8 @@ public static class FogUrlBuilder
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
         public const string CITIES_STATS_PATH = "/cities-stats";
         public const string BATTLE_LOG_PATH = "/battle-log";
+        
+        public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
 
         public static string Player(int id)
         {

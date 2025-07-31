@@ -132,6 +132,16 @@ internal class DummyPersistenceService : IPersistenceService
     {
         throw new NotImplementedException();
     }
+
+    public ValueTask SetItemAsync<T>(string key, T value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<T?> GetItemAsync<T>(string key)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 internal class DummyClientLocaleService : IClientLocaleService

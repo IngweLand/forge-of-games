@@ -99,6 +99,16 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         return allTechs.GetValueOrDefault(cityId, []);
     }
 
+    public ValueTask SetItemAsync<T>(string key, T value)
+    {
+        return localStorageService.SetItemAsync(key, value);
+    }
+
+    public ValueTask<T?> GetItemAsync<T>(string key)
+    {
+        return localStorageService.GetItemAsync<T>(key);
+    }
+
     public async ValueTask<bool> DeleteCity(string cityId)
     {
         var key = GetCityKey(cityId);
