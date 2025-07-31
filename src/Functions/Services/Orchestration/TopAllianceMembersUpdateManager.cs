@@ -26,8 +26,8 @@ public class TopAllianceMembersUpdateManager(
     inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
     databaseWarmUpService, logger), ITopAllianceMembersUpdateManager
 {
-    private const int BATCH_SIZE = 120;
-    private const int TOP_RANK_LIMIT = 10;
+    private const int BATCH_SIZE = 100;
+    private const int TOP_RANK_LIMIT = 15;
 
     protected override async Task<List<Player>> GetPlayers(string gameWorldId)
     {
