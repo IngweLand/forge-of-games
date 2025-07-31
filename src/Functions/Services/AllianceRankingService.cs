@@ -35,7 +35,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
 
         int updatedAllianceCount = 0, updatedRankingCount = 0, addedRankingCount = 0;
 
-        foreach (var chunk in latestUnique.Chunk(1000))
+        foreach (var chunk in latestUnique.Chunk(500))
         {
             logger.LogInformation("Processing a chunk of {ChunkCount} aggregates.", chunk.Count());
             var inGameAllianceIds = chunk.Select(p => p.InGameAllianceId).ToHashSet();

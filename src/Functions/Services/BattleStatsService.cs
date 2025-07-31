@@ -110,7 +110,7 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
             .Where(src => src.Squads.Count > 0)
             .ToList();
         
-        foreach (var chunk in newStats.Chunk(100))
+        foreach (var chunk in newStats.Chunk(50))
         {
             logger.LogInformation("Processing chunk of battle stats with {ChunkSize} items", chunk.Length);
             context.BattleStats.AddRange(chunk);

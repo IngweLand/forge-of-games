@@ -34,7 +34,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
 
         int updatedPlayerCount = 0, updatedRankingCount = 0, addedRankingCount = 0;
 
-        foreach (var chunk in latestUnique.Chunk(1000))
+        foreach (var chunk in latestUnique.Chunk(500))
         {
             logger.LogInformation("Processing chunk with {ChunkSize} items", chunk.Length);
             var inGamePlayerIds = chunk.Select(p => p.InGamePlayerId).ToHashSet();
