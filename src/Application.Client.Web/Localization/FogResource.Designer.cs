@@ -1194,6 +1194,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy link.
+        /// </summary>
+        public static string Common_CopyLink {
+            get {
+                return ResourceManager.GetString("Common.CopyLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy link for Discord.
+        /// </summary>
+        public static string Common_CopyLinkForDiscord {
+            get {
+                return ResourceManager.GetString("Common.CopyLinkForDiscord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string Common_Create {

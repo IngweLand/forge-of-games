@@ -1,0 +1,78 @@
+@using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Dtos.Hoh.Battle
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IJSInteropService JSInteropService
+<MudDialog>
+    <DialogContent>
+        <div class="main-container">
+            <MudButton Style="text-transform: none" Color="Color.Secondary" Variant="Variant.Filled"
+                       StartIcon="@Icons.Material.Outlined.Share"
+                       OnClick="CopyLink">@Loc[FogResource.Common_CopyLink]</MudButton>
+            <MudButton Style="text-transform: none" Color="Color.Secondary" Variant="Variant.Filled"
+                       StartIcon="@Icons.Custom.Brands.Discord"
+                       OnClick="CopyDiscordLink">@Loc[FogResource.Common_CopyLinkForDiscord]</MudButton>
+        </div>
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public required BattleSearchRequest Request { get; set; }
+
+    [Inject]
+    private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
+
+    [Inject]
+    protected NavigationManager NavigationManager { get; set; }
+
+    private string? _link;
+
+    protected override void OnParametersSet()
+    {
+        var queryParams = BattleSearchRequestFactory.CreateQueryParams(Request);
+        _link = NavigationManager.GetUriWithQueryParameters(queryParams);
+    }
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task CopyLink()
+    {
+        if (string.IsNullOrWhiteSpace(_link))
+        {
+            return;
+        }
+
+        await JSInteropService.CopyToClipboardAsync(_link);
+
+        Close();
+    }
+
+    private async Task CopyDiscordLink()
+    {
+        if (string.IsNullOrWhiteSpace(_link))
+        {
+            return;
+        }
+
+        var definitionTitle = await BattleSearchRequestFactory.CreateDefinitionTitleAsync(Request);
+        var link = $"[{Loc[FogResource.StatsHub_BattleLog_Title]}: {definitionTitle}]({_link})";
+        await JSInteropService.CopyToClipboardAsync(link);
+
+        Close();
+    }
+
+}

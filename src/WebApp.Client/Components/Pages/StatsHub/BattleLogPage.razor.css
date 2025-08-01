@@ -7,7 +7,11 @@
 .options-container {
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
 }
+
 .teams-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -23,5 +27,9 @@
     .teams-container {
         gap: 18px;
         padding: 0 12px;
+    }
+
+    .options-container {
+        gap: 24px;
     }
 }

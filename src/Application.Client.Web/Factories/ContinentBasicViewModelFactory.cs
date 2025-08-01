@@ -18,6 +18,7 @@ public class ContinentBasicViewModelFactory : IContinentBasicViewModelFactory
                 regions.Add(new RegionBasicViewModel
                 {
                     Id = region.Id,
+                    DisplayIndex = i,
                     Name = $"{i}. {region.Name}",
                 });
                 i++;

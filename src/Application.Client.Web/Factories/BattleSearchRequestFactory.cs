@@ -1,12 +1,17 @@
 using System.Collections.ObjectModel;
+using System.Text;
 using System.Web;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
 
-public class BattleSearchRequestFactory : IBattleSearchRequestFactory
+public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IStringLocalizer<FogResource> localizer)
+    : IBattleSearchRequestFactory
 {
     private const string BattleTypeKey = "battleType";
     private const string CampaignRegionKey = "campaignRegion";
@@ -22,6 +27,34 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
     private const string UnitIdKey = "unitId";
 
     private static readonly BattleSearchRequest DefaultInfo = new();
+
+    private readonly Dictionary<int, string> _treasureHuntAbbreviations = new()
+    {
+        {0, "RI"},
+        {1, "RII"},
+        {2, "AI"},
+        {3, "AII"},
+        {4, "VI"},
+        {5, "VII"},
+        {6, "MI"},
+        {7, "MII"},
+        {8, "GMI"},
+        {9, "GMII"},
+    };
+    private readonly Dictionary<RegionId, string> _teslaAbbreviations = new()
+    {
+        {RegionId.TeslaStormBlue, "B"},
+        {RegionId.TeslaStormGreen, "G"},
+        {RegionId.TeslaStormRed, "R"},
+        {RegionId.TeslaStormYellow, "Y"},
+        {RegionId.TeslaStormPurple, "P"},
+    };
+    
+    private readonly Dictionary<RegionId, string> _historicBattlesAbbreviations = new()
+    {
+        {RegionId.SiegeOfOrleans, "SO"},
+        {RegionId.SpartasLastStand, "SLS"},
+    };
 
     public BattleSearchRequest Create(string uri)
     {
@@ -129,7 +162,7 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
             [HistoricBattleEncounterKey] = request.HistoricBattleEncounter,
             [TeslaStormRegionKey] = request.TeslaStormRegion.ToString(),
             [TeslaStormEncounterKey] = request.TeslaStormEncounter,
-            [UnitIdKey] = request.UnitIds,
+            [UnitIdKey] = request.UnitIds.ToHashSet().ToArray(),
         }.AsReadOnly();
     }
 
@@ -185,5 +218,69 @@ public class BattleSearchRequestFactory : IBattleSearchRequestFactory
         }
 
         return queryParams.AsReadOnly();
+    }
+
+    public async Task<string> CreateDefinitionTitleAsync(BattleSearchRequest request)
+    {
+        string details;
+        switch (request.BattleType)
+        {
+            case BattleType.Campaign:
+            {
+                var continents = await campaignUiService.GetCampaignContinentsBasicDataAsync();
+                details = $"{
+                    continents.SelectMany(x => x.Regions).FirstOrDefault(x => x.Id == request.CampaignRegion)
+                        ?.DisplayIndex}–{request.CampaignRegionEncounter}";
+                break;
+            }
+            case BattleType.TreasureHunt:
+            {
+                details = $"{_treasureHuntAbbreviations[request.TreasureHuntDifficulty]}–{request.TreasureHuntStage + 1
+                }–{request.TreasureHuntEncounter + 1}";
+                break;
+            }
+            case BattleType.HistoricBattle:
+                details = $"{_historicBattlesAbbreviations[request.HistoricBattleRegion]}–{request.HistoricBattleEncounter}";
+                break;
+            case BattleType.TeslaStorm:
+                details = $"{_teslaAbbreviations[request.TeslaStormRegion]}–{request.TeslaStormEncounter}";
+                break;
+            default:
+                details = string.Empty;
+                break;
+        }
+
+        var sb = new StringBuilder();
+        sb.Append(GetBattleTypeTitle(request.BattleType));
+        
+        if (!string.IsNullOrEmpty(details))
+        {
+            sb.Append(' ');
+            sb.Append(details);
+        }
+
+        if (request.UnitIds.Count == 1)
+        {
+            sb.Append($" [1 {localizer[FogResource.Hoh_Hero]}]");
+        }
+        else if (request.UnitIds.Count > 1)
+        {
+            sb.Append($" [{request.UnitIds.Count} {localizer[FogResource.Hoh_Heroes]}]");
+        }
+        
+        return sb.ToString();
+    }
+
+    private string GetBattleTypeTitle(BattleType battleType)
+    {
+        return battleType switch
+        {
+            BattleType.Campaign => localizer[FogResource.BattleType_Campaign],
+            BattleType.HistoricBattle => localizer[FogResource.BattleType_HistoricBattle],
+            BattleType.Pvp => localizer[FogResource.BattleType_PvP],
+            BattleType.TeslaStorm => localizer[FogResource.BattleType_TeslaStorm],
+            BattleType.TreasureHunt => localizer[FogResource.BattleType_TreasureHunt],
+            _ => string.Empty,
+        };
     }
 }

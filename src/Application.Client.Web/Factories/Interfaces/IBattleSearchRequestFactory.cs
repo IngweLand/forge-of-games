@@ -12,4 +12,6 @@ public interface IBattleSearchRequestFactory
     IReadOnlyDictionary<string, object?> CreateQueryParams(string battleDefinitionId, Difficulty difficulty,
         BattleType battleType, IEnumerable<string>? unitIds,
         IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap);
+
+    Task<string> CreateDefinitionTitleAsync(BattleSearchRequest request);
 }

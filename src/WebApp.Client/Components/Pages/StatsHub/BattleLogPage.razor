@@ -12,6 +12,7 @@
     <div class="options-container fog-container">
         <BattleSelector ViewModel="@_battleSelectorViewModel" SearchRequest="@_battleSearchRequest"
                         SearchRequestChanged="BattleSelectorOnValueChanged"/>
+        <MudIconButton Icon="@Icons.Material.Filled.IosShare" OnClick="ShareLink" />
         @if (_isLoading)
         {
             <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"

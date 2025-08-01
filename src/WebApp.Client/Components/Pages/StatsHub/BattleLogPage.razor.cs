@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;
@@ -144,6 +145,17 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
             CloseOnEscapeKey = true,
             NoHeader = true,
         };
+    }
+
+    private async Task ShareLink()
+    {
+        var options = GetDefaultDialogOptions();
+        var parameters = new DialogParameters<ShareBattleLogLinkDialog>
+        {
+            {x => x.Request, _battleSearchRequest},
+        };
+        await DialogService.ShowAsync<ShareBattleLogLinkDialog>(Loc[FogResource.Common_Share],
+            parameters, options);
     }
 
     private async Task OpenBattleStats(BattleSummaryViewModel battle)
