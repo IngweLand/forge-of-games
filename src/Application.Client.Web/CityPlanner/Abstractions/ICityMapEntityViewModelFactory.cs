@@ -11,5 +11,5 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 public interface ICityMapEntityViewModelFactory
 {
     CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
-        BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations);
+        IReadOnlyCollection<BuildingDto> buildings, IReadOnlyCollection<BuildingCustomizationDto> customizations);
 }

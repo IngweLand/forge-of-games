@@ -1,6 +1,7 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Extensions;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers;
@@ -27,10 +28,11 @@ public class CityMapEntityViewModelFactory(
     IHohStorageIconUrlProvider storageIconUrlProvider,
     IHohResourceIconUrlProvider resourceIconUrlProvider,
     IStringLocalizer<FogResource> localizer,
-    IWorkerIconUrlProvider workerIconUrlProvider) : ICityMapEntityViewModelFactory
+    IWorkerIconUrlProvider workerIconUrlProvider,
+    IBuildingViewModelFactory buildingViewModelFactory) : ICityMapEntityViewModelFactory
 {
     public CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
-        BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations)
+        IReadOnlyCollection<BuildingDto> buildings, IReadOnlyCollection<BuildingCustomizationDto> customizations)
     {
         var constructionComponentDto = building.Components.OfType<ConstructionComponent>().FirstOrDefault();
         ConstructionComponentViewModel? constructionComponent = null;
@@ -233,7 +235,7 @@ public class CityMapEntityViewModelFactory(
             Size = buildingSizeString,
             Level = entity.Level,
             InfoItems = infoItems,
-            LevelRange = levelRange,
+            Levels = buildings.OrderBy(x => x.Level).Select(buildingViewModelFactory.Create).ToList(),
             ProductionComponent = productionComponentViewModel,
             CustomizationComponent = customizationComponentViewModel,
         };

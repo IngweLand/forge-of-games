@@ -1,25 +1,26 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
-using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
-public class CityMapBuildingGroupViewModelFactory(IMapper mapper) : ICityMapBuildingGroupViewModelFactory
+public class CityMapBuildingGroupViewModelFactory(IMapper mapper, IBuildingViewModelFactory buildingViewModelFactory)
+    : ICityMapBuildingGroupViewModelFactory
 {
     public CityMapBuildingGroupViewModel Create(BuildingGroup buildingGroup, string buildingName, AgeDto? buildingAge,
-        int? level, BuildingLevelRange levelRange)
+        int? level, IReadOnlyCollection<BuildingDto> buildings)
     {
-        return new CityMapBuildingGroupViewModel()
+        return new CityMapBuildingGroupViewModel
         {
             BuildingGroup = buildingGroup,
             Name = buildingName,
             Age = mapper.Map<AgeViewModel?>(buildingAge),
             Level = level,
-            LevelRange = levelRange
+            Levels = buildings.OrderBy(x => x.Level).Select(buildingViewModelFactory.Create).ToList(),
         };
     }
 }

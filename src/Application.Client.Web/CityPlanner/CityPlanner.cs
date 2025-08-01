@@ -744,11 +744,11 @@ public class CityPlanner(
         }
 
         var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntity.CityEntityId];
-        var levelRange = CityMapState.BuildingLevelRanges![building.Group];
+        var levels = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
         var customizations = CityMapState.BuildingCustomizations.Where(bc => bc.BuildingGroup == building.Group)
             .ToList();
         CityMapState.SelectedEntityViewModel = cityMapEntityViewModelFactory.Create(CityMapState.SelectedCityMapEntity,
-            building, levelRange, customizations);
+            building, levels, customizations);
         UpdateCityPropertiesViewModel();
     }
 
@@ -762,10 +762,10 @@ public class CityPlanner(
 
         var levelGroups = CityMapState.SelectedCityMapEntities.GroupBy(src => src.Level).ToList();
         var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntities[0].CityEntityId];
-        var levelRange = CityMapState.BuildingLevelRanges![building.Group];
+        var levels = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
         CityMapState.SelectedCityMapBuildingGroupViewModel = cityMapBuildingGroupViewModelFactory.Create(
             building.Group, building.Name, levelGroups.Count == 1 ? building.Age : null,
-            levelGroups.Count == 1 ? levelGroups[0].Key : null, levelRange);
+            levelGroups.Count == 1 ? levelGroups[0].Key : null, levels);
         UpdateCityPropertiesViewModel();
     }
 }

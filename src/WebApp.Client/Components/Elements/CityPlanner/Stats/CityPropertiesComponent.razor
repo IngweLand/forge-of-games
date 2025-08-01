@@ -19,7 +19,7 @@
                 <span class="entity-title">@Data.WonderName</span>
                 @if (Editable)
                 {
-                    <BuildingLevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
+                    <LevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
                                                     SelectedLevel="@Data.WonderLevel"/>
                 }
                 else

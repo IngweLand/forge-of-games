@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -12,6 +13,6 @@ public class CityMapBuildingGroupViewModel
 
     public int? Level { get; init; }
 
-    public required BuildingLevelRange LevelRange { get; init; }
+    public required IReadOnlyCollection<BuildingViewModel> Levels { get; init; }
     public required string Name { get; init; }
 }

@@ -12,7 +12,7 @@
     <div class="age-label" style="background-color: @BuildingGroup.Age?.Color">@BuildingGroup.Age?.Name</div>
     <div class="header-container">
         <span class="entity-title">@BuildingGroup.Name</span>
-        <BuildingLevelSelectorComponent Levels="@BuildingGroup.LevelRange" LevelChanged="OnLevelChanged"
+        <BuildingLevelSelectorComponent Levels="@BuildingGroup.Levels" LevelChanged="OnLevelChanged"
                                         SelectedLevel="@(BuildingGroup.Level ?? -1)"/>
     </div>
 </div>

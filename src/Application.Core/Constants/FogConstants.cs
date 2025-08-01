@@ -4,7 +4,7 @@ public static class FogConstants
 {
     public const int NAME_MAX_CHARACTERS = 40;
     public const int DEFAULT_STATS_PAGE_SIZE = 10;
-    public const int CITY_PLANNER_VERSION = 3;
+    public const int CITY_PLANNER_VERSION = 4;
     public const int CC_UI_PROFILE_SCHEME_VERSION = 1;
     public const int COMMAND_CENTER_VERSION = 1;
     public const int MAX_TOP_HERO_LEVELS_TO_RETURN = 5;
