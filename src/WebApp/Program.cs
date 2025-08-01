@@ -11,6 +11,7 @@ using Ingweland.Fog.WebApp;
 using Ingweland.Fog.WebApp.Apis;
 using Ingweland.Fog.WebApp.Components;
 using Ingweland.Fog.WebApp.Constants;
+using Ingweland.Fog.WebApp.Middleware;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.AspNetCore.ResponseCompression;
 using MudBlazor.Services;
@@ -48,6 +49,7 @@ builder.Services.Configure<JsonOptions>(options =>
 builder.Services.AddOpenTelemetry().UseAzureMonitor();
 var app = builder.Build();
 
+app.UseMiddleware<MaintenanceModeMiddleware>();
 app.Use(async (context, next) =>
 {
     //TODO: add redirection from HELP_HERO_PLAYGROUNDS_PATH

@@ -45,5 +45,8 @@ internal static class DependencyInjection
         
         builder.Services.Configure<HohServerCredentials>(
             builder.Configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));
+        
+        builder.Services.Configure<MaintenanceModeSettings>(
+            builder.Configuration.GetSection(MaintenanceModeSettings.CONFIGURATION_PROPERTY_NAME));
     }
 }

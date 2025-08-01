@@ -121,6 +121,7 @@ public static class FogUrlBuilder
         public const string BATTLE_LOG_PATH = "/battle-log";
         
         public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
+        public const string MAINTENANCE_PAGE = "/maintenance.html";
 
         public static string Player(int id)
         {
