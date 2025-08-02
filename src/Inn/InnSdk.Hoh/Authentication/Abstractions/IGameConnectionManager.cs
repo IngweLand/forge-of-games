@@ -7,6 +7,6 @@ public interface IGameConnectionManager
     void AddOrUpdate(GameConnectionSessionData sessionData);
 
     void Clear();
-    GameConnectionSessionData? Get(string serverId);
-    void Remove(string serverId);
+    GameConnectionSessionData? Get(string worldId);
+    void Remove(string worldId);
 }

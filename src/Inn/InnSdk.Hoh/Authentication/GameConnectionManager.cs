@@ -10,12 +10,12 @@ public class GameConnectionManager : IGameConnectionManager
 
     public void AddOrUpdate(GameConnectionSessionData sessionData)
     {
-        _configurations[sessionData.ServerId] = sessionData;
+        _configurations.AddOrUpdate(sessionData.ServerId, sessionData, (_, _) => sessionData);
     }
 
-    public void Remove(string serverId)
+    public void Remove(string worldId)
     {
-        _configurations.TryRemove(serverId, out _);
+        _configurations.TryRemove(worldId, out _);
     }
 
     public void Clear()
@@ -23,8 +23,8 @@ public class GameConnectionManager : IGameConnectionManager
         _configurations.Clear();
     }
 
-    public GameConnectionSessionData? Get(string serverId)
+    public GameConnectionSessionData? Get(string worldId)
     {
-        return _configurations.GetValueOrDefault(serverId);
+        return _configurations.GetValueOrDefault(worldId);
     }
 }
