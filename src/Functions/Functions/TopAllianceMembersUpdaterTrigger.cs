@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Functions.Functions;
 public class TopAllianceMembersUpdaterTrigger(ITopAllianceMembersUpdateManager topAllianceMembersUpdateManager)
 {
     [Function("TopAllianceMembersUpdaterTrigger")]
-    public async Task Run([TimerTrigger("0 10,17,24 0 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 10/10 0 * * *")] TimerInfo myTimer)
     {
         await topAllianceMembersUpdateManager.RunAsync();
     }

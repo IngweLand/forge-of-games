@@ -23,7 +23,7 @@ public class BattlesProcessor(
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
     [Function("BattlesProcessor")]
-    public async Task Run([TimerTrigger("0 5 0 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 10 0 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 

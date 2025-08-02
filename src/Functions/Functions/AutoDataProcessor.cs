@@ -30,10 +30,7 @@ public class AutoDataProcessor(
     IAllianceRankingService allianceRankingService,
     IAllianceNameHistoryService allianceNameHistoryService,
     IAllianceMembersService allianceMembersService,
-    IPvpBattleService pvpBattleService,
-    IBattleService battleService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
-    IBattleStatsService battleStatsService,
     IMapper mapper,
     ILogger<AutoDataProcessor> logger,
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
@@ -46,7 +43,7 @@ public class AutoDataProcessor(
         [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
 
     [Function("AutoDataProcessor")]
-    public async Task Run([TimerTrigger("0 1 0 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("1 0 0 * * *")] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 

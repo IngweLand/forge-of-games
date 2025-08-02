@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Functions.Functions;
 public class PlayersUpdaterTrigger(IPlayersUpdateManager playersUpdateManager)
 {
     [Function("PlayersUpdaterTrigger")]
-    public async Task Run([TimerTrigger("0 5/15 1-5 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 5/10 2-5 * * *")] TimerInfo myTimer)
     {
         await playersUpdateManager.RunAsync();
     }

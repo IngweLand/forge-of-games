@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Functions.Functions;
 public class PlayerCityFetcherTrigger(IPlayerCityFetcher playerCityFetcher)
 {
     [Function("PlayerCityFetcherTrigger")]
-    public async Task Run([TimerTrigger("0 10/15 1-5 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 10/10 5 * * *")] TimerInfo myTimer)
     {
         await playerCityFetcher.RunAsync();
     }
