@@ -26,7 +26,7 @@ public abstract class PlayerHistoryServiceBase(IFogDbContext context, ILogger<Pl
         }
         var grouped = filtered.GroupBy(p => p.Key);
 
-        foreach (var chunk in grouped.Chunk(1000))
+        foreach (var chunk in grouped.Chunk(500))
         {
             logger.LogInformation("Processing chunk with {ChunkSize} items", chunk.Length);
             var inGamePlayerIds = chunk.Select(g => g.Key.InGamePlayerId).ToHashSet();

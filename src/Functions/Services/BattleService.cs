@@ -97,7 +97,7 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
             })
             .ToList();
         
-        foreach (var chunk in newBattles.Chunk(100))
+        foreach (var chunk in newBattles.Chunk(50))
         {
             logger.LogInformation("Processing chunk of battles with {ChunkSize} items", chunk.Length);
             context.Battles.AddRange(chunk);

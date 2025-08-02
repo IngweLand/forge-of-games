@@ -28,7 +28,7 @@ public class AllianceNameHistoryService(IFogDbContext context, ILogger<PlayerRan
 
         var grouped = filtered.GroupBy(p => p.Key);
 
-        foreach (var chunk in grouped.Chunk(1000))
+        foreach (var chunk in grouped.Chunk(500))
         {
             logger.LogInformation("Processing a chunk containing {ChunkCount} alliance groups", chunk.Count());
             var inGameAllianceIds = chunk.Select(g => g.Key.InGameAllianceId).ToHashSet();

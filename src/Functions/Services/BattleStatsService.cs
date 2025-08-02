@@ -110,9 +110,9 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
             .Where(src => src.Squads.Count > 0)
             .ToList();
         
-        foreach (var chunk in newStats.Chunk(50))
+        foreach (var chunk in newStats.Chunk(25))
         {
-            logger.LogInformation("Processing chunk of battle stats with {ChunkSize} items", chunk.Length);
+            logger.LogInformation("Saving chunk of battle stats with {ChunkSize} items", chunk.Length);
             context.BattleStats.AddRange(chunk);
             await context.SaveChangesAsync();
         }
@@ -122,7 +122,7 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
 
     private async Task<HashSet<byte[]>> GetExistingBattleStatsAsync(HashSet<byte[]> inGameBattleIds)
     {
-        var existing = await context.BattleStats
+        var existing = await context.BattleStats.AsNoTracking()
             .Where(p => inGameBattleIds.Contains(p.InGameBattleId))
             .Select(p => p.InGameBattleId)
             .ToHashSetAsync(StructuralByteArrayComparer.Instance);

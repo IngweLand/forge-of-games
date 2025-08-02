@@ -29,7 +29,7 @@ public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembe
                 g => g
                     .OrderByDescending(t => t.CollectedAt)
                     .ToList());
-        foreach (var chunk in confirmedGroups.Chunk(1000))
+        foreach (var chunk in confirmedGroups.Chunk(500))
         {
             logger.LogInformation("Processing confirmed groups chunk with {GroupCount} alliance groups.", chunk.Length);
 
