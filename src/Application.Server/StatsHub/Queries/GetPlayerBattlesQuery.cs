@@ -13,7 +13,6 @@ public record GetPlayerBattlesQuery : IRequest<PaginatedList<PvpBattleDto>>, ICa
     public int Count { get; init; }
     public required int PlayerId { get; init; }
     public int StartIndex { get; init; }
-    public string CacheKey => $"PlayerBattles_{PlayerId}_{StartIndex}_{Count}";
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }

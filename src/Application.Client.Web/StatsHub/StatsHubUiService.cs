@@ -27,16 +27,6 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly ICampaignUiService _campaignUiService;
     private readonly ICityService _cityService;
     private readonly ICommonService _commonService;
-
-    private readonly IDictionary<int, AllianceWithRankingsViewModel> _concreteAlliances =
-        new Dictionary<int, AllianceWithRankingsViewModel>();
-
-    private readonly IDictionary<int, PlayerProfileViewModel> _concretePlayerProfiles =
-        new Dictionary<int, PlayerProfileViewModel>();
-
-    private readonly IDictionary<int, PlayerViewModel> _concretePlayers =
-        new Dictionary<int, PlayerViewModel>();
-
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IHeroProfileUiService _heroProfileUiService;
     private readonly IMapper _mapper;
@@ -86,11 +76,6 @@ public class StatsHubUiService : IStatsHubUiService
 
     public async Task<PlayerProfileViewModel?> GetPlayerProfileAsync(int playerId)
     {
-        if (_concretePlayerProfiles.TryGetValue(playerId, out var playerViewModel))
-        {
-            return playerViewModel;
-        }
-
         var player = await _statsHubService.GetPlayerProfileAsync(playerId);
         if (player == null)
         {
@@ -109,20 +94,12 @@ public class StatsHubUiService : IStatsHubUiService
         var treasureHuntMaxPoints = playerTreasureHuntDifficulty != null
             ? _treasureHuntUiService.GetDifficultyMaxProgressPoints(playerTreasureHuntDifficulty.Difficulty)
             : 0;
-        var newViewModel =
-            _statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, await _ages.Value, await _barracks.Value,
-                playerTreasureHuntDifficulty, treasureHuntMaxPoints);
-        _concretePlayerProfiles.Add(playerId, newViewModel);
-        return newViewModel;
+        return _statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, await _ages.Value, await _barracks.Value,
+            playerTreasureHuntDifficulty, treasureHuntMaxPoints);
     }
 
     public async Task<PlayerViewModel?> GetPlayerAsync(int playerId, CancellationToken ct = default)
     {
-        if (_concretePlayers.TryGetValue(playerId, out var playerViewModel))
-        {
-            return playerViewModel;
-        }
-
         var player = await _statsHubService.GetPlayerAsync(playerId, ct);
         if (player == null)
         {
@@ -130,11 +107,7 @@ public class StatsHubUiService : IStatsHubUiService
         }
 
         var ages = await _ages.Value;
-        var newViewModel =
-            _mapper.Map<PlayerViewModel>(player, opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
-        ;
-        _concretePlayers.Add(playerId, newViewModel);
-        return newViewModel;
+        return _mapper.Map<PlayerViewModel>(player, opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
     }
 
     public async Task<PaginatedList<PvpBattleViewModel>> GetPlayerBattlesAsync(PlayerViewModel player,
@@ -174,20 +147,13 @@ public class StatsHubUiService : IStatsHubUiService
 
     public async Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId)
     {
-        if (_concreteAlliances.TryGetValue(allianceId, out var allianceViewModel))
-        {
-            return allianceViewModel;
-        }
-
         var alliance = await _statsHubService.GetAllianceAsync(allianceId);
         if (alliance == null)
         {
             return null;
         }
 
-        var newViewModel = _statsHubViewModelsFactory.CreateAlliance(alliance, await _ages.Value);
-        _concreteAlliances.Add(allianceId, newViewModel);
-        return newViewModel;
+        return _statsHubViewModelsFactory.CreateAlliance(alliance, await _ages.Value);
     }
 
     public async Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex,

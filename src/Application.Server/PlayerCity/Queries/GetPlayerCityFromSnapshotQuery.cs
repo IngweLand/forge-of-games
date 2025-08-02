@@ -9,7 +9,6 @@ namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
 public record GetPlayerCityFromSnapshotQuery(int SnapshotId) : IRequest<HohCity?>, ICacheableRequest
 {
-    public string CacheKey => $"PlayerCityFromSnapshot_{SnapshotId}";
     public TimeSpan? Duration { get; }
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }

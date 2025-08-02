@@ -13,7 +13,6 @@ public record GetTopHeroesQuery : IRequest<IReadOnlyCollection<string>>, ICachea
     public int? FromLevel { get; init; } = 0;
     public required HeroInsightsMode Mode { get; init; }
     public int? ToLevel { get; init; } = int.MaxValue;
-    public string CacheKey => $"TopHeroes-{Mode}-{AgeId}-{FromLevel}-{ToLevel}";
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }

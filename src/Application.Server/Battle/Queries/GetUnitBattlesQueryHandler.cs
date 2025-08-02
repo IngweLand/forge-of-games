@@ -17,7 +17,6 @@ namespace Ingweland.Fog.Application.Server.Battle.Queries;
 public record GetUnitBattlesQuery(string UnitId, BattleType BattleType)
     : IRequest<IReadOnlyCollection<UnitBattleDto>>, ICacheableRequest
 {
-    public string CacheKey => $"UnitBattles_{UnitId}_{BattleType}_{CultureInfo.CurrentCulture.Name}";
     public TimeSpan? Duration { get; }
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }

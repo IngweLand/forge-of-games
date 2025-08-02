@@ -1,5 +1,6 @@
 using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
+using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
@@ -9,6 +10,7 @@ using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
+using LazyCache;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -18,7 +20,6 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 public record GetPlayerProfileQuery : IRequest<PlayerProfileDto?>, ICacheableRequest
 {
     public required int PlayerId { get; init; }
-    public string CacheKey => $"PlayerProfile_{PlayerId}_{CultureInfo.CurrentCulture.Name}";
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
@@ -29,6 +30,8 @@ public class GetPlayerProfileQueryHandler(
     IBattleQueryService battleQueryService,
     IInGamePlayerService inGamePlayerService,
     IFogPlayerService playerService,
+    IAppCache appCache,
+    ICacheKeyFactory cacheKeyFactory,
     ILogger<GetPlayerProfileQueryHandler> logger)
     : IRequestHandler<GetPlayerProfileQuery, PlayerProfileDto?>
 {
@@ -95,6 +98,12 @@ public class GetPlayerProfileQueryHandler(
             logger.LogWarning("Detailed player data not found for {PlayerId} after attempting to retrieve it",
                 request.PlayerId);
             return null;
+        }
+        
+        appCache.Remove(cacheKeyFactory.CreateKey(request));
+        if (player.CurrentAlliance != null)
+        {
+            appCache.Remove(cacheKeyFactory.Alliance(player.CurrentAlliance.Id));
         }
 
         logger.LogDebug("Processing PVP battles for player {PlayerId}", request.PlayerId);

@@ -14,7 +14,7 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 public record GetAllianceQuery : IRequest<AllianceWithRankings?>, ICacheableRequest
 {
     public required int AllianceId { get; init; }
-    public string CacheKey => $"AllianceWithRanking_{AllianceId}";
+    public string CacheBucketKey => $"Alliance_{AllianceId}";
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }

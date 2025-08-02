@@ -1,40 +1,38 @@
+using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
+using LazyCache;
 using MediatR;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Behaviors;
 
 public class CachingBehavior<TRequest, TResponse>(
-    IMemoryCache cache,
+    IAppCache appCache,
+    ICacheKeyFactory cacheKeyFactory,
     ILogger<CachingBehavior<TRequest, TResponse>> logger) : IPipelineBehavior<TRequest, TResponse>
     where TRequest : ICacheableRequest
     where TResponse : class?
 {
-    public async Task<TResponse> Handle(
+    public Task<TResponse> Handle(
         TRequest request,
         RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
-        if (cache.TryGetValue(request.CacheKey, out var cached) && cached is TResponse response)
+        var cacheKey = cacheKeyFactory.CreateKey(request);
+        return appCache.GetOrAddAsync(cacheKey, async entry =>
         {
-            logger.LogDebug("Cache HIT for key: {CacheKey}", request.CacheKey);
+            logger.LogInformation("Cache MISS for key: {CacheKey}", cacheKey);
+            
+            var response = await next();
+
+            var absoluteExpiration = response != null ? request.GetExpiration() : DateTimeOffset.UtcNow.AddMinutes(5);
+            
+            logger.LogInformation(
+                "Cached response for key: {CacheKey} with expiration: {Expiration}. Is null: {IsNUll}",
+                cacheKey, absoluteExpiration, response == null);
+
+            entry.AbsoluteExpiration = absoluteExpiration;
             return response;
-        }
-
-        logger.LogInformation("Cache MISS for key: {CacheKey}", request.CacheKey);
-        response = await next();
-
-        var cacheEntryOptions = new MemoryCacheEntryOptions
-        {
-            AbsoluteExpiration = response != null ? request.GetExpiration() : DateTimeOffset.UtcNow.AddMinutes(15),
-        };
-
-        cache.Set(request.CacheKey, response, cacheEntryOptions);
-
-        logger.LogInformation("Cached response for key: {CacheKey} with expiration: {Expiration}. Is null: {IsNUll}",
-            request.CacheKey, cacheEntryOptions.AbsoluteExpiration, response == null);
-
-        return response;
+        });
     }
 }

@@ -1,4 +1,3 @@
-using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -7,7 +6,6 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +16,6 @@ public record BattleSearchQuery : IRequest<BattleSearchResult>, ICacheableReques
     public required string BattleDefinitionId { get; init; }
     public required BattleType BattleType { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
-
-    public string CacheKey => $"BattleSearch_{BattleDefinitionId}_{BattleType}_{string.Join("-", UnitIds)}";
-
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }

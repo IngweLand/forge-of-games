@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Server.Interfaces;
+
 namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface ICacheKeyFactory
@@ -6,4 +8,6 @@ public interface ICacheKeyFactory
     string HeroesBasicData();
     string HohAges();
     string HohResources();
+    string Alliance(int allianceId);
+    string CreateKey<TRequest>(TRequest request) where TRequest : ICacheableRequest;
 }
