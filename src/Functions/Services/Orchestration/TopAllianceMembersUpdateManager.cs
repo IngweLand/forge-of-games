@@ -27,11 +27,11 @@ public class TopAllianceMembersUpdateManager(
     databaseWarmUpService, logger), ITopAllianceMembersUpdateManager
 {
     private const int BATCH_SIZE = 100;
-    private const int TOP_RANK_LIMIT = 15;
+    private const int TOP_RANK_LIMIT = 20;
 
     protected override async Task<List<Player>> GetPlayers(string gameWorldId)
     {
-        logger.LogDebug("Fetching players");
+        Logger.LogDebug("Fetching players");
 
         var today = DateTime.UtcNow.ToDateOnly();
 

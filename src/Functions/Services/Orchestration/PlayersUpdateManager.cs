@@ -31,7 +31,7 @@ public class PlayersUpdateManager(
 
     protected override async Task<List<Player>> GetPlayers(string gameWorldId)
     {
-        logger.LogDebug("Fetching players");
+        Logger.LogDebug("Fetching players");
 
         var today = DateTime.UtcNow.ToDateOnly();
         var week = today.AddDays(-7);

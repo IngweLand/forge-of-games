@@ -24,16 +24,16 @@ public abstract class PlayersUpdateManagerBase(
     public async Task RunAsync()
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
-        logger.LogDebug("Database warm-up completed");
+        Logger.LogDebug("Database warm-up completed");
 
         var removedPlayers = new HashSet<int>();
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
             var players = await GetPlayers(gameWorld.Id);
-            logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
+            Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
             foreach (var player in players)
             {
-                logger.LogDebug("Processing player {@Player}", player.Key);
+                Logger.LogDebug("Processing player {@Player}", player.Key);
                 var delayTask = Task.Delay(1000);
                 var profile = await inGamePlayerService.FetchProfile(player.Key);
                 if (profile.IsSuccess)
@@ -58,12 +58,12 @@ public abstract class PlayersUpdateManagerBase(
 
         if (removedPlayers.Count > 0)
         {
-            logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
+            Logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
                 removedPlayers.Count);
             await ExecuteSafeAsync(
                 () => playerService.UpdateStatusAsync(removedPlayers, PlayerStatus.Missing, CancellationToken.None),
                 "");
-            logger.LogInformation("Completed player status updater service update");
+            Logger.LogInformation("Completed player status updater service update");
         }
     }
 

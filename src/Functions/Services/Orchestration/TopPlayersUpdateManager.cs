@@ -32,7 +32,7 @@ public class TopPlayersUpdateManager(
 
     protected override Task<List<Player>> GetPlayers(string gameWorldId)
     {
-        logger.LogDebug("Fetching players");
+        Logger.LogDebug("Fetching players");
 
         var today = DateTime.UtcNow.ToDateOnly();
 

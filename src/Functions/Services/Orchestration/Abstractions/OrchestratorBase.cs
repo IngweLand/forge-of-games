@@ -15,6 +15,7 @@ public abstract class OrchestratorBase(
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     ILogger logger)
 {
+    protected ILogger Logger { get; } = logger;
     protected IGameWorldsProvider GameWorldsProvider { get; } = gameWorldsProvider;
 
     protected IInGameDataParsingService InGameDataParsingService { get; } = inGameDataParsingService;
@@ -47,7 +48,7 @@ public abstract class OrchestratorBase(
             }
             catch (Exception e)
             {
-                logger.LogError(e, "Error parsing battle complete wave raw data collected on {date}",
+                Logger.LogError(e, "Error parsing battle complete wave raw data collected on {date}",
                     rawData.CollectedAt);
             }
         }
@@ -71,7 +72,7 @@ public abstract class OrchestratorBase(
             }
             catch (Exception e)
             {
-                logger.LogError(e, "Error parsing battle stats raw data collected on {date}",
+                Logger.LogError(e, "Error parsing battle stats raw data collected on {date}",
                     rawData.CollectedAt);
             }
         }
@@ -95,7 +96,7 @@ public abstract class OrchestratorBase(
             }
             catch (Exception e)
             {
-                logger.LogError(e, "Error parsing pvp battles raw data collected on {date}", rawData.CollectedAt);
+                Logger.LogError(e, "Error parsing pvp battles raw data collected on {date}", rawData.CollectedAt);
             }
         }
 
@@ -110,7 +111,7 @@ public abstract class OrchestratorBase(
         }
         catch (Exception e)
         {
-            logger.LogError(e, "Error while executing safe operation: {ErrorMessage}", errorMessage);
+            Logger.LogError(e, "Error while executing safe operation: {ErrorMessage}", errorMessage);
         }
     }
 
@@ -122,7 +123,7 @@ public abstract class OrchestratorBase(
         }
         catch (Exception e)
         {
-            logger.LogError(e, "Error while executing safe operation: {ErrorMessage}", errorMessage);
+            Logger.LogError(e, "Error while executing safe operation: {ErrorMessage}", errorMessage);
             return fallback;
         }
     }
