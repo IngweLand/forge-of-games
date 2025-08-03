@@ -62,4 +62,5 @@ public sealed partial class GameDesignResponseDTO
     public IList<HeroAwakeningComponentDTO> HeroAwakeningComponents => Items.FindAndUnpackToList<HeroAwakeningComponentDTO>();
     public IList<ExpansionDefinitionDTO> ExpansionDefinitions => Items.FindAndUnpackToList<ExpansionDefinitionDTO>();
     public IList<DynamicFloatValueDefinitionDTO> DynamicFloatValueDefinitions => Items.FindAndUnpackToList<DynamicFloatValueDefinitionDTO>();
+    public IList<RelicDefinitionDTO> RelicDefinitions => Items.FindAndUnpackToList<RelicDefinitionDTO>();
 }

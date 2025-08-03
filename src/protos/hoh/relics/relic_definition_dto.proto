@@ -1,0 +1,24 @@
+syntax = "proto3";
+import "stat_boost_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message RelicDefinitionDTO {
+  string id = 1;
+  string rarity = 2;
+  repeated RelicLevelDto levelData = 4;
+}
+
+message RelicLevelDto {
+  bool ascension = 1;
+  int32 level = 2;
+  int32 ascension_level = 3;
+  string relicCostDefinitionId = 4;
+  repeated string abilities = 10;
+  repeated RelicStatBoostDto statBoosts = 11;
+}
+
+message RelicStatBoostDto {
+  StatBoostDto statBoosts = 1;
+  string relicBoostAgeModifierDefinitionId = 2;
+}

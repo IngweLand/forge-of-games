@@ -1,8 +1,14 @@
 syntax = "proto3";
-import "relic.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message RelicPush {
-  repeated Relic relics = 1; 
+  repeated PlayerRelicDto relics = 1; 
+}
+
+message PlayerRelicDto {
+  int32 id = 1;
+  string definitionId = 2;
+  int32 level = 3;
+  string equippedOnHeroDefinitionId = 4;
 }
