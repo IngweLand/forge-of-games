@@ -243,12 +243,13 @@ public class CityPlanner(
 
         var building = CityMapState.Buildings[entity.CityEntityId];
         var cme = cityMapEntityFactory.Duplicate(entity, building);
-        
+
         var placed = FindNextFreeLocation(cme);
         if (!placed)
         {
             FindFreeLocation(cme);
         }
+
         CityMapState.Add(cme);
         CityMapState.CityStats = _statsProcessor.UpdateStats(cme);
         SelectCityMapEntity(cme);
@@ -512,7 +513,8 @@ public class CityPlanner(
         DeselectAll();
 
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings, CityMapState.Snapshots,
+            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings,
+            CityMapState.Snapshots,
             _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
@@ -638,7 +640,7 @@ public class CityPlanner(
             x--;
         }
     }
-    
+
     private bool FindNextFreeLocation(CityMapEntity cityMapEntity)
     {
         for (var i = cityMapEntity.Location.Y; i < _mapArea.Bounds.Bottom; i++)
@@ -744,11 +746,24 @@ public class CityPlanner(
         }
 
         var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntity.CityEntityId];
-        var levels = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
         var customizations = CityMapState.BuildingCustomizations.Where(bc => bc.BuildingGroup == building.Group)
             .ToList();
-        CityMapState.SelectedEntityViewModel = cityMapEntityViewModelFactory.Create(CityMapState.SelectedCityMapEntity,
-            building, levels, customizations);
+
+        if (building.Type != BuildingType.Evolving)
+        {
+            var buildings = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
+            CityMapState.SelectedEntityViewModel = cityMapEntityViewModelFactory.Create(
+                CityMapState.SelectedCityMapEntity,
+                building, buildings, customizations);
+        }
+        else
+        {
+            var levelRange = CityMapState.BuildingLevelRanges![building.Group];
+            CityMapState.SelectedEntityViewModel = cityMapEntityViewModelFactory.Create(
+                CityMapState.SelectedCityMapEntity,
+                building, levelRange, customizations);
+        }
+
         UpdateCityPropertiesViewModel();
     }
 
@@ -762,10 +777,21 @@ public class CityPlanner(
 
         var levelGroups = CityMapState.SelectedCityMapEntities.GroupBy(src => src.Level).ToList();
         var building = CityMapState.Buildings[CityMapState.SelectedCityMapEntities[0].CityEntityId];
-        var levels = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
-        CityMapState.SelectedCityMapBuildingGroupViewModel = cityMapBuildingGroupViewModelFactory.Create(
-            building.Group, building.Name, levelGroups.Count == 1 ? building.Age : null,
-            levelGroups.Count == 1 ? levelGroups[0].Key : null, levels);
+        if (building.Type != BuildingType.Evolving)
+        {
+            var buildings = CityMapState.Buildings.Values.Where(x => x.Group == building.Group).ToList();
+            CityMapState.SelectedCityMapBuildingGroupViewModel = cityMapBuildingGroupViewModelFactory.Create(
+                building.Group, building.Name, levelGroups.Count == 1 ? building.Age : null,
+                levelGroups.Count == 1 ? levelGroups[0].Key : null, buildings);
+        }
+        else
+        {
+            var levelRange = CityMapState.BuildingLevelRanges![building.Group];
+            CityMapState.SelectedCityMapBuildingGroupViewModel = cityMapBuildingGroupViewModelFactory.Create(
+                building.Group, building.Name, levelGroups.Count == 1 ? building.Age : null,
+                levelGroups.Count == 1 ? levelGroups[0].Key : null, levelRange);
+        }
+
         UpdateCityPropertiesViewModel();
     }
 }

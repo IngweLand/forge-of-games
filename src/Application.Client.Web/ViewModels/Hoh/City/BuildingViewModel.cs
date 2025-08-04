@@ -11,7 +11,8 @@ public class BuildingViewModel
     public required BuildingDto Data { get; init; }
     public required string Id { get; init; }
     public required string Size { get; init; }
-    public int Level { get; init; }
+    public int Level => LevelSpecs.Level;
+    public required BuildingLevelSpecs LevelSpecs { get; init; }
     public required string Name { get; init; }
     public UpgradeComponentViewModel? UpgradeComponent { get; init; }
 }

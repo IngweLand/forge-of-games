@@ -13,6 +13,6 @@ public class CityMapBuildingGroupViewModel
 
     public int? Level { get; init; }
 
-    public required IReadOnlyCollection<BuildingViewModel> Levels { get; init; }
+    public required IReadOnlyCollection<BuildingLevelSpecs> Levels { get; init; }
     public required string Name { get; init; }
 }

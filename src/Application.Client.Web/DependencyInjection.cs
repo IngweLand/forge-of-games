@@ -124,6 +124,7 @@ public static class DependencyInjection
         services.AddScoped<IHeroComponentAnalyticsService, HeroComponentAnalyticsService>();
         services.AddScoped<IBattleLogPageAnalyticsService, BattleLogPageAnalyticsService>();
         services.AddScoped<IInspirationsPageAnalyticsService, InspirationsPageAnalyticsService>();
+        services.AddScoped<IBuildingLevelSpecsFactory, BuildingLevelSpecsFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

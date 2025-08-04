@@ -13,11 +13,11 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
     private BuildingMultilevelCostViewModel? _costs;
 
     private CancellationTokenSource _cts = new ();
-    private BuildingViewModel _fromLevel;
-    private IList<BuildingViewModel>? _fromLevels;
+    private BuildingLevelSpecs _fromLevel;
+    private IList<BuildingLevelSpecs>? _fromLevels;
     private BuildingGroupViewModel? _selectedBuildingGroupDetails;
-    private BuildingViewModel? _toLevel;
-    private IList<BuildingViewModel>? _toLevels;
+    private BuildingLevelSpecs? _toLevel;
+    private IList<BuildingLevelSpecs>? _toLevels;
 
     [Parameter]
     public required BuildingGroup BuildingGroup { get; set; }
@@ -40,20 +40,7 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
     [Inject]
     private IToolsUiService ToolsUiService { get; set; }
 
-    private BuildingViewModel CreateZeroLevelBuilding(BuildingViewModel src)
-    {
-        return new BuildingViewModel
-        {
-            Level = 0,
-            AgeColor = src.AgeColor,
-            Data = src.Data,
-            Id = string.Empty,
-            Name = string.Empty,
-            Size = string.Empty,
-        };
-    }
-
-    private void ToLevelOnValueChanged(BuildingViewModel selectedLevel)
+    private void ToLevelOnValueChanged(BuildingLevelSpecs selectedLevel)
     {
         _toLevel = selectedLevel;
 
@@ -72,12 +59,13 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
             _toLevel.Level);
     }
 
-    private List<BuildingViewModel>? GetToLevels()
+    private List<BuildingLevelSpecs>? GetToLevels()
     {
         var toLevels = _selectedBuildingGroupDetails!.Buildings
             .Where(b => b.Level > _fromLevel!.Level &&
                         (b.ConstructionComponent != null || b.UpgradeComponent != null))
-            .OrderBy(b => b.Level)
+            .Select(b => b.LevelSpecs)
+            .OrderBy(x => x.Level)
             .ToList();
         return toLevels.Count == 0 ? null : toLevels;
     }
@@ -89,7 +77,7 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
         _costs = null;
     }
 
-    private void FromLevelOnValueChanged(BuildingViewModel selectedLevel)
+    private void FromLevelOnValueChanged(BuildingLevelSpecs selectedLevel)
     {
         _fromLevel = selectedLevel;
 
@@ -138,9 +126,10 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
 
         var buildings = _selectedBuildingGroupDetails.Buildings
             .Where(b => b.ConstructionComponent != null || b.UpgradeComponent != null)
-            .OrderBy(b => b.Level)
+            .Select(b => b.LevelSpecs)
+            .OrderBy(x => x.Level)
             .ToList();
-        _fromLevels = new List<BuildingViewModel>() {CreateZeroLevelBuilding(buildings.First()),}.Concat(buildings)
+        _fromLevels = new List<BuildingLevelSpecs>() {BuildingLevelSpecs.ZeroLevel}.Concat(buildings)
             .ToList();
         _fromLevel = _fromLevels.First(src => src.Level == FromLevel);
         _toLevels = GetToLevels();

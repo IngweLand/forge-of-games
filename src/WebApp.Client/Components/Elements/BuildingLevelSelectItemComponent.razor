@@ -1,17 +1,17 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
 @using MudBlazor.Utilities
-<MudSelectItem Value="Data">
+<MudSelectItem Value="LevelSpecs">
     <div class="data-items">
-        <div class="@LevelLabelClass">@Data.Level</div>
-        @if (Data.AgeName != null)
+        <div class="@LevelLabelClass">@LevelSpecs.Level</div>
+        @if (LevelSpecs.AgeName != null)
         {
-            <div class="@AgeLabelClass" style="background-color: @Data.AgeColor">@Data.AgeName</div>
+            <div class="@AgeLabelClass" style="background-color: @LevelSpecs.AgeColor">@LevelSpecs.AgeName</div>
         }
-        @if (Data.ConstructionComponent != null)
+        @if (LevelSpecs.CanBeConstructed)
         {
             <span class="@IconClass">construction</span>
         }
-        @if (Data.UpgradeComponent != null)
+        @if (LevelSpecs.CanBeUpgradedTo)
         {
             <span class="@IconClass">upgrade</span>
         }
@@ -20,7 +20,7 @@
 
 @code {
     [Parameter]
-    public required BuildingViewModel Data { get; set; }
+    public required BuildingLevelSpecs LevelSpecs { get; set; }
     
     [Parameter]
     public bool Dense { get; set; } = false;

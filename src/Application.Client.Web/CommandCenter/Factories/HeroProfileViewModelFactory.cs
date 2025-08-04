@@ -19,7 +19,7 @@ public class HeroProfileViewModelFactory(
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IHeroSupportUnitViewModelFactory heroSupportUnitViewModelFactory,
     IHeroAbilityViewModelFactory abilityViewModelFactory,
-    IBuildingViewModelFactory buildingViewModelFactory) : IHohHeroProfileViewModelFactory
+    IBuildingLevelSpecsFactory buildingLevelSpecsFactory) : IHohHeroProfileViewModelFactory
 {
     private const int DEFAULT_HITS_PER_MINUTE = 60;
 
@@ -82,7 +82,7 @@ public class HeroProfileViewModelFactory(
             HeroLevels = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count),
             AbilityLevels = Enumerable.Range(1, hero.Ability.Levels.Count).ToList(),
             AwakeningLevels = Enumerable.Range(0, 6).ToList(),
-            BarracksLevels = barracks.OrderBy(b => b.Level).Select(buildingViewModelFactory.Create).ToList(),
+            BarracksLevels = barracks.Select(buildingLevelSpecsFactory.Create).OrderBy(b => b.Level).ToList(),
             StatsItems = CreateMainStatsItems(profile.Stats),
             StatsBreakdown = CreateStatsBreakdownItems(profile.StatsBreakdown),
             VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),

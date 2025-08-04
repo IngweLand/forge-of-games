@@ -10,7 +10,7 @@ public record HeroProfileViewModel
     public required HeroAbilityViewModel Ability { get; init; }
     public required IReadOnlyCollection<int> AbilityLevels { get; init; }
     public required IReadOnlyCollection<int> AwakeningLevels { get; init; }
-    public IReadOnlyCollection<BuildingViewModel> BarracksLevels { get; init; } = [];
+    public IReadOnlyCollection<BuildingLevelSpecs> BarracksLevels { get; init; } = [];
     public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; init; }
     public required string HeroUnitId { get; init; }
     public required HeroProfileIdentifier Identifier { get; init; }

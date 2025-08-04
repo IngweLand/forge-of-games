@@ -1,19 +1,14 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Client.Web.Models;
-using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
-using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -29,10 +24,23 @@ public class CityMapEntityViewModelFactory(
     IHohResourceIconUrlProvider resourceIconUrlProvider,
     IStringLocalizer<FogResource> localizer,
     IWorkerIconUrlProvider workerIconUrlProvider,
-    IBuildingViewModelFactory buildingViewModelFactory) : ICityMapEntityViewModelFactory
+    IBuildingLevelSpecsFactory buildingLevelSpecsFactory) : ICityMapEntityViewModelFactory
 {
     public CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
         IReadOnlyCollection<BuildingDto> buildings, IReadOnlyCollection<BuildingCustomizationDto> customizations)
+    {
+        var levels = buildings.Select(buildingLevelSpecsFactory.Create).OrderBy(x => x.Level).ToList();
+        return Create(entity, building, levels, customizations);
+    }
+
+    public CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
+        BuildingLevelRange levelRange, IReadOnlyCollection<BuildingCustomizationDto> customizations)
+    {
+        return Create(entity, building, buildingLevelSpecsFactory.Create(levelRange), customizations);
+    }
+
+    private CityMapEntityViewModel Create(CityMapEntity entity, BuildingDto building,
+        IReadOnlyCollection<BuildingLevelSpecs> levels, IReadOnlyCollection<BuildingCustomizationDto> customizations)
     {
         var constructionComponentDto = building.Components.OfType<ConstructionComponent>().FirstOrDefault();
         ConstructionComponentViewModel? constructionComponent = null;
@@ -52,12 +60,12 @@ public class CityMapEntityViewModelFactory(
         var happinessProvider = entity.FirstOrDefaultStat<HappinessProvider>();
         if (happinessProvider != null)
         {
-            infoItems.Add(new IconLabelItemViewModel()
+            infoItems.Add(new IconLabelItemViewModel
             {
                 Label = happinessProvider.Range.ToString(),
                 IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_boost_radius"),
             });
-            infoItems.Add(new IconLabelItemViewModel()
+            infoItems.Add(new IconLabelItemViewModel
             {
                 Label = happinessProvider.Value.ToString(),
                 IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_culture_boost"),
@@ -67,7 +75,7 @@ public class CityMapEntityViewModelFactory(
         var grantWorkerComponent = building.Components.OfType<GrantWorkerComponent>().FirstOrDefault();
         if (grantWorkerComponent != null)
         {
-            infoItems.Add(new IconLabelItemViewModel()
+            infoItems.Add(new IconLabelItemViewModel
             {
                 Label = grantWorkerComponent.GetWorkerCount().ToString(),
                 IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First(), grantWorkerComponent.WorkerType),
@@ -75,7 +83,7 @@ public class CityMapEntityViewModelFactory(
         }
 
         var buildingSizeString = $"{building.Width}x{building.Length}";
-        infoItems.Add(new IconLabelItemViewModel()
+        infoItems.Add(new IconLabelItemViewModel
         {
             Label = buildingSizeString,
             IconUrl = assetUrlProvider.GetHohIconUrl("icon_terrain_land"),
@@ -88,7 +96,7 @@ public class CityMapEntityViewModelFactory(
             var happinessConsumer = entity.FirstOrDefaultStat<HappinessConsumer>();
             if (happinessConsumer != null)
             {
-                generalItems.Add(new IconLabelItemViewModel()
+                generalItems.Add(new IconLabelItemViewModel
                 {
                     Label = $"{happinessConsumer.ConsumedHappiness:N0}/{happinessConsumer.BuffDetails.Value:N0}",
                     IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_culture_boost"),
@@ -109,7 +117,7 @@ public class CityMapEntityViewModelFactory(
                         {
                             if (productionStatsItem.WorkerCount > 0)
                             {
-                                generalItems.Add(new IconLabelItemViewModel()
+                                generalItems.Add(new IconLabelItemViewModel
                                 {
                                     Label = productionStatsItem.WorkerCount.ToString(),
                                     IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First()),
@@ -117,7 +125,7 @@ public class CityMapEntityViewModelFactory(
                             }
 
                             var defaultHours = product.DefaultProduction.ProductionTime / 3600;
-                            generalItems.Add(new IconLabelItemViewModel()
+                            generalItems.Add(new IconLabelItemViewModel
                             {
                                 Label = $"{defaultHours}{localizer[FogResource.Common_Hours_Abbr]} - {
                                     product.DefaultProduction.BuffedValue:N0}",
@@ -127,7 +135,7 @@ public class CityMapEntityViewModelFactory(
                             });
                         }
 
-                        products.Add(new CityMapEntityProductViewModel()
+                        products.Add(new CityMapEntityProductViewModel
                         {
                             ProductId = productionStatsItem.ProductionId,
                             IconUrl = resourceIconUrlProvider.GetIconUrl(product.ResourceId),
@@ -155,7 +163,7 @@ public class CityMapEntityViewModelFactory(
                         productionAmount += oneHourBonus;
                     }
 
-                    products.Add(new CityMapEntityProductViewModel()
+                    products.Add(new CityMapEntityProductViewModel
                     {
                         ProductId = abilityTrainingComponent.Id,
                         IconUrl = resourceIconUrlProvider.GetIconUrl("resource.mastery_points"),
@@ -170,7 +178,7 @@ public class CityMapEntityViewModelFactory(
 
             if (generalItems.Count > 0 || products.Count > 0)
             {
-                productionComponentViewModel = new ProductionComponentViewModel()
+                productionComponentViewModel = new ProductionComponentViewModel
                 {
                     General = generalItems,
                     Products = products,
@@ -191,7 +199,7 @@ public class CityMapEntityViewModelFactory(
             {
                 if (component is CultureBoostComponent cultureBoostComponent)
                 {
-                    generalItems.Add(new IconLabelItemViewModel()
+                    generalItems.Add(new IconLabelItemViewModel
                     {
                         Label = $"{cultureBoostComponent.Factor * 100}%",
                         IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_culture_boost"),
@@ -199,7 +207,7 @@ public class CityMapEntityViewModelFactory(
                 }
                 else if (component is BoostResourceComponent boostResourceComponent)
                 {
-                    generalItems.Add(new IconLabelItemViewModel()
+                    generalItems.Add(new IconLabelItemViewModel
                     {
                         Label = $"{boostResourceComponent.Value * 100}%",
                         IconUrl = boostResourceComponent.ResourceId == null
@@ -211,7 +219,7 @@ public class CityMapEntityViewModelFactory(
                 {
                     var hours = productionComponent.ProductionTime / 3600;
                     generalItems.AddRange(productionComponent.Products.OfType<ResourceReward>()
-                        .Select(resourceProduct => new IconLabelItemViewModel()
+                        .Select(resourceProduct => new IconLabelItemViewModel
                         {
                             Label = $"{hours}{localizer[FogResource.Common_Hours_Abbr]} - {resourceProduct.Amount:N0}",
                             IconUrl = resourceIconUrlProvider.GetIconUrl(resourceProduct.ResourceId),
@@ -219,7 +227,7 @@ public class CityMapEntityViewModelFactory(
                 }
             }
 
-            customizationComponentViewModel = new CustomizationComponentViewModel()
+            customizationComponentViewModel = new CustomizationComponentViewModel
             {
                 SelectedItem = selectedItem,
                 Items = customizations.Prepend(BuildingCustomizationDto.None).ToList(),
@@ -227,7 +235,7 @@ public class CityMapEntityViewModelFactory(
             };
         }
 
-        return new CityMapEntityViewModel()
+        return new CityMapEntityViewModel
         {
             Id = entity.Id,
             Name = building.Name,
@@ -235,7 +243,7 @@ public class CityMapEntityViewModelFactory(
             Size = buildingSizeString,
             Level = entity.Level,
             InfoItems = infoItems,
-            Levels = buildings.OrderBy(x => x.Level).Select(buildingViewModelFactory.Create).ToList(),
+            Levels = levels,
             ProductionComponent = productionComponentViewModel,
             CustomizationComponent = customizationComponentViewModel,
         };

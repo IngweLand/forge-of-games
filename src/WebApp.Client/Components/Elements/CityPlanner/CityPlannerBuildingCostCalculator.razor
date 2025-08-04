@@ -9,12 +9,12 @@
         @if (_fromLevels != null)
         {
             <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
-                       Value="@_fromLevel" T="BuildingViewModel" ValueChanged="FromLevelOnValueChanged"
+                       Value="@_fromLevel" T="BuildingLevelSpecs" ValueChanged="FromLevelOnValueChanged"
                        Variant="Variant.Outlined" Dense="true">
 
-                @foreach (var building in _fromLevels)
+                @foreach (var levelSpecs in _fromLevels)
                 {
-                    <BuildingLevelSelectItemComponent Data="building" Dense="true"/>
+                    <BuildingLevelSelectItemComponent LevelSpecs="levelSpecs" Dense="true"/>
                 }
             </MudSelect>
         }
@@ -22,12 +22,12 @@
         @* target level selector *@
         @if (_toLevels != null)
         {
-            <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" Value="@_toLevel" T="BuildingViewModel" 
+            <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" Value="@_toLevel" T="BuildingLevelSpecs" 
                        ValueChanged="ToLevelOnValueChanged" Variant="Variant.Outlined" Immediate="true" Strict="true">
 
-                @foreach (var building in _toLevels)
+                @foreach (var levelSpecs in _toLevels)
                 {
-                    <BuildingLevelSelectItemComponent Data="building" Dense="true"/>
+                    <BuildingLevelSelectItemComponent LevelSpecs="levelSpecs" Dense="true"/>
                 }
             </MudSelect>
         }

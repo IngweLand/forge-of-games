@@ -50,12 +50,12 @@
             @if (_fromLevels != null)
             {
                 <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
-                           @bind-Value="@_currentLevel" T="BuildingViewModel"
+                           @bind-Value="@_currentLevel" T="BuildingLevelSpecs"
                            SelectedValuesChanged="OnCurrentLevelSelectedValuesChanged" Variant="Variant.Outlined">
 
-                    @foreach (var building in _fromLevels)
+                    @foreach (var levelSpecs in _fromLevels)
                     {
-                        <BuildingLevelSelectItemComponent Data="building"/>
+                        <BuildingLevelSelectItemComponent LevelSpecs="levelSpecs"/>
                     }
                 </MudSelect>
             }
@@ -64,12 +64,12 @@
             @if (_toLevels != null)
             {
                 <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]"
-                           @bind-Value="@_targetLevel" T="BuildingViewModel"
+                           @bind-Value="@_targetLevel" T="BuildingLevelSpecs"
                            SelectedValuesChanged="OnDesiredLevelSelectedValuesChanged" Variant="Variant.Outlined">
 
-                    @foreach (var building in _toLevels)
+                    @foreach (var levelSpecs in _toLevels)
                     {
-                        <BuildingLevelSelectItemComponent Data="building"/>
+                        <BuildingLevelSelectItemComponent LevelSpecs="levelSpecs"/>
                     }
                 </MudSelect>
             }
@@ -87,10 +87,10 @@
     private CityBuildingGroupsViewModel? _selectedCity;
     private BuildingGroupBasicViewModel? _selectedBuildingGroup;
     private BuildingGroupViewModel? _selectedBuildingGroupDetails;
-    private IList<BuildingViewModel>? _fromLevels;
-    private IList<BuildingViewModel>? _toLevels;
-    private BuildingViewModel? _currentLevel;
-    private BuildingViewModel? _targetLevel;
+    private IList<BuildingLevelSpecs>? _fromLevels;
+    private IList<BuildingLevelSpecs>? _toLevels;
+    private BuildingLevelSpecs? _currentLevel;
+    private BuildingLevelSpecs? _targetLevel;
     private BuildingMultilevelCostViewModel? _costs;
 
     protected override async Task OnInitializedAsync()
@@ -113,21 +113,9 @@
 
         _toLevels = _selectedBuildingGroupDetails!.Buildings
             .Where(b => b.Level > _currentLevel!.Level && (b.ConstructionComponent != null || b.UpgradeComponent != null))
-            .OrderBy(b => b.Level)
+            .Select(b => b.LevelSpecs)
+            .OrderBy(x => x.Level)
             .ToList();
-    }
-
-    private BuildingViewModel CreateZeroLevelBuilding(BuildingViewModel src)
-    {
-        return new BuildingViewModel
-        {
-            Level = 0,
-            AgeColor = src.AgeColor,
-            Data = src.Data,
-            Id = string.Empty,
-            Name = string.Empty,
-            Size = string.Empty,
-        };
     }
 
     private void OnDesiredLevelSelectedValuesChanged()
@@ -153,12 +141,13 @@
             return;
         }
 
-        var buildings = _selectedBuildingGroupDetails.Buildings
+        var levels = _selectedBuildingGroupDetails.Buildings
             .Where(b => b.ConstructionComponent != null || b.UpgradeComponent != null)
-            .OrderBy(b => b.Level)
+            .Select(b => b.LevelSpecs)
+            .OrderBy(x => x.Level)
             .Take(_selectedBuildingGroupDetails.Buildings.Count - 1)
             .ToList();
-        _fromLevels = new List<BuildingViewModel>() {CreateZeroLevelBuilding(buildings.First())}.Concat(buildings).ToList();
+        _fromLevels = new List<BuildingLevelSpecs>() {BuildingLevelSpecs.ZeroLevel}.Concat(levels).ToList();
     }
 
     private void OnCitiesSelectedValuesChanged()

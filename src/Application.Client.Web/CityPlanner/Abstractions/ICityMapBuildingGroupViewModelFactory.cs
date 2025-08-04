@@ -11,4 +11,7 @@ public interface ICityMapBuildingGroupViewModelFactory
 {
     CityMapBuildingGroupViewModel Create(BuildingGroup buildingGroup, string buildingName, AgeDto? buildingAge,
         int? level, IReadOnlyCollection<BuildingDto> buildings);
+
+    CityMapBuildingGroupViewModel Create(BuildingGroup buildingGroup, string buildingName, AgeDto? buildingAge,
+        int? level, BuildingLevelRange levelRange);
 }

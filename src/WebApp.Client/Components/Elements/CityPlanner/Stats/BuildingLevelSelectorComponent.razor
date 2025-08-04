@@ -7,13 +7,13 @@
            Label="@Loc[FogResource.Hoh_Lvl]"
            ValueChanged="OnLevelChanged"
            Placeholder="---" Strict="true"
-           T="BuildingViewModel" RelativeWidth="DropdownWidth.Adaptive"
+           T="BuildingLevelSpecs" RelativeWidth="DropdownWidth.Adaptive"
            ToStringFunc="@(x => x?.Level.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
            Value="@(Levels.FirstOrDefault(x => x.Level == SelectedLevel))"
            Variant="Variant.Outlined">
     @foreach (var level in Levels)
     {
-        <BuildingLevelSelectItemComponent Dense="true" Data="level"/>
+        <BuildingLevelSelectItemComponent Dense="true" LevelSpecs="level"/>
     }
 </MudSelect>
 <style>
@@ -28,7 +28,7 @@
 
     [Parameter]
     [EditorRequired]
-    public IReadOnlyCollection<BuildingViewModel> Levels { get; set; } = [];
+    public IReadOnlyCollection<BuildingLevelSpecs> Levels { get; set; } = [];
 
     [Parameter]
     public int SelectedLevel { get; set; } = -1;
@@ -36,9 +36,9 @@
     [Parameter]
     public EventCallback<int> LevelChanged { get; set; }
 
-    private Task OnLevelChanged(BuildingViewModel building)
+    private Task OnLevelChanged(BuildingLevelSpecs levelSpecs)
     {
-        return LevelChanged.InvokeAsync(building.Level);
+        return LevelChanged.InvokeAsync(levelSpecs.Level);
     }
 
 }

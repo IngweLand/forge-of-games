@@ -15,7 +15,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
 
-public class BuildingViewModelFactory(IMapper mapper) : IBuildingViewModelFactory
+public class BuildingViewModelFactory(IMapper mapper, IBuildingLevelSpecsFactory buildingLevelSpecsFactory) : IBuildingViewModelFactory
 {
     public BuildingViewModel Create(BuildingDto source)
     {
@@ -41,7 +41,7 @@ public class BuildingViewModelFactory(IMapper mapper) : IBuildingViewModelFactor
             AgeName = source.CityIds.Contains(CityId.Capital) ? source.Age?.Name : null,
             AgeColor = source.Age.ToCssColor(),
             Size = buildingSizeString,
-            Level = source.Level,
+            LevelSpecs = buildingLevelSpecsFactory.Create(source),
             ConstructionComponent = constructionComponent,
             UpgradeComponent = upgradeComponent,
             Data = source,

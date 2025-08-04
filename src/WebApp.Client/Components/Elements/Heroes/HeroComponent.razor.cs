@@ -173,10 +173,10 @@ public partial class HeroComponent : ComponentBase
         return UpdateProfile(request with {Level = level.Level, AscensionLevel = level.AscensionLevel});
     }
 
-    private Task OnBarracksLevelChanged(BuildingViewModel barracks)
+    private Task OnBarracksLevelChanged(BuildingLevelSpecs levelSpecs)
     {
         var request = CreateRequest();
-        return UpdateProfile(request with {BarracksLevel = barracks.Level});
+        return UpdateProfile(request with {BarracksLevel = levelSpecs.Level});
     }
 
     private Task OnAwakeningValueChanged(int level)

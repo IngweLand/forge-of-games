@@ -93,13 +93,13 @@
                 <div class="selector-component">
                     <MudSelect Dense="true" Label="@Loc[FogResource.Hoh_Hero_Barracks]"
                                ValueChanged="OnBarracksLevelChanged"
-                               T="BuildingViewModel" RelativeWidth="DropdownWidth.Adaptive"
+                               T="BuildingLevelSpecs" RelativeWidth="DropdownWidth.Adaptive"
                                ToStringFunc="@(x => x?.Level.ToString(CultureInfo.InvariantCulture) ?? string.Empty)"
                                Value="@(_profile.BarracksLevels.FirstOrDefault(x => x.Level == _profile.Identifier.BarracksLevel))"
                                Variant="Variant.Outlined">
                         @foreach (var level in _profile.BarracksLevels)
                         {
-                            <BuildingLevelSelectItemComponent Dense="true" Data="level"/>
+                            <BuildingLevelSelectItemComponent Dense="true" LevelSpecs="level"/>
                         }
                     </MudSelect>
                 </div>
