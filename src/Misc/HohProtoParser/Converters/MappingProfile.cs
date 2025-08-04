@@ -127,6 +127,8 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.NextBuildingId,
                 opt => opt.MapFrom(uc => HohStringParser.GetConcreteId(uc.NextBuildingId)));
         CreateMap<ProductionComponentDTO, ProductionComponent>()
+            .ForMember(dest => dest.Id,
+                opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)))
             .ForMember(dest => dest.ProductionTime, opt => opt.MapFrom(uc => uc.ProductionTime.Seconds))
             .ForMember(dest => dest.WorkerCount, opt =>
             {
