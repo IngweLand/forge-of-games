@@ -1,6 +1,6 @@
 using Ingweland.Fog.Models.Fog.Entities;
 
-namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
 public class HeroProgressionCostRequest
 {

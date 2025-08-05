@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -56,7 +57,7 @@ public class HeroProfileViewModelFactory(
         UnitStatType.Evasion,
     ];
 
-    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks)
+    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks, HeroRelicViewModel? relic = null)
     {
         var profileViewModel = new HeroProfileViewModel
         {
@@ -88,6 +89,7 @@ public class HeroProfileViewModelFactory(
             VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),
             Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
                 profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
+            Relic = relic ,
         };
 
         return profileViewModel;

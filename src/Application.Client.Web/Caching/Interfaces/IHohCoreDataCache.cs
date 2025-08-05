@@ -8,6 +8,7 @@ public interface IHohCoreDataCache
 {
     Task<IReadOnlyCollection<BuildingDto>> GetBarracks(UnitType unitType);
     Task<HeroDto?> GetHeroAsync(string heroId);
+    Task<IReadOnlyDictionary<string, RelicDto>> GetRelicsAsync();
     Task AddBarracksAsync(IEnumerable<BuildingDto> barracks);
     Task AddHeroesAsync(IEnumerable<HeroDto> heroes);
     IReadOnlyDictionary<string, HeroDto> GetAllHeroes();

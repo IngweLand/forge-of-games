@@ -57,6 +57,8 @@ public static class FogUrlBuilder
         public const string COMMON_CITIES = "/common/cities";
         
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
+        
+        public const string RELICS = "/relics";
     }
 
     public static class PageRoutes

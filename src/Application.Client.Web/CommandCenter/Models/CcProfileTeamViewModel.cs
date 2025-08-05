@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
+
 namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 
 public class CcProfileTeamViewModel

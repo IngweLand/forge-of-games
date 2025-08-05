@@ -4,7 +4,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Hoh.Entities.Units;
 
 [ProtoContract]
-public class HeroAbilityDescriptionItemValue
+public class BattleAbilityDescriptionItemValue
 {
     [ProtoMember(1)]
     public required NumericValueType Type { get; init; }

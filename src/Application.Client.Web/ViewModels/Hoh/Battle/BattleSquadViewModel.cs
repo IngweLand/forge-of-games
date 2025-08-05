@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
 namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 

@@ -81,13 +81,20 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? name;
     }
 
+    public string GetRelicName(string relicId)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Relics, HohLocalizationProperty.Name,
+            relicId);
+        return GetValue(key) ?? relicId;
+    }
+
     public string GetHeroClassName(string name)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.HeroClass, name);
         return GetValue(key) ?? name;
     }
 
-    public string GetHeroAbilityDescription(string abilityDescriptionId)
+    public string GetBattleAbilityDescription(string abilityDescriptionId)
     {
         var keyName = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.AbilityDescriptions,
             HohLocalizationProperty.Name, abilityDescriptionId);
@@ -96,7 +103,7 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(keyName) ?? GetValue(keyDesc) ?? abilityDescriptionId;
     }
 
-    public string GetHeroAbilityName(string abilityId)
+    public string GetBattleAbilityName(string abilityId)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Abilities,
             HohLocalizationProperty.Name, abilityId);

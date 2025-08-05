@@ -129,7 +129,7 @@ public class UnitService(
             return null;
         }
 
-        var abilities = new List<HeroAbility>();
+        var abilities = new List<BattleAbility>();
         foreach (var level in abilityComponent.Levels)
         {
             var ability = await hohCoreDataRepository.GetHeroAbilityAsync(level.AbilityId);

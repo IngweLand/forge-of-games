@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -17,6 +16,7 @@ using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
+using Ingweland.Fog.Shared.Helpers;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 
@@ -25,7 +25,8 @@ public class StatsHubViewModelsFactory(
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IResourceLocalizationService resourceLocalizationService,
     IHohHeroProfileFactory heroProfileFactory,
-    IHohHeroProfileViewModelFactory heroProfileViewModelFactory) : IStatsHubViewModelsFactory
+    IHohHeroProfileViewModelFactory heroProfileViewModelFactory,
+    IHeroRelicViewModelFactory relicViewModelFactory) : IStatsHubViewModelsFactory
 {
     public PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages)
@@ -69,12 +70,13 @@ public class StatsHubViewModelsFactory(
     public PlayerProfileViewModel CreatePlayerProfile(PlayerProfileDto playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
-        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints)
+        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints,
+        IReadOnlyDictionary<string, RelicDto> relics)
     {
         var player = mapper.Map<PlayerViewModel>(playerProfile.Player,
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
         var battles = playerProfile.PvpBattles
-            .Select(x => CreatePvpBattle(player, x, heroes, ages, barracks)).ToList();
+            .Select(x => CreatePvpBattle(player, x, heroes, ages, barracks, relics)).ToList();
         var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
         return new PlayerProfileViewModel
         {
@@ -125,15 +127,16 @@ public class StatsHubViewModelsFactory(
 
     public BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
         IReadOnlyDictionary<string, HeroDto> heroes,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        IReadOnlyDictionary<string, RelicDto> relics)
     {
         return new BattleSummaryViewModel
         {
             Id = summaryDto.Id,
             ResultStatus = summaryDto.ResultStatus,
-            PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks))
+            PlayerSquads = summaryDto.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
                 .ToList(),
-            EnemySquads = summaryDto.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks))
+            EnemySquads = summaryDto.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
                 .ToList(),
             StatsId = summaryDto.StatsId,
             BattleType = summaryDto.BattleType,
@@ -151,15 +154,16 @@ public class StatsHubViewModelsFactory(
 
     public PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        IReadOnlyDictionary<string, RelicDto> relics)
     {
         var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
 
         var isVictory = pvpBattleDto.Winner.Id == player.Id;
-        var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks))
+        var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks, relics))
             .OrderBy(uvm => uvm.Identifier.HeroId)
             .ToList();
-        var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks))
+        var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks, relics))
             .OrderBy(uvm => uvm.Identifier.HeroId)
             .ToList();
 
@@ -180,7 +184,8 @@ public class StatsHubViewModelsFactory(
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,
         IReadOnlyDictionary<string, HeroDto> heroes,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        IReadOnlyDictionary<string, RelicDto> relics)
     {
         var hero = heroes[squad.Hero!.UnitId];
         BuildingDto? concreteBarracks = null;
@@ -189,8 +194,19 @@ public class StatsHubViewModelsFactory(
             barracks.TryGetValue((squad.Unit.UnitId, squad.Unit.Level), out concreteBarracks);
         }
 
+        HeroRelicViewModel? relicVm = null;
+        foreach (var ability in squad.Hero.Abilities)
+        {
+            var concreteId = HohStringParser.GetConcreteId(ability).Split('_')[0];
+            if (relics.TryGetValue(concreteId, out var relic))
+            {
+                relicVm = relicViewModelFactory.Create(relic,
+                    relic.LevelData.First(x => x.Abilities.Any(y => y.Id == ability)));
+            }
+        }
+
         var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
-        var profileVm = heroProfileViewModelFactory.Create(profile, hero, []);
+        var profileVm = heroProfileViewModelFactory.Create(profile, hero, [], relicVm);
         string? finalHitPointsPercent = null;
         var isDead = false;
         if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))

@@ -168,6 +168,7 @@ public enum HohLocalizationCategory
     RankingExplainPopup,
     RankingPanel,
     RecoverAccountPopup,
+    Relics,
     Regions,
     Requirements,
     ResearchPointsVideoPlacementPopup,

@@ -13,30 +13,6 @@ namespace Ingweland.Fog.HohProtoParser;
 
 public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSerializer, ILogger<LocalizationParser> logger)
 {
-    private static readonly IList<string> UsedLocalizationCategories = new List<string>()
-    {
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Abilities, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.AbilityDescriptions, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Ages, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingGroups, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Buildings, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingTypes, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.BuildingCustomizations, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Cities, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Continents, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Heroes, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.HeroClass, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Regions, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.TreasureHuntDifficulties, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.TreasureHuntDifficultiesPanel, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Units, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.UnitTypes, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Wonders, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Technologies, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Difficulties, string.Empty),
-        HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Resources, string.Empty),
-    };
-
     public void Parse(string? inputDirectory, IList<string> outputDirectories)
     {
         logger.LogInformation($"Starting parsing localization files: {string.Join(", ", HohSupportedCultures.AllCultures)}");
@@ -57,8 +33,7 @@ public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSeri
                 var data = mapper.Map<LocalizationData>(localizationContainer.Data);
                 var filteredData = new LocalizationData()
                 {
-                    Entries = data.Entries.Where(kvp => UsedLocalizationCategories.Any(s => kvp.Key.StartsWith(s)))
-                        .ToDictionary(kvp => kvp.Key, kvp => kvp.Value),
+                    Entries = data.Entries,
                 };
                 foreach (var outDir in outputDirectories)
                 {

@@ -5,6 +5,7 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 public interface ICacheKeyFactory
 {
     string HeroDto(string heroId);
+    string RelicDtos();
     string HeroesBasicData();
     string HohAges();
     string HohResources();

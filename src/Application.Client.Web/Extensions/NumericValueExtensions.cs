@@ -8,7 +8,7 @@ public static class NumericValueExtensions
 {
     private const int DEFAULT_HITS_PER_MINUTE = 60;
 
-    public static string ToFormatedString(this HeroAbilityDescriptionItemValue src)
+    public static string ToFormatedString(this BattleAbilityDescriptionItemValue src)
     {
         switch (src.Type)
         {

@@ -1,0 +1,64 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-container {
+    position: relative;
+    background-color: #4685d4;
+    border-radius: 2px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ability-level {
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.ascension-level-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12px;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2C2F33;
+    border-bottom-right-radius: 2px;
+    z-index: 2;
+}
+
+.ascension-level-container > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (min-width: 576px) {
+    .icon-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .ability-level {
+        font-size: 14px;
+    }
+
+    .ascension-level-container {
+        width: 14px;
+        padding: 2px;
+    }
+}

@@ -14,6 +14,11 @@ public class CacheKeyFactory : ICacheKeyFactory
         return $"hero_dto-{heroId}-{CultureInfo.CurrentCulture.Name}";
     }
 
+    public string RelicDtos()
+    {
+        return $"relic_dtos:{CultureInfo.CurrentCulture.Name}";
+    }
+
     public string HeroesBasicData()
     {
         return $"heroes-basic-data-{CultureInfo.CurrentCulture.Name}";

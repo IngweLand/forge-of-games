@@ -126,9 +126,9 @@ public class GameDesignDataParser(
         return mapper.Map<IList<Expansion>>(gdr.ExpansionDefinitions);
     }
 
-    private static IList<HeroAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<BattleAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponseDTO gdr)
     {
-        return mapper.Map<IList<HeroAbility>>(gdr.BattleAbilityDefinitions);
+        return mapper.Map<IList<BattleAbility>>(gdr.BattleAbilityDefinitions);
     }
 
     private static IList<HeroBattleAbilityComponent> CreateHeroAbilityComponents(IMapper mapper,
@@ -268,6 +268,7 @@ public class GameDesignDataParser(
         var heroAwakeningComponents = CreateHeroAwakeningComponents(mapper, gdr);
         var cities = CreateCities(mapper, gdr);
         var buildingCustomizations = BuildingCustomizations(mapper, gdr, ages, units);
+        var relics = mapper.Map<IList<Relic>>(gdr.RelicDefinitions);
 
         var data = new Data
         {
@@ -294,6 +295,7 @@ public class GameDesignDataParser(
             BuildingCustomizations = buildingCustomizations.ToList(),
             HeroUnitTypes = mapper.Map<IReadOnlyCollection<HeroUnitType>>(gdr.HeroUnitTypeDefinitions),
             Resources = resources.AsReadOnly(),
+            Relics = relics.AsReadOnly(),
         };
 
         return data;

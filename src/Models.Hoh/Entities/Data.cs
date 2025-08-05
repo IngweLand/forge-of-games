@@ -28,7 +28,7 @@ public class Data
     [ProtoMember(9)]
     public required IReadOnlyCollection<TreasureHuntDifficultyData> TreasureHuntBattles { get; init; }
     [ProtoMember(10)]
-    public required IReadOnlyCollection<HeroAbility> HeroAbilities { get; init; }
+    public required IReadOnlyCollection<BattleAbility> HeroAbilities { get; init; }
 
     [ProtoMember(11)]
     public required IReadOnlyCollection<HeroBattleAbilityComponent> HeroBattleAbilityComponents { get; init; }
@@ -59,4 +59,7 @@ public class Data
     
     [ProtoMember(20)]
     public required IReadOnlyCollection<Resource> Resources { get; set; }
+
+    [ProtoMember(21)]
+    public required IReadOnlyCollection<Relic> Relics { get; set; }
 }

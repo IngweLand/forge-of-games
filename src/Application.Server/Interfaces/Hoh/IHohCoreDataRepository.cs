@@ -13,7 +13,7 @@ public interface IHohCoreDataRepository
     Task<CityDefinition?> GetCity(CityId id);
     Task<Hero?> GetHeroAsync(string id);
     Task<Hero?> GetHeroByUnitIdAsync(string id);
-    Task<HeroAbility?> GetHeroAbilityAsync(string abilityId);
+    Task<BattleAbility?> GetHeroAbilityAsync(string abilityId);
     Task<HeroAscensionCost?> GetHeroAscensionCostsAsync(string ascensionCostId);
     Task<HeroAwakeningComponent?> GetHeroAwakeningComponentAsync(string awakeningId);
     Task<HeroBattleAbilityComponent?> GetHeroAbilityComponentAsync(string heroAbilityId);
@@ -36,4 +36,5 @@ public interface IHohCoreDataRepository
     Task<Wonder?> GetWonderAsync(WonderId id);
     Task<World?> GetWorldAsync(WorldId id);
     Task<IReadOnlyCollection<Resource>> GetResources();
+    Task<IReadOnlyCollection<Relic>> GetRelicsAsync();
 }

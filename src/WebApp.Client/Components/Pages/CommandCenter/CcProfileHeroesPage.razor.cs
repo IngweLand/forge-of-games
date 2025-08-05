@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter;
 using MudBlazor;
 

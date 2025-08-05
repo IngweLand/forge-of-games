@@ -16,7 +16,8 @@ public interface IStatsHubViewModelsFactory
     PlayerProfileViewModel CreatePlayerProfile(PlayerProfileDto playerProfile,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
-        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints);
+        TreasureHuntDifficultyBasicViewModel? treasureHuntDifficulty, int treasureHuntMaxPoints,
+        IReadOnlyDictionary<string, RelicDto> relics);
 
     PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages);
@@ -35,7 +36,8 @@ public interface IStatsHubViewModelsFactory
 
     BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
         IReadOnlyDictionary<string, HeroDto> heroes,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks);
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        IReadOnlyDictionary<string, RelicDto> relics);
 
     IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
         IReadOnlyCollection<UnitBattleDto> unitBattles);
@@ -44,5 +46,6 @@ public interface IStatsHubViewModelsFactory
 
     PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks);
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
+        IReadOnlyDictionary<string, RelicDto> relics);
 }

@@ -1,10 +1,9 @@
-@using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Ingweland.Fog.Models.Fog.Enums
-@using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
-@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @inject IStringLocalizer<FogResource> Loc
 <MudDialog Gutters="false" ContentStyle="border-radius: 0; margin: 0" @onclick="Close">
     <DialogContent>
@@ -57,10 +56,20 @@
             <div class="ability-container">
                 <div class="ability-icon-container">
                     <img src="@HeroProfile.Ability.IconUrl"/>
-                    <span class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.Identifier.AbilityLevel}")</span>
+                    <span
+                        class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.Identifier.AbilityLevel}")</span>
                 </div>
                 <span>@((MarkupString) HeroProfile.Ability.Level.Description)</span>
             </div>
+
+            @if (HeroProfile.Relic != null)
+            {
+                <div class="ability-container" style="border-top: 1px solid #4685d4">
+                    <RelicIconComponent Relic="@HeroProfile.Relic"/>
+                    <span>@((MarkupString) HeroProfile.Relic.Description)</span>
+                </div>
+            }
+
 
             @if (HeroProfile.SupportUnit != null)
             {

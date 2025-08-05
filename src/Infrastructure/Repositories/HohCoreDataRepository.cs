@@ -59,7 +59,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.AscensionCosts.FirstOrDefault(hpc => hpc.Id == ascensionCostId);
     }
 
-    public async Task<HeroAbility?> GetHeroAbilityAsync(string abilityId)
+    public async Task<BattleAbility?> GetHeroAbilityAsync(string abilityId)
     {
         var data = await dataProvider.GetDataAsync();
         return data.HeroAbilities.FirstOrDefault(ha => ha.Id == abilityId);
@@ -99,6 +99,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     {
         var data = await dataProvider.GetDataAsync();
         return data.Resources;
+    }
+
+    public async Task<IReadOnlyCollection<Relic>> GetRelicsAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.Relics;
     }
 
     public async Task<IReadOnlyCollection<Building>> GetBuildingsAsync(CityId cityId)

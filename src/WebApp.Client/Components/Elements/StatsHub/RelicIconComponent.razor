@@ -1,0 +1,42 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+@if (Relic != null)
+{
+    <div class="component-root">
+        <div class="icon-container">
+            <img src="@Relic.IconUrl"/>
+            @if (Relic.Ascension)
+            {
+                <div class="ascension-level-container">
+                    @for (var i = 4; i >= 0; i--)
+                    {
+                        if (Relic.AscensionLevel >= i)
+                        {
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_relic_ascension_lvl_active")"/>
+                        }
+                        else
+                        {
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_relic_ascension_lvl_active")"
+                                 style="visibility: hidden"/>
+                        }
+                    }
+                </div>
+            }
+        </div>
+
+        <span class="ability-level">@($"{Loc[FogResource.Hoh_Lvl]} {Relic.Level}")</span>
+    </div>
+}
+
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required HeroRelicViewModel Relic { get; set; }
+
+}

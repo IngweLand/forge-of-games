@@ -1,6 +1,6 @@
 using Ingweland.Fog.Models.Fog.Enums;
 
-namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
 public class UnitStatBreakdownViewModel
 {

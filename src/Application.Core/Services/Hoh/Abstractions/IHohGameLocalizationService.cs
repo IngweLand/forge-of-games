@@ -12,8 +12,9 @@ public interface IHohGameLocalizationService
     string GetCityName(CityId id);
     string GetContinentName(ContinentId id);
     string GetDifficultyName(Difficulty difficulty);
-    string GetHeroAbilityDescription(string abilityDescriptionId);
-    string GetHeroAbilityName(string abilityId);
+    string GetBattleAbilityDescription(string abilityDescriptionId);
+    string GetBattleAbilityName(string abilityId);
+    string GetRelicName(string relicId);
     string GetHeroClassName(string name);
     string GetHeroName(string id);
     string GetRegionName(RegionId id);

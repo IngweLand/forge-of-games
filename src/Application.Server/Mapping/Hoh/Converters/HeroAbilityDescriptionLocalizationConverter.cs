@@ -8,6 +8,6 @@ public class HeroAbilityDescriptionLocalizationConverter(IHohGameLocalizationSer
 {
     public string Convert(string abilityDescriptionId, ResolutionContext context)
     {
-        return localizationService.GetHeroAbilityDescription(abilityDescriptionId);
+        return localizationService.GetBattleAbilityDescription(abilityDescriptionId);
     }
 }

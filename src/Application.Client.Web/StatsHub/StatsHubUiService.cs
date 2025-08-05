@@ -95,7 +95,7 @@ public class StatsHubUiService : IStatsHubUiService
             ? _treasureHuntUiService.GetDifficultyMaxProgressPoints(playerTreasureHuntDifficulty.Difficulty)
             : 0;
         return _statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, await _ages.Value, await _barracks.Value,
-            playerTreasureHuntDifficulty, treasureHuntMaxPoints);
+            playerTreasureHuntDifficulty, treasureHuntMaxPoints, await _coreDataCache.GetRelicsAsync());
     }
 
     public async Task<PlayerViewModel?> GetPlayerAsync(int playerId, CancellationToken ct = default)
@@ -122,8 +122,9 @@ public class StatsHubUiService : IStatsHubUiService
         var heroes = await GetAllBattleHeroes(heroIds);
         var ages = await _ages.Value;
         var barracks = await _barracks.Value;
+        var relics = await _coreDataCache.GetRelicsAsync();
         var newBattles = result.Items.Select(x =>
-            _statsHubViewModelsFactory.CreatePvpBattle(player, x, heroes, ages, barracks)).ToList();
+            _statsHubViewModelsFactory.CreatePvpBattle(player, x, heroes, ages, barracks, relics)).ToList();
         return new PaginatedList<PvpBattleViewModel>(newBattles, result.StartIndex, result.TotalCount);
     }
 
@@ -206,9 +207,10 @@ public class StatsHubUiService : IStatsHubUiService
         }
 
         var heroes = (await GetAllBattleHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
+        var relics = await _coreDataCache.GetRelicsAsync();
 
         return result.Battles
-            .Select(src => _statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, barracks))
+            .Select(src => _statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, barracks, relics))
             .ToList();
     }
 
@@ -238,7 +240,7 @@ public class StatsHubUiService : IStatsHubUiService
         var heroTasks = heroIds.Select(_coreDataCache.GetHeroAsync);
         return (await Task.WhenAll(heroTasks)).Where(x => x != null).ToList()!;
     }
-
+    
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()
     {
         return (await _commonService.GetAgesAsync()).ToDictionary(a => a.Id);

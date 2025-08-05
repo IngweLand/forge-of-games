@@ -2,6 +2,7 @@ using AutoMapper;
 using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using HohProtoParser.Extensions;
+using Ingweland.Fog.HohProtoParser.Converters;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
@@ -64,8 +65,8 @@ public class MappingProfile : Profile
                 opt => opt.MapFrom(src => src.Cost.ToDictionary(hpc => hpc.Level,
                     hpc => hpc.Resources.Resources)));
         CreateMap<HeroUnitStatFormulaDefinitionFactorsDto, UnitStatFormulaFactors>();
-        CreateMap<BattleAbilityDefinitionDescriptionItemDto, HeroAbilityDescriptionItem>();
-        CreateMap<BattleAbilityDefinitionDescriptionItemValueDto, HeroAbilityDescriptionItemValue>()
+        CreateMap<BattleAbilityDefinitionDescriptionItemDto, BattleAbilityDescriptionItem>();
+        CreateMap<BattleAbilityDefinitionDescriptionItemValueDto, BattleAbilityDescriptionItemValue>()
             .ForMember(dest => dest.Type,
                 opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<NumericValueType>(src.Type)));
         CreateMap<HeroBattleAbilityComponentLevelDto, HeroBattleAbilityComponentLevel>();
@@ -118,6 +119,9 @@ public class MappingProfile : Profile
         CreateMap<EncounterDetailsDto, EncounterDetails>().ConvertUsing(new EncounterDetailsDtoConverter());
         CreateMap<BuildingLevelDynamicChangeDTO, Dictionary<int, float>>()
             .ConvertUsing(new BuildingLevelDynamicChangeDtoConverter());
+        CreateMap<RelicLevelDto, RelicLevel>()
+            .ForMember(dest => dest.Boosts, opt => opt.MapFrom(src => src.StatBoosts));
+        CreateMap<RelicStatBoostDto, RelicStatBoost>();
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -260,7 +264,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.RarityFactors,
                 opt => opt.MapFrom(src =>
                     src.RarityUnits.ToDictionary(dto => dto.RarityId, dto => dto.Factors)));
-        CreateMap<BattleAbilityDefinitionDTO, HeroAbility>();
+        CreateMap<BattleAbilityDefinitionDTO, BattleAbility>();
         CreateMap<ReworkedWonderDefinitionDTO, Wonder>()
             .ForMember(dest => dest.Id, opt => opt.ConvertUsing(new WonderIdValueConverter(), src => src.Id))
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
@@ -283,6 +287,9 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.UnitType,
                 opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<UnitType>(src.UnitType)))
             .ForMember(dest => dest.BaseValues, opt => opt.MapFrom(src => src.UnitStats));
+        CreateMap<RelicDefinitionDTO, Relic>()
+            .ForMember(dest => dest.Rarity,
+                opt => opt.ConvertUsing<RelicRarityValueConverter, string>(src => src.Rarity));
 
         // localization
         CreateMap<LocaResponse, LocalizationData>()

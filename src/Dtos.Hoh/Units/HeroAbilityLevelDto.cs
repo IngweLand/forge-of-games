@@ -12,8 +12,8 @@ public class HeroAbilityLevelDto
     public string? Description { get; init; }
     [ProtoMember(3)]
 
-    public required IReadOnlyCollection<HeroAbilityDescriptionItem> DescriptionItems { get; init; } =
-        new List<HeroAbilityDescriptionItem>();
+    public required IReadOnlyCollection<BattleAbilityDescriptionItem> DescriptionItems { get; init; } =
+        new List<BattleAbilityDescriptionItem>();
 
     [ProtoMember(4)]
     public int Level { get; init; }

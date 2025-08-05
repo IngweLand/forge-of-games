@@ -1,9 +1,7 @@
-using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
-using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 
-namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
 public record HeroProfileViewModel
 {
@@ -21,6 +19,7 @@ public record HeroProfileViewModel
     public required string Name { get; init; }
     public required string PortraitUrl { get; init; }
     public required int Power { get; init; }
+    public HeroRelicViewModel? Relic { get; init; }
     public int StarCount { get; init; }
     public IReadOnlyCollection<UnitStatBreakdownViewModel> StatsBreakdown { get; init; } = [];
     public required IReadOnlyCollection<IconLabelItemViewModel> StatsItems { get; init; }

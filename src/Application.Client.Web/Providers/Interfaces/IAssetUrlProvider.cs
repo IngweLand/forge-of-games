@@ -23,4 +23,5 @@ public interface IAssetUrlProvider
     string GetNotoSansFontUrl(string locale);
     string GetImageUrl(string filename);
     string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet);
+    string GetHohRelicIconUrl(string relicId);
 }

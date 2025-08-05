@@ -7,14 +7,14 @@ namespace Ingweland.Fog.Application.Server.Factories;
 
 public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizationService) : IHeroAbilityDtoFactory
 {
-    public HeroAbilityDto Create(HeroBattleAbilityComponent abilityComponent, IList<HeroAbility> abilities)
+    public HeroAbilityDto Create(HeroBattleAbilityComponent abilityComponent, IList<BattleAbility> abilities)
     {
         var levels = new List<HeroAbilityLevelDto>();
         foreach (var levelData in abilityComponent.Levels.OrderBy(c => int.Parse(c.AbilityId.Split('_').Last())))
         {
             var level = int.Parse(levelData.AbilityId.Split('_').Last());
             var ability = abilities.First(ha => ha.Id == levelData.AbilityId);
-            var description = hohGameLocalizationService.GetHeroAbilityDescription(ability.DescriptionLocalizationId);
+            var description = hohGameLocalizationService.GetBattleAbilityDescription(ability.DescriptionLocalizationId);
 
             levels.Add(new HeroAbilityLevelDto
             {
@@ -29,7 +29,7 @@ public class HeroAbilityDtoFactory(IHohGameLocalizationService hohGameLocalizati
         {
             Id = abilityComponent.HeroAbilityId,
             Levels = levels,
-            Name = hohGameLocalizationService.GetHeroAbilityName(abilityComponent.HeroAbilityId),
+            Name = hohGameLocalizationService.GetBattleAbilityName(abilityComponent.HeroAbilityId),
         };
     }
 }

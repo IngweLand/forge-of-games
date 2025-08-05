@@ -54,6 +54,9 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
 
     public string GetHohUnitStatIconUrl(UnitStatType unitStatType) =>
         GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{unitStatType}.png");
+    
+    public string GetHohRelicIconUrl(string relicId) =>
+        GetAssetUrl(assetsSettings.Value.HohIconsPath, $"full_relic_{relicId}.png");
 
     public string GetHohHeroAbilityIconUrl(string heroAbilityId)
     {

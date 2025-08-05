@@ -5,5 +5,5 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface IHeroAbilityDtoFactory
 {
-    HeroAbilityDto Create(HeroBattleAbilityComponent abilityComponent, IList<HeroAbility> abilities);
+    HeroAbilityDto Create(HeroBattleAbilityComponent abilityComponent, IList<BattleAbility> abilities);
 }

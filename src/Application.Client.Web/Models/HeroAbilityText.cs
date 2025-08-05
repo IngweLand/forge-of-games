@@ -21,7 +21,7 @@ public class HeroAbilityText
 
     public string Title { get; } = string.Empty;
 
-    public string GetDescription(IReadOnlyCollection<HeroAbilityDescriptionItem> descriptionItems)
+    public string GetDescription(IReadOnlyCollection<BattleAbilityDescriptionItem> descriptionItems)
     {
         if (_descriptionTemplate == null)
         {

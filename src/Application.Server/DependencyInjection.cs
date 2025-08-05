@@ -79,6 +79,8 @@ public static class DependencyInjection
         services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
         services.AddScoped<IInGamePlayerService, InGamePlayerService>();
         services.AddScoped<IFogPlayerService, FogPlayerService>();
+        services.AddScoped<IRelicDtoFactory, RelicDtoFactory>();
+        services.AddScoped<IRelicService, RelicService>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>

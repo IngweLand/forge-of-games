@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -7,5 +7,6 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 
 public interface IHohHeroProfileViewModelFactory
 {
-    HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks);
+    HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
+        HeroRelicViewModel? relic = null);
 }
