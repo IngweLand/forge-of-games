@@ -1,4 +1,3 @@
-using System.Linq;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Functions.Validators;
@@ -17,7 +16,6 @@ public class InGameDataReceiver(
     DatabaseWarmUpService databaseWarmUpService,
     HohHelperResponseDtoValidator dtoValidator)
 {
-
     [Function("InGameDataReceiver")]
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "hoh/inGameData")]
@@ -32,7 +30,7 @@ public class InGameDataReceiver(
         if (!dtoValidator.Validate(inGameData, out var error))
         {
             logger.LogError("Dto validation failed: {error}", error);
-            
+
             return new BadRequestResult();
         }
 
@@ -42,7 +40,9 @@ public class InGameDataReceiver(
             logger.LogInformation("Processing raw data at {Time}", now);
             var rawData = new InGameRawData
             {
+                RequestBase64Data = inGameData.Base64RequestData,
                 Base64Data = inGameData.Base64ResponseData!,
+                SubmissionId = inGameData.SubmissionId != null ? Guid.Parse(inGameData.SubmissionId) : null,
                 CollectedAt = now,
             };
             var date = DateOnly.FromDateTime(now);
@@ -51,12 +51,14 @@ public class InGameDataReceiver(
                 await inGameRawDataTableRepository.SaveAsync(rawData, pk);
                 logger.LogInformation("Saved raw data for primary key: {PrimaryKey}", pk);
             }
+
             logger.LogInformation("Processing raw data completed");
         }
         catch (Exception e)
         {
             logger.LogError(e, "Error occurred while processing raw data");
         }
+
         logger.LogInformation("Function InGameDataReceiver completed");
         return new NoContentResult();
     }
