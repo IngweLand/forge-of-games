@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Services;
 
-public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapper) : IDataParsingService
+public class DataParsingService(IMapper mapper) : IDataParsingService
 {
     public PlayerRanks ParsePlayerRankings(byte[] data)
     {
@@ -26,7 +26,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse player ranking data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -56,7 +55,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse alliance ranking data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -73,7 +71,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse startup data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -91,7 +88,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse hero start battle response data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -109,7 +105,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse pvp ranking data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -127,7 +122,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse hero finish wave response data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -145,7 +139,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse pvp battles data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -153,8 +146,8 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
 
         if (battlesOwner == -1)
         {
-            logger.LogWarning("Could not identify the owner of pvp battles");
-            return [];
+            const string msg = "Could not identify the owner of pvp battles";
+            throw new InvalidOperationException(msg);
         }
 
         return (from battleDto in battlesDto.Battles
@@ -190,7 +183,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse alliance member data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -208,7 +200,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse hero battle stats response data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
@@ -226,7 +217,6 @@ public class DataParsingService(ILogger<DataParsingService> logger, IMapper mapp
         catch (Exception ex)
         {
             const string msg = "Failed to parse other city data";
-            logger.LogError(ex, msg);
             throw new InvalidOperationException(msg, ex);
         }
 
