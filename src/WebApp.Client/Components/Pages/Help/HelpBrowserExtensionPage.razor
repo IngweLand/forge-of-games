@@ -1,17 +1,17 @@
-@using Ingweland.Fog.Application.Core.Helpers
 @attribute [Route(FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 
 <div class="help-container">
     <h3>HoH Helper &ndash; Heroes of History Browser Extension Guide</h3>
 
     <div class="help-info">
-            HoH Helper is a powerful browser extension that reads in-game data from Heroes of History
-            and shares it with Forge of Games. This extension does not modify or interfere
-            with normal game operations&mdash;it simply listens for in-game data and, if permitted by
-            you, sends relevant data to Forge of Games servers for advanced features like the Stats Hub,
-            City Planner, and Command Center. It is available for Google Chrome and other Chromium-based browsers
-            (like Microsoft Edge) that support extensions.
+        HoH Helper is a powerful browser extension that reads in-game data from Heroes of History
+        and shares it with Forge of Games. This extension does not modify or interfere
+        with normal game operations&mdash;it simply listens for in-game data and, if permitted by
+        you, sends relevant data to Forge of Games servers for advanced features like the Stats Hub,
+        City Planner, and Command Center. It is available for Google Chrome and other Chromium-based browsers
+        (like Microsoft Edge) that support extensions.
     </div>
 
     <div class="help-step">
@@ -19,9 +19,11 @@
         <p>HoH Helper provides two key functionalities:</p>
         <ul>
             <li><strong>Automatic Data Collection:</strong> Let the extension automatically gather game
-                statistics, such as leaderboards.</li>
+                statistics, such as leaderboards.
+            </li>
             <li><strong>Game Data Export:</strong> Seamlessly export your city layout and hero roster into
-                our City Planner and Command Center tools.</li>
+                our City Planner and Command Center tools.
+            </li>
         </ul>
         <p>
             All communication between the game and its own servers remains intact; the extension
@@ -35,7 +37,8 @@
         <h6>Option A: Chrome Web Store</h6>
         <ol>
             <li>Go to the <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_CHROME_WEBSTORE_URL" target="_blank">
-                 Chrome Web Store page for HoH Helper</a>.</li>
+                    Chrome Web Store page for HoH Helper</a>.
+            </li>
             <li>Click <strong>Add to Chrome</strong> and follow any on-screen prompts.</li>
         </ol>
         <br/>
@@ -138,43 +141,34 @@
             <li>Open the Heroes of History game in your browser and wait until it’s fully loaded.</li>
             <li>Click the HoH Helper extension icon in your browser toolbar. A popup will appear.</li>
             <li>In the <em>“HoH City Planner and Command Center”</em> section, click the
-                <strong>Export Game Data</strong> button. If it’s inactive, reload the game page.</li>
+                <strong>Export Game Data</strong> button. If it’s inactive, reload the game page.
+            </li>
             <li>After processing, a new tab will open with a link to your exported data on Forge of Games.</li>
-            <li>On the new page, choose which data to import (city layout, heroes, or both) and click <em>Import</em>.</li>
-            <li>Once imported, navigate to the City Planner or Command Center to find your updated city layout or command center profile.</li>
+            <li>On the new page, choose which data to import (city layout, heroes, or both) and click <em>Import</em>.
+            </li>
+            <li>Once imported, navigate to the City Planner or Command Center to find your updated city layout or
+                command center profile.
+            </li>
             <li>Remember: Data is only captured upon loading the game. To refresh it (for example, after upgrades),
-                reload your game page and export again.</li>
-            <li>If you open multiple servers (e.g., main and beta), only the most recently loaded data is stored. To export from a different server, reload that server.</li>
+                reload your game page and export again.
+            </li>
+            <li>If you open multiple servers (e.g., main and beta), only the most recently loaded data is stored. To
+                export from a different server, reload that server.
+            </li>
             <li>The extension preserves your last captured data even if you close the game. You can export
-                later without reopening the game, though it may be outdated if changes were made in-game.</li>
+                later without reopening the game, though it may be outdated if changes were made in-game.
+            </li>
         </ol>
     </div>
-    
-        <div class="help-step">
+
+    <div class="help-step">
         <h5>Submission ID</h5>
         <p>
-            Starting from the latest version, HoH Helper introduces an optional feature called <strong>Submission ID</strong>.
-            This is a randomly generated UUIDv4-compliant string attached to your submissions. Its main purpose is to allow
-            you to view your battle history and other data on <em>Forge of Games</em>.
-        </p>
-
-        <p>
-            The Submission ID is not tied to any identity (real or in-game); it’s a completely random and anonymous string.
-            Only the person who knows the Submission ID can access the data associated with it. If you choose to use this
-            feature, we strongly recommend saving your Submission ID in a secure location. There is <strong>no way to recover it</strong>
-            if it’s lost.
-        </p>
-
-        <p>
-            You can generate a new Submission ID at any time, delete the current one, or even edit it. Editing is useful
-            if you play on multiple devices and want to link data to the same Submission ID. Please note that there is only
-            <strong>one Submission ID</strong> stored in the extension. If you play multiple accounts or servers in the same browser,
-            all submissions will be associated with the same ID.
-        </p>
-
-        <p>
-            This feature enables new functionality on Forge of Games, such as viewing your complete battle history. More
-            features may be added in the future that leverage this Submission ID for personalization.
+            Starting from the version 1.1.0, HoH Helper introduces an optional feature called <strong>Submission
+                ID</strong>.
+            This is a randomly generated UUIDv4-compliant string attached to your submissions. Its main purpose is to
+            allow you to view your battle history and other data on <em>Forge of Games</em>. See <a
+                href="@FogUrlBuilder.PageRoutes.HELP_SUBMISSION_ID_PATH">Submission ID Help</a>
         </p>
     </div>
 
@@ -203,36 +197,6 @@
             A: Data is collected in real time, but processing on Forge of Games may run once per day.
             Please wait until the next day to see the updated information in the Stats Hub.
         </p>
-        
-        <p>Q: What happens if someone else gets my Submission ID?</p>
-        <p>
-            A: That person will be able to view data submitted with that ID, but without knowing it belongs to you, they
-            cannot associate it with your in-game or real-world identity. The Submission ID alone reveals nothing about who you are.
-        </p>
-
-        <p>Q: Can I share my Submission ID?</p>
-        <p>
-            A: Yes, if you want others to view your submitted data. However, note that you <strong>cannot revoke</strong> access
-            after sharing it. You can only generate a new Submission ID to stop linking future submissions to the old one. 
-            Already submitted data will remain linked to the previous ID.
-        </p>
-
-        <p>
-            In the future, we plan to introduce a <strong>Sharing ID</strong>—a temporary, shareable version of your Submission ID,
-            useful for specific cases like applying to alliances. This will offer time-limited or restricted data access.
-        </p>
-
-        <p>Q: Can I remove my submitted data?</p>
-        <p>
-            A: No. Because we do not associate Submission IDs with player identities, we have no way to verify that a deletion
-            request is legitimate—even if you provide a Submission ID. As a result, we cannot support deletion requests.
-        </p>
-
-        <p>Q: Is Submission ID mandatory?</p>
-        <p>
-            A: No, it is completely optional. You can use HoH Helper without ever enabling or configuring a Submission ID.
-            However, enabling it unlocks advanced features on Forge of Games.
-        </p>
     </div>
 
     <div class="help-note">
@@ -240,7 +204,8 @@
         <p>Our extension is fully open-source and welcomes community involvement:</p>
         <ul>
             <li><strong>GitHub Repository:</strong>
-                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL" target="_blank">@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL</a>
+                <a href="@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL"
+                   target="_blank">@FogUrlBuilder.PageRoutes.HOH_HELPER_GITHUB_URL</a>
             </li>
             <li>We actively encourage pull requests, feature requests, and bug reports.</li>
             <li>Help shape the extension by reporting issues or contributing code.</li>

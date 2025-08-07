@@ -28,7 +28,8 @@ public class BattlesProcessor(
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
-        var allBattleResults = new List<(string WorldId, BattleSummary BattleSummary)>();
+        var allBattleResults =
+            new List<(string WorldId, BattleSummary BattleSummary, DateOnly PerformedAt, Guid? SubmissionId)>();
         var allBattleStats = new List<(string worldId, BattleStats battleStats)>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("BattlesProcessor started for date {date}", date);

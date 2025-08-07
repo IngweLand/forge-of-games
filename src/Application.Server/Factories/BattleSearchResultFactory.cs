@@ -72,6 +72,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
             Difficulty = entity.Difficulty,
             StatsId = statsId,
             BattleType = battleType,
+            PerformedAt = entity.PerformedAt,
         };
     }
 }

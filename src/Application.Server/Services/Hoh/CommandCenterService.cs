@@ -1,16 +1,11 @@
-using System.Diagnostics;
 using System.Globalization;
-using AutoMapper;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using Ingweland.Fog.Inn.Models.Hoh;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
@@ -18,9 +13,7 @@ public class CommandCenterService(
     IUnitService unitService,
     IHohCoreDataRepository hohCoreDataRepository,
     ICityService cityService,
-    IMemoryCache cache,
-    IMapper mapper,
-    ILogger<CommandCenterService> logger) : ICommandCenterService
+    IMemoryCache cache) : ICommandCenterService
 {
     private const string CACHE_KEY_PREFIX = nameof(CommandCenterService);
 
@@ -48,7 +41,7 @@ public class CommandCenterService(
             barracks.AddRange(await cityService.GetBarracks(unitType));
         }
 
-        var result = new CommandCenterDataDto()
+        var result = new CommandCenterDataDto
         {
             Heroes = heroes,
             Barracks = barracks,
@@ -57,7 +50,7 @@ public class CommandCenterService(
         cache.Set(GetKey(), result, TimeSpan.FromHours(1));
         return result;
     }
-    
+
     private string GetKey()
     {
         return $"{CACHE_KEY_PREFIX}_{CultureInfo.CurrentCulture.Name}";

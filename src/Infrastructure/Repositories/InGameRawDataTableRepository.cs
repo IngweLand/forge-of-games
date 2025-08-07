@@ -24,9 +24,11 @@ public class InGameRawDataTableRepository(
         return data != null ? mapper.Map<InGameRawData>(data) : null;
     }
 
-    public Task SaveAsync(InGameRawData data, string partitionKey)
+    public async Task<string> SaveAsync(InGameRawData data, string partitionKey)
     {
-        return SaveAsync(data, partitionKey, CreateRowKey());
+        var rowKey = CreateRowKey();
+        await SaveAsync(data, partitionKey, rowKey);
+        return rowKey;
     }
 
     public async Task SaveAsync(InGameRawData data, string partitionKey, string rowKey)

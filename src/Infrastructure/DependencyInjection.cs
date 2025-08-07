@@ -32,7 +32,8 @@ public static class DependencyInjection
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddTableStorage();
-
+        services.AddAzureQueues();
+        
         services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.TryAddSingleton<IHohDataProvider, DefaultHohDataProvider>();
@@ -74,6 +75,18 @@ public static class DependencyInjection
                 options.InGameRawDataTable);
         });
         
+        return services;
+    }
+    
+    private static IServiceCollection AddAzureQueues(this IServiceCollection services)
+    {
+        services.AddSingleton<IQueueRepository<InGameRawDataQueueMessage>>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new QueueRepository<InGameRawDataQueueMessage>(options.ConnectionString,
+                options.InGameRawDataProcessingQueue);
+        });
+
         return services;
     }
 }

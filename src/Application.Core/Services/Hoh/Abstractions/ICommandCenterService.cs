@@ -1,5 +1,4 @@
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
-using Ingweland.Fog.Models.Fog.Entities;
 using Refit;
 
 namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;

@@ -1,7 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @inject IAssetUrlProvider AssetUrlProvider
-<div class="cc-hero-collection-item user-select-none" onclick="@(() => OnClick.InvokeAsync(BattleSquad))">
+<div class="component-root user-select-none" onclick="@(() => OnClick.InvokeAsync(BattleSquad))">
     <div class="avatar-section">
         <img src="@BattleSquad.PortraitUrl"/>
         <div class="rating">@(new string('★', BattleSquad.StarCount))</div>

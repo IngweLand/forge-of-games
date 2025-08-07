@@ -1,18 +1,14 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
-using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
-using Ingweland.Fog.Dtos.Hoh.City;
-using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.Models.Hoh.Entities.City;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
@@ -20,58 +16,42 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 public class StatsHubUiService : IStatsHubUiService
 {
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeDto>>> _ages;
-    private readonly Lazy<Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>>> _barracks;
-    private readonly IBattleLogFactories _battleLogFactories;
     private readonly IBattleService _battleService;
-    private readonly IBattleStatsViewModelFactory _battleStatsViewModelFactory;
-    private readonly ICampaignUiService _campaignUiService;
-    private readonly ICityService _cityService;
+    private readonly IBattleViewModelFactory _battleViewModelFactory;
     private readonly ICommonService _commonService;
     private readonly IHohCoreDataCache _coreDataCache;
+    private readonly IHohCoreDataViewModelsCache _coreDataViewModelsCache;
     private readonly IHeroProfileUiService _heroProfileUiService;
     private readonly IMapper _mapper;
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
-    private readonly Lazy<Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>> _treasureHuntDifficulties;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
-
-    private readonly HashSet<BattleType> _unitBattleTypes =
-    [
-        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm,
-    ];
 
     private TopStatsViewModel? _topStatsViewModel;
 
     public StatsHubUiService(IStatsHubService statsHubService,
         ICommonService commonService,
         IStatsHubViewModelsFactory statsHubViewModelsFactory,
-        IBattleLogFactories battleLogFactories,
         ITreasureHuntUiService treasureHuntUiService,
-        ICampaignUiService campaignUiService,
         IBattleService battleService,
         IHeroProfileUiService heroProfileUiService,
-        ICityService cityService,
-        IBattleStatsViewModelFactory battleStatsViewModelFactory,
+        IBattleViewModelFactory battleViewModelFactory,
         IHohCoreDataCache coreDataCache,
+        IHohCoreDataViewModelsCache coreDataViewModelsCache,
         IMapper mapper)
     {
         _statsHubService = statsHubService;
         _commonService = commonService;
         _statsHubViewModelsFactory = statsHubViewModelsFactory;
-        _battleLogFactories = battleLogFactories;
         _treasureHuntUiService = treasureHuntUiService;
-        _campaignUiService = campaignUiService;
         _battleService = battleService;
         _heroProfileUiService = heroProfileUiService;
-        _cityService = cityService;
-        _battleStatsViewModelFactory = battleStatsViewModelFactory;
+        _battleViewModelFactory = battleViewModelFactory;
         _coreDataCache = coreDataCache;
+        _coreDataViewModelsCache = coreDataViewModelsCache;
         _mapper = mapper;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
-        _barracks = new Lazy<Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>>>(GetBarracksAsync);
-        _treasureHuntDifficulties = new Lazy<Task<IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>>>(
-            treasureHuntUiService.GetDifficultiesAsync);
     }
 
     public async Task<PlayerProfileViewModel?> GetPlayerProfileAsync(int playerId)
@@ -86,15 +66,16 @@ public class StatsHubUiService : IStatsHubUiService
                 b.WinnerUnits.Select(u => u.Hero!.UnitId).Concat(b.LoserUnits.Select(u => u.Hero!.UnitId)))
             .Concat(player.Squads.Select(x => x.Hero.UnitId))
             .ToHashSet();
-        var heroes = await GetAllBattleHeroes(heroIds);
-        var treasureHuntDifficulties = await _treasureHuntDifficulties.Value;
+        var heroes = await _coreDataCache.GetHeroes(heroIds);
+        var treasureHuntDifficulties = await _coreDataViewModelsCache.GetBasicTreasureHuntDifficultiesAsync();
         var playerTreasureHuntDifficulty = player.TreasureHuntDifficulty != null
             ? treasureHuntDifficulties.FirstOrDefault(x => x.Difficulty == player.TreasureHuntDifficulty.Value)
             : null;
         var treasureHuntMaxPoints = playerTreasureHuntDifficulty != null
             ? _treasureHuntUiService.GetDifficultyMaxProgressPoints(playerTreasureHuntDifficulty.Difficulty)
             : 0;
-        return _statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, await _ages.Value, await _barracks.Value,
+        return _statsHubViewModelsFactory.CreatePlayerProfile(player, heroes, await _ages.Value,
+            await _coreDataCache.GetBarracksByUnitMapAsync(),
             playerTreasureHuntDifficulty, treasureHuntMaxPoints, await _coreDataCache.GetRelicsAsync());
     }
 
@@ -119,12 +100,12 @@ public class StatsHubUiService : IStatsHubUiService
         var heroIds = result.Items.SelectMany(b => b.WinnerUnits.Select(u => u.Hero!.UnitId))
             .Concat(result.Items.SelectMany(b => b.LoserUnits.Select(u => u.Hero!.UnitId)))
             .ToHashSet();
-        var heroes = await GetAllBattleHeroes(heroIds);
+        var heroes = await _coreDataCache.GetHeroes(heroIds);
         var ages = await _ages.Value;
-        var barracks = await _barracks.Value;
+        var barracks = await _coreDataCache.GetBarracksByUnitMapAsync();
         var relics = await _coreDataCache.GetRelicsAsync();
         var newBattles = result.Items.Select(x =>
-            _statsHubViewModelsFactory.CreatePvpBattle(player, x, heroes, ages, barracks, relics)).ToList();
+            _battleViewModelFactory.CreatePvpBattle(player, x, heroes, ages, barracks, relics)).ToList();
         return new PaginatedList<PvpBattleViewModel>(newBattles, result.StartIndex, result.TotalCount);
     }
 
@@ -174,93 +155,16 @@ public class StatsHubUiService : IStatsHubUiService
         return _statsHubViewModelsFactory.CreatePlayers(result, await _ages.Value);
     }
 
-    public async Task<BattleSelectorViewModel> GetBattleSelectorViewModel()
-    {
-        var campaignTask = _campaignUiService.GetCampaignContinentsBasicDataAsync();
-        var treasureHuntTask = _treasureHuntDifficulties.Value;
-        var historicBattlesTask = _campaignUiService.GetHistoricBattlesBasicDataAsync();
-        var teslaStormTask = _campaignUiService.GetTeslaStormRegionsBasicDataAsync();
-        var heroesTask = _heroProfileUiService.GetHeroes();
-        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask);
-        return _battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
-            historicBattlesTask.Result, teslaStormTask.Result,
-            heroesTask.Result);
-    }
-
-    public IReadOnlyCollection<UnitBattleTypeViewModel> GetUnitBattleTypes()
-    {
-        return _statsHubViewModelsFactory.CreateUnitBattleTypes(_unitBattleTypes.OrderBy(x => x.GetSortOrder()));
-    }
-
     public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
         BattleSearchRequest request, CancellationToken ct = default)
     {
-        var barracks = await _barracks.Value;
         var result = await _battleService.SearchBattlesAsync(request, ct);
 
-        var heroIds =
-            result.Battles.SelectMany(src => src.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
-        if (request.BattleType == BattleType.Pvp)
-        {
-            heroIds = heroIds.Concat(result.Battles.SelectMany(src =>
-                src.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null)));
-        }
-
-        var heroes = (await GetAllBattleHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
-        var relics = await _coreDataCache.GetRelicsAsync();
-
-        return result.Battles
-            .Select(src => _statsHubViewModelsFactory.CreateBattleSummaryViewModel(src, heroes, barracks, relics))
-            .ToList();
+        return await _battleViewModelFactory.CreateBattleSummaryViewModel(result.Battles, request.BattleType);
     }
 
-    public async Task<BattleStatsViewModel> GetBattleStatsAsync(
-        int battleStatsId, CancellationToken ct = default)
-    {
-        var result = await _battleService.GetBattleStatsAsync(battleStatsId, ct);
-        if (result == null)
-        {
-            return BattleStatsViewModel.Blank;
-        }
-
-        return _battleStatsViewModelFactory.Create(result);
-    }
-
-    public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId,
-        BattleType battleType, CancellationToken ct = default)
-    {
-        var unitBattles = await _battleService.GetUnitBattlesAsync(unitId, battleType, ct);
-        var vms = _statsHubViewModelsFactory.CreateUnitBattleViewModels(unitBattles)
-            .OrderBy(x => x.BattleType.GetSortOrder());
-        return vms.ToList();
-    }
-
-    private async Task<List<HeroDto>> GetAllBattleHeroes(HashSet<string> heroIds)
-    {
-        var heroTasks = heroIds.Select(_coreDataCache.GetHeroAsync);
-        return (await Task.WhenAll(heroTasks)).Where(x => x != null).ToList()!;
-    }
-    
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()
     {
         return (await _commonService.GetAgesAsync()).ToDictionary(a => a.Id);
-    }
-
-    private async Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>> GetBarracksAsync()
-    {
-        var barracks = await _cityService.GetAllBarracks();
-        var result = new Dictionary<(string unitId, int unitLevel), BuildingDto>();
-        foreach (var b in barracks)
-        {
-            var component = b.Components.OfType<BuildingUnitProviderComponent>().FirstOrDefault();
-            if (component == null)
-            {
-                continue;
-            }
-
-            result.Add((component.BuildingUnit.Unit.Id, component.BuildingUnit.Level), b);
-        }
-
-        return result;
     }
 }

@@ -1,0 +1,17 @@
+::deep .unit-battle-type-selector-item {
+    text-transform: none !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+}
+
+::deep .unit-battle-type-selector {
+    align-self: center;
+    margin: 0 8px;
+}
+
+
+@media (min-width: 576px) {
+    ::deep .unit-battle-type-selector-item {
+        font-size: 12px !important;
+    }
+}

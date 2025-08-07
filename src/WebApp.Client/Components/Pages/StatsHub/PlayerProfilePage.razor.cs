@@ -1,8 +1,8 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
@@ -29,6 +29,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
+
+    [Inject]
+    private IBattleUiService BattleUiService { get; set; }
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -138,7 +141,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             new Dictionary<string, object> {{AnalyticsParams.FOG_BATTLE_ID, battleStatsId}});
 
         _battleStatsCts = new CancellationTokenSource();
-        var stats = await StatsHubUiService.GetBattleStatsAsync(battleStatsId.Value, _battleStatsCts.Token);
+        var stats = await BattleUiService.GetBattleStatsAsync(battleStatsId.Value, _battleStatsCts.Token);
 
         if (_isDisposed)
         {

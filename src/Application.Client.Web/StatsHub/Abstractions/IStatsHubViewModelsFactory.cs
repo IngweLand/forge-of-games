@@ -33,19 +33,4 @@ public interface IStatsHubViewModelsFactory
         IReadOnlyDictionary<string, AgeDto> ages);
 
     PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players);
-
-    BattleSummaryViewModel CreateBattleSummaryViewModel(BattleSummaryDto summaryDto,
-        IReadOnlyDictionary<string, HeroDto> heroes,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
-        IReadOnlyDictionary<string, RelicDto> relics);
-
-    IReadOnlyCollection<UnitBattleViewModel> CreateUnitBattleViewModels(
-        IReadOnlyCollection<UnitBattleDto> unitBattles);
-
-    IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
-
-    PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
-        IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
-        IReadOnlyDictionary<string, RelicDto> relics);
 }

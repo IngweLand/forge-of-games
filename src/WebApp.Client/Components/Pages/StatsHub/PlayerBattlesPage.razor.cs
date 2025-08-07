@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;
@@ -16,10 +17,15 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource? _battlesCts;
     private CancellationTokenSource? _battleStatsCts;
 
+    private bool _isBrowser;
+
     private bool _isLoadingBattles = true;
 
     private PlayerViewModel? _player;
     private CancellationTokenSource? _playerCts;
+
+    [Inject]
+    public IBattleUiService BattleUiService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
@@ -36,7 +42,7 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        
+
         _isBrowser = OperatingSystem.IsBrowser();
     }
 
@@ -60,17 +66,16 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
         }
     }
 
-    private bool _isBrowser;
     private async ValueTask<ItemsProviderResult<PvpBattleViewModel>> GetBattles(ItemsProviderRequest request)
     {
         if (_battlesCts != null)
         {
             await _battlesCts.CancelAsync();
         }
-        
+
         _isLoadingBattles = true;
         StateHasChanged();
-        
+
         if (_player == null)
         {
             _isLoadingBattles = false;
@@ -119,7 +124,7 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
         }
 
         _battleStatsCts = new CancellationTokenSource();
-        var stats = await StatsHubUiService.GetBattleStatsAsync(battleStatsId.Value, _battleStatsCts.Token);
+        var stats = await BattleUiService.GetBattleStatsAsync(battleStatsId.Value, _battleStatsCts.Token);
 
         var options = GetDefaultDialogOptions();
 

@@ -9,5 +9,10 @@
             "enableLiveMetricsFilters": true
         }
     },
-    "functionTimeout": "00:10:00"
+    "functionTimeout": "00:10:00",
+    "extensions": {
+        "queues": {
+            "maxDequeueCount": 1
+        }
+    }
 }

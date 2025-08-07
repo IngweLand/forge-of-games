@@ -7,6 +7,6 @@ public interface IInGameRawDataTableRepository
     Task<IReadOnlyCollection<InGameRawData>> GetAllAsync(string partitionKey);
     Task<InGameRawData?> GetAsync(string partitionKey, string rowKey);
 
-    Task SaveAsync(InGameRawData data, string partitionKey);
+    Task<string> SaveAsync(InGameRawData data, string partitionKey);
     Task SaveAsync(InGameRawData data, string partitionKey, string rowKey);
 }

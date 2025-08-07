@@ -1,0 +1,84 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.submission-id-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+}
+
+.options-container {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    width: 100%;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+    max-width: 600px;
+}
+
+.filter-toggle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+}
+
+/*mudblazor overrides*/
+::deep .mud-select .mud-select-input {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+}
+
+::deep .submission-id-input {
+    background-color: var(--fog-surface-color);
+    width: 100%;
+    max-width: 400px;
+    font-size: 12px;
+}
+
+::deep .submission-id-label {
+   font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (min-width: 576px) {
+    .items-container {
+        gap: 16px;
+    }
+
+    .options-container {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .filter-type-toggle-container{
+        gap: 12px;
+    }
+
+    ::deep .submission-id-input {
+        font-size: 14px;
+    }
+
+    ::deep .submission-id-label {
+        font-size: 14px;
+    }
+}

@@ -7,6 +7,7 @@ public class BattleSummaryDto
     public required string BattleDefinitionId { get; init; }
 
     public required BattleType BattleType { get; init; }
+    public DateOnly PerformedAt { get; init; }
 
     // Not for all battle locations
     public Difficulty Difficulty { get; init; }

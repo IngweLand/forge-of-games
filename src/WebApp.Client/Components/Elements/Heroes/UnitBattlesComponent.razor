@@ -4,15 +4,8 @@
 <ClientSideComponent Class="fog-container" IsLoading="@_isLoading" Title="@Loc[FogResource.Unit_BattlesAndPerformance]">
     <Content>
         <div class="unit-battles-container">
-            <MudToggleGroup T="BattleType" Size="Size.Small" Value="@_selectedBattleType"
-                            ValueChanged="OnBattleTypeChanged"
-                            Class="unit-battle-type-selector" Color="Color.Secondary">
-                @foreach (var battleTypeViewModel in _unitBattleTypes)
-                {
-                    <MudToggleItem Value="@battleTypeViewModel.BattleType" Text="@battleTypeViewModel.BattleTypeName"
-                                   Class="unit-battle-type-selector-item"/>
-                }
-            </MudToggleGroup>
+            <BattleTypeSelector BattleTypes="@_unitBattleTypes" SelectedBattleType="@_selectedBattleType"
+                                OnBattleTypeChanged="@OnBattleTypeChanged"/>
             @if (_unitBattles != null)
             {
                 @if (_unitBattles.Count > 0)

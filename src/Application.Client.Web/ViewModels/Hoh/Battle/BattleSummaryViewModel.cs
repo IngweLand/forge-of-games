@@ -5,6 +5,7 @@ namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 public class BattleSummaryViewModel
 {
     public required BattleType BattleType { get; init; }
+    public required string PerformedAt { get; init; }
     public IReadOnlyCollection<BattleSquadViewModel> EnemySquads { get; init; } = [];
     public required int Id { get; init; }
 

@@ -6,16 +6,13 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.header-row, .footer-row {
+.header-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    height: 24px;
+    font-size: 14px;
+    height: 28px;
     white-space: nowrap;
-}
-
-.header-row {
     background-color: var(--fog-container-color);
     color: var(--fog-text-on-container-color);
     position: relative;
@@ -47,6 +44,14 @@
     align-self: center;
 }
 
+.date-label {
+    font-size: 8px;
+    align-self: flex-end;
+    color: var(--fog-text-secondary-color);
+    padding: 0 4px 1px 0;
+    line-height: 1;
+}
+
 .victory {
     background-color: var(--fog-victory-color);
     color: var(--fog-text-on-dark-color);
@@ -68,9 +73,7 @@
 }
 
 @media (min-width: 576px) {
-
-    .header-row, .footer-row {
-        font-size: 14px;
-        height: 28px;
+    .date-label {
+        font-size: 10px;
     }
 }
