@@ -5,7 +5,7 @@ namespace Ingweland.Fog.Infrastructure.Entities;
 
 public abstract class InGameBinDataTableEntityBase : TableEntityBase
 {
-    private const int MaxSegmentsCount = 12;
+    private const int MaxSegmentsCount = 15;
     private const int SegmentSizeBytes = 60 * 1000;
 
     [IgnoreDataMember]
@@ -33,6 +33,9 @@ public abstract class InGameBinDataTableEntityBase : TableEntityBase
     public byte[]? CompressedData9 { get; set; }
     public byte[]? CompressedData10 { get; set; }
     public byte[]? CompressedData11 { get; set; }
+    public byte[]? CompressedData12 { get; set; }
+    public byte[]? CompressedData13 { get; set; }
+    public byte[]? CompressedData14 { get; set; }
 
     protected void SplitIntoSegments(byte[] compressed)
     {
@@ -60,6 +63,9 @@ public abstract class InGameBinDataTableEntityBase : TableEntityBase
                 case 9: CompressedData9 = chunks[i]; break;
                 case 10: CompressedData10 = chunks[i]; break;
                 case 11: CompressedData11 = chunks[i]; break;
+                case 12: CompressedData12 = chunks[i]; break;
+                case 13: CompressedData13 = chunks[i]; break;
+                case 14: CompressedData14 = chunks[i]; break;
             }
         }
     }
@@ -70,7 +76,7 @@ public abstract class InGameBinDataTableEntityBase : TableEntityBase
         [
             CompressedData, CompressedData1, CompressedData2, CompressedData3, CompressedData4,
             CompressedData5, CompressedData6, CompressedData7, CompressedData8, CompressedData9,
-            CompressedData10, CompressedData11,
+            CompressedData10, CompressedData11, CompressedData12, CompressedData13, CompressedData14
         ];
     }
 
