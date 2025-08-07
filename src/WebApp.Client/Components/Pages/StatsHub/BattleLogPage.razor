@@ -1,19 +1,18 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
-@inherits StatsHubPageBase
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattleLogPageBase
 
 <div class="component-root">
     <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
         @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
     </div>
     <div class="options-container fog-container">
-        <BattleSelector ViewModel="@_battleSelectorViewModel" SearchRequest="@_battleSearchRequest"
+        <BattleSelector ViewModel="@SelectorViewModel" SearchRequest="@BattleSearchRequest"
                         SearchRequestChanged="BattleSelectorOnValueChanged"/>
-        <MudIconButton Icon="@Icons.Material.Filled.IosShare" OnClick="ShareLink" />
-        @if (_isLoading)
+        <MudIconButton Icon="@Icons.Material.Filled.IosShare" OnClick="ShareLink"/>
+        @if (IsLoading)
         {
             <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
                                Indeterminate="true"/>
@@ -23,7 +22,8 @@
     <div class="teams-container">
         @foreach (var battle in _battles)
         {
-            <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile" OnBattleStatsClicked="OpenBattleStats"/>
+            <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile"
+                                 OnBattleStatsClicked="OpenBattleStats"/>
         }
     </div>
 </div>

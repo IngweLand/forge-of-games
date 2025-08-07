@@ -23,6 +23,7 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private const string CITY_INSPIRATIONS_REQUEST = "CityInspirationsRequest";
     private const string TOP_HEROES_REQUEST = "TopHeroesRequest";
     private const string OPEN_TECHNOLOGIES = "OpenTechnologies";
+    public const string SUBMISSION_ID_KEY = "SubmissionId";
 
     private static readonly JsonSerializerOptions JsonSerializerOptions = new()
     {
@@ -107,6 +108,16 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     public ValueTask<T?> GetItemAsync<T>(string key)
     {
         return localStorageService.GetItemAsync<T>(key);
+    }
+
+    public ValueTask SaveSubmissionId(Guid submissionId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<Guid?> GetSubmissionId()
+    {
+        throw new NotImplementedException();
     }
 
     public async ValueTask<bool> DeleteCity(string cityId)

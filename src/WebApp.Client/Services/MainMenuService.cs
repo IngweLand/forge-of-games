@@ -76,6 +76,12 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                         ResourceKey = FogResource.CommandCenter_Menu_Equipment,
                         Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_equipment")),
                     },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.MY_BATTLES_PATH,
+                        ResourceKey = FogResource.CommandCenter_Menu_MyBattles,
+                        Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_hud_battle")),
+                    },
                 },
             },
             new()

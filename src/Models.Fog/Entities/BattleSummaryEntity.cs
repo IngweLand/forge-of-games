@@ -13,6 +13,8 @@ public class BattleSummaryEntity
 
     public required BattleType BattleType { get; set; }
 
+    public required DateOnly PerformedAt { get; init; }
+
     // Not for all battle locations
     public Difficulty Difficulty { get; set; }
 
@@ -37,6 +39,8 @@ public class BattleSummaryEntity
     public IEnumerable<BattleUnitEntity> PlayerUnits => Units.Where(s => s.Side == BattleSquadSide.Player);
 
     public BattleResultStatus ResultStatus { get; set; }
+
+    public Guid? SubmissionId { get; set; }
 
     public ICollection<BattleUnitEntity> Units { get; set; } = new List<BattleUnitEntity>();
     public required string WorldId { get; set; }

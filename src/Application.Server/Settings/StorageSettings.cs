@@ -7,5 +7,6 @@ public class StorageSettings
     public required string CommandCenterProfilesTable { get; set; }
     public required string ConnectionString { get; set; }
     public required string HohStartupDataTable { get; set; }
+    public required string InGameRawDataProcessingQueue { get; set; }
     public required string InGameRawDataTable { get; set; }
 }

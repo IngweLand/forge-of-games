@@ -36,6 +36,7 @@ public static class AnalyticsParams
             public const string HERO_COMPONENT = "hero_component";
             public const string HERO_PAGE = "hero_page";
             public const string PLAYER_PROFILE = "player_profile";
+            public const string MY_BATTLES = "my_battles";
         }
 
         public static class Sources

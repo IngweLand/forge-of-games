@@ -19,6 +19,7 @@ public static class DependencyInjection
         services.AddSingleton<HohHelperResponseDtoValidator>();
         services.AddSingleton<PayloadValidator>();
         services.AddSingleton<WorldValidator>();
+        services.AddSingleton<SubmissionIdValidator>();
 
         services.AddTransient<DatabaseWarmUpService>();
 

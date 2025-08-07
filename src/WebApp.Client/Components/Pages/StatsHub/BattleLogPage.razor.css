@@ -10,6 +10,7 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
+    padding: 12px;
 }
 
 .teams-container {
@@ -31,5 +32,6 @@
 
     .options-container {
         gap: 24px;
+        padding: 24px;
     }
 }

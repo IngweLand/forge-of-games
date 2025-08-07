@@ -5,7 +5,8 @@ namespace Ingweland.Fog.Functions.Validators;
 public class HohHelperResponseDtoValidator(
     EndpointValidator endpointValidator,
     PayloadValidator payloadValidator,
-    WorldValidator worldIdValidator)
+    WorldValidator worldIdValidator,
+    SubmissionIdValidator submissionIdValidator)
 {
     public bool Validate(HohHelperResponseDto dto, out string error)
     {
@@ -22,6 +23,11 @@ public class HohHelperResponseDtoValidator(
         }
 
         if (!worldIdValidator.ValidateWorld(dto.ResponseUrl, out error))
+        {
+            return false;
+        }
+
+        if (!submissionIdValidator.Validate(dto.SubmissionId, out error))
         {
             return false;
         }

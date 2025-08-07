@@ -10,7 +10,8 @@ public class HohHelperResponseDtoToTablePkConverter(
     IInGameDataParsingService inGameDataParsingService,
     InGameRawDataTablePartitionKeyProvider tablePartitionKeyProvider)
 {
-    public IEnumerable<string> Get(HohHelperResponseDto inGameData, DateOnly date)
+    public IEnumerable<(string CollectionCategoryId, string PartitionKey)> Get(HohHelperResponseDto inGameData,
+        DateOnly date)
     {
         var worldId = UriUtils.GetSubdomain(inGameData.ResponseUrl);
         var path = UriUtils.GetPath(inGameData.ResponseUrl);
@@ -20,20 +21,23 @@ public class HohHelperResponseDtoToTablePkConverter(
             case "game/ranking/player":
             {
                 var playerRankingType = GetPlayerRankingType(inGameData.Base64ResponseData!);
-                yield return tablePartitionKeyProvider.PlayerRankings(worldId, date, playerRankingType);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.PlayerRankings(worldId, date, playerRankingType));
                 break;
             }
 
             case "game/ranking/alliance":
             {
                 var allianceRankingType = GetAllianceRankingType(inGameData.Base64ResponseData!);
-                yield return tablePartitionKeyProvider.AllianceRankings(worldId, date, allianceRankingType);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.AllianceRankings(worldId, date, allianceRankingType));
                 break;
             }
 
             case "game/pvp/get-ranking":
             {
-                yield return tablePartitionKeyProvider.PvpRankings(worldId, date);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.PvpRankings(worldId, date));
                 break;
             }
 
@@ -45,13 +49,14 @@ public class HohHelperResponseDtoToTablePkConverter(
                     {
                         case "leaderboards":
                         {
-                            yield return tablePartitionKeyProvider.AthAllianceRankings(worldId, date);
+                            yield return (collectionCategoryId,
+                                tablePartitionKeyProvider.AthAllianceRankings(worldId, date));
                             break;
                         }
 
                         case "alliance":
                         {
-                            yield return tablePartitionKeyProvider.Alliance(worldId, date);
+                            yield return (collectionCategoryId, tablePartitionKeyProvider.Alliance(worldId, date));
                             break;
                         }
                     }
@@ -62,25 +67,29 @@ public class HohHelperResponseDtoToTablePkConverter(
 
             case "game/pvp/get-battle-history":
             {
-                yield return tablePartitionKeyProvider.PvpBattles(worldId, date);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.PvpBattles(worldId, date));
                 break;
             }
 
             case "game/battle/hero/stats":
             {
-                yield return tablePartitionKeyProvider.BattleStats(worldId, date);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.BattleStats(worldId, date));
                 break;
             }
-            
+
             case "game/battle/hero/complete-wave":
             {
-                yield return tablePartitionKeyProvider.BattleCompleteWave(worldId, date);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.BattleCompleteWave(worldId, date));
                 break;
             }
-            
+
             case "game/battle/hero/start":
             {
-                yield return tablePartitionKeyProvider.BattleStart(worldId, date);
+                yield return (inGameData.CollectionCategoryIds.First(),
+                    tablePartitionKeyProvider.BattleStart(worldId, date));
                 break;
             }
         }
@@ -92,7 +101,8 @@ public class HohHelperResponseDtoToTablePkConverter(
         if (!Enum.TryParse(ranks.Type.ToString(), out PlayerRankingType playerRankingType))
         {
             throw new Exception(
-                $"Cannot map {ranks.Type.ToString()} from {typeof(Inn.Models.Hoh.PlayerRankingType).FullName} to {typeof(PlayerRankingType).FullName}");
+                $"Cannot map {ranks.Type.ToString()} from {typeof(Inn.Models.Hoh.PlayerRankingType).FullName} to {
+                    typeof(PlayerRankingType).FullName}");
         }
 
         return playerRankingType;
@@ -104,7 +114,8 @@ public class HohHelperResponseDtoToTablePkConverter(
         if (!Enum.TryParse(ranks.Type.ToString(), out AllianceRankingType allianceRankingType))
         {
             throw new Exception(
-                $"Cannot map {ranks.Type.ToString()} from {typeof(Inn.Models.Hoh.AllianceRankingType).FullName} to {typeof(AllianceRankingType).FullName}");
+                $"Cannot map {ranks.Type.ToString()} from {typeof(Inn.Models.Hoh.AllianceRankingType).FullName} to {
+                    typeof(AllianceRankingType).FullName}");
         }
 
         return allianceRankingType;

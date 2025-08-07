@@ -969,6 +969,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Battles.
+        /// </summary>
+        public static string CommandCenter_Menu_MyBattles {
+            get {
+                return ResourceManager.GetString("CommandCenter.Menu.MyBattles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Playgrounds.
         /// </summary>
         public static string CommandCenter_Menu_Playgrounds {
@@ -1001,6 +1010,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CommandCenter_Meta_Keywords {
             get {
                 return ResourceManager.GetString("CommandCenter.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View all your submitted battles..
+        /// </summary>
+        public static string CommandCenter_MyBattles_Meta_Description {
+            get {
+                return ResourceManager.GetString("CommandCenter.MyBattles.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History battles, campaign, treasure hunt, historic battles, tesla storms, arena, my battles, my battle history.
+        /// </summary>
+        public static string CommandCenter_MyBattles_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CommandCenter.MyBattles.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Battles | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CommandCenter_MyBattles_PageTitle {
+            get {
+                return ResourceManager.GetString("CommandCenter.MyBattles.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Battles [Beta].
+        /// </summary>
+        public static string CommandCenter_MyBattles_Title {
+            get {
+                return ResourceManager.GetString("CommandCenter.MyBattles.Title", resourceCulture);
             }
         }
         
@@ -2009,6 +2054,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string ImportInGameData_SuccessMessage {
             get {
                 return ResourceManager.GetString("ImportInGameData.SuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submission ID.
+        /// </summary>
+        public static string MyBattles_SubmissionIdInput_Label {
+            get {
+                return ResourceManager.GetString("MyBattles.SubmissionIdInput.Label", resourceCulture);
             }
         }
         

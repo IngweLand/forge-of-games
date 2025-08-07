@@ -257,12 +257,18 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(900)");
 
+                    b.Property<DateOnly>("PerformedAt")
+                        .HasColumnType("date");
+
                     b.Property<string>("PlayerSquads")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ResultStatus")
                         .HasColumnType("int");
+
+                    b.Property<Guid?>("SubmissionId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("WorldId")
                         .IsRequired()
@@ -279,7 +285,12 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     b.HasIndex("InGameBattleId");
 
+                    b.HasIndex("PerformedAt")
+                        .IsDescending();
+
                     b.HasIndex("ResultStatus");
+
+                    b.HasIndex("SubmissionId");
 
                     b.HasIndex("WorldId");
 

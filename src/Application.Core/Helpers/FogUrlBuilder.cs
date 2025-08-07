@@ -59,6 +59,7 @@ public static class FogUrlBuilder
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
         
         public const string RELICS = "/relics";
+        public const string USER_BATTLE_SEARCH = "/userBattleSearch";
     }
 
     public static class PageRoutes
@@ -69,10 +70,6 @@ public static class FogUrlBuilder
         public const string BASE_CITY_PLANNER_PATH = "/city-planner";
         public const string CITY_PLANNER_APP_PATH = BASE_CITY_PLANNER_PATH + "/app";
         public const string CITY_PLANNER_INSPIRATIONS_PATH = BASE_CITY_PLANNER_PATH + "/inspirations";
-        public const string BASE_COMMAND_CENTER_PATH = "/command-center";
-        public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
-        public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
-        public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
         public const string BASE_TOOLS_PATH = "/tools";
@@ -92,6 +89,8 @@ public static class FogUrlBuilder
         public const string HELP_PLAYER_PROFILE_PATH = BASE_HELP_PATH + "/player-profile";
         public const string HELP_ALLIANCE_PROFILE_PATH = BASE_HELP_PATH + "/alliance-profile";
         public const string HELP_TOOLS_PATH = BASE_HELP_PATH + "/tools";
+        public const string HELP_SUBMISSION_ID_PATH = BASE_HELP_PATH + "/submission-id";
+        public const string HELP_MY_BATTLES_PATH = BASE_HELP_PATH + "/my-battles";
         public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{heroId}";
         public const string CAMPAIGN_REGION_TEMPLATE = BASE_CAMPAIGN_PATH + "/region/{regionId}";
         public const string BUILDING_TEMPLATE = BASE_BUILDINGS_PATH + "/{cityId}/{buildingGroup}";
@@ -124,6 +123,12 @@ public static class FogUrlBuilder
         
         public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
         public const string MAINTENANCE_PAGE = "/maintenance.html";
+        
+        public const string BASE_COMMAND_CENTER_PATH = "/command-center";
+        public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
+        public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
+        public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
+        public const string MY_BATTLES_PATH = BASE_COMMAND_CENTER_PATH + "/my-battles";
 
         public static string Player(int id)
         {

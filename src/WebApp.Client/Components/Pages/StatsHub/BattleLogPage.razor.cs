@@ -1,131 +1,82 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
-using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
+using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
+using Refit;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
-public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
+public partial class BattleLogPage : BattleLogPageBase
 {
-    private readonly Dictionary<string, object> _defaultAnalyticsParameters = new()
-    {
-        {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.BATTLE_LOG},
-    };
-
     private IReadOnlyCollection<BattleSummaryViewModel> _battles = [];
 
-    private CancellationTokenSource _battlesCts = new();
-    private BattleSearchRequest _battleSearchRequest = new();
-
-    private BattleSelectorViewModel? _battleSelectorViewModel;
-    private CancellationTokenSource _battleStatsCts = new();
-
-    private bool _isDisposed;
-
-    private bool _isLoading = true;
-
-    [Inject]
-    public IBattleLogPageAnalyticsService AnalyticsService { get; set; }
+    private CancellationTokenSource? _battlesCts;
 
     [Inject]
     private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
 
-    [Inject]
-    private IDialogService DialogService { get; set; }
-
-    public async ValueTask DisposeAsync()
+    protected override Dictionary<string, object> DefaultAnalyticsParameters { get; } = new()
     {
-        await DisposeAsyncCore();
-        GC.SuppressFinalize(this);
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        _battleSelectorViewModel = await LoadWithPersistenceAsync(
-            nameof(_battleSelectorViewModel),
-            async () => await StatsHubUiService.GetBattleSelectorViewModel()
-        );
-    }
+        {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.BATTLE_LOG},
+    };
 
     protected override async Task OnParametersSetAsync()
     {
-        if (_isDisposed)
-        {
-            return;
-        }
-
         await base.OnParametersSetAsync();
-        await GetBattles(BattleSearchRequestFactory.Create(NavigationManager.Uri));
+        BattleSearchRequest = BattleSearchRequestFactory.Create(NavigationManager.Uri);
+        await GetBattles();
     }
 
-    protected virtual async ValueTask DisposeAsyncCore()
+    protected override async Task BattleSelectorOnValueChanged(BattleSearchRequest newValue)
     {
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        _isDisposed = true;
-
-        await _battlesCts.CancelAsync();
-        _battlesCts.Dispose();
-
-        await _battleStatsCts.CancelAsync();
-        _battleStatsCts.Dispose();
+        await base.BattleSelectorOnValueChanged(newValue);
+        await GetBattles();
     }
 
-    private async Task GetBattles(BattleSearchRequest request)
+    protected override async ValueTask DisposeAsyncCore()
     {
-        if (_isDisposed)
+        if (_battlesCts != null)
         {
-            return;
+            await _battlesCts.CancelAsync();
         }
 
-        _isLoading = true;
+        await base.DisposeAsyncCore();
+    }
+
+    protected virtual async Task GetBattles()
+    {
+        IsLoading = true;
         _battles = [];
 
-        await _battlesCts.CancelAsync();
-        _battlesCts.Dispose();
-
-        if (_isDisposed)
+        if (_battlesCts != null)
         {
-            return;
+            await _battlesCts.CancelAsync();
         }
 
         _battlesCts = new CancellationTokenSource();
-        _battleSearchRequest = request;
 
         try
         {
-            _battles = await StatsHubUiService.SearchBattles(request, _battlesCts.Token);
+            _battles = await StatsHubUiService.SearchBattles(BattleSearchRequest, _battlesCts.Token);
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
         }
         catch (Exception e)
         {
             Console.Error.WriteLine(e);
         }
 
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        _isLoading = false;
-    }
-
-    private Task BattleSelectorOnValueChanged(BattleSearchRequest newValue)
-    {
-        AnalyticsService.TrackFormChange(newValue, _defaultAnalyticsParameters);
-
-        return GetBattles(newValue);
+        IsLoading = false;
     }
 
     private void OnContributionPromptClick()
@@ -133,65 +84,14 @@ public partial class BattleLogPage : StatsHubPageBase, IAsyncDisposable
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH);
     }
 
-    private static DialogOptions GetDefaultDialogOptions()
-    {
-        return new DialogOptions
-        {
-            MaxWidth = MaxWidth.Small,
-            FullWidth = true,
-            BackgroundClass = "dialog-blur-bg",
-            Position = DialogPosition.TopCenter,
-            CloseButton = true,
-            CloseOnEscapeKey = true,
-            NoHeader = true,
-        };
-    }
-
     private async Task ShareLink()
     {
         var options = GetDefaultDialogOptions();
         var parameters = new DialogParameters<ShareBattleLogLinkDialog>
         {
-            {x => x.Request, _battleSearchRequest},
+            {x => x.Request, BattleSearchRequest},
         };
         await DialogService.ShowAsync<ShareBattleLogLinkDialog>(Loc[FogResource.Common_Share],
             parameters, options);
-    }
-
-    private async Task OpenBattleStats(BattleSummaryViewModel battle)
-    {
-        if (_isDisposed || battle.StatsId == null)
-        {
-            return;
-        }
-
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_BATTLE_STATS, _defaultAnalyticsParameters,
-            new Dictionary<string, object> {{AnalyticsParams.FOG_BATTLE_ID, battle.StatsId.Value}});
-
-        await _battleStatsCts.CancelAsync();
-        _battleStatsCts.Dispose();
-
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        _battleStatsCts = new CancellationTokenSource();
-        var stats = await StatsHubUiService.GetBattleStatsAsync(battle.StatsId.Value, _battleStatsCts.Token);
-        var options = GetDefaultDialogOptions();
-
-        var parameters = new DialogParameters<BattleStatsDialog> {{d => d.Stats, stats}};
-        await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
-    }
-
-    private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
-    {
-        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
-            squad.HeroUnitId);
-
-        var options = GetDefaultDialogOptions();
-
-        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};
-        await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
     }
 }

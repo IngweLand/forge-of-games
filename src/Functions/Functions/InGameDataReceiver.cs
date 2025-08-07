@@ -1,7 +1,11 @@
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Functions.Validators;
+using Ingweland.Fog.Infrastructure.Entities;
+using Ingweland.Fog.Infrastructure.Enums;
+using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
@@ -14,7 +18,8 @@ public class InGameDataReceiver(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     HohHelperResponseDtoToTablePkConverter hohHelperResponseDtoToTablePkConverter,
     DatabaseWarmUpService databaseWarmUpService,
-    HohHelperResponseDtoValidator dtoValidator)
+    HohHelperResponseDtoValidator dtoValidator,
+    IQueueRepository<InGameRawDataQueueMessage> queueRepository)
 {
     [Function("InGameDataReceiver")]
     public async Task<IActionResult> Run(
@@ -34,6 +39,8 @@ public class InGameDataReceiver(
             return new BadRequestResult();
         }
 
+        List<( string ResponseUrl, string PartitionKey, string RowKey)> keys = [];
+        Guid? submissionId = inGameData.SubmissionId != null ? Guid.Parse(inGameData.SubmissionId) : null;
         try
         {
             var now = DateTime.UtcNow;
@@ -42,14 +49,15 @@ public class InGameDataReceiver(
             {
                 RequestBase64Data = inGameData.Base64RequestData,
                 Base64Data = inGameData.Base64ResponseData!,
-                SubmissionId = inGameData.SubmissionId != null ? Guid.Parse(inGameData.SubmissionId) : null,
+                SubmissionId = submissionId,
                 CollectedAt = now,
             };
             var date = DateOnly.FromDateTime(now);
-            foreach (var pk in hohHelperResponseDtoToTablePkConverter.Get(inGameData, date))
+            foreach (var t in hohHelperResponseDtoToTablePkConverter.Get(inGameData, date))
             {
-                await inGameRawDataTableRepository.SaveAsync(rawData, pk);
-                logger.LogInformation("Saved raw data for primary key: {PrimaryKey}", pk);
+                var rowKey = await inGameRawDataTableRepository.SaveAsync(rawData, t.PartitionKey);
+                keys.Add((inGameData.ResponseUrl, t.PartitionKey, rowKey));
+                logger.LogInformation("Saved raw data for partition key: {PartitionKey}", t.PartitionKey);
             }
 
             logger.LogInformation("Processing raw data completed");
@@ -57,10 +65,58 @@ public class InGameDataReceiver(
         catch (Exception e)
         {
             logger.LogError(e, "Error occurred while processing raw data");
+            throw;
+        }
+
+        try
+        {
+            foreach (var tuple in keys)
+            {
+                await QueueForImmediateProcessingIfRequired(submissionId, tuple.ResponseUrl, tuple.PartitionKey,
+                    tuple.RowKey);
+            }
+        }
+        catch (Exception e)
+        {
+            logger.LogError(e, "Error occurred while queueing for immediate processing");
         }
 
         logger.LogInformation("Function InGameDataReceiver completed");
         return new NoContentResult();
+    }
+
+    private Task QueueForImmediateProcessingIfRequired(Guid? submissionId,
+        string responseUrl, string partitionKey, string rowKey)
+    {
+        if (submissionId == null)
+        {
+            return Task.CompletedTask;
+        }
+
+        var processingServiceType = GetProcessingType(responseUrl);
+
+        if (processingServiceType != InGameDataProcessingServiceType.Undefined)
+        {
+            return queueRepository.SendMessageAsync(new InGameRawDataQueueMessage
+            {
+                ProcessingServiceType = processingServiceType,
+                PartitionKey = partitionKey,
+                RowKey = rowKey,
+            });
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private static InGameDataProcessingServiceType GetProcessingType(string responseUrl)
+    {
+        var path = UriUtils.GetPath(responseUrl);
+
+        return path switch
+        {
+            "game/battle/hero/complete-wave" => InGameDataProcessingServiceType.Battle,
+            _ => InGameDataProcessingServiceType.Undefined,
+        };
     }
 
     private void SetDebugCorsHeaders(HttpRequest req)

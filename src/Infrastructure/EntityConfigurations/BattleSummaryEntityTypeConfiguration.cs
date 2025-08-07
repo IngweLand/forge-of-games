@@ -22,6 +22,7 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.Property(p => p.InGameBattleId).IsRequired();
         builder.Property(p => p.ResultStatus).IsRequired();
         builder.Property(p => p.WorldId).IsRequired();
+        builder.Property(p => p.PerformedAt).IsRequired();
         builder.Property(p => p.BattleType).IsRequired().HasConversion<string>().HasDefaultValue(BattleType.Undefined);
 
         builder.HasIndex(p => p.WorldId);
@@ -30,6 +31,8 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.HasIndex(p => p.ResultStatus);
         builder.HasIndex(p => p.Difficulty);
         builder.HasIndex(p => p.BattleType);
+        builder.HasIndex(p => p.SubmissionId);
+        builder.HasIndex(p => p.PerformedAt).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGameBattleId}).IsUnique();
 
         builder.HasMany(b => b.Units).WithMany(h => h.Battles).UsingEntity(j => j.ToTable("battles_to_units"));

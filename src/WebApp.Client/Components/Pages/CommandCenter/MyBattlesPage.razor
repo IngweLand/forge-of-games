@@ -1,0 +1,69 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.MY_BATTLES_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@using Size = MudBlazor.Size
+@using SkeletonType = MudBlazor.SkeletonType
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattleLogPageBase
+
+@if (IsBrowser)
+{
+    <div class="component-root">
+        @if (_submissionId == null)
+        {
+            <MudTextField Variant="Variant.Outlined" T="string" Immediate="true"
+                          Label="@Loc[FogResource.MyBattles_SubmissionIdInput_Label]" Clearable="true"
+                          Class="submission-id-input"
+                          Value="@_submissionIdString" ValueChanged="@(s => OnSubmissionIdInputChanged(s))"/>
+        }
+        else
+        {
+            <div class="options-container fog-container">
+                <div class="filter-toggle-container">
+                    <MudChip T="string" Class="submission-id-label" Color="Color.Default" OnClose="@ClearSubmissionId">@_submissionIdString</MudChip>
+                    <MudSpacer/>
+                    <MudToggleIconButton Icon="@Icons.Material.Outlined.FilterAltOff" Toggled="@_isAdvancedFilter"
+                                         ToggledChanged="OnFilterTypeChanged" 
+                                         ToggledIcon="@Icons.Material.Outlined.FilterAlt"></MudToggleIconButton>
+                </div>
+                @if (_isAdvancedFilter)
+                {
+                    <BattleSelector ViewModel="@SelectorViewModel" SearchRequest="@BattleSearchRequest"
+                                    SearchRequestChanged="BattleSelectorOnValueChanged"/>
+                }
+                else
+                {
+                    <BattleTypeSelector BattleTypes="@_unitBattleTypes" SelectedBattleType="@_selectedBattleType"
+                                        OnBattleTypeChanged="@BattleTypeOnChange"/>
+                }
+
+                @if (IsLoading)
+                {
+                    <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
+                                       Indeterminate="true"/>
+                }
+            </div>
+        }
+        <div class="items-container" @ref="_itemsContainer">
+            <Virtualize TItem="BattleSummaryViewModel" @ref="_virtualizeComponent" ItemsProvider="GetBattles"
+                        ItemSize="@_itemHeight"
+                        OverscanCount="3">
+                <ItemContent>
+                    <div style="flex-shrink: 0; height: @(_itemHeight)px">
+                        <BattleTeamComponent Data="@context" OnHeroClicked="OpenBattleSquadProfile"
+                                             OnBattleStatsClicked="OpenBattleStats"/>
+
+                    </div>
+                </ItemContent>
+                <Placeholder>
+                    <div style="flex-shrink: 0; height: @(_itemHeight)px">
+                        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Animation="Animation.Wave" Width="100%"
+                                     Height="100%"/>
+                    </div>
+                </Placeholder>
+            </Virtualize>
+        </div>
+    </div>
+}
+

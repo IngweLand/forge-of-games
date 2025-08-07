@@ -1,7 +1,6 @@
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
-using Ingweland.Fog.Functions.Constants;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -25,14 +24,16 @@ public class FunctionBase(
 
     protected IInGameRawDataTableRepository InGameRawDataTableRepository { get; } = inGameRawDataTableRepository;
 
-    protected async Task<List<(string WorldId, BattleSummary BattleSummary)>> GetBattleResults(string worldId,
-        DateOnly date)
+    protected async Task<List<(string WorldId, BattleSummary BattleSummary, DateOnly PerformedAt, Guid? SubmissionId)>>
+        GetBattleResults(string worldId,
+            DateOnly date)
     {
         var rawDataItems = await ExecuteSafeAsync(
             () => InGameRawDataTableRepository.GetAllAsync(
                 InGameRawDataTablePartitionKeyProvider.BattleCompleteWave(worldId, date)),
             $"Error getting battle complete wave raw data for world {worldId} on {date}", []);
-        var result = new List<(string WorldId, BattleSummary BattleSummary)>();
+        var result =
+            new List<(string WorldId, BattleSummary BattleSummary, DateOnly PerformedAt, Guid? SubmissionId)>();
         foreach (var rawData in rawDataItems)
         {
             try
@@ -44,7 +45,7 @@ public class FunctionBase(
                     continue;
                 }
 
-                result.Add((worldId, parsed));
+                result.Add((worldId, parsed, date, rawData.SubmissionId));
             }
             catch (Exception e)
             {
@@ -79,7 +80,7 @@ public class FunctionBase(
 
         return result;
     }
-    
+
     protected async Task<List<(string WorldId, PvpBattle PvpBattle)>> GetPvpBattles(string worldId, DateOnly date)
     {
         var pvpBattlesRawData = await ExecuteSafeAsync(

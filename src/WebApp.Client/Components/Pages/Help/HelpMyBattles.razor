@@ -1,0 +1,79 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_MY_BATTLES_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="help-container">
+    <h3>My Battles</h3>
+
+    <div class="help-info">
+        The <strong>My Battles</strong> page is the first tool powered by the newly introduced
+        <a href="@FogUrlBuilder.PageRoutes.HELP_SUBMISSION_ID_PATH">Submission ID</a>.
+        It allows you to view all battles submitted under the same Submission ID, providing a simple and powerful
+        way to track and share your battle history.
+    </div>
+    <div class="help-step">
+        <h5>How It Works</h5>
+        <p>
+            At the top of the page, you’ll find a text input field where you can enter a Submission ID.
+            Once a valid ID is entered, additional interface elements will appear:
+        </p>
+        <ul>
+            <li><strong>Clear Submission ID:</strong> Remove the current ID and enter a new one.</li>
+            <li><strong>Simple Search:</strong> Filter battles by type using a quick search.</li>
+            <li>
+                <strong>Advanced Search:</strong> Toggle advanced battle search by clicking the
+                <em>Filter</em> icon&mdash;this works exactly like the advanced filtering in the
+                <a href="@FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH">Battle Log</a>.
+            </li>
+        </ul>
+
+        <p>
+            Unlike the Battle Log, <strong>My Battles</strong> is not limited by a result count&mdash;you can
+            see <em>all</em> battles submitted with the selected Submission ID.
+        </p>
+    </div>
+    <div class="help-step">
+        <h5>Processing Speed</h5>
+        <p>
+            Battles submitted with a Submission ID are processed <strong>instantly</strong>. You can usually view them
+            on
+            the <strong>My Battles</strong> page
+            within just a couple of minutes after submission.
+        </p>
+    </div>
+    <div class="help-step">
+        <h5>Sharing Battles</h5>
+        <p>
+            You can share your battles with others simply by giving them your <strong>Submission ID</strong>.
+            Anyone with that ID can open the <strong>My Battles</strong> page and view every battle you have submitted
+            under it. This makes it easy to showcase your performance, track progress together with friends, or provide
+            proof of activity when applying to alliances.
+        </p>
+        <p>
+            Alliance leaders can request Submission IDs from applicants to review their recent battles.
+        </p>
+        <p>
+            Be aware that once you share your Submission ID, you <strong>cannot revoke</strong> access to those battles.
+            The only way to prevent future battles from being linked to the shared ID is to generate a new Submission
+            ID.
+            Battles already submitted will remain linked to the old ID.
+        </p>
+        <p>
+            In a future update, we plan to introduce a <strong>Sharing ID</strong>&mdash;a temporary, shareable version
+            of your Submission ID. This will allow you to give time-limited or restricted access to your battle history,
+            which can be useful for short-term reviews such as alliance recruitment.
+        </p>
+    </div>
+    <div class="help-step">
+        <h5>Important Notes</h5>
+        <ul>
+            <li>
+                Battles shown on this page are the same ones found in the Battle Log, but with an
+                additional filter for Submission ID.
+            </li>
+            <li>
+                Submission IDs are <strong>not</strong> linked to any specific player identity. Only those
+                who know the ID can view the associated battles.
+            </li>
+        </ul>
+    </div>
+</div>

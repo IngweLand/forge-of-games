@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Refit;
 
@@ -15,5 +16,9 @@ public interface IBattleService
 
     [Get(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE)]
     Task<IReadOnlyCollection<UnitBattleDto>> GetUnitBattlesAsync(string unitId, BattleType battleType,
+        CancellationToken ct = default);
+
+    [Post(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH)]
+    Task<PaginatedList<BattleSummaryDto>> SearchBattlesAsync([Body] UserBattleSearchRequest request,
         CancellationToken ct = default);
 }

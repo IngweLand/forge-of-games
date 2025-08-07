@@ -46,7 +46,7 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
     private NavigationManager NavigationManager { get; set; }
 
     [Inject]
-    private IStatsHubUiService StatsHubUiService { get; set; }
+    private IBattleUiService BattleUiService { get; set; }
 
     [Inject]
     private ITreasureHuntUiService TreasureHuntUiService { get; set; }
@@ -84,7 +84,7 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
             return;
         }
 
-        _unitBattleTypes = StatsHubUiService.GetUnitBattleTypes();
+        _unitBattleTypes = BattleUiService.GetUnitBattleTypes();
         _selectedBattleType = _unitBattleTypes.First().BattleType;
         _ = await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync();
     }
@@ -122,7 +122,7 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         StateHasChanged();
         try
         {
-            _unitBattles = await StatsHubUiService.GetUnitBattlesAsync(UnitId, _selectedBattleType, _cts.Token);
+            _unitBattles = await BattleUiService.GetUnitBattlesAsync(UnitId, _selectedBattleType, _cts.Token);
         }
         catch (OperationCanceledException _)
         {
