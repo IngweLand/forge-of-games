@@ -3,7 +3,6 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
-@using Size = MudBlazor.Size
 @using SkeletonType = MudBlazor.SkeletonType
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattleLogPageBase
 
@@ -12,6 +11,12 @@
     <div class="component-root">
         @if (_submissionId == null)
         {
+            <div class="submission-id-description-container">
+                <span>@Loc[FogResource.MyBattles_SubmissionId_Description]</span>
+                <MudIconButton Icon="@Icons.Material.Filled.Help"
+                               Href="@FogUrlBuilder.PageRoutes.HELP_SUBMISSION_ID_PATH"/>
+            </div>
+
             <MudTextField Variant="Variant.Outlined" T="string" Immediate="true"
                           Label="@Loc[FogResource.MyBattles_SubmissionIdInput_Label]" Clearable="true"
                           Class="submission-id-input"
@@ -21,10 +26,11 @@
         {
             <div class="options-container fog-container">
                 <div class="filter-toggle-container">
-                    <MudChip T="string" Class="submission-id-label" Color="Color.Default" OnClose="@ClearSubmissionId">@_submissionIdString</MudChip>
+                    <MudChip T="string" Class="submission-id-label" Color="Color.Default"
+                             OnClose="@ClearSubmissionId">@_submissionIdString</MudChip>
                     <MudSpacer/>
                     <MudToggleIconButton Icon="@Icons.Material.Outlined.FilterAltOff" Toggled="@_isAdvancedFilter"
-                                         ToggledChanged="OnFilterTypeChanged" 
+                                         ToggledChanged="OnFilterTypeChanged"
                                          ToggledIcon="@Icons.Material.Outlined.FilterAlt"></MudToggleIconButton>
                 </div>
                 @if (_isAdvancedFilter)

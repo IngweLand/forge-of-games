@@ -2058,6 +2058,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the Submission ID to view all battles associated with it..
+        /// </summary>
+        public static string MyBattles_SubmissionId_Description {
+            get {
+                return ResourceManager.GetString("MyBattles.SubmissionId.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submission ID.
         /// </summary>
         public static string MyBattles_SubmissionIdInput_Label {
