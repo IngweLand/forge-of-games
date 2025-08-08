@@ -30,7 +30,7 @@ public class BattlesProcessor(
         var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
         var allBattleResults =
             new List<(string WorldId, BattleSummary BattleSummary, DateOnly PerformedAt, Guid? SubmissionId)>();
-        var allBattleStats = new List<(string worldId, BattleStats battleStats)>();
+        var allBattleStats = new List<BattleStats>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("BattlesProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
@@ -48,7 +48,7 @@ public class BattlesProcessor(
                 battleResults.Count, gameWorld.Id);
 
             var battleStats = await GetBattleStats(gameWorld.Id, date);
-            allBattleStats.AddRange(battleStats);
+            allBattleStats.AddRange(battleStats.Select(t => t.battleStats));
             logger.LogInformation("{count} battle stats retrieved for game world {gameWorldId}",
                 battleStats.Count, gameWorld.Id);
 

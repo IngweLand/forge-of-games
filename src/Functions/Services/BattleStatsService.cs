@@ -11,17 +11,18 @@ namespace Ingweland.Fog.Functions.Services;
 
 public interface IBattleStatsService
 {
-    Task AddAsync(IEnumerable<(string worldId, BattleStats battleStats)> battleStatsItems);
+    Task AddAsync(IEnumerable<BattleStats> battleStatsItems);
+    Task AddAsync(BattleStats battleStats);
 }
 
 public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<BattleStatsService> logger)
     : IBattleStatsService
 {
-    public async Task AddAsync(IEnumerable<(string worldId, BattleStats battleStats)> battleStatsItems)
+    public async Task AddAsync(IEnumerable<BattleStats> battleStatsItems)
     {
         var unique = battleStatsItems
-            .DistinctBy(t => t.battleStats.BattleId, StructuralByteArrayComparer.Instance)
-            .ToDictionary(t => t.battleStats.BattleId, t => t.battleStats, StructuralByteArrayComparer.Instance);
+            .DistinctBy(x => x.BattleId, StructuralByteArrayComparer.Instance)
+            .ToDictionary(x => x.BattleId, x => x, StructuralByteArrayComparer.Instance);
         logger.LogInformation("{ValidCount} unique battles stats after filtering", unique.Count);
 
         if (unique.Count == 0)
@@ -39,85 +40,107 @@ public class BattleStatsService(IFogDbContext context, IMapper mapper, ILogger<B
         var newStats = newIds.Select(id =>
             {
                 var battleStats = unique[id];
-                var playerSquads = battleStats.PlayerSquads.SelectMany(src =>
-                {
-                    if (src.Hero == null || src.Hero?.SubValues.Count == 0)
-                    {
-                        return
-                        [
-                            new BattleSquadStatsEntity
-                            {
-                                Side = BattleSquadSide.Player,
-                                Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
-                                SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
-                            },
-                        ];
-                    }
-
-                    var l = new List<BattleSquadStatsEntity>
-                    {
-                        new()
-                        {
-                            Side = BattleSquadSide.Player,
-                            Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
-                            SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
-                        },
-                    };
-                    l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
-                    {
-                        Side = BattleSquadSide.Player,
-                        SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
-                    }));
-                    return l;
-                });
-                var enemySquads = battleStats.EnemySquads.SelectMany(src =>
-                {
-                    if (src.Hero == null || src.Hero?.SubValues.Count == 0)
-                    {
-                        return
-                        [
-                            new BattleSquadStatsEntity
-                            {
-                                Side = BattleSquadSide.Enemy,
-                                Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
-                                SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
-                            },
-                        ];
-                    }
-                    
-                    var l = new List<BattleSquadStatsEntity>
-                    {
-                        new()
-                        {
-                            Side = BattleSquadSide.Enemy,
-                            Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
-                            SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
-                        },
-                    };
-                    l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
-                    {
-                        Side = BattleSquadSide.Enemy,
-                        SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
-                    }));
-                    return l;
-                });
-                return new BattleStatsEntity
-                {
-                    InGameBattleId = id,
-                    Squads = playerSquads.Concat(enemySquads).ToList(),
-                };
+                return Create(battleStats);
             })
             .Where(src => src.Squads.Count > 0)
             .ToList();
-        
+
         foreach (var chunk in newStats.Chunk(25))
         {
             logger.LogInformation("Saving chunk of battle stats with {ChunkSize} items", chunk.Length);
             context.BattleStats.AddRange(chunk);
             await context.SaveChangesAsync();
         }
-        
+
         logger.LogInformation("SaveChangesAsync completed, added {AddedBattleStatsCount} battle stats", newStats.Count);
+    }
+
+    public async Task AddAsync(BattleStats battleStats)
+    {
+        var existing = await context.BattleStats.AsNoTracking()
+            .FirstOrDefaultAsync(x => x.InGameBattleId == battleStats.BattleId);
+        var battleIdString = Convert.ToBase64String(battleStats.BattleId);
+        if (existing != null)
+        {
+            logger.LogInformation("BattleStats with id {BattleId} already exists, skipping", battleIdString);
+            return;
+        }
+
+        var stats = Create(battleStats);
+        context.BattleStats.Add(stats);
+        await context.SaveChangesAsync();
+        logger.LogInformation("BattleStats with id {BattleId} added", battleIdString);
+    }
+
+    private BattleStatsEntity Create(BattleStats battleStats)
+    {
+        var playerSquads = battleStats.PlayerSquads.SelectMany(src =>
+        {
+            if (src.Hero == null || src.Hero?.SubValues.Count == 0)
+            {
+                return
+                [
+                    new BattleSquadStatsEntity
+                    {
+                        Side = BattleSquadSide.Player,
+                        Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                        SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                    },
+                ];
+            }
+
+            var l = new List<BattleSquadStatsEntity>
+            {
+                new()
+                {
+                    Side = BattleSquadSide.Player,
+                    Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                    SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                },
+            };
+            l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
+            {
+                Side = BattleSquadSide.Player,
+                SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
+            }));
+            return l;
+        });
+        var enemySquads = battleStats.EnemySquads.SelectMany(src =>
+        {
+            if (src.Hero == null || src.Hero?.SubValues.Count == 0)
+            {
+                return
+                [
+                    new BattleSquadStatsEntity
+                    {
+                        Side = BattleSquadSide.Enemy,
+                        Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                        SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                    },
+                ];
+            }
+
+            var l = new List<BattleSquadStatsEntity>
+            {
+                new()
+                {
+                    Side = BattleSquadSide.Enemy,
+                    Hero = mapper.Map<UnitBattleStatsEntity>(src.Hero),
+                    SupportUnit = mapper.Map<UnitBattleStatsEntity>(src.SupportUnit),
+                },
+            };
+            l.AddRange(src.Hero!.SubValues.Select(sv => new BattleSquadStatsEntity
+            {
+                Side = BattleSquadSide.Enemy,
+                SupportUnit = mapper.Map<UnitBattleStatsEntity>(sv),
+            }));
+            return l;
+        });
+        return new BattleStatsEntity
+        {
+            InGameBattleId = battleStats.BattleId,
+            Squads = playerSquads.Concat(enemySquads).ToList(),
+        };
     }
 
     private async Task<HashSet<byte[]>> GetExistingBattleStatsAsync(HashSet<byte[]> inGameBattleIds)
