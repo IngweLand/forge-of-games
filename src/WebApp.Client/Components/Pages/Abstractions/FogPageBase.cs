@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
-using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 
@@ -21,6 +20,7 @@ public abstract class FogPageBase : ComponentBase, IDisposable
     [Inject]
     protected IStringLocalizer<FogResource> Loc { get; set; } = null!;
 
+    protected virtual bool ShouldHidePageLoadingIndicator => true;
 
     public void Dispose()
     {
@@ -39,13 +39,13 @@ public abstract class FogPageBase : ComponentBase, IDisposable
     protected override Task OnInitializedAsync()
     {
         _persistingSubscription = ApplicationState.RegisterOnPersisting(PersistData);
-        
+
         return Task.CompletedTask;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (firstRender && ShouldHidePageLoadingIndicator)
         {
             await JsInteropService.HideLoadingIndicatorAsync();
         }
@@ -71,7 +71,6 @@ public abstract class FogPageBase : ComponentBase, IDisposable
             Console.Out.WriteLine(e);
             throw;
         }
-        
 
         if (result != null)
         {
@@ -92,7 +91,6 @@ public abstract class FogPageBase : ComponentBase, IDisposable
 
         return result;
     }
-
 
     protected virtual Task PersistData()
     {
