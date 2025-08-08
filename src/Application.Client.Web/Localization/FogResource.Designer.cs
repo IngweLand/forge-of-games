@@ -2247,6 +2247,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle {0} | Battle Log | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string StatsHub_Battle_PageTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Battle.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battle.
+        /// </summary>
+        public static string StatsHub_Battle_Title {
+            get {
+                return ResourceManager.GetString("StatsHub.Battle.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our game analytics are community-driven! Click this message to learn how to contribute!.
         /// </summary>
         public static string StatsHub_BattleLog_ContributePrompt {

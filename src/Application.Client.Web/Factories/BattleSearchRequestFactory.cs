@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Text;
 using System.Web;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
@@ -28,6 +29,21 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
 
     private static readonly BattleSearchRequest DefaultInfo = new();
 
+    private readonly Dictionary<RegionId, string> _historicBattlesAbbreviations = new()
+    {
+        {RegionId.SiegeOfOrleans, "SO"},
+        {RegionId.SpartasLastStand, "SLS"},
+    };
+
+    private readonly Dictionary<RegionId, string> _teslaAbbreviations = new()
+    {
+        {RegionId.TeslaStormBlue, "B"},
+        {RegionId.TeslaStormGreen, "G"},
+        {RegionId.TeslaStormRed, "R"},
+        {RegionId.TeslaStormYellow, "Y"},
+        {RegionId.TeslaStormPurple, "P"},
+    };
+
     private readonly Dictionary<int, string> _treasureHuntAbbreviations = new()
     {
         {0, "RI"},
@@ -40,20 +56,6 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         {7, "MII"},
         {8, "GMI"},
         {9, "GMII"},
-    };
-    private readonly Dictionary<RegionId, string> _teslaAbbreviations = new()
-    {
-        {RegionId.TeslaStormBlue, "B"},
-        {RegionId.TeslaStormGreen, "G"},
-        {RegionId.TeslaStormRed, "R"},
-        {RegionId.TeslaStormYellow, "Y"},
-        {RegionId.TeslaStormPurple, "P"},
-    };
-    
-    private readonly Dictionary<RegionId, string> _historicBattlesAbbreviations = new()
-    {
-        {RegionId.SiegeOfOrleans, "SO"},
-        {RegionId.SpartasLastStand, "SLS"},
     };
 
     public BattleSearchRequest Create(string uri)
@@ -70,81 +72,7 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             return new BattleSearchRequest();
         }
 
-        var battleTypeValue = query[BattleTypeKey];
-        if (string.IsNullOrWhiteSpace(battleTypeValue) ||
-            !Enum.TryParse<BattleType>(battleTypeValue, out var battleType))
-        {
-            battleType = DefaultInfo.BattleType;
-        }
-
-        var campaignRegionEncounterValue = query[CampaignRegionEncounterKey];
-        if (string.IsNullOrWhiteSpace(campaignRegionEncounterValue) ||
-            !int.TryParse(campaignRegionEncounterValue, out var campaignRegionEncounter))
-        {
-            campaignRegionEncounter = DefaultInfo.CampaignRegionEncounter;
-        }
-
-        var difficultyValue = query[DifficultyKey];
-        if (string.IsNullOrWhiteSpace(difficultyValue) ||
-            !Enum.TryParse<Difficulty>(difficultyValue, out var difficulty))
-        {
-            difficulty = DefaultInfo.Difficulty;
-        }
-
-        var campaignRegionValue = query[CampaignRegionKey];
-        if (string.IsNullOrWhiteSpace(campaignRegionValue) ||
-            !Enum.TryParse<RegionId>(campaignRegionValue, out var regionId))
-        {
-            regionId = DefaultInfo.CampaignRegion;
-        }
-
-        int.TryParse(query[TreasureHuntDifficultyKey], out var treasureHuntDifficulty);
-        int.TryParse(query[TreasureHuntEncounterKey], out var treasureHuntEncounter);
-        int.TryParse(query[TreasureHuntStageKey], out var treasureHuntStage);
-
-        var historicBattleRegionValue = query[HistoricBattleRegionKey];
-        if (string.IsNullOrWhiteSpace(historicBattleRegionValue) ||
-            !Enum.TryParse<RegionId>(historicBattleRegionValue, out var historicBattleRegionId))
-        {
-            historicBattleRegionId = DefaultInfo.HistoricBattleRegion;
-        }
-
-        var historicBattleEncounterValue = query[HistoricBattleEncounterKey];
-        if (string.IsNullOrWhiteSpace(historicBattleEncounterValue) ||
-            !int.TryParse(historicBattleEncounterValue, out var historicBattleEncounter))
-        {
-            historicBattleEncounter = DefaultInfo.HistoricBattleEncounter;
-        }
-
-        var teslaStormRegionValue = query[TeslaStormRegionKey];
-        if (string.IsNullOrWhiteSpace(teslaStormRegionValue) ||
-            !Enum.TryParse<RegionId>(teslaStormRegionValue, out var teslaStormRegionId))
-        {
-            teslaStormRegionId = DefaultInfo.TeslaStormRegion;
-        }
-
-        var teslaStormEncounterValue = query[TeslaStormEncounterKey];
-        if (string.IsNullOrWhiteSpace(teslaStormEncounterValue) ||
-            !int.TryParse(teslaStormEncounterValue, out var teslaStormEncounter))
-        {
-            teslaStormEncounter = DefaultInfo.TeslaStormEncounter;
-        }
-
-        return new BattleSearchRequest
-        {
-            BattleType = battleType,
-            CampaignRegion = regionId,
-            CampaignRegionEncounter = campaignRegionEncounter,
-            Difficulty = difficulty,
-            TreasureHuntDifficulty = treasureHuntDifficulty,
-            TreasureHuntEncounter = treasureHuntEncounter,
-            TreasureHuntStage = treasureHuntStage,
-            HistoricBattleRegion = historicBattleRegionId,
-            HistoricBattleEncounter = historicBattleEncounter,
-            TeslaStormRegion = teslaStormRegionId,
-            TeslaStormEncounter = teslaStormEncounter,
-            UnitIds = query.GetValues(UnitIdKey) ?? [],
-        };
+        return Create(query);
     }
 
     public IReadOnlyDictionary<string, object?> CreateQueryParams(BattleSearchRequest request)
@@ -240,7 +168,8 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
                 break;
             }
             case BattleType.HistoricBattle:
-                details = $"{_historicBattlesAbbreviations[request.HistoricBattleRegion]}–{request.HistoricBattleEncounter}";
+                details = $"{_historicBattlesAbbreviations[request.HistoricBattleRegion]}–{
+                    request.HistoricBattleEncounter}";
                 break;
             case BattleType.TeslaStorm:
                 details = $"{_teslaAbbreviations[request.TeslaStormRegion]}–{request.TeslaStormEncounter}";
@@ -252,7 +181,13 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
 
         var sb = new StringBuilder();
         sb.Append(GetBattleTypeTitle(request.BattleType));
-        
+
+        if (request.Difficulty == Difficulty.Hard)
+        {
+            sb.Append('|');
+            sb.Append(localizer[FogResource.Battle_Difficulty_Hard]);
+        }
+
         if (!string.IsNullOrEmpty(details))
         {
             sb.Append(' ');
@@ -267,8 +202,103 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         {
             sb.Append($" [{request.UnitIds.Count} {localizer[FogResource.Hoh_Heroes]}]");
         }
-        
+
         return sb.ToString();
+    }
+
+    private BattleSearchRequest Create(NameValueCollection query)
+    {
+        var battleTypeValue = query[BattleTypeKey];
+        if (string.IsNullOrWhiteSpace(battleTypeValue) ||
+            !Enum.TryParse<BattleType>(battleTypeValue, out var battleType))
+        {
+            battleType = DefaultInfo.BattleType;
+        }
+
+        var campaignRegionEncounterValue = query[CampaignRegionEncounterKey];
+        if (string.IsNullOrWhiteSpace(campaignRegionEncounterValue) ||
+            !int.TryParse(campaignRegionEncounterValue, out var campaignRegionEncounter))
+        {
+            campaignRegionEncounter = DefaultInfo.CampaignRegionEncounter;
+        }
+
+        var difficultyValue = query[DifficultyKey];
+        if (string.IsNullOrWhiteSpace(difficultyValue) ||
+            !Enum.TryParse<Difficulty>(difficultyValue, out var difficulty))
+        {
+            difficulty = DefaultInfo.Difficulty;
+        }
+
+        var campaignRegionValue = query[CampaignRegionKey];
+        if (string.IsNullOrWhiteSpace(campaignRegionValue) ||
+            !Enum.TryParse<RegionId>(campaignRegionValue, out var regionId))
+        {
+            regionId = DefaultInfo.CampaignRegion;
+        }
+
+        int.TryParse(query[TreasureHuntDifficultyKey], out var treasureHuntDifficulty);
+        int.TryParse(query[TreasureHuntEncounterKey], out var treasureHuntEncounter);
+        int.TryParse(query[TreasureHuntStageKey], out var treasureHuntStage);
+
+        var historicBattleRegionValue = query[HistoricBattleRegionKey];
+        if (string.IsNullOrWhiteSpace(historicBattleRegionValue) ||
+            !Enum.TryParse<RegionId>(historicBattleRegionValue, out var historicBattleRegionId))
+        {
+            historicBattleRegionId = DefaultInfo.HistoricBattleRegion;
+        }
+
+        var historicBattleEncounterValue = query[HistoricBattleEncounterKey];
+        if (string.IsNullOrWhiteSpace(historicBattleEncounterValue) ||
+            !int.TryParse(historicBattleEncounterValue, out var historicBattleEncounter))
+        {
+            historicBattleEncounter = DefaultInfo.HistoricBattleEncounter;
+        }
+
+        var teslaStormRegionValue = query[TeslaStormRegionKey];
+        if (string.IsNullOrWhiteSpace(teslaStormRegionValue) ||
+            !Enum.TryParse<RegionId>(teslaStormRegionValue, out var teslaStormRegionId))
+        {
+            teslaStormRegionId = DefaultInfo.TeslaStormRegion;
+        }
+
+        var teslaStormEncounterValue = query[TeslaStormEncounterKey];
+        if (string.IsNullOrWhiteSpace(teslaStormEncounterValue) ||
+            !int.TryParse(teslaStormEncounterValue, out var teslaStormEncounter))
+        {
+            teslaStormEncounter = DefaultInfo.TeslaStormEncounter;
+        }
+
+        return new BattleSearchRequest
+        {
+            BattleType = battleType,
+            CampaignRegion = regionId,
+            CampaignRegionEncounter = campaignRegionEncounter,
+            Difficulty = difficulty,
+            TreasureHuntDifficulty = treasureHuntDifficulty,
+            TreasureHuntEncounter = treasureHuntEncounter,
+            TreasureHuntStage = treasureHuntStage,
+            HistoricBattleRegion = historicBattleRegionId,
+            HistoricBattleEncounter = historicBattleEncounter,
+            TeslaStormRegion = teslaStormRegionId,
+            TeslaStormEncounter = teslaStormEncounter,
+            UnitIds = query.GetValues(UnitIdKey) ?? [],
+        };
+    }
+
+    public async Task<string> CreateDefinitionTitleAsync(string battleDefinitionId, BattleType battleType,
+        Difficulty battleDifficulty,
+        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap)
+    {
+        var query = CreateQueryParams(battleDefinitionId, battleDifficulty, battleType, null,
+            treasureHuntEncounterMap);
+        var nvc = new NameValueCollection();
+        foreach (var kvp in query)
+        {
+            nvc.Add(kvp.Key, kvp.Value?.ToString());
+        }
+
+        var request = Create(nvc);
+        return await CreateDefinitionTitleAsync(request);
     }
 
     private string GetBattleTypeTitle(BattleType battleType)

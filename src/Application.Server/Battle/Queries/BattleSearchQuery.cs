@@ -49,7 +49,7 @@ public class BattleSearchQueryHandler(
         var battleIds = battles.Select(src => src.InGameBattleId);
 
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        return await battleSearchResultFactory.Create(battles, existingStatsIds, request.BattleType);
+        return await battleSearchResultFactory.Create(battles, existingStatsIds);
     }
 
     private IQueryable<BattleSummaryEntity> BuildBattleQuery(HashSet<string> unitIds, string battleDefinitionId,

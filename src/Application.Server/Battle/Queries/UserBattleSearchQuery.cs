@@ -73,7 +73,7 @@ public class PlayerBattleSearchQueryHandler(
         var battleIds = battles.Select(src => src.InGameBattleId);
 
         var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        var searchResult = await battleSearchResultFactory.Create(battles, existingStatsIds, request.BattleType);
+        var searchResult = await battleSearchResultFactory.Create(battles, existingStatsIds);
 
         return new PaginatedList<BattleSummaryDto>(searchResult.Battles, request.StartIndex, count);
     }

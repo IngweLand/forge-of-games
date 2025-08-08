@@ -14,4 +14,8 @@ public interface IBattleSearchRequestFactory
         IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap);
 
     Task<string> CreateDefinitionTitleAsync(BattleSearchRequest request);
+
+    Task<string> CreateDefinitionTitleAsync(string battleDefinitionId, BattleType battleType,
+        Difficulty battleDifficulty,
+        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap);
 }

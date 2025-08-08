@@ -1,0 +1,95 @@
+@using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IJSInteropService JSInteropService
+<MudDialog>
+    <DialogContent>
+        <div class="main-container">
+            <MudButton Style="text-transform: none" Color="Color.Secondary" Variant="Variant.Filled"
+                       StartIcon="@Icons.Material.Outlined.Share"
+                       OnClick="@CopyLink">@Loc[FogResource.Common_CopyLink]</MudButton>
+            <MudButton Style="text-transform: none" Color="Color.Secondary" Variant="Variant.Filled"
+                       StartIcon="@Icons.Custom.Brands.Discord"
+                       OnClick="@CopyDiscordLink">@Loc[FogResource.Common_CopyLinkForDiscord]</MudButton>
+        </div>
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="@Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string BattleDefinitionId { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required BattleType BattleType { get; set; }
+
+    [Parameter]
+    public Difficulty Difficulty { get; set; } = Difficulty.Undefined;
+
+    [Parameter]
+    [EditorRequired]
+    public required int BattleId { get; set; }
+
+    [Inject]
+    private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private string? _link;
+
+    protected override void OnParametersSet()
+    {
+        _link = $"{NavigationManager.BaseUri.TrimEnd('/')}{FogUrlBuilder.PageRoutes.Battle(BattleId)}";
+    }
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task CopyLink()
+    {
+        if (string.IsNullOrWhiteSpace(_link))
+        {
+            return;
+        }
+
+        await JSInteropService.CopyToClipboardAsync(_link);
+
+        Close();
+    }
+
+    [Inject]
+    private ITreasureHuntUiService TreasureHuntUiService { get; set; }
+
+    private async Task CopyDiscordLink()
+    {
+        if (string.IsNullOrWhiteSpace(_link))
+        {
+            return;
+        }
+
+        var title = await BattleSearchRequestFactory.CreateDefinitionTitleAsync(BattleDefinitionId, BattleType, Difficulty,
+            await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
+        var link = $"[{Loc[FogResource.StatsHub_Battle_Title]}: {title}]({_link})";
+        await JSInteropService.CopyToClipboardAsync(link);
+
+        Close();
+    }
+
+}

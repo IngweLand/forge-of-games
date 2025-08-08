@@ -18,7 +18,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
     };
 
     public async Task<BattleSearchResult> Create(IReadOnlyCollection<BattleSummaryEntity> entities,
-        IReadOnlyDictionary<byte[], int> existingStatsIds, BattleType battleType)
+        IReadOnlyDictionary<byte[], int> existingStatsIds)
     {
         var battles = entities.Select(src =>
         {
@@ -28,7 +28,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
                 statsId = value;
             }
 
-            return Create(src, statsId, battleType);
+            return Create(src, statsId);
         }).ToList();
 
         return new BattleSearchResult
@@ -37,10 +37,10 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
         };
     }
 
-    private BattleSummaryDto Create(BattleSummaryEntity entity, int? statsId, BattleType battleType)
+    public BattleSummaryDto Create(BattleSummaryEntity entity, int? statsId)
     {
         IReadOnlyCollection<BattleSquad>? enemySquads = null;
-        if (battleType == BattleType.Pvp)
+        if (entity.BattleType == BattleType.Pvp)
         {
             enemySquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.EnemySquads,
                 JsonSerializerOptions) ?? [];
@@ -71,7 +71,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
             EnemySquads = enemyBattleUnitDtos,
             Difficulty = entity.Difficulty,
             StatsId = statsId,
-            BattleType = battleType,
+            BattleType = entity.BattleType,
             PerformedAt = entity.PerformedAt,
         };
     }

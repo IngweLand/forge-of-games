@@ -29,14 +29,15 @@ public static class AnalyticsParams
     {
         public static class Locations
         {
+            public const string BATTLE = "battle";
             public const string BATTLE_LOG = "battle_log";
             public const string CITY_INSPIRATIONS = "city_inspirations";
             public const string CITY_PLANNER_APP = "city_planner_app";
             public const string COMMAND_CENTER_PROFILE = "command_center_profile";
             public const string HERO_COMPONENT = "hero_component";
             public const string HERO_PAGE = "hero_page";
-            public const string PLAYER_PROFILE = "player_profile";
             public const string MY_BATTLES = "my_battles";
+            public const string PLAYER_PROFILE = "player_profile";
         }
 
         public static class Sources

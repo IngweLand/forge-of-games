@@ -67,7 +67,14 @@
     width: 24px;
     cursor: pointer;
     position: absolute;
-    right: 12px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+::deep .share-button {
+    position: absolute;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
 }

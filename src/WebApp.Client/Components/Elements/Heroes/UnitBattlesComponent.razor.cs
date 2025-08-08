@@ -149,8 +149,7 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         }
 
         var query = BattleSearchRequestFactory.CreateQueryParams(unitBattle.BattleDefinitionId, unitBattle.Difficulty,
-            unitBattle.BattleType, [unitBattle.UnitId, unitBattle.UnitId],
-            await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
+            unitBattle.BattleType, [unitBattle.UnitId], await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync());
 
         TrackEvent(AnalyticsEvents.NAVIGATE_HERO_BATTLE, new Dictionary<string, object>
         {

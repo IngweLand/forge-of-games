@@ -64,15 +64,26 @@ public class BattleUiService(
             .OrderBy(x => x.BattleType.GetSortOrder());
         return vms.ToList();
     }
-    
+
     public async Task<PaginatedList<BattleSummaryViewModel>> SearchBattles(
         UserBattleSearchRequest request, CancellationToken ct = default)
     {
         var result = await battleService.SearchBattlesAsync(request, ct);
 
         var battles =
-            await battleViewModelFactory.CreateBattleSummaryViewModel(result.Items, request.BattleType);
+            await battleViewModelFactory.CreateBattleSummaryViewModels(result.Items, request.BattleType);
 
         return new PaginatedList<BattleSummaryViewModel>(battles, result.StartIndex, result.TotalCount);
+    }
+
+    public async Task<BattleSummaryViewModel?> GetBattleAsync(int battleId, CancellationToken ct = default)
+    {
+        var result = await battleService.GetBattleAsync(battleId, ct);
+        if (result == null)
+        {
+            return null;
+        }
+
+        return await battleViewModelFactory.CreateBattleSummaryViewModel(result);
     }
 }

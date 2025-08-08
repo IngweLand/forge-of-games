@@ -28,7 +28,7 @@ public static class FogUrlBuilder
         public const string WIKI_EXTRACT = "/wiki/extract";
 
         public const string ALL_LEADERBOARD_TOP_ITEMS_PATH = "/" + BASE_STATS_PATH + "/leaderboards/top";
-        
+
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
         public const string PLAYER_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}";
         public const string PLAYER_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}";
@@ -46,8 +46,10 @@ public static class FogUrlBuilder
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";
         public const string BATTLE_STATS_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId}";
+        public const string BATTLE_TEMPLATE = "/" + BASE_BATTLES_PATH + "/battles/{battleId:int}";
+        public const string BATTLE_TEMPLATE_REFIT = "/" + BASE_BATTLES_PATH + "/battles/{battleId}";
         public const string UNIT_BATTLES_TEMPLATE = "/units/{unitId}/battles/{battleType}";
-        
+
         public const string PLAYER_CITY_SNAPSHOTS_SEARCH = "/playerCitySnapshots/search";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE = "/playerCitySnapshots/{snapshotId:int}";
         public const string PLAYER_CITY_SNAPSHOT_TEMPLATE_REFIT = "/playerCitySnapshots/{snapshotId}";
@@ -55,9 +57,9 @@ public static class FogUrlBuilder
         public const string COMMON_AGES = "/common/ages";
         public const string COMMON_RESOURCES = "/common/resources";
         public const string COMMON_CITIES = "/common/cities";
-        
+
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
-        
+
         public const string RELICS = "/relics";
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
     }
@@ -109,7 +111,7 @@ public static class FogUrlBuilder
         public const string PLAYER_BATTLES_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/battles";
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
         public const string TOP_HEROES_PATH = BASE_STATS_HUB_PATH + "/top-heroes";
-        
+
         public const string FOG_GITHUB_URL = "https://github.com/IngweLand/forge-of-games";
         public const string HOH_HELPER_GITHUB_URL = "https://github.com/IngweLand/hoh-helper";
 
@@ -120,10 +122,11 @@ public static class FogUrlBuilder
         public const string FOG_DISCORD_URL = "https://discord.gg/4vFeeh7CZn";
         public const string CITIES_STATS_PATH = "/cities-stats";
         public const string BATTLE_LOG_PATH = "/battle-log";
-        
+        public const string BATTLE_TEMPLATE = "/battle-log/battles/{battleId:int}";
+
         public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
         public const string MAINTENANCE_PAGE = "/maintenance.html";
-        
+
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
         public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
@@ -174,10 +177,15 @@ public static class FogUrlBuilder
 
             return WORLD_ALLIANCES_TEMPLATE.Replace("{worldId}", worldId);
         }
-        
+
         public static string PlayerBattles(int playerId)
         {
             return PLAYER_BATTLES_TEMPLATE.Replace("{playerId:int}", playerId.ToString());
+        }
+
+        public static string Battle(int battleId)
+        {
+            return BATTLE_TEMPLATE.Replace("{battleId:int}", battleId.ToString());
         }
     }
 }

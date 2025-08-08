@@ -18,4 +18,6 @@ public interface IBattleUiService
 
     Task<PaginatedList<BattleSummaryViewModel>> SearchBattles(
         UserBattleSearchRequest request, CancellationToken ct = default);
+
+    Task<BattleSummaryViewModel?> GetBattleAsync(int battleId, CancellationToken ct = default);
 }
