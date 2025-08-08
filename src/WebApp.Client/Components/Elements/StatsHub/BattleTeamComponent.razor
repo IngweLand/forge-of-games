@@ -9,6 +9,11 @@
 
 <div class="fog-container component-root user-select-none">
     <div class="@StatusContainerClassname">
+        @if (Data.StatsId.HasValue)
+        {
+            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"
+                 @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
+        }
         <span>
             @switch (Data.ResultStatus)
             {
@@ -20,19 +25,15 @@
                     break;
             }
         </span>
-        @if (Data.StatsId.HasValue)
-        {
-            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"
-                 @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
-        }
-
+        <MudIconButton Icon="@Icons.Material.Filled.IosShare" Class="share-button" Color="Color.Inherit"
+                       OnClick="@ShareLink"/>
     </div>
     <div class="@TeamsClassname">
         <div class="squads-row">
             @foreach (var unit in Data.PlayerSquads)
             {
                 <BattleSquadComponent ShowResultState="@(Data.BattleType != BattleType.HistoricBattle)"
-                                      OnClick="OnHeroClicked" BattleSquad="unit"/>
+                                      OnClick="@OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
         @if (Data.EnemySquads.Count > 0)
@@ -41,7 +42,7 @@
             <div class="squads-row">
                 @foreach (var unit in Data.EnemySquads)
                 {
-                    <BattleSquadComponent OnClick="OnHeroClicked" BattleSquad="unit"/>
+                    <BattleSquadComponent OnClick="@OnHeroClicked" BattleSquad="unit"/>
                 }
             </div>
         }
@@ -51,7 +52,7 @@
 
 @code {
 
-    [Parameter]
+    [Parameter, EditorRequired]
     public BattleSummaryViewModel Data { get; set; }
 
     [Parameter]
@@ -68,5 +69,36 @@
     private string TeamsClassname => new CssBuilder("content-row")
         .AddClass("content-row-two-teams", Data.EnemySquads.Count > 0)
         .Build();
+
+    [Inject]
+    private IDialogService DialogService { get; set; }
+
+    private async Task ShareLink()
+    {
+        var options = GetDefaultDialogOptions();
+        var parameters = new DialogParameters<ShareBattleLinkDialog>
+        {
+            {x => x.BattleId, Data.Id},
+            {x => x.BattleDefinitionId, Data.BattleDefinitionId},
+            {x => x.BattleType, Data.BattleType},
+            {x => x.Difficulty, Data.Difficulty},
+        };
+        await DialogService.ShowAsync<ShareBattleLinkDialog>(Loc[FogResource.Common_Share],
+            parameters, options);
+    }
+
+    private static DialogOptions GetDefaultDialogOptions()
+    {
+        return new DialogOptions
+        {
+            MaxWidth = MaxWidth.Small,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            Position = DialogPosition.TopCenter,
+            CloseButton = true,
+            CloseOnEscapeKey = true,
+            NoHeader = true,
+        };
+    }
 
 }

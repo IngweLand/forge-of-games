@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
+using Refit;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 
@@ -66,9 +67,15 @@ public abstract class FogPageBase : ComponentBase, IDisposable
                 result = restored;
             }
         }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+        }
         catch (Exception e)
         {
-            Console.Out.WriteLine(e);
+            Console.Error.WriteLine(e);
             throw;
         }
 
@@ -84,7 +91,48 @@ public abstract class FogPageBase : ComponentBase, IDisposable
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Console.Error.WriteLine(e);
+                throw;
+            }
+        }
+
+        return result;
+    }
+
+    protected T? LoadWithPersistence<T>(string key, Func<T?> loadDataFunc)
+    {
+        var result = default(T);
+
+        try
+        {
+            if (!ApplicationState.TryTakeFromJson<T?>(key, out var restored))
+            {
+                result = loadDataFunc();
+            }
+            else
+            {
+                result = restored;
+            }
+        }
+        catch (Exception e)
+        {
+            Console.Error.WriteLine(e);
+            throw;
+        }
+
+        if (result != null)
+        {
+            _dataToPersistedItems[key] = result;
+        }
+        else if (OperatingSystem.IsBrowser())
+        {
+            try
+            {
+                result = loadDataFunc();
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine(e);
                 throw;
             }
         }

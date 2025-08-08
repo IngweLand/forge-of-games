@@ -45,6 +45,7 @@ public class CacheKeyFactory : ICacheKeyFactory
         {
             GetAllianceQuery q => Alliance(q.AllianceId),
             BattleSearchQuery q => $"BattleSearch:{q.BattleDefinitionId}:{q.BattleType}:{string.Join("-", q.UnitIds)}",
+            GetBattleQuery q => $"Battle:{q.Id}",
             GetBattleStatsQuery q => $"BattleStats:{q.Id}:{CultureInfo.CurrentCulture.Name}",
             GetUnitBattlesQuery q => $"UnitBattles:{q.UnitId}:{q.BattleType}:{CultureInfo.CurrentCulture.Name}",
             CityInspirationsSearchQuery q => $"CityInspirationsSearch:{q.Request.CityId}:{q.Request.AgeId}:{

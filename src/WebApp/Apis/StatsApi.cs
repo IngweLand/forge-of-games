@@ -33,6 +33,7 @@ public static class StatsApi
 
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_TEMPLATE, GetBattleAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE, GetUnitBattlesAsync);
         api.MapPost(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOTS_SEARCH, SearchCityInspirationsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
@@ -96,6 +97,19 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.BattleService.GetBattleStatsAsync(battleStatsId, ct);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Results<Ok<BattleSummaryDto>, NotFound>>
+        GetBattleAsync([AsParameters] StatsServices services, HttpContext context, int battleId,
+            CancellationToken ct = default)
+    {
+        var result = await services.BattleService.GetBattleAsync(battleId, ct);
         if (result == null)
         {
             return TypedResults.NotFound();

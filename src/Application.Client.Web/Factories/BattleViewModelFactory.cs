@@ -58,7 +58,7 @@ public class BattleViewModelFactory(
         };
     }
 
-    public async Task<IReadOnlyCollection<BattleSummaryViewModel>> CreateBattleSummaryViewModel(
+    public async Task<IReadOnlyCollection<BattleSummaryViewModel>> CreateBattleSummaryViewModels(
         IReadOnlyCollection<BattleSummaryDto> battles, BattleType battleType)
     {
         var heroIds =
@@ -84,6 +84,8 @@ public class BattleViewModelFactory(
                 StatsId = battle.StatsId,
                 BattleType = battle.BattleType,
                 PerformedAt = battle.PerformedAt != DateOnly.MinValue ? battle.PerformedAt.ToString("d") : string.Empty,
+                BattleDefinitionId = battle.BattleDefinitionId,
+                Difficulty = battle.Difficulty,
             })
             .ToList();
     }
@@ -123,6 +125,35 @@ public class BattleViewModelFactory(
             BattleTypeName = resourceLocalizationService.Localize(battleType),
             BattleType = battleType,
         }).ToList();
+    }
+
+    public async Task<BattleSummaryViewModel> CreateBattleSummaryViewModel(BattleSummaryDto battle)
+    {
+        var heroIds =
+            battle.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null);
+        if (battle.BattleType == BattleType.Pvp)
+        {
+            heroIds = heroIds.Concat(battle.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
+        }
+
+        var heroes = (await coreDataCache.GetHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
+        var relics = await coreDataCache.GetRelicsAsync();
+        var barracks = await coreDataCache.GetBarracksByUnitMapAsync();
+
+        return new BattleSummaryViewModel
+        {
+            Id = battle.Id,
+            ResultStatus = battle.ResultStatus,
+            PlayerSquads = battle.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+                .ToList(),
+            EnemySquads = battle.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+                .ToList(),
+            StatsId = battle.StatsId,
+            BattleType = battle.BattleType,
+            PerformedAt = battle.PerformedAt != DateOnly.MinValue ? battle.PerformedAt.ToString("d") : string.Empty,
+            BattleDefinitionId = battle.BattleDefinitionId,
+            Difficulty = battle.Difficulty,
+        };
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,

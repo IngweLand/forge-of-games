@@ -160,7 +160,7 @@ public class StatsHubUiService : IStatsHubUiService
     {
         var result = await _battleService.SearchBattlesAsync(request, ct);
 
-        return await _battleViewModelFactory.CreateBattleSummaryViewModel(result.Battles, request.BattleType);
+        return await _battleViewModelFactory.CreateBattleSummaryViewModels(result.Battles, request.BattleType);
     }
 
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()
