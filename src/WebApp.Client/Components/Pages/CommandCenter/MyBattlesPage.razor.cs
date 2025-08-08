@@ -25,15 +25,13 @@ public partial class MyBattlesPage : BattleLogPageBase
     private BattleType _selectedBattleType = BattleType.Campaign;
     private Guid? _submissionId;
     private string _submissionIdString = string.Empty;
+    private IReadOnlyCollection<UnitBattleTypeViewModel> _unitBattleTypes = [];
     private Virtualize<BattleSummaryViewModel> _virtualizeComponent = null!;
 
     protected override Dictionary<string, object> DefaultAnalyticsParameters { get; } = new()
     {
         {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.MY_BATTLES},
     };
-
-    [Inject]
-    private IJSInteropService JsInteropService { get; set; }
 
     [Inject]
     private IPersistenceService PersistenceService { get; set; }
@@ -47,7 +45,7 @@ public partial class MyBattlesPage : BattleLogPageBase
 
         await base.DisposeAsyncCore();
     }
-    private IReadOnlyCollection<UnitBattleTypeViewModel> _unitBattleTypes = [];
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();

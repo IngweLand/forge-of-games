@@ -28,7 +28,7 @@ public abstract class BattleLogPageBase : FogPageBase, IAsyncDisposable
     [Inject]
     protected IDialogService DialogService { get; set; }
 
-    protected bool IsBrowser { get; set; }
+    protected bool IsInitialized { get; set; }
 
     protected bool IsLoading { get; set; } = true;
 
@@ -36,6 +36,7 @@ public abstract class BattleLogPageBase : FogPageBase, IAsyncDisposable
     protected NavigationManager NavigationManager { get; set; }
 
     protected BattleSelectorViewModel? SelectorViewModel { get; private set; }
+    protected override bool ShouldHidePageLoadingIndicator => false;
 
     [Inject]
     protected IStatsHubUiService StatsHubUiService { get; set; }
@@ -89,13 +90,25 @@ public abstract class BattleLogPageBase : FogPageBase, IAsyncDisposable
             await JsInteropService.ShowLoadingIndicatorAsync();
             StateHasChanged();
         }
-        
+
         SelectorViewModel = await LoadWithPersistenceAsync(
             nameof(SelectorViewModel),
             async () => await BattleUiService.GetBattleSelectorViewModel()
         );
 
-        IsBrowser = OperatingSystem.IsBrowser();
+        IsInitialized = OperatingSystem.IsBrowser();
+        if (IsInitialized)
+        {
+            await JsInteropService.HideLoadingIndicatorAsync();
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && IsInitialized)
+        {
+            await JsInteropService.HideLoadingIndicatorAsync();
+        }
     }
 
     protected static DialogOptions GetDefaultDialogOptions()

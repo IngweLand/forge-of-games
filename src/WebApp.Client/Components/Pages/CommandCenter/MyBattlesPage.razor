@@ -7,7 +7,7 @@
 @using SkeletonType = MudBlazor.SkeletonType
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattleLogPageBase
 
-@if (IsBrowser)
+@if (IsInitialized)
 {
     <div class="component-root">
         @if (_submissionId == null)
