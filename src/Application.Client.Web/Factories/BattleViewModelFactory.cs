@@ -181,14 +181,15 @@ public class BattleViewModelFactory(
 
         var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
         var profileVm = heroProfileViewModelFactory.Create(profile, hero, [], relicVm);
-        string? finalHitPointsPercent = null;
+        string? finalHitPointsFormatted = null;
         var isDead = false;
         if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))
         {
-            finalHitPointsPercent = (hp / profile.Stats[UnitStatType.MaxHitPoints]).ToString("P1");
+            var finalHitPointsPercent = Math.Min(1, hp / profile.Stats[UnitStatType.MaxHitPoints]);
+            finalHitPointsFormatted = finalHitPointsPercent.ToString("P1");
             isDead = hp <= 0;
         }
 
-        return new BattleSquadViewModel(profileVm, finalHitPointsPercent, isDead);
+        return new BattleSquadViewModel(profileVm, finalHitPointsFormatted, isDead);
     }
 }
