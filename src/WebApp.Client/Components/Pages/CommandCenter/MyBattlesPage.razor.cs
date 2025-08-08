@@ -53,15 +53,13 @@ public partial class MyBattlesPage : BattleLogPageBase
         if (OperatingSystem.IsBrowser())
         {
             _unitBattleTypes = BattleUiService.GetUnitBattleTypes();
-            _selectedBattleType = _unitBattleTypes.First().BattleType;
             
             _submissionId = await PersistenceService.GetItemAsync<Guid?>(PersistenceKeys.SUBMISSION_ID);
             if (_submissionId != null)
             {
                 _submissionIdString = _submissionId.ToString()!;
-                UpdateItemHeight(BattleSearchRequest.BattleType);
+                UpdateItemHeight(_selectedBattleType);
                 StateHasChanged();
-                await GetBattles();
             }
         }
     }
