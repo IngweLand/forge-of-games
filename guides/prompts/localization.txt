@@ -18,7 +18,7 @@ Instructions:
 5) If no match (exact or partial) is found, translate the entry independently.
 
 Output format:
-Provide the translation for each locale inside a code block, labeled with the locale code as the language identifier (e.g., ````cs-CZ```). Do not include comments (neither in reply nor inside code blocks) or explanations—only the translation content.
+Provide the translation for each locale inside a code block, labeled with the locale code as the language identifier (e.g., ````cs-CZ```). Do not include comments (neither in reply nor inside code blocks) or explanations—only the translation content. The output must be valid resx tags, which I can paste into current resx files.
 
 ------------resx content start-----------------
 

@@ -40,6 +40,11 @@
     gap: 6px;
 }
 
+.submission-id-description-container {
+    display: inline-flex;
+    align-items: center;
+}
+
 /*mudblazor overrides*/
 ::deep .mud-select .mud-select-input {
     font-size: 12px !important;
