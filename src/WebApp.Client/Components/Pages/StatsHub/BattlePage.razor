@@ -1,18 +1,15 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_TEMPLATE)]
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
-@attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_TEMPLATE)]
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattlePageBase
 <PageTitle>@Loc[FogResource.StatsHub_Battle_PageTitle, _battleTitle]</PageTitle>
-@if(_battle != null)
+@if (_battle != null)
 {
     <div class="page-container">
         <span class="battle-title">@_battleTitle</span>
-        <div style="max-width: 800px; width: 100%">
-            <BattleTeamComponent Data="@_battle" OnHeroClicked="OpenBattleSquadProfile"
-                                 OnBattleStatsClicked="OpenBattleStats"/>
-        </div>
-       
+        <BattleTeamComponent Data="@_battle" OnHeroClicked="OpenBattleSquadProfile" ShowNavigateToBattleButton="false"
+                             OnBattleStatsClicked="OpenBattleStats"/>
+        <BattleTeamFormationComponent Battle="@_battle"/>
     </div>
-   
 }

@@ -294,6 +294,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle team formation.
+        /// </summary>
+        public static string BattleTeamFormation_Title {
+            get {
+                return ResourceManager.GetString("BattleTeamFormation.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campaign.
         /// </summary>
         public static string BattleType_Campaign {

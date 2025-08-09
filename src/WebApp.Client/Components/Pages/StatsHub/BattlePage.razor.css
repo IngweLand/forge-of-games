@@ -1,8 +1,11 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 8px;
+    max-width: 800px;
+    width: 100%;
+    align-self: center;
+    align-items: stretch;
 }
 
 .battle-title {

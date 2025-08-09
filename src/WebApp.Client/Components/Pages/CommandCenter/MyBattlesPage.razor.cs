@@ -20,7 +20,7 @@ public partial class MyBattlesPage : BattleLogPageBase
     private CancellationTokenSource? _debounceCts;
     private bool _isAdvancedFilter;
 
-    private int _itemHeight = 240;
+    private int _itemHeight = 250;
     private ElementReference _itemsContainer;
     private BattleType _selectedBattleType = BattleType.Campaign;
     private Guid? _submissionId;
@@ -177,9 +177,9 @@ public partial class MyBattlesPage : BattleLogPageBase
     {
         _itemHeight = battleType switch
         {
-            BattleType.Pvp => 465,
-            BattleType.HistoricBattle => 205,
-            _ => 240,
+            BattleType.Pvp => 475,
+            BattleType.HistoricBattle => 215,
+            _ => 250,
         };
     }
 

@@ -1,6 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @using MudBlazor.Utilities
@@ -9,11 +10,13 @@
 
 <div class="fog-container component-root user-select-none">
     <div class="@StatusContainerClassname">
-        @if (Data.StatsId.HasValue)
-        {
-            <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"
-                 @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
-        }
+        <div class="top-items top-left-items">
+            @if (Data.StatsId.HasValue)
+            {
+                <img class="stats-button" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_battlestats")"
+                     @onclick="@(() => OnBattleStatsClicked.InvokeAsync(Data))"/>
+            }
+        </div>
         <span>
             @switch (Data.ResultStatus)
             {
@@ -25,8 +28,15 @@
                     break;
             }
         </span>
-        <MudIconButton Icon="@Icons.Material.Filled.IosShare" Class="share-button" Color="Color.Inherit"
-                       OnClick="@ShareLink"/>
+        <div class="top-items top-right-items">
+            @if (ShowNavigateToBattleButton)
+            {
+                <MudIconButton Icon="@Icons.Material.Outlined.Info" Color="Color.Inherit"
+                               Href="@(NavigationManager.ToAbsoluteUri(FogUrlBuilder.PageRoutes.Battle(Data.Id)).ToString())"/>
+            }
+            <MudIconButton Icon="@Icons.Material.Outlined.IosShare" Color="Color.Inherit" OnClick="@ShareLink"/>
+        </div>
+
     </div>
     <div class="@TeamsClassname">
         <div class="squads-row">
@@ -52,7 +62,8 @@
 
 @code {
 
-    [Parameter, EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public BattleSummaryViewModel Data { get; set; }
 
     [Parameter]
@@ -73,6 +84,9 @@
     [Inject]
     private IDialogService DialogService { get; set; }
 
+    [Parameter]
+    public bool ShowNavigateToBattleButton { get; set; } = true;
+
     private async Task ShareLink()
     {
         var options = GetDefaultDialogOptions();
@@ -86,6 +100,9 @@
         await DialogService.ShowAsync<ShareBattleLinkDialog>(Loc[FogResource.Common_Share],
             parameters, options);
     }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
 
     private static DialogOptions GetDefaultDialogOptions()
     {

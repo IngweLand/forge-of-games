@@ -190,6 +190,6 @@ public class BattleViewModelFactory(
             isDead = hp <= 0;
         }
 
-        return new BattleSquadViewModel(profileVm, finalHitPointsFormatted, isDead);
+        return new BattleSquadViewModel(profileVm, finalHitPointsFormatted, isDead, squad.BattlefieldSlot);
     }
 }

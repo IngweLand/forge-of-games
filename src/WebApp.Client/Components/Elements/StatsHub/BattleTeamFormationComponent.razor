@@ -1,0 +1,215 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+<div class="fog-container component-root">
+    <span class="component-title">@Loc[FogResource.BattleTeamFormation_Title]</span>
+    <div class="battlefield">
+        @if (Battle.BattleType == BattleType.Pvp)
+        {
+            <div class="pvp-battlefield">
+                <div class="team pvp-team">
+                    <div class="battlefield-column">
+                        <div class="unit" style="visibility: @(_playerSlot2Src == null ? "hidden" : "visible")">
+                            <img src="@_playerSlot2Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_playerSlot3Src == null ? "hidden" : "visible")">
+                            <img src="@_playerSlot3Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_playerSlot4Src == null ? "hidden" : "visible")">
+                            <img src="@_playerSlot4Src" class="unit"/>
+                        </div>
+                    </div>
+                    <div class="battlefield-column">
+                        <div class="unit" style="visibility: @(_playerSlot0Src == null ? "hidden" : "visible")">
+                            <img src="@_playerSlot0Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_playerSlot1Src == null ? "hidden" : "visible")">
+                            <img src="@_playerSlot1Src" class="unit"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team pvp-team">
+                    <div class="battlefield-column">
+                        <div class="unit" style="visibility: @(_enemySlot1Src == null ? "hidden" : "visible")">
+                            <img src="@_enemySlot1Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_enemySlot3Src == null ? "hidden" : "visible")">
+                            <img src="@_enemySlot3Src" class="unit"/>
+                        </div>
+                    </div>
+                    <div class="battlefield-column">
+                        <div class="unit" style="visibility: @(_enemySlot0Src == null ? "hidden" : "visible")">
+                            <img src="@_enemySlot0Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_enemySlot2Src == null ? "hidden" : "visible")">
+                            <img src="@_enemySlot2Src" class="unit"/>
+                        </div>
+                        <div class="unit" style="visibility: @(_enemySlot4Src == null ? "hidden" : "visible")">
+                            <img src="@_enemySlot4Src" class="unit"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else if (Battle.BattleType == BattleType.HistoricBattle)
+        {
+            <div class="historic-battle-battlefield">
+                @if (Battle.BattleDefinitionId.Contains(nameof(RegionId.SpartasLastStand)))
+                {
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot3Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot3Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot5Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot5Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot4Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot4Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot2Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot2Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot1Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot1Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot0Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot0Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot5Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot5Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot4Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot4Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot3Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot3Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot2Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot2Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot1Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot1Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot0Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot0Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="team">
+                <div class="battlefield-row">
+                    <div class="unit" style="visibility: @(_playerSlot0Src == null ? "hidden" : "visible")">
+                        <img src="@_playerSlot0Src" class="unit"/>
+                    </div>
+                    <div class="unit" style="visibility: @(_playerSlot1Src == null ? "hidden" : "visible")">
+                        <img src="@_playerSlot1Src" class="unit"/>
+                    </div>
+                </div>
+                <div class="battlefield-row">
+                    <div class="unit" style="visibility: @(_playerSlot2Src == null ? "hidden" : "visible")">
+                        <img src="@_playerSlot2Src" class="unit"/>
+                    </div>
+                    <div class="unit" style="visibility: @(_playerSlot3Src == null ? "hidden" : "visible")">
+                        <img src="@_playerSlot3Src" class="unit"/>
+                    </div>
+                    <div class="unit" style="visibility: @(_playerSlot4Src == null ? "hidden" : "visible")">
+                        <img src="@_playerSlot4Src" class="unit"/>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public BattleSummaryViewModel Battle { get; set; }
+
+    [Inject]
+    private IStringLocalizer<FogResource> Loc { get; set; }
+
+    private string? _playerSlot0Src;
+    private string? _playerSlot1Src;
+    private string? _playerSlot2Src;
+    private string? _playerSlot3Src;
+    private string? _playerSlot4Src;
+    private string? _playerSlot5Src;
+    private string? _enemySlot0Src;
+    private string? _enemySlot1Src;
+    private string? _enemySlot2Src;
+    private string? _enemySlot3Src;
+    private string? _enemySlot4Src;
+
+    protected override void OnParametersSet()
+    {
+        var unitsMap = Battle.PlayerSquads.ToDictionary(x => x.BattlefieldSlot, x => x.PortraitUrl);
+        unitsMap.TryGetValue(0, out _playerSlot0Src);
+        unitsMap.TryGetValue(1, out _playerSlot1Src);
+        unitsMap.TryGetValue(2, out _playerSlot2Src);
+        unitsMap.TryGetValue(3, out _playerSlot3Src);
+        unitsMap.TryGetValue(4, out _playerSlot4Src);
+        unitsMap.TryGetValue(5, out _playerSlot5Src);
+
+        if (Battle.BattleType == BattleType.Pvp)
+        {
+            var enemyUnitsMap = Battle.EnemySquads.ToDictionary(x => x.BattlefieldSlot, x => x.PortraitUrl);
+            if (!enemyUnitsMap.TryGetValue(0, out _enemySlot0Src))
+            {
+                enemyUnitsMap.TryGetValue(5, out _enemySlot0Src);
+            }
+
+            if (!enemyUnitsMap.TryGetValue(1, out _enemySlot1Src))
+            {
+                enemyUnitsMap.TryGetValue(6, out _enemySlot1Src);
+            }
+
+            if (!enemyUnitsMap.TryGetValue(2, out _enemySlot2Src))
+            {
+                enemyUnitsMap.TryGetValue(7, out _enemySlot2Src);
+            }
+
+            if (!enemyUnitsMap.TryGetValue(3, out _enemySlot3Src))
+            {
+                enemyUnitsMap.TryGetValue(8, out _enemySlot3Src);
+            }
+
+            if (!enemyUnitsMap.TryGetValue(4, out _enemySlot4Src))
+            {
+                enemyUnitsMap.TryGetValue(9, out _enemySlot4Src);
+            }
+        }
+    }
+
+}
