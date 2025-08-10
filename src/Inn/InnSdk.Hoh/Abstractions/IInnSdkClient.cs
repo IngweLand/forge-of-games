@@ -4,6 +4,7 @@ namespace Ingweland.Fog.InnSdk.Hoh.Abstractions;
 
 public interface IInnSdkClient
 {
+    IAllianceService AllianceService { get; }
     IBattleService BattleService { get; }
     ICityService CityService { get; }
     IPlayerService PlayerService { get; }

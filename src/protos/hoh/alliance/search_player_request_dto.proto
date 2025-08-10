@@ -1,0 +1,7 @@
+syntax = "proto3";
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message SearchPlayerRequestDto {
+  string search_string = 2;
+  string locale = 5;
+}

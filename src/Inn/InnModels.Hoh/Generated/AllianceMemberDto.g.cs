@@ -24,14 +24,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static AllianceMemberDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlhbGxpYW5jZV9tZW1iZXJfZHRvLnByb3RvGhBwbGF5ZXJfZHRvLnByb3Rv",
-            "IkcKEUFsbGlhbmNlTWVtYmVyRHRvEhoKBnBsYXllchgHIAEoCzIKLlBsYXll",
-            "ckR0bxIWCg5yYW5raW5nX3BvaW50cxgIIAEoBUIfqgIcSW5nd2VsYW5kLkZv",
-            "Zy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "ChlhbGxpYW5jZV9tZW1iZXJfZHRvLnByb3RvGh9nb29nbGUvcHJvdG9idWYv",
+            "dGltZXN0YW1wLnByb3RvGhBwbGF5ZXJfZHRvLnByb3RvIs4BChFBbGxpYW5j",
+            "ZU1lbWJlckR0bxIzCgxyb2xlX2RldGFpbHMYAiABKAsyHS5BbGxpYW5jZU1l",
+            "bWJlclJvbGVEZXRhaWxzRHRvEiEKGXNlY29uZHNfc2luY2VfbGFzdF9vbmxp",
+            "bmUYBiABKAUSGgoGcGxheWVyGAcgASgLMgouUGxheWVyRHRvEhYKDnJhbmtp",
+            "bmdfcG9pbnRzGAggASgFEi0KCWpvaW5lZF9hdBgKIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5UaW1lc3RhbXAiLAocQWxsaWFuY2VNZW1iZXJSb2xlRGV0YWls",
+            "c0R0bxIMCgRyb2xlGAEgASgJQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2Rl",
+            "bHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDto.Parser, new[]{ "Player", "RankingPoints" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDto.Parser, new[]{ "RoleDetails", "SecondsSinceLastOnline", "Player", "RankingPoints", "JoinedAt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto), global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto.Parser, new[]{ "Role" }, null, null, null, null)
           }));
     }
     #endregion
@@ -73,8 +79,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllianceMemberDto(AllianceMemberDto other) : this() {
+      roleDetails_ = other.roleDetails_ != null ? other.roleDetails_.Clone() : null;
+      secondsSinceLastOnline_ = other.secondsSinceLastOnline_;
       player_ = other.player_ != null ? other.player_.Clone() : null;
       rankingPoints_ = other.rankingPoints_;
+      joinedAt_ = other.joinedAt_ != null ? other.joinedAt_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,6 +91,30 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AllianceMemberDto Clone() {
       return new AllianceMemberDto(this);
+    }
+
+    /// <summary>Field number for the "role_details" field.</summary>
+    public const int RoleDetailsFieldNumber = 2;
+    private global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto roleDetails_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto RoleDetails {
+      get { return roleDetails_; }
+      set {
+        roleDetails_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seconds_since_last_online" field.</summary>
+    public const int SecondsSinceLastOnlineFieldNumber = 6;
+    private int secondsSinceLastOnline_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SecondsSinceLastOnline {
+      get { return secondsSinceLastOnline_; }
+      set {
+        secondsSinceLastOnline_ = value;
+      }
     }
 
     /// <summary>Field number for the "player" field.</summary>
@@ -108,6 +141,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "joined_at" field.</summary>
+    public const int JoinedAtFieldNumber = 10;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp joinedAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp JoinedAt {
+      get { return joinedAt_; }
+      set {
+        joinedAt_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -123,8 +168,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(RoleDetails, other.RoleDetails)) return false;
+      if (SecondsSinceLastOnline != other.SecondsSinceLastOnline) return false;
       if (!object.Equals(Player, other.Player)) return false;
       if (RankingPoints != other.RankingPoints) return false;
+      if (!object.Equals(JoinedAt, other.JoinedAt)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,8 +180,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (roleDetails_ != null) hash ^= RoleDetails.GetHashCode();
+      if (SecondsSinceLastOnline != 0) hash ^= SecondsSinceLastOnline.GetHashCode();
       if (player_ != null) hash ^= Player.GetHashCode();
       if (RankingPoints != 0) hash ^= RankingPoints.GetHashCode();
+      if (joinedAt_ != null) hash ^= JoinedAt.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,6 +203,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (roleDetails_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(RoleDetails);
+      }
+      if (SecondsSinceLastOnline != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(SecondsSinceLastOnline);
+      }
       if (player_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(Player);
@@ -159,6 +218,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (RankingPoints != 0) {
         output.WriteRawTag(64);
         output.WriteInt32(RankingPoints);
+      }
+      if (joinedAt_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(JoinedAt);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -170,6 +233,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (roleDetails_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(RoleDetails);
+      }
+      if (SecondsSinceLastOnline != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(SecondsSinceLastOnline);
+      }
       if (player_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(Player);
@@ -177,6 +248,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (RankingPoints != 0) {
         output.WriteRawTag(64);
         output.WriteInt32(RankingPoints);
+      }
+      if (joinedAt_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(JoinedAt);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -188,11 +263,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (roleDetails_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RoleDetails);
+      }
+      if (SecondsSinceLastOnline != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SecondsSinceLastOnline);
+      }
       if (player_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player);
       }
       if (RankingPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RankingPoints);
+      }
+      if (joinedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(JoinedAt);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -206,6 +290,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
+      if (other.roleDetails_ != null) {
+        if (roleDetails_ == null) {
+          RoleDetails = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto();
+        }
+        RoleDetails.MergeFrom(other.RoleDetails);
+      }
+      if (other.SecondsSinceLastOnline != 0) {
+        SecondsSinceLastOnline = other.SecondsSinceLastOnline;
+      }
       if (other.player_ != null) {
         if (player_ == null) {
           Player = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
@@ -214,6 +307,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.RankingPoints != 0) {
         RankingPoints = other.RankingPoints;
+      }
+      if (other.joinedAt_ != null) {
+        if (joinedAt_ == null) {
+          JoinedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        JoinedAt.MergeFrom(other.JoinedAt);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -230,6 +329,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 18: {
+            if (roleDetails_ == null) {
+              RoleDetails = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto();
+            }
+            input.ReadMessage(RoleDetails);
+            break;
+          }
+          case 48: {
+            SecondsSinceLastOnline = input.ReadInt32();
+            break;
+          }
           case 58: {
             if (player_ == null) {
               Player = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
@@ -239,6 +349,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 64: {
             RankingPoints = input.ReadInt32();
+            break;
+          }
+          case 82: {
+            if (joinedAt_ == null) {
+              JoinedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(JoinedAt);
             break;
           }
         }
@@ -256,6 +373,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 18: {
+            if (roleDetails_ == null) {
+              RoleDetails = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberRoleDetailsDto();
+            }
+            input.ReadMessage(RoleDetails);
+            break;
+          }
+          case 48: {
+            SecondsSinceLastOnline = input.ReadInt32();
+            break;
+          }
           case 58: {
             if (player_ == null) {
               Player = new global::Ingweland.Fog.Inn.Models.Hoh.PlayerDto();
@@ -265,6 +393,203 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 64: {
             RankingPoints = input.ReadInt32();
+            break;
+          }
+          case 82: {
+            if (joinedAt_ == null) {
+              JoinedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(JoinedAt);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class AllianceMemberRoleDetailsDto : pb::IMessage<AllianceMemberRoleDetailsDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AllianceMemberRoleDetailsDto> _parser = new pb::MessageParser<AllianceMemberRoleDetailsDto>(() => new AllianceMemberRoleDetailsDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AllianceMemberRoleDetailsDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.AllianceMemberDtoReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AllianceMemberRoleDetailsDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AllianceMemberRoleDetailsDto(AllianceMemberRoleDetailsDto other) : this() {
+      role_ = other.role_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AllianceMemberRoleDetailsDto Clone() {
+      return new AllianceMemberRoleDetailsDto(this);
+    }
+
+    /// <summary>Field number for the "role" field.</summary>
+    public const int RoleFieldNumber = 1;
+    private string role_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Role {
+      get { return role_; }
+      set {
+        role_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AllianceMemberRoleDetailsDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AllianceMemberRoleDetailsDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Role != other.Role) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Role.Length != 0) hash ^= Role.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Role.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Role);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Role.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Role);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Role.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Role);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AllianceMemberRoleDetailsDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Role.Length != 0) {
+        Role = other.Role;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Role = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Role = input.ReadString();
             break;
           }
         }

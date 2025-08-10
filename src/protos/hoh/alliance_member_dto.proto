@@ -1,9 +1,0 @@
-syntax = "proto3";
-import "player_dto.proto";
-
-option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
-
-message AllianceMemberDto {
-  PlayerDto player = 7;
-  int32 ranking_points = 8;
-}

@@ -5,6 +5,7 @@ using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Mapping.Converters;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
@@ -33,7 +34,20 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Age)));
         CreateMap<AllianceDto, HohAlliance>();
         CreateMap<AllianceMembersResponse, AllianceWithMembers>();
-        CreateMap<AllianceMemberDto, AllianceMember>();
+        CreateMap<AllianceMemberDto, AllianceMember>()
+            .ForMember(dest => dest.Role,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<AllianceMemberRole>(src.RoleDetails.Role)))
+            .ForMember(dest => dest.JoinedAt, opt => opt.MapFrom(src => src.JoinedAt.ToDateTime()))
+            .ForMember(dest => dest.LastOnline,
+                opt => opt.MapFrom(src => DateTime.UtcNow.AddSeconds(-src.SecondsSinceLastOnline)));
+        CreateMap<AllianceSearchResultDto, AllianceSearchResult>()
+            .ForMember(dest => dest.Alliance, opt => opt.MapFrom(src => src.Details));
+        CreateMap<AllianceSearchResultDetailsDto, HohAllianceExtended>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Facade.Name))
+            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Facade.AvatarIconId))
+            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.Facade.AvatarBackgroundId))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Facade.Description));
         CreateMap<HeroTreasureHuntAlliancePointsPush, HeroTreasureHuntAlliancePoints>();
         CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>();
         CreateMap<AlliancePush, HohAlliance>()

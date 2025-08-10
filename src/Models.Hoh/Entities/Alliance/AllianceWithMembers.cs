@@ -1,4 +1,4 @@
-namespace Ingweland.Fog.Models.Hoh.Entities;
+namespace Ingweland.Fog.Models.Hoh.Entities.Alliance;
 
 public class AllianceWithMembers
 {

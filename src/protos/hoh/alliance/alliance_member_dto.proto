@@ -1,0 +1,17 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+import "player_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceMemberDto {
+  AllianceMemberRoleDetailsDto role_details = 2;
+  int32 seconds_since_last_online = 6;
+  PlayerDto player = 7;
+  int32 ranking_points = 8;
+  google.protobuf.Timestamp joined_at = 10;
+}
+
+message AllianceMemberRoleDetailsDto {
+  string role = 1;
+}

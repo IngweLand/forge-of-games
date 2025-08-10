@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Functions.Data;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;

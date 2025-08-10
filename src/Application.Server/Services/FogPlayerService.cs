@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;

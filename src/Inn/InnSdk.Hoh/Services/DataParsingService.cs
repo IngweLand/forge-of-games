@@ -6,10 +6,10 @@ using Ingweland.Fog.Inn.Models.Hoh.Extensions;
 using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
-using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Services;
 
@@ -30,6 +30,19 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         }
 
         return mapper.Map<PlayerRanks>(ranksDto);
+    }
+
+    public Result<IReadOnlyCollection<AllianceSearchResult>> ParseSearchAllianceResponse(byte[] data)
+    {
+        return ParseCommunicationDto(data)
+            .Bind(container => container.PackedMessages.FindAndUnpackToResult<SearchAllianceResponse>())
+            .Bind(dto =>
+            {
+                return Result.Try(() => mapper.Map<IReadOnlyCollection<AllianceSearchResult>>(dto.Alliances),
+                    e => new HohMappingError(
+                        $"Failed to map {nameof(SearchAllianceResponse.Alliances)} to {
+                            nameof(IReadOnlyCollection<AllianceSearchResult>)}", e));
+            });
     }
 
     public Result<PlayerProfile> ParsePlayerProfile(byte[] data)
@@ -221,6 +234,19 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         }
 
         return mapper.Map<OtherCity>(dto);
+    }
+
+    public Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data)
+    {
+        return ParseCommunicationDto(data)
+            .Bind(container => container.PackedMessages.FindAndUnpackToResult<AllianceMembersResponse>())
+            .Bind(dto =>
+            {
+                return Result.Try(() => mapper.Map<AllianceWithMembers>(dto),
+                    e => new HohMappingError(
+                        $"Failed to map {nameof(AllianceMembersResponse)} members to {nameof(AllianceWithMembers)}",
+                        e));
+            });
     }
 
     private static Result<CommunicationDto> ParseCommunicationDto(byte[] data)

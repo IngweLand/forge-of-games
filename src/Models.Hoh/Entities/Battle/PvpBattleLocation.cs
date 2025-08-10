@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using ProtoBuf;
 
 namespace Ingweland.Fog.Models.Hoh.Entities.Battle;

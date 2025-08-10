@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+enum AllianceAdmissionType {
+  AllianceAdmissionType_Open = 0;
+  AllianceAdmissionType_Closed = 1;
+  AllianceAdmissionType_Application = 2;
+}

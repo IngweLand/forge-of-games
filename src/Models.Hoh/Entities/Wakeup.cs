@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 
 namespace Ingweland.Fog.Models.Hoh.Entities;

@@ -1,3 +1,5 @@
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+
 namespace Ingweland.Fog.Models.Hoh.Entities.Ranking;
 
 public class HeroTreasureHuntAlliancePoints

@@ -8,7 +8,8 @@ public class InnSdkClient(
     Lazy<IRankingsService> rankingsService,
     Lazy<IBattleService> battleService,
     Lazy<ICityService> cityService,
-    Lazy<IPlayerService> playerService)
+    Lazy<IPlayerService> playerService,
+    Lazy<IAllianceService> allianceService)
     : IInnSdkClient
 {
     public ICityService CityService => cityService.Value;
@@ -16,4 +17,5 @@ public class InnSdkClient(
     public IRankingsService RankingsService => rankingsService.Value;
     public IStaticDataService StaticDataService => staticDataService.Value;
     public IPlayerService PlayerService => playerService.Value;
+    public IAllianceService AllianceService => allianceService.Value;
 }
