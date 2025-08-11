@@ -1,7 +1,9 @@
+using FluentResults;
+using FluentResults.Extensions;
 using Ingweland.Fog.Application.Server.Interfaces;
-using Ingweland.Fog.Functions.Data;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Player = Ingweland.Fog.Models.Fog.Entities.Player;
@@ -10,174 +12,114 @@ namespace Ingweland.Fog.Functions.Services;
 
 public interface IAllianceMembersService
 {
-    Task UpdateAsync(IEnumerable<AllianceAggregate> allianceAggregates,
-        IEnumerable<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int> Members)> confirmedMembers);
+    Task UpdateAsync(
+        IEnumerable<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember> Members)>
+            confirmedMembers);
 }
 
-public class AllianceMembersService(IFogDbContext context, ILogger<AllianceMembersService> logger)
+public class AllianceMembersService(
+    IFogDbContext context,
+    IFogAllianceService fogAllianceService,
+    IFogPlayerService playerService,
+    ILogger<AllianceMembersService> logger,
+    IResultLogger resultLogger)
     : IAllianceMembersService
 {
-    public async Task UpdateAsync(IEnumerable<AllianceAggregate> allianceAggregates,
-        IEnumerable<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int> Members)> confirmedMembers)
+    public async Task UpdateAsync(
+        IEnumerable<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember> Members)>
+            confirmedMembers)
     {
-        var members = new List<(DateTime CollectedAt, AllianceKey AllianceKey, int MemberInGameId)>();
-        var confirmedUpdateDates = new Dictionary<AllianceKey, DateTime>();
-        var confirmedGroups = confirmedMembers
+        Result.Setup(cfg => { cfg.Logger = resultLogger; });
+        var confirmedMembersList = confirmedMembers.ToList();
+        var latestUnique = confirmedMembersList
             .GroupBy(t => t.AllianceKey)
-            .ToDictionary(
-                g => g.Key,
-                g => g
-                    .OrderByDescending(t => t.CollectedAt)
-                    .ToList());
-        foreach (var chunk in confirmedGroups.Chunk(500))
+            .Select(g => g.OrderByDescending(t => t.CollectedAt).First())
+            .ToList();
+        logger.LogInformation("Found {count} latest unique alliance groups of members.", latestUnique.Count);
+        foreach (var alliance in latestUnique)
         {
-            logger.LogInformation("Processing confirmed groups chunk with {GroupCount} alliance groups.", chunk.Length);
-
-            var inGamePlayerIds = chunk.SelectMany(kvp => kvp.Value.SelectMany(t => t.Members)).ToHashSet();
-            var inGameAllianceIds = chunk.Select(kvp => kvp.Key.InGameAllianceId).ToHashSet();
-
-            logger.LogInformation("Fetching existing players for {PlayerCount} player IDs.", inGamePlayerIds.Count);
-            var existingPlayers = await GetExistingPlayers(inGamePlayerIds);
-            logger.LogInformation("Fetching existing alliances for {AllianceCount} alliance IDs.", inGameAllianceIds.Count);
-            var existingAlliances = await GetExistingAlliances(inGameAllianceIds);
-
-            logger.LogInformation("Fetched {PlayersFetched} players and {AlliancesFetched} alliances for current chunk.", 
-                existingPlayers.Count, existingAlliances.Count);
-
-            foreach (var allianceGroup in chunk)
-            {
-                if (!existingAlliances.TryGetValue(allianceGroup.Key, out var existingAlliance))
+            logger.LogInformation("Processing alliance {@allianceKey}", alliance.AllianceKey);
+            var updateResult = await playerService.UpsertPlayersAsync(alliance.AllianceKey.WorldId, alliance.Members)
+                .Bind(players =>
                 {
-                    logger.LogWarning("Alliance with key {AllianceKey} not found in existing alliances.", allianceGroup.Key);
-                    continue;
-                }
+                    var membersWithPlayers = alliance.Members.Select(x => (x, players.First(y => y.Id == x.Player.Id)))
+                        .ToList();
+                    return fogAllianceService.UpdateMembersAsync(alliance.AllianceKey, membersWithPlayers,
+                        alliance.CollectedAt);
+                });
 
-                var isFirst = true;
-                foreach (var t in allianceGroup.Value)
-                {
-                    if (isFirst)
-                    {
-                        existingAlliance.Members.Clear();
-                        foreach (var memberId in t.Members)
-                        {
-                            var memberKey = new PlayerKey(t.AllianceKey.WorldId, memberId);
-                            if (!existingPlayers.TryGetValue(memberKey, out var existingPlayer))
-                            {
-                                logger.LogWarning("Player with key {PlayerKey} not found when processing alliance {AllianceKey}.", memberKey, t.AllianceKey);
-                                continue;
-                            }
-
-                            existingAlliance.Members.Add(existingPlayer);
-                        }
-
-                        confirmedUpdateDates[t.AllianceKey] = t.CollectedAt;
-                        isFirst = false;
-                    }
-
-                    members.AddRange(t.Members.Select(m => (t.CollectedAt, t.AllianceKey, m)));
-                }
-            }
-
-            logger.LogInformation("Saving changes for confirmed groups chunk.");
-            await context.SaveChangesAsync();
-            logger.LogInformation("Saved changes for confirmed groups chunk successfully.");
+            updateResult.LogIfFailed<AllianceMembersService>();
         }
 
-        var allianceAggregatesList = allianceAggregates.ToList();
-        logger.LogInformation("Converted alliance aggregates to list with {Count} items.", allianceAggregatesList.Count);
-        var leaders = allianceAggregatesList.Where(p => p.CanBeConvertedToLeader())
-            .Select(a => (a.CollectedAt, AllianceKey: a.Key, MemberInGameId: a.LeaderInGameId!.Value));
-        var filtered = allianceAggregatesList.Where(p => p.CanBeConvertedToMember()).ToList();
-        var grouped = filtered
-            .Select(a => (a.CollectedAt, AllianceKey: a.Key, MemberInGameId: a.MemberInGameId!.Value))
-            .Concat(members)
-            .Concat(leaders)
-            .GroupBy(t => new PlayerKey(t.AllianceKey.WorldId, t.MemberInGameId))
-            .ToDictionary(
-                g => g.Key,
-                g => g
-                    .DistinctBy(t => t.AllianceKey)
-                    .OrderBy(a => a.CollectedAt)
-                    .ToList());
-        logger.LogInformation("Aggregated player groups count: {GroupedCount}.", grouped.Count);
-
-        foreach (var chunk in grouped.Chunk(1000))
-        {
-            logger.LogInformation("Processing player groups chunk with {ChunkCount} groups.", chunk.Length);
-
-            var inGamePlayerIds = chunk.Select(kvp => kvp.Key.InGamePlayerId).ToHashSet();
-            var inGameAllianceIds = chunk.SelectMany(kvp => kvp.Value.Select(t => t.AllianceKey.InGameAllianceId))
-                .ToHashSet();
-
-            logger.LogInformation("Fetching existing players for {PlayerCount} player IDs.", inGamePlayerIds.Count);
-            var existingPlayers = await GetExistingPlayers(inGamePlayerIds);
-            logger.LogInformation("Fetching existing alliances for {AllianceCount} alliance IDs.", inGameAllianceIds.Count);
-            var existingAlliances = await GetExistingAlliances(inGameAllianceIds);
-            logger.LogInformation("Fetched {PlayersFetched} players and {AlliancesFetched} alliances for player groups chunk.", 
-                existingPlayers.Count, existingAlliances.Count);
-
-            foreach (var playerGroup in chunk)
-            {
-                if (!existingPlayers.TryGetValue(playerGroup.Key, out var existingPlayer))
-                {
-                    logger.LogWarning("Player with key {PlayerKey} not found in existing players.", playerGroup.Key);
-                    continue;
-                }
-
-                foreach (var t in playerGroup.Value)
-                {
-                    if (!existingAlliances.TryGetValue(t.AllianceKey, out var existingAlliance))
-                    {
-                        logger.LogWarning("Alliance with key {AllianceKey} not found in existing alliances while processing player {PlayerKey}.", t.AllianceKey, playerGroup.Key);
-                        continue;
-                    }
-
-                    if (existingPlayer.AllianceHistory.All(a => a.Id != existingAlliance.Id))
-                    {
-                        existingPlayer.AllianceHistory.Add(existingAlliance);
-                        existingPlayer.Status = PlayerStatus.Active;
-                    }
-
-                    if (!confirmedUpdateDates.TryGetValue(t.AllianceKey, out var confirmedUpdateDate) ||
-                        t.CollectedAt > confirmedUpdateDate)
-                    {
-                        existingPlayer.CurrentAlliance = existingAlliance;
-                        existingPlayer.Status = PlayerStatus.Active;
-                    }
-                }
-            }
-
-            logger.LogInformation("Saving changes for player groups chunk.");
-            await context.SaveChangesAsync();
-            logger.LogInformation("Saved changes for player groups chunk successfully.");
-        }
+        await UpdateMemberHistory(confirmedMembersList);
 
         logger.LogInformation("UpdateAsync completed successfully.");
     }
 
+    private async Task UpdateMemberHistory(
+        List<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember> Members)>
+            confirmedMembers)
+    {
+        logger.LogInformation("Starting alliance member history update.");
+        var unique = confirmedMembers.GroupBy(t => t.AllianceKey).ToList();
+        var inGameAllianceIds = unique.Select(x => x.Key.InGameAllianceId).ToHashSet();
+        logger.LogDebug("Fetching existing alliances for {AllianceCount} alliance IDs.",
+            inGameAllianceIds.Count);
+        var existingAlliances = await GetExistingAlliances(inGameAllianceIds);
+        logger.LogDebug("Fetched {AlliancesFetched} alliances.", existingAlliances.Count);
+        foreach (var group in unique)
+        {
+            if (!existingAlliances.TryGetValue(group.Key, out var existingAlliance))
+            {
+                logger.LogWarning("Alliance with key {@AllianceKey} not found in existing alliances.", group.Key);
+                continue;
+            }
+
+            var uniqueMemberIds = group.SelectMany(x => x.Members).Select(x => x.Player.Id).ToHashSet();
+            logger.LogDebug("Found {PlayerCount} unique members.", uniqueMemberIds.Count);
+            var existingPlayers = await GetExistingPlayers(uniqueMemberIds);
+            logger.LogDebug("Fetched {PlayersFetched} players.", existingPlayers.Count);
+            var allianceMemberIds = existingAlliance.MemberHistory.Select(x => x.Id).ToHashSet();
+            var newMembers = uniqueMemberIds.Except(allianceMemberIds).ToList();
+            foreach (var memberId in newMembers)
+            {
+                var memberKey = new PlayerKey(existingAlliance.WorldId, memberId);
+                if (!existingPlayers.TryGetValue(memberKey, out var existingPlayer))
+                {
+                    logger.LogWarning("Player with key {@PlayerKey} not found when processing alliance {@AllianceKey}.",
+                        memberKey, existingAlliance.Key);
+                    continue;
+                }
+
+                existingAlliance.MemberHistory.Add(existingPlayer);
+                logger.LogDebug("Added new member to the history: {@playerKey}.", existingPlayer.Key);
+            }
+
+            await context.SaveChangesAsync();
+            logger.LogInformation("Updated member history for alliance {@AllianceKey}.", existingAlliance.Key);
+        }
+
+        logger.LogInformation("Completed alliance member history update.");
+    }
+
     private async Task<Dictionary<PlayerKey, Player>> GetExistingPlayers(HashSet<int> inGamePlayerIds)
     {
-        logger.LogInformation("Fetching existing players for {PlayerCount} player IDs.", inGamePlayerIds.Count);
         var players = await context.Players
-            .Include(p => p.CurrentAlliance)
-            .Include(p => p.AllianceHistory)
-            .AsSplitQuery()
             .Where(p => inGamePlayerIds.Contains(p.InGamePlayerId))
             .ToListAsync();
 
-        logger.LogInformation("Fetched {Count} players from database.", players.Count);
         return players.ToDictionary(p => p.Key);
     }
 
     private async Task<Dictionary<AllianceKey, Alliance>> GetExistingAlliances(HashSet<int> inGameAllianceIds)
     {
-        logger.LogInformation("Fetching existing alliances for {AllianceCount} alliance IDs.", inGameAllianceIds.Count);
         var alliances = await context.Alliances
             .Include(p => p.Members)
+            .Include(x => x.MemberHistory)
             .Where(a => inGameAllianceIds.Contains(a.InGameAllianceId))
+            .AsSplitQuery()
             .ToListAsync();
 
-        logger.LogInformation("Fetched {Count} alliances from database.", alliances.Count);
         return alliances.ToDictionary(a => a.Key);
     }
 }

@@ -30,7 +30,7 @@ public class TopPlayersCityFetcher(
         Logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
 
         var players = await Context.Players
-            .Where(x => x.WorldId == "un1" && x.Status == PlayerStatus.Active)
+            .Where(x => x.WorldId == "un1" && x.Status == InGameEntityStatus.Active)
             .OrderByDescending(x => x.RankingPoints)
             .Take(BATCH_SIZE)
             .ToListAsync();

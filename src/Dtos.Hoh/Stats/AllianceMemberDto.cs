@@ -1,15 +1,15 @@
+using Ingweland.Fog.Models.Hoh.Enums;
+
 namespace Ingweland.Fog.Dtos.Hoh.Stats;
 
-public class PlayerDto
+public class AllianceMemberDto
 {
     public required string Age { get; set; }
-    public int? AllianceId { get; init; }
-    public string? AllianceName { get; init; }
     public int AvatarId { get; set; }
-    public required int Id { get; init; }
+    public required int PlayerId { get; init; }
     public required string Name { get; set; }
-    public int Rank { get; set; }
     public int RankingPoints { get; set; }
     public required DateOnly UpdatedAt { get; set; }
-    public required string WorldId { get; init; }
+    public AllianceMemberRole Role { get; init; }
+    public DateTime? JoinedAt { get; init; }
 }

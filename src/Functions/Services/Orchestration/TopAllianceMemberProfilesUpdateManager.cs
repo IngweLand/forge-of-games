@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Services.Orchestration;
 
-public class TopAllianceMembersUpdateManager(
+public class TopAllianceMemberProfilesUpdateManager(
     IGameWorldsProvider gameWorldsProvider,
     IFogDbContext context,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
@@ -24,7 +24,7 @@ public class TopAllianceMembersUpdateManager(
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
-    databaseWarmUpService, logger), ITopAllianceMembersUpdateManager
+    databaseWarmUpService, logger), ITopAllianceMemberProfilesUpdateManager
 {
     private const int BATCH_SIZE = 100;
     private const int TOP_RANK_LIMIT = 20;
@@ -36,14 +36,14 @@ public class TopAllianceMembersUpdateManager(
         var today = DateTime.UtcNow.ToDateOnly();
 
         var alliances = await context.Alliances
-            .Include(x => x.Members)
+            .Include(x => x.Members).ThenInclude(x => x.Player)
             .Where(x => x.WorldId == gameWorldId)
             .OrderByDescending(x => x.RankingPoints)
             .Take(TOP_RANK_LIMIT)
             .ToListAsync();
         return alliances
-            .SelectMany(x => x.Members)
-            .Where(x => x.UpdatedAt < today)
+            .SelectMany(x => x.Members.Select(y => y.Player))
+            .Where(x => x.ProfileUpdatedAt < today)
             .Take(BATCH_SIZE)
             .ToList();
     }

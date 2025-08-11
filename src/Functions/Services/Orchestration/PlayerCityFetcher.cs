@@ -73,7 +73,7 @@ public class PlayerCityFetcher(
         while (runs < 10 && players.Count < BATCH_SIZE)
         {
             var p = await Context.Players
-                .Where(x => x.Status == PlayerStatus.Active && x.RankingPoints > 1000)
+                .Where(x => x.Status == InGameEntityStatus.Active && x.RankingPoints > 1000)
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BATCH_SIZE)
                 .ToListAsync();

@@ -1,9 +1,11 @@
+using FluentResults;
 using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Behaviors;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Logging;
 using Ingweland.Fog.Application.Server.PlayerCity;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Application.Server.Providers;
@@ -81,6 +83,10 @@ public static class DependencyInjection
         services.AddScoped<IFogPlayerService, FogPlayerService>();
         services.AddScoped<IRelicDtoFactory, RelicDtoFactory>();
         services.AddScoped<IRelicService, RelicService>();
+        services.AddScoped<IInGameAllianceService, InGameAllianceService>();
+        services.AddScoped<IFogAllianceService, FogAllianceService>();
+
+        services.AddTransient<IResultLogger, ResultLogger>();
 
         services.AddHttpClient<IWikipediaService, WikipediaService>()
             .AddStandardResilienceHandler(options =>

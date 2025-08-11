@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Ingweland.Fog.Models.Fog.Enums;
 
 namespace Ingweland.Fog.Models.Fog.Entities;
 
@@ -16,10 +17,9 @@ public class Alliance
         get { return _key ??= new AllianceKey(WorldId, InGameAllianceId); }
     }
 
-    public Player? Leader { get; set; }
-    public int? LeaderId { get; set; }
     public ICollection<Player> MemberHistory { get; set; } = new List<Player>();
-    public ICollection<Player> Members { get; set; } = new List<Player>();
+    public ICollection<AllianceMemberEntity> Members { get; set; } = new List<AllianceMemberEntity>();
+    public DateTime MembersUpdatedAt { get; set; }
     public required string Name { get; set; }
     public ICollection<AllianceNameHistoryEntry> NameHistory { get; set; } = new List<AllianceNameHistoryEntry>();
     public int Rank { get; set; }
@@ -27,6 +27,7 @@ public class Alliance
     public ICollection<AllianceRanking> Rankings { get; set; } = new List<AllianceRanking>();
 
     public DateTime? RegisteredAt { get; set; }
-    public required DateOnly UpdatedAt { get; set; }
+    public InGameEntityStatus Status { get; set; } = InGameEntityStatus.Active;
+    public DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; set; }
 }

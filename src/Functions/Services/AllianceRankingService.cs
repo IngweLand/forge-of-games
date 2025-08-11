@@ -82,24 +82,6 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                             existingAlliance.RegisteredAt = allianceAggregate.RegisteredAt!.Value;
                         }
 
-                        if (allianceAggregate.LeaderInGameId.HasValue && leaderIds.TryGetValue(
-                                new PlayerKey(allianceAggregate.WorldId, allianceAggregate.LeaderInGameId.Value),
-                                out var leader))
-                        {
-                            if (existingAlliance.LeaderId != leader.Id)
-                            {
-                                var oldLedAlliance = await context.Alliances
-                                    .FirstOrDefaultAsync(a => a.LeaderId == leader.Id);
-
-                                if (oldLedAlliance != null)
-                                {
-                                    oldLedAlliance.Leader = null;
-                                }
-
-                                existingAlliance.Leader = leader;
-                            }
-                        }
-
                         updatedAllianceCount++;
                     }
                 }

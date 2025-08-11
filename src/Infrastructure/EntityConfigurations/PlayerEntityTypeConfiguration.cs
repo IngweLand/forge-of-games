@@ -18,8 +18,7 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
         builder.Property(p => p.Age).IsRequired().HasMaxLength(255);
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
-        builder.Property(p => p.UpdatedAt).IsRequired();
-        builder.Property(p => p.Status).HasDefaultValue(PlayerStatus.Active).HasConversion<string>();
+        builder.Property(p => p.Status).HasDefaultValue(InGameEntityStatus.Active).HasConversion<string>();
 
         builder.HasIndex(p => p.Name);
         builder.HasIndex(p => p.WorldId);
@@ -27,6 +26,8 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasIndex(p => p.Age);
         builder.HasIndex(p => p.Status);
         builder.HasIndex(p => p.RankingPoints).IsDescending();
+        builder.HasIndex(p => p.UpdatedAt).IsDescending();
+        builder.HasIndex(p => p.ProfileUpdatedAt).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();
 
         builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => p.PlayerId);
@@ -39,5 +40,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
             .OnDelete(DeleteBehavior.Restrict);
         builder.HasMany(p => p.CitySnapshots).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.Squads).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
+        builder.HasOne(p => p.AllianceMembership).WithOne(x => x.Player);
     }
 }

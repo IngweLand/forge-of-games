@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.Shared.Formatters;
@@ -60,6 +61,11 @@ public class StatsHubUiProfile : Profile
                 opt.PreCondition(src => src.RegisteredAt != null);
                 opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
             })
-            .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader));
+            .ForMember(dest => dest.LeaderName, opt =>
+            {
+                opt.PreCondition(src =>
+                    src.CurrentMembers.FirstOrDefault(x => x.Role == AllianceMemberRole.AllianceLeader) != null);
+                opt.MapFrom(src => src.CurrentMembers.First(x => x.Role == AllianceMemberRole.AllianceLeader).Name);
+            });
     }
 }

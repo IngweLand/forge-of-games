@@ -1,3 +1,5 @@
+using FluentResults;
+using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -15,7 +17,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
 {
     private readonly SemaphoreSlim _upsertSemaphore = new(1, 1);
 
-    public async Task UpdateStatusAsync(IEnumerable<int> playerIds, PlayerStatus status,
+    public async Task UpdateStatusAsync(IEnumerable<int> playerIds, InGameEntityStatus status,
         CancellationToken cancellationToken)
     {
         var uniqueIds = playerIds.ToHashSet();
@@ -23,16 +25,16 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         foreach (var player in players)
         {
             player.Status = status;
-            if (status == PlayerStatus.Missing)
+            if (status == InGameEntityStatus.Missing)
             {
-                player.CurrentAlliance = null;
+                player.AllianceMembership = null;
             }
         }
 
         await context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task UpdateStatusAsync(int playerId, PlayerStatus status, CancellationToken cancellationToken)
+    public async Task UpdateStatusAsync(int playerId, InGameEntityStatus status, CancellationToken cancellationToken)
     {
         var player = await context.Players.FindAsync(playerId, cancellationToken);
         if (player == null)
@@ -42,15 +44,15 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         }
 
         player.Status = status;
-        if (status == PlayerStatus.Missing)
+        if (status == InGameEntityStatus.Missing)
         {
-            player.CurrentAlliance = null;
+            player.AllianceMembership = null;
         }
 
         await context.SaveChangesAsync(cancellationToken);
     }
 
-    public async Task UpsertPlayer(PlayerProfile profile, string worldId)
+    public async Task UpsertPlayerAsync(PlayerProfile profile, string worldId)
     {
         logger.LogInformation("Upserting player {PlayerId} from world {WorldId}", profile.Player.Id, worldId);
         await _upsertSemaphore.WaitAsync();
@@ -77,6 +79,49 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         }
     }
 
+    public async Task<Result<Player>> UpsertPlayerAsync(string worldId, HohPlayer player, int rankingPoints,
+        DateTime lastOnline)
+    {
+        await _upsertSemaphore.WaitAsync();
+        var now = DateTime.UtcNow;
+        try
+        {
+            var modifiedPlayer = await AddOrUpdatePlayerAsync(worldId, player, null, rankingPoints, now);
+            modifiedPlayer.LastSeenOnline = lastOnline;
+
+            await context.SaveChangesAsync();
+
+            return Result.Ok(modifiedPlayer);
+        }
+        catch (Exception ex)
+        {
+            return Result.Fail(new PlayerUpsertionError(worldId, player.Id, ex));
+        }
+        finally
+        {
+            _upsertSemaphore.Release();
+        }
+    }
+
+    public async Task<Result<IReadOnlyCollection<Player>>> UpsertPlayersAsync(string worldId,
+        IReadOnlyCollection<AllianceMember> allianceMembers)
+    {
+        var upsertedPlayers = new List<Player>();
+        foreach (var member in allianceMembers)
+        {
+            var playerResult =
+                await UpsertPlayerAsync(worldId, member.Player, member.RankingPoints, member.LastSeenOnline);
+            if (playerResult.IsFailed)
+            {
+                return playerResult.ToResult();
+            }
+
+            upsertedPlayers.Add(playerResult.Value);
+        }
+
+        return Result.Ok<IReadOnlyCollection<Player>>(upsertedPlayers);
+    }
+
     private void UpsertSquads(Player player, IReadOnlyCollection<ProfileSquad> squads, DateOnly collectedAt)
     {
         logger.LogDebug("Upserting {SquadCount} squads for player {PlayerId}", squads.Count, player.InGamePlayerId);
@@ -100,6 +145,98 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         logger.LogDebug("Upserting squds completed.");
     }
 
+    private async Task<Player> AddOrUpdatePlayerAsync(string worldId, HohPlayer player, int? rank, int rankingPoints,
+        DateTime now)
+    {
+        var today = now.ToDateOnly();
+
+        logger.LogDebug("Querying existing player {PlayerId} from world {WorldId}",
+            player.Id, worldId);
+        var existingPlayer = await context.Players
+            .Include(p =>
+                p.Rankings.Where(pr => pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt == today))
+            .Include(p => p.NameHistory)
+            .Include(p => p.AgeHistory)
+            .Include(p => p.AllianceHistory)
+            .Include(p => p.Squads)
+            .AsSplitQuery()
+            .FirstOrDefaultAsync(x => x.InGamePlayerId == player.Id && x.WorldId == worldId);
+
+        Player modifiedPlayer;
+        if (existingPlayer != null)
+        {
+            logger.LogDebug("Updating existing player {PlayerId}", existingPlayer.Id);
+            existingPlayer.Name = player.Name;
+            existingPlayer.Age = player.Age;
+            existingPlayer.Status = InGameEntityStatus.Active;
+            modifiedPlayer = existingPlayer;
+        }
+        else
+        {
+            logger.LogInformation("Creating new player {PlayerId} from world {WorldId}", player.Id, worldId);
+            var newPlayer = new Player
+            {
+                WorldId = worldId,
+                InGamePlayerId = player.Id,
+                Name = player.Name,
+                Age = player.Age,
+                Status = InGameEntityStatus.Active,
+            };
+
+            modifiedPlayer = newPlayer;
+            context.Players.Add(newPlayer);
+        }
+
+        modifiedPlayer.UpdatedAt = today;
+        modifiedPlayer.AvatarId = player.AvatarId;
+        if (rank.HasValue)
+        {
+            modifiedPlayer.Rank = rank;
+        }
+
+        modifiedPlayer.RankingPoints = rankingPoints;
+
+        if (modifiedPlayer.NameHistory.All(x => x.Name != player.Name))
+        {
+            logger.LogDebug("Adding name {PlayerName} to history for player {PlayerId}",
+                player.Name, player.Id);
+            modifiedPlayer.NameHistory.Add(new PlayerNameHistoryEntry {Name = player.Name});
+        }
+
+        if (modifiedPlayer.AgeHistory.OrderByDescending(x => x.ChangedAt).FirstOrDefault()?.Age != player.Age)
+        {
+            logger.LogDebug("Adding age {PlayerAge} to history for player {PlayerId}",
+                player.Age, player.Id);
+            modifiedPlayer.AgeHistory.Add(new PlayerAgeHistoryEntry {Age = player.Age, ChangedAt = now});
+        }
+
+        var existingRanking =
+            modifiedPlayer.Rankings.FirstOrDefault(x =>
+                x.Type == PlayerRankingType.PowerPoints && x.CollectedAt == today);
+        if (existingRanking != null)
+        {
+            logger.LogDebug("Updating existing ranking for player {PlayerId}: Rank {Rank}, Points {Points}",
+                player.Id, rank, rankingPoints);
+            existingRanking.Points = rankingPoints;
+            existingRanking.Rank = rank ?? 0;
+            existingRanking.CollectedAt = today;
+        }
+        else
+        {
+            logger.LogDebug("Adding new ranking for player {PlayerId}: Rank {Rank}, Points {Points}",
+                player.Id, rank, rankingPoints);
+            modifiedPlayer.Rankings.Add(new PlayerRanking
+            {
+                Points = rankingPoints,
+                Rank = rank ?? 0,
+                CollectedAt = today,
+                Type = PlayerRankingType.PowerPoints,
+            });
+        }
+
+        return modifiedPlayer;
+    }
+
     private async Task DoUpsertPlayer(PlayerProfile profile, string worldId)
     {
         var now = DateTime.UtcNow;
@@ -115,49 +252,17 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             alliance = await UpsertAlliance(profile.Alliance, worldId, now);
         }
 
-        logger.LogDebug("Querying existing player {PlayerId} from world {WorldId}",
-            profile.Player.Id, worldId);
-        var existingPlayer = await context.Players
-            .Include(p =>
-                p.Rankings.Where(pr => pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt == today))
-            .Include(p => p.NameHistory)
-            .Include(p => p.AgeHistory)
-            .Include(p => p.AllianceHistory)
-            .Include(p => p.Squads)
-            .AsSplitQuery()
-            .FirstOrDefaultAsync(x => x.InGamePlayerId == profile.Player.Id && x.WorldId == worldId);
-
-        Player modifiedPlayer;
-        if (existingPlayer != null)
-        {
-            logger.LogDebug("Updating existing player {PlayerId}", existingPlayer.Id);
-            existingPlayer.Name = profile.Player.Name;
-            existingPlayer.Age = profile.Player.Age;
-            existingPlayer.UpdatedAt = today;
-
-            modifiedPlayer = existingPlayer;
-        }
-        else
-        {
-            logger.LogInformation("Creating new player {PlayerId} from world {WorldId}", profile.Player.Id, worldId);
-            var newPlayer = new Player
-            {
-                WorldId = worldId,
-                InGamePlayerId = profile.Player.Id,
-                Name = profile.Player.Name,
-                Age = profile.Player.Age,
-                UpdatedAt = today,
-                Status = PlayerStatus.Active,
-            };
-
-            modifiedPlayer = newPlayer;
-            context.Players.Add(newPlayer);
-        }
+        var modifiedPlayer =
+            await AddOrUpdatePlayerAsync(worldId, profile.Player, profile.Rank, profile.RankingPoints, now);
+        modifiedPlayer.ProfileUpdatedAt = today;
 
         if (alliance != null)
         {
             logger.LogDebug("Setting alliance {AllianceId} for player {PlayerId}", alliance.Id, profile.Player.Id);
-            modifiedPlayer.CurrentAlliance = alliance;
+            modifiedPlayer.AllianceMembership = new AllianceMemberEntity
+            {
+                Alliance = alliance,
+            };
             if (modifiedPlayer.AllianceHistory.All(a => a.Id != alliance.Id))
             {
                 modifiedPlayer.AllianceHistory.Add(alliance);
@@ -168,54 +273,11 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         else
         {
             logger.LogDebug("Clearing alliance for player {PlayerId}", profile.Player.Id);
-            modifiedPlayer.CurrentAlliance = null;
-            modifiedPlayer.LedAlliance = null;
+            modifiedPlayer.AllianceMembership = null;
         }
 
-        modifiedPlayer.AvatarId = profile.Player.AvatarId;
         modifiedPlayer.TreasureHuntDifficulty = profile.TreasureHuntDifficulty;
         modifiedPlayer.PvpTier = profile.PvpTier;
-        modifiedPlayer.Rank = profile.Rank;
-        modifiedPlayer.RankingPoints = profile.RankingPoints;
-        modifiedPlayer.Status = PlayerStatus.Active;
-
-        if (modifiedPlayer.NameHistory.All(x => x.Name != profile.Player.Name))
-        {
-            logger.LogDebug("Adding name {PlayerName} to history for player {PlayerId}",
-                profile.Player.Name, profile.Player.Id);
-            modifiedPlayer.NameHistory.Add(new PlayerNameHistoryEntry {Name = profile.Player.Name});
-        }
-
-        if (modifiedPlayer.AgeHistory.OrderByDescending(x => x.ChangedAt).FirstOrDefault()?.Age != profile.Player.Age)
-        {
-            logger.LogDebug("Adding age {PlayerAge} to history for player {PlayerId}",
-                profile.Player.Age, profile.Player.Id);
-            modifiedPlayer.AgeHistory.Add(new PlayerAgeHistoryEntry {Age = profile.Player.Age, ChangedAt = now});
-        }
-
-        var existingRanking =
-            modifiedPlayer.Rankings.FirstOrDefault(x =>
-                x.Type == PlayerRankingType.PowerPoints && x.CollectedAt == today);
-        if (existingRanking != null)
-        {
-            logger.LogDebug("Updating existing ranking for player {PlayerId}: Rank {Rank}, Points {Points}",
-                profile.Player.Id, profile.Rank, profile.RankingPoints);
-            existingRanking.Points = profile.RankingPoints;
-            existingRanking.Rank = profile.Rank;
-            existingRanking.CollectedAt = today;
-        }
-        else
-        {
-            logger.LogDebug("Adding new ranking for player {PlayerId}: Rank {Rank}, Points {Points}",
-                profile.Player.Id, profile.Rank, profile.RankingPoints);
-            modifiedPlayer.Rankings.Add(new PlayerRanking
-            {
-                Points = profile.RankingPoints,
-                Rank = profile.Rank,
-                CollectedAt = today,
-                Type = PlayerRankingType.PowerPoints,
-            });
-        }
 
         UpsertSquads(modifiedPlayer, profile.Squads, today);
 
@@ -227,7 +289,6 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
     {
         logger.LogDebug("Upserting alliance {AllianceId} from world {WorldId}",
             hohAlliance.Id, worldId);
-        var today = now.ToDateOnly();
         var existingAlliance = await context.Alliances
             .Include(p => p.NameHistory)
             .FirstOrDefaultAsync(x => x.InGameAllianceId == hohAlliance.Id && x.WorldId == worldId);
@@ -238,7 +299,6 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             logger.LogDebug("Updating existing alliance {AllianceId} with name {AllianceName} from world {WorldId}",
                 hohAlliance.Id, hohAlliance.Name, worldId);
             existingAlliance.Name = hohAlliance.Name;
-            existingAlliance.UpdatedAt = today;
 
             alliance = existingAlliance;
         }
@@ -250,7 +310,6 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
                 WorldId = worldId,
                 InGameAllianceId = hohAlliance.Id,
                 Name = hohAlliance.Name,
-                UpdatedAt = today,
             };
 
             alliance = newAlliance;

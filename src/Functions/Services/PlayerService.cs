@@ -42,7 +42,7 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
                 UpdatedAt = DateOnly.FromDateTime(playerAggregate.CollectedAt),
                 TreasureHuntDifficulty = playerAggregate.TreasureHuntDifficulty,
                 PvpTier = playerAggregate.PvpTier,
-                Status = PlayerStatus.Active,
+                Status = InGameEntityStatus.Active,
             };
         }).ToList();
         context.Players.AddRange(newPlayersList);

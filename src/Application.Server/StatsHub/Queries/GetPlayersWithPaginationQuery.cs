@@ -25,7 +25,7 @@ public class GetPlayersWithPaginationQueryHandler(IFogDbContext context, IMapper
     {
         // TODO implement validator instead
         var pageSize = request.PageSize > 100 ? 100 :request.PageSize;
-        var result = context.Players.Where(p => p.Status == PlayerStatus.Active);
+        var result = context.Players.Where(p => p.Status == InGameEntityStatus.Active);
         if (request.WorldId != null)
         {
             result = result.Where(p => p.WorldId == request.WorldId);

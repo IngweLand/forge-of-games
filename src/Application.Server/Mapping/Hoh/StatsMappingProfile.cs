@@ -16,10 +16,15 @@ public class StatsMappingProfile : Profile
         CreateMap<Player, Player>()
             .ForMember(dest => dest.Rankings, opt => opt.Ignore());
         CreateMap<Player, PlayerDto>()
-            .ForMember(dest => dest.Alliance, opt =>
+            .ForMember(dest => dest.AllianceId, opt =>
             {
-                opt.PreCondition(x => x.CurrentAlliance != null);
-                opt.MapFrom(x => x.CurrentAlliance);
+                opt.PreCondition(x => x.AllianceMembership != null);
+                opt.MapFrom(x => x.AllianceMembership!.AllianceId);
+            })
+            .ForMember(dest => dest.AllianceName, opt =>
+            {
+                opt.PreCondition(x => x.AllianceMembership != null);
+                opt.MapFrom(x => x.AllianceMembership!.Alliance.Name);
             });
         CreateMap<PlayerRanking, PlayerKey>();
 

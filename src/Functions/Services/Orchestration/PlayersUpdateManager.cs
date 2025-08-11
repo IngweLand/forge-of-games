@@ -37,7 +37,7 @@ public class PlayersUpdateManager(
         var week = today.AddDays(-7);
 
         var players = await context.Players
-            .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId)
+            .Where(x => x.Status == InGameEntityStatus.Active && x.WorldId == gameWorldId)
             .Where(x => (x.Rank == null || x.RankingPoints == null) && x.UpdatedAt < today)
             .Take(BATCH_SIZE)
             .ToListAsync();
@@ -45,7 +45,7 @@ public class PlayersUpdateManager(
         if (players.Count < BATCH_SIZE)
         {
             players.AddRange(await context.Players
-                .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId && x.UpdatedAt < week)
+                .Where(x => x.Status == InGameEntityStatus.Active && x.WorldId == gameWorldId && x.UpdatedAt < week)
                 .OrderBy(x => x.UpdatedAt)
                 .Take(BATCH_SIZE)
                 .ToListAsync());

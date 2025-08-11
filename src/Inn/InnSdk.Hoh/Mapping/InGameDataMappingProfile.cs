@@ -39,7 +39,7 @@ public class InGameDataMappingProfile : Profile
                 opt => opt.MapFrom(src =>
                     HohStringParser.ParseEnumFromString<AllianceMemberRole>(src.RoleDetails.Role)))
             .ForMember(dest => dest.JoinedAt, opt => opt.MapFrom(src => src.JoinedAt.ToDateTime()))
-            .ForMember(dest => dest.LastOnline,
+            .ForMember(dest => dest.LastSeenOnline,
                 opt => opt.MapFrom(src => DateTime.UtcNow.AddSeconds(-src.SecondsSinceLastOnline)));
         CreateMap<AllianceSearchResultDto, AllianceSearchResult>()
             .ForMember(dest => dest.Alliance, opt => opt.MapFrom(src => src.Details));

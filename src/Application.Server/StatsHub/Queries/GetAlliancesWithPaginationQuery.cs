@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Extensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
@@ -37,10 +38,8 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
         }
 
         return result
-            .OrderBy(p => p.Rank == 0)
-            .ThenByDescending(p => p.UpdatedAt)
-            .ThenByDescending(p => p.RankingPoints)
-            .ThenBy(p => p.Rank)
+            .Where(x => x.Status == InGameEntityStatus.Active)
+            .OrderByDescending(p => p.RankingPoints)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)
             .ToPaginatedListAsync(request.StartIndex, pageSize, cancellationToken);
     }

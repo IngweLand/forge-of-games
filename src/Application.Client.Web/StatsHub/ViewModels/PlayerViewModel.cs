@@ -4,7 +4,8 @@ public class PlayerViewModel
 {
     public required string Age { get; set; }
     public required string AgeColor { get; init; }
-    public AllianceViewModel? Alliance { get; init; }
+    public int? AllianceId { get; init; }
+    public string? AllianceName { get; init; }
     public required string AvatarUrl { get; set; }
     public required int Id { get; init; }
     public required bool IsStale { get; set; }

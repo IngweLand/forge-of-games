@@ -1,6 +1,7 @@
 using AutoMapper;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 
@@ -8,16 +9,30 @@ namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
 public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankingsFactory
 {
-    public AllianceWithRankings Create(Alliance alliance, IReadOnlyCollection<PlayerDto> currentMembers)
+    public AllianceWithRankings Create(Alliance alliance)
     {
         return new AllianceWithRankings()
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
             RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.TotalPoints),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
-            CurrentMembers = currentMembers,
+            CurrentMembers = alliance.Members.Select(CreateMember).ToList(),
             RegisteredAt = alliance.RegisteredAt?.ToDateOnly(),
-            Leader = alliance.Leader != null ? mapper.Map<PlayerDto>(alliance.Leader) : null
+        };
+    }
+    
+    private AllianceMemberDto CreateMember(AllianceMemberEntity member)
+    {
+        return new AllianceMemberDto()
+        {
+            Name = member.Player.Name,
+            Age = member.Player.Age,
+            PlayerId = member.Player.Id,
+            UpdatedAt = member.Player.UpdatedAt,
+            JoinedAt = member.JoinedAt,
+            Role = member.Role,
+            AvatarId = member.Player.AvatarId,
+            RankingPoints = member.Player.RankingPoints ?? 0,
         };
     }
 

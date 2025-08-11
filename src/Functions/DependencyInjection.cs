@@ -35,15 +35,15 @@ public static class DependencyInjection
         services.AddScoped<IPvpBattleService, PvpBattleService>();
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<IBattleStatsService, BattleStatsService>();
-        services.AddScoped<IAllianceMembersUpdaterService, AllianceMembersUpdaterService>();
         services.AddScoped<IPvpBattlesBulkUpdater, PvpBattlesBulkUpdater>();
         services.AddScoped<IPlayersUpdateManager, PlayersUpdateManager>();
         services.AddScoped<ITopPlayersUpdateManager, TopPlayersUpdateManager>();
         services.AddScoped<IPlayerCityFetcher, PlayerCityFetcher>();
         services.AddScoped<ITopPlayersCityFetcher, TopPlayersCityFetcher>();
-        services.AddScoped<ITopAllianceMembersUpdateManager, TopAllianceMembersUpdateManager>();
+        services.AddScoped<ITopAllianceMemberProfilesUpdateManager, TopAllianceMemberProfilesUpdateManager>();
         services.AddScoped<ICultureUsageRatioUpdater, CultureUsageRatioUpdater>();
         services.AddScoped<IPlayerUpdater, PlayerUpdater>();
+        services.AddScoped<ITopAllianceMemberUpdateManager, TopAllianceMemberUpdateManager>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

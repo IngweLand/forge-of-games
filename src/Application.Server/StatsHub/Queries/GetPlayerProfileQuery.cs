@@ -47,19 +47,19 @@ public class GetPlayerProfileQueryHandler(
         }
 
         var today = DateTime.UtcNow.ToDateOnly();
-        if (existingPlayer.UpdatedAt < today)
+        if (existingPlayer.ProfileUpdatedAt < today)
         {
             logger.LogDebug("Player profile for ID {PlayerId} needs update (UpdatedAt: {UpdatedAt}, Today: {Today})",
-                request.PlayerId, existingPlayer.UpdatedAt, today);
+                request.PlayerId, existingPlayer.ProfileUpdatedAt, today);
             var newProfileResult = await inGamePlayerService.FetchProfile(existingPlayer.Key);
             if (newProfileResult.IsSuccess)
             {
                 logger.LogDebug("New profile fetched for player {PlayerId}, updating data", request.PlayerId);
-                await playerService.UpsertPlayer(newProfileResult.Value, existingPlayer.WorldId);
+                await playerService.UpsertPlayerAsync(newProfileResult.Value, existingPlayer.WorldId);
             }
             else if (newProfileResult.HasError<PlayerNotFoundError>())
             {
-                await playerService.UpdateStatusAsync(existingPlayer.Id, PlayerStatus.Missing, cancellationToken);
+                await playerService.UpdateStatusAsync(existingPlayer.Id, InGameEntityStatus.Missing, cancellationToken);
             }
             else
             {
@@ -80,7 +80,7 @@ public class GetPlayerProfileQueryHandler(
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
-            .Include(p => p.CurrentAlliance)
+            .Include(p => p.AllianceMembership).ThenInclude(x => x!.Alliance)
             .Include(p =>
                 p.PvpWins.OrderByDescending(b => b.PerformedAt)
                     .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
@@ -101,9 +101,9 @@ public class GetPlayerProfileQueryHandler(
         }
         
         appCache.Remove(cacheKeyFactory.CreateKey(request));
-        if (player.CurrentAlliance != null)
+        if (player.AllianceMembership != null)
         {
-            appCache.Remove(cacheKeyFactory.Alliance(player.CurrentAlliance.Id));
+            appCache.Remove(cacheKeyFactory.Alliance(player.AllianceMembership.AllianceId));
         }
 
         logger.LogDebug("Processing PVP battles for player {PlayerId}", request.PlayerId);

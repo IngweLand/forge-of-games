@@ -20,7 +20,7 @@ public class AllianceService(
     public async Task<Result<IReadOnlyCollection<AllianceSearchResult>>> SearchAlliancesAsync(GameWorldConfig world,
         string searchString)
     {
-        logger.LogInformation("Searching alliance {@Data}", new {world.Id, searchString});
+        logger.LogInformation("Searching alliance {@Data}", new {WorldId = world.Id, searchString});
         var payload = new SearchAllianceRequestDto
         {
             SearchString = searchString,
@@ -45,7 +45,7 @@ public class AllianceService(
 
     public Task<Result<byte[]>> GetMembersRawDataAsync(GameWorldConfig world, int allianceId)
     {
-        logger.LogInformation("Getting alliance's members {@Data}", new {world.Id, id = allianceId});
+        logger.LogInformation("Getting alliance's members {@Data}", new {WorldId = world.Id, Id = allianceId});
         var payload = new AllianceMembersRequestDto
         {
             Id = allianceId,

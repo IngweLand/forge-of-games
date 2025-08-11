@@ -46,5 +46,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new UnitBattleStatsEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerCitySnapshotEntityTypeConfiguration());
         builder.ApplyConfiguration(new ProfileSquadEntityTypeConfiguration());
+        builder.ApplyConfiguration(new AllianceMemberEntityTypeConfiguration());
     }
 }

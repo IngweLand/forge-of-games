@@ -9,5 +9,5 @@ public class AllianceWithRankingsViewModel
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
     public IReadOnlyCollection<PlayerViewModel> CurrentMembers { get; init; } = Array.Empty<PlayerViewModel>();
     public string? RegisteredAt { get; set; }
-    public PlayerDto? Leader { get; set; }
+    public string? LeaderName { get; set; }
 }

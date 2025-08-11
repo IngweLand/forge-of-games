@@ -40,7 +40,7 @@ public abstract class PlayersUpdateManagerBase(
                 {
                     try
                     {
-                        await playerService.UpsertPlayer(profile.Value, gameWorld.Id);
+                        await playerService.UpsertPlayerAsync(profile.Value, gameWorld.Id);
                     }
                     catch
                     {
@@ -61,7 +61,7 @@ public abstract class PlayersUpdateManagerBase(
             Logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
                 removedPlayers.Count);
             await ExecuteSafeAsync(
-                () => playerService.UpdateStatusAsync(removedPlayers, PlayerStatus.Missing, CancellationToken.None),
+                () => playerService.UpdateStatusAsync(removedPlayers, InGameEntityStatus.Missing, CancellationToken.None),
                 "");
             Logger.LogInformation("Completed player status updater service update");
         }

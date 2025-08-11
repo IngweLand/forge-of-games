@@ -7,13 +7,12 @@ using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.Battle;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using PvpBattle = Ingweland.Fog.Models.Hoh.Entities.Battle.PvpBattle;
 
 namespace Ingweland.Fog.Functions.Functions;
 
@@ -49,7 +48,8 @@ public class AutoDataProcessor(
 
         var playerAggregates = new List<PlayerAggregate>(32000);
         var allianceAggregates = new List<AllianceAggregate>(16000);
-        var allConfirmedAllianceMembers = new List<(DateTime CollectedAt, AllianceKey AllianceKey, IEnumerable<int>)>();
+        var allConfirmedAllianceMembers =
+            new List<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember>)>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("AutoDataProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
@@ -68,10 +68,10 @@ public class AutoDataProcessor(
                 .ToList();
             logger.LogInformation("{count} alliances retrieved for game world {gameWorldId}",
                 alliances.Count, gameWorld.Id);
-            
+
             var leaderboardParticipants = allianceWakeups
                 .Where(t => t.Wakeup.Leaderboard != null)
-                .SelectMany(t => t.Wakeup.Leaderboard!.Participants.Select(x => (t.CollectedAt, Participant:x)))
+                .SelectMany(t => t.Wakeup.Leaderboard!.Participants.Select(x => (t.CollectedAt, Participant: x)))
                 .ToList();
             var leaderboardParticipantAlliances = leaderboardParticipants
                 .Select(t => (t.CollectedAt, t.Participant.Alliance))
@@ -80,7 +80,7 @@ public class AutoDataProcessor(
             alliances = alliances.Concat(leaderboardParticipantAlliances!).ToList();
             logger.LogInformation("{count} alliances retrieved from leaderboards for game world {gameWorldId}",
                 leaderboardParticipantAlliances.Count, gameWorld.Id);
-            
+
             var alliancesMembers = allianceWakeups
                 .Where(t => t.Wakeup.AllianceWithMembers != null)
                 .SelectMany(t => t.Wakeup.AllianceWithMembers!.Members.Select(m =>
@@ -92,7 +92,7 @@ public class AutoDataProcessor(
                 .Where(t => t.Wakeup.AllianceWithMembers != null)
                 .Select(t => (t.CollectedAt,
                     new AllianceKey(gameWorld.Id, t.Wakeup.AllianceWithMembers!.AllianceId),
-                    t.Wakeup.AllianceWithMembers!.Members.Select(m => m.Player.Id)))
+                    t.Wakeup.AllianceWithMembers!.Members))
                 .ToList();
             logger.LogInformation("{count} confirmed alliance members retrieved for game world {gameWorldId}",
                 confirmedAllianceMembers.Count, gameWorld.Id);
@@ -101,13 +101,6 @@ public class AutoDataProcessor(
             var pvpBattles = await GetPvpBattles(gameWorld.Id, date);
             logger.LogInformation("{count} pvp battles retrieved for game world {gameWorldId}",
                 pvpBattles.Count, gameWorld.Id);
-
-            // var athAllianceRankingWakeups =
-            //     await GetWakeupsAsync(
-            //         InGameRawDataTablePartitionKeyProvider.AthAllianceRankings(gameWorld.Id, date));
-            // var athAllianceRankings = athAllianceRankingWakeups
-            //     .SelectMany(t => t.Wakeup.AthAllianceRankings
-            //         .Select(src => (t.CollectedAt, AthAllianceRanking: src)));
 
             foreach (var playerRankingType in PlayerRankingTypes)
             {
@@ -197,7 +190,7 @@ public class AutoDataProcessor(
                     opt.Items[ResolutionContextKeys.DATE] = t.CollectedAt;
                 }));
             }
-            
+
             foreach (var t in leaderboardParticipants)
             {
                 playerAggregates.Add(mapper.Map<PlayerAggregate>(t.Participant, opt =>
@@ -231,7 +224,7 @@ public class AutoDataProcessor(
 
         logger.LogInformation("Starting alliance members service update");
         await ExecuteSafeAsync(
-            () => allianceMembersService.UpdateAsync(allianceAggregates, allConfirmedAllianceMembers), "");
+            () => allianceMembersService.UpdateAsync(allConfirmedAllianceMembers), "");
         logger.LogInformation("Completed alliance members service update");
 
         logger.LogInformation("Starting player ranking service update");

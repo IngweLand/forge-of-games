@@ -1,3 +1,4 @@
+using FluentResults;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Application.Server.Services.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
@@ -52,4 +53,9 @@ else
     });
 }
 
-builder.Build().Run();
+var app = builder.Build();
+
+var resultLogger = app.Services.GetRequiredService<IResultLogger>();
+Result.Setup(cfg => { cfg.Logger = resultLogger; });
+
+app.Run();

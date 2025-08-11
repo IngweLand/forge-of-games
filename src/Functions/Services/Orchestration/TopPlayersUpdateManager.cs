@@ -37,10 +37,10 @@ public class TopPlayersUpdateManager(
         var today = DateTime.UtcNow.ToDateOnly();
 
         return context.Players
-            .Where(x => x.Status == PlayerStatus.Active && x.WorldId == gameWorldId)
+            .Where(x => x.Status == InGameEntityStatus.Active && x.WorldId == gameWorldId)
             .OrderByDescending(x => x.RankingPoints)
             .Take(TOP_RANK_LIMIT)
-            .Where(x => x.UpdatedAt < today)
+            .Where(x => x.ProfileUpdatedAt < today)
             .Take(BATCH_SIZE)
             .ToListAsync();
     }
