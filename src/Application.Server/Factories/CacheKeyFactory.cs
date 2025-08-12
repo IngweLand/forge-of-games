@@ -56,9 +56,14 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetAllLeaderboardTopItemsQuery q => "LeaderboardTopItems",
             GetPlayerBattlesQuery q => $"PlayerBattles:{q.PlayerId}:{q.StartIndex}:{q.Count}",
             GetPlayerProfileQuery q => $"PlayerProfile:{q.PlayerId}",
-            GetPlayerQuery q => $"Player:{q.PlayerId}",
+            GetPlayerQuery q => Player(q.PlayerId),
             GetTopHeroesQuery q => $"TopHeroes:{q.Mode}:{q.AgeId}:{q.FromLevel}:{q.ToLevel}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
+    }
+
+    public string Player(int playerId)
+    {
+        return $"Player:{playerId}";
     }
 }

@@ -20,12 +20,13 @@ public class PlayersUpdateManager(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IFogPlayerService playerService,
+    IFogAllianceService fogAllianceService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
-    inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
-    databaseWarmUpService, logger), IPlayersUpdateManager
+    inGameDataParsingService, playerService, fogAllianceService, inGameRawDataTablePartitionKeyProvider,
+    inGamePlayerService, databaseWarmUpService, logger), IPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
 

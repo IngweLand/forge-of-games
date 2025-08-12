@@ -40,13 +40,8 @@ public class AllianceMembersService(
         {
             logger.LogInformation("Processing alliance {@allianceKey}", alliance.AllianceKey);
             var updateResult = await playerService.UpsertPlayersAsync(alliance.AllianceKey.WorldId, alliance.Members)
-                .Bind(players =>
-                {
-                    var membersWithPlayers = alliance.Members.Select(x => (x, players.First(y => y.Id == x.Player.Id)))
-                        .ToList();
-                    return fogAllianceService.UpdateMembersAsync(alliance.AllianceKey, membersWithPlayers,
-                        alliance.CollectedAt);
-                });
+                .Bind(membersWithPlayers => fogAllianceService.UpdateMembersAsync(alliance.AllianceKey,
+                    membersWithPlayers, alliance.CollectedAt));
 
             updateResult.LogIfFailed<AllianceMembersService>();
         }

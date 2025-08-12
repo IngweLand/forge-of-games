@@ -14,6 +14,14 @@ public class FogAllianceNotFoundError : Error
         WithMetadata("InGameAllianceId", key.InGameAllianceId);
     }
 
-    public int InGameAllianceId { get; }
-    public string WorldId { get; }
+    public FogAllianceNotFoundError(int id) : base($"Alliance with id {id} not found.")
+    {
+        Id = id;
+        WithMetadata("Id", id);
+    }
+
+    public int? Id { get; }
+
+    public int? InGameAllianceId { get; }
+    public string? WorldId { get; }
 }

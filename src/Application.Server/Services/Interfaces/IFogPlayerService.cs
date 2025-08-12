@@ -13,6 +13,6 @@ public interface IFogPlayerService
     Task UpsertPlayerAsync(PlayerProfile profile, string worldId);
     Task<Result<Player>> UpsertPlayerAsync(string worldId, HohPlayer player, int rankingPoints, DateTime lastOnline);
 
-    Task<Result<IReadOnlyCollection<Player>>> UpsertPlayersAsync(string worldId,
+    Task<Result<IReadOnlyCollection<(AllianceMember AllianceMember, Player Player)>>> UpsertPlayersAsync(string worldId,
         IReadOnlyCollection<AllianceMember> allianceMembers);
 }

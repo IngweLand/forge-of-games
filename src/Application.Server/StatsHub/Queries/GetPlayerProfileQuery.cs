@@ -30,6 +30,7 @@ public class GetPlayerProfileQueryHandler(
     IBattleQueryService battleQueryService,
     IInGamePlayerService inGamePlayerService,
     IFogPlayerService playerService,
+    IFogAllianceService allianceService,
     IAppCache appCache,
     ICacheKeyFactory cacheKeyFactory,
     ILogger<GetPlayerProfileQueryHandler> logger)
@@ -46,8 +47,9 @@ public class GetPlayerProfileQueryHandler(
             return null;
         }
 
-        var today = DateTime.UtcNow.ToDateOnly();
-        if (existingPlayer.ProfileUpdatedAt < today)
+        var now = DateTime.UtcNow;
+        var today = now.ToDateOnly();
+        if (existingPlayer.ProfileUpdatedAt < today && existingPlayer.Status == InGameEntityStatus.Active)
         {
             logger.LogDebug("Player profile for ID {PlayerId} needs update (UpdatedAt: {UpdatedAt}, Today: {Today})",
                 request.PlayerId, existingPlayer.ProfileUpdatedAt, today);
@@ -55,6 +57,10 @@ public class GetPlayerProfileQueryHandler(
             if (newProfileResult.IsSuccess)
             {
                 logger.LogDebug("New profile fetched for player {PlayerId}, updating data", request.PlayerId);
+                if (newProfileResult.Value.Alliance != null)
+                {
+                    await allianceService.UpsertAlliance(newProfileResult.Value.Alliance, existingPlayer.WorldId, now);
+                }
                 await playerService.UpsertPlayerAsync(newProfileResult.Value, existingPlayer.WorldId);
             }
             else if (newProfileResult.HasError<PlayerNotFoundError>())

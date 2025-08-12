@@ -19,12 +19,13 @@ public class TopAllianceMemberProfilesUpdateManager(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IFogPlayerService playerService,
+    IFogAllianceService fogAllianceService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<PlayersUpdateManager> logger) : PlayersUpdateManagerBase(gameWorldsProvider, inGameRawDataTableRepository,
-    inGameDataParsingService, playerService, inGameRawDataTablePartitionKeyProvider, inGamePlayerService,
-    databaseWarmUpService, logger), ITopAllianceMemberProfilesUpdateManager
+    inGameDataParsingService, playerService, fogAllianceService, inGameRawDataTablePartitionKeyProvider,
+    inGamePlayerService, databaseWarmUpService, logger), ITopAllianceMemberProfilesUpdateManager
 {
     private const int BATCH_SIZE = 100;
     private const int TOP_RANK_LIMIT = 20;

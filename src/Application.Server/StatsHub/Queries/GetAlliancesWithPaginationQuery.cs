@@ -38,8 +38,8 @@ public class GetAlliancesWithPaginationQueryHandler(IFogDbContext context, IMapp
         }
 
         return result
-            .Where(x => x.Status == InGameEntityStatus.Active)
-            .OrderByDescending(p => p.RankingPoints)
+            .OrderBy(x => x.Status)
+            .ThenByDescending(p => p.RankingPoints)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)
             .ToPaginatedListAsync(request.StartIndex, pageSize, cancellationToken);
     }

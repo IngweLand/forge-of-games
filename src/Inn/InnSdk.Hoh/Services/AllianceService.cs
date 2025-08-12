@@ -35,12 +35,7 @@ public class AllianceService(
             return rawResult.ToResult();
         }
 
-        var parseResult = dataParsingService.ParseSearchAllianceResponse(rawResult.Value);
-
-        return parseResult.HasError<HohInvalidCardinalityError>()
-            ? Result.Fail<IReadOnlyCollection<AllianceSearchResult>>(
-                new SearchAllianceResponseNotFoundError(searchString, world.Id))
-            : parseResult;
+        return dataParsingService.ParseSearchAllianceResponse(rawResult.Value);
     }
 
     public Task<Result<byte[]>> GetMembersRawDataAsync(GameWorldConfig world, int allianceId)

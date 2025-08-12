@@ -2,7 +2,6 @@ using AutoMapper;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
 
 namespace Ingweland.Fog.Application.Server.Mapping.Hoh;
@@ -32,7 +31,12 @@ public class StatsMappingProfile : Profile
         CreateMap<AllianceRanking, AllianceRanking>();
         CreateMap<Alliance, Alliance>()
             .ForMember(dest => dest.Rankings, opt => opt.Ignore());
-        CreateMap<Alliance, AllianceDto>();
+        CreateMap<Alliance, AllianceDto>()
+            .ForMember(dest => dest.UpdatedAt,
+                opt => opt.MapFrom(src =>
+                    src.UpdatedAt > src.MembersUpdatedAt.ToDateOnly()
+                        ? src.UpdatedAt
+                        : src.MembersUpdatedAt.ToDateOnly()));
 
         CreateMap<PvpBattle, BattleKey>();
 

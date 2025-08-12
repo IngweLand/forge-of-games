@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using Azure.Monitor.OpenTelemetry.AspNetCore;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server;
@@ -48,6 +49,9 @@ builder.Services.Configure<JsonOptions>(options =>
 });
 builder.Services.AddOpenTelemetry().UseAzureMonitor();
 var app = builder.Build();
+
+var resultLogger = app.Services.GetRequiredService<IResultLogger>();
+Result.Setup(cfg => { cfg.Logger = resultLogger; });
 
 app.UseMiddleware<MaintenanceModeMiddleware>();
 app.Use(async (context, next) =>

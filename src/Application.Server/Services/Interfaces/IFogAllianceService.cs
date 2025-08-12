@@ -9,4 +9,6 @@ public interface IFogAllianceService
     Task<Result> UpdateMembersAsync(AllianceKey allianceKey,
         IReadOnlyCollection<(AllianceMember Member, Player Player)> membersWithPlayers,
         DateTime? collectedAt = null);
+
+    Task UpsertAlliance(HohAlliance hohAlliance, string worldId, DateTime now);
 }

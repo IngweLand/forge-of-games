@@ -15,6 +15,7 @@ public abstract class PlayersUpdateManagerBase(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IFogPlayerService playerService,
+    IFogAllianceService fogAllianceService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IInGamePlayerService inGamePlayerService,
     DatabaseWarmUpService databaseWarmUpService,
@@ -40,11 +41,15 @@ public abstract class PlayersUpdateManagerBase(
                 {
                     try
                     {
+                        if (profile.Value.Alliance != null)
+                        {
+                            await fogAllianceService.UpsertAlliance(profile.Value.Alliance, player.WorldId, DateTime.UtcNow);
+                        }
                         await playerService.UpsertPlayerAsync(profile.Value, gameWorld.Id);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        //ignore
+                        Logger.LogError(ex, "Error upserting alliance/player {@Player}", player.Key);
                     }
                 }
                 else if (profile.HasError<PlayerNotFoundError>())

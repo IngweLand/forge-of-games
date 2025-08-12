@@ -1,14 +1,8 @@
 using FluentResults;
 using Ingweland.Fog.Application.Server;
-using Ingweland.Fog.Application.Server.Services.Hoh;
-using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Functions;
-using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.Infrastructure;
 using Ingweland.Fog.InnSdk.Hoh;
-using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
-using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Shared;
 using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.Configuration;
@@ -35,7 +29,7 @@ builder.Services.AddFunctionsServices();
 //     .AddApplicationInsightsTelemetryWorkerService()
 //     .ConfigureFunctionsApplicationInsights();
 var customEnvironment = builder.Configuration.GetValue<string>("CustomEnvironment");
-if(customEnvironment is "Development" or "Staging")
+if (customEnvironment is "Development" or "Staging")
 {
     builder.Services.AddLogging(logging =>
     {
