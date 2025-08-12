@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,8 +14,8 @@ public record GetTopHeroesQuery : IRequest<IReadOnlyCollection<string>>, ICachea
     public int? FromLevel { get; init; } = 0;
     public required HeroInsightsMode Mode { get; init; }
     public int? ToLevel { get; init; } = int.MaxValue;
-    public TimeSpan? Duration => TimeSpan.FromHours(3);
-    public DateTimeOffset? Expiration { get; }
+    public TimeSpan? Duration { get; }
+    public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
 
 public class GetTopHeroesQueryHandler(IFogDbContext context)
