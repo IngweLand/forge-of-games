@@ -20,14 +20,18 @@
             </a>
         }
         <div><span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>@Player?.WorldId</div>
-        <div>
-                    <span
-                        class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@Player?.RankingPoints
-        </div>
-        <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@Player?.Rank</div>
+        @if (Player?.RankingPoints != null)
+        {
+            <div>
+                <span
+                    class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>@Player?.RankingPoints
+            </div>
+        }
+        @if (Player?.Rank != null)
+        {
+            <div><span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>@Player?.Rank</div>
+        }
         <div><span class="label">@Loc[FogResource.Common_Age]: </span>@Player?.Age</div>
-        <div><span class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>@Player?.UpdatedAt
-        </div>
     </div>
 </div>
 

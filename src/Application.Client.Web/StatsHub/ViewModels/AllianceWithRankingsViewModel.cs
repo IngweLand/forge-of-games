@@ -4,10 +4,12 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
 public class AllianceWithRankingsViewModel
 {
-    public IReadOnlyCollection<StatsTimedStringValue> Names { get; init; } = Array.Empty<StatsTimedStringValue>();
     public required AllianceViewModel Alliance { get; init; }
+
+    public IReadOnlyCollection<AllianceMemberViewModel> CurrentMembers { get; init; } =
+        Array.Empty<AllianceMemberViewModel>();
+
+    public IReadOnlyCollection<StatsTimedStringValue> Names { get; init; } = Array.Empty<StatsTimedStringValue>();
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
-    public IReadOnlyCollection<PlayerViewModel> CurrentMembers { get; init; } = Array.Empty<PlayerViewModel>();
     public string? RegisteredAt { get; set; }
-    public string? LeaderName { get; set; }
 }

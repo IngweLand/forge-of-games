@@ -1,7 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 
@@ -11,19 +10,20 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
 {
     public AllianceWithRankings Create(Alliance alliance)
     {
-        return new AllianceWithRankings()
+        return new AllianceWithRankings
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
             RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.TotalPoints),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
-            CurrentMembers = alliance.Members.Select(CreateMember).ToList(),
+            CurrentMembers = alliance.Members.OrderByDescending(x => x.Player.RankingPoints)
+                .Select((entity, i) => CreateMember(entity, i + 1)).ToList(),
             RegisteredAt = alliance.RegisteredAt?.ToDateOnly(),
         };
     }
-    
-    private AllianceMemberDto CreateMember(AllianceMemberEntity member)
+
+    private AllianceMemberDto CreateMember(AllianceMemberEntity member, int rank)
     {
-        return new AllianceMemberDto()
+        return new AllianceMemberDto
         {
             Name = member.Player.Name,
             Age = member.Player.Age,
@@ -33,6 +33,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             Role = member.Role,
             AvatarId = member.Player.AvatarId,
             RankingPoints = member.Player.RankingPoints ?? 0,
+            Rank = rank,
         };
     }
 
@@ -41,7 +42,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
         AllianceRankingType allianceRankingType)
     {
         return rankings.Where(pr => pr.Type == allianceRankingType)
-            .OrderBy(pr => pr.CollectedAt).Select(pr => new StatsTimedIntValue()
+            .OrderBy(pr => pr.CollectedAt).Select(pr => new StatsTimedIntValue
                 {Value = pr.Points, Date = pr.CollectedAt.ToDateTime(TimeOnly.MinValue)}).ToList();
     }
 

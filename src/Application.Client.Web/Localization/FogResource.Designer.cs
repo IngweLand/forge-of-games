@@ -1302,6 +1302,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deleted.
+        /// </summary>
+        public static string Common_Deleted {
+            get {
+                return ResourceManager.GetString("Common.Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disclaimer.
         /// </summary>
         public static string Common_Disclaimer {
@@ -2369,6 +2378,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_HeroInsights_Mode_Top {
             get {
                 return ResourceManager.GetString("StatsHub.HeroInsights.Mode.Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Joined on {0}.
+        /// </summary>
+        public static string StatsHub_JoinedOn {
+            get {
+                return ResourceManager.GetString("StatsHub.JoinedOn", resourceCulture);
             }
         }
         

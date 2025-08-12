@@ -3,25 +3,18 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Alliance)">
-    @* <div class="rank" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-color)")"> *@
-    @*     @Alliance.Rank *@
-    @* </div> *@
     <div class="avatar-container">
         <img class="avatar-background" src="@Alliance.AvatarBackgroundUrl"/>
         <img class="avatar-icon" src="@Alliance.AvatarIconUrl"/>
     </div>
     <div class="content">
-            <span class="content-label">
+            <span class="content-label" style="color: @(Alliance.IsDeleted ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
                 @Alliance.Name
             </span>
     </div>
     <div class="points" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
         @Alliance.RankingPointsFormatted
     </div>
-    @if (Alliance.IsStale)
-    {
-        <div class="updated-at-label">@Loc[FogResource.StatsHub_UpdatedOn, Alliance.UpdatedAt]</div>
-    }
 </div>
 
 @code {

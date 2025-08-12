@@ -10,29 +10,34 @@
     <div class="page-container">
         <div class="fog-container info-container">
             <div class="avatar-container">
-                <img class="avatar-background" src="@_alliance.Alliance.AvatarBackgroundUrl"/>
-                <img class="avatar-icon" src="@_alliance.Alliance.AvatarIconUrl"/>
+                <div class="avatar">
+                    <img class="avatar-background" src="@_alliance.Alliance.AvatarBackgroundUrl"/>
+                    <img class="avatar-icon" src="@_alliance.Alliance.AvatarIconUrl"/>
+                </div>
+                @if(_alliance.Alliance.IsDeleted)
+                {
+                    <span class="deleted-label">@Loc[FogResource.Common_Deleted]</span>
+                }
             </div>
             <div class="details">
                 <div>
                     <span class="label">@Loc[FogResource.StatsHub_NameSearchField_Label]: </span>
                     "@_alliance.Alliance.Name"
                 </div>
-                @if (_alliance.LeaderName != null)
+                @if (_alliance.Alliance.RankingPoints > 0)
                 {
                     <div>
-                        <span class="label">@Loc[FogResource.StatsHub_Alliance_Leader_Label]: </span>
-                        @_alliance.LeaderName
+                        <span class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>
+                        @_alliance.Alliance.RankingPoints
                     </div>
                 }
-                <div>
-                    <span class="label">@Loc[FogResource.StatsHub_Player_RankingPoints]: </span>
-                    @_alliance.Alliance.RankingPoints
-                </div>
-                <div>
-                    <span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>
-                    @_alliance.Alliance.Rank
-                </div>
+                @if (_alliance.Alliance.Rank > 0)
+                {
+                    <div>
+                        <span class="label">@Loc[FogResource.StatsHub_Player_Rank]: </span>
+                        @_alliance.Alliance.Rank
+                    </div>
+                }
                 @if (_alliance.RegisteredAt != null)
                 {
                     <div>
@@ -43,11 +48,6 @@
                 <div>
                     <span class="label">@Loc[FogResource.StatsHub_Player_World]: </span>
                     @_alliance.Alliance.WorldId
-                </div>
-                <div>
-                    <span
-                        class="label">@Loc[FogResource.StatsHub_Player_UpdatedOn]: </span>
-                    @_alliance.Alliance.UpdatedAt
                 </div>
             </div>
         </div>
@@ -104,9 +104,9 @@
             <div class="fog-container section-container">
                 <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
                 <div class="members-container">
-                    @foreach (var player in _alliance.CurrentMembers)
+                    @foreach (var member in _alliance.CurrentMembers)
                     {
-                        <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+                        <AllianceMemberListItemComponent Member="@member" OnClick="@OnMemberClicked" />
                     }
                 </div>
             </div>
@@ -119,7 +119,7 @@ else
 }
 
 @code {
+
     [Parameter]
     public required int AllianceId { get; set; }
-
 }

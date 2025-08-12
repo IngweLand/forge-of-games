@@ -176,7 +176,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
     {
         var today = now.ToDateOnly();
 
-        logger.LogDebug("Querying existing player {PlayerId} from world {WorldId}",
+        logger.LogDebug("Getting existing player {PlayerId} from world {WorldId}",
             player.Id, worldId);
         var existingPlayer = await context.Players
             .Include(p =>

@@ -1,0 +1,44 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Member.PlayerId)">
+    <div class="rank">
+        @Member.Rank
+    </div>
+    <div class="avatar-container">
+        <img class="avatar" src="@Member.AvatarUrl"/>
+    </div>
+    <div class="content">
+        <div class="content-top">
+
+            @if (Member.RoleIconUrl != null)
+            {
+                <img class="role-icon" src="@Member.RoleIconUrl"/>
+            }
+            <span class="content-label">
+                @Member.Name
+            </span>
+        </div>
+        <div class="age-label" style="background-color: @Member.AgeColor">@Member.Age</div>
+    </div>
+    <div class="points"
+         style="color: @(Member.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+        @Member.RankingPointsFormatted
+    </div>
+    @if (Member.JoinedOn != null)
+    {
+        <div class="updated-at-label">@Loc[FogResource.StatsHub_JoinedOn, Member.JoinedOn]</div>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public required AllianceMemberViewModel Member { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnClick { get; set; }
+
+}

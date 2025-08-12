@@ -129,6 +129,7 @@ public static class DependencyInjection
         services.AddScoped<IBattleViewModelFactory, BattleViewModelFactory>();
         services.AddScoped<IBattleUiService, BattleUiService>();
         services.AddScoped<IHohCoreDataViewModelsCache, HohCoreDataViewModelsCache>();
+        services.AddScoped<IAllianceMemberRoleIconUrlProvider, AllianceMemberRoleIconUrlProvider>();
 
         services.AddScoped<CityPlannerSettings>();
 

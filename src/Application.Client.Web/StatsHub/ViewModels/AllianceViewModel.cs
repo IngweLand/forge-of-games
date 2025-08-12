@@ -5,6 +5,7 @@ public class AllianceViewModel
     public required string AvatarBackgroundUrl { get; set; }
     public required string AvatarIconUrl { get; set; }
     public required int Id { get; init; }
+    public bool IsDeleted { get; init; }
     public required bool IsStale { get; set; }
     public required string Name { get; set; }
     public required int Rank { get; set; }

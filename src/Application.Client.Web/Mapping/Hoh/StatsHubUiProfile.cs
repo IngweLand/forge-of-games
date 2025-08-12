@@ -44,10 +44,7 @@ public class StatsHubUiProfile : Profile
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
         CreateMap<PaginatedList<PlayerDto>, PaginatedList<PlayerViewModel>>();
 
-        CreateMap<AllianceMemberDto, PlayerViewModel>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.PlayerId))
-            .ForMember(dest => dest.RankingPoints,
-                opt => opt.MapFrom(src => src.RankingPoints == 0 ? "-" : src.RankingPoints.ToString()))
+        CreateMap<AllianceMemberDto, AllianceMemberViewModel>()
             .ForMember(dest => dest.RankingPointsFormatted,
                 opt => opt.MapFrom(src =>
                     src.RankingPoints == 0 ? "-" : NumberFormatter.FormatCompactNumber(src.RankingPoints)))
@@ -67,9 +64,15 @@ public class StatsHubUiProfile : Profile
                 }))
             .ForMember(dest => dest.AvatarUrl,
                 opt => opt.ConvertUsing<PlayerAvatarIdToUrlConverter, int>(src => src.AvatarId))
-            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToString("d")))
+            .ForMember(dest => dest.JoinedOn, opt =>
+            {
+                opt.PreCondition(src => src.JoinedAt.HasValue);
+                opt.MapFrom(src => src.JoinedAt!.Value.ToString("d"));
+            })
             .ForMember(dest => dest.IsStale,
-                opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
+                opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)))
+            .ForMember(dest => dest.RoleIconUrl,
+                opt => opt.ConvertUsing<AllianceMemberRoleToIconUrlConverter, AllianceMemberRole>(src => src.Role));
 
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.RankingPointsFormatted,
@@ -87,14 +90,6 @@ public class StatsHubUiProfile : Profile
             {
                 opt.PreCondition(src => src.RegisteredAt != null);
                 opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
-            })
-            .ForMember(dest => dest.LeaderName, opt =>
-            {
-                opt.PreCondition(src =>
-                    src.CurrentMembers.FirstOrDefault(x => x.Role == AllianceMemberRole.AllianceLeader) != null);
-                opt.MapFrom(src => src.CurrentMembers.First(x => x.Role == AllianceMemberRole.AllianceLeader).Name);
-            })
-            .ForMember(dest => dest.CurrentMembers,
-                opt => opt.MapFrom(src => src.CurrentMembers.OrderByDescending(x => x.RankingPoints)));
+            });
     }
 }

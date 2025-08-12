@@ -22,8 +22,8 @@ public partial class AlliancePage : StatsHubPageBase
         }
     }
     
-    private void OnPlayerClicked(PlayerViewModel player)
+    private void OnMemberClicked(int playerId)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Id));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(playerId));
     }
 }
