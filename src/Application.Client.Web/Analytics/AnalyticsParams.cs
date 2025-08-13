@@ -21,7 +21,7 @@ public static class AnalyticsParams
     public const string LOCATION = "location";
     public const string PREMIUM = "premium";
     public const string SEARCH_PREFERENCE = "search_preference";
-    public const string SOURCE = "source";
+    public const string SOURCE = "source_component";
     public const string STATE = "state";
     public const string UNIT_ID = "unit_id";
 
@@ -29,6 +29,7 @@ public static class AnalyticsParams
     {
         public static class Locations
         {
+            public const string ALLIANCE_PROFILE = "alliance_profile";
             public const string BATTLE = "battle";
             public const string BATTLE_LOG = "battle_log";
             public const string CITY_INSPIRATIONS = "city_inspirations";
@@ -43,6 +44,7 @@ public static class AnalyticsParams
         public static class Sources
         {
             public const string ALLIANCE_LIST = "alliance_list";
+            public const string ALLIANCE_RANKING_CHART = "alliance_ranking_chart";
             public const string PLAYER_INFO_COMPONENT = "player_info_component";
             public const string PLAYER_PVP_RANKING_CHART = "player_pvp_ranking_chart";
             public const string PLAYER_RANKING_CHART = "player_ranking_chart";

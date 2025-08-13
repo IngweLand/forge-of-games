@@ -109,6 +109,18 @@ p {
     container-type: inline-size;
 }
 
+.expandable-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.material-symbols-outlined{
+    font-size: 16px;
+    vertical-align: middle;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
