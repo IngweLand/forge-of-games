@@ -23,7 +23,13 @@ public static class DependencyInjection
             throw new InvalidOperationException("Connection string 'DefaultSQL' not found.");
         }
 
-        services.AddDbContext<IFogDbContext, FogDbContext>(options => { options.UseSqlServer(connectionString); });
+        services.AddDbContext<IFogDbContext, FogDbContext>(options =>
+        {
+            options.UseSqlServer(connectionString, sqlOptions =>
+            {
+                sqlOptions.CommandTimeout(60);
+            });
+        });
         return services;
     }
 
