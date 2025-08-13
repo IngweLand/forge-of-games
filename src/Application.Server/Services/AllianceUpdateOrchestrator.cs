@@ -7,6 +7,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Shared.Extensions;
 using LazyCache;
 using Microsoft.Extensions.Logging;
 
@@ -50,6 +51,13 @@ public class AllianceUpdateOrchestrator(
                         var updateMembersResult =
                             await fogAllianceService.UpdateMembersAsync(existingAlliance.Key, membersWithPlayers);
                         return updateMembersResult.IsSuccess ? membersWithPlayers.ToResult() : updateMembersResult;
+                    })
+                    .Bind(async membersWithPlayers =>
+                    {
+                        var rankingPoints = membersWithPlayers.Sum(x => x.AllianceMember.RankingPoints);
+                        var updatePointsResult = await fogAllianceService.UpdateRanking(existingAlliance.Id,
+                            rankingPoints, DateTime.UtcNow.ToDateOnly());
+                        return updatePointsResult.IsSuccess ? membersWithPlayers.ToResult() : updatePointsResult;
                     })
                     .Bind(membersWithPlayers =>
                     {

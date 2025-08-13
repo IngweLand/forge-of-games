@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -34,7 +35,7 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
                 return Result.Fail(new OldAllianceDataError(allianceKey));
             }
 
-            logger.LogDebug("Clearing existing members for alliance {@key}",allianceKey);
+            logger.LogDebug("Clearing existing members for alliance {@key}", allianceKey);
             alliance.Members.Clear();
 
             foreach (var item in membersWithPlayers)
@@ -55,7 +56,6 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
             }
 
             var date = collectedAt ?? DateTime.UtcNow;
-            alliance.RankingPoints = membersWithPlayers.Sum(x => x.Member.RankingPoints);
             alliance.MembersUpdatedAt = date;
             alliance.Status = InGameEntityStatus.Active;
 
@@ -73,7 +73,7 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
             return Result.Fail(new AllianceMembersUpdateError(allianceKey, ex));
         }
     }
-    
+
     public async Task UpsertAlliance(HohAlliance hohAlliance, string worldId, DateTime now)
     {
         logger.LogDebug("Upserting alliance {AllianceId} from world {WorldId}",
@@ -120,5 +120,50 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
             worldId);
 
         await context.SaveChangesAsync();
+    }
+
+    public async Task<Result> UpdateRanking(int allianceId, int rankingPoints, DateOnly collectedAt, int? rank = null)
+    {
+        var alliance = await context.Alliances
+            .Include(x =>
+                x.Rankings.Where(pr => pr.Type == AllianceRankingType.TotalPoints && pr.CollectedAt == collectedAt))
+            .FirstOrDefaultAsync(x => x.Id == allianceId);
+
+        if (alliance == null)
+        {
+            return Result.Fail(new FogAllianceNotFoundError(allianceId));
+        }
+
+        if (collectedAt >= alliance.UpdatedAt)
+        {
+            alliance.RankingPoints = rankingPoints;
+            if (rank.HasValue)
+            {
+                alliance.Rank = rank.Value;
+            }
+        }
+
+        var existingRanking = alliance.Rankings.LastOrDefault();
+        if (existingRanking != null)
+        {
+            existingRanking.Points = rankingPoints;
+            if (rank.HasValue)
+            {
+                existingRanking.Rank = rank.Value;
+            }
+        }
+        else
+        {
+            alliance.Rankings.Add(new AllianceRanking
+            {
+                Rank = rank ?? 0,
+                Points = rankingPoints,
+                Type = AllianceRankingType.TotalPoints,
+                CollectedAt = collectedAt,
+            });
+        }
+
+        var saveResult = await Result.Try(() => context.SaveChangesAsync());
+        return saveResult.ToResult();
     }
 }

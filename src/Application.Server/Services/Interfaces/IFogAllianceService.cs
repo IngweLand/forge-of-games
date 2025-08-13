@@ -11,4 +11,5 @@ public interface IFogAllianceService
         DateTime? collectedAt = null);
 
     Task UpsertAlliance(HohAlliance hohAlliance, string worldId, DateTime now);
+    Task<Result> UpdateRanking(int allianceId, int rankingPoints, DateOnly collectedAt, int? rank = null);
 }

@@ -4,7 +4,7 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 
 public class AllianceRanking
 {
-    public required int AllianceId { get; set; }
+    public int AllianceId { get; set; }
     public required DateOnly CollectedAt { get; set; }
     public int Id { get; set; }
     public required int Points { get; set; }
