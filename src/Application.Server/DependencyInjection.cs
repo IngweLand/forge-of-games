@@ -86,6 +86,7 @@ public static class DependencyInjection
         services.AddScoped<IInGameAllianceService, InGameAllianceService>();
         services.AddScoped<IFogAllianceService, FogAllianceService>();
         services.AddScoped<IAllianceUpdateOrchestrator, AllianceUpdateOrchestrator>();
+        services.AddScoped<IHeroInsightsService, HeroInsightsService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

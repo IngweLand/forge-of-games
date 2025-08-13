@@ -1,10 +1,11 @@
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
@@ -18,58 +19,42 @@ public record GetTopHeroesQuery : IRequest<IReadOnlyCollection<string>>, ICachea
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
 }
 
-public class GetTopHeroesQueryHandler(IFogDbContext context)
+public class GetTopHeroesQueryHandler(
+    IFogDbContext context,
+    IHeroInsightsService heroInsightsService,
+    ILogger<GetTopHeroesQueryHandler> logger)
     : IRequestHandler<GetTopHeroesQuery, IReadOnlyCollection<string>>
 {
     public async Task<IReadOnlyCollection<string>> Handle(GetTopHeroesQuery request,
         CancellationToken cancellationToken)
     {
-        var minCollectionDate = DateTime.UtcNow.ToDateOnly().AddDays(-FogConstants.TOP_HEROES_LOOKBACK_DAYS);
-        var initQuery = context.ProfileSquads.AsNoTracking()
-            .Where(x => x.CollectedAt > minCollectionDate);
-
+        var today = DateTime.UtcNow.ToDateOnly();
+        var existingInsightsQuery = context.TopHeroInsights.AsNoTracking()
+            .Where(x => x.Mode == request.Mode && x.CreatedAt == today);
         if (request.Mode == HeroInsightsMode.MostPopular && (request.FromLevel.HasValue || request.ToLevel.HasValue))
         {
             var fromLevel = request.FromLevel ?? 0;
             var toLevel = request.ToLevel ?? int.MaxValue;
-            initQuery = initQuery.Where(x => x.Level >= fromLevel && x.Level <= toLevel);
+            existingInsightsQuery = existingInsightsQuery.Where(x => x.FromLevel == fromLevel && x.ToLevel == toLevel);
         }
 
         if (request.AgeId != null)
         {
-            initQuery = initQuery.Where(x => x.Age == request.AgeId);
+            existingInsightsQuery = existingInsightsQuery.Where(x => x.AgeId == request.AgeId);
         }
 
-        List<string> result;
-        switch (request.Mode)
+        var existingInsights = await existingInsightsQuery.FirstOrDefaultAsync(cancellationToken);
+
+        if (existingInsights != null)
         {
-            case HeroInsightsMode.Top:
-            {
-                var topLevels = await initQuery
-                    .GroupBy(x => x.Level)
-                    .OrderByDescending(g => g.Key)
-                    .Select(g => g.Key)
-                    .Take(FogConstants.MAX_TOP_HERO_LEVELS_TO_RETURN)
-                    .ToHashSetAsync(cancellationToken);
-                result = await initQuery
-                    .Where(x => topLevels.Contains(x.Level))
-                    .Select(x => x.UnitId)
-                    .ToListAsync(cancellationToken);
-                break;
-            }
-            default:
-            {
-                result = await initQuery
-                    .GroupBy(x => x.UnitId)
-                    .Select(g => new {UnitId = g.Key, Count = g.Count()})
-                    .OrderByDescending(g => g.Count)
-                    .Take(FogConstants.MAX_MOST_POPULAR_HEROES_TO_RETURN)
-                    .Select(x => x.UnitId)
-                    .ToListAsync(cancellationToken);
-                break;
-            }
+            logger.LogDebug("Found existing insights");
+            return existingInsights.Heroes.ToList();
         }
 
-        return result.ToHashSet();
+        logger.LogDebug("Existing insights not found, fetching new insights.");
+        var insightsResult = await heroInsightsService.GetAsync(request.Mode, request.AgeId, request.FromLevel,
+            request.ToLevel, cancellationToken);
+        insightsResult.LogIfFailed<GetTopHeroesQueryHandler>();
+        return insightsResult.IsSuccess ? insightsResult.Value : [];
     }
 }

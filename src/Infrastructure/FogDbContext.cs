@@ -22,6 +22,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<Alliance> Alliances { get; set; }
     public DbSet<AllianceRanking> AllianceRankings { get; set; }
     public DbSet<PvpBattle> PvpBattles { get; set; }
+    public DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
     public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     public DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
@@ -47,5 +48,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PlayerCitySnapshotEntityTypeConfiguration());
         builder.ApplyConfiguration(new ProfileSquadEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceMemberEntityTypeConfiguration());
+        builder.ApplyConfiguration(new TopHeroInsightsEntityTypeConfiguration());
     }
 }

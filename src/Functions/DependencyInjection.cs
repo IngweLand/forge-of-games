@@ -44,6 +44,7 @@ public static class DependencyInjection
         services.AddScoped<ICultureUsageRatioUpdater, CultureUsageRatioUpdater>();
         services.AddScoped<IPlayerUpdater, PlayerUpdater>();
         services.AddScoped<ITopAllianceMemberUpdateManager, TopAllianceMemberUpdateManager>();
+        services.AddScoped<ITopHeroInsightsProcessor, TopHeroInsightsProcessor>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

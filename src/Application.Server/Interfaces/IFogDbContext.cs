@@ -13,7 +13,8 @@ public interface IFogDbContext
     DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     DbSet<PlayerRanking> PlayerRankings { get; set; }
     DbSet<Player> Players { get; set; }
-    DbSet<PvpBattle> PvpBattles { get; set; }
     DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
+    DbSet<PvpBattle> PvpBattles { get; set; }
+    DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
