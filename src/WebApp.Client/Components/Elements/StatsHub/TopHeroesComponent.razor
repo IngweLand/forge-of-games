@@ -4,13 +4,14 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
-@inject NavigationManager NavigationManager
 <div class="fog-container component-root">
     <div class="title">@Title</div>
     <div class="items-container">
         @foreach (var hero in Heroes)
         {
-            <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+            <a class="anchor-inherited-style" style="display: flex" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+                <HeroItem Hero="@hero"/>
+            </a>
         }
     </div>
     <div class="button-container">
@@ -25,12 +26,8 @@
     [Parameter]
     public required string Title { get; set; }
 
-    [Parameter][EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public required IReadOnlyCollection<HeroBasicViewModel> Heroes { get; init; }
-
-    private void OpenHeroPage(string heroId)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Hero(heroId));
-    }
 
 }

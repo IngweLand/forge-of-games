@@ -8,7 +8,10 @@
     <PaginatedStatsListComponent Title="@Title" OnSearch="Search" ItemsProviderDelegate="GetDataAsync"
                                  NameSearchString="@NameSearchString">
         <ItemTemplate>
-            <PlayerListItemComponent Player="@context" OnClick="OnItemClicked"/>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(context.Id)"
+               @onclick="OnItemClicked">
+                <PlayerListItemComponent Player="@context"/>
+            </a>
         </ItemTemplate>
     </PaginatedStatsListComponent>
 }

@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        
+
         @if (_alliance.CurrentMembers.Count > 0)
         {
             <div class="fog-container section-container">
@@ -59,12 +59,14 @@
                 <div class="members-container">
                     @foreach (var member in _alliance.CurrentMembers)
                     {
-                        <AllianceMemberListItemComponent Member="@member" OnClick="@OnMemberClicked"/>
+                        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(member.PlayerId)">
+                            <AllianceMemberListItemComponent Member="@member"/>
+                        </a>
                     }
                 </div>
             </div>
         }
-        
+
         @if (_canShowChart)
         {
             <div class="fog-container section-container ranking-points-chart-container">

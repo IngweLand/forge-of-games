@@ -30,11 +30,6 @@ public partial class TopHeroesPage : StatsHubPageBase, IAsyncDisposable
         GC.SuppressFinalize(this);
     }
 
-    private void OpenHeroPage(string heroId)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Hero(heroId));
-    }
-
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();

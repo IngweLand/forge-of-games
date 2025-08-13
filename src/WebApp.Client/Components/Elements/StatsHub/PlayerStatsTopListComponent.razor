@@ -3,13 +3,14 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
-@inject NavigationManager NavigationManager
 <div class="fog-container component-root">
     <div class="title">@Title</div>
     <div class="items-container">
         @foreach (var player in Players)
         {
-            <PlayerListItemComponent Player="@player" OnClick="OnPlayerClicked"/>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(player.Id)">
+                <PlayerListItemComponent Player="@player"/>
+            </a>
         }
     </div>
     <div class="button-container">
@@ -29,10 +30,5 @@
 
     [Parameter]
     public required IReadOnlyCollection<PlayerViewModel> Players { get; init; }
-
-    private void OnPlayerClicked(PlayerViewModel player)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(player.Id));
-    }
 
 }

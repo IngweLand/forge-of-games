@@ -21,7 +21,9 @@
     <div class="items-container">
         @foreach (var hero in _heroes)
         {
-            <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+            <a class="anchor-inherited-style" style="display: flex" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+                <HeroItem Hero="@hero"/>
+            </a>
         }
     </div>
 

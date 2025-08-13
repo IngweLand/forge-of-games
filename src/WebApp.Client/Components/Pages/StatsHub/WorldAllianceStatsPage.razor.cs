@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
-using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
@@ -13,11 +12,6 @@ public partial class WorldAllianceStatsPage : WorldStatsPageBase<AllianceViewMod
         return WorldId == "zz1"
             ? Loc[FogResource.StatsHub_Worlds_AllianceListTitle, FogResource.StatsHub_Worlds_BetaWorld]
             : Loc[FogResource.StatsHub_Worlds_AllianceListTitle, FogResource.StatsHub_Worlds_MainWorld];
-    }
-
-    protected override void NavigateToItemPage(AllianceViewModel item)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(item.Id));
     }
 
     protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(ItemsProviderRequest request)

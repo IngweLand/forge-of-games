@@ -3,13 +3,14 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
-@inject NavigationManager NavigationManager
 <div class="fog-container component-root">
     <div class="title">@Title</div>
     <div class="items-container">
         @foreach (var alliance in Alliances)
         {
-            <AllianceListItemComponent Alliance="@alliance" OnClick="OnAllianceClicked"/>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
+                <AllianceListItemComponent Alliance="@alliance"/>
+            </a>
         }
     </div>
     <div class="button-container">
@@ -29,10 +30,5 @@
 
     [Parameter]
     public required IReadOnlyCollection<AllianceViewModel> Alliances { get; init; }
-
-    private void OnAllianceClicked(AllianceViewModel alliance)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Alliance(alliance.Id));
-    }
 
 }

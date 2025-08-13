@@ -74,13 +74,10 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
         NavigationManager.NavigateTo(NavigationManager.GetUriWithQueryParameters(query), false);
     }
 
-    protected void OnItemClicked(TItem item)
+    protected void OnItemClicked()
     {
         _isNavigatingAway = true;
-        NavigateToItemPage(item);
     }
-
-    protected abstract void NavigateToItemPage(TItem item);
 
     protected void Search(string? name)
     {

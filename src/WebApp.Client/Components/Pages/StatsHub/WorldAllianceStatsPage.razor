@@ -7,8 +7,11 @@
 {
     <PaginatedStatsListComponent Title="@Title" OnSearch="Search" ItemsProviderDelegate="GetDataAsync"
                                  NameSearchString="@NameSearchString">
-        <ItemTemplate >
-            <AllianceListItemComponent Alliance="@context" OnClick="OnItemClicked" />
+        <ItemTemplate>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(context.Id)"
+               @onclick="OnItemClicked">
+                <AllianceListItemComponent Alliance="@context"/>
+            </a>
         </ItemTemplate>
     </PaginatedStatsListComponent>
 }

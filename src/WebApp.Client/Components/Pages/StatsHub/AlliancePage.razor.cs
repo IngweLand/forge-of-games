@@ -43,11 +43,6 @@ public partial class AlliancePage : StatsHubPageBase
         }
     }
 
-    private void OnMemberClicked(int playerId)
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(playerId));
-    }
-
     private void ToggleRankingChart()
     {
         _rankingChartIsExpanded = !_rankingChartIsExpanded;
