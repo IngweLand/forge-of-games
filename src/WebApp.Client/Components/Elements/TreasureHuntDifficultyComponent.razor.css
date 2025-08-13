@@ -39,6 +39,10 @@
     font-size: 10px;
 }
 
+.preserve-whitespace {
+    white-space: pre;
+}
+
 @media (min-width: 576px) {
     .grid-container {
         column-gap: 16px;
