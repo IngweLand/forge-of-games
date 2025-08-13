@@ -27,6 +27,9 @@ public class ProfileSquadEntityTypeConfiguration : IEntityTypeConfiguration<Prof
 
         builder.HasIndex(p => p.UnitId);
         builder.HasIndex(p => p.Age);
+        builder.HasIndex(p => p.Level);
+        builder.HasIndex(p => p.AbilityLevel);
+        builder.HasIndex(p => p.AscensionLevel);
         builder.HasIndex(p => p.CollectedAt).IsDescending();
         builder.HasIndex(p => new {p.PlayerId, p.UnitId, p.CollectedAt}).IsUnique();
     }
