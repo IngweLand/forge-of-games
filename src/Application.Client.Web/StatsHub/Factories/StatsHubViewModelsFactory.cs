@@ -72,13 +72,17 @@ public class StatsHubViewModelsFactory(
             .Select(x => battleViewModelFactory.CreatePvpBattle(player, x, heroes, ages, barracks, relics))
             .ToList();
         var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
+        var currentAlliance = playerProfile.Alliances.FirstOrDefault(a => a.Id == playerProfile.Player.AllianceId);
+        var previousAlliances = playerProfile.Alliances.Where(a => a.Id != playerProfile.Player.AllianceId)
+            .OrderBy(a => a.IsDeleted).ThenByDescending(a => a.RankingPoints);
         return new PlayerProfileViewModel
         {
             Player = player,
             Ages = playerProfile.Ages.Select(a => new StatsTimedStringValue
                     {Date = a.Date, Value = ages[a.Value].Name})
                 .ToList(),
-            Alliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(playerProfile.Alliances),
+            CurrentAlliance = currentAlliance != null ? mapper.Map<AllianceViewModel>(currentAlliance) : null,
+            PreviousAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(previousAlliances),
             Names = playerProfile.Names.Count > 1
                 ? string.Join(", ", playerProfile.Names.Select(name => $"\"{name}\""))
                 : null,

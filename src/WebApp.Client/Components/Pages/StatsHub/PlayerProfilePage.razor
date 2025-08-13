@@ -172,12 +172,24 @@
             }
         }
 
-        @if (_player.Alliances.Count > 0)
+        @if (_player.CurrentAlliance != null || _player.PreviousAlliances.Count > 0)
         {
             <div class="fog-container section-container">
                 <span class="section-title">@Loc[FogResource.StatsHub_Player_Alliances]</span>
                 <div class="alliances-container">
-                    @foreach (var alliance in _player.Alliances)
+                    @if (_player.CurrentAlliance != null)
+                    {
+                        <a href="@FogUrlBuilder.PageRoutes.Alliance(_player.CurrentAlliance.Id)"
+                           class="anchor-inherited-style"
+                           @onclick="() => OnAllianceClicked(_player.CurrentAlliance.Id)">
+                            <AllianceListItemComponent Alliance="@_player.CurrentAlliance"/>
+                        </a>
+                    }
+                    @if (_player.CurrentAlliance != null && _player.PreviousAlliances.Count > 0)
+                    {
+                        <div class="alliance-list-spacer"></div>
+                    }
+                    @foreach (var alliance in _player.PreviousAlliances)
                     {
                         <a href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)" class="anchor-inherited-style"
                            @onclick="() => OnAllianceClicked(alliance.Id)">

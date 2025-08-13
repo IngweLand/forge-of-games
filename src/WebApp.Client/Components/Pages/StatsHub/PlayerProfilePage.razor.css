@@ -81,6 +81,10 @@ p {
     container-type: inline-size;
 }
 
+.alliance-list-spacer {
+    height: 24px;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -110,5 +114,9 @@ p {
 
     .alliances-container {
         margin-bottom: 24px;
+    }
+
+    .alliance-list-spacer {
+        height: 32px;
     }
 }
