@@ -105,8 +105,7 @@ public class TopHeroInsightsProcessor(
         logger.LogInformation(
             "Processing: mode - {mode}, age - {age}, from = {from}, to = {to}.", mode, age, from, to);
         sw.Restart();
-        var insightsResult = await heroInsightsService.GetAsync(mode, age, from, to,
-            CancellationToken.None);
+        var insightsResult = await heroInsightsService.GetAsync(mode, age, from, to, CancellationToken.None);
         sw.Stop();
         insightsResult.LogIfFailed<GetTopHeroesQueryHandler>();
         if (insightsResult.IsFailed)

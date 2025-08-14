@@ -35,15 +35,15 @@ public class HeroInsightsService(IFogDbContext context) : IHeroInsightsService
             case HeroInsightsMode.Top:
             {
                 result = await Result.Try(() => initQuery
-                        .GroupBy(x => x.Level)
+                    .Where(ps => initQuery
+                        .GroupBy(sub => sub.Level)
                         .OrderByDescending(g => g.Key)
+                        .Take(5)
                         .Select(g => g.Key)
-                        .Take(FogConstants.MAX_TOP_HERO_LEVELS_TO_RETURN)
-                        .ToHashSetAsync(cancellationToken))
-                    .Bind(topLevels => Result.Try(() => initQuery
-                        .Where(x => topLevels.Contains(x.Level))
-                        .Select(x => x.UnitId)
-                        .ToListAsync(cancellationToken)));
+                        .Contains(ps.Level))
+                    .Select(ps => ps.UnitId)
+                    .Distinct()
+                    .ToListAsync(cancellationToken));
                 break;
             }
             default:
