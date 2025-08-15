@@ -18,7 +18,7 @@
                           Style="background-color: var(--fog-surface-color)"
                           Value="@_heroSearchString" ValueChanged="@(s => OnHeroNameInputChanged(s))"/>
         </div>
-        <div class="heroes-container">
+        <div class="heroes-grid-layout">
             @foreach (var hero in _heroes)
             {
                 <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>

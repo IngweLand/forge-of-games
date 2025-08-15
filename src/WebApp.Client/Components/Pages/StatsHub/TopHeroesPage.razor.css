@@ -26,10 +26,6 @@
 }
 
 .items-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 4px;
     padding: 4px;
 }
 
@@ -58,7 +54,6 @@
     }
 
     .items-container {
-        gap: 16px;
         padding: 16px;
     }
 }

@@ -6,10 +6,10 @@
 @inject IStringLocalizer<FogResource> Loc
 <div class="fog-container component-root">
     <div class="title">@Title</div>
-    <div class="items-container">
+    <div class="heroes-grid-layout items-container">
         @foreach (var hero in Heroes)
         {
-            <a class="anchor-inherited-style" style="display: flex" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
                 <HeroItem Hero="@hero"/>
             </a>
         }

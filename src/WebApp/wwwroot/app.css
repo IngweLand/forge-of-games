@@ -475,6 +475,13 @@ img.command-center-card-icon {
 
 /*help end*/
 
+.heroes-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 70px);
+    gap: 12px 2px;
+    justify-content: space-evenly;
+    width: 100%;
+}
 
 @media (min-width: 576px) {
     .main-layout-main-content {
@@ -498,6 +505,11 @@ img.command-center-card-icon {
     .command-center-card.command-center-action-card {
         border: 2px dashed var(--fog-border-color);
     }
+
+    .heroes-grid-layout {
+        grid-template-columns: repeat(auto-fit, 80px);
+        gap: 16px 4px;
+    }
     
     /*help start*/
 
@@ -519,4 +531,24 @@ img.command-center-card-icon {
     }
 
     /*help end*/
+}
+
+@media (min-width: 768px) {
+
+    .heroes-grid-layout {
+        grid-template-columns: repeat(auto-fit, 90px);
+        gap: 24px 8px;
+    }
+}
+
+@media (min-width: 992px) {
+    .heroes-grid-layout {
+        grid-template-columns: repeat(auto-fit, 100px);
+    }
+}
+
+@media (min-width: 1400px) {
+    .heroes-grid-layout {
+        grid-template-columns: repeat(auto-fit, 120px);
+    }
 }

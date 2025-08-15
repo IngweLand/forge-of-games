@@ -1,13 +1,13 @@
 .cc-hero-collection-item  {
     display: flex;
     flex-direction: column;
-    flex: 0 0 70px;
     background-color: var(--fog-surface-color);
     border-radius: var(--fog-border-radius);
     border: 1px solid var(--fog-border-color);
     overflow: hidden;
     cursor: pointer;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    height: 100%;
 }
 
 .avatar-section {
@@ -67,17 +67,11 @@
     .main-label, .rating {
         font-size: 11px;
     }
-    .cc-hero-collection-item{
-        flex: 0 0 80px;
-    }
 }
 
 @media (min-width: 768px) {
     .main-label, .rating {
         font-size: 12px;
-    }
-    .cc-hero-collection-item{
-        flex: 0 0 90px;
     }
 }
 
@@ -85,16 +79,10 @@
     .main-label, .rating {
         font-size: 13px;
     }
-    .cc-hero-collection-item{
-        flex: 0 0 100px;
-    }
 }
 
 @media (min-width: 1400px) {
     .main-label, .rating {
         font-size: 14px;
-    }
-    .cc-hero-collection-item{
-        flex: 0 0 120px;
     }
 }
