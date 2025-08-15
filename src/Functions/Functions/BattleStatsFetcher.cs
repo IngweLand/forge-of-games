@@ -24,7 +24,7 @@ public class BattleStatsFetcher(
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
     [Function("BattleStatsFetcher")]
-    public async Task Run([TimerTrigger("0 20,50 6-23/1 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 50 7-23/1 * * *")] TimerInfo myTimer)
     {
         logger.LogInformation("BattleStatsFetcher started");
         var allBattleStatsIds = new HashSet<byte[]>(StructuralByteArrayComparer.Instance);
@@ -95,18 +95,6 @@ public class BattleStatsFetcher(
                 CollectedAt = now,
             };
 
-            try
-            {
-                await InGameRawDataTableRepository.SaveAsync(rawData,
-                    InGameRawDataTablePartitionKeyProvider.BattleStats(gameWorld.Id, DateOnly.FromDateTime(now)));
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e, "Error saving battle stats raw data: world {WorldId}, id {BattleId}", gameWorld.Id,
-                    battleIdString);
-                continue;
-            }
-            
             BattleStats battleStats;
             try
             {
@@ -115,6 +103,18 @@ public class BattleStatsFetcher(
             catch (Exception e)
             {
                 logger.LogError(e, "Error parsing battle stats raw data: world {WorldId}, id {BattleId}", gameWorld.Id,
+                    battleIdString);
+                continue;
+            }
+            
+            try
+            {
+                await InGameRawDataTableRepository.SaveAsync(rawData,
+                    InGameRawDataTablePartitionKeyProvider.BattleStats(gameWorld.Id, DateOnly.FromDateTime(now)));
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e, "Error saving battle stats raw data: world {WorldId}, id {BattleId}", gameWorld.Id,
                     battleIdString);
                 continue;
             }
