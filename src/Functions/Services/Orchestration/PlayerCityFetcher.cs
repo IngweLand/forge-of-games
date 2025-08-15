@@ -20,7 +20,7 @@ public class PlayerCityFetcher(
     protected IFogDbContext Context { get; } = context;
     protected ILogger<PlayerCityFetcher> Logger { get; } = logger;
 
-    public async Task RunAsync()
+    public async Task<bool> RunAsync()
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         Logger.LogDebug("Database warm-up completed");
@@ -53,8 +53,15 @@ public class PlayerCityFetcher(
         Logger.LogInformation(
             "PlayerCitiesFetcher completed. Processed {TotalPlayers} players, {SuccessCount} successful",
             players.Count, successCount);
+
+        return await HasMorePlayers();
     }
 
+    protected virtual Task<bool> HasMorePlayers()
+    {
+        return Task.FromResult(true);
+    }
+    
     protected virtual async Task<List<Player>> GetPlayers()
     {
         var monthAgo = DateTime.UtcNow.ToDateOnly().AddMonths(-1);

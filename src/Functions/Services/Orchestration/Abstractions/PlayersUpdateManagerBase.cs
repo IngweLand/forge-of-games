@@ -22,15 +22,17 @@ public abstract class PlayersUpdateManagerBase(
     ILogger<PlayersUpdateManagerBase> logger) : OrchestratorBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
-    public async Task RunAsync()
+    public async Task<bool> RunAsync()
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         Logger.LogDebug("Database warm-up completed");
 
         var removedPlayers = new HashSet<int>();
+        var hasMorePlayers = false;
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
             var players = await GetPlayers(gameWorld.Id);
+            hasMorePlayers = hasMorePlayers || await HasMorePlayers(gameWorld.Id);
             Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
             foreach (var player in players)
             {
@@ -70,7 +72,10 @@ public abstract class PlayersUpdateManagerBase(
                 "");
             Logger.LogInformation("Completed player status updater service update");
         }
+
+        return hasMorePlayers;
     }
 
     protected abstract Task<List<Player>> GetPlayers(string gameWorldId);
+    protected abstract Task<bool> HasMorePlayers(string gameWorldId);
 }

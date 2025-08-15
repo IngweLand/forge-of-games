@@ -1,5 +1,5 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface IPlayerCityFetcher : IOrchestratorBase
+public interface IPlayerCityFetcher : IOrchestrator
 {
 }

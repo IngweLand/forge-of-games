@@ -1,5 +1,5 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface ITopPlayersUpdateManager : IOrchestratorBase
+public interface ITopPlayersUpdateManager : IOrchestrator
 {
 }

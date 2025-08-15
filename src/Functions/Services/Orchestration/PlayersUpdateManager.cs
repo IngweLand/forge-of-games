@@ -54,4 +54,10 @@ public class PlayersUpdateManager(
 
         return players.Take(BATCH_SIZE).ToList();
     }
+
+    protected override Task<bool> HasMorePlayers(string gameWorldId)
+    {
+        // The total amount of players is big enough to assume that we always have more.
+        return Task.FromResult(true);
+    }
 }

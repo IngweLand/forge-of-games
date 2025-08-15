@@ -4,12 +4,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class PlayerCityFetcherTrigger(IPlayerCityFetcher playerCityFetcher, ILogger<PlayerCityFetcherTrigger> logger)
+public class TopPlayersCityFetcherTrigger(
+    ITopPlayersCityFetcher playerCityFetcher,
+    ILogger<TopPlayersCityFetcherTrigger> logger)
 {
-    [Function(nameof(PlayerCityFetcherTrigger))]
+    [Function(nameof(TopPlayersCityFetcherTrigger))]
     public Task<bool> Run([ActivityTrigger] object? _)
     {
-        logger.LogInformation("{activity} started.", nameof(PlayerCityFetcherTrigger));
+        logger.LogInformation("{activity} started.", nameof(TopPlayersCityFetcherTrigger));
         return playerCityFetcher.RunAsync();
     }
 }

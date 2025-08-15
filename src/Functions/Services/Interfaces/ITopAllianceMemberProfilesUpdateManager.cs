@@ -1,5 +1,5 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface ITopAllianceMemberProfilesUpdateManager : IOrchestratorBase
+public interface ITopAllianceMemberProfilesUpdateManager : IOrchestrator
 {
 }

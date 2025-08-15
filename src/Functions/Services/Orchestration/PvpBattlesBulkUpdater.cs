@@ -19,7 +19,7 @@ public class PvpBattlesBulkUpdater(
     DatabaseWarmUpService databaseWarmUpService) : OrchestratorBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger), IPvpBattlesBulkUpdater
 {
-    public async Task RunAsync()
+    public async Task<bool> RunAsync()
     {
         logger.LogInformation("Starting PvpBattlesBulkUpdater");
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
@@ -52,5 +52,6 @@ public class PvpBattlesBulkUpdater(
         }
         
         logger.LogInformation("Completed PvpBattlesBulkUpdater");
+        return false;
     }
 }

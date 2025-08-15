@@ -41,17 +41,17 @@ public class AutoDataProcessor(
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes =
         [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
 
-    [Function("AutoDataProcessor")]
-    public async Task Run([TimerTrigger("1 0 0 * * *")] TimerInfo myTimer)
+    [Function(nameof(AutoDataProcessor))]
+    public async Task Run([ActivityTrigger] object? _)
     {
+        var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
+        logger.LogInformation("{activity} started for date {date}", nameof(AutoDataProcessor), date);
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var playerAggregates = new List<PlayerAggregate>(32000);
         var allianceAggregates = new List<AllianceAggregate>(16000);
         var allConfirmedAllianceMembers =
             new List<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember>)>();
-        var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
-        logger.LogInformation("AutoDataProcessor started for date {date}", date);
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
             logger.LogInformation("Processing game world {gameWorldId}", gameWorld.Id);

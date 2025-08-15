@@ -1,6 +1,6 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface IOrchestratorBase
+public interface IOrchestrator
 {
-    Task RunAsync();
+    Task<bool> RunAsync();
 }

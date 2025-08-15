@@ -34,8 +34,19 @@ public class TopAllianceMemberProfilesUpdateManager(
     {
         Logger.LogDebug("Fetching players");
 
-        var today = DateTime.UtcNow.ToDateOnly();
+        var players = await Query(gameWorldId);
+        return players.Take(BATCH_SIZE).ToList();
+    }
 
+    protected override async Task<bool> HasMorePlayers(string gameWorldId)
+    {
+        var players = await Query(gameWorldId);
+        return players.Any();
+    }
+
+    private async Task<IEnumerable<Player>> Query(string gameWorldId)
+    {
+        var today = DateTime.UtcNow.ToDateOnly();
         var alliances = await context.Alliances
             .Include(x => x.Members).ThenInclude(x => x.Player)
             .Where(x => x.WorldId == gameWorldId)
@@ -44,8 +55,6 @@ public class TopAllianceMemberProfilesUpdateManager(
             .ToListAsync();
         return alliances
             .SelectMany(x => x.Members.Select(y => y.Player))
-            .Where(x => x.ProfileUpdatedAt < today)
-            .Take(BATCH_SIZE)
-            .ToList();
+            .Where(x => x.ProfileUpdatedAt < today);
     }
 }

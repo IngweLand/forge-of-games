@@ -1,13 +1,15 @@
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class PlayersUpdaterTrigger(IPlayersUpdateManager playersUpdateManager)
+public class PlayersUpdaterTrigger(IPlayersUpdateManager playersUpdateManager, ILogger<PlayersUpdaterTrigger> logger)
 {
-    [Function("PlayersUpdaterTrigger")]
-    public async Task Run([TimerTrigger("0 5/10 2-5 * * *")] TimerInfo myTimer)
+    [Function(nameof(PlayersUpdaterTrigger))]
+    public Task<bool> Run([ActivityTrigger] object? _)
     {
-        await playersUpdateManager.RunAsync();
+        logger.LogInformation("{activity} started.", nameof(PlayersUpdaterTrigger));
+        return playersUpdateManager.RunAsync();
     }
 }

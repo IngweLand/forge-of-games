@@ -22,9 +22,10 @@ public class BattlesProcessor(
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
-    [Function("BattlesProcessor")]
-    public async Task Run([TimerTrigger("0 10 0 * * *")] TimerInfo myTimer)
+    [Function(nameof(BattlesProcessor))]
+    public async Task Run([ActivityTrigger] object? _)
     {
+        logger.LogInformation("{activity} started.", nameof(BattlesProcessor));
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();

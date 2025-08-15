@@ -1,6 +1,5 @@
 namespace Ingweland.Fog.Functions.Services.Interfaces;
 
-public interface ITopAllianceMemberUpdateManager
+public interface ITopAllianceMemberUpdateManager:IOrchestrator
 {
-    Task RunAsync();
 }
