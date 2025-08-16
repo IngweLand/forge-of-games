@@ -1,0 +1,200 @@
+@using Ingweland.Fog.Application.Client.Web.Extensions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using SelectionMode = MudBlazor.SelectionMode
+<div class="component-root">
+    @if (_isAdvancedFilter)
+    {
+        <MudToggleGroup T="UnitType" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnUnitTypeChanged"
+                        Values="@FilterRequest.UnitTypes"
+                        Color="Color.Secondary">
+            @foreach (var t in _unitTypes)
+            {
+                <MudToggleItem Value="@t.UnitType">
+                    <div class="filter-icon">
+                        <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
+                    </div>
+                </MudToggleItem>
+            }
+        </MudToggleGroup>
+
+        <MudToggleGroup T="HeroClassId" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnHeroClassChanged"
+                        Values="@FilterRequest.Classes"
+                        Color="Color.Secondary">
+            @foreach (var t in _classes)
+            {
+                <MudToggleItem Value="@t.HeroClass">
+                    <div class="filter-icon">
+                        <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
+                    </div>
+                </MudToggleItem>
+            }
+        </MudToggleGroup>
+
+        <MudToggleGroup T="UnitColor" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnUnitColorChanged"
+                        Values="@FilterRequest.UnitColors"
+                        Color="Color.Secondary">
+            @foreach (var t in _unitColors)
+            {
+                <MudToggleItem Value="@t.UnitColor" Style="padding: 0">
+                        <div class="filter-icon"
+                             style="height: 100%; min-width: 40px; background-color: @(context ? t.UnitColor.ToCssColorVar() : "transparent")">
+                            <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
+                        </div>
+                </MudToggleItem>
+            }
+        </MudToggleGroup>
+
+        <MudToggleGroup T="HeroStarClass" SelectionMode="SelectionMode.MultiSelection"
+                        ValuesChanged="@OnHeroStartClassChanged"
+                        Values="@FilterRequest.StarClasses"
+                        Color="Color.Secondary">
+            @foreach (var t in _starClasses)
+            {
+                <MudToggleItem Value="@t.StarClass">
+                    <div class="filter-icon stars-container"
+                         style="color: @(context ? "var(--fog-text-on-dark-color)" : "var(--fog-text-color)")">
+                        @for (var i = 0; i < t.StarCount; i++)
+                        {
+                            <span>★</span>
+                        }
+                    </div>
+                </MudToggleItem>
+            }
+        </MudToggleGroup>
+        @if (!FilterRequest.IsEmpty())
+        {
+            <MudIconButton Icon="@Icons.Material.Outlined.FilterAltOff" OnClick="@OnResetFilter"/>
+        }
+    }
+    else
+    {
+        <MudTextField Variant="Variant.Outlined" DebounceInterval="300" T="string?" Immediate="true"
+                      Label="@Loc[FogResource.HeroSearchInput_Label]" Clearable="true"
+                      AdornmentIcon="@Icons.Material.Outlined.Search" Adornment="Adornment.End"
+                      AdornmentColor="Color.Inherit"
+                      Class="hero-name-search-input" Margin="Margin.Dense"
+                      Value="@SearchString" ValueChanged="@OnSearchStringChanged"/>
+    }
+
+    <MudToggleIconButton Icon="@Icons.Material.Outlined.FilterAlt" Toggled="@_isAdvancedFilter"
+                         ToggledChanged="OnFilterTypeChanged" Style="align-self: center; margin-left: 12px"
+                         ToggledIcon="@Icons.Material.Outlined.Search"></MudToggleIconButton>
+</div>
+
+@code {
+    private bool _isAdvancedFilter = true;
+
+    [Inject]
+    private IAssetUrlProvider AssetUrlProvider { get; set; }
+
+    private List<(UnitType UnitType, string IconUrl, string SelectedIconUrl)> _unitTypes = null!;
+    private List<(HeroClassId HeroClass, string IconUrl, string SelectedIconUrl)> _classes = null!;
+    private List<(UnitColor UnitColor, string IconUrl, string SelectedIconUrl)> _unitColors = null!;
+    private List<(HeroStarClass StarClass, int StarCount)> _starClasses = null!;
+
+    [Parameter]
+    [EditorRequired]
+    public HeroFilterRequest FilterRequest { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<HeroFilterRequest> OnFilterChanged { get; set; }
+
+    [Parameter]
+    public EventCallback<string?> OnSearchStringChanged { get; set; }
+
+    [Inject]
+    private IStringLocalizer<FogResource> Loc { get; set; }
+
+    [Parameter]
+    public string? SearchString { get; set; }
+
+    private HeroFilterRequest? _filterRequest;
+    private string? _searchString;
+
+    private async Task OnFilterTypeChanged(bool newValue)
+    {
+        _isAdvancedFilter = newValue;
+        if (_isAdvancedFilter)
+        {
+            _searchString = SearchString;
+            if(_filterRequest != null)
+            {
+                await OnFilterChanged.InvokeAsync(_filterRequest);
+            }
+        }
+        else
+        {
+            _filterRequest = FilterRequest with{};
+            await OnSearchStringChanged.InvokeAsync(_searchString);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        _unitTypes =
+        [
+            (UnitType.HeavyInfantry, AssetUrlProvider.GetHohIconUrl(UnitType.HeavyInfantry.GetTypeIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(UnitType.HeavyInfantry.GetTypeIconId())),
+            (UnitType.Cavalry, AssetUrlProvider.GetHohIconUrl(UnitType.Cavalry.GetTypeIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(UnitType.Cavalry.GetTypeIconId())),
+            (UnitType.Ranged, AssetUrlProvider.GetHohIconUrl(UnitType.Ranged.GetTypeIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(UnitType.Ranged.GetTypeIconId())),
+            (UnitType.Infantry, AssetUrlProvider.GetHohIconUrl(UnitType.Infantry.GetTypeIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(UnitType.Infantry.GetTypeIconId())),
+            (UnitType.Siege, AssetUrlProvider.GetHohIconUrl(UnitType.Siege.GetTypeIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(UnitType.Siege.GetTypeIconId())),
+        ];
+
+        _classes =
+        [
+            (HeroClassId.Defender, AssetUrlProvider.GetHohIconUrl(HeroClassId.Defender.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.Defender.GetClassIconId())),
+            (HeroClassId.Healer, AssetUrlProvider.GetHohIconUrl(HeroClassId.Healer.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.Healer.GetClassIconId())),
+            (HeroClassId.Supporter, AssetUrlProvider.GetHohIconUrl(HeroClassId.Supporter.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.Supporter.GetClassIconId())),
+            (HeroClassId.AreaAttacker, AssetUrlProvider.GetHohIconUrl(HeroClassId.AreaAttacker.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.AreaAttacker.GetClassIconId())),
+            (HeroClassId.Manipulator, AssetUrlProvider.GetHohIconUrl(HeroClassId.Manipulator.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.Manipulator.GetClassIconId())),
+            (HeroClassId.SingleStriker, AssetUrlProvider.GetHohIconUrl(HeroClassId.SingleStriker.GetClassIconId() + "_neutral"), AssetUrlProvider.GetHohIconUrl(HeroClassId.SingleStriker.GetClassIconId())),
+        ];
+
+        _unitColors =
+        [
+            (UnitColor.Yellow, AssetUrlProvider.GetHohIconUrl(UnitColor.Yellow.GetColorIconId(UnitColor.Yellow)), AssetUrlProvider.GetHohIconUrl(UnitColor.Yellow.GetColorIconId())),
+            (UnitColor.Green, AssetUrlProvider.GetHohIconUrl(UnitColor.Green.GetColorIconId(UnitColor.Green)), AssetUrlProvider.GetHohIconUrl(UnitColor.Green.GetColorIconId())),
+            (UnitColor.Purple, AssetUrlProvider.GetHohIconUrl(UnitColor.Purple.GetColorIconId(UnitColor.Purple)), AssetUrlProvider.GetHohIconUrl(UnitColor.Purple.GetColorIconId())),
+            (UnitColor.Blue, AssetUrlProvider.GetHohIconUrl(UnitColor.Blue.GetColorIconId(UnitColor.Blue)), AssetUrlProvider.GetHohIconUrl(UnitColor.Blue.GetColorIconId())),
+            (UnitColor.Red, AssetUrlProvider.GetHohIconUrl(UnitColor.Red.GetColorIconId(UnitColor.Red)), AssetUrlProvider.GetHohIconUrl(UnitColor.Red.GetColorIconId())),
+        ];
+
+        _starClasses =
+        [
+            (HeroStarClass.Star_2, 2),
+            (HeroStarClass.Star_3, 3),
+            (HeroStarClass.Star_4, 4),
+            (HeroStarClass.Star_5, 5),
+        ];
+    }
+
+    private Task OnUnitTypeChanged(IEnumerable<UnitType>? unitTypes)
+    {
+        return OnFilterChanged.InvokeAsync(FilterRequest with {UnitTypes = unitTypes?.ToList() ?? []});
+    }
+
+    private Task OnHeroClassChanged(IEnumerable<HeroClassId>? classes)
+    {
+        return OnFilterChanged.InvokeAsync(FilterRequest with {Classes = classes?.ToList() ?? []});
+    }
+
+    private Task OnUnitColorChanged(IEnumerable<UnitColor>? unitColors)
+    {
+        return OnFilterChanged.InvokeAsync(FilterRequest with {UnitColors = unitColors?.ToList() ?? []});
+    }
+
+    private Task OnHeroStartClassChanged(IEnumerable<HeroStarClass>? starClasses)
+    {
+        return OnFilterChanged.InvokeAsync(FilterRequest with {StarClasses = starClasses?.ToList() ?? []});
+    }
+
+    private Task OnResetFilter()
+    {
+        return OnFilterChanged.InvokeAsync(HeroFilterRequest.Empty);
+    }
+
+}

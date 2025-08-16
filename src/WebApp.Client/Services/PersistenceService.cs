@@ -110,16 +110,6 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         return localStorageService.GetItemAsync<T>(key);
     }
 
-    public ValueTask SaveSubmissionId(Guid submissionId)
-    {
-        throw new NotImplementedException();
-    }
-
-    public ValueTask<Guid?> GetSubmissionId()
-    {
-        throw new NotImplementedException();
-    }
-
     public async ValueTask<bool> DeleteCity(string cityId)
     {
         var key = GetCityKey(cityId);

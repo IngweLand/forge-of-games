@@ -1,75 +1,77 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)]
-@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@using Ingweland.Fog.WebApp.Client.Constants
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IHeroProfileUiService HeroProfileUiService
-@inject NavigationManager NavigationManager
-@if (_allHeroes != null)
+@inject IPersistenceService PersistenceService
+@if (_heroes != null)
 {
     <div class="component-root">
-        <div class="hero-name-container">
-            <MudTextField Variant="Variant.Outlined" DebounceInterval="300" T="string" Immediate="true"
-                          Label="@Loc[FogResource.HeroSearchInput_Label]" Clearable="true"
-                          AdornmentIcon="@Icons.Material.Outlined.Search" Adornment="Adornment.End"
-                          AdornmentColor="Color.Inherit"
-                          Style="background-color: var(--fog-surface-color)"
-                          Value="@_heroSearchString" ValueChanged="@(s => OnHeroNameInputChanged(s))"/>
+        <div class="fog-container filter-container">
+            <HeroFilterComponent FilterRequest="@_filterRequest" SearchString="@_searchString"
+                                 OnFilterChanged="@OnFilterChanged" OnSearchStringChanged="@OnSearch"/>
         </div>
         <div class="heroes-grid-layout">
             @foreach (var hero in _heroes)
             {
-                <HeroItem Hero="@hero" OnClick="OpenHeroPage"/>
+                <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+                    <HeroItem Hero="@hero"/>
+                </a>
             }
         </div>
     </div>
 }
 
 @code {
-    private IReadOnlyCollection<HeroBasicViewModel>? _allHeroes;
-    private List<HeroBasicViewModel> _heroes = [];
-    private string _heroSearchString = string.Empty;
+    private IReadOnlyCollection<HeroBasicViewModel>? _heroes;
+    private string? _searchString = string.Empty;
+
+    private HeroFilterRequest _filterRequest = HeroFilterRequest.Empty;
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
 
-        _allHeroes = await LoadWithPersistenceAsync(
-            nameof(_allHeroes),
+        _heroes = await LoadWithPersistenceAsync(
+            nameof(_heroes),
             async () => await HeroProfileUiService.GetHeroes()
         );
 
-        _heroes = _allHeroes?.ToList() ?? [];
-    }
-
-    private void OpenHeroPage(string heroId)
-    {
-        NavigationManager.NavigateTo($"{NavigationManager.Uri}/{heroId}");
-    }
-
-    private void OnHeroNameInputChanged(string value)
-    {
-        if (_heroSearchString == value)
+        if (OperatingSystem.IsBrowser())
         {
-            return;
+            var savedRequest = await PersistenceService.GetItemAsync<HeroFilterRequest?>(PersistenceKeys.HERO_FILTER_REQUEST);
+            if (savedRequest != null)
+            {
+                _filterRequest = savedRequest;
+                _heroes = await HeroProfileUiService.GetHeroes(_filterRequest);
+            }
         }
-        _heroSearchString = value;
-        Search();
     }
 
-    private void Search()
+    private async Task OnSearch(string? value)
     {
-        if (_allHeroes == null || _allHeroes.Count == 0)
+        _searchString = value;
+        if (string.IsNullOrWhiteSpace(value))
         {
-            return;
+            _heroes = await HeroProfileUiService.GetHeroes();
         }
+        else
+        {
+            _heroes = await HeroProfileUiService.GetHeroes(_searchString!);
+        }
+        
+    }
 
-        _heroes = string.IsNullOrWhiteSpace(_heroSearchString)
-            ? _allHeroes.ToList()
-            : _allHeroes.Where(x => x.Name.Contains(_heroSearchString, StringComparison.InvariantCultureIgnoreCase))
-                .ToList();
+    private async Task OnFilterChanged(HeroFilterRequest request)
+    {
+        _filterRequest = request;
+        await PersistenceService.SetItemAsync(PersistenceKeys.HERO_FILTER_REQUEST, _filterRequest);
+        _heroes = await HeroProfileUiService.GetHeroes(_filterRequest);
     }
 
 }

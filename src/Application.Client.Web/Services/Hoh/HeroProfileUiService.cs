@@ -1,9 +1,7 @@
-using System.Globalization;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Calculators.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -25,7 +23,7 @@ public class HeroProfileUiService : IHeroProfileUiService
     private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly IBuildingLevelRangesFactory _buildingLevelRangesFactory;
     private readonly IHohCoreDataCache _coreDataCache;
-    private readonly Lazy<Task<IReadOnlyCollection<HeroBasicViewModel>>> _heroList;
+    private readonly Lazy<Task<IReadOnlyDictionary<string, HeroBasicViewModel>>> _heroList;
     private readonly IHeroProfileIdentifierFactory _heroProfileIdentifierFactory;
     private readonly IHohHeroProfileViewModelFactory _heroProfileViewModelFactory;
     private readonly IHeroProgressionCalculators _heroProgressionCalculators;
@@ -33,6 +31,8 @@ public class HeroProfileUiService : IHeroProfileUiService
     private readonly IMapper _mapper;
     private readonly IPersistenceService _persistenceService;
     private readonly IUnitService _unitService;
+
+    private IReadOnlyCollection<HeroBasicDto> _heroes = [];
 
     public HeroProfileUiService(
         IPersistenceService persistenceService,
@@ -57,7 +57,7 @@ public class HeroProfileUiService : IHeroProfileUiService
         _assetUrlProvider = assetUrlProvider;
         _mapper = mapper;
 
-        _heroList = new Lazy<Task<IReadOnlyCollection<HeroBasicViewModel>>>(DoGetHeroesAsync);
+        _heroList = new Lazy<Task<IReadOnlyDictionary<string, HeroBasicViewModel>>>(DoGetHeroesAsync);
     }
 
     public async Task<IconLabelItemViewModel> CalculateAbilityCostAsync(AbilityCostRequest request)
@@ -82,9 +82,49 @@ public class HeroProfileUiService : IHeroProfileUiService
         Task.Run(async () => { await _persistenceService.SaveHeroProfileAsync(identifier); });
     }
 
-    public Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes()
+    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(HeroFilterRequest request)
     {
-        return _heroList.Value;
+        var heroVms = await _heroList.Value;
+        var query = _heroes.AsEnumerable();
+
+        if (request.Classes.Count > 0)
+        {
+            query = query.Where(x => request.Classes.Contains(x.ClassId));
+        }
+
+        if (request.UnitColors.Count > 0)
+        {
+            query = query.Where(x => request.UnitColors.Contains(x.UnitColor));
+        }
+
+        if (request.UnitTypes.Count > 0)
+        {
+            query = query.Where(x => request.UnitTypes.Contains(x.UnitType));
+        }
+
+        if (request.StarClasses.Count > 0)
+        {
+            query = query.Where(x => request.StarClasses.Contains(x.StarClass));
+        }
+
+        query = query.OrderBy(x => x.Name);
+        var result = query.ToList();
+
+        return result.Select(x => heroVms[x.Id]).ToList();
+    }
+
+    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(string searchString)
+    {
+        var heroVms = await _heroList.Value;
+        return heroVms
+            .Where(kvp => kvp.Value.Name.Contains(searchString, StringComparison.InvariantCultureIgnoreCase))
+            .Select(kvp => kvp.Value).OrderBy(x => x.Name).ToList();
+    }
+
+    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes()
+    {
+        var heroVms = await _heroList.Value;
+        return heroVms.Values.ToList();
     }
 
     public Task<HeroDto?> GetHeroAsync(string heroId)
@@ -135,10 +175,10 @@ public class HeroProfileUiService : IHeroProfileUiService
             _heroProgressionCalculators.CalculateProgressionCost(hero!, request.CurrentLevel, request.TargetLevel));
     }
 
-    private async Task<IReadOnlyCollection<HeroBasicViewModel>> DoGetHeroesAsync()
+    private async Task<IReadOnlyDictionary<string, HeroBasicViewModel>> DoGetHeroesAsync()
     {
-        return _mapper.Map<IReadOnlyCollection<HeroBasicViewModel>>(await _unitService.GetHeroesBasicDataAsync())
-            .OrderBy(x => x.Name).ToList();
+        _heroes = await _unitService.GetHeroesBasicDataAsync();
+        return _mapper.Map<IReadOnlyCollection<HeroBasicViewModel>>(_heroes).ToDictionary(x => x.Id);
     }
 
     private BuildingLevelRange GetBarracksLevels(IReadOnlyCollection<BuildingDto> barracks, UnitType unitType)

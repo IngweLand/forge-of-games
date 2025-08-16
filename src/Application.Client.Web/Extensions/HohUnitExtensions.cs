@@ -18,10 +18,16 @@ public static class HohUnitExtensions
             _ => throw new ArgumentOutOfRangeException(nameof(unitType), unitType, null),
         };
     }
-    
+
     public static string GetClassIconId(this HeroClassId classId)
     {
         return $"icon_class_{classId.ToString().ToLowerInvariant()}";
+    }
+
+    public static string GetColorIconId(this UnitColor unitColor, UnitColor iconColor = UnitColor.Undefined)
+    {
+        var finalIconColor = iconColor == UnitColor.Undefined ? "white" : iconColor.ToString().ToLowerInvariant();
+        return $"icon_colour_{unitColor.ToString().ToLowerInvariant()}_{finalIconColor}";
     }
 
     public static string ToCssColor(this UnitColor color)
@@ -49,7 +55,7 @@ public static class HohUnitExtensions
             _ => "var(--fog-units-neutral-color)",
         };
     }
-    
+
     public static int ToStarCount(this HeroStarClass starClass)
     {
         return starClass switch

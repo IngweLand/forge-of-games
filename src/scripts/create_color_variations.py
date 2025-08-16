@@ -41,6 +41,7 @@ colors = {
     "yellow": "#FFAA00",
     "purple": "#7C3BE8",
     "neutral": "#34495E",
+    "white": "#ffffff",
 }
 
 create_color_variations(r"D:\Temp\New folder", colors)

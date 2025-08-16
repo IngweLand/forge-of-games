@@ -9,6 +9,8 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 
 public interface IHeroProfileUiService
 {
+    Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(HeroFilterRequest request);
+    Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(string searchString);
     Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes();
     Task<HeroProfileIdentifier?> GetHeroProfileIdentifierAsync(string heroId);
     Task<HeroProfileViewModel?> GetHeroProfileAsync(HeroProfileIdentifier identifier);
