@@ -344,6 +344,9 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_NameDe
 $Base.IngameEvents.SeasonPass_10_NameGolven van wijsheid
 D
 'Base.Resources.purple_crest_common_NameGewone paarse wapenschild
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
+Longbowmen
 K
 6Base.Abilities.hero_battle_ability.RomanCenturion_NameSchildpadformatie
 H
@@ -653,6 +656,8 @@ $
 Base.OptionsPopup.LogoutAfmelden
 ê
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescPDe Hero Academy produceert Ervaringsrollen tegen de kosten van Onderzoekspunten.
+<
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
 û
 !Base.Alerts.ServerUnavailableTextyDe Heroes of History-servers zijn tijdelijk niet beschikbaar. Bedankt voor uw geduld terwijl we aan dit probleem werken.
 
@@ -994,6 +999,8 @@ B
 Grote zaal
 N
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameLandelijke boerderij
+
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name†<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
 D
 .Base.SpartasLastStandInfoPopup.UpperLaneHeaderBovenste rijstrook
 r
@@ -1239,6 +1246,8 @@ F
 "Base.Rifts.rift.CommonSpecial_Name Legenda Bonanza voor nieuwkomers
 ‚
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_DescˇMaar de goden willen nog meer. We moeten een paar super coole voli√®res bouwen <style=MC></style> voor de heilige quetzal- en ara-vogels, waarvan <nobr>de<style=MC>Veer</style> <sprite name=resource.feathers_cta></nobr> boodschappen naar de hemel brengen.
+@
+*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 x
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_DescAMet deze selectiekit kun je kiezen tussen verschillende goederen.
 &
@@ -1969,6 +1978,8 @@ m
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_Desc1Wil je meer geld? Laten we dan dit goud opgraven!
 c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLyceum der Geleerden
+N
+)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 ,
 Base.InventoryMenuPanel.Header
 Inventaris
@@ -2205,6 +2216,8 @@ P
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameMasker Beeldhouwer
 ∫
 &Tutorial.HeroLevelTutorial.ExplainFoodèWij <style=MC>HELDEN</style> hebben ook honger. Een <style=MC>LEVEL UP</style> vereist <style=MC>VOEDSEL</style> uit de <style=MC>STAD</style>.
+N
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
 L
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameBoogschutters uit Vikingen
 Q
@@ -2776,6 +2789,8 @@ C
 GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeaderEvenement Voortgang
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_NameFontein
+<
+Base.OptionsPopup.CodeInputEnter your Promo Code here...
 :
 &Base.HarborShopPanel.Alliance.ShopNameAlliantie Winkel
 <
@@ -2847,6 +2862,8 @@ Robin Hood
 (
 Base.CampaignPanel.Rewards
 Beloningen
++
+!Base.SellEquipmentPopup.SubHeaderReward
 6
 &Base.HarborShopPanel.PvPArena.ShopNameArena Winkel
 õ
@@ -3368,8 +3385,12 @@ IBase.StoryText.Story_Questline_StoneAge_Foundations_QuestStart_Text2_Desc¡Je 
 Base.Relics.TheHolyGrail_Desc¬De Ridders van Camelot gaan op zoek naar de Heilige Graal om hun waarde te bewijzen. Eerst was het Percival die de Graal zocht, een Keltische ridder die ridderlijkheid nastreefde. Daarna kwam Gawain, heldhaftig en nobel, Arthurs naaste metgezel. Galahad was de volgende, zoon van Lancelot, een jongeman die als geen ander wonderen kon verrichten en kon duelleren. Naarmate de tijd verstreek, werd de jacht vreemder. De Tempeliers, de Katharen, een zekere fedora-dragende archeoloog, ruimtevaarders en rappers en videospelfiguren, fictie zit vol met jagers.<br><br>Maar niemand kon vermoeden dat jij degene zou zijn die het zou vinden! Zijn magie verjongt, geneest wonden en voorkomt veroudering. Als symbool van deugd herinnert het de Helden ook aan de juistheid van hun daden, net zoals het een baken was voor de Ridders van Camelot.
 ë
 !Base.Resources.hero.Hercules_DesclGebruikt om het Ontwakingslevel van Hercules te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
+$
+Base.CommunityPopup.RedditReddit
 D
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_Name	Puntdaken
+ú
+-Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
 K
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameTempel van Magma
 -
@@ -3446,6 +3467,8 @@ h
 Base.Generic.ErrorUnavailableGDe naam kan momenteel niet worden gewijzigd. Probeer het later opnieuw.
 √
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_DescyH√©, Leider! We hebben een vijand! Die <style=MC>Bottenbrekers</style> dreigen met een tegenaanval! Laten we ze verslaan!
+™
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_NameŸ<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
 ?
 0Base.Buildings.Building_Mayas_Home_Priest_1_NameVakwerkhuis
 =
@@ -3711,6 +3734,8 @@ G
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchGeen overeenkomst
 G
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidiaangroeve
+E
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
 C
 0Base.Buildings.Building_Mayas_Home_Worker_1_NameArbeiderswoning
 0
@@ -4280,6 +4305,8 @@ R
 Base.Units.Unit_Pythagoras_Desc—Onderzoek je ziel en leef ondergronds met Pythagoras, een oude Griekse filosoof en wiskundige uit de 6e eeuw voor Christus! Hoewel zijn leven gehuld is in mythe en mysterie, is hij vooral bekend vanwege de stelling van Pythagoras, waarmee hij de grondbeginselen van de meetkunde vastlegde en daarmee verantwoordelijk was voor de hoofdlessen van miljoenen schoolkinderen over de hele wereld.<br><br>In Croton stichtte hij een school waar zijn volgelingen, de Pythagoree√´rs, zowel wiskunde als muziektheorie, astronomie en ethiek onderzochten, omdat ze geloofden dat getallen centraal stonden bij het begrijpen van het universum. Deze allesomvattende benadering benadrukte de onderlinge verbondenheid van verschillende gebieden.<br><br>Zijn leer liet een blijvende erfenis na, die toekomstige generaties be√Ønvloedde en het Westerse denken vormgaf. Het werk van Pythagoras blijft een hoeksteen van wiskundige en filosofische studies en inspireert vandaag de dag nog steeds tot onderzoek en exploratie. Minder bekend is zijn zelfvertrouwen: Volgens de legende beet een giftige slang hem terug en doodde hem!
 r
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarning:Deze held heeft al het maximale vaardigheidslevel bereikt!
+J
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
 :
 !Base.Resources.hero.Hercules_NameEssentie van Hercules
 K
@@ -4296,6 +4323,8 @@ K
 5Base.WorldWondersOverviewPanel.AllianceResourceHeaderAlliantie Goederen
 °
 +Base.QuestlinesPanel.WonderContributionTask7Vervul <b>{0}</b> wonderhulpverzoek van andere spelers.9Vervul <b>{0}</b> wonderhulpverzoeken van andere spelers.
+O
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
 3
 'Base.UnitStats.unit_stat.Shield_PercentSCHILD %
 ∂
@@ -4465,6 +4494,8 @@ O
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_DescProduceert papyrus
 {
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescGMet deze selectiekit kun je kiezen tussen Voedsel- en Onderzoekspunten.
+k
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
 1
 Base.UnlockableFeatures.RiftEinsteins Portaal
 7
@@ -4757,6 +4788,8 @@ Bouwen en upgraden van de Afstandstroepenkazerne om de ATK, DEF en HP van afstan
 
 O
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_NameKleine boerderij
+B
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
 ?
 Base.EventShop.NoOffers$Momenteel zijn er geen aanbiedingen.
 I
@@ -5112,6 +5145,8 @@ G
 Verzamelen
 G
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_NamePapyrusrollen
+B
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
 Ü
 Base.Resources.amethyst_DescfEen kostbare edelsteen die vereist is om bepaalde technologie√´n van het Romeinse Rijk te onderzoeken.
 ,
@@ -5514,6 +5549,8 @@ J
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_NameLuxe woning
 E
 ,Base.IngameEvents.Event_ForgeOfVulcan_3_NameSmederij van Vulcanus
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_NameRoutiers
 m
 4Base.WonderCollections.StoriesAndMyths_FormattedName5<size=34px>Wonderen van</size><br> Verhalen en Mythen
 B
@@ -5778,6 +5815,8 @@ I
 Paviljoens
 A
 2Base.UnitStats.unit_stat.CritChance_Percent_AbbrevKRIT KANS %
+>
+-Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
 T
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescProduceert veel papyrus
 7
@@ -6476,6 +6515,8 @@ D
 -Base.TeslaStormsPanel.OnlySpecificColorHeroes{0} heldenuitdaging
 a
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_NameOnderzoeksselectiekit 2-1
+˛
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo≈At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 b
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_DescOntgrendelt Hellebaardiers
 æ
@@ -7006,6 +7047,8 @@ o
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabel&Volgende gegarandeerde blauwdruk over:
 .
 Base.RiftInfoPopup.PityTabTroostmechanisme
+ô
+Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 Ñ
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_DescPOntvang meteen een heleboel Antimaterie, plus een week lang elke dag twee extra!
 f
@@ -7422,6 +7465,8 @@ M
 &Base.BuildingGroups.premiumQuarry_NameLuxe SteengroeveLuxe steengroeven
 7
  Base.AccountSettingsPopup.HeaderAccountinstellingen
+•
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 ©
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_DescÀNu is het tijd om onze ambachtslieden aan het werk te zetten om <nobr><style=MC>Vooroudermaskers</style> <sprite name=resource.ancestor_mask_cta></nobr> te maken die oude wijsheid oproepen. Deze maskers <style=MC>slaan een brug tussen werelden</style>, zodat onze voorouders getuige kunnen zijn van onze inspanningen bij deze taak.
 z
@@ -8012,6 +8057,8 @@ w
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_DescAMet deze selectiekit kun je kiezen tussen verschillende goederen.
 t
 -Base.VideoPlacementButton.RunOutOfImpressionsCJe hebt vandaag al je videobeloningen opgebruikt! Kom morgen terug!
+_
+0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
 R
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeaderVijandelijke paaien
 u
@@ -8056,6 +8103,8 @@ a
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_DescàVanavond hebben we het voor elkaar. We hebben de klok verslagen en gewonnen! Nu gaan we deze overwinning vieren met alles wat we hebben.
 ò
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_DescUMet deze selectiekit kun je kiezen uit gewone wapenschilden in verschillende kleuren.
+¢
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 ]
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeeded Mogelijke benodigde grondstoffen
 h
@@ -8139,6 +8188,8 @@ K
 -Base.Factions.Faction_MinoanEra_Spartans_Name	Spartanen
 W
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_NameAfstandstroepenkazerne
+r
+1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
 Ó
 +Tutorial.TeslaStormsTutorial.StageSelectionæAlleen <style=MC>RODE</style> helden kunnen deze <style=MC>RAMP</style> doorstaan. We verslaan <style=MC>TESLA</style> samen en verdienen kostbare <style=MC>ELEMENTALE wapenschilden</style>.
 B
@@ -8503,6 +8554,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 Base.Resources.mead_Desc|Mede is een essenti√´le grondstof die nodig is om verfijnde grondstoffen te maken. Het kan worden geproduceerd in Taveernen.
 .
 Base.Resources.greek_lyre_NameGriekse Lier
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_NameMangonel
 @
 /Base.Buildings.Building_Egypt_Home_Small_5_NameKleine woning
 u
@@ -8922,6 +8975,8 @@ $Base.HeroPanel.EquipWillUnequipRelic)Dit relikwie zal worden Uitgerust van {0}
 #Base.Resources.hero.MarieCurie_NameEssentie van Marie Curie
 L
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NamePapyrusatelier
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 L
 *Base.ShopPopup.Pages.forge_of_vulcan_eventSmederij van Vulcan Aanbieding
 6
@@ -8999,6 +9054,8 @@ VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Tex
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_DescpHet lijkt erop dat we geslaagd zijn. De stilte die volgt suggereert dat er een verandering heeft plaatsgevonden.
 E
  Base.SeasonPass.BuyGoldPassTitle!Koop je gouden seizoenspasticket!
+E
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
 :
 ,Base.KeyboardShortcuts.Description.Inventory
 Inventaris
@@ -9352,6 +9409,8 @@ T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_NameInfanteriekazerne
 y
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
+e
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
 X
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_NameVerlicht medaillon
 O
@@ -9892,6 +9951,8 @@ D
 'Base.Expansions.Expansion_China_24_NameWestelijk Mottendalgebied
 G
 #Base.SeasonPass.SeasonCompletedText Het volgende seizoen begint over
+G
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
 Û
 !Base.Units.Unit_AttilaTheHun_DescÕHet is de man die bijna Het Romeinse Rijk ten val bracht, Attila de Hun! Deze keizer uit de 5e eeuw stond bekend om zijn militaire dapperheid en strategische genie.<br><br>Attila voerde het bevel over een grote coalitie van stammen en voerde campagnes door Europa, waarbij hij het Romeinse Rijk in het Oosten versloeg. Nadat hem een schatting was aangeboden, begon hij een mars naar Rome die door zijn dood werd gestopt.<br><br>Attila's nalatenschap is rijk aan verhalen over zijn militaire heldendaden en charismatisch leiderschap, waardoor hij een indrukwekkend figuur is in het tapijt van de Europese geschiedenis. Minder bekend is zijn troetelkonijn, Attila the Bun, die hem naar verluidt vergezelde op campagnes!
 *
@@ -10006,6 +10067,8 @@ K
 Base.OptionsPopup.StartNewCityEen nieuwe stad beginnen
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_NameKanaal
+ç
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 *
 Base.Heroes.hero.Hercules_NameHercules
 @
@@ -10163,6 +10226,8 @@ Y
 Base.EventRewardLane.Earned{0}/{1} verdiend
 Ω
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_DescÑDat klopt, <style=MC>oude vriend</style>. Laat deze mooie ruzies links liggen. Volg mij en vecht voor de <style=MC>Toekomst</style>.
+P
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 ú
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescWMet deze Selectiekit kun je kiezen tussen verschillend gekleurde Verbeterde wapenkeuze.
 
@@ -10327,6 +10392,9 @@ B
 Base.Units.Unit_Leonidas_NameLeonidas I.
 W
 ,Base.EquipmentSets.equipment_set.Hunter_Desc'Aanval <style=basestat_dark>+15</style>
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
+Cavalrymen
 L
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameValkerij Handschoen
 Õ
@@ -10354,6 +10422,8 @@ L
 #Base.Resources.alliance_timber_NameAlliantie Hout
 0
  Base.ShopPopup.Pages.city_bundleStedenbundel
+*
+Base.Resources.doubloons_Name	Doubloons
 Æ
 4Base.Buildings.Building_Vikings_City_CityHall_2_DescvDe grote zaal is het middelpunt van je stad. Hier wordt voortdurend een kleine hoeveelheid centen voor je gegenereerd.
 2
@@ -10466,6 +10536,8 @@ k
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_DescDit moeten we onderzoeken!
 V
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_DescVrijspelen Routiers
+_
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
 h
 )Base.Resources.yellow_crest_enhanced_Desc;Gele wapenschilden zijn nodig om gele helden te versterken.
 z
@@ -10871,6 +10943,8 @@ X
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescVerfijnt kaolien tot klei
 E
 Base.Tutorial.WonderBlocked&Je kunt dat wonder nu niet selecteren.
+#
+Base.EquipmentItemView.SoldSold
 r
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc7Produceert munten en voegt een arbeider aan je stad toe
 û
@@ -11724,6 +11798,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc¿Ik stel
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_DescNDat is jouw roem, Leonidas. Je sterft als een held bij de pas van Thermopylae.
 E
 &Base.Alerts.AccountBannedTimeRemainingResterende geschorste tijd:
+V
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 =
 'Base.MergeItems.WorldFair_Bronze_5_NameArtefact - Level 5
 <
@@ -12079,6 +12155,8 @@ U
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_DescGProduceert een grote stapel munten en voegt 2 arbeiders toe aan je stad
 ¸
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Nameß<style=ability_label>Melee Aanval| Buff</style>Miyamoto slaat zijn huidige doelwit vier keer voor een totaal van <style=basestat>{dmg_percentage}</style> schade. Verhoogt ook zijn kans op een kritieke treffer met <style=basestat>{crit_percentage}</style> voor <style=basestat>{duration}</style>.
+R
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
 :
 0Base.Technologies.Technology_BronzeAge_Barn_NameSchuur
 M
@@ -12215,6 +12293,8 @@ B
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_DescíJe hebt onze Ateliers met groot vakmanschap opgericht. Laten we ons nu richten op het Upgraden van <style=MC>Sayil Paleis</style> zelf, want alleen door zijn grootse pracht zullen rivaliserende leiders onze kracht erkennen en genoodzaakt zijn allianties met ons aan te gaan.
 _
 %Base.BattleSetupPanel.OpenAbilityInfo6Held lang indrukken om info over vaardigheid te openen
+K
+Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_NameLevel 33
 M
@@ -12280,6 +12360,8 @@ u
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc9Produceert Munten en voegt een Questgever toe aan je stad
 &
  Base.HeroFilterPopover.HitPointsHP
+X
++Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 s
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc7Produceert munten en voegt een arbeider toe aan je stad
 R
@@ -12648,6 +12730,8 @@ j
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name2Wereldtentoonstelling Evenement opdrachtenreeks II
 #
 Base.AllianceBlimps.BuildBouwen
+I
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_1_NameVoli√®re
 õ
@@ -14325,6 +14409,8 @@ t
 'Base.Cities.City_Mayas_SayilPalace_NameMayarijk
 ù
 *Base.Resources.hero.AztecTlacateccatl_DescoGebruikt om het Ontwakingslevel van Cuauht√©moc te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
+E
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 ù
 #Base.Resources.frankish_fibula_DescvEen stuk middeleeuwse sieraden dat nodig is om bepaalde technologie√´n uit het Tijdperk van de Franken te onderzoeken.
 F
@@ -14601,6 +14687,8 @@ D
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_DesckMislukt d'Arc, ook al lijkt het alsof alles verloren is, er is een licht in je dat nooit gedimd kan worden.
 G
 (Base.TreasureHuntStartedPopup.JoinButtonDeelnemen aan schattenjacht
+H
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
 G
 #Base.Resources.material_temple_NameTempelmateriaalTempelmateriaal
 F
@@ -14916,6 +15004,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc∆Je h
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_DescWMet deze Selectiekit kun je kiezen uit verschillend gekleurde superieure wapenschilden.
 Q
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameCavaleriekazernes
+1
+Base.SellEquipmentPopup.HeaderSell Equipment?
 T
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameSinaasappelplantage
 =
@@ -14933,6 +15023,8 @@ R
 'Base.HeroPanel.FocusInitialChargeChange'Intern: <style=AwakenFocus>-{0}</style>
 ?
 +Base.Resources.rift_token_mayas_common_NameMaya Antimaterie
+>
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
 [
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSpeel infanteristen vrij
 D
@@ -15053,6 +15145,8 @@ G
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTaskBVerhoog het vaardigheidslevel van elke held van klasse <b>{0}</b>.TVerhoog de vaardigheidslevels van alle helden van klasse <b>{0}</b> <b>{1}</b> keer.
 
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_Desc@De stilte tussen werelden... bladeren en zwavel... en de portal.
+
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 Z
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMarmeren decoraties
 6
@@ -15087,6 +15181,8 @@ D
 &Base.ServerSelectionPopup.SelectServerKies server
 
 Base.Generic.MainCityStad
+F
+)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 Ç
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipTextILaat zien hoe vaak je de wonderen van andere spelers vandaag kunt helpen.
 a
@@ -15433,6 +15529,8 @@ M
 (Base.TreasureHuntRankingPanel.LateJoiner!Toetreden nadat het seizoen begon
 n
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc7Produceert munten en voegt een arbeider aan je stad toe
+£
+1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 9
 (Base.KeyboardShortcuts.Description.TeslaTesla Stormen
 =
@@ -15774,6 +15872,8 @@ J
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_DescfIk weet niet zeker of dit land nieuw is. Kijk, daar is een stad! En er komen krijgers recht op ons af!
 Ÿ
 "Base.Units.Unit_PakalTheGreat_Desc≤Word de bergen waarop beschavingen zijn gebouwd met Pakal de Grote! Deze Maya-koning uit de 7e eeuw regeerde 68 jaar lang, maar regeert zelfs na zijn dood nog over zijn stadstaat Palenque, want hij werd een van de goden van de stad. Pakal werd geboren in een tijd van crisis en nam op 12-jarige leeftijd de leiding over Palenque, na de dood van de vorige vorst en zijn erfgenaam.<br><br>Als koning zorgde Pakal de Grote voor vrede, uitbreiding en bouw. Omdat hij niet van koninklijke afkomst was, liet hij de prestaties van rivaliserende troonpretendenten op alle monumenten in de stad graveren, inclusief het Paleis van Palenque.<br><br>Het is misschien wel passend dat iemand die geschiedenis in steen schreef, zelf ook in steen werd vereeuwigd: de Tempel van de Inscripties, speciaal gebouwd als Pakals grafcomplex, bevatte enorme tabletten die de geschiedenis van het Maya-volk vierden, met in het midden de prachtig versierde sarcofaag zelf.
+`
+(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
 ,
 Base.Generic.NextInVolgende {0} over {1}
 ≥
@@ -15800,6 +15900,8 @@ v
 'Base.AllianceSetDetailsPanel.WithInviteMet uitnodiging
 L
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_DescProduceert gouderts
+O
+/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
 j
 #Base.Resources.herbal_poultice_DescCEen <style=rare>zeldzaam</style> Materiaal om helden te versterken.
 U
@@ -17259,6 +17361,8 @@ $
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_DesceLuxe vissteigers sturen boten uit om tonnen vis te vangen voor al je hongerige arbeiders en matrozen.
 C
 7Base.Technologies.Technology_ByzantineEra_Forquier_NameForquier
+O
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
 V
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewards"Gouden ticket rijstrook Beloningen
 0

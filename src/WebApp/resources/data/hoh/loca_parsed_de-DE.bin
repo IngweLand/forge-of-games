@@ -344,6 +344,9 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_NameDi
 $Base.IngameEvents.SeasonPass_10_NameWellen der Weisheit
 D
 'Base.Resources.purple_crest_common_NameGewöhnliches Lila Wappen
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
+Longbowmen
 Q
 6Base.Abilities.hero_battle_ability.RomanCenturion_NameSchildkröten-Formation
 E
@@ -650,6 +653,8 @@ $
 Base.OptionsPopup.LogoutAbmelden
 �
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
+<
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
 �
 !Base.Alerts.ServerUnavailableText�Die Server von Heroes of History sind vorübergehend nicht verfügbar.
 
@@ -990,6 +995,8 @@ D
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameGroße Halle
 B
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NamePlantage
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
 <
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader
 Obere Spur
@@ -1238,6 +1245,8 @@ I
 "Base.Rifts.rift.CommonSpecial_Name#Legenden-Bonanza für Neueinsteiger
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_Desc�Doch die Götter verlangen aufwändigere Opfergaben. Wir müssen <style=MC>Aviarien</style> errichten, um die heiligen Quetzal- und Ara-Vögel zu beherbergen, deren <nobr><style=MC>Federn</style> <sprite name=resource.feathers_cta></nobr> Botschaften an den Himmel tragen.
+@
+*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 |
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_DescEMit diesem Auswahlset kannst du zwischen verschiedenen Waren wählen.
 %
@@ -1962,6 +1971,8 @@ p
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_Desc4Willst du mehr Münzen? Dann buddle dieses Gold aus!
 _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameGelehrten-Lyzeum
+N
+)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 *
 Base.InventoryMenuPanel.HeaderInventar
 �
@@ -2193,6 +2204,8 @@ M
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameMaskenbildhauer
 �
 &Tutorial.HeroLevelTutorial.ExplainFood�Wir <style=MC>HELDEN</style> sind auch hungrig. Ein <style=MC>LEVELAUFSTIEG</style> erfordert <style=MC>NAHRUNG</style> aus der <style=MC>STADT</style>.
+N
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
 I
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameWikinger Bogenschützen
 T
@@ -2761,6 +2774,8 @@ J
 GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeaderEvent-Fortschritt
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_NameBrunnen
+<
+Base.OptionsPopup.CodeInputEnter your Promo Code here...
 6
 &Base.HarborShopPanel.Alliance.ShopNameAllianz Shop
 A
@@ -2832,6 +2847,8 @@ OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Name
 Robin Hood
 )
 Base.CampaignPanel.RewardsBelohnungen
++
+!Base.SellEquipmentPopup.SubHeaderReward
 4
 &Base.HarborShopPanel.PvPArena.ShopName
 Arena Shop
@@ -3359,8 +3376,12 @@ IBase.StoryText.Story_Questline_StoneAge_Foundations_QuestStart_Text2_Desc�Du 
 Base.Relics.TheHolyGrail_Desc�Die Ritter von Camelot suchen nach dem Heiligen Gral, um ihren Wert zu beweisen. Zuerst war es Percival, der den Gral suchte, ein keltischer Ritter, der nach ritterlicher Tugend strebte. Als Nächstes kam Gawain, heldenhaft und edel, Artus' engster Gefährte. Galahad war der nächste, der Sohn von Lancelot, ein junger Mann, der Wunder vollbringen und sich besser als jeder andere duellieren konnte. Im Laufe der Zeit wurde die Jagd immer seltsamer. Die Tempelritter, die Katharer, ein gewisser Fedora-tragender Archäologe, Raumfahrer, Rapper und Videospielfiguren - die Fiktion ist voll von Jägern.<br><br>Aber niemand konnte ahnen, dass du derjenige sein würdest, der ihn findet! Seine Magie gewährt Verjüngung, heilt Wunden und verhindert den Alterungsprozess. Als Symbol der Tugend erinnert er die Helden auch an die Richtigkeit ihres Handelns, so wie er für die Ritter von Camelot als Leuchtfeuer diente.
 {
 !Base.Resources.hero.Hercules_DescVErhöht das Erweckungs-Level von Herkules und schaltet so mächtigere Kampf-Boni frei.
+$
+Base.CommunityPopup.RedditReddit
 I
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_NameSpitze Dächer
+�
+-Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameMagma-Tempel
 -
@@ -3438,6 +3459,8 @@ k
 Base.Generic.ErrorUnavailableJNamensänderung momentan nicht möglich. Probiere es bitte später erneut.
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc�Hey, Anführer! Wir haben einen Rivalen! Diese <style=MC>Schädelbrecher</style> drohen mit einem Gegenangriff! Zerschlagen wir sie!
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
 C
 0Base.Buildings.Building_Mayas_Home_Priest_1_NameHandwerker-Haus
 =
@@ -3703,6 +3726,8 @@ L
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchKeine Übereinstimmung
 K
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidian-Steinbruch
+E
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
 @
 0Base.Buildings.Building_Mayas_Home_Worker_1_NameArbeiterhaus
 .
@@ -4273,6 +4298,8 @@ F
 Base.Units.Unit_Pythagoras_Desc�	Erforsche deine Seele und lebe im Untergrund mit Pythagoras, einem antiken griechischen Philosophen und Mathematiker aus dem 6. Jahrhundert v. Chr. Obwohl sein Leben von Mythen und Geheimnissen umwoben ist, ist er vor allem für den Satz des Pythagoras bekannt, mit dem er grundlegende Prinzipien der Geometrie aufstellte und damit Millionen von Schulkindern auf der ganzen Welt den Kopf verdrehte.<br><br>In Croton gründete er eine Schule, in der seine Anhänger, die Pythagoräer, nicht nur Mathematik, sondern auch Musiktheorie, Astronomie und Ethik erforschten, da sie glaubten, dass Zahlen für das Verständnis des Universums von zentraler Bedeutung sind. Dieser umfassende Ansatz verdeutlichte die Verflechtung der verschiedenen Bereiche.<br><br>Seine Lehren hinterließen ein bleibendes Vermächtnis, das künftige Generationen beeinflusste und das westliche Denken prägte. Pythagoras' Werk ist nach wie vor ein Eckpfeiler der mathematischen und philosophischen Forschung und regt auch heute noch zum Nachdenken und Erforschen an. Weniger bekannt ist sein schieres Selbstvertrauen: Die Legende besagt, dass er, als ihn eine giftige Schlange biss, zurückbiss und sie tötete!
 w
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarning?Dieser Held hat bereits das maximale Fähigkeitslevel erreicht!
+J
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
 8
 !Base.Resources.hero.Hercules_NameEssenz des Herkules
 L
@@ -4289,6 +4316,8 @@ F
 5Base.WorldWondersOverviewPanel.AllianceResourceHeaderAllianz-Waren
 �
 +Base.QuestlinesPanel.WonderContributionTask=Erfülle <b>{0}</b> Wunder-Hilfeanfrage von anderen Spielern.>Erfülle <b>{0}</b> Wunder-Hilfeanfragen von anderen Spielern.
+O
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
 3
 'Base.UnitStats.unit_stat.Shield_PercentSchild %
 �
@@ -4457,6 +4486,8 @@ O
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_DescStellt Papyrus her
 �
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescPDieses Auswahlkit lässt dich zwischen Nahrungs- oder Forschungspunkten wählen.
+k
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
 0
 Base.UnlockableFeatures.RiftEinsteins Portal
 3
@@ -4755,6 +4786,8 @@ Baue und verbessere die Fernkämpfer-Kaserne, um ATK, DEF und HP von Fernkämpfe
 
 H
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_Name	Bauernhof
+B
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
 :
 Base.EventShop.NoOffersDerzeit gibt es keine Angebote.
 B
@@ -5109,6 +5142,8 @@ G
 Einsammeln
 G
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_NamePapyrusrollen
+B
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
 �
 Base.Resources.amethyst_DescqEin wertvoller Edelstein, der für die Erforschung bestimmter Technologien des Römischen Reiches benötigt wird.
 -
@@ -5511,6 +5546,8 @@ O
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_NameLuxuriöses Haus
 C
 ,Base.IngameEvents.Event_ForgeOfVulcan_3_NameSchmiede des Vulkan
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_NameRoutiers
 o
 4Base.WonderCollections.StoriesAndMyths_FormattedName7<size=34px>Wunder aus</size><br> Geschichten und Mythen
 B
@@ -5771,6 +5808,8 @@ H
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name	Pavillons
 C
 2Base.UnitStats.unit_stat.CritChance_Percent_AbbrevCRIT CHANCE %
+>
+-Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
 a
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc$Stellt riesige Mengen an Papyrus her
 9
@@ -6470,6 +6509,8 @@ K
 -Base.TeslaStormsPanel.OnlySpecificColorHeroes{0} Helden-Herausforderung
 a
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_NameForschungs-Auswahlset 2-1
+�
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 a
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_DescSchaltet Hellebarden frei
 �	
@@ -7008,6 +7049,8 @@ k
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabel"Nächster garantierter Bauplan in:
 +
 Base.RiftInfoPopup.PityTabPity-Funktion
+�
+Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 �
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_DescOErhalte sofort ein paar Antimaterie und eine Woche lang jeden Tag zwei weitere!
 r
@@ -7426,6 +7469,8 @@ Y
 &Base.BuildingGroups.premiumQuarry_NameLuxuriöser SteinbruchLuxuriöse Steinbrüche
 6
  Base.AccountSettingsPopup.HeaderKontoeinstellungen
+�
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 �
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�Jetzt ist es an der Zeit, unsere Handwerker anzuweisen, <nobr><style=MC>Ahnenmasken</style> <sprite name=resource.ancestor_mask_cta></nobr> zu fertigen, die uraltes Wissen heraufbeschwören. Diese Masken <style=MC>überbrücken Welten</style> und lassen unsere Vorfahren unsere Bemühungen bei dieser Aufgabe miterleben.
 �
@@ -8015,6 +8060,8 @@ ABase.TreasureHuntNegotiationPanel.NegotiatorAlreadyGotCorrectGift8Dieser Pirat
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_DescEMit diesem Auswahlset kannst du zwischen verschiedenen Waren wählen.
 �
 -Base.VideoPlacementButton.RunOutOfImpressionsXDu hast all deine Video-Belohnungen für heute eingefordert! Kehre bitte morgen zurück!
+_
+0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
 L
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeaderGegner Spawnt
 z
@@ -8057,6 +8104,8 @@ a
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_Desc�Heute Nacht haben wir es geschafft. Wir haben die Zeit geschlagen und gewonnen! Jetzt feiern wir diesen Sieg mit allem, was wir haben.
 �
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_DescZMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Gewöhnlichen Wappen wählen.
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 \
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeededMögliche benötigte Ressourcen
 g
@@ -8141,6 +8190,8 @@ N
 -Base.Factions.Faction_MinoanEra_Spartans_Name	Spartaner
 U
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
+r
+1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
 �
 +Tutorial.TeslaStormsTutorial.StageSelection�Nur <style=MC>ROTE</style> Helden können diesem <style=MC>UNHEIL</style> trotzen. Wir werden <style=MC>TESLA</style> gemeinsam besiegen und wertvolle <style=MC>ELEMENTAR-WAPPEN</style> verdienen.
 J
@@ -8504,6 +8555,8 @@ Bei einem normalen Angriff des Helden besteht eine Chance von <style=basestat>{c
 Base.Resources.mead_DescMet ist eine wichtige Ressource, die zum Herstellen veredelter Rohstoffe benötigt wird. Er kann in Tavernen produziert werden.
 2
 Base.Resources.greek_lyre_NameGriechische Lyra
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_NameMangonel
 ?
 /Base.Buildings.Building_Egypt_Home_Small_5_NameKleines Haus
 x
@@ -8925,6 +8978,8 @@ $Base.HeroPanel.EquipWillUnequipRelic#Dieses Relikt wird von {0} abgelegt
 #Base.Resources.hero.MarieCurie_NameEssenz von Marie Curie
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NamePapyrusmanufaktur
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 I
 *Base.ShopPopup.Pages.forge_of_vulcan_eventSchmiede des Vulkan Angebot
 6
@@ -9001,6 +9056,8 @@ VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Tex
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_Desc|Es scheint, als hätten wir Erfolg gehabt. Die Stille, die folgt, lässt vermuten, dass eine Veränderung stattgefunden hat.
 G
  Base.SeasonPass.BuyGoldPassTitle#Hol dir dein Seasonpass Goldticket!
+E
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
 8
 ,Base.KeyboardShortcuts.Description.InventoryInventar
 9
@@ -9355,6 +9412,8 @@ U
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_NameInfanterie-Kaserne
 |
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
+e
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
 ]
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_NameIlluminiertes Medaillon
 O
@@ -9893,6 +9952,8 @@ L
 'Base.Expansions.Expansion_China_24_Name!Westliches Mottenlichtungs-Gebiet
 E
 #Base.SeasonPass.SeasonCompletedTextDie nächste Season beginnt in
+G
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
 �
 !Base.Units.Unit_AttilaTheHun_Desc�Es ist der Mann, der das Römische Reich fast zu Fall gebracht hätte: Attila, der Hunnenkönig! Dieser Kaiser aus dem 5. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Als Befehlshaber einer riesigen Stammeskoalition führte Attila Feldzüge durch ganz Europa und besiegte das Römische Reich. Nachdem ihm Tribut angeboten wurde, begann er einen Marsch auf Rom, der durch seinen Tod gestoppt wurde.<br><br>Attilas Erbe ist reich an Geschichten über seine militärischen Heldentaten und seine charismatische Führung, die ihn zu einer beeindruckenden Figur in der europäischen Geschichte machen. Weniger bekannt ist sein Hauskaninchen, "Attila the Bun", das ihn angeblich auf seinen Kampagnen begleitete!
 *
@@ -10010,6 +10071,8 @@ V
 Base.OptionsPopup.StartNewCityStarte eine neue Stadt
 @
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_NameKanal
+�
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 *
 Base.Heroes.hero.Hercules_NameHerkules
 @
@@ -10162,6 +10225,8 @@ T
 Base.EventRewardLane.Earned{0}/{1} verdient
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_Desc�Das stimmt, <style=MC>alter Freund</style>. Lass diese belanglosen Streitereien um ein bisschen Dreck hinter dir. Schließ dich mir an, und kämpfe für die <style=MC>Zukunft</style>. 
+P
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescYMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Verbesserten Wappen wählen.
 
@@ -10326,6 +10391,9 @@ I
 Leonidas I
 X
 ,Base.EquipmentSets.equipment_set.Hunter_Desc(Angriff <style=basestat_dark>+15</style>
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
+Cavalrymen
 I
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameFalknerhandschuh
 �
@@ -10352,6 +10420,8 @@ Z
 #Base.Resources.alliance_timber_NameAllianzholz
 /
  Base.ShopPopup.Pages.city_bundleStadt-Paket
+*
+Base.Resources.doubloons_Name	Doubloons
 �
 4Base.Buildings.Building_Vikings_City_CityHall_2_DeschDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Pennys für dich.
 0
@@ -10462,6 +10532,8 @@ k
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_DescWir sollten dem nachgehen!
 Y
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_DescSchaltet Routiers frei
+_
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
 q
 )Base.Resources.yellow_crest_enhanced_DescDGelbe Wappen werden benötigt, um gelbe Helden aufsteigen zu lassen.
 w
@@ -10866,6 +10938,8 @@ U
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescVeredelt Kaolin zu Ton
 N
 Base.Tutorial.WonderBlocked/Du kannst dieses Wunder jetzt nicht auswählen.
+#
+Base.EquipmentItemView.SoldSold
 y
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 �
@@ -11719,6 +11793,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�Ich sch
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_DescVDas ist dein Anspruch auf Ruhm, Leonidas. Du stirbst als Held am Pass der Thermopylen.
 <
 &Base.Alerts.AccountBannedTimeRemainingÜbrige Sperrzeit:
+V
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 =
 'Base.MergeItems.WorldFair_Bronze_5_NameArtefakt - Level 5
 A
@@ -12075,6 +12151,8 @@ Y
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>Nahkampfangriff| Buff</style>Miyamoto schlägt viermal auf sein aktuelles Ziel ein und verursacht dabei insgesamt <style=basestat>{dmg_percentage}</style> Schaden. Außerdem erhöht sich seine Chance, kritisch zu treffen, um <style=basestat>{crit_percentage}</style> für <style=basestat>{duration}</style>.
+R
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
 ;
 0Base.Technologies.Technology_BronzeAge_Barn_NameScheune
 M
@@ -12209,6 +12287,8 @@ C
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�Du hast unsere Manufakturen mit großem Geschick aufgebaut. Konzentrieren wir uns jetzt auf den Ausbau des <style=MC>Sayil Palastes</style> selbst, denn nur durch seine Pracht werden die rivalisierenden Anführer unsere Macht erkennen und gezwungen sein, Allianzen mit uns zu schmieden.
 ]
 %Base.BattleSetupPanel.OpenAbilityInfo4Held lange drücken zum Öffnen der Fähigkeits-Info
+K
+Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_NameStufe 33
 I
@@ -12275,6 +12355,8 @@ z
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 &
  Base.HeroFilterPopover.HitPointsHP
+X
++Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 z
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 [
@@ -12641,6 +12723,8 @@ L
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name$Weltausstellungs-Event Questreihe II
 "
 Base.AllianceBlimps.BuildBauen
+I
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_1_NameAviarium
 �
@@ -14328,6 +14412,8 @@ q
 Maya-Reich
 �
 *Base.Resources.hero.AztecTlacateccatl_DescYErhöht das Erweckungs-Level von Cuauhtémoc und schaltet so mächtigere Kampf-Boni frei.
+E
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 �
 #Base.Resources.frankish_fibula_Desc�Ein mittelalterliches Schmuckstück, das für die Erforschung bestimmter Technologien aus dem Zeitalter der Franken benötigt wird.
 H
@@ -14605,6 +14691,8 @@ C
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_DescpMiss d'Arc, auch wenn es so aussieht, als sei alles verloren, gibt es ein Licht in dir, das nie erlöschen wird.
 @
 (Base.TreasureHuntStartedPopup.JoinButtonSchatzjagd beitreten
+H
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
 E
 #Base.Resources.material_temple_NameTempelmaterialTempelmaterial
 J
@@ -14919,6 +15007,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc�Das 
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_DescVMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Erhabenen Wappen wählen.
 R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameKavallerie-Kaserne
+1
+Base.SellEquipmentPopup.HeaderSell Equipment?
 P
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrangenplantage
 ;
@@ -14935,6 +15025,8 @@ S
 'Base.HeroPanel.FocusInitialChargeChange(Initial: <style=AwakenFocus>-{0}</style>
 ?
 +Base.Resources.rift_token_mayas_common_NameMaya-Antimaterie
+>
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
 ^
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSchaltet Infanteristen frei
 K
@@ -15055,6 +15147,8 @@ K
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTaskQErhöhe das Level der Fähigkeiten eines beliebigen Helden der Klasse <b>{0}</b>.`Erhöhe das Level der Fähigkeiten eines beliebigen Helden der Klasse <b>{0}</b> <b>{1}</b> mal.
 �
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_DescJDie Stille zwischen den Welten... Blätter und Schwefel... und das Portal.
+
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 W
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMarmordekoration
 6
@@ -15089,6 +15183,8 @@ K
 &Base.ServerSelectionPopup.SelectServerServer auswählen
 
 Base.Generic.MainCityStadt
+F
+)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 �
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipTextNZeigt, wie oft du heute noch anderen Spielern bei ihren Wundern helfen kannst.
 b
@@ -15434,6 +15530,8 @@ I
 (Base.TreasureHuntRankingPanel.LateJoinerNach Saison-Start beigetreten
 u
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
+�
+1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 9
 (Base.KeyboardShortcuts.Description.TeslaTesla Stürme
 =
@@ -15773,6 +15871,8 @@ C
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_Desc~Ich bin mir nicht sicher, ob dieses Land neu ist. Schau, da ist eine Stadt! Und ein paar Krieger, die direkt auf uns zukommen!
 �
 "Base.Units.Unit_PakalTheGreat_Desc�Werde mit Pakal dem Großen zu den Bergen, auf denen Zivilisationen gebaut werden! Dieser Maya-König aus dem 7. Jahrhundert regierte 68 Jahre lang, aber er herrscht über seinen Stadtstaat Palenque auch über seinen Tod hinaus, denn er wurde zu einem der Götter der Stadt. Pakal wurde inmitten einer Krise geboren und übernahm die Herrschaft über Palenque im Alter von nur 12 Jahren, nachdem der vorherige Monarch und sein Erbe gestorben waren.<br><br>Als König kümmerte sich Pakal der Große darum, zu beschwichtigen, zu expandieren und zu bauen. Da er nicht von königlicher Abstammung war, ließ er die Errungenschaften rivalisierender Anwärter in jedes Denkmal der Stadt einmeißeln, auch in den Palast von Palenque.<br><br>Es ist vielleicht passend, dass jemand, der Geschichte in Stein meißeln ließ, selbst darin verewigt wurde: Der Tempel der Inschriften, der eigens als Pakals Grabkomplex gebaut wurde, enthielt große Tafeln, die die Geschichte des Maya-Volkes feierten, und in seinem Zentrum den wunderschön verzierten Sarkophag selbst.
+`
+(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
 *
 Base.Generic.NextInNächste {0} in {1}
 �
@@ -15799,6 +15899,8 @@ C
 'Base.AllianceSetDetailsPanel.WithInviteMit Einladung
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_DescStellt Golderz her
+O
+/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
 �
 #Base.Resources.herbal_poultice_DescgEin <style=rare>seltenes</style> Aufstiegsmaterial, das verwendet wird, um Helden aufsteigen zu lassen.
 O
@@ -17258,6 +17360,8 @@ Y
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_Desc�Luxuriöse Angelstege schicken Boote aus, die tonnenweise Fisch fangen, um all deine hungrigen Arbeiter und Matrosen zu versorgen.
 C
 7Base.Technologies.Technology_ByzantineEra_Forquier_NameHeugabel
+O
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
 O
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewardsGoldticket-Spur-Belohnungen
 4

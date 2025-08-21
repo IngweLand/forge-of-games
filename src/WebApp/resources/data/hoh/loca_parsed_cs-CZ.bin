@@ -344,6 +344,9 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_NameC�
 $Base.IngameEvents.SeasonPass_10_NamePříliv moudrosti
 @
 'Base.Resources.purple_crest_common_NameBěžný fialový erb
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
+Longbowmen
 I
 6Base.Abilities.hero_battle_ability.RomanCenturion_NameŽelví formace
 F
@@ -653,6 +656,8 @@ G
 Base.OptionsPopup.LogoutOdhlášení
 �
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescDAkademie hrdinů produkuje body zkušeností za cenu bodů výzkumu.
+<
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
 �
 !Base.Alerts.ServerUnavailableText�Servery Heroes of History jsou dočasně nedostupné. Děkujeme za vaši trpělivost, zatímco pracujeme na vyřešení tohoto problému.
 
@@ -994,6 +999,8 @@ D
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameVelká síň
 J
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameVenkovská farma
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
 ?
 .Base.SpartasLastStandInfoPopup.UpperLaneHeaderHorní dráha
 j
@@ -1238,6 +1245,8 @@ H
 "Base.Rifts.rift.CommonSpecial_Name"Legendární bonanza pro nováčky
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_Desc�Bohové však požadují složitější oběti. Musíme postavit <style=MC>ptačí voliéry</style>, kde budou svatí ptáci quetzal a ary, jejichž <nobr><style=MC>peří</style> <sprite name=resource.feathers_cta></nobr> nesou poselství do nebes.
+@
+*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 z
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_DescCTato výběrová sada ti umožní vybrat si mezi různým zbožím.
 +
@@ -1965,6 +1974,8 @@ p
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_Desc4Chceš víc mincí? Tak pojďme vykopat tohle zlato!
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLyceum učenců
+N
+)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 ,
 Base.InventoryMenuPanel.Header
 Inventář
@@ -2199,6 +2210,8 @@ R
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameŘezbářství masek
 �
 &Tutorial.HeroLevelTutorial.ExplainFood�My <style=MC>HRDINOVÉ</style> máme taky hlad. Naše <style=MC>VYLEPŠENÍ</style> vyžaduje <style=MC>JÍDLO</style> z <style=MC>MĚSTA</style>.
+N
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
 K
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameVikingští lučištníci
 R
@@ -2764,6 +2777,8 @@ I
 GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeaderPostup v události
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_NameFontána
+<
+Base.OptionsPopup.CodeInputEnter your Promo Code here...
 ;
 &Base.HarborShopPanel.Alliance.ShopNameAlianční obchod
 C
@@ -2835,6 +2850,8 @@ OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Name
 Robin Hood
 %
 Base.CampaignPanel.RewardsOdměny
++
+!Base.SellEquipmentPopup.SubHeaderReward
 7
 &Base.HarborShopPanel.PvPArena.ShopNameObchod arény
 �
@@ -3358,8 +3375,12 @@ IBase.StoryText.Story_Questline_StoneAge_Foundations_QuestStart_Text2_Desc�Zí
 Base.Relics.TheHolyGrail_Desc�Rytíři z Camelotu se vydali na pouť za Svatým grálem, aby dokázali svou hodnotu. Prvním, kdo hledal Grál, byl Percival, keltský rytíř, který toužil po rytířství. Poté přišel Gawain, hrdinný a ušlechtilý, Arthurův nejbližší společník. Dalším byl Galahad, syn Lancelota, mladý muž, který dokázal vykonávat zázraky a bojoval lépe než kdokoli jiný. Jak čas plynul, lov na Grál se stal zvláštním. Rytíři templáři, katarové, jistý archeolog v klobouku, vesmírní lidé, rappeři a postavy z videoher – fikce je plná lovců.<br><br>Ale nikdo nemohl tušit, že tím, kdo ho najde, budete právě vy! Jeho magie poskytuje omlazení, hojí rány a zabraňuje stárnutí. Jako symbol ctnosti také připomíná hrdinům správnost jejich činů, stejně jako fungovala jako maják pro rytíře z Kamelotu.
 �
 !Base.Resources.hero.Hercules_DescjPoužívá se ke zvýšení úrovně probuzení Herkula a tím odemknutí silnějších bojových bonusů.
+$
+Base.CommunityPopup.RedditReddit
 N
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_NameŠpičaté střechy
+�
+-Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
 J
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameLávový chrám
 ,
@@ -3435,6 +3456,8 @@ U
 Base.Generic.ErrorUnavailable4Jméno momentálně nelze změnit. Zkus to později.
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_DescpHej, Vůdce! Máme nového soupeře! Ti <style=MC>LEBKODRTIČI</style> hrozí protiútokem! Pojďme je rozdrtit!
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
 E
 0Base.Buildings.Building_Mayas_Home_Priest_1_NameDům řemeslníka
 F
@@ -3699,6 +3722,8 @@ D
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchŽádná shoda
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidiánový důl
+E
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
 D
 0Base.Buildings.Building_Mayas_Home_Worker_1_NameDům pracovníka
 /
@@ -4268,6 +4293,8 @@ Q
 Base.Units.Unit_Pythagoras_Desc�Prozkoumejte svou duši a žijte v podzemí s Pythagorem, starořeckým filozofem a matematikem ze 6. století př. n. l.! Ačkoli je jeho život opředen mýty a tajemstvím, nejvíce se proslavil Pythagorovou větou, která stanovila základní principy geometrie, a způsobila tak bolesti hlavy milionům školáků po celém světě.<br><br>V Krotonu založil školu, kde se jeho následovníci, pythagorejci, zabývali matematikou, ale i hudební teorií, astronomií a etikou, protože věřili, že čísla jsou pro pochopení vesmíru klíčová. Tento komplexní přístup zdůrazňoval vzájemnou provázanost různých oborů.<br><br>Jeho učení zanechalo trvalý odkaz, ovlivnilo budoucí generace a formovalo západní myšlení. Pythagorovo dílo zůstává základním kamenem matematických a filozofických studií a dodnes inspiruje k bádání a zkoumání. Méně známá je jeho naprostá sebedůvěra: Legendy říkají, že když ho uštkl jedovatý had, uštkl ho zpátky a zabil ho!
 r
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarning:Tento hrdina již dosáhl maximální úrovně schopnosti!
+J
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
 3
 !Base.Resources.hero.Hercules_NameEsence Herkula
 L
@@ -4284,6 +4311,8 @@ J
 5Base.WorldWondersOverviewPanel.AllianceResourceHeaderZboží spojenců
 �
 +Base.QuestlinesPanel.WonderContributionTaskHSplň <b>{0}</b> žádost o pomoc s divem světa od ostatních hráčů.ISplň <b>{0}</b> žádosti o pomoc s divem světa od ostatních hráčů.JSplň <b>{0}</b> žádostí o pomoc s divem světa od ostatních hráčů.
+O
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
 3
 'Base.UnitStats.unit_stat.Shield_PercentŠtít %
 �
@@ -4451,6 +4480,8 @@ M
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_DescVyrábí papyrus
 �
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescMTato výběrová sada ti umožní vybrat si mezi jídlem a výzkumnými body.
+k
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
 3
 Base.UnlockableFeatures.RiftEinsteinův portál
 @
@@ -4745,6 +4776,8 @@ Postavte a vylepšete kasárny střelců, abyste zlepšili ÚTOK, OBR a HP jedno
 
 N
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_NameMěstská farma
+B
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
 S
 Base.EventShop.NoOffers8V současné době nejsou k dispozici žádné nabídky.
 H
@@ -5102,6 +5135,8 @@ C
 9Base.WorldWondersOverviewPanel.ContributionsCollectRewardVybrat
 L
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_NamePapyrusové svitky
+B
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
 |
 Base.Resources.amethyst_Desc\Cenný drahokam, který je nezbytný pro výzkum některých technologií Římské říše.
 *
@@ -5504,6 +5539,8 @@ L
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_NameLuxusní dům
 C
 ,Base.IngameEvents.Event_ForgeOfVulcan_3_NameVulkánova kovárna
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_NameRoutiers
 o
 4Base.WonderCollections.StoriesAndMyths_FormattedName7<size=34px>Divy světa z</size><br>příběhů a mýtů
 E
@@ -5765,6 +5802,8 @@ G
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_NamePavilony
 D
 2Base.UnitStats.unit_stat.CritChance_Percent_AbbrevKRIT. ŠANCE %
+>
+-Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
 V
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_DescVyrábí hromadu papyrusu
 5
@@ -6462,6 +6501,8 @@ L
 -Base.TeslaStormsPanel.OnlySpecificColorHeroesVýzva pro hrdiny barvy {0}
 e
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_NameVýběrová sada výzkumu 2-1
+�
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 ]
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_DescOdemkne Halapartníky
 �
@@ -6993,6 +7034,8 @@ g
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabelDalší zaručený nákres za:
 1
 Base.RiftInfoPopup.PityTabMechanika štěstí
+�
+Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 �
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_Desc]Získejte okamžitě spoustu antihmoty, plus dvě další každý den po dobu jednoho týdne!
 o
@@ -7406,6 +7449,8 @@ X
 &Base.BuildingGroups.premiumQuarry_NameLuxusní důlLuxusní dolyLuxusních dolů
 5
  Base.AccountSettingsPopup.HeaderNastavení účtu
+�
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 �
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�Nyní je čas nasměrovat naše řemeslníky k výrobě <nobr><style=MC>masek předků</style> <sprite name=resource.ancestor_mask_cta></nobr>, které vyvolávají dávnou moudrost. Tyto masky <style=MC>propojují světy</style> a umožňují našim předkům sledovat naše úsilí v této práci.
 �
@@ -7995,6 +8040,8 @@ y
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_DescCTato výběrová sada ti umožní vybrat si mezi různým zbožím.
 �
 -Base.VideoPlacementButton.RunOutOfImpressionsTDnes už jsi vypotřeboval/a všechny odměny za shlédnutí videa! Vrať se zítra!
+_
+0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
 d
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeader%Místa pro objevování se nepřátel
 y
@@ -8038,6 +8085,8 @@ KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_NameCh
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_DescgDnes v noci jsme to dokázali. Překonali jsme čas a vyhráli! Teď slavíme toto vítězství naplno.
 �
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_DescTTato výběrová sada ti umožní vybrat si mezi různě barevnými běžnými erby.
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 ^
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeeded!Možné suroviny k vyjednávání
 n
@@ -8121,6 +8170,8 @@ L
 Sparťané
 S
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_NameKasárny střelců
+r
+1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
 �
 +Tutorial.TeslaStormsTutorial.StageSelection�Jen <style=MC>ČERVENÍ</style> hrdinové mohou odolat této <style=MC>KATASTROFĚ</style>. Společně porazíme <style=MC>TESLU</style> a získáme vzácné <style=MC>ELEMENTÁLNÍ ERBY</style>.
 E
@@ -8478,6 +8529,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 Base.Resources.mead_DescuMedovina je základním zdrojem, který je potřebný k výrobě rafinovaných surovin. Lze ji vyrábět v krčmách.
 .
 Base.Resources.greek_lyre_NameŘecká lyra
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_NameMangonel
 =
 /Base.Buildings.Building_Egypt_Home_Small_5_Name
 Malý dům
@@ -8908,6 +8961,8 @@ $Base.HeroPanel.EquipWillUnequipRelic#Tato relikvie bude odebrána z {0}.
 #Base.Resources.hero.MarieCurie_NameEsence Marie Curie
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NameVýrobna papyrusu
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 V
 *Base.ShopPopup.Pages.forge_of_vulcan_event(Výprodej události Vulkánová kovárna
 6
@@ -8985,6 +9040,8 @@ z
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_DescZZdá se, že se nám to podařilo. Následující ticho naznačuje, že došlo ke změně.
 [
  Base.SeasonPass.BuyGoldPassTitle7Získej svoji zlatou vstupenku se sezónní propustkou!
+E
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
 :
 ,Base.KeyboardShortcuts.Description.Inventory
 Inventář
@@ -9341,6 +9398,8 @@ T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_NameKasárny pěchoty
 k
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc$Zvyšuje spokojenost okolních budov
+e
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
 Z
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_NameOsvětlený medailon
 M
@@ -9879,6 +9938,8 @@ O
 'Base.Expansions.Expansion_China_24_Name$Západní oblast motýlích palouků
 C
 #Base.SeasonPass.SeasonCompletedTextDalší sezóna začíná za
+G
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
 �
 !Base.Units.Unit_AttilaTheHun_Desc�To je muž, který málem přivedl Římskou říši k pádu – Attila Hun! Tento císař 5. století byl známý svým vojenským umem a strategickým géniem.<br><br>V čele rozsáhlé koalice kmenů vedl Attila tažení napříč Evropou a porazil Východořímskou říši. Po obdržení tributu zahájil pochod na Řím, který byl však zastaven jeho smrtí.<br><br>Attilův odkaz je plný příběhů o jeho vojenských výbojích a charismatickém vedení, což z něj činí impozantní postavu v dějinách Evropy. Méně známým faktem je jeho mazlíček – králík jménem Attila the Bun, o němž se říká, že ho doprovázel na taženích!
 ,
@@ -9993,6 +10054,8 @@ O
 Base.OptionsPopup.StartNewCityZaložit nové město
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_NameKanál
+�
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 *
 Base.Heroes.hero.Hercules_NameHerkules
 B
@@ -10146,6 +10209,8 @@ W
 Base.EventRewardLane.Earned{0}/{1} získáno
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_Desc�Tak tak, <style=MC>DÁVNÝ PŘÍTELI</style>. Nech za sebou tyto malicherné hádky o kousky hlíny. Přidej se ke mně a bojujme za <style=MC>BUDOUCNOST</style>.
+P
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescVTato výběrová sada umožňuje vybrat si mezi různě barevnými vylepšenými erby.
 
@@ -10311,6 +10376,9 @@ k
 Base.Units.Unit_Leonidas_NameLeonidas I.
 V
 ,Base.EquipmentSets.equipment_set.Hunter_Desc&Útok <style=basestat_dark>+15</style>
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
+Cavalrymen
 M
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameSokolnická rukavice
 �
@@ -10337,6 +10405,8 @@ M
 #Base.Resources.alliance_timber_NameDřevo spojenců
 7
  Base.ShopPopup.Pages.city_bundleMěstský balíček
+*
+Base.Resources.doubloons_Name	Doubloons
 �
 4Base.Buildings.Building_Vikings_City_CityHall_2_DescNVelká síň je centrem města. Neustále generuje malé množství haléřů.
 0
@@ -10448,6 +10518,8 @@ m
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_DescMěli bychom to prošetřit!
 ]
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_DescOdemkne potulné žoldáky
+_
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
 h
 )Base.Resources.yellow_crest_enhanced_Desc;Žluté erby jsou potřeba k povýšení žlutých hrdinů.
 u
@@ -10853,6 +10925,8 @@ Yi Sun-sin
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescZpracovává kaolín na hlínu
 O
 Base.Tutorial.WonderBlocked0Tento div světa momentálně nemůžeš vybrat.
+#
+Base.EquipmentItemView.SoldSold
 i
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc.Vyrábí mince a přidá pracovníka do města
 �
@@ -11700,6 +11774,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�Navrhuj
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_DescVTo je váš nárok na slávu, Leonide. Umíráte jako hrdina na průsmyku u Thermopyl.
 I
 &Base.Alerts.AccountBannedTimeRemainingZbývající čas pozastavení:
+V
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 @
 'Base.MergeItems.WorldFair_Bronze_5_NameArtefakt - úroveň 5
 >
@@ -12056,6 +12132,8 @@ t
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_Desc6Vyrábí kupu mincí a přidá 2 pracovníky do města
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>Úder na blízko | Posílení</style>Mijamoto zasáhne svůj aktuální cíl čtyřikrát a způsobí celkem <style=basestat>{dmg_percentage}</style> poškození. Také zvýší svou šanci na kritický zásah o <style=basestat>{crit_percentage}</style> na <style=basestat>{duration}</style>.
+R
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
 ;
 0Base.Technologies.Technology_BronzeAge_Barn_NameStodola
 P
@@ -12189,6 +12267,8 @@ C
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�Naše dílny jsi založil s velkou zručností. Nyní se zaměřme na vylepšení samotného <style=MC>paláce Sayil</style>, neboť jen skrze jeho velkolepost si soupeřící vůdci uvědomí naši moc a budou nuceni s námi uzavírat aliance.
 e
 %Base.BattleSetupPanel.OpenAbilityInfo<Dlouhým stisknutím hrdiny otevřete informace o schopnosti
+K
+Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_NameÚroveň 33
 L
@@ -12253,6 +12333,8 @@ h
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc,Vyrábí mince a přidá dělníka do města
 &
  Base.HeroFilterPopover.HitPointsHP
+X
++Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 h
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc,Vyrábí mince a přidá dělníka do města
 U
@@ -12622,6 +12704,8 @@ F
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name%Úkolová řada Světové výstavy II
 $
 Base.AllianceBlimps.BuildStavět
+I
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_1_NameVoliéra
 �
@@ -14305,6 +14389,8 @@ o
 'Base.Cities.City_Mayas_SayilPalace_NameMayská říše
 �
 *Base.Resources.hero.AztecTlacateccatl_DescoPoužívá se ke zvýšení úrovně probuzení Cuauhtémoca a tím odemknutí silnějších bojových bonusů.
+E
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 �
 #Base.Resources.frankish_fibula_DescfKus středověkého šperku, který je nezbytný pro výzkum některých technologií z Věku Franků.
 I
@@ -14579,6 +14665,8 @@ Malý dům
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_DescdSlečno d'Arc, ač se může zdát, že je vše ztraceno, ve vás je světlo, které nikdy nezhasne.
 K
 (Base.TreasureHuntStartedPopup.JoinButtonPřidat se k Honbě za pokladem
+H
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
 a
 #Base.Resources.material_temple_NameMateriál chrámůMateriál chrámůMateriál chrámů
 J
@@ -14894,6 +14982,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc�Obdi
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_DescWTato výběrová sada ti umožní vybrat si mezi různě barevnými nadřazenými erby.
 R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameKasárny kavalerie
+1
+Base.SellEquipmentPopup.HeaderSell Equipment?
 X
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NamePomerančová plantáž
 9
@@ -14911,6 +15001,8 @@ Y
 'Base.HeroPanel.FocusInitialChargeChange.Počáteční: <style=AwakenFocus>-{0}</style>
 @
 +Base.Resources.rift_token_mayas_common_NameMayská antihmota
+>
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
 T
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescOdemkne pěšáky
 H
@@ -15032,6 +15124,8 @@ J
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTaskBZvyšte úroveň schopnosti jakéhokoli hrdiny třídy <b>{0}</b>.SZvyšte úroveň schopnosti jakýchkoli hrdinů třídy <b>{0}</b> <b>{1}</b>krát.SZvyšte úroveň schopnosti jakýchkoli hrdinů třídy <b>{0}</b> <b>{1}</b>krát.
 p
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_Desc1Ticho mezi světy… listí a síra… a portál.
+
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 Z
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMramorové dekorace
 6
@@ -15066,6 +15160,8 @@ H
 &Base.ServerSelectionPopup.SelectServerVybrat server
 
 Base.Generic.MainCityMěsto
+F
+)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 �
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipTextTUkazuje, jak často můžeš pomoci ostatním hráčům s divy světa pro daný den.
 b
@@ -15410,6 +15506,8 @@ W
 (Base.TreasureHuntRankingPanel.LateJoiner+Připojil se po začátku Honby za pokladem
 e
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc.Vyrábí mince a přidá pracovníka do města
+�
+1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 8
 (Base.KeyboardShortcuts.Description.TeslaTesla bouře
 =
@@ -15750,6 +15848,8 @@ I
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_DescxNejsem si jistý, že tato země je nová. Podívej, tam je město! A nějací bojovníci, přicházejí přímo k nám!
 �
 "Base.Units.Unit_PakalTheGreat_Desc�Staňte se horami, na kterých jsou budovány civilizace, s Pakalem Velikým! Tento mayský král ze 7. století vládl 68 let, ale nad svým městským státem Palenque vládne i po své smrti, protože byl prohlášen za jednoho z bohů města. Pakal se narodil v době krize a po smrti předchozího panovníka a jeho dědice se ujal vlády nad Palenque ve věku pouhých 12 let.<br><br>Jako král se Pakal Veliký snažil o smír, expanzi a stavění. Jelikož nebyl královského rodu, vytesal úspěchy svých rivalů do všech památek ve městě, včetně Paláce v Palenque.<br><br>Je snad příznačné, že někdo, kdo zapsal historii do kamene, byl sám v kameni zvěčněn: Chrám nápisů, postavený jako Pakalův hrobový komplex, obsahoval obrovské desky oslavující historii mayského lidu a uprostřed něj stál krásně zdobený sarkofág.
+`
+(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
 )
 Base.Generic.NextInDalší {0} za {1}
 �
@@ -15776,6 +15876,8 @@ H
 'Base.AllianceSetDetailsPanel.WithInviteS pozvánkou
 M
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_DescVyrábí zlatou rudu
+O
+/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
 �
 #Base.Resources.herbal_poultice_Descc<style=rare>Vzácný</style> materiál pro povýšení, který se používá k povýšení hrdinů.
 L
@@ -17240,6 +17342,8 @@ Q
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_Desc|Luxusní rybářská mola vysílají lodě, které loví tuny ryb, aby zásobily všechny hladové dělníky a námořníky.
 @
 7Base.Technologies.Technology_ByzantineEra_Forquier_NameVidle
+O
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
 X
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewards$Prémiové ceny se zlatou vstupenkou
 1

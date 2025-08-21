@@ -343,6 +343,9 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_Name�
 $Base.IngameEvents.SeasonPass_10_Name智慧浪潮
 =
 'Base.Resources.purple_crest_common_Name普通紫色徽章
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
+Longbowmen
 F
 6Base.Abilities.hero_battle_ability.RomanCenturion_Name龜甲陣型
 ?
@@ -646,6 +649,8 @@ $Base.UnitStats.unit_stat.AttackSpeed攻擊速度
 Base.OptionsPopup.Logout登出
 v
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_Desc6英雄學院會消耗研究點數來生產經驗卷軸
+<
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
 �
 !Base.Alerts.ServerUnavailableTextl《Heroes of History》伺服器暫時不可用。感謝您的耐心，我們正在努力修復此問題。
 
@@ -982,6 +987,8 @@ A
 4Base.Buildings.Building_Vikings_City_CityHall_1_Name	大禮堂
 F
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_Name鄉村農場
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
 8
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader上列
 b
@@ -1224,6 +1231,8 @@ J
 "Base.Rifts.rift.CommonSpecial_Name新人傳奇大獎
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_Desc�然而，諸神要求更為精緻的祭品。我們必須建造 <style=MC>鳥舍</style> 來飼養神聖的綠咬鵑與金剛鸚鵡，牠們的 <nobr><style=MC>羽毛</style> <sprite name=resource.feathers_cta></nobr> 能將訊息傳遞至天界。
+@
+*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 v
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_Desc?此自選套組可讓您在不同的物品之間進行選擇。
 (
@@ -1939,6 +1948,8 @@ P
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_Desc?想要更多的錢幣嗎？那就快動手挖這片金礦吧！
 [
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_Name學者學院
+N
+)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 (
 Base.InventoryMenuPanel.Header庫存
 �
@@ -2167,6 +2178,8 @@ M
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_Name面具雕刻家
 �
 &Tutorial.HeroLevelTutorial.ExplainFood�我們<style=MC>英雄</style>也餓了。<style=MC>升級</style>需要從<style=MC>城</style>裡獲取<style=MC>食物</style>。
+N
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
 A
 .Base.Units.Unit_IberianEra_Vikings_Archer_Name維京弓箭手
 O
@@ -2722,6 +2735,8 @@ W
 GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeader活動進度
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Name噴泉
+<
+Base.OptionsPopup.CodeInputEnter your Promo Code here...
 6
 &Base.HarborShopPanel.Alliance.ShopName聯盟商店
 <
@@ -2790,6 +2805,8 @@ B
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Name	羅賓漢
 $
 Base.CampaignPanel.Rewards獎賞
++
+!Base.SellEquipmentPopup.SubHeaderReward
 9
 &Base.HarborShopPanel.PvPArena.ShopName競技場商店
 �
@@ -3304,8 +3321,12 @@ IBase.StoryText.Story_Questline_StoneAge_Foundations_QuestStart_Text2_Desc�你
 它的魔力帶來復甦之力，能治癒創傷、延緩衰老。作為美德的象徵，它也提醒英雄們自己的行動是正義的，就如同它昔日曾為卡美洛的騎士們指引方向一般。
 y
 !Base.Resources.hero.Hercules_DescT用來提升赫拉克勒斯的覺醒等級，從而解鎖更強大的戰鬥加成。
+$
+Base.CommunityPopup.RedditReddit
 D
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_Name	尖屋頂
+�
+-Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Name熔巖神廟
 2
@@ -3380,6 +3401,8 @@ N
 Base.Generic.ErrorUnavailable-目前無法變更名稱。請稍後重試。
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Descx領袖！我們有競爭對手了！那些<style=MC>碎顱部落</style>正在威脅反擊！讓我們去擊潰他們！
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
 @
 0Base.Buildings.Building_Mayas_Home_Priest_1_Name工匠之家
 <
@@ -3642,6 +3665,8 @@ B
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatch沒有符合
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_Name黑曜石採石場
+E
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
 @
 0Base.Buildings.Building_Mayas_Home_Worker_1_Name工人之家
 1
@@ -4207,6 +4232,8 @@ J
 Base.Units.Unit_Pythagoras_Desc�深入審視你的靈魂，並與畢達哥拉斯一同生活在地下吧！這位來自公元前6世紀的古希臘哲學家與數學家，儘管他的生活被神話與謎團籠罩，但他以畢達哥拉斯定理最為人知，為幾何學的基本原則奠定基礎，這也成為全世界無數學童的頭痛之源。<br><br>在克羅頓，他創立了一所學校，他的追隨者—畢達哥拉斯學派，不僅研究數學，還探討音樂理論、天文學和倫理學，並相信數字是理解宇宙的核心。這種綜合性的學習方法突顯了不同領域之間的相互聯繫。<br><br>他的教義留下了持久的遺產，對後世產生了深遠的影響，塑造了西方思想。畢達哥拉斯的工作仍然是數學和哲學研究的基石，並繼續激勵著今天的探索與研究。較少為人知的是他那無比的自信：傳說中當一條毒蛇咬到他時，他反咬回去並將其殺死！
 h
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarning0這位英雄已經達到最高技能等級了！
+J
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
 :
 !Base.Resources.hero.Hercules_Name赫拉克勒斯精華
 C
@@ -4223,6 +4250,8 @@ E
 5Base.WorldWondersOverviewPanel.AllianceResourceHeader聯盟產物
 _
 +Base.QuestlinesPanel.WonderContributionTask0達成其他玩家的{0}個奇觀援助請求。
+O
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
 2
 'Base.UnitStats.unit_stat.Shield_Percent盾 ％
 �
@@ -4390,6 +4419,8 @@ L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_Desc生產紙莎草
 y
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescE此自選套組可讓您在食物和研究點數之間進行選擇。
+k
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
 5
 Base.UnlockableFeatures.Rift愛因斯坦傳送門
 8
@@ -4677,6 +4708,8 @@ i
 
 K
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_Name家庭農場
+B
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
 0
 Base.EventShop.NoOffers目前沒有優惠。
 E
@@ -5025,6 +5058,8 @@ C
 9Base.WorldWondersOverviewPanel.ContributionsCollectReward收集
 F
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_Name紙莎草卷
+B
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
 h
 Base.Resources.amethyst_DescH一顆珍貴的寶石，必須用來研究某些羅馬帝國的技術。
 2
@@ -5419,6 +5454,8 @@ K
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Name豪華家園
 B
 ,Base.IngameEvents.Event_ForgeOfVulcan_3_Name伏爾甘的熔爐
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_NameRoutiers
 i
 4Base.WonderCollections.StoriesAndMyths_FormattedName1<size=34px>奇觀來自</size><br>故事與神話
 =
@@ -5677,6 +5714,8 @@ E
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name樓閣
 D
 2Base.UnitStats.unit_stat.CritChance_Percent_Abbrev暴擊機率 %
+>
+-Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
 R
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc生產許多紙莎草
 2
@@ -6362,6 +6401,8 @@ A
 -Base.TeslaStormsPanel.OnlySpecificColorHeroes{0} 英雄挑戰
 ^
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_Name研究自選套組 2-1
+�
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 W
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_Desc解鎖長戟兵
 �
@@ -6892,6 +6933,8 @@ ABase.Technologies.Technology_ClassicGreece_ReinforcedShields_Name強化護盾
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabel下次必得藍圖：
 *
 Base.RiftInfoPopup.PityTab保底機制
+�
+Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 s
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_Desc?立即收到一堆反物質，一週內每天再收到兩塊！
 [
@@ -7302,6 +7345,8 @@ P
 &Base.BuildingGroups.premiumQuarry_Name豪華採石場
 0
  Base.AccountSettingsPopup.Header帳戶設定
+�
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 �
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�現在是時候引導我們的工匠創造<nobr><style=MC>先祖面具</nobr></style><nobr><sprite name=resource.ancestor_mask_cta></nobr>來召喚古老的智慧。這些面具<style=MC>連接世界</style>讓我們的先祖見證我們為此所做的努力。
 F
@@ -7886,6 +7931,8 @@ u
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_Desc?此自選套組可讓您在不同的產物之間進行選擇。
 m
 -Base.VideoPlacementButton.RunOutOfImpressions<您已使用今日的全部影片獎賞！請明日再來！
+_
+0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
 K
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeader敵人生成
 X
@@ -7928,6 +7975,8 @@ W
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_Descu今晚，我們做到了。我們領先一步，贏得了勝利！現在，我們要竭盡全力慶祝這場勝利。
 
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_Desc<此自選套組可讓您選擇不同顏色的普通徽章。
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 R
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeeded可能需要的資源
 f
@@ -8010,6 +8059,8 @@ D
 -Base.Factions.Faction_MinoanEra_Spartans_Name斯巴達人
 M
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_Name遠程軍營
+r
+1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
 �
 +Tutorial.TeslaStormsTutorial.StageSelection�只有<style=MC>紅色</style>英雄能夠承受這場<style=MC>災害</style>。我們會一起擊敗<style=MC>特斯拉</style>特，並獲得珍貴的<style=MC>元素徽章</style>。
 ?
@@ -8366,6 +8417,8 @@ m
 Base.Resources.mead_DescQ蜜酒是製作精煉資源所需的重要資源。它可以在酒館中生產。
 .
 Base.Resources.greek_lyre_Name希臘里拉
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_NameMangonel
 ?
 /Base.Buildings.Building_Egypt_Home_Small_5_Name小型家園
 ^
@@ -8791,6 +8844,8 @@ $Base.HeroPanel.EquipWillUnequipRelic該聖物將從 {0} 被卸下
 #Base.Resources.hero.MarieCurie_Name瑪麗·居禮的精華
 M
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_Name紙莎草工坊
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 F
 *Base.ShopPopup.Pages.forge_of_vulcan_event伏爾甘的熔爐特賣
 :
@@ -8867,6 +8922,8 @@ n
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_Desc?看來我們成功了。隨後的沉默表明發生了變化。
 Q
  Base.SeasonPass.BuyGoldPassTitle-獲得您的賽季通行證黃金入場券！
+E
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
 6
 ,Base.KeyboardShortcuts.Description.Inventory庫存
 5
@@ -9215,6 +9272,8 @@ O
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_Name步兵軍營
 b
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc提升相鄰建築的幸福
+e
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
 R
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_Name彩飾小盒
 L
@@ -9753,6 +9812,8 @@ C
 'Base.Expansions.Expansion_China_24_Name西方桑蠶林地區域
 9
 #Base.SeasonPass.SeasonCompletedText下個賽季開始
+G
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
 �
 !Base.Units.Unit_AttilaTheHun_Desc�是那位幾乎摧毀羅馬帝國的男人——匈奴王阿提拉！這位 5 世紀的帝王以卓越的軍事才能與戰略天賦聞名。<br><br>率領龐大的部族聯盟，阿提拉發動戰役席捲歐洲，成功擊敗東羅馬帝國。儘管羅馬向他進貢求和，他仍率軍直逼羅馬城，最終因他的突然去世才止步於此。<br><br>阿提拉的傳奇充滿了他的軍事戰功與領袖魅力，使他成為歐洲歷史中令人畏懼的重要人物。然而，鮮為人知的是，他竟然有一隻名為**「阿提拉·兔」**的小兔子，據說曾陪伴他征戰四方！
 ,
@@ -9865,6 +9926,8 @@ O
 Base.OptionsPopup.StartNewCity開始一個新的城市
 G
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Name軍事通道
+�
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 1
 Base.Heroes.hero.Hercules_Name赫拉克勒斯
 B
@@ -10017,6 +10080,8 @@ K
 Base.EventRewardLane.Earned{0}/{1} 獲得
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_Desc�沒錯，<style=MC>老朋友</style>。放下這些為了爭奪一點土地的無謂爭吵吧。加入我，為<style=MC>更美好的未來</style>而戰。
+P
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescK此自選套組可讓您在不同顏色的強化徽章之間進行選擇。
 
@@ -10179,6 +10244,9 @@ S
 Base.Units.Unit_Leonidas_Name列奧尼達斯一世
 V
 ,Base.EquipmentSets.equipment_set.Hunter_Desc&攻擊<style=basestat_dark>+15</style>
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
+Cavalrymen
 E
 5Base.Abilities.hero_battle_ability.FalconryGlove_Name獵鷹手套
 ]
@@ -10205,6 +10273,8 @@ T
 #Base.Resources.alliance_timber_Name聯盟木材
 3
  Base.ShopPopup.Pages.city_bundle城市組合包
+*
+Base.Resources.doubloons_Name	Doubloons
 q
 4Base.Buildings.Building_Vikings_City_CityHall_2_Desc9大禮堂是城市的中心。持續產生少量便士。
 0
@@ -10315,6 +10385,8 @@ l
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_Desc我們應該調查此事！
 R
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_Desc解鎖雇傭兵
+_
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
 T
 )Base.Resources.yellow_crest_enhanced_Desc'需要黃色徽章來提升黃色英雄
 U
@@ -10714,6 +10786,8 @@ W
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_Desc將陶土精煉成黏土
 =
 Base.Tutorial.WonderBlocked目前無法選擇該奇觀。
+#
+Base.EquipmentItemView.SoldSold
 k
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc0為您的城市產生錢幣並提供一名工人
 �
@@ -11554,6 +11628,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�我建�
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_Desc]這就是你的成名之舉，列奧尼達斯。你在溫泉關英勇犧牲，成為英雄。
 ?
 &Base.Alerts.AccountBannedTimeRemaining剩餘封停時間：
+V
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 9
 'Base.MergeItems.WorldFair_Bronze_5_Name神器 - 5 級
 =
@@ -11902,6 +11978,8 @@ w
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_Desc9產生一大堆金幣並為你的城市增加兩名工人
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>近戰攻擊| 增益</style>宮本武藏對當前目標進行四次攻擊，總共造成<style=basestat>{dmg_percentage}</style>的傷害。同時增加他的暴擊機率<style=basestat>{crit_percentage}</style>，持續<style=basestat>{duration}</style>。
+R
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
 :
 0Base.Technologies.Technology_BronzeAge_Barn_Name穀倉
 J
@@ -12032,6 +12110,8 @@ E
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�你以精湛的技藝建造了我們的工坊。現在，讓我們專注於升級<style=MC>薩伊爾宮</style>因為只有透過它的宏偉壯麗，對手的領導人才會承認我們的力量，並被迫與我們結盟。
 G
 %Base.BattleSetupPanel.OpenAbilityInfo長按英雄開啟能力訊息
+K
+Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
 T
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_Name	等級 33
 E
@@ -12096,6 +12176,8 @@ l
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc0生產金幣並為你的城市增加一名工人
 -
  Base.HeroFilterPopover.HitPoints	生命值
+X
++Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 l
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc0為您的城市產生錢幣並提供一名工人
 N
@@ -12456,6 +12538,8 @@ Y
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name!世界博覽會活動任務線 II
 #
 Base.AllianceBlimps.Build建造
+I
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_1_Name鳥舍
 �
@@ -14110,6 +14194,8 @@ G
 'Base.Cities.City_Mayas_SayilPalace_Name瑪雅帝國
 �
 *Base.Resources.hero.AztecTlacateccatl_DescW用於提升庫奧赫特莫克的覺醒等級，從而解鎖更強大的戰鬥加成。
+E
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 o
 #Base.Resources.frankish_fibula_DescH一件中世紀的珠寶，法蘭克時代的特定技術研究所需。
 F
@@ -14382,6 +14468,8 @@ C
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_Desci聖女貞德小姐，儘管看起來一切都失去了，但你內心深處的光芒永遠不會暗淡。
 8
 (Base.TreasureHuntStartedPopup.JoinButton加入尋寶
+H
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
 3
 #Base.Resources.material_temple_Name神廟材料
 G
@@ -14694,6 +14782,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc�你�
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_DescH此自選套組允許你從不同顏色的進階徽章中進行選擇。
 L
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_Name騎兵軍營
+1
+Base.SellEquipmentPopup.HeaderSell Equipment?
 P
 =Base.Technologies.Technology_IberianEra_OrangePlantation_Name柑橘種植園
 A
@@ -14710,6 +14800,8 @@ W
 'Base.HeroPanel.FocusInitialChargeChange,初始值：<style=AwakenFocus> -{0}</style>
 >
 +Base.Resources.rift_token_mayas_common_Name瑪雅反物質
+>
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
 O
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_Desc解鎖步兵
 C
@@ -14828,6 +14920,8 @@ h
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTask*提升任何{0}類英雄的技能等級。
 �
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_DescG世界之間的寂靜... 葉子與硫磺... 還有那道時光之門。
+
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 V
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_Name大理石裝飾
 @
@@ -14862,6 +14956,8 @@ C
 &Base.ServerSelectionPopup.SelectServer選擇伺服器
 
 Base.Generic.MainCity城市
+F
+)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 o
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipText6顯示今日還可援助其他玩家奇觀的頻次。
 g
@@ -15203,6 +15299,8 @@ A
 (Base.TreasureHuntRankingPanel.LateJoiner賽季開始後加入
 g
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc0為您的城市產生錢幣並提供一名工人
+�
+1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 ;
 (Base.KeyboardShortcuts.Description.Tesla特斯拉風暴
 ?
@@ -15539,6 +15637,8 @@ F
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_Descl我不確定這片土地是新的。你看，那裡有一座城市！還有一些戰士，直衝我們來！
 �
 "Base.Units.Unit_PakalTheGreat_Desc�成為撐起文明的山岳，與帕卡爾大帝一同締造歷史！這位 7 世紀的瑪雅王者統治帕倫克長達 68 年，甚至在死後依然主宰城邦，因他被奉為城市的神祇之一。帕卡爾誕生於動盪之時，在前王與繼承人相繼過世後，年僅 12 歲便登基執政。<br><br>作為國王，帕卡爾致力於安撫內部、拓展勢力與建設城市。由於他並非正統皇室血脈，他巧妙地將對手的功績雕刻在帕倫克各處的紀念碑與建築上，尤其是帕倫克宮殿，藉此鞏固自身的合法性。<br><br>而最令人動容的，是這位以石刻書寫歷史的君王，最終也被歷史永遠鐫刻於石中。他的陵墓——銘文神殿，正是為他而建的宏偉墓園，內部刻有瑪雅人民的歷史長卷，而神殿核心，則安放著那座裝飾華美、永恆不朽的石棺。
+`
+(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
 &
 Base.Generic.NextIn下一{0}於{1}
 �
@@ -15565,6 +15665,8 @@ r
 'Base.AllianceSetDetailsPanel.WithInvite需要邀請
 H
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_Desc生產金礦石
+O
+/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
 k
 #Base.Resources.herbal_poultice_DescD一種<style=rare>稀有</style>晉升材料，用於晉升英雄。
 U
@@ -17006,6 +17108,8 @@ z
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_Desc]豪華的釣魚碼頭派出船隻捕撈大量的魚來供應所有飢餓的工人和水手。
 A
 7Base.Technologies.Technology_ByzantineEra_Forquier_Name草叉
+O
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
 O
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewards黃金通行證路線獎勵
 .

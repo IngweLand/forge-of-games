@@ -342,6 +342,9 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_Name�
 $Base.IngameEvents.SeasonPass_10_Name知恵の波動
 I
 'Base.Resources.purple_crest_common_Name紫色のコモンクレスト
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
+Longbowmen
 I
 6Base.Abilities.hero_battle_ability.RomanCenturion_Name亀甲の陣形
 ?
@@ -647,6 +650,8 @@ $Base.UnitStats.unit_stat.AttackSpeed攻撃速度
 Base.OptionsPopup.Logoutログアウト
 y
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
+<
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
 �
 !Base.Alerts.ServerUnavailableText�Heroes of Historyのサーバーは一時的に利用できません。
 
@@ -985,6 +990,8 @@ D
 4Base.Buildings.Building_Vikings_City_CityHall_1_Name大ホール
 F
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_Name小作農場
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
 >
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader上レーン
 }
@@ -1229,6 +1236,8 @@ M
 "Base.Rifts.rift.CommonSpecial_Name新人伝説パック
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_Desc�けれども、神々の望みは尽きません。さらなる捧げものとして、<style=MC>鳥舎</style>を築かねばなりません。ケツァールやコンゴウインコといった聖なる鳥たちの<nobr><style=MC>羽根</style> <sprite name=resource.feathers_cta></nobr> は、天へと想いを届けるために欠かせぬ存在です。
+@
+*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 �
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_DescRこの選択キットでは、さまざまな名産品の中から1つ選べる。
 +
@@ -1947,6 +1956,8 @@ M
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_DescWもっとコインが欲しいって？それならこの金塊を掘り起こそう！
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_Name哲学者の館
+N
+)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 (
 Base.InventoryMenuPanel.Header在庫
 �
@@ -2175,6 +2186,8 @@ J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_Name仮面工房
 �
 &Tutorial.HeroLevelTutorial.ExplainFood�俺たち<style=MC>ヒーロー</style>も腹が減るんだ。<style=MC>レベルアップ</style>には<style=MC>都市</style>の<style=MC>食料</style>が必要だ。
+N
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
 J
 .Base.Units.Unit_IberianEra_Vikings_Archer_Nameヴァイキング弓兵
 L
@@ -2735,6 +2748,8 @@ GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeaderイベ
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Name噴水
 <
+Base.OptionsPopup.CodeInputEnter your Promo Code here...
+<
 &Base.HarborShopPanel.Alliance.ShopName同盟ショップ
 <
 2Base.Technologies.Technology_StoneAge_Herding_Name牧畜
@@ -2803,6 +2818,8 @@ h
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Nameロビン・フッド
 $
 Base.CampaignPanel.Rewards報酬
++
+!Base.SellEquipmentPopup.SubHeaderReward
 ?
 &Base.HarborShopPanel.PvPArena.ShopName闘技場ショップ
 �
@@ -3316,8 +3333,12 @@ IBase.StoryText.Story_Questline_StoneAge_Foundations_QuestStart_Text2_Desc�そ
 Base.Relics.TheHolyGrail_Desc�キャメロットの騎士たちは、自らの価値を証明するために聖杯を探す旅に出た。最初にそれを求めたのはケルトの騎士パーシヴァル、騎士道を志す者だった。次に続いたのは英雄にして高潔なるガウェイン、アーサー王に最も近しい存在。続くはランスロットの息子ガラハッド、奇跡を起こし、誰よりも戦える若者だった。時が経つにつれ、その探索はさらに奇妙さを増していく。テンプル騎士団、カタリ派、例の帽子をかぶった考古学者、宇宙飛行士、そしてゲームのキャラクターまで……物語の中は、探求者であふれている。<br><br>だが、それを見つけるのがまさか自分だったとは誰も想像しなかっただろう。その魔力は若返りをもたらし、傷を癒やし、老いを防ぐ。美徳の象徴としてもそれは、ヒーローたちに自らの行動が正しきものであることを思い出させる。かつてキャメロットの騎士たちの道標となったように。
 �
 !Base.Resources.hero.Hercules_Desc{ヘラクレスの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+$
+Base.CommunityPopup.RedditReddit
 D
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_Name	尖屋根
+�
+-Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
 J
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Name溶岩の神殿
 2
@@ -3392,6 +3413,8 @@ x
 Base.Generic.ErrorUnavailableW現在、名前の変更はできません。後でもう一度お試しください。
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc~リーダー！敵が来たぞ！あの<style=MC>頭蓋砕き</style>が反撃を企んでいる！叩き潰してやろう！
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
 @
 0Base.Buildings.Building_Mayas_Home_Priest_1_Name職人の家
 K
@@ -3654,6 +3677,8 @@ _Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestF
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatch	不一致
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_Name黒曜石採掘場
+E
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
 C
 0Base.Buildings.Building_Mayas_Home_Worker_1_Name労働者の家
 4
@@ -4217,6 +4242,8 @@ V
 Base.Units.Unit_Pythagoras_Desc�魂の本質を探求し、未知を追い求めた数学者ピタゴラス。紀元前６世紀のギリシャに生きた哲学者であり、数学の基礎を築いた人物だ。その生涯は神秘と伝説に包まれているが、ピタゴラスの定理によって名を馳せ、世界中の学生たちに数えきれない頭痛をもたらした。<br><br>クロトンに学派を設立し、弟子たちとともに数学だけでなく、音楽理論、天文学、倫理学にまで探究を広げ、数こそが宇宙を理解する鍵であると説いた。この包括的な学びの姿勢は、異なる分野のつながりを浮き彫りにした。<br><br>その教えは後世に大きな影響を与え、西洋思想の形成にも寄与。数学と哲学の基盤を築き、今なお知の探求を刺激し続けている。そして、あまり知られていないが、ピタゴラスは自信に満ちた人物でもあった。伝説によれば、毒蛇に噛まれた際、噛み返して仕留めたという話も残っている。
 �
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarningWこのヒーローはすでにアビリティの最大レベルに到達している！
+J
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
 =
 !Base.Resources.hero.Hercules_Nameヘラクレスの精髄
 C
@@ -4233,6 +4260,8 @@ K
 5Base.WorldWondersOverviewPanel.AllianceResourceHeader同盟の名産品
 z
 +Base.QuestlinesPanel.WonderContributionTaskK他のプレイヤーの{0}回の世界遺産の支援要請を満たす。
+O
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
 :
 'Base.UnitStats.unit_stat.Shield_Percentシールド％
 �
@@ -4400,6 +4429,8 @@ X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_Descパピルスを生産する
 �
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescUこの選択キットでは、食料と研究ポイントの中から1つ選べる。
+k
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
 2
 Base.UnlockableFeatures.Rift時空ポータル
 >
@@ -4690,6 +4721,8 @@ e
 
 K
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_Name畜産農場
+B
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
 K
 Base.EventShop.NoOffers0現在、利用可能なオファーはない。
 E
@@ -5040,6 +5073,8 @@ I
 9Base.WorldWondersOverviewPanel.ContributionsCollectReward受け取る
 L
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_Nameパピルス巻物
+B
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
 }
 Base.Resources.amethyst_Desc]特定のローマ帝国時代の技術を研究するために使われる貴重な宝石。
 8
@@ -5435,6 +5470,8 @@ N
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Name豪華な住宅
 B
 ,Base.IngameEvents.Event_ForgeOfVulcan_3_Name火神の鍛冶場
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_NameRoutiers
 l
 4Base.WonderCollections.StoriesAndMyths_FormattedName4伝説や神話<br><size=34px>の世界遺産</size>
 =
@@ -5693,6 +5730,8 @@ K
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name仮設小屋
 N
 2Base.UnitStats.unit_stat.CritChance_Percent_Abbrevクリティカル率％
+>
+-Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
 d
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc'山ほどのパピルスを生産する
 /
@@ -6377,6 +6416,8 @@ F
 -Base.TeslaStormsPanel.OnlySpecificColorHeroes{0}ヒーロー挑戦
 `
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_Name研究選択キット2-1
+�
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 f
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_Desc鉾兵をアンロックする
 �
@@ -6904,6 +6945,8 @@ g
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabel次の設計図確定まで：
 *
 Base.RiftInfoPopup.PityTab確定保証
+�
+Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 �
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_Descl反物質を今すぐ大量ゲット！さらに、１週間毎日２個ずつ受け取れるチャンス！
 v
@@ -7313,6 +7356,8 @@ P
 &Base.BuildingGroups.premiumQuarry_Name豪華な採掘場
 9
  Base.AccountSettingsPopup.Headerアカウント設定
+�
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
 �
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�今こそ、<nobr><style=MC>祖先の仮面</style> <sprite name=resource.ancestor_mask_cta> </nobr>を作らせる時でございます。その仮面は、古の叡智を呼び起こし、わたくしたちの歩みを祖霊へと届ける<style=MC>架け橋</style>となりましょう。
 L
@@ -7898,6 +7943,8 @@ S
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_DescRこの選択キットでは、さまざまな名産品の中から1つ選べる。
 �
 -Base.VideoPlacementButton.RunOutOfImpressionsZ今日の動画報酬をすべて使用しました！明日またお越しください！
+_
+0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
 W
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeader敵ユニットの出現
 v
@@ -7940,6 +7987,8 @@ o
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_Desccやったね、今夜は僕たちの勝ちさ！時を超えて、勝利を手に入れたんだ！
 �
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_Desc^この選択キットでは、様々な色のコモンクレストの中から1つ選べる。
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
 d
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeeded'要求される可能性のある資源
 i
@@ -8022,6 +8071,8 @@ D
 -Base.Factions.Faction_MinoanEra_Spartans_Nameスパルタ人
 P
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_Name射撃兵兵舎
+r
+1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
 �
 +Tutorial.TeslaStormsTutorial.StageSelection�<style=MC>赤色の</style>ヒーローだけがこの<style=MC>災害</style>に耐えられるんだ。共に<style=MC>テスラ</style>を倒し、貴重な<style=MC>元素のクレスト</style>を手に入れよう！
 E
@@ -8379,6 +8430,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 Base.Resources.mead_Descf蜂蜜酒は加工資源を作るために使われる重要な資源で、酒場で生産される。
 (
 Base.Resources.greek_lyre_Nameリラ
+?
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_NameMangonel
 B
 /Base.Buildings.Building_Egypt_Home_Small_5_Name小さな住宅
 g
@@ -8803,6 +8856,8 @@ H
 #Base.Resources.hero.MarieCurie_Name!マリー・キュリーの精髄
 P
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_Nameパピルス工房
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 I
 *Base.ShopPopup.Pages.forge_of_vulcan_event火神の鍛冶場セール
 @
@@ -8879,6 +8934,8 @@ VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Tex
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_DescW…やったみたいね。この静けさ、何かが変わった証拠じゃない？
 T
  Base.SeasonPass.BuyGoldPassTitle0ゴールドチケットを手に入れよう！
+E
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
 6
 ,Base.KeyboardShortcuts.Description.Inventory在庫
 ;
@@ -9229,6 +9286,8 @@ O
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_Name歩兵兵舎
 k
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
+e
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
 X
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_Name宝石ロケット
 X
@@ -9763,6 +9822,8 @@ Z
 'Base.Expansions.Expansion_China_24_Name西の蚕の湿地
 H
 #Base.SeasonPass.SeasonCompletedText!次のシーズン開始まで：
+G
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
 �
 !Base.Units.Unit_AttilaTheHun_Desc�ローマ帝国を崩壊寸前に追い込んだ男、フン族の王アッティラ！５世紀の帝王アッティラは、卓越した軍事的手腕と戦略の才覚で名を馳せた。<br><br>広大な部族連合を率いて、アッティラはヨーロッパを横断し、東ローマ帝国を打ち破った。貢物を受け取った後、ローマへの進軍を開始したものの、突然の死によって道半ばで終わることとなった。<br><br>軍事的な功績と圧倒的なカリスマ性を持つその名は、ヨーロッパ史に刻まれ続けている。 そして、あまり知られていない話として、戦争に同行していたという噂のウサギの存在も伝えられている！
 )
@@ -9876,6 +9937,8 @@ R
 Base.OptionsPopup.StartNewCity新しい都市で始める
 A
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_Name水路
+�
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 1
 Base.Heroes.hero.Hercules_Nameヘラクレス
 H
@@ -10028,6 +10091,8 @@ N
 Base.EventRewardLane.Earned{0}/{1}獲得済み
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_Desc�ええ、その通りですよ、<style=MC>古き友よ</style>。無意味な争いはやめて、君も私と共に戦いませんか？<style=MC>未来</style>のためにね。
+P
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
  
@@ -10191,6 +10256,9 @@ S
 Base.Units.Unit_Leonidas_Nameレオニダス１世
 Y
 ,Base.EquipmentSets.equipment_set.Hunter_Desc)攻撃力<style=basestat_dark>+15</style>
+C
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
+Cavalrymen
 H
 5Base.Abilities.hero_battle_ability.FalconryGlove_Name鷹匠の手袋
 c
@@ -10217,6 +10285,8 @@ i
 #Base.Resources.alliance_timber_Name同盟の木材
 6
  Base.ShopPopup.Pages.city_bundle都市バンドル
+*
+Base.Resources.doubloons_Name	Doubloons
 �
 4Base.Buildings.Building_Vikings_City_CityHall_2_Descr都市の中心部にある大ホール。ここでは、少量ながらペニーを継続的に収集できる。
 H
@@ -10327,6 +10397,8 @@ K
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_Desc-これは、調べてみるしかないね！
 g
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_Desc$軽装傭兵をアンロックする
+_
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
 �
 )Base.Resources.yellow_crest_enhanced_DescT黄色のヒーローを昇進させるには、黄色のクレストが必要だ。
 s
@@ -10725,6 +10797,8 @@ f
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_Desc'カオリンから粘土を生産する
 O
 Base.Tutorial.WonderBlocked0今はこの世界遺産を選択できない。
+#
+Base.EquipmentItemView.SoldSold
 x
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 �
@@ -11569,6 +11643,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�通信�
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_Desc~それこそが君の名声だ、レオニダス。テルモピュライの戦いで、君は英雄として散ったんだ。
 B
 &Base.Alerts.AccountBannedTimeRemaining残りの停止時間：
+V
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 A
 'Base.MergeItems.WorldFair_Bronze_5_Name工芸品 レベル５
 =
@@ -11920,6 +11996,8 @@ X
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>近接攻撃・強化</style>宮本武蔵が現在のターゲットを4回攻撃し、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。加えて、クリティカル率が<style=basestat>{crit_percentage}</style>上昇する。
+R
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
 :
 0Base.Technologies.Technology_BronzeAge_Barn_Name納屋
 P
@@ -12050,6 +12128,8 @@ A
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�工房の整備、見事であった。その技は称賛に値する。これよりは、<style=MC>サイル宮殿</style>そのものの強化に力を注ぐとしよう。宮殿が真に壮麗たる姿となれば、敵対する支配者たちも我らの威光を認め、同盟の席につかざるを得まい。
 t
 %Base.BattleSetupPanel.OpenAbilityInfoKヒーローを長押しすると、アビリティ情報が確認できる
+K
+Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_Nameレベル33
 ?
@@ -12114,6 +12194,8 @@ y
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 *
  Base.HeroFilterPopover.HitPoints体力
+X
++Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 Q
@@ -12476,6 +12558,8 @@ b
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name*世界博覧会イベントクエスト２
 #
 Base.AllianceBlimps.Build建設
+I
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_1_Name鳥舎
 �
@@ -14131,6 +14215,8 @@ y
 'Base.Cities.City_Mayas_SayilPalace_Nameマヤ帝国
 �
 *Base.Resources.hero.AztecTlacateccatl_Desc�クアウテモックの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+E
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 �
 #Base.Resources.frankish_fibula_Descf特定のフランク王国時代の技術を研究するために使われる、中世の宝飾品。
 @
@@ -14405,6 +14491,8 @@ F
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_Descrジャンヌ、すべてが失われたわけじゃない。お前には、決して折れない強さがある。
 D
 (Base.TreasureHuntStartedPopup.JoinButton宝探しに参加する
+H
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
 3
 #Base.Resources.material_temple_Name神殿素材
 J
@@ -14715,6 +14803,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc�よ�
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_Desc^この選択キットでは、様々な色の優れたクレストの中から1つ選べる。
 L
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_Name騎兵兵舎
+1
+Base.SellEquipmentPopup.HeaderSell Equipment?
 S
 =Base.Technologies.Technology_IberianEra_OrangePlantation_Nameオレンジ農場
 H
@@ -14731,6 +14821,8 @@ _
 'Base.HeroPanel.FocusInitialChargeChange4初期チャージ：<style=AwakenFocus>-{0}</style>
 A
 +Base.Resources.rift_token_mayas_common_Nameマヤの反物質
+>
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
 g
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_Desc$歩兵部隊をアンロックする
 F
@@ -14849,6 +14941,8 @@ f
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTask?{0}クラスのヒーローのアビリティを強化する。
 �
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_DescZ世界の狭間の静寂さ…薬草の香りと硫黄の匂い…そして時間の扉。
+
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
 V
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_Name大理石装飾
 D
@@ -14883,6 +14977,8 @@ B
 &Base.ServerSelectionPopup.SelectServerサーバーを選ぼう
 
 Base.Generic.MainCity都市
+F
+)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 �
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipText`今日、他のプレイヤーの世界遺産をどれだけ支援できるかを表示する。
 m
@@ -15225,6 +15321,8 @@ G
 (Base.TreasureHuntRankingPanel.LateJoinerシーズン開始後参加
 t
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
+�
+1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 A
 (Base.KeyboardShortcuts.Description.Teslaテスラストーム
 L
@@ -15561,6 +15659,8 @@ F
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_Desc�この地が新しいかどうか、疑わしいわ。見て、あそこに都市がある！そして、戦士たちがこちらに向かってくる！
 �	
 "Base.Units.Unit_PakalTheGreat_Desc�文明の礎を築いた王、パカルとともに歩もう。７世紀のマヤで即位したこの王は、６８年もの長きにわたってパレンケを治め、死後は都市の神として祀られることとなった。前王とその後継者が相次いで世を去るなか、わずか１２歳で王に即位し、混乱の中で都市の未来を背負うことになる。<br><br>治世の中で関係を整え、領土を広げ、都市を発展させながら、政治と建築の両面に力を注いでいった。王族の血を引いていなかったため、自身の正統性を示すために、パレンケの宮殿をはじめとする多くの建築に、歴代の王の功績を刻み込んでいった。<br><br>石に歴史を刻んだその人物が、やがて自身の物語を石に残すことになったのは、ごく自然な流れだったのかもしれない。自身の墓所として建てられた「碑文の神殿」には、マヤの歴史を讃える巨大な石板が並び、その中心には繊細な装飾が施された石棺が静かに納められている。
+`
+(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
 )
 Base.Generic.NextIn次の{0}まで{1}
 �
@@ -15587,6 +15687,8 @@ o
 'Base.AllianceSetDetailsPanel.WithInvite招待が必要
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_Desc金鉱石を生産する
+O
+/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
 t
 #Base.Resources.herbal_poultice_DescMヒーロー昇進に使用する<style=rare>レア</style>な昇進素材。
 E
@@ -17035,6 +17137,8 @@ R
 :Base.Buildings.Building_Vikings_FishingPier_Premium_3_Descu豪華な漁桟橋では船を送り出し、山ほどの魚を捕って空腹の労働者と水夫に提供する。
 G
 7Base.Technologies.Technology_ByzantineEra_Forquier_Name飼料技術
+O
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
 O
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewardsゴールド報酬レーン
 =
