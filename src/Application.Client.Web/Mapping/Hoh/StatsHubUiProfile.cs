@@ -28,14 +28,15 @@ public class StatsHubUiProfile : Profile
                 {
                     var ages = context.Items.GetRequiredItem<IReadOnlyDictionary<string, AgeDto>>(ResolutionContextKeys
                         .AGES);
-                    return ages[src.Age].Name;
+                    return ages.TryGetValue(src.Age, out var age) ? age.Name : src.Age;
                 }))
             .ForMember(dest => dest.AgeColor, opt =>
                 opt.MapFrom((src, _, _, context) =>
                 {
                     var ages = context.Items.GetRequiredItem<IReadOnlyDictionary<string, AgeDto>>(ResolutionContextKeys
                         .AGES);
-                    return ages[src.Age].ToCssColor();
+                    ages.TryGetValue(src.Age, out var age);
+                    return age.ToCssColor();
                 }))
             .ForMember(dest => dest.AvatarUrl,
                 opt => opt.ConvertUsing<PlayerAvatarIdToUrlConverter, int>(src => src.AvatarId))
@@ -53,14 +54,15 @@ public class StatsHubUiProfile : Profile
                 {
                     var ages = context.Items.GetRequiredItem<IReadOnlyDictionary<string, AgeDto>>(ResolutionContextKeys
                         .AGES);
-                    return ages[src.Age].Name;
+                    return ages.TryGetValue(src.Age, out var age) ? age.Name : src.Age;
                 }))
             .ForMember(dest => dest.AgeColor, opt =>
                 opt.MapFrom((src, _, _, context) =>
                 {
                     var ages = context.Items.GetRequiredItem<IReadOnlyDictionary<string, AgeDto>>(ResolutionContextKeys
                         .AGES);
-                    return ages[src.Age].ToCssColor();
+                    ages.TryGetValue(src.Age, out var age);
+                    return age.ToCssColor();
                 }))
             .ForMember(dest => dest.AvatarUrl,
                 opt => opt.ConvertUsing<PlayerAvatarIdToUrlConverter, int>(src => src.AvatarId))
