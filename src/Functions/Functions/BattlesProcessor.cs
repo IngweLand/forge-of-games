@@ -15,7 +15,6 @@ public class BattlesProcessor(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IPvpBattleService pvpBattleService,
-    IBattleService battleService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IBattleStatsService battleStatsService,
     ILogger<BattlesProcessor> logger,
@@ -29,8 +28,6 @@ public class BattlesProcessor(
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var allPvpBattles = new List<(string WorldId, PvpBattle PvpBattle)>();
-        var allBattleResults =
-            new List<(string WorldId, BattleSummary BattleSummary, DateOnly PerformedAt, Guid? SubmissionId)>();
         var allBattleStats = new List<BattleStats>();
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("BattlesProcessor started for date {date}", date);
@@ -43,11 +40,6 @@ public class BattlesProcessor(
             logger.LogInformation("{count} pvp battles retrieved for game world {gameWorldId}",
                 pvpBattles.Count, gameWorld.Id);
 
-            var battleResults = await GetBattleResults(gameWorld.Id, date);
-            allBattleResults.AddRange(battleResults);
-            logger.LogInformation("{count} battle results retrieved for game world {gameWorldId}",
-                battleResults.Count, gameWorld.Id);
-
             var battleStats = await GetBattleStats(gameWorld.Id, date);
             allBattleStats.AddRange(battleStats.Select(t => t.battleStats));
             logger.LogInformation("{count} battle stats retrieved for game world {gameWorldId}",
@@ -56,16 +48,12 @@ public class BattlesProcessor(
             logger.LogInformation("Completed processing game world {gameWorldId}", gameWorld.Id);
         }
 
-        logger.LogInformation("Total pvp battles: {count}, Total battles: {count}, Total battle stats {count}",
-            allPvpBattles.Count, allBattleResults.Count, allBattleStats.Count);
+        logger.LogInformation("Total pvp battles: {count}, Total battle stats {count}", allPvpBattles.Count,
+            allBattleStats.Count);
 
         logger.LogInformation("Starting pvp battles service update");
         await ExecuteSafeAsync(() => pvpBattleService.AddAsync(allPvpBattles), "");
         logger.LogInformation("Completed pvp battles service update");
-
-        logger.LogInformation("Starting battles service update");
-        await ExecuteSafeAsync(() => battleService.AddAsync(allBattleResults), "");
-        logger.LogInformation("Completed battles service update");
 
         logger.LogInformation("Starting battle stats update");
         await ExecuteSafeAsync(() => battleStatsService.AddAsync(allBattleStats), "");

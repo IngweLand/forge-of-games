@@ -105,7 +105,7 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
-    private static async Task<Results<Ok<BattleSummaryDto>, NotFound>>
+    private static async Task<Results<Ok<BattleDto>, NotFound>>
         GetBattleAsync([AsParameters] StatsServices services, HttpContext context, int battleId,
             CancellationToken ct = default)
     {

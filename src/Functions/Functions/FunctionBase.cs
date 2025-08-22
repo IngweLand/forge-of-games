@@ -1,10 +1,11 @@
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
-using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
+using BattleResultStatus = Ingweland.Fog.Models.Hoh.Enums.BattleResultStatus;
 
 namespace Ingweland.Fog.Functions.Functions;
 
@@ -55,6 +56,36 @@ public class FunctionBase(
         }
 
         return result;
+    }
+    
+    protected async IAsyncEnumerable<HeroFinishWaveRequestDto> GetBattleRequests(string worldId, DateOnly date)
+    {
+        var rawDataItems = await ExecuteSafeAsync(
+            () => InGameRawDataTableRepository.GetAllAsync(
+                InGameRawDataTablePartitionKeyProvider.BattleCompleteWave(worldId, date)),
+            $"Error getting battle complete wave raw data for world {worldId} on {date}", []);
+        foreach (var rawData in rawDataItems)
+        {
+            if (rawData.RequestBase64Data != null)
+            {
+                HeroFinishWaveRequestDto? parsedRequest = null;
+                try
+                {
+                    parsedRequest = InGameDataParsingService.ParseBattleCompleteWaveRequest(rawData.RequestBase64Data);
+                }
+                catch (Exception e)
+                {
+                    logger.LogError(e, "Error parsing battle complete wave request raw data collected on {date}",
+                        rawData.CollectedAt);
+                }
+
+                if (parsedRequest != null)
+                {
+                    yield return parsedRequest;
+                }
+            }
+
+        }
     }
 
     protected async Task<List<(string worldId, BattleStats battleStats)>> GetBattleStats(string worldId,

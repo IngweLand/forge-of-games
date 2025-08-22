@@ -9,6 +9,8 @@ public record BattleUnitDto : IBattleUnitProperties
     public required IReadOnlyDictionary<UnitStatType, float> FinalState { get; init; } =
         new Dictionary<UnitStatType, float>();
 
+    public int? UnitInBattleId { get; init; }
+
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();
 
     public int AbilityLevel { get; init; }

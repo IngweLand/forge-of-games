@@ -10,7 +10,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 public partial class BattlePage : BattlePageBase
 {
     private readonly CancellationTokenSource _cts = new();
-    private BattleSummaryViewModel? _battle;
+    private BattleViewModel? _battle;
     private string _battleTitle = string.Empty;
 
     [Parameter]
@@ -54,8 +54,8 @@ public partial class BattlePage : BattlePageBase
         if (_battle != null)
         {
             _battleTitle = await LoadWithPersistenceAsync(nameof(_battleTitle),
-                    async () => await BattleSearchRequestFactory.CreateDefinitionTitleAsync(_battle.BattleDefinitionId,
-                        _battle.BattleType, _battle.Difficulty,
+                    async () => await BattleSearchRequestFactory.CreateDefinitionTitleAsync(
+                        _battle.Summary.BattleDefinitionId, _battle.Summary.BattleType, _battle.Summary.Difficulty,
                         await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync()))
                 ?? string.Empty;
         }

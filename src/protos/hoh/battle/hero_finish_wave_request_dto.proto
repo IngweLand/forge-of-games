@@ -1,0 +1,55 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message HeroFinishWaveRequestDto {
+  google.protobuf.BytesValue battle_id = 2;
+  repeated WaveResultUnitStatDto unit_stats = 3;
+  WaveTimelineDto timeline = 4;
+}
+
+message WaveResultUnitStatDto {
+  string unit_stat = 1;
+  repeated WaveResultUnitStatValueDto values = 2;
+}
+
+message WaveResultUnitStatValueDto {
+  int32 in_battle_id = 1;
+  float value = 2;
+}
+
+message WaveTimelineDto {
+  repeated WaveTimelineEntryDto entries = 1;
+}
+
+message WaveTimelineEntryDto {
+  int32 time_milliseconds = 1;
+  WaveTimelineAbilityCasterDto ability_caster = 11;
+  WaveTimelineAbilityTargetDto ability_target = 12;
+}
+
+message WaveTimelineAbilityCasterDto {
+  string battle_ability_definition_id = 1;
+  int32 timeline_action_id = 2;
+  WaveTimelineUnitIdentifierDto caster = 4;
+}
+
+message WaveTimelineAbilityTargetDto {
+  int32 timeline_action_id = 1;
+  WaveTimelineUnitIdentifierDto caster = 7;
+  WaveTimelineUnitIdentifierDto target = 8;
+  string u1 = 107;
+  WaveTimelineAffectedStatDto unit_stat = 112;
+  int32 result_value = 115;
+}
+
+message WaveTimelineAffectedStatDto {
+  string unit_stat = 1;
+  float value = 2;
+  int32 u1_status = 11;
+}
+
+message WaveTimelineUnitIdentifierDto {
+  int32 in_battle_id = 1;
+}

@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
+using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -13,6 +14,13 @@ public class InGameDataParsingService(
     ILogger<InGameDataProcessingServiceBase> logger)
     : InGameDataProcessingServiceBase(logger), IInGameDataParsingService
 {
+    public HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(string inputData)
+    {
+        var data = DecodeInternal(inputData);
+
+        return dataParsingService.ParseBattleCompleteWaveRequest(data);
+    }
+
     public PlayerRanks ParsePlayerRanking(string inputData)
     {
         var data = DecodeInternal(inputData);

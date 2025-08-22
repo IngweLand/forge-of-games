@@ -9,6 +9,7 @@ public interface IFogDbContext
     DbSet<Alliance> Alliances { get; set; }
     DbSet<BattleSummaryEntity> Battles { get; set; }
     DbSet<BattleStatsEntity> BattleStats { get; set; }
+    DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
     DbSet<BattleUnitEntity> BattleUnits { get; set; }
     DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     DbSet<PlayerRanking> PlayerRankings { get; set; }

@@ -72,8 +72,7 @@ public class InGameDataReceiver(
         {
             foreach (var tuple in keys)
             {
-                await QueueForImmediateProcessingIfRequired(submissionId, tuple.ResponseUrl, tuple.PartitionKey,
-                    tuple.RowKey);
+                await QueueForImmediateProcessingIfRequired(tuple.ResponseUrl, tuple.PartitionKey, tuple.RowKey);
             }
         }
         catch (Exception e)
@@ -85,14 +84,8 @@ public class InGameDataReceiver(
         return new NoContentResult();
     }
 
-    private Task QueueForImmediateProcessingIfRequired(Guid? submissionId,
-        string responseUrl, string partitionKey, string rowKey)
+    private Task QueueForImmediateProcessingIfRequired(string responseUrl, string partitionKey, string rowKey)
     {
-        if (submissionId == null)
-        {
-            return Task.CompletedTask;
-        }
-
         var processingServiceType = GetProcessingType(responseUrl);
 
         if (processingServiceType != InGameDataProcessingServiceType.Undefined)

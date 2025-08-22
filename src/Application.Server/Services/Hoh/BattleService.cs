@@ -56,7 +56,7 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
         return await sender.Send(query, ct);
     }
 
-    public async Task<BattleSummaryDto?> GetBattleAsync(int battleId, CancellationToken ct = default)
+    public async Task<BattleDto?> GetBattleAsync(int battleId, CancellationToken ct = default)
     {
         var query = new GetBattleQuery(battleId);
 

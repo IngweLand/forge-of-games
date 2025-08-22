@@ -303,6 +303,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Battle timeline.
+        /// </summary>
+        public static string BattleTimelineComponent_Title {
+            get {
+                return ResourceManager.GetString("BattleTimelineComponent.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campaign.
         /// </summary>
         public static string BattleType_Campaign {

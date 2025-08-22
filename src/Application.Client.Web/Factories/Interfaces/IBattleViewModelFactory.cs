@@ -23,5 +23,5 @@ public interface IBattleViewModelFactory
         IReadOnlyCollection<UnitBattleDto> unitBattles);
 
     IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
-    Task<BattleSummaryViewModel> CreateBattleSummaryViewModel(BattleSummaryDto battle);
+    Task<BattleViewModel> CreateBattleViewModel(BattleDto battle);
 }

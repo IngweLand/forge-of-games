@@ -8,8 +8,13 @@
 {
     <div class="page-container">
         <span class="battle-title">@_battleTitle</span>
-        <BattleTeamComponent Data="@_battle" OnHeroClicked="OpenBattleSquadProfile" ShowNavigateToBattleButton="false"
+        <BattleTeamComponent Data="@_battle.Summary" OnHeroClicked="OpenBattleSquadProfile"
+                             ShowNavigateToBattleButton="false"
                              OnBattleStatsClicked="OpenBattleStats"/>
-        <BattleTeamFormationComponent Battle="@_battle"/>
+        <BattleTeamFormationComponent Battle="@_battle.Summary"/>
+        @if (_battle.Timeline.Count > 0)
+        {
+            <BattleTimelineComponent Timeline="@_battle.Timeline" OnEntryClicked="OpenBattleSquadProfile"/>
+        }
     </div>
 }

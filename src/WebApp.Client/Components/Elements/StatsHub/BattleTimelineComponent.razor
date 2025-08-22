@@ -1,0 +1,51 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Models.Fog.Enums
+@using Microsoft.Extensions.Localization
+<div class="fog-container component-root">
+    <span class="component-title">@Loc[FogResource.BattleTimelineComponent_Title]</span>
+    @foreach (var group in Timeline)
+    {
+        <div class="time-container">@group.Time</div>
+        @foreach (var entry in group.Entries)
+        {
+            <div class="line"></div>
+            <div class="entry @(entry.Side == BattleSquadSide.Player ? "player" : "enemy")"
+                 @onclick="() => OnEntryClicked.InvokeAsync(entry.Squad)">
+                @if (entry.Side == BattleSquadSide.Player)
+                {
+                    <div class="icon-container unit">
+                        <img src="@entry.Squad.PortraitUrl"/>
+                    </div>
+                    <div class="icon-container ability">
+                        <img src="@entry.AbilityIconUrl"/>
+                    </div>
+                    <span>@entry.Title</span>
+                }
+                @if (entry.Side == BattleSquadSide.Enemy)
+                {
+                    <span>@entry.Title</span>
+                    <div class="icon-container ability">
+                        <img src="@entry.AbilityIconUrl"/>
+                    </div>
+                    <div class="icon-container unit">
+                        <img src="@entry.Squad.PortraitUrl"/>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public IReadOnlyCollection<BattleTimelineGroupViewModel> Timeline { get; set; } = [];
+
+    [Parameter]
+    public EventCallback<BattleSquadViewModel> OnEntryClicked { get; set; }
+
+    [Inject]
+    private IStringLocalizer<FogResource> Loc { get; set; }
+
+}

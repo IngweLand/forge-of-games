@@ -46,6 +46,7 @@ public static class DependencyInjection
         services.AddScoped<ITopAllianceMemberUpdateManager, TopAllianceMemberUpdateManager>();
         services.AddScoped<ITopHeroInsightsProcessor, TopHeroInsightsProcessor>();
         services.AddScoped<IAllianceMembersUpdateManager, AllianceMembersUpdateManager>();
+        services.AddScoped<IBattleTimelineService, BattleTimelineService>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

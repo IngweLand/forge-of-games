@@ -76,7 +76,7 @@ public class BattleUiService(
         return new PaginatedList<BattleSummaryViewModel>(battles, result.StartIndex, result.TotalCount);
     }
 
-    public async Task<BattleSummaryViewModel?> GetBattleAsync(int battleId, CancellationToken ct = default)
+    public async Task<BattleViewModel?> GetBattleAsync(int battleId, CancellationToken ct = default)
     {
         var result = await battleService.GetBattleAsync(battleId, ct);
         if (result == null)
@@ -84,6 +84,6 @@ public class BattleUiService(
             return null;
         }
 
-        return await battleViewModelFactory.CreateBattleSummaryViewModel(result);
+        return await battleViewModelFactory.CreateBattleViewModel(result);
     }
 }

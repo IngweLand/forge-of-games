@@ -15,6 +15,7 @@ public class InGameDataQueueProcessor(
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IBattleService battleService,
+    IBattleTimelineService battleTimelineService,
     DatabaseWarmUpService databaseWarmUpService,
     ILogger<InGameDataQueueProcessor> logger)
 {
@@ -51,23 +52,26 @@ public class InGameDataQueueProcessor(
     private async Task ProcessBattleAsync(string partitionKey, string rowKey)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
-        
+
         var rawData = await inGameRawDataTableRepository.GetAsync(partitionKey, rowKey);
         if (rawData == null)
         {
             throw new Exception($"Could not find raw data for partition key {partitionKey} and row key {rowKey}");
         }
 
-        var parsed = inGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
+        var parsedResult = inGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
 
-        if (parsed.ResultStatus == BattleResultStatus.Undefined)
+        if (parsedResult.ResultStatus != BattleResultStatus.Undefined)
         {
-            logger.LogInformation("Skipping because result status of the battles is Undefined");
-            return;
+            var parts = partitionKey.Split('_');
+            await battleService.AddAsync(parts[1], parsedResult, DateOnly.ParseExact(parts[2], "yyyy-MM-dd"),
+                rawData.SubmissionId);
         }
 
-        var parts = partitionKey.Split('_');
-        await battleService.AddAsync(parts[1], parsed, DateOnly.ParseExact(parts[2], "yyyy-MM-dd"),
-            rawData.SubmissionId);
+        if (rawData.RequestBase64Data != null)
+        {
+            var parsedRequest = inGameDataParsingService.ParseBattleCompleteWaveRequest(rawData.RequestBase64Data);
+            await battleTimelineService.UpsertAsync([parsedRequest]);
+        }
     }
 }

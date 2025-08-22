@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
-public record GetBattleQuery(int Id) : IRequest<BattleSummaryDto?>, ICacheableRequest
+public record GetBattleQuery(int Id) : IRequest<BattleDto?>, ICacheableRequest
 {
     public TimeSpan? Duration => TimeSpan.FromDays(30);
     public DateTimeOffset? Expiration { get; }
@@ -17,9 +17,9 @@ public class GetBattleQueryHandler(
     IBattleSearchResultFactory battleSearchResultFactory,
     IBattleQueryService battleQueryService,
     IFogDbContext context)
-    : IRequestHandler<GetBattleQuery, BattleSummaryDto?>
+    : IRequestHandler<GetBattleQuery, BattleDto?>
 {
-    public async Task<BattleSummaryDto?> Handle(GetBattleQuery request,
+    public async Task<BattleDto?> Handle(GetBattleQuery request,
         CancellationToken cancellationToken)
     {
         var battle = await context.Battles.AsNoTracking()
@@ -29,8 +29,12 @@ public class GetBattleQueryHandler(
             return null;
         }
 
+        var timeline = await context.BattleTimelines.AsNoTracking()
+            .FirstOrDefaultAsync(x => x.InGameBattleId == battle.InGameBattleId, cancellationToken);
+
         var existingStats =
             await battleQueryService.GetExistingBattleStatsAsync(battle.InGameBattleId, cancellationToken);
-        return battleSearchResultFactory.Create(battle, existingStats?.Id);
+        return battleSearchResultFactory.Create(battle,
+            timeline == null ? [] : timeline.Entries.OrderBy(x => x.TimeMillis).ToList(), existingStats?.Id);
     }
 }

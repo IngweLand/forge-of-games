@@ -45,6 +45,19 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             });
     }
 
+    public HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(byte[] data)
+    {
+        try
+        {
+            return HeroFinishWaveRequestDto.Parser.ParseFrom(data);
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to parse hero finish wave request data";
+            throw new InvalidOperationException(msg, ex);
+        }
+    }
+
     public Result<PlayerProfile> ParsePlayerProfile(byte[] data)
     {
         return ParseCommunicationDto(data)

@@ -178,7 +178,6 @@ public partial class MyBattlesPage : BattleLogPageBase
         _itemHeight = battleType switch
         {
             BattleType.Pvp => 475,
-            BattleType.HistoricBattle => 215,
             _ => 250,
         };
     }

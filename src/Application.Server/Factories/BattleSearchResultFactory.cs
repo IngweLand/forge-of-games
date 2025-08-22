@@ -1,7 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoMapper;
-using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -28,7 +27,7 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
                 statsId = value;
             }
 
-            return Create(src, statsId);
+            return CreateInternal(src, src.BattleType == BattleType.Pvp, statsId);
         }).ToList();
 
         return new BattleSearchResult
@@ -37,10 +36,20 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
         };
     }
 
-    public BattleSummaryDto Create(BattleSummaryEntity entity, int? statsId)
+    public BattleDto Create(BattleSummaryEntity entity, IReadOnlyCollection<BattleTimelineEntry> timelineEntries,
+        int? statsId)
+    {
+        return new BattleDto
+        {
+            Summary = CreateInternal(entity, true, statsId),
+            Timeline = timelineEntries.Select(mapper.Map<BattleTimelineEntryDto>).ToList(),
+        };
+    }
+
+    private BattleSummaryDto CreateInternal(BattleSummaryEntity entity, bool addEnemySquads, int? statsId)
     {
         IReadOnlyCollection<BattleSquad>? enemySquads = null;
-        if (entity.BattleType == BattleType.Pvp)
+        if (addEnemySquads)
         {
             enemySquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.EnemySquads,
                 JsonSerializerOptions) ?? [];

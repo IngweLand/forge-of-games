@@ -20,6 +20,8 @@ public interface IDataParsingService
     PlayerRanks ParsePlayerRankings(byte[] data);
     Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data);
     Result<IReadOnlyCollection<AllianceSearchResult>> ParseSearchAllianceResponse(byte[] data);
+    HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(byte[] data);
+
     Result<PlayerProfile> ParsePlayerProfile(byte[] data);
     StartupDto ParseStartupData(byte[] data);
     Wakeup ParseWakeup(byte[] data);

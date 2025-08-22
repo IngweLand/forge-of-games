@@ -13,6 +13,7 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Helpers;
@@ -28,6 +29,8 @@ public class BattleViewModelFactory(
     IResourceLocalizationService resourceLocalizationService,
     IHohCoreDataCache coreDataCache) : IBattleViewModelFactory
 {
+    private static readonly List<string> ExcludedUnitIds = ["spawner", "teslaboss"];
+
     public PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
         IReadOnlyCollection<HeroDto> heroes, IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
@@ -127,39 +130,117 @@ public class BattleViewModelFactory(
         }).ToList();
     }
 
-    public async Task<BattleSummaryViewModel> CreateBattleSummaryViewModel(BattleSummaryDto battle)
+    public async Task<BattleViewModel> CreateBattleViewModel(BattleDto battle)
     {
-        var heroIds =
-            battle.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null);
-        if (battle.BattleType == BattleType.Pvp)
-        {
-            heroIds = heroIds.Concat(battle.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
-        }
+        var battleSummary = battle.Summary;
+        var heroIds = battleSummary.PlayerSquads.Select(s => s.Hero?.UnitId).Where(s => s != null);
+        heroIds = heroIds.Concat(battleSummary.EnemySquads.Select(s => s.Hero?.UnitId).Where(s => s != null));
 
-        var heroes = (await coreDataCache.GetHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
+        var heroes =
+            (await coreDataCache.GetHeroes(heroIds.Where(x =>
+                ExcludedUnitIds.All(y => !x!.Contains(y, StringComparison.InvariantCultureIgnoreCase))).ToHashSet()!))
+            .ToDictionary(h => h.Unit.Id);
         var relics = await coreDataCache.GetRelicsAsync();
         var barracks = await coreDataCache.GetBarracksByUnitMapAsync();
 
-        return new BattleSummaryViewModel
+        List<BattleSquadViewModel> enemySquads = [];
+        if (battleSummary.BattleType == BattleType.Pvp)
         {
-            Id = battle.Id,
-            ResultStatus = battle.ResultStatus,
-            PlayerSquads = battle.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+            enemySquads = battleSummary.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+                .ToList();
+        }
+
+        var summary = new BattleSummaryViewModel
+        {
+            Id = battleSummary.Id,
+            ResultStatus = battleSummary.ResultStatus,
+            PlayerSquads = battleSummary.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
                 .ToList(),
-            EnemySquads = battle.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
-                .ToList(),
-            StatsId = battle.StatsId,
-            BattleType = battle.BattleType,
-            PerformedAt = battle.PerformedAt != DateOnly.MinValue ? battle.PerformedAt.ToString("d") : string.Empty,
-            BattleDefinitionId = battle.BattleDefinitionId,
-            Difficulty = battle.Difficulty,
+            EnemySquads = enemySquads,
+            StatsId = battleSummary.StatsId,
+            BattleType = battleSummary.BattleType,
+            PerformedAt = battleSummary.PerformedAt != DateOnly.MinValue
+                ? battleSummary.PerformedAt.ToString("d")
+                : string.Empty,
+            BattleDefinitionId = battleSummary.BattleDefinitionId,
+            Difficulty = battleSummary.Difficulty,
+        };
+
+        var timeline = new List<BattleTimelineGroupViewModel>();
+        foreach (var group in battle.Timeline.GroupBy(x => x.TimeSeconds))
+        {
+            var entries = new List<BattleTimelineEntryViewModel>();
+            foreach (var entry in group)
+            {
+                var squad = battleSummary.PlayerSquads.FirstOrDefault(x =>
+                    x.Hero?.UnitInBattleId == entry.UnitInBattleId);
+                var side = BattleSquadSide.Player;
+                if (squad == null)
+                {
+                    squad =
+                        battleSummary.EnemySquads.FirstOrDefault(x => x.Hero?.UnitInBattleId == entry.UnitInBattleId);
+
+                    if (squad != null)
+                    {
+                        side = BattleSquadSide.Enemy;
+                    }
+                }
+
+                if (ExcludedUnitIds.Any(x =>
+                        squad?.Hero?.UnitId.Contains(x, StringComparison.InvariantCultureIgnoreCase) == true))
+                {
+                    continue;
+                }
+
+                if (squad != null)
+                {
+                    var squadVm = CreateBattleSquad(squad, heroes, barracks, relics, side == BattleSquadSide.Player);
+                    var concreteId = HohStringParser.GetConcreteId(entry.AbilityId).Split('_')[0];
+                    string title;
+                    string iconUrl;
+                    if (relics.TryGetValue(concreteId, out _))
+                    {
+                        title = squadVm.Relic!.Name;
+                        iconUrl = squadVm.Relic!.IconUrl;
+                    }
+                    else
+                    {
+                        title = squadVm.Ability.Name;
+                        iconUrl = squadVm.Ability.IconUrl;
+                    }
+
+                    entries.Add(new BattleTimelineEntryViewModel
+                    {
+                        Squad = squadVm,
+                        Side = side,
+                        Title = title,
+                        AbilityIconUrl = iconUrl,
+                    });
+                }
+            }
+
+            if (entries.Count > 0)
+            {
+                var ts = TimeSpan.FromSeconds(group.Key);
+                timeline.Add(new BattleTimelineGroupViewModel
+                {
+                    Time = ts.ToString(@"mm\:ss"),
+                    Entries = entries,
+                });
+            }
+        }
+
+        return new BattleViewModel
+        {
+            Summary = summary,
+            Timeline = timeline,
         };
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,
         IReadOnlyDictionary<string, HeroDto> heroes,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
-        IReadOnlyDictionary<string, RelicDto> relics)
+        IReadOnlyDictionary<string, RelicDto> relics, bool withSupportUnit = true)
     {
         var hero = heroes[squad.Hero!.UnitId];
         BuildingDto? concreteBarracks = null;
@@ -180,7 +261,7 @@ public class BattleViewModelFactory(
         }
 
         var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
-        var profileVm = heroProfileViewModelFactory.Create(profile, hero, [], relicVm);
+        var profileVm = heroProfileViewModelFactory.Create(profile, hero, [], relicVm, withSupportUnit);
         string? finalHitPointsFormatted = null;
         var isDead = false;
         if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))

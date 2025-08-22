@@ -42,8 +42,7 @@
         <div class="squads-row">
             @foreach (var unit in Data.PlayerSquads)
             {
-                <BattleSquadComponent ShowResultState="@(Data.BattleType != BattleType.HistoricBattle)"
-                                      OnClick="@OnHeroClicked" BattleSquad="unit"/>
+                <BattleSquadComponent OnClick="@OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
         @if (Data.EnemySquads.Count > 0)

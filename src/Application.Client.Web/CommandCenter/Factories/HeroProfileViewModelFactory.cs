@@ -1,7 +1,6 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Models;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -57,7 +56,8 @@ public class HeroProfileViewModelFactory(
         UnitStatType.Evasion,
     ];
 
-    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks, HeroRelicViewModel? relic = null)
+    public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
+        HeroRelicViewModel? relic = null, bool withSupportUnit = true)
     {
         var profileViewModel = new HeroProfileViewModel
         {
@@ -67,7 +67,7 @@ public class HeroProfileViewModelFactory(
             PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
             StarCount = hero.StarClass.ToStarCount(),
             UnitColor = hero.Unit.Color.ToCssColor(),
-            SupportUnit = heroSupportUnitViewModelFactory.Create(profile.SupportUnitProfile),
+            SupportUnit = withSupportUnit ? heroSupportUnitViewModelFactory.Create(profile.SupportUnitProfile) : null,
             Power = (int) Math.Ceiling(profile.Power),
             UnitTypeName = hero.Unit.TypeName,
             UnitClassName = hero.ClassName,
@@ -89,7 +89,7 @@ public class HeroProfileViewModelFactory(
             VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),
             Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
                 profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
-            Relic = relic ,
+            Relic = relic,
         };
 
         return profileViewModel;

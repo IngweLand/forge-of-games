@@ -8,5 +8,5 @@ namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 public interface IHohHeroProfileViewModelFactory
 {
     HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
-        HeroRelicViewModel? relic = null);
+        HeroRelicViewModel? relic = null, bool withSupportUnit = true);
 }

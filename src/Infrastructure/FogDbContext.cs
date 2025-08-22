@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
+
     public DbSet<PvpRanking> PvpRankings { get; set; }
 
     public DbSet<BattleUnitEntity> BattleUnits { get; set; }
@@ -49,5 +51,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new ProfileSquadEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceMemberEntityTypeConfiguration());
         builder.ApplyConfiguration(new TopHeroInsightsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new BattleTimelineEntityTypeConfiguration());
     }
 }
