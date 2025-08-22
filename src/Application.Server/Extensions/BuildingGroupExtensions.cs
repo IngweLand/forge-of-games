@@ -8,6 +8,7 @@ public static class BuildingGroupExtensions
     {
         return group switch
         {
+            BuildingGroup.Alchemist => "alchemist",
             BuildingGroup.Artisan => "artisan",
             BuildingGroup.AverageAviary => "averageAviary",
             BuildingGroup.AverageBeehive => "averageBeehive",
@@ -39,6 +40,7 @@ public static class BuildingGroupExtensions
             BuildingGroup.ExpeditionPier => "expeditionPier",
             BuildingGroup.ExpeditionPort => "expeditionPort",
             BuildingGroup.Fountain => "fountain",
+            BuildingGroup.Glassblower => "glassblower",
             BuildingGroup.Goldsmith => "goldsmith",
             BuildingGroup.HeavyInfantryBarracks => "heavyInfantryBarracks",
             BuildingGroup.HeroAcademy => "heroAcademy",
@@ -47,6 +49,7 @@ public static class BuildingGroupExtensions
             BuildingGroup.InfantryBarracks => "infantryBarracks",
             BuildingGroup.IrrigationStation => "irrigationStation",
             BuildingGroup.JadeQuarry => "jadeQuarry",
+            BuildingGroup.Jeweler => "jeweler",
             BuildingGroup.KaolinQuarry => "kaolinQuarry",
             BuildingGroup.LargeCulture => "largeCulture",
             BuildingGroup.LittleCulture => "littleCulture",

@@ -6,6 +6,7 @@ namespace Ingweland.Fog.Models.Hoh.Enums;
 public enum BuildingGroup
 {
     Undefined = 0,
+    Alchemist,
     Artisan,
     AverageAviary,
     AverageBeehive,
@@ -38,6 +39,7 @@ public enum BuildingGroup
     ExpeditionPort, 
     Fountain,
     Furnace,
+    Glassblower,
     Goldsmith,
     HeavyInfantryBarracks,
     HeroAcademy,
@@ -46,6 +48,7 @@ public enum BuildingGroup
     InfantryBarracks,
     IrrigationStation,
     JadeQuarry,
+    Jeweler,
     KaolinQuarry,
     LargeCulture,
     LittleCulture,

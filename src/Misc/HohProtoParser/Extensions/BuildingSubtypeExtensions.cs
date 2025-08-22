@@ -8,6 +8,7 @@ public static class BuildingSubtypeExtensions
     {
         return value switch
         {
+            "alchemist" => BuildingGroup.Alchemist,
             "artisan" => BuildingGroup.Artisan,
             "averageAviary" => BuildingGroup.AverageAviary,
             "averageBeehive" => BuildingGroup.AverageBeehive,
@@ -41,6 +42,7 @@ public static class BuildingSubtypeExtensions
             "fountain" => BuildingGroup.Fountain,
             "furnace" => BuildingGroup.Furnace,
             "goldsmith" => BuildingGroup.Goldsmith,
+            "glassblower" => BuildingGroup.Glassblower,
             "heavyInfantryBarracks" => BuildingGroup.HeavyInfantryBarracks,
             "heroAcademy" => BuildingGroup.HeroAcademy,
             "homeRunestone" => BuildingGroup.HomeRunestone,
@@ -48,6 +50,7 @@ public static class BuildingSubtypeExtensions
             "infantryBarracks" => BuildingGroup.InfantryBarracks,
             "irrigationStation" => BuildingGroup.IrrigationStation,
             "jadeQuarry" => BuildingGroup.JadeQuarry,
+            "jeweler" => BuildingGroup.Jeweler,
             "kaolinQuarry" => BuildingGroup.KaolinQuarry,
             "largeCulture" => BuildingGroup.LargeCulture,
             "littleCulture" => BuildingGroup.LittleCulture,
