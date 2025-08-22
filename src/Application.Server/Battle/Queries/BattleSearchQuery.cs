@@ -45,6 +45,7 @@ public class BattleSearchQueryHandler(
             .OrderByDescending(src => src.PerformedAt)
             .ThenByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
+            .AsSplitQuery()
             .ToListAsync(cancellationToken);
         var battleIds = battles.Select(src => src.InGameBattleId);
 
