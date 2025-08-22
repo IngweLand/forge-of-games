@@ -15,6 +15,7 @@ public class AgeIds
     public const string IBERIAN_ERA = "IberianEra";
     public const string KINGDOM_OF_SICILY = "KingdomOfSicily";
     public const string HIGH_MIDDLE_AGE = "HighMiddleAges";
+    public const string EARLY_GOTHIC_ERA = "EarlyGothicEra";
     public const string COMING_SOON = "ComingSoon";
     public const string EGYPT = "Egypt";
     public const string CHINA = "China";

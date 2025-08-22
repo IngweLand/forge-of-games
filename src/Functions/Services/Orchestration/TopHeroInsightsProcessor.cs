@@ -35,6 +35,7 @@ public class TopHeroInsightsProcessor(
         AgeIds.IBERIAN_ERA,
         AgeIds.KINGDOM_OF_SICILY,
         AgeIds.HIGH_MIDDLE_AGE,
+        AgeIds.EARLY_GOTHIC_ERA,
     };
 
     private static readonly IReadOnlyCollection<HeroLevelRange> LevelRanges =

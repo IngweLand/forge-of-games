@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Constants;
 using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
@@ -22,9 +23,15 @@ public class TopHeroesUiService(
 
     public async Task<TopHeroesSearchFormViewModel> GetTopHeroesSearchFormDataAsync()
     {
+        var ages = await commonUiService.GetAgesAsync();
+        var comingSoonAgeIndex = 15;
+        if (ages.TryGetValue(AgeIds.COMING_SOON, out var comingSoonAge))
+        {
+            comingSoonAgeIndex = comingSoonAge.Index;
+        }
         return new TopHeroesSearchFormViewModel
         {
-            Ages = (await commonUiService.GetAgesAsync()).Values.Where(x => x.Index is > 2 and < 14).ToList(),
+            Ages = ages.Values.Where(x => x.Index > 2 && x.Index < comingSoonAgeIndex).ToList(),
             LevelRanges = _levelRanges.OrderBy(x => x.From).ToList(),
             Modes =
             [
