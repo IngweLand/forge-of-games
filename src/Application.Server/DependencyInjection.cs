@@ -1,3 +1,4 @@
+using System.Net;
 using FluentResults;
 using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Services;
@@ -90,7 +91,14 @@ public static class DependencyInjection
 
         services.AddTransient<IResultLogger, ResultLogger>();
 
-        services.AddHttpClient<IWikipediaService, WikipediaService>()
+        services.AddHttpClient<IWikipediaService, WikipediaService>(client =>
+            {
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("ForgeOfGames/1.0");
+            })
+            .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+            {
+                AutomaticDecompression = DecompressionMethods.GZip,
+            })
             .AddStandardResilienceHandler(options =>
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
