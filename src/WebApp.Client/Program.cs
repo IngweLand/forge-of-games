@@ -24,6 +24,16 @@ if (builder.HostEnvironment.IsProduction())
 {
     builder.Logging.SetMinimumLevel(LogLevel.Warning);
 }
+else
+{
+    builder.Services.AddLogging(logging =>
+    {
+        logging.SetMinimumLevel(LogLevel.Debug);
+        logging.AddFilter("Polly", LogLevel.Warning);
+        logging.AddFilter("System.Net.Http.HttpClient", LogLevel.Warning);
+        logging.AddFilter("Microsoft", LogLevel.Information);
+    });
+}
 
 var app = builder.Build();
 
