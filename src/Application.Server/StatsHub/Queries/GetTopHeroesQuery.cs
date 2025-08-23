@@ -30,17 +30,16 @@ public class GetTopHeroesQueryHandler(
     {
         var today = DateTime.UtcNow.ToDateOnly();
         var existingInsightsQuery = context.TopHeroInsights.AsNoTracking()
-            .Where(x => x.Mode == request.Mode && x.CreatedAt == today);
+            .Where(x => x.Mode == request.Mode && x.AgeId == request.AgeId && x.CreatedAt == today);
         if (request.Mode == HeroInsightsMode.MostPopular && (request.FromLevel.HasValue || request.ToLevel.HasValue))
         {
             var fromLevel = request.FromLevel ?? 0;
             var toLevel = request.ToLevel ?? int.MaxValue;
             existingInsightsQuery = existingInsightsQuery.Where(x => x.FromLevel == fromLevel && x.ToLevel == toLevel);
         }
-
-        if (request.AgeId != null)
+        else
         {
-            existingInsightsQuery = existingInsightsQuery.Where(x => x.AgeId == request.AgeId);
+            existingInsightsQuery = existingInsightsQuery.Where(x => x.FromLevel == null && x.ToLevel == null);
         }
 
         var existingInsights = await existingInsightsQuery.FirstOrDefaultAsync(cancellationToken);
