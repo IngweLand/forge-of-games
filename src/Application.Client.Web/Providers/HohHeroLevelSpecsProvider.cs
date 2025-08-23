@@ -15,6 +15,12 @@ public class HohHeroLevelSpecsProvider : IHohHeroLevelSpecsProvider
         return _levelSpecs.GetOrAdd(maxLevel, SpecsFactory);
     }
 
+    public IReadOnlyCollection<HeroLevelSpecs> Get(int level, int ascensionLevel)
+    {
+        var maxLevel = Math.Max(level, (ascensionLevel + 1) * ASCENSION_PERIOD);
+        return Get(maxLevel);
+    }
+
     private static IReadOnlyCollection<HeroLevelSpecs> SpecsFactory(int maxLevel)
     {
         List<HeroLevelSpecs> levels = [];

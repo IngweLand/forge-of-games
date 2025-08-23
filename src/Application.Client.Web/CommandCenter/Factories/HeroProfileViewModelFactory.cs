@@ -59,6 +59,7 @@ public class HeroProfileViewModelFactory(
     public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
         HeroRelicViewModel? relic = null, bool withSupportUnit = true)
     {
+        var maxLevel = Math.Max(hero.ProgressionCosts.Count, profile.Identifier.Level);
         var profileViewModel = new HeroProfileViewModel
         {
             Identifier = profile.Identifier,
@@ -80,7 +81,7 @@ public class HeroProfileViewModelFactory(
             UnitTypeTintedIconUrl =
                 assetUrlProvider.GetHohIconUrl($"{hero.Unit.Type.GetTypeIconId()}_{
                     hero.Unit.Color.ToString().ToLowerInvariant()}"),
-            HeroLevels = heroLevelSpecsProvider.Get(hero.ProgressionCosts.Count),
+            HeroLevels = heroLevelSpecsProvider.Get(maxLevel, profile.Identifier.AscensionLevel),
             AbilityLevels = Enumerable.Range(1, hero.Ability.Levels.Count).ToList(),
             AwakeningLevels = Enumerable.Range(0, 6).ToList(),
             BarracksLevels = barracks.Select(buildingLevelSpecsFactory.Create).OrderBy(b => b.Level).ToList(),
