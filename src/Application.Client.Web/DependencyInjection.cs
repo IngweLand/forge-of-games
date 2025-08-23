@@ -64,7 +64,6 @@ public static class DependencyInjection
         services.AddScoped<ITreasureHuntStageViewModelFactory, TreasureHuntStageViewModelFactory>();
         services.AddScoped<IHeroAbilityViewModelFactory, HeroAbilityViewModelFactory>();
         services.AddScoped<IWonderViewModelViewModelFactory, WonderViewModelViewModelFactory>();
-        services.AddScoped<IHeroBuilderViewModelFactory, HeroBuilderViewModelFactory>();
         services.AddScoped<IHeroSupportUnitViewModelFactory, HeroSupportUnitViewModelFactory>();
         services.AddScoped<ICityUiService, CityUiService>();
         services.AddScoped<IBuildingMultilevelCostViewModelFactory, BuildingMultilevelCostViewModelFactory>();
