@@ -27,7 +27,7 @@ public static class DependencyInjection
         {
             options.UseSqlServer(connectionString, sqlOptions =>
             {
-                sqlOptions.CommandTimeout(60);
+                sqlOptions.CommandTimeout(120);
             });
         });
         return services;
