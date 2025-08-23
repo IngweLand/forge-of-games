@@ -80,21 +80,9 @@ public class TopHeroInsightsProcessor(
     private async Task<Result> Process(HeroInsightsMode mode, string? age = null, int? from = null, int? to = null)
     {
         var today = DateTime.UtcNow.ToDateOnly();
-        var existingInsightsQuery = context.TopHeroInsights.AsNoTracking()
-            .Where(x => x.Mode == mode && x.CreatedAt == today);
-        if (mode == HeroInsightsMode.MostPopular && (from.HasValue || to.HasValue))
-        {
-            var fromLevel = from ?? 0;
-            var toLevel = to ?? int.MaxValue;
-            existingInsightsQuery = existingInsightsQuery.Where(x => x.FromLevel == fromLevel && x.ToLevel == toLevel);
-        }
-
-        if (age != null)
-        {
-            existingInsightsQuery = existingInsightsQuery.Where(x => x.AgeId == age);
-        }
-
-        var existingInsights = await existingInsightsQuery.FirstOrDefaultAsync();
+        var existingInsights = await context.TopHeroInsights.FirstOrDefaultAsync(x =>
+            x.AgeId == age && x.Mode == mode && x.CreatedAt == today && x.FromLevel == from &&
+            x.ToLevel == to);
 
         if (existingInsights != null)
         {
@@ -112,14 +100,6 @@ public class TopHeroInsightsProcessor(
         if (insightsResult.IsFailed)
         {
             return insightsResult.ToResult();
-        }
-
-        var currentInsights = await context.TopHeroInsights.FirstOrDefaultAsync(x =>
-            x.AgeId == age && x.Mode == mode && x.CreatedAt == today && x.FromLevel == from &&
-            x.ToLevel == to);
-        if (currentInsights != null)
-        {
-            context.TopHeroInsights.Remove(currentInsights);
         }
 
         context.TopHeroInsights.Add(new TopHeroInsightsEntity
