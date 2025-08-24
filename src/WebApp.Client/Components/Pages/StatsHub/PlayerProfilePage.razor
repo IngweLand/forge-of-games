@@ -51,7 +51,7 @@
                     @foreach (var squad in _player.Squads)
                     {
                         <ProfileSquadComponent HeroProfile="@squad" HasShadow="true"
-                                               OnClick="OnProfileSquadClicked"></ProfileSquadComponent>
+                                               OnClick="@OnProfileSquadClicked"></ProfileSquadComponent>
                     }
                 </div>
             </div>

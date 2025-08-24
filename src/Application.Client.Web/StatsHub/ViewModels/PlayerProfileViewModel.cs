@@ -12,7 +12,7 @@ public class PlayerProfileViewModel
     public AllianceViewModel? CurrentAlliance { get; init; } 
     public string? Names { get; init; }
     public required PlayerViewModel Player { get; init; }
-    public IReadOnlyCollection<HeroProfileViewModel> Squads { get; init; } = [];
+    public IReadOnlyCollection<HeroProfileBasicViewModel> Squads { get; init; } = [];
     public IReadOnlyCollection<PvpBattleViewModel> PvpBattles { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];

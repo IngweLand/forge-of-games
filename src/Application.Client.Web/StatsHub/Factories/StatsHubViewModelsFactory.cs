@@ -91,18 +91,11 @@ public class StatsHubViewModelsFactory(
             PvpBattles = battles,
             TreasureHuntDifficulty = treasureHuntDifficulty,
             TreasureHuntMaxPoints = treasureHuntMaxPoints,
-            Squads = playerProfile.Squads.Select(src => CreateProfileSquad(src, heroesDic, barracks)).ToList(),
+            Squads = playerProfile.Squads.Select(src =>
+            {
+                var hero = heroesDic[src.Hero.UnitId];
+                return heroProfileViewModelFactory.CreateBasic(src, hero);
+            }).ToList(),
         };
-    }
-
-    private HeroProfileViewModel CreateProfileSquad(ProfileSquadDto squad,
-        IReadOnlyDictionary<string, HeroDto> heroes,
-        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
-    {
-        var hero = heroes[squad.Hero.UnitId];
-        barracks.TryGetValue((squad.SupportUnit.UnitId, squad.SupportUnit.Level), out var concreteBarracks);
-
-        var profile = heroProfileFactory.Create(squad.Hero!, hero, concreteBarracks);
-        return heroProfileViewModelFactory.Create(profile, hero, []);
     }
 }

@@ -15,8 +15,8 @@
             <img class="icon" src="@BattleSquad.UnitClassIconUrl"/>
             <img class="icon" src="@BattleSquad.UnitTypeIconUrl"/>
         </div>
-        <div class="icon-label">@BattleSquad.Level.Title</div>
-        <div class="icon-label">@BattleSquad.Identifier.AbilityLevel</div>
+        <div class="icon-label">@BattleSquad.Level</div>
+        <div class="icon-label">@BattleSquad.AbilityLevel</div>
     </div>
     @if (ShowResultState)
     {
@@ -37,11 +37,12 @@
 
 @code {
 
-    [Parameter][EditorRequired]
-    public required BattleSquadViewModel BattleSquad { get; set; }
+    [Parameter]
+    [EditorRequired]
+    public required BattleSquadBasicViewModel BattleSquad { get; set; }
 
     [Parameter]
-    public EventCallback<BattleSquadViewModel> OnClick { get; set; }
+    public EventCallback<BattleSquadBasicViewModel> OnClick { get; set; }
 
     [Parameter]
     public bool ShowHeroName { get; set; } = true;

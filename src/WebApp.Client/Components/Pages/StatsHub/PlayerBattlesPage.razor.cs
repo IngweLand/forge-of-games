@@ -137,11 +137,12 @@ public partial class PlayerBattlesPage : StatsHubPageBase, IAsyncDisposable
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.Player(playerId));
     }
 
-    private async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
+    private async Task OpenBattleSquadProfile(BattleSquadBasicViewModel squad)
     {
         var options = GetDefaultDialogOptions();
 
-        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};
+        var profile = await BattleUiService.CreateHeroProfile(squad);
+        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, profile}};
         await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
     }
 

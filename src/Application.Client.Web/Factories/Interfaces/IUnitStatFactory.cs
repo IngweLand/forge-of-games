@@ -17,4 +17,7 @@ public interface IUnitStatFactory
 
     IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> CreateHeroStats(
         HeroDto hero, int level, int ascensionLevel, IReadOnlyCollection<StatBoost> boosts, BuildingDto? barracks);
+
+    IReadOnlyDictionary<UnitStatSource, float> CreateHeroStats(UnitStat unitStat, HeroDto hero, int level,
+        int ascensionLevel, IReadOnlyCollection<StatBoost> boosts, BuildingDto? barracks);
 }

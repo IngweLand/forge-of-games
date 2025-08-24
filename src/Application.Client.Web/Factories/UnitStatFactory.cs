@@ -72,77 +72,84 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
         var stats = new Dictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>();
         foreach (var unitStat in hero.Unit.Stats)
         {
-            float unitStatValue;
-            switch (unitStat.Type)
-            {
-                case UnitStatType.Attack:
-                case UnitStatType.Defense:
-                case UnitStatType.MaxHitPoints:
-                case UnitStatType.BaseDamage:
-                {
-                    unitStatValue = CreateHeroLevelStat(unitStat.Type, hero, level, ascensionLevel, 0, null);
-                    break;
-                }
-                default:
-                {
-                    unitStatValue = hero.Unit.Stats.First(us => us.Type == unitStat.Type).Value;
-                    break;
-                }
-            }
-
-            var values = new Dictionary<UnitStatSource, float> {{UnitStatSource.Base, unitStatValue}};
-
-            var unitStatBoosts = boosts.Where(x => x.UnitStatType == unitStat.Type).OrderBy(x => x.Order);
-            foreach (var boost in unitStatBoosts)
-            {
-                var boostedValue = 0.0f;
-                switch (boost.Calculation)
-                {
-                    case Calculation.Add:
-                        boostedValue = boost.Value;
-                        break;
-                    case Calculation.Multiply:
-                        boostedValue = unitStatValue * boost.Value;
-                        break;
-                }
-
-                if (boost.StatAttribute != null)
-                {
-                    values.TryAdd(UnitStatSource.Equipment, 0);
-
-                    values[UnitStatSource.Equipment] += boostedValue;
-                }
-                else
-                {
-                    values.TryAdd(UnitStatSource.Unknown, 0);
-
-                    values[UnitStatSource.Unknown] += boostedValue;
-                }
-                
-            }
-
-            var barracksStat = barracks?.Components
-                .OfType<HeroBuildingBoostComponent>()
-                .FirstOrDefault()
-                ?.UnitStats
-                .FirstOrDefault(us => us.Type == unitStat.Type);
-            if (barracksStat != null)
-            {
-                values[UnitStatSource.Barracks] = barracksStat.Value;
-                var adjusted = values[UnitStatSource.Unknown] - barracksStat.Value;
-                if (adjusted == 0)
-                {
-                    values.Remove(UnitStatSource.Unknown);
-                }
-                else
-                {
-                    values[UnitStatSource.Unknown] = adjusted;
-                }
-            }
-            stats[unitStat.Type] = new ReadOnlyDictionary<UnitStatSource, float>(values);
+            var values = CreateHeroStats(unitStat, hero, level, ascensionLevel, boosts, barracks);
+            stats[unitStat.Type] = new ReadOnlyDictionary<UnitStatSource, float>(values.ToDictionary());
         }
 
         return new ReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>>(stats);
+    }
+
+    public IReadOnlyDictionary<UnitStatSource, float> CreateHeroStats(UnitStat unitStat, HeroDto hero, int level,
+        int ascensionLevel, IReadOnlyCollection<StatBoost> boosts, BuildingDto? barracks)
+    {
+        float unitStatValue;
+        switch (unitStat.Type)
+        {
+            case UnitStatType.Attack:
+            case UnitStatType.Defense:
+            case UnitStatType.MaxHitPoints:
+            case UnitStatType.BaseDamage:
+            {
+                unitStatValue = CreateHeroLevelStat(unitStat.Type, hero, level, ascensionLevel, 0, null);
+                break;
+            }
+            default:
+            {
+                unitStatValue = hero.Unit.Stats.First(us => us.Type == unitStat.Type).Value;
+                break;
+            }
+        }
+
+        var values = new Dictionary<UnitStatSource, float> {{UnitStatSource.Base, unitStatValue}};
+
+        var unitStatBoosts = boosts.Where(x => x.UnitStatType == unitStat.Type).OrderBy(x => x.Order);
+        foreach (var boost in unitStatBoosts)
+        {
+            var boostedValue = 0.0f;
+            switch (boost.Calculation)
+            {
+                case Calculation.Add:
+                    boostedValue = boost.Value;
+                    break;
+                case Calculation.Multiply:
+                    boostedValue = unitStatValue * boost.Value;
+                    break;
+            }
+
+            if (boost.StatAttribute != null)
+            {
+                values.TryAdd(UnitStatSource.Equipment, 0);
+
+                values[UnitStatSource.Equipment] += boostedValue;
+            }
+            else
+            {
+                values.TryAdd(UnitStatSource.Unknown, 0);
+
+                values[UnitStatSource.Unknown] += boostedValue;
+            }
+        }
+
+        var barracksStat = barracks?.Components
+            .OfType<HeroBuildingBoostComponent>()
+            .FirstOrDefault()
+            ?.UnitStats
+            .FirstOrDefault(us => us.Type == unitStat.Type);
+        if (barracksStat != null)
+        {
+            values[UnitStatSource.Barracks] = barracksStat.Value;
+            var adjusted = values[UnitStatSource.Unknown] - barracksStat.Value;
+            if (adjusted == 0)
+            {
+                values.Remove(UnitStatSource.Unknown);
+            }
+            else
+            {
+                values[UnitStatSource.Unknown] = adjusted;
+            }
+        }
+
+        return values;
     }
 
     private float CreateSupportUnitLevelStat(UnitStatType unitStatType, IUnit unit, int level,

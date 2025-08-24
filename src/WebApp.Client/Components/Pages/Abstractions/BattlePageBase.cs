@@ -52,6 +52,18 @@ public abstract class BattlePageBase : FogPageBase, IAsyncDisposable
         await DialogService.ShowAsync<BattleStatsDialog>(null, parameters, options);
     }
 
+    protected async Task OpenBattleSquadProfile(BattleSquadBasicViewModel squad)
+    {
+        AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, DefaultAnalyticsParameters,
+            squad.HeroUnitId);
+
+        var options = GetDefaultDialogOptions();
+        var fullSquad = await BattleUiService.CreateHeroProfile(squad);
+
+        var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, fullSquad}};
+        await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
+    }
+    
     protected async Task OpenBattleSquadProfile(BattleSquadViewModel squad)
     {
         AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, DefaultAnalyticsParameters,
@@ -62,7 +74,7 @@ public abstract class BattlePageBase : FogPageBase, IAsyncDisposable
         var parameters = new DialogParameters<ProfileSquadDialog> {{d => d.HeroProfile, squad}};
         await DialogService.ShowAsync<ProfileSquadDialog>(null, parameters, options);
     }
-
+    
     protected static DialogOptions GetDefaultDialogOptions()
     {
         return new DialogOptions

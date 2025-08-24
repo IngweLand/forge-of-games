@@ -1,4 +1,5 @@
 @using Ingweland.Fog.Application.Client.Web.CommandCenter.Models
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using MudBlazor.Utilities
 <div class="@Classname" onclick="@(() => OnClick.InvokeAsync(HeroProfile))">
@@ -12,8 +13,8 @@
             <img class="icon" src="@HeroProfile.UnitClassIconUrl"/>
             <img class="icon" src="@HeroProfile.UnitTypeIconUrl"/>
         </div>
-        <div class="icon-label">@HeroProfile.Level.Title</div>
-        <div class="icon-label">@HeroProfile.Identifier.AbilityLevel</div>
+        <div class="icon-label">@HeroProfile.Level</div>
+        <div class="icon-label">@HeroProfile.AbilityLevel</div>
     </div>
 </div>
 
@@ -21,10 +22,10 @@
 
     [Parameter]
     [EditorRequired]
-    public required HeroProfileViewModel HeroProfile { get; set; }
+    public required HeroProfileBasicViewModel HeroProfile { get; set; }
 
     [Parameter]
-    public EventCallback<HeroProfileViewModel> OnClick { get; set; }
+    public EventCallback<HeroProfileBasicViewModel> OnClick { get; set; }
 
     [Parameter]
     public bool HasShadow { get; set; }

@@ -14,6 +14,7 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Helpers;
@@ -27,7 +28,8 @@ public class BattleViewModelFactory(
     IHeroRelicViewModelFactory relicViewModelFactory,
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IResourceLocalizationService resourceLocalizationService,
-    IHohCoreDataCache coreDataCache) : IBattleViewModelFactory
+    IHohCoreDataCache coreDataCache,
+    IUnitStatFactory unitStatFactory) : IBattleViewModelFactory
 {
     private static readonly List<string> ExcludedUnitIds = ["spawner", "teslaboss"];
 
@@ -39,11 +41,11 @@ public class BattleViewModelFactory(
         var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
 
         var isVictory = pvpBattleDto.Winner.Id == player.Id;
-        var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks, relics))
-            .OrderBy(uvm => uvm.Identifier.HeroId)
+        var winnerUnits = pvpBattleDto.WinnerUnits.Select(u => CreateBasicBattleSquad(u, heroesDic, barracks))
+            .OrderBy(uvm => uvm.BattlefieldSlot)
             .ToList();
-        var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBattleSquad(u, heroesDic, barracks, relics))
-            .OrderBy(uvm => uvm.Identifier.HeroId)
+        var loserUnits = pvpBattleDto.LoserUnits.Select(u => CreateBasicBattleSquad(u, heroesDic, barracks))
+            .OrderBy(uvm => uvm.BattlefieldSlot)
             .ToList();
 
         return new PvpBattleViewModel
@@ -80,9 +82,9 @@ public class BattleViewModelFactory(
             {
                 Id = battle.Id,
                 ResultStatus = battle.ResultStatus,
-                PlayerSquads = battle.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+                PlayerSquads = battle.PlayerSquads.Select(src => CreateBasicBattleSquad(src, heroes, barracks))
                     .ToList(),
-                EnemySquads = battle.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+                EnemySquads = battle.EnemySquads.Select(src => CreateBasicBattleSquad(src, heroes, barracks))
                     .ToList(),
                 StatsId = battle.StatsId,
                 BattleType = battle.BattleType,
@@ -143,10 +145,10 @@ public class BattleViewModelFactory(
         var relics = await coreDataCache.GetRelicsAsync();
         var barracks = await coreDataCache.GetBarracksByUnitMapAsync();
 
-        List<BattleSquadViewModel> enemySquads = [];
+        List<BattleSquadBasicViewModel> enemySquads = [];
         if (battleSummary.BattleType == BattleType.Pvp)
         {
-            enemySquads = battleSummary.EnemySquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+            enemySquads = battleSummary.EnemySquads.Select(src => CreateBasicBattleSquad(src, heroes, barracks))
                 .ToList();
         }
 
@@ -154,7 +156,7 @@ public class BattleViewModelFactory(
         {
             Id = battleSummary.Id,
             ResultStatus = battleSummary.ResultStatus,
-            PlayerSquads = battleSummary.PlayerSquads.Select(src => CreateBattleSquad(src, heroes, barracks, relics))
+            PlayerSquads = battleSummary.PlayerSquads.Select(src => CreateBasicBattleSquad(src, heroes, barracks))
                 .ToList(),
             EnemySquads = enemySquads,
             StatsId = battleSummary.StatsId,
@@ -237,6 +239,34 @@ public class BattleViewModelFactory(
         };
     }
 
+    public async Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero,
+        IBattleUnitProperties? supportUnit)
+    {
+        var heroDto = await coreDataCache.GetHeroAsync(hero.UnitId);
+        var relics = await coreDataCache.GetRelicsAsync();
+        var barracks = await coreDataCache.GetBarracksByUnitMapAsync();
+
+        BuildingDto? concreteBarracks = null;
+        if (supportUnit != null)
+        {
+            barracks.TryGetValue((supportUnit.UnitId, supportUnit.Level), out concreteBarracks);
+        }
+
+        HeroRelicViewModel? relicVm = null;
+        foreach (var ability in hero.Abilities)
+        {
+            var concreteId = HohStringParser.GetConcreteId(ability).Split('_')[0];
+            if (relics.TryGetValue(concreteId, out var relic))
+            {
+                relicVm = relicViewModelFactory.Create(relic,
+                    relic.LevelData.First(x => x.Abilities.Any(y => y.Id == ability)));
+            }
+        }
+
+        var fullProfile = heroProfileFactory.Create(hero, heroDto!, concreteBarracks);
+        return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm);
+    }
+
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,
         IReadOnlyDictionary<string, HeroDto> heroes,
         IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks,
@@ -272,5 +302,34 @@ public class BattleViewModelFactory(
         }
 
         return new BattleSquadViewModel(profileVm, finalHitPointsFormatted, isDead, squad.BattlefieldSlot);
+    }
+
+    private BattleSquadBasicViewModel CreateBasicBattleSquad(BattleSquadDto squad,
+        IReadOnlyDictionary<string, HeroDto> heroes,
+        IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto> barracks)
+    {
+        var hero = heroes[squad.Hero!.UnitId];
+
+        BuildingDto? concreteBarracks = null;
+        if (squad.Unit != null)
+        {
+            barracks.TryGetValue((squad.Unit.UnitId, squad.Unit.Level), out concreteBarracks);
+        }
+
+        var hpUnitStats = hero.Unit.Stats.FirstOrDefault(x => x.Type == UnitStatType.MaxHitPoints);
+        var stats = unitStatFactory.CreateHeroStats(hpUnitStats!, hero, squad.Hero!.Level, squad.Hero!.AscensionLevel,
+            squad.Hero!.StatBoosts, concreteBarracks);
+        string? finalHitPointsFormatted = null;
+        var isDead = false;
+        if (squad.Hero.FinalState.TryGetValue(UnitStatType.HitPoints, out var hp))
+        {
+            var statTotals = stats.Sum(kvp2 => kvp2.Value);
+            var finalHitPointsPercent = Math.Min(1, hp / statTotals);
+            finalHitPointsFormatted = finalHitPointsPercent.ToString("P1");
+            isDead = hp <= 0;
+        }
+
+        var profileVm = heroProfileViewModelFactory.CreateBasic(squad, hero, finalHitPointsFormatted, isDead);
+        return profileVm;
     }
 }

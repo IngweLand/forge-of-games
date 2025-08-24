@@ -41,10 +41,7 @@ public partial class BattlePage : BattlePageBase
 
         try
         {
-            _battle = await LoadWithPersistenceAsync(
-                nameof(_battle),
-                async () => await BattleUiService.GetBattleAsync(BattleId, _cts.Token)
-            );
+            _battle = await BattleUiService.GetBattleAsync(BattleId, _cts.Token);
         }
         catch (Exception e)
         {

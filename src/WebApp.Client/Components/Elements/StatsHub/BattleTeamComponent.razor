@@ -69,7 +69,7 @@
     public EventCallback<BattleSummaryViewModel> OnBattleStatsClicked { get; set; }
 
     [Parameter]
-    public EventCallback<BattleSquadViewModel> OnHeroClicked { get; set; }
+    public EventCallback<BattleSquadBasicViewModel> OnHeroClicked { get; set; }
 
     private string StatusContainerClassname => new CssBuilder("header-row")
         .AddClass("victory", Data.ResultStatus == BattleResultStatus.Win)

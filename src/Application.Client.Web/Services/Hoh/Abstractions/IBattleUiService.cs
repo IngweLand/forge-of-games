@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -20,4 +21,6 @@ public interface IBattleUiService
         UserBattleSearchRequest request, CancellationToken ct = default);
 
     Task<BattleViewModel?> GetBattleAsync(int battleId, CancellationToken ct = default);
+
+    Task<HeroProfileViewModel> CreateHeroProfile(HeroProfileBasicViewModel squad);
 }

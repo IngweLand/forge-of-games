@@ -1,10 +1,12 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
@@ -24,4 +26,6 @@ public interface IBattleViewModelFactory
 
     IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
     Task<BattleViewModel> CreateBattleViewModel(BattleDto battle);
+
+    Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero, IBattleUnitProperties? supportUnit);
 }

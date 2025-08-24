@@ -5,11 +5,14 @@ using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
+using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
@@ -91,6 +94,43 @@ public class HeroProfileViewModelFactory(
             Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
                 profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
             Relic = relic,
+        };
+
+        return profileViewModel;
+    }
+
+    public HeroProfileBasicViewModel CreateBasic(ProfileSquadDto squad, HeroDto hero)
+    {
+        return CreateBasicInternal(squad.Hero, squad.SupportUnit, hero);
+    }
+
+    public BattleSquadBasicViewModel CreateBasic(BattleSquadDto squad, HeroDto hero, string? finalHitPointsFormatted,
+        bool isDead)
+    {
+        var profile = CreateBasicInternal(squad.Hero!, squad.Unit, hero);
+        return new BattleSquadBasicViewModel(profile, finalHitPointsFormatted, isDead, squad.BattlefieldSlot);
+    }
+
+    private HeroProfileBasicViewModel CreateBasicInternal(IBattleUnitProperties heroProps,
+        IBattleUnitProperties? supportUnitProps, HeroDto hero)
+    {
+        var maxLevel = Math.Max(hero.ProgressionCosts.Count, heroProps.Level);
+        var heroLevels = heroLevelSpecsProvider.Get(maxLevel, heroProps.AscensionLevel);
+        var profileViewModel = new HeroProfileBasicViewModel
+        {
+            AbilityLevel = heroProps.AbilityLevel,
+            HeroUnitId = hero.Unit.Id,
+            Name = hero.Unit.Name,
+            PortraitUrl = assetUrlProvider.GetHohUnitPortraitUrl(hero.Unit.AssetId),
+            StarCount = hero.StarClass.ToStarCount(),
+            UnitColor = hero.Unit.Color.ToCssColor(),
+            UnitClassIconUrl = assetUrlProvider.GetHohIconUrl(hero.ClassId.GetClassIconId()),
+            UnitTypeIconUrl =
+                assetUrlProvider.GetHohIconUrl(hero.Unit.Type.GetTypeIconId()),
+            Hero = heroProps,
+            SupportUnit = supportUnitProps,
+            Level = heroLevels
+                .First(x => x.Level == heroProps.Level && x.AscensionLevel == heroProps.AscensionLevel).Title,
         };
 
         return profileViewModel;

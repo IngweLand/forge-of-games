@@ -31,7 +31,7 @@
         <div class="units-container">
             @foreach (var unit in Battle.PlayerUnits)
             {
-                <BattleSquadComponent ShowHeroName="false" OnClick="OnHeroClicked" BattleSquad="unit"/>
+                <BattleSquadComponent ShowHeroName="false" OnClick="@OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
     </div>
@@ -63,7 +63,7 @@
         <div class="units-container opponent-bottom-container">
             @foreach (var unit in Battle.OpponentUnits)
             {
-                <BattleSquadComponent ShowHeroName="false" OnClick="OnHeroClicked" BattleSquad="unit"/>
+                <BattleSquadComponent ShowHeroName="false" OnClick="@OnHeroClicked" BattleSquad="unit"/>
             }
         </div>
     </div>
@@ -86,6 +86,6 @@
     public EventCallback<int> OnOpponentClick { get; set; }
 
     [Parameter]
-    public EventCallback<BattleSquadViewModel> OnHeroClicked { get; set; }
+    public EventCallback<BattleSquadBasicViewModel> OnHeroClicked { get; set; }
 
 }

@@ -77,8 +77,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         if (_player == null || _player.Player.Id != PlayerId)
         {
             IsInitialized = false;
-            _player = await LoadWithPersistenceAsync(nameof(_player),
-                () => StatsHubUiService.GetPlayerProfileAsync(PlayerId));
+            _player = await StatsHubUiService.GetPlayerProfileAsync(PlayerId);
 
             _defaultAnalyticsParameters = new Dictionary<string, object>
             {
@@ -273,19 +272,21 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             AnalyticsParams.Values.Sources.ALLIANCE_LIST, allianceId);
     }
 
-    private Task OnProfileSquadClicked(HeroProfileViewModel profile)
+    private async Task OnProfileSquadClicked(HeroProfileBasicViewModel profile)
     {
         AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.TOP_HEROES, profile.HeroUnitId);
 
-        return OpenBattleSquadProfile(profile);
+        var fullProfile = await BattleUiService.CreateHeroProfile(profile);
+        await OpenBattleSquadProfile(fullProfile);
     }
-
-    private Task OnPvpBattleSquadClicked(BattleSquadViewModel squad)
+    
+    private async Task OnPvpBattleSquadClicked(BattleSquadBasicViewModel squad)
     {
         AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PVP_BATTLE, squad.HeroUnitId);
-
-        return OpenBattleSquadProfile(squad);
+        
+        var fullSquad = await BattleUiService.CreateHeroProfile(squad);
+        await OpenBattleSquadProfile(fullSquad);
     }
 }

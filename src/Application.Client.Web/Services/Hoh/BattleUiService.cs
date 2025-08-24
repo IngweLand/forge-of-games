@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -86,4 +87,10 @@ public class BattleUiService(
 
         return await battleViewModelFactory.CreateBattleViewModel(result);
     }
+    
+    public Task<HeroProfileViewModel> CreateHeroProfile(HeroProfileBasicViewModel profile)
+    {
+        return battleViewModelFactory.CreateHeroProfileAsync(profile.Hero, profile.SupportUnit);
+    }
+
 }
