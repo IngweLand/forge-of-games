@@ -8,7 +8,7 @@ public class FetchAndSaveOrchestrator
 {
     private static readonly Dictionary<string, int> MaxRuns = new()
     {
-        {nameof(TopAllianceMembersUpdaterTrigger), 1},
+        {nameof(TopAllianceMembersUpdaterTrigger), 5},
         {nameof(AllianceMembersUpdaterTrigger), 5},
         {nameof(TopAllianceMemberProfilesUpdaterTrigger), 5},
         {nameof(TopPlayersUpdaterTrigger), 5},

@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -16,22 +17,30 @@ public class TopAllianceMemberUpdateManager(
     ILogger<PlayersUpdateManager> logger) : AllianceMembersUpdateManager(gameWorldsProvider, context,
     allianceUpdateOrchestrator, databaseWarmUpService, logger), ITopAllianceMemberUpdateManager
 {
-    private const int TOP_ALLIANCE_RANK_LIMIT = 100;
+    private const int TOP_ALLIANCE_RANK_LIMIT = 200;
+    private const int BATCH_SIZE = 100;
 
-    protected override Task<bool> HasMoreAlliances(string worldId)
+    protected override async Task<bool> HasMoreAlliances(string worldId)
     {
-        return Task.FromResult(false);
+        return await GetInitQuery(worldId).AnyAsync();
     }
 
     protected override Task<List<int>> GetAlliances(string worldId)
     {
         Logger.LogDebug("Getting alliances from the database for world {worldId}.", worldId);
 
-        return Context.Alliances.AsNoTracking()
-            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active)
-            .OrderByDescending(x => x.RankingPoints)
-            .Take(TOP_ALLIANCE_RANK_LIMIT)
+        return GetInitQuery(worldId)
             .Select(x => x.Id)
             .ToListAsync();
+    }
+
+    private IQueryable<Alliance> GetInitQuery(string worldId)
+    {
+        var today = DateTime.Today.ToUniversalTime();
+        return Context.Alliances.AsNoTracking()
+            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active && x.MembersUpdatedAt < today)
+            .OrderByDescending(x => x.RankingPoints)
+            .Take(TOP_ALLIANCE_RANK_LIMIT)
+            .Take(BATCH_SIZE);
     }
 }
