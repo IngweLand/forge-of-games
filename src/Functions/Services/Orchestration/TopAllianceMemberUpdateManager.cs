@@ -38,9 +38,10 @@ public class TopAllianceMemberUpdateManager(
     {
         var today = DateTime.Today.ToUniversalTime();
         return Context.Alliances.AsNoTracking()
-            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active && x.MembersUpdatedAt < today)
+            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active)
             .OrderByDescending(x => x.RankingPoints)
             .Take(TOP_ALLIANCE_RANK_LIMIT)
+            .Where(x => x.MembersUpdatedAt < today)
             .Take(BATCH_SIZE);
     }
 }
