@@ -1,8 +1,9 @@
 
 3
 $Base.EventCity.EventCityBoostCalloutEvent-Boost
--
-Base.OptionsPopup.CodeTitleGutschein-Code
+)
+Base.OptionsPopup.CodeTitle
+Promo-Code
 L
 5Base.Buildings.Building_Egypt_GoldMine_Premium_2_NameLuxuriöse Goldmine
 4
@@ -344,9 +345,8 @@ KBase.Questlines.Questline_EventCity_China_ProgressTier2_TerracottaArmy_NameDi
 $Base.IngameEvents.SeasonPass_10_NameWellen der Weisheit
 D
 'Base.Resources.purple_crest_common_NameGewöhnliches Lila Wappen
-C
-5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Name
-Longbowmen
+K
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_NameLangbogenschützen
 Q
 6Base.Abilities.hero_battle_ability.RomanCenturion_NameSchildkröten-Formation
 E
@@ -450,8 +450,8 @@ K
 Base.RewardPanel.BlueprintBauplan
 Z
 'Base.EquipmentUnequipPanel.UnequipTitle/Lege die folgenden Ausrüstungsgegenstände ab:
-t
-/Base.Units.Unit_TreasureHunt_Red_Marauders_DescAInfanterie-Einheiten sind in den vorderen Reihen am effektivsten.
+v
+/Base.Units.Unit_TreasureHunt_Red_Marauders_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 z
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text13_Desc/Wir haben den Bereich komplett geräumt, Punkt.
 B
@@ -562,10 +562,10 @@ H
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_1_NameWasserpumpe
 �
  Base.ShopPopup.DailyDealMiscDescnRüste dich mit wichtigen Ressourcen aus, um jedes Abenteuer zu bestehen und dein Spielerlebnis zu verbessern!
-�
-Base.Units.Unit_LadySixSky_Desc�Erhebe dich mit Lady Six Sky über deine besiegten Feinde! Diese Maya-Königin aus dem 8. Jahrhundert ist berühmt für ihre Herrschaft über die Stadt Naranjo, und obwohl ihr Name unbekannt ist, ist ihre Legende nie vergessen worden. Aber sie wurde in der Stadt Dos Pilas geboren und kam erst später nach Naranjo.<br><br>Vom Tag ihrer Ankunft an war sie de facto die Herrscherin. Lady Six Sky übernahm die Zügel der Macht und richtete sie zum Himmel: Sie errichtete Stelen und führte religiöse Rituale nach Art der Könige durch.<br><br>Ein Großteil der Geschichte von Lady Six Sky - das, was nicht in Stein gemeißelt wurde - ist verloren gegangen. Als lebende Verkörperung der Mondgöttin und des Maisgottes repräsentierte Lady Six Sky sowohl Königin als auch König, Sonne und Mond. Die epische Reise von Lady Six Sky ist ein Beweis dafür, dass der Einfluss einer Königin so groß und endlos sein kann wie der Nachthimmel selbst!
 =
 "Base.Alerts.ServerUnavailableTitleServer nicht verfügbar
+�
+Base.Units.Unit_LadySixSky_Desc�Erhebe dich über deine besiegten Feinde mit Lady Six Sky! Diese Maya-Königin des 8. Jahrhunderts ist berühmt für ihre Herrschaft über die Stadt Naranjo, und obwohl ihr Name unbekannt ist, wurde ihre Legende niemals vergessen. Geboren wurde sie jedoch in der Stadt Dos Pilas und kam erst später in ihrem Leben nach Naranjo.<br><br>Von dem Tag an, an dem sie eintraf, war sie die faktische Herrscherin. Lady Six Sky ergriff die Zügel der Macht und richtete sie gen Himmel: Sie errichtete Stelen und führte religiöse Rituale in der Art der Könige durch.<br><br>Ein Großteil von Lady Six Skys Geschichte – der Teil, der nicht in Stein gemeißelt wurde – ist verloren gegangen. Als lebendige Verkörperung der Mondgöttin und des Maisgottes repräsentierte Lady Six Sky zugleich Königin und König, Sonne und Mond. Lady Six Skys epische Reise ist ein Beweis dafür, dass der Einfluss einer Königin so weitreichend und beständig sein kann wie der Nachthimmel selbst!
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_Desc�Jede <style=MC>Kiste</style> verbessert auch deinen <style=MC>Rang</style> in der <style=MC>Event-Highscore</style> und schaltet damit bessere <style=MC>Belohnungen</style> frei, während du in den <style=MC>Ligen</style> bis zum Ende des Events aufsteigst.
 N
@@ -653,8 +653,8 @@ $
 Base.OptionsPopup.LogoutAbmelden
 �
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_DescWDie Heldenakademie produziert Erfahrungsschriftrollen auf Kosten von Forschungspunkten.
-<
-6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNo
+>
+6Base.Alerts.SingleSignOn.AlreadyConnected.CancelButtonNein
 �
 !Base.Alerts.ServerUnavailableText�Die Server von Heroes of History sind vorübergehend nicht verfügbar.
 
@@ -686,12 +686,12 @@ O
 8Base.Buildings.Building_IberianEra_Barracks_Siege_2_NameBelagerungs-Kaserne
 �
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text10_Desc9Gut gemacht, wir! Das war eigentlich gar nicht so schwer.
+�	
+ Base.Units.Unit_OdaNobunaga_Desc�	Bring Feuer und Donner auf das Schlachtfeld mit Oda Nobunaga! Dieser legendäre Daimyo Japans des 16. Jahrhunderts war ein brillanter, gnadenloser Einiger, dessen Ehrgeiz das Ende jahrhundertelanger Bürgerkriege vorbereitete. Geboren 1534, erwarb Nobunaga schnell den Spitznamen "Der Narr von Owari" für seine wilden Jugendstreiche, doch schon bald zeigte er sein wahres Können – und niemand lachte lange.<br><br>Nobunaga führte Schusswaffen in den japanischen Krieg ein und besiegte seine Rivalen sowohl durch Strategie als auch durch überlegene Feuerkraft (und gelegentlich mit ein wenig dramatischem Flair). Er vernichtete buddhistische Krieger-Mönche am Berg Hiei, stürzte mächtige Clans und träumte sogar davon, die Nation unter seinem Banner zu einen – ein Unterfangen, das fast gelang, bevor ihn 1582 das dramatische Attentat von Honno-ji ereilte.<br><br>Obwohl seine Geschichte in Flammen endete, war Nobunagas Einfluss alles andere als flüchtig: Er ebnete den Weg für das Tokugawa-Shogunat und das Japan, wie wir es heute kennen. Furchtlos, unkonventionell und mitunter furchteinflößend – Oda Nobunaga spielte stets, um zu gewinnen!
 �
 3Tutorial.EquipmentEquipTutorial.EquipmentAttackInfo�Diese <style=MC>AUSRÜSTUNG</style> gewährt zusätzlich <style=MC>ATK</style>. Ich werde sie noch tödlicher schmieden, wenn du <style=MC>SIE  LEVELST.</style>
 5
 Base.Hints.ResearchForschungsbaum wird gezeichnet
-�	
- Base.Units.Unit_OdaNobunaga_Desc�	Entfache Feuer und Donner auf dem Schlachtfeld mit Oda Nobunaga! Dieser legendäre Daimyo aus dem Japan des 16. Jahrhunderts war ein brillanter, rücksichtsloser Einiger, dessen Ehrgeiz das Ende eines jahrhundertelangen Bürgerkriegs einleitete. Der 1534 geborene Nobunaga erlangte wegen seiner wilden Jugend schnell den Ruf als "Narr von Owari", doch schon bald zeigte er seine wahre Gerissenheit – und niemand lachte lange darüber.<br><br>Nobunaga führte Feuerwaffen in großem Stil in die japanische Kriegsführung ein und besiegte seine Rivalen sowohl mit Strategie als auch mit überlegener Feuerkraft (und gelegentlich mit ein wenig dramatischem Flair). Er vernichtete buddhistische Kriegermönche am Berg Hiei, stürzte mächtige Klans und träumte sogar davon, die Nation unter seinem Banner zu vereinen - ein Kunststück, das ihm fast gelungen wäre, bevor er 1582 am Honno-ji dramatisch verraten wurde.<br><br>Obwohl seine Geschichte in Flammen endete, war Nobunagas Einfluss alles andere als flüchtig: Er ebnete den Weg für das Tokugawa-Shogunat und das Japan, das wir heute kennen. Furchtlos, unkonventionell und gelegentlich erschreckend - Oda Nobunaga spielte immer auf Sieg!
 s
 ,Base.Units.Unit_FeudalAge_Player_Axemen_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 P
@@ -995,8 +995,9 @@ D
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameGroße Halle
 B
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NamePlantage
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Ability Block | Counter</style>Nostradamus predicts an enemy's ability usage. The next time an enemy uses an ability, they are interrupted, and take <style=basestat>{damage}</style> damage, and are ability blocked for <style=basestat>{ability_block_duration}</style>.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Fähigkeits-Blockade | Konter</style>  
+Nostradamus sagt die Nutzung einer gegnerischen Fähigkeit voraus. Sobald der Gegner eine Fähigkeit einsetzt, wird er unterbrochen, erleidet <style=basestat>{damage}</style> Schaden und erhält eine Fähigkeits-Blockade für <style=basestat>{ability_block_duration}</style>.
 <
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader
 Obere Spur
@@ -1160,10 +1161,10 @@ IBase.CustomizationCollections.CustomizationCollection_TreasureHunt_1_Name
 Schatzjagd
 /
 $Base.Resources.pepper_TechnologyNamePfeffer
+�
+!Base.Units.Unit_RomanPraetor_Desc�Feiern wie eine Römerin mit Aemilia Tertia! Diese Dame der Gesellschaft im alten Rom des 2. Jahrhunderts v. Chr. war die Frau von Scipio Africanus, dem berühmten General, der Hannibal im Zweiten Punischen Krieg besiegte. Bekannt für ihre edle Herkunft und ihre Heirat in eine der führenden Familien Roms, verkörperte sie die Tugenden einer römischen Matrone.<br><br>Ihr Leben ist geprägt von der Unterstützung der militärischen und politischen Laufbahn ihres Mannes sowie von ihrer Rolle bei der Führung des Haushalts und der Erziehung ihrer Kinder, darunter Cornelia Africana, Mutter der Gracchi-Brüder.<br><br>Das Vermächtnis von Aemilia Tertia spiegelt die einflussreichen Rollen wider, die Frauen in der römischen Gesellschaft innehaben konnten, trotz ihres begrenzten öffentlichen Präsenz.
 P
 $Base.BuildingGroups.averageHome_NameMittelgroßes HausMittelgroße Häuser
-�
-!Base.Units.Unit_RomanPraetor_Desc�Feiere wie die Römer mit Aemilia Tertia! Diese Gesellschaftsdame aus dem 2. Jahrhundert v. Chr. im alten Rom war die Frau von Scipio Africanus, dem berühmten General, der Hannibal im Zweiten Punischen Krieg besiegte. Durch ihre adlige Herkunft und ihre Heirat in eine der führenden Familien Roms verkörperte sie die Tugenden der römischen Matrone.<br><br>Sie unterstützte die militärische und politische Karriere ihres Mannes, während sie sich sich um den Haushalt und die Erziehung ihrer Kinder, darunter Cornelia Africana, die Mutter der Gracchi-Brüder, kümmerte.<br><br>Das Vermächtnis von Aemilia Tertia spiegelt die einflussreiche Rolle wider, die Frauen in der römischen Gesellschaft trotz ihrer begrenzten öffentlichen Präsenz einnehmen konnten.
 F
 0Base.EquipmentSets.equipment_set.Ninja_Hand_NameShuriken des Ninja
 �
@@ -1215,8 +1216,8 @@ w
 &Base.Units.Unit_AztecTlacateccatl_NameCuauhtemoc 
 K
 5Base.Questlines.Questline_Research_ClassicGreece_NameMeisterforscher II
-�
-#Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth! William Wallace ist aus dem Schottland des 13. Jahrhunderts gekommen, bereit, in einem neuen Unabhängigkeitskrieg zu kämpfen. Zurück in seiner Heimat hallen die Geschichten über seine Führungsstärke, seine Tapferkeit und seinen Trotz in den Herzen der Schotten nach.<br><br>Wallace wendete das Blatt in der Schlacht von Stirling Bridge und besiegte die Engländer, obwohl zahlenmäßig weit unterlegen. Sein Traum von Freiheit verbreitete sich in ganz Schottland, und unzählige schlossen sich dem Kampf für ein freies Land an.<br><br>Als er in seine Zeit zurückkehrt, wird er zwar gefangen genommen und hingerichtet, aber Wallaces Geist wird niemals wanken. In ganz Schottland wird er als Freiheitskämpfer und Patriot verehrt, und sein spezielles Verschieben, der "Wallace Wallop", ist auch heute noch in den Bars von Glasgow zu sehen!
+�
+#Base.Units.Unit_WilliamWallace_Desc�Alba gu bràth! William Wallace ist aus dem Schottland des 13. Jahrhunderts gekommen, bereit, in einem neuen Unabhängigkeitskrieg zu kämpfen. Zuhause hallen die Geschichten über seine Führungsstärke, seinen Mut und seinen Trotz in den Herzen der Schotten wider.<br><br>Wallace wendete das Blatt in der Schlacht von Stirling Bridge und besiegte die Engländer trotz weit überlegener Zahl. Sein Traum von Freiheit verbreitete sich in ganz Schottland, und unzählige schlossen sich dem Kampf für ein freies Land an.<br><br>Auch wenn er in seine Zeit zurückkehrt, gefangen genommen und hingerichtet wird, wird Wallaces Geist niemals wanken. In ganz Schottland wird er als Freiheitskämpfer und Patriot geehrt, während sein Spezialangriff, der "Wallace Wallop" bis heute in den Bars von Glasgow gesehen werden kann!
 i
 "Base.Resources.material_naval_DescCMit diesem besonderen Material lassen sich Marinewunder verbessern.
 �
@@ -1243,10 +1244,10 @@ P
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_2_NameMittelgroßes Haus
 I
 "Base.Rifts.rift.CommonSpecial_Name#Legenden-Bonanza für Neueinsteiger
+=
+*Base.HarborShopPanel.TreasureHunt.ShopNameSchatzjagd-Shop
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_Desc�Doch die Götter verlangen aufwändigere Opfergaben. Wir müssen <style=MC>Aviarien</style> errichten, um die heiligen Quetzal- und Ara-Vögel zu beherbergen, deren <nobr><style=MC>Federn</style> <sprite name=resource.feathers_cta></nobr> Botschaften an den Himmel tragen.
-@
-*Base.HarborShopPanel.TreasureHunt.ShopNameTreasure Hunt Shop
 |
 3Base.InventoryItems.SelectionKit_ATH_Goods_100_DescEMit diesem Auswahlset kannst du zwischen verschiedenen Waren wählen.
 %
@@ -1396,8 +1397,10 @@ Y
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_DescSchaltet Auxilia-Reiter frei
 3
 Base.Resources.hero.Plato_NameEssenz von Platon
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Fokus | Geladener Schlag | Erholung</style>Ruhe vor dem Sturm: Nobunaga stoppt alle Angriffe und Bewegungen, während er seine Macht bis zu <style=basestat>{charge_duration}</style> fokussiert. Während dieser Zeit kann er Himmlische Hinrichtung aktivieren.<br>Himmlische Hinrichtung: Nobunaga greift den Gegner mit den meisten HP an und verursacht zwischen <style=basestat>{min_dmg}</style> und <style=basestat>{max_dmg}</style> Schaden und heilt sich selbst zwischen <style=basestat>{min_heal}</style> und <style=basestat>{max_heal}</style>, abhängig davon, wie lange die Fähigkeit geladen wurde. Danach wechselt die Fähigkeit wieder zu Ruhe vor dem Sturm.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>Fokus | Geladener Schlag | Erholung</style>  
+Ruhe vor dem Sturm: Nobunaga erhält einen Schild in Höhe von <style=basestat>{shield_value}</style> seines Basisschadens und stoppt alle Angriffe und Bewegungen, während er seine Macht bis zu <style=basestat>{charge_duration}</style> fokussiert. Während dieser Zeit kann er Himmlische Hinrichtung aktivieren.<br>  
+Himmlische Hinrichtung: Nobunaga greift den Gegner mit den meisten HP an und verursacht zwischen <style=basestat>{min_dmg}</style> und <style=basestat>{max_dmg}</style> Schaden. Gleichzeitig heilt er sich selbst um <style=basestat>{min_heal}</style> bis <style=basestat>{max_heal}</style> seines Basisschadens, abhängig davon, wie lange die Fähigkeit geladen wurde. Danach wechselt die Fähigkeit wieder zu Ruhe vor dem Sturm.
 *
 Base.OptionsPopup.LanguageLabelSprache
 !
@@ -1505,8 +1508,8 @@ P
 Base.OptionsPopup.EventVfxLabel	Event-VFX
 7
 $Base.Heroes.hero.AbrahamLincoln_NameAbraham Lincoln
-9
- Base.CommunityPopup.FacebookPageLike uns auf Facebook
+,
+ Base.CommunityPopup.FacebookPageFacebook
 n
 0Base.Buildings.Building_Mayas_Home_Priest_4_Desc:Produziert Kakao und fügt deiner Stadt 2 Handwerker hinzu
 ;
@@ -1969,10 +1972,10 @@ N
 Base.BuildingContextPanel.EmptyLeer
 p
 8Base.Incidents.Incident_BronzeAge_Capital_GoldOre_1_Desc4Willst du mehr Münzen? Dann buddle dieses Gold aus!
+]
+)Base.PlayerSearch.NoAllianceLocaleMessage0Für deine Allianz ist keine Sprache eingestellt
 _
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameGelehrten-Lyzeum
-N
-)Base.PlayerSearch.NoAllianceLocaleMessage!Your alliance has no language set
 *
 Base.InventoryMenuPanel.HeaderInventar
 �
@@ -2204,8 +2207,8 @@ M
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_NameMaskenbildhauer
 �
 &Tutorial.HeroLevelTutorial.ExplainFood�Wir <style=MC>HELDEN</style> sind auch hungrig. Ein <style=MC>LEVELAUFSTIEG</style> erfordert <style=MC>NAHRUNG</style> aus der <style=MC>STADT</style>.
-N
-6Base.Questlines.Questline_Research_EarlyGothicEra_NameMaster Researcher XI
+L
+6Base.Questlines.Questline_Research_EarlyGothicEra_NameMeisterforscher XI
 I
 .Base.Units.Unit_IberianEra_Vikings_Archer_NameWikinger Bogenschützen
 T
@@ -2277,10 +2280,8 @@ j
 Base.Generic.YesJa
 A
 4Base.RewardPanel.BuildingCustomizationUnlocked_Short	Anpassung
-�
-,Base.SpartasLastStandInfoPopup.UpperLaneInfo�<uppercase>Schütze die 300</uppercase> mit „ <style=basestat_dark>“ Massenverteidigung</style> (wie <sprite name=status_effect_shield> Schildpunkte und Buffs), „ <style=basestat_dark>“ Schadensablenkung</style> (wie <sprite name=status_effect_spirit_link> Spirit Link oder Unbesiegbarkeit) und „ <sprite name=status_effect_multi_heal> <style=basestat_dark>“ Massenheilung</style>.
-
-<uppercase>Schütze die 300</uppercase>, indem du <style=basestat_dark>Massenverteidigung</style> (wie <sprite name=status_effect_shield> Schildpunkte und Buffs), <style=basestat_dark>Schadensabwehr</style> (wie <sprite name=status_effect_spirit_link> Seelenverbindung oder Unverwundbarkeit) und <sprite name=status_effect_multi_heal> <style=basestat_dark>Massenheilung</style> nutzt.
+�
+,Base.SpartasLastStandInfoPopup.UpperLaneInfo�<uppercase>Schütze die 300</uppercase>, indem du <style=basestat_dark>Massenverteidigung</style> (wie <sprite name=status_effect_shield> Schildpunkte und Buffs), <style=basestat_dark>Schadensabwehr</style> (wie <sprite name=status_effect_spirit_link> Seelenverbindung oder Unverwundbarkeit) und <sprite name=status_effect_multi_heal> <style=basestat_dark>Massenheilung</style> nutzt.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_45_NameStufe 45
 7
@@ -2774,8 +2775,8 @@ J
 GBase.RankingPanel.RankingTypeHeaders.EventGrandPrizeProgress.MainHeaderEvent-Fortschritt
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_NameBrunnen
-<
-Base.OptionsPopup.CodeInputEnter your Promo Code here...
+@
+Base.OptionsPopup.CodeInput!Gib hier deinen Promo-Code ein...
 6
 &Base.HarborShopPanel.Alliance.ShopNameAllianz Shop
 A
@@ -2830,8 +2831,6 @@ Y
 =Base.Technologies.Technology_ByzantineEra_SaracenArchers_NameSarazenen-Bogenschützen
 r
 ,Base.TeslaStormsPanel.NoHeroForSelectedColorBDu brauchst mindestens 1 Helden dieser Farbe, um hier zu kämpfen.
-;
-(Base.CommanderAbilityPopup.SpawnUnitStat{0} beschwören
 X
 >Base.Resources.event_maliempire_2022_grand_prize_progress_NameHauptpreis-Fortschritt
 �
@@ -2847,8 +2846,8 @@ OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Name
 Robin Hood
 )
 Base.CampaignPanel.RewardsBelohnungen
-+
-!Base.SellEquipmentPopup.SubHeaderReward
+.
+!Base.SellEquipmentPopup.SubHeader	Belohnung
 4
 &Base.HarborShopPanel.PvPArena.ShopName
 Arena Shop
@@ -2930,8 +2929,8 @@ C
 3Base.Buildings.Building_MinoanEra_Home_Small_2_NameKleines Haus
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text1_Desc�Entweder sind wir hier, um ein Wunder zu erleben, oder ich bin in die seltsamste Gesellschaft geraten, die man sich vorstellen kann.
-8
-$Base.LeaderboardEventPanel.PlayEventSpiele {0} Event
+9
+$Base.LeaderboardEventPanel.PlayEventSpiele Event: {0}
 b
 "Base.QuestlinesPanel.WinBattleTaskGewinne <b>{0}</b> Schlacht.Gewinne <b>{0}</b> Schlachten.
 4
@@ -3380,8 +3379,8 @@ $
 Base.CommunityPopup.RedditReddit
 I
 7Base.Technologies.Technology_FeudalAge_PeakedRoofs_NameSpitze Dächer
-�
--Base.ChangeDisplayNamePopup.DetailDescriptionkThe first name change is free. Further changes will cost <size=80%><sprite name="resource.premium"></size>.
+�
+-Base.ChangeDisplayNamePopup.DetailDescriptionvDie erste Namensänderung ist kostenlos. Weitere Änderungen kosten <size=80%><sprite name="resource.premium"></size>.
 G
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_NameMagma-Tempel
 -
@@ -3459,8 +3458,8 @@ k
 Base.Generic.ErrorUnavailableJNamensänderung momentan nicht möglich. Probiere es bitte später erneut.
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc�Hey, Anführer! Wir haben einen Rivalen! Diese <style=MC>Schädelbrecher</style> drohen mit einem Gegenangriff! Zerschlagen wir sie!
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Stun </style>Houdini teleports to the enemy with the highest focus, trapping both himself and the target in a tank of water. Both are stunned for <style=basestat>{duration}</style> or until the target dies. If Houdini takes fatal damage, he escapes to a safe location, ending the ability early and avoiding death.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teleport | Betäubung </style>Houdini teleportiert sich zum Gegner mit dem höchsten Fokus und sperrt sowohl sich selbst und das Ziel in einen Wassertank. Beide werden für <style=basestat>{duration}</style> betäubt, oder bis das Ziel stirbt. Erleidet Houdini tödlichen Schaden, entkommt er an einen sicheren Ort, beendet die Fähigkeit vorzeitig und entgeht dem Tod.
 C
 0Base.Buildings.Building_Mayas_Home_Priest_1_NameHandwerker-Haus
 =
@@ -3509,8 +3508,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text4_Desc�
 #Base.Resources.hero.Hatshepsut_DescYErhöht das Erweckungs-Level von Hatschepsut und schaltet so mächtigere Kampf-Boni frei.
 {
 BBase.Buildings.Building_EarlyGothicEra_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
-�
-!Base.Units.Unit_HarryHoudini_Desc�Entkomme den Fesseln und begeistere das Publikum mit Harry Houdini, dem ultimativen Entfesselungskünstler! Geboren als Erik Weisz im 19. Jahrhundert in Ungarn und aufgewachsen in Amerika, verwandelte sich Houdini von einem kämpfenden Schausteller zu einer weltweiten Sensation, die Zuschauer verblüffte, indem er sich mit scheinbar übernatürlicher Geschicklichkeit aus Handschellen, Gefängniszellen, Zwangsjacken und sogar versiegelten Wassertanks befreite.<br><br>Houdinis Kunststücke waren das Gesprächsthema in Varietés und bei den Königshöfen, und seine grenzenlose Showtalent machte ihn zu einer Legende in der Welt der Magie. Aber es ging ihm nicht nur um Spektakel – er widmete sich der Entlarvung betrügerischer Medien und deckte diejenigen auf, die mit falschem Spiritismus die Trauer der Menschen ausnutzten. Sein Vermächtnis als Meister der Illusion und Verfechter der Ehrlichkeit lebt bis heute fort, auch wenn noch niemand das Geheimnis seines Talents oder seiner mittlerweile legendären verschlossenen Truhen gelüftet hat!
+�
+!Base.Units.Unit_HarryHoudini_Desc�Entkomme den Fesseln und verblüffe die Menge mit Harry Houdini, dem ultimativen Entfesselungskünstler! Geboren als Erik Weisz im 19. Jahrhundert in Ungarn und aufgewachsen in Amerika, verwandelte sich Houdini von einem kämpfenden Jahrmarktkünstler in eine weltweite Sensation, die das Publikum verblüffte, indem er sich scheinbar übernatürlich aus Handschellen, Gefängniszellen, Zwangsjacken und sogar versiegelten Wassertanks befreite.<br><br>Houdinis Kunststücke waren das Gesprächsthema in Varietés und an den Königshöfen, und sein grenzenloses Showtalent machte ihn zu einer Legende in der Welt der Magie. Doch es ging ihm nicht nur um Spektakel – er widmete sich auch der Entlarvung betrügerischer Medien und deckte diejenigen auf, die sich mit falschem Spiritualismus an der Trauer anderer bereicherten. Sein Vermächtnis als Meister der Illusion und Verfechter der Ehrlichkeit lebt bis heute fort, auch wenn bis jetzt niemand das Geheimnis gefunden hat, seinen Glanz – oder seine nun legendären verschlossenen Truhen – zu übertreffen!
 E
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Name	Bauernhof
 P
@@ -3627,8 +3626,8 @@ O
 "Base.ShopPopup.EquipmentSaleHeaderAufrüstungs-Überfluss
 F
 0Base.Wonders.Wonder_Capital_TempleOfArtemis_NameTempel der Artemis
-�
- Base.Units.Unit_WilliamTell_Desc�Schieß gut und verfehle nie! Wilhelm Tell, der legendäre Schweizer Volksheld, ist an deiner Seite. Tell ist für seine Geschicklichkeit mit dem Bogen bekannt und wird dafür gefeiert, dass er der Tyrannei im frühen 14. Jahrhundert trotzte.<br><br>Berühmt geworden durch die Geschichte, in der er gezwungen wurde, seinem Sohn mit der Armbrust einen Apfel vom Kopf zu schießen, wurden Tells Präzision und Tapferkeit zu Symbolen des Widerstands gegen Unterdrückung. Sein Widerstand gegen die habsburgischen Herrscher inspirierte den Schweizer Kampf für Freiheit und Unabhängigkeit.<br><br>Tells Geschichte, in der sich Legende und Geschichte vermischen, bleibt ein Leuchtfeuer für die Mutigen und zeigt, wie der Mut einer Person den Geist einer ganzen Nation entfachen kann. Die Zeitreise in die Vergangenheit hat sein Gehirn durcheinander gebracht: Jetzt liebt er seinen Apfel, als wäre er sein Sohn!
+�
+ Base.Units.Unit_WilliamTell_Desc�Schieße treffsicher und verfehl nie dein Ziel! Wilhelm Tell, der legendäre Schweizer Volksheld, steht an deiner Seite. Er wird für sein Können mit dem Bogen verehrt und ist bekannt dafür, im frühen 14. Jahrhundert der Tyrannei getrotzt zu haben.<br><br>Berühmt ist die Geschichte, in der er gezwungen wurde, einen Apfel vom Kopf seines Sohnes mit der Armbrust zu schießen. Tells Präzision und Mut wurden zu Symbolen des Widerstands gegen Unterdrückung. Sein Ungehorsam gegenüber den Habsburger Herrschern inspirierte den Schweizer Kampf um Freiheit und Unabhängigkeit.<br><br>Tells Geschichte, eine Mischung aus Legende und Historie, bleibt ein Leuchtfeuer für die Tapferen und zeigt, wie der Mut eines Einzelnen den Geist einer ganzen Nation entfachen kann. Die Zeitreise in die Vergangenheit hat sein Gehirn durcheinandergebracht: Jetzt liebt er seinen Apfel, als sei es sein Sohn!
 �
 Base.Units.Unit_Inanna_Desc�Das Haus des Himmels erwartet dich, denn dir gehört die Treue von Inanna, der Löwin. Diese sumerische Göttin der Liebe, des Krieges und der Fruchtbarkeit war schon 4000 v. Chr. eine bedeutende Figur in der Mythologie.<br><br>Inanna war mächtig und vielseitig und wurde für ihren Abstieg in die Unterwelt verehrt, wo sie versuchte, den Thron ihrer Schwester einzusammeln, und für ihre anschließende Rückkehr. Die sumerischen Legenden über sie betonen ihre Intelligenz, Stärke und Unabhängigkeit.<br><br>Geschichten über diese Göttin prägten die frühesten Zivilisationen auf dem Planeten Erde, und ihr Einfluss formt die Welt vielleicht auf eine Art und Weise, die wir nicht wahrnehmen können. Wenn dich eine Sumererin zum Tanzen auffordert, solltest du zweimal nachdenken, bevor du die Musik aufdrehst!
 V
@@ -3726,8 +3725,8 @@ L
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchKeine Übereinstimmung
 K
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_2_NameObsidian-Steinbruch
-E
-0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDarkwood Catapult
+G
+0Base.Units.Unit_FeudalAge_DarkKnights_Siege_NameDunkelholz-Katapult
 @
 0Base.Buildings.Building_Mayas_Home_Worker_1_NameArbeiterhaus
 .
@@ -3982,8 +3981,8 @@ D
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
 >
 *Base.Continents.continent.FrozenFjord_NameGefrorener Fjord
-�
-!Base.Units.Unit_JuliusCaesar_Desc�Salve! Julius Caesar, der ewige Diktator von Rom, ist an deiner Seite! Dieser Staatsmann, Schriftsteller, General und Anführer aus dem ersten Jahrhundert, der für sein militärisches Genie und seine kühnen politischen Manöver bekannt war, erweiterte Roms Territorium durch bemerkenswerte Eroberungen wie Gallien und Britannien.<br><br>Unter den Augen Caesars eroberte die römische Armee weite Teile Europas und Nordafrikas. Gleichzeitig stieg er in der politischen Welt der römischen Republik auf und leitete Veränderungen ein, die ihr Ende herbeiführen sollten.<br><br>Caesars Schatten wirft einen großen Teil der Geschichte voraus: Zu seinen "Fans" gehören Napoleon Bonaparte und William Shakespeare. Die Wörter "Zar" und "Kaiser" stammen beide von seinem Namen ab. Seit er bei den Heroes of History angekommen ist, gibt Lincoln ihm Nachhilfe dabei, Freunden mit Messern auszuweichen!
+�
+!Base.Units.Unit_JuliusCaesar_Desc�Salve! Julius Caesar, Dictator Perpetuo von Rom, steht dir zur Seite! Dieser Staatsmann, Schriftsteller, General und Führer des ersten Jahrhunderts, bekannt für sein militärisches Genie und seine kühnen politischen Manöver, erweiterte Roms Territorien durch bedeutende Eroberungen wie Gallien und Britannien.<br><br>Unter Caesars wachsamen Augen eroberte die Römische Armee weite Teile Europas und Nordafrikas. Gleichzeitig stieg er in der politischen Welt der Römischen Republik auf und leitete Veränderungen ein, die schließlich ihr Ende herbeiführen sollten.<br><br>Caesars Schatten liegt über weiten Teilen der Geschichte: Zu seinen "Fans" zählen Napoleon Bonaparte und William Shakespeare. Die Titel "Zar" und "Kaiser" leiten sich beide von seinem Namen ab. Seit seiner Ankunft bei Heroes of History gibt Lincoln ihm Unterricht darin, Freunden mit Messern auszuweichen!
 �
 >Base.Resources.event_maliempire_2022_grand_prize_progress_DescyStelle im Event "Reise durch die Sahara" Belohnungen her, um auf dem Weg zur Hauptpreis-Belohnung Fortschritte zu machen.
 S
@@ -4114,8 +4113,9 @@ Manuskript
 BBase.WonderReworkUpgradeRequestPopover.NoMoreHelpRequestsAvailableHDu hast bereits alle {0} Hilfeanfragen für dieses Wunder-Level genutzt.
 M
 -Base.TreasureHuntRankingPanel.ClaimYourRewardBeanspruche deine Belohnung!
-D
-5Base.Questlines.Questline_CampaignMap_Continent5_NameEroberer IV
+C
+5Base.Questlines.Questline_CampaignMap_Continent5_Name
+Eroberer V
 E
 8Base.Buildings.Building_BronzeAge_Workshop_Tailor_1_Name	Schneider
 D
@@ -4208,10 +4208,10 @@ i
 !Base.Alerts.VideoCouldNotBeLoadedDVideo konnte nicht geladen werden. Probiere es bitte später erneut!
 �
 9Base.QuestlinesPanel.CollectResourceInAgeFromBuildingTypeCSammle <b>{0} {1}</b> im Zeitalter <b>"{2}"</b> von <b>{3}</b> ein.
-�
-"Base.Units.Unit_QueenBoudicca_Desc�Mögen deine Feinde sich fürchten, denn Boudicca, Königin der Icener, hat sich den Heroes of History angeschlossen! Die Königin der Icener brachte die Maschinerie des antiken Roms auf den Feldern des Britanniens des 1. Jahrhunderts zum Stillstand und bahnte sich so ihren Weg in die Geschichte.<br><br>Sie bahnte sich einen Weg im Namen der Unabhängigkeit, setzte das römische London in Flammen und schürte das Feuer der Rebellion in ganz Britannien.<br><br>Noch heute ist sie ein Symbol der Befreiung, das von Freiheitskämpfern und Suffragetten gleichermaßen benutzt wird.<br><br>Obwohl der Tod auf sie wartet, hat sie keine Zweifel und keine Angst. Sie glaubt, dass manche Dinge es wert sind, alles zu riskieren.
 P
 SoftError.DEFAULT;Etwas ist schief gelaufen, bitte versuche es später erneut
+�
+"Base.Units.Unit_QueenBoudicca_Desc�Mögen deine Feinde Furcht verspüren, denn Boudicca, Königin der Iceni, hat sich den Heroes of History angeschlossen! Diese Königin der Iceni brachte die Maschinerie des antiken Roms auf den Schlachtfeldern des 1. Jahrhunderts in Britannien zum Stillstand und schnitt sich so für immer ihren Weg in die Geschichte.<br><br>Sie bahnte sich einen Pfad im Namen der Unabhängigkeit, setzte das römische London in Brand und entfachte das Feuer der Rebellion in ganz Britannien.<br><br>Bis heute ist sie ein Symbol der Befreiung, genutzt von Freiheitskämpfern und Suffragetten gleichermaßen. Obwohl der Tod auf sie wartet, kennt sie weder Zweifel noch Angst. Sie glaubt, dass manche Dinge es wert sind, alles zu riskieren.
 _
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text3_NameAmelia Earhart
 _
@@ -4298,8 +4298,8 @@ F
 Base.Units.Unit_Pythagoras_Desc�	Erforsche deine Seele und lebe im Untergrund mit Pythagoras, einem antiken griechischen Philosophen und Mathematiker aus dem 6. Jahrhundert v. Chr. Obwohl sein Leben von Mythen und Geheimnissen umwoben ist, ist er vor allem für den Satz des Pythagoras bekannt, mit dem er grundlegende Prinzipien der Geometrie aufstellte und damit Millionen von Schulkindern auf der ganzen Welt den Kopf verdrehte.<br><br>In Croton gründete er eine Schule, in der seine Anhänger, die Pythagoräer, nicht nur Mathematik, sondern auch Musiktheorie, Astronomie und Ethik erforschten, da sie glaubten, dass Zahlen für das Verständnis des Universums von zentraler Bedeutung sind. Dieser umfassende Ansatz verdeutlichte die Verflechtung der verschiedenen Bereiche.<br><br>Seine Lehren hinterließen ein bleibendes Vermächtnis, das künftige Generationen beeinflusste und das westliche Denken prägte. Pythagoras' Werk ist nach wie vor ein Eckpfeiler der mathematischen und philosophischen Forschung und regt auch heute noch zum Nachdenken und Erforschen an. Weniger bekannt ist sein schieres Selbstvertrauen: Die Legende besagt, dass er, als ihn eine giftige Schlange biss, zurückbiss und sie tötete!
 w
 4Base.AbilityTrainingPanel.MaxedOutHeroAbilityWarning?Dieser Held hat bereits das maximale Fähigkeitslevel erreicht!
-J
-4Base.Abilities.hero_battle_ability.HarryHoudini_NameWatery Confinement
+P
+4Base.Abilities.hero_battle_ability.HarryHoudini_NameWässrige Gefangenschaft
 8
 !Base.Resources.hero.Hercules_NameEssenz des Herkules
 L
@@ -4316,8 +4316,8 @@ F
 5Base.WorldWondersOverviewPanel.AllianceResourceHeaderAllianz-Waren
 �
 +Base.QuestlinesPanel.WonderContributionTask=Erfülle <b>{0}</b> Wunder-Hilfeanfrage von anderen Spielern.>Erfülle <b>{0}</b> Wunder-Hilfeanfragen von anderen Spielern.
-O
-2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineAccount already connected
+M
+2Base.Alerts.SingleSignOn.AlreadyConnected.HeadlineKonto bereits verbunden
 3
 'Base.UnitStats.unit_stat.Shield_PercentSchild %
 �
@@ -4486,8 +4486,8 @@ O
 9Base.Buildings.Building_Egypt_PapyrusField_Average_4_DescStellt Papyrus her
 �
 0Base.InventoryItems.Selection_Kit_Food_RP_3_DescPDieses Auswahlkit lässt dich zwischen Nahrungs- oder Forschungspunkten wählen.
-k
-3Base.Units.Unit_EarlyGothicEra_Player_Routiers_Desc4Infantry Units are most effective in the front rows.
+z
+3Base.Units.Unit_EarlyGothicEra_Player_Routiers_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 0
 Base.UnlockableFeatures.RiftEinsteins Portal
 3
@@ -4716,10 +4716,10 @@ G
 
 U
 &Base.BuildingGroups.littleCulture_NameKleine KulturstätteKleine Kulturstätten
+*
+Base.CommunityPopup.Instagram	Instagram
 <
 *Base.Wonders.Wonder_Mayas_ChichenItza_NameChichén Itzá
-8
-Base.CommunityPopup.InstagramFolge uns auf Instagram
 �
 2Base.ShopPopup.OfferInfoText.MonthlyGemCard_1_Info�Dieses Angebot bietet eine sofortige Auszahlung von 100 Edelsteinen und eine tägliche Auszahlung von 80 Edelsteinen für 30 Tage. Du kannst es zweimal kaufen, um die Vorteile auf bis zu 60 Tage zu verlängern. Die maximale Dauer beträgt 60 Tage und kann nicht überschritten werden.
 �
@@ -4786,8 +4786,8 @@ Baue und verbessere die Fernkämpfer-Kaserne, um ATK, DEF und HP von Fernkämpfe
 
 H
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_Name	Bauernhof
-B
-2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDark Knights
+C
+2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDunkle Ritter
 :
 Base.EventShop.NoOffersDerzeit gibt es keine Angebote.
 B
@@ -5142,8 +5142,8 @@ G
 Einsammeln
 G
 6Base.Questlines.Questline_EventCity_Egypt_Papyrus_NamePapyrusrollen
-B
-0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDark Swordsmen
+J
+0Base.Units.Unit_FeudalAge_DarkKnights_Heavy_NameDunkle Schwertkämpfer
 �
 Base.Resources.amethyst_DescqEin wertvoller Edelstein, der für die Erforschung bestimmter Technologien des Römischen Reiches benötigt wird.
 -
@@ -5170,9 +5170,8 @@ X
 8Base.StoryText.Story_Panganea_5_3_BattleStart_Text2_DescfDer <style=MC>Antimaterie-Nexus</style> verleiht uns die Macht, Portale zu bauen. In Teslas Händen...
 u
 <Base.Buildings.Building_EarlyRome_CultureSite_Compact_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
-,
-Base.ShopPopup.ChainOfferBonus
-{0}% Bonus
++
+Base.ShopPopup.ChainOfferBonus	{0}% Wert
 w
 BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_8_Name1Materialien, um sofort auf Level 40 aufzusteigen!
 
@@ -5241,10 +5240,10 @@ C
 )Base.LeaderboardEventPanel.NoExtraRewards�Du hast dieses Mal keine zusätzlichen Belohnungen erhalten. Versuche eine höhere Platzierung zu erreichen, um zusätzliche Belohnungen zu erhalten.
 [
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameMittlere Kulturstätte
+�
+Base.Units.Unit_LadyKasuga_Desc�Führe den Shogun aus den Schatten mit Lady Kasuga! Bekannt als Kasuga no Tsubone, wurde diese bemerkenswerte Adlige des frühen 17. Jahrhunderts eine der einflussreichsten Persönlichkeiten im inneren Kreis des Shogunats. Geboren 1579, trat sie als Hofdame in die Familie Tokugawa ein und gewann schnell das Vertrauen von Tokugawa Iemitsu, dem dritten Shogun der Dynastie.<br><br>Lady Kasuga diente als Amme, Beraterin und politische Strategin des Shoguns – die Macht hinter den Kulissen. Berühmt wurde sie insbesondere für die Organisation des Ooku, der Frauenquartiere des Shoguns, sowie für ihre diplomatischen Fähigkeiten: Verhandlungen mit Daimyo, Sicherung von Allianzen und die Überwachung der Hofetikette – mit eiserner Disziplin und feinem Humor.<br><br>Ihr subtiler Einfluss half, die Tokugawa-Herrschaft mit Stil, Witz und unbeirrbarer Entschlossenheit zu festigen. Für die Samurai draußen mag alles ruhig in den inneren Gemächern gewirkt haben, doch Lady Kasugas Vermächtnis erinnert uns daran – wahre Macht wirkt oft im Verborgenen!
 ?
 )Base.Regions.region.TeslaStormYellow_NameGelber Tesla-Sturm
-�	
-Base.Units.Unit_LadyKasuga_Desc�Lenke den Shogun aus den Schatten mit Lady Kasuga! Diese bemerkenswerte Adelige aus dem Japan des frühen 17. Jahrhunderts, die offiziell als Kasuga no Tsubone bekannt ist, wurde zu einer der einflussreichsten Persönlichkeiten im inneren Kreis des Shogunats. Geboren 1579, trat sie als Hofdame in die Tokugawa-Familie ein und erwarb sich schnell das Vertrauen von Tokugawa Iemitsu, dem dritten Shogun der Dynastie.<br><br>Lady Kasuga diente dem Shogun als Amme, Beraterin und politisches Superhirn - die Macht hinter den Kulissen. Berühmt ist sie vor allem für die Organisation der Ooku, der Frauenquartiere des Shoguns, und für ihr diplomatisches Geschick: Sie verhandelte mit Daimyo, sicherte Allianzen und überwachte die höfische Etikette mit eiserner Disziplin und einem ausgeprägten Sinn für Humor.<br><br>Ihr subtiler Einfluss trug dazu bei, die Tokugawa-Herrschaft mit Stil, Witz und eiserner Entschlossenheit aufrechtzuerhalten. Für die Samurai außerhalb mag es in den inneren Gemächern ruhig gewesen sein, aber Lady Kasugas Vermächtnis erinnert uns daran, dass die wahre Macht oft im Verborgenen wirkt!
 ?
 &Base.HistoricBattlePanel.SellEquipmentAusrüstung verkaufen
 x
@@ -5808,8 +5807,9 @@ H
 ;Base.Technologies.Technology_KingdomOfSicily_Pavillons_Name	Pavillons
 C
 2Base.UnitStats.unit_stat.CritChance_Percent_AbbrevCRIT CHANCE %
->
--Base.HarborShopPanel.TreasureHunt.ButtonLabelTreasure Hunt
+;
+-Base.HarborShopPanel.TreasureHunt.ButtonLabel
+Schatzjagd
 a
 9Base.Buildings.Building_Egypt_PapyrusField_Premium_5_Desc$Stellt riesige Mengen an Papyrus her
 9
@@ -5845,15 +5845,17 @@ L
 Base.Resources.cape_NameUmhang
 N
 'Base.BuildingTypes.extractionPoint_NameExtraktionspunktExtraktionspunkte
-4
-Base.CommunityPopup.TikTokBesuche uns auf TikTok
+$
+Base.CommunityPopup.TikTokTikTok
 )
 Base.ShopPopup.Subscription
 Abonnement
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_48_NameStufe 48
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Fokus | Geladener Schlag</style>Ruhe vor dem Sturm: Nobunaga stoppt alle Angriffe und Bewegungen, während er seine Macht bis zu <style=basestat>{charge_duration}</style> fokussiert. Während dieser Zeit kann er Himmlische Hinrichtung aktivieren.<br>Himmlische Hinrichtung: Nobunaga greift den Gegner mit den meisten HP an und verursacht zwischen <style=basestat>{min_dmg}</style> und <style=basestat>{max_dmg}</style> Schaden, abhängig davon, wie lange die Fähigkeit geladen wurde. Danach wechselt die Fähigkeit wieder zu Ruhe vor dem Sturm.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_1_Name�<style=ability_label>Fokus | Geladener Schlag</style>  
+Ruhe vor dem Sturm: Nobunaga erhält einen Schild in Höhe von <style=basestat>{shield_value}</style> seines Basisschadens und stoppt alle Angriffe und Bewegungen, während er seine Macht bis zu <style=basestat>{charge_duration}</style> fokussiert. Während dieser Zeit kann er Himmlische Hinrichtung aktivieren.<br>  
+Himmlische Hinrichtung: Nobunaga stürmt auf den Gegner mit den meisten HP zu und verursacht zwischen <style=basestat>{min_dmg}</style> und <style=basestat>{max_dmg}</style> Schaden, abhängig davon, wie lange die Fähigkeit geladen wurde. Danach wechselt die Fähigkeit wieder zu Ruhe vor dem Sturm.
 >
 1Base.Units.Unit_RomanEmpire_Player_Legionary_Name	Legionär
 @
@@ -6383,8 +6385,6 @@ R
 <Base.Technologies.Technology_EarlyRome_SiegeEngineering_NameBelagerungstechnik
 Y
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_2_DescSchaltet Arbalesten frei
-N
-<Base.Technologies.Technology_EarlyGothicEra_HeavyPlough_NameSchwerer Pflug
 C
 4Base.Technologies.Technology_Vikings_Pictograms_NamePiktogramme
 +
@@ -6507,10 +6507,10 @@ ABase.Technologies.Technology_KingdomOfSicily_MagnifyingGlass_NameLupe
 &Base.Units.Unit_NapoleonBonaparte_Desc�Alles sagt mir, dass du Erfolg haben wirst, denn Napoleon Bonaparte folgt dir in den Krieg. Dieser ehrgeizige und strategische Anführer erschütterte die Welt im späten 18. und frühen 19. Jahrhundert. Als militärischer General und späterer Kaiser von Frankreich war er für seine taktische Brillanz und seine weitreichenden Reformen bekannt.<br><br>Unter seinem Kommando eroberten die französischen Armeen riesige Gebiete in ganz Europa und stellten dabei seinen außergewöhnlichen Führungsstil und strategischen Verstand unter Beweis. Napoleon setzte dem Feudalismus in zahllosen Territorien ein Ende und hinterließ in anderen unzählige Tote.<br><br>Napoleons Vermächtnis ist ein komplexes Geflecht aus militärischen Erfolgen und umwälzenden Reformen, das seine Rolle als Schlüsselfigur widerspiegelt, die Europa umgestaltete und unauslöschliche Spuren in der Geschichte hinterließ. Er mag ein kleiner Mann gewesen sein, aber er hat eine große Welle gemacht!
 K
 -Base.TeslaStormsPanel.OnlySpecificColorHeroes{0} Helden-Herausforderung
+�
+4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�Am Ende jeder <style=MC>Schatzjagd</style> steigen die besten Allianzen eine Liga auf, während die schwächsten eine Liga absteigen.<br><br>Es gibt sechs Ligen: <style=MC>Eisen</style>, <style=MC>Bronze</style>, <style=MC>Silber</style>, <style=MC>Gold</style>, <style=MC>Platin</style> und <style=MC>Overlord</style>. Je höher die Liga, desto besser die Belohnungen.<br><br>Stelle sicher, dass du <b>mindestens 3 Begegnungen</b> abschließt, um deine Belohnungen zu erhalten.
 a
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_1_NameForschungs-Auswahlset 2-1
-�
-4Base.TreasureHuntRankingPanel.TreasureHuntLeagueInfo�At the end of each <style=MC>Treasure Hunt</style>, the top alliances move a league up, while the bottom alliances move a league down.<br><br>There are six leagues: <style=MC>Iron</style>, <style=MC>Bronze</style>, <style=MC>Silver</style>, <style=MC>Gold</style>, <style=MC>Platinum</style>, and <style=MC>Overlord</style>. The higher the league, the better the rewards.<br><br>Make sure to complete <b>at least 3 encounters</b> to obtain your rewards.
 a
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_1_DescSchaltet Hellebarden frei
 �	
@@ -6599,8 +6599,6 @@ K
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny4_NameWinzig
 s
 Base.Alerts.ClientOutOfDateTextPDeine Spielversion ist veraltet. Aktualisiere sie bitte auf die neueste Version.
-x
-(Base.CommanderAbilityPopup.AgeNotReachedLFür einen weiteren Levelaufstieg musst du das nächste Zeitalter erreichen.
 >
 )Base.Regions.region.VolcanicJungle_3_NameEnglische Kolonie
 =
@@ -7047,10 +7045,10 @@ X
 ABase.Technologies.Technology_ClassicGreece_ReinforcedShields_NameVerstärkte Schilde
 k
 EBase.WorldWondersInventionInformationPopup.RareInventionProgressLabel"Nächster garantierter Bauplan in:
+�
+Base.Resources.doubloons_DesckMit Dublonen kannst du im Schatzjagd-Shop Gegenstände kaufen. Du findest sie in Truhen bei der Schatzjagd.
 +
 Base.RiftInfoPopup.PityTabPity-Funktion
-�
-Base.Resources.doubloons_DescxDoubloons can be used to purchase items in the Treasure Hunt Shop. They can be found inside chests in the Treasure Hunt.
 �
 0Base.ShopOffers.shop_offer.WeeklyPullCard_1_DescOErhalte sofort ein paar Antimaterie und eine Woche lang jeden Tag zwei weitere!
 r
@@ -7350,8 +7348,8 @@ DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_3_NameForschung
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest2_QuestStart_Text4_DescUm zu zitieren...
 g
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_NameVerbesserte Besatzungsanordnung
-�
-$Base.Units.Unit_ThomasJefferson_Desc�Nimm Pergament und Federkiel zur Hand und schaffe mit Thomas Jefferson aus Worten eine Nation! Dieser Staatsmann aus dem 17. und 18. Jahrhundert inspirierte die Amerikanische Revolution und machte damit den Weg frei für die Gründung der Vereinigten Staaten von Amerika. Mit dreiunddreißig Jahren verfasste er die Unabhängigkeitserklärung, inspiriert von den Idealen der Aufklärung über Freiheit und individuelle Rechte.<br><br>Thomas Jeffersons Ruhm erreichte seinen Höhepunkt, als er Präsident der Vereinigten Staaten wurde. Er verhandelte mit Frankreich über das Territorium von Louisiana und gab nach dessen Kauf die Lewis-und-Clark-Expedition in dieses raue Land in Auftrag, was eine amerikanische Expansion ermöglichte, die die Größe der Vereinigten Staaten verdoppelte.<br><br>Heute gilt Jefferson als eine Bastion des liberalen Denkens: ein Verfechter des freien Denkens, der freien Rede und des Rationalismus. Lincoln ist beeindruckt, wenn er in der Nähe ist!
+�
+$Base.Units.Unit_ThomasJefferson_Desc�Schreibe eine Nation mit Pergament und Feder in die Existenz – mit Thomas Jefferson! Dieser Staatsmann des 17. und 18. Jahrhunderts inspirierte die Amerikanische Revolution und ebnete so den Weg für die Gründung der Vereinigten Staaten von Amerika. Mit dreiunddreißig Jahren verfasste er die Unabhängigkeitserklärung, inspiriert von den Aufklärungs-Idealen von Freiheit und individuellen Rechten.<br><br>Thomas Jeffersons Ruhm erreichte seinen Höhepunkt, als er Präsident der Vereinigten Staaten wurde. Er verhandelte mit Frankreich über das Territorium von Louisiana und beauftragte nach dessen Kauf die Expedition von Lewis und Clark in dieses raue Land, wodurch die amerikanische Expansion ermöglicht wurde, die die Größe der Vereinigten Staaten verdoppelte.<br><br>Heute erinnert man sich an Jefferson als Bastion des liberalen Denkens: ein Verfechter freien Denkens, freier Meinungsäußerung und Rationalismus. Lincoln ist jedes Mal begeistert, wenn er in seiner Nähe ist!
 �
 OBase.AbilityDescriptions.hero_battle_ability_description.MayanAstronomer_1_Name�<style=ability_label>Flächenschlag</style>Beschwöre himmlische Energie, die auf eine zufällige gegnerische Einheit herabregnet und <style=basestat>{dmg_percentage}</style> Schaden verursacht. Der Einschlag trifft auch gegnerische Einheiten  in einem Bereich von <style=basestat>{range}</style> um das Ziel.
 n
@@ -7392,8 +7390,8 @@ F
 2Base.EquipmentSets.equipment_set.Flapper_Ring_NameRing der Flapper
 �
 $Base.Resources.hero.OdaNobunaga_DescZErhöht das Erweckungs-Level von Oda Nobunaga und schaltet so mächtigere Kampf-Boni frei.
-�
-?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_5_Text5_DescjIrgendetwas stimmt nicht. Wir wiederholen immer wieder dieselben Momente, wie sich wiederholende Schritte.
+�
+?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_5_Text5_Desc�Irgendwas stimmt nicht. Wir durchleben immer wieder die gleichen <i><style=MC>Momente</style></i>, wie sich wiederholende Schritte.
 �
 8Base.StoryText.Story_Panganea_4_1_BattleStart_Text4_Desc[Ich bin mir da nicht so sicher. Halte deine Schilde hoch und behalte den Horizont im Auge. 
 -
@@ -7469,8 +7467,8 @@ Y
 &Base.BuildingGroups.premiumQuarry_NameLuxuriöser SteinbruchLuxuriöse Steinbrüche
 6
  Base.AccountSettingsPopup.HeaderKontoeinstellungen
-�
-3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_DescnSiege Units attack slowly and are weak to enemy attacks, but they have a devastating impact over a wide range.
+�
+3Base.Units.Unit_EarlyGothicEra_Player_Mangonel_Desc�Belagerungs-Einheiten greifen langsam an und sind schwach gegenüber gegnerischen Angriffen, aber sie haben auf große Distanz eine vernichtende Wirkung.
 �
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�Jetzt ist es an der Zeit, unsere Handwerker anzuweisen, <nobr><style=MC>Ahnenmasken</style> <sprite name=resource.ancestor_mask_cta></nobr> zu fertigen, die uraltes Wissen heraufbeschwören. Diese Masken <style=MC>überbrücken Welten</style> und lassen unsere Vorfahren unsere Bemühungen bei dieser Aufgabe miterleben.
 �
@@ -8060,8 +8058,8 @@ ABase.TreasureHuntNegotiationPanel.NegotiatorAlreadyGotCorrectGift8Dieser Pirat
 2Base.InventoryItems.SelectionKit_ATH_Goods_80_DescEMit diesem Auswahlset kannst du zwischen verschiedenen Waren wählen.
 �
 -Base.VideoPlacementButton.RunOutOfImpressionsXDu hast all deine Video-Belohnungen für heute eingefordert! Kehre bitte morgen zurück!
-_
-0Base.TreasureHuntRankingPanel.MakeProgressToRank+Progress in the Treasure Hunt to get ranked
+o
+0Base.TreasureHuntRankingPanel.MakeProgressToRank;Mach Fortschritte bei der Schatzjagd, um dich zu platzieren
 L
 ;Base.SiegeOfOrleansHistoricBattleInfoPopup.EnemySpawnHeaderGegner Spawnt
 z
@@ -8104,8 +8102,8 @@ a
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text1_Desc�Heute Nacht haben wir es geschafft. Wir haben die Zeit geschlagen und gewonnen! Jetzt feiern wir diesen Sieg mit allem, was wir haben.
 �
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_20_DescZMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Gewöhnlichen Wappen wählen.
-�
-5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_DesciRanged Units shoot projectiles over a great distance and are especially effective against infantry units.
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Longbowmen_Desc�Fernkampfeinheiten schießen Geschosse über eine große Distanz und sind deshalb besonders effektiv gegen Infanterie-Einheiten.
 \
 9Base.TreasureHuntNegotiationPopup.PossibleResourcesNeededMögliche benötigte Ressourcen
 g
@@ -8190,8 +8188,8 @@ N
 -Base.Factions.Faction_MinoanEra_Spartans_Name	Spartaner
 U
 =Base.Buildings.Building_EarlyGothicEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
-r
-1Base.HarborShopPanel.TreasureHunt.ShopDescription=The Treasure Hunt Shop offers items in exchange for Doubloons
+w
+1Base.HarborShopPanel.TreasureHunt.ShopDescriptionBIm Schatzjagd-Shop kannst du Gegenstände gegen Dublonen tauschen.
 �
 +Tutorial.TeslaStormsTutorial.StageSelection�Nur <style=MC>ROTE</style> Helden können diesem <style=MC>UNHEIL</style> trotzen. Wir werden <style=MC>TESLA</style> gemeinsam besiegen und wertvolle <style=MC>ELEMENTAR-WAPPEN</style> verdienen.
 J
@@ -8212,8 +8210,8 @@ E
 &Base.ShopPopup.LegendaryHeroDrawHeaderAufstieg zur Großartigkeit
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text1_DescXWas ist wirklich hinter diesen Mauern? Gibt es eine Antwort auf dieses Rätsel der Zeit?
-�
-7Base.LeaderboardEventPanel.GachaInfo.ChestEvent_Content�Je nach Anzahl der gewonnenen Trophäen erhältst du {0} als Belohnung. Diese Token kannst du im {1} Event einsetzen, um eine Vielzahl von Preisen zu erhalten! Am Ende des Wettbewerbs werden die 10 besten Spieler mit toten Extra-Preisen belohnt!
+�
+7Base.LeaderboardEventPanel.GachaInfo.ChestEvent_Content�Je nach Anzahl der gewonnenen Trophäen erhältst du {0} als Belohnung. Diese Token kannst du im {1} Event einsetzen, um eine Vielzahl von Preisen zu erhalten! Am Ende des Wettbewerbs werden die 10 besten Spieler mit tollen Extra-Preisen belohnt!
 �
 MBase.StoryText.Story_Questline_Event_BrowserLogin_Start_QuestStart_Text1_Desc�Verbinde jetzt dein Konto, um exklusive Belohnungen freizuschalten und dein Spiel auf verschiedenen Plattformen nahtlos fortzusetzen.
 `
@@ -8579,25 +8577,33 @@ H
 Base.ShopPopup.Pages.gacha_dealHeroische Jagd
 �
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_3_DescVMit diesem Auswahlset kannst du zwischen Forschungspunkten und Allianzpunkten wählen.
-�
- Base.PvpInfoPopup.PvpExplanation�<style=HL2><sprite name=pvp_points>Punkte</style>Gewinne oder verliere Punkte in jedem Kampf. Der potenzielle Gewinn/Verlust wird über dem Angriffs-Button für jeden Gegner angezeigt.
+�
+ Base.PvpInfoPopup.PvpExplanation�<style=HL2><sprite name=pvp_points>Punkte</style> 
+Gewinne oder verliere Punkte in jedem Kampf. Der potenzielle Gewinn/Verlust wird über dem Angriffs-Button für jeden Gegner angezeigt.
 
 
-<style=HL2>Gegner-Info</style>Neben dem Namen jedes Gegners siehst du dessen aktuelle Punktzahl und die Kampfkraft des Teams.
+<style=HL2>Gegner-Info</style> 
+Neben dem Namen jedes Gegners siehst du dessen aktuelle Punktzahl und die Kampfkraft des Teams.
 <style=HL2>Deine Info</style>Auf der rechten Seite siehst du deinen aktuellen Rang, deine Gesamt-Punkte und die Kampfkraft deines Teams.
 
-<sprite name=arena_medals> <style=HL2>Arena-Medaillen</style>Für jeden Kampf, egal wie er ausgeht, erhältst du 3 Arena-Medaillen. Diese Medaillen kannst du im Arena-Shop als Währung verwenden.
+<sprite name=arena_medals> <style=HL2>Arena-Medaillen</style> 
+Für jeden Kampf, egal wie er ausgeht, erhältst du 3 Arena-Medaillen. Diese Medaillen kannst du im Arena-Shop als Währung verwenden.
 
-<style=HL2>Arena-Shop</style>Mit deinen Arena-Medaillen kannst du im Shop verschiedene Gegenstände kaufen.
+<style=HL2>Arena-Shop</style> 
+Mit deinen Arena-Medaillen kannst du im Shop verschiedene Gegenstände kaufen.
 
-<style=HL2>Saisonbelohnungen</style>Unterhalb der Teamstärke findest du die Belohnungen für deinen aktuellen Rang in dieser Saison.
+<style=HL2>Saisonbelohnungen</style> 
+Unterhalb der Teamstärke findest du die Belohnungen für deinen aktuellen Rang in dieser Saison.
 
-<sprite name=resource.pvp_energy> <style=HL2>Arenamarken</style>Jeder Kampf kostet 1 Arenamarke, die mit der Zeit wieder aufgefüllt werden, bis zu maximal 5.
+<sprite name=resource.pvp_energy> <style=HL2>Arenamarken</style> 
+Jeder Kampf kostet 1 Arenamarke, die mit der Zeit wieder aufgefüllt werden, bis maximal 5.
 
-<style=HL2>Zurücksetzung der Saisonpunkte</style>Zu Beginn einer neuen Saison werden Punkte basierend auf deinem aktuellen Rang abgezogen:<line-height=120%><sprite name=pvp_tier_bronze><indent=6%><b>Bronze 1-3:</b> 0<b>Punkte</b></indent>
-<sprite name=pvp_tier_silver><indent=6%><b>Silber 1:</b> 15 Punkte | <b>Silber 2:</b> 20 Punkte | <b>Silber 3:</b> 25<b>Punkte</b></indent>
-<sprite name=pvp_tier_gold><indent=6%><b>Gold 1:</b> 50 Punkte | <b>Gold 2:</b> 70 Punkte | <b>Gold 3:</b> 90<b>Punkte</b></indent>
-<sprite name=pvp_tier_platinum><indent=6%><b>Platin 1:</b> 110 Punkte | <b>Platin 2:</b> 140 Punkte | <b>Platin 3:</b> 170<b>Punkte</b></indent>
+<style=HL2>Saisonpunkte-Reset</style>
+Zu Beginn einer neuen Saison werden je nach deinem aktuellen Rang Punkte abgezogen:
+<line-height=120%><sprite name=pvp_tier_bronze><indent=6%><b>Bronze 1–3:</b> 0 Punkte</indent>
+<sprite name=pvp_tier_silver><indent=6%><b>Silber 1:</b> 15 Punkte | <b>Silber 2:</b> 20 Punkte | <b>Silber 3:</b> 25 Punkte</indent>
+<sprite name=pvp_tier_gold><indent=6%><b>Gold 1:</b> 50 Punkte | <b>Gold 2:</b> 70 Punkte | <b>Gold 3:</b> 90 Punkte</indent>
+<sprite name=pvp_tier_platinum><indent=6%><b>Platin 1:</b> 110 Punkte | <b>Platin 2:</b> 140 Punkte | <b>Platin 3:</b> 170 Punkte</indent>
 <sprite name=pvp_tier_overlord><indent=6%><b>Overlord 1:</b> 10 % der aktuellen Punkte</indent></line-height>
 
 <style=HL2>Globale Platzierung</style>
@@ -8974,12 +8980,12 @@ F
 0Base.Resources.rift_token_seasonpass_common_NameArkane Antimaterie
 K
 $Base.HeroPanel.EquipWillUnequipRelic#Dieses Relikt wird von {0} abgelegt
+H
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameAdlige Ritter
 =
 #Base.Resources.hero.MarieCurie_NameEssenz von Marie Curie
 O
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_5_NamePapyrusmanufaktur
-H
-7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_NameNoble Knights
 I
 *Base.ShopPopup.Pages.forge_of_vulcan_eventSchmiede des Vulkan Angebot
 6
@@ -9056,8 +9062,8 @@ VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Tex
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text11_Desc|Es scheint, als hätten wir Erfolg gehabt. Die Stille, die folgt, lässt vermuten, dass eine Veränderung stattgefunden hat.
 G
  Base.SeasonPass.BuyGoldPassTitle#Hol dir dein Seasonpass Goldticket!
-E
-2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDark Twohanders
+H
+2Base.Units.Unit_FeudalAge_DarkKnights_Mordred_NameDunkle Zweihänder
 8
 ,Base.KeyboardShortcuts.Description.InventoryInventar
 9
@@ -9097,10 +9103,11 @@ H
 Base.Resources.planks_NameBretter
 \
 (Base.HeroPanel.AwakenAvailableAfterLevel0Verfügbar nach Abschluss von Erwecken Lvl. {0} 
-�	
-Base.Units.Unit_MontezumaI_Desc�Träger der Feuerkrone, Champion des Himmelsmeeres, Großer Redner: Es gibt keine Beinamen, die Montezuma, dem zweiten Kaiser der Azteken, nicht zustehen. Dieser Kaiser aus dem 14. Jahrhundert wird als Verkörperung des Aztekenreichs in all seiner Majestät und Brutalität in Erinnerung bleiben. Seine Krönung in Tenochtitlan war von großen Opfern geprägt, eine Tradition, die sein Regime nur noch verstärken sollte.<br><br>Eine der ersten Handlungen Montezumas bestand darin, sich mit zwei benachbarten Stadtstaaten zu verbünden. Dieses Dreierbündnis führte sowohl zu Eroberungen als auch zu Wohlstand: Aquädukte versorgten Tenochtitlan und ermöglichten der Stadt ein Wachstum, während das Reich immer mehr Teile Mexikos verschlang.<br><br>Dennoch war er in der Lage, seine politische Macht nicht nur als bloße Waffe einzusetzen. Montezumas Vermächtnis ist auch ein Vermächtnis des Glaubens: Er wird als Heldengott verehrt, und zu seiner Zeit wurden überall im Aztekenreich religiöse Schulen eingerichtet. Bei den Heroes of History ist er jedoch sehr verärgert darüber, dass alle denken, er sei sein Nachfahre, Montezuma II!
 _
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_NameSchwere Infanterie-Kaserne
+�
+
+Base.Units.Unit_MontezumaI_Desc�	Träger der Feuerkrone, Champion des Himmelsmeeres, Großer Redner: Es gibt keine Ehrennamen, die Montezuma, der zweite Kaiser der Azteken, nicht tragen könnte. Dieser Kaiser des 14. Jahrhunderts wird als Verkörperung des Aztekenreichs in all seiner Majestät und Brutalität erinnert. Seine Krönung in Tenochtitlan war von umfangreichen Opfern geprägt – eine Tradition, die sein Regime nur noch intensivierte.<br><br>Einer von Montezumas ersten Handlungen war die Allianz mit zwei nahegelegenen Stadtstaaten. Diese Dreifach-Allianz führte sowohl zu Eroberungen als auch zu Wohlstand, mit Aquädukten, die Tenochtitlan mit Wasser versorgten und es der Stadt erlaubten zu wachsen, während das Reich immer mehr Teile Mexikos verschlang.<br><br>Tatsächlich hieß er Moctezuma Xocoyotzin – sein vollständiger Name wurde selten verwendet, denn allgemein ist er einfach als Montezuma bekannt. Dennoch verstand er es, politische Macht weit mehr als nur mit roher Gewalt auszuüben. Montezumas Vermächtnis ist auch eines des Glaubens: Er wird als Heldengott verehrt, und zu seiner Zeit wurden religiöse Schulen im gesamten Aztekenreich eingerichtet. Innerhalb der Heroes of History jedoch ärgert ihn, dass alle denken, er sei sein Nachkomme Montezuma II.!
 `
 3SoftError.AllianceCity.INCIDENT_MAX_REWARD_UNLOCKED)Maximale Belohnung bereits freigeschaltet
 t
@@ -9412,8 +9419,8 @@ U
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_NameInfanterie-Kaserne
 |
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Desc5Verbessert die Zufriedenheit in umliegenden Gebäuden
-e
-2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt/There is no active Treasure Hunt at the moment.
+^
+2Base.TreasureHuntStartedPopup.NoActiveTreasureHunt(Derzeit gibt es keine aktive Schatzjagd.
 ]
 BBase.Technologies.Technology_EarlyGothicEra_IlluminatedLocket_NameIlluminiertes Medaillon
 O
@@ -9476,8 +9483,8 @@ HBase.AllianceTechnologies.alliance_technology.residentialQuarter_29_NameStufe
 #Base.Heroes.hero.CyrusTheGreat_NameKyros der Große
 Q
 8Base.Technologies.Technology_Mayas_PopulationGrowth_NameBevölkerungswachstum
-�
-@Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text2_DesccWillkommen im Mittelpunkt des Geschehens. Hier finden wir vielleicht den Hinweis, den wir brauchen.
+�
+@Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text2_Descx<i><style=MC>Willkommen</style></i> im Zentrum des Geschehens. Hier finden wir vielleicht den Hinweis, den wir brauchen.
 c
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_DescSchaltet Hippenträger frei
 U
@@ -9952,8 +9959,8 @@ L
 'Base.Expansions.Expansion_China_24_Name!Westliches Mottenlichtungs-Gebiet
 E
 #Base.SeasonPass.SeasonCompletedTextDie nächste Season beginnt in
-G
-3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDark Halberdiers
+K
+3Base.Units.Unit_FeudalAge_DarkKnights_Infantry_NameDunkle Hellebardiere
 �
 !Base.Units.Unit_AttilaTheHun_Desc�Es ist der Mann, der das Römische Reich fast zu Fall gebracht hätte: Attila, der Hunnenkönig! Dieser Kaiser aus dem 5. Jahrhundert war für seine militärischen Fähigkeiten und sein strategisches Genie bekannt.<br><br>Als Befehlshaber einer riesigen Stammeskoalition führte Attila Feldzüge durch ganz Europa und besiegte das Römische Reich. Nachdem ihm Tribut angeboten wurde, begann er einen Marsch auf Rom, der durch seinen Tod gestoppt wurde.<br><br>Attilas Erbe ist reich an Geschichten über seine militärischen Heldentaten und seine charismatische Führung, die ihn zu einer beeindruckenden Figur in der europäischen Geschichte machen. Weniger bekannt ist sein Hauskaninchen, "Attila the Bun", das ihn angeblich auf seinen Kampagnen begleitete!
 *
@@ -10069,10 +10076,10 @@ V
 &Base.UnitStats.unit_stat.Attack_AbbrevATK
 8
 Base.OptionsPopup.StartNewCityStarte eine neue Stadt
+�
+7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescqSchwere Infanterie-Einheiten sind wuchtig und hindern Kavallerie-Einheiten daran, durch sie hindurch zu stürmen.
 @
 7Base.Buildings.Building_Egypt_Irrigation_Channel_5_NameKanal
-�
-7Base.Units.Unit_EarlyGothicEra_Player_NobleKnights_DescRHeavy Infantry Units are bulky and block Cavalry Units from charging through them.
 *
 Base.Heroes.hero.Hercules_NameHerkules
 @
@@ -10223,10 +10230,10 @@ T
 ;Base.Technologies.Technology_Vikings_BeekeepingMastery_NameBienenzucht-Expertise
 /
 Base.EventRewardLane.Earned{0}/{1} verdient
+Q
+7Base.Questlines.Questline_CampaignMap_Continent6_2_NameEroberer VI – Teil 2
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text3_Desc�Das stimmt, <style=MC>alter Freund</style>. Lass diese belanglosen Streitereien um ein bisschen Dreck hinter dir. Schließ dich mir an, und kämpfe für die <style=MC>Zukunft</style>. 
-P
-7Base.Questlines.Questline_CampaignMap_Continent6_2_NameConqueror VI - Part 2
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescYMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Verbesserten Wappen wählen.
 
@@ -10391,9 +10398,8 @@ I
 Leonidas I
 X
 ,Base.EquipmentSets.equipment_set.Hunter_Desc(Angriff <style=basestat_dark>+15</style>
-C
-5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_Name
-Cavalrymen
+F
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_NameKavalleristen
 I
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameFalknerhandschuh
 �
@@ -10418,10 +10424,10 @@ Z
 )Base.SeasonPass.EventEndedNoParticipation-Erhalte tolle Belohnungen im nächsten Event!
 2
 #Base.Resources.alliance_timber_NameAllianzholz
+)
+Base.Resources.doubloons_NameDublonen
 /
  Base.ShopPopup.Pages.city_bundleStadt-Paket
-*
-Base.Resources.doubloons_Name	Doubloons
 �
 4Base.Buildings.Building_Vikings_City_CityHall_2_DeschDie große Halle ist das Zentrum deiner Stadt. Generiert stetig eine geringe Anzahl an Pennys für dich.
 0
@@ -10436,8 +10442,8 @@ J
 =Base.Technologies.Technology_EarlyGothicEra_PommelStrike_Name	Knaufhieb
 �
 2Base.Resources.UpgradeToken_TorchOfPrometheus_Desc�Mit dieser seltenen Ressource kannst du das <nobr><style=legendary>Fackel des Prometheus</style></nobr>-Relikt verbessern.<br>Du kannst sie zusammen mit Relikt-Staub als Belohnung in bestimmten Events erhalten.
-�
- Base.Units.Unit_Nostradamus_Desc�Entdecke die Geheimnisse des Schicksals mit Nostradamus, dem legendären Seher, dessen Visionen durch die Jahrhunderte hallen! Michel de Nostredame wurde 1503 geboren und war als Arzt bekannt für seinen Mut während der Pest-Epidemien, aber es waren seine geheimnisvollen Prophezeiungen, die ihm ein bleibenden Vermächtnis sicherten. Sein Buch, "Les Prophéties" enthält so rätselhafte Verse, dass Generationen über ihre wahre Bedeutung rätseln und sie mit Ereignissen wie verheerenden Kriegen und dem Aufstieg und Fall von Kaisern in Verbindung bringen.<br><br>Nostradamus' Ruf reichte bis in die höchsten Kreise – er sagte sogar der Königin von Frankreich, Katharina von Medici, die Zukunft voraus. Manche sagen, er schaute in eine Messingschale, andere in die Sterne, doch seine Mischung aus Astrologie und poetischen Rätseln fasziniert bis heute Gläubige und Zweifler gleichermaßen. Helden flüstern, dass er seine Kristallkugel niemals unbeaufsichtigt lässt und dass sich sein Tagebuch manchmal spät in der Nacht von selbst schreibt.
+�
+ Base.Units.Unit_Nostradamus_Desc�Entschlüssle die Geheimnisse des Schicksals mit Nostradamus, dem legendären Seher, dessen Visionen durch die Jahrhunderte hallen! Geboren 1503, wurde Michel de Nostredame als Arzt berühmt für seinen Mut während Pestepidemien, doch es waren seine rätselhaften Prophezeiungen, die ihm ein bleibendes Vermächtnis sicherten. Sein Buch Les Prophéties enthält Verse so kryptisch, dass Generationen über ihre wahre Bedeutung rätselten und sie mit Ereignissen wie verheerenden Kriegen und dem Aufstieg und Fall von Kaisern in Verbindung brachten.<br><br>Nostradamus' Ruhm erreichte die höchsten Kreise – er deutete sogar die Zukunft von Katharina von Medici, Königin von Frankreich. Manche sagen, er habe in eine Messingschale geblickt, andere behaupten, in die Sterne, doch seine Mischung aus Astrologie und poetischen Rätseln fasziniert sowohl Gläubige als auch Skeptiker. Helden flüstern, dass er seine Wahrsagungs-Schale nie unbeaufsichtigt lässt und dass sein Tagebuch manchmal spät in der Nacht von selbst zu schreiben beginnt.
 B
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameArbeiterhaus
 6
@@ -10532,8 +10538,8 @@ k
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text9_DescWir sollten dem nachgehen!
 Y
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_3_DescSchaltet Routiers frei
-_
-EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NameMagna Carta Principles
+c
+EBase.Technologies.Technology_EarlyGothicEra_MagnaCartaPrinciples_NamePrinzipien der Magna Carta
 q
 )Base.Resources.yellow_crest_enhanced_DescDGelbe Wappen werden benötigt, um gelbe Helden aufsteigen zu lassen.
 w
@@ -10800,10 +10806,10 @@ MBase.StoryText.Story_Questline_TeslaStorm_SolveStages1_QuestFinish_Text5_Descu
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text2_Desc�Amelia, ich muss leider sagen, dass ich kein Glück hatte. Keine Gerüchte, keine Zeichen, keine Hinweise, und ich habe das ganze Schiff bis zur Großen Treppe durchkämmt.
 3
 #Base.IngameEvents.Event_Winter_NameWinter-Event
-�
-Base.Units.Unit_Lagertha_Desc�Lass dich von niemandem zurückhalten, denn Lagertha, die legendäre Schildmaid der Wikinger aus dem 9. Jahrhundert, hat sich den Heroes of History angeschlossen! Diese Kriegerin wird für ihre Tapferkeit und ihr strategisches Geschick in der Schlacht gefeiert. Sie kämpfte an der Seite ihres Mannes Ragnar Lodbrok und spielte eine entscheidende Rolle bei ihren militärischen Siegen. Lagertha war bekannt für ihre Kampffähigkeiten und inspirierte die Krieger mit ihrer Furchtlosigkeit und Führungsstärke.<br><br>Abgesehen von ihren kriegerischen Fähigkeiten hatte sie ein komplexes Privatleben, das von ihrer turbulenten Beziehung zu Ragnar geprägt war, von dem sie sich schließlich scheiden ließ. Der Legende nach behielt Lagertha auch nach ihrer Trennung von Ragnar ihren Einfluss und führte ihre eigenen Truppen in den folgenden Schlachten zum Sieg.<br><br>Lagerthas Vermächtnis als mächtige Frau in der nordischen Geschichte und Mythologie inspiriert und fesselt das Publikum auch heute noch.
 p
 /Base.Buildings.Building_China_Home_Small_6_Desc=Stellt Wu Zhu her und fügt deiner Stadt einen Arbeiter hinzu
+�
+Base.Units.Unit_Lagertha_Desc�Lass dich von niemandem aufhalten, denn Lagertha, die legendäre Wikinger-Schildmaid des 9. Jahrhunderts, hat sich den Heroes of History angeschlossen! Diese Kriegerin ist berühmt für ihre Tapferkeit und strategische Meisterschaft im Kampf, kämpfte Seite an Seite mit ihrem Ehemann Ragnar Lodbrok und spielte eine entscheidende Rolle bei ihren militärischen Siegen. Bekannt für ihre Kampffähigkeiten, inspirierte Lagertha andere Krieger durch ihre Furchtlosigkeit und Führungsstärke.<br><br>Über ihre kriegerische Brillanz hinaus führte sie ein komplexes Privatleben, geprägt von ihrer turbulenten Beziehung zu Ragnar, von dem sie sich schließlich scheiden ließ. Der Legende nach behielt Lagertha auch nach der Trennung von Ragnar ihren Einfluss und führte ihre eigenen Truppen zu Siegen in weiteren Schlachten.<br><br>Lagerthas Vermächtnis als mächtige Frau in der nordischen Geschichte und Mythologie inspiriert und fasziniert noch heute.
 #
 Base.RewardInfoPopup.ChestTruhe
 �
@@ -10841,8 +10847,8 @@ ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameMerowingisch
 aBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Yggdrasil_1_QuestStart_Text3_Desc�Jede <style=MC>Kiste</style> verbessert auch deinen <style=MC>Rang</style> in der <style=MC>Event-Highscore</style> und schaltet damit bessere <style=MC>Belohnungen</style> frei, während du in den <style=MC>Ligen</style> bis zum Ende des Events aufsteigst.
 2
 !Base.Units.Unit_LouisPasteur_NameLouis Pasteur
-6
-Base.CommunityPopup.YoutubeBesuche uns auf Youtube
+&
+Base.CommunityPopup.YoutubeYoutube
 w
 0Base.AllianceChatNotifications.UnlockSlotGenericCEin neuer Platz im {0} wurde von <color=#CA8D2E>{1}</color> gekauft
 U
@@ -10938,8 +10944,8 @@ U
 ;Base.Buildings.Building_China_Workshop_ClayProcessor_5_DescVeredelt Kaolin zu Ton
 N
 Base.Tutorial.WonderBlocked/Du kannst dieses Wunder jetzt nicht auswählen.
-#
-Base.EquipmentItemView.SoldSold
+'
+Base.EquipmentItemView.SoldVerkauft
 y
 7Base.Buildings.Building_ClassicGreece_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 �
@@ -11067,8 +11073,8 @@ $Base.QuestlinesPanel.ClaimDailyLoginTägliche Belohnung einsammeln
 Mönch-Set
 {
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_3_Desc6Verbessert die Bewässerung von umliegenden Gebäuden.
-[
-Base.CommunityPopup.Discord<Nimm an Diskussionen zum Spiel im externen Discord-Chat teil
+&
+Base.CommunityPopup.DiscordDiscord
 S
 (Base.BuildingGroups.cavalryBarracks_NameKavallerie-KaserneKavallerie-Kasernen
 \
@@ -11536,8 +11542,6 @@ j
 0Base.NegotiationPanel.GenericReactionBubbleOther6Wird für einen anderen Verhandlungsführer gebraucht.
 �
 ;Base.ShopPopup.SeasonalEventJourneyThroughSaharaBundlesDesc�Hole dir Gold Dinare und entdecke viele Belohnungen, darunter einzigartige <style=legendary>Relikte</style> um deine Helden zu boosten!
-W
-'Base.CommanderAbilityPopup.UpgradeLabel,Aufleveln {0} <sprite name=commander_medals>
 |
 DBase.AllianceMemberContextPopover.AlliancePlayerAlliancesNotUnlocked4Der Spieler hat noch keine Allianzen freigeschaltet.
 #
@@ -11791,10 +11795,10 @@ L
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�Ich schlage vor, dass wir an wichtigen Punkten Verteidigungsgrenzen setzen. Wenn diese Kommunikationskanäle und Machtquellen so wichtig sind, müssen wir sie schützen. Mehr Hindernisse für Tesla.
 �
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_DescVDas ist dein Anspruch auf Ruhm, Leonidas. Du stirbst als Held am Pass der Thermopylen.
+X
+8Base.Questlines.Questline_CollectStars_Continent6_2_NameSternensammler VI – Teil 2
 <
 &Base.Alerts.AccountBannedTimeRemainingÜbrige Sperrzeit:
-V
-8Base.Questlines.Questline_CollectStars_Continent6_2_NameStar Collector VI - Part 2
 =
 'Base.MergeItems.WorldFair_Bronze_5_NameArtefakt - Level 5
 A
@@ -12151,8 +12155,8 @@ Y
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_DescKStellt große Mengen an Münzen her und fügt deiner Stadt 2 Arbeiter hinzu
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.MiyamotoMusashi_10_Name�<style=ability_label>Nahkampfangriff| Buff</style>Miyamoto schlägt viermal auf sein aktuelles Ziel ein und verursacht dabei insgesamt <style=basestat>{dmg_percentage}</style> Schaden. Außerdem erhöht sich seine Chance, kritisch zu treffen, um <style=basestat>{crit_percentage}</style> für <style=basestat>{duration}</style>.
-R
-6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabelUnlocks with Difficulty:
+[
+6Base.HarborShopPanel.TreasureHuntDofficultyLockedLabel!Freigeschaltet mit Schwierigkeit:
 ;
 0Base.Technologies.Technology_BronzeAge_Barn_NameScheune
 M
@@ -12200,7 +12204,7 @@ Weltwunder
 �
 #Base.Resources.hero.JaneAusten_DescYErhöht das Erweckungs-Level von Jane Austen und schaltet so mächtigere Kampf-Boni frei.
 �
-Base.Units.Unit_Sacagawea_Desc�Kartographiere die Zukunft der Nationen an der Seite von Sacagawea! Die Shoshonen-Entdeckerin aus dem 17. und 18. Jahrhundert war die Dolmetscherin der Lewis-und-Clark-Expedition, die im Auftrag von Thomas Jefferson das Louisiana-Territorium erkundete. Als solche sicherte sie die westliche Expansion und die Zukunft der Vereinigten Staaten.<br><br>Als die beiden Entdecker in Fort Mandan zusammentrafen, erwies sich Sacagaweas Führung als entscheidend. Ihre Anwesenheit trug dazu bei, die friedlichen Absichten der Expedition zu bekräftigen, und ihre Kenntnis des Landes gab den Expeditionsreisenden Sicherheit.<br><br>Sacagawea gilt als Symbol für die Tapferkeit der Frauen der amerikanischen Ureinwohner und wird in Romanen und in der Geschichte verehrt. Im Alter von 25 Jahren, obwohl viele glauben, dass sie schon tot war, führte sie ihre Neugier zu einem Zeitportal, das unter den Bergen versteckt war. Sie brauchte nicht einmal Einstein, um es herbeizurufen! Jetzt, in der Vergangenheit, erkundet sie die Täler und Hügel dieser neuen Welt, immer neugierig.
+Base.Units.Unit_Sacagawea_Desc�Gestalte die Zukunft der Nationen an der Seite von Sacagawea! Diese Shoshone-Entdeckerin des 17. und 18. Jahrhunderts war die Dolmetscherin der Lewis-und-Clark-Expedition, einer Mission zur Erkundung des Louisiana-Territoriums im Auftrag von Thomas Jefferson. So sicherte sie die westliche Expansion und die Zukunft der Vereinigten Staaten.<br><br>Beim Treffen mit den beiden Entdeckern in Fort Mandan erwies sich Sacagaweas Führung als unverzichtbar. Ihre Anwesenheit trug dazu bei, die friedlichen Absichten der Expedition zu bekräftigen, und ihre Kenntnisse des Landes sorgten für die Sicherheit der Expeditionsteilnehmer.<br><br>Sacagawea ist als Symbol für den Mut der indianischen Frauen in Erinnerung geblieben, geehrt in Romanen und durch die Geschichte. Im Alter von 25 Jahren – obwohl viele glauben, sie sei gestorben – führte ihre Neugier sie zu einem Zeitportal, verborgen unter den Bergen. Selbst Einstein brauchte sie nicht, um es zu aktivieren! Nun in der Vergangenheit erkundet sie die Täler und Hügel dieser neuen Welt, für immer neugierig.
 9
  Base.Alerts.ClientOutOfDateTitleAktualisierung nötig
 N
@@ -12287,8 +12291,8 @@ C
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�Du hast unsere Manufakturen mit großem Geschick aufgebaut. Konzentrieren wir uns jetzt auf den Ausbau des <style=MC>Sayil Palastes</style> selbst, denn nur durch seine Pracht werden die rivalisierenden Anführer unsere Macht erkennen und gezwungen sein, Allianzen mit uns zu schmieden.
 ]
 %Base.BattleSetupPanel.OpenAbilityInfo4Held lange drücken zum Öffnen der Fähigkeits-Info
-K
-Base.OptionsPopup.CodeHint-Enter your Promo Code to receive your Reward.
+X
+Base.OptionsPopup.CodeHint:Gib deinen Promo-Code ein, um deine Belohnung zu erhalten.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_33_NameStufe 33
 I
@@ -12353,10 +12357,10 @@ S
 "Base.Resources.gilded_pennant_DescgEin <style=epic>episches</style> Aufstiegsmaterial, das verwendet wird, um Helden aufsteigen zu lassen.
 z
 8Base.Buildings.Building_EarlyGothicEra_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
+^
++Base.PlayerSearch.SearchTermTooShortMessage/Suchbegriff muss mindestens 3 Zeichen lang sein
 &
  Base.HeroFilterPopover.HitPointsHP
-X
-+Base.PlayerSearch.SearchTermTooShortMessage)Search term must be at least 3 characters
 z
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
 [
@@ -12452,8 +12456,8 @@ A
 5Base.Technologies.Technology_FeudalAge_Seafaring_NameSeefahrt
 \
 0Base.WorldWondersOverviewPanel.WonderNotUnlocked(Dieses Wunder wurde noch nicht gefunden.
-�
-?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text4_DescSIch nehme lieber Risiken in Kauf, als immer wieder dieselben Abläufe durchzugehen.
+�
+?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text4_DesctIch gehe lieber Risiken ein, als immer wieder dieselben Abläufe <i><style=MC>und</style></i> wieder zu durchlaufen.
 $
 Base.Resources.garnet_NameGranat
 7
@@ -12723,8 +12727,8 @@ L
 4Base.Questlines.Questline_WorldFair_2024_Rush_2_Name$Weltausstellungs-Event Questreihe II
 "
 Base.AllianceBlimps.BuildBauen
-I
-3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetic Reversal
+J
+3Base.Abilities.hero_battle_ability.Nostradamus_NameProphetische Umkehr
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_1_NameAviarium
 �
@@ -13091,8 +13095,8 @@ O
 8Base.Buildings.Building_IberianEra_Barracks_Siege_1_NameBelagerungs-Kaserne
 N
 3Base.Rewards.Reward_PvP_SeasonEnd_Chest_Common_NameGewöhnliche Arenatruhe
-�
-fBase.StoryText.Story_Questline_EventCity_Vikings_ExpeditionPreparations_Lagertha_QuestStart_Text2_Desc�Dafür können wir unsere <nobr><style=MC>Arbeiter</style> <sprite name=workers_city_vikings></nobr> sowie <nobr><style=MC>Seefahrer</style> <sprite name=workers_small_sailorvikings></nobr> einsetzen, die für alle Seefahrts-Aktivitäten wie Fischfang und Expeditionen benötigt werden.
+�
+fBase.StoryText.Story_Questline_EventCity_Vikings_ExpeditionPreparations_Lagertha_QuestStart_Text2_Desc�Dafür können wir sowohl unsere <nobr><style=MC>Arbeiter</style> <sprite name=workers_city.city_vikings></nobr> als auch <nobr><style=MC>Seefahrer</style> <sprite name=workers_small_sailorvikings></nobr> einsetzen, die für alle Seefahrts-Aktivitäten wie Fischfang und Expeditionen benötigt werden.
 I
 8Base.Technologies.Technology_BronzeAge_BronzeEffigy_NameBronzebildnis
 �
@@ -13177,8 +13181,8 @@ _
 ;Base.Incidents.Incident_EarlyGothicEra_Capital_Chest_1_Desc�Schau! Ein Bienenvolk hat sich an dem Baum niedergelassen, bei dem wir einen Schatz versteckt haben. Wir sollten sie behutsam umsiedeln, um uns einen Zugang zu verschaffen.
 M
 /Base.SelectionKitSelection.ChooseRewardHeadlineWähle deine Belohnung aus
-.
-Base.OptionsPopup.RedeemCodeCode einlösen
+4
+Base.OptionsPopup.RedeemCodePromo-Code einlösen
 -
 Base.BuildingGroups.Marketplace
 Marktplatz
@@ -14131,9 +14135,8 @@ y
 Base.Generic.PasswordPasswort
 C
 3Base.UnitStats.unit_stat.AttackRange_Percent_AbbrevREICHWEITE %
-,
-Base.Units.Unit_IsabellaI_Name
-Isabella I
+-
+Base.Units.Unit_IsabellaI_NameIsabella I.
 �
 [Base.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_Tikal_1_QuestStart_Text3_Desc�Jede <style=MC>Kiste</style> verbessert auch deinen <style=MC>Rang</style> in der <style=MC>Event-Highscore</style> und schaltet damit bessere <style=MC>Belohnungen</style> frei, während du in den <style=MC>Ligen</style> bis zum Ende des Events aufsteigst.
 }
@@ -14204,8 +14207,8 @@ p
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc5Verbessert die Bewässerung von umliegenden Gebäuden
 ?
 -Base.Units.Unit_BronzeAge_Player_Archers_NameBogenschützen
-{
-6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_DescAInfanterie-Einheiten sind in den vorderen Reihen am effektivsten.
+}
+6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_DescCInfanterie-Einheiten sind in den vordersten Reihen am effektivsten.
 P
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_2_NameFernkämpfer-Kaserne
 B
@@ -14410,10 +14413,10 @@ q
 5
 'Base.Cities.City_Mayas_SayilPalace_Name
 Maya-Reich
+M
+1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDunkle Armbrustschützen
 �
 *Base.Resources.hero.AztecTlacateccatl_DescYErhöht das Erweckungs-Level von Cuauhtémoc und schaltet so mächtigere Kampf-Boni frei.
-E
-1Base.Units.Unit_FeudalAge_DarkKnights_Archer_NameDark Crossbowmen
 �
 #Base.Resources.frankish_fibula_Desc�Ein mittelalterliches Schmuckstück, das für die Erforschung bestimmter Technologien aus dem Zeitalter der Franken benötigt wird.
 H
@@ -14691,8 +14694,8 @@ C
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text1_DescpMiss d'Arc, auch wenn es so aussieht, als sei alles verloren, gibt es ein Licht in dir, das nie erlöschen wird.
 @
 (Base.TreasureHuntStartedPopup.JoinButtonSchatzjagd beitreten
-H
-0Base.TreasureHuntRankingPanel.TreasureHuntLeagueTreasure Hunt League
+C
+0Base.TreasureHuntRankingPanel.TreasureHuntLeagueSchatzjagd-Liga
 E
 #Base.Resources.material_temple_NameTempelmaterialTempelmaterial
 J
@@ -14800,8 +14803,8 @@ J
 6Base.Technologies.Technology_FeudalAge_Wingguards_NameFlügelschützer
 _
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text5_NameAmelia Earhart
-�
-:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_DescSKavallerie-Einheiten sind sehr schnell und stürmen auf die gegnerische Nachhut zu.
+�
+:Base.Units.Unit_HighMiddleAges_Player_KnightlyCavalry_DescIKavallerie-Einheiten sind schnell und greifen die Nachhut des Gegners an.
 q
 &Base.Generic.NoAvailableExpansionRightGMach Fortschritte auf der Kampagnen-Karte, um Erweiterungen zu erhalten
 T
@@ -15007,8 +15010,8 @@ HBase.StoryText.Story_Questline_StoneAge_MediumFarm_QuestStart_Text1_Desc�Das 
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_DescVMit diesem Auswahlset kannst du zwischen verschiedenfarbigen Erhabenen Wappen wählen.
 R
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_NameKavallerie-Kaserne
-1
-Base.SellEquipmentPopup.HeaderSell Equipment?
+8
+Base.SellEquipmentPopup.HeaderAusrüstung verkaufen?
 P
 =Base.Technologies.Technology_IberianEra_OrangePlantation_NameOrangenplantage
 ;
@@ -15025,8 +15028,8 @@ S
 'Base.HeroPanel.FocusInitialChargeChange(Initial: <style=AwakenFocus>-{0}</style>
 ?
 +Base.Resources.rift_token_mayas_common_NameMaya-Antimaterie
->
-7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonYes
+=
+7Base.Alerts.SingleSignOn.AlreadyConnected.ConfirmButtonJa
 ^
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_1_DescSchaltet Infanteristen frei
 K
@@ -15147,8 +15150,8 @@ K
 :Base.QuestlinesPanel.IncreaseAbilityLevelHeroesOfClassTaskQErhöhe das Level der Fähigkeiten eines beliebigen Helden der Klasse <b>{0}</b>.`Erhöhe das Level der Fähigkeiten eines beliebigen Helden der Klasse <b>{0}</b> <b>{1}</b> mal.
 �
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text3_DescJDie Stille zwischen den Welten... Blätter und Schwefel... und das Portal.
-
-5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescFCavalry Units are very fast and charge towards the enemies rear guard.
+�
+5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_DescIKavallerie-Einheiten sind schnell und greifen die Nachhut des Gegners an.
 W
 CBase.Technologies.Technology_KingdomOfSicily_MarbleDecorations_NameMarmordekoration
 6
@@ -15181,10 +15184,10 @@ K
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text5_Desc^Die ganzen Wendungen haben sich für diesen Moment gelohnt. Wir sind jetzt frei wie nie zuvor.
 ;
 &Base.ServerSelectionPopup.SelectServerServer auswählen
+H
+)Base.ChangeDisplayNamePopup.ErrorSameNameDas ist dein aktueller Name
 
 Base.Generic.MainCityStadt
-F
-)Base.ChangeDisplayNamePopup.ErrorSameNameThis is your current name
 �
 5Base.WorldWondersOverviewPanel.HelpActionsTooltipTextNZeigt, wie oft du heute noch anderen Spielern bei ihren Wundern helfen kannst.
 b
@@ -15528,10 +15531,10 @@ A
 <Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�Imperiale Garden sind hochspezialisiert und stärker als normale Infanterie-Einheiten. Ihre Statuswerte skalieren automatisch mit deinem Zeitalter.
 I
 (Base.TreasureHuntRankingPanel.LateJoinerNach Saison-Start beigetreten
+�
+1Base.Alerts.SingleSignOn.AlreadyConnected.Message�Dein aktuelles Spielkonto ist bereits mit {0} verknüpft. Möchtest du {0} mit dem Konto verknüpfen, bei dem du gerade eingeloggt bist?
 u
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Desc>Stellt Münzen her und fügt deiner Stadt einen Arbeiter hinzu
-�
-1Base.Alerts.SingleSignOn.AlreadyConnected.MessagenYour Current Game Account is already linked to {0} do you want to link {0} to the Account you login right now?
 9
 (Base.KeyboardShortcuts.Description.TeslaTesla Stürme
 =
@@ -15671,8 +15674,8 @@ JBase.StoryText.Story_Questline_StoneAge_CityPlanning_QuestStart_Text3_DescnAh!
 "Base.Resources.byzantine_ewer_Desc�Ein kunstvoll gefertigter vasenförmiger Krug, der für die Erforschung bestimmter Technologien der Byzantinischen Ära benötigt wird.
 J
 :Base.Technologies.Technology_AgeOfTheFranks_Goatherds_NameZiegenhirten
-�
-?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_1_Text1_Desc�Ganz schön viel los hier. Aber mal ehrlich – hat noch jemand so eine vage Einladung bekommen, auf der einfach nur "Komm' feiern!" stand?
+�
+?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_1_Text1_Desc�Nun, das ist ja eine ganze Menge Leute. Aber ich muss fragen – hat noch jemand eine vage Einladung bekommen, auf der nur stand: Komm <i><style=MC>feiern</style></i>?
 �
 8Base.Incidents.Incident_ByzantineEra_Capital_Food_1_DescWNahrung, vorzügliche Nahrung. Wir brauchen lediglich Arbeiter, um sie zu einzusammeln.
 Q
@@ -15869,10 +15872,10 @@ C
  Base.Heroes.hero.VanHelsing_NameAbraham Van Helsing
 �
 8Base.StoryText.Story_Panganea_5_1_BattleStart_Text2_Desc~Ich bin mir nicht sicher, ob dieses Land neu ist. Schau, da ist eine Stadt! Und ein paar Krieger, die direkt auf uns zukommen!
-�
-"Base.Units.Unit_PakalTheGreat_Desc�Werde mit Pakal dem Großen zu den Bergen, auf denen Zivilisationen gebaut werden! Dieser Maya-König aus dem 7. Jahrhundert regierte 68 Jahre lang, aber er herrscht über seinen Stadtstaat Palenque auch über seinen Tod hinaus, denn er wurde zu einem der Götter der Stadt. Pakal wurde inmitten einer Krise geboren und übernahm die Herrschaft über Palenque im Alter von nur 12 Jahren, nachdem der vorherige Monarch und sein Erbe gestorben waren.<br><br>Als König kümmerte sich Pakal der Große darum, zu beschwichtigen, zu expandieren und zu bauen. Da er nicht von königlicher Abstammung war, ließ er die Errungenschaften rivalisierender Anwärter in jedes Denkmal der Stadt einmeißeln, auch in den Palast von Palenque.<br><br>Es ist vielleicht passend, dass jemand, der Geschichte in Stein meißeln ließ, selbst darin verewigt wurde: Der Tempel der Inschriften, der eigens als Pakals Grabkomplex gebaut wurde, enthielt große Tafeln, die die Geschichte des Maya-Volkes feierten, und in seinem Zentrum den wunderschön verzierten Sarkophag selbst.
-`
-(Base.Generic.CanNotSellEquippedEquipment4You need to unequip the item before you can sell it.
+k
+(Base.Generic.CanNotSellEquippedEquipment?Du musst den Gegenstand ablegen, bevor du ihn verkaufen kannst.
+�
+"Base.Units.Unit_PakalTheGreat_Desc�Werde zu den Bergen, auf denen Zivilisationen errichtet werden, mit Pakal dem Großen! Dieser Maya-König des 7. Jahrhunderts regierte 68 Jahre lang, doch herrscht über seine Stadtstaat Palenque sogar über seinen Tod hinaus, denn er wurde zu einem der Götter der Stadt. Geboren inmitten einer Krise, übernahm Pakal im Alter von nur 12 Jahren die Führung von Palenque, nach dem Tod des vorherigen Monarchen und seines Erben.<br><br>Als König sorgte Pakal der Große dafür, zu besänftigen, zu erweitern und zu bauen. Da er nicht von königlicher Abstammung war, verewigte er die Errungenschaften rivalisierender Anspruchsberechtigter in jedem Monument der Stadt, einschließlich des Palastes von Palenque.<br><br>Es ist wohl passend, dass jemand, der Geschichte in Stein meißelte, selbst darin unsterblich wurde: Der Tempel der Inschriften, eigens als Pakals Grabkomplex errichtet, beherbergte gewaltige Steintafeln, die die Geschichte des Maya-Volkes feierten, und im Zentrum befand sich der kunstvoll verzierte Sarkophag selbst.
 *
 Base.Generic.NextInNächste {0} in {1}
 �
@@ -15899,8 +15902,8 @@ C
 'Base.AllianceSetDetailsPanel.WithInviteMit Einladung
 K
 5Base.Buildings.Building_Egypt_GoldMine_Average_1_DescStellt Golderz her
-O
-/Base.TreasureHuntRankingPanel.NoRankingProgressNo ranking entries available
+X
+/Base.TreasureHuntRankingPanel.NoRankingProgress%Keine Ranglisten-Einträge verfügbar
 �
 #Base.Resources.herbal_poultice_DescgEin <style=rare>seltenes</style> Aufstiegsmaterial, das verwendet wird, um Helden aufsteigen zu lassen.
 O
@@ -15991,9 +15994,9 @@ E
 'Base.Resources.hero.AbrahamLincoln_NameEssenz von Abraham Lincoln
 I
 (Base.OptionsPopup.TreasureHuntDifficultySchatzjagd Schwierigkeitsgrad
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Erholung</style>
-Die Himmelsscheibe verbessert die Erholung ihres Trägers und erhöht alle  erhaltenen Heilungen, um <style=basestat>{heal_amp}</style>.
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.SkyDiscOfNebra_1_Name�<style=ability_label>Erholung</style>
+Die Himmelsscheibe verbessert die Erholung ihres Trägers und erhöht alle erhaltenen Heilungen, um <style=basestat>{heal_amp}</style>.
 j
 EBase.Resources.event_leaderboard_journey_through_sahara_trophies_NameTrophäen-PunktTrophäen-Punkte
 J
@@ -16091,8 +16094,8 @@ A
 Barden-Set
 S
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_DescSchaltet Turmae frei
-�
-ABase.StoryText.Story_SeasonPass_14_SeasonPassClaim_14_Text10_Desc�Lasst uns diesen Moment als den Moment in Erinnerung behalten, in dem wir die Verantwortung über unser Schicksal selbst in die Hand genommen und den Sieg errungen haben!
+�
+ABase.StoryText.Story_SeasonPass_14_SeasonPassClaim_14_Text10_Desc�Lasst dies als die Zeit in Erinnerung bleiben, in der wir die Verantwortung übernommen, das Schicksal zu unserem eigenen Kampf gemacht und <i><style=MC>den Sieg</style></i> errungen haben!
 7
 #Base.Regions.region.Panganea_3_NameStilles Moorland
 J
@@ -16404,9 +16407,8 @@ C
 Base.Generic.HoursMinutes{0:h\:mm} Std.
 .
 !Base.SellBuildingPopup.SellButton	Verkaufen
--
-Base.Heroes.hero.IsabellaI_Name
-Isabella I
+.
+Base.Heroes.hero.IsabellaI_NameIsabella I.
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_44_NameStufe 44
 �
@@ -16462,8 +16464,8 @@ a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text7_NameAlbert Einstein
 H
 >Base.RankingPanel.AllianceRankingTypesHeaders.Total.MainHeaderGesamt
-�
-Base.Units.Unit_SunTzu_Desc�Lass deine Pläne so dunkel wie die Nacht sein, denn Sun Tzu ist zu den Helden gestoßen! Dieser altehrwürdige chinesische Militärstratege ist berühmt dafür, dass er im 5. Jahrhundert v. Chr. die "Kunst des Krieges" schrieb, welches die ostasiatische Kriegsführung über Jahrtausende hinweg prägte.<br><br>Die "Kunst des Krieges" betont Strategie, Täuschung und Anpassungsfähigkeit und behauptet: "Die höchste Kunst der Kriegsführung ist es, den Feind zu unterwerfen, ohne zu kämpfen.". Diese Prinzipien wurden in allen Bereichen angewandt, vom Krieg über die Wirtschaft bis hin zum Sport, was seine zeitlose Relevanz beweist.<br><br>Sun Tzu ist nach wie vor ein Symbol für List und Taktik und seine Lehren haben Denker und Anführer auf der ganzen Welt beeinflusst. Als er den Heroes of History begegnete, dachte Leonidas, er wäre sehr verschlossen: warum sonst, würde man ihn sonst Sun "Zu" nennen.
+�
+Base.Units.Unit_SunTzu_Desc�Lass deine Pläne so dunkel wie die Nacht sein, denn Sun Tzu hat sich den Heroes angeschlossen! Dieser antike chinesische Militärstratege ist berühmt für sein Werk "Die Kunst des Krieges" im 5. Jahrhundert v. Chr., das die Kriegsführung in Ostasien über Jahrtausende prägte.<br><br>"Die Kunst des Krieges" betont Strategie, Täuschung und Anpassungsfähigkeit und lehrt: "Die höchste Kunst des Krieges ist, den Feind zu besiegen, ohne zu kämpfen." Seine Prinzipien wurden in Krieg, Wirtschaft und Sport angewendet und beweisen ihre zeitlose Relevanz.<br><br>Sun Tzu bleibt ein Symbol für List und Taktik, seine Lehren beeinflussen Denker und Führungspersönlichkeiten weltweit. Als er die Heroes of History traf, dachte Leonidas, er müsse Tiere im Kampf einsetzen – warum sonst sollte man es einen Zoo nennen?
 =
 *Base.TreasureHuntAttemptShopPopup.HeadlineVersuche kaufen
 p
@@ -17361,7 +17363,7 @@ Y
 C
 7Base.Technologies.Technology_ByzantineEra_Forquier_NameHeugabel
 O
-:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameCity Architect XI
+:Base.Questlines.Questline_CityBuilding_EarlyGothicEra_NameStadtarchitekt XI
 O
 0Base.SeasonPassUpsellPopup.GoldTicketLaneRewardsGoldticket-Spur-Belohnungen
 4
@@ -17555,10 +17557,8 @@ S
 @Base.EquipmentFilterPopover.EquipmentSetFilterOptionsDescriptionZDu kannst mehrere der folgenden Ausrüstungs-Sets für die ausgewählten Teile auswählen.
 >
 2Base.NegotiationPanel.GenericReactionBubbleCorrectRichtig!
-�
-
-Base.Units.Unit_IsabellaI_Desc�
-Folge dem Ruf des Schicksals mit Isabella I., der unbeugsamen Königin von Kastilien! Als Isabella Ende des 15. Jahrhunderts den Thron bestieg, erwies sie sich als Meisterin der Politik und der Hartnäckigkeit und war entschlossen, Spanien trotz aller Widrigkeiten zu vereinen. Sie schloss sich mit Ferdinand von Aragonien zusammen und schmiedete eine Partnerschaft, die einen Großteil der Iberischen Halbinsel vereinen und die jahrhundertelange interne Spaltung beenden sollte.<br><br>In Isabellas Regierungszeit wurde die Reconquista mit dem Fall Granadas abgeschlossen und Spanien als dominierende Macht in Europa etabliert. Sie ist berühmt dafür, dass sie die Reise von Christoph Kolumbus im Jahr 1492 sponserte und damit das Tor zur Neuen Welt öffnete - und damit sowohl den Reichtum als auch die Kontroversen des spanischen Kolonialreichs einleitete. Doch ihre Herrschaft brachte auch die berüchtigte spanische Inquisition und vertiefte die katholische religiöse Einheit - manchmal mit harter Hand.<br><br>Stolz, fromm und äußerst intelligent – Isabellas Einfluss ist unbestreitbar. Ob man sie nun als Heilige, Strategin oder etwas dazwischen sieht, ihre Legende lebt weiter – auch wenn sie sich immer noch wundert, dass niemand sich an ihre Schachkünste erinnert!
+�	
+Base.Units.Unit_IsabellaI_Desc�	Folge dem Ruf des Schicksals mit Isabella I., der unbeugsamen Königin von Kastilien! Isabella bestieg Ende des 15. Jahrhunderts den Thron und bewies politische Meisterschaft und unbeugsamen Willen, entschlossen, Spanien gegen alle Widerstände zu einen. Sie verbündete sich mit Ferdinand von Aragon und schmiedete eine Partnerschaft, die einen Großteil der Iberischen Halbinsel vereinen und Jahrhunderte interner Spaltungen beenden sollte.<br><br>Unter Isabellas Herrschaft wurde die Reconquista mit dem Fall Granadas vollendet, wodurch sich Spanien als dominierende Macht in Europa etablierte. Berühmt ist sie auch für die Unterstützung von Christoph Kolumbus’ Reise 1492, die die Tore zur Neuen Welt öffnete – mit Reichtum, aber auch Kontroversen des spanischen Kolonialreichs. Ihre Herrschaft brachte jedoch auch die berüchtigte Spanische Inquisition und stärkte die katholische Einheit – teils mit harter Hand.<br><br>Stolz, fromm und scharfsinnig – Isabellas Einfluss ist unbestreitbar. Ob man sie als Heilige, Strategin oder etwas dazwischen sieht, ihre Legende lebt weiter – auch wenn sie sich immer noch fragt, warum niemand ihre Schachkünste erinnert!
 �
 XBase.StoryText.Story_Questline_EventCity_Mayas_Quarries_LadySixSky_QuestStart_Text2_Desc�Unsere erfahrenen <nobr><style=MC>Handwerker</style> <sprite name=workers_priestmaya></nobr> erwarten diese Materialien in ihren Manufakturen, um <style=MC>zeremonielle Gefäße</style> herzustellen.
 e

@@ -1,5 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.Models.Hoh.Constants;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Shared.Helpers;
@@ -34,7 +35,9 @@ public class CultureComponentTypeConverter : ITypeConverter<CultureComponentDTO,
                 values.Add(HohStringParser.GetConcreteId(ageValue.When), ageLevelValues);
             }
 
-            var importantAges = ages.Where(kvp => kvp.Value.Index is > 1 and < 30 && kvp.Value.Id != "ComingSoon")
+            var firstAge = ages.First(x => x.Key == values.First().Key).Value;
+            var importantAges = ages.Where(kvp =>
+                    kvp.Value.Index >= firstAge.Index && kvp.Value.Index < 30 && kvp.Value.Id != AgeIds.COMING_SOON)
                 .Select(kvp => kvp.Value).OrderBy(x => x.Index).ToList();
             foreach (var age in importantAges)
             {
