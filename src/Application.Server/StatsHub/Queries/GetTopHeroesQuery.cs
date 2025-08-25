@@ -1,7 +1,6 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Enums;
-using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.Shared.Utils;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -28,9 +27,8 @@ public class GetTopHeroesQueryHandler(
     public async Task<IReadOnlyCollection<string>> Handle(GetTopHeroesQuery request,
         CancellationToken cancellationToken)
     {
-        var today = DateTime.UtcNow.ToDateOnly();
         var existingInsightsQuery = context.TopHeroInsights.AsNoTracking()
-            .Where(x => x.Mode == request.Mode && x.AgeId == request.AgeId && x.CreatedAt == today);
+            .Where(x => x.Mode == request.Mode && x.AgeId == request.AgeId);
         if (request.Mode == HeroInsightsMode.MostPopular && (request.FromLevel.HasValue || request.ToLevel.HasValue))
         {
             var fromLevel = request.FromLevel ?? 0;
@@ -42,7 +40,8 @@ public class GetTopHeroesQueryHandler(
             existingInsightsQuery = existingInsightsQuery.Where(x => x.FromLevel == null && x.ToLevel == null);
         }
 
-        var existingInsights = await existingInsightsQuery.FirstOrDefaultAsync(cancellationToken);
+        var existingInsights = await existingInsightsQuery.OrderByDescending(x => x.CreatedAt)
+            .FirstOrDefaultAsync(cancellationToken);
 
         if (existingInsights != null)
         {
