@@ -28,7 +28,6 @@ public class AllianceMembersUpdateManager(
         foreach (var gameWorld in gameWorldsProvider.GetGameWorlds())
         {
             var allianceIds = await GetAlliances(gameWorld.Id);
-            hasMoreAlliances = hasMoreAlliances || await HasMoreAlliances(gameWorld.Id);
             Logger.LogInformation("Retrieved {PlayerCount} alliances to process from the world {world}", allianceIds.Count, gameWorld.Id);
             foreach (var id in allianceIds)
             {
@@ -39,6 +38,7 @@ public class AllianceMembersUpdateManager(
 
                 await delayTask;
             }
+            hasMoreAlliances = hasMoreAlliances || await HasMoreAlliances(gameWorld.Id);
         }
 
         return hasMoreAlliances;
