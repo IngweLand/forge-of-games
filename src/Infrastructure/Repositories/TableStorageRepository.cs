@@ -70,16 +70,11 @@ public class TableStorageRepository<T>(string connectionString, string tableName
         return _tableClient.Value.UpsertEntityAsync(entity, TableUpdateMode.Replace);
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter)
+    public AsyncPageable<T> GetAllAsync(Expression<Func<T, bool>> filter,
+        int? maxPerPage = null,
+        IEnumerable<string>? select = null,
+        CancellationToken cancellationToken = default)
     {
-        var results = new List<T>();
-        var queryResults = _tableClient.Value.QueryAsync(filter);
-
-        await foreach (var entity in queryResults)
-        {
-            results.Add(entity);
-        }
-
-        return results;
+        return _tableClient.Value.QueryAsync(filter, maxPerPage, select, cancellationToken);
     }
 }

@@ -51,6 +51,16 @@ public class InGameRawDataTableRepository(
         }
     }
 
+    public async Task DeleteAllAsync(DateTime cutOffDate)
+    {
+        var entities = tableStorageRepository.GetAllAsync(x => x.CollectedAt < cutOffDate, 1000,
+            ["PartitionKey, RowKey"]);
+        await foreach (var entity in entities)
+        {
+            await tableStorageRepository.DeleteAsync(entity.PartitionKey, entity.RowKey);
+        }
+    }
+
     private static string CreateRowKey()
     {
         return Guid.NewGuid().ToString();

@@ -1,8 +1,9 @@
 using System.Linq.Expressions;
+using Azure;
 
 namespace Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 
-public interface ITableStorageRepository<T>
+public interface ITableStorageRepository<T> where T : notnull
 {
     Task AddAsync(T entity);
     Task AddRangeAsync(IEnumerable<T> entities);
@@ -12,5 +13,9 @@ public interface ITableStorageRepository<T>
     Task UpdateAsync(T entity);
     Task UpsertRangeAsync(IEnumerable<T> entities);
     Task UpsertEntityAsync(T entity);
-    Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter);
+
+    AsyncPageable<T> GetAllAsync(Expression<Func<T, bool>> filter,
+        int? maxPerPage = null,
+        IEnumerable<string>? select = null,
+        CancellationToken cancellationToken = default);
 }
