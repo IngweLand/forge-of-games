@@ -106,7 +106,6 @@ public class GetPlayerProfileQueryHandler(
             return null;
         }
         
-        appCache.Remove(cacheKeyFactory.CreateKey(request));
         if (player.AllianceMembership != null)
         {
             appCache.Remove(cacheKeyFactory.Alliance(player.AllianceMembership.AllianceId));
