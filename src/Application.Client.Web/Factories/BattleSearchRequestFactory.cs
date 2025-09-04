@@ -33,6 +33,7 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
     {
         {RegionId.SiegeOfOrleans, "SO"},
         {RegionId.SpartasLastStand, "SLS"},
+        {RegionId.FallOfTroy, "FT"},
     };
 
     private readonly Dictionary<RegionId, string> _teslaAbbreviations = new()

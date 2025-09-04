@@ -19,4 +19,5 @@ public enum ContinentId
     VolcanicJungle,
     SiegeOfOrleans,
     SpartasLastStand,
+    FallOfTroy,
 }

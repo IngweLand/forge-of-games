@@ -23,7 +23,8 @@ public static class BattleTypeExtensions
         var lowerSrc = src.ToLowerInvariant();
 
         if (lowerSrc.StartsWith(nameof(RegionId.SiegeOfOrleans), StringComparison.InvariantCultureIgnoreCase) ||
-            lowerSrc.StartsWith(nameof(RegionId.SpartasLastStand), StringComparison.InvariantCultureIgnoreCase))
+            lowerSrc.StartsWith(nameof(RegionId.SpartasLastStand), StringComparison.InvariantCultureIgnoreCase) ||
+            lowerSrc.StartsWith(nameof(RegionId.FallOfTroy), StringComparison.InvariantCultureIgnoreCase))
         {
             return BattleType.HistoricBattle;
         }

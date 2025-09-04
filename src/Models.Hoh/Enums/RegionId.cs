@@ -63,4 +63,5 @@ public enum RegionId
     VolcanicJungle_8,
     SiegeOfOrleans,
     SpartasLastStand,
+    FallOfTroy,
 }
