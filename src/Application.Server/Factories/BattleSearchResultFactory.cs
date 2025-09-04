@@ -58,15 +58,14 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
         var playerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads,
             JsonSerializerOptions) ?? [];
 
-        // This is ugly, I know. We suddenly got a Hero, which is not a hero, but just a unit...
         var playerBattleUnitDtos = playerSquads
-            .Where(src => src.Hero != null && src.Hero.Properties.UnitId != "unit.Unit_SpartasLastStand_Leonidas_1")
+            .Where(src => src.Hero != null && IsValidHero(src.Hero.Properties.UnitId))
             .OrderBy(src => src.BattlefieldSlot)
             .Select(mapper.Map<BattleSquadDto>)
             .ToList();
 
         var enemyBattleUnitDtos = enemySquads?
-            .Where(src => src.Hero != null)
+            .Where(src => src.Hero != null && IsValidHero(src.Hero.Properties.UnitId))
             .OrderBy(src => src.BattlefieldSlot)
             .Select(mapper.Map<BattleSquadDto>)
             .ToList() ?? [];
@@ -83,5 +82,17 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
             BattleType = entity.BattleType,
             PerformedAt = entity.PerformedAt,
         };
+    }
+
+    private static bool IsValidHero(string queryString)
+    {
+        // Some units are located in a Hero slot. However, they are not regular player's heroes.
+        if (queryString == "unit.Unit_SpartasLastStand_Leonidas_1" ||
+            queryString.Contains("Unit_FallOfTroy_Barricade") || queryString.Contains("Unit_FallOfTroy_Gate"))
+        {
+            return false;
+        }
+
+        return true;
     }
 }

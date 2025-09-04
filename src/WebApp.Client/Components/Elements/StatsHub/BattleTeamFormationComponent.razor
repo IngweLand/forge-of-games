@@ -89,6 +89,39 @@
                         </div>
                     </div>
                 }
+                else if (Battle.BattleDefinitionId.Contains(nameof(RegionId.FallOfTroy)))
+                {
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot1Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot1Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot2Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot2Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot0Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot0Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team">
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot4Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot4Src" class="unit"/>
+                            </div>
+                            <div class="unit" style="visibility: @(_playerSlot5Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot5Src" class="unit"/>
+                            </div>
+                        </div>
+                        <div class="battlefield-row">
+                            <div class="unit" style="visibility: @(_playerSlot3Src == null ? "hidden" : "visible")">
+                                <img src="@_playerSlot3Src" class="unit"/>
+                            </div>
+                        </div>
+                    </div>
+                }
                 else
                 {
                     <div class="team">
