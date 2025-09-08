@@ -68,7 +68,7 @@ public class UnitBattleDtoFactory(
             }
         }
 
-        var serializedSquads = side == BattleSquadSide.Enemy ? battle.EnemySquads : battle.PlayerSquads;
+        var serializedSquads = side == BattleSquadSide.Enemy ? battle.EnemySquads.Squads : battle.PlayerSquads.Squads;
         var playerSquads =
             JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(serializedSquads, JsonSerializerOptions) ??
             [];

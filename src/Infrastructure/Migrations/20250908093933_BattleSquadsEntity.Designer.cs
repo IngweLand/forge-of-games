@@ -4,6 +4,7 @@ using Ingweland.Fog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ingweland.Fog.Infrastructure.Migrations
 {
     [DbContext(typeof(FogDbContext))]
-    partial class FogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250908093933_BattleSquadsEntity")]
+    partial class BattleSquadsEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -319,12 +322,20 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("Difficulty")
                         .HasColumnType("int");
 
+                    b.Property<string>("EnemySquads")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<byte[]>("InGameBattleId")
                         .IsRequired()
                         .HasColumnType("varbinary(900)");
 
                     b.Property<DateOnly>("PerformedAt")
                         .HasColumnType("date");
+
+                    b.Property<string>("PlayerSquads")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ResultStatus")
                         .HasColumnType("int");

@@ -13,12 +13,11 @@ public class BattleSummaryEntity
 
     public required BattleType BattleType { get; set; }
 
-    public required DateOnly PerformedAt { get; init; }
-
     // Not for all battle locations
     public Difficulty Difficulty { get; set; }
 
-    public required string EnemySquads { get; set; }
+    [NotMapped]
+    public BattleSquadsEntity EnemySquads => Squads.First(s => s.Side == BattleSquadSide.Enemy);
 
     [NotMapped]
     public IEnumerable<BattleUnitEntity> EnemyUnits => Units.Where(s => s.Side == BattleSquadSide.Enemy);
@@ -33,12 +32,16 @@ public class BattleSummaryEntity
         get { return _key ??= new BattleKey(WorldId, InGameBattleId); }
     }
 
-    public required string PlayerSquads { get; set; }
+    public required DateOnly PerformedAt { get; init; }
+
+    [NotMapped]
+    public BattleSquadsEntity PlayerSquads => Squads.First(s => s.Side == BattleSquadSide.Player);
 
     [NotMapped]
     public IEnumerable<BattleUnitEntity> PlayerUnits => Units.Where(s => s.Side == BattleSquadSide.Player);
 
     public BattleResultStatus ResultStatus { get; set; }
+    public required ICollection<BattleSquadsEntity> Squads { get; set; } = new List<BattleSquadsEntity>();
 
     public Guid? SubmissionId { get; set; }
 

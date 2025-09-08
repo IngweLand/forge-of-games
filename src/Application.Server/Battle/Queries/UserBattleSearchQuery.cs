@@ -30,9 +30,9 @@ public class PlayerBattleSearchQueryHandler(
     public async Task<PaginatedList<BattleSummaryDto>> Handle(UserBattleSearchQuery request,
         CancellationToken cancellationToken)
     {
-        var battlesQuery =
-            context.Battles.AsNoTracking().Where(src =>
-                src.SubmissionId == request.SubmissionId && src.BattleType == request.BattleType);
+        var battlesQuery = context.Battles.AsNoTracking()
+            .Include(x => x.Squads)
+            .Where(src => src.SubmissionId == request.SubmissionId && src.BattleType == request.BattleType);
         if (request.BattleDefinitionId != null)
         {
             if (request.UnitIds.Count > 0)

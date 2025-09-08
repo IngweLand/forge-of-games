@@ -23,6 +23,7 @@ public class GetBattleQueryHandler(
         CancellationToken cancellationToken)
     {
         var battle = await context.Battles.AsNoTracking()
+            .Include(x => x.Squads)
             .FirstOrDefaultAsync(src => src.Id == request.Id, cancellationToken);
         if (battle == null)
         {

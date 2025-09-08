@@ -95,6 +95,19 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
                     battleDefinitionId = battleDefinitionId[prefix.Length..];
                 }
 
+                var squads = new List<BattleSquadsEntity>()
+                    {
+                    new BattleSquadsEntity
+                    {
+                        Squads = JsonSerializer.Serialize(src.Value.BattleSummary.PlayerSquads, JsonSerializerOptions),
+                        Side = BattleSquadSide.Player,
+                    },
+                    new BattleSquadsEntity
+                    {
+                        Squads = JsonSerializer.Serialize(src.Value.BattleSummary.EnemySquads, JsonSerializerOptions),
+                        Side = BattleSquadSide.Enemy,
+                    }
+                };
                 return new BattleSummaryEntity
                 {
                     WorldId = src.Key.WorldId,
@@ -103,9 +116,7 @@ public class BattleService(IFogDbContext context, IMapper mapper, ILogger<Battle
                     Units = concreteBattleHeroes,
                     ResultStatus = src.Value.BattleSummary.ResultStatus,
                     Difficulty = difficulty,
-                    PlayerSquads =
-                        JsonSerializer.Serialize(src.Value.BattleSummary.PlayerSquads, JsonSerializerOptions),
-                    EnemySquads = JsonSerializer.Serialize(src.Value.BattleSummary.EnemySquads, JsonSerializerOptions),
+                    Squads = squads,
                     BattleType = battleDefinitionId.ToBattleType(),
                     SubmissionId = src.Value.SubmissionId,
                     PerformedAt = src.Value.PerformedAt,

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -9,7 +10,6 @@ using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
 
 namespace Ingweland.Fog.Application.Server.Battle.Queries;
 
@@ -33,7 +33,7 @@ public class BattleSearchQueryHandler(
         CancellationToken cancellationToken)
     {
         Stopwatch? sw = null;
-        TimeSpan last = TimeSpan.Zero;
+        var last = TimeSpan.Zero;
         if (logger.IsEnabled(LogLevel.Debug))
         {
             sw = Stopwatch.StartNew();
@@ -42,15 +42,15 @@ public class BattleSearchQueryHandler(
                 request.BattleDefinitionId, request.BattleType, request.UnitIds.Count);
         }
 
-        IQueryable<BattleSummaryEntity> battlesQuery;
+        var battlesQuery = context.Battles.AsNoTracking().Include(x => x.Squads).AsQueryable();
         if (request.UnitIds.Count > 0)
         {
             var unitIds = request.UnitIds.ToHashSet();
-            battlesQuery = BuildBattleQuery(unitIds, request.BattleDefinitionId, request.BattleType);
+            battlesQuery = BuildBattleQuery(battlesQuery, unitIds, request.BattleDefinitionId, request.BattleType);
         }
         else
         {
-            battlesQuery = context.Battles.AsNoTracking()
+            battlesQuery = battlesQuery
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
         }
 
@@ -63,7 +63,7 @@ public class BattleSearchQueryHandler(
         }
 
         var battles = await battlesQuery
-            .OrderByDescending(src => src.PerformedAt)
+            .OrderByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
             .AsSplitQuery()
             .ToListAsync(cancellationToken);
@@ -101,17 +101,18 @@ public class BattleSearchQueryHandler(
         return result;
     }
 
-    private IQueryable<BattleSummaryEntity> BuildBattleQuery(HashSet<string> unitIds, string battleDefinitionId,
+    private IQueryable<BattleSummaryEntity> BuildBattleQuery(IQueryable<BattleSummaryEntity> srcQuery,
+        HashSet<string> unitIds, string battleDefinitionId,
         BattleType battleType)
     {
         if (battleType == BattleType.Pvp)
         {
-            return context.Battles.AsNoTracking()
+            return srcQuery
                 .Where(b => b.BattleDefinitionId == battleDefinitionId &&
                     unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
         }
 
-        return context.Battles.AsNoTracking()
+        return srcQuery
             .Where(b => b.BattleDefinitionId == battleDefinitionId &&
                 unitIds.All(requiredId =>
                     b.Units.Any(u => u.UnitId == requiredId && u.Side == BattleSquadSide.Player)));

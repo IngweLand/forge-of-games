@@ -51,11 +51,11 @@ public class BattleSearchResultFactory(IMapper mapper) : IBattleSearchResultFact
         IReadOnlyCollection<BattleSquad>? enemySquads = null;
         if (addEnemySquads)
         {
-            enemySquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.EnemySquads,
+            enemySquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.EnemySquads.Squads,
                 JsonSerializerOptions) ?? [];
         }
 
-        var playerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads,
+        var playerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(entity.PlayerSquads.Squads,
             JsonSerializerOptions) ?? [];
 
         var playerBattleUnitDtos = playerSquads

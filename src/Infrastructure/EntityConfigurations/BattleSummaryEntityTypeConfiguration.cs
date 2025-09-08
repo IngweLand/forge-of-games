@@ -17,8 +17,6 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
 
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
         builder.Property(p => p.BattleDefinitionId).IsRequired();
-        builder.Property(p => p.PlayerSquads).IsRequired();
-        builder.Property(p => p.EnemySquads).IsRequired();
         builder.Property(p => p.InGameBattleId).IsRequired();
         builder.Property(p => p.ResultStatus).IsRequired();
         builder.Property(p => p.WorldId).IsRequired();
@@ -36,5 +34,6 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.HasIndex(p => new {p.WorldId, p.InGameBattleId}).IsUnique();
 
         builder.HasMany(b => b.Units).WithMany(h => h.Battles).UsingEntity(j => j.ToTable("battles_to_units"));
+        builder.HasMany(b => b.Squads).WithOne().HasForeignKey(x => x.BattleId).IsRequired();
     }
 }
