@@ -59,21 +59,23 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         {9, "GMII"},
     };
 
-    public BattleSearchRequest Create(string uri)
+    public bool TryCreate(string uri, out BattleSearchRequest request)
     {
+        request = new BattleSearchRequest();
         if (string.IsNullOrWhiteSpace(uri))
         {
-            return new BattleSearchRequest();
+            return false;
         }
 
         var query = HttpUtility.ParseQueryString(new Uri(uri).Query);
 
         if (!query.HasKeys())
         {
-            return new BattleSearchRequest();
+            return false;
         }
 
-        return Create(query);
+        request = Create(query);
+        return true;
     }
 
     public IReadOnlyDictionary<string, object?> CreateQueryParams(BattleSearchRequest request)
@@ -207,6 +209,22 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         return sb.ToString();
     }
 
+    public async Task<string> CreateDefinitionTitleAsync(string battleDefinitionId, BattleType battleType,
+        Difficulty battleDifficulty,
+        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap)
+    {
+        var query = CreateQueryParams(battleDefinitionId, battleDifficulty, battleType, null,
+            treasureHuntEncounterMap);
+        var nvc = new NameValueCollection();
+        foreach (var kvp in query)
+        {
+            nvc.Add(kvp.Key, kvp.Value?.ToString());
+        }
+
+        var request = Create(nvc);
+        return await CreateDefinitionTitleAsync(request);
+    }
+
     private BattleSearchRequest Create(NameValueCollection query)
     {
         var battleTypeValue = query[BattleTypeKey];
@@ -284,22 +302,6 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             TeslaStormEncounter = teslaStormEncounter,
             UnitIds = query.GetValues(UnitIdKey) ?? [],
         };
-    }
-
-    public async Task<string> CreateDefinitionTitleAsync(string battleDefinitionId, BattleType battleType,
-        Difficulty battleDifficulty,
-        IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>> treasureHuntEncounterMap)
-    {
-        var query = CreateQueryParams(battleDefinitionId, battleDifficulty, battleType, null,
-            treasureHuntEncounterMap);
-        var nvc = new NameValueCollection();
-        foreach (var kvp in query)
-        {
-            nvc.Add(kvp.Key, kvp.Value?.ToString());
-        }
-
-        var request = Create(nvc);
-        return await CreateDefinitionTitleAsync(request);
     }
 
     private string GetBattleTypeTitle(BattleType battleType)

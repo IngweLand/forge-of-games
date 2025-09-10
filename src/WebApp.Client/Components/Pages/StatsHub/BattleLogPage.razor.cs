@@ -1,11 +1,13 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
+using Ingweland.Fog.WebApp.Client.Constants;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using Refit;
@@ -26,16 +28,36 @@ public partial class BattleLogPage : BattleLogPageBase
         {AnalyticsParams.LOCATION, AnalyticsParams.Values.Locations.BATTLE_LOG},
     };
 
+    [Inject]
+    private IPersistenceService PersistenceService { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        if (OperatingSystem.IsBrowser())
+        {
+            var savedRequest =
+                await PersistenceService.GetItemAsync<BattleSearchRequest?>(PersistenceKeys.BATTLE_LOG_REQUEST);
+            BattleSearchRequest = savedRequest ?? new BattleSearchRequest();
+        }
+    }
+
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
-        BattleSearchRequest = BattleSearchRequestFactory.Create(NavigationManager.Uri);
+        if (BattleSearchRequestFactory.TryCreate(NavigationManager.Uri, out var request))
+        {
+            BattleSearchRequest = request;
+        }
+
         await GetBattles();
     }
 
     protected override async Task BattleSelectorOnValueChanged(BattleSearchRequest newValue)
     {
         await base.BattleSelectorOnValueChanged(newValue);
+        await PersistenceService.SetItemAsync(PersistenceKeys.BATTLE_LOG_REQUEST, newValue);
         await GetBattles();
     }
 
@@ -53,7 +75,8 @@ public partial class BattleLogPage : BattleLogPageBase
     {
         IsLoading = true;
         _battles = [];
-
+        StateHasChanged();
+        
         if (_battlesCts != null)
         {
             await _battlesCts.CancelAsync();

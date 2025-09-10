@@ -6,7 +6,7 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 
 public interface IBattleSearchRequestFactory
 {
-    BattleSearchRequest Create(string uri);
+    bool TryCreate(string uri, out BattleSearchRequest request);
     IReadOnlyDictionary<string, object?> CreateQueryParams(BattleSearchRequest request);
 
     IReadOnlyDictionary<string, object?> CreateQueryParams(string battleDefinitionId, Difficulty difficulty,
