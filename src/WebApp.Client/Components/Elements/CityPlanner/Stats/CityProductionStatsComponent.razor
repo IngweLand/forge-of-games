@@ -5,7 +5,7 @@
 @inject IStringLocalizer<FogResource> Loc
 @inject IAssetUrlProvider AssetUrlProvider
 <div class="component-root">
-    <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Production]" OnClick="OnHeaderClick"/>
+    <StatsSectionHeader Label="@_title" OnClick="@OnHeaderClick"/>
     <MudCollapse Expanded="_expanded">
         <table class="table">
             <thead>
@@ -17,13 +17,13 @@
             </tr>
             </thead>
             <tbody>
-            @foreach (var item in Data.Products)
+            @foreach (var item in Items)
             {
                 <tr class="user-select-none">
                     <td><img src="@item.IconUrl" class="resource-icon"/></td>
-                    <td class="production-label">@item.DefaultProduction</td>
-                    <td class="production-label">@item.OneHourProduction</td>
-                    <td class="production-label">@item.OneDayProduction</td>
+                    <td class="production-label">@item.Default</td>
+                    <td class="production-label">@item.OneHour</td>
+                    <td class="production-label">@item.OneDay</td>
                 </tr>
             }
             </tbody>
@@ -33,10 +33,20 @@
 
 @code {
 
+    [Parameter][EditorRequired]
+    public required IReadOnlyCollection<TimedProductionValuesViewModel> Items { get; set; }
+
     [Parameter]
-    public required ProductionStatsViewModel Data { get; set; }
+    public string Title { get; set; } = string.Empty;
+
+    private string _title = string.Empty;
 
     bool _expanded = true;
+
+    protected override void OnParametersSet()
+    {
+        _title = string.IsNullOrWhiteSpace(Title) ? Loc[FogResource.CityPlanner_Production] : Title;
+    }
 
     private void OnHeaderClick()
     {

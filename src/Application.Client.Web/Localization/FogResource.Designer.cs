@@ -789,6 +789,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Production cost.
+        /// </summary>
+        public static string CityPlanner_ProductionCost {
+            get {
+                return ResourceManager.GetString("CityPlanner.ProductionCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to remove all buildings from the inventory?.
         /// </summary>
         public static string CityPlanner_PurgeInventoryConfirmation {

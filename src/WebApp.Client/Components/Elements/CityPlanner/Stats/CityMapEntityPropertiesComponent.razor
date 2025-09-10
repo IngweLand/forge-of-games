@@ -23,6 +23,11 @@
         @if (Building.ProductionComponent != null)
         {
             <ProductionComponent Data="@Building.ProductionComponent" ProductClicked="OnProductClicked"/>
+            @if(Building.ProductionComponent.Cost.Count > 0)
+            {
+                <CityProductionStatsComponent Items="@Building.ProductionComponent.Cost"
+                                              Title="@Loc[FogResource.CityPlanner_ProductionCost]"/>
+            }
         }
         @if (Building.CustomizationComponent != null)
         {

@@ -50,13 +50,26 @@ public static class CityStatsProcessor
                         {
                             if (!stats.Products.TryGetValue(productStatsItem.ResourceId, out var productTuple))
                             {
-                                productTuple = new ConsolidatedCityProduct();
+                                productTuple = new ConsolidatedTimedProductionValues();
                                 stats.Products.Add(productStatsItem.ResourceId, productTuple);
                             }
 
                             productTuple.Default += productStatsItem.DefaultProduction.BuffedValue;
                             productTuple.OneHour += productStatsItem.OneHourProduction.BuffedValue;
                             productTuple.OneDay += productStatsItem.OneDayProduction.BuffedValue;
+                        }
+                        
+                        foreach (var costItem in productionStatsItem.Cost)
+                        {
+                            if (!stats.ProductionCosts.TryGetValue(costItem.ResourceId, out var costTuple))
+                            {
+                                costTuple = new ConsolidatedTimedProductionValues();
+                                stats.ProductionCosts.Add(costItem.ResourceId, costTuple);
+                            }
+
+                            costTuple.Default += costItem.Default;
+                            costTuple.OneHour += costItem.OneHour;
+                            costTuple.OneDay += costItem.OneDay;
                         }
                     }
                 }

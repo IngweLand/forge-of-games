@@ -1,6 +1,6 @@
 namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
-public class ConsolidatedCityProduct
+public class ConsolidatedTimedProductionValues
 {
     public int Default { get; set; }
     public int OneHour { get; set; }

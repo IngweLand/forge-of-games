@@ -2,7 +2,6 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
@@ -20,7 +19,7 @@
                 @if (Editable)
                 {
                     <LevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
-                                                    SelectedLevel="@Data.WonderLevel"/>
+                                            SelectedLevel="@Data.WonderLevel"/>
                 }
                 else
                 {
@@ -28,7 +27,12 @@
                 }
             </div>
         }
-        <CityProductionStatsComponent Data="@Data.Production"/>
+        <CityProductionStatsComponent Items="@Data.Production.Products"/>
+        @if(Data.Production.Costs.Count > 0)
+        {
+            <CityProductionStatsComponent Items="@Data.Production.Costs"
+                                          Title="@Loc[FogResource.CityPlanner_ProductionCost]"/>
+        }
         @if (CitiesWithHappiness.Contains(Data.CityId))
         {
             <HappinessStatsComponent Data="@Data.Happiness"/>
@@ -40,9 +44,9 @@
 
 @code {
 
-    private static readonly HashSet<CityId> CitiesWithHappiness = 
+    private static readonly HashSet<CityId> CitiesWithHappiness =
         [CityId.Capital, CityId.Egypt, CityId.Mayas_Tikal, CityId.Mayas_ChichenItza, CityId.Mayas_SayilPalace];
-    
+
     private readonly BuildingLevelRange _wonderLevelRange = new() {StartLevel = 0, EndLevel = 50};
 
     protected override void OnInitialized()

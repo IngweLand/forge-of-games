@@ -4,25 +4,34 @@ using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
-public class ProductionStatsViewModelFactory(IHohResourceIconUrlProvider resourceIconUrlProvider) : IProductionStatsViewModelFactory
+public class ProductionStatsViewModelFactory(IHohResourceIconUrlProvider resourceIconUrlProvider)
+    : IProductionStatsViewModelFactory
 {
-    public ProductionStatsViewModel Create(IDictionary<string, ConsolidatedCityProduct> products)
+    public ProductionStatsViewModel Create(IDictionary<string, ConsolidatedTimedProductionValues> products,
+        IDictionary<string, ConsolidatedTimedProductionValues> costs)
     {
-        var productsViewModels = new List<CityProductViewModel>();
-        foreach (var product in products)
-        {
-            productsViewModels.Add(new CityProductViewModel()
+        var productsViewModels = products.Select(x => new TimedProductionValuesViewModel
             {
-                DefaultProduction = product.Value.Default.ToString("N0"),
-                OneHourProduction = product.Value.OneHour.ToString("N0"),
-                OneDayProduction = product.Value.OneDay.ToString("N0"),
-                IconUrl = resourceIconUrlProvider.GetIconUrl(product.Key),
-            });
-        }
+                Default = x.Value.Default.ToString("N0"),
+                OneHour = x.Value.OneHour.ToString("N0"),
+                OneDay = x.Value.OneDay.ToString("N0"),
+                IconUrl = resourceIconUrlProvider.GetIconUrl(x.Key),
+            })
+            .ToList();
 
-        return new ProductionStatsViewModel()
+        var costsViewModels = costs.Select(x => new TimedProductionValuesViewModel
+            {
+                Default = x.Value.Default.ToString("N0"),
+                OneHour = x.Value.OneHour.ToString("N0"),
+                OneDay = x.Value.OneDay.ToString("N0"), 
+                IconUrl = resourceIconUrlProvider.GetIconUrl(x.Key),
+            })
+            .ToList();
+
+        return new ProductionStatsViewModel
         {
             Products = productsViewModels,
+            Costs = costsViewModels,
         };
     }
 }

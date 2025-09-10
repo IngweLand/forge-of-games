@@ -28,7 +28,7 @@ public class CityPlannerCityPropertiesViewModelFactory(
                 IconUrl = workerIconUrlProvider.GetIcon(cityId),
             },
             Happiness = happinessStatsViewModelFactory.Create(stats),
-            Production = productionStatsViewModelFactory.Create(stats.Products),
+            Production = productionStatsViewModelFactory.Create(stats.Products, stats.ProductionCosts),
             Areas = areaStatsViewModelFactory.Create(stats, buildings),
             WonderName = wonderName,
             WonderLevel = wonderLevel,

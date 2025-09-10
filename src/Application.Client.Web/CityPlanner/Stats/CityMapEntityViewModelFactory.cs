@@ -104,14 +104,15 @@ public class CityMapEntityViewModelFactory(
             }
 
             var products = new List<CityMapEntityProductViewModel>();
+            var productionCost = new List<TimedProductionValuesViewModel>();
             var productionProvider = entity.FirstOrDefaultStat<ProductionProvider>();
             if (productionProvider != null)
             {
+                var canSelectProduct = ProductionProviderHelper.CanSelectProduct(building.Type, building.Group);
                 foreach (var productionStatsItem in productionProvider.ProductionStatsItems)
                 {
                     foreach (var product in productionStatsItem.Products)
                     {
-                        var canSelectProduct = ProductionProviderHelper.CanSelectProduct(building.Type, building.Group);
                         if (!canSelectProduct || (canSelectProduct &&
                                 entity.SelectedProductId == productionStatsItem.ProductionId))
                         {
@@ -143,6 +144,21 @@ public class CityMapEntityViewModelFactory(
                             OneDayProduction = product.OneDayProduction.BuffedValue.ToString("N0"),
                             IsSelected = productionStatsItem.ProductionId == entity.SelectedProductId,
                         });
+                    }
+
+                    foreach (var costItem in productionStatsItem.Cost)
+                    {
+                        if (!canSelectProduct || (canSelectProduct &&
+                                entity.SelectedProductId == productionStatsItem.ProductionId))
+                        {
+                            productionCost.Add(new TimedProductionValuesViewModel
+                            {
+                                IconUrl = resourceIconUrlProvider.GetIconUrl(costItem.ResourceId),
+                                Default = costItem.Default.ToString("N0"),
+                                OneHour = costItem.OneHour.ToString("N0"),
+                                OneDay = costItem.OneDay.ToString("N0"),
+                            });
+                        }
                     }
                 }
             }
@@ -182,6 +198,7 @@ public class CityMapEntityViewModelFactory(
                 {
                     General = generalItems,
                     Products = products,
+                    Cost = productionCost,
                     CanSelectProduct = ProductionProviderHelper.CanSelectProduct(building.Type, building.Group),
                 };
             }

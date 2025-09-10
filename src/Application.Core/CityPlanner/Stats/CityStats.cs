@@ -22,8 +22,11 @@ public class CityStats
         }
     }
 
-    public IDictionary<string, ConsolidatedCityProduct> Products { get; } =
-        new Dictionary<string, ConsolidatedCityProduct>();
+    public IDictionary<string, ConsolidatedTimedProductionValues> Products { get; } =
+        new Dictionary<string, ConsolidatedTimedProductionValues>();
+    
+    public IDictionary<string, ConsolidatedTimedProductionValues> ProductionCosts { get; } =
+        new Dictionary<string, ConsolidatedTimedProductionValues>();
 
     public int ProvidedWorkersCount { get; set; }
 

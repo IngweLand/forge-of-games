@@ -9,4 +9,6 @@ public class ProductionComponentViewModel
 
     public IReadOnlyCollection<CityMapEntityProductViewModel> Products { get; init; } =
         new List<CityMapEntityProductViewModel>();
+    public IReadOnlyCollection<TimedProductionValuesViewModel> Cost { get; init; } =
+        new List<TimedProductionValuesViewModel>();
 }

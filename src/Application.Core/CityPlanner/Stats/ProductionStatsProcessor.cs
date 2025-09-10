@@ -4,7 +4,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Rewards;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
-public class ProductionStatsProcessor() : IProductionStatsProcessor
+public class ProductionStatsProcessor : IProductionStatsProcessor
 {
     private const int SECONDS_IN_HOUR = 3600;
     private const int SECONDS_IN_DAY = 24 * 3600;
@@ -33,15 +33,16 @@ public class ProductionStatsProcessor() : IProductionStatsProcessor
         foreach (var productionComponent in productionProvider.ProductionComponents)
         {
             var products = new List<ProductStatsItem>();
+            var defaultProductionHours = (float) productionComponent.ProductionTime / SECONDS_IN_HOUR;
             foreach (var resourceProduct in productionComponent.Products.OfType<ResourceReward>())
             {
                 var defaultProductionAmount = resourceProduct.Amount;
-                var totalProductionAmount = (double)defaultProductionAmount;
+                var totalProductionAmount = (double) defaultProductionAmount;
                 if (modifiers.TryGetValue(resourceProduct.ResourceId, out var modifier))
                 {
                     totalProductionAmount += totalProductionAmount * (modifier / 100);
                 }
-                var hours = (float)productionComponent.ProductionTime / SECONDS_IN_HOUR;
+
                 if (happinessConsumer != null)
                 {
                     var buffedResource =
@@ -62,40 +63,49 @@ public class ProductionStatsProcessor() : IProductionStatsProcessor
                     }
 
                     var oneHourBonus = (int) Math.Floor(happinessConsumer.BuffDetails.Value * factor);
-                    totalProductionAmount += oneHourBonus * hours;
+                    totalProductionAmount += oneHourBonus * defaultProductionHours;
                 }
 
-                products.Add(new ProductStatsItem()
+                products.Add(new ProductStatsItem
                 {
                     ResourceId = resourceProduct.ResourceId,
-                    DefaultProduction = new TimedProductStatsItem()
+                    DefaultProduction = new TimedProductStatsItem
                     {
                         ProductionTime = productionComponent.ProductionTime,
                         Value = defaultProductionAmount,
                         BuffedValue = (int) totalProductionAmount,
                     },
 
-                    OneHourProduction = new TimedProductStatsItem()
+                    OneHourProduction = new TimedProductStatsItem
                     {
                         ProductionTime = SECONDS_IN_HOUR,
-                        Value = (int) (defaultProductionAmount / hours),
-                        BuffedValue = (int) (totalProductionAmount / hours),
+                        Value = (int) (defaultProductionAmount / defaultProductionHours),
+                        BuffedValue = (int) (totalProductionAmount / defaultProductionHours),
                     },
 
-                    OneDayProduction = new TimedProductStatsItem()
+                    OneDayProduction = new TimedProductStatsItem
                     {
                         ProductionTime = SECONDS_IN_DAY,
-                        Value = (int) (defaultProductionAmount / hours * 24),
-                        BuffedValue = (int) (totalProductionAmount / hours * 24),
+                        Value = (int) (defaultProductionAmount / defaultProductionHours * 24),
+                        BuffedValue = (int) (totalProductionAmount / defaultProductionHours * 24),
                     },
                 });
             }
 
-            productionItems.Add(new ProductionStatsItem()
+            var cost = productionComponent.Cost.Select(resourceAmount => new ProductionCostStatsItem
+                {
+                    ResourceId = resourceAmount.ResourceId, Default = resourceAmount.Amount,
+                    OneHour = (int) (resourceAmount.Amount / defaultProductionHours),
+                    OneDay = (int) (resourceAmount.Amount / defaultProductionHours * 24),
+                })
+                .ToList();
+
+            productionItems.Add(new ProductionStatsItem
             {
                 ProductionId = productionComponent.Id,
                 Products = products,
                 WorkerCount = productionComponent.WorkerCount,
+                Cost = cost,
             });
         }
 
