@@ -5,5 +5,6 @@ namespace Ingweland.Fog.Application.Client.Web.Models;
 public class UiSettings
 {
     public Difficulty CampaignDifficulty { get; set; }
+    public bool ShowBattleTimelineRelics { get; set; } = true;
     public bool ShowHeroVideoAvatar { get; set; }
 }

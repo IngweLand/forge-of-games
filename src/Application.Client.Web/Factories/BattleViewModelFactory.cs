@@ -200,10 +200,12 @@ public class BattleViewModelFactory(
                     var concreteId = HohStringParser.GetConcreteId(entry.AbilityId).Split('_')[0];
                     string title;
                     string iconUrl;
+                    var type = BattleTimelineEntryType.Ability;
                     if (relics.TryGetValue(concreteId, out _))
                     {
                         title = squadVm.Relic!.Name;
                         iconUrl = squadVm.Relic!.IconUrl;
+                        type = BattleTimelineEntryType.Relic;
                     }
                     else
                     {
@@ -217,6 +219,7 @@ public class BattleViewModelFactory(
                         Side = side,
                         Title = title,
                         AbilityIconUrl = iconUrl,
+                        Type = type,
                     });
                 }
             }

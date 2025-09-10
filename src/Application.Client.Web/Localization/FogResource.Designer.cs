@@ -303,6 +303,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show relics.
+        /// </summary>
+        public static string BattleTimelineComponent_ShowRelicsSwitchLabel {
+            get {
+                return ResourceManager.GetString("BattleTimelineComponent.ShowRelicsSwitchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle timeline.
         /// </summary>
         public static string BattleTimelineComponent_Title {

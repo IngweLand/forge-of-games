@@ -1,10 +1,18 @@
+@using Ingweland.Fog.Application.Client.Web.Analytics
+@using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Models.Fog.Enums
 @using Microsoft.Extensions.Localization
 <div class="fog-container component-root">
-    <span class="component-title">@Loc[FogResource.BattleTimelineComponent_Title]</span>
-    @foreach (var group in Timeline)
+    <div class="top-container">
+        <span class="component-title">@Loc[FogResource.BattleTimelineComponent_Title]</span>
+        <MudSwitch Class="show-relics-switch" T="bool" Value="@_showRelics" ValueChanged="ToggleRelics"
+                   Label="@Loc[FogResource.BattleTimelineComponent_ShowRelicsSwitchLabel]" Color="Color.Primary"/>
+    </div>
+
+    @foreach (var group in _filteredTimeline)
     {
         <div class="time-container">@group.Time</div>
         @foreach (var entry in group.Entries)
@@ -47,5 +55,66 @@
 
     [Inject]
     private IStringLocalizer<FogResource> Loc { get; set; }
+
+    [Inject]
+    private IAnalyticsService AnalyticsService { get; set; }
+
+    [Inject]
+    private IPersistenceService PersistenceService { get; set; }
+
+    private List<BattleTimelineGroupViewModel> _filteredTimeline = [];
+    private bool _showRelics = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            _showRelics = (await PersistenceService.GetUiSettingsAsync()).ShowBattleTimelineRelics;
+        }
+    }
+
+    protected override void OnParametersSet()
+    {
+        Filter(_showRelics);
+    }
+
+    private void Filter(bool showRelics)
+    {
+        if (showRelics)
+        {
+            _filteredTimeline = Timeline.ToList();
+        }
+        else
+        {
+            _filteredTimeline = Timeline
+                .Select(x =>
+                {
+                    return new BattleTimelineGroupViewModel
+                    {
+                        Time = x.Time,
+                        Entries = x.Entries.Where(y => y.Type != BattleTimelineEntryType.Relic).ToList(),
+                    };
+                })
+                .Where(x => x.Entries.Count > 0)
+                .ToList();
+        }
+    }
+
+    private async Task ToggleRelics(bool toggled)
+    {
+        _showRelics = toggled;
+        Filter(toggled);
+
+        var eventParams = new Dictionary<string, object>
+        {
+            {AnalyticsParams.SOURCE, AnalyticsParams.Values.Sources.BATTLE_TIMELINE},
+            {AnalyticsParams.STATE, toggled ? AnalyticsParams.Values.States.ON : AnalyticsParams.Values.States.OFF},
+        };
+        _ = AnalyticsService.TrackEvent(AnalyticsEvents.TOGGLE_BATTLE_TIMELINE_RELICS, eventParams);
+        
+        var uiSettings = await PersistenceService.GetUiSettingsAsync();
+        uiSettings.ShowBattleTimelineRelics = toggled;
+        await PersistenceService.SaveUiSettingsAsync(uiSettings);
+    }
 
 }

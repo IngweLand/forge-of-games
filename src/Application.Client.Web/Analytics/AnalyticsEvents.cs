@@ -11,6 +11,7 @@ public static class AnalyticsEvents
     public const string PICK_HERO_TARGET_LEVEL = "pick_hero_target_level";
     public const string SELECT_HERO_BATTLE_TYPE = "select_hero_battle_type";
     public const string SELECT_HERO_LEVEL = "select_hero_level";
+    public const string TOGGLE_BATTLE_TIMELINE_RELICS = "toggle_bt_relics";
     public const string TOGGLE_CHART = "toggle_chart";
     public const string TOGGLE_HERO_AVATAR_SOURCE = "toggle_hero_avatar_source";
     public const string VIEW_BATTLE_STATS = "view_battle_stats";

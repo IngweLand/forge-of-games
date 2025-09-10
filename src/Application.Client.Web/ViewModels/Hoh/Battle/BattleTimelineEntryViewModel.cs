@@ -8,4 +8,11 @@ public class BattleTimelineEntryViewModel
     public required BattleSquadSide Side { get; init; }
     public required BattleSquadViewModel Squad { get; init; }
     public required string Title { get; init; }
+    public required BattleTimelineEntryType Type { get; init; }
+}
+
+public enum BattleTimelineEntryType
+{
+    Ability,
+    Relic,
 }
