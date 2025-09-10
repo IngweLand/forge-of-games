@@ -81,25 +81,26 @@ public partial class BattleLogPage : BattleLogPageBase
         {
             await _battlesCts.CancelAsync();
         }
-
+        
         _battlesCts = new CancellationTokenSource();
 
         try
         {
             _battles = await StatsHubUiService.SearchBattles(BattleSearchRequest, _battlesCts.Token);
+            IsLoading = false;
         }
         catch (OperationCanceledException _)
         {
         }
         catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
         {
+            IsLoading = false;
         }
         catch (Exception e)
         {
+            IsLoading = false;
             Console.Error.WriteLine(e);
         }
-
-        IsLoading = false;
     }
 
     private void OnContributionPromptClick()
