@@ -14,8 +14,8 @@ public record UserBattleSearchQuery : IRequest<PaginatedList<BattleSummaryDto>>
 {
     public string? BattleDefinitionId { get; init; }
     public BattleType BattleType { get; init; }
-
     public int Count { get; init; }
+    public BattleResultStatus ResultStatus { get; init; } = BattleResultStatus.Undefined;
     public int StartIndex { get; init; }
     public required Guid SubmissionId { get; init; }
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
@@ -55,6 +55,11 @@ public class PlayerBattleSearchQueryHandler(
             else
             {
                 battlesQuery = battlesQuery.Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
+            }
+            
+            if (request.ResultStatus != BattleResultStatus.Undefined)
+            {
+                battlesQuery = battlesQuery.Where(src => src.ResultStatus == request.ResultStatus);
             }
         }
 

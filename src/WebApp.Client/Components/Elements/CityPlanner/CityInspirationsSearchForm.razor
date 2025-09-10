@@ -46,7 +46,7 @@
             <MudCheckBox Dense="true" @bind-Value="Request.AllowPremium" Style="font-size: 12px !important;"
                          Label="@Loc[FogResource.CityPlanner_Inspirations_Form_AllowPremium]"/>
         </div>
-        <MudButton Color="Color.Primary" Style="align-self: flex-start" OnClick="OnSearchClick" Variant="Variant.Filled"
+        <MudButton Color="Color.Primary" Style="align-self: flex-start" OnClick="@OnSearchClick" Variant="Variant.Filled"
                    Disabled="@(!ValidateForm())">
             @Loc[FogResource.Common_Search]
         </MudButton>

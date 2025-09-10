@@ -18,6 +18,7 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
             BattleType = request.BattleType,
             BattleDefinitionId = battleDefinitionIdFactory.Create(request),
             UnitIds = request.UnitIds,
+            ResultStatus = request.ResultStatus,
         };
 
         return await sender.Send(query, ct);
@@ -48,6 +49,7 @@ public class BattleService(ISender sender, IBattleDefinitionIdFactory battleDefi
                 ? battleDefinitionIdFactory.Create(request.SearchRequest)
                 : null,
             UnitIds = request.SearchRequest?.UnitIds ?? [],
+            ResultStatus = request.SearchRequest?.ResultStatus ?? BattleResultStatus.Undefined,
             SubmissionId = request.SubmissionId,
             StartIndex = request.StartIndex,
             Count = request.Count,

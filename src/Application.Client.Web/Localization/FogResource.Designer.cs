@@ -240,6 +240,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string BattleSelector_Result {
+            get {
+                return ResourceManager.GetString("BattleSelector.Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stage.
         /// </summary>
         public static string BattleSelector_TreasureHuntStage {
@@ -1235,6 +1244,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Ages {
             get {
                 return ResourceManager.GetString("Common.Ages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string Common_All {
+            get {
+                return ResourceManager.GetString("Common.All", resourceCulture);
             }
         }
         

@@ -17,6 +17,7 @@ public record BattleSearchQuery : IRequest<BattleSearchResult>, ICacheableReques
 {
     public required string BattleDefinitionId { get; init; }
     public required BattleType BattleType { get; init; }
+    public BattleResultStatus ResultStatus { get; init; } = BattleResultStatus.Undefined;
     public IReadOnlyCollection<string> UnitIds { get; init; } = new List<string>();
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
@@ -43,6 +44,7 @@ public class BattleSearchQueryHandler(
         }
 
         var battlesQuery = context.Battles.AsNoTracking().Include(x => x.Squads).AsQueryable();
+
         if (request.UnitIds.Count > 0)
         {
             var unitIds = request.UnitIds.ToHashSet();
@@ -52,6 +54,11 @@ public class BattleSearchQueryHandler(
         {
             battlesQuery = battlesQuery
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
+        }
+        
+        if (request.ResultStatus != BattleResultStatus.Undefined)
+        {
+            battlesQuery = battlesQuery.Where(src => src.ResultStatus == request.ResultStatus);
         }
 
         if (sw is not null)

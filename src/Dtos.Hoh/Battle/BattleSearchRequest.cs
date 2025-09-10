@@ -10,6 +10,7 @@ public record BattleSearchRequest
     public Difficulty Difficulty { get; init; } = Difficulty.Normal;
     public int HistoricBattleEncounter { get; init; } = 1;
     public RegionId HistoricBattleRegion { get; init; } = RegionId.SiegeOfOrleans;
+    public BattleResultStatus ResultStatus { get; set; } = BattleResultStatus.Undefined;
     public int TeslaStormEncounter { get; init; } = 1;
     public RegionId TeslaStormRegion { get; init; } = RegionId.TeslaStormBlue;
     public int TreasureHuntDifficulty { get; init; }

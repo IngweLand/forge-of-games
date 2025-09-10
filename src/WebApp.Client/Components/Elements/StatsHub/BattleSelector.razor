@@ -141,6 +141,14 @@
                     }
                 </MudSelect>
             }
+            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Result]"
+                       Value="@SearchRequest.ResultStatus"
+                       T="BattleResultStatus" Strict="true" ToStringFunc="@BattleResultStatusToStringFunc"
+                       ValueChanged="ResultStatusOnChange" Variant="Variant.Outlined">
+                <MudSelectItem Value="@BattleResultStatus.Undefined"/>
+                <MudSelectItem Value="@BattleResultStatus.Win"/>
+                <MudSelectItem Value="@BattleResultStatus.Defeat"/>
+            </MudSelect>
         </div>
 
         <div class="units-container">
@@ -233,6 +241,16 @@
         }
     }
 
+    private string BattleResultStatusToStringFunc(BattleResultStatus status)
+    {
+        return status switch
+        {
+            BattleResultStatus.Defeat => Loc[FogResource.Common_Defeat],
+            BattleResultStatus.Win => Loc[FogResource.Common_Victory],
+            _ => Loc[FogResource.Common_All],
+        };
+    }
+
     private Task BattleTypeOnChange(BattleType newValue)
     {
         return SearchRequest.BattleType == newValue
@@ -308,6 +326,13 @@
         return SearchRequest.TeslaStormEncounter == newValue
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {TeslaStormEncounter = newValue});
+    }
+
+    private Task ResultStatusOnChange(BattleResultStatus newValue)
+    {
+        return SearchRequest.ResultStatus == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {ResultStatus = newValue});
     }
 
     private async Task AddHero()
