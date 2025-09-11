@@ -2760,6 +2760,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Donate.
+        /// </summary>
+        public static string SupportUs_PayPal_ButtonLabel {
+            get {
+                return ResourceManager.GetString("SupportUs.PayPal.ButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can support us directly through PayPal..
+        /// </summary>
+        public static string SupportUs_PayPal_Message {
+            get {
+                return ResourceManager.GetString("SupportUs.PayPal.Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donate via PayPal.
+        /// </summary>
+        public static string SupportUs_PayPal_Title {
+            get {
+                return ResourceManager.GetString("SupportUs.PayPal.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support Forge of Games.
         /// </summary>
         public static string SupportUs_Title {
