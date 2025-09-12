@@ -897,6 +897,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City Viewer lets you explore your layout on small screens. Pinch to zoom and drag to move around. Tap the analytics button to see city stats. To make edits, switch to a larger screen..
+        /// </summary>
+        public static string CityViewer_FirstTimeMessage {
+            get {
+                return ResourceManager.GetString("CityViewer.FirstTimeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profile name.
         /// </summary>
         public static string CommandCenter_CreateNewProfileDialog_InputLabel {

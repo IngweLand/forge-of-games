@@ -1,9 +1,8 @@
-@using Ingweland.Fog.Application.Client.Web.Models
-@using Ingweland.Fog.WebApp.Client.Services
-@using Ingweland.Fog.WebApp.Client.Services.Abstractions
-@using Ingweland.Fog.WebApp.Client.Theme
 @inject IPageMetadataService PageMetadataService
 @implements IDisposable
+@using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.WebApp.Client.Services.Abstractions
+@using Ingweland.Fog.WebApp.Client.Theme
 @inherits LayoutComponentBase
 <HeadContent>
     <meta name="description" content="@_pageMetadata.Description">
@@ -11,16 +10,14 @@
 </HeadContent>
 <PageTitle>@_pageMetadata.PageTitle</PageTitle>
 <MudThemeProvider Theme="FogTheme.Theme"/>
-<div class="page-full">
-    <main class="content-full">
-        @Body
-    </main>
-</div>
+<main class="content-full">
+    @Body
+</main>
 
 @code
 {
     private PageMetadata _pageMetadata = null!;
-    
+
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 

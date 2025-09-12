@@ -54,14 +54,22 @@ public class MapTransformationComponent : IMapTransformationComponent
         canvas.Scale(Scale);
     }
 
-    public void FitToScreen(Rectangle targetBounds, Size containerSize)
+    public void FitToScreen(Rectangle targetBounds, Size containerSize, bool fitHeight = false)
     {
         var targetRect = targetBounds;
         targetRect.Inflate(10, 10);
 
-        var scaleX = (float) containerSize.Width / targetRect.Width;
-        var scaleY = (float) containerSize.Height / targetRect.Height;
-        Scale = Math.Min(scaleX, scaleY);
+        if (fitHeight)
+        {
+            Scale = (float) containerSize.Height / targetRect.Height;
+        }
+        else
+        {
+            var scaleX = (float) containerSize.Width / targetRect.Width;
+            var scaleY = (float) containerSize.Height / targetRect.Height;
+            Scale = Math.Min(scaleX, scaleY);
+        }
+        
         var x = (containerSize.Width - targetRect.Width * Scale) / 2f - targetRect.Left * Scale;
         var y = (containerSize.Height - targetRect.Height * Scale) / 2f - targetRect.Top * Scale;
         _location = new SKPoint(x, y);

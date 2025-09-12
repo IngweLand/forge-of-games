@@ -1,0 +1,54 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+::deep .city-planner-toolbar {
+    padding-left: 12px;
+    gap: 6px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+::deep .map-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    outline: none;
+}
+
+::deep .map-container canvas:focus {
+    outline: none;
+}
+
+.toolbar-divider {
+    height: 1.5rem;
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+.loading-indicator {
+    align-self: center;
+    justify-self: center;
+}
+
+.city-properties-container {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    overflow-y: auto;
+}
+
+sup {
+    font-size: 10px;
+    padding-left: 4px;
+}

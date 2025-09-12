@@ -1,0 +1,51 @@
+@using SkiaSharp.Views.Blazor
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<div class="content-wrapper">
+    @if (!_isInitialized)
+    {
+        <div class="spinner-grow loading-indicator" role="status"></div>
+    }
+    else
+    {
+        <MudAppBar ToolBarClass="city-planner-toolbar user-select-none" Gutters="false"
+                   Dense="true"
+                   Color="Color.Primary" Fixed="false">
+            <span>City Viewer</span>
+            <div>
+                <MudIconButton Icon="@Icons.Material.Outlined.Dashboard" OnClick="NavigateToDashboard"
+                               Class="fog-icon-light"/>
+            </div>
+            <div class="toolbar-divider"></div>
+            <div>
+                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="@FitToScreen" Class="fog-icon-light"/>
+            </div>
+            <div class="toolbar-divider"></div>
+            <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
+                                 Color="Color.Inherit" Toggled="@_cityPropertiesAreVisible"
+                                 ToggledIcon="@Icons.Material.Filled.Analytics"
+                                 ToggledColor="Color.Inherit"
+                                 ToggledChanged="ToggleCityProperties"/>
+        </MudAppBar>
+
+        @if (_cityPropertiesAreVisible)
+        {
+            <div class="city-properties-container">
+                <CityPropertiesComponent Data="@CityPlanner.CityMapState.CityPropertiesViewModel" Editable="false"/>
+            </div>
+        }
+        else
+        {
+            <div class="map-container">
+                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                          @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @onpointerdown="@InteractiveCanvasOnPointerDown"
+                          @onwheel="@InteractiveCanvasOnWheel"
+                          @onpointermove="@InteractiveCanvasOnPointerMove"
+                          IgnorePixelScaling="true"/>
+            </div>
+        }
+    }
+
+</div>

@@ -74,6 +74,7 @@ public static class DependencyInjection
         services.AddScoped<ICityPlanner, CityPlanner.CityPlanner>();
         services.AddScoped<IMapTransformationComponent, MapTransformationComponent>();
         services.AddScoped<ICityPlannerInteractionManager, CityPlannerInteractionManager>();
+        services.AddScoped<ICityViewerInteractionManager, CityViewerInteractionManager>();
         services.AddScoped<IMapGrid, MapGrid>();
         services.AddScoped<ICityMapEntityInteractionComponent, CityMapEntityInteractionComponent>();
         services.AddScoped<ICommandManager, CommandManager>();

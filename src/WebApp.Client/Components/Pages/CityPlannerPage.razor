@@ -1,33 +1,43 @@
-@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @using Ingweland.Fog.WebApp.Client.Components.Layout
-@using Microsoft.Extensions.Localization
 @attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH)]
 @layout BlankLayout
-@inject NavigationManager NavigationManager
-@inject IStringLocalizer<FogResource> Loc
-
-@if (_isBrowser)
+@if (_isInitialized)
 {
-    <div class="city-planner">
+    @if (_showPlanner)
+    {
         <CityPlannerComponent/>
-    </div>
-
-    <div class="small-screen-message">
-        <span>@Loc[FogResource.CityPlanner_SmallScreenMessage]</span>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary"
-                   OnClick="@(() => NavigationManager.NavigateTo("/"))">@Loc[FogResource.Navigation_Home]</MudButton>
-    </div>
+    }
+    else
+    {
+        <CityViewerComponent/>
+    }
 }
 
 @code
 {
-    private bool _isBrowser;
+    private bool _isInitialized;
+    private bool _showPlanner;
 
-    protected override void OnInitialized()
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+
+    [Inject]
+    private IJSInteropService JsInteropService { get; set; }
+
+    protected override async Task OnInitializedAsync()
     {
-        _isBrowser = OperatingSystem.IsBrowser();
+        if (OperatingSystem.IsBrowser())
+        {
+            await JsInteropService.ResetScrollPositionAsync();
+
+            var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
+            _showPlanner = size.Width >= 880;
+
+            _isInitialized = true;
+        }
     }
 }
 

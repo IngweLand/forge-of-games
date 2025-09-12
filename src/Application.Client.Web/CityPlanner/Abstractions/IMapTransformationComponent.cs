@@ -9,6 +9,6 @@ public interface IMapTransformationComponent
     bool CommitTranslate(SKPoint delta);
     bool CommitScale(float x, float y, float deltaY);
     void Transform(SKCanvas canvas);
-    void FitToScreen(Rectangle targetBounds, Size containerSize);
+    void FitToScreen(Rectangle targetBounds, Size containerSize, bool fitHeight = false);
     float Scale { get; }
 }
