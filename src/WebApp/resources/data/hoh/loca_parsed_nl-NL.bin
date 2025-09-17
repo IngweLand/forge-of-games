@@ -417,6 +417,8 @@ I
 0Base.Buildings.Building_Mayas_Home_Priest_4_NameVakwerkhuis
 M
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKEDSlot nog niet ontgrendeld
+>
+'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
 =
 #Base.NotEnoughPremiumPopup.HeadlineNiet genoeg edelstenen
 Ã
@@ -593,6 +595,8 @@ F
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_DescÜElke <style=MC>Crate</style> verbetert ook je <style=MC>Ranglijst</style> in de <style=MC>Event Highscore</style> en ontgrendelt zo betere <style=MC>Beloningen</style> naarmate je hoger klimt in de <style=MC>Competities</style> tegen het einde van het Evenement.
 M
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameCeremonieel Gewaad
+9
+'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
 C
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name	Voorspoed
 ˆ
@@ -728,6 +732,8 @@ n
 /
 !Base.InventoryMenuPanel.Fragments
 Fragmenten
+I
+"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
 B
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_NameTaveerne
 t
@@ -1294,6 +1300,8 @@ O
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescDIk denk dat dat onze volgende taak is: uitzoeken wat we kunnen doen!
 (
 Base.Ages.RomanEmpire_Start	50 v.Chr.
+c
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
 
 Base.Rarities.CommonGewoon
 :
@@ -1518,6 +1526,8 @@ W
 5Base.Generic.CancelProductionFullStorageWarning_TitleStop productie om door te gaan
 `
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_NameVerbeterd Ruiterschild
+?
+"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 M
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxe vissteiger
 J
@@ -1681,6 +1691,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_DescäDo
 'Base.RewardPanel.BuildingUnlocked_ShortBouwen
 L
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusHeld gezondheid status
+ë
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name∫<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
 |
 1Base.AllianceChatNotifications.IncidentRunningOutGDe tijd raakt op! Schiet op en los het incident in de Alliantie Stad op
 D
@@ -2322,8 +2334,8 @@ M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_NameLevel 12
 ©
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name⁄<style=ability_label>Control| Strike</style>Montezuma I tovert doornige wijnstokken die de verste vijand verstrikken, hem meesleuren naar Bereik en <style=basestat>{dmg_percentage}</style> schade toebrengen bij inslag.
-Í
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Nameö<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an ability.
+Ò
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name°<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
 :
 $Base.Resources.ceremonial_dress_NameCeremonieel gewaad
 :
@@ -3197,6 +3209,8 @@ r
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
 I
 &Base.RewardTypes.StorageCapReward_DescVerhoogt je {0} opslag met {1}!
+T
+!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
 R
 *Base.EquipmentToolTip.SubHeadlineArmaments$Een willekeurig wapen of kledingstuk
 Å
@@ -3774,6 +3788,8 @@ K
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_NameStralende Plunderaars
 H
 4Base.Abilities.hero_battle_ability.JuliusCaesar_NameVeni, Vidi, Vici
+ë
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 8
 "Base.Rifts.rift.SeasonPass_09_NameArcane Tijdportaal
 0
@@ -3892,6 +3908,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text8_DescN
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_DescNMet deze selectiekit kun je kiezen tussen onderzoekspunten en alliantiepunten.
 E
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_NameMangudai's helm
+Y
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
 í
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Nameº<style=ability_label>Taunt | Shield | Area Strike</style>Filips II van Macedoni√´ krijgt een groot schild ter waarde van <style=basestat>{shield_percentage}</style> van zijn Basis Schade en taunt alle vijandelijke eenheden gedurende <style=basestat>{taunt_duration}</style>. Na <style=basestat>{detonatie_tijd}</style>, ontploft zijn schild en brengt <style=basestat>{schade_percentage}</style> van de resterende waarde van het schild schade toe aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{bereik}</style>. De detonatie verbruikt Philip's schild.
 H
@@ -4037,12 +4055,16 @@ L
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_DescProduceert gouderts
 -
 Base.UnlockableFeatures.RelicsRelikwie√´n
+o
+*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
 C
 1Base.Technologies.Technology_Egypt_Geography_NameAardrijkskunde
 T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameInfanteriekazerne
 ]
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc"Vrijspelen Mino√Øsche Slingwerpers
+N
+)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
 ˙
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name©<style=ability_label>Afstand Aanval</style> Werpt een bijl naar de vijandelijke eenheid met de meeste HP, en veroorzaakt <style=basestat>{dmg_percentage}</style> schade.
 =
@@ -4260,6 +4282,8 @@ O
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDescµVolle kracht vooruit - geef je reis extra brandstof met extra Uithoudingsvermogen, Overwinningstickets en eventvaluta om uitdagingen te overwinnen en naar de overwinning te stijgen!
 
 Base.Generic.GoogleGoogle
+1
+"Tutorial.HeroMetaReportPopup.TitleMeta Report
 .
 !Base.RiftInfoPopup.DropChancesTab	Droprates
 C
@@ -4394,6 +4418,8 @@ A
 -Base.EquipmentSets.equipment_set.Bedouin_NameBedoe√Øenenset
 i
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_NameDame Zes Hemel
+T
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
 Ö
 .Base.EquipmentSets.equipment_set.Assassin_DescSEigenschap voor √©√©n doelwit Schade toegebracht <style=basestat_dark>+7,5%</style>
 _
@@ -6458,6 +6484,8 @@ K
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_NameVliegergeleider
 Ω
 "Tutorial.BattleTutorial.UseAbilityñSta aan mijn zijde, en onze vijanden zullen vallen als koren! Getuig van de ontembare kracht van een <nobr><style=MC>SPARTAANSE KONING</style></nobr>!
+?
+&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_NameLevel 22
 K
@@ -8452,6 +8480,8 @@ m
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_Name Alliantie Goederen Selectiekit L
 1
 Base.SellBuildingPopup.HeaderGebouw verkopen?
+c
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
 L
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameRitueel Carver
 é
@@ -8757,6 +8787,8 @@ D
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_NameKopiskrijgers
 P
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>STOP!</style>
+B
+)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 8
 )Base.AllianceMembershipSettingsPopup.KickVerwijderen
 t
@@ -8844,6 +8876,8 @@ e
 Base.BattlePausePopup.RetreatTerugtrekken
 D
 $Base.Resources.hero.OdaNobunaga_NameDe essentie van Oda Nobunaga
+a
+ Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
 .
 "Base.CampaignPanel.difficulty.HardMoeilijk
 p
@@ -9400,6 +9434,8 @@ $Base.Resources.resource.hero_xp_DescàErvaringspunten worden gebruikt om je he
 1Base.InventoryCustomizationInfoPopup.BuffDurationBuffduur
 =
  Base.SeasonPass.SeasonEndedTitleHet seizoen is afgelopen!
+h
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
 :
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 
@@ -10433,6 +10469,8 @@ F
 Luxe noriaLuxe noria's
 u
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_Name Vergeten heiligdommen van Kracht
+K
+'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
 G
 3Base.Buildings.Building_Mayas_Aviary_Average_4_DescProduceert veren
 Ä
@@ -10716,6 +10754,8 @@ F
  Base.Units.Unit_Nostradamus_DescåOntrafel de geheimen van het lot met Nostradamus, de legendarische ziener wiens visioenen door de eeuwen heen weerklinken! Michel de Nostredame werd in 1503 geboren en werd een beroemd arts vanwege zijn moed tijdens pestuitbraken, maar het waren zijn mysterieuze voorspellingen die hem een blijvende nalatenschap bezorgden. Zijn boek Les Proph√©ties bevatte zulke cryptische verzen dat generaties zich hebben gebroken over de ware betekenis ervan en ze in verband hebben gebracht met gebeurtenissen zoals verwoestende oorlogen en de opkomst en ondergang van keizers.<br><br>De faam van Nostradamus reikte tot in de hoogste kringen - hij voorspelde zelfs de toekomst van Catherine de' Medici, koningin van Frankrijk. Sommigen zeggen dat hij in een koperen schaal keek, anderen in de sterren, maar zijn mix van astrologie en po√´tische raadsels blijft zowel gelovigen als sceptici fascineren. Helden fluisteren dat hij zijn waarzeggingsschaal nooit onbeheerd achterlaat en dat zijn dagboek soms 's avonds laat vanzelf begint te schrijven.
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameArbeiderswoning
+_
+%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
 :
 &Base.TreasureHuntStartedPopup.EndTimerEindigt over {0}
 —
@@ -12550,8 +12590,8 @@ Schildbaas
 'Base.QuestlinesPanel.LevelUpAnyHeroTask&Verhoog het level van een <b>held</b>.=Verhoog het level van meerdere <b>helden</b> <b>{0}</b> keer.
 P
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_DescProduceert kelken
-Ó
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Nameú<style=ability_label>Buff</style>Increases the holder's area effect damage by 10%. Each time the holder receives a heal or heals any allied unit, they deal an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+ì
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name¡<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_NameKleine boerderij
 #
@@ -13287,6 +13327,8 @@ A
 $Base.Resources.hero.LeifErikson_NameEssentie van Leif Erikson
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
+Á
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Nameô<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 o
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 C
@@ -13545,6 +13587,8 @@ A
 'Base.ShopPopup.DailyDealAscensionHeaderHemelvaart Vooruitgang
 N
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameMiddelgroot huis
+K
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
 \
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_NameSchedelhuis
 ?
@@ -13979,6 +14023,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc8Hij heef
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name»<style=ability_label>Brandwond</style>De vlammen van de toorts verhogen de brandwondschade die de houder toebrengt met <style=basestat>{burn_dmg_increase}</style>.
 Telkens wanneer de houder eenmalige schade toebrengt aan een vijandelijke eenheid, heeft hij een <style=basestat>{burn_chance}</style> kans om brand toe te passen, waarbij <style=basestat>{burn_dmg}</style> schade wordt toegebracht gedurende <style=basestat>{burn_duration}</style> seconden.
 
+)
+Base.RiftGroup.common_NameTime Portal
 C
 4Base.Technologies.Technology_Mayas_StoneCarving_NameSteenhouwen
 _
@@ -15276,6 +15322,8 @@ JBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestStart_Text3_DescUMis
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff}m
 E
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_NameCarrucas
+B
+1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 J
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_Name
 Grote zaal
@@ -15578,6 +15626,8 @@ C
 %Base.SeasonPass.SeasonalTaskCountdownVolgende seizoenstaak over
 D
 3Base.Buildings.Building_Mayas_Aviary_Premium_6_NameLuxe voli√®re
+'
+"Tutorial.HeroMetaReportPopup.TierSS
 §
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text5_Desc`De bochten en wendingen waren het waard voor dit moment. We zijn nu gratis, zoals nooit tevoren.
 5
@@ -15713,16 +15763,26 @@ G
 'Base.Expansions.Expansion_Egypt_12_NameBrug over de Nijl
 L
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameWatercisterne
+'
+"Tutorial.HeroMetaReportPopup.TierBB
+'
+"Tutorial.HeroMetaReportPopup.TierAA
 =
 'Base.ChangePasswordPopup.RepeatPasswordHerhaal wachtwoord
 i
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameKanaal
 s
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc7Produceert munten en voegt een arbeider toe aan je stad
 ª
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassTextÑDoe mee om exclusieve Beloningen te verdienen en ontvang meteen de epische Relikwie <nobr><style=epic>Scarabee kever</style></nobr>!
+'
+"Tutorial.HeroMetaReportPopup.TierDD
+'
+"Tutorial.HeroMetaReportPopup.TierCC
 B
 &Base.Units.Unit_PhilipIIOfMacedon_NameFilips II van Macedoni√´
 ÿ
@@ -16372,6 +16432,8 @@ z
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc@Produceert gedurende langere tijd een grote hoeveelheid voedsel.
 K
 5Base.Buildings.Building_FeudalAge_Home_Average_2_NameMiddelgrote woning
+4
+Base.RiftGroup.seasonPass_NameArcane Time Portal
 ;
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix(Max.)
 b
@@ -16707,6 +16769,8 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_NameLevel 18
 í
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescQStuur expeditieschepen uit om Keramische schatten of Goud schatten te verzamelen.
+=
+$Base.PlayerSearch.EndOfSearchResultsEnd of search results
 A
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_NameStralend Kanon
 ´
@@ -17834,6 +17898,8 @@ $Base.AllianceQuarterPanel.UpgradeTabUpgraden
 Base.Numbers.TimesCount{0}x
 M
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_NameSteenhouwer
+=
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_NameFontein
 ñ
@@ -17951,6 +18017,8 @@ l
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_NameLevel 32
+2
+Base.RiftGroup.eventCity_NameEvent City Portal
 s
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc9De taveerne produceert mede en stokvis van honing en vis.
 W

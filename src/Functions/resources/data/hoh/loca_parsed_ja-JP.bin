@@ -414,6 +414,8 @@ U
 0Base.Buildings.Building_Mayas_Home_Priest_4_Name職人の家
 j
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKED6スロットはまだアンロックされていない
+>
+'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
 ?
 #Base.NotEnoughPremiumPopup.Headlineジェムが足りない
 �
@@ -589,6 +591,8 @@ J
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_Desc�<style=MC>箱</style>をひとつ埋めるごとに、<style=MC>ランキング</style>での<style=MC>順位</style>が上がってゆく。<style=MC>リーグ</style>を昇れば、より優れた<style=MC>報酬</style>が待っておる。
 M
 7Base.Technologies.Technology_Egypt_CeremonialDress_Name儀式用の衣装
+9
+'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
 @
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name繁栄
 �
@@ -723,6 +727,8 @@ X
 'Base.AlliancePanel.RejectInvitationDesc-{0}からの{1}への招待を拒否する？
 7
 !Base.InventoryMenuPanel.Fragments反物質の欠片
+I
+"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
 @
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Name酒場
 �
@@ -1283,6 +1289,8 @@ M
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescEじゃあ次は、それにどう対応するかを探る番だな！
 -
 Base.Ages.RomanEmpire_Start紀元前50年
+c
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
 !
 Base.Rarities.Common	コモン
 =
@@ -1502,6 +1510,8 @@ T
 5Base.Generic.CancelProductionFullStorageWarning_Title生産を停止して進む
 Y
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_Nameヒーター盾
+?
+"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Name豪華な漁桟橋
 F
@@ -1664,6 +1674,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc��
 'Base.RewardPanel.BuildingUnlocked_Short建物
 Q
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusヒーローの体力状況
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
 �
 1Base.AllianceChatNotifications.IncidentRunningOutT時間切れになりそうだ！急いで同盟都市の出来事に対応しよう
 F
@@ -2292,8 +2304,8 @@ P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_Nameレベル12
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>拘束・攻撃</style>茨のつるを呼び出し、最も遠い敵を絡め取って近接範囲まで引き寄せ、接触時に<style=basestat>{dmg_percentage}</style>のダメージを与える。
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an ability.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
 :
 $Base.Resources.ceremonial_dress_Name儀式用の衣装
 <
@@ -3145,6 +3157,8 @@ x
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 T
 &Base.RewardTypes.StorageCapReward_Desc*{0}の倉庫容量を{1}増加させる！
+T
+!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
 R
 *Base.EquipmentToolTip.SubHeadlineArmaments$ランダムな武器または衣装
 �
@@ -3716,6 +3730,8 @@ H
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_Name輝光の襲撃隊
 S
 4Base.Abilities.hero_battle_ability.JuliusCaesar_Name来た、見た、勝った
+�
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 G
 "Base.Rifts.rift.SeasonPass_09_Name!アーケイン時空ポータル
 7
@@ -3832,6 +3848,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text8_DescZ
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_Descaこの選択キットでは、研究ポイントと同盟ポイントの中から1つ選べる。
 E
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_Name弓騎兵の兜
+Y
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>挑発・シールド・範囲攻撃</style>フィリッポス２世は<style=basestat>{taunt_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分の大量のシールドを獲得し、敵ユニット全体を挑発する。<style=basestat>{detonation_time}</style>が経過すると、シールドが爆発し、残りのシールド量の<style=basestat>{damage_percentage}</style>に相当するダメージを<style=basestat>{range}</style>の範囲内にいる敵ユニットに与える。爆発と同時にシールドは消滅する。
 9
@@ -3976,12 +3994,16 @@ Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_Desc金鉱石を生産する
 (
 Base.UnlockableFeatures.Relics遺物
+o
+*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	地理学
 O
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_Name歩兵兵舎
 e
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc*ミノア投石機をアンロックする
+N
+)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�<style=ability_label>遠隔攻撃</style>体力が最も高い敵ユニットに斧を投げ、<style=basestat>{dmg_percentage}</style>のダメージを与える。
 L
@@ -4195,6 +4217,8 @@ G
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�全速前進！スタミナ・勝利チケット・イベント通貨を獲得し、試練を突破して勝利へ突き進もう！
 
 Base.Generic.GoogleGoogle
+1
+"Tutorial.HeroMetaReportPopup.TitleMeta Report
 4
 !Base.RiftInfoPopup.DropChancesTabドロップ率
 F
@@ -4329,6 +4353,8 @@ C
 -Base.EquipmentSets.equipment_set.Bedouin_Name砂漠民セット
 s
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_Nameシックス・スカイ
+T
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
 u
 .Base.EquipmentSets.equipment_set.Assassin_DescC単体アビリティダメージ<style=basestat_dark>+7.5%</style>
 [
@@ -6363,6 +6389,8 @@ K
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_Name凧の導き手
 �
 "Tutorial.BattleTutorial.UseAbility�俺と共に立ち上がれ！敵をなぎ倒してやるぞ！これが不屈の<style=MC>スパルタ王</style>の力だ、見届けよ！
+?
+&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_Nameレベル22
 I
@@ -8332,6 +8360,8 @@ t
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_Name'同盟資源の選択キット（大）
 9
 Base.SellBuildingPopup.Header建物を売却する？
+c
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
 P
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_Name儀式彫刻工房
 |
@@ -8631,6 +8661,8 @@ O
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Name鎌剣
 T
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>待て！</style>
+B
+)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 6
 )Base.AllianceMembershipSettingsPopup.Kick	キック
 z
@@ -8730,6 +8762,8 @@ x
 Base.BattlePausePopup.Retreat撤退する
 =
 $Base.Resources.hero.OdaNobunaga_Name織田信長の精髄
+a
+ Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
 /
 "Base.CampaignPanel.difficulty.Hard	ハード
 ^
@@ -9274,6 +9308,8 @@ $Base.Resources.resource.hero_xp_Desc�経験ポイントはヒーローのレ�
 1Base.InventoryCustomizationInfoPopup.BuffDuration期間
 9
  Base.SeasonPass.SeasonEndedTitleシーズン終了！
+h
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
 P
 %Base.Units.Unit_BenjaminFranklin_Name'ベンジャミン・フランクリン
 
@@ -10296,6 +10332,8 @@ F
 *Base.BuildingGroups.premiumIrrigation_Name豪華な水汲み水車
 m
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_Name失われた神力の祠
+K
+'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
 L
 3Base.Buildings.Building_Mayas_Aviary_Average_4_Desc羽根を生産する
 �
@@ -10575,6 +10613,8 @@ J
  Base.Units.Unit_Nostradamus_Desc�	伝説の予言者ノストラダムスとともに、運命の謎を解き明かそう！１５０３年に生まれたミシェル・ノストラダムスは、ペストの流行時に勇敢に立ち向かった医師として名を上げたが、後世に語り継がれることとなったのは、やはりその神秘的な予言だった。著書『予言集』には、意味深で謎めいた詩が数多く記されており、その真意をめぐって、世代を超えてさまざまな解釈が繰り返されてきた。破滅的な戦争や帝王たちの栄枯盛衰と結びつけられることも多い。<br><br>その評判は王侯貴族のあいだにも広まり、フランス王妃カトリーヌ・ド・メディシスの運命を占ったとも言われている。青銅の器を覗き込んでいたという説もあれば、星々に答えを求めていたという話もあり、占星術と詩的な謎を融合させた手法は、今もなお信奉者と懐疑派の双方を惹きつけてやまない。ヒーローたちのあいだでは、ノストラダムスは占いの器から決して離れず、夜が更けるころには、手帳が勝手に予言を書き始めるらしい。
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name労働者の家
+_
+%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
 9
 &Base.TreasureHuntStartedPopup.EndTimer終了まで{0}
 �
@@ -12382,8 +12422,8 @@ U
 'Base.QuestlinesPanel.LevelUpAnyHeroTask*ヒーローをレベルアップする。
 ]
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_Descゴブレットを生産する
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by 10%. Each time the holder receives a heal or heals any allied unit, they deal an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
 F
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_Name畜産農場
 !
@@ -13106,6 +13146,8 @@ L
 $Base.Resources.hero.LeifErikson_Name$レイフ・エリクソンの精髄
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 p
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
 >
@@ -13362,6 +13404,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_
 'Base.ShopPopup.DailyDealAscensionHeader昇進ブースト
 M
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_Name大きな住宅
+K
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
 `
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Nameどくろの家
 =
@@ -13789,6 +13833,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc9イン�
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>燃焼</style>松明の炎が所持ヒーローの燃焼ダメージを<style=basestat>{burn_dmg_increase}</style>増加させる。
 さらに、敵ユニットに単発ダメージを与えると、<style=basestat>{burn_chance}</style>の確率で燃焼を付与し、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_dmg}</style>のダメージを与える。
 
+)
+Base.RiftGroup.common_NameTime Portal
 >
 4Base.Technologies.Technology_Mayas_StoneCarving_Name彫刻
 S
@@ -15073,6 +15119,8 @@ D
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff}分
 F
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_Name	深耕犂
+B
+1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 L
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_Name大ホール
 �
@@ -15367,6 +15415,8 @@ M
 %Base.SeasonPass.SeasonalTaskCountdown$次のシーズンタスクまで：
 F
 3Base.Buildings.Building_Mayas_Aviary_Premium_6_Name豪華な鳥舎
+'
+"Tutorial.HeroMetaReportPopup.TierSS
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text5_Desc{いろんな遠回りも、この瞬間のためだったのかもね。今、こんなにも自由を感じるなんて。
 B
@@ -15500,16 +15550,26 @@ F
 'Base.Expansions.Expansion_Egypt_12_Nameナイルの橋
 H
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_Name	貯水槽
+'
+"Tutorial.HeroMetaReportPopup.TierBB
+'
+"Tutorial.HeroMetaReportPopup.TierAA
 O
 'Base.ChangePasswordPopup.RepeatPassword$パスワードをもう一度入力
 a
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc'隣の建物の灌漑用水を増やす
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Name水路
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 �
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassText�今すぐ参加して限定報酬を手に入れよう！エピック遺物、<nobr><style=epic>スカラベ</style></nobr>が即座に手に入る！
+'
+"Tutorial.HeroMetaReportPopup.TierDD
+'
+"Tutorial.HeroMetaReportPopup.TierCC
 B
 &Base.Units.Unit_PhilipIIOfMacedon_Nameフィリッポス２世
 �
@@ -16152,6 +16212,8 @@ s
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
 H
 5Base.Buildings.Building_FeudalAge_Home_Average_2_Name大きな住宅
+4
+Base.RiftGroup.seasonPass_NameArcane Time Portal
 A
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix（最大）
 c
@@ -16483,6 +16545,8 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_Nameレベル18
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescE陶器と黄金の宝物を集める遠征隊の船を出航させる
+=
+$Base.PlayerSearch.EndOfSearchResultsEnd of search results
 B
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_Name輝光の砲隊
 �
@@ -17603,6 +17667,8 @@ u
 Base.Numbers.TimesCount×{0}
 K
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_Name	石工房
+=
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_Name噴水
 �
@@ -17718,6 +17784,8 @@ d
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc'隣の建物の灌漑用水を増やす
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_Nameレベル32
+2
+Base.RiftGroup.eventCity_NameEvent City Portal
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 Z

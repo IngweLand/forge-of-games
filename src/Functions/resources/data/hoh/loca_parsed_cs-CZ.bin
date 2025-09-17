@@ -417,6 +417,8 @@ E
 0Base.Buildings.Building_Mayas_Home_Priest_4_NameDům řemeslníka
 O
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKEDSlot ještě není odemčen
+>
+'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
 <
 #Base.NotEnoughPremiumPopup.HeadlineNedostatek drahokamů
 �
@@ -595,6 +597,8 @@ I
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_Desc�Každá <style=MC>bedna</style> také zlepšuje tvé <style=MC>pořadí</style> ve <style=MC>žebříčku události</style>, a tím odemyká lepší <style=MC>odměny</style>, jak stoupáš výše v <style=MC>ligách</style> do konce události.
 J
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameObřadní šaty
+9
+'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
 D
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name
 Prosperita
@@ -728,6 +732,8 @@ e
 'Base.AlliancePanel.RejectInvitationDesc:Opravdu chceš odmítnout pozvání od hráče {0} do {1}?
 .
 !Base.InventoryMenuPanel.Fragments	Fragmenty
+I
+"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
 @
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_NameKrčma
 s
@@ -1293,6 +1299,8 @@ D
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescHMyslím, že to je náš další úkol – zjistit, co můžeme udělat!
 ,
 Base.Ages.RomanEmpire_Start50 př. n. l.
+c
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
  
 Base.Rarities.CommonBěžná
 :
@@ -1514,6 +1522,8 @@ D
 5Base.Generic.CancelProductionFullStorageWarning_Title#Zastavte výrobu pro pokračování
 f
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_NameVylepšený topolový štít
+?
+"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 W
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxusní rybářské molo
 I
@@ -1675,6 +1685,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc�Za
 'Base.RewardPanel.BuildingUnlocked_ShortBudova
 I
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusStav zdraví hrdiny
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
 |
 1Base.AllianceChatNotifications.IncidentRunningOutGČas se krátí! Pospěš si a vyřeš incident ve Spojeneckém městě
 C
@@ -2317,8 +2329,8 @@ P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_NameÚroveň 12
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>Ovládání | Úder</style>Montezuma vyčaruje trnité liány, které polapí nejvzdálenějšího nepřítele, přitáhnou ho na dosah pro boj zblízka a při dopadu způsobí <style=basestat>{dmg_percentage}</style> poškození.
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an ability.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
 7
 $Base.Resources.ceremonial_dress_NameObřadní šaty
 7
@@ -3185,6 +3197,8 @@ i
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc.Vyrábí mince a přidá pracovníka do města
 J
 &Base.RewardTypes.StorageCapReward_Desc Navýší tvůj sklad {0} o {1}!
+T
+!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
 I
 *Base.EquipmentToolTip.SubHeadlineArmamentsNáhodná zbraň nebo oděv
 �
@@ -3765,6 +3779,8 @@ M
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_NameZářící nájezdníci
 H
 4Base.Abilities.hero_battle_ability.JuliusCaesar_NameVeni, Vidi, Vici
+�
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 ?
 "Base.Rifts.rift.SeasonPass_09_NameTajemný časový portál
 5
@@ -3882,6 +3898,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text8_DescJ
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_DescNTato výběrová sada ti umožní vybrat si body výzkumu nebo body spojenců.
 G
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_NameMangudaiova helma
+Y
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Provokace | Štít | Úder na oblast</style>Filip II. Makedonský získá velký štít v hodnotě <style=basestat>{shield_percentage}</style> svého základního poškození a provokuje všechny nepřátelské jednotky po dobu <style=basestat>{taunt_duration}</style>. Po uplynutí <style=basestat>{detonation_time}</style> jeho štít exploduje a způsobí <style=basestat>{damage_percentage}</style> zbývající hodnoty štítu jako poškození všem nepřátelským jednotkám v dosahu <style=basestat>{range}</style>. Detonace spotřebuje Filipův štít.
 F
@@ -4028,12 +4046,16 @@ M
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_DescVyrábí zlatou rudu
 *
 Base.UnlockableFeatures.RelicsRelikvie
+o
+*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	Geografie
 T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameKasárny pěchoty
 c
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc(Odemkne minojské vystřelovače z praku
+N
+)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�<style=ability_label>Střelecký úder</style> Hodí sekeru na nepřátelskou jednotku s nejvyšším HP, způsobí <style=basestat>{dmg_percentage}</style> poškození.
 D
@@ -4248,6 +4270,8 @@ K
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�Plnou parou vpřed - doplň svou staminu, vítězné lístky a měnu událostí, abys mohl zdolávat výzvy a dosáhnout vítězství!
 
 Base.Generic.GoogleGoogle
+1
+"Tutorial.HeroMetaReportPopup.TitleMeta Report
 5
 !Base.RiftInfoPopup.DropChancesTabPřehled šancí
 A
@@ -4384,6 +4408,8 @@ A
 -Base.EquipmentSets.equipment_set.Bedouin_NameBeduínská sada
 g
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_NameLady Six Sky
+T
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
 �
 .Base.EquipmentSets.equipment_set.Assassin_Desc\Poškození způsobené schopností jednotlivého útoku <style=basestat_dark>+7,5 %</style>
 X
@@ -6446,6 +6472,8 @@ G
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_NamePán draků
 �
 "Tutorial.BattleTutorial.UseAbility�Stůj při mně a naši nepřátelé padnou jako pšenice! Sledujte nezdolnou sílu <nobr><style=MC>SPARTSKÉHO KRÁLE</style>!</nobr>
+?
+&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_NameÚroveň 22
 K
@@ -8435,6 +8463,8 @@ q
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_Name$Výběrová sada zboží spojenců L
 /
 Base.SellBuildingPopup.HeaderProdat budovu?
+c
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
 Q
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameObřadní rytectví
 �
@@ -8734,6 +8764,8 @@ J
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_NameBojovníci s kopisy
 S
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>POČKEJ!</style>
+B
+)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 4
 )Base.AllianceMembershipSettingsPopup.KickVyhodit
 k
@@ -8835,6 +8867,8 @@ g
 Base.BattlePausePopup.RetreatStáhnout se
 ;
 $Base.Resources.hero.OdaNobunaga_NameEsence Oda Nobunaga
+a
+ Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
 .
 "Base.CampaignPanel.difficulty.HardTěžká
 h
@@ -9389,6 +9423,8 @@ H
 1Base.InventoryCustomizationInfoPopup.BuffDurationDoba trvání buffu
 6
  Base.SeasonPass.SeasonEndedTitleSezóna skončila!
+h
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
 :
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 
@@ -10418,6 +10454,8 @@ q
 *Base.BuildingGroups.premiumIrrigation_NameLuxusní vodní koloLuxusní vodní kolaLuxusních vodních kol
 n
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_NameZapomenuté svatyně moci
+K
+'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
 F
 3Base.Buildings.Building_Mayas_Aviary_Average_4_DescVyrábí peří
 �
@@ -10700,6 +10738,8 @@ L
  Base.Units.Unit_Nostradamus_Desc�Odemkněte tajemství osudu s Nostradamusem, legendárním věštcem, jehož vize se nesou napříč věky! Michel de Nostredame se narodil v roce 1503 a stal se lékařem proslulým svou statečností během morových epidemií, ale jeho trvalé dědictví zajistily jeho tajemné proroctví. Jeho kniha Les Prophéties obsahovala tak tajemné verše, že celé generace hádaly jejich skutečný význam a spojovaly je s událostmi, jako jsou ničivé války a vzestup a pád císařů.<br><br>Nostradamusova pověst dosáhla nejvyšších kruhů - dokonce četl budoucnost Kateřině Medicejské, královně Francie. Někteří říkají, že hleděl do mosazné mísy, jiní do hvězd, ale jeho směs astrologie a poetických hádanek nadále fascinuje jak věřící, tak pochybovače. Hrdinové šeptají, že nikdy nenechává svou věšteckou mísu bez dozoru a někdy, pozdě v noci, se jeho deník začne psát sám.
 F
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameDům pracovníka
+_
+%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
 8
 &Base.TreasureHuntStartedPopup.EndTimerKončí za {0}
 �
@@ -12525,8 +12565,8 @@ J
 'Base.QuestlinesPanel.LevelUpAnyHeroTask#Vylepši jakéhokoli <b>hrdinu</b>.1Vylepši jakékoli <b>hrdiny</b> <b>{0}</b>krát.1Vylepši jakékoli <b>hrdiny</b> <b>{0}</b>krát.
 O
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_DescVyrábí poháry
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by 10%. Each time the holder receives a heal or heals any allied unit, they deal an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
 I
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_NameMěstská farma
 #
@@ -13260,6 +13300,8 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style
 $Base.Resources.hero.LeifErikson_NameEsence Leifa Eriksona
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 s
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc<Vyrábí velké množství jídla během krátkého období.
 _
@@ -13518,6 +13560,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_
 'Base.ShopPopup.DailyDealAscensionHeaderPodpora povýšení
 L
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameStřední dům
+K
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
 [
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 Dům lebek
@@ -13954,6 +13998,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc&On přev
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>Popálení</style>Plameny pochodně zvyšují poškození hoření, které držitel způsobí, o <style=basestat>{burn_dmg_increase}</style>.
 Kdykoli držitel způsobí neopakující se poškození nepřátelské jednotce, má <style=basestat>{burn_chance}</style> šanci použít popálení, které způsobí <style=basestat>{burn_dmg}</style> poškození po dobu <style=basestat>{burn_duration}</style> sekund.
 
+)
+Base.RiftGroup.common_NameTime Portal
 F
 4Base.Technologies.Technology_Mayas_StoneCarving_NameŘezbářství
 b
@@ -15253,6 +15299,8 @@ JBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestStart_Text3_DescWMo�
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff}m
 E
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_NameCarrucas
+B
+1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 L
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_NameVelká síň
 �
@@ -15556,6 +15604,8 @@ C
 %Base.SeasonPass.SeasonalTaskCountdownDalší sezónní úkol za
 H
 3Base.Buildings.Building_Mayas_Aviary_Premium_6_NameLuxusní voliéra
+'
+"Tutorial.HeroMetaReportPopup.TierSS
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text5_DescMVšechny zvraty a obraty stály za to. Teď jsme volní jako nikdy předtím.
 7
@@ -15691,16 +15741,26 @@ C
 'Base.Expansions.Expansion_Egypt_12_NameMost přes řeku Nil
 M
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameVodní nádrž
+'
+"Tutorial.HeroMetaReportPopup.TierBB
+'
+"Tutorial.HeroMetaReportPopup.TierAA
 6
 'Base.ChangePasswordPopup.RepeatPasswordHeslo znovu
 ^
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc$Zvýší zavlažení okolních budov
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameKanál
 h
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc,Vyrábí mince a přidá dělníka do města
 �
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassText�Zúčastněte se, získejte exkluzivní odměny a okamžitě získejte epickú relikvii <nobr><style=epic>Brouk skarabeus</style></nobr>!
+'
+"Tutorial.HeroMetaReportPopup.TierDD
+'
+"Tutorial.HeroMetaReportPopup.TierCC
 ?
 &Base.Units.Unit_PhilipIIOfMacedon_NameFilip II. Makedonský
 �
@@ -16348,6 +16408,8 @@ u
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc;Vyrábí velké množství jídla během dlouhého období.
 G
 5Base.Buildings.Building_FeudalAge_Home_Average_2_NameStřední dům
+4
+Base.RiftGroup.seasonPass_NameArcane Time Portal
 ;
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix(Max.)
 e
@@ -16682,6 +16744,8 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_NameÚroveň 18
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescRVyšli expediční lodě, které budou získávat poklady s keramikou nebo zlatem.
+=
+$Base.PlayerSearch.EndOfSearchResultsEnd of search results
 B
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_NameZářivé dělo
 �
@@ -17815,6 +17879,8 @@ $Base.AllianceQuarterPanel.UpgradeTab	Vylepšit
 Base.Numbers.TimesCount{0}x
 M
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_NameKamenictví
+=
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_NameFontána
 �
@@ -17930,6 +17996,8 @@ a
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc$Zvýší zavlažení okolních budov
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_NameÚroveň 32
+2
+Base.RiftGroup.eventCity_NameEvent City Portal
 i
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc/Krčma vyrábí medovinu a tresky z medu a ryb.
 W

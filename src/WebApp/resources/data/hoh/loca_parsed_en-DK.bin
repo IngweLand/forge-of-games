@@ -421,6 +421,8 @@ B
 0Base.Buildings.Building_Mayas_Home_Priest_4_NameCraftsman Home
 I
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKEDSlot not yet unlocked
+>
+'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
 6
 #Base.NotEnoughPremiumPopup.HeadlineNot Enough Gems
 Å
@@ -598,6 +600,8 @@ Water Pump
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_DescîEvery <style=MC>Crate</style> also improves your <style=MC>Rank</style> in the <style=MC>Event Highscore</style>, and thus unlocking better <style=MC>Rewards</style> as you climb higher in the <style=MC>Leagues</style> by the Event's end.
 K
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameCeremonial Dress
+9
+'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
 D
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name
 Prosperity
@@ -736,6 +740,8 @@ c
 'Base.AlliancePanel.RejectInvitationDesc8Are you sure you want to reject {0}'s invitation to {1}?
 .
 !Base.InventoryMenuPanel.Fragments	Fragments
+I
+"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
 @
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_NameTavern
 i
@@ -1312,6 +1318,8 @@ G
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_Desc=I suppose that is our next task - to find out what we can do!
 &
 Base.Ages.RomanEmpire_Start50 B.C.
+c
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
 
 Base.Rarities.CommonCommon
 :
@@ -1534,6 +1542,8 @@ T
 5Base.Generic.CancelProductionFullStorageWarning_TitleStop production to continue
 `
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_NameImproved Heater Shield
+?
+"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 T
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameLuxurious fishing pier
 G
@@ -1698,6 +1708,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc„En
 'Base.RewardPanel.BuildingUnlocked_ShortBuilding
 H
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusHero health status
+‘
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Nameº<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
 ~
 1Base.AllianceChatNotifications.IncidentRunningOutITime is running out! Hurry up and solve the incident in the Alliance City
 @
@@ -2338,8 +2350,8 @@ M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_NameLevel 12
 ¥
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_NameÖ<style=ability_label>Control| Strike</style>Montezuma conjures thorned vines that ensnare the furthest enemy, dragging them into melee range and dealing <style=basestat>{dmg_percentage}</style>Â damage upon impact.
-ê
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Nameš<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an ability.
+ñ
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name¡<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
 8
 $Base.Resources.ceremonial_dress_NameCeremonial Dress
 5
@@ -3217,6 +3229,8 @@ h
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc-Produces Coins and adds a Worker to your city
 L
 &Base.RewardTypes.StorageCapReward_Desc"Increases your {0} storage by {1}!
+T
+!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
 H
 *Base.EquipmentToolTip.SubHeadlineArmamentsA random weapon or garment
 ú
@@ -3800,6 +3814,8 @@ G
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_NameRadiant Marauders
 H
 4Base.Abilities.hero_battle_ability.JuliusCaesar_NameVeni, Vidi, Vici
+‘
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 8
 "Base.Rifts.rift.SeasonPass_09_NameArcane Time Portal
 0
@@ -3918,6 +3934,8 @@ x
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_DescOThis Selection Kit lets you choose between Research Points and Alliance Points.
 G
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_NameMangudai's Helmet
+Y
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
 Ú
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name„<style=ability_label>Taunt | Shield | Area Strike</style>Philip II of Macedon gains a large shield worth <style=basestat>{shield_percentage}</style> of his base damage and taunts all enemy units for <style=basestat>{taunt_duration}</style>. After <style=basestat>{detonation_time}</style>, his shield detonates, dealing <style=basestat>{damage_percentage}</style> of the shield's remaining value as damage to all enemy units within a range of <style=basestat>{range}</style>. The detonation consumes Philip's shield.
 D
@@ -4065,12 +4083,16 @@ J
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_DescProduces Gold Ore
 (
 Base.UnlockableFeatures.RelicsRelics
+o
+*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	Geography
 T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameInfantry Barracks
 Y
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_DescUnlocks Minoan sling launchers
+N
+)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
 å
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name”<style=ability_label>Ranged Strike</style>Throws an axe at the enemy unit with the most HP, dealing <style=basestat>{dmg_percentage}</style> damage.
 =
@@ -4288,6 +4310,8 @@ Rural Farm
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc‡Full speed ahead - fuel your journey with extra stamina, victory tickets, and event currency to conquer challenges and rise to victory!
 
 Base.Generic.GoogleGoogle
+1
+"Tutorial.HeroMetaReportPopup.TitleMeta Report
 .
 !Base.RiftInfoPopup.DropChancesTab	Droprates
 A
@@ -4422,6 +4446,8 @@ a
 -Base.EquipmentSets.equipment_set.Bedouin_NameBedouin's Set
 g
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_NameLady Six Sky
+T
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
 w
 .Base.EquipmentSets.equipment_set.Assassin_DescESingle Target Ability Damage dealt <style=basestat_dark>+7.5%</style>
 P
@@ -6496,6 +6522,8 @@ J
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_NameKite Conductor
 «
 "Tutorial.BattleTutorial.UseAbility„Stand with me, and our foes will fall like wheat! Witness the indomitable strength of a <nobr><style=MC>SPARTAN KING</style>!</nobr>
+?
+&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_NameLevel 22
 K
@@ -8497,6 +8525,8 @@ k
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_NameAlliance Goods Selection Kit L
 /
 Base.SellBuildingPopup.HeaderSell Building?
+c
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
 K
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameRitual Carver
 o
@@ -8800,6 +8830,8 @@ E
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_NameCopis Warriors
 P
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>STOP!</style>
+B
+)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 1
 )Base.AllianceMembershipSettingsPopup.KickKick
 j
@@ -8903,6 +8935,8 @@ g
 Base.BattlePausePopup.RetreatRetreat
 ?
 $Base.Resources.hero.OdaNobunaga_NameEssence of Oda Nobunaga
+a
+ Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
 *
 "Base.CampaignPanel.difficulty.HardHard
 [
@@ -9460,6 +9494,8 @@ B
 1Base.InventoryCustomizationInfoPopup.BuffDurationBuff duration
 9
  Base.SeasonPass.SeasonEndedTitleThe Season has ended!
+h
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
 :
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 
@@ -10497,6 +10533,8 @@ O
 *Base.BuildingGroups.premiumIrrigation_NameLuxurious NoriaLuxurious Norias
 o
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_NameForgotten Shrines of Power
+K
+'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
 H
 3Base.Buildings.Building_Mayas_Aviary_Average_4_DescProduces Feathers
 ƒ
@@ -10778,6 +10816,8 @@ H
  Base.Units.Unit_Nostradamus_DescþUnlock the secrets of fate with Nostradamus, the legendary seer whose visions have echoed through the ages! Born in 1503, Michel de Nostredame became a physician renowned for his bravery during outbreaks of plague, but it was his mysterious prophecies that secured his lasting legacy. His book, Les ProphÃ©ties, delivered verses so cryptic that generations have puzzled over their true meaning, connecting them to events like devastating wars and the rise and fall of emperors.<br><br>Nostradamus' reputation reached the highest circles - he even read the fortunes of Catherine de' Medici, queen of France. Some say he gazed into a brass bowl, others into the stars, but his blend of astrology and poetic riddles continues to captivate both believers and doubters. Heroes whisper that he never leaves his scrying bowl unattended, and sometimes, late at night, his journal starts writing itself.
 A
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameWorker Home
+_
+%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
 5
 &Base.TreasureHuntStartedPopup.EndTimerEnds in {0}
 ®
@@ -12606,8 +12646,8 @@ n
 'Base.QuestlinesPanel.LevelUpAnyHeroTaskLevel up any <b>Hero</b>.(Level up <b>Heroes</b> <b>{0}</b> times.
 O
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_DescProduces Goblets
-î
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Nameœ<style=ability_label>Buff</style>Increases the holder's area effect damage by 10%. Each time the holder receives a heal or heals any allied unit, they deal an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+“
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_NameÁ<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
 G
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_NameDomestic Farm
 
@@ -13349,6 +13389,8 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name—<style
 $Base.Resources.hero.LeifErikson_NameEssence of Leif Erikson
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
+ç
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name™<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 o
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc8Produces a small amount of Food in short period of time.
 G
@@ -13610,6 +13652,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_
 'Base.ShopPopup.DailyDealAscensionHeaderAscension advance
 I
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameMedium Home
+K
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
 [
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Name
 Skull Home
@@ -14045,6 +14089,8 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc*He has s
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Nameƒ<style=ability_label>Burn</style>The flames of the torch increase burn damage dealt by the holder by <style=basestat>{burn_dmg_increase}</style>.
 Whenever the holder deals non-recurring damage to an enemy unit, they have a <style=basestat>{burn_chance}</style> chance to apply burn, dealing <style=basestat>{burn_dmg}</style> damage over <style=basestat>{burn_duration}</style> seconds.
 
+)
+Base.RiftGroup.common_NameTime Portal
 E
 4Base.Technologies.Technology_Mayas_StoneCarving_NameStone Carving
 _
@@ -15349,6 +15395,8 @@ JBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestStart_Text3_DescJPer
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff}m
 E
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_NameCarrucas
+B
+1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 J
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_Name
 Great Hall
@@ -15649,6 +15697,8 @@ O
 %Base.SeasonPass.SeasonalTaskCountdownNext Seasonal Task in
 G
 3Base.Buildings.Building_Mayas_Aviary_Premium_6_NameLuxurious Aviary
+'
+"Tutorial.HeroMetaReportPopup.TierSS
 œ
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text5_DescXThe twists and turns were worth it for this moment. Weâ€™re free now, like never before.
 7
@@ -15782,16 +15832,26 @@ E
 'Base.Expansions.Expansion_Egypt_12_NameNile Bridge
 L
 ;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameWater Cistern
+'
+"Tutorial.HeroMetaReportPopup.TierBB
+'
+"Tutorial.HeroMetaReportPopup.TierAA
 :
 'Base.ChangePasswordPopup.RepeatPasswordRepeat Password
 h
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc.Increases the irrigation of adjacent buildings
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 B
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameChannel
 i
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc-Produces Coins and adds a Worker to your city
 ¬
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassTextvTake part to earn exclusive rewards and get the epic Relic <nobr><style=epic>Scarab Beetle</style></nobr> immediately!
+'
+"Tutorial.HeroMetaReportPopup.TierDD
+'
+"Tutorial.HeroMetaReportPopup.TierCC
 >
 &Base.Units.Unit_PhilipIIOfMacedon_NamePhilip II of Macedon
 ä
@@ -16440,6 +16500,8 @@ q
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc7Produces a large amount of Food in long period of time.
 D
 5Base.Buildings.Building_FeudalAge_Home_Average_2_NameMedium Home
+4
+Base.RiftGroup.seasonPass_NameArcane Time Portal
 :
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix(Max)
 \
@@ -16781,6 +16843,8 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_NameLevel 18
 Ž
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescMSend off expedition ships which will gather either ceramic- or gold treasures
+=
+$Base.PlayerSearch.EndOfSearchResultsEnd of search results
 A
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_NameRadiant Cannon
 –
@@ -17920,6 +17984,8 @@ j
 Base.Numbers.TimesCount{0}x
 M
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_NameStone Mason
+=
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
 D
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_NameFountain
 —
@@ -18037,6 +18103,8 @@ k
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc.Increases the irrigation of adjacent buildings
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_NameLevel 32
+2
+Base.RiftGroup.eventCity_NameEvent City Portal
 w
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Desc=The Tavern produces Mead and Stockfish out of Honey and Fish.
 R
