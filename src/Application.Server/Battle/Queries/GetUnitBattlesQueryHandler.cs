@@ -58,6 +58,7 @@ public class GetUnitBattlesQueryHandler(
         CancellationToken cancellationToken)
     {
         var battles = await context.BattleUnits.AsNoTracking()
+            .Include(x => x.Battles).ThenInclude(x => x.Squads)
             .Where(bue => bue.UnitId == unitId)
             .SelectMany(bue => bue.Battles)
             .OrderByDescending(bse => bse.Id)
