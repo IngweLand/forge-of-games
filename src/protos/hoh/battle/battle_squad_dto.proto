@@ -22,6 +22,7 @@ message BattleUnitPropertiesDto {
   map<string, float> unit_stats_overrides = 5;
   repeated StatBoostDto stat_boosts = 6;
   int32 ability_level = 9;
+  int32 awakening_level = 10;
 }
 
 message BattleUnitStateDto {

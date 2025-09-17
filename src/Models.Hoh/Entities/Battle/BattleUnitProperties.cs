@@ -29,4 +29,7 @@ public class BattleUnitProperties : IBattleUnitProperties
     [ProtoMember(7)]
     public IReadOnlyDictionary<UnitStatType, float> UnitStatsOverrides { get; init; } =
         new Dictionary<UnitStatType, float>();
+
+    [ProtoMember(8)]
+    public int AwakeningLevel { get; init; }
 }

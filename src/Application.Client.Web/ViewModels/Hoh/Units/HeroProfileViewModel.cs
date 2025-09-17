@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 
@@ -7,6 +8,11 @@ public record HeroProfileViewModel
 {
     public required HeroAbilityViewModel Ability { get; init; }
     public required IReadOnlyCollection<int> AbilityLevels { get; init; }
+
+    public string? AwakeningLevel => Identifier.AwakeningLevel > 0
+        ? StringUtils.ToRomanNumeral(Identifier.AwakeningLevel)
+        : null;
+
     public required IReadOnlyCollection<int> AwakeningLevels { get; init; }
     public IReadOnlyCollection<BuildingLevelSpecs> BarracksLevels { get; init; } = [];
     public required IReadOnlyCollection<HeroLevelSpecs> HeroLevels { get; init; }

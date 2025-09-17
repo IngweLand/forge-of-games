@@ -161,6 +161,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
                 Level = squad.Hero.Level,
                 AscensionLevel = squad.Hero.AscensionLevel,
                 AbilityLevel = squad.Hero.AbilityLevel,
+                AwakeningLevel = squad.Hero.AwakeningLevel,
                 CollectedAt = collectedAt,
                 Hero = squad.Hero,
                 SupportUnit = squad.SupportUnit,

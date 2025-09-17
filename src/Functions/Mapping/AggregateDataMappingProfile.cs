@@ -170,6 +170,7 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.Level, opt => opt.MapFrom(src => src.Hero.Level))
             .ForMember(dest => dest.AscensionLevel, opt => opt.MapFrom(src => src.Hero.AscensionLevel))
             .ForMember(dest => dest.AbilityLevel, opt => opt.MapFrom(src => src.Hero.AbilityLevel))
+            .ForMember(dest => dest.AwakeningLevel, opt => opt.MapFrom(src => src.Hero.AwakeningLevel))
             .ForMember(dest => dest.Hero, opt => opt.MapFrom(src => src.Hero))
             .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(src => src.SupportUnit))
             .ForMember(dest => dest.Age, opt =>

@@ -14,6 +14,7 @@ public class ProfileSquadEntity
 
     private ProfileSquadKey? _key;
     public required int AbilityLevel { get; set; }
+    public required int AwakeningLevel { get; set; }
 
     public required string Age { get; set; }
     public required int AscensionLevel { get; set; }

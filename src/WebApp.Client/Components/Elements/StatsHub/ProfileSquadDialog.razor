@@ -1,10 +1,12 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Ingweland.Fog.Models.Fog.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
 @inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
 <MudDialog Gutters="false" ContentStyle="border-radius: 0; margin: 0" @onclick="Close">
     <DialogContent>
         <div class="main-container">
@@ -16,7 +18,16 @@
                     </div>
                 </div>
                 <div class="header-content">
-                    <div class="hero-name">@HeroProfile.Name</div>
+                    <div class="hero-name-container">
+                        <div class="hero-name">@HeroProfile.Name</div>
+                        @if (HeroProfile.AwakeningLevel != null)
+                        {
+                            <div class="hero-awakening-level-container">
+                                <img src="@AssetUrlProvider.GetHohIconUrl("common_awake_badge")"/>
+                                <span>@HeroProfile.AwakeningLevel</span>
+                            </div>
+                        }
+                    </div>
                     <div class="divider"></div>
                     <div class="hero-level">@($"{Loc[FogResource.Hoh_Lvl]} {HeroProfile.Level.Title}")</div>
                 </div>

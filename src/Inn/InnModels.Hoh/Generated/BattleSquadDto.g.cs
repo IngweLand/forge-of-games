@@ -29,24 +29,25 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "EhwKBGhlcm8YAiABKAsyDi5CYXR0bGVVbml0RHRvEhwKBHVuaXQYAyABKAsy",
             "Di5CYXR0bGVVbml0RHRvImYKDUJhdHRsZVVuaXREdG8SLAoKcHJvcGVydGll",
             "cxgBIAEoCzIYLkJhdHRsZVVuaXRQcm9wZXJ0aWVzRHRvEicKCnVuaXRfc3Rh",
-            "dGUYAiABKAsyEy5CYXR0bGVVbml0U3RhdGVEdG8iqwIKF0JhdHRsZVVuaXRQ",
+            "dGUYAiABKAsyEy5CYXR0bGVVbml0U3RhdGVEdG8ixAIKF0JhdHRsZVVuaXRQ",
             "cm9wZXJ0aWVzRHRvEg8KB3VuaXRfaWQYASABKAkSDQoFbGV2ZWwYAiABKAUS",
             "FwoPYXNjZW5zaW9uX2xldmVsGAMgASgFEhEKCWFiaWxpdGllcxgEIAMoCRJO",
             "ChR1bml0X3N0YXRzX292ZXJyaWRlcxgFIAMoCzIwLkJhdHRsZVVuaXRQcm9w",
             "ZXJ0aWVzRHRvLlVuaXRTdGF0c092ZXJyaWRlc0VudHJ5EiIKC3N0YXRfYm9v",
             "c3RzGAYgAygLMg0uU3RhdEJvb3N0RHRvEhUKDWFiaWxpdHlfbGV2ZWwYCSAB",
-            "KAUaOQoXVW5pdFN0YXRzT3ZlcnJpZGVzRW50cnkSCwoDa2V5GAEgASgJEg0K",
-            "BXZhbHVlGAIgASgCOgI4ASKUAQoSQmF0dGxlVW5pdFN0YXRlRHRvEhQKDGlu",
-            "X2JhdHRsZV9pZBgBIAEoBRI2Cgp1bml0X3N0YXRzGAIgAygLMiIuQmF0dGxl",
-            "VW5pdFN0YXRlRHRvLlVuaXRTdGF0c0VudHJ5GjAKDlVuaXRTdGF0c0VudHJ5",
-            "EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoAjoCOAFCH6oCHEluZ3dlbGFu",
-            "ZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "KAUSFwoPYXdha2VuaW5nX2xldmVsGAogASgFGjkKF1VuaXRTdGF0c092ZXJy",
+            "aWRlc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoAjoCOAEilAEK",
+            "EkJhdHRsZVVuaXRTdGF0ZUR0bxIUCgxpbl9iYXR0bGVfaWQYASABKAUSNgoK",
+            "dW5pdF9zdGF0cxgCIAMoCzIiLkJhdHRsZVVuaXRTdGF0ZUR0by5Vbml0U3Rh",
+            "dHNFbnRyeRowCg5Vbml0U3RhdHNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
+            "dWUYAiABKAI6AjgBQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9o",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser, new[]{ "BattlefieldSlot", "Hero", "Unit" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto.Parser, new[]{ "Properties", "UnitState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "UnitStatsOverrides", "StatBoosts", "AbilityLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "UnitStatsOverrides", "StatBoosts", "AbilityLevel", "AwakeningLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto.Parser, new[]{ "InBattleId", "UnitStats" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
@@ -623,6 +624,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       unitStatsOverrides_ = other.unitStatsOverrides_.Clone();
       statBoosts_ = other.statBoosts_.Clone();
       abilityLevel_ = other.abilityLevel_;
+      awakeningLevel_ = other.awakeningLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -713,6 +715,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "awakening_level" field.</summary>
+    public const int AwakeningLevelFieldNumber = 10;
+    private int awakeningLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AwakeningLevel {
+      get { return awakeningLevel_; }
+      set {
+        awakeningLevel_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -735,6 +749,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (!UnitStatsOverrides.Equals(other.UnitStatsOverrides)) return false;
       if(!statBoosts_.Equals(other.statBoosts_)) return false;
       if (AbilityLevel != other.AbilityLevel) return false;
+      if (AwakeningLevel != other.AwakeningLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -749,6 +764,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       hash ^= UnitStatsOverrides.GetHashCode();
       hash ^= statBoosts_.GetHashCode();
       if (AbilityLevel != 0) hash ^= AbilityLevel.GetHashCode();
+      if (AwakeningLevel != 0) hash ^= AwakeningLevel.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -786,6 +802,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(72);
         output.WriteInt32(AbilityLevel);
       }
+      if (AwakeningLevel != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(AwakeningLevel);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -815,6 +835,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(72);
         output.WriteInt32(AbilityLevel);
       }
+      if (AwakeningLevel != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(AwakeningLevel);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -839,6 +863,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       size += statBoosts_.CalculateSize(_repeated_statBoosts_codec);
       if (AbilityLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AbilityLevel);
+      }
+      if (AwakeningLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AwakeningLevel);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -866,6 +893,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       statBoosts_.Add(other.statBoosts_);
       if (other.AbilityLevel != 0) {
         AbilityLevel = other.AbilityLevel;
+      }
+      if (other.AwakeningLevel != 0) {
+        AwakeningLevel = other.AwakeningLevel;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -910,6 +940,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             AbilityLevel = input.ReadInt32();
             break;
           }
+          case 80: {
+            AwakeningLevel = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -951,6 +985,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 72: {
             AbilityLevel = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            AwakeningLevel = input.ReadInt32();
             break;
           }
         }

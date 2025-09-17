@@ -12,6 +12,23 @@ public static class StringUtils
     private const string SPECIAL_CHARACTERS = "!@#$%^&*()_+-=[]{}|;:,.<>?";
     private const string UPPERCASE_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    private static readonly RomanNumeral[] Numerals =
+    [
+        new(1000, "M"),
+        new(900, "CM"),
+        new(500, "D"),
+        new(400, "CD"),
+        new(100, "C"),
+        new(90, "XC"),
+        new(50, "L"),
+        new(40, "XL"),
+        new(10, "X"),
+        new(9, "IX"),
+        new(5, "V"),
+        new(4, "IV"),
+        new(1, "I"),
+    ];
+
     public static string GenerateComplexPassword(int length = 12)
     {
         var password = new StringBuilder();
@@ -46,5 +63,32 @@ public static class StringUtils
             input.Split([' '], StringSplitOptions.RemoveEmptyEntries)
                 .Select(word => word[0])
                 .Select(char.ToUpper));
+    }
+
+    public static string ToRomanNumeral(int number)
+    {
+        if (number is <= 0 or > 3999)
+        {
+            throw new ArgumentOutOfRangeException(nameof(number), "Value must be in the range 1 - 3999");
+        }
+
+        var result = string.Empty;
+
+        foreach (var n in Numerals)
+        {
+            while (number >= n.Value)
+            {
+                result += n.Symbol;
+                number -= n.Value;
+            }
+        }
+
+        return result;
+    }
+
+    private readonly struct RomanNumeral(int value, string symbol)
+    {
+        public int Value { get; } = value;
+        public string Symbol { get; } = symbol;
     }
 }

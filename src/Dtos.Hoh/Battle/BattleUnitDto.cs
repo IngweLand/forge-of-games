@@ -10,6 +10,7 @@ public record BattleUnitDto : IBattleUnitProperties
         new Dictionary<UnitStatType, float>();
 
     public int? UnitInBattleId { get; init; }
+    public int AwakeningLevel { get; init; }
 
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();
 
@@ -40,12 +41,13 @@ public record BattleUnitDto : IBattleUnitProperties
 
         return AbilityLevel == other.AbilityLevel &&
             AscensionLevel == other.AscensionLevel &&
+            AwakeningLevel == other.AwakeningLevel &&
             Level == other.Level &&
             UnitId == other.UnitId;
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(AbilityLevel, AscensionLevel, Level, UnitId);
+        return HashCode.Combine(AbilityLevel, AwakeningLevel, AscensionLevel, Level, UnitId);
     }
 }

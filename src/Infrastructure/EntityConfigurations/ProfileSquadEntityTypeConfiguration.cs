@@ -19,6 +19,7 @@ public class ProfileSquadEntityTypeConfiguration : IEntityTypeConfiguration<Prof
         builder.Property(p => p.UnitId).IsRequired();
         builder.Property(p => p.AbilityLevel).IsRequired();
         builder.Property(p => p.AscensionLevel).IsRequired();
+        builder.Property(p => p.AwakeningLevel).IsRequired();
         builder.Property(p => p.Level).IsRequired();
         builder.Property(p => p.SerializedHero).IsRequired();
         builder.Property(p => p.SerializedSupportUnit).IsRequired();
@@ -30,6 +31,7 @@ public class ProfileSquadEntityTypeConfiguration : IEntityTypeConfiguration<Prof
         builder.HasIndex(p => p.Level);
         builder.HasIndex(p => p.AbilityLevel);
         builder.HasIndex(p => p.AscensionLevel);
+        builder.HasIndex(p => p.AwakeningLevel);
         builder.HasIndex(p => p.CollectedAt).IsDescending();
         builder.HasIndex(p => new {p.PlayerId, p.UnitId, p.CollectedAt}).IsUnique();
     }

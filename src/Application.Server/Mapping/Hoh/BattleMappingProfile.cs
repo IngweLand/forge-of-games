@@ -21,6 +21,7 @@ public class BattleMappingProfile : Profile
             .ForMember(dest => dest.Abilities, opt => opt.MapFrom(x => x.Properties.Abilities))
             .ForMember(dest => dest.AscensionLevel, opt => opt.MapFrom(x => x.Properties.AscensionLevel))
             .ForMember(dest => dest.Level, opt => opt.MapFrom(x => x.Properties.Level))
+            .ForMember(dest => dest.AwakeningLevel, opt => opt.MapFrom(x => x.Properties.AwakeningLevel))
             .ForMember(dest => dest.StatBoosts, opt => opt.MapFrom(x => x.Properties.StatBoosts))
             .ForMember(dest => dest.UnitStatsOverrides, opt => opt.MapFrom(x => x.Properties.UnitStatsOverrides))
             .ForMember(dest => dest.FinalState, opt =>

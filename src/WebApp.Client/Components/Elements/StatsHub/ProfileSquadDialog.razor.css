@@ -44,16 +44,42 @@
     font-weight: 700;
 }
 
+.hero-name-container{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .hero-level{
     font-weight: 200;
     font-size: 12px;
+}
+
+.hero-awakening-level-container {
+    position: relative;
+    display: inline-block;
+    height: 24px;
+}
+
+.hero-awakening-level-container img {
+    height: 100%;
+    display: block;
+}
+
+.hero-awakening-level-container span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: var(--fog-text-on-dark-color);
+    text-align: center;
 }
 
 .header-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 4px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -196,10 +222,6 @@ tbody tr:nth-child(even) {
         font-size: 16px;
     }
 
-    .header-content {
-        padding-top: 6px;
-    }
-
     .ability-container {
         gap: 12px;
         font-size: 14px;
@@ -218,6 +240,14 @@ tbody tr:nth-child(even) {
     .support-unit-container {
         gap: 12px;
         padding: 12px;
+        font-size: 14px;
+    }
+
+    .hero-awakening-level-container {
+        height: 30px;
+    }
+
+    .hero-awakening-level-container span {
         font-size: 14px;
     }
 }
