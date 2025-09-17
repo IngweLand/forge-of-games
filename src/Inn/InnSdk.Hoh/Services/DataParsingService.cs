@@ -1,5 +1,6 @@
 using AutoMapper;
 using FluentResults;
+using Google.Protobuf;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Inn.Models.Hoh.Errors;
 using Ingweland.Fog.Inn.Models.Hoh.Extensions;
@@ -34,8 +35,7 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
 
     public Result<IReadOnlyCollection<AllianceSearchResult>> ParseSearchAllianceResponse(byte[] data)
     {
-        return ParseCommunicationDto(data)
-            .Bind(container => container.PackedMessages.FindAndUnpackToResult<SearchAllianceResponse>())
+        return ParseCommunicationDto<SearchAllianceResponse>(data)
             .Bind(dto =>
             {
                 return Result.Try(() => mapper.Map<IReadOnlyCollection<AllianceSearchResult>>(dto.Alliances),
@@ -60,8 +60,7 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
 
     public Result<PlayerProfile> ParsePlayerProfile(byte[] data)
     {
-        return ParseCommunicationDto(data)
-            .Bind(container => container.PackedMessages.FindAndUnpackToResult<PlayerProfileResponse>())
+        return ParseCommunicationDto<PlayerProfileResponse>(data)
             .Bind(dto =>
             {
                 return Result.Try(() => mapper.Map<PlayerProfile>(dto),
@@ -251,8 +250,7 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
 
     public Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data)
     {
-        return ParseCommunicationDto(data)
-            .Bind(container => container.PackedMessages.FindAndUnpackToResult<AllianceMembersResponse>())
+        return ParseCommunicationDto<AllianceMembersResponse>(data)
             .Bind(dto =>
             {
                 return Result.Try(() => mapper.Map<AllianceWithMembers>(dto),
@@ -262,10 +260,22 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             });
     }
 
-    private static Result<CommunicationDto> ParseCommunicationDto(byte[] data)
+    private static Result<T> ParseCommunicationDto<T>(byte[] data) where T : IMessage<T>, new()
     {
-        return Result.Try(() => CommunicationDto.Parser.ParseFrom(data),
+        var communicationDto = Result.Try(() => CommunicationDto.Parser.ParseFrom(data),
             e => new HohProtobufParsingError(ProtobufParsingStage.BinaryDeserialization, nameof(CommunicationDto), e));
+        if (communicationDto.IsFailed)
+        {
+            return communicationDto.ToResult<T>();
+        }
+        
+        var unpackResult = communicationDto.Value.PackedMessages.FindAndUnpackToResult<T>();
+        if (unpackResult.HasError<HohInvalidCardinalityError>())
+        {
+            unpackResult = communicationDto.Value.PackedMessages7.FindAndUnpackToResult<T>();
+        }
+
+        return unpackResult;
     }
 
     private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)

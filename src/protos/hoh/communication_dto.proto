@@ -4,4 +4,5 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message CommunicationDto {
   repeated google.protobuf.Any packed_messages = 1;
+  repeated google.protobuf.Any packed_messages_7 = 7;
 }

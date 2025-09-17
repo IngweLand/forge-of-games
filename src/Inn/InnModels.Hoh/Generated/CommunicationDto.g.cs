@@ -25,13 +25,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chdjb21tdW5pY2F0aW9uX2R0by5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2Fu",
-            "eS5wcm90byJBChBDb21tdW5pY2F0aW9uRHRvEi0KD3BhY2tlZF9tZXNzYWdl",
-            "cxgBIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCH6oCHEluZ3dlbGFuZC5G",
-            "b2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "eS5wcm90byJyChBDb21tdW5pY2F0aW9uRHRvEi0KD3BhY2tlZF9tZXNzYWdl",
+            "cxgBIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSLwoRcGFja2VkX21lc3Nh",
+            "Z2VzXzcYByADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Qh+qAhxJbmd3ZWxh",
+            "bmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto), global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto.Parser, new[]{ "PackedMessages" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto), global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto.Parser, new[]{ "PackedMessages", "PackedMessages7" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +75,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommunicationDto(CommunicationDto other) : this() {
       packedMessages_ = other.packedMessages_.Clone();
+      packedMessages7_ = other.packedMessages7_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -94,6 +96,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return packedMessages_; }
     }
 
+    /// <summary>Field number for the "packed_messages_7" field.</summary>
+    public const int PackedMessages7FieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_packedMessages7_codec
+        = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.WellKnownTypes.Any.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> packedMessages7_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> PackedMessages7 {
+      get { return packedMessages7_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -110,6 +123,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return true;
       }
       if(!packedMessages_.Equals(other.packedMessages_)) return false;
+      if(!packedMessages7_.Equals(other.packedMessages7_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -118,6 +132,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= packedMessages_.GetHashCode();
+      hash ^= packedMessages7_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -137,6 +152,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       output.WriteRawMessage(this);
     #else
       packedMessages_.WriteTo(output, _repeated_packedMessages_codec);
+      packedMessages7_.WriteTo(output, _repeated_packedMessages7_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -148,6 +164,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       packedMessages_.WriteTo(ref output, _repeated_packedMessages_codec);
+      packedMessages7_.WriteTo(ref output, _repeated_packedMessages7_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -159,6 +176,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public int CalculateSize() {
       int size = 0;
       size += packedMessages_.CalculateSize(_repeated_packedMessages_codec);
+      size += packedMessages7_.CalculateSize(_repeated_packedMessages7_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -172,6 +190,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return;
       }
       packedMessages_.Add(other.packedMessages_);
+      packedMessages7_.Add(other.packedMessages7_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -191,6 +210,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             packedMessages_.AddEntriesFrom(input, _repeated_packedMessages_codec);
             break;
           }
+          case 58: {
+            packedMessages7_.AddEntriesFrom(input, _repeated_packedMessages7_codec);
+            break;
+          }
         }
       }
     #endif
@@ -208,6 +231,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           case 10: {
             packedMessages_.AddEntriesFrom(ref input, _repeated_packedMessages_codec);
+            break;
+          }
+          case 58: {
+            packedMessages7_.AddEntriesFrom(ref input, _repeated_packedMessages7_codec);
             break;
           }
         }
