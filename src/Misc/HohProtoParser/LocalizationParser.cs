@@ -29,8 +29,8 @@ public class LocalizationParser(IMapper mapper, IProtobufSerializer protobufSeri
             try
             {
                 using var localizationFile = File.OpenRead(filePath);
-                var localizationContainer = LocaResponseContainer.Parser.ParseFrom(localizationFile);
-                var data = mapper.Map<LocalizationData>(localizationContainer.Data);
+                var localizationContainer = CommunicationDto.Parser.ParseFrom(localizationFile);
+                var data = mapper.Map<LocalizationData>(localizationContainer.LocaResponse);
                 var filteredData = new LocalizationData()
                 {
                     Entries = data.Entries,

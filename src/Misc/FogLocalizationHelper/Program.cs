@@ -65,7 +65,7 @@ foreach (var localeCode in HohSupportedCultures.AllCultures)
     var filePath = GetInputFilePath(localeCode);
 
     using var localizationFile = File.OpenRead(filePath);
-    var data = LocaResponseContainer.Parser.ParseFrom(localizationFile).Data.Entries
+    var data = CommunicationDto.Parser.ParseFrom(localizationFile).LocaResponse.Entries
         .ToDictionary(entry => entry.Key, entry => entry.Values);
 
     var translations = searchKeys.Select(searchKey => new Translations {Key = searchKey, Strings = data[searchKey]})

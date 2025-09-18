@@ -1,3 +1,4 @@
+using FluentResults;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Constants;
@@ -42,10 +43,10 @@ public class StaticDataService(
         return apiClient.SendForProtobufAsync(world, GameEndpoints.StartupPath, []);
     }
 
-    public async Task<StartupDto> GetStartupDataAsync(GameWorldConfig world)
+    public async Task<Result<CommunicationDto>> GetStartupDataAsync(GameWorldConfig world)
     {
         var data = await GetStartupRawDataAsync(world);
-        return dataParsingService.ParseStartupData(data);
+        return dataParsingService.ParseCommunicationDto(data);
     }
     
     public Task<string> GetStartupJsonAsync(GameWorldConfig world)

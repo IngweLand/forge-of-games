@@ -1,3 +1,4 @@
+using FluentResults;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 
@@ -9,7 +10,7 @@ public interface IStaticDataService
     Task<byte[]> GetGameDesignProtobufAsync(GameWorldConfig world);
     Task<string> GetLocalizationJsonAsync(GameWorldConfig world, string locale);
     Task<byte[]> GetLocalizationProtobufAsync(GameWorldConfig world, string locale);
-    Task<StartupDto> GetStartupDataAsync(GameWorldConfig world);
+    Task<Result<CommunicationDto>> GetStartupDataAsync(GameWorldConfig world);
     Task<byte[]> GetStartupRawDataAsync(GameWorldConfig world);
     Task<string> GetStartupJsonAsync(GameWorldConfig world);
 }

@@ -15,5 +15,5 @@ public class Wakeup
     public required IReadOnlyCollection<HeroTreasureHuntPlayerPoints> AthPlayerRankings { get; init; } =
         Array.Empty<HeroTreasureHuntPlayerPoints>();
 
-    public Leaderboard? Leaderboard { get; init; }
+    public IReadOnlyCollection<Leaderboard> Leaderboards { get; init; } = [];
 }

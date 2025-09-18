@@ -86,20 +86,10 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         return mapper.Map<AllianceRanks>(ranksDto);
     }
 
-    public StartupDto ParseStartupData(byte[] data)
+    public Result<CommunicationDto> ParseCommunicationDto(byte[] data)
     {
-        StartupDto startupDto;
-        try
-        {
-            startupDto = StartupDto.Parser.ParseFrom(data);
-        }
-        catch (Exception ex)
-        {
-            const string msg = "Failed to parse startup data";
-            throw new InvalidOperationException(msg, ex);
-        }
-
-        return startupDto;
+        return Result.Try(() => CommunicationDto.Parser.ParseFrom(data),
+            e => new HohProtobufParsingError(ProtobufParsingStage.BinaryDeserialization, nameof(CommunicationDto), e));
     }
 
     public BattleSummary ParseBattleStart(byte[] data)
@@ -268,11 +258,11 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         {
             return communicationDto.ToResult<T>();
         }
-        
+
         var unpackResult = communicationDto.Value.PackedMessages.FindAndUnpackToResult<T>();
         if (unpackResult.HasError<HohInvalidCardinalityError>())
         {
-            unpackResult = communicationDto.Value.PackedMessages7.FindAndUnpackToResult<T>();
+            unpackResult = communicationDto.Value.Response.FindAndUnpackToResult<T>();
         }
 
         return unpackResult;

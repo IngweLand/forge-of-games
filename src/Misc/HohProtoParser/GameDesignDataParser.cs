@@ -37,14 +37,14 @@ public class GameDesignDataParser(
         logger.LogInformation("Starting parsing game design data.");
 
         using var gdrFile = File.OpenRead(Path.Combine(downloadResult.Directory, downloadResult.GamedesignFileName));
-        var gdrContainer = GameDesignResponseDtoContainer.Parser.ParseFrom(gdrFile);
-        var gdr = GameDesignResponseDTO.Parser.ParseFrom(gdrContainer.Content.Value);
+        var communicationDto = CommunicationDto.Parser.ParseFrom(gdrFile);
+        var gdr = communicationDto.GameDesignResponse;
         
-        var startups = new List<StartupDto>();
+        var startups = new List<CommunicationDto>();
         foreach (var startupFileName in downloadResult.StartupFileNames)
         {
             using var startupFile = File.OpenRead(Path.Combine(downloadResult.Directory, startupFileName));
-            startups.AddRange(StartupDto.Parser.ParseFrom(startupFile));
+            startups.AddRange(CommunicationDto.Parser.ParseFrom(startupFile));
         }
         
         var data = Parse(gdr, startups);
@@ -59,7 +59,7 @@ public class GameDesignDataParser(
         logger.LogInformation("Completed parsing game design data.");
     }
 
-    private static IList<BuildingCustomization> BuildingCustomizations(IMapper mapper, GameDesignResponseDTO gdr,
+    private static IList<BuildingCustomization> BuildingCustomizations(IMapper mapper, GameDesignResponse gdr,
         IDictionary<string, Age> ages,
         IDictionary<string, Unit> units)
     {
@@ -75,7 +75,7 @@ public class GameDesignDataParser(
         });
     }
 
-    private static IList<Building> CreateBuildings(IMapper mapper, GameDesignResponseDTO gdr,
+    private static IList<Building> CreateBuildings(IMapper mapper, GameDesignResponse gdr,
         IDictionary<string, Age> ages,
         IDictionary<string, Unit> units)
     {
@@ -109,7 +109,7 @@ public class GameDesignDataParser(
         return buildings;
     }
 
-    private static IList<CityDefinition> CreateCities(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<CityDefinition> CreateCities(IMapper mapper, GameDesignResponse gdr)
     {
         return mapper.Map<IList<CityDefinition>>(gdr.CityDefinitions, opt =>
         {
@@ -121,30 +121,30 @@ public class GameDesignDataParser(
         });
     }
 
-    private static IList<Expansion> CreateExpansions(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<Expansion> CreateExpansions(IMapper mapper, GameDesignResponse gdr)
     {
         return mapper.Map<IList<Expansion>>(gdr.ExpansionDefinitions);
     }
 
-    private static IList<BattleAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<BattleAbility> CreateHeroAbilities(IMapper mapper, GameDesignResponse gdr)
     {
         return mapper.Map<IList<BattleAbility>>(gdr.BattleAbilityDefinitions);
     }
 
     private static IList<HeroBattleAbilityComponent> CreateHeroAbilityComponents(IMapper mapper,
-        GameDesignResponseDTO gdr)
+        GameDesignResponse gdr)
     {
         return mapper.Map<IList<HeroBattleAbilityComponent>>(gdr.HeroBattleAbilityComponents);
     }
 
     private static IList<HeroAwakeningComponent> CreateHeroAwakeningComponents(IMapper mapper,
-        GameDesignResponseDTO gdr)
+        GameDesignResponse gdr)
     {
         return mapper.Map<IList<HeroAwakeningComponent>>(gdr.HeroAwakeningComponents);
     }
 
-    private static IList<Technology> CreateTechnologies(IMapper mapper, GameDesignResponseDTO gdr,
-        List<StartupDto> startups,
+    private static IList<Technology> CreateTechnologies(IMapper mapper, GameDesignResponse gdr,
+        List<CommunicationDto> startups,
         IDictionary<string, Age> ages)
     {
         var startupTechnologies =
@@ -157,7 +157,7 @@ public class GameDesignDataParser(
             opt => { opt.Items.Add(ContextKeys.AGES, ages); });
     }
 
-    private static List<TreasureHuntDifficultyData> CreateTreasureHuntBattles(IMapper mapper, GameDesignResponseDTO gdr,
+    private static List<TreasureHuntDifficultyData> CreateTreasureHuntBattles(IMapper mapper, GameDesignResponse gdr,
         IDictionary<string, Unit> units)
     {
         var treasureHuntBattleDefinitions = gdr.HeroBattleDefinitions
@@ -214,7 +214,7 @@ public class GameDesignDataParser(
         return difficulties;
     }
 
-    private static IList<Wonder> CreateWonders(IMapper mapper, GameDesignResponseDTO gdr)
+    private static IList<Wonder> CreateWonders(IMapper mapper, GameDesignResponse gdr)
     {
         return mapper.Map<IList<Wonder>>(gdr.ReworkedWonderDefinitions, opt =>
         {
@@ -226,7 +226,7 @@ public class GameDesignDataParser(
         });
     }
 
-    private static IList<World> CreateWorlds(IMapper mapper, GameDesignResponseDTO gdr, IDictionary<string, Age> ages,
+    private static IList<World> CreateWorlds(IMapper mapper, GameDesignResponse gdr, IDictionary<string, Age> ages,
         IDictionary<string, Unit> units)
     {
         var encounters =
@@ -252,7 +252,7 @@ public class GameDesignDataParser(
             opt => { opt.Items.Add(ContextKeys.CONTINENTS, continents); });
     }
 
-    private Data Parse(GameDesignResponseDTO gdr, List<StartupDto> startups)
+    private Data Parse(GameDesignResponse gdr, List<CommunicationDto> startups)
     {
         var ages = mapper.Map<IList<Age>>(gdr.AgeDefinitions).ToDictionary(a => a.Id);
         var resources = mapper

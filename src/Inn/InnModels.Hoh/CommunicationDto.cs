@@ -17,7 +17,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<AllianceMembersResponse>();
+            return RootContext.Messages.FindAndUnpack<AllianceMembersResponse>();
         }
     }
 
@@ -25,16 +25,13 @@ public sealed partial class CommunicationDto
     {
         get
         {
-            try
+            var items = PackedMessages.FindAndUnpackToList<AlliancePush>();
+            if (items.Count == 0)
             {
-                return PackedMessages.FindAndUnpackToList<AlliancePush>().FirstOrDefault();
-            }
-            catch
-            {
-                // ignore
+                items = RootContext.Messages.FindAndUnpackToList<AlliancePush>();
             }
 
-            return PackedMessages7.FindAndUnpackToList<AlliancePush>().FirstOrDefault();
+            return items.FirstOrDefault();
         }
     }
 
@@ -51,7 +48,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<AllianceRanksDTO>();
+            return Response.FindAndUnpack<AllianceRanksDTO>();
         }
     }
 
@@ -68,7 +65,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<HeroBattleStatsResponse>();
+            return Response.FindAndUnpack<HeroBattleStatsResponse>();
         }
     }
 
@@ -85,7 +82,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<HeroFinishWaveResponse>();
+            return Response.FindAndUnpack<HeroFinishWaveResponse>();
         }
     }
 
@@ -102,7 +99,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<HeroStartBattleResponse>();
+            return Response.FindAndUnpack<HeroStartBattleResponse>();
         }
     }
 
@@ -110,16 +107,13 @@ public sealed partial class CommunicationDto
     {
         get
         {
-            try
+            var items = PackedMessages.FindAndUnpackToList<HeroTreasureHuntAlliancePointsPush>();
+            if (items.Count == 0)
             {
-                return PackedMessages.FindAndUnpackToList<HeroTreasureHuntAlliancePointsPush>();
-            }
-            catch
-            {
-                // ignore
+                items = RootContext.Messages.FindAndUnpackToList<HeroTreasureHuntAlliancePointsPush>();
             }
 
-            return PackedMessages7.FindAndUnpackToList<HeroTreasureHuntAlliancePointsPush>();
+            return items;
         }
     }
 
@@ -127,33 +121,27 @@ public sealed partial class CommunicationDto
     {
         get
         {
-            try
+            var items = PackedMessages.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();
+            if (items.Count == 0)
             {
-                return PackedMessages.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();
-            }
-            catch
-            {
-                // ignore
+                items = RootContext.Messages.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();
             }
 
-            return PackedMessages7.FindAndUnpackToList<HeroTreasureHuntPlayerPointsPush>();
+            return items;
         }
     }
 
-    public LeaderboardPush? LeaderboardPush
+    public IList<LeaderboardPush> Leaderboards
     {
         get
         {
-            try
+            var items = PackedMessages.FindAndUnpackToList<LeaderboardPush>();
+            if (items.Count == 0)
             {
-                return PackedMessages.FindAndUnpackToList<LeaderboardPush>().FirstOrDefault();
-            }
-            catch
-            {
-                // ignore
+                items = RootContext.Messages.FindAndUnpackToList<LeaderboardPush>();
             }
 
-            return PackedMessages7.FindAndUnpackToList<LeaderboardPush>().FirstOrDefault();
+            return items;
         }
     }
 
@@ -170,7 +158,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<OtherCityDTO>();
+            return Response.FindAndUnpack<OtherCityDTO>();
         }
     }
 
@@ -187,7 +175,7 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<PlayerRanksDTO>();
+            return Response.FindAndUnpack<PlayerRanksDTO>();
         }
     }
 
@@ -204,7 +192,110 @@ public sealed partial class CommunicationDto
                 // ignore
             }
 
-            return PackedMessages7.FindAndUnpack<PvpGetRankingResponse>();
+            return Response.FindAndUnpack<PvpGetRankingResponse>();
         }
     }
+    
+    public IList<CityDTO> Cities
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<CityDTO>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<CityDTO>();
+            }
+
+            return items;
+        }
+    }
+
+    public EquipmentPush? Equipment
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<EquipmentPush>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<EquipmentPush>();
+            }
+
+            return items.FirstOrDefault();
+        }
+    }
+
+    public HeroPush HeroPush
+    {
+        get
+        {
+            try
+            {
+                return PackedMessages.FindAndUnpack<HeroPush>();
+            }
+            catch
+            {
+                // ignore
+            }
+
+            return RootContext.Messages.FindAndUnpack<HeroPush>();
+        }
+    }
+
+    public IList<InGameEventDto> InGameEvents
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<InGameEventPush>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<InGameEventPush>();
+            }
+
+            return items.FirstOrDefault()?.Events ?? [];
+        }
+    }
+
+    public RelicPush? RelicPush
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<RelicPush>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<RelicPush>();
+            }
+
+            return items.FirstOrDefault();
+        }
+    }
+
+    public ResearchStateDTO? ResearchState
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<ResearchStateDTO>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<ResearchStateDTO>();
+            }
+
+            return items.FirstOrDefault();
+        }
+    }
+
+    public ReworkedWondersDTO? Wonders
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<ReworkedWondersDTO>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<ReworkedWondersDTO>();
+            }
+
+            return items.FirstOrDefault();
+        }
+    }
+    public LocaResponse LocaResponse => Response.FindAndUnpack<LocaResponse>();
+    public GameDesignResponse GameDesignResponse => Response.FindAndUnpack<GameDesignResponse>();
 }

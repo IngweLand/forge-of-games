@@ -15,8 +15,8 @@ public class DebugParser
     {
         _mapper = mapper;
         using var file = File.OpenRead(filepath);
-        var container = GameDesignResponseDtoContainer.Parser.ParseFrom(file);
-        var gdr = GameDesignResponseDTO.Parser.ParseFrom(container.Content.Value);
+        var container = CommunicationDto.Parser.ParseFrom(file);
+        var gdr = container.GameDesignResponse;
         PrintProperty(gdr.BuildingDefinitions, dto => dto.Type, "building_types.txt");
         PrintProperty(gdr.BuildingDefinitions, dto => dto.Subtype, "building_subtypes.txt");
         PrintProperty(gdr.ResourceDefinitions, dto => dto.Type, "resource_types.txt");
@@ -218,7 +218,7 @@ public class DebugParser
     {
         const string startupBin = @"D:\IngweLand\Projects\forge-of-games\resources\hoh\data\startup_10.01.25.bin";
         using var file = File.OpenRead(startupBin);
-        var container = StartupDto.Parser.ParseFrom(file);
+        var container = CommunicationDto.Parser.ParseFrom(file);
         var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile<StartupProfile>(); });
         var cities = _mapper.Map<IList<City>>(container.Cities);
     }

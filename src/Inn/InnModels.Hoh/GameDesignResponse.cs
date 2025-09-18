@@ -2,7 +2,7 @@ using Ingweland.Fog.Inn.Models.Hoh.Extensions;
 
 namespace Ingweland.Fog.Inn.Models.Hoh;
 
-public sealed partial class GameDesignResponseDTO
+public sealed partial class GameDesignResponse
 {
     public IList<CityDefinitionDTO> CityDefinitions => Items.FindAndUnpackToList<CityDefinitionDTO>();
     public IList<BuildingCustomizationDefinitionDTO> BuildingCustomizationDefinitions => Items.FindAndUnpackToList<BuildingCustomizationDefinitionDTO>();

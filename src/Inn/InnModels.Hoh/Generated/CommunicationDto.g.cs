@@ -25,14 +25,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chdjb21tdW5pY2F0aW9uX2R0by5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2Fu",
-            "eS5wcm90byJyChBDb21tdW5pY2F0aW9uRHRvEi0KD3BhY2tlZF9tZXNzYWdl",
-            "cxgBIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSLwoRcGFja2VkX21lc3Nh",
-            "Z2VzXzcYByADKAsyFC5nb29nbGUucHJvdG9idWYuQW55Qh+qAhxJbmd3ZWxh",
-            "bmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "eS5wcm90byKdAQoQQ29tbXVuaWNhdGlvbkR0bxItCg9wYWNrZWRfbWVzc2Fn",
+            "ZXMYASADKAsyFC5nb29nbGUucHJvdG9idWYuQW55EiYKCHJlc3BvbnNlGAcg",
+            "AygLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRIyCgxyb290X2NvbnRleHQYCCAB",
+            "KAsyHC5Db21tdW5pY2F0aW9uUm9vdENvbnRleHREdG8iRQobQ29tbXVuaWNh",
+            "dGlvblJvb3RDb250ZXh0RHRvEiYKCG1lc3NhZ2VzGAIgAygLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhv",
+            "aGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto), global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto.Parser, new[]{ "PackedMessages", "PackedMessages7" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto), global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDto.Parser, new[]{ "PackedMessages", "Response", "RootContext" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto), global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto.Parser, new[]{ "Messages" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +79,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CommunicationDto(CommunicationDto other) : this() {
       packedMessages_ = other.packedMessages_.Clone();
-      packedMessages7_ = other.packedMessages7_.Clone();
+      response_ = other.response_.Clone();
+      rootContext_ = other.rootContext_ != null ? other.rootContext_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -96,15 +101,27 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return packedMessages_; }
     }
 
-    /// <summary>Field number for the "packed_messages_7" field.</summary>
-    public const int PackedMessages7FieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_packedMessages7_codec
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_response_codec
         = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.WellKnownTypes.Any.Parser);
-    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> packedMessages7_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> response_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> PackedMessages7 {
-      get { return packedMessages7_; }
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Response {
+      get { return response_; }
+    }
+
+    /// <summary>Field number for the "root_context" field.</summary>
+    public const int RootContextFieldNumber = 8;
+    private global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto rootContext_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto RootContext {
+      get { return rootContext_; }
+      set {
+        rootContext_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -123,7 +140,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return true;
       }
       if(!packedMessages_.Equals(other.packedMessages_)) return false;
-      if(!packedMessages7_.Equals(other.packedMessages7_)) return false;
+      if(!response_.Equals(other.response_)) return false;
+      if (!object.Equals(RootContext, other.RootContext)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -132,7 +150,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= packedMessages_.GetHashCode();
-      hash ^= packedMessages7_.GetHashCode();
+      hash ^= response_.GetHashCode();
+      if (rootContext_ != null) hash ^= RootContext.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -152,7 +171,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       output.WriteRawMessage(this);
     #else
       packedMessages_.WriteTo(output, _repeated_packedMessages_codec);
-      packedMessages7_.WriteTo(output, _repeated_packedMessages7_codec);
+      response_.WriteTo(output, _repeated_response_codec);
+      if (rootContext_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(RootContext);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -164,7 +187,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       packedMessages_.WriteTo(ref output, _repeated_packedMessages_codec);
-      packedMessages7_.WriteTo(ref output, _repeated_packedMessages7_codec);
+      response_.WriteTo(ref output, _repeated_response_codec);
+      if (rootContext_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(RootContext);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -176,7 +203,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public int CalculateSize() {
       int size = 0;
       size += packedMessages_.CalculateSize(_repeated_packedMessages_codec);
-      size += packedMessages7_.CalculateSize(_repeated_packedMessages7_codec);
+      size += response_.CalculateSize(_repeated_response_codec);
+      if (rootContext_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RootContext);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -190,7 +220,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         return;
       }
       packedMessages_.Add(other.packedMessages_);
-      packedMessages7_.Add(other.packedMessages7_);
+      response_.Add(other.response_);
+      if (other.rootContext_ != null) {
+        if (rootContext_ == null) {
+          RootContext = new global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto();
+        }
+        RootContext.MergeFrom(other.RootContext);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -211,7 +247,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 58: {
-            packedMessages7_.AddEntriesFrom(input, _repeated_packedMessages7_codec);
+            response_.AddEntriesFrom(input, _repeated_response_codec);
+            break;
+          }
+          case 66: {
+            if (rootContext_ == null) {
+              RootContext = new global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto();
+            }
+            input.ReadMessage(RootContext);
             break;
           }
         }
@@ -234,7 +277,193 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 58: {
-            packedMessages7_.AddEntriesFrom(ref input, _repeated_packedMessages7_codec);
+            response_.AddEntriesFrom(ref input, _repeated_response_codec);
+            break;
+          }
+          case 66: {
+            if (rootContext_ == null) {
+              RootContext = new global::Ingweland.Fog.Inn.Models.Hoh.CommunicationRootContextDto();
+            }
+            input.ReadMessage(RootContext);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class CommunicationRootContextDto : pb::IMessage<CommunicationRootContextDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CommunicationRootContextDto> _parser = new pb::MessageParser<CommunicationRootContextDto>(() => new CommunicationRootContextDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CommunicationRootContextDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.CommunicationDtoReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CommunicationRootContextDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CommunicationRootContextDto(CommunicationRootContextDto other) : this() {
+      messages_ = other.messages_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CommunicationRootContextDto Clone() {
+      return new CommunicationRootContextDto(this);
+    }
+
+    /// <summary>Field number for the "messages" field.</summary>
+    public const int MessagesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_messages_codec
+        = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.WellKnownTypes.Any.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> messages_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Messages {
+      get { return messages_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CommunicationRootContextDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CommunicationRootContextDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!messages_.Equals(other.messages_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= messages_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      messages_.WriteTo(output, _repeated_messages_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      messages_.WriteTo(ref output, _repeated_messages_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += messages_.CalculateSize(_repeated_messages_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CommunicationRootContextDto other) {
+      if (other == null) {
+        return;
+      }
+      messages_.Add(other.messages_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            messages_.AddEntriesFrom(input, _repeated_messages_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            messages_.AddEntriesFrom(ref input, _repeated_messages_codec);
             break;
           }
         }

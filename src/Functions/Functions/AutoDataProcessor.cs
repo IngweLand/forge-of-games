@@ -70,8 +70,7 @@ public class AutoDataProcessor(
                 alliances.Count, gameWorld.Id);
 
             var leaderboardParticipants = allianceWakeups
-                .Where(t => t.Wakeup.Leaderboard != null)
-                .SelectMany(t => t.Wakeup.Leaderboard!.Participants.Select(x => (t.CollectedAt, Participant: x)))
+                .SelectMany(t => t.Wakeup.Leaderboards.SelectMany(x => x.Participants.Select(y => (t.CollectedAt, Participant: y))))
                 .ToList();
             var leaderboardParticipantAlliances = leaderboardParticipants
                 .Select(t => (t.CollectedAt, t.Participant.Alliance))

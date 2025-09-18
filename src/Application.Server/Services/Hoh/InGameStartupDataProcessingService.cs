@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
@@ -20,6 +21,7 @@ public class InGameStartupDataProcessingService(
     IHohCoreDataRepository coreDataRepository,
     IBarracksProfileFactory barracksProfileFactory,
     ICommandCenterProfileFactory commandCenterProfileFactory,
+    IDataParsingService dataParsingService,
     ILogger<InGameStartupDataProcessingService> logger)
     : InGameDataProcessingServiceBase(logger), IInGameStartupDataProcessingService
 {
@@ -27,22 +29,17 @@ public class InGameStartupDataProcessingService(
     {
         var data = DecodeInternal(inputData);
 
-        StartupDto startupDto;
-        try
+        var communicationDto = dataParsingService.ParseCommunicationDto(data);
+        communicationDto.LogIfFailed();
+        if (communicationDto.IsFailed)
         {
-            startupDto = StartupDto.Parser.ParseFrom(data);
-        }
-        catch (Exception ex)
-        {
-            const string msg = "Failed to parse startup data";
-            logger.LogError(ex, msg);
-            throw new InvalidOperationException(msg, ex);
+            throw new InvalidOperationException("Failed to parse startup data");
         }
 
-        var cities = await ImportInGameCities(startupDto);
-        var profile = await ImportProfileAsync(startupDto, cities);
-        var equipment = await ImportEquipmentAsync(startupDto);
-        var researchState = await ImportResearchState(startupDto);
+        var cities = await ImportInGameCities(communicationDto.Value);
+        var profile = await ImportProfileAsync(communicationDto.Value, cities);
+        var equipment = await ImportEquipmentAsync(communicationDto.Value);
+        var researchState = await ImportResearchState(communicationDto.Value);
         return new InGameStartupData
         {
             Cities = cities.ToList(),
@@ -52,9 +49,9 @@ public class InGameStartupDataProcessingService(
         };
     }
 
-    private async Task<IList<HohCity>> ImportInGameCities(StartupDto startupDto)
+    private async Task<IList<HohCity>> ImportInGameCities(CommunicationDto startupDto)
     {
-        var cityDtos = new List<City>();
+        List<City> cityDtos;
         try
         {
             cityDtos = mapper.Map<List<City>>(startupDto.Cities);
@@ -97,7 +94,7 @@ public class InGameStartupDataProcessingService(
         return cities;
     }
 
-    private async Task<BasicCommandCenterProfile?> ImportProfileAsync(StartupDto startupDto,
+    private async Task<BasicCommandCenterProfile?> ImportProfileAsync(CommunicationDto startupDto,
         IEnumerable<HohCity> cities)
     {
         var barracksProfile = new BarracksProfile();
@@ -128,7 +125,7 @@ public class InGameStartupDataProcessingService(
         return null;
     }
 
-    private async Task<IList<EquipmentItem>> ImportEquipmentAsync(StartupDto startupDto)
+    private async Task<IList<EquipmentItem>> ImportEquipmentAsync(CommunicationDto startupDto)
     {
         var equipmentItems = new List<EquipmentItem>();
 
@@ -151,7 +148,7 @@ public class InGameStartupDataProcessingService(
     }
 
     private async Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>> ImportResearchState(
-        StartupDto startupDto)
+        CommunicationDto startupDto)
     {
         var researchItems = new Dictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>();
         if (startupDto.ResearchState == null)
@@ -159,7 +156,6 @@ public class InGameStartupDataProcessingService(
             return researchItems;
         }
 
-        
         try
         {
             var items = mapper.Map<List<ResearchStateTechnology>>(startupDto.ResearchState.Technologies);
@@ -169,6 +165,7 @@ public class InGameStartupDataProcessingService(
                 {
                     continue;
                 }
+
                 var technologies = (await coreDataRepository.GetTechnologiesAsync(cityId)).Select(x => x.Id)
                     .ToHashSet();
                 if (technologies.Count == 0)
@@ -177,7 +174,6 @@ public class InGameStartupDataProcessingService(
                 }
                 researchItems[cityId] = items.Where(x => technologies.Contains(x.TechnologyId)).ToList();
             }
-            
         }
         catch (Exception ex)
         {

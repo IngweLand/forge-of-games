@@ -23,6 +23,6 @@ public interface IDataParsingService
     HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(byte[] data);
 
     Result<PlayerProfile> ParsePlayerProfile(byte[] data);
-    StartupDto ParseStartupData(byte[] data);
+    Result<CommunicationDto> ParseCommunicationDto(byte[] data);
     Wakeup ParseWakeup(byte[] data);
 }
