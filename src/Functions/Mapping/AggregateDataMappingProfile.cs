@@ -171,8 +171,11 @@ public class AggregateDataMappingProfile : Profile
             .ForMember(dest => dest.AscensionLevel, opt => opt.MapFrom(src => src.Hero.AscensionLevel))
             .ForMember(dest => dest.AbilityLevel, opt => opt.MapFrom(src => src.Hero.AbilityLevel))
             .ForMember(dest => dest.AwakeningLevel, opt => opt.MapFrom(src => src.Hero.AwakeningLevel))
-            .ForMember(dest => dest.Hero, opt => opt.MapFrom(src => src.Hero))
-            .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(src => src.SupportUnit))
+            .ForMember(dest => dest.Data, opt => opt.MapFrom(src => new ProfileSquadDataEntity()
+            {
+                Hero = src.Hero,
+                SupportUnit = src.SupportUnit,
+            }))
             .ForMember(dest => dest.Age, opt =>
                 opt.MapFrom((_, _, _, context) => context.Items.GetRequiredItem<string>(ResolutionContextKeys.AGE)))
             .ForMember(dest => dest.CollectedAt, opt =>

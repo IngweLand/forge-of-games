@@ -95,7 +95,7 @@ public class GetPlayerProfileQueryHandler(
                 p.PvpLosses.OrderByDescending(b => b.PerformedAt)
                     .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
             .ThenInclude(b => b.Winner)
-            .Include(p => p.Squads)
+            .Include(p => p.Squads).ThenInclude(x => x.Data)
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.PlayerId, cancellationToken);
 

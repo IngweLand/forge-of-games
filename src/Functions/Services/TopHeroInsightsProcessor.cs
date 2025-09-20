@@ -10,7 +10,7 @@ using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Functions.Services.Orchestration;
+namespace Ingweland.Fog.Functions.Services;
 
 public interface ITopHeroInsightsProcessor
 {

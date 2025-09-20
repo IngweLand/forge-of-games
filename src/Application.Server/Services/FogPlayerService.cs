@@ -163,8 +163,11 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
                 AbilityLevel = squad.Hero.AbilityLevel,
                 AwakeningLevel = squad.Hero.AwakeningLevel,
                 CollectedAt = collectedAt,
-                Hero = squad.Hero,
-                SupportUnit = squad.SupportUnit,
+                Data = new ProfileSquadDataEntity()
+                {
+                    Hero = squad.Hero,
+                    SupportUnit = squad.SupportUnit,
+                },
                 Age = player.Age,
             });
         }

@@ -53,5 +53,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new TopHeroInsightsEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleTimelineEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleSquadsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new ProfileSquadDataEntityTypeConfiguration());
     }
 }

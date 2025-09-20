@@ -42,6 +42,8 @@ public class StatsMappingProfile : Profile
 
         CreateMap<PvpBattle, BattleKey>();
 
-        CreateMap<ProfileSquadEntity, ProfileSquadDto>();
+        CreateMap<ProfileSquadEntity, ProfileSquadDto>()
+            .ForMember(dest => dest.Hero, opt => opt.MapFrom(x => x.Data.Hero))
+            .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(x => x.Data.SupportUnit));
     }
 }
