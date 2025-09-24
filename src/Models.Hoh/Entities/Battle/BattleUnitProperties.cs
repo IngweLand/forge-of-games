@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
@@ -32,4 +33,7 @@ public class BattleUnitProperties : IBattleUnitProperties
 
     [ProtoMember(8)]
     public int AwakeningLevel { get; init; }
+    
+    [ProtoMember(9)]
+    public IReadOnlyCollection<SquadEquipmentItem> Equipment { get; init; } = new List<SquadEquipmentItem>();
 }

@@ -1,5 +1,7 @@
 syntax = "proto3";
 import "stat_boost_dto.proto";
+import "equipment_item.proto";
+import "google/protobuf/any.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -21,6 +23,7 @@ message BattleUnitPropertiesDto {
   repeated string abilities = 4;
   map<string, float> unit_stats_overrides = 5;
   repeated StatBoostDto stat_boosts = 6;
+  google.protobuf.Any equipment = 7;
   int32 ability_level = 9;
   int32 awakening_level = 10;
 }
@@ -28,4 +31,17 @@ message BattleUnitPropertiesDto {
 message BattleUnitStateDto {
   int32 in_battle_id = 1;
   map<string, float> unit_stats = 2;
+}
+
+message AllEquipmentUnitDataDTO {
+  repeated SquadEquipmentItemDto items = 1;
+}
+
+message SquadEquipmentItemDto {
+  string equipmentSlotTypeDefinitionId = 1;
+  string equipmentSetDefinitionId = 2;
+  string equipmentRarityDefinitionId = 3;
+  int32 level = 4;
+  EquipmentAttributeDto mainAttribute = 5;
+  repeated EquipmentAttributeDto subAttributes = 6;
 }

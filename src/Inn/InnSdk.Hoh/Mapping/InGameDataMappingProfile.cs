@@ -88,6 +88,15 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.EquipmentSet,
                 opt => opt.MapFrom(src =>
                     HohStringParser.ParseEnumFromString<EquipmentSet>(src.EquipmentSetDefinitionId)));
+        CreateMap<SquadEquipmentItemDto, SquadEquipmentItem>()
+            .ForMember(dest => dest.EquipmentSlotType,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<EquipmentSlotType>(src.EquipmentSlotTypeDefinitionId)))
+            .ForMember(dest => dest.EquipmentRarity,
+                opt => opt.ConvertUsing<EquipmentRarityValueConverter, string>(src => src.EquipmentRarityDefinitionId))
+            .ForMember(dest => dest.EquipmentSet,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<EquipmentSet>(src.EquipmentSetDefinitionId)));
 
         CreateMap<EquipmentAttributeDto, EquipmentAttribute>()
             .ForMember(dest => dest.StatAttribute,
@@ -140,7 +149,15 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.UnitStatsOverrides,
                 opt => opt.MapFrom(src =>
                     src.UnitStatsOverrides.ToDictionary(kvp =>
-                        HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key), kvp => kvp.Value)));
+                        HohStringParser.ParseEnumFromString<UnitStatType>(kvp.Key), kvp => kvp.Value)))
+            .ForMember(dest => dest.Equipment,
+                opt =>
+                {
+                    opt.PreCondition(src => src.Equipment != null);
+                    opt.MapFrom((src, _, _, context) =>
+                        context.Mapper.Map<IReadOnlyCollection<SquadEquipmentItem>>(src.Equipment
+                            .Unpack<AllEquipmentUnitDataDTO>().Items));
+                });
         CreateMap<BattleUnitDto, BattleUnit>()
             .ForMember(dest => dest.UnitState, opt => opt.PreCondition(src => src.UnitState != null));
         CreateMap<BattleSquadDto, BattleSquad>()
