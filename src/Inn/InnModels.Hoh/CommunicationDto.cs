@@ -240,6 +240,23 @@ public sealed partial class CommunicationDto
             return RootContext.Messages.FindAndUnpack<HeroPush>();
         }
     }
+    
+    public PvpBattleHistoryResponse PvpBattleHistoryResponse
+    {
+        get
+        {
+            try
+            {
+                return PackedMessages.FindAndUnpack<PvpBattleHistoryResponse>();
+            }
+            catch
+            {
+                // ignore
+            }
+
+            return Response.FindAndUnpack<PvpBattleHistoryResponse>();
+        }
+    }
 
     public IList<InGameEventDto> InGameEvents
     {

@@ -7,7 +7,7 @@ import "battle_squad_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
-message PvpBattleHistoryResponseDto {
+message PvpBattleHistoryResponse {
   repeated PvpBattleDto battles = 1;
   repeated PvpBattlePlayerAllianceDto players_to_alliances = 2;
 }

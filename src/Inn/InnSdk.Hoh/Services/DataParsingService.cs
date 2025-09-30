@@ -145,10 +145,10 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
 
     public IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data)
     {
-        PvpBattleHistoryResponseDto battlesDto;
+        PvpBattleHistoryResponse battlesDto;
         try
         {
-            var container = SingleItemCommunicationDto.Parser.ParseFrom(data);
+            var container = CommunicationDto.Parser.ParseFrom(data);
             battlesDto = container.PvpBattleHistoryResponse!;
         }
         catch (Exception ex)
