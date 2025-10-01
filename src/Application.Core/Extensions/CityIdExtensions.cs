@@ -68,6 +68,6 @@ public static class CityIdExtensions
 
     public static string ToInGameId(this CityId cityId)
     {
-        return $"City_{cityId}";
+        return $"city.City_{cityId}";
     }
 }
