@@ -4,22 +4,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh;
 
 public sealed partial class CommunicationDto
 {
-    public AllianceMembersResponse AllianceMembersResponse
-    {
-        get
-        {
-            try
-            {
-                return PackedMessages.FindAndUnpack<AllianceMembersResponse>();
-            }
-            catch
-            {
-                // ignore
-            }
-
-            return RootContext.Messages.FindAndUnpack<AllianceMembersResponse>();
-        }
-    }
+    public AllianceMembersResponse? AllianceMembersResponse =>
+        RootContext.Messages.FindAndUnpackToList<AllianceMembersResponse>().FirstOrDefault();
 
     public AlliancePush? AlliancePush
     {
@@ -52,6 +38,36 @@ public sealed partial class CommunicationDto
         }
     }
 
+    public IList<CityDTO> Cities
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<CityDTO>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<CityDTO>();
+            }
+
+            return items;
+        }
+    }
+
+    public EquipmentPush? Equipment
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<EquipmentPush>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<EquipmentPush>();
+            }
+
+            return items.FirstOrDefault();
+        }
+    }
+
+    public GameDesignResponse GameDesignResponse => Response.FindAndUnpack<GameDesignResponse>();
+
     public HeroBattleStatsResponse HeroBattleStatsResponse
     {
         get
@@ -83,6 +99,23 @@ public sealed partial class CommunicationDto
             }
 
             return Response.FindAndUnpack<HeroFinishWaveResponse>();
+        }
+    }
+
+    public HeroPush HeroPush
+    {
+        get
+        {
+            try
+            {
+                return PackedMessages.FindAndUnpack<HeroPush>();
+            }
+            catch
+            {
+                // ignore
+            }
+
+            return RootContext.Messages.FindAndUnpack<HeroPush>();
         }
     }
 
@@ -131,6 +164,20 @@ public sealed partial class CommunicationDto
         }
     }
 
+    public IList<InGameEventDto> InGameEvents
+    {
+        get
+        {
+            var items = PackedMessages.FindAndUnpackToList<InGameEventPush>();
+            if (items.Count == 0)
+            {
+                items = RootContext.Messages.FindAndUnpackToList<InGameEventPush>();
+            }
+
+            return items.FirstOrDefault()?.Events ?? [];
+        }
+    }
+
     public IList<LeaderboardPush> Leaderboards
     {
         get
@@ -144,6 +191,8 @@ public sealed partial class CommunicationDto
             return items;
         }
     }
+
+    public LocaResponse LocaResponse => Response.FindAndUnpack<LocaResponse>();
 
     public OtherCityDTO OtherCity
     {
@@ -179,68 +228,6 @@ public sealed partial class CommunicationDto
         }
     }
 
-    public PvpGetRankingResponse PvpGetRankingResponse
-    {
-        get
-        {
-            try
-            {
-                return PackedMessages.FindAndUnpack<PvpGetRankingResponse>();
-            }
-            catch
-            {
-                // ignore
-            }
-
-            return Response.FindAndUnpack<PvpGetRankingResponse>();
-        }
-    }
-    
-    public IList<CityDTO> Cities
-    {
-        get
-        {
-            var items = PackedMessages.FindAndUnpackToList<CityDTO>();
-            if (items.Count == 0)
-            {
-                items = RootContext.Messages.FindAndUnpackToList<CityDTO>();
-            }
-
-            return items;
-        }
-    }
-
-    public EquipmentPush? Equipment
-    {
-        get
-        {
-            var items = PackedMessages.FindAndUnpackToList<EquipmentPush>();
-            if (items.Count == 0)
-            {
-                items = RootContext.Messages.FindAndUnpackToList<EquipmentPush>();
-            }
-
-            return items.FirstOrDefault();
-        }
-    }
-
-    public HeroPush HeroPush
-    {
-        get
-        {
-            try
-            {
-                return PackedMessages.FindAndUnpack<HeroPush>();
-            }
-            catch
-            {
-                // ignore
-            }
-
-            return RootContext.Messages.FindAndUnpack<HeroPush>();
-        }
-    }
-    
     public PvpBattleHistoryResponse PvpBattleHistoryResponse
     {
         get
@@ -258,17 +245,20 @@ public sealed partial class CommunicationDto
         }
     }
 
-    public IList<InGameEventDto> InGameEvents
+    public PvpGetRankingResponse PvpGetRankingResponse
     {
         get
         {
-            var items = PackedMessages.FindAndUnpackToList<InGameEventPush>();
-            if (items.Count == 0)
+            try
             {
-                items = RootContext.Messages.FindAndUnpackToList<InGameEventPush>();
+                return PackedMessages.FindAndUnpack<PvpGetRankingResponse>();
+            }
+            catch
+            {
+                // ignore
             }
 
-            return items.FirstOrDefault()?.Events ?? [];
+            return Response.FindAndUnpack<PvpGetRankingResponse>();
         }
     }
 
@@ -313,6 +303,4 @@ public sealed partial class CommunicationDto
             return items.FirstOrDefault();
         }
     }
-    public LocaResponse LocaResponse => Response.FindAndUnpack<LocaResponse>();
-    public GameDesignResponse GameDesignResponse => Response.FindAndUnpack<GameDesignResponse>();
 }
