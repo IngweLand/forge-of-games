@@ -216,8 +216,6 @@ O
 +Base.EventPass.ForgeOfVulcanBuyGoldPassText�今すぐ参加して限定報酬を手に入れよう！エピック遺物、<nobr><style=epic>鷲の旗</style></nobr>が即座に手に入る！
 5
 "Base.AccountSettingsPopup.Usernameユーザー名
-�
-4Base.LeaderboardEventPanel.TypeInfo.TaskType_Contentfタスクをこなして挑戦ポイントを集め、マイルストーン報酬を達成しよう！
 �
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_2_QuestStart_Text1_Desc�準備は万端です。次の段階ではさらなる挑戦が待っていますが、その分だけ報酬も大きくなるでしょう！
 /
@@ -234,8 +232,8 @@ S
 RBase.AbilityDescriptions.hero_battle_ability_description.GreekMathematician_1_Name�<style=ability_label>踏みつけ</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
 .
 Base.UnlockableFeatures.Bazaarバザール
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>範囲攻撃・回復・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。影響を受けた味方ユニットは<style=basestat>{duration}</style>の間、攻撃速度が<style=basestat>{atkspeed_percentage}</style>上昇し、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が攻撃力に加算される。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_30_Name�<style=ability_label>範囲攻撃・回復・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、ジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。影響を受けた味方ユニットは<style=basestat>{duration}</style>の間、攻撃速度が<style=basestat>{atkspeed_percentage}</style>上昇し、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が攻撃力に加算される。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 �
 XBase.StoryText.Story_Questline_EventCity_China_ForbiddenCity_Start_QuestStart_Text2_Desc�パレードや芸術展を計画して、<style=MC>紫禁城</style>をこの<style=MC>灯りの祭典</style>の輝かしい舞台にしましょう。
 L
@@ -336,8 +334,8 @@ W
 )Base.Heroes.hero.FlorenceNightingale_Name*フローレンス・ナイチンゲール
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_Desc�おそらく、あの装置が氷山を避ける操舵を狂わせていたんだろう。だが今はこうして、船はまっすぐ進んでいる。
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Name�<style=ability_label>強化</style>マンサ・ムーサが味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方のクリティカル率を<style=basestat>{crit_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_15_Name�<style=ability_label>強化</style>マンサ・ムーサが味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方のクリティカル率を<style=basestat>{crit_percentage}</style>上昇させ、攻撃力をマンサ・ムーサの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
 �
 5Base.Buildings.Building_Mayas_Workshop_Premium_5_DescN先祖の仮面、太陽の石、儀式用の短剣、頭飾りを生産する
 F
@@ -380,8 +378,8 @@ b
  Base.RewardTypes.GoodReward_Name	名産品
 >
 %Base.BuildingGroups.kaolinQuarry_Nameカオリン採石場
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.RamsesII_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内で<style=basestat>{duration}</style>の間、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、移動速度を<style=basestat>{move_percentage}</style>、命中率を<style=basestat>{accuracy_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.RamsesII_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内で<style=basestat>{duration}</style>の間、攻撃力をラムセスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。さらに、移動速度を<style=basestat>{move_percentage}</style>、命中率を<style=basestat>{accuracy_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。
 �
 ?Base.TreasureHuntRequirementsPopup.RequirementUnlockDescriptionf宝探しで特別な報酬をゲットしよう！参加するには以下の条件を満たそう：
 /
@@ -414,8 +412,8 @@ U
 0Base.Buildings.Building_Mayas_Home_Priest_4_Name職人の家
 j
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKED6スロットはまだアンロックされていない
->
-'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
+N
+'Base.PlayerSearch.PlayersFoundByIdTitle#IDで見つかったプレイヤー
 ?
 #Base.NotEnoughPremiumPopup.Headlineジェムが足りない
 �
@@ -479,8 +477,8 @@ GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text13_DescBむし
 /Base.TreasureHuntDifficulties.Difficulty_9_Name	覇者２
 
 Base.Battle.Buff強化
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_1_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力をマーガレットの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 3
 Base.Ages.RomanEmpire_Nameローマ帝国時代
 e
@@ -533,8 +531,8 @@ M
 
 W
 DBase.Buildings.Building_AgeOfTheFranks_Barracks_HeavyInfantry_2_Name重歩兵兵舎
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>回復・集中</style>肥沃な大地からエネルギーを引き出し、味方ユニット全体を自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復し、ヒーローたちのアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Hatshepsut_1_Name�<style=ability_label>回復・集中</style>肥沃な大地からエネルギーを引き出し、味方ユニット全体をハトシェプストの基礎ダメージの<style=basestat>{heal_percentage}</style>分回復し、ヒーローたちのアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
 M
 7Base.Questlines.Questline_CityBuilding_RomanEmpire_Name都市建築家４
 O
@@ -591,8 +589,8 @@ J
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_Desc�<style=MC>箱</style>をひとつ埋めるごとに、<style=MC>ランキング</style>での<style=MC>順位</style>が上がってゆく。<style=MC>リーグ</style>を昇れば、より優れた<style=MC>報酬</style>が待っておる。
 M
 7Base.Technologies.Technology_Egypt_CeremonialDress_Name儀式用の衣装
-9
-'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
+=
+'Base.PlariumPlay.ShopInfo.AbortPurchase購入をやめる
 @
 6Base.Technologies.Technology_BronzeAge_Prosperity_Name繁栄
 �
@@ -727,8 +725,8 @@ X
 'Base.AlliancePanel.RejectInvitationDesc-{0}からの{1}への招待を拒否する？
 7
 !Base.InventoryMenuPanel.Fragments反物質の欠片
-I
-"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
+;
+"Base.QuestlinesPanel.StageOfRegion{1}のステージ{0}
 @
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_Name酒場
 �
@@ -879,6 +877,8 @@ WBase.Resources.BuildingPiece_Building_ClassicGreece_Collectable_ArchitectsStudi
 -Base.HeroPanel.EquipmentSubAttributeUnlocksAtLV {0}で解放
 B
 ,Base.Units.Unit_MinoanEra_Minoan_Axemen_Nameミノア斧使い
+#
+Base.Relics.Mjolnir_NameMjolnir
 s
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 :
@@ -975,8 +975,12 @@ B
 KBase.StoryText.Story_Questline_Alliances_JoinAlliance_QuestStart_Text1_Desc{時を越えている時、私たちのような者たちが見えたの。その仲間に加わるべきだと思うわ。
 c
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
+`
+"Base.BattleSetupPanel.HeroDefeated:Hero is defeated and needs to recover at a Healing Shrine.
 9
  Base.ScoutPopup.ScoutDescription{0}を偵察する？
+�
+Base.Relics.Planisphere_Desc�If you've ever tried to spot the constellations on a cloudless night and come away seeing only “the big shiny one,” the planisphere is your secret weapon. This ingenious device - two rotating disks covered in stars and secrets - unlocks the heavens above, helping sky-watchers trace Orion's belt, the twists of Draco, or the steady glow of Polaris.<br><br>Favored by stargazers since ancient Alexandria and the golden days of Islamic astronomy, planispheres were the pocket guides of their time - compact, reliable, and just a little bit magical. With a simple turn, you can reveal which stars will greet you at sunset, and plot your celestial journey for the night ahead. The universe might be vast and mysterious, but in your hands, the planisphere makes it suddenly familiar.
 G
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_Nameギリシャ弓兵
 :
@@ -1009,12 +1013,12 @@ z
 \Base.Alerts.SingleSignOn.AdditionalWarningIfThePlayerDoesNotHaveASocialAccountLinked.Message�本当に{0}のアカウントを読み込みますか？<br>警告：これにより、ローカルアカウントが削除されます。
 �
 8Base.Incidents.Incident_HighMiddleAges_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.PakalTheGreat_1_Name�<style=ability_label>強化・シールド</style>味方ユニットの最大集団に、<style=basestat>{shield_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを付与する。さらに、<style=basestat>{def_duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方ユニットの防御力を<style=basestat>{def_percentage}</style>上昇させる。
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.PakalTheGreat_1_Name�<style=ability_label>強化・シールド</style>味方ユニットの最大集団に、<style=basestat>{shield_duration}</style>の間、パカルの基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを付与する。さらに、<style=basestat>{def_duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方ユニットの防御力をパカルの防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 �
 2Base.ResearchPointsVideoPlacementPopup.DescriptionWこの短い動画を見て、研究ポイントのタイマー{0}を短縮しよう。
-�
-&Base.FallOfTroyInfoPopup.LowerLabeInfo�このレーンの<style=basestat_dark>防壁</style>はチームを<style=basestat_dark>攻撃</style>し、<style=basestat_dark>燃焼ダメージ</style>も与える。ステージ10以降は、ヒーローのアビリティチャージも攻撃対象になる。<br><br> <sprite name=status_effect_bleed> <style=basestat_dark>出血ダメージ</style>に弱い。<br>気絶、精神支配の効果は無効だ。
+�
+&Base.FallOfTroyInfoPopup.LowerLabeInfo�このレーンの<style=basestat_dark>防壁</style>はヒーローたちを<style=basestat_dark>攻撃</style>し、<style=basestat_dark>燃焼ダメージ</style>を与える。スステージ10以降は、アビリティのチャージも攻撃し、チャージ量を減らす。<br><br><sprite name=status_effect_bleed> <style=basestat_dark>出血ダメージ</style>に弱い。<br>気絶と精神支配の効果は効かない。
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_Name黒曜石採掘場
 Y
@@ -1029,6 +1033,8 @@ F
 KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>アビリティ封鎖・迎撃</style>ノストラダムスは敵ヒーローのアビリティ使用を予知する。敵が次にアビリティを使用した際、<style=basestat>{damage}</style>のダメージを受け、<style=basestat>{ability_block_duration}</style>の間アビリティを使用できなくなる。
 >
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader上レーン
+A
+&Base.AccountConfirmationPopup.HeadlinePlease check your Email
 }
 :Base.AllianceQuarterPanel.ProductionUnlockBuildRequirement?この地区を建設して生産をアンロックしよう。
 C
@@ -1095,8 +1101,8 @@ Q
 OBase.AbilityDescriptions.hero_battle_ability_description.QueenElizabethI_1_Name�<style=ability_label>強化</style>味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、クリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>、クリティカル率を<style=basestat>{crit_chance_percentage}</style>上昇させる。加えて、攻撃力をエリザベスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 7
 Base.Heroes.hero.Leonidas_Nameレオニダス１世
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.UlyssesSGrant_1_Name�<style=ability_label>近接攻撃・遠隔攻撃・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage_current}</style>のダメージを与えた後、防御力が最も低い敵に射撃し、<style=basestat>{dmg_percentage_def}</style>のダメージを与える。さらに、ユリシーズは自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.UlyssesSGrant_1_Name�<style=ability_label>近接攻撃・遠隔攻撃・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage_current}</style>のダメージを与えた後、防御力が最も低い敵に射撃し、<style=basestat>{dmg_percentage_def}</style>のダメージを与える。さらに、ユリシーズは自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を自己回復する。
 F
 )Base.AbilityTrainingPanel.MaxLevelReached{0}
 （最大レベル）
@@ -1289,8 +1295,8 @@ M
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescEじゃあ次は、それにどう対応するかを探る番だな！
 -
 Base.Ages.RomanEmpire_Start紀元前50年
-c
-?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
+s
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate0このプレイヤーは招待を保留中だ。
 !
 Base.Rarities.Common	コモン
 =
@@ -1417,14 +1423,16 @@ C
 'Base.QuestlinesPanel.HaveResourceInCity{2}で{1}を{0}持つ。
 I
 3Base.Questlines.Questline_BronzeAge_CityQuest2_Name名産品の発展
+7
+Base.Mailbox.RemovalHeadlineAlliance Removal Notice
 K
 )Base.RewardTypes.UnlockFeatureReward_Desc{0}がアンロックされた
 a
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_Desc$補助騎兵をアンロックする
 7
 Base.Resources.hero.Plato_Nameプラトンの精髄
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>集中・溜め攻撃・自己回復</style>嵐の寸前：自身の基礎ダメージの<style=basestat>{shield_value}</style>に相当するシールドを獲得し、攻撃と移動をすべて停止し、最大<style=basestat>{charge_duration}</style>の間、力を蓄える。この間にいつでも「天の裁き」を発動できる。<br>天の裁き：体力が最も高い敵ユニットへ突進し、集中時間に応じて<style=basestat>{min_dmg}</style>〜<style=basestat>{max_dmg}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{min_heal}</style>〜<style=basestat>{max_heal}</style>分の体力を回復する。発動後、アビリティは「嵐の寸前」に戻る。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.OdaNobunaga_21_Name�<style=ability_label>集中・溜め攻撃・自己回復</style>嵐の寸前：自身の基礎ダメージの<style=basestat>{shield_value}</style>に相当するシールドを獲得し、攻撃と移動をすべて停止し、最大<style=basestat>{charge_duration}</style>の間、力を蓄える。この間にいつでも「天の裁き」を発動できる。<br>天の裁き：体力が最も高い敵ユニットへ突進し、集中時間に応じて<style=basestat>{min_dmg}</style>〜<style=basestat>{max_dmg}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{min_heal}</style>〜<style=basestat>{max_heal}</style>分の体力を自己回復する。発動後、アビリティは「嵐の寸前」に戻る。
 )
 Base.OptionsPopup.LanguageLabel言語
 
@@ -1453,6 +1461,8 @@ V
 CBase.Technologies.Technology_AgeOfTheFranks_UrbanCombatProwess_Name都市戦闘術
 A
 %Base.Heroes.hero.NubianMercenary_Nameヌビアのカンダケ
+|
+Base.Mailbox.RemovalCopy`Sorry, you have been removed from the Alliance {} by {}. Find an Alliance that suits you better!
 a
 3Base.QuestlinesPanel.HaveSpecificBuildingInCityTask*{3}でレベル{2}の{1}を{0}個持つ。
 S
@@ -1498,20 +1508,20 @@ H
 T
 FBase.AllianceTechnologies.alliance_technology.productionQuarter_5_Name
 レベル5
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_1_Name�<style=ability_label>範囲攻撃・回復</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_1_Name�<style=ability_label>範囲攻撃・回復</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、ジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 8
 Base.RecoverAccountPopup.Headerアカウント復元
 >
 (Base.PvpFightPanel.PaidRefreshPopupTitle敵リスト更新
 E
 5Base.Technologies.Technology_FeudalAge_Feudalism_Name封建主義
+8
+"Base.RewardPanel.AutoVictoryHeader自動勝利報酬
 T
 5Base.Generic.CancelProductionFullStorageWarning_Title生産を停止して進む
 Y
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_Nameヒーター盾
-?
-"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 P
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_Name豪華な漁桟橋
 F
@@ -1634,6 +1644,8 @@ C
 ,Base.UnitStats.unit_stat.AttackSpeed_Percent攻撃速度％
 9
 &Base.OptionsPopup.KeyboardShortcutsTabホットキー
+�
+"Base.Mailbox.ApplicationDeniedCopy[Sorry, {} has denied your application to the Alliance {}. Try applying to another Alliance!
 b
 1Base.QuestlinesPanel.SolveIncidentsTaskNoIncident-次の出来事が発生するまで待とう
 �
@@ -1674,8 +1686,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc��
 'Base.RewardPanel.BuildingUnlocked_Short建物
 Q
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusヒーローの体力状況
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>近接攻撃・出血</style>最も近い敵ユニットを攻撃し、ヒーローを優先して<style=basestat>{dmg_percentage}</style>のダメージを与える。ターゲットに出血効果を付与し、<style=basestat>{duration}</style>の間<style=basestat>{bleed}</style>の継続ダメージを与える。さらに、出血効果1つにつき<style=basestat>{dmg_per_stack}</style>の追加ダメージを与え、この追加ダメージは<style=basestat>{max_dmg}</style>を超えない。
 �
 1Base.AllianceChatNotifications.IncidentRunningOutT時間切れになりそうだ！急いで同盟都市の出来事に対応しよう
 F
@@ -1983,6 +1995,8 @@ LBase.AbilityDescriptions.hero_battle_ability_description.OttomanGeneral_Name�
 ;Base.StoryText.Story_DesertDelta_1_8_BattleStart_Text2_DescB確かに今はまだ俺たちに逆らってはいないが……
 u
 #Base.ShopPopup.DailyDealLevelUpDescNヒーローたちを強化させる資源を集めて、伝説を築こう！
+�
+*Base.EventPass.MoonLanding2MoreContentText�When you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more epic <style=epic>Relics</style> and another legendary <nobr><style=legendary>Mjolnir</style></nobr> up for grabs!
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_26_Nameレベル26
 F
@@ -2023,8 +2037,8 @@ KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_Name�
 +Base.Resources.event_maliempire_tokens_Desc�ディナール金貨は、サハラ砂漠の旅イベントで報酬を獲得するために使用できる。ディナール金貨チャレンジに参加して、報酬獲得に必要な金貨を集めよう。
 9
 &Base.PvpTiers.PvP_Tier_Platinum_2_Nameプラチナ２
-[
-9Base.LeaderboardEventPanel.TaskInfo.TeslaStormPurple_Name紫色のテスラストーム
+R
+9Base.LeaderboardEventPanel.TaskInfo.TeslaStormPurple_Name紫色のストーム
 *
  Base.BuildingTypes.goldMine_Name金鉱
 >
@@ -2083,8 +2097,14 @@ T
 3Base.Technologies.Technology_BronzeAge_Artisan_Name職人
 x
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
+;
+ Base.ShopPopup.Pages.diy_offer_3Your Hero Rooster Boost
+7
+ Base.ShopPopup.Pages.diy_offer_1Your Research Boost
 Y
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_Name中規模な文化遺産
+7
+ Base.ShopPopup.Pages.diy_offer_2Your Hero Ascension
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_3_Desc`養蜂場で生産された美味しい蜂蜜は、酒場で蜂蜜酒の醸造に使われる。
 i
@@ -2273,8 +2293,8 @@ L
 *Base.Resources.hero.AztecTlacateccatl_Nameクアウテモックの精髄
 v
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_Desc<歩兵ユニットは前列で最も効果を発揮する。
-�
-EBase.AbilityDescriptions.hero_battle_ability_description.Plato_1_Name�<style=ability_label>弱体化</style>プラトンが寓話を語り、敵ユニットを<style=basestat>{duration}</style>の間混乱させ、命中率を<style=basestat>{accuracy_percentage}</style>低下させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.Plato_1_Name�<style=ability_label>弱体化</style>プラトンが寓話を語り、敵ユニットを<style=basestat>{duration}</style>の間混乱させ、命中率を<style=basestat>{accuracy_percentage}</style>低下させ、攻撃力をプラトンの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 t
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc6パピルス巻物と儀式用の衣装を生産する
 L
@@ -2304,8 +2324,8 @@ P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_Nameレベル12
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>拘束・攻撃</style>茨のつるを呼び出し、最も遠い敵を絡め取って近接範囲まで引き寄せ、接触時に<style=basestat>{dmg_percentage}</style>のダメージを与える。
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>シールド</style>所持ヒーローがアクティブアビリティを発動するたび、基礎ダメージの<style=basestat>{shield}</style>分のシールドを獲得する。
 :
 $Base.Resources.ceremonial_dress_Name儀式用の衣装
 <
@@ -2399,8 +2419,12 @@ D
 +Base.Wonders.Wonder_Capital_Stonehenge_Nameストーンヘンジ
 Y
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader3３位
+X
+Browser.OOM.Step2CQuick Restart: Refreshing your browser can often resolve the issue.
 Y
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader2２位
+c
+Browser.OOM.Step1NLighten the Load: Close other browser tabs and applications to free up memory.
 1
 !Base.StorageLimit.ResourceStorage{0}の倉庫
 �
@@ -2449,6 +2473,8 @@ GBase.AllianceTechnologies.alliance_technology.productionQuarter_13_Nameレベ
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text4_Desc�だが、そう簡単にはいかぬ相手もいる。壮絶な<style=MC>バトル</style>を経て打ち倒さねばならぬこともあるだろう。準備を怠るな。
 I
 6Base.Technologies.Technology_Mayas_MayanConsensus_Nameマヤの連携
+�
+Browser.OOM.Step3qAdjust Game Quality: For a more stable experience, go to the Settings menu and ensure Quality is set to 'Medium'.
 H
 8Base.Technologies.Technology_EarlyRome_LanceMastery_Name槍の熟達
 4
@@ -2640,8 +2666,8 @@ t
 5Base.Buildings.Building_BronzeAge_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 <
 #Base.QuestlinesPanel.HaveWonderTask{0}を建設する。
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>挑発・シールド・自己回復</style>戦場を掌握し、<style=basestat>{taunt_shield_duration}</style>の間、敵ユニット全体を挑発し、自身の基礎ダメージの<style=basestat>{self_heal}</style>分回復する。挑発した敵1体につき、基礎ダメージの<style=basestat>{shield_per_unit}</style>に相当するシールドを獲得し、それはウェーブ終了まで持続する。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>挑発・シールド・自己回復</style>戦場を掌握し、<style=basestat>{taunt_shield_duration}</style>の間、敵ユニット全体を挑発し、自身の基礎ダメージの<style=basestat>{self_heal}</style>分を自己回復する。挑発した敵1体につき、基礎ダメージの<style=basestat>{shield_per_unit}</style>に相当するシールドを獲得し、それはウェーブ終了まで持続する。
 7
 $Base.IngameEvents.SeasonPass_09_Name癒やしの暁
 <
@@ -2905,8 +2931,8 @@ $
 VBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestStart_Text1_Desc�地質学者たちが北東に豊富な<nobr><style=MC>カオリン</style> <sprite name=resource.kaolin_cta></nobr> 鉱床を発見しました。そこにアクセスするために、もう一つ橋を架けましょう。
 O
 -Base.BattleResultPanel.DefeatHintConjurHeroesヒーローを召喚しよう
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>強化</style>味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、シッティング・ブルの防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 ^
 'Base.Subscriptions.BATTLE_SPEED_UP_Desc3バトルスピード×2が利用可能になる。
 �
@@ -2927,8 +2953,8 @@ g
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_Desc$軽装傭兵をアンロックする
 7
 Base.ShopPopup.ShopErrorHeaderショップエラー
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力をマーガレットの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
 P
 7Base.ShopPopup.JourneyThroughSaharaThrivingEnergyHeaderエネルギー補給
 .
@@ -3043,8 +3069,8 @@ C
 0Base.ShopOffers.shop_offer.MonthlyGemCard_1_Name毎日ジェム
 X
 3Base.Buildings.Building_Mayas_Aviary_Premium_6_Desc!山ほどの羽根を生産する
-�
-PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>弱体化・アビリティ封鎖</style>敵ユニット全体の攻撃能力を抑制し、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。さらに、<style=basestat>{block_duration}</style>の間、敵はアビリティを使用できなくなる。
+�
+PBase.AbilityDescriptions.hero_battle_ability_description.BenjaminFranklin_1_Name�<style=ability_label>弱体化・アビリティ封鎖</style>敵ユニット全体の攻撃能力を抑制し、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>、攻撃速度を<style=basestat>{atk_speed_percentage}</style>、攻撃力をフランクリンの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。さらに、<style=basestat>{block_duration}</style>の間、敵はアビリティを使用できなくなる。
 �
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text2_Desc{信じられない！自由のために何年も戦ったのに、ここではたった数日で成し遂げたなんて！
 S
@@ -3059,10 +3085,12 @@ i
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Desc'騎士団騎兵をアンロックする
 i
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text9_Nameマリー・キュリー
+$
+Base.EventCity.EventHub	Event Hub
 [
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Nameスパイス工房
-1
-Base.StashPanel.StashAllすべて保管する
++
+Base.StashPanel.StashAllすべて保管
 /
 Base.RiftInfoPopup.PityHeadline確定保証
 V
@@ -3157,8 +3185,8 @@ x
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 T
 &Base.RewardTypes.StorageCapReward_Desc*{0}の倉庫容量を{1}増加させる！
-T
-!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
+m
+!Tutorial.HeroMetaReportPopup.HintHバトルモードをタップしてヒーローのティア表を見る
 R
 *Base.EquipmentToolTip.SubHeadlineArmaments$ランダムな武器または衣装
 �
@@ -3400,6 +3428,8 @@ D
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_Descカオリンを生産する
 ?
 ,Base.AllianceSetDetailsPanel.WithApplication申請が必要
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Planisphere_1_Namem<style=ability_label>Damage Over Time</style>Increases Damage Over Time by <style=basestat>{dot_amp}</style>.
 g
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_Desc$装甲騎兵をアンロックする
 6
@@ -3506,8 +3536,8 @@ x
 Base.Generic.ErrorUnavailableW現在、名前の変更はできません。後でもう一度お試しください。
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc~リーダー！敵が来たぞ！あの<style=MC>頭蓋砕き</style>が反撃を企んでいる！叩き潰してやろう！
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>瞬間移動・気絶</style>集中値が最も高い敵ユニットのもとへ瞬間移動し、自身とその敵を水槽に閉じ込める。両者は<style=basestat>{duration}</style>の間、または敵が倒れるまで気絶する。フーディーニが致命的なダメージを受けた場合、安全な場所へ脱出し、アビリティは途中で終了して倒れるのを回避する。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>瞬間移動・気絶</style>集中力が最も高い敵のもとへ瞬間移動し、自分とターゲットを脱出不能の水槽に閉じ込める。両者は<style=basestat>{duration}</style>の間、またはターゲットが倒れるかテレポートするまで気絶する。フーディーニが致命的なダメージを受けると、安全な場所へ逃れ、アビリティを早期終了して戦闘不能を回避する。
 @
 0Base.Buildings.Building_Mayas_Home_Priest_1_Name職人の家
 K
@@ -3724,14 +3754,16 @@ R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_Name豪華な水夫の港
 J
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_3_Name畜産農場
+Q
+ABase.IngameEvents.MilestoneEvent_Moonlanding_2_AnvilStrike_1_NameAnvil Strike
 N
 8Base.Questlines.Questline_MinoanEra_BarracksUpgrade_Name新時代の軍勢
 H
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_Name輝光の襲撃隊
+f
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask0{1}装備アイテムを{0}個手に入れる。
 S
 4Base.Abilities.hero_battle_ability.JuliusCaesar_Name来た、見た、勝った
-�
-2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 G
 "Base.Rifts.rift.SeasonPass_09_Name!アーケイン時空ポータル
 7
@@ -3752,6 +3784,8 @@ j
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_Nameアインシュタイン
 j
 'Base.UnlockRequirementsPopup.ChronoShop?クロノ結晶を使い、豪華報酬を手に入れよう。
+b
+HBase.IngameEvents.MilestoneEvent_Moonlanding_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
 )
@@ -3796,8 +3830,8 @@ C
 $Base.Resources.mosaic_TechnologyNameモザイク
 �
 2Base.EventPass.JourneyOfTheTitanic2MoreContentText�最終チェックポイントに到達すると、すべての報酬ラインが切り替わり、イベントの旅はまだまだ続く！<br><br>メイン報酬をすべて獲得すると、次の周回から必要な進行ポイントが8から10に増加し、さらにその次の周回からは12になる。以降は12のまま進んでいく。<br><br>再び報酬を集めながら、さらなるエピックな<style=epic>遺物</style>や、もう一つのレジェンダリー遺物 、<nobr><style=legendary>アスクレピオスの杖</style></nobr>を目指そう！
-�
-!Base.Resources.prism_of_fate_Descn闘技場ショップでしか見つからない、<style=epic>レジェンダリー</style>な昇進素材。
+�
+!Base.Resources.prism_of_fate_Descs闘技場ショップでしか見つからない、<style=legendary>レジェンダリー</style>な昇進素材。
 2
 Base.ShopPopup.PurchaseLimit購入上限：{0}
 ?
@@ -3848,8 +3882,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text8_DescZ
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_Descaこの選択キットでは、研究ポイントと同盟ポイントの中から1つ選べる。
 E
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_Name弓騎兵の兜
-Y
-?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
+X
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvites同盟は満員だ。
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>挑発・シールド・範囲攻撃</style>フィリッポス２世は<style=basestat>{taunt_duration}</style>の間、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分の大量のシールドを獲得し、敵ユニット全体を挑発する。<style=basestat>{detonation_time}</style>が経過すると、シールドが爆発し、残りのシールド量の<style=basestat>{damage_percentage}</style>に相当するダメージを<style=basestat>{range}</style>の範囲内にいる敵ユニットに与える。爆発と同時にシールドは消滅する。
 9
@@ -3994,20 +4028,23 @@ Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_Desc金鉱石を生産する
 (
 Base.UnlockableFeatures.Relics遺物
-o
-*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
+�
+*Base.RiftInfoPopup.PityPersistenceAdditionR<br>この保証システムは、イベント再開催時にも適用される。
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	地理学
 O
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_Name歩兵兵舎
 e
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc*ミノア投石機をアンロックする
-N
-)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
+c
+)Base.Generic.NoAvailableSpaceForHeroClass6このクラスのスロットは残っていない。
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�<style=ability_label>遠隔攻撃</style>体力が最も高い敵ユニットに斧を投げ、<style=basestat>{dmg_percentage}</style>のダメージを与える。
 L
 'Base.Rifts.rift.SeasonPass_05_2024_Name!アーケイン時空ポータル
+:
+,Tutorial.HeroMetaReportPopup.DisclaimerTitle
+Disclaimer
 �
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text5_Descf三百が数千に立ち向かい、英雄として散っていった、その情熱を感じるよ。
 W
@@ -4151,8 +4188,8 @@ i
 5Base.Buildings.Building_Egypt_Irrigation_Oasis_6_Desc0隣の建物の灌漑用水を大幅に増やす
 B
 &Base.Regions.region.FrozenFjord_8_Nameアヴァロンへの道
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の攻撃力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.RomanPraetor_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の攻撃力を<style=basestat>{duration}</style>の間、アエミリアの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text7_Desc�みんなで気持ちひとつにしたら、絶対いけるって！なぁアルベルト、あのテスラのずるさ、どう対抗したらええ？
 a
@@ -4217,8 +4254,8 @@ G
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�全速前進！スタミナ・勝利チケット・イベント通貨を獲得し、試練を突破して勝利へ突き進もう！
 
 Base.Generic.GoogleGoogle
-1
-"Tutorial.HeroMetaReportPopup.TitleMeta Report
+2
+"Tutorial.HeroMetaReportPopup.Titleメタ情報
 4
 !Base.RiftInfoPopup.DropChancesTabドロップ率
 F
@@ -4263,6 +4300,8 @@ I
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_Nameエジプト台頭
 5
 !Base.TeslaStormsPanel.StageNumberステージ {0}
+�
+Base.Relics.Mjolnir_Desc�When thunder rolls across the sky, Norse myth says it is Thor hurling his hammer, Mjolnir. Forged by dwarves and empowered to shatter mountains, Mjolnir is far more than a weapon - it's the shield and protector of the gods, the divine force that keeps chaos in check.<br><br>The hammer's magic is unique: it always returns to its owner, no matter how far thrown, and only those worthy of Thor's might can lift it. Vikings wore miniature Mjolnirs as amulets for strength and protection, hoping some of Thor's power might rub off. If storm clouds gather and lightning crackles, who can say? Mjolnir might just be passing by.
 H
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_Name連邦の再生
 ?
@@ -4331,6 +4370,8 @@ B
 ,Base.EquipmentSets.equipment_set.Hussar_Name軽騎兵セット
 0
 Base.ResearchTreePanel.Unlockアンロック
++
+Base.Relics.Planisphere_NamePlanisphere
 J
 4Base.Technologies.Technology_Vikings_SunCompass_Name太陽コンパス
 �
@@ -4353,8 +4394,8 @@ C
 -Base.EquipmentSets.equipment_set.Bedouin_Name砂漠民セット
 s
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_Nameシックス・スカイ
-T
-5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
+E
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictoriesあと{0}回
 u
 .Base.EquipmentSets.equipment_set.Assassin_DescC単体アビリティダメージ<style=basestat_dark>+7.5%</style>
 [
@@ -4483,8 +4524,8 @@ o
 DBase.WondersReworkUpgradePanel.RegenerationTimeBoostBonusDescription'{0}の再生時間を{1}短縮する。
 h
 @Base.IngameEvents.LeaderboardEvent_JourneyThroughSahara_1_1_Name$ディナール金貨チャレンジ
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Name�<style=ability_label>回復・集中</style>体力が最も低い味方ヒーローを癒やし、自身の基礎ダメージの<style=basestat>{heal_amt}</style>分回復する。さらに、対象のアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Sacagawea_1_Name�<style=ability_label>回復・集中</style>体力が最も低い味方ヒーローを癒やし、サカガウィアの基礎ダメージの<style=basestat>{heal_amt}</style>分を回復する。さらに、対象のアビリティのチャージを<style=basestat>{focus_duration}</style>進める。
 �
 ;Base.StoryText.Story_DesertDelta_5_3_BattleStart_Text3_DescN戦い続けろ。未来のためでも、復讐のためでも構わない。
 �
@@ -4550,6 +4591,8 @@ E
  Base.BuildingGroups.GarmentMaker	仕立屋
 �
 #Tutorial.MainTutorial.FoodExplained�<nobr><style=MC>食料</style> <sprite name=resource.food_small></nobr> は我々の<style=MC>文明</style>の成長に欠かせない。さあ、まずは<style=MC>住む</style>場所を<style=MC>作ろう</style>。
+
+Base.Mailbox.DenyDeny
 G
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_Name棍棒使い
 A
@@ -4848,6 +4891,8 @@ h
 7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc-隣の建物の幸福度を大幅に上げる
 9
 #Base.BuildingGroups.jadeQuarry_Nameヒスイ採掘場
+\
+GBase.IngameEvents.LeaderboardEvent_Moonlanding_2_GladiatorsGlory_1_NameGladiator's Glory
 P
 (Base.QuestlinesPanel.HaveExpansionInCity${1}で領土拡張を{0}回行う。
 O
@@ -5008,8 +5053,8 @@ H
 (Base.Difficulties.difficulty.Normal_Nameノーマル
 A
 .Base.TreasureHuntNegotiationPopup.DoNotDiscard放棄しない
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.MaoriChief_1_Name�<style=ability_label>シールド</style>ポタタウが味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方ユニットに自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして与える。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.MaoriChief_1_Name�<style=ability_label>シールド</style>ポタタウが味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方ユニットにポタタウの基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして与える。
 �
 ;Base.StoryText.Story_DesertDelta_2_9_BattleStart_Text1_Desc]玉座の間だ！この地を暴君たちから解放しよう。エジプトを自由に！
 a
@@ -5202,8 +5247,8 @@ FBase.AllianceTechnologies.alliance_technology.productionQuarter_7_Name
 レベル7
 �
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text3_Desc�どうやら私の夢は順調に進んでいるようです。ヒーローたちは要塞に閉じ込められていますからね。
-j
-,Base.EquipmentSets.equipment_set.Mystic_Desc:攻撃速度<style=basestat_dark>+9ヒット／分</style>
+b
+,Base.EquipmentSets.equipment_set.Mystic_Desc2攻撃速度<style=basestat_dark>+9回/分</style>
 y
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text4_Desc'まさか…もう手遅れですか？
 /
@@ -5214,8 +5259,8 @@ I
 ABase.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text10_Desci解決策を探さなければ。このまま閉じ込められているわけにはいかないもの。
 d
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Desc!粘土から磁器を生産する
-S
-.Base.OptionsPopup.EmptyBattleSlotsWarningLabel!バトル空きスロット警告
+V
+.Base.OptionsPopup.EmptyBattleSlotsWarningLabel$未設定バトルスロット警告
 �
 MBase.StoryText.Story_Questline_StoneAge_KingOfTheBeasts_QuestStart_Text1_DescTあの獣、見たでしょ？あれは普通の野生動物の行動じゃない。
 �
@@ -5288,8 +5333,8 @@ K
 aBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Yggdrasil_3_QuestStart_Text1_Desc{見事な働きだ！この任務での力が証明されたが、まだやることは残っている。先へ進もう！
 �
 6Base.Incidents.Incident_FeudalAge_Capital_Goods_1_Desc`この地下迷路には珍しい宝物が隠されてるって話だ。探ってみようぜ！
-m
-0Base.TreasureHuntCheckpointsPanel.UnseenProgress9この間、同盟仲間が{0}ポイントを集めた。
+g
+0Base.TreasureHuntCheckpointsPanel.UnseenProgress3この間、仲間が{0}ポイントを集めた。
 |
 Base.Resources.greek_lyre_DescZ特定の古代ギリシャ時代の技術を研究するために使われる弦楽器。
 �
@@ -5448,6 +5493,8 @@ H
 ;Base.Technologies.Technology_EarlyRome_TributumCapitis_Name	人頭税
 ]
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_Name!改良型トレビュシェット
+�
+*Base.EventPass.MoonLanding2BuyGoldPassTexttTake part to earn exclusive rewards and get the epic Relic <nobr><style=epic>Planisphere</style></nobr> immediately!
 C
 6Base.Technologies.Technology_IberianEra_DriftNets_Name	流し網
 (
@@ -5707,8 +5754,8 @@ C
 0Base.WonderReworkUpgradeRequestPopover.FillCrate箱を埋める
 �
 )Base.UnlockRequirementsPopup.AllianceCity{同盟仲間と一緒に広大な都市を築こう！同盟都市に参加するには、以下の条件を満たそう：
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name�<style=ability_label>召喚</style>時空を操り、自身のターゲットの位置にブラックホールを作り出す。このブラックホールは<style=basestat>{duration}</style>の間、螺旋状に移動し、周囲の敵に最大<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、その近くの敵の攻撃速度を<style=basestat>{atk_speed_slow}</style>低下させる。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name�<style=ability_label>召喚</style>時空を操り、アインシュタインのターゲットの位置にブラックホールを作り出す。このブラックホールは<style=basestat>{duration}</style>の間、螺旋状に移動し、周囲の敵に最大<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、その近くの敵の攻撃速度を<style=basestat>{atk_speed_slow}</style>低下させる。
 2
 Base.Regions.FallOfTroy_Nameトロイの陥落
 G
@@ -6009,6 +6056,8 @@ R
 VBase.StoryText.Story_Questline_EventCity_Mayas_SayilPalace_Start_QuestStart_Text1_Desc�我はモクテスマ１世。戦と知恵の神々に選ばれしトラトアニ、この大地を統べる王であり、最強の軍を率いる者でもある。<style=MC>緊張高まる時代</style>の中で、そなたが我が元へと導かれたのは、決して偶然ではない。
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text1_Desc�工房をここまで整えてくださったこと、誠に見事でございます。次に目を向けるべきは、<style=MC>チチェン・イッツァ</style>の修復……完全なる姿を取り戻してこそ、<style=MC>チャク様</style>のまなざしは、再び聖なる泉へと注がれることでしょう。
+:
+Base.SocialSharing.ShareSubjectPlay Heroes of History!
 M
 7Base.Questlines.Questline_StoneAge_TheHerosJourney_Nameヒーローの旅
 H
@@ -6053,6 +6102,8 @@ P
 N
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_4_Name
 レベル4
+`
+FBase.IngameEvents.MilestoneEvent_Moonlanding_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 6
 #Base.BuildingGroups.MediumResidence大きな住宅
 �
@@ -6087,6 +6138,8 @@ O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_Name磁器工房
 �
 ;Base.StoryText.Story_DesertDelta_8_2_BattleStart_Text2_DescK必要なら槍を突きつけてでも、奴から答えを引き出す！
+�
+8Base.EventStartScreens.MoonLanding2EventStartDescription�Complete specific game actions to earn Circuit Boards and unlock a cosmos of rewards, including new <style=legendary>Relics</style> and the ultimate trophy - <style=legendary>Mjolnir</style>! Propel your heroes to astronomical power by equipping them them with these new <style=legendary>Relics</style>!
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text1_Desc�アンクとパピルス巻物の生産ラインが整った今、<style=MC>クフ王のピラミッド</style>のアップグレードに注力しよう。
 R
@@ -6169,6 +6222,8 @@ _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_Quest
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text2_Desc]信号経路の強化と、電力システムの整合性確認をお手伝いできます。
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
+?
+Base.Mailbox.InvitationHeadlineAlliance Invitation from {0}
 [
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_Nameツタンカーメンの仮面
 �
@@ -6383,14 +6438,14 @@ C
 *Base.BuildingGroups.premiumSailorPort_Name豪華な水夫の港
 I
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_Name水夫の港
+K
+&Tutorial.BattleModeTierListPopup.Title!バトルモード別ティア表
 �
 Base.Resources.hero.Tansen_Desc�ミアン・タンセンの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 K
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_Name凧の導き手
 �
 "Tutorial.BattleTutorial.UseAbility�俺と共に立ち上がれ！敵をなぎ倒してやるぞ！これが不屈の<style=MC>スパルタ王</style>の力だ、見届けよ！
-?
-&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_Nameレベル22
 I
@@ -6615,8 +6670,8 @@ X
 9Base.WorldWondersInventionInformationPopup.PromotionLabel特別プロモーション
 [
 9Base.Buildings.Building_BronzeAge_Workshop_Artisan_1_Desc青銅の腕輪を生産する
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name�<style=ability_label>無敵・強化</style>味方ユニット全体に<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力を自身の防御力の<style=basestat>{def_percentage}</style>分上昇させ、回避率を<style=basestat>{evasion_percentage}</style>上昇させる。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name�<style=ability_label>無敵・強化</style>味方ユニット全体に<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力をリンカーンの防御力の<style=basestat>{def_percentage}</style>分上昇させ、回避率を<style=basestat>{evasion_percentage}</style>上昇させる。
 4
 !Base.Resources.ancestor_mask_Name先祖の仮面
 �
@@ -6697,6 +6752,8 @@ Q
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny4_Name極低確率
 �
 Base.Alerts.ClientOutOfDateText�ご利用のゲームバージョンは古くなっています。最新バージョンにアップデートしてください。
+E
+&Base.Mailbox.ApplicationDeniedHeadlineAlliance Application denied
 H
 )Base.Regions.region.VolcanicJungle_3_Nameイングランド植民地
 D
@@ -6723,6 +6780,8 @@ $Base.WorldWondersDetailPanel.Upgradeアップグレード
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text1_Desc�テスラが過去に行った時、<style=MC>反物質のネクサス</style>を持っていったんだ。ポータルを作る秘密が込められた、小さな青い宝石だ。
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
+>
+Browser.OOM.Title)The game has run out of available memory.
 ;
 Base.Hints.Boars'イノシシが逃げ回っている…
 H
@@ -6737,10 +6796,10 @@ n
 IBase.Questlines.Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_Name!アブ・シンベル（前編）
 V
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_Nameゴート族の弓兵
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>シールド・魂リンク・精神支配</style>アレクサンドロスが<style=basestat>{range}</style>の範囲内で帝国の征服を開始し、<style=basestat>{duration}</style>の間、味方ユニットに毎秒、自身の基礎ダメージの<style=basestat>{shield_per_second}</style>のシールドを付与する。さらに、味方ユニットは魂リンク状態となり、受けたダメージを分担する。効果終了時、範囲内で最も体力が低い敵を<style=basestat>{mind_control_duration}</style>の間、味方に対して攻撃させる。ヒーローを優先する。<color=#FFCF2B>スパルタ最後の戦い</color>では、アレクサンドロスの<style=basestat>防御力</style>が<style=basestat>50%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
-�
-+Base.AlliancePanel.CantAcceptAllianceIsFullZ定員上限に達したため、これ以上申請を受け付けることはできない
+k
++Base.AlliancePanel.CantAcceptAllianceIsFull<同盟が満員なので、この招待は受けられない
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>シールド・魂リンク・精神支配</style>アレクサンドロスが<style=basestat>{range}</style>の範囲内で帝国の征服を開始し、<style=basestat>{duration}</style>の間、味方ユニットに毎秒、アレクサンドロスの基礎ダメージの<style=basestat>{shield_per_second}</style>のシールドを付与する。さらに、味方ユニットは魂リンク状態となり、受けたダメージを分担する。効果終了時、範囲内で最も体力が低い敵を<style=basestat>{mind_control_duration}</style>の間、味方に対して攻撃させる。ヒーローを優先する。<color=#FFCF2B>スパルタ最後の戦い</color>では、アレクサンドロスの<style=basestat>防御力</style>が<style=basestat>50%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 l
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text2_Nameレイフ・エリクソン
 .
@@ -6884,6 +6943,8 @@ t
 Shop.Product.Packageパッケージ
 �
 =Base.LeaderboardEventPanel.TaskInfo.TeslaStormRed_DescriptionT赤色のテスラストームに勝利して挑戦ポイントを獲得しよう！
+�
+/Base.ShopPopup.OfferInfoText.diy_offer_infotext�This offer lets you choose 4 items out of the presented selection. Once you have chosen 4 items, the offer can be purchased for the prize indicated. You can purchase the offer up to 3 times. You can choose new items each time.
 J
 :Base.Technologies.Technology_KingdomOfSicily_Wardrobe_Name衣裳箪笥
 ^
@@ -6892,8 +6953,8 @@ V
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_Name大規模な文化遺産
 =
 Base.Numbers.ProductionRate{0}/<style=alpha66>{1}</style>
-[
-9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_Name黄色のテスラストーム
+R
+9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_Name黄色のストーム
 G
 +Base.ShopPopup.SeasonalEventHeroPromoHeader時空を超えた繁栄
 4
@@ -6916,8 +6977,8 @@ C
 9Base.Technologies.Technology_MinoanEra_HawkeyeVision_Name鷹視
 y
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_1_Desc9長期間にわたって大量の食料を生産する。
-h
-1Base.QuestlinesPanel.CollectResourcePlayerRanking3友好文化で世界遺産の箱を{0}埋める。
+k
+1Base.QuestlinesPanel.CollectResourcePlayerRanking6友好文化で世界遺産の箱を{0}個埋める。
 �
 Base.Resources.hematite_Desc`特定の古代ギリシャ時代の技術を研究するために使われる貴重な宝石。
 �
@@ -6992,8 +7053,6 @@ H
 5Base.Buildings.Building_RomanEmpire_Home_Small_2_Name小さな住宅
 q
 .Base.InventoryMenuPanel.AllTargetsAreProducing?すべての関連する建物で生産が行われている。
-?
-5Base.LeaderboardEventPanel.TypeInfo.TaskType_Headline報酬
 �
 5Base.Buildings.Building_EarlyRome_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 �
@@ -7547,8 +7606,8 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<sty
 "Base.Resources.hero.JoanOfArc_Desc�ジャンヌ・ダルクの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
-�
-NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
+�
+NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、イムホテプの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 �
 3Base.Incidents.Incident_EarlyRome_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
 -
@@ -7571,6 +7630,8 @@ NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_2_Name
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_80_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
 �
 $Base.Units.Unit_QueenElizabethI_Desc�砲声と祈りが響いた時代を生きた女王、エリザベス１世。１６世紀のイングランドを４０年以上にわたり統治し、国に安定と繁栄をもたらした。芸術が花開き、戦乱が渦巻き、大航海時代が幕を開けた激動の時代でもあった。<br><br>国内外の試練に立ち向かい、宗教対立を乗り越え（その過程で犠牲がなかったわけではないが）、幾多の戦争を切り抜いた。スペイン無敵艦隊を打ち破り、強固な統治者としての名声を確立。シェイクスピアらを支援し、その時代を文化的にも黄金期へと導いた。<br><br>「ヴァージン・クイーン」として知られ、一度も結婚せず、最後まで権力と独立を貫いた。知性と統率力を兼ね備え、文化と政治の両面で大きな足跡を残した。そして、甘いものを好みすぎたあまり、歯の状態は最悪だったとも言われている。当時の歯科医にとっては、最も厄介な患者だったのかもしれない。
+^
+,Base.ShopPopup.Pages.diy_offer_hintCompleted.Ready. You can purchase your custom offer now!
 P
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_Name奇襲技術
 <
@@ -7601,6 +7662,9 @@ M
 7Base.Technologies.Technology_Mayas_DivineAscension_Name神聖なる昇華
 �
 eBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_MontezumaI_SahilPalace_QuestStart_Text2_Desc�そして今、我らは<nobr><style=MC>太陽の石</style> <sprite name=resource.calendar_stone_cta> </nobr>を刻むこともできるようになった。それにより、我らの営みは、天の巡りとひとつになるのだ。
+#
+Base.Generic.BrandNew
+Brand New!
 �
 >Base.Resources.event_leaderboard_forge_of_vulcan_trophies_Desc`指定タスクをクリアして、このチャレンジで挑戦ポイントを集めよう。
 G
@@ -7704,6 +7768,8 @@ J
 6Base.Buildings.Building_Vikings_Workshop_Tavern_3_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 X
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text4_Descえ？どういうこと？
+B
+3Base.Abilities.hero_battle_ability.Planisphere_NamePlanisphere
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text1_DescCこのガラクタども、ぶっ壊しちまってもいいか？ 
 d
@@ -7728,8 +7794,8 @@ X
 8Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Siege_Name$騎士団のトレビュチェット
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_25_Nameレベル25
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Plato_15_Name�<style=ability_label>弱体化・毒</style>プラトンが寓話を語り、敵ユニットを<style=basestat>{duration}</style>の間混乱させ、命中率を<style=basestat>{accuracy_percentage}</style>低下させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。影響を受けたユニットはさらに、<style=basestat>{dmg_duration}</style>の間<style=basestat>{dmg_percentage}</style>の毒ダメージを受ける。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Plato_15_Name�<style=ability_label>弱体化・毒</style>プラトンが寓話を語り、敵ユニットを<style=basestat>{duration}</style>の間混乱させ、命中率を<style=basestat>{accuracy_percentage}</style>低下させ、攻撃力をプラトンの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。影響を受けたユニットはさらに、<style=basestat>{dmg_duration}</style>の間<style=basestat>{dmg_percentage}</style>の毒ダメージを受ける。
 �
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text14_DescZラムの一発、効いたなァ！やっぱり俺の直感は間違っちゃいねぇ！
 u
@@ -7998,8 +8064,8 @@ m
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 �
 EBase.StoryText.Story_Event_JourneyOfTheTitanic_1_EventOpen_Text1_Desc�力を貸してくれ。今になって気づいたんだが、<style=MC>タイタニック</style>は沈む運命ではなかったんだ。私の時間解析によれば、残骸全体に反物質の痕跡が見えている。……となると、考えられるのはひとつ。時間移動だ。テスラが時を操り、歴史に異常を引き起こしたと考えられるぞ。
-�
-EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name�<style=ability_label>範囲攻撃・弱体化・自己回復</style>エル・シッドが武器を突き出し、目の前の敵を貫通して直線上の敵に攻撃する。命中した敵に<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{debuff_duration}</style>の間、攻撃力を<style=basestat>{attack_reduction}</style>低下させる。同時に、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>を回復する。
+�
+EBase.AbilityDescriptions.hero_battle_ability_description.ElCid_1_Name�<style=ability_label>範囲攻撃・弱体化・自己回復</style>武器を突き出し、目の前の敵を貫通して直線上の敵に攻撃する。命中した敵に<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{debuff_duration}</style>の間、攻撃力を<style=basestat>{attack_reduction}</style>低下させる。同時に、エル・シッドの基礎ダメージの<style=basestat>{heal_percentage}</style>を回復する。
 G
 %Base.PlayerSearch.SuggestionListTitleおすすめのプレイヤー
 7
@@ -8048,6 +8114,8 @@ x
 !Base.Resources.hero.YiSunSin_Name李舜臣の精髄
 X
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_Descパピルスを生産する
+d
+Base.Mailbox.InvitationCopyE{} invited you to join the Alliance {}. Do you accept the Invitation?
 =
 -Base.KeyboardShortcuts.Description.QuestPanelクエスト
 H
@@ -8194,8 +8262,8 @@ v
 NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name�<style=ability_label>近接攻撃・シールド</style>盾の後ろから現在のターゲットを突き刺し、<style=basestat>{dmg_percentage}</style>のダメージを与える。加えて、自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分をシールドとして獲得する。
 #
 Base.FurnacePanel.Convert変換
-�
-"Base.FallOfTroyInfoPopup.GateDescr�すべての防壁を突破すると、両方のレーンのヒーローが合流し、城門への攻撃に移る。<br>基本攻撃は城門に対して2倍のダメージを与える。
+�
+"Base.FallOfTroyInfoPopup.GateDescr�すべての防壁を突破すると、両レーンのヒーローが合流して城門を攻撃する。<br>基本攻撃は城門に2倍のダメージを与える。
 T
 2Base.IngameEvents.Event_JourneyOfTheTitanic_2_Nameタイタニック号の航海
 J
@@ -8322,8 +8390,8 @@ E
 /Base.WondersReworkInfoPopup.BonusInformationTabボーナス詳細
 �
 3Base.Incidents.Incident_MinoanEra_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�<style=ability_label>弱体化</style>オラクルは敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力をデルフォイの神託者の攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 F
 $Base.IngameEvents.SeasonPass_12_Nameカスティーリャの栄光
 �
@@ -8360,8 +8428,8 @@ t
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_Name'同盟資源の選択キット（大）
 9
 Base.SellBuildingPopup.Header建物を売却する？
-c
-5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
+b
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories)<color=#3375B4>{0}</color>回勝利する
 P
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_Name儀式彫刻工房
 |
@@ -8590,13 +8658,13 @@ M
 Z
 DBase.Technologies.Technology_ClassicGreece_IntimidatingPresence_Name威圧的な存在
 �
-IBase.AbilityDescriptions.hero_battle_ability_description.TigerLily_1_Name�<style=ability_label>回復・浄化</style>タイガーリリーが自然の力を解き放ち、味方ユニット全体を自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復する。同時に、すべての弱体化効果を浄化する。
+IBase.AbilityDescriptions.hero_battle_ability_description.TigerLily_1_Name�<style=ability_label>回復・浄化</style>タイガーリリーは自然の力を解き放ち、味方ユニット全体を自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復する。同時に、すべての弱体化効果を浄化する。
 �
 TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15_Name�<style=ability_label>踏みつけ・自己回復・回復</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分を自己回復する。さらに、<style=basestat>{range}</style>の範囲内にいる味方ユニットをアルミニウスの基礎ダメージの<style=basestat>{hp_percentage_friendly}</style>分を回復する。
 0
  Base.BuildingGroups.TrinketMaker職人工房
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.AttilaTheHun_1_Name�<style=ability_label>遠隔攻撃・自己回復</style>アッティラは最も遠い敵をターゲットにライフドレインの矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.AttilaTheHun_1_Name�<style=ability_label>遠隔攻撃・自己回復</style>アッティラは最も遠い敵をターゲットにライフドレインの矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与え、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を自己回復する。
 L
 'Base.Rifts.rift.SeasonPass_03_2024_Name!アーケイン時空ポータル
 O
@@ -8611,6 +8679,8 @@ B
 )Base.IngameEvents.SeasonPass_03_2024_Nameローマの征服者
 �
 8Base.StoryText.Story_Panganea_7_9_BattleStart_Text3_DescQもちろん、俺の背後にはこの大軍もいることを忘れるなよ！
+>
+*Base.IngameEvents.Event_Moonlanding_2_NameThe Moon Landing
 j
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text1_Nameアインシュタイン
 /
@@ -8657,12 +8727,12 @@ M
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text7_Descrこの時計、ただものじゃないよ。壊そうとしても、びくともしないかもしれないさ。
 O
 ?Base.Technologies.Technology_IberianEra_SuperiorBeekeeping_Name上級養蜂
+T
+)Base.PlayerSearch.PlayersFoundByNameTitle'名前で見つかったプレイヤー
 =
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_Name鎌剣
 T
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>待て！</style>
-B
-)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 6
 )Base.AllianceMembershipSettingsPopup.Kick	キック
 z
@@ -8687,6 +8757,8 @@ B
 /Base.Buildings.Building_Egypt_Home_Small_5_Name小さな住宅
 g
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
+[
+$Base.Mailbox.ApplicationAcceptedCopy3{} has accepted your application to the Alliance {}
 >
 (Base.Regions.region.EasternValley_4_Nameテスラの要塞
 U
@@ -8762,8 +8834,8 @@ x
 Base.BattlePausePopup.Retreat撤退する
 =
 $Base.Resources.hero.OdaNobunaga_Name織田信長の精髄
-a
- Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
+�
+ Base.Alerts.GameBackendErrorTextc問題が発生しました。「{0}」を押してゲームを再読み込みしてください。
 /
 "Base.CampaignPanel.difficulty.Hard	ハード
 ^
@@ -9055,6 +9127,8 @@ L
 3Base.Buildings.Building_Mayas_Aviary_Average_1_Desc羽根を生産する
 ]
 ,Base.Resources.hero.HermannTheCheruscan_Name-ケルスキ族のアルミニウスの精髄
+2
+!Base.PlayerSearch.SearchHelpTitlePlayer search
 
 Base.FurnacePanel.Min最小
 c
@@ -9284,12 +9358,14 @@ d
 <Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_4_Name鳥舎
+6
+#Base.ShopPopup.Pages.diy_offer_hintChoose 4 items:
 H
 8Base.Technologies.Technology_EarlyRome_SwordMastery_Name剣の熟達
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_12_Nameレベル12
 <
-&Base.QuestlinesPanel.SpendResourceTask{1}を{0}使う。
+&Base.QuestlinesPanel.SpendResourceTask{0}{1}を使う。
 4
 'Base.BuildingGroups.averageBeehive_Name	養蜂場
 H
@@ -9308,8 +9384,8 @@ $Base.Resources.resource.hero_xp_Desc�経験ポイントはヒーローのレ�
 1Base.InventoryCustomizationInfoPopup.BuffDuration期間
 9
  Base.SeasonPass.SeasonEndedTitleシーズン終了！
-h
-<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
+d
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 P
 %Base.Units.Unit_BenjaminFranklin_Name'ベンジャミン・フランクリン
 
@@ -9474,6 +9550,8 @@ X
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_Nameヒーロー学堂
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>強化</style>所持ヒーローの体力が<style=basestat>{hp_threshold}</style>以下になると、現在のウェーブ終了まで、防御力が<style=basestat>{defense_buff}</style>上昇する。効果は重複しない。
+ 
+Browser.OOM.PrimaryCTAReload
 T
 ,Base.SelectionKitSelection.CancelDescription$（後で在庫から使用可能）
 O
@@ -9739,8 +9817,8 @@ b
 .Base.QuestlinesPanel.LevelUpHeroesOfRarityTask0星{0}ヒーローをレベルアップする。
 8
 "Base.Resources.papyrus_scroll_Nameパピルス巻物
-N
-2Base.PlayerSearch.PlayerSearchFieldPlaceholderText名前またはＩＤ…
+H
+2Base.PlayerSearch.PlayerSearchFieldPlaceholderText名前または#ID
 6
  Base.SeasonPass.DailyTasksHeader今日のタスク
 8
@@ -9765,8 +9843,8 @@ N
 DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_1_Name学校
 O
 9Base.Units.Unit_KingdomOfSicily_Arabia_HarunArRachid_Nameハラス近衛隊
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_10_Name�<style=ability_label>近接攻撃・強化・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、驚異的な力を発揮し、攻撃速度が<style=basestat>{atk_speed_duration}</style>の間、<style=basestat>{atk_speed_percentage}</style>上昇し、自身の最大体力の<style=basestat>{heal_percentage}</style>分が回復する。<color=#FFCF2B>トロイの陥落</color>では、アキレスの<style=basestat>攻撃力</style>が<style=basestat>25%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_10_Name�<style=ability_label>近接攻撃・強化・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、驚異的な力を発揮し、攻撃速度が<style=basestat>{atk_speed_duration}</style>の間、<style=basestat>{atk_speed_percentage}</style>上昇し、アキレスの最大体力の<style=basestat>{heal_percentage}</style>分が回復する。<color=#FFCF2B>トロイの陥落</color>では、アキレスの<style=basestat>攻撃力</style>が<style=basestat>25%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 3
 #Base.Resources.campaign_energy_Nameスタミナ
 �
@@ -9872,7 +9950,7 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text5_Name
 �
 JBase.StoryText.Story_Questline_BronzeAge_CityQuest4_QuestFinish_Text1_Descf古代の伝説に出てくる人が、目の前に現れるとは。テスラは一体何をした？
 �
-HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>猛烈な竜を召喚し、敵ユニットの最大集団を3回攻撃する。それぞれの攻撃で、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力を自身の攻撃力の<style=basestat>{def_percentage}</style>分低下させ、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けた敵ユニットは、さらに<style=basestat>{burn_duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
+HBase.AbilityDescriptions.hero_battle_ability_description.HuaMulan_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>猛烈な竜を召喚し、敵ユニットの最大集団を3回攻撃する。それぞれの攻撃で、<style=basestat>{range}</style>の範囲内にいる敵ユニットの防御力を木蘭の攻撃力の<style=basestat>{def_percentage}</style>分低下させ、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けた敵ユニットは、さらに<style=basestat>{burn_duration}</style>の間<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
 h
 7Base.Buildings.Building_Mayas_RitualSite_Premium_4_Desc-隣の建物の幸福度を大幅に上げる
 �
@@ -9951,8 +10029,8 @@ T
 /Base.QuestlinesPanel.ResearchSpecificTechnology!技術「{0}」を研究する。
 �
 /Base.ShopOffers.shop_offer.Rate_Up_Offer_1_Desc�今週末限定！伝説級ヒーローの出現率が2倍。鉄は熱いうちに打て！この特別オファーを活用しよう！
-�
-QBase.AbilityDescriptions.hero_battle_ability_description.AztecTlacateccatl_1_Name�<style=ability_label>回復</style>アステカの精霊の力で、<style=basestat>{range}</style>の範囲内にいる自身と味方ユニットの体力を、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復する。
+�
+QBase.AbilityDescriptions.hero_battle_ability_description.AztecTlacateccatl_1_Name�<style=ability_label>回復</style>アステカの精霊の力で、<style=basestat>{range}</style>の範囲内にいる自身と味方ユニットの体力を、クアウテモックの基礎ダメージの<style=basestat>{heal_percentage}</style>分回復する。
 �
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text3_Desc�この世界には、他にも多くの文化があるのじゃ。中には友好的なものもおるが、そなたがふさわしいと証明できれば、<style=MC>仲間になって</style>共に歩み、そなたが歴史にその<style=MC>名を刻む</style>手助けをしてくれるかもしれんぞ！
 Z
@@ -10134,6 +10212,8 @@ O
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text2_Desc�追ってこの時代まで来て、ネクサスを奪い返してきた。今もテスラは高度な技術を持ってるが、ポータルだけは作れない。
 �
 5Base.ShopPopup.OfferInfoText.WeeklyStaminaCard_1_Info�このオファーでは、購入時に400スタミナと勝利チケット50個を即時で受け取る。以降7日間、毎日200スタミナと勝利チケット10個を獲得できる。購入回数に制限はなく、購入のたびに効果が延長されていく。
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Mjolnir_1_Name�<style=ability_label>Single Target Damage</style>Increases Single Target Ability Damage by <style=basestat>{single_target_amp}</style>.
 H
 5Base.Buildings.Building_FeudalAge_Home_Average_3_Name大きな住宅
 �
@@ -10332,8 +10412,8 @@ F
 *Base.BuildingGroups.premiumIrrigation_Name豪華な水汲み水車
 m
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_Name失われた神力の祠
-K
-'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
+O
+'Base.BattleMultiAutoVictoryPopup.Header$自動勝利回数を設定しよう
 L
 3Base.Buildings.Building_Mayas_Aviary_Average_4_Desc羽根を生産する
 �
@@ -10433,7 +10513,7 @@ o
 �
 Base.Resources.clay_Descx粘土はカオリンを粘土加工所で加工して得られる中間資源で、磁器の製作に使用される。
 �
-LBase.AbilityDescriptions.hero_battle_ability_description.TribalHealer_1_Name�<style=ability_label>回復</style>体力が最も低い味方ユニットに薬草の混合薬を塗り、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。ヒーローを優先する。
+LBase.AbilityDescriptions.hero_battle_ability_description.TribalHealer_1_Name�<style=ability_label>回復</style>体力が最も低い味方ユニットに薬草の混合薬を塗り、ナヤの基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。ヒーローを優先する。
 o
 ;Base.StoryText.Story_DesertDelta_5_1_BattleStart_Text3_Desc0そうね…全力を尽くすしかないね。
 B
@@ -10454,8 +10534,8 @@ D
 %Base.Units.Unit_BenjaminFranklin_Desc�ベンジャミン・フランクリンは、言葉で雷を引き寄せ、文字通り雷も操る男だ！１８世紀の多才な人物、フランクリンは、アメリカ合衆国の建国の父の一人として、独立宣言や憲法の草案作成に貢献しただけでなく、作家、発明家、科学者としても知られている。<br><br>電気の分野をいち早く探求し、凧を使って雲から「電気の火」を集め、雷が電気であることを証明した。この実験を通じて避雷針を発明し、さらに遠近両用眼鏡を考案し、海洋の研究にも携わった。<br><br>それだけでなく、外交官や作家としても広く名を馳せた。言葉の巧みさは、アメリカ独立戦争中にフランスの支援を得る上で大いに役立ち、その名は今でも書物に刻まれている。「死と税金以上に確かなものはない」という言葉は、今なお多くの人々に影響を与え続けている。
 �
 (Tutorial.RelicsInfoPopup.InfoDescription~遺物を装備すると、ヒーローのステータスが強化され、追加のアビリティ効果が付与される。
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>範囲攻撃・回復・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。影響を受けた味方ユニットは<style=basestat>{duration}</style>の間、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が攻撃力に加算される。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.JoanOfArc_15_Name�<style=ability_label>範囲攻撃・回復・強化</style>敵ユニットの最大集団に向かい神の助力を呼び、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいるユニットの体力を、ジャンヌの基礎ダメージの<style=basestat>{hp_percentage}</style>分回復する。影響を受けた味方ユニットは<style=basestat>{duration}</style>の間、ジャンヌの攻撃力の<style=basestat>{atk_percentage}</style>分が攻撃力に加算される。<color=#FFCF2B>オルレアン包囲戦</color>では、ジャンヌの<style=basestat>攻撃力</style>が<style=basestat>100%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 A
 "Base.Resources.hero.DArtagnan_Nameダルタニャンの精髄
 L
@@ -10613,8 +10693,8 @@ J
  Base.Units.Unit_Nostradamus_Desc�	伝説の予言者ノストラダムスとともに、運命の謎を解き明かそう！１５０３年に生まれたミシェル・ノストラダムスは、ペストの流行時に勇敢に立ち向かった医師として名を上げたが、後世に語り継がれることとなったのは、やはりその神秘的な予言だった。著書『予言集』には、意味深で謎めいた詩が数多く記されており、その真意をめぐって、世代を超えてさまざまな解釈が繰り返されてきた。破滅的な戦争や帝王たちの栄枯盛衰と結びつけられることも多い。<br><br>その評判は王侯貴族のあいだにも広まり、フランス王妃カトリーヌ・ド・メディシスの運命を占ったとも言われている。青銅の器を覗き込んでいたという説もあれば、星々に答えを求めていたという話もあり、占星術と詩的な謎を融合させた手法は、今もなお信奉者と懐疑派の双方を惹きつけてやまない。ヒーローたちのあいだでは、ノストラダムスは占いの器から決して離れず、夜が更けるころには、手帳が勝手に予言を書き始めるらしい。
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name労働者の家
-_
-%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
+A
+%Base.QuestlinesPanel.CompleteSpecific{0}{1}に勝利する。
 9
 &Base.TreasureHuntStartedPopup.EndTimer終了まで{0}
 �
@@ -10675,8 +10755,8 @@ J
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_Name豪華な住宅
 �
 -Base.Units.Unit_StoneAge_Player_Slingers_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_36_Name�<style=ability_label>踏みつけ・シールド・強化・弱体化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、攻撃速度を<style=basestat>{duration_debuff}</style>の間<style=basestat>{atk_speed_percentage}</style>低下させる。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、自身の基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_36_Name�<style=ability_label>踏みつけ・シールド・強化・弱体化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、攻撃速度を<style=basestat>{duration_debuff}</style>の間<style=basestat>{atk_speed_percentage}</style>低下させる。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、ウィリアムの基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
 �
 WBase.StoryText.Story_Questline_EventCity_Mayas_SayilPalace_Start_QuestFinish_Text1_Desc�見事な進展だ。そして、もう一つ考慮すべきことがある。<style=MC>サイル宮殿</style>には、<nobr><style=MC>カカオ豆</style> <sprite name=resource.cocoa_cta> </nobr>の産出を促す働きがある。都市設計にあたっては、その恩恵も視野に入れておくべきだ。
 o
@@ -10773,6 +10853,8 @@ I
 0Base.EquipmentSets.equipment_set.Druid_Ring_Nameドルイドの指輪
 J
 (Base.CustomizationPanel.ApplyItemToGroupこのアイテムを適用：
+�
+'Tutorial.HeroMetaReportPopup.Disclaimer�The ratings in this report are based on real usage data and updated monthly. New heroes for which no usage data exists are rated by the game's developers. Individual hero ratings may change over time as the game evolves.
 _
 1Base.Alerts.SingleSignOn.AccountConflict.SwitchTo*{0}のアカウントに切り替える。
 �
@@ -10881,8 +10963,8 @@ E
 5Base.Technologies.Technology_ByzantineEra_Mortar_Nameモルタル
 T
 ;Base.StoryText.Story_DesertDelta_7_9_BattleStart_Text1_Descこれが決戦だ！
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_15_Name�<style=ability_label>挑発・シールド・強化・自己回復</style>胸を叩いて<style=basestat>{taunt_duration}</style>の間、すべての敵ユニットを挑発し、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして獲得する。その後、<style=basestat>{duration}</style>の間、防御力が<style=basestat>{def_percentage}</style>上昇する。さらに、ミノスは自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分を回復する。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.KingMinos_15_Name�<style=ability_label>挑発・シールド・強化・自己回復</style>胸を叩いて<style=basestat>{taunt_duration}</style>の間、すべての敵ユニットを挑発し、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして獲得する。その後、<style=basestat>{duration}</style>の間、防御力が<style=basestat>{def_percentage}</style>上昇する。さらに、ミノスは自身の基礎ダメージの<style=basestat>{hp_percentage}</style>分を自己回復する。
 m
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text5_Nameレイフ・エリクソン
 �
@@ -10941,8 +11023,8 @@ A
 4Base.Technologies.Technology_EarlyRome_Sewerage_Name	下水道
 V
 CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_2_Name重歩兵兵舎
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.Confucius_15_Name�<style=ability_label>強化・弱体化</style>孔子が風の知恵を解放し、<style=basestat>{duration}</style>の間、敵ユニット全体の防御力を自身の攻撃力の<style=basestat>{def_percentage}</style>分低下させる。同時に、味方ユニット全体の攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらに攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させる。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.Confucius_15_Name�<style=ability_label>強化・弱体化</style>風の知恵を解放し、<style=basestat>{duration}</style>の間、敵ユニット全体の防御力を孔子の攻撃力の<style=basestat>{def_percentage}</style>分低下させる。同時に、味方ユニット全体の攻撃力を孔子の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらに攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させる。
 �
 `Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_CheopsPyramid_QuestStart_Text3_Desc�<style=MC>工房</style>と生産能力を強化し、<style=MC>クフ王のピラミッド</style>の整備を進めつつ、これらを我が物とし、祭典に備えよう。
 M
@@ -10965,6 +11047,8 @@ B
 &Base.MilestoneEventPanel.CurrentPoints自分のポイント：
 A
 %Base.ShopPopup.Pages.china_pull_offer仲間が待っている
+]
+*Base.ShopPopup.Pages.diy_offer_description/Get your preferred items, that you really need!
 @
 *Base.BuildingUpgradePanel.ResearchRequired必要な研究：
 �
@@ -11121,8 +11205,8 @@ Q
 ,Base.UnitStats.unit_stat.AoeDamageAmp_Abbrev!範囲アビリティダメージ
 B
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_Name	槍騎兵
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>瞬間移動・挑発・燃焼・シールド</style>最も遠い敵にテレポートし、<style=basestat>{range}</style>の範囲内にいる敵ユニットを挑発して<style=basestat>{burn_dmg}</style>の燃焼ダメージを与える。加えて、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得する。
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>瞬間移動・挑発・燃焼・シールド</style>最も遠い敵にテレポートし、<style=basestat>{taunt_duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる敵ユニットを挑発し、<style=basestat>{duration}</style>の間、<style=basestat>{burn_dmg}</style>の燃焼ダメージを与える。加えて、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得する。
 �
  Base.Units.Unit_SirLancelot_Desc�円卓の騎士にして、アーサー王の忠臣、そして妖精の国をも旅したフランスの騎士、ランスロットの物語を聞こう。<br><br>遠き地よりアーサー王の宮廷にたどり着き、グィネヴィア王妃を救い、聖杯を求めて旅をした。その武勇と気高さは、まさに理想の騎士そのものだった。<br><br>しかし、ただ一つの過ちがキャメロットを崩壊へと導いた。王妃への叶わぬ愛が、王国を揺るがしたのだ。それでもなお、誠実な英雄として語り継がれ、多くの者に愛され続けている。あまり知られていないが、実はもう一人、異なる才能を持つ兄弟がいたらしい。その名も、ダンスロット卿！
 �
@@ -11133,8 +11217,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text3_Descc俺とレイフで下の階は隅から隅まで探したんだ。けど、何もなかったさ。
 F
 'Base.Resources.alliance_point_rare_Nameレアな同盟ポイント
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.VikingJarl_1_Name�<style=ability_label>強化</style>雄叫びを上げ、<style=basestat>{range}</style>の範囲内にいる味方ユニットの攻撃力を<style=basestat>{duration}</style>の間、自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.VikingJarl_1_Name�<style=ability_label>強化</style>雄叫びを上げ、<style=basestat>{range}</style>の範囲内にいる味方ユニットの攻撃力を<style=basestat>{duration}</style>の間、エイリークの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 D
 +Base.EquipmentSets.equipment_set.Druid_Nameドルイドセット
 K
@@ -11159,8 +11243,8 @@ LBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_1_Name�
 PBase.StoryText.Story_Questline_EventCity_Mayas_Tikal_Start_QuestStart_Text3_Desc�まさに今こそ、遥かなる地より巡礼者を惹きつける、壮麗なる都を築く時でございます。<style=MC>神聖なる神殿群</style>を擁し、マヤの地に霊的な威光を示すにふさわしい都市を目指しましょう。
 8
 (Base.TreasureHuntDifficultiesPanel.Stageステージ
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_1_Name�<style=ability_label>強化</style>マンサ・ムーサが味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方ユニットのクリティカル率を<style=basestat>{crit_percentage}</style>上昇させ、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.MansaMusa_1_Name�<style=ability_label>強化</style>マンサ・ムーサが味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方ユニットのクリティカル率を<style=basestat>{crit_percentage}</style>上昇させ、攻撃力をマンサ・ムーサの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 b
 :Base.Buildings.Building_China_Workshop_SilkWorkshop_2_Desc$絹糸から絹織物を生産する
 L
@@ -11302,8 +11386,8 @@ J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_2_Name仮面工房
 �
 Base.Units.Unit_Tansen_Desc�天から雨を呼び、旋律で世界を揺るがす音楽家、ミアン・タンセン。１６世紀のインドに生き、皇帝アクバルに仕えた「九宝」のひとりとして宮廷にその名を刻んだ。<br><br>「学識ある者」を意味する名を持ち、北インド音楽の最初の流派とされるグワリオル・ガラナを創設。５歳の頃から音楽を学び、生涯にわたり卓越した歌声と技を磨き続けた。<br><br>伝説は数知れず、歌声で野生の象を鎮め、鳥を和ませ、火を灯し、雨を降らせたとも語られる。その音楽の遺産は今も受け継がれ、タンセンが学びを築いたグワリオルは「音楽の都」として知られている。
-?
-&Base.AlliancePanel.BackgroundNoInvites招待状はない :(
+N
+&Base.AlliancePanel.BackgroundNoInvites$招待はまだ届いていない :(
 S
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_1_Name
 レベル1
@@ -11537,8 +11621,8 @@ c
 .Tutorial.WonderUpgradeIntroTutorial.AskForHelp�他のプレイヤーに<style=MC>助け</style>を求めれば、レベルごとに最大3回まで支援を受けられる。<style=MC>研究ポイント</style>なら、いつでも<style=MC>貢献</style>できるぞ！
 [
 <Base.Buildings.Building_BronzeAge_Workshop_StoneMason_1_Desc白の偶像を生産する
-:
-!Base.AlliancePanel.ReceiveInvites招待を受け取る
+1
+!Base.AlliancePanel.ReceiveInvites受け取る
 D
 :Base.Technologies.Technology_BronzeAge_MantletShields_Name防盾
 ,
@@ -11623,10 +11707,10 @@ $Base.AlliancePanel.LeaveAllianceDesc同盟から脱退する？
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_Desc�雨の神チャクへ通じる<style=MC>聖なる泉</style>、セノーテが、日に日にその水を失いつつあります。このままでは雨は絶え、作物は枯れ、民は苦しむばかりです。
 E
 2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_Nameマヤの弓兵
-M
-=Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Name糸加工所
 F
 $Base.Resources.hero.SirLancelot_Nameランスロット卿の精髄
+M
+=Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Name糸加工所
 :
 -Base.TreasureHuntDifficultiesPanel.Difficulty	難易度
 _
@@ -11781,6 +11865,8 @@ H
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_Nameロバ農場
 9
 &Base.PvpTiers.PvP_Tier_Platinum_3_Nameプラチナ３
+V
+CBase.IngameEvents.MilestoneEvent_Moonlanding_2_RallyOfHeroes_1_NameRally of Heroes
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text10_Desc�急ごう。発信源を三点測量で割り出すのよ。このままでは、ひとつひとつの波動が危険かもしれないわ。
 �
@@ -11873,14 +11959,18 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_27_Nameレベル27
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_Name哲学者の館
+n
+Browser.OOM.PreventionHeadlineLTo prevent future disruptions and improve stability, please try these steps:
 i
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc*ギリシャ弩砲をアンロックする
 �
  Base.Event.ItemGridOutOfSyncText�イベントで同期エラーが発生しました。ゲームを再読み込みして、進行を安全に続けてください。
+.
+Base.Mailbox.DeleteAllDelete read messages
+�
+4Base.SpartasLastStandInfoPopup.ProtectYourAlliesInfo�レオニダスが倒れるか三百人隊が全滅すると敗北になる。すべての敵を倒し、スパルタ兵の体力が10%以上残っていれば、星3つでの勝利となる。
 �
 3Base.Incidents.Incident_FeudalAge_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
-�
-4Base.SpartasLastStandInfoPopup.ProtectYourAlliesInfo�レオニダスが倒れるか、三百人隊が全滅すると敗北となる。すべての敵を倒し、スパルタ兵の体力が30%以上残っていれば、星3つでの勝利となる。
 Y
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_Nameヴァイキングの台頭
 E
@@ -11973,6 +12063,8 @@ H
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�通信と電源が要だというのなら、防御線を築くべきだ。テスラの干渉を防ぐには、障壁が不可欠だ。 
 �
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_Desc~それこそが君の名声だ、レオニダス。テルモピュライの戦いで、君は英雄として散ったんだ。
+�
+Browser.OOM.MainText�We sincerely apologize for this disruption. Your most recent actions may not have been saved. Please reload to return to your last known checkpoint.
 ]
 8Base.Questlines.Questline_CollectStars_Continent6_2_Name!星コレクター６パート２
 B
@@ -11991,8 +12083,8 @@ I
 9Base.Technologies.Technology_BronzeAge_BuildingTools_Name建築知識
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text5_Desc0この時計ごとぶっ壊してやろうか？
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�<style=ability_label>回復・弱体化</style>最もダメージを受けた味方ユニットに秘薬を投げ、自身の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。さらに、秘薬の煙は周囲の敵ユニットが受ける回復効果を<style=basestat>{duration}</style>の間、<style=basestat>{healing_reduction_percentage}</style>低下させる。
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.LouisPasteur_1_Name�<style=ability_label>回復・弱体化</style>最もダメージを受けた味方ユニットに秘薬を投げ、パストゥールの基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。さらに、秘薬の煙は周囲の敵ユニットが受ける回復効果を<style=basestat>{duration}</style>の間、<style=basestat>{healing_reduction_percentage}</style>低下させる。
 6
  Base.ChestEvents.SeasonPass_Nameシーズンパス
 6
@@ -12121,6 +12213,8 @@ S
 Base.BattleStatsPanel.Minionsユニット
 �
 $Base.Units.Unit_OttoVonBismarck_Desc�帝国議会を後にし、やがて歴史の象徴となったオットー・フォン・ビスマルク。１９世紀に活躍し、ドイツ統一の立役者となった政治家だ。プロイセン王国の首相、そしてドイツ帝国初代宰相として、卓越した外交手腕と現実主義的な政策を駆使し、国家の未来を築き上げた。<br><br>デンマーク、オーストリア、フランスとの戦争を巧みに操り、無数の独立したドイツ諸邦を一つの強大な帝国へと統合する道を切り開いた。<br><br>さらに、労働者の権利と社会の安定を重視し、医療保険、労災補償、老齢年金などの先駆的な社会改革を導入したことでも知られる。歴史のヒーローたちの中でも、その堂々たる口ひげは群を抜いており、ヒゲ用クリームの予算の６０％を独占しているらしい。
+=
+)Base.ChestEvents.Event_Moonlanding_2_NameThe Moon Landing
 �
 Base.Resources.golden_mask_Descd黄金の仮面は加工された資源で、レベル4以上の金細工工房で生産できる。
 F
@@ -12288,6 +12382,10 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_34_Nameレベル34
 M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_Name遠征桟橋
+
+Base.Mailbox.HeaderMailbox
+9
+(Base.Resources.UpgradeToken_Mjolnir_NameMjolnir Sigil
 ,
 Base.Relics.LunarMeteorite_Name	月隕石
 9
@@ -12408,6 +12506,8 @@ H
 5Base.Technologies.Technology_FeudalAge_TaflGames_Nameタフル遊戯
 L
 6Base.Factions.Faction_AgeOfTheFranks_Carolingians_Nameカロリング人
+g
+Base.SocialSharing.ShareTextGCome and play Heroes of History - follow this link to install the game!
 F
 $Base.QuestlinesPanel.NegotiationTaskこの交渉を解決する。
 �
@@ -12422,8 +12522,8 @@ U
 'Base.QuestlinesPanel.LevelUpAnyHeroTask*ヒーローをレベルアップする。
 ]
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_Descゴブレットを生産する
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>強化</style>所持ヒーローの範囲攻撃ダメージを<style=basestat>{flat_amp}</style>増加させる。さらに、回復を与えるか受けるたびに<style=basestat>{area_amp}</style>の範囲攻撃ダメージが追加され、最大<style=basestat>{stack_limit}</style>回まで累積する。
 F
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_Name畜産農場
 !
@@ -12446,6 +12546,8 @@ g
 'Base.Units.Unit_GreekMathematician_Desc�図形の法則を解き明かす、幾何学の父、ユークリッド！紀元前３世紀のギリシャの数学者であるユークリッドは、数学の知識を集大成した『原論』をはじめ、後の西洋数学に多大な影響を与える著作を残した。<br><br>『原論』の13巻には、幾何学を中心に多くの数学的概念が詳述され、ピタゴラスの定理の証明や素数に関する分析も含まれている。この作品はユークリッド幾何学の基礎となり、その後の歴史において数学的思考の枠組みを作り上げた。<br><br>ユークリッドの生涯自体は謎に包まれているが、遺された業績こそが真の遺産といえる。詳細かつ体系的な論理的アプローチと、科学的方法の発展への貢献は世界に大きな影響を与えた。最も研究されている書物は聖書だと言われているが、次に多く読まれているのはユークリッドの『原論』だとも言われている。
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_RitualSites_LadySixSky_Tikal_QuestStart_Text2_Desc�わたくしたちは、そうした<style=MC>失われし地</style>を探し出し、その霊力を再び目覚めさせねばなりません。地が目を覚ましたとき、文化は新たなる息吹を得て、さらなる高みへと導かれることでございましょう。
+`
+GBase.IngameEvents.MilestoneEvent_Moonlanding_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
 (
 Base.Generic.PlariumPlayPlarium Play
 <
@@ -12460,8 +12562,8 @@ t
 &Base.Resources.cinnamon_TechnologyNameシナモン
 {
 ;Base.StoryText.Story_DesertDelta_6_1_BattleStart_Text3_Desc<わかってる。だが、俺には俺の運命がある。
-k
-.Base.WorldWondersDetailPanel.CantFillAnyCrates9箱を埋めるには必要な名産品が足りない。
+h
+.Base.WorldWondersDetailPanel.CantFillAnyCrates6箱を埋めるには必要な資源が足りない。
 G
 7Base.Technologies.Technology_Mayas_AstralAlignment_Name星の配置
 N
@@ -12472,10 +12574,10 @@ A
 Base.Ages.ClassicGreece_Finish紀元前880年
 @
 6Base.Technologies.Technology_IberianEra_Castillos_Name城塞
+Y
+%Base.BattleSetupPanel.OpenAbilityInfo0ヒーローを長押しすると情報が開く
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�工房の整備、見事であった。その技は称賛に値する。これよりは、<style=MC>サイル宮殿</style>そのものの強化に力を注ぐとしよう。宮殿が真に壮麗たる姿となれば、敵対する支配者たちも我らの威光を認め、同盟の席につかざるを得まい。
-t
-%Base.BattleSetupPanel.OpenAbilityInfoKヒーローを長押しすると、アビリティ情報が確認できる
 Z
 Base.OptionsPopup.CodeHint<プロモコードを入力して報酬を受け取ろう。
 V
@@ -12556,6 +12658,8 @@ Q
 Base.Resources.aventurine_Desc`特定の初期ゴシック時代の技術を研究するために使われる貴重な鉱石。
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_Name灌漑ステーション
++
+Browser.OOM.SecondaryCTAContact Support
 �
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text2_Desc{敵が何人いようと不思議ではないぞ。テスラからネクサスを奪って、ここから脱出しよう。
 H
@@ -12711,8 +12815,8 @@ I
 (Base.ShopPopup.Pages.winter_event_bundle冬のバンドル
 V
 "Base.OptionsPopup.WorldUnavailable0このワールドは現在利用できない。
-g
-BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Name!強化クレスト選択キット
+j
+BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Name$優れたクレスト選択キット
 F
 3Base.Buildings.Building_BronzeAge_Home_Small_3_Name小さな住宅
 7
@@ -12924,8 +13028,8 @@ b
 3Base.Abilities.hero_battle_ability.Nostradamus_Name	大予言
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_1_Name鳥舎
-X
-6Base.LeaderboardEventPanel.TaskInfo.TeslaStormRed_Name赤色のテスラストーム
+O
+6Base.LeaderboardEventPanel.TaskInfo.TeslaStormRed_Name赤色のストーム
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_4_Desc`養蜂場で生産された美味しい蜂蜜は、酒場で蜂蜜酒の醸造に使われる。
 3
@@ -13142,12 +13246,12 @@ B
 )Base.Notifications.IdleWorkersTextPartnerN{0}の労働者が貢献する準備完了！今すぐ割り当てよう！⏳
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>近接攻撃</style>杖で現在のターゲットを打ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>範囲攻撃・遠隔攻撃</style>シャカ・ズールーが<style=basestat>{instances}</style>発の投射物を放ち、<style=basestat>{range}</style>の範囲内の敵に分散して命中する。各投射物は<style=basestat>{dmg_percentage}</style>のダメージを与える。
 L
 $Base.Resources.hero.LeifErikson_Name$レイフ・エリクソンの精髄
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 p
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
 >
@@ -13188,8 +13292,8 @@ U
 Base.OptionsPopup.HelpButton	ヘルプ
 ;
 (Base.Regions.region.EasternValley_7_Nameオスマン港
-�
-SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>回復・蘇生</style>最もダメージを受けた味方ユニットを保護し、8秒かけて自身の基礎ダメージの<style=basestat>{heal_amount}</style>分を回復する。対象が致死ダメージを受けた場合、<style=basestat>{invulnerability_duration}</style>の間、無敵状態になりながら最大体力の<style=basestat>{revive_percentage}</style>分を追加回復する。ヒーローが優先され、すでにこの効果を受けているユニットは対象にならない。
+�
+SBase.AbilityDescriptions.hero_battle_ability_description.FlorenceNightingale_1_Name�<style=ability_label>回復・蘇生</style>最もダメージを受けた味方ユニットを保護し、8秒かけてフローレンスの基礎ダメージの<style=basestat>{heal_amount}</style>分を回復する。対象が致死ダメージを受けた場合、<style=basestat>{invulnerability_duration}</style>の間、無敵状態になりながら最大体力の<style=basestat>{revive_percentage}</style>分を追加回復する。ヒーローが優先され、すでにこの効果を受けているユニットは対象にならない。
 F
 $Base.AbilityTrainingPanel.NoBarracks{0}が建設されていない
 F
@@ -13252,8 +13356,8 @@ R
 BBase.Technologies.Technology_EarlyGothicEra_MasonryTechniques_Name石工技術
 |
 -Tutorial.WonderBlueprintTutorial.SelectWonderKここから、開発したい<style=MC>世界遺産</style>を選べる。
-�
-*Base.EquipmentSets.equipment_set.King_Descv基本攻撃ダメージ<style=basestat_dark>+10%</style>、攻撃速度<style=basestat_dark>+9ヒット／分</style>
+�
+*Base.EquipmentSets.equipment_set.King_Descn基本攻撃ダメージ<style=basestat_dark>+10%</style>、攻撃速度<style=basestat_dark>+9回/分</style>
 j
 KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_SahilPalace_2_Nameサイル宮殿（中編）
 k
@@ -13342,6 +13446,8 @@ V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_26_Nameレベル26
 �
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_4_2_Descaこの選択キットでは、研究ポイントと同盟ポイントの中から1つ選べる。
+�
+(Base.Resources.UpgradeToken_Mjolnir_Desc�This rare resource allows you to upgrade <nobr><style=legendary>Mjolnir</style></nobr> Relic.<br>It can be obtained alongside relic dust as rewards in certain events.
 ~
 ABase.Buildings.Building_EarlyGothicEra_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
 �
@@ -13392,8 +13498,8 @@ D
 $Base.IngameEvents.SeasonPass_08_Name覇王の血統
 F
 -Base.UnitStats.unit_stat.HealGivenAmp_Percent与える回復量％
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_15_Name�<style=ability_label>弱体化・燃焼</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の命中率を<style=basestat>{duration}</style>の間<style=basestat>{accuracy_percentage}</style>低下させ、自身の攻撃力の<style=basestat>{atk_percentage}</style>分、攻撃力を低下させる。さらに、影響を受けたユニットは<style=basestat>{burn_duration}</style>の間<style=basestat>{dmg_percentage}</style>の燃焼ダメージを受ける。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_15_Name�<style=ability_label>弱体化・燃焼</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の命中率を<style=basestat>{duration}</style>の間<style=basestat>{accuracy_percentage}</style>低下させ、マルクスの攻撃力の<style=basestat>{atk_percentage}</style>分、攻撃力を低下させる。さらに、影響を受けたユニットは<style=basestat>{burn_duration}</style>の間<style=basestat>{dmg_percentage}</style>の燃焼ダメージを受ける。
 [
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_Desc頭飾りを生産する
 3
@@ -13404,8 +13510,8 @@ SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_
 'Base.ShopPopup.DailyDealAscensionHeader昇進ブースト
 M
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_Name大きな住宅
-K
-:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
+J
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_Name出血の刃
 `
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_Nameどくろの家
 =
@@ -13552,8 +13658,8 @@ d
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_3_Desc'隣の建物の灌漑用水を増やす
 S
 (Base.BattleAbilityPanel.NoTargetsInRange'射程内にターゲットがいない
-Y
-7Base.LeaderboardEventPanel.TaskInfo.TeslaStormBlue_Name青色のテスラストーム
+P
+7Base.LeaderboardEventPanel.TaskInfo.TeslaStormBlue_Name青色のストーム
 �
 <Base.WorldWondersInventionInformationPopup.PromotionRareInfof通常の設計図を引いた場合、{0}の確率で「{1}」または「{2}」を獲得できる。
 ;
@@ -13715,10 +13821,10 @@ W
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 y
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
+Q
+8Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_Name緑色のストーム
 %
 Base.HeroPanel.SlowMovement遅い
-Z
-8Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_Name緑色のテスラストーム
 #
 Base.Generic.Extend拡張する
 �
@@ -13794,8 +13900,8 @@ S
 ,Base.EventPass.ForgeOfVulcan3BuyGoldPassText�今すぐ参加して限定報酬を手に入れよう！エピック遺物、<nobr><style=epic>ドラッカー船首像</style></nobr>が即座に手に入る！
 3
  Base.Heroes.hero.Pythagoras_Nameピタゴラス
-�
-BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
+�
+BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Desc^この選択キットでは、様々な色の優れたクレストの中から1つ選べる。
 �
 ;Base.StoryText.Story_DesertDelta_8_1_BattleStart_Text3_DescTアレスに鶏を百羽捧げて、俺たちの勝利を見守ってもらおう！
 �
@@ -13829,12 +13935,12 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc9イン�
 Base.Heroes.hero.Mozart_Nameモーツァルト
 >
 (Base.Subscriptions.PRODUCTION_SLOTS_Name生産スロット
+0
+Base.RiftGroup.common_Name時空ポータル
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>燃焼</style>松明の炎が所持ヒーローの燃焼ダメージを<style=basestat>{burn_dmg_increase}</style>増加させる。
 さらに、敵ユニットに単発ダメージを与えると、<style=basestat>{burn_chance}</style>の確率で燃焼を付与し、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_dmg}</style>のダメージを与える。
 
-)
-Base.RiftGroup.common_NameTime Portal
 >
 4Base.Technologies.Technology_Mayas_StoneCarving_Name彫刻
 S
@@ -13901,6 +14007,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Na
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
 �
 #Base.ChangeEmail.SuccessDescription�元のメールアドレスにも、メールアドレスの変更を取り消すためのメールが送信されています。14日以内に、そのメールに記載されたリンクをクリックすることで変更を元に戻すことができます。この14日間は再度メールアドレスの変更はできません。
+J
+(Base.Mailbox.ApplicationAcceptedHeadlineAlliance Application accepted!
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_24_Nameレベル24
 2
@@ -13993,8 +14101,8 @@ G
 Base.Alerts.InvalidSessionTitle$セッションが期限切れです
 �
 2Tutorial.WonderMigrationTutorial.BlueprintsToGears�また、余った<style=MC>世界遺産</style>の<style=MC>設計図</style>は<style=MC>歯車</style>に変換できる。それらを使って、私と一緒に新たな<style=MC>世界遺産</style>を<style=MC>発明</style>しようではないか！
-k
-+Base.EquipmentSets.equipment_set.Maori_Desc<攻撃速度<style=basestat_dark>+4.5ヒット／分</style>
+c
++Base.EquipmentSets.equipment_set.Maori_Desc4攻撃速度<style=basestat_dark>+4.5回/分</style>
 �
 (Base.BattleAbilityPanel.NoTargetSelected[少なくとも1体のユニットがアビリティの効果を受ける必要がある。
 �
@@ -14301,8 +14409,8 @@ K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_2_Name射撃兵兵舎
 '
 Base.HeroClass.Manipulator	策略家
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name�<style=ability_label>近接攻撃・強化・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、驚異的な力を発揮し、攻撃速度が<style=basestat>{atk_speed_duration}</style>の間、<style=basestat>{atk_speed_percentage}</style>上昇し、自身の最大体力の<style=basestat>{heal_percentage}</style>分が回復する。さらに、防御力が<style=basestat>{def_duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。<color=#FFCF2B>トロイの陥落</color>では、アキレスの<style=basestat>攻撃力</style>が<style=basestat>25%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name�<style=ability_label>近接攻撃・強化・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、驚異的な力を発揮し、攻撃速度が<style=basestat>{atk_speed_duration}</style>の間、<style=basestat>{atk_speed_percentage}</style>上昇し、アキレスの最大体力の<style=basestat>{heal_percentage}</style>分が回復する。さらに、防御力が<style=basestat>{def_duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。<color=#FFCF2B>トロイの陥落</color>では、アキレスの<style=basestat>攻撃力</style>が<style=basestat>25%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
 �
 +Base.Resources.hero.MargaretIOfDenmark_Desc�マーガレット１世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 3
@@ -14410,8 +14518,8 @@ A
 1Base.EquipmentTooltipHistoricBattle.Generic.title装備報酬
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_45_Nameレベル45
-�
-JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>シールド・強化</style>最も攻撃力の高い味方ユニットに月光の力を与え、自身の基礎ダメージの<style=basestat>{shield_value}</style>分のシールドを付与し、さらに<style=basestat>{crit_chance_buff_duration}</style>の間、クリティカル率を<style=basestat>{crit_chance_buff}</style>上昇させる。ヒーローを優先する。
+�
+JBase.AbilityDescriptions.hero_battle_ability_description.LadyKasuga_1_Name�<style=ability_label>シールド・強化</style>最も攻撃力の高い味方ユニットに月光の力を与え、春日局の基礎ダメージの<style=basestat>{shield_value}</style>分のシールドを付与し、さらに<style=basestat>{crit_chance_buff_duration}</style>の間、クリティカル率を<style=basestat>{crit_chance_buff}</style>上昇させる。ヒーローを優先する。
 W
 /SoftError.AllianceCity.PROCESS_ALREADY_FINISHED$処理はすでに完了している
 M
@@ -14530,8 +14638,8 @@ R
 6Base.Questlines.Questline_TeslaStorm_SolveStages3_Nameテスラストーム３
 J
 (Base.AlliancePanel.AcceptApplicationDesc{0}の申請を承認する？
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>無敵・強化</style>味方ユニット全体に<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力を自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_10_Name�<style=ability_label>無敵・強化</style>味方ユニット全体に<style=basestat>{duration}</style>の間、無敵状態を付与する。さらに、<style=basestat>{buff_duration}</style>の間、味方の防御力をリンカーンの防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 O
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_6_Name祭服工房
 �
@@ -14602,8 +14710,8 @@ V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_44_Nameレベル44
 F
 3Base.Buildings.Building_BronzeAge_Home_Small_2_Name小さな住宅
-U
-!Base.ShopPopup.DoNotShowThisPopup0このポップアップを再度表示しない
+I
+!Base.ShopPopup.DoNotShowThisPopup$この警告を再度表示しない
 K
 ,Base.AlliancePanel.AllianceLeaderChangeTitleリーダーを変更する
 |
@@ -14736,8 +14844,8 @@ N
 7Base.Units.Unit_ByzantineEra_Player_SaracenArchers_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 H
 8Base.Buildings.Building_AgeOfTheFranks_Farm_Rural_3_Name小作農場
-�
-(Base.PiggyBanks.researchPointsEvent_Descl研究ポイントを消費してジェムを宝石庫に蓄え、大幅な割引価格で購入しよう！
+�
+(Base.PiggyBanks.researchPointsEvent_Descx研究ポイントを消費してジェムを宝石庫に蓄え、大幅な割引価格でジェムを購入しよう！
 �
 _Base.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_Tikal_QuestStart_Text2_Desc�そしてまた、<nobr><style=MC>太陽の石</style> <sprite name=resource.calendar_stone_cta> </nobr>を刻むことで、わたくしたちの務めを天の理と重ね合わせることが叶いましょう。
 Y
@@ -14913,6 +15021,8 @@ c
 DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_Nameシュタウファー様式
 F
 3Base.Questlines.Questline_BronzeAge_CityQuest3_Name新しい工房
+c
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text7_DescB（葉巻を放り投げながら）下がれ、爆発するぞ！
 F
@@ -15117,10 +15227,10 @@ D
 Base.Hints.Grass0芝生が鮮やかな緑に変わっていく…
 7
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff}分
+D
+1Base.Abilities.hero_battle_ability.ShakaZulu_Name突き刺す雨
 F
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_Name	深耕犂
-B
-1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 L
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_Name大ホール
 �
@@ -15265,8 +15375,8 @@ F
 3Base.Buildings.Building_Mayas_Aviary_Premium_3_Name豪華な鳥舎
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MarieCurie_1_Name�<style=ability_label>範囲攻撃・燃焼・毒</style>不安定な化学物質の小瓶を<style=basestat>{no_vials}</style>個、ランダムな敵ユニットに投げつけ、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは、さらに<style=basestat>{duration}</style>の間、燃焼と毒による<style=basestat>{debuff_percentage}</style>の追加ダメージを受ける。
-�
-HBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の命中率を<style=basestat>{duration}</style>の間<style=basestat>{accuracy_percentage}</style>低下させ、自身の攻撃力の<style=basestat>{atk_percentage}</style>分、攻撃力を低下させる。
+�
+HBase.AbilityDescriptions.hero_battle_ability_description.KarlMarx_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の命中率を<style=basestat>{duration}</style>の間<style=basestat>{accuracy_percentage}</style>低下させ、マルクスの攻撃力の<style=basestat>{atk_percentage}</style>分、攻撃力を低下させる。
 :
 'Base.BuildingUpgradePanel.BuildingStatsステータス
 D
@@ -15377,6 +15487,8 @@ J
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text9_Desc~こんなに格式高い会なのに、金とビロードが見当たらないなんて……ちょっと不満ですわね。
 0
  Base.Resources.iron_pendant_Name鉄の飾り
+b
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_PurpleTeslaTakedown_1_NameUmbral Tesla Takedown
 %
 Base.AlliancePanel.Overview概要
 f
@@ -15502,8 +15614,8 @@ J
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_2_Name攻城兵兵舎
 *
 Base.HeroPanel.AscendRelic超越する
-g
-!Base.AlliancePanel.BackgroundHintB「招待を受け取る」を選んで、ここで招待を見る
+j
+!Base.AlliancePanel.BackgroundHintE「受け取る」を選ぶと、ここに招待が表示される。
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_6_Name	漁桟橋
 K
@@ -15548,26 +15660,28 @@ F
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_Name歩兵部隊
 :
 'Base.Expansions.Expansion_Egypt_12_Nameナイルの橋
-H
-;Base.Technologies.Technology_ByzantineEra_WaterCistern_Name	貯水槽
 '
 "Tutorial.HeroMetaReportPopup.TierBB
+H
+;Base.Technologies.Technology_ByzantineEra_WaterCistern_Name	貯水槽
 '
 "Tutorial.HeroMetaReportPopup.TierAA
 O
 'Base.ChangePasswordPopup.RepeatPassword$パスワードをもう一度入力
+'
+"Tutorial.HeroMetaReportPopup.TierFF
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 a
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc'隣の建物の灌漑用水を増やす
 '
-"Tutorial.HeroMetaReportPopup.TierEE
+"Tutorial.HeroMetaReportPopup.TierDD
 A
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Name水路
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 �
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassText�今すぐ参加して限定報酬を手に入れよう！エピック遺物、<nobr><style=epic>スカラベ</style></nobr>が即座に手に入る！
-'
-"Tutorial.HeroMetaReportPopup.TierDD
 '
 "Tutorial.HeroMetaReportPopup.TierCC
 B
@@ -15716,8 +15830,8 @@ Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_Nameビザンツ弩砲
 �
 $Base.EventRankingPopup.EventCityInfo�イベントに参加してリーグの順位を上げよう。リーグの順位は、1つ以上の箱を埋めた全プレイヤーの進行状況に基づいて決まる。世界遺産で箱を埋めることで進行できる。報酬はイベント終了後に自動で受け取れる。
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを呼び出し、最大3体の敵ユニットを攻撃させ、それぞれに<style=basestat>{bleed_duration}</style>の間、<style=basestat>{bleed_damage}</style> の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、自身の失った体力の<style=basestat>{heal_per_unit}</style>分を回復する。
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Dracula_1_Name�<style=ability_label>遠隔攻撃・出血・自己回復</style>コウモリの群れを呼び出し、最大3体の敵ユニットを攻撃させ、それぞれに<style=basestat>{bleed_duration}</style>の間、<style=basestat>{bleed_damage}</style> の出血ダメージを与える。攻撃は出血していないヒーローを優先する。さらに、戦場にいる出血状態のユニット1体ごとに、ドラキュラの失った体力の<style=basestat>{heal_per_unit}</style>分を自己回復する。
 G
 4Base.Technologies.Technology_RomanEmpire_Goblet_Nameゴブレット
 Z
@@ -15779,8 +15893,8 @@ A
 !Base.Heroes.hero.Charlemagne_Nameカール大帝
 3
 )Base.Resources.DYN_WONDER_material_1_Name素材
-�
-&Base.FallOfTroyInfoPopup.UpperLaneInfo�このレーンの<style=basestat_dark>防壁</style>は<style=basestat_dark>自己回復</style>し、余った回復分は<style=basestat_dark>シールド</style>に変換する。<br><br><sprite name=status_effect_poison> <style=basestat_dark>毒ダメージ</style>に弱く、<style=basestat_dark>単発攻撃</style>は75%の追加ダメージを受ける。<br>気絶、精神支配、出血ダメージの効果は無効だ。
+�
+&Base.FallOfTroyInfoPopup.UpperLaneInfo�このレーンの<style=basestat_dark>防壁</style>は<style=basestat_dark>自己回復</style>し、回復量が上回ると<style=basestat_dark>シールド</style>に変換される。<br><br><sprite name=status_effect_poison> <style=basestat_dark>毒ダメージ</style>に弱く、<style=basestat_dark>単発攻撃</style>は75%多くダメージを与える。<br>気絶、精神支配、出血ダメージは効かない。
 �
 <Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�近衛師団は高度に特化した強力な歩兵ユニットで、通常の歩兵ユニットよりも強い。その強さは現在の時代に応じて自動的に強化される。
 G
@@ -15855,6 +15969,8 @@ Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_5_Name円形劇場
 I
 3Base.Buildings.Building_Mayas_Quarry_Premium_6_Name豪華な採掘場
+:
+/Base.Abilities.hero_battle_ability.Mjolnir_NameMjolnir
 N
 8Base.Technologies.Technology_IberianEra_MeadMastery_Name蜂蜜酒の熟練
 :
@@ -15883,8 +15999,8 @@ E
 Base.ResourceTypes.premium_Name	ジェム
 A
 (Base.AllianceSetDetailsPanel.NavBarTitle同盟を作成する
-�
-!Base.PlariumPlay.ShopInfo.Message�The payment window has opened in your default browser or on Plarium Play. To complete your in-game purchase, minimize the game window and continue within the payment window.
+�
+!Base.PlariumPlay.ShopInfo.Message�支払いウィンドウがブラウザまたはPlarium Playで開きました。購入を完了するには、ゲームを最小化して支払いウィンドウで手続きを続けてください。
 ;
 Base.HeroPanel.UnequipThisRelicこの遺物を外す？
 �
@@ -16047,8 +16163,9 @@ L
 3Base.AllianceChatNotifications.Options.TreasureHunt	宝探し
 a
 EBase.Questlines.Questline_EventCity_Mayas_RitualSites_LadySixSky_Name失われた神力の祠
-3
-Base.HeroPanel.HitsPerMinutes{0}ヒット／分
++
+Base.HeroPanel.HitsPerMinutes
+{0}回/分
 I
 3Base.Units.Unit_HighMiddleAges_Player_Catapult_Name大型バリスタ
 a
@@ -16071,6 +16188,12 @@ I
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
 �
 [Base.StoryText.Story_Questline_EventCity_Vikings_ProgressTier1_Ragnar_QuestStart_Text1_DescH順調だが、まだ始まりに過ぎん。使命は続いている。
+�
+'Base.PlayerSearch.SearchHelpDescription�Per default, the player search displays other active players that are within a similar power range as you are. Optionally, you can display players that speak any language.
+
+When searching for players using a name, the search will show you all players whose name is similar to the search term.
+
+It is also possible to search a player by the player id, in which case the number must be prefixed with a #.
 �
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_1_QuestStart_Text4_Desc�時間を無駄にせず、すぐにすべての箱を埋め、<style=MC>ヴァルハラ</style>をレベル１にアップグレードしてくれ！
 D
@@ -16204,16 +16327,16 @@ N
 DBase.Questlines.Questline_EventCity_Vikings_Provisions_Lagertha_Name食糧
 E
 *Base.TreasureHuntNegotiationPopup.Headline回復の祠 {0}/{1}！
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>範囲攻撃・弱体化・燃焼・強化</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。同時に、メネスは味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style=ability_label>範囲攻撃・弱体化・燃焼・強化</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。同時に、メネスは味方ユニットの最大集団に向かい、<style=basestat>{duration}</style>の間、攻撃力をメネスの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 7
 'Base.KeyboardShortcuts.Description.Shopショップ
 s
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
 H
 5Base.Buildings.Building_FeudalAge_Home_Average_2_Name大きな住宅
-4
-Base.RiftGroup.seasonPass_NameArcane Time Portal
+C
+Base.RiftGroup.seasonPass_Name!アーケイン時空ポータル
 A
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix（最大）
 c
@@ -16248,8 +16371,8 @@ G
 "Base.Heroes.hero.RomanPraetor_Name!アエミリア・テルティア
 9
 &Base.Regions.region.TeslaStormRed_Name赤ストーム
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与えると同時に、味方ユニットを<style=basestat>{duration}</style>の間、始皇帝の基礎ダメージの<style=basestat>{heal_percentage}</style>分を回復する。
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.QinShiHuang_1_Name�<style=ability_label>嵐術</style>始皇帝が霊剣を召喚する。この霊剣は<style=basestat>{duration}</style>の間、戦場を飛び回り、敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与えると同時に、味方ユニットを始皇帝の基礎ダメージの<style=basestat>{heal_percentage}</style>分回復する。
 �
 dBase.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_LadySixSky_Tikal_QuestFinish_Text1_Desc�敬虔なる巡礼者が続々と集い、司祭たちも儀式の始まりを静かに待ち構えております。<style=MC>ティカル</style>には神聖なる気が満ち、いまこそその姿を完全たるものとする時が訪れたのです。<style=MC>神々</style>の永遠なる祝福が、わたくしたちの文明を潤してくださることでしょう。
 X
@@ -16308,8 +16431,8 @@ K
 Base.BoostTypes.UnitBoost{0}ブースト
 *
  Base.BuildingTypes.merchant_Name商店
-T
-5Base.LeaderboardEventPanel.TaskInfo.StaminaSpend_Nameスタミナを消費する
+N
+5Base.LeaderboardEventPanel.TaskInfo.StaminaSpend_Nameスタミナを使う
 }
 Base.Resources.coins_Desc`コインは都市の発展に欠かせない資源で、住宅で自動的に生産される。
 S
@@ -16441,8 +16564,8 @@ W
 )Base.AllianceChatNotifications.Actions.Go移動する
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_2_QuestStart_Text1_Desc�礎はすでに築かれた。これからの段階では、より大きな挑戦が待っておるが、それに見合う報酬も手に入るであろう。
-3
-Base.PlariumPlay.ShopInfo.TitlePayment Checkout
+)
+Base.PlariumPlay.ShopInfo.Title決済
 .
 Base.LocalizedLocales.es_ESスペイン語
 �
@@ -16501,6 +16624,8 @@ j
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier1_5_Name!昇進素材の選択キット１
 M
 4Base.UnitStats.unit_stat.HealGivenAmp_Percent_Abbrev与える回復量％
+Y
+FBase.IngameEvents.LeaderboardEvent_Moonlanding_2_HistoricSpoils_1_NameHistoric Spoils
 *
 Base.Resources.kaolin_Nameカオリン
 !
@@ -16546,7 +16671,7 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_Nameレベ�
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescE陶器と黄金の宝物を集める遠征隊の船を出航させる
 =
-$Base.PlayerSearch.EndOfSearchResultsEnd of search results
+$Base.PlayerSearch.EndOfSearchResults検索結果は以上
 B
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_Name輝光の砲隊
 �
@@ -16912,8 +17037,8 @@ H
 2Base.Units.Unit_RomanEmpire_Player_Sagittarii_Descl射撃ユニットは遠距離から投擲物を放ち、特に歩兵ユニットに対して効果的だ。
 A
 4Base.Units.Unit_ClassicGreece_Player_Cataphract_Name	重騎兵
-�
-OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>踏みつけ・シールド・強化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、自身の基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
+�
+OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>踏みつけ・シールド・強化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、ウィリアムの基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
 �
 NBase.StoryText.Story_Questline_MinoanEra_BarracksUpgrade_QuestStart_Text3_Desc3お前が戦術を？一体何を知っている？
 W
@@ -16980,6 +17105,8 @@ C
 ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_Name極小規模な文化遺産
 H
 &Base.Alerts.NoInternetConnectionHeader接続に問題があります
+S
+CBase.IngameEvents.LeaderboardEvent_Moonlanding_2_StaminaRush_1_NameStamina Rush
 
 Base.Locales.pl_PLPolski
 L
@@ -17324,7 +17451,7 @@ B
 `
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianSiege_Nameメロヴィング投石機
 �
-HBase.AbilityDescriptions.hero_battle_ability_description.LouisXIV_1_Name�<style=ability_label>強化・シールド</style>ルイは味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、自身の防御力の<style=basestat>{def_percentage}</style>分上昇させる。さらに、影響を受けたユニットは同じ効果時間中にルイの基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして獲得する。
+HBase.AbilityDescriptions.hero_battle_ability_description.LouisXIV_1_Name�<style=ability_label>強化・シールド</style>ルイは味方ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる味方の防御力を<style=basestat>{duration}</style>の間、ルイの防御力の<style=basestat>{def_percentage}</style>分上昇させる。さらに、影響を受けたユニットは同じ効果時間中にルイの基礎ダメージの<style=basestat>{shield_percentage}</style>分をシールドとして獲得する。
 B
 ,Base.AllianceChatNotifications.Options.Titleチャット通知
 ]
@@ -17394,14 +17521,16 @@ Q
 Base.Generic.ErrorEmailFormat0メールアドレスの形式が正しくない
 }
 Base.HeroClass.GreatLeader_DescZ君主は防御ヒーローで、味方を強化しチームを支えるのが得意だ。
+_
+HBase.IngameEvents.LeaderboardEvent_Moonlanding_2_SummonOfTheStars_1_NameSummon of the Stars
 B
 /Base.RewardTypes.RewardContainerDefinition_Name労働者生産
 4
 Base.SelectRegionPopup.EUヨーロッパ（EU）
 �
 +Tutorial.MainTutorial.FarmUnderConstruction�見えるかい？<nobr><style=MC>労働者</style> <sprite name=workers_city.city_capital></nobr> が動き出したよ。<style=MC>農場</style>はすぐに完成するだろう。
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.Confucius_1_Name�<style=ability_label>強化・弱体化</style>孔子が風の知恵を解放し、<style=basestat>{duration}</style>の間、敵ユニット全体の防御力を自身の攻撃力の<style=basestat>{def_percentage}</style>分低下させる。同時に、味方ユニット全体の攻撃力を自身の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.Confucius_1_Name�<style=ability_label>強化・弱体化</style>風の知恵を解放し、<style=basestat>{duration}</style>の間、敵ユニット全体の防御力を孔子の攻撃力の<style=basestat>{def_percentage}</style>分低下させる。同時に、味方ユニット全体の攻撃力を孔子の攻撃力の<style=basestat>{atk_percentage}</style>分上昇させる。
 u
 ;Base.Alerts.SingleSignOn.PossibilityToRestartOrGoOn.Message6アカウント接続エラーが発生しました。
 �
@@ -17568,8 +17697,8 @@ H
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_Desc先祖の仮面を生産する
 �
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc3ロビン、アメリア。何かわかったか？
-�
-Base.RiftInfoPopup.PityText�{0}回の召喚ごとに星５ヒーローが確定。途中で星５ヒーローを召喚した場合、このカウンターはリセットされる。<br><br>最初に獲得した星５ヒーローがプロモーション対象でない場合、次の星５ヒーローは必ずプロモーション対象となる。<br>この保証システムは、イベント再開催時にも適用される。 
+�
+Base.RiftInfoPopup.PityText�{0}回の召喚ごとに星５ヒーローが確定で手に入る。途中で星５ヒーローを召喚した場合、このカウンターはリセットされる。<br><br>最初に獲得した星５ヒーローがプロモーション対象でない場合、次の星５ヒーローは必ずプロモーション対象となる。
 �
 5Base.EventStartScreens.EventCityChinaStartDescription]嵩山の神聖な峰で帝国を築き、{0}人の限定ヒーローを手に入れよう！
 (
@@ -17667,8 +17796,8 @@ u
 Base.Numbers.TimesCount×{0}
 K
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_Name	石工房
-=
-*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
+I
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsおすすめ編成を見る
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_Name噴水
 �
@@ -17784,8 +17913,8 @@ d
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc'隣の建物の灌漑用水を増やす
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_Nameレベル32
-2
-Base.RiftGroup.eventCity_NameEvent City Portal
+<
+Base.RiftGroup.eventCity_Name友好文化のポータル
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 Z

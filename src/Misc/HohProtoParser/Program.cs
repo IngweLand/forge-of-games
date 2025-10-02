@@ -39,7 +39,7 @@ var serviceProvider = services.BuildServiceProvider();
 
 var downloader = serviceProvider.GetRequiredService<IDownloader>();
 var downloadResult = await downloader.DownloadAsync("downloads");
-downloadResult.StartupFileNames = ["startup_china-maya.bin"];
+downloadResult.StartupFileNames = ["startup_china-maya.bin", "startup_maya-egypt.bin", "startup_egypt-vikings.bin"];
 var webAppOutputDir = @"D:\IngweLand\Projects\forge-of-games\src\WebApp\resources\data\hoh";
 var functionsAppOutputDir = @"D:\IngweLand\Projects\forge-of-games\src\Functions\resources\data\hoh";
 var localizationParser = serviceProvider.GetRequiredService<LocalizationParser>();

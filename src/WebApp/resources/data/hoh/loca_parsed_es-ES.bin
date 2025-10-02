@@ -216,8 +216,6 @@ GBase.InventoryItems.SelectionKit_current_era_ascensionmaterials_20_DescOEste K
 +Base.EventPass.ForgeOfVulcanBuyGoldPassText�Participa para ganar recompensas exclusivas y obtener la épica Reliquia <nobr><style=epic>Estandarte de Águila</style></nobr> ¡de inmediato!
 7
 "Base.AccountSettingsPopup.UsernameNombre de usuario
-z
-4Base.LeaderboardEventPanel.TypeInfo.TaskType_ContentBCompleta tareas para ganar Trofeos y alcanzar Recompensas de Hito.
 �
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_2_QuestStart_Text1_Desc�Las bases están sentadas. La siguiente fase traerá sin duda retos más difíciles, ¡pero también ofrecerá mayores recompensas!
 -
@@ -414,8 +412,8 @@ E
 0Base.Buildings.Building_Mayas_Home_Priest_4_NameCasa del Artesano
 O
 0SoftError.AllianceCity.PROCESS_SLOT_NOT_UNLOCKEDRanura aún no desbloqueada
->
-'Base.PlayerSearch.PlayersFoundByIdTitlePlayers found by id
+G
+'Base.PlayerSearch.PlayersFoundByIdTitleJugadores encontrados por ID
 ?
 #Base.NotEnoughPremiumPopup.HeadlineNo hay gemas suficientes
 �
@@ -593,8 +591,8 @@ J
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text3_Desc�Cada <style=MC>Caja</style> también mejora tu <style=MC>Rango</style> en el <style=MC>Marcador del Evento</style>, desbloqueando mejores <style=MC>Recompensas</style> a medida que asciendes en las <style=MC>Ligas</style> hasta el final del Evento.
 N
 7Base.Technologies.Technology_Egypt_CeremonialDress_NameTrajes ceremoniales
-9
-'Base.PlariumPlay.ShopInfo.AbortPurchaseAbort Purchase
+;
+'Base.PlariumPlay.ShopInfo.AbortPurchaseCancelar comprar
 E
 6Base.Technologies.Technology_BronzeAge_Prosperity_NameProsperidad
 �
@@ -734,8 +732,8 @@ l
 /
 !Base.InventoryMenuPanel.Fragments
 Fragmentos
-I
-"Base.QuestlinesPanel.StageOfRegionStage {0} in {1}Stages {0} in {1}
+G
+"Base.QuestlinesPanel.StageOfRegionFase {0} en {1}Fases {0} en {1}
 A
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_NameTaberna
 x
@@ -888,6 +886,8 @@ M
 -Base.HeroPanel.EquipmentSubAttributeUnlocksAtSe desbloquea en el NVL {0}.
 K
 ,Base.Units.Unit_MinoanEra_Minoan_Axemen_NameSoldados con Hacha Minoicos
+#
+Base.Relics.Mjolnir_NameMjolnir
 �
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
 3
@@ -985,8 +985,12 @@ A
 KBase.StoryText.Story_Questline_Alliances_JoinAlliance_QuestStart_Text1_DescYCuando caía a través del tiempo, vi a otros como nosotros. Deberíamos unirnos a ellos.
 o
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc0Mejora la felicidad de los edificios adyacentes.
+`
+"Base.BattleSetupPanel.HeroDefeated:Hero is defeated and needs to recover at a Healing Shrine.
 ;
  Base.ScoutPopup.ScoutDescription¿Quieres explorar {0}?
+�
+Base.Relics.Planisphere_Desc�If you've ever tried to spot the constellations on a cloudless night and come away seeing only “the big shiny one,” the planisphere is your secret weapon. This ingenious device - two rotating disks covered in stars and secrets - unlocks the heavens above, helping sky-watchers trace Orion's belt, the twists of Draco, or the steady glow of Polaris.<br><br>Favored by stargazers since ancient Alexandria and the golden days of Islamic astronomy, planispheres were the pocket guides of their time - compact, reliable, and just a little bit magical. With a simple turn, you can reveal which stars will greet you at sunset, and plot your celestial journey for the night ahead. The universe might be vast and mysterious, but in your hands, the planisphere makes it suddenly familiar.
 <
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_NameToxotas
 3
@@ -1023,8 +1027,8 @@ K
 MBase.AbilityDescriptions.hero_battle_ability_description.PakalTheGreat_1_Name�<style=ability_label>Potenciador | Escudo</style> Pakal el Grande fortalece al grupo más grande de aliados, otorgándoles un escudo equivalente al <style=basestat>{shield_percentage}</style> de su daño base durante <style=basestat>{shield_duration}</style>. Además, aumenta su DEF en un <style=basestat>{def_percentage}</style> de su propia DEF en un radio de <style=basestat>{range}</style> durante <style=basestat>{def_duration}</style>.
 �
 2Base.ResearchPointsVideoPlacementPopup.DescriptionRMira este video corto para omitir {0} del temporizador de Puntos de Investigación
-�
-&Base.FallOfTroyInfoPopup.LowerLabeInfo�<style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>atacarán</style> a tu equipo, infligiendo también <style=basestat_dark>Daño por Quemadura</style>. A partir de la Etapa 10, también atacarán la carga de las habilidades de tu Héroe. <br><br>Tienen una debilidad contra <sprite name=status_effect_bleed> <style=basestat_dark>Daño por Sangrar</style>. <br>Inmunes a los efectos de Aturdir y Control Mental.
+�
+&Base.FallOfTroyInfoPopup.LowerLabeInfo�<style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>atacarán</style> a tu equipo, causando también <style=basestat_dark>Daño por Quemadura</style>. A partir de la Etapa 10, también atacarán la carga de las habilidades de tus Héroes. <br><br>Tienen una debilidad contra <sprite name=status_effect_bleed> <style=basestat_dark>Daño por Sangrado</style>. <br>Inmunes a los efectos de Aturdimiento y Control Mental.
 L
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_NameCantera de Obsidiana
 G
@@ -1039,6 +1043,8 @@ F
 KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Bloqueo de Habilidad | Contrarrestar</style> Nostradamus predice el uso de una habilidad enemiga. La próxima vez que un enemigo use una habilidad, recibe <style=basestat>{damage}</style> de daño y queda con la habilidad bloqueada durante <style=basestat>{ability_block_duration}</style>.
 A
 .Base.SpartasLastStandInfoPopup.UpperLaneHeaderCarril Superior
+A
+&Base.AccountConfirmationPopup.HeadlinePlease check your Email
 v
 :Base.AllianceQuarterPanel.ProductionUnlockBuildRequirement8Construye el distrito para desbloquear esta producción.
 C
@@ -1298,8 +1304,8 @@ H
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescJSupongo que esa es nuestra próxima tarea: ¡averiguar qué podemos hacer!
 (
 Base.Ages.RomanEmpire_Start	50 a. C.
-c
-?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate The player has a pending invite.
+n
+?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate+El jugador tiene una invitación pendiente.
 
 Base.Rarities.CommonComún
 :
@@ -1428,6 +1434,8 @@ L
 'Base.QuestlinesPanel.HaveResourceInCity!Ten <b>{0} {1}</b> en <b>{2}</b>.
 L
 3Base.Questlines.Questline_BronzeAge_CityQuest2_NameProductos Artesanales
+7
+Base.Mailbox.RemovalHeadlineAlliance Removal Notice
 >
 )Base.RewardTypes.UnlockFeatureReward_DescDesbloqueado: {0}
 `
@@ -1466,6 +1474,8 @@ g
 CBase.Technologies.Technology_AgeOfTheFranks_UrbanCombatProwess_Name Destreza en el combate callejero
 9
 %Base.Heroes.hero.NubianMercenary_NameKandake de Nubia
+|
+Base.Mailbox.RemovalCopy`Sorry, you have been removed from the Alliance {} by {}. Find an Alliance that suits you better!
 �
 3Base.QuestlinesPanel.HaveSpecificBuildingInCityTask4Ten <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b>.4Ten <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b>.
 h
@@ -1519,12 +1529,12 @@ H
 C
 5Base.Technologies.Technology_FeudalAge_Feudalism_Name
 Feudalismo
+M
+"Base.RewardPanel.AutoVictoryHeader'Tus Recompensas de Victoria Automática
 [
 5Base.Generic.CancelProductionFullStorageWarning_Title"Detener producción para continuar
 _
 FBase.Technologies.Technology_KingdomOfSicily_ImprovedHeaterShield_NameEscudo tarja mejorado
-?
-"Base.RewardPanel.AutoVictoryHeaderYour Auto Victory Rewards
 T
 :Base.Buildings.Building_Vikings_FishingPier_Premium_6_NameMuelle de Pesca Lujoso
 J
@@ -1648,6 +1658,8 @@ E
 ,Base.UnitStats.unit_stat.AttackSpeed_Percent% Velocidad de Ataque
 B
 &Base.OptionsPopup.KeyboardShortcutsTabTeclas de acceso rápido
+�
+"Base.Mailbox.ApplicationDeniedCopy[Sorry, {} has denied your application to the Alliance {}. Try applying to another Alliance!
 e
 1Base.QuestlinesPanel.SolveIncidentsTaskNoIncident0Vuelve más tarde para resolver más incidentes.
 �
@@ -1688,8 +1700,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc�Pa
 'Base.RewardPanel.BuildingUnlocked_ShortEdificio
 P
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusEstado de Salud del Héroe
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Melee Strike | Bleed</style>Amina hits the closest enemy unit, prioritizing heroes, for <style=basestat>{dmg_percentage}</style> damage. The target receives a bleeding effect that deals <style=basestat>{bleed}</style> damage over <style=basestat>{duration}</style>. Deals an additional <style=basestat>{dmg_per_stack}</style> damage per bleed stack. This additional damage cannot exceed <style=basestat>{max_dmg}</style>.
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Golpe cuerpo a cuerpo | Sangrado</style>Amina golpea a la unidad enemiga más cercana, priorizando a los héroes, e inflige <style=basestat>{dmg_percentage}</style> de daño. El objetivo recibe un efecto de sangrado que causa <style=basestat>{bleed}</style> de daño durante <style=basestat>{duration}</style>. Inflige <style=basestat>{dmg_per_stack}</style> de daño adicional por acumulación de sangrado. Este daño adicional no puede superar <style=basestat>{max_dmg}</style>.
 �
 1Base.AllianceChatNotifications.IncidentRunningOutW¡El tiempo se acaba! ¡Apresúrate y resuelve el incidente en la Ciudad de la Alianza!
 F
@@ -1999,6 +2011,8 @@ y
 ;Base.StoryText.Story_DesertDelta_1_8_BattleStart_Text2_Desc:Sé que ella aún no se ha vuelto en contra de nosotros…
 �
 #Base.ShopPopup.DailyDealLevelUpDesci¡Desata todo el potencial de tus Héroes con recursos esenciales de mejora y transfórmalos en leyendas!
+�
+*Base.EventPass.MoonLanding2MoreContentText�When you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more epic <style=epic>Relics</style> and another legendary <nobr><style=legendary>Mjolnir</style></nobr> up for grabs!
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_26_NameNivel 26
 F
@@ -2102,8 +2116,14 @@ J
 3Base.Technologies.Technology_BronzeAge_Artisan_NameArtesano
 �
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_DescBProduce una gran cantidad de Comida en un largo periodo de tiempo.
+;
+ Base.ShopPopup.Pages.diy_offer_3Your Hero Rooster Boost
+7
+ Base.ShopPopup.Pages.diy_offer_1Your Research Boost
 V
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_NameZona cultural mediana
+7
+ Base.ShopPopup.Pages.diy_offer_2Your Hero Ascension
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_3_DescVLa colmena produce una miel deliciosa que se usa para elaborar aguamiel en la taberna.
 c
@@ -2327,8 +2347,8 @@ ABase.AllianceTechnologies.alliance_technology.mainQuarter_12_NameNivel 12
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.MontezumaI_1_Name�<style=ability_label>Control | Golpe</style>
 Montezuma invoca lianas con espinas que atrapan al enemigo más alejado, arrastrándolo hasta el rango de combate cuerpo a cuerpo y causando <style=basestat>{dmg_percentage}</style> de daño al impactar.
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Shield</style>Grants the holder a shield equal to <style=basestat>{shield}</style> of their base damage whenever they use an active ability.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.BaguaMirror_1_Name�<style=ability_label>Escudo</style>Otorga al portador un escudo equivalente al <style=basestat>{shield}</style> de su daño base cada vez que usa una habilidad activa.
 8
 $Base.Resources.ceremonial_dress_NameTraje ceremonial
 8
@@ -2425,8 +2445,12 @@ OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader1
 Stonehenge
 \
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader3	3er lugar
+X
+Browser.OOM.Step2CQuick Restart: Refreshing your browser can often resolve the issue.
 \
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader2	2do lugar
+c
+Browser.OOM.Step1NLighten the Load: Close other browser tabs and applications to free up memory.
 :
 !Base.StorageLimit.ResourceStorage{0} de almacenamiento
 z
@@ -2475,6 +2499,8 @@ GBase.AllianceTechnologies.alliance_technology.productionQuarter_13_NameNivel 
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text4_DescxTambién habrá otras que necesiten un tremendo escarmiento en <style=MC>batallas</style>. Será mejor estar preparados.
 G
 6Base.Technologies.Technology_Mayas_MayanConsensus_NameConsenso Maya
+�
+Browser.OOM.Step3qAdjust Game Quality: For a more stable experience, go to the Settings menu and ensure Quality is set to 'Medium'.
 O
 8Base.Technologies.Technology_EarlyRome_LanceMastery_NameDominio de la lanza
 3
@@ -3092,6 +3118,8 @@ c
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Desc!Desbloquea Caballería Nobiliaria
 \
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text9_NameMarie Curie
+$
+Base.EventCity.EventHub	Event Hub
 ]
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_NameMercader de especias
 (
@@ -3192,8 +3220,8 @@ n
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 e
 &Base.RewardTypes.StorageCapReward_Desc;¡Aumenta tu/s {0} y su capacidad de almacenamiento en {1}!
-T
-!Tutorial.HeroMetaReportPopup.Hint/Tap any battle mode to view it's hero tier list
+l
+!Tutorial.HeroMetaReportPopup.HintGToca cualquier modo de batalla para ver su lista de niveles de héroes.
 F
 *Base.EquipmentToolTip.SubHeadlineArmamentsUn arma o prenda al azar
 �
@@ -3439,6 +3467,8 @@ T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_DescProduce Caolín
 9
 ,Base.AllianceSetDetailsPanel.WithApplication	Solicitud
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Planisphere_1_Namem<style=ability_label>Damage Over Time</style>Increases Damage Over Time by <style=basestat>{dot_amp}</style>.
 [
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_DescDesbloquea a los melites
 2
@@ -3548,8 +3578,8 @@ k
 Base.Generic.ErrorUnavailableJActualmente no se puede cambiar de nombre. Vuelve a intentarlo más tarde.
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc¡Eh, líder! ¡Tenemos un rival! ¡Esos <style=MC>aplastacráneos</style> nos amenazan con contraatacar! ¡Acabemos con ellos!
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teletransporte | Aturdir</style> Houdini se teletransporta hacia el enemigo con mayor enfoque, atrapando tanto a sí mismo como al objetivo en un tanque de agua. Ambos quedan aturdidos durante <style=basestat>{duration}</style> o hasta que el objetivo muera. Si Houdini recibe un daño fatal, escapa a un lugar seguro, finalizando la habilidad antes de tiempo y evitando la muerte.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teletransporte | Aturdir</style>Houdini se teletransporta al enemigo con mayor enfoque, atrapando tanto a sí mismo como al objetivo en un tanque de agua del que no se puede escapar. Ambos quedan aturdidos durante <style=basestat>{duration}</style> o hasta que el objetivo muera o sea teletransportado. Si Houdini recibe daño letal, escapa a un lugar seguro, terminando la habilidad antes de tiempo y evitando la muerte.
 E
 0Base.Buildings.Building_Mayas_Home_Priest_1_NameCasa del Artesano
 B
@@ -3770,14 +3800,16 @@ X
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_NamePuerto de Marineros de Lujo
 N
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_3_NameGranja de Ganado
+Q
+ABase.IngameEvents.MilestoneEvent_Moonlanding_2_AnvilStrike_1_NameAnvil Strike
 N
 8Base.Questlines.Questline_MinoanEra_BarracksUpgrade_NameMilitares Modernos
 L
 2Base.Units.Unit_TreasureHunt_Yellow_Marauders_NameMerodeadores Radiantes
+�
+2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask4Obtén <b>{0}</b> objeto de Equipamiento <b>{1}</b>.4Obtén <b>{0}</b> objetos de Equipamiento<b>{1}</b>.
 H
 4Base.Abilities.hero_battle_ability.JuliusCaesar_NameVeni, Vidi, Vici
-�
-2Base.QuestlinesPanel.ObtainEquipmentWithRarityTask,Obtain <b>{0}</b> <b>{1}</b> Equipment item.-Obtain <b>{0}</b> <b>{1}</b> Equipment items.
 >
 "Base.Rifts.rift.SeasonPass_09_NamePortal del Tiempo Arcano
 /
@@ -3798,6 +3830,8 @@ a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_NameAlbert Einstein
 c
 'Base.UnlockRequirementsPopup.ChronoShop8Gasta Cristales Crono para obtener valiosas recompensas.
+b
+HBase.IngameEvents.MilestoneEvent_Moonlanding_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>Control Mental| Potenciador</style>Desata su genio literario, convenciendo a una unidad enemiga para que ataque a sus aliados durante <style=basestat>{duration}</style>. Mientras esté bajo el control de Jane, el ATQ de la unidad enemiga aumenta en <style=basestat>{atk_percentage}</style>. Da prioridad a los héroes.
 +
@@ -3895,8 +3929,8 @@ y
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_2_Desc\Este Kit de Selección te permite elegir entre Puntos de Investigación y Puntos de Alianza.
 G
 2Base.EquipmentSets.equipment_set.Mangudai_Hat_NameCasco de Mangudai
-Y
-?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesYour alliance is full.
+]
+?Base.AllianceMemberContextPopover.AllianceFullCanNotSendInvitesTu alianza está completa.
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.PhilipIIOfMacedon_1_Name�<style=ability_label>Burla | Escudo | Golpe en Área</style> Felipe II de Macedonia obtiene un escudo grande equivalente al <style=basestat>{shield_percentage}</style> de su daño base y provoca a todas las unidades enemigas durante <style=basestat>{taunt_duration}</style>. Después de <style=basestat>{detonation_time}</style>, su escudo detona, infligiendo <style=basestat>{damage_percentage}</style> del valor restante del escudo como daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. La detonación consume el escudo de Felipe.
 D
@@ -4041,8 +4075,8 @@ M
 5Base.Buildings.Building_Egypt_GoldMine_Average_4_DescProduce mena de oro.
 +
 Base.UnlockableFeatures.Relics	Reliquias
-o
-*Base.RiftInfoPopup.PityPersistenceAdditionA<br>This guarantee carries over between reruns of the same event.
+u
+*Base.RiftInfoPopup.PityPersistenceAdditionG<br>Esta garantía se mantiene entre las repeticiones del mismo evento.
 ?
 1Base.Technologies.Technology_Egypt_Geography_Name
 Geografía
@@ -4050,12 +4084,15 @@ Geografía
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameBarracón de Infantería
 f
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc+Desbloquea los Lanzadores de Honda Minoicos
-N
-)Base.Generic.NoAvailableSpaceForHeroClass!No free slot for this hero class.
+\
+)Base.Generic.NoAvailableSpaceForHeroClass/No hay plazas libres para esta clase de héroe.
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�<style=ability_label>Golpe a Distancia</style>Lanza un hacha a la unidad enemiga con más PV, infligiendo <style=basestat>{dmg_percentage}</style> de daño.
 C
 'Base.Rifts.rift.SeasonPass_05_2024_NamePortal del Tiempo Arcano
+:
+,Tutorial.HeroMetaReportPopup.DisclaimerTitle
+Disclaimer
 �
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text5_DescFUn celo que permitió que 300 murieran como héroes, frente a miles...
 [
@@ -4269,8 +4306,8 @@ G
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�¡A toda velocidad: alimenta tu viaje con energía extra, tickets de victoria y moneda de eventos para conquistar retos y alzarte con la victoria!
 
 Base.Generic.GoogleGoogle
-1
-"Tutorial.HeroMetaReportPopup.TitleMeta Report
+2
+"Tutorial.HeroMetaReportPopup.TitleInforme Meta
 7
 !Base.RiftInfoPopup.DropChancesTabTasa de aparición
 I
@@ -4316,6 +4353,8 @@ H
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_NameAscenso de Egipto
 -
 !Base.TeslaStormsPanel.StageNumberFase {0}
+�
+Base.Relics.Mjolnir_Desc�When thunder rolls across the sky, Norse myth says it is Thor hurling his hammer, Mjolnir. Forged by dwarves and empowered to shatter mountains, Mjolnir is far more than a weapon - it's the shield and protector of the gods, the divine force that keeps chaos in check.<br><br>The hammer's magic is unique: it always returns to its owner, no matter how far thrown, and only those worthy of Thor's might can lift it. Vikings wore miniature Mjolnirs as amulets for strength and protection, hoping some of Thor's power might rub off. If storm clouds gather and lightning crackles, who can say? Mjolnir might just be passing by.
 V
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_NameRejuvenecimiento de la Unión
 2
@@ -4384,6 +4423,8 @@ B
 ,Base.EquipmentSets.equipment_set.Hussar_NameConjunto de Hussar
 ,
 Base.ResearchTreePanel.UnlockDesbloquear
++
+Base.Relics.Planisphere_NamePlanisphere
 F
 4Base.Technologies.Technology_Vikings_SunCompass_NameBrújula Solar
 �
@@ -4406,8 +4447,8 @@ E
 -Base.EquipmentSets.equipment_set.Bedouin_NameConjunto del Beduino
 g
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_NameLady Six Sky
-T
-5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories{0} Auto Victories possible
+\
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories#{0} Posibles victorias automáticas
 z
 .Base.EquipmentSets.equipment_set.Assassin_DescHDaño de Habilidad a un Solo Objetivo <style=basestat_dark>+7.5%</style>
 Z
@@ -4605,6 +4646,8 @@ M
 Sastrería
 �
 #Tutorial.MainTutorial.FoodExplained�<nobr><style=MC>Comida</style> <sprite name=resource.food_small></nobr> es vital para el crecimiento de nuestra <style=MC>civilización</style>. Veamos cómo <style=MC>construir</style> un lugar para <style=MC>vivir</style>.
+
+Base.Mailbox.DenyDeny
 G
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_NameTrituradores
 >
@@ -4906,6 +4949,8 @@ z
 7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc?Mejora sustancialmente la Felicidad de los Edificios adyacentes
 H
 #Base.BuildingGroups.jadeQuarry_NameCantera de JadeCanteras de Jade
+\
+GBase.IngameEvents.LeaderboardEvent_Moonlanding_2_GladiatorsGlory_1_NameGladiator's Glory
 
 (Base.QuestlinesPanel.HaveExpansionInCity(Ten <b>{0}</b> expansión en <b>{1}</b>.)Ten <b>{0}</b> expansiones en <b>{1}</b>.
 U
@@ -5515,6 +5560,8 @@ O
 ;Base.Technologies.Technology_EarlyRome_TributumCapitis_NameTributum Capitis
 Q
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_NameFundíbulos avanzados
+�
+*Base.EventPass.MoonLanding2BuyGoldPassTexttTake part to earn exclusive rewards and get the epic Relic <nobr><style=epic>Planisphere</style></nobr> immediately!
 I
 6Base.Technologies.Technology_IberianEra_DriftNets_NameRedes de deriva
 %
@@ -6087,6 +6134,8 @@ T
 VBase.StoryText.Story_Questline_EventCity_Mayas_SayilPalace_Start_QuestStart_Text1_Desc�Soy Moctezuma I, poderoso Tlatoani y comandante del ejército más grande de estas tierras. ¡Los dioses de la guerra y la sabiduría te han guiado a mi servicio en este tiempo de <style=MC>creciente tensión</style>!
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text1_Desc�Has establecido nuestros talleres con gran habilidad. Ahora centrémonos en mejorar <style=MC>Chichen Itza</style> mismo, pues sólo mediante su restauración completa volverá la mirada de Chaac a nuestro cenote sagrado.
+:
+Base.SocialSharing.ShareSubjectPlay Heroes of History!
 N
 7Base.Questlines.Questline_StoneAge_TheHerosJourney_NameEl Viaje del Héroe
 E
@@ -6131,6 +6180,8 @@ Por favor, inténtalo de nuevo en unos minutos o contacta con atención al clien
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_1_NameBarracón de Infantería
 K
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_4_NameNivel 4
+`
+FBase.IngameEvents.MilestoneEvent_Moonlanding_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 2
 #Base.BuildingGroups.MediumResidenceCasa Normal
 �
@@ -6166,6 +6217,8 @@ V
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_NameTaller de Porcelana
 �
 ;Base.StoryText.Story_DesertDelta_8_2_BattleStart_Text2_Descc¡Necesito respuestas de él! Y las obtendré, ¡aunque necesite el extremo puntiagudo de mi lanza!
+�
+8Base.EventStartScreens.MoonLanding2EventStartDescription�Complete specific game actions to earn Circuit Boards and unlock a cosmos of rewards, including new <style=legendary>Relics</style> and the ultimate trophy - <style=legendary>Mjolnir</style>! Propel your heroes to astronomical power by equipping them them with these new <style=legendary>Relics</style>!
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text1_Desc�Ahora que hemos establecido nuestras líneas de producción para los Anks y los Rollos de Papiro, centrémonos en actualizar la <style=MC>Pirámide de Guiza</style>.
 S
@@ -6250,6 +6303,8 @@ _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_Quest
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text2_DeschPuedo ayudar a reforzar nuestras rutas de señal y a examinar la integridad de los sistemas de energía.
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DesclLas unidades de infantería pesada son voluminosas e impiden que las unidades de caballería las atraviesen.
+?
+Base.Mailbox.InvitationHeadlineAlliance Invitation from {0}
 T
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_NameMáscara de Tutankamón
 �
@@ -6466,14 +6521,14 @@ f
 *Base.BuildingGroups.premiumSailorPort_NamePuerto de Marineros LujosoPuertos de marineros lujosos
 P
 9Base.Buildings.Building_Vikings_SailorPort_Average_1_NamePuerto de marineros
+N
+&Tutorial.BattleModeTierListPopup.Title$Lista de Niveles del Modo de Batalla
 �
 Base.Resources.hero.Tansen_DescySe utiliza para aumentar el Nivel de Despertar de Mian Tansen y así desbloquear bonificaciones de batalla más potentes.
 P
 8Base.Abilities.hero_battle_ability.BenjaminFranklin_NameConductor de Cometas
 �
 "Tutorial.BattleTutorial.UseAbility�¡Permanece a mi lado y nuestros rivales caerán como moscas! Sé testigo de la fuerza indomable de un <nobr><style=MC>REY ESPARTANO</style>.</nobr>
-?
-&Tutorial.BattleModeTierListPopup.TitleBattle Mode Tier List
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_22_NameNivel 22
 S
@@ -6782,6 +6837,8 @@ M
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny4_NameDiminuto
 k
 Base.Alerts.ClientOutOfDateTextHNo tienes la última versión de juego. Actualiza a la última versión.
+E
+&Base.Mailbox.ApplicationDeniedHeadlineAlliance Application denied
 <
 )Base.Regions.region.VolcanicJungle_3_NameColonia Inglesa
 >
@@ -6808,6 +6865,8 @@ $Base.WorldWondersDetailPanel.UpgradeMejorar
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text1_Desc�Cuando Tesla fue al pasado, llevó consigo el <style=MC>nexus de antimateria</style>. Es el secreto para crear portales, en forma de una pequeña gema azul.
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_DescgEnvía barcos de expedición que recogerán un montón de los tesoros joyas, especias, oro o cerámica.
+>
+Browser.OOM.Title)The game has run out of available memory.
 .
 Base.Hints.BoarsProvocando a los jabalíes
 E
@@ -6822,10 +6881,10 @@ KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_2_NameLi
 IBase.Questlines.Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_NameAbu Simbel - Fase I
 R
 =Base.Units.Unit_RomanEmpire_GermanicTribes_GothicArchers_NameArqueros Góticos
+t
++Base.AlliancePanel.CantAcceptAllianceIsFullENo puedes aceptar la invitación, porque esta alianza está completa.
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.AlexanderTheGreat_1_Name�<style=ability_label>Escudo | Vínculo Espiritual | Control Mental</style> Inicia una conquista, otorgando a todos los aliados un escudo equivalente al <style=basestat>{shield_per_second}</style> de su daño base por segundo durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>. Los aliados comparten el daño recibido durante la conquista. Al finalizar la conquista, el enemigo con la HP más baja en el rango atacará a sus propios aliados durante <style=basestat>{mind_control_duration}</style>. Prioriza a los Héroes. En la <color=#FFCF2B>Última Resistencia de Esparta</color>, Alejandro obtiene <style=basestat>+50% DEF</style> y su <style=basestat>Habilidad</style> se recarga <style=basestat>2s</style> más rápido.
-r
-+Base.AlliancePanel.CantAcceptAllianceIsFullCNo puedes aceptar más solicitudes porque la alianza está completa
 ]
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text2_NameLeif Erikson
 )
@@ -6968,6 +7027,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text9_Name
 Shop.Product.PackagePaquete
 �
 =Base.LeaderboardEventPanel.TaskInfo.TeslaStormRed_DescriptionE¡Gana batallas de Tormenta Tesla de color Roja para recibir Trofeos!
+�
+/Base.ShopPopup.OfferInfoText.diy_offer_infotext�This offer lets you choose 4 items out of the presented selection. Once you have chosen 4 items, the offer can be purchased for the prize indicated. You can purchase the offer up to 3 times. You can choose new items each time.
 E
 :Base.Technologies.Technology_KingdomOfSicily_Wardrobe_NameArmario
 [
@@ -6976,8 +7037,8 @@ R
 :Base.Buildings.Building_EarlyRome_CultureSite_Large_1_NameZona cultural grande
 =
 Base.Numbers.ProductionRate{0}/<style=alpha66>{1}</style>
-U
-9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_NameTormentas Tesla Amarillo
+T
+9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_NameTormenta Tesla Amarilla
 C
 +Base.ShopPopup.SeasonalEventHeroPromoHeaderProsperidad Paralela
 8
@@ -7076,8 +7137,6 @@ F
 5Base.Buildings.Building_RomanEmpire_Home_Small_2_NameCasa Pequeña
 s
 .Base.InventoryMenuPanel.AllTargetsAreProducingATodos los edificios importantes tienen una producción en marcha.
-D
-5Base.LeaderboardEventPanel.TypeInfo.TaskType_HeadlineRecompensas
 ~
 5Base.Buildings.Building_EarlyRome_Home_Average_3_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 �
@@ -7662,6 +7721,8 @@ NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_2_Name
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_80_DescWEste Kit de Selección te permite elegir entre Emblemas Mejorados de distintos colores.
 �
 $Base.Units.Unit_QueenElizabethI_Desc�¡Mezcla cañonazos y oraciones con la Reina Isabel I! Esta monarca del siglo XVI gobernó Inglaterra durante más de cuarenta años, en una época de estabilidad y prosperidad para el país. Fue una época de artes, de guerra y de exploración.<br><br>Isabel gestionó los desafíos en su país y en el extranjero, superando el fanatismo religioso (aunque no sin quemar a unas cuantas personas) y las guerras exteriores. Su derrota de la Armada Española consolidó su estatus de formidable líder, mientras que su patrocinio de personajes como Shakespeare hizo que su reinado nunca se olvidara.<br><br>Conocida como la "Reina Virgen" por no casarse nunca, Isabel mantuvo su poder e independencia durante todo su gobierno. Su legado es de fuerza, inteligencia y patrocinio cultural, y dejó una huella indeleble en la historia de Inglaterra. También tenía la boca rayada por comer demasiado azúcar: ¡su nombre es un anagrama de "Dientes de cebra es suciedad"!
+^
+,Base.ShopPopup.Pages.diy_offer_hintCompleted.Ready. You can purchase your custom offer now!
 Z
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_NameTécnicas de emboscada
 J
@@ -7692,6 +7753,9 @@ L
 7Base.Technologies.Technology_Mayas_DivineAscension_NameAscensión Divina
 �
 eBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_MontezumaI_SahilPalace_QuestStart_Text2_Desc�Ahora también podemos tallar <nobr><style=MC>Piedras Calendáricas</style> <sprite name=resource.calendar_stone_cta></nobr> para alinear nuestro trabajo con los ciclos cósmicos.
+#
+Base.Generic.BrandNew
+Brand New!
 �
 >Base.Resources.event_leaderboard_forge_of_vulcan_trophies_DescHResuelve la tarea dada para ganar Puntos de Trofeo en esta competición.
 L
@@ -7794,6 +7858,8 @@ U
 6Base.Buildings.Building_Vikings_Workshop_Tavern_3_DescGLa Taberna produce Hidromiel y Bacalao Seco a partir de Miel y Pescado.
 B
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text4_Desc¿Eh?
+B
+3Base.Abilities.hero_battle_ability.Planisphere_NamePlanisphere
 z
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text1_Desc1¿Debo liderar un asalto contra estos artilugios?
 o
@@ -8140,6 +8206,8 @@ E
 !Base.Resources.hero.YiSunSin_NameEsencia de Yi Sun-sin
 L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_DescProduce papiro.
+d
+Base.Mailbox.InvitationCopyE{} invited you to join the Alliance {}. Do you accept the Invitation?
 A
 -Base.KeyboardShortcuts.Description.QuestPanelPanel de Misión
 F
@@ -8288,7 +8356,7 @@ NBase.AbilityDescriptions.hero_battle_ability_description.RomanCenturion_1_Name
 &
 Base.FurnacePanel.Convert	Convertir
 �
-"Base.FallOfTroyInfoPopup.GateDescr�Después de que todas las Barricadas hayan sido derrotadas, los Héroes de ambos Carriles unen fuerzas para atacar la Puerta principal. <br>Los Ataques Básicos infligen el doble de daño a la Puerta.
+"Base.FallOfTroyInfoPopup.GateDescr�Después de que todas las Barricadas hayan sido derrotadas, los Héroes de ambos carriles unen fuerzas para atacar la Puerta Principal. <br>Los Ataques Básicos infligen el doble de daño a la Puerta.
 G
 2Base.IngameEvents.Event_JourneyOfTheTitanic_2_NameViaje del Titanic
 J
@@ -8455,8 +8523,8 @@ x
 IBase.InventoryItems.Selection_Kit_AllianceIncident_AllianceGoods_L_1_Name+Kit de Selección de Bienes de la Alianza L
 3
 Base.SellBuildingPopup.Header¿Vender edificio?
-c
-5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories*Score <color=#3375B4>{0}</color> Victories
+i
+5Base.BattleMultiAutoVictoryPopup.CurrentAutoVictories0Puntuación <color=#3375B4>{0}</color> Victorias
 Q
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_3_NameTallador Ceremonial
 {
@@ -8707,6 +8775,8 @@ C
 )Base.IngameEvents.SeasonPass_03_2024_NameLos Titanes de Roma
 w
 8Base.StoryText.Story_Panganea_7_9_BattleStart_Text3_Desc;¡Y el enorme ejército que trabaja para mí, por supuesto!
+>
+*Base.IngameEvents.Event_Moonlanding_2_NameThe Moon Landing
 a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text1_NameAlbert Einstein
 ,
@@ -8754,12 +8824,12 @@ T
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text7_DescbEl reloj es resistente. Puede que ni siquiera se rompa si lo intentamos. Guarda bien sus secretos.
 V
 ?Base.Technologies.Technology_IberianEra_SuperiorBeekeeping_NameApicultura superior
+M
+)Base.PlayerSearch.PlayersFoundByNameTitle Jugadores encontrados por nombre
 J
 3Base.Units.Unit_MinoanEra_Player_CopisWarriors_NameGuerreros con kopis
 S
 5Base.StoryText.Story_Battle_Intro_Tutorial_Text3_Desc<style=MC>¡BASTA!</style>
-B
-)Base.PlayerSearch.PlayersFoundByNameTitlePlayers found by name
 5
 )Base.AllianceMembershipSettingsPopup.KickExpulsar
 p
@@ -8784,6 +8854,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 /Base.Buildings.Building_Egypt_Home_Small_5_NameCasa Pequeña
 s
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc0Mejora la felicidad de los edificios adyacentes.
+[
+$Base.Mailbox.ApplicationAcceptedCopy3{} has accepted your application to the Alliance {}
 >
 (Base.Regions.region.EasternValley_4_NameFortaleza de Tesla
 S
@@ -8859,8 +8931,8 @@ c
 Base.BattlePausePopup.RetreatRetirada
 ?
 $Base.Resources.hero.OdaNobunaga_NameEsencia de Oda Nobunaga
-a
- Base.Alerts.GameBackendErrorText=Something went wrong. Please press '{0}' to reload your game.
+[
+ Base.Alerts.GameBackendErrorText7Algo salió mal. Presiona '{0}' para recargar el juego.
 .
 "Base.CampaignPanel.difficulty.HardDifícil
 f
@@ -9103,8 +9175,8 @@ N
  Base.Units.Unit_SiouxShaman_NameToro Sentado
 8
 Base.NegotiationPanel.TurnsLeftTurnos restantes: {0}
-w
-"Base.RiftInfoPopup.DropChancesTextQProbabilidad de obtener una calificación particular de estrellas en este portal.
+
+"Base.RiftInfoPopup.DropChancesTextYProbabilidad de obtener una determinada valoración en estrellas a través de este portal
 |
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_1_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 c
@@ -9153,6 +9225,8 @@ E
 3Base.Buildings.Building_Mayas_Aviary_Average_1_DescProduce Plumas
 N
 ,Base.Resources.hero.HermannTheCheruscan_NameEsencia de Arminio el Querusco
+2
+!Base.PlayerSearch.SearchHelpTitlePlayer search
 
 Base.FurnacePanel.MinMin
 k
@@ -9384,6 +9458,8 @@ p
 <Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc0Mejora la felicidad de los edificios adyacentes.
 >
 3Base.Buildings.Building_Mayas_Aviary_Average_4_NameAviario
+6
+#Base.ShopPopup.Pages.diy_offer_hintChoose 4 items:
 P
 8Base.Technologies.Technology_EarlyRome_SwordMastery_NameDominio de la espada
 R
@@ -9408,8 +9484,8 @@ $Base.Resources.resource.hero_xp_Desc�Los Puntos de Experiencia se utilizan pa
 1Base.InventoryCustomizationInfoPopup.BuffDuration	Duración
 @
  Base.SeasonPass.SeasonEndedTitle¡La temporada ha terminado!
-h
-<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc(Improves Happiness of adjacent buildings
+o
+<Base.Buildings.Building_FeudalAge_CultureSite_Compact_1_Desc/Mejora la Felicidad de los Edificios Adyacentes
 :
 %Base.Units.Unit_BenjaminFranklin_NameBenjamin Franklin
 
@@ -9574,6 +9650,8 @@ Y
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAcademia de héroes
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Potenciador</style>Cuando los puntos de vida del poseedor caen por debajo de <style=basestat>{hp_threshold}</style>, su defensa aumenta en <style=basestat>{defense_buff}</style> hasta el final de la oleada actual. No se acumula.
+ 
+Browser.OOM.PrimaryCTAReload
 u
 ,Base.SelectionKitSelection.CancelDescriptionEPuedes posponer la decisión y acceder más tarde desde el inventario
 S
@@ -9842,8 +9920,8 @@ R
 .Base.QuestlinesPanel.LevelUpHeroesOfRarityTask2Subir de nivel a un héroe de <b>{0}-Estrella</b>.ASube de nivel a héroes de <b>{0}</b> estrellas <b>{1}</b> veces.
 5
 "Base.Resources.papyrus_scroll_NameRollo de papiro
-S
-2Base.PlayerSearch.PlayerSearchFieldPlaceholderTextBuscar nombre o ID de jugador
+T
+2Base.PlayerSearch.PlayerSearchFieldPlaceholderTextBuscar nombre de jugador o #ID
 2
  Base.SeasonPass.DailyTasksHeaderTareas Diarias
 E
@@ -10240,6 +10318,8 @@ Debilidad:
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text2_DescLe perseguí hasta este momento y le robé el Nexus. Aún conserva gran parte de su tecnología, pero no puede crear un portal.
 �
 5Base.ShopPopup.OfferInfoText.WeeklyStaminaCard_1_Info�Esta oferta proporciona un pago instantáneo de 400 Energía y 50 Tickets de Victoria, y un pago diario de 200 de Energía y 10 Tickets de Victoria durante 7 días. Puedes comprar esta oferta tantas veces como quieras para extender la duración de sus beneficios.
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Mjolnir_1_Name�<style=ability_label>Single Target Damage</style>Increases Single Target Ability Damage by <style=basestat>{single_target_amp}</style>.
 E
 5Base.Buildings.Building_FeudalAge_Home_Average_3_NameCasa mediana
 z
@@ -10440,8 +10520,8 @@ c
 *Base.BuildingGroups.premiumIrrigation_NameRueda Hidráulica LujosaRuedas hidráulicas lujosas
 s
 QBase.Questlines.Questline_EventCity_Mayas_RitualSites_MontezumaI_SahilPalace_NameSantuarios Olvidados del Poder
-K
-'Base.BattleMultiAutoVictoryPopup.Header Set the number of Auto Victories
+Y
+'Base.BattleMultiAutoVictoryPopup.Header.Establece el número de Victorias Automáticas
 E
 3Base.Buildings.Building_Mayas_Aviary_Average_4_DescProduce Plumas
 �
@@ -10720,8 +10800,8 @@ K
  Base.Units.Unit_Nostradamus_Desc�¡Desbloquea los secretos del destino con Nostradamus, el legendario vidente cuyas visiones han resonado a través de los siglos! Nacido en 1503, Michel de Nostredame se convirtió en médico reconocido por su valentía durante los brotes de peste, pero fueron sus misteriosas profecías las que aseguraron su legado perdurable. Su libro, *Las Profecías*, entregó versos tan enigmáticos que generaciones enteras han tratado de descifrar su verdadero significado, conectándolos con eventos como guerras devastadoras y el auge y caída de emperadores.<br><br>La reputación de Nostradamus alcanzó los más altos círculos: incluso leyó la fortuna de Catalina de Médici, reina de Francia. Algunos dicen que miraba en un cuenco de bronce, otros que en las estrellas, pero su mezcla de astrología y acertijos poéticos sigue cautivando tanto a creyentes como a escépticos. Los héroes susurran que nunca deja desatendido su cuenco adivinatorio y que, a veces, tarde en la noche, su diario empieza a escribirse solo.
 I
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameCasa del Trabajador
-_
-%Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.!Win <b>{0}</b> any of these: {1}.
+h
+%Base.QuestlinesPanel.CompleteSpecificGana <b>{0}</b> {1}.)Gana <b>{0}</b> cualquiera de estos: {1}.
 8
 &Base.TreasureHuntStartedPopup.EndTimerTermina en {0}
 �
@@ -10882,6 +10962,8 @@ E
 0Base.EquipmentSets.equipment_set.Druid_Ring_NameAnillo del Druida
 B
 (Base.CustomizationPanel.ApplyItemToGroupAplicar este objeto a:
+�
+'Tutorial.HeroMetaReportPopup.Disclaimer�The ratings in this report are based on real usage data and updated monthly. New heroes for which no usage data exists are rated by the game's developers. Individual hero ratings may change over time as the game evolves.
 O
 1Base.Alerts.SingleSignOn.AccountConflict.SwitchToCambiar a mi cuenta de {0}
 �
@@ -11076,6 +11158,8 @@ MBase.StoryText.Story_Questline_TeslaStorm_SolveStages1_QuestFinish_Text5_Descl
 &Base.MilestoneEventPanel.CurrentPointsPuntos Actuales:
 :
 %Base.ShopPopup.Pages.china_pull_offerAliados en Espera
+]
+*Base.ShopPopup.Pages.diy_offer_description/Get your preferred items, that you really need!
 F
 *Base.BuildingUpgradePanel.ResearchRequiredInvestigación necesaria
 �
@@ -11234,8 +11318,8 @@ K
 ,Base.UnitStats.unit_stat.AoeDamageAmp_AbbrevDAÑO DE HABILIDAD EN ÁREA
 J
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_NamePiquero a caballo
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>Teletransporte | Burla | Quemadura | Escudo </style>Ragnar se teletransporta hacia el enemigo más lejano, provocándolo a él y a todas las unidades en un rango de <style=basestat>{range}</style>, quemándolas por <style=basestat>{burn_dmg}</style> de daño y protegiéndose con un escudo de <style=basestat>{shield_percentage}</style>.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>Teletransporte | Provocación | Quemadura | Escudo</style>Ragnar se teletransporta hacia el enemigo más lejano, provocándolo a él y a todas las unidades en un rango de <style=basestat>{range}</style> durante <style=basestat>{taunt_duration}</style>, quemándolos con <style=basestat>{burn_dmg}</style> de daño durante <style=basestat>{duration}</style> y otorgándose a sí mismo un escudo del <style=basestat>{shield_percentage}</style>.
 �
  Base.Units.Unit_SirLancelot_Desc�Asiste a la historia de Sir Lancelot, caballero del Rey Arturo y de la Tabla Redonda, caballero francés y errante en los reinos de los Fae.<br><br>Llegado a la corte del rey Arturo desde tierras lejanas, rescató a la reina Ginebra y buscó el Santo Grial, lo que le convirtió en un caballero casi perfecto.<br><br>Por desgracia, su único defecto condujo a la caída de Camelot: su amor por la reina de Arturo derribó el reino a su alrededor. Aun así, se le recuerda como un héroe honorable y querido por muchos. Menos famoso es su hermano más musical, Sir Dancealot.
 �
@@ -11733,10 +11817,10 @@ $Base.AlliancePanel.LeaveAllianceDesc*¿Seguro que quieres abandonar la alianza
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_Desc�El cenote sagrado, nuestro <style=MC>portal divino</style> hacia Chaac, se vuelve más superficial con cada día que pasa. Sin la bendición del dios de la lluvia, nuestras cosechas se marchitan y nuestro pueblo sufre.
 D
 2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_NameArqueros Mayas
-T
-=Base.Buildings.Building_China_Workshop_ThreadProcessor_6_NameProcesador de Hilos
 ?
 $Base.Resources.hero.SirLancelot_NameEsencia de sir Lancelot
+T
+=Base.Buildings.Building_China_Workshop_ThreadProcessor_6_NameProcesador de Hilos
 ;
 -Base.TreasureHuntDifficultiesPanel.Difficulty
 Dificultad
@@ -11893,6 +11977,8 @@ L
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_NameGranjas de asnos
 5
 &Base.PvpTiers.PvP_Tier_Platinum_3_NamePlatino III
+V
+CBase.IngameEvents.MilestoneEvent_Moonlanding_2_RallyOfHeroes_1_NameRally of Heroes
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text10_Desc]Rápidamente, debemos triangular su origen. Cada pulso podría ser dañino si no se controla.
 �
@@ -11986,14 +12072,18 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_27_NameNivel 27
 `
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_NameLiceo de Eruditos
+n
+Browser.OOM.PreventionHeadlineLTo prevent future disruptions and improve stability, please try these steps:
 `
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc!Desbloquea Lanzavirotes Helénico
 �
  Base.Event.ItemGridOutOfSyncText|Hemos detectado un error de sincronización con tu evento. Reinicia el juego para sincronizarlo y seguir jugando sin riesgo.
+.
+Base.Mailbox.DeleteAllDelete read messages
+�
+4Base.SpartasLastStandInfoPopup.ProtectYourAlliesInfo�Si Leonidas o los 300 caen, la batalla está perdida. Derrotar a todos los enemigos mientras los espartanos tengan un 10% o más de salud otorgará una Victoria de 3 Estrellas.
 �
 3Base.Incidents.Incident_FeudalAge_Capital_XP_1_Desc�Madre mía, ¡este montón de troncos no es precisamente una obra maestra! Flexionemos esos músculos y digamos adiós a este desorden antiestético.
-�
-4Base.SpartasLastStandInfoPopup.ProtectYourAlliesInfo�Si Leónidas o los 300 caen, la batalla se pierde. Derrotar a todos los enemigos mientras los espartanos tengan 30% o más de salud conducirá a una Victoria de 3 Estrellas.
 U
 :Base.Technologies.Technology_Vikings_RiseOfTheVikings_NameAscenso de los Vikingos
 H
@@ -12086,6 +12176,8 @@ N
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�Propongo que establezcamos umbrales defensivos en puntos clave. Si estos canales de comunicación y fuentes de poder son tan importantes, debemos protegerlos. Más barreras al alcance de Tesla.
 �
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_DescMEsa es tu fama, Leónidas. Muertes como héroe en el paso de las Termópilas.
+�
+Browser.OOM.MainText�We sincerely apologize for this disruption. Your most recent actions may not have been saved. Please reload to return to your last known checkpoint.
 c
 8Base.Questlines.Questline_CollectStars_Continent6_2_Name'Coleccionista de Estrellas VI - Parte 2
 L
@@ -12234,6 +12326,8 @@ Y
 Base.BattleStatsPanel.MinionsMinions
 �
 $Base.Units.Unit_OttoVonBismarck_Desc�Alejándonos del Reichstag y adentrándonos en la historia antigua, es Otto von Bismarck, ¡el prusiano más destacado! Este estadista del siglo XIX contribuyó decisivamente a la unificación de Alemania. Como primer ministro de Prusia y primer canciller del Imperio Alemán, von Bismark empleó un enfoque astuto y pragmático de la diplomacia y la política.<br><br>El hábil uso que Bismarck hizo de la realpolitik y su orquestación de guerras contra Dinamarca, Austria y Francia allanaron el camino para la unificación de numerosos estados alemanes independientes en un poderoso imperio.<br><br>Bismarck también destaca por introducir reformas sociales pioneras, como los seguros de enfermedad, accidentes y vejez, destinadas a mejorar los derechos y la estabilidad de los trabajadores. Además, ¡él solo aporta el 60% del presupuesto de la crema para el bigote de los Héroes!
+=
+)Base.ChestEvents.Event_Moonlanding_2_NameThe Moon Landing
 �
 Base.Resources.golden_mask_Desc`La Máscara Dorada es un recurso refinado. Se pueden producir en Orfebres - Nivel 4 en adelante.
 E
@@ -12398,6 +12492,10 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_34_NameNivel 34
 V
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_NameMuelle de expedición
+
+Base.Mailbox.HeaderMailbox
+9
+(Base.Resources.UpgradeToken_Mjolnir_NameMjolnir Sigil
 2
 Base.Relics.LunarMeteorite_NameMeteorito Lunar
 3
@@ -12519,6 +12617,8 @@ D
 5Base.Technologies.Technology_FeudalAge_TaflGames_NameJuegos tafl
 E
 6Base.Factions.Faction_AgeOfTheFranks_Carolingians_NameCarolingios
+g
+Base.SocialSharing.ShareTextGCome and play Heroes of History - follow this link to install the game!
 C
 $Base.QuestlinesPanel.NegotiationTaskResuelve esta negociación.
 �
@@ -12533,8 +12633,8 @@ H
 'Base.QuestlinesPanel.LevelUpAnyHeroTask(Sube de nivel a cualquier <b>Héroe</b>.4Sube de nivel a <b>los Héroes</b> <b>{0}</b> veces.
 P
 ;Base.Buildings.Building_RomanEmpire_Workshop_Artisan_1_DescProduce cálices.
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Buff</style>Increases the holder's area effect damage by <style=basestat>{flat_amp}</style>. Each heal that involves the holder as a healer or a receiver grants the holder an additional <style=basestat>{area_amp}</style> area effect damage, stacking up to <style=basestat>{stack_limit}</style> times.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.BookOfTheDead_1_Name�<style=ability_label>Potenciador</style>Aumenta el daño de efecto de área del portador en <style=basestat>{flat_amp}</style>. Cada curación que involucre al portador, ya sea como sanador o receptor, le otorga <style=basestat>{area_amp}</style> de daño de efecto de área adicional, acumulándose hasta <style=basestat>{stack_limit}</style> veces.
 J
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_3_NameGranja de Ganado
 
@@ -12557,6 +12657,8 @@ a
 'Base.Units.Unit_GreekMathematician_Desc�Descubre las reglas que rigen las formas con Euclid, el Padre de la Geometría. Este matemático Griego del siglo III a.C. escribió tratados matemáticos, entre ellos los "Elementos", un compendio de conocimientos geométricos que dio forma a las matemáticas occidentales durante siglos.<br><br>En los 13 libros de los "Elementos", Euclid detalló gran parte de la geometría y las matemáticas, incluidas las pruebas del Teorema de Pitágoras y un análisis de los números primos. Esta obra constituye la base de la geometría euclidiana, que modelaría el pensamiento durante el resto de la historia.<br><br>La vida de Eucilida es un misterio, pero su obra es su legado. Mediante un enfoque detallado y metódico del razonamiento y unas colaboraciones que condujeron al desarrollo del método científico, Eucild cambió verdaderamente el mundo. De hecho, se dice que el libro más estudiado en Occidente es la Biblia, ¡pero el segundo más estudiado son los "Elementos" de Eucilid!
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_RitualSites_LadySixSky_Tikal_QuestStart_Text2_Desc�Debemos localizar estos <style=MC>lugares olvidados</style> y reclamarlos para nuestro pueblo. Sus energías místicas impulsarán nuestras producciones una vez que sean despertadas nuevamente.
+`
+GBase.IngameEvents.MilestoneEvent_Moonlanding_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
 (
 Base.Generic.PlariumPlayPlarium Play
 C
@@ -12584,10 +12686,10 @@ L
 880 a. C.
 C
 6Base.Technologies.Technology_IberianEra_Castillos_Name	Castillos
+l
+%Base.BattleSetupPanel.OpenAbilityInfoCMantén presionado al héroe para abrir la información del héroe.
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_1_QuestStart_Text1_Desc�Has establecido nuestros talleres con gran habilidad. Ahora enfoquémonos en mejorar el <style=MC>Palacio Sayil</style>, pues solo a través de su grandiosa magnificencia los líderes rivales reconocerán nuestro poder y se verán compelidos a forjar alianzas con nosotros.
-q
-%Base.BattleSetupPanel.OpenAbilityInfoHMantén presionado el héroe para abrir la información de su habilidad.
 Z
 Base.OptionsPopup.CodeHint<Introduce tu código promocional para recibir tu recompensa.
 S
@@ -12670,6 +12772,8 @@ Z
 Base.Resources.aventurine_DesccUn mineral valioso que se requiere para investigar ciertas tecnologías de la Era Gótica Temprana.
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_NameEstación de irrigación
++
+Browser.OOM.SecondaryCTAContact Support
 �
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text2_DescnConcluyo que cualquier número de enemigos puede enfrentarnos. Vamos a conseguir la piedra de Tesla y escapar.
 L
@@ -13264,12 +13368,12 @@ F
 )Base.Notifications.IdleWorkersTextPartnerP¡Tus trabajadores en {0} están listos para contribuir! ¡Asígnalos AHORA! ⏳
 �
 FBase.AbilityDescriptions.hero_battle_ability_description.Inanna_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo</style>Golpea hábilmente al objetivo actual con su bastón, infligiendo <style=basestat>{dmg_percentage}</style> de daño.
+�
+IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>Ataque en Área | Ataque a Distancia</style>Shaka Zulu lanza <style=basestat>{instances}</style> proyectiles que se dividen y apuntan a los enemigos dentro de un rango de <style=basestat>{range}</style>. Cada proyectil inflige <style=basestat>{dmg_percentage}</style> de daño.
 ?
 $Base.Resources.hero.LeifErikson_NameEsencia de Leif Erikson
 0
 )Base.RewardTypes.InventoryItemReward_Desc{0}
-�
-IBase.AbilityDescriptions.hero_battle_ability_description.ShakaZulu_1_Name�<style=ability_label>Area Strike | Ranged Strike</style>Shaka Zulu launches <style=basestat>{instances}</style> projectiles that split among and target enemies within a range of <style=basestat>{range}</style>. Each projectile deals <style=basestat>{dmg_percentage}</style> damage.
 }
 3Base.Buildings.Building_EarlyRome_Farm_Rural_2_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
 L
@@ -13464,6 +13568,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_26_NameNivel 26
 �
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_4_2_Desc\Este Kit de Selección te permite elegir entre Puntos de Investigación y Puntos de Alianza.
+�
+(Base.Resources.UpgradeToken_Mjolnir_Desc�This rare resource allows you to upgrade <nobr><style=legendary>Mjolnir</style></nobr> Relic.<br>It can be obtained alongside relic dust as rewards in certain events.
 �
 ABase.Buildings.Building_EarlyGothicEra_Special_HeroAcademy_1_DescYLa Academia de Héroes produce Rollos de Experiencia a costa de Puntos de Investigación.
 �
@@ -13527,8 +13633,9 @@ SBase.AbilityDescriptions.hero_battle_ability_description.LudwigVanBeethoven_15_
 'Base.ShopPopup.DailyDealAscensionHeaderAvance de Ascensión
 J
 :Base.Buildings.Building_AgeOfTheFranks_Home_Average_3_NameCasa mediana
-K
-:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_NameBleeding Edge
+H
+:Base.Abilities.hero_battle_ability.AminaQueenOfZazzau_Name
+Vanguardia
 _
 MBase.BuildingCustomizations.BuildingCustomization_TreasureHunt_SkullHome_NameHogar Calavera
 E
@@ -13842,10 +13949,10 @@ g
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_NameBarracón de Infantería Pesada
 �
 <Base.Buildings.Building_MinoanEra_Special_HeroAcademy_1_DescZLa Academia de Héroes produce Rollos de Experiencia a cambio de Puntos de Investigación.
-$
-Base.HeroPanel.SlowMovementLento
 P
 8Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_NameTormenta Tesla Verde
+$
+Base.HeroPanel.SlowMovementLento
 
 Base.Generic.ExtendExtender
 �
@@ -13957,12 +14064,12 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text9_Desc#¿¡Se h
 Base.Heroes.hero.Mozart_NameWolfgang Amadeus Mozart
 B
 (Base.Subscriptions.PRODUCTION_SLOTS_NameRanuras de producción
+/
+Base.RiftGroup.common_NamePortal del Tiempo
 �
 QBase.AbilityDescriptions.hero_battle_ability_description.TorchOfPrometheus_1_Name�<style=ability_label>Quemar</style>Las llamas de la antorcha aumentan el daño por quemadura causado por el portador en <style=basestat>{burn_dmg_increase}</style>.  
 Cada vez que el portador cause daño no recurrente a una unidad enemiga, tiene una probabilidad de <style=basestat>{burn_chance}</style> de aplicar quemadura, causando <style=basestat>{burn_dmg}</style> de daño durante <style=basestat>{burn_duration}</style> segundos.
 
-)
-Base.RiftGroup.common_NameTime Portal
 G
 4Base.Technologies.Technology_Mayas_StoneCarving_NameTalla en Piedra
 \
@@ -14030,6 +14137,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Na
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�Las unidades de asalto atacan lentamente y son vulnerables a los ataques enemigos, pero tienen un impacto sobre una zona amplia desde la distancia.
 �
 #Base.ChangeEmail.SuccessDescription�También hemos enviado un correo electrónico a tu dirección de correo electrónico antigua, en el que tendrás 14 días para deshacer el cambio de correo electrónico. Durante esos 14 días, no podrás volver a cambiar tu dirección de correo electrónico.
+J
+(Base.Mailbox.ApplicationAcceptedHeadlineAlliance Application accepted!
 T
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_24_NameNivel 24
 ,
@@ -15051,6 +15160,8 @@ GBase.WondersReworkUpgradePanel.TagRegenerationTimeBoostBonusDescription]Aceler
 DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_NameArquitectura Staufer
 F
 3Base.Questlines.Questline_BronzeAge_CityQuest3_NameNuevos Talleres
+c
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text7_Desc�¡Demasiado tarde, se ha soltado! <i>Les insta a todos a que se muevan hacia atrás mientras lanza el cigarro en dirección al lugar donde ha caído el barril.</i>
 D
@@ -15256,10 +15367,10 @@ JBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestStart_Text3_Desch¿Q
 Base.Hints.GrassPintando de verde la hierba
 9
 #Base.Generic.MinutesSecondsFraction{0:m\:ss\.ff} min
+F
+1Base.Abilities.hero_battle_ability.ShakaZulu_NameLluvia Penetrante
 E
 9Base.Technologies.Technology_EarlyGothicEra_Carrucas_NameCarrucas
-B
-1Base.Abilities.hero_battle_ability.ShakaZulu_NamePiercing Rain
 K
 <Base.Buildings.Building_KingdomOfSicily_City_CityHall_1_NameGran salón
 �
@@ -15521,6 +15632,8 @@ y
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text9_Desc6Esperaba más oro y terciopelo para algo tan elegante.
 6
  Base.Resources.iron_pendant_NameColgante de hierro
+b
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_PurpleTeslaTakedown_1_NameUmbral Tesla Takedown
 ,
 Base.AlliancePanel.OverviewVista General
 ]
@@ -15695,26 +15808,28 @@ Q
 6Base.Units.Unit_HighMiddleAges_Player_Infantrymen_NameSoldados de Infantería
 :
 'Base.Expansions.Expansion_Egypt_12_NamePuente del Nilo
-S
-;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameCisterna hidráulica
 '
 "Tutorial.HeroMetaReportPopup.TierBB
+S
+;Base.Technologies.Technology_ByzantineEra_WaterCistern_NameCisterna hidráulica
 '
 "Tutorial.HeroMetaReportPopup.TierAA
 >
 'Base.ChangePasswordPopup.RepeatPasswordRepetir contraseña
+'
+"Tutorial.HeroMetaReportPopup.TierFF
+'
+"Tutorial.HeroMetaReportPopup.TierEE
 l
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc2Mejora la irrigación de los edificios adyacentes.
 '
-"Tutorial.HeroMetaReportPopup.TierEE
+"Tutorial.HeroMetaReportPopup.TierDD
 @
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_NameCanal
 o
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 �
 2Base.EventPass.JourneyThroughSaharaBuyGoldPassText�Participa para ganar recompensas exclusivas y obtener la épica Reliquia <nobr><style=epic>Escarabajo</style></nobr> ¡inmediatamente!
-'
-"Tutorial.HeroMetaReportPopup.TierDD
 '
 "Tutorial.HeroMetaReportPopup.TierCC
 @
@@ -15926,8 +16041,8 @@ T
 Carlomagno
 5
 )Base.Resources.DYN_WONDER_material_1_NameMaterial
-�
-&Base.FallOfTroyInfoPopup.UpperLaneInfo�<style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>curarán</style> su propio HP y convertirán las curaciones excedentes en <style=basestat_dark>Puntos de Escudo</style>. <br><br>Tienen debilidad contra <sprite name=status_effect_poison> <style=basestat_dark>Daño por Veneno</style> y los <style=basestat_dark>Golpes Únicos</style> les infligen un 75% de daño adicional. <br>Inmunes a los efectos de Aturdir, Control Mental y al daño por Sangrar.
+�
+&Base.FallOfTroyInfoPopup.UpperLaneInfo�<style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>sanarán</style> su propia Vida y convertirán las curaciones excedentes en <style=basestat_dark>Puntos de Escudo</style>. <br><br>Tienen debilidad contra <sprite name=status_effect_poison> <style=basestat_dark>Daño por Veneno</style> y los <style=basestat_dark>Ataques Individuales</style> les infligen un 75% de daño adicional. <br>Inmunes a Aturdimiento, efectos de Control Mental y Daño por Sangrado.
 �
 <Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�Los guardias imperiales están muy especializados y son más poderosos que las unidades de infantería normales. Sus estadísticas aumentan automáticamente en función de tu edad actual.
 [
@@ -16003,6 +16118,8 @@ ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_5_Name
 Anfiteatro
 E
 3Base.Buildings.Building_Mayas_Quarry_Premium_6_NameCantera Lujosa
+:
+/Base.Abilities.hero_battle_ability.Mjolnir_NameMjolnir
 P
 8Base.Technologies.Technology_IberianEra_MeadMastery_NameDominio del aguamiel
 >
@@ -16031,8 +16148,8 @@ I
 Base.ResourceTypes.premium_NameGemas
 9
 (Base.AllianceSetDetailsPanel.NavBarTitleCrear alianza
-�
-!Base.PlariumPlay.ShopInfo.Message�The payment window has opened in your default browser or on Plarium Play. To complete your in-game purchase, minimize the game window and continue within the payment window.
+�
+!Base.PlariumPlay.ShopInfo.Message�La ventana de pago se ha abierto en tu navegador predeterminado o en Plarium Play. Para completar tu compra dentro del juego, minimiza la ventana del juego y continúa en la ventana de pago.
 >
 Base.HeroPanel.UnequipThisRelic¿Desequipar esta reliquia?
 �
@@ -16221,6 +16338,12 @@ U
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>Golpe en Área| Penalización| Quemar</style>Provoca una tormenta en la ubicación del mayor grupo de unidades enemigas. La tormenta inflige <style=basestat>{dmg_percentage}</style> de daño en un rango de <style=basestat>{range}</style>, reduce la velocidad de movimiento en <style=basestat>{move_speed_percentage}</style>, y deja a las unidades afectadas quemándose por <style=basestat>{dmg_percentage_burn}</style> durante <style=basestat>{duration}</style>.
 �
 [Base.StoryText.Story_Questline_EventCity_Vikings_ProgressTier1_Ragnar_QuestStart_Text1_Desc�Estáis haciendo un progreso excelente, pero esto es sólo el principio de nuestro viaje. Aún quedan más tareas por completar.
+�
+'Base.PlayerSearch.SearchHelpDescription�Per default, the player search displays other active players that are within a similar power range as you are. Optionally, you can display players that speak any language.
+
+When searching for players using a name, the search will show you all players whose name is similar to the search term.
+
+It is also possible to search a player by the player id, in which case the number must be prefixed with a #.
 �
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_1_QuestStart_Text4_Desc|¡No perdamos más tiempo! ¡Llena todas las <style=MC>Cajas</style> y mejora el <style=MC>Valhala</style> hasta el Nivel 1!
 F
@@ -16361,8 +16484,8 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Menes_10_Name�<style
 6Base.Buildings.Building_FeudalAge_Farm_Domestic_2_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 E
 5Base.Buildings.Building_FeudalAge_Home_Average_2_NameCasa mediana
-4
-Base.RiftGroup.seasonPass_NameArcane Time Portal
+:
+Base.RiftGroup.seasonPass_NamePortal del Tiempo Arcano
 <
 1Base.WorldWondersDetailPanel.MaxWonderLevelSuffix(Máx.)
 Z
@@ -16592,7 +16715,7 @@ x
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_2_QuestStart_Text1_Desc|Ya se han sentado las bases. La próxima fase presentará mayores retos, ¡pero también dará recompensas más importantes!
 3
-Base.PlariumPlay.ShopInfo.TitlePayment Checkout
+Base.PlariumPlay.ShopInfo.TitleFinalizar Compra
 '
 Base.LocalizedLocales.es_ESEspañol
 �
@@ -16652,6 +16775,8 @@ v
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier1_5_Name-Kit de Selección de Material de Ascensión I
 L
 4Base.UnitStats.unit_stat.HealGivenAmp_Percent_Abbrev% CURACIÓN OTORGADA
+Y
+FBase.IngameEvents.LeaderboardEvent_Moonlanding_2_HistoricSpoils_1_NameHistoric Spoils
 %
 Base.Resources.kaolin_NameCaolín
 
@@ -16696,8 +16821,8 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_18_NameNivel 18
 �
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_3_DescGEnvía barcos de expedición que recojan tesoros de Cerámica o de Oro.
-=
-$Base.PlayerSearch.EndOfSearchResultsEnd of search results
+J
+$Base.PlayerSearch.EndOfSearchResults"Fin de los resultados de búsqueda
 C
 /Base.Units.Unit_TreasureHunt_Yellow_Cannon_NameCañón Radiante
 �
@@ -17130,6 +17255,8 @@ D
 ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_NameZona cultural pequeña
 @
 &Base.Alerts.NoInternetConnectionHeaderProblemas de conexión
+S
+CBase.IngameEvents.LeaderboardEvent_Moonlanding_2_StaminaRush_1_NameStamina Rush
 
 Base.Locales.pl_PLPolski
 I
@@ -17547,6 +17674,8 @@ V
 Base.Generic.ErrorEmailFormat5El correo electrónico está en un formato incorrecto
 k
 Base.HeroClass.GreatLeader_DescHLos Grandes Líderes son héroes defensivos que potencian a sus aliados.
+_
+HBase.IngameEvents.LeaderboardEvent_Moonlanding_2_SummonOfTheStars_1_NameSummon of the Stars
 N
 /Base.RewardTypes.RewardContainerDefinition_NameProducción de Trabajadores
 (
@@ -17722,8 +17851,8 @@ D
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_DescProduce Máscaras Ancestrales
 �
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc/¡Robin! ¡Amelia! ¿Has podido averiguar algo?
-�
-Base.RiftInfoPopup.PityText�Cada {0} activaciones garantiza un héroe de 5 estrellas. Sacar un héroe de 5 estrellas reinicia el contador de compasión.<br><br>Si el primer héroe de 5 estrellas que obtienes en un evento de promoción de héroes no es un héroe promovido, entonces el próximo héroe de 5 estrellas que obtengas en este evento estará garantizado a ser uno de los héroes promovidos.<br>Esta garantía se transfiere entre las repeticiones del mismo evento
+�
+Base.RiftInfoPopup.PityText�Cada {0} activaciones garantizan un héroe de 5 estrellas. Al obtener un héroe de 5 estrellas, se reinicia el contador de compasión.<br><br>Si el primer héroe de 5 estrellas que obtienes en un evento de promoción de héroes no es un héroe promocionado, entonces el siguiente héroe de 5 estrellas que obtengas en este evento está garantizado que será uno de los héroes promocionados.
 �
 5Base.EventStartScreens.EventCityChinaStartDescriptionv¡Levanta tu imperio en las cumbres sagradas del Monte Song y consigue la oportunidad de ganar {0} héroes exclusivos!
 &
@@ -17821,8 +17950,8 @@ v
 Base.Numbers.TimesCount{0}x
 U
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_NameTaller de cantería
-=
-*Tutorial.HeroMetaReportPopup.ViewTopBuildsView Top Builds
+M
+*Tutorial.HeroMetaReportPopup.ViewTopBuildsVer las Mejores Configuraciones
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_6_NameFuente
 �
@@ -17939,8 +18068,8 @@ o
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc2Mejora la irrigación de los edificios adyacentes.
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_NameNivel 32
-2
-Base.RiftGroup.eventCity_NameEvent City Portal
+;
+Base.RiftGroup.eventCity_NamePortal de Ciudad de Evento
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescJEn la taberna se usa miel y pescado para producir aguamiel y pescado seco.
 U
