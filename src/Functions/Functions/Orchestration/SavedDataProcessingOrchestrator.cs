@@ -12,13 +12,24 @@ public class SavedDataProcessingOrchestrator()
         var logger = context.CreateReplaySafeLogger<FetchAndSaveOrchestrator>();
         try
         {
-            context.SetCustomStatus($"Running {nameof(AutoDataProcessor)}");
-            await context.CallActivityAsync<string>(nameof(AutoDataProcessor),
+            context.SetCustomStatus($"Running {nameof(PlayerDataProcessor)}");
+            await context.CallActivityAsync<string>(nameof(PlayerDataProcessor),
                 TaskOptions.FromRetryPolicy(new RetryPolicy(2, TimeSpan.FromSeconds(1))));
         }
         catch (Exception e)
         {
-            logger.LogError(e, "Activity {f} failed.", nameof(AutoDataProcessor));
+            logger.LogError(e, "Activity {f} failed.", nameof(PlayerDataProcessor));
+        }
+        
+        try
+        {
+            context.SetCustomStatus($"Running {nameof(AllianceDataProcessor)}");
+            await context.CallActivityAsync<string>(nameof(AllianceDataProcessor),
+                TaskOptions.FromRetryPolicy(new RetryPolicy(2, TimeSpan.FromSeconds(1))));
+        }
+        catch (Exception e)
+        {
+            logger.LogError(e, "Activity {f} failed.", nameof(AllianceDataProcessor));
         }
         
         try

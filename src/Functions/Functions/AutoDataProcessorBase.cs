@@ -11,27 +11,17 @@ using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
-using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class AutoDataProcessor(
+public abstract class AutoDataProcessorBase(
     IGameWorldsProvider gameWorldsProvider,
-    IPlayerRankingService playerRankingService,
-    IPvpRankingService pvpRankingService,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
-    IPlayerService playerService,
-    IPlayerAgeHistoryService playerAgeHistoryService,
-    IPlayerNameHistoryService playerNameHistoryService,
-    IAllianceService allianceService,
-    IAllianceRankingService allianceRankingService,
-    IAllianceNameHistoryService allianceNameHistoryService,
-    IAllianceMembersService allianceMembersService,
     InGameRawDataTablePartitionKeyProvider inGameRawDataTablePartitionKeyProvider,
     IMapper mapper,
-    ILogger<AutoDataProcessor> logger,
+    ILogger<AutoDataProcessorBase> logger,
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
@@ -41,11 +31,13 @@ public class AutoDataProcessor(
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes =
         [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
 
-    [Function(nameof(AutoDataProcessor))]
-    public async Task Run([ActivityTrigger] object? _)
+    protected async
+        Task<(List<PlayerAggregate> PlayerAggregates, List<AllianceAggregate> AllianceAggregates,
+            List<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember>)>
+            ConfirmedAllianceMembers)> PrepareData()
     {
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
-        logger.LogInformation("{activity} started for date {date}", nameof(AutoDataProcessor), date);
+        logger.LogInformation("{activity} started for date {date}", nameof(AutoDataProcessorBase), date);
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
 
         var playerAggregates = new List<PlayerAggregate>(32000);
@@ -70,7 +62,8 @@ public class AutoDataProcessor(
                 alliances.Count, gameWorld.Id);
 
             var leaderboardParticipants = allianceWakeups
-                .SelectMany(t => t.Wakeup.Leaderboards.SelectMany(x => x.Participants.Select(y => (t.CollectedAt, Participant: y))))
+                .SelectMany(t =>
+                    t.Wakeup.Leaderboards.SelectMany(x => x.Participants.Select(y => (t.CollectedAt, Participant: y))))
                 .ToList();
             var leaderboardParticipantAlliances = leaderboardParticipants
                 .Select(t => (t.CollectedAt, t.Participant.Alliance))
@@ -205,42 +198,7 @@ public class AutoDataProcessor(
         logger.LogInformation("Total player aggregates: {count}, Total alliance aggregates: {count}",
             playerAggregates.Count, allianceAggregates.Count);
 
-        logger.LogInformation("Starting alliance service update");
-        await ExecuteSafeAsync(() => allianceService.AddAsync(allianceAggregates), "");
-        logger.LogInformation("Completed alliance service update");
-
-        logger.LogInformation("Starting player service update");
-        await ExecuteSafeAsync(() => playerService.AddAsync(playerAggregates), "");
-        logger.LogInformation("Completed player service update");
-
-        logger.LogInformation("Starting alliance ranking service update");
-        await ExecuteSafeAsync(() => allianceRankingService.AddOrUpdateRankingsAsync(allianceAggregates), "");
-        logger.LogInformation("Completed alliance ranking service update");
-
-        logger.LogInformation("Starting alliance name history service update");
-        await ExecuteSafeAsync(() => allianceNameHistoryService.UpdateAsync(allianceAggregates), "");
-        logger.LogInformation("Completed alliance name history service update");
-
-        logger.LogInformation("Starting alliance members service update");
-        await ExecuteSafeAsync(
-            () => allianceMembersService.UpdateAsync(allConfirmedAllianceMembers), "");
-        logger.LogInformation("Completed alliance members service update");
-
-        logger.LogInformation("Starting player ranking service update");
-        await ExecuteSafeAsync(() => playerRankingService.AddOrUpdateRankingsAsync(playerAggregates), "");
-        logger.LogInformation("Completed player ranking service update");
-
-        logger.LogInformation("Starting pvp ranking service update");
-        await ExecuteSafeAsync(() => pvpRankingService.AddOrUpdateRankingsAsync(playerAggregates), "");
-        logger.LogInformation("Completed pvp ranking service update");
-
-        logger.LogInformation("Starting player name history service update");
-        await ExecuteSafeAsync(() => playerNameHistoryService.UpdateAsync(playerAggregates), "");
-        logger.LogInformation("Completed player name history service update");
-
-        logger.LogInformation("Starting player age history service update");
-        await ExecuteSafeAsync(() => playerAgeHistoryService.UpdateAsync(playerAggregates), "");
-        logger.LogInformation("Completed player age history service update");
+        return (playerAggregates, allianceAggregates, allConfirmedAllianceMembers);
     }
 
     private async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey)
