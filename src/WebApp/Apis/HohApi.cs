@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Application.Server.CommandCenter.Commands;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -142,6 +143,7 @@ public static class HohApi
         api.MapProtobufGet("/commandCenter/data", GetCommandCenterDataAsync);
         api.MapPost("/commandCenter/sharedProfiles", ShareProfileAsync);
         api.MapGet("/commandCenter/sharedProfiles/{profileId}", GetSharedProfileAsync);
+        api.MapPost(FogUrlBuilder.ApiRoutes.COMMAND_CENTER_SHARED_SUBMISSION_ID, ShareSubmissionIdAsync);
 
         api.MapPost("/inGameData/", ImportInGameDataAsync).RequireCors(PolicyNames.CORS_IN_GAME_DATA_IMPORT_POLICY);
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
@@ -203,6 +205,21 @@ public static class HohApi
         catch (Exception e)
         {
             return TypedResults.BadRequest("Could not create the share.");
+        }
+    }
+    
+    private static async Task<Results<Ok<Guid>, BadRequest<string>>> ShareSubmissionIdAsync(
+        [AsParameters] HohServices services, [FromBody] ShareSubmissionIdRequest request)
+    {
+        try
+        {
+            var cmd = new CreateSharedSubmissionIdCommand(request.SubmissionId);
+            var newId = await services.Mediator.Send(cmd);
+            return TypedResults.Ok(newId);
+        }
+        catch (Exception e)
+        {
+            return TypedResults.BadRequest("Could not create shared submission id.");
         }
     }
 

@@ -62,6 +62,8 @@ public static class FogUrlBuilder
 
         public const string RELICS = "/relics";
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
+        
+        public const string COMMAND_CENTER_SHARED_SUBMISSION_ID = "/commandCenter/sharedSubmissionId";
     }
 
     public static class PageRoutes

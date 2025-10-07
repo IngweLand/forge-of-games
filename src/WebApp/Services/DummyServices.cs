@@ -241,7 +241,7 @@ internal class DummyCityPlannerSharingService : ICityPlannerSharingService
     }
 }
 
-internal class DummyCommandCenterProfileSharingService : ICommandCenterProfileSharingService
+internal class DummyCommandCenterSharingService : ICommandCenterSharingService
 {
     public Task<ResourceCreatedResponse> ShareAsync(BasicCommandCenterProfile profileDto)
     {
@@ -249,6 +249,11 @@ internal class DummyCommandCenterProfileSharingService : ICommandCenterProfileSh
     }
 
     public Task<BasicCommandCenterProfile?> GetSharedProfileAsync(string profileId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Guid> CreateSharedSubmissionIdAsync(ShareSubmissionIdRequest request)
     {
         throw new NotImplementedException();
     }

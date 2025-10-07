@@ -14,7 +14,7 @@ public partial class CcProfilePage : CcProfilePageBase
     private IAssetUrlProvider AssetUrlProvider { get; set; }
 
     [Inject]
-    private ICommandCenterProfileSharingService CommandCenterProfileRepository { get; set; }
+    private ICommandCenterSharingService CommandCenterRepository { get; set; }
 
     private async Task CreateTeam()
     {

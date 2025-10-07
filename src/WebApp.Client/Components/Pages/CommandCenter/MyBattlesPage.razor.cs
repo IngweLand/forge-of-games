@@ -1,14 +1,19 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.WebApp.Client.Components.Elements;
+using Ingweland.Fog.WebApp.Client.Components.Elements.CommandCenter;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Ingweland.Fog.WebApp.Client.Constants;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
+using MudBlazor;
 using Refit;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
@@ -191,5 +196,20 @@ public partial class MyBattlesPage : BattleLogPageBase
     private Task ClearSubmissionId()
     {
         return OnSubmissionIdInputChanged(string.Empty);
+    }
+    
+    private async Task ShareSubmissionId()
+    {
+        if (_submissionId == null)
+        {
+            return;
+        }
+        var options = GetDefaultDialogOptions();
+        var captured = (Guid)_submissionId;
+        var parameters = new DialogParameters<ShareSubmissionIdDialog>
+        {
+            {x => x.SubmissionId, captured},
+        };
+        await DialogService.ShowAsync<ShareSubmissionIdDialog>(null, parameters, options);
     }
 }

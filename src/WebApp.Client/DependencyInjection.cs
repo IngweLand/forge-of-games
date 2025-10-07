@@ -47,7 +47,7 @@ internal static class DependencyInjection
         {
             ContentSerializer = new SystemTextJsonContentSerializer(GetDefaultJsonSerializerOptions()),
         };
-        AddRefitJsonApiClient<ICommandCenterProfileSharingService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<ICommandCenterSharingService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IInGameStartupDataService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<ICityPlannerSharingService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IStatsHubService>(services, baseAddress, refitJsonSettings);

@@ -7,7 +7,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.CommandCenter;
 public partial class CcAddSharedProfilePage : AddRemoteProfilePageBase
 {
     [Inject]
-    private ICommandCenterProfileSharingService CommandCenterProfileRepository { get; set; }
+    private ICommandCenterSharingService CommandCenterRepository { get; set; }
 
     protected override bool CanGetProfile()
     {
@@ -16,7 +16,7 @@ public partial class CcAddSharedProfilePage : AddRemoteProfilePageBase
 
     protected override Task<BasicCommandCenterProfile?> GetProfile()
     {
-        return CommandCenterProfileRepository.GetSharedProfileAsync(SharedProfileId!);
+        return CommandCenterRepository.GetSharedProfileAsync(SharedProfileId!);
     }
 }
 

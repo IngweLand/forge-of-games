@@ -30,9 +30,14 @@ public class PlayerBattleSearchQueryHandler(
     public async Task<PaginatedList<BattleSummaryDto>> Handle(UserBattleSearchQuery request,
         CancellationToken cancellationToken)
     {
+        var now = DateTime.UtcNow;
+        var sharedSubmissionId =
+            await context.SharedSubmissionIds.FirstOrDefaultAsync(
+                x => x.SharedId == request.SubmissionId && x.ExpiresAt > now, cancellationToken);
+        var submissionId = sharedSubmissionId?.SubmissionId ?? request.SubmissionId;
         var battlesQuery = context.Battles.AsNoTracking()
             .Include(x => x.Squads)
-            .Where(src => src.SubmissionId == request.SubmissionId && src.BattleType == request.BattleType);
+            .Where(src => src.SubmissionId == submissionId && src.BattleType == request.BattleType);
         if (request.BattleDefinitionId != null)
         {
             if (request.UnitIds.Count > 0)
@@ -56,7 +61,7 @@ public class PlayerBattleSearchQueryHandler(
             {
                 battlesQuery = battlesQuery.Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
             }
-            
+
             if (request.ResultStatus != BattleResultStatus.Undefined)
             {
                 battlesQuery = battlesQuery.Where(src => src.ResultStatus == request.ResultStatus);

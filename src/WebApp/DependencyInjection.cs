@@ -26,7 +26,7 @@ internal static class DependencyInjection
         services.AddScoped<IInGameStartupDataService, DummyInGameStartupDataService>();
         services.AddScoped<IJSInteropService, DummyJSInteropService>();
         services.AddScoped<ICityPlannerSharingService, DummyCityPlannerSharingService>();
-        services.AddScoped<ICommandCenterProfileSharingService, DummyCommandCenterProfileSharingService>();
+        services.AddScoped<ICommandCenterSharingService, DummyCommandCenterSharingService>();
         services.AddScoped<ILocalStorageBackupService, DummyLocalStorageBackupService>();
         services.AddScoped<IMainMenuService, MainMenuService>();
         services.AddScoped<IPageMetadataService, PageMetadataService>();

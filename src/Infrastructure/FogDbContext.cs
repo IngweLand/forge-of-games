@@ -28,6 +28,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<BattleStatsEntity> BattleStats { get; set; }
     public DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     public DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
+    public DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -54,5 +55,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new BattleTimelineEntityTypeConfiguration());
         builder.ApplyConfiguration(new BattleSquadsEntityTypeConfiguration());
         builder.ApplyConfiguration(new ProfileSquadDataEntityTypeConfiguration());
+        builder.ApplyConfiguration(new SharedSubmissionIdEntityTypeConfiguration());
     }
 }

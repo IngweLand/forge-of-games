@@ -1,0 +1,81 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject ICommandCenterSharingService CommandCenterSharingService
+@inject IJSInteropService JSInteropService
+@inject ILogger<ShareCcProfileDialog> Logger
+<MudDialog DefaultFocus="DefaultFocus.FirstChild">
+    <DialogContent>
+        <div class="content-container">
+            <span>@Loc[FogResource.ShareSubmissionIdDialog_Description]</span>
+            @if (_isLoading)
+            {
+                <LoadingIndicator Dense="true"/>
+            }
+            else if (_sharedId != null)
+            {
+                <div class="shared-id-container">
+                    <span>@_sharedId</span>
+                    <MudIconButton Icon="@Icons.Material.Filled.ContentCopy" OnClick="@CopyToClipboard"/>
+                </div>
+            }
+            else
+            {
+                <MudButton Color="Color.Primary" Variant="Variant.Filled"
+                           OnClick="@CreateId">@Loc[FogResource.ShareSubmissionIdDialog_CreateButton_Title]</MudButton>
+            }
+        </div>
+
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter][EditorRequired]
+    public required Guid SubmissionId { get; set; }
+
+    private bool _isLoading;
+
+    private string? _sharedId;
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task CreateId()
+    {
+        try
+        {
+            _isLoading = true;
+            _sharedId = (await CommandCenterSharingService.CreateSharedSubmissionIdAsync(new ShareSubmissionIdRequest(SubmissionId))).ToString();
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Error happened when sharing the command center profile.");
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+
+    private async Task CopyToClipboard()
+    {
+        if (string.IsNullOrWhiteSpace(_sharedId))
+        {
+            return;
+        }
+
+        await JSInteropService.CopyToClipboardAsync(_sharedId);
+    }
+
+}

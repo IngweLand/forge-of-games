@@ -30,8 +30,9 @@
                              OnClose="@ClearSubmissionId">@_submissionIdString</MudChip>
                     <MudSpacer/>
                     <MudToggleIconButton Icon="@Icons.Material.Outlined.FilterAltOff" Toggled="@_isAdvancedFilter"
-                                         ToggledChanged="OnFilterTypeChanged"
-                                         ToggledIcon="@Icons.Material.Outlined.FilterAlt"></MudToggleIconButton>
+                                         ToggledChanged="OnFilterTypeChanged" Color="Color.Inherit"
+                                         ToggledIcon="@Icons.Material.Outlined.FilterAlt"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.IosShare" Color="Color.Inherit" OnClick="@ShareSubmissionId"/>
                 </div>
                 @if (_isAdvancedFilter)
                 {

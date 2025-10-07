@@ -1,8 +1,10 @@
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers.Interfaces;
+using MediatR;
 
 namespace Ingweland.Fog.WebApp.Apis;
 
@@ -21,7 +23,9 @@ public class HohServices(
     ICampaignService campaignService,
     ITreasureHuntService treasureHuntService,
     IWikipediaService wikipediaService,
-    IRelicService relicService)
+    IRelicService relicService,
+    ICommandCenterSharingService commandCenterSharingService,
+    IMediator mediator)
 {
     public ICampaignService CampaignService { get; } = campaignService;
     public ICityService CityService { get; } = cityService;
@@ -40,6 +44,8 @@ public class HohServices(
     public ILogger<HohServices> Logger { get; } = logger;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;
     public IRelicService RelicService { get; } = relicService;
+    public ICommandCenterSharingService CommandCenterSharingService { get; } = commandCenterSharingService;
+    public IMediator Mediator { get; } = mediator;
     public IResearchService ResearchService { get; } = researchService;
     public ITreasureHuntService TreasureHuntService { get; } = treasureHuntService;
     public IUnitService UnitService { get; } = unitService;

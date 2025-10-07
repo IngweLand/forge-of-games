@@ -2274,6 +2274,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string ShareSubmissionIdDialog_CreateButton_Title {
+            get {
+                return ResourceManager.GetString("ShareSubmissionIdDialog.CreateButton.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Shared Submission ID allows access to your resources (e.g., battles) for 24 hours..
+        /// </summary>
+        public static string ShareSubmissionIdDialog_Description {
+            get {
+                return ResourceManager.GetString("ShareSubmissionIdDialog.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Members.
         /// </summary>
         public static string StatsHub_Alliance_CurrentMembers {
