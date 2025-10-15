@@ -52,7 +52,7 @@ public class CacheKeyFactory : ICacheKeyFactory
                 q.Request.SearchPreference}:{q.Request.AllowPremiumEntities}:{q.Request.OpenedExpansionsHash}:{
                     q.Request.TotalArea}",
             GetPlayerCityFromSnapshotQuery q => $"PlayerCityFromSnapshot:{q.SnapshotId}",
-            GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}",
+            GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}:{q.Date}",
             GetAllLeaderboardTopItemsQuery q => "LeaderboardTopItems",
             GetPlayerBattlesQuery q => $"PlayerBattles:{q.PlayerId}:{q.StartIndex}:{q.Count}",
             GetPlayerProfileQuery q => $"PlayerProfile:{q.PlayerId}",
