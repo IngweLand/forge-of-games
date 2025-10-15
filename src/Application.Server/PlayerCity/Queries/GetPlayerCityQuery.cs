@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
-public record GetPlayerCityQuery(int PlayerId) : IRequest<HohCity?>, ICacheableRequest
+public record GetPlayerCityQuery(int PlayerId, DateOnly? Date = null) : IRequest<HohCity?>, ICacheableRequest
 {
     public TimeSpan? Duration { get; }
     public DateTimeOffset? Expiration => DateTimeUtils.GetNextMidnightUtc();
@@ -30,10 +30,17 @@ public class GetPlayerCityQueryHandler(
             return null;
         }
 
-        var existingCity = await GetCityAsync(player.Id, player.Name, CityId.Capital, DateTime.UtcNow.ToDateOnly());
+        var today = DateTime.UtcNow.ToDateOnly();
+        var date = request.Date ?? today;
+        var existingCity = await GetCityAsync(player.Id, player.Name, CityId.Capital, date);
         if (existingCity != null)
         {
             return existingCity;
+        }
+
+        if (request.Date.HasValue)
+        {
+            return null;
         }
 
         if (failedFetchesCache.IsFailedFetch(player.Key))
@@ -45,19 +52,19 @@ public class GetPlayerCityQueryHandler(
         if (fetchedCity == null)
         {
             failedFetchesCache.AddFailedFetch(player.Key);
-            return await GetCityAsync(player.Id, player.Name, CityId.Capital, null);
+            return null;
         }
 
         var savedCity = await playerCityService.SaveCityAsync(player.Id, fetchedCity);
         if (savedCity == null)
         {
-            return await GetCityAsync(player.Id, player.Name, CityId.Capital, null);
+            return await GetCityAsync(player.Id, player.Name, CityId.Capital, today);
         }
 
         return await cityCreationService.Create(savedCity, player.Name);
     }
 
-    private async Task<HohCity?> GetCityAsync(int playerId, string playerName, CityId cityId, DateOnly? date)
+    private async Task<HohCity?> GetCityAsync(int playerId, string playerName, CityId cityId, DateOnly date)
     {
         var existingCity = await playerCityService.GetCityAsync(playerId, cityId, date);
         if (existingCity != null)

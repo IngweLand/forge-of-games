@@ -75,6 +75,12 @@ public class StatsHubViewModelsFactory(
         var currentAlliance = playerProfile.Alliances.FirstOrDefault(a => a.Id == playerProfile.Player.AllianceId);
         var previousAlliances = playerProfile.Alliances.Where(a => a.Id != playerProfile.Player.AllianceId)
             .OrderBy(a => a.IsDeleted).ThenByDescending(a => a.RankingPoints);
+        var citySnapshotDates = playerProfile.CitySnapshotDays.Order()
+            .Select(x => x.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc)).ToList();
+        if (citySnapshotDates.LastOrDefault() != DateTime.Today)
+        {
+            citySnapshotDates.Add(DateTime.Today);
+        }
         return new PlayerProfileViewModel
         {
             Player = player,
@@ -96,6 +102,7 @@ public class StatsHubViewModelsFactory(
                 var hero = heroesDic[src.Hero.UnitId];
                 return heroProfileViewModelFactory.CreateBasic(src, hero);
             }).ToList(),
+            CitySnapshotDays = citySnapshotDates,
         };
     }
 }

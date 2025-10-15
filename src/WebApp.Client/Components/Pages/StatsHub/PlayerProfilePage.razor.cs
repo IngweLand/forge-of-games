@@ -9,6 +9,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -26,6 +27,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private PlayerProfileViewModel? _player;
     private bool _pvpChartIsExpanded;
     private bool _rankingChartIsExpanded;
+    private DateTime? _citySnapshotDate = DateTime.Today;
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
@@ -78,6 +80,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             IsInitialized = false;
             _player = await StatsHubUiService.GetPlayerProfileAsync(PlayerId);
+            _citySnapshotDate = _player!.CitySnapshotDays.Last();
 
             _defaultAnalyticsParameters = new Dictionary<string, object>
             {
@@ -173,7 +176,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         try
         {
-            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id);
+            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id, _citySnapshotDate?.ToDateOnly());
             if (_isDisposed)
             {
                 return;

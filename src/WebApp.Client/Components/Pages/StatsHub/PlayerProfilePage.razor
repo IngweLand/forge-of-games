@@ -1,4 +1,5 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_PROFILE_TEMPLATE)]
+@using System.Globalization
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
@@ -10,7 +11,13 @@
     <div class="page-container">
         <PlayerInfoComponent Player="@_player.Player" OnAllianceClicked="OnPlayerInfoAllianceClicked"/>
         <div class="fog-container section-container actions-container">
-            <MudButton OnClick="VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+            <div>
+                <MudDatePicker Label="@Loc[FogResource.StatsHub_Player_CitySnapshotDate]" @bind-Date="_citySnapshotDate"
+                               Culture="@CultureInfo.DefaultThreadCurrentCulture" ShowToolbar="false"
+                               MinDate="@(new DateTime(2025, 7, 1))" Disabled="@_fetchingCity"
+                               IsDateDisabledFunc="@((DateTime dt) => !_player.CitySnapshotDays.Contains(dt))"/>
+            </div>
+            <MudButton OnClick="@VisitCity" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
                        EndIcon="@Icons.Material.Filled.FlightTakeoff" IconColor="Color.Inherit">
                 @if (_fetchingCity)
                 {
@@ -22,7 +29,7 @@
                     <MudText>@Loc[FogResource.StatsHub_Player_Visit]</MudText>
                 }
             </MudButton>
-            <MudButton OnClick="ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
+            <MudButton OnClick="@ShowCityStats" Variant="Variant.Filled" Color="Color.Primary" Disabled="@_fetchingCity"
                        EndIcon="@Icons.Material.Filled.Analytics" IconColor="Color.Inherit">
                 @if (_fetchingCity)
                 {

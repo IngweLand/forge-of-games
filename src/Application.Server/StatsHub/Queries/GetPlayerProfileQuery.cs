@@ -123,8 +123,14 @@ public class GetPlayerProfileQueryHandler(
         logger.LogDebug("Retrieved {StatsCount} battle stats IDs for player {PlayerId}", existingStatsIds.Count,
             request.PlayerId);
 
+        logger.LogDebug("Retrieving city snapshot days for player {PlayerId}", player.Id);
+        var citySnapshotDays = await context.PlayerCitySnapshots.Where(x => x.PlayerId == player.Id)
+            .Select(x => x.CollectedAt).ToListAsync(cancellationToken);
+        logger.LogDebug("Retrieved {Count} city snapshot days for player {PlayerId}", citySnapshotDays.Count,
+            player.Id);
+        
         logger.LogDebug("Creating player profile for {PlayerId}", request.PlayerId);
-        var result = playerProfileDtoFactory.Create(player, pvpBattles, existingStatsIds);
+        var result = playerProfileDtoFactory.Create(player, pvpBattles, existingStatsIds, citySnapshotDays);
         logger.LogInformation("Successfully created profile for player {PlayerId}", request.PlayerId);
         return result;
     }

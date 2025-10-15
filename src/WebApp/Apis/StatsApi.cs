@@ -80,9 +80,9 @@ public static class StatsApi
 
     private static async Task<Results<Ok<HohCity>, NotFound, BadRequest<string>>>
         GetPlayerCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
-            CancellationToken ct = default)
+            [FromQuery] DateOnly? date = null, CancellationToken ct = default)
     {
-        var query = new GetPlayerCityQuery(playerId);
+        var query = new GetPlayerCityQuery(playerId, date);
         var result = await services.Mediator.Send(query, ct);
         if (result == null)
         {

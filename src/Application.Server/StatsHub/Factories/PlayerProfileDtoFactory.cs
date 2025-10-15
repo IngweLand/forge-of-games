@@ -11,7 +11,7 @@ public class PlayerProfileDtoFactory(IMapper mapper, IPlayerBattlesFactory playe
     : IPlayerProfileDtoFactory
 {
     public PlayerProfileDto Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
-        IReadOnlyDictionary<byte[], int> existingStatsIds)
+        IReadOnlyDictionary<byte[], int> existingStatsIds, IReadOnlyCollection<DateOnly> citySnapshotDays)
     {
         var uniqueAlliances = player.AllianceHistory
             .DistinctBy(x => x.Id)
@@ -40,6 +40,7 @@ public class PlayerProfileDtoFactory(IMapper mapper, IPlayerBattlesFactory playe
             PvpBattles = battles,
             TreasureHuntDifficulty = player.TreasureHuntDifficulty,
             Squads = mapper.Map<IReadOnlyCollection<ProfileSquadDto>>(player.Squads),
+            CitySnapshotDays = citySnapshotDays,
         };
     }
 

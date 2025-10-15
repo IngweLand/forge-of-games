@@ -14,7 +14,7 @@ public interface IStatsHubService
     Task<PlayerProfileDto?> GetPlayerProfileAsync(int playerId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE_REFIT)]
-    Task<HohCity?> GetPlayerCityAsync(int playerId, CancellationToken ct = default);
+    Task<HohCity?> GetPlayerCityAsync(int playerId, DateOnly? date = null, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE_REFIT)]
     Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, [Query] int startIndex = 0,

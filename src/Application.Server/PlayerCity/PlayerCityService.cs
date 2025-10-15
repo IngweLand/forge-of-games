@@ -130,14 +130,8 @@ public class PlayerCityService : IPlayerCityService
         return citySnapshot;
     }
 
-    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly? date = null)
+    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
     {
-        if (date == null)
-        {
-            return _context.PlayerCitySnapshots.Where(x => x.PlayerId == playerId && x.CityId == cityId)
-                .OrderByDescending(x => x.CollectedAt).FirstOrDefaultAsync();
-        }
-
         return _context.PlayerCitySnapshots.FirstOrDefaultAsync(x =>
             x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }

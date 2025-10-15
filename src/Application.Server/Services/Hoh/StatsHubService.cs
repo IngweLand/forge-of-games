@@ -74,9 +74,9 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<HohCity?> GetPlayerCityAsync(int playerId, CancellationToken ct = default)
+    public Task<HohCity?> GetPlayerCityAsync(int playerId, DateOnly? date = null, CancellationToken ct = default)
     {
-        var query = new GetPlayerCityQuery(playerId);
+        var query = new GetPlayerCityQuery(playerId, date);
         return sender.Send(query, ct);
     }
 

@@ -2535,6 +2535,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City Snapshot Date.
+        /// </summary>
+        public static string StatsHub_Player_CitySnapshotDate {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.CitySnapshotDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Names.
         /// </summary>
         public static string StatsHub_Player_Names {
