@@ -33,7 +33,7 @@ T
 FBase.AllianceTechnologies.alliance_technology.productionQuarter_2_Name
 レベル2
 �
-Base.HeroClass.Defender_Desc�守護者は最前線で戦い、味方を守る役割を担う盾となる。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>、<color=#3DA229>闘技場</color>、<color=#3DA229>宝探し、<color=#3DA229>スパルタ最後の戦い</color></color></indent><br><line-height=50%><br></line-height><color=#CD2A25>不利</color>：<br>•<indent=5%><color=#CD2A25>テスラストーム</color></indent>
+Base.HeroClass.Defender_Desc�守護者は最前線で戦い、味方を守る役割を担う盾となる。<br><line-height=50%><br></line-height><color=#3DA229>有利</color>：<br>•<indent=5%><color=#3DA229>キャンペーン</color>、<color=#3DA229>闘技場</color>、<color=#3DA229>宝探し</color>、<color=#3DA229>スパルタ最後の戦い</color></indent><br><line-height=50%><br></line-height><color=#CD2A25>不利</color>：<br>•<indent=5%><color=#CD2A25>テスラストーム</color></indent>
 :
 !Base.Heroes.hero.Nostradamus_Nameノストラダムス
 9
@@ -44,6 +44,8 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_30_Nameレベル30
 �
 9Base.TreasureHuntCheckpointsPanel.RequirementsInformationK対決をあと{0}回クリアして、同盟仲間と一緒に進もう！
+c
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_NameTrophy PointTrophy Points
 C
 -Base.UnitStats.unit_stat.Focus_Percent_Abbrev初期集中力％
 R
@@ -164,6 +166,8 @@ j
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier2_1_Name!昇進素材の選択キット２
 e
 ,Base.EquipmentUnequipPanel.UnequipCostsLabel5<sprite="InlineIcons" name="{0}_small"> {1} で外す
+O
+6Base.Buildings.Building_Arabia_Merchant_Average_6_DescProduces Gold Dinars.
 L
 9Base.Technologies.Technology_EarlyGothicEra_Mangonel_Nameマンゴネル
 ]
@@ -332,6 +336,8 @@ M
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_Name蜂蜜酒の醸造
 W
 )Base.Heroes.hero.FlorenceNightingale_Name*フローレンス・ナイチンゲール
+@
+%Base.Resources.hero.Scheherazade_NameEssence of Scheherazade
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_Desc�おそらく、あの装置が氷山を避ける操舵を狂わせていたんだろう。だが今はこうして、船はまっすぐ進んでいる。
 �
@@ -408,6 +414,8 @@ WBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Farm_Domes
 !Base.AccountPopupGeneral.Passwordパスワード
 U
 3Base.BattleInfoPanel.BattleOfSpartaBottomLaneHeaderレオニダスを守ろう！
+%
+Base.Units.Unit_Kiviuq_NameKiviuq
 @
 0Base.Buildings.Building_Mayas_Home_Priest_4_Name職人の家
 j
@@ -422,8 +430,8 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Achilles_1_Name�<sty
 %Base.Units.Unit_ThomasAlvaEdison_Desc�メンローパークの魔術師、トーマス・アルバ・エジソンが輝きをもたらす。１９世紀後半から20世紀初頭にかけて活躍し、数々の発明で技術と産業を大きく変えた。<br><br>蓄音機、映画カメラ、電球をはじめ、一千以上の特許を取得し、研究所を拠点に革新的な技術開発を推進。産業研究の先駆けとなり、後の技術革新にも大きな影響を与えた。<br><br>発想力と実行力で人々の暮らしを一変させ、その功績は今もなお受け継がれている。まさに、暗闇を照らした発明家だった。
 F
 6Base.Technologies.Technology_EarlyRome_Municipium_Name自治都市
-_
-'Base.HeroPanel.FocusRegularChargeChange4通常チャージ：<style=AwakenFocus>-{0}</style>
+S
+'Base.HeroPanel.FocusRegularChargeChange(通常：<style=AwakenFocus>-{0}</style>
 -
 Base.InventoryMenuPanel.Itemsアイテム
 =
@@ -469,6 +477,8 @@ B
 Base.RewardPanel.Blueprint	設計図
 F
 'Base.EquipmentUnequipPanel.UnequipTitle以下の装備を外す：
+�
+Base.Resources.myrrh_DescjMyrrh is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 o
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc<歩兵ユニットは前列で最も効果を発揮する。
 �
@@ -559,6 +569,8 @@ a
 7Base.Incidents.Incident_RomanEmpire_Capital_Boar_1_Desc{木の根元に隠した宝物をイノシシが守ってるんだ。労働者を呼んで、一緒に取り出そうぜ！
 M
 :Base.Questlines.Questline_StoneAge_BuildingACommunity_Name集落の発展
+j
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
 <
 #Base.Regions.region.Panganea_2_Name頭蓋砕きの領域
 �
@@ -621,8 +633,10 @@ C
 'Base.BuildingGroups.compactCulture_Name小規模な文化遺産
 R
 'Base.AllianceCityManagementPopup.Header'同盟メンバーが現在作業中：
-I
-'Base.HeroPanel.FocusAbilityChargeHeaderアビリティチャージ：
+=
+'Base.HeroPanel.FocusAbilityChargeHeaderチャージ時間
+<
++Base.Wonders.Wonder_Arabia_CityOfBrass_NameCity of Brass
 M
 (Base.Rewards.Reward_Food_Coins_XS_1_Name!食料とコインのバンドル
 S
@@ -763,8 +777,8 @@ O
 -Base.RewardTypes.EventSubscriptionReward_Nameイベントブースト解放
 $
 Base.Locales.ru_RUРусский
-�
-&Base.ShopPopup.EpicEventChainOfferDesc�イベントを一気に進め、ヒーローたちを大きく強化しよう。最終報酬として、レベル10のレジェンダリー遺物、エクスカリバーが待っている。
+�
+&Base.ShopPopup.EpicEventChainOfferDesc�イベントを一気に進め、ヒーローを大きく強化しよう。最終報酬として、レベル10のレジェンダリー遺物、エクスカリバーが待っている。
 �
 6Base.Buildings.Building_MinoanEra_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 R
@@ -781,6 +795,8 @@ H
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_Name騎兵兵舎
 K
 8Base.Technologies.Technology_FeudalAge_RunicWriting_Nameルーン文字
+L
+2Base.ShopOffers.shop_offer.Diy_Roster_Offer_1_NameYour Hero-Roster-Boost
 �
  Base.Regions.SiegeOfOrleans_Desc�１４２９年５月、百年戦争が始まってから９１年目の春。イングランド軍の侵攻は勢いを増し、６ヶ月前にはロワール川沿いの要塞都市オルレアンにまで迫った。この街を失えば、敵の進軍を止めることはできない。以来、夜な夜な砲声が響き、敵の築く砦は日に日に増えていった。街では食料が尽きかけ、希望もほとんど残されていない。<br><br>本来なら、ジャンヌ・ダルクが現れるはずだった。私たちの知る歴史では、聖なる戦士が旗を掲げてオルレアンに入り、食料と安堵、そして希望をもたらした。だがこの世界では、彼女は姿を見せなかった。街は今、崩壊寸前にある。すべては歴史のヒーローたちに託された。住民たちは覚悟を決めているが、敵はすでに目前に迫っている。今まさに最後の戦いが始まろうとしている。オルレアンを救うため、そしてフランスが再び自由を手にするための戦いが。
 s
@@ -831,6 +847,8 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_48_Nameレベル48
 }
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_2_QuestStart_Text1_Nameシックス・スカイ
+6
+#Base.Heroes.hero.HarunAlRashid_NameHarun al-Rashid
 N
 /Base.UnitStats.unit_stat.ShieldTakenAmp_Percent受けるシールド量％
 :
@@ -877,8 +895,8 @@ WBase.Resources.BuildingPiece_Building_ClassicGreece_Collectable_ArchitectsStudi
 -Base.HeroPanel.EquipmentSubAttributeUnlocksAtLV {0}で解放
 B
 ,Base.Units.Unit_MinoanEra_Minoan_Axemen_Nameミノア斧使い
-#
-Base.Relics.Mjolnir_NameMjolnir
++
+Base.Relics.Mjolnir_Nameミョルニル
 s
 BBase.Buildings.Building_KingdomOfSicily_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 :
@@ -973,14 +991,14 @@ B
 2Base.Buildings.Building_China_City_CityHall_1_Name大ホール
 �
 KBase.StoryText.Story_Questline_Alliances_JoinAlliance_QuestStart_Text1_Desc{時を越えている時、私たちのような者たちが見えたの。その仲間に加わるべきだと思うわ。
+\
+"Base.BattleSetupPanel.HeroDefeated6回復の祠で復活させてから配置しよう！
 c
 ;Base.Buildings.Building_MinoanEra_CultureSite_Little_1_Desc$隣の建物の幸福度を上げる
-`
-"Base.BattleSetupPanel.HeroDefeated:Hero is defeated and needs to recover at a Healing Shrine.
 9
  Base.ScoutPopup.ScoutDescription{0}を偵察する？
-�
-Base.Relics.Planisphere_Desc�If you've ever tried to spot the constellations on a cloudless night and come away seeing only “the big shiny one,” the planisphere is your secret weapon. This ingenious device - two rotating disks covered in stars and secrets - unlocks the heavens above, helping sky-watchers trace Orion's belt, the twists of Draco, or the steady glow of Polaris.<br><br>Favored by stargazers since ancient Alexandria and the golden days of Islamic astronomy, planispheres were the pocket guides of their time - compact, reliable, and just a little bit magical. With a simple turn, you can reveal which stars will greet you at sunset, and plot your celestial journey for the night ahead. The universe might be vast and mysterious, but in your hands, the planisphere makes it suddenly familiar.
+�
+Base.Relics.Planisphere_Desc�雲ひとつない夜空の下で星座を探そうとして、「一番明るい星しか分からない」と思ったことはないだろうか。そんなときに頼れるのが、星座早見盤だ。二枚の円盤を重ねて作られたこの精密な装置は、星々の位置とその物語を映し出し、オリオン座の三つ星や、りゅう座、北極星の確かな輝きをたどる手助けをしてくれる。<br><br>星座早見盤は、古代アレクサンドリアの学者たちからイスラーム天文学の黄金期に至るまで、多くの人々に愛されてきた。携帯に便利で正確、そしてどこか神秘的な魅力を持つこの装置は、当時の天文家たちにとって欠かせない案内役だった。<br><br>円盤を少し回すだけで、日暮れの空にどの星が姿を現すかが分かり、夜の星空の旅路を描くことができる。広大で神秘に満ちた宇宙も、手のひらの中の星座早見盤を通して見上げれば、不思議と身近に感じられるはずだ。
 G
 1Base.Units.Unit_ClassicGreece_Player_Toxotai_Nameギリシャ弓兵
 :
@@ -1017,8 +1035,8 @@ z
 MBase.AbilityDescriptions.hero_battle_ability_description.PakalTheGreat_1_Name�<style=ability_label>強化・シールド</style>味方ユニットの最大集団に、<style=basestat>{shield_duration}</style>の間、パカルの基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを付与する。さらに、<style=basestat>{def_duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる味方ユニットの防御力をパカルの防御力の<style=basestat>{def_percentage}</style>分上昇させる。
 �
 2Base.ResearchPointsVideoPlacementPopup.DescriptionWこの短い動画を見て、研究ポイントのタイマー{0}を短縮しよう。
-�
-&Base.FallOfTroyInfoPopup.LowerLabeInfo�このレーンの<style=basestat_dark>防壁</style>はヒーローたちを<style=basestat_dark>攻撃</style>し、<style=basestat_dark>燃焼ダメージ</style>を与える。スステージ10以降は、アビリティのチャージも攻撃し、チャージ量を減らす。<br><br><sprite name=status_effect_bleed> <style=basestat_dark>出血ダメージ</style>に弱い。<br>気絶と精神支配の効果は効かない。
+�
+&Base.FallOfTroyInfoPopup.LowerLabeInfo�このレーンの<style=basestat_dark>防壁</style>はヒーローたちを<style=basestat_dark>攻撃</style>し、<style=basestat_dark>燃焼ダメージ</style>を与える。ステージ10以降は、アビリティのチャージも攻撃し、チャージ量を減らす。<br><br><sprite name=status_effect_bleed> <style=basestat_dark>出血ダメージ</style>に弱い。<br>気絶と精神支配の効果は効かない。
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_5_Name黒曜石採掘場
 Y
@@ -1027,14 +1045,18 @@ L
 -Base.FriendReferralRewardPopup.HeadlineSender招待が承認された！
 D
 4Base.Buildings.Building_Vikings_City_CityHall_1_Name大ホール
+�
+Base.Resources.carpet_DescpCarpets are a refined resource. They can be produced at Carpet Makers and Luxurious Workshops - Level 4 upwards.
 F
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_Name小作農場
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>アビリティ封鎖・迎撃</style>ノストラダムスは敵ヒーローのアビリティ使用を予知する。敵が次にアビリティを使用した際、<style=basestat>{damage}</style>のダメージを受け、<style=basestat>{ability_block_duration}</style>の間アビリティを使用できなくなる。
 >
 .Base.SpartasLastStandInfoPopup.UpperLaneHeader上レーン
-A
-&Base.AccountConfirmationPopup.HeadlinePlease check your Email
+D
+/Base.Abilities.hero_battle_ability.Saladin_NameFortress of Speed
+N
+&Base.AccountConfirmationPopup.Headline$メールを確認してください
 }
 :Base.AllianceQuarterPanel.ProductionUnlockBuildRequirement?この地区を建設して生産をアンロックしよう。
 C
@@ -1069,6 +1091,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_Nameミノ
 Base.Units.Unit_Hoplit_Desc�ミルティアデス、５世紀のアテナイの軍人。マラトンの戦いでの指導力により名を馳せた英雄。<br><br>優れた戦術家としてアテナイ軍を率い、数で勝るペルシャ軍に決定的な勝利を収めた。この勝利はギリシャ侵攻を防ぎ、戦争の流れを大きく変える転換点となった。<br><br>その後、海上侵攻を指揮するも、命令に従わず復讐を優先する道を選んだ。作戦は失敗に終わり、結果的に不名誉な結末を迎えたが、賢明で狡猾な戦略家として今も記憶されている。
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_Name噴水
+�	
+Base.Units.Unit_Saladin_Desc�Stand tall as a lion of justice with Saladin, Sultan of Egypt and Syria! This 12th-century Kurdish leader is famed for his unmatched chivalry and his pivotal role during the Crusades. Rising from humble beginnings, Saladin united the fractured Muslim world and reclaimed Jerusalem.<br><br>At the Battle of Hattin in 1187, Saladin's tactical brilliance shattered the Crusader army, leading to the recapture of Jerusalem after 88 years of Christian rule. Yet it was his mercy that truly made him legendary - he allowed the city's Christian inhabitants to leave peacefully, and when King Richard the Lionheart's horse was killed in battle, Saladin sent him two replacements.<br><br>Saladin's clever tactics defeated some of the greatest knights and kings Europe could muster, while his fame for mercy and wisdom rivaled his prowess in battle. He rebuilt fortresses, sponsored learning, and ensured the prosperity of his lands even amid war. To this day, Saladin is remembered across the world as a paragon of leadership and virtue; his campaigns changed history and his title, al-Malik an-Nasir (the Victorious King), speaks for itself.
 �
 LBase.StoryText.Story_Questline_EventCity_Egypt_GoldOre_QuestStart_Text1_Desc�アンクは我々にとって不可欠であり、金鉱石から作られる。金鉱と金細工工房を動かし始めるのじゃ！
 _
@@ -1118,12 +1142,16 @@ B
 8Base.Technologies.Technology_FeudalAge_Transhumance_Name移牧
 9
 &Base.Regions.region.DesertDelta_4_Name戦火の小川
+3
+)Base.Cities.City_Arabia_NoriasOfHama_NameArabia
 �
 1Base.HistoricBattlePanel.InventoryFullDescriptionxこれ以上装備アイテムは持てない。不要な装備アイテムを売って、歴史の戦いに挑もう。
 �
 "Tutorial.EmbersTutorial.EmbersInfo�バルドルの輝きよ！<style=MC>鍛冶炉</style>を作ってくれたんだな。ありがたい。そこから<style=MC>残火</style>を集めれば、<style=MC>装備の強化</style>に使えるぞ。
 \
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_Desc先祖の仮面を生産する
+h
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_Desc.Increases the irrigation of adjacent buildings
 K
 ,Base.Wonders.Wonder_Egypt_CheopsPyramid_Nameクフ王のピラミッド
 A
@@ -1210,7 +1238,7 @@ F
 ~
 #Tutorial.PvpTutorial.BattleMenuHintW<style=MC>バトル</style>メニューから<style=MC>闘技場</style>に入るぞ。
 #
-Base.Generic.Repair処理する
+Base.Generic.Repair修理する
 �
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text4_Desc�そなたの役目は、驚きと探求の精神をかき立てるような風景を生み出すことじゃ。<style=MC>アブ・シンベル</style>が革新の中心となり、我らの進歩を導く灯火となるじゃろう。
 W
@@ -1295,6 +1323,8 @@ M
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescEじゃあ次は、それにどう対応するかを探る番だな！
 -
 Base.Ages.RomanEmpire_Start紀元前50年
+6
+!Base.BazaarOffersPanel.LockedSlotResearch Required
 s
 ?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate0このプレイヤーは招待を保留中だ。
 !
@@ -1423,8 +1453,8 @@ C
 'Base.QuestlinesPanel.HaveResourceInCity{2}で{1}を{0}持つ。
 I
 3Base.Questlines.Questline_BronzeAge_CityQuest2_Name名産品の発展
-7
-Base.Mailbox.RemovalHeadlineAlliance Removal Notice
+2
+Base.Mailbox.RemovalHeadline同盟除名通知
 K
 )Base.RewardTypes.UnlockFeatureReward_Desc{0}がアンロックされた
 a
@@ -1491,6 +1521,8 @@ JBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestFinish_Text2_Desc��
 [Base.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_Tikal_3_QuestStart_Text1_Desc�実に立派なお働きでございました。この務めにおけるあなた様の才覚は、もはや誰の目にも明らかでございます。…とはいえ、歩みはまだ途上。次なる務めにも、心を尽くしてまいりましょう。
 j
 *Base.PvpFightPanel.PaidRefreshPopupMessage<このリストを更新して新しい敵を受け取る？
+�	
+Base.Units.Unit_Kiviuq_Desc�	Journey across the frozen seas and through impossible trials with Kiviuq, the eternal wanderer of Inuit legend! This mythical hero has traveled for centuries, if not millennia, across the Arctic, facing spirits, shamans, and the very forces of nature itself. His odyssey began when he was set adrift as a young man, and since then, his kayak has carried him through adventures that would break lesser mortals.<br><br>Kiviuq's tales are as numerous as the stars in the northern sky. He has escaped from murderous spirits, married the daughter of the Moon, and outwitted cannibalistic giants. In one story, he transforms into various animals to escape danger; in another, he rescues his community from starvation by finding new hunting grounds across impossible distances. His journey is eternal - some say he still paddles the Arctic waters, searching for his way home.<br><br>To the Inuit peoples across the Arctic, from Alaska to Greenland, Kiviuq represents resilience, cleverness, and the indomitable human spirit. His stories have been told in igloos and qaggiq for countless generations, teaching survival, morality, and hope in the harshest environment on Earth.
 d
 $Base.ExpansionPopup.ProgressOnWonder<世界遺産レベルアップして領土を拡張しよう
 ]
@@ -1726,6 +1758,8 @@ l
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Desc0隣の建物の灌漑用水を大幅に増やす
 s
 5Base.QuestlinesPanel.HaveIrrigatedBuildingsInCityTask:{2}で灌漑水量レベル {3}{4}の{1}を{0}個持つ。
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 �
 Base.Resources.stockfish_Descf干し魚は加工資源を作るために使われる重要な資源で、酒場で生産される。
 M
@@ -1770,6 +1804,8 @@ I
 fBase.StoryText.Story_Questline_EventCity_Vikings_ExpeditionPreparations_Lagertha_QuestStart_Text1_Desc�勇敢な水夫たちに必要な食糧を整えるため、まずは<nobr><style=MC>魚</style> <sprite name=resource.fish_cta></nobr> と<nobr><style=MC>蜂蜜</style> <sprite name=resource.honey_cta></nobr> を集めよう。
 K
 &Base.QuestlinesPanel.CompleteEncounter!バトルに{0}回勝利する。
+L
+4Base.Abilities.hero_battle_ability.Scheherazade_NameTales of Enchantment
 z
 1Base.QuestlinesPanel.CollectWorkerProductionShortE{3}で{2}の{1}から短時間かかる生産物を{0}回集める。
 K
@@ -1780,6 +1816,8 @@ K
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_Name小さな住宅
 �
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_NameOil Lamp Maker
 �
 <Base.EventStartScreens.SummonOfTheStarsEventStartDescription�ポータルで反物質の力を呼び起こし、運命に導かれて召喚を進めよう！希少なヒーローを引き当てるほど、より多くの星ポイントを獲得できる。星ポイントを重ねて、豪華な報酬を手に入れよう！
 O
@@ -1812,6 +1850,8 @@ ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_3_Name円形劇場
 BBase.UnitStats.unit_stat.InitialFocusInSecondsBonus_Percent_Abbrev初期チャージ％
 �
 7Base.Incidents.Incident_StoneAge_Capital_Mammoth_2_Desclマンモスが宝物の上で寝てるの、知ってたか？一匹起こして、調べてみようぜ！
+y
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 -
  Base.Units.Unit_QinShiHuang_Name	始皇帝
 A
@@ -1897,6 +1937,8 @@ Z
 9Base.LeaderboardEventPanel.TaskInfo.EventCity_DescriptionEイベント都市を進めて挑戦ポイントを獲得しよう！
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_8_Name哲学者の館
+�
+ Base.Resources.hero.Saladin_Desc]Used to increase the Awakening Level of Saladin and thus unlock more powerful battle bonuses.
 H
 8Base.Technologies.Technology_BronzeAge_SacredStones_Name聖なる石
 �
@@ -1923,6 +1965,8 @@ u
 ;Base.StoryText.Story_DesertDelta_2_1_BattleStart_Text1_DescT下僕ども、守りを固めよ！テスラの軍を決して危険に晒すな！
 �
 7Base.Incidents.Incident_IberianEra_Capital_Coins_1_Desciこの壊れたカートを修理したら、コインがもらえるらしいぜ！やってみよう！
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_Nameレベル32
 B
@@ -1935,10 +1979,10 @@ T
 5Base.Abilities.hero_battle_ability.CyrusTheGreat_Nameアケメネス朝の勅令
 .
 Base.Ages.BronzeAge_Decade紀元前3000年
-C
-0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Nameレオニダス
 �
 ]Base.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_Valhalla_QuestStart_Text3_DescZ新たな船団に備えて、力強い<style=MC>水夫の港</style>を建設しよう。
+C
+0Base.Units.Unit_MinoanEra_Spartans_Leonidas_Nameレオニダス
 �
 Base.Relics.ScarabBeetle_Desc�スカラベは、古代エジプトで変容と不滅の象徴とされる神聖な甲虫。砂漠の地に生きるこの小さな生物は、太陽神ラーの化身ともされ、生命と再生の力を宿すと信じられていた。<br><br>磨き上げられた宝石から作られ、神秘の刻印が施された護符は、持ち主を現世と死後の世界へと導くとされた。王の墓から庶民の家々に至るまで、その姿はあらゆる場所に刻まれ、生命の巡りと来世への希望を象徴し続けている。
 h
@@ -1949,6 +1993,8 @@ $Base.BuildingUpgradePanel.OlderGoods前時代の名産品
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text1_DescN本当にこれが正しい道か？どう見ても敵のど真ん中だが！
 R
 0Base.QuestlinesPanel.HaveSpecificExpansionInCity{1}で{0}を手に入れる。
+G
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_NameIncense Maker
 D
 %Base.IngameEvents.WorldFair_2024_Name世界博覧会イベント
 �
@@ -1967,6 +2013,8 @@ N
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text3_Descl時間というのはな、直線ではない。バネのように巻き、また戻ってくるものだ。
 N
 8Base.Resources.event_purple_tesla_takedown_trophies_Name挑戦ポイント
+L
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_NameLuxurious Workshop
 -
 Base.Event.GrandPrizeLabelメイン報酬
 �
@@ -1995,8 +2043,10 @@ LBase.AbilityDescriptions.hero_battle_ability_description.OttomanGeneral_Name�
 ;Base.StoryText.Story_DesertDelta_1_8_BattleStart_Text2_DescB確かに今はまだ俺たちに逆らってはいないが……
 u
 #Base.ShopPopup.DailyDealLevelUpDescNヒーローたちを強化させる資源を集めて、伝説を築こう！
-�
-*Base.EventPass.MoonLanding2MoreContentText�When you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more epic <style=epic>Relics</style> and another legendary <nobr><style=legendary>Mjolnir</style></nobr> up for grabs!
+�
+*Base.EventPass.MoonLanding2MoreContentText�最終チェックポイントに到達すると、すべての報酬ラインが切り替わり、イベントの旅はまだまだ続く！<br><br>メイン報酬をすべて獲得すると、次の周回から必要な進行ポイントが8から10に増加し、さらにその次の周回からは12になる。以降は12のまま進んでいく。<br><br>再び報酬を集めながら、さらなるエピックな<style=epic>遺物</style>や、もう一つのレジェンダリー遺物、<nobr><style=legendary>ミョルニル</style></nobr>を目指そう！
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_NameOil Lamp Maker
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_26_Nameレベル26
 F
@@ -2097,14 +2147,16 @@ T
 3Base.Technologies.Technology_BronzeAge_Artisan_Name職人
 x
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc9長期間にわたって大量の食料を生産する。
-;
- Base.ShopPopup.Pages.diy_offer_3Your Hero Rooster Boost
-7
- Base.ShopPopup.Pages.diy_offer_1Your Research Boost
+<
+ Base.ShopPopup.Pages.diy_offer_3ヒーロー編成強化
+L
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_NameLuxurious Merchant
+6
+ Base.ShopPopup.Pages.diy_offer_1研究ブースト
 Y
 =Base.Buildings.Building_MinoanEra_CultureSite_Moderate_1_Name中規模な文化遺産
-7
- Base.ShopPopup.Pages.diy_offer_2Your Hero Ascension
+6
+ Base.ShopPopup.Pages.diy_offer_2ヒーロー昇進
 �
 6Base.Buildings.Building_Vikings_Beehive_Average_3_Desc`養蜂場で生産された美味しい蜂蜜は、酒場で蜂蜜酒の醸造に使われる。
 i
@@ -2147,10 +2199,14 @@ J
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text2_Desc�そのためには、資源を使って<style=MC>箱</style>を埋める必要があります。すべての箱を埋めることで、<style=MC>アップグレード</style>が可能になり、<style=MC>報酬</style>が手に入ります。
 x
 BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_6_Name2レベル45まで昇進させるための素材！
+-
+Base.AlliancePanel.RecruitmentRecruitment
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.QueenBoudicca_10_Name�<style=ability_label>遠隔攻撃・気絶</style>最も遠いターゲットに槍を投げ、<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間気絶させる。さらに、ターゲットの周囲にいる敵ユニットに<style=basestat>{dmg_percentage_around}</style>のダメージを与える。ヒーローを優先する。
 �
 WBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestFinish_Text1_Desc�良いぞ！それと、<style=MC>ユグドラシル</style>は<nobr><style=MC>蜂蜜</style> <sprite name=resource.honey_cta></nobr> の生産も増やす。村の発展にその力を活かしていこう。
+$
+Base.Resources.carpet_NameCarpet
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text6_Desc�いや、その必要はない。やり遂げたんだよ！この時間を越えても、船は沈まずに進んでる。過去とは違う流れになった！
 C
@@ -2171,10 +2227,10 @@ E
 4Base.Units.Unit_ClassicGreece_Player_Cataphract_DescE騎兵ユニットは非常に速く、敵の後衛に突撃する。
 g
 0SoftError.Alliance.MAX_PENDING_REACHED_BY_PLAYER3プレイヤーの保留中の申請が多すぎる
-=
-0Base.Units.Unit_ByzantineEra_Player_Jovians_Name	親衛兵
 F
 <Base.WorldWondersOverviewPanel.ContributionsListHeaderReward報酬
+=
+0Base.Units.Unit_ByzantineEra_Player_Jovians_Name	親衛兵
 U
 *Base.Resources.hero.AlexanderTheGreat_Name'アレクサンドロス大王の精髄
 V
@@ -2229,6 +2285,8 @@ j
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_Nameテスラコイル
 �
 FBase.InventoryItems.SelectionKit_current_era_ascensionmaterials_7_DescFこの選択キットでは、昇進素材の中から1つ選べる。
+D
+2Base.Buildings.Building_Arabia_Home_Premium_2_NameLuxurious Home
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�<style=ability_label>範囲攻撃</style>現在のターゲットに爆発を起こし、<style=basestat>{range}</style>の範囲内の敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
 �
@@ -2299,6 +2357,8 @@ t
 :Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc6パピルス巻物と儀式用の衣装を生産する
 L
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text3_Descどうする？
+R
+&Base.AllianceLandingPanel.Description2(Join an Alliance or create one yourself:
 4
 'Base.HarborShopPanel.Chrono.ButtonLabel	クロノ
 �
@@ -2340,6 +2400,8 @@ e
 "Base.NotEnoughPremiumPopup.Message?ジェム{0}個が足りない。ショップに移動する？
 K
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_Name射撃兵兵舎
+I
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_NameLuxurious Noria
 >
 4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name弩兵
 :
@@ -2417,14 +2479,14 @@ Y
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader1１位
 D
 +Base.Wonders.Wonder_Capital_Stonehenge_Nameストーンヘンジ
+�
+Browser.OOM.Step2r再読み込みする：ブラウザをリフレッシュすると、問題が解決する場合があります。
 Y
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader3３位
-X
-Browser.OOM.Step2CQuick Restart: Refreshing your browser can often resolve the issue.
 Y
 OBase.RankingPanel.AllianceRankingTypesHeaders.TreasureHuntTotal.CategoryHeader2２位
-c
-Browser.OOM.Step1NLighten the Load: Close other browser tabs and applications to free up memory.
+x
+Browser.OOM.Step1c負荷を軽くする：他のタブやアプリを閉じて、メモリを解放しましょう。
 1
 !Base.StorageLimit.ResourceStorage{0}の倉庫
 �
@@ -2458,13 +2520,15 @@ o
 .
 Base.BattleInfoPanel.RightLane右レーン
 N
-Base.FurnacePanel.DailyLimit.今日の上限：<color={0}>{1}</color> / {2}
+Base.FurnacePanel.DailyLimit.一日の上限：<color={0}>{1}</color> / {2}
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text3_Desc�<style=MC>箱</style>を埋めるたびに、<style=MC>イベントランキング</style>の<style=MC>ランク</style>が上がり、<style=MC>リーグ</style>での順位が上がるほど、より良い<style=MC>報酬</style>が手に入るじゃろう。
 -
  Base.Heroes.hero.TomoeGozen_Name	巴御前
 �
 BBase.StartBattleWithEmptyHeroSlotsPopup.BattleSlotsAreEmptyWarning]まだヒーローを配置できるスペースが残っている。それでも続ける？
+C
+$Base.BuildingGroups.carpetMaker_NameCarpet MakerCarpet Makers
 A
 7Base.Technologies.Technology_FeudalAge_FishingNets_Name漁網
 V
@@ -2473,8 +2537,8 @@ GBase.AllianceTechnologies.alliance_technology.productionQuarter_13_Nameレベ
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text4_Desc�だが、そう簡単にはいかぬ相手もいる。壮絶な<style=MC>バトル</style>を経て打ち倒さねばならぬこともあるだろう。準備を怠るな。
 I
 6Base.Technologies.Technology_Mayas_MayanConsensus_Nameマヤの連携
-�
-Browser.OOM.Step3qAdjust Game Quality: For a more stable experience, go to the Settings menu and ensure Quality is set to 'Medium'.
+�
+Browser.OOM.Step3u画質を調整する：設定メニューの「画質」を「中」に変更すると、安定性が向上します
 H
 8Base.Technologies.Technology_EarlyRome_LanceMastery_Name槍の熟達
 4
@@ -2606,6 +2670,8 @@ CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_Nameビザン�
 'Base.Resources.hero.AlbertEinstein_Desc�アインシュタインの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 9
  Base.Heroes.hero.MontezumaI_Nameモクテスマ１世
+�
+,Base.EventType.TreasureHuntEvent_DescriptionQDiscover hidden treasures and unexplored lands together with your alliance mates.
 I
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_Name騎兵兵舎
 M
@@ -2772,6 +2838,8 @@ _
 7Base.WorldWondersOverviewPanel.PlayerRequestDescription${0}が{1}{2}を要請している。
 A
 Base.Alerts.DeleteAccountButtonアカウントを削除する
+h
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_Desc.Increases the irrigation of adjacent buildings
 J
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_2_Name歩兵兵舎
 =
@@ -2894,6 +2962,8 @@ NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text4_Name
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescV山ほどのペニーを生産し、都市に労働者2人と水夫2人を追加する
 V
 CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_Name三圃式農業
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_NameCarpet Maker
 S
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_3_Name
 レベル3
@@ -2903,6 +2973,8 @@ C
 3Base.Buildings.Building_EarlyRome_Farm_Rural_1_Name小作農場
 a
 $Base.OptionsPopup.InviteStepProgress9バーを満たし、さらに報酬を獲得しよう！
+?
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_NameOasis
 �
 ,Base.ShopPopup.HeroRosterBoostChainOfferDesc~ヒーローの戦力を着実に強化していこう。最後のオファーには、とっておきのアイテムが…！
 S
@@ -2937,6 +3009,12 @@ KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<
 'Base.Subscriptions.BATTLE_SPEED_UP_Desc3バトルスピード×2が利用可能になる。
 �
 8Base.StoryText.Story_Panganea_5_3_BattleStart_Text3_Desclテスラを信じたい気持ちはあるが、未来のためにネクサスを取り戻すしかない。
+E
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Name
+Camel Farm
+A
+3Base.Buildings.Building_Arabia_City_CityHall_2_Name
+Great Hall
 `
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_Desc$複合弓兵をアンロックする
 J
@@ -2951,12 +3029,16 @@ $Base.Alerts.AuthenticationFailedTextuアカウントの接続に問題が発�
 Base.Event.SeePrizes報酬を見る
 g
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_Desc$軽装傭兵をアンロックする
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_NameCoffee Brewer
 7
 Base.ShopPopup.ShopErrorHeaderショップエラー
 �
 SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name�<style=ability_label>強化</style>マーガレットが味方ユニット全体を鼓舞し、<style=basestat>{duration}</style>の間、攻撃速度を<style=basestat>{atk_speed_percentage}</style>上昇させ、攻撃力をマーガレットの攻撃力の<style=basestat>{atk_percentage}</style>分上昇させ、さらにクリティカルダメージを<style=basestat>{crit_dmg_percentage}</style>上昇させる。
 P
 7Base.ShopPopup.JourneyThroughSaharaThrivingEnergyHeaderエネルギー補給
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 .
 Base.Heroes.hero.Achilles_Nameアキレス
 e
@@ -2967,6 +3049,8 @@ UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Littl
 Base.TeslaStormsPanel.Dropsドロップ
 A
 "Base.Heroes.hero.LouisPasteur_Nameルイ・パストゥール
+%
+Base.AlliancePanel.WelcomeWelcome
 �
 CBase.WonderReworkUpgradeRequestPopover.ResearchPointHelpRequestHintf他のプレイヤーはいつでもあなたの世界遺産に研究ポイントを貢献できる。
 �
@@ -3005,8 +3089,9 @@ F
 3Base.Buildings.Building_MinoanEra_Home_Small_2_Name小さな住宅
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text1_Desc�ここは奇跡を目撃する場なのか、それともただの不思議な集まりなのか……少し混乱しています。
-@
-$Base.LeaderboardEventPanel.PlayEvent{0}イベントを開く
+A
+$Base.LeaderboardEventPanel.PlayEvent{0}
+イベントを開く
 G
 "Base.QuestlinesPanel.WinBattleTask!バトルに{0}回勝利する。
 0
@@ -3041,6 +3126,8 @@ H
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text4_Descr軍を送りなさい、<style=MC>ヘラクレス</style>。アインシュタインも連れてきなさいね。
 @
 -Base.Units.Unit_TreasureHunt_Blue_Cannon_Name蒼天の砲隊
+t
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 �
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text1_DescB共に成し遂げた偉業は、本当に誇らしいものだ。
 N
@@ -3049,6 +3136,8 @@ C
 9Base.Technologies.Technology_IberianEra_Destillation_Name蒸留
 �
 YBase.StoryText.Story_Questline_EventCity_Vikings_MoreWorkers_Ragnar_QuestStart_Text1_Desc�目標を達成するためには、さらなる助けがいる。住宅を増やし、労働者と水夫を迎え入れるのだ。
+6
+ Base.Resources.hero.Saladin_NameEssence of Saladin
 N
 >Base.Technologies.Technology_EarlyGothicEra_NobleHorsemen_Name上級騎兵
 E
@@ -3085,8 +3174,8 @@ i
 >Base.Buildings.Building_HighMiddleAges_Barracks_Cavalry_3_Desc'騎士団騎兵をアンロックする
 i
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text9_Nameマリー・キュリー
-$
-Base.EventCity.EventHub	Event Hub
+*
+Base.EventCity.EventHubランキング
 [
 EBase.Buildings.Building_KingdomOfSicily_Workshop_SpiceMerchant_1_Nameスパイス工房
 +
@@ -3135,6 +3224,8 @@ $Base.Resources.barrel_TechnologyName樽
 Base.Resources.herbs_Name薬草
 }
 Base.OptionsPopup.BindEmailCopyZメールアドレスを登録して、ＰＣやスマホでもゲームを楽しもう！
+y
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
 8
 Base.MovePanel.StillStashedExitはい、終了する
 a
@@ -3179,14 +3270,18 @@ O
 Base.Ages.ByzantineEra_Finish西暦330年
 e
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Desc$隣の建物の幸福度を上げる
+U
+8Base.AllianceApplicationMessages.AllianceApplicationHintAdd a message (optional):
 ?
 ,Base.WorldWondersOverviewPanel.FavoritesOnlyお気に入り
+q
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_Desc:Unlock 5 exclusive rewards as you advance through history!
 x
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 T
 &Base.RewardTypes.StorageCapReward_Desc*{0}の倉庫容量を{1}増加させる！
-m
-!Tutorial.HeroMetaReportPopup.HintHバトルモードをタップしてヒーローのティア表を見る
+d
+!Tutorial.HeroMetaReportPopup.Hint?バトルモードをタップして、ティア表を開こう
 R
 *Base.EquipmentToolTip.SubHeadlineArmaments$ランダムな武器または衣装
 �
@@ -3404,6 +3499,8 @@ K
 ;Base.Technologies.Technology_China_PorcelainProduction_Name磁器生産
 f
 "Base.Resources.alabaster_idol_Desc@白の偶像はレベル1以上の石工房で生産できる。
+n
+2Base.Buildings.Building_Arabia_Home_Premium_2_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 L
 -Base.Units.Unit_IberianEra_Vikings_Heavy_Nameヴァイキング狂戦士
 �
@@ -3428,8 +3525,8 @@ D
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_2_Descカオリンを生産する
 ?
 ,Base.AllianceSetDetailsPanel.WithApplication申請が必要
-�
-KBase.AbilityDescriptions.hero_battle_ability_description.Planisphere_1_Namem<style=ability_label>Damage Over Time</style>Increases Damage Over Time by <style=basestat>{dot_amp}</style>.
+�
+KBase.AbilityDescriptions.hero_battle_ability_description.Planisphere_1_Name�<style=ability_label>継続ダメージ</style>所持ヒーローの継続ダメージを<style=basestat>{dot_amp}</style>増加させる。
 g
 ?Base.Buildings.Building_KingdomOfSicily_Barracks_Cavalry_1_Desc$装甲騎兵をアンロックする
 6
@@ -3532,12 +3629,16 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text6_Name
 ,Base.Technologies.Technology_Egypt_Ankh_Name	アンク
 m
 9Base.QuestlinesPanel.HaveSpecificBuildingInCityAndAgeTask0{4}で{3}のレベル{2}の{1}を{0}個持つ。
+�
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
 x
 Base.Generic.ErrorUnavailableW現在、名前の変更はできません。後でもう一度お試しください。
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc~リーダー！敵が来たぞ！あの<style=MC>頭蓋砕き</style>が反撃を企んでいる！叩き潰してやろう！
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>瞬間移動・気絶</style>集中力が最も高い敵のもとへ瞬間移動し、自分とターゲットを脱出不能の水槽に閉じ込める。両者は<style=basestat>{duration}</style>の間、またはターゲットが倒れるかテレポートするまで気絶する。フーディーニが致命的なダメージを受けると、安全な場所へ逃れ、アビリティを早期終了して戦闘不能を回避する。
+v
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_Desc<Substantially increases the irrigation of adjacent buildings
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>瞬間移動・気絶</style>最も集中値の高い敵のもとへテレポートし、共に脱出不能な水槽に閉じ込められる。<style=basestat>{duration}</style>の間、両者は気絶状態となり、対象が倒れるかテレポートされると効果は終了する。フーディーニが致命的なダメージを受けた場合は、安全な位置へ退避してアビリティを早期終了する。その際、短時間ダメージを受けず、最大体力の<style=basestat>{heal}</style>を回復する。
 @
 0Base.Buildings.Building_Mayas_Home_Priest_1_Name職人の家
 K
@@ -3558,6 +3659,8 @@ v
 Base.Ages.RomanEmpire_Decade紀元前50年
 `
 MBase.Questlines.Questline_EventCity_Mayas_ProgressTier1_LadySixSky_Tikal_Name信仰の聖域
+v
+#Base.EventType.PvpEvent_DescriptionOBattle against other players, climb the Arena Ranking and win valuable rewards.
 �
 4Base.Incidents.Incident_DawnAge_Capital_Chest_1_Descxこの小箱を見つけたんだ。中に価値のあるものが入ってるかもな。こじ開けてみようぜ！
 �
@@ -3614,6 +3717,8 @@ PBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_BlueTeslaTakedown_1_Nam
 !Base.ShopPopup.SubscriptionActive有効
 �
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest5_QuestStart_Text3_Desc`私たちも急がねばならない。新たな時代がもうすぐそこまで来ている。
+B
+6Base.Buildings.Building_Arabia_Merchant_Average_6_NameMerchant
 �
 UBase.StoryText.Story_Questline_EventCity_Egypt_RepairTheBridge_QuestFinish_Text1_Descx驚くほど速く修復したな！これで、川向こうの地にも都市を拡張できるようになったぞ。
 M
@@ -3688,8 +3793,8 @@ F
 6Base.Technologies.Technology_BronzeAge_SilentDraw_Name静音引き
 ;
 Base.Units.Unit_MarieCurie_Nameマリー・キュリー
-I
-'Base.RiftOverviewPanel.HeroPromotionEndプロモーション終了：
+7
+'Base.RiftOverviewPanel.HeroPromotionEnd終了まで
 �
 [Base.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_Tikal_2_QuestStart_Text1_Desc�礎はすでに定まりました。これより先に待つは、より試練に満ちた道でございますが、その先には、いっそう尊き恵みが待ち受けているはずでございます。
 �
@@ -3720,6 +3825,8 @@ I
  Base.Units.Unit_WilliamTell_Desc�弓矢を手に、決して外さない！ウィリアム・テル、伝説のスイスの民間英雄が味方となる。１４世紀初頭、圧政に立ち向かったその弓の技と勇気は、今も語り継がれている。<br><br>息子の頭上のリンゴを射抜いたという伝説は、正確無比な腕前と揺るがぬ決意を象徴するものとして広く知られている。この一矢は、ハプスブルク家の圧制に抗う反乱の火種となり、スイス独立への道を切り開くきっかけとなった。<br><br>テルの物語は、歴史と伝説が交差する中で、個人の勇気が国全体の精神を目覚めさせることを示している。どうやら、タイムトラベルの影響で混乱してしまったのか、今ではリンゴをまるで息子のように大切に扱っているらしい。
 �
 Base.Units.Unit_Inanna_Desc�イナンナの忠義を誓う者たちに、天の宮殿が待っている。シュメールの愛と戦争、豊穣の女神イナンナは、紀元前４千年頃から神話の中で重要な存在として語り継がれてきた。<br><br>力強く、多面的なイナンナは、妹の玉座を奪おうと冥界に降り、見事に帰還したことで崇拝された。その伝説は、知恵、力、独立心を象徴している。<br><br>イナンナの物語は、最も古い文明に多大な影響を与え、その影響は今後も広がり続ける可能性がある。もしシュメール人に踊りを誘われたら、音楽を流す前に少し躊躇した方がいいかもしれない！
+G
+4Base.Abilities.hero_battle_ability.AdaBlackjack_NameNorthern Shield
 ^
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_1_1_Name!三つ巴コインチャレンジ
 x
@@ -3738,6 +3845,8 @@ c
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_1_Desc!軽歩兵をアンロックする
 _
 IBase.Resources.BuildingPiece_Building_BronzeAge_Collectable_School_1_Name学校のピース
+?
+.Base.Abilities.hero_battle_ability.Kiviuq_NamePiercing Rain
 Q
 ;Base.Factions.Faction_KingdomOfSicily_AbbasidCaliphate_Nameアッバース朝
 D
@@ -3752,10 +3861,10 @@ I
 5Base.Buildings.Building_Egypt_GoldMine_Average_3_Name金鉱
 R
 9Base.Buildings.Building_Vikings_SailorPort_Premium_3_Name豪華な水夫の港
+T
+ABase.IngameEvents.MilestoneEvent_Moonlanding_2_AnvilStrike_1_Name金床の一撃
 J
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_3_Name畜産農場
-Q
-ABase.IngameEvents.MilestoneEvent_Moonlanding_2_AnvilStrike_1_NameAnvil Strike
 N
 8Base.Questlines.Questline_MinoanEra_BarracksUpgrade_Name新時代の軍勢
 H
@@ -3782,10 +3891,10 @@ B
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text10_Desc�おおっ、ケガしてる人はおらんみたいやな！よかったよかった。もし痛いとこあったら、すぐ言うてな、手当てしたるさかい！
 j
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_Nameアインシュタイン
+a
+HBase.IngameEvents.MilestoneEvent_Moonlanding_2_GreenTeslaTakedown_1_Name森のテスラ討伐
 j
 'Base.UnlockRequirementsPopup.ChronoShop?クロノ結晶を使い、豪華報酬を手に入れよう。
-b
-HBase.IngameEvents.MilestoneEvent_Moonlanding_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.JaneAusten_1_Name�<style=ability_label>精神支配・強化</style>文学の天才を発揮し、<style=basestat>{duration}</style>の間、敵を味方に対して攻撃させる。支配下の敵ユニットは攻撃力が<style=basestat>{atk_percentage}</style>上昇する。ヒーローを優先する。
 )
@@ -3922,6 +4031,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text2_Desc�
 ;Base.Incidents.Incident_AgeOfTheFranks_Capital_Coins_1_Desciこの壊れたカートを修理したら、コインがもらえるらしいぜ！やってみよう！
 �
 &Base.Resources.hero.QueenBoudicca_Desc�ブーディカ女王の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+"
+Base.Resources.myrrh_NameMyrrh
 O
 $Base.QuestlinesPanel.SolveQuestsTask'クエストを{0}個クリアする。
 K
@@ -3948,6 +4059,8 @@ F
 2Base.Buildings.Building_Arabia_Home_Premium_1_DescO山ほどのディルハムを生産し、都市に労働者を3人追加する
 k
 :Base.ShopOffers.shop_offer.City_Vikings_StarterPack_1_Name-ヴァイキングのスターターパック
+?
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_NameOasis
 '
 Base.OptionsPopup.GraphicsTab画質
 @
@@ -4034,6 +4147,8 @@ Q
 1Base.Technologies.Technology_Egypt_Geography_Name	地理学
 O
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_Name歩兵兵舎
+h
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_Desc.Increases the irrigation of adjacent buildings
 e
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc*ミノア投石機をアンロックする
 c
@@ -4042,9 +4157,8 @@ c
 LBase.AbilityDescriptions.hero_battle_ability_description.VikingRaider_1_Name�<style=ability_label>遠隔攻撃</style>体力が最も高い敵ユニットに斧を投げ、<style=basestat>{dmg_percentage}</style>のダメージを与える。
 L
 'Base.Rifts.rift.SeasonPass_05_2024_Name!アーケイン時空ポータル
-:
-,Tutorial.HeroMetaReportPopup.DisclaimerTitle
-Disclaimer
+<
+,Tutorial.HeroMetaReportPopup.DisclaimerTitle注意事項
 �
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text5_Descf三百が数千に立ち向かい、英雄として散っていった、その情熱を感じるよ。
 W
@@ -4079,6 +4193,8 @@ t
 3Base.Buildings.Building_MinoanEra_Home_Small_2_Desc=コインを生産し、都市に労働者を1人追加する
 ?
 /Base.Technologies.Technology_Vikings_Sagas_Name伝説物語
+y
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
 K
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_Name騎兵兵舎
 H
@@ -4113,6 +4229,8 @@ R
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_Nameヒーロー学堂
 D
 :Base.Units.Unit_RomanEmpire_Carthaginians_WarElephant_Name戦象
+
+Base.Resources.oil_NameOil
 �
 VBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestStart_Text4_Desc�そなたに任せたこの地で<style=MC>大スフィンクス</style>を築き上げ、砂から立ち上がる経済帝国の威光を世界に示すのじゃ。
 f
@@ -4216,6 +4334,8 @@ A
 'Base.MergeItems.WorldFair_Bronze_4_Name工芸品 レベル４
 
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text2_DescBレオニダス！しっかりして、もうすぐ治るから！
+]
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_Desc#Produces a big pile of Gold Dinars.
 s
 2Base.Buildings.Building_StoneAge_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 �
@@ -4254,6 +4374,9 @@ G
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�全速前進！スタミナ・勝利チケット・イベント通貨を獲得し、試練を突破して勝利へ突き進もう！
 
 Base.Generic.GoogleGoogle
+E
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Name
+Camel Farm
 2
 "Tutorial.HeroMetaReportPopup.Titleメタ情報
 4
@@ -4290,6 +4413,8 @@ Y
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Name中規模な文化遺産
 B
 ,Base.ShopOffers.shop_offer.CityBundle_2_Name基本バンドル
+K
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_NameTimeline Growth Fund
 :
 $Base.Resources.hortus_sanitatis_Name薬草の専門書
 %
@@ -4298,10 +4423,10 @@ P
 7Base.Alerts.SingleSignOn.NewCredentialsInvalid.Headlineトークン不一致
 I
 3Base.Technologies.Technology_Egypt_RiseOfEgypt_Nameエジプト台頭
+�
+Base.Relics.Mjolnir_Desc�空に雷鳴が響くとき、それはトールがミョルニルを投げた証だと、北欧の人々は信じていた。ドワーフの手で鍛え上げられ、山をも砕く力を宿すミョルニルは、単なる武器ではなく、神々を守る盾であり、混沌を鎮める聖なる力の象徴でもある。<br><br>この鎚には、特別な魔力が込められている。どれほど遠くへ投げても必ず主のもとへ戻り、トールの力にふさわしい者でなければ持ち上げることもできない。ヴァイキングたちはミョルニルを模した小さな護符を身に着け、トールの加護と力の一端を授かろうと願っていた。もし空に嵐雲が広がり、稲妻が走るのを見かけたなら、ミョルニルが今まさに天を駆けているのかもしれない。
 5
 !Base.TeslaStormsPanel.StageNumberステージ {0}
-�
-Base.Relics.Mjolnir_Desc�When thunder rolls across the sky, Norse myth says it is Thor hurling his hammer, Mjolnir. Forged by dwarves and empowered to shatter mountains, Mjolnir is far more than a weapon - it's the shield and protector of the gods, the divine force that keeps chaos in check.<br><br>The hammer's magic is unique: it always returns to its owner, no matter how far thrown, and only those worthy of Thor's might can lift it. Vikings wore miniature Mjolnirs as amulets for strength and protection, hoping some of Thor's power might rub off. If storm clouds gather and lightning crackles, who can say? Mjolnir might just be passing by.
 H
 5Base.Abilities.hero_battle_ability.UlyssesSGrant_Name連邦の再生
 ?
@@ -4366,12 +4491,12 @@ G
 %Base.ShopDTC.OptionsPopup.AppleOptionアプリ内課金で支払う
 L
 9Base.Units.Unit_ByzantineEra_Mayas_MayaHeavyInfantry_Nameマヤの勇士
+/
+Base.Relics.Planisphere_Name星座早見盤
 B
 ,Base.EquipmentSets.equipment_set.Hussar_Name軽騎兵セット
 0
 Base.ResearchTreePanel.Unlockアンロック
-+
-Base.Relics.Planisphere_NamePlanisphere
 J
 4Base.Technologies.Technology_Vikings_SunCompass_Name太陽コンパス
 �
@@ -4394,8 +4519,8 @@ C
 -Base.EquipmentSets.equipment_set.Bedouin_Name砂漠民セット
 s
 WBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestFinish_Text1_Nameシックス・スカイ
-E
-5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictoriesあと{0}回
+K
+5Base.BattleMultiAutoVictoryPopup.MaxPossibleVictories残り回数：{0}
 u
 .Base.EquipmentSets.equipment_set.Assassin_DescC単体アビリティダメージ<style=basestat_dark>+7.5%</style>
 [
@@ -4508,8 +4633,8 @@ D
 )Base.IngameEvents.SeasonPass_05_2024_Name天空の先駆者
 G
 7Base.EquipmentFilterPopover.EquipmentFilterPartialMatch部分一致
-}
-1Base.QuestlinesPanel.DefeatEnemyUnitsTaskWithTypeH{1}タイプの敵ユニットを{0}倒す（歴史の戦いを除く）
+Y
+1Base.QuestlinesPanel.DefeatEnemyUnitsTaskWithType${1}タイプの敵を{0}人倒す。
 P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_46_Nameレベル46
 �
@@ -4547,6 +4672,8 @@ P
 S
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_8_Name
 レベル8
+�
+-Base.EventType.RiftPromotionEvent_Description_During this phase, your chances of summoning specific heroes are increased on a certain portal.
 D
 4Base.Buildings.Building_DawnAge_City_CityHall_1_Name大ホール
 4
@@ -4591,8 +4718,8 @@ E
  Base.BuildingGroups.GarmentMaker	仕立屋
 �
 #Tutorial.MainTutorial.FoodExplained�<nobr><style=MC>食料</style> <sprite name=resource.food_small></nobr> は我々の<style=MC>文明</style>の成長に欠かせない。さあ、まずは<style=MC>住む</style>場所を<style=MC>作ろう</style>。
-
-Base.Mailbox.DenyDeny
+
+Base.Mailbox.Deny却下
 G
 7Base.Units.Unit_StoneAge_SkullSmasherTribe_Clubmen_Name棍棒使い
 A
@@ -4635,6 +4762,8 @@ GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name�<styl
 0Base.Questlines.Questline_StoneAge_TheBrink_Name迫る危機
 x
 #Base.Resources.material_statue_DescQ彫像系の世界遺産のアップグレードに使用する特別な素材。
+G
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_NameIncense Maker
 �
 5Base.Buildings.Building_MinoanEra_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 �
@@ -4645,6 +4774,8 @@ B
 /Base.Buildings.Building_China_Home_Small_4_Name小さな住宅
 U
 9Base.RewardTypes.IncreaseRegularExpansionRightReward_Name領土拡張権の増加
+h
+*Base.EventType.SeasonPassEvent_Description:Complete daily or weekly tasks to earn additional rewards.
 �
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 H
@@ -4688,6 +4819,8 @@ u
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc=コインを生産し、都市に労働者を1人追加する
 �
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 ?
 )Base.HeroPanel.UnitStatBoostBarracksTitle{0}による強化
 /
@@ -4718,6 +4851,8 @@ J
 4Base.Abilities.hero_battle_ability.TribalHealer_Name癒やしの薬草
 =
 *Base.BuildingGroups.premiumRitualSite_Name溶岩の神殿
+t
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 �
 1Base.EventStartScreens.GachaEventStartDescription�時空ポータルで反物質の力を操り、ヒーローの集結イベントで挑戦ポイントや豊富な報酬を手に入れて栄光をつかもう！
 �
@@ -4850,6 +4985,8 @@ I
 *Base.Wonders.Wonder_Mayas_ChichenItza_Nameチチェン・イッツァ
 �
 2Base.ShopPopup.OfferInfoText.MonthlyGemCard_1_Info�このオファーでは、購入時にジェム100個を即時で受け取り、以降30日間、毎日ジェム80個を獲得できる。2回まで購入可能で、効果は最大60日まで延長される。なお、60日を超える延長は行えない。
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_NameCoffee Brewer
 �
 Base.Alerts.GenericErrorTexthエラーが発生しました！
 
@@ -4859,6 +4996,8 @@ I
 
 N
 DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_6_Name学校
+2
+Base.Rifts.rift.Arabia_NameArabian Time Portal
 2
 Base.BoostTypes.CultureBoost文化ブースト
 Z
@@ -4891,8 +5030,8 @@ h
 7Base.Buildings.Building_Mayas_RitualSite_Premium_2_Desc-隣の建物の幸福度を大幅に上げる
 9
 #Base.BuildingGroups.jadeQuarry_Nameヒスイ採掘場
-\
-GBase.IngameEvents.LeaderboardEvent_Moonlanding_2_GladiatorsGlory_1_NameGladiator's Glory
+]
+GBase.IngameEvents.LeaderboardEvent_Moonlanding_2_GladiatorsGlory_1_Name剣闘士の栄光
 P
 (Base.QuestlinesPanel.HaveExpansionInCity${1}で領土拡張を{0}回行う。
 O
@@ -4913,8 +5052,12 @@ e
 Base.UnitTypes.Ranged_Desc�射撃兵ユニットは後方から中距離で敵を狙い撃つ。攻撃力に優れている。
 射撃兵兵舎を建設・アップグレードして、射撃兵ユニットとヒーローの攻撃力、防御力、体力を強化しよう。
 
+>
+,Base.Wonders.Wonder_Arabia_NoriasOfHama_NameNorias of Hama
 K
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_Name畜産農場
+I
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_NameLuxurious Noria
 B
 2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_Name暗黒騎士
 K
@@ -4927,10 +5070,10 @@ SBase.Resources.EvolutionToken_Building_TreasureHunt_Evolving_FountainOfYouth_1_
 &Base.Units.Unit_ArtemisiaIOfCaria_Desc�矢と叫び声が響き渡る！カリアの女王アルテミシア１世が戦場を駆ける！紀元前５世紀の海軍司令官アルテミシアは、卓越した指導力と戦略眼で歴史に名を刻んだ。<br><br>クセルクセス王の信頼を受け、ペルシャ戦争ではサラミスの海戦でギリシャ軍に立ち向かい、巧みな操船で敵を欺くなど、見事な戦術を披露した。その指導力と海軍技術は、味方だけでなく敵にも尊敬されることとなった。<br><br>時代の常識を打破し、アルテミシアの名は今もなお、恐れを知らず、知恵に満ちた指導者として語り継がれている。女性の影響力を証明する存在として、その伝説は色褪せることがない。1人目のアルテミシアはテスラの暗殺者として知られるが、ここでの姿はきっと異なるものとなるはずだ。そう願いたい！
 �
 *Tutorial.HeroLevelTutorial.GrowingStronger�よくやったな、若いの。だが、<style=MC>敵</style>も<style=MC>強くなる</style>から、我々もそれに備えないとな。<style=MC>ヒーローを訓練する</style>方法を教えてやる。
-�
-;Base.Incidents.Incident_EarlyGothicEra_Capital_Chest_2_Desc{木の根元に隠した宝物をイノシシが守ってるんだ。労働者を呼んで、一緒に取り出そうぜ！
 Q
 ;Base.Units.Unit_FeudalAge_KnightsOfRoundtable_Infantry_Name騎士団の盾兵
+�
+;Base.Incidents.Incident_EarlyGothicEra_Capital_Chest_2_Desc{木の根元に隠した宝物をイノシシが守ってるんだ。労働者を呼んで、一緒に取り出そうぜ！
 
 Base.Generic.Name名前
 h
@@ -5122,6 +5265,8 @@ IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<st
 2Base.RewardTypes.ResourceRewardWonderMaterial_Desc�{0}{1}。自分の世界遺産をアップグレードでき、他のプレイヤーの世界遺産に貢献することもできる。
 G
 1Base.AllianceSearch.JoinAllianceConfirmationTitle{0}に加入する
+&
+Base.Heroes.hero.Kiviuq_NameKiviuq
 8
 .Base.AllianceQuarterPanel.UpgradeProgressLabel進行
 H
@@ -5206,6 +5351,8 @@ M
 =Base.Technologies.Technology_IberianEra_OrderOfCalatrava_Name修道騎士
 D
 1Base.Buildings.Building_Mayas_Home_Premium_4_Name豪華な住宅
+]
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_Desc#Produces a big pile of Gold Dinars.
 Y
 .Base.QuestlinesPanel.CompleteEncounterSpecific'「{1}」対決に{0}回勝利する。
 :
@@ -5259,8 +5406,8 @@ I
 ABase.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text10_Desci解決策を探さなければ。このまま閉じ込められているわけにはいかないもの。
 d
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_2_Desc!粘土から磁器を生産する
-V
-.Base.OptionsPopup.EmptyBattleSlotsWarningLabel$未設定バトルスロット警告
+Y
+.Base.OptionsPopup.EmptyBattleSlotsWarningLabel'未設定のバトルスロット警告
 �
 MBase.StoryText.Story_Questline_StoneAge_KingOfTheBeasts_QuestStart_Text1_DescTあの獣、見たでしょ？あれは普通の野生動物の行動じゃない。
 �
@@ -5382,6 +5529,8 @@ ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_Name中規模な
 <
 )Base.Regions.region.TeslaStormYellow_Name黄ストーム
 9
+/Base.Technologies.Technology_Arabia_Bazaar_NameBazaar
+9
 &Base.HistoricBattlePanel.SellEquipment装備を売る
 �
 6Base.StoryText.Story_Panganea_3_9_BattleEnd_Text2_Desco感謝する！さあ、<style=MC>歴史のヒーローたち</style>、未来が我々を待っているぞ！
@@ -5493,8 +5642,10 @@ H
 ;Base.Technologies.Technology_EarlyRome_TributumCapitis_Name	人頭税
 ]
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_Name!改良型トレビュシェット
-�
-*Base.EventPass.MoonLanding2BuyGoldPassTexttTake part to earn exclusive rewards and get the epic Relic <nobr><style=epic>Planisphere</style></nobr> immediately!
+�
+*Base.EventPass.MoonLanding2BuyGoldPassText�今すぐ参加して限定報酬を手に入れよう！エピック遺物、<nobr><style=epic>星座早見盤</style></nobr>が即座に手に入る！
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_NameCarpet Maker
 C
 6Base.Technologies.Technology_IberianEra_DriftNets_Name	流し網
 (
@@ -5517,6 +5668,8 @@ I
 <Base.Technologies.Technology_KingdomOfSicily_WaterClock_Name	水時計
 u
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
+
+Base.Resources.hero.Kiviuq_Desc\Used to increase the Awakening Level of Kiviuq and thus unlock more powerful battle bonuses.
 /
 Base.SeasonPass.NewSeason新シーズン！
 H
@@ -5760,6 +5913,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name
 Base.Regions.FallOfTroy_Nameトロイの陥落
 G
 "Base.Rifts.rift.SeasonPass_08_Name!アーケイン時空ポータル
+M
+5Base.ShopOffers.shop_offer.Diy_Ascension_Offer_1_NameYour Ascension-Boost
 J
 1Base.Abilities.hero_battle_ability.Excalibur_Nameエクスカリバー
 4
@@ -5878,6 +6033,8 @@ I
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 ]
 +Base.Notifications.RemindFreeGachaDrawTitle.🌀次のヒーローをゲットしよう！
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_NameOil Lamp Maker
 �
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_Descc指定タスクをクリアして、このチャレンジで挑戦ポイントを獲得しよう。
 7
@@ -5885,7 +6042,7 @@ BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_Descc指定タ�
 �
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text6_DescN無駄なことを。ヘラクレス、雑魚どもを叩き潰しなさい！
 �
-LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>回復・シールド</style>聖杯は維持ヒーローの回復効果を<style=basestat>{healing_amp}</style>増加させる。回復量が対象の最大体力を超えた場合、その超過分の<style=basestat>{heal_to_shield_conversion}</style>がシールドとして付与される。
+LBase.AbilityDescriptions.hero_battle_ability_description.TheHolyGrail_1_Name�<style=ability_label>回復・シールド</style>聖杯は所持ヒーローの回復効果を<style=basestat>{healing_amp}</style>増加させる。回復量が対象の最大体力を超えた場合、その超過分の<style=basestat>{heal_to_shield_conversion}</style>がシールドとして付与される。
 9
 Base.Ages.AgeOfTheFranks_Nameフランク王国時代
 I
@@ -5934,6 +6091,8 @@ D
 "Base.BoostTypes.TradeCooldownBoost貿易クールダウン短縮
 �
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text1_Desc�さて、ここまで来たな。時空計器が正しければ、ここはミノア文明の時代だ。この建物とも一致している。ただ、大きな乱れを感じる……
+2
+!Base.Units.Unit_AdaBlackjack_NameAda Blackjack
 O
 $Base.OptionsPopup.ClientVersionLabel'クライアントのバージョン：
 `
@@ -5974,6 +6133,8 @@ D
 4Base.Abilities.hero_battle_ability.ScarabBeetle_Nameスカラベ
 A
 "Base.Units.Unit_OracleOfDephi_Nameデルフォイの神託者
+y
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 z
 "Base.Resources.red_crest_epic_DescT赤色のヒーローを昇進させるには、赤色のクレストが必要だ。
 <
@@ -5994,6 +6155,8 @@ M
 Base.Resources.cape_Name	マント
 4
 'Base.BuildingTypes.extractionPoint_Name	採取場
+�
+!Base.Units.Unit_Scheherazade_Desc�Spin a tale that lasts a thousand nights and more with Scheherazade, queen of storytellers! Originating from Persian legend and immortalized in 'One Thousand and One Nights', Scheherazade is a master of word-craft, captivating a cruel king with her endless imagination so that he, and her people, might live to see another dawn.<br><br>For 1,001 nights, she wove tales within tales - stories of djinn and sailors, clever servants and foolish kings, flying carpets and magic lamps. Characters like Aladdin, Ali Baba, and Sinbad all danced from her lips. By the end of her tales, the king had fallen in love with her wisdom and had been healed of his madness. Her stories didn't just save her own life - they ended the king's murderous practice forever.<br><br>Her cleverness, courage, and compassion have inspired generations of dreamers and writers. Though none can say for sure where fiction ends and reality begins, in the Heroes of History, Scheherazade's quick wit and endless reservoir of stories make her the most popular company at any campfire.
 $
 Base.CommunityPopup.TikTokTikTok
 +
@@ -6020,6 +6183,8 @@ K
 JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>弱体化・燃焼</style>樽投げ：黒ひげは敵ユニットの最大集団にラム酒の樽を投げる。<style=basestat>{debuff_duration}</style>の間、範囲内の敵の攻撃速度を<style=basestat>{attackspeed_debuff}</style>、移動速度を<style=basestat>{movespeed_debuff}</style>低下させる。影響を受けた敵は<style=basestat>{doused_duration}</style>の間、燃えやすい状態になる。12秒経過すると、アビリティは火の試練に変化する。<br>火の試練：黒ひげは現在のターゲットに銃撃を加え、<style=basestat>{burn_duration}</style>の間<style=basestat>{burn_damage}</style>の燃焼ダメージを与える。このアビリティは8秒後に再び樽投げに変化する。<br>燃えやすい状態の敵に燃焼ダメージが与えられると、爆発して周囲の敵に燃焼効果が拡散され、対象の燃えやすい状態が解除される。
 �
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text1_Desc�勝利はしたが、テスラはいないな。見つけられると期待していたが、もう逃げてしまったのかもしれない。
+u
+$Base.EventType.RiftEvent_DescriptionMGather new heroes by summoning them through them using a time limited portal.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>遠隔攻撃・毒</style>最も遠い敵に矢を放ち、<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、<style=basestat>{poison_duration}</style>の間<style=basestat>{poison_percentage}</style>の毒ダメージを与える。ヒーローを優先する。
  
@@ -6056,8 +6221,8 @@ R
 VBase.StoryText.Story_Questline_EventCity_Mayas_SayilPalace_Start_QuestStart_Text1_Desc�我はモクテスマ１世。戦と知恵の神々に選ばれしトラトアニ、この大地を統べる王であり、最強の軍を率いる者でもある。<style=MC>緊張高まる時代</style>の中で、そなたが我が元へと導かれたのは、決して偶然ではない。
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text1_Desc�工房をここまで整えてくださったこと、誠に見事でございます。次に目を向けるべきは、<style=MC>チチェン・イッツァ</style>の修復……完全なる姿を取り戻してこそ、<style=MC>チャク様</style>のまなざしは、再び聖なる泉へと注がれることでしょう。
-:
-Base.SocialSharing.ShareSubjectPlay Heroes of History!
+X
+Base.SocialSharing.ShareSubject5ヒーローズオブヒストリーを遊ぼう！  
 M
 7Base.Questlines.Questline_StoneAge_TheHerosJourney_Nameヒーローの旅
 H
@@ -6097,13 +6262,13 @@ E
 Base.Hints.Beach浜辺が整いつつある…
 
 Base.Numbers.AddedValue+{0}
+_
+FBase.IngameEvents.MilestoneEvent_Moonlanding_2_RedTeslaTakedown_1_Name炎のテスラ討伐
 P
 @Base.Buildings.Building_KingdomOfSicily_Barracks_Infantry_1_Name歩兵兵舎
 N
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_4_Name
 レベル4
-`
-FBase.IngameEvents.MilestoneEvent_Moonlanding_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 6
 #Base.BuildingGroups.MediumResidence大きな住宅
 �
@@ -6138,8 +6303,8 @@ O
 ?Base.Buildings.Building_China_Workshop_PorcelainWorkshop_5_Name磁器工房
 �
 ;Base.StoryText.Story_DesertDelta_8_2_BattleStart_Text2_DescK必要なら槍を突きつけてでも、奴から答えを引き出す！
-�
-8Base.EventStartScreens.MoonLanding2EventStartDescription�Complete specific game actions to earn Circuit Boards and unlock a cosmos of rewards, including new <style=legendary>Relics</style> and the ultimate trophy - <style=legendary>Mjolnir</style>! Propel your heroes to astronomical power by equipping them them with these new <style=legendary>Relics</style>!
+�
+8Base.EventStartScreens.MoonLanding2EventStartDescription�特定のゲームアクションを完了してプリント基板を集め、多彩な報酬を解放しよう！新たな<style=legendary>遺物</style>や、至高の栄光を象徴する<style=legendary>ミョルニル</style>を手に入れよう！これらの新しい<style=legendary>遺物</style>を装備して、ヒーローたちを宇宙の力で強化しよう！
 �
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text1_Desc�アンクとパピルス巻物の生産ラインが整った今、<style=MC>クフ王のピラミッド</style>のアップグレードに注力しよう。
 R
@@ -6220,10 +6385,10 @@ HBase.AllianceTechnologies.alliance_technology.residentialQuarter_17_Nameレ�
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text1_Desc�アンクとパピルス巻物の生産ラインが整った今、<style=MC>アブ・シンベル</style>のアップグレードに注力しよう。
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text2_Desc]信号経路の強化と、電力システムの整合性確認をお手伝いできます。
+<
+Base.Mailbox.InvitationHeadline{0} からの同盟招待
 �
 8Base.Units.Unit_KingdomOfSicily_Player_FamiliaRegis_DescQ重歩兵ユニットは体が大きく、騎兵ユニットの突撃を防ぐ。
-?
-Base.Mailbox.InvitationHeadlineAlliance Invitation from {0}
 [
 9Base.Abilities.hero_battle_ability.MaskOfTutankhamun_Nameツタンカーメンの仮面
 �
@@ -6344,6 +6509,8 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text3_Desc�テス
 'Base.UnitStats.unit_stat.Defense_Abbrev防御
 _
 .Base.AbilityTrainingSlotOccupiedPopup.Headline-アビリティ訓練スロットが使用中
+L
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_NameLuxurious Merchant
 <
 Base.Hints.Mountains$山脈がそびえ立っていく…
 $
@@ -6434,6 +6601,8 @@ NBase.StoryText.Story_Questline_Event_LegendaryPull_Start_QuestStart_Text1_Desc
 0Base.Buildings.Building_Mayas_Home_Priest_6_Name職人の家
 �
 *Tutorial.WonderInfoIntroTutorial.SeeBoosts�ここでは、<style=MC>世界遺産</style>の<style=MC>ボーナス</style>を確認できる。特定の<style=MC>タイプ</style>の<style=MC>有効な世界遺産</style>が増えると、さらに強力になるものもあるぞ！
+�
+%Base.Resources.hero.AdaBlackjack_DesccUsed to increase the Awakening Level of Ada Blackjack and thus unlock more powerful battle bonuses.
 C
 *Base.BuildingGroups.premiumSailorPort_Name豪華な水夫の港
 I
@@ -6600,6 +6769,8 @@ P
 Base.LocalizedLocales.fr_FRフランス語
 F
 0Base.Units.Unit_EarlyRome_Huns_KassaiBowmen_Nameカッサイ弓兵
+,
+"Base.Cities.City_Arabia_Petra_NameArabia
 ?
 ,Base.Wonders.Wonder_Capital_TowerOfPisa_Nameピサの斜塔
 �
@@ -6618,6 +6789,8 @@ G
 4Base.Buildings.Building_IberianEra_Home_Small_3_Name小さな住宅
 L
 <Base.Technologies.Technology_ClassicGreece_FlankAssault_Name側面攻撃
+4
+Base.Resources.hero.Kiviuq_NameEssence of Kiviuq
 #
 Base.PvpFightPanel.Attack攻撃
 �
@@ -6708,6 +6881,8 @@ H
 &Base.RiftInfoPopup.DropChancesHeadlineヒーローのドロップ率
 .
 $Base.ResearchTreePanel.RewardsHeader報酬
+2
+"Base.Heroes.hero.Scheherazade_NameScheherazade
 G
 (Base.BattleResultPanel.DefeatHintLevelUpチームを強化しよう
 �
@@ -6752,8 +6927,10 @@ Q
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny4_Name極低確率
 �
 Base.Alerts.ClientOutOfDateText�ご利用のゲームバージョンは古くなっています。最新バージョンにアップデートしてください。
-E
-&Base.Mailbox.ApplicationDeniedHeadlineAlliance Application denied
+H
+&Base.Mailbox.ApplicationDeniedHeadline同盟申請が却下された
+?
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_NameOasis
 H
 )Base.Regions.region.VolcanicJungle_3_Nameイングランド植民地
 D
@@ -6780,8 +6957,8 @@ $Base.WorldWondersDetailPanel.Upgradeアップグレード
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text1_Desc�テスラが過去に行った時、<style=MC>反物質のネクサス</style>を持っていったんだ。ポータルを作る秘密が込められた、小さな青い宝石だ。
 �
 9Base.Buildings.Building_Vikings_SailorPort_Premium_2_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
->
-Browser.OOM.Title)The game has run out of available memory.
+T
+Browser.OOM.Title?メモリ不足のため、ゲームを続行できません。
 ;
 Base.Hints.Boars'イノシシが逃げ回っている…
 H
@@ -6943,8 +7120,8 @@ t
 Shop.Product.Packageパッケージ
 �
 =Base.LeaderboardEventPanel.TaskInfo.TeslaStormRed_DescriptionT赤色のテスラストームに勝利して挑戦ポイントを獲得しよう！
-�
-/Base.ShopPopup.OfferInfoText.diy_offer_infotext�This offer lets you choose 4 items out of the presented selection. Once you have chosen 4 items, the offer can be purchased for the prize indicated. You can purchase the offer up to 3 times. You can choose new items each time.
+�
+/Base.ShopPopup.OfferInfoText.diy_offer_infotext�このオファーでは、表示されたアイテムの中から4つを選べる。4つすべてを選ぶと、表示価格で購入できるようになる。最大3回まで購入できる。毎回、新しいアイテムを選び直せる。
 J
 :Base.Technologies.Technology_KingdomOfSicily_Wardrobe_Name衣裳箪笥
 ^
@@ -6957,6 +7134,8 @@ R
 9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_Name黄色のストーム
 G
 +Base.ShopPopup.SeasonalEventHeroPromoHeader時空を超えた繁栄
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 4
 Base.HeroPanel.PrimaryStats基本ステータス
 G
@@ -7096,6 +7275,8 @@ F
 0Base.Abilities.hero_battle_ability.LouisXIV_Name太陽王の恩恵
 �
 ;Base.LeaderboardEventPanel.GachaInfo.HistoricSpoils_Context�歴史の戦いで新しい装備を手に入れよう！{0}では、その装備のレアリティに応じて挑戦ポイントを獲得できる。レアリティが高いほど多くのポイントを獲得し、さらに上位へ駆け上がれる！
+1
+!Base.Units.Unit_Scheherazade_NameScheherazade
 @
 3Base.Technologies.Technology_EarlyRome_Hastati_Name	前衛兵
 g
@@ -7233,6 +7414,8 @@ ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_Name灌漑施設
 #Base.UnitStats.unit_stat.Focus_DescTヒーローがバトル開始時に持っている集中力の量を定義する。
 D
 .Base.EquipmentSets.equipment_set.Mangudai_Name弓騎兵セット
+O
+6Base.Buildings.Building_Arabia_Merchant_Average_5_DescProduces Gold Dinars.
 P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_37_Nameレベル37
 �
@@ -7283,6 +7466,8 @@ A
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text3_Descc文明のリーダーとしてそなたを称えることができるのは、私の誇りだよ。
 X
 BBase.Questlines.Questline_EventCity_Mayas_Quarries_LadySixSky_Name神々に捧ぐ石
+L
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_NameLuxurious Workshop
 *
  Base.Resources.lapis_lazuli_Name瑠璃
 �
@@ -7311,6 +7496,8 @@ m
 &Base.Resources.illuminated_locket_DescC宝石ロケットはレベル1の宝石工房で生産できる。
 B
 /Base.EquipmentSets.equipment_set.Khon_Ring_Name演者の指輪
+@
+1Base.Buildings.Building_Arabia_Home_Medium_5_NameMedium Home
 �
 *Base.Resources.event_stamina_trophies_Descc指定タスクをクリアして、このチャレンジで挑戦ポイントを獲得しよう。
 P
@@ -7339,6 +7526,8 @@ B
 ,Base.IngameEvents.Event_ForgeOfVulcan_1_Name火神の鍛冶場
 0
 Base.Units.Unit_Hercules_Nameヘラクレス
+L
+8Base.AllianceApplicationMessages.AllianceApplicationSendSend Application
 J
 :Base.Technologies.Technology_HighMiddleAges_CropSheds_Name作物小屋
 �
@@ -7355,6 +7544,8 @@ NBase.Questlines.Questline_EventCity_Vikings_ExpeditionPreparations_Ragnar_Name
 2Base.Buildings.Building_Mayas_City_CityHall_1_Name	市庁舎
 @
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_Name雄牛乗り
+I
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_NameLuxurious Noria
 �
 GBase.StoryText.Story_Questline_CollectHeroes_Epic_QuestStart_Text1_Desc�<style=MC>３号</style>！<style=MC>アインシュタイン</style>から君のことはよく聞いている。会えて嬉しい。 
 J
@@ -7363,6 +7554,8 @@ J
 LBase.AbilityDescriptions.hero_battle_ability_description.WilliamTell_10_Name�<style=ability_label>遠隔攻撃・強化</style>最も遠いターゲットにクロスボウを向け、<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の攻撃速度を<style=basestat>{duration}</style>の間<style=basestat>{atk_speed_percentage}</style>上昇させる。ヒーローを優先する。
 L
 !Base.SeasonPass.EventStartedTitle'新しいイベントが始まった！
+A
+%Base.Resources.hero.AdaBlackjack_NameEssence of Ada Blackjack
 R
 'Base.ShopPopup.Pages.egypt_starter_pack'エジプトのスターターパック
 C
@@ -7465,6 +7658,8 @@ BBase.Technologies.Technology_EarlyGothicEra_KnightlyCondition_Name騎士精�
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_Descカオリンを生産する
 �
 6Base.Incidents.Incident_EarlyRome_Capital_Goods_1_Desc`この地下迷路には珍しい宝物が隠されてるって話だ。探ってみようぜ！
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.Scheherazade_1_Name�<style=ability_label>Charm</style>Scheherazade charms the two furthest enemy units, causing them to harmlessly walk towards her for <style=basestat>{duration}</style>. Prioritizes heroes.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Spartacus_1_Name�<style=ability_label>近接攻撃・強化</style>現在のターゲットに4回斬撃を加え、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、スパルタクスのクリティカル率が<style=basestat>{duration}</style>の間<style=basestat>{crit_percentage}</style>上昇する。
  
@@ -7519,6 +7714,8 @@ k
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest2_QuestStart_Text4_Descさて、「貿易は――」
 Z
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_Name乗員配置改善
+�
+Base.Resources.cotton_DesckCotton is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 �
 $Base.Units.Unit_ThomasJefferson_Desc�羊皮紙と羽根ペンを手に、トマス・ジェファーソンとともに新たな国家を描こう。１７〜１８世紀に活躍した政治家で、アメリカ独立革命を鼓舞し、合衆国誕生の道を切り開いた。わずか３３歳で独立宣言を起草し、自由と個人の権利を掲げる啓蒙思想を体現した。<br><br>やがて大統領に就任すると名声は最高潮に達した。フランスとの交渉でルイジアナを手に入れ、その広大な地を探るためルイス・クラーク探検隊を派遣し、合衆国の版図は二倍に広がった。<br><br>今では自由主義思想の旗手として記憶され、自由な思考、言論の自由、そして合理主義の象徴となっている。リンカーンが思わず憧れのまなざしを向けるほどだ。
 �
@@ -7610,6 +7807,8 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<sty
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>弱体化</style>敵ユニットの最大集団に向かい、<style=basestat>{range}</style>の範囲内にいる敵の防御力を<style=basestat>{duration}</style>の間、イムホテプの攻撃力の<style=basestat>{atk_percentage}</style>分低下させる。
 �
 3Base.Incidents.Incident_EarlyRome_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
+D
+2Base.Buildings.Building_Arabia_Home_Premium_4_NameLuxurious Home
 -
 Base.Resources.goblet_Nameゴブレット
 J
@@ -7630,8 +7829,10 @@ NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_2_Name
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_80_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
 �
 $Base.Units.Unit_QueenElizabethI_Desc�砲声と祈りが響いた時代を生きた女王、エリザベス１世。１６世紀のイングランドを４０年以上にわたり統治し、国に安定と繁栄をもたらした。芸術が花開き、戦乱が渦巻き、大航海時代が幕を開けた激動の時代でもあった。<br><br>国内外の試練に立ち向かい、宗教対立を乗り越え（その過程で犠牲がなかったわけではないが）、幾多の戦争を切り抜いた。スペイン無敵艦隊を打ち破り、強固な統治者としての名声を確立。シェイクスピアらを支援し、その時代を文化的にも黄金期へと導いた。<br><br>「ヴァージン・クイーン」として知られ、一度も結婚せず、最後まで権力と独立を貫いた。知性と統率力を兼ね備え、文化と政治の両面で大きな足跡を残した。そして、甘いものを好みすぎたあまり、歯の状態は最悪だったとも言われている。当時の歯科医にとっては、最も厄介な患者だったのかもしれない。
-^
-,Base.ShopPopup.Pages.diy_offer_hintCompleted.Ready. You can purchase your custom offer now!
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+r
+,Base.ShopPopup.Pages.diy_offer_hintCompletedB準備完了。オファーを購入できるようになった！
 P
 @Base.Technologies.Technology_ClassicGreece_AmbushTechniques_Name奇襲技術
 <
@@ -7646,6 +7847,8 @@ L
 *Base.QuestlinesPanel.HaveWonderOnLevelTaskレベル{1}の{0}を持つ。
 �
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_3_DescLたくさんのコインを生産し、都市に労働者を2人追加する
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_NameOil Lamp Maker
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 g
@@ -7662,9 +7865,8 @@ M
 7Base.Technologies.Technology_Mayas_DivineAscension_Name神聖なる昇華
 �
 eBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_MontezumaI_SahilPalace_QuestStart_Text2_Desc�そして今、我らは<nobr><style=MC>太陽の石</style> <sprite name=resource.calendar_stone_cta> </nobr>を刻むこともできるようになった。それにより、我らの営みは、天の巡りとひとつになるのだ。
-#
-Base.Generic.BrandNew
-Brand New!
+"
+Base.Generic.BrandNew	新規！
 �
 >Base.Resources.event_leaderboard_forge_of_vulcan_trophies_Desc`指定タスクをクリアして、このチャレンジで挑戦ポイントを集めよう。
 G
@@ -7768,8 +7970,10 @@ J
 6Base.Buildings.Building_Vikings_Workshop_Tavern_3_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 X
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text4_Descえ？どういうこと？
-B
-3Base.Abilities.hero_battle_ability.Planisphere_NamePlanisphere
+F
+3Base.Abilities.hero_battle_ability.Planisphere_Name星座早見盤
+]
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_Desc#Produces a big pile of Gold Dinars.
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text1_DescCこのガラクタども、ぶっ壊しちまってもいいか？ 
 d
@@ -7890,6 +8094,8 @@ X
 EBase.Technologies.Technology_EarlyGothicEra_GothicBridgeBuilding_Nameゴシック橋
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text4_Desc�いくつかの仕組みにはまだ馴染みがないけど、こちらの設計ならきっと応用できるよ。防御力もグンと上がるはずさ！
+H
+%Base.BuildingGroups.oilLampMaker_NameOil Lamp MakerOil Lamp Makers
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text1_Desca妨害の兆候は消えました。皆さんの尽力が確かな結果を生んだのです。 
 �
@@ -7898,6 +8104,8 @@ H
 #Base.Resources.hero.VikingJarl_Name!赤毛のエイリークの精髄
 m
 3Base.QuestlinesPanel.WithoutUsingInstantPlayTickets6即時プレイチケットを使わずに勝利する
+y
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
 d
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_Desc!近衛兵をアンロックする
 7
@@ -7968,6 +8176,8 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_25_Nameレベル25
 W
 ;Base.StoryText.Story_DesertDelta_5_9_BattleStart_Text1_Descこの戦士たち……
+G
+5Base.Technologies.Technology_Arabia_RiseOfArabia_NameRise of Arabia
 �
 8Base.StoryText.Story_Panganea_2_1_BattleStart_Text3_Desc�落ち着きなさい、偉大なる王よ。私は戦を望んでいるわけではありません。ただ、旧友に会いに来ただけです。
 �
@@ -8052,6 +8262,8 @@ f
 Base.ShopPopup.GrowthFund成長ファンド
 �
 ;Base.LeaderboardEventPanel.TaskInfo.HeroAcquire_DescriptionH時空ポータルを開いて、挑戦ポイントを獲得しよう！
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_NameCarpet Maker
 �
 EBase.Resources.event_leaderboard_journey_of_the_titanic_trophies_Desc`指定タスクをクリアして、このチャレンジで挑戦ポイントを集めよう。
 M
@@ -8060,6 +8272,8 @@ D
 1Base.Buildings.Building_China_Home_Average_2_Name大きな住宅
 �
 6Base.Incidents.Incident_MinoanEra_Capital_Chest_1_Desc�ほら見て！宝物を隠した木に蜂の巣ができちゃったよ。慎重に移して、宝物を手に入れようぜ！
+)
+Base.HeroPanel.RestorationRestoration
 m
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc-隣の建物の幸福度を大幅に上げる
 �
@@ -8288,6 +8502,10 @@ KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_Name'�
 ,Base.RewardInfoPopup.MysteryChestDescriptioni開けると、以下の確率でランダムにこれらのアイテムのいずれかが手に入る：
 >
 Base.RewardPanel.EventHeaderイベント報酬ゲット！
+y
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+3
+"Base.Heroes.hero.AdaBlackjack_NameAda Blackjack
 o
 ,Base.CampaignPanel.DifficultyRequirementText?「{1}」で{0}番目の対決に勝利して解放しよう。
 �
@@ -8338,6 +8556,8 @@ J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_Name仮面工房
 F
 <Base.Technologies.Technology_ClassicGreece_CropRotation_Name輪作
+�
+%Base.Resources.hero.Scheherazade_DescbUsed to increase the Awakening Level of Scheherazade and thus unlock more powerful battle bonuses.
 �
 <Base.Resources.event_forgeofvulcan_grand_prize_progress_Desc]火神の鍛冶場イベントで報酬を鍛造し、メイン報酬に向けて進もう。
 8
@@ -8396,6 +8616,8 @@ F
 $Base.IngameEvents.SeasonPass_12_Nameカスティーリャの栄光
 �
 1Base.Buildings.Building_Mayas_Home_Premium_2_DescY山ほどのカカオ豆を生産し、都市に労働者2人と職人1人を追加する
+,
+Base.AlliancePanel.MemberChatMember Chat
 �
 &Base.Resources.hero.OracleOfDephi_Desc�デルフォイの神託者の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
@@ -8444,6 +8666,8 @@ V
 =Base.ShopOffers.ShopOffer_Vikings_Subscription_Benefit_1_Nameラグナルの恩恵
 M
 Base.Hints.Felix9アインシュタインの髪型がさらに完璧に…
+V
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_DescProduces Coffee and Incense.
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_Desc0ってことは、何を止めたってわけ？
 r
@@ -8496,6 +8720,8 @@ K
 ;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_Name大ホール
 *
 Base.PvpPanel.SeasonEndsIn終了まで
+d
+1Base.Buildings.Building_Arabia_Home_Medium_5_Desc/Produces Dirham and adds 2 Workers to your city
 _
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_Name中規模な文化遺産
 K
@@ -8510,6 +8736,8 @@ S
 "Base.Generic.ErrorDoubleWhitespace-連続したスペースは使用できない
 �
 2Base.Buildings.Building_Mayas_City_CityHall_1_Descu都市の中心部にある大ホール。ここでは、少量ながらカカオ豆を継続的に収集できる。
+v
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_Desc<Substantially increases the irrigation of adjacent buildings
 q
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 o
@@ -8567,6 +8795,8 @@ DBase.Technologies.Technology_KingdomOfSicily_BuildingExtensions_Name増築
 2Base.Units.Unit_StoneAge_Player_Spearfighters_Name槍兵
 ]
 5Base.Buildings.Building_Egypt_GoldMine_Premium_4_Desc$山ほどの金鉱石を生産する
+F
+5Base.Abilities.hero_battle_ability.HarunAlRashid_NameHealing Oasis
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text5_Desc�君の舞台で十分に戦いました。今度はこちらで勝負しましょう。メネス、<style=MC>タイタン</style>を起動させなさい。
 K
@@ -8607,6 +8837,8 @@ $Base.Resources.hero.AdaLovelace_Name!エイダ・ラブレスの精髄
 JBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestFinish_Text3_Desc3偉大さに向かって一歩一歩進むのだ。
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text6_Desc�この自由な気持ちを大切にしたいですね。もう二度と、こんな戦いが必要にならないことを願います。
+�
+Base.Resources.incense_DescnIncense is a refined resource. It can be produced at Incense Makers and Luxurious Workshops - Level 1 upwards.
 �	
  Base.Units.Unit_AdaLovelace_Desc�	数字で未来を描くアダ・ラブレス！１９世紀のイギリスの数学者であり作家でもあったアダ・ラブレスは、コンピュータの歴史における革新者として広く知られている。特にチャールズ・バベッジの初期の機械式汎用コンピュータ「解析機関」に関する研究で功績を残した。<br><br>アダ・ラブレスは、この機械が単なる数値計算を超えた可能性を持つことに気づき、最初のアルゴリズムを記述した。コンピュータが数値だけでなく記号や音も処理できるなら、理論上あらゆるものを生み出せると考えた。<br><br>当時の社会的な制約の中でも、その業績は今なお多くの科学者や技術者に影響を与え続けている。名を冠したプログラミング言語が存在し、毎年「アダ・ラブレスの日」として功績が称えられている。２０１９年には、ロボット「アイダ」が誕生。しかし皮肉なことに、アダ・ラブレスは自身の著作で人工知能に否定的な立場を示しており、もし直接対面していたら意見が対立していたかもしれない。
 K
@@ -8679,8 +8911,8 @@ B
 )Base.IngameEvents.SeasonPass_03_2024_Nameローマの征服者
 �
 8Base.StoryText.Story_Panganea_7_9_BattleStart_Text3_DescQもちろん、俺の背後にはこの大軍もいることを忘れるなよ！
->
-*Base.IngameEvents.Event_Moonlanding_2_NameThe Moon Landing
+:
+*Base.IngameEvents.Event_Moonlanding_2_Name月面着陸
 j
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text1_Nameアインシュタイン
 /
@@ -8717,6 +8949,8 @@ t
 %Base.BattleResultPanel.ExhaustionHintcヒーローたちは疲労状態にあり、次の宝探し対決{0}回分は休息が必要だ。
 M
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_3_Name攻城兵兵舎
+$
+Base.Resources.cotton_NameCotton
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text1_Desc�<style=MC>チチェン・イッツァ</style>の修復は、神々の加護のもと、着実に進んでおります。<style=MC>チャク様</style>は、わたくしたちの祈りに応え、聖なる泉の水面には、その息吹がそっと揺らぎはじめました。
 {
@@ -8862,6 +9096,8 @@ P
 Base.PvpHistoryPanel.WinRate勝率
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_33_Nameレベル33
+n
+2Base.Buildings.Building_Arabia_Home_Premium_4_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 /
 "Base.WorkerManagementPopup.Solving	解決中
 g
@@ -9004,6 +9240,9 @@ L
 2Base.QuestlinesPanel.ConstructSpecificBuildingTask*レベル{2}の{1}を{0}個建設する。
 C
 3Base.Buildings.Building_BronzeAge_Farm_Rural_1_Name小作農場
+E
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Name
+Camel Farm
 �
 MBase.StoryText.Story_Questline_TeslaStorm_SolveStages1_QuestFinish_Text1_Desc�やあ、<style=MC>レオニダス</style>！俺は<style=MC>ウィリアム・テル</style>だ。テスラの巨大な鉄の塊が、俺の自慢のリンゴを焼き尽くしやがった…許せん！
 G
@@ -9067,14 +9306,18 @@ D
 "Base.Resources.hero.MarcoPolo_Nameマルコ・ポーロの精髄
 C
 -Base.Factions.Faction_IberianEra_Vikings_Nameヴァイキング
-�
-;Base.StoryText.Story_DesertDelta_7_3_BattleStart_Text2_Descf歴史のヒーローたちよ、戦いに備えろ！この丘を守り、奴らを押し返すぞ！
 }
 (Base.EventRankingPopup.EventEndedSubtextQイベント参加で達成したランクとその報酬は、以下の通り：
+�
+;Base.StoryText.Story_DesertDelta_7_3_BattleStart_Text2_Descf歴史のヒーローたちよ、戦いに備えろ！この丘を守り、奴らを押し返すぞ！
 0
 &Base.BuildingGroups.averageAviary_Name鳥舎
 ?
  Base.Units.Unit_SiouxShaman_Nameシッティング・ブル
+'
+Base.Units.Unit_Saladin_NameSaladin
+t
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 8
 Base.NegotiationPanel.TurnsLeft残りターン：{0}
 e
@@ -9093,6 +9336,10 @@ h
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 >
 +Base.Units.Unit_EarlyRome_Huns_Geoguth_Nameゲオグス兵
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name�<style=ability_label>Damage Transfer | Shield</style>Kiviuq shields himself for <style=basestat>{shield}</style>, and transfers <style=basestat>{damage_transfer}</style> of incoming ability damage taken by allied heroes to himself for <style=basestat>{duration}</style>.
+?
+,Base.AlliancePanel.AllianceMyApplicationsTabMy Applications
 :
 *Base.Resources.folio_of_enlightenment_Name啓蒙の書
 u
@@ -9127,8 +9374,8 @@ L
 3Base.Buildings.Building_Mayas_Aviary_Average_1_Desc羽根を生産する
 ]
 ,Base.Resources.hero.HermannTheCheruscan_Name-ケルスキ族のアルミニウスの精髄
-2
-!Base.PlayerSearch.SearchHelpTitlePlayer search
+:
+!Base.PlayerSearch.SearchHelpTitleプレイヤー検索
 
 Base.FurnacePanel.Min最小
 c
@@ -9149,6 +9396,8 @@ p
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
 �
 [Base.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_LadySixSky_QuestStart_Text1_Desc�この地では、<nobr><style=MC>職人</style> <sprite name=workers_priestmaya> </nobr>と<nobr><style=MC>労働者</style> <sprite name=workers_city.city_mayas> </nobr>、ふたつの役割が支え合っております。工房の営みは職人が、その他の作業は労働者が担っているのでございます。
+y
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
 4
 Base.Units.Unit_AnneBonny_Nameアン・ボニー
 [
@@ -9245,6 +9494,8 @@ h
 (Base.RewardTypes.MysteryChestReward_Desc<複数の可能な報酬のうち、一つが手に入る。
 K
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_Name	協同体
+h
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_Desc.Increases the irrigation of adjacent buildings
 �
 6Base.Resources.event_summon_of_the_stars_trophies_Descc指定タスクをクリアして、このチャレンジで挑戦ポイントを獲得しよう。
 �
@@ -9319,6 +9570,8 @@ T
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 �	
 Base.Units.Unit_MontezumaI_Desc�	火の冠を戴き、空の海の覇者と讃えられ、大いなる語り手として知られたアステカ第２代皇帝モクテスマは、栄光と苛烈さを併せ持つ帝国の象徴として記憶されている。テノチティトランでの即位は壮大な生け贄の儀式によって飾られ、その後の治世でもこの習わしはさらに強まっていった。<br><br>即位後まもなく、周辺の二都市国家と手を結び、三国同盟を築いたことによって、征服と繁栄の時代が始まる。水路がテノチティトランへ水を引き込み、都市は拡大を続けながら、帝国の版図はメキシコ全域へと広がっていった。<br><br>だが、力を誇示するだけではなく、政治の手腕にも長けていたことが、その治世をより際立たせている。信仰の面でも深く関わり、神格化された人物として語られるようになり、帝国各地に宗教学校が設けられた。…とはいえ、ヒーローズオブヒストリーでは、なぜかよく後の皇帝モクテスマ２世と勘違いされていて、少し不満げな様子だ。
+]
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_Desc#Produces a big pile of Gold Dinars.
 m
 3SoftError.AllianceCity.INCIDENT_MAX_REWARD_UNLOCKED6最大報酬はすでにアンロックされている
 m
@@ -9331,6 +9584,8 @@ L
 6Base.Technologies.Technology_FeudalAge_Pictograms_Nameピクトグラム
 A
 +Base.EquipmentSets.equipment_set.Quack_Name藪医者セット
+<
+$Base.OptionsPopup.StorageFullWarningStorage Full warning
 �
 "Base.ChangeEmail.ActiveTaskMessage�確認メールは送信済みです。
 
@@ -9350,6 +9605,8 @@ j
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier3_5_Name!昇進素材の選択キット３
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Name�<style=ability_label>近接攻撃・出血・強化</style>現在のターゲットに向かい剣を5回振り、毎回ダメージを増加させながら、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。各攻撃は<style=basestat>{chance_percentage}</style>の確率で出血を引き起こし、<style=basestat>{duration}</style>の間<style=basestat>{dmg_percentage_bleed}</style>の追加ダメージを与える。さらに、<style=basestat>{buff_duration}</style>の間、ランスロットのクリティカルダメージが<style=basestat>{crit_dmg_percentage}</style>上昇し、クリティカル率が<style=basestat>{crit_chance_percentage}</style>上昇する。
+I
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_NameLuxurious Noria
 �
 2Base.Buildings.Building_Mayas_City_CityHall_2_Descu都市の中心部にある大ホール。ここでは、少量ながらカカオ豆を継続的に収集できる。
 N
@@ -9358,8 +9615,8 @@ d
 <Base.Buildings.Building_BronzeAge_CultureSite_Compact_1_Desc$隣の建物の幸福度を上げる
 =
 3Base.Buildings.Building_Mayas_Aviary_Average_4_Name鳥舎
-6
-#Base.ShopPopup.Pages.diy_offer_hintChoose 4 items:
+I
+#Base.ShopPopup.Pages.diy_offer_hint"4つのアイテムを選ぼう：
 H
 8Base.Technologies.Technology_EarlyRome_SwordMastery_Name剣の熟達
 U
@@ -9428,6 +9685,8 @@ f
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text3_Descxそうだな。強化できる部分は今すぐ手を入れて、テスラの妨害には正面からぶつかるぞ。
 =
 'Base.ResourceTypes.research_points_Name研究ポイント
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_NameCoffee Brewer
 H
 Base.Hints.Flasks3フラスコが研究に備えて満たされる…
 m
@@ -9497,6 +9756,8 @@ g
 ?Base.Buildings.Building_EarlyGothicEra_CultureSite_Large_1_Desc$隣の建物の幸福度を上げる
 I
 6Base.Technologies.Technology_Mayas_RiseOfTheMayas_Nameマヤの台頭
+?
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_NameOasis
 H
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_Name豪華な工房
 A
@@ -9540,6 +9801,9 @@ V
 Base.Ages.StoneAge_Start紀元前4万年
 K
 5Base.Technologies.Technology_Vikings_MeadBrewery_Name蜂蜜酒の醸造
+E
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Name
+Camel Farm
 P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_20_Nameレベル20
 &
@@ -9550,8 +9814,10 @@ X
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_Nameヒーロー学堂
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>強化</style>所持ヒーローの体力が<style=basestat>{hp_threshold}</style>以下になると、現在のウェーブ終了まで、防御力が<style=basestat>{defense_buff}</style>上昇する。効果は重複しない。
- 
-Browser.OOM.PrimaryCTAReload
+)
+Browser.OOM.PrimaryCTA再読み込み
+L
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_NameLuxurious Merchant
 T
 ,Base.SelectionKitSelection.CancelDescription$（後で在庫から使用可能）
 O
@@ -9586,6 +9852,8 @@ A
 (Base.Wonders.Wonder_Egypt_AbuSimbel_Nameアブ・シンベル
 ]
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_Desc$山ほどの金鉱石を生産する
+^
+ABase.AllianceApplicationMessages.AllianceApplicationTooltipHeaderApplication Message from:
 �
 ,Tutorial.RelicsInfoPopup.AgeScaleDescriptionc時代が進むにつれて、ヒーローに付与されるステータス効果も上昇する。
 R
@@ -9628,6 +9896,8 @@ H
 8Base.StoryText.Story_Panganea_6_9_BattleStart_Text4_DescWまるで奇跡のように思えたよ。でも今では、現実が見えている。
 /
 Base.Ages.AgeOfTheFranks_Finish西暦550年
+6
+$Base.IngameEvents.SeasonPass_17_NameArctic Odyssey
 N
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_9_Name
 レベル9
@@ -9721,6 +9991,8 @@ A
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_2_QuestStart_Text1_Descr土台はしっかりと築かれた。次の段階ではさらなる試練と報酬が待っているだろう！
 J
 7Base.Technologies.Technology_Vikings_GlimaFighting_Nameグリマ格闘
+�
+Base.Resources.gold_dinar_DescxGold Dinar are an essential resource for trading at the Bazaar in Arabia. They are generated automatically at Merchants.
 Z
 /Base.QuestlinesPanel.FinishBattleAtLocationTask'{1}でバトルを{0}回完了する。
 E
@@ -9735,6 +10007,8 @@ W
 >Base.ShopOffers.shop_offer.LegendaryPull_FollowUp_Offer_3_Desc伝説パッケージ
 m
 Base.AlertPopup.SkipExpiredNこの作業はすでに完了しているため、即時完了できない。
+&
+Base.Resources.incense_NameIncense
 �
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_120_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
 b
@@ -9743,6 +10017,8 @@ S
 4Base.AllianceCityQuarterBonus.IncreasedIncidentPower出来事パワーの増加
 �
 $Base.Resources.hero.AdaLovelace_Desc�エイダ・ラブレスの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+$
+Base.Resources.dirham_NameDirham
 <
 )Base.KeyboardShortcuts.Description.Worker労働者管理
 D
@@ -9775,6 +10051,8 @@ J
 +Base.WondersReworkUpgradePanel.FillAllBoxesすべての箱を埋める
 <
 &Base.Regions.region.FrozenFjord_4_Name妖精たちの森
+D
+2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxurious Home
 A
 %Base.BuildingInfoPanel.HeroBoostLabel{0}ヒーローの強化
 G
@@ -9897,6 +10175,8 @@ t
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_Desc3フランクの斧投擲兵をアンロックする
 b
 0Base.Subscriptions.PRODUCTION_DURATION_Promotion.大建築師の恩恵で倉庫容量2倍に！
+K
+4Base.ShopOffers.shop_offer.Diy_Research_Offer_1_NameYour Research-Boost
 G
 7Base.Buildings.Building_Mayas_RitualSite_Average_6_Name水晶の泉
 ?
@@ -9963,8 +10243,12 @@ F
 $Base.RewardTypes.UnlockBuilding_Desc{0}をアンロックする。
 �
 #Base.Units.Unit_OttomanGeneral_Desc�大海原へ漕ぎ出そう。オスマン帝国の名将バルバロス・ハイレッディンの息子、ハサン・パシャ。１６世紀半ばに名を馳せ、アルジェのベイレルベイとしてその名を刻んだ。<br><br>父の跡を継ぎ、地中海におけるオスマン帝国の海軍支配をさらに強固なものとした。大規模な海戦や私掠活動を展開し、欧州列強と渡り合いながら優位を保ち続けた。アルジェをオスマン帝国の拠点として確立し、北アフリカにおける影響力を不動のものとした。<br><br>その遺産は、海洋覇権を守るための戦いに刻まれ、激動の時代において重要な役割を果たしたことにある。そして何より、ハサン・パシャは辛い料理が大好き。その食の趣向が歴史のヒーローたちの間でも話題となり、特にジャンヌの悩みの種になっているようだ。
+@
+1Base.Buildings.Building_Arabia_Home_Medium_6_NameMedium Home
 K
 8Base.Abilities.hero_battle_ability.GeorgeWashington_Name守護者の父
+8
+&Base.AnnouncementCenter.Event_CalendarEvent Calendar
 S
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_Nameケシク騎兵
 N
@@ -10212,8 +10496,8 @@ O
 8Base.StoryText.Story_Panganea_3_4_BattleStart_Text2_Desc�追ってこの時代まで来て、ネクサスを奪い返してきた。今もテスラは高度な技術を持ってるが、ポータルだけは作れない。
 �
 5Base.ShopPopup.OfferInfoText.WeeklyStaminaCard_1_Info�このオファーでは、購入時に400スタミナと勝利チケット50個を即時で受け取る。以降7日間、毎日200スタミナと勝利チケット10個を獲得できる。購入回数に制限はなく、購入のたびに効果が延長されていく。
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Mjolnir_1_Name�<style=ability_label>Single Target Damage</style>Increases Single Target Ability Damage by <style=basestat>{single_target_amp}</style>.
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Mjolnir_1_Name�<style=ability_label>単体攻撃ダメージ</style>所持ヒーローの単体攻撃ダメージを<style=basestat>{single_target_amp}</style>増加させる。
 H
 5Base.Buildings.Building_FeudalAge_Home_Average_3_Name大きな住宅
 �
@@ -10278,6 +10562,9 @@ JBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_1_Name�<s
 Base.BuildPanel.StorageCapacity倉庫容量
 H
 5Base.EquipmentLevelUpPanel.EquipmentLevelUpSuccessful強化成功！
+E
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Name
+Camel Farm
 l
 8Base.QuestlinesPanel.ConstructSpecificBuildingInCityTask0{3}でレベル{2}の{1}を{0}個建設する。
 (
@@ -10351,6 +10638,8 @@ KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_ChichenItza_2_Name'�
 �
 Base.Alerts.InvalidSessionTextfセッションが期限切れまたは無効になったようです。再試行してください。
 ?
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_NameOasis
+?
 5Base.Buildings.Building_Egypt_GoldMine_Average_2_Name金鉱
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_11_Nameレベル11
@@ -10358,6 +10647,8 @@ HBase.AllianceTechnologies.alliance_technology.residentialQuarter_11_Nameレ�
  Base.RankingPanel.JoinAnAlliance同盟に加入しよう！
 �
 PBase.StoryText.Story_Technology_StoneAge_DomesticatedGoats_TechUnlock_Text3_Desc<Où est-ce que je suis?!（私はどこにいるの？！）
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.HarunAlRashid_1_Name�<style=ability_label>Heal</style>Harun-Al Rashid heals all allied units for <style=basestat>{heal}</style> of his base damage. Any excess healing on each unit is stored and converted to damage the next time they deal damage with an attack or ability.
 >
 Base.ShopDTC.InfoPopup.Titleお支払い方法を選ぼう
 w
@@ -10370,6 +10661,8 @@ G
 1Base.Units.Unit_IberianEra_Player_Almogavars_Name	傭兵隊
 M
 7Base.EquipmentSets.equipment_set.Musketeer_Garment_Name銃士のマント
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Saladin_1_Name�<style=ability_label>Buff</style>Saladin targets the allied unit with the lowest HP unaffected by this ability, increasing their Movement Speed by <style=basestat>{move_speed_buff}</style> and Attack Speed by <style=basestat>{atk_speed_buff}</style> until the end of the battle. Prioritizes heroes. If the buffed unit dies, the effects transfer to the nearest ally. This buff can stack.
 1
 'Base.WorldWondersPromotion.NewWonderTag新規
 4
@@ -10476,6 +10769,8 @@ ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_Desc[この選択
 Base.Generic.Buy購入する
 n
 "Base.Notifications.IdleWorkersTextH労働者が貢献する準備完了！今すぐ割り当てよう！⏳
+v
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_Desc<Substantially increases the irrigation of adjacent buildings
 k
 RBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_PurpleTeslaTakedown_1_Name闇のテスラ討伐
 o
@@ -10647,8 +10942,12 @@ H
 5Base.Abilities.hero_battle_ability.FalconryGlove_Name鷹匠の手袋
 c
 ,Base.QuestlinesPanel.CollectWorkerProduction3{3}で{2}の{1}から生産物を{0}回集める。
+t
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 m
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text2_Nameレイフ・エリクソン
+h
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc.Increases the irrigation of adjacent buildings
 $
 Base.HeroClass.Defender	守護者
 H
@@ -10665,6 +10964,8 @@ Q
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_Desc金鉱石を生産する
 i
 )Base.SeasonPass.EventEndedNoParticipation<次回のイベントで豪華報酬を手に入れよう！
+]
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_Desc#Produces a big pile of Gold Dinars.
 6
 #Base.Resources.alliance_timber_Name同盟の木材
 3
@@ -10695,12 +10996,16 @@ E
 2Base.Buildings.Building_Vikings_Home_Worker_6_Name労働者の家
 A
 %Base.QuestlinesPanel.CompleteSpecific{0}{1}に勝利する。
+B
+6Base.Buildings.Building_Arabia_Merchant_Average_5_NameMerchant
 9
 &Base.TreasureHuntStartedPopup.EndTimer終了まで{0}
 �
 8Base.StoryText.Story_Panganea_4_3_BattleStart_Text2_Desc�頼む、ニコラ。こんな無駄な争いをやめて、私と一緒に未来へ戻ろう。まだ世界を変えられる。私たちはまだ若いぞ。
 H
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_Name畜産農場
+y
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
 �
 gBase.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_MontezumaI_SahilPalace_QuestStart_Text1_Desc�マヤ帝国における労働者には、二つの役割がある。<nobr><style=MC>職人</style> <sprite name=workers_priestmaya>　</nobr>は工房に必要とされ、<nobr><style=MC>労働者</style> <sprite name=workers_city.city_mayas> </nobr>はその他の任務を担っておる。
 I
@@ -10777,6 +11082,8 @@ D
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_Name小作農場
 ,
 Base.BuildingGroups.scribe_Name	書記屋
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.AdaBlackjack_1_Name�<style=ability_label>Shield | Cleanse</style>Ada shields all allied units for <style=basestat>{shield_percentage}</style> of her base damage and cleansing them of negative effects.
 .
 Base.Ages.MinoanEra_Decade紀元前1600年
 G
@@ -10853,8 +11160,8 @@ I
 0Base.EquipmentSets.equipment_set.Druid_Ring_Nameドルイドの指輪
 J
 (Base.CustomizationPanel.ApplyItemToGroupこのアイテムを適用：
-�
-'Tutorial.HeroMetaReportPopup.Disclaimer�The ratings in this report are based on real usage data and updated monthly. New heroes for which no usage data exists are rated by the game's developers. Individual hero ratings may change over time as the game evolves.
+�
+'Tutorial.HeroMetaReportPopup.Disclaimer�この表の評価は、実際の使用データに基づいており、毎月更新される。使用データがまだ存在しない新ヒーローは、開発チームの暫定評価によるものだ。各ヒーローの評価は、ゲームのバランス調整や環境の変化に伴って、今後変更される場合がある。
 _
 1Base.Alerts.SingleSignOn.AccountConflict.SwitchTo*{0}のアカウントに切り替える。
 �
@@ -10881,6 +11188,9 @@ z
 4Base.SeasonPassSelectBattleOrNegotiationPopup.HeaderBこのバトルに勝利するか、この交渉を解決する。
 ?
 )Base.Regions.region.VolcanicJungle_1_Nameマヤの丘陵地
+,
+Base.Resources.gold_dinar_Name
+Gold Dinar
 W
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 I
@@ -10905,6 +11215,8 @@ MBase.Questlines.Questline_EventCity_China_WonderProgress_ForbiddenCity_1_Name
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text3_Desc�その目的はまだ見えないが、技術をいじくり回すのが得意な男だ。今回も月面着陸を邪魔しに来たんだろう。
 Q
 &Base.Resources.hero.UlyssesSGrant_Name'ユリシーズ・グラントの精髄
+n
+2Base.Buildings.Building_Arabia_Home_Premium_3_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 H
 ;Base.ShopOffers.PiggyBank_researchPointsEvent_Unlock_2_Name	宝石庫
 �
@@ -10943,8 +11255,8 @@ A
 (Base.EquipmentFilterPopover.HideEquipped装備中を非表示
 d
 'Base.ShopPopup.PurchaseCancelledMessage9アイテムの購入がキャンセルされました。
-�
-Base.OptionsPopup.InviteText�一緒にHeroes of Historyを遊ぼう！このリンクからゲームをインストールして、報酬をゲットしてね！
+�
+Base.OptionsPopup.InviteText�一緒にヒーローズオブヒストリーを遊ぼう！このリンクからゲームをインストールして、報酬をゲットしてね！
 V
 %Base.RankingPanel.PlayerRankingTop100-プレイヤーランキング・上位100位
 �
@@ -11047,10 +11359,10 @@ B
 &Base.MilestoneEventPanel.CurrentPoints自分のポイント：
 A
 %Base.ShopPopup.Pages.china_pull_offer仲間が待っている
-]
-*Base.ShopPopup.Pages.diy_offer_description/Get your preferred items, that you really need!
-@
-*Base.BuildingUpgradePanel.ResearchRequired必要な研究：
+[
+*Base.ShopPopup.Pages.diy_offer_description-欲しいアイテムを自由に選ぼう！
+=
+*Base.BuildingUpgradePanel.ResearchRequired必要な研究
 �
 %Base.QuestlinesPanel.CrossSellingTaskForge of Empiresをダウンロードして、「陶器」という技術を研究すると、特別な報酬を受け取れる
 �
@@ -11097,6 +11409,8 @@ ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_Nameメロヴィ
 aBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Yggdrasil_1_QuestStart_Text3_Desc�<style=MC>箱</style>を埋めるたびに、<style=MC>イベントランキング</style>の<style=MC>ランク</style>が上がり、<style=MC>リーグ</style>での順位も上昇する。その先には、さらに多くの<style=MC>報酬</style>が待っている。
 @
 !Base.Units.Unit_LouisPasteur_Nameルイ・パストゥール
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_NameCarpet Maker
 &
 Base.CommunityPopup.YoutubeYouTube
 {
@@ -11157,6 +11471,8 @@ J
 7Base.Buildings.Building_Mayas_RitualSite_Premium_4_Name溶岩の神殿
 x
 MBase.Questlines.Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_Name'クフ王のピラミッド（前編）
+d
+1Base.Buildings.Building_Arabia_Home_Medium_6_Desc/Produces Dirham and adds 2 Workers to your city
 �
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text6_DescZテスラの野郎がペルシア軍を操ってる。俺の運命は壊されたんだ…
 .
@@ -11205,10 +11521,14 @@ Q
 ,Base.UnitStats.unit_stat.AoeDamageAmp_Abbrev!範囲アビリティダメージ
 B
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_Name	槍騎兵
+t
+%Base.EventType.ChestEvent_DescriptionKAcquire event tokens to participate in this event and earn amazing rewards!
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>瞬間移動・挑発・燃焼・シールド</style>最も遠い敵にテレポートし、<style=basestat>{taunt_duration}</style>の間、<style=basestat>{range}</style>の範囲内にいる敵ユニットを挑発し、<style=basestat>{duration}</style>の間、<style=basestat>{burn_dmg}</style>の燃焼ダメージを与える。加えて、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得する。
 �
  Base.Units.Unit_SirLancelot_Desc�円卓の騎士にして、アーサー王の忠臣、そして妖精の国をも旅したフランスの騎士、ランスロットの物語を聞こう。<br><br>遠き地よりアーサー王の宮廷にたどり着き、グィネヴィア王妃を救い、聖杯を求めて旅をした。その武勇と気高さは、まさに理想の騎士そのものだった。<br><br>しかし、ただ一つの過ちがキャメロットを崩壊へと導いた。王妃への叶わぬ愛が、王国を揺るがしたのだ。それでもなお、誠実な英雄として語り継がれ、多くの者に愛され続けている。あまり知られていないが、実はもう一人、異なる才能を持つ兄弟がいたらしい。その名も、ダンスロット卿！
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 �
 4Base.Incidents.Incident_IberianEra_Capital_XP_1_Desc]いやあ、この丸太の山、ひどいな！さあ、力を見せて片付けようぜ！
 \
@@ -11319,6 +11639,8 @@ H
 ,Base.BuildingGroups.premiumPapyrusField_Name豪華なパピルス畑
 @
 3Base.Units.Unit_BronzeAge_Player_HeavyInfantry_Name	青銅兵
+a
+CBase.IngameEvents.MilestoneEvent_Halloween2025_RallyOfHeroes_1_NameAll Hallows' Eve Encounter
 =
 $Base.QuestlinesPanel.ClaimDailyLogin報酬を受け取る
 =
@@ -11506,8 +11828,8 @@ $Base.EquipmentToolTip.AttributeTypes/• サブ特性：{0} 種類（ランダ
 #Base.Resources.chrono_crystals_Nameクロノ結晶
 S
 @Base.Technologies.Technology_KingdomOfSicily_DomedSanctuary_Nameドーム聖堂
-f
-)Base.QuestlinesPanel.DefeatEnemyUnitsTask9敵ユニットを{0}倒す（歴史の戦いを除く）
+N
+)Base.QuestlinesPanel.DefeatEnemyUnitsTask!敵ユニットを{0}人倒す。
 �
 6Base.StoryText.Story_Panganea_3_9_BattleEnd_Text3_Desccうまくいったな…すべてテスラの思惑通りだ。奴に罠の準備をさせるか。
 �
@@ -11550,6 +11872,8 @@ aBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_Que
 Base.LocalizedLocales.it_ITイタリア語
 F
 3Base.Technologies.Technology_China_RiseOfChina_Name中華の台頭
+#
+Base.Generic.TimesEach	{0}x each
 4
 'Base.Expansions.Expansion_China_27_Name	南の橋
 &
@@ -11603,6 +11927,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text8_Descx
 #Base.VideoPlacementButton.Remaining残り：{0}回
 b
 (Base.OptionsPopup.AlreadyLoggedIntoWorld6このワールドにはすでにログイン済み。
+�	
+!Base.Units.Unit_AdaBlackjack_Desc�	Survive the impossible with Ada Blackjack, the woman who conquered the Arctic alone! This Inupiat seamstress from the early 20th century became an unlikely hero when she outlasted veteran explorers on the desolate Wrangel Island. In 1921, she joined a Canadian expedition as a cook and seamstress, the only woman among four men.<br><br>When the expedition went catastrophically wrong, with supply ships failing to arrive and the men leaving to seek help but never returned, Ada was left utterly alone on the frozen island with only the expedition's cat, Victoria, for company. For two years, she survived where trained explorers had perished. Through extreme hardship, Ada taught herself to set traps, fire a rifle, fend for herself, using her resourcefulness to beat starvation and illness, even as the Arctic winter closed in. Despite being surrounded daily by hunger and polar bears, Ada's hope never faded.<br><br>Together, Ada and Vic braved blizzards and loneliness, their bond a source of comfort and warmth amid the cold. In time, Ada was rescued and returned home, and her story became an inspiration - proof that ordinary people are capable of extraordinary resilience.
 (
 Base.PvpPanel.Rankingランキング
 1
@@ -11611,6 +11937,8 @@ $Base.WorkerManagementPopup.Producing	生産中
 ]Base.StoryText.Story_Questline_EventCity_Vikings_DragonshipEllida_Start_QuestStart_Text1_Desc�私はラゲルタ。民を守る盾乙女だ。伝説の<style=MC>竜船エリダ</style>に導かれ、ノルウェーの険しい地へ進もう。壮大なフィヨルドが我々を待っている。
 c
 ,Base.Resources.hero.FlorenceNightingale_Name3フローレンス・ナイチンゲールの精髄
+H
+6Base.AllianceApplicationMessages.AllianceRejectionSendSend Rejection
 |
 9Base.WondersReworkUpgradePanel.TradeOfferBoostDescription?貿易オファーから、名産品を{0}多く獲得する。
 0
@@ -11629,6 +11957,8 @@ D
 Base.ShopPopup.TimedDeals特価セール
 K
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_3_Name射撃兵兵舎
+L
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_NameLuxurious Workshop
 B
 5Base.Technologies.Technology_ClassicGreece_Agora_Name	アゴラ
 W
@@ -11723,6 +12053,8 @@ PBase.StoryText.Story_Questline_StoneAge_BuildingACommunity_QuestStart_Text2_Des
 ,Base.EquipmentSets.equipment_set.Hunter_Name狩人セット
 L
 3Base.NegotiationPurchaseTurnDialog.ConfirmEndButton交渉を中止する
+n
+2Base.Buildings.Building_Arabia_Home_Premium_6_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 g
 BBase.QuestlinesPanel.CollectResourceFromBuildingTypeInSpecificCity!{3}の{2}で{1}を{0}集める。
 3
@@ -11733,6 +12065,8 @@ y
 8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 p
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Desc9短期間にわたって少量の食料を生産する。
++
+Base.Event.EventEndsInEvent ends in {0}
 ,
 Base.Ages.DawnAge_Finish紀元前5万年
 \
@@ -11741,6 +12075,8 @@ CBase.Questlines.Questline_EventCity_Mayas_Workshops_LadySixSky_Name聖なる�
 $Base.UnitStats.unit_stat.Attack_DescT攻撃力が敵の防御力を上回ると、与えるダメージが増加する。
 2
 Base.OptionsPopup.ChangeConsent同意の変更
+t
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 �
 ?Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_DescriptionT緑色のテスラストームに勝利して挑戦ポイントを獲得しよう！
 0
@@ -11865,8 +12201,8 @@ H
 8Base.Technologies.Technology_IberianEra_DonkeyFarms_Nameロバ農場
 9
 &Base.PvpTiers.PvP_Tier_Platinum_3_Nameプラチナ３
-V
-CBase.IngameEvents.MilestoneEvent_Moonlanding_2_RallyOfHeroes_1_NameRally of Heroes
+\
+CBase.IngameEvents.MilestoneEvent_Moonlanding_2_RallyOfHeroes_1_Nameヒーローの集結
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text10_Desc�急ごう。発信源を三点測量で割り出すのよ。このままでは、ひとつひとつの波動が危険かもしれないわ。
 �
@@ -11915,6 +12251,8 @@ T
 WBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestFinish_Text1_Desc�素晴らしいです！これで<nobr><style=MC>磁器</style> <sprite name=resource.porcelain_cta></nobr> の素材となる<nobr><style=MC>カオリン</style> <sprite name=resource.kaolin_cta></nobr> を採取できるようになりました。
 ;
 1Base.Technologies.Technology_Mayas_StateLaws_Name国法
+7
+$Base.BazaarOffersPanel.NoOffersFoundNo offers found
 O
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_Name	強化柄
 %
@@ -11945,6 +12283,8 @@ K
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_Descc宝石、香辛料、黄金、陶器の宝物を山ほど集める遠征隊の船を出航させる
 ;
 (Base.Regions.region.EasternValley_8_Nameマリの要塞
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_NameCoffee Brewer
 f
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text1_Nameロビン・フッド
 �
@@ -11959,14 +12299,14 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_27_Nameレベル27
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_4_Name哲学者の館
-n
-Browser.OOM.PreventionHeadlineLTo prevent future disruptions and improve stability, please try these steps:
+�
+Browser.OOM.PreventionHeadline{今後の中断を防ぎ、より安定したプレイ環境を保つために、以下の方法をお試しください。
 i
 ;Base.Buildings.Building_ClassicGreece_Barracks_Siege_1_Desc*ギリシャ弩砲をアンロックする
 �
  Base.Event.ItemGridOutOfSyncText�イベントで同期エラーが発生しました。ゲームを再読み込みして、進行を安全に続けてください。
-.
-Base.Mailbox.DeleteAllDelete read messages
+8
+Base.Mailbox.DeleteAll既読メッセージを削除
 �
 4Base.SpartasLastStandInfoPopup.ProtectYourAlliesInfo�レオニダスが倒れるか三百人隊が全滅すると敗北になる。すべての敵を倒し、スパルタ兵の体力が10%以上残っていれば、星3つでの勝利となる。
 �
@@ -12063,8 +12403,8 @@ H
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text4_Desc�通信と電源が要だというのなら、防御線を築くべきだ。テスラの干渉を防ぐには、障壁が不可欠だ。 
 �
 9Base.StoryText.Story_DesertDelta_5_7_BattleEnd_Text4_Desc~それこそが君の名声だ、レオニダス。テルモピュライの戦いで、君は英雄として散ったんだ。
-�
-Browser.OOM.MainText�We sincerely apologize for this disruption. Your most recent actions may not have been saved. Please reload to return to your last known checkpoint.
+�
+Browser.OOM.MainText�ご不便をおかけして申し訳ありません。直前の操作が保存されていない可能性があります。ページを再読み込みして、最後のチェックポイントから再開してください。
 ]
 8Base.Questlines.Questline_CollectStars_Continent6_2_Name!星コレクター６パート２
 B
@@ -12213,8 +12553,8 @@ S
 Base.BattleStatsPanel.Minionsユニット
 �
 $Base.Units.Unit_OttoVonBismarck_Desc�帝国議会を後にし、やがて歴史の象徴となったオットー・フォン・ビスマルク。１９世紀に活躍し、ドイツ統一の立役者となった政治家だ。プロイセン王国の首相、そしてドイツ帝国初代宰相として、卓越した外交手腕と現実主義的な政策を駆使し、国家の未来を築き上げた。<br><br>デンマーク、オーストリア、フランスとの戦争を巧みに操り、無数の独立したドイツ諸邦を一つの強大な帝国へと統合する道を切り開いた。<br><br>さらに、労働者の権利と社会の安定を重視し、医療保険、労災補償、老齢年金などの先駆的な社会改革を導入したことでも知られる。歴史のヒーローたちの中でも、その堂々たる口ひげは群を抜いており、ヒゲ用クリームの予算の６０％を独占しているらしい。
-=
-)Base.ChestEvents.Event_Moonlanding_2_NameThe Moon Landing
+9
+)Base.ChestEvents.Event_Moonlanding_2_Name月面着陸
 �
 Base.Resources.golden_mask_Descd黄金の仮面は加工された資源で、レベル4以上の金細工工房で生産できる。
 F
@@ -12338,6 +12678,8 @@ ZBase.StoryText.Story_Questline_EventCity_Vikings_Provisions_Lagertha_QuestStart
  Base.EquipmentToolTip.LevelUpCap• 強化上限：{}
 N
 >Base.Technologies.Technology_EarlyGothicEra_BankingHouses_Name銀行機関
+�
+&Base.Resources.hero.HarunAlRashid_DesceUsed to increase the Awakening Level of Harun al-Rashid and thus unlock more powerful battle bonuses.
 �
 Base.Units.Unit_HuaMulan_Desc�戦いの準備をしよう！中国の伝説的な英雄、花木蘭は、その勇気と家族への深い思いで知られている。『木蘭辞』では、父の代わりに軍に参加するため、男装して戦場に向かう若き女性として描かれている。<br><br>千里を駆け、数多くの戦いを経た木蘭は、天子に謁見するために送られる。そこで求めたのは、ただ家に帰るための速い馬だけだった。帰国後、自分が女性であることを明かし、仲間たちを驚かせる。<br><br>木蘭の物語は、女性としての役割や戦士としての期待を超えた英雄的な反抗の物語であり、家族と中国への深い忠義を示している。この物語は映画や舞台などで何度も描かれ、今も世界中で愛され続けている。最近では、ジャンヌと一緒に衣装を比べ合っているという噂もある。
 �
@@ -12382,10 +12724,10 @@ U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_34_Nameレベル34
 M
 =Base.Buildings.Building_Vikings_ExpeditionPier_Average_1_Name遠征桟橋
-
-Base.Mailbox.HeaderMailbox
-9
-(Base.Resources.UpgradeToken_Mjolnir_NameMjolnir Sigil
+ 
+Base.Mailbox.Header	受信箱
+D
+(Base.Resources.UpgradeToken_Mjolnir_Nameミョルニルの刻印
 ,
 Base.Relics.LunarMeteorite_Name	月隕石
 9
@@ -12504,10 +12846,10 @@ J
 Base.Numbers.Billion{0} B
 H
 5Base.Technologies.Technology_FeudalAge_TaflGames_Nameタフル遊戯
+�
+Base.SocialSharing.ShareText�ヒーローズオブヒストリーを遊ぼう！こちらのリンクからインストールして、今すぐ始めよう！
 L
 6Base.Factions.Faction_AgeOfTheFranks_Carolingians_Nameカロリング人
-g
-Base.SocialSharing.ShareTextGCome and play Heroes of History - follow this link to install the game!
 F
 $Base.QuestlinesPanel.NegotiationTaskこの交渉を解決する。
 �
@@ -12547,7 +12889,7 @@ g
 �
 aBase.StoryText.Story_Questline_EventCity_Mayas_RitualSites_LadySixSky_Tikal_QuestStart_Text2_Desc�わたくしたちは、そうした<style=MC>失われし地</style>を探し出し、その霊力を再び目覚めさせねばなりません。地が目を覚ましたとき、文化は新たなる息吹を得て、さらなる高みへと導かれることでございましょう。
 `
-GBase.IngameEvents.MilestoneEvent_Moonlanding_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
+GBase.IngameEvents.MilestoneEvent_Moonlanding_2_BlueTeslaTakedown_1_Name氷のテスラ討伐
 (
 Base.Generic.PlariumPlayPlarium Play
 <
@@ -12648,6 +12990,8 @@ W
 +Base.PlayerSearch.SearchTermTooShortMessage(検索は3文字以上で入力しよう
 *
  Base.HeroFilterPopover.HitPoints体力
+8
+"Base.Rifts.rift.SeasonPass_17_NameArcane Time Portal
 y
 8Base.Buildings.Building_AgeOfTheFranks_Home_Small_1_Desc=コインを生産し、都市に労働者を1人追加する
 Q
@@ -12658,8 +13002,10 @@ Q
 Base.Resources.aventurine_Desc`特定の初期ゴシック時代の技術を研究するために使われる貴重な鉱石。
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_Name灌漑ステーション
-+
-Browser.OOM.SecondaryCTAContact Support
+.
+Browser.OOM.SecondaryCTAお問い合わせ
+G
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_NameIncense Maker
 �
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text2_Desc{敵が何人いようと不思議ではないぞ。テスラからネクサスを奪って、ここから脱出しよう。
 H
@@ -12681,6 +13027,8 @@ Q
 ;Base.Questlines.Questline_StoneAge_CultureIntroduction_Name文明の始まり
 0
 Base.Ages.HighMiddleAges_Finish西暦1200年
+L
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_NameLuxurious Merchant
 P
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_33_Nameレベル33
 W
@@ -12727,6 +13075,8 @@ J
 =Base.Technologies.Technology_KingdomOfSicily_FountainPen_Name	万年筆
 �
 6Base.WondersReworkUpgradePanel.TagUnitBonusDescriptionF他の有効な{3}1つごとに、{1}部隊の{0}を{2}強化する。
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_NameOil Lamp Maker
 L
 'Base.ShopPopup.Pages.china_starter_pack!中華のスターターパック
 I
@@ -12819,6 +13169,8 @@ j
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Name$優れたクレスト選択キット
 F
 3Base.Buildings.Building_BronzeAge_Home_Small_3_Name小さな住宅
+j
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
 7
 $Base.BuildingTypes.papyrusField_Nameパピルス畑
 K
@@ -12833,6 +13185,8 @@ I
 Base.Ages.IberianEra_Finish西暦1050年
 7
 !Base.Numbers.SubtractedPercentage<nobr>-{0}%</nobr>
+v
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_Desc<Substantially increases the irrigation of adjacent buildings
 r
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_Nameシックス・スカイ
 6
@@ -12875,8 +13229,12 @@ C
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Name小作農場
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc$蚕の繭から絹糸を生産する
+D
+2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxurious Home
 �
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_Desc�そのためには、<style=MC>箱</style>を埋める必要がある。すべての箱を満たせば、アップグレードが可能になり、<style=MC>報酬</style>を手に入れられるじゃろう。
+G
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_NameIncense Maker
 I
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_Nameミノア重装兵
 D
@@ -13036,10 +13394,14 @@ O
 #Base.BuildingGroups.priestHome_Name職人の家
 ;
 1Base.Technologies.Technology_EarlyRome_Domus_Name邸宅
+y
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 1
 Base.Rifts.rift.Common_Name時空ポータル
 �
 "Base.Resources.hero.JohnLocke_Desc�ジョン・ロックの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+�
+9Base.EventStartScreens.Halloween2025EventStartDescription�Channel the power of Antimatter in the Portal and ascend to glory by earning trophies and bountiful rewards in the All Hallows' Eve Encounter event, including <style=epic>Abraham van Helsing</style> and <style=legendary>Vlad Dracula</style>!
 U
 ?Base.Alerts.SingleSignOn.ConflictAlreadyConnected.ConfirmButtonお問い合わせ
 Z
@@ -13412,6 +13774,8 @@ B
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_Name極小規模な文化遺産
 �
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestStart_Text1_Desc9よし…やったな。これで競争が始まった！
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 J
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_Name歩兵兵舎
 �
@@ -13446,8 +13810,10 @@ V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_26_Nameレベル26
 �
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_4_2_Descaこの選択キットでは、研究ポイントと同盟ポイントの中から1つ選べる。
-�
-(Base.Resources.UpgradeToken_Mjolnir_Desc�This rare resource allows you to upgrade <nobr><style=legendary>Mjolnir</style></nobr> Relic.<br>It can be obtained alongside relic dust as rewards in certain events.
+�
+Base.Resources.dirham_DesckDirham are an essential resource for city development in Arabia. They are generated automatically in Homes.
+�
+(Base.Resources.UpgradeToken_Mjolnir_Desc�<nobr><style=legendary>ミョルニル</style></nobr>というレジェンダリー遺物を強化するためのレアな資源。<br>遺物の粉とともに、一部のイベントから報酬として獲得できる。
 ~
 ABase.Buildings.Building_EarlyGothicEra_Special_HeroAcademy_1_Desc9研究ポイントから経験の巻物を生産する。
 �
@@ -13614,8 +13980,12 @@ N
 @Base.LeaderboardEventPanel.TaskInfo.EquipmentUpgrade_DescriptionN残火を使って装備を強化し、挑戦ポイントを獲得しよう！
 +
 Base.HeroPanel.ManageRelics遺物管理
+n
+2Base.Buildings.Building_Arabia_Home_Premium_5_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 �
 %Tutorial.WonderTutorial.WonderEffects�これらの<style=MC>世界遺産</style>は、そなたの人々にインスピレーションを与える存在だ。各世界遺産には<style=MC>強力な効果</style>があり、そなたの人々にとって<style=MC>有益</style>なものとなる。
+"
+Base.Resources.brass_NameBrass
 �
 5Base.Buildings.Building_EarlyRome_Home_Average_2_DescLたくさんのコインを生産し、都市に労働者を2人追加する
 P
@@ -13686,6 +14056,8 @@ B
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_2_3_Name!三つ巴コインチャレンジ
 f
 >Base.Buildings.Building_EarlyGothicEra_Barracks_Cavalry_2_Desc$上級騎兵をアンロックする
+L
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_NameLuxurious Workshop
 )
 Base.Relics.BaguaMirror_Name	八卦鏡
 u
@@ -13813,10 +14185,12 @@ g
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_30_Name$コモンクレスト選択キット
 K
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_Name小さな住宅
-W
->Base.QuestlineCollections.QuestlineCollection_TeslaStorm1_Nameテスラストーム
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 7
 $Base.OptionsPopup.AccountTabHeadlineアカウント
+W
+>Base.QuestlineCollections.QuestlineCollection_TeslaStorm1_Nameテスラストーム
 W
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 y
@@ -13981,6 +14355,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text5_Desc
 bBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_QuestFinish_Text1_Desc�驚かされたぞ。このような成果を成し遂げるとは思わなんだ。実に素晴らしい！次の冒険でも、そなたの力を期待しておる。では、また会おう。
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
+-
+Base.BazaarOffersPanel.BuySlotUnlock Slot
 .
 Base.IncidentPanel.SolveButton対応する
 �
@@ -14007,8 +14383,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.MaskOfTutankhamun_1_Na
 >Base.Units.Unit_AgeOfTheFranks_Player_CarolingianCatapult_Desc�攻城ユニットは攻撃が遅く、敵の攻撃に弱いが、広範囲にわたって大きなエリアにダメージを与える。
 �
 #Base.ChangeEmail.SuccessDescription�元のメールアドレスにも、メールアドレスの変更を取り消すためのメールが送信されています。14日以内に、そのメールに記載されたリンクをクリックすることで変更を元に戻すことができます。この14日間は再度メールアドレスの変更はできません。
-J
-(Base.Mailbox.ApplicationAcceptedHeadlineAlliance Application accepted!
+M
+(Base.Mailbox.ApplicationAcceptedHeadline!同盟申請が承認された！
 W
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_24_Nameレベル24
 2
@@ -14107,6 +14483,8 @@ c
 (Base.BattleAbilityPanel.NoTargetSelected[少なくとも1体のユニットがアビリティの効果を受ける必要がある。
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text7_Descv勝利を喜ぶのもよいが、油断は禁物じゃ。テスラめ、また現れぬとも限らぬからのう。 
+H
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_NameOil Lamp Maker
 E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_Name小作農場
 x
@@ -14227,6 +14605,8 @@ p
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc0カロリング投石機をアンロックする
 y
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_2_Desc9長期間にわたって大量の食料を生産する。
+�
+Base.Resources.oil_DeschOil is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 d
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_Desc$襲撃騎兵をアンロックする
 �
@@ -14247,6 +14627,8 @@ I
 9Base.Technologies.Technology_Egypt_ExtractionMethods_Name採取方法
 4
 !Base.RiftOverviewPanel.HeroRarity{0}ヒーロー
+2
+(Base.Cities.City_Arabia_CityOfBrass_NameArabia
 X
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_2_Name重歩兵兵舎
 A
@@ -14265,6 +14647,8 @@ F
 ,Base.WorldWondersOverviewPanel.RequestsTitle要請
 J
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_Name騎兵兵舎
+�
+.Base.ShopOffers.City_Arabia_StarterPack_1_DescSKickstart your Arabian Event City with this selection of highly demanded resources!
 j
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_250_Name$コモンクレスト選択キット
 L
@@ -14391,6 +14775,8 @@ c
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text11_DescWここで何があった？爆発音が響いて、急いで駆けつけたんだが。
 �
 bBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_3_QuestFinish_Text2_Desc�外交の広間には、同盟と交易の誓いが響き渡り、帝国に新たな力が流れ込みつつある。そなたの名は、我らの聖なる書に刻まれ、誉れ高き戦士たちの歌にて語り継がれることとなろう。
+L
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_NameLuxurious Merchant
 -
  Base.UnitColors.unit_color.green	緑色の
 �
@@ -14411,6 +14797,8 @@ K
 Base.HeroClass.Manipulator	策略家
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name�<style=ability_label>近接攻撃・強化・自己回復</style>現在のターゲットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、驚異的な力を発揮し、攻撃速度が<style=basestat>{atk_speed_duration}</style>の間、<style=basestat>{atk_speed_percentage}</style>上昇し、アキレスの最大体力の<style=basestat>{heal_percentage}</style>分が回復する。さらに、防御力が<style=basestat>{def_duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。<color=#FFCF2B>トロイの陥落</color>では、アキレスの<style=basestat>攻撃力</style>が<style=basestat>25%</style>上昇し、<style=basestat>アビリティ</style>のチャージが<style=basestat>2秒</style>短縮される。
+�
+,Base.Resources.rift_token_arabia_common_DescPThis <style=rare>rare</style> resource is used to power the Arabian Time Portal.
 �
 +Base.Resources.hero.MargaretIOfDenmark_Desc�マーガレット１世の覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 3
@@ -14431,8 +14819,8 @@ DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_3_1_Name研究選
 Base.Resources.cinnamon_Nameシナモン
 M
 :Base.Technologies.Technology_MinoanEra_BronzeAutomata_Name銅の機械兵
-k
-.Base.QuestlinesPanel.DefeatEnemyUnitsTaskColor9{1}ユニットを倒す。（歴史の戦いを除く）
+P
+.Base.QuestlinesPanel.DefeatEnemyUnitsTaskColor{1}敵ユニットを倒す。
 �
 aBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_1_QuestStart_Text4_Desc�時の流れは早い。すべての<style=MC>箱</style>を埋めて、<style=MC>大スフィンクス</style>をレベル１にアップグレードするのじゃ！
 .
@@ -14484,7 +14872,7 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text2_Name
 V
 :Base.Technologies.Technology_Mayas_AdvancedJadeMining_Name高度なヒスイ採掘
 5
-"Base.BuildingInfoPanel.DailyLimits今日の上限
+"Base.BuildingInfoPanel.DailyLimits一日の上限
 S
 4Base.LeaderboardEventPanel.TaskInfo.HeroAcquire_Nameヒーローを召喚する
 �
@@ -14656,6 +15044,8 @@ A
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>踏みつけ・気絶</style>レオニダスが地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。さらに、現在のターゲットを<style=basestat>{stun_duration}</style>の間気絶させる。
 �
 Base.Resources.hero.Inanna_Descxイナンナの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
+�
+Base.Resources.oil_lamp_DesctOil Lamps are a refined resource. They can be produced at Oil Lamp Makers and Luxurious Workshops - Level 4 upwards.
 ,
 Base.Units.Unit_Blackbeard_Name	黒ひげ
 �
@@ -14674,6 +15064,8 @@ J
 7Base.Technologies.Technology_Mayas_CurativeRituals_Name治療の儀式
 �
 ^Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_GreatSphinx_QuestStart_Text1_Desc�そなたの進展は実に素晴らしい。<style=MC>大スフィンクス</style>はその偉業を示す証であり、<style=MC>繁栄の象徴</style>として輝きを放つであろう。
+B
+6Base.Buildings.Building_Arabia_Merchant_Average_4_NameMerchant
 ;
 (Base.ResearchTreePanel.ResearchCompleted研究済み！
 N
@@ -14737,8 +15129,12 @@ J
 &Base.Regions.region.FrozenFjord_6_Name黒の野原
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_5_Text4_Desccおいおい……その菓子、大丈夫か？毒でも仕込まれて……あ、溶けた！？
+D
+2Base.Buildings.Building_Arabia_Home_Premium_5_NameLuxurious Home
 y
 ,Base.LeaderboardEventPanel.ParticipationInfoIイベントに参加するには、{0} ポイント以上が必要だ。
+�
+Base.Resources.brass_DescjBrass is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 �
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text3_Desc�だが、アインシュタインはまだ失っていない。じいさんは俺たちを信じてここに導いたんだ。まだ戦いは終わってないぞ。
 @
@@ -14838,6 +15234,8 @@ y
 ABase.Subscriptions.EVENT_CITY_PRODUCTION_DURATION_Egypt_Promotion4クレオパトラの恩恵で倉庫容量2倍に！
 !
 Base.Resources.barrel_Name樽
+j
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
 N
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_Name氷河の熟達
 �
@@ -14931,6 +15329,8 @@ A
 'Base.MergeItems.WorldFair_Bronze_3_Name工芸品 レベル３
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>踏みつけ・弱体化・魂リンク</style>地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与え、<style=basestat>{duration}</style>の間、命中率を<style=basestat>{accuracy_percentage}</style>低下させる。さらに、味方ユニット全体は魂リンク状態となり、<style=basestat>{duration_link}</style>の間、受けたダメージを分担する。
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_20_Desc[この選択キットでは、様々な色の強化クレストの中から1つ選べる。
 5
@@ -14949,6 +15349,8 @@ N
 8Base.Technologies.Technology_ClassicGreece_Concrete_Nameコンクリート
 m
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text10_Nameレイフ・エリクソン
+/
+Base.Event.EventStartsInEvent starts in {0}
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>踏みつけ</style>レオニダスが地面を踏みつけ、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。
 M
@@ -15019,10 +15421,10 @@ I
 GBase.WondersReworkUpgradePanel.TagRegenerationTimeBoostBonusDescriptionJ他の有効な{2}1つごとに、{0}の再生時間を {1}短縮する。
 c
 DBase.Technologies.Technology_HighMiddleAges_StauferArchitecture_Nameシュタウファー様式
+b
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_YellowTeslaTakedown_1_Name光のテスラ討伐
 F
 3Base.Questlines.Questline_BronzeAge_CityQuest3_Name新しい工房
-c
-IBase.IngameEvents.MilestoneEvent_Moonlanding_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text7_DescB（葉巻を放り投げながら）下がれ、爆発するぞ！
 F
@@ -15068,7 +15470,7 @@ NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text9_Desc
 :
 0Base.Technologies.Technology_Mayas_Divining_Name占術
 *
-Base.PlayerSearch.CloseSearch	閉じる
+Base.PlayerSearch.CloseSearch	クリア
 �
 8Base.StoryText.Story_Panganea_7_4_BattleStart_Text1_DescH奴らの抵抗は止まらん！むしろ勢いを増しているぞ。
 I
@@ -15083,6 +15485,8 @@ B
 &Base.BuildingGroups.clayProcessor_Name粘土加工所
 L
 6Base.AllianceChatNotifications.Options.PlayersActivityメンバー活動
+�
+Base.Resources.coffee_DesclCoffee is a refined resource. It can be produced at Coffee Makers and Luxurious Workshops - Level 1 upwards.
 <
 ,Base.Factions.Faction_MinoanEra_Minoans_Nameミノア人
 �
@@ -15203,6 +15607,8 @@ PBase.StoryText.Story_Technology_StoneAge_DomesticatedGoats_TechUnlock_Text2_Des
 FBase.AbilityDescriptions.hero_battle_ability_description.SunTzu_1_Name�<style=ability_label>近接攻撃・弱体化</style>孫氏が自分の周囲<style=basestat>{range}</style>の範囲内にいる敵ユニットに2回攻撃を加え、合計<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、静穏のオーラを発生させ、近くの敵ユニットの攻撃速度を<style=basestat>{duration}</style>の間<style=basestat>{atk_speed_percentage}</style>低下させる。
 L
 3Base.Buildings.Building_Mayas_Aviary_Average_6_Desc羽根を生産する
+.
+%Base.Wonders.Wonder_Arabia_Petra_NamePetra
 �
 'Base.Units.Unit_AminaQueenOfZazzau_Desc�ザザウの女王アミナとともに進軍しよう！伝説のハウサの女戦士王として、その名はいまもサヘルに響き渡っている。１６世紀、現在のナイジェリア北部を治めたアミナは、比類なき武勇と戦略眼、そして揺るぎない独立心で知られた。幼き頃から馬術と戦の技を磨き、やがて軍を率いてザザウの勢力を拡大していった。<br><br>治世では都市を守る防壁を築き、その多くは今もアミナの名を残している。さらに交易路を切り開き、王国に繁栄をもたらした。ザザウはアミナのもとで、サハラと南方の森林地帯を結ぶ重要な交易路を掌握するに至った。<br><br>鎧をまとって先頭に立ち、西アフリカ全域から畏敬の念を集め、力の象徴となった。３４年ものあいだ王座に座ることなく馬上から軍を率い続けた姿は、戦場でも評議の場でも不屈の精神を示し、世代を超えて「勇気に限界はない」ことを証明し続けている。
 &
@@ -15276,7 +15682,7 @@ I
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_15_Nameレベル15
 �
-0Base.VideoRewards.VideoReward_VideoIncident_Desc�こんにちは！世界中から集めた素敵なニュースや商品をお届けしますよ。この動画をぜひ楽しんで、報酬を受け取ってくださいね！
+0Base.VideoRewards.VideoReward_VideoIncident_Desc�ごきげんよう！世界中から集めた素敵なニュースや商品をお届けします。この動画をぜひ楽しんで、報酬を受け取ってくださいね！
 '
 Base.Resources.porcelain_Name磁器
 H
@@ -15363,8 +15769,8 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_39_Nameレベ�
 Base.Stats.radius_Name範囲
 .
 Base.RewardPanel.HeroConverted変換報酬
-_
-'Base.HeroPanel.FocusInitialChargeChange4初期チャージ：<style=AwakenFocus>-{0}</style>
+S
+'Base.HeroPanel.FocusInitialChargeChange(初期：<style=AwakenFocus>-{0}</style>
 A
 +Base.Resources.rift_token_mayas_common_Nameマヤの反物質
 A
@@ -15411,6 +15817,8 @@ $
 Base.Units.Unit_TomoeGozen_Name	巴御前
 �
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_Descxそこが肝心さ、お嬢さん。ただの矢じゃない。俺の弓と腕があってこその一撃ってわけ。
+�
+3Base.Buildings.Building_Arabia_City_CityHall_2_DescfThe Great Hall is the centre of your city. It continiously generates a small amount of Dirham for you.
 ?
 /Base.TreasureHuntDifficulties.Difficulty_4_Name熟練者１
 �
@@ -15485,10 +15893,12 @@ J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_Name黒曜石採掘場
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text9_Desc~こんなに格式高い会なのに、金とビロードが見当たらないなんて……ちょっと不満ですわね。
+D
+&Base.Resources.hero.HarunAlRashid_NameEssence of Harun al-Rashid
 0
  Base.Resources.iron_pendant_Name鉄の飾り
 b
-IBase.IngameEvents.MilestoneEvent_Moonlanding_2_PurpleTeslaTakedown_1_NameUmbral Tesla Takedown
+IBase.IngameEvents.MilestoneEvent_Moonlanding_2_PurpleTeslaTakedown_1_Name闇のテスラ討伐
 %
 Base.AlliancePanel.Overview概要
 f
@@ -15559,6 +15969,8 @@ BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_9_Name2レベル50
 "Base.TeslaStormsPanel.CurrentStage現在のステージ
 C
 *Base.AllianceSearch.CancelApplicationTitle申請を取り消す
+:
+)Base.IngameEvents.TreasureHuntLeague_NameTreasure Hunt
 �
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_Desc{都市の中心部にある大ホール。ここでは、少量ながらコインと食料を継続的に収集できる。
 U
@@ -15670,10 +16082,10 @@ O
 'Base.ChangePasswordPopup.RepeatPassword$パスワードをもう一度入力
 '
 "Tutorial.HeroMetaReportPopup.TierFF
-'
-"Tutorial.HeroMetaReportPopup.TierEE
 a
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc'隣の建物の灌漑用水を増やす
+�	
+"Base.Units.Unit_HarunAlRashid_Desc�	The moonlit courts of Baghdad shimmer once more, for Harun al-Rashid has arrived! This 8th-century Abbasid ruler presided over the Islamic Golden Age, when Baghdad was the jewel of the world and knowledge flowed like the Tigris and Euphrates. Harun's reign is a tapestry of luxury, wisdom, and intrigue - his palace rivaled any in the world, and his generosity to the poor and learned became the stuff of legend.<br><br>Harun al-Rashid established the legendary House of Wisdom, where scholars translated Greek texts and made groundbreaking discoveries in mathematics, medicine, and astronomy. The stories say he would disguise himself as a commoner and walk Baghdad's streets at night, listening to his people's concerns and dispensing justice. His diplomatic gifts to Charlemagne, including an elephant named Abul-Abbas, became the stuff of legend. Later on he was immortalized in the tales of 'One Thousand and One Nights'.<br><br>His legacy is not one of mere extravagance: Harun's Baghdad was the beating heart of a culturally dynamic, cosmopolitan empire. Within the Heroes of History, Harun can always be found swapping riddles with Scheherazade and settling disputes with a wave of his jeweled hand.
 '
 "Tutorial.HeroMetaReportPopup.TierDD
 A
@@ -15714,6 +16126,8 @@ O
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text4_DescBやるべきことは一つ。戦って突破するしかない。
 A
 "Base.Resources.hero.AnneBonny_Nameアン・ボニーの精髄
+0
+ Base.Resources.coffee_beans_NameCoffee Beans
 F
 9Base.Technologies.Technology_FeudalAge_DomesticSheep_Name	飼育羊
 %
@@ -15816,6 +16230,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�
 3Tutorial.WonderRequestListIntroTutorial.HelpPlayers�1日に最大5回まで他のプレイヤーを<style=MC>支援</style>できる。支援することで、<style=MC>発明</style>に使える貴重な<style=MC>歯車</style>を手に入れることができるぞ！
 �
 1Base.EventPass.JourneyOfTheTitanicMoreContentText�最終チェックポイントに到達すると、すべての報酬ラインが切り替わり、イベントの旅はまだまだ続く！<br><br>メイン報酬をすべて獲得すると、次の周回から必要な進行ポイントが8から10に増加し、さらにその次の周回からは12になる。以降は12のまま進んでいく。<br><br>再び報酬を集めながら、さらなるエピックな<style=epic>遺物</style>や、もう一つのレジェンダリー遺物 、<nobr><style=legendary>アンティキティラの機械</style></nobr>を目指そう！
+�
++Base.EventType.LeaderboardEvent_DescriptionsComplete specific game actions to rise in the leaderboard and receive some special rewards at the end of the event.
 =
 *Base.Units.Unit_EarlyRome_Huns_Attila_Name血の騎士団
 `
@@ -15826,6 +16242,8 @@ $Base.IngameEvents.SeasonPass_11_Name自由の夜明け
 1Base.Questgivers.Questgiver_BenjaminFranklin_Name'ベンジャミン・フランクリン
 %
 Base.Generic.Owned所持数：{0}
+v
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_Desc<Substantially increases the irrigation of adjacent buildings
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_Nameビザンツ弩砲
 �
@@ -15875,6 +16293,8 @@ Z
 9Base.StoryText.Story_DesertDelta_7_1_BattleEnd_Text3_Descrいや、ここはスパルタだ！俺はこの地を守り、命を懸けて戦う。それが俺の運命だ！
 4
 !Base.BattleStatsPanel.BattleStatsバトル統計
+W
+Base.Event.EventConcluded:The event has concluded, yet a new chance will come along.
 N
 >Base.Technologies.Technology_MinoanEra_MysticBattleChants_Name戦闘呪文
 R
@@ -15969,8 +16389,8 @@ Q
 ABase.Buildings.Building_BronzeAge_Collectable_Amphitheatre_5_Name円形劇場
 I
 3Base.Buildings.Building_Mayas_Quarry_Premium_6_Name豪華な採掘場
-:
-/Base.Abilities.hero_battle_ability.Mjolnir_NameMjolnir
+B
+/Base.Abilities.hero_battle_ability.Mjolnir_Nameミョルニル
 N
 8Base.Technologies.Technology_IberianEra_MeadMastery_Name蜂蜜酒の熟練
 :
@@ -16039,6 +16459,8 @@ p
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text2_Descu偉大なる王とやらにはもっと期待していたのですよ。次は失望させないでくださいね。
 2
 "Base.Resources.material_naval_Name海洋素材
+�
+6Base.EventStartScreens.EventCityArabiaStartDescriptionoRaise your empire in the river valleys of the Arabian Peninsula and get the chance to win {0} exclusive heroes!
 -
 Base.Units.Unit_Achilles_Nameアキレス
 �
@@ -16137,6 +16559,8 @@ F
 Base.Ages.ClassicGreece_Decade紀元前880年
 �
 1Base.Buildings.Building_China_Home_Average_3_DescLたくさんの五銖銭を生産し、都市に労働者を5人追加する
+"
+Base.Resources.camel_NameCamel
 2
 "Base.BazaarOffersPanel.NavBarTitleバザール
 u
@@ -16155,6 +16579,8 @@ c
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_Desc!騎馬兵をアンロックする
 �
  Base.UnlockRequirementsPopup.Pvpc他のプレイヤーと戦い、闘技場ランクを上げて貴重な報酬を獲得しよう。
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_NameCarpet Maker
 8
 Base.Resources.hero.Geisha_Name吉野太夫の精髄
 L
@@ -16188,12 +16614,13 @@ I
 EBase.AbilityDescriptions.hero_battle_ability_description.Menes_1_Name�<style=ability_label>範囲攻撃・弱体化・燃焼</style>敵ユニットの最大集団に神の嵐を召喚し、<style=basestat>{range}</style>の範囲内に<style=basestat>{dmg_percentage}</style>のダメージを与える。影響を受けたユニットは<style=basestat>{duration}</style>の間、移動速度が<style=basestat>{move_speed_percentage}</style>低下し、<style=basestat>{dmg_percentage_burn}</style>の燃焼ダメージを受ける。
 �
 [Base.StoryText.Story_Questline_EventCity_Vikings_ProgressTier1_Ragnar_QuestStart_Text1_DescH順調だが、まだ始まりに過ぎん。使命は続いている。
-�
-'Base.PlayerSearch.SearchHelpDescription�Per default, the player search displays other active players that are within a similar power range as you are. Optionally, you can display players that speak any language.
+�
+'Base.PlayerSearch.SearchHelpDescription�デフォルトでは、プレイヤー検索に戦力が近いアクティブなプレイヤーが表示される。オプションで、使用言語を問わずプレイヤーを表示することもできる。
 
-When searching for players using a name, the search will show you all players whose name is similar to the search term.
+名前で検索すると、入力した文字列と似た名前のプレイヤーがすべて表示される。
 
-It is also possible to search a player by the player id, in which case the number must be prefixed with a #.
+プレイヤーIDで検索することも可能で、その場合は、番号の先頭に「#」を付ける必要がある。
+
 �
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_1_QuestStart_Text4_Desc�時間を無駄にせず、すぐにすべての箱を埋め、<style=MC>ヴァルハラ</style>をレベル１にアップグレードしてくれ！
 D
@@ -16212,10 +16639,14 @@ u
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_Desc9短期間にわたって少量の食料を生産する。
 e
 =Base.ShopPopup.SeasonalEventJourneyThroughSaharaBundlesHeader$砂漠の秘宝を発見しよう！
+W
+8Base.AllianceApplicationMessages.AllianceRejectionHeaderDecline the Application of:
 +
 !Base.UnlockableFeatures.Equipment装備
 �
 6Base.Incidents.Incident_BronzeAge_Capital_Goods_1_Desc`この地下迷路には珍しい宝物が隠されてるって話だ。探ってみようぜ！
+B
+ Base.AlliancePanel.NoInvitesSentNo Invites have been sent out.
 M
 Base.PvpEnergyPopup.Headline-闘技場トークンを手に入れよう！
 �
@@ -16317,6 +16748,10 @@ M
 7Base.Technologies.Technology_FeudalAge_HealingMead_Name回復の蜂蜜酒
 �
 <Base.Resources.event_milestone_rally_of_heroes_trophies_Descc指定タスクをクリアして、このチャレンジで挑戦ポイントを獲得しよう。
+G
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_NameIncense Maker
+$
+Base.Resources.coffee_NameCoffee
 k
 =Base.WorldWonderGeneric.WonderContributionNotAvailableAnymore*この貢献はもう利用できない。
 5
@@ -16325,6 +16760,8 @@ h
 OBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_RedTeslaTakedown_1_Name炎のテスラ討伐
 N
 DBase.Questlines.Questline_EventCity_Vikings_Provisions_Lagertha_Name食糧
+Q
+:Base.AllianceApplicationMessages.AllianceApplicationHeaderApply for Alliance:
 E
 *Base.TreasureHuntNegotiationPopup.Headline回復の祠 {0}/{1}！
 �
@@ -16357,6 +16794,8 @@ H
 5Base.Buildings.Building_EarlyRome_Home_Premium_1_Name豪華な住宅
 *
  Base.SubscriptionInfoPopup.Title詳細
+&
+Base.Event.PlayEventPlay Event Now
 0
  Base.AlliancePanel.AdmissionType募集要項
 1
@@ -16566,6 +17005,8 @@ W
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_2_QuestStart_Text1_Desc�礎はすでに築かれた。これからの段階では、より大きな挑戦が待っておるが、それに見合う報酬も手に入るであろう。
 )
 Base.PlariumPlay.ShopInfo.Title決済
+y
+)Base.EventType.MilestoneEvent_DescriptionLComplete specific game actions and earn valueable rewards on each milestone.
 .
 Base.LocalizedLocales.es_ESスペイン語
 �
@@ -16578,6 +17019,8 @@ J
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_Name仮面工房
 7
 $Base.HarborShopPanel.HarborShopLabel港ショップ
+>
+&Base.AlliancePanel.AllianceRecruitmentAlliance Recruitment
 �
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_DescI山ほどのコインを生産し、都市に労働者を2人追加する
 *
@@ -16624,8 +17067,8 @@ j
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier1_5_Name!昇進素材の選択キット１
 M
 4Base.UnitStats.unit_stat.HealGivenAmp_Percent_Abbrev与える回復量％
-Y
-FBase.IngameEvents.LeaderboardEvent_Moonlanding_2_HistoricSpoils_1_NameHistoric Spoils
+\
+FBase.IngameEvents.LeaderboardEvent_Moonlanding_2_HistoricSpoils_1_Name歴史の戦利品
 *
 Base.Resources.kaolin_Nameカオリン
 !
@@ -16811,6 +17254,8 @@ V
 Base.Generic.HoursMinutes{0:h\:mm}時間
 +
 !Base.SellBuildingPopup.SellButton売却
+s
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 5
 Base.Heroes.hero.IsabellaI_Nameイサベル１世
 P
@@ -16851,6 +17296,8 @@ a
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc'隣の建物の灌漑用水を増やす
 <
  Base.Stats.initial_cooldown_Name初期クールダウン
+E
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_NameCarpet Maker
 R
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_Name重歩兵兵舎
 N
@@ -16897,6 +17344,8 @@ K
 5Base.Buildings.Building_China_RiceFarm_Premium_6_Name豪華な米農場
 G
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_Name	漁桟橋
+d
+1Base.Buildings.Building_Arabia_Home_Medium_4_Desc/Produces Dirham and adds 2 Workers to your city
 E
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_Name	暦職人
 �
@@ -16929,6 +17378,8 @@ J
 :Base.Technologies.Technology_FeudalAge_KnightTraining_Name騎士訓練
 >
 #Base.AllianceSetDetailsPanel.Header同盟の作成 {0}/{1}
+5
+"Base.Units.Unit_HarunAlRashid_NameHarun al-Rashid
 I
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Name小さな井戸
 �
@@ -16941,6 +17392,8 @@ H
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text4_Descoこれは試練か？我々の忍耐を試しているのか、それとも何か別の意図があるのか。
 W
  Base.HeroPanel.RelicsNotUnlocked3{0}を研究して遺物をアンロックしよう
+�
+ Base.Resources.coffee_beans_DescrCoffee Beans are an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 �
 9Base.WorldWondersOverviewPanel.ContributionsEmptyListTextX仲間の世界遺産に<sprite=6>を貢献することで設計図を獲得しよう。
 _
@@ -16963,6 +17416,8 @@ R
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_Name重歩兵兵舎
 �
 1Base.Buildings.Building_Mayas_Home_Premium_3_DescY山ほどのカカオ豆を生産し、都市に労働者2人と職人1人を追加する
+V
+DBase.AllianceApplicationMessages.AllianceApplicationCharacterCounterRemaining: {0}
 ;
 Base.Units.Unit_Dracula_Nameヴラド・ドラキュラ
 �
@@ -17041,6 +17496,8 @@ A
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>踏みつけ・シールド・強化</style>強力な剣の一撃を放ち、<style=basestat>{range}</style>の範囲内にいる敵ユニットに<style=basestat>{dmg_percentage}</style>のダメージを与える。その後、自身の基礎ダメージの<style=basestat>{shield_percentage}</style>分のシールドを獲得し、防御力が<style=basestat>{duration}</style>の間<style=basestat>{def_percentage}</style>上昇する。また、<style=basestat>{range}</style>の範囲内にいる味方ユニットに、ウィリアムの基礎ダメージの<style=basestat>{shield_percentage_friendly}</style>分のシールドを付与する。
 �
 NBase.StoryText.Story_Questline_MinoanEra_BarracksUpgrade_QuestStart_Text3_Desc3お前が戦術を？一体何を知っている？
+V
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_DescProduces Coffee and Incense.
 W
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_Desc太陽の石を生産する
 5
@@ -17097,6 +17554,10 @@ DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_5_Name学校
 Base.UnitStats.unit_stat.Attack	攻撃力
 K
 5Base.Technologies.Technology_Egypt_PapyrusScroll_Nameパピルス巻物
+I
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_NameLuxurious Noria
+y
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 �
 JBase.StoryText.Story_Questline_StoneAge_CityPlanning_QuestStart_Text1_Desc�私たちの<style=MC>計画</style>、そして私の夢が、一つ一つの建物が建ち、仲間が増えるたびに、現実に近づいている気がする。
 C
@@ -17105,8 +17566,8 @@ C
 ABase.Buildings.Building_KingdomOfSicily_CultureSite_Little_1_Name極小規模な文化遺産
 H
 &Base.Alerts.NoInternetConnectionHeader接続に問題があります
-S
-CBase.IngameEvents.LeaderboardEvent_Moonlanding_2_StaminaRush_1_NameStamina Rush
+_
+CBase.IngameEvents.LeaderboardEvent_Moonlanding_2_StaminaRush_1_Nameスタミナラッシュ
 
 Base.Locales.pl_PLPolski
 L
@@ -17418,6 +17879,8 @@ v
 3Base.Technologies.Technology_IberianEra_Botany_Name	植物学
 �
 Base.Resources.lava_stone_Desc`特定のシチリア王国時代の技術を研究するために使われる貴重な宝石。
+(
+Base.Heroes.hero.Saladin_NameSaladin
 �
 hBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_DragonshipEllida_3_QuestStart_Text1_Desc�よくやった。この任務で実力が示されたが、まだやるべきことが残っている。次の挑戦へ進もう。
 J
@@ -17458,6 +17921,8 @@ B
 ;Base.TreasureHuntDifficultiesPanel.FinishPreviousDifficulty前の難易度をクリア！
 J
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_1_Name畜産農場
+o
+Base.Resources.camel_DescRCamels can be raised at Camel Farms and are needed to accept Offers at the Bazaar.
 �
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text5_Desc�共に、時を越えて響き続ける啓蒙の遺産を築き上げようぞ。そなたの<style=MC>成功</style>次第では、我々もそなたの仲間に加わることになるやもしれぬ。
 �
@@ -17521,8 +17986,8 @@ Q
 Base.Generic.ErrorEmailFormat0メールアドレスの形式が正しくない
 }
 Base.HeroClass.GreatLeader_DescZ君主は防御ヒーローで、味方を強化しチームを支えるのが得意だ。
-_
-HBase.IngameEvents.LeaderboardEvent_Moonlanding_2_SummonOfTheStars_1_NameSummon of the Stars
+X
+HBase.IngameEvents.LeaderboardEvent_Moonlanding_2_SummonOfTheStars_1_Name星の召喚
 B
 /Base.RewardTypes.RewardContainerDefinition_Name労働者生産
 4
@@ -17627,6 +18092,8 @@ A
 7Base.Technologies.Technology_ClassicGreece_Temples_Name神殿
 �
 ]Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_AbuSimbel_QuestFinish_Text1_Desc�困難な状況の中、よくぞこの大きな試練を乗り越えたな！さあ、<style=MC>アブ・シンベル</style>を最大限にアップグレードして、完成させようではないか！
+u
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 K
 5Base.Questlines.Questline_CityBuilding_MinoanEra_Name都市建築家１
 g
@@ -17659,6 +18126,8 @@ T
 Base.Relics.SkyDiscOfNebra_Nameネブラディスク
 C
 6Base.Questlines.Questline_EventCity_Egypt_GoldOre_Name	アンク
+)
+Base.IngameEvents.PvP_NameArena (PvP)
 �
 8Base.StoryText.Story_Panganea_6_9_BattleStart_Text5_Desc�テスラ様を侮辱する言葉は聞かん！剣を抜け！だが、俺は倒れんぞ。このシュメールは俺のものだ！
 b
@@ -17667,6 +18136,8 @@ Y
 7Base.ShopOffers.shop_offer.City_Conversion_Offer_1_Name時代ブーストバンドル
 �
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text5_Desc�やがて水がセノーテを満たし、大地に恵みの雨が戻る時、あなた様の名は<style=MC>石に刻まれ</style>、永く語り継がれることでしょう。その時が訪れたなら、わたくしたちも、あなた様の歩みに加わることになるかもしれません。
+E
+.Base.ShopOffers.City_Arabia_StarterPack_1_NameArabia Starter Pack
 ?
  Base.World.SpartasLastStand_Nameスパルタ最後の戦い
 �
@@ -17713,6 +18184,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc3
 #Base.RetreatWaveBattlePopup.Retreat撤退
 C
 %Base.UnlockableFeatures.BattleSpeedUpバトルスピード×1.5
+.
+Base.AlliancePanel.SentInvitesSent Invites
 �
 %Base.Resources.hero.TribalHealer_Desc�洞窟一族のナヤの覚醒レベルを上げ、より強力なバトルボーナスを解放するために使用される。
 �
@@ -17873,6 +18346,8 @@ p
 JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>嵐術・出血</style>最も近い敵ユニット3体の方向に矢を放ち、通過した経路上のすべての敵に<style=basestat>{damage}</style>のダメージを与える。さらに、最初に命中した3体のユニットに<style=basestat>{bleed_duration}</style>の間<style=basestat>{bleed_damage}</style>の出血ダメージを与える。ヒーローを優先する。
 `
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_Descカオリンを生産する
+U
+,Base.AlliancePanel.AllianceNoApplicationText%You have not applied for an alliance.
 z
 Base.Resources.ankh_Desc^アンクは加工された資源で、レベル1以上の金細工工房で生産できる。
 �
@@ -17913,8 +18388,8 @@ d
 9Base.Buildings.Building_Egypt_Irrigation_SmallWell_4_Desc'隣の建物の灌漑用水を増やす
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_32_Nameレベル32
-<
-Base.RiftGroup.eventCity_Name友好文化のポータル
+B
+Base.RiftGroup.eventCity_Name!友好文化の時空ポータル
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_2_DescN酒場では、蜂蜜から蜂蜜酒が、魚から干し魚が作られる。
 Z
@@ -17941,6 +18416,8 @@ GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Name�<styl
 #Base.UnitStats.unit_stat.CritChanceクリティカル率
 ?
 #Base.EventCity.PossibleRewardsLabel獲得できる報酬：
+B
+,Base.Resources.rift_token_arabia_common_NameArabian Antimatter
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_1_Name哲学者の館
 M
@@ -18012,6 +18489,8 @@ s
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_Desc<歩兵ユニットは前列で最も効果を発揮する。
 Z
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_Name豪華な文化遺産
+a
+1Base.AnnouncementCenter.Event_Calendar_Disclaimer,Event dates and times are subject to change.
 �
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text1_Descrアヴェ！これはどうだ？<style=MC>新たな文化</style>が挑戦に立ち向かおうとしている！
 I
@@ -18054,6 +18533,8 @@ M
 ;Base.Alerts.SingleSignOn.AccountConnectionCancelled.Message�後でアカウントを接続する場合、デバイスのシステム設定からログインする必要があるかもしれません。
 X
 'Base.AlliancePanel.AcceptInvitationDesc-{0}からの{1}への招待を承認する？
+@
+1Base.Buildings.Building_Arabia_Home_Medium_4_NameMedium Home
 F
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name小さな住宅
 �	
@@ -18181,6 +18662,8 @@ YBase.StoryText.Story_Questline_EventCity_China_ForbiddenCity_Start_QuestFinish_
 �
 )Base.ShopPopup.SeasonalEventHeroPromoDesc|イベントを加速し、昇進ヒーローを強化できる反物質を追加でゲット！報酬も栄光も2倍に！
 L
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_NameLuxurious Workshop
+L
 'Base.BoostTypes.WonderContributionBoost!世界遺産の貢献ブースト
 �
 aBase.StoryText.Story_Questline_EventCity_China_ProgressTier2_TerracottaArmy_QuestStart_Text3_Desc�新しい<style=MC>磁器工房</style>を建てて、生産を強化し、<style=MC>戦士の祭典</style>の準備を進めましょう。
@@ -18218,6 +18701,10 @@ J
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_Name蒼天の騎馬隊
 E
 #Base.QuestlinesPanel.HaveHeroesTaskヒーローを{0}人持つ。
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_NameCoffee Brewer
+(
+Base.Resources.oil_lamp_NameOil Lamp
 &
 Base.WonderTag.Arena_Name	闘技場
 5
@@ -18230,6 +18717,8 @@ U
 -Base.Resources.rift_token_legendary_part_Name$レジェンダリ反物質の欠片
 <
 ,Base.WorldWondersDetailPanel.BonusesHeadlineボーナス
+O
+6Base.Buildings.Building_Arabia_Merchant_Average_4_DescProduces Gold Dinars.
 �
 8Base.StoryText.Story_Panganea_6_1_BattleStart_Text1_Desc�この地はすっかり魂を奪われてしまったな。テスラはかつて、人々の心を高められると信じていた。
 �
