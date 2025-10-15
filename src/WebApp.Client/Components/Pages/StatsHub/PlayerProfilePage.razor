@@ -13,7 +13,7 @@
         <div class="fog-container section-container actions-container">
             <div>
                 <MudDatePicker Label="@Loc[FogResource.StatsHub_Player_CitySnapshotDate]" @bind-Date="_citySnapshotDate"
-                               Culture="@CultureInfo.DefaultThreadCurrentCulture" ShowToolbar="false"
+                               Culture="@CultureInfo.CurrentUICulture" ShowToolbar="false"
                                MinDate="@(new DateTime(2025, 7, 1))" Disabled="@_fetchingCity"
                                IsDateDisabledFunc="@((DateTime dt) => !_player.CitySnapshotDays.Contains(dt))"/>
             </div>
