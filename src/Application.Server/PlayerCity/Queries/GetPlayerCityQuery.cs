@@ -38,7 +38,7 @@ public class GetPlayerCityQueryHandler(
             return existingCity;
         }
 
-        if (request.Date.HasValue)
+        if (request.Date.HasValue && request.Date != today)
         {
             return null;
         }
