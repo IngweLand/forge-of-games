@@ -8,10 +8,10 @@ public class PlayerProfileViewModel
     public IReadOnlyCollection<StatsTimedStringValue> Ages { get; init; } = [];
     public required IReadOnlyCollection<DateTime> CitySnapshotDays { get; init; } = [];
     public AllianceViewModel? CurrentAlliance { get; init; }
+    public bool HasPvpBattles { get; init; }
     public string? Names { get; init; }
     public required PlayerViewModel Player { get; init; }
     public IReadOnlyCollection<AllianceViewModel> PreviousAlliances { get; init; } = [];
-    public IReadOnlyCollection<PvpBattleViewModel> PvpBattles { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];
     public IReadOnlyCollection<HeroProfileBasicViewModel> Squads { get; init; } = [];

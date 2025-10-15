@@ -62,10 +62,7 @@ public class StatsHubUiService : IStatsHubUiService
             return null;
         }
 
-        var heroIds = player.PvpBattles.SelectMany(b =>
-                b.WinnerUnits.Select(u => u.Hero!.UnitId).Concat(b.LoserUnits.Select(u => u.Hero!.UnitId)))
-            .Concat(player.Squads.Select(x => x.Hero.UnitId))
-            .ToHashSet();
+        var heroIds = player.Squads.Select(x => x.Hero.UnitId).ToHashSet();
         var heroes = await _coreDataCache.GetHeroes(heroIds);
         var treasureHuntDifficulties = await _coreDataViewModelsCache.GetBasicTreasureHuntDifficultiesAsync();
         var playerTreasureHuntDifficulty = player.TreasureHuntDifficulty != null

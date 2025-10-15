@@ -41,6 +41,11 @@
                     <MudText>@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
                 }
             </MudButton>
+            @if (_player.HasPvpBattles)
+            {
+                <MudButton OnClick="@NavigateToBattlesScreen" Variant="Variant.Filled" Color="Color.Primary"
+                           Disabled="@_fetchingCity">@Loc[FogResource.StatsHub_Player_PvpBattles]</MudButton>
+            }
         </div>
         @if (_player.TreasureHuntDifficulty != null)
         {
@@ -112,21 +117,6 @@
                     </SfChart>
                 }
             </div>
-
-            @if (_player.PvpBattles.Count > 0)
-            {
-                <div class="fog-container section-container">
-                    <span class="section-title">@Loc[FogResource.StatsHub_Player_PvpBattles]</span>
-                    @foreach (var battle in _player.PvpBattles)
-                    {
-                        <PvpBattleListItemComponent Battle="@battle" OnOpponentClick="OnPlayerClicked"
-                                                    OnHeroClicked="OnPvpBattleSquadClicked"
-                                                    OnBattleStatsClicked="OpenBattleStats"/>
-                    }
-                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="align-self: flex-end"
-                               OnClick="NavigateToBattlesScreen">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
-                </div>
-            }
 
             @if (_player.PvpRankingPoints.Count > 0)
             {

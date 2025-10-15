@@ -3,31 +3,17 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
-using PvpBattle = Ingweland.Fog.Models.Fog.Entities.PvpBattle;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public class PlayerProfileDtoFactory(IMapper mapper, IPlayerBattlesFactory playerBattlesFactory)
-    : IPlayerProfileDtoFactory
+public class PlayerProfileDtoFactory(IMapper mapper) : IPlayerProfileDtoFactory
 {
-    public PlayerProfileDto Create(Player player, IReadOnlyCollection<PvpBattle> pvpBattles,
-        IReadOnlyDictionary<byte[], int> existingStatsIds, IReadOnlyCollection<DateOnly> citySnapshotDays)
+    public PlayerProfileDto Create(Player player, bool hasPvpBattles, IReadOnlyCollection<DateOnly> citySnapshotDays)
     {
         var uniqueAlliances = player.AllianceHistory
             .DistinctBy(x => x.Id)
             .OrderBy(x => x.Name)
             .ToList();
-
-        var battles = pvpBattles.Select(x =>
-        {
-            int? statsId = null;
-            if (existingStatsIds.TryGetValue(x.InGameBattleId, out var value))
-            {
-                statsId = value;
-            }
-
-            return playerBattlesFactory.Create(x, statsId);
-        }).ToList();
 
         return new PlayerProfileDto
         {
@@ -37,10 +23,10 @@ public class PlayerProfileDtoFactory(IMapper mapper, IPlayerBattlesFactory playe
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
             Alliances = mapper.Map<IReadOnlyCollection<AllianceDto>>(uniqueAlliances),
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
-            PvpBattles = battles,
             TreasureHuntDifficulty = player.TreasureHuntDifficulty,
             Squads = mapper.Map<IReadOnlyCollection<ProfileSquadDto>>(player.Squads),
             CitySnapshotDays = citySnapshotDays,
+            HasPvpBattles = hasPvpBattles,
         };
     }
 

@@ -68,9 +68,6 @@ public class StatsHubViewModelsFactory(
     {
         var player = mapper.Map<PlayerViewModel>(playerProfile.Player,
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
-        var battles = playerProfile.PvpBattles
-            .Select(x => battleViewModelFactory.CreatePvpBattle(player, x, heroes, ages, barracks, relics))
-            .ToList();
         var heroesDic = heroes.ToDictionary(h => h.Unit.Id);
         var currentAlliance = playerProfile.Alliances.FirstOrDefault(a => a.Id == playerProfile.Player.AllianceId);
         var previousAlliances = playerProfile.Alliances.Where(a => a.Id != playerProfile.Player.AllianceId)
@@ -94,7 +91,6 @@ public class StatsHubViewModelsFactory(
                 : null,
             PvpRankingPoints = playerProfile.PvpRankingPoints,
             RankingPoints = playerProfile.RankingPoints,
-            PvpBattles = battles,
             TreasureHuntDifficulty = treasureHuntDifficulty,
             TreasureHuntMaxPoints = treasureHuntMaxPoints,
             Squads = playerProfile.Squads.Select(src =>
@@ -103,6 +99,7 @@ public class StatsHubViewModelsFactory(
                 return heroProfileViewModelFactory.CreateBasic(src, hero);
             }).ToList(),
             CitySnapshotDays = citySnapshotDates,
+            HasPvpBattles = playerProfile.HasPvpBattles,
         };
     }
 }

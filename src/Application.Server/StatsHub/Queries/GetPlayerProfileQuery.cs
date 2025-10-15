@@ -1,4 +1,3 @@
-using System.Globalization;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -27,7 +26,6 @@ public record GetPlayerProfileQuery : IRequest<PlayerProfileDto?>, ICacheableReq
 public class GetPlayerProfileQueryHandler(
     IFogDbContext context,
     IPlayerProfileDtoFactory playerProfileDtoFactory,
-    IBattleQueryService battleQueryService,
     IInGamePlayerService inGamePlayerService,
     IFogPlayerService playerService,
     IFogAllianceService allianceService,
@@ -61,6 +59,7 @@ public class GetPlayerProfileQueryHandler(
                 {
                     await allianceService.UpsertAlliance(newProfileResult.Value.Alliance, existingPlayer.WorldId, now);
                 }
+
                 await playerService.UpsertPlayerAsync(newProfileResult.Value, existingPlayer.WorldId);
             }
             else if (newProfileResult.HasError<PlayerNotFoundError>())
@@ -87,13 +86,9 @@ public class GetPlayerProfileQueryHandler(
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
             .Include(p => p.AllianceMembership).ThenInclude(x => x!.Alliance)
-            .Include(p =>
-                p.PvpWins.OrderByDescending(b => b.PerformedAt)
-                    .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
+            .Include(p => p.PvpWins.Take(1))
             .ThenInclude(b => b.Loser)
-            .Include(p =>
-                p.PvpLosses.OrderByDescending(b => b.PerformedAt)
-                    .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount))
+            .Include(p => p.PvpLosses.Take(1))
             .ThenInclude(b => b.Winner)
             .Include(p => p.Squads).ThenInclude(x => x.Data)
             .AsSplitQuery()
@@ -105,32 +100,23 @@ public class GetPlayerProfileQueryHandler(
                 request.PlayerId);
             return null;
         }
-        
+
         if (player.AllianceMembership != null)
         {
             appCache.Remove(cacheKeyFactory.Alliance(player.AllianceMembership.AllianceId));
         }
 
         logger.LogDebug("Processing PVP battles for player {PlayerId}", request.PlayerId);
-        var pvpBattles = player.PvpWins.Concat(player.PvpLosses)
-            .OrderByDescending(b => b.PerformedAt)
-            .Take(FogConstants.DefaultPlayerProfileDisplayedBattleCount)
-            .ToList();
-
-        logger.LogDebug("Found {BattleCount} PVP battles for player {PlayerId}", pvpBattles.Count, request.PlayerId);
-        var battleIds = pvpBattles.Select(src => src.InGameBattleId);
-        var existingStatsIds = await battleQueryService.GetExistingBattleStatsIdsAsync(battleIds, cancellationToken);
-        logger.LogDebug("Retrieved {StatsCount} battle stats IDs for player {PlayerId}", existingStatsIds.Count,
-            request.PlayerId);
+        var hasPvpBattles = player.PvpWins.Count != 0 || player.PvpLosses.Count != 0;
 
         logger.LogDebug("Retrieving city snapshot days for player {PlayerId}", player.Id);
         var citySnapshotDays = await context.PlayerCitySnapshots.Where(x => x.PlayerId == player.Id)
             .Select(x => x.CollectedAt).ToListAsync(cancellationToken);
         logger.LogDebug("Retrieved {Count} city snapshot days for player {PlayerId}", citySnapshotDays.Count,
             player.Id);
-        
+
         logger.LogDebug("Creating player profile for {PlayerId}", request.PlayerId);
-        var result = playerProfileDtoFactory.Create(player, pvpBattles, existingStatsIds, citySnapshotDays);
+        var result = playerProfileDtoFactory.Create(player, hasPvpBattles, citySnapshotDays);
         logger.LogInformation("Successfully created profile for player {PlayerId}", request.PlayerId);
         return result;
     }
