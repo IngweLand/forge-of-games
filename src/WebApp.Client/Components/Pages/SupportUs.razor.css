@@ -86,6 +86,14 @@
     display: block;
 }
 
+.h-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
 @media (min-width: 576px) {
     .container {
         padding: 16px;

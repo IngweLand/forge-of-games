@@ -2823,6 +2823,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PayPal.Me.
+        /// </summary>
+        public static string SupportUs_PayPalMe_ButtonLabel {
+            get {
+                return ResourceManager.GetString("SupportUs.PayPalMe.ButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support Forge of Games.
         /// </summary>
         public static string SupportUs_Title {

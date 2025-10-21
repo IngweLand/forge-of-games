@@ -22,9 +22,15 @@
     <div class="fog-container donation-section">
         <h4>@Loc[FogResource.SupportUs_PayPal_Title]</h4>
         <p>@Loc[FogResource.SupportUs_PayPal_Message]</p>
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary"
-                   Href="@FogUrlBuilder.PageRoutes.PAYPAL_DONATION_URL" Target="_blank"
-                   StartIcon="fa-brands fa-paypal">@Loc[FogResource.SupportUs_PayPal_ButtonLabel]</MudButton>
+        <div class="h-row">
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary"
+                       Href="@FogUrlBuilder.PageRoutes.PAYPAL_DONATION_URL" Target="_blank"
+                       StartIcon="fa-brands fa-paypal">@Loc[FogResource.SupportUs_PayPal_ButtonLabel]</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Secondary"
+                       Href="@FogUrlBuilder.PageRoutes.PAYPAL_ME_URL" Target="_blank"
+                       StartIcon="fa-brands fa-paypal">@Loc[FogResource.SupportUs_PayPalMe_ButtonLabel]</MudButton>
+        </div>
+        
     </div>
 
     <div class="fog-container donation-section">

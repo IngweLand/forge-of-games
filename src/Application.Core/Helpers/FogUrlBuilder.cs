@@ -128,6 +128,7 @@ public static class FogUrlBuilder
 
         public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
         public const string PAYPAL_DONATION_URL = "https://www.paypal.com/donate/?hosted_button_id=AT6HXM5BRZXGC";
+        public const string PAYPAL_ME_URL = "https://paypal.me/ingwelandat";
         public const string MAINTENANCE_PAGE = "/maintenance.html";
 
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
