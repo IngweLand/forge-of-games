@@ -22,8 +22,7 @@
         <ErrorBoundary>
             @if (_shouldShowAnnouncement)
             {
-                <GlobalAnnouncementComponent PersistenceKey="@PersistenceKeys.PATREON_ANNOUNCEMENT_CONSUMED"
-                                             OnAnnouncementConsumed="@(() => _shouldShowAnnouncement = false)"/>
+                <GlobalAnnouncementComponent OnAnnouncementConsumed="@(() => _shouldShowAnnouncement = false)"/>
             }
             @Body
         </ErrorBoundary>
@@ -52,13 +51,33 @@
     {
         if (OperatingSystem.IsBrowser())
         {
-            var show = !await PersistenceService
-                .GetItemAsync<bool>(PersistenceKeys.PATREON_ANNOUNCEMENT_CONSUMED);
-            if (_shouldShowAnnouncement != show)
+            var firstVisitAt = await PersistenceService.GetItemAsync<DateTime?>(PersistenceKeys.FIRST_VISIT_AT);
+            if (firstVisitAt == null)
             {
-                _shouldShowAnnouncement = show;
-                StateHasChanged();
+                await PersistenceService.SetItemAsync(PersistenceKeys.FIRST_VISIT_AT, DateTime.UtcNow);
             }
+        }
+
+        await ShowNotification();
+    }
+
+    private async Task ShowNotification()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        var now = DateTime.UtcNow;
+        var firstVisitAt = await PersistenceService.GetItemAsync<DateTime?>(PersistenceKeys.FIRST_VISIT_AT);
+        var donationNotificationReadAt = 
+            await PersistenceService.GetItemAsync<DateTime?>(PersistenceKeys.DONATION_NOTIFICATION_READ_AT);
+        var show = firstVisitAt < now.AddDays(-7) &&
+            (donationNotificationReadAt == null || donationNotificationReadAt < now.AddDays(-30));
+        if (_shouldShowAnnouncement != show)
+        {
+            _shouldShowAnnouncement = show;
+            StateHasChanged();
         }
     }
 

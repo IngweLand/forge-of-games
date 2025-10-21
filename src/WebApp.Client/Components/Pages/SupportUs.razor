@@ -10,36 +10,31 @@
     </header>
 
     <section class="fog-container benefits">
-        <h4>@Loc[FogResource.SupportUs_Why_Title]</h4>
-        <ul>
-            <li>@Loc[FogResource.SupportUs_Why_Reason1]</li>
-            <li>@Loc[FogResource.SupportUs_Why_Reason2]</li>
-            <li>@Loc[FogResource.SupportUs_Why_Reason3]</li>
-            <li>@Loc[FogResource.SupportUs_Why_Reason4]</li>
-        </ul>
+        <p> @Loc[FogResource.SupportUs_Message]</p>
     </section>
 
     <div class="fog-container donation-section">
-        <h4>@Loc[FogResource.SupportUs_PayPal_Title]</h4>
-        <p>@Loc[FogResource.SupportUs_PayPal_Message]</p>
-        <div class="h-row">
+        <h4>@Loc[FogResource.SupportUs_DonationOptions_Title]</h4>
+        <div>@Loc[FogResource.SupportUs_PayPal] (@Loc[FogResource.SupportUs_DonationOptions_OneTime], @Loc[FogResource.SupportUs_DonationOptions_Monthly])
             <MudButton Variant="Variant.Filled" Color="Color.Secondary"
                        Href="@FogUrlBuilder.PageRoutes.PAYPAL_DONATION_URL" Target="_blank"
                        StartIcon="fa-brands fa-paypal">@Loc[FogResource.SupportUs_PayPal_ButtonLabel]</MudButton>
+        </div>
+        <div>@Loc[FogResource.SupportUs_PayPal] (@Loc[FogResource.SupportUs_DonationOptions_OneTime])
             <MudButton Variant="Variant.Filled" Color="Color.Secondary"
                        Href="@FogUrlBuilder.PageRoutes.PAYPAL_ME_URL" Target="_blank"
                        StartIcon="fa-brands fa-paypal">@Loc[FogResource.SupportUs_PayPalMe_ButtonLabel]</MudButton>
         </div>
-        
-    </div>
-
-    <div class="fog-container donation-section">
-        <h4>@Loc[FogResource.SupportUs_Patreon_Title]</h4>
-        <p>@Loc[FogResource.SupportUs_Message]</p>
-        <a href="@FogUrlBuilder.PageRoutes.PATREON_URL" target="_blank">
-            <img src="@AssetUrlProvider.GetImageUrl("become_a_patron_button.png")" alt="Become a patron at Patreon!"
-                 style="height: 46px;"/>
-        </a>
+        <div>@Loc[FogResource.SupportUs_Patreon] (@Loc[FogResource.SupportUs_DonationOptions_Monthly])
+            <a href="@FogUrlBuilder.PageRoutes.PATREON_URL" target="_blank">
+                <img src="@AssetUrlProvider.GetImageUrl("become_a_patron_button.png")" alt="Become a patron at Patreon!"
+                     style="height: 46px;"/>
+            </a>
+        </div>
+        <div>@Loc[FogResource.SupportUs_LargerContributionMessage]
+            <MudIconButton Icon="@Icons.Custom.Brands.Discord" Color="Color.Inherit" Target="_blank"
+                           Href="@FogUrlBuilder.PageRoutes.FOG_DISCORD_URL"></MudIconButton>
+        </div>
     </div>
 
 

@@ -24,9 +24,13 @@
 }
 
 .donation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background: var(--fog-surface-color);
     padding: 12px;
-    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 12px;
 }
@@ -112,6 +116,7 @@
     .donation-section {
         padding: 24px;
         margin-bottom: 24px;
+        gap: 12px;
     }
 
     .benefits {

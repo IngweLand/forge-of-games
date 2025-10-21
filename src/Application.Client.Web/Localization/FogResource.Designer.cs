@@ -150,6 +150,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forge of Games needs help. I’ve been covering all costs for this project myself for almost a year. I can’t keep funding it alone — without donations, the site may have to go offline soon. If you’d like it to stay up, please consider donating..
+        /// </summary>
+        public static string Announcement_Donation {
+            get {
+                return ResourceManager.GetString("Announcement.Donation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We are on Patreon! If you&apos;ve found our project useful and want to help keep it online and evolving, your support means a lot!.
         /// </summary>
         public static string Announcement_Patreon {
@@ -2751,7 +2760,43 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you find our tools helpful, consider supporting the project with a donation..
+        ///   Looks up a localized string similar to Monthly.
+        /// </summary>
+        public static string SupportUs_DonationOptions_Monthly {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.Monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One-time.
+        /// </summary>
+        public static string SupportUs_DonationOptions_OneTime {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.OneTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donation options.
+        /// </summary>
+        public static string SupportUs_DonationOptions_Title {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you’d like to make a larger contribution, you can reach me directly on Discord..
+        /// </summary>
+        public static string SupportUs_LargerContributionMessage {
+            get {
+                return ResourceManager.GetString("SupportUs.LargerContributionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This website is a fan-made project I’ve built and funded myself for nearly a year. Unfortunately, I can’t keep paying for hosting and maintenance on my own — and without support, the site may have to go offline. If you find these tools useful, please consider donating to help cover costs and keep the project alive. Every bit helps — thank you!.
         /// </summary>
         public static string SupportUs_Message {
             get {
@@ -2787,11 +2832,29 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Patreon.
+        /// </summary>
+        public static string SupportUs_Patreon {
+            get {
+                return ResourceManager.GetString("SupportUs.Patreon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to We are on Patreon.
         /// </summary>
         public static string SupportUs_Patreon_Title {
             get {
                 return ResourceManager.GetString("SupportUs.Patreon.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PayPal.
+        /// </summary>
+        public static string SupportUs_PayPal {
+            get {
+                return ResourceManager.GetString("SupportUs.PayPal", resourceCulture);
             }
         }
         

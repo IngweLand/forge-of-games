@@ -410,8 +410,9 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
     <value>Apoya a Forge of Games</value>
 </data>
     <data name="SupportUs.Message" xml:space="preserve">
-    <value>Si encuentras útiles nuestras herramientas, considera apoyar el proyecto con una pequeña donación.</value>
-</data>
+        <value>Este sitio web es un proyecto hecho por fans que he desarrollado y financiado por mi cuenta durante casi un año. Lamentablemente, no puedo seguir pagando el alojamiento y el mantenimiento solo — y sin apoyo, el sitio podría tener que cerrarse. Si encuentras útiles estas herramientas, por favor considera hacer una donación para ayudar a cubrir los costos y mantener el proyecto con vida. ¡Cada aporte ayuda, gracias!
+</value>
+    </data>
     <data name="SupportUs.Why.Title" xml:space="preserve">
     <value>¿Por qué apoyarnos?</value>
 </data>
@@ -1092,6 +1093,27 @@ Forge of Games no está afiliado ni tiene conexión oficial con los creadores o 
 </data>
     <data name="StatsHub.Player.CitySnapshotDate" xml:space="preserve">
         <value>Fecha de la instantánea de la ciudad</value>
+    </data>
+    <data name="Announcement.Donation" xml:space="preserve">
+        <value>Forge of Games necesita ayuda. He estado cubriendo todos los costos de este proyecto por casi un año. No puedo seguir financiándolo solo — sin donaciones, el sitio podría tener que cerrarse pronto. Si te gustaría que siguiera en línea, por favor considera hacer una donación.</value>
+    </data>
+    <data name="SupportUs.DonationOptions.Title" xml:space="preserve">
+        <value>Opciones de donación</value>
+    </data>
+    <data name="SupportUs.DonationOptions.OneTime" xml:space="preserve">
+        <value>Única vez</value>
+    </data>
+    <data name="SupportUs.DonationOptions.Monthly" xml:space="preserve">
+        <value>Mensual</value>
+    </data>
+    <data name="SupportUs.PayPal" xml:space="preserve">
+        <value>PayPal</value>
+    </data>
+    <data name="SupportUs.Patreon" xml:space="preserve">
+        <value>Patreon</value>
+    </data>
+    <data name="SupportUs.LargerContributionMessage" xml:space="preserve">
+        <value>Si deseas hacer una contribución mayor, puedes contactarme directamente en Discord.</value>
     </data>
 
 </root>

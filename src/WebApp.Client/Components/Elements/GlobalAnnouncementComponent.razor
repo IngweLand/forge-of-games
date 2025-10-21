@@ -1,35 +1,26 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Constants
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 @inject IPersistenceService PersistenceService
 <div class="component-root">
-    @Loc[FogResource.Announcement_Patreon]
+    @Loc[FogResource.Announcement_Donation]
     <div class="buttons-container">
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="@FogUrlBuilder.PageRoutes.PATREON_URL"
-                   Target="_blank" OnClick="OnConsumed">@Loc[FogResource.Announcement_Patreon_OK]</MudButton>
-        <MudButton Variant="Variant.Text" OnClick="OnConsumed">@Loc[FogResource.Announcement_Patreon_Cancel]</MudButton>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="@FogUrlBuilder.PageRoutes.SUPPORT_US_PATH"
+                   OnClick="@OnConsumed">@Loc[FogResource.Common_ReadMore]</MudButton>
     </div>
 </div>
 
 @code {
 
     [Parameter]
-    [EditorRequired]
-    public required string? PersistenceKey { get; set; }
-
-    [Parameter]
     public EventCallback OnAnnouncementConsumed { get; set; }
 
     private async Task OnConsumed()
     {
-        if (string.IsNullOrWhiteSpace(PersistenceKey))
-        {
-            return;
-        }
-        
-        await PersistenceService.SetItemAsync(PersistenceKey, true);
+        await PersistenceService.SetItemAsync(PersistenceKeys.DONATION_NOTIFICATION_READ_AT, DateTime.UtcNow);
 
         await OnAnnouncementConsumed.InvokeAsync();
     }
