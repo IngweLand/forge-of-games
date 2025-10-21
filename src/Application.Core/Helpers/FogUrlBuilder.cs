@@ -127,7 +127,7 @@ public static class FogUrlBuilder
         public const string BATTLE_TEMPLATE = "/battle-log/battles/{battleId:int}";
 
         public const string PATREON_URL = "https://www.patreon.com/forgeofgames/about";
-        public const string PAYPAL_DONATION_URL = "https://www.paypal.com/donate/?hosted_button_id=ZV8BDN38JBN8E";
+        public const string PAYPAL_DONATION_URL = "https://www.paypal.com/donate/?hosted_button_id=AT6HXM5BRZXGC";
         public const string MAINTENANCE_PAGE = "/maintenance.html";
 
         public const string BASE_COMMAND_CENTER_PATH = "/command-center";
