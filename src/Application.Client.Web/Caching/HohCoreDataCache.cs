@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -15,14 +16,18 @@ public class HohCoreDataCache : IHohCoreDataCache
     private readonly Lazy<Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>>> _barracks;
     private readonly AsyncCache<UnitType, IReadOnlyCollection<BuildingDto>> _barracksCache;
     private readonly ICityService _cityService;
+    private readonly Lazy<Task<EquipmentDataDto>> _equipmentData;
+    private readonly IEquipmentService _equipmentService;
     private readonly AsyncCache<string, HeroDto> _heroesCache;
     private readonly IRelicService _relicService;
     private IReadOnlyDictionary<string, RelicDto>? _relicsCache;
 
-    public HohCoreDataCache(ICityService cityService, IUnitService unitService, IRelicService relicService)
+    public HohCoreDataCache(ICityService cityService, IUnitService unitService, IRelicService relicService,
+        IEquipmentService equipmentService)
     {
         _cityService = cityService;
         _relicService = relicService;
+        _equipmentService = equipmentService;
         _barracksCache = new AsyncCache<UnitType, IReadOnlyCollection<BuildingDto>>(async x =>
         {
             var result = await cityService.GetBarracks(x);
@@ -32,6 +37,7 @@ public class HohCoreDataCache : IHohCoreDataCache
         _barracks =
             new Lazy<Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>>>(
                 BuildBarracksByUnitMapAsync);
+        _equipmentData = new Lazy<Task<EquipmentDataDto>>(FetchEquipmentDataAsync);
     }
 
     public async Task<IReadOnlyCollection<BuildingDto>> GetBarracks(UnitType unitType)
@@ -101,6 +107,16 @@ public class HohCoreDataCache : IHohCoreDataCache
     public Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>> GetBarracksByUnitMapAsync()
     {
         return _barracks.Value;
+    }
+
+    public Task<EquipmentDataDto> GetEquipmentDataAsync()
+    {
+        return _equipmentData.Value;
+    }
+
+    private async Task<EquipmentDataDto> FetchEquipmentDataAsync()
+    {
+        return await _equipmentService.GetEquipmentData();
     }
 
     private async Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>> BuildBarracksByUnitMapAsync()

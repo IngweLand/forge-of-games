@@ -3219,6 +3219,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Most Used Equipment.
+        /// </summary>
+        public static string Unit_EquipmentInsights_Title {
+            get {
+                return ResourceManager.GetString("Unit.EquipmentInsights.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ATK.
         /// </summary>
         public static string UnitStats_AttackAbbrev {

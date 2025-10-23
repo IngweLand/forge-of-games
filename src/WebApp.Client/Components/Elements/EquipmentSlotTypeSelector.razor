@@ -1,0 +1,28 @@
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Size = MudBlazor.Size
+<div>
+    <MudToggleGroup T="EquipmentSlotType" Size="Size.Small" Value="@SelectedSlotType"
+                    ValueChanged="OnBattleTypeChanged"
+                    Class="unit-battle-type-selector" Color="Color.Secondary">
+        @foreach (var vm in SlotTypes)
+        {
+            <MudToggleItem Value="@vm.SlotType" Text="@vm.Name" Class="unit-battle-type-selector-item"/>
+        }
+    </MudToggleGroup>
+</div>
+
+@code {
+
+    [Parameter]
+    public EquipmentSlotType SelectedSlotType { get; set; }
+
+    [Parameter]
+    public EventCallback<EquipmentSlotType> OnBattleTypeChanged { get; set; }
+
+    [Parameter]
+    public IReadOnlyCollection<EquipmentSlotTypeViewModel> SlotTypes { get; set; } = [];
+    
+    
+
+}

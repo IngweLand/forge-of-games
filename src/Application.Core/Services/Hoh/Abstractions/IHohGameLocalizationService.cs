@@ -25,4 +25,8 @@ public interface IHohGameLocalizationService
     string GetUnitName(string name);
     string GetUnitType(UnitType unitType);
     string GetWonderName(string id);
+    string GetEquipmentSlotTypeName(EquipmentSlotType slotType);
+    string GetStatAttributeAbbreviation(StatAttribute statAttribute);
+    string GetStatAttributeName(StatAttribute statAttribute);
+    string GetEquipmentSetName(EquipmentSet set);
 }

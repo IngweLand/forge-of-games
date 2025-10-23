@@ -104,7 +104,7 @@ public static class DependencyInjection
         services.AddScoped<ITreasureHuntUiService, TreasureHuntUiService>();
         services.AddScoped<ICityUiService, CityUiService>();
         services.AddScoped<ICampaignDifficultyIconUrlProvider, CampaignDifficultyIconUrlProvider>();
-        services.AddScoped<ICcEquipmentUiService, CcEquipmentUiService>();
+        services.AddScoped<IEquipmentUiService, EquipmentUiService>();
         services.AddScoped<IEquipmentSlotTypeIconUrlProvider, EquipmentSlotTypeIconUrlProvider>();
         services.AddScoped<IWorkerIconUrlProvider, WorkerIconUrlProvider>();
         services.AddScoped<ICityMapBuildingGroupViewModelFactory, CityMapBuildingGroupViewModelFactory>();
@@ -131,6 +131,7 @@ public static class DependencyInjection
         services.AddScoped<IHohCoreDataViewModelsCache, HohCoreDataViewModelsCache>();
         services.AddScoped<IAllianceMemberRoleIconUrlProvider, AllianceMemberRoleIconUrlProvider>();
         services.AddScoped<IAlliancePageAnalyticsService, AlliancePageAnalyticsService>();
+        services.AddScoped<IEquipmentInsightsViewModelFactory, EquipmentInsightsViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

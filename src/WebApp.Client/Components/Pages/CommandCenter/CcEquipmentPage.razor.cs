@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.AspNetCore.Components;
@@ -13,7 +14,7 @@ public partial class CcEquipmentPage : CommandCenterPageBase
     private IReadOnlyCollection<EquipmentItemViewModel>? _equipment;
 
     [Inject]
-    private ICcEquipmentUiService EquipmentUiService { get; set; }
+    private IEquipmentUiService EquipmentUiService { get; set; }
 
     protected override async Task HandleOnInitializedAsync()
     {

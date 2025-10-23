@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.CommandCenter.Commands;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers.Interfaces;
@@ -149,8 +150,16 @@ public static class HohApi
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_DATA, GetEquipmentDataAsync);
 
         return api;
+    }
+
+    private static async Task<Ok<EquipmentDataDto>>
+        GetEquipmentDataAsync([AsParameters] StatsServices services, HttpContext context, CancellationToken ct)
+    {
+        var result = await services.EquipmentService.GetEquipmentData(ct);
+        return TypedResults.Ok(result);
     }
 
     private static async Task<Results<Ok<WikipediaResponseDto>, NotFound, BadRequest<string>>>

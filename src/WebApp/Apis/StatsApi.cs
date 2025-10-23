@@ -39,6 +39,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH, SearchUserBattlesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_INSIGHTS_TEMPLATE, GetEquipmentInsightsAsync);
 
         return api;
     }
@@ -128,6 +129,14 @@ public static class StatsApi
             return TypedResults.NotFound();
         }
 
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Ok<IReadOnlyCollection<EquipmentInsightsDto>>>
+        GetEquipmentInsightsAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
+            CancellationToken ct)
+    {
+        var result = await services.EquipmentService.GetInsightsAsync(unitId, ct);
         return TypedResults.Ok(result);
     }
 

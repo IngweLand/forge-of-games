@@ -54,6 +54,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IWikipediaService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IBattleService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<ICityPlannerService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IEquipmentService>(services, baseAddress, refitJsonSettings);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,

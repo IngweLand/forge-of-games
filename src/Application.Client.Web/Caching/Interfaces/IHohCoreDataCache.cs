@@ -1,4 +1,5 @@
 using Ingweland.Fog.Dtos.Hoh.City;
+using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -13,6 +14,7 @@ public interface IHohCoreDataCache
     Task AddBarracksAsync(IEnumerable<BuildingDto> barracks);
     Task AddHeroesAsync(IEnumerable<HeroDto> heroes);
     IReadOnlyDictionary<string, HeroDto> GetAllHeroes();
+    Task<EquipmentDataDto> GetEquipmentDataAsync();
 
     IReadOnlyDictionary<UnitType, IReadOnlyCollection<BuildingDto>> GetAllBarracks();
     Task<IReadOnlyDictionary<(string unitId, int unitLevel), BuildingDto>> GetBarracksByUnitMapAsync();

@@ -96,6 +96,8 @@ public enum HohLocalizationCategory
     EventShop,
     EvolvingBuildingInfoPopup,
     EvolvingBuildingTeaserPopup,
+    EquipmentSets,
+    EquipmentSlotNames,
     ExpandMode,
     ExpansionPopup,
     Expansions,

@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.Battle.Queries;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
+using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 
 namespace Ingweland.Fog.Application.Server.Factories;
@@ -58,6 +59,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayerProfileQuery q => $"PlayerProfile:{q.PlayerId}",
             GetPlayerQuery q => Player(q.PlayerId),
             GetTopHeroesQuery q => $"TopHeroes:{q.Mode}:{q.AgeId}:{q.FromLevel}:{q.ToLevel}",
+            GetEquipmentInsightsQuery q => $"EquipmentInsights:{q.UnitId}",
+            GetEquipmentDataQuery _ => $"EquipmentData:{CultureInfo.CurrentCulture.Name}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

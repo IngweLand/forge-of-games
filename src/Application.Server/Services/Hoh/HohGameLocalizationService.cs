@@ -54,6 +54,41 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? id;
     }
 
+    public string GetEquipmentSlotTypeName(EquipmentSlotType slotType)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.EquipmentSlotNames, slotType.ToString());
+        return GetValue(key) ?? slotType.ToString();
+    }
+
+    public string GetStatAttributeAbbreviation(StatAttribute statAttribute)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.UnitStats, HohLocalizationProperty.Abbrev,
+            $"unit_stat.{statAttribute}");
+        return GetValue(key) ?? statAttribute.ToString();
+    }
+
+    public string GetStatAttributeName(StatAttribute statAttribute)
+    {
+        var suffixLenght = "Bonus".Length;
+        var s = statAttribute switch
+        {
+            StatAttribute.AttackBonus or StatAttribute.BaseDamageBonus or StatAttribute.DefenseBonus
+                or StatAttribute.MaxHitPointsBonus => statAttribute.ToString()[..^suffixLenght],
+            _ => statAttribute.ToString(),
+        };
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.UnitStats, $"unit_stat.{s}");
+        return GetValue(key) ?? s;
+    }
+
+    public string GetEquipmentSetName(EquipmentSet set)
+    {
+        var s = set.ToString();
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.EquipmentSets,
+            HohLocalizationProperty.Name,
+            $"equipment_set.{s}");
+        return GetValue(key) ?? s;
+    }
+
     public string GetHeroName(string id)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Heroes, HohLocalizationProperty.Name,

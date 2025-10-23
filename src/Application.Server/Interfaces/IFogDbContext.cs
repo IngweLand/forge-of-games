@@ -18,5 +18,7 @@ public interface IFogDbContext
     DbSet<PvpBattle> PvpBattles { get; set; }
     DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }
     DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }
+    DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
+    DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

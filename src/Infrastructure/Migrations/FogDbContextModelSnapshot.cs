@@ -417,6 +417,68 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.ToTable("battle_units", (string)null);
                 });
 
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EquipmentInsightsEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("EquipmentSets")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EquipmentSlotType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("FromLevel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MainAttributes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubAttributesLevel12")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubAttributesLevel16")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubAttributesLevel4")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubAttributesLevel8")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ToLevel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UnitId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EquipmentSlotType");
+
+                    b.HasIndex("FromLevel");
+
+                    b.HasIndex("ToLevel");
+
+                    b.HasIndex("UnitId");
+
+                    b.HasIndex("UnitId", "EquipmentSlotType", "FromLevel", "ToLevel")
+                        .IsUnique();
+
+                    b.ToTable("equipment_insights", (string)null);
+                });
+
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
                 {
                     b.Property<int>("Id")

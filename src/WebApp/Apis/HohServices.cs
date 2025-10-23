@@ -25,13 +25,16 @@ public class HohServices(
     IWikipediaService wikipediaService,
     IRelicService relicService,
     ICommandCenterSharingService commandCenterSharingService,
+    IEquipmentService equipmentService,
     IMediator mediator)
 {
     public ICampaignService CampaignService { get; } = campaignService;
     public ICityService CityService { get; } = cityService;
     public ICommandCenterProfileRepository CommandCenterProfileRepository { get; } = commandCenterProfileRepository;
     public ICommandCenterService CommandCenterService { get; } = commandCenterService;
+    public ICommandCenterSharingService CommandCenterSharingService { get; } = commandCenterSharingService;
     public ICommonService CommonService { get; } = commonService;
+    public IEquipmentService EquipmentService { get; } = equipmentService;
 
     public IHohCityRepository HohCityRepository { get; } = hohCityRepository;
 
@@ -42,10 +45,9 @@ public class HohServices(
         inGameStartupDataRepository;
 
     public ILogger<HohServices> Logger { get; } = logger;
+    public IMediator Mediator { get; } = mediator;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;
     public IRelicService RelicService { get; } = relicService;
-    public ICommandCenterSharingService CommandCenterSharingService { get; } = commandCenterSharingService;
-    public IMediator Mediator { get; } = mediator;
     public IResearchService ResearchService { get; } = researchService;
     public ITreasureHuntService TreasureHuntService { get; } = treasureHuntService;
     public IUnitService UnitService { get; } = unitService;

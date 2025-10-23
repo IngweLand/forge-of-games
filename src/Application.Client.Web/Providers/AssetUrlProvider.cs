@@ -46,6 +46,18 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
     public string GetHohUnitImageUrl(string assetId)
         => GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}_fullbody.png");
 
+    public string GetHohStatAttributeIconUrl(StatAttribute statAttribute)
+    {
+        var suffixLenght = "Bonus".Length;
+        return statAttribute switch
+        {
+            StatAttribute.AttackBonus or StatAttribute.BaseDamageBonus or StatAttribute.DefenseBonus
+                or StatAttribute.MaxHitPointsBonus => GetAssetUrl(assetsSettings.Value.HohIconsPath,
+                    $"icon_unit_stat_{statAttribute.ToString()[..^suffixLenght]}_percent.png"),
+            _ => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{statAttribute}.png")
+        };
+    }
+
     public string GetHohUnitVideoUrl(string assetId, string extension)
         => GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}{extension}");
 

@@ -4,4 +4,5 @@ public enum HohLocalizationProperty
 {
     Name,
     Desc,
+    Abbrev,
 }

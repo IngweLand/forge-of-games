@@ -64,6 +64,8 @@ public static class FogUrlBuilder
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
         
         public const string COMMAND_CENTER_SHARED_SUBMISSION_ID = "/commandCenter/sharedSubmissionId";
+        public const string EQUIPMENT_INSIGHTS_TEMPLATE = "/equipment/insights/{unitId}";
+        public const string EQUIPMENT_DATA = "/equipment/data";
     }
 
     public static class PageRoutes
