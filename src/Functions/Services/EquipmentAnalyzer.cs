@@ -21,8 +21,6 @@ public class EquipmentAnalyzer(IFogDbContext context, ILogger<IEquipmentAnalyzer
 
     public async Task Analyze()
     {
-        await context.EquipmentInsights.ExecuteDeleteAsync();
-        
         var mainAttributes = new List<EquipmentStatItem>();
         var i = 0;
         await foreach (var squad in context.ProfileSquadDataItems.AsAsyncEnumerable())
@@ -57,6 +55,8 @@ public class EquipmentAnalyzer(IFogDbContext context, ILogger<IEquipmentAnalyzer
         }
 
         logger.LogInformation("Finished getting squads");
+        
+        await context.EquipmentInsights.ExecuteDeleteAsync();
         
         var mainGroupsBySlot = mainAttributes.GroupBy(x => (x.UnitId, x.SlotType));
 
