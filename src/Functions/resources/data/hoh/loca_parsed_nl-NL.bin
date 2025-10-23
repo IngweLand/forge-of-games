@@ -42,12 +42,12 @@ FBase.AllianceTechnologies.alliance_technology.productionQuarter_2_NameLevel 2
 'Base.AlliancePanel.AllianceApplicationsAlliantieaanvragen
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_30_NameLevel 30
+b
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_NameTrofee PuntTrofee Punten
 ô
 9Base.TreasureHuntCheckpointsPanel.RequirementsInformation,Voltooi nog {0} ontmoeting om deel te nemen..Voltooi nog {0} ontmoetingen om deel te nemen.
-c
-DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_NameTrophy PointTrophy Points
-8
--Base.UnitStats.unit_stat.Focus_Percent_AbbrevFOCUS %
+@
+-Base.UnitStats.unit_stat.Focus_Percent_AbbrevEERSTE AANVAL %
 C
 $Base.BuildingInfoPanel.BeingUpgradedUpgraden naar {0} level {1}
 6
@@ -149,8 +149,9 @@ X
 EBase.StoryText.Story_Event_JourneyOfTheTitanic_1_EventOpen_Text1_NameAlbert Einstein
 ;
 !Base.Generic.ErrorNotAllowedCharsBevat ongeldige tekens
-Y
-5Base.UnitStats.unit_stat.SingleTargetDamageAmp_Abbrev EIGENSCHAP SCHADE AAN √â√âN DOEL
+C
+5Base.UnitStats.unit_stat.SingleTargetDamageAmp_Abbrev
+ENKELE DMG
 p
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_NameDame Zes Hemel
 ó
@@ -167,8 +168,8 @@ j
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier2_1_Name!Ascenion Materiaal Selectiekit II
 j
 ,Base.EquipmentUnequipPanel.UnequipCostsLabel:Uitrusten voor <sprite="InlineIcons" name="{0}_small"> {1}
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_6_DescProduces Gold Dinars.
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_6_DescMaakt gouden dinars.
 E
 9Base.Technologies.Technology_EarlyGothicEra_Mangonel_NameMangonel
 `
@@ -336,10 +337,10 @@ v
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text4_Desc7Einstein, je gaat met mij mee! Geef hem over, Hercules!
 H
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_NameMedebrouwerij
+E
+%Base.Resources.hero.Scheherazade_NameDe essentie van Scheherazade
 @
 )Base.Heroes.hero.FlorenceNightingale_NameFlorence Nachtegaal
-@
-%Base.Resources.hero.Scheherazade_NameEssence of Scheherazade
 Ω
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_DesckHet voorkwam waarschijnlijk dat de kapitein de ijsbergen kon ontwijken die ze anders zouden hebben geraakt.
 Ü
@@ -480,8 +481,8 @@ K
 Base.RewardPanel.Blueprint	Blauwdruk
 J
 'Base.EquipmentUnequipPanel.UnequipTitleUitrust de volgende apparatuur:
-á
-Base.Resources.myrrh_DescjMyrrh is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+è
+Base.Resources.myrrh_DescrMirre is een belangrijk ingredi√´nt dat je nodig hebt om betere spullen te maken. Je kunt het op de Bazaar ruilen.
 p
 /Base.Units.Unit_TreasureHunt_Red_Marauders_Desc=Infanterie-eenheden zijn het effectiefst in de voorste rijen.
 {
@@ -534,7 +535,7 @@ G
 G
 5Base.Buildings.Building_MinoanEra_Farm_Premium_1_NameLuxe boerderij
 ø
-HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_NameÚ<style=ability_label>Bereik Bereik</style>Yi Sun-sin roept zijn legendarische vloot op en lanceert een spervuur van drie krachtige kanonskogels op de vijandelijke held met de laagste gezondheid. De eerste twee kanonskogels richten <style=basestat>{dmg_percentage}</style> schade aan. De laatste kanonskogel richt <style=basestat>{final_dmg_percentage}</style> schade aan en brengt ook schade toe aan Helden voor een extra <style=basestat>{missing_hp_percentage}</style> van hun Mislukte gezondheid.
+HBase.AbilityDescriptions.hero_battle_ability_description.YiSunSin_1_NameÚ<style=ability_label>Bereik Bereik</style>Yi Sun-sin roept zijn legendarische vloot op en lanceert een spervuur van drie krachtige kanonskogels op de vijandelijke held met de laagste gezondheid. De eerste twee kanonskogels richten <style=basestat>{dmg_percentage}</style> schade aan. De laatste kanonskogel richt <style=basestat>{final_dmg_percentage}</style> schade aan en brengt ook schade toe aan Helden voor een extra <style=basestat>{missing_hp_percentage}</style> van hun missende gezondheid.
 Q
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_1_NameBelegeringskazernes
 5
@@ -573,8 +574,8 @@ L
 7Base.Incidents.Incident_RomanEmpire_Capital_Boar_1_DescfEen wild zwijn bewaakt de schat, verborgen in de boomstam. Stuur meer arbeiders om je ermee te helpen!
 M
 :Base.Questlines.Questline_StoneAge_BuildingACommunity_NameEen samenleving
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_6_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+m
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_Desc3Produceert koffie, wierook, olielampen en tapijten.
 <
 #Base.Regions.region.Panganea_2_NameSchedelkrakers Domein
 ≥
@@ -635,12 +636,12 @@ W
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduceert Rituele Dolken
 b
 'Base.BuildingGroups.compactCulture_NameCompacte culturele locatieCompacte culturele locaties
+=
++Base.Wonders.Wonder_Arabia_CityOfBrass_NameStad van koper
 O
 'Base.AllianceCityManagementPopup.Header$Je alliantie is momenteel bezig met:
 >
 'Base.HeroPanel.FocusAbilityChargeHeaderEigenschap Opladen:
-<
-+Base.Wonders.Wonder_Arabia_CityOfBrass_NameCity of Brass
 C
 (Base.Rewards.Reward_Food_Coins_XS_1_NameVoedsel & Munten bundel
 V
@@ -798,10 +799,10 @@ E
 4Base.Buildings.Building_IberianEra_Home_Small_1_NameKleine woning
 L
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_NameCavaleriekazerne
+L
+2Base.ShopOffers.shop_offer.Diy_Roster_Offer_1_NameJe heldenrooster-boost
 H
 8Base.Technologies.Technology_FeudalAge_RunicWriting_NameRunenschrift
-L
-2Base.ShopOffers.shop_offer.Diy_Roster_Offer_1_NameYour Hero-Roster-Boost
 ‹
  Base.Regions.SiegeOfOrleans_Desc∑Het is mei 1429, het eenennegentigste jaar van de Honderdjarige Oorlog. English zijn Frankrijk binnengedrongen en zes maanden geleden bereikten ze Orl√©ans, een ommuurde stad aan de oevers van de rivier de Loire. Om de Engelse aanval door te laten gaan, moet de stad vallen. Dus bouwt de vijand al zes maanden aan versterkingen terwijl kanonnen 's nachts bulderen. Voedsel is al zes maanden schaars. Al zes maanden is er geen hoop meer.<br><br>Jeanne d'Arc had hen moeten redden. In onze wereld trok de heilige strijder met opgeheven vaandel en hoofd Orl√©ans binnen en bracht voedsel, veiligheid en hoop. Maar hier is ze nooit aangekomen. De stad loopt op haar laatste benen en het is aan de Helden van de Geschiedenis om de stad zonder haar te redden. De mensen zijn er klaar voor, maar de English komen eraan. Er moet een laatste strijd worden geleverd, een strijd om Orl√©ans te redden, een strijd om Frankrijk haar vrijheid terug te laten winnen.
 t
@@ -1054,16 +1055,16 @@ J
 B
 4Base.Buildings.Building_Vikings_City_CityHall_1_Name
 Grote zaal
-é
-Base.Resources.carpet_DescpCarpets are a refined resource. They can be produced at Carpet Makers and Luxurious Workshops - Level 4 upwards.
+ä
+Base.Resources.carpet_DesclTapijten zijn een chique grondstof. Ze worden geproduceerd bij tapijtmakers en luxe ateliers vanaf niveau 4.
 N
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameLandelijke boerderij
 ì
 KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name√<style=ability_label>Ability Block | Counter</style>Nostradamus voorspelt wanneer een vijand een eigenschap gaat gebruiken. De volgende keer dat een vijand een eigenschap gebruikt, krijgt hij <style=basestat>{damage}</style> schade en wordt zijn eigenschap geblokkeerd voor <style=basestat>{ability_block_duration}</style>.
+D
+/Base.Abilities.hero_battle_ability.Saladin_NameFort van snelheid
 >
 .Base.SpartasLastStandInfoPopup.UpperLaneHeaderBovenste rij
-D
-/Base.Abilities.hero_battle_ability.Saladin_NameFortress of Speed
 >
 &Base.AccountConfirmationPopup.HeadlineControleer je e-mail
 r
@@ -1101,8 +1102,10 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameMino√Ø
 Base.Units.Unit_Hoplit_DescÒNike. Miltiades, de strategische Atheense generaal uit de 5e eeuw voor Christus, staat bekend om zijn leiderschap in de Gevecht bij Marathon.<br><br>Als briljant tacticus leidde Miltiades de Atheense troepen naar een beslissende overwinning op het grotere Perzische leger. Dit was van cruciaal belang om de invasie van Griekenland te voorkomen en was een keerpunt in de oorlog.<br><br>Later in zijn leven leidde Miltiades een invasie op zee, maar hij verkoos wraak boven het opvolgen van bevelen. Ondanks de mislukking van deze invasie en zijn daaropvolgende schande, wordt Miltiades herinnerd als een wijs en sluw staatsman.
 C
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_NameFontein
-é	
-Base.Units.Unit_Saladin_DescÌStand tall as a lion of justice with Saladin, Sultan of Egypt and Syria! This 12th-century Kurdish leader is famed for his unmatched chivalry and his pivotal role during the Crusades. Rising from humble beginnings, Saladin united the fractured Muslim world and reclaimed Jerusalem.<br><br>At the Battle of Hattin in 1187, Saladin's tactical brilliance shattered the Crusader army, leading to the recapture of Jerusalem after 88 years of Christian rule. Yet it was his mercy that truly made him legendary - he allowed the city's Christian inhabitants to leave peacefully, and when King Richard the Lionheart's horse was killed in battle, Saladin sent him two replacements.<br><br>Saladin's clever tactics defeated some of the greatest knights and kings Europe could muster, while his fame for mercy and wisdom rivaled his prowess in battle. He rebuilt fortresses, sponsored learning, and ensured the prosperity of his lands even amid war. To this day, Saladin is remembered across the world as a paragon of leadership and virtue; his campaigns changed history and his title, al-Malik an-Nasir (the Victorious King), speaks for itself.
+‰
+
+Base.Units.Unit_Saladin_Desc√
+Sta sterk als een leeuw van gerechtigheid met Saladin, sultan van Egypte en Syri√´! Deze Koerdische leider uit de 12e eeuw staat bekend om zijn onge√´venaarde ridderlijkheid en zijn belangrijke rol tijdens de kruistochten. Saladin kwam uit een bescheiden milieu, maar wist de verdeelde moslimwereld te verenigen en Jeruzalem te heroveren.<br><br>Tijdens de Slag bij Hattin in 1187 verpletterde Saladins tactische briljantheid het kruisvaardersleger, wat leidde tot de herovering van Jeruzalem na 88 jaar christelijk bewind. Maar het was zijn barmhartigheid die hem echt legendarisch maakte: hij liet de christelijke inwoners van de stad vreedzaam vertrekken en toen het paard van koning Richard Leeuwenhart in de strijd werd gedood, stuurde Saladin hem twee vervangende paarden.<br><br>Saladins slimme tactieken versloegen enkele van de grootste ridders en koningen die Europa kon verzamelen, terwijl zijn faam vanwege zijn barmhartigheid en wijsheid wedijverde met zijn dapperheid in de strijd. Hij herbouwde forten, sponsorde onderwijs en zorgde zelfs tijdens de oorlog voor de voorspoed van zijn land. Tot op de dag van vandaag wordt Saladin over de hele wereld herinnerd als een toonbeeld van leiderschap en deugdzaamheid; zijn campagnes veranderden de geschiedenis en zijn titel, al-Malik an-Nasir (de zegevierende koning), spreekt voor zich.
 ∏
 LBase.StoryText.Story_Questline_EventCity_Egypt_GoldOre_QuestStart_Text1_DeschAnkhs zijn essentieel, en ze worden gemaakt van gouderts. Laten we die mijnen en een goudsmid opstarten!
 ä
@@ -1151,16 +1154,16 @@ C
 8Base.Technologies.Technology_FeudalAge_Transhumance_NameVeetrek
 A
 &Base.Regions.region.DesertDelta_4_NameOorlogsgetijsterde Beek
-3
-)Base.Cities.City_Arabia_NoriasOfHama_NameArabia
+4
+)Base.Cities.City_Arabia_NoriasOfHama_NameArabi√´
 ô
 1Base.HistoricBattlePanel.InventoryFullDescriptiondJe hebt geen ruimte meer in je inventaris, verkoop uitrusting om een historisch gevecht te beginnen.
 —
 "Tutorial.EmbersTutorial.EmbersInfo™Baldr's helderheid! Je hebt mijn <style=MC>oven</style> gebouwd! Verzameld wat <style=MC>EMBERS</style> en we kunnen ze gebruiken om <style=MC>LEVEL UP EQUIPMENT!</style>
 Y
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_DescProduceert Vooroudermaskers
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_Desc.Increases the irrigation of adjacent buildings
+i
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 C
 ,Base.Wonders.Wonder_Egypt_CheopsPyramid_NamePiramide van Cheops
 I
@@ -1198,12 +1201,10 @@ l
 1Base.Buildings.Building_China_Home_Premium_6_NameLuxe woning
 K
 0Base.AllianceCityIncidentIntroductionPanel.TitleBandieten achtervolging
-.
-%Base.UnitStats.unit_stat.Focus_AbbrevFOCUS
+6
+%Base.UnitStats.unit_stat.Focus_AbbrevEERSTE AANVAL
 ◊
 Base.RPSInfoPopup.YellowUnitsµ<color=#D7940E><uppercase>Gele eenheden</uppercase></color> geven {0} schade aan <color=#7C3BE3>Paarse eenheden</color> en {1}<nobr> schade aan <color=#D7940E>Gele eenheden</color>.
-f
-HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NamePrimitief irrigatienetwerk
 P
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_DescProduceert veel voedsel.
 Ö
@@ -1222,8 +1223,8 @@ _
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text3_NameAmelia Earhart
 &
 Base.AllianceBlimps.BuildingGebouw
-\
-6Base.Buildings.Building_Arabia_Merchant_Average_3_Desc"Produceert een grote stapel dirham
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_3_DescMaakt gouden dinars.
 Z
 IBase.CustomizationCollections.CustomizationCollection_TreasureHunt_1_NameSchattenjacht
 -
@@ -1309,8 +1310,6 @@ A
 Base.BattleResultPanel.LastWaveLaatste golf
 P
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_2_NameMiddelgrote woning
-F
-"Base.Rifts.rift.CommonSpecial_Name Legenda Bonanza voor nieuwkomers
 B
 *Base.HarborShopPanel.TreasureHunt.ShopNameSchattenjacht Winkel
 ‚
@@ -1335,7 +1334,7 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescDIk denk 
 (
 Base.Ages.RomanEmpire_Start	50 v.Chr.
 6
-!Base.BazaarOffersPanel.LockedSlotResearch Required
+!Base.BazaarOffersPanel.LockedSlotOnderzoek vereist
 Ä
 ?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate=De speler heeft een uitnodiging die nog niet is geaccepteerd.
 
@@ -1508,7 +1507,7 @@ CBase.Technologies.Technology_AgeOfTheFranks_UrbanCombatProwess_NameStedelijke
 ;
 %Base.Heroes.hero.NubianMercenary_NameKandake van Nubi√´
 |
-Base.Mailbox.RemovalCopy`Sorry, you have been removed from the Alliance {} by {}. Find an Alliance that suits you better!
+Base.Mailbox.RemovalCopy`Sorry, je bent door {} uit de alliantie {} verwijderd. Zoek een alliantie die beter bij je past!
 ß
 3Base.QuestlinesPanel.HaveSpecificBuildingInCityTask7Bezit <b>{0} {1}</b> op level <b>{2}</b> in <b>{3}</b>.7Bezit <b>{0} {1}</b> op level <b>{2}</b> in <b>{3}</b>.
 b
@@ -1537,8 +1536,10 @@ JBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestFinish_Text2_DesceHet
 [Base.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_Tikal_3_QuestStart_Text1_DescàUitzonderlijk! Je vermogen om uit te blinken in deze missie is bewezen! Er liggen echter nog taken voor ons. Laten we ze snel aanpakken!
 |
 *Base.PvpFightPanel.PaidRefreshPopupMessageNWil je deze lijst vernieuwen om een nieuwe selectie van vijanden te ontvangen?
-∞	
-Base.Units.Unit_Kiviuq_Descê	Journey across the frozen seas and through impossible trials with Kiviuq, the eternal wanderer of Inuit legend! This mythical hero has traveled for centuries, if not millennia, across the Arctic, facing spirits, shamans, and the very forces of nature itself. His odyssey began when he was set adrift as a young man, and since then, his kayak has carried him through adventures that would break lesser mortals.<br><br>Kiviuq's tales are as numerous as the stars in the northern sky. He has escaped from murderous spirits, married the daughter of the Moon, and outwitted cannibalistic giants. In one story, he transforms into various animals to escape danger; in another, he rescues his community from starvation by finding new hunting grounds across impossible distances. His journey is eternal - some say he still paddles the Arctic waters, searching for his way home.<br><br>To the Inuit peoples across the Arctic, from Alaska to Greenland, Kiviuq represents resilience, cleverness, and the indomitable human spirit. His stories have been told in igloos and qaggiq for countless generations, teaching survival, morality, and hope in the harshest environment on Earth.
+∑
+
+Base.Units.Unit_Kiviuq_Descó
+Reis over de bevroren zee√´n en door onmogelijke beproevingen met Kiviuq, de eeuwige zwerver uit de Inuit-legenda! Deze mythische held reist al eeuwen, zo niet millennia, door het Noordpoolgebied, waar hij te maken krijgt met geesten, sjamanen en de krachten van de natuur zelf. Zijn odyssee begon toen hij als jonge man op drift raakte, en sindsdien heeft zijn kajak hem door avonturen gevoerd die minder sterke mensen zouden breken.<br><br>De verhalen over Kiviuq zijn net zo talrijk als de sterren aan de noordelijke hemel. Hij is ontsnapt aan moordzuchtige geesten, trouwde met de dochter van de maan en was slimmer dan kannibalistische reuzen. In √©√©n verhaal verandert hij in verschillende dieren om aan gevaar te ontsnappen; in een ander redt hij zijn gemeenschap van de hongerdood door nieuwe jachtgebieden te vinden op onmogelijke afstanden. Zijn reis is eeuwigdurend - sommigen zeggen dat hij nog steeds door de wateren van het Noordpoolgebied peddelt, op zoek naar de weg naar huis.<br><br>Voor de Inuit-volkeren in het Noordpoolgebied, van Alaska tot Groenland, staat Kiviuq voor veerkracht, slimheid en de onverzettelijke menselijke geest. Zijn verhalen worden al generaties lang verteld in iglo's en qaggiq, en leren over overleven, moraliteit en hoop in de meest barre omgeving op aarde.
 [
 $Base.ExpansionPopup.ProgressOnWonder3Speel uitbreidingen vrij door je wonder te upgraden
 S
@@ -1599,8 +1600,8 @@ o
 0Base.Buildings.Building_Mayas_Home_Priest_4_Desc;Produceert cacao en voegt 2 ambachtslieden toe aan je stad.
 ;
 %Base.Units.Unit_ThomasAlvaEdison_NameThomas Alva Edison
-;
-*Base.UnitStats.unit_stat.FocusRegen_AbbrevFOCUS HERSTEL
+>
+*Base.UnitStats.unit_stat.FocusRegen_AbbrevReguliere Aanval
 F
 :Base.Technologies.Technology_EarlyGothicEra_LeadGlass_NameLoodglas
 =
@@ -1693,8 +1694,8 @@ K
 ,Base.UnitStats.unit_stat.AttackSpeed_PercentAanvalsnelheid %
 5
 &Base.OptionsPopup.KeyboardShortcutsTabSneltoetsen
-Å
-"Base.Mailbox.ApplicationDeniedCopy[Sorry, {} has denied your application to the Alliance {}. Try applying to another Alliance!
+ç
+"Base.Mailbox.ApplicationDeniedCopygSorry, {} heeft je sollicitatie op de Alliantie {} afgewezen. Probeer het eens op een andere Alliantie!
 d
 1Base.QuestlinesPanel.SolveIncidentsTaskNoIncident/Kom later terug om meer incidenten op te lossen
 |
@@ -1711,8 +1712,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_25_NameLevel 25
 c
 %Base.QuestlinesPanel.FinishBattleTaskVoltooi <b>{0}</b> gevecht.Voltooi <b>{0}</b> gevechten.
-8
-#Base.UnitStats.unit_stat.FocusRegenFocus regeneratie
+7
+#Base.UnitStats.unit_stat.FocusRegenReguliere Aanval
 L
 1Base.Abilities.hero_battle_ability.Confucius_NameConfuciaanse Verwarring
 M
@@ -1735,8 +1736,8 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_DescäDo
 'Base.RewardPanel.BuildingUnlocked_ShortBouwen
 L
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusHeld gezondheid status
-∂
-RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Nameﬂ<style=ability_label>Slag Strike | Bleed</style>Amina slaat de dichtstbijzijnde vijandelijke eenheid, met voorrang voor helden, voor <style=basestat>{dmg_percentage}</style> schade. Het doelwit krijgt een bloedingseffect dat <style=basestat>{bleed}</style> schade toebrengt gedurende <style=basestat>{duration}</style>. Brengt extra <style=basestat>{dmg_per_stack}</style> schade toe per bloedingstack. Deze extra schade kan niet hoger zijn dan <style=basestat>{max_dmg}</style>.
+≈
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_NameÓ<style=ability_label>Melee Strike | Bleed</style>Amina slaat een vijandelijke eenheid, waarbij ze voorrang geeft aan de dichtstbijzijnde held, voor <style=basestat>{dmg_percentage}</style> schade. Het doelwit krijgt een bloedingseffect dat <style=basestat>{bleed}</style> schade toebrengt gedurende <style=basestat>{duration}</style>. Brengt extra <style=basestat>{dmg_per_stack}</style> schade toe per bloedingstack. Deze extra schade kan niet hoger zijn dan <style=basestat>{max_dmg}</style>.
 |
 1Base.AllianceChatNotifications.IncidentRunningOutGDe tijd raakt op! Schiet op en los het incident in de Alliantie Stad op
 D
@@ -1777,8 +1778,8 @@ w
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_Desc;Verhoogt de irrigatie van aangrenzende gebouwen aanzienlijk
 u
 5Base.QuestlinesPanel.HaveIrrigatedBuildingsInCityTask<Bezit <b>{0} {1}</b> in <b>{2}</b> op irrigatielevel {3}{4}.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_4_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 †
 Base.Resources.stockfish_DescStokvis is een essenti√´le grondstof die nodig is om verfijnde grondstoffen te Maken. Het kan worden geproduceerd in Taveernen.
 Z
@@ -1823,8 +1824,8 @@ W
 fBase.StoryText.Story_Questline_EventCity_Vikings_ExpeditionPreparations_Lagertha_QuestStart_Text1_Desc˝Voordat we voorzieningen voor onze dappere zeelieden kunnen produceren, hebben we eerst wat grondstoffen nodig: <nobr><style=MC>Vis</style> <sprite name=resource.fish_cta></nobr> en <nobr><style=MC>Honing</style> <sprite name=resource.honey_cta></nobr>.
 \
 &Base.QuestlinesPanel.CompleteEncounterWin <b>{0}</b> gevecht.Win <b>{0}</b> gevechten.
-L
-4Base.Abilities.hero_battle_ability.Scheherazade_NameTales of Enchantment
+O
+4Base.Abilities.hero_battle_ability.Scheherazade_NameVerhalen van betovering
 ÷
 1Base.QuestlinesPanel.CollectWorkerProductionShortOVerzamel <b>{0} korte</b> productie in <b>{1}</b> van <b>{2}</b> in <b>{3}</b>.PVerzamel <b>{0} korte</b> producties in <b>{1}</b> van <b>{2}</b> in <b>{3}</b>.
 O
@@ -1835,8 +1836,8 @@ I
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_NameKleine woning
 œ
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_DescîBelegeringseenheden vallen langzaam aan en zijn zwak tegenover vijandelijke aanvallen, maar ze hebben een verwoestende impact over een groot bereik.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_NameOil Lamp Maker
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_NameOlielampenmaker
 î
 <Base.EventStartScreens.SummonOfTheStarsEventStartDescription”Kanalen de kracht van antimaterie in het Portaal en laat het lot je oproeping leiden! Hoe zeldzamer de held die je trekt, hoe hoger je naar de sterren stijgt! Verdien sterrenpunten en claim geweldige beloningen!
 N
@@ -1871,8 +1872,8 @@ U
 BBase.UnitStats.unit_stat.InitialFocusInSecondsBonus_Percent_AbbrevEERSTE AANVAL %
 ù
 7Base.Incidents.Incident_StoneAge_Capital_Mammoth_2_DescbWist je dat mammoeten graag op schatten slapen? Laten we deze wakker maken en kijken of dat klopt.
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_6_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+w
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_Desc>De Koffiebrouwer produceert koffie van koffiebonen en messing.
 8
  Base.Units.Unit_QinShiHuang_NameKeizer Qin Shi Huang
 C
@@ -1958,8 +1959,8 @@ r
 9Base.LeaderboardEventPanel.TaskInfo.EventCity_Description5Afspelen in de Evenement Stad om trofee√´n te winnen!
 c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_8_NameLyceum der Geleerden
-Å
- Base.Resources.hero.Saladin_Desc]Used to increase the Awakening Level of Saladin and thus unlock more powerful battle bonuses.
+è
+ Base.Resources.hero.Saladin_DesckGebruikt om het ontwakingsniveau van Saladin te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 J
 8Base.Technologies.Technology_BronzeAge_SacredStones_NameHeilige stenen
 j
@@ -1985,8 +1986,8 @@ p
 ;Base.StoryText.Story_DesertDelta_2_1_BattleStart_Text1_DescSDienaren! Blijf de verdedigingen opbouwen! Tesla's troepen moeten worden beschermd!
 à
 7Base.Incidents.Incident_IberianEra_Capital_Coins_1_DescMDe eigenaar van deze kapotte kar heeft munten aangeboden om hem te repareren!
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_NameLevel 32
 A
@@ -2013,8 +2014,8 @@ $Base.BuildingUpgradePanel.OlderGoodsOudere goederen
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text1_Desc^Gespierde voorouder, weet je zeker dat dit klopt? Ik denk dat we nu midden in hun leger staan!
 R
 0Base.QuestlinesPanel.HaveSpecificExpansionInCityClaim <b>{0}</b> in <b>{1}</b>
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_4_NameIncense Maker
+F
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_NameWierookmaker
 H
 %Base.IngameEvents.WorldFair_2024_NameWereldtentoonstelling Evenement
 °
@@ -2029,12 +2030,12 @@ RBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_YellowTeslaTakedown_1_N
  Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 N
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_NameConservering
+K
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_NameLuxueuze Ateliers
 ¶
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text3_DescbDe tijd is hier geen rechte lijn, maar meer als een veer. Hij kan terugdraaien en weer terugkomen.
 V
 8Base.Resources.event_purple_tesla_takedown_trophies_NameTrofee PuntTrofee Punten
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_6_NameLuxurious Workshop
 (
 Base.Event.GrandPrizeLabel
 Hoofdprijs
@@ -2064,10 +2065,10 @@ v
 ;Base.StoryText.Story_DesertDelta_1_8_BattleStart_Text2_Desc7Ik weet dat ze zich nog niet tegen ons heeft gekeerd‚Ä¶
 ã
 #Base.ShopPopup.DailyDealLevelUpDescdOntketen het volledige potentieel van je Helden met essenti√´le Upgraden en verander ze in legendes!
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_NameOlielampenmaker
 Ü
 *Base.EventPass.MoonLanding2MoreContentText◊Als je het laatste checkpoint hebt gehaald, maak je dan klaar om door te gaan met je evenement, want alle beloningen worden gereset!<br><br>Nadat je de Hoofdprijs Track voor de tweede keer hebt voltooid, gaan de vereiste voortgangspunten om Grand Prizes vrij te spelen omhoog van <b>8</b> naar <b>10</b>. Voor alle volgende voltooiingen gaan de vereiste voortgangspunten verder omhoog van <b>10</b> naar <b>12</b>.<br><br>Starten opnieuw met het verzamelen van prijzen, met nog meer epische <style=epic>Relics</style> en nog een legendarische <nobr><style=legendary>Mjolnir</style></nobr> te winnen!
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_NameOil Lamp Maker
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_26_NameLevel 26
 E
@@ -2176,8 +2177,8 @@ v
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_Desc7Produceert een grote hoeveelheid Voedsel in lange tijd.
 9
  Base.ShopPopup.Pages.diy_offer_3Je Held Rooster Boost
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_2_NameLuxurious Merchant
+H
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_NameLuxe Handelaar
 @
  Base.ShopPopup.Pages.diy_offer_1Je Onderzoek een Boost geven
 ^
@@ -2227,14 +2228,14 @@ D
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text2_DescÆHiervoor moet je <style=MC>Kraten</style> vullen met grondstoffen. Als alle kraten gevuld zijn, kun je <style=MC>upgraden</style> en een <style=MC>Beloning</style> ontvangen.
 s
 BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_6_Name-Materiaal om direct naar level 45 te stijgen!
--
-Base.AlliancePanel.RecruitmentRecruitment
+)
+Base.AlliancePanel.RecruitmentWerving
 ±
 NBase.AbilityDescriptions.hero_battle_ability_description.QueenBoudicca_10_Nameﬁ<style=ability_label>Afstand Aanval| Verdoven</style>Gooi haar speer naar het verste doelwit, raakt hen voor <style=basestat>{dmg_percentage}</style> schade en laat hen verdoven voor <style=basestat>{duration}</style>. Vijandelijke eenheden rondom het doelwit nemen <style=basestat>{dmg_percentage_around}</style> schade. Geeft prioriteit aan helden.
 “
 WBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestFinish_Text1_DescˆFantastische voortgang! Oh, en nog iets om te onthouden: <style=MC>Yggdrasil</style> boost onze <nobr><style=MC>Honing</style> <sprite name=resource.honey_cta></nobr> productie, dus laten we daar rekening mee houden bij het plannen van onze stad!
 $
-Base.Resources.carpet_NameCarpet
+Base.Resources.carpet_NameTapijt
 Å
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text6_DescÆNee, we hoeven verder niets te doen. Het is ons gelukt! Het schip heeft het zinkpunt uit de vorige tijdlijn overleefd en het lijkt erop dat het nog steeds goed op koers ligt.
 F
@@ -2314,8 +2315,8 @@ c
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_NameTesla Spoel
 ñ
 FBase.InventoryItems.SelectionKit_current_era_ascensionmaterials_7_DescLMet deze selectiekit kun je kiezen tussen verschillende Ascenion Materialen.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_2_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_2_NameLuxe woning
  
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name¯<style=ability_label>Area Strike</style>Veroorzaakt een explosie op het huidige doelwit, waarbij <style=basestat>{dmg_percentage}</style> schade wordt toegebracht aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{range}</style>.
 ≠
@@ -2383,12 +2384,12 @@ w
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_Desc=Infanterie-eenheden zijn het meest effectief in de voorhoede.
 ˜
 EBase.AbilityDescriptions.hero_battle_ability_description.Plato_1_Name≠<style=ability_label>Debuff</style>Plato spreekt in allegorie√´n, waardoor vijandelijke eenheden in de war raken en hun nauwkeurigheid met <style=basestat>{accuracy_percentage}</style> en ATK met <style=basestat>{atk_percentage}</style> van Plato's ATK afneemt voor <style=basestat>{duration}</style>.
-n
-:Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc0Produceert papyrusrollen en ceremoni√´le gewaden
 S
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text3_DescWat moeten we nu doen?
-R
-&Base.AllianceLandingPanel.Description2(Join an Alliance or create one yourself:
+n
+:Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc0Produceert papyrusrollen en ceremoni√´le gewaden
+Z
+&Base.AllianceLandingPanel.Description20Toetreden tot een alliantie of maak er zelf een:
 1
 'Base.HarborShopPanel.Chrono.ButtonLabelChrono
 Ï
@@ -2430,8 +2431,9 @@ c
 "Base.NotEnoughPremiumPopup.Message=Je hebt nog {0} edelstenen nodig. Wil je naar de winkel gaan?
 R
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_NameAfstandstroepenkazerne
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_4_NameLuxurious Noria
+D
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_Name
+Luxe Noria
 B
 4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name
 Arbalisten
@@ -2563,10 +2565,10 @@ O
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text3_DescÖElke <style=MC>krat</style> verbetert ook je <style=MC>rang</style> in de <style=MC>evenement topscore</style>, waardoor je betere <style=MC>beloningen</style> vrijspeelt naarmate je hoger klimt in de <style=MC>leagues</style> tegen het einde van het evenement.
 /
  Base.Heroes.hero.TomoeGozen_NameTomoe Gozen
+A
+$Base.BuildingGroups.carpetMaker_NameTapijtmakerTapijtmakers
 ú
 BBase.StartBattleWithEmptyHeroSlotsPopup.BattleSlotsAreEmptyWarningVHet lijkt erop dat je nog meer helden kunt toewijzen. Wil je dit gevecht echt starten?
-C
-$Base.BuildingGroups.carpetMaker_NameCarpet MakerCarpet Makers
 D
 7Base.Technologies.Technology_FeudalAge_FishingNets_Name	Visnetten
 S
@@ -2710,10 +2712,10 @@ I
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameByzantijnse Infantrie
 ù
 'Base.Resources.hero.AlbertEinstein_DescrGebruikt om het Ontwakingslevel van Albert Einstein te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
+É
+,Base.EventType.TreasureHuntEvent_DescriptionSGa samen met je bondgenoten op zoek naar verborgen schatten en onontdekte gebieden.
 /
  Base.Heroes.hero.MontezumaI_NameMontezuma I
-Å
-,Base.EventType.TreasureHuntEvent_DescriptionQDiscover hidden treasures and unexplored lands together with your alliance mates.
 N
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameCavaleriekazernes
 I
@@ -2882,8 +2884,8 @@ Q
 7Base.WorldWondersOverviewPanel.PlayerRequestDescription{0} vraagt om {1} {2}.
 6
 Base.Alerts.DeleteAccountButtonAccount verwijderen
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_Desc.Increases the irrigation of adjacent buildings
+i
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 O
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_2_NameInfanteriekazerne
 C
@@ -3008,8 +3010,8 @@ NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text4_Name
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescNProduceert een ton pennies en voegt 2 arbeiders en 2 matrozen toe aan je stad.
 X
 CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameDrie veldrotaties
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_4_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_NameTapijtmaker
 P
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_3_NameLevel 3
 A
@@ -3018,8 +3020,8 @@ K
 3Base.Buildings.Building_EarlyRome_Farm_Rural_1_NameLandelijke boerderij
 M
 $Base.OptionsPopup.InviteStepProgress%Vul de balk en claim meer beloningen!
-?
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_NameOasis
+>
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_NameOase
 è
 ,Base.ShopPopup.HeroRosterBoostChainOfferDesc_Versterk je heldenroosters stap voor stap. De laatste aanbieding heeft iets speciaals voor jou!
 Y
@@ -3052,16 +3054,15 @@ VBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestStart_Tex
 -Base.BattleResultPanel.DefeatHintConjurHeroesHelden bezweren
 €
 KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Nameã<style=ability_label>Buff</style> Richt zich op de grootste groep vriendelijke eenheden, verhoogt VERD door <style=basestat>{def_percentage}</style> van Sitting Bull's VERD voor <style=basestat>{duration}</style> binnen een bereik van <style=basestat>{range}</style>.
+K
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_NameKamelenboerderij
 f
 'Base.Subscriptions.BATTLE_SPEED_UP_Desc;Ontgrendelt de 2x gevechtssnelheid optie tijdens gevechten.
 ¡
 8Base.StoryText.Story_Panganea_5_3_BattleStart_Text3_DescÑIk geloof nog steeds in Tesla, maar hij mag de <style=MC>Nexus</style> niet hebben. We zullen het van hem afnemen. Voor de toekomst.
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Name
-Camel Farm
 A
 3Base.Buildings.Building_Arabia_City_CityHall_2_Name
-Great Hall
+Grote zaal
 ^
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_Desc"Ontgrendelt Composietboogschutters
 M
@@ -3077,16 +3078,16 @@ $Base.Alerts.AuthenticationFailedText\We ondervinden problemen met het verbinde
 V
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_DescVrijspelen Routiers
 F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_6_NameCoffee Brewer
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_NameKoffiebrouwer
 ,
 Base.ShopPopup.ShopErrorHeader
 Winkelfout
 ª
 SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name„<style=ability_label>Buff</style> Inspireert alle vriendelijke eenheden, waardoor hun aanvalssnelheid met <style=basestat>{atk_speed_percentage}</style> toeneemt, hun Aanval met <style=basestat>{atk_percentage}</style> van Margreet's Aanval, en hun Kritieke Schade met <style=basestat>{crit_dmg_percentage}</style> voor <style=basestat>{duration}</style>.
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 L
 7Base.ShopPopup.JourneyThroughSaharaThrivingEnergyHeaderBloeiende energie
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 *
 Base.Heroes.hero.Achilles_NameAchilles
 b
@@ -3096,10 +3097,10 @@ UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Littl
 )
 Base.TeslaStormsPanel.Drops
 Beloningen
+%
+Base.AlliancePanel.WelcomeWelkom!
 3
 "Base.Heroes.hero.LouisPasteur_NameLouis Pasteur
-%
-Base.AlliancePanel.WelcomeWelcome
 è
 CBase.WonderReworkUpgradeRequestPopover.ResearchPointHelpRequestHintHAndere spelers kunnen altijd onderzoekspunten bijdragen aan je wonderen.
 ñ
@@ -3120,9 +3121,6 @@ L
 +Base.Units.Unit_StoneAge_Animal_Wolves_NameWolven
 R
 >Base.Technologies.Technology_ClassicGreece_WindPrediction_NameWindvoorspelling
-J
-<Base.Technologies.Technology_KingdomOfSicily_Lusterware_Name
-Lustergoed
 ]
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_2_NameZware infanterie kazerne
 G
@@ -3174,20 +3172,20 @@ L
 "Base.Alerts.RegistrationFailedTextbWe ondervinden problemen met het cre√´ren van een nieuw account. Controleer je internetverbinding.
 Ä
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text4_DescCStuur je troepen, <style=MC>Hercules</style>. En breng me Einstein.
+p
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_Desc6De Wierookmaker produceert wierook van mirre en koper.
 >
 -Base.Units.Unit_TreasureHunt_Blue_Cannon_NameHemelse Kanon
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_4_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 Ü
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text1_Desc7Ik ben echt trots op alles wat we samen hebben bereikt.
 K
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_6_Name	Mottendal
 H
 9Base.Technologies.Technology_IberianEra_Destillation_NameDestillatie
+;
+ Base.Resources.hero.Saladin_NameDe essentie van Saladin
 ◊
 YBase.StoryText.Story_Questline_EventCity_Vikings_MoreWorkers_Ragnar_QuestStart_Text1_DesczWe hebben meer hulp nodig om onze doelen te bereiken. Laten we extra Woningen bouwen voor meer Arbeiders en Zeemanshuizen.
-6
- Base.Resources.hero.Saladin_NameEssence of Saladin
 O
 >Base.Technologies.Technology_EarlyGothicEra_NobleHorsemen_NameEdele ruiters
 =
@@ -3275,8 +3273,8 @@ $
 Base.Resources.herbs_NameKruiden
 s
 Base.OptionsPopup.BindEmailCopyPRegistreer je e-mail om het spel te spelen op je PC Browser en andere platforms!
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+Ç
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_DescGFokt kamelen die hecht nodig zijn om spullen naar de bazaar te brengen.
 /
 Base.MovePanel.StillStashedExitJa, verlaten
 e
@@ -3321,13 +3319,13 @@ T
 Base.Ages.ByzantineEra_Finish330 AD
 s
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
-U
-8Base.AllianceApplicationMessages.AllianceApplicationHintAdd a message (optional):
+_
+8Base.AllianceApplicationMessages.AllianceApplicationHint#Voeg een bericht toe (als je wilt):
+
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_DescHSpeel 5 exclusieve beloningen vrij terwijl je door de geschiedenis gaat!
 :
 ,Base.WorldWondersOverviewPanel.FavoritesOnly
 Favorieten
-q
-3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_Desc:Unlock 5 exclusive rewards as you advance through history!
 r
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
 I
@@ -3430,10 +3428,10 @@ V
 EBase.Questlines.Questline_EventCity_Vikings_MoreWorkers_Lagertha_NameArbeidskracht
 :
 +Base.Questgivers.Questgiver_MontezumaI_NameMontezuma I
-è
-"Base.Resources.hero.AnneBonny_DesciWordt gebruikt om het Level van Anne Bonny te Ontwaken en zo krachtigere gevechtsbonussen vrij te spelen.
 A
 7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGilden
+è
+"Base.Resources.hero.AnneBonny_DesciWordt gebruikt om het Level van Anne Bonny te Ontwaken en zo krachtigere gevechtsbonussen vrij te spelen.
 R
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameNubische Krijgers
 _
@@ -3552,8 +3550,8 @@ Q
 ;Base.Technologies.Technology_China_PorcelainProduction_NamePorseleinproductie
 â
 "Base.Resources.alabaster_idol_DesccAlbasten idolen zijn goederen die geproduceerd kunnen worden in steenhouwerijen - level 1 en hoger.
-n
-2Base.Buildings.Building_Arabia_Home_Premium_2_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+y
+2Base.Buildings.Building_Arabia_Home_Premium_2_DescCProduceert een hoop dirham op en voegt 3 arbeiders toe aan je stad.
 D
 -Base.Units.Unit_IberianEra_Vikings_Heavy_NameVikingen Berserkers
 ≥
@@ -3684,14 +3682,14 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text6_Name
 ,Base.Technologies.Technology_Egypt_Ankh_NameAnkh
 À
 9Base.QuestlinesPanel.HaveSpecificBuildingInCityAndAgeTaskFBezit <b>{0} {1}</b> op level <b>{2}</b> van <b>{3}</b> in <b>{4}</b>.FBezit <b>{0} {1}</b> op level <b>{2}</b> van <b>{3}</b> in <b>{4}</b>.
-á
-DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
+ñ
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
 h
 Base.Generic.ErrorUnavailableGDe naam kan momenteel niet worden gewijzigd. Probeer het later opnieuw.
 √
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_DescyH√©, Leider! We hebben een vijand! Die <style=MC>Bottenbrekers</style> dreigen met een tegenaanval! Laten we ze verslaan!
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_4_Desc<Substantially increases the irrigation of adjacent buildings
+p
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_Desc6Verhoogt de irrigatie van nabijgelegen gebouwen flink.
 Ê
 LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Nameï<style=ability_label>Teleport | Verlammings </style>Houdini teleporteert naar de vijand met de hoogste focus en sluit zichzelf en het doelwit op in een onontkoombare watertank. Beiden worden verlamd voor <style=basestat>{duration}</style> of totdat het doelwit sterft of wordt geteleporteerd. Als Houdini dodelijke schade oploopt, vlucht hij naar een veilige plek, waardoor de vaardigheid vroegtijdig wordt be√´indigd, terwijl hij kortstondig onkwetsbaar wordt en <style=basestat>{heal}</style> van zijn maximale gezondheid geneest. 
 ?
@@ -3712,10 +3710,10 @@ Q
 -Base.Units.Unit_FeudalAge_Player_Knights_DescOCavalerie-eenheden zijn erg snel en stormen op de achterhoede van de vijand af.
 )
 Base.Ages.RomanEmpire_Decade	50 v.Chr.
+É
+#Base.EventType.PvpEvent_Description\Vecht tegen andere spelers, klim omhoog in de Arena-ranglijst en pak waardevolle beloningen.
 f
 MBase.Questlines.Questline_EventCity_Mayas_ProgressTier1_LadySixSky_Tikal_NameHeiligdom van devotie
-v
-#Base.EventType.PvpEvent_DescriptionOBattle against other players, climb the Arena Ranking and win valuable rewards.
 ô
 4Base.Incidents.Incident_DawnAge_Capital_Chest_1_DescaWe hebben deze kist gevonden. Als we hem open krijgen, vinden we er misschien iets waardevols in.
 ¨
@@ -3770,10 +3768,10 @@ l
 PBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_BlueTeslaTakedown_1_NameArctische Tesla-takedown
 +
 !Base.ShopPopup.SubscriptionActiveActief
+C
+6Base.Buildings.Building_Arabia_Merchant_Average_6_Name	Handelaar
 å
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest5_QuestStart_Text3_Desc?We moeten hem bijhouden. Een nieuw tijdperk staat voor de deur.
-B
-6Base.Buildings.Building_Arabia_Merchant_Average_6_NameMerchant
 Ã
 UBase.StoryText.Story_Questline_EventCity_Egypt_RepairTheBridge_QuestFinish_Text1_DescsJe hebt het met opmerkelijke snelheid gerepareerd! Nu kunnen we de stad ook aan deze kant van de rivier uitbreiden.
 .
@@ -3878,10 +3876,10 @@ F
 0Base.Wonders.Wonder_Capital_TempleOfArtemis_NameTempel van Artemis
 ˛
  Base.Units.Unit_WilliamTell_DescŸSchiet goed en mis nooit! William Tell, de legendarische Zwitserse volksheld, staat aan jouw kant. Tell staat bekend om zijn vaardigheid met de pijl en boog en wordt geprezen omdat hij in het begin van de 14e eeuw in opstand kwam tegen tirannie.<br><br>Hij is beroemd vanwege het verhaal waarin hij met een kruisboog een appel van het hoofd van zijn zoon moest schieten. Tells precisie en moed werden symbolen van verzet tegen onderdrukking. Zijn verzet tegen de Habsburgse heersers inspireerde de Zwitsers in hun strijd voor vrijheid en onafhankelijkheid.<br><br>Het verhaal van Tell, een mix van legende en geschiedenis, blijft een baken voor dapperen en laat zien hoe de moed van √©√©n persoon de geest van een heel volk kan doen ontvlammen. De reis door de tijd heeft zijn hersenen in de war gebracht: nu houdt hij van zijn appel alsof het zijn zoon is!
+I
+4Base.Abilities.hero_battle_ability.AdaBlackjack_NameNoordelijk Schild
 á
 Base.Units.Unit_Inanna_DescÁHet Huis van de Hemel wacht op je, want van jou is de loyaliteit van Inanna, de Leeuw. Deze Soemerische Godin van Liefde, Oorlog en Vruchtbaarheid was al in 4000 voor Christus een prominent figuur in de mythologie.<br><br>Inanna was krachtig en veelzijdig en werd vereerd om haar afdaling naar de onderwereld, waar ze de troon van haar zus probeerde op te eisen, en haar daaropvolgende terugkeer. Sumerische legendes over haar benadrukken haar intelligentie, kracht en onafhankelijkheid.<br><br>Verhalen over deze Godin vormden de vroegste beschavingen op aarde en hun invloed kan de wereld vormen op manieren die onmogelijk zijn waar te nemen. Toch, als een Sumeri√´r je ten dans vraagt, denk dan twee keer na voordat je de muziek harder zet!
-G
-4Base.Abilities.hero_battle_ability.AdaBlackjack_NameNorthern Shield
 T
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_1_1_NameTriskele tokenwedstrijd
 v
@@ -3903,8 +3901,8 @@ T
 W
 IBase.Resources.BuildingPiece_Building_BronzeAge_Collectable_School_1_Name
 Schooldeel
-?
-.Base.Abilities.hero_battle_ability.Kiviuq_NamePiercing Rain
+E
+.Base.Abilities.hero_battle_ability.Kiviuq_NameDoordringende Regen
 X
 ;Base.Factions.Faction_KingdomOfSicily_AbbasidCaliphate_NameKalifaat van de Abbasiden
 F
@@ -3984,8 +3982,8 @@ $Base.PlayerSearch.ToggleAllLanguages
 Alle talen
 q
 _Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestFinish_Text1_NameDame Zes Hemel
->
-'Base.HistoricBattlePanel.HistoricBattleHistorische Gevecht
+@
+'Base.HistoricBattlePanel.HistoricBattleHistorische Gevechten
 G
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchGeen overeenkomst
 G
@@ -4093,7 +4091,7 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text2_Descj
 ü
 &Base.Resources.hero.QueenBoudicca_DescuGebruikt om het Ontwakingslevel van Koningin Boudicca te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 "
-Base.Resources.myrrh_NameMyrrh
+Base.Resources.myrrh_NameMirre
 V
 $Base.QuestlinesPanel.SolveQuestsTaskLos {0} opdrachten op.Los {0} opdrachten op.
 |
@@ -4120,8 +4118,8 @@ v
 2Base.Buildings.Building_Arabia_Home_Premium_1_Desc@Produceert heel veel dirham en voegt 3 arbeiders toe aan je stad
 R
 :Base.ShopOffers.shop_offer.City_Vikings_StarterPack_1_NameVikingen startpakket
-?
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_NameOasis
+>
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_NameOase
 )
 Base.OptionsPopup.GraphicsTabGrafisch
 >
@@ -4178,8 +4176,8 @@ S
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_DescGProduceert een grote stapel munten en voegt 2 arbeiders toe aan je stad
 O
 *Base.SeasonPassUpsellPopup.FreeLaneRewards!Gratis Beloningen voor rijstroken
-\
-6Base.Buildings.Building_Arabia_Merchant_Average_1_Desc"Produceert een grote stapel dirham
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_1_DescMaakt gouden dinars.
 3
 Base.Generic.ComingSoonBinnenkort verkrijgbaar!
 1
@@ -4208,8 +4206,8 @@ C
 1Base.Technologies.Technology_Egypt_Geography_NameAardrijkskunde
 T
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameInfanteriekazerne
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_Desc.Increases the irrigation of adjacent buildings
+i
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 ]
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc"Vrijspelen Mino√Øsche Slingwerpers
 S
@@ -4255,8 +4253,8 @@ n
 3Base.Buildings.Building_MinoanEra_Home_Small_2_Desc7Produceert munten en voegt een arbeider aan je stad toe
 8
 /Base.Technologies.Technology_Vikings_Sagas_NameSagas
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+Ç
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_DescGFokt kamelen die hecht nodig zijn om spullen naar de bazaar te brengen.
 O
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_NameCavaleriekazerne
 K
@@ -4291,8 +4289,8 @@ N
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_NameHeldenacademie
 L
 :Base.Units.Unit_RomanEmpire_Carthaginians_WarElephant_NameOorlogsolifant
-
-Base.Resources.oil_NameOil
+
+Base.Resources.oil_NameOlie
 ±
 VBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestStart_Text4_Desc÷Ik heb dit stuk land voor je uitgekozen om te beginnen. Bouw de <style=MC>Grote sfinx</style> op, en laat de wereld getuige zijn van de majesteit van een <style=MC>economisch rijk</style> dat uit het zand verrijst.
 X
@@ -4397,8 +4395,8 @@ Grote zaal
 'Base.MergeItems.WorldFair_Bronze_4_NameArtefact - Level 4
 Z
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text2_DescLeonidas! Hou vol. Ik heb je.
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_4_Desc#Produces a big pile of Gold Dinars.
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_Desc$Produceert een heleboel goud dinars.
 m
 2Base.Buildings.Building_StoneAge_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
 k
@@ -4425,8 +4423,6 @@ K
 &Base.OptionsPopup.ExistingAccountLogin!Inloggen met een bestaand account
 Ñ
 :Base.Incidents.Incident_BronzeAge_Capital_FruitTree_1_DescFAh, heerlijk eten. We hebben alleen arbeiders nodig om het te plukken.
-U
->Base.Technologies.Technology_KingdomOfSicily_RiseOfArabia_NameOpkomst van Arabi√´
 1
 #Base.ShopPopup.WeeklyRewardClaimNow
 Nu claimen
@@ -4440,9 +4436,8 @@ O
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDescµVolle kracht vooruit - geef je reis extra brandstof met extra Uithoudingsvermogen, Overwinningstickets en eventvaluta om uitdagingen te overwinnen en naar de overwinning te stijgen!
 
 Base.Generic.GoogleGoogle
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Name
-Camel Farm
+K
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_NameKamelenboerderij
 2
 "Tutorial.HeroMetaReportPopup.TitleMeta-rapport
 .
@@ -4479,8 +4474,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text2_Desc‰
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
 ;
 ,Base.ShopOffers.shop_offer.CityBundle_2_NameBasisbundel
-K
-3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_NameTimeline Growth Fund
+J
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_NameTijdlijn Groeifonds
 8
 $Base.Resources.hortus_sanitatis_NameHortus Sanitatis
 (
@@ -4736,10 +4731,10 @@ FBase.Technologies.Technology_KingdomOfSicily_ReinforcedKiteShield_NameVerster
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc@Aanzienlijke verbetering van het geluk van aangrenzende gebouwen
 P
 .Base.SubscriptionPopup.SubscriptionBoostActiveGrand Architect's Favor actief
+ë
+-Base.EventType.RiftPromotionEvent_Description`Tijdens deze fase is de kans groter dat je bepaalde helden kunt oproepen op een bepaald portaal.
 P
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_8_NameLevel 8
-ê
--Base.EventType.RiftPromotionEvent_Description_During this phase, your chances of summoning specific heroes are increased on a certain portal.
 B
 4Base.Buildings.Building_DawnAge_City_CityHall_1_Name
 Grote zaal
@@ -4757,9 +4752,6 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_12_Text2_DesctVoortga
 Base.Relics.TheHolyGrail_NameDe Heilige Graal
 -
 !Base.PiggyBankPopup.BuyAmountLeft{0} over
-H
-:Base.Technologies.Technology_KingdomOfSicily_HardSoap_Name
-Harde zeep
 Q
 9Base.Technologies.Technology_Vikings_PlunderingRaids_NamePlunderende invallen
 J
@@ -4830,10 +4822,10 @@ Jadegroeve
 GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Nameî<style=ability_label>Nabijheidsaanval | Bloeden</style>Doorboort het huidige doelwit vier keer, waarbij elke steek meer schade toebrengt voor een totaal van <style=basestat>{dmg_percentage}</style> schade. Elke steek heeft een <style=basestat>{chance_percentage}</style> kans om de tegenstander te laten bloeden voor <style=basestat>{dmg_percentage_bleed}</style> over <style=basestat>{duration}</style>.
 ;
 0Base.Questlines.Questline_StoneAge_TheBrink_NameDe rand
+F
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_NameWierookmaker
 t
 #Base.Resources.material_statue_DescMDit speciale materiaal kan gebruikt worden om standbeeldwonderen te upgraden.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_6_NameIncense Maker
 Ä
 5Base.Buildings.Building_MinoanEra_Home_Average_3_DescGProduceert een grote stapel munten en voegt 2 arbeiders aan je stad toe
 ˝
@@ -4842,10 +4834,10 @@ G
 /Base.RiftInfoPopup.PrefaceCommonSpecialHeadlineSpeciale voorwaarden
 @
 /Base.Buildings.Building_China_Home_Small_4_NameKleine woning
+l
+*Base.EventType.SeasonPassEvent_Description>Doe elke dag of week wat taken om extra beloningen te krijgen.
 c
 9Base.RewardTypes.IncreaseRegularExpansionRightReward_Name&Reguliere uitbreidingsrechten verhogen
-h
-*Base.EventType.SeasonPassEvent_Description:Complete daily or weekly tasks to earn additional rewards.
 
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_Desc@Produceert heel veel munten en voegt 2 arbeiders aan je stad toe
 I
@@ -4887,11 +4879,11 @@ $Base.Resources.green_crest_epic_NameMiddernacht Groen Crest
 M
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_2_NameCavaleriekazerne
 p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
+p
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc8Produceert munten en voegt een arbeider toe aan je stad.
 ª
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_DescÉOh jee, deze stapel hout is niet bepaald een meesterwerk! Laten we die spieren gebruiken en afscheid nemen van deze lelijke rommel.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_2_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 ?
 )Base.HeroPanel.UnitStatBoostBarracksTitleVersterkt door {0}
 0
@@ -4922,8 +4914,8 @@ C
 4Base.Abilities.hero_battle_ability.TribalHealer_NameGeneeszalve
 Q
 *Base.BuildingGroups.premiumRitualSite_NameTempel van MagmaTempels van Magma
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_3_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+p
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_Desc6De Wierookmaker produceert wierook van mirre en koper.
 ⁄
 1Base.EventStartScreens.GachaEventStartDescription§Kanaliseer de kracht van Antimaterie in het Portaal en stijg op naar glorie door trofee√´n en overvloedige Beloningen te verdienen in het Rally of Helden evenement!
 ù
@@ -5055,17 +5047,17 @@ G
 Base.CommunityPopup.Instagram	Instagram
 <
 *Base.Wonders.Wonder_Mayas_ChichenItza_NameChich√©n Itz√°
+F
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_NameKoffiebrouwer
 À
 2Base.ShopPopup.OfferInfoText.MonthlyGemCard_1_InfoîDeze aanbieding biedt een directe uitbetaling van 100 edelstenen en een dagelijkse uitbetaling van 80 edelstenen gedurende 30 dagen. Je kunt deze aanbieding twee keer kopen om de voordelen te verlengen tot 60 dagen. De stapellimiet is 60 dagen en kan niet worden overschreden.
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_3_NameCoffee Brewer
 É
 Base.Alerts.GenericErrorTextcHet lijkt erop dat we een fout zijn tegengekomen! {0} Klik op '{1}' om terug te gaan naar je stad!
 
+4
+Base.Rifts.rift.Arabia_NameArabische Tijdportaal
 N
 DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_6_NameSchool
-2
-Base.Rifts.rift.Arabia_NameArabian Time Portal
 /
 Base.BoostTypes.CultureBoostCulturele boost
 P
@@ -5091,7 +5083,7 @@ P
 4Base.Resources.event_leaderboard_space_trophies_Name
 TrofeepuntTrofeepunten
 K
-4Base.UnitStats.unit_stat.BasicAttackDamageAmp_AbbrevBASIS AANVAL SCHADE
+4Base.UnitStats.unit_stat.BasicAttackDamageAmp_AbbrevBASIS AANVALSSCHADE
 Û
 OBase.StoryText.Story_Questline_EventCity_Egypt_Irrigation_QuestStart_Text1_DescüHoewel de woestijn onverbiddelijk lijkt, bied ik je schema's voor irrigatiegebouwen aan. Met strategisch gebruik zul je de komende taken moeiteloos overwinnen.
 I
@@ -5124,11 +5116,12 @@ t
 Bouwen en upgraden van de Afstandstroepenkazerne om de ATK, DEF en HP van afstandseenheden en Helden te verbeteren.
 
 >
-,Base.Wonders.Wonder_Arabia_NoriasOfHama_NameNorias of Hama
+,Base.Wonders.Wonder_Arabia_NoriasOfHama_NameNoria van Hama
 O
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_NameKleine boerderij
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_5_NameLuxurious Noria
+D
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_Name
+Luxe Noria
 E
 2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameDonkere Ridders
 ?
@@ -5235,8 +5228,6 @@ N
 EBase.TreasureHuntCheckpointsPanel.SinglePlayerInfoAfterJoinedAlliance;Je kunt volgend seizoen Alliantiecontrolepunten Verzamelen!
 u
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text4_Desc+Natuurlijk. Vergeet dat ik iets gezegd heb.
-B
-8Base.Technologies.Technology_KingdomOfSicily_Coffee_NameKoffie
 L
 4Base.EquipmentSets.equipment_set.Centurion_Neck_NameCenturion's halsband
 \
@@ -5426,18 +5417,18 @@ S
 =Base.Technologies.Technology_IberianEra_OrderOfCalatrava_NameOrde van Calatrava
 @
 1Base.Buildings.Building_Mayas_Home_Premium_4_NameLuxe woning
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_5_Desc#Produces a big pile of Gold Dinars.
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_Desc$Produceert een heleboel goud dinars.
 p
 .Base.QuestlinesPanel.CompleteEncounterSpecificWin <b>{0}</b> gevecht {1}.!Win <b>{0}</b> een van deze: {1}.
 I
 $Base.Resources.hero.QinShiHuang_Name!Essentie van Keizer Qin Shi Huang
 È
 VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Text3_DescéHet versterken van <style=MC>Yggdrasil</style> is van vitaal belang, want het verbindt en voedt alle rijken en weerspiegelt zijn kracht. Door het te versterken, gebruik je zijn kracht om voorspoed en wijsheid te bevorderen en het succes van onze expeditie te verzekeren.
-L
-9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text1_DescUgh... goden...
 ï
 $Tutorial.WonderReworkTutorial.InventÏIk help je nieuwe <style=MC>WERELDWONDEREN</style> te ontdekken. Geef me simpelweg wat <style=MC>TANDWIELEN</style>, dan vind ik een <style=MC>WONDER</style> uit of speciale <style=MC>MATERIALEN</style> die nodig zijn voor hun upgrades.
+L
+9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text1_DescUgh... goden...
 K
 1Base.Questlines.Questline_Research_EarlyRome_NameMeesteronderzoeker III
 ^
@@ -5725,8 +5716,8 @@ R
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_NameGeavanceerde trebuchet
 Ç
 *Base.EventPass.MoonLanding2BuyGoldPassText”<nobr><style=epic></style>Doe mee om exclusieve beloningen te verdienen en ontvang meteen de epische Relikwie√´n</nobr> <nobr>xml-ph-0000@deepl.internationale Planisphere</nobr> xml-ph-0001@deepl.internationale!
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_5_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_NameTapijtmaker
 E
 6Base.Technologies.Technology_IberianEra_DriftNets_NameDrijfnetten
 $
@@ -5745,8 +5736,6 @@ A
 1Base.EquipmentSets.equipment_set.Shaman_Hand_NameSjamanendolk
 :
 "Base.ShopPopup.DailyDealCityHeaderBonanza voor bouwers
-I
-<Base.Technologies.Technology_KingdomOfSicily_WaterClock_Name	Waterklok
 |
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_Desc@Produceert gedurende langere tijd een grote hoeveelheid voedsel.
 
@@ -5996,17 +5985,14 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name
 Base.Regions.FallOfTroy_NameDe val van Troje
 8
 "Base.Rifts.rift.SeasonPass_08_NameArcane Tijdportaal
-M
-5Base.ShopOffers.shop_offer.Diy_Ascension_Offer_1_NameYour Ascension-Boost
+K
+5Base.ShopOffers.shop_offer.Diy_Ascension_Offer_1_NameJe Ascension-Boost
 >
 1Base.Abilities.hero_battle_ability.Excalibur_Name	Excalibur
 I
 *Base.Resources.etruscan_bronze_mirror_NameEtruskische Bronzen Spiegel
 H
 (Base.WonderCollections.GreatEmpires_NameWonderen van de Grote Rijken
-K
-=Base.Technologies.Technology_KingdomOfSicily_MaskanHouse_Name
-Maskanhuis
 2
 Base.Generic.DaysHoursVerbose{0:%d} d {0:hh} u
 W
@@ -6117,10 +6103,10 @@ G
 Grote zaal
 Å
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescHProduceert een grote stapel munten en voegt 2 arbeiders toe aan je stad.
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_NameOlielampenmaker
 J
 +Base.Notifications.RemindFreeGachaDrawTitleüåÄ Haal je volgende Held!
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_NameOil Lamp Maker
 î
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
 9
@@ -6221,8 +6207,8 @@ F
 4Base.Abilities.hero_battle_ability.ScarabBeetle_NameScarabee kever
 7
 "Base.Units.Unit_OracleOfDephi_NameOrakel van Delphi
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_3_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+w
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_Desc>De Koffiebrouwer produceert koffie van koffiebonen en messing.
 `
 "Base.Resources.red_crest_epic_Desc:Voor het Verheffen van rode Helden zijn rode kammen nodig.
 =
@@ -6242,10 +6228,10 @@ J
 &Base.TreasureHuntRankingPanel.PlatinumPlatina
 "
 Base.Resources.cape_NameMantel
+ø	
+!Base.Units.Unit_Scheherazade_Descô	Vertel een verhaal dat duizend nachten en meer duurt met Scheherazade, de koningin van de verhalenvertellers! Scheherazade komt uit een Perzische legende en is vereeuwigd in 'Duizend-en-een-nacht'. Ze is een meester in het woord-maken en weet een wrede koning te boeien met haar eindeloze verbeeldingskracht, zodat hij en haar volk een nieuwe dag mogen meemaken.<br><br>Gedurende 1001 nachten verweefde ze verhalen in verhalen - verhalen over djinns en zeelieden, slimme bedienden en dwaze koningen, vliegende tapijten en magische lampen. Personages als Aladdin, Ali Baba en Sinbad kwamen allemaal tot leven door haar woorden. Aan het einde van haar verhalen was de koning verliefd geworden op haar wijsheid en genezen van zijn waanzin. Haar verhalen redden niet alleen haar eigen leven, ze maakten ook voorgoed een einde aan de moorddadige praktijken van de koning.<br><br>Haar slimheid, moed en medeleven hebben generaties dromers en schrijvers ge√Ønspireerd. Hoewel geen met zekerheid kan zeggen waar fictie ophoudt en realiteit begint, maken Scheherazades snelle humor en eindeloze voorraad verhalen haar in Helden der Geschiedenis tot de populairste gast bij elk kampvuur.
 I
 'Base.BuildingTypes.extractionPoint_NameExtractiepuntExtractiepunten
-¬
-!Base.Units.Unit_Scheherazade_DescúSpin a tale that lasts a thousand nights and more with Scheherazade, queen of storytellers! Originating from Persian legend and immortalized in 'One Thousand and One Nights', Scheherazade is a master of word-craft, captivating a cruel king with her endless imagination so that he, and her people, might live to see another dawn.<br><br>For 1,001 nights, she wove tales within tales - stories of djinn and sailors, clever servants and foolish kings, flying carpets and magic lamps. Characters like Aladdin, Ali Baba, and Sinbad all danced from her lips. By the end of her tales, the king had fallen in love with her wisdom and had been healed of his madness. Her stories didn't just save her own life - they ended the king's murderous practice forever.<br><br>Her cleverness, courage, and compassion have inspired generations of dreamers and writers. Though none can say for sure where fiction ends and reality begins, in the Heroes of History, Scheherazade's quick wit and endless reservoir of stories make her the most popular company at any campfire.
 $
 Base.CommunityPopup.TikTokTikTok
 )
@@ -6273,8 +6259,8 @@ M
 JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Nameˆ<style=ability_label>Debuff | Verbrand</style>Keg Throw: Blackbeard unleashes a rum keg at the largest cluster Keg Throw: Zwartbaard gooit een rumvat naar de grootste groep vijanden, waardoor hun aanvalsnelheid met <style=basestat>{attackspeed_debuff}</style> en bewegingssnelheid met <style=basestat>{movespeed_debuff}</style> voor <style=basestat>{debuff_duration}</style> worden verminderd. Deze vijanden worden gedrenkt voor <style=basestat>{doused_duration}</style>. Na 12 seconden gaat de eigenschap over naar Trial by Fire.<br>Trial by Fire: Zwartbaard richt zich op zijn huidige tegenstander en steekt hem in brand voor <style=basestat>{burn_damage}</style> schade gedurende <style=basestat>{burn_duration}</style>. De eigenschap gaat na 8 seconden terug naar Keg Throw.<br>Als een doodgebrande vijand door een andere bron wordt verbrand, explodeert hij, waardoor het verbrandingseffect zich verspreidt naar nabijgelegen eenheden en het doodgebrande effect van het oorspronkelijke doelwit wordt verwijderd.
 ®
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text1_DescnWe hebben gewonnen, maar Tesla is er niet. Ik had gehoopt dat we hem konden vinden. Hij moet al ontsnapt zijn.
-u
-$Base.EventType.RiftEvent_DescriptionMGather new heroes by summoning them through them using a time limited portal.
+n
+$Base.EventType.RiftEvent_DescriptionFVerzamel nieuwe helden door ze op te roepen via een tijdelijk portaal.
 Å
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name≥<style=ability_label>Afstand Strike| Vergif</style>Schiet een pijl af op het verste doelwit, die hen raakt voor <style=basestat>{dmg_percentage}</style> schade en hen vergiftigt voor nog eens <style=basestat>{gif_percentage}</style> schade over <style=basestat>{gif_duur}</style>. Geeft voorrang aan Helden.
 
@@ -6466,8 +6452,8 @@ K
 Base.Rifts.rift.Legendary_NameLegendarische Tijdpoort
 $
 Base.HeroPanel.Equipped	Uitgerust
-1
-&Base.UnitStats.unit_stat.Focus_PercentFOCUS %
+9
+&Base.UnitStats.unit_stat.Focus_PercentEerste aanval %
 ·
 :Base.Incidents.Incident_ClassicGreece_Capital_Chest_1_Desc¢Kijk! Er heeft zich een bijenkolonie gevestigd in de boom waar we een schat hebben verstopt. Laten we hen voorzichtig verplaatsen, zodat we er toegang toe hebben.
 h
@@ -6488,8 +6474,6 @@ T
 5Base.Buildings.Building_Mayas_Workshop_Premium_6_DescKProduceert Vooroudermaskers, Kalenderstenen, Rituele Dolken en Hoofdtooien.
 [
 1Base.WondersReworkUpgradePanel.CrateIsBeingFilled&Wacht alstublieft tot het krat vol is.
-W
-@Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NamePapieren verpakking
 4
 #Base.TreasureHuntStartedPopup.TitleSchattenjacht
 V
@@ -6518,8 +6502,6 @@ I
 5Base.Units.Unit_StoneAge_Animal_SabertoothTigers_NameSabeltandtijgers
 G
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_NameObsidiaangroeve
-S
-@Base.Technologies.Technology_KingdomOfSicily_CamelHusbandry_NameKamelenfokkerij
 k
 4Base.Questlines.Questline_WorldFair_2024_Rush_3_Name3Wereldtentoonstelling Evenement opdrachtenreeks III
 ¡
@@ -6603,8 +6585,8 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text3_Desc¬Door T
 'Base.UnitStats.unit_stat.Defense_AbbrevDEF
 Q
 .Base.AbilityTrainingSlotOccupiedPopup.HeadlineVaardigheidstraining Slot bezet
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_5_NameLuxurious Merchant
+H
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_NameLuxe Handelaar
 *
 Base.Hints.MountainsBergen neerplempen
 
@@ -6729,8 +6711,6 @@ N
 A
 3Base.Buildings.Building_Arabia_City_CityHall_1_Name
 Grote zaal
-`
-FBase.Technologies.Technology_KingdomOfSicily_ImprovedMarketStands_NameVerbeterde marktkramen
 Ø
 eBase.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_DragonshipEllida_QuestStart_Text1_Desc≈Jullie vooruitgang is echt opmerkelijk. <style=MC>Drakenschip Ellida</style> is het bewijs van jullie prestaties, versterkt ons fundament en bereidt ons voor op de spannende reis die voor ons ligt.
 ô
@@ -6867,10 +6847,10 @@ J
 .Base.SeasonPassUpsellPopup.GoldenTicketRewardsGouden ticket beloningen
 $
 Base.LocalizedLocales.fr_FRFrans
+-
+"Base.Cities.City_Arabia_Petra_NameArabi√´
 H
 0Base.Units.Unit_EarlyRome_Huns_KassaiBowmen_NameKassai Boogschutters
-,
-"Base.Cities.City_Arabia_Petra_NameArabia
 E
 ,Base.Wonders.Wonder_Capital_TowerOfPisa_NameScheve Toren van Pisa
 •
@@ -6922,8 +6902,6 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_36_NameLevel 3
 "Base.VideoPlacementButton.WatchNowKijk nu!
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBelegeringskazernes
-Q
-ABase.Technologies.Technology_KingdomOfSicily_MagnifyingGlass_NameVergrootglas
 ï
 #Base.UnlockRequirementsPopup.BazaarnBinnen de Bazaar kun je specifieke goederen krijgen, die vervolgens in je werkplaatsen kunnen worden verfijnd.
 <
@@ -7031,8 +7009,8 @@ g
 Base.Alerts.ClientOutOfDateTextDJe spelversie is verouderd. Update het spel naar de nieuwste versie.
 E
 &Base.Mailbox.ApplicationDeniedHeadlineAlliantieaanvraag afgewezen
-?
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_NameOasis
+>
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_NameOase
 <
 )Base.Regions.region.VolcanicJungle_3_NameEngelse Kolonie
 =
@@ -7182,8 +7160,6 @@ O
 'Base.Alerts.SingleSignOn.Linked.Message$Je spelaccount is gekoppeld aan {0}.
 ≥
 KBase.StoryText.Story_Questline_CityBuilding_MinoanEra_QuestStart_Text2_DescdNou, voor mij is het modern! Laten we onze gebouwen up-to-date houden! Dat zal de Leider blij maken.
-D
-9Base.Technologies.Technology_KingdomOfSicily_Incense_NameWierook
 Ø
 Base.Units.Unit_JohnLocke_DescåVan de Universiteit van Oxford, de vader van het liberalisme, John Locke! Deze 17e-eeuwse Engelse filosoof gaf vorm aan het moderne politieke denken. In 'Two Treatises of Government' stelde hij natuurrechten voor: leven, vrijheid en eigendom.<br><br>Locke's sociale contracttheorie be√Ønvloedde de moderne democratie en benadrukte dat regeringen gebaseerd moeten zijn op de instemming van de geregeerden en verantwoording moeten afleggen aan het volk. Zijn idee√´n onderstreepten het belang van individuele rechten en overheidsverantwoordelijkheden.<br><br>In de epistemologie stelde Locke in zijn 'An Essay Concerning Human Understanding' dat kennis voortkomt uit ervaring. Zijn filosofie had een grote invloed op het westerse denken en vormde de concepten van individuele rechten en de rol van de overheid. Minder bekend is zijn vaardigheid op het slagveld, maar hij zal je bewijzen dat hij Vergrendeld is!
 ˚
@@ -7194,10 +7170,8 @@ BBase.WorldWondersInventionInformationPopup.PromotionGuaranteedInfo¥Als je een
 UBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestFinish_Text1_DescÇFantastische voortgang! Oh, en nog iets om rekening mee te houden: <style=MC>Aboe Simbel</style> boost onze <nobr><style=MC>Papyrus</style> <sprite name=resource.papyrus_cta></nobr> output, dus laten we daar rekening mee houden bij het plannen van onze stad!
 ;
 !Base.Resources.hero.RamsesII_NameEssentie van Ramses II
-c
-=Base.UnitStats.unit_stat.SingleTargetDamageAmp_Percent_Abbrev"EIGENSCHAP SCHADE AAN √â√âN DOEL %
-K
-4Base.ShopOffers.shop_offer.TimelineGrowthFund_1_NameTijdlijn Groeifonds
+M
+=Base.UnitStats.unit_stat.SingleTargetDamageAmp_Percent_AbbrevENKELE DMG %
 ?
 3Base.Buildings.Building_Mayas_Aviary_Average_5_NameVoli√®re
 C
@@ -7236,8 +7210,8 @@ M
 9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_NameGele Tesla Storm
 C
 +Base.ShopPopup.SeasonalEventHeroPromoHeaderParallelle Voorspoed
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 +
 Base.HeroPanel.PrimaryStatsStatistieken
 B
@@ -7514,12 +7488,12 @@ M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_35_NameLevel 35
 U
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_NameIrrigatiestation
-k
-#Base.UnitStats.unit_stat.Focus_DescDBepaalt hoeveel focus de held heeft bij het starten van het gevecht.
+r
+#Base.UnitStats.unit_stat.Focus_DescKBepaalt hoe snel de Held zijn Eigenschap in eerste instantie kan activeren.
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_5_DescMaakt gouden dinars.
 @
 .Base.EquipmentSets.equipment_set.Mangudai_NameMangudai's set
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_5_DescProduces Gold Dinars.
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_37_NameLevel 37
 å
@@ -7571,8 +7545,8 @@ Aquamarijn
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text3_Desc7Ik ben vereerd u de Leider van de Beschaving te noemen.
 Y
 BBase.Questlines.Questline_EventCity_Mayas_Quarries_LadySixSky_NameStenen van de Goden
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_3_NameLuxurious Workshop
+K
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_NameLuxueuze Ateliers
 0
  Base.Resources.lapis_lazuli_NameLapis Lazuli
 ç
@@ -7599,10 +7573,10 @@ _
 JBase.Questlines.Questline_EventCity_Vikings_WonderProgress_Valhalla_1_NameWalhalla - Fase I
 }
 &Base.Resources.illuminated_locket_DescSVerlichte medaillons zijn goederen die je kunt maken in de juwelierszaak - Level 1.
+G
+1Base.Buildings.Building_Arabia_Home_Medium_5_NameMiddelgrote woning
 >
 /Base.EquipmentSets.equipment_set.Khon_Ring_NameKhon's Ring
-@
-1Base.Buildings.Building_Arabia_Home_Medium_5_NameMedium Home
 |
 *Base.Resources.event_stamina_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
 M
@@ -7633,8 +7607,8 @@ E
 ,Base.IngameEvents.Event_ForgeOfVulcan_1_NameSmederij van Vulcanus
 )
 Base.Units.Unit_Hercules_NameHercules
-L
-8Base.AllianceApplicationMessages.AllianceApplicationSendSend Application
+R
+8Base.AllianceApplicationMessages.AllianceApplicationSendSollicitatie versturen
 M
 :Base.Technologies.Technology_HighMiddleAges_CropSheds_NameLandbouwloodsen
 a
@@ -7651,8 +7625,9 @@ NBase.Questlines.Questline_EventCity_Vikings_ExpeditionPreparations_Ragnar_Name
 2Base.Buildings.Building_Mayas_City_CityHall_1_NameStadhuis
 B
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameStierenrijders
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_2_NameLuxurious Noria
+D
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_Name
+Luxe Noria
 »
 GBase.StoryText.Story_Questline_CollectHeroes_Epic_QuestStart_Text1_Desc}<style=MC>Nummer Drie</style>! <style=MC>Einstein</style> heeft me zoveel over je verteld! Het is een eer om je te ontmoeten.
 L
@@ -7766,8 +7741,8 @@ W
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_DescProduceert kaolien
 ®
 6Base.Incidents.Incident_EarlyRome_Capital_Goods_1_DescnVolgens de geruchten verbergt dit ondergrondse doolhof werkelijk unieke schatten. Laten we het gaan verkennen!
-å
-LBase.AbilityDescriptions.hero_battle_ability_description.Scheherazade_1_Nameª<style=ability_label>Charm</style>Scheherazade charms the two furthest enemy units, causing them to harmlessly walk towards her for <style=basestat>{duration}</style>. Prioritizes heroes.
+†
+LBase.AbilityDescriptions.hero_battle_ability_description.Scheherazade_1_Nameœ<style=ability_label>Betovering</style>Scheherazade betovert de twee verste vijandelijke eenheden, waardoor ze ongevaarlijk naar haar toe lopen voor <style=basestat>{duur}</style>. Geeft voorrang aan helden.
 Ö
 IBase.AbilityDescriptions.hero_battle_ability_description.Spartacus_1_Name∑<style=ability_label>Melee Strike| Buff</style>Hakt het huidige doelwit vier keer, waarbij elke slag meer schade aanricht voor een totaal van <style=basestat>{dmg_percentage}</style> schade. Verhoogt ook Spartacus' crit-kans met <style=basestat>{crit_percentage}</style> voor <style=basestat>{duration}</style>.
 !
@@ -7820,12 +7795,12 @@ P
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_NameWachters van Carcassonne
 a
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_3_NameOnderzoeksselectiekit 2-3
+í
+Base.Resources.cotton_DesctKatoen is een belangrijke grondstof die je nodig hebt om betere spullen te maken. Je kunt het op de bazaar handelen.
 ]
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest2_QuestStart_Text4_DescOm te citeren...
 e
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_NameVerbeterde Bemanningsindeling
-â
-Base.Resources.cotton_DesckCotton is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 ı
 $Base.Units.Unit_ThomasJefferson_DescÃSchrijf een natie met perkament en een ganzenveer samen met Thomas Jefferson! Deze staatsman uit de 17e en 18e eeuw inspireerde de Amerikaanse Revolutie en maakte zo de weg vrij voor de geboorte van de Verenigde Staten van Amerika. Op drie√´ndertigjarige leeftijd schreef hij de Onafhankelijkheidsverklaring, ge√Ønspireerd door de Verlichtingsidealen van vrijheid en individuele rechten.<br><br>Thomas Jefferson's roem bereikte zijn hoogtepunt toen hij president van de Verenigde Staten werd. Hij onderhandelde met Frankrijk over het grondgebied van Louisiana en na de aankoop gaf hij opdracht tot de expeditie van Lewis en Clark naar dat ruige land, waardoor de Amerikaanse uitbreiding mogelijk werd die de omvang van de Verenigde Staten zou verdubbelen.<br><br>Tegenwoordig wordt Jefferson gezien als een bastion van het liberale denken: een voorvechter van vrije gedachte, vrije meningsuiting en rationalisme. Lincoln is helemaal onder de indruk als hij in de buurt is!
 è
@@ -7916,10 +7891,10 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name∆<sty
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_DescEProduceert een ton aan Munten en voegt 2 Questgevers toe aan je stad.
 ⁄
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Nameá<style=ability_label>Debuff</style> Richt zich op de grootste groep vijandelijke eenheden, vermindert DEF met <style=basestat>{atk_percentage}</style> van Imhotep's ATK voor <style=basestat>{duration}</style> binnen een bereik van <style=basestat>{range}</style>.
+A
+2Base.Buildings.Building_Arabia_Home_Premium_4_NameLuxe woning
 √
 3Base.Incidents.Incident_EarlyRome_Capital_XP_1_DescãOh jee, deze stapel houtblokken is niet bepaald een meesterwerk! Laten we die spieren laten zien en afscheid nemen van deze lelijke rommel.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_4_NameLuxurious Home
 #
 Base.Resources.goblet_NameBeker
 K
@@ -7940,8 +7915,8 @@ NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_2_Name
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_80_DescWMet deze Selectiekit kun je kiezen tussen verschillend gekleurde Verbeterde wapenkeuze.
 ù
 $Base.Units.Unit_QueenElizabethI_DescÙMeng kanonvuur en gebed met Koningin Elizabeth I! Deze 16e-eeuwse vorstin regeerde meer dan veertig jaar over Engeland, in een tijdperk van stabiliteit en voorspoed voor het land. Het was een tijd van kunst, oorlog en ontdekkingsreizen.<br><br>Elizabeth ging uitdagingen aan in binnen- en buitenland, overwon religieuze ijver (hoewel niet zonder een paar mensen te verbranden) en buitenlandse oorlogen. Haar nederlaag van de Spaanse Armada verstevigde haar status als een formidabele Leider, terwijl haar bescherming van mensen als Shakespeare ervoor zorgde dat haar heerschappij nooit vergeten werd.<br><br>Elizabeth, bekend als de 'Maagdelijke Koningin' omdat ze nooit trouwde, behield haar macht en onafhankelijkheid gedurende haar hele bewind. Haar nalatenschap is er een van kracht, intelligentie en cultureel mecenaat en heeft een onuitwisbare stempel gedrukt op de Engelse geschiedenis. Ze had ook een gestreepte mond door het eten van te veel suiker - haar Naam is een anagram van 'Zebra Teeth is Filth'!
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 h
 ,Base.ShopPopup.Pages.diy_offer_hintCompleted8Klaar. Je kunt nu je gepersonaliseerde aanbieding kopen!
 X
@@ -7956,10 +7931,10 @@ M
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_DescÀNu is het tijd om onze ambachtslieden aan het werk te zetten om <nobr><style=MC>Vooroudermaskers</style> <sprite name=resource.ancestor_mask_cta></nobr> te maken die oude wijsheid oproepen. Deze maskers <style=MC>slaan een brug tussen werelden</style>, zodat onze voorouders getuige kunnen zijn van onze inspanningen bij deze taak.
 z
 *Base.QuestlinesPanel.HaveWonderOnLevelTask%Bezit <b>{0}</b> op level <b>{1}</b>.%Bezit <b>{0}</b> op level <b>{1}</b>.
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_NameOlielampenmaker
 Ö
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_3_DescGProduceert een grote stapel Munten en voegt 2 arbeiders toe aan je stad
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_NameOil Lamp Maker
 æ
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DescÅDe grote zaal is het middelpunt van je stad. Hier wordt voortdurend een kleine hoeveelheid munten en voedsel voor je gegenereerd.
 v
@@ -7990,8 +7965,9 @@ N
 9Base.Buildings.Building_Vikings_SailorPort_Premium_5_NameLuxe zeemanshaven
 o
  Base.ShopPopup.DailyDealCityDescKSla essenti√´le materialen in en zie je stad door de eeuwen heen opbloeien!
-R
-4Base.UnitStats.unit_stat.AoeDamageAmp_Percent_AbbrevGEBIED EIGENSCHAP SCHADE %
+B
+4Base.UnitStats.unit_stat.AoeDamageAmp_Percent_Abbrev
+AREA DMG %
 O
 <Base.Technologies.Technology_RomanEmpire_FieldMedicines_NameVeldgeneeskunde
 _
@@ -8064,10 +8040,10 @@ I
 *Base.Wonders.Wonder_Capital_Mausoleum_NameMausoleum van Halicarnassus
 ¸
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text11_Desc©Geweldig! Terwijl jullie dat spoor onderzoeken, zal de rest van ons zich verspreiden en op zoek gaan naar aanwijzingen die ons kunnen helpen Tesla's plan te ontmantelen.
-V
->Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCarthaagse Cavalerie
 l
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
+V
+>Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCarthaagse Cavalerie
 D
 +Base.Regions.region.EmeraldHighlands_3_NameCrystalford Viscounty
 B
@@ -8083,8 +8059,8 @@ A
 A
 3Base.Abilities.hero_battle_ability.Planisphere_Name
 Planisfeer
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_2_Desc#Produces a big pile of Gold Dinars.
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_Desc$Produceert een heleboel goud dinars.
 q
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text1_Desc(Zal ik een aanval op deze dingen leiden?
 l
@@ -8153,8 +8129,8 @@ m
 ;Base.StoryText.Story_DesertDelta_3_1_BattleStart_Text1_Desc[Dit is niet hetzelfde... Ik werd ergens anders naar dit land gebracht. Dit portaal is stil.
 [
 7Base.ShopPopup.SeasonalEventWorldFairEventBundlesHeader Beleef de Wereldtentoonstelling!
-'
-Base.UnitStats.unit_stat.FocusFocus
+/
+Base.UnitStats.unit_stat.FocusEerste aanval
 I
 7Base.Abilities.hero_battle_ability.QueenElizabethI_NameTudor's Triomf
 ô
@@ -8208,8 +8184,8 @@ _
 EBase.Technologies.Technology_EarlyGothicEra_GothicBridgeBuilding_NameGotische Brug Gebouwen
 —
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text4_DescáHoewel ik niet met alle begrippen bekend ben, ben ik er zeker van dat ik mijn ontwerpen kan aanpassen om onze veiligheid te verbeteren.
-H
-%Base.BuildingGroups.oilLampMaker_NameOil Lamp MakerOil Lamp Makers
+O
+%Base.BuildingGroups.oilLampMaker_NameOlielampenmakerOlielampenfabrikanten
 õ
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text1_DescQGeen storingen meer! Onze inspanningen hebben een duidelijk resultaat opgeleverd.
 É
@@ -8218,8 +8194,8 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text1_DescQGeen st
 #Base.Resources.hero.VikingJarl_NameEssentie van Erik de Rode
 W
 3Base.QuestlinesPanel.WithoutUsingInstantPlayTickets Win zonder instant speeltickets.
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+Ç
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_DescGFokt kamelen die hecht nodig zijn om spullen naar de bazaar te brengen.
 ]
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescOntgrendelt Koningswachter
 C
@@ -8240,8 +8216,6 @@ Y
 2Base.ExpandMode.UnlockRegularExpansionConfirmation#Wil je deze uitbreiding vrijspelen?
 ê
 bBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_3_QuestFinish_Text1_Desc©Schitterend! Het <style=MC>Sayil Paleis</style> staat gerestaureerd in al zijn glorie, en rivaliserende leiders hebben onze oproep met respect en bewondering beantwoord!
-d
-IBase.Technologies.Technology_KingdomOfSicily_AstronomicalInstruments_NameAstronomie-instrumenten
 G
 5Base.Questlines.Questline_CampaignMap_Continent3_NameVeroveraar III
 ß
@@ -8290,8 +8264,8 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_25_NameLevel 25
 O
 ;Base.StoryText.Story_DesertDelta_5_9_BattleStart_Text1_DescDeze krijgers...
-G
-5Base.Technologies.Technology_Arabia_RiseOfArabia_NameRise of Arabia
+O
+5Base.Technologies.Technology_Arabia_RiseOfArabia_NameDe opkomst van Arabi√´
 †
 8Base.StoryText.Story_Panganea_2_1_BattleStart_Text3_DescdOntspan, grote koning. Ik ben niet hier voor een gevecht. Ik ben gekomen om een oude vriend te zien.
 ç
@@ -8378,18 +8352,18 @@ T
 Groeifonds
 n
 ;Base.LeaderboardEventPanel.TaskInfo.HeroAcquire_Description/Trek aan een Portaal om Trofee√´n te ontvangen!
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_2_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_NameTapijtmaker
 ó
 EBase.Resources.event_leaderboard_journey_of_the_titanic_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
 H
 @Base.EquipmentLevelUpChances.equipment_level_up_chance.Low3_NameLaag
 E
 1Base.Buildings.Building_China_Home_Average_2_NameMiddelgroot huis
+)
+Base.HeroPanel.RestorationRestauratie
 ›
 6Base.Incidents.Incident_MinoanEra_Capital_Chest_1_Desc¢Kijk! Er heeft zich een bijenkolonie gevestigd in de boom waar we een schat hebben verstopt. Laten we hen voorzichtig verplaatsen, zodat we er toegang toe hebben.
-)
-Base.HeroPanel.RestorationRestoration
 ~
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_Desc>Verhoogt de tevredenheid van aangrenzende gebouwen aanzienlijk
 ù
@@ -8439,14 +8413,12 @@ U
 /Base.TreasureHuntCompleted.CompletedDescription"Je hebt de Schattenjacht voltooid.
 M
 (Base.Resources.hero.QueenElizabethI_Name!Essentie van Koningin Elizabeth I
-Ä
-4Base.ShopOffers.shop_offer.TimelineGrowthFund_1_DescHSpeel 5 exclusieve beloningen vrij terwijl je door de geschiedenis gaat!
 <
 !Base.Resources.hero.YiSunSin_NameEssentie van Yi Sun-sin
 O
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_DescProduceert papyrus
-d
-Base.Mailbox.InvitationCopyE{} invited you to join the Alliance {}. Do you accept the Invitation?
+|
+Base.Mailbox.InvitationCopy]{} heeft je uitgenodigd om lid te worden van de Alliantie {}. Wil je de uitnodiging aannemen?
 A
 -Base.KeyboardShortcuts.Description.QuestPanelOpdrachtenpaneel
 G
@@ -8622,8 +8594,8 @@ Allianties
 ,Base.RewardInfoPopup.MysteryChestDescriptionNBij het openen krijg je willekeurig een van deze items met de volgende kansen:
 7
 Base.RewardPanel.EventHeaderJe evenementbeloningen!
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_5_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+w
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_Desc>De Koffiebrouwer produceert koffie van koffiebonen en messing.
 3
 "Base.Heroes.hero.AdaBlackjack_NameAda Blackjack
 a
@@ -8676,8 +8648,8 @@ P
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_NameMasker Beeldhouwer
 L
 <Base.Technologies.Technology_ClassicGreece_CropRotation_NameGewasrotatie
-ã
-%Base.Resources.hero.Scheherazade_DescbUsed to increase the Awakening Level of Scheherazade and thus unlock more powerful battle bonuses.
+ú
+%Base.Resources.hero.Scheherazade_DescsGebruik dit om het ontwakingsniveau van Scheherazade te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 ∆
 <Base.Resources.event_forgeofvulcan_grand_prize_progress_DescÖMaken van beloningen in het Evenement Smederij van Vulcanus om voortgang te boeken op het beloningsspoor van de Hoofdprijs Voortgang.
 -
@@ -8737,8 +8709,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Nameé
 $Base.IngameEvents.SeasonPass_12_NameKampioenen van Castili√´
 Ö
 1Base.Buildings.Building_Mayas_Home_Premium_2_DescPProduceert een ton cacao en voegt 2 arbeiders en 1 handwerksman toe aan je stad.
-,
-Base.AlliancePanel.MemberChatMember Chat
+-
+Base.AlliancePanel.MemberChatSpelers chat
 ¢
 &Base.Resources.hero.OracleOfDephi_DescxGebruikt om het Ontwakingslevel van het Orakel van Delphi te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 å
@@ -8786,10 +8758,10 @@ G
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text6_Desc&Goed dan... het was een eer, nummer 4.
 \
 =Base.ShopOffers.ShopOffer_Vikings_Subscription_Benefit_1_NameDe Gunst van Ragnar Lodbrok
+W
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_DescProduceert koffie en wierook.
 3
 Base.Hints.FelixEinstein's Make-up Voorbereiden
-V
-6Base.Buildings.Building_Arabia_Workshop_Premium_3_DescProduces Coffee and Incense.
 p
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_DescWat hebben we precies gestopt?
 j
@@ -8846,8 +8818,8 @@ I
 Grote zaal
 2
 Base.PvpPanel.SeasonEndsInSeizoen eindigt over
-d
-1Base.Buildings.Building_Arabia_Home_Medium_5_Desc/Produces Dirham and adds 2 Workers to your city
+l
+1Base.Buildings.Building_Arabia_Home_Medium_5_Desc7Produceert dirham en voegt 2 arbeiders toe aan je stad.
 d
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
 R
@@ -8862,8 +8834,8 @@ G
 "Base.Generic.ErrorDoubleWhitespace!Mag geen dubbele spaties bevatten
 †
 2Base.Buildings.Building_Mayas_City_CityHall_1_DescjDe Grote Zaal is het centrum van je stad. Het genereert voortdurend een kleine hoeveelheid cacao voor jou.
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_2_Desc<Substantially increases the irrigation of adjacent buildings
+p
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_Desc6Verhoogt de irrigatie van nabijgelegen gebouwen flink.
 p
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 _
@@ -8914,14 +8886,12 @@ JBase.CustomizationCollections.CustomizationCollection_WorldFair2024_1_NameWer
 Base.MovePanel.StillStashed?Je voorraad moet leeg zijn om de verplaatsingsmodus te verlaten
 (
 Tutorial.TutorialGuides.CaesarCaesar
-]
-DBase.Technologies.Technology_KingdomOfSicily_BuildingExtensions_NameGebouwenuitbreidingen
 C
 2Base.Units.Unit_StoneAge_Player_Spearfighters_NameSpeervechters
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Premium_4_DescProduceert veel gouderts
-F
-5Base.Abilities.hero_battle_ability.HarunAlRashid_NameHealing Oasis
+G
+5Base.Abilities.hero_battle_ability.HarunAlRashid_NameGenezende Oase
 ≥
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text5_Desc{Ik heb je op jouw slagveld bevochten, nu moet je mij op mijn slagveld trotseren. Menes, zet de <style=MC>TITAN</style> aan!
 K
@@ -8963,8 +8933,8 @@ t
 JBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestFinish_Text3_Desc&Stap voor stap op weg naar grootsheid.
 ”
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text6_DescéLaten we dit gevoel van vrijheid behouden en hopen dat we nooit meer in een situatie terechtkomen waarin we deze strijd opnieuw moeten voeren.
-ç
-Base.Resources.incense_DescnIncense is a refined resource. It can be produced at Incense Makers and Luxurious Workshops - Level 1 upwards.
+à
+Base.Resources.incense_DesciWierook is een toffe grondstof. Je kunt het produceren bij wierookmakers en luxe ateliers vanaf niveau 1.
 Ç
 
  Base.Units.Unit_AdaLovelace_Desc›	Zie de toekomst geschreven in getallen met Ada Lovelace! Deze 19e-eeuwse Engelse wiskundige en schrijfster is beroemd vanwege haar doorbraken in de geschiedenis van de computer. Ze is vooral bekend vanwege haar werk aan Charles Babbage's vroege mechanische computer voor algemeen gebruik, de Analytical Engine.<br><br>Lovelace zag in dat de machine meer mogelijkheden had dan alleen numerieke berekeningen en ze schreef wat beschouwd wordt als het eerste algoritme bedoeld voor implementatie op een machine, waarmee ze de eerste computerprogrammeur was. Zij was de eerste die zich de ware mogelijkheden van computers voorstelde: als ze niet alleen getallen, maar ook symbolen en geluiden konden verwerken, konden ze worden gebruikt om vrijwel alles te maken wat met formules te maken had.<br><br>Ondanks de maatschappelijke beperkingen van haar tijd, blijft de nalatenschap van Ada Lovelace als baanbreker in de informatica toekomstige generaties inspireren op het gebied van wetenschap en technologie. Programmeertalen zijn naar haar vernoemd en ze heeft haar eigen dag van het jaar! In 2019 werd een robot genaamd Ai-da gemaakt. Ironisch genoeg zouden Ada en Ai-da elkaar haten: Ada was in haar geschriften fel tegen kunstmatige intelligentie.
@@ -9078,7 +9048,7 @@ h
 P
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_3_NameBelegeringskazerne
 $
-Base.Resources.cotton_NameCotton
+Base.Resources.cotton_NameKatoen
 «
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text1_Desc‰De restauratie van <style=MC>Chichen Itza</style> vordert met goddelijke gunst! <style=MC>Chaac</style> heeft onze toewijding opgemerkt en de eerste fluisteringen van zijn adem beroeren nu de oppervlakte van onze heilige cenote.
 p
@@ -9120,7 +9090,7 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 u
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 [
-$Base.Mailbox.ApplicationAcceptedCopy3{} has accepted your application to the Alliance {}
+$Base.Mailbox.ApplicationAcceptedCopy3{} heeft je aanvraag voor de Alliantie geaccepteerd
 8
 (Base.Regions.region.EasternValley_4_NameTesla's Fort
 M
@@ -9211,10 +9181,10 @@ Gawainberg
 Base.LocalizedLocales.ru_RURussisch
 /
 Base.PvpHistoryPanel.WinRateWinstpercentage
+y
+2Base.Buildings.Building_Arabia_Home_Premium_4_DescCProduceert een hoop dirham op en voegt 3 arbeiders toe aan je stad.
 T
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_33_NameLevel 33
-n
-2Base.Buildings.Building_Arabia_Home_Premium_4_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 .
 "Base.WorkerManagementPopup.SolvingOplossen
 \
@@ -9362,13 +9332,10 @@ Kleine Put
 2Base.QuestlinesPanel.ConstructSpecificBuildingTask(Bouw <b>{0} {1}</b> op level <b>{2}</b>.(Bouw <b>{0} {1}</b> op level <b>{2}</b>.
 K
 3Base.Buildings.Building_BronzeAge_Farm_Rural_1_NameLandelijke boerderij
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Name
-Camel Farm
+K
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_NameKamelenboerderij
 È
 MBase.StoryText.Story_Questline_TeslaStorm_SolveStages1_QuestFinish_Text1_DescóGoed ontmoet, Leonidas! Ik ben <style=MC>William Tell</style>. Tesla's gigantische blikken doos heeft mijn kostbare appel gefrituurd ‚Äî onvergeeflijk!
-E
-:Base.Technologies.Technology_KingdomOfSicily_Channels_NameKanalen
 A
 2Base.Buildings.Building_Vikings_Home_Sailor_6_NameZeemanshuis
 ;
@@ -9433,12 +9400,12 @@ N
 ;Base.StoryText.Story_DesertDelta_7_3_BattleStart_Text2_Desc_Helden van de Geschiedenis, ten strijde! Verdedig deze heuvelrug, en we zullen ze terugdringen!
 =
 &Base.BuildingGroups.averageAviary_NameVoli√®re	Voli√®res
-0
- Base.Units.Unit_SiouxShaman_NameSitting Bull
 '
 Base.Units.Unit_Saladin_NameSaladin
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_6_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+0
+ Base.Units.Unit_SiouxShaman_NameSitting Bull
+p
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_Desc6De Wierookmaker produceert wierook van mirre en koper.
 4
 Base.NegotiationPanel.TurnsLeftBeurten Over: {0}
 k
@@ -9457,10 +9424,10 @@ v
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 6
 +Base.Units.Unit_EarlyRome_Huns_Geoguth_NameGeoguth
-Ÿ
-FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Nameé<style=ability_label>Damage Transfer | Shield</style>Kiviuq shields himself for <style=basestat>{shield}</style>, and transfers <style=basestat>{damage_transfer}</style> of incoming ability damage taken by allied heroes to himself for <style=basestat>{duration}</style>.
-?
-,Base.AlliancePanel.AllianceMyApplicationsTabMy Applications
+Ï
+FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name°<style=ability_label>Schadeoverdracht | Schild</style>Kiviuq beschermt zichzelf voor <style=basestat>{shield}</style> en neemt <style=basestat>{damage_transfer}</style> de schade van inkomende vaardigheden die bondgenoten oplopen voor zijn rekening voor <style=basestat>{duration}</style>.
+>
+,Base.AlliancePanel.AllianceMyApplicationsTabMijn aanvragen
 C
 *Base.Resources.folio_of_enlightenment_NameFolio van Verlichting
 m
@@ -9519,8 +9486,8 @@ o
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
 Ï
 [Base.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_LadySixSky_QuestStart_Text1_DescåEr zijn twee soorten arbeiders in het Mayarijk: <nobr><style=MC>Ambachtslieden</style> <sprite name=workers_priestmaya></nobr> die nodig zijn in Ateliers en <nobr><style=MC>Arbeiders</style> <sprite name=workers_city.city_mayas></nobr> die de overige taken uitvoeren. 
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+Ç
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_DescGFokt kamelen die hecht nodig zijn om spullen naar de bazaar te brengen.
 ,
 Base.Units.Unit_AnneBonny_Name
 Anne Bonny
@@ -9618,8 +9585,8 @@ Z
 (Base.RewardTypes.MysteryChestReward_Desc.Geeft je een van de vele mogelijke beloningen.
 W
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_NameF√©lag-samenwerkingen
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_Desc.Increases the irrigation of adjacent buildings
+i
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 à
 6Base.Resources.event_summon_of_the_stars_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
 ü
@@ -9698,8 +9665,8 @@ ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_NameZware infant
 ä
 
 Base.Units.Unit_MontezumaI_DescÊ	Drager van de vuurkroon, kampioen van de Hemelse Zee, Groot Spreker: er zijn geen bijnamen die te hoog gegrepen zijn voor Montezuma, de tweede keizer van de Azteken. Deze 14e-eeuwse keizer wordt herinnerd als de belichaming van het Azteekse rijk, in al zijn majesteit en wreedheid. Zijn kroning in Tenochtitlan werd gekenmerkt door enorme offers, een traditie die zijn regime alleen maar zou versnellen.<br><br>Een van Montezuma's eerste daden was het sluiten van een bondgenootschap met twee nabijgelegen stadstaten. Deze Drievoudige Alliantie leidde tot zowel veroveringen als voorspoed, met aquaducten die Tenochtitlan van water voorzagen en de stad in staat stelden te groeien, zelfs toen het rijk steeds meer van Mexico opslokte.<br><br>Eigenlijk heette hij Moctezuma Xocoyotzin, maar die naam gebruikte bijna niemand, want hij stond gewoon bekend als Montezuma. Toch wist hij politieke macht uit te oefenen die veel verder reikte dan een knuppel. Montezuma's nalatenschap is ook er een van geloof: hij wordt herinnerd als een held-god en in zijn tijd werden er overal in het Azteekse rijk religieuze scholen opgericht. Binnen de Helden van de Geschiedenis ergert hij zich er echter aan dat iedereen denkt dat hij zijn afstammeling is, Montezuma II!
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_3_Desc#Produces a big pile of Gold Dinars.
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_Desc$Produceert een heleboel goud dinars.
 W
 3SoftError.AllianceCity.INCIDENT_MAX_REWARD_UNLOCKED Maximale beloning al ontgrendeld
 n
@@ -9712,8 +9679,8 @@ F
 6Base.Technologies.Technology_FeudalAge_Pictograms_NamePictogrammen
 :
 +Base.EquipmentSets.equipment_set.Quack_NameQuack's Set
-<
-$Base.OptionsPopup.StorageFullWarningStorage Full warning
+L
+$Base.OptionsPopup.StorageFullWarning$Waarschuwing: Opslagruimte bijna vol
 ‹
 "Base.ChangeEmail.ActiveTaskMessageµBevestigingsmail is al verstuurd.
 
@@ -9733,8 +9700,9 @@ k
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier3_5_Name"Ascenion Materiaal Selectiekit III
 ÿ
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Nameá<style=ability_label>Nabijheidsaanval| Bloeden| Buff</style>Zwaait zijn zwaard vijf keer naar zijn huidige doelwit, waarbij elke slag meer schade toebrengt voor een totaal van <style=basestat>{dmg_percentage}</style> schade. Elke slag heeft een <style=basestat>{chance_percentage}</style> kans om de tegenstander te laten bloeden voor <style=basestat>{dmg_percentage_bleed}</style> over <style=basestat>{duration}</style>. Verhoogt ook Lancelots kritieke schade met <style=basestat>{crit_dmg_percentage}</style> en zijn kans op een kritieke treffer met <style=basestat>{crit_chance_percentage}</style> voor <style=basestat>{buff_duration}</style>.
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_3_NameLuxurious Noria
+D
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_Name
+Luxe Noria
 †
 2Base.Buildings.Building_Mayas_City_CityHall_2_DescjDe Grote Zaal is het centrum van je stad. Het genereert voortdurend een kleine hoeveelheid cacao voor jou.
 Q
@@ -9814,7 +9782,7 @@ EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text3_DescEJa, vers
 ;
 'Base.ResourceTypes.research_points_NameOnderzoekspunten
 F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_5_NameCoffee Brewer
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_NameKoffiebrouwer
 8
 Base.Hints.Flasks#Flessen vullen met onderzoekspunten
 t
@@ -9885,8 +9853,8 @@ l
 ?Base.Buildings.Building_EarlyGothicEra_CultureSite_Large_1_Desc)Verbetert Geluk van aangrenzende gebouwen
 V
 6Base.Technologies.Technology_Mayas_RiseOfTheMayas_NameDe opkomst van het Maya-rijk
-?
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_NameOasis
+>
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_NameOase
 J
 5Base.Buildings.Building_Mayas_Workshop_Premium_1_NameLuxueuze Ateliers
 A
@@ -9929,9 +9897,8 @@ N
 Base.Ages.StoneAge_Start40.000 v.Chr.
 F
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameMedebrouwerij
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Name
-Camel Farm
+K
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_NameKamelenboerderij
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_20_NameLevel 20
 $
@@ -9940,12 +9907,12 @@ G
 5Base.Technologies.Technology_Mayas_NatureSpirits_NameNatuur Geesten
 T
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameHeldenacademie
+H
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_NameLuxe Handelaar
 «
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Nameˆ<style=ability_label>Buff</style>Als de hitpoints van de houder onder <style=basestat>{hp_threshold}</style> komen, wordt hun verdediging verhoogd met <style=basestat>{defense_buff}</style> tot het einde van de huidige golf. Wordt niet gestapeld.
 '
 Browser.OOM.PrimaryCTAOpnieuw laden
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_6_NameLuxurious Merchant
 p
 ,Base.SelectionKitSelection.CancelDescription@Je kunt de beslissing uitstellen en later maken in de inventaris
 R
@@ -9980,8 +9947,8 @@ k
 (Base.Wonders.Wonder_Egypt_AbuSimbel_NameAboe Simbel
 Q
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_DescProduceert veel gouderts
-^
-ABase.AllianceApplicationMessages.AllianceApplicationTooltipHeaderApplication Message from:
+Q
+ABase.AllianceApplicationMessages.AllianceApplicationTooltipHeaderBericht van:
 ë
 ,Tutorial.RelicsInfoPopup.AgeScaleDescriptionaDe statistieken die ze aan de helden geven, worden beter naarmate je stad verder komt in de tijd.
 [
@@ -10121,8 +10088,8 @@ I
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_2_QuestStart_Text1_DescsDe basis is gelegd. De komende fase zal zeker grotere uitdagingen met zich meebrengen, maar ook grotere Beloningen!
 L
 7Base.Technologies.Technology_Vikings_GlimaFighting_NameVechten met Glima
-ö
-Base.Resources.gold_dinar_DescxGold Dinar are an essential resource for trading at the Bazaar in Arabia. They are generated automatically at Merchants.
+õ
+Base.Resources.gold_dinar_DescyGouden dinars zijn super belangrijk om te handelen op de bazaar in Arabi√´. Ze worden automatisch gemaakt bij handelaars.
 É
 /Base.QuestlinesPanel.FinishBattleAtLocationTask&Voltooi <b>{0}</b> <b>{1}</b> gevecht.(Voltooi <b>{0}</b> <b>{1}</b> gevechten.
 A
@@ -10138,7 +10105,7 @@ U
 Y
 Base.AlertPopup.SkipExpired:De actie is voltooid en kan niet meer worden overgeslagen.
 &
-Base.Resources.incense_NameIncense
+Base.Resources.incense_NameWierook
 ò
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_120_DescRMet deze selectiekit kun je kiezen uit verschillend gekleurde verbeterde emblemen.
 X
@@ -10182,8 +10149,8 @@ B
 4
 &Base.Regions.region.FrozenFjord_4_Name
 Fee√´nwoud
-D
-2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxe woning
 C
 %Base.BuildingInfoPanel.HeroBoostLabelBoost voor alle {0} helden
 B
@@ -10307,8 +10274,8 @@ e
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_Desc$Ontgrendelt Frankische Bijlenwerpers
 y
 0Base.Subscriptions.PRODUCTION_DURATION_PromotionEVerkrijg de Gunst van de Grote Architect om je opslag te verdubbelen!
-K
-4Base.ShopOffers.shop_offer.Diy_Research_Offer_1_NameYour Research-Boost
+J
+4Base.ShopOffers.shop_offer.Diy_Research_Offer_1_NameJe Onderzoek-Boost
 J
 7Base.Buildings.Building_Mayas_RitualSite_Average_6_NameKristallen bron
 0
@@ -10374,14 +10341,14 @@ $Base.NegotiationPanel.NextTurnButtonVolgende beurt
 Base.QuestlinesPanel.StartStarten
 8
 $Base.RewardTypes.UnlockBuilding_DescOntgrendelt {0}.
+G
+1Base.Buildings.Building_Arabia_Home_Medium_6_NameMiddelgrote woning
 Ã
 #Base.Units.Unit_OttomanGeneral_Desc§Yalla! Bevaar de zee√´n met Hasan Pasha, zoon van de beroemde Ottomaanse admiraal Hayreddin Barbarossa. Deze piraat en leider werd beroemd in het midden van de 16e eeuw, toen hij diende als de Beylerbey van Algiers.<br><br>In de voetsporen van zijn vader versterkte Hasan Pasha de Ottomaanse zeedominantie in de Middellandse Zee door zich bezig te houden met belangrijke zeecampagnes en zeeroofactiviteiten tegen Europese mogendheden. Zijn leiderschap zorgde ervoor dat Algiers een centraal punt van Ottomaanse invloed werd en verstevigde de status van een geduchte macht in Noord-Afrika.<br><br>Zijn nalatenschap wordt gekenmerkt door zijn inspanningen om de Ottomaanse suprematie in maritieme zaken te handhaven, waarbij hij een cruciale rol speelde in een tijd van intense regionale en maritieme conflicten. Pasja houdt van gekruid eten, wat de andere Helden van de Geschiedenis steeds weer van streek maakt, vooral Jeanne d'Arc!
-@
-1Base.Buildings.Building_Arabia_Home_Medium_6_NameMedium Home
 Q
 8Base.Abilities.hero_battle_ability.GeorgeWashington_NameVader der Verdedigers
-8
-&Base.AnnouncementCenter.Event_CalendarEvent Calendar
+=
+&Base.AnnouncementCenter.Event_CalendarEvenementenkalender
 R
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_NameKheshigruiters
 L
@@ -10504,8 +10471,6 @@ EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier3_2_DescTMet deze
 Base.Resources.gold_laurel_DescdGouden lauweren zijn goederen die kunnen worden geproduceerd door ambachtslieden - level 4 en hoger.
 8
 .Base.Units.Unit_RomanEmpire_Player_Turmae_NameTurmae
-S
-ABase.Technologies.Technology_KingdomOfSicily_LawOfCotangents_NameCotangensregel
 R
 :Base.AllianceQuarterPanel.UpgradeRequirementStepContributeMaterialen bijdragen
  
@@ -10697,9 +10662,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_1_NameÍ<s
 Base.BuildPanel.StorageCapacityOpslagcapaciteit
 K
 5Base.EquipmentLevelUpPanel.EquipmentLevelUpSuccessfulLevel Up geslaagd!
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Name
-Camel Farm
+K
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_NameKamelenboerderij
 ™
 8Base.QuestlinesPanel.ConstructSpecificBuildingInCityTask6Bouw <b>{0} {1}</b> op level <b>{2}</b> in <b>{3}</b>.6Bouw <b>{0} {1}</b> op level <b>{2}</b> in <b>{3}</b>.
 )
@@ -10773,8 +10737,8 @@ e
 KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_ChichenItza_2_NameChichen Itza - Fase II
 e
 Base.Alerts.InvalidSessionTextCJe sessie is verlopen of is ongeldig geworden. Probeer het opnieuw.
-?
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_NameOasis
+>
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_NameOase
 A
 5Base.Buildings.Building_Egypt_GoldMine_Average_2_NameGoudmijn
 T
@@ -10783,8 +10747,8 @@ HBase.AllianceTechnologies.alliance_technology.residentialQuarter_11_NameLevel
  Base.RankingPanel.JoinAnAllianceWord lid van een alliantie!
 a
 PBase.StoryText.Story_Technology_StoneAge_DomesticatedGoats_TechUnlock_Text3_DescWaar ben ik?!
-Ã
-MBase.AbilityDescriptions.hero_battle_ability_description.HarunAlRashid_1_Name˙<style=ability_label>Heal</style>Harun-Al Rashid heals all allied units for <style=basestat>{heal}</style> of his base damage. Any excess healing on each unit is stored and converted to damage the next time they deal damage with an attack or ability.
+ı
+MBase.AbilityDescriptions.hero_battle_ability_description.HarunAlRashid_1_Name£<style=ability_label>Genees</style>Harun-Al Rashid geneest alle geallieerde eenheden voor <style=basestat>{heal}</style> van zijn basisschade. Overtollige genezing van elke eenheid wordt opgeslagen en omgezet in schade de volgende keer dat ze schade toebrengen met een aanval of vaardigheid.
 5
 Base.ShopDTC.InfoPopup.TitleKies je afrekenstroom
 [
@@ -10796,10 +10760,10 @@ H
 Vissteiger
 @
 1Base.Units.Unit_IberianEra_Player_Almogavars_NameAlmog√†vers
+¶
+GBase.AbilityDescriptions.hero_battle_ability_description.Saladin_1_Name⁄<style=ability_label>Buff-</style>Saladin richt zich op de geallieerde eenheid met de laagste HP die niet door deze vaardigheid wordt be√Ønvloed, en verhoogt hun bewegingssnelheid met <style=basestat>{move_speed_buff}</style> en aanvalsnelheid met <style=basestat>{atk_speed_buff}</style> tot het einde van het gevecht. Hij geeft voorrang aan helden. Als de eenheid met de buff sterft, gaan de effecten over op de dichtstbijzijnde bondgenoot. Deze buff kan worden gestapeld.
 L
 7Base.EquipmentSets.equipment_set.Musketeer_Garment_NameMusketiers Mantel
-Œ
-GBase.AbilityDescriptions.hero_battle_ability_description.Saladin_1_NameÇ<style=ability_label>Buff</style>Saladin targets the allied unit with the lowest HP unaffected by this ability, increasing their Movement Speed by <style=basestat>{move_speed_buff}</style> and Attack Speed by <style=basestat>{atk_speed_buff}</style> until the end of the battle. Prioritizes heroes. If the buffed unit dies, the effects transfer to the nearest ally. This buff can stack.
 0
 'Base.WorldWondersPromotion.NewWonderTagNieuw
 2
@@ -10910,14 +10874,14 @@ ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescWMet deze Sel
 Base.Generic.BuyKopen
 c
 "Base.Notifications.IdleWorkersText=Je arbeiders zijn klaar om bij te dragen! Wijs ze NU toe! ‚è≥
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_3_Desc<Substantially increases the irrigation of adjacent buildings
+p
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_Desc6Verhoogt de irrigatie van nabijgelegen gebouwen flink.
 k
 RBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_PurpleTeslaTakedown_1_NameUmbral Tesla verslaan
-_
-MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text6_NameAmelia Earhart
 d
 @Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_210_Name Gewone Wapenschilden Selectiekit
+_
+MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text6_NameAmelia Earhart
 C
 0Base.KeyboardShortcuts.Description.ToggleCultureSchakel cultuur
 ‰
@@ -11000,10 +10964,10 @@ F
 5Base.Questlines.Questline_CampaignMap_Continent4_NameVeroveraar IV
 p
 #Base.Resources.material_nature_DescIDit speciale materiaal kan gebruikt worden om natuurwonderen te upgraden.
-Z
-ABase.WorldWondersInventionInformationPopup.InventionChancesHeaderKansen uitvindingsbol
 ´
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_12_Text6_DescaIk voel dat onze tactiek super goed werkt. De boodschap van de maan is bij ons in veilige handen.
+Z
+ABase.WorldWondersInventionInformationPopup.InventionChancesHeaderKansen uitvindingsbol
 2
 Base.Rifts.rift.Egypt_NameEgyptische Tijdpoort
 3
@@ -11082,14 +11046,14 @@ E
 5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_NameCavaleristen
 L
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameValkerij Handschoen
+p
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_Desc6De Wierookmaker produceert wierook van mirre en koper.
 Õ
 ,Base.QuestlinesPanel.CollectWorkerProductionMVerzamel <b>{0}</b> productie van <b>{1}</b> uit de <b>{2}</b> in <b>{3}</b>.NVerzamel <b>{0}</b> producties van <b>{1}</b> uit de <b>{2}</b> in <b>{3}</b>.
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_5_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 ^
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text2_NameLeif Erikson
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc.Increases the irrigation of adjacent buildings
+i
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 %
 Base.HeroClass.Defender
 Verdediger
@@ -11107,8 +11071,8 @@ L
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescProduceert gouderts
 `
 )Base.SeasonPass.EventEndedNoParticipation3Win geweldige Beloningen in het volgende Evenement!
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_6_Desc#Produces a big pile of Gold Dinars.
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_Desc$Produceert een heleboel goud dinars.
 5
 #Base.Resources.alliance_timber_NameAlliantie Hout
 *
@@ -11137,18 +11101,18 @@ F
  Base.Units.Unit_Nostradamus_DescåOntrafel de geheimen van het lot met Nostradamus, de legendarische ziener wiens visioenen door de eeuwen heen weerklinken! Michel de Nostredame werd in 1503 geboren en werd een beroemd arts vanwege zijn moed tijdens pestuitbraken, maar het waren zijn mysterieuze voorspellingen die hem een blijvende nalatenschap bezorgden. Zijn boek Les Proph√©ties bevatte zulke cryptische verzen dat generaties zich hebben gebroken over de ware betekenis ervan en ze in verband hebben gebracht met gebeurtenissen zoals verwoestende oorlogen en de opkomst en ondergang van keizers.<br><br>De faam van Nostradamus reikte tot in de hoogste kringen - hij voorspelde zelfs de toekomst van Catherine de' Medici, koningin van Frankrijk. Sommigen zeggen dat hij in een koperen schaal keek, anderen in de sterren, maar zijn mix van astrologie en po√´tische raadsels blijft zowel gelovigen als sceptici fascineren. Helden fluisteren dat hij zijn waarzeggingsschaal nooit onbeheerd achterlaat en dat zijn dagboek soms 's avonds laat vanzelf begint te schrijven.
 E
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameArbeiderswoning
+C
+6Base.Buildings.Building_Arabia_Merchant_Average_5_Name	Handelaar
 f
 %Base.QuestlinesPanel.CompleteSpecificWin <b>{0}</b> {1}.(Win <b>{0}</b> een van deze dingen: {1}.
-B
-6Base.Buildings.Building_Arabia_Merchant_Average_5_NameMerchant
 :
 &Base.TreasureHuntStartedPopup.EndTimerEindigt over {0}
 —
 8Base.StoryText.Story_Panganea_4_3_BattleStart_Text2_DescîAlsjeblieft, Nikola. Laat dit even rusten. Ga met me mee terug naar de toekomst. We kunnen de wereld nog steeds veranderen. We zijn nog niet zo oud.
 L
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_NameKleine boerderij
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+Ç
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_DescGFokt kamelen die hecht nodig zijn om spullen naar de bazaar te brengen.
 ¯
 gBase.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_MontezumaI_SahilPalace_QuestStart_Text1_DescåEr zijn twee soorten arbeiders in het Mayarijk: <nobr><style=MC>Ambachtslieden</style> <sprite name=workers_priestmaya></nobr> die nodig zijn in Ateliers en <nobr><style=MC>Arbeiders</style> <sprite name=workers_city.city_mayas></nobr> die de overige taken uitvoeren. 
 K
@@ -11227,8 +11191,8 @@ L
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_NameLandelijke boerderij
 1
 Base.BuildingGroups.scribe_NameKlerkKlerken
-Ö
-LBase.AbilityDescriptions.hero_battle_ability_description.AdaBlackjack_1_Name¥<style=ability_label>Shield | Cleanse</style>Ada shields all allied units for <style=basestat>{shield_percentage}</style> of her base damage and cleansing them of negative effects.
+¨
+LBase.AbilityDescriptions.hero_battle_ability_description.AdaBlackjack_1_Name€<style=ability_label> <style=basestat>Schild | Reinigen</style>Ada beschermt alle bondgenoten met een schild dat {shield_percentage}</style> van haar Basis Schade kan tegenhouden en ze reinigt ze van negatieve effecten.
 )
 Base.Ages.MinoanEra_Decade1600 v.Chr.
 @
@@ -11331,13 +11295,13 @@ $
 Base.Generic.ReloadOpnieuw laden
 J
 'Base.HeroFilterPopover.SortHeroesToBackSorteer uitgeputte Helden terug
+,
+Base.Resources.gold_dinar_Name
+Goud Dinar
 f
 4Base.SeasonPassSelectBattleOrNegotiationPopup.Header.Win deze strijd of los deze onderhandeling op.
 =
 )Base.Regions.region.VolcanicJungle_1_NameMaya-voetgrotten
-,
-Base.Resources.gold_dinar_Name
-Gold Dinar
 `
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameZware infanterie kazerne
 K
@@ -11362,8 +11326,8 @@ W
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text3_Desc≈Ik weet niet wat hij in dit geval van plan is, maar hij staat erom bekend dat hij met technologie knoeit. Hij probeert vast bepaalde systemen te verstoren om te voorkomen dat de maanlanding slaagt.
 G
 &Base.Resources.hero.UlyssesSGrant_NameEssentie van Ulysses S. Grant
-n
-2Base.Buildings.Building_Arabia_Home_Premium_3_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+y
+2Base.Buildings.Building_Arabia_Home_Premium_3_DescCProduceert een hoop dirham op en voegt 3 arbeiders toe aan je stad.
 O
 ;Base.ShopOffers.PiggyBank_researchPointsEvent_Unlock_2_NameEdelstenen Kluis
 y
@@ -11554,14 +11518,12 @@ m
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameMerovingische Berserkers
 «
 8Base.StoryText.Story_Panganea_6_9_BattleStart_Text1_DescäIk ben Tesla's uitverkoren bevelhebber voor deze provincie, gezworen om te heersen. Gezworen om hun gewoonten te vervangen door industrie.
-1
-)Base.Expansions.Expansion_Arabia_118_NameBrug
 Ï
 aBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Yggdrasil_1_QuestStart_Text3_DescÜElke <style=MC>Crate</style> verbetert ook je <style=MC>Ranglijst</style> in de <style=MC>Event Highscore</style> en ontgrendelt zo betere <style=MC>Beloningen</style> naarmate je hoger klimt in de <style=MC>Competities</style> tegen het einde van het Evenement.
 2
 !Base.Units.Unit_LouisPasteur_NameLouis Pasteur
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_3_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_NameTapijtmaker
 &
 Base.CommunityPopup.YoutubeYouTube
 w
@@ -11622,8 +11584,8 @@ K
 7Base.Buildings.Building_Mayas_RitualSite_Premium_4_NameTempel van Magma
 m
 MBase.Questlines.Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_NamePiramide van Cheops - Fase I
-d
-1Base.Buildings.Building_Arabia_Home_Medium_6_Desc/Produces Dirham and adds 2 Workers to your city
+l
+1Base.Buildings.Building_Arabia_Home_Medium_6_Desc7Produceert dirham en voegt 2 arbeiders toe aan je stad.
 m
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text6_Desc0Tesla bewapent de Perzen. Mijn lot ligt in puin.
 %
@@ -11644,10 +11606,10 @@ m
 Base.PvpPanel.DefenseTeamVerdedigingsteam
 \
 $Base.QuestlinesPanel.StartProductionStart <b>{0} {1}</b> {2}.Start <b>{0} {1}</b> {2}.
-9
-!Base.Time.ElapsedTimeHoursMinutes{0:h\h\ m\m} geleden
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
+9
+!Base.Time.ElapsedTimeHoursMinutes{0:h\h\ m\m} geleden
 ‰
 hBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_DragonshipEllida_1_QuestStart_Text1_DescxNu we onze eigen expeditieschepen hebben, laten we ons richten op het upgraden van <style=MC>Drakenschip Ellida</style>.
 k
@@ -11669,18 +11631,18 @@ r
 &Base.Resources.hero.AmeliaEarhart_DesctGebruikt om het Level van Ontwaken van Amelia Earhart te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 É
 /Base.TreasureHuntStartedPopup.AlreadyInProgressPDe huidige schattenjacht is al begonnen. Je kunt deelnemen aan de volgende over:
-H
-,Base.UnitStats.unit_stat.AoeDamageAmp_AbbrevGEBIED EIGENSCHAP SCHADE
+8
+,Base.UnitStats.unit_stat.AoeDamageAmp_AbbrevAREA DMG
+ä
+%Base.EventType.ChestEvent_DescriptionaVerzamel evenemententokens om mee te doen aan dit evenement en geweldige beloningen te verdienen!
 I
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_NameBereden Speerman
-t
-%Base.EventType.ChestEvent_DescriptionKAcquire event tokens to participate in this event and earn amazing rewards!
 Ù
 MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name¢<style=ability_label>Teleport | Taunt | Burn | SCHILD </style>Ragnar gaat naar de verste vijand en daagt hem en alle eenheden binnen een bereik van <style=basestat>{range}</style> uit voor <style=basestat>{taunt_duration}</style>, waardoor ze <style=basestat>{burn_dmg}</style> schade oplopen voor </style> voor <style=basestat>{duration}</style> en zichzelf beschermt voor <style=basestat>{shield_percentage}</style>.
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 €
  Base.Units.Unit_SirLancelot_Desc∂Woon het verhaal bij van Sir Lancelot, ridder van Koning Arthur en de Ronde Tafel, Franse ridder en zwerver in de rijken van de Fae.<br><br>Hij kwam van verre landen naar het hof van koning Arthur, redde koningin Guinevere en zocht de Heilige Graal, wat hem een bijna perfecte ridder maakte.<br><br>Helaas leidde zijn enige gebrek tot de val van Camelot: zijn liefde voor Arthurs koningin bracht het koninkrijk om hem heen ten val. Desondanks wordt hij herinnerd als een eervolle held en door velen geliefd. Minder beroemd is zijn meer muzikale broer, Sir Dancealot.
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 ª
 4Base.Incidents.Incident_IberianEra_Capital_XP_1_DescÇOh jee, deze houtstapel is niet bepaald een meesterwerk! Laten we die spieren gebruiken en afscheid nemen van deze lelijke rommel.
 s
@@ -11763,8 +11725,6 @@ D
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name≈<style=ability_label>Buff | Bleed</style>Verhoogt de schade van de Helden tegen bloedende doelen met <style=basestat>{damage_increase_per_relic_level}</style>. Daarnaast heeft het beschadigen van een vijand een <style=basestat>{bleed_chance_percentage}</style> kans om een bloeding toe te brengen, waarbij <style=basestat>{bleed_percentage_per_relic_level}</style> schade per seconde wordt toegebracht gedurende <style=basestat>{bleed_duration}</style>.
 F
 4Base.Questlines.Questline_MinoanEra_HeroAcademy_NameHeldenacademie
-^
-CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameAutomatische regelingen
 C
 $Base.Resources.hero.Nostradamus_NameDe essentie van Nostradamus
 G
@@ -11791,8 +11751,8 @@ T
 ,Base.BuildingGroups.premiumPapyrusField_NameLuxe papyrusveldLuxe papyrusvelden
 D
 3Base.Units.Unit_BronzeAge_Player_HeavyInfantry_NameBronzen Wacht
-a
-CBase.IngameEvents.MilestoneEvent_Halloween2025_RallyOfHeroes_1_NameAll Hallows' Eve Encounter
+g
+CBase.IngameEvents.MilestoneEvent_Halloween2025_RallyOfHeroes_1_Name Ontmoeting op Allerheiligenavond
 C
 $Base.QuestlinesPanel.ClaimDailyLoginDagelijkse beloning claimen
 8
@@ -11839,8 +11799,6 @@ VBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_1_QuestStart_Tex
 'Base.BuildingContextPanel.ProductionTab	Productie
 R
 GBase.AllianceTechnologies.alliance_technology.residentialQuarter_7_NameLevel 7
-O
->Base.Technologies.Technology_KingdomOfSicily_SineQuadrant_NameSinuskwadrant
 [
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescOntgrendelt Schermutsers
 j
@@ -11956,8 +11914,6 @@ D
 3Base.Buildings.Building_EarlyRome_Home_Small_1_NameKleine woning
 K
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_1_NameLevel 1
-F
-:Base.Technologies.Technology_KingdomOfSicily_Windpump_NameWindpomp
 9
 Base.Alerts.FullRequestCountResterende verzoeken: {0}
 ú
@@ -12028,8 +11984,8 @@ aBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_Que
 Base.LocalizedLocales.it_IT	Italiaans
 H
 3Base.Technologies.Technology_China_RiseOfChina_NameOpkomst van China
-#
-Base.Generic.TimesEach	{0}x each
+"
+Base.Generic.TimesEach{0}x elk
 :
 'Base.Expansions.Expansion_China_27_NameZuidelijke brug
 '
@@ -12082,8 +12038,10 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text8_DescM
 #Base.VideoPlacementButton.RemainingResterend: {0}
 O
 (Base.OptionsPopup.AlreadyLoggedIntoWorld#Je bent al ingelogd in deze wereld.
-¡	
-!Base.Units.Unit_AdaBlackjack_Descõ	Survive the impossible with Ada Blackjack, the woman who conquered the Arctic alone! This Inupiat seamstress from the early 20th century became an unlikely hero when she outlasted veteran explorers on the desolate Wrangel Island. In 1921, she joined a Canadian expedition as a cook and seamstress, the only woman among four men.<br><br>When the expedition went catastrophically wrong, with supply ships failing to arrive and the men leaving to seek help but never returned, Ada was left utterly alone on the frozen island with only the expedition's cat, Victoria, for company. For two years, she survived where trained explorers had perished. Through extreme hardship, Ada taught herself to set traps, fire a rifle, fend for herself, using her resourcefulness to beat starvation and illness, even as the Arctic winter closed in. Despite being surrounded daily by hunger and polar bears, Ada's hope never faded.<br><br>Together, Ada and Vic braved blizzards and loneliness, their bond a source of comfort and warmth amid the cold. In time, Ada was rescued and returned home, and her story became an inspiration - proof that ordinary people are capable of extraordinary resilience.
+⁄
+
+!Base.Units.Unit_AdaBlackjack_Desc¥
+Overleef het onmogelijke met Ada Blackjack, de vrouw die in haar eentje de Noordpool veroverde! Deze Inupiat-naaister uit het begin van de 20e eeuw werd een onverwachte held toen ze het langer volhield dan ervaren ontdekkingsreizigers op het verlaten Wrangel-eiland. In 1921 trad ze toe tot een Canadese expeditie als kokkin en naaister, de enige vrouw tussen vier mannen.<br><br>Toen de expeditie rampzalig misging, met bevoorradingsschepen die niet aankwamen en de mannen die hulp gingen zoeken maar nooit terugkwamen, bleef Ada helemaal alleen achter op het bevroren eiland, met alleen de kat van de expeditie, Victoria, als gezelschap. Twee jaar lang overleefde ze waar getrainde ontdekkingsreizigers waren omgekomen. Ondanks de extreme ontberingen leerde Ada zichzelf vallen zetten, een geweer afvuren en voor zichzelf zorgen. Ze gebruikte haar vindingrijkheid om hongersnood en ziekte te overwinnen, zelfs toen de poolwinter sloot. Hoewel ze dagelijks werd omringd door honger en ijsberen, verloor Ada nooit haar hoop.<br><br>Samen trotseerden Ada en Vic sneeuwstormen en eenzaamheid, en hun band was een bron van troost en warmte te midden van de kou. Uiteindelijk werd Ada gered en keerde ze terug naar huis, en haar verhaal werd een inspiratiebron ‚Äì het bewijs dat gewone mensen tot buitengewone veerkracht in staat zijn.
 "
 Base.PvpPanel.Ranking	Ranglijst
 2
@@ -12093,8 +12051,8 @@ Produceren
 ]Base.StoryText.Story_Questline_EventCity_Vikings_DragonshipEllida_Start_QuestStart_Text1_Desc˙Ik ben Lagertha, schild-meid en felle beschermer van ons volk. Ge√Ønspireerd door het legendarische <style=MC>Drakenschip Ellida</style> beginnen we nu aan een reis naar de ruige landschappen van Noorwegen, waar de fjorden op onze verkenning wachten.
 P
 ,Base.Resources.hero.FlorenceNightingale_Name Essentie van Florence Nachtegaal
-H
-6Base.AllianceApplicationMessages.AllianceRejectionSendSend Rejection
+M
+6Base.AllianceApplicationMessages.AllianceRejectionSendAfwijzing versturen
 |
 9Base.WondersReworkUpgradePanel.TradeOfferBoostDescription?Krijg <b>{0}</b> extra goederen van <b>handelsaanbiedingen</b>.
 *
@@ -12113,8 +12071,8 @@ L
 Base.ShopPopup.TimedDealsHete aanbiedingen
 R
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_3_NameAfstandstroepenkazerne
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_5_NameLuxurious Workshop
+K
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_NameLuxueuze Ateliers
 >
 5Base.Technologies.Technology_ClassicGreece_Agora_NameAgora
 a
@@ -12207,8 +12165,8 @@ E
 ,Base.EquipmentSets.equipment_set.Hunter_Name	Jagersset
 M
 3Base.NegotiationPurchaseTurnDialog.ConfirmEndButtonOnderhandeling stoppen
-n
-2Base.Buildings.Building_Arabia_Home_Premium_6_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+y
+2Base.Buildings.Building_Arabia_Home_Premium_6_DescCProduceert een hoop dirham op en voegt 3 arbeiders toe aan je stad.
 {
 BBase.QuestlinesPanel.CollectResourceFromBuildingTypeInSpecificCity5Verzamel <b>{0} {1}</b> van <b>{2}</b> in <b>{3}</b>.
 9
@@ -12217,10 +12175,10 @@ BBase.QuestlinesPanel.CollectResourceFromBuildingTypeInSpecificCity5Verzamel <b
 8Base.SiegeOfOrleansHistoricBattleInfoPopup.LaneInfoGreen©Groene vijanden op deze lane zijn zwak voor <style=MC2>Burn Schade</style>, waardoor de hoeveelheid schade die ze van deze effecten ontvangen met een bepaald % toeneemt.
 u
 8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc9Produceert Munten en voegt een Questgever toe aan je stad
+6
+Base.Event.EventEndsInHet evenement eindigt in {0}
 o
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_Desc8Produceert in korte tijd een kleine hoeveelheid voedsel.
-+
-Base.Event.EventEndsInEvent ends in {0}
 )
 Base.Ages.DawnAge_Finish50.000 v.Chr.
 c
@@ -12229,8 +12187,8 @@ CBase.Questlines.Questline_EventCity_Mayas_Workshops_LadySixSky_NameHeilige At
 $Base.UnitStats.unit_stat.Attack_DescaVerhoogt de schade die wordt toegebracht aan vijandelijke eenheden als deze hoger is dan hun DEF.
 6
 Base.OptionsPopup.ChangeConsentInstemming Wijzigen
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_2_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+p
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_Desc6De Wierookmaker produceert wierook van mirre en koper.
 á
 ?Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_DescriptionDWin Tesla Stormen kleurengevechten in Groen om trofee√´n te krijgen!
 %
@@ -12406,8 +12364,8 @@ P
 WBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestFinish_Text1_DescÓSuper! Nu kunnen we beginnen met het oogsten van <nobr><style=MC>Kaolien</style> <sprite name=resource.kaolin_cta></nobr>, wat belangrijk is voor het maken van <nobr><style=MC>Porcelein</style> <sprite name=resource.porcelain_cta></nobr>.
 A
 1Base.Technologies.Technology_Mayas_StateLaws_NameStaatswetten
-7
-$Base.BazaarOffersPanel.NoOffersFoundNo offers found
+B
+$Base.BazaarOffersPanel.NoOffersFoundGeen aanbiedingen gevonden
 [
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_NameVersterkte Handvatten
 %
@@ -12440,7 +12398,7 @@ R
 9
 (Base.Regions.region.EasternValley_8_NameMalinese Fort
 F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_2_NameCoffee Brewer
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_NameKoffiebrouwer
 [
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text1_Name
 Robin Hood
@@ -12825,8 +12783,8 @@ W
  Base.RewardTypes.UnlockGood_NameGoed ontgrendelen
 c
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_70_Name Gewone Wapenschilden Selectiekit
-\
-6Base.Buildings.Building_Arabia_Merchant_Average_2_Desc"Produceert een grote stapel dirham
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_2_DescMaakt gouden dinars.
 D
 1Base.EquipmentSets.equipment_set.Squire_Hand_NameSquire's zwaard
 K
@@ -12839,11 +12797,11 @@ M
 ZBase.StoryText.Story_Questline_EventCity_Vikings_Provisions_Lagertha_QuestStart_Text1_DescïOm onze schepen op expeditie te sturen om <nobr><style=MC>Keramische schatten</style> <sprite name=resource.ceramic_treasure_cta></nobr> en <nobr><style=MC>Goud schatten</style> <sprite name=resource.gold_treasure_cta></nobr> te vinden, moeten we onze Taveerne opstarten om <nobr><style=MC>Mede</style> <sprite name=resource.mead_cta></nobr> te produceren. Laten we meteen met deze productielijn beginnen!
 6
  Base.EquipmentToolTip.LevelUpCap- Level Up Cap: {}
+ù
+&Base.Resources.hero.HarunAlRashid_DescsGebruikt om het ontwakingsniveau van Harun al-Rashid te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 L
 >Base.Technologies.Technology_EarlyGothicEra_BankingHouses_Name
 Bankhuizen
-è
-&Base.Resources.hero.HarunAlRashid_DesceUsed to increase the Awakening Level of Harun al-Rashid and thus unlock more powerful battle bonuses.
 Â
 Base.Units.Unit_HuaMulan_Desc√Laten we aan de slag gaan met Hua Mulan! Deze legende uit de Chinees folklore wordt geroemd om haar moed en toewijding. In 'De ballade van Mulan' is ze een jonge vrouw die zich vermomt als man om de plaats van haar vader in het leger in te nemen.<br><br>Na duizend mijl en duizend gevechten wordt Mulan op bezoek gestuurd bij de Zoon van de Hemel. Van hem eist ze alleen een paard dat snel genoeg is om haar naar huis te brengen. Eenmaal daar onthult ze dat ze een vrouw is, wat haar kameraden choqueert.<br><br>Mulans verhaal is er een van heldhaftig verzet. Ze trotseert zowel de verwachtingen van vrouwen als die van krijgers en toont trouw aan haar familie en aan China. Het verhaal is verschillende keren bewerkt, vooral in films en theater, en is geliefd in China en daarbuiten. Recentelijk hebben zij en Joan outfits vergeleken!
 r
@@ -13176,8 +13134,8 @@ U
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_NameIrrigatiestation
 /
 Browser.OOM.SecondaryCTAContact met support
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_3_NameIncense Maker
+F
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_NameWierookmaker
 ≥
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text2_DescwIk concludeer dat een willekeurig aantal vijanden ons kan tegenkomen. Laten we de steen van Tesla pakken en ontsnappen.
 I
@@ -13199,8 +13157,8 @@ C
 ;Base.Questlines.Questline_StoneAge_CultureIntroduction_NameEen kennismaking met cultuur
 *
 Base.Ages.HighMiddleAges_Finish1200 AD
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_3_NameLuxurious Merchant
+H
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_NameLuxe Handelaar
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_33_NameLevel 33
 T
@@ -13243,12 +13201,10 @@ W
 $Base.ExpansionPopup.ResearchRequiredVereist tijdperk: {0}
 4
 *Base.AllianceQuarterPanel.UpgradeTabLevel0Bouwen
-G
-=Base.Technologies.Technology_KingdomOfSicily_FountainPen_NameVulpen
 §
 6Base.WondersReworkUpgradePanel.TagUnitBonusDescriptionjBoost de <b>{0}</b> van al je <b>{1}-eenheden</b> met <b>{2}</b> extra per elke tweede actieve <b>{3}</b>.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_NameOil Lamp Maker
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_NameOlielampenmaker
 >
 'Base.ShopPopup.Pages.china_starter_packChina starterpakket
 K
@@ -13282,10 +13238,10 @@ L
 0Base.InventoryItems.Selection_Kit_Food_RP_2_NameVoedsel / RP-selectiekit
 Ò
 \Base.StoryText.Story_Questline_EventCity_Mayas_RitualSites_LadySixSky_QuestFinish_Text1_DescêJe hebt de <style=MC>heilige grond</style> van onze voorouders blootgelegd! Ik kan voelen dat de oude kracht al door ons Land begint te stromen!
-7
-$Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 é
 )Base.AllianceCityManagementPopup.NoneBusyaAlle alliantieleden zijn beschikbaar!<br><br>Je kunt een nieuwe taak starten in de alliantiestad.
+7
+$Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 ¡
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text2_DescxMijn uitvindingen kunnen onze maatregelen verbeteren, daar ben ik zeker van. Ik heb misschien wel wat begeleiding nodig.
 7
@@ -13342,8 +13298,8 @@ P
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_NameSuperior Crest Selectiekit
 D
 3Base.Buildings.Building_BronzeAge_Home_Small_3_NameKleine woning
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_5_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+m
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_Desc3Produceert koffie, wierook, olielampen en tapijten.
 B
 $Base.BuildingTypes.papyrusField_NamePapyrusveldPapyrusvelden
 I
@@ -13356,10 +13312,10 @@ H
 6Base.Buildings.Building_IberianEra_Farm_Premium_1_NameLuxe boerderij
 &
 Base.Ages.IberianEra_Finish1050 AD
+p
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_Desc6Verhoogt de irrigatie van nabijgelegen gebouwen flink.
 8
 !Base.Numbers.SubtractedPercentage<nobr>-{0} %</nobr>
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_5_Desc<Substantially increases the irrigation of adjacent buildings
 h
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_NameDame Zes Hemel
 3
@@ -13402,12 +13358,12 @@ K
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_NameLandelijke boerderij
 e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc$Verwerkt mottencocons tot zijdedraad
-D
-2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxe woning
 ê
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_Desc¨Hiervoor moet je <style=MC>kratten</style> vullen met grondstoffen. Als alle kratten gevuld zijn, kun je <style=MC>upgraden</style> en een <style=MC>beloning</style> innen.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_2_NameIncense Maker
+F
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_NameWierookmaker
 L
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_NameMinotaurus' Voorhoede
 @
@@ -13570,22 +13526,22 @@ J
 6Base.Buildings.Building_Vikings_Beehive_Average_4_DescaDe bijenkorf produceert heerlijke honing die wordt gebruikt om mede te produceren in de taveerne.
 J
 #Base.BuildingGroups.priestHome_NameVakwerkhuisAmbachtelijke Woningen
+w
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_Desc>De Koffiebrouwer produceert koffie van koffiebonen en messing.
 :
 1Base.Technologies.Technology_EarlyRome_Domus_NameDomus
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_2_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 *
 Base.Rifts.rift.Common_NameTijdportaal
+™
+9Base.EventStartScreens.Halloween2025EventStartDescriptionÏKanaal de kracht van antimaterie in het Portal en versterk door trofee√´n en coole beloningen te pakken in het All Hallows' Eve Encounter-evenement, zoals <style=epic>Abraham Van Helsing</style> en <style=legendary>Vlad Dracula</style>!
 ì
 "Base.Resources.hero.JohnLocke_DescmGebruikt om het Ontwakingslevel van John Locke te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
-Ø
-9Base.EventStartScreens.Halloween2025EventStartDescriptionÒChannel the power of Antimatter in the Portal and ascend to glory by earning trophies and bountiful rewards in the All Hallows' Eve Encounter event, including <style=epic>Abraham van Helsing</style> and <style=legendary>Vlad Dracula</style>!
 \
 ?Base.Alerts.SingleSignOn.ConflictAlreadyConnected.ConfirmButtonContact met ondersteuning
-W
-;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_NameKleine culturele locatie
 N
 9Base.Technologies.Technology_BronzeAge_BronzePlating_NameBronzen Bekleding
+W
+;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_NameKleine culturele locatie
 '
 Base.Resources.gears_Name
 Tandwielen
@@ -13636,12 +13592,10 @@ C
 2Base.Buildings.Building_StoneAge_Home_Small_2_NameKleine woning
 J
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny2_NameKlein
-B
-+Base.UnitStats.unit_stat.FocusRegen_PercentFOCUS Regeneratie %
+A
++Base.UnitStats.unit_stat.FocusRegen_PercentReguliere Aanval %
 Y
 >Base.Alerts.SingleSignOn.ConflictAlreadyConnected.CancelButtonSociale login overslaan
-R
-ABase.Technologies.Technology_KingdomOfSicily_MarketEconomics_NameMarkteconomie
 
 (Base.NegotiationRetreatDialog.DialogTextSWil je de onderhandeling echt stoppen? Je verliest alles wat je al hebt uitgegeven.
 P
@@ -13956,10 +13910,10 @@ I
 "Base.BuilderSlotsPopup.Description^Alle bouwslots zijn in gebruik, ontgrendel meer bouwslots of sla je huidige constructies over!
 [
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_NameKleine culturele locatie
+p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 {
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestStart_Text1_Desc.En... je hebt het gedaan. De race is begonnen!
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_5_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 P
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_NameInfanteriekazernes
 ö
@@ -13995,8 +13949,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_26_NameLevel 26
 ñ
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_4_2_DescNMet deze selectiekit kun je kiezen tussen onderzoekspunten en alliantiepunten.
-â
-Base.Resources.dirham_DesckDirham are an essential resource for city development in Arabia. They are generated automatically in Homes.
+ë
+Base.Resources.dirham_DescsDirham zijn super belangrijk voor de ontwikkeling van steden in Arabi√´. Ze worden automatisch gemaakt in Woningen.
 §
 (Base.Resources.UpgradeToken_Mjolnir_Desc˜Met deze zeldzame grondstof kun je <nobr>de Mjolnir</nobr> -relikwie <nobr>uit</nobr> de game <nobr>'<style=legendary>'</nobr> upgraden <nobr></style>.</nobr> <br>Je kunt het samen met relikwie√´nstof als beloning krijgen bij bepaalde evenementen.
 ë
@@ -14169,12 +14123,12 @@ E
 @Base.LeaderboardEventPanel.TaskInfo.EquipmentUpgrade_DescriptionBGeef Sintels uit en upgrade je Uitrusting om trofee√´n te krijgen!
 1
 Base.HeroPanel.ManageRelicsBeheer relikwie√´n
-n
-2Base.Buildings.Building_Arabia_Home_Premium_5_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+y
+2Base.Buildings.Building_Arabia_Home_Premium_5_DescCProduceert een hoop dirham op en voegt 3 arbeiders toe aan je stad.
 “
 %Tutorial.WonderTutorial.WonderEffects®Ze zijn er als inspiratie voor je mensen. Elk <style=MC>WONDER</style> heeft een <style=MC>KRACHTIG EFFECT</style> dat <style=MC>GUNSTIG</style> is voor jouw mensen.‚Äã
 "
-Base.Resources.brass_NameBrass
+Base.Resources.brass_NameKoper
 Ä
 5Base.Buildings.Building_EarlyRome_Home_Average_2_DescGProduceert een grote stapel munten en voegt 2 arbeiders aan je stad toe
 Y
@@ -14245,8 +14199,8 @@ T
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_2_3_NameTriskele tokenwedstrijd
 _
 >Base.Buildings.Building_EarlyGothicEra_Barracks_Cavalry_2_DescVrijspelen van Noble Horsemen
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_4_NameLuxurious Workshop
+K
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_NameLuxueuze Ateliers
 -
 Base.Relics.BaguaMirror_NameBagua-spiegel
 t
@@ -14374,10 +14328,10 @@ Q
 +Base.ShopPopup.Pages.world_fair_budget_pack"Wereldtentoonstelling budgetpakket
 a
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_30_NameGewone Wapenschild Selectiekit
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 I
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_NameKleine woning
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 /
 $Base.OptionsPopup.AccountTabHeadlineAccount
 O
@@ -14547,8 +14501,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text5_Desc
 bBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_QuestFinish_Text1_Desc≤Ik ben verbaasd. Ik had nooit zo'n opmerkelijke prestatie verwacht. Echt indrukwekkend! Ik houd je zeker op de hoogte van toekomstige ondernemingen. Tot we elkaar weer ontmoeten.
 s
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_Desc9De Taveerne produceert mede en stokvis van honing en vis.
--
-Base.BazaarOffersPanel.BuySlotUnlock Slot
+1
+Base.BazaarOffersPanel.BuySlotSlot vrijspelen
 *
 Base.IncidentPanel.SolveButtonOplossen
 z
@@ -14676,8 +14630,8 @@ i
 (Base.BattleAbilityPanel.NoTargetSelected=De vaardigheid moet op minstens √©√©n eenheid invloed hebben.
 û
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text7_DescTOok al hebben we gewonnen, laten we op onze hoede blijven. Tesla kan nog terugkomen.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_NameOil Lamp Maker
+I
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_NameOlielampenmaker
 M
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NameLandelijke boerderij
 r
@@ -14708,8 +14662,8 @@ C
 3Base.QuestlinesPanel.WinBattleWaveWithCommanderTaskGWin {0} gevechtsgolf, gebruik de vaardigheid van commandant <b>{1}</b>.KWin {0} gevechtsgolven en gebruik de vaardigheid van commandant <b>{1}</b>.
 P
 +Base.Resources.hero.LudwigVanBeethoven_Name!Essentie van Ludwig van Beethoven
-U
-6Base.Buildings.Building_Arabia_Merchant_Premium_1_DescProduceert heel veel dirham
+^
+6Base.Buildings.Building_Arabia_Merchant_Premium_1_Desc$Produceert een heleboel goud dinars.
 ™
 KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name⁄<style=ability_label>Debuff</style>Leif Erikson vervloekt de dichtstbijzijnde vijandelijke eenheid, maakt alle positieve effecten die ze hebben ongedaan, vermindert hun Verdediging met <style=basestat>{defense_debuff}</style> van zijn aanval voor <style=basestat>{defense_debuff_duration}</style> en beveelt alle bondgenoten om hen aan te vallen.
 ±
@@ -14727,10 +14681,10 @@ i
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_Name$Superieure wapenschilden selectiekit
 K
 0Base.Abilities.hero_battle_ability.YiSunSin_NameSchildpadschip spervuur
-<
-0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 †
 Base.Units.Unit_RamsesII_Desc˛De vlaktes zullen beven onder de wielen van de strijdwagens, want Ramses de Grote heeft zijn macht bij die van jou gevoegd. Deze farao uit de 13e eeuw voor Christus wordt beroemd vanwege zijn campagnes tegen de Hettieten, Nubi√´rs en Libi√´rs. De Gevecht van Kadesh tegen de Hettieten resulteerde in een van de eerste vredesverdragen uit de geschiedenis.<br><br>Naast zijn militaire prestaties was Ramses II een productieve bouwer die de opdracht gaf voor grootse bouwwerken zoals de tempels van Aboe Simbel en het Ramesseum, waarmee hij voor altijd zijn stempel op de wereld drukte.<br><br>Ramses II wordt herinnerd als de grootste farao van het grootste koninkrijk Egypte. Zijn 66-jarige heerschappij gaf vorm aan het culturele en architectonische erfgoed van Egypte. De Grieken noemden hem Ozymandias, onder welke naam hij in po√´zie werd vereeuwigd. Als je Ramses ziet, ga je op je knie√´n!
+<
+0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 P
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameHoutskeletbouw
 K
@@ -14800,8 +14754,8 @@ d
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc$Ontgrendelt Karolingische Katapulten
 ~
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_2_Desc>Produceert gedurende lange tijd een grote hoeveelheid voedsel.
-É
-Base.Resources.oil_DeschOil is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+ì
+Base.Resources.oil_DescxOlie is een belangrijke grondstof die je nodig hebt om verfijnde grondstoffen te maken. Je kunt het op de Bazaar ruilen.
 W
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescOntgrendelt Trapezieten
 π
@@ -14822,8 +14776,8 @@ N
 9Base.Technologies.Technology_Egypt_ExtractionMethods_NameExtractiemethoden
 -
 !Base.RiftOverviewPanel.HeroRarity{0} Held
-2
-(Base.Cities.City_Arabia_CityOfBrass_NameArabia
+3
+(Base.Cities.City_Arabia_CityOfBrass_NameArabi√´
 a
 EBase.Buildings.Building_KingdomOfSicily_Barracks_HeavyInfantry_2_NameZware infanterie kazerne
 D
@@ -14843,8 +14797,8 @@ Puzzelstuk
 ,Base.WorldWondersOverviewPanel.RequestsTitle	Verzoeken
 N
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_NameCavaleriekazerne
-Ö
-.Base.ShopOffers.City_Arabia_StarterPack_1_DescSKickstart your Arabian Event City with this selection of highly demanded resources!
+ó
+.Base.ShopOffers.City_Arabia_StarterPack_1_DesceGeef je Arabische Evenementenstad een vliegende start met deze selectie van super populaire middelen!
 f
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_250_Name Gewone Wapenschilden Selectiekit
 S
@@ -14888,10 +14842,10 @@ D
 5Base.Abilities.hero_battle_ability.BessieColeman_NameRookfakkels
 H
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_NameAmbachtsman
-4
-Base.Resources.hero.Menes_NameEssentie van Menes
 b
 EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameFundamenten van zandsteen
+4
+Base.Resources.hero.Menes_NameEssentie van Menes
 @
 #Base.BuildingGroups.stoneMason_NameSteenhouwerSteenhouwers
 4
@@ -14912,10 +14866,10 @@ L
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_NameMaya-boogschutters
 q
 0Base.Units.Unit_RomanEmpire_Player_Princeps_Desc=Infanterie-eenheden zijn het effectiefst in de voorste rijen.
-@
-/Base.Buildings.Building_Egypt_Home_Small_6_NameKleine woning
 É
  Base.Resources.iron_pendant_Desc_IJzeren hangers zijn goederen die kunnen worden geproduceerd in ambachtsman - level 2 of hoger.
+@
+/Base.Buildings.Building_Egypt_Home_Small_6_NameKleine woning
 ›
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text2_DescìOnze tegenstander is waarschijnlijk Nikola Tesla. Ik heb hem al eens eerder ontmoet, hij is behoorlijk vasthoudend en heeft een kwaadaardige geest.
 4
@@ -14973,8 +14927,8 @@ d
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text11_Desc^Wat is hier gebeurd? We hoorden de knal door de gangen galmen en zijn meteen hierheen gekomen.
 Õ
 bBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_3_QuestFinish_Text2_DescÊOnze diplomatieke kamers weerklinken nu met beloften van allianties en handel, die ons rijk nieuwe kracht brengen. Je naam zal ge√´erd worden in onze heilige codices en gereciteerd worden in de liederen van onze grootste krijgers!
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_4_NameLuxurious Merchant
+H
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_NameLuxe Handelaar
 )
  Base.UnitColors.unit_color.greenGroen
 ¢
@@ -14995,8 +14949,8 @@ R
 Base.HeroClass.ManipulatorManipulator
 ´
 IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name›<style=ability_label>Slag Strike| Buff| Herstel</style>Ontketent buitengewone kracht door het huidige doelwit te raken voor <style=basestat>{dmg_percentage}</style> schade. Achilles krijgt dan een boost in snelheid, waardoor zijn AANV. SNELHEID met <style=basestat>{atk_speed_percentage}</style> voor <style=basestat>{atk_speed_duration}</style> toeneemt, zichzelf geneest voor <style=basestat>{heal_percentage}</style> van zijn maximale HP en zijn DEF met <style=basestat>{def_percentage}</style> voor <style=basestat>{def_duration}</style> verhoogt. In de <color=#FFCF2B>Fall of Troy</color> krijgt Achilles <style=basestat>+25% ATK</style> en zijn <style=basestat>Eigenschap</style> die <style=basestat>2s</style> sneller aanvalt.
-Ä
-,Base.Resources.rift_token_arabia_common_DescPThis <style=rare>rare</style> resource is used to power the Arabian Time Portal.
+†
+,Base.Resources.rift_token_arabia_common_DescpDeze zeldzame bron van <style=rare></style> wordt gebruikt om het Arabische Tijdportaal van energie te voorzien.
 ¨
 +Base.Resources.hero.MargaretIOfDenmark_Desc}Gebruikt om het Ontwakingslevel van Margreet I van Denemarken te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 ;
@@ -15243,8 +15197,8 @@ G
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name¶<style=ability_label>Stamp| Verlammen</style>Leonidas stampt op de grond, waardoor hij <style=basestat>{dmg_percentage}</style> schade toebrengt aan alle vijanden binnen een bereik van <style=basestat>{range}</style> en zijn huidige doelwit verlamt voor <style=basestat>{stun_duration}</style>.
 ç
 Base.Resources.hero.Inanna_DescjGebruikt om het Ontwakingslevel van Inanna te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
-î
-Base.Resources.oil_lamp_DesctOil Lamps are a refined resource. They can be produced at Oil Lamp Makers and Luxurious Workshops - Level 4 upwards.
+ô
+Base.Resources.oil_lamp_DescyOlielampen zijn een speciale grondstof. Ze worden geproduceerd bij olielampenfabrikanten en luxe ateliers vanaf niveau 4.
 -
 Base.Units.Unit_Blackbeard_Name
 Zwartbaard
@@ -15264,8 +15218,8 @@ M
 7Base.Technologies.Technology_Mayas_CurativeRituals_NameGenezende rituelen
  
 ^Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_GreatSphinx_QuestStart_Text1_DescÁJouw vooruitgang is echt opmerkelijk. De <style=MC>Grote Sfinx</style> staat als een getuigenis van jouw prestaties, en ik ben ervan overtuigd dat het de perfecte locatie zal zijn voor onze <style=MC>Handelstentoonstelling</style>.
-B
-6Base.Buildings.Building_Arabia_Merchant_Average_4_NameMerchant
+C
+6Base.Buildings.Building_Arabia_Merchant_Average_4_Name	Handelaar
 ?
 (Base.ResearchTreePanel.ResearchCompletedOnderzoek voltooid!
 ?
@@ -15330,12 +15284,12 @@ K
 &Base.Regions.region.FrozenFjord_6_Name	Zwartveld
 â
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_5_Text4_DescFZijn ze veilig? Geen trucjes? Ze kijkt verbaasd als het snoepje smelt.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_5_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_5_NameLuxe woning
 t
 ,Base.LeaderboardEventPanel.ParticipationInfoDJe moet {0} punten hebben om deel te kunnen nemen aan het Evenement.
-á
-Base.Resources.brass_DescjBrass is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+ê
+Base.Resources.brass_DescsMessing is een belangrijke grondstof die je nodig hebt om betere spullen te maken. Je kunt het ruilen op de Bazaar.
 ¨
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text3_DescmMaar je hebt Einstein niet verloren. Nog niet! De oude man heeft ons hier gebracht omdat hij in ons geloofde.
 ?
@@ -15437,8 +15391,8 @@ y
 ABase.Subscriptions.EVENT_CITY_PRODUCTION_DURATION_Egypt_Promotion4Krijg Cleopatra's Gunst om je opslag te verdubbelen!
 !
 Base.Resources.barrel_NameVat
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_4_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+m
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_Desc3Produceert koffie, wierook, olielampen en tapijten.
 S
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NameGletsjermeesterschap
 ®
@@ -15532,8 +15486,8 @@ L
 'Base.MergeItems.WorldFair_Bronze_3_NameArtefact - Level 3
 “
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name˝<style=ability_label>Stomp| Debuff| Spirit Link</style>Je stampt op de grond en geeft <style=basestat>{dmg_percentage}</style> schade aan alle vijanden binnen een bereik van <style=basestat>{range}</style> en vermindert hun nauwkeurigheid met <style=basestat>{accuracy_percentage}</style> gedurende <style=basestat>{duration}</style>. Ook verbind je de geesten van alle vriendelijke eenheden voor <style=basestat>{duration_link}</style>. Eenheden die met elkaar verbonden zijn, delen de schade die ze krijgen.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_6_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 ö
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_20_DescUMet deze selectiekit kun je kiezen tussen verschillend gekleurde verbeterde emblemen.
 ,
@@ -15548,12 +15502,12 @@ K
 *Base.SelectionKitSelection.RewardsSelectedBeloningen om te kiezen ({0})
 ?
 #Base.Alerts.AccountSoftDeletedTitleAccount wordt verwijderd
+8
+Base.Event.EventStartsInHet evenement start over {0}
 A
 8Base.Technologies.Technology_ClassicGreece_Concrete_NameBeton
 ^
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text10_NameLeif Erikson
-/
-Base.Event.EventStartsInEvent starts in {0}
 í
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name≈<style=ability_label>Stamp</style>Leonidas stampt op de grond en veroorzaakt <style=basestat>{dmg_percentage}</style> schade aan alle vijanden binnen een bereik van <style=basestat>{range}</style>.
 I
@@ -15688,8 +15642,8 @@ G
 &Base.BuildingGroups.clayProcessor_NameKleiverwerkerKleiverwerkers
 K
 6Base.AllianceChatNotifications.Options.PlayersActivitySpelersactiviteit
-ä
-Base.Resources.coffee_DesclCoffee is a refined resource. It can be produced at Coffee Makers and Luxurious Workshops - Level 1 upwards.
+Ö
+Base.Resources.coffee_DescgKoffie is een toffe grondstof. Je kunt het maken in koffiezetapparaten en luxe ateliers vanaf niveau 1.
 8
 ,Base.Factions.Faction_MinoanEra_Minoans_NameMino√´rs
 w
@@ -16027,8 +15981,8 @@ Z
 Base.Units.Unit_TomoeGozen_NameTomoe Gozen
 ¶
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_DescSEen enkele pijl uit mijn boog en mijn handen, dus niet zo gewoon, mijn schone dame.
-ù
-3Base.Buildings.Building_Arabia_City_CityHall_2_DescfThe Great Hall is the centre of your city. It continiously generates a small amount of Dirham for you.
+à
+3Base.Buildings.Building_Arabia_City_CityHall_2_DescQDe Grote zaal is het hart van je stad. Het levert je steeds een beetje Dirham op.
 =
 /Base.TreasureHuntDifficulties.Difficulty_4_Name
 Veteraan I
@@ -16106,8 +16060,8 @@ G
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameObsidiaangroeve
 {
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text9_Desc8Ik had meer goud en fluweel verwacht voor zoiets chique.
-D
-&Base.Resources.hero.HarunAlRashid_NameEssence of Harun al-Rashid
+I
+&Base.Resources.hero.HarunAlRashid_NameDe essentie van Harun al-Rashid
 2
  Base.Resources.iron_pendant_NameIJzeren hanger
 b
@@ -16183,7 +16137,7 @@ BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_9_Name-Materiaal o
 @
 *Base.AllianceSearch.CancelApplicationTitleAanvraag annuleren
 :
-)Base.IngameEvents.TreasureHuntLeague_NameTreasure Hunt
+)Base.IngameEvents.TreasureHuntLeague_NameSchattenjacht
 º
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_DescÅDe grote zaal is het middelpunt van je stad. Hier wordt voortdurend een kleine hoeveelheid munten en voedsel voor je gegenereerd.
 R
@@ -16297,10 +16251,12 @@ L
 'Base.ChangePasswordPopup.RepeatPasswordHerhaal wachtwoord
 '
 "Tutorial.HeroMetaReportPopup.TierFF
+÷
+
+"Base.Units.Unit_HarunAlRashid_DescØ
+De maanverlichte hoven van Bagdad glanzen weer, want Harun al-Rashid is er weer! Deze Abbasidische heerser uit de 8e eeuw leidde de islamitische Gouden Eeuw, toen Bagdad de parel van de wereld was en kennis vloeide als de Tigris en de Eufraat. Haruns heerschappij is een mix van luxe, wijsheid en intriges - zijn paleis deed niet onder voor enig ander paleis ter wereld en zijn vrijgevigheid jegens de armen en geleerden werd legendarisch.<br><br>Harun al-Rashid richtte het legendarische Huis van Wijsheid op, waar geleerden Griekse teksten vertaalden en baanbrekende ontdekkingen deden op het gebied van wiskunde, geneeskunde en Astronomie. Volgens de verhalen zou hij zich vermommen als een gewone burger en 's nachts door de straten van Bagdad lopen, luisteren naar de zorgen van zijn volk en recht spreken. Zijn diplomatieke geschenken aan Karel de Grote, waaronder een olifant genaamd Abul-Abbas, werden legendarisch. Later werd hij vereeuwigd in de verhalen van 'Duizend-en-een-nacht'.<br><br>Zijn nalatenschap is niet alleen maar extravagant: het Bagdad van Harun was het kloppende hart van een cultureel dynamisch, kosmopolitisch rijk. In de Helden van de Geschiedenis is Harun altijd te vinden terwijl hij raadsels uitwisselt met Scheherazade en geschillen beslecht met een gebaar van zijn met juwelen versierde hand.
 i
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
-ﬁ	
-"Base.Units.Unit_HarunAlRashid_Desc∑	The moonlit courts of Baghdad shimmer once more, for Harun al-Rashid has arrived! This 8th-century Abbasid ruler presided over the Islamic Golden Age, when Baghdad was the jewel of the world and knowledge flowed like the Tigris and Euphrates. Harun's reign is a tapestry of luxury, wisdom, and intrigue - his palace rivaled any in the world, and his generosity to the poor and learned became the stuff of legend.<br><br>Harun al-Rashid established the legendary House of Wisdom, where scholars translated Greek texts and made groundbreaking discoveries in mathematics, medicine, and astronomy. The stories say he would disguise himself as a commoner and walk Baghdad's streets at night, listening to his people's concerns and dispensing justice. His diplomatic gifts to Charlemagne, including an elephant named Abul-Abbas, became the stuff of legend. Later on he was immortalized in the tales of 'One Thousand and One Nights'.<br><br>His legacy is not one of mere extravagance: Harun's Baghdad was the beating heart of a culturally dynamic, cosmopolitan empire. Within the Heroes of History, Harun can always be found swapping riddles with Scheherazade and settling disputes with a wave of his jeweled hand.
 '
 "Tutorial.HeroMetaReportPopup.TierDD
 A
@@ -16341,8 +16297,8 @@ p
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text4_Desc3Het enige wat we kunnen. Vechten om eruit te komen.
 =
 "Base.Resources.hero.AnneBonny_NameEssentie van Anne Bonny
-0
- Base.Resources.coffee_beans_NameCoffee Beans
+/
+ Base.Resources.coffee_beans_NameKoffiebonen
 T
 9Base.Technologies.Technology_FeudalAge_DomesticSheep_NameGedomesticeerde schapen
 )
@@ -16446,10 +16402,10 @@ D
 MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name·<style=ability_label>Stomp</style>Zwaait haar zwaard in een ronddraaiende beweging, en doet <style=basestat>{dmg_percentage}</style> schade aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{range}</style>.
 ˙
 3Tutorial.WonderRequestListIntroTutorial.HelpPlayers¬Je kunt andere spelers tot 5 keer per dag <style=MC>HELPEN</style>. Als je dit doet, krijg je waardevolle <style=MC>TANDWIELEN</style> die je kunt gebruiken voor het <style=MC>UITVINDEN</style>!
+∂
++Base.EventType.LeaderboardEvent_DescriptionÜDoe bepaalde dingen in het spel om hoger op het klassement te komen en aan het einde van het evenement speciale beloningen te krijgen.
 ©
 1Base.EventPass.JourneyOfTheTitanicMoreContentTextÛAls je het laatste checkpoint bereikt, maak je dan klaar om je reis door het Evenement door te laten gaan, want alle Beloningen worden gereset!<br><br>Nadat je het Hoofdprijsparcours √©√©n keer hebt voltooid, stijgen de Vereiste Punten om Hoofdprijzen vrij te spelen van <b>8</b> naar <b>10</b>. Voor alle volgende voltooiingen stijgen de vereiste Voortgangspunten verder van <b>10</b> naar <b>12</b>.<br><br>Start opnieuw met het verzamelen van prijzen, met nog meer epische <style=epic>Relikwie√´n</style> en een andere legendarische Relikwie <nobr><style=legendary>Het Antikythera Mechanisme</style></nobr> voor het grijpen!
-¢
-+Base.EventType.LeaderboardEvent_DescriptionsComplete specific game actions to rise in the leaderboard and receive some special rewards at the end of the event.
 :
 *Base.Units.Unit_EarlyRome_Huns_Attila_NameBloedruiters
 a
@@ -16458,10 +16414,10 @@ DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_3_NameOnderzoek
 $Base.IngameEvents.SeasonPass_11_NameFundament van vrijheid
 F
 1Base.Questgivers.Questgiver_BenjaminFranklin_NameBenjamin Franklin
+p
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_Desc6Verhoogt de irrigatie van nabijgelegen gebouwen flink.
 #
 Base.Generic.OwnedIn bezit: {0}
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_6_Desc<Substantially increases the irrigation of adjacent buildings
 [
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_NameByzantijnse Ballista
 œ
@@ -16510,8 +16466,8 @@ P
 9Base.StoryText.Story_DesertDelta_7_1_BattleEnd_Text3_DescGDit is Sparta. Ik sterf terwijl ik het verdedig. Zo is het lot bepaald.
 9
 !Base.BattleStatsPanel.BattleStatsGevechtsstatistieken
-W
-Base.Event.EventConcluded:The event has concluded, yet a new chance will come along.
+a
+Base.Event.EventConcludedDHet evenement is voorbij, maar er komt vast nog wel een nieuwe kans.
 [
 >Base.Technologies.Technology_MinoanEra_MysticBattleChants_NameMystieke Gevechtsgezangen
 N
@@ -16530,8 +16486,8 @@ A
 !Base.Heroes.hero.Charlemagne_NameKarel de Grote
 6
 )Base.Resources.DYN_WONDER_material_1_Name	Materiaal
-Ê
-&Base.FallOfTroyInfoPopup.UpperLaneInfoª<style=basestat_dark>Barricades</style> op dit pad zullen <style=basestat_dark>hun eigen HP genezen</style> en overtollige genezing omzetten in <style=basestat_dark>Shield Points</style>. <br><br>Ze zijn zwak tegen <sprite name=status_effect_poison> <style=basestat_dark>Poison Damage</style> en <style=basestat_dark>Single Strikes</style> geven ze 75% extra schade. <br>Ze zijn immuun voor verdoving, mind control-effecten en bloedingsschade.
+Ì
+&Base.FallOfTroyInfoPopup.UpperLaneInfo¬<style=basestat_dark>Barricades</style> op deze baan <style=basestat_dark>geneest</style> hun eigen HP en zetten overvloedige genezingen om in <style=basestat_dark>Schildpunten</style>. <br><br>Ze hebben een zwakte tegen <sprite name=status_effect_poison> <style=basestat_dark>Gifschade</style> en <style=basestat_dark>Enkele Slagen</style> richten 75% extra schade aan. <br>Immuun voor verdovings-, gedachtenbeheersings- en bloedingsschade-effecten.
 ‰
 <Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc£Keizerlijke wachters zijn zeer gespecialiseerd en krachtiger dan gewone infanterie-eenheden. Hun statistieken schalen automatisch op basis van je huidige tijdperk.
 M
@@ -16677,8 +16633,8 @@ ABase.AllianceTechnologies.alliance_technology.mainQuarter_28_NameLevel 28
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text2_DescRIk had meer van je verwacht, zogenoemde Grote Koning. Stel me niet opnieuw teleur.
 N
 "Base.Resources.material_naval_NameMaritiem materiaalMaritieme materialen
-©
-6Base.EventStartScreens.EventCityArabiaStartDescriptionoRaise your empire in the river valleys of the Arabian Peninsula and get the chance to win {0} exclusive heroes!
+§
+6Base.EventStartScreens.EventCityArabiaStartDescriptionjBouw je rijk op in de riviervalleien van het Arabische schiereiland en maak kans op {0} exclusieve helden!
 )
 Base.Units.Unit_Achilles_NameAchilles
 ∞
@@ -16741,7 +16697,7 @@ S
 G
 :Base.Units.Unit_EarlyRome_MacedonianKingdom_Prodromoi_Name	Prodromoi
 U
-<Base.UnitStats.unit_stat.BasicAttackDamageAmp_Percent_AbbrevBASIS AANVAL SCHADE %
+<Base.UnitStats.unit_stat.BasicAttackDamageAmp_Percent_AbbrevBASIS AANVALSSCHADE %
 '
 Base.Resources.chili_Name
 Chilipeper
@@ -16780,8 +16736,8 @@ N
 880 v.Chr.
 }
 1Base.Buildings.Building_China_Home_Average_3_DescHProduceert een grote stapel Wu Zhu en voegt 5 arbeiders toe aan je stad.
-"
-Base.Resources.camel_NameCamel
+#
+Base.Resources.camel_NameKameel
 ,
 "Base.BazaarOffersPanel.NavBarTitleBazaar
 p
@@ -16794,14 +16750,14 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_29_NameLevel 29
 ò
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text1_DescUWe zitten vast in een vicieuze cirkel, toch? Als een dans die we niet kunnen stoppen.
-E
-2Base.UnitStats.unit_stat.FocusRegen_Percent_AbbrevFOCUS HERSTEL %
+H
+2Base.UnitStats.unit_stat.FocusRegen_Percent_AbbrevReguliere Aanval %
 X
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_DescOntgrendelt Caballarii
 
  Base.UnlockRequirementsPopup.Pvp[Strijd tegen andere spelers, klim in de Competitie Ranglijst en win waardevolle beloningen.
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_6_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_NameTapijtmaker
 <
 Base.Resources.hero.Geisha_NameEssentie van Yoshino Dayu
 7
@@ -16855,15 +16811,15 @@ t
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_Desc8Produceert een kleine hoeveelheid Voedsel in korte tijd.
 b
 =Base.ShopPopup.SeasonalEventJourneyThroughSaharaBundlesHeader!Ontdek de schatten van de Sahara!
-W
-8Base.AllianceApplicationMessages.AllianceRejectionHeaderDecline the Application of:
+V
+8Base.AllianceApplicationMessages.AllianceRejectionHeaderSollicitatie afwijzen van:
 /
 !Base.UnlockableFeatures.Equipment
 Uitrusting
+M
+ Base.AlliancePanel.NoInvitesSent)Er zijn nog geen Uitnodigingen verstuurd.
 ®
 6Base.Incidents.Incident_BronzeAge_Capital_Goods_1_DescnVolgens de geruchten verbergt dit ondergrondse doolhof werkelijk unieke schatten. Laten we het gaan verkennen!
-B
- Base.AlliancePanel.NoInvitesSentNo Invites have been sent out.
 8
 Base.PvpEnergyPopup.HeadlineKrijg meer Arena Tokens!
 û
@@ -16906,10 +16862,10 @@ j
 Base.Generic.NextInVolgende {0} over {1}
 ≥
 1Base.EventPass.JourneyOfTheTitanicBuyGoldPassText~Doe mee en verdien exclusieve Beloningen en ontvang direct de epische Relikwie <nobr><style=epic>Guardian Lion</style></nobr>!
-ë
-!Base.Resources.hero.Achilles_DesclGebruikt om het Ontwakingslevel van Achilles te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 â
 8Base.Incidents.Incident_EarlyRome_Capital_GoldOre_1_DescMDe eigenaar van deze kapotte kar heeft munten aangeboden om hem te repareren!
+ë
+!Base.Resources.hero.Achilles_DesclGebruikt om het Ontwakingslevel van Achilles te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 ;
 )Base.RewardTypes.UnlockFeatureReward_NameNieuwe functie
 È
@@ -16961,14 +16917,14 @@ D
 9Base.Technologies.Technology_KingdomOfSicily_Melites_NameMelites
 c
 BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
+F
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_NameWierookmaker
 I
 7Base.Technologies.Technology_FeudalAge_HealingMead_NameGenezende mede
 é
 <Base.Resources.event_milestone_rally_of_heroes_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_5_NameIncense Maker
 $
-Base.Resources.coffee_NameCoffee
+Base.Resources.coffee_NameKoffie
 h
 =Base.WorldWonderGeneric.WonderContributionNotAvailableAnymore'Deze bijdrage is niet meer beschikbaar.
 E
@@ -16976,9 +16932,9 @@ E
 j
 OBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_RedTeslaTakedown_1_NameTesla in brand gestoken
 U
+:Base.AllianceApplicationMessages.AllianceApplicationHeaderToepassen op Alliantie:
+U
 DBase.Questlines.Questline_EventCity_Vikings_Provisions_Lagertha_NameVoorzieningen
-Q
-:Base.AllianceApplicationMessages.AllianceApplicationHeaderApply for Alliance:
 H
 *Base.TreasureHuntNegotiationPopup.HeadlineGenezende schrijn {0}/{1}!
 €
@@ -17013,8 +16969,8 @@ D
 .
  Base.SubscriptionInfoPopup.Title
 Informatie
-&
-Base.Event.PlayEventPlay Event Now
+1
+Base.Event.PlayEventAfspelen het evenement nu
 2
  Base.AlliancePanel.AdmissionTypeToelatingstype
 1
@@ -17227,7 +17183,7 @@ cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_2_Q
 4
 Base.PlariumPlay.ShopInfo.TitleBetaling checkout
 y
-)Base.EventType.MilestoneEvent_DescriptionLComplete specific game actions and earn valueable rewards on each milestone.
+)Base.EventType.MilestoneEvent_DescriptionLGe√Ønd spelacties uitvoeren en leuke beloningen verdienen bij elke mijlpaal.
 %
 Base.LocalizedLocales.es_ESSpaans
 ﬂ
@@ -17240,8 +17196,8 @@ P
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_NameMasker Beeldhouwer
 4
 $Base.HarborShopPanel.HarborShopLabelHaven Winkel
->
-&Base.AlliancePanel.AllianceRecruitmentAlliance Recruitment
+;
+&Base.AlliancePanel.AllianceRecruitmentAlliantie Werving
 y
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_Desc@Produceert heel veel munten en voegt 2 arbeiders aan je stad toe
 *
@@ -17472,10 +17428,10 @@ I
 %Base.RecoverAccountPopup.InvalidToken De ingevoerde token is ongeldig.
 (
 Base.Generic.HoursMinutes{0:h\:mm} u
+p
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 -
 !Base.SellBuildingPopup.SellButtonVerkopen
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_3_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 -
 Base.Heroes.hero.IsabellaI_Name
 Isabella I
@@ -17517,8 +17473,8 @@ i
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 6
  Base.Stats.initial_cooldown_NameIniti√´le cooldown
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_1_NameCarpet Maker
+D
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_NameTapijtmaker
 [
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameZware infanterie kazerne
 O
@@ -17561,13 +17517,13 @@ Q
 GBase.Questlines.Questline_EventCity_Vikings_ProgressTier1_Lagertha_NameReis naar Grootheid
 `
 +Base.EquipmentSets.equipment_set.Druid_Desc1Genezing gegeven <style=basestat_dark>+5%</style>
+l
+1Base.Buildings.Building_Arabia_Home_Medium_4_Desc7Produceert dirham en voegt 2 arbeiders toe aan je stad.
 K
 5Base.Buildings.Building_China_RiceFarm_Premium_6_NameLuxe rijstplantage
 H
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_Name
 Vissteiger
-d
-1Base.Buildings.Building_Arabia_Home_Medium_4_Desc/Produces Dirham and adds 2 Workers to your city
 G
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_NameChroniqueur
 ü
@@ -17615,8 +17571,8 @@ H
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text4_DescCEen test misschien? Zijn we hier om geduld te tonen of iets anders?
 O
  Base.HeroPanel.RelicsNotUnlocked+Onderzoek {0} om relikwie√´n vrij te spelen
-ñ
- Base.Resources.coffee_beans_DescrCoffee Beans are an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+ú
+ Base.Resources.coffee_beans_DescxKoffiebonen zijn een belangrijke grondstof die je nodig hebt om betere spullen te maken. Je kunt ze op de Bazaar ruilen.
 ê
 9Base.WorldWondersOverviewPanel.ContributionsEmptyListTextSVerdien blauwdrukken door te doneren <sprite=6> aan de wonderen van je bondgenoten.
 C
@@ -17640,7 +17596,7 @@ KBase.Questlines.Questline_EventCity_Vikings_WonderProgress_Yggdrasil_3_NameYg
 Ö
 1Base.Buildings.Building_Mayas_Home_Premium_3_DescPProduceert een ton cacao en voegt 2 arbeiders en 1 handwerksman toe aan je stad.
 V
-DBase.AllianceApplicationMessages.AllianceApplicationCharacterCounterRemaining: {0}
+DBase.AllianceApplicationMessages.AllianceApplicationCharacterCounterResterend: {0}
 ,
 Base.Units.Unit_Dracula_NameVlad Dracula
 à
@@ -17719,8 +17675,8 @@ A
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Nameˆ<style=ability_label>Stomp| Schild| Buff</style>Voert een krachtige zwaardaanval uit, die <style=basestat>{dmg_percentage}</style> schade toebrengt aan alle vijandelijke eenheden binnen een bereik van <style=basestat>{range}</style>. William Wallace krijgt <style=basestat>{shield_percentage}</style> van zijn basis schade als een schild en verhoogt zijn DEF met <style=basestat>{def_percentage}</style> voor <style=basestat>{duration}</style>. Geeft ook <style=basestat>{shield_percentage_friendly}</style> van zijn basis schade als een schild aan alle vriendelijke eenheden binnen een bereik van <style=basestat>{range}</style>.
 r
 NBase.StoryText.Story_Questline_MinoanEra_BarracksUpgrade_QuestStart_Text3_Desc Wat weet jij van oorlogsvoering?
-V
-6Base.Buildings.Building_Arabia_Workshop_Premium_2_DescProduces Coffee and Incense.
+W
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_DescProduceert koffie en wierook.
 U
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_DescProduceert Kalenderstenen
 1
@@ -17779,10 +17735,11 @@ DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_5_NameSchool
 C
 5Base.Technologies.Technology_Egypt_PapyrusScroll_Name
 Papyrusrol
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_6_NameLuxurious Noria
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_4_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+D
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_Name
+Luxe Noria
+w
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_Desc>De Koffiebrouwer produceert koffie van koffiebonen en messing.
 ‘
 JBase.StoryText.Story_Questline_StoneAge_CityPlanning_QuestStart_Text1_DescÖOns <style=MC>Plan</style>, mijn droom, lijkt dichterbij te komen met elk gebouw en elke nieuwe hand die zich bij onze zaak aansluit.
 F
@@ -17895,12 +17852,12 @@ d
 Base.RecoverAccountPopup.HintCVoer het hersteltoken in dat je van het supportteam hebt ontvangen.
 J
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_NameKleine woning
+c
+(Base.UnitStats.unit_stat.FocusRegen_Desc7Bepaalt hoe snel de held zijn Eigenschap kan gebruiken.
  
 Base.Generic.ShowMe	Laat zien
 .
 #Base.TreasureHuntRankingPanel.ClaimClaimen
-]
-(Base.UnitStats.unit_stat.FocusRegen_Desc1Bepaalt hoe snel de focus van een held zich vult.
 I
 #Base.BuildingGroups.workerHome_NameArbeiderswoningArbeiderswoningen
 c
@@ -17941,10 +17898,10 @@ Zijdeteelt
 @Base.InventoryItems.InventoryItem_Negotiation_one_more_Turn_Desc>Dit item geeft je een extra beurt in het Onderhandel minispel.
 I
 7Base.Buildings.Building_RomanEmpire_Farm_Premium_1_NameLuxe boerderij
-V
-8Base.Alerts.SingleSignOn.CannotOpenNativeDialog.HeadlineKan account niet verbinden
 >
 (Base.Regions.region.TeslaStormGreen_NameGroene Tesla Storm
+V
+8Base.Alerts.SingleSignOn.CannotOpenNativeDialog.HeadlineKan account niet verbinden
 U
 !Base.TeslaStormsPanel.Description0Selecteer een kleur om te vechten in Tesla Storm
 T
@@ -18149,10 +18106,10 @@ HBase.AbilityDescriptions.hero_battle_ability_description.LouisXIV_1_Nameú<sty
 ,Base.AllianceChatNotifications.Options.TitleChatmeldingen
 a
 ;Base.TreasureHuntDifficultiesPanel.FinishPreviousDifficulty"Voltooi vorige moeilijkheidsgraad!
+à
+Base.Resources.camel_DesckKamelen kun je fokken op kamelenboerderijen en je hebt ze nodig om aanbiedingen op de bazaar te accepteren.
 N
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_1_NameKleine boerderij
-o
-Base.Resources.camel_DescRCamels can be raised at Camel Farms and are needed to accept Offers at the Bazaar.
 ´
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text5_Desc“Laten we samen een nalatenschap van verlichting smeden die door de tijd zal weerklinken. Uw <style=MC>succes</style> kan sommigen van ons ertoe brengen zich bij u aan te sluiten in uw toekomstige ondernemingen!
 Ú
@@ -18283,8 +18240,6 @@ N
 6Base.ShopPopup.Pages.journey_of_the_titanic_hero_promoParallelle Voorspoed
 ˙
 6Base.StoryText.Story_Battle_Healer_Tutorial_Text2_DescøDe jachtgronden zijn me net zo vertrouwd als de kruiden die hier groeien. En wat betreft <style=MC>Genezen</style>, mijn vaardigheden zijn onge√´venaard. Laat mij <style=MC>Toetreden</style>!
-B
-8Base.Technologies.Technology_KingdomOfSicily_Bazaar_NameBazaar
 q
 6Base.Buildings.Building_ByzantineEra_Home_Small_1_Desc7Produceert munten en voegt een arbeider aan je stad toe
 ƒ
@@ -18320,8 +18275,8 @@ B
 7Base.Technologies.Technology_ClassicGreece_Temples_NameTempels
 «
 ]Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_AbuSimbel_QuestFinish_Text1_DescÂJe hebt echt uitgeblonken in het overwinnen van deze monumentale uitdaging te midden van zulke moeilijke omstandigheden! Nu, laten we de laatste hand leggen door <style=MC>Abu Simbel</style> tot zijn volle potentieel te upgraden!
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+{
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 I
 5Base.Questlines.Questline_CityBuilding_MinoanEra_NameStadsarchitect I
 _
@@ -18364,8 +18319,8 @@ P
 7Base.ShopOffers.shop_offer.City_Conversion_Offer_1_NameTijdperk boost Bundel
 ˘
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text5_DescûWanneer het water de heilige cenote weer vult en de regen terugkeert om ons land te voeden, zal jouw naam <style=MC>in steen zijn gekerfd</style> zodat generaties zich dit kunnen herinneren. Toetreden, en misschien zullen sommigen van ons je vergezellen bij je toekomstige inspanningen!
-E
-.Base.ShopOffers.City_Arabia_StarterPack_1_NameArabia Starter Pack
+D
+.Base.ShopOffers.City_Arabia_StarterPack_1_NameArabia Startpakket
 @
  Base.World.SpartasLastStand_NameDe laatste strijd van Sparta
 µ
@@ -18378,12 +18333,12 @@ J
 FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_NameÛ<style=ability_label>Area Strike | Stun</style>Mozart orkestreert een resonerende symfonie op het slagveld en richt zich op het dichtste gebied van vijanden om ze te verdoven en schade toe te brengen. De symfonie wordt sterker bij elk gebruik en bereikt het hoogtepunt bij het derde gebruik. <br> <br>Eerste gebruik: brengt <style=basestat>{damage_a}</style> schade toe binnen een bereik van 1, verdooft voor <style=basestat>{duration_a}</style> <br>Tweede gebruik: brengt <style=basestat>{damage_b}</style> schade toe binnen een bereik van 2, verdooft voor <style=basestat>{duration_b}</style> <br>Derde gebruik en verder: Brengt <style=basestat>{damage_c}</style> schade toe binnen een bereik van 3, bedwelmend voor <style=basestat>{duration_c}</style>.
 6
 #Base.Generic.NotEnoughWorkersOfType{0} {1} vereist
-j
-NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_1_NameTerracottaleger - Fase I
 R
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameCulturele Uitwisseling
 ´
 7Base.QuestlinesPanel.ConstructSpecificBuildingInAgeTask7Bouw <b>{0} {1}</b> op level <b>{2}</b> van <b>{3}</b>.7Bouw <b>{0} {1}</b> op level <b>{2}</b> van <b>{3}</b>.
+j
+NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_1_NameTerracottaleger - Fase I
 v
 8Base.WorldWondersDetailPanel.FindBlueprintToUnlockWonder:Zoek een blauwdruk voor dit wonder om het te ontgrendelen.
 R
@@ -18412,8 +18367,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc,
 #Base.RetreatWaveBattlePopup.RetreatTerugtrekken
 >
 %Base.UnlockableFeatures.BattleSpeedUp1,5x Gevechtssnelheid
-.
-Base.AlliancePanel.SentInvitesSent Invites
+9
+Base.AlliancePanel.SentInvitesUitnodigingen verstuurd
 ¢
 %Base.Resources.hero.TribalHealer_DescyGebruikt om het Ontwakingslevel van Naya van de Grot Clan te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 ¢
@@ -18573,10 +18528,10 @@ i
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc6Produceert deben en voegt een arbeider aan je stad toe
 Ã
 JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name˝ Bloed</style>Schiet bliksemschichten in de richting van de 3 dichtstbijzijnde vijandelijke eenheden, en geeft <style=basestat>{damage}</style> schade aan alle eenheden die in de weg zitten. De 3 dichtstbijzijnde vijandelijke eenheden gaan bloeden en krijgen <style=basestat>{bleed_damage}</style> schade gedurende <style=basestat>{bleed_duration}</style>. Helden krijgen voorrang.
+b
+,Base.AlliancePanel.AllianceNoApplicationText2Je hebt nog niet gesolliciteerd bij een alliantie.
 W
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_DescProduceert kaolien
-U
-,Base.AlliancePanel.AllianceNoApplicationText%You have not applied for an alliance.
 }
 Base.Resources.ankh_DescaAnkhs zijn een verfijnde grondstof. Ze kunnen geproduceerd worden in Edelsmid - level 1 en hoger.
 Õ
@@ -18644,10 +18599,10 @@ D
 GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Nameí<style=ability_label>Melee Aanval</style>Schopt het huidige doelwit drie keer voor een totaal van <style=basestat>{dmg_percentage}</style> schade.
 /
 #Base.UnitStats.unit_stat.CritChanceKritkans
+E
+,Base.Resources.rift_token_arabia_common_NameArabische antimaterie
 <
 #Base.EventCity.PossibleRewardsLabelTe winnen beloningen:
-B
-,Base.Resources.rift_token_arabia_common_NameArabian Antimatter
 c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_1_NameLyceum der Geleerden
 O
@@ -18718,8 +18673,8 @@ p
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_Desc9Infanterie-eenheden zijn het effectiefst in de voorhoede.
 [
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_NameLuxe culturele locatie
-a
-1Base.AnnouncementCenter.Event_Calendar_Disclaimer,Event dates and times are subject to change.
+m
+1Base.AnnouncementCenter.Event_Calendar_Disclaimer8De data en tijden van evenementen kunnen nog veranderen.
 ™
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text1_DescWAve! Wat hebben we hier? Een <style=MC>nieuwe cultuur</style> die de uitdaging aangaat!
 ?
@@ -18765,8 +18720,8 @@ JBase.StoryText.Story_Questline_BronzeAge_CityQuest4_QuestFinish_Text3_DescKDus
 ;Base.Alerts.SingleSignOn.AccountConnectionCancelled.MessageÄAls je je account op een later moment wilt verbinden, moet je je mogelijk aanmelden via de systeeminstellingen van het apparaat.
 p
 'Base.AlliancePanel.AcceptInvitationDescEWeet je zeker dat je de uitnodiging van {0} voor {1} wilt accepteren?
-@
-1Base.Buildings.Building_Arabia_Home_Medium_4_NameMedium Home
+G
+1Base.Buildings.Building_Arabia_Home_Medium_4_NameMiddelgrote woning
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameKleine woning
 ‡
@@ -18894,8 +18849,8 @@ JBase.Questlines.Questline_EventCity_Vikings_WonderProgress_Valhalla_2_NameWal
 YBase.StoryText.Story_Questline_EventCity_China_ForbiddenCity_Start_QuestFinish_Text1_DescÆFantastische voortgang! Let op: de ' <style=MC>Verboden Stad'</style> boost zowel onze <nobr>'<style=MC>' Wu Zhu</style> <sprite name=resource.wu_zhu></nobr> als <nobr>onze '<style=MC>' Rijst</style> <sprite name=resource.rice_cta></nobr> output, dus houd daar rekening mee bij het plannen van je stad!
 Ø
 )Base.ShopPopup.SeasonalEventHeroPromoDescÅVersnel je evenementenreis en kracht voor een gepromoveerde held met extra Antimaterie - verdubbel de winst, verdubbel de glorie!
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_2_NameLuxurious Workshop
+K
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_NameLuxueuze Ateliers
 >
 'Base.BoostTypes.WonderContributionBoostWonderbijdrageboost
 ∏
@@ -18937,9 +18892,9 @@ J
 W
 #Base.QuestlinesPanel.HaveHeroesTaskBezit <b>{0}</b> Held.Bezit <b>{0}</b> Helden.
 F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_4_NameCoffee Brewer
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_NameKoffiebrouwer
 (
-Base.Resources.oil_lamp_NameOil Lamp
+Base.Resources.oil_lamp_NameOlielamp
 "
 Base.WonderTag.Arena_NameArena
 6
@@ -18952,8 +18907,8 @@ q
 -Base.Resources.rift_token_legendary_part_NameLegendarisch antimaterie stuk!Legendarische antimaterie stukken
 8
 ,Base.WorldWondersDetailPanel.BonusesHeadlineBonussen
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_4_DescProduces Gold Dinars.
+N
+6Base.Buildings.Building_Arabia_Merchant_Average_4_DescMaakt gouden dinars.
 ñ
 8Base.StoryText.Story_Panganea_6_1_BattleStart_Text1_DescZDit land is tot op het bot verwoest. Tesla geloofde ooit in het verheffen van alle mensen.
 ≥

@@ -41,12 +41,12 @@ A
 'Base.AlliancePanel.AllianceApplicationsSolicitudes de alianza
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_30_NameNivel 30
+i
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_NamePunto de TrofeoPuntos de Trofeo
 �
 9Base.TreasureHuntCheckpointsPanel.RequirementsInformation,Completa {0} encuentro más para participar.-Completa {0} encuentros más para participar.
-c
-DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_NameTrophy PointTrophy Points
-:
--Base.UnitStats.unit_stat.Focus_Percent_Abbrev	% ENFOQUE
+@
+-Base.UnitStats.unit_stat.Focus_Percent_AbbrevCARGA INICIAL %
 D
 $Base.BuildingInfoPanel.BeingUpgradedMejorando a {0} de nivel {1}
 <
@@ -148,8 +148,8 @@ X
 EBase.StoryText.Story_Event_JourneyOfTheTitanic_1_EventOpen_Text1_NameAlbert Einstein
 F
 !Base.Generic.ErrorNotAllowedChars!Contiene caracteres no permitidos
-^
-5Base.UnitStats.unit_stat.SingleTargetDamageAmp_Abbrev%DAÑO DE HABILIDAD A UN SOLO OBJETIVO
+E
+5Base.UnitStats.unit_stat.SingleTargetDamageAmp_AbbrevDAÑO ÚNICO
 n
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text2_NameLady Six Sky
 �
@@ -166,8 +166,8 @@ w
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier2_1_Name.Kit de Selección de Material de Ascensión II
 j
 ,Base.EquipmentUnequipPanel.UnequipCostsLabel:Desequipa para <sprite="InlineIcons" name="{0}_small"> {1}
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_6_DescProduces Gold Dinars.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_6_DescProduce Dinares de Oro.
 E
 9Base.Technologies.Technology_EarlyGothicEra_Mangonel_NameMangonel
 `
@@ -334,10 +334,10 @@ x
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text4_Desc9Einstein, ¡te vienes conmigo! ¡Entrégamelo, Hércules!
 O
 7Base.Technologies.Technology_FeudalAge_MeadBrewery_NameFábrica de aguamiel
+@
+%Base.Resources.hero.Scheherazade_NameEsencia de Scheherazade
 A
 )Base.Heroes.hero.FlorenceNightingale_NameFlorence Nightingale
-@
-%Base.Resources.hero.Scheherazade_NameEssence of Scheherazade
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text9_DeschProbablemente impidió que el capitán esquivara los icebergs con los que de otro modo habrían chocado.
 �
@@ -477,8 +477,8 @@ K
 Base.RewardPanel.BlueprintPlano
 P
 'Base.EquipmentUnequipPanel.UnequipTitle%Desequipar el siguiente equipamiento:
-�
-Base.Resources.myrrh_DescjMyrrh is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+�
+Base.Resources.myrrh_DescnLa mirra es un recurso esencial que necesita para fabricar recursos refinados. Se puede comerciar en el Bazar.
 w
 /Base.Units.Unit_TreasureHunt_Red_Marauders_DescDLas Unidades de Infantería son más eficaces en las primeras filas.
 }
@@ -571,8 +571,8 @@ j
 7Base.Incidents.Incident_RomanEmpire_Capital_Boar_1_DescjUn jabalí salvaje protege el tesoro oculto en el tronco del árbol. ¡Envía más trabajadores a por él!
 X
 :Base.Questlines.Questline_StoneAge_BuildingACommunity_NameConstruyendo una Comunidad
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_6_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+s
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_Desc9Produce Café, Incienso, Lámparas de Aceite y Alfombras.
 H
 #Base.Regions.region.Panganea_2_Name!Dominio de Cazadores de Calaveras
 �
@@ -633,12 +633,12 @@ T
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduce Dagas Rituales
 ]
 'Base.BuildingGroups.compactCulture_NameZona Cultural CompactaZonas Culturales Compactas
+?
++Base.Wonders.Wonder_Arabia_CityOfBrass_NameCiudad de Latón
 [
 'Base.AllianceCityManagementPopup.Header0Miembros de la Alianza ocupados en este momento:
 >
 'Base.HeroPanel.FocusAbilityChargeHeaderCarga de Habilidad:
-<
-+Base.Wonders.Wonder_Arabia_CityOfBrass_NameCity of Brass
 G
 (Base.Rewards.Reward_Food_Coins_XS_1_NamePaquete de Comida y Monedas
 [
@@ -801,10 +801,10 @@ E
 4Base.Buildings.Building_IberianEra_Home_Small_1_NameCasa pequeña
 T
 8Base.Buildings.Building_StoneAge_Barracks_Cavalry_1_NameBarracón de Caballería
+X
+2Base.ShopOffers.shop_offer.Diy_Roster_Offer_1_Name"Tu Potenciador de Lista de Héroes
 M
 8Base.Technologies.Technology_FeudalAge_RunicWriting_NameEscritura rúnica
-L
-2Base.ShopOffers.shop_offer.Diy_Roster_Offer_1_NameYour Hero-Roster-Boost
 �
  Base.Regions.SiegeOfOrleans_Desc�Es mayo de 1429, el año noventa y uno de la Guerra de los Cien Años. Las fuerzas inglesas han estado avanzando en Francia, y hace seis meses llegaron a Orléans, una ciudad amurallada en las orillas del río Loira. Para que el asalto inglés continúe, la ciudad debe caer. Así que durante los últimos seis meses el enemigo ha estado construyendo fortificaciones mientras los cañones retumban por la noche. Durante seis meses la comida ha sido escasa. Durante seis meses la esperanza se ha perdido.<br><br>Juana de Arco se suponía que los salvaría. En nuestro mundo, la guerrera santa, con su estandarte y la cabeza en alto, entró en Orléans, y con ella trajo comida, seguridad y esperanza. Pero aquí, nunca llegó. La ciudad está en sus últimas, y recae en los Héroes de la Historia salvar la ciudad sin ella. La gente está lista, pero los ingleses vienen. Se debe librar una última batalla, una batalla para salvar Orléans, una batalla para que Francia recupere su libertad.
 }
@@ -856,8 +856,8 @@ R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_48_NameNivel 48
 q
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_2_QuestStart_Text1_NameLady Six Sky
-6
-#Base.Heroes.hero.HarunAlRashid_NameHarun al-Rashid
+7
+#Base.Heroes.hero.HarunAlRashid_NameHarún al-Rashid
 D
 /Base.UnitStats.unit_stat.ShieldTakenAmp_Percent% Escudo Recibido
 2
@@ -1056,16 +1056,16 @@ H
 -Base.FriendReferralRewardPopup.HeadlineSender¡Invitación Aceptada!
 C
 4Base.Buildings.Building_Vikings_City_CityHall_1_NameGran salón
-�
-Base.Resources.carpet_DescpCarpets are a refined resource. They can be produced at Carpet Makers and Luxurious Workshops - Level 4 upwards.
+�
+Base.Resources.carpet_Desc|Las alfombras son un recurso refinado. Se pueden producir en talleres de alfombras y talleres lujosos de nivel 4 o superior.
 F
 6Base.Buildings.Building_ByzantineEra_Farm_Rural_2_NameGranja Rural
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.Nostradamus_1_Name�<style=ability_label>Bloqueo de Habilidad | Contrarrestar</style> Nostradamus predice el uso de una habilidad enemiga. La próxima vez que un enemigo use una habilidad, recibe <style=basestat>{damage}</style> de daño y queda con la habilidad bloqueada durante <style=basestat>{ability_block_duration}</style>.
+L
+/Base.Abilities.hero_battle_ability.Saladin_NameFortaleza de la Velocidad
 A
 .Base.SpartasLastStandInfoPopup.UpperLaneHeaderCarril Superior
-D
-/Base.Abilities.hero_battle_ability.Saladin_NameFortress of Speed
 S
 &Base.AccountConfirmationPopup.Headline)Por favor, revisa tu correo electrónico.
 v
@@ -1102,8 +1102,10 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameAtalay
 Base.Units.Unit_Hoplit_Desc�¡Nike! Milcíades, el estratégico general ateniense del siglo V a.C., es famoso por su liderazgo en la Batalla de Maratón.<br><br>Milcíades, brillante estratega, condujo a las fuerzas atenienses a una victoria decisiva sobre el numeroso ejército persa, que fue decisiva para impedir la invasión de Grecia y marcó un punto de inflexión en la guerra.<br><br>Más tarde, Milcíades dirigió una invasión naval, aunque prefirió la venganza a seguir órdenes. A pesar del fracaso de esta invasión y de la vergüenza que le siguió, Milcíades es recordado como un estadista sabio y astuto.
 B
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_5_NameFuente
-�	
-Base.Units.Unit_Saladin_Desc�Stand tall as a lion of justice with Saladin, Sultan of Egypt and Syria! This 12th-century Kurdish leader is famed for his unmatched chivalry and his pivotal role during the Crusades. Rising from humble beginnings, Saladin united the fractured Muslim world and reclaimed Jerusalem.<br><br>At the Battle of Hattin in 1187, Saladin's tactical brilliance shattered the Crusader army, leading to the recapture of Jerusalem after 88 years of Christian rule. Yet it was his mercy that truly made him legendary - he allowed the city's Christian inhabitants to leave peacefully, and when King Richard the Lionheart's horse was killed in battle, Saladin sent him two replacements.<br><br>Saladin's clever tactics defeated some of the greatest knights and kings Europe could muster, while his fame for mercy and wisdom rivaled his prowess in battle. He rebuilt fortresses, sponsored learning, and ensured the prosperity of his lands even amid war. To this day, Saladin is remembered across the world as a paragon of leadership and virtue; his campaigns changed history and his title, al-Malik an-Nasir (the Victorious King), speaks for itself.
+�
+
+Base.Units.Unit_Saladin_Desc�
+¡Mantente firme como un león de la justicia con Saladino, sultán de Egipto y Siria! Este líder kurdo del siglo XII es célebre por su caballerosidad inigualable y su papel decisivo durante las Cruzadas. Surgido de orígenes humildes, Saladino logró unir el mundo musulmán fragmentado y recuperar Jerusalén.<br><br>En la batalla de Hattin, en 1187, el genio táctico de Saladino destrozó al ejército cruzado, lo que llevó a la reconquista de Jerusalén tras 88 años de dominio cristiano. Pero fue su clemencia lo que realmente lo volvió legendario: permitió que los habitantes cristianos de la ciudad se marcharan pacíficamente, y cuando el caballo del rey Ricardo Corazón de León cayó en combate, Saladino le envió dos en reemplazo.<br><br>Las astutas estrategias de Saladino derrotaron a algunos de los más grandes caballeros y reyes que Europa pudo reunir, mientras su fama por la misericordia y la sabiduría rivalaba con su destreza en batalla. Reconstruyó fortalezas, promovió el conocimiento y aseguró la prosperidad de sus tierras incluso en tiempos de guerra. Hasta el día de hoy, Saladino es recordado en todo el mundo como un modelo de liderazgo y virtud; sus campañas cambiaron la historia y su título, al-Malik an-Nasir (el Rey Victorioso), habla por sí mismo.
 �
 LBase.StoryText.Story_Questline_EventCity_Egypt_GoldOre_QuestStart_Text1_DescqLos anjs son importantísimos y se fabrican con menas de oro. ¡Pongamos esas minas y a esos orfebres a trabajar!
 �
@@ -1160,8 +1162,8 @@ H
 "Tutorial.EmbersTutorial.EmbersInfo�¡El resplandor de Baldr! ¡Has construido mi <style=MC>HORNO</style>! Recoge algunas <style=MC>BRASAS</style> de él y podremos usarlas para <style=MC>SUBIR DE NIVEL EL EQUIPAMIENTO</style>.
 [
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_6_DescProduce Máscaras Ancestrales
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_Desc.Increases the irrigation of adjacent buildings
+m
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_6_Desc3Aumenta la irrigación de los edificios adyacentes.
 B
 ,Base.Wonders.Wonder_Egypt_CheopsPyramid_NamePirámide de Guiza
 M
@@ -1198,12 +1200,10 @@ m
 1Base.Buildings.Building_China_Home_Premium_6_NameCasa lujosa
 L
 0Base.AllianceCityIncidentIntroductionPanel.TitlePersecución de Bandidos
-0
-%Base.UnitStats.unit_stat.Focus_AbbrevENFOQUE
+6
+%Base.UnitStats.unit_stat.Focus_AbbrevCARGA INICIAL
 �
 Base.RPSInfoPopup.YellowUnits�Las <color=#D7940E><uppercase>unidades amarillas</uppercase></color> causan {0} de daño a las <color=#7C3BE3>unidades moradas</color> y {1} de daño a las <color=#D7940E>unidades amarillas</color>.
-e
-HBase.Technologies.Technology_KingdomOfSicily_BasicIrrigationNetwork_NameRed de irrigación simple
 U
 4Base.Buildings.Building_StoneAge_Farm_Premium_1_DescProduce un montón de comida.
 �
@@ -1222,8 +1222,8 @@ _
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text3_NameAmelia Earhart
 (
 Base.AllianceBlimps.BuildingEdificio
-Z
-6Base.Buildings.Building_Arabia_Merchant_Average_3_Desc Produce una gran pila de dirham.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_3_DescProduce Dinares de Oro.
 \
 IBase.CustomizationCollections.CustomizationCollection_TreasureHunt_1_NameCaza del tesoro
 0
@@ -1309,8 +1309,6 @@ C
 Base.BattleResultPanel.LastWaveÚltima oleada
 J
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_2_NameCasa Mediana
-M
-"Base.Rifts.rift.CommonSpecial_Name'Bonanza de Leyendas de Recién Llegados
 D
 *Base.HarborShopPanel.TreasureHunt.ShopNameTienda Caza del Tesoro
 �
@@ -1333,8 +1331,8 @@ H
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text9_DescJSupongo que esa es nuestra próxima tarea: ¡averiguar qué podemos hacer!
 (
 Base.Ages.RomanEmpire_Start	50 a. C.
-6
-!Base.BazaarOffersPanel.LockedSlotResearch Required
+=
+!Base.BazaarOffersPanel.LockedSlotInvestigación Requerida
 n
 ?Base.AllianceMemberContextPopover.AlliancePlayerInviteDuplicate+El jugador tiene una invitación pendiente.
 
@@ -1506,7 +1504,7 @@ CBase.Technologies.Technology_AgeOfTheFranks_UrbanCombatProwess_Name Destreza e
 9
 %Base.Heroes.hero.NubianMercenary_NameKandake de Nubia
 |
-Base.Mailbox.RemovalCopy`Sorry, you have been removed from the Alliance {} by {}. Find an Alliance that suits you better!
+Base.Mailbox.RemovalCopy`Lo sentimos, {}, te ha eliminado de la alianza {}. ¡Busca una alianza que se adapte mejor a ti!
 �
 3Base.QuestlinesPanel.HaveSpecificBuildingInCityTask4Ten <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b>.4Ten <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b>.
 h
@@ -1535,8 +1533,10 @@ A
 [Base.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_Tikal_3_QuestStart_Text1_Desc�¡Excepcional! ¡Tu capacidad para sobresalir en esta misión ha quedado demostrada! Sin embargo, aún quedan tareas pendientes. ¡Abordémoslas con prontitud!
 w
 *Base.PvpFightPanel.PaidRefreshPopupMessageI¿Quieres actualizar esta lista para recibir otra selección de enemigos?
-�	
-Base.Units.Unit_Kiviuq_Desc�	Journey across the frozen seas and through impossible trials with Kiviuq, the eternal wanderer of Inuit legend! This mythical hero has traveled for centuries, if not millennia, across the Arctic, facing spirits, shamans, and the very forces of nature itself. His odyssey began when he was set adrift as a young man, and since then, his kayak has carried him through adventures that would break lesser mortals.<br><br>Kiviuq's tales are as numerous as the stars in the northern sky. He has escaped from murderous spirits, married the daughter of the Moon, and outwitted cannibalistic giants. In one story, he transforms into various animals to escape danger; in another, he rescues his community from starvation by finding new hunting grounds across impossible distances. His journey is eternal - some say he still paddles the Arctic waters, searching for his way home.<br><br>To the Inuit peoples across the Arctic, from Alaska to Greenland, Kiviuq represents resilience, cleverness, and the indomitable human spirit. His stories have been told in igloos and qaggiq for countless generations, teaching survival, morality, and hope in the harshest environment on Earth.
+�
+
+Base.Units.Unit_Kiviuq_Desc�
+Emprende un viaje a través de los mares helados y supera pruebas imposibles con Kiviuq, el eterno viajero de la leyenda inuit. Este héroe mítico ha recorrido el Ártico durante siglos —si no milenios— enfrentándose a espíritus, chamanes y a las propias fuerzas de la naturaleza. Su odisea comenzó cuando fue abandonado a la deriva siendo joven, y desde entonces su kayak lo ha llevado por aventuras que quebrarían a los mortales más fuertes.<br><br>Los relatos de Kiviuq son tan numerosos como las estrellas del cielo del norte. Ha escapado de espíritus asesinos, se ha casado con la hija de la Luna y ha burlado a gigantes caníbales. En una historia se transforma en distintos animales para escapar del peligro; en otra, salva a su comunidad del hambre al encontrar nuevos territorios de caza a través de distancias imposibles. Su viaje es eterno: algunos dicen que aún rema por las aguas del Ártico, buscando el camino de regreso a casa.<br><br>Para los pueblos inuit de todo el Ártico, desde Alaska hasta Groenlandia, Kiviuq representa la resiliencia, la astucia y el espíritu humano indomable. Sus historias han sido contadas en iglús y qaggiq durante incontables generaciones, transmitiendo enseñanzas sobre supervivencia, moral y esperanza en el entorno más implacable de la Tierra.
 U
 $Base.ExpansionPopup.ProgressOnWonder-Desbloquea expansiones mejorando tu maravilla
 V
@@ -1597,8 +1597,8 @@ b
 0Base.Buildings.Building_Mayas_Home_Priest_4_Desc.Produce Cacao y añade 2 Artesanos a tu ciudad
 ;
 %Base.Units.Unit_ThomasAlvaEdison_NameThomas Alva Edison
-;
-*Base.UnitStats.unit_stat.FocusRegen_AbbrevENFOQUE REGEN
+D
+*Base.UnitStats.unit_stat.FocusRegen_AbbrevREG. DE CONCENTRACIÓN
 M
 :Base.Technologies.Technology_EarlyGothicEra_LeadGlass_NameVidrio de Plomo
 F
@@ -1691,8 +1691,8 @@ E
 ,Base.UnitStats.unit_stat.AttackSpeed_Percent% Velocidad de Ataque
 B
 &Base.OptionsPopup.KeyboardShortcutsTabTeclas de acceso rápido
-�
-"Base.Mailbox.ApplicationDeniedCopy[Sorry, {} has denied your application to the Alliance {}. Try applying to another Alliance!
+�
+"Base.Mailbox.ApplicationDeniedCopyhLo sentimos, {} ha rechazado tu solicitud para unirte a la Alianza {}. ¡Intenta aplicar a otra Alianza!
 e
 1Base.QuestlinesPanel.SolveIncidentsTaskNoIncident0Vuelve más tarde para resolver más incidentes.
 �
@@ -1709,8 +1709,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_25_NameNivel 25
 b
 %Base.QuestlinesPanel.FinishBattleTaskTermina <b>{0}</b> batalla.Termina <b>{0}</b> batallas.
-?
-#Base.UnitStats.unit_stat.FocusRegenRegeneración de Enfoque
+4
+#Base.UnitStats.unit_stat.FocusRegenCarga Regular
 J
 1Base.Abilities.hero_battle_ability.Confucius_NameConfusión Confuciana
 M
@@ -1733,8 +1733,11 @@ JBase.StoryText.Story_Questline_WorldFair_2024_Rush_1_QuestStart_Text2_Desc�Pa
 'Base.RewardPanel.BuildingUnlocked_ShortEdificio
 P
 2Base.TreasureHuntNegotiationPopup.HeroHealthStatusEstado de Salud del Héroe
-�
-RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Golpe cuerpo a cuerpo | Sangrado</style>Amina golpea a la unidad enemiga más cercana, priorizando a los héroes, e inflige <style=basestat>{dmg_percentage}</style> de daño. El objetivo recibe un efecto de sangrado que causa <style=basestat>{bleed}</style> de daño durante <style=basestat>{duration}</style>. Inflige <style=basestat>{dmg_per_stack}</style> de daño adicional por acumulación de sangrado. Este daño adicional no puede superar <style=basestat>{max_dmg}</style>.
+�
+RBase.AbilityDescriptions.hero_battle_ability_description.AminaQueenOfZazzau_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo | Sangrado</style>
+Amina golpea a una unidad enemiga, priorizando al héroe más cercano, infligiendo <style=basestat>{dmg_percentage}</style> de daño.
+El objetivo recibe un efecto de hemorragia que causa <style=basestat>{bleed}</style> de daño durante <style=basestat>{duration}</style>.
+Inflige <style=basestat>{dmg_per_stack}</style> de daño adicional por cada acumulación de hemorragia. Este daño adicional no puede superar <style=basestat>{max_dmg}</style>.
 �
 1Base.AllianceChatNotifications.IncidentRunningOutW¡El tiempo se acaba! ¡Apresúrate y resuelve el incidente en la Ciudad de la Alianza!
 F
@@ -1773,8 +1776,8 @@ m
 8Base.Buildings.Building_Egypt_Irrigation_Fountain_2_DescDMejora considerablemente la irrigación de los edificios adyacentes.
 y
 5Base.QuestlinesPanel.HaveIrrigatedBuildingsInCityTask@Ten <b>{0} {1}</b> en <b>{2}</b> con irrigación a nivel {3}{4}.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_4_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 �
 Base.Resources.stockfish_Desc{El Bacalao Seco es un recurso esencial que se necesita para fabricar recursos refinados. Se puede producir en las Tabernas.
 R
@@ -1819,8 +1822,8 @@ R
 fBase.StoryText.Story_Questline_EventCity_Vikings_ExpeditionPreparations_Lagertha_QuestStart_Text1_Desc�Antes de que podamos producir provisiones para nuestros valientes Marineros, primero debemos recolectar algo de <nobr><style=MC>Pescado</style> <sprite name=resource.fish_cta></nobr> y <nobr><style=MC>Miel</style> <sprite name=resource.honey_cta></nobr>.
 ]
 &Base.QuestlinesPanel.CompleteEncounterGana <b>{0}</b> batalla.Gana <b>{0}</b> batallas.
-L
-4Base.Abilities.hero_battle_ability.Scheherazade_NameTales of Enchantment
+P
+4Base.Abilities.hero_battle_ability.Scheherazade_NameCuentos de Encantamiento
 �
 1Base.QuestlinesPanel.CollectWorkerProductionShortSConsigue <b>{0} </b>producción corta en tu <b>{1}</b> de <b>{2}</b> en <b>{3}</b>.UConsigue <b>{0} </b>producciones cortas en tu <b>{1}</b> de <b>{2}</b> en <b>{3}</b>.
 N
@@ -1831,8 +1834,8 @@ I
 8Base.Buildings.Building_HighMiddleAges_Home_Small_2_NameCasa Pequeña
 �
 6Base.Units.Unit_KingdomOfSicily_Player_SiegeTower_Desc�Las unidades de asalto atacan lentamente y son vulnerables a los ataques enemigos, pero tienen un impacto devastador sobre una zona amplia.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_NameOil Lamp Maker
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_NameTaller de Lámparas de Aceite
 �
 <Base.EventStartScreens.SummonOfTheStarsEventStartDescription�Canaliza el poder de la Antimateria en el Portal y deja que el destino guíe tu invocación. ¡Cuanto más raro sea el héroe que consigas, más alto ascenderás hacia las estrellas! Gana puntos estelares y reclama magníficas recompensas.
 V
@@ -1867,8 +1870,8 @@ U
 BBase.UnitStats.unit_stat.InitialFocusInSecondsBonus_Percent_AbbrevCARGA INICIAL %
 �
 7Base.Incidents.Incident_StoneAge_Capital_Mammoth_2_Desci¿Sabías que a los mamuts les encanta dormirse sobre tesoros? Vamos a despertar a este para comprobarlo.
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_6_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_DescFEl Taller de Café produce Café a partir de granos de Café y Latón.
 1
  Base.Units.Unit_QinShiHuang_NameQin Shi Huang
 >
@@ -1954,8 +1957,8 @@ o
 9Base.LeaderboardEventPanel.TaskInfo.EventCity_Description2¡Juega la ciudad del evento para recibir Trofeos!
 `
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_8_NameLiceo de Eruditos
-�
- Base.Resources.hero.Saladin_Desc]Used to increase the Awakening Level of Saladin and thus unlock more powerful battle bonuses.
+�
+ Base.Resources.hero.Saladin_DescySe utiliza para aumentar el nivel de despertar de Saladino y, así, desbloquear bonificaciones de combate más poderosas.
 L
 8Base.Technologies.Technology_BronzeAge_SacredStones_NamePiedras sagradas
 u
@@ -1981,8 +1984,8 @@ k
 ;Base.StoryText.Story_DesertDelta_2_1_BattleStart_Text1_DescW¡Sirvientes! ¡Sigue Construyendo Defensas! ¡Hay que proteger a las fuerzas de Tesla!
 �
 7Base.Incidents.Incident_IberianEra_Capital_Coins_1_DescO¡El propietario de esta carretilla rota ofrece unas monedas a quien la repare!
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_NameNivel 32
 B
@@ -2009,8 +2012,8 @@ $Base.BuildingUpgradePanel.OlderGoodsBienes antiguos
 ;Base.StoryText.Story_DesertDelta_4_6_BattleStart_Text1_DesctAntepasado musculoso, ¿estás seguro de que esto es lo correcto? ¡Creo que ahora estamos en medio de su ejército!
 V
 0Base.QuestlinesPanel.HaveSpecificExpansionInCity"Reclama <b>{0} </b> en <b>{1}</b>.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_4_NameIncense Maker
+L
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_NameTaller de Incienso
 C
 %Base.IngameEvents.WorldFair_2024_NameEvento de la Feria Mundial
 �
@@ -2025,12 +2028,12 @@ RBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_YellowTeslaTakedown_1_N
  Base.Units.Unit_OdaNobunaga_NameOda Nobunaga
 O
 >Base.Technologies.Technology_KingdomOfSicily_Conservation_NameConservación
+G
+6Base.Buildings.Building_Arabia_Workshop_Premium_6_NameTaller Lujoso
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text3_Desc`El tiempo aquí no es una línea recta, más bien es como un resorte. Puede torcerse y regresar.
 ]
 8Base.Resources.event_purple_tesla_takedown_trophies_NamePunto de TrofeoPuntos de Trofeo
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_6_NameLuxurious Workshop
 )
 Base.Event.GrandPrizeLabelGran Premio
 �
@@ -2060,10 +2063,10 @@ y
 ;Base.StoryText.Story_DesertDelta_1_8_BattleStart_Text2_Desc:Sé que ella aún no se ha vuelto en contra de nosotros…
 �
 #Base.ShopPopup.DailyDealLevelUpDesci¡Desata todo el potencial de tus Héroes con recursos esenciales de mejora y transfórmalos en leyendas!
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_NameTaller de Lámparas de Aceite
 �
 *Base.EventPass.MoonLanding2MoreContentText�Cuando alcances el punto de control final, ¡prepárate para continuar tu viaje por el evento, ya que todas las recompensas se restablecen!<br><br>Después de completar la Ruta del Gran Premio por segunda vez, los Puntos de Progreso necesarios para desbloquear los Grandes Premios aumentan de <b>8</b> a <b>10</b>. En todas las completaciones posteriores, los Puntos de Progreso requeridos aumentan aún más de <b>10</b> a <b>12</b>.<br><br>¡Comienza a reunir premios nuevamente, con aún más épicas <style=epic>Reliquias</style> y otro legendario <nobr><style=legendary>Mjolnir</style></nobr> disponibles!
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_NameOil Lamp Maker
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_26_NameNivel 26
 F
@@ -2169,8 +2172,8 @@ J
 ;Base.Buildings.Building_HighMiddleAges_Farm_Domestic_3_DescBProduce una gran cantidad de Comida en un largo periodo de tiempo.
 J
  Base.ShopPopup.Pages.diy_offer_3&Tu potenciador de plantilla de héroes
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_2_NameLuxurious Merchant
+J
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_NameMercader de Lujo
 D
  Base.ShopPopup.Pages.diy_offer_1 Tu potenciador de investigación
 V
@@ -2219,14 +2222,14 @@ L
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text2_Desc�Para esto necesitas llenar <style=MC>Cajas</style> con Recursos. Si todas las cajas están llenas, podrás <style=MC>mejorar</style> y recoger una <style=MC>Recompensa</style>.
 |
 BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_6_Name6¡Materiales para ascender al nivel 45 inmediatamente!
--
-Base.AlliancePanel.RecruitmentRecruitment
+/
+Base.AlliancePanel.RecruitmentReclutamiento
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.QueenBoudicca_10_Name�<style=ability_label>Golpe a Distancia| Aturdir</style>Lanza a su objetivo más lejano, alcanzándolo con <style=basestat>{dmg_percentage}</style> de daño y dejándolo aturdido durante <style=basestat>{duration}</style>. Las unidades enemigas alrededor del objetivo reciben <style=basestat>{dmg_percentage_around}</style> de daño. Da prioridad a los héroes.
 �
 WBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestFinish_Text1_Desc�¡Progreso fantástico! Ah, y una cosa más a tener en cuenta: <style=MC>Yggdrasil</style> mejora nuestra producción de <nobr><style=MC>Miel</style> <sprite name=resource.honey_cta></nobr>, así que asegurémonos de planificar nuestra ciudad teniendo eso en cuenta.
-$
-Base.Resources.carpet_NameCarpet
+&
+Base.Resources.carpet_NameAlfombra
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text6_Desc�No, no tenemos que hacer nada más. ¡Lo hemos conseguido! La nave ha sobrevivido más allá de su punto de hundimiento de la línea temporal pasada, y parece que sigue bien encaminada.
 P
@@ -2307,8 +2310,8 @@ d
 TBase.BuildingCustomizations.BuildingCustomization_EventWorldFair2024_Home_Small_NameBobina Tesla
 �
 FBase.InventoryItems.SelectionKit_current_era_ascensionmaterials_7_DescOEste Kit de Selección te permite elegir entre distintos Materiales Ascensión.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_2_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_2_NameCasa Lujosa
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.CyrusTheGreat_1_Name�<style=ability_label>Golpe en Área</style>Provoca una explosión en el objetivo actual, que inflige <style=basestat>{dmg_percentage}</style> a todas las unidades enemigas dentro de un radio de <style=basestat>{range}</style>.
 �
@@ -2377,12 +2380,12 @@ D
 6Base.Units.Unit_AgeOfTheFranks_Player_Skirmishers_DescFLas unidades de infantería son más eficaces en las filas delanteras.
 �
 EBase.AbilityDescriptions.hero_battle_ability_description.Plato_1_Name�<style=ability_label>Penalización</style>Platón habla en alegorías, confundiendo a las unidades enemigas y disminuyendo su precisión en <style=basestat>{accuracy_percentage}</style> y su ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Platón durante <style=basestat>{duration}</style>.
-o
-:Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc1Produce Rollos de Papiro y Vestidos Ceremoniales.
 R
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text3_Desc¿Qué hacemos ahora?
-R
-&Base.AllianceLandingPanel.Description2(Join an Alliance or create one yourself:
+o
+:Base.Buildings.Building_Egypt_Workshop_PapyrusPress_1_Desc1Produce Rollos de Papiro y Vestidos Ceremoniales.
+T
+&Base.AllianceLandingPanel.Description2*Únete a una Alianza o crea una tú mismo:
 0
 'Base.HarborShopPanel.Chrono.ButtonLabelCrono
 �
@@ -2424,8 +2427,8 @@ X
 "Base.NotEnoughPremiumPopup.Message2Te falta(n) {0} gema(s). ¿Quieres ir a la tienda?
 V
 8Base.Buildings.Building_EarlyRome_Barracks_Ranged_3_NameBarracón de largo alcance
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_4_NameLuxurious Noria
+S
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_NameRueda Hidráulica Lujosa 
 B
 4Base.Units.Unit_HighMiddleAges_Player_Arbalists_Name
 Arbalistas
@@ -2552,10 +2555,10 @@ L
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_QuestStart_Text3_Desc�Cada <style=MC>Caja</style> también mejora tu <style=MC>Rango</style> en la <style=MC>Clasificación del Evento</style>, desbloqueando así mejores <style=MC>Recompensas</style> a medida que asciendes en las <style=MC>Ligas</style> al final del Evento.
 /
  Base.Heroes.hero.TomoeGozen_NameTomoe Gozen
+R
+$Base.BuildingGroups.carpetMaker_NameTaller de AlfombrasTalleres de Alfombras
 �
 BBase.StartBattleWithEmptyHeroSlotsPopup.BattleSlotsAreEmptyWarningVParece que aún puedes asignar más héroes, ¿realmente quieres iniciar esta batalla?
-C
-$Base.BuildingGroups.carpetMaker_NameCarpet MakerCarpet Makers
 I
 7Base.Technologies.Technology_FeudalAge_FishingNets_NameRedes de pesca
 S
@@ -2695,10 +2698,10 @@ A
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineInfantry_NameInfantería bizantina
 �
 'Base.Resources.hero.AlbertEinstein_Desc~Se utiliza para aumentar el Nivel de Despertar de Albert Einstein y así desbloquear bonificaciones de batalla más poderosas.
+�
+,Base.EventType.TreasureHuntEvent_DescriptionUDescubre tesoros ocultos y tierras inexploradas junto con tus compañeros de alianza.
 /
  Base.Heroes.hero.MontezumaI_NameMoctezuma I
-�
-,Base.EventType.TreasureHuntEvent_DescriptionQDiscover hidden treasures and unexplored lands together with your alliance mates.
 U
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_1_NameBarracón de Caballería
 I
@@ -2866,8 +2869,8 @@ U
 7Base.WorldWondersOverviewPanel.PlayerRequestDescription{0} ha solicitado {1} {2}.
 2
 Base.Alerts.DeleteAccountButtonEliminar cuenta
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_Desc.Increases the irrigation of adjacent buildings
+m
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_3_Desc3Aumenta la irrigación de los edificios adyacentes.
 V
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_2_NameBarracón de infantería
 >
@@ -2994,8 +2997,8 @@ NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text4_Name
 3Base.Buildings.Building_Vikings_Home_Premium_5_DescSProduce una tonelada de Peniques y añade 2 Trabajadores y 2 Marineros a tu ciudad.
 d
 CBase.Technologies.Technology_HighMiddleAges_ThreeFieldRotation_NameRotación Trienal de Cultivos
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_4_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_4_NameFabricante de Alfombras
 P
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_3_NameNivel 3
 D
@@ -3038,16 +3041,14 @@ VBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestStart_Tex
 -Base.BattleResultPanel.DefeatHintConjurHeroesInvocar Héroes
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.SiouxShaman_1_Name�<style=ability_label>Potenciador</style>Apunta al mayor grupo de unidades aliadas, aumentando la DEF en <style=basestat>{def_percentage}</style> de la DEF de Toro Sentado durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>.
+M
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_NameGranja de Camellos
 q
 'Base.Subscriptions.BATTLE_SPEED_UP_DescFDesbloquea la opción de belocidad de batalla 2x durante las batallas.
 �
 8Base.StoryText.Story_Panganea_5_3_BattleStart_Text3_DescuAún creo en Tesla, pero no se le puede permitir el <style=MC>nexus</style>. Se lo tomaremos. Por el bien del futuro.
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Name
-Camel Farm
-A
-3Base.Buildings.Building_Arabia_City_CityHall_2_Name
-Great Hall
+B
+3Base.Buildings.Building_Arabia_City_CityHall_2_NameGran Salón
 `
 8Base.Buildings.Building_MinoanEra_Barracks_Ranged_1_Desc$Desbloquea a los arqueros compuestos
 N
@@ -3062,16 +3063,16 @@ $Base.Alerts.AuthenticationFailedTextMTenemos problemas para conectar tu cuenta
 Base.Event.SeePrizesVer Premios
 V
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_DescDesbloquea Routiers
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_6_NameCoffee Brewer
+H
+5Base.Buildings.Building_Arabia_Workshop_Coffee_6_NameTaller de Café
 4
 Base.ShopPopup.ShopErrorHeaderError en la tienda
 �
 SBase.AbilityDescriptions.hero_battle_ability_description.MargaretIOfDenmark_15_Name�<style=ability_label>Potenciador</style>Inspira a todas las unidades amigas, aumentando su velocidad de ataque en <style=basestat>{atk_speed_percentage}</style>, su ATQ en <style=basestat>{atk_percentage}</style> del ATQ de Margaret, y su daño crítico en <style=basestat>{crit_dmg_percentage}</style> durante <style=basestat>{duration}</style>.
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 O
 7Base.ShopPopup.JourneyThroughSaharaThrivingEnergyHeaderEnergía Prosperante
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_3_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 )
 Base.Heroes.hero.Achilles_NameAquiles
 i
@@ -3080,10 +3081,11 @@ UBase.BuildingCustomizations.BuildingCustomization_EventWinter_CultureSite_Littl
 Base.Generic.ProducesProduce <b>{0}</b> .
 *
 Base.TeslaStormsPanel.DropsRecompensas
+(
+Base.AlliancePanel.Welcome
+Bienvenid@
 3
 "Base.Heroes.hero.LouisPasteur_NameLouis Pasteur
-%
-Base.AlliancePanel.WelcomeWelcome
 �
 CBase.WonderReworkUpgradeRequestPopover.ResearchPointHelpRequestHintULos demás jugadores pueden contribuir con puntos de investigación a tus maravillas.
 �
@@ -3104,8 +3106,6 @@ T
 +Base.Units.Unit_StoneAge_Animal_Wolves_NameLobos
 T
 >Base.Technologies.Technology_ClassicGreece_WindPrediction_NamePredecir el viento
-K
-<Base.Technologies.Technology_KingdomOfSicily_Lusterware_NameLoza dorada
 d
 ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_2_NameBarracón de infantería pesada
 D
@@ -3156,20 +3156,20 @@ t
 "Base.Alerts.RegistrationFailedTextNTenemos problemas creando una nueva cuenta. Comprueba tu conexión a internet.
 �
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text4_DescFEnvía tus fuerzas, <style=MC>Hércules</style>. Y tráeme a Einstein.
+|
+6Base.Buildings.Building_Arabia_Workshop_Incense_4_DescBEl Taller de Incienso produce incienso a partir de Mirra y Latón.
 @
 -Base.Units.Unit_TreasureHunt_Blue_Cannon_NameCañón Celeste
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_4_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 �
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text1_DescFEstoy verdaderamente orgulloso de todo lo que hemos conseguido juntos.
 W
 >Base.Buildings.Building_China_ExtractionPoint_MothGlade_6_NameClaro de las Polillas
 F
 9Base.Technologies.Technology_IberianEra_Destillation_Name	Destilado
+7
+ Base.Resources.hero.Saladin_NameEsencia de Saladino
 �
 YBase.StoryText.Story_Questline_EventCity_Vikings_MoreWorkers_Ragnar_QuestStart_Text1_Desc�Necesitamos más ayuda para alcanzar nuestros objetivos. Construyamos casas adicionales para dar cabida a más Trabajadores y Marineros.
-6
- Base.Resources.hero.Saladin_NameEssence of Saladin
 P
 >Base.Technologies.Technology_EarlyGothicEra_NobleHorsemen_NameJinetes Nobles
 >
@@ -3257,8 +3257,8 @@ $
 Base.Resources.herbs_NameHierbas
 �
 Base.OptionsPopup.BindEmailCopy_¡Vincula tu correo electrónico para jugar el juego en tu navegador de PC y otras plataformas!
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+�
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_DescFCría Camellos que se necesitan para entregar las ofertas en el Bazar.
 -
 Base.MovePanel.StillStashedExit
 Sí, salir
@@ -3305,12 +3305,12 @@ EBase.Questlines.Questline_EventCity_Mayas_WonderProgress_Tikal_3_NameTikal - 
 Base.Ages.ByzantineEra_Finish	330 d. C.
 q
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_Desc0Mejora la felicidad de los edificios adyacentes.
-U
-8Base.AllianceApplicationMessages.AllianceApplicationHintAdd a message (optional):
+Y
+8Base.AllianceApplicationMessages.AllianceApplicationHintAñade un mensaje (opcional):
+�
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_DescJ¡Desbloquea 5 recompensas exclusivas a medida que avanzas en la Historia!
 9
 ,Base.WorldWondersOverviewPanel.FavoritesOnly	Favoritas
-q
-3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_Desc:Unlock 5 exclusive rewards as you advance through history!
 n
 7Base.Buildings.Building_ClassicGreece_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 e
@@ -3414,10 +3414,10 @@ U
 EBase.Questlines.Questline_EventCity_Vikings_MoreWorkers_Lagertha_NameMano de Obra
 :
 +Base.Questgivers.Questgiver_MontezumaI_NameMoctezuma I
-�
-"Base.Resources.hero.AnneBonny_Desc�Se utiliza para aumentar el Nivel de Despertar de Anne Bonny y, por lo tanto, desbloquear bonificaciones de batalla más poderosas.
 B
 7Base.Technologies.Technology_HighMiddleAges_Guilds_NameGremios
+�
+"Base.Resources.hero.AnneBonny_Desc�Se utiliza para aumentar el Nivel de Despertar de Anne Bonny y, por lo tanto, desbloquear bonificaciones de batalla más poderosas.
 Q
 =Base.Units.Unit_MinoanEra_EgyptianAcolytes_NubianWarrior_NameGuerreros Nubios
 f
@@ -3537,8 +3537,8 @@ W
 ;Base.Technologies.Technology_China_PorcelainProduction_NameProducción de Porcelana
 �
 "Base.Resources.alabaster_idol_DescjLos Ídolos de Alabastro son bienes que se pueden producir en Talleres de Cantería - Nivel 1 en adelante.
-n
-2Base.Buildings.Building_Arabia_Home_Premium_2_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+{
+2Base.Buildings.Building_Arabia_Home_Premium_2_DescEProduce una tonelada de Dírhams y añade 3 trabajadores a tu ciudad.
 D
 -Base.Units.Unit_IberianEra_Vikings_Heavy_NameVikingos Berserkers
 �
@@ -3671,14 +3671,14 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text6_Name
 ,Base.Technologies.Technology_Egypt_Ankh_NameAnjs
 �
 9Base.QuestlinesPanel.HaveSpecificBuildingInCityAndAgeTaskBTen <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b> en <b>{4}</b>.BTen <b>{0} {1}</b> a nivel <b>{2}</b> de <b>{3}</b> en <b>{4}</b>.
-�
-DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
+�
+DBase.Resources.halloween2025_milestone_rally_of_heroes_trophies_DescKResuelve la tarea indicada para ganar Puntos de Trofeo en esta competencia.
 k
 Base.Generic.ErrorUnavailableJActualmente no se puede cambiar de nombre. Vuelve a intentarlo más tarde.
 �
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text1_Desc¡Eh, líder! ¡Tenemos un rival! ¡Esos <style=MC>aplastacráneos</style> nos amenazan con contraatacar! ¡Acabemos con ellos!
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_4_Desc<Substantially increases the irrigation of adjacent buildings
+
+6Base.Buildings.Building_Arabia_Irrigation_Noria_4_DescEAumenta considerablemente la irrigación de los edificios adyacentes.
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.HarryHoudini_1_Name�<style=ability_label>Teletransportación | Aturdir </style>
 Houdini se teletransporta hacia el enemigo con el mayor enfoque, atrapándose a sí mismo y al objetivo en un tanque de agua del que no se puede escapar. Ambos quedan aturdidos durante <style=basestat>{duration}</style> o hasta que el objetivo muera o sea teletransportado.
@@ -3701,10 +3701,10 @@ Q
 -Base.Units.Unit_FeudalAge_Player_Knights_DescSLas unidades de caballería son muy rápidas y cargan hacia la retaguardia enemiga.
 )
 Base.Ages.RomanEmpire_Decade	50 a. C.
+�
+#Base.EventType.PvpEvent_DescriptiondLucha contra otros jugadores, asciende en la clasificación de la arena y gana valiosas recompensas.
 g
 MBase.Questlines.Questline_EventCity_Mayas_ProgressTier1_LadySixSky_Tikal_NameSantuario de Devoción
-v
-#Base.EventType.PvpEvent_DescriptionOBattle against other players, climb the Arena Ranking and win valuable rewards.
 �
 4Base.Incidents.Incident_DawnAge_Capital_Chest_1_DescNHemos encontrado un joyero. Intentemos abrirlo; podría contener algo valioso.
 �
@@ -3761,10 +3761,10 @@ n
 PBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_BlueTeslaTakedown_1_NameEliminación Tesla Ártico
 +
 !Base.ShopPopup.SubscriptionActiveActiva
+B
+6Base.Buildings.Building_Arabia_Merchant_Average_6_NameMercader
 �
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest5_QuestStart_Text3_DescKTenemos que seguir su ritmo. Una nueva era está a la vuelta de la esquina.
-B
-6Base.Buildings.Building_Arabia_Merchant_Average_6_NameMerchant
 �
 UBase.StoryText.Story_Questline_EventCity_Egypt_RepairTheBridge_QuestFinish_Text1_Desce¡Lo has reparado con notable rapidez! Ahora podemos ampliar la ciudad también a este lado del río.
 4
@@ -3870,10 +3870,10 @@ F
 0Base.Wonders.Wonder_Capital_TempleOfArtemis_NameTemplo de Artemisa
 �
  Base.Units.Unit_WilliamTell_Desc�¡Dispara con destreza y nunca falles! Guillermo Tell, el legendario héroe popular suizo, está a tu lado. Recordado por su habilidad con el arco, Tell es célebre por desafiar la tiranía a comienzos del siglo XIV.<br><br>Famoso por la historia en la que fue obligado a disparar una manzana sobre la cabeza de su hijo con una ballesta, la precisión y valentía de Tell se convirtieron en símbolos de resistencia contra la opresión. Su desafío a los gobernantes Habsburgo inspiró la lucha suiza por la libertad y la independencia.<br><br>La historia de Tell, mezcla de leyenda e historia, sigue siendo un faro para los valientes, demostrando cómo el coraje de una sola persona puede encender el espíritu de toda una nación. Al viajar en el tiempo hacia el pasado, su mente quedó confundida: ¡ahora ama a su manzana como si fuera su hijo!
+H
+4Base.Abilities.hero_battle_ability.AdaBlackjack_NameEscudo del Norte
 �
 Base.Units.Unit_Inanna_Desc�La Casa del Cielo te espera, pues tuya es la lealtad de Inanna, el León. Esta diosa sumeria del Amor, la Guerra y la Fertilidad fue una figura destacada de la mitología ya en el año 4000 a.C.<br><br>Poderosa y polifacética, Inanna fue venerada por su descenso a los infiernos, donde intentó reclamar el trono de su hermana, y su posterior regreso. Las leyendas sumerias sobre ella destacan su inteligencia, fuerza e independencia.<br><br>Las historias sobre esta Diosa dieron forma a las primeras civilizaciones del planeta Tierra, y su influencia puede moldear el mundo de formas imposibles de percibir. Aun así, si una sumeria te saca a bailar, ¡piénsatelo dos veces antes de subir el volumen de las melodías!
-G
-4Base.Abilities.hero_battle_ability.AdaBlackjack_NameNorthern Shield
 a
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_1_1_Name$Competencia de Fichas con Trisqueles
 �
@@ -3893,8 +3893,8 @@ Z
 >Base.Buildings.Building_ClassicGreece_Barracks_Infantry_1_DescDesbloquea a los Psilois
 ]
 IBase.Resources.BuildingPiece_Building_BronzeAge_Collectable_School_1_NamePieza de escuela
-?
-.Base.Abilities.hero_battle_ability.Kiviuq_NamePiercing Rain
+C
+.Base.Abilities.hero_battle_ability.Kiviuq_NameLluvia Perforante
 N
 ;Base.Factions.Faction_KingdomOfSicily_AbbasidCaliphate_NameCalifato abasí
 G
@@ -3973,8 +3973,8 @@ R
 $Base.PlayerSearch.ToggleAllLanguagesTodos los Idiomas
 o
 _Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestFinish_Text1_NameLady Six Sky
-=
-'Base.HistoricBattlePanel.HistoricBattleBatalla Histórica
+?
+'Base.HistoricBattlePanel.HistoricBattleBatallas Históricas
 G
 2Base.EquipmentFilterPopover.EquipmentFilterNoMatchSin coincidencias
 L
@@ -4081,7 +4081,7 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text2_Descq
 �
 &Base.Resources.hero.QueenBoudicca_DescSe utiliza para aumentar el Nivel de Despertar de la Reina Boudica y así desbloquear bonificaciones de batalla más poderosas.
 "
-Base.Resources.myrrh_NameMyrrh
+Base.Resources.myrrh_NameMirra
 U
 $Base.QuestlinesPanel.SolveQuestsTaskResuelve {0} misión.Resuelve {0} misiones.
 ~
@@ -4166,8 +4166,8 @@ Z
 ;Base.Buildings.Building_KingdomOfSicily_Home_Average_3_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 M
 *Base.SeasonPassUpsellPopup.FreeLaneRewardsRecompensas del carril gratuito
-Z
-6Base.Buildings.Building_Arabia_Merchant_Average_1_Desc Produce una gran pila de dirham.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_1_DescProduce Dinares de Oro.
 $
 Base.Generic.ComingSoon	¡Pronto!
 /
@@ -4197,8 +4197,8 @@ u
 Geografía
 [
 ?Base.Buildings.Building_EarlyGothicEra_Barracks_Infantry_1_NameBarracón de Infantería
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_Desc.Increases the irrigation of adjacent buildings
+m
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_4_Desc3Aumenta la irrigación de los edificios adyacentes.
 f
 7Base.Buildings.Building_MinoanEra_Barracks_Siege_1_Desc+Desbloquea los Lanzadores de Honda Minoicos
 \
@@ -4243,8 +4243,8 @@ j
 3Base.Buildings.Building_MinoanEra_Home_Small_2_Desc3Produce monedas y añade un trabajador a tu ciudad.
 8
 /Base.Technologies.Technology_Vikings_Sagas_NameSagas
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_4_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+�
+7Base.Buildings.Building_Arabia_CamelFarm_Average_4_DescFCría Camellos que se necesitan para entregar las ofertas en el Bazar.
 W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_2_NameBarracón de Caballería
 E
@@ -4279,8 +4279,8 @@ S
 <Base.Buildings.Building_EarlyRome_Special_HeroAcademy_1_NameAcademia de héroes
 P
 :Base.Units.Unit_RomanEmpire_Carthaginians_WarElephant_NameElefante de Guerra
-
-Base.Resources.oil_NameOil
+!
+Base.Resources.oil_NameAceite
 �
 VBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestStart_Text4_Desc�He elegido este territorio para que puedas comenzar. Construye la <style=MC>Gran Esfinge</style>, permite que el mundo sea testigo de la majestuosidad del <style=MC>imperio económico</style> que se alza entre dunas.
 X
@@ -4385,8 +4385,8 @@ A
 'Base.MergeItems.WorldFair_Bronze_4_NameArtefacto - Nivel 4
 _
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text2_Desc"¡Leónidas! Aguanta. Ya te tengo.
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_4_Desc#Produces a big pile of Gold Dinars.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_Desc,Produce una gran cantidad de Dinares de Oro.
 i
 2Base.Buildings.Building_StoneAge_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 p
@@ -4413,8 +4413,6 @@ Q
 &Base.OptionsPopup.ExistingAccountLogin'Inicia sesión con una cuenta existente
 �
 :Base.Incidents.Incident_BronzeAge_Capital_FruitTree_1_DescJComida, gloriosa comida. Solo necesitamos que los trabajadores lo recojan.
-S
->Base.Technologies.Technology_KingdomOfSicily_RiseOfArabia_NameAscenso de Arabia
 1
 #Base.ShopPopup.WeeklyRewardClaimNow
 Reclama ya
@@ -4428,9 +4426,8 @@ G
 .Base.ShopPopup.ForgeOfVulcanThrivingEnergyDesc�¡A toda velocidad: alimenta tu viaje con energía extra, tickets de victoria y moneda de eventos para conquistar retos y alzarte con la victoria!
 
 Base.Generic.GoogleGoogle
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_3_Name
-Camel Farm
+M
+7Base.Buildings.Building_Arabia_CamelFarm_Average_3_NameGranja de Camellos
 2
 "Tutorial.HeroMetaReportPopup.TitleInforme Meta
 7
@@ -4468,8 +4465,8 @@ V
 =Base.Buildings.Building_FeudalAge_CultureSite_Moderate_1_NameZona cultural mediana
 ?
 ,Base.ShopOffers.shop_offer.CityBundle_2_NamePaquete Básico
-K
-3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_NameTimeline Growth Fund
+X
+3Base.ShopOffers.shopOffer.TimelineGrowthFund_1_Name!Fondo de Crecimiento Cronológico
 8
 $Base.Resources.hortus_sanitatis_NameHortus sanitatis
 *
@@ -4727,10 +4724,10 @@ z
 7Base.Buildings.Building_Mayas_RitualSite_Premium_6_Desc?Mejora sustancialmente la Felicidad de los Edificios adyacentes
 R
 .Base.SubscriptionPopup.SubscriptionBoostActive Favor del gran arquitecto activo
+�
+-Base.EventType.RiftPromotionEvent_DescriptiongDurante esta fase, tus posibilidades de invocar héroes específicos aumentan en un portal determinado.
 P
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_8_NameNivel 8
-�
--Base.EventType.RiftPromotionEvent_Description_During this phase, your chances of summoning specific heroes are increased on a certain portal.
 C
 4Base.Buildings.Building_DawnAge_City_CityHall_1_NameGran salón
 <
@@ -4747,8 +4744,6 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_12_Text2_Desct¡Progr
 Base.Relics.TheHolyGrail_NameEl Santo Grial
 .
 !Base.PiggyBankPopup.BuyAmountLeft	Falta {0}
-L
-:Base.Technologies.Technology_KingdomOfSicily_HardSoap_NameJabón sólido
 R
 9Base.Technologies.Technology_Vikings_PlunderingRaids_NameIncursiones de Saqueo
 J
@@ -4818,10 +4813,10 @@ C
 GBase.AbilityDescriptions.hero_battle_ability_description.Dartagnan_Name�<style=ability_label>Golpe Cuerpo a Cuerpo| Sangrado </style>Atraviesa al objetivo actual cuatro veces, infligiendo un daño mayor con cada puñalada para un total de <style=basestat>{dmg_percentage}</style> de daño. Cada puñalada tiene un <style=basestat>{chance_percentage}</style> de probabilidad de dejar sangrar al oponente durante <style=basestat>{dmg_percentage_bleed}</style> durante <style=basestat>{duration}</style>.
 =
 0Base.Questlines.Questline_StoneAge_TheBrink_Name	El Umbral
+L
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_NameTaller de Incienso
 p
 #Base.Resources.material_statue_DescIEste material especial se puede usar para mejorar maravillas estatuarias.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_6_NameIncense Maker
 ~
 5Base.Buildings.Building_MinoanEra_Home_Average_3_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 �
@@ -4830,10 +4825,10 @@ I
 /Base.RiftInfoPopup.PrefaceCommonSpecialHeadlineCondiciones Especiales
 @
 /Base.Buildings.Building_China_Home_Small_4_NameCasa Pequeña
+v
+*Base.EventType.SeasonPassEvent_DescriptionHCompletar tareas diarias o semanales para ganar recompensas adicionales.
 Q
 9Base.RewardTypes.IncreaseRegularExpansionRightReward_NameExpansión adicional
-h
-*Base.EventType.SeasonPassEvent_Description:Complete daily or weekly tasks to earn additional rewards.
 �
 ;Base.Buildings.Building_KingdomOfSicily_Home_Premium_1_DescBProduce un montón de monedas y añade 2 trabajadores a tu ciudad.
 E
@@ -4873,12 +4868,12 @@ Ramsés II
 *Base.Resources.etruscan_bronze_mirror_DescoUn espejo ingeniosamente fabricado que se requiere para investigar ciertas tecnologías de los Inicios de Roma.
 U
 9Base.Buildings.Building_EarlyRome_Barracks_Cavalry_2_NameBarracón de Caballería
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 k
 4Base.Buildings.Building_IberianEra_Home_Small_3_Desc3Produce monedas y añade un trabajador a tu ciudad.
 �
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_Desc�Madre mía, ¡este montón de troncos no es precisamente una obra maestra! Flexionemos esos músculos y digamos adiós a este desorden antiestético.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_2_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 @
 )Base.HeroPanel.UnitStatBoostBarracksTitlePotenciador por {0}
 2
@@ -4909,8 +4904,8 @@ I
 4Base.Abilities.hero_battle_ability.TribalHealer_NameBálsamo Curativo
 O
 *Base.BuildingGroups.premiumRitualSite_NameTemplo de MagmaTemplos de Magma
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_3_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+|
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_DescBEl Taller de Incienso produce incienso a partir de Mirra y Latón.
 �
 1Base.EventStartScreens.GachaEventStartDescription�¡Canaliza el poder de la Antimateria en el Portal y asciende a la gloria consiguiendo trofeos y abundantes recompensas en el Evento Rally de Héroes!
 �
@@ -5043,10 +5038,10 @@ E
 Base.CommunityPopup.Instagram	Instagram
 <
 *Base.Wonders.Wonder_Mayas_ChichenItza_NameChichén Itzá
+H
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_NameTaller de Café
 �
 2Base.ShopPopup.OfferInfoText.MonthlyGemCard_1_Info�Esta oferta otorga un pago instantáneo de 100 gemas y un pago diario de 80 gemas durante 30 días. Puedes comprarla dos veces para extender los beneficios hasta 60 días. El límite acumulable es de 60 días y no puede superarse.
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_3_NameCoffee Brewer
 x
 Base.Alerts.GenericErrorTextX¡Parece que te has topado con un error!
 
@@ -5054,10 +5049,10 @@ x
 
 ¡Toca en "{1}" para volver a tu ciudad!
 
+7
+Base.Rifts.rift.Arabia_NamePortal del Tiempo Árabe
 O
 DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_6_NameEscuela
-2
-Base.Rifts.rift.Arabia_NameArabian Time Portal
 6
 Base.BoostTypes.CultureBoostPotenciador de cultura
 a
@@ -5113,12 +5108,12 @@ u
 Base.UnitTypes.Ranged_Desc�Las unidades a distancia se quedarán atrás y atacarán a media distancia. Se centran en el ataque.
 Construye y mejora los Barracones a distancia para mejorar el ATQ, DEF y PV de las unidades a distancia y los Héroes.
 
->
-,Base.Wonders.Wonder_Arabia_NoriasOfHama_NameNorias of Hama
+I
+,Base.Wonders.Wonder_Arabia_NoriasOfHama_NameRueda Hidráulica de Hama
 O
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_2_NameGranja de Ganado
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_5_NameLuxurious Noria
+S
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_NameRueda Hidráulica Lujosa 
 H
 2Base.Units.Unit_FeudalAge_DarkKnights_Cavalry_NameCaballeros Oscuros
 6
@@ -5227,8 +5222,6 @@ Q
 EBase.TreasureHuntCheckpointsPanel.SinglePlayerInfoAfterJoinedAllianceL¡Podrás recoger los puntos de control de la alianza la próxima temporada!
 o
 FBase.StoryText.Story_Questline_StoneAge_TheBrink_QuestStart_Text4_Desc%Claro que no. Olvida lo que he dicho.
-A
-8Base.Technologies.Technology_KingdomOfSicily_Coffee_NameCafé
 M
 4Base.EquipmentSets.equipment_set.Centurion_Neck_NameCollar del Centurión
 \
@@ -5418,18 +5411,18 @@ S
 =Base.Technologies.Technology_IberianEra_OrderOfCalatrava_NameOrden de Calatrava
 @
 1Base.Buildings.Building_Mayas_Home_Premium_4_NameCasa Lujosa
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_5_Desc#Produces a big pile of Gold Dinars.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_Desc,Produce una gran cantidad de Dinares de Oro.
 {
 .Base.QuestlinesPanel.CompleteEncounterSpecificGana <b>{0}</b> encuentro {1}.)Gana <b>{0}</b> cualquiera de estos: {1}.
 @
 $Base.Resources.hero.QinShiHuang_NameEsencia de Qin Shi Huang
 �
 VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Text3_Desc�Fortalecer el <style=MC>Yggdrasil</style> es vital, pues conecta y nutre todos los reinos, reflejando su fuerza. Al fortalecerlo, aprovechas su poder para fomentar la prosperidad y la sabiduría, asegurando el éxito de nuestra expedición.
-L
-9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text1_DescUf... dioses...
 �
 $Tutorial.WonderReworkTutorial.Invent�Te ayudaré a descubrir nuevas <style=MC>MARAVILLAS DEL MUNDO</style>. Dame unos cuantos <style=MC>ENGRANAJES</style> e inventaré o bien una <style=MC>MARAVILLA</style> o <style=MC>MATERIALES</style> especiales necesarios para sus mejoras.
+L
+9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text1_DescUf... dioses...
 M
 1Base.Questlines.Questline_Research_EarlyRome_NameMaestro Investigador III
 a
@@ -5597,8 +5590,8 @@ ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameZona cultura
 Base.Units.Unit_LadyKasuga_Desc�¡Guía al shogun desde las sombras con Lady Kasuga! Conocida formalmente como Kasuga no Tsubone, esta extraordinaria noble japonesa de principios del siglo XVII se convirtió en una de las figuras más influyentes en el círculo íntimo del shogunato. Nacida en 1579, se unió a la familia Tokugawa como dama de compañía y rápidamente ganó la confianza de Tokugawa Iemitsu, el tercer shogun de la dinastía.<br><br>Lady Kasuga sirvió como nodriza, consejera y genio político del shogun: el poder detrás de los biombos. Es especialmente célebre por organizar el Ōoku, los aposentos femeninos del shogun, y por sus dotes diplomáticas: negociando con daimyo, asegurando alianzas y supervisando la etiqueta cortesana con férrea disciplina y un agudo sentido del humor.<br><br>Su sutil influencia ayudó a sostener el dominio Tokugawa con estilo, ingenio y una férrea determinación. Para los samuráis en el exterior, todo podía parecer tranquilo en las cámaras internas, pero el legado de Lady Kasuga nos recuerda que el verdadero poder a menudo actúa en secreto.
 D
 )Base.Regions.region.TeslaStormYellow_NameTormenta Tesla Amarilla
-9
-/Base.Technologies.Technology_Arabia_Bazaar_NameBazaar
+8
+/Base.Technologies.Technology_Arabia_Bazaar_NameBazar
 =
 &Base.HistoricBattlePanel.SellEquipmentVender Equipamiento
 ~
@@ -5714,8 +5707,8 @@ Q
 8Base.Units.Unit_IberianEra_Player_AdvancedTrebuchet_NameFundíbulos avanzados
 �
 *Base.EventPass.MoonLanding2BuyGoldPassText�¡Participa para ganar recompensas exclusivas y obtener de inmediato la reliquia épica <nobr><style=epic>Planisferio</style></nobr>!
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_5_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_NameFabricante de Alfombras
 I
 6Base.Technologies.Technology_IberianEra_DriftNets_NameRedes de deriva
 %
@@ -5734,8 +5727,6 @@ D
 1Base.EquipmentSets.equipment_set.Shaman_Hand_NameDaga de Chamán
 =
 "Base.ShopPopup.DailyDealCityHeaderBonanza del Constructor
-M
-<Base.Technologies.Technology_KingdomOfSicily_WaterClock_NameReloj de agua
 ~
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_2_DescBProduce una gran cantidad de comida en un largo periodo de tiempo.
 
@@ -5984,8 +5975,8 @@ NBase.AbilityDescriptions.hero_battle_ability_description.AlbertEinstein_1_Name
 Base.Regions.FallOfTroy_NameCaída de Troya
 >
 "Base.Rifts.rift.SeasonPass_08_NamePortal del Tiempo Arcano
-M
-5Base.ShopOffers.shop_offer.Diy_Ascension_Offer_1_NameYour Ascension-Boost
+U
+5Base.ShopOffers.shop_offer.Diy_Ascension_Offer_1_NameTu Potenciador de Ascensión
 ?
 1Base.Abilities.hero_battle_ability.Excalibur_Name
 Excálibur
@@ -5993,8 +5984,6 @@ F
 *Base.Resources.etruscan_bronze_mirror_NameEspejo de bronce etrusco
 N
 (Base.WonderCollections.GreatEmpires_Name"Maravillas de los grandes imperios
-L
-=Base.Technologies.Technology_KingdomOfSicily_MaskanHouse_NameCasa maskan
 4
 Base.Generic.DaysHoursVerbose{0:%d} d {0:hh} h
 T
@@ -6106,10 +6095,10 @@ H
 9Base.Buildings.Building_ByzantineEra_City_CityHall_1_NameGran salón
 ~
 5Base.Buildings.Building_FeudalAge_Home_Average_1_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_NameTaller de Lámparas de Aceite
 R
 +Base.Notifications.RemindFreeGachaDrawTitle#🌀 ¡Consigue tu próximo Héroe!
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_NameOil Lamp Maker
 �
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_DescKResuelve la tarea indicada para ganar Puntos de Trofeo en esta competencia.
 9
@@ -6212,8 +6201,8 @@ B
 Escarabajo
 8
 "Base.Units.Unit_OracleOfDephi_NameOráculo de Delfos
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_3_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+
+5Base.Buildings.Building_Arabia_Workshop_Coffee_3_DescFEl Taller de Café produce Café a partir de granos de Café y Latón.
 `
 "Base.Resources.red_crest_epic_Desc:Se necesitan Emblemas Rojos para ascender a Héroes rojos.
 =
@@ -6233,10 +6222,10 @@ K
 &Base.TreasureHuntRankingPanel.PlatinumPlatino
  
 Base.Resources.cape_NameCapa
+�	
+!Base.Units.Unit_Scheherazade_Desc�	¡Teje un relato que dure mil noches y más con Scheherazade, la reina de los narradores! Originaria de la leyenda persa e inmortalizada en Las mil y una noches, Scheherazade es una maestra de la palabra, capaz de cautivar a un rey cruel con su imaginación infinita para que él —y su pueblo— pudieran vivir para ver un nuevo amanecer.<br><br>Durante 1.001 noches, hiló historias dentro de historias: relatos de djinns y marineros, sirvientes astutos y reyes necios, alfombras voladoras y lámparas mágicas. Personajes como Aladino, Alí Babá y Simbad nacieron de sus labios. Al final de sus cuentos, el rey se había enamorado de su sabiduría y había sido curado de su locura. Sus historias no solo salvaron su propia vida, sino que también pusieron fin para siempre a la práctica asesina del rey.<br><br>Su ingenio, valentía y compasión han inspirado a generaciones de soñadores y escritores. Aunque nadie puede decir con certeza dónde termina la ficción y comienza la realidad, en Heroes of History, el ingenio veloz y el inagotable caudal de historias de Scheherazade la convierten en la compañía más apreciada alrededor de cualquier fogata.
 V
 'Base.BuildingTypes.extractionPoint_NamePunto de extracciónPuntos de extracción
-�
-!Base.Units.Unit_Scheherazade_Desc�Spin a tale that lasts a thousand nights and more with Scheherazade, queen of storytellers! Originating from Persian legend and immortalized in 'One Thousand and One Nights', Scheherazade is a master of word-craft, captivating a cruel king with her endless imagination so that he, and her people, might live to see another dawn.<br><br>For 1,001 nights, she wove tales within tales - stories of djinn and sailors, clever servants and foolish kings, flying carpets and magic lamps. Characters like Aladdin, Ali Baba, and Sinbad all danced from her lips. By the end of her tales, the king had fallen in love with her wisdom and had been healed of his madness. Her stories didn't just save her own life - they ended the king's murderous practice forever.<br><br>Her cleverness, courage, and compassion have inspired generations of dreamers and writers. Though none can say for sure where fiction ends and reality begins, in the Heroes of History, Scheherazade's quick wit and endless reservoir of stories make her the most popular company at any campfire.
 $
 Base.CommunityPopup.TikTokTikTok
 +
@@ -6264,8 +6253,8 @@ J
 JBase.AbilityDescriptions.hero_battle_ability_description.Blackbeard_1_Name�<style=ability_label>Penalización | Quemadura</style>Lanzamiento de Barril: Blackbeard arroja un barril de ron al grupo más grande de enemigos, reduciendo su velocidad de ataque en <style=basestat>{attackspeed_debuff}</style> y su velocidad de movimiento en <style=basestat>{movespeed_debuff}</style> durante <style=basestat>{debuff_duration}</style>. Estos enemigos quedan empapados durante <style=basestat>{doused_duration}</style>. Después de 12 segundos, la habilidad evoluciona a Prueba de Fuego.<br>Prueba de Fuego: Barbanegra ataca a su oponente actual, prendiéndolo en llamas e infligiendo <style=basestat>{burn_damage}</style> de daño a lo largo de <style=basestat>{burn_duration}</style>. La habilidad vuelve a Lanzamiento de Barril después de 8 segundos.<br>Si un enemigo empapado es quemado por cualquier fuente, explotará, propagando el efecto de quemadura a las unidades cercanas y eliminando el estado de empapado del objetivo original.
 �
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text1_DesciHemos ganado, pero Tesla no está aquí. Esperaba que pudiéramos encontrarle. Debe de haber escapado ya.
-u
-$Base.EventType.RiftEvent_DescriptionMGather new heroes by summoning them through them using a time limited portal.
+v
+$Base.EventType.RiftEvent_DescriptionNReúne nuevos héroes invocándolos a través de un portal de tiempo limitado.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.RobinHood_1_Name�<style=ability_label>Ataque a Distancia | Veneno</style>Dispara una flecha al objetivo más lejano, infligiéndole <style=basestat>{dmg_percentage}</style> de daño y envenenándolo, causando <style=basestat>{poison_percentage}</style> de daño adicional durante <style=basestat>{poison_duration}</style>. Da prioridad a los héroes.
 
@@ -6457,8 +6446,8 @@ B
 Base.Rifts.rift.Legendary_NamePortal del Tiempo Legendario
 #
 Base.HeroPanel.EquippedEquipado
-3
-&Base.UnitStats.unit_stat.Focus_Percent	% Enfoque
+9
+&Base.UnitStats.unit_stat.Focus_PercentCarga inicial %
 �
 :Base.Incidents.Incident_ClassicGreece_Capital_Chest_1_Desc�¡Mira! Una colonia de abejas ha hecho su colmena en el árbol en el que escondimos un tesoro. Vamos a cambiar la colmena de sitio con cuidado para poder llegar a él.
 o
@@ -6479,8 +6468,6 @@ T
 5Base.Buildings.Building_Mayas_Workshop_Premium_6_DescOProduce Máscaras Ancestrales, Piedras Calendáricas, Dagas Rituales y Penachos
 U
 1Base.WondersReworkUpgradePanel.CrateIsBeingFilled Espera a que se llene el cajón.
-X
-@Base.Technologies.Technology_KingdomOfSicily_PaperPackaging_NameEmpaquetado de Papel
 6
 #Base.TreasureHuntStartedPopup.TitleCaza del Tesoro
 S
@@ -6509,8 +6496,6 @@ P
 5Base.Units.Unit_StoneAge_Animal_SabertoothTigers_NameTigres dientes de sable
 L
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_3_NameCantera de obsidiana
-U
-@Base.Technologies.Technology_KingdomOfSicily_CamelHusbandry_NameCría de camellos
 i
 4Base.Questlines.Questline_WorldFair_2024_Rush_3_Name1Línea de Misiones Diaria de la Feria Mundial III
 �
@@ -6594,8 +6579,8 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text3_Desc�Al det
 'Base.UnitStats.unit_stat.Defense_AbbrevDEF
 ^
 .Base.AbilityTrainingSlotOccupiedPopup.Headline,Ranura de Entrenamiento de Habilidad ocupada
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_5_NameLuxurious Merchant
+J
+6Base.Buildings.Building_Arabia_Merchant_Premium_5_NameMercader de Lujo
 .
 Base.Hints.MountainsDejando caer montañas
 
@@ -6717,8 +6702,6 @@ Q
 9Base.Questlines.Questline_CityBuilding_ClassicGreece_NameArquitecto Urbano II
 B
 3Base.Buildings.Building_Arabia_City_CityHall_1_NameGran salón
-f
-FBase.Technologies.Technology_KingdomOfSicily_ImprovedMarketStands_NameMejora de puestos de mercado
 �
 eBase.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_DragonshipEllida_QuestStart_Text1_Desc�Vuestro Progreso es realmente notable. <style=MC>Drakkar Ellidia</style> es un testimonio de vuestros logros, que refuerza nuestros cimientos y nos prepara para el apasionante viaje que tenemos por delante.
 �
@@ -6854,10 +6837,10 @@ O
 .Base.SeasonPassUpsellPopup.GoldenTicketRewardsRecompensas del Ticket Dorado
 '
 Base.LocalizedLocales.fr_FRFrancés
-C
-0Base.Units.Unit_EarlyRome_Huns_KassaiBowmen_NameArqueros Kassai
 ,
 "Base.Cities.City_Arabia_Petra_NameArabia
+C
+0Base.Units.Unit_EarlyRome_Huns_KassaiBowmen_NameArqueros Kassai
 G
 ,Base.Wonders.Wonder_Capital_TowerOfPisa_NameTorre inclinada de Pisa
 �
@@ -6909,8 +6892,6 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_36_NameNivel 3
 "Base.VideoPlacementButton.WatchNow¡Ver ahora!
 P
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_NameBarracón de asedio
-I
-ABase.Technologies.Technology_KingdomOfSicily_MagnifyingGlass_NameLupa
 �
 #Base.UnlockRequirementsPopup.BazaarfDentro del Bazar puedes conseguir bienes específicos, que luego pueden ser refinados en tus talleres.
 <
@@ -7167,8 +7148,6 @@ V
 'Base.Alerts.SingleSignOn.Linked.Message+Se ha vinculado tu cuenta de juego con {0}.
 �
 KBase.StoryText.Story_Questline_CityBuilding_MinoanEra_QuestStart_Text2_Descb¡Pues a mí me parece moderno! ¡Mantengamos nuestros Edificios al día! Eso hará feliz al Jefe.
-E
-9Base.Technologies.Technology_KingdomOfSicily_Incense_NameIncienso
 �
 Base.Units.Unit_JohnLocke_Desc�De la Universidad de Oxford, ¡el padre del liberalismo, John Locke! Este filósofo Ingles del siglo XVII dio forma al pensamiento político moderno. En "Dos Tratados de Gobierno", propuso los derechos naturales: vida, libertad y propiedad.<br><br>La teoría del contrato social de Locke influyó en la democracia moderna, subrayando que los gobiernos deben basarse en el consentimiento de los gobernados y rendir cuentas al pueblo. Sus ideas subrayaron la importancia de los derechos individuales y las responsabilidades del gobierno.<br><br>En epistemología, el "Ensayo sobre el entendimiento humano" de Locke sostenía que el conocimiento procede de la experiencia. Su filosofía tuvo un gran impacto en el pensamiento occidental, dando forma a los conceptos de los derechos individuales y el papel del gobierno. Menos conocida es su habilidad en el campo de batalla, ¡pero te demostrará que está Bloqueado!
 �
@@ -7179,10 +7158,8 @@ BBase.WorldWondersInventionInformationPopup.PromotionGuaranteedInfo�Si dibujas
 UBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestFinish_Text1_Desc�¡Progreso fantástico! Ah, y una cosa más a tener en cuenta: <style=MC>Abu Simbel</style> mejora nuestra producción de <nobr><style=MC>Papiro</style> <sprite name=resource.papyrus_cta></nobr>, así que asegurémonos de planificar nuestra ciudad teniendo eso en cuenta.
 :
 !Base.Resources.hero.RamsesII_NameEsencia de Ramsés II
-h
-=Base.UnitStats.unit_stat.SingleTargetDamageAmp_Percent_Abbrev'DAÑO DE HABILIDAD A UN SOLO OBJETIVO %
-Y
-4Base.ShopOffers.shop_offer.TimelineGrowthFund_1_Name!Fondo de Crecimiento Cronológico
+R
+=Base.UnitStats.unit_stat.SingleTargetDamageAmp_Percent_Abbrev% DE DAÑO ÚNICO
 >
 3Base.Buildings.Building_Mayas_Aviary_Average_5_NameAviario
 M
@@ -7221,8 +7198,8 @@ T
 9Base.LeaderboardEventPanel.TaskInfo.TeslaStormYellow_NameTormenta Tesla Amarilla
 C
 +Base.ShopPopup.SeasonalEventHeroPromoHeaderProsperidad Paralela
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 8
 Base.HeroPanel.PrimaryStatsEstadísticas Principales
 E
@@ -7498,12 +7475,12 @@ M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_35_NameNivel 35
 ]
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_4_NameEstación de irrigación
-i
-#Base.UnitStats.unit_stat.Focus_DescBDefine la concentración con la que el héroe comienza la Batalla.
+v
+#Base.UnitStats.unit_stat.Focus_DescODefine la rapidez con la que el héroe puede activar su habilidad inicialmente.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_5_DescProduce Dinares de Oro.
 F
 .Base.EquipmentSets.equipment_set.Mangudai_NameConjunto de Mangudai
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_5_DescProduces Gold Dinars.
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_37_NameNivel 37
 �
@@ -7555,8 +7532,8 @@ Aguamarina
 KBase.StoryText.Story_Questline_MinoanEra_HeroAcademy_QuestFinish_Text3_Desc9Es un honor para mí llamarte Líder de la Civilización.
 [
 BBase.Questlines.Questline_EventCity_Mayas_Quarries_LadySixSky_NamePiedras de los Dioses
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_3_NameLuxurious Workshop
+G
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_NameTaller Lujoso
 0
  Base.Resources.lapis_lazuli_NameLapislázuli
 �
@@ -7584,9 +7561,9 @@ JBase.Questlines.Questline_EventCity_Vikings_WonderProgress_Valhalla_1_NameVal
 }
 &Base.Resources.illuminated_locket_DescSLos Medallones Iluminados son bienes que se pueden producir en Joyerías - Level 1.
 A
+1Base.Buildings.Building_Arabia_Home_Medium_5_NameCasa Mediana
+A
 /Base.EquipmentSets.equipment_set.Khon_Ring_NameAnillo de Khon
-@
-1Base.Buildings.Building_Arabia_Home_Medium_5_NameMedium Home
 y
 *Base.Resources.event_stamina_trophies_DescKResuelve la tarea indicada para ganar Puntos de Trofeo en esta competencia.
 M
@@ -7616,7 +7593,7 @@ A
 *
 Base.Units.Unit_Hercules_Name	Hércules
 L
-8Base.AllianceApplicationMessages.AllianceApplicationSendSend Application
+8Base.AllianceApplicationMessages.AllianceApplicationSendEnviar Solicitud
 S
 :Base.Technologies.Technology_HighMiddleAges_CropSheds_NameCobertizos de Cultivo
 e
@@ -7633,8 +7610,8 @@ B
 2Base.Buildings.Building_Mayas_City_CityHall_1_NameAyuntamiento
 C
 0Base.Units.Unit_MinoanEra_Minoan_Bullriders_NameJinetes de toro
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_2_NameLuxurious Noria
+S
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_NameRueda Hidráulica Lujosa 
 �
 GBase.StoryText.Story_Questline_CollectHeroes_Epic_QuestStart_Text1_Descp¡<style=MC>Número tres</style>! ¡<style=MC>Einstein</style> me ha hablado mucho de ti! Es un honor conocerte.
 J
@@ -7748,8 +7725,10 @@ T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_5_DescProduce Caolín
 �
 6Base.Incidents.Incident_EarlyRome_Capital_Goods_1_DesccSe rumorea que este laberinto subterráneo esconde tesoros realmente únicos. ¡Vamos a explorarlo!
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.Scheherazade_1_Name�<style=ability_label>Charm</style>Scheherazade charms the two furthest enemy units, causing them to harmlessly walk towards her for <style=basestat>{duration}</style>. Prioritizes heroes.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.Scheherazade_1_Name�<style=ability_label>Encantamiento</style>
+Scheherazade encanta a las dos unidades enemigas más lejanas, haciendo que caminen inofensivamente hacia ella durante <style=basestat>{duration}</style>.
+Prioriza a los héroes.
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Spartacus_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo| Potenciador</style>Golpea al objetivo actual cuatro veces, infligiendo un daño mayor con cada golpe para un total de <style=basestat>{dmg_percentage}</style> de daño. También aumenta la probabilidad de golpe crítico de Espartaco en <style=basestat>{crit_percentage}</style> durante <style=basestat>{duration}</style>.
 
@@ -7800,12 +7779,12 @@ N
 ?Base.Units.Unit_CurrentEra_Carcassonne_CarcassonneSentinel_NameCentinelas de Carcassonne
 o
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_2_3_Name'Kit de Selección de Investigación 2-3
+�
+Base.Resources.cotton_DescqEl Algodón es un recurso esencial que necesita para fabricar recursos refinados. Se puede comerciar en el Bazar.
 Y
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest2_QuestStart_Text4_DescCitando a—
 m
 DBase.Technologies.Technology_IberianEra_ImprovedCrewArrangement_Name%Disposición mejorada de trabajadores
-�
-Base.Resources.cotton_DesckCotton is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
 �
 $Base.Units.Unit_ThomasJefferson_Desc�¡Escribe una nación en el papel con pergamino y pluma junto a Thomas Jefferson! Este estadista de los siglos XVII y XVIII inspiró la Revolución Americana, dando paso al nacimiento de los Estados Unidos de América. A los treinta y tres años, redactó la Declaración de Independencia, inspirado en los ideales ilustrados de libertad y derechos individuales.<br><br>La fama de Thomas Jefferson alcanzó su punto máximo cuando se convirtió en presidente de los Estados Unidos. Negoció con Francia la compra del territorio de Luisiana y, tras adquirirlo, encargó la expedición de Lewis y Clark a esas tierras agrestes, permitiendo una expansión estadounidense que duplicaría el tamaño de la nación.<br><br>Hoy, Jefferson es recordado como un bastión del pensamiento liberal: un defensor del libre pensamiento, la libertad de expresión y el racionalismo. ¡Lincoln queda deslumbrado cada vez que está cerca de él!
 �
@@ -7899,10 +7878,10 @@ HBase.AbilityDescriptions.hero_battle_ability_description.Lagertha_1_Name�<sty
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_DescCProduce una tonelada de Monedas y añade 2 Trabajadores a tu Ciudad
 �
 NBase.AbilityDescriptions.hero_battle_ability_description.EgyptianVizier_1_Name�<style=ability_label>Penalización</style>Se dirige al mayor grupo de unidades enemigas, reduciendo la DEF en <style=basestat>{atk_percentage}</style> del ATQ de Imhotep durante <style=basestat>{duration}</style> en un rango de <style=basestat>{range}</style>.
+A
+2Base.Buildings.Building_Arabia_Home_Premium_4_NameCasa Lujosa
 �
 3Base.Incidents.Incident_EarlyRome_Capital_XP_1_Desc�Madre mía, ¡este montón de troncos no es precisamente una obra maestra! Flexionemos esos músculos y digamos adiós a este desorden antiestético.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_4_NameLuxurious Home
 $
 Base.Resources.goblet_NameCáliz
 M
@@ -7923,8 +7902,8 @@ NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_2_Name
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_80_DescWEste Kit de Selección te permite elegir entre Emblemas Mejorados de distintos colores.
 �
 $Base.Units.Unit_QueenElizabethI_Desc�¡Mezcla cañonazos y oraciones con la Reina Isabel I! Esta monarca del siglo XVI gobernó Inglaterra durante más de cuarenta años, en una época de estabilidad y prosperidad para el país. Fue una época de artes, de guerra y de exploración.<br><br>Isabel gestionó los desafíos en su país y en el extranjero, superando el fanatismo religioso (aunque no sin quemar a unas cuantas personas) y las guerras exteriores. Su derrota de la Armada Española consolidó su estatus de formidable líder, mientras que su patrocinio de personajes como Shakespeare hizo que su reinado nunca se olvidara.<br><br>Conocida como la "Reina Virgen" por no casarse nunca, Isabel mantuvo su poder e independencia durante todo su gobierno. Su legado es de fuerza, inteligencia y patrocinio cultural, y dejó una huella indeleble en la historia de Inglaterra. También tenía la boca rayada por comer demasiado azúcar: ¡su nombre es un anagrama de "Dientes de cebra es suciedad"!
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_6_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 f
 ,Base.ShopPopup.Pages.diy_offer_hintCompleted6Listo. ¡Ahora puedes comprar tu oferta personalizada!
 Z
@@ -7939,10 +7918,10 @@ J
 YBase.StoryText.Story_Questline_EventCity_Mayas_Workshops_LadySixSky_QuestStart_Text1_Desc�Ahora es momento de dirigir a nuestros artesanos para crear <nobr><style=MC>Máscaras Ancestrales</style> <sprite name=resource.ancestor_mask_cta></nobr> que invoquen la sabiduría antigua. Estas máscaras <style=MC>unen mundos</style>, permitiendo que nuestros antepasados sean testigos de nuestros esfuerzos en esta tarea.
 v
 *Base.QuestlinesPanel.HaveWonderOnLevelTask#Ten <b>{0} </b> a nivel <b>{1}</b>.#Ten <b>{0} </b> a nivel <b>{1}</b>.
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_NameTaller de Lámparas de Aceite
 �
 :Base.Buildings.Building_EarlyGothicEra_Home_Average_3_DescFProduce un gran montón de Monedas y añade 2 Trabajadores a tu Ciudad
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_NameOil Lamp Maker
 �
 8Base.Buildings.Building_RomanEmpire_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
 s
@@ -7973,8 +7952,8 @@ X
 9Base.Buildings.Building_Vikings_SailorPort_Premium_5_NamePuerto de Marineros de Lujo
 �
  Base.ShopPopup.DailyDealCityDesc\¡Acumula materiales esenciales y observa cómo tu ciudad florece a lo largo de las épocas!
-U
-4Base.UnitStats.unit_stat.AoeDamageAmp_Percent_AbbrevDAÑO DE HABILIDAD EN ÁREA %
+H
+4Base.UnitStats.unit_stat.AoeDamageAmp_Percent_AbbrevDAÑO EN ÁREA %
 T
 <Base.Technologies.Technology_RomanEmpire_FieldMedicines_NameMedicinas de batalla
 X
@@ -8047,10 +8026,10 @@ $Base.Resources.hero.Charlemagne_NameEsencia de Carlomagno
 *Base.Wonders.Wonder_Capital_Mausoleum_NameTumba de Mausolo
 �
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text11_Desc�¡Estupendo! Mientras vosotros dos exploráis esa pista, los demás nos dispersaremos y buscaremos pistas que puedan ayudarnos a desmantelar el plan de Tesla.
-Y
->Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCaballería Cartaginesa
 o
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc2Mejora la irrigación de los edificios adyacentes.
+Y
+>Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCaballería Cartaginesa
 H
 +Base.Regions.region.EmeraldHighlands_3_NameVizcondado de Crystalford
 J
@@ -8065,8 +8044,8 @@ B
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text4_Desc¿Eh?
 B
 3Base.Abilities.hero_battle_ability.Planisphere_NamePlanisferio
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_2_Desc#Produces a big pile of Gold Dinars.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_2_Desc,Produce una gran cantidad de Dinares de Oro.
 z
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_9_Text1_Desc1¿Debo liderar un asalto contra estos artilugios?
 o
@@ -8134,8 +8113,8 @@ d
 ;Base.StoryText.Story_DesertDelta_3_1_BattleStart_Text1_DescZEsto no es lo mismo... Me trajeron a esta tierra en otro lugar. Este portal es silencioso.
 Z
 7Base.ShopPopup.SeasonalEventWorldFairEventBundlesHeader¡Experimenta la Feria Mundial!
-)
-Base.UnitStats.unit_stat.FocusEnfoque
+/
+Base.UnitStats.unit_stat.FocusCarga inicial
 K
 7Base.Abilities.hero_battle_ability.QueenElizabethI_NameTriunfo de Tudor
 �
@@ -8188,8 +8167,8 @@ i
 EBase.Technologies.Technology_EarlyGothicEra_GothicBridgeBuilding_Name Construcción de Puentes Gótico
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text4_Desc�Aunque no estoy familiarizado con algunos de estos conceptos, estoy seguro de que podré adaptar mis diseños para mejorar nuestra seguridad.
-H
-%Base.BuildingGroups.oilLampMaker_NameOil Lamp MakerOil Lamp Makers
+n
+%Base.BuildingGroups.oilLampMaker_Name!Fabricante de Lámparas de Aceite"Fabricantes de Lámparas de Aceite
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text1_DescX¡No se detectan más perturbaciones! Nuestros esfuerzos han dado un resultado decisivo.
 �
@@ -8198,8 +8177,8 @@ FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text1_DescX¡No se
 #Base.Resources.hero.VikingJarl_NameEsencia de Erik el Rojo
 ^
 3Base.QuestlinesPanel.WithoutUsingInstantPlayTickets'Gana sin boletos de juego instantáneo.
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+�
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_DescFCría Camellos que se necesitan para entregar las ofertas en el Bazar.
 _
 ?Base.Buildings.Building_FeudalAge_Barracks_HeavyInfantry_1_DescDesbloquea a la Guardia Real
 F
@@ -8220,8 +8199,6 @@ $Base.ShopPopup.Pages.campaign_energyMás Energía
 2Base.ExpandMode.UnlockRegularExpansionConfirmation&¿Quieres desbloquear esta expansión?
 �
 bBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_3_QuestFinish_Text1_Desc�¡Magnífico! El <style=MC>Palacio Sayil</style> se erige restaurado en todo su esplendor, ¡y los líderes rivales han respondido a nuestro llamado con respeto y admiración!
-g
-IBase.Technologies.Technology_KingdomOfSicily_AstronomicalInstruments_NameInstrumentos astronómicos
 I
 5Base.Questlines.Questline_CampaignMap_Continent3_NameConquistador III
 �
@@ -8271,7 +8248,7 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_25_NameNivel 2
 Q
 ;Base.StoryText.Story_DesertDelta_5_9_BattleStart_Text1_DescEstos guerreros...
 G
-5Base.Technologies.Technology_Arabia_RiseOfArabia_NameRise of Arabia
+5Base.Technologies.Technology_Arabia_RiseOfArabia_NameAuge de Arabia
 �
 8Base.StoryText.Story_Panganea_2_1_BattleStart_Text3_DescMTranquilo, gran Rey. No he venido a luchar. He venido a ver a un viejo amigo.
 �
@@ -8357,18 +8334,18 @@ L
 Base.ShopPopup.GrowthFundFondo de Crecimiento
 l
 ;Base.LeaderboardEventPanel.TaskInfo.HeroAcquire_Description-¡Abre cualquier Portal para recibir Trofeos!
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_2_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_2_NameFabricante de Alfombras
 �
 EBase.Resources.event_leaderboard_journey_of_the_titanic_trophies_DescGResuelve la tarea dada para ganar Puntos de Trofeo en esta competencia.
 H
 @Base.EquipmentLevelUpChances.equipment_level_up_chance.Low3_NameBajo
 A
 1Base.Buildings.Building_China_Home_Average_2_NameCasa mediana
++
+Base.HeroPanel.RestorationRestauración
 �
 6Base.Incidents.Incident_MinoanEra_Capital_Chest_1_Desc�¡Mira! Una colonia de abejas ha hecho su colmena en el árbol en el que escondimos un tesoro. Vamos a cambiar la colmena de sitio con cuidado para poder llegar a él.
-)
-Base.HeroPanel.RestorationRestoration
 �
 <Base.Buildings.Building_BronzeAge_CultureSite_Premium_1_DescBMejora considerablemente la felicidad de los edificios adyacentes.
 �
@@ -8417,14 +8394,12 @@ U
 /Base.TreasureHuntCompleted.CompletedDescription"Has completado la Caza del Tesoro.
 E
 (Base.Resources.hero.QueenElizabethI_NameEsencia de reina Isabel I
-�
-4Base.ShopOffers.shop_offer.TimelineGrowthFund_1_DescJ¡Desbloquea 5 recompensas exclusivas a medida que avanzas en la Historia!
 :
 !Base.Resources.hero.YiSunSin_NameEsencia de Yi Sun-sin
 L
 9Base.Buildings.Building_Egypt_PapyrusField_Average_1_DescProduce papiro.
 d
-Base.Mailbox.InvitationCopyE{} invited you to join the Alliance {}. Do you accept the Invitation?
+Base.Mailbox.InvitationCopyE{} te ha invitado a unirte a la Alianza {}. ¿Aceptas la invitación?
 A
 -Base.KeyboardShortcuts.Description.QuestPanelPanel de Misión
 F
@@ -8598,8 +8573,8 @@ A
 ,Base.RewardInfoPopup.MysteryChestDescriptionTAl abrir, recibirás uno de estos objetos aleatorios, con la siguiente probabilidad:
 <
 Base.RewardPanel.EventHeader¡Tus Recompensas de Evento!
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_5_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_DescFEl Taller de Café produce Café a partir de granos de Café y Latón.
 3
 "Base.Heroes.hero.AdaBlackjack_NameAda Blackjack
 `
@@ -8652,8 +8627,8 @@ S
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_3_NameEscultor de Máscaras
 Y
 <Base.Technologies.Technology_ClassicGreece_CropRotation_NameRotación de los cultivos
-�
-%Base.Resources.hero.Scheherazade_DescbUsed to increase the Awakening Level of Scheherazade and thus unlock more powerful battle bonuses.
+�
+%Base.Resources.hero.Scheherazade_Desc}Se utiliza para aumentar el nivel de despertar de Scheherazade y, así, desbloquear bonificaciones de combate más poderosas.
 �
 <Base.Resources.event_forgeofvulcan_grand_prize_progress_Desc�Fabrica tú mismo las recompensas en el Evento de la Forja de Vulcano para progresar en el camino de las recompensas del Gran Premio.
 -
@@ -8714,8 +8689,8 @@ MBase.AbilityDescriptions.hero_battle_ability_description.OracleOfDephi_1_Name�
 $Base.IngameEvents.SeasonPass_12_NameCampeones de Castilla
 �
 1Base.Buildings.Building_Mayas_Home_Premium_2_DescNProduce una tonelada de Cacao y añade 2 Trabajadores y 1 Artesano a tu ciudad
-,
-Base.AlliancePanel.MemberChatMember Chat
+1
+Base.AlliancePanel.MemberChatChat de Miembros
 �
 &Base.Resources.hero.OracleOfDephi_Desc}Sirve para aumentar el Nivel de Despertar del Oráculo de Delfos y así desbloquear bonificaciones de batalla más poderosas.
 �
@@ -8762,10 +8737,10 @@ b
 6Base.StoryText.Story_Panganea_6_9_BattleEnd_Text6_Desc(Muy bien... ha sido un honor, número 4.
 X
 =Base.ShopOffers.ShopOffer_Vikings_Subscription_Benefit_1_NameFavor de Ragnar Lodbrok
+S
+6Base.Buildings.Building_Arabia_Workshop_Premium_3_DescProduce Café e Incienso.
 5
 Base.Hints.Felix!Preparando maquillaje de Einstein
-V
-6Base.Buildings.Building_Arabia_Workshop_Premium_3_DescProduces Coffee and Incense.
 ~
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_Desc,Entonces, ¿qué hemos detenido exactamente?
 m
@@ -8819,8 +8794,8 @@ J
 ;Base.Buildings.Building_HighMiddleAges_City_CityHall_1_NameGran Salón
 /
 Base.PvpPanel.SeasonEndsInFin de temporada:
-d
-1Base.Buildings.Building_Arabia_Home_Medium_5_Desc/Produces Dirham and adds 2 Workers to your city
+j
+1Base.Buildings.Building_Arabia_Home_Medium_5_Desc5Produce Dírhams y añade 2 trabajadores a tu ciudad.
 \
 CBase.Buildings.Building_KingdomOfSicily_CultureSite_Moderate_1_NameZona cultural mediana
 V
@@ -8835,8 +8810,8 @@ P
 "Base.Generic.ErrorDoubleWhitespace*Solo puede contener un espacio consecutivo
 �
 2Base.Buildings.Building_Mayas_City_CityHall_1_DescfEl Gran Salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de Cacao para ti.
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_2_Desc<Substantially increases the irrigation of adjacent buildings
+
+6Base.Buildings.Building_Arabia_Irrigation_Noria_2_DescEAumenta considerablemente la irrigación de los edificios adyacentes.
 �
 4Base.Buildings.Building_IberianEra_Farm_Rural_3_DescKProduce una pequeña cantidad de comida durante un breve periodo de tiempo.
 _
@@ -8887,14 +8862,12 @@ JBase.CustomizationCollections.CustomizationCollection_WorldFair2024_1_NameEve
 Base.MovePanel.StillStashed>Tu reserva debe estar vacía para abandonar el modo movimiento
 (
 Tutorial.TutorialGuides.CaesarCésar
-a
-DBase.Technologies.Technology_KingdomOfSicily_BuildingExtensions_NameAmpliaciones de edificios
 >
 2Base.Units.Unit_StoneAge_Player_Spearfighters_NamePiqueros
 [
 5Base.Buildings.Building_Egypt_GoldMine_Premium_4_Desc"Produce un montón de mena de oro.
-F
-5Base.Abilities.hero_battle_ability.HarunAlRashid_NameHealing Oasis
+K
+5Base.Abilities.hero_battle_ability.HarunAlRashid_NameOasis de Sanación
 �
 4Base.StoryText.Story_TeslaStorms_Tutorial_Text5_DescuHe luchado contigo en tu campo de batalla, ahora enfréntame en el mío. Menes, ¡activa el <style=MC>TITÁN</style>!
 O
@@ -8935,8 +8908,8 @@ x
 JBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestFinish_Text3_Desc*Dando un paso tras otro hacia la grandeza.
 �
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_18_Text6_Desc\Mantengamos esta sensación de libertad y esperemos no tener que volver a luchar nunca más.
-�
-Base.Resources.incense_DescnIncense is a refined resource. It can be produced at Incense Makers and Luxurious Workshops - Level 1 upwards.
+�
+Base.Resources.incense_Desc�El incienso es un recurso refinado. Se puede producir en los fabricantes de incienso y los talleres lujosos, a partir del nivel 1.
 �	
  Base.Units.Unit_AdaLovelace_Desc�	¡Mira el futuro escrito en números con Ada Lovelace! Esta matemática y escritora inglesa del siglo XIX es famosa por sus avances en la historia de la informática. Se la conoce sobre todo por su trabajo en el primer ordenador mecánico de propósito general de Charles Babbage, la Máquina Analítica.<br><br>Lovelace reconoció que la máquina tenía potencial más allá de los meros cálculos numéricos, y escribió lo que se considera el primer algoritmo destinado a ser implementado en una máquina, lo que la convirtió en la primera programadora informática. Fue la primera en imaginar las verdaderas posibilidades de los ordenadores: si podían procesar no sólo números, sino también símbolos y sonidos, podrían utilizarse para crear prácticamente cualquier fórmula.<br><br>A pesar de las limitaciones sociales de su época, el legado de Ada Lovelace como pionera de la informática sigue inspirando a las generaciones futuras en ciencia y tecnología. Los lenguajes de programación llevan su nombre, ¡y ella tiene su propio día del año! En 2019, se creó un robot llamado Ai-da. Irónicamente, Ada y Ai-da se odiarían mutuamente: Ada estaba totalmente en contra de la inteligencia artificial en sus escritos.
 ]
@@ -9049,8 +9022,8 @@ j
 %Base.BattleResultPanel.ExhaustionHint\Los Héroes están exhaustos y tienen que descansar durante {0} Batallas de Caza del Tesoro.
 Q
 :Base.Buildings.Building_ByzantineEra_Barracks_Siege_3_NameBarracón de asedio
-$
-Base.Resources.cotton_NameCotton
+&
+Base.Resources.cotton_NameAlgodón
 �
 ^Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestStart_Text1_Desc�La restauración de <style=MC>Chichen Itza</style> ¡Progresa con el favor divino! <style=MC>Chaac</style> se ha percatado de nuestra devoción, y los primeros susurros de su aliento agitan ahora la superficie de nuestro cenote sagrado.
 j
@@ -9091,8 +9064,8 @@ QBase.AbilityDescriptions.hero_battle_ability_description.DrakkarFigurehead_1_Na
 /Base.Buildings.Building_Egypt_Home_Small_5_NameCasa Pequeña
 s
 ?Base.Buildings.Building_ByzantineEra_CultureSite_Compact_1_Desc0Mejora la felicidad de los edificios adyacentes.
-[
-$Base.Mailbox.ApplicationAcceptedCopy3{} has accepted your application to the Alliance {}
+g
+$Base.Mailbox.ApplicationAcceptedCopy?{} ha aceptado tu solicitud para formar parte de la Alianza {}.
 >
 (Base.Regions.region.EasternValley_4_NameFortaleza de Tesla
 S
@@ -9194,10 +9167,10 @@ I
 Base.LocalizedLocales.ru_RURuso
 4
 Base.PvpHistoryPanel.WinRateÍndice de victorias
+{
+2Base.Buildings.Building_Arabia_Home_Premium_4_DescEProduce una tonelada de Dírhams y añade 3 trabajadores a tu ciudad.
 T
 HBase.AllianceTechnologies.alliance_technology.residentialQuarter_33_NameNivel 33
-n
-2Base.Buildings.Building_Arabia_Home_Premium_4_Desc8Produces a ton of Dirham and adds 3 Workers to your city
 1
 "Base.WorkerManagementPopup.SolvingResolviendo
 k
@@ -9340,13 +9313,10 @@ J
 2Base.QuestlinesPanel.ConstructSpecificBuildingTask-Construye <b>{0} {1}</b> de nivel <b>{2}</b>.-Construye <b>{0} {1}</b> de nivel <b>{2}</b>.
 C
 3Base.Buildings.Building_BronzeAge_Farm_Rural_1_NameGranja Rural
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_6_Name
-Camel Farm
+M
+7Base.Buildings.Building_Arabia_CamelFarm_Average_6_NameGranja de Camellos
 �
 MBase.StoryText.Story_Questline_TeslaStorm_SolveStages1_QuestFinish_Text1_Desc�¡Buen encuentro, Leónidas! Soy <style=MC>William Tell</style>. La lata gigante de Tesla frió mi preciada manzana: ¡imperdonable!
-E
-:Base.Technologies.Technology_KingdomOfSicily_Channels_NameCanales
 G
 2Base.Buildings.Building_Vikings_Home_Sailor_6_NameCasa de marineros
 4
@@ -9413,12 +9383,12 @@ N
 ;Base.StoryText.Story_DesertDelta_7_3_BattleStart_Text2_DescXHéroes de la Historia, ¡a la Batalla! ¡Defended esta cresta y los haremos retroceder!
 ;
 &Base.BuildingGroups.averageAviary_NameAviarioAviarios
+(
+Base.Units.Unit_Saladin_NameSaladino
 0
  Base.Units.Unit_SiouxShaman_NameToro Sentado
-'
-Base.Units.Unit_Saladin_NameSaladin
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_6_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+|
+6Base.Buildings.Building_Arabia_Workshop_Incense_6_DescBEl Taller de Incienso produce incienso a partir de Mirra y Latón.
 8
 Base.NegotiationPanel.TurnsLeftTurnos restantes: {0}
 
@@ -9437,10 +9407,11 @@ t
 @Base.Buildings.Building_ClassicGreece_CultureSite_Compact_1_Desc0Mejora la felicidad de los edificios adyacentes.
 6
 +Base.Units.Unit_EarlyRome_Huns_Geoguth_NameGeoguth
-�
-FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name�<style=ability_label>Damage Transfer | Shield</style>Kiviuq shields himself for <style=basestat>{shield}</style>, and transfers <style=basestat>{damage_transfer}</style> of incoming ability damage taken by allied heroes to himself for <style=basestat>{duration}</style>.
+�
+FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name�<style=ability_label>Transferencia de Daño | Escudo</style>
+Kiviuq se otorga un escudo de <style=basestat>{shield}</style> y transfiere un <style=basestat>{damage_transfer}</style> del daño de habilidad recibido por los héroes aliados hacia sí mismo durante <style=basestat>{duration}</style>.
 ?
-,Base.AlliancePanel.AllianceMyApplicationsTabMy Applications
+,Base.AlliancePanel.AllianceMyApplicationsTabMis Solicitudes
 F
 *Base.Resources.folio_of_enlightenment_NameFolio de la Ilustración
 s
@@ -9497,8 +9468,8 @@ D
 3Base.Buildings.Building_FeudalAge_Farm_Rural_2_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
 �
 [Base.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_LadySixSky_QuestStart_Text1_Desc�Hay dos tipos de Trabajadores en el Imperio Maya: <nobr><style=MC>Artesanos</style> <sprite name=workers_priestmaya></nobr>, que son necesarios en los Talleres, y <nobr><style=MC>Trabajadores</style> <sprite name=workers_city.city_mayas></nobr>, que se encargan de las demás tareas.
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+�
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_DescFCría Camellos que se necesitan para entregar las ofertas en el Bazar.
 +
 Base.Units.Unit_AnneBonny_Name	Ana Bonny
 X
@@ -9595,8 +9566,8 @@ Y
 (Base.RewardTypes.MysteryChestReward_Desc-Te da una de las muchas recompensas posibles.
 W
 >Base.Technologies.Technology_IberianEra_FelagPartnerships_NameColaboraciones Félag
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_Desc.Increases the irrigation of adjacent buildings
+m
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_2_Desc3Aumenta la irrigación de los edificios adyacentes.
 �
 6Base.Resources.event_summon_of_the_stars_trophies_DescKResuelve la tarea indicada para ganar Puntos de Trofeo en esta competencia.
 �
@@ -9673,8 +9644,8 @@ ABase.Buildings.Building_RomanEmpire_Barracks_HeavyInfantry_1_NameBarracón de
 �
 
 Base.Units.Unit_MontezumaI_Desc�	Portador de la corona de fuego, campeón del Mar del Cielo, Gran Orador: no hay epítetos fuera del alcance de Moctezuma, el segundo emperador de los aztecas. Este emperador del siglo XIV es recordado como la encarnación del imperio azteca, en toda su majestuosidad y brutalidad. Su coronación en Tenochtitlan estuvo marcada por un vasto sacrificio, una tradición que su régimen solo aceleraría.<br><br>Uno de los primeros actos de Moctezuma fue aliarse con dos ciudades-estado cercanas. Esta Triple Alianza trajo consigo tanto conquistas como prosperidad, con acueductos que abastecían a Tenochtitlan y permitían el crecimiento de la ciudad incluso mientras el imperio se expandía por gran parte de México.<br><br>En realidad, su nombre completo era Moctezuma Xocoyotzin, aunque rara vez se usaba, pues es ampliamente conocido simplemente como Moctezuma. Aun así, supo ejercer el poder político como algo más que un simple instrumento de fuerza. El legado de Moctezuma también es de fe: se le recuerda como un héroe-dios, y en su tiempo se fundaron escuelas religiosas en todo el dominio azteca. Sin embargo, dentro de los Héroes de la Historia, está muy molesto de que todos sigan pensando que es su descendiente, ¡Moctezuma II!
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_3_Desc#Produces a big pile of Gold Dinars.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_Desc,Produce una gran cantidad de Dinares de Oro.
 Y
 3SoftError.AllianceCity.INCIDENT_MAX_REWARD_UNLOCKED"Recompensa Máxima ya desbloqueada
 w
@@ -9687,8 +9658,8 @@ E
 6Base.Technologies.Technology_FeudalAge_Pictograms_NamePictogramas
 E
 +Base.EquipmentSets.equipment_set.Quack_NameConjunto de Charlatán
-<
-$Base.OptionsPopup.StorageFullWarningStorage Full warning
+E
+$Base.OptionsPopup.StorageFullWarningAviso de Almacenamiento Lleno
 �
 "Base.ChangeEmail.ActiveTaskMessage�Ya se ha enviado un correo electrónico de confirmación.
 
@@ -9708,8 +9679,8 @@ x
 EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier3_5_Name/Kit de Selección de Material de Ascensión III
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.SirLancelot_30_Name�<style=ability_label>Golpe Cuerpo a Cuerpo| Sangrado| Potenciador</style>Golpea con su espada a su objetivo actual cinco veces, infligiendo daño aumentado con cada golpe para un total de <style=basestat>{dmg_percentage}</style> de daño. Cada golpe tiene un <style=basestat>{chance_percentage}</style> de probabilidad de hacer sangrar al oponente durante <style=basestat>{dmg_percentage_bleed}</style> a lo largo de <style=basestat>{duration}</style>. También aumenta el daño crítico de Lancelot en <style=basestat>{crit_dmg_percentage}</style> y su probabilidad de golpe crítico en <style=basestat>{crit_chance_percentage}</style> durante <style=basestat>{buff_duration}</style>.
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_3_NameLuxurious Noria
+S
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_NameRueda Hidráulica Lujosa 
 �
 2Base.Buildings.Building_Mayas_City_CityHall_2_DescfEl Gran Salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de Cacao para ti.
 K
@@ -9788,8 +9759,8 @@ X
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text3_DescTSí, fortalece donde sea posible y afronta directamente las perturbaciones de Tesla.
 C
 'Base.ResourceTypes.research_points_NamePuntos de Investigación
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_5_NameCoffee Brewer
+H
+5Base.Buildings.Building_Arabia_Workshop_Coffee_5_NameTaller de Café
 C
 Base.Hints.Flasks.Llenado de frascos de Puntos de Investigación
 
@@ -9904,9 +9875,8 @@ P
 Base.Ages.StoneAge_Start40 000 a. C.
 N
 5Base.Technologies.Technology_Vikings_MeadBrewery_NameFábrica de Hidromiel
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Name
-Camel Farm
+M
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_NameGranja de Camellos
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_20_NameNivel 20
 %
@@ -9915,12 +9885,12 @@ T
 5Base.Technologies.Technology_Mayas_NatureSpirits_NameEspíritus de la Naturaleza
 Y
 BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_NameAcademia de héroes
+J
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_NameMercader de Lujo
 �
 LBase.AbilityDescriptions.hero_battle_ability_description.ScarabBeetle_1_Name�<style=ability_label>Potenciador</style>Cuando los puntos de vida del poseedor caen por debajo de <style=basestat>{hp_threshold}</style>, su defensa aumenta en <style=basestat>{defense_buff}</style> hasta el final de la oleada actual. No se acumula.
 #
 Browser.OOM.PrimaryCTA	Reiniciar
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_6_NameLuxurious Merchant
 u
 ,Base.SelectionKitSelection.CancelDescriptionEPuedes posponer la decisión y acceder más tarde desde el inventario
 S
@@ -9956,8 +9926,8 @@ f
 Abu Simbel
 [
 5Base.Buildings.Building_Egypt_GoldMine_Premium_6_Desc"Produce un montón de mena de oro.
-^
-ABase.AllianceApplicationMessages.AllianceApplicationTooltipHeaderApplication Message from:
+]
+ABase.AllianceApplicationMessages.AllianceApplicationTooltipHeaderMensaje de solicitud de:
 �
 ,Tutorial.RelicsInfoPopup.AgeScaleDescriptiontLas estadísticas que proporcionan a los héroes aumentarán a medida que tu ciudad avance a través de nuevas eras.
 b
@@ -10096,8 +10066,8 @@ A
 `Base.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Valhalla_2_QuestStart_Text1_Desc}Ya se han sentado las bases. La fase siguiente presentará mayores retos, ¡pero también dará recompensas más importantes!
 I
 7Base.Technologies.Technology_Vikings_GlimaFighting_NameLucha de Glima
-�
-Base.Resources.gold_dinar_DescxGold Dinar are an essential resource for trading at the Bazaar in Arabia. They are generated automatically at Merchants.
+�
+Base.Resources.gold_dinar_DescLos dinares de oro son un recurso esencial para comerciar en el Bazar de Arabia. Se generan automáticamente en los Mercaderes.
 �
 /Base.QuestlinesPanel.FinishBattleAtLocationTask)Termina <b>{0}</b> batalla de <b>{1}</b>.*Termina <b>{0}</b> batallas de <b>{1}</b>.
 H
@@ -10112,8 +10082,8 @@ T
 >Base.ShopOffers.shop_offer.LegendaryPull_FollowUp_Offer_3_DescPaquete Legendario
 Q
 Base.AlertPopup.SkipExpired2Se ha completado la acción; ya no puede omitirse.
-&
-Base.Resources.incense_NameIncense
+'
+Base.Resources.incense_NameIncienso
 �
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_120_DescWEste Kit de Selección te permite elegir entre Emblemas Mejorados de distintos colores.
 ]
@@ -10122,8 +10092,8 @@ W
 4Base.AllianceCityQuarterBonus.IncreasedIncidentPowerAumento del Poder del Incidente
 �
 $Base.Resources.hero.AdaLovelace_Desc{Se utiliza para aumentar el Nivel de Despertar de Ada Lovelace y así desbloquear bonificaciones de batalla más poderosas.
-$
-Base.Resources.dirham_NameDirham
+&
+Base.Resources.dirham_NameDírhams
 E
 )Base.KeyboardShortcuts.Description.WorkerGestión de Trabajadores
 P
@@ -10157,8 +10127,8 @@ J
 +Base.WondersReworkUpgradePanel.FillAllBoxes¡Llena todas las casillas!
 =
 &Base.Regions.region.FrozenFjord_4_NameBosque de las Hadas
-D
-2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_3_NameCasa Lujosa
 O
 %Base.BuildingInfoPanel.HeroBoostLabel&Potenciador para todos los héroes {0}
 N
@@ -10282,8 +10252,8 @@ e
 =Base.Buildings.Building_AgeOfTheFranks_Barracks_Ranged_1_Desc$Desbloquea a los lanzahachas francos
 u
 0Base.Subscriptions.PRODUCTION_DURATION_PromotionA¡Obtén el favor del Gran Arquitecto para duplicar tus reservas!
-K
-4Base.ShopOffers.shop_offer.Diy_Research_Offer_1_NameYour Research-Boost
+[
+4Base.ShopOffers.shop_offer.Diy_Research_Offer_1_Name#Tu Potenciador de la Investigación
 O
 7Base.Buildings.Building_Mayas_RitualSite_Average_6_NameManantial de Cristal
 0
@@ -10348,14 +10318,14 @@ $
 Base.QuestlinesPanel.StartInicia
 7
 $Base.RewardTypes.UnlockBuilding_DescDesbloquea {0}.
+A
+1Base.Buildings.Building_Arabia_Home_Medium_6_NameCasa mediana
 �
 #Base.Units.Unit_OttomanGeneral_Desc�¡Yalla! Surca los mares con Hasan Pasha, hijo del famoso almirante otomano Hayreddin Barbarroja. Este pirata y líder se hizo famoso a mediados del siglo XVI, ejerciendo como Beylerbey de Argel.<br><br>Siguiendo la estela de su padre, Hasan Pasha reforzó el dominio naval Otomano en el Mediterráneo participando en importantes campañas navales y actividades corsarias contra las potencias europeas. Su liderazgo afianzó a Argel como eje central de la influencia otomana, consolidando su estatus de formidable poder en el Norte de África.<br><br>Su legado está marcado por sus esfuerzos por mantener la supremacía otomana en los asuntos marítimos, desempeñando un papel crucial durante una época de intensos conflictos regionales y navales. Al Pachá le encanta la Comida picante, lo que no deja de disgustar a los demás Héroes de la Historia, ¡especialmente a Juana de Arco!
-@
-1Base.Buildings.Building_Arabia_Home_Medium_6_NameMedium Home
 S
 8Base.Abilities.hero_battle_ability.GeorgeWashington_NamePadre de los Defensores
-8
-&Base.AnnouncementCenter.Event_CalendarEvent Calendar
+?
+&Base.AnnouncementCenter.Event_CalendarCalendario de Eventos
 S
 @Base.Units.Unit_CurrentEra_MercenaryCommander_KheshigRiders_NameJinetes Kheshig
 T
@@ -10477,8 +10447,6 @@ EBase.InventoryItems.SelectionKit_SupportAscenionMaterial_Tier3_2_Desc_Este Kit
 Base.Resources.gold_laurel_Desc]Los Laureles de Oro son bienes que se pueden producir en los Artesanos - Nivel 4 en adelante.
 8
 .Base.Units.Unit_RomanEmpire_Player_Turmae_NameTurmae
-[
-ABase.Technologies.Technology_KingdomOfSicily_LawOfCotangents_NameLey de las cotangentes
 S
 :Base.AllianceQuarterPanel.UpgradeRequirementStepContributeContribuir Materiales
 �
@@ -10672,9 +10640,8 @@ JBase.AbilityDescriptions.hero_battle_ability_description.TomoeGozen_1_Name�<s
 Base.BuildPanel.StorageCapacityCapacidad de Almacenamiento
 S
 5Base.EquipmentLevelUpPanel.EquipmentLevelUpSuccessful¡Subida de Nivel Exitosa!
-E
-7Base.Buildings.Building_Arabia_CamelFarm_Average_2_Name
-Camel Farm
+M
+7Base.Buildings.Building_Arabia_CamelFarm_Average_2_NameGranja de Camellos
 �
 8Base.QuestlinesPanel.ConstructSpecificBuildingInCityTask;Construye <b>{0} {1}</b> de nivel <b>{2}</b> en <b>{3}</b>.;Construye <b>{0} {1}</b> de nivel <b>{2}</b> en <b>{3}</b>.
 $
@@ -10757,8 +10724,10 @@ HBase.AllianceTechnologies.alliance_technology.residentialQuarter_11_NameNivel
  Base.RankingPanel.JoinAnAlliance¡Únete a una alianza!
 q
 PBase.StoryText.Story_Technology_StoneAge_DomesticatedGoats_TechUnlock_Text3_Desc«Où est-ce que je suis?!».
-�
-MBase.AbilityDescriptions.hero_battle_ability_description.HarunAlRashid_1_Name�<style=ability_label>Heal</style>Harun-Al Rashid heals all allied units for <style=basestat>{heal}</style> of his base damage. Any excess healing on each unit is stored and converted to damage the next time they deal damage with an attack or ability.
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.HarunAlRashid_1_Name�<style=ability_label>Sanar</style>
+Harun-Al Rashid sana a todas las unidades aliadas por un <style=basestat>{heal}</style> de su daño base.
+Cualquier curación excedente en cada unidad se almacena y se convierte en daño la próxima vez que inflijan daño con un ataque o habilidad.
 8
 Base.ShopDTC.InfoPopup.TitleElige tu método de pago
 _
@@ -10769,10 +10738,12 @@ M
 :Base.Buildings.Building_Vikings_FishingPier_Average_1_NameMuelle de pesca
 A
 1Base.Units.Unit_IberianEra_Player_Almogavars_NameAlmogávares
+�
+GBase.AbilityDescriptions.hero_battle_ability_description.Saladin_1_Name�<style=ability_label>Potenciador</style>
+Saladino apunta a la unidad aliada con menor salud que no esté afectada por esta habilidad, aumentando su velocidad de movimiento en <style=basestat>{move_speed_buff}</style> y su velocidad de ataque en <style=basestat>{atk_speed_buff}</style> hasta el final de la batalla.
+Prioriza a los héroes. Si la unidad mejorada muere, los efectos se transfieren al aliado más cercano. Esta mejora puede acumularse.
 M
 7Base.EquipmentSets.equipment_set.Musketeer_Garment_NameCapa de Mosquetero
-�
-GBase.AbilityDescriptions.hero_battle_ability_description.Saladin_1_Name�<style=ability_label>Buff</style>Saladin targets the allied unit with the lowest HP unaffected by this ability, increasing their Movement Speed by <style=basestat>{move_speed_buff}</style> and Attack Speed by <style=basestat>{atk_speed_buff}</style> until the end of the battle. Prioritizes heroes. If the buffed unit dies, the effects transfer to the nearest ally. This buff can stack.
 0
 'Base.WorldWondersPromotion.NewWonderTagNuevo
 3
@@ -10880,14 +10851,14 @@ ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_30_DescWEste Kit de 
 Base.Generic.BuyComprar
 o
 "Base.Notifications.IdleWorkersTextI¡Tus trabajadores están listos para contribuir! ¡Asígnalos AHORA! ⏳
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_3_Desc<Substantially increases the irrigation of adjacent buildings
+
+6Base.Buildings.Building_Arabia_Irrigation_Noria_3_DescEAumenta considerablemente la irrigación de los edificios adyacentes.
 o
 RBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_PurpleTeslaTakedown_1_NameEliminación Tesla Umbral
-_
-MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text6_NameAmelia Earhart
 g
 @Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_210_Name#Kit de Selección de Emblema Común
+_
+MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text6_NameAmelia Earhart
 D
 0Base.KeyboardShortcuts.Description.ToggleCultureAlternar Cultura
 �
@@ -10970,10 +10941,10 @@ H
 5Base.Questlines.Questline_CampaignMap_Continent4_NameConquistador IV
 n
 #Base.Resources.material_nature_DescGEste material especial se puede usar para mejorar maravillas naturales.
-j
-ABase.WorldWondersInventionInformationPopup.InventionChancesHeader%Probabilidades del orbe de invención
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_12_Text6_DescxSiento que nuestras tácticas están evolucionando espléndidamente. El mensaje de la Luna estará a salvo con nosotros.
+j
+ABase.WorldWondersInventionInformationPopup.InventionChancesHeader%Probabilidades del orbe de invención
 7
 Base.Rifts.rift.Egypt_NamePortal del Tiempo Egipcio
 5
@@ -11050,14 +11021,14 @@ W
 5Base.Units.Unit_EarlyGothicEra_Player_Cavalrymen_NameJinetes
 L
 5Base.Abilities.hero_battle_ability.FalconryGlove_NameGuante de Cetrería
+|
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_DescBEl Taller de Incienso produce incienso a partir de Mirra y Latón.
 �
 ,Base.QuestlinesPanel.CollectWorkerProductionJJunta <b>{0}</b> producción en <b>{1}</b> de <b>{2}</b> en tu <b>{3}</b>.KJunta <b>{0}</b> producciones en <b>{1}</b> de <b>{2}</b> en tu <b>{3}</b>.
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_5_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
 ^
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text2_NameLeif Erikson
-h
-6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc.Increases the irrigation of adjacent buildings
+m
+6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc3Aumenta la irrigación de los edificios adyacentes.
 #
 Base.HeroClass.DefenderDefensor
 M
@@ -11074,8 +11045,8 @@ M
 5Base.Buildings.Building_Egypt_GoldMine_Average_5_DescProduce mena de oro.
 f
 )Base.SeasonPass.EventEndedNoParticipation9¡Consigue recompensas increíbles en el próximo Evento!
-]
-6Base.Buildings.Building_Arabia_Merchant_Premium_6_Desc#Produces a big pile of Gold Dinars.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_6_Desc,Produce una gran cantidad de Dinares de Oro.
 ;
 #Base.Resources.alliance_timber_NameMadera de la Alianza
 )
@@ -11104,18 +11075,18 @@ K
  Base.Units.Unit_Nostradamus_Desc�¡Desbloquea los secretos del destino con Nostradamus, el legendario vidente cuyas visiones han resonado a través de los siglos! Nacido en 1503, Michel de Nostredame se convirtió en médico reconocido por su valentía durante los brotes de peste, pero fueron sus misteriosas profecías las que aseguraron su legado perdurable. Su libro, *Las Profecías*, entregó versos tan enigmáticos que generaciones enteras han tratado de descifrar su verdadero significado, conectándolos con eventos como guerras devastadoras y el auge y caída de emperadores.<br><br>La reputación de Nostradamus alcanzó los más altos círculos: incluso leyó la fortuna de Catalina de Médici, reina de Francia. Algunos dicen que miraba en un cuenco de bronce, otros que en las estrellas, pero su mezcla de astrología y acertijos poéticos sigue cautivando tanto a creyentes como a escépticos. Los héroes susurran que nunca deja desatendido su cuenco adivinatorio y que, a veces, tarde en la noche, su diario empieza a escribirse solo.
 I
 2Base.Buildings.Building_Vikings_Home_Worker_6_NameCasa del Trabajador
+B
+6Base.Buildings.Building_Arabia_Merchant_Average_5_NameMercader
 h
 %Base.QuestlinesPanel.CompleteSpecificGana <b>{0}</b> {1}.)Gana <b>{0}</b> cualquiera de estos: {1}.
-B
-6Base.Buildings.Building_Arabia_Merchant_Average_5_NameMerchant
 8
 &Base.TreasureHuntStartedPopup.EndTimerTermina en {0}
 �
 8Base.StoryText.Story_Panganea_4_3_BattleStart_Text2_DescuPor favor, Nikola. Deja esto a un lado. Vuelve al futuro conmigo. Aún podemos cambiar el mundo. No somos tan viejos.
 L
 8Base.Buildings.Building_RomanEmpire_Farm_Domestic_3_NameGranja de Ganado
-y
-7Base.Buildings.Building_Arabia_CamelFarm_Average_5_Desc>Raises Camels that are needed to deliver offers at the Bazaar.
+�
+7Base.Buildings.Building_Arabia_CamelFarm_Average_5_DescFCría Camellos que se necesitan para entregar las ofertas en el Bazar.
 �
 gBase.StoryText.Story_Questline_EventCity_Mayas_MoreWorkers_MontezumaI_SahilPalace_QuestStart_Text1_Desc�Hay dos tipos de Trabajadores en el Imperio Maya: <nobr><style=MC>Artesanos</style> <sprite name=workers_priestmaya></nobr>, que son necesarios en los Talleres, y <nobr><style=MC>Trabajadores</style> <sprite name=workers_city.city_mayas></nobr>, que se encargan de las demás tareas.
 S
@@ -11194,8 +11165,9 @@ D
 4Base.Buildings.Building_IberianEra_Farm_Rural_1_NameGranja Rural
 K
 Base.BuildingGroups.scribe_NameTaller de EscribasTalleres de Escribas
-�
-LBase.AbilityDescriptions.hero_battle_ability_description.AdaBlackjack_1_Name�<style=ability_label>Shield | Cleanse</style>Ada shields all allied units for <style=basestat>{shield_percentage}</style> of her base damage and cleansing them of negative effects.
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.AdaBlackjack_1_Name�<style=ability_label>Escudo | Purificación</style>
+Ada otorga un escudo a todas las unidades aliadas equivalente al <style=basestat>{shield_percentage}</style> de su daño base y las purifica de los efectos negativos.
 )
 Base.Ages.MinoanEra_Decade1600 a. C.
 E
@@ -11296,13 +11268,12 @@ S
 Base.Generic.Reload	Reiniciar
 Z
 'Base.HeroFilterPopover.SortHeroesToBack/Ordena a los héroes agotados para que regresen
+.
+Base.Resources.gold_dinar_NameDinar de Oro
 g
 4Base.SeasonPassSelectBattleOrNegotiationPopup.Header/Gana esta batalla o resuelve esta negociación.
 :
 )Base.Regions.region.VolcanicJungle_1_NameLaderas Mayas
-,
-Base.Resources.gold_dinar_Name
-Gold Dinar
 g
 DBase.Buildings.Building_HighMiddleAges_Barracks_HeavyInfantry_3_NameBarracón de Infantería Pesada
 Q
@@ -11327,8 +11298,8 @@ T
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text3_Desc�No sé qué está tramando en este caso, pero es conocido por manipular la tecnología. Debe estar intentando interrumpir ciertos sistemas para impedir el éxito del alunizaje.
 E
 &Base.Resources.hero.UlyssesSGrant_NameEsencia de Ulysses S. Grant
-n
-2Base.Buildings.Building_Arabia_Home_Premium_3_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+{
+2Base.Buildings.Building_Arabia_Home_Premium_3_DescEProduce una tonelada de Dírhams y añade 3 trabajadores a tu ciudad.
 O
 ;Base.ShopOffers.PiggyBank_researchPointsEvent_Unlock_2_NameBóveda de gemas
 �
@@ -11517,14 +11488,12 @@ f
 ABase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianHeavy_NameBerserkers Merovingios
 �
 8Base.StoryText.Story_Panganea_6_9_BattleStart_Text1_Desc�Soy el comandante elegido por Tesla para esta provincia, he jurado gobernar. He jurado sustituir sus costumbres por la industria.
-3
-)Base.Expansions.Expansion_Arabia_118_NamePuente
 �
 aBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_Yggdrasil_1_QuestStart_Text3_Desc�Cada <style=MC>Caja</style> también mejora tu <style=MC>Rango</style> en la <style=MC>Puntuación del Evento</style>, y así desbloqueas mejores <style=MC>Recompensas</style> a medida que asciendes en las <style=MC>Ligas</style> al final del Evento.
 2
 !Base.Units.Unit_LouisPasteur_NameLouis Pasteur
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_3_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_NameFabricante de Alfombras
 &
 Base.CommunityPopup.YoutubeYoutube
 s
@@ -11586,8 +11555,8 @@ J
 7Base.Buildings.Building_Mayas_RitualSite_Premium_4_NameTemplo de Magma
 o
 MBase.Questlines.Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_1_NameLa Pirámide de Guiza - Fase I
-d
-1Base.Buildings.Building_Arabia_Home_Medium_6_Desc/Produces Dirham and adds 2 Workers to your city
+j
+1Base.Buildings.Building_Arabia_Home_Medium_6_Desc5Produce Dírhams y añade 2 trabajadores a tu ciudad.
 z
 9Base.StoryText.Story_DesertDelta_7_2_BattleEnd_Text6_Desc=Tesla está armando a los Persas. Mi destino está en ruinas.
 %
@@ -11608,10 +11577,10 @@ C
 Base.PvpPanel.DefenseTeamEquipo de defensa
 `
 $Base.QuestlinesPanel.StartProductionInicia <b>{0} {1}</b> {2}.Comenzar <b>{0} {1}</b> {2}.
-6
-!Base.Time.ElapsedTimeHoursMinutesHace {0:h\h\ m\m}
 0
 Base.Heroes.hero.Ninja_NameMochizuki Chiyome
+6
+!Base.Time.ElapsedTimeHoursMinutesHace {0:h\h\ m\m}
 �
 hBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_DragonshipEllida_1_QuestStart_Text1_DescvAhora que tenemos nuestras propias naves de expedición, centrémonos en mejorar el <style=MC>Drakkar Ellidia</style>.
 u
@@ -11633,18 +11602,18 @@ n
 &Base.Resources.hero.AmeliaEarhart_Desc}Se utiliza para aumentar el Nivel de Despertar de Amelia Earhart y así desbloquear bonificaciones de batalla más poderosas.
 �
 /Base.TreasureHuntStartedPopup.AlreadyInProgressPLa actual Caza del Tesoro ya está en Progreso. Puedes unirte a la siguiente en:
-K
-,Base.UnitStats.unit_stat.AoeDamageAmp_AbbrevDAÑO DE HABILIDAD EN ÁREA
+>
+,Base.UnitStats.unit_stat.AoeDamageAmp_AbbrevDAÑO EN ÁREA
+s
+%Base.EventType.ChestEvent_DescriptionJAdquiere fichas del evento para participar y gana recompensas increíbles.
 J
 5Base.Units.Unit_BronzeAge_Player_CavalrySpearmen_NamePiquero a caballo
-t
-%Base.EventType.ChestEvent_DescriptionKAcquire event tokens to participate in this event and earn amazing rewards!
 �
 MBase.AbilityDescriptions.hero_battle_ability_description.RagnarLodbrok_1_Name�<style=ability_label>Teletransporte | Provocación | Quemadura | Escudo</style>Ragnar se teletransporta hacia el enemigo más lejano, provocándolo a él y a todas las unidades en un rango de <style=basestat>{range}</style> durante <style=basestat>{taunt_duration}</style>, quemándolos con <style=basestat>{burn_dmg}</style> de daño durante <style=basestat>{duration}</style> y otorgándose a sí mismo un escudo del <style=basestat>{shield_percentage}</style>.
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 �
  Base.Units.Unit_SirLancelot_Desc�Asiste a la historia de Sir Lancelot, caballero del Rey Arturo y de la Tabla Redonda, caballero francés y errante en los reinos de los Fae.<br><br>Llegado a la corte del rey Arturo desde tierras lejanas, rescató a la reina Ginebra y buscó el Santo Grial, lo que le convirtió en un caballero casi perfecto.<br><br>Por desgracia, su único defecto condujo a la caída de Camelot: su amor por la reina de Arturo derribó el reino a su alrededor. Aun así, se le recuerda como un héroe honorable y querido por muchos. Menos famoso es su hermano más musical, Sir Dancealot.
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_4_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 �
 4Base.Incidents.Incident_IberianEra_Capital_XP_1_Desc�Madre mía, ¡este montón de troncos no es precisamente una obra maestra! Flexionemos esos músculos y digamos adiós a este desorden antiestético.
 u
@@ -11727,8 +11696,6 @@ P
 IBase.AbilityDescriptions.hero_battle_ability_description.Excalibur_1_Name�<style=ability_label>Potenciador | Sangrado</style> Aumenta el daño del héroe contra objetivos sangrantes en <style=basestat>{damage_increase_per_relic_level}</style>. Además, al dañar a un enemigo, hay una probabilidad del <style=basestat>{bleed_chance_percentage}</style> de infligir sangrado, causando <style=basestat>{bleed_percentage_per_relic_level}</style> de daño por segundo durante <style=basestat>{bleed_duration}</style>.
 K
 4Base.Questlines.Questline_MinoanEra_HeroAcademy_NameAcademia de Héroes
-]
-CBase.Technologies.Technology_KingdomOfSicily_AutomaticControls_NameControles automáticos
 >
 $Base.Resources.hero.Nostradamus_NameEsencia de Nostradamus
 A
@@ -11755,8 +11722,8 @@ K
 ,Base.BuildingGroups.premiumPapyrusField_NameCampo de Papiro LujosoCampos de Papiro Lujosos
 J
 3Base.Units.Unit_BronzeAge_Player_HeavyInfantry_NameCentinela de Bronce
-a
-CBase.IngameEvents.MilestoneEvent_Halloween2025_RallyOfHeroes_1_NameAll Hallows' Eve Encounter
+s
+CBase.IngameEvents.MilestoneEvent_Halloween2025_RallyOfHeroes_1_Name,Encuentro en la víspera de Todos los Santos
 B
 $Base.QuestlinesPanel.ClaimDailyLoginReclamar recompensa diaria
 @
@@ -11801,8 +11768,6 @@ VBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_1_QuestStart_Tex
 'Base.BuildingContextPanel.ProductionTabProducción
 R
 GBase.AllianceTechnologies.alliance_technology.residentialQuarter_7_NameNivel 7
-V
->Base.Technologies.Technology_KingdomOfSicily_SineQuadrant_NameCuadrante Sinusoidal
 `
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_DescDesbloquea a los hostigadores
 e
@@ -11916,8 +11881,6 @@ D
 3Base.Buildings.Building_EarlyRome_Home_Small_1_NameCasa Pequeña
 K
 @Base.AllianceTechnologies.alliance_technology.mainQuarter_1_NameNivel 1
-S
-:Base.Technologies.Technology_KingdomOfSicily_Windpump_NameBomba de agua eólica
 ;
 Base.Alerts.FullRequestCountSolicitudes Pendientes: {0}
 �
@@ -11988,8 +11951,8 @@ aBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_Que
 Base.LocalizedLocales.it_ITItaliano
 G
 3Base.Technologies.Technology_China_RiseOfChina_NameAscenso de China
-#
-Base.Generic.TimesEach	{0}x each
+'
+Base.Generic.TimesEach{0}x cada uno
 9
 'Base.Expansions.Expansion_China_27_NamePuente del sur
 '
@@ -12042,8 +12005,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text8_DescG
 #Base.VideoPlacementButton.RemainingRestante: {0}
 M
 (Base.OptionsPopup.AlreadyLoggedIntoWorld!Ya estás conectado a este mundo.
-�	
-!Base.Units.Unit_AdaBlackjack_Desc�	Survive the impossible with Ada Blackjack, the woman who conquered the Arctic alone! This Inupiat seamstress from the early 20th century became an unlikely hero when she outlasted veteran explorers on the desolate Wrangel Island. In 1921, she joined a Canadian expedition as a cook and seamstress, the only woman among four men.<br><br>When the expedition went catastrophically wrong, with supply ships failing to arrive and the men leaving to seek help but never returned, Ada was left utterly alone on the frozen island with only the expedition's cat, Victoria, for company. For two years, she survived where trained explorers had perished. Through extreme hardship, Ada taught herself to set traps, fire a rifle, fend for herself, using her resourcefulness to beat starvation and illness, even as the Arctic winter closed in. Despite being surrounded daily by hunger and polar bears, Ada's hope never faded.<br><br>Together, Ada and Vic braved blizzards and loneliness, their bond a source of comfort and warmth amid the cold. In time, Ada was rescued and returned home, and her story became an inspiration - proof that ordinary people are capable of extraordinary resilience.
+�
+!Base.Units.Unit_AdaBlackjack_Desc�¡Sobrevive a lo imposible con Ada Blackjack, la mujer que conquistó el Ártico en solitario! Esta costurera inupiat de comienzos del siglo XX se convirtió en una heroína improbable al sobrevivir más que exploradores veteranos en la desolada isla Wrangel. En 1921, se unió a una expedición canadiense como cocinera y costurera, siendo la única mujer entre cuatro hombres.<br><br>Cuando la expedición salió terriblemente mal —los barcos de suministro nunca llegaron y los hombres partieron en busca de ayuda pero jamás regresaron—, Ada quedó completamente sola en la isla helada, acompañada únicamente por la gata de la expedición, Victoria. Durante dos años sobrevivió donde exploradores entrenados habían perecido. A través de enormes dificultades, Ada aprendió por sí misma a colocar trampas, disparar un rifle y valerse por sus propios medios, usando su ingenio para vencer el hambre y la enfermedad, incluso mientras el invierno ártico se cerraba a su alrededor. A pesar de estar rodeada a diario por el hambre y los osos polares, la esperanza de Ada nunca se desvaneció.<br><br>Juntas, Ada y Vic enfrentaron tormentas de nieve y soledad, su vínculo fue una fuente de consuelo y calor en medio del frío. Con el tiempo, Ada fue rescatada y regresó a casa, y su historia se convirtió en una inspiración: una prueba de que las personas comunes son capaces de una resiliencia extraordinaria.
 '
 Base.PvpPanel.RankingClasificación
 3
@@ -12053,7 +12016,7 @@ $Base.WorkerManagementPopup.ProducingProduciendo
 O
 ,Base.Resources.hero.FlorenceNightingale_NameEsencia de Florence Nightingale
 H
-6Base.AllianceApplicationMessages.AllianceRejectionSendSend Rejection
+6Base.AllianceApplicationMessages.AllianceRejectionSendEnviar Rechazo
 {
 9Base.WondersReworkUpgradePanel.TradeOfferBoostDescription>Consigue <b>{0}</b> bienes más en <b>ofertas de comercio</b>.
 -
@@ -12073,8 +12036,8 @@ E
 Base.ShopPopup.TimedDealsGrandes Ofertas
 V
 8Base.Buildings.Building_FeudalAge_Barracks_Ranged_3_NameBarracón de largo alcance
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_5_NameLuxurious Workshop
+G
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_NameTaller Lujoso
 ?
 5Base.Technologies.Technology_ClassicGreece_Agora_NameÁgora
 a
@@ -12167,8 +12130,8 @@ D
 ,Base.EquipmentSets.equipment_set.Hunter_NameConjunto del Cazador
 K
 3Base.NegotiationPurchaseTurnDialog.ConfirmEndButtonDetener negociación
-n
-2Base.Buildings.Building_Arabia_Home_Premium_6_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+{
+2Base.Buildings.Building_Arabia_Home_Premium_6_DescEProduce una tonelada de Dírhams y añade 3 trabajadores a tu ciudad.
 x
 BBase.QuestlinesPanel.CollectResourceFromBuildingTypeInSpecificCity2Recoge <b>{0} {1}</b> de <b>{2}</b> en <b>{3}</b>.
 5
@@ -12177,10 +12140,10 @@ BBase.QuestlinesPanel.CollectResourceFromBuildingTypeInSpecificCity2Recoge <b>{
 8Base.SiegeOfOrleansHistoricBattleInfoPopup.LaneInfoGreen�Los enemigos verdes en este carril son débiles al <style=MC2>Daño por Quemadura</style>, lo que aumenta en un % determinado el daño que reciben de estos efectos.
 n
 8Base.Buildings.Building_HighMiddleAges_Home_Small_1_Desc2Produce Monedas y añade un Trabajador a tu Ciudad
+3
+Base.Event.EventEndsInEl Evento finaliza en {0}
 }
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_DescFProduce una pequeña cantidad de comida en un breve periodo de tiempo.
-+
-Base.Event.EventEndsInEvent ends in {0}
 *
 Base.Ages.DawnAge_Finish50 000 a. C.
 e
@@ -12189,8 +12152,8 @@ t
 $Base.UnitStats.unit_stat.Attack_DescLAumenta el daño infligido a las unidades enemigas, si es superior a su DEF.
 <
 Base.OptionsPopup.ChangeConsentCambiar el Consentimiento
-t
-6Base.Buildings.Building_Arabia_Workshop_Incense_2_Desc:The Incense Maker produces Incense out of Myrrh and Brass.
+|
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_DescBEl Taller de Incienso produce incienso a partir de Mirra y Latón.
 �
 ?Base.LeaderboardEventPanel.TaskInfo.TeslaStormGreen_DescriptionF¡Gana batallas de Tormenta Tesla de color Verde para recibir Trofeos!
 %
@@ -12366,8 +12329,8 @@ U
 WBase.StoryText.Story_Questline_EventCity_China_RepairTheBridge_2_QuestFinish_Text1_Desc�¡Genial! Ahora podemos empezar a recolectar <nobr><style=MC>Caolín</style> <sprite name=resource.kaolin_cta></nobr>, que es importante para crear <nobr><style=MC>Porcelana</style> <sprite name=resource.porcelain_cta></nobr>.
 D
 1Base.Technologies.Technology_Mayas_StateLaws_NameLeyes Estatales
-7
-$Base.BazaarOffersPanel.NoOffersFoundNo offers found
+A
+$Base.BazaarOffersPanel.NoOffersFoundNo se encontraron ofertas
 ]
 BBase.Technologies.Technology_AgeOfTheFranks_ReinforcedHandles_NameEmpuñaduras reforzadas
 $
@@ -12398,8 +12361,8 @@ V
 9Base.Buildings.Building_Vikings_SailorPort_Premium_4_DesceEnvía barcos de expedición que recogerán toneladas de Tesoros de Joyas, Especias, Oro o Cerámica.
 ;
 (Base.Regions.region.EasternValley_8_NameFuerte de Malí
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_2_NameCoffee Brewer
+H
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_NameTaller de Café
 [
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text1_Name
 Robin Hood
@@ -12777,8 +12740,8 @@ BBase.Technologies.Technology_IberianEra_LongDistanceSeafaring_Name Navegación
  Base.RewardTypes.UnlockGood_NameDesbloquear bien
 f
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_70_Name#Kit de Selección de Emblema Común
-Z
-6Base.Buildings.Building_Arabia_Merchant_Average_2_Desc Produce una gran pila de dirham.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_2_DescProduce Dinares de Oro.
 G
 1Base.EquipmentSets.equipment_set.Squire_Hand_NameEspada de Escudero
 L
@@ -12791,10 +12754,10 @@ Y
 ZBase.StoryText.Story_Questline_EventCity_Vikings_Provisions_Lagertha_QuestStart_Text1_Desc�Para enviar nuestros barcos en expediciones para encontrar <nobr><style=MC>Tesoros de Cerámica</style> <sprite name=resource.ceramic_treasure_cta></nobr> y <nobr><style=MC>Tesoros de Oro</style> <sprite name=resource.gold_treasure_cta></nobr>, debemos poner en marcha nuestra Taberna para producir <nobr><style=MC>Hidromiel</style> <sprite name=resource.mead_cta></nobr>. ¡Comencemos esta línea de producción de inmediato!
 <
  Base.EquipmentToolTip.LevelUpCap- Subir de nivel Cap: {}
+�
+&Base.Resources.hero.HarunAlRashid_Desc�Se utiliza para aumentar el nivel de despertar de Harun al-Rashid y, así, desbloquear bonificaciones de combate más poderosas.
 Q
 >Base.Technologies.Technology_EarlyGothicEra_BankingHouses_NameCasas Bancarias
-�
-&Base.Resources.hero.HarunAlRashid_DesceUsed to increase the Awakening Level of Harun al-Rashid and thus unlock more powerful battle bonuses.
 �
 Base.Units.Unit_HuaMulan_Desc�¡Pongámonos manos a la obra con Hua Mulan! Esta leyenda del folclore chino es célebre por su valentía y devoción. En "La Balada de Mulan", es una joven que se disfraza de hombre para ocupar el lugar de su padre en el ejército.<br><br>Después de mil millas y mil batallas, Mulan es enviada a visitar al Hijo del Cielo. Sólo le pide un corcel lo bastante veloz para llevarla a casa. Una vez allí, revela que es una mujer, lo que escandaliza a sus camaradas.<br><br>La historia de Mulán es una historia de desafío heroico. Desafía tanto las expectativas de las mujeres como las de los guerreros, mostrando lealtad a su familia y a China. El cuento se ha adaptado varias veces, famosamente en el cine y el teatro, y es muy querido en China y fuera de ella. Más recientemente, ella y Joan han comparado sus trajes.
 �
@@ -13121,8 +13084,8 @@ Z
 ABase.Buildings.Building_Egypt_Irrigation_IrrigationStation_6_NameEstación de irrigación
 >
 Browser.OOM.SecondaryCTA"Contactar con atención al cliente
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_3_NameIncense Maker
+L
+6Base.Buildings.Building_Arabia_Workshop_Incense_3_NameTaller de Incienso
 �
 8Base.StoryText.Story_Panganea_7_1_BattleStart_Text2_DescnConcluyo que cualquier número de enemigos puede enfrentarnos. Vamos a conseguir la piedra de Tesla y escapar.
 L
@@ -13143,8 +13106,8 @@ Y
 ;Base.Questlines.Questline_StoneAge_CultureIntroduction_NameIntroducción a la Cultura
 ,
 Base.Ages.HighMiddleAges_Finish	1200 D.C.
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_3_NameLuxurious Merchant
+J
+6Base.Buildings.Building_Arabia_Merchant_Premium_3_NameMercader de Lujo
 M
 ABase.AllianceTechnologies.alliance_technology.mainQuarter_33_NameNivel 33
 T
@@ -13187,12 +13150,10 @@ S
 $Base.ExpansionPopup.ResearchRequiredEdad requerida: {0}
 7
 *Base.AllianceQuarterPanel.UpgradeTabLevel0	Construir
-U
-=Base.Technologies.Technology_KingdomOfSicily_FountainPen_NamePluma estilográfica
 �
 6Base.WondersReworkUpgradePanel.TagUnitBonusDescriptionnPotencia <b>{0}</b> de todas tus unidades <b>{1} </b> en <b>{2}</b> adicional por cada otra <b>{3}</b> activa.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_NameOil Lamp Maker
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_NameTaller de Lámparas de Aceite
 B
 'Base.ShopPopup.Pages.china_starter_packPaquete de Inicio China
 S
@@ -13225,10 +13186,10 @@ j
 0Base.InventoryItems.Selection_Kit_Food_RP_2_Name6Kit de Selección de Comida / Puntos de Investigación
 �
 \Base.StoryText.Story_Questline_EventCity_Mayas_RitualSites_LadySixSky_QuestFinish_Text1_Desc�¡Has descubierto los <style=MC>terrenos sagrados</style> de nuestros antepasados! ¡Puedo sentir cómo el poder ancestral empieza ya a fluir por nuestras tierras!
-7
-$Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 �
 )Base.AllianceCityManagementPopup.NoneBusyy¡Todos los miembros de la alianza están disponibles!<br><br>Puedes comenzar una nueva tarea en la Ciudad de la Alianza.
+7
+$Base.Heroes.hero.WilliamWallace_NameWilliam Wallace
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_6_Text2_Desc�Estoy seguro de que mis inventos pueden mejorar nuestras contramedidas. Sin embargo, es posible que necesite algo de orientación.
 =
@@ -13286,8 +13247,8 @@ k
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_120_Name%Kit de Selección de Emblema Superior
 D
 3Base.Buildings.Building_BronzeAge_Home_Small_3_NameCasa Pequeña
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_5_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+s
+6Base.Buildings.Building_Arabia_Workshop_Premium_5_Desc9Produce Café, Incienso, Lámparas de Aceite y Alfombras.
 I
 $Base.BuildingTypes.papyrusField_NameCampo de papiroCampos de papiro
 G
@@ -13302,10 +13263,10 @@ G
 )
 Base.Ages.IberianEra_Finish
 1050 d. C.
+
+6Base.Buildings.Building_Arabia_Irrigation_Noria_5_DescEAumenta considerablemente la irrigación de los edificios adyacentes.
 8
 !Base.Numbers.SubtractedPercentage<nobr>-{0} %</nobr>
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_5_Desc<Substantially increases the irrigation of adjacent buildings
 f
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_NameLady Six Sky
 +
@@ -13348,12 +13309,12 @@ C
 3Base.Buildings.Building_MinoanEra_Farm_Rural_2_NameGranja Rural
 �
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_DescARefina los capullos de polilla para convertirlos en hilos de seda
-D
-2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_6_NameCasa Lujosa
 �
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_Desc�Para ello necesitas llenar <style=MC>Cajas</style> con Recursos. Si todas las cajas están llenas, puedes <style=MC>mejorar</style> y recoger una <style=MC>Recompensa</style> .
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_2_NameIncense Maker
+L
+6Base.Buildings.Building_Arabia_Workshop_Incense_2_NameTaller de Incienso
 O
 3Base.Units.Unit_MinoanEra_Player_HeavyInfantry_NameVanguardia del Minotauro
 @
@@ -13515,22 +13476,22 @@ M
 6Base.Buildings.Building_Vikings_Beehive_Average_4_DescVLa colmena produce una miel deliciosa que se usa para elaborar aguamiel en la taberna.
 L
 #Base.BuildingGroups.priestHome_NameCasa del ArtesanoCasas del Artesano
+
+5Base.Buildings.Building_Arabia_Workshop_Coffee_2_DescFEl Taller de Café produce Café a partir de granos de Café y Latón.
 :
 1Base.Technologies.Technology_EarlyRome_Domus_NameDomus
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_2_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
 0
 Base.Rifts.rift.Common_NamePortal del Tiempo
-�
-"Base.Resources.hero.JohnLocke_DescySe utiliza para aumentar el Nivel de Despertar de John Locke y así desbloquear bonificaciones de batalla más poderosas.
 �
 9Base.EventStartScreens.Halloween2025EventStartDescription�Channel the power of Antimatter in the Portal and ascend to glory by earning trophies and bountiful rewards in the All Hallows' Eve Encounter event, including <style=epic>Abraham van Helsing</style> and <style=legendary>Vlad Dracula</style>!
+�
+"Base.Resources.hero.JohnLocke_DescySe utiliza para aumentar el Nivel de Despertar de John Locke y así desbloquear bonificaciones de batalla más poderosas.
 e
 ?Base.Alerts.SingleSignOn.ConflictAlreadyConnected.ConfirmButton"Contactar con atención al cliente
-U
-;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_NameZona cultural pequeña
 N
 9Base.Technologies.Technology_BronzeAge_BronzePlating_NameChapado de bronce
+U
+;Base.Buildings.Building_EarlyRome_CultureSite_Little_1_NameZona cultural pequeña
 '
 Base.Resources.gears_Name
 Engranajes
@@ -13581,12 +13542,10 @@ C
 2Base.Buildings.Building_StoneAge_Home_Small_2_NameCasa Pequeña
 M
 ABase.EquipmentLevelUpChances.equipment_level_up_chance.Tiny2_NameDiminuto
-I
-+Base.UnitStats.unit_stat.FocusRegen_Percent% Regeneración de Enfoque
+>
++Base.UnitStats.unit_stat.FocusRegen_Percent% Carga Regular
 l
 >Base.Alerts.SingleSignOn.ConflictAlreadyConnected.CancelButton*Saltar inicio de sesión en redes sociales
-Y
-ABase.Technologies.Technology_KingdomOfSicily_MarketEconomics_NameEconomía de mercado
 }
 (Base.NegotiationRetreatDialog.DialogTextQ¿Seguro que quieres parar la negociación? Perderás todo lo que ya has gastado.
 P
@@ -13897,10 +13856,10 @@ L
 "Base.BuilderSlotsPopup.DescriptionmTodas las ranuras de construcción están ocupadas. ¡Desbloquea más o sáltate las construcciones actuales!
 Y
 ?Base.Buildings.Building_ClassicGreece_CultureSite_Little_1_NameZona cultural pequeña
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_5_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest1_QuestStart_Text1_Desc2Y... lo has conseguido. ¡La carrera ha comenzado!
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_5_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 V
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_NameBarracón de Infantería
 �
@@ -13935,8 +13894,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_26_NameNivel 26
 �
 DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_4_2_Desc\Este Kit de Selección te permite elegir entre Puntos de Investigación y Puntos de Alianza.
-�
-Base.Resources.dirham_DesckDirham are an essential resource for city development in Arabia. They are generated automatically in Homes.
+�
+Base.Resources.dirham_Desc|Los Dírhams son un recurso esencial para el desarrollo de las ciudades en Arabia. Se generan automáticamente en las Casas.
 �
 (Base.Resources.UpgradeToken_Mjolnir_Desc�Este recurso poco común te permite mejorar la reliquia <nobr><style=legendary>Mjolnir</style></nobr>.<br>Puede obtenerse junto con polvo de reliquia como recompensa en ciertos eventos.
 �
@@ -14109,12 +14068,12 @@ E
 @Base.LeaderboardEventPanel.TaskInfo.EquipmentUpgrade_Description=¡Gasta Ascuas y mejora el Equipamiento para recibir Trofeos!
 2
 Base.HeroPanel.ManageRelicsGestionar Reliquias
-n
-2Base.Buildings.Building_Arabia_Home_Premium_5_Desc8Produces a ton of Dirham and adds 3 Workers to your city
+{
+2Base.Buildings.Building_Arabia_Home_Premium_5_DescEProduce una tonelada de Dírhams y añade 3 trabajadores a tu ciudad.
 �
 %Tutorial.WonderTutorial.WonderEffects�Sirven de inspiración a tu población. Cada <style=MC>MARAVILLA</style> tiene un <style=MC>EFECTO PODEROSO</style> que <style=MC>BENEFICIA</style> a tu población.​
-"
-Base.Resources.brass_NameBrass
+#
+Base.Resources.brass_NameLatón
 ~
 5Base.Buildings.Building_EarlyRome_Home_Average_2_DescEProduce una gran pila de monedas y añade 2 trabajadores a tu ciudad.
 c
@@ -14186,8 +14145,8 @@ a
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_2_3_Name$Competencia de Fichas con Trisqueles
 ^
 >Base.Buildings.Building_EarlyGothicEra_Barracks_Cavalry_2_DescDesbloquea Caballeros Nobles
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_4_NameLuxurious Workshop
+G
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_NameTaller Lujoso
 ,
 Base.Relics.BaguaMirror_NameEspejo Bagua
 �
@@ -14314,10 +14273,10 @@ Y
 +Base.ShopPopup.Pages.world_fair_budget_pack*Paquete Presupuestario de la Feria Mundial
 f
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_30_Name#Kit de Selección de Emblema Común
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 I
 8Base.Buildings.Building_HighMiddleAges_Home_Small_3_NameCasa Pequeña
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_2_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
 .
 $Base.OptionsPopup.AccountTabHeadlineCuenta
 Q
@@ -14487,8 +14446,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_3_Text5_Desc
 bBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_GreatSphinx_3_QuestFinish_Text1_Desc�Estoy asombrado. Nunca me imaginé un logro tan extraordinario. ¡Realmente impresionante! Sin duda te mantendré informado para futuras aventuras. Hasta que nos volvamos a ver.
 �
 6Base.Buildings.Building_Vikings_Workshop_Tavern_4_DescGLa Taberna produce Hidromiel y Bacalao Seco a partir de Miel y Pescado.
--
-Base.BazaarOffersPanel.BuySlotUnlock Slot
+4
+Base.BazaarOffersPanel.BuySlotDesbloquear Ranura
 *
 Base.IncidentPanel.SolveButtonResolver
 �
@@ -14616,8 +14575,8 @@ f
 (Base.BattleAbilityPanel.NoTargetSelected:Al menos una unidad ha de verse afectada por la habilidad.
 �
 FBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_18_Text7_DescCAunque hayamos ganado, mantengámonos alerta. Tesla podría volver.
-H
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_NameOil Lamp Maker
+W
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_NameTaller de Lámparas de Aceite
 E
 5Base.Buildings.Building_RomanEmpire_Farm_Rural_1_NameGranja Rural
 n
@@ -14648,8 +14607,8 @@ k
 3Base.QuestlinesPanel.WinBattleWaveWithCommanderTaskNGana {0} oleada de combate, utilizando la habilidad del comandante <b>{1}</b>.OGana {0} oleadas de combate, utilizando la habilidad del comandante <b>{1}</b>.
 N
 +Base.Resources.hero.LudwigVanBeethoven_NameEsencia de Ludwig van Beethoven
-W
-6Base.Buildings.Building_Arabia_Merchant_Premium_1_DescProduce un montón de dirham.
+f
+6Base.Buildings.Building_Arabia_Merchant_Premium_1_Desc,Produce una gran cantidad de Dinares de Oro.
 �
 KBase.AbilityDescriptions.hero_battle_ability_description.LeifErikson_1_Name�<style=ability_label>Penalización</style>Leif Erikson maldice a la unidad enemiga más cercana, anulando cualquier efecto positivo que tenga, reduciendo su defensa en <style=basestat>{defense_debuff}</style> de su ataque durante <style=basestat>{defense_debuff_duration}</style> y ordena a todos los aliados que les ataquen.
 �
@@ -14667,10 +14626,10 @@ j
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_70_Name%Kit de Selección de Emblema Superior
 O
 0Base.Abilities.hero_battle_ability.YiSunSin_NameBombardeo de Barcos Tortuga
-<
-0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 �
 Base.Units.Unit_RamsesII_Desc�Las llanuras temblarán bajo las ruedas de los carros, pues Ramsés el Grande ha unido su poderío al tuyo. Este faraón del siglo XIII a.C. se hizo famoso por sus campañas contra los hititas, los nubios y los libios. La Batalla de Kadesh contra los hititas dio lugar a uno de los primeros tratados de paz de la historia.<br><br>Además de sus logros militares, Ramsés II fue un prolífico constructor que encargó grandes estructuras como los templos de Abu Simbel y el Ramesseum, dejando su huella en el mundo para siempre.<br><br>Ramsés II es recordado como el mayor faraón del mayor reino de Egipto, y sus 66 años de reinado dieron forma al patrimonio cultural y arquitectónico de Egipto. Los griegos le llamaban Ozymandias, nombre con el que fue inmortalizado en la poesía. Cuando veas a Ramsés, ¡ponte de rodillas!
+<
+0Base.Technologies.Technology_Mayas_Xocolatl_NameXocolatl
 V
 >Base.Technologies.Technology_HighMiddleAges_TimberFraming_NameEnsamblaje de Madera
 K
@@ -14739,8 +14698,8 @@ e
 <Base.Buildings.Building_AgeOfTheFranks_Barracks_Siege_1_Desc%Desbloquea las catapultas carolingias
 �
 <Base.Buildings.Building_KingdomOfSicily_Farm_Domestic_2_DescNProduce una gran cantidad de comida con el paso de un largo periodo de tiempo.
-�
-Base.Resources.oil_DeschOil is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+�
+Base.Resources.oil_DescrEl Aceite es un recurso esencial que se necesita para fabricar recursos refinados. Se puede comerciar en el Bazar.
 Y
 <Base.Buildings.Building_ByzantineEra_Barracks_Cavalry_1_DescDesbloquea las trapecitas
 �
@@ -14782,8 +14741,8 @@ F
 ,Base.WorldWondersOverviewPanel.RequestsTitleSolicitudes
 V
 :Base.Buildings.Building_IberianEra_Barracks_Cavalry_2_NameBarracón de Caballería
-�
-.Base.ShopOffers.City_Arabia_StarterPack_1_DescSKickstart your Arabian Event City with this selection of highly demanded resources!
+�
+.Base.ShopOffers.City_Arabia_StarterPack_1_DescUImpulsa tu Ciudad del Evento Arábigo con esta selección de recursos muy demandados.
 i
 BBase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_250_Name#Kit de Selección de Emblema Común
 U
@@ -14827,10 +14786,10 @@ I
 5Base.Abilities.hero_battle_ability.BessieColeman_NameBengalas de Humo
 E
 9Base.Buildings.Building_EarlyRome_Workshop_Artisan_1_NameArtesano
-2
-Base.Resources.hero.Menes_NameEsencia de Menes
 e
 EBase.Technologies.Technology_HighMiddleAges_SandstoneFoundations_NameCimientos de Piedra Arenisca
+2
+Base.Resources.hero.Menes_NameEsencia de Menes
 Q
 #Base.BuildingGroups.stoneMason_NameTaller de CanteríaTalleres de Cantería
 3
@@ -14851,10 +14810,10 @@ H
 6Base.Units.Unit_CurrentEra_ChichenItza_MayaArcher_NameArqueros mayas
 z
 0Base.Units.Unit_RomanEmpire_Player_Princeps_DescFLas unidades de infantería son más eficaces en las filas delanteras.
-@
-/Base.Buildings.Building_Egypt_Home_Small_6_NameCasa Pequeña
 �
  Base.Resources.iron_pendant_DescaLos Colgantes de Hierro son bienes que se pueden producir en los Artesanos - Nivel 2 en adelante.
+@
+/Base.Buildings.Building_Egypt_Home_Small_6_NameCasa Pequeña
 �
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_1_Text2_Desc�Nuestro adversario probablemente sea Nikola Tesla. Ya me he enfrentado a él antes, es muy persistente y tiene una mente malvada.
 :
@@ -14911,8 +14870,8 @@ g
 GBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_15_Text11_Desci¿Qué ha pasado aquí? Hemos oído la explosión resonar por los pasillos y hemos venido inmediatamente.
 �
 bBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_SahilPalace_3_QuestFinish_Text2_Desc�Nuestras cámaras diplomáticas ahora resuenan con promesas de alianza y comercio, trayendo nueva fuerza a nuestro imperio. ¡Tu nombre será honrado en nuestros códices sagrados y recitado en las canciones de nuestros más grandes guerreros!
-L
-6Base.Buildings.Building_Arabia_Merchant_Premium_4_NameLuxurious Merchant
+J
+6Base.Buildings.Building_Arabia_Merchant_Premium_4_NameMercader de Lujo
 )
  Base.UnitColors.unit_color.greenVerde
 �
@@ -14933,8 +14892,8 @@ V
 Base.HeroClass.ManipulatorManipulador
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Achilles_30_Name�<style=ability_label>Golpe Cuerpo a Cuerpo | Mejora | Recuperación</style> Desata una fuerza extraordinaria golpeando al objetivo actual e infligiendo un <style=basestat>{dmg_percentage}</style> de daño. Luego, Aquiles obtiene una oleada de rapidez, aumentando su velocidad de ATQ en <style=basestat>{atk_speed_percentage}</style> durante <style=basestat>{atk_speed_duration}</style>, curándose un <style=basestat>{heal_percentage}</style> de su HP máximo, y aumentando su DEF en <style=basestat>{def_percentage}</style> durante <style=basestat>{def_duration}</style>. En la <color=#FFCF2B>Caída de Troya</color>, Aquiles obtiene <style=basestat>+25% ATQ</style> y su <style=basestat>Habilidad</style> se recarga <style=basestat>2s</style> más rápido.
-�
-,Base.Resources.rift_token_arabia_common_DescPThis <style=rare>rare</style> resource is used to power the Arabian Time Portal.
+�
+,Base.Resources.rift_token_arabia_common_DescYEste recurso <style=rare>raro</style> se utiliza para activar el Portal de Tiempo Arábe.
 �
 +Base.Resources.hero.MargaretIOfDenmark_Desc�Se utiliza para aumentar el Nivel de Despertar de Margarita I de Dinamarca y así desbloquear bonificaciones de batalla más poderosas.
 9
@@ -15183,8 +15142,8 @@ F
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_5_Name�<style=ability_label>Pisotón| Aturdir</style>Leónidas da un pisotón en el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de un alcance de <style=basestat>{range}</style> y aturdiendo a su objetivo actual durante <style=basestat>{stun_duration}</style>.
 �
 Base.Resources.hero.Inanna_DescuSe utiliza para aumentar el Nivel de Despertar de Inanna y así desbloquear bonificaciones de batalla más poderosas.
-�
-Base.Resources.oil_lamp_DesctOil Lamps are a refined resource. They can be produced at Oil Lamp Makers and Luxurious Workshops - Level 4 upwards.
+�
+Base.Resources.oil_lamp_Desc�Las lámparas de aceite son un recurso refinado. Se pueden producir en talleres de fabricación de lámparas de aceite y talleres lujosos de nivel 4 o superior.
 -
 Base.Units.Unit_Blackbeard_Name
 Barbanegra
@@ -15205,7 +15164,7 @@ M
 �
 ^Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_GreatSphinx_QuestStart_Text1_Desc�Tus avances son realmente extraordinarios. La <style=MC>Gran Esfinge</style> será la prueba de tus logros y sé con certeza que será el lugar perfecto para nuestra <style=MC>exhibición comercial</style>.
 B
-6Base.Buildings.Building_Arabia_Merchant_Average_4_NameMerchant
+6Base.Buildings.Building_Arabia_Merchant_Average_4_NameMercader
 H
 (Base.ResearchTreePanel.ResearchCompleted¡Investigación completada!
 H
@@ -15269,12 +15228,12 @@ M
 Camponegro
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_5_Text4_DescX¿Son seguros? ¿No hay trucos? Ella parece sorprendida mientras la golosina se derrite.
-D
-2Base.Buildings.Building_Arabia_Home_Premium_5_NameLuxurious Home
+A
+2Base.Buildings.Building_Arabia_Home_Premium_5_NameCasa Lujosa
 h
 ,Base.LeaderboardEventPanel.ParticipationInfo8Necesitas tener {0} puntos para participar en el evento.
-�
-Base.Resources.brass_DescjBrass is an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+�
+Base.Resources.brass_DescnEl latón es un recurso esencial necesario para fabricar recursos refinados. Puede intercambiarse en el bazar.
 �
 ;Base.StoryText.Story_DesertDelta_5_7_BattleStart_Text3_Desc`Pero no has perdido a Einstein. Todavía no. El viejo nos trajo aquí porque creía en nosotros.
 ?
@@ -15376,8 +15335,8 @@ B
 ABase.Subscriptions.EVENT_CITY_PRODUCTION_DURATION_Egypt_Promotion8¡Consigue el Favor de Cleopatra y duplica tus reservas!
 $
 Base.Resources.barrel_NameBarril
-j
-6Base.Buildings.Building_Arabia_Workshop_Premium_4_Desc0Produces Coffee, Incense, Oil Lamps and Carpets.
+s
+6Base.Buildings.Building_Arabia_Workshop_Premium_4_Desc9Produce Café, Incienso, Lámparas de Aceite y Alfombras.
 W
 ;Base.Technologies.Technology_IberianEra_GlacierMastery_NameDominio de los glaciares
 �
@@ -15471,8 +15430,8 @@ J
 'Base.MergeItems.WorldFair_Bronze_3_NameArtefacto - Nivel 3
 �
 PBase.AbilityDescriptions.hero_battle_ability_description.GeorgeWashington_1_Name�<style=ability_label>Pisotón | Penalización | Vínculo Espiritual</style> Pisa con fuerza el suelo, infligiendo un <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos en un rango de <style=basestat>{range}</style> y reduciendo su precisión en <style=basestat>{accuracy_percentage}</style> durante <style=basestat>{duration}</style>. Además, vincula los espíritus de todas las unidades aliadas durante <style=basestat>{duration_link}</style>. Las unidades con vínculo espiritual comparten el daño recibido entre ellas.
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_6_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 �
 ABase.InventoryItems.SelectionKit_TeslaStorm_CrestEnhanced_20_DescWEste Kit de Selección te permite elegir entre Emblemas Mejorados de distintos colores.
 ,
@@ -15487,12 +15446,12 @@ H
 *Base.SelectionKitSelection.RewardsSelectedRecompensas a elegir ({0})
 6
 #Base.Alerts.AccountSoftDeletedTitleBorrando cuenta
+4
+Base.Event.EventStartsInEl Evento inicia en {0}.
 C
 8Base.Technologies.Technology_ClassicGreece_Concrete_NameCemento
 ^
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text10_NameLeif Erikson
-/
-Base.Event.EventStartsInEvent starts in {0}
 �
 HBase.AbilityDescriptions.hero_battle_ability_description.Leonidas_1_Name�<style=ability_label>Pisotón</style>Leónidas pisa el suelo, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todos los enemigos dentro de una distancia de <style=basestat>{range}</style>.
 P
@@ -15627,8 +15586,8 @@ X
 &Base.BuildingGroups.clayProcessor_NameProcesador de ArcillaProcesadores de Arcilla
 T
 6Base.AllianceChatNotifications.Options.PlayersActivityActividad de los Jugadores
-�
-Base.Resources.coffee_DesclCoffee is a refined resource. It can be produced at Coffee Makers and Luxurious Workshops - Level 1 upwards.
+�
+Base.Resources.coffee_DescrEl café es un recurso refinado. Se puedeN producir en Talleres de Café y Talleres Lujosos, a partir del Nivel 1.
 8
 ,Base.Factions.Faction_MinoanEra_Minoans_NameMinoicos
 s
@@ -15964,8 +15923,8 @@ H
 Base.Units.Unit_TomoeGozen_NameTomoe Gozen
 �
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text13_DescTUna sola flecha de mi arco y mis manos, así que no es tan ordinario, mi bella dama.
-�
-3Base.Buildings.Building_Arabia_City_CityHall_2_DescfThe Great Hall is the centre of your city. It continiously generates a small amount of Dirham for you.
+�
+3Base.Buildings.Building_Arabia_City_CityHall_2_DesciEl Gran Salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de Dírhams para ti.
 =
 /Base.TreasureHuntDifficulties.Difficulty_4_Name
 Veterano I
@@ -16041,8 +16000,8 @@ L
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_NameCantera de Obsidiana
 y
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text9_Desc6Esperaba más oro y terciopelo para algo tan elegante.
-D
-&Base.Resources.hero.HarunAlRashid_NameEssence of Harun al-Rashid
+E
+&Base.Resources.hero.HarunAlRashid_NameEsencia de Harún al-Rashid
 6
  Base.Resources.iron_pendant_NameColgante de hierro
 e
@@ -16118,8 +16077,8 @@ BBase.ShopOffers.shop_offer.LegendaryHeroDraw_FollowUp_Offer_9_Name6¡Materiale
 "Base.TeslaStormsPanel.CurrentStageFase Actual
 @
 *Base.AllianceSearch.CancelApplicationTitleCancelar solicitud
-:
-)Base.IngameEvents.TreasureHuntLeague_NameTreasure Hunt
+<
+)Base.IngameEvents.TreasureHuntLeague_NameCaza del Tesoro
 �
 6Base.Buildings.Building_EarlyRome_City_CityHall_1_DesciEl gran salón es el centro de tu ciudad. Genera continuamente una pequeña cantidad de monedas y comida.
 R
@@ -16233,10 +16192,12 @@ S
 'Base.ChangePasswordPopup.RepeatPasswordRepetir contraseña
 '
 "Tutorial.HeroMetaReportPopup.TierFF
+�
+
+"Base.Units.Unit_HarunAlRashid_Desc�
+¡Los patios iluminados por la luna de Bagdad vuelven a brillar, pues Harun al-Rashid ha llegado! Este gobernante abasí del siglo VIII presidió la Edad de Oro del Islam, cuando Bagdad era la joya del mundo y el conocimiento fluía como el Tigris y el Éufrates. El reinado de Harun es un tapiz de lujo, sabiduría e intriga: su palacio rivalizaba con cualquiera del mundo, y su generosidad hacia los pobres y los eruditos se convirtió en leyenda.<br><br>Harun al-Rashid fundó la legendaria Casa de la Sabiduría, donde los eruditos tradujeron textos griegos y realizaron descubrimientos revolucionarios en matemáticas, medicina y astronomía. Se dice que solía disfrazarse de plebeyo para caminar por las calles de Bagdad por la noche, escuchando las preocupaciones de su pueblo y repartiendo justicia. Sus regalos diplomáticos a Carlomagno, incluido un elefante llamado Abul-Abbas, se volvieron legendarios. Más tarde, fue inmortalizado en los relatos de Las mil y una noches.<br><br>Su legado no es de mera extravagancia: la Bagdad de Harun era el corazón palpitante de un imperio culturalmente dinámico y cosmopolita. Dentro de Heroes of History, Harun siempre puede encontrarse intercambiando acertijos con Scheherazade y resolviendo disputas con un movimiento de su enjoyada mano.
 l
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_Desc2Mejora la irrigación de los edificios adyacentes.
-�	
-"Base.Units.Unit_HarunAlRashid_Desc�	The moonlit courts of Baghdad shimmer once more, for Harun al-Rashid has arrived! This 8th-century Abbasid ruler presided over the Islamic Golden Age, when Baghdad was the jewel of the world and knowledge flowed like the Tigris and Euphrates. Harun's reign is a tapestry of luxury, wisdom, and intrigue - his palace rivaled any in the world, and his generosity to the poor and learned became the stuff of legend.<br><br>Harun al-Rashid established the legendary House of Wisdom, where scholars translated Greek texts and made groundbreaking discoveries in mathematics, medicine, and astronomy. The stories say he would disguise himself as a commoner and walk Baghdad's streets at night, listening to his people's concerns and dispensing justice. His diplomatic gifts to Charlemagne, including an elephant named Abul-Abbas, became the stuff of legend. Later on he was immortalized in the tales of 'One Thousand and One Nights'.<br><br>His legacy is not one of mere extravagance: Harun's Baghdad was the beating heart of a culturally dynamic, cosmopolitan empire. Within the Heroes of History, Harun can always be found swapping riddles with Scheherazade and settling disputes with a wave of his jeweled hand.
 '
 "Tutorial.HeroMetaReportPopup.TierDD
 @
@@ -16277,8 +16238,8 @@ l
 9Base.StoryText.Story_DesertDelta_4_6_BattleEnd_Text4_Desc/Lo único que podemos hacer. Luchar para salir.
 :
 "Base.Resources.hero.AnneBonny_NameEsencia de Ana Bonny
-0
- Base.Resources.coffee_beans_NameCoffee Beans
+3
+ Base.Resources.coffee_beans_NameGranos de Café
 P
 9Base.Technologies.Technology_FeudalAge_DomesticSheep_NameOvejas domesticadas
 &
@@ -16379,10 +16340,10 @@ B
 MBase.AbilityDescriptions.hero_battle_ability_description.JaguarWarrior_1_Name�<style=ability_label>Pisotón</style>Balancea su espada en un movimiento circular, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>.
 �
 3Tutorial.WonderRequestListIntroTutorial.HelpPlayers�Puedes <style=MC>AYUDAR</style> a otros jugadores hasta 5 veces al día. Hacerlo te otorgará valiosísimos <style=MC>ENGRANAJES</style> que puedes utilizar para <style=MC>INVENTAR</style>!
+�
++Base.EventType.LeaderboardEvent_Description�Completa acciones específicas del juego para ascender en la clasificación y recibir recompensas especiales al final del evento.
 �
 1Base.EventPass.JourneyOfTheTitanicMoreContentText�¡Cuando alcances el punto de control final, prepárate para continuar tu viaje en el evento, ya que todas las recompensas se reinician!<br><br>Después de completar una vez la ruta del Gran Premio, los Puntos de Progreso necesarios para desbloquear Grandes Premios aumentan de <b>8</b> a <b>10</b>. En todas las completaciones posteriores, los Puntos de Progreso requeridos aumentan aún más, de <b>10</b> a <b>12</b>.<br><br>¡Empieza a recolectar premios una vez más, con <style=epic>Reliquias</style> aún más épicas y otra Reliquia Legendaria <nobr><style=legendary>El Mecanismo de Anticitera</style></nobr> disponible!
-�
-+Base.EventType.LeaderboardEvent_DescriptionsComplete specific game actions to rise in the leaderboard and receive some special rewards at the end of the event.
 ?
 *Base.Units.Unit_EarlyRome_Huns_Attila_NameJinetes de Sangre
 o
@@ -16391,10 +16352,10 @@ DBase.InventoryItems.Selection_Kit_AllianceIncident_Research_1_3_Name'Kit de Se
 $Base.IngameEvents.SeasonPass_11_NameBases de la Libertad
 F
 1Base.Questgivers.Questgiver_BenjaminFranklin_NameBenjamin Franklin
+
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_DescEAumenta considerablemente la irrigación de los edificios adyacentes.
 $
 Base.Generic.OwnedPropiedad: {0}
-v
-6Base.Buildings.Building_Arabia_Irrigation_Noria_6_Desc<Substantially increases the irrigation of adjacent buildings
 Y
 CBase.Units.Unit_ByzantineEra_ByzantineEmpire_ByzantineCatapult_NameBallesta Bizantina
 �
@@ -16443,8 +16404,8 @@ T
 9Base.StoryText.Story_DesertDelta_7_1_BattleEnd_Text3_DescEEsto es Esparta. Muero defendiéndola. Tal es el decreto del Destino.
 =
 !Base.BattleStatsPanel.BattleStatsEstadísticas de Batalla
-W
-Base.Event.EventConcluded:The event has concluded, yet a new chance will come along.
+`
+Base.Event.EventConcludedCEl evento ha concluido, pero pronto llegará una nueva oportunidad.
 ]
 >Base.Technologies.Technology_MinoanEra_MysticBattleChants_NameCantos de batalla místicos
 T
@@ -16464,8 +16425,10 @@ T
 Carlomagno
 5
 )Base.Resources.DYN_WONDER_material_1_NameMaterial
-�
-&Base.FallOfTroyInfoPopup.UpperLaneInfo�<style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>sanarán</style> su propia Vida y convertirán las curaciones excedentes en <style=basestat_dark>Puntos de Escudo</style>. <br><br>Tienen debilidad contra <sprite name=status_effect_poison> <style=basestat_dark>Daño por Veneno</style> y los <style=basestat_dark>Ataques Individuales</style> les infligen un 75% de daño adicional. <br>Inmunes a Aturdimiento, efectos de Control Mental y Daño por Sangrado.
+�
+&Base.FallOfTroyInfoPopup.UpperLaneInfo�Las <style=basestat_dark>Barricadas</style> en este carril <style=basestat_dark>curarán</style> su propia salud y convertirán las curaciones excedentes en <style=basestat_dark>Puntos de Escudo</style>.
+<br><br>Son vulnerables al <sprite name=status_effect_poison> <style=basestat_dark>Daño por Veneno</style>, y los <style=basestat_dark>Ataques Individuales</style> les infligen un 75% de daño adicional.
+<br>Son inmunes a Aturdimiento, Control Mental y Daño por Sangrado.
 �
 <Base.Units.Unit_CurrentEra_PalaceOfAachen_ImperialGuard_Desc�Los guardias imperiales están muy especializados y son más poderosos que las unidades de infantería normales. Sus estadísticas aumentan automáticamente en función de tu edad actual.
 [
@@ -16611,8 +16574,8 @@ A
 9Base.StoryText.Story_DesertDelta_2_9_BattleEnd_Text2_DescHEsperaba algo mejor de ti, llamado Gran Rey. No vuelvas a decepcionarme.
 H
 "Base.Resources.material_naval_NameMaterial NavalMateriales Navales
-�
-6Base.EventStartScreens.EventCityArabiaStartDescriptionoRaise your empire in the river valleys of the Arabian Peninsula and get the chance to win {0} exclusive heroes!
+�
+6Base.EventStartScreens.EventCityArabiaStartDescription�¡Construye tu imperio en los valles fluviales de la península arábiga y consigue la oportunidad de ganar {0} héroes exclusivos!
 (
 Base.Units.Unit_Achilles_NameAquiles
 �
@@ -16713,8 +16676,8 @@ Recompensa
 880 a. C.
 u
 1Base.Buildings.Building_China_Home_Average_3_Desc@Produce un montón de Wu Zhu y añade 5 Trabajadores a tu Ciudad
-"
-Base.Resources.camel_NameCamel
+$
+Base.Resources.camel_NameCamello
 +
 "Base.BazaarOffersPanel.NavBarTitleBazar
 k
@@ -16728,13 +16691,13 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_29_NameNivel 2
 �
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_8_Text1_DescJEstamos atrapados en un bucle, ¿no? Como un baile que no podemos detener.
 E
-2Base.UnitStats.unit_stat.FocusRegen_Percent_Abbrev% ENFOQUE REGEN
+2Base.UnitStats.unit_stat.FocusRegen_Percent_Abbrev% CARGA REGULAR
 ]
 >Base.Buildings.Building_AgeOfTheFranks_Barracks_Cavalry_1_DescDesbloquea a los caballeros
 �
  Base.UnlockRequirementsPopup.PvphLucha contra otros jugadores, asciende en la clasificación de la Arena y consigue valiosas recompensas.
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_6_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_6_NameFabricante de Alfombras
 :
 Base.Resources.hero.Geisha_NameEsencia de Yoshino Dayu
 @
@@ -16792,14 +16755,14 @@ s
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_Desc7Produce una pequeña cantidad de Comida en poco tiempo.
 d
 =Base.ShopPopup.SeasonalEventJourneyThroughSaharaBundlesHeader#¡Descubre los Tesoros del Sáhara!
-W
-8Base.AllianceApplicationMessages.AllianceRejectionHeaderDecline the Application of:
+U
+8Base.AllianceApplicationMessages.AllianceRejectionHeaderRechazar la solicitud de:
 1
 !Base.UnlockableFeatures.EquipmentEquipamiento
+C
+ Base.AlliancePanel.NoInvitesSentNo se han enviado invitaciones.
 �
 6Base.Incidents.Incident_BronzeAge_Capital_Goods_1_DesccSe rumorea que este laberinto subterráneo esconde tesoros realmente únicos. ¡Vamos a explorarlo!
-B
- Base.AlliancePanel.NoInvitesSentNo Invites have been sent out.
 C
 Base.PvpEnergyPopup.Headline#¡Consigue más fichas de la arena!
 �
@@ -16842,10 +16805,10 @@ c
 Base.Generic.NextInSiguiente {0} en {1}
 �
 1Base.EventPass.JourneyOfTheTitanicBuyGoldPassText�Participa para ganar recompensas exclusivas y conseguir la épica Reliquia <nobr><style=epic>León Guardián</style></nobr> ¡inmediatamente!
-�
-!Base.Resources.hero.Achilles_DescvSe utiliza para aumentar el Nivel de Despertar de Aquiles y así desbloquear bonificaciones de batalla más poderosas.
 �
 8Base.Incidents.Incident_EarlyRome_Capital_GoldOre_1_DescJ¡El propietario de esta carretilla rota ofrece monedas a quien la repare!
+�
+!Base.Resources.hero.Achilles_DescvSe utiliza para aumentar el Nivel de Despertar de Aquiles y así desbloquear bonificaciones de batalla más poderosas.
 B
 )Base.RewardTypes.UnlockFeatureReward_NameNueva característica
 �
@@ -16897,23 +16860,23 @@ D
 [
 BBase.Buildings.Building_HighMiddleAges_CultureSite_Moderate_1_NameZona Cultural Mediana
 L
+6Base.Buildings.Building_Arabia_Workshop_Incense_5_NameTaller de Incienso
+L
 7Base.Technologies.Technology_FeudalAge_HealingMead_NameAguamiel Curativo
 �
 <Base.Resources.event_milestone_rally_of_heroes_trophies_DescKResuelve la tarea indicada para ganar Puntos de Trofeo en esta competencia.
-G
-6Base.Buildings.Building_Arabia_Workshop_Incense_5_NameIncense Maker
-$
-Base.Resources.coffee_NameCoffee
+#
+Base.Resources.coffee_NameCafé
 k
 =Base.WorldWonderGeneric.WonderContributionNotAvailableAnymore*Esta contribución ya no está disponible.
 L
 "Base.Resources.material_arena_NameMaterial de ArenaMateriales de Arena
 o
 OBase.IngameEvents.MilestoneEvent_JourneyThroughSahara_3_RedTeslaTakedown_1_NameEliminación Tesla Llameante
+]
+:Base.AllianceApplicationMessages.AllianceApplicationHeaderSolicitar ingreso a la Alianza:
 S
 DBase.Questlines.Questline_EventCity_Vikings_Provisions_Lagertha_NameProvisiones
-Q
-:Base.AllianceApplicationMessages.AllianceApplicationHeaderApply for Alliance:
 O
 *Base.TreasureHuntNegotiationPopup.Headline!¡Santuario de Curación {0}/{1}!
 �
@@ -16946,8 +16909,8 @@ D
 5Base.Buildings.Building_EarlyRome_Home_Premium_1_NameCasa lujosa
 0
  Base.SubscriptionInfoPopup.TitleInformación
-&
-Base.Event.PlayEventPlay Event Now
+-
+Base.Event.PlayEventJugar el Evento Ahora
 5
  Base.AlliancePanel.AdmissionTypeTipo de admisión
 /
@@ -17158,8 +17121,8 @@ x
 cBase.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_CheopsPyramid_2_QuestStart_Text1_Desc|Ya se han sentado las bases. La próxima fase presentará mayores retos, ¡pero también dará recompensas más importantes!
 3
 Base.PlariumPlay.ShopInfo.TitleFinalizar Compra
-y
-)Base.EventType.MilestoneEvent_DescriptionLComplete specific game actions and earn valueable rewards on each milestone.
+
+)Base.EventType.MilestoneEvent_DescriptionRCompleta acciones específicas del juego y gana valiosas recompensas en cada hito.
 '
 Base.LocalizedLocales.es_ESEspañol
 �
@@ -17172,8 +17135,8 @@ S
 :Base.Buildings.Building_Mayas_Workshop_MaskSculptor_4_NameEscultor de Máscaras
 9
 $Base.HarborShopPanel.HarborShopLabelTienda del Puerto
->
-&Base.AlliancePanel.AllianceRecruitmentAlliance Recruitment
+B
+&Base.AlliancePanel.AllianceRecruitmentReclutamiento de Alianza
 {
 5Base.Buildings.Building_MinoanEra_Home_Premium_1_DescBProduce un montón de monedas y añade 2 trabajadores a tu ciudad.
 )
@@ -17405,10 +17368,10 @@ M
 %Base.RecoverAccountPopup.InvalidToken$El token proporcionado es inválido.
 )
 Base.Generic.HoursMinutes{0:h\:mm} h
+�
+5Base.Buildings.Building_Arabia_Workshop_Carpet_3_DescJEl Fabricante de Alfombras produce alfombras a partir de Mirra y Algodón.
 +
 !Base.SellBuildingPopup.SellButtonVender
-s
-5Base.Buildings.Building_Arabia_Workshop_Carpet_3_Desc:The Carpet Maker produces Carpets out of Myrrh and Cotton.
 +
 Base.Heroes.hero.IsabellaI_NameIsabel I
 M
@@ -17449,8 +17412,8 @@ l
 6Base.Buildings.Building_Arabia_Irrigation_Noria_1_Desc2Mejora la irrigación de los edificios adyacentes.
 =
  Base.Stats.initial_cooldown_NameTiempo de recarga inicial
-E
-5Base.Buildings.Building_Arabia_Workshop_Carpet_1_NameCarpet Maker
+P
+5Base.Buildings.Building_Arabia_Workshop_Carpet_1_NameFabricante de Alfombras
 b
 ?Base.Buildings.Building_MinoanEra_Barracks_HeavyInfantry_1_NameBarracón de infantería pesada
 X
@@ -17493,12 +17456,12 @@ b
 GBase.Questlines.Questline_EventCity_Vikings_ProgressTier1_Lagertha_NameViaje hacia la grandeza
 c
 +Base.EquipmentSets.equipment_set.Druid_Desc4Curación realizada <style=basestat_dark>+5%</style>
+j
+1Base.Buildings.Building_Arabia_Home_Medium_4_Desc5Produce Dírhams y añade 2 trabajadores a tu ciudad.
 O
 5Base.Buildings.Building_China_RiceFarm_Premium_6_NameGranja de Arroz Lujosa
 M
 :Base.Buildings.Building_Vikings_FishingPier_Average_4_NameMuelle de pesca
-d
-1Base.Buildings.Building_Arabia_Home_Medium_4_Desc/Produces Dirham and adds 2 Workers to your city
 D
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_2_NameCronista
 �
@@ -17531,8 +17494,8 @@ Y
 :Base.Technologies.Technology_FeudalAge_KnightTraining_NameEntrenamiento de caballeros
 C
 #Base.AllianceSetDetailsPanel.HeaderCreación de alianza {0}/{1}
-5
-"Base.Units.Unit_HarunAlRashid_NameHarun al-Rashid
+6
+"Base.Units.Unit_HarunAlRashid_NameHarún al-Rashid
 G
 6Base.Buildings.Building_Arabia_Irrigation_Small_1_NamePozo pequeño
 �
@@ -17545,8 +17508,8 @@ J
 ?Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_2_Text4_DescL¿Una prueba, tal vez? ¿Estamos aquí para demostrar paciencia o algo más?
 L
  Base.HeroPanel.RelicsNotUnlocked(Investiga {0} para desbloquear reliquias
-�
- Base.Resources.coffee_beans_DescrCoffee Beans are an essential resource which is needed to craft refined resources. It can be traded at the Bazaar.
+�
+ Base.Resources.coffee_beans_Desc�Los Granos de Café son un recurso esencial que se necesita para fabricar recursos refinados. Se pueden intercambiar en el Bazar.
 �
 9Base.WorldWondersOverviewPanel.ContributionsEmptyListTextCConsigue planos donando <sprite=6> a las maravillas de tus aliados.
 K
@@ -17569,8 +17532,8 @@ b
 ?Base.Buildings.Building_BronzeAge_Barracks_HeavyInfantry_3_NameBarracón de infantería pesada
 �
 1Base.Buildings.Building_Mayas_Home_Premium_3_DescNProduce una tonelada de Cacao y añade 2 Trabajadores y 1 Artesano a tu ciudad
-V
-DBase.AllianceApplicationMessages.AllianceApplicationCharacterCounterRemaining: {0}
+U
+DBase.AllianceApplicationMessages.AllianceApplicationCharacterCounterRestante: {0}
 -
 Base.Units.Unit_Dracula_NameVlad Drácula
 �
@@ -17648,8 +17611,8 @@ C
 OBase.AbilityDescriptions.hero_battle_ability_description.WilliamWallace_10_Name�<style=ability_label>Pisotón| Escudo| Potenciador</style>Realiza un poderoso ataque con espada, infligiendo <style=basestat>{dmg_percentage}</style> de daño a todas las unidades enemigas dentro de un rango de <style=basestat>{range}</style>. William Wallace obtiene un escudo equivalente al <style=basestat>{shield_percentage}</style> de su daño base y aumenta su DEF en un <style=basestat>{def_percentage}</style> durante <style=basestat>{duration}</style>. Además, otorga un escudo equivalente al <style=basestat>{shield_percentage_friendly}</style> de su daño base a todas las unidades aliadas dentro de un rango de <style=basestat>{range}</style>.
 o
 NBase.StoryText.Story_Questline_MinoanEra_BarracksUpgrade_QuestStart_Text3_Desc¿Qué sabes sobre la guerra?
-V
-6Base.Buildings.Building_Arabia_Workshop_Premium_2_DescProduces Coffee and Incense.
+S
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_DescProduce Café e Incienso.
 Y
 8Base.Buildings.Building_Mayas_Workshop_Chronicler_4_DescProduce Piedras Calendáricas
 3
@@ -17707,10 +17670,10 @@ DBase.Rewards.Reward_Building_BronzeAge_Collectable_SchoolV2_1_5_NameEscuela
 Base.UnitStats.unit_stat.AttackAtaque
 H
 5Base.Technologies.Technology_Egypt_PapyrusScroll_NameRollo de papiro
-I
-6Base.Buildings.Building_Arabia_Irrigation_Noria_6_NameLuxurious Noria
-y
-5Base.Buildings.Building_Arabia_Workshop_Coffee_4_Desc@The Coffee Brewer produces Coffee out of Coffee Beans and Brass.
+S
+6Base.Buildings.Building_Arabia_Irrigation_Noria_6_NameRueda Hidráulica Lujosa 
+
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_DescFEl Taller de Café produce Café a partir de granos de Café y Latón.
 �
 JBase.StoryText.Story_Questline_StoneAge_CityPlanning_QuestStart_Text1_Desc�Nuestro <style=MC>plan</style>, mi sueño, parece estar más cerca con cada edificio y cada par de manos que se une a nuestra causa.
 D
@@ -17822,13 +17785,13 @@ k
 Base.RecoverAccountPopup.HintJIntroduce el código de recuperación que atención al cliente te ha dado.
 J
 9Base.Buildings.Building_KingdomOfSicily_Home_Small_2_NameCasa pequeña
+n
+(Base.UnitStats.unit_stat.FocusRegen_DescBDefine la rapidez con la que el héroe puede activar su habilidad.
 !
 Base.Generic.ShowMe
 Muéstrame
 /
 #Base.TreasureHuntRankingPanel.ClaimReclamar
-g
-(Base.UnitStats.unit_stat.FocusRegen_Desc;Define la rapidez con la que se llena el foco de un héroe.
 O
 #Base.BuildingGroups.workerHome_NameCasa del TrabajadorCasas de Trabajador
 `
@@ -17870,10 +17833,10 @@ B
 @Base.InventoryItems.InventoryItem_Negotiation_one_more_Turn_DescFEste objeto te otorga un turno adicional en el minijuego Negociación.
 H
 7Base.Buildings.Building_RomanEmpire_Farm_Premium_1_NameGranja lujosa
-^
-8Base.Alerts.SingleSignOn.CannotOpenNativeDialog.Headline"No se ha podido conectar la cuenta
 @
 (Base.Regions.region.TeslaStormGreen_NameTormenta Tesla Verde
+^
+8Base.Alerts.SingleSignOn.CannotOpenNativeDialog.Headline"No se ha podido conectar la cuenta
 T
 !Base.TeslaStormsPanel.Description/Elige un Color para Luchar en la Tormenta Tesla
 W
@@ -18036,8 +17999,8 @@ A
 3Base.Technologies.Technology_IberianEra_Botany_Name	Botánica
 y
 Base.Resources.lava_stone_DescWGema valiosa que se requiere para investigar ciertas tecnologías del Reino de Sicilia.
-(
-Base.Heroes.hero.Saladin_NameSaladin
+)
+Base.Heroes.hero.Saladin_NameSaladino
 �
 hBase.StoryText.Story_Questline_EventCity_Vikings_WonderProgress_DragonshipEllida_3_QuestStart_Text1_Desc�¡Excepcional! ¡Tu capacidad para sobresalir en esta misión ha quedado demostrada! Sin embargo, aún quedan tareas pendientes. ¡Abordémoslas con prontitud!
 S
@@ -18076,10 +18039,10 @@ F
 ,Base.AllianceChatNotifications.Options.TitleNotificaciones de Chat
 `
 ;Base.TreasureHuntDifficultiesPanel.FinishPreviousDifficulty!¡Termina la dificultad anterior!
+~
+Base.Resources.camel_DescaLos camellos se pueden criar en granjas de camellos y necesitan para aceptar ofertas en el bazar.
 N
 :Base.Buildings.Building_ClassicGreece_Farm_Domestic_1_NameGranja de Ganado
-o
-Base.Resources.camel_DescRCamels can be raised at Camel Farms and are needed to accept Offers at the Bazaar.
 �
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text5_Desc�Juntos forjaremos un legado de iluminación que resonará en el tiempo. Tus <style=MC>éxitos</style> podrían hacer que algunos de nosotros nos uniéramos a tus futuras aventuras.
 �
@@ -18210,8 +18173,6 @@ N
 6Base.ShopPopup.Pages.journey_of_the_titanic_hero_promoProsperidad Paralela
 �
 6Base.StoryText.Story_Battle_Healer_Tutorial_Text2_Desc�Las zonas de caza me resultan tan familiares como las plantas que crecen aquí. Y en cuanto a la <style=MC>Curación</style>, mis habilidades no tienen igual. ¡Deja que me <style=MC>Una a Ti</style>!
-A
-8Base.Technologies.Technology_KingdomOfSicily_Bazaar_NameBazar
 m
 6Base.Buildings.Building_ByzantineEra_Home_Small_1_Desc3Produce monedas y añade un trabajador a tu ciudad.
 �
@@ -18248,8 +18209,8 @@ B
 7Base.Technologies.Technology_ClassicGreece_Temples_NameTemplos
 �
 ]Base.StoryText.Story_Questline_EventCity_Egypt_ProgressTier2_AbuSimbel_QuestFinish_Text1_Desc�Te has lucido superando este monumental desafío a pesar de las circunstancias adversas. ¡Ahora añadamos el toque final mejorando <style=MC>Abu Simbel</style> para alcanzar todo su potencial!
-u
-6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_Desc;The Oil Lamp Maker produces Oil Lamps out of Brass and Oil.
+�
+6Base.Buildings.Building_Arabia_Workshop_OilLamp_5_DescYEl Taller de Lámparas de Aceite produce lámparas de aceite a partir de Latón y Aceite.
 L
 5Base.Questlines.Questline_CityBuilding_MinoanEra_NameArquitecto Urbano I
 k
@@ -18292,8 +18253,8 @@ V
 7Base.ShopOffers.shop_offer.City_Conversion_Offer_1_NamePaquete Potenciador de Edad
 �
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text5_Desc�Cuando el agua vuelva a llenar el cenote sagrado y la lluvia regrese para nutrir nuestras tierras, tu nombre estará <style=MC>grabado en piedra</style> para que las generaciones lo recuerden. ¡Ten éxito, y puede que algunos de nosotros nos unamos a ti en tus esfuerzos futuros!
-E
-.Base.ShopOffers.City_Arabia_StarterPack_1_NameArabia Starter Pack
+H
+.Base.ShopOffers.City_Arabia_StarterPack_1_NamePaquete Inicial Arabia
 >
  Base.World.SpartasLastStand_NameÚltima batalla de Esparta
 �
@@ -18307,12 +18268,12 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Mozart_1_Name�<style
 Mozart orquesta una sinfonía resonante en el campo de batalla, apuntando al área con mayor concentración de enemigos para aplicar aturdimiento y daño. La sinfonía se fortalece con cada uso, alcanzando su punto máximo en el tercer uso. <br><br>Primer uso: Inflige <style=basestat>{damage_a}</style> de daño en un rango de 1, aturdiendo por <style=basestat>{duration_a}</style> <br>Segundo uso: Inflige <style=basestat>{damage_b}</style> de daño en un rango de 2, aturdiendo por <style=basestat>{duration_b}</style><br>A partir del tercer uso: Inflige <style=basestat>{damage_c}</style> de daño en un rango de 3, aturdiendo por <style=basestat>{duration_c}</style>.
 :
 #Base.Generic.NotEnoughWorkersOfTypeSe necesita {0} {1}
-t
-NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_1_Name"El Ejército de Terracota - Fase I
 P
 8Base.Technologies.Technology_Egypt_CulturalExchange_NameIntercambio cultural
 �
 7Base.QuestlinesPanel.ConstructSpecificBuildingInAgeTask;Construye <b>{0} {1}</b> de nivel <b>{2}</b> de <b>{3}</b>.;Construye <b>{0} {1}</b> de nivel <b>{2}</b> de <b>{3}</b>.
+t
+NBase.Questlines.Questline_EventCity_China_WonderProgress_TerracottaArmy_1_Name"El Ejército de Terracota - Fase I
 t
 8Base.WorldWondersDetailPanel.FindBlueprintToUnlockWonder8Encuentra un plano de esta maravilla para desbloquearla.
 V
@@ -18341,8 +18302,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc/
 #Base.RetreatWaveBattlePopup.RetreatRetirada
 B
 %Base.UnlockableFeatures.BattleSpeedUp1,5x Velocidad de Batalla
-.
-Base.AlliancePanel.SentInvitesSent Invites
+7
+Base.AlliancePanel.SentInvitesInvitaciones enviadas
 �
 %Base.Resources.hero.TribalHealer_Desc�Se utiliza para aumentar el Nivel de Despertar de Naya del Clan de la Cueva y así desbloquear bonificaciones de batalla más poderosas.
 �
@@ -18502,10 +18463,10 @@ d
 /Base.Buildings.Building_Egypt_Home_Small_6_Desc1Produce deben y añade un trabajador a tu ciudad.
 �
 JBase.AbilityDescriptions.hero_battle_ability_description.VanHelsing_1_Name�<style=ability_label>Tormenta de Rayos | Sangrar</style> Dispara rayos en la dirección de las 3 unidades enemigas más cercanas, infligiendo <style=basestat>{damage}</style> de daño a todas las unidades en la trayectoria de los rayos y haciendo sangrar a las 3 unidades enemigas más cercanas por un total de <style=basestat>{bleed_damage}</style> de daño durante <style=basestat>{bleed_duration}</style>. Prioriza a los héroes.
+[
+,Base.AlliancePanel.AllianceNoApplicationText+No has solicitado unirte a ninguna alianza.
 T
 ABase.Buildings.Building_China_ExtractionPoint_KaolinQuarry_4_DescProduce Caolín
-U
-,Base.AlliancePanel.AllianceNoApplicationText%You have not applied for an alliance.
 r
 Base.Resources.ankh_DescVLos Anjs son un recurso refinado. Se puede Producir en Orfebres - Nivel 1 en adelante.
 �
@@ -18572,10 +18533,10 @@ z
 GBase.AbilityDescriptions.hero_battle_ability_description.Shaolin_1_Name�<style=ability_label>Golpe Cuerpo a Cuerpo</style>Expulsa al objetivo actual tres veces para un total de <style=basestat>{dmg_percentage}</style> de daño.
 >
 #Base.UnitStats.unit_stat.CritChanceProb. de Golpe Crítico
+B
+,Base.Resources.rift_token_arabia_common_NameAntimateria Árabe
 =
 #Base.EventCity.PossibleRewardsLabelRecompensas por ganar:
-B
-,Base.Resources.rift_token_arabia_common_NameArabian Antimatter
 `
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_1_NameLiceo de Eruditos
 V
@@ -18647,8 +18608,8 @@ U
 3Base.Units.Unit_KingdomOfSicily_Player_Pedites_DescFLas unidades de infantería son más eficaces en las filas delanteras.
 Y
 ABase.Buildings.Building_HighMiddleAges_CultureSite_Premium_1_NameZona Cultural Lujosa
-a
-1Base.AnnouncementCenter.Event_Calendar_Disclaimer,Event dates and times are subject to change.
+l
+1Base.AnnouncementCenter.Event_Calendar_Disclaimer7Las fechas y horas del evento están sujetas a cambios.
 �
 OBase.StoryText.Story_Questline_StoneAge_ConquerAndExpand_QuestFinish_Text1_Descb¡Ave! ¿Qué tenemos aquí? ¡Una <style=MC>cultura nueva</style> enfrentándose a los desafíos!
 K
@@ -18693,8 +18654,8 @@ G
 ;Base.Alerts.SingleSignOn.AccountConnectionCancelled.Message�Si quieres conectarte a tu cuenta en otro momento, tendrás que iniciar sesión a través de los ajustes del sistema del dispositivo.
 k
 'Base.AlliancePanel.AcceptInvitationDesc@¿Está seguro de que desea aceptar la invitación de {0} a {1}?
-@
-1Base.Buildings.Building_Arabia_Home_Medium_4_NameMedium Home
+A
+1Base.Buildings.Building_Arabia_Home_Medium_4_NameCasa Mediana
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameCasa pequeña
 �
@@ -18823,8 +18784,8 @@ JBase.Questlines.Questline_EventCity_Vikings_WonderProgress_Valhalla_2_NameVal
 YBase.StoryText.Story_Questline_EventCity_China_ForbiddenCity_Start_QuestFinish_Text1_Desc�¡Progreso fantástico! Ten en cuenta que la <style=MC>Ciudad Prohibida</style> mejora tanto nuestra producción de <nobr><style=MC>Wu Zhu</style> <sprite name=resource.wu_zhu></nobr> como de <nobr><style=MC>Arroz</style> <sprite name=resource.rice_cta></nobr>, así que asegurémonos de planificar nuestra ciudad teniendo eso en cuenta.
 �
 )Base.ShopPopup.SeasonalEventHeroPromoDesc�Acelera tu travesía del evento y potencia a un héroe ascendido con Antimateria extra: ¡el doble de ganancias, el doble de gloria!
-L
-6Base.Buildings.Building_Arabia_Workshop_Premium_2_NameLuxurious Workshop
+G
+6Base.Buildings.Building_Arabia_Workshop_Premium_2_NameTaller Lujoso
 T
 'Base.BoostTypes.WonderContributionBoost)Potenciador de contribución a maravillas
 �
@@ -18864,10 +18825,10 @@ N
 4Base.Units.Unit_TreasureHunt_Blue_DonkeyRaiders_NameAsaltantes Celestiales
 V
 #Base.QuestlinesPanel.HaveHeroesTaskTen <b>{0}</b> héroe.Ten <b>{0}</b> héroes.
-F
-5Base.Buildings.Building_Arabia_Workshop_Coffee_4_NameCoffee Brewer
-(
-Base.Resources.oil_lamp_NameOil Lamp
+H
+5Base.Buildings.Building_Arabia_Workshop_Coffee_4_NameTaller de Café
+2
+Base.Resources.oil_lamp_NameLámpara de Aceite
 "
 Base.WonderTag.Arena_NameArena
 8
@@ -18880,8 +18841,8 @@ s
 -Base.Resources.rift_token_legendary_part_NamePieza de Antimateria Legendaria!Piezas de Antimateria Legendarias
 >
 ,Base.WorldWondersDetailPanel.BonusesHeadlineBonificaciones
-O
-6Base.Buildings.Building_Arabia_Merchant_Average_4_DescProduces Gold Dinars.
+Q
+6Base.Buildings.Building_Arabia_Merchant_Average_4_DescProduce Dinares de Oro.
 �
 8Base.StoryText.Story_Panganea_6_1_BattleStart_Text1_DeschEsta tierra ha tenido su corazón reducido a polvo. Tesla una vez creyó en elevar a todas las personas.
 �
