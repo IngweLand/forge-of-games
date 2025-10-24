@@ -73,7 +73,7 @@ public class StatsHubViewModelsFactory(
         var previousAlliances = playerProfile.Alliances.Where(a => a.Id != playerProfile.Player.AllianceId)
             .OrderBy(a => a.IsDeleted).ThenByDescending(a => a.RankingPoints);
         var citySnapshotDates = playerProfile.CitySnapshotDays.Order()
-            .Select(x => x.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc)).ToList();
+            .Select(x => x.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc).ToLocalTime()).ToList();
         if (citySnapshotDates.LastOrDefault() != DateTime.Today)
         {
             citySnapshotDates.Add(DateTime.Today);

@@ -21,13 +21,13 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
     private CancellationTokenSource _cityFetchCts = new();
+    private DateTime? _citySnapshotDate = DateTime.Today;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _fetchingCity;
     private bool _isDisposed;
     private PlayerProfileViewModel? _player;
     private bool _pvpChartIsExpanded;
     private bool _rankingChartIsExpanded;
-    private DateTime? _citySnapshotDate = DateTime.Today;
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
@@ -176,7 +176,8 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         try
         {
-            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id, _citySnapshotDate?.ToDateOnly());
+            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id,
+                _citySnapshotDate?.ToUniversalTime().ToDateOnly());
             if (_isDisposed)
             {
                 return;
@@ -283,12 +284,12 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         var fullProfile = await BattleUiService.CreateHeroProfile(profile);
         await OpenBattleSquadProfile(fullProfile);
     }
-    
+
     private async Task OnPvpBattleSquadClicked(BattleSquadBasicViewModel squad)
     {
         AnalyticsService.TrackSquadProfileView(AnalyticsEvents.VIEW_SQUAD_PROFILE, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PVP_BATTLE, squad.HeroUnitId);
-        
+
         var fullSquad = await BattleUiService.CreateHeroProfile(squad);
         await OpenBattleSquadProfile(fullSquad);
     }
