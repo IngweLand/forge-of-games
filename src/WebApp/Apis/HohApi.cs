@@ -135,7 +135,7 @@ public static class HohApi
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_RESOURCES, GetResourcesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_CITIES, GetCitiesAsync);
 
-        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.RELICS, GetRelicsAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.RELICS_DATA, GetRelicsDataAsync);
 
         api.MapProtobufGet("/cityPlanner/data/{cityId}", GetCityPlannerDataAsync);
         api.MapPost("/cityPlanner/sharedCities", ShareCityAsync);
@@ -253,10 +253,10 @@ public static class HohApi
         await WriteToResponseAsync(context, cities, services.ProtobufSerializer);
     }
 
-    private static async Task GetRelicsAsync([AsParameters] HohServices services,
+    private static async Task GetRelicsDataAsync([AsParameters] HohServices services,
         HttpContext context)
     {
-        var relics = await services.RelicService.GetRelicsAsync();
+        var relics = await services.RelicCoreDataService.GetRelicsAsync();
         await WriteToResponseAsync(context, relics, services.ProtobufSerializer);
     }
 

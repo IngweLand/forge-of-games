@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
-public class RelicService(
+public class RelicCoreDataService(
     IHohCoreDataRepository hohCoreDataRepository,
     IRelicDtoFactory relicDtoFactory,
     IAppCache appCache,
-    ICacheKeyFactory cacheKeyFactory) : IRelicService
+    ICacheKeyFactory cacheKeyFactory) : IRelicCoreDataService
 {
     public Task<IReadOnlyCollection<RelicDto>> GetRelicsAsync()
     {

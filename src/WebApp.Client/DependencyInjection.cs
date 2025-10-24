@@ -41,7 +41,7 @@ internal static class DependencyInjection
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICampaignService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ITreasureHuntService>(services, baseAddress, refitSettings);
-        AddRefitProtobufApiClient<IRelicService>(services, baseAddress, refitSettings);
+        AddRefitProtobufApiClient<IRelicCoreDataService>(services, baseAddress, refitSettings);
 
         var refitJsonSettings = new RefitSettings
         {

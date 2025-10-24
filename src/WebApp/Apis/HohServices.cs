@@ -23,7 +23,7 @@ public class HohServices(
     ICampaignService campaignService,
     ITreasureHuntService treasureHuntService,
     IWikipediaService wikipediaService,
-    IRelicService relicService,
+    IRelicCoreDataService relicCoreDataService,
     ICommandCenterSharingService commandCenterSharingService,
     IEquipmentService equipmentService,
     IMediator mediator)
@@ -47,7 +47,7 @@ public class HohServices(
     public ILogger<HohServices> Logger { get; } = logger;
     public IMediator Mediator { get; } = mediator;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;
-    public IRelicService RelicService { get; } = relicService;
+    public IRelicCoreDataService RelicCoreDataService { get; } = relicCoreDataService;
     public IResearchService ResearchService { get; } = researchService;
     public ITreasureHuntService TreasureHuntService { get; } = treasureHuntService;
     public IUnitService UnitService { get; } = unitService;

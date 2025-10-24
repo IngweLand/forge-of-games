@@ -19,14 +19,14 @@ public class HohCoreDataCache : IHohCoreDataCache
     private readonly Lazy<Task<EquipmentDataDto>> _equipmentData;
     private readonly IEquipmentService _equipmentService;
     private readonly AsyncCache<string, HeroDto> _heroesCache;
-    private readonly IRelicService _relicService;
+    private readonly IRelicCoreDataService _relicCoreDataService;
     private IReadOnlyDictionary<string, RelicDto>? _relicsCache;
 
-    public HohCoreDataCache(ICityService cityService, IUnitService unitService, IRelicService relicService,
+    public HohCoreDataCache(ICityService cityService, IUnitService unitService, IRelicCoreDataService relicCoreDataService,
         IEquipmentService equipmentService)
     {
         _cityService = cityService;
-        _relicService = relicService;
+        _relicCoreDataService = relicCoreDataService;
         _equipmentService = equipmentService;
         _barracksCache = new AsyncCache<UnitType, IReadOnlyCollection<BuildingDto>>(async x =>
         {
@@ -61,7 +61,7 @@ public class HohCoreDataCache : IHohCoreDataCache
     {
         if (_relicsCache == null)
         {
-            var relics = await _relicService.GetRelicsAsync();
+            var relics = await _relicCoreDataService.GetRelicsAsync();
             _relicsCache = relics.ToDictionary(x => HohStringParser.GetConcreteId(x.Id));
         }
 

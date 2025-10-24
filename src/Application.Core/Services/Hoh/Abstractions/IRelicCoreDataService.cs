@@ -4,8 +4,8 @@ using Refit;
 
 namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 
-public interface IRelicService
+public interface IRelicCoreDataService
 {
-    [Get(FogUrlBuilder.ApiRoutes.RELICS)]
+    [Get(FogUrlBuilder.ApiRoutes.RELICS_DATA)]
     Task<IReadOnlyCollection<RelicDto>> GetRelicsAsync();
 }
