@@ -5,7 +5,7 @@
     <Content>
         <div class="content-container">
             <EquipmentSlotTypeSelector SlotTypes="@_equipmentSlotTypes" SelectedSlotType="@_selectedSlotType"
-                                       OnBattleTypeChanged="@OnBattleTypeChanged"/>
+                                       OnBattleTypeChanged="@OnEquipmentSlotTypeChanged"/>
             @foreach (var equipmentItem in _equipmentInsights)
             {
                 <div class="level-range-container">

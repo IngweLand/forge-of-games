@@ -60,7 +60,7 @@ public partial class EquipmentInsightsComponent : ComponentBase, IAsyncDisposabl
         await GetEquipment();
         _selectedSlotType = _equipmentSlotTypes.First().SlotType;
         StateHasChanged();
-        OnBattleTypeChanged(_selectedSlotType);
+        OnEquipmentSlotTypeChanged(_selectedSlotType);
     }
 
     private async Task GetEquipment()
@@ -94,7 +94,7 @@ public partial class EquipmentInsightsComponent : ComponentBase, IAsyncDisposabl
         StateHasChanged();
     }
 
-    private void OnBattleTypeChanged(EquipmentSlotType slotType)
+    private void OnEquipmentSlotTypeChanged(EquipmentSlotType slotType)
     {
         _equipmentInsights = _allEquipmentInsights.Where(x => x.EquipmentSlotType == slotType).ToList();
         _selectedSlotType = slotType;
