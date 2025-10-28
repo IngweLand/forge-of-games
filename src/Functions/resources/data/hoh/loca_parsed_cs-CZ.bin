@@ -632,6 +632,8 @@ q
 9Base.IngameEvents.LeaderboardEvent_ForgeOfVulcan_2_1_NameSoutěž o žetony triskelionu
 �
 -Base.QuestlinesPanel.AcquireEncounterByRegion?Vyřeš <b>{0}</b> střetnutí v oblasti <b>{0}</b>. <b>{1}</b>?Vyřeš <b>{0}</b> střetnutí v oblasti <b>{0}</b>. <b>{1}</b>?Vyřeš <b>{0}</b> střetnutí v oblasti <b>{0}</b>. <b>{1}</b>
+;
+%Base.IngameEvents.Event_Winter_2_NameTell's Winter Tale
 >
 /Base.Factions.Faction_ByzantineEra_Toltecs_NameToltékové
 V
@@ -646,6 +648,8 @@ A
 'Base.HeroPanel.FocusAbilityChargeHeaderNabíjení schopnosti:
 E
 (Base.Rewards.Reward_Food_Coins_XS_1_NameBalíček jídla a mincí
+>
+'Base.AllianceSearch.SuggestionListTitleSuggested Alliances
 S
 :Base.Units.Unit_KingdomOfSicily_NormanSicily_Infantry_NameSicilští sekerníci
 W
@@ -1093,6 +1097,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameMinojs
 +Base.Subscriptions.PRODUCTION_DURATION_Desc�Zvyšuje kapacitu úložiště tvých nečinných výrobních budov, takže můžeš hromadit více zdrojů, než se úložiště budovy naplní.
 1
 Base.OptionsPopup.PlayerProfileProfil hráče
+.
+Glossary.Generic.GameNameHeroes of History
 2
 Base.HeroClass.AreaAttackerPlošný útočník
 �
@@ -1447,6 +1453,8 @@ $Base.Resources.hero.WilliamTell_DescqPoužívá se ke zvýšení úrovně prob
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text7_DescPopravdě řečeno, nejsem si jistý, co vlastně hledáme. Ujistěme se, že na lodi nejsou žádní nežádoucí pasažéři.
 h
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Desc.Vyrábí mince a přidá pracovníka do města
+H
+/Base.AllianceSearch.HideAlliancesCheckboxClosedHide closed alliances
 B
 /Base.WorldWondersDetailPanel.ContributorsHeaderPřispěvatelé
 C
@@ -1483,6 +1491,8 @@ MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text3_Desc�
 )Base.HarborShopPanel.Alliance.ButtonLabelAliance
 ]
 ?Base.Units.Unit_MinoanEra_EgyptianAcolytes_HyksosSureshots_NameHyksósští ostrostřelci
+�
+%Base.EventPass.Winter2BuyGoldPassText�Take part to earn exclusive rewards and get a legendary <nobr><style=legendary>Ring</style></nobr> of the <nobr><style=legendary>King</style></nobr> set immediately!
 +
  Base.RewardPanel.Blueprint_ShortNákres
 I
@@ -1700,6 +1710,9 @@ X
 DBase.Buildings.Building_TreasureHunt_Evolving_FountainOfYouth_1_NameFontána mládí
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_25_NameÚroveň 25
+@
+2Base.LeaderboardEventPanel.TaskInfo.GemsSpend_Name
+Spend Gems
 {
 %Base.QuestlinesPanel.FinishBattleTaskDokonči <b>{0}</b> bitvu.Dokonči <b>{0}</b> bitvy.Dokonči <b>{0}</b> bitev.
 6
@@ -1965,6 +1978,8 @@ c
 )Base.Generic.UnlockAdjacentExpansionFirst6Nejdříve musíš odemknout vedlejší rozšíření!
 U
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_23_NameÚroveň 23
+O
+&Base.PlayerProfile.PlayerNotFoundError%The player profile could not be found
 o
 9Base.StoryText.Story_DesertDelta_5_9_BattleEnd_Text1_Desc2Sparťané! Vrháte se na nás jako vlny na útes!
 L
@@ -1981,6 +1996,8 @@ g
 5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc"Vyrábí koberce z myrhy a bavlny.
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_NameÚroveň 32
+2
+!Base.Heroes.hero.HelenOfTroy_NameHelen of Troy
 C
 2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMayské glyfy
 ~
@@ -2096,6 +2113,8 @@ P
 )Base.PlayerSearch.NoAllianceLocaleMessage#Tvá aliance nemá nastavený jazyk
 ^
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLyceum učenců
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 ,
 Base.InventoryMenuPanel.Header
 Inventář
@@ -2160,6 +2179,8 @@ K
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameLuxusní dům
 f
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc$Zvyšuje spokojenost okolních budov
+8
+"Base.Rifts.rift.SeasonPass_18_NameArcane Time Portal
 P
 5Base.Factions.Faction_IberianEra_ReinoDeCastilla_NameKastilské království
 B
@@ -2445,6 +2466,8 @@ V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_45_NameÚroveň 45
 >
 Base.Event.EarnEventCurrencyZískávání měny událostí
+:
+$Base.ChestEvents.Event_Winter_2_NameTell's Winter Tale
 ,
 Base.Units.Unit_MarcoPolo_Name
 Marco Polo
@@ -2605,6 +2628,8 @@ V
 BBase.Questlines.Questline_EventCity_China_ForbiddenCity_Start_NameFestival světel
 l
 7Base.WondersReworkUpgradePanel.AllUnitsBonusDescription1Zvýší <b>{0}</b> všech jednotek o <b>{1}</b>.
+G
+5Base.Abilities.hero_battle_ability.WilliamTell_5_NameApple Splitter
 A
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_NameRadnice
 F
@@ -2761,6 +2786,8 @@ y
 JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Name�<style=ability_label>Provokace | Štít | Uzdravení</style>Isabella ovládá bojiště, provokuje všechny nepřátele na dobu <style=basestat>{taunt_shield_duration}</style> a vyléčí se o <style=basestat>{self_heal}</style> svého základní poškození. Za každého vyprovokovaného nepřítele získá štít v hodnotě <style=basestat>{shield_per_unit}</style> svého základního poškození až do konce vlny.
 ;
 $Base.IngameEvents.SeasonPass_09_NameLéčivé horizonty
+�
+MBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_15_Name�<style=ability_label>Invincibility | Taunt | Debuff | Melee | Burn</style><style=ability_desc>Gains <style=ability_link>Invincibility</style> for <style=basestat>{invincibility_duration}</style></style><style=ability_desc><style=ability_link>Taunts</style> all enemies for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{movespd_reduction}</style> for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Gains a burning <style=ability_link>Aura</style> with a radius of <style=basestat>2</style> around himself for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Deals a total of <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_burndmg> <style=ability_link>Burn DMG</style></nobr> to enemies within his Aura over <style=basestat>2s</style> every <style=basestat>1.33s</style></style>
 4
 #Base.ShopPopup.DailyDealGachaHeaderHrdinský lov
 C
@@ -2787,10 +2814,14 @@ NBase.StoryText.Story_Questline_Event_LegendaryPull_Start_QuestStart_Text2_Desc
 @Base.LeaderboardEventPanel.TaskInfo.TeslaStormPurple_Description=Vyhraj bitvy Teslovy bouře fialové barvy a získej trofeje!
 -
 $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
+[
+ABase.IngameEvents.MilestoneEvent_Winter_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 �
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest3_QuestStart_Text2_Desc?"Ach ne, oni mají zboží! Co si jen počnu?" Myslím, že ne.
 $
 Base.BuildingTypes.ResidenceDomy
+8
+(Base.AllianceSetDetailsPanel.RequiredAgeRequired Age
 G
 1Base.EquipmentSets.equipment_set.Bedouin_Hat_NameBeduínský turban
 �
@@ -3010,6 +3041,8 @@ $Base.OptionsPopup.InviteStepProgress+Doplňte ukazatel a získejte více odmě
 =Base.Technologies.Technology_ByzantineEra_SaracenArchers_NameSaracénští lučištníci
 u
 ,Base.TeslaStormsPanel.NoHeroForSelectedColorEPotřebujete alespoň 1 hrdinu této barvy, abyste zde mohli bojovat.
+]
+CBase.IngameEvents.MilestoneEvent_Winter_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 Y
 >Base.Resources.event_maliempire_2022_grand_prize_progress_NameProgres k hlavní ceně
 �
@@ -4152,6 +4185,8 @@ C
 +Base.Units.Unit_EarlyRome_Player_Siege_NameKatapult na oštěpy
 '
 Base.Resources.pennies_NameHaléře
+B
+$Base.HeroPanel.NoRestorationPossibleHero cannot be eternalized
 l
 5Base.Resources.event_leaderboard_winter_trophies_NameTrofejový bodTrofejové bodyTrofejových bodů
 8
@@ -4187,6 +4222,8 @@ M
 Base.UnlockableFeatures.RelicsRelikvie
 j
 *Base.RiftInfoPopup.PityPersistenceAddition<<br>Tato záruka platí i pro opakování stejné události.
+6
+,Base.AllianceSetDetailsPanel.PlayStyleCasualCasual
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	Geografie
 T
@@ -4225,6 +4262,8 @@ R
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescOdemkne arbalisty
 N
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_NameMěstská farma
+F
+7Base.AllianceApplicationMessages.AllianceInvitationSendSend Invite
 �
 ABase.InventoryItems.SelectionKit_current_era_teslacrests_110_DescJTáto výběrová sada ti umožní vybrat si mezi různě barevnými erby.
 }
@@ -4633,6 +4672,8 @@ J
 :Base.Technologies.Technology_KingdomOfSicily_Orchards_NameOvocné sady
 �
 PBase.StoryText.Story_Questline_EventCity_Egypt_MoreWorkers_QuestStart_Text1_Desc�Abychom dosáhli našich cílů, potřebujeme větší pracovní sílu. Postavme více domů, abychom ubytovali další pracovníky.
+L
+<Base.IngameEvents.MilestoneEvent_Winter_2_AnvilStrike_1_NameAnvil Strike
 S
 #Tutorial.MainTutorial.ProduceVisual,<sprite name=tutorial_icon_produce>Vyráběj
 �
@@ -4854,6 +4895,8 @@ FBase.AllianceTechnologies.alliance_technology.explorersQuarter_46_NameÚrove�
 $Base.Resources.green_crest_epic_NamePůlnoční zelený erb
 +
 Base.Heroes.hero.RamsesII_Name	Ramses II
+�
+Base.Resources.hero.Hector_DescdUsed to increase the Awakening Level of Hector of Troy and thus unlock more powerful battle bonuses.
 �
 *Base.Resources.etruscan_bronze_mirror_DescgUmělecky zpracované zrcadlo, které je nezbytné pro výzkum některých technologií Raného Říma.
 O
@@ -4866,6 +4909,8 @@ g
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_Desc�Páni, tahle hromada dřeva není zrovna umělecké dílo! Pojďme napnout svaly a rozloučit se s tímhle nevzhledným nepořádkem.
 :
 )Base.HeroPanel.UnitStatBoostBarracksTitlePosíleno {0}
+5
+"Base.AllianceSearch.AllianceLeagueAlliance League
 5
 Base.Resources.silver_ring_NameStříbrný prsten
 y
@@ -4936,6 +4981,8 @@ H
 ,
 Base.Units.Unit_DArtagnan_Name
 D'Artagnan
+)
+Base.AlliancePanel.Applicant	Applicant
 c
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Desc$Zvyšuje spokojenost okolních budov
 N
@@ -5009,6 +5056,8 @@ CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescOdemkne Ho
 Tutorial.MainTutorial.StoneAge�Pozoruhodné! Dosáhli jsme <style=MC>DOBY KAMENNÉ</style>, klíčového okamžiku v <style=MC>HISTORII LIDSTVA</style>, kdy se poprvé objevují základy civilizace.
 �
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text1_Desc[Hej, mocný Leonidasi! My <style=MC>PRACOVNÍCI</style> ti chceme pomoci na bitevním poli!
+7
+%Base.AllianceSearch.AverageTotalPowerØ Total Power
 C
 *Base.Resources.iron_pendant_TechnologyNameŽelezný přívěsek
 8
@@ -5050,6 +5099,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text4_Name
 Robin Hood
 -
 Base.Ages.BronzeAge_Finish3000 př. n. l.
+/
+Base.Generic.ChooseAnAmountChoose an amount
 K
 "Base.BuildingGroups.smallHome_Name
 Malý dům
@@ -5264,6 +5315,8 @@ e
 =Base.LeaderboardEventPanel.TaskInfo.AntimatterUse_Description$Použij antihmotu a získej trofeje!
 V
 ;Base.WorldWondersOverviewPanel.AllianceResearchPointsHeaderBody výzkumu spojenců
+T
+=Base.AllianceApplicationMessages.AllianceInvitationToAllianceInvite to Alliance:
 �
 $Base.HeroPanel.EmptyRelicsCollectionYZatím nemáte žádné relikvie.<br>Relikvie můžete získat v sezónních událostech.
 @
@@ -5306,6 +5359,8 @@ EBase.AllianceTechnologies.alliance_technology.explorersQuarter_2_Name
 Úroveň 2
 &
 Base.SellEquipmentPanel.SellProdat
+N
+>Base.IngameEvents.LeaderboardEvent_Winter_2_StaminaRush_1_NameStamina Rush
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name�<style=ability_label>Léčení</style>Uroboros dává svému držiteli schopnost odčerpávat život a ukrást část léčení, které nepřátelští hrdinové získají ze schopností hrdinů. Držitel získá <style=basestat>{heal_steal}</style> léčení určeného nepřátelským hrdinům a promění jejich omlazení ve svou sílu.
 C
@@ -5499,6 +5554,8 @@ W
 :Base.Buildings.Building_Vikings_FishingPier_Premium_4_NameLuxusní rybářské molo
 _
 HBase.Technologies.Technology_EarlyGothicEra_CurrencyStandardization_NameStandardizace měny
+�
+%Base.EventPass.Winter2MoreContentText�When you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more legendary <nobr><style=legendary>Rewards</style></nobr> up for grabs!
 D
 0Base.KeyboardShortcuts.Description.GoodsOverviewPřehled zboží
 T
@@ -5576,6 +5633,8 @@ C
 3Base.Technologies.Technology_Mayas_Birdkeeping_NameChov ptáků
 �
 )Base.LeaderboardEventPanel.NoExtraRewardsdTentokrát jsi nezískal žádné odměny navíc. Zkus se umístit výše a získat další odměny.
+G
+6Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_NameArena Battles
 a
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameStřední kulturní památka
 �
@@ -5742,6 +5801,8 @@ J
 5Base.EquipmentSets.equipment_set.Adventurer_Neck_NameLímec dobrodruha
 �
 *Base.EventPass.MoonLanding1BuyGoldPassText�Zúčastněte se, získejte exkluzivní odměny a epickou relikvii <nobr><style=epic>Měsíční meteorit</style></nobr> hned teď!
+G
++Base.HarborShopPanel.PurchasesRemainingTextPurchases remaining: {0}
 p
 .Base.EquipmentSets.equipment_set.Magician_Desc>Poškození plošného útoku <style=basestat_dark>+5%</style>
 I
@@ -5762,6 +5823,8 @@ J
 5Base.ShopOffers.shop_offer.LegendaryPull_Offer_1_NameTeorie relativity
 1
 %Base.ShopPopup.ConfirmationButtonTextZavřít
+U
+1Base.AllianceSearch.HideAlliancesCheckboxActivity Hide alliances with low activity
 L
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_DescOdemkne balisty
 ;
@@ -5824,6 +5887,8 @@ T
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_DescOdemkne pěšáky
 T
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameMistrovství ve Faeringu
+9
+'Base.AlliancePanel.RevokeOrDeleteInviteRevoke/ Delete
 �
 3Tutorial.EquipmentLevelUpTutorial.WithoutEmbersInfovNemám žádné palivo! Nejdříve postav <style=MC>PEC</style> a pak se vrať se <style=MC>žhavými uhlíky</style>!
 e
@@ -5941,6 +6006,8 @@ _
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text8_Desc^Musíme s tímto mechanismem zacházet opatrně, jinak bychom mohli všechno zamrazit navždy.
 P
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_NameVrhači kamenů
+<
+Base.Resources.hero.Hector_NameEssence of Hector of Troy
 �
 @Base.StoryText.Story_Equipment_Introduction3_Tutorial_Text1_Desc�Impozantní bitva, ale čeká tě ještě víc práce. Připravil jsem pro tebe několik <style=MC>ÚKOLŮ</style>, které ti pomohou se seznámit s <style=MC>VYBAVENÍM</style>.
 �
@@ -6095,6 +6162,8 @@ T
 +Base.Notifications.RemindFreeGachaDrawTitle%🌀 Získej svého dalšího hrdinu!
 �
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_DescAVyřeš zadaný úkol a získej trofejní body v této soutěži.
+D
+-Base.AllianceSearch.HideAlliancesCheckboxFullHide full alliances
 9
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 }
@@ -6699,6 +6768,8 @@ eBase.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_DragonshipEllida
 Base.Resources.fish_Desc~Ryby jsou základním zdrojem, který je potřebný k výrobě rafinovaných surovin. Lze ji vyrábět v rybářských molech.
 .
 !Base.AllianceSetDetailsPanel.Open	Otevřeno
+>
++Base.ShopPopup.Pages.winter_thriving_energyThriving Energy
 o
 Base.Resources.herbs_DescRBylinky jsou zboží, které lze vyrábět v kořenářství od úrovně 3 výše.
 5
@@ -6913,6 +6984,8 @@ OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name
 !Base.Resources.ancestor_mask_NameMaska předků
 �
 WBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestFinish_Text1_Desc�Skvělý pokrok! Měj na paměti, že <style=MC>Velká sfinga</style> zvyšuje produkci <nobr><style=MC>zlaté rudy</style> <sprite name=resource.gold_ore_cta></nobr>, takže při plánování města na to nezapomínej!
+1
+ Base.Units.Unit_HelenOfTroy_NameHelen of Troy
 
 Base.Generic.OffVypnuto
 D
@@ -7199,6 +7272,8 @@ d
 6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_Desc*Výrábí olejové lampy z mosazi a oleje.
 4
 Base.HeroPanel.PrimaryStatsPrimární statistiky
+V
+<Base.AllianceApplicationMessages.AllianceDeclineInvitationOfDecline the Invite of:
 D
 1Base.EquipmentSets.equipment_set.Hussar_Ring_NameHusarův prsten
 a
@@ -7373,6 +7448,8 @@ $
 Neobvyklá
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.Hercules_20_Name�<style=ability_label>Dupnutí | Omráčení | Obnova</style>Práskne do země, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style> a omráčí je na <style=basestat>{duration}</style>. Také vyléčí Herkula o <style=basestat>{heal_percentage}</style> jeho základního poškození.
+m
+=Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_Description,Engage in Arena battles to receive Trophies!
 K
 &Base.RankingPanel.Filters.AllianceOpen!Zobrazit pouze otevřené aliance
 [
@@ -7466,6 +7543,8 @@ M
 :Base.Buildings.Building_RomanEmpire_Workshop_Tailor_1_DescVyrábí kápě
 P
 'Base.ShopPopup.Pages.mayas_starter_pack%Startovací balíček Mayské říše
+\
+9Base.LeaderboardEventPanel.TaskInfo.GemsSpend_DescriptionSpend Gems to receive Trophies!
 v
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Desc;Vyrábí velké množství jídla během dlouhého období.
 &
@@ -7496,6 +7575,8 @@ IBase.Questlines.Questline_EventCity_China_WonderProgress_GreatWall_3_Name!Velk
 &Base.Resources.hero.CyrusTheGreat_DescrPoužívá se ke zvýšení úrovně probuzení Kýra Velikého a tím odemknutí silnějších bojových bonusů.
 �
 dBase.StoryText.Story_Questline_EventCity_China_WonderProgress_TerracottaArmy_3_QuestStart_Text1_Desc�Skvělé! Prokázal jsi svou schopnost vyniknout v této misi! Ale stále máme před sebou úkoly. Pojďme je rychle zvládnout!
+�
+>Base.AllianceApplicationMessages.AllianceReapplicationCooldown}You recently applied for this alliance and there is a lock-out period in place. Please wait {0} before attempting to reapply.
 ;
 &Base.Regions.region.DesertDelta_5_NameOpevněné písky
 R
@@ -7881,6 +7962,8 @@ $
 Base.Resources.goblet_NamePohár
 K
 7Base.Buildings.Building_Arabia_CamelFarm_Average_1_NameVelbloudí farma
+P
+<Base.AllianceApplicationMessages.AllianceInvitationCancelledInvite cancelled
 �
 <Base.Incidents.Incident_KingdomOfSicily_Capital_Goods_1_DescVToto podzemní bludiště prý skýtá skutečně unikátní poklady. Prozkoumejme ho!
 �
@@ -8025,6 +8108,8 @@ a
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc$Zvýší zavlažení okolních budov
 Y
 >Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameKartáginská kavalerie
+w
+)Base.Resources.william_tell_fragment_DescJUsed to eternalize William Tell, upgrading him to a Legendary 5-Star Hero.
 E
 +Base.Regions.region.EmeraldHighlands_3_NameKrystalové vikomství
 L
@@ -8142,6 +8227,8 @@ a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text10_NameAlbert Einstein
 F
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameZlatnictví
+�	
+ Base.Units.Unit_HelenOfTroy_Desc�	Beauty becomes a blade when Helen of Troy joins your ranks, the woman whose face launched a thousand ships and burned the topless towers of Ilium! Born from Zeus and Leda in Greek mythology, this Spartan princess was so beautiful that all the kings of Greece swore an oath to protect her marriage. When Paris of Troy spirited her away from King Menelaus, that oath ignited the Trojan War.<br><br>For ten years, Helen lived in Troy as Paris's wife, though ancient sources disagree whether she was victim or willing participant. She walked the walls identifying Greek warriors for Priam and wove tapestries depicting the war fought in her name, while Trojan women whispered behind her back as their husbands died defending her presence. Though Homer called her 'the face that launched a thousand ships,' Helen's story is more complex than mere beauty.<br><br>Helen's legacy transcends the war itself. She became immortal in literature and art, a symbol of dangerous beauty and the devastating power of passion. After Troy's destruction, she returned to Sparta where she and Menelaus lived out their days, though poets gave her a different ending - transformation into a goddess on the Isle of the Blessed.
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text12_NameAlbert Einstein
 E
@@ -8741,6 +8828,8 @@ S
 Base.Hints.FelixPříprava Einsteinova makeupu
 m
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_DescCo přesně jsme zastavili?
+@
+$Base.Resources.hero.HelenOfTroy_NameEssence of Helen of Troy
 j
 /Base.EquipmentSets.equipment_set.Gladiator_Desc7Kritické poškození <style=basestat_dark>+10%</style>
 J
@@ -8959,6 +9048,8 @@ d
 DBase.Technologies.Technology_ClassicGreece_IntimidatingPresence_NameZastrašující přítomnost
 �
 IBase.AbilityDescriptions.hero_battle_ability_description.TigerLily_1_Name�<style=ability_label>Uzdravení | Očištění</style>Uvolní sílu přírody, uzdraví všechny přátelské jednotky o <style=basestat>{heal_percentage}</style> ze základního poškození Tigří Lily. Očistí všechny negativní efekty.
+Q
+>Base.IngameEvents.MilestoneEvent_Winter_2_RallyOfHeroes_1_NameRally of Heroes
 �
 TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15_Name�<style=ability_label>Dupnutí | Obnova | Uzdravení </style>Dupne na zem, způsobí <style=basestat>{dmg_percentage}</style> poškození všem nepřátelům v dosahu <style=basestat>{range}</style> a uzdraví Hermanna o <style=basestat>{hp_percentage}</style> jeho základního poškození. Také uzdraví všechny přátelské jednotky v dosahu <style=basestat>{range}</style> o <style=basestat>{hp_percentage_friendly}</style> Hermannova základního poškození.
 /
@@ -9235,6 +9326,8 @@ F
 4Base.UnitStats.unit_stat.MaxHitPoints_Percent_AbbrevBODY ŽIVOTA %
 d
 <Base.ShopPopup.SeasonalEventJourneyOfTheTitanicBundlesHeader$Veďte Titanik do hlubokých moří!
+�
+;Base.EventStartScreens.BlackFriday2025EventStartDescriptioncUnlock great rewards including a treasure trove of Gems during our limited-time Black Friday event.
 3
 "Base.Heroes.hero.JuliusCaesar_NameJulius Caesar
 N
@@ -9296,6 +9389,8 @@ K
 "Base.UnlockRequirementsPopup.TitlePožadavek {0}
 
 Base.HeroPanel.LVLÚR.
+E
+)Base.Resources.william_tell_fragment_NameFragment of William Tell
 D
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameVrhači oštěpů
 t
@@ -9369,6 +9464,8 @@ BBase.Buildings.Building_EarlyGothicEra_Workshop_Glassblower_1_DescVyrábí ol
 (Base.RewardPanel.ExpansionUnlocked_ShortRozšíření
 `
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text9_DescPůjdu první! Za mnou!
+T
+0Base.RewardTypes.RegeneratingCapIncreaseMax_Desc Increases your {0} limit by {1}!
 N
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVitruviánský vír
 7
@@ -9412,6 +9509,8 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name�<style
 ,Base.AlliancePanel.AllianceMyApplicationsTabMoje žádosti
 >
 *Base.Resources.folio_of_enlightenment_NameFolio osvícení
+.
+Base.Heroes.hero.Hector_NameHector of Troy
 }
 2Base.UnitStats.unit_stat.BasicAttackDamageAmp_DescGUrčuje, kolik dodatečného poškození způsobují základní útoky.
 �
@@ -9582,6 +9681,8 @@ a
 !Base.WorldWondersDetailPanel.InfoInfo
 y
 *Base.BuildingGroups.averageRitualSite_NameKřišťálový pramenKřišťálové pramenyKřišťálových pramenů
+$
+Base.HeroPanel.UpdateTo	Update to
 �
 VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Text5_DescTvůj <style=MC>úspěch</style> může vést k tomu, že se někteří z nás připojí k tobě na tvých budoucích cestách!
 �
@@ -9754,6 +9855,8 @@ Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameKasárny kavalerie
 Y
 ;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameHohenštaufští mečíři
+@
+1Base.AllianceSetDetailsPanel.PlayStyleCompetitiveCompetitive
 o
 #Base.Resources.material_nature_NamePřírodní materiálPřírodní materiályPřírodních materiálů
 ,
@@ -9913,6 +10016,8 @@ Y
 Base.MenuPanel.ArmyArmáda
 !
 Base.BuildPanel.NeedsPotřeby
+�
+$Base.Resources.hero.HelenOfTroy_DesccUsed to increase the Awakening Level of Helen Of Troy and thus unlock more powerful battle bonuses.
 {
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_Desc@Vyrábí velkou hromadu mincí a přidá 2 pracovníky do města
 s
@@ -9963,6 +10068,8 @@ S
 =Base.Technologies.Technology_EarlyGothicEra_MangonelCrew_NamePosádka mangonelu
 D
 )Base.Resources.yellow_crest_enhanced_NameVylepšený žlutý erb
+Z
+CBase.IngameEvents.LeaderboardEvent_Winter_2_SummonOfTheStars_1_NameSummon of the Stars
 E
 ,Base.BuildingGroups.collectableSchoolV2_NameŠkolaŠkolyŠkol
 ;
@@ -10122,6 +10229,8 @@ R
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescVyrábí mozaiky
 T
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescVyrábí čelenky
+
+Base.Generic.AgeAge
 �
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text3_Desc�Každá <style=MC>bedna</style> také zlepšuje tvé <style=MC>pořadí</style> ve <style=MC>žebříčku události</style>, a tím odemyká lepší <style=MC>odměny</style>, jak stoupáš výše v <style=MC>ligách</style> do konce události.
 e
@@ -10132,6 +10241,8 @@ E
 &Base.Regions.region.FrozenFjord_4_NameLes víl
 C
 2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxusní dům
+�	
+Base.Units.Unit_Hector_Desc�Steady your shields and hold the line with Hector of Troy, the man who stood between his city and annihilation! When the black ships of Greece darkened Troy's shores, this prince became the backbone of Trojan resistance. Unlike warriors who fought for glory or gold, Hector fought for something greater - the survival of everything he loved.<br><br>For nine years, Hector was Troy's shield and spear. He led from the front, turning back Greek assaults and even driving them to their ships. His duel with Ajax shook the earth, ending only when heralds separated them at nightfall. But Hector was more than a warrior - he was a devoted son to Priam, a loving husband to Andromache, and the moral center of a city under siege.<br><br>His death at Achilles' hands wasn't just the loss of Troy's greatest defender - it was the moment the city's fate was sealed. Yet even in death, Hector achieved something remarkable: he humanized the enemy. When Priam retrieved his son's body, even hard-hearted Achilles wept. Hector's legacy isn't one of conquest but of duty, showing that true heroism lies in defending what matters most.
 U
 %Base.BuildingInfoPanel.HeroBoostLabel,Posílení pro všechny hrdiny kategorie {0}
 J
@@ -10212,6 +10323,8 @@ a
 Base.Resources.relic_dust_Desc�Prach relikvií se používá k vylepšení a pozvednutí relikvií. Lze jej získat spolu s relikviemi jako odměny v některých událostech.
 �
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text4_DescsMarie Curie, tvůj vhled do hmoty a energie je neocenitelný. Jak odhalíme skryté mechanismy, které tu působí?
+[
+BBase.IngameEvents.MilestoneEvent_Winter_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
 k
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc5Vyrábí haléře a přidá 2 námořníky do města.
 �
@@ -10476,6 +10589,8 @@ b
 %Base.Resources.blue_crest_common_Desc9Modré erby jsou potřeba k povýšení modrých hrdinů.
 �
 ABase.RewardTypes.IncreaseBothExpansionRightRewardWithSubType_Desc[Umožní odemknout {0} běžných a {1} prémiových rozšíření typu {2} ve městě {3}.
+F
+0Base.RewardTypes.RegeneratingCapIncreaseMax_NameIncrease {0} limit
 �
 #Base.ShopPopup.CityStarterPack1Desc[Dejte své říši impuls pomocí těchto nezbytných zdrojů pro výzkum a vylepšování.
 L
@@ -10561,6 +10676,8 @@ K
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_5_Name�<style=ability_label>Úder na oblast | Spálení</style>Detonuje explozi zaměřenou na největší skupinu nepřátelských jednotek, způsobující <style=basestat>{dmg_percentage}</style> poškození v dosahu <style=basestat>{range}</style>. Má <style=basestat>{chance_percentage}</style> šanci spálit zasažené nepřátele a způsobit jim <style=basestat>{dmg_percentage_burn}</style> poškození během <style=basestat>{duration}</style>.
 6
 Base.Units.Unit_Mozart_NameWolfgang Amadeus Mozart
+O
+?Base.AllianceApplicationMessages.AllianceApplicationMessageFromMessage from
 T
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_NameKasárny pěchoty
  
@@ -10972,6 +11089,8 @@ EBase.AllianceTechnologies.alliance_technology.explorersQuarter_4_Name
 ABase.WondersReworkUpgradePanel.ResourceBonusByBuildingDescriptionJPosilní produkci v budově <b>{0}</b> ve městě <b>{1}</b> o <b>{2}</b>.
 ]
 @Base.Questlines.Questline_EventCity_Mayas_ChichenItza_Start_NameZanikající cenote Chaac
+l
+)Base.Resources.black_friday_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
 G
 2Base.IngameEvents.EventCity_Mayas_SayilPalace_NameSoupeři na prahu
 b
@@ -10984,6 +11103,8 @@ BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_DescDAkademie hr
 jBase.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_MontezumaI_SahilPalace_QuestFinish_Text1_Desc�Cizí delegáti přicházejí stále častěji a naši vyjednavači jsou připraveni! Diplomatická atmosféra pulzuje možnostmi. Nyní dokonči <style=MC>palác Sayil</style> do jeho plné slávy, aby <style=MC>mocní vládcové</style> přísahali svou vojenskou sílu naší rostoucí říši!
 F
 )SoftError.AllianceCity.CRATE_ALREADY_PAIDBedna již byla zaplacena
+=
+&Base.ShopPopup.Pages.winter_hero_promoParallel Prosperity
 <
 !Base.HarborShopPanel.OfferSoldOutNabídka je vyprodána!
 D
@@ -11033,10 +11154,14 @@ NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text2_Name
 6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc$Zvýší zavlažení okolních budov
 #
 Base.HeroClass.DefenderObránce
+(
+Base.AllianceSearch.ActivityActivity
 G
 /Base.Continents.continent.EmeraldHighlands_NameSmaragdové výšiny
 V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_17_NameÚroveň 17
+�
+LBase.AbilityDescriptions.hero_battle_ability_description.Charlemagne_25_Name�<style=ability_label>Debuff</style><style=ability_desc>Deals <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_areadmg> <style=ability_link>Area DMG</style></nobr> to enemies within a radius of <style=basestat>{range}</style> around the nearest enemy</style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_atkspd> <style=ability_link>ATK SPD</style></nobr> of the targets by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{move_speed_percentage}</style> for <style=basestat>{duration}</style></style>
 6
 +Base.KeyboardShortcuts.Description.ResearchVýzkum
 d
@@ -11120,6 +11245,8 @@ BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_200_Name$Výběrová
 Base.Generic.CopiedToClipboardKopírování do schránky
 [
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameBalistická inovace
+�
+<Base.LeaderboardEventPanel.GachaInfo.BlackFriday2025_ContextZEarn Trophies for every Gem spent in the {0} - the more you spent, the higher you'll rise!
 ^
 9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_Name!Hohenštaufská těžká pěchota
 ,
@@ -11196,6 +11323,8 @@ h
 0Base.Questlines.Questline_FOE_CrossSelling_Start�Odvážný hráči, na pobřeží tvého města čeká nová výzva. Vydej se vstříc novým dobrodružstvím, ale nezapomeň se vrátit! Stáhni si <style=MC>Forge of Empires</style>, prozkoumej technologii <style=MC>Hrnčířská dílna</style> a získej speciální odměnu.
 M
 -Base.ShopPopup.Pages.arcane_antimatter_offer2Výprodej tajemné antihmoty
+-
+Base.Units.Unit_Hector_NameHector of Troy
 a
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc"Odemkne saracénské lučištníky
 N
@@ -12117,6 +12246,8 @@ $Base.AlliancePanel.LeaveAllianceDesc$Opravdu chceš opustit svou alianci?
 Base.Rifts.rift.Tutorial_NameČasový portál
 �
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_Desc�Posvátný cenot, naše <style=MC>božská brána</style> do Chaacu, je každým dnem mělčí. Bez požehnání božstva deště naše úroda chřadne a naši lidé trpí.
+H
+)Base.Resources.black_friday_trophies_NameTrophy PointTrophy Points
 L
 2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_NameMayští lučištníci
 =
@@ -12410,6 +12541,8 @@ P
 +Base.RewardTypes.IncreaseBuildingLimit_Desc?Umožňuje výstavbu {0} dalších {1} budovy ve tvém městě.?Umožňuje výstavbu {0} dalších {1} budovy ve tvém městě.>Umožňuje výstavbu {0} dalších {1} budov ve tvém městě.
 N
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_1_NameMěstská farma
+T
+ABase.IngameEvents.LeaderboardEvent_Winter_2_HistoricSpoils_1_NameHistoric Spoils
 �
 /Tutorial.BarracksSupportUnitsTutorial.TapQuestswPočkej! Nemůžu čelit všem budoucím výzvám sám. Pojďme nejdřív postavit nějaké <style=MC>kasárny</style>.
 J
@@ -13328,6 +13461,8 @@ s
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc2Zpracovává motýlí kokony na hedvábná vlákna
 C
 2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxusní dům
+1
+)Base.AllianceSearch.AllianceAdmissionOpenOpen
 �
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_Desc�K tomu potřebuješ naplnit <style=MC>bedny</style> surovinami. Pokud jsou všechny bedny naplněny, můžeš <style=MC>vylepšit</style> a získat <style=MC>odměnu</style>.
 J
@@ -13825,6 +13960,8 @@ BBase.Technologies.Technology_EarlyGothicEra_MasonryTechniques_NameZednické t
 *Base.EquipmentSets.equipment_set.King_Desc�Poškození základního útoku <style=basestat_dark>+10%</style> a rychlost útoku <style=basestat_dark>+9 zásahů/minutu</style>
 f
 KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_SahilPalace_2_NamePalác Sayil - Fáze II
+N
+;Base.AllianceApplicationMessages.AllianceInvitationDeclinedInvite declined
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text14_NameAlbert Einstein
  
@@ -13883,6 +14020,8 @@ O
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_NameKasárny pěchoty
 �
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_70_DescVTato výběrová sada ti umožňuje vybrat si mezi různě barevnými běžnými erby.
+I
+=Base.EquipmentFilterPopover.EquipmentSetFilterOptionsTitleAllAll sets
 T
 >Base.Questlines.Questline_EventCity_Egypt_RepairTheBridge_NamePřekročení Nilu
 B
@@ -14988,6 +15127,8 @@ T
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name�<style=ability_label>Útok na blízko | Omráčení</style>Obratně zasáhne aktuální cíl svou holí, způsobí <style=basestat>{dmg_percentage}</style> poškození a má <style=basestat>{chance}</style> šanci, že ho omráčí na <style=basestat>{duration}</style>.
 +
 Base.AllianceBlimps.Contribute	Přispět
+L
+:Base.AllianceApplicationMessages.AllianceDeclineInvitationDecline Invite
 '
 Base.LocalizedLocales.ja_JPJaponsky
 ]
@@ -15046,6 +15187,8 @@ F
 1Base.UnitStats.unit_stat.MoveSpeed_Percent_AbbrevRYCHLOST POHYBU %
 b
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc'Zvyšuje zavlažování okolních budov
+U
+CBase.AllianceApplicationMessages.AllianceDeclinedApplicationDeletedInvite deleted
 >
 -Base.Units.Unit_BronzeAge_Player_Archers_NameLučištníci
 u
@@ -15407,6 +15550,8 @@ G
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_NameVenkovská farma
 <
 *Base.Resources.stone_tablet_TechnologyNameKamenná deska
+`
+;Base.AllianceSetDetailsPanel.RequiredTreasureHuntDifficulty!Required Treasure Hunt Difficulty
 A
 3Base.Buildings.Building_FeudalAge_Home_Small_3_Name
 Malý dům
@@ -15566,6 +15711,8 @@ J
 7Base.Technologies.Technology_Mayas_JadeProspecting_NameTěžba nefritu
 �
  Base.HeroClass.AreaAttacker_Desc�Plošní útočníci způsobují poškození všem nepřátelům ve velké oblasti. Vynikají proti skupinám slabších nepřátel.<br><line-height=50%><br></line-height><b><color=#3DA229>Silní</color> proti:</b><br>•<indent=5%><color=#3DA229>Velkým skupinám</color> v režimech <color=#3DA229>Kampaň</color>, <color=#3DA229>Honba za pokladem</color> a <color=#3DA229>Obléhání Orléans</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Slabí</color> proti:</b><br>•<indent=5%><color=#CD2A25>Nepřátelským hrdinům</color> v Kampani, Aréně a Honbě za pokladem.</indent><br>•<indent=5%><color=#CD2A25>Tesla bouřím.</color></indent>
+�
+3Base.EventStartScreens.Winter2EventStartDescription�Complete challenges to earn Snowflakes and dive into the seasonal magic by unwrapping gifts filled with delightful rewards, including <style=legendary>Fragments of William Tell</style>. Use these fragments to transform your <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> William Tell into the <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> legendary Swiss hero! The legend awaits. Help him reach his true potential!
 O
  Base.BuildingGroups.jeweler_NameKlenotnictvíKlenotnictvíKlenotnictví
 K
@@ -15786,6 +15933,8 @@ J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescVyrábí obsidián
 Q
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameKasárny kavalerie
+G
+/Base.AllianceSetDetailsPanel.RequiredTotalPowerRequired Total Power
 w
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc;Vyrábí malé množství jídla během krátkého období.
 ?
@@ -15798,6 +15947,8 @@ w
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text3_Desc�Vyzývám tě, abys využil své jedinečné schopnosti a vytvořil toto <style=MC>útočiště intelektu</style>, kde se vynálezci a učenci setkávají, aby posouvali hranice našeho chápání.
 `
 DBase.Buildings.Building_EarlyGothicEra_Barracks_HeavyInfantry_1_NameKasárny těžkooděnců
+G
+"Base.HeroPanel.HeroAlreadyRestored!This hero is already eternalized.
 �
 <Base.WondersReworkUpgradePanel.TagTradeOfferBoostDescriptionfZískej <b>{0}</b> zboží navíc z <b>obchodních nabídek</b> za každý druhý aktivní <b>{1}</b>.
 B
@@ -15810,6 +15961,8 @@ V
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_15_NameÚroveň 15
 �
 0Base.VideoRewards.VideoReward_VideoIncident_Desc�Zdravím tě, příteli! Nabízím ti nejnovější zprávy a zboží z celého světa. Posaď se a poslouchej – a budeš odměněn/a!
+'
+Base.AlliancePanel.ActivityActivity
 *
 Base.Resources.porcelain_Name	Porcelán
 M
@@ -15818,6 +15971,8 @@ G
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_NameVenkovská farma
 <
 +Base.EquipmentSets.equipment_set.Maori_NameMaorská sada
+:
+.Base.AllianceSetDetailsPanel.PlayStyleBeginnerBeginner
 =
 +Base.Resources.hero.GreekMathematician_NameEsence Euklida
 �
@@ -17186,6 +17341,8 @@ K
 (Base.QuestlinesPanel.FinishPvpBattleTask Dokonči bitvu v <b>Aréně</b>.+Dokonči <b>{0}</b> bitvy v <b>Aréně</b>.+Dokonči <b>{0}</b> bitev v <b>Aréně</b>.
 d
 5Base.InitialLoadingScreen.BrowserLoadingFocusHeadline+Ponechte tuto kartu prohlížeče aktivní.
+2
+"Base.Units.Unit_WilliamTell_5_NameWilliam Tell
 )
 Base.Resources.obsidian_Name	Obsidián
 U
@@ -17314,6 +17471,9 @@ B
 !Base.SeasonPass.NextSeasonStartedZačala další sezóna!
 !
 Base.Generic.Members	Členové
+4
+&Base.AllianceSetDetailsPanel.PlayStyle
+Play Style
 J
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescVyrábí obsidián
 �
@@ -17517,6 +17677,8 @@ G
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_NameVenkovská farma
 #
 Base.Resources.column_NameSloup
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_PurpleTeslaTakedown_1_NameUmbral Testla Takedown
 Q
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_NameObřadní rytectví
 :
@@ -17673,6 +17835,8 @@ w
 Base.SeasonPass.SeasonEndedTextT<b>Blahopřejeme</b>! Dosáhl/a jsi milníku <b>{0}</b> v poslední <b>sezóně</b>.
 K
 :Base.Buildings.Building_EarlyGothicEra_Home_Premium_1_NameLuxusní dům
+*
+Base.AllianceSearch.Admission	Admission
 �
 'Base.ExternalAllianceVideoPopup.MessageeDostaneš se tím na YouTube, kde uvidíš úvodní video pro Spojenecké město. Chceš pokračovat?
 �
@@ -17963,6 +18127,8 @@ F
 .Base.AbilityTrainingPanel.AbilityTrainingLabelTrénink schopností
 H
 4Base.Abilities.hero_battle_ability.VikingRaider_NameSekera Ragnaroku
+W
+BBase.IngameEvents.LeaderboardEvent_Winter_2_GladiatorsGlory_1_NameGladiator's Glory
 B
 4Base.Buildings.Building_IberianEra_Home_Small_2_Name
 Malý dům
@@ -18008,6 +18174,8 @@ P
 Base.Generic.QuitYesUkončit
 L
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_NameVenkovská farma
+Z
+CBase.AllianceApplicationMessages.AllianceRejectedApplicationDeletedApplication deleted
 C
 0Base.Abilities.hero_battle_ability.Hercules_NameTitánova síla
 C
@@ -18295,6 +18463,8 @@ O
 .Base.ShopOffers.City_Arabia_StarterPack_1_NameStartovací balíček Arábie
 :
  Base.World.SpartasLastStand_NamePoslední bitva Sparty
+4
+$Base.IngameEvents.SeasonPass_18_NameTrojan Tales
 �
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text2_DescZHa! Vy nejste Sparťané... ale už jste zdrojem naší největší síly, můj příteli.
 L
@@ -18345,6 +18515,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc-
 %Base.Resources.hero.TribalHealer_Desc{Používá se ke zvýšení úrovně probuzení Nayi z jeskynního klanu a tím odemknutí silnějších bojových bonusů.
 �
 GBase.StoryText.Story_Technology_MinoanEra_Masonry_TechUnlock_Text2_DescVOdemkněte další technologie z minojské éry a udělejte naše město jedinečným.
+�
+"Base.Units.Unit_WilliamTell_5_Desc�Shoot well and never miss! William Tell, the legendary Swiss folk hero, is by your side. Remembered for his skill with a bow, Tell is celebrated for defying tyranny in the early 14th century.<br><br>Famed for the tale where he was forced to shoot an apple off his son's head with a crossbow, Tell's precision and bravery became symbols of resistance against oppression. His defiance of the Habsburg rulers inspired the Swiss fight for freedom and independence.<br><br>Tell's story, blending legend and history, remains a beacon for the brave, demonstrating how one person's courage can ignite the spirit of an entire nation. Time travelling into the past has scrambled his brain: now he loves his apple like it was his son!
 �
  Base.Alerts.NoInternetConnectionnVypadá to, že se vyskytly problémy s připojením.
 
@@ -18695,6 +18867,8 @@ C
 A
 3Base.Buildings.Building_FeudalAge_Home_Small_1_Name
 Malý dům
+N
+8Base.IngameEvents.MilestoneEvent_BlackFriday_2025_1_NameBlack Friday Event
 �
 &Base.Units.Unit_AlexanderTheGreat_Desc�Hle, Alexandr Veliký, neporažený, vítězný, nejlepší vojevůdce, jakého kdy svět poznal! Tento král ze 4. století př. n. l. se proslavil tím, že před svou brzkou smrtí dobyl rozsáhlá území světa.<br><br>Alexandr nastoupil na trůn ve věku 20 let po zavraždění svého otce. Rychle prokázal svou rozhodnost: podmanil si Thráky a zničil slavný městský stát Théby. To přineslo Řecku opět mír a Alexandr vedl Korintskou ligu, aby dobyl Achaimenovskou Persii. Tato slavná říše před ním padla, ale Alexandr ještě neskončil: před jeho vojsky poklekla Sýrie, Babylon, Írán, a dokonce i Pákistán.<br><br>Alexandr nikdy neprohrál žádnou bitvu. Nakonec se jeho vlastní armáda dožadovala návratu do svých domovů. V Babylonu, na cestě domů (i když cestou zpět ještě něco dobyl), Alexandr vydechl naposledy.<br><br>V rámci historických hrdinů je Alexandr poněkud kontroverzní. Opravdu rád popíjí s Achilleem, dostává lekce od Kýra a ukazuje svého otce!
 F
@@ -18783,6 +18957,8 @@ D
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text2_Desc�K tomu je třeba naplnit <style=MC>bedny</style> surovinami. Pokud jsou všechny bedny naplněny, můžeš <style=MC>vylepšit</style> a získat <style=MC>odměnu</style>.
 .
 $Base.Resources.goblet_TechnologyNamePohár
+U
+Base.HeroSharingCard.QRCodeCTA3Let's play <nobr>Heroes of History</nobr> together:
 A
 'Base.BuildingInfoPanel.UpgradeCompletedVylepšení dokončeno
 C

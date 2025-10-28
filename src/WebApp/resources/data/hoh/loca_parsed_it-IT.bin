@@ -636,6 +636,8 @@ X
 µ
 -Base.QuestlinesPanel.AcquireEncounterByRegionACompleta <b>{0}</b> incontro nella regione <b>{0}</b>. <b>{1}</b>ACompleta <b>{0}</b> incontri nella regione <b>{0}</b>. <b>{1}</b>
 ;
+%Base.IngameEvents.Event_Winter_2_NameTell's Winter Tale
+;
 /Base.Factions.Faction_ByzantineEra_Toltecs_NameToltechi
 U
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduce Pugnali Rituali
@@ -649,6 +651,8 @@ X
 'Base.HeroPanel.FocusAbilityChargeHeaderCarica Abilit√†:
 C
 (Base.Rewards.Reward_Food_Coins_XS_1_NamePacchetto Cibo e Monete
+>
+'Base.AllianceSearch.SuggestionListTitleSuggested Alliances
 W
 :Base.Units.Unit_KingdomOfSicily_NormanSicily_Infantry_NameUomin con ascia Siciliani
 V
@@ -1103,6 +1107,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameTorre 
 4
 Base.OptionsPopup.PlayerProfileProfilo Giocatore
 .
+Glossary.Generic.GameNameHeroes of History
+.
 Base.HeroClass.AreaAttackerAttacco ad Area
 è
 ;Base.StoryText.Story_DesertDelta_1_4_BattleStart_Text5_DescPNon devo ripetere il mio errore! Dobbiamo raggiungere il portale e distruggerlo.
@@ -1465,6 +1471,8 @@ $Base.Resources.hero.WilliamTell_DescjServe per aumentare il Livello di Risvegl
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text7_DesctA dire il vero, non so bene cosa stiamo cercando. Assicuriamoci che sulla nave non ci siano passeggeri indesiderati.
 r
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Desc8Produce Monete e aggiunge un Lavoratore alla tua citt√†.
+H
+/Base.AllianceSearch.HideAlliancesCheckboxClosedHide closed alliances
 ?
 /Base.WorldWondersDetailPanel.ContributorsHeaderContributori
 J
@@ -1501,6 +1509,8 @@ $
 )Base.HarborShopPanel.Alliance.ButtonLabelAlleanza
 Y
 ?Base.Units.Unit_MinoanEra_EgyptianAcolytes_HyksosSureshots_NameTiratori Scelti Hyksos
+œ
+%Base.EventPass.Winter2BuyGoldPassText•Take part to earn exclusive rewards and get a legendary <nobr><style=legendary>Ring</style></nobr> of the <nobr><style=legendary>King</style></nobr> set immediately!
 ,
  Base.RewardPanel.Blueprint_ShortProgetto
 A
@@ -1720,6 +1730,9 @@ DBase.Buildings.Building_TreasureHunt_Evolving_FountainOfYouth_1_NameFontana d
 U
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_25_Name
 Livello 25
+@
+2Base.LeaderboardEventPanel.TaskInfo.GemsSpend_Name
+Spend Gems
 e
 %Base.QuestlinesPanel.FinishBattleTaskTermina <b>{0}</b> battaglia.Termina <b>{0}</b> battaglie.
 5
@@ -1985,6 +1998,8 @@ W
 T
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_23_Name
 Livello 23
+O
+&Base.PlayerProfile.PlayerNotFoundError%The player profile could not be found
 Ü
 9Base.StoryText.Story_DesertDelta_5_9_BattleEnd_Text1_DescISpartani! Vi siete scagliati contro di noi come onde contro la scogliera!
 Q
@@ -2002,6 +2017,8 @@ p
 U
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_Name
 Livello 32
+2
+!Base.Heroes.hero.HelenOfTroy_NameHelen of Troy
 @
 2Base.Technologies.Technology_Mayas_MayaGlyphs_Name
 Glifi Maya
@@ -2118,6 +2135,8 @@ X
 )Base.PlayerSearch.NoAllianceLocaleMessage+La tua alleanza non ha una lingua impostata
 c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLiceo degli Studiosi
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 ,
 Base.InventoryMenuPanel.Header
 Inventario
@@ -2180,6 +2199,8 @@ Q
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameAbitazione Lussuosa
 l
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc*Aumenta la Felicit√† degli edifici vicini.
+8
+"Base.Rifts.rift.SeasonPass_18_NameArcane Time Portal
 J
 5Base.Factions.Faction_IberianEra_ReinoDeCastilla_NameRegno di Castilla
 @
@@ -2469,6 +2490,8 @@ GBase.AllianceTechnologies.alliance_technology.productionQuarter_45_Name
 Livello 45
 5
 Base.Event.EarnEventCurrencyOttieni Valuta Evento
+:
+$Base.ChestEvents.Event_Winter_2_NameTell's Winter Tale
 ,
 Base.Units.Unit_MarcoPolo_Name
 Marco Polo
@@ -2629,6 +2652,8 @@ CBase.Units.Unit_AgeOfTheFranks_Merovingians_MerovingianCavalry_NameCavalleria
 BBase.Questlines.Questline_EventCity_China_ForbiddenCity_Start_NameIl Festival delle Luci
 q
 7Base.WondersReworkUpgradePanel.AllUnitsBonusDescription6Potenzia <b>{0}</b> di tutte le unit√† del <b>{1}</b>.
+G
+5Base.Abilities.hero_battle_ability.WilliamTell_5_NameApple Splitter
 L
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_NameSala del consiglio
 I
@@ -2788,6 +2813,8 @@ i
 JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Nameà<style=ability_label>Provocazione | Scudo | Recupero</style>Isabella domina il campo di battaglia, provocando tutti i nemici per <style=basestat>{taunt_shield_duration}</style> e curandosi per <style=basestat>{self_heal}</style> del suo danno base. Per ogni nemico provocato, guadagna uno scudo pari a <style=basestat>{shield_per_unit}</style> del suo danno base fino alla fine dell‚Äôondata.
 ?
 $Base.IngameEvents.SeasonPass_09_NameOrizzonti di Guarigione
+¨
+MBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_15_Name⁄<style=ability_label>Invincibility | Taunt | Debuff | Melee | Burn</style><style=ability_desc>Gains <style=ability_link>Invincibility</style> for <style=basestat>{invincibility_duration}</style></style><style=ability_desc><style=ability_link>Taunts</style> all enemies for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{movespd_reduction}</style> for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Gains a burning <style=ability_link>Aura</style> with a radius of <style=basestat>2</style> around himself for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Deals a total of <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_burndmg> <style=ability_link>Burn DMG</style></nobr> to enemies within his Aura over <style=basestat>2s</style> every <style=basestat>1.33s</style></style>
 4
 #Base.ShopPopup.DailyDealGachaHeaderCaccia Eroica
 H
@@ -2814,11 +2841,15 @@ NBase.StoryText.Story_Questline_Event_LegendaryPull_Start_QuestStart_Text2_Desc
 @Base.LeaderboardEventPanel.TaskInfo.TeslaStormPurple_DescriptionGVinci le battaglie delle Tempeste di Tesla Viola per ottenere i Trofei!
 -
 $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
+[
+ABase.IngameEvents.MilestoneEvent_Winter_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 Å
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest3_QuestStart_Text2_Desc4'Oh no, hanno dei beni! Cosa devo fare?' Non credo. 
 *
 Base.BuildingTypes.Residence
 Abitazioni
+8
+(Base.AllianceSetDetailsPanel.RequiredAgeRequired Age
 I
 1Base.EquipmentSets.equipment_set.Bedouin_Hat_NameTurbante del Beduino
 e
@@ -3037,6 +3068,8 @@ Q
 =Base.Technologies.Technology_ByzantineEra_SaracenArchers_NameArcieri saraceni
 q
 ,Base.TeslaStormsPanel.NoHeroForSelectedColorAHai bisogno di almeno 1 eroe di questo colore per combattere qui.
+]
+CBase.IngameEvents.MilestoneEvent_Winter_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 b
 >Base.Resources.event_maliempire_2022_grand_prize_progress_Name Progresso verso il Grande Premio
 ë
@@ -4182,6 +4215,8 @@ F
 +Base.Units.Unit_EarlyRome_Player_Siege_NameCatapulta a Giavellotto
 $
 Base.Resources.pennies_NamePenny
+B
+$Base.HeroPanel.NoRestorationPossibleHero cannot be eternalized
 S
 5Base.Resources.event_leaderboard_winter_trophies_NamePunto TrofeoPunti Trofeo
 ;
@@ -4216,6 +4251,8 @@ D
 Base.UnlockableFeatures.RelicsReliquie
 i
 *Base.RiftInfoPopup.PityPersistenceAddition;<br>Questa garanzia si applica anche se l'evento si ripete.
+6
+,Base.AllianceSetDetailsPanel.PlayStyleCasualCasual
 >
 1Base.Technologies.Technology_Egypt_Geography_Name	Geografia
 Y
@@ -4255,6 +4292,8 @@ V
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescSblocca i Balestrieri
 Q
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_NameFattoria cittadina
+F
+7Base.AllianceApplicationMessages.AllianceInvitationSendSend Invite
 ó
 ABase.InventoryItems.SelectionKit_current_era_teslacrests_110_DescRQuesto Kit di Selezione ti consente di scegliere tra Emblemi di colori differenti.
 z
@@ -4668,6 +4707,8 @@ F
 :Base.Technologies.Technology_KingdomOfSicily_Orchards_NameFrutteti
 €
 PBase.StoryText.Story_Questline_EventCity_Egypt_MoreWorkers_QuestStart_Text1_DescÜPer raggiungere i tuoi obiettivi, √® necessaria una forza lavoro maggiore. Costruiamo pi√π abitazioni per accomodare altri lavoratori.
+L
+<Base.IngameEvents.MilestoneEvent_Winter_2_AnvilStrike_1_NameAnvil Strike
 Q
 #Tutorial.MainTutorial.ProduceVisual*<sprite name=tutorial_icon_produce>Produci
 Ö
@@ -4892,6 +4933,8 @@ C
 $Base.Resources.green_crest_epic_NameEmblema Verde di Mezzanotte
 +
 Base.Heroes.hero.RamsesII_Name	Ramses II
+á
+Base.Resources.hero.Hector_DescdUsed to increase the Awakening Level of Hector of Troy and thus unlock more powerful battle bonuses.
 ç
 *Base.Resources.etruscan_bronze_mirror_Desc_Uno specchio realizzato ad arte necessario per ricercare alcune tecnologie dell'Antica di Roma.
 U
@@ -4904,6 +4947,8 @@ p
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_DescâOh mio Dio, questa pila di tronchi non √® esattamente un capolavoro! Sfoderiamo i muscoli e diciamo addio a questo ingombro antiestetico.
 >
 )Base.HeroPanel.UnitStatBoostBarracksTitlePotenziato da {0}
+5
+"Base.AllianceSearch.AllianceLeagueAlliance League
 3
 Base.Resources.silver_ring_NameAnello d'argento
 |
@@ -4973,6 +5018,8 @@ O
 ,
 Base.Units.Unit_DArtagnan_Name
 D'Artagnan
+)
+Base.AlliancePanel.Applicant	Applicant
 h
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Desc)Aumenta la Felicit√† degli edifici vicini
 T
@@ -5047,6 +5094,8 @@ CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescSblocca gl
 Tutorial.MainTutorial.StoneAge±Impressionante! Abbiamo raggiunto l'<style=MC>Et√† della pietra</style>, un momento chiave nella <style=MC>storia dell'umanit√†</style> in cui germogliano i semi della civilt√†.
 ∑
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text1_DescfEhi, grande Leonida! Noi <style=MC>lavoratori</style> vogliamo esserti d'aiuto sul campo di battaglia!
+7
+%Base.AllianceSearch.AverageTotalPower√ò Total Power
 ?
 *Base.Resources.iron_pendant_TechnologyNameCiondolo di ferro
 9
@@ -5091,6 +5140,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text4_Name
 Robin Hood
 '
 Base.Ages.BronzeAge_Finish	3000 A.C.
+/
+Base.Generic.ChooseAnAmountChoose an amount
 L
 "Base.BuildingGroups.smallHome_NameAbitazione piccolaAbitazioni piccole
 T
@@ -5301,6 +5352,8 @@ i
 =Base.LeaderboardEventPanel.TaskInfo.AntimatterUse_Description(Usa l'Antimateria per ricevere i trofei!
 ]
 ;Base.WorldWondersOverviewPanel.AllianceResearchPointsHeaderPunti di Ricerca dell'Alleanza
+T
+=Base.AllianceApplicationMessages.AllianceInvitationToAllianceInvite to Alliance:
 z
 $Base.HeroPanel.EmptyRelicsCollectionRNon hai ancora nessuna reliquia.<br>Puoi vincere reliquie negli Eventi Stagionali.
 D
@@ -5342,6 +5395,8 @@ R
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_2_Name	Livello 2
 %
 Base.SellEquipmentPanel.SellVendi
+N
+>Base.IngameEvents.LeaderboardEvent_Winter_2_StaminaRush_1_NameStamina Rush
 Ø
 IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_Name·<style=ability_label>Guarigione</style>L'Ouroboro conferisce al suo possessore il potere di risucchiare la vita, rubando una parte della cura ricevuta dagli eroi nemici tramite abilit√†. Il possessore ottiene <style=basestat>{heal_steal}</style> della guarigione destinata agli eroi nemici, trasformando la loro rigenerazione nella forza del possessore.
 >
@@ -5535,6 +5590,8 @@ T
 :Base.Buildings.Building_Vikings_FishingPier_Premium_4_NameMolo da Pesca Lussuoso
 j
 HBase.Technologies.Technology_EarlyGothicEra_CurrencyStandardization_NameStandardizzazione della Valuta
+ò
+%Base.EventPass.Winter2MoreContentTextÓWhen you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more legendary <nobr><style=legendary>Rewards</style></nobr> up for grabs!
 G
 0Base.KeyboardShortcuts.Description.GoodsOverviewPanoramica dei Beni
 M
@@ -5613,6 +5670,8 @@ B
 3Base.Technologies.Technology_Mayas_Birdkeeping_NameOrnitologia
 ò
 )Base.LeaderboardEventPanel.NoExtraRewardskQuesta volta non hai ottenuto ricompense extra. Prova a salire di classifica per ottenere altre ricompense.
+G
+6Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_NameArena Battles
 Y
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameSito culturale medio
 œ
@@ -5782,6 +5841,8 @@ R
 5Base.EquipmentSets.equipment_set.Adventurer_Neck_NameCollare dell'Avventuriero
 ∞
 *Base.EventPass.MoonLanding1BuyGoldPassTextÅPartecipa per ricevere ricompense esclusive e ottenere subito l'epica Reliquia <nobr><style=epic>Meteorite Lunare</style></nobr>!
+G
++Base.HarborShopPanel.PurchasesRemainingTextPurchases remaining: {0}
 y
 .Base.EquipmentSets.equipment_set.Magician_DescGDanni Inflitti dalle Abilit√† ad Area <style=basestat_dark>+5%</style> 
 [
@@ -5802,6 +5863,8 @@ Q
 5Base.ShopOffers.shop_offer.LegendaryPull_Offer_1_NameTeoria della Relativit√†
 /
 %Base.ShopPopup.ConfirmationButtonTextChiudi
+U
+1Base.AllianceSearch.HideAlliancesCheckboxActivity Hide alliances with low activity
 O
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_DescSblocca le baliste
 9
@@ -5863,6 +5926,8 @@ V
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_DescSblocca la Fanteria
 O
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameMaestria di Faering
+9
+'Base.AlliancePanel.RevokeOrDeleteInviteRevoke/ Delete
 ü
 3Tutorial.EquipmentLevelUpTutorial.WithoutEmbersInfohNon ho carburante! Costruisci prima la <style=MC>FORNACE</style> e torna con le <style=MC>BRACI!</style>
 j
@@ -5980,6 +6045,8 @@ _Base.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_ChichenItza_QuestF
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text8_DescdQuesta attrezzatura deve essere maneggiata con cura, altrimenti potremmo congelare tutto per sempre.
 N
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_NameScagliapietre
+<
+Base.Resources.hero.Hector_NameEssence of Hector of Troy
 ˘
 @Base.StoryText.Story_Equipment_Introduction3_Tutorial_Text1_Desc¥Una battaglia impressionante, ma c‚Äô√® ancora molto da fare. Ho preparato alcuni <style=MC>COMPITI</style> per aiutarti a familiarizzare con l‚Äô<style=MC>EQUIPAGGIAMENTO</style>.
 ®
@@ -6136,6 +6203,8 @@ Q
 +Base.Notifications.RemindFreeGachaDrawTitle"üåÄ Ottieni il tuo prossimo Eroe!
 ñ
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_DescPCompleta l'impresa assegnata per guadagnare Punti Trofeo in questa competizione.
+D
+-Base.AllianceSearch.HideAlliancesCheckboxFullHide full alliances
 9
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 s
@@ -6748,6 +6817,8 @@ eBase.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_DragonshipEllida
 Base.Resources.fish_DescsIl Pesce √® una risorsa essenziale necessaria per creare risorse raffinate. Pu√≤ essere prodotto nei Moli da Pesca.
 )
 !Base.AllianceSetDetailsPanel.OpenApri
+>
++Base.ShopPopup.Pages.winter_thriving_energyThriving Energy
 |
 Base.Resources.herbs_Desc_Le erbe sono beni che possono essere prodotti dai Mercanti di Spezie - A partire dal livello 3.
 <
@@ -6960,6 +7031,8 @@ OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name
 !Base.Resources.ancestor_mask_NameMaschera dell'Antenato
 ÿ
 WBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestFinish_Text1_Desc¸Ottimi progressi! Un‚Äôultima cosa da considerare: la <style=MC>Grande Sfinge</style> aumenta la produzione di <nobr><style=MC>Oro</style> <sprite name=resource.gold_ore_cta></nobr>, quindi pianifichiamo la citt√† tenendo bene a mente questo vantaggio!
+1
+ Base.Units.Unit_HelenOfTroy_NameHelen of Troy
 
 Base.Generic.OffOff
 A
@@ -7247,6 +7320,8 @@ D
 6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_DescOIl Fabbricante di Lampade ad Olio produce Lampade ad Olio usando Ottone e Olio.
 3
 Base.HeroPanel.PrimaryStatsStatistiche Primarie
+V
+<Base.AllianceApplicationMessages.AllianceDeclineInvitationOfDecline the Invite of:
 I
 1Base.EquipmentSets.equipment_set.Hussar_Ring_NameAnello dell‚ÄôUssaro
 g
@@ -7420,6 +7495,8 @@ $
 Non comune
 ´
 IBase.AbilityDescriptions.hero_battle_ability_description.Hercules_20_Name›<style=ability_label>Calpestio| Stordimento| Recupero</style>Colpisce il terreno, infliggendo <style=basestat>{dmg_percentage}</style> danni a tutti i nemici entro un raggio di <style=basestat>{range}</style> e stordendoli per <style=basestat>{duration}</style>. Inoltre, cura Ercole per <style=basestat>{heal_percentage}</style> del suo Danno Base.
+m
+=Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_Description,Engage in Arena battles to receive Trophies!
 E
 &Base.RankingPanel.Filters.AllianceOpenMostra solo Alleanze Aperte
 a
@@ -7515,6 +7592,8 @@ N
 :Base.Buildings.Building_RomanEmpire_Workshop_Tailor_1_DescProduce Mantelli
 I
 'Base.ShopPopup.Pages.mayas_starter_packPacchetto Iniziale Impero Maya
+\
+9Base.LeaderboardEventPanel.TaskInfo.GemsSpend_DescriptionSpend Gems to receive Trophies!
 r
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Desc7Produce una gran quantit√† di Cibo in un lungo periodo.
 *
@@ -7547,6 +7626,8 @@ IBase.Questlines.Questline_EventCity_China_WonderProgress_GreatWall_3_NameLa G
 &Base.Resources.hero.CyrusTheGreat_DescjServe per aumentare il Livello di Risveglio di Ciro il Grande e sbloccare bonus di battaglia pi√π potenti.
 Ö
 dBase.StoryText.Story_Questline_EventCity_China_WonderProgress_TerracottaArmy_3_QuestStart_Text1_DescúEccezionale! Hai dimostrato di essere in grado di eccellere in questa missione! Tuttavia, abbiamo ancora dei compiti da svolgere. Affrontiamoli rapidamente!
+ø
+>Base.AllianceApplicationMessages.AllianceReapplicationCooldown}You recently applied for this alliance and there is a lock-out period in place. Please wait {0} before attempting to reapply.
 <
 &Base.Regions.region.DesertDelta_5_NameSabbie Fortificate
 U
@@ -7933,6 +8014,8 @@ $
 Base.Resources.goblet_NameCalice
 O
 7Base.Buildings.Building_Arabia_CamelFarm_Average_1_NameFattoria di cammelli
+P
+<Base.AllianceApplicationMessages.AllianceInvitationCancelledInvite cancelled
 ï
 <Base.Incidents.Incident_KingdomOfSicily_Capital_Goods_1_DescUSi dice che questo labirinto sotterraneo nasconda tesori davvero unici. Esploriamolo!
 Ù
@@ -8079,6 +8162,8 @@ h
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc+Aumenta l'irrigazione degli edifici vicini.
 X
 >Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCavalleria Cartaginese
+w
+)Base.Resources.william_tell_fragment_DescJUsed to eternalize William Tell, upgrading him to a Legendary 5-Star Hero.
 F
 +Base.Regions.region.EmeraldHighlands_3_NameVisconte di Crystalford
 I
@@ -8197,6 +8282,8 @@ a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text10_NameAlbert Einstein
 @
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameOrafo
+ÿ	
+ Base.Units.Unit_HelenOfTroy_Desc≥	Beauty becomes a blade when Helen of Troy joins your ranks, the woman whose face launched a thousand ships and burned the topless towers of Ilium! Born from Zeus and Leda in Greek mythology, this Spartan princess was so beautiful that all the kings of Greece swore an oath to protect her marriage. When Paris of Troy spirited her away from King Menelaus, that oath ignited the Trojan War.<br><br>For ten years, Helen lived in Troy as Paris's wife, though ancient sources disagree whether she was victim or willing participant. She walked the walls identifying Greek warriors for Priam and wove tapestries depicting the war fought in her name, while Trojan women whispered behind her back as their husbands died defending her presence. Though Homer called her 'the face that launched a thousand ships,' Helen's story is more complex than mere beauty.<br><br>Helen's legacy transcends the war itself. She became immortal in literature and art, a symbol of dangerous beauty and the devastating power of passion. After Troy's destruction, she returned to Sparta where she and Menelaus lived out their days, though poets gave her a different ending - transformation into a goddess on the Isle of the Blessed.
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text12_NameAlbert Einstein
 A
@@ -8797,6 +8884,8 @@ S
 Base.Hints.Felix"Trucco di Einstein in preparazione
 z
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_Desc(Quindi cosa abbiamo fermato esattamente?
+@
+$Base.Resources.hero.HelenOfTroy_NameEssence of Helen of Troy
 k
 /Base.EquipmentSets.equipment_set.Gladiator_Desc8Danno Critico inflitto <style=basestat_dark>+10%</style>
 J
@@ -9016,6 +9105,8 @@ a
 DBase.Technologies.Technology_ClassicGreece_IntimidatingPresence_NamePresenza intimidatoria
 ¥
 IBase.AbilityDescriptions.hero_battle_ability_description.TigerLily_1_NameÊ<style=ability_label>Guarigione| Purificazione</style>Libera il potere della natura, curando tutte le unit√† amiche di <style=basestat>{heal_percentage}</style> del danno base di Giglio Tigrato. Rimuove tutti gli effetti negativi.
+Q
+>Base.IngameEvents.MilestoneEvent_Winter_2_RallyOfHeroes_1_NameRally of Heroes
 ¢
 TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15_Name…<style=ability_label>Calpestio| Recupero| Guarigione</style>Colpisce il terreno, infliggendo <style=basestat>{dmg_percentage}</style> danni a tutti i nemici entro un raggio di <style=basestat>{range}</style> e curando Arminio per <style=basestat>{hp_percentage}</style> del suo danno base. Inoltre, cura tutte le unit√† amiche entro un raggio di <style=basestat>{range}</style> per <style=basestat>{hp_percentage_friendly}</style> del Danno Base di Arminio.
 -
@@ -9296,6 +9387,8 @@ CBase.Units.Unit_AgeOfTheFranks_Carolingians_CarolingianCavalry_NameCavalleria
 4Base.UnitStats.unit_stat.MaxHitPoints_Percent_AbbrevHP %
 n
 <Base.ShopPopup.SeasonalEventJourneyOfTheTitanicBundlesHeader.Conduci il Titanic nelle profondit√† dei mari!
+¢
+;Base.EventStartScreens.BlackFriday2025EventStartDescriptioncUnlock great rewards including a treasure trove of Gems during our limited-time Black Friday event.
 3
 "Base.Heroes.hero.JuliusCaesar_NameGiulio Cesare
 D
@@ -9358,6 +9451,8 @@ S
 "Base.UnlockRequirementsPopup.TitleRequisiti {0}
 
 Base.HeroPanel.LVLLIV.
+E
+)Base.Resources.william_tell_fragment_NameFragment of William Tell
 L
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameLanciatori di Giavellotti
 à
@@ -9431,6 +9526,8 @@ BBase.Buildings.Building_EarlyGothicEra_Workshop_Glassblower_1_DescProduce Cri
 Espansione
 e
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text9_DescVi faccio strada! Seguitemi!
+T
+0Base.RewardTypes.RegeneratingCapIncreaseMax_Desc Increases your {0} limit by {1}!
 M
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVortice Vitruviano
 ;
@@ -9473,6 +9570,8 @@ B
 ,Base.AlliancePanel.AllianceMyApplicationsTabLe Mie Candidature
 E
 *Base.Resources.folio_of_enlightenment_NameTomo dell'Illuminazione
+.
+Base.Heroes.hero.Hector_NameHector of Troy
 u
 2Base.UnitStats.unit_stat.BasicAttackDamageAmp_Desc?Definisce quanti danni aggiuntivi infliggono gli attacchi base.
 ñ
@@ -9646,6 +9745,8 @@ h
 !Base.WorldWondersDetailPanel.InfoInfo
 Z
 *Base.BuildingGroups.averageRitualSite_NameSorgente di CristalloSorgenti di Cristallo
+$
+Base.HeroPanel.UpdateTo	Update to
 ¬
 VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Text5_DeschIl tuo <style=MC>successo</style> potrebbe portare alcuni di noi a unirsi a te nelle tue future imprese!
 °
@@ -9816,6 +9917,8 @@ W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameCaserma della cavalleria
 Y
 ;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameSpadaccini di Hohenstaufen
+@
+1Base.AllianceSetDetailsPanel.PlayStyleCompetitiveCompetitive
 U
 #Base.Resources.material_nature_NameMateriale della naturaMateriali della natura
 /
@@ -9977,6 +10080,8 @@ W
 Base.MenuPanel.ArmyEsercito
 !
 Base.BuildPanel.NeedsRichiede
+ã
+$Base.Resources.hero.HelenOfTroy_DesccUsed to increase the Awakening Level of Helen Of Troy and thus unlock more powerful battle bonuses.
 }
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_DescBProduce moltissime Monete e aggiunge 2 Lavoratori alla tua citt√†.
 r
@@ -10028,6 +10133,8 @@ W
 =Base.Technologies.Technology_EarlyGothicEra_MangonelCrew_NameEquipaggio del Mangano
 F
 )Base.Resources.yellow_crest_enhanced_NameEmblema Giallo Potenziato
+Z
+CBase.IngameEvents.LeaderboardEvent_Winter_2_SummonOfTheStars_1_NameSummon of the Stars
 >
 ,Base.BuildingGroups.collectableSchoolV2_NameScuolaScuole
 @
@@ -10189,6 +10296,8 @@ Q
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescProduce Mosaici
 T
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduce Copricapi
+
+Base.Generic.AgeAge
 „
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text3_Desc˚Ogni <style=MC>Cassa</style> migliora anche la tua <style=MC>Posizione</style> nella <style=MC>Classifica dell'Evento</style>, sbloccando cos√¨ <style=MC>Ricompense</style>migliori man mano che sali nelle <style=MC>Leghe</style> alla fine dell'evento.
 h
@@ -10199,6 +10308,8 @@ E
 &Base.Regions.region.FrozenFjord_4_NameForesta delle fate
 I
 2Base.Buildings.Building_Arabia_Home_Premium_3_NameAbitazione Lussuosa
+Å	
+Base.Units.Unit_Hector_Desc·Steady your shields and hold the line with Hector of Troy, the man who stood between his city and annihilation! When the black ships of Greece darkened Troy's shores, this prince became the backbone of Trojan resistance. Unlike warriors who fought for glory or gold, Hector fought for something greater - the survival of everything he loved.<br><br>For nine years, Hector was Troy's shield and spear. He led from the front, turning back Greek assaults and even driving them to their ships. His duel with Ajax shook the earth, ending only when heralds separated them at nightfall. But Hector was more than a warrior - he was a devoted son to Priam, a loving husband to Andromache, and the moral center of a city under siege.<br><br>His death at Achilles' hands wasn't just the loss of Troy's greatest defender - it was the moment the city's fate was sealed. Yet even in death, Hector achieved something remarkable: he humanized the enemy. When Priam retrieved his son's body, even hard-hearted Achilles wept. Hector's legacy isn't one of conquest but of duty, showing that true heroism lies in defending what matters most.
 M
 %Base.BuildingInfoPanel.HeroBoostLabel$Potenziamento per tutti gli eroi {0}
 K
@@ -10280,6 +10391,8 @@ g
 Base.Resources.relic_dust_Desc£La Polvere di Reliquia viene utilizzata per migliorare e trascendere le Reliquie. Pu√≤ essere ottenuta insieme alle Reliquie come ricompensa in determinati Eventi.
 œ
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text4_Desc~Marie Curie, la tua intuizione sulla materia e sull'energia √® fondamentale. Come possiamo scoprire i meccanismi nascosti qui?
+[
+BBase.IngameEvents.MilestoneEvent_Winter_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
 i
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc3Produce Penny e aggiunge 2 marinai alla tua citt√†.
 Ô
@@ -10544,6 +10657,8 @@ c
 %Base.Resources.blue_crest_common_Desc:Gli Emblemi Blu sono necessari per ascendere gli Eroi blu.
 å
 ABase.RewardTypes.IncreaseBothExpansionRightRewardWithSubType_DescGPermette di sbloccare {0} espansioni standard e {1} premium {2} in {3}.
+F
+0Base.RewardTypes.RegeneratingCapIncreaseMax_NameIncrease {0} limit
 É
 #Base.ShopPopup.CityStarterPack1Desc\Dai una spinta al tuo impero con queste risorse essenziali per la ricerca e l'aggiornamento.
 M
@@ -10630,6 +10745,8 @@ I
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_5_Name∂<style=ability_label>Attacco ad Area| Ustione</style>Detona un'esplosione che colpisce il gruppo pi√π numeroso di unit√† nemiche, infliggendo <style=basestat>{dmg_percentage}</style> danni in un raggio di <style=basestat>{range}</style>. Ha una <style=basestat>{chance_percentage}</style> di probabilit√† di bruciare i nemici colpiti per <style=basestat>{dmg_percentage_burn}</style> danni nel corso di <style=basestat>{duration}</style>.
 6
 Base.Units.Unit_Mozart_NameWolfgang Amadeus Mozart
+O
+?Base.AllianceApplicationMessages.AllianceApplicationMessageFromMessage from
 Y
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_NameCaserma della fanteria
 
@@ -11048,6 +11165,8 @@ EBase.AllianceTechnologies.alliance_technology.explorersQuarter_4_Name	Livello 
 ABase.WondersReworkUpgradePanel.ResourceBonusByBuildingDescriptionWAumenta l'output di tutte le produzioni da ogni <b>{0}</b> in <b>{1}</b> di <b>{2}</b>.
 a
 @Base.Questlines.Questline_EventCity_Mayas_ChichenItza_Start_NameIl Cenote in Declino di Chaac
+l
+)Base.Resources.black_friday_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
 H
 2Base.IngameEvents.EventCity_Mayas_SayilPalace_NameRivali alla Soglia
 d
@@ -11060,6 +11179,8 @@ BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_DescNL'Accademia
 jBase.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_MontezumaI_SahilPalace_QuestFinish_Text1_Desc…I delegati stranieri arrivano con sempre maggiore frequenza e i nostri negoziatori sono pronti! L‚Äôatmosfera diplomatica vibra di possibilit√†. Ora completa <style=MC>il Palazzo di Sayil</style> nella sua piena gloria affinch√© <style=MC>potenti sovrani</style> promettano il loro potere militare al nostro impero in espansione!
 >
 )SoftError.AllianceCity.CRATE_ALREADY_PAIDCassa gi√† pagata
+=
+&Base.ShopPopup.Pages.winter_hero_promoParallel Prosperity
 ;
 !Base.HarborShopPanel.OfferSoldOutL'offerta √® esaurita!
 ?
@@ -11109,11 +11230,15 @@ f
 6Base.Buildings.Building_Arabia_Irrigation_Oasis_5_Desc,Aumenta l‚Äôirrigazione degli edifici vicini
 $
 Base.HeroClass.Defender	Difensore
+(
+Base.AllianceSearch.ActivityActivity
 H
 /Base.Continents.continent.EmeraldHighlands_NameAltopiani di Smeraldo
 U
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_17_Name
 Livello 17
+†
+LBase.AbilityDescriptions.hero_battle_ability_description.Charlemagne_25_Nameœ<style=ability_label>Debuff</style><style=ability_desc>Deals <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_areadmg> <style=ability_link>Area DMG</style></nobr> to enemies within a radius of <style=basestat>{range}</style> around the nearest enemy</style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_atkspd> <style=ability_link>ATK SPD</style></nobr> of the targets by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{move_speed_percentage}</style> for <style=basestat>{duration}</style></style>
 6
 +Base.KeyboardShortcuts.Description.ResearchRicerca
 v
@@ -11196,6 +11321,8 @@ BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_200_Name"Kit di Sele
 Base.Generic.CopiedToClipboardCopiato negli appunti
 ]
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameInnovazione balistica
+ö
+<Base.LeaderboardEventPanel.GachaInfo.BlackFriday2025_ContextZEarn Trophies for every Gem spent in the {0} - the more you spent, the higher you'll rise!
 ]
 9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_Name Fanteria pesante di Hohenstaufen
 &
@@ -11273,6 +11400,8 @@ P
 0Base.Questlines.Questline_FOE_CrossSelling_StartçGiocatore coraggioso, una nuova missione ti aspetta sulle rive della tua citt√†. Parti per nuove avventure, ma non dimenticare di tornare! Scarica <style=MC>Forge of Empires</style> e ricerca la tecnologia <style=MC>Pottery</style> per ricevere una ricompensa speciale.
 K
 -Base.ShopPopup.Pages.arcane_antimatter_offer2Offerta Antimateria Arcana
+-
+Base.Units.Unit_Hector_NameHector of Troy
 [
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_DescSblocca gli arcieri saraceni
 O
@@ -12200,6 +12329,8 @@ $Base.AlliancePanel.LeaveAllianceDesc0Sei sicuro di voler abbandonare la tua al
 Base.Rifts.rift.Tutorial_NamePortale del Tempo
 π
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_DescﬁIl cenote sacro, il nostro <style=MC>portale divino</style> verso Chaac, si sta prosciugando giorno dopo giorno. Senza la benedizione della divinit√† della pioggia, i nostri raccolti appassiscono e il nostro popolo soffre.
+H
+)Base.Resources.black_friday_trophies_NameTrophy PointTrophy Points
 B
 2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_NameArcieri Maya
 B
@@ -12495,6 +12626,8 @@ I
 +Base.RewardTypes.IncreaseBuildingLimit_Desc>Permette di costruire {0} altro edificio {1} nella tua citt√†.=Permette di costruire {0} altri edifici {1} nella tua citt√†.
 Q
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_1_NameFattoria Cittadina
+T
+ABase.IngameEvents.LeaderboardEvent_Winter_2_HistoricSpoils_1_NameHistoric Spoils
 µ
 /Tutorial.BarracksSupportUnitsTutorial.TapQuestsÅAspetta! Non posso far fronte a tutte le imminenti difficolt√† da solo. Innanzitutto costruiamo alcune <style=MC>CASERME</style>.
 R
@@ -13414,6 +13547,8 @@ l
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc+Raffina i Bozzoli di Falena in Fili di Seta
 I
 2Base.Buildings.Building_Arabia_Home_Premium_6_NameAbitazione Lussuosa
+1
+)Base.AllianceSearch.AllianceAdmissionOpenOpen
 ≥
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_DescœPer questo devi riempire le <style=MC>Casse</style> con le Risorse. Se tutte le casse sono state riempite, √® possibile fare un <style=MC>miglioramento</style> e raccogliere una <style=MC>Ricompensa</style>.
 O
@@ -13918,6 +14053,8 @@ BBase.Technologies.Technology_EarlyGothicEra_MasonryTechniques_NameTecniche di
 *Base.EquipmentSets.equipment_set.King_DescÅDanno Attacco Base inflitto <style=basestat_dark>+10%</style> e Velocit√† d'Attacco <style=basestat_dark>+9 colpi/minuto</style> 
 f
 KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_SahilPalace_2_NamePalazzo Sayil - Fase II
+N
+;Base.AllianceApplicationMessages.AllianceInvitationDeclinedInvite declined
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text14_NameAlbert Einstein
 #
@@ -13976,6 +14113,8 @@ T
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_NameCaserma della fanteria
 ô
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_70_DescVQuesto Kit di Selezione ti permette di scegliere tra Emblemi Comuni di colori diversi.
+I
+=Base.EquipmentFilterPopover.EquipmentSetFilterOptionsTitleAllAll sets
 Z
 >Base.Questlines.Questline_EventCity_Egypt_RepairTheBridge_NameAttraversamento del Nilo
 H
@@ -15068,6 +15207,8 @@ W
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Name≤<style=ability_label>Attacco Corpo a Corpo| Stordimento</style>Colpisce abilmente il bersaglio attuale con il suo bastone, infliggendo <style=basestat>{dmg_percentage}</style> danni e avendo una probabilit√† del <style=basestat>{chance}</style> di lasciarlo stordito per <style=basestat>{duration}</style>.
 .
 Base.AllianceBlimps.ContributeContribuisci
+L
+:Base.AllianceApplicationMessages.AllianceDeclineInvitationDecline Invite
 )
 Base.LocalizedLocales.ja_JP
 Giapponese
@@ -15128,6 +15269,8 @@ G
 1Base.UnitStats.unit_stat.MoveSpeed_Percent_AbbrevVELOCIT√Ä DI MOV %
 f
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc+Aumenta l'irrigazione degli edifici vicini.
+U
+CBase.AllianceApplicationMessages.AllianceDeclinedApplicationDeletedInvite deleted
 8
 -Base.Units.Unit_BronzeAge_Player_Archers_NameArcieri
 j
@@ -15492,6 +15635,8 @@ F
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_NameFattoria rurale
 A
 *Base.Resources.stone_tablet_TechnologyNameTavoletta di pietra
+`
+;Base.AllianceSetDetailsPanel.RequiredTreasureHuntDifficulty!Required Treasure Hunt Difficulty
 I
 3Base.Buildings.Building_FeudalAge_Home_Small_3_NameAbitazione piccola
 ,
@@ -15652,6 +15797,8 @@ N
 7Base.Technologies.Technology_Mayas_JadeProspecting_NameRicerca della Giada
 Ø
  Base.HeroClass.AreaAttacker_DescäGli Attacchi ad Area infliggono danni a tutti i nemici in ampie zone. Eccellono contro gruppi numerosi di nemici pi√π piccoli.<br><line-height=50%><br></line-height><b><color=#3DA229>Forti</color> contro:</b><br>‚Ä¢<indent=5%><color=#3DA229>Grandi Gruppi</color> nella <color=#3DA229>Campagna</color>, <color=#3DA229>Caccia al Tesoro</color> e <color=#3DA229>Assedio di Orl√©ans</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Deboli</color> contro:</b><br>‚Ä¢<indent=5%><color=#CD2A25>Eroi Nemici</color> nella Campagna, Arena e Caccia al Tesoro.</indent><br>‚Ä¢<indent=5%><color=#CD2A25>Tempeste di Tesla.</color></indent>
+ı
+3Base.EventStartScreens.Winter2EventStartDescriptionΩComplete challenges to earn Snowflakes and dive into the seasonal magic by unwrapping gifts filled with delightful rewards, including <style=legendary>Fragments of William Tell</style>. Use these fragments to transform your <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> William Tell into the <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> legendary Swiss hero! The legend awaits. Help him reach his true potential!
 <
  Base.BuildingGroups.jeweler_NameGioielliereGioiellieri
 H
@@ -15877,6 +16024,8 @@ I
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduce Ossidiana
 W
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCaserma della cavalleria
+G
+/Base.AllianceSetDetailsPanel.RequiredTotalPowerRequired Total Power
 
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_DescCProduce una piccola quantit√† di Cibo in un breve periodo di tempo.
 K
@@ -15889,6 +16038,8 @@ K
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text3_DescªInvoco il tuo talento unico per creare questo <style=MC>paradiso dell'intelletto</style> in cui gli inventori e gli scolari possono radunarsi per sfidare i limiti della nostra conoscenza.
 f
 DBase.Buildings.Building_EarlyGothicEra_Barracks_HeavyInfantry_1_NameCaserma della Fanteria Pesante
+G
+"Base.HeroPanel.HeroAlreadyRestored!This hero is already eternalized.
 ™
 <Base.WondersReworkUpgradePanel.TagTradeOfferBoostDescriptionjOttieni il <b>{0}</b> di beni in pi√π dalle <b>proposte di scambio</b> extra per ogni <b>{1}</b> attivo/a.
 ;
@@ -15903,6 +16054,8 @@ GBase.AllianceTechnologies.alliance_technology.productionQuarter_15_Name
 Livello 15
 ®
 0Base.VideoRewards.VideoReward_VideoIncident_DesctCiao! Ti offro le ultime notizie e merci da tutto il mondo. Siediti e ascolta, la tua attenzione sar√† ricompensata!
+'
+Base.AlliancePanel.ActivityActivity
 +
 Base.Resources.porcelain_Name
 Porcellana
@@ -15912,6 +16065,8 @@ F
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_NameFattoria rurale
 =
 +Base.EquipmentSets.equipment_set.Maori_NameCompleto Maori
+:
+.Base.AllianceSetDetailsPanel.PlayStyleBeginnerBeginner
 A
 +Base.Resources.hero.GreekMathematician_NameEssenza di Euclide
 
@@ -17284,6 +17439,8 @@ W
 (Base.QuestlinesPanel.FinishPvpBattleTask(Finisci una Battaglia nell'<b>Arena</b>./Finisci <b>{0}</b> battaglie nell'<b>Arena</b>.
 e
 5Base.InitialLoadingScreen.BrowserLoadingFocusHeadline,Ti preghiamo di tenere attiva questa scheda.
+2
+"Base.Units.Unit_WilliamTell_5_NameWilliam Tell
 )
 Base.Resources.obsidian_Name	Ossidiana
 T
@@ -17412,6 +17569,9 @@ F
 !Base.SeasonPass.NextSeasonStarted!√à iniziata la stagione seguente!
 
 Base.Generic.MembersMembri
+4
+&Base.AllianceSetDetailsPanel.PlayStyle
+Play Style
 I
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescProduce Ossidiana
 ﬁ
@@ -17623,6 +17783,8 @@ F
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_NameFattoria rurale
 %
 Base.Resources.column_NameColonna
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_PurpleTeslaTakedown_1_NameUmbral Testla Takedown
 N
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_NameScultore Rituale
 9
@@ -17777,6 +17939,8 @@ i
 Base.SeasonPass.SeasonEndedText[<b>Congratulazioni</b>! Hai raggiunto il checkpoint <b>{0}</b> nell'ultima <b>Stagione</b>.
 Q
 :Base.Buildings.Building_EarlyGothicEra_Home_Premium_1_NameAbitazione Lussuosa
+*
+Base.AllianceSearch.Admission	Admission
 †
 'Base.ExternalAllianceVideoPopup.MessageuQuesto ti porter√† su YouTube per vedere il video introduttivo per la funzione Citt√† dell'Alleanza. Vuoi continuare?
 ú
@@ -18065,6 +18229,8 @@ F
 .Base.AbilityTrainingPanel.AbilityTrainingLabelAllenamento Abilit√†
 I
 4Base.Abilities.hero_battle_ability.VikingRaider_NameAscia di Ragnarok
+W
+BBase.IngameEvents.LeaderboardEvent_Winter_2_GladiatorsGlory_1_NameGladiator's Glory
 J
 4Base.Buildings.Building_IberianEra_Home_Small_2_NameAbitazione piccola
 N
@@ -18109,6 +18275,8 @@ T
 Base.Generic.QuitYesEsci
 K
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_NameFattoria Rurale
+Z
+CBase.AllianceApplicationMessages.AllianceRejectedApplicationDeletedApplication deleted
 D
 0Base.Abilities.hero_battle_ability.Hercules_NameForza del Titano
 A
@@ -18394,6 +18562,8 @@ K
 .Base.ShopOffers.City_Arabia_StarterPack_1_NamePacchetto iniziale Arabia
 A
  Base.World.SpartasLastStand_NameL'ultima Resistenza di Sparta
+4
+$Base.IngameEvents.SeasonPass_18_NameTrojan Tales
 §
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text2_DescSAh! Non sei di Sparta... ma sei gi√† il nostro pi√π grande punto di forza, compare.
 K
@@ -18444,6 +18614,8 @@ D
 %Base.Resources.hero.TribalHealer_Desc|Serve ad aumentare il Livello di Risveglio di Naya del Clan delle Caverne e sbloccare cos√¨ bonus di battaglia pi√π potenti.
 î
 GBase.StoryText.Story_Technology_MinoanEra_Masonry_TechUnlock_Text2_DescISblocca altre tecnologie nell'Era Minoica e rendi la nostra citt√† unica.
+˙
+"Base.Units.Unit_WilliamTell_5_Desc”Shoot well and never miss! William Tell, the legendary Swiss folk hero, is by your side. Remembered for his skill with a bow, Tell is celebrated for defying tyranny in the early 14th century.<br><br>Famed for the tale where he was forced to shoot an apple off his son's head with a crossbow, Tell's precision and bravery became symbols of resistance against oppression. His defiance of the Habsburg rulers inspired the Swiss fight for freedom and independence.<br><br>Tell's story, blending legend and history, remains a beacon for the brave, demonstrating how one person's courage can ignite the spirit of an entire nation. Time travelling into the past has scrambled his brain: now he loves his apple like it was his son!
 û
  Base.Alerts.NoInternetConnectionzA quanto pare si stanno verificando dei problemi di connessione.
 
@@ -18800,6 +18972,8 @@ J
 1Base.Buildings.Building_Arabia_Home_Medium_4_NameAbitazione Intermedia
 I
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameAbitazione piccola
+N
+8Base.IngameEvents.MilestoneEvent_BlackFriday_2025_1_NameBlack Friday Event
 ñ	
 &Base.Units.Unit_AlexanderTheGreat_DescÎAmmira Alessandro Magno, invincibile, trionfante, il miglior generale che il mondo abbia mai conosciuto! Questo re del IV secolo a.C. √® famoso per aver conquistato vasti territori del mondo prima della sua prematura morte.<br><br>Alessandro sal√¨ al trono all'et√† di 20 anni, dopo l'assassinio di suo padre. Presto dimostr√≤ di essere decisivo: conquist√≤ i Traci e distrusse la famosa citt√†-stato di Tebe. Questo port√≤ nuovamente la pace in Grecia, e Alessandro guid√≤ la Lega di Corinto per conquistare la Persia Achemenide. Questo impero leggendario cadde davanti a lui, ma Alessandro non si ferm√≤: prima che le sue armate si inginocchiassero, Siria, Babilonia, Iran e anche il Pakistan furono conquistati.<br><br>Alessandro non perse mai una battaglia. Alla fine, fu il suo stesso esercito a chiedere di tornare a casa. A Babilonia, mentre tornava a casa (anche se fece altre conquiste durante il viaggio di ritorno), Alessandro emise il suo ultimo respiro.<br><br>All'interno di Heroes of History, Alessandro √® un po' controverso. Gli piace molto bere con Achille, prendere lezioni da Ciro, e mettere in ombra suo padre!
 D
@@ -18890,6 +19064,8 @@ H
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text2_DescƒPer questo devi riempire le <style=MC>Casse</style> con le Risorse. Se tutte le casse sono piene, puoi <style=MC>effettuare il miglioramento</style> e raccogliere una <style=MC>Ricompensa</style>.
 .
 $Base.Resources.goblet_TechnologyNameCalice
+U
+Base.HeroSharingCard.QRCodeCTA3Let's play <nobr>Heroes of History</nobr> together:
 C
 'Base.BuildingInfoPanel.UpgradeCompletedMiglioramento completato
 H

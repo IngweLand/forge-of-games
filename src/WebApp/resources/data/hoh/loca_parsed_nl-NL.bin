@@ -631,6 +631,8 @@ T
 ∞
 -Base.QuestlinesPanel.AcquireEncounterByRegion>Ga <b>{0}</b> confrontatie aan in regio <b>{0}</b>. <b>{1}</b>?Ga <b>{0}</b> confrontaties aan in regio <b>{0}</b>. <b>{1}</b>
 ;
+%Base.IngameEvents.Event_Winter_2_NameTell's Winter Tale
+;
 /Base.Factions.Faction_ByzantineEra_Toltecs_NameTolteken
 W
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_1_DescProduceert Rituele Dolken
@@ -644,6 +646,8 @@ O
 'Base.HeroPanel.FocusAbilityChargeHeaderEigenschap Opladen:
 C
 (Base.Rewards.Reward_Food_Coins_XS_1_NameVoedsel & Munten bundel
+>
+'Base.AllianceSearch.SuggestionListTitleSuggested Alliances
 V
 :Base.Units.Unit_KingdomOfSicily_NormanSicily_Infantry_NameSiciliaanse Bijlvechters
 T
@@ -1094,6 +1098,8 @@ GBase.Buildings.Building_MinoanEra_Collectable_MinoanWatchtowerV2_3_NameMino√Ø
 +Base.Subscriptions.PRODUCTION_DURATION_DescîVerhoogt de opslagcapaciteit van je inactieve productiegebouwen, zodat je meer grondstoffen kunt opslaan voordat de opslag van het gebouw vol raakt.
 1
 Base.OptionsPopup.PlayerProfileSpeler Profiel
+.
+Glossary.Generic.GameNameHeroes of History
 /
 Base.HeroClass.AreaAttackerGebied Aanvaller
 ç
@@ -1451,6 +1457,8 @@ $Base.Resources.hero.WilliamTell_DescpGebruikt om het Ontwakingslevel van Willi
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text7_Desc{Eerlijk gezegd weet ik niet precies wat we zoeken. Laten we ervoor zorgen dat er geen ongewenste passagiers aan boord zijn.
 q
 6Base.Buildings.Building_ByzantineEra_Home_Small_3_Desc7Produceert munten en voegt een arbeider aan je stad toe
+H
+/Base.AllianceSearch.HideAlliancesCheckboxClosedHide closed alliances
 =
 /Base.WorldWondersDetailPanel.ContributorsHeader
 Bijdragers
@@ -1488,6 +1496,8 @@ MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text3_Descö
 )Base.HarborShopPanel.Alliance.ButtonLabel	Alliantie
 Y
 ?Base.Units.Unit_MinoanEra_EgyptianAcolytes_HyksosSureshots_NameHyksos Scherpschutters
+œ
+%Base.EventPass.Winter2BuyGoldPassText•Take part to earn exclusive rewards and get a legendary <nobr><style=legendary>Ring</style></nobr> of the <nobr><style=legendary>King</style></nobr> set immediately!
 -
  Base.RewardPanel.Blueprint_Short	Blauwdruk
 F
@@ -1710,6 +1720,9 @@ d
 DBase.Buildings.Building_TreasureHunt_Evolving_FountainOfYouth_1_NameFontein van de Jeugd
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_25_NameLevel 25
+@
+2Base.LeaderboardEventPanel.TaskInfo.GemsSpend_Name
+Spend Gems
 c
 %Base.QuestlinesPanel.FinishBattleTaskVoltooi <b>{0}</b> gevecht.Voltooi <b>{0}</b> gevechten.
 7
@@ -1974,6 +1987,8 @@ c
 )Base.Generic.UnlockAdjacentExpansionFirst6Je moet eerst een aangrenzende uitbreiding vrijspelen!
 R
 FBase.AllianceTechnologies.alliance_technology.explorersQuarter_23_NameLevel 23
+O
+&Base.PlayerProfile.PlayerNotFoundError%The player profile could not be found
 Å
 9Base.StoryText.Story_DesertDelta_5_9_BattleEnd_Text1_DescDSpartanen! Jullie hebben je op ons gestort als golven tegen de rots!
 P
@@ -1990,6 +2005,8 @@ p
 5Base.Buildings.Building_Arabia_Workshop_Carpet_1_Desc7De tapijtmaker produceert tapijten van mirre en katoen.
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_32_NameLevel 32
+2
+!Base.Heroes.hero.HelenOfTroy_NameHelen of Troy
 A
 2Base.Technologies.Technology_Mayas_MayaGlyphs_NameMaya-tekens
 u
@@ -2104,6 +2121,8 @@ S
 )Base.PlayerSearch.NoAllianceLocaleMessage&Je alliantie heeft geen taal ingesteld
 c
 KBase.Buildings.Building_ClassicGreece_Collectable_ArchitectsStudioV2_5_NameLyceum der Geleerden
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_YellowTeslaTakedown_1_NameRadiant Tesla Takedown
 ,
 Base.InventoryMenuPanel.Header
 Inventaris
@@ -2169,6 +2188,8 @@ I
 :Base.Buildings.Building_HighMiddleAges_Home_Premium_1_NameLuxe woning
 u
 >Base.Buildings.Building_IberianEra_CultureSite_Moderate_1_Desc3Verhoogt de tevredenheid van aangrenzende gebouwen.
+8
+"Base.Rifts.rift.SeasonPass_18_NameArcane Time Portal
 J
 5Base.Factions.Faction_IberianEra_ReinoDeCastilla_NameReino de Castilla
 B
@@ -2456,6 +2477,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_45_NameLevel 45
 :
 Base.Event.EarnEventCurrencyEvenement Valuta verdienen
+:
+$Base.ChestEvents.Event_Winter_2_NameTell's Winter Tale
 ,
 Base.Units.Unit_MarcoPolo_Name
 Marco Polo
@@ -2619,6 +2642,8 @@ W
 BBase.Questlines.Questline_EventCity_China_ForbiddenCity_Start_NameHet Lichtfestival
 q
 7Base.WondersReworkUpgradePanel.AllUnitsBonusDescription6Boost de <b>{0}</b> van al je eenheden met <b>{1}</b>.
+G
+5Base.Abilities.hero_battle_ability.WilliamTell_5_NameApple Splitter
 D
 6Base.Buildings.Building_BronzeAge_City_CityHall_1_Name
 Grote zaal
@@ -2781,6 +2806,8 @@ y
 JBase.AbilityDescriptions.hero_battle_ability_description.IsabellaI_16_Nameñ<style=ability_label>Beschimpen | Schild | Herstel</style>Isabella beveelt op het slagveld, beschimpt alle vijanden voor <style=basestat>{taunt_shield_duration}</style> en geneest zichzelf voor <style=basestat>{self_heal}</style> van haar basis schade. Voor elke beschimpt vijand krijgt ze een schild ter waarde van <style=basestat>{shield_per_unit}</style> van haar basis schade tot het einde van de golf.
 :
 $Base.IngameEvents.SeasonPass_09_NameHelende horizonten
+¨
+MBase.AbilityDescriptions.hero_battle_ability_description.JuliusCaesar_15_Name⁄<style=ability_label>Invincibility | Taunt | Debuff | Melee | Burn</style><style=ability_desc>Gains <style=ability_link>Invincibility</style> for <style=basestat>{invincibility_duration}</style></style><style=ability_desc><style=ability_link>Taunts</style> all enemies for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{movespd_reduction}</style> for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Gains a burning <style=ability_link>Aura</style> with a radius of <style=basestat>2</style> around himself for <style=basestat>{taunt_duration}</style></style><style=ability_desc>Deals a total of <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_burndmg> <style=ability_link>Burn DMG</style></nobr> to enemies within his Aura over <style=basestat>2s</style> every <style=basestat>1.33s</style></style>
 2
 #Base.ShopPopup.DailyDealGachaHeaderHeldenjacht
 C
@@ -2807,10 +2834,14 @@ NBase.StoryText.Story_Questline_Event_LegendaryPull_Start_QuestStart_Text2_Desc
 @Base.LeaderboardEventPanel.TaskInfo.TeslaStormPurple_DescriptionDWin Tesla Stormen kleurengevechten in paars om trofee√´n te krijgen!
 -
 $Base.Wonders.Wonder_Mayas_Tikal_NameTikal
+[
+ABase.IngameEvents.MilestoneEvent_Winter_2_RedTeslaTakedown_1_NameBlazing Tesla Takedown
 ç
 IBase.StoryText.Story_Questline_BronzeAge_CityQuest3_QuestStart_Text2_Desc@Oh nee, ze hebben goederen! Wat moet ik nu doen? Dacht het niet.
 (
 Base.BuildingTypes.ResidenceWoningen
+8
+(Base.AllianceSetDetailsPanel.RequiredAgeRequired Age
 F
 1Base.EquipmentSets.equipment_set.Bedouin_Hat_NameBedoenenhoofddoek
 b
@@ -3028,6 +3059,8 @@ Y
 =Base.Technologies.Technology_ByzantineEra_SaracenArchers_NameSaraceense boogschutters
 p
 ,Base.TeslaStormsPanel.NoHeroForSelectedColor@Je hebt minstens 1 held van deze kleur nodig om hier te vechten.
+]
+CBase.IngameEvents.MilestoneEvent_Winter_2_GreenTeslaTakedown_1_NameVerdant Tesla Takedown
 V
 >Base.Resources.event_maliempire_2022_grand_prize_progress_NameHoofdprijs Voortgang
 ¢
@@ -4168,6 +4201,8 @@ A
 +Base.Units.Unit_EarlyRome_Player_Siege_NameWerpspeer Katapult
 &
 Base.Resources.pennies_NamePennies
+B
+$Base.HeroPanel.NoRestorationPossibleHero cannot be eternalized
 S
 5Base.Resources.event_leaderboard_winter_trophies_NameTrofee PuntTrofee Punten
 ;
@@ -4202,6 +4237,8 @@ L
 Base.UnlockableFeatures.RelicsRelikwie√´n
 ~
 *Base.RiftInfoPopup.PityPersistenceAdditionP<br>Deze garantie geldt ook als hetzelfde evenement nog een keer wordt gehouden.
+6
+,Base.AllianceSetDetailsPanel.PlayStyleCasualCasual
 C
 1Base.Technologies.Technology_Egypt_Geography_NameAardrijkskunde
 T
@@ -4241,6 +4278,8 @@ V
 =Base.Buildings.Building_HighMiddleAges_Barracks_Ranged_3_DescSpeel Arbalisten vrij
 O
 ;Base.Buildings.Building_AgeOfTheFranks_Farm_Domestic_1_NameKleine boerderij
+F
+7Base.AllianceApplicationMessages.AllianceInvitationSendSend Invite
 ë
 ABase.InventoryItems.SelectionKit_current_era_teslacrests_110_DescLMet deze selectiekit kun je kiezen uit verschillend gekleurde wapenschilden.
 Ä
@@ -4651,6 +4690,8 @@ I
 :Base.Technologies.Technology_KingdomOfSicily_Orchards_NameBoomgaarden
 Ÿ
 PBase.StoryText.Story_Questline_EventCity_Egypt_MoreWorkers_QuestStart_Text1_DescÑOm onze doelen te bereiken, hebben we een grotere arbeidskracht nodig. Laten we meer huizen bouwen om extra arbeiders te huisvesten.
+L
+<Base.IngameEvents.MilestoneEvent_Winter_2_AnvilStrike_1_NameAnvil Strike
 T
 #Tutorial.MainTutorial.ProduceVisual-<sprite name=tutorial_icon_produce>Produceren
 ê
@@ -4874,6 +4915,8 @@ B
 $Base.Resources.green_crest_epic_NameMiddernacht Groen Crest
 +
 Base.Heroes.hero.RamsesII_Name	Ramses II
+á
+Base.Resources.hero.Hector_DescdUsed to increase the Awakening Level of Hector of Troy and thus unlock more powerful battle bonuses.
 ¢
 *Base.Resources.etruscan_bronze_mirror_DesctEen kunstzinnig vervaardigde spiegel die vereist is voor onderzoek naar bepaalde technologie√´n uit het vroege Rome.
 M
@@ -4886,6 +4929,8 @@ p
 3Base.Incidents.Incident_BronzeAge_Capital_XP_1_DescÉOh jee, deze stapel hout is niet bepaald een meesterwerk! Laten we die spieren gebruiken en afscheid nemen van deze lelijke rommel.
 ?
 )Base.HeroPanel.UnitStatBoostBarracksTitleVersterkt door {0}
+5
+"Base.AllianceSearch.AllianceLeagueAlliance League
 0
 Base.Resources.silver_ring_NameZilveren ring
 ~
@@ -4955,6 +5000,8 @@ B
 ,
 Base.Units.Unit_DArtagnan_Name
 D'Artagnan
+)
+Base.AlliancePanel.Applicant	Applicant
 q
 ;Base.Buildings.Building_BronzeAge_CultureSite_Little_1_Desc2Verhoogt de tevredenheid van aangrenzende gebouwen
 L
@@ -5027,6 +5074,8 @@ CBase.Buildings.Building_ClassicGreece_Barracks_HeavyInfantry_1_DescOntgrendel
 Tutorial.MainTutorial.StoneAgeƒOpmerkelijk! We hebben het <style=MC>stenen tijdperk</style> bereikt, een cruciaal moment in de <style=MC>menselijke geschiedenis</style> waar de kiemen van de beschaving voor het eerst ontkiemen.
 ™
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text1_DescYH√©, machtige Leonidas! Wij <style=MC>Arbeiders</style> willen je helpen op het slagveld!
+7
+%Base.AllianceSearch.AverageTotalPower√ò Total Power
 <
 *Base.Resources.iron_pendant_TechnologyNameIJzeren hanger
 /
@@ -5067,6 +5116,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text4_Name
 Robin Hood
 )
 Base.Ages.BronzeAge_Finish3000 v.Chr.
+/
+Base.Generic.ChooseAnAmountChoose an amount
 D
 "Base.BuildingGroups.smallHome_NameKleine woningKleine woningen
 O
@@ -5278,6 +5329,8 @@ m
 =Base.LeaderboardEventPanel.TaskInfo.AntimatterUse_Description,Gebruik antimaterie om trofee√´n te krijgen!
 Y
 ;Base.WorldWondersOverviewPanel.AllianceResearchPointsHeaderAlliantie Onderzoekspunten
+T
+=Base.AllianceApplicationMessages.AllianceInvitationToAllianceInvite to Alliance:
 {
 $Base.HeroPanel.EmptyRelicsCollectionSJe hebt nog geen relikwie√´n.<br>Je kunt relikwie√´n winnen in Seizoensevenementen.
 5
@@ -5318,6 +5371,8 @@ P
 EBase.AllianceTechnologies.alliance_technology.explorersQuarter_2_NameLevel 2
 (
 Base.SellEquipmentPanel.SellVerkopen
+N
+>Base.IngameEvents.LeaderboardEvent_Winter_2_StaminaRush_1_NameStamina Rush
 µ
 IBase.AbilityDescriptions.hero_battle_ability_description.Ouroboros_1_NameÁ<style=ability_label>Heal</style>De Ouroboros Levert de houder de kracht om leven over te hevelen, door een deel van de heling te stelen die vijandelijke helden ontvangen van heldenvaardigheden. De houder krijgt <style=basestat>{heal_steal}</style> van de heling die bedoeld is voor vijandelijke helden, en verandert hun verjonging in de kracht van de houder.
 >
@@ -5513,6 +5568,8 @@ M
 :Base.Buildings.Building_Vikings_FishingPier_Premium_4_NameLuxe vissteiger
 f
 HBase.Technologies.Technology_EarlyGothicEra_CurrencyStandardization_NameStandaardisatie van valuta
+ò
+%Base.EventPass.Winter2MoreContentTextÓWhen you reach the final checkpoint, get ready to continue your event journey as all rewards reset!<br><br>After completing the Grand Prize Track for the second time, the required Progress Points to unlock Grand Prizes increases from <b>8</b> to <b>10</b>. For all subsequent completions, the required Progress Points further increase from <b>10</b> to <b>12</b>.<br><br>Start gathering prizes all over again, with even more legendary <nobr><style=legendary>Rewards</style></nobr> up for grabs!
 E
 0Base.KeyboardShortcuts.Description.GoodsOverviewGoederenoverzicht
 U
@@ -5591,6 +5648,8 @@ A
 Vogelkunde
 õ
 )Base.LeaderboardEventPanel.NoExtraRewardsnJe hebt deze keer geen extra Beloningen gekregen. Probeer een hogere Ranglijst om extra beloningen te krijgen.
+G
+6Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_NameArena Battles
 b
 ABase.Buildings.Building_ClassicGreece_CultureSite_Moderate_1_NameMiddelgrote culturele locatie
 ¸
@@ -5758,6 +5817,8 @@ L
 5Base.EquipmentSets.equipment_set.Adventurer_Neck_NameAvonturiershalsband
 ¿
 *Base.EventPass.MoonLanding1BuyGoldPassTextëDoe mee om exclusieve beloningen te verdienen en ontvang meteen de epische Relikwie <nobr>'<style=epic>' en de 'Lunar Meteorite</style></nobr> '!
+G
++Base.HarborShopPanel.PurchasesRemainingTextPurchases remaining: {0}
 z
 .Base.EquipmentSets.equipment_set.Magician_DescHGebied Eigenschap Schade toegebracht <style=basestat_dark> e +5%</style>
 I
@@ -5778,6 +5839,8 @@ M
 5Base.ShopOffers.shop_offer.LegendaryPull_Offer_1_NameRelativiteitstheorie
 0
 %Base.ShopPopup.ConfirmationButtonTextSluiten
+U
+1Base.AllianceSearch.HideAlliancesCheckboxActivity Hide alliances with low activity
 S
 9Base.Buildings.Building_RomanEmpire_Barracks_Siege_1_DescOntgrendelt Ballista's
 ;
@@ -5839,6 +5902,8 @@ SneeuwvlokSneeuwvlokken
 ?Base.Buildings.Building_HighMiddleAges_Barracks_Infantry_2_DescSpeel infanteristen vrij
 P
 8Base.Technologies.Technology_Vikings_FaeringMastery_NameFaering Meesterschap
+9
+'Base.AlliancePanel.RevokeOrDeleteInviteRevoke/ Delete
 ù
 3Tutorial.EquipmentLevelUpTutorial.WithoutEmbersInfofIk heb geen brandstof! BOUW eerst de <style=MC>Oven</style> en kom terug met <style=MC>EMBERS!</style>
 a
@@ -5955,6 +6020,8 @@ X
 @Base.StoryText.Story_SeasonPass_14_SeasonPassClaim_11_Text8_DescLWe moeten voorzichtig zijn met dit tandwiel, anders bevriest alles voorgoed.
 M
 =Base.Units.Unit_StoneAge_SkullSmasherTribe_StoneThrowers_NameSteenwerpers
+<
+Base.Resources.hero.Hector_NameEssence of Hector of Troy
 Â
 @Base.StoryText.Story_Equipment_Introduction3_Tutorial_Text1_Desc†Een indrukwekkende strijd, maar er is meer te doen. Ik heb een aantal <style=MC>TAKEN</style> voorbereid om je bekend te maken met <style=MC>Uitrusting</style>.
 ≠
@@ -6109,6 +6176,8 @@ J
 +Base.Notifications.RemindFreeGachaDrawTitleüåÄ Haal je volgende Held!
 î
 BBase.Resources.event_leaderboard_summon_of_the_stars_trophies_DescNOplossen van de gegeven taak om Trofee Punten te verdienen in deze competitie.
+D
+-Base.AllianceSearch.HideAlliancesCheckboxFullHide full alliances
 9
 !Base.Units.Unit_VikingRaider_NameFreydis Eiriksdottir
 |
@@ -6717,6 +6786,8 @@ eBase.StoryText.Story_Questline_EventCity_Vikings_ProgressTier2_DragonshipEllida
 Base.Resources.fish_Desc}Vis is een essenti√´le grondstof die nodig is om verfijnde grondstoffen te maken. Het kan worden geproduceerd in Vissteigers.
 )
 !Base.AllianceSetDetailsPanel.OpenOpen
+>
++Base.ShopPopup.Pages.winter_thriving_energyThriving Energy
 x
 Base.Resources.herbs_Desc[Kruiden zijn goederen die kunnen worden geproduceerd in specerijenhandelaren vanaf level 3.
 4
@@ -6928,6 +6999,8 @@ OBase.AbilityDescriptions.hero_battle_ability_description.AbrahamLincoln_25_Name
 !Base.Resources.ancestor_mask_NameVooroudermasker
 Í
 WBase.StoryText.Story_Questline_EventCity_Egypt_GreatSphinx_Start_QuestFinish_Text1_DescéFantastische voortgang! Oh, en nog iets om rekening mee te houden: de ' <style=MC>' Grote sfinx</style> verhoogt de productie van <nobr>'<style=MC>' en 'Gouderts'</style> <sprite name=resource.gold_ore_cta></nobr>, dus houd daar rekening mee bij het plannen van je stad!
+1
+ Base.Units.Unit_HelenOfTroy_NameHelen of Troy
 
 Base.Generic.OffUit
 C
@@ -7214,6 +7287,8 @@ C
 6Base.Buildings.Building_Arabia_Workshop_OilLamp_1_DescADe olielampenfabrikant produceert olielampen van messing en olie.
 +
 Base.HeroPanel.PrimaryStatsStatistieken
+V
+<Base.AllianceApplicationMessages.AllianceDeclineInvitationOfDecline the Invite of:
 B
 1Base.EquipmentSets.equipment_set.Hussar_Ring_NameHussar's Ring
 `
@@ -7387,6 +7462,8 @@ B
 Base.Rarities.UncommonOngewoon
 ®
 IBase.AbilityDescriptions.hero_battle_ability_description.Hercules_20_Name⁄<style=ability_label>Stamp| Verdoven| Herstel</style>Ramt de grond, toebrengend <style=basestat>{dmg_percentage}</style> schade aan alle vijanden binnen een bereik van <style=basestat>{range}</style> en verdooft ze voor <style=basestat>{duration}</style>. Geneest ook Hercules voor <style=basestat>{heal_percentage}</style> van zijn basis schade.
+m
+=Base.LeaderboardEventPanel.TaskInfo.BattleArena_2_Description,Engage in Arena battles to receive Trophies!
 E
 &Base.RankingPanel.Filters.AllianceOpenToon alleen open allianties
 [
@@ -7480,6 +7557,8 @@ N
 :Base.Buildings.Building_RomanEmpire_Workshop_Tailor_1_DescProduceert capes
 B
 'Base.ShopPopup.Pages.mayas_starter_packMayarijk starterspakket
+\
+9Base.LeaderboardEventPanel.TaskInfo.GemsSpend_DescriptionSpend Gems to receive Trophies!
 s
 7Base.Buildings.Building_IberianEra_Farm_Domestic_2_Desc8Produceert een lange tijd een grote hoeveelheid voedsel.
 3
@@ -7510,6 +7589,8 @@ IBase.Questlines.Questline_EventCity_China_WonderProgress_GreatWall_3_NameChin
 &Base.Resources.hero.CyrusTheGreat_DescqGebruikt om het Ontwakingslevel van Cyrus de Grote te verhogen en zo krachtigere gevechtsbonussen vrij te spelen.
 Ò
 dBase.StoryText.Story_Questline_EventCity_China_WonderProgress_TerracottaArmy_3_QuestStart_Text1_DescàUitstekend! Je hebt laten zien dat je kunt uitblinken in deze missie! Maar we hebben nog taken voor de boeg. Laten we ze snel aanpakken!
+ø
+>Base.AllianceApplicationMessages.AllianceReapplicationCooldown}You recently applied for this alliance and there is a lock-out period in place. Please wait {0} before attempting to reapply.
 ;
 &Base.Regions.region.DesertDelta_5_NameVersterkte Zanden
 U
@@ -7899,6 +7980,8 @@ A
 Base.Resources.goblet_NameBeker
 K
 7Base.Buildings.Building_Arabia_CamelFarm_Average_1_NameKamelenboerderij
+P
+<Base.AllianceApplicationMessages.AllianceInvitationCancelledInvite cancelled
 Æ
 <Base.Incidents.Incident_KingdomOfSicily_Capital_Goods_1_DescnVolgens de geruchten verbergt dit ondergrondse doolhof werkelijk unieke schatten. Laten we het gaan verkennen!
 ¶
@@ -8044,6 +8127,8 @@ l
 9Base.Buildings.Building_Egypt_Irrigation_WaterPump_2_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
 V
 >Base.Units.Unit_RomanEmpire_Carthaginians_NumidianChariot_NameCarthaagse Cavalerie
+w
+)Base.Resources.william_tell_fragment_DescJUsed to eternalize William Tell, upgrading him to a Legendary 5-Star Hero.
 D
 +Base.Regions.region.EmeraldHighlands_3_NameCrystalford Viscounty
 B
@@ -8164,6 +8249,8 @@ a
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_9_Text10_NameAlbert Einstein
 C
 7Base.Buildings.Building_Egypt_Workshop_Goldsmith_4_NameEdelsmid
+ÿ	
+ Base.Units.Unit_HelenOfTroy_Desc≥	Beauty becomes a blade when Helen of Troy joins your ranks, the woman whose face launched a thousand ships and burned the topless towers of Ilium! Born from Zeus and Leda in Greek mythology, this Spartan princess was so beautiful that all the kings of Greece swore an oath to protect her marriage. When Paris of Troy spirited her away from King Menelaus, that oath ignited the Trojan War.<br><br>For ten years, Helen lived in Troy as Paris's wife, though ancient sources disagree whether she was victim or willing participant. She walked the walls identifying Greek warriors for Priam and wove tapestries depicting the war fought in her name, while Trojan women whispered behind her back as their husbands died defending her presence. Though Homer called her 'the face that launched a thousand ships,' Helen's story is more complex than mere beauty.<br><br>Helen's legacy transcends the war itself. She became immortal in literature and art, a symbol of dangerous beauty and the devastating power of passion. After Troy's destruction, she returned to Sparta where she and Menelaus lived out their days, though poets gave her a different ending - transformation into a goddess on the Isle of the Blessed.
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text12_NameAlbert Einstein
 ?
@@ -8764,6 +8851,8 @@ W
 Base.Hints.FelixEinstein's Make-up Voorbereiden
 p
 NBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_18_Text7_DescWat hebben we precies gestopt?
+@
+$Base.Resources.hero.HelenOfTroy_NameEssence of Helen of Troy
 j
 /Base.EquipmentSets.equipment_set.Gladiator_Desc7Kritieke schade gedaan<style=basestat_dark>+10%</style>
 J
@@ -8988,6 +9077,8 @@ b
 DBase.Technologies.Technology_ClassicGreece_IntimidatingPresence_NameIntimiderende Aanwezigheid
 Æ
 IBase.AbilityDescriptions.hero_battle_ability_description.TigerLily_1_Name‡<style=ability_label>Genezen| Zuiveren</style>Ontketent de kracht van de natuur, geneest alle vriendelijke eenheden met <style=basestat>{heal_percentage}</style> van Tiger Lily's basisschade. Zuivert alle negatieve effecten.
+Q
+>Base.IngameEvents.MilestoneEvent_Winter_2_RallyOfHeroes_1_NameRally of Heroes
 °
 TBase.AbilityDescriptions.hero_battle_ability_description.HermannTheCheruscan_15_Name»<style=ability_label>Stamp| Herstel| Genezen</style>Stampt op de grond, doet <style=basestat>{dmg_percentage}</style> schade aan alle vijanden binnen een bereik van <style=basestat>{range}</style> en geneest Hermann met <style=basestat>{hp_percentage}</style> van zijn basis schade. Geneest ook alle vriendelijke eenheden binnen een bereik van <style=basestat>{range}</style> met <style=basestat>{hp_percentage_friendly}</style> van Hermann's basis schade.
 /
@@ -9255,6 +9346,8 @@ Dokwerkers
 4Base.UnitStats.unit_stat.MaxHitPoints_Percent_AbbrevHP %
 b
 <Base.ShopPopup.SeasonalEventJourneyOfTheTitanicBundlesHeader"Leid de Titanic naar de diepe zee!
+¢
+;Base.EventStartScreens.BlackFriday2025EventStartDescriptioncUnlock great rewards including a treasure trove of Gems during our limited-time Black Friday event.
 3
 "Base.Heroes.hero.JuliusCaesar_NameJulius Caesar
 I
@@ -9315,6 +9408,8 @@ N
 "Base.UnlockRequirementsPopup.Title{0} vereiste
 
 Base.HeroPanel.LVLLVL.
+E
+)Base.Resources.william_tell_fragment_NameFragment of William Tell
 C
 /Base.Units.Unit_MinoanEra_Spartans_Javelin_NameWerpspeerwerpers
 Ö
@@ -9388,6 +9483,8 @@ BBase.Buildings.Building_EarlyGothicEra_Workshop_Glassblower_1_DescProduceert 
 (Base.RewardPanel.ExpansionUnlocked_ShortUitbreiding
 _
 EBase.StoryText.Story_Event_Moonlanding_1_SeasonPassClaim_3_Text9_DescIk ga voorop! Kom mee!
+T
+0Base.RewardTypes.RegeneratingCapIncreaseMax_Desc Increases your {0} limit by {1}!
 N
 7Base.Abilities.hero_battle_ability.LeonardoDaVinci_NameVitruviaanse Vortex
 =
@@ -9430,6 +9527,8 @@ FBase.AbilityDescriptions.hero_battle_ability_description.Kiviuq_1_Name°<style
 ,Base.AlliancePanel.AllianceMyApplicationsTabMijn aanvragen
 C
 *Base.Resources.folio_of_enlightenment_NameFolio van Verlichting
+.
+Base.Heroes.hero.Hector_NameHector of Troy
 m
 2Base.UnitStats.unit_stat.BasicAttackDamageAmp_Desc7Bepaalt hoeveel extra schade basisaanvallen toebrengen.
 ò
@@ -9602,6 +9701,8 @@ l
 Informatie
 Q
 *Base.BuildingGroups.averageRitualSite_NameKristallen bronKristallen Bronnen
+$
+Base.HeroPanel.UpdateTo	Update to
 ’
 VBase.StoryText.Story_Questline_EventCity_Vikings_Yggdrasil_Start_QuestStart_Text5_Desc{Jouw <style=MC>succes</style> kan ertoe leiden dat sommigen van ons zich bij jou aansluiten in je toekomstige inspanningen!
 †
@@ -9773,6 +9874,8 @@ O
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_3_NameCavaleriekazerne
 Z
 ;Base.Units.Unit_HighMiddleAges_Hohenstaufen_Barbarossa_NameHohenstaufen Zwaardvechters
+@
+1Base.AllianceSetDetailsPanel.PlayStyleCompetitiveCompetitive
 H
 #Base.Resources.material_nature_NameNatuurmateriaalNatuurmaterialen
 )
@@ -9931,6 +10034,8 @@ M
 Base.MenuPanel.ArmyLeger
 %
 Base.BuildPanel.NeedsHeeft nodig:
+ã
+$Base.Resources.hero.HelenOfTroy_DesccUsed to increase the Awakening Level of Helen Of Troy and thus unlock more powerful battle bonuses.
 {
 7Base.Buildings.Building_RomanEmpire_Home_Premium_1_Desc@Produceert heel veel munten en voegt 2 arbeiders aan je stad toe
 p
@@ -9981,6 +10086,8 @@ S
 =Base.Technologies.Technology_EarlyGothicEra_MangonelCrew_NameMangonel-bemanning
 H
 )Base.Resources.yellow_crest_enhanced_NameVerbeterde gele wapenschild
+Z
+CBase.IngameEvents.LeaderboardEvent_Winter_2_SummonOfTheStars_1_NameSummon of the Stars
 ?
 ,Base.BuildingGroups.collectableSchoolV2_NameSchoolScholen
 =
@@ -10140,6 +10247,8 @@ W
 >Base.Buildings.Building_RomanEmpire_Workshop_StoneMason_1_DescProduceert moza√Øeken
 Y
 ?Base.Buildings.Building_Mayas_Workshop_CeremonyOutfitter_1_DescProduceert Hoofdtooien
+
+Base.Generic.AgeAge
 Ù
 cBase.StoryText.Story_Questline_EventCity_China_WonderProgress_ForbiddenCity_1_QuestStart_Text3_DescåElke <style=MC>Kist</style> verbetert ook je <style=MC>Rang</style> in de <style=MC>Evenement Hoogste Score</style>, en ontgrendel je dus betere <style=MC>Beloningen</style> naarmate je hoger klimt in de <style=MC>Competities</style> tegen het einde van het evenement.
 q
@@ -10151,6 +10260,8 @@ B
 Fee√´nwoud
 A
 2Base.Buildings.Building_Arabia_Home_Premium_3_NameLuxe woning
+Å	
+Base.Units.Unit_Hector_Desc·Steady your shields and hold the line with Hector of Troy, the man who stood between his city and annihilation! When the black ships of Greece darkened Troy's shores, this prince became the backbone of Trojan resistance. Unlike warriors who fought for glory or gold, Hector fought for something greater - the survival of everything he loved.<br><br>For nine years, Hector was Troy's shield and spear. He led from the front, turning back Greek assaults and even driving them to their ships. His duel with Ajax shook the earth, ending only when heralds separated them at nightfall. But Hector was more than a warrior - he was a devoted son to Priam, a loving husband to Andromache, and the moral center of a city under siege.<br><br>His death at Achilles' hands wasn't just the loss of Troy's greatest defender - it was the moment the city's fate was sealed. Yet even in death, Hector achieved something remarkable: he humanized the enemy. When Priam retrieved his son's body, even hard-hearted Achilles wept. Hector's legacy isn't one of conquest but of duty, showing that true heroism lies in defending what matters most.
 C
 %Base.BuildingInfoPanel.HeroBoostLabelBoost voor alle {0} helden
 B
@@ -10232,6 +10343,8 @@ g
 Base.Resources.relic_dust_DescúRelikwie√´nstof wordt gebruikt om Relikwie√´n te upgraden en te transcenderen. Het kan naast relikwie√´n als beloningen worden verkregen in bepaalde events.
 ƒ
 MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_1_Text4_DescsMarie Curie, jouw inzicht in materie en energie is cruciaal. Hoe zullen we de verborgen werkingen hier blootleggen?
+[
+BBase.IngameEvents.MilestoneEvent_Winter_2_BlueTeslaTakedown_1_NameArctic Tesla Takedown
 j
 2Base.Buildings.Building_Vikings_Home_Sailor_3_Desc4Produceert centen en voegt 2 zeelui toe aan je stad.
 ˜
@@ -10497,6 +10610,8 @@ h
 %Base.Resources.blue_crest_common_Desc?Blauwe wapenschilden zijn nodig om blauwe helden te versterken.
 õ
 ABase.RewardTypes.IncreaseBothExpansionRightRewardWithSubType_DescVMaakt ontgrendelen van {0} reguliere en {1} premium {2} uitbreidingen in {3} mogelijk.
+F
+0Base.RewardTypes.RegeneratingCapIncreaseMax_NameIncrease {0} limit
 q
 #Base.ShopPopup.CityStarterPack1DescJGeef je rijk een boost met deze essenti√´le onderzoeks- en upgradebronnen.
 M
@@ -10581,6 +10696,8 @@ M
 KBase.AbilityDescriptions.hero_battle_ability_description.AdaLovelace_5_Name∫<style=ability_label>Gebiedsaanval| Brand</style>Detoneert een explosie die zich richt op de grootste groep vijandelijke eenheden, en veroorzaakt <style=basestat>{dmg_percentage}</style> schade binnen een bereik van <style=basestat>{range}</style>. Heeft een <style=basestat>{chance_percentage}</style> kans om getroffen vijanden te verbranden voor <style=basestat>{dmg_percentage_burn}</style> schade over <style=basestat>{duration}</style>.
 6
 Base.Units.Unit_Mozart_NameWolfgang Amadeus Mozart
+O
+?Base.AllianceApplicationMessages.AllianceApplicationMessageFromMessage from
 T
 ?Base.Buildings.Building_AgeOfTheFranks_Barracks_Infantry_1_NameInfanteriekazerne
 
@@ -10996,6 +11113,8 @@ EBase.AllianceTechnologies.alliance_technology.explorersQuarter_4_NameLevel 4
 ABase.WondersReworkUpgradePanel.ResourceBonusByBuildingDescriptionZVerhoogt de uitkomst van alle producties van elke <b>{0}</b> in <b>{1}</b> met <b>{2}</b>.
 b
 @Base.Questlines.Questline_EventCity_Mayas_ChichenItza_Start_NameDe vervagende Cenote van Chaac
+l
+)Base.Resources.black_friday_trophies_Desc?Solve the given task to earn Trophy Points in this competition.
 K
 2Base.IngameEvents.EventCity_Mayas_SayilPalace_NameRivalen op de drempel
 ]
@@ -11008,6 +11127,8 @@ BBase.Buildings.Building_KingdomOfSicily_Special_HeroAcademy_1_DescNDe Hero Aca
 jBase.StoryText.Story_Questline_EventCity_Mayas_ProgressTier2_MontezumaI_SahilPalace_QuestFinish_Text1_DescÆDe buitenlandse delegaties arriveren steeds vaker en onze onderhandelaars staan klaar! De diplomatieke sfeer zoemt van mogelijkheden. Voltooi nu <style=MC>Sayil Paleis</style> in zijn volle glorie zodat <style=MC>machtige heersers</style> hun militaire macht aan ons uitbreidende rijk zullen toezeggen!
 <
 )SoftError.AllianceCity.CRATE_ALREADY_PAIDKrat al betaald
+=
+&Base.ShopPopup.Pages.winter_hero_promoParallel Prosperity
 ?
 !Base.HarborShopPanel.OfferSoldOutAanbieding is uitverkocht!
 ?
@@ -11057,10 +11178,14 @@ i
 %
 Base.HeroClass.Defender
 Verdediger
+(
+Base.AllianceSearch.ActivityActivity
 E
 /Base.Continents.continent.EmeraldHighlands_NameSmaragd Hooglanden
 S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_17_NameLevel 17
+†
+LBase.AbilityDescriptions.hero_battle_ability_description.Charlemagne_25_Nameœ<style=ability_label>Debuff</style><style=ability_desc>Deals <style=basestat>{dmg_percentage}</style> <nobr><sprite name=unit_stat_areadmg> <style=ability_link>Area DMG</style></nobr> to enemies within a radius of <style=basestat>{range}</style> around the nearest enemy</style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_atkspd> <style=ability_link>ATK SPD</style></nobr> of the targets by <style=basestat>{atk_speed_percentage}</style> for <style=basestat>{duration}</style></style><style=ability_desc>Reduces <nobr><sprite name=unit_stat_movespd> <style=ability_link>Move SPD</style></nobr> of the targets by <style=basestat>{move_speed_percentage}</style> for <style=basestat>{duration}</style></style>
 8
 +Base.KeyboardShortcuts.Description.Research	Onderzoek
 f
@@ -11143,6 +11268,8 @@ BBase.InventoryItems.SelectionKit_TeslaStorm_CrestSuperior_200_NameSuperior Cr
 Base.Generic.CopiedToClipboardGekopieerd naar Klembord
 ^
 DBase.Technologies.Technology_AgeOfTheFranks_BallisticInnovation_NameBallistische Innovatie
+ö
+<Base.LeaderboardEventPanel.GachaInfo.BlackFriday2025_ContextZEarn Trophies for every Gem spent in the {0} - the more you spent, the higher you'll rise!
 Z
 9Base.Units.Unit_HighMiddleAges_Hohenstaufen_Infantry_NameHohenstaufen Zware Infanterie
 (
@@ -11221,6 +11348,8 @@ K
 0Base.Questlines.Questline_FOE_CrossSelling_StartíDappere speler, een nieuwe zoektocht wacht op de oevers van je stad. Ga op weg naar nieuwe avonturen, maar vergeet niet terug te komen! Download <style=MC>Forge of Empires</style> en onderzoek de technologie <style=MC>Aardewerk</style> om een speciale beloning te ontvangen.
 N
 -Base.ShopPopup.Pages.arcane_antimatter_offer2Arcane antimaterie Aanbieding
+-
+Base.Units.Unit_Hector_NameHector of Troy
 c
 ;Base.Buildings.Building_ByzantineEra_Barracks_Ranged_1_Desc$Ontgrendelt Saraceense Boogschutters
 N
@@ -12148,6 +12277,8 @@ $Base.AlliancePanel.LeaveAllianceDesc0Weet je zeker dat je je alliantie wilt ve
 Ü
 VBase.StoryText.Story_Questline_EventCity_Mayas_ChichenItza_Start_QuestStart_Text2_Desc´De heilige cenote, onze <style=MC>goddelijke poort</style> naar Chaac, wordt met de dag ondieper. Zonder de zegen van de regengod verdort onze oogst en lijden onze mensen.
 H
+)Base.Resources.black_friday_trophies_NameTrophy PointTrophy Points
+H
 2Base.Units.Unit_ByzantineEra_Mayas_MayaArcher_NameMaya Boogschutters
 A
 $Base.Resources.hero.SirLancelot_NameEssentie van Sir Lancelot
@@ -12440,6 +12571,8 @@ I
 +Base.RewardTypes.IncreaseBuildingLimit_Desc6Hiermee kun je {0} extra {1} gebouw in je stad bouwen.8Hiermee kun je {0} extra {1} gebouwen in je stad bouwen.
 O
 ;Base.Buildings.Building_EarlyGothicEra_Farm_Domestic_1_NameKleine boerderij
+T
+ABase.IngameEvents.LeaderboardEvent_Winter_2_HistoricSpoils_1_NameHistoric Spoils
 §
 /Tutorial.BarracksSupportUnitsTutorial.TapQuestsqWacht! Ik kan niet alle toekomstige uitdagingen alleen aan. Laten we eerst wat <style=MC>KAZERNES</style> bouwen.
 P
@@ -13360,6 +13493,8 @@ e
 =Base.Buildings.Building_China_Workshop_ThreadProcessor_6_Desc$Verwerkt mottencocons tot zijdedraad
 A
 2Base.Buildings.Building_Arabia_Home_Premium_6_NameLuxe woning
+1
+)Base.AllianceSearch.AllianceAdmissionOpenOpen
 ê
 _Base.StoryText.Story_Questline_EventCity_Egypt_WonderProgress_AbuSimbel_1_QuestStart_Text2_Desc¨Hiervoor moet je <style=MC>kratten</style> vullen met grondstoffen. Als alle kratten gevuld zijn, kun je <style=MC>upgraden</style> en een <style=MC>beloning</style> innen.
 F
@@ -13859,6 +13994,8 @@ BBase.Technologies.Technology_EarlyGothicEra_MasonryTechniques_NameMetseltechn
 *Base.EquipmentSets.equipment_set.King_DescrBasisaanval schade <style=basestat_dark>+10%</style> en aanvalsnelheid <style=basestat_dark>+9 hits/minuut</style>
 g
 KBase.Questlines.Questline_EventCity_Mayas_WonderProgress_SahilPalace_2_NamePaleis Sayil - Paleis II
+N
+;Base.AllianceApplicationMessages.AllianceInvitationDeclinedInvite declined
 b
 OBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_13_Text14_NameAlbert Einstein
 3
@@ -13918,6 +14055,8 @@ P
 :Base.Buildings.Building_MinoanEra_Barracks_Infantry_1_NameInfanteriekazernes
 ö
 ?Base.InventoryItems.SelectionKit_TeslaStorm_CrestCommon_70_DescWMet deze Selectiekit kun je kiezen tussen verschillend gekleurde Gewone Wapenschildjes.
+I
+=Base.EquipmentFilterPopover.EquipmentSetFilterOptionsTitleAllAll sets
 T
 >Base.Questlines.Questline_EventCity_Egypt_RepairTheBridge_NameDe Nijl Oversteken
 @
@@ -15019,6 +15158,8 @@ U
 GBase.AbilityDescriptions.hero_battle_ability_description.Inanna_10_Nameç<style=ability_label>M√™lee Aanval| Verdoven</style>Slaat vaardig het huidige doelwit met haar staf, toebrengend <style=basestat>{dmg_percentage}</style> schade en met een <style=basestat>{chance}</style> kans om hen te verdoven voor <style=basestat>{duration}</style>.
 +
 Base.AllianceBlimps.Contribute	Bijdragen
+L
+:Base.AllianceApplicationMessages.AllianceDeclineInvitationDecline Invite
 %
 Base.LocalizedLocales.ja_JPJapans
 ]
@@ -15077,6 +15218,8 @@ E
 1Base.UnitStats.unit_stat.MoveSpeed_Percent_AbbrevBEWEEGSNELHEID %
 j
 7Base.Buildings.Building_Arabia_Irrigation_Medium_1_Desc/Verhoogt de irrigatie van aangrenzende gebouwen
+U
+CBase.AllianceApplicationMessages.AllianceDeclinedApplicationDeletedInvite deleted
 >
 -Base.Units.Unit_BronzeAge_Player_Archers_NameBoogschutters
 {
@@ -15439,6 +15582,8 @@ K
 3Base.Buildings.Building_MinoanEra_Farm_Rural_3_NameLandelijke boerderij
 ;
 *Base.Resources.stone_tablet_TechnologyNameStenen tablet
+`
+;Base.AllianceSetDetailsPanel.RequiredTreasureHuntDifficulty!Required Treasure Hunt Difficulty
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_3_NameKleine woning
 -
@@ -15598,6 +15743,8 @@ F
 7Base.Technologies.Technology_Mayas_JadeProspecting_NameJade zoeken
 •
  Base.HeroClass.AreaAttacker_DescÄGebiedsaanvallers richten schade aan bij alle vijanden in grote gebieden. Ze blinken uit tegen groepen kleinere vijanden.<br><line-height=50%><br></line-height><b><color=#3DA229>Sterk</color> tegen:</b><br>-<indent=5%><color=#3DA229>Grote Squads</color> in <color=#3DA229>Campagne</color>, <color=#3DA229>Schattenjacht</color> en <color=#3DA229>Belegeringseenheid van Orl√©ans</color>.</indent><br><line-height=50%><br></line-height><b><color=#CD2A25>Zwak</color> tegen:</b><br>-<indent=5%><color=#CD2A25>Vijandelijke Helden</color> in Campagne, Arena en Schattenjacht.</indent><br>-<indent=5%><color=#CD2A25>Tesla Stormen.</color></indent>
+ı
+3Base.EventStartScreens.Winter2EventStartDescriptionΩComplete challenges to earn Snowflakes and dive into the seasonal magic by unwrapping gifts filled with delightful rewards, including <style=legendary>Fragments of William Tell</style>. Use these fragments to transform your <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> William Tell into the <nobr><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star><sprite name=icon_hero_star></nobr> legendary Swiss hero! The legend awaits. Help him reach his true potential!
 7
  Base.BuildingGroups.jeweler_NameJuwelier	Juweliers
 F
@@ -15819,6 +15966,8 @@ L
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_4_DescProduceert Obsidiaan
 P
 ;Base.Buildings.Building_RomanEmpire_Barracks_Cavalry_1_NameCavaleriekazernes
+G
+/Base.AllianceSetDetailsPanel.RequiredTotalPowerRequired Total Power
 t
 8Base.Buildings.Building_HighMiddleAges_Farm_Rural_3_Desc8Produceert een kleine hoeveelheid Voedsel in korte tijd.
 B
@@ -15831,6 +15980,8 @@ B
 TBase.StoryText.Story_Questline_EventCity_Egypt_AbuSimbel_Start_QuestStart_Text3_Desc±Ik roep je unieke talenten aan om dit <style=MC>toevluchtsoord van kennis</style> te cre√´ren, waar uitvinders en geleerden samenkomen om de grenzen van ons begrip uit te dagen.
 `
 DBase.Buildings.Building_EarlyGothicEra_Barracks_HeavyInfantry_1_NameZware infanterie kazerne
+G
+"Base.HeroPanel.HeroAlreadyRestored!This hero is already eternalized.
 ¢
 <Base.WondersReworkUpgradePanel.TagTradeOfferBoostDescriptionbKrijg <b>{0}</b> extra goederen van <b>handelsaanbiedingen</b> per elke tweede actieve <b>{1}</b>.
 =
@@ -15843,6 +15994,8 @@ S
 GBase.AllianceTechnologies.alliance_technology.productionQuarter_15_NameLevel 15
 ≥
 0Base.VideoRewards.VideoReward_VideoIncident_DescHallo vriend! Ik bied je het laatste nieuws en waren van over de hele wereld. Ga zitten en luister - en je zult beloond worden!
+'
+Base.AlliancePanel.ActivityActivity
 *
 Base.Resources.porcelain_Name	Porcelein
 R
@@ -15851,6 +16004,8 @@ K
 3Base.Buildings.Building_BronzeAge_Farm_Rural_2_NameLandelijke boerderij
 :
 +Base.EquipmentSets.equipment_set.Maori_NameMaori's Set
+:
+.Base.AllianceSetDetailsPanel.PlayStyleBeginnerBeginner
 D
 +Base.Resources.hero.GreekMathematician_NameEssentie van Euclides
 
@@ -17218,6 +17373,8 @@ L
 (Base.QuestlinesPanel.FinishPvpBattleTask"Maak een <b>Arena</b> -gevecht af.+Maak <b>{0}</b> <b>Arena</b> -gevechten af.
 Q
 5Base.InitialLoadingScreen.BrowserLoadingFocusHeadlineHoud dit tabblad actief.
+2
+"Base.Units.Unit_WilliamTell_5_NameWilliam Tell
 )
 Base.Resources.obsidian_Name	Obsidiaan
 R
@@ -17344,6 +17501,9 @@ F
 !Base.SeasonPass.NextSeasonStarted!Het volgende seizoen is begonnen!
 
 Base.Generic.MembersLeden
+4
+&Base.AllianceSetDetailsPanel.PlayStyle
+Play Style
 L
 4Base.Buildings.Building_Mayas_Quarry_Obsidian_6_DescProduceert Obsidiaan
 ‚
@@ -17548,6 +17708,8 @@ K
 3Base.Buildings.Building_FeudalAge_Farm_Rural_1_NameLandelijke boerderij
 "
 Base.Resources.column_NameZuil
+^
+DBase.IngameEvents.MilestoneEvent_Winter_2_PurpleTeslaTakedown_1_NameUmbral Testla Takedown
 L
 :Base.Buildings.Building_Mayas_Workshop_RitualCarver_2_NameRitueel Carver
 4
@@ -17703,6 +17865,8 @@ u
 Base.SeasonPass.SeasonEndedText\<b>Gefeliciteerd</b>! Je hebt controlepunt <b>{0}</b> bereikt in het laatste <b>seizoen</b>.
 I
 :Base.Buildings.Building_EarlyGothicEra_Home_Premium_1_NameLuxe woning
+*
+Base.AllianceSearch.Admission	Admission
 ò
 'Base.ExternalAllianceVideoPopup.MessagemHiermee ga je naar YouTube om de introductievideo voor de alliantiestad functie te bekijken. Wil je doorgaan?
 î
@@ -17994,6 +18158,8 @@ F
 .Base.AbilityTrainingPanel.AbilityTrainingLabelVaardigheidstraining
 I
 4Base.Abilities.hero_battle_ability.VikingRaider_NameBijl van Ragnarok
+W
+BBase.IngameEvents.LeaderboardEvent_Winter_2_GladiatorsGlory_1_NameGladiator's Glory
 E
 4Base.Buildings.Building_IberianEra_Home_Small_2_NameKleine woning
 M
@@ -18039,6 +18205,8 @@ N
 Base.Generic.QuitYes	Afsluiten
 P
 8Base.Buildings.Building_EarlyGothicEra_Farm_Rural_3_NameLandelijke boerderij
+Z
+CBase.AllianceApplicationMessages.AllianceRejectedApplicationDeletedApplication deleted
 H
 0Base.Abilities.hero_battle_ability.Hercules_NameKracht van de Titaan
 E
@@ -18323,6 +18491,8 @@ D
 .Base.ShopOffers.City_Arabia_StarterPack_1_NameArabia Startpakket
 @
  Base.World.SpartasLastStand_NameDe laatste strijd van Sparta
+4
+$Base.IngameEvents.SeasonPass_18_NameTrojan Tales
 µ
 MBase.StoryText.Story_Questline_StoneAge_TheHerosJourney_QuestStart_Text2_DescdHa! Jullie zijn geen Spartanen... maar jullie zijn al de bron van onze grootste kracht, mijn vriend.
 H
@@ -18373,6 +18543,8 @@ MBase.StoryText.Story_Event_JourneyOfTheTitanic_1_SeasonPassClaim_6_Text5_Desc,
 %Base.Resources.hero.TribalHealer_DescyGebruikt om het Ontwakingslevel van Naya van de Grot Clan te verhogen en zo krachtigere gevechtsbonussen te ontgrendelen.
 ¢
 GBase.StoryText.Story_Technology_MinoanEra_Masonry_TechUnlock_Text2_DescWVrijspelen van meer technologie√´n in Het Mino√Øsche tijdperk en onze stad uniek maken.
+˙
+"Base.Units.Unit_WilliamTell_5_Desc”Shoot well and never miss! William Tell, the legendary Swiss folk hero, is by your side. Remembered for his skill with a bow, Tell is celebrated for defying tyranny in the early 14th century.<br><br>Famed for the tale where he was forced to shoot an apple off his son's head with a crossbow, Tell's precision and bravery became symbols of resistance against oppression. His defiance of the Habsburg rulers inspired the Swiss fight for freedom and independence.<br><br>Tell's story, blending legend and history, remains a beacon for the brave, demonstrating how one person's courage can ignite the spirit of an entire nation. Time travelling into the past has scrambled his brain: now he loves his apple like it was his son!
 ~
  Base.Alerts.NoInternetConnectionZJe hebt zo te zien last van verbindingsproblemen.
 
@@ -18724,6 +18896,8 @@ G
 1Base.Buildings.Building_Arabia_Home_Medium_4_NameMiddelgrote woning
 D
 3Base.Buildings.Building_FeudalAge_Home_Small_1_NameKleine woning
+N
+8Base.IngameEvents.MilestoneEvent_BlackFriday_2025_1_NameBlack Friday Event
 ‡
 &Base.Units.Unit_AlexanderTheGreat_DescµAanschouw Alexander de Grote, ongeslagen, triomfantelijk, de beste generaal die de wereld ooit gekend heeft! Deze koning uit de 4e eeuw voor Christus is beroemd omdat hij voor zijn vroege dood grote delen van de wereld veroverde.<br><br>Alexander kwam op 20-jarige leeftijd op de troon na de moord op zijn vader. Hij bewees al snel zijn daadkracht: hij veroverde de Thraci√´rs en vernietigde de beroemde stadstaat Thebe. Dit bracht weer vrede in Griekenland en Alexander leidde de Liga van Korinthe om Achaemenidisch Perzi√´ te veroveren. Dit beroemde rijk viel voor hem, maar Alexander was nog niet klaar: voor zijn legers knielden Syri√´, Babylon, Iran en zelfs Pakistan.<br><br>Alexander verloor nooit een veldslag. Uiteindelijk eiste zijn eigen leger een terugkeer naar hun huizen. In Babylon, op weg naar huis (hoewel hij op de terugweg nog wel wat veroverde), blies Alexander zijn laatste adem uit.<br><br>Binnen de Helden van de Geschiedenis is Alexander een beetje controversieel. Hij drinkt graag met Achilles, krijgt graag les van Cyrus en laat graag zijn vader zien!
 C
@@ -18812,6 +18986,8 @@ E
 aBase.StoryText.Story_Questline_EventCity_Mayas_WonderProgress_ChichenItza_1_QuestStart_Text2_Desc≤Hiervoor moet je <style=MC>Kratten</style> vullen met Grondstoffen. Als alle kratten gevuld zijn, kun je <style=MC></style> upgraden en een <style=MC>Beloning</style> verzamelen.
 -
 $Base.Resources.goblet_TechnologyNameBeker
+U
+Base.HeroSharingCard.QRCodeCTA3Let's play <nobr>Heroes of History</nobr> together:
 ;
 'Base.BuildingInfoPanel.UpgradeCompletedUpgrade voltooid
 G
