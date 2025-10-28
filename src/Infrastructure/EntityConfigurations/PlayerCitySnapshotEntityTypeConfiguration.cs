@@ -12,12 +12,9 @@ public class PlayerCitySnapshotEntityTypeConfiguration : IEntityTypeConfiguratio
 
         builder.HasKey(p => p.Id);
 
-        builder.Ignore(p => p.Data);
-
         builder.Property(p => p.CityId).IsRequired().HasConversion<string>();
         builder.Property(p => p.OpenedExpansionsHash).IsRequired().HasMaxLength(16).IsUnicode(false).IsFixedLength();
         builder.Property(p => p.CollectedAt).IsRequired();
-        builder.Property(p => p.CompressedData).IsRequired();
         builder.Property(p => p.AgeId).IsRequired();
         builder.Property(p => p.HappinessUsageRatio).IsRequired();
         builder.Property(p => p.TotalArea).IsRequired();
@@ -32,7 +29,7 @@ public class PlayerCitySnapshotEntityTypeConfiguration : IEntityTypeConfiguratio
         builder.HasIndex(p => p.TotalArea);
         builder.HasIndex(p => new {p.PlayerId, p.CityId, p.CollectedAt}).IsUnique();
         
-        builder.HasOne(x => x.Data2).WithOne(x => x.PlayerCitySnapshot)
+        builder.HasOne(x => x.Data).WithOne(x => x.PlayerCitySnapshot)
             .HasForeignKey<PlayerCitySnapshotDataEntity>(x => x.PlayerCitySnapshotId).IsRequired();
     }
 }

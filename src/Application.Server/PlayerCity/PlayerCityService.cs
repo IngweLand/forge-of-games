@@ -113,8 +113,7 @@ public class PlayerCityService : IPlayerCityService
             CityId = city.InGameCityId,
             AgeId = city.AgeId,
             CollectedAt = Today,
-            Data = data,
-            Data2 = new PlayerCitySnapshotDataEntity()
+            Data = new PlayerCitySnapshotDataEntity()
             {
                 Data = data,
             },
@@ -136,7 +135,7 @@ public class PlayerCityService : IPlayerCityService
 
     public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
     {
-        return _context.PlayerCitySnapshots.Include(x => x.Data2).FirstOrDefaultAsync(x =>
+        return _context.PlayerCitySnapshots.Include(x => x.Data).FirstOrDefaultAsync(x =>
             x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }
 

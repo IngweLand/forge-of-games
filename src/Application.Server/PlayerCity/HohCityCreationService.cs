@@ -14,7 +14,7 @@ public class HohCityCreationService(
 {
     public async Task<HohCity> Create(PlayerCitySnapshot citySnapshot, string playerName)
     {
-        var otherCity = dataParsingService.ParseOtherCity(citySnapshot.Data2.Data);
+        var otherCity = dataParsingService.ParseOtherCity(citySnapshot.Data.Data);
         var buildings = await coreDataRepository.GetBuildingsAsync(CityId.Capital);
 
         var cityName = $"💡 {playerName} - {otherCity.CityId}";
