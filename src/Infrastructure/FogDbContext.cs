@@ -61,5 +61,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new SharedSubmissionIdEntityTypeConfiguration());
         builder.ApplyConfiguration(new EquipmentInsightsEntityTypeConfiguration());
         builder.ApplyConfiguration(new RelicInsightsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new PlayerCitySnapshotDataEntityTypeConfiguration());
     }
 }

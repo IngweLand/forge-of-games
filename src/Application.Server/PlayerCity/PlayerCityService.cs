@@ -114,6 +114,10 @@ public class PlayerCityService : IPlayerCityService
             AgeId = city.AgeId,
             CollectedAt = Today,
             Data = data,
+            Data2 = new PlayerCitySnapshotDataEntity()
+            {
+                Data = data,
+            },
             Coins = coins?.Default ?? 0,
             Food = food?.Default ?? 0,
             Goods = goods,
@@ -132,7 +136,7 @@ public class PlayerCityService : IPlayerCityService
 
     public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
     {
-        return _context.PlayerCitySnapshots.FirstOrDefaultAsync(x =>
+        return _context.PlayerCitySnapshots.Include(x => x.Data2).FirstOrDefaultAsync(x =>
             x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }
 

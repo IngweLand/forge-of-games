@@ -31,5 +31,8 @@ public class PlayerCitySnapshotEntityTypeConfiguration : IEntityTypeConfiguratio
         builder.HasIndex(p => p.Goods).IsDescending();
         builder.HasIndex(p => p.TotalArea);
         builder.HasIndex(p => new {p.PlayerId, p.CityId, p.CollectedAt}).IsUnique();
+        
+        builder.HasOne(x => x.Data2).WithOne(x => x.PlayerCitySnapshot)
+            .HasForeignKey<PlayerCitySnapshotDataEntity>(x => x.PlayerCitySnapshotId).IsRequired();
     }
 }

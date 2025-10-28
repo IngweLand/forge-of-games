@@ -13,6 +13,7 @@ public class PlayerCitySnapshot
 
     public required DateOnly CollectedAt { get; set; }
 
+    [Obsolete]
     public byte[] CompressedData
     {
         get => _compressedData;
@@ -23,6 +24,7 @@ public class PlayerCitySnapshot
         }
     }
 
+    [Obsolete]
     public required byte[] Data
     {
         get => _data ??= CompressionUtils.Decompress(_compressedData);
@@ -32,6 +34,8 @@ public class PlayerCitySnapshot
             _compressedData = CompressionUtils.Compress(value);
         }
     }
+
+    public required PlayerCitySnapshotDataEntity Data2 { get; set; }
 
     public int Food { get; set; }
     public int Goods { get; set; }
