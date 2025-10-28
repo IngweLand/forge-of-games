@@ -90,6 +90,7 @@ public static class DependencyInjection
         services.AddScoped<IHeroInsightsService, HeroInsightsService>();
         services.AddScoped<IEquipmentDataDtoFactory, EquipmentDataDtoFactory>();
         services.AddScoped<IEquipmentService, EquipmentService>();
+        services.AddScoped<IRelicService, RelicService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class EquipmentAnalyzerTrigger(IEquipmentAnalyzer analyzer, ILogger<EquipmentAnalyzerTrigger> logger)
+public class PlayerSquadsAnalyzerTrigger(IPlayerSquadsAnalyzer analyzer, ILogger<PlayerSquadsAnalyzerTrigger> logger)
 {
-    [Function("EquipmentAnalyzerTrigger")]
+    [Function("PlayerSquadsAnalyzerTrigger")]
     public async Task Run([TimerTrigger("0 0 0 1 1 1", RunOnStartup = false)] TimerInfo myTimer)
     {
         await analyzer.Analyze();

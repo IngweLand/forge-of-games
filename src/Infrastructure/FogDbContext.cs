@@ -11,9 +11,10 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
-    public DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
-
     public DbSet<PvpRanking> PvpRankings { get; set; }
+    public DbSet<RelicInsightsEntity> RelicInsights { get; set; }
+
+    public DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
 
     public DbSet<BattleUnitEntity> BattleUnits { get; set; }
 
@@ -59,5 +60,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new ProfileSquadDataEntityTypeConfiguration());
         builder.ApplyConfiguration(new SharedSubmissionIdEntityTypeConfiguration());
         builder.ApplyConfiguration(new EquipmentInsightsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new RelicInsightsEntityTypeConfiguration());
     }
 }

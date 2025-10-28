@@ -40,6 +40,7 @@ public static class StatsApi
 
         api.MapPost(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH, SearchUserBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_INSIGHTS_TEMPLATE, GetEquipmentInsightsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.RELICS_INSIGHTS_TEMPLATE, GetRelicInsightsAsync);
 
         return api;
     }
@@ -137,6 +138,14 @@ public static class StatsApi
             CancellationToken ct)
     {
         var result = await services.EquipmentService.GetInsightsAsync(unitId, ct);
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Ok<IReadOnlyCollection<RelicInsightsDto>>>
+        GetRelicInsightsAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
+            CancellationToken ct)
+    {
+        var result = await services.RelicService.GetInsightsAsync(unitId, ct);
         return TypedResults.Ok(result);
     }
 

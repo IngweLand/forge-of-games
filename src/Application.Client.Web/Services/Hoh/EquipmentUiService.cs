@@ -14,7 +14,6 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 public class EquipmentUiService(
     IPersistenceService persistenceService,
     IMapper mapper,
-    IAssetUrlProvider assetUrlProvider,
     IEquipmentSlotTypeIconUrlProvider equipmentSlotTypeIconUrlProvider,
     IEquipmentService equipmentService,
     IEquipmentInsightsViewModelFactory equipmentInsightsViewModelFactory,

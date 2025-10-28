@@ -3228,6 +3228,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Most Used Relics.
+        /// </summary>
+        public static string Unit_RelicInsights_Title {
+            get {
+                return ResourceManager.GetString("Unit.RelicInsights.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ATK.
         /// </summary>
         public static string UnitStats_AttackAbbrev {

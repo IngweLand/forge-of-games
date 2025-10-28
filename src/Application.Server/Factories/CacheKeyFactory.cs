@@ -61,6 +61,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetTopHeroesQuery q => $"TopHeroes:{q.Mode}:{q.AgeId}:{q.FromLevel}:{q.ToLevel}",
             GetEquipmentInsightsQuery q => $"EquipmentInsights:{q.UnitId}",
             GetEquipmentDataQuery _ => $"EquipmentData:{CultureInfo.CurrentCulture.Name}",
+            GetRelicInsightsQuery q => $"RelicInsights:{q.UnitId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

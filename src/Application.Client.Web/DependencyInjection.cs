@@ -132,6 +132,8 @@ public static class DependencyInjection
         services.AddScoped<IAllianceMemberRoleIconUrlProvider, AllianceMemberRoleIconUrlProvider>();
         services.AddScoped<IAlliancePageAnalyticsService, AlliancePageAnalyticsService>();
         services.AddScoped<IEquipmentInsightsViewModelFactory, EquipmentInsightsViewModelFactory>();
+        services.AddScoped<IRelicInsightsViewModelFactory, RelicInsightsViewModelFactory>();
+        services.AddScoped<IRelicUiService, RelicUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 

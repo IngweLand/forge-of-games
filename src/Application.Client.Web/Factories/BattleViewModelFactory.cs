@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
@@ -255,7 +256,7 @@ public class BattleViewModelFactory(
             barracks.TryGetValue((supportUnit.UnitId, supportUnit.Level), out concreteBarracks);
         }
 
-        HeroRelicViewModel? relicVm = null;
+        RelicViewModel? relicVm = null;
         foreach (var ability in hero.Abilities)
         {
             var concreteId = HohStringParser.GetConcreteId(ability).Split('_')[0];
@@ -282,7 +283,7 @@ public class BattleViewModelFactory(
             barracks.TryGetValue((squad.Unit.UnitId, squad.Unit.Level), out concreteBarracks);
         }
 
-        HeroRelicViewModel? relicVm = null;
+        RelicViewModel? relicVm = null;
         foreach (var ability in squad.Hero.Abilities)
         {
             var concreteId = HohStringParser.GetConcreteId(ability).Split('_')[0];

@@ -1,0 +1,22 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+<ClientSideComponent Class="fog-container" IsLoading="@_isLoading"
+                     Title="@Loc[FogResource.Unit_RelicInsights_Title]">
+    <Content>
+        <div class="content-container">
+            @foreach (var relicItem in _relicInsights)
+            {
+                <div class="level-range-container">
+                    <div class="level-range-container-header-container user-select-none">
+                        @($"{Loc[FogResource.Hoh_Lvl]} {relicItem.LevelRange}")
+                    </div>
+                    <div class="items-container">
+                        @foreach (var item in relicItem.Relics)
+                        {
+                            <HorizontalIconWithLabelComponent StatItem="@item"/>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </Content>
+</ClientSideComponent>

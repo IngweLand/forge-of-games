@@ -61,6 +61,8 @@ public static class FogUrlBuilder
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
 
         public const string RELICS_DATA = "/relics/data";
+        public const string RELICS_INSIGHTS_TEMPLATE = "/relics/insights/{unitId}";
+        
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
         
         public const string COMMAND_CENTER_SHARED_SUBMISSION_ID = "/commandCenter/sharedSubmissionId";

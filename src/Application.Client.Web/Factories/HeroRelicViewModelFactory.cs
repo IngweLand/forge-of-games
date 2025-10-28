@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Shared.Helpers;
@@ -10,7 +11,7 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 
 public class HeroRelicViewModelFactory(IAssetUrlProvider assetUrlProvider) : IHeroRelicViewModelFactory
 {
-    public HeroRelicViewModel Create(RelicDto relic, RelicLevelDto level)
+    public RelicViewModel Create(RelicDto relic, RelicLevelDto level)
     {
         var ability = level.Abilities.FirstOrDefault(x => x.Description != null);
         HeroAbilityText? abilityText = null;
@@ -19,7 +20,7 @@ public class HeroRelicViewModelFactory(IAssetUrlProvider assetUrlProvider) : IHe
             abilityText = new HeroAbilityText(ability.Description!);
         }
         
-        return new HeroRelicViewModel()
+        return new RelicViewModel()
         {
             Id = relic.Id,
             Name = relic.Name,

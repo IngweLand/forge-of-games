@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
@@ -60,7 +61,7 @@ public class HeroProfileViewModelFactory(
     ];
 
     public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
-        HeroRelicViewModel? relic = null, bool withSupportUnit = true)
+        RelicViewModel? relic = null, bool withSupportUnit = true)
     {
         var maxLevel = Math.Max(hero.ProgressionCosts.Count, profile.Identifier.Level);
         var profileViewModel = new HeroProfileViewModel

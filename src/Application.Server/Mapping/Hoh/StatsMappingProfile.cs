@@ -47,5 +47,6 @@ public class StatsMappingProfile : Profile
             .ForMember(dest => dest.SupportUnit, opt => opt.MapFrom(x => x.Data.SupportUnit));
 
         CreateMap<EquipmentInsightsEntity, EquipmentInsightsDto>();
+        CreateMap<RelicInsightsEntity, RelicInsightsDto>();
     }
 }

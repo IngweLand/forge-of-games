@@ -9,11 +9,13 @@ public class StatsServices(
     ICityPlannerService cityPlannerService,
     IStatsHubService statsHubService,
     IEquipmentService equipmentService,
+    IRelicService relicService,
     IMediator mediator)
 {
     public IBattleService BattleService { get; } = battleService;
     public ICityPlannerService CityPlannerService { get; } = cityPlannerService;
     public IEquipmentService EquipmentService { get; } = equipmentService;
+    public IRelicService RelicService { get; } = relicService;
     public ILogger<StatsServices> Logger { get; } = logger;
     public IMediator Mediator { get; } = mediator;
     public IStatsHubService StatsHubService { get; } = statsHubService;

@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Shared.Utils;
 
@@ -25,7 +26,7 @@ public record HeroProfileViewModel
     public required string Name { get; init; }
     public required string PortraitUrl { get; init; }
     public required int Power { get; init; }
-    public HeroRelicViewModel? Relic { get; init; }
+    public RelicViewModel? Relic { get; init; }
     public int StarCount { get; init; }
     public IReadOnlyCollection<UnitStatBreakdownViewModel> StatsBreakdown { get; init; } = [];
     public required IReadOnlyCollection<IconLabelItemViewModel> StatsItems { get; init; }

@@ -1,6 +1,6 @@
-namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
+namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 
-public class HeroRelicViewModel
+public class RelicViewModel
 {
     public bool Ascension { get; set; }
     public int AscensionLevel { get; set; }

@@ -1,5 +1,6 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
@@ -37,6 +38,6 @@
 
     [Parameter]
     [EditorRequired]
-    public required HeroRelicViewModel Relic { get; set; }
+    public required RelicViewModel Relic { get; set; }
 
 }
