@@ -6,20 +6,18 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh;
-using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Shared.Constants;
+using Ingweland.Fog.Shared.Extensions;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 
 public class StatsHubViewModelsFactory(
     IMapper mapper,
-    IHohHeroProfileFactory heroProfileFactory,
-    IHohHeroProfileViewModelFactory heroProfileViewModelFactory,
-    IBattleViewModelFactory battleViewModelFactory) : IStatsHubViewModelsFactory
+    IHohHeroProfileViewModelFactory heroProfileViewModelFactory) : IStatsHubViewModelsFactory
 {
     public PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages)
@@ -72,12 +70,16 @@ public class StatsHubViewModelsFactory(
         var currentAlliance = playerProfile.Alliances.FirstOrDefault(a => a.Id == playerProfile.Player.AllianceId);
         var previousAlliances = playerProfile.Alliances.Where(a => a.Id != playerProfile.Player.AllianceId)
             .OrderBy(a => a.IsDeleted).ThenByDescending(a => a.RankingPoints);
-        var citySnapshotDates = playerProfile.CitySnapshotDays.Order()
-            .Select(x => x.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc).ToLocalTime()).ToList();
+        var today = DateTime.Today.ToDateOnly();
+        var citySnapshotDates = playerProfile.CitySnapshotDays
+            .Where(x => x <= today)
+            .Order()
+            .Select(x => x.ToDateTime(TimeOnly.MinValue, DateTimeKind.Utc)).ToList();
         if (citySnapshotDates.LastOrDefault() != DateTime.Today)
         {
             citySnapshotDates.Add(DateTime.Today);
         }
+
         return new PlayerProfileViewModel
         {
             Player = player,

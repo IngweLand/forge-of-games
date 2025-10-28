@@ -176,8 +176,8 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         try
         {
-            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id,
-                _citySnapshotDate?.ToUniversalTime().ToDateOnly());
+            var date = _citySnapshotDate == DateTime.Today ? null : _citySnapshotDate?.ToDateOnly();
+            var city = await StatsHubService.GetPlayerCityAsync(_player!.Player.Id, date);
             if (_isDisposed)
             {
                 return;

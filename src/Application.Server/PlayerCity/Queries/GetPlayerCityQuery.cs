@@ -32,6 +32,10 @@ public class GetPlayerCityQueryHandler(
 
         var today = DateTime.UtcNow.ToDateOnly();
         var date = request.Date ?? today;
+        if (date > today)
+        {
+            date = today;
+        }
         var existingCity = await GetCityAsync(player.Id, player.Name, CityId.Capital, date);
         if (existingCity != null)
         {
