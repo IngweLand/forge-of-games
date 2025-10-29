@@ -135,8 +135,9 @@ public class PlayerCityService : IPlayerCityService
 
     public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
     {
-        return _context.PlayerCitySnapshots.Include(x => x.Data).FirstOrDefaultAsync(x =>
-            x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
+        return _context.PlayerCitySnapshots
+            .Include(x => x.Data)
+            .FirstOrDefaultAsync(x => x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }
 
     private async Task<List<Building>> GetBuildingsWithCacheAsync(CityId cityId)

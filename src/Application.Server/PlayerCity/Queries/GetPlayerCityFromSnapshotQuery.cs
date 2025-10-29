@@ -20,7 +20,9 @@ public class GetPlayerCityFromSnapshotQueryHandler(
 {
     public async Task<HohCity?> Handle(GetPlayerCityFromSnapshotQuery request, CancellationToken cancellationToken)
     {
-        var snapshot = await context.PlayerCitySnapshots.Include(x => x.Player)
+        var snapshot = await context.PlayerCitySnapshots
+            .Include(x => x.Player)
+            .Include(x => x.Data)
             .FirstOrDefaultAsync(p => p.Id == request.SnapshotId, cancellationToken);
         if (snapshot == null)
         {

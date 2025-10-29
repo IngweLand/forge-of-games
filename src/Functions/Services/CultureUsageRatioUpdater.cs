@@ -17,7 +17,10 @@ public class CultureUsageRatioUpdater(
 {
     public async Task RunAsync()
     {
-        var snapshots = await context.PlayerCitySnapshots.Where(x => x.HappinessUsageRatio == 0).ToListAsync();
+        var snapshots = await context.PlayerCitySnapshots
+            .Include(x => x.Data)
+            .Where(x => x.HappinessUsageRatio == 0)
+            .ToListAsync();
 
         foreach (var snapshot in snapshots)
         {
