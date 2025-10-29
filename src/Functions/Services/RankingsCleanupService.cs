@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -11,11 +12,9 @@ public interface IRankingsCleanupService
 
 public class RankingsCleanupService(IFogDbContext context) : IRankingsCleanupService
 {
-    private static readonly int CutOffMonths = 2;
-
     public async Task RunAsync()
     {
-        var cutoffDate = DateTime.UtcNow.AddMonths(-CutOffMonths).ToDateOnly();
+        var cutoffDate = DateTime.UtcNow.AddDays(-FogConstants.DisplayedStatsDays).ToDateOnly();
         await CleanupPlayerRankingsAsync(cutoffDate);
         await CleanupAllianceRankingsAsync(cutoffDate);
     }
