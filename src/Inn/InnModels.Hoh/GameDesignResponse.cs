@@ -53,6 +53,7 @@ public sealed partial class GameDesignResponse
     public IList<HeroAbilityTrainingComponentDTO> HeroAbilityTrainingComponents => Items.FindAndUnpackToList<HeroAbilityTrainingComponentDTO>();
     public IList<HeroUnitDefinitionDTO> HeroUnitDefinitions => Items.FindAndUnpackToList<HeroUnitDefinitionDTO>();
     public IList<HeroDefinitionDTO> HeroDefinitions => Items.FindAndUnpackToList<HeroDefinitionDTO>();
+    public IList<HeroStarUpDefinitionDTO> HeroStarUpDefinitions => Items.FindAndUnpackToList<HeroStarUpDefinitionDTO>();
     
     public HeroBattleConstantsDefinitionDTO HeroBattleConstantsDefinition => Items.FindAndUnpackToList<HeroBattleConstantsDefinitionDTO>().Single();
     public IList<HeroUnitStatFormulaDefinitionDTO> HeroUnitStatFormulaDefinitions => Items.FindAndUnpackToList<HeroUnitStatFormulaDefinitionDTO>();

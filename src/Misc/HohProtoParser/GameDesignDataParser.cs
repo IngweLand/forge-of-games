@@ -269,14 +269,15 @@ public class GameDesignDataParser(
         var cities = CreateCities(mapper, gdr);
         var buildingCustomizations = BuildingCustomizations(mapper, gdr, ages, units);
         var relics = mapper.Map<IList<Relic>>(gdr.RelicDefinitions);
-
+        var heroes =
+            mapper.Map<IList<Hero>>(gdr.HeroDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
+        var heroStarUps = mapper.Map<IList<Hero>>(gdr.HeroStarUpDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
         var data = new Data
         {
             Worlds = worlds.AsReadOnly(),
             Buildings = buildings.AsReadOnly(),
             Units = units.Values,
-            Heroes =
-                mapper.Map<IReadOnlyCollection<Hero>>(gdr.HeroDefinitions.Where(h => !HeroesToSkip.Contains(h.Id))),
+            Heroes = heroes.Concat(heroStarUps).ToList(),
             ProgressionCosts = mapper.Map<IReadOnlyCollection<HeroProgressionCost>>(gdr.HeroProgressionCostDefinitions),
             AscensionCosts =
                 mapper.Map<IReadOnlyCollection<HeroAscensionCost>>(gdr.HeroProgressionAscensionCostDefinitions),
