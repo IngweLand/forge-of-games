@@ -80,6 +80,23 @@
                     <span>@((MarkupString) HeroProfile.Relic.Description)</span>
                 </div>
             }
+            
+            @if (HeroProfile.Equipment.Count > 0)
+            {
+                <div class="equipment-container">
+                    @foreach(var equipment in HeroProfile.Equipment)
+                    {
+                        <div class="equipment-properties-container">
+                            <IconWithBorder Size="Size.Small" IconUrl="@equipment.EquipmentSlotTypeIconUrl"/>
+                            <HorizontalIconWithLabelComponent Size="Size.Small" StatItem="@equipment.EquipmentSet"/>
+                            @foreach (var att in equipment.Attributes)
+                            {
+                                <HorizontalIconWithLabelComponent Size="Size.Small" StatItem="@att"/>
+                            }
+                        </div>
+                    }
+                </div>
+            }
 
 
             @if (HeroProfile.SupportUnit != null)

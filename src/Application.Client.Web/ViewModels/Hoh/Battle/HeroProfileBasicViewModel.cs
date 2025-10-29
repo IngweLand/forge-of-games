@@ -1,10 +1,13 @@
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 
 namespace Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 
 public record HeroProfileBasicViewModel
 {
     public required int AbilityLevel { get; init; }
+
+    public IReadOnlyCollection<SquadEquipmentItem> Equipment { get; set; } = [];
     public required IBattleUnitProperties Hero { get; init; }
     public required string HeroUnitId { get; init; }
     public required string Level { get; init; }

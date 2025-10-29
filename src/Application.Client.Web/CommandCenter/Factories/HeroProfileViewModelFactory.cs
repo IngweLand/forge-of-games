@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Relic;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -60,8 +61,21 @@ public class HeroProfileViewModelFactory(
         UnitStatType.Evasion,
     ];
 
+    public HeroProfileBasicViewModel CreateBasic(ProfileSquadDto squad, HeroDto hero)
+    {
+        return CreateBasicInternal(squad.Hero, squad.SupportUnit, hero);
+    }
+
+    public BattleSquadBasicViewModel CreateBasic(BattleSquadDto squad, HeroDto hero, string? finalHitPointsFormatted,
+        bool isDead)
+    {
+        var profile = CreateBasicInternal(squad.Hero!, squad.Unit, hero);
+        return new BattleSquadBasicViewModel(profile, finalHitPointsFormatted, isDead, squad.BattlefieldSlot);
+    }
+
     public HeroProfileViewModel Create(HeroProfile profile, HeroDto hero, IEnumerable<BuildingDto> barracks,
-        RelicViewModel? relic = null, bool withSupportUnit = true)
+        RelicViewModel? relic = null, bool withSupportUnit = true,
+        IReadOnlyCollection<SquadEquipmentItemViewModel>? equipment = null)
     {
         var maxLevel = Math.Max(hero.ProgressionCosts.Count, profile.Identifier.Level);
         var profileViewModel = new HeroProfileViewModel
@@ -95,21 +109,10 @@ public class HeroProfileViewModelFactory(
             Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
                 profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
             Relic = relic,
+            Equipment = equipment ?? new List<SquadEquipmentItemViewModel>(),
         };
 
         return profileViewModel;
-    }
-
-    public HeroProfileBasicViewModel CreateBasic(ProfileSquadDto squad, HeroDto hero)
-    {
-        return CreateBasicInternal(squad.Hero, squad.SupportUnit, hero);
-    }
-
-    public BattleSquadBasicViewModel CreateBasic(BattleSquadDto squad, HeroDto hero, string? finalHitPointsFormatted,
-        bool isDead)
-    {
-        var profile = CreateBasicInternal(squad.Hero!, squad.Unit, hero);
-        return new BattleSquadBasicViewModel(profile, finalHitPointsFormatted, isDead, squad.BattlefieldSlot);
     }
 
     private HeroProfileBasicViewModel CreateBasicInternal(IBattleUnitProperties heroProps,
@@ -132,6 +135,7 @@ public class HeroProfileViewModelFactory(
             SupportUnit = supportUnitProps,
             Level = heroLevels
                 .First(x => x.Level == heroProps.Level && x.AscensionLevel == heroProps.AscensionLevel).Title,
+            Equipment = heroProps.Equipment,
         };
 
         return profileViewModel;

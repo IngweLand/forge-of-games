@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -10,6 +11,7 @@ public record BattleUnitDto : IBattleUnitProperties
         new Dictionary<UnitStatType, float>();
 
     public int? UnitInBattleId { get; init; }
+    public IReadOnlyCollection<SquadEquipmentItem> Equipment { get; init; } = new List<SquadEquipmentItem>();
     public int AwakeningLevel { get; init; }
 
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();

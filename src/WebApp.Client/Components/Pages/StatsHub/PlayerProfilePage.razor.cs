@@ -120,7 +120,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     {
         return new DialogOptions
         {
-            MaxWidth = MaxWidth.Small,
+            MaxWidth = MaxWidth.Medium,
             FullWidth = true,
             BackgroundClass = "dialog-blur-bg",
             Position = DialogPosition.TopCenter,

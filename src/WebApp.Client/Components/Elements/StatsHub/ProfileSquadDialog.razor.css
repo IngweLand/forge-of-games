@@ -184,6 +184,21 @@ tbody tr:nth-child(even) {
     padding: 8px;
 }
 
+.equipment-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fog-player-color);
+    border-top: 1px solid #4685d4;
+    gap: 8px;
+    padding: 12px;
+}
+
+.equipment-properties-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 8px;
+}
+
 @media (min-width: 576px) {
     .value-container {
         padding: 12px;
@@ -249,5 +264,14 @@ tbody tr:nth-child(even) {
 
     .hero-awakening-level-container span {
         font-size: 14px;
+    }
+
+    .equipment-container {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .equipment-properties-container {
+        gap: 4px 12px;
     }
 }

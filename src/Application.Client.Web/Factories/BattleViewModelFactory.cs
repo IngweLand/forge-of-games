@@ -30,7 +30,8 @@ public class BattleViewModelFactory(
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IResourceLocalizationService resourceLocalizationService,
     IHohCoreDataCache coreDataCache,
-    IUnitStatFactory unitStatFactory) : IBattleViewModelFactory
+    IUnitStatFactory unitStatFactory,
+    ISquadEquipmentItemViewModelFactory squadEquipmentItemViewModelFactory) : IBattleViewModelFactory
 {
     private static readonly List<string> ExcludedUnitIds = ["spawner", "teslaboss"];
 
@@ -76,7 +77,6 @@ public class BattleViewModelFactory(
         }
 
         var heroes = (await coreDataCache.GetHeroes(heroIds.ToHashSet()!)).ToDictionary(h => h.Unit.Id);
-        var relics = await coreDataCache.GetRelicsAsync();
         var barracks = await coreDataCache.GetBarracksByUnitMapAsync();
 
         return battles.Select(battle => new BattleSummaryViewModel
@@ -268,7 +268,11 @@ public class BattleViewModelFactory(
         }
 
         var fullProfile = heroProfileFactory.Create(hero, heroDto!, concreteBarracks);
-        return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm);
+        var equipmentData = await coreDataCache.GetEquipmentDataAsync();
+        var equipment = hero.Equipment.Select(x =>
+                squadEquipmentItemViewModelFactory.Create(x, equipmentData.StatAttributes, equipmentData.Sets))
+            .OrderBy(x => x.EquipmentSlotType).ToList();
+        return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm, true, equipment);
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,

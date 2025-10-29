@@ -1,3 +1,4 @@
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -9,6 +10,7 @@ public interface IBattleUnitProperties
     int AbilityLevel { get; init; }
     int AscensionLevel { get; init; }
     int AwakeningLevel { get; init; }
+    IReadOnlyCollection<SquadEquipmentItem> Equipment { get; init; }
     int Level { get; init; }
     IReadOnlyCollection<StatBoost> StatBoosts { get; init; }
     string UnitId { get; init; }

@@ -24,6 +24,7 @@ public class BattleMappingProfile : Profile
             .ForMember(dest => dest.AwakeningLevel, opt => opt.MapFrom(x => x.Properties.AwakeningLevel))
             .ForMember(dest => dest.StatBoosts, opt => opt.MapFrom(x => x.Properties.StatBoosts))
             .ForMember(dest => dest.UnitStatsOverrides, opt => opt.MapFrom(x => x.Properties.UnitStatsOverrides))
+            .ForMember(dest => dest.Equipment, opt => opt.MapFrom(x => x.Properties.Equipment))
             .ForMember(dest => dest.FinalState, opt =>
             {
                 opt.PreCondition(x => x.UnitState != null);
