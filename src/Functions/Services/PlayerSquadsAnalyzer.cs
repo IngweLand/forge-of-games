@@ -155,7 +155,7 @@ public class PlayerSquadsAnalyzer(IFogDbContext context, ILogger<IPlayerSquadsAn
     private List<T> GetTopItems<T, TK>(IEnumerable<TK> items, Func<TK, T> selector)
     {
         return items.GroupBy(selector)
-            .OrderBy(x => x.Count())
+            .OrderByDescending(x => x.Count())
             .Take(3)
             .Select(x => x.Key)
             .ToList();
@@ -167,7 +167,7 @@ public class PlayerSquadsAnalyzer(IFogDbContext context, ILogger<IPlayerSquadsAn
         return items
             .Where(x => selector(x) != null)
             .GroupBy(selector)
-            .OrderBy(x => x.Count())
+            .OrderByDescending(x => x.Count())
             .Take(3)
             .Select(x => x.Key!.Value)
             .ToList();
