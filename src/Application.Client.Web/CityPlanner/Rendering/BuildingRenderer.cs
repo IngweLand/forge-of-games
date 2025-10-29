@@ -190,7 +190,7 @@ public class BuildingRenderer : IBuildingRenderer
 
         var segmentPaint = _cityMapEntityStyle.GetBuffForegroundPaint(fraction);
 
-        if (fraction >= 2)
+        if (fraction == 1.0 || fraction >= 2)
         {
             canvas.DrawCircle(circleX, circleY, radius, segmentPaint);
             return;
