@@ -117,7 +117,7 @@ public class BuildingRenderer : IBuildingRenderer
 
         // entity level
         if (_settings.ShowEntityLevel && (entity.BuildingType == BuildingType.CultureSite ||
-                                          entity.Bounds is {Width: > 1, Height: > 1}))
+                entity.Bounds is {Width: > 1, Height: > 1}))
         {
             SkiaTextUtils.DrawText(canvas, entity.Level.ToString(), rect, 5, _currentNameFont,
                 _cityMapEntityStyle.NameTextPaint, TextHorizontalAlignment.Left, TextVerticalAlignment.Bottom);
@@ -188,9 +188,9 @@ public class BuildingRenderer : IBuildingRenderer
         var circleX = bounds.Left + (bounds.Width - diameter) / 2f + radius;
         var circleY = bounds.Top + (bounds.Height - diameter) / 2f + radius;
 
-        var segmentPaint = _cityMapEntityStyle.CultureFillPaint;
+        var segmentPaint = _cityMapEntityStyle.GetBuffForegroundPaint(fraction);
 
-        if (fraction >= 1)
+        if (fraction >= 2)
         {
             canvas.DrawCircle(circleX, circleY, radius, segmentPaint);
             return;
@@ -199,7 +199,7 @@ public class BuildingRenderer : IBuildingRenderer
         using var backgroundPaint = new SKPaint
         {
             Style = SKPaintStyle.Fill,
-            Color = SKColors.White,
+            Color = _cityMapEntityStyle.GetBuffBackgroundColor(fraction),
             IsAntialias = true,
         };
 
