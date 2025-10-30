@@ -12,6 +12,7 @@ public interface IFogDbContext
     DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
     DbSet<BattleUnitEntity> BattleUnits { get; set; }
     DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
+    DbSet<InGameEventEntity> InGameEvents { get; set; }
     DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
     DbSet<PlayerRanking> PlayerRankings { get; set; }
     DbSet<Player> Players { get; set; }

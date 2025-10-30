@@ -30,6 +30,7 @@ public class FetchAndSaveOrchestrator
         await RunAsync(nameof(TopPlayersUpdaterTrigger), context, 6);
         await RunAsync(nameof(PlayersUpdaterTrigger), context, 6);
         await RunAsync(nameof(TopHeroInsightsProcessorTrigger), context, null);
+        await RunAsync(nameof(InGameEventsFetcherTrigger), context, null);
 
         var orchestrationTime = context.CurrentUtcDateTime;
         var isSpecialDay = orchestrationTime.Day is 1 or 15;
