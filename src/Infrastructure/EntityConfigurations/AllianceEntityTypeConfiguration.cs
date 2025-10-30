@@ -29,6 +29,7 @@ public class AllianceEntityTypeConfiguration : IEntityTypeConfiguration<Alliance
         builder.HasIndex(p => p.Status);
 
         builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => p.AllianceId);
+        builder.HasMany(p => p.AthRankings).WithOne().HasForeignKey(p => p.AllianceId);
         builder.HasMany(p => p.NameHistory).WithOne().HasForeignKey(p => p.AllianceId);
         builder.HasMany(p => p.Members).WithOne(p => p.Alliance);
         builder.HasMany(p => p.MemberHistory).WithMany(p => p.AllianceHistory);

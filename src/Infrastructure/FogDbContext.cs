@@ -65,5 +65,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new RelicInsightsEntityTypeConfiguration());
         builder.ApplyConfiguration(new PlayerCitySnapshotDataEntityTypeConfiguration());
         builder.ApplyConfiguration(new InGameEventEntityTypeConfiguration());
+        builder.ApplyConfiguration(new AllianceAthRankingEntityTypeConfiguration());
     }
 }

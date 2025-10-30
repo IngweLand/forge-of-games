@@ -48,7 +48,8 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Facade.AvatarIconId))
             .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.Facade.AvatarBackgroundId))
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Facade.Description));
-        CreateMap<HeroTreasureHuntAlliancePointsPush, HeroTreasureHuntAlliancePoints>();
+        CreateMap<HeroTreasureHuntAlliancePointsPush, HeroTreasureHuntAlliancePoints>()
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToDateTime()));
         CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>();
         CreateMap<AlliancePush, HohAlliance>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Alliance.Id))

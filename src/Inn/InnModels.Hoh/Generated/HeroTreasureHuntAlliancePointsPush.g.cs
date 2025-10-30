@@ -26,15 +26,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           string.Concat(
             "Ci1oZXJvX3RyZWFzdXJlX2h1bnRfYWxsaWFuY2VfcG9pbnRzX3B1c2gucHJv",
             "dG8aEmFsbGlhbmNlX2R0by5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVz",
-            "dGFtcC5wcm90byKrAQoiSGVyb1RyZWFzdXJlSHVudEFsbGlhbmNlUG9pbnRz",
-            "UHVzaBIeChZ0cmVhc3VyZV9odW50X2V2ZW50X2lkGAEgASgFEh4KCGFsbGlh",
-            "bmNlGAMgASgLMgwuQWxsaWFuY2VEdG8SFgoOcmFua2luZ19wb2ludHMYBCAB",
-            "KAUSLQoJdGltZXN0YW1wGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
-            "dGFtcEIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "dGFtcC5wcm90byKmAQoiSGVyb1RyZWFzdXJlSHVudEFsbGlhbmNlUG9pbnRz",
+            "UHVzaBIQCghldmVudF9pZBgBIAEoBRIeCghhbGxpYW5jZRgDIAEoCzIMLkFs",
+            "bGlhbmNlRHRvEg4KBnBvaW50cxgEIAEoBRIuCgp1cGRhdGVkX2F0GAUgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIOCgZsZWFndWUYBiABKAVC",
+            "H6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntAlliancePointsPush), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntAlliancePointsPush.Parser, new[]{ "TreasureHuntEventId", "Alliance", "RankingPoints", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntAlliancePointsPush), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntAlliancePointsPush.Parser, new[]{ "EventId", "Alliance", "Points", "UpdatedAt", "League" }, null, null, null, null)
           }));
     }
     #endregion
@@ -76,10 +76,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public HeroTreasureHuntAlliancePointsPush(HeroTreasureHuntAlliancePointsPush other) : this() {
-      treasureHuntEventId_ = other.treasureHuntEventId_;
+      eventId_ = other.eventId_;
       alliance_ = other.alliance_ != null ? other.alliance_.Clone() : null;
-      rankingPoints_ = other.rankingPoints_;
-      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      points_ = other.points_;
+      updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
+      league_ = other.league_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -89,15 +90,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new HeroTreasureHuntAlliancePointsPush(this);
     }
 
-    /// <summary>Field number for the "treasure_hunt_event_id" field.</summary>
-    public const int TreasureHuntEventIdFieldNumber = 1;
-    private int treasureHuntEventId_;
+    /// <summary>Field number for the "event_id" field.</summary>
+    public const int EventIdFieldNumber = 1;
+    private int eventId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int TreasureHuntEventId {
-      get { return treasureHuntEventId_; }
+    public int EventId {
+      get { return eventId_; }
       set {
-        treasureHuntEventId_ = value;
+        eventId_ = value;
       }
     }
 
@@ -113,27 +114,39 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "ranking_points" field.</summary>
-    public const int RankingPointsFieldNumber = 4;
-    private int rankingPoints_;
+    /// <summary>Field number for the "points" field.</summary>
+    public const int PointsFieldNumber = 4;
+    private int points_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int RankingPoints {
-      get { return rankingPoints_; }
+    public int Points {
+      get { return points_; }
       set {
-        rankingPoints_ = value;
+        points_ = value;
       }
     }
 
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 5;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    /// <summary>Field number for the "updated_at" field.</summary>
+    public const int UpdatedAtFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp updatedAt_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
-      get { return timestamp_; }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UpdatedAt {
+      get { return updatedAt_; }
       set {
-        timestamp_ = value;
+        updatedAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "league" field.</summary>
+    public const int LeagueFieldNumber = 6;
+    private int league_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int League {
+      get { return league_; }
+      set {
+        league_ = value;
       }
     }
 
@@ -152,10 +165,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TreasureHuntEventId != other.TreasureHuntEventId) return false;
+      if (EventId != other.EventId) return false;
       if (!object.Equals(Alliance, other.Alliance)) return false;
-      if (RankingPoints != other.RankingPoints) return false;
-      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      if (Points != other.Points) return false;
+      if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
+      if (League != other.League) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -163,10 +177,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (TreasureHuntEventId != 0) hash ^= TreasureHuntEventId.GetHashCode();
+      if (EventId != 0) hash ^= EventId.GetHashCode();
       if (alliance_ != null) hash ^= Alliance.GetHashCode();
-      if (RankingPoints != 0) hash ^= RankingPoints.GetHashCode();
-      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (Points != 0) hash ^= Points.GetHashCode();
+      if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
+      if (League != 0) hash ^= League.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -185,21 +200,25 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (TreasureHuntEventId != 0) {
+      if (EventId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(TreasureHuntEventId);
+        output.WriteInt32(EventId);
       }
       if (alliance_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(Alliance);
       }
-      if (RankingPoints != 0) {
+      if (Points != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(RankingPoints);
+        output.WriteInt32(Points);
       }
-      if (timestamp_ != null) {
+      if (updatedAt_ != null) {
         output.WriteRawTag(42);
-        output.WriteMessage(Timestamp);
+        output.WriteMessage(UpdatedAt);
+      }
+      if (League != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(League);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -211,21 +230,25 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (TreasureHuntEventId != 0) {
+      if (EventId != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(TreasureHuntEventId);
+        output.WriteInt32(EventId);
       }
       if (alliance_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(Alliance);
       }
-      if (RankingPoints != 0) {
+      if (Points != 0) {
         output.WriteRawTag(32);
-        output.WriteInt32(RankingPoints);
+        output.WriteInt32(Points);
       }
-      if (timestamp_ != null) {
+      if (updatedAt_ != null) {
         output.WriteRawTag(42);
-        output.WriteMessage(Timestamp);
+        output.WriteMessage(UpdatedAt);
+      }
+      if (League != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(League);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -237,17 +260,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (TreasureHuntEventId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TreasureHuntEventId);
+      if (EventId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventId);
       }
       if (alliance_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Alliance);
       }
-      if (RankingPoints != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RankingPoints);
+      if (Points != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Points);
       }
-      if (timestamp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      if (updatedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
+      }
+      if (League != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(League);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -261,8 +287,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.TreasureHuntEventId != 0) {
-        TreasureHuntEventId = other.TreasureHuntEventId;
+      if (other.EventId != 0) {
+        EventId = other.EventId;
       }
       if (other.alliance_ != null) {
         if (alliance_ == null) {
@@ -270,14 +296,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         }
         Alliance.MergeFrom(other.Alliance);
       }
-      if (other.RankingPoints != 0) {
-        RankingPoints = other.RankingPoints;
+      if (other.Points != 0) {
+        Points = other.Points;
       }
-      if (other.timestamp_ != null) {
-        if (timestamp_ == null) {
-          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      if (other.updatedAt_ != null) {
+        if (updatedAt_ == null) {
+          UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
-        Timestamp.MergeFrom(other.Timestamp);
+        UpdatedAt.MergeFrom(other.UpdatedAt);
+      }
+      if (other.League != 0) {
+        League = other.League;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -295,7 +324,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            TreasureHuntEventId = input.ReadInt32();
+            EventId = input.ReadInt32();
             break;
           }
           case 26: {
@@ -306,14 +335,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 32: {
-            RankingPoints = input.ReadInt32();
+            Points = input.ReadInt32();
             break;
           }
           case 42: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (updatedAt_ == null) {
+              UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(Timestamp);
+            input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 48: {
+            League = input.ReadInt32();
             break;
           }
         }
@@ -332,7 +365,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            TreasureHuntEventId = input.ReadInt32();
+            EventId = input.ReadInt32();
             break;
           }
           case 26: {
@@ -343,14 +376,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 32: {
-            RankingPoints = input.ReadInt32();
+            Points = input.ReadInt32();
             break;
           }
           case 42: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (updatedAt_ == null) {
+              UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(Timestamp);
+            input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 48: {
+            League = input.ReadInt32();
             break;
           }
         }

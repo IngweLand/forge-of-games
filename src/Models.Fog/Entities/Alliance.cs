@@ -6,6 +6,7 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 public class Alliance
 {
     private AllianceKey? _key;
+    public ICollection<AllianceAthRanking> AthRankings { get; set; } = new List<AllianceAthRanking>();
     public int AvatarBackgroundId { get; set; }
     public int AvatarIconId { get; set; }
     public int Id { get; set; }

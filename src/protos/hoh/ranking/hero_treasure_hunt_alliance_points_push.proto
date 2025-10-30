@@ -5,8 +5,9 @@ import "google/protobuf/timestamp.proto";
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroTreasureHuntAlliancePointsPush {
-  int32 treasure_hunt_event_id = 1;
+  int32 event_id = 1;
   AllianceDto alliance = 3;
-  int32 ranking_points = 4;
-  google.protobuf.Timestamp timestamp = 5;
+  int32 points = 4;
+  google.protobuf.Timestamp updated_at = 5;
+  int32 league = 6;
 }

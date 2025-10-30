@@ -5,7 +5,6 @@ using Ingweland.Fog.Infrastructure.Entities;
 using Ingweland.Fog.Infrastructure.Enums;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Shared.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
@@ -39,7 +38,7 @@ public class InGameDataReceiver(
             return new BadRequestResult();
         }
 
-        List<( string ResponseUrl, string PartitionKey, string RowKey)> keys = [];
+        List<( InGameDataProcessingServiceType ProcessingServiceType, string PartitionKey, string RowKey)> keys = [];
         Guid? submissionId = inGameData.SubmissionId != null ? Guid.Parse(inGameData.SubmissionId) : null;
         try
         {
@@ -56,7 +55,7 @@ public class InGameDataReceiver(
             foreach (var t in hohHelperResponseDtoToTablePkConverter.Get(inGameData, date))
             {
                 var rowKey = await inGameRawDataTableRepository.SaveAsync(rawData, t.PartitionKey);
-                keys.Add((inGameData.ResponseUrl, t.PartitionKey, rowKey));
+                keys.Add((t.ProcessingServiceType, t.PartitionKey, rowKey));
                 logger.LogInformation("Saved raw data for partition key: {PartitionKey}", t.PartitionKey);
             }
 
@@ -72,7 +71,8 @@ public class InGameDataReceiver(
         {
             foreach (var tuple in keys)
             {
-                await QueueForImmediateProcessingIfRequired(tuple.ResponseUrl, tuple.PartitionKey, tuple.RowKey);
+                await QueueForImmediateProcessingIfRequired(tuple.ProcessingServiceType, tuple.PartitionKey,
+                    tuple.RowKey);
             }
         }
         catch (Exception e)
@@ -84,10 +84,9 @@ public class InGameDataReceiver(
         return new NoContentResult();
     }
 
-    private Task QueueForImmediateProcessingIfRequired(string responseUrl, string partitionKey, string rowKey)
+    private Task QueueForImmediateProcessingIfRequired(InGameDataProcessingServiceType processingServiceType,
+        string partitionKey, string rowKey)
     {
-        var processingServiceType = GetProcessingType(responseUrl);
-
         if (processingServiceType != InGameDataProcessingServiceType.Undefined)
         {
             return queueRepository.SendMessageAsync(new InGameRawDataQueueMessage
@@ -99,17 +98,6 @@ public class InGameDataReceiver(
         }
 
         return Task.CompletedTask;
-    }
-
-    private static InGameDataProcessingServiceType GetProcessingType(string responseUrl)
-    {
-        var path = UriUtils.GetPath(responseUrl);
-
-        return path switch
-        {
-            "game/battle/hero/complete-wave" => InGameDataProcessingServiceType.Battle,
-            _ => InGameDataProcessingServiceType.Undefined,
-        };
     }
 
     private void SetDebugCorsHeaders(HttpRequest req)
