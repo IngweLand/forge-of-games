@@ -1,0 +1,17 @@
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+<div class="component-root">
+    <div class="event-label-container">
+        @Ranking.EventLabel
+    </div>
+    <div class="points-container">
+        @Ranking.PointsFormatted
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required AllianceAthRankingViewModel Ranking { get; set; }
+
+}

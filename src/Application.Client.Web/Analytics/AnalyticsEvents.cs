@@ -13,6 +13,7 @@ public static class AnalyticsEvents
     public const string SELECT_HERO_LEVEL = "select_hero_level";
     public const string TOGGLE_BATTLE_TIMELINE_RELICS = "toggle_bt_relics";
     public const string TOGGLE_CHART = "toggle_chart";
+    public const string TOGGLE_VIEW = "toggle_view";
     public const string TOGGLE_HERO_AVATAR_SOURCE = "toggle_hero_avatar_source";
     public const string VIEW_BATTLE_STATS = "view_battle_stats";
     public const string VIEW_CITY_STATS_ERROR = "view_city_stats_error";

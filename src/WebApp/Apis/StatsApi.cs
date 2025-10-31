@@ -30,6 +30,7 @@ public static class StatsApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE, GetAllianceAthRankingsAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
@@ -203,6 +204,15 @@ public static class StatsApi
         {
             return TypedResults.NotFound();
         }
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Ok<IReadOnlyCollection<AllianceAthRankingDto>>>
+        GetAllianceAthRankingsAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetAllianceAthRankingsAsync(allianceId, ct);
 
         return TypedResults.Ok(result);
     }

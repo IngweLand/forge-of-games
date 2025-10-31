@@ -121,6 +121,12 @@ p {
     vertical-align: middle;
 }
 
+.ath-ranking-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -179,5 +185,9 @@ p {
     .deleted-label {
         font-size: 12px;
         padding: 6px;
+    }
+
+    .ath-ranking-items-container {
+        gap: 12px;
     }
 }

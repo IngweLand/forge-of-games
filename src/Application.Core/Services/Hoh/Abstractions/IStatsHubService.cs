@@ -31,6 +31,10 @@ public interface IStatsHubService
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE_REFIT)]
     Task<AllianceWithRankings?> GetAllianceAsync(int allianceId, CancellationToken ct = default);
 
+    [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<AllianceAthRankingDto>> GetAllianceAthRankingsAsync(int allianceId,
+        CancellationToken ct = default);
+
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE)]
     Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,

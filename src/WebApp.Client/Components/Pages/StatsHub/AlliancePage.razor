@@ -117,6 +117,30 @@
         }
 
         <div class="fog-container section-container">
+            <div class="section-title expandable-section-title"
+                 @onclick="ToggleAthRankingsContainer">
+                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_AthRanking]</span>
+                @if (_athRankingsContainerIsExpanded)
+                {
+                    <span class="material-symbols-outlined">collapse_all</span>
+                }
+                else
+                {
+                    <span class="material-symbols-outlined">expand_all</span>
+                }
+            </div>
+            @if (_athRankingsContainerIsExpanded && _athRankings != null)
+            {
+                <div class="ath-ranking-items-container">
+                    @foreach (var r in _athRankings)
+                    {
+                        <AthRankingComponent Ranking="@r"/>
+                    }
+                </div>
+            }
+        </div>
+
+        <div class="fog-container section-container">
             <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>
             <MudTimeline TimelinePosition="TimelinePosition.Start">
                 @foreach (var name in _alliance.Names)

@@ -42,6 +42,8 @@ public static class FogUrlBuilder
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
         public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
         public const string ALLIANCE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/alliances/{allianceId}";
+        public const string ALLIANCE_ATH_RANKINGS_TEMPLATE = ALLIANCE_TEMPLATE + "/athRankings";
+        public const string ALLIANCE_ATH_RANKINGS_TEMPLATE_REFIT = ALLIANCE_TEMPLATE_REFIT + "/athRankings";
 
         public const string BATTLE_LOG_SEARCH = "/battle-log/search";
         public const string BATTLE_STATS_TEMPLATE = "/" + BASE_BATTLES_PATH + "/stats/{battleStatsId:int}";

@@ -135,6 +135,7 @@ public static class DependencyInjection
         services.AddScoped<IRelicInsightsViewModelFactory, RelicInsightsViewModelFactory>();
         services.AddScoped<IRelicUiService, RelicUiService>();
         services.AddScoped<ISquadEquipmentItemViewModelFactory, SquadEquipmentItemViewModelFactory>();
+        services.AddScoped<IAllianceAthRankingViewModelFactory, AllianceAthRankingViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

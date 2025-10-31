@@ -2301,6 +2301,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Treasure Hunt Ranking.
+        /// </summary>
+        public static string StatsHub_Alliance_AthRanking {
+            get {
+                return ResourceManager.GetString("StatsHub.Alliance.AthRanking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current Members.
         /// </summary>
         public static string StatsHub_Alliance_CurrentMembers {

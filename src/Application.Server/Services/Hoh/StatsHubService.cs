@@ -31,6 +31,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<IReadOnlyCollection<AllianceAthRankingDto>> GetAllianceAthRankingsAsync(int allianceId,
+        CancellationToken ct = default)
+    {
+        var query = new GetAllianceAthRankingsQuery
+        {
+            AllianceId = allianceId,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, int startIndex,
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         string? name = null, CancellationToken ct = default)

@@ -57,6 +57,7 @@ var searchKeys = new HashSet<string>
     "Base.UnitStats.unit_stat.CritChance_Abbrev",
     "Base.UnitStats.unit_stat.AttackSpeed_Abbrev",
     "Base.HeroPanel.Relics",
+    "Base.TreasureHuntRankingPanel.TreasureHuntRanking",
 };
 
 var result = new Dictionary<string, List<Translations>>();
