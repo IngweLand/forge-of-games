@@ -21,3 +21,6 @@ Content-Type: application/json
 
 ### Player's City
 GET https://localhost:7082/api/hoh/stats/players/24/city
+
+### In-game events
+GET https://localhost:7082/api/hoh/inGameEvents/zz1/TreasureHuntLeague

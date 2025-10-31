@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.CommandCenter.Commands;
+using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -152,6 +153,8 @@ public static class HohApi
         api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_DATA, GetEquipmentDataAsync);
 
+        api.MapGet(FogUrlBuilder.ApiRoutes.IN_GAME_EVENTS_TEMPLATE, GetInGameEventsAsync);
+
         return api;
     }
 
@@ -159,6 +162,19 @@ public static class HohApi
         GetEquipmentDataAsync([AsParameters] StatsServices services, HttpContext context, CancellationToken ct)
     {
         var result = await services.EquipmentService.GetEquipmentData(ct);
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<InGameEventDto>>>
+        GetInGameEventsAsync([AsParameters] StatsServices services, HttpContext context, string worldId,
+            EventDefinitionId eventDefinitionId, CancellationToken ct)
+    {
+        var query = new GetEventsQuery
+        {
+            WorldId = worldId,
+            EventDefinitionId = eventDefinitionId,
+        };
+        var result = await services.Mediator.Send(query, ct);
         return TypedResults.Ok(result);
     }
 
@@ -216,7 +232,7 @@ public static class HohApi
             return TypedResults.BadRequest("Could not create the share.");
         }
     }
-    
+
     private static async Task<Results<Ok<Guid>, BadRequest<string>>> ShareSubmissionIdAsync(
         [AsParameters] HohServices services, [FromBody] ShareSubmissionIdRequest request)
     {

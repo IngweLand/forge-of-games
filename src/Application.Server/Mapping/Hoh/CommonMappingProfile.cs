@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Server.Mapping.Hoh.Converters;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
 
 namespace Ingweland.Fog.Application.Server.Mapping.Hoh;
@@ -24,5 +25,8 @@ public class CommonMappingProfile:Profile
                 opt.PreCondition(src => src?.ContentUrls?.Mobile?.Page != null);
                 opt.MapFrom(src => src!.ContentUrls!.Mobile!.Page);
             });
+
+        CreateMap<InGameEventEntity, InGameEventDto>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(x => x.EventId));
     }
 }

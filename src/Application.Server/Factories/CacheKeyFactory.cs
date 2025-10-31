@@ -63,6 +63,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetEquipmentDataQuery _ => $"EquipmentData:{CultureInfo.CurrentCulture.Name}",
             GetRelicInsightsQuery q => $"RelicInsights:{q.UnitId}",
             GetAllianceAthRankingsQuery q => $"AllianceAthRankings:{q.AllianceId}",
+            GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }
