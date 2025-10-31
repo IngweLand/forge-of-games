@@ -55,14 +55,14 @@ public class HohHelperResponseDtoToTablePkConverter(
                         {
                             yield return (collectionCategoryId,
                                 tablePartitionKeyProvider.AthAllianceRankings(worldId, date),
-                                InGameDataProcessingServiceType.AllianceAthRankings);
+                                InGameDataProcessingServiceType.WakeupLeaderboards);
                             break;
                         }
 
                         case "alliance":
                         {
                             yield return (collectionCategoryId, tablePartitionKeyProvider.Alliance(worldId, date),
-                                InGameDataProcessingServiceType.Undefined);
+                                InGameDataProcessingServiceType.WakeupAlliance);
                             break;
                         }
                     }

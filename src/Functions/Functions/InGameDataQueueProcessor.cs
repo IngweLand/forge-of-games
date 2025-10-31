@@ -45,7 +45,7 @@ public class InGameDataQueueProcessor(
                 await ProcessBattleAsync(payload.PartitionKey, payload.RowKey);
                 break;
             }
-            case InGameDataProcessingServiceType.AllianceAthRankings:
+            case InGameDataProcessingServiceType.WakeupLeaderboards:
             {
                 await ProcessAllianceAthRankingsAsync(payload.PartitionKey, payload.RowKey);
                 break;

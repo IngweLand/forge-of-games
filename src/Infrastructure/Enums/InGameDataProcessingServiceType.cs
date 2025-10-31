@@ -4,5 +4,6 @@ public enum InGameDataProcessingServiceType
 {
     Undefined = 0,
     Battle = 1,
-    AllianceAthRankings = 2,
+    WakeupLeaderboards = 2,
+    WakeupAlliance = 3,
 }
