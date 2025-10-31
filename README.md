@@ -8,7 +8,7 @@ Your Ultimate Heroes of History Companion - featuring a professional City Planne
 
 [Support Forge of Games](https://forgeofgames.com/support-us)
 
-**Alliance Manager** - free and open-source tool to keep track of players' ATH ranking in your alliance. [Open Alliance Manager](https://colab.research.google.com/github/ingweland/forge-of-games/blob/main/colab/alliance-manager.ipynb)
+**Alliance Manager** - free and open-source tool to keep track of players' ATH ranking in your alliance. [Open Alliance Manager](https://colab.research.google.com/github/ingweland/forge-of-games/blob/main/colab/alliance_manager.ipynb)
 
 
 ## 🔗 Links
