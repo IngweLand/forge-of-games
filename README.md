@@ -6,9 +6,10 @@ Your Ultimate Heroes of History Companion - featuring a professional City Planne
 
 *If you find our tools helpful, consider supporting the project with a small donation:*
 
-<a href="https://ko-fi.com/forgeofgames" target="_blank"><img height="36" style="border:0;height:36px;"
-                                                              src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-                                                              alt="Buy Me a Coffee at ko-fi.com"/></a>
+[Support Forge of Games](https://forgeofgames.com/support-us)
+
+**Alliance Manager** - free and open-source tool to keep track of players' ATH ranking in your alliance. [Open Alliance Manager](https://colab.research.google.com/github/ingweland/forge-of-games/blob/main/colab/alliance-manager.ipynb)
+
 
 ## 🔗 Links
 - [Visit Forge of Games](https://forgeofgames.com)
