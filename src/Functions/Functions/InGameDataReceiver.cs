@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Functions.Validators;
@@ -20,6 +21,13 @@ public class InGameDataReceiver(
     HohHelperResponseDtoValidator dtoValidator,
     IQueueRepository<InGameRawDataQueueMessage> queueRepository)
 {
+    private static readonly ReadOnlySet<InGameDataProcessingServiceType> ImmediateProcessingServiceTypes =
+        new(new HashSet<InGameDataProcessingServiceType>
+        {
+            InGameDataProcessingServiceType.Battle,
+            InGameDataProcessingServiceType.WakeupLeaderboards,
+        });
+
     [Function("InGameDataReceiver")]
     public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "hoh/inGameData")]
@@ -87,7 +95,7 @@ public class InGameDataReceiver(
     private Task QueueForImmediateProcessingIfRequired(InGameDataProcessingServiceType processingServiceType,
         string partitionKey, string rowKey)
     {
-        if (processingServiceType != InGameDataProcessingServiceType.Undefined)
+        if (ImmediateProcessingServiceTypes.Contains(processingServiceType))
         {
             return queueRepository.SendMessageAsync(new InGameRawDataQueueMessage
             {
