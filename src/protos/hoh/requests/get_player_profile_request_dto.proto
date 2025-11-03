@@ -2,6 +2,7 @@ syntax = "proto3";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
+// TODO: Rename to PlayerProfileRequest so it will get accepted by Batch 
 message GetPlayerProfileRequestDto {
   int32 player_id = 1;
 }
