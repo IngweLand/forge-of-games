@@ -5,8 +5,10 @@ using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Infrastructure;
+using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.Shared;
+using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Ingweland.Fog.Shared.Localization;
 using Ingweland.Fog.WebApp;
 using Ingweland.Fog.WebApp.Apis;
@@ -19,6 +21,7 @@ using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddWebAppSettings();
+builder.Services.AddAzureAppConfiguration();
 builder.Services.AddOpenApi();
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
@@ -82,6 +85,7 @@ else
     app.UseHsts();
 }
 
+app.UseAzureAppConfiguration();
 app.UseHttpsRedirection();
 
 app.UseAntiforgery();
@@ -102,5 +106,10 @@ app.MapRazorComponents<App>()
 
 app.MapHohApi();
 app.MapStatsApi();
+
+// initialize data load
+_ = app.Services.GetRequiredService<IProtobufSerializer>();
+_ = app.Services.GetRequiredService<IHohDataProvider>();
+_ = app.Services.GetRequiredService<IHohLocalizationDataProvider>();
 
 app.Run();
