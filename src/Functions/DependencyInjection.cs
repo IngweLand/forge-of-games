@@ -51,6 +51,7 @@ public static class DependencyInjection
         services.AddScoped<IRankingsCleanupService, RankingsCleanupService>();
         services.AddScoped<IInGameEventsFetcher, InGameEventsFetcher>();
         services.AddScoped<IAllianceAthService, AllianceAthService>();
+        services.AddScoped<IHohCoreDataFetcher, HohCoreDataFetcher>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

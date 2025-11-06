@@ -1,6 +1,7 @@
 using FluentResults;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Functions;
+using Ingweland.Fog.HohCoreDataParserSdk;
 using Ingweland.Fog.Infrastructure;
 using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.Shared;
@@ -23,6 +24,7 @@ builder.Services.AddInfrastructureDbContext(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddSharedServices();
 builder.Services.AddFunctionsServices();
+builder.Services.AddHohCoreDataParserSdkServices();
 
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services

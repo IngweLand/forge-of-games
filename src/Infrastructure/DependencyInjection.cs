@@ -55,6 +55,11 @@ public static class DependencyInjection
             var options = sp.GetRequiredService<IOptions<StorageSettings>>();
             return new HohCoreDataAzureContainerClient(options.Value);
         });
+        services.AddSingleton<IHohRawCoreDataAzureContainerClient, HohRawCoreDataAzureContainerClient>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>();
+            return new HohRawCoreDataAzureContainerClient(options.Value);
+        });
 
         return services;
     }

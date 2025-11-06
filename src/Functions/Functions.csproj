@@ -37,6 +37,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
       <ProjectReference Include="..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj" />
+      <ProjectReference Include="..\Misc\HohCoreDataParserSdk\HohCoreDataParserSdk.csproj" />
       <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj" />
     </ItemGroup>
 </Project>
