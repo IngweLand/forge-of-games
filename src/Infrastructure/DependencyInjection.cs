@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
@@ -42,11 +43,18 @@ public static class DependencyInjection
         
         services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
-        services.TryAddSingleton<IHohDataProvider, DefaultHohDataProvider>();
+        services.TryAddSingleton<IHohDataProvider, AzureBlobStorageHohDataProvider>();
+        services.TryAddSingleton<IHohLocalizationDataProvider, AzureBlobStorageHohLocalizationDataProvider>();
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
         services.AddScoped<IInGameRawDataTableRepository, InGameRawDataTableRepository>();
+        
+        services.AddSingleton<IHohCoreDataAzureContainerClient, HohCoreDataAzureContainerClient>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>();
+            return new HohCoreDataAzureContainerClient(options.Value);
+        });
 
         return services;
     }
