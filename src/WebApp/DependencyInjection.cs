@@ -44,6 +44,8 @@ internal static class DependencyInjection
                     .ConfigureRefresh(refreshOptions => refreshOptions.RegisterAll()
                         .SetRefreshInterval(TimeSpan.FromMinutes(2)));
             });
+            
+            builder.Services.AddAzureAppConfiguration();
         }
 
         builder.Services.Configure<AssetsSettings>(
