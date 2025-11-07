@@ -126,7 +126,7 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
     {
         var alliance = await context.Alliances
             .Include(x =>
-                x.Rankings.Where(pr => pr.Type == AllianceRankingType.TotalPoints && pr.CollectedAt == collectedAt))
+                x.Rankings.Where(pr => pr.Type == AllianceRankingType.MemberTotal && pr.CollectedAt == collectedAt))
             .FirstOrDefaultAsync(x => x.Id == allianceId);
 
         if (alliance == null)
@@ -158,7 +158,7 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
             {
                 Rank = rank ?? 0,
                 Points = rankingPoints,
-                Type = AllianceRankingType.TotalPoints,
+                Type = AllianceRankingType.MemberTotal,
                 CollectedAt = collectedAt,
             });
         }

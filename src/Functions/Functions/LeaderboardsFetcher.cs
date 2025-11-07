@@ -24,8 +24,7 @@ public class LeaderboardsFetcher(
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
         [PlayerRankingType.ResearchPoints, PlayerRankingType.PowerPoints, PlayerRankingType.U1, PlayerRankingType.U2];
 
-    private static readonly HashSet<AllianceRankingType> AllianceRankingTypes =
-        [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
+    private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
 
     [Function("LeaderboardsFetcher")]
     public async Task Run([TimerTrigger("0 57 23 * * *")] TimerInfo myTimer)

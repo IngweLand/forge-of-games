@@ -24,13 +24,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static AllianceRankingTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChthbGxpYW5jZV9yYW5raW5nX3R5cGUucHJvdG8q2gEKE0FsbGlhbmNlUmFu",
+            "ChthbGxpYW5jZV9yYW5raW5nX3R5cGUucHJvdG8qigQKE0FsbGlhbmNlUmFu",
             "a2luZ1R5cGUSIQodQWxsaWFuY2VSYW5raW5nVHlwZV9VTkRFRklORUQQABIk",
-            "CiBBbGxpYW5jZVJhbmtpbmdUeXBlX1RPVEFMX1BPSU5UUxABEiYKIkFsbGlh",
-            "bmNlUmFua2luZ1R5cGVfUkFOS0lOR19QT0lOVFMQAhIaChZBbGxpYW5jZVJh",
-            "bmtpbmdUeXBlX1UxEAQSGgoWQWxsaWFuY2VSYW5raW5nVHlwZV9VMhAFEhoK",
-            "FkFsbGlhbmNlUmFua2luZ1R5cGVfVTMQBkIfqgIcSW5nd2VsYW5kLkZvZy5J",
-            "bm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
+            "CiBBbGxpYW5jZVJhbmtpbmdUeXBlX01FTUJFUl9UT1RBTBABEh0KGUFsbGlh",
+            "bmNlUmFua2luZ1R5cGVfVE9UQUwQAhIrCidBbGxpYW5jZVJhbmtpbmdUeXBl",
+            "X1RSRUFTVVJFX0hVTlRfVE9UQUwQAxIpCiVBbGxpYW5jZVJhbmtpbmdUeXBl",
+            "X1RSRUFTVVJFX0hVTlRfMVNUEAQSKQolQWxsaWFuY2VSYW5raW5nVHlwZV9U",
+            "UkVBU1VSRV9IVU5UXzJORBAFEikKJUFsbGlhbmNlUmFua2luZ1R5cGVfVFJF",
+            "QVNVUkVfSFVOVF8zUkQQBhI2CjJBbGxpYW5jZVJhbmtpbmdUeXBlX0FMTElB",
+            "TkNFX1JFU0VBUkNIX1BPSU5UU19UT1RBTBAHEjcKM0FsbGlhbmNlUmFua2lu",
+            "Z1R5cGVfQUxMSUFOQ0VfUkVTRUFSQ0hfUE9JTlRTX0NPTU1PThAIEjUKMUFs",
+            "bGlhbmNlUmFua2luZ1R5cGVfQUxMSUFOQ0VfUkVTRUFSQ0hfUE9JTlRTX1JB",
+            "UkUQCRI1CjFBbGxpYW5jZVJhbmtpbmdUeXBlX0FMTElBTkNFX1JFU0VBUkNI",
+            "X1BPSU5UU19FUElDEApCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5I",
+            "b2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllianceRankingType), }, null, null));
@@ -41,11 +48,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   #region Enums
   public enum AllianceRankingType {
     [pbr::OriginalName("AllianceRankingType_UNDEFINED")] Undefined = 0,
-    [pbr::OriginalName("AllianceRankingType_TOTAL_POINTS")] TotalPoints = 1,
-    [pbr::OriginalName("AllianceRankingType_RANKING_POINTS")] RankingPoints = 2,
-    [pbr::OriginalName("AllianceRankingType_U1")] U1 = 4,
-    [pbr::OriginalName("AllianceRankingType_U2")] U2 = 5,
-    [pbr::OriginalName("AllianceRankingType_U3")] U3 = 6,
+    [pbr::OriginalName("AllianceRankingType_MEMBER_TOTAL")] MemberTotal = 1,
+    [pbr::OriginalName("AllianceRankingType_TOTAL")] Total = 2,
+    [pbr::OriginalName("AllianceRankingType_TREASURE_HUNT_TOTAL")] TreasureHuntTotal = 3,
+    [pbr::OriginalName("AllianceRankingType_TREASURE_HUNT_1ST")] TreasureHunt1St = 4,
+    [pbr::OriginalName("AllianceRankingType_TREASURE_HUNT_2ND")] TreasureHunt2Nd = 5,
+    [pbr::OriginalName("AllianceRankingType_TREASURE_HUNT_3RD")] TreasureHunt3Rd = 6,
+    [pbr::OriginalName("AllianceRankingType_ALLIANCE_RESEARCH_POINTS_TOTAL")] AllianceResearchPointsTotal = 7,
+    [pbr::OriginalName("AllianceRankingType_ALLIANCE_RESEARCH_POINTS_COMMON")] AllianceResearchPointsCommon = 8,
+    [pbr::OriginalName("AllianceRankingType_ALLIANCE_RESEARCH_POINTS_RARE")] AllianceResearchPointsRare = 9,
+    [pbr::OriginalName("AllianceRankingType_ALLIANCE_RESEARCH_POINTS_EPIC")] AllianceResearchPointsEpic = 10,
   }
 
   #endregion

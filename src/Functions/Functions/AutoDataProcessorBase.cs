@@ -28,8 +28,7 @@ public abstract class AutoDataProcessorBase(
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
         [PlayerRankingType.ResearchPoints, PlayerRankingType.PowerPoints, PlayerRankingType.U1, PlayerRankingType.U2];
 
-    private static readonly HashSet<AllianceRankingType> AllianceRankingTypes =
-        [AllianceRankingType.TotalPoints, AllianceRankingType.U1, AllianceRankingType.U2, AllianceRankingType.U3];
+    private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
 
     protected async
         Task<(List<PlayerAggregate> PlayerAggregates, List<AllianceAggregate> AllianceAggregates,

@@ -70,7 +70,7 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
 
                     if (date >= existingAlliance.UpdatedAt)
                     {
-                        if (allianceAggregate.AllianceRankingType == AllianceRankingType.TotalPoints)
+                        if (allianceAggregate.AllianceRankingType == AllianceRankingType.MemberTotal)
                         {
                             existingAlliance.RankingPoints = allianceAggregate.RankingPoints!.Value;
                             existingAlliance.Rank = allianceAggregate.Rank!.Value;

@@ -13,7 +13,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
         return new AllianceWithRankings
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
-            RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.TotalPoints),
+            RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.MemberTotal),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
             CurrentMembers = alliance.Members.OrderByDescending(x => x.Player.RankingPoints)
                 .Select((entity, i) => CreateMember(entity, i + 1)).ToList(),

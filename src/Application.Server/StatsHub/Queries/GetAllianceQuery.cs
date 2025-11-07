@@ -51,7 +51,7 @@ public class GetAllianceQueryHandler(
             .Include(p => p.Members.Where(x => x.Player.Status == InGameEntityStatus.Active)).ThenInclude(x => x.Player)
             .Include(p => p.NameHistory)
             .Include(p =>
-                p.Rankings.Where(pr => pr.Type == AllianceRankingType.TotalPoints && pr.CollectedAt > statsPeriodStartDate))
+                p.Rankings.Where(pr => pr.Type == AllianceRankingType.MemberTotal && pr.CollectedAt > statsPeriodStartDate))
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken);
         return alliance == null ? null : allianceWithRankingsFactory.Create(alliance);
