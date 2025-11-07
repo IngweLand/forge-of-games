@@ -4,8 +4,8 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 enum PlayerRankingType {
   PlayerRankingType_RESEARCH_POINTS = 0;
-  PlayerRankingType_RANKING_POINTS = 1;
-  PlayerRankingType_U1 = 6;
-  PlayerRankingType_U2 = 8;
-  PlayerRankingType_POWER_POINTS = 9;
+  PlayerRankingType_TOTAL = 1;
+  PlayerRankingType_SEASON_PASS_PROGRESS = 6;
+  PlayerRankingType_EVENT_CITY_PROGRESS = 8;
+  PlayerRankingType_TOTAL_HERO_POWER = 9;
 }

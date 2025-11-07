@@ -80,7 +80,7 @@ public class GetPlayerProfileQueryHandler(
         var player = await context.Players.AsNoTracking()
             .Include(p =>
                 p.Rankings.Where(pr =>
-                    pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt > periodStartDateOnly))
+                    pr.Type == PlayerRankingType.TotalHeroPower && pr.CollectedAt > periodStartDateOnly))
             .Include(p => p.PvpRankings.Where(pr => pr.CollectedAt > periodStartDate))
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)

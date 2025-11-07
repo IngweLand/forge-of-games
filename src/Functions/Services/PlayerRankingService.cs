@@ -64,7 +64,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
                         addedRankingCount++;
                     }
 
-                    if (playerAggregate.PlayerRankingType == PlayerRankingType.PowerPoints &&
+                    if (playerAggregate.PlayerRankingType == PlayerRankingType.TotalHeroPower &&
                         date >= existingPlayer.UpdatedAt)
                     {
                         existingPlayer.RankingPoints = playerAggregate.RankingPoints!.Value;

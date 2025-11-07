@@ -184,7 +184,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             player.Id, worldId);
         var existingPlayer = await context.Players
             .Include(p =>
-                p.Rankings.Where(pr => pr.Type == PlayerRankingType.PowerPoints && pr.CollectedAt == today))
+                p.Rankings.Where(pr => pr.Type == PlayerRankingType.TotalHeroPower && pr.CollectedAt == today))
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)
@@ -243,7 +243,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
 
         var existingRanking =
             modifiedPlayer.Rankings.FirstOrDefault(x =>
-                x.Type == PlayerRankingType.PowerPoints && x.CollectedAt == today);
+                x.Type == PlayerRankingType.TotalHeroPower && x.CollectedAt == today);
         if (existingRanking != null)
         {
             logger.LogDebug("Updating existing ranking for player {PlayerId}: Rank {Rank}, Points {Points}",
@@ -261,7 +261,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
                 Points = rankingPoints,
                 Rank = rank ?? 0,
                 CollectedAt = today,
-                Type = PlayerRankingType.PowerPoints,
+                Type = PlayerRankingType.TotalHeroPower,
             });
         }
 

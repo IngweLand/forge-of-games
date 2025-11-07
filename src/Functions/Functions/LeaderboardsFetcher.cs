@@ -22,7 +22,7 @@ public class LeaderboardsFetcher(
     IMapper mapper)
 {
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
-        [PlayerRankingType.ResearchPoints, PlayerRankingType.PowerPoints, PlayerRankingType.U1, PlayerRankingType.U2];
+        [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower];
 
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
 
