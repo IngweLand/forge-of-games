@@ -61,6 +61,19 @@ public static class DependencyInjection
     public static void AddConfigurations(this FunctionsApplicationBuilder builder)
     {
         builder.Configuration.AddUserSecrets<Program>(optional: true);
+        var customEnvironment = builder.Configuration.GetValue<string>("CustomEnvironment");
+        if (customEnvironment != "Development")
+        {
+            var connectionString = builder.Configuration.GetConnectionString("AppConfiguration") ??
+                throw new InvalidOperationException("The Connection string  `AppConfiguration` was not found.");
+
+            builder.Configuration.AddAzureAppConfiguration(options =>
+            {
+                // we do not set up autorefresh because functions run for a short period
+                options.Connect(connectionString);
+            });
+        }
+
         builder.Services.Configure<HohServerCredentials>(
             builder.Configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));
         builder.Services.Configure<StorageSettings>(
