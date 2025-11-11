@@ -1,23 +1,21 @@
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using LazyCache;
-using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
 public class RelicCoreDataService(
     IHohCoreDataRepository hohCoreDataRepository,
     IRelicDtoFactory relicDtoFactory,
-    IAppCache appCache,
+    IHohDataCache dataCache,
     ICacheKeyFactory cacheKeyFactory) : IRelicCoreDataService
 {
     public Task<IReadOnlyCollection<RelicDto>> GetRelicsAsync()
     {
-        return appCache.GetOrAddAsync(cacheKeyFactory.RelicDtos(), CreateRelicsAsync,
-            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.RelicDtos(version), CreateRelicsAsync, version);
     }
 
     private async Task<IReadOnlyCollection<RelicDto>> CreateRelicsAsync()

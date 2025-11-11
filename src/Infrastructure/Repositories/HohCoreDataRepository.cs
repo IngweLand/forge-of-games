@@ -120,6 +120,8 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
             .ToList();
     }
 
+    public Guid Version => dataProvider.Version;
+
     public async Task<Building?> GetBuildingAsync(string id)
     {
         var data = await dataProvider.GetDataAsync();

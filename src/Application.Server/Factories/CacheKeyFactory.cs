@@ -10,29 +10,29 @@ namespace Ingweland.Fog.Application.Server.Factories;
 
 public class CacheKeyFactory : ICacheKeyFactory
 {
-    public string HeroDto(string heroId)
+    public string HeroDto(string heroId, Guid version)
     {
-        return $"hero_dto-{heroId}-{CultureInfo.CurrentCulture.Name}";
+        return $"hero_dto:{heroId}:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
-    public string RelicDtos()
+    public string RelicDtos(Guid version)
     {
-        return $"relic_dtos:{CultureInfo.CurrentCulture.Name}";
+        return $"relic_dtos:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
-    public string HeroesBasicData()
+    public string HeroesBasicData(Guid version)
     {
-        return $"heroes-basic-data-{CultureInfo.CurrentCulture.Name}";
+        return $"heroes-basic-data:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
-    public string HohAges()
+    public string HohAges(Guid version)
     {
-        return $"hoh-ages-{CultureInfo.CurrentCulture.Name}";
+        return $"hoh-ages:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
-    public string HohResources()
+    public string HohResources(Guid version)
     {
-        return $"hoh-resources-{CultureInfo.CurrentCulture.Name}";
+        return $"hoh-resources:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
     public string Alliance(int allianceId)
@@ -45,7 +45,8 @@ public class CacheKeyFactory : ICacheKeyFactory
         return request switch
         {
             GetAllianceQuery q => Alliance(q.AllianceId),
-            BattleSearchQuery q => $"BattleSearch:{q.BattleDefinitionId}:{q.BattleType}:{q.ResultStatus}:{string.Join("-", q.UnitIds)}",
+            BattleSearchQuery q => $"BattleSearch:{q.BattleDefinitionId}:{q.BattleType}:{q.ResultStatus}:{
+                string.Join("-", q.UnitIds)}",
             GetBattleQuery q => $"Battle:{q.Id}",
             GetBattleStatsQuery q => $"BattleStats:{q.Id}:{CultureInfo.CurrentCulture.Name}",
             GetUnitBattlesQuery q => $"UnitBattles:{q.UnitId}:{q.BattleType}:{CultureInfo.CurrentCulture.Name}",

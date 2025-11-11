@@ -23,11 +23,13 @@ public abstract class ReloadableDataProviderBase<TData> : IDisposable
             if (!_disposed)
             {
                 _loadingTask = ReloadDataAsync(options);
+                Version = Guid.NewGuid();
             }
         });
     }
 
     protected ILogger<ReloadableDataProviderBase<TData>> Logger { get; }
+    public Guid Version { get; private set; } = Guid.NewGuid();
 
     public void Dispose()
     {

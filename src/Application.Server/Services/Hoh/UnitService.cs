@@ -1,10 +1,9 @@
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
-using LazyCache;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -15,20 +14,20 @@ public class UnitService(
     IHeroBasicDtoFactory heroBasicDtoFactory,
     IHeroDtoFactory heroDtoFactory,
     IHeroAbilityDtoFactory heroAbilityDtoFactory,
-    IAppCache appCache,
+    IHohDataCache dataCache,
     ICacheKeyFactory cacheKeyFactory)
     : IUnitService
 {
     public Task<HeroDto?> GetHeroAsync(string id)
     {
-        return appCache.GetOrAddAsync(cacheKeyFactory.HeroDto(id), () => CreateHeroAsync(id),
-            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.HeroDto(id, version), () => CreateHeroAsync(id), version);
     }
 
     public Task<IReadOnlyCollection<HeroBasicDto>> GetHeroesBasicDataAsync()
     {
-        return appCache.GetOrAddAsync(cacheKeyFactory.HeroesBasicData(), CreateHeroesBasicDataAsync,
-            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.HeroesBasicData(version), CreateHeroesBasicDataAsync, version);
     }
 
     private async Task<IReadOnlyCollection<HeroBasicDto>> CreateHeroesBasicDataAsync()

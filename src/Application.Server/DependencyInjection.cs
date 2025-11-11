@@ -4,8 +4,10 @@ using Ingweland.Fog.Application.Core;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Behaviors;
+using Ingweland.Fog.Application.Server.Caching;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Logging;
 using Ingweland.Fog.Application.Server.PlayerCity;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
@@ -43,6 +45,7 @@ public static class DependencyInjection
         services.AddSingleton<IGameWorldsProvider, GameWorldsProvider>();
         services.AddSingleton<IFailedPlayerCityFetchesCache, FailedPlayerCityFetchesCache>();
         services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
+        services.AddSingleton<IHohDataCache, HohDataCache>();
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();

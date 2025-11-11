@@ -1,10 +1,9 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
-using LazyCache;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
@@ -12,27 +11,29 @@ public class CommonService(
     IHohCoreDataRepository hohCoreDataRepository,
     IResourceDtoFactory resourceDtoFactory,
     IMapper mapper,
-    IAppCache appCache,
+    IHohDataCache dataCache,
     ICacheKeyFactory cacheKeyFactory) : ICommonService
 {
     public Task<IReadOnlyCollection<AgeDto>> GetAgesAsync()
     {
-        return appCache.GetOrAddAsync(cacheKeyFactory.HohAges(), async () =>
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.HohAges(version), async () =>
             {
                 var ages = await hohCoreDataRepository.GetAges();
                 return mapper.Map<IReadOnlyCollection<AgeDto>>(ages);
             },
-            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+            version);
     }
 
     public Task<IReadOnlyCollection<ResourceDto>> GetResourcesAsync()
     {
-        return appCache.GetOrAddAsync(cacheKeyFactory.HohResources(), async () =>
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.HohResources(version), async () =>
             {
                 var resources = await hohCoreDataRepository.GetResources();
                 return (IReadOnlyCollection<ResourceDto>) resources.Select(x => resourceDtoFactory.Create(x, x.Age))
                     .ToList();
             },
-            DateTimeOffset.Now.Add(FogConstants.DefaultHohDataEntityCacheTime));
+            version);
     }
 }

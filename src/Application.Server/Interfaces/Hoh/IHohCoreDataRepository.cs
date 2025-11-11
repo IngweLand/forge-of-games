@@ -9,6 +9,7 @@ namespace Ingweland.Fog.Application.Server.Interfaces.Hoh;
 
 public interface IHohCoreDataRepository
 {
+    Guid Version { get; }
     Task<Building?> GetBuildingAsync(string id);
     Task<CityDefinition?> GetCity(CityId id);
     Task<Hero?> GetHeroAsync(string id);
