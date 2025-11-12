@@ -35,7 +35,9 @@ public class RelicAbilityText
 
     private string SetBaseStatStyle(string input)
     {
-        return input.Replace(@"<style=basestat>", @"<span class='hero-ability-basestat'>")
+        return input
+            .Replace(@"<style=basestat>", @"<span class='hero-ability-basestat'>")
+            .Replace(@"<style=ability_link>", @"<span class='hero-ability-link'>")
             .Replace(@"</style>", @"</span>");
     }
 }

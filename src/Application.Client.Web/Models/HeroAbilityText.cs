@@ -61,6 +61,7 @@ public class HeroAbilityText
         {
             sb.Append(result.Replace(DESCRIPTION_ITEM_OPEN_TAG, @"<li>")
                 .Replace(@"<style=basestat>", @"<span class='hero-ability-basestat'>")
+                .Replace(@"<style=ability_link>", @"<span class='hero-ability-link'>")
                 .Replace(@"</style>", @"</span>"));
             sb.Append("</li>");
         }
