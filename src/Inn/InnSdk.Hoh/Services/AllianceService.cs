@@ -50,6 +50,19 @@ public class AllianceService(
             e => new NetworkError($"Failed to get members of the alliance with id {allianceId} in world {world.Id}",
                 e));
     }
+    
+    public Task<Result<byte[]>> GetAllianceRawDataAsync(GameWorldConfig world, int allianceId)
+    {
+        logger.LogInformation("Getting alliance {@Data}", new {WorldId = world.Id, Id = allianceId});
+        var payload = new AllianceMembersRequestDto
+        {
+            Id = allianceId,
+        };
+        return Result.Try(
+            () => apiClient.SendForProtobufAsync(world, GameEndpoints.AlliancePath, payload.ToByteArray()),
+            e => new NetworkError($"Failed to get alliance with id {allianceId} in world {world.Id}",
+                e));
+    }
 
     public async Task<Result<IReadOnlyCollection<AllianceMember>>> GetMembersAsync(GameWorldConfig world,
         int allianceId)

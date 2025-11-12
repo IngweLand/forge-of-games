@@ -11,4 +11,6 @@ public interface IAllianceService
 
     Task<Result<IReadOnlyCollection<AllianceMember>>> GetMembersAsync(GameWorldConfig world, int allianceId);
     Task<Result<byte[]>> GetMembersRawDataAsync(GameWorldConfig world, int allianceId);
+
+    Task<Result<byte[]>> GetAllianceRawDataAsync(GameWorldConfig world, int allianceId);
 }
