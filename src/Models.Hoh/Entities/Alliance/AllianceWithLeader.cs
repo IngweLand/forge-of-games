@@ -1,7 +1,7 @@
 namespace Ingweland.Fog.Models.Hoh.Entities.Alliance;
 
-public class AllianceSearchResult
+public class AllianceWithLeader
 {
-    public required IReadOnlyCollection<AllianceMember> Members { get; init; }
     public required HohAllianceExtended Alliance { get; init; }
+    public required AllianceMember Leader { get; init; }
 }

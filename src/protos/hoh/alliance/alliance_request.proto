@@ -2,6 +2,6 @@ syntax = "proto3";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
-message AllianceMembersRequestDto {
+message AllianceRequest {
   int32 id = 1;
 }

@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
+using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
@@ -73,29 +74,23 @@ public class AllianceUpdateOrchestrator(
 
         if (updateMembersResult.HasError<AllianceNotFoundError>())
         {
-            var allianceSearchResult =
-                await inGameAllianceService.SearchAlliancesAsync(existingAlliance.WorldId, existingAlliance.Name);
+            var allianceSearchResult = await inGameAllianceService.GetAllianceAsync(existingAlliance.Key);
 
-            if (allianceSearchResult.IsFailed)
+            if (allianceSearchResult.HasError<HohSoftError>(x => x.Error == SoftErrorType.AllianceNotFound))
             {
-                return allianceSearchResult.ToResult();
-            }
-
-            var match = allianceSearchResult.Value.FirstOrDefault(x =>
-                x.Alliance.Name == existingAlliance.Name && x.Alliance.Id == existingAlliance.InGameAllianceId);
-
-            if (match == null)
-            {
-                logger.LogDebug("Alliance {AllianceId} missing in in-game alliance search results, marking as Missing",
+                logger.LogInformation("Alliance {AllianceId} not found, marking as Missing",
                     existingAlliance.InGameAllianceId);
 
                 existingAlliance.Status = InGameEntityStatus.Missing;
                 await context.SaveChangesAsync(ct);
             }
+            else if (allianceSearchResult.IsFailed)
+            {
+                return allianceSearchResult.ToResult();
+            }
             else
             {
-                logger.LogDebug("Alliance {AllianceId} found in in-game alliance search results",
-                    existingAlliance.InGameAllianceId);
+                logger.LogDebug("Alliance {AllianceId} found.", existingAlliance.InGameAllianceId);
             }
         }
 

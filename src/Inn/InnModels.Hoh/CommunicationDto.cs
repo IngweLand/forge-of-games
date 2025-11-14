@@ -289,6 +289,8 @@ public sealed partial class CommunicationDto
             return items.FirstOrDefault();
         }
     }
+    
+    public BatchResponse BatchResponse => Response.FindAndUnpack<BatchResponse>();
 
     public ReworkedWondersDTO? Wonders
     {

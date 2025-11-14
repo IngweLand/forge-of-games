@@ -33,16 +33,32 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         return mapper.Map<PlayerRanks>(ranksDto);
     }
 
-    public Result<IReadOnlyCollection<AllianceSearchResult>> ParseSearchAllianceResponse(byte[] data)
+    public Result<IReadOnlyCollection<AllianceWithLeader>> ParseSearchAllianceResponse(byte[] data)
     {
         return ParseCommunicationDto<SearchAllianceResponse>(data)
             .Bind(dto =>
             {
-                return Result.Try(() => mapper.Map<IReadOnlyCollection<AllianceSearchResult>>(dto.Alliances),
+                return Result.Try(() => mapper.Map<IReadOnlyCollection<AllianceWithLeader>>(dto.Alliances),
                     e => new HohMappingError(
                         $"Failed to map {nameof(SearchAllianceResponse.Alliances)} to {
-                            nameof(IReadOnlyCollection<AllianceSearchResult>)}", e));
+                            nameof(IReadOnlyCollection<AllianceWithLeader>)}", e));
             });
+    }
+
+    public Result<AllianceWithLeader> ParseAllianceWithLeader(byte[] data)
+    {
+        return ParseCommunicationDto<AllianceWithLeaderDTO>(data)
+            .Bind(dto =>
+            {
+                return Result.Try(() => mapper.Map<AllianceWithLeader>(dto),
+                    e => new HohMappingError(
+                        $"Failed to map {nameof(AllianceWithLeaderDTO)} to {nameof(AllianceWithLeader)}", e));
+            });
+    }
+
+    public Result<BatchResponse> ParseBatchResponse(byte[] data)
+    {
+        return ParseCommunicationDto<BatchResponse>(data);
     }
 
     public HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(byte[] data)
@@ -263,6 +279,11 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
         if (unpackResult.HasError<HohInvalidCardinalityError>())
         {
             unpackResult = communicationDto.Value.Response.FindAndUnpackToResult<T>();
+        }
+        
+        if (communicationDto.Value.HasError)
+        {
+            unpackResult.WithError(new HohSoftError(communicationDto.Value.Error));
         }
 
         return unpackResult;

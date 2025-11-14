@@ -10,6 +10,7 @@ public static class GameEndpoints
     public static readonly string AllianceRankingPath = "game/ranking/alliance";
     public static readonly string AllianceSearchPath = "game/alliances/search"; 
     public static readonly string AlliancePath = "game/alliances/get"; 
+    public static readonly string BatchPath = "game/batch"; 
     public static readonly string BattleStatsPath = "game/battle/hero/stats";
     public static readonly string EventRankingPath = "game/event-ranking/get";
     public static readonly string GameDesignPath = "game/gamedesign";

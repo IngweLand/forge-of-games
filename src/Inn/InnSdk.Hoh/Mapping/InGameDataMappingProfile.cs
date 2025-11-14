@@ -41,13 +41,6 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.JoinedAt, opt => opt.MapFrom(src => src.JoinedAt.ToDateTime()))
             .ForMember(dest => dest.LastSeenOnline,
                 opt => opt.MapFrom(src => DateTime.UtcNow.AddSeconds(-src.SecondsSinceLastOnline)));
-        CreateMap<AllianceSearchResultDto, AllianceSearchResult>()
-            .ForMember(dest => dest.Alliance, opt => opt.MapFrom(src => src.Details));
-        CreateMap<AllianceSearchResultDetailsDto, HohAllianceExtended>()
-            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Facade.Name))
-            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Facade.AvatarIconId))
-            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.Facade.AvatarBackgroundId))
-            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Facade.Description));
         CreateMap<HeroTreasureHuntAlliancePointsPush, HeroTreasureHuntAlliancePoints>()
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToDateTime()));
         CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>();
@@ -58,6 +51,12 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AvatarBackgroundId,
                 opt => opt.MapFrom(src => src.Alliance.Details.AvatarBackgroundId))
             .ForMember(dest => dest.MemberCount, opt => opt.MapFrom(src => src.Alliance.MemberCount));
+        CreateMap<AllianceWithLeaderDTO, AllianceWithLeader>();
+        CreateMap<AllianceDetailsDto, HohAllianceExtended>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Settings.Name))
+            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Settings.AvatarIconId))
+            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.Settings.AvatarBackgroundId))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Settings.Description));
 
         CreateMap<CommunicationDto, Wakeup>()
             .ForMember(dest => dest.Alliance, opt =>

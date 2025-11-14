@@ -37,6 +37,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
   }
   #region Messages
+  /// <summary>
+  /// TODO: Rename to PlayerProfileRequest so it will get accepted by Batch 
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class GetPlayerProfileRequestDto : pb::IMessage<GetPlayerProfileRequestDto>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

@@ -8,6 +8,8 @@ public interface IInGameAllianceService
 {
     Task<Result<IReadOnlyCollection<AllianceMember>>> GetMembersAsync(AllianceKey allianceKey);
 
-    Task<Result<IReadOnlyCollection<AllianceSearchResult>>> SearchAlliancesAsync(string worldId,
+    Task<Result<IReadOnlyCollection<AllianceWithLeader>>> SearchAlliancesAsync(string worldId,
         string searchString);
+
+    Task<Result<AllianceWithLeader>> GetAllianceAsync(AllianceKey allianceKey);
 }

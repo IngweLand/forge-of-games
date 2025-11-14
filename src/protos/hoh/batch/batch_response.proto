@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+import "communication_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message BatchResponse {
+  repeated BatchResponseItemDto items = 1;
+}
+
+message BatchResponseItemDto {
+  google.protobuf.StringValue wrapped_uuid = 1;
+  int32 status_code = 2;
+  CommunicationDto response = 3;
+}

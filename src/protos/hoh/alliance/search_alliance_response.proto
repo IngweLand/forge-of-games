@@ -1,30 +1,8 @@
 syntax = "proto3";
-import "alliance_member_dto.proto";
-import "alliance_admission_type.proto";
+import "alliance_with_leader_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message SearchAllianceResponse {
-  repeated AllianceSearchResultDto alliances = 1;
-}
-
-message AllianceSearchResultDto {
-  AllianceSearchResultDetailsDto details = 1;
-  repeated AllianceMemberDto members = 2;
-}
-
-message AllianceSearchResultDetailsDto {
-  int32 id = 1;
-  int32 member_count = 2;
-  AllianceSearchResultFacadeDto facade = 4;
-  int32 rank = 6;
-}
-
-message AllianceSearchResultFacadeDto {
-  string name = 1;
-  string description = 2;
-  AllianceAdmissionType admission_type = 5;
-  int32 avatar_icon_id = 6;
-  int32 avatar_background_id = 7;
-  string language = 4;
+  repeated AllianceWithLeaderDTO alliances = 1;
 }

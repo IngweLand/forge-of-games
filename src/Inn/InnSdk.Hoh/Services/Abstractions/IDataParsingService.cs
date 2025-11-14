@@ -19,7 +19,9 @@ public interface IDataParsingService
     OtherCity ParseOtherCity(byte[] data);
     PlayerRanks ParsePlayerRankings(byte[] data);
     Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data);
-    Result<IReadOnlyCollection<AllianceSearchResult>> ParseSearchAllianceResponse(byte[] data);
+    Result<IReadOnlyCollection<AllianceWithLeader>> ParseSearchAllianceResponse(byte[] data);
+    Result<AllianceWithLeader> ParseAllianceWithLeader(byte[] data);
+    Result<BatchResponse> ParseBatchResponse(byte[] data);
     HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(byte[] data);
 
     Result<PlayerProfile> ParsePlayerProfile(byte[] data);

@@ -27,13 +27,13 @@ public class InGameAllianceService(
         return await innSdkClient.AllianceService.GetMembersAsync(gw, allianceKey.InGameAllianceId);
     }
 
-    public async Task<Result<IReadOnlyCollection<AllianceSearchResult>>> SearchAlliancesAsync(string worldId,
+    public async Task<Result<IReadOnlyCollection<AllianceWithLeader>>> SearchAlliancesAsync(string worldId,
         string searchString)
     {
         var gw = gameWorldsProvider.GetGameWorlds().FirstOrDefault(x => x.Id == worldId);
         if (gw == null)
         {
-            return Result.Fail<IReadOnlyCollection<AllianceSearchResult>>(
+            return Result.Fail<IReadOnlyCollection<AllianceWithLeader>>(
                 $"Could not find game world with id {worldId}");
         }
 
@@ -41,5 +41,18 @@ public class InGameAllianceService(
             $"{nameof(InGameAllianceService)}.{nameof(SearchAlliancesAsync)}", searchString);
 
         return await innSdkClient.AllianceService.SearchAlliancesAsync(gw, searchString);
+    }
+
+    public async Task<Result<AllianceWithLeader>> GetAllianceAsync(AllianceKey allianceKey)
+    {
+        var gw = gameWorldsProvider.GetGameWorlds().FirstOrDefault(x => x.Id == allianceKey.WorldId);
+        if (gw == null)
+        {
+            return Result.Fail<AllianceWithLeader>($"Could not find game world with id {allianceKey.WorldId}");
+        }
+
+        logger.LogDebug("Calling {method} for alliance {@allianceKey}",
+            $"{nameof(InGameAllianceService)}.{nameof(GetAllianceAsync)}", allianceKey);
+        return await innSdkClient.AllianceService.GetAllianceAsync(gw, allianceKey.InGameAllianceId);
     }
 }

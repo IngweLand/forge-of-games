@@ -6,13 +6,13 @@ import "google/protobuf/any.proto";
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message BatchRequestDto {
-  repeated google.protobuf.Any items = 1;
+  repeated BatchRequestItemDto items = 1;
 }
 
-message BatchRequestItemsDto {
-  google.protobuf.StringValue wrapped_id = 1;
+message BatchRequestItemDto {
+  google.protobuf.StringValue wrapped_uuid = 1;
   string endpoint = 2;
   google.protobuf.Any payload = 4;
-  string id = 5;
+  string uuid = 5;
   google.protobuf.Timestamp updated_at = 6;
 }
