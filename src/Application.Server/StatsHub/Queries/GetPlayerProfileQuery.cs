@@ -81,7 +81,6 @@ public class GetPlayerProfileQueryHandler(
             .Include(p =>
                 p.Rankings.Where(pr =>
                     pr.Type == PlayerRankingType.TotalHeroPower && pr.CollectedAt > periodStartDateOnly))
-            .Include(p => p.PvpRankings.Where(pr => pr.CollectedAt > periodStartDate))
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)

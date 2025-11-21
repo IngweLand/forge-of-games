@@ -8,6 +8,7 @@ public interface ICacheKeyFactory
     string RelicDtos(Guid version);
     string HeroesBasicData(Guid version);
     string HohAges(Guid version);
+    string PvpTiers(Guid version);
     string HohResources(Guid version);
     string Alliance(int allianceId);
     string Player(int playerId);

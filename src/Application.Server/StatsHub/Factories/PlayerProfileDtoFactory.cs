@@ -19,7 +19,6 @@ public class PlayerProfileDtoFactory(IMapper mapper) : IPlayerProfileDtoFactory
         {
             Player = mapper.Map<PlayerDto>(player),
             RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.TotalHeroPower),
-            PvpRankingPoints = CreateTimedIntValueCollection(player.PvpRankings),
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
             Alliances = mapper.Map<IReadOnlyCollection<AllianceDto>>(uniqueAlliances),
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),

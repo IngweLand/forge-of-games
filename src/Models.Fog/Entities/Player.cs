@@ -28,9 +28,12 @@ public class Player
     public ICollection<PlayerNameHistoryEntry> NameHistory { get; set; } = new List<PlayerNameHistoryEntry>();
     public DateOnly ProfileUpdatedAt { get; set; }
     public ICollection<PvpBattle> PvpLosses { get; set; } = new List<PvpBattle>();
+
+    [Obsolete($"Use {nameof(PvpRankings2)} instead.")]
     public ICollection<PvpRanking> PvpRankings { get; set; } = new List<PvpRanking>();
 
-    public string? PvpTier { get; set; }
+    public ICollection<PvpRanking2> PvpRankings2 { get; set; } = new List<PvpRanking2>();
+
     public ICollection<PvpBattle> PvpWins { get; set; } = new List<PvpBattle>();
     public int? Rank { get; set; }
     public int? RankingPoints { get; set; }

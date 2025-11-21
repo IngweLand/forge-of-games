@@ -13,7 +13,7 @@ public class FogDbContext : DbContext, IFogDbContext
 
     public DbSet<InGameEventEntity> InGameEvents { get; set; }
 
-    public DbSet<PvpRanking> PvpRankings { get; set; }
+    public DbSet<PvpRanking2> PvpRankings { get; set; }
     public DbSet<RelicInsightsEntity> RelicInsights { get; set; }
 
     public DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
@@ -66,5 +66,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PlayerCitySnapshotDataEntityTypeConfiguration());
         builder.ApplyConfiguration(new InGameEventEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceAthRankingEntityTypeConfiguration());
+        builder.ApplyConfiguration(new PvpRanking2EntityTypeConfiguration());
     }
 }

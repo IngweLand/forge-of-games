@@ -12,7 +12,6 @@ public class PlayerProfileViewModel
     public string? Names { get; init; }
     public required PlayerViewModel Player { get; init; }
     public IReadOnlyCollection<AllianceViewModel> PreviousAlliances { get; init; } = [];
-    public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];
     public IReadOnlyCollection<HeroProfileBasicViewModel> Squads { get; init; } = [];
     public TreasureHuntDifficultyBasicViewModel? TreasureHuntDifficulty { get; init; }

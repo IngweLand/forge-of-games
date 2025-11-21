@@ -15,6 +15,13 @@ public class HohDataCache(IAppCache appCache) : IHohDataCache
         return appCache.GetOrAddAsync(key, addItemFactory, DateTimeOffset.MaxValue);
     }
 
+    public T GetOrAdd<T>(string key, Func<T> addItemFactory, Guid dataVersion)
+    {
+        ClearCacheIfRequired(dataVersion);
+        _keys.Add(key);
+        return appCache.GetOrAdd(key, addItemFactory, DateTimeOffset.MaxValue);
+    }
+
     private void ClearCacheIfRequired(Guid version)
     {
         if (version == _dataVersion)

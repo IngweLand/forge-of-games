@@ -101,4 +101,14 @@ public class StatsHubService(ISender sender) : IStatsHubService
             Mode = mode,
         }, ct);
     }
+
+    public Task<IReadOnlyCollection<PvpRankingDto>> GetPlayerPvpRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var query = new GetPlayerPvpRankingsQuery
+        {
+            PlayerId = playerId,
+        };
+        return sender.Send(query, ct);
+    }
 }

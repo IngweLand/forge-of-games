@@ -12,7 +12,6 @@ namespace Ingweland.Fog.Functions.Functions;
 public class PlayerDataProcessor(
     IGameWorldsProvider gameWorldsProvider,
     IPlayerRankingService playerRankingService,
-    IPvpRankingService pvpRankingService,
     IInGameRawDataTableRepository inGameRawDataTableRepository,
     IInGameDataParsingService inGameDataParsingService,
     IPlayerService playerService,
@@ -37,10 +36,6 @@ public class PlayerDataProcessor(
         logger.LogInformation("Starting player ranking service update");
         await ExecuteSafeAsync(() => playerRankingService.AddOrUpdateRankingsAsync(data.PlayerAggregates), "");
         logger.LogInformation("Completed player ranking service update");
-
-        logger.LogInformation("Starting pvp ranking service update");
-        await ExecuteSafeAsync(() => pvpRankingService.AddOrUpdateRankingsAsync(data.PlayerAggregates), "");
-        logger.LogInformation("Completed pvp ranking service update");
 
         logger.LogInformation("Starting player name history service update");
         await ExecuteSafeAsync(() => playerNameHistoryService.UpdateAsync(data.PlayerAggregates), "");

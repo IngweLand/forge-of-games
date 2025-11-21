@@ -201,7 +201,7 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.PvpTier, opt =>
             {
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.PvpTier));
-                opt.MapFrom(src => src.PvpTier);
+                opt.MapFrom(src => HohStringParser.ParseEnumFromString<PvpTier>(src.PvpTier));
             })
             .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
             {

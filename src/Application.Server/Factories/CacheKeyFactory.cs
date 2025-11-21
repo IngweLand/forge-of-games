@@ -30,6 +30,11 @@ public class CacheKeyFactory : ICacheKeyFactory
         return $"hoh-ages:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
+    public string PvpTiers(Guid version)
+    {
+        return $"pvp-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
+    }
+
     public string HohResources(Guid version)
     {
         return $"hoh-resources:{CultureInfo.CurrentCulture.Name}:{version}";
@@ -64,6 +69,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetEquipmentDataQuery _ => $"EquipmentData:{CultureInfo.CurrentCulture.Name}",
             GetRelicInsightsQuery q => $"RelicInsights:{q.UnitId}",
             GetAllianceAthRankingsQuery q => $"AllianceAthRankings:{q.AllianceId}",
+            GetPlayerPvpRankingsQuery q => $"PlayerPvpRankings:{q.PlayerId}",
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };

@@ -38,6 +38,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.UNIT_BATTLES_TEMPLATE, GetUnitBattlesAsync);
         api.MapPost(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOTS_SEARCH, SearchCityInspirationsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE, GetPvpRankingsAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH, SearchUserBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_INSIGHTS_TEMPLATE, GetEquipmentInsightsAsync);
@@ -133,7 +134,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Ok<IReadOnlyCollection<EquipmentInsightsDto>>>
         GetEquipmentInsightsAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
             CancellationToken ct)
@@ -141,7 +142,7 @@ public static class StatsApi
         var result = await services.EquipmentService.GetInsightsAsync(unitId, ct);
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Ok<IReadOnlyCollection<RelicInsightsDto>>>
         GetRelicInsightsAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
             CancellationToken ct)
@@ -207,12 +208,21 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Ok<IReadOnlyCollection<AllianceAthRankingDto>>>
         GetAllianceAthRankingsAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetAllianceAthRankingsAsync(allianceId, ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<PvpRankingDto>>>
+        GetPvpRankingsAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetPlayerPvpRankingsAsync(playerId, ct);
 
         return TypedResults.Ok(result);
     }

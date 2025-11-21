@@ -46,4 +46,8 @@ public interface IStatsHubService
     [Get(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH)]
     Task<IReadOnlyCollection<string>> GetTopHeroesAsync([Query] HeroInsightsMode mode, [Query] string? ageId = null,
         [Query] int? fromLevel = null, [Query] int? toLevel = null, CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<PvpRankingDto>> GetPlayerPvpRankingsAsync(int playerId,
+        CancellationToken ct = default);
 }

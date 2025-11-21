@@ -190,6 +190,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             .Include(p => p.AllianceHistory)
             .Include(p => p.Squads)
             .Include(p => p.AllianceMembership)
+            .Include(p => p.PvpRankings2.Where(x => x.CollectedAt == today))
             .AsSplitQuery()
             .FirstOrDefaultAsync(x => x.InGamePlayerId == player.Id && x.WorldId == worldId);
 
@@ -319,7 +320,22 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         }
 
         modifiedPlayer.TreasureHuntDifficulty = profile.TreasureHuntDifficulty;
-        modifiedPlayer.PvpTier = profile.PvpTier;
+        var pvpTier = modifiedPlayer.PvpRankings2.FirstOrDefault(x => x.CollectedAt == today);
+        if(pvpTier == null)
+        {
+            logger.LogDebug("Adding new PVP tier {PvpTier} for player {PlayerId}", profile.PvpTier, profile.Player.Id);
+            modifiedPlayer.PvpRankings2.Add(new PvpRanking2()
+            {
+                CollectedAt = today,
+                Tier = profile.PvpTier,
+            });
+        }
+        else if (pvpTier.Tier != profile.PvpTier)
+        {
+            logger.LogDebug("Updating PVP tier for player {PlayerId} from {OldPvpTier} to {NewPvpTier}", 
+                profile.Player.Id, pvpTier.Tier, profile.PvpTier);
+            pvpTier.Tier = profile.PvpTier;
+        }
 
         UpsertSquads(modifiedPlayer, profile.Squads, today);
 

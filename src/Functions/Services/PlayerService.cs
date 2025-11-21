@@ -41,7 +41,6 @@ public class PlayerService(IFogDbContext context, IMapper mapper, ILogger<Player
                 AvatarId = playerAggregate.AvatarId ?? 0,
                 UpdatedAt = DateOnly.FromDateTime(playerAggregate.CollectedAt),
                 TreasureHuntDifficulty = playerAggregate.TreasureHuntDifficulty,
-                PvpTier = playerAggregate.PvpTier,
                 Status = InGameEntityStatus.Active,
             };
         }).ToList();

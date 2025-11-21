@@ -46,9 +46,6 @@ public abstract class AutoDataProcessorBase(
         foreach (var gameWorld in GameWorldsProvider.GetGameWorlds())
         {
             logger.LogInformation("Processing game world {gameWorldId}", gameWorld.Id);
-            var pvpRankings = await GetPvpRanking(gameWorld.Id, date);
-            logger.LogInformation("{count} pvp rankings retrieved for game world {gameWorldId}", pvpRankings.Count,
-                gameWorld.Id);
             var allianceWakeups =
                 await GetWakeupsAsync(InGameRawDataTablePartitionKeyProvider.Alliance(gameWorld.Id, date));
             logger.LogInformation("{count} alliance wakeups retrieved for game world {gameWorldId}",
@@ -109,15 +106,6 @@ public abstract class AutoDataProcessorBase(
                 }
             }
 
-            foreach (var t in pvpRankings)
-            {
-                playerAggregates.Add(mapper.Map<PlayerAggregate>(t.PvpRank, opt =>
-                {
-                    opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
-                    opt.Items[ResolutionContextKeys.DATE] = t.CollectedAt;
-                }));
-            }
-
             foreach (var allianceRankingType in AllianceRankingTypes)
             {
                 var allianceRankings = await GetAllianceRanking(gameWorld.Id, date, allianceRankingType);
@@ -161,15 +149,6 @@ public abstract class AutoDataProcessorBase(
                 {
                     opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
                     opt.Items[ResolutionContextKeys.DATE] = date.ToDateTime(TimeOnly.MinValue);
-                }));
-            }
-
-            foreach (var t in pvpRankings.Where(t => t.PvpRank.Alliance != null))
-            {
-                allianceAggregates.Add(mapper.Map<AllianceAggregate>(t.PvpRank, opt =>
-                {
-                    opt.Items[ResolutionContextKeys.WORLD_ID] = gameWorld.Id;
-                    opt.Items[ResolutionContextKeys.DATE] = t.CollectedAt;
                 }));
             }
 

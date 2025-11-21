@@ -10,7 +10,6 @@ public class PlayerProfileDto
     public bool HasPvpBattles { get; init; }
     public IReadOnlyCollection<string> Names { get; init; } = [];
     public required PlayerDto Player { get; init; }
-    public IReadOnlyCollection<StatsTimedIntValue> PvpRankingPoints { get; init; } = [];
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = [];
     public IReadOnlyCollection<ProfileSquadDto> Squads { get; set; } = [];
     public int? TreasureHuntDifficulty { get; set; }

@@ -19,6 +19,7 @@ public interface IFogDbContext
     DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
     DbSet<ProfileSquadEntity> ProfileSquads { get; set; }
     DbSet<PvpBattle> PvpBattles { get; set; }
+    DbSet<PvpRanking2> PvpRankings { get; set; }
     DbSet<RelicInsightsEntity> RelicInsights { get; set; }
     DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }
     DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }

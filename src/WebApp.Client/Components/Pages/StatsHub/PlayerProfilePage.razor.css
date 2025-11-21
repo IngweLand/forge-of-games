@@ -27,6 +27,7 @@ p {
 
 .ranking-points-chart-container {
     gap: 0;
+    position: relative;
 }
 
 .chart-labels {
@@ -84,6 +85,16 @@ p {
 
 .alliance-list-spacer {
     height: 24px;
+}
+
+.loading-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: var(--fog-border-radius);
+    border-bottom-right-radius: var(--fog-border-radius);
+    overflow: hidden;
 }
 
 @media (min-width: 576px) {

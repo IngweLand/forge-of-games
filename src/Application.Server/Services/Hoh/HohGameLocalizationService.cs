@@ -89,6 +89,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? s;
     }
 
+    public string GetPvpTierName(PvpTier tier)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.PvpTiers, HohLocalizationProperty.Name,
+            tier.ToString());
+        return GetValue(key) ?? tier.ToString();
+    }
+
     public string GetHeroName(string id)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Heroes, HohLocalizationProperty.Name,

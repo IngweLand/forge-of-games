@@ -91,7 +91,6 @@ public class StatsHubViewModelsFactory(
             Names = playerProfile.Names.Count > 1
                 ? string.Join(", ", playerProfile.Names.Select(name => $"\"{name}\""))
                 : null,
-            PvpRankingPoints = playerProfile.PvpRankingPoints,
             RankingPoints = playerProfile.RankingPoints,
             TreasureHuntDifficulty = treasureHuntDifficulty,
             TreasureHuntMaxPoints = treasureHuntMaxPoints,

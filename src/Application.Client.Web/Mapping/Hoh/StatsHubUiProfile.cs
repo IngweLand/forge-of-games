@@ -93,5 +93,9 @@ public class StatsHubUiProfile : Profile
                 opt.PreCondition(src => src.RegisteredAt != null);
                 opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
             });
+
+        CreateMap<PvpRankingDto, PvpRankingViewModel>()
+            .ForMember(dest => dest.CollectedAt,
+                opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
     }
 }

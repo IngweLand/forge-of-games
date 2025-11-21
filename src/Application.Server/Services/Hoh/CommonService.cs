@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
 
@@ -12,6 +13,7 @@ public class CommonService(
     IResourceDtoFactory resourceDtoFactory,
     IMapper mapper,
     IHohDataCache dataCache,
+    IHohGameLocalizationService localizationService,
     ICacheKeyFactory cacheKeyFactory) : ICommonService
 {
     public Task<IReadOnlyCollection<AgeDto>> GetAgesAsync()
@@ -35,5 +37,23 @@ public class CommonService(
                     .ToList();
             },
             version);
+    }
+
+    public Task<IReadOnlyCollection<PvpTierDto>> GetPvpTiersAsync()
+    {
+        var version = hohCoreDataRepository.Version;
+
+        var result = dataCache.GetOrAdd(cacheKeyFactory.PvpTiers(version), IReadOnlyCollection<PvpTierDto> () =>
+            {
+                return Enum.GetValues<PvpTier>().Select(x => new PvpTierDto
+                    {
+                        Tier = x,
+                        Name = localizationService.GetPvpTierName(x),
+                    })
+                    .OrderBy(x => x.Tier).ToList();
+            },
+            version);
+
+        return Task.FromResult(result);
     }
 }

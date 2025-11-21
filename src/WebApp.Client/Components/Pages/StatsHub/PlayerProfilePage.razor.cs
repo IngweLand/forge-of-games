@@ -8,11 +8,15 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
+using Refit;
+using Syncfusion.Blazor.Charts;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
@@ -25,8 +29,17 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _fetchingCity;
     private bool _isDisposed;
+    private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
+    private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
+
+    private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
+    private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
     private bool _pvpChartIsExpanded;
+    private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
+    private bool _pvpRankingsAreLoading;
+    private CancellationTokenSource? _pvpRankingsCts;
+    private IReadOnlyDictionary<PvpTier, PvpTierDto> _pvpTiers = new Dictionary<PvpTier, PvpTierDto>();
     private bool _rankingChartIsExpanded;
 
     [Inject]
@@ -37,6 +50,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
+
+    [Inject]
+    private ICommonUiService CommonUiService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
@@ -243,12 +259,25 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             AnalyticsParams.Values.Sources.PLAYER_RANKING_CHART, _rankingChartIsExpanded);
     }
 
-    private void TogglePvpChart()
+    private async Task TogglePvpChart()
     {
         _pvpChartIsExpanded = !_pvpChartIsExpanded;
 
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PLAYER_PVP_RANKING_CHART, _pvpChartIsExpanded);
+
+        await GetPvpTiers();
+        await GetPvpRankings();
+    }
+
+    private async Task GetPvpTiers()
+    {
+        if (_pvpTiers.Count > 0)
+        {
+            return;
+        }
+
+        _pvpTiers = await CommonUiService.GetPvpTiersAsync();
     }
 
     private async Task OpenBattleSquadProfile(HeroProfileViewModel squad)
@@ -292,5 +321,68 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         var fullSquad = await BattleUiService.CreateHeroProfile(squad);
         await OpenBattleSquadProfile(fullSquad);
+    }
+
+    private async Task GetPvpRankings()
+    {
+        if (_pvpRankings != null)
+        {
+            return;
+        }
+
+        if (_pvpRankingsCts != null)
+        {
+            await _pvpRankingsCts.CancelAsync();
+        }
+
+        _pvpRankingsAreLoading = true;
+        StateHasChanged();
+
+        _pvpRankingsCts = new CancellationTokenSource();
+
+        try
+        {
+            _pvpRankings = await StatsHubUiService.GetPlayerPvpRankingsAsync(PlayerId);
+            _minPvpRankingsChartDate =
+                _pvpRankings.MinBy(x => x.CollectedAt)?.CollectedAt.AddDays(-1) ?? DateTime.Today;
+            _maxPvpRankingsChartDate = _pvpRankings.MaxBy(x => x.CollectedAt)?.CollectedAt.AddDays(1) ?? DateTime.Today;
+            _minPvpTier = _pvpRankings.MinBy(x => x.Tier)?.Tier - 1 ?? PvpTier.Undefined;
+            _maxPvpTier = _pvpRankings.MaxBy(x => x.Tier)?.Tier + 1 ?? PvpTier.PvP_Tier_Overlord_1;
+            _pvpRankingsAreLoading = false;
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+            _pvpRankingsAreLoading = false;
+        }
+        catch (Exception e)
+        {
+            _pvpRankingsAreLoading = false;
+            Console.Error.WriteLine(e);
+        }
+    }
+
+    public void AxisLabelEvent(AxisLabelRenderEventArgs args)
+    {
+        if (args.Axis.Name == "PrimaryYAxis")
+        {
+            if (Enum.TryParse<PvpTier>(args.Text, out var value) && _pvpTiers.TryGetValue(value, out var pvpTier))
+            {
+                if (pvpTier.Tier is > PvpTier.Undefined and <= PvpTier.PvP_Tier_Overlord_1)
+                {
+                    args.Text = pvpTier.Name;
+                }
+                else
+                {
+                    args.Text = "";
+                }
+            }
+            else
+            {
+                args.Text = "";
+            }
+        }
     }
 }

@@ -135,6 +135,7 @@ public static class HohApi
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_AGES, GetAgesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_RESOURCES, GetResourcesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_CITIES, GetCitiesAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.COMMON_PVP_TIERS, GetPvpTiersAsync);
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.RELICS_DATA, GetRelicsDataAsync);
 
@@ -266,6 +267,13 @@ public static class HohApi
         HttpContext context)
     {
         var cities = await services.CityService.GetCitiesAsync();
+        await WriteToResponseAsync(context, cities, services.ProtobufSerializer);
+    }
+
+    private static async Task GetPvpTiersAsync([AsParameters] HohServices services,
+        HttpContext context)
+    {
+        var cities = await services.CommonService.GetPvpTiersAsync();
         await WriteToResponseAsync(context, cities, services.ProtobufSerializer);
     }
 

@@ -2580,6 +2580,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arena Ranking.
+        /// </summary>
+        public static string StatsHub_Player_PvpRanking {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.PvpRanking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arena Ranking Points.
         /// </summary>
         public static string StatsHub_Player_PvpRankingPoints {

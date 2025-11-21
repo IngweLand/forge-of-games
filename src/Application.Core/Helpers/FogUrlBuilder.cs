@@ -38,6 +38,8 @@ public static class FogUrlBuilder
         public const string PLAYER_CITY_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/city";
         public const string PLAYER_BATTLES_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/battles";
         public const string PLAYER_BATTLES_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/battles";
+        public const string PLAYER_PVP_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/pvpRankings";
+        public const string PLAYER_PVP_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/pvpRankings";
 
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
         public const string ALLIANCE_TEMPLATE = "/" + BASE_STATS_PATH + "/alliances/{allianceId:int}";
@@ -59,6 +61,7 @@ public static class FogUrlBuilder
         public const string COMMON_AGES = "/common/ages";
         public const string COMMON_RESOURCES = "/common/resources";
         public const string COMMON_CITIES = "/common/cities";
+        public const string COMMON_PVP_TIERS = "/common/pvpTiers";
 
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
 

@@ -48,5 +48,6 @@ public class StatsMappingProfile : Profile
 
         CreateMap<EquipmentInsightsEntity, EquipmentInsightsDto>();
         CreateMap<RelicInsightsEntity, RelicInsightsDto>();
+        CreateMap<PvpRanking2, PvpRankingDto>();
     }
 }

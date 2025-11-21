@@ -31,7 +31,6 @@ public class PlayerUpdater(IFogDbContext context, ILogger<PlayerRankingService> 
             if (existingPlayers.TryGetValue(playerAggregate.Key, out var existingPlayer))
             {
                 existingPlayer.TreasureHuntDifficulty = playerAggregate.TreasureHuntDifficulty;
-                existingPlayer.PvpTier = playerAggregate.PvpTier;
             }
             else
             {

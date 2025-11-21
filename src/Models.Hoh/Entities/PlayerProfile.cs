@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Models.Hoh.Entities;
 
@@ -6,7 +7,7 @@ public class PlayerProfile
 {
     public HohAlliance? Alliance { get; init; }
     public required HohPlayer Player { get; init; }
-    public string? PvpTier { get; set; }
+    public PvpTier PvpTier { get; set; } = PvpTier.Undefined;
     public required int Rank { get; init; }
     public required int RankingPoints { get; init; }
     public IReadOnlyCollection<ProfileSquad> Squads { get; set; } = [];

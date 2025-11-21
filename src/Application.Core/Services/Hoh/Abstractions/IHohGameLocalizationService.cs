@@ -29,4 +29,5 @@ public interface IHohGameLocalizationService
     string GetStatAttributeAbbreviation(StatAttribute statAttribute);
     string GetStatAttributeName(StatAttribute statAttribute);
     string GetEquipmentSetName(EquipmentSet set);
+    string GetPvpTierName(PvpTier tier);
 }

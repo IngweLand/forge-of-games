@@ -11,4 +11,7 @@ public interface ICommonService
 
     [Get(FogUrlBuilder.ApiRoutes.COMMON_RESOURCES)]
     Task<IReadOnlyCollection<ResourceDto>> GetResourcesAsync();
+
+    [Get(FogUrlBuilder.ApiRoutes.COMMON_PVP_TIERS)]
+    Task<IReadOnlyCollection<PvpTierDto>> GetPvpTiersAsync();
 }

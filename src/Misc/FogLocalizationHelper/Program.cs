@@ -58,6 +58,7 @@ var searchKeys = new HashSet<string>
     "Base.UnitStats.unit_stat.AttackSpeed_Abbrev",
     "Base.HeroPanel.Relics",
     "Base.TreasureHuntRankingPanel.TreasureHuntRanking",
+    "Base.PvpPanel.Ranking",
 };
 
 var result = new Dictionary<string, List<Translations>>();
@@ -79,7 +80,7 @@ File.WriteAllText("translations.json", JsonConvert.SerializeObject(result, Forma
 
 static string GetInputFilePath(string localeCode)
 {
-    var dir = @"D:\IngweLand\Projects\forge-of-games\src\Misc\HohProtoParser\bin\Debug\net9.0\downloads\";
+    var dir = @"D:\Temp\";
     var fileName = $"loca_{localeCode}.bin";
     return $"{dir}{fileName}";
 }
