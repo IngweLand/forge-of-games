@@ -160,7 +160,13 @@
                             <ChartPrimaryYAxis
                                 Minimum="@_minPvpTier"
                                 Maximum="@_maxPvpTier"
-                                Interval="1"/>
+                                Interval="1">
+                                <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                                <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                                     Color="var(--fog-text-color)"/>
+                                <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                                <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                            </ChartPrimaryYAxis>
 
                             <ChartSeriesCollection>
                                 <ChartSeries
