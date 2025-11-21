@@ -29,7 +29,7 @@ public class TopPlayersUpdateManager(
     inGamePlayerService, databaseWarmUpService, logger), ITopPlayersUpdateManager
 {
     private const int BATCH_SIZE = 100;
-    private const int TOP_RANK_LIMIT = 500;
+    private const int TOP_RANK_LIMIT = 2000;
 
     protected override Task<List<Player>> GetPlayers(string gameWorldId)
     {

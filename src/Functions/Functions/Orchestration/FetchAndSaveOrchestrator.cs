@@ -10,9 +10,9 @@ public class FetchAndSaveOrchestrator
     {
         {nameof(TopAllianceMembersUpdaterTrigger), 5},
         {nameof(AllianceMembersUpdaterTrigger), 5},
-        {nameof(TopAllianceMemberProfilesUpdaterTrigger), 5},
-        {nameof(TopPlayersUpdaterTrigger), 5},
-        {nameof(PlayersUpdaterTrigger), 20},
+        {nameof(TopAllianceMemberProfilesUpdaterTrigger), 10},
+        {nameof(TopPlayersUpdaterTrigger), 10},
+        {nameof(PlayersUpdaterTrigger), 30},
         {nameof(PlayerCityFetcherTrigger), 5},
         {nameof(TopPlayersCityFetcherTrigger), 6},
     };
@@ -72,7 +72,7 @@ public class FetchAndSaveOrchestrator
                 }
 
                 _logger.LogInformation("Scheduling run {i} for {f}", i + 2, triggerFuncName);
-                await context.CreateTimer(TimeSpan.FromMinutes(5), CancellationToken.None);
+                await context.CreateTimer(TimeSpan.FromMinutes(3), CancellationToken.None);
             }
         }
         catch (Exception e)

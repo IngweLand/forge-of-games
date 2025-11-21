@@ -33,7 +33,7 @@ public abstract class PlayersUpdateManagerBase(
         {
             var players = await GetPlayers(gameWorld.Id);
             hasMorePlayers = hasMorePlayers || await HasMorePlayers(gameWorld.Id);
-            Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
+            Logger.LogInformation("Retrieved {PlayerCount} players to process in {gw}", players.Count, gameWorld.Id);
             foreach (var player in players)
             {
                 Logger.LogDebug("Processing player {@Player}", player.Key);

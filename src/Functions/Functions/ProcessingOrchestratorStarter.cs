@@ -14,7 +14,6 @@ public class ProcessingOrchestratorStarter
         const string instanceId = nameof(NightlyProcessingOrchestrator);
         var existingInstance = await client.GetInstanceAsync(instanceId);
         
-        
         if (existingInstance == null
             || existingInstance.RuntimeStatus == OrchestrationRuntimeStatus.Completed
             || existingInstance.RuntimeStatus == OrchestrationRuntimeStatus.Failed
