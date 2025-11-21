@@ -96,6 +96,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? tier.ToString();
     }
 
+    public string GetTreasureHuntLeagueName(TreasureHuntLeague league)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.TreasureHuntRankingPanel,
+            league.ToString());
+        return GetValue(key) ?? league.ToString();
+    }
+
     public string GetHeroName(string id)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Heroes, HohLocalizationProperty.Name,

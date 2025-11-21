@@ -12,6 +12,10 @@ public class CommonUiService : ICommonUiService
     private readonly ICommonService _commonService;
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeViewModel>>> _lazyAges;
     private readonly Lazy<Task<IReadOnlyDictionary<PvpTier, PvpTierDto>>> _lazyPvpTiers;
+
+    private readonly Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>
+        _lazyTreasureHuntLeagues;
+
     private readonly IMapper _mapper;
 
     public CommonUiService(IMapper mapper, ICommonService commonService)
@@ -20,6 +24,9 @@ public class CommonUiService : ICommonUiService
         _commonService = commonService;
         _lazyAges = new Lazy<Task<IReadOnlyDictionary<string, AgeViewModel>>>(InitializeAges, true);
         _lazyPvpTiers = new Lazy<Task<IReadOnlyDictionary<PvpTier, PvpTierDto>>>(InitializePvpTiers, true);
+        _lazyTreasureHuntLeagues =
+            new Lazy<Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>>>(
+                InitializeTreasureHuntLeagues, true);
     }
 
     public Task<IReadOnlyDictionary<string, AgeViewModel>> GetAgesAsync()
@@ -32,10 +39,15 @@ public class CommonUiService : ICommonUiService
         var ages = await _lazyAges.Value;
         return ages.GetValueOrDefault(ageId);
     }
-    
+
     public Task<IReadOnlyDictionary<PvpTier, PvpTierDto>> GetPvpTiersAsync()
     {
         return _lazyPvpTiers.Value;
+    }
+
+    public Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync()
+    {
+        return _lazyTreasureHuntLeagues.Value;
     }
 
     private async Task<IReadOnlyDictionary<string, AgeViewModel>> InitializeAges()
@@ -43,10 +55,16 @@ public class CommonUiService : ICommonUiService
         var ages = await _commonService.GetAgesAsync();
         return _mapper.Map<IEnumerable<AgeViewModel>>(ages.OrderBy(x => x.Index)).ToDictionary(a => a.Id);
     }
-    
+
     private async Task<IReadOnlyDictionary<PvpTier, PvpTierDto>> InitializePvpTiers()
     {
         var tiers = await _commonService.GetPvpTiersAsync();
         return tiers.ToDictionary(x => x.Tier);
+    }
+
+    private async Task<IReadOnlyDictionary<TreasureHuntLeague, TreasureHuntLeagueDto>> InitializeTreasureHuntLeagues()
+    {
+        var tiers = await _commonService.GetTreasureHuntLeaguesAsync();
+        return tiers.ToDictionary(x => x.League);
     }
 }

@@ -30,4 +30,5 @@ public interface IHohGameLocalizationService
     string GetStatAttributeName(StatAttribute statAttribute);
     string GetEquipmentSetName(EquipmentSet set);
     string GetPvpTierName(PvpTier tier);
+    string GetTreasureHuntLeagueName(TreasureHuntLeague league);
 }

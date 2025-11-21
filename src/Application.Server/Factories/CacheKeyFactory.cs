@@ -35,6 +35,11 @@ public class CacheKeyFactory : ICacheKeyFactory
         return $"pvp-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
+    public string TreasureHuntLeagues(Guid version)
+    {
+        return $"ath-leagues:{CultureInfo.CurrentCulture.Name}:{version}";
+    }
+
     public string HohResources(Guid version)
     {
         return $"hoh-resources:{CultureInfo.CurrentCulture.Name}:{version}";

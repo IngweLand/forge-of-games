@@ -62,6 +62,7 @@ public static class FogUrlBuilder
         public const string COMMON_RESOURCES = "/common/resources";
         public const string COMMON_CITIES = "/common/cities";
         public const string COMMON_PVP_TIERS = "/common/pvpTiers";
+        public const string COMMON_TREASURE_HUNT_LEAGUES = "/common/athLeagues";
 
         public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
 

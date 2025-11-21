@@ -8,43 +8,69 @@ namespace Ingweland.Fog.Application.Client.Web.Providers;
 public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) : IAssetUrlProvider
 {
     public string GetHohIconUrl(string assetId, string extension)
-        => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{assetId}{extension}");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{assetId}{extension}");
+    }
 
     public string GetHohIconUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{assetId}.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{assetId}.png");
+    }
 
     public string GetHohPlayerAvatarUrl(string avatarId)
-        => GetAssetUrl(assetsSettings.Value.HohPlayerAvatarsPath, $"{avatarId}.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohPlayerAvatarsPath, $"{avatarId}.png");
+    }
 
-    public string GetHohTechnologyImageUrl(string assetId, string extension) =>
-        GetAssetUrl(assetsSettings.Value.HohImagesBasePath, "technologies", $"{assetId}{extension}");
+    public string GetHohTechnologyImageUrl(string assetId, string extension)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohImagesBasePath, "technologies", $"{assetId}{extension}");
+    }
 
-    public string GetHohTechnologyImageUrl(string assetId) =>
-        GetAssetUrl(assetsSettings.Value.HohImagesBasePath, "technologies", $"{assetId}.png");
+    public string GetHohTechnologyImageUrl(string assetId)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohImagesBasePath, "technologies", $"{assetId}.png");
+    }
 
     public string GetHohImageUrl(string assetId, string extension)
-        => GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}{extension}");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}{extension}");
+    }
 
     public string GetIconUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}.png");
+    }
 
     public string GetIconUrl(string assetId, string extension)
-        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}{extension}");
+    {
+        return GetAssetUrl(assetsSettings.Value.ImagesBasePath, "icons", $"{assetId}{extension}");
+    }
 
     public string GetHohImageUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohImagesBasePath, $"{assetId}.png");
+    }
 
     public string GetImageUrl(string filename)
-        => GetAssetUrl(assetsSettings.Value.ImagesBasePath, filename);
+    {
+        return GetAssetUrl(assetsSettings.Value.ImagesBasePath, filename);
+    }
 
     public string GetHohUnitPortraitUrl(string assetId, string extension)
-        => GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}{extension}");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}{extension}");
+    }
 
     public string GetHohUnitPortraitUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}.png");
+    }
 
     public string GetHohUnitImageUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}_fullbody.png");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohUnitImagesPath, $"{assetId}_fullbody.png");
+    }
 
     public string GetHohStatAttributeIconUrl(StatAttribute statAttribute)
     {
@@ -54,21 +80,34 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
             StatAttribute.AttackBonus or StatAttribute.BaseDamageBonus or StatAttribute.DefenseBonus
                 or StatAttribute.MaxHitPointsBonus => GetAssetUrl(assetsSettings.Value.HohIconsPath,
                     $"icon_unit_stat_{statAttribute.ToString()[..^suffixLenght]}_percent.png"),
-            _ => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{statAttribute}.png")
+            _ => GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{statAttribute}.png"),
         };
     }
 
     public string GetHohUnitVideoUrl(string assetId, string extension)
-        => GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}{extension}");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}{extension}");
+    }
 
     public string GetHohUnitVideoUrl(string assetId)
-        => GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}.mp4");
+    {
+        return GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}.mp4");
+    }
 
-    public string GetHohUnitStatIconUrl(UnitStatType unitStatType) =>
-        GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{unitStatType}.png");
-    
-    public string GetHohRelicIconUrl(string relicId) =>
-        GetAssetUrl(assetsSettings.Value.HohIconsPath, $"full_relic_{relicId}.png");
+    public string GetHohUnitStatIconUrl(UnitStatType unitStatType)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{unitStatType}.png");
+    }
+
+    public string GetHohRelicIconUrl(string relicId)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"full_relic_{relicId}.png");
+    }
+
+    public string GetHohTreasureHuntLeagueIconUrl(TreasureHuntLeague league)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_PvP_Tier_{league}.png");
+    }
 
     public string GetHohHeroAbilityIconUrl(string heroAbilityId)
     {
@@ -88,9 +127,11 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename});
     }
 
-    public string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet) =>
-        GetAssetUrl(assetsSettings.Value.HohIconsPath,
+    public string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath,
             $"icon_equipmentset_{equipmentSet.ToString().ToLowerInvariant()}.png");
+    }
 
     private string GetAssetUrl(params string[] pathElements)
     {

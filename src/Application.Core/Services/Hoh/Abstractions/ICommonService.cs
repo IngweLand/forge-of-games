@@ -14,4 +14,7 @@ public interface ICommonService
 
     [Get(FogUrlBuilder.ApiRoutes.COMMON_PVP_TIERS)]
     Task<IReadOnlyCollection<PvpTierDto>> GetPvpTiersAsync();
+    
+    [Get(FogUrlBuilder.ApiRoutes.COMMON_TREASURE_HUNT_LEAGUES)]
+    Task<IReadOnlyCollection<TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync();
 }

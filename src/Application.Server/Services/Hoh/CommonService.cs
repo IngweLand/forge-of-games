@@ -56,4 +56,23 @@ public class CommonService(
 
         return Task.FromResult(result);
     }
+
+    public Task<IReadOnlyCollection<TreasureHuntLeagueDto>> GetTreasureHuntLeaguesAsync()
+    {
+        var version = hohCoreDataRepository.Version;
+
+        var result = dataCache.GetOrAdd(cacheKeyFactory.TreasureHuntLeagues(version),
+            IReadOnlyCollection<TreasureHuntLeagueDto> () =>
+            {
+                return Enum.GetValues<TreasureHuntLeague>().Select(x => new TreasureHuntLeagueDto
+                    {
+                        League = x,
+                        Name = localizationService.GetTreasureHuntLeagueName(x),
+                    })
+                    .OrderBy(x => x.League).ToList();
+            },
+            version);
+
+        return Task.FromResult(result);
+    }
 }

@@ -8,8 +8,8 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
-using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
@@ -21,6 +21,7 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly IBattleService _battleService;
     private readonly IBattleViewModelFactory _battleViewModelFactory;
     private readonly ICommonService _commonService;
+    private readonly ICommonUiService _commonUiService;
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IHohCoreDataViewModelsCache _coreDataViewModelsCache;
     private readonly IHeroProfileUiService _heroProfileUiService;
@@ -41,7 +42,8 @@ public class StatsHubUiService : IStatsHubUiService
         IHohCoreDataCache coreDataCache,
         IHohCoreDataViewModelsCache coreDataViewModelsCache,
         IMapper mapper,
-        IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory)
+        IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
+        ICommonUiService commonUiService)
     {
         _statsHubService = statsHubService;
         _commonService = commonService;
@@ -54,6 +56,7 @@ public class StatsHubUiService : IStatsHubUiService
         _coreDataViewModelsCache = coreDataViewModelsCache;
         _mapper = mapper;
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
+        _commonUiService = commonUiService;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
     }
@@ -141,9 +144,13 @@ public class StatsHubUiService : IStatsHubUiService
 
     public async Task<IReadOnlyCollection<AllianceAthRankingViewModel>> GetAllianceAthRankingsAsync(int allianceId)
     {
+        var leaguesTask = _commonUiService.GetTreasureHuntLeaguesAsync();
         var rankings = await _statsHubService.GetAllianceAthRankingsAsync(allianceId);
+        var leagues = await leaguesTask;
 
-        return rankings.OrderBy(x => x.StartedAt).Select(_allianceAthRankingViewModelFactory.Create).ToList();
+        return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceAthRankingViewModelFactory.Create(x,
+            leagues.GetValueOrDefault(x.League,
+                new TreasureHuntLeagueDto {League = TreasureHuntLeague.Undefined, Name = string.Empty}))).ToList();
     }
 
     public async Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId)

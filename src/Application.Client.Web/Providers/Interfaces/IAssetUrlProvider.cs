@@ -25,4 +25,5 @@ public interface IAssetUrlProvider
     string GetImageUrl(string filename);
     string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet);
     string GetHohRelicIconUrl(string relicId);
+    string GetHohTreasureHuntLeagueIconUrl(TreasureHuntLeague league);
 }
