@@ -1,3 +1,5 @@
+using Ingweland.Fog.Models.Hoh.Enums;
+
 namespace Ingweland.Fog.Models.Fog.Entities;
 
 public class AllianceAthRanking
@@ -6,6 +8,6 @@ public class AllianceAthRanking
     public required DateTime CollectedAt { get; set; }
     public int Id { get; set; }
     public required int InGameEventId { get; set; }
-    public required int League { get; set; }
+    public required TreasureHuntLeague League { get; set; }
     public required int Points { get; set; }
 }

@@ -2742,6 +2742,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Treasure Hunt on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopAllianceAthRankingListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopAllianceAthRankingListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Top alliances on {0}.
         /// </summary>
         public static string StatsHub_Worlds_TopAllianceListTitle {
@@ -3197,6 +3206,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string TreasureHunt_PageTitle {
             get {
                 return ResourceManager.GetString("TreasureHunt.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to League.
+        /// </summary>
+        public static string TreasureHuntLeagueSelector_Label {
+            get {
+                return ResourceManager.GetString("TreasureHuntLeagueSelector.Label", resourceCulture);
             }
         }
         

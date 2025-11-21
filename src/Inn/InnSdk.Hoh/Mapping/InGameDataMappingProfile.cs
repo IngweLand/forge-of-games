@@ -14,6 +14,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
+using Enum = System.Enum;
 
 namespace Ingweland.Fog.InnSdk.Hoh.Mapping;
 
@@ -42,6 +43,11 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.LastSeenOnline,
                 opt => opt.MapFrom(src => DateTime.UtcNow.AddSeconds(-src.SecondsSinceLastOnline)));
         CreateMap<HeroTreasureHuntAlliancePointsPush, HeroTreasureHuntAlliancePoints>()
+            .ForMember(dest => dest.League,
+                opt => opt.MapFrom(src =>
+                    Enum.IsDefined(typeof(TreasureHuntLeague), src.League)
+                        ? (TreasureHuntLeague) src.League
+                        : TreasureHuntLeague.Undefined))
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToDateTime()));
         CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>();
         CreateMap<AlliancePush, HohAlliance>()

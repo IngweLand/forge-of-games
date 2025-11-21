@@ -6,6 +6,7 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Enums;
 using MediatR;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -108,6 +109,18 @@ public class StatsHubService(ISender sender) : IStatsHubService
         var query = new GetPlayerPvpRankingsQuery
         {
             PlayerId = playerId,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<PaginatedList<AllianceDto>> GetAlliancesAthRankingsAsync(string worldId, int startIndex = 0,
+        int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, TreasureHuntLeague league = TreasureHuntLeague.Overlord,
+        CancellationToken ct = default)
+    {
+        var query = new GetTopAllianceAthRankingsQuery
+        {
+            WorldId = worldId,
+            League = league,
         };
         return sender.Send(query, ct);
     }

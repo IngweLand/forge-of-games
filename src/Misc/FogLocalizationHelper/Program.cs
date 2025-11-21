@@ -59,6 +59,7 @@ var searchKeys = new HashSet<string>
     "Base.HeroPanel.Relics",
     "Base.TreasureHuntRankingPanel.TreasureHuntRanking",
     "Base.PvpPanel.Ranking",
+    "Base.TreasureHuntRankingPanel.TreasureHuntLeague",
 };
 
 var result = new Dictionary<string, List<Translations>>();

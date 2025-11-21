@@ -4,6 +4,7 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Refit;
 
 namespace Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
@@ -46,8 +47,14 @@ public interface IStatsHubService
     [Get(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH)]
     Task<IReadOnlyCollection<string>> GetTopHeroesAsync([Query] HeroInsightsMode mode, [Query] string? ageId = null,
         [Query] int? fromLevel = null, [Query] int? toLevel = null, CancellationToken ct = default);
-    
+
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<PvpRankingDto>> GetPlayerPvpRankingsAsync(int playerId,
+        CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE)]
+    Task<PaginatedList<AllianceDto>> GetAlliancesAthRankingsAsync(string worldId, [Query] int startIndex = 0,
+        [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
+        [Query] TreasureHuntLeague league = TreasureHuntLeague.Overlord,
         CancellationToken ct = default);
 }

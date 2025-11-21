@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
@@ -29,4 +30,7 @@ public interface IStatsHubUiService
 
     Task<IReadOnlyCollection<AllianceAthRankingViewModel>> GetAllianceAthRankingsAsync(int allianceId);
     Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId);
+
+    Task<PaginatedList<AllianceViewModel>> GetTopAllianceAthRankingsAsync(string worldId,
+        TreasureHuntLeague league, CancellationToken ct = default);
 }

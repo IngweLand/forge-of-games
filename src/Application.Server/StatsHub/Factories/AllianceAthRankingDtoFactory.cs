@@ -11,9 +11,7 @@ public class AllianceAthRankingDtoFactory : IAllianceAthRankingDtoFactory
         return new AllianceAthRankingDto
         {
             Points = entity.Points,
-            League = Enum.IsDefined(typeof(TreasureHuntLeague), entity.League)
-                ? (TreasureHuntLeague)entity.League
-                : TreasureHuntLeague.Undefined,
+            League = entity.League,
             StartedAt = inGameEvent.StartAt,
             EndedAt = inGameEvent.EndAt,
         };

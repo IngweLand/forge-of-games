@@ -25,6 +25,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<PlayerRanking> PlayerRankings { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Alliance> Alliances { get; set; }
+    public DbSet<AllianceAthRanking> AllianceAthRankings { get; set; }
     public DbSet<AllianceRanking> AllianceRankings { get; set; }
     public DbSet<PvpBattle> PvpBattles { get; set; }
     public DbSet<TopHeroInsightsEntity> TopHeroInsights { get; set; }

@@ -5,6 +5,7 @@ namespace Ingweland.Fog.Application.Server.Interfaces;
 
 public interface IFogDbContext
 {
+    DbSet<AllianceAthRanking> AllianceAthRankings { get; set; }
     DbSet<AllianceRanking> AllianceRankings { get; set; }
     DbSet<Alliance> Alliances { get; set; }
     DbSet<BattleSummaryEntity> Battles { get; set; }

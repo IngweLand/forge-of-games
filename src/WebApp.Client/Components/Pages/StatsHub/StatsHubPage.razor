@@ -19,6 +19,12 @@
                 Alliances="@_topStats?.MainWorldAlliances"/>
         </div>
         <div class="column">
+            <AllianceTopAthRankingsComponent
+                WorldId="un1"
+                Leagues="@_treasureHuntLeagues"
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_MainWorld]"/>
+        </div>
+        <div class="column">
             <PlayerStatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
                 ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("zz1")"
@@ -32,7 +38,12 @@
                 Alliances="@_topStats?.BetaWorldAlliances"/>
 
         </div>
-        
+        <div class="column">
+            <AllianceTopAthRankingsComponent
+                WorldId="zz1"
+                Leagues="@_treasureHuntLeagues"
+                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_BetaWorld]"/>
+        </div>
         <div class="column">
             <TopHeroesComponent
                 Title="@Loc[FogResource.StatsHub_HeroInsights_ListTitle]"

@@ -185,6 +185,13 @@ public class StatsHubUiService : IStatsHubUiService
         return await _battleViewModelFactory.CreateBattleSummaryViewModels(result.Battles, request.BattleType);
     }
 
+    public async Task<PaginatedList<AllianceViewModel>> GetTopAllianceAthRankingsAsync(string worldId,
+        TreasureHuntLeague league, CancellationToken ct = default)
+    {
+        var result = await _statsHubService.GetAlliancesAthRankingsAsync(worldId, league: league, ct: ct);
+        return _statsHubViewModelsFactory.CreateAlliances(result);
+    }
+
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()
     {
         return (await _commonService.GetAgesAsync()).ToDictionary(a => a.Id);

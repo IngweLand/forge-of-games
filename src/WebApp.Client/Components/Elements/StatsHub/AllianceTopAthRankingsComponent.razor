@@ -1,0 +1,107 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Dtos.Hoh
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using Refit
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="fog-container component-root">
+    <div class="title">@Title</div>
+    <div class="items-container">
+        @foreach (var alliance in _alliances)
+        {
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
+                <AllianceListItemComponent Alliance="@alliance"/>
+            </a>
+        }
+    </div>
+    @if (Leagues != null)
+    {
+        <div class="button-container">
+            <MudSelect Label="@Loc[FogResource.TreasureHuntLeagueSelector_Label]" Margin="Margin.Dense"
+                       Value="@_selectedLeague" T="TreasureHuntLeagueDto" ValueChanged="@OnLeagueChanged"
+                       Variant="Variant.Outlined" Dense="true" FullWidth="true">
+
+                @foreach (var league in Leagues)
+                {
+                    <MudSelectItem Value="@league">
+                        <div class="league-selector-item">
+                            <img src="@AssetUrlProvider.GetHohTreasureHuntLeagueIconUrl(league.League)"/>
+                            <span>@league.Name</span>
+                        </div>
+                    </MudSelectItem>
+                }
+            </MudSelect>
+        </div>
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    public required string Title { get; set; }
+
+    private IReadOnlyCollection<AllianceViewModel> _alliances = [];
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<TreasureHuntLeagueDto>? Leagues { get; init; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string WorldId { get; set; }
+
+    private TreasureHuntLeagueDto? _selectedLeague;
+    private CancellationTokenSource? _athRankingsCts;
+
+    [Inject]
+    protected IStatsHubUiService StatsHubUiService { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        _selectedLeague = Leagues?.First(x => x.League == TreasureHuntLeague.Overlord);
+        await GetItems();
+    }
+
+    private async Task OnLeagueChanged(TreasureHuntLeagueDto league)
+    {
+        _selectedLeague = league;
+        await GetItems();
+    }
+
+    private async Task GetItems()
+    {
+        if (_athRankingsCts != null)
+        {
+            await _athRankingsCts.CancelAsync();
+        }
+
+        StateHasChanged();
+
+        _athRankingsCts = new CancellationTokenSource();
+
+        try
+        {
+            var result = await StatsHubUiService.GetTopAllianceAthRankingsAsync(WorldId, _selectedLeague!.League);
+            _alliances = result.Items;
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+        }
+        catch (Exception e)
+        {
+            Console.Error.WriteLine(e);
+        }
+    }
+
+}
