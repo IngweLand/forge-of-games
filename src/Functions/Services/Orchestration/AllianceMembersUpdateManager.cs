@@ -32,7 +32,7 @@ public class AllianceMembersUpdateManager(
             foreach (var id in allianceIds)
             {
                 Logger.LogDebug("Processing alliance {@id}", id);
-                var delayTask = Task.Delay(1000);
+                var delayTask = Task.Delay(500);
                 var result = await allianceUpdateOrchestrator.UpdateMembersAsync(id, CancellationToken.None);
                 result.LogIfFailed<AllianceMembersUpdateManager>();
 

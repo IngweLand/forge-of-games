@@ -37,7 +37,7 @@ public abstract class PlayersUpdateManagerBase(
             foreach (var player in players)
             {
                 Logger.LogDebug("Processing player {@Player}", player.Key);
-                var delayTask = Task.Delay(1000);
+                var delayTask = Task.Delay(500);
                 var profile = await inGamePlayerService.FetchProfile(player.Key);
                 if (profile.IsSuccess)
                 {

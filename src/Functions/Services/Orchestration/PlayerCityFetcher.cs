@@ -32,7 +32,7 @@ public class PlayerCityFetcher(
         foreach (var player in players)
         {
             Logger.LogDebug("Processing player {PlayerId} from world {WorldId}", player.Id, player.WorldId);
-            var delayTask = Task.Delay(1000);
+            var delayTask = Task.Delay(500);
             try
             {
                 var success = await FetchCity(player);
