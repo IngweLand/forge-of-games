@@ -17,6 +17,7 @@ public class RankingsCleanupService(IFogDbContext context) : IRankingsCleanupSer
         var cutoffDate = DateTime.UtcNow.AddDays(-FogConstants.DisplayedStatsDays).ToDateOnly();
         await CleanupPlayerRankingsAsync(cutoffDate);
         await CleanupAllianceRankingsAsync(cutoffDate);
+        await CleanupPvpRankingsAsync(cutoffDate);
     }
 
     private async Task CleanupPlayerRankingsAsync(DateOnly cutoffDate)
@@ -30,6 +31,13 @@ public class RankingsCleanupService(IFogDbContext context) : IRankingsCleanupSer
     {
         var oldRankings = await context.AllianceRankings.Where(x => x.CollectedAt < cutoffDate).ToListAsync();
         context.AllianceRankings.RemoveRange(oldRankings);
+        await context.SaveChangesAsync();
+    }
+
+    private async Task CleanupPvpRankingsAsync(DateOnly cutoffDate)
+    {
+        var oldRankings = await context.PvpRankings.Where(x => x.CollectedAt < cutoffDate).ToListAsync();
+        context.PvpRankings.RemoveRange(oldRankings);
         await context.SaveChangesAsync();
     }
 }
