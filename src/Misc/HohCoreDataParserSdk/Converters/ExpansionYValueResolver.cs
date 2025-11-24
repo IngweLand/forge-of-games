@@ -18,6 +18,9 @@ public class ExpansionYValueResolver:IValueResolver<ExpansionDefinitionDTO, Expa
         return cityId switch
         {
             "City_Vikings" => 3,
+            "City_Arabia_CityOfBrass" => 3,
+            "City_Arabia_NoriasOfHama" => 3,
+            "City_Arabia_Petra" => 3,
             _ => 4,
         };
     }

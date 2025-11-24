@@ -14,4 +14,7 @@ public enum CityId
     Mayas_SayilPalace,
     Mayas_Tikal,
     Vikings,
+    Arabia_CityOfBrass,
+    Arabia_NoriasOfHama,
+    Arabia_Petra,
 }

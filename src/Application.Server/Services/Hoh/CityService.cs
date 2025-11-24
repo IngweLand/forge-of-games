@@ -26,8 +26,9 @@ public class CityService(
         {
             BuildingType.Home, BuildingType.Farm, BuildingType.Barracks, BuildingType.Workshop,
             BuildingType.CultureSite, BuildingType.Special, BuildingType.Beehive, BuildingType.Irrigation,
-            BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
-            BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry, BuildingType.RitualSite,
+            BuildingType.Merchant, BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine,
+            BuildingType.PapyrusField, BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry,
+            BuildingType.RitualSite, BuildingType.CamelFarm,
         };
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         var categories = buildings.Where(b => types.Contains(b.Type)).DistinctBy(b => b.Group).GroupBy(b => b.Type);
@@ -142,6 +143,16 @@ public class CityService(
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Mayas_Tikal)),
                 }
             },
+            {
+                CityId.Arabia_CityOfBrass,
+                new List<WonderBasicDto>
+                {
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Arabia_CityOfBrass)),
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.Arabia_NoriasOfHama)),
+                    mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Arabia_Petra)),
+                }
+            },
         };
     }
 
@@ -162,7 +173,10 @@ public class CityService(
     public Task<IReadOnlyCollection<CityDto>> GetCitiesAsync()
     {
         var cityIds = new List<CityId>
-            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity()};
+        {
+            CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity(),
+            CityId.Arabia_CityOfBrass.ToDefaultTechnologyCity(),
+        };
         return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
     }
 }

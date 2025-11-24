@@ -21,4 +21,5 @@ public class AgeIds
     public const string CHINA = "China";
     public const string VIKINGS = "Vikings";
     public const string MAYAS = "Mayas";
+    public const string ARABIA = "Arabia";
 }

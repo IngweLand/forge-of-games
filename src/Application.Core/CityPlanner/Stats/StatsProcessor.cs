@@ -96,6 +96,8 @@ public class StatsProcessor(
             case BuildingType.Quarry:
             case BuildingType.PapyrusField:
             case BuildingType.GoldMine:
+            case BuildingType.Merchant:
+            case BuildingType.CamelFarm:
             {
                 UpdateHappiness(target);
                 var modifiers = GetModifiers();
@@ -114,6 +116,7 @@ public class StatsProcessor(
             case BuildingType.CultureSite:
             case BuildingType.RitualSite:
             case BuildingType.Irrigation:
+            case BuildingType.PresetIrrigation:
             {
                 UpdateHappiness();
                 UpdateProduction();

@@ -26,6 +26,13 @@ public class WorkerIconUrlProvider(IAssetUrlProvider assetUrlProvider) : IWorker
 
                 break;
             }
+            case CityId.Arabia_CityOfBrass:
+            case CityId.Arabia_NoriasOfHama:
+            case CityId.Arabia_Petra:
+            {
+                id = "icon_workers_city_arabia";
+                break;
+            }
         }
 
         return assetUrlProvider.GetHohIconUrl(id);

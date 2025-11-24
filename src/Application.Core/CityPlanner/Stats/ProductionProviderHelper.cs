@@ -8,7 +8,7 @@ public static class ProductionProviderHelper
     [
         BuildingType.Farm, BuildingType.Workshop, BuildingType.ExtractionPoint, BuildingType.Beehive,
         BuildingType.Quarry, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
-        BuildingType.RiceFarm,
+        BuildingType.RiceFarm, BuildingType.CamelFarm,
     ];
 
     public static bool CanSelectProduct(BuildingType buildingType, BuildingGroup buildingGroup)

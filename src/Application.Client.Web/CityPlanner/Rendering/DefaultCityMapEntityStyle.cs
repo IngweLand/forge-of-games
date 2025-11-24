@@ -134,6 +134,7 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
             case BuildingType.CultureSite:
             case BuildingType.RitualSite:
             case BuildingType.Irrigation:
+            case BuildingType.PresetIrrigation:
                 return SKColor.Parse("#A697E8");
 
             case BuildingType.Home:
@@ -143,6 +144,7 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
             case BuildingType.Aviary:
             case BuildingType.Beehive:
             case BuildingType.RiceFarm:
+            case BuildingType.CamelFarm:
                 return SKColor.Parse("#CFE895");
 
             case BuildingType.Workshop:

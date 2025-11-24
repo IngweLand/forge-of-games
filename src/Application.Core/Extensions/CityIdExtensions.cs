@@ -16,6 +16,9 @@ public static class CityIdExtensions
 
     private static readonly List<WonderId> VikingsWonders =
         [WonderId.Vikings_Valhalla, WonderId.Vikings_Yggdrasil, WonderId.Vikings_DragonshipEllida];
+    
+    private static readonly List<WonderId> ArabicWonders =
+        [WonderId.Arabia_CityOfBrass, WonderId.Arabia_NoriasOfHama, WonderId.Arabia_Petra];
 
     public static IReadOnlyCollection<WonderId> GetWonders(this CityId cityId)
     {
@@ -27,6 +30,9 @@ public static class CityIdExtensions
             CityId.China => ChineseWonders,
             CityId.Egypt => EgyptianWonders,
             CityId.Vikings => VikingsWonders,
+            CityId.Arabia_CityOfBrass => ArabicWonders,
+            CityId.Arabia_NoriasOfHama => ArabicWonders,
+            CityId.Arabia_Petra => ArabicWonders,
             _ => Array.Empty<WonderId>(),
         };
     }
@@ -41,15 +47,21 @@ public static class CityIdExtensions
             CityId.China => AgeIds.CHINA,
             CityId.Vikings => AgeIds.VIKINGS,
             CityId.Egypt => AgeIds.EGYPT,
+            CityId.Arabia_CityOfBrass => AgeIds.ARABIA,
+            CityId.Arabia_NoriasOfHama => AgeIds.ARABIA,
+            CityId.Arabia_Petra => AgeIds.ARABIA,
             _ => AgeIds.BRONZE_AGE,
         };
     }
 
     public static CityId ToDefaultTechnologyCity(this CityId cityId)
     {
-        return cityId is CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace
-            ? CityId.Mayas_ChichenItza
-            : cityId;
+        return cityId switch
+        {
+            CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace => CityId.Mayas_ChichenItza,
+            CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra => CityId.Arabia_CityOfBrass,
+            _ => cityId
+        };
     }
 
     public static string GetIcon(this CityId cityId)
@@ -62,6 +74,9 @@ public static class CityIdExtensions
             CityId.China => "icon_city_crest_china",
             CityId.Vikings => "icon_city_crest_vikings",
             CityId.Egypt => "icon_city_crest_egypt",
+            CityId.Arabia_CityOfBrass => "icon_city_crest_arabia",
+            CityId.Arabia_NoriasOfHama => "icon_city_crest_arabia",
+            CityId.Arabia_Petra => "icon_city_crest_arabia",
             _ => string.Empty,
         };
     }

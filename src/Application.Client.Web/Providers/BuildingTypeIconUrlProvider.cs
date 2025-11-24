@@ -11,6 +11,7 @@ public class BuildingTypeIconUrlProvider(IAssetUrlProvider assetUrlProvider) : I
         {
             BuildingType.Barracks => "icon_flat_barracks",
             BuildingType.Beehive => "",
+            BuildingType.CamelFarm => "icon_flat_camelFarm",
             BuildingType.CityHall => "icon_flat_special",
             BuildingType.Collectable => "icon_flat_special",
             BuildingType.CultureSite => "icon_flat_cultureSite",
@@ -21,7 +22,9 @@ public class BuildingTypeIconUrlProvider(IAssetUrlProvider assetUrlProvider) : I
             BuildingType.GoldMine => "",
             BuildingType.Home => "icon_flat_home",
             BuildingType.Irrigation => "",
+            BuildingType.Merchant => "icon_flat_merchant",
             BuildingType.PapyrusField => "",
+            BuildingType.PresetIrrigation => "",
             BuildingType.RiceFarm => "",
             BuildingType.Runestone => "",
             BuildingType.Special => "icon_flat_special",

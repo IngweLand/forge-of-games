@@ -29,4 +29,7 @@ public enum WonderId
     Vikings_DragonshipEllida,
     Vikings_Valhalla,
     Vikings_Yggdrasil,
+    Arabia_CityOfBrass,
+    Arabia_NoriasOfHama,
+    Arabia_Petra,
 }

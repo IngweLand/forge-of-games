@@ -9,6 +9,7 @@ public static class BuildingTypeExtensions
         return value switch
         {
             "barracks" => BuildingType.Barracks,
+            "camelFarm" => BuildingType.CamelFarm,
             "cityHall" => BuildingType.CityHall,
             "collectable" => BuildingType.Collectable,
             "cultureSite" => BuildingType.CultureSite,
@@ -18,7 +19,9 @@ public static class BuildingTypeExtensions
             "goldMine" => BuildingType.GoldMine,
             "home" => BuildingType.Home,
             "irrigation" => BuildingType.Irrigation,
+            "merchant" => BuildingType.Merchant,
             "papyrusField" => BuildingType.PapyrusField,
+            "presetIrrigation" => BuildingType.PresetIrrigation,
             "riceFarm" => BuildingType.RiceFarm,
             "special" => BuildingType.Special,
             "workshop" => BuildingType.Workshop,

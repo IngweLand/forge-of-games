@@ -23,7 +23,7 @@ public class CityUiService(
     public async Task<IReadOnlyCollection<CityBuildingGroupsViewModel>> GetCityBuildingGroupsAsync()
     {
         var cityIds = new List<CityId>
-            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal,};
+            {CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal, CityId.Arabia_CityOfBrass};
         var result = new List<CityBuildingGroupsViewModel>();
         foreach (var cityId in cityIds)
         {

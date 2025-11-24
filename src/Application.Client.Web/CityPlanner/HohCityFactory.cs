@@ -22,6 +22,11 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
         {
             searchId = newCityRequest.WonderId.ToString();
         }
+        else if (newCityRequest.CityId is CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama
+                 or CityId.Arabia_Petra)
+        {
+            searchId = newCityRequest.WonderId.ToString();
+        }
 
         return new HohCity
         {
@@ -357,6 +362,45 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                         },
                     ]
                 },
+                {
+                    nameof(CityId.Arabia_CityOfBrass),
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_Arabia_City_CityHall_1",
+                            Level = 1,
+                            X = 45,
+                            Y = -51,
+                        },
+                    ]
+                },
+                {
+                    nameof(CityId.Arabia_NoriasOfHama),
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_Arabia_City_CityHall_1",
+                            Level = 1,
+                            X = 45,
+                            Y = -51,
+                        },
+                    ]
+                },
+                {
+                    nameof(CityId.Arabia_Petra),
+                    [
+                        new HohCityMapEntity
+                        {
+                            Id = 0,
+                            CityEntityId = "Building_Arabia_City_CityHall_1",
+                            Level = 1,
+                            X = 45,
+                            Y = -51,
+                        },
+                    ]
+                },
             };
 
         public static readonly Dictionary<CityId, HashSet<string>> Expansions =
@@ -414,6 +458,43 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
                     [
                         "Expansion_Mayas_Tikal_1", "Expansion_Mayas_Tikal_2", "Expansion_Mayas_Tikal_3",
                         "Expansion_Mayas_Tikal_4", "Expansion_Mayas_Tikal_5",
+                    ]
+                },
+                {
+                    CityId.Arabia_CityOfBrass,
+                    [
+                        "Expansion_Arabia_CityOfBrass_1", "Expansion_Arabia_CityOfBrass_2",
+                        "Expansion_Arabia_CityOfBrass_3", "Expansion_Arabia_CityOfBrass_4",
+                        "Expansion_Arabia_CityOfBrass_5", "Expansion_Arabia_CityOfBrass_6",
+                        "Expansion_Arabia_CityOfBrass_7", "Expansion_Arabia_CityOfBrass_8",
+                        "Expansion_Arabia_CityOfBrass_9", "Expansion_Arabia_CityOfBrass_10",
+                        "Expansion_Arabia_CityOfBrass_11", "Expansion_Arabia_CityOfBrass_12",
+                        "Expansion_Arabia_CityOfBrass_13", "Expansion_Arabia_CityOfBrass_14",
+                        "Expansion_Arabia_CityOfBrass_15", "Expansion_Arabia_CityOfBrass_16",
+                    ]
+                },
+                {
+                    CityId.Arabia_NoriasOfHama,
+                    [
+                        "Expansion_Arabia_NoriasOfHama_1", "Expansion_Arabia_NoriasOfHama_2",
+                        "Expansion_Arabia_NoriasOfHama_3", "Expansion_Arabia_NoriasOfHama_4",
+                        "Expansion_Arabia_NoriasOfHama_5", "Expansion_Arabia_NoriasOfHama_6",
+                        "Expansion_Arabia_NoriasOfHama_7", "Expansion_Arabia_NoriasOfHama_8",
+                        "Expansion_Arabia_NoriasOfHama_9", "Expansion_Arabia_NoriasOfHama_10",
+                        "Expansion_Arabia_NoriasOfHama_11", "Expansion_Arabia_NoriasOfHama_12",
+                        "Expansion_Arabia_NoriasOfHama_13", "Expansion_Arabia_NoriasOfHama_14",
+                        "Expansion_Arabia_NoriasOfHama_15", "Expansion_Arabia_NoriasOfHama_16",
+                    ]
+                },
+                {
+                    CityId.Arabia_Petra,
+                    [
+                        "Expansion_Arabia_Petra_1", "Expansion_Arabia_Petra_2", "Expansion_Arabia_Petra_3",
+                        "Expansion_Arabia_Petra_4", "Expansion_Arabia_Petra_5", "Expansion_Arabia_Petra_6",
+                        "Expansion_Arabia_Petra_7", "Expansion_Arabia_Petra_8", "Expansion_Arabia_Petra_9",
+                        "Expansion_Arabia_Petra_10", "Expansion_Arabia_Petra_11", "Expansion_Arabia_Petra_12",
+                        "Expansion_Arabia_Petra_13", "Expansion_Arabia_Petra_14", "Expansion_Arabia_Petra_15",
+                        "Expansion_Arabia_Petra_16",
                     ]
                 },
             };
