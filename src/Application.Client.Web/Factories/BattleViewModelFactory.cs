@@ -244,7 +244,7 @@ public class BattleViewModelFactory(
     }
 
     public async Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero,
-        IBattleUnitProperties? supportUnit)
+        IBattleUnitProperties? supportUnit, bool withSupportUnit = true)
     {
         var heroDto = await coreDataCache.GetHeroAsync(hero.UnitId);
         var relics = await coreDataCache.GetRelicsAsync();
@@ -272,7 +272,7 @@ public class BattleViewModelFactory(
         var equipment = hero.Equipment.Select(x =>
                 squadEquipmentItemViewModelFactory.Create(x, equipmentData.StatAttributes, equipmentData.Sets))
             .OrderBy(x => x.EquipmentSlotType).ToList();
-        return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm, true, equipment);
+        return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm, withSupportUnit, equipment);
     }
 
     private BattleSquadViewModel CreateBattleSquad(BattleSquadDto squad,

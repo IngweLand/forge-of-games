@@ -22,7 +22,7 @@ public class TreasureHuntStageViewModelFactory(
                         Squads = bw.Squads.Select(bws =>
                                 battleWaveSquadViewModelFactory.Create(bws, stageDto.Units, stageDto.Heroes))
                             .ToList().AsReadOnly(),
-                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
+                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.Unit.UnitId)
                             .SelectMany(g =>
                                 battleWaveSquadViewModelFactory.Create(g.ToList(), stageDto.Units, stageDto.Heroes))
                             .ToList()

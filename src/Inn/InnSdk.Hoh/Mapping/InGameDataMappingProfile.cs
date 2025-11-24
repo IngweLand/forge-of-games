@@ -171,7 +171,9 @@ public class InGameDataMappingProfile : Profile
                 opt.PreCondition(src => src.DomainData.Contains<RelicUnitDataDTO>());
                 opt.MapFrom((src, _, _, context) =>
                     context.Mapper.Map<SquadRelic>(src.DomainData.FindAndUnpack<RelicUnitDataDTO>()));
-            });
+            })
+            .ForMember(dest => dest.AbilityLevel,
+                opt => opt.MapFrom(x => x.AbilityLevel > 0 ? x.AbilityLevel : 1));
         CreateMap<BattleUnitDto, BattleUnit>()
             .ForMember(dest => dest.UnitState, opt => opt.PreCondition(src => src.UnitState != null));
         CreateMap<BattleSquadDto, BattleSquad>()

@@ -1,7 +1,9 @@
 @using Ingweland.Fog.Application.Client.Web.Extensions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Size = MudBlazor.Size
-<div class="fog-container component-root @(Squad.IsHero ? "stripes" : "")">
+<div class="fog-container component-root @(Squad.Hero != null ? "stripes" : "")"
+     style="@(IsClickable ? "cursor: pointer;" : "")"
+     @onclick="@HandleClick">
     <div class="unit-image-container">
         <img src="@Squad.ImageUrl">
     </div>
@@ -32,7 +34,7 @@
         <div class="split-container-item unit-type-icon-container">
             <img src="@Squad.TypeIconUrl">
         </div>
-        @if (!Squad.IsHero)
+        @if (Squad.Hero == null)
         {
             <div class="split-container-item unit-amount-container">
                 <span>@Squad.Amount</span>
@@ -45,5 +47,16 @@
 
     [Parameter]
     public required BattleWaveSquadViewModel Squad { get; set; }
+
+    [Parameter]
+    public EventCallback<BattleWaveSquadViewModel> OnClick { get; set; }
+
+    [Parameter]
+    public bool IsClickable { get; set; }
+
+    private Task HandleClick()
+    {
+        return !IsClickable ? Task.CompletedTask : OnClick.InvokeAsync(Squad);
+    }
 
 }

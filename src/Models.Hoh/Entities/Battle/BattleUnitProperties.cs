@@ -13,7 +13,7 @@ public class BattleUnitProperties : IBattleUnitProperties
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();
 
     [ProtoMember(2)]
-    public int AbilityLevel { get; init; }
+    public int AbilityLevel { get; set; }
 
     [ProtoMember(3)]
     public int AscensionLevel { get; init; }

@@ -1,8 +1,9 @@
+@inject IAssetUrlProvider AssetUrlProvider;
+@inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
 @using Ingweland.Fog.Models.Hoh.Enums
-@inject IAssetUrlProvider AssetUrlProvider;
-@inject ICampaignDifficultyIconUrlProvider CampaignDifficultyIconUrlProvider
+@inherits EncounterComponentBase
 <div class="d-flex flex-column w-100 gap-2 p-3 fog-container mb-3">
     <div class="d-flex align-items-start">
         <div class="position-relative d-inline-block" style="height: 115px;">
@@ -54,7 +55,7 @@
             @foreach (var squad in IsExpanded ? wave.Squads : wave.AggregatedSquads)
             {
                 <div class="col-12 col-lg-6 col-xxl-4">
-                    <CampaignSquadComponent Squad="@squad"></CampaignSquadComponent>
+                    <CampaignSquadComponent Squad="@squad" OnClick="@OnSquadClick" IsClickable="squad.Hero != null"/>
                 </div>
             }
         </div>

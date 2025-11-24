@@ -1,11 +1,16 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
+using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
@@ -15,7 +20,8 @@ public class CampaignUiService(
     IBattleWaveSquadViewModelFactory battleWaveSquadViewModelFactory,
     IContinentBasicViewModelFactory continentBasicViewModelFactory,
     IAssetUrlProvider assetUrlProvider,
-    IMapper mapper) : ICampaignUiService
+    IMapper mapper,
+    IBattleViewModelFactory battleViewModelFactory) : ICampaignUiService
 {
     private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
     private IReadOnlyCollection<RegionBasicViewModel>? _cachedHistoricBattles;
@@ -78,7 +84,7 @@ public class CampaignUiService(
                             Squads = bw.Squads.Select(bws =>
                                     battleWaveSquadViewModelFactory.Create(bws, region.Units, region.Heroes))
                                 .ToList(),
-                            AggregatedSquads = bw.Squads.GroupBy(bws => bws.UnitId)
+                            AggregatedSquads = bw.Squads.GroupBy(bws => bws.Unit.UnitId)
                                 .SelectMany(g =>
                                     battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units, region.Heroes))
                                 .ToList(),
@@ -130,5 +136,10 @@ public class CampaignUiService(
 
         _cachedTeslaStormRegions = list.AsReadOnly();
         return _cachedTeslaStormRegions;
+    }
+    
+    public Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero)
+    {
+        return battleViewModelFactory.CreateHeroProfileAsync(hero, null, false);
     }
 }

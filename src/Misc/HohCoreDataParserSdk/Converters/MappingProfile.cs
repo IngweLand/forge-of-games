@@ -42,16 +42,6 @@ public class MappingProfile : Profile
                 opt => opt.MapFrom(hud => HohStringParser.GetConcreteId(hud.Color).ToUnitColor()));
         CreateMap<BuildingUnitDto, BuildingUnit>()
             .ForMember(dest => dest.Unit, opt => opt.ConvertUsing(new UnitValueConverter(), bu => bu.Id));
-        CreateMap<HeroBattleWaveHeroDetailsDto, BattleWaveHeroSquad>()
-            .ForMember(dest => dest.UnitId, opt => opt.MapFrom(d => d.Id))
-            .ForMember(dest => dest.UnitLevel, opt => opt.MapFrom(d => d.Level));
-        CreateMap<(HeroBattleWaveUnitSquadDetailsDto details, Unit unit), BattleWaveUnitSquad>()
-            .ForMember(dest => dest.UnitId, opt => opt.MapFrom(src => src.details.Id))
-            .ForMember(dest => dest.UnitLevel, opt => opt.MapFrom(src => src.details.Level))
-            .ForMember(dest => dest.Size, opt => opt.MapFrom(src =>
-                src.details.Stats != null && src.details.Stats.Value > 0
-                    ? src.details.Stats.Value
-                    : src.unit.Stats.Single(stat => stat.Type == UnitStatType.SquadSize).Value));
         CreateMap<HeroProgressionCostResourceDto, HeroProgressionCostResource>();
         CreateMap<HeroProgressionCostDefinitionDTO, HeroProgressionCost>()
             .ForMember(dest => dest.Id,
@@ -241,7 +231,8 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Group, opt => opt.MapFrom(bd => bd.Subtype.ToBuildingSubtype()))
             .ForMember(dest => dest.Components, opt => opt.MapFrom(bd => bd.PackedComponents))
             .ForMember(dest => dest.Id, opt => opt.MapFrom(bd => HohStringParser.GetConcreteId(bd.Id)));
-        CreateMap<HeroBattleWaveDefinitionDTO, BattleWave>().ConvertUsing<HeroBattleWaveDefinitionDtoConverter>();
+        CreateMap<HeroBattleWaveDefinitionDTO, BattleWave>();
+        CreateMap<BattleWaveSquadDto, BattleWaveSquad>();
         CreateMap<HeroBattleDefinitionDTO, BattleDetails>().ConvertUsing<HeroBattleDefinitionDtoConverter>();
         CreateMap<HeroDefinitionDTO, Hero>()
             .ForMember(dest => dest.Id,

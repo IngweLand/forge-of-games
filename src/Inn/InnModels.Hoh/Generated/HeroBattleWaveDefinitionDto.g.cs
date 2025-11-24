@@ -24,15 +24,19 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static HeroBattleWaveDefinitionDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiVoZXJvX2JhdHRsZV93YXZlX2RlZmluaXRpb25fZHRvLnByb3RvGiBoZXJv",
-            "X2JhdHRsZV93YXZlX3NxdWFkX2R0by5wcm90byJSChtIZXJvQmF0dGxlV2F2",
-            "ZURlZmluaXRpb25EVE8SCgoCaWQYASABKAkSJwoGc3F1YWRzGAIgAygLMhcu",
-            "SGVyb0JhdHRsZVdhdmVTcXVhZER0b0IfqgIcSW5nd2VsYW5kLkZvZy5Jbm4u",
-            "TW9kZWxzLkhvaGIGcHJvdG8z"));
+            "CiVoZXJvX2JhdHRsZV93YXZlX2RlZmluaXRpb25fZHRvLnByb3RvGhZiYXR0",
+            "bGVfc3F1YWRfZHRvLnByb3RvIk4KG0hlcm9CYXR0bGVXYXZlRGVmaW5pdGlv",
+            "bkRUTxIKCgJpZBgBIAEoCRIjCgZzcXVhZHMYAiADKAsyEy5CYXR0bGVXYXZl",
+            "U3F1YWREdG8ihgEKEkJhdHRsZVdhdmVTcXVhZER0bxIYChBiYXR0bGVmaWVs",
+            "ZF9zbG90GAEgASgFEiYKBGhlcm8YAiABKAsyGC5CYXR0bGVVbml0UHJvcGVy",
+            "dGllc0R0bxIuCgxzdXBwb3J0X3VuaXQYAyABKAsyGC5CYXR0bGVVbml0UHJv",
+            "cGVydGllc0R0b0IfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDTO.Parser, new[]{ "Id", "Squads" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDTO.Parser, new[]{ "Id", "Squads" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto.Parser, new[]{ "BattlefieldSlot", "Hero", "SupportUnit" }, null, null, null, null)
           }));
     }
     #endregion
@@ -99,12 +103,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
 
     /// <summary>Field number for the "squads" field.</summary>
     public const int SquadsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDto> _repeated_squads_codec
-        = pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDto.Parser);
-    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDto> squads_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDto>();
+    private static readonly pb::FieldCodec<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> _repeated_squads_codec
+        = pb::FieldCodec.ForMessage(18, global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto.Parser);
+    private readonly pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> squads_ = new pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveSquadDto> Squads {
+    public pbc::RepeatedField<global::Ingweland.Fog.Inn.Models.Hoh.BattleWaveSquadDto> Squads {
       get { return squads_; }
     }
 
@@ -246,6 +250,288 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 18: {
             squads_.AddEntriesFrom(ref input, _repeated_squads_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class BattleWaveSquadDto : pb::IMessage<BattleWaveSquadDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BattleWaveSquadDto> _parser = new pb::MessageParser<BattleWaveSquadDto>(() => new BattleWaveSquadDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BattleWaveSquadDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.HeroBattleWaveDefinitionDtoReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattleWaveSquadDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattleWaveSquadDto(BattleWaveSquadDto other) : this() {
+      battlefieldSlot_ = other.battlefieldSlot_;
+      hero_ = other.hero_ != null ? other.hero_.Clone() : null;
+      supportUnit_ = other.supportUnit_ != null ? other.supportUnit_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattleWaveSquadDto Clone() {
+      return new BattleWaveSquadDto(this);
+    }
+
+    /// <summary>Field number for the "battlefield_slot" field.</summary>
+    public const int BattlefieldSlotFieldNumber = 1;
+    private int battlefieldSlot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int BattlefieldSlot {
+      get { return battlefieldSlot_; }
+      set {
+        battlefieldSlot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hero" field.</summary>
+    public const int HeroFieldNumber = 2;
+    private global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto hero_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto Hero {
+      get { return hero_; }
+      set {
+        hero_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "support_unit" field.</summary>
+    public const int SupportUnitFieldNumber = 3;
+    private global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto supportUnit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto SupportUnit {
+      get { return supportUnit_; }
+      set {
+        supportUnit_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BattleWaveSquadDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BattleWaveSquadDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BattlefieldSlot != other.BattlefieldSlot) return false;
+      if (!object.Equals(Hero, other.Hero)) return false;
+      if (!object.Equals(SupportUnit, other.SupportUnit)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BattlefieldSlot != 0) hash ^= BattlefieldSlot.GetHashCode();
+      if (hero_ != null) hash ^= Hero.GetHashCode();
+      if (supportUnit_ != null) hash ^= SupportUnit.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BattlefieldSlot != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(BattlefieldSlot);
+      }
+      if (hero_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Hero);
+      }
+      if (supportUnit_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(SupportUnit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BattlefieldSlot != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(BattlefieldSlot);
+      }
+      if (hero_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Hero);
+      }
+      if (supportUnit_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(SupportUnit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BattlefieldSlot != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattlefieldSlot);
+      }
+      if (hero_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Hero);
+      }
+      if (supportUnit_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SupportUnit);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BattleWaveSquadDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BattlefieldSlot != 0) {
+        BattlefieldSlot = other.BattlefieldSlot;
+      }
+      if (other.hero_ != null) {
+        if (hero_ == null) {
+          Hero = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+        }
+        Hero.MergeFrom(other.Hero);
+      }
+      if (other.supportUnit_ != null) {
+        if (supportUnit_ == null) {
+          SupportUnit = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+        }
+        SupportUnit.MergeFrom(other.SupportUnit);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            BattlefieldSlot = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (hero_ == null) {
+              Hero = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+            }
+            input.ReadMessage(Hero);
+            break;
+          }
+          case 26: {
+            if (supportUnit_ == null) {
+              SupportUnit = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+            }
+            input.ReadMessage(SupportUnit);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            BattlefieldSlot = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            if (hero_ == null) {
+              Hero = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+            }
+            input.ReadMessage(Hero);
+            break;
+          }
+          case 26: {
+            if (supportUnit_ == null) {
+              SupportUnit = new global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto();
+            }
+            input.ReadMessage(SupportUnit);
             break;
           }
         }

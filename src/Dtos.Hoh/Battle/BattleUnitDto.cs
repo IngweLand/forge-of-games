@@ -16,7 +16,7 @@ public record BattleUnitDto : IBattleUnitProperties
 
     public IReadOnlyCollection<string> Abilities { get; init; } = new List<string>();
 
-    public int AbilityLevel { get; init; }
+    public int AbilityLevel { get; set; }
 
     public int AscensionLevel { get; init; }
 

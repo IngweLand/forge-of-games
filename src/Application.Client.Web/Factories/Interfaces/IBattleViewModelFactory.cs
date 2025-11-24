@@ -27,5 +27,6 @@ public interface IBattleViewModelFactory
     IReadOnlyCollection<UnitBattleTypeViewModel> CreateUnitBattleTypes(IEnumerable<BattleType> unitBattleTypes);
     Task<BattleViewModel> CreateBattleViewModel(BattleDto battle);
 
-    Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero, IBattleUnitProperties? supportUnit);
+    Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero, IBattleUnitProperties? supportUnit,
+        bool withSupportUnit = true);
 }

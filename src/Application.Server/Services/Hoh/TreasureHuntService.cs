@@ -31,7 +31,10 @@ public class TreasureHuntService(
         }
 
         var unitIds = stage.Battles.SelectMany(e =>
-            e.Waves.SelectMany(bw => bw.Squads.Select(bws => bws.UnitId))).ToHashSet();
+                e.Waves.SelectMany(bw =>
+                    bw.Squads.Select(bws =>
+                        bws.Hero != null ? bws.Hero.UnitId : bws.SupportUnit!.UnitId)))
+            .ToHashSet();
         var units = new List<UnitDto>();
         var heroes = new List<HeroDto>();
         foreach (var unitId in unitIds)

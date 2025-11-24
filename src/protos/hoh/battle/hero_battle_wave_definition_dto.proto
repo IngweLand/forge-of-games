@@ -1,9 +1,15 @@
 syntax = "proto3";
-import "hero_battle_wave_squad_dto.proto";
+import "battle_squad_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message HeroBattleWaveDefinitionDTO {
   string id = 1;
-  repeated HeroBattleWaveSquadDto squads = 2;
+  repeated BattleWaveSquadDto squads = 2;
+}
+
+message BattleWaveSquadDto {
+  int32 battlefield_slot = 1;
+  BattleUnitPropertiesDto hero = 2;
+  BattleUnitPropertiesDto support_unit = 3;
 }

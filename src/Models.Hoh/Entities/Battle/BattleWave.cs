@@ -10,5 +10,5 @@ public class BattleWave
     public required string Id { get; init; }
 
     [ProtoMember(2)]
-    public required IReadOnlyCollection<BattleWaveSquadBase> Squads { get; init; } = new List<BattleWaveSquadBase>();
+    public required IReadOnlyCollection<BattleWaveSquad> Squads { get; init; } = new List<BattleWaveSquad>();
 }

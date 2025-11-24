@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
-using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
@@ -47,7 +46,9 @@ public class CampaignService(
         var unitIds = region.Encounters.SelectMany(e =>
             e.Details.Values.Where(ed => ed.BattleDetails != null).SelectMany(ed =>
                 ed.BattleDetails!.Waves.SelectMany(bw =>
-                    bw.Squads.Select(bws => (UnitId: bws.UnitId, IsHero: bws is BattleWaveHeroSquad))))).ToHashSet();
+                    bw.Squads.Select(bws => (
+                        UnitId: bws.Hero != null ? bws.Hero.UnitId : bws.SupportUnit!.UnitId,
+                        IsHero: bws.Hero != null))))).ToHashSet();
         var units = new List<UnitDto>();
         var heroes = new List<HeroDto>();
         foreach (var t in unitIds)
