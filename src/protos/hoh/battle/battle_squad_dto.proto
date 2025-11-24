@@ -23,7 +23,8 @@ message BattleUnitPropertiesDto {
   repeated string abilities = 4;
   map<string, float> unit_stats_overrides = 5;
   repeated StatBoostDto stat_boosts = 6;
-  google.protobuf.Any equipment = 7;
+  //AllEquipmentUnitDataDTO, RelicUnitDataDTO
+  repeated google.protobuf.Any domain_data = 7;
   int32 ability_level = 9;
   int32 awakening_level = 10;
 }
@@ -44,4 +45,11 @@ message SquadEquipmentItemDto {
   int32 level = 4;
   EquipmentAttributeDto mainAttribute = 5;
   repeated EquipmentAttributeDto subAttributes = 6;
+}
+
+message RelicUnitDataDTO {
+  string definition_id = 1;
+  int32 level = 2;
+  int32 ascension_level = 3;
+  string age = 4;
 }

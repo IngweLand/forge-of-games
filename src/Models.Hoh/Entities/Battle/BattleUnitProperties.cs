@@ -36,4 +36,7 @@ public class BattleUnitProperties : IBattleUnitProperties
     
     [ProtoMember(9)]
     public IReadOnlyCollection<SquadEquipmentItem> Equipment { get; init; } = new List<SquadEquipmentItem>();
+    
+    [ProtoMember(10)]
+    public SquadRelic? Relic { get; init; }
 }

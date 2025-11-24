@@ -57,4 +57,9 @@ public static class AnyHelper
 
         return Result.Ok(unpacked[0]);
     }
+
+    public static bool Contains<T>(this RepeatedField<Any> items) where T : IMessage<T>, new()
+    {
+        return items.Any(item => Any.GetTypeName(item.TypeUrl) == new T().Descriptor.Name);
+    }
 }

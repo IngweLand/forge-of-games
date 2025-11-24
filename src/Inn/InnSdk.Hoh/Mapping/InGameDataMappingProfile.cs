@@ -2,6 +2,7 @@ using AutoMapper;
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using Ingweland.Fog.Inn.Models.Hoh;
+using Ingweland.Fog.Inn.Models.Hoh.Extensions;
 using Ingweland.Fog.InnSdk.Hoh.Mapping.Converters;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
@@ -159,11 +160,18 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.Equipment,
                 opt =>
                 {
-                    opt.PreCondition(src => src.Equipment != null);
+                    opt.PreCondition(src => src.DomainData.Contains<AllEquipmentUnitDataDTO>());
                     opt.MapFrom((src, _, _, context) =>
-                        context.Mapper.Map<IReadOnlyCollection<SquadEquipmentItem>>(src.Equipment
-                            .Unpack<AllEquipmentUnitDataDTO>().Items));
-                });
+                        context.Mapper.Map<IReadOnlyCollection<SquadEquipmentItem>>(src.DomainData
+                            .FindAndUnpack<AllEquipmentUnitDataDTO>().Items));
+                })
+            .ForMember(dest => dest.Relic,
+            opt =>
+            {
+                opt.PreCondition(src => src.DomainData.Contains<RelicUnitDataDTO>());
+                opt.MapFrom((src, _, _, context) =>
+                    context.Mapper.Map<SquadRelic>(src.DomainData.FindAndUnpack<RelicUnitDataDTO>()));
+            });
         CreateMap<BattleUnitDto, BattleUnit>()
             .ForMember(dest => dest.UnitState, opt => opt.PreCondition(src => src.UnitState != null));
         CreateMap<BattleSquadDto, BattleSquad>()
@@ -235,5 +243,9 @@ public class InGameDataMappingProfile : Profile
         CreateMap<LeaderboardPush, Leaderboard>()
             .ForMember(dest => dest.Participants,
                 opt => opt.MapFrom(src => src.Leaderboard.Participants.Select(x => x.Player)));
+
+        CreateMap<RelicUnitDataDTO, SquadRelic>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.DefinitionId))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Age)));
     }
 }

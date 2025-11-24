@@ -30,36 +30,39 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "IAEoBRIcCgRoZXJvGAIgASgLMg4uQmF0dGxlVW5pdER0bxIcCgR1bml0GAMg",
             "ASgLMg4uQmF0dGxlVW5pdER0byJmCg1CYXR0bGVVbml0RHRvEiwKCnByb3Bl",
             "cnRpZXMYASABKAsyGC5CYXR0bGVVbml0UHJvcGVydGllc0R0bxInCgp1bml0",
-            "X3N0YXRlGAIgASgLMhMuQmF0dGxlVW5pdFN0YXRlRHRvIu0CChdCYXR0bGVV",
+            "X3N0YXRlGAIgASgLMhMuQmF0dGxlVW5pdFN0YXRlRHRvIu8CChdCYXR0bGVV",
             "bml0UHJvcGVydGllc0R0bxIPCgd1bml0X2lkGAEgASgJEg0KBWxldmVsGAIg",
             "ASgFEhcKD2FzY2Vuc2lvbl9sZXZlbBgDIAEoBRIRCglhYmlsaXRpZXMYBCAD",
             "KAkSTgoUdW5pdF9zdGF0c19vdmVycmlkZXMYBSADKAsyMC5CYXR0bGVVbml0",
             "UHJvcGVydGllc0R0by5Vbml0U3RhdHNPdmVycmlkZXNFbnRyeRIiCgtzdGF0",
-            "X2Jvb3N0cxgGIAMoCzINLlN0YXRCb29zdER0bxInCgllcXVpcG1lbnQYByAB",
-            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55EhUKDWFiaWxpdHlfbGV2ZWwYCSAB",
-            "KAUSFwoPYXdha2VuaW5nX2xldmVsGAogASgFGjkKF1VuaXRTdGF0c092ZXJy",
-            "aWRlc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoAjoCOAEilAEK",
-            "EkJhdHRsZVVuaXRTdGF0ZUR0bxIUCgxpbl9iYXR0bGVfaWQYASABKAUSNgoK",
-            "dW5pdF9zdGF0cxgCIAMoCzIiLkJhdHRsZVVuaXRTdGF0ZUR0by5Vbml0U3Rh",
-            "dHNFbnRyeRowCg5Vbml0U3RhdHNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAI6AjgBIkAKF0FsbEVxdWlwbWVudFVuaXREYXRhRFRPEiUKBWl0",
-            "ZW1zGAEgAygLMhYuU3F1YWRFcXVpcG1lbnRJdGVtRHRvIvIBChVTcXVhZEVx",
-            "dWlwbWVudEl0ZW1EdG8SJQodZXF1aXBtZW50U2xvdFR5cGVEZWZpbml0aW9u",
-            "SWQYASABKAkSIAoYZXF1aXBtZW50U2V0RGVmaW5pdGlvbklkGAIgASgJEiMK",
-            "G2VxdWlwbWVudFJhcml0eURlZmluaXRpb25JZBgDIAEoCRINCgVsZXZlbBgE",
-            "IAEoBRItCg1tYWluQXR0cmlidXRlGAUgASgLMhYuRXF1aXBtZW50QXR0cmli",
-            "dXRlRHRvEi0KDXN1YkF0dHJpYnV0ZXMYBiADKAsyFi5FcXVpcG1lbnRBdHRy",
-            "aWJ1dGVEdG9CH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnBy",
-            "b3RvMw=="));
+            "X2Jvb3N0cxgGIAMoCzINLlN0YXRCb29zdER0bxIpCgtkb21haW5fZGF0YRgH",
+            "IAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSFQoNYWJpbGl0eV9sZXZlbBgJ",
+            "IAEoBRIXCg9hd2FrZW5pbmdfbGV2ZWwYCiABKAUaOQoXVW5pdFN0YXRzT3Zl",
+            "cnJpZGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgCOgI4ASKU",
+            "AQoSQmF0dGxlVW5pdFN0YXRlRHRvEhQKDGluX2JhdHRsZV9pZBgBIAEoBRI2",
+            "Cgp1bml0X3N0YXRzGAIgAygLMiIuQmF0dGxlVW5pdFN0YXRlRHRvLlVuaXRT",
+            "dGF0c0VudHJ5GjAKDlVuaXRTdGF0c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2",
+            "YWx1ZRgCIAEoAjoCOAEiQAoXQWxsRXF1aXBtZW50VW5pdERhdGFEVE8SJQoF",
+            "aXRlbXMYASADKAsyFi5TcXVhZEVxdWlwbWVudEl0ZW1EdG8i8gEKFVNxdWFk",
+            "RXF1aXBtZW50SXRlbUR0bxIlCh1lcXVpcG1lbnRTbG90VHlwZURlZmluaXRp",
+            "b25JZBgBIAEoCRIgChhlcXVpcG1lbnRTZXREZWZpbml0aW9uSWQYAiABKAkS",
+            "IwobZXF1aXBtZW50UmFyaXR5RGVmaW5pdGlvbklkGAMgASgJEg0KBWxldmVs",
+            "GAQgASgFEi0KDW1haW5BdHRyaWJ1dGUYBSABKAsyFi5FcXVpcG1lbnRBdHRy",
+            "aWJ1dGVEdG8SLQoNc3ViQXR0cmlidXRlcxgGIAMoCzIWLkVxdWlwbWVudEF0",
+            "dHJpYnV0ZUR0byJeChBSZWxpY1VuaXREYXRhRFRPEhUKDWRlZmluaXRpb25f",
+            "aWQYASABKAkSDQoFbGV2ZWwYAiABKAUSFwoPYXNjZW5zaW9uX2xldmVsGAMg",
+            "ASgFEgsKA2FnZRgEIAEoCUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxz",
+            "LkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.EquipmentItemReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDto.Parser, new[]{ "BattlefieldSlot", "Hero", "Unit" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitDto.Parser, new[]{ "Properties", "UnitState" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "UnitStatsOverrides", "StatBoosts", "Equipment", "AbilityLevel", "AwakeningLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitPropertiesDto.Parser, new[]{ "UnitId", "Level", "AscensionLevel", "Abilities", "UnitStatsOverrides", "StatBoosts", "DomainData", "AbilityLevel", "AwakeningLevel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto), global::Ingweland.Fog.Inn.Models.Hoh.BattleUnitStateDto.Parser, new[]{ "InBattleId", "UnitStats" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.AllEquipmentUnitDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.AllEquipmentUnitDataDTO.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto), global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto.Parser, new[]{ "EquipmentSlotTypeDefinitionId", "EquipmentSetDefinitionId", "EquipmentRarityDefinitionId", "Level", "MainAttribute", "SubAttributes" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto), global::Ingweland.Fog.Inn.Models.Hoh.SquadEquipmentItemDto.Parser, new[]{ "EquipmentSlotTypeDefinitionId", "EquipmentSetDefinitionId", "EquipmentRarityDefinitionId", "Level", "MainAttribute", "SubAttributes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicUnitDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.RelicUnitDataDTO.Parser, new[]{ "DefinitionId", "Level", "AscensionLevel", "Age" }, null, null, null, null)
           }));
     }
     #endregion
@@ -634,7 +637,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       abilities_ = other.abilities_.Clone();
       unitStatsOverrides_ = other.unitStatsOverrides_.Clone();
       statBoosts_ = other.statBoosts_.Clone();
-      equipment_ = other.equipment_ != null ? other.equipment_.Clone() : null;
+      domainData_ = other.domainData_.Clone();
       abilityLevel_ = other.abilityLevel_;
       awakeningLevel_ = other.awakeningLevel_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -715,16 +718,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return statBoosts_; }
     }
 
-    /// <summary>Field number for the "equipment" field.</summary>
-    public const int EquipmentFieldNumber = 7;
-    private global::Google.Protobuf.WellKnownTypes.Any equipment_;
+    /// <summary>Field number for the "domain_data" field.</summary>
+    public const int DomainDataFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_domainData_codec
+        = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.WellKnownTypes.Any.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> domainData_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
+    /// <summary>
+    ///AllEquipmentUnitDataDTO, RelicUnitDataDTO
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Any Equipment {
-      get { return equipment_; }
-      set {
-        equipment_ = value;
-      }
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> DomainData {
+      get { return domainData_; }
     }
 
     /// <summary>Field number for the "ability_level" field.</summary>
@@ -772,7 +777,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if(!abilities_.Equals(other.abilities_)) return false;
       if (!UnitStatsOverrides.Equals(other.UnitStatsOverrides)) return false;
       if(!statBoosts_.Equals(other.statBoosts_)) return false;
-      if (!object.Equals(Equipment, other.Equipment)) return false;
+      if(!domainData_.Equals(other.domainData_)) return false;
       if (AbilityLevel != other.AbilityLevel) return false;
       if (AwakeningLevel != other.AwakeningLevel) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -788,7 +793,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       hash ^= abilities_.GetHashCode();
       hash ^= UnitStatsOverrides.GetHashCode();
       hash ^= statBoosts_.GetHashCode();
-      if (equipment_ != null) hash ^= Equipment.GetHashCode();
+      hash ^= domainData_.GetHashCode();
       if (AbilityLevel != 0) hash ^= AbilityLevel.GetHashCode();
       if (AwakeningLevel != 0) hash ^= AwakeningLevel.GetHashCode();
       if (_unknownFields != null) {
@@ -824,10 +829,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       abilities_.WriteTo(output, _repeated_abilities_codec);
       unitStatsOverrides_.WriteTo(output, _map_unitStatsOverrides_codec);
       statBoosts_.WriteTo(output, _repeated_statBoosts_codec);
-      if (equipment_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Equipment);
-      }
+      domainData_.WriteTo(output, _repeated_domainData_codec);
       if (AbilityLevel != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(AbilityLevel);
@@ -861,10 +863,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       abilities_.WriteTo(ref output, _repeated_abilities_codec);
       unitStatsOverrides_.WriteTo(ref output, _map_unitStatsOverrides_codec);
       statBoosts_.WriteTo(ref output, _repeated_statBoosts_codec);
-      if (equipment_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(Equipment);
-      }
+      domainData_.WriteTo(ref output, _repeated_domainData_codec);
       if (AbilityLevel != 0) {
         output.WriteRawTag(72);
         output.WriteInt32(AbilityLevel);
@@ -895,9 +894,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       size += abilities_.CalculateSize(_repeated_abilities_codec);
       size += unitStatsOverrides_.CalculateSize(_map_unitStatsOverrides_codec);
       size += statBoosts_.CalculateSize(_repeated_statBoosts_codec);
-      if (equipment_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Equipment);
-      }
+      size += domainData_.CalculateSize(_repeated_domainData_codec);
       if (AbilityLevel != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(AbilityLevel);
       }
@@ -928,12 +925,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       abilities_.Add(other.abilities_);
       unitStatsOverrides_.MergeFrom(other.unitStatsOverrides_);
       statBoosts_.Add(other.statBoosts_);
-      if (other.equipment_ != null) {
-        if (equipment_ == null) {
-          Equipment = new global::Google.Protobuf.WellKnownTypes.Any();
-        }
-        Equipment.MergeFrom(other.Equipment);
-      }
+      domainData_.Add(other.domainData_);
       if (other.AbilityLevel != 0) {
         AbilityLevel = other.AbilityLevel;
       }
@@ -980,10 +972,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 58: {
-            if (equipment_ == null) {
-              Equipment = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(Equipment);
+            domainData_.AddEntriesFrom(input, _repeated_domainData_codec);
             break;
           }
           case 72: {
@@ -1034,10 +1023,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 58: {
-            if (equipment_ == null) {
-              Equipment = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(Equipment);
+            domainData_.AddEntriesFrom(ref input, _repeated_domainData_codec);
             break;
           }
           case 72: {
@@ -1814,6 +1800,307 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 50: {
             subAttributes_.AddEntriesFrom(ref input, _repeated_subAttributes_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RelicUnitDataDTO : pb::IMessage<RelicUnitDataDTO>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RelicUnitDataDTO> _parser = new pb::MessageParser<RelicUnitDataDTO>(() => new RelicUnitDataDTO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RelicUnitDataDTO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicUnitDataDTO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicUnitDataDTO(RelicUnitDataDTO other) : this() {
+      definitionId_ = other.definitionId_;
+      level_ = other.level_;
+      ascensionLevel_ = other.ascensionLevel_;
+      age_ = other.age_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicUnitDataDTO Clone() {
+      return new RelicUnitDataDTO(this);
+    }
+
+    /// <summary>Field number for the "definition_id" field.</summary>
+    public const int DefinitionIdFieldNumber = 1;
+    private string definitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DefinitionId {
+      get { return definitionId_; }
+      set {
+        definitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 2;
+    private int level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ascension_level" field.</summary>
+    public const int AscensionLevelFieldNumber = 3;
+    private int ascensionLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AscensionLevel {
+      get { return ascensionLevel_; }
+      set {
+        ascensionLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "age" field.</summary>
+    public const int AgeFieldNumber = 4;
+    private string age_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Age {
+      get { return age_; }
+      set {
+        age_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RelicUnitDataDTO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RelicUnitDataDTO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DefinitionId != other.DefinitionId) return false;
+      if (Level != other.Level) return false;
+      if (AscensionLevel != other.AscensionLevel) return false;
+      if (Age != other.Age) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DefinitionId.Length != 0) hash ^= DefinitionId.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (AscensionLevel != 0) hash ^= AscensionLevel.GetHashCode();
+      if (Age.Length != 0) hash ^= Age.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DefinitionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DefinitionId);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Level);
+      }
+      if (AscensionLevel != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(AscensionLevel);
+      }
+      if (Age.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Age);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DefinitionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(DefinitionId);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Level);
+      }
+      if (AscensionLevel != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(AscensionLevel);
+      }
+      if (Age.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Age);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefinitionId);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (AscensionLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AscensionLevel);
+      }
+      if (Age.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Age);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RelicUnitDataDTO other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DefinitionId.Length != 0) {
+        DefinitionId = other.DefinitionId;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.AscensionLevel != 0) {
+        AscensionLevel = other.AscensionLevel;
+      }
+      if (other.Age.Length != 0) {
+        Age = other.Age;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            DefinitionId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            AscensionLevel = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Age = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            DefinitionId = input.ReadString();
+            break;
+          }
+          case 16: {
+            Level = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            AscensionLevel = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            Age = input.ReadString();
             break;
           }
         }
