@@ -17,7 +17,7 @@ public class TopAllianceMemberUpdateManager(
     ILogger<PlayersUpdateManager> logger) : AllianceMembersUpdateManager(gameWorldsProvider, context,
     allianceUpdateOrchestrator, databaseWarmUpService, logger), ITopAllianceMemberUpdateManager
 {
-    private const int TOP_ALLIANCE_RANK_LIMIT = 200;
+    private const int TOP_ALLIANCE_RANK_LIMIT = 500;
     private const int BATCH_SIZE = 100;
 
     protected override async Task<bool> HasMoreAlliances(string worldId)

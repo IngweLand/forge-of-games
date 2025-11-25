@@ -8,7 +8,7 @@ public class FetchAndSaveOrchestrator
 {
     private static readonly Dictionary<string, int> MaxRuns = new()
     {
-        {nameof(TopAllianceMembersUpdaterTrigger), 5},
+        {nameof(TopAllianceMembersUpdaterTrigger), 12},
         {nameof(AllianceMembersUpdaterTrigger), 5},
         {nameof(TopAllianceMemberProfilesUpdaterTrigger), 10},
         {nameof(TopPlayersUpdaterTrigger), 10},
@@ -24,24 +24,25 @@ public class FetchAndSaveOrchestrator
     {
         _logger = context.CreateReplaySafeLogger<FetchAndSaveOrchestrator>();
 
-        await RunAsync(nameof(TopAllianceMembersUpdaterTrigger), context, 6);
-        await RunAsync(nameof(AllianceMembersUpdaterTrigger), context, 6);
-        await RunAsync(nameof(TopAllianceMemberProfilesUpdaterTrigger), context, 6);
-        await RunAsync(nameof(TopPlayersUpdaterTrigger), context, 6);
-        await RunAsync(nameof(PlayersUpdaterTrigger), context, 6);
-        await RunAsync(nameof(TopHeroInsightsProcessorTrigger), context, null);
-        await RunAsync(nameof(InGameEventsFetcherTrigger), context, null);
+        await RunAsync(nameof(TopAllianceMembersUpdaterTrigger), context, 7);
+        await RunAsync(nameof(AllianceMembersUpdaterTrigger), context, 7);
+        await RunAsync(nameof(TopAllianceMemberProfilesUpdaterTrigger), context, 7);
+        await RunAsync(nameof(TopPlayersUpdaterTrigger), context, 7);
+        await RunAsync(nameof(PlayersUpdaterTrigger), context, 7);
 
         var orchestrationTime = context.CurrentUtcDateTime;
         var isSpecialDay = orchestrationTime.Day is 1 or 15;
         if (isSpecialDay)
         {
-            await RunAsync(nameof(TopPlayersCityFetcherTrigger), context, 6);
+            await RunAsync(nameof(TopPlayersCityFetcherTrigger), context, 7);
         }
         else
         {
-            await RunAsync(nameof(PlayerCityFetcherTrigger), context, 6);
+            await RunAsync(nameof(PlayerCityFetcherTrigger), context, 7);
         }
+        
+        await RunAsync(nameof(TopHeroInsightsProcessorTrigger), context, null);
+        await RunAsync(nameof(InGameEventsFetcherTrigger), context, null);
     }
 
     private async Task RunAsync(string triggerFuncName, TaskOrchestrationContext context, int? cutOffHour)
