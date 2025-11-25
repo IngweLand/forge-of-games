@@ -38,7 +38,7 @@ public class GetAllianceQueryHandler(
         var minDate = DateTime.UtcNow.AddDays(FogConstants.ALLIANCE_STALE_THRESHOLD_DAYS * -1);
         if (existingAlliance.MembersUpdatedAt < minDate && existingAlliance.Status == InGameEntityStatus.Active)
         {
-            logger.LogDebug(
+            logger.LogInformation(
                 "Alliance members need update (Alliance ID: {AllianceId}, UpdatedAt: {UpdatedAt}, Minimum : {Today})",
                 request.AllianceId, existingAlliance.MembersUpdatedAt, minDate);
             var updateResult = await allianceUpdateOrchestrator.UpdateMembersAsync(existingAlliance.Id, cancellationToken);
