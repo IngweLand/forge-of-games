@@ -11,7 +11,7 @@ public class TableStorageCleanupFunction(
     [Function("TableStorageCleanupFunction")]
     public async Task Run([TimerTrigger("0 0 0 * * *")] TimerInfo myTimer)
     {
-        var cutOffDate = DateTime.UtcNow.AddMonths(-3);
+        var cutOffDate = DateTime.UtcNow.AddMonths(-1);
         await inGameRawDataTableRepository.DeleteAllAsync(cutOffDate);
     }
 }

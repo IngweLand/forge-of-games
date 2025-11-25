@@ -4,13 +4,13 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class RankingsCleanupTrigger(
-    IRankingsCleanupService rankingsCleanupService,
-    ILogger<RankingsCleanupTrigger> logger)
+public class DatabaseCleanupTrigger(
+    IDatabaseCleanupService databaseCleanupService,
+    ILogger<DatabaseCleanupTrigger> logger)
 {
-    [Function("RankingsCleanupTrigger")]
+    [Function("DatabaseCleanupTrigger")]
     public async Task Run([TimerTrigger("0 0 0 */1 * *")] TimerInfo myTimer)
     {
-        await rankingsCleanupService.RunAsync();
+        await databaseCleanupService.RunAsync();
     }
 }
