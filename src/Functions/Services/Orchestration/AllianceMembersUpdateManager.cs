@@ -44,9 +44,10 @@ public class AllianceMembersUpdateManager(
         return hasMoreAlliances;
     }
 
-    protected virtual Task<bool> HasMoreAlliances(string worldId)
+    protected virtual async Task<bool> HasMoreAlliances(string worldId)
     {
-        return Task.FromResult(true);
+        var alliances = await GetAlliances(worldId);
+        return alliances.Count != 0;
     }
 
     protected virtual async Task<List<int>> GetAlliances(string worldId)
