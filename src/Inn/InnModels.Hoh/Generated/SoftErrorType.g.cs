@@ -24,10 +24,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static SoftErrorTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8qVgoNU29mdEVycm9yVHlwZRIbChdT",
+            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8qfAoNU29mdEVycm9yVHlwZRIbChdT",
             "b2Z0RXJyb3JUeXBlX1VOREVGSU5FRBAAEigKIFNvZnRFcnJvclR5cGVfQUxM",
-            "SUFOQ0VfTk9UX0ZPVU5EEMuviMkFQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5N",
-            "b2RlbHMuSG9oYgZwcm90bzM="));
+            "SUFOQ0VfTk9UX0ZPVU5EEMuviMkFEiQKHVNvZnRFcnJvclR5cGVfR0VORVJB",
+            "TF9VTktOT1dOENTkmxlCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5I",
+            "b2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.SoftErrorType), }, null, null));
@@ -39,6 +40,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   public enum SoftErrorType {
     [pbr::OriginalName("SoftErrorType_UNDEFINED")] Undefined = 0,
     [pbr::OriginalName("SoftErrorType_ALLIANCE_NOT_FOUND")] AllianceNotFound = 1495406539,
+    [pbr::OriginalName("SoftErrorType_GENERAL_UNKNOWN")] GeneralUnknown = 52884052,
   }
 
   #endregion
