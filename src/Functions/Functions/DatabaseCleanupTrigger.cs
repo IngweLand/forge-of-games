@@ -9,7 +9,7 @@ public class DatabaseCleanupTrigger(
     ILogger<DatabaseCleanupTrigger> logger)
 {
     [Function("DatabaseCleanupTrigger")]
-    public async Task Run([TimerTrigger("0 0 0 */1 * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 0 8 */1 * *")] TimerInfo myTimer)
     {
         await databaseCleanupService.RunAsync();
     }
