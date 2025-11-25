@@ -14,6 +14,7 @@ public class PlayerCityFetcher(
     DatabaseWarmUpService databaseWarmUpService,
     IFogDbContext context,
     IPlayerCityService playerCityService,
+    IPlayersUpdateManager playersUpdateManager,
     ILogger<PlayerCityFetcher> logger) : IPlayerCityFetcher
 {
     protected const int BATCH_SIZE = 100;
@@ -29,6 +30,7 @@ public class PlayerCityFetcher(
         Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
 
         var successCount = 0;
+        var playersToVerify = new List<Player>();
         foreach (var player in players)
         {
             Logger.LogDebug("Processing player {PlayerId} from world {WorldId}", player.Id, player.WorldId);
@@ -40,9 +42,14 @@ public class PlayerCityFetcher(
                 {
                     successCount++;
                 }
+                else
+                {
+                    playersToVerify.Add(player);
+                }
             }
             catch (Exception e)
             {
+                playersToVerify.Add(player);
                 Logger.LogError(e, "Error processing player {PlayerId} from world {WorldId}: {ErrorMessage}",
                     player.Id, player.WorldId, e.Message);
             }
@@ -53,15 +60,21 @@ public class PlayerCityFetcher(
         Logger.LogInformation(
             "PlayerCitiesFetcher completed. Processed {TotalPlayers} players, {SuccessCount} successful",
             players.Count, successCount);
+        
+        if (playersToVerify.Count > 0)
+        {
+            await playersUpdateManager.RunAsync(playersToVerify);
+        }
 
         return await HasMorePlayers();
     }
 
-    protected virtual Task<bool> HasMorePlayers()
+    protected virtual async Task<bool> HasMorePlayers()
     {
-        return Task.FromResult(true);
+        var players = await GetPlayers();
+        return players.Count > 0;
     }
-    
+
     protected virtual async Task<List<Player>> GetPlayers()
     {
         var monthAgo = DateTime.UtcNow.ToDateOnly().AddMonths(-1);

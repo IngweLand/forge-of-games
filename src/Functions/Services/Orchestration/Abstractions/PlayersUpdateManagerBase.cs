@@ -65,15 +65,20 @@ public abstract class PlayersUpdateManagerBase(
 
         if (removedPlayers.Count > 0)
         {
-            Logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
-                removedPlayers.Count);
-            await ExecuteSafeAsync(
-                () => playerService.UpdateStatusAsync(removedPlayers, InGameEntityStatus.Missing, CancellationToken.None),
-                "");
-            Logger.LogInformation("Completed player status updater service update");
+            await MarkMissingPlayers(removedPlayers);
         }
 
         return hasMorePlayers;
+    }
+    
+    protected async Task MarkMissingPlayers(IReadOnlyCollection<int> playerIds)
+    {
+        Logger.LogInformation("Starting player status updater service with {PlayerCount} players to remove",
+            playerIds.Count);
+        await ExecuteSafeAsync(
+            () => playerService.UpdateStatusAsync(playerIds, InGameEntityStatus.Missing, CancellationToken.None),
+            "");
+        Logger.LogInformation("Completed player status updater service update");
     }
 
     protected abstract Task<List<Player>> GetPlayers(string gameWorldId);

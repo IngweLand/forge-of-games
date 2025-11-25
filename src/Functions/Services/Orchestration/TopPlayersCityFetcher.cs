@@ -14,8 +14,10 @@ public class TopPlayersCityFetcher(
     DatabaseWarmUpService databaseWarmUpService,
     IFogDbContext context,
     IPlayerCityService playerCityService,
-    ILogger<PlayerCityFetcher> logger) : PlayerCityFetcher(databaseWarmUpService, context, playerCityService, logger),
-    ITopPlayersCityFetcher
+    IPlayersUpdateManager playersUpdateManager,
+    ILogger<PlayerCityFetcher> logger)
+    : PlayerCityFetcher(databaseWarmUpService, context, playerCityService, playersUpdateManager, logger),
+        ITopPlayersCityFetcher
 {
     private const int TOP_RANK_LIMIT = 500;
 
@@ -35,7 +37,7 @@ public class TopPlayersCityFetcher(
         players = await FilterOutWithExistingCities(players);
         return players.Count > 0;
     }
-    
+
     private async Task<List<Player>> FilterOutWithExistingCities(List<Player> players)
     {
         var existingCities = await GetExistingCities();

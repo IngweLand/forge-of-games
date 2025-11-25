@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Functions.Services.Orchestration.Abstractions;
+using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
@@ -46,13 +47,61 @@ public class PlayersUpdateManager(
         if (players.Count < BATCH_SIZE)
         {
             players.AddRange(await context.Players
-                .Where(x => x.Status == InGameEntityStatus.Active && x.WorldId == gameWorldId && x.ProfileUpdatedAt < week)
+                .Where(x => x.Status == InGameEntityStatus.Active && x.WorldId == gameWorldId &&
+                    x.ProfileUpdatedAt < week)
                 .OrderBy(x => x.ProfileUpdatedAt)
                 .Take(BATCH_SIZE)
                 .ToListAsync());
         }
 
         return players.Take(BATCH_SIZE).ToList();
+    }
+
+    public async Task RunAsync(IReadOnlyCollection<Player> players)
+    {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+        Logger.LogDebug("Database warm-up completed");
+
+        var removedPlayers = new HashSet<int>();
+        var distinctPlayers = players.DistinctBy(x => x.Id).ToList();
+        foreach (var player in distinctPlayers)
+        {
+            Logger.LogDebug("Processing player {@Player}", player.Key);
+            var gameWorld = GameWorldsProvider.GetGameWorlds().First(gw => gw.Id == player.WorldId);
+            var delayTask = Task.Delay(500);
+            var profile = await inGamePlayerService.FetchProfile(player.Key);
+            if (profile.IsSuccess)
+            {
+                try
+                {
+                    if (profile.Value.Alliance != null)
+                    {
+                        await fogAllianceService.UpsertAlliance(profile.Value.Alliance, player.WorldId,
+                            DateTime.UtcNow);
+                    }
+
+                    await playerService.UpsertPlayerAsync(profile.Value, gameWorld.Id);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogError(ex, "Error upserting alliance/player {@Player}", player.Key);
+                }
+            }
+            else if (profile.HasError<PlayerNotFoundError>())
+            {
+                removedPlayers.Add(player.Id);
+            }
+
+            await delayTask;
+        }
+
+        if (removedPlayers.Count > 0)
+        {
+            await MarkMissingPlayers(removedPlayers);
+        }
+
+        logger.LogInformation("Processed {PlayerCount} players. Marked as inactive {InactivePlayerCount}",
+            distinctPlayers.Count, removedPlayers.Count);
     }
 
     protected override Task<bool> HasMorePlayers(string gameWorldId)
