@@ -52,6 +52,7 @@ public static class DependencyInjection
         services.AddScoped<IInGameEventsFetcher, InGameEventsFetcher>();
         services.AddScoped<IAllianceAthService, AllianceAthService>();
         services.AddScoped<IHohCoreDataFetcher, HohCoreDataFetcher>();
+        services.AddScoped<IGetMissingAlliancesService, GetMissingAlliancesService>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
