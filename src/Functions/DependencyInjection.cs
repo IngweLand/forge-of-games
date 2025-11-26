@@ -54,6 +54,8 @@ public static class DependencyInjection
         services.AddScoped<IHohCoreDataFetcher, HohCoreDataFetcher>();
         services.AddScoped<IGetMissingAlliancesService, GetMissingAlliancesService>();
         services.AddScoped<IMissingPlayersVerificator, MissingPlayersVerificator>();
+        services.AddScoped<IAlliancesUpdateManager, AlliancesUpdateManager>();
+        services.AddScoped<ITopAlliancesUpdateManager, TopAlliancesUpdateManager>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

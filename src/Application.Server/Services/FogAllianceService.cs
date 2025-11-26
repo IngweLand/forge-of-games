@@ -74,52 +74,58 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
         }
     }
 
-    public async Task UpsertAlliance(HohAlliance hohAlliance, string worldId, DateTime now)
+    public async Task UpsertAlliance(HohAlliance hohAlliance, string worldId, DateTime collectedAt)
     {
-        logger.LogDebug("Upserting alliance {AllianceId} from world {WorldId}",
-            hohAlliance.Id, worldId);
-        var existingAlliance = await context.Alliances
-            .Include(p => p.NameHistory)
-            .FirstOrDefaultAsync(x => x.InGameAllianceId == hohAlliance.Id && x.WorldId == worldId);
+        await DoUpsertAlliance(context.Alliances, hohAlliance, worldId, collectedAt);
 
-        Alliance alliance;
-        if (existingAlliance != null)
-        {
-            logger.LogDebug("Updating existing alliance {AllianceId} with name {AllianceName} from world {WorldId}",
-                hohAlliance.Id, hohAlliance.Name, worldId);
-            existingAlliance.Name = hohAlliance.Name;
-
-            alliance = existingAlliance;
-        }
-        else
-        {
-            logger.LogDebug("Creating new alliance {AllianceId} from world {WorldId}", hohAlliance.Id, worldId);
-            var newAlliance = new Alliance
-            {
-                WorldId = worldId,
-                InGameAllianceId = hohAlliance.Id,
-                Name = hohAlliance.Name,
-            };
-
-            alliance = newAlliance;
-            context.Alliances.Add(newAlliance);
-        }
-
-        alliance.UpdatedAt = now.ToDateOnly();
-        alliance.AvatarIconId = hohAlliance.AvatarIconId;
-        alliance.AvatarBackgroundId = hohAlliance.AvatarBackgroundId;
-
-        if (alliance.NameHistory.OrderByDescending(x => x.ChangedAt).FirstOrDefault()?.Name != hohAlliance.Name)
-        {
-            logger.LogDebug("Adding name {AllianceName} to history for alliance {AllianceId}", hohAlliance.Name,
-                hohAlliance.Id);
-            alliance.NameHistory.Add(new AllianceNameHistoryEntry {Name = hohAlliance.Name, ChangedAt = now});
-        }
+        await context.SaveChangesAsync();
 
         logger.LogDebug("Successfully upserted alliance {AllianceId} from world {WorldId}", hohAlliance.Id,
             worldId);
+    }
 
-        await context.SaveChangesAsync();
+    public async Task<Result> UpsertAlliance(HohAllianceExtended hohAlliance, string worldId, DateTime collectedAt,
+        AllianceRankingType rankingType)
+    {
+        try
+        {
+            var collectedAtDate = collectedAt.ToDateOnly();
+            var initQuery = context.Alliances
+                .Include(p => p.Rankings.Where(x => x.CollectedAt == collectedAtDate && x.Type == rankingType));
+            var alliance = await DoUpsertAlliance(initQuery, hohAlliance, worldId, collectedAt);
+
+            if (collectedAtDate >= alliance.UpdatedAt)
+            {
+                alliance.Rank = hohAlliance.Rank;
+
+                var existingRanking = alliance.Rankings
+                    .FirstOrDefault(x => x.CollectedAt == collectedAtDate && x.Type == rankingType);
+                if (existingRanking != null)
+                {
+                    existingRanking.Rank = hohAlliance.Rank;
+                }
+                else
+                {
+                    alliance.Rankings.Add(new AllianceRanking
+                    {
+                        Rank = hohAlliance.Rank,
+                        CollectedAt = collectedAtDate,
+                        Type = rankingType,
+                        Points = 0, // we do not have points in extended alliance
+                    });
+                }
+            }
+
+            await context.SaveChangesAsync();
+
+            logger.LogDebug("Successfully upserted alliance {AllianceId} from world {WorldId}", hohAlliance.Id,
+                worldId);
+            return Result.Ok();
+        }
+        catch (Exception ex)
+        {
+            return Result.Fail(new AllianceUpdateError(new AllianceKey(worldId, hohAlliance.Id), ex));
+        }
     }
 
     public async Task<Result> UpdateRanking(int allianceId, int rankingPoints, DateOnly collectedAt, int? rank = null)
@@ -165,5 +171,79 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
 
         var saveResult = await Result.Try(() => context.SaveChangesAsync());
         return saveResult.ToResult();
+    }
+
+    public async Task<Result> SetAllianceMissingStatus(int allianceId, CancellationToken ct)
+    {
+        try
+        {
+            var allianceWithMembers = await context.Alliances
+                .Include(x => x.Members)
+                .FirstOrDefaultAsync(x => x.Id == allianceId, ct);
+
+            if (allianceWithMembers == null)
+            {
+                return Result.Fail(new AllianceStatusUpdateError(allianceId));
+            }
+
+            allianceWithMembers.Status = InGameEntityStatus.Missing;
+            allianceWithMembers.Members.Clear();
+            await context.SaveChangesAsync(ct);
+
+            return Result.Ok();
+        }
+        catch (Exception e)
+        {
+            return Result.Fail(new AllianceStatusUpdateError(allianceId, e));
+        }
+    }
+
+    private async Task<Alliance> DoUpsertAlliance(IQueryable<Alliance> initQuery, HohAlliance hohAlliance,
+        string worldId, DateTime collectedAt)
+    {
+        logger.LogDebug("Upserting alliance {AllianceId} from world {WorldId}",
+            hohAlliance.Id, worldId);
+        var existingAlliance = await initQuery
+            .Include(p => p.NameHistory)
+            .FirstOrDefaultAsync(x => x.InGameAllianceId == hohAlliance.Id && x.WorldId == worldId);
+
+        Alliance alliance;
+        if (existingAlliance == null)
+        {
+            logger.LogDebug("Creating new alliance {AllianceId} from world {WorldId}", hohAlliance.Id, worldId);
+            alliance = new Alliance
+            {
+                WorldId = worldId,
+                InGameAllianceId = hohAlliance.Id,
+                Name = hohAlliance.Name,
+            };
+
+            context.Alliances.Add(alliance);
+        }
+        else
+        {
+            logger.LogDebug("Updating existing alliance {AllianceId} with name {AllianceName} from world {WorldId}",
+                hohAlliance.Id, hohAlliance.Name, worldId);
+            alliance = existingAlliance;
+        }
+
+        var collectedAtDate = collectedAt.ToDateOnly();
+        if (collectedAtDate >= alliance.UpdatedAt)
+        {
+            alliance.Name = hohAlliance.Name;
+            alliance.AvatarIconId = hohAlliance.AvatarIconId;
+            alliance.AvatarBackgroundId = hohAlliance.AvatarBackgroundId;
+            alliance.UpdatedAt = collectedAtDate;
+
+            if (alliance.NameHistory.OrderByDescending(x => x.ChangedAt).FirstOrDefault()?.Name != hohAlliance.Name)
+            {
+                logger.LogDebug("Adding name {AllianceName} to history for alliance {AllianceId}", hohAlliance.Name,
+                    hohAlliance.Id);
+                alliance.NameHistory.Add(
+                    new AllianceNameHistoryEntry {Name = hohAlliance.Name, ChangedAt = collectedAt});
+            }
+        }
+
+        return alliance;
     }
 }

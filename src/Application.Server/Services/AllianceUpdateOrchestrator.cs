@@ -7,7 +7,6 @@ using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Errors;
-using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using LazyCache;
 using Microsoft.Extensions.Logging;
@@ -76,21 +75,23 @@ public class AllianceUpdateOrchestrator(
         {
             var allianceSearchResult = await inGameAllianceService.GetAllianceAsync(existingAlliance.Key);
 
-            if (allianceSearchResult.HasError<HohSoftError>(x => x.Error == SoftErrorType.AllianceNotFound))
+            if (allianceSearchResult.IsFailed)
             {
-                logger.LogInformation("Alliance {AllianceId} not found, marking as Missing",
-                    existingAlliance.InGameAllianceId);
-
-                existingAlliance.Status = InGameEntityStatus.Missing;
-                await context.SaveChangesAsync(ct);
-            }
-            else if (allianceSearchResult.IsFailed)
-            {
-                return allianceSearchResult.ToResult();
+                updateMembersResult.WithErrors(allianceSearchResult.Errors);
             }
             else
             {
                 logger.LogDebug("Alliance {AllianceId} found.", existingAlliance.InGameAllianceId);
+            }
+
+            if (allianceSearchResult.HasError<HohSoftError>(x => x.Error == SoftErrorType.AllianceNotFound))
+            {
+                logger.LogInformation("Alliance {AllianceId} not found, marking as Missing", existingAlliance.Id);
+                var statusUpdateResult = await fogAllianceService.SetAllianceMissingStatus(existingAlliance.Id, ct);
+                if (statusUpdateResult.IsFailed)
+                {
+                    updateMembersResult.WithErrors(statusUpdateResult.Errors);
+                }
             }
         }
 
