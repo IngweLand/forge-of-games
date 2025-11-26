@@ -20,8 +20,6 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
     public async Task UpdateStatusAsync(IEnumerable<int> playerIds, InGameEntityStatus status,
         CancellationToken cancellationToken)
     {
-        logger.LogDebug("Updating status to {Status} for players: {PlayerIds}", status, playerIds);
-
         var uniqueIds = playerIds.ToHashSet();
         var players = await context.Players.Where(x => uniqueIds.Contains(x.Id)).ToListAsync(cancellationToken);
 
@@ -29,13 +27,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
 
         foreach (var player in players)
         {
-            logger.LogDebug("Updating status for player {PlayerId} to {Status}", player.Id, status);
-            player.Status = status;
-            if (status == InGameEntityStatus.Missing)
-            {
-                logger.LogDebug("Clearing alliance membership for missing player {PlayerId}", player.Id);
-                player.AllianceMembership = null;
-            }
+            DoUpdateStatusAsync(player, status, cancellationToken);
         }
 
         await context.SaveChangesAsync(cancellationToken);
@@ -50,16 +42,11 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         var player = await context.Players.FindAsync(playerId, cancellationToken);
         if (player == null)
         {
-            logger.LogWarning("Player with id {PlayerId} not found", playerId);
+            logger.LogWarning("Could not update status because player with id {PlayerId} not found", playerId);
             return;
         }
 
-        player.Status = status;
-        if (status == InGameEntityStatus.Missing)
-        {
-            logger.LogDebug("Clearing alliance membership for missing player {PlayerId}", playerId);
-            player.AllianceMembership = null;
-        }
+        DoUpdateStatusAsync(player, status, cancellationToken);
 
         await context.SaveChangesAsync(cancellationToken);
 
@@ -146,6 +133,17 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         return Result.Ok<IReadOnlyCollection<(AllianceMember AllianceMember, Player Player)>>(upsertedPlayers);
     }
 
+    private void DoUpdateStatusAsync(Player player, InGameEntityStatus status, CancellationToken cancellationToken)
+    {
+        logger.LogDebug("Updating status for player {PlayerId} to {Status}", player.Id, status);
+        player.Status = status;
+        if (status == InGameEntityStatus.Missing)
+        {
+            logger.LogDebug("Clearing alliance membership for missing player {PlayerId}", player.Id);
+            player.AllianceMembership = null;
+        }
+    }
+
     private void UpsertSquads(Player player, IReadOnlyCollection<ProfileSquad> squads, DateOnly collectedAt)
     {
         logger.LogDebug("Upserting {SquadCount} squads for player {PlayerId}", squads.Count, player.InGamePlayerId);
@@ -163,7 +161,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
                 AbilityLevel = squad.Hero.AbilityLevel,
                 AwakeningLevel = squad.Hero.AwakeningLevel,
                 CollectedAt = collectedAt,
-                Data = new ProfileSquadDataEntity()
+                Data = new ProfileSquadDataEntity
                 {
                     Hero = squad.Hero,
                     SupportUnit = squad.SupportUnit,
@@ -321,10 +319,10 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
 
         modifiedPlayer.TreasureHuntDifficulty = profile.TreasureHuntDifficulty;
         var pvpTier = modifiedPlayer.PvpRankings2.FirstOrDefault(x => x.CollectedAt == today);
-        if(pvpTier == null)
+        if (pvpTier == null)
         {
             logger.LogDebug("Adding new PVP tier {PvpTier} for player {PlayerId}", profile.PvpTier, profile.Player.Id);
-            modifiedPlayer.PvpRankings2.Add(new PvpRanking2()
+            modifiedPlayer.PvpRankings2.Add(new PvpRanking2
             {
                 CollectedAt = today,
                 Tier = profile.PvpTier,
@@ -332,7 +330,7 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
         }
         else if (pvpTier.Tier != profile.PvpTier)
         {
-            logger.LogDebug("Updating PVP tier for player {PlayerId} from {OldPvpTier} to {NewPvpTier}", 
+            logger.LogDebug("Updating PVP tier for player {PlayerId} from {OldPvpTier} to {NewPvpTier}",
                 profile.Player.Id, pvpTier.Tier, profile.PvpTier);
             pvpTier.Tier = profile.PvpTier;
         }
