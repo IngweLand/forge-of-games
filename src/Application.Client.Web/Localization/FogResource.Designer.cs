@@ -1104,7 +1104,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Battles [Beta].
+        ///   Looks up a localized string similar to My Battles.
         /// </summary>
         public static string CommandCenter_MyBattles_Title {
             get {
