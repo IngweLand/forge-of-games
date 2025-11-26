@@ -87,12 +87,7 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
         CreateMap<PaginatedList<AllianceDto>, PaginatedList<AllianceViewModel>>();
-        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>()
-            .ForMember(dest => dest.RegisteredAt, opt =>
-            {
-                opt.PreCondition(src => src.RegisteredAt != null);
-                opt.MapFrom(src => src.RegisteredAt!.Value.ToString("d"));
-            });
+        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>();
 
         CreateMap<PvpRankingDto, PvpRankingViewModel>()
             .ForMember(dest => dest.CollectedAt,

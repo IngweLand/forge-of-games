@@ -11,5 +11,4 @@ public class AllianceWithRankingsViewModel
 
     public IReadOnlyCollection<StatsTimedStringValue> Names { get; init; } = Array.Empty<StatsTimedStringValue>();
     public IReadOnlyCollection<StatsTimedIntValue> RankingPoints { get; init; } = Array.Empty<StatsTimedIntValue>();
-    public string? RegisteredAt { get; set; }
 }

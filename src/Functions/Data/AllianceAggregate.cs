@@ -17,7 +17,6 @@ public class AllianceAggregate
     public int? AthRankingPoints { get; set; }
     public int? AthEventId { get; set; }
     public required DateTime CollectedAt { get; set; }
-    public DateTime? RegisteredAt { get; set; }
     public required string WorldId { get; set; }
     public int? MemberInGameId { get; set; }
     public int? LeaderInGameId { get; set; }

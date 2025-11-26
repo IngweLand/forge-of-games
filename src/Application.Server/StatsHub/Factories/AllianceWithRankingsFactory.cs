@@ -17,7 +17,6 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
             CurrentMembers = alliance.Members.OrderByDescending(x => x.Player.RankingPoints)
                 .Select((entity, i) => CreateMember(entity, i + 1)).ToList(),
-            RegisteredAt = alliance.RegisteredAt?.ToDateOnly(),
         };
     }
 

@@ -27,7 +27,6 @@ public class Alliance
     public int RankingPoints { get; set; }
     public ICollection<AllianceRanking> Rankings { get; set; } = new List<AllianceRanking>();
 
-    public DateTime? RegisteredAt { get; set; }
     public InGameEntityStatus Status { get; set; } = InGameEntityStatus.Active;
     public DateOnly UpdatedAt { get; set; }
     public required string WorldId { get; set; }

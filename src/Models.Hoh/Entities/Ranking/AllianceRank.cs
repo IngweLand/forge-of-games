@@ -12,6 +12,5 @@ public class AllianceRank
     public required string Name { get; init; }
     public int Points { get; init; }
     public int Rank { get; init; }
-    public required DateTime RegisteredAt { get; init; }
     public required HohPlayer Leader { get; init; }
 }

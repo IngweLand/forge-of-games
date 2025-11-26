@@ -27,8 +27,7 @@ public class InGameDataMappingProfile : Profile
             .ForMember(dest => dest.AllianceName, opt => opt.PreCondition(src => src.HasAllianceName));
         CreateMap<PlayerRanksDTO, PlayerRanks>();
         CreateMap<AllianceRankDto, AllianceRank>()
-            .ForMember(dest => dest.RegisteredAt, opt => opt.MapFrom(src => src.Info.RegisteredAt.ToDateTime()))
-            .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Info.Leader));
+            .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader.Player));
         CreateMap<AllianceRanksDTO, AllianceRanks>();
 
         CreateMap<PvpRankDto, PvpRank>();

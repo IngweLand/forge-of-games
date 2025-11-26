@@ -77,11 +77,6 @@ public class AllianceRankingService(IFogDbContext context, IMapper mapper, ILogg
                             existingAlliance.UpdatedAt = date;
                         }
 
-                        if (allianceAggregate.RegisteredAt.HasValue)
-                        {
-                            existingAlliance.RegisteredAt = allianceAggregate.RegisteredAt!.Value;
-                        }
-
                         updatedAllianceCount++;
                     }
                 }
