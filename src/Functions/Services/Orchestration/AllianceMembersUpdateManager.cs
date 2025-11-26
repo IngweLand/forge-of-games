@@ -50,27 +50,16 @@ public class AllianceMembersUpdateManager(
         return alliances.Count != 0;
     }
 
-    protected virtual async Task<List<int>> GetAlliances(string worldId)
+    protected virtual Task<List<int>> GetAlliances(string worldId)
     {
         Logger.LogDebug("Getting alliances from the database for world {worldId}.", worldId);
         var week = DateTime.UtcNow.AddDays(-7);
 
-        var alliances = await Context.Alliances.AsNoTracking()
-            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active && x.RankingPoints == 0)
+        return Context.Alliances.AsNoTracking()
+            .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active && x.MembersUpdatedAt < week)
+            .OrderBy(x => x.MembersUpdatedAt)
             .Take(BATCH_SIZE)
             .Select(x => x.Id)
             .ToListAsync();
-
-        if (alliances.Count < BATCH_SIZE)
-        {
-            alliances.AddRange(await Context.Alliances.AsNoTracking()
-                .Where(x => x.WorldId == worldId && x.Status == InGameEntityStatus.Active && x.MembersUpdatedAt < week)
-                .OrderBy(x => Guid.NewGuid())
-                .Take(BATCH_SIZE)
-                .Select(x => x.Id)
-                .ToListAsync());
-        }
-
-        return alliances.Take(BATCH_SIZE).ToList();
     }
 }
