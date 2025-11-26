@@ -20,6 +20,10 @@ public class HeroAbilityText
             Title = string.Join(" | ", match.Groups[1].Value.Split('|'));
             _descriptionTemplate = SetDescriptionStyles(match.Groups[2].Value);
         }
+        else
+        {
+            _descriptionTemplate = SetDescriptionStyles(template);
+        }
     }
 
     public string Title { get; } = string.Empty;
