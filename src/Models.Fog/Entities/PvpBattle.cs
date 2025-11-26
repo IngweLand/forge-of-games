@@ -16,13 +16,13 @@ public class PvpBattle
     }
 
     public Player Loser { get; init; }
-    public required string LoserUnits { get; init; }
 
     public required DateTime PerformedAt { get; set; }
     public Player Winner { get; init; }
 
-    public required string WinnerUnits { get; init; }
     public required string WorldId { get; set; }
     public int WinnerId { get; init; }
     public int LoserId { get; init; }
+    
+    public required PvpBattleTeams Teams { get; set; }
 }

@@ -4,6 +4,7 @@ using Ingweland.Fog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ingweland.Fog.Infrastructure.Migrations
 {
     [DbContext(typeof(FogDbContext))]
-    partial class FogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251126002952_PvpBattleTeams")]
+    partial class PvpBattleTeams
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -924,11 +927,19 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("LoserId")
                         .HasColumnType("int");
 
+                    b.Property<string>("LoserUnits")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("PerformedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("WinnerId")
                         .HasColumnType("int");
+
+                    b.Property<string>("WinnerUnits")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WorldId")
                         .IsRequired()

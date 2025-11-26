@@ -68,5 +68,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new InGameEventEntityTypeConfiguration());
         builder.ApplyConfiguration(new AllianceAthRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new PvpRanking2EntityTypeConfiguration());
+        builder.ApplyConfiguration(new PvpBattleTeamsEntityTypeConfiguration());
     }
 }

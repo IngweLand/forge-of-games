@@ -29,6 +29,7 @@ public class GetPlayerBattlesQueryHandler(
         var source = context.PvpBattles.AsNoTracking()
             .Include(b => b.Winner)
             .Include(b => b.Loser)
+            .Include(b => b.Teams)
             .Where(b => b.WinnerId == request.PlayerId || b.LoserId == request.PlayerId);
         var count = await source.CountAsync(cancellationToken);
 

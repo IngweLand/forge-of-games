@@ -64,8 +64,11 @@ public class PvpBattleService(IFogDbContext context, IMapper mapper, ILogger<Pvp
                     WorldId = k.WorldId,
                     InGameBattleId = battle.Id,
                     PerformedAt = battle.PerformedAt,
-                    WinnerUnits = JsonSerializer.Serialize(battle.WinnerUnits, JsonSerializerOptions),
-                    LoserUnits = JsonSerializer.Serialize(battle.LoserUnits, JsonSerializerOptions),
+                    Teams = new PvpBattleTeams()
+                    {
+                        WinnerTeam = JsonSerializer.Serialize(battle.WinnerUnits, JsonSerializerOptions),
+                        LoserTeam = JsonSerializer.Serialize(battle.LoserUnits, JsonSerializerOptions),
+                    },
                     WinnerId = winnerId,
                     LoserId = loserId,
                 };

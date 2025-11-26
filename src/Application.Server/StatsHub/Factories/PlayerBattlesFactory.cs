@@ -17,9 +17,9 @@ public class PlayerBattlesFactory(IMapper mapper) : IPlayerBattlesFactory
 
     public PvpBattleDto Create(PvpBattle pvpBattle, int? statsId)
     {
-        var winnerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(pvpBattle.WinnerUnits,
+        var winnerSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(pvpBattle.Teams.WinnerTeam,
             JsonSerializerOptions) ?? [];
-        var loserSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(pvpBattle.LoserUnits,
+        var loserSquads = JsonSerializer.Deserialize<IReadOnlyCollection<BattleSquad>>(pvpBattle.Teams.LoserTeam,
             JsonSerializerOptions) ?? [];
         return new PvpBattleDto
         {
