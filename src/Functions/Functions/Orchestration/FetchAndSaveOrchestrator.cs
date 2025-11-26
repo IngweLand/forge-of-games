@@ -8,6 +8,8 @@ public class FetchAndSaveOrchestrator
 {
     private static readonly Dictionary<string, int> MaxRuns = new()
     {
+        {nameof(TopAlliancesUpdaterTrigger), 6},
+        {nameof(AlliancesUpdaterTrigger), 5},
         {nameof(TopAllianceMembersUpdaterTrigger), 12},
         {nameof(AllianceMembersUpdaterTrigger), 5},
         {nameof(TopAllianceMemberProfilesUpdaterTrigger), 10},
@@ -24,6 +26,8 @@ public class FetchAndSaveOrchestrator
     {
         _logger = context.CreateReplaySafeLogger<FetchAndSaveOrchestrator>();
 
+        await RunAsync(nameof(TopAlliancesUpdaterTrigger), context, 7);
+        await RunAsync(nameof(AlliancesUpdaterTrigger), context, 7);
         await RunAsync(nameof(TopAllianceMembersUpdaterTrigger), context, 7);
         await RunAsync(nameof(AllianceMembersUpdaterTrigger), context, 7);
         await RunAsync(nameof(TopAllianceMemberProfilesUpdaterTrigger), context, 7);
