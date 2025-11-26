@@ -84,7 +84,7 @@ public class GetAlliancesWithPaginationQueryHandler(
         }
 
         return result
-            .OrderBy(x => x.Status)
+            .OrderByDescending(x => x.Status)
             .ThenByDescending(p => p.RankingPoints)
             .ProjectTo<AllianceDto>(mapper.ConfigurationProvider)
             .ToPaginatedListAsync(startIndex, pageSize, cancellationToken);

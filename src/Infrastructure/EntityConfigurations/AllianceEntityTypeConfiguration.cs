@@ -17,7 +17,7 @@ public class AllianceEntityTypeConfiguration : IEntityTypeConfiguration<Alliance
 
         builder.Property(p => p.Name).IsRequired().HasMaxLength(100);
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
-        builder.Property(p => p.Status).HasDefaultValue(InGameEntityStatus.Active).HasConversion<string>();
+        builder.Property(p => p.Status);
 
         builder.HasIndex(p => p.Name);
         builder.HasIndex(p => p.WorldId);

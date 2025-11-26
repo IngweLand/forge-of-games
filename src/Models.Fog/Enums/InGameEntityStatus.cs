@@ -2,6 +2,6 @@ namespace Ingweland.Fog.Models.Fog.Enums;
 
 public enum InGameEntityStatus
 {
-    Active = 0,
-    Missing = 1,
+    Missing = 0,
+    Active = 1,
 }

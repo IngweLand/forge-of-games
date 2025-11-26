@@ -18,7 +18,7 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
         builder.Property(p => p.Age).IsRequired().HasMaxLength(255);
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
-        builder.Property(p => p.Status).HasDefaultValue(InGameEntityStatus.Active).HasConversion<string>();
+        builder.Property(p => p.Status);
 
         builder.HasIndex(p => p.Name);
         builder.HasIndex(p => p.WorldId);
