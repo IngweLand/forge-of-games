@@ -18,7 +18,7 @@ public static class CityIdExtensions
         [WonderId.Vikings_Valhalla, WonderId.Vikings_Yggdrasil, WonderId.Vikings_DragonshipEllida];
     
     private static readonly List<WonderId> ArabicWonders =
-        [WonderId.Arabia_CityOfBrass, WonderId.Arabia_NoriasOfHama, WonderId.Arabia_Petra];
+        [WonderId.Arabia_Petra, WonderId.Arabia_CityOfBrass, WonderId.Arabia_NoriasOfHama];
 
     public static IReadOnlyCollection<WonderId> GetWonders(this CityId cityId)
     {
@@ -59,7 +59,7 @@ public static class CityIdExtensions
         return cityId switch
         {
             CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace => CityId.Mayas_ChichenItza,
-            CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra => CityId.Arabia_CityOfBrass,
+            CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra => CityId.Arabia_Petra,
             _ => cityId
         };
     }

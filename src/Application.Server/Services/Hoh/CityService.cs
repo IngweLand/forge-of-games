@@ -144,7 +144,7 @@ public class CityService(
                 }
             },
             {
-                CityId.Arabia_CityOfBrass,
+                CityId.Arabia_Petra,
                 new List<WonderBasicDto>
                 {
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Arabia_CityOfBrass)),
@@ -175,7 +175,7 @@ public class CityService(
         var cityIds = new List<CityId>
         {
             CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity(),
-            CityId.Arabia_CityOfBrass.ToDefaultTechnologyCity(),
+            CityId.Arabia_Petra.ToDefaultTechnologyCity(),
         };
         return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
     }

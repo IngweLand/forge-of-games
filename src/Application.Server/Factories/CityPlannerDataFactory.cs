@@ -36,7 +36,7 @@ public class CityPlannerDataFactory(
     private List<NewCityDialogItemDto> CreateDialogItems(IReadOnlyCollection<Wonder> wonders)
     {
         var mayaWonderIds = CityId.Mayas_Tikal.GetWonders();
-        var arabiaWonderIds = CityId.Arabia_CityOfBrass.GetWonders();
+        var arabiaWonderIds = CityId.Arabia_Petra.GetWonders();
         return
         [
             new NewCityDialogItemDto
@@ -74,13 +74,13 @@ public class CityPlannerDataFactory(
                 Wonders = wonders.Where(w => w.CityId == CityId.Egypt).Select(wonderDtoFactory.Create).ToList(),
             },
             
-            new NewCityDialogItemDto
-            {
-                CityId = CityId.Arabia_CityOfBrass,
-                CityName = gameLocalizationService.GetCityName(CityId.Arabia_CityOfBrass),
-                Wonders = wonders.Where(w => arabiaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
-                    .ToList(),
-            },
+            // new NewCityDialogItemDto
+            // {
+            // CityId = CityId.Arabia_Petra,
+            // CityName = gameLocalizationService.GetCityName(CityId.Arabia_Petra),
+            //     Wonders = wonders.Where(w => arabiaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
+            //         .ToList(),
+            // },
         ];
     }
 }
