@@ -11,6 +11,7 @@ public class CityStatsCalculator(
     IMapAreaFactory mapAreaFactory,
     ICityStatsProcessorFactory cityStatsProcessorFactory) : ICityStatsCalculator
 {
+    // TODO We need to handle not-movable unlockable entities
     public async Task<CityStats> Calculate(HohCity city)
     {
         var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(city.InGameCityId);

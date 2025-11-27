@@ -30,6 +30,7 @@ public interface ICityPlanner
     void MoveEntity(int entityId, Point location);
     void RenderScene(SKCanvas canvas);
     void RotateEntity(int entityId);
+    void ToggleEntityLockState(int entityId);
     CityMapEntity? DuplicateEntity(int entityId);
     Task SaveCityAsync();
     Task SaveCityAsync(string newCityName);

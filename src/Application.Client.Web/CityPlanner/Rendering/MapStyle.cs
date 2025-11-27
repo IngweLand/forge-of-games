@@ -7,13 +7,6 @@ public class MapStyle
 {
     public SKColor BackgroundColor { get; } = SKColor.Parse("#f0f0f0");
 
-    public SKPaint ExpansionIconPaint { get; } = new()
-    {
-        Color = SKColor.Parse("#e0e0e0"),
-        IsAntialias = true,
-        Style = SKPaintStyle.StrokeAndFill
-    };
-
     public IDictionary<ExpansionType, SKPaint> ExpansionPaints { get; } = new Dictionary<ExpansionType, SKPaint>()
     {
         {

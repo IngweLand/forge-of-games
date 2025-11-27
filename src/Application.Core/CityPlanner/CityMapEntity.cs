@@ -9,10 +9,12 @@ public class CityMapEntity
     private bool _isRotated;
     private bool _isSelected;
     private Point _location;
+    private bool _canBePlaced = true;
+    private bool _excludeFromStats;
 
     public CityMapEntity(int id, Point location, Size size, string name, string cityEntityId, int level,
         BuildingType buildingType, BuildingGroup buildingGroup, ExpansionSubType expansionSubType,
-        int overflowRange = -1, bool isMovable = true)
+        int overflowRange = -1, bool isMovable = true, bool isLockable = false, bool isLocked = false)
     {
         Id = id;
         Location = location;
@@ -27,16 +29,32 @@ public class CityMapEntity
         OverflowRange = overflowRange;
         UpdateBounds();
         IsMovable = isMovable;
+        IsLockable = isLockable;
+        IsLocked = isLocked;
     }
 
+    public bool IsLocked { get; set; }
+
+    public bool IsLockable { get; set; }
     public Rectangle Bounds { get; private set; }
     public BuildingGroup BuildingGroup { get; }
     public BuildingType BuildingType { get; }
-    public bool CanBePlaced { get; set; } = true;
+
+    public bool CanBePlaced
+    {
+        get => _canBePlaced;
+        set => _canBePlaced = IsLockable || value;
+    }
+
     public string CityEntityId { get; }
     public string? CustomizationId { get; set; }
 
-    public bool ExcludeFromStats { get; set; }
+    public bool ExcludeFromStats
+    {
+        get => !IsLockable ? _excludeFromStats : IsLocked;
+        set => _excludeFromStats = !IsLockable ? value : IsLocked;
+    }
+
     public ExpansionSubType ExpansionSubType { get; }
     public ExpansionType ExpansionType { get; }
 
@@ -110,7 +128,7 @@ public class CityMapEntity
     public CityMapEntity CloneWithLevel(string cityEntityId, int level, IReadOnlyCollection<ICityMapEntityStats> stats)
     {
         var newEntity = new CityMapEntity(Id, Location, Size, Name, cityEntityId, level, BuildingType, BuildingGroup,
-            ExpansionSubType, OverflowRange, IsMovable)
+            ExpansionSubType, OverflowRange, IsMovable, IsLockable, IsLocked)
         {
             Bounds = Bounds,
             CanBePlaced = CanBePlaced,

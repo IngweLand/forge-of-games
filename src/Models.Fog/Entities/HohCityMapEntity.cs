@@ -12,6 +12,9 @@ public class HohCityMapEntity
     public int Id { get; set; }
 
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public bool IsLocked { get; set; }
+
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public bool IsRotated { get; set; }
 
     public required int Level { get; set; }

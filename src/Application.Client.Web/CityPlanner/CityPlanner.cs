@@ -234,6 +234,20 @@ public class CityPlanner(
         SelectCityMapEntity(entity);
     }
 
+    public void ToggleEntityLockState(int entityId)
+    {
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity) || !entity.IsLockable)
+        {
+            return;
+        }
+
+        entity.IsLocked = !entity.IsLocked;
+        UpdateEntityState(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
+        UpdateSelectedEntityViewModel();
+        StateHasChanged?.Invoke();
+    }
+
     public CityMapEntity? DuplicateEntity(int entityId)
     {
         if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity) || !entity.IsMovable)

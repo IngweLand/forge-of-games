@@ -1,7 +1,5 @@
 @rendermode InteractiveWebAssembly
-@using Ingweland.Fog.Application.Client.Web.CityPlanner
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
-@using Ingweland.Fog.Application.Client.Web.CityPlanner.Commands
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Dtos.Hoh.City
@@ -20,10 +18,17 @@
     </div>
     <div class="main-container">
         <BuildingInfoComponent Items="@Building.InfoItems"/>
+        @if (Building.IsLockable)
+        {
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@ToggleEntityLockState"
+                       Style="margin-bottom: 16px">
+                @(Building.IsLocked ? Loc[FogResource.CityPlanner_CityMapEntity_Unlock] : Loc[FogResource.CityPlanner_CityMapEntity_Lock])
+            </MudButton>
+        }
         @if (Building.ProductionComponent != null)
         {
             <ProductionComponent Data="@Building.ProductionComponent" ProductClicked="OnProductClicked"/>
-            @if(Building.ProductionComponent.Cost.Count > 0)
+            @if (Building.ProductionComponent.Cost.Count > 0)
             {
                 <CityProductionStatsComponent Items="@Building.ProductionComponent.Cost"
                                               Title="@Loc[FogResource.CityPlanner_ProductionCost]"/>
@@ -75,6 +80,17 @@
     private void OnCustomizationItemChanged(BuildingCustomizationDto item)
     {
         CityPlanner.UpdateCustomization(item);
+    }
+
+    private void ToggleEntityLockState()
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntity == null)
+        {
+            return;
+        }
+
+        var cmd = CommandFactory.CreateToggleEntityLockStateCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
+        CommandManager.ExecuteCommand(cmd);
     }
 
 }

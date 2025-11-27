@@ -22,6 +22,7 @@ public class BuildingRenderer : IBuildingRenderer
     private SKFont _currentNameFont;
     private SKFont _defaultNameFont;
     private SKPaint _fillPaint;
+    private readonly LockIconRenderer _lockIconRenderer = new();
     private SKTypeface _notoSansTypeface;
     private SKPaint _strokePaint;
 
@@ -109,6 +110,11 @@ public class BuildingRenderer : IBuildingRenderer
         canvas.DrawRect(rect, _fillPaint);
         canvas.DrawRect(rect, _strokePaint);
 
+        if (entity.IsLocked)
+        {
+            canvas.DrawRect(rect, _cityMapEntityStyle.LockedFillPaint);
+        }
+
         // entity name
         if (_settings.ShowEntityName && entity.Bounds.Width > 1 && entity.BuildingType != BuildingType.CultureSite)
         {
@@ -137,6 +143,11 @@ public class BuildingRenderer : IBuildingRenderer
         if (entity.CustomizationId != null)
         {
             DrawCustomization(rect, canvas);
+        }
+
+        if (entity.IsLocked)
+        {
+            _lockIconRenderer.DrawLockIcon(canvas, rect);
         }
     }
 
@@ -236,7 +247,7 @@ public class BuildingRenderer : IBuildingRenderer
 
     private void RenderOverflow(SKCanvas canvas, CityMapEntity entity)
     {
-        if (entity is {IsSelected: true, OverflowBounds: not null})
+        if (entity is {IsLocked: false, IsSelected: true, OverflowBounds: not null})
         {
             var rect = _grid.GridToScreen(entity.OverflowBounds.Value).ToSKRect();
             canvas.DrawRect(rect, _cityMapEntityStyle.OverflowPaint);

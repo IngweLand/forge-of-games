@@ -116,6 +116,11 @@ public class InGameDataMappingProfile : Profile
             {
                 opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.CustomizationEntityId));
                 opt.MapFrom(src => HohStringParser.GetConcreteId(src.CustomizationEntityId));
+            })
+            .ForMember(dest => dest.LinkedExpansion, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.LinkedExpansion));
+                opt.MapFrom(src => HohStringParser.GetConcreteId(src.LinkedExpansion));
             });
         CreateMap<CityDTO, City>()
             .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))

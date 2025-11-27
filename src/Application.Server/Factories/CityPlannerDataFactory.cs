@@ -73,14 +73,14 @@ public class CityPlannerDataFactory(
                 CityName = gameLocalizationService.GetCityName(CityId.Egypt),
                 Wonders = wonders.Where(w => w.CityId == CityId.Egypt).Select(wonderDtoFactory.Create).ToList(),
             },
-            
-            // new NewCityDialogItemDto
-            // {
-            // CityId = CityId.Arabia_Petra,
-            // CityName = gameLocalizationService.GetCityName(CityId.Arabia_Petra),
-            //     Wonders = wonders.Where(w => arabiaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
-            //         .ToList(),
-            // },
+
+            new NewCityDialogItemDto
+            {
+                CityId = CityId.Arabia_Petra,
+                CityName = gameLocalizationService.GetCityName(CityId.Arabia_Petra),
+                Wonders = wonders.Where(w => arabiaWonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create)
+                    .ToList(),
+            },
         ];
     }
 }

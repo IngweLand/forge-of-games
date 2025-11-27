@@ -16,5 +16,6 @@ public interface ICityPlannerCommandFactory
     IUndoableCommand CreateMoveFromInventoryCommand(BuildingGroup buildingGroup);
     IUndoableCommand CreateMoveEntityCommand(CityMapEntity entity, Point oldLocation);
     IUndoableCommand CreateChangeEntityLevelCommand(CityMapEntity entity, int level);
+    IUndoableCommand CreateToggleEntityLockStateCommand(int cityMapEntityId);
     IUndoableCommand CreateChangeEntitiesLevelCommand(IReadOnlyCollection<CityMapEntity> entities, int level);
 }

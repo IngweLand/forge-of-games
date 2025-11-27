@@ -555,6 +555,24 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lock.
+        /// </summary>
+        public static string CityPlanner_CityMapEntity_Lock {
+            get {
+                return ResourceManager.GetString("CityPlanner.CityMapEntity.Lock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock.
+        /// </summary>
+        public static string CityPlanner_CityMapEntity_Unlock {
+            get {
+                return ResourceManager.GetString("CityPlanner.CityMapEntity.Unlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City name.
         /// </summary>
         public static string CityPlanner_CityName {

@@ -57,6 +57,13 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
         Style = SKPaintStyle.Fill,
     };
 
+    public SKPaint LockedFillPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#48000000"),
+        IsAntialias = false,
+        Style = SKPaintStyle.Fill,
+    };
+
     public SKPaint CustomizationFillPaint { get; } = new()
     {
         Color = SKColor.Parse("#E895CE"),

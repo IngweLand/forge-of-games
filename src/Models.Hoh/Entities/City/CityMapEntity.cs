@@ -6,6 +6,7 @@ public class CityMapEntity
     public required string? CustomizationId { get; init; }
     public bool IsRotated { get; init; }
     public required int Level { get; init; }
+    public string? LinkedExpansion { get; set; }
 
     public IReadOnlyCollection<CityMapEntityProduction> Productions { get; init; } =
         ArraySegment<CityMapEntityProduction>.Empty;

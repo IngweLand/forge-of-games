@@ -11,7 +11,7 @@ namespace Ingweland.Fog.Application.Core.CityPlanner;
 public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFactory) : ICityMapEntityFactory
 {
     private readonly HashSet<BuildingType> _notMovableEntities =
-        [BuildingType.RitualSite, BuildingType.ExtractionPoint];
+        [BuildingType.RitualSite, BuildingType.ExtractionPoint, BuildingType.PresetIrrigation];
 
     private int _nextBuildingId = -1;
 
@@ -23,7 +23,8 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
             new Size(building.Width, building.Length), building.Name, building.Id,
             hohCityMapEntity.Level,
             building.Type, building.Group, building.ExpansionSubType, overflowRange,
-            !_notMovableEntities.Contains(building.Type))
+            !_notMovableEntities.Contains(building.Type), _notMovableEntities.Contains(building.Type),
+            hohCityMapEntity.IsLocked)
         {
             IsRotated = hohCityMapEntity.IsRotated,
             SelectedProductId = hohCityMapEntity.SelectedProductId,

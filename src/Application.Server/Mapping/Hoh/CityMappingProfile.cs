@@ -15,6 +15,7 @@ public class CityMappingProfile : Profile
                     .Where(p => p.Source == ProductionSourceConstant.Main && p.IsStarted)
                     .Select(p => p.DefinitionId)
                     .FirstOrDefault())
-            );
+            )
+            .ForMember(dest => dest.IsLocked, opt => opt.MapFrom(src => src.LinkedExpansion != null));
     }
 }

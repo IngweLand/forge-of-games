@@ -263,6 +263,8 @@ public class CityMapEntityViewModelFactory(
             Levels = levels,
             ProductionComponent = productionComponentViewModel,
             CustomizationComponent = customizationComponentViewModel,
+            IsLockable = entity.IsLockable,
+            IsLocked = entity.IsLocked,
         };
     }
 }

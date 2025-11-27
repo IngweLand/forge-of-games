@@ -25,19 +25,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChljaXR5X21hcF9lbnRpdHlfZHRvLnByb3RvGiBwcm9kdWN0aW9uX3NvdXJj",
-            "ZV9jb25zdGFudC5wcm90byLYAQoQQ2l0eU1hcEVudGl0eUR0bxIWCg5jaXR5",
+            "ZV9jb25zdGFudC5wcm90byLyAQoQQ2l0eU1hcEVudGl0eUR0bxIWCg5jaXR5",
             "X2VudGl0eV9pZBgCIAEoCRIJCgF4GAQgASgFEgkKAXkYBSABKAUSMAoLcHJv",
             "ZHVjdGlvbnMYBiADKAsyGy5DaXR5TWFwRW50aXR5UHJvZHVjdGlvbkR0bxIS",
             "Cgppc19yb3RhdGVkGAkgASgIEh8KF2N1c3RvbWl6YXRpb25fZW50aXR5X2lk",
             "GA8gASgJEiAKGGN1c3RvbWl6YXRpb25fYXBwbGllZF9hdBgQIAEoBRINCgVs",
-            "ZXZlbBgSIAEoBSJyChpDaXR5TWFwRW50aXR5UHJvZHVjdGlvbkR0bxIVCg1k",
-            "ZWZpbml0aW9uX2lkGAIgASgJEhIKCmlzX3N0YXJ0ZWQYCCABKAgSKQoGc291",
-            "cmNlGA0gASgOMhkuUHJvZHVjdGlvblNvdXJjZUNvbnN0YW50Qh+qAhxJbmd3",
-            "ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "ZXZlbBgSIAEoBRIYChBsaW5rZWRfZXhwYW5zaW9uGBcgASgJInIKGkNpdHlN",
+            "YXBFbnRpdHlQcm9kdWN0aW9uRHRvEhUKDWRlZmluaXRpb25faWQYAiABKAkS",
+            "EgoKaXNfc3RhcnRlZBgIIAEoCBIpCgZzb3VyY2UYDSABKA4yGS5Qcm9kdWN0",
+            "aW9uU291cmNlQ29uc3RhbnRCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVs",
+            "cy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.ProductionSourceConstantReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto.Parser, new[]{ "CityEntityId", "X", "Y", "Productions", "IsRotated", "CustomizationEntityId", "CustomizationAppliedAt", "Level" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto.Parser, new[]{ "CityEntityId", "X", "Y", "Productions", "IsRotated", "CustomizationEntityId", "CustomizationAppliedAt", "Level", "LinkedExpansion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto.Parser, new[]{ "DefinitionId", "IsStarted", "Source" }, null, null, null, null)
           }));
     }
@@ -88,6 +89,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       customizationEntityId_ = other.customizationEntityId_;
       customizationAppliedAt_ = other.customizationAppliedAt_;
       level_ = other.level_;
+      linkedExpansion_ = other.linkedExpansion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -192,6 +194,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "linked_expansion" field.</summary>
+    public const int LinkedExpansionFieldNumber = 23;
+    private string linkedExpansion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LinkedExpansion {
+      get { return linkedExpansion_; }
+      set {
+        linkedExpansion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -215,6 +229,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (CustomizationEntityId != other.CustomizationEntityId) return false;
       if (CustomizationAppliedAt != other.CustomizationAppliedAt) return false;
       if (Level != other.Level) return false;
+      if (LinkedExpansion != other.LinkedExpansion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -230,6 +245,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (CustomizationEntityId.Length != 0) hash ^= CustomizationEntityId.GetHashCode();
       if (CustomizationAppliedAt != 0) hash ^= CustomizationAppliedAt.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
+      if (LinkedExpansion.Length != 0) hash ^= LinkedExpansion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -277,6 +293,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(144, 1);
         output.WriteInt32(Level);
       }
+      if (LinkedExpansion.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(LinkedExpansion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -316,6 +336,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(144, 1);
         output.WriteInt32(Level);
       }
+      if (LinkedExpansion.Length != 0) {
+        output.WriteRawTag(186, 1);
+        output.WriteString(LinkedExpansion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -347,6 +371,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (Level != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Level);
+      }
+      if (LinkedExpansion.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(LinkedExpansion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -381,6 +408,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.Level != 0) {
         Level = other.Level;
+      }
+      if (other.LinkedExpansion.Length != 0) {
+        LinkedExpansion = other.LinkedExpansion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -429,6 +459,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             Level = input.ReadInt32();
             break;
           }
+          case 186: {
+            LinkedExpansion = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -474,6 +508,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 144: {
             Level = input.ReadInt32();
+            break;
+          }
+          case 186: {
+            LinkedExpansion = input.ReadString();
             break;
           }
         }

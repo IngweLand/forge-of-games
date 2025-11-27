@@ -9,6 +9,7 @@ public interface ICityMapEntityStyle
     SKPaint CustomizationFillPaint { get; }
     SKPaint DefaultFillPaint { get; }
     SKPaint DefaultStrokePaint { get; }
+    SKPaint LockedFillPaint { get; }
     int NameDefaultTextSize { get; }
     SKPaint NameTextPaint { get; }
     SKPaint NegativeSelectionFillPaint { get; }

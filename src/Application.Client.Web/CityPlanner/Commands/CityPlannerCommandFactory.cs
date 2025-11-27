@@ -61,4 +61,9 @@ public class CityPlannerCommandFactory(ICityPlanner cityPlanner) : ICityPlannerC
     {
         return new ChangeEntitiesLevelCommand(cityPlanner, entities, level);
     }
+
+    public IUndoableCommand CreateToggleEntityLockStateCommand(int cityMapEntityId)
+    {
+        return new ToggleEntityLockStateCommand(cityPlanner, cityMapEntityId);
+    }
 }
