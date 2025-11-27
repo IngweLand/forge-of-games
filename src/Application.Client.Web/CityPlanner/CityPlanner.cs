@@ -189,7 +189,7 @@ public class CityPlanner(
 
         foreach (var entityId in entityIds)
         {
-            if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+            if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity) || !entity.IsMovable)
             {
                 continue;
             }
@@ -207,7 +207,7 @@ public class CityPlanner(
     {
         DeselectAll();
 
-        foreach (var entity in CityMapState.CityMapEntities.Values)
+        foreach (var entity in CityMapState.CityMapEntities.Values.Where(e => e.IsMovable))
         {
             CityMapState.Remove(entity.Id);
             CityMapState.AddToInventory(entity);
