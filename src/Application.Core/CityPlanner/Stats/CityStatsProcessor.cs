@@ -58,7 +58,7 @@ public static class CityStatsProcessor
                             productTuple.OneHour += productStatsItem.OneHourProduction.BuffedValue;
                             productTuple.OneDay += productStatsItem.OneDayProduction.BuffedValue;
                         }
-                        
+
                         foreach (var costItem in productionStatsItem.Cost)
                         {
                             if (!stats.ProductionCosts.TryGetValue(costItem.ResourceId, out var costTuple))
@@ -118,9 +118,14 @@ public static class CityStatsProcessor
             }
         }
 
-        stats.TotalAvailableHappiness += mapAreaHappinessProviders.Sum(src => src.Value);
-        stats.TotalArea = openExpansions.Select(x => x.Bounds).Sum(x => x.Width * x.Height);
-        
+        var areaHappinessList = mapAreaHappinessProviders.ToList();
+        var expansions = openExpansions.Select(x => x.Bounds).ToList();
+        var intersecting = areaHappinessList
+            .Where(x => expansions.Any(y => y.IntersectsWith(x.Bounds)))
+            .ToList();
+        stats.TotalAvailableHappiness += intersecting.Sum(src => src.Value);
+        stats.TotalArea = expansions.Sum(x => x.Width * x.Height);
+
         return stats;
     }
 }
