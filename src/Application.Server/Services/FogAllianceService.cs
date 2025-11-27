@@ -205,6 +205,7 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
             hohAlliance.Id, worldId);
         var existingAlliance = await initQuery
             .Include(p => p.NameHistory)
+            .AsSplitQuery()
             .FirstOrDefaultAsync(x => x.InGameAllianceId == hohAlliance.Id && x.WorldId == worldId);
 
         Alliance alliance;
