@@ -81,7 +81,6 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
     protected void Search(string? name)
     {
-        Console.Out.WriteLine("Search(string? name)");
         NavigateWithQuery(name);
     }
 }
