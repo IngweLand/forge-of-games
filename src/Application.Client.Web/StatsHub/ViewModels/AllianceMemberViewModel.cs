@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
+
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
 public class AllianceMemberViewModel
@@ -13,4 +15,6 @@ public class AllianceMemberViewModel
     public required string RankingPointsFormatted { get; set; }
 
     public string? RoleIconUrl { get; init; }
+    public TreasureHuntDifficultyBasicViewModel? TreasureHuntDifficulty { get; init; }
+    public int TreasureHuntMaxPoints { get; init; }
 }

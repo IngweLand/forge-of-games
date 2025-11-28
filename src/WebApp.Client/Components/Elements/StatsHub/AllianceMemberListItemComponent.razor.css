@@ -2,26 +2,24 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    height: 48px;
+    height: 60px;
     border-bottom: 1px solid var(--fog-border-color);
     position: relative;
     cursor: pointer;
-    flex-shrink: 0;
 }
 
 .rank {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 32px;
-    padding-left: 8px;
+    width: 32px;
     flex-shrink: 0;
 }
 
 .avatar-container {
-    width: 24px;
+    width: 30px;
     flex-shrink: 0;
-    margin-left: 8px;
+    margin-left: 2px;
 }
 
 .avatar {
@@ -67,6 +65,7 @@
     border-radius: 2px;
     line-height: 14px;
     color: var(--fog-text-on-dark-color);
+    margin-top: 1px;
 }
 
 .points {
@@ -95,19 +94,46 @@
     object-fit: contain;
 }
 
+.ath-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.ath-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ath-icon > img {
+    width: auto;
+    object-fit: contain;
+    height: 16px;
+}
+
+.ath-title {
+    font-size: 10px;
+}
+
+.ath-max-points {
+    font-size: 10px;
+    white-space: pre;
+    margin-left: 2px;
+}
+
 @container (min-width: 470px) {
     .component-root {
-        height: 56px;
+        height: 74px;
     }
 
     .rank {
-        min-width: 40px;
-        padding-left: 12px;
+        width: 40px;
     }
 
     .avatar-container {
-        width: 32px;
-        margin-left: 12px;
+        width: 40px;
+        margin-left: 4px;
     }
 
     .content {
@@ -131,6 +157,7 @@
         padding: 0 6px;
         border-radius: 4px;
         line-height: 16px;
+        margin-top: 2px;
     }
 
     .points {
@@ -146,5 +173,22 @@
     .role-icon {
         width: 24px;
         height: 24px;
+    }
+
+    .ath-container {
+        gap: 4px;
+    }
+
+    .ath-icon > img {
+        height: 20px;
+    }
+
+    .ath-title {
+        font-size: 12px;
+    }
+
+    .ath-max-points {
+        font-size: 12px;
+        margin-left: 4px;
     }
 }

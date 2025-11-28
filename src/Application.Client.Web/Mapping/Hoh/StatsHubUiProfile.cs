@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Mapping.Hoh.Converters;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
@@ -74,7 +75,29 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)))
             .ForMember(dest => dest.RoleIconUrl,
-                opt => opt.ConvertUsing<AllianceMemberRoleToIconUrlConverter, AllianceMemberRole>(src => src.Role));
+                opt => opt.ConvertUsing<AllianceMemberRoleToIconUrlConverter, AllianceMemberRole>(src => src.Role))
+            .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
+            {
+                opt.PreCondition(src => src.TreasureHuntDifficulty.HasValue);
+                opt.MapFrom((src, _, _, context) =>
+                {
+                    var treasureHuntDifficulties =
+                        context.Items.GetRequiredItem<IReadOnlyDictionary<int, TreasureHuntDifficultyBasicViewModel>>(
+                            ResolutionContextKeys.TREASURE_HUNT_DIFFICULTY_VMS);
+                    return treasureHuntDifficulties!.GetValueOrDefault(src.TreasureHuntDifficulty!.Value, null);
+                });
+            })
+            .ForMember(dest => dest.TreasureHuntMaxPoints, opt =>
+            {
+                opt.PreCondition(src => src.TreasureHuntDifficulty.HasValue);
+                opt.MapFrom((src, _, _, context) =>
+                {
+                    var maxPointsMap =
+                        context.Items.GetRequiredItem<IReadOnlyDictionary<int, int>>(ResolutionContextKeys
+                            .TREASURE_HUNT_DIFFICULTY_POINTS_MAP);
+                    return maxPointsMap.GetValueOrDefault(src.TreasureHuntDifficulty!.Value, 0);
+                });
+            });
 
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.RankingPointsFormatted,

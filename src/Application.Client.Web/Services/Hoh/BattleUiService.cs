@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
@@ -20,7 +19,7 @@ public class BattleUiService(
     IHeroProfileUiService heroProfileUiService,
     IBattleStatsViewModelFactory battleStatsViewModelFactory,
     IBattleViewModelFactory battleViewModelFactory,
-    IHohCoreDataViewModelsCache coreDataViewModelsCache) : IBattleUiService
+    ITreasureHuntUiService treasureHuntUiService) : IBattleUiService
 {
     private readonly HashSet<BattleType> _unitBattleTypes =
     [
@@ -47,7 +46,7 @@ public class BattleUiService(
     public async Task<BattleSelectorViewModel> GetBattleSelectorViewModel()
     {
         var campaignTask = campaignUiService.GetCampaignContinentsBasicDataAsync();
-        var treasureHuntTask = coreDataViewModelsCache.GetBasicTreasureHuntDifficultiesAsync();
+        var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
         var historicBattlesTask = campaignUiService.GetHistoricBattlesBasicDataAsync();
         var teslaStormTask = campaignUiService.GetTeslaStormRegionsBasicDataAsync();
         var heroesTask = heroProfileUiService.GetHeroes();
@@ -87,10 +86,9 @@ public class BattleUiService(
 
         return await battleViewModelFactory.CreateBattleViewModel(result);
     }
-    
+
     public Task<HeroProfileViewModel> CreateHeroProfile(HeroProfileBasicViewModel profile)
     {
         return battleViewModelFactory.CreateHeroProfileAsync(profile.Hero, profile.SupportUnit);
     }
-
 }

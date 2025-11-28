@@ -23,7 +23,6 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly ICommonService _commonService;
     private readonly ICommonUiService _commonUiService;
     private readonly IHohCoreDataCache _coreDataCache;
-    private readonly IHohCoreDataViewModelsCache _coreDataViewModelsCache;
     private readonly IHeroProfileUiService _heroProfileUiService;
     private readonly IMapper _mapper;
     private readonly IStatsHubService _statsHubService;
@@ -40,7 +39,6 @@ public class StatsHubUiService : IStatsHubUiService
         IHeroProfileUiService heroProfileUiService,
         IBattleViewModelFactory battleViewModelFactory,
         IHohCoreDataCache coreDataCache,
-        IHohCoreDataViewModelsCache coreDataViewModelsCache,
         IMapper mapper,
         IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
         ICommonUiService commonUiService)
@@ -53,7 +51,6 @@ public class StatsHubUiService : IStatsHubUiService
         _heroProfileUiService = heroProfileUiService;
         _battleViewModelFactory = battleViewModelFactory;
         _coreDataCache = coreDataCache;
-        _coreDataViewModelsCache = coreDataViewModelsCache;
         _mapper = mapper;
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
         _commonUiService = commonUiService;
@@ -71,7 +68,7 @@ public class StatsHubUiService : IStatsHubUiService
 
         var heroIds = player.Squads.Select(x => x.Hero.UnitId).ToHashSet();
         var heroes = await _coreDataCache.GetHeroes(heroIds);
-        var treasureHuntDifficulties = await _coreDataViewModelsCache.GetBasicTreasureHuntDifficultiesAsync();
+        var treasureHuntDifficulties = await _treasureHuntUiService.GetDifficultiesAsync();
         var playerTreasureHuntDifficulty = player.TreasureHuntDifficulty != null
             ? treasureHuntDifficulties.FirstOrDefault(x => x.Difficulty == player.TreasureHuntDifficulty.Value)
             : null;
@@ -139,7 +136,11 @@ public class StatsHubUiService : IStatsHubUiService
             return null;
         }
 
-        return _statsHubViewModelsFactory.CreateAlliance(alliance, await _ages.Value);
+        var treasureHuntDifficulties = await _treasureHuntUiService.GetDifficultiesAsync();
+        var maxPoints = await _treasureHuntUiService.GetDifficultyMaxProgressPointsMapAsync();
+
+        return _statsHubViewModelsFactory.CreateAlliance(alliance, await _ages.Value, treasureHuntDifficulties,
+            maxPoints);
     }
 
     public async Task<IReadOnlyCollection<AllianceAthRankingViewModel>> GetAllianceAthRankingsAsync(int allianceId)

@@ -15,6 +15,7 @@ public class TreasureHuntUiService(
 {
     private readonly Dictionary<(int difficulty, int stageIndex), TreasureHuntStageViewModel> _stages = new();
     private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+    private IReadOnlyDictionary<int, int>? _difficultyMaxProgressPointsMap;
     private IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>>? _treasureHuntEncounterMap;
 
     public int GetDifficultyMaxProgressPoints(int difficulty)
@@ -68,5 +69,20 @@ public class TreasureHuntUiService(
             .AsReadOnly();
 
         return _treasureHuntEncounterMap;
+    }
+
+    public async Task<IReadOnlyDictionary<int, int>> GetDifficultyMaxProgressPointsMapAsync()
+    {
+        if (_difficultyMaxProgressPointsMap != null)
+        {
+            return _difficultyMaxProgressPointsMap;
+        }
+
+        _ = await GetDifficultiesAsync();
+
+        _difficultyMaxProgressPointsMap =
+            _difficulties!.ToDictionary(x => x.Difficulty, x => GetDifficultyMaxProgressPoints(x.Difficulty));
+
+        return _difficultyMaxProgressPointsMap;
     }
 }

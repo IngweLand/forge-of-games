@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
@@ -27,10 +26,18 @@ public class StatsHubViewModelsFactory(
     }
 
     public AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
-        IReadOnlyDictionary<string, AgeDto> ages)
+        IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
+        IReadOnlyDictionary<int, int> treasureHuntMaxPointsMap)
     {
+        var d = treasureHuntDifficulties.ToDictionary(x => x.Difficulty).AsReadOnly();
         return mapper.Map<AllianceWithRankingsViewModel>(alliance,
-            opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
+            opt =>
+            {
+                opt.Items[ResolutionContextKeys.AGES] = ages;
+                opt.Items[ResolutionContextKeys.TREASURE_HUNT_DIFFICULTY_VMS] = d;
+                opt.Items[ResolutionContextKeys.TREASURE_HUNT_DIFFICULTY_POINTS_MAP] = treasureHuntMaxPointsMap;
+            });
     }
 
     public PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players)

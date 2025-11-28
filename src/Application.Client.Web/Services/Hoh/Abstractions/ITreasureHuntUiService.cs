@@ -11,4 +11,6 @@ public interface ITreasureHuntUiService
 
     Task<IReadOnlyDictionary<(int difficulty, int stage), ReadOnlyDictionary<int, int>>>
         GetBattleEncounterToIndexMapAsync();
+
+    Task<IReadOnlyDictionary<int, int>> GetDifficultyMaxProgressPointsMapAsync();
 }

@@ -28,7 +28,9 @@ public interface IStatsHubViewModelsFactory
         IReadOnlyCollection<HeroBasicViewModel> heroes);
 
     AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
-        IReadOnlyDictionary<string, AgeDto> ages);
+        IReadOnlyDictionary<string, AgeDto> ages,
+        IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
+        IReadOnlyDictionary<int, int> treasureHuntMaxPointsMap);
 
     PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players);
 }

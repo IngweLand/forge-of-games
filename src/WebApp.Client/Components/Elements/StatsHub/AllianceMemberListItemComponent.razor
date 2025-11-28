@@ -20,6 +20,13 @@
                 @Member.Name
             </span>
         </div>
+        <div class="ath-container">
+            <div class="ath-icon">
+                <img src="@Member.TreasureHuntDifficulty?.IconUrl"/>
+            </div>
+            <span class="ath-title">@Member.TreasureHuntDifficulty?.Name</span>
+            <span class="ath-max-points">@Loc[FogResource.Common_Max]: @Member.TreasureHuntMaxPoints</span>
+        </div>
         <div class="age-label" style="background-color: @Member.AgeColor">@Member.Age</div>
     </div>
     <div class="points"

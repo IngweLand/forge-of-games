@@ -128,7 +128,6 @@ public static class DependencyInjection
         services.AddScoped<IHeroRelicViewModelFactory, HeroRelicViewModelFactory>();
         services.AddScoped<IBattleViewModelFactory, BattleViewModelFactory>();
         services.AddScoped<IBattleUiService, BattleUiService>();
-        services.AddScoped<IHohCoreDataViewModelsCache, HohCoreDataViewModelsCache>();
         services.AddScoped<IAllianceMemberRoleIconUrlProvider, AllianceMemberRoleIconUrlProvider>();
         services.AddScoped<IAlliancePageAnalyticsService, AlliancePageAnalyticsService>();
         services.AddScoped<IEquipmentInsightsViewModelFactory, EquipmentInsightsViewModelFactory>();
