@@ -76,7 +76,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetAllianceAthRankingsQuery q => $"AllianceAthRankings:{q.AllianceId}",
             GetPlayerPvpRankingsQuery q => $"PlayerPvpRankings:{q.PlayerId}",
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
-            GetTopAllianceAthRankingsQuery q => $"TopAllianceAthRankings:{q.WorldId}:{q.League}",
+            GetAlliancesAthRankingsQuery q => $"AlliancesAthRankings:{q.WorldId}:{q.League}:{q.StartIndex}:{q.PageSize}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

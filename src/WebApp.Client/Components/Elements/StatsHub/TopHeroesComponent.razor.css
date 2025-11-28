@@ -4,7 +4,6 @@
     align-items: center;
     width: 100%;
     max-width: 550px;
-    padding: 0 0 8px 0;
     overflow: hidden;
 }
 
@@ -20,20 +19,20 @@
 }
 
 .items-container {
-    margin-bottom: 16px;
     padding: 4px;
     flex: 1;
     align-items: center;
 }
 
 .button-container {
-    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    margin: 8px 0;
 }
 
 @media (min-width: 576px) {
-    .component-root {
-        padding: 0 0 12px 0;
-    }
 
     .title {
         font-size: 18px;
@@ -41,7 +40,10 @@
     }
 
     .items-container {
-        margin-bottom: 24px;
         padding: 8px;
+    }
+
+    .button-container {
+        margin: 12px 0;
     }
 }

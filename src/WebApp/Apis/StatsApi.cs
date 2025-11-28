@@ -240,7 +240,7 @@ public static class StatsApi
     
     private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
         GetAlliancesAthRankingsAsync([AsParameters] StatsServices services, HttpContext context,
-            [AsParameters] GetTopAllianceAthRankingsQuery query,
+            [AsParameters] GetAlliancesAthRankingsQuery query,
             CancellationToken ct = default)
     {
         var result = await services.Mediator.Send(query, ct);

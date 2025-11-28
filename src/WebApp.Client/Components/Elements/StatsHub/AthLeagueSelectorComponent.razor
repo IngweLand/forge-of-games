@@ -1,0 +1,43 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Dtos.Hoh
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IAssetUrlProvider AssetUrlProvider
+<MudSelect Label="@Loc[FogResource.TreasureHuntLeagueSelector_Label]" Margin="Margin.Dense"
+           Value="@_selectedLeague" T="TreasureHuntLeagueDto"
+           ValueChanged="@(x => LeagueChanged.InvokeAsync(x.League))"
+           Variant="Variant.Outlined" Dense="true" FullWidth="true">
+
+    @foreach (var league in Leagues)
+    {
+        <MudSelectItem Value="@league">
+            <div class="league-selector-item">
+                <img src="@AssetUrlProvider.GetHohTreasureHuntLeagueIconUrl(league.League)"/>
+                <span>@league.Name</span>
+            </div>
+        </MudSelectItem>
+    }
+</MudSelect>
+
+@code {
+    private TreasureHuntLeagueDto? _selectedLeague;
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<TreasureHuntLeagueDto> Leagues { get; init; } = [];
+
+    [Parameter]
+    public EventCallback<TreasureHuntLeague> LeagueChanged { get; set; }
+
+    [Parameter]
+    public TreasureHuntLeague SelectedLeague { get; set; } = TreasureHuntLeague.Overlord;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        _selectedLeague = Leagues.First(x => x.League == SelectedLeague);
+    }
+
+}

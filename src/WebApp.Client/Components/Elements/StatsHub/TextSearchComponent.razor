@@ -1,0 +1,45 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IJSInteropService JsInteropService
+<MudTextField @ref="@_nameSearchField" DebounceInterval="500" OnDebounceIntervalElapsed="OnSearch"
+              Value="@_nameSearchString" Label="@Loc[FogResource.StatsHub_NameSearchField_Label]"
+              Variant="Variant.Outlined" Immediate="true" Clearable="true"
+              AdornmentIcon="@Icons.Material.Filled.Search" Adornment="Adornment.End"
+              OnClearButtonClick="OnClearButtonClick"/>
+
+@code {
+    private MudTextField<string> _nameSearchField = null!;
+    private string? _nameSearchString;
+    
+    [Parameter]
+    [EditorRequired]
+    public EventCallback<string> OnSearch { get; set; }
+    
+    [Parameter]
+    [EditorRequired]
+    public string? NameSearchString
+    {
+        get => _nameSearchString;
+        set
+        {
+            if (_nameSearchString == value)
+            {
+                return;
+            }
+
+            _nameSearchString = value;
+        }
+    }
+    
+    private async Task OnClearButtonClick()
+    {
+        if (await JsInteropService.IsMobileAsync())
+        {
+            await _nameSearchField.BlurAsync();
+        }
+
+        await OnSearch.InvokeAsync();
+    }
+}

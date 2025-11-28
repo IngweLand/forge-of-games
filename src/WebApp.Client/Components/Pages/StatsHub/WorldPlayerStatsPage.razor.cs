@@ -16,7 +16,7 @@ public partial class WorldPlayerStatsPage : WorldStatsPageBase<PlayerViewModel>
 
     protected override async ValueTask<PaginatedList<PlayerViewModel>> FetchDataAsync(ItemsProviderRequest request)
     {
-        return await StatsHubUiService.GetPlayerStatsAsync(WorldId, request.StartIndex, request.Count, Name,
+        return await StatsHubUiService.GetPlayerStatsAsync(WorldId, request.StartIndex, request.Count, Q,
             request.CancellationToken);
     }
 }

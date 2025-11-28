@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Refit;
@@ -8,12 +9,13 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 {
     private bool _isNavigatingAway;
+    protected PaginatedStatsListComponent<TItem>? _listComponent;
 
     [Parameter]
     [SupplyParameterFromQuery]
-    public string? Name { get; set; }
+    public string? Q { get; set; }
 
-    protected string? NameSearchString { get; private set; }
+    protected string? QueryItem { get; private set; }
 
     protected string Title { get; private set; }
 
@@ -31,12 +33,19 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
         Title = GetTitle();
 
-        NameSearchString = Name;
+        QueryItem = Q;
 
         if (OperatingSystem.IsBrowser())
         {
+            await RequestDataRefreshAsync();
             IsInitialized = true;
         }
+    }
+    
+    protected virtual Task RequestDataRefreshAsync()
+    {
+         _listComponent?.RequestDataRefresh();
+         return Task.CompletedTask;
     }
 
     protected abstract string GetTitle();
@@ -64,11 +73,11 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
         return new ItemsProviderResult<TItem>([], 0);
     }
 
-    private void NavigateWithQuery(string? nameSearchString)
+    private void NavigateWithQuery(string? queryItem)
     {
         var query = new Dictionary<string, object?>
         {
-            {nameof(Name), nameSearchString},
+            {nameof(Q).ToLowerInvariant(), queryItem},
         };
 
         NavigationManager.NavigateTo(NavigationManager.GetUriWithQueryParameters(query), false);

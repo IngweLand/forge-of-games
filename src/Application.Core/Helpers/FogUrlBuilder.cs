@@ -69,9 +69,9 @@ public static class FogUrlBuilder
 
         public const string RELICS_DATA = "/relics/data";
         public const string RELICS_INSIGHTS_TEMPLATE = "/relics/insights/{unitId}";
-        
+
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
-        
+
         public const string COMMAND_CENTER_SHARED_SUBMISSION_ID = "/commandCenter/sharedSubmissionId";
         public const string EQUIPMENT_INSIGHTS_TEMPLATE = "/equipment/insights/{unitId}";
         public const string EQUIPMENT_DATA = "/equipment/data";
@@ -121,6 +121,7 @@ public static class FogUrlBuilder
         public const string SUPPORT_US_PATH = "/support-us";
         public const string WORLD_PLAYERS_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/players";
         public const string WORLD_ALLIANCES_TEMPLATE = BASE_STATS_HUB_PATH + "/worlds/{worldId}/alliances";
+        public const string WORLD_ALLIANCES_ATH_TEMPLATE = WORLD_ALLIANCES_TEMPLATE + "/ath";
         public const string PLAYER_PROFILE_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/profile";
         public const string PLAYER_BATTLES_TEMPLATE = BASE_STATS_HUB_PATH + "/players/{playerId:int}/battles";
         public const string ALLIANCE_TEMPLATE = BASE_STATS_HUB_PATH + "/alliances/{allianceId:int}";
@@ -192,6 +193,16 @@ public static class FogUrlBuilder
             }
 
             return WORLD_ALLIANCES_TEMPLATE.Replace("{worldId}", worldId);
+        }
+
+        public static string WorldAlliancesAth(string worldId)
+        {
+            if (string.IsNullOrWhiteSpace(worldId))
+            {
+                throw new ArgumentNullException(nameof(worldId));
+            }
+
+            return WORLD_ALLIANCES_ATH_TEMPLATE.Replace("{worldId}", worldId);
         }
 
         public static string PlayerBattles(int playerId)

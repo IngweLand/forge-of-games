@@ -4,7 +4,6 @@
     align-items: center;
     width: 100%;
     max-width: 550px;
-    padding: 0 0 8px 0;
     overflow: hidden;
 }
 
@@ -23,47 +22,33 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    margin-bottom: 4px;
     align-self: stretch;
     container-type: inline-size;
 }
 
 .button-container {
-    align-self: center;
-}
-
-.league-selector-item {
-    display: flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 52px;
+    margin: 8px 0;
 }
 
-.league-selector-item>img {
-    height: 16px;
-    width: 16px;
+.wrapper {
+    align-self: center;
+    justify-self: center;
 }
 
 @media (min-width: 576px) {
-    .component-root {
-        padding: 0 0 12px 0;
-    }
 
     .title {
         font-size: 18px;
         height: 44px;
     }
-
-    .items-container {
-        margin-bottom: 8px;
-    }
-
-    .league-selector-item {
-        gap: 8px;
-    }
-
-    .league-selector-item>img {
-        height: 24px;
-        width: 24px;
+    
+    .button-container {
+        margin: 12px 0;
     }
 }

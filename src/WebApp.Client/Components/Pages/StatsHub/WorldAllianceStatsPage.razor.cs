@@ -16,7 +16,7 @@ public partial class WorldAllianceStatsPage : WorldStatsPageBase<AllianceViewMod
 
     protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(ItemsProviderRequest request)
     {
-        return await StatsHubUiService.GetAllianceStatsAsync(WorldId, request.StartIndex, request.Count, Name,
+        return await StatsHubUiService.GetAllianceStatsAsync(WorldId, request.StartIndex, request.Count, Q,
             request.CancellationToken);
     }
 }

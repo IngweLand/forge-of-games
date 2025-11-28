@@ -12,9 +12,9 @@
 .rank {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     min-width: 32px;
-    padding: 0 8px;
+    padding: 0 0 0 8px;
     flex-shrink: 0;
 }
 
@@ -75,7 +75,7 @@
 
     .rank {
         min-width: 40px;
-        padding: 0 12px;
+        padding: 0 0 0 12px;
     }
 
     .avatar-container {

@@ -185,10 +185,10 @@ public class StatsHubUiService : IStatsHubUiService
         return await _battleViewModelFactory.CreateBattleSummaryViewModels(result.Battles, request.BattleType);
     }
 
-    public async Task<PaginatedList<AllianceViewModel>> GetTopAllianceAthRankingsAsync(string worldId,
-        TreasureHuntLeague league, CancellationToken ct = default)
+    public async Task<PaginatedList<AllianceViewModel>> GetAlliancesAthRankingsAsync(string worldId, int startIndex,
+        int pageSize, TreasureHuntLeague league, CancellationToken ct = default)
     {
-        var result = await _statsHubService.GetAlliancesAthRankingsAsync(worldId, league: league, ct: ct);
+        var result = await _statsHubService.GetAlliancesAthRankingsAsync(worldId, startIndex, pageSize, league, ct);
         return _statsHubViewModelsFactory.CreateAlliances(result);
     }
 

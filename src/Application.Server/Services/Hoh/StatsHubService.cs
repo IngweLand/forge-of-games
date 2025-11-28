@@ -117,10 +117,12 @@ public class StatsHubService(ISender sender) : IStatsHubService
         int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, TreasureHuntLeague league = TreasureHuntLeague.Overlord,
         CancellationToken ct = default)
     {
-        var query = new GetTopAllianceAthRankingsQuery
+        var query = new GetAlliancesAthRankingsQuery
         {
             WorldId = worldId,
             League = league,
+            StartIndex = startIndex,
+            PageSize = pageSize,
         };
         return sender.Send(query, ct);
     }

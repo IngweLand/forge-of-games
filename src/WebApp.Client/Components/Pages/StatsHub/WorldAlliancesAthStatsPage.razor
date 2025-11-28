@@ -1,18 +1,19 @@
-@attribute [Route(FogUrlBuilder.PageRoutes.WORLD_ALLIANCES_TEMPLATE)]
+@attribute [Route(FogUrlBuilder.PageRoutes.WORLD_ALLIANCES_ATH_TEMPLATE)]
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits WorldStatsPageBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.AllianceViewModel>
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title"  ItemsProviderDelegate="GetDataAsync">
+    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title" Items="@_items" IsLoading="@_isLoading">
         <FilterTemplate>
-            <TextSearchComponent OnSearch="Search" NameSearchString="@QueryItem"></TextSearchComponent>
+            <AthLeagueSelectorComponent Leagues="@_treasureHuntLeagues" SelectedLeague="@_selectedLeague"
+                                        LeagueChanged="@OnLeagueChanged"/>
         </FilterTemplate>
         <ItemTemplate>
             <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(context.Id)"
                @onclick="OnItemClicked">
-                <AllianceListItemComponent Alliance="@context"/>
+                <AllianceListItemComponent ShowRank="true" Alliance="@context"/>
             </a>
         </ItemTemplate>
     </PaginatedStatsListComponent>

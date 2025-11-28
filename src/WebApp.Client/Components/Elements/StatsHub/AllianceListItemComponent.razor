@@ -3,26 +3,38 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Alliance)">
+    @if (ShowRank)
+    {
+        <div class="rank">
+            @Alliance.Rank
+        </div>
+    }
+
     <div class="avatar-container">
         <img class="avatar-background" src="@Alliance.AvatarBackgroundUrl"/>
         <img class="avatar-icon" src="@Alliance.AvatarIconUrl"/>
     </div>
     <div class="content">
-            <span class="content-label" style="color: @(Alliance.IsDeleted ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
-                @Alliance.Name
-            </span>
+        <span class="content-label"
+              style="color: @(Alliance.IsDeleted ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+            @Alliance.Name
+        </span>
     </div>
-    <div class="points" style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
+    <div class="points"
+         style="color: @(Alliance.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
         @Alliance.RankingPointsFormatted
     </div>
 </div>
 
 @code {
 
-    [Parameter, EditorRequired]
+    [Parameter][EditorRequired]
     public required AllianceViewModel Alliance { get; set; }
 
     [Parameter]
     public EventCallback<AllianceViewModel> OnClick { get; set; }
+
+    [Parameter]
+    public bool ShowRank { get; set; }
 
 }

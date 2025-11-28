@@ -1,14 +1,13 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Dtos.Hoh
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @using Refit
 @inject IStringLocalizer<FogResource> Loc
-@inject IAssetUrlProvider AssetUrlProvider
 <div class="fog-container component-root">
     <div class="title">@Title</div>
     <div class="items-container">
@@ -22,20 +21,14 @@
     @if (Leagues != null)
     {
         <div class="button-container">
-            <MudSelect Label="@Loc[FogResource.TreasureHuntLeagueSelector_Label]" Margin="Margin.Dense"
-                       Value="@_selectedLeague" T="TreasureHuntLeagueDto" ValueChanged="@OnLeagueChanged"
-                       Variant="Variant.Outlined" Dense="true" FullWidth="true">
-
-                @foreach (var league in Leagues)
-                {
-                    <MudSelectItem Value="@league">
-                        <div class="league-selector-item">
-                            <img src="@AssetUrlProvider.GetHohTreasureHuntLeagueIconUrl(league.League)"/>
-                            <span>@league.Name</span>
-                        </div>
-                    </MudSelectItem>
-                }
-            </MudSelect>
+            <div class="wrapper">
+                <AthLeagueSelectorComponent Leagues="@Leagues" SelectedLeague="@_selectedLeague"
+                                            LeagueChanged="@OnLeagueChanged"/>
+            </div>
+            <div class="wrapper">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="margin-top: 4px"
+                           Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+            </div>
         </div>
     }
 
@@ -45,6 +38,10 @@
 
     [Parameter]
     public required string Title { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string ViewAllUrl { get; set; }
 
     private IReadOnlyCollection<AllianceViewModel> _alliances = [];
 
@@ -56,7 +53,7 @@
     [EditorRequired]
     public required string WorldId { get; set; }
 
-    private TreasureHuntLeagueDto? _selectedLeague;
+    private TreasureHuntLeague _selectedLeague = TreasureHuntLeague.Overlord;
     private CancellationTokenSource? _athRankingsCts;
 
     [Inject]
@@ -66,11 +63,10 @@
     {
         await base.OnParametersSetAsync();
 
-        _selectedLeague = Leagues?.First(x => x.League == TreasureHuntLeague.Overlord);
         await GetItems();
     }
 
-    private async Task OnLeagueChanged(TreasureHuntLeagueDto league)
+    private async Task OnLeagueChanged(TreasureHuntLeague league)
     {
         _selectedLeague = league;
         await GetItems();
@@ -89,7 +85,8 @@
 
         try
         {
-            var result = await StatsHubUiService.GetTopAllianceAthRankingsAsync(WorldId, _selectedLeague!.League);
+            var result = await StatsHubUiService
+                .GetAlliancesAthRankingsAsync(WorldId, 0, FogConstants.DEFAULT_STATS_PAGE_SIZE, _selectedLeague);
             _alliances = result.Items;
         }
         catch (OperationCanceledException _)

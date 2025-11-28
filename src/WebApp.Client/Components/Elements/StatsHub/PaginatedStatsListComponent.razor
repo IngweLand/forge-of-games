@@ -27,15 +27,13 @@
             }
         </div>
         <div class="search-form">
-            <MudTextField @ref="@_nameSearchField" DebounceInterval="500" OnDebounceIntervalElapsed="OnSearch"
-                          Value="@_nameSearchString" Label="@Loc[FogResource.StatsHub_NameSearchField_Label]"
-                          Variant="Variant.Outlined" Immediate="true" Clearable="true"
-                          AdornmentIcon="@Icons.Material.Filled.Search" Adornment="Adornment.End"
-                          OnClearButtonClick="OnClearButtonClick"/>
+            @FilterTemplate
         </div>
         <div class="items-container" @ref="_itemsContainer">
 
-            <Virtualize Context="item" @ref="_virtualizeComponent" ItemsProvider="GetItemsAsync" OverscanCount="10">
+            <Virtualize Context="item" @ref="_virtualizeComponent" Items="@Items"
+                        ItemsProvider="@(ItemsProviderDelegate != null ? GetItemsAsync : null)"
+                        OverscanCount="10">
                 <ItemContent>
                     @ItemTemplate(item)
                 </ItemContent>
@@ -55,10 +53,8 @@
 
     private bool _shouldShowContributionPrompt = true;
     private Virtualize<TItem>? _virtualizeComponent;
-    private ElementReference _itemsContainer;
+    private ElementReference? _itemsContainer;
     private bool _isLoading;
-    private MudTextField<string> _nameSearchField = null!;
-    private string? _nameSearchString;
     private readonly ItemsProviderResult<TItem> _emptyResult = new([], 0);
     private CancellationTokenSource? _currentRequestTokenSource;
 
@@ -68,44 +64,56 @@
 
     [Parameter]
     [EditorRequired]
+    public RenderFragment FilterTemplate { get; set; }
+
+    [Parameter]
+    [EditorRequired]
     public string Title { get; set; }
 
     [Parameter]
-    [EditorRequired]
-    public EventCallback<string> OnSearch { get; set; }
+    public ICollection<TItem>? Items { get; set; }
 
     [Parameter]
-    [EditorRequired]
-    public string? NameSearchString
+    public ItemsProviderDelegate<TItem>? ItemsProviderDelegate { get; set; }
+    
+    [Parameter]
+    public bool IsLoading { get => _isLoading; set => _isLoading = value; }
+
+    public void RequestDataRefresh()
     {
-        get => _nameSearchString;
-        set
+        if (_virtualizeComponent != null)
         {
-            if (_nameSearchString == value)
+            InvokeAsync(async () =>
             {
-                return;
-            }
-
-            _nameSearchString = value;
-
-            if (_virtualizeComponent != null)
-            {
-                InvokeAsync(async () =>
+                if (_itemsContainer != null)
                 {
-                    await JsInteropService.ScrollTo(_itemsContainer, 0);
-                    await _virtualizeComponent.RefreshDataAsync();
-                    StateHasChanged();
-                });
-            }
+                    await JsInteropService.ScrollTo(_itemsContainer.Value, 0);
+                }
+               
+                await _virtualizeComponent.RefreshDataAsync();
+                StateHasChanged();
+            });
         }
     }
 
-    [Parameter]
-    [EditorRequired]
-    public ItemsProviderDelegate<TItem> ItemsProviderDelegate { get; set; }
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        if (Items != null && _itemsContainer != null)
+        {
+            await JsInteropService.ScrollTo(_itemsContainer.Value, 0);
+            StateHasChanged();
+        }
+    }
 
     private async ValueTask<ItemsProviderResult<TItem>> GetItemsAsync(ItemsProviderRequest request)
     {
+        if (ItemsProviderDelegate == null)
+        {
+            return new ItemsProviderResult<TItem>([], 0);
+        }
+        
         if (_currentRequestTokenSource != null)
         {
             await _currentRequestTokenSource.CancelAsync();
@@ -129,16 +137,6 @@
         {
             return _emptyResult;
         }
-    }
-
-    private async Task OnClearButtonClick()
-    {
-        if (await JsInteropService.IsMobileAsync())
-        {
-            await _nameSearchField.BlurAsync();
-        }
-
-        await OnSearch.InvokeAsync();
     }
 
     private async Task OnContributionPromptClick()

@@ -5,8 +5,10 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent Title="@Title" OnSearch="Search" ItemsProviderDelegate="GetDataAsync"
-                                 NameSearchString="@NameSearchString">
+    <PaginatedStatsListComponent  @ref="@_listComponent" Title="@Title" ItemsProviderDelegate="GetDataAsync">
+        <FilterTemplate>
+            <TextSearchComponent OnSearch="Search" NameSearchString="@QueryItem"></TextSearchComponent>
+        </FilterTemplate>
         <ItemTemplate>
             <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(context.Id)"
                @onclick="OnItemClicked">

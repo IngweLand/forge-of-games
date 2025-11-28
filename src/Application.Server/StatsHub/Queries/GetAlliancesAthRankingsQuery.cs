@@ -11,18 +11,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetTopAllianceAthRankingsQuery : IRequest<PaginatedList<AllianceDto>>, ICacheableRequest
+public record GetAlliancesAthRankingsQuery : IRequest<PaginatedList<AllianceDto>>, ICacheableRequest
 {
     public required TreasureHuntLeague League { get; init; }
+    public int PageSize { get; init; }
+    public int StartIndex { get; init; }
     public required string WorldId { get; init; }
-    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public TimeSpan? Duration => TimeSpan.FromHours(1);
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetTopAllianceAthRankingsQueryHandler(IFogDbContext context, IMapper mapper)
-    : IRequestHandler<GetTopAllianceAthRankingsQuery, PaginatedList<AllianceDto>>
+public class GetAlliancesAthRankingsQueryHandler(IFogDbContext context, IMapper mapper)
+    : IRequestHandler<GetAlliancesAthRankingsQuery, PaginatedList<AllianceDto>>
 {
-    public async Task<PaginatedList<AllianceDto>> Handle(GetTopAllianceAthRankingsQuery request,
+    public async Task<PaginatedList<AllianceDto>> Handle(GetAlliancesAthRankingsQuery request,
         CancellationToken cancellationToken)
     {
         var now = DateTime.UtcNow;
@@ -44,10 +46,17 @@ public class GetTopAllianceAthRankingsQueryHandler(IFogDbContext context, IMappe
             }
         }
 
-        var topRankings = await context.AllianceAthRankings
-            .Where(x => x.League == request.League && x.InGameEventId == latestAthEvent.Id)
+// TODO implement validator instead
+        var pageSize = Math.Min(request.PageSize, FogConstants.MAX_ALLIANCES_ATH_RANKINGS);
+        var topRankingsQuery = context.AllianceAthRankings
+            .Where(x => x.League == request.League && x.InGameEventId == latestAthEvent.Id);
+
+        var total = Math.Min(await topRankingsQuery.CountAsync(cancellationToken),
+            FogConstants.MAX_ALLIANCES_ATH_RANKINGS);
+        var topRankings = await topRankingsQuery
             .OrderByDescending(x => x.Points)
-            .Take(FogConstants.DEFAULT_STATS_PAGE_SIZE)
+            .Skip(request.StartIndex)
+            .Take(pageSize)
             .ToDictionaryAsync(x => x.AllianceId, cancellationToken);
 
         var allianceIds = topRankings.Select(x => x.Key).ToHashSet();
@@ -61,7 +70,15 @@ public class GetTopAllianceAthRankingsQueryHandler(IFogDbContext context, IMappe
             x.RankingPoints = topRankings[x.Id].Points;
             x.UpdatedAt = today;
         });
-        return new PaginatedList<AllianceDto>(alliances.OrderByDescending(x => x.RankingPoints).ToList(), 0,
-            alliances.Count);
+        return new PaginatedList<AllianceDto>(
+            alliances
+                .OrderByDescending(x => x.RankingPoints)
+                .Select((x, i) =>
+                {
+                    x.Rank = request.StartIndex + i + 1;
+                    return x;
+                })
+                .ToList(),
+            request.StartIndex, total);
     }
 }

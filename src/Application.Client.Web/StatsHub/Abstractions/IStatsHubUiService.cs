@@ -31,6 +31,6 @@ public interface IStatsHubUiService
     Task<IReadOnlyCollection<AllianceAthRankingViewModel>> GetAllianceAthRankingsAsync(int allianceId);
     Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId);
 
-    Task<PaginatedList<AllianceViewModel>> GetTopAllianceAthRankingsAsync(string worldId,
+    Task<PaginatedList<AllianceViewModel>> GetAlliancesAthRankingsAsync(string worldId,int startIndex, int pageSize,
         TreasureHuntLeague league, CancellationToken ct = default);
 }
