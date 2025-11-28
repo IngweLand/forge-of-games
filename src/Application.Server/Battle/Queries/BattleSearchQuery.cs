@@ -55,7 +55,7 @@ public class BattleSearchQueryHandler(
             battlesQuery = battlesQuery
                 .Where(src => src.BattleDefinitionId == request.BattleDefinitionId);
         }
-        
+
         if (request.ResultStatus != BattleResultStatus.Undefined)
         {
             battlesQuery = battlesQuery.Where(src => src.ResultStatus == request.ResultStatus);
@@ -72,7 +72,6 @@ public class BattleSearchQueryHandler(
         var battles = await battlesQuery
             .OrderByDescending(src => src.Id)
             .Take(FogConstants.MaxDisplayedBattles)
-            .AsSplitQuery()
             .ToListAsync(cancellationToken);
 
         if (sw is not null)
@@ -112,16 +111,18 @@ public class BattleSearchQueryHandler(
         HashSet<string> unitIds, string battleDefinitionId,
         BattleType battleType)
     {
-        if (battleType == BattleType.Pvp)
+        var requiredCount = unitIds.Count;
+
+        srcQuery = srcQuery.Where(b => b.BattleDefinitionId == battleDefinitionId);
+
+        // For PvE, only count player's units
+        if (battleType != BattleType.Pvp)
         {
-            return srcQuery
-                .Where(b => b.BattleDefinitionId == battleDefinitionId &&
-                    unitIds.All(requiredId => b.Units.Any(u => u.UnitId == requiredId)));
+            return srcQuery.Where(b =>
+                b.Units.Count(u => unitIds.Contains(u.UnitId) && u.Side == BattleSquadSide.Player) == requiredCount);
         }
 
-        return srcQuery
-            .Where(b => b.BattleDefinitionId == battleDefinitionId &&
-                unitIds.All(requiredId =>
-                    b.Units.Any(u => u.UnitId == requiredId && u.Side == BattleSquadSide.Player)));
+        // PvP: include all sides
+        return srcQuery.Where(b => b.Units.Count(u => unitIds.Contains(u.UnitId)) == requiredCount);
     }
 }
