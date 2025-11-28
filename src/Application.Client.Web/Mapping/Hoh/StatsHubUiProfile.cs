@@ -76,28 +76,21 @@ public class StatsHubUiProfile : Profile
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)))
             .ForMember(dest => dest.RoleIconUrl,
                 opt => opt.ConvertUsing<AllianceMemberRoleToIconUrlConverter, AllianceMemberRole>(src => src.Role))
-            .ForMember(dest => dest.TreasureHuntDifficulty, opt =>
+            .ForMember(dest => dest.TreasureHuntDifficulty, opt => opt.MapFrom((src, _, _, context) =>
             {
-                opt.PreCondition(src => src.TreasureHuntDifficulty.HasValue);
-                opt.MapFrom((src, _, _, context) =>
-                {
-                    var treasureHuntDifficulties =
-                        context.Items.GetRequiredItem<IReadOnlyDictionary<int, TreasureHuntDifficultyBasicViewModel>>(
-                            ResolutionContextKeys.TREASURE_HUNT_DIFFICULTY_VMS);
-                    return treasureHuntDifficulties!.GetValueOrDefault(src.TreasureHuntDifficulty!.Value, null);
-                });
-            })
+                var treasureHuntDifficulties =
+                    context.Items.GetRequiredItem<IReadOnlyDictionary<int, TreasureHuntDifficultyBasicViewModel>>(
+                        ResolutionContextKeys.TREASURE_HUNT_DIFFICULTY_VMS);
+                return treasureHuntDifficulties!.GetValueOrDefault(src.TreasureHuntDifficulty, null);
+            }))
             .ForMember(dest => dest.TreasureHuntMaxPoints, opt =>
-            {
-                opt.PreCondition(src => src.TreasureHuntDifficulty.HasValue);
                 opt.MapFrom((src, _, _, context) =>
                 {
                     var maxPointsMap =
                         context.Items.GetRequiredItem<IReadOnlyDictionary<int, int>>(ResolutionContextKeys
                             .TREASURE_HUNT_DIFFICULTY_POINTS_MAP);
-                    return maxPointsMap.GetValueOrDefault(src.TreasureHuntDifficulty!.Value, 0);
-                });
-            });
+                    return maxPointsMap.GetValueOrDefault(src.TreasureHuntDifficulty, 0);
+                }));
 
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.RankingPointsFormatted,

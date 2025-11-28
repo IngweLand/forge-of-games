@@ -12,6 +12,6 @@ public class AllianceMemberDto
     public int Rank { get; set; }
     public int RankingPoints { get; set; }
     public AllianceMemberRole Role { get; init; }
-    public int? TreasureHuntDifficulty { get; set; }
+    public int TreasureHuntDifficulty { get; set; }
     public required DateOnly UpdatedAt { get; set; }
 }

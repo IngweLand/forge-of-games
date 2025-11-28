@@ -33,7 +33,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             AvatarId = member.Player.AvatarId,
             RankingPoints = member.Player.RankingPoints ?? 0,
             Rank = rank,
-            TreasureHuntDifficulty = member.Player.TreasureHuntDifficulty,
+            TreasureHuntDifficulty = member.Player.TreasureHuntDifficulty ?? 0,
         };
     }
 
