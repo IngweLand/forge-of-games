@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
@@ -104,8 +105,28 @@ public class PlayerCityService : IPlayerCityService
 
         var listOfGoods = await _listOfGoodsLazy.Value;
 
-        cityStats.Products.TryGetValue("resource.coins", out var coins);
-        cityStats.Products.TryGetValue("resource.food", out var food);
+        ConsolidatedTimedProductionValues? coins;
+        ConsolidatedTimedProductionValues? food;
+        switch (city.InGameCityId)
+        {
+            case CityId.Arabia_Petra:
+            case CityId.Arabia_CityOfBrass:
+            case CityId.Arabia_NoriasOfHama:
+            {
+                cityStats.Products.TryGetValue("resource.dirham", out coins);
+                cityStats.Products.TryGetValue("resource.gold_fal", out  food);
+                break;
+            }
+            
+            default:
+            {
+                cityStats.Products.TryGetValue("resource.coins", out coins);
+                cityStats.Products.TryGetValue("resource.food", out  food);
+                break;
+            }
+        }
+        
+        
         var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
         var citySnapshot = new PlayerCitySnapshot
         {
@@ -156,10 +177,11 @@ public class PlayerCityService : IPlayerCityService
 
     private async Task<HashSet<string>> CreateListOfGoodsAsync()
     {
-        var buildings = await GetBuildingsWithCacheAsync(CityId.Capital);
+        var capitalBuildings = await GetBuildingsWithCacheAsync(CityId.Capital);
+        var arabiaBuildings = await GetBuildingsWithCacheAsync(CityId.Arabia_Petra);
 
         var set = new HashSet<string>();
-        foreach (var building in buildings)
+        foreach (var building in capitalBuildings.Concat(arabiaBuildings))
         {
             var productionComponents = building.Components.OfType<ProductionComponent>().ToList();
             foreach (var productionComponent in productionComponents)
@@ -172,6 +194,7 @@ public class PlayerCityService : IPlayerCityService
         var resourcesToIgnore = new HashSet<string>
         {
             "resource.coins", "resource.food", "resource.mastery_points", "resource.hero_xp", "resource.embers",
+            "resource.dirham", "resource.gold_fal",
         };
         set.ExceptWith(resourcesToIgnore);
         return set;
