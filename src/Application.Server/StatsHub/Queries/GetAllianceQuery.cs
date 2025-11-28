@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.StatsHub.Factories;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -36,13 +37,29 @@ public class GetAllianceQueryHandler(
         }
 
         var minDate = DateTime.UtcNow.AddDays(FogConstants.ALLIANCE_STALE_THRESHOLD_DAYS * -1);
-        if (existingAlliance.MembersUpdatedAt < minDate && existingAlliance.Status == InGameEntityStatus.Active)
+        var shouldUpdateMembers = existingAlliance.MembersUpdatedAt < minDate &&
+            existingAlliance.Status == InGameEntityStatus.Active;
+        if (existingAlliance.UpdatedAt < minDate.ToDateOnly() && existingAlliance.Status == InGameEntityStatus.Active)
+        {
+            logger.LogInformation(
+                "Alliance needs update (Alliance ID: {AllianceId}, UpdatedAt: {UpdatedAt}, Minimum : {Today})",
+                request.AllianceId, existingAlliance.UpdatedAt, minDate);
+            var updateResult = await allianceUpdateOrchestrator.UpdateAsync(existingAlliance.Id, cancellationToken);
+            updateResult.LogIfFailed<GetAllianceQueryHandler>();
+            if (updateResult.IsFailed)
+            {
+                shouldUpdateMembers = false;
+            }
+        }
+
+        if (shouldUpdateMembers)
         {
             logger.LogInformation(
                 "Alliance members need update (Alliance ID: {AllianceId}, UpdatedAt: {UpdatedAt}, Minimum : {Today})",
                 request.AllianceId, existingAlliance.MembersUpdatedAt, minDate);
-            var updateResult = await allianceUpdateOrchestrator.UpdateMembersAsync(existingAlliance.Id, cancellationToken);
-            updateResult.LogIfFailed<GetAllianceQueryHandler>();
+            var membersUpdateResult =
+                await allianceUpdateOrchestrator.UpdateMembersAsync(existingAlliance.Id, cancellationToken);
+            membersUpdateResult.LogIfFailed<GetAllianceQueryHandler>();
         }
 
         var statsPeriodStartDate = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(FogConstants.DisplayedStatsDays * -1);
@@ -51,7 +68,8 @@ public class GetAllianceQueryHandler(
             .Include(p => p.Members.Where(x => x.Player.Status == InGameEntityStatus.Active)).ThenInclude(x => x.Player)
             .Include(p => p.NameHistory)
             .Include(p =>
-                p.Rankings.Where(pr => pr.Type == AllianceRankingType.MemberTotal && pr.CollectedAt > statsPeriodStartDate))
+                p.Rankings.Where(pr =>
+                    pr.Type == AllianceRankingType.MemberTotal && pr.CollectedAt > statsPeriodStartDate))
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken);
         return alliance == null ? null : allianceWithRankingsFactory.Create(alliance);

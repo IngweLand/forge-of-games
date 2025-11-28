@@ -10,6 +10,7 @@ using Ingweland.Fog.InnSdk.Hoh.Errors;
 using Ingweland.Fog.Shared.Extensions;
 using LazyCache;
 using Microsoft.Extensions.Logging;
+using AllianceRankingType = Ingweland.Fog.Models.Hoh.Enums.AllianceRankingType;
 
 namespace Ingweland.Fog.Application.Server.Services;
 
@@ -99,5 +100,36 @@ public class AllianceUpdateOrchestrator(
             id, updateMembersResult.IsSuccess ? "Success" : "Failed");
 
         return updateMembersResult;
+    }
+
+    public async Task<Result> UpdateAsync(int id, CancellationToken ct)
+    {
+        logger.LogDebug("Starting {Method} for alliance id {AllianceId}", nameof(UpdateAsync), id);
+
+        var existingAlliance = await context.Alliances.FindAsync(id, ct);
+        if (existingAlliance == null)
+        {
+            return Result.Fail(new FogAllianceNotFoundError(id));
+        }
+
+        logger.LogDebug("Found alliance {AllianceId} with name {AllianceName} in world {WorldId}",
+            existingAlliance.InGameAllianceId, existingAlliance.Name, existingAlliance.WorldId);
+
+        var updateResult = await inGameAllianceService.GetAllianceAsync(existingAlliance.Key)
+            .Bind(allianceWithLeader => fogAllianceService.UpsertAlliance(allianceWithLeader.Alliance,
+                existingAlliance.WorldId, DateTime.UtcNow, AllianceRankingType.MemberTotal));
+
+        if (updateResult.HasError<HohSoftError>(x => x.Error == SoftErrorType.AllianceNotFound))
+        {
+            logger.LogDebug("Alliance {AllianceId} not found, marking as Missing", existingAlliance.Id);
+            var statusUpdateResult =
+                await fogAllianceService.SetAllianceMissingStatus(existingAlliance.Id, CancellationToken.None);
+            if (statusUpdateResult.IsFailed)
+            {
+                updateResult.WithErrors(statusUpdateResult.Errors);
+            }
+        }
+
+        return updateResult;
     }
 }
