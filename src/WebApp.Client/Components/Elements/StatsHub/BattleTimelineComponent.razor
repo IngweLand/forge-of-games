@@ -8,8 +8,14 @@
 <div class="fog-container component-root">
     <div class="top-container">
         <span class="component-title">@Loc[FogResource.BattleTimelineComponent_Title]</span>
-        <MudSwitch Class="show-relics-switch" T="bool" Value="@_showRelics" ValueChanged="ToggleRelics"
-                   Label="@Loc[FogResource.BattleTimelineComponent_ShowRelicsSwitchLabel]" Color="Color.Primary"/>
+        <div class="relics-visibility-toggle ">
+            <MudToggleIconButton T="bool" Toggled="@_showRelics" ToggledChanged="ToggleRelics"
+                                 Icon="@Icons.Material.Filled.VisibilityOff"
+                                 ToggledIcon="@Icons.Material.Filled.Visibility"
+                                 Color="Color.Inherit"/>
+            <span>@Loc[FogResource.BattleTimelineComponent_ShowRelicsSwitchLabel]</span>
+        </div>
+
     </div>
 
     @foreach (var group in _filteredTimeline)
@@ -111,7 +117,7 @@
             {AnalyticsParams.STATE, toggled ? AnalyticsParams.Values.States.ON : AnalyticsParams.Values.States.OFF},
         };
         _ = AnalyticsService.TrackEvent(AnalyticsEvents.TOGGLE_BATTLE_TIMELINE_RELICS, eventParams);
-        
+
         var uiSettings = await PersistenceService.GetUiSettingsAsync();
         uiSettings.ShowBattleTimelineRelics = toggled;
         await PersistenceService.SaveUiSettingsAsync(uiSettings);

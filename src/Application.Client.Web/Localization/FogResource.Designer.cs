@@ -321,7 +321,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show relics.
+        ///   Looks up a localized string similar to Relics.
         /// </summary>
         public static string BattleTimelineComponent_ShowRelicsSwitchLabel {
             get {
