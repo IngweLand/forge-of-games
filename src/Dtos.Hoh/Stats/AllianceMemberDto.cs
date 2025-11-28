@@ -7,6 +7,7 @@ public class AllianceMemberDto
     public required string Age { get; set; }
     public int AvatarId { get; set; }
     public DateTime? JoinedAt { get; init; }
+    public DateTime? LastSeenAt { get; init; }
     public required string Name { get; set; }
     public required int PlayerId { get; init; }
     public int Rank { get; set; }

@@ -9,6 +9,7 @@ public class AllianceMemberViewModel
     public required string AvatarUrl { get; set; }
     public required bool IsStale { get; set; }
     public string? JoinedOn { get; set; }
+    public string? LastSeenOn { get; set; }
     public required string Name { get; set; }
     public required int PlayerId { get; init; }
     public required string Rank { get; set; }

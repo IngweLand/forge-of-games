@@ -33,9 +33,13 @@
          style="color: @(Member.IsStale ? "var(--fog-text-secondary-color)" : "var(--fog-text-on-container-color)")">
         @Member.RankingPointsFormatted
     </div>
-    @if (Member.JoinedOn != null)
+    @if (Member.JoinedOn != null && !ShowLastSeenOn)
     {
         <div class="updated-at-label">@Loc[FogResource.StatsHub_JoinedOn, Member.JoinedOn]</div>
+    }
+    else if (Member.LastSeenOn != null && ShowLastSeenOn)
+    {
+        <div class="updated-at-label">@Loc[FogResource.StatsHub_LastSeenOn, Member.LastSeenOn]</div>
     }
 
 </div>
@@ -47,5 +51,8 @@
 
     [Parameter]
     public EventCallback<int> OnClick { get; set; }
+
+    [Parameter]
+    public bool ShowLastSeenOn { get; set; }
 
 }

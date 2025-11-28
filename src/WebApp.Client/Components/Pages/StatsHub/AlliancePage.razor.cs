@@ -13,7 +13,7 @@ public partial class AlliancePage : StatsHubPageBase
     private bool _athRankingsAreLoading;
     private bool _athRankingsContainerIsExpanded;
     private CancellationTokenSource? _athRankingsCts;
-
+    private bool _showLastSeenOn;
     private bool _canShowChart;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _rankingChartIsExpanded;

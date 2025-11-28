@@ -3,6 +3,7 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
@@ -29,6 +30,7 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             PlayerId = member.Player.Id,
             UpdatedAt = member.Player.UpdatedAt,
             JoinedAt = member.JoinedAt,
+            LastSeenAt = DateTimeUtils.StripToHour(member.Player.LastSeenOnline),
             Role = member.Role,
             AvatarId = member.Player.AvatarId,
             RankingPoints = member.Player.RankingPoints ?? 0,

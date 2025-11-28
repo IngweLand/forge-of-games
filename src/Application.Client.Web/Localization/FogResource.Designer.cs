@@ -2499,6 +2499,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last seen on {0}.
+        /// </summary>
+        public static string StatsHub_LastSeenOn {
+            get {
+                return ResourceManager.GetString("StatsHub.LastSeenOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Battle log.
         /// </summary>
         public static string StatsHub_Menu_BattleLog {

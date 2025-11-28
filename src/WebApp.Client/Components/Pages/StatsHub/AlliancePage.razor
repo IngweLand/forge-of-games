@@ -48,12 +48,18 @@
         @if (_alliance.CurrentMembers.Count > 0)
         {
             <div class="fog-container section-container">
-                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
+                <div class="current-members-header-container">
+                    <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
+                    <MudToggleIconButton @bind-Toggled="@_showLastSeenOn" 
+                                         Icon="@Icons.Material.Filled.VisibilityOff"
+                                         ToggledIcon="@Icons.Material.Filled.Visibility"
+                                         Color="Color.Inherit"/>
+                </div>
                 <div class="members-container">
                     @foreach (var member in _alliance.CurrentMembers)
                     {
                         <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(member.PlayerId)">
-                            <AllianceMemberListItemComponent Member="@member"/>
+                            <AllianceMemberListItemComponent Member="@member" ShowLastSeenOn="@_showLastSeenOn"/>
                         </a>
                     }
                 </div>

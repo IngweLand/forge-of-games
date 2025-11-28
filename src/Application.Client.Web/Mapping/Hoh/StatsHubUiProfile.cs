@@ -70,7 +70,12 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.JoinedOn, opt =>
             {
                 opt.PreCondition(src => src.JoinedAt.HasValue);
-                opt.MapFrom(src => src.JoinedAt!.Value.ToString("d"));
+                opt.MapFrom(src => src.JoinedAt!.Value.ToLocalTime().ToString("d"));
+            })
+            .ForMember(dest => dest.LastSeenOn, opt =>
+            {
+                opt.PreCondition(src => src.LastSeenAt.HasValue);
+                opt.MapFrom(src => src.LastSeenAt!.Value.ToLocalTime().ToString("d"));
             })
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)))
