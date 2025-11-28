@@ -41,6 +41,7 @@ internal static class DependencyInjection
             {
                 options.Connect(connectionString)
                     .Select($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:*")
+                    .Select("Logging:LogLevel:*")
                     .ConfigureRefresh(refreshOptions => refreshOptions.RegisterAll()
                         .SetRefreshInterval(TimeSpan.FromMinutes(2)));
             });
