@@ -6,9 +6,13 @@ public static class CityStatsProcessor
 {
     public static CityStats Update(IEnumerable<CityMapEntity> entities,
         IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
-        IEnumerable<CityMapExpansion> openExpansions)
+        IEnumerable<CityMapExpansion> openExpansions,
+        int additionalWorkers = 0)
     {
-        var stats = new CityStats();
+        var stats = new CityStats
+        {
+            ProvidedWorkersCount = additionalWorkers,
+        };
 
         foreach (var cme in entities)
         {

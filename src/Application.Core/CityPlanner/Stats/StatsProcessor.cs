@@ -46,7 +46,7 @@ public class StatsProcessor(
         UpdateHappiness();
         UpdateProduction();
         return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
-            cityMapState.OpenExpansions);
+            cityMapState.OpenExpansions, GetWonderWorkers());
     }
 
     private void UpdateEvolvingBuildings()
@@ -81,6 +81,12 @@ public class StatsProcessor(
         return boostComponent?.Count > 0
             ? boostComponent.ToDictionary(src => src.ResourceId!, src => src.GetValue(cityMapState.CityWonderLevel))
             : null;
+    }
+
+    private int GetWonderWorkers()
+    {
+        var c = cityMapState.CityWonder?.Components.OfType<GrantWorkerComponent>().FirstOrDefault();
+        return c?.GetWorkerCount(cityMapState.CityWonderLevel) ?? 0;
     }
 
     public CityStats UpdateStats(CityMapEntity target)
@@ -150,6 +156,6 @@ public class StatsProcessor(
         }
 
         return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
-            cityMapState.OpenExpansions);
+            cityMapState.OpenExpansions, GetWonderWorkers());
     }
 }
