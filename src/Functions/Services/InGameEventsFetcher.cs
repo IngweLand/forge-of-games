@@ -25,7 +25,7 @@ public class InGameEventsFetcher(
         foreach (var gw in gameWorldsProvider.GetGameWorlds())
         {
             logger.LogInformation("Fetching events for world {WorldId}", gw.Id);
-            
+
             var startupData = await innSdkClient.StaticDataService.GetStartupDataAsync(gw);
             if (startupData.IsFailed)
             {
@@ -38,11 +38,15 @@ public class InGameEventsFetcher(
                 var defId = EventDefinitionId.Undefined;
                 try
                 {
-                    defId = HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);
+                    defId =
+                        ige.EventDefinition.Id.StartsWith("event.EventCity_",
+                            StringComparison.InvariantCultureIgnoreCase)
+                            ? EventDefinitionId.EventCity
+                            : HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);
                 }
                 catch
                 {
-                    // ignore;
+                    //ignore
                 }
 
                 if (defId == EventDefinitionId.Undefined)
@@ -63,6 +67,7 @@ public class InGameEventsFetcher(
                     EventId = ige.Id,
                     StartAt = ige.Start.ToDateTime(),
                     EndAt = ige.End.ToDateTime(),
+                    InGameDefinitionId = ige.EventDefinition.Id,
                 });
             }
 

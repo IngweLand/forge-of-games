@@ -16,6 +16,7 @@ public class InGameEventEntityTypeConfiguration : IEntityTypeConfiguration<InGam
         builder.Property(p => p.EventId).IsRequired();
         builder.Property(p => p.StartAt).IsRequired();
         builder.Property(p => p.EndAt).IsRequired();
+        builder.Property(p => p.InGameDefinitionId).IsRequired();
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(20);
         builder.Property(p => p.DefinitionId).IsRequired().HasConversion<string>();
 
