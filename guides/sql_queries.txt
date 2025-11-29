@@ -20,3 +20,28 @@ FROM LatestUnits
 GROUP BY UnitId
 ORDER BY Count DESC
 OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
+
+
+-- Db stats
+SELECT t.NAME                                                                                    AS TableName,
+       MAX(p.rows)                                                                               AS RowCounts,
+       CAST(ROUND((SUM(a.total_pages) * 8) / 1024.0, 2) AS DECIMAL(18, 2))                       AS TotalSizeMB,
+       CAST(ROUND((SUM(a.used_pages) * 8) / 1024.0, 2) AS DECIMAL(18, 2))                        AS DataSizeMB,
+       CAST(ROUND(((SUM(a.total_pages) - SUM(a.used_pages)) * 8) / 1024.0, 2) AS DECIMAL(18, 2)) AS IndexSizeMB
+FROM sys.tables t
+         INNER JOIN sys.indexes i
+                    ON t.OBJECT_ID = i.object_id
+         INNER JOIN sys.partitions p
+                    ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
+         INNER JOIN sys.allocation_units a
+                    ON p.partition_id = a.container_id
+WHERE t.is_ms_shipped = 0
+  AND (t.Name = 'alliances' OR t.Name = 'battles' OR t.Name = 'profile_squads' OR t.Name = 'pvp_battles' OR
+       t.Name = 'player_city_snapshots' OR t.Name = 'player_city_snapshot_data' OR t.Name = 'players' OR
+       t.Name = 'battle_stats' OR t.Name = 'battle_timelines' OR t.Name = 'battle_squads' OR
+       t.Name = 'profile_squad_data' OR t.Name = 'player_rankings' OR t.Name = 'pvp_rankings2' OR
+       t.Name = 'alliance_rankings' OR t.Name = 'alliance_members' OR t.Name = 'player_name_history_entries' OR
+       t.Name = 'alliance_ath_rankings' OR t.Name = 'pvp_battle_teams')
+GROUP BY t.Name
+ORDER BY TableName;
+
