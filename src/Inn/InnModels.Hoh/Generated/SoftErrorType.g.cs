@@ -24,11 +24,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static SoftErrorTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8qfAoNU29mdEVycm9yVHlwZRIbChdT",
-            "b2Z0RXJyb3JUeXBlX1VOREVGSU5FRBAAEigKIFNvZnRFcnJvclR5cGVfQUxM",
-            "SUFOQ0VfTk9UX0ZPVU5EEMuviMkFEiQKHVNvZnRFcnJvclR5cGVfR0VORVJB",
-            "TF9VTktOT1dOENTkmxlCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5I",
-            "b2hiBnByb3RvMw=="));
+            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8qqwEKDVNvZnRFcnJvclR5cGUSGwoX",
+            "U29mdEVycm9yVHlwZV9VTkRFRklORUQQABIoCiBTb2Z0RXJyb3JUeXBlX0FM",
+            "TElBTkNFX05PVF9GT1VORBDLr4jJBRIkCh1Tb2Z0RXJyb3JUeXBlX0dFTkVS",
+            "QUxfVU5LTk9XThDU5JsZEi0KJVNvZnRFcnJvclR5cGVfUkVRVUVTVF9TRVNT",
+            "SU9OX0VYUElSRUQQ5YKIiQJCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVs",
+            "cy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.SoftErrorType), }, null, null));
@@ -41,6 +42,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [pbr::OriginalName("SoftErrorType_UNDEFINED")] Undefined = 0,
     [pbr::OriginalName("SoftErrorType_ALLIANCE_NOT_FOUND")] AllianceNotFound = 1495406539,
     [pbr::OriginalName("SoftErrorType_GENERAL_UNKNOWN")] GeneralUnknown = 52884052,
+    [pbr::OriginalName("SoftErrorType_REQUEST_SESSION_EXPIRED")] RequestSessionExpired = 555876709,
   }
 
   #endregion

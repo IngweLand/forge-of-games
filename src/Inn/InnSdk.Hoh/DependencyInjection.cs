@@ -89,6 +89,7 @@ public static class DependencyInjection
                     return ValueTask.FromResult(!response.IsSuccessStatusCode);
                 }
 
+                //TODO handle SoftErrorType.REQUEST_SESSION_EXPIRED
                 return ValueTask.FromResult(false);
             };
             options.Retry.Delay = TimeSpan.FromSeconds(3);
