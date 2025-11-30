@@ -48,8 +48,13 @@ internal static class DependencyInjection
                 options.Connect(connectionString)
                     .Select($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:*")
                     .Select("Logging:LogLevel:*")
-                    .ConfigureRefresh(refreshOptions => refreshOptions.RegisterAll()
-                        .SetRefreshInterval(TimeSpan.FromMinutes(2)));
+                    .ConfigureRefresh(refreshOptions =>
+                    {
+                        refreshOptions
+                            .Register("Logging:LogLevel:Sentinel", refreshAll: true)
+                            .Register($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:Sentinel", refreshAll: true)
+                            .SetRefreshInterval(TimeSpan.FromMinutes(4));
+                    });
             });
             
             builder.Services.AddAzureAppConfiguration();
