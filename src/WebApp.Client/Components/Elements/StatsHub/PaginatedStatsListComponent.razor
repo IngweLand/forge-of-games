@@ -1,7 +1,7 @@
 @inject IStringLocalizer<FogResource> Loc
 @inject IJSInteropService JsInteropService
 @inject NavigationManager NavigationManager
-@inject ILocalStorageService LocalStorageService
+@inject IPersistenceService PersistenceService
 @typeparam TItem
 @using Blazored.LocalStorage
 @using Ingweland.Fog.Application.Client.Web.Localization
@@ -145,7 +145,7 @@
     {
         _shouldShowContributionPrompt = false;
 
-        await LocalStorageService.SetItemAsync(CONTRIBUTION_PROMPT_CLICKED_KEY, true);
+        await PersistenceService.SetItemAsync(CONTRIBUTION_PROMPT_CLICKED_KEY, true);
 
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH);
     }
@@ -157,7 +157,7 @@
             return;
         }
 
-        _shouldShowContributionPrompt = !await LocalStorageService.GetItemAsync<bool>(CONTRIBUTION_PROMPT_CLICKED_KEY);
+        _shouldShowContributionPrompt = !await PersistenceService.GetItemAsync<bool>(CONTRIBUTION_PROMPT_CLICKED_KEY);
     }
 
     public async ValueTask DisposeAsync()
