@@ -1,34 +1,26 @@
+@inject IStringLocalizer<FogResource> Loc
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
 @using Ingweland.Fog.Application.Core.Helpers
 @using Microsoft.Extensions.Localization
-@inject IStringLocalizer<FogResource> Loc
-<div class="fog-container component-root">
-    <div class="title">@Title</div>
-    <div class="items-container">
-        @foreach (var alliance in Alliances)
-        {
-            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
-                <AllianceListItemComponent Alliance="@alliance"/>
-            </a>
-        }
-    </div>
-    <div class="button-container">
-        <MudButton Variant="Variant.Filled" Color="Color.Primary"
-                   Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
-    </div>
-
-</div>
+@inherits StatsHubTopListComponentBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.AllianceViewModel>
+@{
+    base.BuildRenderTree(__builder);
+}
 
 @code {
 
-    [Parameter]
-    public required string Title { get; set; }
+    protected override RenderFragment RenderItem(AllianceViewModel alliance) => __builder =>
+    {
+        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
+            <AllianceListItemComponent Alliance="@alliance"/>
+        </a>
+    };
 
-    [Parameter]
-    public required string ViewAllUrl { get; set; }
+    protected override async Task GetItemsAsync()
+    {
+        Items = await StatsHubUiService.GetTopAlliancesAsync(WorldId, DataLoadingCts.Token);
+    }
 
-    [Parameter]
-    public required IReadOnlyCollection<AllianceViewModel> Alliances { get; init; }
-
+    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.WorldAlliances(WorldId);
 }

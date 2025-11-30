@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
+using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Dtos.Hoh.Stats;
@@ -18,8 +19,6 @@ public static class StatsApi
     {
         var api = app.MapGroup("api/hoh");
 
-        api.MapGet(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH, GetAllLeaderboardTopItemsAsync);
-
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH, GetTopHeroesAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
@@ -27,12 +26,14 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE, GetPlayerBattlesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE, GetTopPlayersAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE, GetAllianceAthRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE, GetAlliancesAthRankingsAsync);
-        
+        api.MapGet(FogUrlBuilder.ApiRoutes.TOP_ALLIANCES_TEMPLATE, GetTopAlliancesAsync);
+
         api.MapGet(FogUrlBuilder.ApiRoutes.WORLD_EVENT_CITY_TEMPLATE, GetEventCityRankingsAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
@@ -63,15 +64,6 @@ public static class StatsApi
         {
             return TypedResults.NotFound();
         }
-
-        return TypedResults.Ok(result);
-    }
-
-    private static async Task<Results<Ok<LeaderboardTopItemsDto>, BadRequest<string>>>
-        GetAllLeaderboardTopItemsAsync([AsParameters] StatsServices services, HttpContext context,
-            CancellationToken ct = default)
-    {
-        var result = await services.StatsHubService.GetAllLeaderboardTopItemsAsync(ct);
 
         return TypedResults.Ok(result);
     }
@@ -195,6 +187,15 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
+    private static async Task<Results<Ok<IReadOnlyCollection<PlayerDto>>, BadRequest<string>>>
+        GetTopPlayersAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetTopPlayersQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+
+        return TypedResults.Ok(result);
+    }
+
     private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
         GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
             CancellationToken ct = default)
@@ -239,7 +240,16 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
+    private static async Task<Results<Ok<IReadOnlyCollection<AllianceDto>>, BadRequest<string>>>
+        GetTopAlliancesAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetTopAlliancesQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+
+        return TypedResults.Ok(result);
+    }
+
     private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
         GetAlliancesAthRankingsAsync([AsParameters] StatsServices services, HttpContext context,
             [AsParameters] GetAlliancesAthRankingsQuery query,
@@ -249,7 +259,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Results<Ok<PaginatedList<PlayerDto>>, BadRequest<string>>>
         GetEventCityRankingsAsync([AsParameters] StatsServices services, HttpContext context,
             [AsParameters] GetEventCityRankingsQuery query,

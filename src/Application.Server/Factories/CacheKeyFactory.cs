@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
+using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
@@ -65,7 +66,8 @@ public class CacheKeyFactory : ICacheKeyFactory
                     q.Request.TotalArea}",
             GetPlayerCityFromSnapshotQuery q => $"PlayerCityFromSnapshot:{q.SnapshotId}",
             GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}:{q.Date}",
-            GetAllLeaderboardTopItemsQuery q => "LeaderboardTopItems",
+            GetTopPlayersQuery q => $"TopPlayers:{q.WorldId}",
+            GetTopAlliancesQuery q => $"TopAlliances:{q.WorldId}",
             GetPlayerBattlesQuery q => $"PlayerBattles:{q.PlayerId}:{q.StartIndex}:{q.Count}",
             GetPlayerProfileQuery q => $"PlayerProfile:{q.PlayerId}",
             GetPlayerQuery q => Player(q.PlayerId),

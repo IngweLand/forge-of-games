@@ -1,0 +1,44 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@typeparam TItem
+<div class="fog-container component-root">
+    <div class="title">
+        <span>@Title</span>
+        @if (IsLoading)
+        {
+            <div class="loading-indicator">
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            </div>
+        }
+    </div>
+    <div class="@ItemsContainerClass">
+        @if (Items != null)
+        {
+            @foreach (var item in Items)
+            {
+                @RenderItem(item)
+            }
+        }
+    </div>
+    @RenderBottomContainer()
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required string Title { get; set; }
+
+    protected abstract string ViewAllUrl { get; }
+
+    [Parameter]
+    public required string WorldId { get; set; }
+
+    protected virtual RenderFragment RenderBottomContainer() => __builder =>
+    {
+        <div class="button-container">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                       Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+        </div>
+    };
+
+}

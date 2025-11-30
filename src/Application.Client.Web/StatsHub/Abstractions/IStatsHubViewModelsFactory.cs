@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
-using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
@@ -20,17 +19,14 @@ public interface IStatsHubViewModelsFactory
     PaginatedList<PlayerViewModel> CreatePlayers(PaginatedList<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages);
 
-    TopStatsViewModel CreateTopStats(IReadOnlyCollection<PlayerDto> mainPlayers,
-        IReadOnlyCollection<PlayerDto> betaPlayers,
-        IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
-        IReadOnlyCollection<string> topHeroes,
-        IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyCollection<HeroBasicViewModel> heroes);
+    IReadOnlyCollection<PlayerViewModel> CreatePlayers(IReadOnlyCollection<PlayerDto> players,
+        IReadOnlyDictionary<string, AgeDto> ages);
 
     AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
         IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyDictionary<int, int> treasureHuntMaxPointsMap);
 
-    PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players);
+    PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> alliances);
+    IReadOnlyCollection<AllianceViewModel> CreateAlliances(IReadOnlyCollection<AllianceDto> alliances);
 }

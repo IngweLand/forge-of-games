@@ -11,4 +11,6 @@ public interface ITopHeroesUiService
 
     Task<IReadOnlyCollection<HeroBasicViewModel>> GetTopHeroes(HeroInsightsMode mode, string? ageId,
         HeroLevelRange? levelRange, CancellationToken ct);
+
+    Task<IReadOnlyCollection<HeroBasicViewModel>> GetTopHeroes(CancellationToken ct);
 }

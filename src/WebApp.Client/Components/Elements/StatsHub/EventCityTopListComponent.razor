@@ -19,10 +19,8 @@
 
     protected override async Task GetItemsAsync()
     {
-        Items = await StatsHubUiService.GetTopPlayersAsync(WorldId, DataLoadingCts.Token);
+        Items = await StatsHubUiService.GetTopEventCitiesAsync(WorldId, DataLoadingCts.Token);
     }
 
-    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.WorldPlayers(WorldId);
-
+    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.WorldEventCity(WorldId);
 }
-

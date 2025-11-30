@@ -3,7 +3,6 @@ using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
-using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Stats;
@@ -25,6 +24,13 @@ public class StatsHubViewModelsFactory(
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
     }
 
+    public IReadOnlyCollection<PlayerViewModel> CreatePlayers(IReadOnlyCollection<PlayerDto> players,
+        IReadOnlyDictionary<string, AgeDto> ages)
+    {
+        return mapper.Map<IReadOnlyCollection<PlayerViewModel>>(players,
+            opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
+    }
+
     public AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
         IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
@@ -40,29 +46,14 @@ public class StatsHubViewModelsFactory(
             });
     }
 
-    public PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> players)
+    public PaginatedList<AllianceViewModel> CreateAlliances(PaginatedList<AllianceDto> alliances)
     {
-        return mapper.Map<PaginatedList<AllianceViewModel>>(players);
+        return mapper.Map<PaginatedList<AllianceViewModel>>(alliances);
     }
 
-    public TopStatsViewModel CreateTopStats(IReadOnlyCollection<PlayerDto> mainPlayers,
-        IReadOnlyCollection<PlayerDto> betaPlayers,
-        IReadOnlyCollection<AllianceDto> mainAlliances, IReadOnlyCollection<AllianceDto> betaAlliances,
-        IReadOnlyCollection<string> topHeroes,
-        IReadOnlyDictionary<string, AgeDto> ages,
-        IReadOnlyCollection<HeroBasicViewModel> heroes)
+    public IReadOnlyCollection<AllianceViewModel> CreateAlliances(IReadOnlyCollection<AllianceDto> alliances)
     {
-        var heroesDic = heroes.ToDictionary(h => h.UnitId);
-        return new TopStatsViewModel
-        {
-            MainWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(mainPlayers,
-                opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
-            BetaWorldPlayers = mapper.Map<IReadOnlyCollection<PlayerViewModel>>(betaPlayers,
-                opt => { opt.Items[ResolutionContextKeys.AGES] = ages; }),
-            MainWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(mainAlliances),
-            BetaWorldAlliances = mapper.Map<IReadOnlyCollection<AllianceViewModel>>(betaAlliances),
-            Heroes = topHeroes.Select(x => heroesDic[x]).ToList(),
-        };
+        return mapper.Map<IReadOnlyCollection<AllianceViewModel>>(alliances);
     }
 
     public PlayerProfileViewModel CreatePlayerProfile(PlayerProfileDto playerProfile,

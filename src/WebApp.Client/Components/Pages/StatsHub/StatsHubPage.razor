@@ -3,68 +3,48 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits StatsHubPageBase
-@if (IsInitialized)
-{
-    <div class="page-container">
-        <div class="column">
-            <PlayerStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_MainWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("un1")"
-                Players="@_topStats?.MainWorldPlayers"/>
-        </div>
-        <div class="column">
-            <PlayerStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_MainWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldEventCity("un1")"
-                Players="@_mainWorldCityEventRankings"/>
-        </div>
-        <div class="column">
-            <AllianceStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("un1")"
-                Alliances="@_topStats?.MainWorldAlliances"/>
-        </div>
-        <div class="column">
-            <AllianceTopAthRankingsComponent
-                WorldId="un1"
-                Leagues="@_treasureHuntLeagues"  ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliancesAth("un1")"
-                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_MainWorld]"/>
-        </div>
-        <div class="column">
-            <PlayerStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("zz1")"
-                Players="@_topStats?.BetaWorldPlayers"/>
-
-        </div>
-        <div class="column">
-            <PlayerStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldEventCity("zz1")"
-                Players="@_betaWorldCityEventRankings"/>
-        </div>
-        <div class="column">
-            <AllianceStatsTopListComponent
-                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
-                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("zz1")"
-                Alliances="@_topStats?.BetaWorldAlliances"/>
-
-        </div>
-        <div class="column">
-            <AllianceTopAthRankingsComponent
-                WorldId="zz1"
-                Leagues="@_treasureHuntLeagues" ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliancesAth("zz1")"
-                Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_BetaWorld]"/>
-        </div>
-        <div class="column">
-            <TopHeroesComponent
-                Title="@Loc[FogResource.StatsHub_HeroInsights_ListTitle]"
-                Heroes="@_topStats?.Heroes"/>
-
-        </div>
+<div class="page-container">
+    <div class="column">
+        <PlayerStatsTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+            WorldId="@MAIN_WORLD_ID"/>
     </div>
-}
-else
-{
-    <LoadingIndicator/>
-}
+    <div class="column">
+        <EventCityTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+            WorldId="@MAIN_WORLD_ID"/>
+    </div>
+    <div class="column">
+        <AllianceStatsTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+            WorldId="@MAIN_WORLD_ID"/>
+    </div>
+    <div class="column">
+        <AllianceTopAthRankingsComponent
+            WorldId="@MAIN_WORLD_ID"
+            Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_MainWorld]"/>
+    </div>
+    <div class="column">
+        <PlayerStatsTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopPlayerListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
+            WorldId="@BETA_WORLD_ID"/>
+    </div>
+    <div class="column">
+        <EventCityTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
+            WorldId="@BETA_WORLD_ID"/>
+    </div>
+    <div class="column">
+        <AllianceStatsTopListComponent
+            Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
+            WorldId="@BETA_WORLD_ID"/>
+    </div>
+    <div class="column">
+        <AllianceTopAthRankingsComponent
+            WorldId="@BETA_WORLD_ID"
+            Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_BetaWorld]"/>
+    </div>
+    <div class="column">
+        <TopHeroesComponent Title="@Loc[FogResource.StatsHub_HeroInsights_ListTitle]"/>
+    </div>
+</div>

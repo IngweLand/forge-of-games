@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
+namespace Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
 
 public record GetTopHeroesQuery : IRequest<IReadOnlyCollection<string>>, ICacheableRequest
 {

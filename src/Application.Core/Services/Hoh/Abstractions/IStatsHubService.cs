@@ -28,6 +28,12 @@ public interface IStatsHubService
     Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE)]
+    Task<IReadOnlyCollection<PlayerDto>> GetTopPlayersAsync(string worldId, CancellationToken ct = default);
+    
+    [Get(FogUrlBuilder.ApiRoutes.TOP_ALLIANCES_TEMPLATE)]
+    Task<IReadOnlyCollection<AllianceDto>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE_REFIT)]
     Task<AllianceWithRankings?> GetAllianceAsync(int allianceId, CancellationToken ct = default);
@@ -40,9 +46,6 @@ public interface IStatsHubService
     Task<PaginatedList<AllianceDto>> GetAlliancesAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
-
-    [Get(FogUrlBuilder.ApiRoutes.ALL_LEADERBOARD_TOP_ITEMS_PATH)]
-    Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.TOP_HEROES_PATH)]
     Task<IReadOnlyCollection<string>> GetTopHeroesAsync([Query] HeroInsightsMode mode, [Query] string? ageId = null,

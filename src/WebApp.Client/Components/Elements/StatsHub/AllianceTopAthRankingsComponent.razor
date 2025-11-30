@@ -1,104 +1,106 @@
+@inject IStringLocalizer<FogResource> Loc
 @using Ingweland.Fog.Application.Client.Web.Localization
-@using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
-@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Dtos.Hoh
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
-@using Refit
-@inject IStringLocalizer<FogResource> Loc
-<div class="fog-container component-root">
-    <div class="title">@Title</div>
-    <div class="items-container">
-        @foreach (var alliance in _alliances)
-        {
-            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
-                <AllianceListItemComponent Alliance="@alliance"/>
-            </a>
-        }
-    </div>
-    @if (Leagues != null)
-    {
-        <div class="button-container">
-            <div class="wrapper">
-                <AthLeagueSelectorComponent Leagues="@Leagues" SelectedLeague="@_selectedLeague"
-                                            LeagueChanged="@OnLeagueChanged"/>
-            </div>
-            <div class="wrapper">
-                <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="margin-top: 4px"
-                           Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
-            </div>
-        </div>
+@inherits StatsHubTopListComponentBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.AllianceViewModel>
+@{
+    base.BuildRenderTree(__builder);
+}
+
+<style>
+    .ath-button-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 52px;
+        margin: 8px 0;
     }
 
-</div>
+    .ath-wrapper {
+        align-self: center;
+        justify-self: center;
+    }
+</style>
 
 @code {
 
-    [Parameter]
-    public required string Title { get; set; }
+    protected override RenderFragment RenderItem(AllianceViewModel alliance) => __builder =>
+    {
+        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Alliance(alliance.Id)">
+            <AllianceListItemComponent Alliance="@alliance"/>
+        </a>
+    };
 
-    [Parameter]
-    [EditorRequired]
-    public required string ViewAllUrl { get; set; }
-
-    private IReadOnlyCollection<AllianceViewModel> _alliances = [];
-
-    [Parameter]
-    [EditorRequired]
-    public required IReadOnlyCollection<TreasureHuntLeagueDto>? Leagues { get; init; }
-
-    [Parameter]
-    [EditorRequired]
-    public required string WorldId { get; set; }
+    protected override RenderFragment RenderBottomContainer() => __builder =>
+    {
+        if (_leagues != null)
+        {
+            <div class="ath-button-container" >
+                <div class="ath-wrapper" >
+                    <AthLeagueSelectorComponent Leagues="@_leagues" SelectedLeague="@_selectedLeague"
+                                                LeagueChanged="@OnLeagueChanged"/>
+                </div>
+                <div class="ath-wrapper" >
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Style="margin-top: 4px"
+                               Href="@ViewAllUrl">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
+                </div>
+            </div>
+        }
+    };
 
     private TreasureHuntLeague _selectedLeague = TreasureHuntLeague.Overlord;
-    private CancellationTokenSource? _athRankingsCts;
 
     [Inject]
-    protected IStatsHubUiService StatsHubUiService { get; set; }
+    private ICommonUiService CommonUiService { get; set; }
+
+    private IReadOnlyCollection<TreasureHuntLeagueDto>? _leagues;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        var result = await CommonUiService.GetTreasureHuntLeaguesAsync();
+        _leagues = result.Values.Where(x => x.League != TreasureHuntLeague.Undefined).OrderBy(x => x.League)
+            .ToList();
+    }
 
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
 
-        await GetItems();
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        await GetItemsAsync();
     }
 
     private async Task OnLeagueChanged(TreasureHuntLeague league)
     {
         _selectedLeague = league;
-        await GetItems();
+        await GetItemsAsync();
     }
 
-    private async Task GetItems()
+    protected override async Task GetItemsAsync()
     {
-        if (_athRankingsCts != null)
-        {
-            await _athRankingsCts.CancelAsync();
-        }
-
+        IsLoading = true;
         StateHasChanged();
-
-        _athRankingsCts = new CancellationTokenSource();
-
-        try
-        {
-            var result = await StatsHubUiService
-                .GetAlliancesAthRankingsAsync(WorldId, 0, FogConstants.DEFAULT_STATS_PAGE_SIZE, _selectedLeague);
-            _alliances = result.Items;
-        }
-        catch (OperationCanceledException _)
-        {
-        }
-        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
-        {
-        }
-        catch (Exception e)
-        {
-            Console.Error.WriteLine(e);
-        }
+        Items = await StatsHubUiService.GetTopAlliancesAthRankingsAsync(WorldId, _selectedLeague, DataLoadingCts.Token);
+        IsLoading = false;
+        StateHasChanged();
     }
 
+    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.WorldAlliancesAth(WorldId);
 }

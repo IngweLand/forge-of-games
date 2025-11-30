@@ -1,33 +1,46 @@
+@inject IStringLocalizer<FogResource> Loc
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @using Microsoft.Extensions.Localization
-@inject IStringLocalizer<FogResource> Loc
-<div class="fog-container component-root">
-    <div class="title">@Title</div>
-    <div class="heroes-grid-layout items-container">
-        @foreach (var hero in Heroes)
-        {
-            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
-                <HeroItem Hero="@hero"/>
-            </a>
-        }
-    </div>
-    <div class="button-container">
-        <MudButton Variant="Variant.Filled" Color="Color.Primary"
-                   Href="@FogUrlBuilder.PageRoutes.TOP_HEROES_PATH">@Loc[FogResource.StatsHub_ViewAll]</MudButton>
-    </div>
+@using MudBlazor.Utilities
+@inherits StatsHubTopListComponentBase<Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units.HeroBasicViewModel>
+    @{
+    base.BuildRenderTree(__builder);
+    }
 
-</div>
+<style>
+
+    .top-heroes-items-container {
+        padding: 4px;
+        flex: 1;
+        align-items: center;
+    }
+</style>
 
 @code {
 
-    [Parameter]
-    public required string Title { get; set; }
+    protected override RenderFragment RenderItem(HeroBasicViewModel hero) => __builder =>
+    {
+        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Hero(hero.Id)">
+            <HeroItem Hero="@hero"/>
+        </a>
+    };
 
-    [Parameter]
-    [EditorRequired]
-    public required IReadOnlyCollection<HeroBasicViewModel> Heroes { get; init; }
+    [Inject]
+    private ITopHeroesUiService TopHeroesUiService { get; set; }
+
+    protected override string ItemsContainerClass => new CssBuilder("heroes-grid-layout")
+        .AddClass("top-heroes-items-container")
+        .Build();
+
+    protected override async Task GetItemsAsync()
+    {
+        Items = await TopHeroesUiService.GetTopHeroes(DataLoadingCts.Token);
+    }
+
+    protected override string ViewAllUrl => FogUrlBuilder.PageRoutes.TOP_HEROES_PATH;
 
 }

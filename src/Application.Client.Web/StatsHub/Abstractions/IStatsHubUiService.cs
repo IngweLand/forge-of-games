@@ -17,8 +17,6 @@ public interface IStatsHubUiService
     Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int startIndex, int pageSize,
         string? playerName = null, CancellationToken ct = default);
 
-    Task<TopStatsViewModel> GetTopStatsAsync();
-
     Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId);
 
     Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
@@ -34,4 +32,10 @@ public interface IStatsHubUiService
         TreasureHuntLeague league, CancellationToken ct = default);
 
     Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
+    Task<IReadOnlyCollection<PlayerViewModel>> GetTopPlayersAsync(string worldId, CancellationToken ct = default);
+    Task<IReadOnlyCollection<PlayerViewModel>> GetTopEventCitiesAsync(string worldId, CancellationToken ct = default);
+    Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default);
+
+    Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesAthRankingsAsync(string worldId,
+        TreasureHuntLeague league, CancellationToken ct = default);
 }

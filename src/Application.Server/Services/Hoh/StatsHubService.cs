@@ -2,6 +2,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
+using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -19,6 +20,24 @@ public class StatsHubService(ISender sender) : IStatsHubService
         var query = new GetPlayersWithPaginationQuery
         {
             StartIndex = startIndex, PageSize = pageSize, WorldId = worldId, Name = name,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<IReadOnlyCollection<PlayerDto>> GetTopPlayersAsync(string worldId, CancellationToken ct = default)
+    {
+        var query = new GetTopPlayersQuery()
+        {
+            WorldId = worldId,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<IReadOnlyCollection<AllianceDto>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default)
+    {
+        var query = new GetTopAlliancesQuery()
+        {
+            WorldId = worldId,
         };
         return sender.Send(query, ct);
     }
@@ -51,11 +70,6 @@ public class StatsHubService(ISender sender) : IStatsHubService
             StartIndex = startIndex, PageSize = pageSize, WorldId = worldId, Name = name,
         };
         return sender.Send(query, ct);
-    }
-
-    public Task<LeaderboardTopItemsDto> GetAllLeaderboardTopItemsAsync(CancellationToken ct = default)
-    {
-        return sender.Send(new GetAllLeaderboardTopItemsQuery(), ct);
     }
 
     public Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, int startIndex = 0,
