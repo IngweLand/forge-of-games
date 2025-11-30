@@ -5,10 +5,8 @@ using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server;
 using Ingweland.Fog.Infrastructure;
-using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh;
 using Ingweland.Fog.Shared;
-using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Ingweland.Fog.Shared.Localization;
 using Ingweland.Fog.WebApp;
 using Ingweland.Fog.WebApp.Apis;
@@ -18,6 +16,7 @@ using Ingweland.Fog.WebApp.Middleware;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.AspNetCore.ResponseCompression;
 using MudBlazor.Services;
+using _Imports = Ingweland.Fog.WebApp.Client._Imports;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddWebAppSettings();
@@ -82,7 +81,7 @@ else
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-    
+
     app.UseAzureAppConfiguration();
 }
 
@@ -102,14 +101,9 @@ app.UseRequestLocalization(localizationOptions);
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Ingweland.Fog.WebApp.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(_Imports).Assembly);
 
 app.MapHohApi();
 app.MapStatsApi();
-
-// initialize data load
-_ = app.Services.GetRequiredService<IProtobufSerializer>();
-_ = app.Services.GetRequiredService<IHohDataProvider>();
-_ = app.Services.GetRequiredService<IHohLocalizationDataProvider>();
 
 app.Run();

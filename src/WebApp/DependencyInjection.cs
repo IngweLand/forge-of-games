@@ -7,6 +7,8 @@ using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Ingweland.Fog.WebApp.Services;
+using Ingweland.Fog.WebApp.Startup;
+using Ingweland.Fog.WebApp.Startup.Interfaces;
 
 namespace Ingweland.Fog.WebApp;
 
@@ -18,6 +20,10 @@ internal static class DependencyInjection
 
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
+        services.AddSingleton<IStartupTask, PreloadDataStartupTask>();
+        
+        services.AddHostedService<StartupTaskHostedService>();
+        
         services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IClientLocaleService, DummyClientLocaleService>();
         services.AddScoped<IPersistenceService, DummyPersistenceService>();
