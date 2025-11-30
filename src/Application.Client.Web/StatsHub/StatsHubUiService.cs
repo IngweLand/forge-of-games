@@ -11,6 +11,8 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
+using Microsoft.Extensions.Logging;
+using Refit;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub;
 
@@ -22,6 +24,7 @@ public class StatsHubUiService : IStatsHubUiService
     private readonly IBattleViewModelFactory _battleViewModelFactory;
     private readonly ICommonService _commonService;
     private readonly ICommonUiService _commonUiService;
+    private readonly ILogger<StatsHubUiService> _logger;
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IHeroProfileUiService _heroProfileUiService;
     private readonly IMapper _mapper;
@@ -41,7 +44,8 @@ public class StatsHubUiService : IStatsHubUiService
         IHohCoreDataCache coreDataCache,
         IMapper mapper,
         IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
-        ICommonUiService commonUiService)
+        ICommonUiService commonUiService,
+        ILogger<StatsHubUiService> logger)
     {
         _statsHubService = statsHubService;
         _commonService = commonService;
@@ -54,6 +58,7 @@ public class StatsHubUiService : IStatsHubUiService
         _mapper = mapper;
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
         _commonUiService = commonUiService;
+        _logger = logger;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
     }
@@ -191,6 +196,29 @@ public class StatsHubUiService : IStatsHubUiService
     {
         var result = await _statsHubService.GetAlliancesAthRankingsAsync(worldId, startIndex, pageSize, league, ct);
         return _statsHubViewModelsFactory.CreateAlliances(result);
+    }
+
+    public async Task<PaginatedList<PlayerViewModel>> GetEventCityRankingsAsync(string worldId,
+        CancellationToken ct = default)
+    {
+        try
+        {
+            var result = await _statsHubService.GetEventCityRankingsAsync(worldId, ct);
+            return _statsHubViewModelsFactory.CreatePlayers(result, await _ages.Value);
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, null);
+        }
+
+        return PaginatedList<PlayerViewModel>.Empty;
+
     }
 
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()

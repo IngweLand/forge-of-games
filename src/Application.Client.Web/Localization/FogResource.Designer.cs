@@ -2787,6 +2787,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Event cities on {0}.
+        /// </summary>
+        public static string StatsHub_Worlds_TopEventCityListTitle {
+            get {
+                return ResourceManager.GetString("StatsHub.Worlds.TopEventCityListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Top players on {0}.
         /// </summary>
         public static string StatsHub_Worlds_TopPlayerListTitle {

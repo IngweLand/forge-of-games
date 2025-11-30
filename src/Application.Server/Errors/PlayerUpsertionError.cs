@@ -1,19 +1,9 @@
-using FluentResults;
-
 namespace Ingweland.Fog.Application.Server.Errors;
 
-public class PlayerUpsertionError : Error
+public class PlayerUpsertionError : PlayerOperationError
 {
-    public PlayerUpsertionError(string worldId, int inGamePlayerId, Exception? innerException = null) :
-        base($"Error upserting player with key {worldId}:{inGamePlayerId}.")
+    public PlayerUpsertionError(string worldId, int inGamePlayerId, Exception? innerException = null)
+        : base("upserting", worldId, inGamePlayerId, innerException)
     {
-        InGamePlayerId = inGamePlayerId;
-        WorldId = worldId;
-        CausedBy(innerException);
-        WithMetadata("WorldId", worldId);
-        WithMetadata("InGamePlayerId", inGamePlayerId);
     }
-
-    public int InGamePlayerId { get; }
-    public string WorldId { get; }
 }

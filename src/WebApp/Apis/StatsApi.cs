@@ -32,6 +32,8 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE, GetAllianceAthRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE, GetAlliancesAthRankingsAsync);
+        
+        api.MapGet(FogUrlBuilder.ApiRoutes.WORLD_EVENT_CITY_TEMPLATE, GetEventCityRankingsAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.BATTLE_LOG_SEARCH, SearchBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.BATTLE_STATS_TEMPLATE, GetBattleStatsAsync);
@@ -241,6 +243,16 @@ public static class StatsApi
     private static async Task<Results<Ok<PaginatedList<AllianceDto>>, BadRequest<string>>>
         GetAlliancesAthRankingsAsync([AsParameters] StatsServices services, HttpContext context,
             [AsParameters] GetAlliancesAthRankingsQuery query,
+            CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<PaginatedList<PlayerDto>>, BadRequest<string>>>
+        GetEventCityRankingsAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetEventCityRankingsQuery query,
             CancellationToken ct = default)
     {
         var result = await services.Mediator.Send(query, ct);

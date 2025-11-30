@@ -1,0 +1,23 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.WORLD_EVENT_CITY_TEMPLATE)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
+@inherits WorldStatsPageBase<Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels.PlayerViewModel>
+
+@if (IsInitialized)
+{
+    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title" Items="@_items" IsLoading="@_isLoading">
+        <ItemTemplate>
+            <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(context.Id)"
+               @onclick="OnItemClicked">
+                <PlayerListItemComponent ShowRank="true" Player="@context"/>
+            </a>
+        </ItemTemplate>
+    </PaginatedStatsListComponent>
+}
+else
+{
+    <LoadingIndicator/>
+}
+
+@code {
+}

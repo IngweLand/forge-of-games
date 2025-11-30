@@ -16,21 +16,14 @@ namespace Ingweland.Fog.InnSdk.Hoh.Services;
 
 public class DataParsingService(IMapper mapper) : IDataParsingService
 {
-    public PlayerRanks ParsePlayerRankings(byte[] data)
+    public Result<PlayerRanks> ParsePlayerRankings(byte[] data)
     {
-        PlayerRanksDTO ranksDto;
-        try
-        {
-            var container = CommunicationDto.Parser.ParseFrom(data);
-            ranksDto = container.PlayerRanks;
-        }
-        catch (Exception ex)
-        {
-            const string msg = "Failed to parse player ranking data";
-            throw new InvalidOperationException(msg, ex);
-        }
-
-        return mapper.Map<PlayerRanks>(ranksDto);
+        return ParseCommunicationDto<PlayerRanksDTO>(data)
+            .Bind(dto =>
+            {
+                return Result.Try(() => mapper.Map<PlayerRanks>(dto),
+                    e => new HohMappingError($"Failed to map {nameof(PlayerRanksDTO)} to {nameof(PlayerRanks)}", e));
+            });
     }
 
     public Result<IReadOnlyCollection<AllianceWithLeader>> ParseSearchAllianceResponse(byte[] data)

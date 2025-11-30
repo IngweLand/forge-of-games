@@ -60,6 +60,7 @@ var searchKeys = new HashSet<string>
     "Base.TreasureHuntRankingPanel.TreasureHuntRanking",
     "Base.PvpPanel.Ranking",
     "Base.TreasureHuntRankingPanel.TreasureHuntLeague",
+    "Base.LeaderboardEventPanel.TaskInfo.EventCity_Name",
 };
 
 var result = new Dictionary<string, List<Translations>>();

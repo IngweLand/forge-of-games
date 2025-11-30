@@ -57,4 +57,7 @@ public interface IStatsHubService
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE,
         [Query] TreasureHuntLeague league = TreasureHuntLeague.Overlord,
         CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.WORLD_EVENT_CITY_TEMPLATE)]
+    Task<PaginatedList<PlayerDto>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
 }

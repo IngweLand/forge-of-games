@@ -13,6 +13,12 @@
                 Players="@_topStats?.MainWorldPlayers"/>
         </div>
         <div class="column">
+            <PlayerStatsTopListComponent
+                Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_MainWorld]"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldEventCity("un1")"
+                Players="@_mainWorldCityEventRankings"/>
+        </div>
+        <div class="column">
             <AllianceStatsTopListComponent
                 Title="@Loc[FogResource.StatsHub_Worlds_TopAllianceListTitle, FogResource.StatsHub_Worlds_MainWorld]"
                 ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldAlliances("un1")"
@@ -30,6 +36,12 @@
                 ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldPlayers("zz1")"
                 Players="@_topStats?.BetaWorldPlayers"/>
 
+        </div>
+        <div class="column">
+            <PlayerStatsTopListComponent
+                Title="@Loc[FogResource.StatsHub_Worlds_TopEventCityListTitle, FogResource.StatsHub_Worlds_BetaWorld]"
+                ViewAllUrl="@FogUrlBuilder.PageRoutes.WorldEventCity("zz1")"
+                Players="@_betaWorldCityEventRankings"/>
         </div>
         <div class="column">
             <AllianceStatsTopListComponent

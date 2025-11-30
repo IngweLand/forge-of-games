@@ -1,3 +1,4 @@
+using FluentResults;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
@@ -15,7 +16,7 @@ public interface IInGameDataParsingService
     IReadOnlyCollection<PvpBattle> ParsePvpBattles(string inputData);
     IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData);
     HeroFinishWaveRequestDto ParseBattleCompleteWaveRequest(string inputData);
-    PlayerRanks ParsePlayerRanking(string inputData);
+    Result<PlayerRanks> ParsePlayerRanking(string inputData);
     Wakeup ParseWakeup(string inputData);
     OtherCity ParseOtherCity(string inputData);
 }

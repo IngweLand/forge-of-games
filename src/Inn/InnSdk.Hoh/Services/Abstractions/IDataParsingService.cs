@@ -17,7 +17,7 @@ public interface IDataParsingService
     IReadOnlyCollection<PvpBattle> ParsePvpBattles(byte[] data);
     IReadOnlyCollection<PvpRank> ParsePvpRankings(byte[] data);
     OtherCity ParseOtherCity(byte[] data);
-    PlayerRanks ParsePlayerRankings(byte[] data);
+    Result<PlayerRanks> ParsePlayerRankings(byte[] data);
     Result<AllianceWithMembers> ParseAllianceMembersResponse(byte[] data);
     Result<IReadOnlyCollection<AllianceWithLeader>> ParseSearchAllianceResponse(byte[] data);
     Result<AllianceWithLeader> ParseAllianceWithLeader(byte[] data);

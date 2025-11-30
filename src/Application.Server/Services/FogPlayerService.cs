@@ -6,8 +6,10 @@ using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
+using Ingweland.Fog.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -77,6 +79,46 @@ public class FogPlayerService(IFogDbContext context, ILogger<FogPlayerService> l
             _upsertSemaphore.Release();
             logger.LogDebug("Released semaphore for player {PlayerId} from world {WorldId}",
                 profile.Player.Id, worldId);
+        }
+    }
+
+    public async Task<Result<bool>> AddPlayerAsync(string worldId, PlayerRank playerRank)
+    {
+        logger.LogDebug("Starting {m} for player {PlayerId} from world {WorldId}", nameof(AddPlayerAsync),
+            playerRank.Id, worldId);
+        await _upsertSemaphore.WaitAsync();
+        try
+        {
+            var existingPlayer = await context.Players
+                .FirstOrDefaultAsync(x => x.InGamePlayerId == playerRank.Id && x.WorldId == worldId);
+
+            if (existingPlayer != null)
+            {
+                return Result.Ok(false);
+            }
+
+            var newPlayer = new Player
+            {
+                InGamePlayerId = playerRank.Id,
+                WorldId = worldId,
+                Age = HohStringParser.GetConcreteId(playerRank.Age),
+                Name = playerRank.Name,
+                AvatarId = playerRank.AvatarId,
+            };
+            context.Players.Add(newPlayer);
+            await context.SaveChangesAsync();
+
+            logger.LogDebug("Successfully added player {PlayerId} from world {WorldId}", playerRank.Id, worldId);
+            return Result.Ok(true);
+        }
+        catch (Exception ex)
+        {
+            return Result.Fail(new PlayerAdditionError(worldId, playerRank.Id, ex));
+        }
+        finally
+        {
+            logger.LogDebug("Releasing semaphore for player {PlayerId} from world {WorldId}", playerRank.Id, worldId);
+            _upsertSemaphore.Release();
         }
     }
 

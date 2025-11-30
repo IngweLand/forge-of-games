@@ -3,6 +3,12 @@
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root user-select-none" @onclick="() => OnClick.InvokeAsync(Player)">
+    @if (ShowRank)
+    {
+        <div class="rank">
+            @Player.Rank
+        </div>
+    }
     <div class="avatar-container">
         <img class="avatar" src="@Player.AvatarUrl"/>
     </div>
@@ -33,5 +39,6 @@
 
     [Parameter]
     public EventCallback<PlayerViewModel> OnClick { get; set; }
-
+    [Parameter]
+    public bool ShowRank { get; set; }
 }

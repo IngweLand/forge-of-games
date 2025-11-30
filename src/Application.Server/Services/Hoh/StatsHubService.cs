@@ -126,4 +126,14 @@ public class StatsHubService(ISender sender) : IStatsHubService
         };
         return sender.Send(query, ct);
     }
+
+    public Task<PaginatedList<PlayerDto>> GetEventCityRankingsAsync(string worldId,
+        CancellationToken ct = default)
+    {
+        var query = new GetEventCityRankingsQuery
+        {
+            WorldId = worldId,
+        };
+        return sender.Send(query, ct);
+    }
 }

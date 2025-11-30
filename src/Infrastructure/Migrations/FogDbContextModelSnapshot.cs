@@ -1320,11 +1320,13 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.PlayerRanking", b =>
                 {
-                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", null)
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", "Player")
                         .WithMany("Rankings")
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Player");
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.ProfileSquadDataEntity", b =>

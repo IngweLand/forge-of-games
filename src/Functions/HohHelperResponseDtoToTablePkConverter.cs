@@ -4,6 +4,7 @@ using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Infrastructure.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Utils;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Functions;
 
@@ -104,11 +105,18 @@ public class HohHelperResponseDtoToTablePkConverter(
 
     private PlayerRankingType GetPlayerRankingType(string base64ResponseData)
     {
-        var ranks = inGameDataParsingService.ParsePlayerRanking(base64ResponseData);
-        if (!Enum.TryParse(ranks.Type.ToString(), out PlayerRankingType playerRankingType))
+        var ranksResult = inGameDataParsingService.ParsePlayerRanking(base64ResponseData);
+        if (ranksResult.IsFailed)
+        {
+            ranksResult.Log<HohHelperResponseDtoToTablePkConverter>(LogLevel.Error);
+            throw new Exception("Cannot parse player ranking data");
+        }
+
+        if (!Enum.TryParse(ranksResult.Value.Type.ToString(), out PlayerRankingType playerRankingType))
         {
             throw new Exception(
-                $"Cannot map {ranks.Type.ToString()} from {typeof(Inn.Models.Hoh.PlayerRankingType).FullName} to {
+                $"Cannot map {ranksResult.Value.Type.ToString()} from {typeof(Inn.Models.Hoh.PlayerRankingType).FullName
+                } to {
                     typeof(PlayerRankingType).FullName}");
         }
 

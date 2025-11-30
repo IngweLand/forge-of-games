@@ -80,6 +80,15 @@
     color: var(--fog-text-secondary-color);
 }
 
+.rank {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 32px;
+    padding: 0 0 0 8px;
+    flex-shrink: 0;
+}
+
 @container (min-width: 470px) {
     .component-root {
         height: 56px;
@@ -121,5 +130,10 @@
 
     .updated-at-label {
         font-size: 10px;
+    }
+
+    .rank {
+        min-width: 40px;
+        padding: 0 0 0 12px;
     }
 }

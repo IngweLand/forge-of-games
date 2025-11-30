@@ -3,7 +3,6 @@ using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Providers;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Functions.Data;
-using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities;
@@ -209,16 +208,15 @@ public abstract class AutoDataProcessorBase(
         var rankings = new List<(DateTime CollectedAt, PlayerRank PlayerRank)>();
         foreach (var rawData in playerRankingRawData)
         {
-            try
+            var ranksResult = InGameDataParsingService.ParsePlayerRanking(rawData.Base64Data);
+            if (ranksResult.IsFailed)
             {
-                var ranks = InGameDataParsingService.ParsePlayerRanking(rawData.Base64Data);
-                rankings.AddRange(ranks.Top100.Select(pr => (rawData.CollectedAt, pr)));
-                rankings.AddRange(ranks.SurroundingRanking.Select(pr => (rawData.CollectedAt, pr)));
+                ranksResult.Log<AutoDataProcessorBase>(LogLevel.Error);
+                logger.LogError(null, "Error parsing player raw data collected on {date}", rawData.CollectedAt);
             }
-            catch (Exception e)
-            {
-                logger.LogError(e, "Error parsing player raw data collected on {date}", rawData.CollectedAt);
-            }
+
+            rankings.AddRange(ranksResult.Value.Top100.Select(pr => (rawData.CollectedAt, pr)));
+            rankings.AddRange(ranksResult.Value.SurroundingRanking.Select(pr => (rawData.CollectedAt, pr)));
         }
 
         return rankings;

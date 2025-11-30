@@ -1,3 +1,5 @@
+using FluentResults;
+using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
@@ -21,11 +23,12 @@ public class InGameDataParsingService(
         return dataParsingService.ParseBattleCompleteWaveRequest(data);
     }
 
-    public PlayerRanks ParsePlayerRanking(string inputData)
+    public Result<PlayerRanks> ParsePlayerRanking(string inputData)
     {
-        var data = DecodeInternal(inputData);
-
-        return dataParsingService.ParsePlayerRankings(data);
+        return Result.Try(
+                () => DecodeInternal(inputData),
+                e => new InGameDataDecodingError(e))
+            .Bind(dataParsingService.ParsePlayerRankings);
     }
 
     public IReadOnlyCollection<PvpRank> ParsePvpRanking(string inputData)

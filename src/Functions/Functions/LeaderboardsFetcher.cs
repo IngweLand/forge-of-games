@@ -5,10 +5,10 @@ using Ingweland.Fog.InnSdk.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using AllianceRankingType = Ingweland.Fog.Inn.Models.Hoh.AllianceRankingType;
-using PlayerRankingType = Ingweland.Fog.Inn.Models.Hoh.PlayerRankingType;
 
 namespace Ingweland.Fog.Functions.Functions;
 
@@ -22,7 +22,7 @@ public class LeaderboardsFetcher(
     IMapper mapper)
 {
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
-        [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower, PlayerRankingType.EventCityProgress];
+        [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower];
 
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
 
@@ -80,17 +80,15 @@ public class LeaderboardsFetcher(
     {
         foreach (var playerRankingType in PlayerRankingTypes)
         {
-            byte[] data;
-            try
+            var dataResult = await innSdkClient.RankingsService.GetPlayerRankingRawDataAsync(gameWorld,
+                playerRankingType);
+            if (dataResult.IsFailed)
             {
-                data = await innSdkClient.RankingsService.GetPlayerRankingRawDataAsync(gameWorld,
-                    playerRankingType);
-            }
-            catch (Exception e)
-            {
-                logger.LogError(e,
+                dataResult.Log<LeaderboardsFetcher>(LogLevel.Error);
+                logger.LogError(null,
                     "Could not fetch player rankings raw data for world: {WorldId}, type: {PlayerRankingType}",
                     gameWorld.Id, playerRankingType);
+                
                 continue;
             }
 
@@ -99,13 +97,13 @@ public class LeaderboardsFetcher(
                 var now = DateTime.UtcNow;
                 var rawData = new InGameRawData
                 {
-                    Base64Data = Convert.ToBase64String(data),
+                    Base64Data = Convert.ToBase64String(dataResult.Value),
                     CollectedAt = now,
                 };
 
                 await inGameRawDataTableRepository.SaveAsync(rawData,
                     inGameRawDataTablePartitionKeyProvider.PlayerRankings(gameWorld.Id, DateOnly.FromDateTime(now),
-                        mapper.Map<Models.Hoh.Enums.PlayerRankingType>(playerRankingType)));
+                        mapper.Map<PlayerRankingType>(playerRankingType)));
             }
             catch (Exception e)
             {

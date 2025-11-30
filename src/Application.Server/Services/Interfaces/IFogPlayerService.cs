@@ -3,6 +3,7 @@ using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+using Ingweland.Fog.Models.Hoh.Entities.Ranking;
 
 namespace Ingweland.Fog.Application.Server.Services.Interfaces;
 
@@ -11,6 +12,8 @@ public interface IFogPlayerService
     Task UpdateStatusAsync(IEnumerable<int> playerIds, InGameEntityStatus status, CancellationToken cancellationToken);
     Task UpdateStatusAsync(int playerId, InGameEntityStatus status, CancellationToken cancellationToken);
     Task UpsertPlayerAsync(PlayerProfile profile, string worldId);
+
+    Task<Result<bool>> AddPlayerAsync(string worldId, PlayerRank playerRank);
     Task<Result<Player>> UpsertPlayerAsync(string worldId, HohPlayer player, int rankingPoints, DateTime lastOnline);
 
     Task<Result<IReadOnlyCollection<(AllianceMember AllianceMember, Player Player)>>> UpsertPlayersAsync(string worldId,

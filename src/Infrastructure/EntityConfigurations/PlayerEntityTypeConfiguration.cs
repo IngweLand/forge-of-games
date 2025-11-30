@@ -31,7 +31,7 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasIndex(p => p.LastSeenOnline).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();
 
-        builder.HasMany(p => p.Rankings).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.Rankings).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.AgeHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.NameHistory).WithOne().HasForeignKey(p => p.PlayerId);
         builder.HasMany(p => p.PvpRankings).WithOne().HasForeignKey(p => p.PlayerId);

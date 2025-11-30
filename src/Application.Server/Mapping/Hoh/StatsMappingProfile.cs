@@ -27,6 +27,25 @@ public class StatsMappingProfile : Profile
                 opt.MapFrom(x => x.AllianceMembership!.Alliance.Name);
             });
         CreateMap<PlayerRanking, PlayerKey>();
+        CreateMap<PlayerRanking, PlayerDto>()
+            .ForMember(dest => dest.RankingPoints, opt => opt.MapFrom(x => x.Points))
+            .ForMember(dest => dest.Rank, opt => opt.MapFrom(x => x.Rank))
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(x => x.CollectedAt))
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(x => x.Player.Age))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(x => x.Player.Name))
+            .ForMember(dest => dest.WorldId, opt => opt.MapFrom(x => x.Player.WorldId))
+            .ForMember(dest => dest.AvatarId, opt => opt.MapFrom(x => x.Player.AvatarId))
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(x => x.Player.Id))
+            .ForMember(dest => dest.AllianceId, opt =>
+            {
+                opt.PreCondition(x => x.Player.AllianceMembership != null);
+                opt.MapFrom(x => x.Player.AllianceMembership!.AllianceId);
+            })
+            .ForMember(dest => dest.AllianceName, opt =>
+            {
+                opt.PreCondition(x => x.Player.AllianceMembership != null);
+                opt.MapFrom(x => x.Player.AllianceMembership!.Alliance.Name);
+            });
 
         CreateMap<Alliance, AllianceKey>();
         CreateMap<AllianceRanking, AllianceRanking>();
