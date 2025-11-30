@@ -5,11 +5,16 @@ using Microsoft.Azure.Functions.Worker;
 
 namespace Ingweland.Fog.Functions.Functions;
 
-public class EventCityRankingsFetcher(IRankingUpdateOrchestrator orchestrator, IGameWorldsProvider gameWorldsProvider)
+public class EventCityRankingsFetcher(
+    IRankingUpdateOrchestrator orchestrator,
+    IGameWorldsProvider gameWorldsProvider,
+    DatabaseWarmUpService databaseWarmUpService)
 {
     [Function("EventCityRankingsFetcher")]
     public async Task Run([TimerTrigger("0 0 */3 * * *")] TimerInfo myTimer)
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+
         var hasErrors = false;
         foreach (var gw in gameWorldsProvider.GetGameWorlds())
         {
