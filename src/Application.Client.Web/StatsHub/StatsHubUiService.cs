@@ -249,10 +249,10 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return (await _memoryCache.GetOrCreateAsync(key, async entry =>
         {
             var result = await factory();
-
+            
             if (result.Count == 0)
             {
-                entry.AbsoluteExpirationRelativeToNow = TimeSpan.Zero;
+                entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMilliseconds(1);
                 return [];
             }
 
