@@ -22,26 +22,57 @@ ORDER BY Count DESC
 OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
 
 
--- Db stats
-SELECT t.NAME                                                                                    AS TableName,
-       MAX(p.rows)                                                                               AS RowCounts,
-       CAST(ROUND((SUM(a.total_pages) * 8) / 1024.0, 2) AS DECIMAL(18, 2))                       AS TotalSizeMB,
-       CAST(ROUND((SUM(a.used_pages) * 8) / 1024.0, 2) AS DECIMAL(18, 2))                        AS DataSizeMB,
-       CAST(ROUND(((SUM(a.total_pages) - SUM(a.used_pages)) * 8) / 1024.0, 2) AS DECIMAL(18, 2)) AS IndexSizeMB
-FROM sys.tables t
-         INNER JOIN sys.indexes i
-                    ON t.OBJECT_ID = i.object_id
-         INNER JOIN sys.partitions p
-                    ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
-         INNER JOIN sys.allocation_units a
-                    ON p.partition_id = a.container_id
-WHERE t.is_ms_shipped = 0
-  AND (t.Name = 'alliances' OR t.Name = 'battles' OR t.Name = 'profile_squads' OR t.Name = 'pvp_battles' OR
-       t.Name = 'player_city_snapshots' OR t.Name = 'player_city_snapshot_data' OR t.Name = 'players' OR
-       t.Name = 'battle_stats' OR t.Name = 'battle_timelines' OR t.Name = 'battle_squads' OR
-       t.Name = 'profile_squad_data' OR t.Name = 'player_rankings' OR t.Name = 'pvp_rankings2' OR
-       t.Name = 'alliance_rankings' OR t.Name = 'alliance_members' OR t.Name = 'player_name_history_entries' OR
-       t.Name = 'alliance_ath_rankings' OR t.Name = 'pvp_battle_teams')
-GROUP BY t.Name
-ORDER BY TableName;
 
+-- Db stats
+CREATE TABLE #SpaceUsed
+(
+    TableName  NVARCHAR(128),
+    Rows       BIGINT,
+    Reserved   VARCHAR(50),
+    Data       VARCHAR(50),
+    Index_Size VARCHAR(50),
+    Unused     VARCHAR(50)
+);
+-- List your tables
+DECLARE @TableName NVARCHAR(128);
+DECLARE TableCursor CURSOR FOR
+    SELECT name
+    FROM sys.tables
+    WHERE name IN ('alliances', 'battles', 'profile_squads', 'pvp_battles', 'player_city_snapshots',
+                   'player_city_snapshot_data', 'players', 'battle_stats', 'battle_timelines', 'battle_squads',
+                   'profile_squad_data', 'player_rankings', 'pvp_rankings2', 'alliance_rankings', 'alliance_members',
+                   'player_name_history_entries', 'alliance_ath_rankings', 'pvp_battle_teams', 'battle_squad_stats')
+    ORDER BY name;
+OPEN TableCursor;
+FETCH NEXT FROM TableCursor INTO @TableName;
+WHILE @@FETCH_STATUS = 0
+    BEGIN
+        INSERT INTO #SpaceUsed EXEC sp_spaceused @TableName;
+        FETCH NEXT FROM TableCursor INTO @TableName;
+    END;
+CLOSE TableCursor;
+DEALLOCATE TableCursor;
+-- DB space used
+SELECT TableName,
+       Rows,
+       CAST(ROUND(CAST(REPLACE(Reserved, ' KB', '') AS BIGINT) / 1024.0, 2) AS DECIMAL(18, 2))   AS Reserved_MB,
+       CAST(ROUND(CAST(REPLACE(Data, ' KB', '') AS BIGINT) / 1024.0, 2) AS DECIMAL(18, 2))       AS Data_MB,
+       CAST(ROUND(CAST(REPLACE(Index_Size, ' KB', '') AS BIGINT) / 1024.0, 2) AS DECIMAL(18, 2)) AS Index_Size_MB,
+       CAST(ROUND(CAST(REPLACE(Unused, ' KB', '') AS BIGINT) / 1024.0, 2) AS DECIMAL(18, 2))     AS Unused_MB
+FROM #SpaceUsed
+ORDER BY TableName;
+DROP TABLE #SpaceUsed;
+
+
+
+-- Run this to see which indexes are unused:
+SELECT object_name(s.[object_id]) AS TableName,
+       i.name                     AS IndexName,
+       s.user_seeks,
+       s.user_scans,
+       s.user_lookups,
+       s.user_updates
+FROM sys.dm_db_index_usage_stats s
+         JOIN sys.indexes i
+              ON s.object_id = i.object_id AND s.index_id = i.index_id
+ORDER BY s.user_seeks + s.user_scans + s.user_lookups;
