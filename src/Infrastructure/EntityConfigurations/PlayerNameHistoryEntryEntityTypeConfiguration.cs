@@ -14,7 +14,6 @@ public class PlayerNameHistoryEntryEntityTypeConfiguration : IEntityTypeConfigur
 
         builder.Property(p => p.Name).IsRequired().HasMaxLength(500);
 
-        builder.HasIndex(p => p.Name);
         // This index should technically be unique.
         // However, it does not work for us because the game allows names with trailing spaces
         // and SQL server ignores them when comparing strings.

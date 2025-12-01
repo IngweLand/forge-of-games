@@ -17,7 +17,6 @@ public class AllianceAthRankingEntityTypeConfiguration : IEntityTypeConfiguratio
         builder.Property(p => p.CollectedAt).IsRequired();
         builder.Property(p => p.InGameEventId).IsRequired();
 
-        builder.HasIndex(p => p.CollectedAt).IsDescending();
         builder.HasIndex(p => p.Points).IsDescending();
         builder.HasIndex(p => p.League);
         builder.HasIndex(p => p.InGameEventId);

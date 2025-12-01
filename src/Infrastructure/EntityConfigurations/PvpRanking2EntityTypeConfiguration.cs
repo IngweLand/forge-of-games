@@ -16,6 +16,5 @@ public class PvpRanking2EntityTypeConfiguration : IEntityTypeConfiguration<PvpRa
         builder.Property(p => p.CollectedAt).IsRequired();
 
         builder.HasIndex(p => p.CollectedAt).IsDescending();
-        builder.HasIndex(p => p.Tier);
     }
 }

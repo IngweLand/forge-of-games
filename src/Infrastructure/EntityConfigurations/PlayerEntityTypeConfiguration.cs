@@ -26,7 +26,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasIndex(p => p.Age);
         builder.HasIndex(p => p.Status);
         builder.HasIndex(p => p.RankingPoints).IsDescending();
-        builder.HasIndex(p => p.UpdatedAt).IsDescending();
         builder.HasIndex(p => p.ProfileUpdatedAt).IsDescending();
         builder.HasIndex(p => p.LastSeenOnline).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();

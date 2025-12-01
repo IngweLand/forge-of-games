@@ -18,7 +18,6 @@ public class PvpBattleEntityTypeConfiguration : IEntityTypeConfiguration<PvpBatt
         builder.Property(p => p.WorldId).IsRequired().HasMaxLength(48);
         builder.Property(p => p.PerformedAt).IsRequired();
 
-        builder.HasIndex(p => p.WorldId);
         builder.HasIndex(p => p.InGameBattleId);
         builder.HasIndex(p => p.PerformedAt).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGameBattleId}).IsUnique();
