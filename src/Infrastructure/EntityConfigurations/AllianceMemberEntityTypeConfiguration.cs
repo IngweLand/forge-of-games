@@ -12,7 +12,7 @@ public class AllianceMemberEntityTypeConfiguration : IEntityTypeConfiguration<Al
 
         builder.HasKey(p => p.Id);
 
-        builder.Property(p => p.Role).HasConversion<string>();
+        builder.Property(p => p.Role);
 
         builder.HasIndex(p => p.Role);
     }
