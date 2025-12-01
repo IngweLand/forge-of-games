@@ -21,7 +21,7 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.Property(p => p.ResultStatus).IsRequired();
         builder.Property(p => p.WorldId).IsRequired();
         builder.Property(p => p.PerformedAt).IsRequired();
-        builder.Property(p => p.BattleType).IsRequired().HasConversion<string>().HasDefaultValue(BattleType.Undefined);
+        builder.Property(p => p.BattleType).IsRequired();
 
         builder.HasIndex(p => p.WorldId);
         builder.HasIndex(p => p.InGameBattleId);

@@ -1,11 +1,11 @@
 namespace Ingweland.Fog.Models.Hoh.Enums;
 
-public enum BattleType
+public enum BattleType : byte
 {
     Undefined = 0,
-    Campaign,
-    HistoricBattle,
-    Pvp,
-    TeslaStorm,
-    TreasureHunt,
+    Campaign = 1,
+    HistoricBattle = 2,
+    Pvp = 3,
+    TeslaStorm = 4,
+    TreasureHunt = 5,
 }

@@ -3,7 +3,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Hoh.Enums;
 
 [ProtoContract]
-public enum Difficulty
+public enum Difficulty : byte
 {
     Undefined = 0,
     Normal = 1,
