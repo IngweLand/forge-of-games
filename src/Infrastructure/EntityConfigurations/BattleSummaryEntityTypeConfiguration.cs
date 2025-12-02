@@ -24,11 +24,17 @@ public class BattleSummaryEntityTypeConfiguration : IEntityTypeConfiguration<Bat
         builder.Property(p => p.BattleType).IsRequired();
 
         builder.HasIndex(p => p.InGameBattleId).IsUnique();
-        builder.HasIndex(p => p.BattleDefinitionId);
         builder.HasIndex(p => p.ResultStatus);
         builder.HasIndex(p => p.BattleType);
-        builder.HasIndex(p => p.SubmissionId);
-        builder.HasIndex(p => p.PerformedAt).IsDescending();
+        builder.HasIndex(b => new { b.BattleDefinitionId, b.Id })
+            .IsDescending(false, true)
+            .HasDatabaseName("IX_battles_BattleDefinitionId_Id_Desc");
+        builder.HasIndex(b => new { b.BattleDefinitionId, b.ResultStatus, b.Id })
+            .IsDescending(false, false, true)
+            .HasDatabaseName("IX_battles_BattleDefinitionId_ResultStatus_Id_Desc");
+        builder.HasIndex(b => new { b.SubmissionId, b.BattleType, b.BattleDefinitionId, b.ResultStatus, b.Id })
+            .IsDescending(false, false, false, false, true)
+            .HasDatabaseName("IX_battles_SubmissionId_BattleType_BattleDefinitionId_ResultStatus_Id_Desc");
 
         builder.HasMany(b => b.Units).WithMany(h => h.Battles).UsingEntity(j => j.ToTable("battles_to_units"));
         builder.HasMany(b => b.Squads).WithOne().HasForeignKey(x => x.BattleId).IsRequired();
