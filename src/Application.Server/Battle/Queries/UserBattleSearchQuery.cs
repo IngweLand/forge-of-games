@@ -68,7 +68,7 @@ public class PlayerBattleSearchQueryHandler(
             }
         }
 
-        battlesQuery = battlesQuery.OrderByDescending(src => src.PerformedAt).ThenByDescending(src => src.Id);
+        battlesQuery = battlesQuery.OrderByDescending(src => src.Id);
         var count = await battlesQuery.CountAsync(cancellationToken);
 
         if (count == 0)

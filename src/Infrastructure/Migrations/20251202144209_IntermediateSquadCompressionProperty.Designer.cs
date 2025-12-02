@@ -4,6 +4,7 @@ using Ingweland.Fog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ingweland.Fog.Infrastructure.Migrations
 {
     [DbContext(typeof(FogDbContext))]
-    partial class FogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251202144209_IntermediateSquadCompressionProperty")]
+    partial class IntermediateSquadCompressionProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,7 +299,11 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("Side")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("Squads")
+                    b.Property<string>("Squads")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("TempSquads")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 

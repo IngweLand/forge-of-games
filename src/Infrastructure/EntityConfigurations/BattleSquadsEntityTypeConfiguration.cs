@@ -1,3 +1,4 @@
+using Ingweland.Fog.Infrastructure.Converters;
 using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,7 +13,7 @@ public class BattleSquadsEntityTypeConfiguration : IEntityTypeConfiguration<Batt
 
         builder.HasKey(p => p.Id);
 
-        builder.Property(p => p.Squads).IsRequired();
+        builder.Property(p => p.Squads).IsRequired().HasConversion<StringCompressionConverter>();
         builder.Property(p => p.Side).IsRequired();
         
         builder.HasIndex(p => p.Side);
