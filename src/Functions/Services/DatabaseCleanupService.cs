@@ -52,7 +52,7 @@ public class DatabaseCleanupService(IFogDbContext context, ILogger<DatabaseClean
         var total = 0;
         while (true)
         {
-            var old = await context.PvpBattles.Where(x => x.PerformedAt < cutoffDate).Take(100).ToListAsync();
+            var old = await context.PvpBattles.Where(x => x.PerformedAt < cutoffDate).Take(50).ToListAsync();
             total += old.Count;
             if (old.Count == 0)
             {
