@@ -76,3 +76,79 @@ FROM sys.dm_db_index_usage_stats s
          JOIN sys.indexes i
               ON s.object_id = i.object_id AND s.index_id = i.index_id
 ORDER BY s.user_seeks + s.user_scans + s.user_lookups;
+
+
+-- Find queries doing table/index scans
+SELECT TOP 20
+    SUBSTRING(qt.text, 1, 200) AS query_text,
+    qs.execution_count,
+    qs.total_logical_reads,
+    qp.query_plan
+FROM sys.dm_exec_query_stats qs
+         CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) qt
+         CROSS APPLY sys.dm_exec_query_plan(qs.plan_handle) qp
+WHERE qt.text LIKE '%players%'
+  AND CAST(qp.query_plan AS NVARCHAR(MAX)) LIKE '%Scan%'  -- Plans with scans
+ORDER BY qs.total_logical_reads DESC;
+
+
+
+-- Real-time monitor
+SELECT
+    r.session_id,
+    r.command,
+    r.status,
+    r.percent_complete,
+    r.total_elapsed_time / 1000 AS elapsed_seconds,
+    r.estimated_completion_time / 1000 AS est_seconds_remaining,
+    r.wait_type,
+    r.wait_time / 1000 AS wait_seconds,
+    r.blocking_session_id,
+    r.cpu_time / 1000 AS cpu_seconds,
+    r.logical_reads,
+    r.writes
+FROM sys.dm_exec_requests r
+ORDER BY r.session_id;
+
+
+
+-- check stats
+SET STATISTICS IO ON;
+SET STATISTICS TIME ON;
+-- your query here
+SET STATISTICS IO OFF;
+SET STATISTICS TIME OFF;
+
+
+ALTER INDEX ALL ON battle_timelines REBUILD;
+
+
+ALTER INDEX ALL ON battle_timelines REORGANIZE;
+
+
+-- LOB and in-row space used
+SELECT
+    i.name AS IndexName,
+    i.type_desc,
+    p.data_compression_desc,
+    p.rows,
+    (ps.reserved_page_count * 8) / 1024.0 AS ReservedMB,
+    (ps.used_page_count * 8) / 1024.0 AS UsedMB,
+    (ps.in_row_data_page_count * 8) / 1024.0 AS InRowDataMB
+FROM sys.indexes i
+         INNER JOIN sys.partitions p ON i.object_id = p.object_id AND i.index_id = p.index_id
+         INNER JOIN sys.dm_db_partition_stats ps ON p.object_id = ps.object_id AND p.index_id = ps.index_id AND p.partition_number = ps.partition_number
+WHERE i.object_id = object_id('pvp_battle_teams');
+SELECT
+    SUM(ps.lob_used_page_count) * 8 / 1024.0 AS LOB_DataMB,
+    SUM(ps.in_row_used_page_count) * 8 / 1024.0 AS InRowMB
+FROM sys.dm_db_partition_stats ps
+WHERE ps.object_id = object_id('pvp_battle_teams');
+
+
+-- Check data sizes
+SELECT
+    AVG(DATALENGTH(Squads)) AS AvgBytes,
+    MAX(DATALENGTH(Squads)) AS MaxBytes,
+    COUNT(*) AS Count
+FROM battle_squads;
