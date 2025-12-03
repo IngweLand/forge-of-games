@@ -9,7 +9,7 @@ public class TableStorageCleanupFunction(IInGameRawDataTableRepository inGameRaw
     [Function("TableStorageCleanupFunction")]
     public async Task Run([TimerTrigger("0 0 8 * * *")] TimerInfo myTimer)
     {
-        var cutOffDate = DateTime.UtcNow.AddMonths(-1);
+        var cutOffDate = DateTime.UtcNow.AddDays(-7);
         await inGameRawDataTableRepository.DeleteAllAsync(cutOffDate);
     }
 }
