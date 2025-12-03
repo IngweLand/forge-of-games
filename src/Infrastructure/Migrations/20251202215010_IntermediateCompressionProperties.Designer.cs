@@ -4,6 +4,7 @@ using Ingweland.Fog.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ingweland.Fog.Infrastructure.Migrations
 {
     [DbContext(typeof(FogDbContext))]
-    partial class FogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251202215010_IntermediateCompressionProperties")]
+    partial class IntermediateCompressionProperties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -397,13 +400,17 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<byte[]>("Entries")
+                    b.Property<string>("Entries")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("InGameBattleId")
                         .IsRequired()
                         .HasColumnType("varbinary(900)");
+
+                    b.Property<byte[]>("TempEntries")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.HasKey("Id");
 
@@ -820,11 +827,19 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<int>("ProfileSquadId")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("SerializedHero")
+                    b.Property<string>("SerializedHero")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SerializedSupportUnit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("TempSerializedHero")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<byte[]>("SerializedSupportUnit")
+                    b.Property<byte[]>("TempSerializedSupportUnit")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
@@ -941,16 +956,24 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<byte[]>("LoserTeam")
+                    b.Property<string>("LoserTeam")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PvpBattleId")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("WinnerTeam")
+                    b.Property<byte[]>("TempLoserTeam")
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("TempWinnerTeam")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("WinnerTeam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

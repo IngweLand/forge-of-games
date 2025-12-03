@@ -15,7 +15,8 @@ public class BattleTimelineEntityTypeConfiguration : IEntityTypeConfiguration<Ba
 
         builder.Property(p => p.InGameBattleId).IsRequired();
         builder.Property(p => p.Entries).IsRequired()
-            .HasConversion<JsonValueConverter<ISet<BattleTimelineEntry>>>(new SetValueComparer<BattleTimelineEntry>());
+            .HasConversion<CompressedJsonValueConverter<ISet<BattleTimelineEntry>>>(
+                new SetValueComparer<BattleTimelineEntry>());
 
         builder.HasIndex(p => p.InGameBattleId);
     }

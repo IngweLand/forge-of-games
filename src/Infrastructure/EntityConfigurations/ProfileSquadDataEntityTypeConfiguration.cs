@@ -1,5 +1,5 @@
+using Ingweland.Fog.Infrastructure.Converters;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,11 +12,11 @@ public class ProfileSquadDataEntityTypeConfiguration : IEntityTypeConfiguration<
         builder.ToTable("profile_squad_data");
 
         builder.HasKey(p => p.Id);
-        
+
         builder.Ignore(p => p.Hero);
         builder.Ignore(p => p.SupportUnit);
 
-        builder.Property(p => p.SerializedHero).IsRequired();
-        builder.Property(p => p.SerializedSupportUnit).IsRequired();
+        builder.Property(p => p.SerializedHero).IsRequired().HasConversion<StringCompressionConverter>();
+        builder.Property(p => p.SerializedSupportUnit).IsRequired().HasConversion<StringCompressionConverter>();
     }
 }

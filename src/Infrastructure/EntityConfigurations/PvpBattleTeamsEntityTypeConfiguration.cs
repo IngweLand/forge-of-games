@@ -1,3 +1,4 @@
+using Ingweland.Fog.Infrastructure.Converters;
 using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,7 +13,7 @@ public class PvpBattleTeamsEntityTypeConfiguration : IEntityTypeConfiguration<Pv
 
         builder.HasKey(p => p.Id);
         
-        builder.Property(p => p.WinnerTeam).IsRequired();
-        builder.Property(p => p.LoserTeam).IsRequired();
+        builder.Property(p => p.WinnerTeam).IsRequired().HasConversion<StringCompressionConverter>();
+        builder.Property(p => p.LoserTeam).IsRequired().HasConversion<StringCompressionConverter>();
     }
 }
