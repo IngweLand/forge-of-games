@@ -1,4 +1,6 @@
 @implements IDisposable
+@using Ingweland.Fog.Application.Client.Web.Analytics
+@using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.WebApp.Client.Constants
@@ -36,6 +38,9 @@
 
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+    
+    [Inject]
+    private IAnalyticsService AnalyticsService { get; set; }
 
     protected override void OnInitialized()
     {
@@ -78,7 +83,23 @@
         {
             _shouldShowAnnouncement = show;
             StateHasChanged();
+            TrackEvent();
         }
+    }
+    
+    private void TrackEvent()
+    {
+        if (!_shouldShowAnnouncement)
+        {
+            return;
+        }
+        
+        var allParameters = new Dictionary<string, object>
+        {
+            [AnalyticsParams.ANNOUNCEMENT_ID] = "donation",
+        };
+
+        _ = AnalyticsService.TrackEvent(AnalyticsEvents.SHOW_ANNOUNCEMENT, allParameters);
     }
 
     private void NavigationManagerOnLocationChanged(object? sender, LocationChangedEventArgs e)

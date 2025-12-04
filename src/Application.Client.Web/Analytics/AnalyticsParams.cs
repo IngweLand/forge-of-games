@@ -24,6 +24,7 @@ public static class AnalyticsParams
     public const string SOURCE = "source_component";
     public const string STATE = "state";
     public const string UNIT_ID = "unit_id";
+    public const string ANNOUNCEMENT_ID = "announcement_id";
 
     public static class Values
     {

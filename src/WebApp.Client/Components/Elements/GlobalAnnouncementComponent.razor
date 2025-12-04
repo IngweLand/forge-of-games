@@ -1,3 +1,5 @@
+@using Ingweland.Fog.Application.Client.Web.Analytics
+@using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
@@ -17,12 +19,27 @@
 
     [Parameter]
     public EventCallback OnAnnouncementConsumed { get; set; }
+    
+    [Inject]
+    private IAnalyticsService AnalyticsService { get; set; }
 
     private async Task OnConsumed()
     {
         await PersistenceService.SetItemAsync(PersistenceKeys.DONATION_NOTIFICATION_READ_AT, DateTime.UtcNow);
 
         await OnAnnouncementConsumed.InvokeAsync();
+
+        TrackEvent();
+    }
+    
+    private void TrackEvent()
+    {
+        var allParameters = new Dictionary<string, object>
+        {
+            [AnalyticsParams.ANNOUNCEMENT_ID] = "donation",
+        };
+
+        _ = AnalyticsService.TrackEvent(AnalyticsEvents.CONSUME_ANNOUNCEMENT, allParameters);
     }
 
 }

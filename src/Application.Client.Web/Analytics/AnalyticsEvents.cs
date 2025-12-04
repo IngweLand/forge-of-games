@@ -3,6 +3,7 @@ namespace Ingweland.Fog.Application.Client.Web.Analytics;
 public static class AnalyticsEvents
 {
     public const string BATTLE_LOG_FORM_SUBMIT = "battle_log_form_submit";
+    public const string CONSUME_ANNOUNCEMENT = "consume_announcement";
     public const string INSPIRATIONS_FORM_SUBMIT = "inspirations_form_submit";
     public const string NAVIGATE_ALLIANCE = "navigate_alliance";
     public const string NAVIGATE_HERO_BATTLE = "navigate_hero_battle";
@@ -11,6 +12,7 @@ public static class AnalyticsEvents
     public const string PICK_HERO_TARGET_LEVEL = "pick_hero_target_level";
     public const string SELECT_HERO_BATTLE_TYPE = "select_hero_battle_type";
     public const string SELECT_HERO_LEVEL = "select_hero_level";
+    public const string SHOW_ANNOUNCEMENT = "show_announcement";
     public const string TOGGLE_BATTLE_TIMELINE_RELICS = "toggle_bt_relics";
     public const string TOGGLE_CHART = "toggle_chart";
     public const string TOGGLE_VIEW = "toggle_view";
