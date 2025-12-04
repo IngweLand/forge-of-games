@@ -18,5 +18,9 @@ public class AllianceRankingEntityTypeConfiguration : IEntityTypeConfiguration<A
         builder.Property(p => p.CollectedAt).IsRequired();
 
         builder.HasIndex(p => p.CollectedAt).IsDescending();
+        builder.HasIndex(p => new {p.Type, p.CollectedAt})
+            .IsDescending(false, false);
+        builder.HasIndex(p => new {p.AllianceId, p.Type, p.CollectedAt})
+            .IsDescending(false, false, false);
     }
 }

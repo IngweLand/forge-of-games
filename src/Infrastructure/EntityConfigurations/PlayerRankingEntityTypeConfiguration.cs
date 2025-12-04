@@ -19,5 +19,9 @@ public class PlayerRankingEntityTypeConfiguration : IEntityTypeConfiguration<Pla
         builder.Property(p => p.CollectedAt).IsRequired();
 
         builder.HasIndex(p => p.CollectedAt).IsDescending();
+        builder.HasIndex(p => new {p.Type, p.CollectedAt})
+            .IsDescending(false, false);
+        builder.HasIndex(p => new {p.PlayerId, p.Type, p.CollectedAt})
+            .IsDescending(false, false, false);
     }
 }
