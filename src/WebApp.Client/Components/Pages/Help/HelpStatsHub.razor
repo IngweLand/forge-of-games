@@ -1,6 +1,6 @@
 @page "/help-stats-hub"
-@using Ingweland.Fog.Application.Core.Helpers
 @attribute [Route(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 
 <div class="help-container">
@@ -8,18 +8,27 @@
 
     <div class="help-info">
         The Stats Hub aggregates data across <em>Heroes of History</em> to provide
-        leaderboards, metrics, and trend analysis for players, alliances, and heroes. This
-        information is largely crowdsourced—meaning it depends on contributions
-        from users like you!
+        leaderboards, metrics, and trend analysis for players, alliances, and heroes. Part of this
+        information is crowdsourced—meaning it depends on contributions from users like you!
     </div>
-    
+
     <div class="help-step">
         <h5>How the Stats Hub Works</h5>
         <p>
-            Whenever you or other community members load the <em>Heroes of History</em> game
-            with our HoH Helper extension active, the in-game leaderboards and relevant
-            stats are collected and sent to Forge of Games. Our servers then compile
-            this data to power the Stats Hub’s rankings and historical insights.
+            We collect data for the Stats Hub from multiple sources, including:
+        </p>
+        <ul>
+            <li>
+                Our internal automated scripts, which gather available game information
+            </li>
+            <li>
+                Whenever you or other community members load the <em>Heroes of History</em> game
+                with our HoH Helper extension active, the in-game leaderboards and relevant
+                stats are collected and sent to Forge of Games.
+            </li>
+        </ul>
+        <p>
+            Our servers then compile this data to power the Stats Hub’s rankings and historical insights.
         </p>
     </div>
 
@@ -29,23 +38,30 @@
             The Stats Hub main page showcases several dynamic lists:
         </p>
         <ul>
-            <li>Top Players from both Main and Beta worlds</li>
-            <li>Top Alliances from both Main and Beta worlds</li>
+            <li>Top Players</li>
+            <li>Top Alliances</li>
+            <li>Top Players by filled boxes during all Allied Cultures events</li>
+            <li>Top Alliances in the current/last Treasure Hunt campaign</li>
             <li>Hero Insights – highlighting the most popular heroes</li>
         </ul>
         <p>
-            Each list includes a <strong>View All</strong> button, allowing you to explore the full corresponding data page.
+            Each list includes a <strong>View All</strong> button, allowing you to explore the full corresponding data
+            page.
+        </p>
+        <p>
+            You can switch between Main and Beta worlds by selecting the corresponding option at the top of the page.
         </p>
     </div>
 
     <div class="help-step">
         <h5>Players and Alliances</h5>
         <p>
-            The <strong>Players</strong> and <strong>Alliances</strong> pages display ranked lists filtered by world (Main or Beta).
+            The <strong>Players</strong> and <strong>Alliances</strong> pages display ranked lists.
             You’ll find a search bar above each list to look up specific players or alliances by name.
         </p>
         <p>
-            Please note: These lists may not contain every player or alliance, only those contributed by users or collected by our system.
+            Please note: These lists may not contain every player or alliance. If you find a player or alliance missing,
+            the best way to add them is to contribute your data.
             Learn how to contribute in the section below.
         </p>
         <p>
@@ -58,18 +74,24 @@
     <div class="help-step">
         <h5>Hero Insights</h5>
         <p>
-            The <strong>Hero Insights</strong> section provides statistical analysis based on the top 5 most powerful heroes of the players.
+            The <strong>Hero Insights</strong> section provides statistical analysis based on the top 5 most powerful
+            heroes of the players.
         </p>
         <p>Two types of insights are available:</p>
         <ul>
             <li>
-                <strong>Most Popular Heroes:</strong> Displays the 10 heroes that most frequently appear in players' top 5.
-                You can filter results by <em>hero age</em> and <em>level range</em>. The output reflects the most popular heroes
-                among those that match your selected filters. If several heroes are tied for the last position, one is chosen at random.
+                <strong>Most Popular Heroes:</strong> Displays the 10 heroes that most frequently appear in players' top
+                5.
+                You can filter results by <em>hero age</em> and <em>level range</em>. The output reflects the most
+                popular heroes
+                among those that match your selected filters. If several heroes are tied for the last position, one is
+                chosen at random.
             </li>
             <li>
-                <strong>Highest-Level Heroes:</strong> Highlights heroes who have reached the highest levels among all collected data.
-                After applying an optional <em>age filter</em>, the system shows all heroes whose levels match the top 5 levels found in the filtered group.
+                <strong>Highest-Level Heroes:</strong> Highlights heroes who have reached the highest levels among all
+                collected data.
+                After applying an optional <em>age filter</em>, the system shows all heroes whose levels match the top 5
+                levels found in the filtered group.
                 The number of results may vary depending on the data.
             </li>
         </ul>
@@ -86,7 +108,7 @@
             automatically be added to the pool, benefiting the entire community!
         </p>
         <p>
-            For step-by-step installation instructions, check out the 
+            For step-by-step installation instructions, check out the
             <a href="@FogUrlBuilder.PageRoutes.HELP_BROWSER_EXTENSION_PATH">
                 HoH Helper Extension Guide
             </a>.
