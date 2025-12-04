@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Functions.Services.Interfaces;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Constants;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ public class PlayerCityFetcher(
     ILogger<PlayerCityFetcher> logger) : IPlayerCityFetcher
 {
     protected const int BATCH_SIZE = 100;
+
+    private readonly HashSet<string> _disallowedAges = [AgeIds.BRONZE_AGE, AgeIds.STONE_AGE];
     protected IFogDbContext Context { get; } = context;
     protected ILogger<PlayerCityFetcher> Logger { get; } = logger;
 
@@ -60,7 +63,7 @@ public class PlayerCityFetcher(
         Logger.LogInformation(
             "PlayerCitiesFetcher completed. Processed {TotalPlayers} players, {SuccessCount} successful",
             players.Count, successCount);
-        
+
         if (playersToVerify.Count > 0)
         {
             await playersUpdateManager.RunAsync(playersToVerify);
@@ -93,7 +96,8 @@ public class PlayerCityFetcher(
         while (runs < 10 && players.Count < BATCH_SIZE)
         {
             var p = await Context.Players
-                .Where(x => x.Status == InGameEntityStatus.Active && x.RankingPoints > 1000)
+                .Where(x => x.Status == InGameEntityStatus.Active && x.RankingPoints > 1000 &&
+                    !_disallowedAges.Contains(x.Age))
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BATCH_SIZE)
                 .ToListAsync();
