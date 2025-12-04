@@ -26,7 +26,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
 
     public Task<IReadOnlyCollection<PlayerDto>> GetTopPlayersAsync(string worldId, CancellationToken ct = default)
     {
-        var query = new GetTopPlayersQuery()
+        var query = new GetTopPlayersQuery
         {
             WorldId = worldId,
         };
@@ -35,7 +35,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
 
     public Task<IReadOnlyCollection<AllianceDto>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default)
     {
-        var query = new GetTopAlliancesQuery()
+        var query = new GetTopAlliancesQuery
         {
             WorldId = worldId,
         };
@@ -147,6 +147,26 @@ public class StatsHubService(ISender sender) : IStatsHubService
         var query = new GetEventCityRankingsQuery
         {
             WorldId = worldId,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
+        CancellationToken ct = default)
+    {
+        var query = new GetAllianceRankingsQuery
+        {
+            AllianceId = allianceId,
+        };
+        return sender.Send(query, ct);
+    }
+
+    public Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var query = new GetPlayerRankingsQuery
+        {
+            PlayerId = playerId,
         };
         return sender.Send(query, ct);
     }

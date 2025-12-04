@@ -72,6 +72,7 @@
         @if (_canShowChart)
         {
             <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_RankingPoints]"
+                                 IsLoading="@_rankingsAreLoading"
                                  ExpandedChanged="@ToggleRankingChart">
                 <SfChart Focusable="false" Height="300">
                     <ChartArea>
@@ -94,7 +95,7 @@
                         <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
                     </ChartPrimaryYAxis>
                     <ChartSeriesCollection>
-                        <ChartSeries DataSource="@_player.RankingPoints" XName="Date" YName="Value"
+                        <ChartSeries DataSource="@_rankings" XName="Date" YName="Value"
                                      Type="ChartSeriesType.Line" Fill="var(--fog-chart-line-color)">
                             <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
                             <ChartSeriesAnimation Enable="false"/>

@@ -18,7 +18,6 @@ public class PlayerProfileDtoFactory(IMapper mapper) : IPlayerProfileDtoFactory
         return new PlayerProfileDto
         {
             Player = mapper.Map<PlayerDto>(player),
-            RankingPoints = CreateTimedIntValueCollection(player.Rankings, PlayerRankingType.TotalHeroPower),
             Ages = CreateTimedStringValueCollection(player.AgeHistory, entry => entry.Age),
             Alliances = mapper.Map<IReadOnlyCollection<AllianceDto>>(uniqueAlliances),
             Names = player.NameHistory.Select(entry => entry.Name).ToList(),
@@ -27,26 +26,6 @@ public class PlayerProfileDtoFactory(IMapper mapper) : IPlayerProfileDtoFactory
             CitySnapshotDays = citySnapshotDays,
             HasPvpBattles = hasPvpBattles,
         };
-    }
-
-    private static List<StatsTimedIntValue> CreateTimedIntValueCollection(
-        IEnumerable<PlayerRanking> rankings,
-        PlayerRankingType playerRankingType)
-    {
-        return rankings
-            .Where(pr => pr.Type == playerRankingType)
-            .OrderBy(pr => pr.CollectedAt)
-            .Select(pr => new StatsTimedIntValue
-                {Value = pr.Points, Date = pr.CollectedAt.ToDateTime(TimeOnly.MinValue)})
-            .ToList();
-    }
-
-    private static List<StatsTimedIntValue> CreateTimedIntValueCollection(IEnumerable<PvpRanking> rankings)
-    {
-        return rankings
-            .OrderBy(pr => pr.CollectedAt)
-            .Select(pr => new StatsTimedIntValue {Value = pr.Points, Date = pr.CollectedAt})
-            .ToList();
     }
 
     private static List<StatsTimedStringValue> CreateTimedStringValueCollection<THistoryEntry>(

@@ -9,6 +9,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
+using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
@@ -31,7 +32,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private bool _isDisposed;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
     private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
-
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
@@ -39,6 +39,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
     private IReadOnlyDictionary<PvpTier, PvpTierDto> _pvpTiers = new Dictionary<PvpTier, PvpTierDto>();
+    private IReadOnlyCollection<StatsTimedIntValue>? _rankings;
+    private bool _rankingsAreLoading;
+    private CancellationTokenSource? _rankingsCts;
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
@@ -249,10 +252,35 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters));
     }
 
-    private void ToggleRankingChart(bool expanded)
+    private async Task ToggleRankingChart(bool expanded)
     {
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.PLAYER_RANKING_CHART, expanded);
+
+        if (expanded)
+        {
+            await GetRankings();
+        }
+    }
+
+    private async Task GetRankings()
+    {
+        if (_rankings != null)
+        {
+            return;
+        }
+
+        if (_rankingsCts != null)
+        {
+            await _rankingsCts.CancelAsync();
+        }
+
+        _rankingsAreLoading = true;
+        StateHasChanged();
+
+        _rankingsCts = new CancellationTokenSource();
+        _rankings = await StatsHubUiService.GetPlayerRankingsAsync(PlayerId, _rankingsCts.Token);
+        _rankingsAreLoading = false;
     }
 
     private async Task TogglePvpChart(bool expanded)

@@ -11,6 +11,7 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
+using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
@@ -24,7 +25,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private const string TOP_PLAYERS_KEY = "topPlayers";
     private const string TOP_ALLIANCES_KEY = "topAlliances";
     private const string TOP_EVENT_CITIES_KEY = "topEventCities";
-    
+
     private readonly Lazy<Task<IReadOnlyDictionary<string, AgeDto>>> _ages;
     private readonly IAllianceAthRankingViewModelFactory _allianceAthRankingViewModelFactory;
     private readonly IBattleService _battleService;
@@ -198,7 +199,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     public async Task<IReadOnlyCollection<PlayerViewModel>> GetTopEventCitiesAsync(string worldId,
         CancellationToken ct = default)
     {
-        return await GetOrCreateAsync($"{TOP_EVENT_CITIES_KEY}:{worldId}",() => ExecuteSafeAsync(
+        return await GetOrCreateAsync($"{TOP_EVENT_CITIES_KEY}:{worldId}", () => ExecuteSafeAsync(
             async () =>
             {
                 var players = await GetEventCityRankingsAsync(worldId, ct);
@@ -210,7 +211,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     public async Task<IReadOnlyCollection<AllianceViewModel>> GetTopAlliancesAsync(string worldId,
         CancellationToken ct = default)
     {
-        return await GetOrCreateAsync($"{TOP_ALLIANCES_KEY}:{worldId}",() => ExecuteSafeAsync(
+        return await GetOrCreateAsync($"{TOP_ALLIANCES_KEY}:{worldId}", () => ExecuteSafeAsync(
             async () =>
             {
                 var result = await _statsHubService.GetTopAlliancesAsync(worldId, ct);
@@ -235,7 +236,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     public async Task<IReadOnlyCollection<PlayerViewModel>> GetTopPlayersAsync(string worldId,
         CancellationToken ct = default)
     {
-        return await GetOrCreateAsync($"{TOP_PLAYERS_KEY}:{worldId}",() => ExecuteSafeAsync(
+        return await GetOrCreateAsync($"{TOP_PLAYERS_KEY}:{worldId}", () => ExecuteSafeAsync(
             async () =>
             {
                 var result = await _statsHubService.GetTopPlayersAsync(worldId, ct);
@@ -244,12 +245,28 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
             []));
     }
 
+    public Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
+        CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync(
+            () => _statsHubService.GetAllianceRankingsAsync(allianceId, ct),
+            []);
+    }
+
+    public Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync(
+            () => _statsHubService.GetPlayerRankingsAsync(playerId, ct),
+            []);
+    }
+
     private async Task<T> GetOrCreateAsync<T>(string key, Func<Task<T>> factory) where T : ICollection, new()
     {
         return (await _memoryCache.GetOrCreateAsync(key, async entry =>
         {
             var result = await factory();
-            
+
             if (result.Count == 0)
             {
                 entry.AbsoluteExpirationRelativeToNow = TimeSpan.FromMilliseconds(1);

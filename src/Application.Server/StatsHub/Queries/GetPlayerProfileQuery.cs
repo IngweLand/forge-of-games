@@ -75,12 +75,7 @@ public class GetPlayerProfileQueryHandler(
         }
 
         logger.LogDebug("Retrieving detailed player data for {PlayerId}", request.PlayerId);
-        var periodStartDate = DateTime.UtcNow.AddDays(FogConstants.DisplayedStatsDays * -1);
-        var periodStartDateOnly = DateOnly.FromDateTime(periodStartDate);
         var player = await context.Players.AsNoTracking()
-            .Include(p =>
-                p.Rankings.Where(pr =>
-                    pr.Type == PlayerRankingType.TotalHeroPower && pr.CollectedAt > periodStartDateOnly))
             .Include(p => p.NameHistory)
             .Include(p => p.AgeHistory)
             .Include(p => p.AllianceHistory)

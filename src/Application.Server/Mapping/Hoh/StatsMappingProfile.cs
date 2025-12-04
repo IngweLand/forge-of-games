@@ -46,6 +46,9 @@ public class StatsMappingProfile : Profile
                 opt.PreCondition(x => x.Player.AllianceMembership != null);
                 opt.MapFrom(x => x.Player.AllianceMembership!.Alliance.Name);
             });
+        CreateMap<PlayerRanking, StatsTimedIntValue>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Points))
+            .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
 
         CreateMap<Alliance, AllianceKey>();
         CreateMap<AllianceRanking, AllianceRanking>();
@@ -58,6 +61,9 @@ public class StatsMappingProfile : Profile
                     src.UpdatedAt > src.MembersUpdatedAt.ToDateOnly()
                         ? src.UpdatedAt
                         : src.MembersUpdatedAt.ToDateOnly()));
+        CreateMap<AllianceRanking, StatsTimedIntValue>()
+            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Points))
+            .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
 
         CreateMap<PvpBattle, BattleKey>();
 

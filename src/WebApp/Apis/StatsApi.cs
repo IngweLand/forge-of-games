@@ -31,6 +31,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE, GetAllianceAthRankingsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_RANKINGS_TEMPLATE, GetAllianceRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_ATH_RANKINGS_TEMPLATE, GetAlliancesAthRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_ALLIANCES_TEMPLATE, GetTopAlliancesAsync);
 
@@ -43,6 +44,7 @@ public static class StatsApi
         api.MapPost(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOTS_SEARCH, SearchCityInspirationsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE, GetPvpRankingsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_RANKINGS_TEMPLATE, GetPlayerRankingsAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH, SearchUserBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_INSIGHTS_TEMPLATE, GetEquipmentInsightsAsync);
@@ -218,6 +220,24 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetAllianceAthRankingsAsync(allianceId, ct);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<StatsTimedIntValue>>>
+        GetAllianceRankingsAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetAllianceRankingsAsync(allianceId, ct);
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Ok<IReadOnlyCollection<StatsTimedIntValue>>>
+        GetPlayerRankingsAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetPlayerRankingsAsync(playerId, ct);
 
         return TypedResults.Ok(result);
     }

@@ -1,8 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Enums;
-using Ingweland.Fog.Shared.Extensions;
 using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
@@ -14,7 +12,6 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
         return new AllianceWithRankings
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
-            RankingPoints = CreateTimedIntValueCollection(alliance.Rankings, AllianceRankingType.MemberTotal),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
             CurrentMembers = alliance.Members.OrderByDescending(x => x.Player.RankingPoints)
                 .Select((entity, i) => CreateMember(entity, i + 1)).ToList(),
@@ -30,22 +27,13 @@ public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankings
             PlayerId = member.Player.Id,
             UpdatedAt = member.Player.UpdatedAt,
             JoinedAt = member.JoinedAt,
-            LastSeenAt = DateTimeUtils.StripToHour(member.Player.LastSeenOnline),
+            LastSeenAt = member.Player.LastSeenOnline.StripToHour(),
             Role = member.Role,
             AvatarId = member.Player.AvatarId,
             RankingPoints = member.Player.RankingPoints ?? 0,
             Rank = rank,
             TreasureHuntDifficulty = member.Player.TreasureHuntDifficulty ?? 0,
         };
-    }
-
-    private static List<StatsTimedIntValue> CreateTimedIntValueCollection(
-        IEnumerable<AllianceRanking> rankings,
-        AllianceRankingType allianceRankingType)
-    {
-        return rankings.Where(pr => pr.Type == allianceRankingType)
-            .OrderBy(pr => pr.CollectedAt).Select(pr => new StatsTimedIntValue
-                {Value = pr.Points, Date = pr.CollectedAt.ToDateTime(TimeOnly.MinValue)}).ToList();
     }
 
     private static List<StatsTimedStringValue> CreateTimedStringValueCollection<THistoryEntry>(

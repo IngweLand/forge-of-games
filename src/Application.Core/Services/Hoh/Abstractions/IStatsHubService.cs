@@ -28,10 +28,10 @@ public interface IStatsHubService
     Task<PaginatedList<PlayerDto>> GetPlayersAsync(string worldId, [Query] int startIndex = 0,
         [Query] int pageSize = FogConstants.DEFAULT_STATS_PAGE_SIZE, [Query] string? name = null,
         CancellationToken ct = default);
-    
+
     [Get(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE)]
     Task<IReadOnlyCollection<PlayerDto>> GetTopPlayersAsync(string worldId, CancellationToken ct = default);
-    
+
     [Get(FogUrlBuilder.ApiRoutes.TOP_ALLIANCES_TEMPLATE)]
     Task<IReadOnlyCollection<AllianceDto>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default);
 
@@ -40,6 +40,14 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<AllianceAthRankingDto>> GetAllianceAthRankingsAsync(int allianceId,
+        CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
+        CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
         CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE)]

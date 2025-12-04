@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
+using Ingweland.Fog.Dtos.Hoh.Stats;
 using Microsoft.AspNetCore.Components;
 using Refit;
 
@@ -12,9 +13,12 @@ public partial class AlliancePage : StatsHubPageBase
     private IReadOnlyCollection<AllianceAthRankingViewModel>? _athRankings;
     private bool _athRankingsAreLoading;
     private CancellationTokenSource? _athRankingsCts;
-    private bool _showLastSeenOn;
     private bool _canShowChart;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
+    private IReadOnlyCollection<StatsTimedIntValue>? _rankings;
+    private bool _rankingsAreLoading;
+    private CancellationTokenSource? _rankingsCts;
+    private bool _showLastSeenOn;
 
     [Parameter]
     public required int AllianceId { get; set; }
@@ -45,10 +49,15 @@ public partial class AlliancePage : StatsHubPageBase
         }
     }
 
-    private void ToggleRankingChart(bool expanded)
+    private async Task ToggleRankingChart(bool expanded)
     {
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
             AnalyticsParams.Values.Sources.ALLIANCE_RANKING_CHART, expanded);
+
+        if (expanded)
+        {
+            await GetRankings();
+        }
     }
 
     private async Task ToggleAthRankingsContainer(bool expanded)
@@ -62,6 +71,26 @@ public partial class AlliancePage : StatsHubPageBase
         }
     }
 
+    private async Task GetRankings()
+    {
+        if (_rankings != null)
+        {
+            return;
+        }
+
+        if (_rankingsCts != null)
+        {
+            await _rankingsCts.CancelAsync();
+        }
+
+        _rankingsAreLoading = true;
+        StateHasChanged();
+
+        _rankingsCts = new CancellationTokenSource();
+        _rankings = await StatsHubUiService.GetAllianceRankingsAsync(AllianceId, _rankingsCts.Token);
+        _rankingsAreLoading = false;
+    }
+
     private async Task GetAthRankings()
     {
         if (_athRankings != null)
@@ -73,7 +102,7 @@ public partial class AlliancePage : StatsHubPageBase
         {
             await _athRankingsCts.CancelAsync();
         }
-        
+
         _athRankingsAreLoading = true;
         StateHasChanged();
 

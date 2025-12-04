@@ -62,14 +62,9 @@ public class GetAllianceQueryHandler(
             membersUpdateResult.LogIfFailed<GetAllianceQueryHandler>();
         }
 
-        var statsPeriodStartDate = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(FogConstants.DisplayedStatsDays * -1);
-
         var alliance = await context.Alliances.AsNoTracking()
             .Include(p => p.Members.Where(x => x.Player.Status == InGameEntityStatus.Active)).ThenInclude(x => x.Player)
             .Include(p => p.NameHistory)
-            .Include(p =>
-                p.Rankings.Where(pr =>
-                    pr.Type == AllianceRankingType.MemberTotal && pr.CollectedAt > statsPeriodStartDate))
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken);
         return alliance == null ? null : allianceWithRankingsFactory.Create(alliance);
