@@ -2958,6 +2958,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2026 year server cost goal.
+        /// </summary>
+        public static string SupportUs_ServerCostGoal {
+            get {
+                return ResourceManager.GetString("SupportUs.ServerCostGoal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support Forge of Games.
         /// </summary>
         public static string SupportUs_Title {

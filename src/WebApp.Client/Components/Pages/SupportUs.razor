@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Core.Helpers
+@using Size = MudBlazor.Size
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IAssetUrlProvider AssetUrlProvider
 <div class="container">
@@ -9,8 +10,17 @@
         <h4>@Loc[FogResource.SupportUs_Title]</h4>
     </header>
 
-    <section class="fog-container benefits">
+    <section class="fog-container message">
         <p> @Loc[FogResource.SupportUs_Message]</p>
+        <span style="align-self: center">@Loc[FogResource.SupportUs_ServerCostGoal]</span>
+        <MudProgressLinear Color="Color.Warning" Rounded="true" Size="Size.Large"
+                           Indeterminate="@(_annualBudgetViewModel == null)"
+                           Value="@(_annualBudgetViewModel?.ServerCostCompletion ?? 0)" Max="1">
+            @if(_annualBudgetViewModel != null)
+            {
+                <span>@_annualBudgetViewModel.ServerCostCompletionFormatted</span>
+            }
+        </MudProgressLinear>
     </section>
 
     <div class="fog-container donation-section">

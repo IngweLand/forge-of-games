@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<AnnualBudget> AnnualBudgets { get; set; }
+
     public DbSet<InGameEventEntity> InGameEvents { get; set; }
 
     public DbSet<PvpRanking2> PvpRankings { get; set; }
@@ -69,5 +71,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new AllianceAthRankingEntityTypeConfiguration());
         builder.ApplyConfiguration(new PvpRanking2EntityTypeConfiguration());
         builder.ApplyConfiguration(new PvpBattleTeamsEntityTypeConfiguration());
+        builder.ApplyConfiguration(new AnnualBudgetEntityTypeConfiguration());
     }
 }

@@ -97,6 +97,7 @@ public static class DependencyInjection
         services.AddScoped<IAllianceAthRankingDtoFactory, AllianceAthRankingDtoFactory>();
         services.AddScoped<IFogRankingService, FogRankingService>();
         services.AddScoped<IRankingUpdateOrchestrator, RankingUpdateOrchestrator>();
+        services.AddScoped<IFogCommonService, FogCommonService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

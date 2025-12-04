@@ -156,8 +156,23 @@ public static class HohApi
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_DATA, GetEquipmentDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.IN_GAME_EVENTS_TEMPLATE, GetInGameEventsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.ANNUAL_BUDGET_TEMPLATE, GetAnnualBudgetAsync);
 
         return api;
+    }
+    
+    private static async Task<Results<Ok<AnnualBudgetDto>, NotFound, BadRequest<string>>>
+        GetAnnualBudgetAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetAnnualBudgetQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+
+        if (result != null)
+        {
+            return TypedResults.Ok(result);
+        }
+
+        return TypedResults.NotFound();
     }
 
     private static async Task<Ok<EquipmentDataDto>>

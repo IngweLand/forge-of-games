@@ -82,6 +82,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
             GetAlliancesAthRankingsQuery q => $"AlliancesAthRankings:{q.WorldId}:{q.League}:{q.StartIndex}:{q.PageSize}",
             GetEventCityRankingsQuery q => $"EventCityRankingsQuery:{q.WorldId}",
+            GetAnnualBudgetQuery q => $"AnnualBudget:{q.Year}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

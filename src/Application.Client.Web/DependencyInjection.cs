@@ -22,6 +22,8 @@ using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Services;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub;
@@ -135,6 +137,7 @@ public static class DependencyInjection
         services.AddScoped<IRelicUiService, RelicUiService>();
         services.AddScoped<ISquadEquipmentItemViewModelFactory, SquadEquipmentItemViewModelFactory>();
         services.AddScoped<IAllianceAthRankingViewModelFactory, AllianceAthRankingViewModelFactory>();
+        services.AddScoped<IFogCommonUiService, FogCommonUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 
