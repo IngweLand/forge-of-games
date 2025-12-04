@@ -107,6 +107,7 @@ public class PlayerCityFetcher(
                 .ProjectTo<PlayerKeyExtended>(Mapper.ConfigurationProvider)
                 .ToListAsync();
             players.AddRange(p.Where(x => !existingCities.Contains(x.Id)));
+            players = players.DistinctBy(x => x.Id).ToList();
             runs++;
 
             Logger.LogDebug("Fetch attempt {RunNumber}: Retrieved {NewPlayers} new players",
