@@ -138,6 +138,7 @@ public static class DependencyInjection
         services.AddScoped<ISquadEquipmentItemViewModelFactory, SquadEquipmentItemViewModelFactory>();
         services.AddScoped<IAllianceAthRankingViewModelFactory, AllianceAthRankingViewModelFactory>();
         services.AddScoped<IFogCommonUiService, FogCommonUiService>();
+        services.AddScoped<ICityPlannerAnalyticsService, CityPlannerAnalyticsService>();
 
         services.AddScoped<CityPlannerSettings>();
 

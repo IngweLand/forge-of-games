@@ -7,6 +7,8 @@ public static class AnalyticsParams
     public const string BATTLE_DEFINITION_ID = "battle_definition_id";
     public const string BATTLE_TYPE = "battle_type";
     public const string CITY_ID = "city_id";
+    public const string CITY_PLANNER_LAYOUT_ID = "cp_layout_id";
+    public const string WONDER_ID = "wonder_id";
     public const string EXPANSIONS = "expansions";
     public const string FOG_ALLIANCE_ID = "fog_alliance_id";
     public const string FOG_BATTLE_ID = "fog_battle_id";

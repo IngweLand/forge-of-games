@@ -1,4 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
@@ -8,7 +10,6 @@ using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
-using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Localization;
@@ -29,6 +30,9 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private bool _leftPanelIsVisible = true;
     private bool _rightPanelIsVisible = true;
     private SKGLView _skCanvasView;
+
+    [Inject]
+    private ICityPlannerAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     public ICityPlanner CityPlanner { get; set; }
@@ -103,6 +107,22 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         CityPlanner.StateHasChanged += CityPlannerOnStateHasHasChanged;
         _isInitialized = true;
+
+        TrackOpening();
+    }
+
+    private void TrackOpening()
+    {
+        var eventParams = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_ID, CityPlannerNavigationState.City!.InGameCityId.ToString()},
+        };
+        if (CityPlannerNavigationState.City.WonderId != WonderId.Undefined)
+        {
+            eventParams.Add(AnalyticsParams.WONDER_ID, CityPlannerNavigationState.City.WonderId.ToString());
+        }
+
+        AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_PLANNER, eventParams);
     }
 
     private void BuildingSelectorOnItemClicked(BuildingGroup buildingGroup)
@@ -246,7 +266,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
                 Rotate();
                 break;
             }
-            
+
             case "KeyD":
             {
                 Duplicate();
@@ -272,7 +292,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         CommandManager.ExecuteCommand(cmd);
         _skCanvasView!.Invalidate();
     }
-    
+
     private void Duplicate()
     {
         if (CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})

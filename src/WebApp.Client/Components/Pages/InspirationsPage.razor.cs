@@ -45,7 +45,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     [Inject]
     public IPersistenceService PersistenceService { get; set; }
-
+    
     public async ValueTask DisposeAsync()
     {
         await DisposeAsyncCore();
@@ -88,6 +88,8 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
         var request = await BuildSearchRequest();
         await GetInspirations(request);
+        
+        AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_INSPIRATIONS, new Dictionary<string, object>());
     }
 
     protected virtual async ValueTask DisposeAsyncCore()
