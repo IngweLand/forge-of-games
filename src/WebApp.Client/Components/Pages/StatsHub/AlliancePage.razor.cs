@@ -9,7 +9,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
 public partial class AlliancePage : StatsHubPageBase
 {
-    private AllianceWithRankingsViewModel? _alliance;
+    private AllianceProfileViewModel? _alliance;
     private IReadOnlyCollection<AllianceAthRankingViewModel>? _athRankings;
     private bool _athRankingsAreLoading;
     private CancellationTokenSource? _athRankingsCts;

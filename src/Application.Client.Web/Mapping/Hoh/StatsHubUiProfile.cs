@@ -108,7 +108,7 @@ public class StatsHubUiProfile : Profile
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));
         CreateMap<PaginatedList<AllianceDto>, PaginatedList<AllianceViewModel>>();
-        CreateMap<AllianceWithRankings, AllianceWithRankingsViewModel>();
+        CreateMap<AllianceProfileDto, AllianceProfileViewModel>();
 
         CreateMap<PvpRankingDto, PvpRankingViewModel>()
             .ForMember(dest => dest.CollectedAt,

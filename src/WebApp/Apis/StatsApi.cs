@@ -198,7 +198,7 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
-    private static async Task<Results<Ok<AllianceWithRankings>, NotFound, BadRequest<string>>>
+    private static async Task<Results<Ok<AllianceProfileDto>, NotFound, BadRequest<string>>>
         GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
             CancellationToken ct = default)
     {

@@ -2,7 +2,7 @@ using Ingweland.Fog.Dtos.Hoh.Stats;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
-public class AllianceWithRankingsViewModel
+public class AllianceProfileViewModel
 {
     public required AllianceViewModel Alliance { get; init; }
 

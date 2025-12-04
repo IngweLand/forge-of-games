@@ -22,7 +22,7 @@ public interface IStatsHubViewModelsFactory
     IReadOnlyCollection<PlayerViewModel> CreatePlayers(IReadOnlyCollection<PlayerDto> players,
         IReadOnlyDictionary<string, AgeDto> ages);
 
-    AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
+    AllianceProfileViewModel CreateAlliance(AllianceProfileDto alliance,
         IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyDictionary<int, int> treasureHuntMaxPointsMap);

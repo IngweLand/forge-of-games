@@ -119,7 +119,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return new PaginatedList<PvpBattleViewModel>(newBattles, result.StartIndex, result.TotalCount);
     }
 
-    public async Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId)
+    public async Task<AllianceProfileViewModel?> GetAllianceAsync(int allianceId)
     {
         var alliance = await _statsHubService.GetAllianceAsync(allianceId);
         if (alliance == null)

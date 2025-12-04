@@ -31,13 +31,13 @@ public class StatsHubViewModelsFactory(
             opt => { opt.Items[ResolutionContextKeys.AGES] = ages; });
     }
 
-    public AllianceWithRankingsViewModel CreateAlliance(AllianceWithRankings alliance,
+    public AllianceProfileViewModel CreateAlliance(AllianceProfileDto alliance,
         IReadOnlyDictionary<string, AgeDto> ages,
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyDictionary<int, int> treasureHuntMaxPointsMap)
     {
         var d = treasureHuntDifficulties.ToDictionary(x => x.Difficulty).AsReadOnly();
-        return mapper.Map<AllianceWithRankingsViewModel>(alliance,
+        return mapper.Map<AllianceProfileViewModel>(alliance,
             opt =>
             {
                 opt.Items[ResolutionContextKeys.AGES] = ages;

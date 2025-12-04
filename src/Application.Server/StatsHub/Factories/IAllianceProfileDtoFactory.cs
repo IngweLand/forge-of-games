@@ -3,7 +3,7 @@ using Ingweland.Fog.Models.Fog.Entities;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public interface IAllianceWithRankingsFactory
+public interface IAllianceProfileDtoFactory
 {
-    AllianceWithRankings Create(Alliance alliance);
+    AllianceProfileDto Create(Alliance alliance);
 }

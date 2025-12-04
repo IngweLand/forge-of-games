@@ -70,7 +70,7 @@ public static class DependencyInjection
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
         services.AddScoped<IPlayerProfileDtoFactory, PlayerProfileDtoFactory>();
-        services.AddScoped<IAllianceWithRankingsFactory, AllianceWithRankingsFactory>();
+        services.AddScoped<IAllianceProfileDtoFactory, AllianceProfileDtoFactory>();
         services.AddScoped<IStatsHubService, StatsHubService>();
         services.AddScoped<IBattleService, BattleService>();
         services.AddScoped<IBattleSearchResultFactory, BattleSearchResultFactory>();

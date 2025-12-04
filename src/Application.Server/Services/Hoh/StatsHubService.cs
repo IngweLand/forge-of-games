@@ -42,7 +42,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<AllianceWithRankings?> GetAllianceAsync(int allianceId, CancellationToken ct = default)
+    public Task<AllianceProfileDto?> GetAllianceAsync(int allianceId, CancellationToken ct = default)
     {
         var query = new GetAllianceQuery
         {

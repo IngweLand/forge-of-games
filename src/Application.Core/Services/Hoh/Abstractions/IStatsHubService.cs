@@ -36,7 +36,7 @@ public interface IStatsHubService
     Task<IReadOnlyCollection<AllianceDto>> GetTopAlliancesAsync(string worldId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE_REFIT)]
-    Task<AllianceWithRankings?> GetAllianceAsync(int allianceId, CancellationToken ct = default);
+    Task<AllianceProfileDto?> GetAllianceAsync(int allianceId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_ATH_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<AllianceAthRankingDto>> GetAllianceAthRankingsAsync(int allianceId,

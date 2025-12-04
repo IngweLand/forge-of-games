@@ -18,7 +18,7 @@ public interface IStatsHubUiService
     Task<PaginatedList<PlayerViewModel>> GetPlayerStatsAsync(string worldId, int startIndex, int pageSize,
         string? playerName = null, CancellationToken ct = default);
 
-    Task<AllianceWithRankingsViewModel?> GetAllianceAsync(int allianceId);
+    Task<AllianceProfileViewModel?> GetAllianceAsync(int allianceId);
 
     Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
         string? allianceName = null, CancellationToken ct = default);

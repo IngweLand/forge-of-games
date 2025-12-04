@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetAllianceQuery : IRequest<AllianceWithRankings?>, ICacheableRequest
+public record GetAllianceQuery : IRequest<AllianceProfileDto?>, ICacheableRequest
 {
     public required int AllianceId { get; init; }
     public TimeSpan? Duration => TimeSpan.FromHours(3);
@@ -21,12 +21,12 @@ public record GetAllianceQuery : IRequest<AllianceWithRankings?>, ICacheableRequ
 
 public class GetAllianceQueryHandler(
     IFogDbContext context,
-    IAllianceWithRankingsFactory allianceWithRankingsFactory,
+    IAllianceProfileDtoFactory allianceProfileDtoFactory,
     IAllianceUpdateOrchestrator allianceUpdateOrchestrator,
     ILogger<GetAllianceQueryHandler> logger)
-    : IRequestHandler<GetAllianceQuery, AllianceWithRankings?>
+    : IRequestHandler<GetAllianceQuery, AllianceProfileDto?>
 {
-    public async Task<AllianceWithRankings?> Handle(GetAllianceQuery request, CancellationToken cancellationToken)
+    public async Task<AllianceProfileDto?> Handle(GetAllianceQuery request, CancellationToken cancellationToken)
     {
         logger.LogDebug("Getting alliance: {AllianceId}", request.AllianceId);
         var existingAlliance = await context.Alliances.FindAsync(request.AllianceId, cancellationToken);
@@ -67,6 +67,6 @@ public class GetAllianceQueryHandler(
             .Include(p => p.NameHistory)
             .AsSplitQuery()
             .FirstOrDefaultAsync(p => p.Id == request.AllianceId, cancellationToken);
-        return alliance == null ? null : allianceWithRankingsFactory.Create(alliance);
+        return alliance == null ? null : allianceProfileDtoFactory.Create(alliance);
     }
 }

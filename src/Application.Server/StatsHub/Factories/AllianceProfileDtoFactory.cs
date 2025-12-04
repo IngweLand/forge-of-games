@@ -5,11 +5,11 @@ using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Factories;
 
-public class AllianceWithRankingsFactory(IMapper mapper) : IAllianceWithRankingsFactory
+public class AllianceProfileDtoFactory(IMapper mapper) : IAllianceProfileDtoFactory
 {
-    public AllianceWithRankings Create(Alliance alliance)
+    public AllianceProfileDto Create(Alliance alliance)
     {
-        return new AllianceWithRankings
+        return new AllianceProfileDto
         {
             Alliance = mapper.Map<AllianceDto>(alliance),
             Names = CreateTimedStringValueCollection(alliance.NameHistory, entry => entry.Name),
