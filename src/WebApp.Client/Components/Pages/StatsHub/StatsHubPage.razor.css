@@ -1,9 +1,15 @@
 .page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    margin-bottom: 16px;
+    gap: 24px;
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(375px, 100%), 1fr));
     gap: 24px;
-    padding: 8px;
-    margin-bottom: 16px;
 }
 
 .column {
@@ -11,9 +17,7 @@
     justify-content: center;
 }
 
-@media (min-width: 576px) {
-    .component-root {
-        padding: 24px;
-    }
+::deep .unit-battle-type-selector-item {
+    font-weight: 700 !important;
 }
 

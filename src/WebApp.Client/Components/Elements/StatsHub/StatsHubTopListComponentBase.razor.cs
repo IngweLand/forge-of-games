@@ -21,7 +21,7 @@ public abstract partial class StatsHubTopListComponentBase<TItem> : ComponentBas
 
     protected CancellationTokenSource DataLoadingCts { get; } = new();
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
         if (!OperatingSystem.IsBrowser())
         {
