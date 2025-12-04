@@ -31,7 +31,7 @@ public class PlayersUpdateManager(
 {
     private const int BATCH_SIZE = 100;
 
-    public async Task RunAsync(IReadOnlyCollection<Player> players)
+    public async Task RunAsync(IReadOnlyCollection<PlayerKeyExtended> players)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         Logger.LogDebug("Database warm-up completed");
@@ -40,10 +40,10 @@ public class PlayersUpdateManager(
         var distinctPlayers = players.DistinctBy(x => x.Id).ToList();
         foreach (var player in distinctPlayers)
         {
-            Logger.LogDebug("Processing player {@Player}", player.Key);
+            Logger.LogDebug("Processing player {@Player}", player);
             var gameWorld = GameWorldsProvider.GetGameWorlds().First(gw => gw.Id == player.WorldId);
             var delayTask = Task.Delay(500);
-            var profile = await inGamePlayerService.FetchProfile(player.Key);
+            var profile = await inGamePlayerService.FetchProfile(player);
             if (profile.IsSuccess)
             {
                 try
@@ -58,7 +58,7 @@ public class PlayersUpdateManager(
                 }
                 catch (Exception ex)
                 {
-                    Logger.LogError(ex, "Error upserting alliance/player {@Player}", player.Key);
+                    Logger.LogError(ex, "Error upserting alliance/player {@Player}", player);
                 }
             }
             else if (profile.HasError<PlayerNotFoundError>())

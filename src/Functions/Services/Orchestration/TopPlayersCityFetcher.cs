@@ -1,3 +1,5 @@
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Functions.Services.Interfaces;
@@ -15,15 +17,19 @@ public class TopPlayersCityFetcher(
     IFogDbContext context,
     IPlayerCityService playerCityService,
     IPlayersUpdateManager playersUpdateManager,
+    IMapper mapper,
     ILogger<PlayerCityFetcher> logger)
-    : PlayerCityFetcher(databaseWarmUpService, context, playerCityService, playersUpdateManager, logger),
+    : PlayerCityFetcher(databaseWarmUpService, context, playerCityService, playersUpdateManager, mapper, logger),
         ITopPlayersCityFetcher
 {
     private const int TOP_RANK_LIMIT = 500;
 
-    protected override async Task<List<Player>> GetPlayers()
+    protected override async Task<List<PlayerKeyExtended>> GetPlayers()
     {
-        var players = await GetInitQuery().Take(BATCH_SIZE).ToListAsync();
+        var players = await GetInitQuery()
+            .Take(BATCH_SIZE)
+            .ProjectTo<PlayerKeyExtended>(Mapper.ConfigurationProvider)
+            .ToListAsync();
         players = await FilterOutWithExistingCities(players);
 
         Logger.LogInformation("Selected {PlayerCount} players", players.Count);
@@ -33,12 +39,14 @@ public class TopPlayersCityFetcher(
 
     protected override async Task<bool> HasMorePlayers()
     {
-        var players = await GetInitQuery().ToListAsync();
+        var players = await GetInitQuery()
+            .ProjectTo<PlayerKeyExtended>(Mapper.ConfigurationProvider)
+            .ToListAsync();
         players = await FilterOutWithExistingCities(players);
         return players.Count > 0;
     }
 
-    private async Task<List<Player>> FilterOutWithExistingCities(List<Player> players)
+    private async Task<List<PlayerKeyExtended>> FilterOutWithExistingCities(List<PlayerKeyExtended> players)
     {
         var existingCities = await GetExistingCities();
         return players.Where(x => !existingCities.Contains(x.Id)).ToList();

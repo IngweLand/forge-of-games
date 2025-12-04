@@ -12,6 +12,7 @@ public class StatsMappingProfile : Profile
     public StatsMappingProfile()
     {
         CreateMap<Player, PlayerKey>();
+        CreateMap<Player, PlayerKeyExtended>();
         CreateMap<PlayerRanking, PlayerRanking>();
         CreateMap<Player, Player>()
             .ForMember(dest => dest.Rankings, opt => opt.Ignore());

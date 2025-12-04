@@ -1,3 +1,5 @@
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Functions.Services.Interfaces;
@@ -16,8 +18,10 @@ public class PlayerCityFetcher(
     IFogDbContext context,
     IPlayerCityService playerCityService,
     IPlayersUpdateManager playersUpdateManager,
+    IMapper mapper,
     ILogger<PlayerCityFetcher> logger) : IPlayerCityFetcher
 {
+    protected IMapper Mapper { get; } = mapper;
     protected const int BATCH_SIZE = 100;
 
     private readonly HashSet<string> _disallowedAges = [AgeIds.BRONZE_AGE, AgeIds.STONE_AGE];
@@ -33,7 +37,7 @@ public class PlayerCityFetcher(
         Logger.LogInformation("Retrieved {PlayerCount} players to process", players.Count);
 
         var successCount = 0;
-        var playersToVerify = new List<Player>();
+        var playersToVerify = new List<PlayerKeyExtended>();
         foreach (var player in players)
         {
             Logger.LogDebug("Processing player {PlayerId} from world {WorldId}", player.Id, player.WorldId);
@@ -78,7 +82,7 @@ public class PlayerCityFetcher(
         return players.Count > 0;
     }
 
-    protected virtual async Task<List<Player>> GetPlayers()
+    protected virtual async Task<List<PlayerKeyExtended>> GetPlayers()
     {
         var monthAgo = DateTime.UtcNow.ToDateOnly().AddMonths(-1);
         Logger.LogDebug("Fetching players starting from from {Date}", monthAgo);
@@ -92,7 +96,7 @@ public class PlayerCityFetcher(
         Logger.LogDebug("Found {ExistingCount} existing city snapshots", existingCities.Count);
 
         var runs = 0;
-        List<Player> players = [];
+        List<PlayerKeyExtended> players = [];
         while (runs < 10 && players.Count < BATCH_SIZE)
         {
             var p = await Context.Players
@@ -100,6 +104,7 @@ public class PlayerCityFetcher(
                     !_disallowedAges.Contains(x.Age))
                 .OrderBy(x => Guid.NewGuid())
                 .Take(BATCH_SIZE)
+                .ProjectTo<PlayerKeyExtended>(Mapper.ConfigurationProvider)
                 .ToListAsync();
             players.AddRange(p.Where(x => !existingCities.Contains(x.Id)));
             runs++;
@@ -115,7 +120,7 @@ public class PlayerCityFetcher(
         return result;
     }
 
-    private async Task<bool> FetchCity(Player player)
+    private async Task<bool> FetchCity(PlayerKeyExtended player)
     {
         var fetchedCity = await playerCityService.FetchCityAsync(player.WorldId, player.InGamePlayerId);
         if (fetchedCity == null)
