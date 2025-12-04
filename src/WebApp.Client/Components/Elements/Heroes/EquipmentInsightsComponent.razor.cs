@@ -1,5 +1,4 @@
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Equipment;
@@ -12,7 +11,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.Heroes;
 
 public partial class EquipmentInsightsComponent : ComponentBase, IAsyncDisposable
 {
-    private IReadOnlyCollection<EquipmentInsightsViewModel> _allEquipmentInsights = [];
+    private IReadOnlyCollection<EquipmentInsightsViewModel>? _allEquipmentInsights;
     private CancellationTokenSource? _cts;
     private IReadOnlyCollection<EquipmentInsightsViewModel> _equipmentInsights = [];
     private IReadOnlyCollection<EquipmentSlotTypeViewModel> _equipmentSlotTypes = [];
@@ -57,14 +56,26 @@ public partial class EquipmentInsightsComponent : ComponentBase, IAsyncDisposabl
             return;
         }
 
-        await GetEquipment();
         _selectedSlotType = _equipmentSlotTypes.First().SlotType;
         StateHasChanged();
-        OnEquipmentSlotTypeChanged(_selectedSlotType);
+    }
+
+    private async Task OnExpanded(bool expanded)
+    {
+        if (expanded)
+        {
+            await GetEquipment();
+            OnEquipmentSlotTypeChanged(_selectedSlotType);
+        }
     }
 
     private async Task GetEquipment()
     {
+        if (_allEquipmentInsights != null)
+        {
+            return;
+        }
+
         if (_cts != null)
         {
             await _cts.CancelAsync();
@@ -96,7 +107,8 @@ public partial class EquipmentInsightsComponent : ComponentBase, IAsyncDisposabl
 
     private void OnEquipmentSlotTypeChanged(EquipmentSlotType slotType)
     {
-        _equipmentInsights = _allEquipmentInsights.Where(x => x.EquipmentSlotType == slotType).ToList();
+        var all = _allEquipmentInsights ?? Enumerable.Empty<EquipmentInsightsViewModel>();
+        _equipmentInsights = all.Where(x => x.EquipmentSlotType == slotType).ToList();
         _selectedSlotType = slotType;
     }
 }

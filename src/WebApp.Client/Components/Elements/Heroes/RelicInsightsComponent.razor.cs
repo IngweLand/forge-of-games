@@ -11,7 +11,7 @@ public partial class RelicInsightsComponent : ComponentBase, IAsyncDisposable
 {
     private CancellationTokenSource? _cts;
     private bool _isLoading = true;
-    private IReadOnlyCollection<RelicInsightsViewModel> _relicInsights = [];
+    private IReadOnlyCollection<RelicInsightsViewModel>? _relicInsights;
 
     [Inject]
     private IStringLocalizer<FogResource> Loc { get; set; }
@@ -34,18 +34,21 @@ public partial class RelicInsightsComponent : ComponentBase, IAsyncDisposable
         }
     }
 
-    protected override async Task OnParametersSetAsync()
+    private async Task OnExpanded(bool expanded)
     {
-        if (!OperatingSystem.IsBrowser())
+        if (expanded)
         {
-            return;
+            await GetRelics();
         }
-
-        await GetRelics();
     }
 
     private async Task GetRelics()
     {
+        if (_relicInsights != null)
+        {
+            return;
+        }
+
         if (_cts != null)
         {
             await _cts.CancelAsync();

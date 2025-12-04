@@ -1,0 +1,53 @@
+.component-root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    font-weight: 700;
+    font-size: 14px;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.content-container {
+    padding: 0 12px 12px 12px;
+}
+
+.loading-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom-left-radius: var(--fog-border-radius);
+    border-bottom-right-radius: var(--fog-border-radius);
+    overflow: hidden;
+}
+
+.no-horizontal-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 576px) {
+
+    .title-container {
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    .content-container {
+        padding: 0 16px 16px 16px;
+    }
+
+    .no-horizontal-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

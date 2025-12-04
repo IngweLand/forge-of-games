@@ -26,10 +26,6 @@ p {
     gap: 12px;
 }
 
-.ranking-points-chart-container {
-    gap: 0;
-}
-
 .avatar-container {
     display: flex;
     flex-direction: column;
@@ -108,18 +104,6 @@ p {
     container-type: inline-size;
 }
 
-.expandable-section-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.material-symbols-outlined{
-    font-size: 16px;
-    vertical-align: middle;
-}
-
 .ath-ranking-items-container {
     display: flex;
     flex-wrap: wrap;
@@ -149,10 +133,6 @@ p {
         gap: 20px;
     }
     
-    .ranking-points-chart-container {
-        gap: 0;
-    }
-
     .avatar {
         width: 80px;
     }

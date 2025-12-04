@@ -35,12 +35,10 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
-    private bool _pvpChartIsExpanded;
     private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
     private IReadOnlyDictionary<PvpTier, PvpTierDto> _pvpTiers = new Dictionary<PvpTier, PvpTierDto>();
-    private bool _rankingChartIsExpanded;
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
@@ -251,20 +249,16 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters));
     }
 
-    private void ToggleRankingChart()
+    private void ToggleRankingChart(bool expanded)
     {
-        _rankingChartIsExpanded = !_rankingChartIsExpanded;
-
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
-            AnalyticsParams.Values.Sources.PLAYER_RANKING_CHART, _rankingChartIsExpanded);
+            AnalyticsParams.Values.Sources.PLAYER_RANKING_CHART, expanded);
     }
 
-    private async Task TogglePvpChart()
+    private async Task TogglePvpChart(bool expanded)
     {
-        _pvpChartIsExpanded = !_pvpChartIsExpanded;
-
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
-            AnalyticsParams.Values.Sources.PLAYER_PVP_RANKING_CHART, _pvpChartIsExpanded);
+            AnalyticsParams.Values.Sources.PLAYER_PVP_RANKING_CHART, expanded);
 
         await GetPvpTiers();
         await GetPvpRankings();

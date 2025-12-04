@@ -68,67 +68,43 @@
 
         @if (_canShowChart)
         {
-            <div class="fog-container section-container ranking-points-chart-container">
-                <div class="section-title expandable-section-title"
-                     @onclick="ToggleRankingChart">
-                    <span class="section-title">@Loc[FogResource.StatsHub_Player_RankingPoints]</span>
-                    @if (_rankingChartIsExpanded)
-                    {
-                        <span class="material-symbols-outlined">collapse_all</span>
-                    }
-                    else
-                    {
-                        <span class="material-symbols-outlined">expand_all</span>
-                    }
-                </div>
-                @if (_rankingChartIsExpanded)
-                {
-                    <SfChart Focusable="false" Height="300">
-                        <ChartArea>
-                            <ChartAreaBorder Width="0"/>
-                        </ChartArea>
-                        <ChartMargin Top="12"/>
-                        <ChartPrimaryXAxis IntervalType="IntervalType.Days" Format="dd/MM"
-                                           ValueType="ValueType.DateTime">
-                            <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
-                            <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
-                                                 Color="var(--fog-text-color)"/>
-                            <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
-                            <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
-                        </ChartPrimaryXAxis>
-                        <ChartPrimaryYAxis RangePadding="ChartRangePadding.Round">
-                            <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
-                            <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
-                                                 Color="var(--fog-text-color)"/>
-                            <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
-                            <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
-                        </ChartPrimaryYAxis>
-                        <ChartSeriesCollection>
-                            <ChartSeries DataSource="@_alliance.RankingPoints" XName="Date" YName="Value"
-                                         Type="ChartSeriesType.Line" Fill="var(--fog-chart-line-color)">
-                                <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
-                                <ChartSeriesAnimation Enable="false"/>
-                            </ChartSeries>
-                        </ChartSeriesCollection>
-                    </SfChart>
-                }
-            </div>
+            <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_RankingPoints]"
+                                 ExpandedChanged="@ToggleRankingChart">
+                <SfChart Focusable="false" Height="300">
+                    <ChartArea>
+                        <ChartAreaBorder Width="0"/>
+                    </ChartArea>
+                    <ChartMargin Top="12"/>
+                    <ChartPrimaryXAxis IntervalType="IntervalType.Days" Format="dd/MM"
+                                       ValueType="ValueType.DateTime">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryXAxis>
+                    <ChartPrimaryYAxis RangePadding="ChartRangePadding.Round">
+                        <ChartAxisMajorGridLines Color="var(--fog-border-color)" Width="1"/>
+                        <ChartAxisLabelStyle FontFamily="var(--main-font-family)"
+                                             Color="var(--fog-text-color)"/>
+                        <ChartAxisMajorTickLines Color="var(--fog-border-color)"/>
+                        <ChartAxisLineStyle Color="var(--fog-border-color)" Width="2"/>
+                    </ChartPrimaryYAxis>
+                    <ChartSeriesCollection>
+                        <ChartSeries DataSource="@_alliance.RankingPoints" XName="Date" YName="Value"
+                                     Type="ChartSeriesType.Line" Fill="var(--fog-chart-line-color)">
+                            <ChartEmptyPointSettings Mode="EmptyPointMode.Drop"/>
+                            <ChartSeriesAnimation Enable="false"/>
+                        </ChartSeries>
+                    </ChartSeriesCollection>
+                </SfChart>
+            </ExpandableContainer>
         }
 
-        <div class="fog-container section-container">
-            <div class="section-title expandable-section-title"
-                 @onclick="ToggleAthRankingsContainer">
-                <span class="section-title">@Loc[FogResource.StatsHub_Alliance_AthRanking]</span>
-                @if (_athRankingsContainerIsExpanded)
-                {
-                    <span class="material-symbols-outlined">collapse_all</span>
-                }
-                else
-                {
-                    <span class="material-symbols-outlined">expand_all</span>
-                }
-            </div>
-            @if (_athRankingsContainerIsExpanded && _athRankings != null)
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Alliance_AthRanking]"
+                             IsLoading="@_athRankingsAreLoading"
+                             ExpandedChanged="@ToggleAthRankingsContainer">
+            @if (_athRankings != null)
             {
                 <div class="ath-ranking-items-container">
                     @foreach (var r in _athRankings)
@@ -137,7 +113,7 @@
                     }
                 </div>
             }
-        </div>
+        </ExpandableContainer>
 
         <div class="fog-container section-container">
             <span class="section-title">@Loc[FogResource.StatsHub_Player_Names]</span>

@@ -1,90 +1,91 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Size = MudBlazor.Size
-<ClientSideComponent Class="fog-container" IsLoading="@_isLoading"
-                     Title="@Loc[FogResource.Unit_EquipmentInsights_Title]">
-    <Content>
-        <div class="content-container">
-            <EquipmentSlotTypeSelector SlotTypes="@_equipmentSlotTypes" SelectedSlotType="@_selectedSlotType"
-                                       OnBattleTypeChanged="@OnEquipmentSlotTypeChanged"/>
-            @foreach (var equipmentItem in _equipmentInsights)
-            {
-                <div class="level-range-container">
-                    <div class="level-range-container-header-container user-select-none">
-                        @($"{Loc[FogResource.Hoh_Lvl]} {equipmentItem.LevelRange}")
-                    </div>
-                    <div class="items-container">
-                        @foreach (var item in equipmentItem.EquipmentSets)
-                        {
-                            <HorizontalIconWithLabelComponent StatItem="@item"/>
-                        }
-                    </div>
+
+<ExpandableContainer Title="@Loc[FogResource.Unit_EquipmentInsights_Title]"
+                     IsLoading="@_isLoading" HasHorizontalPadding="false"
+                     TitleStyle="color: var(--fog-text-on-container-color);"
+                     ExpandedChanged="@OnExpanded">
+    <div class="content-container">
+        <EquipmentSlotTypeSelector SlotTypes="@_equipmentSlotTypes" SelectedSlotType="@_selectedSlotType"
+                                   OnBattleTypeChanged="@OnEquipmentSlotTypeChanged"/>
+        @foreach (var equipmentItem in _equipmentInsights)
+        {
+            <div class="level-range-container">
+                <div class="level-range-container-header-container user-select-none">
+                    @($"{Loc[FogResource.Hoh_Lvl]} {equipmentItem.LevelRange}")
+                </div>
+                <div class="items-container">
+                    @foreach (var item in equipmentItem.EquipmentSets)
+                    {
+                        <HorizontalIconWithLabelComponent StatItem="@item"/>
+                    }
+                </div>
+                <div class="section-header">
+                    @Loc[FogResource.Equipment_MainAttributes]
+                </div>
+                <div class="items-container">
+                    @foreach (var item in equipmentItem.MainAttributes)
+                    {
+                        <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
+                    }
+                </div>
+
+                @if (equipmentItem.SubAttributesLevel4.Count > 0)
+                {
                     <div class="section-header">
-                        @Loc[FogResource.Equipment_MainAttributes]
+                        @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 4")
                     </div>
                     <div class="items-container">
-                        @foreach (var item in equipmentItem.MainAttributes)
+                        @foreach (var item in equipmentItem.SubAttributesLevel4)
                         {
                             <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
                         }
                     </div>
-
-                    @if (equipmentItem.SubAttributesLevel4.Count > 0)
-                    {
-                        <div class="section-header">
-                            @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 4")
-                        </div>
-                        <div class="items-container">
-                            @foreach (var item in equipmentItem.SubAttributesLevel4)
-                            {
-                                <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
-                            }
-                        </div>
-                    }
+                }
 
 
-                    @if (equipmentItem.SubAttributesLevel8.Count > 0)
-                    {
-                        <div class="section-header">
-                            @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 8")
-                        </div>
-                        <div class="items-container">
-                            @foreach (var item in equipmentItem.SubAttributesLevel8)
-                            {
-                                <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
-                            }
-                        </div>
-                    }
+                @if (equipmentItem.SubAttributesLevel8.Count > 0)
+                {
+                    <div class="section-header">
+                        @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 8")
+                    </div>
+                    <div class="items-container">
+                        @foreach (var item in equipmentItem.SubAttributesLevel8)
+                        {
+                            <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
+                        }
+                    </div>
+                }
 
 
-                    @if (equipmentItem.SubAttributesLevel12.Count > 0)
-                    {
-                        <div class="section-header">
-                            @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 12")
-                        </div>
-                        <div class="items-container">
-                            @foreach (var item in equipmentItem.SubAttributesLevel12)
-                            {
-                                <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
-                            }
-                        </div>
-                    }
+                @if (equipmentItem.SubAttributesLevel12.Count > 0)
+                {
+                    <div class="section-header">
+                        @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 12")
+                    </div>
+                    <div class="items-container">
+                        @foreach (var item in equipmentItem.SubAttributesLevel12)
+                        {
+                            <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
+                        }
+                    </div>
+                }
 
 
-                    @if (equipmentItem.SubAttributesLevel16.Count > 0)
-                    {
-                        <div class="section-header">
-                            @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 16")
-                        </div>
-                        <div class="items-container">
-                            @foreach (var item in equipmentItem.SubAttributesLevel16)
-                            {
-                                <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
-                            }
-                        </div>
-                    }
+                @if (equipmentItem.SubAttributesLevel16.Count > 0)
+                {
+                    <div class="section-header">
+                        @($"{Loc[FogResource.Equipment_SubAttributes]} {Loc[FogResource.Hoh_Lvl]} 16")
+                    </div>
+                    <div class="items-container">
+                        @foreach (var item in equipmentItem.SubAttributesLevel16)
+                        {
+                            <HorizontalIconWithLabelComponent StatItem="@item" Size="Size.Small"/>
+                        }
+                    </div>
+                }
 
-                </div>
-            }
-        </div>
-    </Content>
-</ClientSideComponent>
+            </div>
+        }
+    </div>
+</ExpandableContainer>

@@ -25,11 +25,6 @@ p {
     flex-wrap: wrap;
 }
 
-.ranking-points-chart-container {
-    gap: 0;
-    position: relative;
-}
-
 .chart-labels {
     font: inherit;
     font-size: 20px;
@@ -40,13 +35,6 @@ p {
     font-size: 14px;
     user-select: none;
     -webkit-user-select: none;
-}
-
-.expandable-section-title {
-   display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
 }
 
 .preserve-whitespace {
@@ -87,16 +75,6 @@ p {
     height: 24px;
 }
 
-.loading-indicator {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-bottom-left-radius: var(--fog-border-radius);
-    border-bottom-right-radius: var(--fog-border-radius);
-    overflow: hidden;
-}
-
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -106,10 +84,6 @@ p {
     .section-container {
         padding: 16px;
         gap: 16px;
-    }
-
-    .ranking-points-chart-container {
-        gap: 0;
     }
 
     .section-title {

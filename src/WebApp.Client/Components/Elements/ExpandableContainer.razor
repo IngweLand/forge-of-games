@@ -1,0 +1,64 @@
+@using MudBlazor.Utilities
+<div class="fog-container component-root">
+    <div class="title-container" @onclick="@Expand">
+        <span style="@TitleStyle">@Title</span>
+        @if (_isExpanded)
+        {
+            <span class="material-symbols-outlined">collapse_all</span>
+        }
+        else
+        {
+            <span class="material-symbols-outlined">expand_all</span>
+        }
+    </div>
+    @if (_isExpanded)
+    {
+        <div class="@ContentClassname">
+            @ChildContent
+        </div>
+
+        @if (IsLoading)
+        {
+            <div class="loading-indicator">
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            </div>
+        }
+    }
+</div>
+
+@code {
+
+    private bool _isExpanded;
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? TitleStyle { get; set; }
+
+    [Parameter]
+    public bool IsLoading { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> ExpandedChanged { get; set; }
+
+    [Parameter]
+    public bool HasHorizontalPadding { get; set; } = true;
+    
+    private string ContentClassname =>
+        new CssBuilder("content-container")
+            .AddClass("no-horizontal-padding", !HasHorizontalPadding)
+            .Build();
+    
+
+    private Task Expand()
+    {
+        _isExpanded = !_isExpanded;
+        return ExpandedChanged.InvokeAsync(_isExpanded);
+    }
+
+}

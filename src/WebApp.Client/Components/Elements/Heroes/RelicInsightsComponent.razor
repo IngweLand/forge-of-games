@@ -1,8 +1,11 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
-<ClientSideComponent Class="fog-container" IsLoading="@_isLoading"
-                     Title="@Loc[FogResource.Unit_RelicInsights_Title]">
-    <Content>
-        <div class="content-container">
+<ExpandableContainer Title="@Loc[FogResource.Unit_RelicInsights_Title]"
+                     IsLoading="@_isLoading" HasHorizontalPadding="false"
+                     TitleStyle="color: var(--fog-text-on-container-color);"
+                     ExpandedChanged="@OnExpanded">
+    <div class="content-container">
+        @if (_relicInsights != null)
+        {
             @foreach (var relicItem in _relicInsights)
             {
                 <div class="level-range-container">
@@ -17,6 +20,6 @@
                     </div>
                 </div>
             }
-        </div>
-    </Content>
-</ClientSideComponent>
+        }
+    </div>
+</ExpandableContainer>

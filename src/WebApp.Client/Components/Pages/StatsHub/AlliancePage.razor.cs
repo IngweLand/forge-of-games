@@ -11,12 +11,10 @@ public partial class AlliancePage : StatsHubPageBase
     private AllianceWithRankingsViewModel? _alliance;
     private IReadOnlyCollection<AllianceAthRankingViewModel>? _athRankings;
     private bool _athRankingsAreLoading;
-    private bool _athRankingsContainerIsExpanded;
     private CancellationTokenSource? _athRankingsCts;
     private bool _showLastSeenOn;
     private bool _canShowChart;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
-    private bool _rankingChartIsExpanded;
 
     [Parameter]
     public required int AllianceId { get; set; }
@@ -47,22 +45,21 @@ public partial class AlliancePage : StatsHubPageBase
         }
     }
 
-    private void ToggleRankingChart()
+    private void ToggleRankingChart(bool expanded)
     {
-        _rankingChartIsExpanded = !_rankingChartIsExpanded;
-
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_CHART, _defaultAnalyticsParameters,
-            AnalyticsParams.Values.Sources.ALLIANCE_RANKING_CHART, _rankingChartIsExpanded);
+            AnalyticsParams.Values.Sources.ALLIANCE_RANKING_CHART, expanded);
     }
 
-    private async Task ToggleAthRankingsContainer()
+    private async Task ToggleAthRankingsContainer(bool expanded)
     {
-        _athRankingsContainerIsExpanded = !_athRankingsContainerIsExpanded;
-        
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
-            AnalyticsParams.Values.Sources.ALLIANCE_ATH_RANKINGS, _athRankingsContainerIsExpanded);
-        
-        await GetAthRankings();
+            AnalyticsParams.Values.Sources.ALLIANCE_ATH_RANKINGS, expanded);
+
+        if (expanded)
+        {
+            await GetAthRankings();
+        }
     }
 
     private async Task GetAthRankings()

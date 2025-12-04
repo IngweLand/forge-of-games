@@ -18,7 +18,6 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
 {
     private CancellationTokenSource? _cts;
     private bool _isLoading = true;
-    private string _lastUnitId = string.Empty;
     private BattleType _selectedBattleType;
     private IReadOnlyCollection<UnitBattleViewModel>? _unitBattles;
     private IReadOnlyCollection<UnitBattleTypeViewModel> _unitBattleTypes = [];
@@ -89,16 +88,12 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         _ = await TreasureHuntUiService.GetBattleEncounterToIndexMapAsync();
     }
 
-    protected override async Task OnParametersSetAsync()
+    private async Task OnExpanded(bool expanded)
     {
-        if (_lastUnitId == UnitId)
+        if (expanded)
         {
-            return;
+            await GetBattles(_selectedBattleType);
         }
-
-        _lastUnitId = UnitId;
-
-        await GetBattles(_selectedBattleType);
     }
 
     private Task OnBattleTypeChanged(BattleType battleType)
@@ -119,6 +114,7 @@ public partial class UnitBattlesComponent : ComponentBase, IAsyncDisposable
         _cts = new CancellationTokenSource();
         _isLoading = true;
         _selectedBattleType = battleType;
+        _unitBattles = [];
         StateHasChanged();
         try
         {

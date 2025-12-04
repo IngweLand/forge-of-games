@@ -1,8 +1,10 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Size = MudBlazor.Size
-<ClientSideComponent Class="fog-container" IsLoading="@_isLoading" Title="@Loc[FogResource.Unit_BattlesAndPerformance]">
-    <Content>
+        <ExpandableContainer Title="@Loc[FogResource.Unit_BattlesAndPerformance]"
+                             IsLoading="@_isLoading" HasHorizontalPadding="false"
+                             TitleStyle="color: var(--fog-text-on-container-color);"
+                             ExpandedChanged="@OnExpanded">
         <div class="unit-battles-container">
             <BattleTypeSelector BattleTypes="@_unitBattleTypes" SelectedBattleType="@_selectedBattleType"
                                 OnBattleTypeChanged="@OnBattleTypeChanged"/>
@@ -69,5 +71,4 @@
                 }
             }
         </div>
-    </Content>
-</ClientSideComponent>
+</ExpandableContainer>
