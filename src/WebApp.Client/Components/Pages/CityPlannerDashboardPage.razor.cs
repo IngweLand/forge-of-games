@@ -63,6 +63,9 @@ public partial class CityPlannerDashboardPage : FogPageBase
         }
 
         CityPlannerNavigationState.City = city;
+        
+        AnalyticsService.TrackCityOpening(city.Id, city.InGameCityId, city.WonderId);
+        
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 
