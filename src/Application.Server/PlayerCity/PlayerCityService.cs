@@ -128,6 +128,8 @@ public class PlayerCityService : IPlayerCityService
         
         
         var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
+        var goods1H = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.OneHour);
+        var goods24H = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.OneDay);
         var citySnapshot = new PlayerCitySnapshot
         {
             PlayerId = playerId,
@@ -139,8 +141,23 @@ public class PlayerCityService : IPlayerCityService
                 Data = data,
             },
             Coins = coins?.Default ?? 0,
+            Coins1H = coins?.OneHour ?? 0,
+            Coins24H = coins?.OneDay ?? 0,
+            CoinsPerArea = (coins?.Default ?? 0) / cityStats.TotalArea,
+            Coins1HPerArea = (coins?.OneHour ?? 0) / cityStats.TotalArea,
+            Coins24HPerArea = (coins?.OneDay ?? 0) / cityStats.TotalArea,
             Food = food?.Default ?? 0,
+            Food1H = food?.OneHour ?? 0,
+            Food24H = food?.OneDay ?? 0,
+            FoodPerArea = (food?.Default ?? 0) / cityStats.TotalArea,
+            Food1HPerArea = (food?.OneHour ?? 0) / cityStats.TotalArea,
+            Food24HPerArea = (food?.OneDay ?? 0) / cityStats.TotalArea,
             Goods = goods,
+            Goods1H = goods1H,
+            Goods24H = goods24H,
+            GoodsPerArea = goods / cityStats.TotalArea,
+            Goods1HPerArea = goods1H / cityStats.TotalArea,
+            Goods24HPerArea = goods24H / cityStats.TotalArea,
             HappinessUsageRatio = cityStats.HappinessUsageRatio,
             OpenedExpansionsHash = _cityExpansionsHasher.Compute(city.UnlockedExpansions),
             HasPremiumBuildings = city.Entities.Any(x =>
