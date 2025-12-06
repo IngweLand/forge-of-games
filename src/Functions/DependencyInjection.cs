@@ -57,6 +57,7 @@ public static class DependencyInjection
         services.AddScoped<IAlliancesUpdateManager, AlliancesUpdateManager>();
         services.AddScoped<ITopAlliancesUpdateManager, TopAlliancesUpdateManager>();
         services.AddScoped<IHeroAttributeFeaturesParser, HeroAttributeFeaturesParser>();
+        services.AddScoped<IPlayerCitySnapshotStatsUpdater, PlayerCitySnapshotStatsUpdater>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

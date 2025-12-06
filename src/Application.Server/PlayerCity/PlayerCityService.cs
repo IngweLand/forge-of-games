@@ -101,6 +101,67 @@ public class PlayerCityService : IPlayerCityService
             return null;
         }
 
+        var citySnapshot = await CreateSnapshot(playerId, city, data);
+
+        _context.PlayerCitySnapshots.Add(citySnapshot);
+        await _context.SaveChangesAsync();
+
+        return citySnapshot;
+    }
+
+    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
+    {
+        return _context.PlayerCitySnapshots
+            .Include(x => x.Data)
+            .FirstOrDefaultAsync(x => x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
+    }
+
+    public async Task RecalculateStatsAsync(IEnumerable<int> citySnapshotIds)
+    {
+        var set = citySnapshotIds.ToHashSet();
+        var snapshots = await _context.PlayerCitySnapshots.Include(x => x.Data).Where(x => set.Contains(x.Id))
+            .ToListAsync();
+        foreach (var snapshot in snapshots)
+        {
+            var otherCity = _dataParsingService.ParseOtherCity(snapshot.Data.Data);
+
+            var city = await CreateCity(otherCity, string.Empty);
+            if (city == null)
+            {
+                continue;
+            }
+
+            var newCitySnapshot = await CreateSnapshot(snapshot.PlayerId, city, snapshot.Data.Data);
+            snapshot.TotalArea = newCitySnapshot.TotalArea;
+            snapshot.HappinessUsageRatio = newCitySnapshot.HappinessUsageRatio;
+
+            snapshot.Coins = newCitySnapshot.Coins;
+            snapshot.Coins1H = newCitySnapshot.Coins1H;
+            snapshot.Coins24H = newCitySnapshot.Coins24H;
+            snapshot.CoinsPerArea = newCitySnapshot.CoinsPerArea;
+            snapshot.Coins1HPerArea = newCitySnapshot.Coins1HPerArea;
+            snapshot.Coins24HPerArea = newCitySnapshot.Coins24HPerArea;
+
+            snapshot.Food = newCitySnapshot.Food;
+            snapshot.Food1H = newCitySnapshot.Food1H;
+            snapshot.Food24H = newCitySnapshot.Food24H;
+            snapshot.FoodPerArea = newCitySnapshot.FoodPerArea;
+            snapshot.Food1HPerArea = newCitySnapshot.Food1HPerArea;
+            snapshot.Food24HPerArea = newCitySnapshot.Food24HPerArea;
+
+            snapshot.Goods = newCitySnapshot.Goods;
+            snapshot.Goods1H = newCitySnapshot.Goods1H;
+            snapshot.Goods24H = newCitySnapshot.Goods24H;
+            snapshot.GoodsPerArea = newCitySnapshot.GoodsPerArea;
+            snapshot.Goods1HPerArea = newCitySnapshot.Goods1HPerArea;
+            snapshot.Goods24HPerArea = newCitySnapshot.Goods24HPerArea;
+        }
+
+        await _context.SaveChangesAsync();
+    }
+
+    private async Task<PlayerCitySnapshot> CreateSnapshot(int playerId, HohCity city, byte[] data)
+    {
         var cityStats = await _cityStatsCalculator.Calculate(city);
 
         var listOfGoods = await _listOfGoodsLazy.Value;
@@ -114,29 +175,28 @@ public class PlayerCityService : IPlayerCityService
             case CityId.Arabia_NoriasOfHama:
             {
                 cityStats.Products.TryGetValue("resource.dirham", out coins);
-                cityStats.Products.TryGetValue("resource.gold_fal", out  food);
+                cityStats.Products.TryGetValue("resource.gold_fal", out food);
                 break;
             }
-            
+
             default:
             {
                 cityStats.Products.TryGetValue("resource.coins", out coins);
-                cityStats.Products.TryGetValue("resource.food", out  food);
+                cityStats.Products.TryGetValue("resource.food", out food);
                 break;
             }
         }
-        
-        
+
         var goods = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.Default);
         var goods1H = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.OneHour);
         var goods24H = cityStats.Products.Where(kvp => listOfGoods.Contains(kvp.Key)).Sum(kvp => kvp.Value.OneDay);
-        var citySnapshot = new PlayerCitySnapshot
+        return new PlayerCitySnapshot
         {
             PlayerId = playerId,
             CityId = city.InGameCityId,
             AgeId = city.AgeId,
             CollectedAt = Today,
-            Data = new PlayerCitySnapshotDataEntity()
+            Data = new PlayerCitySnapshotDataEntity
             {
                 Data = data,
             },
@@ -164,18 +224,6 @@ public class PlayerCityService : IPlayerCityService
                 x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase)),
             TotalArea = cityStats.TotalArea,
         };
-
-        _context.PlayerCitySnapshots.Add(citySnapshot);
-        await _context.SaveChangesAsync();
-
-        return citySnapshot;
-    }
-
-    public Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date)
-    {
-        return _context.PlayerCitySnapshots
-            .Include(x => x.Data)
-            .FirstOrDefaultAsync(x => x.PlayerId == playerId && x.CityId == cityId && x.CollectedAt == date);
     }
 
     private async Task<List<Building>> GetBuildingsWithCacheAsync(CityId cityId)
