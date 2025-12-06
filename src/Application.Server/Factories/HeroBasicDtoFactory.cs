@@ -8,7 +8,7 @@ namespace Ingweland.Fog.Application.Server.Factories;
 
 public class HeroBasicDtoFactory(IHohGameLocalizationService localizationService) : IHeroBasicDtoFactory
 {
-    public HeroBasicDto Create(Hero hero, Unit unit)
+    public HeroBasicDto Create(Hero hero, Unit unit, IReadOnlySet<string> abilityTags)
     {
         return new HeroBasicDto
         {
@@ -20,6 +20,7 @@ public class HeroBasicDtoFactory(IHohGameLocalizationService localizationService
             UnitColor = unit.Color,
             ClassId = hero.ClassId,
             StarClass = hero.ProgressionComponent.Id,
+            AbilityTags = abilityTags,
         };
     }
 }

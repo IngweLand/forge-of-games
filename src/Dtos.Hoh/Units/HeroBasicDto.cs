@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
@@ -27,4 +28,7 @@ public class HeroBasicDto
     public required HeroStarClass StarClass { get; init; }
     [ProtoMember(8)]
     public required HeroClassId ClassId { get; init; }
+
+    [ProtoMember(9)]
+    public required IReadOnlySet<string> AbilityTags { get; set; } = ReadOnlySet<string>.Empty;
 }

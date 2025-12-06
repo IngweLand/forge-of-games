@@ -2,73 +2,89 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @using SelectionMode = MudBlazor.SelectionMode
 <div class="component-root">
     @if (_isAdvancedFilter)
     {
-        <MudToggleGroup T="UnitType" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnUnitTypeChanged"
-                        Values="@FilterRequest.UnitTypes"
-                        Color="Color.Secondary">
-            @foreach (var t in _unitTypes)
-            {
-                <MudToggleItem Value="@t.UnitType">
-                    <div class="filter-icon">
-                        <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
-                    </div>
-                </MudToggleItem>
-            }
-        </MudToggleGroup>
+            <MudToggleGroup T="UnitType" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnUnitTypeChanged"
+                            Values="@FilterRequest.UnitTypes"
+                            Color="Color.Secondary">
+                @foreach (var t in _unitTypes)
+                {
+                    <MudToggleItem Value="@t.UnitType">
+                        <div class="filter-icon">
+                            <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
+                        </div>
+                    </MudToggleItem>
+                }
+            </MudToggleGroup>
 
-        <MudToggleGroup T="HeroClassId" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnHeroClassChanged"
-                        Values="@FilterRequest.Classes"
-                        Color="Color.Secondary">
-            @foreach (var t in _classes)
-            {
-                <MudToggleItem Value="@t.HeroClass">
-                    <div class="filter-icon">
-                        <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
-                    </div>
-                </MudToggleItem>
-            }
-        </MudToggleGroup>
+            <MudToggleGroup T="HeroClassId" SelectionMode="SelectionMode.MultiSelection"
+                            ValuesChanged="@OnHeroClassChanged"
+                            Values="@FilterRequest.Classes"
+                            Color="Color.Secondary">
+                @foreach (var t in _classes)
+                {
+                    <MudToggleItem Value="@t.HeroClass">
+                        <div class="filter-icon">
+                            <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
+                        </div>
+                    </MudToggleItem>
+                }
+            </MudToggleGroup>
 
-        <MudToggleGroup T="UnitColor" SelectionMode="SelectionMode.MultiSelection" ValuesChanged="@OnUnitColorChanged"
-                        Values="@FilterRequest.UnitColors"
-                        Color="Color.Secondary">
-            @foreach (var t in _unitColors)
-            {
-                <MudToggleItem Value="@t.UnitColor" Style="padding: 0">
+            <MudToggleGroup T="UnitColor" SelectionMode="SelectionMode.MultiSelection"
+                            ValuesChanged="@OnUnitColorChanged"
+                            Values="@FilterRequest.UnitColors"
+                            Color="Color.Secondary">
+                @foreach (var t in _unitColors)
+                {
+                    <MudToggleItem Value="@t.UnitColor" Style="padding: 0">
                         <div class="filter-icon"
                              style="height: 100%; min-width: 40px; background-color: @(context ? t.UnitColor.ToCssColorVar() : "transparent")">
                             <img src="@(context ? t.SelectedIconUrl : t.IconUrl)"/>
                         </div>
-                </MudToggleItem>
-            }
-        </MudToggleGroup>
+                    </MudToggleItem>
+                }
+            </MudToggleGroup>
 
-        <MudToggleGroup T="HeroStarClass" SelectionMode="SelectionMode.MultiSelection"
-                        ValuesChanged="@OnHeroStartClassChanged"
-                        Values="@FilterRequest.StarClasses"
-                        Color="Color.Secondary">
-            @foreach (var t in _starClasses)
+            <MudToggleGroup T="HeroStarClass" SelectionMode="SelectionMode.MultiSelection"
+                            ValuesChanged="@OnHeroStartClassChanged"
+                            Values="@FilterRequest.StarClasses"
+                            Color="Color.Secondary">
+                @foreach (var t in _starClasses)
+                {
+                    <MudToggleItem Value="@t.StarClass">
+                        <div class="filter-icon stars-container"
+                             style="color: @(context ? "var(--fog-text-on-dark-color)" : "var(--fog-text-color)")">
+                            @for (var i = 0; i < t.StarCount; i++)
+                            {
+                                <span>★</span>
+                            }
+                        </div>
+                    </MudToggleItem>
+                }
+            </MudToggleGroup>
+            
+            <MudSelect RelativeWidth="DropdownWidth.Adaptive" Dense="true" Clearable="true"
+                       Label="@Loc[FogResource.HeroFilter_AbilityTag]" Margin="Margin.Dense"
+                       Value="@FilterRequest.AbilityTag" Strict="true" T="string"
+                       ValueChanged="@OnHeroAbilityTagChanged" 
+                       Variant="Variant.Outlined" OuterClass="ability-tag-selector"
+                       Class="ability-tag-selector">
+                @foreach (var tag in AbilityTags)
+                {
+                    <MudSelectItem Value="@tag">@tag</MudSelectItem>
+                }
+            </MudSelect>
+            
+            @if (!FilterRequest.IsEmpty())
             {
-                <MudToggleItem Value="@t.StarClass">
-                    <div class="filter-icon stars-container"
-                         style="color: @(context ? "var(--fog-text-on-dark-color)" : "var(--fog-text-color)")">
-                        @for (var i = 0; i < t.StarCount; i++)
-                        {
-                            <span>★</span>
-                        }
-                    </div>
-                </MudToggleItem>
+                <MudIconButton Style="align-self: center; justify-self: center;" Icon="@Icons.Material.Outlined.FilterAltOff" OnClick="@OnResetFilter"/>
             }
-        </MudToggleGroup>
-        @if (!FilterRequest.IsEmpty())
-        {
-            <MudIconButton Icon="@Icons.Material.Outlined.FilterAltOff" OnClick="@OnResetFilter"/>
-        }
     }
     else
     {
@@ -112,6 +128,13 @@
     [Parameter]
     public string? SearchString { get; set; }
 
+    [Parameter]
+    [EditorRequired]
+    public IReadOnlyCollection<string> AbilityTags { get; set; } = [];
+
+    [Inject]
+    private IHeroProfileUiService HeroProfileUiService { get; set; }
+
     private HeroFilterRequest? _filterRequest;
     private string? _searchString;
 
@@ -121,14 +144,14 @@
         if (_isAdvancedFilter)
         {
             _searchString = SearchString;
-            if(_filterRequest != null)
+            if (_filterRequest != null)
             {
                 await OnFilterChanged.InvokeAsync(_filterRequest);
             }
         }
         else
         {
-            _filterRequest = FilterRequest with{};
+            _filterRequest = FilterRequest with { };
             await OnSearchStringChanged.InvokeAsync(_searchString);
         }
     }
@@ -190,6 +213,11 @@
     private Task OnHeroStartClassChanged(IEnumerable<HeroStarClass>? starClasses)
     {
         return OnFilterChanged.InvokeAsync(FilterRequest with {StarClasses = starClasses?.ToList() ?? []});
+    }
+
+    private Task OnHeroAbilityTagChanged(string abilityTag)
+    {
+        return OnFilterChanged.InvokeAsync(FilterRequest with {AbilityTag = abilityTag});
     }
 
     private Task OnResetFilter()

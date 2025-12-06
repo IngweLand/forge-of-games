@@ -14,7 +14,8 @@
     <div class="component-root">
         <div class="fog-container filter-container">
             <HeroFilterComponent FilterRequest="@_filterRequest" SearchString="@_searchString"
-                                 OnFilterChanged="@OnFilterChanged" OnSearchStringChanged="@OnSearch"/>
+                                 OnFilterChanged="@OnFilterChanged" OnSearchStringChanged="@OnSearch"
+                                 AbilityTags="@_abilityTags"/>
         </div>
         <div class="heroes-grid-layout">
             @foreach (var hero in _heroes)
@@ -32,11 +33,16 @@
     private string? _searchString = string.Empty;
 
     private HeroFilterRequest _filterRequest = HeroFilterRequest.Empty;
-
+    private IReadOnlyCollection<string> _abilityTags = [];
+    protected override bool ShouldHidePageLoadingIndicator => false;
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-
+        if (OperatingSystem.IsBrowser())
+        {
+            await JsInteropService.ShowLoadingIndicatorAsync();
+            StateHasChanged();
+        }
         _heroes = await LoadWithPersistenceAsync(
             nameof(_heroes),
             async () => await HeroProfileUiService.GetHeroes()
@@ -44,15 +50,18 @@
 
         if (OperatingSystem.IsBrowser())
         {
+            _abilityTags = await HeroProfileUiService.GetHeroAbilityTagsAsync();
             var savedRequest = await PersistenceService.GetItemAsync<HeroFilterRequest?>(PersistenceKeys.HERO_FILTER_REQUEST);
             if (savedRequest != null)
             {
                 _filterRequest = savedRequest;
                 _heroes = await HeroProfileUiService.GetHeroes(_filterRequest);
             }
+            await JsInteropService.HideLoadingIndicatorAsync();
+            StateHasChanged();
         }
     }
-
+    
     private async Task OnSearch(string? value)
     {
         _searchString = value;

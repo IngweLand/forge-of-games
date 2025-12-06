@@ -12,9 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 var builder = FunctionsApplication.CreateBuilder(args);
-builder.AddConfigurations();
-
 builder.ConfigureFunctionsWebApplication();
+builder.AddConfigurations();
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 

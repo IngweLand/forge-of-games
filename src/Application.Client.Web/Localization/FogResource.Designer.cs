@@ -1824,6 +1824,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ability tag.
+        /// </summary>
+        public static string HeroFilter_AbilityTag {
+            get {
+                return ResourceManager.GetString("HeroFilter.AbilityTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hero name.
         /// </summary>
         public static string HeroSearchInput_Label {

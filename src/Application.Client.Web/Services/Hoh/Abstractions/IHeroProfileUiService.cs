@@ -22,4 +22,5 @@ public interface IHeroProfileUiService
 
     void SaveHeroProfile(HeroProfileIdentifier identifier);
     Task<HeroDto?> GetHeroAsync(string heroId);
+    Task<IReadOnlyCollection<string>> GetHeroAbilityTagsAsync();
 }

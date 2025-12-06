@@ -56,6 +56,7 @@ public static class DependencyInjection
         services.AddScoped<IMissingPlayersVerificator, MissingPlayersVerificator>();
         services.AddScoped<IAlliancesUpdateManager, AlliancesUpdateManager>();
         services.AddScoped<ITopAlliancesUpdateManager, TopAlliancesUpdateManager>();
+        services.AddScoped<IHeroAttributeFeaturesParser, HeroAttributeFeaturesParser>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
@@ -77,6 +78,11 @@ public static class DependencyInjection
                 options.Connect(connectionString);
             });
         }
+        
+        IConfigurationBuilder configBuilder = builder.Configuration;
+        var dynamicProvider = new DynamicConfigurationProvider();
+        configBuilder.Add(new DynamicConfigurationSource(dynamicProvider));
+        builder.Services.AddSingleton<IDynamicConfigurationProvider>(dynamicProvider);
 
         builder.Services.Configure<HohServerCredentials>(
             builder.Configuration.GetSection(HohServerCredentials.CONFIGURATION_PROPERTY_NAME));

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.HohCoreDataParserSdk;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Abstractions;
@@ -20,6 +21,8 @@ public class HohCoreDataFetcher(
     IHohCoreDataAzureContainerClient dataContainerClient,
     GameDesignDataParser gameDesignDataParser,
     LocalizationParser localizationParser,
+    IDynamicConfigurationProvider dynamicConfigurationProvider,
+    IHeroAttributeFeaturesParser attributeFeaturesParser,
     ILogger<HohCoreDataFetcher> logger)
     : IHohCoreDataFetcher
 {
@@ -45,6 +48,12 @@ public class HohCoreDataFetcher(
             var fileName = $"{versionDir}{DELIMITER}{kvp.Key}";
             await SaveDataAsync(fileName, kvp.Value);
         }
+
+        dynamicConfigurationProvider.UpdateValue(
+            $"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:{nameof(ResourceSettings.HohCoreDataVersion)}",
+            versionDir);
+
+        await attributeFeaturesParser.RunAsync();
 
         await PerformDiffCheck();
 

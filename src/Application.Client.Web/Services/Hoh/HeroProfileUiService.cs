@@ -31,6 +31,7 @@ public class HeroProfileUiService : IHeroProfileUiService
     private readonly IMapper _mapper;
     private readonly IPersistenceService _persistenceService;
     private readonly IUnitService _unitService;
+    private IReadOnlyDictionary<string, HashSet<string>>? _heroAbilityTagsToHeroIdsMap;
 
     private IReadOnlyCollection<HeroBasicDto> _heroes = [];
 
@@ -58,6 +59,12 @@ public class HeroProfileUiService : IHeroProfileUiService
         _mapper = mapper;
 
         _heroList = new Lazy<Task<IReadOnlyDictionary<string, HeroBasicViewModel>>>(DoGetHeroesAsync);
+    }
+
+    public async Task<IReadOnlyCollection<string>> GetHeroAbilityTagsAsync()
+    {
+        _ = await _heroList.Value;
+        return _heroAbilityTagsToHeroIdsMap!.Keys.Order().ToList();
     }
 
     public async Task<IconLabelItemViewModel> CalculateAbilityCostAsync(AbilityCostRequest request)
@@ -105,6 +112,11 @@ public class HeroProfileUiService : IHeroProfileUiService
         if (request.StarClasses.Count > 0)
         {
             query = query.Where(x => request.StarClasses.Contains(x.StarClass));
+        }
+
+        if (request.AbilityTag != null && _heroAbilityTagsToHeroIdsMap!.ContainsKey(request.AbilityTag))
+        {
+            query = query.Where(x => _heroAbilityTagsToHeroIdsMap![request.AbilityTag].Contains(x.Id));
         }
 
         query = query.OrderBy(x => x.Name);
@@ -175,9 +187,30 @@ public class HeroProfileUiService : IHeroProfileUiService
             _heroProgressionCalculators.CalculateProgressionCost(hero!, request.CurrentLevel, request.TargetLevel));
     }
 
+    private void CreateHeroAbilityTags(IReadOnlyDictionary<string, IReadOnlySet<string>> src)
+    {
+        var map = new Dictionary<string, HashSet<string>>();
+        foreach (var kvp in src)
+        {
+            foreach (var tag in kvp.Value)
+            {
+                if (!map.TryGetValue(tag, out var heroIds))
+                {
+                    heroIds = new HashSet<string>();
+                    map.Add(tag, heroIds);
+                }
+
+                heroIds.Add(kvp.Key);
+            }
+        }
+
+        _heroAbilityTagsToHeroIdsMap = map;
+    }
+
     private async Task<IReadOnlyDictionary<string, HeroBasicViewModel>> DoGetHeroesAsync()
     {
         _heroes = await _unitService.GetHeroesBasicDataAsync();
+        CreateHeroAbilityTags(_heroes.ToDictionary(x => x.Id, x => x.AbilityTags));
         return _mapper.Map<IReadOnlyCollection<HeroBasicViewModel>>(_heroes).ToDictionary(x => x.Id);
     }
 

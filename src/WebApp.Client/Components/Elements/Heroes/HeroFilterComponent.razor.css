@@ -40,6 +40,13 @@
     width: 250px;
 }
 
+::deep .ability-tag-selector {
+    min-width: 250px;
+    max-width: 250px;
+    flex-grow: unset !important;
+}
+
+
 @media (min-width: 576px) {
     .component-root{
         gap: 16px;
@@ -56,7 +63,7 @@
     }
 
     ::deep .mud-toggle-group {
-        height: 46px;
+        height: 52px;
     }
 
     ::deep .hero-name-search-input {

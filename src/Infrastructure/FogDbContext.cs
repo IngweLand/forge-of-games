@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<HeroAbilityFeaturesEntity> HeroAbilityFeatures { get; set; }
+
     public DbSet<AnnualBudget> AnnualBudgets { get; set; }
 
     public DbSet<InGameEventEntity> InGameEvents { get; set; }
@@ -72,5 +74,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PvpRanking2EntityTypeConfiguration());
         builder.ApplyConfiguration(new PvpBattleTeamsEntityTypeConfiguration());
         builder.ApplyConfiguration(new AnnualBudgetEntityTypeConfiguration());
+        builder.ApplyConfiguration(new HeroAbilityFeaturesEntityTypeConfiguration());
     }
 }

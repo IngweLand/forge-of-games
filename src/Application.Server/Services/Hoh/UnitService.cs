@@ -1,9 +1,15 @@
+using System.Collections.ObjectModel;
+using System.Globalization;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Shared.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -15,7 +21,9 @@ public class UnitService(
     IHeroDtoFactory heroDtoFactory,
     IHeroAbilityDtoFactory heroAbilityDtoFactory,
     IHohDataCache dataCache,
-    ICacheKeyFactory cacheKeyFactory)
+    ICacheKeyFactory cacheKeyFactory,
+    IFogDbContext context,
+    IMapper mapper)
     : IUnitService
 {
     public Task<HeroDto?> GetHeroAsync(string id)
@@ -30,8 +38,19 @@ public class UnitService(
         return dataCache.GetOrAddAsync(cacheKeyFactory.HeroesBasicData(version), CreateHeroesBasicDataAsync, version);
     }
 
+    private async Task<IReadOnlyDictionary<string, ReadOnlySet<string>>> GetHeroAbilityTags()
+    {
+        var cultureCode = HohSupportedCultures.AllCultures.FirstOrDefault(x => x == CultureInfo.CurrentCulture.Name) ??
+            HohSupportedCultures.DefaultCulture;
+        var result = await context.HeroAbilityFeatures.Where(x => x.Locale == cultureCode)
+            .Select(x => new {x.HeroId, x.Tags})
+            .ToDictionaryAsync(x => x.HeroId, x => new ReadOnlySet<string>(x.Tags));
+        return result;
+    }
+
     private async Task<IReadOnlyCollection<HeroBasicDto>> CreateHeroesBasicDataAsync()
     {
+        var abilityTags = await GetHeroAbilityTags();
         var heroes = new List<HeroBasicDto>();
         foreach (var hero in await hohCoreDataRepository.GetHeroesAsync())
         {
@@ -42,7 +61,8 @@ public class UnitService(
                 continue;
             }
 
-            heroes.Add(heroBasicDtoFactory.Create(hero, unit));
+            var heroAbilityTags = abilityTags.GetValueOrDefault(hero.Id, ReadOnlySet<string>.Empty);
+            heroes.Add(heroBasicDtoFactory.Create(hero, unit, heroAbilityTags));
         }
 
         return heroes.OrderBy(h => h.Name).ToList().AsReadOnly();
