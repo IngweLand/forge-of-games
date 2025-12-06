@@ -717,6 +717,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Production Metric.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_ProductionMetric {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.ProductionMetric", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Goods.
         /// </summary>
         public static string CityPlanner_Inspirations_Goods {
@@ -920,6 +929,60 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CityPlanner_Workforce {
             get {
                 return ResourceManager.GetString("CityPlanner.Workforce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24h.
+        /// </summary>
+        public static string CityProductionMetric_OneDay {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.OneDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 24h (per city area).
+        /// </summary>
+        public static string CityProductionMetric_OneDayPerCityArea {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.OneDayPerCityArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1h.
+        /// </summary>
+        public static string CityProductionMetric_OneHour {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.OneHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1h (per city area).
+        /// </summary>
+        public static string CityProductionMetric_OneHourPerCityArea {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.OneHourPerCityArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage.
+        /// </summary>
+        public static string CityProductionMetric_Storage {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.Storage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Storage (per city area).
+        /// </summary>
+        public static string CityProductionMetric_StoragePerCityArea {
+            get {
+                return ResourceManager.GetString("CityProductionMetric.StoragePerCityArea", resourceCulture);
             }
         }
         

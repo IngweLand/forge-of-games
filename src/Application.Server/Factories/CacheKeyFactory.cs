@@ -62,8 +62,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetBattleStatsQuery q => $"BattleStats:{q.Id}:{CultureInfo.CurrentCulture.Name}",
             GetUnitBattlesQuery q => $"UnitBattles:{q.UnitId}:{q.BattleType}:{CultureInfo.CurrentCulture.Name}",
             CityInspirationsSearchQuery q => $"CityInspirationsSearch:{q.Request.CityId}:{q.Request.AgeId}:{
-                q.Request.SearchPreference}:{q.Request.AllowPremiumEntities}:{q.Request.OpenedExpansionsHash}:{
-                    q.Request.TotalArea}",
+                q.Request.SearchPreference}:{q.Request.ProductionMetric}:{q.Request.AllowPremiumEntities}:{
+                    q.Request.OpenedExpansionsHash}:{q.Request.TotalArea}",
             GetPlayerCityFromSnapshotQuery q => $"PlayerCityFromSnapshot:{q.SnapshotId}",
             GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}:{q.Date}",
             GetTopPlayersQuery q => $"TopPlayers:{q.WorldId}",
@@ -80,7 +80,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayerPvpRankingsQuery q => $"PlayerPvpRankings:{q.PlayerId}",
             GetPlayerRankingsQuery q => $"PlayerRankings:{q.PlayerId}",
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
-            GetAlliancesAthRankingsQuery q => $"AlliancesAthRankings:{q.WorldId}:{q.League}:{q.StartIndex}:{q.PageSize}",
+            GetAlliancesAthRankingsQuery q =>
+                $"AlliancesAthRankings:{q.WorldId}:{q.League}:{q.StartIndex}:{q.PageSize}",
             GetEventCityRankingsQuery q => $"EventCityRankingsQuery:{q.WorldId}",
             GetAnnualBudgetQuery q => $"AnnualBudget:{q.Year}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),

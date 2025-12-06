@@ -2,6 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
@@ -21,8 +22,15 @@ public class CityInspirationsUiService(
     ICityPlannerDataService cityPlannerDataService,
     IMapper mapper) : ICityInspirationsUiService
 {
-    private static readonly List<CitySnapshotSearchPreference> SearchPreferences =
+    private static readonly IReadOnlyCollection<CitySnapshotSearchPreference> SearchPreferences =
         [CitySnapshotSearchPreference.Food, CitySnapshotSearchPreference.Coins, CitySnapshotSearchPreference.Goods];
+
+    private static readonly List<CityProductionMetric> CityProductionMetrics =
+    [
+        CityProductionMetric.Storage, CityProductionMetric.OneHour, CityProductionMetric.OneDay,
+        CityProductionMetric.StoragePerCityArea, CityProductionMetric.OneHourPerCityArea,
+        CityProductionMetric.OneDayPerCityArea,
+    ];
 
     public async Task<CityInspirationsSearchFormViewModel> GetSearchFormDataAsync()
     {
@@ -33,12 +41,15 @@ public class CityInspirationsUiService(
         {
             comingSoonAgeIndex = comingSoonAge.Index;
         }
+
         return new CityInspirationsSearchFormViewModel
         {
             Ages = ages.Values.Where(x => x.Index > 2 && x.Index < comingSoonAgeIndex).ToList(),
             Cities = cities,
             SearchPreferences =
                 mapper.Map<IReadOnlyCollection<CitySnapshotSearchPreferenceViewModel>>(SearchPreferences),
+            ProductionMetrics =
+                mapper.Map<IReadOnlyCollection<LabeledValue<CityProductionMetric>>>(CityProductionMetrics),
         };
     }
 
@@ -47,13 +58,7 @@ public class CityInspirationsUiService(
     {
         var ages = await commonUiService.GetAgesAsync();
         var snapshots = await cityPlannerService.GetInspirationsAsync(request, ct);
-        var orderBy = request.SearchPreference switch
-        {
-            CitySnapshotSearchPreference.Coins => x => x.Coins,
-            CitySnapshotSearchPreference.Goods => x => x.Goods,
-            _ => new Func<PlayerCitySnapshotBasicDto, int>(x => x.Food),
-        };
-        return snapshots.OrderByDescending(orderBy).Select(x =>
+        return snapshots.Select(x =>
             playerCitySnapshotViewModelFactory.Create(x, ages.GetValueOrDefault(x.AgeId, AgeViewModel.Blank))).ToList();
     }
 

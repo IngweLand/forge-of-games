@@ -45,7 +45,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     [Inject]
     public IPersistenceService PersistenceService { get; set; }
-    
+
     public async ValueTask DisposeAsync()
     {
         await DisposeAsyncCore();
@@ -73,6 +73,10 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
                     _searchFormViewModel.SearchPreferences.FirstOrDefault(x =>
                         x.Value == savedRequest.SearchPreference?.Value) ??
                     _searchFormViewModel.SearchPreferences.FirstOrDefault(),
+                ProductionMetric =
+                    _searchFormViewModel.ProductionMetrics.FirstOrDefault(x =>
+                        x.Value == savedRequest.ProductionMetric?.Value) ??
+                    _searchFormViewModel.ProductionMetrics.FirstOrDefault(),
                 AllowPremium = savedRequest.AllowPremium,
                 City = _searchFormViewModel.Cities.FirstOrDefault(x => x.Id == savedRequest.City?.Id),
             };
@@ -83,12 +87,13 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
             {
                 Age = _searchFormViewModel!.Ages.FirstOrDefault(),
                 SearchPreference = _searchFormViewModel.SearchPreferences.FirstOrDefault(),
+                ProductionMetric = _searchFormViewModel.ProductionMetrics.FirstOrDefault(),
             };
         }
 
         var request = await BuildSearchRequest();
         await GetInspirations(request);
-        
+
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_INSPIRATIONS, new Dictionary<string, object>());
     }
 
@@ -135,6 +140,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
             CityId = CityId.Capital,
             AllowPremiumEntities = _searchRequest.AllowPremium,
             SearchPreference = _searchRequest.SearchPreference?.Value ?? CitySnapshotSearchPreference.Food,
+            ProductionMetric = _searchRequest.ProductionMetric?.Value ?? CityProductionMetric.Storage,
             OpenedExpansionsHash = expansionsHash,
             TotalArea = totalArea,
         };

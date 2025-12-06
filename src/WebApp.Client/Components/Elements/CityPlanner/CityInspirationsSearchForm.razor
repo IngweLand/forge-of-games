@@ -1,8 +1,10 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Inspirations
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Models
+@using Ingweland.Fog.Application.Client.Web.ViewModels
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Fog.Enums
 @using Ingweland.Fog.WebApp.Client.Models
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
@@ -29,6 +31,16 @@
                 @foreach (var preference in FormData.SearchPreferences)
                 {
                     <MudSelectItem Value="@preference">@preference.Name</MudSelectItem>
+                }
+            </MudSelect>
+            <MudSelect Margin="Margin.Dense" Dense="true"
+                       Label="@Loc[FogResource.CityPlanner_Inspirations_Form_ProductionMetric]"
+                       @bind-Value="Request.ProductionMetric"
+                       T="LabeledValue<CityProductionMetric>" Strict="true" ToStringFunc="@(x => x?.Label)"
+                       Variant="Variant.Outlined">
+                @foreach (var metric in FormData.ProductionMetrics)
+                {
+                    <MudSelectItem Value="@metric">@metric.Label</MudSelectItem>
                 }
             </MudSelect>
 

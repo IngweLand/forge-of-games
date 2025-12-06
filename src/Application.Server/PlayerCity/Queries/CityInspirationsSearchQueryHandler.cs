@@ -1,4 +1,4 @@
-using AutoMapper;
+using System.Linq.Expressions;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
@@ -20,11 +20,47 @@ public record CityInspirationsSearchQuery(CityInspirationsSearchRequest Request)
 
 public class CityInspirationsSearchQueryHandler(
     IFogDbContext context,
-    IMapper mapper,
     ILogger<CityInspirationsSearchQueryHandler> logger)
     : IRequestHandler<CityInspirationsSearchQuery,
         IReadOnlyCollection<PlayerCitySnapshotBasicDto>>
 {
+    private static readonly
+        Dictionary<(CityProductionMetric Metric, CitySnapshotSearchPreference Preference),
+            Expression<Func<PlayerCitySnapshot, int>>> SortSelectors = new()
+        {
+            // Storage
+            [(CityProductionMetric.Storage, CitySnapshotSearchPreference.Goods)] = x => x.Goods,
+            [(CityProductionMetric.Storage, CitySnapshotSearchPreference.Coins)] = x => x.Coins,
+            [(CityProductionMetric.Storage, CitySnapshotSearchPreference.Food)] = x => x.Food,
+
+            // OneHour
+            [(CityProductionMetric.OneHour, CitySnapshotSearchPreference.Goods)] = x => x.Goods1H,
+            [(CityProductionMetric.OneHour, CitySnapshotSearchPreference.Coins)] = x => x.Coins1H,
+            [(CityProductionMetric.OneHour, CitySnapshotSearchPreference.Food)] = x => x.Food1H,
+
+            // OneDay
+            [(CityProductionMetric.OneDay, CitySnapshotSearchPreference.Goods)] = x => x.Goods24H,
+            [(CityProductionMetric.OneDay, CitySnapshotSearchPreference.Coins)] = x => x.Coins24H,
+            [(CityProductionMetric.OneDay, CitySnapshotSearchPreference.Food)] = x => x.Food24H,
+
+            // Storage per area
+            [(CityProductionMetric.StoragePerCityArea, CitySnapshotSearchPreference.Goods)] = x => x.GoodsPerArea,
+            [(CityProductionMetric.StoragePerCityArea, CitySnapshotSearchPreference.Coins)] = x => x.CoinsPerArea,
+            [(CityProductionMetric.StoragePerCityArea, CitySnapshotSearchPreference.Food)] = x => x.FoodPerArea,
+
+            // OneHour per area
+            [(CityProductionMetric.OneHourPerCityArea, CitySnapshotSearchPreference.Goods)] = x => x.Goods1HPerArea,
+            [(CityProductionMetric.OneHourPerCityArea, CitySnapshotSearchPreference.Coins)] = x => x.Coins1HPerArea,
+            [(CityProductionMetric.OneHourPerCityArea, CitySnapshotSearchPreference.Food)] = x => x.Food1HPerArea,
+
+            // OneDay per area
+            [(CityProductionMetric.OneDayPerCityArea, CitySnapshotSearchPreference.Goods)] = x => x.Goods24HPerArea,
+            [(CityProductionMetric.OneDayPerCityArea, CitySnapshotSearchPreference.Coins)] = x => x.Coins24HPerArea,
+            [(CityProductionMetric.OneDayPerCityArea, CitySnapshotSearchPreference.Food)] = x => x.Food24HPerArea,
+        };
+
+    private static readonly Expression<Func<PlayerCitySnapshot, int>> DefaultSortSelector = x => x.Food;
+
     public async Task<IReadOnlyCollection<PlayerCitySnapshotBasicDto>> Handle(CityInspirationsSearchQuery request,
         CancellationToken cancellationToken)
     {
@@ -35,23 +71,23 @@ public class CityInspirationsSearchQueryHandler(
         var initQuery = context.PlayerCitySnapshots.AsNoTracking()
             .Where(x => x.CityId == request.Request.CityId && x.AgeId == request.Request.AgeId);
 
-        var query = initQuery;
+        var primaryQuery = initQuery;
         if (!string.IsNullOrWhiteSpace(request.Request.OpenedExpansionsHash))
         {
             logger.LogDebug("Filtering by OpenedExpansionsHash: {OpenedExpansionsHash}",
                 request.Request.OpenedExpansionsHash);
-            query = initQuery.Where(x => x.OpenedExpansionsHash == request.Request.OpenedExpansionsHash);
+            primaryQuery = initQuery.Where(x => x.OpenedExpansionsHash == request.Request.OpenedExpansionsHash);
         }
 
-        var result = await BuildQuery(query, request).ToListAsync(cancellationToken);
+        var result = await BuildQuery(primaryQuery, request).ToListAsync(cancellationToken);
         logger.LogDebug("Initial query returned {Count} results", result.Count);
 
         if (result.Count == 0 && !string.IsNullOrWhiteSpace(request.Request.OpenedExpansionsHash))
         {
             logger.LogDebug("No results found with OpenedExpansionsHash, falling back to TotalArea filter: {TotalArea}",
                 request.Request.TotalArea);
-            query = initQuery.Where(x => x.TotalArea == request.Request.TotalArea);
-            result = await BuildQuery(query, request).ToListAsync(cancellationToken);
+            var fallbackQuery = initQuery.Where(x => x.TotalArea == request.Request.TotalArea);
+            result = await BuildQuery(fallbackQuery, request).ToListAsync(cancellationToken);
             logger.LogDebug("TotalArea fallback query returned {Count} results", result.Count);
         }
 
@@ -73,10 +109,42 @@ public class CityInspirationsSearchQueryHandler(
             .Where(x => distinctIds.Contains(x.Id))
             .ToListAsync(cancellationToken: cancellationToken);
 
-        var mappedResults = mapper.Map<IReadOnlyCollection<PlayerCitySnapshotBasicDto>>(finalResult);
+        finalResult = finalResult
+            .OrderBy(x => distinctIds.IndexOf(x.Id))
+            .ToList();
+
+        var mappedResults = CreateDtos(request.Request.ProductionMetric, finalResult);
+
         logger.LogInformation("Returning {Count} city inspirations", mappedResults.Count);
 
         return mappedResults;
+    }
+
+    private static Func<PlayerCitySnapshot, int> GetSelectorFunc(CityProductionMetric productionMetric,
+        CitySnapshotSearchPreference searchPreference)
+    {
+        return SortSelectors
+            .TryGetValue((productionMetric, searchPreference), out var expr)
+            ? expr.Compile()
+            : DefaultSortSelector.Compile();
+    }
+
+    private static List<PlayerCitySnapshotBasicDto> CreateDtos(CityProductionMetric productionMetric,
+        IEnumerable<PlayerCitySnapshot> snapshots)
+    {
+        return snapshots.Select(snapshot => new PlayerCitySnapshotBasicDto
+        {
+            Id = snapshot.Id,
+            AgeId = snapshot.AgeId,
+            CityId = snapshot.CityId,
+            Coins = GetSelectorFunc(productionMetric, CitySnapshotSearchPreference.Coins)(snapshot),
+            Food = GetSelectorFunc(productionMetric, CitySnapshotSearchPreference.Food)(snapshot),
+            Goods = GetSelectorFunc(productionMetric, CitySnapshotSearchPreference.Goods)(snapshot),
+            HappinessUsageRatio = snapshot.HappinessUsageRatio,
+            HasPremiumBuildings = snapshot.HasPremiumBuildings,
+            PlayerName = snapshot.Player.Name,
+            TotalArea = snapshot.TotalArea,
+        }).ToList();
     }
 
     private IQueryable<SearchResult> BuildQuery(IQueryable<PlayerCitySnapshot> query,
@@ -88,15 +156,20 @@ public class CityInspirationsSearchQueryHandler(
             query = query.Where(x => !x.HasPremiumBuildings);
         }
 
-        logger.LogDebug("Ordering by search preference: {SearchPreference}", request.Request.SearchPreference);
-        query = request.Request.SearchPreference switch
+        var key = (request.Request.ProductionMetric, request.Request.SearchPreference);
+        if (!SortSelectors.TryGetValue(key, out var sortSelector))
         {
-            CitySnapshotSearchPreference.Goods => query.OrderByDescending(x => x.Goods),
-            CitySnapshotSearchPreference.Coins => query.OrderByDescending(x => x.Coins),
-            CitySnapshotSearchPreference.Food => query.OrderByDescending(x => x.Food),
-            _ => query.OrderByDescending(x => x.Food),
-        };
+            logger.LogWarning(
+                "Unknown metric/preference combination ({Metric}, {Preference}), using default sort",
+                key.ProductionMetric, key.SearchPreference);
 
+            sortSelector = DefaultSortSelector;
+        }
+
+        logger.LogDebug(
+            "Ordering using selector for Metric={Metric}, Preference={Preference}",
+            key.ProductionMetric, key.SearchPreference);
+        query = query.OrderByDescending(sortSelector);
         return query.Select(x => new SearchResult(x.Id, x.PlayerId));
     }
 
