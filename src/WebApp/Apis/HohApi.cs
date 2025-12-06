@@ -106,8 +106,8 @@ public static class HohApi
     {
         var api = app.MapGroup("api/hoh");
 
-        api.MapProtobufGet("/heroes/basic", GetHeroesBasicDataAsync);
-        api.MapProtobufGet("/heroes/{heroId}", GetHeroAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.HEROES_BASICS, GetHeroesBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.HERO_TEMPLATE, GetHeroAsync);
 
         api.MapProtobufGet("/city/barracks", GetAllBarracksAsync);
         api.MapProtobufGet("/city/barracks/{unitType}", GetBarracksAsync);
@@ -378,12 +378,12 @@ public static class HohApi
     }
 
     private static async Task GetHeroAsync([AsParameters] HohServices services,
-        HttpContext context, string heroId)
+        HttpContext context, string id)
     {
-        var hero = await services.UnitService.GetHeroAsync(heroId);
+        var hero = await services.UnitService.GetHeroAsync(id);
         if (hero == null)
         {
-            services.Logger.LogError($"{nameof(GetHeroAsync)} - Could not find hero with id {heroId}");
+            services.Logger.LogError($"{nameof(GetHeroAsync)} - Could not find hero with id {id}");
             context.Response.StatusCode = StatusCodes.Status404NotFound;
             return;
         }

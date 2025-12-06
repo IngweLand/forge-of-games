@@ -71,7 +71,10 @@ public static class FogUrlBuilder
         public const string COMMON_PVP_TIERS = "/common/pvpTiers";
         public const string COMMON_TREASURE_HUNT_LEAGUES = "/common/athLeagues";
 
-        public const string TOP_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes/top";
+        public const string BASE_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes";
+        public const string TOP_HEROES_PATH = BASE_HEROES_PATH + "/top";
+        public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{id}";
+        public const string HEROES_BASICS = BASE_HEROES_PATH + "/basic";
 
         public const string RELICS_DATA = "/relics/data";
         public const string RELICS_INSIGHTS_TEMPLATE = "/relics/insights/{unitId}";
