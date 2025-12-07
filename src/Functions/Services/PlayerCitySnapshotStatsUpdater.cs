@@ -15,7 +15,7 @@ public class PlayerCitySnapshotStatsUpdater(
     IPlayerCityService playerCityService,
     ILogger<PlayerCitySnapshotStatsUpdater> logger) : IPlayerCitySnapshotStatsUpdater
 {
-    private const int BATCH_SIZE = 100;
+    private const int BATCH_SIZE = 1000;
 
     public async Task RunAsync()
     {

@@ -77,7 +77,9 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
                     _searchFormViewModel.ProductionMetrics.FirstOrDefault(x =>
                         x.Value == savedRequest.ProductionMetric?.Value) ??
                     _searchFormViewModel.ProductionMetrics.FirstOrDefault(),
-                AllowPremium = savedRequest.AllowPremium,
+                AllowPremiumHomeBuildings = savedRequest.AllowPremiumHomeBuildings,
+                AllowPremiumFarmBuildings = savedRequest.AllowPremiumFarmBuildings,
+                AllowPremiumCultureBuildings = savedRequest.AllowPremiumCultureBuildings,
                 City = _searchFormViewModel.Cities.FirstOrDefault(x => x.Id == savedRequest.City?.Id),
             };
         }
@@ -138,7 +140,9 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
         {
             AgeId = _searchRequest!.Age!.Id,
             CityId = CityId.Capital,
-            AllowPremiumEntities = _searchRequest.AllowPremium,
+            AllowPremiumHomeBuildings = _searchRequest.AllowPremiumHomeBuildings,
+            AllowPremiumFarmBuildings = _searchRequest.AllowPremiumFarmBuildings,
+            AllowPremiumCultureBuildings = _searchRequest.AllowPremiumCultureBuildings,
             SearchPreference = _searchRequest.SearchPreference?.Value ?? CitySnapshotSearchPreference.Food,
             ProductionMetric = _searchRequest.ProductionMetric?.Value ?? CityProductionMetric.Storage,
             OpenedExpansionsHash = expansionsHash,

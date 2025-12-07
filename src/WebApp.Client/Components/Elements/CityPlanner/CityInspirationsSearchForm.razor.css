@@ -1,7 +1,7 @@
 .component-root {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
     padding: 6px;
 }
 
@@ -15,7 +15,6 @@
 @media (min-width: 576px) {
 
     .component-root {
-        gap: 12px;
         padding: 12px;
     }
 

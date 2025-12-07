@@ -63,6 +63,9 @@ var searchKeys = new HashSet<string>
     "Base.LeaderboardEventPanel.TaskInfo.EventCity_Name",
     "Base.Subscriptions.PRODUCTION_DURATION_Name",
     "Base.Technologies.Technology_Egypt_Storage_Name",
+    "Base.BuildingGroups.premiumCulture_Name",
+    "Base.BuildingGroups.premiumHome_Name",
+    "Base.BuildingGroups.premiumFarm_Name",
 };
 
 var result = new Dictionary<string, List<Translations>>();

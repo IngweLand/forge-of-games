@@ -690,6 +690,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow {0}.
+        /// </summary>
+        public static string CityPlanner_Inspirations_Form_Allow {
+            get {
+                return ResourceManager.GetString("CityPlanner.Inspirations.Form.Allow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allow premium buildings.
         /// </summary>
         public static string CityPlanner_Inspirations_Form_AllowPremium {
@@ -1964,6 +1973,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Hoh_Building_UpgradeCost {
             get {
                 return ResourceManager.GetString("Hoh.Building.UpgradeCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Luxurious Culture Sites.
+        /// </summary>
+        public static string Hoh_BuildingGroups_PremiumCulture_Plural {
+            get {
+                return ResourceManager.GetString("Hoh.BuildingGroups.PremiumCulture.Plural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Luxurious Farms.
+        /// </summary>
+        public static string Hoh_BuildingGroups_PremiumFarm_Plural {
+            get {
+                return ResourceManager.GetString("Hoh.BuildingGroups.PremiumFarm.Plural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Luxurious Homes.
+        /// </summary>
+        public static string Hoh_BuildingGroups_PremiumHome_Plural {
+            get {
+                return ResourceManager.GetString("Hoh.BuildingGroups.PremiumHome.Plural", resourceCulture);
             }
         }
         

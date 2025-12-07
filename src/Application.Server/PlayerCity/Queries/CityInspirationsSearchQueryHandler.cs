@@ -141,7 +141,9 @@ public class CityInspirationsSearchQueryHandler(
             Food = GetSelectorFunc(productionMetric, CitySnapshotSearchPreference.Food)(snapshot),
             Goods = GetSelectorFunc(productionMetric, CitySnapshotSearchPreference.Goods)(snapshot),
             HappinessUsageRatio = snapshot.HappinessUsageRatio,
-            HasPremiumBuildings = snapshot.HasPremiumBuildings,
+            HasPremiumHomeBuildings = snapshot.HasPremiumHomeBuildings,
+            HasPremiumFarmBuildings = snapshot.HasPremiumFarmBuildings,
+            HasPremiumCultureBuildings = snapshot.HasPremiumCultureBuildings,
             PlayerName = snapshot.Player.Name,
             TotalArea = snapshot.TotalArea,
         }).ToList();
@@ -150,10 +152,19 @@ public class CityInspirationsSearchQueryHandler(
     private IQueryable<SearchResult> BuildQuery(IQueryable<PlayerCitySnapshot> query,
         CityInspirationsSearchQuery request)
     {
-        if (!request.Request.AllowPremiumEntities)
+        if (!request.Request.AllowPremiumHomeBuildings)
         {
-            logger.LogDebug("Filtering out premium buildings");
-            query = query.Where(x => !x.HasPremiumBuildings);
+            query = query.Where(x => !x.HasPremiumHomeBuildings);
+        }
+
+        if (!request.Request.AllowPremiumFarmBuildings)
+        {
+            query = query.Where(x => !x.HasPremiumFarmBuildings);
+        }
+
+        if (!request.Request.AllowPremiumCultureBuildings)
+        {
+            query = query.Where(x => !x.HasPremiumCultureBuildings);
         }
 
         var key = (request.Request.ProductionMetric, request.Request.SearchPreference);

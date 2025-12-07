@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Dtos.Hoh.PlayerCity;
@@ -10,8 +11,13 @@ public class PlayerCitySnapshotBasicDto
     public int Food { get; init; }
     public int Goods { get; init; }
     public required float HappinessUsageRatio { get; init; }
-    public bool HasPremiumBuildings { get; init; }
+    public bool HasPremiumFarmBuildings { get; init; }
+    public bool HasPremiumCultureBuildings { get; init; }
+    public bool HasPremiumHomeBuildings { get; init; }
     public int Id { get; init; }
     public required string PlayerName { get; init; }
     public required int TotalArea { get; init; }
+
+    [JsonIgnore]
+    public bool HasPremiumBuildings => HasPremiumHomeBuildings || HasPremiumFarmBuildings || HasPremiumCultureBuildings;
 }

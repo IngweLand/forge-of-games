@@ -32,7 +32,9 @@ public class PlayerCitySnapshot
     public int Goods24HPerArea { get; set; }
 
     public float HappinessUsageRatio { get; set; }
-    public bool HasPremiumBuildings { get; set; }
+    public bool HasPremiumFarmBuildings { get; set; }
+    public bool HasPremiumCultureBuildings { get; set; }
+    public bool HasPremiumHomeBuildings { get; set; }
     public int Id { get; set; }
     public required string OpenedExpansionsHash { get; set; }
     public Player Player { get; set; } = null!;

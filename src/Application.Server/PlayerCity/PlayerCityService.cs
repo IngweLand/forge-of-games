@@ -22,7 +22,7 @@ namespace Ingweland.Fog.Application.Server.PlayerCity;
 
 public class PlayerCityService : IPlayerCityService
 {
-    private readonly ConcurrentDictionary<CityId, List<Building>> _buildingsCache = new();
+    private readonly ConcurrentDictionary<CityId, IReadOnlyDictionary<string, Building>> _buildingsCache = new();
     private readonly ICityExpansionsHasher _cityExpansionsHasher;
     private readonly IHohCityFactory _cityFactory;
     private readonly ICityStatsCalculator _cityStatsCalculator;
@@ -134,6 +134,9 @@ public class PlayerCityService : IPlayerCityService
             var newCitySnapshot = await CreateSnapshot(snapshot.PlayerId, city, snapshot.Data.Data);
             snapshot.TotalArea = newCitySnapshot.TotalArea;
             snapshot.HappinessUsageRatio = newCitySnapshot.HappinessUsageRatio;
+            snapshot.HasPremiumHomeBuildings = newCitySnapshot.HasPremiumHomeBuildings;
+            snapshot.HasPremiumFarmBuildings = newCitySnapshot.HasPremiumFarmBuildings;
+            snapshot.HasPremiumCultureBuildings = newCitySnapshot.HasPremiumCultureBuildings;
 
             snapshot.Coins = newCitySnapshot.Coins;
             snapshot.Coins1H = newCitySnapshot.Coins1H;
@@ -220,13 +223,32 @@ public class PlayerCityService : IPlayerCityService
             Goods24HPerArea = goods24H / cityStats.TotalArea,
             HappinessUsageRatio = cityStats.HappinessUsageRatio,
             OpenedExpansionsHash = _cityExpansionsHasher.Compute(city.UnlockedExpansions),
-            HasPremiumBuildings = city.Entities.Any(x =>
-                x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase)),
+            HasPremiumHomeBuildings =
+                await HasPremiumBuildings(city.InGameCityId, BuildingGroup.PremiumHome, city.Entities),
+            HasPremiumFarmBuildings =
+                await HasPremiumBuildings(city.InGameCityId, BuildingGroup.PremiumFarm, city.Entities),
+            HasPremiumCultureBuildings =
+                await HasPremiumBuildings(city.InGameCityId, BuildingGroup.PremiumCulture, city.Entities),
             TotalArea = cityStats.TotalArea,
         };
     }
 
-    private async Task<List<Building>> GetBuildingsWithCacheAsync(CityId cityId)
+    private async Task<bool> HasPremiumBuildings(CityId cityId, BuildingGroup bg,
+        IEnumerable<HohCityMapEntity> cityMapEntities)
+    {
+        var buildings = await GetBuildingsWithCacheAsync(cityId);
+        foreach (var entity in cityMapEntities)
+        {
+            if (buildings.TryGetValue(entity.CityEntityId, out var building) && building.Group == bg)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private async Task<IReadOnlyDictionary<string, Building>> GetBuildingsWithCacheAsync(CityId cityId)
     {
         if (_buildingsCache.TryGetValue(cityId, out var cachedBuildings))
         {
@@ -234,10 +256,10 @@ public class PlayerCityService : IPlayerCityService
         }
 
         var buildings = await _coreDataRepository.GetBuildingsAsync(cityId);
-        var buildingsList = buildings.ToList();
+        var buildingsDict = buildings.ToDictionary(x => x.Id);
 
-        _buildingsCache.TryAdd(cityId, buildingsList);
-        return buildingsList;
+        _buildingsCache.TryAdd(cityId, buildingsDict);
+        return buildingsDict;
     }
 
     private async Task<HashSet<string>> CreateListOfGoodsAsync()
@@ -246,7 +268,7 @@ public class PlayerCityService : IPlayerCityService
         var arabiaBuildings = await GetBuildingsWithCacheAsync(CityId.Arabia_Petra);
 
         var set = new HashSet<string>();
-        foreach (var building in capitalBuildings.Concat(arabiaBuildings))
+        foreach (var building in capitalBuildings.Values.Concat(arabiaBuildings.Values))
         {
             var productionComponents = building.Components.OfType<ProductionComponent>().ToList();
             foreach (var productionComponent in productionComponents)
@@ -272,7 +294,7 @@ public class PlayerCityService : IPlayerCityService
             var buildings = await GetBuildingsWithCacheAsync(cityDto.CityId);
 
             var cityName = $"{playerName} - {cityDto.CityId} - {DateTime.UtcNow:d}";
-            return _cityFactory.Create(cityDto, buildings.ToDictionary(b => b.Id), WonderId.Undefined, 0, cityName);
+            return _cityFactory.Create(cityDto, buildings, WonderId.Undefined, 0, cityName);
         }
         catch (Exception ex)
         {

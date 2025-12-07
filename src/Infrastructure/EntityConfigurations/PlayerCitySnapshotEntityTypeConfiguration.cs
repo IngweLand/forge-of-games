@@ -20,7 +20,9 @@ public class PlayerCitySnapshotEntityTypeConfiguration : IEntityTypeConfiguratio
         builder.Property(p => p.TotalArea).IsRequired();
 
         builder.HasIndex(p => p.OpenedExpansionsHash);
-        builder.HasIndex(p => p.HasPremiumBuildings);
+        builder.HasIndex(p => p.HasPremiumHomeBuildings);
+        builder.HasIndex(p => p.HasPremiumFarmBuildings);
+        builder.HasIndex(p => p.HasPremiumCultureBuildings);
         builder.HasIndex(p => p.TotalArea);
         builder.HasIndex(p => new {p.PlayerId, p.CityId, p.CollectedAt}).IsUnique();
         builder.HasIndex(p => new {p.CityId, p.AgeId});

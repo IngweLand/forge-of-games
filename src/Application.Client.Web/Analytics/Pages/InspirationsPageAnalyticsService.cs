@@ -22,7 +22,11 @@ public class InspirationsPageAnalyticsService(IAnalyticsService analyticsService
             {AnalyticsParams.CITY_ID, request.CityId.ToString()},
             {AnalyticsParams.AGE_ID, request.AgeId},
             {AnalyticsParams.SEARCH_PREFERENCE, request.SearchPreference.ToString()},
-            {AnalyticsParams.PREMIUM, request.AllowPremiumEntities},
+            {
+                AnalyticsParams.PREMIUM,
+                request.AllowPremiumHomeBuildings || request.AllowPremiumFarmBuildings ||
+                request.AllowPremiumCultureBuildings
+            },
             {AnalyticsParams.EXPANSIONS, request.OpenedExpansionsHash != null},
         };
 

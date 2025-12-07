@@ -55,8 +55,12 @@
                 }
             </MudSelect>
 
-            <MudCheckBox Dense="true" @bind-Value="Request.AllowPremium" Style="font-size: 12px !important;"
-                         Label="@Loc[FogResource.CityPlanner_Inspirations_Form_AllowPremium]"/>
+            <MudCheckBox Dense="true" @bind-Value="Request.AllowPremiumHomeBuildings" Style="font-size: 12px !important;"
+                         Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Allow, FogResource.Hoh_BuildingGroups_PremiumHome_Plural]"/>
+            <MudCheckBox Dense="true" @bind-Value="Request.AllowPremiumFarmBuildings" Style="font-size: 12px !important;"
+                         Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Allow, FogResource.Hoh_BuildingGroups_PremiumFarm_Plural]"/>
+            <MudCheckBox Dense="true" @bind-Value="Request.AllowPremiumCultureBuildings" Style="font-size: 12px !important;"
+                         Label="@Loc[FogResource.CityPlanner_Inspirations_Form_Allow, FogResource.Hoh_BuildingGroups_PremiumCulture_Plural]"/>
         </div>
         <MudButton Color="Color.Primary" Style="align-self: flex-start" OnClick="@OnSearchClick" Variant="Variant.Filled"
                    Disabled="@(!ValidateForm())">

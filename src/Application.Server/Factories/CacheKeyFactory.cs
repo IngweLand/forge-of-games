@@ -62,8 +62,9 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetBattleStatsQuery q => $"BattleStats:{q.Id}:{CultureInfo.CurrentCulture.Name}",
             GetUnitBattlesQuery q => $"UnitBattles:{q.UnitId}:{q.BattleType}:{CultureInfo.CurrentCulture.Name}",
             CityInspirationsSearchQuery q => $"CityInspirationsSearch:{q.Request.CityId}:{q.Request.AgeId}:{
-                q.Request.SearchPreference}:{q.Request.ProductionMetric}:{q.Request.AllowPremiumEntities}:{
-                    q.Request.OpenedExpansionsHash}:{q.Request.TotalArea}",
+                q.Request.SearchPreference}:{q.Request.ProductionMetric}:{q.Request.AllowPremiumHomeBuildings}:{
+                    q.Request.AllowPremiumFarmBuildings}:{q.Request.AllowPremiumCultureBuildings}:{
+                        q.Request.OpenedExpansionsHash}:{q.Request.TotalArea}",
             GetPlayerCityFromSnapshotQuery q => $"PlayerCityFromSnapshot:{q.SnapshotId}",
             GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}:{q.Date}",
             GetTopPlayersQuery q => $"TopPlayers:{q.WorldId}",
