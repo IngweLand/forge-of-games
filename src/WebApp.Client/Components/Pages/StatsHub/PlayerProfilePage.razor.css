@@ -75,6 +75,13 @@ p {
     height: 24px;
 }
 
+.production-capacity-items-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -104,5 +111,9 @@ p {
 
     .alliance-list-spacer {
         height: 32px;
+    }
+
+    .production-capacity-items-container {
+        gap: 12px;
     }
 }

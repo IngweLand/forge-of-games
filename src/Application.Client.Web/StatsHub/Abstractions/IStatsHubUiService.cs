@@ -42,6 +42,10 @@ public interface IStatsHubUiService
 
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
         CancellationToken ct = default);
+
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
+        CancellationToken ct = default);
+
+    Task<PlayerProductionCapacityViewModel?> GetPlayerProductionCapacityAsync(int playerId,
         CancellationToken ct = default);
 }

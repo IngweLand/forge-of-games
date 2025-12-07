@@ -183,6 +183,25 @@
             </div>
         }
 
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_ProductionCapacity, FogResource.Common_24hrs]"
+                             IsLoading="@_productionCapacityIsLoading"
+                             ExpandedChanged="@ToggleProductionCapacityView">
+            <div class="production-capacity-items-container">
+                @if (_productionCapacity?.Food != null)
+                {
+                    <ResourceWithValue ResourceValue="@_productionCapacity?.Food"/>
+                }
+                @if (_productionCapacity?.Coins != null)
+                {
+                    <ResourceWithValue ResourceValue="@_productionCapacity?.Coins"/>
+                }
+                @if (_productionCapacity?.Goods != null)
+                {
+                    <ResourceWithValue ResourceValue="@_productionCapacity?.Goods"/>
+                }
+            </div>
+        </ExpandableContainer>
+
         <div class="fog-container section-container">
             <span class="section-title">@Loc[FogResource.Common_Ages]</span>
             <MudTimeline TimelinePosition="TimelinePosition.Start">

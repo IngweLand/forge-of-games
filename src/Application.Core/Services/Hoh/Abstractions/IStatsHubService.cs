@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -71,4 +72,7 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.WORLD_EVENT_CITY_TEMPLATE)]
     Task<PaginatedList<PlayerDto>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT)]
+    Task<PlayerProductionCapacityDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
 }

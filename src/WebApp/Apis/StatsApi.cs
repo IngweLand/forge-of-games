@@ -45,6 +45,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_SNAPSHOT_TEMPLATE, GetPlayerCitySnapshotAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PVP_RANKINGS_TEMPLATE, GetPvpRankingsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_RANKINGS_TEMPLATE, GetPlayerRankingsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE, GetPlayerProductionCapacityAsync);
 
         api.MapPost(FogUrlBuilder.ApiRoutes.USER_BATTLE_SEARCH, SearchUserBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_INSIGHTS_TEMPLATE, GetEquipmentInsightsAsync);
@@ -198,6 +199,19 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
+    private static async Task<Results<Ok<PlayerProductionCapacityDto>, NotFound, BadRequest<string>>>
+        GetPlayerProductionCapacityAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetPlayerProductionCapacityQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+
     private static async Task<Results<Ok<AllianceProfileDto>, NotFound, BadRequest<string>>>
         GetAllianceAsync([AsParameters] StatsServices services, HttpContext context, int allianceId,
             CancellationToken ct = default)
@@ -232,7 +246,7 @@ public static class StatsApi
 
         return TypedResults.Ok(result);
     }
-    
+
     private static async Task<Ok<IReadOnlyCollection<StatsTimedIntValue>>>
         GetPlayerRankingsAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
             CancellationToken ct = default)

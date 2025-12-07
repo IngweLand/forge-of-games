@@ -41,6 +41,8 @@ public static class FogUrlBuilder
         public const string TOP_PLAYERS_TEMPLATE = PLAYERS_TEMPLATE + "/top";
         public const string PLAYER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/rankings";
         public const string PLAYER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/rankings";
+        public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE = PLAYER_TEMPLATE + "/productionCapacity";
+        public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/productionCapacity";
         
         public const string WORLD_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/eventCities";
 

@@ -2706,6 +2706,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Production capacity ({0}).
+        /// </summary>
+        public static string StatsHub_Player_ProductionCapacity {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.ProductionCapacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arena battles.
         /// </summary>
         public static string StatsHub_Player_PvpBattles {

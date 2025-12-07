@@ -35,6 +35,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
+    private PlayerProductionCapacityViewModel? _productionCapacity;
+    private CancellationTokenSource? _productionCapacityCts;
+    private bool _productionCapacityIsLoading;
     private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
@@ -123,6 +126,11 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         await _battleStatsCts.CancelAsync();
         _battleStatsCts.Dispose();
+
+        if (_productionCapacityCts != null)
+        {
+            await _productionCapacityCts.CancelAsync();
+        }
     }
 
     private void OnPlayerClicked(int playerId)
@@ -261,6 +269,40 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             await GetRankings();
         }
+    }
+
+    private async Task ToggleProductionCapacityView(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.PLAYER_PRODUCTION_CAPACITY_VIEW, expanded);
+
+        if (expanded)
+        {
+            await GetProductionCapacity();
+        }
+    }
+
+    private async Task GetProductionCapacity()
+    {
+        if (_productionCapacity != null)
+        {
+            return;
+        }
+
+        if (_productionCapacityCts != null)
+        {
+            await _productionCapacityCts.CancelAsync();
+        }
+
+        _productionCapacityIsLoading = true;
+        _fetchingCity = true;
+        StateHasChanged();
+
+        _productionCapacityCts = new CancellationTokenSource();
+        _productionCapacity =
+            await StatsHubUiService.GetPlayerProductionCapacityAsync(PlayerId, _productionCapacityCts.Token);
+        _productionCapacityIsLoading = false;
+        _fetchingCity = false;
     }
 
     private async Task GetRankings()

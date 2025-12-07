@@ -46,11 +46,12 @@ public static class AnalyticsParams
 
         public static class Sources
         {
+            public const string ALLIANCE_ATH_RANKINGS = "alliance_ath_rankings";
             public const string ALLIANCE_LIST = "alliance_list";
             public const string ALLIANCE_RANKING_CHART = "alliance_ranking_chart";
-            public const string ALLIANCE_ATH_RANKINGS = "alliance_ath_rankings";
             public const string BATTLE_TIMELINE = "battle_timeline";
             public const string PLAYER_INFO_COMPONENT = "player_info_component";
+            public const string PLAYER_PRODUCTION_CAPACITY_VIEW = "player_production_capacity_view";
             public const string PLAYER_PVP_RANKING_CHART = "player_pvp_ranking_chart";
             public const string PLAYER_RANKING_CHART = "player_ranking_chart";
             public const string PVP_BATTLE = "pvp_battle";

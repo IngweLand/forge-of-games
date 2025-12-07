@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
+using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -148,6 +149,13 @@ public class StatsHubService(ISender sender) : IStatsHubService
         {
             WorldId = worldId,
         };
+        return sender.Send(query, ct);
+    }
+
+    public Task<PlayerProductionCapacityDto?> GetPlayerProductionCapacityAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var query = new GetPlayerProductionCapacityQuery(playerId);
         return sender.Send(query, ct);
     }
 
