@@ -19,6 +19,7 @@ public enum ResourceType
     MasteryPoints,
     Material,
     Mock,
+    MockWoa,
     NegotiationWildcard,
     Premium,
     Pvp,

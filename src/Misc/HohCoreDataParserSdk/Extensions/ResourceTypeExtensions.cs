@@ -19,6 +19,7 @@ public static class ResourceTypeExtensions
             "mastery_points" => ResourceType.MasteryPoints,
             "material" => ResourceType.Material,
             "mock" => ResourceType.Mock,
+            "mock_woa" => ResourceType.MockWoa,
             "negotiation_wildcard" => ResourceType.NegotiationWildcard,
             "research_points" => ResourceType.ResearchPoints,
             "rift_token" => ResourceType.RiftToken,
