@@ -268,11 +268,7 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             return communicationDto.ToResult<T>();
         }
 
-        var unpackResult = communicationDto.Value.PackedMessages.FindAndUnpackToResult<T>();
-        if (unpackResult.HasError<HohInvalidCardinalityError>())
-        {
-            unpackResult = communicationDto.Value.Response.FindAndUnpackToResult<T>();
-        }
+        var unpackResult = communicationDto.Value.Response.FindAndUnpackToResult<T>();
         
         if (communicationDto.Value.HasError)
         {

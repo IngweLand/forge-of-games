@@ -4,7 +4,6 @@ import "soft_error_type.proto";
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message CommunicationDto {
-  repeated google.protobuf.Any packed_messages = 1;
   optional SoftErrorType error = 5;
   repeated google.protobuf.Any response = 7;
   CommunicationRootContextDto root_context = 8;
