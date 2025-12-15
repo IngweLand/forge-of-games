@@ -101,6 +101,20 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             e => new HohProtobufParsingError(ProtobufParsingStage.BinaryDeserialization, nameof(CommunicationDto), e));
     }
 
+    public Result<SoftErrorType?> GetSoftError(byte[] data)
+    {
+        var communicationDto = Result.Try(() => CommunicationDto.Parser.ParseFrom(data),
+            e => new HohProtobufParsingError(ProtobufParsingStage.BinaryDeserialization, nameof(CommunicationDto), e));
+        if (communicationDto.IsFailed)
+        {
+            return communicationDto.ToResult();
+        }
+
+        return communicationDto.Value.HasError
+            ? Result.Ok<SoftErrorType?>(communicationDto.Value.Error)
+            : Result.Ok<SoftErrorType?>(null);
+    }
+
     public BattleSummary ParseBattleStart(byte[] data)
     {
         HeroStartBattleResponse dto;

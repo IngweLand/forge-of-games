@@ -84,4 +84,11 @@ public class InGameDataParsingService(
     {
         return DecodeInternal(inputData);
     }
+
+    public Result<SoftErrorType?> GetSoftError(string inputData)
+    {
+        return Result
+            .Try(() => DecodeInternal(inputData), e => new InGameDataDecodingError(e))
+            .Bind(dataParsingService.GetSoftError);
+    }
 }

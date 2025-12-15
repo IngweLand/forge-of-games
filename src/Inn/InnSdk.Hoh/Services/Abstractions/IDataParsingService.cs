@@ -26,5 +26,6 @@ public interface IDataParsingService
 
     Result<PlayerProfile> ParsePlayerProfile(byte[] data);
     Result<CommunicationDto> ParseCommunicationDto(byte[] data);
+    Result<SoftErrorType?> GetSoftError(byte[] data);
     Wakeup ParseWakeup(byte[] data);
 }

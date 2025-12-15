@@ -19,4 +19,5 @@ public interface IInGameDataParsingService
     Result<PlayerRanks> ParsePlayerRanking(string inputData);
     Wakeup ParseWakeup(string inputData);
     OtherCity ParseOtherCity(string inputData);
+    Result<SoftErrorType?> GetSoftError(string inputData);
 }
