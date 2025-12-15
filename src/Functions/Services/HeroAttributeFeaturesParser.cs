@@ -13,13 +13,18 @@ public interface IHeroAttributeFeaturesParser
     Task RunAsync();
 }
 
-public class HeroAttributeFeaturesParser(IFogDbContext context, IUnitService unitService) : IHeroAttributeFeaturesParser
+public class HeroAttributeFeaturesParser(
+    IFogDbContext context,
+    IUnitService unitService,
+    DatabaseWarmUpService databaseWarmUpService) : IHeroAttributeFeaturesParser
 {
     private const string TAG_PATTERN = @"<style=ability_label>([^<]+)</style>";
     private const string ATTRIBUTE_PATTERN = @"<style=ability_link>([^<]+)</style>";
 
     public async Task RunAsync()
     {
+        await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
+
         var existing = (await context.HeroAbilityFeatures.ToListAsync()).ToDictionary(x => (x.HeroId, x.Locale));
         var newItems = new Dictionary<(string HeroId, string Locale), HeroAbilityFeaturesEntity>();
         foreach (var locale in HohSupportedCultures.AllCultures)
