@@ -17,16 +17,34 @@ public class InspirationsPageAnalyticsService(IAnalyticsService analyticsService
 
     public void TrackSearch(CityInspirationsSearchRequest request, IReadOnlyDictionary<string, object> baseParams)
     {
+        var premium = new List<string>();
+        if (request.AllowPremiumHomeBuildings)
+        {
+            premium.Add("home");
+        }
+
+        if (request.AllowPremiumFarmBuildings)
+        {
+            premium.Add("farm");
+        }
+
+        if (request.AllowPremiumCultureBuildings)
+        {
+            premium.Add("culture");
+        }
+
+        if (premium.Count == 0)
+        {
+            premium.Add("none");
+        }
+
         var eventParams = new Dictionary<string, object>
         {
             {AnalyticsParams.CITY_ID, request.CityId.ToString()},
             {AnalyticsParams.AGE_ID, request.AgeId},
             {AnalyticsParams.SEARCH_PREFERENCE, request.SearchPreference.ToString()},
-            {
-                AnalyticsParams.PREMIUM,
-                request.AllowPremiumHomeBuildings || request.AllowPremiumFarmBuildings ||
-                request.AllowPremiumCultureBuildings
-            },
+            {AnalyticsParams.PRODUCTION_METRIC, request.ProductionMetric.ToString()},
+            {AnalyticsParams.PREMIUM, string.Join(":", premium)},
             {AnalyticsParams.EXPANSIONS, request.OpenedExpansionsHash != null},
         };
 
