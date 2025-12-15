@@ -268,14 +268,9 @@ public class DataParsingService(IMapper mapper) : IDataParsingService
             return communicationDto.ToResult<T>();
         }
 
-        var unpackResult = communicationDto.Value.Response.FindAndUnpackToResult<T>();
-        
-        if (communicationDto.Value.HasError)
-        {
-            unpackResult.WithError(new HohSoftError(communicationDto.Value.Error));
-        }
-
-        return unpackResult;
+        return communicationDto.Value.HasError
+            ? Result.Fail<T>(new HohSoftError(communicationDto.Value.Error))
+            : communicationDto.Value.Response.FindAndUnpackToResult<T>();
     }
 
     private int GetPvpBattlesOwner(IList<PvpBattleDto> battles)
