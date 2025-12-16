@@ -71,7 +71,8 @@ public class SavedDataProcessingOrchestrator
             }
             else
             {
-                await cts.CancelAsync();
+                // ReSharper disable once MethodHasAsyncOverload
+                cts.Cancel();
 
                 await activityTask;
                 logger.LogInformation("{activity} completed successfully", activityName);
@@ -80,7 +81,8 @@ public class SavedDataProcessingOrchestrator
         }
         catch (Exception e)
         {
-            await cts.CancelAsync();
+            // ReSharper disable once MethodHasAsyncOverload cancelllation 
+            cts.Cancel();
 
             logger.LogError(e, "{activity} failed. Moving to next activity.", activityName);
             context.SetCustomStatus($"{activityName} failed - continuing");
