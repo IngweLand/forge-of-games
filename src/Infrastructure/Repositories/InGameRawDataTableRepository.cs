@@ -14,8 +14,15 @@ public class InGameRawDataTableRepository(
 {
     public async Task<IReadOnlyCollection<InGameRawData>> GetAllAsync(string partitionKey)
     {
-        var entities = await tableStorageRepository.GetAllAsync(partitionKey);
-        return mapper.Map<IReadOnlyCollection<InGameRawData>>(entities);
+        logger.LogDebug("Retrieving saved in-game raw data for partition key: {PartitionKey}", partitionKey);
+        var result = new List<InGameRawData>();
+        await foreach (var entity in tableStorageRepository.GetAllAsync(partitionKey))
+        {
+            result.Add(mapper.Map<InGameRawData>(entity));
+        }
+
+        logger.LogDebug("Successfully mapped {Count} entities", result.Count);
+        return result;
     }
 
     public async Task<InGameRawData?> GetAsync(string partitionKey, string rowKey)
@@ -33,7 +40,7 @@ public class InGameRawDataTableRepository(
 
     public async Task SaveAsync(InGameRawData data, string partitionKey, string rowKey)
     {
-        logger.LogInformation("Starting to save in-game raw data: {pk}, {rk}", partitionKey, rowKey);
+        logger.LogDebug("Starting to save in-game raw data: {pk}, {rk}", partitionKey, rowKey);
 
         var entity = mapper.Map<InGameRawDataTableEntity>(data);
         entity.PartitionKey = partitionKey;

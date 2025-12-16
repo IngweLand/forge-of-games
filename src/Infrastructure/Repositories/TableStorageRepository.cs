@@ -23,17 +23,14 @@ public class TableStorageRepository<T>(string connectionString, string tableName
         }
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync(string partitionKey)
+    public async IAsyncEnumerable<T> GetAllAsync(string partitionKey)
     {
-        var results = new List<T>();
         var queryResults = _tableClient.Value.QueryAsync<T>(x => x.PartitionKey == partitionKey);
 
         await foreach (var entity in queryResults)
         {
-            results.Add(entity);
+            yield return entity;
         }
-
-        return results;
     }
 
     public async Task AddAsync(T entity)
