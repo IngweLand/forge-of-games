@@ -16,7 +16,11 @@
         },
         "durableTask": {
             "maxConcurrentActivityFunctions": 1,
-            "maxConcurrentOrchestratorFunctions": 1
+            "maxConcurrentOrchestratorFunctions": 1,
+            "storageProvider": {
+                "controlQueueVisibilityTimeout": "00:10:00",
+                "workItemQueueVisibilityTimeout": "00:10:00"
+            }
         }
     }
 }
