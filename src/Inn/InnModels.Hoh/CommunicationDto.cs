@@ -40,7 +40,22 @@ public sealed partial class CommunicationDto
 
     public LocaResponse LocaResponse => Response.FindAndUnpack<LocaResponse>();
 
-    public OtherCityDTO OtherCity => Response.FindAndUnpack<OtherCityDTO>();
+    public OtherCityDTO OtherCity
+    {
+        get
+        {
+            try
+            {
+                return PackedMessages.FindAndUnpack<OtherCityDTO>();
+            }
+            catch
+            {
+                // ignore
+            }
+
+            return Response.FindAndUnpack<OtherCityDTO>();
+        }
+    }
 
     public PlayerRanksDTO PlayerRanks => Response.FindAndUnpack<PlayerRanksDTO>();
 
