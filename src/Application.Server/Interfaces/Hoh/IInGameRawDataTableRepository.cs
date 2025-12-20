@@ -10,4 +10,5 @@ public interface IInGameRawDataTableRepository
     Task<string> SaveAsync(InGameRawData data, string partitionKey);
     Task SaveAsync(InGameRawData data, string partitionKey, string rowKey);
     Task DeleteAllAsync(DateTime cutOffDate);
+    Task<IReadOnlyCollection<InGameRawData>> GetAsync(string partitionKey, int skip, int take);
 }

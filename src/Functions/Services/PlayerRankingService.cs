@@ -41,7 +41,7 @@ public class PlayerRankingService(IFogDbContext context, IMapper mapper, ILogger
             var earliestDate = chunk.OrderBy(p => p.CollectedAt).Select(p => p.CollectedAt).First();
 
             var existingPlayers = await FindExistingPlayers(inGamePlayerIds, earliestDate);
-            logger.LogInformation("Found {ExistingPlayerCount} existing players for the current chunk",
+            logger.LogDebug("Found {ExistingPlayerCount} existing players for the current chunk",
                 existingPlayers.Count);
 
             foreach (var playerAggregate in chunk)

@@ -24,15 +24,19 @@ public abstract class AutoDataProcessorBase(
     DatabaseWarmUpService databaseWarmUpService) : FunctionBase(gameWorldsProvider, inGameRawDataTableRepository,
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
+    private const int WAKEUP_BATCH_SIZE = 300;
+
     private static readonly HashSet<PlayerRankingType> PlayerRankingTypes =
         [PlayerRankingType.ResearchPoints, PlayerRankingType.TotalHeroPower];
 
     private static readonly HashSet<AllianceRankingType> AllianceRankingTypes = [AllianceRankingType.MemberTotal];
 
+    protected bool HasMoreWakeupData { get; private set; }
+
     protected async
         Task<(List<PlayerAggregate> PlayerAggregates, List<AllianceAggregate> AllianceAggregates,
             List<(DateTime CollectedAt, AllianceKey AllianceKey, IReadOnlyCollection<AllianceMember>)>
-            ConfirmedAllianceMembers)> PrepareData()
+            ConfirmedAllianceMembers)> PrepareData(int wakeupPage = -1)
     {
         var date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1);
         logger.LogInformation("{activity} started for date {date}", nameof(AutoDataProcessorBase), date);
@@ -46,7 +50,7 @@ public abstract class AutoDataProcessorBase(
         {
             logger.LogInformation("Processing game world {gameWorldId}", gameWorld.Id);
             var allianceWakeups =
-                await GetWakeupsAsync(InGameRawDataTablePartitionKeyProvider.Alliance(gameWorld.Id, date));
+                await GetWakeupsAsync(InGameRawDataTablePartitionKeyProvider.Alliance(gameWorld.Id, date), wakeupPage);
             logger.LogInformation("{count} alliance wakeups retrieved for game world {gameWorldId}",
                 allianceWakeups.Count, gameWorld.Id);
             var alliances = allianceWakeups
@@ -178,9 +182,25 @@ public abstract class AutoDataProcessorBase(
         return (playerAggregates, allianceAggregates, allConfirmedAllianceMembers);
     }
 
-    private async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey)
+    private async Task<List<(DateTime CollectedAt, Wakeup Wakeup)>> GetWakeupsAsync(string partitionKey,
+        int wakeupPage = -1)
     {
-        var rawData = await ExecuteSafeAsync(() => InGameRawDataTableRepository.GetAllAsync(partitionKey), "", []);
+        var rawData = await ExecuteSafeAsync(async () =>
+        {
+            if (wakeupPage >= 0)
+            {
+                var result = await InGameRawDataTableRepository.GetAsync(partitionKey, WAKEUP_BATCH_SIZE * wakeupPage,
+                    WAKEUP_BATCH_SIZE);
+                if (result.Count >= WAKEUP_BATCH_SIZE)
+                {
+                    HasMoreWakeupData = true;
+                }
+
+                return result;
+            }
+
+            return await InGameRawDataTableRepository.GetAllAsync(partitionKey);
+        }, "", []);
         var alliances = new List<(DateTime CollectedAt, Wakeup Wakeup)>();
         foreach (var rd in rawData)
         {

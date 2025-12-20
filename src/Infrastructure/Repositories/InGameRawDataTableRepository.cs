@@ -68,6 +68,19 @@ public class InGameRawDataTableRepository(
         }
     }
 
+    /// <summary>
+    ///     Not efficient, but works for now.
+    /// </summary>
+    /// <param name="partitionKey"></param>
+    /// <param name="skip"></param>
+    /// <param name="take"></param>
+    /// <returns></returns>
+    public async Task<IReadOnlyCollection<InGameRawData>> GetAsync(string partitionKey, int skip, int take)
+    {
+        var result = await tableStorageRepository.GetAsync(partitionKey, skip, take);
+        return mapper.Map<IReadOnlyCollection<InGameRawData>>(result);
+    }
+
     private static string CreateRowKey()
     {
         return Guid.NewGuid().ToString();

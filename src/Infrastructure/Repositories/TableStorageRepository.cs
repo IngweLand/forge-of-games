@@ -74,4 +74,35 @@ public class TableStorageRepository<T>(string connectionString, string tableName
     {
         return _tableClient.Value.QueryAsync(filter, maxPerPage, select, cancellationToken);
     }
+
+    /// <summary>
+    ///     Not efficient, but works for now.
+    /// </summary>
+    /// <param name="partitionKey"></param>
+    /// <param name="skip"></param>
+    /// <param name="take"></param>
+    /// <returns></returns>
+    public async Task<IEnumerable<T>> GetAsync(string partitionKey, int skip, int take)
+    {
+        var queryResults = _tableClient.Value.QueryAsync<T>(x => x.PartitionKey == partitionKey);
+
+        var results = new List<T>();
+        var i = 0;
+        await foreach (var entity in queryResults)
+        {
+            if (i >= skip)
+            {
+                results.Add(entity);
+            }
+
+            if (results.Count == take)
+            {
+                break;
+            }
+
+            i++;
+        }
+
+        return results;
+    }
 }

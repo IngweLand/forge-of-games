@@ -13,6 +13,7 @@ public interface ITableStorageRepository<T> where T : notnull
     Task UpdateAsync(T entity);
     Task UpsertRangeAsync(IEnumerable<T> entities);
     Task UpsertEntityAsync(T entity);
+    Task<IEnumerable<T>> GetAsync(string partitionKey, int skip, int take);
 
     AsyncPageable<T> GetAllAsync(Expression<Func<T, bool>> filter,
         int? maxPerPage = null,

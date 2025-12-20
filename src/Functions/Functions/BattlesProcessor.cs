@@ -22,7 +22,7 @@ public class BattlesProcessor(
     inGameDataParsingService, inGameRawDataTablePartitionKeyProvider, logger)
 {
     [Function(nameof(BattlesProcessor))]
-    public async Task Run([ActivityTrigger] object? _)
+    public async Task<bool> Run([ActivityTrigger] object? _)
     {
         logger.LogInformation("{activity} started.", nameof(BattlesProcessor));
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
@@ -58,5 +58,7 @@ public class BattlesProcessor(
         logger.LogInformation("Starting battle stats update");
         await ExecuteSafeAsync(() => battleStatsService.AddAsync(allBattleStats), "");
         logger.LogInformation("Completed battles stats service update");
+
+        return false;
     }
 }

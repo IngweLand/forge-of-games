@@ -25,9 +25,9 @@ public class PlayerDataProcessor(
     databaseWarmUpService)
 {
     [Function(nameof(PlayerDataProcessor))]
-    public async Task Run([ActivityTrigger] object? _)
+    public async Task<bool> Run([ActivityTrigger] int input)
     {
-        var data = await PrepareData();
+        var data = await PrepareData(input);
 
         logger.LogInformation("Starting player service update");
         await ExecuteSafeAsync(() => playerService.AddAsync(data.PlayerAggregates), "");
@@ -44,5 +44,7 @@ public class PlayerDataProcessor(
         logger.LogInformation("Starting player age history service update");
         await ExecuteSafeAsync(() => playerAgeHistoryService.UpdateAsync(data.PlayerAggregates), "");
         logger.LogInformation("Completed player age history service update");
+
+        return HasMoreWakeupData;
     }
 }

@@ -26,9 +26,9 @@ public class AllianceDataProcessor(
     databaseWarmUpService)
 {
     [Function(nameof(AllianceDataProcessor))]
-    public async Task Run([ActivityTrigger] object? _)
+    public async Task<bool> Run([ActivityTrigger] int input)
     {
-        var data = await PrepareData();
+        var data = await PrepareData(input);
 
         logger.LogInformation("Starting alliance service update");
         await ExecuteSafeAsync(() => allianceService.AddAsync(data.AllianceAggregates), "");
@@ -45,5 +45,7 @@ public class AllianceDataProcessor(
         logger.LogInformation("Starting alliance members service update");
         await ExecuteSafeAsync(() => allianceMembersService.UpdateAsync(data.ConfirmedAllianceMembers), "");
         logger.LogInformation("Completed alliance members service update");
+        
+        return HasMoreWakeupData;
     }
 }

@@ -45,9 +45,9 @@ public abstract class PlayerHistoryServiceBase(IFogDbContext context, ILogger<Pl
                     logger.LogWarning("No existing player found for key {PlayerKey}", playerGroup.Key);
                 }
             }
-            logger.LogInformation("Saving changes for the current chunk.");
+            logger.LogDebug("Saving changes for the current chunk.");
             await context.SaveChangesAsync();
-            logger.LogInformation("Successfully saved changes for the current chunk.");
+            logger.LogDebug("Successfully saved changes for the current chunk.");
         }
         logger.LogInformation("UpdateAsync completed processing aggregates");
     }
