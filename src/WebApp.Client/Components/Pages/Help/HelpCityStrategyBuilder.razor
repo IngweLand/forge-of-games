@@ -1,0 +1,194 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
+<div class="help-container">
+    <h3>City Strategy Builder Help Guide</h3>
+
+    <div class="help-info">
+        City Strategy Builder lets you create step-by-step guides for progressing through your Capital or Allied Culture
+        cities. It includes tools you already use—like the City Planner and Research Calculator—directly inside a single
+        timeline.
+    </div>
+
+    <div class="help-step">
+        <h5>Strategies Dashboard</h5>
+        <p>
+            The dashboard is the central place to manage all your saved strategies.
+        </p>
+        <p>
+            You can <strong>create a new strategy</strong> by clicking the <em>Create</em> button. You'll name the
+            strategy,
+            choose its type (Capital or Allied Culture), and if it's an allied city, select the associated Wonder.
+            <strong>Note:</strong> The Wonder selection affects stats and cannot be changed later.
+        </p>
+        <p>
+            All strategies are stored locally in your browser. The full City Strategy Builder app is only available on
+            larger
+            screens.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Timeline</h5>
+        <p>
+            The Strategy Builder is organized as a <strong>timeline</strong>: a sequence of steps that represent how
+            your
+            city evolves over time.
+        </p>
+        <p>
+            Open the timeline by clicking
+            <span class="material-symbols-outlined help-icon-inline">view_timeline</span>
+            in the right-side menu.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Timeline Item Types</h5>
+        <p>
+            Each step in the timeline is a <strong>timeline item</strong>. There are three types:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Description</strong> — free-form notes for the step (any text you want).
+            </li>
+            <li>
+                <strong>Research</strong> — a built-in Research Calculator. Pick target technologies and it shows the
+                required cost.
+            </li>
+            <li>
+                <strong>Layout</strong> — stores the city layout for the step. When selected, it opens the layout in the
+                built-in City Planner.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Creating New Timeline Items</h5>
+        <p>
+            Every new strategy is created with <strong>three</strong> timeline items by default (Description, Research,
+            Layout).
+        </p>
+        <p>
+            To insert a new item, click the add button
+            <span class="material-symbols-outlined help-icon-inline">add_box</span>
+            shown <strong>between</strong> existing items. The new item is created exactly at that position in the
+            timeline.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Editing and Deleting Items</h5>
+        <ul>
+            <li>
+                <strong>Rename</strong>: each item has a title. Click
+                <span class="material-symbols-outlined help-icon-inline">edit</span>
+                to edit it.
+            </li>
+            <li>
+                <strong>Delete</strong>: click
+                <span class="material-symbols-outlined help-icon-inline">delete</span>
+                to remove the timeline item.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>How Research Items Work</h5>
+        <p>
+            Research items follow special rules. The whole timeline shares a <strong>single research tree</strong> and
+            tracks what is already opened.
+        </p>
+        <p>
+            Each research item automatically treats all technologies selected in the research items above it as
+            <strong>already opened</strong>. That means you can’t change previously opened technologies in
+            later research steps.
+        </p>
+
+        <p>
+            Example:
+        </p>
+        <ul>
+            <li>You create the first research item and pick technology <strong>A</strong>.</li>
+            <li>You create the second research item. Technology <strong>A</strong> is already opened there.</li>
+            <li>In the second item you pick technologies <strong>B</strong> and <strong>C</strong>.</li>
+            <li>
+                Later you go back to the first research item and also pick <strong>B</strong>.
+                When you open the second item again, <strong>A</strong> and <strong>B</strong> are now marked as opened,
+                and the only picked technology remaining for that item is <strong>C</strong>.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>How Layout Items Work</h5>
+        <p>
+            Unlike research items, <strong>layout items are independent</strong>. Editing one layout does not update any
+            other layout item.
+        </p>
+        <p>
+            The only time another layout affects a layout item is during <strong>creation</strong>:
+        </p>
+        <ul>
+            <li>
+                When you create a new layout item, it copies the layout from its first ancestor layout item (if one
+                exists).
+            </li>
+            <li>
+                If there is no ancestor layout, a default layout for the selected city is created.
+            </li>
+        </ul>
+        <p>
+            Check <a href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH">City Planner Help Guide</a> for more
+            details.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Creating Layout Items: Layout vs Import Layout</h5>
+        <p>
+            There are two ways to create a layout item:
+        </p>
+        <ul>
+            <li>
+                <strong>Layout</strong> — creates a new layout by copying the closest ancestor layout (or default layout
+                if none exists).
+            </li>
+            <li>
+                <strong>Import Layout</strong> — imports a layout from the City Planner. To import, you must have a
+                matching layout saved in City Planner for the same city and world wonder as the current strategy.
+            </li>
+        </ul>
+    </div>
+
+    <div class="help-step">
+        <h5>Strategy Builder vs City Planner</h5>
+        <p>
+            Strategy Builder covers most city planning use-cases directly in the timeline.
+            However, City Planner includes extra tools that are not available inside Strategy Builder (for example:
+            <strong>Inventory</strong> and <strong>City Snapshots</strong>).
+        </p>
+        <p>
+            If you need those tools, plan the layout in City Planner first, then import it into the Strategy Builder.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Saving</h5>
+        <p>
+            Strategy Builder has auto-saving, but it’s still a good idea to click
+            <span class="material-symbols-outlined help-icon-inline">save</span>
+            <strong>Save</strong> periodically—especially before navigating away from the builder.
+        </p>
+    </div>
+
+    <div class="help-step">
+        <h5>Settings <span class="material-symbols-outlined help-icon-inline">settings</span></h5>
+        <ul>
+            <li>Toggle visibility of building names and levels</li>
+            <li>Change strategy name</li>
+            <li>Delete the strategy</li>
+        </ul>
+    </div>
+</div>

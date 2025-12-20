@@ -7,12 +7,18 @@ using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Helpers.Interfaces;
+using Ingweland.Fog.Shared.Utils;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
 
-public class PersistenceService(ILocalStorageService localStorageService, IMapper mapper) : IPersistenceService
+public class PersistenceService(
+    ILocalStorageService localStorageService,
+    IMapper mapper,
+    IProtobufSerializer protobufSerializer) : IPersistenceService
 {
     private const string CITY_DATA_KEY_PREFIX = "CityData";
+    private const string CITY_STRATEGY_KEY_PREFIX = "CityStrategy";
     private const string BACKUP_CITY_DATA_KEY_PREFIX = "Backup.CityData";
     private const string BACKUP_COMMAND_CENTER_PROFILE_KEY_PREFIX = "Backup.CommandCenterProfile";
     private const string TEMP_CITY_DATA_KEY_PREFIX = "TEMP.CityData";
@@ -33,6 +39,14 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     public ValueTask SaveCity(HohCity city)
     {
         return DoSaveCity(GetCityKey(city.Id), city);
+    }
+
+    public ValueTask SaveCityStrategy(CityStrategy cityStrategy)
+    {
+        var serialized = protobufSerializer.SerializeToBytes(cityStrategy);
+        var compressed = CompressionUtils.Compress(serialized);
+        var key = GetCityStrategyKey(cityStrategy.Id);
+        return localStorageService.SetItemAsStringAsync(key, Convert.ToBase64String(compressed));
     }
 
     public ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request)
@@ -110,29 +124,26 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         return localStorageService.GetItemAsync<T>(key);
     }
 
-    public async ValueTask<bool> DeleteCity(string cityId)
+    public ValueTask<bool> DeleteCity(string cityId)
     {
         var key = GetCityKey(cityId);
-        if (!await localStorageService.ContainKeyAsync(key))
-        {
-            return false;
-        }
+        return DeleteItem(key);
+    }
 
-        try
-        {
-            await localStorageService.RemoveItemAsync(key);
-            return true;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return false;
-        }
+    public ValueTask<bool> DeleteCityStrategy(string strategyId)
+    {
+        var key = GetCityStrategyKey(strategyId);
+        return DeleteItem(key);
     }
 
     public ValueTask<HohCity?> LoadCity(string cityId)
     {
         return DoLoadCity(GetCityKey(cityId));
+    }
+
+    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId)
+    {
+        return DoLoadCityStrategy(GetCityStrategyKey(strategyId));
     }
 
     public async ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities()
@@ -143,6 +154,23 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         foreach (var cityKey in cityKeys)
         {
             var city = await DoLoadCity(cityKey);
+            if (city != null)
+            {
+                cities.Add(mapper.Map<HohCityBasicData>(city));
+            }
+        }
+
+        return cities.OrderByDescending(x => x.UpdatedAt).ToList();
+    }
+
+    public async ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCityStrategies()
+    {
+        var keys = await localStorageService.KeysAsync();
+        var cityKeys = keys.Where(s => s.StartsWith(CITY_STRATEGY_KEY_PREFIX));
+        var cities = new List<HohCityBasicData>();
+        foreach (var cityKey in cityKeys)
+        {
+            var city = await DoLoadCityStrategy(cityKey);
             if (city != null)
             {
                 cities.Add(mapper.Map<HohCityBasicData>(city));
@@ -284,6 +312,25 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
         await localStorageService.SetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX, serializedProfile);
     }
 
+    private async ValueTask<bool> DeleteItem(string key)
+    {
+        if (!await localStorageService.ContainKeyAsync(key))
+        {
+            return false;
+        }
+
+        try
+        {
+            await localStorageService.RemoveItemAsync(key);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return false;
+        }
+    }
+
     private async ValueTask<Dictionary<string, HeroProfileIdentifier>> GetHeroProfilesAsync()
     {
         var rawData = await localStorageService.GetItemAsStringAsync(HERO_PLAYGROUND_PROFILES_DATA_KEY_PREFIX);
@@ -350,6 +397,27 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
             : JsonSerializer.Deserialize<HohCity>(rawData, JsonSerializerOptions);
     }
 
+    private async ValueTask<CityStrategy?> DoLoadCityStrategy(string key)
+    {
+        var rawData = await localStorageService.GetItemAsStringAsync(key);
+        if (string.IsNullOrWhiteSpace(rawData))
+        {
+            return null;
+        }
+
+        try
+        {
+            var compressed = Convert.FromBase64String(rawData);
+            return protobufSerializer.DeserializeFromBytes<CityStrategy>(CompressionUtils.Decompress(compressed));
+        }
+        catch
+        {
+            // ignore
+        }
+
+        return null;
+    }
+
     private async ValueTask<BasicCommandCenterProfile?> DoLoadProfile(string key)
     {
         var rawData = await localStorageService.GetItemAsStringAsync(key);
@@ -361,6 +429,11 @@ public class PersistenceService(ILocalStorageService localStorageService, IMappe
     private static string GetCityKey(string id)
     {
         return $"{CITY_DATA_KEY_PREFIX}.{id}";
+    }
+
+    private static string GetCityStrategyKey(string id)
+    {
+        return $"{CITY_STRATEGY_KEY_PREFIX}.{id}";
     }
 
     private static string GetCityBackupKey(string id)

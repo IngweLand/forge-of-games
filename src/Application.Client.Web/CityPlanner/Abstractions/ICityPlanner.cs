@@ -47,4 +47,7 @@ public interface ICityPlanner
 
     bool TryToggleExpansion(Point coordinates);
     void UpdateWonderLevel(int level);
+
+    HohCity GetCity();
+    bool ValidateLayout();
 }

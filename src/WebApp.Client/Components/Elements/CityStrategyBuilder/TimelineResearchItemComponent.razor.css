@@ -1,0 +1,94 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background-color: var(--fog-surface-color);
+    align-self: flex-start;
+    min-height: 100%;
+    gap: 6px;
+}
+
+.vertical-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.technologies-container {
+    overflow: auto;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    margin-bottom: 12px;
+    gap: 6px;
+}
+
+.item-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
+}
+
+.age-header {
+    height: 44px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2px 12px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: var(--fog-text-on-dark-color);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+hr {
+    width: 100%;
+}
+
+.text-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.cost-items-container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+}
+
+.cost-title {
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+
+@media (min-width: 576px) {
+    .content-wrapper {
+        gap: 12px;
+    }
+
+    .items-container {
+        gap: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .items-container {
+        gap: 16px;
+    }
+
+    .item-row {
+        justify-content: center;
+        gap: 16px;
+    }
+}

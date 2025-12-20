@@ -66,6 +66,9 @@ var searchKeys = new HashSet<string>
     "Base.BuildingGroups.premiumCulture_Name",
     "Base.BuildingGroups.premiumHome_Name",
     "Base.BuildingGroups.premiumFarm_Name",
+    "Base.RewardPanel.CityUnlocked",
+    "Base.Technologies.Technology_BronzeAge_EventCities_Name",
+    "Base.WorldWondersOverviewPanel.ActiveWondersInAlliedCulture",
 };
 
 var result = new Dictionary<string, List<Translations>>();

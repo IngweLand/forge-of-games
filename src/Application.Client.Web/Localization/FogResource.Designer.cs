@@ -924,6 +924,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Strategies.
+        /// </summary>
+        public static string CityPlanner_Strategies {
+            get {
+                return ResourceManager.GetString("CityPlanner.Strategies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City planner.
         /// </summary>
         public static string CityPlanner_Title {
@@ -992,6 +1001,159 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CityProductionMetric_StoragePerCityArea {
             get {
                 return ResourceManager.GetString("CityProductionMetric.StoragePerCityArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have any saved city suitable for import..
+        /// </summary>
+        public static string CityStrategy_NoCityForImport {
+            get {
+                return ResourceManager.GetString("CityStrategy.NoCityForImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Timeline.
+        /// </summary>
+        public static string CityStrategy_Timeline {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string CityStrategy_Timeline_CreateMenu_Description {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.CreateMenu.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import layout.
+        /// </summary>
+        public static string CityStrategy_Timeline_CreateMenu_ImportLayout {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.CreateMenu.ImportLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        public static string CityStrategy_Timeline_CreateMenu_Layout {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.CreateMenu.Layout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Research.
+        /// </summary>
+        public static string CityStrategy_Timeline_CreateMenu_Research {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.CreateMenu.Research", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string CityStrategy_TimelineDescriptionItem_DefaultDescription {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineDescriptionItem.DefaultDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string CityStrategy_TimelineDescriptionItem_DefaultTitle {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineDescriptionItem.DefaultTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string CityStrategy_TimelineDescriptionItemEditor_DefaultDescription {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineDescriptionItemEditor.DefaultDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string CityStrategy_TimelineDescriptionItemEditor_DefaultTitle {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineDescriptionItemEditor.DefaultTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        public static string CityStrategy_TimelineLayoutItem_DefaultTitle {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineLayoutItem.DefaultTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Research.
+        /// </summary>
+        public static string CityStrategy_TimelineResearchItem_DefaultTitle {
+            get {
+                return ResourceManager.GetString("CityStrategy.TimelineResearchItem.DefaultTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create and view strategies for the capital and allied culture cities in Heroes of History..
+        /// </summary>
+        public static string CityStrategyBuilder_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityStrategyBuilder.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city strategy, event city, event city strategy, city planner, city building, city management, game optimization, production stats.
+        /// </summary>
+        public static string CityStrategyBuilder_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityStrategyBuilder.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategy Builder | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityStrategyBuilder_PageTitle {
+            get {
+                return ResourceManager.GetString("CityStrategyBuilder.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategy Builder isn’t optimized for smaller screens. Please visit again on a larger device or switch to a bigger screen..
+        /// </summary>
+        public static string CityStrategyBuilder_SmallScreenMessage {
+            get {
+                return ResourceManager.GetString("CityStrategyBuilder.SmallScreenMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategy Builder.
+        /// </summary>
+        public static string CityStrategyBuilder_Title {
+            get {
+                return ResourceManager.GetString("CityStrategyBuilder.Title", resourceCulture);
             }
         }
         
@@ -1478,6 +1640,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Disclaimer_Text {
             get {
                 return ResourceManager.GetString("Common.Disclaimer.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go back.
+        /// </summary>
+        public static string Common_GoBack {
+            get {
+                return ResourceManager.GetString("Common.GoBack", resourceCulture);
             }
         }
         
@@ -2306,6 +2477,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Navigation_Campaign {
             get {
                 return ResourceManager.GetString("Navigation.Campaign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inspirations.
+        /// </summary>
+        public static string Navigation_CityLayoutInspirations {
+            get {
+                return ResourceManager.GetString("Navigation.CityLayoutInspirations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Layouts.
+        /// </summary>
+        public static string Navigation_CityLayouts {
+            get {
+                return ResourceManager.GetString("Navigation.CityLayouts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strategies.
+        /// </summary>
+        public static string Navigation_CityStrategyBuilder {
+            get {
+                return ResourceManager.GetString("Navigation.CityStrategyBuilder", resourceCulture);
             }
         }
         

@@ -12,6 +12,7 @@ public class FogTheme
             Secondary = "#6C79A7",
             Error = "#963532",
             SecondaryDarken = "#5E6069",
+            Tertiary = "#BEBEBE",
         },
         Typography = new Typography()
         {

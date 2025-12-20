@@ -1,0 +1,116 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
+@using Ingweland.Fog.Application.Core.Extensions
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+@if (_ageTechnologies != null)
+{
+    <div class="component-root vertical-layout">
+        @if (_cost != null)
+        {
+            <span class="cost-title">@Loc[FogResource.Hoh_Cost]</span>
+            <div class="fog-container cost-items-container">
+                @foreach (var costItem in _cost.Cost)
+                {
+                    <ResourceWithValue ResourceValue="@costItem" Size="Size.Small"/>
+                }
+            </div>
+        }
+        <div class="fog-container vertical-layout technologies-container">
+            @foreach (var ageTechnologies in _ageTechnologies)
+            {
+                <div class="age-header"
+                     @onclick="() => ageTechnologies.IsListOpen = !ageTechnologies.IsListOpen"
+                     style="background-color: @ageTechnologies.AgeColor">@ageTechnologies.AgeName</div>
+
+                <MudCollapse Expanded="@ageTechnologies.IsListOpen">
+                    <div class="items-container">
+                        @foreach (var group in ageTechnologies.Technologies.GroupBy(x => x.HorizontalIndex).OrderBy(g => g.Key))
+                        {
+                            <div class="item-row">
+                                @foreach (var tech in group.OrderBy(x => x.VerticalIndex))
+                                {
+                                    <TechnologyComponent Data="@tech" Clicked="OnClicked"/>
+                                }
+                            </div>
+                        }
+                    </div>
+                </MudCollapse>
+            }
+        </div>
+    </div>
+}
+
+@code {
+
+    private IReadOnlyCollection<AgeTechnologiesViewModel>? _ageTechnologies;
+    private ResearchCostViewModel? _cost;
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategyTimelineResearchItem Data { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required CityId CityId { get; set; }
+
+    [Inject]
+    private IResearchCalculatorService ResearchCalculatorService { get; set; }
+    
+    [Parameter]
+    public EventCallback OnChanged { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        
+        var techCityId = CityId.ToDefaultTechnologyCity();
+        _ageTechnologies = await ResearchCalculatorService.InitializeAsync(techCityId);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        ResearchCalculatorService.SetOpenTechnologiesWithAncestors(Data.OpenedTechnologies);
+        ResearchCalculatorService.SetTargetTechnologiesWithAncestors(Data.Technologies);
+
+        if (Data.Technologies.Count > 0 || Data.OpenedTechnologies.Count > 0)
+        {
+            foreach (var ageTechnologies in _ageTechnologies!)
+            {
+                if (ageTechnologies.Technologies.All(x => x.State is
+                        ResearchCalculatorTechnologyState.Open or
+                        ResearchCalculatorTechnologyState.SelectedOpen or
+                        ResearchCalculatorTechnologyState.Target or
+                        ResearchCalculatorTechnologyState.SelectedTarget))
+                {
+                    continue;
+                }
+
+                ageTechnologies.IsListOpen = true;
+                break;
+            }
+        }
+        else
+        {
+            _ageTechnologies!.First().IsListOpen = true;
+        }
+
+        _cost = await ResearchCalculatorService.CalculateCost();
+    }
+
+    private async Task OnClicked(ResearchCalculatorTechnologyViewModel item)
+    {
+        var technologies = ResearchCalculatorService.SelectTargetTechnologyWithAncestors(item.Id);
+        Data.Technologies.Add(item.Id);
+        Data.Technologies.IntersectWith(technologies);
+        _cost = await ResearchCalculatorService.CalculateCost();
+        await OnChanged.InvokeAsync();
+    }
+
+}

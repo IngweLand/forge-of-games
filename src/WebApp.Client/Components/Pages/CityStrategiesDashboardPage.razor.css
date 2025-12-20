@@ -1,0 +1,28 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.action-card {
+    flex: 1;
+}
+
+
+@media (min-width: 576px) {
+    .page-container {
+        gap: 24px;
+    }
+
+    .items-container {
+        gap: 16px;
+    }
+}

@@ -24,10 +24,38 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
             },
             new()
             {
-                Href = FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH,
-                ResourceKey = FogResource.CityPlanner_Title,
-                Icon = GetIconString(
-                    assetUrlProvider.GetIconUrl("architecture_30dp_FBE0C6_FILL0_wght700_GRAD200_opsz24", ".svg")),
+                ResourceKey = FogResource.Navigation_CityLayouts,
+                Icon = GetIconString(assetUrlProvider.GetIconUrl("dashboard_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24",
+                    ".svg")),
+                Children = new List<NavMenuItem>
+                {
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH,
+                        ResourceKey = FogResource.CityPlanner_Title,
+                        Icon = GetIconString(
+                            assetUrlProvider.GetIconUrl("architecture_30dp_FBE0C6_FILL0_wght700_GRAD200_opsz24",
+                                ".svg")),
+                        Match = NavLinkMatch.All,
+                    },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
+                        ResourceKey = FogResource.Navigation_CityStrategyBuilder,
+                        Icon = GetIconString(
+                            assetUrlProvider.GetIconUrl("strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24", ".svg")),
+                        Match = NavLinkMatch.All,
+                    },
+                    new()
+                    {
+                        Href = FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH,
+                        ResourceKey = FogResource.Navigation_CityLayoutInspirations,
+                        Icon = GetIconString(
+                            assetUrlProvider.GetIconUrl("emoji_objects_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24",
+                                ".svg")),
+                        Match = NavLinkMatch.All,
+                    },
+                },
             },
             new()
             {

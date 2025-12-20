@@ -8,13 +8,17 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 public interface IPersistenceService
 {
     ValueTask SaveCity(HohCity city);
+    ValueTask SaveCityStrategy(CityStrategy cityStrategy);
     ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request);
     ValueTask<CityInspirationsSearchFormRequest?> GetCityInspirationsRequestAsync();
     ValueTask SaveTopHeroesRequestAsync(TopHeroesSearchFormRequest request);
     ValueTask<TopHeroesSearchFormRequest?> GetTopHeroesRequestAsync();
     ValueTask<bool> DeleteCity(string cityId);
+    ValueTask<bool> DeleteCityStrategy(string strategyId);
     ValueTask<HohCity?> LoadCity(string cityId);
+    ValueTask<CityStrategy?> LoadCityStrategy(string strategyId);
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities();
+    ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCityStrategies();
 
     ValueTask SaveCommandCenterProfile(BasicCommandCenterProfile commandCenterProfile);
     ValueTask SaveEquipment(IReadOnlyCollection<EquipmentItem> equipment);
@@ -34,7 +38,7 @@ public interface IPersistenceService
 
     ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies);
     ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId);
-    
+
     ValueTask SetItemAsync<T>(string key, T value);
     ValueTask<T?> GetItemAsync<T>(string key);
 }

@@ -63,6 +63,7 @@ public class CityPlanner(
     public async Task<SnapshotsComparisonViewModel> CompareSnapshots()
     {
         var cityPlannerData = await cityPlannerDataService.GetCityPlannerDataAsync(CityMapState.InGameCityId);
+        DeselectAll();
         var city = GetCity();
         var stats = new Dictionary<HohCitySnapshot, CityStats>();
         foreach (var snapshot in CityMapState.Snapshots)
@@ -272,6 +273,7 @@ public class CityPlanner(
 
     public async Task SaveCityAsync()
     {
+        DeselectAll();
         await persistenceService.SaveCity(GetCity());
         StateHasChanged?.Invoke();
     }
@@ -289,6 +291,7 @@ public class CityPlanner(
     public async Task SaveCityAsync(string newCityName)
     {
         CityMapState.CityName = newCityName;
+        DeselectAll();
         await persistenceService.SaveCity(GetCity());
         UpdateCityPropertiesViewModel();
         StateHasChanged?.Invoke();
@@ -514,23 +517,31 @@ public class CityPlanner(
         CityMapState.PurgeInventory();
     }
 
+    public HohCity GetCity()
+    {
+        return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
+            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings,
+            CityMapState.Snapshots,
+            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
+            CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
+    }
+
+    public bool ValidateLayout()
+    {
+        if (CityMapState.SelectedCityMapEntity == null)
+        {
+            return true;
+        }
+
+        return CanBePlaced(CityMapState.SelectedCityMapEntity);
+    }
+
     private void FinalizeGroupLevelUpdate(string cityEntityId)
     {
         var building = CityMapState.Buildings[cityEntityId];
         SelectGroup(building.Group);
         CityMapState.CityStats = _statsProcessor.UpdateStats();
         UpdateSelectedCityMapBuildingGroupViewModel();
-    }
-
-    private HohCity GetCity()
-    {
-        DeselectAll();
-
-        return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
-            CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings,
-            CityMapState.Snapshots,
-            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
-            CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
 
     private void DeselectAll()

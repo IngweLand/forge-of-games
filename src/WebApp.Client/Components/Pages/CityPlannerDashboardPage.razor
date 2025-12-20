@@ -15,6 +15,12 @@
             <span class="material-symbols-outlined command-center-card-icon">file_open</span>
             <span class="card-label">@Loc[FogResource.CityPlanner_Import]</span>
         </div>
+        
+        <div class="command-center-card command-center-action-card action-card"
+             @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH)">
+            <span class="material-symbols-outlined command-center-card-icon">strategy</span>
+            <span class="command-center-card-label">@Loc[FogResource.CityPlanner_Strategies]</span>
+        </div>
 
         <div class="command-center-card command-center-action-card action-card"
              @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH)">
@@ -25,7 +31,7 @@
     <div class="items-container">
         @foreach (var city in _cities)
         {
-            <CityCard City="@city" OnClick="OpenCity"/>
+            <CityCard City="@city" OnClick="@OpenCity"/>
         }
     </div>
 </div>

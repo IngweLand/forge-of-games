@@ -136,12 +136,13 @@
         {
             case Step.SelectOpen:
             {
-                ResearchCalculatorService.SelectOpenTechnologies(item.Id);
+                var openedTechnologies = ResearchCalculatorService.SelectOpenTechnologyWithAncestors(item.Id);
+                Task.Run(async () => await PersistenceService.SaveOpenTechnologies(_selectedCity, openedTechnologies));
                 break;
             }
             case Step.SelectTarget:
             {
-                ResearchCalculatorService.SelectTargetTechnologies(item.Id);
+                ResearchCalculatorService.SelectTargetTechnologyWithAncestors(item.Id);
                 break;
             }
         }

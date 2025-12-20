@@ -13,7 +13,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
     private readonly HashSet<BuildingType> _notMovableEntities =
         [BuildingType.RitualSite, BuildingType.ExtractionPoint, BuildingType.PresetIrrigation];
 
-    private int _nextBuildingId = -1;
+    private static int _nextBuildingId = -1;
 
     public CityMapEntity Create(BuildingDto building, HohCityMapEntity hohCityMapEntity)
     {

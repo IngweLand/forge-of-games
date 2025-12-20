@@ -1,0 +1,95 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    clip-path: inset(0 0 0 0 round var(--fog-border-radius));
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.main-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-title {
+    align-self: flex-start;
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-container-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-height: 22px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.timeline-item-content {
+    display: flex;
+    gap: 4px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.timeline-item-content-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    flex-shrink: 0;
+}
+
+.timeline-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.timeline-item-actions {
+    display: flex;
+    gap: 4px;
+    padding: 0 8px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item-actions::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    border-bottom: 1px solid var(--fog-border-color);
+}
+
+.timeline-add-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4px;
+    justify-content: center;
+}
+
+.v-line {
+    width: 2px;
+    background: var(--fog-border-color);
+    height: 6px;
+}
+
+::deep .material-symbols-outlined {
+    font-size: 32px;
+}
+
+::deep .mud-button-filled {
+    background-color: var(--fog-surface-color);
+    color: var(--mud-palette-tertiary);
+}

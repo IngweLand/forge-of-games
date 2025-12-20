@@ -20,5 +20,6 @@ public class CityPlannerProfile :Profile
                 opt => opt.MapFrom(src => new Rectangle(src.X, src.Y, src.Width, src.Height)));
 
         CreateMap<HohCity, HohCityBasicData>();
+        CreateMap<CityStrategy, HohCityBasicData>();
     }
 }

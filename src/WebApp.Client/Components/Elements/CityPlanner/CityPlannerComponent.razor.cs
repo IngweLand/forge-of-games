@@ -83,6 +83,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         if (_isInitialized)
         {
             CityPlanner.StateHasChanged -= CityPlannerOnStateHasHasChanged;
+            CityPlannerSettings.StateChanged -= CityPlannerSettingsOnStateChanged;
         }
     }
 

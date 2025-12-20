@@ -43,7 +43,7 @@ public static class FogUrlBuilder
         public const string PLAYER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/rankings";
         public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE = PLAYER_TEMPLATE + "/productionCapacity";
         public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/productionCapacity";
-        
+
         public const string WORLD_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/eventCities";
 
         public const string ALLIANCES_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/alliances";
@@ -99,6 +99,8 @@ public static class FogUrlBuilder
         public const string BASE_CITY_PLANNER_PATH = "/city-planner";
         public const string CITY_PLANNER_APP_PATH = BASE_CITY_PLANNER_PATH + "/app";
         public const string CITY_PLANNER_INSPIRATIONS_PATH = BASE_CITY_PLANNER_PATH + "/inspirations";
+        public const string CITY_STRATEGIES_DASHBOARD_PATH = BASE_CITY_PLANNER_PATH + "/strategies";
+        public const string CITY_STRATEGY_APP_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/app/{strategyId}";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
         public const string BASE_TOOLS_PATH = "/tools";
@@ -111,6 +113,7 @@ public static class FogUrlBuilder
         public const string HELP_CITY_PLANNER_SNAPSHOTS_PATH = BASE_HELP_PATH + "/city-planner-snapshots";
         public const string HELP_CITY_PLANNER_PATH = BASE_HELP_PATH + "/city-planner";
         public const string HELP_CITY_PLANNER_APP_PATH = BASE_HELP_PATH + "/city-planner-app";
+        public const string HELP_CITY_STRATEGY_BUILDER_APP_PATH = BASE_HELP_PATH + "/city-strategy-builder-app";
         public const string HELP_BROWSER_EXTENSION_PATH = BASE_HELP_PATH + "/browser-extension";
         public const string HELP_IMPORTING_IN_GAME_DATA_PATH = BASE_HELP_PATH + "/importing-hoh-data";
         public const string HELP_STATS_HUB_PATH = BASE_HELP_PATH + "/stats-hub";
@@ -228,7 +231,12 @@ public static class FogUrlBuilder
         {
             return BATTLE_TEMPLATE.Replace("{battleId:int}", battleId.ToString());
         }
-        
+
+        public static string CityStrategy(string strategyId)
+        {
+            return CITY_STRATEGY_APP_TEMPLATE.Replace("{strategyId}", strategyId);
+        }
+
         public static string WorldEventCity(string worldId)
         {
             if (string.IsNullOrWhiteSpace(worldId))

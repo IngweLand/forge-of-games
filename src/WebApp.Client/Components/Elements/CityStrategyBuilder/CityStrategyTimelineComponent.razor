@@ -1,0 +1,139 @@
+@using System.Collections.ObjectModel
+@using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Fog.Enums
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+
+<div class="fog-container component-root">
+    <div class="header-container">
+        <div class="section-title">@Loc[FogResource.CityStrategy_Timeline]</div>
+    </div>
+    <div class="main-container">
+        <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
+                 SelectedValueChanged="@(x => OnSelect.InvokeAsync(x!.Id))">
+            @foreach (var item in Items)
+            {
+                <MudListItem T="CityStrategyTimelineItemBase" Value="@item">
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-content-icon">
+                            <MudIcon Icon="@GetTypeIcon(item.Type)" Color="Color.Inherit" Size="Size.Large"/>
+                        </div>
+                        <span>@item.Title</span>
+                    </div>
+                </MudListItem>
+                <div class="timeline-actions">
+                    <div class="timeline-item-actions">
+                        <MudIconButton Icon="@Icons.Material.Outlined.Edit" Size="Size.Small" Color="Color.Tertiary"
+                                       OnClick="@(() => OnEdit.InvokeAsync(item))"/>
+                        <MudIconButton Icon="@Icons.Material.Outlined.Delete" Size="Size.Small" Color="Color.Tertiary"
+                                       OnClick="@(() => OnDeleteClicked(item))"/>
+                    </div>
+                    <div class="timeline-add-item-container">
+                        <div class="v-line"></div>
+                        <MudMenu Variant="Variant.Filled" Size="Size.Small" Dense="true"
+                                 Icon="@Icons.Material.Outlined.AddBox">
+                            <MudMenuItem Icon="@GetTypeIcon(CityStrategyNewTimelineItemType.Description)"
+                                         Size="Size.Small"
+                                         Color="Color.Inherit"
+                                         OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.Description))">
+                                @Loc[FogResource.CityStrategy_Timeline_CreateMenu_Description]
+                            </MudMenuItem>
+                            <MudMenuItem Icon="@GetTypeIcon(CityStrategyNewTimelineItemType.Research)" Size="Size.Small"
+                                         Color="Color.Inherit"
+                                         OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.Research))">
+                                @Loc[FogResource.CityStrategy_Timeline_CreateMenu_Research]
+                            </MudMenuItem>
+                            <MudMenuItem Icon="@GetTypeIcon(CityStrategyNewTimelineItemType.Layout)" Size="Size.Small"
+                                         Color="Color.Inherit"
+                                         OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.Layout))">
+                                @Loc[FogResource.CityStrategy_Timeline_CreateMenu_Layout]
+                            </MudMenuItem>
+                            <MudMenuItem Icon="@GetTypeIcon(CityStrategyNewTimelineItemType.LayoutImport)"
+                                         Size="Size.Small"
+                                         Color="Color.Inherit"
+                                         OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.LayoutImport))">
+                                @Loc[FogResource.CityStrategy_Timeline_CreateMenu_ImportLayout]
+                            </MudMenuItem>
+                        </MudMenu>
+                        <div class="v-line"></div>
+                    </div>
+                </div>
+            }
+        </MudList>
+    </div>
+</div>
+
+@code {
+    private CityStrategyTimelineItemBase? _selectedItem;
+
+    [Parameter]
+    [EditorRequired]
+    public required ObservableCollection<CityStrategyTimelineItemBase> Items { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyTimelineItemBase> OnEdit { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyTimelineItemBase> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSelect { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyTimelineItemCreateRequest> OnCreate { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        _selectedItem = Items.FirstOrDefault(x => x.Selected);
+    }
+
+    private static string GetTypeIcon(CityStrategyNewTimelineItemType type)
+    {
+        return type switch
+        {
+            CityStrategyNewTimelineItemType.Research => "material-symbols-outlined/experiment",
+            CityStrategyNewTimelineItemType.Description => "material-symbols-outlined/description",
+            CityStrategyNewTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
+            CityStrategyNewTimelineItemType.LayoutImport => "material-symbols-outlined/file_open",
+            _ => string.Empty,
+        };
+    }
+
+    private static string GetTypeIcon(CityStrategyTimelineItemType type)
+    {
+        return type switch
+        {
+            CityStrategyTimelineItemType.Research => "material-symbols-outlined/experiment",
+            CityStrategyTimelineItemType.Description => "material-symbols-outlined/description",
+            CityStrategyTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
+            _ => string.Empty,
+        };
+    }
+
+    private Task OnAddMenuSelected(string id, CityStrategyNewTimelineItemType type)
+    {
+        return OnCreate.InvokeAsync(new CityStrategyTimelineItemCreateRequest
+        {
+            Type = type,
+            ItemId = id,
+        });
+    }
+
+    private async Task OnDeleteClicked(CityStrategyTimelineItemBase item)
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.Common_DeleteConfirmation, item.Title],
+            Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null && result.Value)
+        {
+            await OnDelete.InvokeAsync(item);
+        }
+    }
+
+}

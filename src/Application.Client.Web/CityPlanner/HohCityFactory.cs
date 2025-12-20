@@ -64,6 +64,27 @@ public class HohCityFactory(IMapper mapper) : IHohCityFactory
         };
     }
 
+    public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
+        IReadOnlyCollection<HohCityMapEntity> entities, HashSet<string> expansions, int cityPlannerVersion,
+        WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
+    {
+        return new HohCity
+        {
+            Id = id,
+            InGameCityId = inGameCityId,
+            AgeId = ageId,
+            Entities = entities,
+            InventoryBuildings = [],
+            Name = name,
+            Snapshots = [],
+            UnlockedExpansions = expansions,
+            WonderId = cityWonderId,
+            WonderLevel = cityWonderLevel,
+            UpdatedAt = DateTime.Now.ToLocalTime(),
+            CityPlannerVersion = cityPlannerVersion,
+        };
+    }
+
     private static class InitCityConfigs
     {
         public static List<HohCityMapEntity> GetMapEntities(string key)

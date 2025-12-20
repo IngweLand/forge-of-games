@@ -13,6 +13,8 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
+using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder;
+using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
@@ -71,7 +73,6 @@ public static class DependencyInjection
         services.AddScoped<IBuildingMultilevelCostViewModelFactory, BuildingMultilevelCostViewModelFactory>();
         services.AddScoped<IToolsUiService, ToolsUiService>();
         services.AddScoped<IAgeTechnologiesFactory, AgeTechnologiesFactory>();
-        services.AddScoped<IResearchCalculatorService, ResearchCalculatorService>();
         services.AddScoped<IBuildingSelectorTypesViewModelFactory, BuildingSelectorTypesViewModelFactory>();
         services.AddScoped<ICityPlanner, CityPlanner.CityPlanner>();
         services.AddScoped<IMapTransformationComponent, MapTransformationComponent>();
@@ -140,9 +141,15 @@ public static class DependencyInjection
         services.AddScoped<IFogCommonUiService, FogCommonUiService>();
         services.AddScoped<ICityPlannerAnalyticsService, CityPlannerAnalyticsService>();
         services.AddScoped<IPlayerProductionCapacityViewModelFactory, PlayerProductionCapacityViewModelFactory>();
+        services.AddScoped<ICityStrategyFactory, CityStrategyFactory>();
+        services.AddScoped<ICityStrategyAnalyticsService, CityStrategyAnalyticsService>();
+        services.AddScoped<ICityStrategyUiService, CityStrategyUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 
         services.AddHttpClient<IBuildingRenderer, BuildingRenderer>();
+
+        services.AddTransient<IResearchCalculatorService, ResearchCalculatorService>();
+        services.AddTransient<ICityStrategyBuilderService, CityStrategyBuilderService>();
     }
 }

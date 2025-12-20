@@ -1,0 +1,50 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<MudDialog Style="padding: 24px">
+    <DialogContent>
+
+        <MudSelect Label="@Loc[FogResource.Hoh_City]" @bind-Value="_selectedCity" T="HohCityBasicData"
+                   Variant="Variant.Outlined">
+            @foreach (var item in Cities)
+            {
+                <MudSelectItem Value="item">@item.Name</MudSelectItem>
+            }
+        </MudSelect>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="@Cancel">@Loc[FogResource.Common_Cancel]</MudButton>
+        <MudButton Color="Color.Success" OnClick="@Import">@Loc[FogResource.Common_Import]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    private HohCityBasicData _selectedCity;
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<HohCityBasicData> Cities { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        _selectedCity = Cities.First();
+    }
+
+    private void Cancel()
+    {
+        MudDialog.Cancel();
+    }
+
+    private void Import()
+    {
+        MudDialog.Close(DialogResult.Ok(_selectedCity.Id));
+    }
+
+}

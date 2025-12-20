@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research;
@@ -19,7 +18,6 @@ public class ResearchCalculatorService(
     IResearchService researchService,
     IAgeTechnologiesFactory ageTechnologiesFactory,
     ICommonService commonService,
-    IPersistenceService persistenceService,
     ICityService cityService)
     : IResearchCalculatorService
 {
@@ -64,16 +62,13 @@ public class ResearchCalculatorService(
         return viewModel;
     }
 
-    public void SelectOpenTechnologies(string selectedTechnologyId)
+    public IReadOnlySet<string> SelectOpenTechnologyWithAncestors(string selectedTechnologyId)
     {
         var ancestors = GetAncestors(selectedTechnologyId);
         var descendants = GetDescendants(selectedTechnologyId);
         _openTechnologies.Add(selectedTechnologyId);
         _openTechnologies.ExceptWith(descendants);
         _openTechnologies.UnionWith(ancestors);
-
-        Task.Run(async () =>
-            await persistenceService.SaveOpenTechnologies(_currentCity, _openTechnologies));
 
         foreach (var openTech in _openTechnologies)
         {
@@ -84,6 +79,8 @@ public class ResearchCalculatorService(
         {
             _techViewModels[descendant].State = ResearchCalculatorTechnologyState.None;
         }
+
+        return _openTechnologies.ToHashSet();
     }
 
     public void SelectOpenTechnologies(IEnumerable<string> selectedTechnologyIds)
@@ -101,11 +98,52 @@ public class ResearchCalculatorService(
         }
     }
 
-    public void SelectTargetTechnologies(string selectedTechnologyId)
+    public void SetOpenTechnologiesWithAncestors(IEnumerable<string> selectedTechnologyIds)
+    {
+        _openTechnologies.Clear();
+
+        foreach (var t in selectedTechnologyIds)
+        {
+            var ancestors = GetAncestors(t);
+            _openTechnologies.Add(t);
+            _openTechnologies.UnionWith(ancestors);
+        }
+
+        foreach (var vm in _techViewModels.Values)
+        {
+            vm.State = ResearchCalculatorTechnologyState.None;
+        }
+
+        foreach (var openTech in _openTechnologies)
+        {
+            _techViewModels[openTech].State = ResearchCalculatorTechnologyState.Open;
+        }
+    }
+
+    public void SetTargetTechnologiesWithAncestors(IEnumerable<string> selectedTechnologyIds)
+    {
+        _targetTechnologies.Clear();
+
+        var valid = selectedTechnologyIds.Except(_openTechnologies);
+        foreach (var t in valid)
+        {
+            var ancestors = GetAncestors(t);
+            ancestors.ExceptWith(_openTechnologies);
+            _targetTechnologies.Add(t);
+            _targetTechnologies.UnionWith(ancestors);
+        }
+
+        foreach (var targetTech in _targetTechnologies)
+        {
+            _techViewModels[targetTech].State = ResearchCalculatorTechnologyState.Target;
+        }
+    }
+
+    public IReadOnlySet<string> SelectTargetTechnologyWithAncestors(string selectedTechnologyId)
     {
         if (_openTechnologies.Contains(selectedTechnologyId))
         {
-            return;
+            return _targetTechnologies.ToHashSet();
         }
 
         var ancestors = GetAncestors(selectedTechnologyId);
@@ -132,6 +170,8 @@ public class ResearchCalculatorService(
         {
             _techViewModels[descendant].State = ResearchCalculatorTechnologyState.None;
         }
+
+        return _targetTechnologies.ToHashSet();
     }
 
     public void ClearTargetTechnologies()

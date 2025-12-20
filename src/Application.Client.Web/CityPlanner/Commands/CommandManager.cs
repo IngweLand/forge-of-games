@@ -4,14 +4,17 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Commands;
 
 public class CommandManager : ICommandManager
 {
-    private readonly Stack<IUndoableCommand> _undoStack = new();
     private readonly Stack<IUndoableCommand> _redoStack = new();
+
+    private readonly Stack<IUndoableCommand> _undoStack = new();
+    public event Action? CommandExecuted;
 
     public void ExecuteCommand(IUndoableCommand command)
     {
         command.Execute();
         _undoStack.Push(command);
         _redoStack.Clear();
+        CommandExecuted?.Invoke();
     }
 
     public void Undo()
@@ -24,6 +27,7 @@ public class CommandManager : ICommandManager
         var command = _undoStack.Pop();
         command.Undo();
         _redoStack.Push(command);
+        CommandExecuted?.Invoke();
     }
 
     public void Redo()
@@ -36,6 +40,7 @@ public class CommandManager : ICommandManager
         var command = _redoStack.Pop();
         command.Execute();
         _undoStack.Push(command);
+        CommandExecuted?.Invoke();
     }
 
     public void Reset()

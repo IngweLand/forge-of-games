@@ -166,8 +166,21 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     Description = localizer[FogResource.CityPlanner_Inspirations_Meta_Description],
                     Keywords = localizer[FogResource.CityPlanner_Inspirations_Meta_Keywords],
                     Title = localizer[FogResource.CityPlanner_Inspirations_Title],
-                    CurrentHomePath = FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH,
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH,
+                };
+            }
+            
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH))
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CityStrategyBuilder_PageTitle],
+                    Description = localizer[FogResource.CityStrategyBuilder_Meta_Description],
+                    Keywords = localizer[FogResource.CityStrategyBuilder_Meta_Keywords],
+                    Title = localizer[FogResource.CityStrategyBuilder_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
                 };
             }
             

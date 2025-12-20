@@ -7,10 +7,12 @@ namespace Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 public interface IResearchCalculatorService
 {
     Task<IReadOnlyCollection<AgeTechnologiesViewModel>> InitializeAsync(CityId cityId);
-    void SelectOpenTechnologies(string selectedTechnologyId);
-    void SelectTargetTechnologies(string selectedTechnologyId);
+    IReadOnlySet<string> SelectOpenTechnologyWithAncestors(string selectedTechnologyId);
+    IReadOnlySet<string> SelectTargetTechnologyWithAncestors(string selectedTechnologyId);
     void ClearTargetTechnologies();
     Task<ResearchCostViewModel> CalculateCost();
     void SelectOpenTechnologies(IEnumerable<string> selectedTechnologyIds);
     Task<IReadOnlyCollection<CityDto>> GetCitiesAsync();
+    void SetTargetTechnologiesWithAncestors(IEnumerable<string> selectedTechnologyIds);
+    void SetOpenTechnologiesWithAncestors(IEnumerable<string> selectedTechnologyIds);
 }

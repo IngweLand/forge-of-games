@@ -18,6 +18,11 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
+    public ValueTask SaveCityStrategy(CityStrategy cityStrategy)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask SaveCityInspirationsRequestAsync(CityInspirationsSearchFormRequest request)
     {
         throw new NotImplementedException();
@@ -43,12 +48,27 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
+    public ValueTask<bool> DeleteCityStrategy(string strategyId)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<HohCity?> LoadCity(string cityId)
     {
         throw new NotImplementedException();
     }
 
+    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities()
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCityStrategies()
     {
         throw new NotImplementedException();
     }

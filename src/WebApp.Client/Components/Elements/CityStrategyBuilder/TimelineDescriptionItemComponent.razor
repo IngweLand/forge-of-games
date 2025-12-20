@@ -1,0 +1,53 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <div>
+        <MudTextField Value="@_title"
+                      Immediate="true" TextChanged="OnTitleChanged"
+                      Counter="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
+                      MaxLength="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
+                      Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultTitle]"
+                      Variant="Variant.Outlined"/>
+    </div>
+    <MudTextField Value="@_description" Lines="10" AutoGrow TextChanged="OnDescriptionChanged"
+                  Immediate="true"
+                  Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"
+                  Variant="Variant.Outlined"/>
+</div>
+
+@code {
+
+    private string _title = string.Empty;
+    private string _description = string.Empty;
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategyTimelineDescriptionItem Data { get; set; }
+
+    [Parameter]
+    public EventCallback OnChanged { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        _title = Data.Title;
+        _description = Data.Description;
+    }
+
+    private Task OnTitleChanged(string newValue)
+    {
+        Data.Title = _title = newValue;
+        return OnChanged.InvokeAsync();
+    }
+
+    private Task OnDescriptionChanged(string newValue)
+    {
+        Data.Description = _description = newValue;
+        return OnChanged.InvokeAsync();
+    }
+
+}

@@ -1,0 +1,162 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
+@using Position = MudBlazor.Position
+
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<div class="content-wrapper">
+    @if (!_isInitialized)
+    {
+        <div class="spinner-grow loading-indicator" role="status"></div>
+    }
+    else
+    {
+        <MudAppBar ToolBarClass="city-planner-toolbar user-select-none" Class="city-planner-appbar" Gutters="false"
+                   Dense="true"
+                   Color="Color.Primary" Fixed="false">
+            <MudToggleIconButton Icon="material-symbols-outlined/left_panel_open"
+                                 Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
+                                 ToggledIcon="material-symbols-outlined/left_panel_close"
+                                 ToggledColor="Color.Inherit"
+                                 ToggledChanged="ToggleLeftPanel"/>
+            <span>@Loc[FogResource.CityStrategyBuilder_Title]<sup>beta</sup></span>
+            <div>
+                <MudIconButton Icon="@Icons.Material.Outlined.Dashboard" OnClick="@NavigateToDashboard"
+                               Class="fog-icon-light"/>
+            </div>
+            <div class="toolbar-divider"></div>
+            <div>
+                <MudIconButton Icon="@Icons.Material.Outlined.Save" OnClick="@Save" Class="fog-icon-light"/>
+            </div>
+            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+            {
+                <div class="toolbar-divider"></div>
+                <div>
+                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut" Class="fog-icon-light"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn" Class="fog-icon-light"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="@FitToScreen"
+                                   Class="fog-icon-light"/>
+                </div>
+                <div class="toolbar-divider"></div>
+                <div>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Cached" OnClick="@Rotate" Class="fog-icon-light"
+                                   Disabled="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="@DeleteCityMapEntity"
+                                   Class="fog-icon-light"
+                                   Disabled="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="@SelectGroup"
+                                   Class="fog-icon-light"
+                                   Disabled="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity == null)"/>
+                </div>
+                <div class="toolbar-divider"></div>
+            }
+            <MudSpacer/>
+            <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit"
+                           Href="@FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH" Target="_blank"/>
+            <MudToggleIconButton Icon="material-symbols-outlined/right_panel_open"
+                                 Color="Color.Inherit" Toggled="@_rightPanelIsVisible"
+                                 ToggledIcon="material-symbols-outlined/right_panel_close"
+                                 ToggledColor="Color.Inherit"
+                                 ToggledChanged="ToggleRightPanel"/>
+        </MudAppBar>
+        @if (_leftPanelIsVisible && CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        {
+            <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked"
+                                       Items="@CityStrategyBuilderService.CityMapState.BuildingSelectorItems"/>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        {
+            <div class="city-planner-map-container">
+                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" @onkeyup="OnKeyUp" tabindex="0"
+                          @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @onpointerdown="@InteractiveCanvasOnPointerDown" @onwheel="InteractiveCanvasOnWheel"
+                          @onpointermove="@InteractiveCanvasOnPointerMove"
+                          IgnorePixelScaling="true"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineDescriptionItem di)
+        {
+            <div class="non-layout-item-container">
+                <TimelineDescriptionItemComponent Data="@di" OnChanged="@RequestSaving"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
+        {
+            <div class="non-layout-item-container">
+                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.CityId"
+                                               OnChanged="@RequestSaving"/>
+            </div>
+        }
+
+        @if (_rightPanelIsVisible)
+        {
+            <MudTabs Class="city-planner-properties-container" TabHeaderClass="buildings-selector-tabs"
+                     SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
+                <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.ViewTimeline">
+                    <div class="city-planner-side-panel">
+                        <CityStrategyTimelineComponent OnCreate="@OnCreateTimelineItem" OnDelete="@OnDeleteTimelineItem"
+                                                       OnSelect="@OnSelectTimelineItem" OnEdit="@OnEditTimelineItem"
+                                                       Items="@CityStrategyBuilderService.TimelineItems"/>
+                    </div>
+                </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics"
+                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyTimelineLayoutItem)">
+                    <div class="city-planner-side-panel">
+                        @if (CityStrategyBuilderService.CityMapState.SelectedCityMapEntity != null)
+                        {
+                            <CityMapEntityPropertiesComponent
+                                Building="@CityStrategyBuilderService.CityMapState.SelectedEntityViewModel"/>
+                        }
+                        @if (CityStrategyBuilderService.CityMapState.SelectedCityMapBuildingGroupViewModel != null)
+                        {
+                            <CityMapBuildingGroupPropertiesComponent
+                                BuildingGroup="@CityStrategyBuilderService.CityMapState.SelectedCityMapBuildingGroupViewModel"/>
+                        }
+                        @if (CityStrategyBuilderService.CityMapState.CityPropertiesViewModel != null)
+                        {
+                            <CityPropertiesComponent
+                                Data="@CityStrategyBuilderService.CityMapState.CityPropertiesViewModel"/>
+                        }
+                    </div>
+
+                </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator"
+                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyTimelineLayoutItem)">
+                    <div class="city-planner-side-panel">
+                        <CityPlannerBuildingCostCalculator
+                            CityId="@CityStrategyBuilderService.CityMapState.InGameCityId"
+                            BuildingGroup="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
+                            FromLevel="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
+                            BuildingName="@CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Name"/>
+                    </div>
+                </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">
+                    <div class="city-planner-side-panel">
+                        <CityPlannerSettingsComponent/>
+                        <CityStartegyBuilderActionsComponent StrategyName="@CityStrategyBuilderService.StrategyName"
+                                                             OnDelete="@DeleteStrategy"
+                                                             OnNameChanged="@RenameStrategy"/>
+                    </div>
+                </MudTabPanel>
+            </MudTabs>
+        }
+    }
+
+</div>
+
+
+@code{
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategy Strategy { get; set; }
+
+}
