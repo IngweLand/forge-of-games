@@ -73,6 +73,12 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<HohCity?> GetPlayerEventCityAsync(int playerId, CancellationToken ct = default)
+    {
+        var query = new GetPlayerEventCityQuery(playerId);
+        return sender.Send(query, ct);
+    }
+
     public Task<PaginatedList<PvpBattleDto>> GetPlayerBattlesAsync(int playerId, int startIndex = 0,
         int count = FogConstants.DEFAULT_STATS_PAGE_SIZE, CancellationToken ct = default)
     {

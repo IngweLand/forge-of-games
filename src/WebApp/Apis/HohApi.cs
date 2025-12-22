@@ -156,6 +156,7 @@ public static class HohApi
         api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_DATA, GetEquipmentDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.IN_GAME_EVENTS_TEMPLATE, GetInGameEventsAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.CURRENT_IN_GAME_EVENT_TEMPLATE, GetCurrentInGameEventAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ANNUAL_BUDGET_TEMPLATE, GetAnnualBudgetAsync);
 
         return api;
@@ -191,6 +192,15 @@ public static class HohApi
             WorldId = worldId,
             EventDefinitionId = eventDefinitionId,
         };
+        var result = await services.Mediator.Send(query, ct);
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<InGameEventDto>,NotFound, BadRequest<string>>>
+        GetCurrentInGameEventAsync([AsParameters] StatsServices services, HttpContext context, string worldId,
+            EventDefinitionId eventDefinitionId, CancellationToken ct)
+    {
+        var query = new GetCurrentInGameEventQuery(worldId, eventDefinitionId);
         var result = await services.Mediator.Send(query, ct);
         return TypedResults.Ok(result);
     }

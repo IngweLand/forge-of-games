@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Models;
+using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
@@ -28,7 +29,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource _cityFetchCts = new();
     private DateTime? _citySnapshotDate = DateTime.Today;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
+    private WonderId _eventCityWonder = WonderId.Undefined;
     private bool _fetchingCity;
+    private readonly CancellationTokenSource _inGameEventCts = new();
     private bool _isDisposed;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
     private PvpTier _maxPvpTier = PvpTier.PvP_Tier_Overlord_1;
@@ -62,6 +65,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private IDialogService DialogService { get; set; }
 
     [Inject]
+    private IInGameEventUiService InGameEventUiService { get; set; }
+
+    [Inject]
     private ILogger<PlayerProfilePage> Logger { get; set; }
 
     [Inject]
@@ -69,6 +75,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     [Inject]
     private IStatsHubService StatsHubService { get; set; }
+    
+    [Inject]
+    private IAssetUrlProvider AssetUrlProvider { get; set; }
 
     public async ValueTask DisposeAsync()
     {
@@ -85,6 +94,19 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             _canShowChart = true;
             IsInitialized = true;
         }
+    }
+
+    private async Task GetEventWonderAsync()
+    {
+        if (_player == null)
+        {
+            return;
+        }
+
+        _eventCityWonder =
+            await InGameEventUiService.GetCurrentWonderAsync(_player!.Player.WorldId, _inGameEventCts.Token);
+
+        StateHasChanged();
     }
 
     protected override async Task OnParametersSetAsync()
@@ -109,7 +131,14 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             };
 
             IsInitialized = true;
+
+            _ = GetEventWonderAsync();
         }
+    }
+    
+    private string GetIconString(string icon)
+    {
+        return $"<image width=\"100%\" height=\"100%\" xlink:href=\"{icon}\" preserveAspectRatio=\"xMidYMid meet\"/>";
     }
 
     protected virtual async ValueTask DisposeAsyncCore()
@@ -126,6 +155,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         await _battleStatsCts.CancelAsync();
         _battleStatsCts.Dispose();
+
+        await _inGameEventCts.CancelAsync();
+        _inGameEventCts.Dispose();
 
         if (_productionCapacityCts != null)
         {
@@ -243,6 +275,57 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
                 return Task.CompletedTask;
             },
             () => AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters));
+    }
+
+    private async Task VisitEventCity()
+    {
+        if (_isDisposed)
+        {
+            return;
+        }
+        
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_EVENT_CITY_INIT, _defaultAnalyticsParameters);
+
+        await _cityFetchCts.CancelAsync();
+        _cityFetchCts.Dispose();
+
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _fetchingCity = true;
+        _cityFetchCts = new CancellationTokenSource();
+
+        try
+        {
+            var city = await StatsHubService.GetPlayerEventCityAsync(_player!.Player.Id);
+            if (_isDisposed)
+            {
+                return;
+            }
+
+            if (city == null)
+            {
+                AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_EVENT_CITY_ERROR, _defaultAnalyticsParameters);
+                return;
+            }
+            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_EVENT_CITY_SUCCESS, _defaultAnalyticsParameters);
+            CityPlannerNavigationState.City = city;
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
+        }
+        catch (Exception e)
+        {
+            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_EVENT_CITY_ERROR, _defaultAnalyticsParameters);
+            Logger.LogError(e, "Error while fetching city data");
+        }
+
+        if (_isDisposed)
+        {
+            return;
+        }
+
+        _fetchingCity = false;
     }
 
     private async Task ShowCityStats()

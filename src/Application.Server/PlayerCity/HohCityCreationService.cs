@@ -20,4 +20,13 @@ public class HohCityCreationService(
         var cityName = $"💡 {playerName} - {otherCity.CityId}";
         return cityFactory.Create(otherCity, buildings.ToDictionary(b => b.Id), WonderId.Undefined, 0, cityName);
     }
+
+    public async Task<HohCity> Create(byte[] data, string playerName)
+    {
+        var otherCity = dataParsingService.ParseOtherCity(data);
+        var buildings = await coreDataRepository.GetBuildingsAsync(otherCity.CityId);
+
+        var cityName = $"💡 {playerName} - {otherCity.CityId}";
+        return cityFactory.Create(otherCity, buildings.ToDictionary(b => b.Id), WonderId.Undefined, 0, cityName);
+    }
 }

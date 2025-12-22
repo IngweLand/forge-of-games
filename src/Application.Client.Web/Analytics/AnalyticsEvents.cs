@@ -34,4 +34,7 @@ public static class AnalyticsEvents
     public const string VISIT_CITY_ERROR = "visit_city_error";
     public const string VISIT_CITY_INIT = "visit_city_init";
     public const string VISIT_CITY_SUCCESS = "visit_city_success";
+    public const string VISIT_EVENT_CITY_ERROR = "visit_event_city_error";
+    public const string VISIT_EVENT_CITY_INIT = "visit_event_city_init";
+    public const string VISIT_EVENT_CITY_SUCCESS = "visit_event_city_success";
 }

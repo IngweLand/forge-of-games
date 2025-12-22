@@ -57,6 +57,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IEquipmentService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IRelicService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogCommonService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,

@@ -1,7 +1,9 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_PROFILE_TEMPLATE)]
 @using System.Globalization
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Extensions
 @using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @using Size = MudBlazor.Size
 @using ValueType = Syncfusion.Blazor.Charts.ValueType
@@ -41,6 +43,23 @@
                     <MudText>@Loc[FogResource.StatsHub_Player_ViewCityStats]</MudText>
                 }
             </MudButton>
+            @if (_eventCityWonder != WonderId.Undefined)
+            {
+                <MudButton OnClick="@VisitEventCity" Variant="Variant.Filled" Color="Color.Primary"
+                           Disabled="@_fetchingCity" IconSize="Size.Large"
+                           EndIcon="@GetIconString(AssetUrlProvider.GetHohIconUrl(_eventCityWonder.ToCity().GetIcon()))">
+                    @if (_fetchingCity)
+                    {
+                        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                        <MudText Class="ms-2">@Loc[FogResource.StatsHub_Player_VisitEventCity]</MudText>
+                    }
+                    else
+                    {
+                        <MudText>@Loc[FogResource.StatsHub_Player_VisitEventCity]</MudText>
+                    }
+                </MudButton>
+            }
+
             @if (_player.HasPvpBattles)
             {
                 <MudButton OnClick="@NavigateToBattlesScreen" Variant="Variant.Filled" Color="Color.Primary"

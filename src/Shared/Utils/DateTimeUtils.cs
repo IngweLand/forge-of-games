@@ -21,7 +21,17 @@ public static class DateTimeUtils
 
     public static DateTime GetNextMidnightUtc()
     {
-        return DateTime.UtcNow.Date.AddDays(1).ToUniversalTime();
+        return DateTime.UtcNow.Date.AddDays(1);
+    }
+
+    public static DateTime GetNextNoonUtc()
+    {
+        var now = DateTime.UtcNow;
+        var todayNoon = now.Date.AddHours(12);
+
+        return now < todayNoon
+            ? todayNoon
+            : todayNoon.AddDays(1);
     }
 
     public static DateTime? StripToHour(this DateTime? dt)

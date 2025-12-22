@@ -24,6 +24,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYERS_TEMPLATE, GetPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_PROFILE_TEMPLATE, GetPlayerProfileAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE, GetPlayerCityAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_EVENT_CITY_TEMPLATE, GetPlayerEventCityAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE, GetPlayerBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE, GetTopPlayersAsync);
@@ -85,6 +86,20 @@ public static class StatsApi
             [FromQuery] DateOnly? date = null, CancellationToken ct = default)
     {
         var query = new GetPlayerCityQuery(playerId, date);
+        var result = await services.Mediator.Send(query, ct);
+        if (result == null)
+        {
+            return TypedResults.NotFound();
+        }
+
+        return TypedResults.Ok(result);
+    }
+    
+    private static async Task<Results<Ok<HohCity>, NotFound, BadRequest<string>>>
+        GetPlayerEventCityAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+             CancellationToken ct = default)
+    {
+        var query = new GetPlayerEventCityQuery(playerId);
         var result = await services.Mediator.Send(query, ct);
         if (result == null)
         {

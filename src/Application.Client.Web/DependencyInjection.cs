@@ -144,6 +144,7 @@ public static class DependencyInjection
         services.AddScoped<ICityStrategyFactory, CityStrategyFactory>();
         services.AddScoped<ICityStrategyAnalyticsService, CityStrategyAnalyticsService>();
         services.AddScoped<ICityStrategyUiService, CityStrategyUiService>();
+        services.AddScoped<IInGameEventUiService, InGameEventUiService>();
 
         services.AddScoped<CityPlannerSettings>();
 

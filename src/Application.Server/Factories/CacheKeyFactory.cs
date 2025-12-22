@@ -67,6 +67,7 @@ public class CacheKeyFactory : ICacheKeyFactory
                         q.Request.OpenedExpansionsHash}:{q.Request.TotalArea}",
             GetPlayerCityFromSnapshotQuery q => $"PlayerCityFromSnapshot:{q.SnapshotId}",
             GetPlayerCityQuery q => $"PlayerCity:{q.PlayerId}:{q.Date}",
+            GetPlayerEventCityQuery q => $"PlayerEventCity:{q.PlayerId}",
             GetTopPlayersQuery q => $"TopPlayers:{q.WorldId}",
             GetTopAlliancesQuery q => $"TopAlliances:{q.WorldId}",
             GetPlayerBattlesQuery q => $"PlayerBattles:{q.PlayerId}:{q.StartIndex}:{q.Count}",
@@ -81,6 +82,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayerPvpRankingsQuery q => $"PlayerPvpRankings:{q.PlayerId}",
             GetPlayerRankingsQuery q => $"PlayerRankings:{q.PlayerId}",
             GetEventsQuery q => $"InGameEvents:{q.WorldId}:{q.EventDefinitionId}",
+            GetCurrentInGameEventQuery q => $"CurrentInGameEvent:{q.WorldId}:{q.EventDefinitionId}",
             GetAlliancesAthRankingsQuery q =>
                 $"AlliancesAthRankings:{q.WorldId}:{q.League}:{q.StartIndex}:{q.PageSize}",
             GetEventCityRankingsQuery q => $"EventCityRankingsQuery:{q.WorldId}",

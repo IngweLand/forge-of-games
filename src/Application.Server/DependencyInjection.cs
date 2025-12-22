@@ -98,6 +98,7 @@ public static class DependencyInjection
         services.AddScoped<IFogRankingService, FogRankingService>();
         services.AddScoped<IRankingUpdateOrchestrator, RankingUpdateOrchestrator>();
         services.AddScoped<IFogCommonService, FogCommonService>();
+        services.AddScoped<IInGameEventService, InGameEventService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

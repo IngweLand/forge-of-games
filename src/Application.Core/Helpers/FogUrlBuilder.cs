@@ -33,7 +33,9 @@ public static class FogUrlBuilder
         public const string PLAYER_PROFILE_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/profile";
         public const string PLAYER_PROFILE_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/profile";
         public const string PLAYER_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/city";
+        public const string PLAYER_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/eventCity";
         public const string PLAYER_CITY_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/city";
+        public const string PLAYER_EVENT_CITY_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/eventCity";
         public const string PLAYER_BATTLES_TEMPLATE = "/" + BASE_STATS_PATH + "/players/{playerId:int}/battles";
         public const string PLAYER_BATTLES_TEMPLATE_REFIT = "/" + BASE_STATS_PATH + "/players/{playerId}/battles";
         public const string PLAYER_PVP_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/pvpRankings";
@@ -87,6 +89,7 @@ public static class FogUrlBuilder
         public const string EQUIPMENT_INSIGHTS_TEMPLATE = "/equipment/insights/{unitId}";
         public const string EQUIPMENT_DATA = "/equipment/data";
         public const string IN_GAME_EVENTS_TEMPLATE = "/inGameEvents/{worldId}/{eventDefinitionId}";
+        public const string CURRENT_IN_GAME_EVENT_TEMPLATE = "/currentInGameEvent/{worldId}/{eventDefinitionId}";
         public const string ANNUAL_BUDGET_TEMPLATE = "/annualBudget/{year:int}";
         public const string ANNUAL_BUDGET_TEMPLATE_REFIT = "/annualBudget/{year}";
     }
