@@ -27,6 +27,6 @@ public class HohCityCreationService(
         var buildings = await coreDataRepository.GetBuildingsAsync(otherCity.CityId);
 
         var cityName = $"💡 {playerName} - {otherCity.CityId}";
-        return cityFactory.Create(otherCity, buildings.ToDictionary(b => b.Id), WonderId.Undefined, 0, cityName);
+        return cityFactory.Create(otherCity, buildings.ToDictionary(b => b.Id), cityName);
     }
 }
