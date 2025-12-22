@@ -15,14 +15,14 @@ public class CityPlannerCityPropertiesViewModelFactory(
     : ICityPlannerCityPropertiesViewModelFactory
 {
     public CityPlannerCityPropertiesViewModel Create(CityId cityId, string name, AgeViewModel age, CityStats stats,
-        IEnumerable<BuildingDto> buildings,string? wonderName = null, int wonderLevel = 0)
+        IEnumerable<BuildingDto> buildings, int wonderLevel = 0)
     {
-        return new CityPlannerCityPropertiesViewModel()
+        return new CityPlannerCityPropertiesViewModel
         {
             CityId = cityId,
             Name = name,
             Age = age,
-            Workforce = new IconLabelItemViewModel()
+            Workforce = new IconLabelItemViewModel
             {
                 Label = $"{stats.ProvidedWorkersCount - stats.RequiredWorkersCount}/{stats.ProvidedWorkersCount}",
                 IconUrl = workerIconUrlProvider.GetIcon(cityId),
@@ -30,7 +30,6 @@ public class CityPlannerCityPropertiesViewModelFactory(
             Happiness = happinessStatsViewModelFactory.Create(stats),
             Production = productionStatsViewModelFactory.Create(stats.Products, stats.ProductionCosts),
             Areas = areaStatsViewModelFactory.Create(stats, buildings),
-            WonderName = wonderName,
             WonderLevel = wonderLevel,
         };
     }

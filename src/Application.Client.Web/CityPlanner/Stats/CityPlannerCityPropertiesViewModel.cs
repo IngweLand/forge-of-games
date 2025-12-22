@@ -13,7 +13,6 @@ public class CityPlannerCityPropertiesViewModel
     public required HappinessStatsViewModel Happiness { get; set; }
     public required ProductionStatsViewModel Production { get; set; }
     public required AreaStatsViewModel Areas { get; set; }
-    public string? WonderName { get; set; }
     public int WonderLevel { get; set; }
     
 }

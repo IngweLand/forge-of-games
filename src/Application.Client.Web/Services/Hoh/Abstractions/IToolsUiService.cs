@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Tools;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 
@@ -16,4 +17,7 @@ public interface IToolsUiService
 
     IReadOnlyCollection<IconLabelItemViewModel> CalculateHeroProgressionCost(HeroDto hero,
         HeroLevelSpecs currentLevel, HeroLevelSpecs targetLevel);
+
+    IReadOnlyCollection<IconLabelItemViewModel> CalculateWonderLevelsCost(WonderDto wonder, int currentLevel,
+        int targetLevel);
 }

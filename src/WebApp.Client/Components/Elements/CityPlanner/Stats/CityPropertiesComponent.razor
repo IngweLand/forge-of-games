@@ -2,20 +2,23 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @implements IDisposable
 @inject ICityPlanner CityPlanner
 @inject IStringLocalizer<FogResource> Loc
+@inject IToolsUiService ToolsUiService
 <div class="fog-container component-root">
     <div class="age-label" style="background-color: @Data.Age.Color">@Data.Age.Name</div>
     <div class="header-container">@Data.Name</div>
     <div class="main-container">
-        @if (Data.WonderName != null)
+        @if (CityPlanner.CityMapState.CityWonder != null)
         {
             <div class="wonder-level-selector-container">
-                <span class="entity-title">@Data.WonderName</span>
+                <span class="entity-title">@CityPlanner.CityMapState.CityWonder.WonderName</span>
                 @if (Editable)
                 {
                     <LevelSelectorComponent Levels="@_wonderLevelRange" LevelChanged="OnWonderLevelChanged"
@@ -26,6 +29,8 @@
                     @($"{Loc[FogResource.Hoh_Lvl]} {Data.WonderLevel}")
                 }
             </div>
+            
+            <WonderCostComponent Items="@_wonderItems" Label="@_wonderCurrentLevelRange"/>
         }
         <CityProductionStatsComponent Items="@Data.Production.Products"/>
         @if(Data.Production.Costs.Count > 0)
@@ -49,10 +54,17 @@
         CityId.Arabia_CityOfBrass, CityId.Arabia_NoriasOfHama, CityId.Arabia_Petra];
 
     private readonly BuildingLevelRange _wonderLevelRange = new() {StartLevel = 0, EndLevel = 50};
+    private string _wonderCurrentLevelRange = string.Empty;
+    private IReadOnlyCollection<IconLabelItemViewModel> _wonderItems = [];
 
     protected override void OnInitialized()
     {
         CityPlanner.StateHasChanged += CityPlannerOnStateChanged;
+
+        if (CityPlanner.CityMapState.CityWonder != null)
+        {
+            OnWonderLevelChanged(Data.WonderLevel);
+        }
     }
 
     private void CityPlannerOnStateChanged()
@@ -66,11 +78,6 @@
     [Parameter]
     public CityPlannerCityPropertiesViewModel Data { get; set; } = null!;
 
-    private void OnProductClicked(string productId)
-    {
-        CityPlanner.UpdateProduct(productId);
-    }
-
     public void Dispose()
     {
         CityPlanner.StateHasChanged -= CityPlannerOnStateChanged;
@@ -78,6 +85,17 @@
 
     private void OnWonderLevelChanged(int level)
     {
+        if (level < _wonderLevelRange.EndLevel)
+        {
+            _wonderCurrentLevelRange = $"{level} > {level + 1}";
+            _wonderItems = ToolsUiService.CalculateWonderLevelsCost(CityPlanner.CityMapState.CityWonder!, level, level+1);
+        }
+        else
+        {
+            _wonderCurrentLevelRange = level.ToString();
+            _wonderItems = [];
+        }
+        
         CityPlanner.UpdateWonderLevel(level);
     }
 

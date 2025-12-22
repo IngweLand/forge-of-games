@@ -1,0 +1,25 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="component-root">
+    <StatsSectionHeader Label="@($"{Loc[FogResource.Hoh_WorldWonder]} {Label}")"/>
+    <div class="general-items-container">
+        @foreach (var item in Items)
+        {
+            <GeneralProductionItemComponent Item="@item"/>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required IReadOnlyCollection<IconLabelItemViewModel> Items { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string Label { get; set; }
+
+}

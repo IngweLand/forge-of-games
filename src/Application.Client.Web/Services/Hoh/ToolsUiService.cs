@@ -7,6 +7,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Tools;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Calculators.Interfaces;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 
@@ -34,12 +35,18 @@ public class ToolsUiService(
     public IReadOnlyCollection<IconLabelItemViewModel> CalculateWonderLevelsCost(WonderViewModel wonder,
         int currentLevel, int targetLevel)
     {
+        return CalculateWonderLevelsCost(wonder.Data, currentLevel, targetLevel);
+    }
+    
+    public IReadOnlyCollection<IconLabelItemViewModel> CalculateWonderLevelsCost(WonderDto wonder,
+        int currentLevel, int targetLevel)
+    {
         if (currentLevel >= targetLevel)
         {
             throw new ArgumentException("Current level must be less than target level.", nameof(currentLevel));
         }
         return mapper.Map<IReadOnlyCollection<IconLabelItemViewModel>>(
-            cityCalculators.CalculateWonderLevelsCost(wonder.Data, currentLevel, targetLevel));
+            cityCalculators.CalculateWonderLevelsCost(wonder, currentLevel, targetLevel));
     }
     
     public IReadOnlyCollection<IconLabelItemViewModel> CalculateHeroProgressionCost(HeroDto hero,
