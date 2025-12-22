@@ -35,11 +35,9 @@ public class CityStrategyBuilderService(
     private Timer? _autoSaveTimer;
     private bool _isInitialized;
     private bool _savingRequested;
-    private CityStrategy _strategy = null!;
+    public CityStrategy Strategy { get; private set; } = null!;
     public CityStrategyTimelineItemBase? SelectedTimelineItem { get; private set; }
     public ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; private set; }
-    public CityId CityId => _strategy.InGameCityId;
-    public string StrategyName => _strategy.Name;
     public CityMapState CityMapState => cityPlanner.CityMapState;
 
     public async Task InitializeAsync(CityStrategy strategy)
@@ -49,12 +47,12 @@ public class CityStrategyBuilderService(
             throw new InvalidOperationException("Already initialized.");
         }
 
-        _strategy = strategy;
+        Strategy = strategy;
 
-        TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(_strategy.Timeline);
+        TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
         await SelectTimelineItem(TimelineItems.First(), false);
 
-        analyticsService.TrackCityStrategyOpening(_strategy.Id, _strategy.InGameCityId, _strategy.WonderId);
+        analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId);
 
         commandManager.CommandExecuted += OnCommandExecuted;
 
@@ -66,7 +64,7 @@ public class CityStrategyBuilderService(
 
     public Task Rename(string newName)
     {
-        _strategy.Name = newName;
+        Strategy.Name = newName;
         return Save();
     }
 
@@ -129,19 +127,19 @@ public class CityStrategyBuilderService(
     public Task DeleteStrategy()
     {
         Cleanup();
-        return persistenceService.DeleteCityStrategy(_strategy.Id).AsTask();
+        return persistenceService.DeleteCityStrategy(Strategy.Id).AsTask();
     }
 
     public async Task Save()
     {
         UpdateCurrentLayoutItem();
-        _strategy.Timeline = TimelineItems.ToList();
+        Strategy.Timeline = TimelineItems.ToList();
         UpdateStrategyAgeId();
-        _strategy.UpdatedAt = DateTime.Now;
+        Strategy.UpdatedAt = DateTime.Now;
         await _saveSemaphore.WaitAsync();
         try
         {
-            await persistenceService.SaveCityStrategy(_strategy);
+            await persistenceService.SaveCityStrategy(Strategy);
             _savingRequested = false;
             logger.LogDebug("Saved city strategy");
         }
@@ -202,10 +200,10 @@ public class CityStrategyBuilderService(
     {
         var cities = await persistenceService.GetCities();
         var finalCities = new List<HohCityBasicData>();
-        foreach (var basicData in cities.Where(x => x.InGameCityId == _strategy.InGameCityId))
+        foreach (var basicData in cities.Where(x => x.InGameCityId == Strategy.InGameCityId))
         {
             var city = await persistenceService.LoadCity(basicData.Id);
-            if (city!.WonderId == _strategy.WonderId)
+            if (city!.WonderId == Strategy.WonderId)
             {
                 finalCities.Add(basicData);
             }
@@ -259,8 +257,8 @@ public class CityStrategyBuilderService(
 
     private async Task InitializeLayout(CityStrategyTimelineLayoutItem item)
     {
-        var city = hohCityFactory.Create(item.Id, _strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
-            item.UnlockedExpansions, _strategy.CityPlannerVersion, _strategy.WonderId, item.WonderLevel);
+        var city = hohCityFactory.Create(item.Id, Strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
+            item.UnlockedExpansions, Strategy.CityPlannerVersion, Strategy.WonderId, item.WonderLevel);
         await cityPlanner.InitializeAsync(city);
     }
 
@@ -303,7 +301,7 @@ public class CityStrategyBuilderService(
 
     private void UpdateStrategyAgeId()
     {
-        if (_strategy.InGameCityId != CityId.Capital)
+        if (Strategy.InGameCityId != CityId.Capital)
         {
             return;
         }
@@ -311,7 +309,7 @@ public class CityStrategyBuilderService(
         var layoutItem = TimelineItems.OfType<CityStrategyTimelineLayoutItem>().LastOrDefault();
         if (layoutItem != null)
         {
-            _strategy.AgeId = layoutItem.AgeId;
+            Strategy.AgeId = layoutItem.AgeId;
         }
     }
 
@@ -396,7 +394,7 @@ public class CityStrategyBuilderService(
             }
         }
 
-        item ??= cityStrategyFactory.CreateTimelineLayoutItem(_strategy.InGameCityId, _strategy.WonderId);
+        item ??= cityStrategyFactory.CreateTimelineLayoutItem(Strategy.InGameCityId, Strategy.WonderId);
 
         TimelineItems.Insert(i, item);
 

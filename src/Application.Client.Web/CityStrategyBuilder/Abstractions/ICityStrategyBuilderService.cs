@@ -8,10 +8,9 @@ namespace Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 
 public interface ICityStrategyBuilderService : IDisposable
 {
-    CityId CityId { get; }
     CityMapState CityMapState { get; }
     CityStrategyTimelineItemBase? SelectedTimelineItem { get; }
-    string StrategyName { get; }
+    CityStrategy Strategy { get; }
     ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; }
     Task InitializeAsync(CityStrategy strategy);
     public event Action? StateHasChanged;

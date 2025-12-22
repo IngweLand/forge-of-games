@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -38,6 +39,9 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     [Inject]
     private IDialogService DialogService { get; set; }
+
+    [Inject]
+    public IFogSharingUiService FogSharingUiService { get; set; }
 
     [Inject]
     private IStringLocalizer<FogResource> Loc { get; set; }
@@ -109,6 +113,21 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
         {
             _skCanvasView.Invalidate();
         }
+    }
+
+    private async Task ShareStrategy()
+    {
+        await CityStrategyBuilderService.Save();
+        var data = FogSharingUiService.CreateSharedData(CityStrategyBuilderService.Strategy);
+        var parameters = new DialogParameters<ShareResourceDialog>
+        {
+            {d => d.Data, data},
+            {
+                d => d.BaseUrl,
+                $"{NavigationManager.BaseUri.TrimEnd('/')}{FogUrlBuilder.PageRoutes.GET_SHARED_STRATEGY_TEMPLATE}"
+            },
+        };
+        _ = await DialogService.ShowAsync<ShareResourceDialog>(null, parameters, GetDefaultDialogOptions());
     }
 
     private async Task DeleteStrategy()

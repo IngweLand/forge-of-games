@@ -92,6 +92,8 @@ public static class FogUrlBuilder
         public const string CURRENT_IN_GAME_EVENT_TEMPLATE = "/currentInGameEvent/{worldId}/{eventDefinitionId}";
         public const string ANNUAL_BUDGET_TEMPLATE = "/annualBudget/{year:int}";
         public const string ANNUAL_BUDGET_TEMPLATE_REFIT = "/annualBudget/{year}";
+        public const string CREATE_SHARE = "/shares";
+        public const string GET_SHARED_RESOURCE_TEMPLATE = "/shares/{shareId}";
     }
 
     public static class PageRoutes
@@ -169,6 +171,8 @@ public static class FogUrlBuilder
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
         public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
         public const string MY_BATTLES_PATH = BASE_COMMAND_CENTER_PATH + "/my-battles";
+
+        public const string GET_SHARED_STRATEGY_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/shares/{shareId}";
 
         public static string Player(int id)
         {

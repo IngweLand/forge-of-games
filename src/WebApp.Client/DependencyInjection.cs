@@ -58,6 +58,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IRelicService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogCommonService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IFogSharingService>(services, baseAddress, refitJsonSettings, "api");
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,
@@ -81,15 +82,12 @@ internal static class DependencyInjection
     }
 
     private static void AddRefitJsonApiClient<T>(IServiceCollection services, string baseAddress,
-        RefitSettings settings)
+        RefitSettings settings, string group = "api/hoh")
         where T : class
     {
         services
             .AddRefitClient<T>(settings)
-            .ConfigureHttpClient(client =>
-            {
-                client.BaseAddress = new Uri($"{baseAddress}api/hoh");
-            })
+            .ConfigureHttpClient(client => { client.BaseAddress = new Uri($"{baseAddress}{group}"); })
             .AddStandardResilienceHandler(options =>
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;

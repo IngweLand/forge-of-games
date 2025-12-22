@@ -91,7 +91,7 @@
         @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
         {
             <div class="non-layout-item-container">
-                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.CityId"
+                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
                                                OnChanged="@RequestSaving"/>
             </div>
         }
@@ -141,8 +141,8 @@
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">
                     <div class="city-planner-side-panel">
                         <CityPlannerSettingsComponent/>
-                        <CityStartegyBuilderActionsComponent StrategyName="@CityStrategyBuilderService.StrategyName"
-                                                             OnDelete="@DeleteStrategy"
+                        <CityStartegyBuilderActionsComponent StrategyName="@CityStrategyBuilderService.Strategy.Name"
+                                                             OnDelete="@DeleteStrategy" OnShare="@ShareStrategy"
                                                              OnNameChanged="@RenameStrategy"/>
                     </div>
                 </MudTabPanel>

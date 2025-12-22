@@ -6,6 +6,7 @@ public class StorageSettings
     public required string CityPlannerCitiesTable { get; set; }
     public required string CommandCenterProfilesTable { get; set; }
     public required string ConnectionString { get; set; }
+    public required string FogSharedDataContainer { get; set; }
 
     public required string HohCoreDataContainer { get; set; }
     public required string HohRawCoreDataContainer { get; set; }

@@ -291,3 +291,16 @@ internal class DummyLocalStorageBackupService : ILocalStorageBackupService
         throw new NotImplementedException();
     }
 }
+
+internal class DummyFogSharingService : IFogSharingService
+{
+    public Task<CreatedShareDto> ShareAsync(SharedDataDto data)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<SharedDataDto?> GetAsync(string shareId)
+    {
+        throw new NotImplementedException();
+    }
+}

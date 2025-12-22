@@ -13,7 +13,7 @@ public class CityStrategy
     public int CityPlannerVersion { get; set; }
 
     [ProtoMember(3)]
-    public required string Id { get; init; }
+    public required string Id { get; set; }
 
     [ProtoMember(4)]
     public CityId InGameCityId { get; init; }

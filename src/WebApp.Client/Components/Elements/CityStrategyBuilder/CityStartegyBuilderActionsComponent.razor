@@ -21,9 +21,9 @@
                 @Loc[FogResource.Common_Save]
             </MudButton>
         </div>
-        @* <MudButton StartIcon="@Icons.Material.Filled.Share" Variant="Variant.Filled" *@
-        @*            OnClick="@Share">@Loc[FogResource.Common_Share] *@
-        @* </MudButton> *@
+        <MudButton StartIcon="@Icons.Material.Filled.Share" Variant="Variant.Filled"
+                   OnClick="@OnShare">@Loc[FogResource.Common_Share]
+        </MudButton>
         <MudButton Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" Variant="Variant.Filled"
                    OnClick="@OnDeleteClicked">
             @Loc[FogResource.Common_Delete]
@@ -70,9 +70,4 @@
         else if (input.Length > FogConstants.NAME_MAX_CHARACTERS)
             yield return Loc[FogResource.CityPlanner_NameTooLongError, FogConstants.NAME_MAX_CHARACTERS];
     }
-
-    private async Task Share()
-    {
-    }
-
 }

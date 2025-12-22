@@ -105,5 +105,6 @@ app.MapRazorComponents<App>()
 
 app.MapHohApi();
 app.MapStatsApi();
+app.MapFogApi();
 
 app.Run();

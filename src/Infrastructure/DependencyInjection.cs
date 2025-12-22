@@ -1,4 +1,3 @@
-using Azure.Storage.Blobs;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
@@ -26,10 +25,7 @@ public static class DependencyInjection
 
         services.AddDbContext<IFogDbContext, FogDbContext>(options =>
         {
-            options.UseSqlServer(connectionString, sqlOptions =>
-            {
-                sqlOptions.CommandTimeout(120);
-            });
+            options.UseSqlServer(connectionString, sqlOptions => { sqlOptions.CommandTimeout(120); });
         });
         return services;
     }
@@ -40,7 +36,8 @@ public static class DependencyInjection
 
         services.AddTableStorage();
         services.AddAzureQueues();
-        
+        services.AddBlobStorage();
+
         services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.TryAddSingleton<IHohDataProvider, AzureBlobStorageHohDataProvider>();
@@ -49,7 +46,12 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
         services.AddScoped<IInGameRawDataTableRepository, InGameRawDataTableRepository>();
-        
+
+        return services;
+    }
+
+    private static IServiceCollection AddBlobStorage(this IServiceCollection services)
+    {
         services.AddSingleton<IHohCoreDataAzureContainerClient, HohCoreDataAzureContainerClient>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>();
@@ -59,6 +61,12 @@ public static class DependencyInjection
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>();
             return new HohRawCoreDataAzureContainerClient(options.Value);
+        });
+
+        services.AddSingleton<IFogSharedDataStorageRepository>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
+            return new FogSharedDataRepository(options.ConnectionString, options.FogSharedDataContainer);
         });
 
         return services;
@@ -93,10 +101,10 @@ public static class DependencyInjection
             return new TableStorageRepository<InGameRawDataTableEntity>(options.ConnectionString,
                 options.InGameRawDataTable);
         });
-        
+
         return services;
     }
-    
+
     private static IServiceCollection AddAzureQueues(this IServiceCollection services)
     {
         services.AddSingleton<IQueueRepository<InGameRawDataQueueMessage>>(sp =>
