@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<EventCityWonderRanking> EventCityWonderRankings { get; set; }
+
     public DbSet<HeroAbilityFeaturesEntity> HeroAbilityFeatures { get; set; }
 
     public DbSet<AnnualBudget> AnnualBudgets { get; set; }
@@ -75,5 +77,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new PvpBattleTeamsEntityTypeConfiguration());
         builder.ApplyConfiguration(new AnnualBudgetEntityTypeConfiguration());
         builder.ApplyConfiguration(new HeroAbilityFeaturesEntityTypeConfiguration());
+        builder.ApplyConfiguration(new EventCityWonderRankingEntityTypeConfiguration());
     }
 }

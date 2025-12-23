@@ -5,17 +5,15 @@ using Microsoft.DurableTask;
 
 namespace Ingweland.Fog.Functions.Functions.Orchestration;
 
-public class SavedDataProcessingOrchestrator : SubOrchestratorBase
+public class EventCityWonderRankingOrchestrator : SubOrchestratorBase
 {
     protected override IReadOnlyDictionary<string, ActivityConfiguration> Activities =>
         new ReadOnlyDictionary<string, ActivityConfiguration>(new Dictionary<string, ActivityConfiguration>
         {
-            {nameof(PlayerDataProcessor), new ActivityConfiguration(5)},
-            {nameof(AllianceDataProcessor), new ActivityConfiguration(5)},
-            {nameof(BattlesProcessor), new ActivityConfiguration(1)},
+            {nameof(EventCityWonderRankingTrigger), new ActivityConfiguration(7, 12)},
         });
 
-    [Function(nameof(SavedDataProcessingOrchestrator))]
+    [Function(nameof(EventCityWonderRankingOrchestrator))]
     public async Task RunOrchestrator([OrchestrationTrigger] TaskOrchestrationContext context)
     {
         await DoRunOrchestrator(context);

@@ -17,6 +17,7 @@ public interface IFogDbContext
     public DbSet<HeroAbilityFeaturesEntity> HeroAbilityFeatures { get; set; }
     DbSet<InGameEventEntity> InGameEvents { get; set; }
     DbSet<PlayerCitySnapshot> PlayerCitySnapshots { get; set; }
+    DbSet<EventCityWonderRanking> EventCityWonderRankings { get; set; }
     DbSet<PlayerRanking> PlayerRankings { get; set; }
     DbSet<Player> Players { get; set; }
     DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }

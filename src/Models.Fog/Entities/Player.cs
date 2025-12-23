@@ -13,6 +13,10 @@ public class Player
 
     public int AvatarId { get; set; }
     public ICollection<PlayerCitySnapshot> CitySnapshots { get; set; } = new List<PlayerCitySnapshot>();
+
+    public ICollection<EventCityWonderRanking> EventCityWonderRankings { get; set; } =
+        new List<EventCityWonderRanking>();
+
     public int Id { get; set; }
     public required int InGamePlayerId { get; set; }
 

@@ -1,3 +1,4 @@
+using Ingweland.Fog.Functions.Data;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.DurableTask;
 using Microsoft.Extensions.Logging;
@@ -6,8 +7,7 @@ namespace Ingweland.Fog.Functions.Functions.Orchestration;
 
 public abstract class SubOrchestratorBase
 {
-    protected abstract IReadOnlyDictionary<string, (int MaxRuns, int? CutOffHour, int[]? OnDays, int[]? NotOnDays)>
-        Activities { get; }
+    protected abstract IReadOnlyDictionary<string, ActivityConfiguration> Activities { get; }
 
     protected async Task DoRunOrchestrator(TaskOrchestrationContext context)
     {
@@ -15,18 +15,18 @@ public abstract class SubOrchestratorBase
 
         foreach (var kvp in Activities)
         {
-            var (maxRuns, cutOffHour, onDays, notOnDays) = kvp.Value;
-            if (onDays == null && notOnDays == null)
+            var config = kvp.Value;
+            if (config.OnDays == null && config.NotOnDays == null)
             {
-                await RunAsync(kvp.Key, maxRuns, context, logger, cutOffHour);
+                await RunAsync(kvp.Key, config.MaxRuns, context, logger, config.CutOffHour);
             }
             else
             {
                 var orchestrationTime = context.CurrentUtcDateTime;
-                if ((onDays != null && onDays.Contains(orchestrationTime.Day)) ||
-                    (notOnDays != null && !notOnDays.Contains(orchestrationTime.Day)))
+                if ((config.OnDays != null && config.OnDays.Contains(orchestrationTime.Day)) ||
+                    (config.NotOnDays != null && !config.NotOnDays.Contains(orchestrationTime.Day)))
                 {
-                    await RunAsync(kvp.Key, maxRuns, context, logger, cutOffHour);
+                    await RunAsync(kvp.Key, config.MaxRuns, context, logger, config.CutOffHour);
                 }
             }
         }
@@ -52,7 +52,7 @@ public abstract class SubOrchestratorBase
 
                 logger.LogInformation("Running {f}. Run: {i}", activityName, i + 1);
                 var shouldRunAgain = await context.CallActivityAsync<bool>(activityName, i,
-                    TaskOptions.FromRetryPolicy(new RetryPolicy(2, TimeSpan.FromMinutes(1))));
+                    TaskOptions.FromRetryPolicy(new RetryPolicy(2, TimeSpan.FromSeconds(10))));
 
                 if (!shouldRunAgain)
                 {
@@ -69,6 +69,7 @@ public abstract class SubOrchestratorBase
     [Function(nameof(CheckIfAfterHour))]
     public static bool CheckIfAfterHour([ActivityTrigger] int input)
     {
-        return DateTime.UtcNow.Hour > input;
+        const int functionMaxRunTimeMinutes = 10;
+        return DateTime.UtcNow.AddMinutes(functionMaxRunTimeMinutes).Hour > input;
     }
 }
