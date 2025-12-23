@@ -228,15 +228,19 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     private async Task OpenCity(int snapshotId)
     {
-        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters);
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_ID, CityId.Capital},
+        };
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters, parameters);
         var city = await GetCity(snapshotId);
         if (city == null)
         {
-            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters);
+            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters, parameters);
             return;
         }
 
-        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters);
+        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters, parameters);
         CityPlannerNavigationState.City = city;
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
