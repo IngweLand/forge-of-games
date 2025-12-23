@@ -125,11 +125,23 @@ public class CityMapEntityViewModelFactory(
                                 });
                             }
 
-                            var defaultHours = product.DefaultProduction.ProductionTime / 3600;
+                            string defaultProductionLbl;
+                            if (product.DefaultProduction.ProductionTime >= 3600)
+                            {
+                                var defaultHours = product.DefaultProduction.ProductionTime / 3600;
+                                defaultProductionLbl = $"{defaultHours}{localizer[FogResource.Common_Hours_Abbr]} - {
+                                    product.DefaultProduction.BuffedValue:N0}";
+                            }
+                            else
+                            {
+                                var defaultMinutes = product.DefaultProduction.ProductionTime / 60;
+                                defaultProductionLbl = $"{defaultMinutes}{localizer[FogResource.Common_Minutes_Abbr]
+                                } - {product.DefaultProduction.BuffedValue:N0}";
+                            }
+
                             generalItems.Add(new IconLabelItemViewModel
                             {
-                                Label = $"{defaultHours}{localizer[FogResource.Common_Hours_Abbr]} - {
-                                    product.DefaultProduction.BuffedValue:N0}",
+                                Label = defaultProductionLbl,
                                 IconUrl = building.Type == BuildingType.CityHall
                                     ? storageIconUrlProvider.GetIconUrl(product.ResourceId)
                                     : storageIconUrlProvider.GetIconUrl(building.Type),

@@ -1725,6 +1725,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to min.
+        /// </summary>
+        public static string Common_Minutes_Abbr {
+            get {
+                return ResourceManager.GetString("Common.Minutes.Abbr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string Common_Next {
