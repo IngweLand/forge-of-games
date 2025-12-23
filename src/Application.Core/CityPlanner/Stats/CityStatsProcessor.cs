@@ -7,11 +7,12 @@ public static class CityStatsProcessor
     public static CityStats Update(IEnumerable<CityMapEntity> entities,
         IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
         IEnumerable<CityMapExpansion> openExpansions,
-        int additionalWorkers = 0)
+        int wonderWorkersBonus = 0,
+        IReadOnlyDictionary<string, double>? wonderResourcesBonus = null)
     {
         var stats = new CityStats
         {
-            ProvidedWorkersCount = additionalWorkers,
+            ProvidedWorkersCount = wonderWorkersBonus,
         };
 
         foreach (var cme in entities)
@@ -129,6 +130,8 @@ public static class CityStatsProcessor
             .ToList();
         stats.TotalAvailableHappiness += intersecting.Sum(src => src.Value);
         stats.TotalArea = expansions.Sum(x => x.Width * x.Height);
+        stats.WonderResourcesBonus = wonderResourcesBonus;
+        stats.WonderWorkersBonus = wonderWorkersBonus;
 
         return stats;
     }

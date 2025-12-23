@@ -1,0 +1,15 @@
+.component-root {
+    display: flex !important;
+    flex-direction: column;
+    background-color: var(--fog-surface-color);
+    padding-bottom: 16px;
+    gap: 6px;
+}
+
+.general-items-container {
+    gap: 12px;
+    display: flex !important;
+    flex-flow: wrap;
+    align-items: center !important;
+}
+

@@ -46,7 +46,7 @@ public class StatsProcessor(
         UpdateHappiness();
         UpdateProduction();
         return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
-            cityMapState.OpenExpansions, GetWonderWorkers());
+            cityMapState.OpenExpansions, GetWonderWorkers(), GetWonderModifiers());
     }
 
     private void UpdateEvolvingBuildings()
@@ -63,7 +63,7 @@ public class StatsProcessor(
     {
         foreach (var cme in cityMapState.CityMapEntities.Values)
         {
-            var modifiers = GetModifiers();
+            var modifiers = GetWonderModifiers();
             if (modifiers == null)
             {
                 productionStatsProcessor.UpdateProduction(cme);
@@ -75,7 +75,7 @@ public class StatsProcessor(
         }
     }
 
-    private IReadOnlyDictionary<string, double>? GetModifiers()
+    private IReadOnlyDictionary<string, double>? GetWonderModifiers()
     {
         var boostComponent = cityMapState.CityWonder?.Components.OfType<BoostResourceComponent>().ToList();
         return boostComponent?.Count > 0
@@ -106,7 +106,7 @@ public class StatsProcessor(
             case BuildingType.CamelFarm:
             {
                 UpdateHappiness(target);
-                var modifiers = GetModifiers();
+                var modifiers = GetWonderModifiers();
                 if (modifiers == null)
                 {
                     productionStatsProcessor.UpdateProduction(target);
@@ -141,7 +141,7 @@ public class StatsProcessor(
             case BuildingType.FishingPier:
             case BuildingType.Beehive:
             {
-                var modifiers = GetModifiers();
+                var modifiers = GetWonderModifiers();
                 if (modifiers == null)
                 {
                     productionStatsProcessor.UpdateProduction(target);
@@ -156,6 +156,6 @@ public class StatsProcessor(
         }
 
         return CityStatsProcessor.Update(cityMapState.CityMapEntities.Values, mapAreaHappinessProviders,
-            cityMapState.OpenExpansions, GetWonderWorkers());
+            cityMapState.OpenExpansions, GetWonderWorkers(), GetWonderModifiers());
     }
 }

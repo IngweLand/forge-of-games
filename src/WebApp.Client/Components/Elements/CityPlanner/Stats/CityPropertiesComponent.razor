@@ -29,11 +29,11 @@
                     @($"{Loc[FogResource.Hoh_Lvl]} {Data.WonderLevel}")
                 }
             </div>
-            
+
             <WonderCostComponent Items="@_wonderItems" Label="@_wonderCurrentLevelRange"/>
         }
         <CityProductionStatsComponent Items="@Data.Production.Products"/>
-        @if(Data.Production.Costs.Count > 0)
+        @if (Data.Production.Costs.Count > 0)
         {
             <CityProductionStatsComponent Items="@Data.Production.Costs"
                                           Title="@Loc[FogResource.CityPlanner_ProductionCost]"/>
@@ -44,6 +44,10 @@
         }
         <CityAreaStatsComponent Data="@Data.Areas"/>
         <WorkforceStatsComponent Data="@Data.Workforce"/>
+        @if(Data.WonderBonus != null)
+        {
+            <WonderBonusComponent Items="@Data.WonderBonus"/>
+        }
     </div>
 </div>
 
