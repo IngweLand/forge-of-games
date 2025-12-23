@@ -129,6 +129,10 @@
                             BuildingGroup="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
                             FromLevel="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
                             BuildingName="@CityPlanner!.CityMapState.SelectedCityMapEntity?.Name"/>
+                        @if(CityPlanner.CityMapState.CityWonder != null)
+                        {
+                            <CityPlannerWonderCostCalculator FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                        }
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">

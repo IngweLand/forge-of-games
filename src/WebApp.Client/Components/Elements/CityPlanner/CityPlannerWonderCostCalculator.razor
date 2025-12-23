@@ -1,0 +1,35 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+<div class="fog-container component-root">
+    <div class="section-title">@Loc[FogResource.Tools_WonderCost_Name]</div>
+    <div class="main-container">
+        <span class="entity-title">@CityPlanner.CityMapState.CityWonder!.WonderName</span>
+        <MudSelect Label="@Loc[FogResource.Tools_CurrentLevel]"
+                   Value="@_fromLevel" T="int" ValueChanged="FromLevelOnValueChanged"
+                   Variant="Variant.Outlined" Dense="true">
+
+            @foreach (var value in _fromLevels)
+            {
+                <MudSelectItem Value="@value"/>
+            }
+        </MudSelect>
+
+        @if (_toLevelsVisible)
+        {
+            <MudSelect Label="@Loc[FogResource.Tools_TargetLevel]" Value="@_toLevel" T="int"
+                       ValueChanged="@ToLevelOnValueChanged" Variant="Variant.Outlined" Immediate="true" Strict="true">
+
+                @foreach (var value in _toLevels)
+                {
+                    <MudSelectItem Value="@value"/>
+                }
+            </MudSelect>
+        }
+
+        <div class="cost-items-container">
+            @foreach (var cost in _costs)
+            {
+                <HorizontalIconLabelComponent Item="cost"/>
+            }
+        </div>
+    </div>
+</div>

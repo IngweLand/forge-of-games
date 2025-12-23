@@ -10,6 +10,7 @@ using Ingweland.Fog.Application.Core.Calculators.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 
@@ -17,7 +18,8 @@ public class ToolsUiService(
     IMapper mapper,
     ICityCalculators cityCalculators,
     IBuildingMultilevelCostViewModelFactory buildingMultilevelCostViewModelFactory,
-    IHeroProgressionCalculators heroProgressionCalculators) : IToolsUiService
+    IHeroProgressionCalculators heroProgressionCalculators,
+    ILogger<ToolsUiService> logger) : IToolsUiService
 {
     public BuildingMultilevelCostViewModel CalculateBuildingMultiLevelCost(BuildingGroupViewModel buildingGroup,
         int currentLevel, int toLevel)
@@ -43,7 +45,8 @@ public class ToolsUiService(
     {
         if (currentLevel >= targetLevel)
         {
-            throw new ArgumentException("Current level must be less than target level.", nameof(currentLevel));
+            logger.LogWarning("Current level must be less than target level.");
+            return [];
         }
         return mapper.Map<IReadOnlyCollection<IconLabelItemViewModel>>(
             cityCalculators.CalculateWonderLevelsCost(wonder, currentLevel, targetLevel));
