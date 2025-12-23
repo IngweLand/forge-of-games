@@ -230,7 +230,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
     {
         var parameters = new Dictionary<string, object>
         {
-            {AnalyticsParams.CITY_ID, CityId.Capital},
+            {AnalyticsParams.CITY_ID, CityId.Capital.ToString()},
         };
         AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters, parameters);
         var city = await GetCity(snapshotId);

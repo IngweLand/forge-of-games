@@ -267,7 +267,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     {
         var parameters = new Dictionary<string, object>
         {
-            {AnalyticsParams.CITY_ID, CityId.Capital},
+            {AnalyticsParams.CITY_ID, CityId.Capital.ToString()},
         };
         AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters, parameters);
         await HandleCityOperation(city =>
@@ -292,8 +292,8 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         var parameters = new Dictionary<string, object>
         {
-            {AnalyticsParams.CITY_ID, _eventCityWonder.ToCity()},
-            {AnalyticsParams.WONDER_ID, _eventCityWonder},
+            {AnalyticsParams.CITY_ID, _eventCityWonder.ToCity().ToString()},
+            {AnalyticsParams.WONDER_ID, _eventCityWonder.ToString()},
         };
         AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters, parameters);
 
@@ -345,17 +345,22 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     private async Task ShowCityStats()
     {
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_INIT, _defaultAnalyticsParameters);
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_ID, CityId.Capital.ToString()},
+        };
+        
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_INIT, _defaultAnalyticsParameters, parameters);
 
         await HandleCityOperation(async city =>
             {
-                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultAnalyticsParameters);
+                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultAnalyticsParameters, parameters);
 
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveTempCities([city]);
                 NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
             },
-            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters));
+            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters, parameters));
     }
 
     private async Task ToggleRankingChart(bool expanded)
