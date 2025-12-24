@@ -29,7 +29,7 @@ public class HeroInsightsService(IFogDbContext context) : IHeroInsightsService
             initQuery = initQuery.Where(x => x.Age == ageId);
         }
 
-        Result<List<string>> result;
+        var result = Result.Fail<List<string>>("empty list");
         switch (mode)
         {
             case HeroInsightsMode.Top:
@@ -46,9 +46,37 @@ public class HeroInsightsService(IFogDbContext context) : IHeroInsightsService
                         .ToList()));
                 break;
             }
-            default:
+            case HeroInsightsMode.MostPopular:
             {
                 result = await Result.Try(() => initQuery
+                    .GroupBy(x => x.UnitId)
+                    .Select(g => new {UnitId = g.Key, Count = g.Count()})
+                    .OrderByDescending(g => g.Count)
+                    .Take(FogConstants.MAX_MOST_POPULAR_HEROES_TO_RETURN)
+                    .Select(x => x.UnitId)
+                    .ToListAsync(cancellationToken));
+                break;
+            }
+            case HeroInsightsMode.PlayersTop100:
+            case HeroInsightsMode.PlayersTop500:
+            case HeroInsightsMode.PlayersTop1000:
+            case HeroInsightsMode.PlayersTop5000:
+            case HeroInsightsMode.PlayersTop10000:
+            {
+                var limit = mode switch
+                {
+                    HeroInsightsMode.PlayersTop100 => 100,
+                    HeroInsightsMode.PlayersTop500 => 500,
+                    HeroInsightsMode.PlayersTop1000 => 1000,
+                    HeroInsightsMode.PlayersTop5000 => 5000,
+                    HeroInsightsMode.PlayersTop10000 => 10000,
+                };
+                result = await Result.Try(() => context.Players.AsNoTracking()
+                    .Include(x => x.Squads)
+                    .Where(x => x.Status == InGameEntityStatus.Active)
+                    .OrderByDescending(x => x.RankingPoints)
+                    .Take(limit)
+                    .SelectMany(x => x.Squads)
                     .GroupBy(x => x.UnitId)
                     .Select(g => new {UnitId = g.Key, Count = g.Count()})
                     .OrderByDescending(g => g.Count)

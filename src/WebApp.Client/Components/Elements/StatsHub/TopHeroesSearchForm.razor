@@ -20,15 +20,18 @@
             }
         </MudSelect>
 
-        <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Common_Age]"
-                   Value="@_selectedAge" Clearable="true" ValueChanged="OnAgeChanged"
-                   T="AgeViewModel" ToStringFunc="@(x => x?.Name)"
-                   Variant="Variant.Outlined">
-            @foreach (var age in FormData.Ages)
-            {
-                <MudSelectItem Value="@age">@age.Name</MudSelectItem>
-            }
-        </MudSelect>
+        @if (_selectedMode.Mode == HeroInsightsMode.MostPopular || _selectedMode.Mode == HeroInsightsMode.Top)
+        {
+            <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Common_Age]"
+                       Value="@_selectedAge" Clearable="true" ValueChanged="OnAgeChanged"
+                       T="AgeViewModel" ToStringFunc="@(x => x?.Name)"
+                       Variant="Variant.Outlined">
+                @foreach (var age in FormData.Ages)
+                {
+                    <MudSelectItem Value="@age">@age.Name</MudSelectItem>
+                }
+            </MudSelect>
+        }
 
         @if (_selectedMode.Mode == HeroInsightsMode.MostPopular)
         {

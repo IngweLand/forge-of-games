@@ -2796,6 +2796,51 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Top 100 players.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_PlayersTop100 {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.PlayersTop100", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 1000 players.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_PlayersTop1000 {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.PlayersTop1000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 10000 players.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_PlayersTop10000 {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.PlayersTop10000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 500 players.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_PlayersTop500 {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.PlayersTop500", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top 5000 players.
+        /// </summary>
+        public static string StatsHub_HeroInsights_Mode_PlayersTop5000 {
+            get {
+                return ResourceManager.GetString("StatsHub.HeroInsights.Mode.PlayersTop5000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Highest-Level.
         /// </summary>
         public static string StatsHub_HeroInsights_Mode_Top {

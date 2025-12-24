@@ -69,6 +69,12 @@ public class TopHeroInsightsProcessor(
                 results.Add(await Process(HeroInsightsMode.MostPopular, age, levelRange.From, levelRange.To));
             }
         }
+        
+        results.Add(await Process(HeroInsightsMode.PlayersTop100));
+        results.Add(await Process(HeroInsightsMode.PlayersTop500));
+        results.Add(await Process(HeroInsightsMode.PlayersTop1000));
+        results.Add(await Process(HeroInsightsMode.PlayersTop5000));
+        results.Add(await Process(HeroInsightsMode.PlayersTop10000));
 
         var finalResult = results.Merge();
         if (finalResult.IsFailed)

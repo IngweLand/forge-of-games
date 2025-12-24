@@ -49,6 +49,31 @@ public class TopHeroesUiService(
                     Mode = HeroInsightsMode.Top,
                     Name = localizer[FogResource.StatsHub_HeroInsights_Mode_Top],
                 },
+                new HeroInsightsModeViewModel
+                {
+                    Mode = HeroInsightsMode.PlayersTop100,
+                    Name = localizer[FogResource.StatsHub_HeroInsights_Mode_PlayersTop100],
+                },
+                new HeroInsightsModeViewModel
+                {
+                    Mode = HeroInsightsMode.PlayersTop500,
+                    Name = localizer[FogResource.StatsHub_HeroInsights_Mode_PlayersTop500],
+                },
+                new HeroInsightsModeViewModel
+                {
+                    Mode = HeroInsightsMode.PlayersTop1000,
+                    Name = localizer[FogResource.StatsHub_HeroInsights_Mode_PlayersTop1000],
+                },
+                new HeroInsightsModeViewModel
+                {
+                    Mode = HeroInsightsMode.PlayersTop5000,
+                    Name = localizer[FogResource.StatsHub_HeroInsights_Mode_PlayersTop5000],
+                },
+                new HeroInsightsModeViewModel
+                {
+                    Mode = HeroInsightsMode.PlayersTop10000,
+                    Name = localizer[FogResource.StatsHub_HeroInsights_Mode_PlayersTop10000],
+                },
             ],
         };
     }
