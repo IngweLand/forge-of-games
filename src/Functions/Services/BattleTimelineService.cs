@@ -7,48 +7,40 @@ namespace Ingweland.Fog.Functions.Services;
 
 public interface IBattleTimelineService
 {
-    Task UpsertAsync(IEnumerable<HeroFinishWaveRequestDto> dtos);
+    Task UpsertAsync(HeroFinishWaveRequestDto dto);
 }
 
 public class BattleTimelineService(IFogDbContext context) : IBattleTimelineService
 {
-    public async Task UpsertAsync(IEnumerable<HeroFinishWaveRequestDto> dtos)
+    public async Task UpsertAsync(HeroFinishWaveRequestDto dto)
     {
-        var timelines = dtos.GroupBy(x => x.BattleId)
-            .Select(g =>
+        var entries = dto.Timeline.Entries
+            .Where(x => x.AbilityCaster != null)
+            .Select(x => new BattleTimelineEntry
             {
-                return (BattleId: g.Key, Entries: g.SelectMany(x => x.Timeline.Entries)
-                    .Where(x => x.AbilityCaster != null)
-                    .Select(x => new BattleTimelineEntry
-                    {
-                        TimeMillis = x.TimeMilliseconds,
-                        AbilityId = x.AbilityCaster!.BattleAbilityDefinitionId,
-                        UnitInBattleId = x.AbilityCaster.Caster.InBattleId,
-                    })
-                    .OrderBy(x => x.TimeMillis));
+                TimeMillis = x.TimeMilliseconds,
+                AbilityId = x.AbilityCaster!.BattleAbilityDefinitionId,
+                UnitInBattleId = x.AbilityCaster.Caster.InBattleId,
             })
-            .ToList();
+            .OrderBy(x => x.TimeMillis);
 
-        foreach (var timeline in timelines)
+        var battleId = dto.BattleId.ToByteArray();
+        var existingTimeline =
+            await context.BattleTimelines.FirstOrDefaultAsync(x => x.InGameBattleId == battleId);
+        if (existingTimeline != null)
         {
-            var battleId = timeline.BattleId.ToByteArray();
-            var existingTimeline =
-                await context.BattleTimelines.FirstOrDefaultAsync(x => x.InGameBattleId == battleId);
-            if (existingTimeline != null)
-            {
-                existingTimeline.Entries.UnionWith(timeline.Entries);
-            }
-            else
-            {
-                var newTimeline = new BattleTimelineEntity()
-                {
-                    InGameBattleId = battleId,
-                    Entries = timeline.Entries.ToHashSet(),
-                };
-                context.BattleTimelines.Add(newTimeline);
-            }
-            
-            await context.SaveChangesAsync();
+            existingTimeline.Entries.UnionWith(entries);
         }
+        else
+        {
+            var newTimeline = new BattleTimelineEntity
+            {
+                InGameBattleId = battleId,
+                Entries = entries.ToHashSet(),
+            };
+            context.BattleTimelines.Add(newTimeline);
+        }
+
+        await context.SaveChangesAsync();
     }
 }

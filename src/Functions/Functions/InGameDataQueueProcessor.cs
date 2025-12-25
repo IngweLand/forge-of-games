@@ -75,7 +75,7 @@ public class InGameDataQueueProcessor(
         if (rawData.RequestBase64Data != null)
         {
             var parsedRequest = inGameDataParsingService.ParseBattleCompleteWaveRequest(rawData.RequestBase64Data);
-            await battleTimelineService.UpsertAsync([parsedRequest]);
+            await battleTimelineService.UpsertAsync(parsedRequest);
         }
     }
 
