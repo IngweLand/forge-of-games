@@ -1,4 +1,5 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
@@ -172,6 +173,7 @@ public class InGameStartupDataProcessingService(
                 {
                     continue;
                 }
+
                 researchItems[cityId] = items.Where(x => technologies.Contains(x.TechnologyId)).ToList();
             }
         }

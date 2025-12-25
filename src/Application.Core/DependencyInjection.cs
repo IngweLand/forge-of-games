@@ -26,6 +26,7 @@ public static class DependencyInjection
 
         services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
         services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
+        services.AddSingleton<InitCityConfigs>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
         services.AddScoped<ICityMapStateCoreFactory, CityMapStateCoreFactory>();
@@ -37,5 +38,6 @@ public static class DependencyInjection
         services.AddScoped<IProductionStatsProcessorFactory, ProductionStatsProcessorFactory>();
         services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
         services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
+        services.AddScoped<IHohCityFactory, HohCityFactory>();
     }
 }

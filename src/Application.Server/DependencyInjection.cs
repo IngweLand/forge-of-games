@@ -64,7 +64,6 @@ public static class DependencyInjection
         services.AddScoped<IResearchService, ResearchService>();
         services.AddScoped<ICommonService, CommonService>();
         services.AddScoped<ICityPlannerDataFactory, CityPlannerDataFactory>();
-        services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();

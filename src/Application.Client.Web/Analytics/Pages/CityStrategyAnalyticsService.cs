@@ -1,5 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Analytics.Pages;
@@ -56,5 +56,4 @@ public class CityStrategyAnalyticsService(IAnalyticsService analyticsService) : 
 
         _ = analyticsService.TrackEvent(AnalyticsEvents.CREATE_CITY_STRATEGY, eventParams);
     }
-
 }

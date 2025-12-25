@@ -85,7 +85,6 @@ public static class DependencyInjection
         services.AddScoped<IBuildingViewModelFactory, BuildingViewModelFactory>();
         services.AddScoped<IHohStorageIconUrlProvider, HohStorageIconUrlProvider>();
         services.AddScoped<ICityMapEntityViewModelFactory, CityMapEntityViewModelFactory>();
-        services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<ICityMapStateFactory, CityMapStateFactory>();
         services.AddScoped<IMapAreaRendererFactory, MapAreaRendererFactory>();
         services.AddScoped<ICityPlannerCityPropertiesViewModelFactory, CityPlannerCityPropertiesViewModelFactory>();

@@ -1,6 +1,6 @@
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
+namespace Ingweland.Fog.Application.Core.CityPlanner;
 
 public class NewCityRequest
 {

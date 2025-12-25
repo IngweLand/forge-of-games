@@ -1,4 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Models.Fog.Entities;
 

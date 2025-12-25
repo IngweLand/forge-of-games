@@ -1,5 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Analytics.Pages;
@@ -15,7 +15,7 @@ public class CityPlannerAnalyticsService(IAnalyticsService analyticsService) : I
 
         _ = analyticsService.TrackEvent(eventName, allParameters);
     }
-    
+
     public void TrackEvent(string eventName, IReadOnlyDictionary<string, object> eventParams)
     {
         _ = analyticsService.TrackEvent(eventName, eventParams);
@@ -25,7 +25,7 @@ public class CityPlannerAnalyticsService(IAnalyticsService analyticsService) : I
     {
         _ = analyticsService.TrackEvent(eventName, _emptyParams);
     }
-    
+
     public void TrackCityCreation(NewCityRequest request)
     {
         var eventParams = new Dictionary<string, object>

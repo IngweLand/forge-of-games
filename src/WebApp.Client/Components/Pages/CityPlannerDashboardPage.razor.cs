@@ -1,9 +1,9 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
@@ -16,6 +16,9 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 public partial class CityPlannerDashboardPage : FogPageBase
 {
     private IReadOnlyCollection<HohCityBasicData> _cities = [];
+
+    [Inject]
+    private ICityPlannerAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -31,9 +34,6 @@ public partial class CityPlannerDashboardPage : FogPageBase
 
     [Inject]
     public IPersistenceService PersistenceService { get; set; }
-    
-    [Inject]
-    private ICityPlannerAnalyticsService AnalyticsService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -45,7 +45,7 @@ public partial class CityPlannerDashboardPage : FogPageBase
         }
 
         _cities = await PersistenceService.GetCities();
-        
+
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_PLANNER_DASHBOARD);
     }
 
@@ -63,9 +63,9 @@ public partial class CityPlannerDashboardPage : FogPageBase
         }
 
         CityPlannerNavigationState.City = city;
-        
+
         AnalyticsService.TrackCityOpening(city.Id, city.InGameCityId, city.WonderId);
-        
+
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 
@@ -88,9 +88,9 @@ public partial class CityPlannerDashboardPage : FogPageBase
         await PersistenceService.SaveCity(city);
 
         CityPlannerNavigationState.City = city;
-        
+
         AnalyticsService.TrackCityCreation(newCityRequest);
-        
+
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 
