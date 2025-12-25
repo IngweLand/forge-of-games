@@ -759,7 +759,7 @@ public class CityPlanner(
 
         CityMapState.CityPropertiesViewModel = cityPropertiesViewModelFactory.Create(CityMapState.InGameCityId,
             CityMapState.CityName, age, CityMapState.CityStats, CityMapState.Buildings.Values,
-            CityMapState.CityWonderLevel);
+            CityMapState.CityWonder, CityMapState.CityWonderLevel);
     }
 
     private void UpdateSelectedEntityViewModel()

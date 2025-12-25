@@ -1,7 +1,9 @@
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -12,11 +14,12 @@ public class CityPlannerCityPropertiesViewModelFactory(
     IProductionStatsViewModelFactory productionStatsViewModelFactory,
     IAreaStatsViewModelFactory areaStatsViewModelFactory,
     IWorkerIconUrlProvider workerIconUrlProvider,
-    IHohResourceIconUrlProvider resourceIconUrlProvider)
+    IHohResourceIconUrlProvider resourceIconUrlProvider,
+    IToolsUiService toolsUiService)
     : ICityPlannerCityPropertiesViewModelFactory
 {
     public CityPlannerCityPropertiesViewModel Create(CityId cityId, string name, AgeViewModel age, CityStats stats,
-        IEnumerable<BuildingDto> buildings, int wonderLevel = 0)
+        IEnumerable<BuildingDto> buildings, WonderDto? wonder = null, int wonderLevel = 0)
     {
         var wonderBonus = new List<IconLabelItemViewModel>();
         if (stats.WonderWorkersBonus > 0)
@@ -38,6 +41,22 @@ public class CityPlannerCityPropertiesViewModelFactory(
                 }));
         }
 
+        string? wonderNextLevelRangeLabel = null;
+        IReadOnlyCollection<IconLabelItemViewModel>? wonderCost = null;
+        if (wonder != null)
+        {
+            if (wonderLevel < HohConstants.WONDER_MAX_LEVEL)
+            {
+                wonderNextLevelRangeLabel = $"{wonderLevel} > {wonderLevel + 1}";
+                wonderCost = toolsUiService.CalculateWonderLevelsCost(wonder, wonderLevel, wonderLevel + 1);
+            }
+            else
+            {
+                wonderNextLevelRangeLabel = wonderLevel.ToString();
+                wonderCost = [];
+            }
+        }
+
         return new CityPlannerCityPropertiesViewModel
         {
             CityId = cityId,
@@ -53,6 +72,8 @@ public class CityPlannerCityPropertiesViewModelFactory(
             Areas = areaStatsViewModelFactory.Create(stats, buildings),
             WonderLevel = wonderLevel,
             WonderBonus = wonderBonus.Count > 0 ? wonderBonus : null,
+            WonderNextLevelRangeLabel = wonderNextLevelRangeLabel,
+            WonderCost = wonderCost,
         };
     }
 }

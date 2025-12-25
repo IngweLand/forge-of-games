@@ -12,7 +12,9 @@ public class CityPlannerCityPropertiesViewModel
     public required string Name { get; set; }
     public required ProductionStatsViewModel Production { get; set; }
     public IReadOnlyCollection<IconLabelItemViewModel>? WonderBonus { get; init; }
+    public IReadOnlyCollection<IconLabelItemViewModel>? WonderCost { get; init; }
     public int WonderLevel { get; set; }
+    public string? WonderNextLevelRangeLabel { get; set; }
 
     public required IconLabelItemViewModel Workforce { get; set; }
 }
