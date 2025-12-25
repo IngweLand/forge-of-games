@@ -11,7 +11,7 @@ namespace Ingweland.Fog.Application.Server.PlayerCity.Queries;
 
 public record GetPlayerEventCityQuery(int PlayerId) : IRequest<HohCity?>, ICacheableRequest
 {
-    public TimeSpan? Duration => TimeSpan.FromHours(3);
+    public TimeSpan? Duration => TimeSpan.FromMinutes(30);
     public DateTimeOffset? Expiration { get; }
 }
 
