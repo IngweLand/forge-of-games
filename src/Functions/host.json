@@ -12,7 +12,8 @@
     "functionTimeout": "00:10:00",
     "extensions": {
         "queues": {
-            "maxDequeueCount": 1
+            "maxDequeueCount": 1,
+            "batchSize": 1
         },
         "durableTask": {
             "maxConcurrentActivityFunctions": 1,
