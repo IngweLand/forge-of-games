@@ -26,12 +26,6 @@
                 <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_flat_equipment")"/>
                 <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Equipment]</span>
             </div>
-            
-            <div class="command-center-card command-center-action-card action-card"
-                 @onclick="() => NavigateTo(FogUrlBuilder.PageRoutes.BASE_HEROES_PATH)">
-                <img class="command-center-card-icon" src="@AssetUrlProvider.GetHohIconUrl("icon_hud_heroes")"/>
-                <span class="command-center-card-label">@Loc[FogResource.CommandCenter_Menu_Heroes]</span>
-            </div>
         </div>
         <div class="items-container">
             @foreach (var profile in _profiles)
