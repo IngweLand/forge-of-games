@@ -37,6 +37,9 @@ public class HohCityMapEntity
     [ProtoMember(9)]
     public int Y { get; set; }
 
+    [ProtoMember(10)]
+    public bool IsUpgrading { get; set; }
+
     public HohCityMapEntity Clone()
     {
         return (HohCityMapEntity) MemberwiseClone();

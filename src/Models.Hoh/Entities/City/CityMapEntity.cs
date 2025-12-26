@@ -11,6 +11,8 @@ public class CityMapEntity
     public IReadOnlyCollection<CityMapEntityProduction> Productions { get; init; } =
         ArraySegment<CityMapEntityProduction>.Empty;
 
+    public CityMapEntityUpgrade? Upgrade { get; init; } = null;
+
     public required int X { get; init; }
     public required int Y { get; init; }
 }

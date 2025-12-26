@@ -277,6 +277,7 @@ public class CityMapEntityViewModelFactory(
             CustomizationComponent = customizationComponentViewModel,
             IsLockable = entity.IsLockable,
             IsLocked = entity.IsLocked,
+            IsUpgrading = entity.IsUpgrading,
         };
     }
 }

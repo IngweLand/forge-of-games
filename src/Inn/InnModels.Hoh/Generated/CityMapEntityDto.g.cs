@@ -25,21 +25,27 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChljaXR5X21hcF9lbnRpdHlfZHRvLnByb3RvGiBwcm9kdWN0aW9uX3NvdXJj",
-            "ZV9jb25zdGFudC5wcm90byLyAQoQQ2l0eU1hcEVudGl0eUR0bxIWCg5jaXR5",
-            "X2VudGl0eV9pZBgCIAEoCRIJCgF4GAQgASgFEgkKAXkYBSABKAUSMAoLcHJv",
-            "ZHVjdGlvbnMYBiADKAsyGy5DaXR5TWFwRW50aXR5UHJvZHVjdGlvbkR0bxIS",
-            "Cgppc19yb3RhdGVkGAkgASgIEh8KF2N1c3RvbWl6YXRpb25fZW50aXR5X2lk",
-            "GA8gASgJEiAKGGN1c3RvbWl6YXRpb25fYXBwbGllZF9hdBgQIAEoBRINCgVs",
-            "ZXZlbBgSIAEoBRIYChBsaW5rZWRfZXhwYW5zaW9uGBcgASgJInIKGkNpdHlN",
-            "YXBFbnRpdHlQcm9kdWN0aW9uRHRvEhUKDWRlZmluaXRpb25faWQYAiABKAkS",
-            "EgoKaXNfc3RhcnRlZBgIIAEoCBIpCgZzb3VyY2UYDSABKA4yGS5Qcm9kdWN0",
-            "aW9uU291cmNlQ29uc3RhbnRCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVs",
-            "cy5Ib2hiBnByb3RvMw=="));
+            "ZV9jb25zdGFudC5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
+            "cm90byKdAgoQQ2l0eU1hcEVudGl0eUR0bxIWCg5jaXR5X2VudGl0eV9pZBgC",
+            "IAEoCRIJCgF4GAQgASgFEgkKAXkYBSABKAUSMAoLcHJvZHVjdGlvbnMYBiAD",
+            "KAsyGy5DaXR5TWFwRW50aXR5UHJvZHVjdGlvbkR0bxISCgppc19yb3RhdGVk",
+            "GAkgASgIEikKB3VwZ3JhZGUYCiABKAsyGC5DaXR5TWFwRW50aXR5VXBncmFk",
+            "ZUR0bxIfChdjdXN0b21pemF0aW9uX2VudGl0eV9pZBgPIAEoCRIgChhjdXN0",
+            "b21pemF0aW9uX2FwcGxpZWRfYXQYECABKAUSDQoFbGV2ZWwYEiABKAUSGAoQ",
+            "bGlua2VkX2V4cGFuc2lvbhgXIAEoCSJyChpDaXR5TWFwRW50aXR5UHJvZHVj",
+            "dGlvbkR0bxIVCg1kZWZpbml0aW9uX2lkGAIgASgJEhIKCmlzX3N0YXJ0ZWQY",
+            "CCABKAgSKQoGc291cmNlGA0gASgOMhkuUHJvZHVjdGlvblNvdXJjZUNvbnN0",
+            "YW50IqUBChdDaXR5TWFwRW50aXR5VXBncmFkZUR0bxIVCg1kZWZpbml0aW9u",
+            "X2lkGAIgASgJEhIKCmlzX3N0YXJ0ZWQYAyABKAgSLgoKc3RhcnRlZF9hdBgE",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLwoLY29tcGxldGVf",
+            "YXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQh+qAhxJbmd3",
+            "ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.ProductionSourceConstantReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.ProductionSourceConstantReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto.Parser, new[]{ "CityEntityId", "X", "Y", "Productions", "IsRotated", "CustomizationEntityId", "CustomizationAppliedAt", "Level", "LinkedExpansion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto.Parser, new[]{ "DefinitionId", "IsStarted", "Source" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDto.Parser, new[]{ "CityEntityId", "X", "Y", "Productions", "IsRotated", "Upgrade", "CustomizationEntityId", "CustomizationAppliedAt", "Level", "LinkedExpansion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityProductionDto.Parser, new[]{ "DefinitionId", "IsStarted", "Source" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto), global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto.Parser, new[]{ "DefinitionId", "IsStarted", "StartedAt", "CompleteAt" }, null, null, null, null)
           }));
     }
     #endregion
@@ -86,6 +92,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       y_ = other.y_;
       productions_ = other.productions_.Clone();
       isRotated_ = other.isRotated_;
+      upgrade_ = other.upgrade_ != null ? other.upgrade_.Clone() : null;
       customizationEntityId_ = other.customizationEntityId_;
       customizationAppliedAt_ = other.customizationAppliedAt_;
       level_ = other.level_;
@@ -158,6 +165,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "upgrade" field.</summary>
+    public const int UpgradeFieldNumber = 10;
+    private global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto upgrade_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto Upgrade {
+      get { return upgrade_; }
+      set {
+        upgrade_ = value;
+      }
+    }
+
     /// <summary>Field number for the "customization_entity_id" field.</summary>
     public const int CustomizationEntityIdFieldNumber = 15;
     private string customizationEntityId_ = "";
@@ -226,6 +245,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Y != other.Y) return false;
       if(!productions_.Equals(other.productions_)) return false;
       if (IsRotated != other.IsRotated) return false;
+      if (!object.Equals(Upgrade, other.Upgrade)) return false;
       if (CustomizationEntityId != other.CustomizationEntityId) return false;
       if (CustomizationAppliedAt != other.CustomizationAppliedAt) return false;
       if (Level != other.Level) return false;
@@ -242,6 +262,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Y != 0) hash ^= Y.GetHashCode();
       hash ^= productions_.GetHashCode();
       if (IsRotated != false) hash ^= IsRotated.GetHashCode();
+      if (upgrade_ != null) hash ^= Upgrade.GetHashCode();
       if (CustomizationEntityId.Length != 0) hash ^= CustomizationEntityId.GetHashCode();
       if (CustomizationAppliedAt != 0) hash ^= CustomizationAppliedAt.GetHashCode();
       if (Level != 0) hash ^= Level.GetHashCode();
@@ -280,6 +301,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (IsRotated != false) {
         output.WriteRawTag(72);
         output.WriteBool(IsRotated);
+      }
+      if (upgrade_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Upgrade);
       }
       if (CustomizationEntityId.Length != 0) {
         output.WriteRawTag(122);
@@ -324,6 +349,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(72);
         output.WriteBool(IsRotated);
       }
+      if (upgrade_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Upgrade);
+      }
       if (CustomizationEntityId.Length != 0) {
         output.WriteRawTag(122);
         output.WriteString(CustomizationEntityId);
@@ -363,6 +392,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (IsRotated != false) {
         size += 1 + 1;
       }
+      if (upgrade_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Upgrade);
+      }
       if (CustomizationEntityId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CustomizationEntityId);
       }
@@ -399,6 +431,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       productions_.Add(other.productions_);
       if (other.IsRotated != false) {
         IsRotated = other.IsRotated;
+      }
+      if (other.upgrade_ != null) {
+        if (upgrade_ == null) {
+          Upgrade = new global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto();
+        }
+        Upgrade.MergeFrom(other.Upgrade);
       }
       if (other.CustomizationEntityId.Length != 0) {
         CustomizationEntityId = other.CustomizationEntityId;
@@ -445,6 +483,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 72: {
             IsRotated = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (upgrade_ == null) {
+              Upgrade = new global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto();
+            }
+            input.ReadMessage(Upgrade);
             break;
           }
           case 122: {
@@ -496,6 +541,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 72: {
             IsRotated = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (upgrade_ == null) {
+              Upgrade = new global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityUpgradeDto();
+            }
+            input.ReadMessage(Upgrade);
             break;
           }
           case 122: {
@@ -776,6 +828,325 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 104: {
             Source = (global::Ingweland.Fog.Inn.Models.Hoh.ProductionSourceConstant) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class CityMapEntityUpgradeDto : pb::IMessage<CityMapEntityUpgradeDto>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CityMapEntityUpgradeDto> _parser = new pb::MessageParser<CityMapEntityUpgradeDto>(() => new CityMapEntityUpgradeDto());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CityMapEntityUpgradeDto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.CityMapEntityDtoReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CityMapEntityUpgradeDto() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CityMapEntityUpgradeDto(CityMapEntityUpgradeDto other) : this() {
+      definitionId_ = other.definitionId_;
+      isStarted_ = other.isStarted_;
+      startedAt_ = other.startedAt_ != null ? other.startedAt_.Clone() : null;
+      completeAt_ = other.completeAt_ != null ? other.completeAt_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CityMapEntityUpgradeDto Clone() {
+      return new CityMapEntityUpgradeDto(this);
+    }
+
+    /// <summary>Field number for the "definition_id" field.</summary>
+    public const int DefinitionIdFieldNumber = 2;
+    private string definitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DefinitionId {
+      get { return definitionId_; }
+      set {
+        definitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "is_started" field.</summary>
+    public const int IsStartedFieldNumber = 3;
+    private bool isStarted_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsStarted {
+      get { return isStarted_; }
+      set {
+        isStarted_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "started_at" field.</summary>
+    public const int StartedAtFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp startedAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp StartedAt {
+      get { return startedAt_; }
+      set {
+        startedAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "complete_at" field.</summary>
+    public const int CompleteAtFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp completeAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CompleteAt {
+      get { return completeAt_; }
+      set {
+        completeAt_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CityMapEntityUpgradeDto);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CityMapEntityUpgradeDto other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DefinitionId != other.DefinitionId) return false;
+      if (IsStarted != other.IsStarted) return false;
+      if (!object.Equals(StartedAt, other.StartedAt)) return false;
+      if (!object.Equals(CompleteAt, other.CompleteAt)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DefinitionId.Length != 0) hash ^= DefinitionId.GetHashCode();
+      if (IsStarted != false) hash ^= IsStarted.GetHashCode();
+      if (startedAt_ != null) hash ^= StartedAt.GetHashCode();
+      if (completeAt_ != null) hash ^= CompleteAt.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DefinitionId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(DefinitionId);
+      }
+      if (IsStarted != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsStarted);
+      }
+      if (startedAt_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartedAt);
+      }
+      if (completeAt_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CompleteAt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DefinitionId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(DefinitionId);
+      }
+      if (IsStarted != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsStarted);
+      }
+      if (startedAt_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(StartedAt);
+      }
+      if (completeAt_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(CompleteAt);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefinitionId);
+      }
+      if (IsStarted != false) {
+        size += 1 + 1;
+      }
+      if (startedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StartedAt);
+      }
+      if (completeAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CompleteAt);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CityMapEntityUpgradeDto other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DefinitionId.Length != 0) {
+        DefinitionId = other.DefinitionId;
+      }
+      if (other.IsStarted != false) {
+        IsStarted = other.IsStarted;
+      }
+      if (other.startedAt_ != null) {
+        if (startedAt_ == null) {
+          StartedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        StartedAt.MergeFrom(other.StartedAt);
+      }
+      if (other.completeAt_ != null) {
+        if (completeAt_ == null) {
+          CompleteAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CompleteAt.MergeFrom(other.CompleteAt);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            DefinitionId = input.ReadString();
+            break;
+          }
+          case 24: {
+            IsStarted = input.ReadBool();
+            break;
+          }
+          case 34: {
+            if (startedAt_ == null) {
+              StartedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(StartedAt);
+            break;
+          }
+          case 50: {
+            if (completeAt_ == null) {
+              CompleteAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CompleteAt);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            DefinitionId = input.ReadString();
+            break;
+          }
+          case 24: {
+            IsStarted = input.ReadBool();
+            break;
+          }
+          case 34: {
+            if (startedAt_ == null) {
+              StartedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(StartedAt);
+            break;
+          }
+          case 50: {
+            if (completeAt_ == null) {
+              CompleteAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CompleteAt);
             break;
           }
         }

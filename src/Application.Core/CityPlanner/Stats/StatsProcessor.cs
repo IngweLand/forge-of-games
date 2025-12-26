@@ -27,7 +27,7 @@ public class StatsProcessor(
         }
 
         var intersections = cityMapState.HappinessProviders
-            .Where(hp => !hp.IsLocked)
+            .Where(hp => hp is {IsLocked: false, IsUpgrading: false})
             .Where(hp => !hp.ExcludeFromStats && target.Bounds.IntersectsWith(hp.OverflowBounds!.Value)).ToList();
         var age = cityMapState.CityAge;
         var happiness = intersections.Sum(cme =>

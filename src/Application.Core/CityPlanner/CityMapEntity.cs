@@ -14,7 +14,7 @@ public class CityMapEntity
 
     public CityMapEntity(int id, Point location, Size size, string name, string cityEntityId, int level,
         BuildingType buildingType, BuildingGroup buildingGroup, ExpansionSubType expansionSubType,
-        int overflowRange = -1, bool isMovable = true, bool isLockable = false, bool isLocked = false)
+        int overflowRange = -1, bool isMovable = true, bool isLockable = false, bool isLocked = false, bool isUpgrading = false)
     {
         Id = id;
         Location = location;
@@ -31,9 +31,11 @@ public class CityMapEntity
         IsMovable = isMovable;
         IsLockable = isLockable;
         IsLocked = isLocked;
+        IsUpgrading = isUpgrading;
     }
 
     public bool IsLocked { get; set; }
+    public bool IsUpgrading { get; set; }
 
     public bool IsLockable { get; set; }
     public Rectangle Bounds { get; private set; }
@@ -51,7 +53,14 @@ public class CityMapEntity
 
     public bool ExcludeFromStats
     {
-        get => !IsLockable ? _excludeFromStats : IsLocked;
+        get
+        {
+            if (IsUpgrading)
+            {
+                return true;
+            }
+            return !IsLockable ? _excludeFromStats : IsLocked;
+        }
         set => _excludeFromStats = !IsLockable ? value : IsLocked;
     }
 
@@ -128,7 +137,7 @@ public class CityMapEntity
     public CityMapEntity CloneWithLevel(string cityEntityId, int level, IReadOnlyCollection<ICityMapEntityStats> stats)
     {
         var newEntity = new CityMapEntity(Id, Location, Size, Name, cityEntityId, level, BuildingType, BuildingGroup,
-            ExpansionSubType, OverflowRange, IsMovable, IsLockable, IsLocked)
+            ExpansionSubType, OverflowRange, IsMovable, IsLockable, IsLocked, IsUpgrading)
         {
             Bounds = Bounds,
             CanBePlaced = CanBePlaced,

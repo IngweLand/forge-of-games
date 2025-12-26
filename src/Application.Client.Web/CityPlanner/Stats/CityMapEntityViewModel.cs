@@ -14,6 +14,7 @@ public class CityMapEntityViewModel
 
     public bool IsLockable { get; init; }
     public bool IsLocked { get; init; }
+    public bool IsUpgrading { get; init; }
 
     public int Level { get; init; }
 

@@ -24,7 +24,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
             hohCityMapEntity.Level,
             building.Type, building.Group, building.ExpansionSubType, overflowRange,
             !_notMovableEntities.Contains(building.Type), _notMovableEntities.Contains(building.Type),
-            hohCityMapEntity.IsLocked)
+            hohCityMapEntity.IsLocked, hohCityMapEntity.IsUpgrading)
         {
             IsRotated = hohCityMapEntity.IsRotated,
             SelectedProductId = hohCityMapEntity.SelectedProductId,

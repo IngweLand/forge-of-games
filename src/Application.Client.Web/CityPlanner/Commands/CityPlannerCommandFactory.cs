@@ -57,6 +57,11 @@ public class CityPlannerCommandFactory(ICityPlanner cityPlanner) : ICityPlannerC
         return new ChangeEntityLevelCommand(cityPlanner, entity, level);
     }
 
+    public IUndoableCommand CreateChangeEntityUpgradeStateCommand(int cityMapEntityId, bool isUpgrading)
+    {
+        return new ChangeEntityUpgradeStateCommand(cityPlanner, cityMapEntityId, isUpgrading);
+    }
+
     public IUndoableCommand CreateChangeEntitiesLevelCommand(IReadOnlyCollection<CityMapEntity> entities, int level)
     {
         return new ChangeEntitiesLevelCommand(cityPlanner, entities, level);

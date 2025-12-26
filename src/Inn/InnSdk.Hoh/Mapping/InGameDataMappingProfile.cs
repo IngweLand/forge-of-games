@@ -128,6 +128,11 @@ public class InGameDataMappingProfile : Profile
         CreateMap<CityMapEntityProductionDto, CityMapEntityProduction>()
             .ForMember(dest => dest.DefinitionId,
                 opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.DefinitionId)));
+        CreateMap<CityMapEntityUpgradeDto, CityMapEntityUpgrade>()
+            .ForMember(dest => dest.DefinitionId,
+                opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.DefinitionId)))
+            .ForMember(dest => dest.StartedAt, opt => opt.MapFrom(src => src.StartedAt.ToDateTime()))
+            .ForMember(dest => dest.CompleteAt, opt => opt.MapFrom(src => src.CompleteAt.ToDateTime()));
         CreateMap<ExpansionMapEntityDto, CityMapExpansion>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)));
         CreateMap<OtherCityDTO, OtherCity>()

@@ -55,6 +55,7 @@
     --main-font-family: "Noto Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --main-content-padding: 8px;
     --main-content-padding-576: 12px;
+    --fog-font-size: 0.875rem;
 }
 
 html {
@@ -64,7 +65,7 @@ html {
 }
 
 body {
-    font-size: 0.875rem !important;
+    font-size: var(--fog-font-size) !important;
     background-color: inherit !important;
     color: inherit !important;
     font-family: inherit !important;

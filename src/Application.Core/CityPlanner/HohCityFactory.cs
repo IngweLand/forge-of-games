@@ -134,7 +134,6 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
         var initLockedEntities =
             initCityConfigs.GetMapEntities(GetInitEntitiesKey(cityId, wonderId)).Where(x => x.IsLocked);
         var i = entities.Count;
-        var lockedEntities = entities.Where(x => x.IsLocked).ToList();
         foreach (var initLockedEntity in initLockedEntities)
         {
             if (entities.Any(x => x.X == initLockedEntity.X && x.Y == initLockedEntity.Y))

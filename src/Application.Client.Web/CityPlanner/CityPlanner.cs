@@ -536,6 +536,20 @@ public class CityPlanner(
         return CanBePlaced(CityMapState.SelectedCityMapEntity);
     }
 
+    public void ChangeEntityUpgradeState(int entityId, bool isUpgrading)
+    {
+        if (!CityMapState.CityMapEntities.TryGetValue(entityId, out var entity))
+        {
+            return;
+        }
+
+        entity.IsUpgrading = isUpgrading;
+        UpdateEntityState(entity);
+        CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
+        UpdateSelectedEntityViewModel();
+        StateHasChanged?.Invoke();
+    }
+
     private void FinalizeGroupLevelUpdate(string cityEntityId)
     {
         var building = CityMapState.Buildings[cityEntityId];

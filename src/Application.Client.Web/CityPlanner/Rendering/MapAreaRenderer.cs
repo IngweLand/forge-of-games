@@ -15,7 +15,7 @@ public class MapAreaRenderer
     private List<LayerItem> _bottomLayerItems;
     private IList<Tuple<SKPoint, SKPoint>>? _gridLines;
     private List<LayerItem> _topLayerItems;
-    private LockIconRenderer _lockIconRenderer = new();
+    private IconRenderer _iconRenderer = new();
 
     public MapAreaRenderer(MapArea mapArea, IMapGrid grid, MapStyle mapStyle)
     {
@@ -130,7 +130,7 @@ public class MapAreaRenderer
         foreach (var expansion in _mapArea.LockedExpansions)
         {
             var rect = _grid.GridToScreen(expansion.Bounds).ToSKRect();
-            _lockIconRenderer.DrawLockIcon(canvas, rect);
+            _iconRenderer.DrawLockIcon(canvas, rect, IconRenderer.Icon.Lock, _mapStyle.MapExpansionIconPaint);
         }
     }
 

@@ -18,6 +18,9 @@
     </div>
     <div class="main-container">
         <BuildingInfoComponent Items="@Building.InfoItems"/>
+        <MudCheckBox Value="@Building.IsUpgrading" T="bool" ValueChanged="@ChangeUpgradeState">
+            <span class="checkbox-label">@Loc[FogResource.CityPlanner_CityMapEntity_IsUpgrading]</span>
+        </MudCheckBox>
         @if (Building.IsLockable)
         {
             <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@ToggleEntityLockState"
@@ -90,6 +93,17 @@
         }
 
         var cmd = CommandFactory.CreateToggleEntityLockStateCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
+        CommandManager.ExecuteCommand(cmd);
+    }
+
+    private void ChangeUpgradeState(bool value)
+    {
+        if (CityPlanner.CityMapState.SelectedCityMapEntity == null)
+        {
+            return;
+        }
+
+        var cmd = CommandFactory.CreateChangeEntityUpgradeStateCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id, value);
         CommandManager.ExecuteCommand(cmd);
     }
 

@@ -555,6 +555,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Is upgrading.
+        /// </summary>
+        public static string CityPlanner_CityMapEntity_IsUpgrading {
+            get {
+                return ResourceManager.GetString("CityPlanner.CityMapEntity.IsUpgrading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lock.
         /// </summary>
         public static string CityPlanner_CityMapEntity_Lock {

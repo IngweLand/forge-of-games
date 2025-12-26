@@ -41,3 +41,9 @@
     min-width: 80px;
     text-align: center;
 }
+
+.checkbox-label {
+    font-weight: 400 !important;
+    font-size: var(--fog-font-size) !important;
+    color: var(--fog-text-color);
+}

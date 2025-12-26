@@ -16,6 +16,8 @@ public class CityMappingProfile : Profile
                     .Select(p => p.DefinitionId)
                     .FirstOrDefault())
             )
-            .ForMember(dest => dest.IsLocked, opt => opt.MapFrom(src => src.LinkedExpansion != null));
+            .ForMember(dest => dest.IsLocked, opt => opt.MapFrom(src => src.LinkedExpansion != null))
+            .ForMember(dest => dest.IsUpgrading,
+                opt => opt.MapFrom(src => src.Upgrade != null && src.Upgrade.CompleteAt > DateTime.UtcNow));
     }
 }

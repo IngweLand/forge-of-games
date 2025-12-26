@@ -10,6 +10,7 @@ public interface ICityMapEntityStyle
     SKPaint DefaultFillPaint { get; }
     SKPaint DefaultStrokePaint { get; }
     SKPaint LockedFillPaint { get; }
+    SKPaint LockIconPaint { get; }
     int NameDefaultTextSize { get; }
     SKPaint NameTextPaint { get; }
     SKPaint NegativeSelectionFillPaint { get; }
@@ -18,6 +19,7 @@ public interface ICityMapEntityStyle
     SKPaint OverflowStrokePaint { get; }
     SKPaint PositiveSelectionFillPaint { get; }
     SKPaint PositiveSelectionStrokePaint { get; }
+    SKPaint StateIconPaint { get; }
     SKPaint GetPaint(BuildingType buildingType);
     SKColor GetBuffBackgroundColor(float cultureValue);
     SKPaint GetBuffForegroundPaint(float cultureValue);

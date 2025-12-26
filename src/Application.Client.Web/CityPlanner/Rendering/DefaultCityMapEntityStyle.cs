@@ -109,6 +109,20 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
         Style = SKPaintStyle.Fill,
     };
 
+    public SKPaint StateIconPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#34495E"),
+        IsAntialias = false,
+        Style = SKPaintStyle.Fill,
+    };
+
+    public SKPaint LockIconPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#e0e0e0"),
+        IsAntialias = false,
+        Style = SKPaintStyle.Fill,
+    };
+
     public SKPaint OverflowStrokePaint { get; } = new()
     {
         Color = SKColor.Parse("#c5c5c5"),

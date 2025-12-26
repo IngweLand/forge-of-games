@@ -22,7 +22,7 @@ public class BuildingRenderer : IBuildingRenderer
     private SKFont _currentNameFont;
     private SKFont _defaultNameFont;
     private SKPaint _fillPaint;
-    private readonly LockIconRenderer _lockIconRenderer = new();
+    private readonly IconRenderer _iconRenderer = new();
     private SKTypeface _notoSansTypeface;
     private SKPaint _strokePaint;
 
@@ -147,7 +147,11 @@ public class BuildingRenderer : IBuildingRenderer
 
         if (entity.IsLocked)
         {
-            _lockIconRenderer.DrawLockIcon(canvas, rect);
+            _iconRenderer.DrawLockIcon(canvas, rect, IconRenderer.Icon.Lock, _cityMapEntityStyle.LockIconPaint);
+        }
+        else if (entity.IsUpgrading)
+        {
+            _iconRenderer.DrawLockIcon(canvas, rect, IconRenderer.Icon.Upgrade, _cityMapEntityStyle.StateIconPaint);
         }
     }
 
