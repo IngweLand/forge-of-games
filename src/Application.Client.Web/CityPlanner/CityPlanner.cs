@@ -550,15 +550,7 @@ public class CityPlanner(
         StateHasChanged?.Invoke();
     }
 
-    private void FinalizeGroupLevelUpdate(string cityEntityId)
-    {
-        var building = CityMapState.Buildings[cityEntityId];
-        SelectGroup(building.Group);
-        CityMapState.CityStats = _statsProcessor.UpdateStats();
-        UpdateSelectedCityMapBuildingGroupViewModel();
-    }
-
-    private void DeselectAll()
+    public void DeselectAll()
     {
         if (CityMapState.SelectedCityMapEntity != null)
         {
@@ -584,6 +576,14 @@ public class CityPlanner(
         CityMapState.SelectedCityMapEntity = null;
         CityMapState.SelectedEntityViewModel = null;
         CityMapState.SelectedCityMapBuildingGroupViewModel = null;
+    }
+
+    private void FinalizeGroupLevelUpdate(string cityEntityId)
+    {
+        var building = CityMapState.Buildings[cityEntityId];
+        SelectGroup(building.Group);
+        CityMapState.CityStats = _statsProcessor.UpdateStats();
+        UpdateSelectedCityMapBuildingGroupViewModel();
     }
 
     private async Task DoInitializeAsync(HohCity city)

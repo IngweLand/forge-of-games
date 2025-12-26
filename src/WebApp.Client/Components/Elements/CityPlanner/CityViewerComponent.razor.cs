@@ -7,6 +7,7 @@ using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Localization;
@@ -132,10 +133,38 @@ public partial class CityViewerComponent : ComponentBase, IDisposable
         _skCanvasView!.Invalidate();
     }
 
-    private void InteractiveCanvasOnPointerUp(PointerEventArgs args)
+    private async Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
         CityViewerInteractionManager.OnPointerUp(args.PointerId, (float) args.OffsetX, (float) args.OffsetY);
         _skCanvasView!.Invalidate();
+        await OpenCityMapEntityProperties();
+    }
+    
+    private async Task OpenCityMapEntityProperties()
+    {
+        if (CityPlanner.CityMapState.SelectedEntityViewModel == null)
+        {
+            return;
+        }
+        var options = GetDefaultDialogOptions();
+
+        var parameters = new DialogParameters<CityMapEntityPropertiesDialog> {{d => d.Building, CityPlanner.CityMapState.SelectedEntityViewModel}};
+        _ = await DialogService.ShowAsync<CityMapEntityPropertiesDialog>(null, parameters, options);
+        CityPlanner.DeselectAll();
+    }
+    
+    private static DialogOptions GetDefaultDialogOptions()
+    {
+        return new DialogOptions
+        {
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            Position = DialogPosition.TopCenter,
+            CloseButton = true,
+            CloseOnEscapeKey = true,
+            NoHeader = true,
+        };
     }
 
     private void InteractiveCanvasOnWheel(WheelEventArgs e)

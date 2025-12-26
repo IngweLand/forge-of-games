@@ -12,25 +12,34 @@
 <div class="fog-container component-root">
     <div class="age-label" style="background-color: @Building.Age?.Color">@Building.Age?.Name</div>
     <div class="header-container">
-        <span class="entity-title">@Building.Name</span>
-        <BuildingLevelSelectorComponent Levels="@Building.Levels" LevelChanged="OnLevelChanged"
-                                        SelectedLevel="@Building.Level"/>
+        @if (Editable)
+        {
+            <span class="entity-title">@Building.Name</span>
+            <BuildingLevelSelectorComponent Levels="@Building.Levels" LevelChanged="OnLevelChanged"
+                                            SelectedLevel="@Building.Level"/>
+        }
+        else
+        {
+            <span class="entity-title"> @($"{Building.Name} {Loc[FogResource.Hoh_Lvl]} {Building.Level}")</span>
+        }
+
     </div>
     <div class="main-container">
         <BuildingInfoComponent Items="@Building.InfoItems"/>
-        <MudCheckBox Value="@Building.IsUpgrading" T="bool" ValueChanged="@ChangeUpgradeState">
+        <MudCheckBox Value="@Building.IsUpgrading" T="bool" ValueChanged="@ChangeUpgradeState" Disabled="@(!Editable)">
             <span class="checkbox-label">@Loc[FogResource.CityPlanner_CityMapEntity_IsUpgrading]</span>
         </MudCheckBox>
         @if (Building.IsLockable)
         {
             <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@ToggleEntityLockState"
-                       Style="margin-bottom: 16px">
+                       Style="margin-bottom: 16px" Disabled="@(!Editable)">
                 @(Building.IsLocked ? Loc[FogResource.CityPlanner_CityMapEntity_Unlock] : Loc[FogResource.CityPlanner_CityMapEntity_Lock])
             </MudButton>
         }
         @if (Building.ProductionComponent != null)
         {
-            <ProductionComponent Data="@Building.ProductionComponent" ProductClicked="OnProductClicked"/>
+            <ProductionComponent Data="@Building.ProductionComponent" ProductClicked="OnProductClicked"
+                                 Editable="@Editable"/>
             @if (Building.ProductionComponent.Cost.Count > 0)
             {
                 <CityProductionStatsComponent Items="@Building.ProductionComponent.Cost"
@@ -58,6 +67,9 @@
 
     [Parameter]
     public CityMapEntityViewModel Building { get; set; } = null!;
+
+    [Parameter]
+    public bool Editable { get; set; } = true;
 
     private void OnLevelChanged(int level)
     {

@@ -1,0 +1,22 @@
+@using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+<MudDialog Gutters="false" @onclick="Close" ContentStyle="padding: 8px !important; margin: 0 !important">
+    <DialogContent>
+        <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
+    </DialogContent>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public CityMapEntityViewModel Building { get; set; } = null!;
+
+    private void Close()
+    {
+        MudDialog.Close();
+    }
+
+}

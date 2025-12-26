@@ -51,4 +51,5 @@ public interface ICityPlanner
     HohCity GetCity();
     bool ValidateLayout();
     void ChangeEntityUpgradeState(int entityId, bool isUpgrading);
+    void DeselectAll();
 }

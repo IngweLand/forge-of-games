@@ -6,9 +6,12 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityViewerInteractionManager(
     ICityPlanner cityPlanner,
-    IMapTransformationComponent transformationComponent) : ICityViewerInteractionManager
+    IMapTransformationComponent transformationComponent,
+    IMapGrid grid) : ICityViewerInteractionManager
 {
+    private const int TAP_SENSITIVITY = 5;
     private readonly Dictionary<long, SKPoint> _activeTouches = new();
+    private bool _canBeTapEvent;
     private bool _isPinchToZoom;
     private SKPoint _lastPointerLocation;
 
@@ -29,15 +32,27 @@ public class CityViewerInteractionManager(
         {
             _isPinchToZoom = true;
         }
+        else
+        {
+            _canBeTapEvent = true;
+        }
     }
 
     public void OnPointerUp(long pointerId, float x, float y)
     {
+        if (_activeTouches.Count == 1 && _canBeTapEvent)
+        {
+            var location = grid.ScreenToGrid(transformationComponent.GetTransformedCoordinates(x, y));
+            _ = cityPlanner.TrySelectCityMapEntity(location);
+        }
+
         _activeTouches.Remove(pointerId);
         if (_activeTouches.Count == 0)
         {
             _isPinchToZoom = false;
         }
+
+        _canBeTapEvent = false;
     }
 
     public void OnPointerMove(long pointerId, float x, float y)
@@ -45,6 +60,16 @@ public class CityViewerInteractionManager(
         var coordinates = new SKPoint(x, y);
         if (!_isPinchToZoom)
         {
+            if (_canBeTapEvent && SKPoint.Distance(_lastPointerLocation, coordinates) > TAP_SENSITIVITY)
+            {
+                _canBeTapEvent = false;
+            }
+
+            if (_canBeTapEvent)
+            {
+                return;
+            }
+
             var delta = coordinates - _lastPointerLocation;
             _lastPointerLocation = coordinates;
             transformationComponent.CommitTranslate(delta);

@@ -30,7 +30,7 @@
             <tr class="user-select-none" @onclick="() => HandleProductSelection(item)">
                 @if (Data.CanSelectProduct)
                 {
-                    <td><input type="radio"
+                    <td><input type="radio" disabled="@(!Editable)"
                                name="productSelection"
                                value="@item" T="CityMapEntityProductViewModel"
                                checked="@item.IsSelected"/></td>
@@ -52,9 +52,12 @@
     [Parameter]
     public EventCallback<string> ProductClicked { get; set; }
 
+    [Parameter]
+    public bool Editable { get; set; } = true;
+
     private Task HandleProductSelection(CityMapEntityProductViewModel product)
     {
-        return ProductClicked.InvokeAsync(product.ProductId);
+        return Editable ? ProductClicked.InvokeAsync(product.ProductId) : Task.CompletedTask;
     }
 
 }
