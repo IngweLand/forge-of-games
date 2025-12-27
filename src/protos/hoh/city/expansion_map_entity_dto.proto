@@ -1,10 +1,12 @@
 syntax = "proto3";
+import "expansion_unlocking_type.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
 message ExpansionMapEntityDto {
   int32 x = 2;
   int32 y = 3;
+  ExpansionUnlockingType unlockingType = 4;
   int32 width = 6;
   int32 length = 7;
   string id = 10;

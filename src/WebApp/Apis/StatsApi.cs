@@ -214,9 +214,9 @@ public static class StatsApi
         return TypedResults.Ok(result);
     }
 
-    private static async Task<Results<Ok<PlayerProductionCapacityDto>, NotFound, BadRequest<string>>>
+    private static async Task<Results<Ok<PlayerCityPropertiesDto>, NotFound, BadRequest<string>>>
         GetPlayerProductionCapacityAsync([AsParameters] StatsServices services, HttpContext context,
-            [AsParameters] GetPlayerProductionCapacityQuery query, CancellationToken ct = default)
+            [AsParameters] GetPlayerCityPropertiesQuery query, CancellationToken ct = default)
     {
         var result = await services.Mediator.Send(query, ct);
         if (result == null)

@@ -2949,6 +2949,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City properties.
+        /// </summary>
+        public static string StatsHub_Player_CityProperties {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.CityProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City Snapshot Date.
         /// </summary>
         public static string StatsHub_Player_CitySnapshotDate {
@@ -2963,6 +2972,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string StatsHub_Player_Names {
             get {
                 return ResourceManager.GetString("StatsHub.Player.Names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Premium expansions.
+        /// </summary>
+        public static string StatsHub_Player_PremiumExpansions {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.PremiumExpansions", resourceCulture);
             }
         }
         

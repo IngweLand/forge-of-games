@@ -202,23 +202,37 @@
             </div>
         }
 
-        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_ProductionCapacity, FogResource.Common_24hrs]"
-                             IsLoading="@_productionCapacityIsLoading"
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_CityProperties]"
+                             IsLoading="@_cityPropertiesAreLoading"
                              ExpandedChanged="@ToggleProductionCapacityView">
-            <div class="production-capacity-items-container">
-                @if (_productionCapacity?.Food != null)
-                {
-                    <ResourceWithValue ResourceValue="@_productionCapacity?.Food"/>
-                }
-                @if (_productionCapacity?.Coins != null)
-                {
-                    <ResourceWithValue ResourceValue="@_productionCapacity?.Coins"/>
-                }
-                @if (_productionCapacity?.Goods != null)
-                {
-                    <ResourceWithValue ResourceValue="@_productionCapacity?.Goods"/>
-                }
-            </div>
+            @if (_cityProperties != null)
+            {
+                <div class="city-properties-container">
+                    <span>@Loc[FogResource.StatsHub_Player_ProductionCapacity, FogResource.Common_24hrs]</span>
+                    <div class="city-properties-section-items-container">
+                        @if (_cityProperties?.Food != null)
+                        {
+                            <ResourceWithValue ResourceValue="@_cityProperties?.Food"/>
+                        }
+                        @if (_cityProperties?.Coins != null)
+                        {
+                            <ResourceWithValue ResourceValue="@_cityProperties?.Coins"/>
+                        }
+                        @if (_cityProperties?.Goods != null)
+                        {
+                            <ResourceWithValue ResourceValue="@_cityProperties?.Goods"/>
+                        }
+                    </div>
+                    @if (_cityProperties!.PremiumExpansionCount != null)
+                    {
+                        <span>@Loc[FogResource.StatsHub_Player_PremiumExpansions]</span>
+                        <div class="city-properties-section-items-container">
+                            <ResourceWithValue ResourceValue="@_cityProperties.PremiumExpansionCount"/>
+                            <ResourceWithValue ResourceValue="@_cityProperties.TotalPremiumExpansionCost"/>
+                        </div>
+                    }
+                </div>
+            }
         </ExpandableContainer>
 
         <div class="fog-container section-container">
@@ -245,8 +259,6 @@
                 </div>
             </div>
         }
-
-
     </div>
 }
 else

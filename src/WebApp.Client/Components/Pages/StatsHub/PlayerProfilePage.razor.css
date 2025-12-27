@@ -75,7 +75,14 @@ p {
     height: 24px;
 }
 
-.production-capacity-items-container {
+.city-properties-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.city-properties-section-items-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -113,7 +120,11 @@ p {
         height: 32px;
     }
 
-    .production-capacity-items-container {
+    .city-properties-container {
+        gap: 12px;
+    }
+    
+    .city-properties-section-items-container {
         gap: 12px;
     }
 }

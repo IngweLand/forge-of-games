@@ -77,5 +77,5 @@ public interface IStatsHubService
     Task<PaginatedList<PlayerDto>> GetEventCityRankingsAsync(string worldId, CancellationToken ct = default);
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT)]
-    Task<PlayerProductionCapacityDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
+    Task<PlayerCityPropertiesDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
 }

@@ -139,7 +139,7 @@ public static class DependencyInjection
         services.AddScoped<IAllianceAthRankingViewModelFactory, AllianceAthRankingViewModelFactory>();
         services.AddScoped<IFogCommonUiService, FogCommonUiService>();
         services.AddScoped<ICityPlannerAnalyticsService, CityPlannerAnalyticsService>();
-        services.AddScoped<IPlayerProductionCapacityViewModelFactory, PlayerProductionCapacityViewModelFactory>();
+        services.AddScoped<IPlayerCityPropertiesViewModelFactory, PlayerCityPropertiesViewModelFactory>();
         services.AddScoped<ICityStrategyFactory, CityStrategyFactory>();
         services.AddScoped<ICityStrategyAnalyticsService, CityStrategyAnalyticsService>();
         services.AddScoped<ICityStrategyUiService, CityStrategyUiService>();

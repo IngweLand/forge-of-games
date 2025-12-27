@@ -35,7 +35,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IMapper _mapper;
     private readonly IMemoryCache _memoryCache;
-    private readonly IPlayerProductionCapacityViewModelFactory _productionCapacityViewModelFactory;
+    private readonly IPlayerCityPropertiesViewModelFactory _cityPropertiesViewModelFactory;
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
@@ -50,7 +50,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IMapper mapper,
         IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
         ICommonUiService commonUiService,
-        IPlayerProductionCapacityViewModelFactory productionCapacityViewModelFactory,
+        IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -64,7 +64,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _mapper = mapper;
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
         _commonUiService = commonUiService;
-        _productionCapacityViewModelFactory = productionCapacityViewModelFactory;
+        _cityPropertiesViewModelFactory = cityPropertiesViewModelFactory;
         _memoryCache = memoryCache;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
@@ -286,13 +286,13 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return (await _commonService.GetAgesAsync()).ToDictionary(a => a.Id);
     }
 
-    public async Task<PlayerProductionCapacityViewModel?> GetPlayerProductionCapacityAsync(int playerId,
+    public async Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
         CancellationToken ct = default)
     {
         var result = await ExecuteSafeAsync(
             () => _statsHubService.GetPlayerProductionCapacityAsync(playerId, ct),
             null);
 
-        return result != null ? _productionCapacityViewModelFactory.Create(result) : null;
+        return result != null ? _cityPropertiesViewModelFactory.Create(result) : null;
     }
 }

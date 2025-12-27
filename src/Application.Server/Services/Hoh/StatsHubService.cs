@@ -158,10 +158,10 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
-    public Task<PlayerProductionCapacityDto?> GetPlayerProductionCapacityAsync(int playerId,
+    public Task<PlayerCityPropertiesDto?> GetPlayerProductionCapacityAsync(int playerId,
         CancellationToken ct = default)
     {
-        var query = new GetPlayerProductionCapacityQuery(playerId);
+        var query = new GetPlayerCityPropertiesQuery(playerId);
         return sender.Send(query, ct);
     }
 

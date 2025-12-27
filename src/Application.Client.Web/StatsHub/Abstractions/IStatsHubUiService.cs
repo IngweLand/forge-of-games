@@ -46,6 +46,6 @@ public interface IStatsHubUiService
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
         CancellationToken ct = default);
 
-    Task<PlayerProductionCapacityViewModel?> GetPlayerProductionCapacityAsync(int playerId,
+    Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
         CancellationToken ct = default);
 }

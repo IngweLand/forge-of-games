@@ -39,9 +39,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
-    private PlayerProductionCapacityViewModel? _productionCapacity;
-    private CancellationTokenSource? _productionCapacityCts;
-    private bool _productionCapacityIsLoading;
+    private PlayerCityPropertiesViewModel? _cityProperties;
+    private CancellationTokenSource? _cityPropertiesCts;
+    private bool _cityPropertiesAreLoading;
     private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
@@ -160,9 +160,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         await _inGameEventCts.CancelAsync();
         _inGameEventCts.Dispose();
 
-        if (_productionCapacityCts != null)
+        if (_cityPropertiesCts != null)
         {
-            await _productionCapacityCts.CancelAsync();
+            await _cityPropertiesCts.CancelAsync();
         }
     }
 
@@ -381,30 +381,30 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         if (expanded)
         {
-            await GetProductionCapacity();
+            await GetCityProperties();
         }
     }
 
-    private async Task GetProductionCapacity()
+    private async Task GetCityProperties()
     {
-        if (_productionCapacity != null)
+        if (_cityProperties != null)
         {
             return;
         }
 
-        if (_productionCapacityCts != null)
+        if (_cityPropertiesCts != null)
         {
-            await _productionCapacityCts.CancelAsync();
+            await _cityPropertiesCts.CancelAsync();
         }
 
-        _productionCapacityIsLoading = true;
+        _cityPropertiesAreLoading = true;
         _fetchingCity = true;
         StateHasChanged();
 
-        _productionCapacityCts = new CancellationTokenSource();
-        _productionCapacity =
-            await StatsHubUiService.GetPlayerProductionCapacityAsync(PlayerId, _productionCapacityCts.Token);
-        _productionCapacityIsLoading = false;
+        _cityPropertiesCts = new CancellationTokenSource();
+        _cityProperties =
+            await StatsHubUiService.GetPlayerCityPropertiesAsync(PlayerId, _cityPropertiesCts.Token);
+        _cityPropertiesAreLoading = false;
         _fetchingCity = false;
     }
 

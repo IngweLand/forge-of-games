@@ -100,8 +100,9 @@ public class PlayerCityService : IPlayerCityService
         {
             return null;
         }
-
-        var citySnapshot = await CreateSnapshot(playerId, city, data);
+        var premiumExpansionCount =
+            otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
+        var citySnapshot = await CreateSnapshot(playerId, city, premiumExpansionCount, data);
 
         _context.PlayerCitySnapshots.Add(citySnapshot);
         await _context.SaveChangesAsync();
@@ -131,7 +132,9 @@ public class PlayerCityService : IPlayerCityService
                 continue;
             }
 
-            var newCitySnapshot = await CreateSnapshot(snapshot.PlayerId, city, snapshot.Data.Data);
+            var premiumExpansionCount =
+                otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
+            var newCitySnapshot = await CreateSnapshot(snapshot.PlayerId, city, premiumExpansionCount, snapshot.Data.Data);
             snapshot.TotalArea = newCitySnapshot.TotalArea;
             snapshot.HappinessUsageRatio = newCitySnapshot.HappinessUsageRatio;
             snapshot.HasPremiumHomeBuildings = newCitySnapshot.HasPremiumHomeBuildings;
@@ -163,7 +166,7 @@ public class PlayerCityService : IPlayerCityService
         await _context.SaveChangesAsync();
     }
 
-    private async Task<PlayerCitySnapshot> CreateSnapshot(int playerId, HohCity city, byte[] data)
+    private async Task<PlayerCitySnapshot> CreateSnapshot(int playerId, HohCity city, int premiumExpansionCount, byte[] data)
     {
         var cityStats = await _cityStatsCalculator.Calculate(city);
 
@@ -230,6 +233,7 @@ public class PlayerCityService : IPlayerCityService
             HasPremiumCultureBuildings =
                 await HasPremiumBuildings(city.InGameCityId, BuildingGroup.PremiumCulture, city.Entities),
             TotalArea = cityStats.TotalArea,
+            PremiumExpansionCount = premiumExpansionCount,
         };
     }
 

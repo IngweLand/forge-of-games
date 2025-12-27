@@ -24,14 +24,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static ExpansionMapEntityDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5leHBhbnNpb25fbWFwX2VudGl0eV9kdG8ucHJvdG8iWAoVRXhwYW5zaW9u",
-            "TWFwRW50aXR5RHRvEgkKAXgYAiABKAUSCQoBeRgDIAEoBRINCgV3aWR0aBgG",
-            "IAEoBRIOCgZsZW5ndGgYByABKAUSCgoCaWQYCiABKAlCH6oCHEluZ3dlbGFu",
-            "ZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "Ch5leHBhbnNpb25fbWFwX2VudGl0eV9kdG8ucHJvdG8aHmV4cGFuc2lvbl91",
+            "bmxvY2tpbmdfdHlwZS5wcm90byKIAQoVRXhwYW5zaW9uTWFwRW50aXR5RHRv",
+            "EgkKAXgYAiABKAUSCQoBeRgDIAEoBRIuCg11bmxvY2tpbmdUeXBlGAQgASgO",
+            "MhcuRXhwYW5zaW9uVW5sb2NraW5nVHlwZRINCgV3aWR0aBgGIAEoBRIOCgZs",
+            "ZW5ndGgYByABKAUSCgoCaWQYCiABKAlCH6oCHEluZ3dlbGFuZC5Gb2cuSW5u",
+            "Lk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDto.Parser, new[]{ "X", "Y", "Width", "Length", "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDto), global::Ingweland.Fog.Inn.Models.Hoh.ExpansionMapEntityDto.Parser, new[]{ "X", "Y", "UnlockingType", "Width", "Length", "Id" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,6 +77,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     public ExpansionMapEntityDto(ExpansionMapEntityDto other) : this() {
       x_ = other.x_;
       y_ = other.y_;
+      unlockingType_ = other.unlockingType_;
       width_ = other.width_;
       length_ = other.length_;
       id_ = other.id_;
@@ -108,6 +111,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       get { return y_; }
       set {
         y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unlockingType" field.</summary>
+    public const int UnlockingTypeFieldNumber = 4;
+    private global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType unlockingType_ = global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType UnlockingType {
+      get { return unlockingType_; }
+      set {
+        unlockingType_ = value;
       }
     }
 
@@ -164,6 +179,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (X != other.X) return false;
       if (Y != other.Y) return false;
+      if (UnlockingType != other.UnlockingType) return false;
       if (Width != other.Width) return false;
       if (Length != other.Length) return false;
       if (Id != other.Id) return false;
@@ -176,6 +192,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       int hash = 1;
       if (X != 0) hash ^= X.GetHashCode();
       if (Y != 0) hash ^= Y.GetHashCode();
+      if (UnlockingType != global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined) hash ^= UnlockingType.GetHashCode();
       if (Width != 0) hash ^= Width.GetHashCode();
       if (Length != 0) hash ^= Length.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
@@ -204,6 +221,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Y != 0) {
         output.WriteRawTag(24);
         output.WriteInt32(Y);
+      }
+      if (UnlockingType != global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) UnlockingType);
       }
       if (Width != 0) {
         output.WriteRawTag(48);
@@ -235,6 +256,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(24);
         output.WriteInt32(Y);
       }
+      if (UnlockingType != global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) UnlockingType);
+      }
       if (Width != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(Width);
@@ -263,6 +288,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Y != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Y);
       }
+      if (UnlockingType != global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UnlockingType);
+      }
       if (Width != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Width);
       }
@@ -289,6 +317,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.Y != 0) {
         Y = other.Y;
+      }
+      if (other.UnlockingType != global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType.Undefined) {
+        UnlockingType = other.UnlockingType;
       }
       if (other.Width != 0) {
         Width = other.Width;
@@ -320,6 +351,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 24: {
             Y = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            UnlockingType = (global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType) input.ReadEnum();
             break;
           }
           case 48: {
@@ -355,6 +390,10 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 24: {
             Y = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            UnlockingType = (global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType) input.ReadEnum();
             break;
           }
           case 48: {

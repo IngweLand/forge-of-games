@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.PlayerCity;
@@ -6,22 +7,24 @@ using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Extensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetPlayerProductionCapacityQuery(int PlayerId) : IRequest<PlayerProductionCapacityDto?>, ICacheableRequest
+public record GetPlayerCityPropertiesQuery(int PlayerId) : IRequest<PlayerCityPropertiesDto?>, ICacheableRequest
 {
     public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetPlayerProductionCapacityQueryHandler(
+public class GetPlayerCityPropertiesQueryHandler(
     IPlayerCityService playerCityService,
     IFogDbContext context,
-    IFailedPlayerCityFetchesCache failedFetchesCache)
-    : IRequestHandler<GetPlayerProductionCapacityQuery, PlayerProductionCapacityDto?>
+    IFailedPlayerCityFetchesCache failedFetchesCache,
+    ILogger<GetPlayerCityPropertiesQueryHandler> logger)
+    : IRequestHandler<GetPlayerCityPropertiesQuery, PlayerCityPropertiesDto?>
 {
-    public async Task<PlayerProductionCapacityDto?> Handle(GetPlayerProductionCapacityQuery request,
+    public async Task<PlayerCityPropertiesDto?> Handle(GetPlayerCityPropertiesQuery request,
         CancellationToken cancellationToken)
     {
         var today = DateTime.UtcNow.ToDateOnly();
@@ -60,13 +63,24 @@ public class GetPlayerProductionCapacityQueryHandler(
         return CreateDto(newSnapshot);
     }
 
-    private static PlayerProductionCapacityDto CreateDto(PlayerCitySnapshot snapshot)
+    private PlayerCityPropertiesDto CreateDto(PlayerCitySnapshot snapshot)
     {
-        return new PlayerProductionCapacityDto
+        var totalPremiumExpansionCost =
+            HohConstants.CapitalPremiumExpansionCost.Take(snapshot.PremiumExpansionCount).Sum();
+        if (snapshot.PremiumExpansionCount > HohConstants.CapitalPremiumExpansionCost.Length)
+        {
+            logger.LogWarning(
+                "Player {PlayerId} has {Count} premium expansions, which exceeds the known cost constants length of {Max}",
+                snapshot.PlayerId, snapshot.PremiumExpansionCount, HohConstants.CapitalPremiumExpansionCost.Length);
+        }
+
+        return new PlayerCityPropertiesDto
         {
             Coins = snapshot.Coins24H,
             Food = snapshot.Food24H,
             Goods = snapshot.Goods24H,
+            PremiumExpansionCount = snapshot.PremiumExpansionCount,
+            TotalPremiumExpansionCost = totalPremiumExpansionCost,
         };
     }
 }

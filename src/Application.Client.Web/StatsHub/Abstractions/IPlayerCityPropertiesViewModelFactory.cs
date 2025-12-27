@@ -3,7 +3,7 @@ using Ingweland.Fog.Dtos.Hoh.PlayerCity;
 
 namespace Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 
-public interface IPlayerProductionCapacityViewModelFactory
+public interface IPlayerCityPropertiesViewModelFactory
 {
-    PlayerProductionCapacityViewModel Create(PlayerProductionCapacityDto src);
+    PlayerCityPropertiesViewModel Create(PlayerCityPropertiesDto src);
 }
