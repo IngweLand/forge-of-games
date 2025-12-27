@@ -24,6 +24,8 @@ public class CityStats
         }
     }
 
+    public int PremiumExpansionCount { get; set; }
+
     public IDictionary<string, ConsolidatedTimedProductionValues> ProductionCosts { get; } =
         new Dictionary<string, ConsolidatedTimedProductionValues>();
 

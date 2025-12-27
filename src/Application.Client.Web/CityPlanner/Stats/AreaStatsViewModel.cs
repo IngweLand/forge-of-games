@@ -6,5 +6,6 @@ public class AreaStatsViewModel
 {
     public required IReadOnlyCollection<(string GroupName, string Count, string Area)> AreasByGroup { get; init; }
     public required IReadOnlyCollection<IconLabelItemViewModel> AreasByType { get; init; }
+    public IconLabelItemViewModel? PremiumExpansionCount { get; set; }
     public required string TotalArea { get; init; }
 }

@@ -22,6 +22,7 @@ public class CityMapStateCoreFactory(ICityMapEntityFactory cityMapEntityFactory)
             CityAge = age,
             CityWonder = wonder,
             CityWonderLevel = city.WonderLevel,
+            PremiumExpansionCount = city.PremiumExpansionCount,
         };
         state.AddRange(city.Entities.Select(hohCityMapEntity =>
         {

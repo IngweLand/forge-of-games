@@ -8,7 +8,8 @@ public static class CityStatsProcessor
         IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
         IEnumerable<CityMapExpansion> openExpansions,
         int wonderWorkersBonus = 0,
-        IReadOnlyDictionary<string, double>? wonderResourcesBonus = null)
+        IReadOnlyDictionary<string, double>? wonderResourcesBonus = null,
+        int premiumExpansionCount = 0)
     {
         var stats = new CityStats
         {
@@ -133,6 +134,7 @@ public static class CityStatsProcessor
         stats.TotalArea = expansions.Sum(x => x.Width * x.Height);
         stats.WonderResourcesBonus = wonderResourcesBonus;
         stats.WonderWorkersBonus = wonderWorkersBonus;
+        stats.PremiumExpansionCount = premiumExpansionCount;
 
         return stats;
     }

@@ -42,6 +42,7 @@ public class CityMapStateFactory(
             Snapshots = city.Snapshots,
             CityWonder = wonder,
             CityWonderLevel = city.WonderLevel,
+            PremiumExpansionCount = city.PremiumExpansionCount,
         };
         state.AddRange(city.Entities.Select(hohCityMapEntity =>
         {

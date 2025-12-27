@@ -102,3 +102,17 @@ input, tbody tr {
 tbody tr:nth-child(even) {
     background-color: #f9fafb;
 }
+
+.premium-expansions-container {
+    align-self: start;
+    display: flex;
+    gap: 8px; 
+    align-items: center;
+}
+
+.premium-expansions-label {
+    font-size: 10px;
+    vertical-align: middle;
+    align-content: center;
+    text-align: right;
+}

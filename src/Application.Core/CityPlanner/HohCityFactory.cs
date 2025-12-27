@@ -108,6 +108,7 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
             WonderLevel = wonderLevel,
             UpdatedAt = DateTime.UtcNow,
             UnlockedExpansions = inGameCity.OpenedExpansions.Select(src => src.Id).ToHashSet(),
+            PremiumExpansionCount = GetPremiumExpansionCount(inGameCity),
         };
     }
 
@@ -115,6 +116,11 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
     {
         var wonder = inGameCity.Wonders.FirstOrDefault();
         return Create(inGameCity, buildings, wonder?.Id ?? WonderId.Undefined, wonder?.Level ?? 0, name);
+    }
+
+    private int GetPremiumExpansionCount(City city)
+    {
+        return city.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
     }
 
     private static string GetInitEntitiesKey(CityId cityId, WonderId wonderId)

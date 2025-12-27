@@ -8,7 +8,9 @@ using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
-public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingTypeIconUrlProvider)
+public class AreaStatsViewModelFactory(
+    IBuildingTypeIconUrlProvider buildingTypeIconUrlProvider,
+    IAssetUrlProvider assetUrlProvider)
     : IAreaStatsViewModelFactory
 {
     public AreaStatsViewModel Create(CityStats stats, IEnumerable<BuildingDto> buildings)
@@ -48,11 +50,22 @@ public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingType
             });
         }
 
+        IconLabelItemViewModel? premiumExpansions = null;
+        if (stats.PremiumExpansionCount > 0)
+        {
+            premiumExpansions = new IconLabelItemViewModel
+            {
+                Label = stats.PremiumExpansionCount.ToString("N0"),
+                IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_expansion"),
+            };
+        }
+
         return new AreaStatsViewModel
         {
             AreasByType = areasByType,
             AreasByGroup = areasByGroup,
             TotalArea = stats.TotalArea.ToString(CultureInfo.InvariantCulture),
+            PremiumExpansionCount = premiumExpansions,
         };
     }
 }
