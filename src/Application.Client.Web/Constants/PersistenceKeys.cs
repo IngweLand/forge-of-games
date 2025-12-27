@@ -1,4 +1,4 @@
-namespace Ingweland.Fog.WebApp.Client.Constants;
+namespace Ingweland.Fog.Application.Client.Web.Constants;
 
 public static class PersistenceKeys
 {
