@@ -1,4 +1,5 @@
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Enums;
 
