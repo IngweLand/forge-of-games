@@ -1,6 +1,5 @@
 using System.Globalization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
@@ -18,7 +17,7 @@ public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingType
         var areasByGroup = stats.AreasByGroup.Select(kvp =>
         {
             var building = buildingDic[kvp.Key];
-            return (building.GroupName, kvp.Value.ToString("N0"));
+            return (building.GroupName, kvp.Value.Count.ToString("N0"), kvp.Value.Area.ToString("N0"));
         }).OrderBy(t => t.GroupName).ToList();
 
         var areasByType = new List<IconLabelItemViewModel>();
@@ -28,7 +27,7 @@ public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingType
             if (kvp.Key is BuildingType.Home or BuildingType.Farm or BuildingType.Barracks or BuildingType.Workshop
                 or BuildingType.CultureSite)
             {
-                areasByType.Add(new IconLabelItemViewModel()
+                areasByType.Add(new IconLabelItemViewModel
                 {
                     Label = kvp.Value.ToString("N0"),
                     IconUrl = buildingTypeIconUrlProvider.GetIcon(kvp.Key),
@@ -42,14 +41,14 @@ public class AreaStatsViewModelFactory(IBuildingTypeIconUrlProvider buildingType
 
         if (sumOfSpecial > 0)
         {
-            areasByType.Add(new IconLabelItemViewModel()
+            areasByType.Add(new IconLabelItemViewModel
             {
                 Label = sumOfSpecial.ToString("N0"),
                 IconUrl = buildingTypeIconUrlProvider.GetIcon(BuildingType.Special),
             });
         }
 
-        return new AreaStatsViewModel()
+        return new AreaStatsViewModel
         {
             AreasByType = areasByType,
             AreasByGroup = areasByGroup,

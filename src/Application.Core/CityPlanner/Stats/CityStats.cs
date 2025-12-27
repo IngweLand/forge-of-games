@@ -4,7 +4,9 @@ namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
 public class CityStats
 {
-    public IDictionary<BuildingGroup, int> AreasByGroup { get; } = new Dictionary<BuildingGroup, int>();
+    public IDictionary<BuildingGroup, (int Count, int Area)> AreasByGroup { get; } =
+        new Dictionary<BuildingGroup, (int Count, int Area)>();
+
     public IDictionary<BuildingType, int> AreasByType { get; } = new Dictionary<BuildingType, int>();
     public int ExcessHappiness { get; set; }
 

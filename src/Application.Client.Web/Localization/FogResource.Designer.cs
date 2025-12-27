@@ -591,6 +591,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string CityPlanner_Count {
+            get {
+                return ResourceManager.GetString("CityPlanner.Count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create new city.
         /// </summary>
         public static string CityPlanner_CreateNewCity {

@@ -115,10 +115,11 @@ public static class CityStatsProcessor
 
                 if (!stats.AreasByGroup.TryGetValue(areaProvider.BuildingGroup, out var groupedArea))
                 {
-                    stats.AreasByGroup.Add(areaProvider.BuildingGroup, 0);
+                    stats.AreasByGroup.Add(areaProvider.BuildingGroup, (0, 0));
                 }
 
-                groupedArea += areaProvider.Area;
+                groupedArea.Count++;
+                groupedArea.Area += areaProvider.Area;
                 stats.AreasByGroup[areaProvider.BuildingGroup] = groupedArea;
             }
         }
