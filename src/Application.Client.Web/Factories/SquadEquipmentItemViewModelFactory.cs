@@ -9,13 +9,14 @@ namespace Ingweland.Fog.Application.Client.Web.Factories;
 
 public class SquadEquipmentItemViewModelFactory(
     IAssetUrlProvider assetUrlProvider,
-    IEquipmentSlotTypeIconUrlProvider equipmentSlotTypeIconUrlProvider) : ISquadEquipmentItemViewModelFactory
+    IEquipmentSlotTypeIconUrlProvider equipmentSlotTypeIconUrlProvider,
+    IIconLabelItemViewModelFactory iconLabelItemViewModelFactory) : ISquadEquipmentItemViewModelFactory
 {
     public SquadEquipmentItemViewModel Create(SquadEquipmentItem src,
         IReadOnlyDictionary<StatAttribute, string> statAttributes,
-        IReadOnlyDictionary<EquipmentSet, string> sets)
+        IReadOnlyDictionary<string, string> sets)
     {
-        var setName = sets.TryGetValue(src.EquipmentSet, out var set) ? set : src.EquipmentSet.ToString();
+        var setName = sets.TryGetValue(src.EquipmentSet.ToString(), out var set) ? set : src.EquipmentSet.ToString();
         return new SquadEquipmentItemViewModel
         {
             EquipmentSlotType = src.EquipmentSlotType,
@@ -26,20 +27,12 @@ public class SquadEquipmentItemViewModelFactory(
                 Label = setName,
             },
             Attributes =
-                new List<IconLabelItemViewModel> {CreateAttribute(src.MainAttribute.StatAttribute, statAttributes)}
-                    .Concat(src.SubAttributes.Where(x => x.Unlocked).OrderBy(x => x.UnlockedAtLevel)
-                        .Select(x => CreateAttribute(x.StatAttribute, statAttributes))).ToList(),
-        };
-    }
-
-    private IconLabelItemViewModel CreateAttribute(StatAttribute statAttribute,
-        IReadOnlyDictionary<StatAttribute, string> statAttributes)
-    {
-        var name = statAttributes.TryGetValue(statAttribute, out var set) ? set : statAttribute.ToString();
-        return new IconLabelItemViewModel
-        {
-            IconUrl = assetUrlProvider.GetHohStatAttributeIconUrl(statAttribute),
-            Label = name,
+                new List<IconLabelItemViewModel>
+                {
+                    iconLabelItemViewModelFactory.CreateEquipmentAttribute(src.MainAttribute.StatAttribute,
+                        statAttributes),
+                }.Concat(src.SubAttributes.Where(x => x.Unlocked).OrderBy(x => x.UnlockedAtLevel).Select(x =>
+                    iconLabelItemViewModelFactory.CreateEquipmentAttribute(x.StatAttribute, statAttributes))).ToList(),
         };
     }
 }

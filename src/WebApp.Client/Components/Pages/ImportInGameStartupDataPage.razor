@@ -1,5 +1,7 @@
 @page "/inGameData/{inGameStartupDataId}"
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Models.Fog.Entities
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="main-container">
     <span class="title">@Loc[FogResource.ImportInGameData_Headline]</span>
@@ -27,7 +29,42 @@
                     @bind-Value="@_shouldImportEquipment">@Loc[FogResource.ImportInGameData_Options_Equipment]</MudCheckBox>
                 <MudCheckBox
                     @bind-Value="@_shouldImportResearchState">@Loc[FogResource.ImportInGameData_Options_ResearchState]</MudCheckBox>
-                
+                <MudCheckBox
+                    @bind-Value="@_shouldImportEquipmentProfile">@Loc[FogResource.ImportInGameData_Options_EquipmentProfile]</MudCheckBox>
+                @if (_shouldImportEquipmentProfile)
+                {
+                    <div class="equipment-profile-options">
+                        <MudRadioGroup @bind-Value="_equipmentProfileImportMethod" T="EquipmentProfileImportMethod"
+                                       Disabled="@(_equipmentProfiles.Count == 0)">
+                            <MudRadio Value="@EquipmentProfileImportMethod.New"
+                                      Color="Color.Primary">@Loc[FogResource.Common_New]</MudRadio>
+                            <MudRadio Value="@EquipmentProfileImportMethod.Sync"
+                                      Color="Color.Primary">@Loc[FogResource.Common_Sync]</MudRadio>
+                        </MudRadioGroup>
+                        @if (_equipmentProfileImportMethod == EquipmentProfileImportMethod.New)
+                        {
+                            <MudTextField @bind-Value="_equipmentProfileName" Variant="Variant.Outlined" T="string"
+                                          MaxLength="@FogConstants.NAME_MAX_CHARACTERS" Immediate="true"
+                                          Margin="Margin.Dense" Style="max-width: 320px"
+                                          Label="@Loc[FogResource.CommandCenter_EquipmentConfigurator_Settings_ProfileName]"/>
+                        }
+                        else
+                        {
+                            <MudSelect Margin="Margin.Dense" Dense="true" Style="max-width: 320px"
+                                       Label="@Loc[FogResource.ImportInGameData_Options_EquipmentProfile]"
+                                       @bind-Value="_selectedEquipmentProfile"
+                                       T="EquipmentProfileBasicData" Strict="true" Immediate="true"
+                                       ToStringFunc="@(x => x?.Name)" Variant="Variant.Outlined">
+                                @foreach (var x in _equipmentProfiles)
+                                {
+                                    <MudSelectItem Value="@x">@x.Name</MudSelectItem>
+                                }
+                            </MudSelect>
+                        }
+
+                    </div>
+                }
+
                 <div class="buttons-container">
                     <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="ImportData"
                                Disabled="@(!_canImport)">@Loc[FogResource.Common_Import]</MudButton>

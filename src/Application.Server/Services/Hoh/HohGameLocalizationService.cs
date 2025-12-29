@@ -73,11 +73,17 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         var s = statAttribute switch
         {
             StatAttribute.AttackBonus or StatAttribute.BaseDamageBonus or StatAttribute.DefenseBonus
-                or StatAttribute.MaxHitPointsBonus => statAttribute.ToString()[..^suffixLenght],
+                or StatAttribute.MaxHitPointsBonus => $"{statAttribute.ToString()[..^suffixLenght]}_Percent",
             _ => statAttribute.ToString(),
         };
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.UnitStats, $"unit_stat.{s}");
         return GetValue(key) ?? s;
+    }
+
+    public string GetUnitStatName(UnitStatType unitStat)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.UnitStats, $"unit_stat.{unitStat}");
+        return GetValue(key) ?? unitStat.ToString();
     }
 
     public string GetEquipmentSetName(EquipmentSet set)
@@ -87,6 +93,14 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
             HohLocalizationProperty.Name,
             $"equipment_set.{s}");
         return GetValue(key) ?? s;
+    }
+
+    public string GetConcreteEquipmentSetName(EquipmentSet set, EquipmentSlotType slot)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.EquipmentSets,
+            HohLocalizationProperty.Name,
+            $"equipment_set.{set}_{slot}");
+        return GetValue(key) ?? $"{set} {slot}";
     }
 
     public string GetPvpTierName(PvpTier tier)

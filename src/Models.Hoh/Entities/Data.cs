@@ -1,5 +1,7 @@
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 using ProtoBuf;
@@ -55,11 +57,17 @@ public class Data
     public required IReadOnlyCollection<BuildingCustomization> BuildingCustomizations { get; init; }
 
     [ProtoMember(19)]
-    public required IReadOnlyCollection<HeroUnitType> HeroUnitTypes { get; set; }
+    public required IReadOnlyCollection<HeroUnitType> HeroUnitTypes { get; init; }
     
     [ProtoMember(20)]
-    public required IReadOnlyCollection<Resource> Resources { get; set; }
+    public required IReadOnlyCollection<Resource> Resources { get; init; }
 
     [ProtoMember(21)]
-    public required IReadOnlyCollection<Relic> Relics { get; set; }
+    public required IReadOnlyCollection<Relic> Relics { get; init; }
+
+    [ProtoMember(22)]
+    public IReadOnlyDictionary<string, float> RelicBoostAgeModifiers { get; init; }
+    
+    [ProtoMember(23)]
+    public IReadOnlyCollection<EquipmentSetDefinition> EquipmentSetDefinitions { get; init; }
 }

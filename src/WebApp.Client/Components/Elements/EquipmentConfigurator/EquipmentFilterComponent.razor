@@ -1,0 +1,129 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Extensions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+@inject IEquipmentConfiguratorUiService EquipmentConfiguratorUiService
+
+<div class="component-root">
+    <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Equipment_Set]" MultiSelection="true"
+               SelectedValuesChanged="@SetOnChange" T="EquipmentSet" Immediate="true"
+               ToStringFunc="@(x => EquipmentConfiguratorUiService.EquipmentSets[x])" Variant="Variant.Outlined">
+        @foreach (var kvp in EquipmentConfiguratorUiService.EquipmentSets)
+        {
+            <MudSelectItem Value="@kvp.Key">@kvp.Value</MudSelectItem>
+        }
+    </MudSelect>
+
+    <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Equipment_Rarity]" MultiSelection="true"
+               SelectedValuesChanged="@RarityOnChange" T="EquipmentRarity" Immediate="true"
+               ToStringFunc="@(x => $"{x.ToStarCount()}★")" Variant="Variant.Outlined">
+        @foreach (var x in Enum.GetValues<EquipmentRarity>().Where(x => x != EquipmentRarity.Undefined))
+        {
+            <MudSelectItem Value="@x">@($"{x.ToStarCount()}★")</MudSelectItem>
+        }
+    </MudSelect>
+
+    <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Equipment_MainAttributes]"
+               MultiSelection="true" SelectedValuesChanged="@MainAttributesOnChange" Immediate="true" T="StatAttribute"
+               ToStringFunc="@(x => EquipmentConfiguratorUiService.StatAttributes[x])" Variant="Variant.Outlined">
+        @foreach (var kvp in EquipmentConfiguratorUiService.StatAttributes)
+        {
+            <MudSelectItem Value="@kvp.Key">@kvp.Value</MudSelectItem>
+        }
+    </MudSelect>
+
+    <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.Equipment_SubAttributes]"
+               MultiSelection="true" SelectedValuesChanged="@SubAttributesOnChange" Immediate="true" T="StatAttribute"
+               ToStringFunc="@(x => EquipmentConfiguratorUiService.StatAttributes[x])" Variant="Variant.Outlined">
+        @foreach (var kvp in EquipmentConfiguratorUiService.StatAttributes)
+        {
+            <MudSelectItem Value="@kvp.Key">@kvp.Value</MudSelectItem>
+        }
+    </MudSelect>
+
+    @if (_filterRequest.SubAttributes.Count > 0)
+    {
+        <MudCheckBox T="bool" ValueChanged="@OnlyUnlockedOnChanged" Dense="true" Size="Size.Small">
+            @Loc[FogResource.CommandCenter_EquipmentConfigurator_Filter_OnlyUnlocked]
+        </MudCheckBox>
+    }
+    
+    <MudCheckBox T="bool" ValueChanged="@HideEquippedOnChanged" Dense="true" Size="Size.Small">
+        @Loc[FogResource.CommandCenter_EquipmentConfigurator_Filter_HideEquipped]
+    </MudCheckBox>
+
+</div>
+
+@code {
+
+    private readonly IReadOnlyCollection<EquipmentSet> _sets;
+
+    [Parameter]
+    public EventCallback<EquipmentFilterRequest> OnFilterChanged { get; set; }
+
+    private EquipmentFilterRequest _filterRequest = EquipmentFilterRequest.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    private Task SetOnChange(IEnumerable<EquipmentSet>? selectedSets)
+    {
+        _filterRequest = _filterRequest with
+        {
+            Sets = selectedSets != null ? selectedSets.ToList() : [],
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    }
+
+    private Task RarityOnChange(IEnumerable<EquipmentRarity>? selectedRarities)
+    {
+        _filterRequest = _filterRequest with
+        {
+            Rarities = selectedRarities != null ? selectedRarities.ToList() : [],
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    }
+
+    private Task MainAttributesOnChange(IEnumerable<StatAttribute>? selectedAttributes)
+    {
+        _filterRequest = _filterRequest with
+        {
+            MainAttributes = selectedAttributes != null ? selectedAttributes.ToList() : [],
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    }
+
+    private Task SubAttributesOnChange(IEnumerable<StatAttribute>? selectedAttributes)
+    {
+        _filterRequest = _filterRequest with
+        {
+            SubAttributes = selectedAttributes != null ? selectedAttributes.ToList() : [],
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    }
+
+    private Task OnlyUnlockedOnChanged(bool onlyUnlocked)
+    {
+        _filterRequest = _filterRequest with
+        {
+            OnlyUnlockedSubAttributes = onlyUnlocked,
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    } 
+    
+    private Task HideEquippedOnChanged(bool hideEquipped)
+    {
+        _filterRequest = _filterRequest with
+        {
+            HideEquipped = hideEquipped,
+        };
+        return OnFilterChanged.InvokeAsync(_filterRequest);
+    }
+
+}

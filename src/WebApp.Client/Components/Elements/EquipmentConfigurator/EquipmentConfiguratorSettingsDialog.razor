@@ -1,0 +1,75 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Application.Core.Helpers
+@using Microsoft.Extensions.Localization
+@inject IEquipmentConfiguratorUiService EquipmentConfiguratorUiService
+@inject IStringLocalizer<FogResource> Loc
+@inject IEquipmentProfilePersistenceService PersistenceService
+@inject NavigationManager NavigationManager
+@inject IDialogService DialogService
+<MudDialog>
+    <DialogContent>
+        <div class="component-root">
+            <div class="horizontal-layout">
+                <MudTextField Required="true" T="string" MaxLength="@FogConstants.NAME_MAX_CHARACTERS" _profileName
+                              Counter="@FogConstants.NAME_MAX_CHARACTERS" Style="max-width: 320px"
+                              Label="@Loc[FogResource.CommandCenter_EquipmentConfigurator_Settings_ProfileName]"
+                              Immediate="true" @bind-Value="_profileName"></MudTextField>
+                <MudButton Variant="Variant.Filled" Disabled="@(_profileName.Length == 0)" Color="Color.Success"
+                           OnClick="@(() => SaveProfileName())">@Loc[FogResource.Common_Save]</MudButton>
+            </div>
+            <MudButton Variant="Variant.Filled" Color="Color.Error"
+                       OnClick="@(() => DeleteProfile())">@Loc[FogResource.Common_Delete]</MudButton>
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="@Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+<style>
+
+    .mud-dialog-content {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+
+</style>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private string _profileName = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        _profileName = EquipmentConfiguratorUiService.Profile.Name;
+    }
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private Task SaveProfileName()
+    {
+        return EquipmentConfiguratorUiService.UpdateProfileNameAsync(_profileName);
+    }
+
+    private async Task DeleteProfile()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.Common_DeleteConfirmation, EquipmentConfiguratorUiService.Profile.Name],
+            Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null && result.Value)
+        {
+            await PersistenceService.DeleteAsync(EquipmentConfiguratorUiService.Profile.Id);
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH, false, true);
+        }
+    }
+
+}

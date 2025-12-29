@@ -32,14 +32,20 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "RGVmaW5pdGlvbklkGAQgASgJEhEKCWFiaWxpdGllcxgKIAMoCRImCgpzdGF0",
             "Qm9vc3RzGAsgAygLMhIuUmVsaWNTdGF0Qm9vc3REdG8iYQoRUmVsaWNTdGF0",
             "Qm9vc3REdG8SIQoKc3RhdEJvb3N0cxgBIAEoCzINLlN0YXRCb29zdER0bxIp",
-            "CiFyZWxpY0Jvb3N0QWdlTW9kaWZpZXJEZWZpbml0aW9uSWQYAiABKAlCH6oC",
-            "HEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "CiFyZWxpY0Jvb3N0QWdlTW9kaWZpZXJEZWZpbml0aW9uSWQYAiABKAki2QEK",
+            "IlJlbGljQm9vc3RBZ2VNb2RpZmllckRlZmluaXRpb25EVE8SCgoCaWQYASAB",
+            "KAkSZQoZbW9kaWZpZXJCeUFnZURlZmluaXRpb25JZBgCIAMoCzJCLlJlbGlj",
+            "Qm9vc3RBZ2VNb2RpZmllckRlZmluaXRpb25EVE8uTW9kaWZpZXJCeUFnZURl",
+            "ZmluaXRpb25JZEVudHJ5GkAKHk1vZGlmaWVyQnlBZ2VEZWZpbml0aW9uSWRF",
+            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAI6AjgBQh+qAhxJbmd3",
+            "ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.StatBoostDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.RelicDefinitionDTO.Parser, new[]{ "Id", "Rarity", "LevelData" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicLevelDto), global::Ingweland.Fog.Inn.Models.Hoh.RelicLevelDto.Parser, new[]{ "Ascension", "Level", "AscensionLevel", "RelicCostDefinitionId", "Abilities", "StatBoosts" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicStatBoostDto), global::Ingweland.Fog.Inn.Models.Hoh.RelicStatBoostDto.Parser, new[]{ "StatBoosts", "RelicBoostAgeModifierDefinitionId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicStatBoostDto), global::Ingweland.Fog.Inn.Models.Hoh.RelicStatBoostDto.Parser, new[]{ "StatBoosts", "RelicBoostAgeModifierDefinitionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.RelicBoostAgeModifierDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.RelicBoostAgeModifierDefinitionDTO.Parser, new[]{ "Id", "ModifierByAgeDefinitionId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -879,6 +885,222 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 18: {
             RelicBoostAgeModifierDefinitionId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class RelicBoostAgeModifierDefinitionDTO : pb::IMessage<RelicBoostAgeModifierDefinitionDTO>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RelicBoostAgeModifierDefinitionDTO> _parser = new pb::MessageParser<RelicBoostAgeModifierDefinitionDTO>(() => new RelicBoostAgeModifierDefinitionDTO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RelicBoostAgeModifierDefinitionDTO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.RelicDefinitionDtoReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicBoostAgeModifierDefinitionDTO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicBoostAgeModifierDefinitionDTO(RelicBoostAgeModifierDefinitionDTO other) : this() {
+      id_ = other.id_;
+      modifierByAgeDefinitionId_ = other.modifierByAgeDefinitionId_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RelicBoostAgeModifierDefinitionDTO Clone() {
+      return new RelicBoostAgeModifierDefinitionDTO(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "modifierByAgeDefinitionId" field.</summary>
+    public const int ModifierByAgeDefinitionIdFieldNumber = 2;
+    private static readonly pbc::MapField<string, float>.Codec _map_modifierByAgeDefinitionId_codec
+        = new pbc::MapField<string, float>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForFloat(21, 0F), 18);
+    private readonly pbc::MapField<string, float> modifierByAgeDefinitionId_ = new pbc::MapField<string, float>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<string, float> ModifierByAgeDefinitionId {
+      get { return modifierByAgeDefinitionId_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RelicBoostAgeModifierDefinitionDTO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RelicBoostAgeModifierDefinitionDTO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (!ModifierByAgeDefinitionId.Equals(other.ModifierByAgeDefinitionId)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      hash ^= ModifierByAgeDefinitionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      modifierByAgeDefinitionId_.WriteTo(output, _map_modifierByAgeDefinitionId_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      modifierByAgeDefinitionId_.WriteTo(ref output, _map_modifierByAgeDefinitionId_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      size += modifierByAgeDefinitionId_.CalculateSize(_map_modifierByAgeDefinitionId_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RelicBoostAgeModifierDefinitionDTO other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      modifierByAgeDefinitionId_.MergeFrom(other.modifierByAgeDefinitionId_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            modifierByAgeDefinitionId_.AddEntriesFrom(input, _map_modifierByAgeDefinitionId_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            modifierByAgeDefinitionId_.AddEntriesFrom(ref input, _map_modifierByAgeDefinitionId_codec);
             break;
           }
         }

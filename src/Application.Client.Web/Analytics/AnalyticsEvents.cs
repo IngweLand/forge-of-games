@@ -17,6 +17,8 @@ public static class AnalyticsEvents
     public const string OPEN_CITY_STRATEGIES_DASHBOARD = "open_city_strategies_dashboard";
     public const string OPEN_CITY_STRATEGY = "open_city_strategy";
     public const string OPEN_CITY_VIEWER = "open_city_viewer";
+    public const string OPEN_EQUIPMENT_CONFIGURATOR = "open_equip_conf";
+    public const string OPEN_EQUIPMENT_CONFIGURATOR_DASHBOARD = "open_equip_conf_dashboard";
     public const string PICK_ABILITY_TARGET_LEVEL = "pick_ability_target_level";
     public const string PICK_HERO_TARGET_LEVEL = "pick_hero_target_level";
     public const string SELECT_HERO_BATTLE_TYPE = "select_hero_battle_type";

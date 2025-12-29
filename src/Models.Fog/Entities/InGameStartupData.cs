@@ -10,6 +10,7 @@ public class InGameStartupData
     public IReadOnlyCollection<HohCity>? Cities { get; init; }
     public IReadOnlyCollection<EquipmentItem>? Equipment { get; init; }
     public BasicCommandCenterProfile? Profile { get; init; }
+    public IReadOnlyCollection<RelicItem>? Relics { get; init; }
 
     public IReadOnlyDictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>> ResearchState { get; init; } =
         new Dictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>();

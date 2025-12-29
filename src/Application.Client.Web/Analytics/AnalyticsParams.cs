@@ -10,6 +10,7 @@ public static class AnalyticsParams
     public const string CITY_ID = "city_id";
     public const string CITY_PLANNER_LAYOUT_ID = "cp_layout_id";
     public const string CITY_STRATEGY_ID = "city_strategy_id";
+    public const string EQUIPMENT_PROFILE_ID = "equip_profile_id";
     public const string EXPANSIONS = "expansions";
     public const string FOG_ALLIANCE_ID = "fog_alliance_id";
     public const string FOG_BATTLE_ID = "fog_battle_id";

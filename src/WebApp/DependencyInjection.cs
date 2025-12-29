@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
@@ -23,10 +24,9 @@ internal static class DependencyInjection
 
         services.AddSingleton<IStartupTask, PreloadDataStartupTask>();
         services.AddSingleton<IProtobufResponseFactory, ProtobufResponseFactory>();
-        
+
         services.AddHostedService<StartupTaskHostedService>();
-        
-        services.AddScoped<CityPlannerNavigationState>();
+
         services.AddScoped<IClientLocaleService, DummyClientLocaleService>();
         services.AddScoped<IPersistenceService, DummyPersistenceService>();
         services.AddScoped<IInGameStartupDataService, DummyInGameStartupDataService>();
@@ -35,6 +35,9 @@ internal static class DependencyInjection
         services.AddScoped<ICommandCenterSharingService, DummyCommandCenterSharingService>();
         services.AddScoped<ILocalStorageBackupService, DummyLocalStorageBackupService>();
         services.AddScoped<IFogSharingService, DummyFogSharingService>();
+        services.AddScoped<IEquipmentProfilePersistenceService, DummyEquipmentProfilePersistenceService>();
+
+        services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IMainMenuService, MainMenuService>();
         services.AddScoped<IPageMetadataService, PageMetadataService>();
     }
@@ -59,7 +62,7 @@ internal static class DependencyInjection
                             .SetRefreshInterval(TimeSpan.FromMinutes(4));
                     });
             });
-            
+
             builder.Services.AddAzureAppConfiguration();
         }
 

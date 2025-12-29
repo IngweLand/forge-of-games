@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -9,16 +10,27 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class ImportInGameStartupDataPage : FogPageBase
 {
+    private EquipmentProfileImportMethod _equipmentProfileImportMethod = EquipmentProfileImportMethod.New;
+    private string? _equipmentProfileName;
+    private IReadOnlyCollection<EquipmentProfileBasicData> _equipmentProfiles = [];
     private InGameStartupData? _inGameStartupData;
     private bool _isImporting = true;
     private bool _isLoading = true;
-    private bool _shouldImportCities = true;
-    private bool _shouldImportEquipment = true;
-    private bool _shouldImportProfile = true;
-    private bool _shouldImportResearchState = true;
+    private EquipmentProfileBasicData? _selectedEquipmentProfile;
+    private bool _shouldImportCities;
+    private bool _shouldImportEquipment;
+    private bool _shouldImportEquipmentProfile;
+    private bool _shouldImportProfile;
+    private bool _shouldImportResearchState;
 
-    private bool _canImport =>
-        _shouldImportCities | _shouldImportProfile | _shouldImportEquipment | _shouldImportResearchState;
+    private bool _canImport => _shouldImportCities | _shouldImportProfile | _shouldImportEquipment |
+        _shouldImportResearchState | _shouldImportEquipmentProfile;
+
+    [Inject]
+    private IEquipmentProfilePersistenceService EquipmentPersistenceService { get; set; }
+
+    [Inject]
+    private ILogger<ImportInGameStartupDataPage> Logger { get; set; }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
@@ -41,11 +53,13 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         try
         {
             _inGameStartupData = await StartupDataService.GetImportedInGameDataAsync(InGameStartupDataId!);
+            _equipmentProfiles = await EquipmentPersistenceService.GetProfiles();
+            _selectedEquipmentProfile = _equipmentProfiles.FirstOrDefault();
             _isLoading = false;
         }
         catch (Exception e)
         {
-            //ignore
+            Logger.LogError(e, "Error initializing.");
         }
     }
 
@@ -75,14 +89,29 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         {
             foreach (var kvp in _inGameStartupData.ResearchState)
             {
-                var unlocked = kvp.Value.Where(x => x.State == TechnologyState.Unlocked).Select(x => x.TechnologyId).ToList();
-                if(unlocked.Count == 0)
+                var unlocked = kvp.Value.Where(x => x.State == TechnologyState.Unlocked).Select(x => x.TechnologyId)
+                    .ToList();
+                if (unlocked.Count == 0)
                 {
                     continue;
                 }
+
                 await PersistenceService.SaveOpenTechnologies(kvp.Key, unlocked);
             }
-           
+        }
+
+        if (_shouldImportEquipmentProfile && _inGameStartupData is {Equipment: {Count: > 0}, Profile: not null})
+        {
+            string? profileId = null;
+            if (_equipmentProfileImportMethod == EquipmentProfileImportMethod.Sync)
+            {
+                profileId = _selectedEquipmentProfile?.Id;
+            }
+
+            await EquipmentPersistenceService.UpsertProfileAsync(profileId, _equipmentProfileName,
+                _inGameStartupData.Profile.Heroes.AsReadOnly(),
+                _inGameStartupData.Relics ?? [], _inGameStartupData.Equipment,
+                _inGameStartupData.Profile.BarracksProfile);
         }
 
         _isImporting = false;
@@ -101,5 +130,11 @@ public partial class ImportInGameStartupDataPage : FogPageBase
 
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
         }
+    }
+
+    private enum EquipmentProfileImportMethod
+    {
+        New,
+        Sync,
     }
 }

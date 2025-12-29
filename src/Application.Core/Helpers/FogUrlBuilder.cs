@@ -49,7 +49,7 @@ public static class FogUrlBuilder
         public const string PLAYER_WONDER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/wonderRankings";
         public const string PLAYER_CITY_STRATEGIES_REFIT = PLAYER_TEMPLATE_REFIT + "/cityStrategies";
         public const string PLAYER_CITY_STRATEGIES = PLAYER_TEMPLATE + "/cityStrategies";
-        
+
         public const string PLAYER_CITY_STRATEGY_REFIT = "/playerCityStrategies/{strategyId}";
         public const string PLAYER_CITY_STRATEGY = "/playerCityStrategies/{strategyId:int}";
 
@@ -177,9 +177,19 @@ public static class FogUrlBuilder
         public const string COMMAND_CENTER_PROFILES_PATH = BASE_COMMAND_CENTER_PATH + "/profiles";
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
         public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
+
+        public const string COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_TEMPLATE =
+            BASE_COMMAND_CENTER_PATH + "/equipment-configurator/app/{profileId}";
+
+        public const string COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH =
+            BASE_COMMAND_CENTER_PATH + "/equipment-configurator";
+
         public const string MY_BATTLES_PATH = BASE_COMMAND_CENTER_PATH + "/my-battles";
 
         public const string GET_SHARED_STRATEGY_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/shares/{shareId}";
+
+        public const string GET_SHARED_EQUIPMENT_PROFILE_TEMPLATE =
+            COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH + "/shares/{shareId}";
 
         public static string Player(int id)
         {
@@ -249,6 +259,11 @@ public static class FogUrlBuilder
         public static string CityStrategy(string strategyId)
         {
             return CITY_STRATEGY_APP_TEMPLATE.Replace("{strategyId}", strategyId);
+        }
+
+        public static string EquipmentProfile(string profileId)
+        {
+            return COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_TEMPLATE.Replace("{profileId}", profileId);
         }
 
         public static string WorldEventCity(string worldId)

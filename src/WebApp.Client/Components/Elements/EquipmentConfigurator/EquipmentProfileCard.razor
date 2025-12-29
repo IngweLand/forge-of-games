@@ -1,0 +1,20 @@
+@using Ingweland.Fog.Models.Fog.Entities
+<div class="command-center-card" @onclick="() => OnClick.InvokeAsync(Profile.Id)">
+    <div class="main-container">
+        <span class="profile-name">@Profile.Name</span>
+    </div>
+    <div class="bottom-container">
+        <span class="updated-at">@Profile.UpdatedAt.ToString("g")</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required EquipmentProfileBasicData Profile { get; init; }
+
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+
+}

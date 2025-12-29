@@ -1,0 +1,82 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_TEMPLATE)]
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.EquipmentConfigurator
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@using Size = MudBlazor.Size
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="component-root">
+    @if (_heroes != null)
+    {
+        <div class="fog-container top-container">
+            <div class="horizontal-layout">
+                <span class="profile-name">@EquipmentConfiguratorUiService.Profile.Name</span>
+                <MudSpacer/>
+                <MudIconButton Icon="@Icons.Material.Outlined.IosShare" OnClick="@ShareProfile"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.Settings" OnClick="@OpenSettings"/>
+            </div>
+            <div class="filter-container">
+                <HeroFilterComponent FilterRequest="@_filterRequest" OnFilterChanged="@OnFilterChanged"
+                                     CanSearchByName="false" CanUseTags="false"/>
+            </div>
+
+        </div>
+        <div class="equipment-slots-container">
+            <div class="hero-equipment-configuration-layout">
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Hand)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Garment)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Hat)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Neck)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Ring)"/>
+                </div>
+            </div>
+        </div>
+        <div class="heroes-container">
+            @foreach (var hero in _heroes)
+            {
+                <div class="fog-container hero-container">
+                    <HeroBasicItem Hero="@hero.Hero"/>
+                    <div class="hero-equipment">
+                        @foreach (var heroEquipment in hero.Equipment)
+                        {
+                            <EquipmentConfigurationItemComponent EquipmentConfiguration="@heroEquipment"
+                                                                 OnDuplicate="@DuplicateConfiguration"
+                                                                 OnEdit="@EditConfiguration"
+                                                                 OnDelete="@DeleteConfiguration"/>
+                        }
+                        <MudFab Color="Color.Success" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small"
+                                OnClick="@(() => CreateEquipmentConfiguration(hero))"/>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <MudButton Style="align-self: center; justify-self: center" Variant="Variant.Filled"
+                   OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_IMPORTING_IN_GAME_DATA_PATH))">
+            @Loc[FogResource.Equipment_ImportEquipment]
+        </MudButton>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public string ProfileId { get; set; }
+
+}

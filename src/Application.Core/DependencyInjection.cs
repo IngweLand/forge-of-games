@@ -23,9 +23,9 @@ public static class DependencyInjection
         services.AddSingleton<ICityCalculators, CityCalculators>();
         services.AddSingleton<ITimeFormatters, TimeFormatters>();
         services.AddSingleton<ICityExpansionsHasher, CityExpansionsHasher>();
-
         services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
         services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
+        services.AddSingleton<IEquipmentStatsCalculators, EquipmentStatsCalculators>();
         services.AddSingleton<InitCityConfigs>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();

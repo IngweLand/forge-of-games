@@ -5,6 +5,7 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Caching;
 using Ingweland.Fog.Shared.Helpers;

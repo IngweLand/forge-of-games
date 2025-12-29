@@ -7,6 +7,7 @@ using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Rewards;
@@ -112,6 +113,10 @@ public class MappingProfile : Profile
         CreateMap<RelicLevelDto, RelicLevel>()
             .ForMember(dest => dest.Boosts, opt => opt.MapFrom(src => src.StatBoosts));
         CreateMap<RelicStatBoostDto, RelicStatBoost>();
+        CreateMap<RelicBoostAgeModifierDefinitionDTO, IDictionary<string, float>>()
+            .ConvertUsing((src, _, _) =>
+                src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key), x => x.Value)
+            );
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -288,6 +293,13 @@ public class MappingProfile : Profile
         CreateMap<RelicDefinitionDTO, Relic>()
             .ForMember(dest => dest.Rarity,
                 opt => opt.ConvertUsing<RelicRarityValueConverter, string>(src => src.Rarity));
+        CreateMap<EquipmentSetDefinitionDTO, EquipmentSetDefinition>()
+            .ForMember(dest => dest.Id,
+                opt => opt.MapFrom(src => HohStringParser.ParseEnumFromString<EquipmentSet>(src.Id)))
+            .ForMember(dest => dest.Group,
+                opt => opt.MapFrom(src =>
+                    HohStringParser.ParseEnumFromString<EquipmentSlotGroup>(src.EquipmentSlotGroupDefinitionId)))
+            .ForMember(dest => dest.BonusBoosts, opt => opt.MapFrom(src => src.SetBonusBoosts));
 
         // localization
         CreateMap<LocaResponse, LocalizationData>()

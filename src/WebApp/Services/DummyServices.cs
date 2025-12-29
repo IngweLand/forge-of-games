@@ -1,9 +1,11 @@
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
@@ -158,6 +160,11 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
+    public ValueTask RemoveItemAsync(string key)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<T?> GetItemAsync<T>(string key)
     {
         throw new NotImplementedException();
@@ -300,6 +307,37 @@ internal class DummyFogSharingService : IFogSharingService
     }
 
     public Task<SharedDataDto?> GetAsync(string shareId)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+internal class DummyEquipmentProfilePersistenceService : IEquipmentProfilePersistenceService
+{
+    public Task UpsertProfileAsync(string? profileId, string? profileName,
+        IReadOnlyCollection<HeroProfileIdentifier> heroes, IReadOnlyCollection<RelicItem> relics,
+        IReadOnlyCollection<EquipmentItem> equipment,
+        BarracksProfile barracksProfile)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveAsync(EquipmentProfile profile)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<EquipmentProfile?> GetAsync(string profileId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask DeleteAsync(string profileId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask<IReadOnlyCollection<EquipmentProfileBasicData>> GetProfiles()
     {
         throw new NotImplementedException();
     }

@@ -38,4 +38,16 @@ public static class NumericValueExtensions
             _ => value.ToString(CultureInfo.InvariantCulture),
         };
     }
+    
+    public static string ToFormatedString2(this NumericValueType src, float value)
+    {
+        return src switch
+        {
+            NumericValueType.Duration => $"{Math.Round(value, 2, MidpointRounding.AwayFromZero)} s",
+            NumericValueType.Percentage => $"{Math.Round(value * 100, 2)} %",
+            NumericValueType.Speed => Math.Round(DEFAULT_HITS_PER_MINUTE * value, MidpointRounding.AwayFromZero)
+                .ToString(CultureInfo.InvariantCulture),
+            _ => Math.Round(value, MidpointRounding.AwayFromZero).ToString(CultureInfo.InvariantCulture),
+        };
+    }
 }

@@ -8,5 +8,5 @@ public interface ISquadEquipmentItemViewModelFactory
 {
     SquadEquipmentItemViewModel Create(SquadEquipmentItem src,
         IReadOnlyDictionary<StatAttribute, string> statAttributes,
-        IReadOnlyDictionary<EquipmentSet, string> sets);
+        IReadOnlyDictionary<string, string> sets);
 }

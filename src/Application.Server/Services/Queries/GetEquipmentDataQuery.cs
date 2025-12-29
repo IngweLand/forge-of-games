@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Equipment;
 using MediatR;
 
@@ -11,12 +12,13 @@ public record GetEquipmentDataQuery : IRequest<EquipmentDataDto>, ICacheableRequ
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetEquipmentDataQueryHandler(IEquipmentDataDtoFactory equipmentDataDtoFactory)
+public class GetEquipmentDataQueryHandler(IEquipmentDataDtoFactory equipmentDataDtoFactory, IHohCoreDataRepository hohCoreDataRepository)
     : IRequestHandler<GetEquipmentDataQuery, EquipmentDataDto>
 {
-    public Task<EquipmentDataDto> Handle(GetEquipmentDataQuery request,
+    public async Task<EquipmentDataDto> Handle(GetEquipmentDataQuery request,
         CancellationToken cancellationToken)
     {
-        return Task.FromResult(equipmentDataDtoFactory.Create());
+        var sets = await hohCoreDataRepository.GetEquipmentSetDefinitionsAsync();
+        return equipmentDataDtoFactory.Create(sets);
     }
 }

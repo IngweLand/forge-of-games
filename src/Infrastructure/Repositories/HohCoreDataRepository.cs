@@ -3,6 +3,7 @@ using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
@@ -106,6 +107,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     {
         var data = await dataProvider.GetDataAsync();
         return data.Relics;
+    }
+
+    public async Task<IReadOnlyCollection<EquipmentSetDefinition>> GetEquipmentSetDefinitionsAsync()
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.EquipmentSetDefinitions;
     }
 
     public async Task<IReadOnlyCollection<Building>> GetBuildingsAsync(CityId cityId)

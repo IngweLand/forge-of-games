@@ -93,6 +93,12 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                 {
                     new()
                     {
+                        Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH,
+                        ResourceKey = FogResource.CommandCenter_Menu_EquipmentConfigurator,
+                        Icon = GetIconString(assetUrlProvider.GetIconUrl("icon_equipment_configurator")),
+                    },
+                    new()
+                    {
                         Href = FogUrlBuilder.PageRoutes.COMMAND_CENTER_PROFILES_PATH,
                         ResourceKey = FogResource.CommandCenter_Menu_Profiles,
                         Icon = GetIconString(

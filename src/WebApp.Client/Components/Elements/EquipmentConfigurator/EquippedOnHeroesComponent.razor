@@ -1,0 +1,22 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
+<div class="heroes-container">
+    @if (Equipment.EquippedOnHeroes.Count > 1 || (CanShowSingleHero && Equipment.EquippedOnHeroes.Count > 0))
+    {
+        @foreach (var hero in Equipment.EquippedOnHeroes)
+        {
+            <img class="hero-avatar" src="@hero.PortraitUrl"/>
+        }
+    }
+
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public EquipmentItemViewModel2 Equipment { get; set; }
+
+    [Parameter]
+    public bool CanShowSingleHero { get; set; }
+
+}

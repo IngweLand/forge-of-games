@@ -24,43 +24,9 @@ public class HeroProfileViewModelFactory(
     IHohHeroLevelSpecsProvider heroLevelSpecsProvider,
     IHeroSupportUnitViewModelFactory heroSupportUnitViewModelFactory,
     IHeroAbilityViewModelFactory abilityViewModelFactory,
-    IBuildingLevelSpecsFactory buildingLevelSpecsFactory) : IHohHeroProfileViewModelFactory
+    IBuildingLevelSpecsFactory buildingLevelSpecsFactory,
+    IUnitStatsViewModelFactory unitStatsViewModelFactory) : IHohHeroProfileViewModelFactory
 {
-    private const int DEFAULT_HITS_PER_MINUTE = 60;
-
-    private static readonly List<UnitStatType> MainDisplayedStats =
-    [
-        UnitStatType.Attack,
-        UnitStatType.Defense,
-        UnitStatType.MaxHitPoints,
-        UnitStatType.BaseDamage,
-    ];
-
-    private static readonly List<UnitStatType> DisplayedStats =
-    [
-        UnitStatType.Attack,
-        UnitStatType.Defense,
-        UnitStatType.MaxHitPoints,
-        UnitStatType.BaseDamage,
-        UnitStatType.AttackSpeed,
-        UnitStatType.Evasion,
-        UnitStatType.CritChance,
-        UnitStatType.CritDamage,
-        UnitStatType.SingleTargetDamageAmp,
-        UnitStatType.AoeDamageAmp,
-        UnitStatType.BasicAttackDamageAmp,
-        UnitStatType.HealTakenAmp,
-    ];
-
-    private static readonly HashSet<UnitStatType> PercentageBasedStats =
-    [
-        UnitStatType.CritChance,
-        UnitStatType.CritDamage,
-        UnitStatType.SingleTargetDamageAmp,
-        UnitStatType.HealTakenAmp,
-        UnitStatType.Evasion,
-    ];
-
     public HeroProfileBasicViewModel CreateBasic(ProfileSquadDto squad, HeroDto hero)
     {
         return CreateBasicInternal(squad.Hero, squad.SupportUnit, hero);
@@ -103,8 +69,8 @@ public class HeroProfileViewModelFactory(
             AbilityLevels = Enumerable.Range(1, hero.Ability.Levels.Count).ToList(),
             AwakeningLevels = Enumerable.Range(0, 6).ToList(),
             BarracksLevels = barracks.Select(buildingLevelSpecsFactory.Create).OrderBy(b => b.Level).ToList(),
-            StatsItems = CreateMainStatsItems(profile.Stats),
-            StatsBreakdown = CreateStatsBreakdownItems(profile.StatsBreakdown),
+            StatsItems = unitStatsViewModelFactory.CreateMainStatsItems(profile.Stats),
+            StatsBreakdown = unitStatsViewModelFactory.CreateStatsBreakdownItems(profile.StatsBreakdown),
             VideoUrl = assetUrlProvider.GetHohUnitVideoUrl(profile.Identifier.HeroId),
             Ability = abilityViewModelFactory.Create(hero.Ability, profile.Identifier.AbilityLevel,
                 profile.AbilityChargeTime, profile.AbilityInitialChargeTime),
@@ -141,66 +107,5 @@ public class HeroProfileViewModelFactory(
         return profileViewModel;
     }
 
-    private ReadOnlyCollection<IconLabelItemViewModel> CreateMainStatsItems(
-        IReadOnlyDictionary<UnitStatType, float> stats)
-    {
-        var list = new List<IconLabelItemViewModel>();
-        foreach (var stat in MainDisplayedStats)
-        {
-            if (!stats.TryGetValue(stat, out var value))
-            {
-                continue;
-            }
-
-            list.Add(new IconLabelItemViewModel
-            {
-                IconUrl = assetUrlProvider.GetHohUnitStatIconUrl(stat),
-                Label = UnitStatToString(stat, value),
-            });
-        }
-
-        return list.AsReadOnly();
-    }
-
-    private ReadOnlyCollection<UnitStatBreakdownViewModel> CreateStatsBreakdownItems(
-        IReadOnlyDictionary<UnitStatType, IReadOnlyDictionary<UnitStatSource, float>> stats)
-    {
-        var list = new List<UnitStatBreakdownViewModel>();
-        foreach (var stat in DisplayedStats)
-        {
-            if (!stats.TryGetValue(stat, out var breakdown) || breakdown.Count == 0)
-            {
-                continue;
-            }
-
-            list.Add(new UnitStatBreakdownViewModel
-            {
-                IconUrl = assetUrlProvider.GetHohUnitStatIconUrl(stat),
-                Values = breakdown.ToDictionary(kvp => kvp.Key, kvp => UnitStatToString(stat, kvp.Value)),
-                TotalValue = UnitStatToString(stat, breakdown.Values.Sum(v => v)),
-            });
-        }
-
-        return list.AsReadOnly();
-    }
-
-    private static string UnitStatToString(UnitStatType stat, float value)
-    {
-        string label;
-        if (stat == UnitStatType.AttackSpeed)
-        {
-            label = Math.Round(DEFAULT_HITS_PER_MINUTE * value, MidpointRounding.AwayFromZero)
-                .ToString(CultureInfo.InvariantCulture);
-        }
-        else if (PercentageBasedStats.Contains(stat))
-        {
-            label = value.ToString("P1");
-        }
-        else
-        {
-            label = Math.Round(value, MidpointRounding.AwayFromZero).ToString(CultureInfo.InvariantCulture);
-        }
-
-        return label;
-    }
+    
 }

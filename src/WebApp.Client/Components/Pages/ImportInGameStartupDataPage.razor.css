@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -10,7 +10,7 @@
     color: var(--fog-text-on-background-color);
 }
 
-.section-container{
+.section-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -21,4 +21,12 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.equipment-profile-options {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding-left: 24px;
 }

@@ -14,35 +14,48 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
     {
         var currentPageUri = new Uri(navigationManager.Uri);
         var currentPageAbsolutePath = currentPageUri.AbsolutePath;
-
-        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH))
-        {
-            return new PageMetadata
-            {
-                PageTitle = localizer[FogResource.CommandCenter_Equipment_PageTitle],
-                Description = localizer[FogResource.CommandCenter_Equipment_Meta_Description],
-                Keywords = localizer[FogResource.CommandCenter_Equipment_Meta_Keywords],
-                Title = localizer[FogResource.CommandCenter_Equipment_Title],
-                CurrentHomePath = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
-                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH,
-            };
-        }
-        
-        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.MY_BATTLES_PATH))
-        {
-            return new PageMetadata
-            {
-                PageTitle = localizer[FogResource.CommandCenter_MyBattles_PageTitle],
-                Description = localizer[FogResource.CommandCenter_MyBattles_Meta_Description],
-                Keywords = localizer[FogResource.CommandCenter_MyBattles_Meta_Keywords],
-                Title = localizer[FogResource.CommandCenter_MyBattles_Title],
-                CurrentHomePath = FogUrlBuilder.PageRoutes.MY_BATTLES_PATH,
-                HelpPagePath = FogUrlBuilder.PageRoutes.HELP_MY_BATTLES_PATH,
-            };
-        }
-
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_COMMAND_CENTER_PATH))
         {
+            if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH)
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CommandCenter_Equipment_PageTitle],
+                    Description = localizer[FogResource.CommandCenter_Equipment_Meta_Description],
+                    Keywords = localizer[FogResource.CommandCenter_Equipment_Meta_Keywords],
+                    Title = localizer[FogResource.CommandCenter_Equipment_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_EQUIPMENT_PATH,
+                };
+            }
+
+            if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.MY_BATTLES_PATH)
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CommandCenter_MyBattles_PageTitle],
+                    Description = localizer[FogResource.CommandCenter_MyBattles_Meta_Description],
+                    Keywords = localizer[FogResource.CommandCenter_MyBattles_Meta_Keywords],
+                    Title = localizer[FogResource.CommandCenter_MyBattles_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.MY_BATTLES_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_MY_BATTLES_PATH,
+                };
+            }
+
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes
+                    .COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH))
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CommandCenter_EquipmentConfigurator_PageTitle],
+                    Description = localizer[FogResource.CommandCenter_EquipmentConfigurator_Meta_Description],
+                    Keywords = localizer[FogResource.CommandCenter_EquipmentConfigurator_Meta_Keywords],
+                    Title = localizer[FogResource.CommandCenter_EquipmentConfigurator_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.BASE_HELP_PATH,
+                };
+            }
+
             return new PageMetadata
             {
                 PageTitle = localizer[FogResource.CommandCenter_PageTitle],
@@ -81,7 +94,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_PLAYER_PROFILE_PATH,
                 };
             }
-            
+
             if (!currentPageAbsolutePath.Contains("worlds") && currentPageAbsolutePath.Contains("alliances"))
             {
                 return new PageMetadata
@@ -94,7 +107,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_ALLIANCE_PROFILE_PATH,
                 };
             }
-            
+
             return new PageMetadata
             {
                 PageTitle = localizer[FogResource.StatsHub_PageTitle],
@@ -170,7 +183,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH,
                 };
             }
-            
+
             if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH))
             {
                 return new PageMetadata
@@ -183,7 +196,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
                 };
             }
-            
+
             return new PageMetadata
             {
                 PageTitle = localizer[FogResource.CityPlanner_PageTitle],

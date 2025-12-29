@@ -1,6 +1,7 @@
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
@@ -39,4 +40,5 @@ public interface IHohCoreDataRepository
     Task<World?> GetWorldAsync(WorldId id);
     Task<IReadOnlyCollection<Resource>> GetResources();
     Task<IReadOnlyCollection<Relic>> GetRelicsAsync();
+    Task<IReadOnlyCollection<EquipmentSetDefinition>> GetEquipmentSetDefinitionsAsync();
 }

@@ -4,6 +4,7 @@ namespace Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 
 public interface IAssetUrlProvider
 {
+    string GetHohEquipmentIconUrl(EquipmentSet equipmentSet, EquipmentSlotType slot);
     string GetHohHeroAbilityIconUrl(string heroAbilityId);
     string GetHohIconUrl(string assetId, string extension);
     string GetHohIconUrl(string assetId);

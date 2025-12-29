@@ -1,0 +1,74 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    min-height: 0;
+}
+
+.filter-container {
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.internal-content-container {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, auto) 40px minmax(220px, 1fr) minmax(220px, auto);
+    column-gap: 24px;
+    min-height: 0;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: auto;
+    min-height: 0;
+}
+
+.equipment-item {
+    border-color: var(--fog-border-color-darker) !important;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px;
+    overflow: auto;
+    min-height: 0;
+}
+
+.hero-avatar {
+    height: 32px;
+    align-self: center;
+}
+
+.equipment-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    padding: 12px;
+    overflow: auto;
+    min-height: 0;
+    height: 100%;
+}
+
+.current-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    align-items: stretch;
+}
+
+.equipment-set-container {
+    align-self: center;
+}
+
+.swap-btn-container {
+    display: flex;
+    align-items: center;
+}

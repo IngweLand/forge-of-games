@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
@@ -29,6 +30,7 @@ internal static class DependencyInjection
         services.AddScoped<IMainMenuService, MainMenuService>();
         services.AddScoped<IPageMetadataService, PageMetadataService>();
         services.AddScoped<ILocalStorageBackupService, LocalStorageBackupService>();
+        services.AddScoped<IEquipmentProfilePersistenceService, EquipmentProfilePersistenceService>();
 
         var refitSettings = new RefitSettings
         {

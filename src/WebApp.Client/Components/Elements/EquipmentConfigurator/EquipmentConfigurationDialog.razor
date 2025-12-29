@@ -1,0 +1,188 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IEquipmentConfiguratorUiService EquipmentConfiguratorUiService
+@inject IStringLocalizer<FogResource> Loc
+@inject IEquipmentUiService EquipmentUiService
+<MudDialog>
+    <DialogContent>
+        <div class="component-root">
+            <div class="fog-container filter-container">
+                <EquipmentFilterComponent OnFilterChanged="@OnFilterChanged"/>
+            </div>
+            <div class="internal-content-container">
+                <div class="items-container">
+                    @foreach (var ei in _equipmentItems)
+                    {
+                        <div class="fog-container equipment-item">
+                            <EquipmentItemComponent Equipment="@ei" OnClick="@OnEquipmentItemClicked"
+                                                    CanShowSingleHero="true"/>
+                        </div>
+                    }
+                </div>
+                <div class="fog-container  equipment-item-container">
+                    @if (_selectedEquipment != null)
+                    {
+                        @RenderItem(_selectedEquipment, true)
+                    }
+                </div>
+                <div class="swap-btn-container">
+                    <MudFab Color="Color.Success" StartIcon="@Icons.Material.Outlined.SwapHoriz" Size="Size.Small"
+                            OnClick="@Swap" Disabled="@(_selectedEquipment == null)"/>
+                </div>
+                <div class="current-item-container">
+                    <EquipmentSlotTypeWithSetSelector Items="@_equipmentSlotTypes" SelectedSlotType="@_currentSlot"
+                                                      OnBattleTypeChanged="@OnEquipmentSlotTypeChanged"/>
+                    <div class="fog-container equipment-item-container">
+                        @if (_currentEquipment != null)
+                        {
+                            @RenderItem(_currentEquipment)
+                            <MudSpacer/>
+                            <MudFab Color="Color.Error" StartIcon="@Icons.Material.Outlined.Delete" Size="Size.Small"
+                                    OnClick="@RemoveEquipment" Style="align-self: center"/>
+                        }
+                    </div>
+                </div>
+
+                <div class="fog-container stats-container">
+                    <img class="hero-avatar" src="@EquipmentConfiguration.Hero.PortraitUrl"/>
+                    @foreach (var stat in EquipmentConfiguration.Stats)
+                    {
+                        <HorizontalIconWithLabelsComponent Item="@stat" Size="Size.Small"/>
+                    }
+                </div>
+            </div>
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="@Close">@Loc[FogResource.Common_Close]</MudButton>
+    </DialogActions>
+</MudDialog>
+<style>
+
+    .mud-dialog-content {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+
+</style>
+
+@code {
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private IReadOnlyCollection<EquipmentItemViewModel2> _equipmentItems = [];
+    private EquipmentFilterRequest _currentRequest = EquipmentFilterRequest.Empty;
+    private EquipmentSlotType _currentSlot = EquipmentSlotType.Hand;
+    private EquipmentItemViewModel2? _currentEquipment;
+    private EquipmentItemViewModel2? _selectedEquipment;
+    private IReadOnlyCollection<EquipmentSlotWithSetViewModel> _equipmentSlotTypes = [];
+
+    [Parameter]
+    [EditorRequired]
+    public required EquipmentConfigurationViewModel EquipmentConfiguration { get; set; }
+
+    private RenderFragment RenderItem(EquipmentItemViewModel2 equipment, bool canShowSingleHero = false) => __builder =>
+    {
+        <div class="equipment-set-container">
+            <EquipmentSetComponent Size="Size.Small"
+                                   Rarity="@equipment.EquipmentItem.EquipmentRarity"
+                                   EquipmentSet="@equipment.EquipmentSet"
+                                   Level="@equipment.EquipmentItem.Level"/>
+        </div>
+        <HorizontalIconWithLabelsComponent Item="@equipment.MainAttribute" Size="Size.Small"/>
+        @foreach (var stat in equipment.SubAttributes)
+        {
+            <HorizontalIconWithLabelsComponent Item="@stat" Size="Size.Small"/>
+        }
+
+        <EquippedOnHeroesComponent Equipment="@equipment" CanShowSingleHero="@canShowSingleHero"/>
+    };
+
+    private async Task Swap()
+    {
+        (_selectedEquipment, _currentEquipment) = (_currentEquipment, _selectedEquipment);
+        UpdateSlotSelectionItems();
+        await EquipmentConfiguratorUiService.SetEquipmentAsync(EquipmentConfiguration, _currentSlot, _currentEquipment);
+        if (_currentRequest.HideEquipped)
+        {
+            GetItems();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        _equipmentSlotTypes = await EquipmentConfiguratorUiService.GetEquipmentSlotTypesAsync(EquipmentConfiguration);
+        _currentEquipment = EquipmentConfiguration.Get(_currentSlot);
+        GetItems();
+    }
+
+    private void GetItems()
+    {
+        _equipmentItems = EquipmentConfiguratorUiService.GetEquipment(_currentSlot, _currentRequest);
+    }
+
+    private void Close()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task OnEquipmentItemClicked(EquipmentItemViewModel2 item)
+    {
+        if (_currentEquipment != null)
+        {
+            _selectedEquipment = item;
+        }
+        else
+        {
+            _currentEquipment = item;
+            await EquipmentConfiguratorUiService.SetEquipmentAsync(EquipmentConfiguration, _currentSlot, _currentEquipment);
+            UpdateSlotSelectionItems();
+            if (_currentRequest.HideEquipped)
+            {
+                GetItems();
+            }
+        }
+    }
+
+    private void UpdateSlotSelectionItems()
+    {
+        var selected = _equipmentSlotTypes.First(x => x.SlotType == _currentSlot);
+        selected.SetIconUrl = _currentEquipment?.EquipmentSet.IconUrl;
+    }
+
+    private void OnFilterChanged(EquipmentFilterRequest request)
+    {
+        _currentRequest = request;
+        GetItems();
+    }
+
+    private void OnEquipmentSlotTypeChanged(EquipmentSlotType slotType)
+    {
+        _currentSlot = slotType;
+        GetItems();
+        _selectedEquipment = null;
+        _currentEquipment = EquipmentConfiguration.Get(_currentSlot);
+    }
+
+    private async Task RemoveEquipment()
+    {
+        _currentEquipment = null;
+        UpdateSlotSelectionItems();
+        await EquipmentConfiguratorUiService.SetEquipmentAsync(EquipmentConfiguration, _currentSlot, null);
+        if (_currentRequest.HideEquipped)
+        {
+            GetItems();
+        }
+    }
+
+}
