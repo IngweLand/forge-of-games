@@ -1,0 +1,118 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.EQUIPMENT_CONFIGURATOR_PATH)]
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
+@using Size = MudBlazor.Size
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@if (_heroes != null)
+{
+    <div class="component-root">
+        <div class="fog-container filter-container">
+            <HeroFilterComponent FilterRequest="@_filterRequest" SearchString="@_searchString"
+                                 OnFilterChanged="@OnFilterChanged"
+                                 CanSearchByName="false" CanUseTags="false"/>
+        </div>
+        <div class="equipment-slots-container">
+            <div class="hero-equipment-configuration-layout">
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Hand)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Garment)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Hat)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Neck)"/>
+                </div>
+                <div></div>
+                <div class="equipment-item-slot">
+                    <img src="@EquipmentSlotTypeIconUrlProvider.GetIconUrl(EquipmentSlotType.Ring)"/>
+                </div>
+            </div>
+        </div>
+        <div class="heroes-container">
+            @foreach (var hero in _heroes)
+            {
+                <div class="fog-container hero-container">
+                    <HeroBasicItem Hero="@hero.Hero"/>
+                    <div class="hero-equipment">
+                        @foreach (var heroEquipment in hero.Equipment)
+                        {
+                            <div class="@(GetHeroEquipmentCss(heroEquipment.IsInGame))">
+                                <div class="equipment-item">
+                                    @RenderEquipmentItem(heroEquipment.Hand)
+                                </div>
+                                <div class="divider"></div>
+                                <div class="equipment-item">
+                                    @RenderEquipmentItem(heroEquipment.Garment)
+                                </div>
+                                <div class="divider"></div>
+                                <div class="equipment-item">
+                                    @RenderEquipmentItem(heroEquipment.Hat)
+                                </div>
+                                <div class="divider"></div>
+                                <div class="equipment-item">
+                                    @RenderEquipmentItem(heroEquipment.Neck)
+                                </div>
+                                <div class="divider"></div>
+                                <div class="equipment-item">
+                                    @RenderEquipmentItem(heroEquipment.Ring)
+                                </div>
+                                <div class="action-buttons-container">
+                                    <MudIconButton Icon="@Icons.Material.Outlined.Edit" Color="Color.Tertiary"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => OnEdit.InvokeAsync(heroEquipment.Id))"/>
+                                    <MudIconButton Icon="@Icons.Material.Outlined.Delete" Color="Color.Tertiary"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => OnDeleteClicked(heroEquipment.Id))"/>
+                                </div>
+                            </div>
+                        }
+                        <MudFab Color="Color.Success" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small"/>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public EventCallback<string> OnEdit { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnDelete { get; set; }
+
+    private string GetHeroEquipmentCss(bool isInGame)
+    {
+        return isInGame ? 
+            "hero-equipment-configuration-layout hero-equipment-configuration in-game-shadow" :
+            "hero-equipment-configuration-layout hero-equipment-configuration";
+    }
+
+    private RenderFragment RenderEquipmentItem(HeroEquipmentItemViewModel? equipment) => __builder =>
+    {
+        if (equipment == null)
+        {
+            return;
+        }
+
+        <HorizontalIconWithLabelComponent Size="Size.Small"
+                                          StatItem="@equipment.EquipmentSet"/>
+
+        <div class="equipment-attributes-container">
+            @foreach (var att in equipment.Attributes)
+            {
+                <HorizontalIconWithLabelComponent Size="Size.Small" StatItem="@att"/>
+            }
+        </div>
+    };
+
+}

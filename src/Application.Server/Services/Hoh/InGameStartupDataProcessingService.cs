@@ -9,6 +9,7 @@ using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
+using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers;
@@ -40,12 +41,14 @@ public class InGameStartupDataProcessingService(
         var cities = await ImportInGameCities(communicationDto.Value);
         var profile = await ImportProfileAsync(communicationDto.Value, cities);
         var equipment = await ImportEquipmentAsync(communicationDto.Value);
+        var relics = await ImportRelicsAsync(communicationDto.Value);
         var researchState = await ImportResearchState(communicationDto.Value);
         return new InGameStartupData
         {
             Cities = cities.ToList(),
             Profile = profile,
             Equipment = equipment.ToList(),
+            Relics = relics.ToList(),
             ResearchState = researchState,
         };
     }
@@ -146,6 +149,28 @@ public class InGameStartupDataProcessingService(
         }
 
         return equipmentItems;
+    }
+    
+    private async Task<IList<RelicItem>> ImportRelicsAsync(CommunicationDto startupDto)
+    {
+        var relics = new List<RelicItem>();
+
+        if (startupDto.RelicPush == null)
+        {
+            return relics;
+        }
+
+        try
+        {
+            relics = mapper.Map<List<RelicItem>>(startupDto.RelicPush.Relics);
+        }
+        catch (Exception ex)
+        {
+            const string msg = "Failed to map relics data";
+            logger.LogError(ex, msg);
+        }
+
+        return relics;
     }
 
     private async Task<IReadOnlyDictionary<CityId, IReadOnlyCollection<ResearchStateTechnology>>> ImportResearchState(

@@ -173,6 +173,7 @@ public static class FogUrlBuilder
         public const string COMMAND_CENTER_HERO_PLAYGROUNDS_PATH = BASE_COMMAND_CENTER_PATH + "/playgrounds/heroes";
         public const string COMMAND_CENTER_EQUIPMENT_PATH = BASE_COMMAND_CENTER_PATH + "/equipment";
         public const string MY_BATTLES_PATH = BASE_COMMAND_CENTER_PATH + "/my-battles";
+        public const string EQUIPMENT_CONFIGURATOR_PATH = BASE_COMMAND_CENTER_PATH + "/equipment-configurator";
 
         public const string GET_SHARED_STRATEGY_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/shares/{shareId}";
 

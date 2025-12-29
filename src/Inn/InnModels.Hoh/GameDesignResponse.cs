@@ -64,4 +64,5 @@ public sealed partial class GameDesignResponse
     public IList<ExpansionDefinitionDTO> ExpansionDefinitions => Items.FindAndUnpackToList<ExpansionDefinitionDTO>();
     public IList<DynamicFloatValueDefinitionDTO> DynamicFloatValueDefinitions => Items.FindAndUnpackToList<DynamicFloatValueDefinitionDTO>();
     public IList<RelicDefinitionDTO> RelicDefinitions => Items.FindAndUnpackToList<RelicDefinitionDTO>();
+    public RelicBoostAgeModifierDefinitionDTO RelicBoostAgeModifiers => Items.FindAndUnpack<RelicBoostAgeModifierDefinitionDTO>();
 }

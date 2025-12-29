@@ -1,0 +1,13 @@
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units
+<div class="component-root user-select-none">
+    <div class="avatar-section">
+        <img src="@Hero.PortraitUrl"/>
+    </div>
+    <div class="main-label">@Hero.Name</div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required HeroBasicViewModel Hero { get; set; }
+}
