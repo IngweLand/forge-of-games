@@ -8,4 +8,5 @@ public static class PersistenceKeys
     public const string BATTLE_LOG_REQUEST = "BattleLogRequest";
     public const string FIRST_VISIT_AT = "FirstVisitAt";
     public const string DONATION_NOTIFICATION_READ_AT = "DonationNotificationReadAt";
+    public const string EQUIPMENT_PROFILE = "EquipmentProfile";
 }

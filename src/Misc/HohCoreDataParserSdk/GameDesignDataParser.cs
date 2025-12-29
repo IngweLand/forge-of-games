@@ -4,6 +4,7 @@ using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.City;
+using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
@@ -38,12 +39,12 @@ public class GameDesignDataParser(
 
         var communicationDto = CommunicationDto.Parser.ParseFrom(gameDesignData);
         var gdr = communicationDto.GameDesignResponse;
-        
+
         var startups = startupData.Select(x => CommunicationDto.Parser.ParseFrom(x)).ToList();
-        
+
         var data = Parse(gdr, startups);
         var result = protobufSerializer.SerializeToBytes(data);
-        
+
         logger.LogInformation("Completed parsing game design data.");
 
         return result;
@@ -139,8 +140,8 @@ public class GameDesignDataParser(
     {
         var startupTechnologies =
             startups.SelectMany(x =>
-                x.InGameEvents.SelectMany(y =>
-                    y.EventDefinition.EventCityComponents.SelectMany(h => h.Technologies)))
+                    x.InGameEvents.SelectMany(y =>
+                        y.EventDefinition.EventCityComponents.SelectMany(h => h.Technologies)))
                 .DistinctBy(x => x.Id);
         var allTechs = gdr.TechnologyDefinitions.Concat(startupTechnologies);
         return mapper.Map<IList<Technology>>(allTechs,
@@ -262,6 +263,7 @@ public class GameDesignDataParser(
         var heroes =
             mapper.Map<IList<Hero>>(gdr.HeroDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
         var heroStarUps = mapper.Map<IList<Hero>>(gdr.HeroStarUpDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
+        var equipmentSets = mapper.Map<IList<EquipmentSetDefinition>>(gdr.EquipmentSetDefinitions);
         var data = new Data
         {
             Worlds = worlds.AsReadOnly(),
@@ -287,6 +289,8 @@ public class GameDesignDataParser(
             HeroUnitTypes = mapper.Map<IReadOnlyCollection<HeroUnitType>>(gdr.HeroUnitTypeDefinitions),
             Resources = resources.AsReadOnly(),
             Relics = relics.AsReadOnly(),
+            RelicBoostAgeModifiers = mapper.Map<IDictionary<string, float>>(gdr.RelicBoostAgeModifiers).AsReadOnly(),
+            EquipmentSetDefinitions = equipmentSets.AsReadOnly(),
         };
 
         return data;

@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
+@using MudBlazor.Utilities
+@using Size = MudBlazor.Size
+<div class="@ComponentClass" @onclick="@(() => OnClick.InvokeAsync(Equipment))">
+    <EquipmentSetComponent Size="Size.Small" Rarity="@Equipment.EquipmentItem.EquipmentRarity"
+                           EquipmentSet="@Equipment.EquipmentSet" Level="@Equipment.EquipmentItem.Level"/>
+
+    <div class="equipment-attributes-container">
+        <HorizontalIconWithLabelsComponent Size="Size.Small" Item="@Equipment.MainAttribute"/>
+        @foreach (var att in Equipment.SubAttributes)
+        {
+            <HorizontalIconWithLabelsComponent Size="Size.Small" Item="@att"/>
+        }
+    </div>
+    <EquippedOnHeroesComponent Equipment="@Equipment" CanShowSingleHero="@CanShowSingleHero"/>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public EquipmentItemViewModel2 Equipment { get; set; }
+
+    [Parameter]
+    public EventCallback<EquipmentItemViewModel2> OnClick { get; set; }
+
+    [Parameter]
+    public bool CanShowSingleHero { get; set; }
+
+    private string ComponentClass => new CssBuilder("component-root")
+        .AddClass("clickable", OnClick.HasDelegate)
+        .Build();
+
+}

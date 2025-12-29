@@ -1,3 +1,5 @@
+@using Ingweland.Fog.Application.Client.Web.Analytics
+@using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Dtos.Hoh
@@ -5,6 +7,7 @@
 @inject IStringLocalizer<FogResource> Loc
 @inject IFogSharingUiService FogSharingUiService
 @inject IJSInteropService JSInteropService
+@inject IAnalyticsService AnalyticsService
 <MudDialog>
     <DialogContent>
         @if (_isLoading)
@@ -31,6 +34,8 @@
 
 @code {
 
+    private static readonly Dictionary<string, object> EmptyDict = new();
+    
     [CascadingParameter]
     private IMudDialogInstance MudDialog { get; set; }
 
@@ -56,12 +61,18 @@
         try
         {
             _isLoading = true;
+
+            _ = AnalyticsService.TrackEvent(AnalyticsEvents.CREATE_SHARED_LINK, EmptyDict);
+
             var sharingResult = await FogSharingUiService.ShareAsync(Data);
 
             _link = BaseUrl.Replace("{shareId}", sharingResult.Id);
+
+            _ = AnalyticsService.TrackEvent(AnalyticsEvents.SHARED_LINK_CREATED, EmptyDict);
         }
         catch (Exception e)
         {
+            _ = AnalyticsService.TrackEvent(AnalyticsEvents.SHARED_LINK_CREATION_ERROR, EmptyDict);
             Console.WriteLine(e);
         }
         finally
@@ -76,6 +87,8 @@
         {
             return;
         }
+
+        _ = AnalyticsService.TrackEvent(AnalyticsEvents.SHARED_LINK_COPIED, EmptyDict);
 
         await JSInteropService.CopyToClipboardAsync(_link);
     }

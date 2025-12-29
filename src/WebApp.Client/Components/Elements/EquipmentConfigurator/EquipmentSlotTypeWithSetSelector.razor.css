@@ -1,0 +1,27 @@
+::deep .unit-battle-type-selector-item {
+    text-transform: none !important;
+    font-weight: 700 !important;
+    font-size: 10px !important;
+}
+
+::deep .unit-battle-type-selector {
+    align-self: center;
+    margin: 0 8px;
+}
+
+::deep .set-icon {
+    height: 18px;
+}
+
+.content-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+@media (min-width: 576px) {
+    ::deep .unit-battle-type-selector-item {
+        font-size: 12px !important;
+    }
+}

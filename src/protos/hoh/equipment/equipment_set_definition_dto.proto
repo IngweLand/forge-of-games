@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "stat_boost_dto.proto";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message EquipmentSetDefinitionDTO {
+  string id = 1;
+  string equipmentSlotGroupDefinitionId = 2;
+  repeated StatBoostDto setBonusBoosts = 3;
+}

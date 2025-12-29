@@ -28,7 +28,9 @@ public interface IHohGameLocalizationService
     string GetEquipmentSlotTypeName(EquipmentSlotType slotType);
     string GetStatAttributeAbbreviation(StatAttribute statAttribute);
     string GetStatAttributeName(StatAttribute statAttribute);
+    string GetUnitStatName(UnitStatType unitStat);
     string GetEquipmentSetName(EquipmentSet set);
     string GetPvpTierName(PvpTier tier);
     string GetTreasureHuntLeagueName(TreasureHuntLeague league);
+    string GetConcreteEquipmentSetName(EquipmentSet set, EquipmentSlotType slot);
 }

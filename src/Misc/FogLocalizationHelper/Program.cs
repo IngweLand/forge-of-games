@@ -69,6 +69,9 @@ var searchKeys = new HashSet<string>
     "Base.RewardPanel.CityUnlocked",
     "Base.Technologies.Technology_BronzeAge_EventCities_Name",
     "Base.WorldWondersOverviewPanel.ActiveWondersInAlliedCulture",
+    "Base.EquipmentFilterPopover.HideEquipped",
+    "Base.HeroPanel.Equipped",
+    "Base.EquipmentLevelUpPanel.EquippedHint",
 };
 
 var result = new Dictionary<string, List<Translations>>();

@@ -22,7 +22,8 @@ public class HohCoreDataCache : IHohCoreDataCache
     private readonly IRelicCoreDataService _relicCoreDataService;
     private IReadOnlyDictionary<string, RelicDto>? _relicsCache;
 
-    public HohCoreDataCache(ICityService cityService, IUnitService unitService, IRelicCoreDataService relicCoreDataService,
+    public HohCoreDataCache(ICityService cityService, IUnitService unitService,
+        IRelicCoreDataService relicCoreDataService,
         IEquipmentService equipmentService)
     {
         _cityService = cityService;

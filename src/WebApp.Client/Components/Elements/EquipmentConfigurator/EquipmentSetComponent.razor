@@ -1,0 +1,51 @@
+@using Ingweland.Fog.Application.Client.Web.Extensions
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Microsoft.Extensions.Localization
+@using MudBlazor.Utilities
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+<div class="@ValueContainerClass">
+    <div class="stars-container">
+        @for (var i = 0; i < Rarity.ToStarCount(); i++)
+        {
+            <span>★</span>
+        }
+    </div>
+    <img src="@EquipmentSet.IconUrl" class="@ValueIconClass">
+    <span class="@LabelClass">@EquipmentSet.Label</span>
+    <div class="divider"></div>
+    <span class="@LabelClass">@($"{Loc[FogResource.Hoh_Lvl]} {Level}")</span>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required IconLabelItemViewModel EquipmentSet { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public int Level { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public EquipmentRarity Rarity { get; set; }
+
+    [Parameter]
+    public Size Size { get; set; } = Size.Medium;
+
+    private string ValueContainerClass => new CssBuilder("value-container")
+        .AddClass($"value-container-size-{Size.ToDescriptionString()}")
+        .Build();
+
+    private string ValueIconClass => new CssBuilder("value-icon")
+        .AddClass($"value-icon-size-{Size.ToDescriptionString()}")
+        .Build();
+
+    private string LabelClass => new CssBuilder("value-label")
+        .AddClass($"value-label-size-{Size.ToDescriptionString()}")
+        .Build();
+
+}

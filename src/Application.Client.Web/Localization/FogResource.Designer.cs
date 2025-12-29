@@ -1284,6 +1284,69 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide equipped.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Filter_HideEquipped {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Filter.HideEquipped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only unlocked attributes.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Filter_OnlyUnlocked {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Filter.OnlyUnlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment configurator. Compare stats and find the best setup..
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Meta_Description {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History equipment, equipment configurator, equipment properties, equipment sets.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Configurator | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_PageTitle {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile name.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Settings_ProfileName {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Settings.ProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Configurator.
+        /// </summary>
+        public static string CommandCenter_EquipmentConfigurator_Title {
+            get {
+                return ResourceManager.GetString("CommandCenter.EquipmentConfigurator.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Import.
         /// </summary>
         public static string CommandCenter_Import {
@@ -1298,6 +1361,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CommandCenter_Menu_Equipment {
             get {
                 return ResourceManager.GetString("CommandCenter.Menu.Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment Configurator.
+        /// </summary>
+        public static string CommandCenter_Menu_EquipmentConfigurator {
+            get {
+                return ResourceManager.GetString("CommandCenter.Menu.EquipmentConfigurator", resourceCulture);
             }
         }
         
@@ -1743,6 +1815,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Main.
+        /// </summary>
+        public static string Common_Main {
+            get {
+                return ResourceManager.GetString("Common.Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Max.
         /// </summary>
         public static string Common_Max {
@@ -1757,6 +1838,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Minutes_Abbr {
             get {
                 return ResourceManager.GetString("Common.Minutes.Abbr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string Common_New {
+            get {
+                return ResourceManager.GetString("Common.New", resourceCulture);
             }
         }
         
@@ -1838,6 +1928,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string Common_Share {
             get {
                 return ResourceManager.GetString("Common.Share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sync.
+        /// </summary>
+        public static string Common_Sync {
+            get {
+                return ResourceManager.GetString("Common.Sync", resourceCulture);
             }
         }
         
@@ -2441,6 +2540,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string ImportInGameData_Options_Equipment {
             get {
                 return ResourceManager.GetString("ImportInGameData.Options.Equipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Equipment profile.
+        /// </summary>
+        public static string ImportInGameData_Options_EquipmentProfile {
+            get {
+                return ResourceManager.GetString("ImportInGameData.Options.EquipmentProfile", resourceCulture);
             }
         }
         

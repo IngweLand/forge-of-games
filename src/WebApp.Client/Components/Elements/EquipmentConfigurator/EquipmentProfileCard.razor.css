@@ -1,0 +1,31 @@
+.command-center-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.bottom-container, .main-container {
+    display: flex;
+    width: 100%;
+}
+
+.main-container {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+}
+
+.bottom-container {
+    justify-content: flex-end;
+    padding: 0 4px;
+}
+
+.profile-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.updated-at {
+    font-size: 10px;
+    color: var(--fog-text-secondary-color);
+}

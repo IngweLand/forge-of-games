@@ -1,0 +1,31 @@
+.hero-equipment-configuration {
+    padding: 4px;
+    border-radius: var(--fog-border-radius);
+    width: 100%;
+    border: var(--fog-border-color-darker) solid 1px;
+}
+
+.hero-equipment-configuration-layout > .hero-equipment-stats {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: var(--fog-border-color) solid 3px;
+    padding: 6px 6px 0 6px;
+}
+
+.in-game-border {
+    border-color: var(--fog-navigation-bar-color);
+}
+
+.divider {
+    width: 1px;
+    background-color: var(--fog-border-color);
+}
+
+.id-label {
+    color: var(--fog-text-secondary-color);
+    font-size: 8px;
+    align-self: flex-end;
+}

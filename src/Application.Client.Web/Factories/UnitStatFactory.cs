@@ -40,6 +40,33 @@ public class UnitStatFactory(IUnitStatCalculators statCalculators) : IUnitStatFa
 
         return stats;
     }
+    
+    public IReadOnlyDictionary<UnitStatType, float> CreateHeroStats(HeroDto hero, int level, int ascensionLevel)
+    {
+        var stats = new Dictionary<UnitStatType, float>();
+        foreach (var unitStat in hero.Unit.Stats)
+        {
+            switch (unitStat.Type)
+            {
+                case UnitStatType.Attack:
+                case UnitStatType.Defense:
+                case UnitStatType.MaxHitPoints:
+                case UnitStatType.BaseDamage:
+                {
+                    stats.Add(unitStat.Type,
+                        CreateHeroLevelStat(unitStat.Type, hero, level, ascensionLevel, 0, null));
+                    break;
+                }
+                default:
+                {
+                    stats.Add(unitStat.Type, hero.Unit.Stats.First(us => us.Type == unitStat.Type).Value);
+                    break;
+                }
+            }
+        }
+
+        return stats;
+    }
 
     public IReadOnlyDictionary<UnitStatType, float> CreateMainSupportUnitStats(IUnit unit, int level,
         IReadOnlyDictionary<UnitStatType, UnitStatFormulaFactors> statCalculationFactors)

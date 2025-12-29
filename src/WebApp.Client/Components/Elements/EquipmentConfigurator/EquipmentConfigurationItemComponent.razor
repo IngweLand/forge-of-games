@@ -1,0 +1,132 @@
+@using System.ComponentModel
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Microsoft.Extensions.Localization
+@using Size = MudBlazor.Size
+@inject IStringLocalizer<FogResource> Loc
+@inject IDialogService DialogService
+@implements IDisposable
+<div class="@(GetHeroEquipmentCss(EquipmentConfiguration.IsInGame))">
+    @if (EquipmentConfiguration.Hand != null)
+    {
+        <EquipmentItemComponent Equipment="@EquipmentConfiguration.Hand"/>
+    }
+    else
+    {
+        <div></div>
+    }
+    <div class="divider"></div>
+    @if (EquipmentConfiguration.Garment != null)
+    {
+        <EquipmentItemComponent Equipment="@EquipmentConfiguration.Garment"/>
+    }
+    else
+    {
+        <div></div>
+    }
+    <div class="divider"></div>
+    @if (EquipmentConfiguration.Hat != null)
+    {
+        <EquipmentItemComponent Equipment="@EquipmentConfiguration.Hat"/>
+    }
+    else
+    {
+        <div></div>
+    }
+    <div class="divider"></div>
+    @if (EquipmentConfiguration.Neck != null)
+    {
+        <EquipmentItemComponent Equipment="@EquipmentConfiguration.Neck"/>
+    }
+    else
+    {
+        <div></div>
+    }
+    <div class="divider"></div>
+    @if (EquipmentConfiguration.Ring != null)
+    {
+        <EquipmentItemComponent Equipment="@EquipmentConfiguration.Ring"/>
+    }
+    else
+    {
+        <div></div>
+    }
+    @* leave empty, instead of divider *@
+    <div></div>
+    <div class="action-buttons-container">
+        @if (!EquipmentConfiguration.IsInGame)
+        {
+            <MudIconButton Icon="@Icons.Material.Outlined.Edit" Color="Color.Tertiary"
+                           Size="Size.Small"
+                           OnClick="@(() => OnEdit.InvokeAsync(EquipmentConfiguration))"/>
+        }
+        <MudIconButton Icon="@Icons.Material.Outlined.ContentCopy" Color="Color.Tertiary"
+                       Size="Size.Small"
+                       OnClick="@(() => OnDuplicate.InvokeAsync(EquipmentConfiguration.Id))"/>
+        <MudIconButton Icon="@Icons.Material.Outlined.Delete" Color="Color.Tertiary"
+                       Size="Size.Small"
+                       OnClick="@(() => OnDeleteClicked())"/>
+    </div>
+    <div class="hero-equipment-stats">
+        @foreach (var stats in EquipmentConfiguration.Stats)
+        {
+            <HorizontalIconWithLabelsComponent Size="Size.Small" Item="@stats"/>
+        }
+        <MudSpacer/>
+        <span class="id-label">@(EquipmentConfiguration.Id[..8])</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public EquipmentConfigurationViewModel EquipmentConfiguration { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public EventCallback<EquipmentConfigurationViewModel> OnEdit { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public EventCallback<string> OnDuplicate { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public EventCallback<EquipmentConfigurationViewModel> OnDelete { get; set; }
+
+    protected override void OnInitialized()
+    {
+        EquipmentConfiguration.PropertyChanged += EquipmentConfigurationOnPropertyChanged;
+    }
+
+    private void EquipmentConfigurationOnPropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    private string GetHeroEquipmentCss(bool isInGame)
+    {
+        return isInGame
+            ? "hero-equipment-configuration-layout hero-equipment-configuration in-game-border"
+            : "hero-equipment-configuration-layout hero-equipment-configuration";
+    }
+
+    private async Task OnDeleteClicked()
+    {
+        var result = await DialogService.ShowMessageBox(
+            null,
+            Loc[FogResource.Common_DeleteConfirmation, EquipmentConfiguration.Id],
+            Loc[FogResource.Common_Delete], cancelText: Loc[FogResource.Common_Cancel]);
+        if (result != null && result.Value)
+        {
+            await OnDelete.InvokeAsync(EquipmentConfiguration);
+        }
+    }
+
+    public void Dispose()
+    {
+        EquipmentConfiguration.PropertyChanged -= EquipmentConfigurationOnPropertyChanged;
+    }
+
+}

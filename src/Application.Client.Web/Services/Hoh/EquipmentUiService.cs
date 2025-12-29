@@ -39,7 +39,7 @@ public class EquipmentUiService(
 
         return SlotTypes.Select(x =>
         {
-            if (!equipmentData.SlotTypes.TryGetValue(x, out var name))
+            if (!equipmentData.SlotTypeNames.TryGetValue(x, out var name))
             {
                 name = x.ToString();
             }
@@ -59,6 +59,7 @@ public class EquipmentUiService(
         var equipmentData = await coreDataCache.GetEquipmentDataAsync();
         var dtos = await equipmentService.GetInsightsAsync(unitId, ct);
         return dtos.OrderBy(x => x.FromLevel).Select(dto =>
-            equipmentInsightsViewModelFactory.Create(dto, equipmentData.StatAttributes, equipmentData.Sets)).ToList();
+                equipmentInsightsViewModelFactory.Create(dto, equipmentData.StatAttributeNames, equipmentData.SetNames))
+            .ToList();
     }
 }

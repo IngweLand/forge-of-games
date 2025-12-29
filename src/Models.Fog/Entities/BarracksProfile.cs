@@ -1,10 +1,13 @@
 using Ingweland.Fog.Models.Hoh.Enums;
+using ProtoBuf;
 
 namespace Ingweland.Fog.Models.Fog.Entities;
 
+[ProtoContract]
 public class BarracksProfile
 {
-    public IDictionary<BuildingGroup, int> Levels { get; init; } = new Dictionary<BuildingGroup, int>()
+    [ProtoMember(1)]
+    public IDictionary<BuildingGroup, int> Levels { get; init; } = new Dictionary<BuildingGroup, int>
     {
         {BuildingGroup.RangedBarracks, 1},
         {BuildingGroup.SiegeBarracks, 2},

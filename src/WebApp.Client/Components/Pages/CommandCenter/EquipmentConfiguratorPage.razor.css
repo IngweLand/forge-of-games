@@ -1,0 +1,94 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px;
+    width: 100%;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.equipment-slots-container {
+    background-color: var(--fog-background-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 12px 6px 12px 58px;
+    width: 100%;
+}
+
+.heroes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: start;
+    overflow: hidden;
+}
+
+.hero-equipment {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 100%;
+}
+
+.equipment-item-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    width: 28px;
+    padding: 8px;
+    border-radius: var(--fog-border-radius);
+    justify-self: center;
+    background-color: var(--fog-surface-color);
+    box-shadow: 0 0 4px 2px var(--fog-border-color);
+}
+
+.equipment-item-slot > img {
+    height: 100%;
+}
+
+.equipment-item > img {
+    height: 32px;
+}
+
+.action-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 12px;
+}
+
+.equipment-attributes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.profile-name {
+    color: var(--fog-text-on-container-color);
+    font-weight: 700;
+    font-size: 16px;
+}

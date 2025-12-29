@@ -89,10 +89,21 @@ public class HeroProfileUiService : IHeroProfileUiService
         Task.Run(async () => { await _persistenceService.SaveHeroProfileAsync(identifier); });
     }
 
-    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(HeroFilterRequest request)
+    public Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(HeroFilterRequest request)
+    {
+        return GetHeroes(request, new HashSet<string>());
+    }
+
+    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(HeroFilterRequest request,
+        IReadOnlySet<string> heroIds)
     {
         var heroVms = await _heroList.Value;
         var query = _heroes.AsEnumerable();
+
+        if (heroIds.Count > 0)
+        {
+            query = query.Where(x => heroIds.Contains(x.Id));
+        }
 
         if (request.Classes.Count > 0)
         {
@@ -119,18 +130,26 @@ public class HeroProfileUiService : IHeroProfileUiService
             query = query.Where(x => _heroAbilityTagsToHeroIdsMap![request.AbilityTag].Contains(x.Id));
         }
 
-        query = query.OrderBy(x => x.Name);
-        var result = query.ToList();
-
-        return result.Select(x => heroVms[x.Id]).ToList();
+        return query.OrderBy(x => x.Name).Select(x => heroVms[x.Id]).ToList();
     }
 
-    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(string searchString)
+    public Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(string searchString)
+    {
+        return GetHeroes(searchString, new HashSet<string>());
+    }
+
+    public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes(string searchString,
+        IReadOnlySet<string> heroIds)
     {
         var heroVms = await _heroList.Value;
-        return heroVms
-            .Where(kvp => kvp.Value.Name.Contains(searchString, StringComparison.InvariantCultureIgnoreCase))
-            .Select(kvp => kvp.Value).OrderBy(x => x.Name).ToList();
+        var query = heroVms.Where(kvp =>
+            kvp.Value.Name.Contains(searchString, StringComparison.InvariantCultureIgnoreCase));
+        if (heroIds.Count > 0)
+        {
+            query = query.Where(x => heroIds.Contains(x.Value.Id));
+        }
+
+        return query.Select(kvp => kvp.Value).OrderBy(x => x.Name).ToList();
     }
 
     public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetHeroes()
@@ -185,6 +204,12 @@ public class HeroProfileUiService : IHeroProfileUiService
         var hero = await _coreDataCache.GetHeroAsync(request.HeroId);
         return _mapper.Map<IReadOnlyCollection<IconLabelItemViewModel>>(
             _heroProgressionCalculators.CalculateProgressionCost(hero!, request.CurrentLevel, request.TargetLevel));
+    }
+
+    public async Task<HeroBasicViewModel?> GetHeroBasicsAsync(string heroId)
+    {
+        var heroVms = await _heroList.Value;
+        return heroVms.GetValueOrDefault(heroId);
     }
 
     private void CreateHeroAbilityTags(IReadOnlyDictionary<string, IReadOnlySet<string>> src)

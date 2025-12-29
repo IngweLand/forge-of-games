@@ -270,7 +270,7 @@ public class BattleViewModelFactory(
         var fullProfile = heroProfileFactory.Create(hero, heroDto!, concreteBarracks);
         var equipmentData = await coreDataCache.GetEquipmentDataAsync();
         var equipment = hero.Equipment.Select(x =>
-                squadEquipmentItemViewModelFactory.Create(x, equipmentData.StatAttributes, equipmentData.Sets))
+                squadEquipmentItemViewModelFactory.Create(x, equipmentData.StatAttributeNames, equipmentData.SetNames))
             .OrderBy(x => x.EquipmentSlotType).ToList();
         return heroProfileViewModelFactory.Create(fullProfile, heroDto!, [], relicVm, withSupportUnit, equipment);
     }

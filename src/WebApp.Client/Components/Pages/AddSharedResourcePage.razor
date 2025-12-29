@@ -1,7 +1,11 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.GET_SHARED_STRATEGY_TEMPLATE)]
+@attribute [Route(FogUrlBuilder.PageRoutes.GET_SHARED_EQUIPMENT_PROFILE_TEMPLATE)]
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+
 @code {
+
     [Parameter]
     public required string ShareId { get; set; }
+
 }

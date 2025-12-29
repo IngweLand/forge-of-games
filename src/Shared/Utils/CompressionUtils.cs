@@ -23,6 +23,12 @@ public static class CompressionUtils
         return memoryStream.ToArray();
     }
 
+    public static string CompressToBase64String(string text)
+    {
+        var bytes = CompressString(text);
+        return Convert.ToBase64String(bytes);
+    }
+
     public static string DecompressToString(byte[] compressedData)
     {
         if (compressedData.Length == 0)
@@ -39,7 +45,13 @@ public static class CompressionUtils
 
         return Encoding.UTF8.GetString(outputStream.ToArray());
     }
-    
+
+    public static string DecompressFromBase64String(string compressedText)
+    {
+        var compressedData = Convert.FromBase64String(compressedText);
+        return DecompressToString(compressedData);
+    }
+
     public static byte[] Compress(byte[] data)
     {
         using var memoryStream = new MemoryStream();

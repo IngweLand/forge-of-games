@@ -1,0 +1,34 @@
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Size = MudBlazor.Size
+<MudToggleGroup T="EquipmentSlotType" Size="Size.Small" Value="@SelectedSlotType"
+                ValueChanged="OnBattleTypeChanged"
+                Class="unit-battle-type-selector" Color="Color.Secondary">
+    @foreach (var item in Items)
+    {
+        <MudToggleItem Value="@item.SlotType" Class="unit-battle-type-selector-item">
+            <div class="content-container">
+                <span>@item.Name</span>
+                @if (item.SetIconUrl != null)
+                {
+                    <img class="set-icon" src="@item.SetIconUrl"/>
+                }
+            </div>
+
+        </MudToggleItem>
+    }
+</MudToggleGroup>
+
+@code {
+
+    [Parameter]
+    public EquipmentSlotType SelectedSlotType { get; set; }
+
+    [Parameter]
+    public EventCallback<EquipmentSlotType> OnBattleTypeChanged { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public IReadOnlyCollection<EquipmentSlotWithSetViewModel> Items { get; set; } = [];
+
+}

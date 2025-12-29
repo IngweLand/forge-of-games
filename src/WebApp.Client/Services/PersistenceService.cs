@@ -119,6 +119,11 @@ public class PersistenceService(
         return localStorageService.SetItemAsync(key, value);
     }
 
+    public ValueTask RemoveItemAsync(string key)
+    {
+        return localStorageService.RemoveItemAsync(key);
+    }
+
     public ValueTask<T?> GetItemAsync<T>(string key)
     {
         return localStorageService.GetItemAsync<T>(key);
