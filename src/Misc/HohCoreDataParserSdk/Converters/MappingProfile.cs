@@ -112,6 +112,10 @@ public class MappingProfile : Profile
         CreateMap<RelicLevelDto, RelicLevel>()
             .ForMember(dest => dest.Boosts, opt => opt.MapFrom(src => src.StatBoosts));
         CreateMap<RelicStatBoostDto, RelicStatBoost>();
+        CreateMap<RelicBoostAgeModifierDefinitionDTO, IDictionary<string, float>>()
+            .ConvertUsing((src, _, _) =>
+                src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key), x => x.Value)
+            );
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()

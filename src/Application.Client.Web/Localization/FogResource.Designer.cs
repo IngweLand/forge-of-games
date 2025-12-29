@@ -1293,6 +1293,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Equipment Configurator.
+        /// </summary>
+        public static string CommandCenter_Menu_EquipmentConfigurator {
+            get {
+                return ResourceManager.GetString("CommandCenter.Menu.EquipmentConfigurator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Heroes.
         /// </summary>
         public static string CommandCenter_Menu_Heroes {

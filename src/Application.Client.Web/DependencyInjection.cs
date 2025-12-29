@@ -18,6 +18,8 @@ using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CommandCenter.Factories;
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator;
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Migrations.CommandCenter;
@@ -145,6 +147,9 @@ public static class DependencyInjection
         services.AddScoped<ICityStrategyUiService, CityStrategyUiService>();
         services.AddScoped<IInGameEventUiService, InGameEventUiService>();
         services.AddScoped<IFogSharingUiService, FogSharingUiService>();
+        services.AddScoped<IEquipmentConfigurationProfileFactory, EquipmentConfigurationProfileFactory>();
+        services.AddScoped<IHeroEquipmentConfigurationViewModelFactory, HeroEquipmentConfigurationViewModelFactory>();
+        services.AddScoped<IIconLabelItemViewModelFactory, IconLabelItemViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 
@@ -152,5 +157,6 @@ public static class DependencyInjection
 
         services.AddTransient<IResearchCalculatorService, ResearchCalculatorService>();
         services.AddTransient<ICityStrategyBuilderService, CityStrategyBuilderService>();
+        services.AddTransient<IEquipmentConfiguratorUiService, EquipmentConfiguratorUiService>();
     }
 }

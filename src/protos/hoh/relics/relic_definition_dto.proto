@@ -22,3 +22,8 @@ message RelicStatBoostDto {
   StatBoostDto statBoosts = 1;
   string relicBoostAgeModifierDefinitionId = 2;
 }
+
+message RelicBoostAgeModifierDefinitionDTO {
+  string id = 1;
+  map<string, float> modifierByAgeDefinitionId = 2;
+}

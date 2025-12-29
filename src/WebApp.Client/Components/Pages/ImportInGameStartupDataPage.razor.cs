@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -19,6 +20,12 @@ public partial class ImportInGameStartupDataPage : FogPageBase
 
     private bool _canImport =>
         _shouldImportCities | _shouldImportProfile | _shouldImportEquipment | _shouldImportResearchState;
+
+    [Inject]
+    private IEquipmentConfiguratorUiService EquipmentConfiguratorUiService { get; set; }
+
+    [Inject]
+    private ILogger<ImportInGameStartupDataPage> Logger { get; set; }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
@@ -45,7 +52,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         }
         catch (Exception e)
         {
-            //ignore
+            Logger.LogError(e, "Error initializing.");
         }
     }
 
@@ -69,20 +76,27 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         if (_shouldImportEquipment && _inGameStartupData?.Equipment is {Count: > 0})
         {
             await PersistenceService.SaveEquipment(_inGameStartupData.Equipment);
+            if (_inGameStartupData.Profile != null)
+            {
+                await EquipmentConfiguratorUiService.UpsertProfileAsync(_inGameStartupData.Profile.Heroes.AsReadOnly(),
+                    _inGameStartupData.Relics ?? [], _inGameStartupData.Equipment,
+                    _inGameStartupData.Profile.BarracksProfile);
+            }
         }
 
         if (_shouldImportResearchState && _inGameStartupData?.ResearchState is {Count: > 0})
         {
             foreach (var kvp in _inGameStartupData.ResearchState)
             {
-                var unlocked = kvp.Value.Where(x => x.State == TechnologyState.Unlocked).Select(x => x.TechnologyId).ToList();
-                if(unlocked.Count == 0)
+                var unlocked = kvp.Value.Where(x => x.State == TechnologyState.Unlocked).Select(x => x.TechnologyId)
+                    .ToList();
+                if (unlocked.Count == 0)
                 {
                     continue;
                 }
+
                 await PersistenceService.SaveOpenTechnologies(kvp.Key, unlocked);
             }
-           
         }
 
         _isImporting = false;

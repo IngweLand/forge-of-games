@@ -38,12 +38,12 @@ public class GameDesignDataParser(
 
         var communicationDto = CommunicationDto.Parser.ParseFrom(gameDesignData);
         var gdr = communicationDto.GameDesignResponse;
-        
+
         var startups = startupData.Select(x => CommunicationDto.Parser.ParseFrom(x)).ToList();
-        
+
         var data = Parse(gdr, startups);
         var result = protobufSerializer.SerializeToBytes(data);
-        
+
         logger.LogInformation("Completed parsing game design data.");
 
         return result;
@@ -139,8 +139,8 @@ public class GameDesignDataParser(
     {
         var startupTechnologies =
             startups.SelectMany(x =>
-                x.InGameEvents.SelectMany(y =>
-                    y.EventDefinition.EventCityComponents.SelectMany(h => h.Technologies)))
+                    x.InGameEvents.SelectMany(y =>
+                        y.EventDefinition.EventCityComponents.SelectMany(h => h.Technologies)))
                 .DistinctBy(x => x.Id);
         var allTechs = gdr.TechnologyDefinitions.Concat(startupTechnologies);
         return mapper.Map<IList<Technology>>(allTechs,
@@ -287,6 +287,7 @@ public class GameDesignDataParser(
             HeroUnitTypes = mapper.Map<IReadOnlyCollection<HeroUnitType>>(gdr.HeroUnitTypeDefinitions),
             Resources = resources.AsReadOnly(),
             Relics = relics.AsReadOnly(),
+            RelicBoostAgeModifiers = mapper.Map<IDictionary<string, float>>(gdr.RelicBoostAgeModifiers).AsReadOnly(),
         };
 
         return data;
