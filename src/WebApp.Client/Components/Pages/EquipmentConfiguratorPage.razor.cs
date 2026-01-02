@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.Constants;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
+using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;

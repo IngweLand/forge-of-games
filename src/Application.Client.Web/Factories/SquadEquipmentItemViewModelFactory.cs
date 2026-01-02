@@ -14,9 +14,9 @@ public class SquadEquipmentItemViewModelFactory(
 {
     public SquadEquipmentItemViewModel Create(SquadEquipmentItem src,
         IReadOnlyDictionary<StatAttribute, string> statAttributes,
-        IReadOnlyDictionary<EquipmentSet, string> sets)
+        IReadOnlyDictionary<string, string> sets)
     {
-        var setName = sets.TryGetValue(src.EquipmentSet, out var set) ? set : src.EquipmentSet.ToString();
+        var setName = sets.TryGetValue(src.EquipmentSet.ToString(), out var set) ? set : src.EquipmentSet.ToString();
         return new SquadEquipmentItemViewModel
         {
             EquipmentSlotType = src.EquipmentSlotType,

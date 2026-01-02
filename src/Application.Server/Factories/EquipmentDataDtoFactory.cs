@@ -15,13 +15,22 @@ public class EquipmentDataDtoFactory(IHohGameLocalizationService localizationSer
 
     public EquipmentDataDto Create()
     {
+        var sets = Enum.GetValues<EquipmentSet>()
+            .Where(x => x != EquipmentSet.Undefined)
+            .ToDictionary(x => x.ToString(), localizationService.GetEquipmentSetName);
+        sets = sets.Concat(Enum.GetValues<EquipmentSet>()
+            .Where(x => x != EquipmentSet.Undefined)
+            .SelectMany(x =>
+                Enum.GetValues<EquipmentSlotType>().Where(y => y != EquipmentSlotType.Undefined)
+                    .Select(y => (x, y)))
+            .ToDictionary(x => $"{x.x}_{x.y}", x => localizationService.GetConcreteEquipmentSetName(x.x, x.y)))
+            .ToDictionary();
         return new EquipmentDataDto
         {
             SlotTypes = SlotTypes.ToDictionary(x => x, localizationService.GetEquipmentSlotTypeName),
             StatAttributes = Enum.GetValues<StatAttribute>().ToList()
                 .ToDictionary(x => x, localizationService.GetStatAttributeName),
-            Sets = Enum.GetValues<EquipmentSet>().ToList()
-                .ToDictionary(x => x, localizationService.GetEquipmentSetName),
+            Sets = sets,
         };
     }
 }

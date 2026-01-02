@@ -22,7 +22,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
         _shouldImportCities | _shouldImportProfile | _shouldImportEquipment | _shouldImportResearchState;
 
     [Inject]
-    private IEquipmentConfiguratorUiService EquipmentConfiguratorUiService { get; set; }
+    private IEquipmentConfigurationProfilePersistenceService EquipmentPersistenceService { get; set; }
 
     [Inject]
     private ILogger<ImportInGameStartupDataPage> Logger { get; set; }
@@ -78,7 +78,7 @@ public partial class ImportInGameStartupDataPage : FogPageBase
             await PersistenceService.SaveEquipment(_inGameStartupData.Equipment);
             if (_inGameStartupData.Profile != null)
             {
-                await EquipmentConfiguratorUiService.UpsertProfileAsync(_inGameStartupData.Profile.Heroes.AsReadOnly(),
+                await EquipmentPersistenceService.UpsertProfileAsync(_inGameStartupData.Profile.Heroes.AsReadOnly(),
                     _inGameStartupData.Relics ?? [], _inGameStartupData.Equipment,
                     _inGameStartupData.Profile.BarracksProfile);
             }

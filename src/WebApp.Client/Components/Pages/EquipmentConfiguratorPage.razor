@@ -1,7 +1,9 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.EQUIPMENT_CONFIGURATOR_PATH)]
 @using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator
+@using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.ViewModels
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.EquipmentConfigurator
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @using Size = MudBlazor.Size
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
@@ -97,7 +99,7 @@
             "hero-equipment-configuration-layout hero-equipment-configuration";
     }
 
-    private RenderFragment RenderEquipmentItem(HeroEquipmentItemViewModel? equipment) => __builder =>
+    private RenderFragment RenderEquipmentItem(EquipmentItemViewModel2? equipment) => __builder =>
     {
         if (equipment == null)
         {
@@ -108,9 +110,10 @@
                                           StatItem="@equipment.EquipmentSet"/>
 
         <div class="equipment-attributes-container">
-            @foreach (var att in equipment.Attributes)
+            <EquipmentAttributeComponent Size="Size.Small" Item="@equipment.MainAttribute"/>
+            @foreach (var att in equipment.SubAttributes)
             {
-                <HorizontalIconWithLabelComponent Size="Size.Small" StatItem="@att"/>
+                <EquipmentAttributeComponent Size="Size.Small" Item="@att"/>
             }
         </div>
     };
