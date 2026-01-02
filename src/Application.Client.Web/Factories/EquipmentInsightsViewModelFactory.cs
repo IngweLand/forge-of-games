@@ -11,7 +11,7 @@ public class EquipmentInsightsViewModelFactory(IAssetUrlProvider assetUrlProvide
 {
     public EquipmentInsightsViewModel Create(EquipmentInsightsDto dto,
         IReadOnlyDictionary<StatAttribute, string> statAttributes,
-        IReadOnlyDictionary<EquipmentSet, string> sets)
+        IReadOnlyDictionary<string, string> sets)
     {
         string levelRange;
         if (dto.FromLevel == 0)
@@ -33,7 +33,7 @@ public class EquipmentInsightsViewModelFactory(IAssetUrlProvider assetUrlProvide
             EquipmentSlotType = dto.EquipmentSlotType,
             EquipmentSets = dto.EquipmentSets.Select(x =>
                 {
-                    var name = sets.TryGetValue(x, out var set) ? set : x.ToString();
+                    var name = sets.TryGetValue(x.ToString(), out var set) ? set : x.ToString();
                     return new IconLabelItemViewModel()
                     {
                         IconUrl = assetUrlProvider.GetHohEquipmentSetIconUrl(x),

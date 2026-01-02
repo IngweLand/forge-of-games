@@ -148,8 +148,11 @@ public static class DependencyInjection
         services.AddScoped<IInGameEventUiService, InGameEventUiService>();
         services.AddScoped<IFogSharingUiService, FogSharingUiService>();
         services.AddScoped<IEquipmentConfigurationProfileFactory, EquipmentConfigurationProfileFactory>();
-        services.AddScoped<IHeroEquipmentConfigurationViewModelFactory, HeroEquipmentConfigurationViewModelFactory>();
+        services.AddScoped<IEquipmentConfigurationViewModelFactory, EquipmentConfigurationViewModelFactory>();
         services.AddScoped<IIconLabelItemViewModelFactory, IconLabelItemViewModelFactory>();
+        services.AddScoped<IEquipmentConfigurationProfilePersistenceService, EquipmentConfigurationProfilePersistenceService>();
+        services.AddScoped<IEquipmentItemAttributeViewModelFactory, EquipmentItemAttributeViewModelFactory>();
+        services.AddScoped<IEquipmentItemViewModel2Factory, EquipmentItemViewModel2Factory>();
 
         services.AddScoped<CityPlannerSettings>();
 

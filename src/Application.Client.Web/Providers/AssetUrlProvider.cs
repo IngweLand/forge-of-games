@@ -132,6 +132,12 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath,
             $"icon_equipmentset_{equipmentSet.ToString().ToLowerInvariant()}.png");
     }
+    
+    public string GetHohEquipmentIconUrl(EquipmentSet equipmentSet, EquipmentSlotType slot)
+    {
+        return GetAssetUrl(assetsSettings.Value.HohIconsPath,
+            $"icon_equipment_{equipmentSet.ToString().ToLowerInvariant()}_{slot.ToString().ToLowerInvariant()}.png");
+    }
 
     private string GetAssetUrl(params string[] pathElements)
     {

@@ -89,6 +89,14 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? s;
     }
 
+    public string GetConcreteEquipmentSetName(EquipmentSet set, EquipmentSlotType slot)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.EquipmentSets,
+            HohLocalizationProperty.Name,
+            $"equipment_set.{set}_{slot}");
+        return GetValue(key) ?? $"{set} {slot}";
+    }
+
     public string GetPvpTierName(PvpTier tier)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.PvpTiers, HohLocalizationProperty.Name,

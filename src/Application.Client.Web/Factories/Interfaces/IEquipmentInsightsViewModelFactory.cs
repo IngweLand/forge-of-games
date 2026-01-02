@@ -7,5 +7,5 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 public interface IEquipmentInsightsViewModelFactory
 {
     EquipmentInsightsViewModel Create(EquipmentInsightsDto dto,
-        IReadOnlyDictionary<StatAttribute, string> statAttributes, IReadOnlyDictionary<EquipmentSet, string> sets);
+        IReadOnlyDictionary<StatAttribute, string> statAttributes, IReadOnlyDictionary<string, string> sets);
 }
