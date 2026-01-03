@@ -3093,6 +3093,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wonder Levels.
+        /// </summary>
+        public static string StatsHub_Player_WonderLevels {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.WonderLevels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to World.
         /// </summary>
         public static string StatsHub_Player_World {

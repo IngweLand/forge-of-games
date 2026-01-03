@@ -28,6 +28,7 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_TEMPLATE, GetPlayerAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE, GetPlayerBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE, GetTopPlayersAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_WONDER_RANKINGS_TEMPLATE, GetWonderRankingsAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCE_TEMPLATE, GetAllianceAsync);
@@ -249,6 +250,15 @@ public static class StatsApi
             CancellationToken ct = default)
     {
         var result = await services.StatsHubService.GetAllianceAthRankingsAsync(allianceId, ct);
+
+        return TypedResults.Ok(result);
+    } 
+    
+    private static async Task<Ok<IReadOnlyCollection<WonderRankingDto>>>
+        GetWonderRankingsAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
+            CancellationToken ct = default)
+    {
+        var result = await services.StatsHubService.GetWonderRankingsAsync(playerId, ct);
 
         return TypedResults.Ok(result);
     }

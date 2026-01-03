@@ -36,6 +36,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IMapper _mapper;
     private readonly IMemoryCache _memoryCache;
     private readonly IPlayerCityPropertiesViewModelFactory _cityPropertiesViewModelFactory;
+    private readonly IWonderRankingViewModelFactory _wonderRankingViewModelFactory;
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
@@ -51,6 +52,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IAllianceAthRankingViewModelFactory allianceAthRankingViewModelFactory,
         ICommonUiService commonUiService,
         IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
+        IWonderRankingViewModelFactory wonderRankingViewModelFactory,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -65,6 +67,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _allianceAthRankingViewModelFactory = allianceAthRankingViewModelFactory;
         _commonUiService = commonUiService;
         _cityPropertiesViewModelFactory = cityPropertiesViewModelFactory;
+        _wonderRankingViewModelFactory = wonderRankingViewModelFactory;
         _memoryCache = memoryCache;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
@@ -146,6 +149,12 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceAthRankingViewModelFactory.Create(x,
             leagues.GetValueOrDefault(x.League,
                 new TreasureHuntLeagueDto {League = TreasureHuntLeague.Undefined, Name = string.Empty}))).ToList();
+    }
+
+    public async Task<IReadOnlyCollection<WonderRankingViewModel>> GetWonderRankingsAsync(int playerId)
+    {
+        var rankings = await _statsHubService.GetWonderRankingsAsync(playerId);
+        return rankings.OrderBy(x => x.StartedAt).Select(x => _wonderRankingViewModelFactory.Create(x)).ToList();
     }
 
     public async Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId)

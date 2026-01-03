@@ -14,6 +14,7 @@ public static class FogConstants
     public const int ALLIANCE_NAME_MIN_IN_GAME_SEARCH_STRING_LENGTH = 3;
     public const int SHARED_SUBMISSION_ID_VALIDITY_DAYS = 1;
     public const int MAX_DISPLAYED_ATH_EVENTS = 10;
+    public const int MAX_DISPLAYED_WONDER_RANKINGS = 10;
     public const int MAX_ALLIANCES_ATH_RANKINGS = 100;
     public const int MAX_EVENT_CITY_RANKINGS = 100;
     public const int CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH = 60;

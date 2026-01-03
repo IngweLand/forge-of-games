@@ -89,6 +89,12 @@ p {
     gap: 6px;
 }
 
+.wonder-ranking-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 @media (min-width: 576px) {
     .page-container {
         padding: 16px;
@@ -125,6 +131,10 @@ p {
     }
     
     .city-properties-section-items-container {
+        gap: 12px;
+    }
+
+    .wonder-ranking-items-container {
         gap: 12px;
     }
 }

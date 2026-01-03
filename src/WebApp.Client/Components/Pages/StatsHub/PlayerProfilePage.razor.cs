@@ -49,6 +49,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private IReadOnlyCollection<StatsTimedIntValue>? _rankings;
     private bool _rankingsAreLoading;
     private CancellationTokenSource? _rankingsCts;
+    private IReadOnlyCollection<WonderRankingViewModel>? _wonderRankings;
+    private bool _wonderRankingsAreLoading;
+    private CancellationTokenSource? _wonderRankingsCts;
 
     [Inject]
     public IPlayerProfilePageAnalyticsService AnalyticsService { get; set; }
@@ -163,6 +166,11 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         if (_cityPropertiesCts != null)
         {
             await _cityPropertiesCts.CancelAsync();
+        }
+        
+        if (_wonderRankingsCts != null)
+        {
+            await _wonderRankingsCts.CancelAsync();
         }
     }
 
@@ -550,6 +558,53 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             {
                 args.Text = "";
             }
+        }
+    }
+    
+    private async Task ToggleWonderRankingsContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.WONDER_RANKINGS, expanded);
+
+        if (expanded)
+        {
+            await GetWonderRankings();
+        }
+    }
+    
+    private async Task GetWonderRankings()
+    {
+        if (_wonderRankings != null)
+        {
+            return;
+        }
+
+        if (_wonderRankingsCts != null)
+        {
+            await _wonderRankingsCts.CancelAsync();
+        }
+
+        _wonderRankingsAreLoading = true;
+        StateHasChanged();
+
+        _wonderRankingsCts = new CancellationTokenSource();
+
+        try
+        {
+            _wonderRankings = await StatsHubUiService.GetWonderRankingsAsync(PlayerId);
+            _wonderRankingsAreLoading = false;
+        }
+        catch (OperationCanceledException _)
+        {
+        }
+        catch (ApiException apiEx) when (apiEx.InnerException is TaskCanceledException)
+        {
+            _wonderRankingsAreLoading = false;
+        }
+        catch (Exception e)
+        {
+            _wonderRankingsAreLoading = false;
+            Console.Error.WriteLine(e);
         }
     }
 }
