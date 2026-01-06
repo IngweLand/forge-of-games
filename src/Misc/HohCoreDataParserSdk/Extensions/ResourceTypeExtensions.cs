@@ -32,6 +32,7 @@ public static class ResourceTypeExtensions
             "wonder_contribution" => ResourceType.WonderContribution,
             "upgrade_token" => ResourceType.UpgradeToken,
             "ember" => ResourceType.Ember,
+            "woa" => ResourceType.Woa,
             _ => throw new Exception($"Cannot map resource type: {value}"),
         };
     }

@@ -28,6 +28,7 @@ public enum ResourceType
     SoftCurrency,
     TreasureHunt,
     UpgradeToken,
+    Woa,
     WonderContribution,
     XpScroll,
 }
