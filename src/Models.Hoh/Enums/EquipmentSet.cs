@@ -9,6 +9,7 @@ public enum EquipmentSet
     Bard,
     Bedouin,
     Centurion,
+    Dharma,
     Druid,
     Flapper,
     General,
