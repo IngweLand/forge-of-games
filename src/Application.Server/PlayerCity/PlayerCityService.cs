@@ -3,7 +3,6 @@ using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Interfaces;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
@@ -100,11 +99,32 @@ public class PlayerCityService : IPlayerCityService
         {
             return null;
         }
+
         var premiumExpansionCount =
             otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
         var citySnapshot = await CreateSnapshot(playerId, city, premiumExpansionCount, data);
 
         _context.PlayerCitySnapshots.Add(citySnapshot);
+        await _context.SaveChangesAsync();
+
+        return citySnapshot;
+    }
+
+    public async Task<EventCitySnapshot?> SaveEventCityAsync(int playerId, byte[] data)
+    {
+        var otherCity = _dataParsingService.ParseOtherCity(data);
+
+        var city = await CreateCity(otherCity, string.Empty);
+        if (city == null)
+        {
+            return null;
+        }
+
+        var premiumExpansionCount =
+            otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
+        var citySnapshot = CreateEventCitySnapshot(playerId, city, premiumExpansionCount, data);
+
+        _context.EventCitySnapshots.Add(citySnapshot);
         await _context.SaveChangesAsync();
 
         return citySnapshot;
@@ -134,7 +154,8 @@ public class PlayerCityService : IPlayerCityService
 
             var premiumExpansionCount =
                 otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
-            var newCitySnapshot = await CreateSnapshot(snapshot.PlayerId, city, premiumExpansionCount, snapshot.Data.Data);
+            var newCitySnapshot =
+                await CreateSnapshot(snapshot.PlayerId, city, premiumExpansionCount, snapshot.Data.Data);
             snapshot.TotalArea = newCitySnapshot.TotalArea;
             snapshot.HappinessUsageRatio = newCitySnapshot.HappinessUsageRatio;
             snapshot.HasPremiumHomeBuildings = newCitySnapshot.HasPremiumHomeBuildings;
@@ -166,7 +187,25 @@ public class PlayerCityService : IPlayerCityService
         await _context.SaveChangesAsync();
     }
 
-    private async Task<PlayerCitySnapshot> CreateSnapshot(int playerId, HohCity city, int premiumExpansionCount, byte[] data)
+    private EventCitySnapshot CreateEventCitySnapshot(int playerId, HohCity city, int premiumExpansionCount,
+        byte[] data)
+    {
+        return new EventCitySnapshot
+        {
+            PlayerId = playerId,
+            CityId = city.InGameCityId,
+            WonderId = city.WonderId,
+            CollectedAt = DateTime.UtcNow,
+            Data = new EventCitySnapshotDataEntity
+            {
+                Data = data,
+            },
+            PremiumExpansionCount = premiumExpansionCount,
+        };
+    }
+
+    private async Task<PlayerCitySnapshot> CreateSnapshot(int playerId, HohCity city, int premiumExpansionCount,
+        byte[] data)
     {
         var cityStats = await _cityStatsCalculator.Calculate(city);
 

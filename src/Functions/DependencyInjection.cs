@@ -59,6 +59,7 @@ public static class DependencyInjection
         services.AddScoped<IHeroAttributeFeaturesParser, HeroAttributeFeaturesParser>();
         services.AddScoped<IPlayerCitySnapshotStatsUpdater, PlayerCitySnapshotStatsUpdater>();
         services.AddScoped<IEventCityWonderRankingFetcher, EventCityWonderRankingFetcher>();
+        services.AddScoped<IEventCityFetcher, EventCityFetcher>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

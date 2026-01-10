@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<EventCitySnapshot> EventCitySnapshots { get; set; }
+
     public DbSet<EventCityWonderRanking> EventCityWonderRankings { get; set; }
 
     public DbSet<HeroAbilityFeaturesEntity> HeroAbilityFeatures { get; set; }
@@ -78,5 +80,7 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new AnnualBudgetEntityTypeConfiguration());
         builder.ApplyConfiguration(new HeroAbilityFeaturesEntityTypeConfiguration());
         builder.ApplyConfiguration(new EventCityWonderRankingEntityTypeConfiguration());
+        builder.ApplyConfiguration(new EventCitySnapshotEntityTypeConfiguration());
+        builder.ApplyConfiguration(new EventCitySnapshotDataEntityTypeConfiguration());
     }
 }

@@ -20,7 +20,7 @@ public class EventCityWonderRankingFetcher(
     IGameWorldsProvider gameWorldsProvider,
     IPlayerCityService playerCityService,
     IHohCityCreationService cityCreationService,
-    ILogger<EventCityWonderRankingFetcher> logger) : IEventCityWonderRankingFetcher
+    ILogger<EventCityWonderRankingFetcher> logger) :EventCityFetcherBase (context), IEventCityWonderRankingFetcher
 {
     private const int BATCH_SIZE = 400;
 
@@ -63,7 +63,7 @@ public class EventCityWonderRankingFetcher(
                 try
                 {
                     var city = await cityCreationService.Create(fetchedCity, string.Empty);
-                    context.EventCityWonderRankings.Add(new EventCityWonderRanking
+                    Context.EventCityWonderRankings.Add(new EventCityWonderRanking
                     {
                         PlayerId = player.Id,
                         InGameEventId = currentEvent.Id,
@@ -71,7 +71,7 @@ public class EventCityWonderRankingFetcher(
                         WonderLevel = city.WonderLevel,
                     });
 
-                    await context.SaveChangesAsync();
+                    await Context.SaveChangesAsync();
                 }
                 catch (Exception e)
                 {
@@ -89,23 +89,9 @@ public class EventCityWonderRankingFetcher(
         return shouldRunAgain;
     }
 
-    private async Task<InGameEventEntity?> GetCurrentEvent(string worldId)
-    {
-        var now = DateTime.UtcNow;
-        var e = await context.InGameEvents.FirstOrDefaultAsync(x =>
-            x.DefinitionId == EventDefinitionId.EventCity && x.WorldId == worldId && x.StartAt <= now &&
-            x.EndAt >= now);
-        if (e == null || e.EndAt.Date != now.Date)
-        {
-            return null;
-        }
-
-        return e;
-    }
-
     private async Task<IReadOnlyCollection<Player>> GetInGamePlayerIds(string worldId, int eventId)
     {
-        var players = await context.Alliances
+        var players = await Context.Alliances
             .Include(x => x.Members)
             .ThenInclude(x => x.Player)
             .ThenInclude(x => x.EventCityWonderRankings.Where(y => y.InGameEventId == eventId))
