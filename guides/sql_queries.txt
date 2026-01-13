@@ -41,7 +41,8 @@ DECLARE TableCursor CURSOR FOR
     WHERE name IN ('alliances', 'battles', 'profile_squads', 'pvp_battles', 'player_city_snapshots',
                    'player_city_snapshot_data', 'players', 'battle_stats', 'battle_timelines', 'battle_squads',
                    'profile_squad_data', 'player_rankings', 'pvp_rankings2', 'alliance_rankings', 'alliance_members',
-                   'player_name_history_entries', 'alliance_ath_rankings', 'pvp_battle_teams', 'battle_squad_stats')
+                   'player_name_history_entries', 'alliance_ath_rankings', 'pvp_battle_teams', 'battle_squad_stats',
+				   'event_city_snapshots', 'event_city_snapshot_data')
     ORDER BY name;
 OPEN TableCursor;
 FETCH NEXT FROM TableCursor INTO @TableName;

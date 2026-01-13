@@ -20,7 +20,7 @@ public class EventCityWonderRankingFetcher(
     IGameWorldsProvider gameWorldsProvider,
     IPlayerCityService playerCityService,
     IHohCityCreationService cityCreationService,
-    ILogger<EventCityWonderRankingFetcher> logger) :EventCityFetcherBase (context), IEventCityWonderRankingFetcher
+    ILogger<EventCityWonderRankingFetcher> logger) : IEventCityWonderRankingFetcher
 {
     private const int BATCH_SIZE = 400;
 
@@ -63,7 +63,7 @@ public class EventCityWonderRankingFetcher(
                 try
                 {
                     var city = await cityCreationService.Create(fetchedCity, string.Empty);
-                    Context.EventCityWonderRankings.Add(new EventCityWonderRanking
+                    context.EventCityWonderRankings.Add(new EventCityWonderRanking
                     {
                         PlayerId = player.Id,
                         InGameEventId = currentEvent.Id,
@@ -71,7 +71,7 @@ public class EventCityWonderRankingFetcher(
                         WonderLevel = city.WonderLevel,
                     });
 
-                    await Context.SaveChangesAsync();
+                    await context.SaveChangesAsync();
                 }
                 catch (Exception e)
                 {
@@ -82,7 +82,7 @@ public class EventCityWonderRankingFetcher(
             }
 
             shouldRunAgain = shouldRunAgain || players.Count >= BATCH_SIZE;
-            
+
             logger.LogInformation("Processed {count} players for world {worldId}", players.Count, gw.Id);
         }
 
@@ -91,7 +91,7 @@ public class EventCityWonderRankingFetcher(
 
     private async Task<IReadOnlyCollection<Player>> GetInGamePlayerIds(string worldId, int eventId)
     {
-        var players = await Context.Alliances
+        var players = await context.Alliances
             .Include(x => x.Members)
             .ThenInclude(x => x.Player)
             .ThenInclude(x => x.EventCityWonderRankings.Where(y => y.InGameEventId == eventId))
@@ -112,5 +112,19 @@ public class EventCityWonderRankingFetcher(
         }
 
         return filteredPlayers;
+    }
+
+    private async Task<InGameEventEntity?> GetCurrentEvent(string worldId)
+    {
+        var now = DateTime.UtcNow;
+        var e = await context.InGameEvents.FirstOrDefaultAsync(x =>
+            x.DefinitionId == EventDefinitionId.EventCity && x.WorldId == worldId && x.StartAt <= now &&
+            x.EndAt >= now);
+        if (e == null || e.EndAt.Date != now.Date)
+        {
+            return null;
+        }
+
+        return e;
     }
 }

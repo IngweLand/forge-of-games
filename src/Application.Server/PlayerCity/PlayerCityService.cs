@@ -201,6 +201,7 @@ public class PlayerCityService : IPlayerCityService
                 Data = data,
             },
             PremiumExpansionCount = premiumExpansionCount,
+            HasPremiumBuildings = HasPremiumBuildings(city.Entities),
         };
     }
 
@@ -291,6 +292,12 @@ public class PlayerCityService : IPlayerCityService
         return false;
     }
 
+    private static bool HasPremiumBuildings(IEnumerable<HohCityMapEntity> cityMapEntities)
+    {
+        return cityMapEntities.Any(x =>
+            x.CityEntityId.Contains("premium", StringComparison.InvariantCultureIgnoreCase));
+    }
+
     private async Task<IReadOnlyDictionary<string, Building>> GetBuildingsWithCacheAsync(CityId cityId)
     {
         if (_buildingsCache.TryGetValue(cityId, out var cachedBuildings))
@@ -337,7 +344,7 @@ public class PlayerCityService : IPlayerCityService
             var buildings = await GetBuildingsWithCacheAsync(cityDto.CityId);
 
             var cityName = $"{playerName} - {cityDto.CityId} - {DateTime.UtcNow:d}";
-            return _cityFactory.Create(cityDto, buildings, WonderId.Undefined, 0, cityName);
+            return _cityFactory.Create(cityDto, buildings, cityName);
         }
         catch (Exception ex)
         {
