@@ -20,4 +20,5 @@ public enum ContinentId
     SiegeOfOrleans,
     SpartasLastStand,
     FallOfTroy,
+    AncientEgypt,
 }

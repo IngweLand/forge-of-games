@@ -23,7 +23,7 @@ public class BattleUiService(
 {
     private readonly HashSet<BattleType> _unitBattleTypes =
     [
-        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm,
+        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm, //BattleType.AncientEgypt,
     ];
 
     public async Task<BattleStatsViewModel> GetBattleStatsAsync(

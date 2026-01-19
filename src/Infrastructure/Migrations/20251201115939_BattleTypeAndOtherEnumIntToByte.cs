@@ -20,6 +20,7 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         WHEN '{Models.Hoh.Enums.BattleType.Pvp.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.Pvp}
                         WHEN '{Models.Hoh.Enums.BattleType.TeslaStorm.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.TeslaStorm}
                         WHEN '{Models.Hoh.Enums.BattleType.TreasureHunt.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.TreasureHunt}
+                        WHEN '{Models.Hoh.Enums.BattleType.AncientEgypt.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.AncientEgypt}
                         ELSE {(byte)Models.Hoh.Enums.BattleType.Undefined} -- default
                     END
             ");
@@ -89,6 +90,7 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         WHEN {(byte)Models.Hoh.Enums.BattleType.Pvp} THEN '{Models.Hoh.Enums.BattleType.Pvp.ToString()}'
                         WHEN {(byte)Models.Hoh.Enums.BattleType.TeslaStorm} THEN '{Models.Hoh.Enums.BattleType.TeslaStorm.ToString()}'
                         WHEN {(byte)Models.Hoh.Enums.BattleType.TreasureHunt} THEN '{Models.Hoh.Enums.BattleType.TreasureHunt.ToString()}'
+                        WHEN {(byte)Models.Hoh.Enums.BattleType.AncientEgypt} THEN '{Models.Hoh.Enums.BattleType.AncientEgypt.ToString()}'
                         ELSE '{Models.Hoh.Enums.BattleType.Undefined.ToString()}' -- default
                     END
             ");

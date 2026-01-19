@@ -8,4 +8,5 @@ public enum BattleType : byte
     Pvp = 3,
     TeslaStorm = 4,
     TreasureHunt = 5,
+    AncientEgypt = 6,
 }

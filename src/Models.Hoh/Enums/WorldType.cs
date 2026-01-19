@@ -9,4 +9,5 @@ public enum WorldType
     Campaign,
     TeslaStorm,
     HistoricBattle,
+    Event,
 }

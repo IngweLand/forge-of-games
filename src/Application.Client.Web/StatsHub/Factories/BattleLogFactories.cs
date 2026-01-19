@@ -27,6 +27,7 @@ public class BattleLogFactories(
                 {BattleType.Pvp, localizer[FogResource.BattleType_PvP]},
                 {BattleType.HistoricBattle, localizer[FogResource.BattleType_HistoricBattle]},
                 {BattleType.TeslaStorm, localizer[FogResource.BattleType_TeslaStorm]},
+                // {BattleType.AncientEgypt, localizer[FogResource.BattleType_AncientEgypt]},
             },
             CampaignContinents = campaignContinents,
             Difficulties = new Dictionary<Difficulty, string>

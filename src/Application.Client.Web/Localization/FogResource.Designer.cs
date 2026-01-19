@@ -339,6 +339,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ancient Egypt.
+        /// </summary>
+        public static string BattleType_AncientEgypt {
+            get {
+                return ResourceManager.GetString("BattleType.AncientEgypt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Campaign.
         /// </summary>
         public static string BattleType_Campaign {

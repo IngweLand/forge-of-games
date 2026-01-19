@@ -64,4 +64,5 @@ public enum RegionId
     SiegeOfOrleans,
     SpartasLastStand,
     FallOfTroy,
+    AncientEgypt,
 }

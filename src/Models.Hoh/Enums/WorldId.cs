@@ -15,4 +15,5 @@ public enum WorldId
     SiegeOfOrleans,
     SpartasLastStand,
     FallOfTroy,
+    AncientEgypt,
 }

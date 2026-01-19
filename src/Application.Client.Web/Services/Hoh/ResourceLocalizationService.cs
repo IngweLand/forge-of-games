@@ -16,6 +16,7 @@ public class ResourceLocalizationService(IStringLocalizer<FogResource> localizer
             BattleType.Pvp => localizer[FogResource.BattleType_PvP],
             BattleType.TeslaStorm => localizer[FogResource.BattleType_TeslaStorm],
             BattleType.TreasureHunt => localizer[FogResource.BattleType_TreasureHunt],
+            BattleType.AncientEgypt => localizer[FogResource.BattleType_AncientEgypt],
             _ => string.Empty,
         };
     }

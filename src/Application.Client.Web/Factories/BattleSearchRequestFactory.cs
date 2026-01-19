@@ -142,6 +142,11 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             queryParams.Add(TeslaStormRegionKey, battleDefinitionIdParts[0]);
             queryParams.Add(TeslaStormEncounterKey, battleDefinitionIdParts[1]);
         }
+        
+        if (battleType == BattleType.AncientEgypt)
+        {
+            // TODO: implement
+        }
 
         if (unitIds != null)
         {
@@ -176,6 +181,10 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
                 break;
             case BattleType.TeslaStorm:
                 details = $"{_teslaAbbreviations[request.TeslaStormRegion]}–{request.TeslaStormEncounter}";
+                break;
+            case BattleType.AncientEgypt:
+                // TODO: implement
+                details = string.Empty;
                 break;
             default:
                 details = string.Empty;
@@ -313,6 +322,7 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             BattleType.Pvp => localizer[FogResource.BattleType_PvP],
             BattleType.TeslaStorm => localizer[FogResource.BattleType_TeslaStorm],
             BattleType.TreasureHunt => localizer[FogResource.BattleType_TreasureHunt],
+            BattleType.AncientEgypt => localizer[FogResource.BattleType_AncientEgypt],
             _ => string.Empty,
         };
     }
