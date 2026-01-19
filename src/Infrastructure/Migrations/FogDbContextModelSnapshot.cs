@@ -580,6 +580,9 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Property<bool>("HasPremiumBuildings")
                         .HasColumnType("bit");
 
+                    b.Property<int>("InGameEventId")
+                        .HasColumnType("int");
+
                     b.Property<int>("PlayerId")
                         .HasColumnType("int");
 
@@ -593,6 +596,8 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("HasPremiumBuildings");
+
+                    b.HasIndex("InGameEventId");
 
                     b.HasIndex("PlayerId", "CityId", "WonderId");
 
@@ -620,6 +625,72 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("event_city_snapshot_data", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityStrategy", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CityId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("HasPremiumBuildings")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("HasPremiumExpansion")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("InGameEventId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlayerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WonderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HasPremiumBuildings");
+
+                    b.HasIndex("HasPremiumExpansion");
+
+                    b.HasIndex("InGameEventId");
+
+                    b.HasIndex("PlayerId");
+
+                    b.HasIndex("CityId", "WonderId");
+
+                    b.ToTable("event_city_strategy", (string)null);
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityStrategyDataEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<byte[]>("Data")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<int>("EventCityStrategyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventCityStrategyId")
+                        .IsUnique();
+
+                    b.ToTable("event_city_strategy_data", (string)null);
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityWonderRanking", b =>
@@ -1542,11 +1613,19 @@ namespace Ingweland.Fog.Infrastructure.Migrations
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCitySnapshot", b =>
                 {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.InGameEventEntity", "InGameEvent")
+                        .WithMany()
+                        .HasForeignKey("InGameEventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", "Player")
                         .WithMany()
                         .HasForeignKey("PlayerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("InGameEvent");
 
                     b.Navigation("Player");
                 });
@@ -1560,6 +1639,36 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("EventCitySnapshot");
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityStrategy", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.InGameEventEntity", "InGameEvent")
+                        .WithMany()
+                        .HasForeignKey("InGameEventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.Player", "Player")
+                        .WithMany("EventCityStrategies")
+                        .HasForeignKey("PlayerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InGameEvent");
+
+                    b.Navigation("Player");
+                });
+
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityStrategyDataEntity", b =>
+                {
+                    b.HasOne("Ingweland.Fog.Models.Fog.Entities.EventCityStrategy", "EventCityStrategy")
+                        .WithOne("Data")
+                        .HasForeignKey("Ingweland.Fog.Models.Fog.Entities.EventCityStrategyDataEntity", "EventCityStrategyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EventCityStrategy");
                 });
 
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityWonderRanking", b =>
@@ -1719,6 +1828,12 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.EventCityStrategy", b =>
+                {
+                    b.Navigation("Data")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Ingweland.Fog.Models.Fog.Entities.Player", b =>
                 {
                     b.Navigation("AgeHistory");
@@ -1726,6 +1841,8 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                     b.Navigation("AllianceMembership");
 
                     b.Navigation("CitySnapshots");
+
+                    b.Navigation("EventCityStrategies");
 
                     b.Navigation("EventCityWonderRankings");
 

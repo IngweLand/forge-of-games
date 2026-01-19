@@ -17,7 +17,7 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_CITY_TEMPLATE_REFIT)]
     Task<HohCity?> GetPlayerCityAsync(int playerId, DateOnly? date = null, CancellationToken ct = default);
-    
+
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_EVENT_CITY_TEMPLATE_REFIT)]
     Task<HohCity?> GetPlayerEventCityAsync(int playerId, CancellationToken ct = default);
 
@@ -53,7 +53,7 @@ public interface IStatsHubService
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetPlayerRankingsAsync(int playerId,
         CancellationToken ct = default);
-    
+
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_WONDER_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<WonderRankingDto>> GetWonderRankingsAsync(int playerId,
         CancellationToken ct = default);
@@ -82,4 +82,8 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT)]
     Task<PlayerCityPropertiesDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
+
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_CITY_STRATEGIES_REFIT)]
+    Task<IReadOnlyCollection<PlayerCityStrategyInfoDto>> GetPlayerCityStrategiesAsync(int playerId,
+        CancellationToken ct = default);
 }

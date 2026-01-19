@@ -16,6 +16,7 @@ public interface IFogDbContext
     DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
     DbSet<EventCityFetchState> EventCityFetchStates { get; set; }
     DbSet<EventCitySnapshot> EventCitySnapshots { get; set; }
+    DbSet<EventCityStrategy> EventCityStrategies { get; set; }
     DbSet<EventCityWonderRanking> EventCityWonderRankings { get; set; }
     public DbSet<HeroAbilityFeaturesEntity> HeroAbilityFeatures { get; set; }
     DbSet<InGameEventEntity> InGameEvents { get; set; }

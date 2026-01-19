@@ -30,16 +30,17 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IAllianceAthRankingViewModelFactory _allianceAthRankingViewModelFactory;
     private readonly IBattleService _battleService;
     private readonly IBattleViewModelFactory _battleViewModelFactory;
+    private readonly IPlayerCityPropertiesViewModelFactory _cityPropertiesViewModelFactory;
     private readonly ICommonService _commonService;
     private readonly ICommonUiService _commonUiService;
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IMapper _mapper;
     private readonly IMemoryCache _memoryCache;
-    private readonly IPlayerCityPropertiesViewModelFactory _cityPropertiesViewModelFactory;
-    private readonly IWonderRankingViewModelFactory _wonderRankingViewModelFactory;
+    private readonly IPlayerCityStrategyInfoViewModelFactory _playerCityStrategyInfoViewModelFactory;
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
     private readonly ITreasureHuntUiService _treasureHuntUiService;
+    private readonly IWonderRankingViewModelFactory _wonderRankingViewModelFactory;
 
     public StatsHubUiService(IStatsHubService statsHubService,
         ICommonService commonService,
@@ -53,6 +54,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         ICommonUiService commonUiService,
         IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
         IWonderRankingViewModelFactory wonderRankingViewModelFactory,
+        IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -68,6 +70,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _commonUiService = commonUiService;
         _cityPropertiesViewModelFactory = cityPropertiesViewModelFactory;
         _wonderRankingViewModelFactory = wonderRankingViewModelFactory;
+        _playerCityStrategyInfoViewModelFactory = playerCityStrategyInfoViewModelFactory;
         _memoryCache = memoryCache;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
@@ -155,6 +158,19 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     {
         var rankings = await _statsHubService.GetWonderRankingsAsync(playerId);
         return rankings.OrderBy(x => x.StartedAt).Select(x => _wonderRankingViewModelFactory.Create(x)).ToList();
+    }
+
+    public Task<IReadOnlyCollection<PlayerCityStrategyInfoViewModel>> GetPlayerCityStrategiesAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync<IReadOnlyCollection<PlayerCityStrategyInfoViewModel>>(
+            async () =>
+            {
+                var result = await _statsHubService.GetPlayerCityStrategiesAsync(playerId, ct);
+                return result.OrderBy(x => x.StartedAt).Select(x => _playerCityStrategyInfoViewModelFactory.Create(x))
+                    .ToList();
+            },
+            []);
     }
 
     public async Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId)
@@ -273,6 +289,16 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
             []);
     }
 
+    public async Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var result = await ExecuteSafeAsync(
+            () => _statsHubService.GetPlayerProductionCapacityAsync(playerId, ct),
+            null);
+
+        return result != null ? _cityPropertiesViewModelFactory.Create(result) : null;
+    }
+
     private async Task<T> GetOrCreateAsync<T>(string key, Func<Task<T>> factory) where T : ICollection, new()
     {
         return (await _memoryCache.GetOrCreateAsync(key, async entry =>
@@ -293,15 +319,5 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private async Task<IReadOnlyDictionary<string, AgeDto>> GetAgesAsync()
     {
         return (await _commonService.GetAgesAsync()).ToDictionary(a => a.Id);
-    }
-
-    public async Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
-        CancellationToken ct = default)
-    {
-        var result = await ExecuteSafeAsync(
-            () => _statsHubService.GetPlayerProductionCapacityAsync(playerId, ct),
-            null);
-
-        return result != null ? _cityPropertiesViewModelFactory.Create(result) : null;
     }
 }

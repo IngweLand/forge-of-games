@@ -1,8 +1,11 @@
 using System.Collections.Concurrent;
+using FluentResults;
+using FluentResults.Extensions;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Interfaces;
+using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
@@ -110,7 +113,7 @@ public class PlayerCityService : IPlayerCityService
         return citySnapshot;
     }
 
-    public async Task<EventCitySnapshot?> SaveEventCityAsync(int playerId, byte[] data)
+    public async Task<EventCitySnapshot?> SaveEventCityAsync(int inGameEventId, int playerId, byte[] data)
     {
         var otherCity = _dataParsingService.ParseOtherCity(data);
 
@@ -122,7 +125,7 @@ public class PlayerCityService : IPlayerCityService
 
         var premiumExpansionCount =
             otherCity.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
-        var citySnapshot = CreateEventCitySnapshot(playerId, city, premiumExpansionCount, data);
+        var citySnapshot = CreateEventCitySnapshot(inGameEventId, playerId, city, premiumExpansionCount, data);
 
         _context.EventCitySnapshots.Add(citySnapshot);
         await _context.SaveChangesAsync();
@@ -187,7 +190,30 @@ public class PlayerCityService : IPlayerCityService
         await _context.SaveChangesAsync();
     }
 
-    private EventCitySnapshot CreateEventCitySnapshot(int playerId, HohCity city, int premiumExpansionCount,
+    public async Task<Result<HohCity>> GetEventCityAsync(int eventCitySnapshotId)
+    {
+        var snapshotResult = await Result.Try(() =>
+            _context.EventCitySnapshots.Include(x => x.Data).FirstOrDefaultAsync(x => x.Id == eventCitySnapshotId));
+        if (snapshotResult.IsFailed)
+        {
+            return snapshotResult.ToResult<HohCity>();
+        }
+
+        if (snapshotResult.Value == null)
+        {
+            return Result.Fail<HohCity>(new EntityNotFoundError(nameof(EventCitySnapshot), eventCitySnapshotId));
+        }
+
+        var otherCityResult = Result.Try(() => _dataParsingService.ParseOtherCity(snapshotResult.Value.Data.Data));
+        if (otherCityResult.IsFailed)
+        {
+            return otherCityResult.ToResult<HohCity>();
+        }
+
+        return await CreateCity(otherCityResult.Value);
+    }
+
+    private EventCitySnapshot CreateEventCitySnapshot(int inGameEventId, int playerId, HohCity city, int premiumExpansionCount,
         byte[] data)
     {
         return new EventCitySnapshot
@@ -202,6 +228,7 @@ public class PlayerCityService : IPlayerCityService
             },
             PremiumExpansionCount = premiumExpansionCount,
             HasPremiumBuildings = HasPremiumBuildings(city.Entities),
+            InGameEventId = inGameEventId,
         };
     }
 
@@ -352,6 +379,12 @@ public class PlayerCityService : IPlayerCityService
         }
 
         return null;
+    }
+
+    private async Task<Result<HohCity>> CreateCity(OtherCity cityDto)
+    {
+        return await Result.Try(() => GetBuildingsWithCacheAsync(cityDto.CityId))
+            .Bind(x => Result.Try(() => _cityFactory.Create(cityDto, x)));
     }
 
     private OtherCity? TryParseCity(byte[] data, string gameWorldId, int playerId)

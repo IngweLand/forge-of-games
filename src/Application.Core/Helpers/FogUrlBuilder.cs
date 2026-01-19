@@ -47,6 +47,11 @@ public static class FogUrlBuilder
         public const string PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/productionCapacity";
         public const string PLAYER_WONDER_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/wonderRankings";
         public const string PLAYER_WONDER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/wonderRankings";
+        public const string PLAYER_CITY_STRATEGIES_REFIT = PLAYER_TEMPLATE_REFIT + "/cityStrategies";
+        public const string PLAYER_CITY_STRATEGIES = PLAYER_TEMPLATE + "/cityStrategies";
+        
+        public const string PLAYER_CITY_STRATEGY_REFIT = "/playerCityStrategies/{strategyId}";
+        public const string PLAYER_CITY_STRATEGY = "/playerCityStrategies/{strategyId:int}";
 
         public const string WORLD_EVENT_CITY_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/eventCities";
 

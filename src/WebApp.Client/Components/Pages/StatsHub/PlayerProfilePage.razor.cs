@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
+using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -29,7 +30,15 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
     private CancellationTokenSource _cityFetchCts = new();
+    private PlayerCityPropertiesViewModel? _cityProperties;
+    private bool _cityPropertiesAreLoading;
+    private CancellationTokenSource? _cityPropertiesCts;
     private DateTime? _citySnapshotDate = DateTime.Today;
+    private IReadOnlyCollection<PlayerCityStrategyInfoViewModel>? _cityStrategies;
+    private bool _cityStrategiesAreLoading;
+    private CancellationTokenSource? _cityStrategiesCts;
+    private CancellationTokenSource? _cityStrategyCts;
+    private bool _cityStrategyIsLoading;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private WonderId _eventCityWonder = WonderId.Undefined;
     private bool _fetchingCity;
@@ -39,9 +48,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private DateTime _minPvpRankingsChartDate = DateTime.Today.AddDays(-5);
     private PvpTier _minPvpTier = PvpTier.Undefined;
     private PlayerProfileViewModel? _player;
-    private PlayerCityPropertiesViewModel? _cityProperties;
-    private CancellationTokenSource? _cityPropertiesCts;
-    private bool _cityPropertiesAreLoading;
     private IReadOnlyCollection<PvpRankingViewModel>? _pvpRankings;
     private bool _pvpRankingsAreLoading;
     private CancellationTokenSource? _pvpRankingsCts;
@@ -64,6 +70,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
+
+    [Inject]
+    private ICityStrategyUiService CityStrategyUiService { get; set; }
 
     [Inject]
     private ICommonUiService CommonUiService { get; set; }
@@ -167,10 +176,20 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             await _cityPropertiesCts.CancelAsync();
         }
-        
+
         if (_wonderRankingsCts != null)
         {
             await _wonderRankingsCts.CancelAsync();
+        }
+        
+        if (_cityStrategiesCts != null)
+        {
+            await _cityStrategiesCts.CancelAsync();
+        }
+        
+        if (_cityStrategyCts != null)
+        {
+            await _cityStrategyCts.CancelAsync();
         }
     }
 
@@ -357,18 +376,20 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             {AnalyticsParams.CITY_ID, CityId.Capital.ToString()},
         };
-        
+
         AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_INIT, _defaultAnalyticsParameters, parameters);
 
         await HandleCityOperation(async city =>
             {
-                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultAnalyticsParameters, parameters);
+                AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_SUCCESS, _defaultAnalyticsParameters,
+                    parameters);
 
                 city.Id = Guid.NewGuid().ToString("N");
                 await PersistenceService.SaveTempCities([city]);
                 NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITIES_STATS_PATH);
             },
-            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters, parameters));
+            () => AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STATS_ERROR, _defaultAnalyticsParameters,
+                parameters));
     }
 
     private async Task ToggleRankingChart(bool expanded)
@@ -560,7 +581,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             }
         }
     }
-    
+
     private async Task ToggleWonderRankingsContainer(bool expanded)
     {
         AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
@@ -571,7 +592,39 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             await GetWonderRankings();
         }
     }
-    
+
+    private async Task ToggleCityStrategiesContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.CITY_STRATEGIES, expanded);
+
+        if (expanded)
+        {
+            await GetCityStrategies();
+        }
+    }
+
+    private async Task GetCityStrategies()
+    {
+        if (_cityStrategies != null)
+        {
+            return;
+        }
+
+        if (_cityStrategiesCts != null)
+        {
+            await _cityStrategiesCts.CancelAsync();
+        }
+
+        _cityStrategiesAreLoading = true;
+        StateHasChanged();
+
+        _cityStrategiesCts = new CancellationTokenSource();
+
+        _cityStrategies = await StatsHubUiService.GetPlayerCityStrategiesAsync(PlayerId, _cityStrategiesCts.Token);
+        _cityStrategiesAreLoading = false;
+    }
+
     private async Task GetWonderRankings()
     {
         if (_wonderRankings != null)
@@ -606,5 +659,48 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             _wonderRankingsAreLoading = false;
             Console.Error.WriteLine(e);
         }
+    }
+
+    private async Task GetStrategy(PlayerCityStrategyInfoViewModel strategyInfo)
+    {
+        if (_cityStrategyCts != null)
+        {
+            await _cityStrategyCts.CancelAsync();
+        }
+
+        _cityStrategyIsLoading = true;
+        StateHasChanged();
+        
+        _cityStrategyCts = new CancellationTokenSource();
+
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_ID, strategyInfo.CityId.ToString()},
+            {AnalyticsParams.PLAYER_CITY_STRATEGY_ID, strategyInfo.Id},
+        };
+
+        if (strategyInfo.Wonder != null)
+        {
+            parameters.Add(AnalyticsParams.WONDER_ID, strategyInfo.Wonder.ToString()!);
+        }
+
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_INIT, _defaultAnalyticsParameters, parameters);
+
+        var strategy = await CityStrategyUiService.FetchStrategy(strategyInfo.Id);
+        if (strategy == null)
+        {
+            AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_ERROR, _defaultAnalyticsParameters,
+                parameters);
+            _cityStrategyIsLoading = false;
+            return;
+        }
+
+        strategy.Id = Guid.NewGuid().ToString();
+        await PersistenceService.SaveCityStrategy(strategy);
+
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_SUCCESS, _defaultAnalyticsParameters,
+            parameters);
+
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(strategy.Id));
     }
 }

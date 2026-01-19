@@ -21,5 +21,6 @@ public class EventCitySnapshotEntityTypeConfiguration : IEntityTypeConfiguration
         
         builder.HasOne(x => x.Data).WithOne(x => x.EventCitySnapshot)
             .HasForeignKey<EventCitySnapshotDataEntity>(x => x.EventCitySnapshotId).IsRequired();
+        builder.HasOne(x => x.InGameEvent).WithMany().HasForeignKey(x => x.InGameEventId).IsRequired();
     }
 }

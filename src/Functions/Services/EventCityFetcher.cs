@@ -95,7 +95,7 @@ public class EventCityFetcher(
 
                 var delayTask = Task.Delay(300);
 
-                var fetched = await FetchCity(fetchState.PlayerId, fetchState.GameWorldId, fetchState.InGamePlayerId,
+                var fetched = await FetchCity(currentEvent.Id, fetchState.PlayerId, fetchState.GameWorldId, fetchState.InGamePlayerId,
                     wonderId.ToCity());
                 if (fetched)
                 {
@@ -105,12 +105,14 @@ public class EventCityFetcher(
                 }
                 else
                 {
-                    fetchState.FailuresCount++;
-                }
-
-                if (fetchState.FailuresCount >= MAX_FAILED_FETCHES)
-                {
-                    context.EventCityFetchStates.Remove(fetchState);
+                    if (fetchState.FailuresCount >= MAX_FAILED_FETCHES)
+                    {
+                        context.EventCityFetchStates.Remove(fetchState);
+                    }
+                    else
+                    {
+                        fetchState.FailuresCount++;
+                    }
                 }
 
                 await context.SaveChangesAsync();
@@ -163,7 +165,7 @@ public class EventCityFetcher(
         return members.Union(topEventPlayers).ToList();
     }
 
-    private async Task<bool> FetchCity(int playerId, string worldId, int inGamePlayerId, CityId cityId)
+    private async Task<bool> FetchCity(int inGameEventId, int playerId, string worldId, int inGamePlayerId, CityId cityId)
     {
         var fetchedCity = await playerCityService.FetchCityAsync(worldId, inGamePlayerId, cityId);
         if (fetchedCity == null)
@@ -173,7 +175,7 @@ public class EventCityFetcher(
             return false;
         }
 
-        var savedCity = await playerCityService.SaveEventCityAsync(playerId, fetchedCity);
+        var savedCity = await playerCityService.SaveEventCityAsync(inGameEventId, playerId, fetchedCity);
         if (savedCity == null)
         {
             logger.LogError("Failed to save city for player {PlayerId} from world {WorldId}",

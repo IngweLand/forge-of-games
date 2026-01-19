@@ -279,42 +279,42 @@ public static class HohApi
         HttpContext context)
     {
         var ages = await services.CommonService.GetAgesAsync();
-        await WriteToResponseAsync(context, ages, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, ages);
     }
 
     private static async Task GetResourcesAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var resources = await services.CommonService.GetResourcesAsync();
-        await WriteToResponseAsync(context, resources, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, resources);
     }
 
     private static async Task GetCitiesAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var cities = await services.CityService.GetCitiesAsync();
-        await WriteToResponseAsync(context, cities, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, cities);
     }
 
     private static async Task GetPvpTiersAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var tiers = await services.CommonService.GetPvpTiersAsync();
-        await WriteToResponseAsync(context, tiers, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, tiers);
     }
     
     private static async Task GetTreasureHuntLeaguesAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var leagues = await services.CommonService.GetTreasureHuntLeaguesAsync();
-        await WriteToResponseAsync(context, leagues, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, leagues);
     }
 
     private static async Task GetRelicsDataAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var relics = await services.RelicCoreDataService.GetRelicsAsync();
-        await WriteToResponseAsync(context, relics, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, relics);
     }
 
     private static async Task GetBarracksAsync([AsParameters] HohServices services,
@@ -322,14 +322,14 @@ public static class HohApi
     {
         var barracks = await services.CityService.GetBarracks(unitType);
 
-        await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, barracks);
     }
 
     private static async Task GetAllBarracksAsync([AsParameters] HohServices services, HttpContext context)
     {
         var barracks = await services.CityService.GetAllBarracks();
 
-        await WriteToResponseAsync(context, barracks, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, barracks);
     }
 
     private static async Task GetBuildingCategoriesAsync([AsParameters] HohServices services,
@@ -337,7 +337,7 @@ public static class HohApi
     {
         var types = await services.CityService.GetBuildingCategoriesAsync(cityId);
 
-        await WriteToResponseAsync(context, types, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, types);
     }
 
     private static async Task GetBuildingGroupAsync([AsParameters] HohServices services,
@@ -352,7 +352,7 @@ public static class HohApi
             return;
         }
 
-        await WriteToResponseAsync(context, buildingGroup, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, buildingGroup);
     }
 
     private static async Task GetBuildingsAsync([AsParameters] HohServices services,
@@ -360,7 +360,7 @@ public static class HohApi
     {
         var types = await services.CityService.GetBuildingsAsync(cityId);
 
-        await WriteToResponseAsync(context, types, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, types);
     }
 
     private static async Task GetCityPlannerDataAsync([AsParameters] HohServices services,
@@ -368,7 +368,7 @@ public static class HohApi
     {
         var cpd = await services.CityService.GetCityPlannerDataAsync(cityId);
 
-        await WriteToResponseAsync(context, cpd, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, cpd);
     }
 
     private static async Task GetCommandCenterDataAsync([AsParameters] HohServices services,
@@ -376,7 +376,7 @@ public static class HohApi
     {
         var cpd = await services.CommandCenterService.GetCommandCenterDataAsync();
 
-        await WriteToResponseAsync(context, cpd, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, cpd);
     }
 
     private static async Task GetExpansionsAsync([AsParameters] HohServices services,
@@ -384,7 +384,7 @@ public static class HohApi
     {
         var types = await services.CityService.GetExpansionsAsync(cityId);
 
-        await WriteToResponseAsync(context, types, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, types);
     }
 
     private static async Task GetHeroAsync([AsParameters] HohServices services,
@@ -398,14 +398,14 @@ public static class HohApi
             return;
         }
 
-        await WriteToResponseAsync(context, hero, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, hero);
     }
 
     private static async Task GetHeroesBasicDataAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var heroes = await services.UnitService.GetHeroesBasicDataAsync();
-        await WriteToResponseAsync(context, heroes, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, heroes);
     }
 
     private static async Task GetTechnologiesAsync([AsParameters] HohServices services,
@@ -413,7 +413,7 @@ public static class HohApi
     {
         var types = await services.ResearchService.GetTechnologiesAsync(cityId);
 
-        await WriteToResponseAsync(context, types, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, types);
     }
 
     private static async Task GetCampaignRegionAsync([AsParameters] HohServices services,
@@ -422,11 +422,11 @@ public static class HohApi
         var region = await services.CampaignService.GetRegionAsync(regionId);
         if (region != null)
         {
-            await WriteToResponseAsync(context, region, services.ProtobufSerializer);
+            await services.ProtobufResponseFactory.WriteToResponseAsync(context, region);
         }
         else
         {
-            WriteNotFoundToResponseAsync(context);
+            services.ProtobufResponseFactory.WriteNotFoundToResponse(context);
         }
     }
 
@@ -434,7 +434,7 @@ public static class HohApi
         HttpContext context, RegionId regionId)
     {
         var region = await services.CampaignService.GetRegionBasicDataAsync(regionId);
-        await WriteToResponseAsync(context, region, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, region);
     }
 
     private static async Task GetTreasureHuntStageAsync([AsParameters] HohServices services,
@@ -443,11 +443,11 @@ public static class HohApi
         var stage = await services.TreasureHuntService.GetStageAsync(difficulty, stageIndex);
         if (stage != null)
         {
-            await WriteToResponseAsync(context, stage, services.ProtobufSerializer);
+            await services.ProtobufResponseFactory.WriteToResponseAsync(context, stage);
         }
         else
         {
-            WriteNotFoundToResponseAsync(context);
+            services.ProtobufResponseFactory.WriteNotFoundToResponse(context);
         }
     }
 
@@ -455,7 +455,7 @@ public static class HohApi
         HttpContext context)
     {
         var map = await services.TreasureHuntService.GetTreasureHuntEncountersBasicDataAsync();
-        await WriteToResponseAsync(context, map, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, map);
     }
 
     private static async Task GetCampaignContinentsBasicDataAsync([AsParameters] HohServices services,
@@ -463,7 +463,7 @@ public static class HohApi
     {
         var data = await services.CampaignService.GetCampaignContinentsBasicDataAsync();
 
-        await WriteToResponseAsync(context, data, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, data);
     }
 
     private static async Task GetTreasureHuntDifficultiesAsync([AsParameters] HohServices services,
@@ -471,7 +471,7 @@ public static class HohApi
     {
         var difficulties = await services.TreasureHuntService.GetDifficultiesAsync();
 
-        await WriteToResponseAsync(context, difficulties, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, difficulties);
     }
 
     private static async Task GetWonderAsync([AsParameters] HohServices services,
@@ -485,27 +485,13 @@ public static class HohApi
             return;
         }
 
-        await WriteToResponseAsync(context, wonder, services.ProtobufSerializer);
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, wonder);
     }
 
     private static async Task GetWonderBasicDataAsync([AsParameters] HohServices services,
         HttpContext context)
     {
         var heroes = await services.CityService.GetWonderBasicDataAsync();
-        await WriteToResponseAsync(context, heroes, services.ProtobufSerializer);
-    }
-
-    private static ValueTask WriteToResponseAsync(HttpContext context, object payload, IProtobufSerializer serializer)
-    {
-        var bytes = serializer.SerializeToBytes(payload);
-        context.Response.ContentType = "application/x-protobuf";
-        context.Response.StatusCode = StatusCodes.Status200OK;
-        return context.Response.Body.WriteAsync(bytes);
-    }
-
-    private static void WriteNotFoundToResponseAsync(HttpContext context)
-    {
-        context.Response.ContentType = "application/x-protobuf";
-        context.Response.StatusCode = StatusCodes.Status404NotFound;
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, heroes);
     }
 }

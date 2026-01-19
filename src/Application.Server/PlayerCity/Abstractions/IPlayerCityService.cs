@@ -1,3 +1,4 @@
+using FluentResults;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -7,7 +8,8 @@ public interface IPlayerCityService
 {
     Task<byte[]?> FetchCityAsync(string gameWorldId, int inGamePlayerId, CityId cityId = CityId.Capital);
     Task<PlayerCitySnapshot?> SaveCityAsync(int playerId, byte[] data);
-    Task<EventCitySnapshot?> SaveEventCityAsync(int playerId, byte[] data);
+    Task<EventCitySnapshot?> SaveEventCityAsync(int inGameEventId, int playerId, byte[] data);
     Task<PlayerCitySnapshot?> GetCityAsync(int playerId, CityId cityId, DateOnly date);
     Task RecalculateStatsAsync(IEnumerable<int> citySnapshotIds);
+    Task<Result<HohCity>> GetEventCityAsync(int eventCitySnapshotId);
 }

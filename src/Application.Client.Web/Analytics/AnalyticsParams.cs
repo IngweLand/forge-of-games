@@ -22,6 +22,7 @@ public static class AnalyticsParams
     public const string HEROES = "heroes";
     public const string LEVEL = "level";
     public const string LOCATION = "location";
+    public const string PLAYER_CITY_STRATEGY_ID = "player_city_strategy_id";
     public const string PREMIUM = "premium";
     public const string PRODUCTION_METRIC = "production_metric";
     public const string SEARCH_PREFERENCE = "search_preference";
@@ -52,6 +53,7 @@ public static class AnalyticsParams
             public const string ALLIANCE_LIST = "alliance_list";
             public const string ALLIANCE_RANKING_CHART = "alliance_ranking_chart";
             public const string BATTLE_TIMELINE = "battle_timeline";
+            public const string CITY_STRATEGIES = "city_strategies";
             public const string PLAYER_INFO_COMPONENT = "player_info_component";
             public const string PLAYER_PRODUCTION_CAPACITY_VIEW = "player_production_capacity_view";
             public const string PLAYER_PVP_RANKING_CHART = "player_pvp_ranking_chart";

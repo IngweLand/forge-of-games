@@ -5,9 +5,8 @@ public static class AnalyticsEvents
     public const string BATTLE_LOG_FORM_SUBMIT = "battle_log_form_submit";
     public const string CONSUME_ANNOUNCEMENT = "consume_announcement";
     public const string CP_CREATE_CITY = "cp_create_city";
-    public const string CREATE_CITY_STRATEGY = "create_city_strategy";
     public const string CP_OPEN_CITY = "cp_open_city";
-    public const string OPEN_CITY_STRATEGY = "open_city_strategy";
+    public const string CREATE_CITY_STRATEGY = "create_city_strategy";
     public const string INSPIRATIONS_FORM_SUBMIT = "inspirations_form_submit";
     public const string NAVIGATE_ALLIANCE = "navigate_alliance";
     public const string NAVIGATE_HERO_BATTLE = "navigate_hero_battle";
@@ -16,6 +15,7 @@ public static class AnalyticsEvents
     public const string OPEN_CITY_PLANNER = "open_city_planner";
     public const string OPEN_CITY_PLANNER_DASHBOARD = "open_city_planner_dashboard";
     public const string OPEN_CITY_STRATEGIES_DASHBOARD = "open_city_strategies_dashboard";
+    public const string OPEN_CITY_STRATEGY = "open_city_strategy";
     public const string OPEN_CITY_VIEWER = "open_city_viewer";
     public const string PICK_ABILITY_TARGET_LEVEL = "pick_ability_target_level";
     public const string PICK_HERO_TARGET_LEVEL = "pick_hero_target_level";
@@ -30,6 +30,9 @@ public static class AnalyticsEvents
     public const string VIEW_CITY_STATS_ERROR = "view_city_stats_error";
     public const string VIEW_CITY_STATS_INIT = "view_city_stats_init";
     public const string VIEW_CITY_STATS_SUCCESS = "view_city_stats_success";
+    public const string VIEW_CITY_STRATEGY_ERROR = "view_city_strategy_error";
+    public const string VIEW_CITY_STRATEGY_INIT = "view_city_strategy_init";
+    public const string VIEW_CITY_STRATEGY_SUCCESS = "view_city_strategy_success";
     public const string VIEW_SQUAD_PROFILE = "view_squad_profile";
     public const string VISIT_CITY_ERROR = "visit_city_error";
     public const string VISIT_CITY_INIT = "visit_city_init";

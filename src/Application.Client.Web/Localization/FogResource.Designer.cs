@@ -2976,6 +2976,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City Strategies.
+        /// </summary>
+        public static string StatsHub_Player_CityStrategies {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.CityStrategies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Names.
         /// </summary>
         public static string StatsHub_Player_Names {

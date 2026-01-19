@@ -118,6 +118,12 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
         return Create(inGameCity, buildings, wonder?.Id ?? WonderId.Undefined, wonder?.Level ?? 0, name);
     }
 
+    public HohCity Create(OtherCity inGameCity, IReadOnlyDictionary<string, Building> buildings)
+    {
+        var wonder = inGameCity.Wonders.FirstOrDefault();
+        return Create(inGameCity, buildings, wonder?.Id ?? WonderId.Undefined, wonder?.Level ?? 0);
+    }
+
     private int GetPremiumExpansionCount(City city)
     {
         return city.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);

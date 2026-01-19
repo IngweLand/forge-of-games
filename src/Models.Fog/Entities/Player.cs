@@ -13,6 +13,7 @@ public class Player
 
     public int AvatarId { get; set; }
     public ICollection<PlayerCitySnapshot> CitySnapshots { get; set; } = new List<PlayerCitySnapshot>();
+    public ICollection<EventCityStrategy> EventCityStrategies { get; set; } = new List<EventCityStrategy>();
 
     public ICollection<EventCityWonderRanking> EventCityWonderRankings { get; set; } =
         new List<EventCityWonderRanking>();

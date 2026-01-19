@@ -60,6 +60,7 @@ public static class DependencyInjection
         services.AddScoped<IPlayerCitySnapshotStatsUpdater, PlayerCitySnapshotStatsUpdater>();
         services.AddScoped<IEventCityWonderRankingFetcher, EventCityWonderRankingFetcher>();
         services.AddScoped<IEventCityFetcher, EventCityFetcher>();
+        services.AddScoped<IEventCityStrategyFactory, EventCityStrategyFactory>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 

@@ -99,6 +99,8 @@ public static class DependencyInjection
         services.AddScoped<IFogCommonService, FogCommonService>();
         services.AddScoped<IInGameEventService, InGameEventService>();
         services.AddScoped<IWonderRankingDtoFactory, WonderRankingDtoFactory>();
+        services.AddScoped<IPlayerCityStrategyInfoDtoFactory, PlayerCityStrategyInfoDtoFactory>();
+        services.AddScoped<IPlayerCityStrategyService, PlayerCityStrategyService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

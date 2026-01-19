@@ -26,7 +26,8 @@ public class HohServices(
     IRelicCoreDataService relicCoreDataService,
     ICommandCenterSharingService commandCenterSharingService,
     IEquipmentService equipmentService,
-    IMediator mediator)
+    IMediator mediator,
+    IProtobufResponseFactory protobufResponseFactory)
 {
     public ICampaignService CampaignService { get; } = campaignService;
     public ICityService CityService { get; } = cityService;
@@ -46,6 +47,7 @@ public class HohServices(
 
     public ILogger<HohServices> Logger { get; } = logger;
     public IMediator Mediator { get; } = mediator;
+    public IProtobufResponseFactory ProtobufResponseFactory { get; } = protobufResponseFactory;
     public IProtobufSerializer ProtobufSerializer { get; } = protobufSerializer;
     public IRelicCoreDataService RelicCoreDataService { get; } = relicCoreDataService;
     public IResearchService ResearchService { get; } = researchService;

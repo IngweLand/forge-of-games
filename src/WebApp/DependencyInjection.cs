@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
+using Ingweland.Fog.WebApp.Apis;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Ingweland.Fog.WebApp.Services;
@@ -21,6 +22,7 @@ internal static class DependencyInjection
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
         services.AddSingleton<IStartupTask, PreloadDataStartupTask>();
+        services.AddSingleton<IProtobufResponseFactory, ProtobufResponseFactory>();
         
         services.AddHostedService<StartupTaskHostedService>();
         

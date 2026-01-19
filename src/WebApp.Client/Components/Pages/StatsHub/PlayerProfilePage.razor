@@ -187,6 +187,20 @@
                 </div>
             }
         </ExpandableContainer>
+        
+        @* <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_CityStrategies]" *@
+        @*                      IsLoading="@_cityStrategiesAreLoading" *@
+        @*                      ExpandedChanged="@ToggleCityStrategiesContainer"> *@
+        @*     @if (_cityStrategies != null) *@
+        @*     { *@
+        @*         <div class="wonder-ranking-items-container"> *@
+        @*             @foreach (var s in _cityStrategies) *@
+        @*             { *@
+        @*                 <PlayerCityStrategyInfoComponent Strategy="@s" OnClick="@GetStrategy"/> *@
+        @*             } *@
+        @*         </div> *@
+        @*     } *@
+        @* </ExpandableContainer> *@
 
         @if (_player.CurrentAlliance != null || _player.PreviousAlliances.Count > 0)
         {

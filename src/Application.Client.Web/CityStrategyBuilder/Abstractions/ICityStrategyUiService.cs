@@ -6,4 +6,5 @@ namespace Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 public interface ICityStrategyUiService
 {
     CityStrategy CreateCityStrategy(NewCityRequest newCityRequest);
+    Task<CityStrategy?> FetchStrategy(int strategyId, CancellationToken ct = default);
 }

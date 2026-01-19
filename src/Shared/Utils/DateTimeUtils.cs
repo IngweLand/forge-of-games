@@ -43,4 +43,9 @@ public static class DateTimeUtils
 
         return new DateTime(dt.Value.Year, dt.Value.Month, dt.Value.Day, dt.Value.Hour, 0, 0, dt.Value.Kind);
     }
+
+    public static DateTime StripToMinutes(this DateTime dt)
+    {
+        return new DateTime(dt.Year, dt.Month, dt.Day, dt.Hour, dt.Minute, 0, dt.Kind);
+    }
 }

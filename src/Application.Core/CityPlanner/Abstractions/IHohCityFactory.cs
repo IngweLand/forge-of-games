@@ -22,4 +22,5 @@ public interface IHohCityFactory
         string? name = null);
 
     HohCity Create(OtherCity inGameCity, IReadOnlyDictionary<string, Building> buildings, string name);
+    HohCity Create(OtherCity inGameCity, IReadOnlyDictionary<string, Building> buildings);
 }

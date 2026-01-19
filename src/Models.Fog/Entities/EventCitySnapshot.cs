@@ -12,6 +12,8 @@ public class EventCitySnapshot
 
     public bool HasPremiumBuildings { get; set; }
     public int Id { get; set; }
+    public InGameEventEntity InGameEvent { get; set; }
+    public int InGameEventId { get; set; }
     public Player Player { get; set; } = null!;
 
     public int PlayerId { get; set; }

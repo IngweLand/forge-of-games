@@ -1,0 +1,21 @@
+@using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels
+<div class="component-root" @onclick="@(() => OnClick.InvokeAsync(Strategy))">
+    <div class="event-label-container">
+        @Strategy.EventLabel
+    </div>
+    <div class="league-container">
+        <img class="league-icon" src="@Strategy.IconUrl"/>
+        <span class="league-name">@Strategy.Label</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required PlayerCityStrategyInfoViewModel Strategy { get; set; }
+
+    [Parameter]
+    public EventCallback<PlayerCityStrategyInfoViewModel> OnClick { get; set; }
+
+}

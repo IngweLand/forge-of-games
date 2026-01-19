@@ -10,7 +10,7 @@ public class EventCityFetcherTrigger(
     ILogger<EventCityFetcherTrigger> logger)
 {
     [Function("EventCityFetcherTrigger")]
-    public async Task Run([TimerTrigger("0 */5 * * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("0 */5 * * * *", RunOnStartup = false)] TimerInfo myTimer)
     {
         await databaseWarmUpService.WarmUpDatabaseIfRequiredAsync();
         logger.LogDebug("Database warm-up completed");

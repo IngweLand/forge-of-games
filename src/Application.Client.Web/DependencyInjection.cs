@@ -146,6 +146,7 @@ public static class DependencyInjection
         services.AddScoped<IInGameEventUiService, InGameEventUiService>();
         services.AddScoped<IFogSharingUiService, FogSharingUiService>();
         services.AddScoped<IWonderRankingViewModelFactory, WonderRankingViewModelFactory>();
+        services.AddScoped<IPlayerCityStrategyInfoViewModelFactory, PlayerCityStrategyInfoViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 
