@@ -30,6 +30,11 @@ public class EventCityStrategyFactory(
         {
             var first = sg.First();
             var inGameEvent = await context.InGameEvents.FindAsync(first.InGameEventId);
+            if (inGameEvent == null)
+            {
+                logger.LogWarning("Could not find event with id {eventId}", first.InGameEventId);
+                continue;
+            }
             var hasPremiumExpansions = false;
             CityStrategy? strategy = null;
             HohCity? lastCity = null;
@@ -72,7 +77,7 @@ public class EventCityStrategyFactory(
                 WonderId = first.WonderId,
                 HasPremiumBuildings = first.HasPremiumBuildings,
                 HasPremiumExpansion = hasPremiumExpansions,
-                InGameEventId = 66,
+                InGameEventId = inGameEvent.Id,
                 PlayerId = first.PlayerId,
             });
             await context.SaveChangesAsync();
