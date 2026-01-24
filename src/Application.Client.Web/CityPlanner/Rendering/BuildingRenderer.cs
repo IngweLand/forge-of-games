@@ -116,14 +116,13 @@ public class BuildingRenderer : IBuildingRenderer
         }
 
         // entity name
-        if (_settings.ShowEntityName && entity.Bounds.Width > 1 && entity.BuildingType != BuildingType.CultureSite)
+        if (_settings.ShowEntityName && entity.Bounds is {Width: > 1, Height: > 1} && entity.BuildingType != BuildingType.CultureSite)
         {
             SkiaTextUtils.DrawText(canvas, entity.Name, rect, 5, _currentNameFont, _cityMapEntityStyle.NameTextPaint);
         }
 
         // entity level
-        if (_settings.ShowEntityLevel && (entity.BuildingType == BuildingType.CultureSite ||
-                entity.Bounds is {Width: > 1, Height: > 1}))
+        if (_settings.ShowEntityLevel)
         {
             SkiaTextUtils.DrawText(canvas, entity.Level.ToString(), rect, 5, _currentNameFont,
                 _cityMapEntityStyle.NameTextPaint, TextHorizontalAlignment.Left, TextVerticalAlignment.Bottom);
