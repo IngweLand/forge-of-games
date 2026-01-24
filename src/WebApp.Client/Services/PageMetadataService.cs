@@ -169,6 +169,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
             };
         }
 
+        // city planner
         if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH))
         {
             if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH)
@@ -194,6 +195,19 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                     Title = localizer[FogResource.CityStrategyBuilder_Title],
                     CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
+                };
+            }
+            
+            if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.CITY_PLANNER_DATA_CONVERTER_PATH)
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CityPlanner_DataConverter_PageTitle],
+                    Description = localizer[FogResource.CityPlanner_DataConverter_Meta_Description],
+                    Keywords = localizer[FogResource.CityPlanner_DataConverter_Meta_Keywords],
+                    Title = localizer[FogResource.CityPlanner_DataConverter_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_PLANNER_DATA_CONVERTER_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.BASE_HELP_PATH,
                 };
             }
 

@@ -29,6 +29,7 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
             Name = newCityRequest.Name,
             UnlockedExpansions = initCityConfigs.GetExpansions(newCityRequest.CityId),
             WonderId = newCityRequest.WonderId,
+            WonderLevel = newCityRequest.WonderLevel,
             UpdatedAt = DateTime.Now.ToLocalTime(),
             CityPlannerVersion = cityPlannerVersion,
         };

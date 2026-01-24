@@ -190,6 +190,8 @@ public static class FogUrlBuilder
 
         public const string GET_SHARED_EQUIPMENT_PROFILE_TEMPLATE =
             COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH + "/shares/{shareId}";
+        
+        public const string CITY_PLANNER_DATA_CONVERTER_PATH = "/city-planner-data-converter";
 
         public static string Player(int id)
         {

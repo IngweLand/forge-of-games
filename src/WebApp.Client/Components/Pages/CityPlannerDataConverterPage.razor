@@ -1,0 +1,31 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_DATA_CONVERTER_PATH)]
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Application.Core.Helpers
+@using Size = MudBlazor.Size
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<div class="fog-container component-root">
+    <MudForm @bind-IsValid="@_success">
+        <MudTextField T="string" @bind-Value="_cityPlannerUrl" Required="true" Immediate="true" Lines="5"
+                      Label="Wiki's City Planner Layout URL" Variant="Variant.Outlined" Disabled="@_isConverting"
+                      Validation="@(new Func<string, IEnumerable<string>>(ValidateUrl))"/>
+        <MudTextField T="string" @bind-Value="_cityName" Required="true" Immediate="true" Variant="Variant.Outlined"
+                      Label="New City Name" MaxLength="@FogConstants.NAME_MAX_CHARACTERS" Disabled="@_isConverting"
+                      Counter="@FogConstants.NAME_MAX_CHARACTERS"/>
+        <MudButton Variant="Variant.Filled" Color="Color.Success" Disabled="@(!_success || _isConverting)"
+                   OnClick="@Convert">
+            @if (_isConverting)
+            {
+                <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                <MudText Class="ms-2">Converting...</MudText>
+            }
+            else
+            {
+                <MudText>Convert</MudText>
+            }
+        </MudButton>
+    </MudForm>
+</div>
+
+@code {
+
+}

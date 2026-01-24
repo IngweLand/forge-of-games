@@ -627,6 +627,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Convert city layout from other city planners to the one on Forge of Games..
+        /// </summary>
+        public static string CityPlanner_DataConverter_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityPlanner.DataConverter.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city planner, wiki city planner to forge of games converter.
+        /// </summary>
+        public static string CityPlanner_DataConverter_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityPlanner.DataConverter.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Planner Data Converter | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityPlanner_DataConverter_PageTitle {
+            get {
+                return ResourceManager.GetString("CityPlanner.DataConverter.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Planner Data Converter.
+        /// </summary>
+        public static string CityPlanner_DataConverter_Title {
+            get {
+                return ResourceManager.GetString("CityPlanner.DataConverter.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Culture.
         /// </summary>
         public static string CityPlanner_Happiness {

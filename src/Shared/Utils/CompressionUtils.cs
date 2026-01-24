@@ -1,5 +1,6 @@
 using System.IO.Compression;
 using System.Text;
+using LZStringCSharp;
 
 namespace Ingweland.Fog.Shared.Utils;
 
@@ -78,5 +79,9 @@ public static class CompressionUtils
         }
 
         return outputStream.ToArray();
+    }
+    public static string DecompressFromLzString(string src)
+    {
+        return LZString.DecompressFromEncodedURIComponent(src);
     }
 }
