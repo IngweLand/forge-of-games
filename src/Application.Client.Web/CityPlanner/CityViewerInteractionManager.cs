@@ -22,6 +22,14 @@ public class CityViewerInteractionManager(
             return;
         }
 
+        if (_activeTouches.ContainsKey(pointerId))
+        {
+            // This can happen if we started interaction, then moved the mouse outside and released it.
+            // In such a case, no Pointer up event fired. Let's reset to avoid crash.
+
+            _activeTouches.Clear();
+        }
+
         _lastPointerLocation = new SKPoint(x, y);
         if (_activeTouches.Count < 2)
         {
