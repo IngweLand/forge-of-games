@@ -1,27 +1,43 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Models.Fog.Entities
+@using Markdig
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 <div class="component-root">
     <div>
-        <MudTextField Value="@_title"
-                      Immediate="true" TextChanged="OnTitleChanged"
+        <MudTextField @bind-Value="@Data.Title" DebounceInterval="1000"
+                      OnDebounceIntervalElapsed="@OnTitleChanged" OnBlur="@OnChanged"
                       Counter="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
                       MaxLength="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
                       Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultTitle]"
                       Variant="Variant.Outlined"/>
     </div>
-    <MudTextField Value="@_description" Lines="10" AutoGrow TextChanged="OnDescriptionChanged"
-                  Immediate="true"
-                  Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"
-                  Variant="Variant.Outlined"/>
+    <MudToggleIconButton T="bool" Toggled="@_showPreview" ToggledChanged="@TogglePreview"
+                         ToggledIcon="@Icons.Material.Filled.VisibilityOff"
+                         Icon="@Icons.Material.Filled.Visibility"
+                         Color="Color.Inherit" Style="align-self: flex-end"/>
+    @if (_showPreview)
+    {
+        <div class="markdown-body">
+            @((MarkupString) _html)
+        </div>
+    }
+    else
+    {
+        <MudTextField @bind-Value="@Data.Description" Lines="10" AutoGrow
+                      OnDebounceIntervalElapsed="@OnDescriptionChanged"
+                      DebounceInterval="1000" OnBlur="@OnChanged"
+                      Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"
+                      Variant="Variant.Outlined"/>
+    }
+
 </div>
 
 @code {
 
-    private string _title = string.Empty;
-    private string _description = string.Empty;
+    private bool _showPreview;
+    private string _html = string.Empty;
 
     [Parameter]
     [EditorRequired]
@@ -30,24 +46,24 @@
     [Parameter]
     public EventCallback OnChanged { get; set; }
 
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-
-        _title = Data.Title;
-        _description = Data.Description;
-    }
-
     private Task OnTitleChanged(string newValue)
     {
-        Data.Title = _title = newValue;
         return OnChanged.InvokeAsync();
     }
 
     private Task OnDescriptionChanged(string newValue)
     {
-        Data.Description = _description = newValue;
+        Console.Out.WriteLine(newValue);
         return OnChanged.InvokeAsync();
+    }
+
+    private void TogglePreview(bool toggled)
+    {
+        _showPreview = toggled;
+        if (_showPreview)
+        {
+            _html = Markdown.ToHtml(Data.Description);
+        }
     }
 
 }
