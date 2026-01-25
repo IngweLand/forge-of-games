@@ -129,12 +129,22 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
             .Select(b => b.LevelSpecs)
             .OrderBy(x => x.Level)
             .ToList();
+
         _fromLevels = new List<BuildingLevelSpecs>() {BuildingLevelSpecs.ZeroLevel}.Concat(buildings)
             .ToList();
-        _fromLevel = _fromLevels.First(src => src.Level == FromLevel);
-        _toLevels = GetToLevels();
-        _toLevel = _toLevels?.First();
-        CalculateCost();
+        if (_fromLevels.Count > 1)
+        {
+            _fromLevel = _fromLevels.First(src => src.Level == FromLevel);
+            _toLevels = GetToLevels();
+            _toLevel = _toLevels?.First();
+            CalculateCost();
+        }
+        else
+        {
+            _fromLevels = null;
+            _toLevels = null;
+            _costs = null;
+        }
 
         // We need this for a proper rendering in case our async calls in this method run synchronously.
         await Task.Yield();
