@@ -1,6 +1,9 @@
 @using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using SkiaSharp.Views.Blazor
+@using Position = MudBlazor.Position
 <div class="content-wrapper">
     @if (!_isInitialized)
     {
@@ -45,18 +48,38 @@
 
         @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
         {
-            <div class="right-container">
-                @if (CityStrategyBuilderService.CityMapState.SelectedCityMapEntity != null)
-                {
-                    <CityMapEntityPropertiesComponent Editable="false"
-                                                      Building="@CityStrategyBuilderService.CityMapState.SelectedEntityViewModel"/>
-                }
-                @if (CityStrategyBuilderService.CityMapState.CityPropertiesViewModel != null)
-                {
-                    <CityPropertiesComponent Editable="false"
-                                             Data="@CityStrategyBuilderService.CityMapState.CityPropertiesViewModel"/>
-                }
-            </div>
+                <MudTabs Class="right-container" TabHeaderClass="buildings-selector-tabs"
+                     SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
+                <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
+                    <div class="layout-properties-container">
+                        @if (CityStrategyBuilderService.CityMapState.SelectedCityMapEntity != null)
+                        {
+                            <CityMapEntityPropertiesComponent Editable="false"
+                                                              Building="@CityStrategyBuilderService.CityMapState.SelectedEntityViewModel"/>
+                        }
+                        @if (CityStrategyBuilderService.CityMapState.CityPropertiesViewModel != null)
+                        {
+                            <CityPropertiesComponent Editable="false"
+                                                     Data="@CityStrategyBuilderService.CityMapState.CityPropertiesViewModel"/>
+                        }
+                    </div>
+
+                </MudTabPanel>
+                <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
+                    <div class="layout-properties-container">
+                        <CityPlannerBuildingCostCalculator
+                            CityId="@CityStrategyBuilderService.CityMapState.InGameCityId"
+                            BuildingGroup="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
+                            FromLevel="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
+                            BuildingName="@CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Name"/>
+                        @if(CityStrategyBuilderService.CityMapState.CityWonder != null)
+                        {
+                            <CityPlannerWonderCostCalculator 
+                                FromLevel="@CityStrategyBuilderService.CityMapState.CityWonderLevel"/>
+                        }
+                    </div>
+                </MudTabPanel>
+            </MudTabs>
         }
     }
 </div>
