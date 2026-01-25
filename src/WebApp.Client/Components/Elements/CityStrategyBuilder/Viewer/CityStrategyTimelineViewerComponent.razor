@@ -8,10 +8,13 @@
     <div class="main-container">
         <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
                  SelectedValueChanged="@(x => OnSelect.InvokeAsync(x!.Id))">
-            @foreach (var item in Items)
+            @for (var i = 0; i < Items.Count; i++)
             {
+                var item = Items[i];
+                var index = i;
                 <MudListItem T="CityStrategyTimelineItemBase" Value="@item">
                     <div class="timeline-item-content">
+                        <div class="list-index">@index</div>
                         <div class="timeline-item-content-icon">
                             <MudIcon Icon="@GetTypeIcon(item.Type)" Color="Color.Inherit" Size="Size.Large"/>
                         </div>

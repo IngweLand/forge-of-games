@@ -36,22 +36,37 @@
     gap: 4px;
     font-size: 12px;
     align-items: center;
+    padding: 0 4px;
 }
 
 .timeline-item-content-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 32px;
     flex-shrink: 0;
 }
 
 
 ::deep .material-symbols-outlined {
-    font-size: 32px;
+    font-size: 24px;
 }
 
 ::deep .mud-button-filled {
     background-color: var(--fog-surface-color);
     color: var(--mud-palette-tertiary);
+}
+
+.list-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fog-container-color);
+    border-radius: 50%;
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    flex: 0 0 auto;
+    font-size: 10px;
 }
