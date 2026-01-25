@@ -10,37 +10,46 @@
 @if (_ageTechnologies != null)
 {
     <div class="component-root vertical-layout">
-        @if (_cost != null)
-        {
-            <span class="cost-title">@Loc[FogResource.Hoh_Cost]</span>
-            <div class="fog-container cost-items-container">
-                @foreach (var costItem in _cost.Cost)
+        <div class="content-container">
+            @if (_cost != null)
+            {
+                <span class="cost-title">@Loc[FogResource.Hoh_Cost]</span>
+                <div class="fog-container cost-items-container">
+                    @foreach (var costItem in _cost.Cost)
+                    {
+                        <ResourceWithValue ResourceValue="@costItem" Size="Size.Small"/>
+                    }
+                </div>
+            }
+            <div class="fog-container vertical-layout technologies-container">
+                @foreach (var ageTechnologies in _ageTechnologies)
                 {
-                    <ResourceWithValue ResourceValue="@costItem" Size="Size.Small"/>
+                    <div class="age-header"
+                         @onclick="() => ageTechnologies.IsListOpen = !ageTechnologies.IsListOpen"
+                         style="background-color: @ageTechnologies.AgeColor">@ageTechnologies.AgeName</div>
+
+                    <MudCollapse Expanded="@ageTechnologies.IsListOpen">
+                        <div class="items-container">
+                            @foreach (var group in ageTechnologies.Technologies.GroupBy(x => x.HorizontalIndex).OrderBy(g => g.Key))
+                            {
+                                <div class="item-row">
+                                    @foreach (var tech in group.OrderBy(x => x.VerticalIndex))
+                                    {
+                                        if (IsReadOnly)
+                                        {
+                                            <TechnologyComponent Data="@tech"/>
+                                        }
+                                        else
+                                        {
+                                            <TechnologyComponent Data="@tech" Clicked="OnClicked"/>
+                                        }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </MudCollapse>
                 }
             </div>
-        }
-        <div class="fog-container vertical-layout technologies-container">
-            @foreach (var ageTechnologies in _ageTechnologies)
-            {
-                <div class="age-header"
-                     @onclick="() => ageTechnologies.IsListOpen = !ageTechnologies.IsListOpen"
-                     style="background-color: @ageTechnologies.AgeColor">@ageTechnologies.AgeName</div>
-
-                <MudCollapse Expanded="@ageTechnologies.IsListOpen">
-                    <div class="items-container">
-                        @foreach (var group in ageTechnologies.Technologies.GroupBy(x => x.HorizontalIndex).OrderBy(g => g.Key))
-                        {
-                            <div class="item-row">
-                                @foreach (var tech in group.OrderBy(x => x.VerticalIndex))
-                                {
-                                    <TechnologyComponent Data="@tech" Clicked="OnClicked"/>
-                                }
-                            </div>
-                        }
-                    </div>
-                </MudCollapse>
-            }
         </div>
     </div>
 }
@@ -60,14 +69,17 @@
 
     [Inject]
     private IResearchCalculatorService ResearchCalculatorService { get; set; }
-    
+
     [Parameter]
     public EventCallback OnChanged { get; set; }
+
+    [Parameter]
+    public bool IsReadOnly { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        
+
         var techCityId = CityId.ToDefaultTechnologyCity();
         _ageTechnologies = await ResearchCalculatorService.InitializeAsync(techCityId);
     }

@@ -1,0 +1,98 @@
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
+<div class="content-wrapper">
+    @if (!_isInitialized)
+    {
+        <div class="spinner-grow loading-indicator" role="status"></div>
+    }
+    else
+    {
+        @if (_leftPanelIsVisible)
+        {
+            <div class="timeline-container">
+                <CityStrategyTimelineViewerComponent OnSelect="@OnSelectTimelineItem" StrategyName="@Strategy.Name"
+                                                     Items="@CityStrategyBuilderService.TimelineItems"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        {
+            <div class="main-container">
+                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                          @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @onpointerdown="@InteractiveCanvasOnPointerDown"
+                          @onwheel="@InteractiveCanvasOnWheel"
+                          @onpointermove="@InteractiveCanvasOnPointerMove"
+                          IgnorePixelScaling="true"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineDescriptionItem di)
+        {
+            <div class="main-container col-span-2">
+                <TimelineDescriptionItemViewerComponent Description="@di.Description"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
+        {
+            <div class="main-container col-span-2">
+                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
+                                               IsReadOnly="true"/>
+            </div>
+        }
+
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        {
+            <div class="right-container">
+                @if (CityStrategyBuilderService.CityMapState.SelectedCityMapEntity != null)
+                {
+                    <CityMapEntityPropertiesComponent Editable="false"
+                                                      Building="@CityStrategyBuilderService.CityMapState.SelectedEntityViewModel"/>
+                }
+                @if (CityStrategyBuilderService.CityMapState.CityPropertiesViewModel != null)
+                {
+                    <CityPropertiesComponent Editable="false"
+                                             Data="@CityStrategyBuilderService.CityMapState.CityPropertiesViewModel"/>
+                }
+            </div>
+        }
+    }
+</div>
+
+@code{
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategy Strategy { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        AppBarService.Set(@<div class="app-bar-content-container">
+                              <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
+                                                   Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
+                                                   ToggledIcon="@Icons.Material.Filled.ViewTimeline"
+                                                   ToggledColor="Color.Inherit"
+                                                   ToggledChanged="ToggleLeftPanel"/>
+                              @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+                              {
+                                  <div class="toolbar-divider"></div>
+                                  <div>
+                                      <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
+                                                     Color="Color.Inherit"/>
+                                      <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
+                                                     Color="Color.Inherit"/>
+                                      <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="@FitToScreen"
+                                                     Color="Color.Inherit"/>
+                                  </div>
+                              }
+                              <div class="toolbar-divider"></div>
+                              <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@EditStrategy"
+                                             Color="Color.Inherit"/>
+                          </div>);
+    }
+
+}

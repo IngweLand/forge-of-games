@@ -185,19 +185,32 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 };
             }
 
-            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH))
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_CITY_STRATEGY_VIEWER_PATH))
             {
                 return new PageMetadata
                 {
-                    PageTitle = localizer[FogResource.CityStrategyBuilder_PageTitle],
-                    Description = localizer[FogResource.CityStrategyBuilder_Meta_Description],
-                    Keywords = localizer[FogResource.CityStrategyBuilder_Meta_Keywords],
-                    Title = localizer[FogResource.CityStrategyBuilder_Title],
+                    PageTitle = localizer[FogResource.CityStrategyViewer_PageTitle],
+                    Description = localizer[FogResource.CityStrategyViewer_Meta_Description],
+                    Keywords = localizer[FogResource.CityStrategyViewer_Meta_Keywords],
+                    Title = localizer[FogResource.CityStrategyViewer_Title],
                     CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
                 };
             }
-            
+
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH))
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CityStrategiesDashboard_PageTitle],
+                    Description = localizer[FogResource.CityStrategyBuilder_Meta_Description],
+                    Keywords = localizer[FogResource.CityStrategyBuilder_Meta_Keywords],
+                    Title = localizer[FogResource.CityStrategiesDashboard_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
+                };
+            }
+
             if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.CITY_PLANNER_DATA_CONVERTER_PATH)
             {
                 return new PageMetadata

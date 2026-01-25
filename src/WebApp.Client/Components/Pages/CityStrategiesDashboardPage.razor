@@ -4,14 +4,25 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="page-container">
-    <div class="items-container">
+    <div class="action-buttons-container">
         <div class="command-center-card command-center-action-card action-card" @onclick="CreateStrategy">
             <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
             <span class="command-center-card-label">@Loc[FogResource.Common_Create]</span>
         </div>
-        @foreach (var city in _cities)
-        {
-            <CityCard City="@city" OnClick="@OpenStrategy"/>
-        }
     </div>
+
+    @if (_myStrategies.Count > 0)
+    {
+        <div class="section-title">
+            @Loc[FogResource.CityStrategiesDashboard_MyStrategies]
+        </div>
+        <div class="items-container">
+
+            @foreach (var city in _myStrategies)
+            {
+                <CityCard City="@city" OnClick="@OpenStrategy"/>
+            }
+        </div>
+    }
+
 </div>

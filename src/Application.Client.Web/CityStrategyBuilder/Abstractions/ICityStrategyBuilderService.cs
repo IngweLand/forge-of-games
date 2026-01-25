@@ -12,7 +12,7 @@ public interface ICityStrategyBuilderService : IDisposable
     CityStrategyTimelineItemBase? SelectedTimelineItem { get; }
     CityStrategy Strategy { get; }
     ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; }
-    Task InitializeAsync(CityStrategy strategy);
+    Task InitializeAsync(CityStrategy strategy, bool isReadOnly = false);
     public event Action? StateHasChanged;
     bool DeleteSelectedCityMapEntity();
     bool RotateSelectedCityMapEntity();

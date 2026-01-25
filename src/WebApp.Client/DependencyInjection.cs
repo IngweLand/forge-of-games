@@ -31,6 +31,7 @@ internal static class DependencyInjection
         services.AddScoped<IPageMetadataService, PageMetadataService>();
         services.AddScoped<ILocalStorageBackupService, LocalStorageBackupService>();
         services.AddScoped<IEquipmentProfilePersistenceService, EquipmentProfilePersistenceService>();
+        services.AddScoped<AppBarService>();
 
         var refitSettings = new RefitSettings
         {

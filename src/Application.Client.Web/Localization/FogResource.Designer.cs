@@ -1068,6 +1068,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Community Strategies.
+        /// </summary>
+        public static string CityStrategiesDashboard_CommunityStrategies {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.CommunityStrategies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Strategies.
+        /// </summary>
+        public static string CityStrategiesDashboard_MyStrategies {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.MyStrategies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategies | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityStrategiesDashboard_PageTitle {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategies.
+        /// </summary>
+        public static string CityStrategiesDashboard_Title {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You do not have any saved city suitable for import..
         /// </summary>
         public static string CityStrategy_NoCityForImport {
@@ -1185,7 +1221,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Heroes of History city strategy, event city, event city strategy, city planner, city building, city management, game optimization, production stats.
+        ///   Looks up a localized string similar to Heroes of History city strategy, event city, event city strategy, strategy builder, strategy creator, city planner, city building, city management, game optimization, production stats.
         /// </summary>
         public static string CityStrategyBuilder_Meta_Keywords {
             get {
@@ -1217,6 +1253,51 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CityStrategyBuilder_Title {
             get {
                 return ResourceManager.GetString("CityStrategyBuilder.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View strategies for the capital and allied culture cities in Heroes of History..
+        /// </summary>
+        public static string CityStrategyViewer_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityStrategyViewer.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city strategy, event city, event city strategy, city planner, city building, city management, game optimization, production stats.
+        /// </summary>
+        public static string CityStrategyViewer_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityStrategyViewer.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategy Viewer | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityStrategyViewer_PageTitle {
+            get {
+                return ResourceManager.GetString("CityStrategyViewer.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CS Viewer.
+        /// </summary>
+        public static string CityStrategyViewer_ShortTitle {
+            get {
+                return ResourceManager.GetString("CityStrategyViewer.ShortTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Strategy Viewer.
+        /// </summary>
+        public static string CityStrategyViewer_Title {
+            get {
+                return ResourceManager.GetString("CityStrategyViewer.Title", resourceCulture);
             }
         }
         

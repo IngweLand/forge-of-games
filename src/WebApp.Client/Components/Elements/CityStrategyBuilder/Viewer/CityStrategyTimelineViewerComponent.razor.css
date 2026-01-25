@@ -1,0 +1,57 @@
+.component-root {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--fog-surface-color);
+    border-right: 1px solid var(--fog-border-color);
+    gap: 6px;
+}
+
+.main-container {
+    flex: 1 1 auto;
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.name-container {
+    display: flex;
+    justify-content: center;
+    padding: 4px 8px;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    border-bottom-left-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-container-color);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 12px;
+}
+
+.timeline-item-content {
+    display: flex;
+    gap: 4px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.timeline-item-content-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    flex-shrink: 0;
+}
+
+
+::deep .material-symbols-outlined {
+    font-size: 32px;
+}
+
+::deep .mud-button-filled {
+    background-color: var(--fog-surface-color);
+    color: var(--mud-palette-tertiary);
+}

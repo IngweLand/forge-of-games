@@ -14,7 +14,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class CityStrategiesDashboardPage : FogPageBase
 {
-    private IReadOnlyCollection<HohCityBasicData> _cities = [];
+    private IReadOnlyCollection<HohCityBasicData> _myStrategies = [];
 
     [Inject]
     private ICityStrategyAnalyticsService AnalyticsService { get; set; }
@@ -40,14 +40,14 @@ public partial class CityStrategiesDashboardPage : FogPageBase
             return;
         }
 
-        _cities = await PersistenceService.GetCityStrategies();
+        _myStrategies = await PersistenceService.GetCityStrategies();
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_STRATEGIES_DASHBOARD);
     }
 
     private void OpenStrategy(string strategyId)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(strategyId));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategyViewer(strategyId));
     }
 
     private async Task CreateStrategy()

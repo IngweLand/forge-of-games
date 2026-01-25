@@ -6,10 +6,14 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <data name="Hoh.Lvl" xml:space="preserve">
         <value>級</value>
@@ -831,25 +835,63 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
     <data name="Hoh.Building.Upgrade" xml:space="preserve">
     <value>升級</value>
 </data>
-    <data name="Tooltip.BattleLog"><value>戰鬥日誌</value></data>
-    <data name="BattleType.Campaign"><value>戰役</value></data>
-    <data name="BattleType.TreasureHunt"><value>尋寶</value></data>
-    <data name="BattleType.PvP"><value>競技場</value></data>
-    <data name="BattleType.HistoricBattle"><value>歷史戰役</value></data>
-    <data name="BattleType.TeslaStorm"><value>特斯拉風暴</value></data>
-    <data name="BattleSelector.BattleType"><value>戰鬥類型</value></data>
-    <data name="BattleSelector.CampaignRegion"><value>戰役區域</value></data>
-    <data name="BattleSelector.Encounter"><value>遭遇</value></data>
-    <data name="BattleSelector.Difficulty"><value>難度</value></data>
-    <data name="BattleSelector.TreasureHuntStage"><value>階段</value></data>
-    <data name="StatsHub.BattleLog.PageTitle"><value>戰鬥日誌 | Heroes of History | Forge of Games
-    </value></data>
-    <data name="StatsHub.BattleLog.Meta.Description"><value>查看 Heroes of History 中真實用户提交的戰鬥。分析英雄配置，並使用篩選器透過戰鬥日誌提升團隊策略。</value></data>
-    <data name="StatsHub.BattleLog.Meta.Keywords"><value>Heroes of History, Battle Log, 英雄戰鬥, 團隊策略, 戰鬥報告, 戰鬥統計, 篩選戰鬥, 英雄組成, HoH Helper, 遊戲分析</value></data>
-    <data name="StatsHub.BattleLog.Title"><value>戰鬥日誌</value></data>
-    <data name="StatsHub.Menu.Leaderboards"><value>排行榜</value></data>
-    <data name="StatsHub.Menu.BattleLog"><value>戰鬥日誌</value></data>
-    <data name="StatsHub.BattleLog.ContributePrompt"><value>我們的遊戲分析由社區驅動！點擊此處了解如何貢獻！</value></data>
+    <data name="Tooltip.BattleLog">
+        <value>戰鬥日誌</value>
+    </data>
+    <data name="BattleType.Campaign">
+        <value>戰役</value>
+    </data>
+    <data name="BattleType.TreasureHunt">
+        <value>尋寶</value>
+    </data>
+    <data name="BattleType.PvP">
+        <value>競技場</value>
+    </data>
+    <data name="BattleType.HistoricBattle">
+        <value>歷史戰役</value>
+    </data>
+    <data name="BattleType.TeslaStorm">
+        <value>特斯拉風暴</value>
+    </data>
+    <data name="BattleSelector.BattleType">
+        <value>戰鬥類型</value>
+    </data>
+    <data name="BattleSelector.CampaignRegion">
+        <value>戰役區域</value>
+    </data>
+    <data name="BattleSelector.Encounter">
+        <value>遭遇</value>
+    </data>
+    <data name="BattleSelector.Difficulty">
+        <value>難度</value>
+    </data>
+    <data name="BattleSelector.TreasureHuntStage">
+        <value>階段</value>
+    </data>
+    <data name="StatsHub.BattleLog.PageTitle">
+        <value>戰鬥日誌 | Heroes of History | Forge of Games
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Description">
+        <value>查看 Heroes of History 中真實用户提交的戰鬥。分析英雄配置，並使用篩選器透過戰鬥日誌提升團隊策略。</value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Keywords">
+        <value>Heroes of History, Battle Log, 英雄戰鬥, 團隊策略, 戰鬥報告, 戰鬥統計, 篩選戰鬥, 英雄組成, HoH Helper,
+            遊戲分析
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Title">
+        <value>戰鬥日誌</value>
+    </data>
+    <data name="StatsHub.Menu.Leaderboards">
+        <value>排行榜</value>
+    </data>
+    <data name="StatsHub.Menu.BattleLog">
+        <value>戰鬥日誌</value>
+    </data>
+    <data name="StatsHub.BattleLog.ContributePrompt">
+        <value>我們的遊戲分析由社區驅動！點擊此處了解如何貢獻！</value>
+    </data>
     <data name="BattleSelector.Battle" xml:space="preserve">
         <value>戰鬥</value>
     </data>
@@ -950,67 +992,67 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
     <data name="Tools.AbilityCostCalculator.Name" xml:space="preserve">
     <value>技能消費計算機</value>
 </data>
-<data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
+    <data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
     <value>研究狀態</value>
 </data>
-<data name="Common.Max" xml:space="preserve">
+    <data name="Common.Max" xml:space="preserve">
     <value>最大</value>
 </data>
-<data name="StatsHub.Player.TopHeroes" xml:space="preserve">
+    <data name="StatsHub.Player.TopHeroes" xml:space="preserve">
     <value>頂級英雄</value>
 </data>
-<data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
     <value>英雄洞察</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
     <value>等級範圍</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
     <value>模式</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
     <value>最高等級</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
     <value>最受歡迎</value>
 </data>
-<data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
+    <data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
     <value>初始充能</value>
 </data>
-<data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
+    <data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
     <value>爆擊機率</value>
 </data>
-<data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
+    <data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
     <value>攻速</value>
 </data>
-<data name="HeroSearchInput.Label" xml:space="preserve">
+    <data name="HeroSearchInput.Label" xml:space="preserve">
     <value>英雄名稱</value>
 </data>
-<data name="CityPlanner.Inspirations.Title" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Title" xml:space="preserve">
     <value>城市佈局靈感</value>
 </data>
-<data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
     <value>城市佈局靈感 | Heroes of History | Forge of Games</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
     <value>查看其他玩家在Heroes of History中創建的最佳城市佈局。規劃和優化您的城市。匯入遊戲數據，管理多個佈局，分析生產統計數據，並最大化效率。</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History 城市規劃師, 城市佈局, 城市佈局範例, 最佳城市佈局, 城市優化, 城市佈局優化, 城市最大生產</value>
 </data>
-<data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
     <value>玩家檔案</value>
 </data>
-<data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
     <value>玩家檔案 | Heroes of History | Forge of Games</value>
 </data>
-<data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
     <value>聯盟檔案</value>
 </data>
-<data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
     <value>聯盟檔案 | Heroes of History | Forge of Games</value>
 </data>
-<data name="SupportUs.Patreon.Title" xml:space="preserve">
+    <data name="SupportUs.Patreon.Title" xml:space="preserve">
     <value>我們在Patreon上</value>
 </data>
     <data name="CommandCenter.Equipment.PageTitle" xml:space="preserve">
@@ -1353,5 +1395,32 @@ Forge of Games 與 Heroes of History 的創作者或出版商無關，也沒有�
 </data>
     <data name="CityPlanner.DataConverter.Meta.Keywords" xml:space="preserve">
   <value>Heroes of History 城市規劃器，wiki 城市規劃器 轉 Forge of Games 轉換器</value>
+</data>
+    <data name="CityStrategyViewer.Title" xml:space="preserve">
+  <value>城市策略檢視器</value>
+</data>
+    <data name="CityStrategyViewer.ShortTitle" xml:space="preserve">
+  <value>CS 檢視器</value>
+</data>
+    <data name="CityStrategyViewer.PageTitle" xml:space="preserve">
+  <value>城市策略檢視器 | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Description" xml:space="preserve">
+  <value>查看 Heroes of History 中首都與盟友文化城市的策略。</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
+  <value>Heroes of History 城市策略, 活動城市, 活動城市策略, 城市規劃, 城市建設, 城市管理, 遊戲最佳化, 生產統計</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+  <value>城市策略</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+  <value>城市策略 | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
+  <value>我的策略</value>
+</data>
+    <data name="CityStrategiesDashboard.CommunityStrategies" xml:space="preserve">
+  <value>社群策略</value>
 </data>
 </root>

@@ -1,0 +1,57 @@
+@using System.Collections.ObjectModel
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Fog.Enums
+@using Size = MudBlazor.Size
+
+<div class="component-root">
+    <div class="name-container">@StrategyName</div>
+    <div class="main-container">
+        <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
+                 SelectedValueChanged="@(x => OnSelect.InvokeAsync(x!.Id))">
+            @foreach (var item in Items)
+            {
+                <MudListItem T="CityStrategyTimelineItemBase" Value="@item">
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-content-icon">
+                            <MudIcon Icon="@GetTypeIcon(item.Type)" Color="Color.Inherit" Size="Size.Large"/>
+                        </div>
+                        <span>@item.Title</span>
+                    </div>
+                </MudListItem>
+            }
+        </MudList>
+    </div>
+</div>
+
+@code {
+    private CityStrategyTimelineItemBase? _selectedItem;
+
+    [Parameter]
+    [EditorRequired]
+    public required ObservableCollection<CityStrategyTimelineItemBase> Items { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public required string StrategyName { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSelect { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        _selectedItem = Items.FirstOrDefault(x => x.Selected);
+    }
+
+    private static string GetTypeIcon(CityStrategyTimelineItemType type)
+    {
+        return type switch
+        {
+            CityStrategyTimelineItemType.Research => "material-symbols-outlined/experiment",
+            CityStrategyTimelineItemType.Description => "material-symbols-outlined/description",
+            CityStrategyTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
+            _ => string.Empty,
+        };
+    }
+
+}

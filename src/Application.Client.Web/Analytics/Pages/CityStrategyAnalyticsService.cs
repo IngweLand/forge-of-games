@@ -16,7 +16,7 @@ public class CityStrategyAnalyticsService(IAnalyticsService analyticsService) : 
         _ = analyticsService.TrackEvent(eventName, allParameters);
     }
 
-    public void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId)
+    public void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId, bool isReadOnly)
     {
         var eventParams = new Dictionary<string, object>
         {
@@ -29,7 +29,8 @@ public class CityStrategyAnalyticsService(IAnalyticsService analyticsService) : 
             eventParams.Add(AnalyticsParams.WONDER_ID, wonderId.ToString());
         }
 
-        _ = analyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_STRATEGY, eventParams);
+        var ae = isReadOnly ? AnalyticsEvents.VIEW_CITY_STRATEGY_SUCCESS : AnalyticsEvents.EDIT_CITY_STRATEGY_SUCCESS;
+        _ = analyticsService.TrackEvent(ae, eventParams);
     }
 
     public void TrackEvent(string eventName, IReadOnlyDictionary<string, object> eventParams)

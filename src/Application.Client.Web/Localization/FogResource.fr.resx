@@ -6,10 +6,14 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <data name="Hoh.Lvl" xml:space="preserve">
         <value>Niv.</value>
@@ -854,25 +858,65 @@ Forge of Games n’est pas affilié ou officiellement associé aux créateurs ou
     <data name="Hoh.Building.Upgrade" xml:space="preserve">
     <value>Amélioration</value>
 </data>
-    <data name="Tooltip.BattleLog"><value>Journal de bataille</value></data>
-    <data name="BattleType.Campaign"><value>Campagne</value></data>
-    <data name="BattleType.TreasureHunt"><value>Chasse au trésor</value></data>
-    <data name="BattleType.PvP"><value>Arène</value></data>
-    <data name="BattleType.HistoricBattle"><value>Batailles historiques</value></data>
-    <data name="BattleType.TeslaStorm"><value>Tempêtes de Tesla</value></data>
-    <data name="BattleSelector.BattleType"><value>Type de bataille</value></data>
-    <data name="BattleSelector.CampaignRegion"><value>Région de campagne</value></data>
-    <data name="BattleSelector.Encounter"><value>Rencontre</value></data>
-    <data name="BattleSelector.Difficulty"><value>Difficulté</value></data>
-    <data name="BattleSelector.TreasureHuntStage"><value>Étape</value></data>
-    <data name="StatsHub.BattleLog.PageTitle"><value>Registro de batalla | Heroes of History | Forge of Games
-    </value></data>
-    <data name="StatsHub.BattleLog.Meta.Description"><value>Voir les batailles réelles soumises par les joueurs dans Heroes of History. Analysez les compositions de héros et utilisez des filtres pour améliorer votre stratégie d'équipe avec le Journal de bataille.</value></data>
-    <data name="StatsHub.BattleLog.Meta.Keywords"><value>Heroes of History, Battle Log, batailles de héros, stratégie d'équipe, rapports de bataille, statistiques de combat, filtrer les batailles, composition des héros, HoH Helper, analyse du jeu</value></data>
-    <data name="StatsHub.BattleLog.Title"><value>Journal de bataille</value></data>
-    <data name="StatsHub.Menu.Leaderboards"><value>Classements</value></data>
-    <data name="StatsHub.Menu.BattleLog"><value>Journal de bataille</value></data>
-    <data name="StatsHub.BattleLog.ContributePrompt"><value>Notre analyse de jeu est communautaire ! Cliquez ici pour savoir comment contribuer !</value></data>
+    <data name="Tooltip.BattleLog">
+        <value>Journal de bataille</value>
+    </data>
+    <data name="BattleType.Campaign">
+        <value>Campagne</value>
+    </data>
+    <data name="BattleType.TreasureHunt">
+        <value>Chasse au trésor</value>
+    </data>
+    <data name="BattleType.PvP">
+        <value>Arène</value>
+    </data>
+    <data name="BattleType.HistoricBattle">
+        <value>Batailles historiques</value>
+    </data>
+    <data name="BattleType.TeslaStorm">
+        <value>Tempêtes de Tesla</value>
+    </data>
+    <data name="BattleSelector.BattleType">
+        <value>Type de bataille</value>
+    </data>
+    <data name="BattleSelector.CampaignRegion">
+        <value>Région de campagne</value>
+    </data>
+    <data name="BattleSelector.Encounter">
+        <value>Rencontre</value>
+    </data>
+    <data name="BattleSelector.Difficulty">
+        <value>Difficulté</value>
+    </data>
+    <data name="BattleSelector.TreasureHuntStage">
+        <value>Étape</value>
+    </data>
+    <data name="StatsHub.BattleLog.PageTitle">
+        <value>Registro de batalla | Heroes of History | Forge of Games
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Description">
+        <value>Voir les batailles réelles soumises par les joueurs dans Heroes of History. Analysez les compositions de
+            héros et utilisez des filtres pour améliorer votre stratégie d'équipe avec le Journal de bataille.
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Keywords">
+        <value>Heroes of History, Battle Log, batailles de héros, stratégie d'équipe, rapports de bataille, statistiques
+            de combat, filtrer les batailles, composition des héros, HoH Helper, analyse du jeu
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Title">
+        <value>Journal de bataille</value>
+    </data>
+    <data name="StatsHub.Menu.Leaderboards">
+        <value>Classements</value>
+    </data>
+    <data name="StatsHub.Menu.BattleLog">
+        <value>Journal de bataille</value>
+    </data>
+    <data name="StatsHub.BattleLog.ContributePrompt">
+        <value>Notre analyse de jeu est communautaire ! Cliquez ici pour savoir comment contribuer !</value>
+    </data>
     <data name="BattleSelector.Battle" xml:space="preserve">
         <value>Combat</value>
     </data>
@@ -972,67 +1016,67 @@ Forge of Games n’est pas affilié ou officiellement associé aux créateurs ou
     <data name="Tools.AbilityCostCalculator.Name" xml:space="preserve">
     <value>Calculateur de coût de capacité</value>
 </data>
-<data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
+    <data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
     <value>État de la recherche</value>
 </data>
-<data name="Common.Max" xml:space="preserve">
+    <data name="Common.Max" xml:space="preserve">
     <value>Max</value>
 </data>
-<data name="StatsHub.Player.TopHeroes" xml:space="preserve">
+    <data name="StatsHub.Player.TopHeroes" xml:space="preserve">
     <value>Meilleurs héros</value>
 </data>
-<data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
     <value>Aperçus des héros</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
     <value>Plage de niveau</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
     <value>Mode</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
     <value>Niveau le plus élevé</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
     <value>Plus populaire</value>
 </data>
-<data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
+    <data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
     <value>CHARGE INITIALE</value>
 </data>
-<data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
+    <data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
     <value>CHANCE CRIT</value>
 </data>
-<data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
+    <data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
     <value>VIT ATQ</value>
 </data>
-<data name="HeroSearchInput.Label" xml:space="preserve">
+    <data name="HeroSearchInput.Label" xml:space="preserve">
     <value>Nom du héros</value>
 </data>
-<data name="CityPlanner.Inspirations.Title" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Title" xml:space="preserve">
     <value>Inspirations d'aménagement de ville</value>
 </data>
-<data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
     <value>Inspirations d'aménagement de ville | Heroes of History | Forge of Games</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
     <value>Consultez les meilleurs aménagements de ville créés par d'autres joueurs dans Heroes of History. Planifiez et optimisez votre ville. Importez les données du jeu, gérez plusieurs aménagements, analysez les statistiques de production et maximisez l'efficacité.</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History planificateur de ville, aménagement de ville, exemple d'aménagement de ville, meilleur aménagement de ville, optimisation de ville, optimisation d'aménagement de ville, production maximale de ville</value>
 </data>
-<data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
     <value>Profil du joueur</value>
 </data>
-<data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
     <value>Profil du joueur | Heroes of History | Forge of Games</value>
 </data>
-<data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
     <value>Profil d'alliance</value>
 </data>
-<data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
     <value>Profil d'alliance | Heroes of History | Forge of Games</value>
 </data>
-<data name="SupportUs.Patreon.Title" xml:space="preserve">
+    <data name="SupportUs.Patreon.Title" xml:space="preserve">
     <value>Nous sommes sur Patreon</value>
 </data>
     <data name="CommandCenter.Equipment.PageTitle" xml:space="preserve">
@@ -1375,5 +1419,32 @@ Forge of Games n’est pas affilié ou officiellement associé aux créateurs ou
 </data>
     <data name="CityPlanner.DataConverter.Meta.Keywords" xml:space="preserve">
   <value>Heroes of History planificateur de ville, convertisseur de planificateur wiki vers Forge of Games</value>
+</data>
+    <data name="CityStrategyViewer.Title" xml:space="preserve">
+  <value>Visualiseur de stratégies de ville</value>
+</data>
+    <data name="CityStrategyViewer.ShortTitle" xml:space="preserve">
+  <value>Visualiseur CS</value>
+</data>
+    <data name="CityStrategyViewer.PageTitle" xml:space="preserve">
+  <value>Visualiseur de stratégies de ville | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Description" xml:space="preserve">
+  <value>Consultez des stratégies pour la capitale et les villes des cultures alliées dans Heroes of History.</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
+  <value>Heroes of History stratégie de ville, ville événementielle, stratégie de ville événementielle, planificateur de ville, construction de ville, gestion de ville, optimisation du jeu, statistiques de production</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+  <value>Stratégies de ville</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+  <value>Stratégies de ville | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
+  <value>Mes stratégies</value>
+</data>
+    <data name="CityStrategiesDashboard.CommunityStrategies" xml:space="preserve">
+  <value>Stratégies de la communauté</value>
 </data>
 </root>

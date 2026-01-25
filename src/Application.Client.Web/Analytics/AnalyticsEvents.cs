@@ -11,6 +11,9 @@ public static class AnalyticsEvents
     public const string CREATE_SHARED_LINK = "create_shared_link";
     public const string DELETE_EQUIP_CONFIG = "delete_equip_config";
     public const string DUPLICATE_EQUIP_CONFIG = "duplicate_equip_config";
+    public const string EDIT_CITY_STRATEGY_ERROR = "edit_city_strategy_error";
+    public const string EDIT_CITY_STRATEGY_INIT = "edit_city_strategy_init";
+    public const string EDIT_CITY_STRATEGY_SUCCESS = "edit_city_strategy_success";
     public const string EDIT_EQUIP_CONFIG = "edit_equip_config";
     public const string INSPIRATIONS_FORM_SUBMIT = "inspirations_form_submit";
     public const string NAVIGATE_ALLIANCE = "navigate_alliance";
@@ -20,7 +23,6 @@ public static class AnalyticsEvents
     public const string OPEN_CITY_PLANNER = "open_city_planner";
     public const string OPEN_CITY_PLANNER_DASHBOARD = "open_city_planner_dashboard";
     public const string OPEN_CITY_STRATEGIES_DASHBOARD = "open_city_strategies_dashboard";
-    public const string OPEN_CITY_STRATEGY = "open_city_strategy";
     public const string OPEN_CITY_VIEWER = "open_city_viewer";
     public const string OPEN_EQUIPMENT_CONFIGURATOR_DASHBOARD = "open_equip_conf_dashboard";
     public const string OPEN_EQUIPMENT_CONFIGURATOR_ERROR = "open_equip_conf_error";

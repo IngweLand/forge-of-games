@@ -40,6 +40,7 @@ internal static class DependencyInjection
         services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IMainMenuService, MainMenuService>();
         services.AddScoped<IPageMetadataService, PageMetadataService>();
+        services.AddScoped<AppBarService>();
     }
 
     public static void AddWebAppSettings(this IHostApplicationBuilder builder)

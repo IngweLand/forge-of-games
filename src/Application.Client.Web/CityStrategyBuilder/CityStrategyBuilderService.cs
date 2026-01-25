@@ -35,31 +35,38 @@ public class CityStrategyBuilderService(
     private readonly SemaphoreSlim _saveSemaphore = new(1, 1);
     private Timer? _autoSaveTimer;
     private bool _isInitialized;
+    private bool _isReadOnly;
     private bool _savingRequested;
     public CityStrategy Strategy { get; private set; } = null!;
     public CityStrategyTimelineItemBase? SelectedTimelineItem { get; private set; }
     public ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; private set; }
     public CityMapState CityMapState => cityPlanner.CityMapState;
 
-    public async Task InitializeAsync(CityStrategy strategy)
+    public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly = false)
     {
         if (_isInitialized)
         {
             throw new InvalidOperationException("Already initialized.");
         }
 
+        _isReadOnly = isReadOnly;
+
         Strategy = strategy;
 
         TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
         await SelectTimelineItem(TimelineItems.First(), false);
 
-        analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId);
+        analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId, _isReadOnly);
 
         commandManager.CommandExecuted += OnCommandExecuted;
 
-        _autoSaveTimer = new Timer(AutoSaveInterval);
-        _autoSaveTimer.Elapsed += OnAutoSaveTimerOnElapsed;
-        _autoSaveTimer.Start();
+        if (!_isReadOnly)
+        {
+            _autoSaveTimer = new Timer(AutoSaveInterval);
+            _autoSaveTimer.Elapsed += OnAutoSaveTimerOnElapsed;
+            _autoSaveTimer.Start();
+        }
+
         _isInitialized = true;
     }
 
@@ -133,6 +140,11 @@ public class CityStrategyBuilderService(
 
     public async Task Save()
     {
+        if (_isReadOnly)
+        {
+            return;
+        }
+
         UpdateCurrentLayoutItem();
         Strategy.Timeline = TimelineItems.ToList();
         UpdateStrategyAgeId();
@@ -194,6 +206,11 @@ public class CityStrategyBuilderService(
 
     public void RequestSaving()
     {
+        if (_isReadOnly)
+        {
+            return;
+        }
+
         Interlocked.Exchange(ref _savingRequested, true);
     }
 

@@ -57,6 +57,10 @@
     --main-content-padding: 8px;
     --main-content-padding-576: 12px;
     --fog-font-size: 0.875rem;
+    --full-page-height: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4));
+    --full-page-height-576: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4));
+    --full-page-height-with-padding: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4) - var(--main-content-padding) * 2);
+    --full-page-height-with-padding-576: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4) - var(--main-content-padding-576) * 2);
 }
 
 html {

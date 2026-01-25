@@ -1,0 +1,15 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_TEMPLATE)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Viewer
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@if (_strategy != null)
+{
+    <CityStrategyViewerComponent Strategy="@_strategy"/>
+}
+
+@code {
+
+    [Parameter]
+    public string StrategyId { get; set; }
+
+}

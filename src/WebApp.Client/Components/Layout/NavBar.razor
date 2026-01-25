@@ -7,6 +7,7 @@
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Models
+@using Ingweland.Fog.WebApp.Client.Services
 @using Ingweland.Fog.WebApp.Client.Services.Abstractions
 @using Microsoft.Extensions.Localization
 @using MudBlazor.Services
@@ -16,15 +17,17 @@
 @inject IStringLocalizer<FogResource> Loc
 @inject IMainMenuService MainMenuService
 @inject IPageMetadataService PageMetadataService
+@inject AppBarService AppBarService
 
-<MudAppBar ToolBarClass="user-select-none" Fixed="false" Class="command-center-app-bar" Elevation="0"
+<MudAppBar ToolBarClass="user-select-none" Fixed="false" Class="command-center-app-bar"
            Color="Color.Primary" Dense="true">
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
                    OnClick="@(e => DrawerToggle())"/>
     <span class="nav-bar-title" @onclick="NavigateToCurrentHome">@_pageMetadata.Title</span>
+    @AppBarService.Content
     <MudSpacer/>
     <MudTooltip Text="@Loc[FogResource.Common_Help]">
-        <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" 
+        <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit"
                        OnClick="@(() => NavigationManager.NavigateTo(_pageMetadata.HelpPagePath))"/>
     </MudTooltip>
     @if (_currentWidth > 575)
@@ -97,6 +100,7 @@
     {
         Setup();
         NavigationManager.LocationChanged += OnLocationChanged;
+        AppBarService.OnChange += StateHasChanged;
     }
 
     private void Setup()
@@ -131,7 +135,7 @@
         await JsInteropService.OpenUrlAsync(path, "_blank");
     }
 
-    private bool _drawerOpen = false;
+    private bool _drawerOpen;
 
     private void DrawerToggle()
     {
@@ -147,7 +151,7 @@
     {
         if (firstRender)
         {
-            await BrowserViewportService.SubscribeAsync(this, fireImmediately: true);
+            await BrowserViewportService.SubscribeAsync(this, true);
         }
 
         await base.OnAfterRenderAsync(firstRender);
@@ -157,6 +161,7 @@
     {
         await BrowserViewportService.UnsubscribeAsync(this);
         NavigationManager.LocationChanged -= OnLocationChanged;
+        AppBarService.OnChange -= StateHasChanged;
     }
 
     Guid IBrowserViewportObserver.Id { get; } = Guid.NewGuid();

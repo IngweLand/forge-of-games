@@ -6,10 +6,14 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <data name="Hoh.Lvl" xml:space="preserve">
         <value>Úr.</value>
@@ -810,25 +814,65 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="Hoh.Building.Upgrade" xml:space="preserve">
     <value>Vylepšení</value>
 </data>
-    <data name="Tooltip.BattleLog"><value>Historie bitev</value></data>
-    <data name="BattleType.Campaign"><value>Kampaň</value></data>
-    <data name="BattleType.TreasureHunt"><value>Lov na poklady</value></data>
-    <data name="BattleType.PvP"><value>Arena</value></data>
-    <data name="BattleType.HistoricBattle"><value>Historické bitvy</value></data>
-    <data name="BattleType.TeslaStorm"><value>Teslovy bouře</value></data>
-    <data name="BattleSelector.BattleType"><value>Typ bitvy</value></data>
-    <data name="BattleSelector.CampaignRegion"><value>Region kampaně</value></data>
-    <data name="BattleSelector.Encounter"><value>Srážka</value></data>
-    <data name="BattleSelector.Difficulty"><value>Obtížnost</value></data>
-    <data name="BattleSelector.TreasureHuntStage"><value>Fáze</value></data>
-    <data name="StatsHub.BattleLog.PageTitle"><value>Historie bitev | Heroes of History | Forge of Games
-    </value></data>
-    <data name="StatsHub.BattleLog.Meta.Description"><value>Zobrazit skutečné bitvy nahrané hráči v Heroes of History. Analyzujte sestavy hrdinů a využijte filtry pro zlepšení týmové strategie pomocí Battle Logu.</value></data>
-    <data name="StatsHub.BattleLog.Meta.Keywords"><value>Heroes of History, Battle Log, hrdinské bitvy, týmová strategie, hlášení bitev, statistiky boje, filtrovat bitvy, složení hrdinů, HoH Helper, analýza hry</value></data>
-    <data name="StatsHub.BattleLog.Title"><value>Historie bitev</value></data>
-    <data name="StatsHub.Menu.Leaderboards"><value>Žebříčky</value></data>
-    <data name="StatsHub.Menu.BattleLog"><value>Historie bitev</value></data>
-    <data name="StatsHub.BattleLog.ContributePrompt"><value>Naše herní analýzy jsou řízeny komunitou! Klikněte sem a dozvíte se, jak přispět!</value></data>
+    <data name="Tooltip.BattleLog">
+        <value>Historie bitev</value>
+    </data>
+    <data name="BattleType.Campaign">
+        <value>Kampaň</value>
+    </data>
+    <data name="BattleType.TreasureHunt">
+        <value>Lov na poklady</value>
+    </data>
+    <data name="BattleType.PvP">
+        <value>Arena</value>
+    </data>
+    <data name="BattleType.HistoricBattle">
+        <value>Historické bitvy</value>
+    </data>
+    <data name="BattleType.TeslaStorm">
+        <value>Teslovy bouře</value>
+    </data>
+    <data name="BattleSelector.BattleType">
+        <value>Typ bitvy</value>
+    </data>
+    <data name="BattleSelector.CampaignRegion">
+        <value>Region kampaně</value>
+    </data>
+    <data name="BattleSelector.Encounter">
+        <value>Srážka</value>
+    </data>
+    <data name="BattleSelector.Difficulty">
+        <value>Obtížnost</value>
+    </data>
+    <data name="BattleSelector.TreasureHuntStage">
+        <value>Fáze</value>
+    </data>
+    <data name="StatsHub.BattleLog.PageTitle">
+        <value>Historie bitev | Heroes of History | Forge of Games
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Description">
+        <value>Zobrazit skutečné bitvy nahrané hráči v Heroes of History. Analyzujte sestavy hrdinů a využijte filtry
+            pro zlepšení týmové strategie pomocí Battle Logu.
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Meta.Keywords">
+        <value>Heroes of History, Battle Log, hrdinské bitvy, týmová strategie, hlášení bitev, statistiky boje,
+            filtrovat bitvy, složení hrdinů, HoH Helper, analýza hry
+        </value>
+    </data>
+    <data name="StatsHub.BattleLog.Title">
+        <value>Historie bitev</value>
+    </data>
+    <data name="StatsHub.Menu.Leaderboards">
+        <value>Žebříčky</value>
+    </data>
+    <data name="StatsHub.Menu.BattleLog">
+        <value>Historie bitev</value>
+    </data>
+    <data name="StatsHub.BattleLog.ContributePrompt">
+        <value>Naše herní analýzy jsou řízeny komunitou! Klikněte sem a dozvíte se, jak přispět!</value>
+    </data>
     <data name="BattleSelector.Battle" xml:space="preserve">
         <value>Bitva</value>
     </data>
@@ -928,67 +972,67 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
     <data name="Tools.AbilityCostCalculator.Name" xml:space="preserve">
     <value>Kalkulačka nákladů schopností</value>
 </data>
-<data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
+    <data name="ImportInGameData.Options.ResearchState" xml:space="preserve">
     <value>Stav výzkumu</value>
 </data>
-<data name="Common.Max" xml:space="preserve">
+    <data name="Common.Max" xml:space="preserve">
     <value>Max</value>
 </data>
-<data name="StatsHub.Player.TopHeroes" xml:space="preserve">
+    <data name="StatsHub.Player.TopHeroes" xml:space="preserve">
     <value>Nejlepší hrdinové</value>
 </data>
-<data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.ListTitle" xml:space="preserve">
     <value>Přehledy hrdinů</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.LevelRange" xml:space="preserve">
     <value>Rozsah úrovní</value>
 </data>
-<data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Form.Mode" xml:space="preserve">
     <value>Režim</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.Top" xml:space="preserve">
     <value>Nejvyšší úroveň</value>
 </data>
-<data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
+    <data name="StatsHub.HeroInsights.Mode.MostPopular" xml:space="preserve">
     <value>Nejoblíbenější</value>
 </data>
-<data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
+    <data name="UnitStats.InitialFocusInSecondsBonusAbbrev" xml:space="preserve">
     <value>POČÁTEČNÍ NABITÍ</value>
 </data>
-<data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
+    <data name="UnitStats.CritChanceAbbrev" xml:space="preserve">
     <value>ŠANCE NA KRITICKÝ ZÁSAH</value>
 </data>
-<data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
+    <data name="UnitStats.AttackSpeedAbbrev" xml:space="preserve">
     <value>RYCHLOST ÚTOKU</value>
 </data>
-<data name="HeroSearchInput.Label" xml:space="preserve">
+    <data name="HeroSearchInput.Label" xml:space="preserve">
     <value>Jméno hrdiny</value>
 </data>
-<data name="CityPlanner.Inspirations.Title" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Title" xml:space="preserve">
     <value>Inspirace pro rozmístění města</value>
 </data>
-<data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.PageTitle" xml:space="preserve">
     <value>Inspirace pro rozmístění města | Heroes of History | Forge of Games</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Description" xml:space="preserve">
     <value>Prohlédněte si nejlepší rozmístění měst vytvořená ostatními hráči v Heroes of History. Plánujte a optimalizujte své město. Importujte herní data, spravujte více rozmístění, analyzujte produkční statistiky a maximalizujte efektivitu.</value>
 </data>
-<data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
+    <data name="CityPlanner.Inspirations.Meta.Keywords" xml:space="preserve">
     <value>Heroes of History plánovač města, rozmístění města, příklad rozmístění města, nejlepší rozmístění města, optimalizace města, optimalizace rozmístění města, maximální produkce města</value>
 </data>
-<data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.Title" xml:space="preserve">
     <value>Profil hráče</value>
 </data>
-<data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.PlayerProfile.PageTitle" xml:space="preserve">
     <value>Profil hráče | Heroes of History | Forge of Games</value>
 </data>
-<data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.Title" xml:space="preserve">
     <value>Profil aliance</value>
 </data>
-<data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
+    <data name="StatsHub.AllianceProfile.PageTitle" xml:space="preserve">
     <value>Profil aliance | Heroes of History | Forge of Games</value>
 </data>
-<data name="SupportUs.Patreon.Title" xml:space="preserve">
+    <data name="SupportUs.Patreon.Title" xml:space="preserve">
     <value>Jsme na Patreonu</value>
 </data>
     <data name="CommandCenter.Equipment.PageTitle" xml:space="preserve">
@@ -1331,5 +1375,32 @@ Forge of Games není přidružený ani oficiálně spojený s tvůrci nebo vydav
 </data>
     <data name="CityPlanner.DataConverter.Meta.Keywords" xml:space="preserve">
   <value>Heroes of History plánovač města, převodník plánovače města wiki na Forge of Games</value>
+</data>
+    <data name="CityStrategyViewer.Title" xml:space="preserve">
+  <value>Prohlížeč městských strategií</value>
+</data>
+    <data name="CityStrategyViewer.ShortTitle" xml:space="preserve">
+  <value>CS Prohlížeč</value>
+</data>
+    <data name="CityStrategyViewer.PageTitle" xml:space="preserve">
+  <value>Prohlížeč městských strategií | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Description" xml:space="preserve">
+  <value>Zobrazte strategie pro hlavní město a města spojeneckých kultur ve hře Heroes of History.</value>
+</data>
+    <data name="CityStrategyViewer.Meta.Keywords" xml:space="preserve">
+  <value>Heroes of History strategie města, město události, strategie města události, plánovač města, výstavba města, správa města, optimalizace hry, produkční statistiky</value>
+</data>
+    <data name="CityStrategiesDashboard.Title" xml:space="preserve">
+  <value>Městské strategie</value>
+</data>
+    <data name="CityStrategiesDashboard.PageTitle" xml:space="preserve">
+  <value>Městské strategie | Heroes of History | Forge of Games</value>
+</data>
+    <data name="CityStrategiesDashboard.MyStrategies" xml:space="preserve">
+  <value>Moje strategie</value>
+</data>
+    <data name="CityStrategiesDashboard.CommunityStrategies" xml:space="preserve">
+  <value>Komunitní strategie</value>
 </data>
 </root>
