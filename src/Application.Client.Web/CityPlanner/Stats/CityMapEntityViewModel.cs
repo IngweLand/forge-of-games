@@ -1,5 +1,6 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 
@@ -7,6 +8,8 @@ public class CityMapEntityViewModel
 {
     public AgeViewModel? Age { get; init; }
     public CustomizationComponentViewModel? CustomizationComponent { get; init; }
+
+    public required BuildingGroup Group { get; init; }
     public required int Id { get; init; }
 
     public IReadOnlyCollection<IconLabelItemViewModel> InfoItems { get; init; } =

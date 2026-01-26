@@ -4,19 +4,45 @@ namespace Ingweland.Fog.WebApp.Client.Services;
 
 public class AppBarService
 {
-    public RenderFragment? Content { get; private set; }
+    private RenderFragment? _content;
+    private bool _shouldHideTitle;
+
+    public RenderFragment? Content
+    {
+        get => _content;
+        set
+        {
+            if (_content == value)
+            {
+                return;
+            }
+
+            _content = value;
+            OnChange?.Invoke();
+        }
+    }
+
+    public bool ShouldHideTitle
+    {
+        get => _shouldHideTitle;
+        set
+        {
+            if (_shouldHideTitle == value)
+            {
+                return;
+            }
+
+            _shouldHideTitle = value;
+            OnChange?.Invoke();
+        }
+    }
 
     public event Action? OnChange;
 
-    public void Set(RenderFragment? content)
+    public void Reset()
     {
-        Content = content;
-        OnChange?.Invoke();
-    }
-
-    public void Clear()
-    {
-        Set(null);
+        Content = null;
+        ShouldHideTitle = false;
     }
 
     public void StateHasChanged()

@@ -2,23 +2,25 @@ using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
-using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats;
 using Ingweland.Fog.WebApp.Client.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Localization;
+using MudBlazor;
 using SkiaSharp.Views.Blazor;
 using Size = System.Drawing.Size;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Viewer;
 
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
-public partial class CityStrategyViewerComponent : ComponentBase, IDisposable
+public partial class CityStrategyMobileViewerComponent : ComponentBase, IDisposable
 {
     private Size _canvasSize = Size.Empty;
+
+    private ViewerState _currentState = ViewerState.Main;
     private bool _fitOnPaint = true;
     private bool _isInitialized;
-    private bool _leftPanelIsVisible = true;
     private SKGLView? _skCanvasView;
 
     [Inject]
@@ -29,6 +31,9 @@ public partial class CityStrategyViewerComponent : ComponentBase, IDisposable
 
     [Inject]
     public ICityViewerInteractionManager CityViewerInteractionManager { get; set; }
+
+    [Inject]
+    private IDialogService DialogService { get; set; }
 
     [Inject]
     private IStringLocalizer<FogResource> Loc { get; set; }
@@ -59,17 +64,6 @@ public partial class CityStrategyViewerComponent : ComponentBase, IDisposable
         CityStrategyBuilderService.StateHasChanged += CityPlannerOnStateHasHasChanged;
         AppBarService.StateHasChanged();
         _isInitialized = true;
-    }
-
-    private void CityPlannerOnStateHasHasChanged()
-    {
-        if (_skCanvasView == null)
-        {
-            return;
-        }
-
-        _skCanvasView.Invalidate();
-        StateHasChanged();
     }
 
     private void FitToScreen()
@@ -104,15 +98,16 @@ public partial class CityStrategyViewerComponent : ComponentBase, IDisposable
         _skCanvasView!.Invalidate();
     }
 
-    private void InteractiveCanvasOnPointerUp(PointerEventArgs args)
+    private Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
         if (_skCanvasView == null)
         {
-            return;
+            return Task.CompletedTask;
         }
 
         CityViewerInteractionManager.OnPointerUp(args.PointerId, (float) args.OffsetX, (float) args.OffsetY);
         _skCanvasView!.Invalidate();
+        return OpenCityMapEntityProperties();
     }
 
     private void InteractiveCanvasOnWheel(WheelEventArgs e)
@@ -141,41 +136,84 @@ public partial class CityStrategyViewerComponent : ComponentBase, IDisposable
         CityStrategyBuilderService.RenderScene(canvas);
     }
 
-    private void ToggleLeftPanel(bool toggled)
+    private void ToggleTimeline(bool toggled)
     {
-        _leftPanelIsVisible = toggled;
-    }
-
-    private void ZoomIn()
-    {
-        if (_skCanvasView == null)
-        {
-            return;
-        }
-
-        CityViewerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, -100);
-        _skCanvasView.Invalidate();
-    }
-
-    private void ZoomOut()
-    {
-        if (_skCanvasView == null)
-        {
-            return;
-        }
-
-        CityViewerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, 100);
-        _skCanvasView.Invalidate();
+        _currentState = _currentState == ViewerState.Timeline ? ViewerState.Main : ViewerState.Timeline;
+        AppBarService.StateHasChanged();
     }
 
     private async Task OnSelectTimelineItem(string itemId)
     {
         await CityStrategyBuilderService.SelectTimelineItem(itemId);
+        _currentState = ViewerState.Main;
         AppBarService.StateHasChanged();
     }
 
-    private void EditStrategy()
+    private void ToggleCityProperties(bool toggled)
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(Strategy.Id));
+        _currentState = _currentState == ViewerState.CityProperties ? ViewerState.Main : ViewerState.CityProperties;
+        AppBarService.StateHasChanged();
+    }
+
+    private static DialogOptions GetDefaultDialogOptions()
+    {
+        return new DialogOptions
+        {
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            Position = DialogPosition.TopCenter,
+            CloseButton = true,
+            CloseOnEscapeKey = true,
+            NoHeader = true,
+        };
+    }
+
+    private async Task OpenCityMapEntityProperties()
+    {
+        if (CityStrategyBuilderService.CityMapState.SelectedEntityViewModel == null)
+        {
+            return;
+        }
+
+        var options = GetDefaultDialogOptions();
+
+        var parameters = new DialogParameters<CityMapEntityPropertiesDialog>
+        {
+            {d => d.Building, CityStrategyBuilderService.CityMapState.SelectedEntityViewModel},
+            {d => d.CityId, CityStrategyBuilderService.CityMapState.InGameCityId},
+        };
+        _ = await DialogService.ShowAsync<CityMapEntityPropertiesDialog>(null, parameters, options);
+        CityStrategyBuilderService.DeselectAll();
+    }
+
+    private void CityPlannerOnStateHasHasChanged()
+    {
+        if (_skCanvasView == null)
+        {
+            return;
+        }
+
+        _skCanvasView.Invalidate();
+        StateHasChanged();
+    }
+
+    private async Task PreviousBtnOnClicked()
+    {
+        await CityStrategyBuilderService.SelectPreviousItem();
+        AppBarService.StateHasChanged();
+    }
+
+    private async Task NextBtnOnClicked()
+    {
+        await CityStrategyBuilderService.SelectNextItem();
+        AppBarService.StateHasChanged();
+    }
+
+    private enum ViewerState
+    {
+        Main,
+        Timeline,
+        CityProperties,
     }
 }

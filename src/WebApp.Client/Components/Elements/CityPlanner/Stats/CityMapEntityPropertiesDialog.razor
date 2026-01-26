@@ -1,7 +1,13 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
+@using Ingweland.Fog.Models.Hoh.Enums
 <MudDialog Gutters="false" @onclick="Close" ContentStyle="padding: 8px !important; margin: 0 !important">
     <DialogContent>
-        <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+            <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
+            <CityPlannerBuildingCostCalculator
+                CityId="@CityId" BuildingGroup="@Building.Group" FromLevel="@Building.Level"
+                BuildingName="@Building.Name"/>
+        </div>
     </DialogContent>
 </MudDialog>
 
@@ -12,7 +18,11 @@
 
     [Parameter]
     [EditorRequired]
-    public CityMapEntityViewModel Building { get; set; } = null!;
+    public required CityMapEntityViewModel Building { get; set; } = null!;
+
+    [Parameter]
+    [EditorRequired]
+    public required CityId CityId { get; init; }
 
     private void Close()
     {

@@ -278,6 +278,7 @@ public class CityMapEntityViewModelFactory(
             IsLockable = entity.IsLockable,
             IsLocked = entity.IsLocked,
             IsUpgrading = entity.IsUpgrading,
+            Group = entity.BuildingGroup,
         };
     }
 }

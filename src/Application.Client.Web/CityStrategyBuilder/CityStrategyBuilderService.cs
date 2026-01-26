@@ -79,6 +79,11 @@ public class CityStrategyBuilderService(
         return Save();
     }
 
+    public void DeselectAll()
+    {
+        cityPlanner.DeselectAll();
+    }
+
     public event Action? StateHasChanged
     {
         add => cityPlanner.StateHasChanged += value;
@@ -238,6 +243,28 @@ public class CityStrategyBuilderService(
         Cleanup();
 
         logger.LogDebug("Disposing CityStrategyUiService");
+    }
+
+    public Task SelectNextItem()
+    {
+        if (SelectedTimelineItem == null)
+        {
+            return SelectTimelineItem(TimelineItems.First());
+        }
+
+        var i = TimelineItems.IndexOf(SelectedTimelineItem);
+        return SelectTimelineItem(i < TimelineItems.Count - 1 ? TimelineItems[i + 1] : TimelineItems.First());
+    }
+
+    public Task SelectPreviousItem()
+    {
+        if (SelectedTimelineItem == null)
+        {
+            return SelectTimelineItem(TimelineItems.Last());
+        }
+
+        var i = TimelineItems.IndexOf(SelectedTimelineItem);
+        return SelectTimelineItem(i > 0 ? TimelineItems[i - 1] : TimelineItems.Last());
     }
 
     private async Task<CityStrategyTimelineItemBase> GetInitialTimelineItemAsync()

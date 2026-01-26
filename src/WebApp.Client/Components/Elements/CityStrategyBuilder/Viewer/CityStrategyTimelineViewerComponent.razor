@@ -6,13 +6,13 @@
 <div class="component-root">
     <div class="name-container">@StrategyName</div>
     <div class="main-container">
-        <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
-                 SelectedValueChanged="@(x => OnSelect.InvokeAsync(x!.Id))">
+        <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem">
             @for (var i = 0; i < Items.Count; i++)
             {
                 var item = Items[i];
                 var index = i + 1;
-                <MudListItem T="CityStrategyTimelineItemBase" Value="@item">
+                <MudListItem T="CityStrategyTimelineItemBase" Value="@item"
+                             OnClick="@(() => OnSelect.InvokeAsync(item.Id))">
                     <div class="timeline-item-content">
                         <div class="list-index">@index</div>
                         <div class="timeline-item-content-icon">

@@ -28,4 +28,7 @@ public interface ICityStrategyBuilderService : IDisposable
     Task<IReadOnlyCollection<HohCityBasicData>> GetCities();
     Task DeleteStrategy();
     Task Rename(string newName);
+    void DeselectAll();
+    Task SelectNextItem();
+    Task SelectPreviousItem();
 }

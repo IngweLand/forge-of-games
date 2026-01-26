@@ -98,7 +98,6 @@ public class CityViewerInteractionManager(
 
     public void Zoom(float x, float y, float deltaY)
     {
-        Console.Out.WriteLine(deltaY);
         transformationComponent.CommitScale(x, y, deltaY);
     }
 

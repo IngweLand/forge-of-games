@@ -4,7 +4,14 @@
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @if (_strategy != null)
 {
-    <CityStrategyViewerComponent Strategy="@_strategy"/>
+    @if (_isSmallScreen)
+    {
+        <CityStrategyMobileViewerComponent Strategy="@_strategy"/>
+    }
+    else
+    {
+        <CityStrategyViewerComponent Strategy="@_strategy"/>
+    }
 }
 
 @code {
