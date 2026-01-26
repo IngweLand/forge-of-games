@@ -40,7 +40,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CancellationTokenSource? _cityStrategyCts;
     private bool _cityStrategyIsLoading;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
-    private WonderId _eventCityWonder = WonderId.Undefined;
     private bool _fetchingCity;
     private bool _isDisposed;
     private DateTime _maxPvpRankingsChartDate = DateTime.Today.AddDays(5);
@@ -109,19 +108,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         }
     }
 
-    private async Task GetEventWonderAsync()
-    {
-        if (_player == null)
-        {
-            return;
-        }
-
-        _eventCityWonder =
-            await InGameEventUiService.GetCurrentWonderAsync(_player!.Player.WorldId, _inGameEventCts.Token);
-
-        StateHasChanged();
-    }
-
     protected override async Task OnParametersSetAsync()
     {
         if (_isDisposed)
@@ -144,8 +130,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             };
 
             IsInitialized = true;
-
-            _ = GetEventWonderAsync();
         }
     }
 
@@ -308,66 +292,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             },
             () => AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters,
                 parameters));
-    }
-
-    private async Task VisitEventCity()
-    {
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        var parameters = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_ID, _eventCityWonder.ToCity().ToString()},
-            {AnalyticsParams.WONDER_ID, _eventCityWonder.ToString()},
-        };
-        AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_INIT, _defaultAnalyticsParameters, parameters);
-
-        await _cityFetchCts.CancelAsync();
-        _cityFetchCts.Dispose();
-
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        _fetchingCity = true;
-        _cityFetchCts = new CancellationTokenSource();
-
-        try
-        {
-            var city = await StatsHubService.GetPlayerEventCityAsync(_player!.Player.Id);
-            if (_isDisposed)
-            {
-                return;
-            }
-
-            if (city == null)
-            {
-                AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters,
-                    parameters);
-                return;
-            }
-
-            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters,
-                parameters);
-            CityPlannerNavigationState.City = city;
-            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
-        }
-        catch (Exception e)
-        {
-            AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters,
-                parameters);
-            Logger.LogError(e, "Error while fetching city data");
-        }
-
-        if (_isDisposed)
-        {
-            return;
-        }
-
-        _fetchingCity = false;
     }
 
     private async Task ShowCityStats()
