@@ -5,6 +5,7 @@ using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Constants;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
@@ -37,6 +38,7 @@ public class CityStrategyBuilderService(
     private bool _isInitialized;
     private bool _isReadOnly;
     private bool _savingRequested;
+    private Dictionary<string, string> _selectionHistory = new();
     public CityStrategy Strategy { get; private set; } = null!;
     public CityStrategyTimelineItemBase? SelectedTimelineItem { get; private set; }
     public ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; private set; }
@@ -54,7 +56,8 @@ public class CityStrategyBuilderService(
         Strategy = strategy;
 
         TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
-        await SelectTimelineItem(TimelineItems.First(), false);
+
+        await SelectTimelineItem(await GetInitialTimelineItemAsync(), false);
 
         analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId, _isReadOnly);
 
@@ -237,6 +240,29 @@ public class CityStrategyBuilderService(
         logger.LogDebug("Disposing CityStrategyUiService");
     }
 
+    private async Task<CityStrategyTimelineItemBase> GetInitialTimelineItemAsync()
+    {
+        CityStrategyTimelineItemBase? selectedItem = null;
+
+        try
+        {
+            _selectionHistory = await persistenceService.GetItemAsync<Dictionary<string, string>>(PersistenceKeys
+                .CITY_STRATEGY_LAST_SELECTED_ITEMS) ?? new Dictionary<string, string>();
+            if (_selectionHistory.TryGetValue(Strategy.Id, out var selectedTimelineItemId))
+            {
+                selectedItem = TimelineItems.FirstOrDefault(x => x.Id == selectedTimelineItemId);
+            }
+        }
+        catch (Exception e)
+        {
+            logger.LogError(e, "Failed to load last selected items.");
+        }
+
+        selectedItem ??= TimelineItems.First();
+
+        return selectedItem;
+    }
+
     private void Cleanup()
     {
         if (_autoSaveTimer != null)
@@ -315,6 +341,10 @@ public class CityStrategyBuilderService(
                 i.Selected = true;
             }
         }
+
+        _selectionHistory[Strategy.Id] = item.Id;
+        _ = Task.Run(() =>
+            persistenceService.SetItemAsync(PersistenceKeys.CITY_STRATEGY_LAST_SELECTED_ITEMS, _selectionHistory));
     }
 
     private void UpdateStrategyAgeId()
