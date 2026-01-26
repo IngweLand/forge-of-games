@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.Timers;
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
@@ -56,6 +57,27 @@ public class CityStrategyBuilderService(
         Strategy = strategy;
 
         TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
+
+        if (_isReadOnly)
+        {
+            CityStrategyTimelineLayoutItem? previousLayoutItem = null;
+            foreach (var item in TimelineItems)
+            {
+                if (item is not CityStrategyTimelineLayoutItem li)
+                {
+                    continue;
+                }
+
+                if (previousLayoutItem == null)
+                {
+                    previousLayoutItem = li;
+                    continue;
+                }
+
+                CreateLayoutDiff(previousLayoutItem, li);
+                previousLayoutItem = li;
+            }
+        }
 
         await SelectTimelineItem(await GetInitialTimelineItemAsync(), false);
 
@@ -265,6 +287,19 @@ public class CityStrategyBuilderService(
 
         var i = TimelineItems.IndexOf(SelectedTimelineItem);
         return SelectTimelineItem(i > 0 ? TimelineItems[i - 1] : TimelineItems.Last());
+    }
+
+    private void CreateLayoutDiff(CityStrategyTimelineLayoutItem oldItem, CityStrategyTimelineLayoutItem newItem)
+    {
+        var oldItemMap = oldItem.Entities.ToDictionary(x => new Point(x.X, x.Y));
+        foreach (var newItemEntity in newItem.Entities)
+        {
+            if (oldItemMap.TryGetValue(new Point(newItemEntity.X, newItemEntity.Y), out var oldItemEntity) &&
+                oldItemEntity == newItemEntity)
+            {
+                newItemEntity.IsUnchanged = true;
+            }
+        }
     }
 
     private async Task<CityStrategyTimelineItemBase> GetInitialTimelineItemAsync()

@@ -6,15 +6,16 @@ namespace Ingweland.Fog.Application.Core.CityPlanner;
 
 public class CityMapEntity
 {
+    private bool _canBePlaced = true;
+    private bool _excludeFromStats;
     private bool _isRotated;
     private bool _isSelected;
     private Point _location;
-    private bool _canBePlaced = true;
-    private bool _excludeFromStats;
 
     public CityMapEntity(int id, Point location, Size size, string name, string cityEntityId, int level,
         BuildingType buildingType, BuildingGroup buildingGroup, ExpansionSubType expansionSubType,
-        int overflowRange = -1, bool isMovable = true, bool isLockable = false, bool isLocked = false, bool isUpgrading = false)
+        int overflowRange = -1, bool isMovable = true, bool isLockable = false, bool isLocked = false,
+        bool isUpgrading = false)
     {
         Id = id;
         Location = location;
@@ -34,10 +35,6 @@ public class CityMapEntity
         IsUpgrading = isUpgrading;
     }
 
-    public bool IsLocked { get; set; }
-    public bool IsUpgrading { get; set; }
-
-    public bool IsLockable { get; set; }
     public Rectangle Bounds { get; private set; }
     public BuildingGroup BuildingGroup { get; }
     public BuildingType BuildingType { get; }
@@ -59,6 +56,7 @@ public class CityMapEntity
             {
                 return true;
             }
+
             return !IsLockable ? _excludeFromStats : IsLocked;
         }
         set => _excludeFromStats = !IsLockable ? value : IsLocked;
@@ -70,6 +68,10 @@ public class CityMapEntity
     public float HappinessFraction { get; set; } = -1;
 
     public int Id { get; set; }
+
+    public bool IsLockable { get; set; }
+
+    public bool IsLocked { get; set; }
 
     public bool IsMovable { get; init; } = true;
 
@@ -101,6 +103,9 @@ public class CityMapEntity
             }
         }
     }
+
+    public bool IsUnchanged { get; set; }
+    public bool IsUpgrading { get; set; }
 
     public Point LastValidLocation { get; private set; }
     public bool LastValidRotation { get; private set; }
@@ -151,6 +156,7 @@ public class CityMapEntity
             CustomizationId = CustomizationId,
             Stats = stats,
             ExcludeFromStats = ExcludeFromStats,
+            IsUnchanged = IsUnchanged,
         };
 
         return newEntity;

@@ -15,6 +15,7 @@ public class BuildingRenderer : IBuildingRenderer
     private readonly ICityMapEntityStyle _cityMapEntityStyle;
     private readonly IMapGrid _grid;
     private readonly HttpClient _httpClient;
+    private readonly IconRenderer _iconRenderer = new();
     private readonly Task _initializationTask;
     private readonly ILogger<BuildingRenderer> _logger;
     private readonly IMapTransformationComponent _mapTransformationComponent;
@@ -22,7 +23,6 @@ public class BuildingRenderer : IBuildingRenderer
     private SKFont _currentNameFont;
     private SKFont _defaultNameFont;
     private SKPaint _fillPaint;
-    private readonly IconRenderer _iconRenderer = new();
     private SKTypeface _notoSansTypeface;
     private SKPaint _strokePaint;
 
@@ -89,7 +89,9 @@ public class BuildingRenderer : IBuildingRenderer
         var rect = _grid.GridToScreen(entity.Bounds).ToSKRect();
         if (!entity.IsSelected)
         {
-            var paint = _cityMapEntityStyle.GetPaint(entity.BuildingType);
+            var paint = !entity.IsUnchanged
+                ? _cityMapEntityStyle.GetPaint(entity.BuildingType)
+                : _cityMapEntityStyle.UnchangedBuildingPaint;
             _fillPaint = paint;
             _strokePaint = _cityMapEntityStyle.DefaultStrokePaint;
         }
@@ -116,16 +118,19 @@ public class BuildingRenderer : IBuildingRenderer
         }
 
         // entity name
-        if (_settings.ShowEntityName && entity.Bounds is {Width: > 1, Height: > 1} && entity.BuildingType != BuildingType.CultureSite)
+        if (_settings.ShowEntityName && entity.Bounds is {Width: > 1, Height: > 1} &&
+            entity.BuildingType != BuildingType.CultureSite)
         {
-            SkiaTextUtils.DrawText(canvas, entity.Name, rect, 5, _currentNameFont, _cityMapEntityStyle.NameTextPaint);
+            SkiaTextUtils.DrawText(canvas, entity.Name, rect, 5, _currentNameFont,
+                !entity.IsUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint);
         }
 
         // entity level
         if (_settings.ShowEntityLevel)
         {
             SkiaTextUtils.DrawText(canvas, entity.Level.ToString(), rect, 5, _currentNameFont,
-                _cityMapEntityStyle.NameTextPaint, TextHorizontalAlignment.Left, TextVerticalAlignment.Bottom);
+                !entity.IsUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint,
+                TextHorizontalAlignment.Left, TextVerticalAlignment.Bottom);
         }
 
         // buff
@@ -135,7 +140,7 @@ public class BuildingRenderer : IBuildingRenderer
             var buffRect = _grid.GridToScreen(buffEntityRect);
             buffRect.Offset(2, 2);
             buffRect.Inflate(-4, -4);
-            DrawBuffLevel(entity.HappinessFraction, buffRect.ToSKRect(), canvas);
+            DrawBuffLevel(entity.HappinessFraction, buffRect.ToSKRect(), canvas, entity.IsUnchanged);
         }
 
         // customization
@@ -192,7 +197,7 @@ public class BuildingRenderer : IBuildingRenderer
         canvas.DrawPath(path, _cityMapEntityStyle.CustomizationFillPaint);
     }
 
-    private void DrawBuffLevel(float fraction, SKRect bounds, SKCanvas canvas)
+    private void DrawBuffLevel(float fraction, SKRect bounds, SKCanvas canvas, bool isUnchanged)
     {
         // Calculate the size and position of the circle
         var diameter = Math.Min(bounds.Width, bounds.Height);
@@ -202,7 +207,7 @@ public class BuildingRenderer : IBuildingRenderer
         var circleX = bounds.Left + (bounds.Width - diameter) / 2f + radius;
         var circleY = bounds.Top + (bounds.Height - diameter) / 2f + radius;
 
-        var segmentPaint = _cityMapEntityStyle.GetBuffForegroundPaint(fraction);
+        var segmentPaint = _cityMapEntityStyle.GetBuffForegroundPaint(fraction, isUnchanged);
 
         if (fraction == 1.0 || fraction >= 2)
         {
@@ -213,7 +218,7 @@ public class BuildingRenderer : IBuildingRenderer
         using var backgroundPaint = new SKPaint
         {
             Style = SKPaintStyle.Fill,
-            Color = _cityMapEntityStyle.GetBuffBackgroundColor(fraction),
+            Color = _cityMapEntityStyle.GetBuffBackgroundColor(fraction, isUnchanged),
             IsAntialias = true,
         };
 

@@ -10,10 +10,10 @@ namespace Ingweland.Fog.Application.Core.CityPlanner;
 
 public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFactory) : ICityMapEntityFactory
 {
+    private static int _nextBuildingId = -1;
+
     private readonly HashSet<BuildingType> _notMovableEntities =
         [BuildingType.RitualSite, BuildingType.ExtractionPoint, BuildingType.PresetIrrigation];
-
-    private static int _nextBuildingId = -1;
 
     public CityMapEntity Create(BuildingDto building, HohCityMapEntity hohCityMapEntity)
     {
@@ -30,6 +30,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
             SelectedProductId = hohCityMapEntity.SelectedProductId,
             CustomizationId = hohCityMapEntity.CustomizationId,
             Stats = mapEntityStatsFactory.Create(building),
+            IsUnchanged = hohCityMapEntity.IsUnchanged,
         };
         return cme;
     }

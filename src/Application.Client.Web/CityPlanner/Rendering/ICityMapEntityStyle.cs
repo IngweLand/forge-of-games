@@ -20,7 +20,9 @@ public interface ICityMapEntityStyle
     SKPaint PositiveSelectionFillPaint { get; }
     SKPaint PositiveSelectionStrokePaint { get; }
     SKPaint StateIconPaint { get; }
+    SKPaint UnchangedBuildingPaint { get; }
+    SKPaint UnchangedNameTextPaint { get; }
     SKPaint GetPaint(BuildingType buildingType);
-    SKColor GetBuffBackgroundColor(float cultureValue);
-    SKPaint GetBuffForegroundPaint(float cultureValue);
+    SKColor GetBuffBackgroundColor(float cultureValue, bool isUnchanged = false);
+    SKPaint GetBuffForegroundPaint(float cultureValue, bool isUnchanged = false);
 }

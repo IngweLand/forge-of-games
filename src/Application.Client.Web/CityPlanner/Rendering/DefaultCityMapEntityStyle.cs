@@ -6,7 +6,14 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 public class DefaultCityMapEntityStyle : ICityMapEntityStyle
 {
     private static readonly SKColor CultureColor = SKColor.Parse("#A697E8");
+
+    private static readonly SKColor UnchangedCultureColor =
+        SKColor.Parse("#dddddd");
+
     private static readonly SKColor BuffOverflowColor = SKColor.Parse("#6F659C");
+
+    private static readonly SKColor UnchangedBuffOverflowColor =
+        SKColor.Parse("#cfcfcf");
 
     private readonly IDictionary<BuildingType, SKPaint> _buildingTypePaints =
         new Dictionary<BuildingType, SKPaint>();
@@ -15,6 +22,33 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
     {
         Color = BuffOverflowColor,
         IsAntialias = true,
+        Style = SKPaintStyle.Fill,
+    };
+
+    public SKPaint UnchangedBuffOverflowPaint { get; } = new()
+    {
+        Color = UnchangedBuffOverflowColor,
+        IsAntialias = true,
+        Style = SKPaintStyle.Fill,
+    };
+
+    public SKPaint UnchangedCultureFillPaint { get; } = new()
+    {
+        Color = UnchangedCultureColor,
+        IsAntialias = true,
+        Style = SKPaintStyle.Fill,
+    };
+
+    public SKPaint UnchangedNameTextPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#999999"),
+        IsAntialias = true,
+    };
+
+    public SKPaint UnchangedBuildingPaint { get; } = new()
+    {
+        Color = SKColor.Parse("#f0f0f0"),
+        IsAntialias = false,
         Style = SKPaintStyle.Fill,
     };
 
@@ -138,14 +172,24 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
         IsAntialias = true,
     };
 
-    public SKColor GetBuffBackgroundColor(float cultureValue)
+    public SKColor GetBuffBackgroundColor(float cultureValue, bool isUnchanged = false)
     {
-        return cultureValue <= 1.0 ? SKColors.White : CultureColor;
+        if (!isUnchanged)
+        {
+            return cultureValue <= 1.0 ? SKColors.White : CultureColor;
+        }
+
+        return cultureValue <= 1.0 ? SKColor.Parse("#f8f8f8") : UnchangedCultureColor;
     }
 
-    public SKPaint GetBuffForegroundPaint(float cultureValue)
+    public SKPaint GetBuffForegroundPaint(float cultureValue, bool isUnchanged = false)
     {
-        return cultureValue <= 1.0 ? CultureFillPaint : BuffOverflowPaint;
+        if (!isUnchanged)
+        {
+            return cultureValue <= 1.0 ? CultureFillPaint : BuffOverflowPaint;
+        }
+
+        return cultureValue <= 1.0 ? UnchangedCultureFillPaint : UnchangedBuffOverflowPaint;
     }
 
     private static SKColor GetBuildingColor(BuildingType buildingType)
