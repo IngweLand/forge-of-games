@@ -10,51 +10,26 @@ using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.Extensions.Localization;
 using MudBlazor;
-using SkiaSharp.Views.Blazor;
-using Size = System.Drawing.Size;
+using SkiaSharp;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
-public partial class CityViewerComponent : ComponentBase, IDisposable
+public partial class CityViewerComponent : CityViewerBase
 {
-    private Size _canvasSize = Size.Empty;
     private bool _cityPropertiesAreVisible;
-    private bool _fitOnPaint = true;
-
-    private bool _isInitialized;
-    private SKGLView _skCanvasView;
 
     [Inject]
     private ICityPlannerAnalyticsService AnalyticsService { get; set; }
 
     [Inject]
-    public ICityPlanner CityPlanner { get; set; }
+    private ICityPlanner CityPlanner { get; set; }
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
-    public ICityViewerInteractionManager CityViewerInteractionManager { get; set; }
-
-    [Inject]
-    private IDialogService DialogService { get; set; }
-
-    [Inject]
-    public IStringLocalizer<FogResource> Loc { get; set; }
-
-    [Inject]
-    protected NavigationManager NavigationManager { get; set; }
-
-    [Inject]
-    public IPersistenceService PersistenceService { get; set; }
-
-    public void Dispose()
-    {
-        _skCanvasView?.Dispose();
-    }
+    private IPersistenceService PersistenceService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -71,7 +46,7 @@ public partial class CityViewerComponent : ComponentBase, IDisposable
 
         await CityPlanner.InitializeAsync(CityPlannerNavigationState.City);
 
-        _isInitialized = true;
+        IsInitialized = true;
 
         StateHasChanged();
 
@@ -111,48 +86,32 @@ public partial class CityViewerComponent : ComponentBase, IDisposable
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_VIEWER, eventParams);
     }
 
-    private void FitToScreen()
+    protected override async Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
-        CityViewerInteractionManager.FitToScreen(_canvasSize);
-        _skCanvasView!.Invalidate();
-    }
-
-    private void InteractiveCanvasOnPointerDown(PointerEventArgs args)
-    {
-        CityViewerInteractionManager.OnPointerDown(args.PointerId, (float) args.OffsetX, (float) args.OffsetY);
-    }
-
-    private void InteractiveCanvasOnPointerMove(PointerEventArgs args)
-    {
-        if (args.Buttons != 1)
+        await base.InteractiveCanvasOnPointerUp(args);
+        if (SkCanvasView == null)
         {
             return;
         }
 
-        CityViewerInteractionManager.OnPointerMove(args.PointerId, (float) args.OffsetX, (float) args.OffsetY);
-        _skCanvasView!.Invalidate();
-    }
-
-    private async Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
-    {
-        CityViewerInteractionManager.OnPointerUp(args.PointerId, (float) args.OffsetX, (float) args.OffsetY);
-        _skCanvasView!.Invalidate();
         await OpenCityMapEntityProperties();
     }
-    
+
     private async Task OpenCityMapEntityProperties()
     {
         if (CityPlanner.CityMapState.SelectedEntityViewModel == null)
         {
             return;
         }
+
         var options = GetDefaultDialogOptions();
 
-        var parameters = new DialogParameters<CityMapEntityPropertiesDialog> {{d => d.Building, CityPlanner.CityMapState.SelectedEntityViewModel}};
+        var parameters = new DialogParameters<CityMapEntityPropertiesDialog>
+            {{d => d.Building, CityPlanner.CityMapState.SelectedEntityViewModel}};
         _ = await DialogService.ShowAsync<CityMapEntityPropertiesDialog>(null, parameters, options);
         CityPlanner.DeselectAll();
     }
-    
+
     private static DialogOptions GetDefaultDialogOptions()
     {
         return new DialogOptions
@@ -167,24 +126,8 @@ public partial class CityViewerComponent : ComponentBase, IDisposable
         };
     }
 
-    private void InteractiveCanvasOnWheel(WheelEventArgs e)
+    protected override void RenderScene(SKCanvas canvas)
     {
-        CityViewerInteractionManager.Zoom((float) e.OffsetX, (float) e.OffsetY, (float) e.DeltaY);
-        _skCanvasView!.Invalidate();
-    }
-
-    private void SkCanvasView_OnPaintSurface(SKPaintGLSurfaceEventArgs e)
-    {
-        var surface = e.Surface;
-        var canvas = surface.Canvas;
-        _canvasSize = new Size(e.Info.Width, e.Info.Height);
-        if (_fitOnPaint)
-        {
-            CityViewerInteractionManager.FitToScreen(_canvasSize);
-            _fitOnPaint = false;
-        }
-
-        CityViewerInteractionManager.TransformMapArea(canvas);
         CityPlanner.RenderScene(canvas);
     }
 

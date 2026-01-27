@@ -3,8 +3,9 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using SkiaSharp.Views.Blazor
 @using Size = MudBlazor.Size
+@inherits CityStrategyViewerComponentBase
 <div class="content-wrapper">
-    @if (!_isInitialized)
+    @if (!IsInitialized)
     {
         <div class="main-container">
             <div class="spinner-grow loading-indicator" role="status"></div>
@@ -46,7 +47,7 @@
                     </div>
                     <div class="map-container">
                         <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                                  @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                                  @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
                                   @onpointerdown="@InteractiveCanvasOnPointerDown"
                                   @onwheel="@InteractiveCanvasOnWheel"
                                   @onpointermove="@InteractiveCanvasOnPointerMove"
@@ -94,40 +95,36 @@
 
 @code{
 
-    [Parameter]
-    [EditorRequired]
-    public required CityStrategy Strategy { get; set; }
-
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
-        AppBarService.Content = @<div class="app-bar-content-container">
-                                    <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
-                                                         Toggled="@(_currentState == ViewerState.Timeline)"
-                                                         Color="Color.Inherit"
-                                                         ToggledIcon="@Icons.Material.Filled.ViewTimeline"
-                                                         ToggledColor="Color.Inherit"
-                                                         ToggledChanged="ToggleTimeline"/>
-                                    @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
-                                    {
-                                        @if (_currentState == ViewerState.Main)
-                                        {
-                                            <div class="toolbar-divider"></div>
-                                            <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
-                                                           OnClick="@FitToScreen"
-                                                           Color="Color.Inherit"/>
-                                        }
+        AppBarButtons = @<div class="app-bar-content-container">
+                            <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
+                                                 Toggled="@(_currentState == ViewerState.Timeline)"
+                                                 Color="Color.Inherit"
+                                                 ToggledIcon="@Icons.Material.Filled.ViewTimeline"
+                                                 ToggledColor="Color.Inherit"
+                                                 ToggledChanged="ToggleTimeline"/>
+                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+                            {
+                                @if (_currentState == ViewerState.Main)
+                                {
+                                    <div class="toolbar-divider"></div>
+                                    <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                                                   OnClick="@FitToScreen"
+                                                   Color="Color.Inherit"/>
+                                }
 
-                                        <div class="toolbar-divider"></div>
-                                        <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
-                                                             Color="Color.Inherit"
-                                                             Toggled="@(_currentState == ViewerState.CityProperties)"
-                                                             ToggledIcon="@Icons.Material.Filled.Analytics"
-                                                             ToggledColor="Color.Inherit"
-                                                             ToggledChanged="ToggleCityProperties"/>
-                                    }
-                                </div>;
+                                <div class="toolbar-divider"></div>
+                                <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
+                                                     Color="Color.Inherit"
+                                                     Toggled="@(_currentState == ViewerState.CityProperties)"
+                                                     ToggledIcon="@Icons.Material.Filled.Analytics"
+                                                     ToggledColor="Color.Inherit"
+                                                     ToggledChanged="ToggleCityProperties"/>
+                            }
+                        </div>;
     }
 
 }

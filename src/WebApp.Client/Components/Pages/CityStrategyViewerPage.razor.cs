@@ -46,7 +46,6 @@ public partial class CityStrategyViewerPage : FogPageBase
 
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < 1000;
-        AppBarService.ShouldHideTitle = size.Width < 720;
     }
 
     protected override async Task OnParametersSetAsync()

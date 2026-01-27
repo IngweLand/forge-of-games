@@ -1,52 +1,44 @@
-using Microsoft.AspNetCore.Components;
+using Ingweland.Fog.WebApp.Client.Models;
 
 namespace Ingweland.Fog.WebApp.Client.Services;
 
 public class AppBarService
 {
-    private RenderFragment? _content;
-    private bool _shouldHideTitle;
-
-    public RenderFragment? Content
-    {
-        get => _content;
-        set
-        {
-            if (_content == value)
-            {
-                return;
-            }
-
-            _content = value;
-            OnChange?.Invoke();
-        }
-    }
-
-    public bool ShouldHideTitle
-    {
-        get => _shouldHideTitle;
-        set
-        {
-            if (_shouldHideTitle == value)
-            {
-                return;
-            }
-
-            _shouldHideTitle = value;
-            OnChange?.Invoke();
-        }
-    }
+    private readonly Dictionary<string, AppBarState> _states = new(StringComparer.OrdinalIgnoreCase);
 
     public event Action? OnChange;
 
-    public void Reset()
+    public AppBarState? GetState(string key)
     {
-        Content = null;
-        ShouldHideTitle = false;
+        _states.TryGetValue(key, out var state);
+
+        return state;
     }
 
-    public void StateHasChanged()
+    public void SetState(string key, AppBarState state)
     {
+        _states[key] = state;
+
         OnChange?.Invoke();
+    }
+
+    public void RemoveState(string key)
+    {
+        var state = GetState(key);
+        if (state is null)
+        {
+            return;
+        }
+
+        _states.Remove(key);
+        OnChange?.Invoke();
+    }
+
+    public void StateHasChanged(string key)
+    {
+        // if (_states.ContainsKey(key) && OnChange != null)
+        // {
+            OnChange?.Invoke();
+        // }
     }
 }

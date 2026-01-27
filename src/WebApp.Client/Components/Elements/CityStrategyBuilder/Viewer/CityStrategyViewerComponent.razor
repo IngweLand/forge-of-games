@@ -4,8 +4,9 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using SkiaSharp.Views.Blazor
 @using Position = MudBlazor.Position
+@inherits CityStrategyViewerComponentBase
 <div class="content-wrapper">
-    @if (!_isInitialized)
+    @if (!IsInitialized)
     {
         <div class="spinner-grow loading-indicator" role="status"></div>
     }
@@ -23,7 +24,7 @@
         {
             <div class="main-container">
                 <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                          @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
                           @onpointerdown="@InteractiveCanvasOnPointerDown"
                           @onwheel="@InteractiveCanvasOnWheel"
                           @onpointermove="@InteractiveCanvasOnPointerMove"
@@ -86,37 +87,33 @@
 
 @code{
 
-    [Parameter]
-    [EditorRequired]
-    public required CityStrategy Strategy { get; set; }
-
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
-        AppBarService.Content = @<div class="app-bar-content-container">
-                                    <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
-                                                         Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
-                                                         ToggledIcon="@Icons.Material.Filled.ViewTimeline"
-                                                         ToggledColor="Color.Inherit"
-                                                         ToggledChanged="ToggleLeftPanel"/>
-                                    @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
-                                    {
-                                        <div class="toolbar-divider"></div>
-                                        <div>
-                                            <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
-                                                           Color="Color.Inherit"/>
-                                            <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
-                                                           Color="Color.Inherit"/>
-                                            <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
-                                                           OnClick="@FitToScreen"
-                                                           Color="Color.Inherit"/>
-                                        </div>
-                                    }
-                                    <div class="toolbar-divider"></div>
-                                    <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@EditStrategy"
+        AppBarButtons = @<div class="app-bar-content-container">
+                            <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
+                                                 Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
+                                                 ToggledIcon="@Icons.Material.Filled.ViewTimeline"
+                                                 ToggledColor="Color.Inherit"
+                                                 ToggledChanged="ToggleLeftPanel"/>
+                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+                            {
+                                <div class="toolbar-divider"></div>
+                                <div>
+                                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
                                                    Color="Color.Inherit"/>
-                                </div>;
+                                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
+                                                   Color="Color.Inherit"/>
+                                    <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                                                   OnClick="@FitToScreen"
+                                                   Color="Color.Inherit"/>
+                                </div>
+                            }
+                            <div class="toolbar-divider"></div>
+                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@EditStrategy"
+                                           Color="Color.Inherit"/>
+                        </div>;
     }
 
 }

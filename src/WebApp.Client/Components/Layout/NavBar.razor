@@ -23,11 +23,16 @@
            Color="Color.Primary" Dense="true">
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
                    OnClick="@(e => DrawerToggle())"/>
-    @if (!AppBarService.ShouldHideTitle)
+    @if (AppBarService.GetState(NavigationManager.Uri) == null || !AppBarService.GetState(NavigationManager.Uri)!.ShouldHideTitle)
     {
         <span class="nav-bar-title" @onclick="NavigateToCurrentHome">@_pageMetadata.Title</span>
     }
-    @AppBarService.Content
+
+    @if (AppBarService.GetState(NavigationManager.Uri)?.Content != null)
+    {
+        @AppBarService.GetState(NavigationManager.Uri)!.Content
+    }
+
     <MudSpacer/>
     <MudTooltip Text="@Loc[FogResource.Common_Help]">
         <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit"

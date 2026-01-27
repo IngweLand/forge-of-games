@@ -1,9 +1,10 @@
-@using SkiaSharp.Views.Blazor
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
+@inherits CityViewerBase
 <MudPopoverProvider/>
 <MudDialogProvider/>
 <div class="content-wrapper">
-    @if (!_isInitialized)
+    @if (!IsInitialized)
     {
         <div class="spinner-grow loading-indicator" role="status"></div>
     }
@@ -39,7 +40,7 @@
         {
             <div class="map-container">
                 <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                          @ref="_skCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
                           @onpointerdown="@InteractiveCanvasOnPointerDown"
                           @onwheel="@InteractiveCanvasOnWheel"
                           @onpointermove="@InteractiveCanvasOnPointerMove"
