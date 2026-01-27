@@ -1,7 +1,5 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces;
@@ -22,10 +20,14 @@ public class UnitService(
     IHeroAbilityDtoFactory heroAbilityDtoFactory,
     IHohDataCache dataCache,
     ICacheKeyFactory cacheKeyFactory,
-    IFogDbContext context,
-    IMapper mapper)
+    IFogDbContext context)
     : IUnitService
 {
+    private static readonly HashSet<string> LegacyUnitIds =
+    [
+        "unit.Unit_WilliamTell_5",
+    ];
+
     public Task<HeroDto?> GetHeroAsync(string id)
     {
         var version = hohCoreDataRepository.Version;
@@ -70,8 +72,17 @@ public class UnitService(
 
     private async Task<HeroDto?> CreateHeroAsync(string id)
     {
-        var hero = await hohCoreDataRepository.GetHeroAsync(id) ??
-            await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
+        Hero? hero;
+        if (!LegacyUnitIds.Contains(id))
+        {
+            hero = await hohCoreDataRepository.GetHeroAsync(id) ??
+                await hohCoreDataRepository.GetHeroByUnitIdAsync(id);
+        }
+        else
+        {
+            hero = await hohCoreDataRepository.GetHeroByLegacyUnitIdAsync(id);
+        }
+
         if (hero == null)
         {
             logger.LogDebug($"Could not find hero with id {id}");

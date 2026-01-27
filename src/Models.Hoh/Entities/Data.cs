@@ -70,4 +70,7 @@ public class Data
     
     [ProtoMember(23)]
     public IReadOnlyCollection<EquipmentSetDefinition> EquipmentSetDefinitions { get; init; }
+    
+    [ProtoMember(24)]
+    public required IReadOnlyCollection<Hero> LegacyHeroes { get; init; }
 }

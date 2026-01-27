@@ -22,6 +22,11 @@ public class GameDesignDataParser(
     [
     ];
 
+    private static readonly Dictionary<string, string> CurrentToLegacyHeroUnitIdMap = new()
+    {
+        ["unit.Unit_WilliamTellLegendary"] = "unit.Unit_WilliamTell_5",
+    };
+
     public byte[] Parse(byte[] gameDesignData, IReadOnlyCollection<byte[]> startupData)
     {
         if (HeroesToSkip.Count > 0)
@@ -263,13 +268,27 @@ public class GameDesignDataParser(
         var heroes =
             mapper.Map<IList<Hero>>(gdr.HeroDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
         var heroStarUps = mapper.Map<IList<Hero>>(gdr.HeroStarUpDefinitions.Where(h => !HeroesToSkip.Contains(h.Id)));
+        var allHeroes = heroes.Concat(heroStarUps).ToList();
         var equipmentSets = mapper.Map<IList<EquipmentSetDefinition>>(gdr.EquipmentSetDefinitions);
+        var legacyHeroes = allHeroes
+            .Where(h => CurrentToLegacyHeroUnitIdMap.ContainsKey(h.UnitId))
+            .Select(h => new Hero
+            {
+                Id = h.Id,
+                UnitId = CurrentToLegacyHeroUnitIdMap[h.UnitId],
+                AbilityId = h.AbilityId,
+                AwakeningId = h.AwakeningId,
+                ClassId = h.ClassId,
+                ProgressionComponent = h.ProgressionComponent,
+                SupportUnitType = h.SupportUnitType,
+            })
+            .ToList();
         var data = new Data
         {
             Worlds = worlds.AsReadOnly(),
             Buildings = buildings.AsReadOnly(),
             Units = units.Values,
-            Heroes = heroes.Concat(heroStarUps).ToList(),
+            Heroes = allHeroes,
             ProgressionCosts = mapper.Map<IReadOnlyCollection<HeroProgressionCost>>(gdr.HeroProgressionCostDefinitions),
             AscensionCosts =
                 mapper.Map<IReadOnlyCollection<HeroAscensionCost>>(gdr.HeroProgressionAscensionCostDefinitions),
@@ -291,6 +310,7 @@ public class GameDesignDataParser(
             Relics = relics.AsReadOnly(),
             RelicBoostAgeModifiers = mapper.Map<IDictionary<string, float>>(gdr.RelicBoostAgeModifiers).AsReadOnly(),
             EquipmentSetDefinitions = equipmentSets.AsReadOnly(),
+            LegacyHeroes = legacyHeroes.AsReadOnly(),
         };
 
         return data;

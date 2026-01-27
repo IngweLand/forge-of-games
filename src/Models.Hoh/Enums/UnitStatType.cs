@@ -46,6 +46,7 @@ public enum UnitStatType
     PoisonDamageTakenAmp,
     ProjectileSpeed,
     Shield,
+    ShieldGivenAmp,
     ShieldTakenAmp,
     SingleTargetDamageAmp,
     SingleTargetDamageTakenAmp,

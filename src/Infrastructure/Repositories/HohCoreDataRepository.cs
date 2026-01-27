@@ -25,6 +25,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.Heroes.FirstOrDefault(h => h.UnitId == id);
     }
 
+    public async Task<Hero?> GetHeroByLegacyUnitIdAsync(string id)
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.LegacyHeroes.FirstOrDefault(h => h.UnitId == id);
+    }
+
     public async Task<HeroProgressionCost?> GetHeroProgressionCostsAsync(HeroProgressionCostId id)
     {
         var data = await dataProvider.GetDataAsync();

@@ -16,6 +16,7 @@ public interface IHohCoreDataRepository
     Task<CityDefinition?> GetCity(CityId id);
     Task<Hero?> GetHeroAsync(string id);
     Task<Hero?> GetHeroByUnitIdAsync(string id);
+    Task<Hero?> GetHeroByLegacyUnitIdAsync(string id);
     Task<BattleAbility?> GetHeroAbilityAsync(string abilityId);
     Task<HeroAscensionCost?> GetHeroAscensionCostsAsync(string ascensionCostId);
     Task<HeroAwakeningComponent?> GetHeroAwakeningComponentAsync(string awakeningId);
