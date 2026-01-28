@@ -18,6 +18,7 @@ public static class FogConstants
     public const int MAX_ALLIANCES_ATH_RANKINGS = 100;
     public const int MAX_EVENT_CITY_RANKINGS = 100;
     public const int CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH = 60;
+    public const int CITY_PLANNER_REQUIRED_SCREEN_WIDTH = 880;
 
     public static readonly int MaxHohCitySnapshots = 5;
     public static readonly int DisplayedStatsDays = 30;

@@ -1,8 +1,10 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -35,10 +37,16 @@ public partial class CityViewerPage : FogPageBase
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
+    private IDialogService DialogService { get; set; }
+
+    [Inject]
     private IJSInteropService JsInteropService { get; set; }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
+
+    [Inject]
+    private IPersistenceService PersistenceService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -63,9 +71,28 @@ public partial class CityViewerPage : FogPageBase
         await JsInteropService.ResetScrollPositionAsync();
 
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
-        _isSmallScreen = size.Width < 880;
+        _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
 
         _isInitialized = true;
+
+        var settings = await PersistenceService.GetUiSettingsAsync();
+
+        if (!settings.CityViewerIntroMessageViewed && _isSmallScreen)
+        {
+            _ = DialogService.ShowMessageBox(
+                null,
+                Loc[FogResource.CityViewer_FirstTimeMessage],
+                Loc[FogResource.Common_Ok],
+                options: new DialogOptions
+                {
+                    BackdropClick = false,
+                    Position = DialogPosition.TopCenter,
+                    NoHeader = true,
+                });
+
+            settings.CityViewerIntroMessageViewed = true;
+            await PersistenceService.SaveUiSettingsAsync(settings);
+        }
 
         TrackOpening();
     }

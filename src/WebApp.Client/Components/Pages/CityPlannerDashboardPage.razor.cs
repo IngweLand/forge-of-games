@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
@@ -16,9 +17,13 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 public partial class CityPlannerDashboardPage : FogPageBase
 {
     private IReadOnlyCollection<HohCityBasicData> _cities = [];
+    private bool _isSmallScreen;
 
     [Inject]
     private ICityPlannerAnalyticsService AnalyticsService { get; set; }
+
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -44,6 +49,9 @@ public partial class CityPlannerDashboardPage : FogPageBase
             return;
         }
 
+        var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
+        _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
+
         _cities = await PersistenceService.GetCities();
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_PLANNER_DASHBOARD);
@@ -66,7 +74,9 @@ public partial class CityPlannerDashboardPage : FogPageBase
 
         AnalyticsService.TrackCityOpening(city.Id, city.InGameCityId, city.WonderId);
 
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
+        NavigationManager.NavigateTo(_isSmallScreen
+            ? FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH
+            : FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 
     private async Task CreateNewCity()

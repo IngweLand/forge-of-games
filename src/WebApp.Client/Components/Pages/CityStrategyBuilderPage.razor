@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
@@ -64,7 +65,7 @@
             await JsInteropService.ResetScrollPositionAsync();
 
             var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
-            _showBuilder = size.Width >= 880;
+            _showBuilder = size.Width >= FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
 
             _isInitialized = true;
         }
