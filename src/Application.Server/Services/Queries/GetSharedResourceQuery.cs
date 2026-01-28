@@ -3,6 +3,8 @@ using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using MediatR;
 
+namespace Ingweland.Fog.Application.Server.Services.Queries;
+
 public record GetSharedResourceQuery(string ShareId) : IRequest<Result<SharedDataDto>>;
 
 public class GetSharedResourceHandler(IFogSharedDataStorageRepository storageRepository)

@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Services.Commands;
+using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Dtos.Hoh;
 using Microsoft.AspNetCore.Http.HttpResults;
 
@@ -15,6 +16,7 @@ public static class FogApi
         var api = app.MapGroup(PREFIX);
         api.MapPost(FogUrlBuilder.ApiRoutes.CREATE_SHARE, CreateShareAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_RESOURCE_TEMPLATE, GetSharedResourceAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_CITY_STRATEGIES, GetSharedCityStrategiesAsync);
         return api;
     }
 
@@ -64,5 +66,16 @@ public static class FogApi
         }
 
         return TypedResults.Ok(result.Value);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<CommunityCityStrategyDto>>> GetSharedCityStrategiesAsync(
+        [AsParameters] StatsServices services,
+        CancellationToken ct)
+    {
+        var query = new GetSharedCityStrategiesQuery();
+        var result = await services.Mediator.Send(query, ct);
+        result.LogIfFailed(nameof(FogApi));
+
+        return TypedResults.Ok(result.IsSuccess ? result.Value : []);
     }
 }

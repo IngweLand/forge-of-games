@@ -185,7 +185,7 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 };
             }
 
-            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_CITY_STRATEGY_VIEWER_PATH))
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH))
             {
                 return new PageMetadata
                 {

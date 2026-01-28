@@ -1,95 +1,44 @@
-@using Ingweland.Fog.Application.Client.Web.Analytics
-@using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces
-@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
-@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
 @using Ingweland.Fog.WebApp.Client.Components.Layout
-@using Microsoft.Extensions.Localization
-@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_APP_TEMPLATE)]
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_BUILDER_APP_PATH)]
 @layout BlankLayout
-@inject IStringLocalizer<FogResource> Loc
-@if (_isInitialized)
+@if (_strategy != null)
 {
-    @if (_showBuilder)
-    {
-        @if (_strategy != null)
-        {
-            <CityStrategyBuilderComponent Strategy="@_strategy"/>
-        }
-    }
-    else
-    {
-        <div class="small-screen-message">
-            <span>@Loc[FogResource.CityStrategyBuilder_SmallScreenMessage]</span>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary"
-                       OnClick="@(() => NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH))">
-                @Loc[FogResource.Common_GoBack]
-            </MudButton>
-        </div>
-    }
-    /* <CityStrategyViewerComponent/> */
+    <CityStrategyBuilderComponent Strategy="@_strategy"/>
 }
 
 @code
 {
-    private bool _isInitialized;
-    private bool _showBuilder;
-
-    [Inject]
-    private IBrowserViewportService BrowserViewportService { get; set; }
-
     [Inject]
     private IJSInteropService JsInteropService { get; set; }
-
-    [Inject]
-    private IPersistenceService PersistenceService { get; set; }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
 
     [Inject]
-    private ICityStrategyAnalyticsService AnalyticsService { get; set; }
-
-    [Parameter]
-    public string StrategyId { get; set; }
+    public CityStrategyNavigationState CityStrategyNavigationState { get; set; }
 
     private CityStrategy? _strategy;
 
     protected override async Task OnInitializedAsync()
     {
-        if (OperatingSystem.IsBrowser())
-        {
-            await JsInteropService.ResetScrollPositionAsync();
+        await base.OnInitializedAsync();
 
-            var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
-            _showBuilder = size.Width >= FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
-
-            _isInitialized = true;
-        }
-    }
-
-    protected override async Task OnParametersSetAsync()
-    {
-        await base.OnParametersSetAsync();
-
-        if (!_isInitialized)
+        if (!OperatingSystem.IsBrowser())
         {
             return;
         }
 
-        var parameters = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_STRATEGY_ID, StrategyId},
-        };
-        AnalyticsService.TrackEvent(AnalyticsEvents.EDIT_CITY_STRATEGY_INIT, parameters);
+        await JsInteropService.ResetScrollPositionAsync();
+        await Task.Delay(30);
 
-        _strategy = await PersistenceService.LoadCityStrategy(StrategyId!);
+        _strategy = CityStrategyNavigationState.Data?.Strategy;
         if (_strategy == null)
         {
-            AnalyticsService.TrackEvent(AnalyticsEvents.EDIT_CITY_STRATEGY_ERROR, parameters);
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH, false, true);
         }
     }

@@ -87,6 +87,9 @@
 
 @code{
 
+    [Parameter]
+    public EventCallback OnEditRequested { get; set; }
+
     protected override void OnInitialized()
     {
         base.OnInitialized();
@@ -111,7 +114,7 @@
                                 </div>
                             }
                             <div class="toolbar-divider"></div>
-                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@EditStrategy"
+                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
                                            Color="Color.Inherit"/>
                         </div>;
     }

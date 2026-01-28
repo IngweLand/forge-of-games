@@ -1,3 +1,5 @@
+using Ingweland.Fog.Application.Client.Web.Analytics;
+using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
@@ -10,9 +12,9 @@ namespace Ingweland.Fog.Application.Client.Web.Services;
 public class FogSharingUiService(
     IProtobufSerializer protobufSerializer,
     IFogSharingService sharingService,
-    IPersistenceService persistenceService,
     IEquipmentProfilePersistenceService equipmentProfilePersistenceService,
     IEquipmentProfileFactory equipmentProfileFactory,
+    IAnalyticsService analyticsService,
     ILogger<FogSharingUiService> logger)
     : IFogSharingUiService
 {
@@ -33,27 +35,34 @@ public class FogSharingUiService(
         return new SharedDataDto {Data = Convert.ToBase64String(bytes)};
     }
 
-    public async Task<bool> LoadCityStrategyAsync(string shareId)
+    public async Task<CityStrategy?> FetchCityStrategyAsync(string shareId)
     {
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.SHARE_ID, shareId},
+        };
+        _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_STRATEGY_INIT, parameters);
+
         var data = await sharingService.GetAsync(shareId);
         if (data == null)
         {
-            return false;
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_STRATEGY_ERROR, parameters);
+            return null;
         }
 
         try
         {
             var strategy = protobufSerializer.DeserializeFromBytes<CityStrategy>(Convert.FromBase64String(data.Data));
-            strategy.Id = Guid.NewGuid().ToString();
-            strategy.UpdatedAt = DateTime.Now;
-            await persistenceService.SaveCityStrategy(strategy);
-            return true;
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_STRATEGY_SUCCESS, parameters);
+            return strategy;
         }
         catch (Exception e)
         {
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_STRATEGY_ERROR, parameters);
             logger.LogError(e, "Failed to load city strategy.");
-            return false;
         }
+
+        return null;
     }
 
     public async Task<bool> LoadEquipmentProfileAsync(string shareId)

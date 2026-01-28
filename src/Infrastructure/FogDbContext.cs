@@ -47,6 +47,7 @@ public class FogDbContext : DbContext, IFogDbContext
     public DbSet<SharedSubmissionIdEntity> SharedSubmissionIds { get; set; }
     public DbSet<ProfileSquadDataEntity> ProfileSquadDataItems { get; set; }
     public DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
+    public DbSet<CommunityCityStrategyEntity> CommunityCityStrategies { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -89,5 +90,7 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new EventCityFetchStateEntityTypeConfiguration());
         builder.ApplyConfiguration(new EventCityStrategyEntityTypeConfiguration());
         builder.ApplyConfiguration(new EventCityStrategyDataEntityTypeConfiguration());
+        builder.ApplyConfiguration(new CommunityCityStrategyEntityTypeConfiguration());
+        builder.ApplyConfiguration(new CommunityCityStrategyGuideEntityTypeConfiguration());
     }
 }

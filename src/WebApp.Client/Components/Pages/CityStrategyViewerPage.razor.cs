@@ -1,5 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.Analytics;
-using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -16,13 +15,13 @@ public partial class CityStrategyViewerPage : FogPageBase
     private CityStrategy? _strategy;
 
     [Inject]
-    private ICityStrategyAnalyticsService AnalyticsService { get; set; }
-
-    [Inject]
     public AppBarService AppBarService { get; set; }
 
     [Inject]
     private IBrowserViewportService BrowserViewportService { get; set; }
+
+    [Inject]
+    public CityStrategyNavigationState CityStrategyNavigationState { get; set; }
 
     [Inject]
     private IJSInteropService JsInteropService { get; set; }
@@ -31,7 +30,7 @@ public partial class CityStrategyViewerPage : FogPageBase
     private NavigationManager NavigationManager { get; set; }
 
     [Inject]
-    private IPersistenceService PersistenceService { get; set; }
+    public IPersistenceService PersistenceService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -42,33 +41,28 @@ public partial class CityStrategyViewerPage : FogPageBase
             return;
         }
 
+        _strategy = CityStrategyNavigationState.Data?.Strategy;
+        if (_strategy == null)
+        {
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH, false, true);
+            return;
+        }
+
         await JsInteropService.ResetScrollPositionAsync();
+        await Task.Delay(30);
 
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < 1000;
     }
 
-    protected override async Task OnParametersSetAsync()
+    private async Task OnEdit()
     {
-        await base.OnParametersSetAsync();
-
-        if (!OperatingSystem.IsBrowser())
+        if (CityStrategyNavigationState.Data!.IsRemote)
         {
-            return;
+            CityStrategyNavigationState.Data.Strategy.Id = Guid.NewGuid().ToString();
+            await PersistenceService.SaveCityStrategy(CityStrategyNavigationState.Data.Strategy);
         }
 
-        var parameters = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_STRATEGY_ID, StrategyId},
-        };
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_INIT, parameters);
-
-        _strategy = await PersistenceService.LoadCityStrategy(StrategyId);
-
-        if (_strategy == null)
-        {
-            AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_ERROR, parameters);
-            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH, false, true);
-        }
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_BUILDER_APP_PATH);
     }
 }

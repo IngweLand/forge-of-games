@@ -7,7 +7,7 @@ public interface IFogSharingUiService
 {
     Task<CreatedShareDto> ShareAsync(SharedDataDto data);
     SharedDataDto CreateSharedData(CityStrategy cityStrategy);
-    Task<bool> LoadCityStrategyAsync(string shareId);
+    Task<CityStrategy?> FetchCityStrategyAsync(string shareId);
     SharedDataDto CreateSharedData(EquipmentProfile equipmentProfile);
     Task<bool> LoadEquipmentProfileAsync(string shareId);
 }

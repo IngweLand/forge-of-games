@@ -10,7 +10,8 @@ public interface ICityStrategyAnalyticsService
 
     void TrackEvent(string eventName);
     void TrackCityStrategyCreation(NewCityRequest request);
-    void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId, bool isReadOnly);
+
+    void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId, bool isEditor);
 
     void TrackEvent(string eventName, IReadOnlyDictionary<string, object> eventParams);
 }

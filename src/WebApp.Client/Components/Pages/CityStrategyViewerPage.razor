@@ -1,4 +1,4 @@
-@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_TEMPLATE)]
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH)]
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Viewer
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
@@ -10,13 +10,10 @@
     }
     else
     {
-        <CityStrategyViewerComponent Strategy="@_strategy"/>
+        <CityStrategyViewerComponent Strategy="@_strategy" OnEditRequested="@OnEdit"/>
     }
 }
 
 @code {
-
-    [Parameter]
-    public string StrategyId { get; set; }
 
 }

@@ -1,5 +1,3 @@
-using Ingweland.Fog.Application.Core.Helpers;
-
 namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Viewer;
 
 public partial class CityStrategyViewerComponent : CityStrategyViewerComponentBase
@@ -31,10 +29,5 @@ public partial class CityStrategyViewerComponent : CityStrategyViewerComponentBa
 
         CityViewerInteractionManager.Zoom(CanvasSize.Width / 2, CanvasSize.Height / 2, 100);
         SkCanvasView.Invalidate();
-    }
-
-    private void EditStrategy()
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(Strategy.Id));
     }
 }

@@ -32,6 +32,7 @@ internal static class DependencyInjection
         services.AddScoped<ILocalStorageBackupService, LocalStorageBackupService>();
         services.AddScoped<IEquipmentProfilePersistenceService, EquipmentProfilePersistenceService>();
         services.AddScoped<AppBarService>();
+        services.AddScoped<CityStrategyNavigationState>();
 
         var refitSettings = new RefitSettings
         {
@@ -63,6 +64,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IFogCommonService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogSharingService>(services, baseAddress, refitJsonSettings, "api");
+        AddRefitJsonApiClient<ISharedCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,

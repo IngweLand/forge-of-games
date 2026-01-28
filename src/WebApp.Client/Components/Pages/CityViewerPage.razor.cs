@@ -64,11 +64,10 @@ public partial class CityViewerPage : FogPageBase
             return;
         }
 
-        StateHasChanged();
+        await JsInteropService.ResetScrollPositionAsync();
+        await Task.Delay(30);
 
         await CityPlanner.InitializeAsync(_city);
-
-        await JsInteropService.ResetScrollPositionAsync();
 
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;

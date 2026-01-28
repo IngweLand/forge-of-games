@@ -158,6 +158,8 @@ public static class DependencyInjection
         services.AddScoped<IUnitStatsViewModelFactory, UnitStatsViewModelFactory>();
         services.AddScoped<IHeroEquipmentConfigurationFactory, HeroEquipmentConfigurationFactory>();
         services.AddScoped<ICityPlannerDataConverterService, CityPlannerDataConverterService>();
+        services.AddScoped<ICommunityCityStrategyViewModelFactory, CommunityCityStrategyViewModelFactory>();
+        services.AddScoped<ISharedCityStrategyUIService, SharedCityStrategyUIService>();
 
         services.AddScoped<CityPlannerSettings>();
 

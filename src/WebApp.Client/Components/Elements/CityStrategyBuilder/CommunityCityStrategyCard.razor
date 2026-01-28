@@ -1,0 +1,42 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.ViewModels
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+<div class="command-center-card" @onclick="() => OnClick.InvokeAsync(Info)">
+    <div class="top-container">
+        @if (Info.Age != null)
+        {
+            <div class="age-label" style="background-color: @Info.Age.Color">@Info.Age.Name</div>
+        }
+        else
+        {
+            <img class="city-id-icon" src="@Info.CityIconUrl"/>
+        }
+        @if (Info.GuideId == null)
+        {
+            <span class="material-symbols-outlined strategy-type-icon">strategy</span>
+        }
+        else
+        {
+            <span class="material-symbols-outlined strategy-type-icon">menu_book</span>
+        }
+    </div>
+    <div class="main-container">
+        <span class="city-name">@Info.Name</span>
+        <span class="author-label">@($"{Loc[FogResource.Common_Author]}: {Info.Author}")</span>
+    </div>
+    <div class="bottom-container">
+        <span class="updated-at">@Info.UpdatedAt</span>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required CommunityCityStrategyViewModel Info { get; init; }
+
+    [Parameter]
+    public EventCallback<CommunityCityStrategyViewModel> OnClick { get; set; }
+
+}

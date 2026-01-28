@@ -2,25 +2,46 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="page-container">
     <div class="action-buttons-container">
-        <div class="command-center-card command-center-action-card action-card" @onclick="CreateStrategy">
-            <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
-            <span class="command-center-card-label">@Loc[FogResource.Common_Create]</span>
-        </div>
+        @if (!_isSmallScreen)
+        {
+            <div class="command-center-card command-center-action-card action-card" @onclick="CreateStrategy">
+                <span class="material-symbols-outlined command-center-card-icon">add_circle</span>
+                <span class="command-center-card-label">@Loc[FogResource.Common_Create]</span>
+            </div>
+        }
+
     </div>
 
+
+    <div class="section-title">
+        @Loc[FogResource.CityStrategiesDashboard_MyStrategies]
+    </div>
     @if (_myStrategies.Count > 0)
     {
-        <div class="section-title">
-            @Loc[FogResource.CityStrategiesDashboard_MyStrategies]
-        </div>
         <div class="items-container">
 
             @foreach (var city in _myStrategies)
             {
                 <CityCard City="@city" OnClick="@OpenStrategy"/>
+            }
+        </div>
+    }
+
+
+    <div class="section-title">
+        @Loc[FogResource.CityStrategiesDashboard_CommunityStrategies]
+    </div>
+    @if (_sharedStrategies.Count > 0)
+    {
+        <div class="items-container">
+
+            @foreach (var info in _sharedStrategies)
+            {
+                <CommunityCityStrategyCard Info="@info" OnClick="@OpenCommunityStrategy"/>
             }
         </div>
     }

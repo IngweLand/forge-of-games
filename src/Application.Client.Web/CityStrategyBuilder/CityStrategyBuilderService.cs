@@ -45,56 +45,6 @@ public class CityStrategyBuilderService(
     public ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; private set; }
     public CityMapState CityMapState => cityPlanner.CityMapState;
 
-    public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly = false)
-    {
-        if (_isInitialized)
-        {
-            throw new InvalidOperationException("Already initialized.");
-        }
-
-        _isReadOnly = isReadOnly;
-
-        Strategy = strategy;
-
-        TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
-
-        if (_isReadOnly)
-        {
-            CityStrategyTimelineLayoutItem? previousLayoutItem = null;
-            foreach (var item in TimelineItems)
-            {
-                if (item is not CityStrategyTimelineLayoutItem li)
-                {
-                    continue;
-                }
-
-                if (previousLayoutItem == null)
-                {
-                    previousLayoutItem = li;
-                    continue;
-                }
-
-                CreateLayoutDiff(previousLayoutItem, li);
-                previousLayoutItem = li;
-            }
-        }
-
-        await SelectTimelineItem(await GetInitialTimelineItemAsync(), false);
-
-        analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId, _isReadOnly);
-
-        commandManager.CommandExecuted += OnCommandExecuted;
-
-        if (!_isReadOnly)
-        {
-            _autoSaveTimer = new Timer(AutoSaveInterval);
-            _autoSaveTimer.Elapsed += OnAutoSaveTimerOnElapsed;
-            _autoSaveTimer.Start();
-        }
-
-        _isInitialized = true;
-    }
-
     public Task Rename(string newName)
     {
         Strategy.Name = newName;
@@ -287,6 +237,56 @@ public class CityStrategyBuilderService(
 
         var i = TimelineItems.IndexOf(SelectedTimelineItem);
         return SelectTimelineItem(i > 0 ? TimelineItems[i - 1] : TimelineItems.Last());
+    }
+
+    public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly)
+    {
+        if (_isInitialized)
+        {
+            throw new InvalidOperationException("Already initialized.");
+        }
+
+        _isReadOnly = isReadOnly;
+
+        Strategy = strategy;
+
+        TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
+
+        if (_isReadOnly)
+        {
+            CityStrategyTimelineLayoutItem? previousLayoutItem = null;
+            foreach (var item in TimelineItems)
+            {
+                if (item is not CityStrategyTimelineLayoutItem li)
+                {
+                    continue;
+                }
+
+                if (previousLayoutItem == null)
+                {
+                    previousLayoutItem = li;
+                    continue;
+                }
+
+                CreateLayoutDiff(previousLayoutItem, li);
+                previousLayoutItem = li;
+            }
+        }
+
+        await SelectTimelineItem(await GetInitialTimelineItemAsync(), false);
+
+        analyticsService.TrackCityStrategyOpening(Strategy.Id, Strategy.InGameCityId, Strategy.WonderId, !_isReadOnly);
+
+        commandManager.CommandExecuted += OnCommandExecuted;
+
+        if (!_isReadOnly)
+        {
+            _autoSaveTimer = new Timer(AutoSaveInterval);
+            _autoSaveTimer.Elapsed += OnAutoSaveTimerOnElapsed;
+            _autoSaveTimer.Start();
+        }
+
+        _isInitialized = true;
     }
 
     private void CreateLayoutDiff(CityStrategyTimelineLayoutItem oldItem, CityStrategyTimelineLayoutItem newItem)

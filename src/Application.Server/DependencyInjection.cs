@@ -101,6 +101,7 @@ public static class DependencyInjection
         services.AddScoped<IWonderRankingDtoFactory, WonderRankingDtoFactory>();
         services.AddScoped<IPlayerCityStrategyInfoDtoFactory, PlayerCityStrategyInfoDtoFactory>();
         services.AddScoped<IPlayerCityStrategyService, PlayerCityStrategyService>();
+        services.AddScoped<ISharedCityStrategyService, SharedCityStrategyService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

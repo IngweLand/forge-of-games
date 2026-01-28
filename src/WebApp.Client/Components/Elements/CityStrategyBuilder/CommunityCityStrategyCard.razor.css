@@ -1,0 +1,83 @@
+.command-center-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.top-container, .bottom-container, .main-container {
+    display: flex;
+    width: 100%;
+}
+
+.top-container {
+    height: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    gap: 4px;
+}
+
+.author-label {
+    font-size: 12px;
+    text-align: center;
+}
+
+.bottom-container {
+    justify-content: flex-end;
+    padding: 0 4px;
+}
+
+.city-name {
+    font-size: 16px;
+    text-align: center;
+}
+
+.updated-at {
+    font-size: 10px;
+    color: var(--fog-text-secondary-color);
+}
+
+.age-label {
+    align-self: flex-start;
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fog-container-color);
+    border-bottom-right-radius: var(--fog-border-radius);
+    color: var(--fog-text-on-dark-color);
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.city-id-icon {
+    height: 100%;
+    margin: 2px 0 0 2px;
+    object-fit: contain;
+}
+
+.strategy-type-icon {
+    font-size: 14px;
+    margin-right: 2px;
+    margin-top: 1px;
+}
+
+@media (min-width: 576px) {
+    .main-container {
+        gap: 8px;
+    }
+
+    .strategy-type-icon {
+        font-size: 18px;
+        margin-right: 4px;
+        margin-top: 2px;
+    }
+}

@@ -1,8 +1,11 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
@@ -14,10 +17,18 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class CityStrategiesDashboardPage : FogPageBase
 {
+    private bool _isSmallScreen;
     private IReadOnlyCollection<HohCityBasicData> _myStrategies = [];
+    private IReadOnlyCollection<CommunityCityStrategyViewModel> _sharedStrategies = [];
 
     [Inject]
     private ICityStrategyAnalyticsService AnalyticsService { get; set; }
+
+    [Inject]
+    private IBrowserViewportService BrowserViewportService { get; set; }
+
+    [Inject]
+    public CityStrategyNavigationState CityStrategyNavigationState { get; set; }
 
     [Inject]
     private ICityStrategyUiService CityStrategyUiService { get; set; }
@@ -26,10 +37,16 @@ public partial class CityStrategiesDashboardPage : FogPageBase
     private IDialogService DialogService { get; set; }
 
     [Inject]
+    public IFogSharingUiService FogSharingUiService { get; set; }
+
+    [Inject]
     private NavigationManager NavigationManager { get; set; }
 
     [Inject]
-    public IPersistenceService PersistenceService { get; set; }
+    private IPersistenceService PersistenceService { get; set; }
+
+    [Inject]
+    private ISharedCityStrategyUIService SharedCityStrategyUiService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,14 +57,62 @@ public partial class CityStrategiesDashboardPage : FogPageBase
             return;
         }
 
+        var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
+        _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
+
+        _ = GetSharedStrategiesAsync();
         _myStrategies = await PersistenceService.GetCityStrategies();
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_STRATEGIES_DASHBOARD);
     }
 
-    private void OpenStrategy(string strategyId)
+    private async Task GetSharedStrategiesAsync()
     {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategyViewer(strategyId));
+        _sharedStrategies = await SharedCityStrategyUiService.GetAllAsync();
+        StateHasChanged();
+    }
+
+    private async Task OpenStrategy(string strategyId)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_STRATEGY_ID, strategyId},
+            {AnalyticsParams.IS_REMOTE, false},
+        };
+        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_INIT, parameters);
+
+        var strategy = await PersistenceService.LoadCityStrategy(strategyId);
+        if (strategy == null)
+        {
+            AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_ERROR, parameters);
+            return;
+        }
+
+        CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
+        {
+            Strategy = strategy,
+        };
+
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
+    }
+
+    private async Task OpenCommunityStrategy(CommunityCityStrategyViewModel communityStrategy)
+    {
+        if (communityStrategy.GuideId != null)
+        {
+            return;
+        }
+
+        var strategy = await FogSharingUiService.FetchCityStrategyAsync(communityStrategy.SharedDataId);
+        if (strategy != null)
+        {
+            CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
+            {
+                Strategy = strategy,
+                IsRemote = true,
+            };
+            NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
+        }
     }
 
     private async Task CreateStrategy()
@@ -70,7 +135,12 @@ public partial class CityStrategiesDashboardPage : FogPageBase
 
         AnalyticsService.TrackCityStrategyCreation(newCityRequest);
 
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(strategy.Id));
+        CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
+        {
+            Strategy = strategy,
+        };
+
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_BUILDER_APP_PATH);
     }
 
     private static DialogOptions GetDefaultDialogOptions(bool closeButton = false)

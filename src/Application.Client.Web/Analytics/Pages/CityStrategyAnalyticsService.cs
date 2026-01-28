@@ -16,23 +16,6 @@ public class CityStrategyAnalyticsService(IAnalyticsService analyticsService) : 
         _ = analyticsService.TrackEvent(eventName, allParameters);
     }
 
-    public void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId, bool isReadOnly)
-    {
-        var eventParams = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_ID, inGameCityId.ToString()},
-            {AnalyticsParams.CITY_STRATEGY_ID, strategyId},
-        };
-
-        if (wonderId != WonderId.Undefined)
-        {
-            eventParams.Add(AnalyticsParams.WONDER_ID, wonderId.ToString());
-        }
-
-        var ae = isReadOnly ? AnalyticsEvents.VIEW_CITY_STRATEGY_SUCCESS : AnalyticsEvents.EDIT_CITY_STRATEGY_SUCCESS;
-        _ = analyticsService.TrackEvent(ae, eventParams);
-    }
-
     public void TrackEvent(string eventName, IReadOnlyDictionary<string, object> eventParams)
     {
         _ = analyticsService.TrackEvent(eventName, eventParams);
@@ -56,5 +39,22 @@ public class CityStrategyAnalyticsService(IAnalyticsService analyticsService) : 
         }
 
         _ = analyticsService.TrackEvent(AnalyticsEvents.CREATE_CITY_STRATEGY, eventParams);
+    }
+
+    public void TrackCityStrategyOpening(string strategyId, CityId inGameCityId, WonderId wonderId, bool isEditor)
+    {
+        var eventParams = new Dictionary<string, object>
+        {
+            {AnalyticsParams.CITY_ID, inGameCityId.ToString()},
+            {AnalyticsParams.CITY_STRATEGY_ID, strategyId},
+        };
+
+        if (wonderId != WonderId.Undefined)
+        {
+            eventParams.Add(AnalyticsParams.WONDER_ID, wonderId.ToString());
+        }
+
+        var ae = isEditor ? AnalyticsEvents.EDIT_CITY_STRATEGY_SUCCESS : AnalyticsEvents.VIEW_CITY_STRATEGY_SUCCESS;
+        _ = analyticsService.TrackEvent(ae, eventParams);
     }
 }

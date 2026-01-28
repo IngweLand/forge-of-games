@@ -58,6 +58,7 @@
 
     private IReadOnlyCollection<AgeTechnologiesViewModel>? _ageTechnologies;
     private ResearchCostViewModel? _cost;
+    private bool _serviceIsInitialized;
 
     [Parameter]
     [EditorRequired]
@@ -76,17 +77,16 @@
     [Parameter]
     public bool IsReadOnly { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        var techCityId = CityId.ToDefaultTechnologyCity();
-        _ageTechnologies = await ResearchCalculatorService.InitializeAsync(techCityId);
-    }
-
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
+
+        if (!_serviceIsInitialized)
+        {
+            var techCityId = CityId.ToDefaultTechnologyCity();
+            _ageTechnologies = await ResearchCalculatorService.InitializeAsync(techCityId);
+            _serviceIsInitialized = true;
+        }
 
         ResearchCalculatorService.SetOpenTechnologiesWithAncestors(Data.OpenedTechnologies);
         ResearchCalculatorService.SetTargetTechnologiesWithAncestors(Data.Technologies);

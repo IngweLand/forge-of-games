@@ -70,6 +70,9 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
+    public CityStrategyNavigationState CityStrategyNavigationState { get; set; }
+
+    [Inject]
     private ICityStrategyUiService CityStrategyUiService { get; set; }
 
     [Inject]
@@ -600,6 +603,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             {AnalyticsParams.CITY_ID, strategyInfo.CityId.ToString()},
             {AnalyticsParams.PLAYER_CITY_STRATEGY_ID, strategyInfo.Id},
+            {AnalyticsParams.IS_REMOTE, true},
         };
 
         if (strategyInfo.Wonder != null)
@@ -618,12 +622,12 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             return;
         }
 
-        strategy.Id = Guid.NewGuid().ToString();
-        await PersistenceService.SaveCityStrategy(strategy);
+        CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
+        {
+            Strategy = strategy,
+            IsRemote = true,
+        };
 
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_SUCCESS, _defaultAnalyticsParameters,
-            parameters);
-
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CityStrategy(strategy.Id));
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
     }
 }

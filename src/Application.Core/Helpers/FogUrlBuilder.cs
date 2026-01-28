@@ -101,6 +101,7 @@ public static class FogUrlBuilder
         public const string ANNUAL_BUDGET_TEMPLATE_REFIT = "/annualBudget/{year}";
         public const string CREATE_SHARE = "/shares";
         public const string GET_SHARED_RESOURCE_TEMPLATE = "/shares/{shareId}";
+        public const string GET_SHARED_CITY_STRATEGIES = "/sharedCityStrategies";
     }
 
     public static class PageRoutes
@@ -112,9 +113,8 @@ public static class FogUrlBuilder
         public const string CITY_PLANNER_APP_PATH = BASE_CITY_PLANNER_PATH + "/app";
         public const string CITY_PLANNER_INSPIRATIONS_PATH = BASE_CITY_PLANNER_PATH + "/inspirations";
         public const string CITY_STRATEGIES_DASHBOARD_PATH = BASE_CITY_PLANNER_PATH + "/strategies";
-        public const string CITY_STRATEGY_APP_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/app/{strategyId}";
-        public const string BASE_CITY_STRATEGY_VIEWER_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/viewer";
-        public const string CITY_STRATEGY_VIEWER_TEMPLATE = BASE_CITY_STRATEGY_VIEWER_PATH + "/{strategyId}";
+        public const string CITY_STRATEGY_BUILDER_APP_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/app";
+        public const string CITY_STRATEGY_VIEWER_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/viewer";
         public const string CITY_VIEWER_PATH = BASE_CITY_PLANNER_PATH + "/viewer";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
@@ -259,16 +259,6 @@ public static class FogUrlBuilder
         public static string Battle(int battleId)
         {
             return BATTLE_TEMPLATE.Replace("{battleId:int}", battleId.ToString());
-        }
-
-        public static string CityStrategy(string strategyId)
-        {
-            return CITY_STRATEGY_APP_TEMPLATE.Replace("{strategyId}", strategyId);
-        }
-
-        public static string CityStrategyViewer(string strategyId)
-        {
-            return CITY_STRATEGY_VIEWER_TEMPLATE.Replace("{strategyId}", strategyId);
         }
 
         public static string EquipmentProfile(string profileId)

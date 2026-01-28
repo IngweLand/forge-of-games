@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
@@ -8,10 +9,13 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 public partial class AddSharedResourcePage : FogPageBase
 {
     [Inject]
+    private CityStrategyNavigationState CityStrategyNavigationState { get; set; }
+
+    [Inject]
     private IFogSharingUiService FogSharingUiService { get; set; }
 
     [Inject]
-    protected NavigationManager NavigationManager { get; set; }
+    private NavigationManager NavigationManager { get; set; }
 
     protected override bool ShouldHidePageLoadingIndicator => false;
 
@@ -27,9 +31,15 @@ public partial class AddSharedResourcePage : FogPageBase
         var url = "/";
         if (NavigationManager.Uri == BuildUrl(FogUrlBuilder.PageRoutes.GET_SHARED_STRATEGY_TEMPLATE))
         {
-            if (await FogSharingUiService.LoadCityStrategyAsync(ShareId))
+            var strategy = await FogSharingUiService.FetchCityStrategyAsync(ShareId);
+            if (strategy != null)
             {
-                url = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH;
+                CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
+                {
+                    Strategy = strategy,
+                    IsRemote = true,
+                };
+                url = FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH;
             }
         }
         else if (NavigationManager.Uri == BuildUrl(FogUrlBuilder.PageRoutes.GET_SHARED_EQUIPMENT_PROFILE_TEMPLATE))

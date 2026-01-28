@@ -21,12 +21,14 @@ public static class AnalyticsParams
     public const string HERO4 = "hero4";
     public const string HERO5 = "hero5";
     public const string HEROES = "heroes";
+    public const string IS_REMOTE = "isRemote";
     public const string LEVEL = "level";
     public const string LOCATION = "location";
     public const string PLAYER_CITY_STRATEGY_ID = "player_city_strategy_id";
     public const string PREMIUM = "premium";
     public const string PRODUCTION_METRIC = "production_metric";
     public const string SEARCH_PREFERENCE = "search_preference";
+    public const string SHARE_ID = "share_id";
     public const string SOURCE = "source_component";
     public const string STATE = "state";
     public const string UNIT_ID = "unit_id";
