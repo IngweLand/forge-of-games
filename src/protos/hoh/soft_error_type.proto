@@ -7,4 +7,5 @@ enum SoftErrorType {
   SoftErrorType_ALLIANCE_NOT_FOUND = 1495406539;
   SoftErrorType_GENERAL_UNKNOWN = 52884052;
   SoftErrorType_REQUEST_SESSION_EXPIRED = 555876709;
+  SoftErrorType_SESSION_INVALID = 657935190; // e.g. session can be invalidated after in-game backend version update
 }
