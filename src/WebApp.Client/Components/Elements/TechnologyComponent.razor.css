@@ -8,6 +8,9 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+}
+
+.pointer-cursor {
     cursor: pointer;
 }
 
@@ -25,7 +28,7 @@
     color: var(--fog-text-color);
 }
 
-@media (min-width: 576px) {
+@media (min-width: 676px) {
     .component-root {
         height: 46px;
         padding: 4px;

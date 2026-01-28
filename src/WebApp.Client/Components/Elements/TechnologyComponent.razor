@@ -1,6 +1,7 @@
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Research
+@using MudBlazor.Utilities
 @implements IDisposable
-<div class="fog-container component-root  user-select-none" @onclick="OnClicked" style="background-color: @GetBgColor()">
+<div class="@Classname" @onclick="OnClicked" style="background-color: @GetBgColor()">
     <img class="icon" src="@Data.IconUrl"/>
     <div class="label">@Data.Name</div>
 </div>
@@ -9,7 +10,7 @@
 
     [Parameter]
     public ResearchCalculatorTechnologyViewModel Data { get; set; } = null!;
-    
+
     [Parameter]
     public EventCallback<ResearchCalculatorTechnologyViewModel> Clicked { get; set; }
 
@@ -39,5 +40,12 @@
     {
         Data.OnStateChanged -= StateHasChanged;
     }
+
+    private string Classname =>
+        new CssBuilder("fog-container")
+            .AddClass("component-root")
+            .AddClass("user-select-none")
+            .AddClass("pointer-cursor", Clicked.HasDelegate)
+            .Build();
 
 }

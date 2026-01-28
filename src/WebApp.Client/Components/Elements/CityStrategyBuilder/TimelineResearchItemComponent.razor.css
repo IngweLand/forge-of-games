@@ -11,11 +11,11 @@
 .content-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     flex: 1 1 auto;
     overflow-y: auto;
     min-height: 0;
-    padding: 12px;
+    padding-top: 12px;
     gap: 6px;
 }
 
@@ -23,9 +23,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-}
-
-.technologies-container {
+    width: 100%;
 }
 
 .items-container {
@@ -56,15 +54,6 @@
     flex-shrink: 0;
 }
 
-hr {
-    width: 100%;
-}
-
-.text-container {
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
 .cost-items-container {
     display: flex;
     flex-flow: wrap;
@@ -72,6 +61,7 @@ hr {
     justify-content: center;
     gap: 10px;
     padding: 12px;
+    margin: 0 12px;
 }
 
 .cost-title {
@@ -83,7 +73,7 @@ hr {
 }
 
 
-@media (min-width: 576px) {
+@media (min-width: 676px) {
     .content-wrapper {
         gap: 12px;
     }
