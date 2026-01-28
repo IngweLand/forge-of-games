@@ -38,6 +38,22 @@ public class CityPlannerDataConverterService(
 
     private static readonly IReadOnlyDictionary<string, string> DefIdMap = new Dictionary<string, string>
     {
+        ["acfa"] = "Building_Arabia_CamelFarm_Average",
+        ["achl"] = "Building_Arabia_City_CityHall",
+        ["ahme"] = "Building_Arabia_Home_Medium",
+        ["ahpr"] = "Building_Arabia_Home_Premium",
+        ["aimd"] = "Building_Arabia_Irrigation_Medium",
+        ["aino"] = "Building_Arabia_Irrigation_Noria",
+        ["aioa"] = "Building_Arabia_Irrigation_Oasis",
+        ["aism"] = "Building_Arabia_Irrigation_Small",
+        ["ambr"] = "Building_Arabia_Manual_Bridge",
+        ["amea"] = "Building_Arabia_Merchant_Average",
+        ["amep"] = "Building_Arabia_Merchant_Premium",
+        ["awca"] = "Building_Arabia_Workshop_Carpet",
+        ["awco"] = "Building_Arabia_Workshop_Coffee",
+        ["awin"] = "Building_Arabia_Workshop_Incense",
+        ["awol"] = "Building_Arabia_Workshop_OilLamp",
+        ["awpr"] = "Building_Arabia_Workshop_Premium",
         ["mbcv"] = "Building_Capital_Barracks_Cavalry",
         ["mbhi"] = "Building_Capital_Barracks_HeavyInfantry",
         ["mbif"] = "Building_Capital_Barracks_Infantry",
@@ -140,6 +156,7 @@ public class CityPlannerDataConverterService(
         ["mayas"] = CityId.Mayas_ChichenItza,
         ["vikings"] = CityId.Vikings,
         ["capital"] = CityId.Capital,
+        ["arabia"] = CityId.Arabia_Petra,
     };
 
     private static readonly IDictionary<string, WonderId> WonderIdMap = new Dictionary<string, WonderId>
@@ -156,6 +173,9 @@ public class CityPlannerDataConverterService(
         ["wvde"] = WonderId.Vikings_DragonshipEllida,
         ["wvva"] = WonderId.Vikings_Valhalla,
         ["wvyg"] = WonderId.Vikings_Yggdrasil,
+        ["wape"] = WonderId.Arabia_Petra,
+        ["wacb"] = WonderId.Arabia_CityOfBrass,
+        ["wanh"] = WonderId.Arabia_NoriasOfHama,
     };
 
     private readonly Dictionary<CityId, CityPlannerDataDto> _cityPlannerData = new();
