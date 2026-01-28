@@ -1,8 +1,10 @@
 @using Ingweland.Fog.Application.Client.Web.CityPlanner.Stats
 @using Ingweland.Fog.Models.Hoh.Enums
-<MudDialog Gutters="false" @onclick="Close" ContentStyle="padding: 8px !important; margin: 0 !important">
+<MudDialog Gutters="false" ContentStyle="padding: 8px !important; margin: 0 !important">
     <DialogContent>
         <div style="display: flex; flex-direction: column; gap: 8px">
+            <MudIconButton Icon="@Icons.Material.Outlined.Close" OnClick="@(() => Close())"
+                           Style="align-self: flex-end"></MudIconButton>
             <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
             <CityPlannerBuildingCostCalculator
                 CityId="@CityId" BuildingGroup="@Building.Group" FromLevel="@Building.Level"

@@ -2,31 +2,35 @@ using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Ingweland.Fog.Shared.Caching;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner;
 
-public class CityPlannerDataService(ICityService cityService) : ICityPlannerDataService
+public class CityPlannerDataService : ICityPlannerDataService
 {
-    private readonly Dictionary<CityId, CityPlannerDataDto> _cityPlannerDataCache = new ();
+    private readonly AsyncCache<CityId, CityPlannerDataDto> _cityPlannerDataCache;
+    private readonly ICityService _cityService;
 
-    public async Task<CityPlannerDataDto> GetCityPlannerDataAsync(CityId cityId)
+    public CityPlannerDataService(ICityService cityService)
     {
-        if (!_cityPlannerDataCache.TryGetValue(cityId, out var cityPlannerData))
-        {
-            cityPlannerData = (await cityService.GetCityPlannerDataAsync(cityId))!;
-            _cityPlannerDataCache.Add(cityId, cityPlannerData);
-        }
+        _cityService = cityService;
 
-        return cityPlannerData;
+        _cityPlannerDataCache =
+            new AsyncCache<CityId, CityPlannerDataDto>(x => _cityService.GetCityPlannerDataAsync(x));
     }
-    
+
+    public Task<CityPlannerDataDto> GetCityPlannerDataAsync(CityId cityId)
+    {
+        return _cityPlannerDataCache.GetAsync(cityId)!;
+    }
+
     public async Task<IReadOnlyCollection<NewCityDialogItemDto>> GetNewCityDialogItemsAsync()
     {
-        if (_cityPlannerDataCache.Count == 0)
+        if (_cityPlannerDataCache.Keys.Count == 0)
         {
             await GetCityPlannerDataAsync(CityId.Capital);
         }
 
-        return _cityPlannerDataCache.First().Value.NewCityDialogItems;
+        return _cityPlannerDataCache.Values.First().NewCityDialogItems;
     }
 }

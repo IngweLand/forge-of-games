@@ -211,6 +211,19 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 };
             }
 
+            if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH))
+            {
+                return new PageMetadata
+                {
+                    PageTitle = localizer[FogResource.CityViewer_PageTitle],
+                    Description = localizer[FogResource.CityViewer_Meta_Description],
+                    Keywords = localizer[FogResource.CityViewer_Meta_Keywords],
+                    Title = localizer[FogResource.CityViewer_Title],
+                    CurrentHomePath = FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH,
+                    HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_PATH,
+                };
+            }
+
             if (currentPageAbsolutePath == FogUrlBuilder.PageRoutes.CITY_PLANNER_DATA_CONVERTER_PATH)
             {
                 return new PageMetadata

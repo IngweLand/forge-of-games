@@ -8,7 +8,6 @@ using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
-using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh;
@@ -165,12 +164,12 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         {
             await _wonderRankingsCts.CancelAsync();
         }
-        
+
         if (_cityStrategiesCts != null)
         {
             await _cityStrategiesCts.CancelAsync();
         }
-        
+
         if (_cityStrategyCts != null)
         {
             await _cityStrategyCts.CancelAsync();
@@ -287,7 +286,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
                     parameters);
 
                 CityPlannerNavigationState.City = city;
-                NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
+                NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH);
                 return Task.CompletedTask;
             },
             () => AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_ERROR, _defaultAnalyticsParameters,
@@ -594,7 +593,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         _cityStrategyIsLoading = true;
         StateHasChanged();
-        
+
         _cityStrategyCts = new CancellationTokenSource();
 
         var parameters = new Dictionary<string, object>

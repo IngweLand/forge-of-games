@@ -6,23 +6,12 @@
 @layout BlankLayout
 @if (_isInitialized)
 {
-    @if (_showPlanner)
-    {
-        <CityPlannerComponent/>
-    }
-    else
-    {
-        <CityViewerComponent/>
-    }
+    <CityPlannerComponent/>
 }
 
 @code
 {
     private bool _isInitialized;
-    private bool _showPlanner;
-
-    [Inject]
-    private IBrowserViewportService BrowserViewportService { get; set; }
 
     [Inject]
     private IJSInteropService JsInteropService { get; set; }
@@ -32,9 +21,6 @@
         if (OperatingSystem.IsBrowser())
         {
             await JsInteropService.ResetScrollPositionAsync();
-
-            var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
-            _showPlanner = size.Width >= 880;
 
             _isInitialized = true;
         }

@@ -1,0 +1,75 @@
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
+@using Position = MudBlazor.Position
+@inherits CityViewerComponentBase
+<div class="content-wrapper">
+    <div class="main-container">
+        <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                  @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                  @onpointerdown="@InteractiveCanvasOnPointerDown"
+                  @onwheel="@InteractiveCanvasOnWheel"
+                  @onpointermove="@InteractiveCanvasOnPointerMove"
+                  IgnorePixelScaling="true"/>
+    </div>
+
+    <MudTabs Class="right-container" TabHeaderClass="buildings-selector-tabs"
+             SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
+        <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
+            <div class="layout-properties-container">
+                @if (CityPlanner.CityMapState.SelectedCityMapEntity != null)
+                {
+                    <CityMapEntityPropertiesComponent Editable="false"
+                                                      Building="@CityPlanner.CityMapState.SelectedEntityViewModel"/>
+                }
+                @if (CityPlanner.CityMapState.CityPropertiesViewModel != null)
+                {
+                    <CityPropertiesComponent Editable="false"
+                                             Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
+                }
+            </div>
+
+        </MudTabPanel>
+        <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
+            <div class="layout-properties-container">
+                <CityPlannerBuildingCostCalculator
+                    CityId="@CityPlanner.CityMapState.InGameCityId"
+                    BuildingGroup="@(CityPlanner.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
+                    FromLevel="@(CityPlanner.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
+                    BuildingName="@CityPlanner.CityMapState.SelectedCityMapEntity?.Name"/>
+                @if (CityPlanner.CityMapState.CityWonder != null)
+                {
+                    <CityPlannerWonderCostCalculator
+                        FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                }
+            </div>
+        </MudTabPanel>
+    </MudTabs>
+</div>
+
+@code{
+
+    [Parameter]
+    public EventCallback OnEditRequested { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        AppBarButtons = @<div class="app-bar-content-container">
+                            <div>
+                                <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
+                                               Color="Color.Inherit"/>
+                                <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
+                                               Color="Color.Inherit"/>
+                                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                                               OnClick="@FitToScreen"
+                                               Color="Color.Inherit"/>
+                            </div>
+                            <div class="toolbar-divider"></div>
+                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
+                                           Color="Color.Inherit"/>
+                        </div>;
+    }
+
+}

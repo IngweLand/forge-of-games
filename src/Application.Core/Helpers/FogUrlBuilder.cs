@@ -115,6 +115,7 @@ public static class FogUrlBuilder
         public const string CITY_STRATEGY_APP_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/app/{strategyId}";
         public const string BASE_CITY_STRATEGY_VIEWER_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/viewer";
         public const string CITY_STRATEGY_VIEWER_TEMPLATE = BASE_CITY_STRATEGY_VIEWER_PATH + "/{strategyId}";
+        public const string CITY_VIEWER_PATH = BASE_CITY_PLANNER_PATH + "/viewer";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
         public const string BASE_TOOLS_PATH = "/tools";

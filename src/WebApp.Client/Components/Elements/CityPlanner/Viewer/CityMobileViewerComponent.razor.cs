@@ -2,9 +2,9 @@ using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 
-namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Viewer;
+namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Viewer;
 
-public partial class CityStrategyMobileViewerComponent : CityStrategyViewerComponentBase
+public partial class CityMobileViewerComponent : CityViewerComponentBase
 {
     private ViewerState _currentState = ViewerState.Main;
 
@@ -17,18 +17,6 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
         }
 
         await OpenCityMapEntityProperties();
-    }
-
-    private void ToggleTimeline(bool toggled)
-    {
-        _currentState = _currentState == ViewerState.Timeline ? ViewerState.Main : ViewerState.Timeline;
-        AppBarService.StateHasChanged(NavigationManager.Uri);
-    }
-
-    protected override async Task OnSelectTimelineItem(string itemId)
-    {
-        await CityStrategyBuilderService.SelectTimelineItem(itemId);
-        _currentState = ViewerState.Main;
     }
 
     private void ToggleCityProperties(bool toggled)
@@ -53,7 +41,7 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
 
     private async Task OpenCityMapEntityProperties()
     {
-        if (CityStrategyBuilderService.CityMapState.SelectedEntityViewModel == null)
+        if (CityPlanner.CityMapState.SelectedEntityViewModel == null)
         {
             return;
         }
@@ -62,29 +50,16 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
 
         var parameters = new DialogParameters<CityMapEntityPropertiesDialog>
         {
-            {d => d.Building, CityStrategyBuilderService.CityMapState.SelectedEntityViewModel},
-            {d => d.CityId, CityStrategyBuilderService.CityMapState.InGameCityId},
+            {d => d.Building, CityPlanner.CityMapState.SelectedEntityViewModel},
+            {d => d.CityId, CityPlanner.CityMapState.InGameCityId},
         };
         _ = await DialogService.ShowAsync<CityMapEntityPropertiesDialog>(null, parameters, options);
-        CityStrategyBuilderService.DeselectAll();
-    }
-
-    private async Task PreviousBtnOnClicked()
-    {
-        await CityStrategyBuilderService.SelectPreviousItem();
-        AppBarService.StateHasChanged(NavigationManager.Uri);
-    }
-
-    private async Task NextBtnOnClicked()
-    {
-        await CityStrategyBuilderService.SelectNextItem();
-        AppBarService.StateHasChanged(NavigationManager.Uri);
+        CityPlanner.DeselectAll();
     }
 
     private enum ViewerState
     {
         Main,
-        Timeline,
         CityProperties,
     }
 }

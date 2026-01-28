@@ -1311,6 +1311,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View Heroes of History cities and their stats..
+        /// </summary>
+        public static string CityViewer_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityViewer.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city viewer, event city, city planner, city building, city management, game optimization, production stats.
+        /// </summary>
+        public static string CityViewer_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityViewer.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Viewer | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityViewer_PageTitle {
+            get {
+                return ResourceManager.GetString("CityViewer.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Viewer.
+        /// </summary>
+        public static string CityViewer_Title {
+            get {
+                return ResourceManager.GetString("CityViewer.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profile name.
         /// </summary>
         public static string CommandCenter_CreateNewProfileDialog_InputLabel {

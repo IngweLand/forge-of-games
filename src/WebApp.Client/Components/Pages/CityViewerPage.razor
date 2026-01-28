@@ -1,0 +1,23 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Viewer
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@if (!_isInitialized)
+{
+    <div class="spinner-grow loading-indicator" role="status"></div>
+}
+else
+{
+    @if (_isSmallScreen)
+    {
+        <CityMobileViewerComponent/>
+    }
+    else
+    {
+        <CityViewerComponent OnEditRequested="@OnEdit"/>
+    }
+}
+
+@code {
+
+}

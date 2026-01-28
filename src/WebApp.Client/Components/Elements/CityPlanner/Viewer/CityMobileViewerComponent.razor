@@ -1,0 +1,58 @@
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
+@using SkiaSharp.Views.Blazor
+@inherits CityViewerComponentBase
+<div class="content-wrapper">
+    @if (_currentState == ViewerState.CityProperties)
+    {
+        <div class="main-container">
+            <div class="content-container">
+                <CityPropertiesComponent Editable="false"
+                                         Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
+                @if (CityPlanner.CityMapState.CityWonder != null)
+                {
+                    <CityPlannerWonderCostCalculator
+                        FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="main-container">
+            <div class="map-container">
+                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                          @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                          @onpointerdown="@InteractiveCanvasOnPointerDown"
+                          @onwheel="@InteractiveCanvasOnWheel"
+                          @onpointermove="@InteractiveCanvasOnPointerMove"
+                          IgnorePixelScaling="true"/>
+            </div>
+        </div>
+    }
+</div>
+
+@code{
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        AppBarButtons = @<div class="app-bar-content-container">
+                            @if (_currentState == ViewerState.Main)
+                            {
+                                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                                               OnClick="@FitToScreen"
+                                               Color="Color.Inherit"/>
+                            }
+
+                            <div class="toolbar-divider"></div>
+                            <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
+                                                 Color="Color.Inherit"
+                                                 Toggled="@(_currentState == ViewerState.CityProperties)"
+                                                 ToggledIcon="@Icons.Material.Filled.Analytics"
+                                                 ToggledColor="Color.Inherit"
+                                                 ToggledChanged="ToggleCityProperties"/>
+                        </div>;
+    }
+
+}

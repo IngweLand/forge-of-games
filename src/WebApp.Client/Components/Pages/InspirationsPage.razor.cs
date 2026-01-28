@@ -242,6 +242,6 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
         AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters, parameters);
         CityPlannerNavigationState.City = city;
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH);
     }
 }
