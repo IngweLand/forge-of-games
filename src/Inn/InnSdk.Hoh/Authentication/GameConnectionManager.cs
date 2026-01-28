@@ -7,7 +7,7 @@ namespace Ingweland.Fog.InnSdk.Hoh.Authentication;
 
 public class GameConnectionManager(ILogger<GameConnectionManager> logger) : IGameConnectionManager
 {
-    private static readonly TimeSpan SessionTimeout = TimeSpan.FromDays(1);
+    private static readonly TimeSpan SessionTimeout = TimeSpan.FromHours(3);
 
     private readonly ConcurrentDictionary<string, (GameConnectionSessionData Data, DateTime ExpiresOn)?>
         _configurations = new();
