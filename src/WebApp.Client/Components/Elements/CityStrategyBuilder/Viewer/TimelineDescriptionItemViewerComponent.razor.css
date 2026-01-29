@@ -7,13 +7,3 @@
     background-color: var(--fog-surface-color);
     border: 1px solid var(--fog-border-color);
 }
-
-.markdown-body {
-    flex: 1 1 auto;
-    overflow-y: auto;
-    min-height: 0;
-    padding: 12px;
-    overflow-x: hidden;
-    word-break: break-word;
-    overflow-wrap: anywhere;
-}

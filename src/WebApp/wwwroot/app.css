@@ -512,6 +512,31 @@ img.command-center-card-icon {
     gap: 8px;
 }
 
+/*markdown start*/
+
+.markdown-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    min-height: 0;
+    padding: 12px;
+    overflow-x: hidden;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.markdown-body h1 {
+    text-align: center;
+}
+
+.markdown-body img.intro-header-img { 
+    max-width: 80%;
+    max-height: 250px;
+    display: block;
+    margin: 0 auto 12px auto;
+}
+
+/*markdown end*/
+
 @media (min-width: 576px) {
     .main-layout-main-content {
         padding: var(--main-content-padding-576) !important;
@@ -561,6 +586,11 @@ img.command-center-card-icon {
     /*help end*/
     .horizontal-layout {
         gap: 12px;
+    }
+
+    .markdown-body img.intro-header-img {
+        max-height: 300px;
+        margin: 0 auto 24px auto;
     }
 }
 
