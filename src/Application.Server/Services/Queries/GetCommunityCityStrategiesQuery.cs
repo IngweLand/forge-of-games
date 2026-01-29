@@ -9,18 +9,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Application.Server.Services.Queries;
 
-public record GetSharedCityStrategiesQuery : IRequest<Result<IReadOnlyCollection<CommunityCityStrategyDto>>>,
+public record GetCommunityCityStrategiesQuery : IRequest<Result<IReadOnlyCollection<CommunityCityStrategyDto>>>,
     ICacheableRequest
 {
     public TimeSpan? Duration => TimeSpan.FromHours(1);
     public DateTimeOffset? Expiration { get; }
 }
 
-public class GetSharedCityStrategiesQueryHandler(IFogDbContext context, IMapper mapper)
-    : IRequestHandler<GetSharedCityStrategiesQuery, Result<IReadOnlyCollection<CommunityCityStrategyDto>>>
+public class GetCommunityCityStrategiesQueryHandler(IFogDbContext context, IMapper mapper)
+    : IRequestHandler<GetCommunityCityStrategiesQuery, Result<IReadOnlyCollection<CommunityCityStrategyDto>>>
 {
     public Task<Result<IReadOnlyCollection<CommunityCityStrategyDto>>> Handle(
-        GetSharedCityStrategiesQuery request, CancellationToken cancellationToken)
+        GetCommunityCityStrategiesQuery request, CancellationToken cancellationToken)
     {
         return Result.Try(() => context.CommunityCityStrategies
                 .ProjectTo<CommunityCityStrategyDto>(mapper.ConfigurationProvider)

@@ -72,7 +72,7 @@ public static class FogApi
         [AsParameters] StatsServices services,
         CancellationToken ct)
     {
-        var query = new GetSharedCityStrategiesQuery();
+        var query = new GetCommunityCityStrategiesQuery();
         var result = await services.Mediator.Send(query, ct);
         result.LogIfFailed(nameof(FogApi));
 
