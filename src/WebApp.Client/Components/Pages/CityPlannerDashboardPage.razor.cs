@@ -70,7 +70,10 @@ public partial class CityPlannerDashboardPage : FogPageBase
             return;
         }
 
-        CityPlannerNavigationState.City = city;
+        CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData()
+        {
+            City = city,
+        };
 
         AnalyticsService.TrackCityOpening(city.Id, city.InGameCityId, city.WonderId);
 
@@ -97,7 +100,10 @@ public partial class CityPlannerDashboardPage : FogPageBase
         var city = CityPlannerUiService.CreateNew(newCityRequest);
         await PersistenceService.SaveCity(city);
 
-        CityPlannerNavigationState.City = city;
+        CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData()
+        {
+            City = city,
+        };
 
         AnalyticsService.TrackCityCreation(newCityRequest);
 

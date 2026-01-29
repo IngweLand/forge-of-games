@@ -57,7 +57,7 @@ public partial class CityViewerPage : FogPageBase
             return;
         }
 
-        _city = CityPlannerNavigationState.City;
+        _city = CityPlannerNavigationState.Data?.City;
         if (_city == null)
         {
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
@@ -110,9 +110,15 @@ public partial class CityViewerPage : FogPageBase
         _ = AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_VIEWER, eventParams);
     }
 
-    private void OnEdit()
+    private async Task OnEdit()
     {
-        CityPlannerNavigationState.City = _city;
+        if (CityPlannerNavigationState.Data!.IsRemote)
+        {
+            CityPlannerNavigationState.Data.City.Id = Guid.NewGuid().ToString();
+            CityPlannerNavigationState.Data.City.UpdatedAt = DateTime.Now;
+            await PersistenceService.SaveCity(CityPlannerNavigationState.Data.City);
+        }
+        
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 }

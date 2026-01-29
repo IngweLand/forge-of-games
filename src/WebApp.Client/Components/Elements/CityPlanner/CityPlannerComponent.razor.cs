@@ -56,6 +56,9 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private IDialogService DialogService { get; set; }
 
     [Inject]
+    public IFogSharingUiService FogSharingUiService { get; set; }
+
+    [Inject]
     private IInGameStartupDataService InGameStartupDataService { get; set; }
 
     [Inject]
@@ -94,7 +97,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             return;
         }
 
-        if (CityPlannerNavigationState.City == null)
+        if (CityPlannerNavigationState.Data == null)
         {
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.BASE_CITY_PLANNER_PATH, false, true);
             return;
@@ -104,7 +107,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         CityPlannerSettings.StateChanged += CityPlannerSettingsOnStateChanged;
 
-        await CityPlanner.InitializeAsync(CityPlannerNavigationState.City);
+        await CityPlanner.InitializeAsync(CityPlannerNavigationState.Data.City);
 
         CityPlanner.StateHasChanged += CityPlannerOnStateHasHasChanged;
         _isInitialized = true;
@@ -116,11 +119,11 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     {
         var eventParams = new Dictionary<string, object>
         {
-            {AnalyticsParams.CITY_ID, CityPlannerNavigationState.City!.InGameCityId.ToString()},
+            {AnalyticsParams.CITY_ID, CityPlannerNavigationState.Data!.City.InGameCityId.ToString()},
         };
-        if (CityPlannerNavigationState.City.WonderId != WonderId.Undefined)
+        if (CityPlannerNavigationState.Data.City.WonderId != WonderId.Undefined)
         {
-            eventParams.Add(AnalyticsParams.WONDER_ID, CityPlannerNavigationState.City.WonderId.ToString());
+            eventParams.Add(AnalyticsParams.WONDER_ID, CityPlannerNavigationState.Data.City.WonderId.ToString());
         }
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_PLANNER, eventParams);
@@ -410,5 +413,32 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         {
             CommandManager.ExecuteCommand(CommandFactory.CreatePurgeInventoryCommand());
         }
+    }
+
+    private async Task ShareCity()
+    {
+        var data = FogSharingUiService.CreateSharedData(CityPlanner.GetCity());
+        var parameters = new DialogParameters<ShareResourceDialog>
+        {
+            {d => d.Data, data},
+            {
+                d => d.BaseUrl,
+                $"{NavigationManager.BaseUri.TrimEnd('/')}{FogUrlBuilder.PageRoutes.GET_SHARED_CITY_TEMPLATE}"
+            },
+        };
+        _ = await DialogService.ShowAsync<ShareResourceDialog>(null, parameters, GetDefaultDialogOptions());
+    }
+
+    private static DialogOptions GetDefaultDialogOptions()
+    {
+        return new DialogOptions
+        {
+            MaxWidth = MaxWidth.Medium,
+            FullWidth = true,
+            BackgroundClass = "dialog-blur-bg",
+            NoHeader = true,
+            CloseOnEscapeKey = true,
+            Position = DialogPosition.TopCenter,
+        };
     }
 }

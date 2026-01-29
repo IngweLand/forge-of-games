@@ -190,6 +190,7 @@ public static class FogUrlBuilder
         public const string MY_BATTLES_PATH = BASE_COMMAND_CENTER_PATH + "/my-battles";
 
         public const string GET_SHARED_STRATEGY_TEMPLATE = CITY_STRATEGIES_DASHBOARD_PATH + "/shares/{shareId}";
+        public const string GET_SHARED_CITY_TEMPLATE = BASE_CITY_PLANNER_PATH + "/shares/{shareId}";
 
         public const string GET_SHARED_EQUIPMENT_PROFILE_TEMPLATE =
             COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH + "/shares/{shareId}";

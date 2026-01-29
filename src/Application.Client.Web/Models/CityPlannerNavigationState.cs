@@ -4,5 +4,11 @@ namespace Ingweland.Fog.Application.Client.Web.Models;
 
 public class CityPlannerNavigationState
 {
-    public HohCity? City { get; set; }
+    public CityPlannerNavigationStateData? Data { get; set; }
+
+    public record CityPlannerNavigationStateData
+    {
+        public required HohCity City { get; init; }
+        public bool IsRemote { get; init; }
+    }
 }

@@ -10,6 +10,9 @@ public partial class AddSharedResourcePage : FogPageBase
 {
     [Inject]
     private CityStrategyNavigationState CityStrategyNavigationState { get; set; }
+    
+    [Inject]
+    private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
 
     [Inject]
     private IFogSharingUiService FogSharingUiService { get; set; }
@@ -47,6 +50,19 @@ public partial class AddSharedResourcePage : FogPageBase
             if (await FogSharingUiService.LoadEquipmentProfileAsync(ShareId))
             {
                 url = FogUrlBuilder.PageRoutes.COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH;
+            }
+        }
+        else if (NavigationManager.Uri == BuildUrl(FogUrlBuilder.PageRoutes.GET_SHARED_CITY_TEMPLATE))
+        {
+            var city = await FogSharingUiService.FetchCityAsync(ShareId);
+            if (city != null)
+            {
+                CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData()
+                {
+                    City = city,
+                    IsRemote = true,
+                };
+                url = FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH;
             }
         }
 

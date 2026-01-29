@@ -29,6 +29,42 @@ public class FogSharingUiService(
         return new SharedDataDto {Data = Convert.ToBase64String(bytes)};
     }
 
+    public SharedDataDto CreateSharedData(HohCity city)
+    {
+        var bytes = protobufSerializer.SerializeToBytes(city);
+        return new SharedDataDto {Data = Convert.ToBase64String(bytes)};
+    }
+
+    public async Task<HohCity?> FetchCityAsync(string shareId)
+    {
+        var parameters = new Dictionary<string, object>
+        {
+            {AnalyticsParams.SHARE_ID, shareId},
+        };
+        _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_INIT, parameters);
+
+        var data = await sharingService.GetAsync(shareId);
+        if (data == null)
+        {
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_ERROR, parameters);
+            return null;
+        }
+
+        try
+        {
+            var city = protobufSerializer.DeserializeFromBytes<HohCity>(Convert.FromBase64String(data.Data));
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_SUCCESS, parameters);
+            return city;
+        }
+        catch (Exception e)
+        {
+            _ = analyticsService.TrackEvent(AnalyticsEvents.FETCH_CITY_ERROR, parameters);
+            logger.LogError(e, "Failed to load city.");
+        }
+
+        return null;
+    }
+
     public SharedDataDto CreateSharedData(EquipmentProfile equipmentProfile)
     {
         var bytes = protobufSerializer.SerializeToBytes(equipmentProfile);

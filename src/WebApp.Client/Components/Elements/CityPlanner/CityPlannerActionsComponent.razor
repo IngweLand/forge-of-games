@@ -27,7 +27,7 @@
             </MudButton>
         </div>
         <MudButton StartIcon="@Icons.Material.Filled.Share" Variant="Variant.Filled"
-                   OnClick="ShareProfile">@Loc[FogResource.Common_Share]
+                   OnClick="@OnShare">@Loc[FogResource.Common_Share]
         </MudButton>
         <MudButton Color="Color.Error" StartIcon="@Icons.Material.Filled.DeleteForever" Variant="Variant.Filled"
                    OnClick="OnDeleteClicked">
@@ -37,6 +37,9 @@
 </div>
 
 @code {
+    
+    [Parameter]
+    public EventCallback OnShare { get; set; }
 
     private string _cityName;
 
@@ -81,23 +84,6 @@
             yield return Loc[FogResource.CityPlanner_NameRequiredError];
         else if (input.Length > FogConstants.NAME_MAX_CHARACTERS)
             yield return Loc[FogResource.CityPlanner_NameTooLongError, FogConstants.NAME_MAX_CHARACTERS];
-    }
-
-    private async Task ShareProfile()
-    {
-        var options = new DialogOptions
-        {
-            MaxWidth = MaxWidth.Small,
-            FullWidth = true,
-            BackgroundClass = "dialog-blur-bg",
-            Position = DialogPosition.TopCenter
-        };
-        var parameters = new DialogParameters<ShareCityDialog>
-        {
-            {d => d.CityId, CityPlanner.CityMapState.CityId}
-        };
-        await DialogService.ShowAsync<ShareCityDialog>(Loc[FogResource.CommandCenter_ShareCityDialog_Title],
-            parameters, options);
     }
 
     public void Dispose()

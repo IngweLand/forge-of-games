@@ -15,9 +15,12 @@ public static class AnalyticsEvents
     public const string EDIT_CITY_STRATEGY_INIT = "edit_city_strategy_init";
     public const string EDIT_CITY_STRATEGY_SUCCESS = "edit_city_strategy_success";
     public const string EDIT_EQUIP_CONFIG = "edit_equip_config";
+    public const string FETCH_CITY_ERROR = "fetch_city_error";
+    public const string FETCH_CITY_INIT = "fetch_city_init";
     public const string FETCH_CITY_STRATEGY_ERROR = "fetch_city_strategy_error";
     public const string FETCH_CITY_STRATEGY_INIT = "fetch_city_strategy_init";
     public const string FETCH_CITY_STRATEGY_SUCCESS = "fetch_city_strategy_success";
+    public const string FETCH_CITY_SUCCESS = "fetch_city_success";
     public const string INSPIRATIONS_FORM_SUBMIT = "inspirations_form_submit";
     public const string NAVIGATE_ALLIANCE = "navigate_alliance";
     public const string NAVIGATE_HERO_BATTLE = "navigate_hero_battle";

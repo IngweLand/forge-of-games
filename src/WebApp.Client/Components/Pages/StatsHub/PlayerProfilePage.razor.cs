@@ -288,7 +288,11 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
                 AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters,
                     parameters);
 
-                CityPlannerNavigationState.City = city;
+                CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData()
+                {
+                    City = city,
+                    IsRemote = true,
+                };
                 NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_VIEWER_PATH);
                 return Task.CompletedTask;
             },
