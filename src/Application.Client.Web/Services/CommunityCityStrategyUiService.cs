@@ -8,11 +8,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.Services;
 
-public class SharedCityStrategyUIService(
+public class CommunityCityStrategyUiService(
     ICommonUiService commonUiService,
     ISharedCityStrategyService sharedCityStrategyService,
     ICommunityCityStrategyViewModelFactory cityStrategyViewModelFactory,
-    ILogger<SharedCityStrategyUIService> logger) : UiServiceBase(logger), ISharedCityStrategyUIService
+    ILogger<CommunityCityStrategyUiService> logger) : UiServiceBase(logger), ICommunityCityStrategyUIService
 {
     public async Task<IReadOnlyCollection<CommunityCityStrategyViewModel>> GetAllAsync()
     {

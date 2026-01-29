@@ -17,6 +17,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class CityStrategiesDashboardPage : FogPageBase
 {
+    private bool _isLoading;
     private bool _isSmallScreen;
     private IReadOnlyCollection<HohCityBasicData> _myStrategies = [];
     private IReadOnlyCollection<CommunityCityStrategyViewModel> _sharedStrategies = [];
@@ -34,6 +35,9 @@ public partial class CityStrategiesDashboardPage : FogPageBase
     private ICityStrategyUiService CityStrategyUiService { get; set; }
 
     [Inject]
+    private ICommunityCityStrategyUIService CommunityCityStrategyUiService { get; set; }
+
+    [Inject]
     private IDialogService DialogService { get; set; }
 
     [Inject]
@@ -44,9 +48,6 @@ public partial class CityStrategiesDashboardPage : FogPageBase
 
     [Inject]
     private IPersistenceService PersistenceService { get; set; }
-
-    [Inject]
-    private ISharedCityStrategyUIService SharedCityStrategyUiService { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
@@ -60,15 +61,20 @@ public partial class CityStrategiesDashboardPage : FogPageBase
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
 
-        _ = GetSharedStrategiesAsync();
+        _ = GetCommunityStrategiesAsync();
         _myStrategies = await PersistenceService.GetCityStrategies();
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_CITY_STRATEGIES_DASHBOARD);
     }
 
-    private async Task GetSharedStrategiesAsync()
+    private async Task GetCommunityStrategiesAsync()
     {
-        _sharedStrategies = await SharedCityStrategyUiService.GetAllAsync();
+        _isLoading = true;
+        StateHasChanged();
+
+        _sharedStrategies = await CommunityCityStrategyUiService.GetAllAsync();
+
+        _isLoading = false;
         StateHasChanged();
     }
 
@@ -103,6 +109,9 @@ public partial class CityStrategiesDashboardPage : FogPageBase
             return;
         }
 
+        _isLoading = true;
+        StateHasChanged();
+
         var strategy = await FogSharingUiService.FetchCityStrategyAsync(communityStrategy.SharedDataId);
         if (strategy != null)
         {
@@ -111,8 +120,14 @@ public partial class CityStrategiesDashboardPage : FogPageBase
                 Strategy = strategy,
                 IsRemote = true,
             };
+
+            _isLoading = false;
+
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
         }
+
+        _isLoading = false;
+        StateHasChanged();
     }
 
     private async Task CreateStrategy()

@@ -29,6 +29,15 @@
     align-self: flex-start;
     font-weight: 300;
     padding: 8px 50px 2px 6px;
+    position: relative;
+}
+
+.loading-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
 

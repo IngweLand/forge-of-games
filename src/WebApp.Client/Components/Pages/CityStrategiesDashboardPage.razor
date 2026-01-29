@@ -33,7 +33,13 @@
 
 
     <div class="section-title">
-        @Loc[FogResource.CityStrategiesDashboard_CommunityStrategies]
+        <span>@Loc[FogResource.CityStrategiesDashboard_CommunityStrategies]</span>
+        @if (_isLoading)
+        {
+            <div class="loading-indicator">
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            </div>
+        }
     </div>
     @if (_sharedStrategies.Count > 0)
     {
