@@ -4,47 +4,54 @@
 @using Position = MudBlazor.Position
 @inherits CityViewerComponentBase
 <div class="content-wrapper">
-    <div class="main-container">
-        <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                  @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
-                  @onpointerdown="@InteractiveCanvasOnPointerDown"
-                  @onwheel="@InteractiveCanvasOnWheel"
-                  @onpointermove="@InteractiveCanvasOnPointerMove"
-                  IgnorePixelScaling="true"/>
-    </div>
+    @if (!IsInitialized)
+    {
+        <div class="spinner-grow loading-indicator" role="status"></div>
+    }
+    else
+    {
+        <div class="main-container">
+            <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                      @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                      @onpointerdown="@InteractiveCanvasOnPointerDown"
+                      @onwheel="@InteractiveCanvasOnWheel"
+                      @onpointermove="@InteractiveCanvasOnPointerMove"
+                      IgnorePixelScaling="true"/>
+        </div>
 
-    <MudTabs Class="right-container" TabHeaderClass="buildings-selector-tabs"
-             SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
-        <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
-            <div class="layout-properties-container">
-                @if (CityPlanner.CityMapState.SelectedCityMapEntity != null)
-                {
-                    <CityMapEntityPropertiesComponent Editable="false"
-                                                      Building="@CityPlanner.CityMapState.SelectedEntityViewModel"/>
-                }
-                @if (CityPlanner.CityMapState.CityPropertiesViewModel != null)
-                {
-                    <CityPropertiesComponent Editable="false"
-                                             Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
-                }
-            </div>
+        <MudTabs Class="right-container" TabHeaderClass="buildings-selector-tabs"
+                 SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
+            <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
+                <div class="layout-properties-container">
+                    @if (CityPlanner.CityMapState.SelectedCityMapEntity != null)
+                    {
+                        <CityMapEntityPropertiesComponent Editable="false"
+                                                          Building="@CityPlanner.CityMapState.SelectedEntityViewModel"/>
+                    }
+                    @if (CityPlanner.CityMapState.CityPropertiesViewModel != null)
+                    {
+                        <CityPropertiesComponent Editable="false"
+                                                 Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
+                    }
+                </div>
 
-        </MudTabPanel>
-        <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
-            <div class="layout-properties-container">
-                <CityPlannerBuildingCostCalculator
-                    CityId="@CityPlanner.CityMapState.InGameCityId"
-                    BuildingGroup="@(CityPlanner.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
-                    FromLevel="@(CityPlanner.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
-                    BuildingName="@CityPlanner.CityMapState.SelectedCityMapEntity?.Name"/>
-                @if (CityPlanner.CityMapState.CityWonder != null)
-                {
-                    <CityPlannerWonderCostCalculator
-                        FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
-                }
-            </div>
-        </MudTabPanel>
-    </MudTabs>
+            </MudTabPanel>
+            <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
+                <div class="layout-properties-container">
+                    <CityPlannerBuildingCostCalculator
+                        CityId="@CityPlanner.CityMapState.InGameCityId"
+                        BuildingGroup="@(CityPlanner.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
+                        FromLevel="@(CityPlanner.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
+                        BuildingName="@CityPlanner.CityMapState.SelectedCityMapEntity?.Name"/>
+                    @if (CityPlanner.CityMapState.CityWonder != null)
+                    {
+                        <CityPlannerWonderCostCalculator
+                            FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                    }
+                </div>
+            </MudTabPanel>
+        </MudTabs>
+    }
 </div>
 
 @code{

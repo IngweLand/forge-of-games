@@ -2,19 +2,15 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Viewer
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-@if (!_isInitialized)
-{
-    <div class="spinner-grow loading-indicator" role="status"></div>
-}
-else
+@if (_isInitialized && _city != null)
 {
     @if (_isSmallScreen)
     {
-        <CityMobileViewerComponent/>
+        <CityMobileViewerComponent City="@_city"/>
     }
     else
     {
-        <CityViewerComponent OnEditRequested="@OnEdit"/>
+        <CityViewerComponent OnEditRequested="@OnEdit" City="@_city"/>
     }
 }
 

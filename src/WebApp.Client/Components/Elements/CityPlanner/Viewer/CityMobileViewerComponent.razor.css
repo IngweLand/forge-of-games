@@ -52,6 +52,11 @@
     background-color: var(--fog-border-color);
 }
 
+.loading-indicator {
+    align-self: center;
+    justify-self: center;
+}
+
 @media (min-width: 576px) {
     .content-wrapper {
         height: var(--full-page-height-576);

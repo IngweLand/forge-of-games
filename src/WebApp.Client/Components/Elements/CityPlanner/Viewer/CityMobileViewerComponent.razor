@@ -2,32 +2,39 @@
 @using SkiaSharp.Views.Blazor
 @inherits CityViewerComponentBase
 <div class="content-wrapper">
-    @if (_currentState == ViewerState.CityProperties)
+    @if (!IsInitialized)
     {
-        <div class="main-container">
-            <div class="content-container">
-                <CityPropertiesComponent Editable="false"
-                                         Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
-                @if (CityPlanner.CityMapState.CityWonder != null)
-                {
-                    <CityPlannerWonderCostCalculator
-                        FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
-                }
-            </div>
-        </div>
+        <div class="spinner-grow loading-indicator" role="status"></div>
     }
     else
     {
-        <div class="main-container">
-            <div class="map-container">
-                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                          @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
-                          @onpointerdown="@InteractiveCanvasOnPointerDown"
-                          @onwheel="@InteractiveCanvasOnWheel"
-                          @onpointermove="@InteractiveCanvasOnPointerMove"
-                          IgnorePixelScaling="true"/>
+        @if (_currentState == ViewerState.CityProperties)
+        {
+            <div class="main-container">
+                <div class="content-container">
+                    <CityPropertiesComponent Editable="false"
+                                             Data="@CityPlanner.CityMapState.CityPropertiesViewModel"/>
+                    @if (CityPlanner.CityMapState.CityWonder != null)
+                    {
+                        <CityPlannerWonderCostCalculator
+                            FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
+                    }
+                </div>
             </div>
-        </div>
+        }
+        else
+        {
+            <div class="main-container">
+                <div class="map-container">
+                    <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
+                              @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
+                              @onpointerdown="@InteractiveCanvasOnPointerDown"
+                              @onwheel="@InteractiveCanvasOnWheel"
+                              @onpointermove="@InteractiveCanvasOnPointerMove"
+                              IgnorePixelScaling="true"/>
+                </div>
+            </div>
+        }
     }
 </div>
 

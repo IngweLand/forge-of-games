@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -29,9 +28,6 @@ public partial class CityViewerPage : FogPageBase
 
     [Inject]
     private IBrowserViewportService BrowserViewportService { get; set; }
-
-    [Inject]
-    protected ICityPlanner CityPlanner { get; set; }
 
     [Inject]
     private CityPlannerNavigationState CityPlannerNavigationState { get; set; }
@@ -66,8 +62,6 @@ public partial class CityViewerPage : FogPageBase
 
         await JsInteropService.ResetScrollPositionAsync();
         await Task.Delay(30);
-
-        await CityPlanner.InitializeAsync(_city);
 
         var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
         _isSmallScreen = size.Width < FogConstants.CITY_PLANNER_REQUIRED_SCREEN_WIDTH;
@@ -118,7 +112,7 @@ public partial class CityViewerPage : FogPageBase
             CityPlannerNavigationState.Data.City.UpdatedAt = DateTime.Now;
             await PersistenceService.SaveCity(CityPlannerNavigationState.Data.City);
         }
-        
+
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH);
     }
 }
