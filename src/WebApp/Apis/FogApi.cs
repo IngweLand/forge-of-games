@@ -17,6 +17,7 @@ public static class FogApi
         api.MapPost(FogUrlBuilder.ApiRoutes.CREATE_SHARE, CreateShareAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_RESOURCE_TEMPLATE, GetSharedResourceAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_CITY_STRATEGIES, GetSharedCityStrategiesAsync);
+        api.MapPost(FogUrlBuilder.ApiRoutes.UPLOAD_SHARED_IMAGE, UploadSharedImageAsync);
         return api;
     }
 
@@ -45,6 +46,32 @@ public static class FogApi
             FogUrlBuilder.ApiRoutes.GET_SHARED_RESOURCE_TEMPLATE.Replace("{shareId}", dto.Id)}";
 
         return TypedResults.Created(location, dto);
+    }
+
+    private static async
+        Task<Results<Created<ImageUploadResultDto>, BadRequest<IEnumerable<string>>, InternalServerError>>
+        UploadSharedImageAsync(
+            [AsParameters] FogServices services,
+            HttpContext context,
+            ImageUploadDto content,
+            CancellationToken ct)
+    {
+        var command = new UploadSharedImageCommand(content);
+        var result = await services.Mediator.Send(command, ct);
+
+        if (result.IsFailed)
+        {
+            if (result.HasError<DataTooLargeError>())
+            {
+                return TypedResults.BadRequest(result.Errors.Select(e => e.Message));
+            }
+
+            return TypedResults.InternalServerError();
+        }
+
+        var dto = result.Value;
+
+        return TypedResults.Created(dto.Url, dto);
     }
 
     private static async Task<Results<Ok<SharedDataDto>, NotFound, InternalServerError>> GetSharedResourceAsync(

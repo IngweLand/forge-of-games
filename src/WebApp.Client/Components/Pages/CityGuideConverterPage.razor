@@ -1,0 +1,14 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_GUIDE_CONVERTER_PATH)]
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+@if (OperatingSystem.IsBrowser())
+{
+    // We need to wrap the code into the component to avoid crash on Linux
+    // because some DLL required for SkiaSharp is missing there
+    <CityGuideConverterComponent/>
+}
+
+@code {
+
+}

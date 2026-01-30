@@ -1,5 +1,7 @@
 using System.Drawing;
 using System.Net;
+using System.Web;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner;
@@ -16,11 +18,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
-public class CityPlannerDataConverterService(
+public class CityPlannerDataConverter(
     IHohCityFactory cityFactory,
     ICityService cityService,
     IPersistenceService persistenceService,
-    ILogger<CityPlannerDataConverterService> logger) : ICityPlannerDataConverterService
+    ILogger<CityPlannerDataConverter> logger) : ICityPlannerDataConverter
 {
     private static readonly IReadOnlyDictionary<CityId, Point> CoordinatesMap = new Dictionary<CityId, Point>
     {
@@ -180,20 +182,55 @@ public class CityPlannerDataConverterService(
 
     private readonly Dictionary<CityId, CityPlannerDataDto> _cityPlannerData = new();
 
-    public async Task ConvertAsync(string compressedData, string cityName)
+    public async Task<Result<HohCity>> ConvertAsync(string compressedData, string cityName,
+        IProgress<string>? progress = null)
     {
         var decoded = WebUtility.UrlDecode(compressedData);
-        var decompressed = CompressionUtils.DecompressFromLzString(decoded);
+        var decompressed = Result.Try(() => CompressionUtils.DecompressFromLzString(decoded));
+        if (decompressed.IsFailed)
+        {
+            return decompressed.ToResult();
+        }
 
-        logger.LogInformation($"Decompressed data: {decompressed}");
+        progress?.Report($"Decompressed data: {decompressed}");
 
-        var dataItems = decompressed.Split(';');
+        var dataItems = decompressed.Value.Split(';');
 
-        var city = CreateBaseCity(dataItems[0], cityName);
-        await AddExpansionsAsync(city, dataItems[1]);
-        await AddCityMapEntitiesAsync(city, dataItems.Skip(2));
+        var city = Result.Try(() => CreateBaseCity(dataItems[0], cityName));
+        if (city.IsFailed)
+        {
+            progress?.Report("Failed to create base city.");
+            return city.ToResult();
+        }
 
-        await persistenceService.SaveCity(city);
+        var expResult = await Result.Try(() => AddExpansionsAsync(city.Value, dataItems[1]));
+        if (expResult.IsFailed)
+        {
+            progress?.Report("Failed to add expansions.");
+            return expResult.ToResult<HohCity>();
+        }
+
+        var entitiesResult = await Result.Try(() => AddCityMapEntitiesAsync(city.Value, dataItems.Skip(2)));
+        if (entitiesResult.IsFailed)
+        {
+            progress?.Report("Failed to add city map entities.");
+            return entitiesResult.ToResult<HohCity>();
+        }
+
+        return city;
+    }
+
+    public Result<string> ParseUrl(string url)
+    {
+        var uri = new Uri(url);
+        return Result.Try(() => HttpUtility.ParseQueryString(uri.Query))
+            .Bind(queryParams =>
+            {
+                var sharedLayout = queryParams["sharedLayout"];
+                return string.IsNullOrWhiteSpace(sharedLayout)
+                    ? Result.Fail("Could not find sharedLayout data in the url")
+                    : Result.Ok(sharedLayout);
+            });
     }
 
     private async Task<CityPlannerDataDto> GetCityPlannerDataAsync(CityId cityId)
@@ -380,6 +417,13 @@ public class CityPlannerDataConverterService(
             }
         }
 
-        city.Entities = cityEntities.Concat(initLockedEntities).ToList();
+        var resultEntities = cityEntities.Concat(initLockedEntities).ToList();
+        for (var i = 0; i < resultEntities.Count; i++)
+        {
+            var e = resultEntities[i];
+            e.Id = i;
+        }
+
+        city.Entities = resultEntities;
     }
 }

@@ -13,12 +13,17 @@ public static class WonderIdExtensions
             WonderId.Mayas_ChichenItza => CityId.Mayas_ChichenItza,
             WonderId.Mayas_SayilPalace => CityId.Mayas_SayilPalace,
             WonderId.Mayas_Tikal => CityId.Mayas_Tikal,
-            WonderId.Vikings_DragonshipEllida or WonderId.Vikings_Valhalla 
+            WonderId.Vikings_DragonshipEllida or WonderId.Vikings_Valhalla
                 or WonderId.Vikings_Yggdrasil => CityId.Vikings,
             WonderId.Arabia_CityOfBrass => CityId.Arabia_CityOfBrass,
             WonderId.Arabia_NoriasOfHama => CityId.Arabia_NoriasOfHama,
             WonderId.Arabia_Petra => CityId.Arabia_Petra,
             _ => CityId.Undefined,
         };
+    }
+
+    public static string GetImageFileName(this WonderId wonderId)
+    {
+        return $"banner_wonder_{wonderId}".ToLowerInvariant();
     }
 }

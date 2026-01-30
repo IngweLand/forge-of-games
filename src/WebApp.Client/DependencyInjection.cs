@@ -65,6 +65,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogSharingService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<ISharedCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
+        AddRefitJsonApiClient<ISharedImageUploaderService>(services, baseAddress, refitJsonSettings, "api");
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,

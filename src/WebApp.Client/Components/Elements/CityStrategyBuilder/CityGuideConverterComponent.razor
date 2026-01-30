@@ -1,0 +1,126 @@
+@using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Models.Hoh.Enums
+@using Markdig
+@using Size = MudBlazor.Size
+<div class="component-root">
+    <MudSelect T="WonderId" @bind-Value="_selectedWonder" Label="Wonder" Required="true" Strict="true"
+               Variant="Variant.Outlined">
+        @foreach (var wonder in _wonders)
+        {
+            <MudSelectItem Value="@wonder">@wonder</MudSelectItem>
+        }
+    </MudSelect>
+    <MudFileUpload T="IBrowserFile" FilesChanged="@UploadFiles">
+        <ActivatorContent>
+            <MudButton Variant="Variant.Filled" Disabled="@(_converting || _selectedWonder == WonderId.Undefined)"
+                       Color="Color.Primary">
+                @if (_converting)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"/>
+                    <MudText Class="ms-2">Converting...</MudText>
+                }
+                else
+                {
+                    <MudText>Open Guide in Markdown format</MudText>
+                }
+            </MudButton>
+        </ActivatorContent>
+    </MudFileUpload>
+
+    <div class="progress-container" @ref="_progressContainer">
+        @foreach (var line in _progressLines)
+        {
+            <div @key="line">@line</div>
+        }
+    </div>
+    <hr/>
+    @if (!string.IsNullOrWhiteSpace(_htmlOutput))
+    {
+        <MudButton Variant="Variant.Filled" OnClick="@SaveOutput"
+                   StartIcon="@Icons.Material.Filled.Save" Style="align-self: flex-start"
+                   Color="Color.Success">
+            Save
+        </MudButton>
+    }
+
+    <div class="fog-container output-container markdown-body city-guide">@((MarkupString) _htmlOutput)</div>
+</div>
+
+@code {
+    private const int MAX_FILE_SIZE = 1024 * 1024 * 5;
+    private readonly List<string> _progressLines = new();
+
+    private readonly IEnumerable<WonderId> _wonders = Enum.GetValues<WonderId>()
+        .Where(w => w != WonderId.Undefined && !w.ToString().StartsWith("Capital"));
+
+    private bool _converting;
+    private string _htmlOutput = string.Empty;
+    private string _output = string.Empty;
+    private ElementReference _progressContainer;
+    private WonderId _selectedWonder = WonderId.Undefined;
+
+    [Inject]
+    private ICityGuideMarkdownConverter CityGuideMarkdownConverter { get; set; }
+
+    [Inject]
+    private IFogSharingUiService FogSharingUiService { get; set; }
+
+    [Inject]
+    public IJSInteropService JsInteropService { get; set; }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+
+    private void Reset()
+    {
+        _output = string.Empty;
+        _htmlOutput = string.Empty;
+        _progressLines.Clear();
+    }
+
+    private async Task UploadFiles(IBrowserFile? file)
+    {
+        if (file == null)
+        {
+            return;
+        }
+
+        _converting = true;
+        StateHasChanged();
+
+        Reset();
+
+        await using var readStream = file.OpenReadStream(MAX_FILE_SIZE);
+        using var streamReader = new StreamReader(readStream);
+        var markdown = await streamReader.ReadToEndAsync();
+        var progress = new Progress<string>(s =>
+        {
+            _progressLines.Add(s);
+
+            _ = InvokeAsync(async () =>
+            {
+                StateHasChanged();
+                // Only scroll after the DOM has had a chance to render the new content.
+                await Task.Yield();
+                await JsInteropService.ScrollToBottomAsync(_progressContainer);
+            });
+        });
+        var result = await CityGuideMarkdownConverter.Convert(markdown, _selectedWonder,
+            $"{NavigationManager.BaseUri.TrimEnd('/')}{FogUrlBuilder.PageRoutes.GET_SHARED_CITY_TEMPLATE}", progress);
+        if (result.IsSuccess)
+        {
+            _output = result.Value;
+            _htmlOutput = Markdown.ToHtml(result.Value);
+        }
+
+        _converting = false;
+    }
+
+    private async Task SaveOutput()
+    {
+        await JsInteropService.SaveFileAsync($"{_selectedWonder}-forgeofgames.md", "text/markdown", _output);
+    }
+
+}

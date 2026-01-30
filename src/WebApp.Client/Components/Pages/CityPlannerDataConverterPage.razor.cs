@@ -1,6 +1,6 @@
-using System.Web;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
@@ -17,13 +17,16 @@ public partial class CityPlannerDataConverterPage : FogPageBase
     private bool _success;
 
     [Inject]
-    public ICityPlannerDataConverterService ConverterService { get; set; }
+    public ICityPlannerDataConverter Converter { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
 
     [Inject]
     private ILogger<CityPlannerDataConverterPage> Logger { get; set; }
+
+    [Inject]
+    public IPersistenceService PersistenceService { get; set; }
 
     private IEnumerable<string> ValidateUrl(string src)
     {
@@ -35,10 +38,8 @@ public partial class CityPlannerDataConverterPage : FogPageBase
         var hasError = false;
         try
         {
-            var url = new Uri(src);
-            var queryParams = HttpUtility.ParseQueryString(url.Query);
-            var sharedLayout = queryParams["sharedLayout"];
-            if (string.IsNullOrWhiteSpace(sharedLayout))
+            var sharedLayout = Converter.ParseUrl(src);
+            if (sharedLayout.IsFailed)
             {
                 hasError = true;
             }
@@ -60,18 +61,25 @@ public partial class CityPlannerDataConverterPage : FogPageBase
         _isConverting = true;
         StateHasChanged();
 
-        try
+        var sharedLayout = Converter.ParseUrl(_cityPlannerUrl!);
+        var city = await Converter.ConvertAsync(sharedLayout.Value, _cityName!);
+        if (city.IsSuccess)
         {
-            var url = new Uri(_cityPlannerUrl!);
-            var queryParams = HttpUtility.ParseQueryString(url.Query);
-            var sharedLayout = queryParams["sharedLayout"];
-            await ConverterService.ConvertAsync(sharedLayout!, _cityName!);
-            _ = await DialogService.ShowMessageBox(null, $"Successfully created city {_cityName}",
-                Loc[FogResource.Common_Ok]);
+            try
+            {
+                await PersistenceService.SaveCity(city.Value);
+                _ = await DialogService.ShowMessageBox(null, $"Successfully created city {_cityName}",
+                    Loc[FogResource.Common_Ok]);
+            }
+            catch (Exception e)
+            {
+                _ = await DialogService.ShowMessageBox("Error saving city", e.Message, Loc[FogResource.Common_Ok]);
+            }
         }
-        catch (Exception e)
+        else
         {
-            _ = await DialogService.ShowMessageBox("Error converting data", e.Message, Loc[FogResource.Common_Ok]);
+            var msg = string.Join("; ", city.Errors.Select(e => e.Message));
+            _ = await DialogService.ShowMessageBox("Error converting data", msg, Loc[FogResource.Common_Ok]);
         }
 
         _isConverting = false;

@@ -13,4 +13,5 @@ public class StorageSettings
     public required string HohStartupDataTable { get; set; }
     public required string InGameRawDataProcessingQueue { get; set; }
     public required string InGameRawDataTable { get; set; }
+    public required string FogSharedImagesContainer { get; set; }
 }

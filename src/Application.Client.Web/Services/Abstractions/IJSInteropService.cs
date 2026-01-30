@@ -11,5 +11,7 @@ public interface IJSInteropService
     ValueTask ResetScrollPositionAsync();
     ValueTask ShowLoadingIndicatorAsync();
     ValueTask ScrollTo(ElementReference target, int position, bool smooth = false);
+    ValueTask ScrollToBottomAsync(ElementReference target, bool smooth = false);
     ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters);
+    ValueTask SaveFileAsync(string fileName, string contentType, object content);
 }

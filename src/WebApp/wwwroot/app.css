@@ -528,11 +528,37 @@ img.command-center-card-icon {
     text-align: center;
 }
 
-.markdown-body img.intro-header-img { 
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+    margin: 12px 0;
+}
+
+.markdown-body img.intro-header-img {
     max-width: 80%;
     max-height: 250px;
     display: block;
     margin: 0 auto 12px auto;
+}
+
+.markdown-body.city-guide img {
+    max-width: 100%;
+}
+
+.markdown-body.city-guide img[alt="header"] {
+    max-width: 80% !important;
+    max-height: 250px;
+    display: block;
+    margin: 0 auto 12px auto;
+    border-radius: 20px;
+}
+
+.markdown-body.city-guide img[alt^="layout"] {
+    max-width: 100%;
+    max-height: 400px;
+    display: block;
+    margin: 12px auto;
+    padding: 0;
 }
 
 /*markdown end*/
@@ -599,6 +625,17 @@ img.command-center-card-icon {
     .heroes-grid-layout {
         grid-template-columns: repeat(auto-fit, 90px);
         gap: 24px 8px;
+    }
+
+    .markdown-body.city-guide img[title*="layout"] {
+        margin: 24px auto;
+        padding: 0 24px;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3 {
+        margin: 24px 0;
     }
 }
 

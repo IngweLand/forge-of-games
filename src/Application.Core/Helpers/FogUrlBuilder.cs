@@ -102,6 +102,7 @@ public static class FogUrlBuilder
         public const string CREATE_SHARE = "/shares";
         public const string GET_SHARED_RESOURCE_TEMPLATE = "/shares/{shareId}";
         public const string GET_SHARED_CITY_STRATEGIES = "/sharedCityStrategies";
+        public const string UPLOAD_SHARED_IMAGE = "/uploadSharedImage";
     }
 
     public static class PageRoutes
@@ -196,6 +197,7 @@ public static class FogUrlBuilder
             COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_DASHBOARD_PATH + "/shares/{shareId}";
 
         public const string CITY_PLANNER_DATA_CONVERTER_PATH = "/city-planner-data-converter";
+        public const string CITY_GUIDE_CONVERTER_PATH = "/city-guide-converter";
 
         public static string Player(int id)
         {

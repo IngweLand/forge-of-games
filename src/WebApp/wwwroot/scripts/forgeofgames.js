@@ -150,11 +150,25 @@ window.Fog.Webapp.Common = {
             behavior = 'smooth'
         }
         elem.scrollTo({top: position, behavior: behavior});
+    },
+
+    scrollToBottom: (elem, smooth) => {
+        if (!elem) return;
+        window.Fog.Webapp.Common.scrollTo(elem, elem.scrollHeight, smooth);
+    },
+
+    saveFile: (filename, contentType, content) => {
+        const blob = new Blob([content], {type: contentType});
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(link.href);
     }
 };
 
 window.Fog.Webapp.Analytics = {
-    gtag: window.gtag || function() {
+    gtag: window.gtag || function () {
         dataLayer.push(arguments);
     },
 }

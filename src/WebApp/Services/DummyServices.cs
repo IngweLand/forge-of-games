@@ -216,7 +216,17 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
+    public ValueTask ScrollToBottomAsync(ElementReference target, bool smooth = false)
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveFileAsync(string fileName, string contentType, object content)
     {
         throw new NotImplementedException();
     }
@@ -307,6 +317,14 @@ internal class DummyFogSharingService : IFogSharingService
     }
 
     public Task<SharedDataDto?> GetAsync(string shareId)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+internal class DummySharedImageUploaderService : ISharedImageUploaderService
+{
+    public Task<ImageUploadResultDto> UploadAsync(ImageUploadDto data)
     {
         throw new NotImplementedException();
     }
