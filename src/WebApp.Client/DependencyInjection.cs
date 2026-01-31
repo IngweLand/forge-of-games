@@ -64,7 +64,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IFogCommonService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogSharingService>(services, baseAddress, refitJsonSettings, "api");
-        AddRefitJsonApiClient<ISharedCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
+        AddRefitJsonApiClient<ICommunityCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<ISharedImageUploaderService>(services, baseAddress, refitJsonSettings, "api");
     }
 

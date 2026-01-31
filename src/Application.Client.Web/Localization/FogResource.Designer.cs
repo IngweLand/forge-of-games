@@ -537,6 +537,42 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City guide for Heroes of History..
+        /// </summary>
+        public static string CityGuide_Meta_Description {
+            get {
+                return ResourceManager.GetString("CityGuide.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History city guide, event city, event city guide, allied culture, allied culture event, city planner, city building, city management, game optimization, production stats.
+        /// </summary>
+        public static string CityGuide_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("CityGuide.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} City Guide | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string CityGuide_PageTitle {
+            get {
+                return ResourceManager.GetString("CityGuide.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City Guide.
+        /// </summary>
+        public static string CityGuide_Title {
+            get {
+                return ResourceManager.GetString("CityGuide.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete city.
         /// </summary>
         public static string CityPlanner_Actions_DeleteCityButton {
@@ -1064,6 +1100,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static string CityProductionMetric_StoragePerCityArea {
             get {
                 return ResourceManager.GetString("CityProductionMetric.StoragePerCityArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Community Guides.
+        /// </summary>
+        public static string CityStrategiesDashboard_CommunityGuides {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.CommunityGuides", resourceCulture);
             }
         }
         

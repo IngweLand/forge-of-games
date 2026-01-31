@@ -7,6 +7,7 @@ public static class AnalyticsParams
     public const string AVATAR_SOURCE = "avatar_source";
     public const string BATTLE_DEFINITION_ID = "battle_definition_id";
     public const string BATTLE_TYPE = "battle_type";
+    public const string CITY_GUIDE_ID = "city_guide_id";
     public const string CITY_ID = "city_id";
     public const string CITY_PLANNER_LAYOUT_ID = "cp_layout_id";
     public const string CITY_STRATEGY_ID = "city_strategy_id";

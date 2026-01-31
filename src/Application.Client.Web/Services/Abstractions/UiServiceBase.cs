@@ -26,4 +26,18 @@ public abstract class UiServiceBase(ILogger logger)
 
         return fallback;
     }
+
+    protected T ExecuteSafe<T>(Func<T> action, T fallback)
+    {
+        try
+        {
+            return action();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Unexpected error in {Service}", GetType().FullName);
+        }
+
+        return fallback;
+    }
 }

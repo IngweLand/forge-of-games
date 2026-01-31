@@ -30,6 +30,9 @@ public static class AnalyticsEvents
     public const string OPEN_CITY_PLANNER_DASHBOARD = "open_city_planner_dashboard";
     public const string OPEN_CITY_STRATEGIES_DASHBOARD = "open_city_strategies_dashboard";
     public const string OPEN_CITY_VIEWER = "open_city_viewer";
+    public const string OPEN_COMMUNITY_CITY_STRATEGY_ERROR = "open_community_city_strategy_error";
+    public const string OPEN_COMMUNITY_CITY_STRATEGY_INIT = "open_community_city_strategy_init";
+    public const string OPEN_COMMUNITY_CITY_STRATEGY_SUCCESS = "open_community_city_strategy_success";
     public const string OPEN_EQUIPMENT_CONFIGURATOR_DASHBOARD = "open_equip_conf_dashboard";
     public const string OPEN_EQUIPMENT_CONFIGURATOR_ERROR = "open_equip_conf_error";
     public const string OPEN_EQUIPMENT_CONFIGURATOR_INIT = "open_equip_conf_init";
@@ -47,6 +50,7 @@ public static class AnalyticsEvents
     public const string TOGGLE_HERO_AVATAR_SOURCE = "toggle_hero_avatar_source";
     public const string TOGGLE_VIEW = "toggle_view";
     public const string VIEW_BATTLE_STATS = "view_battle_stats";
+    public const string VIEW_CITY_GUIDE = "view_city_guide";
     public const string VIEW_CITY_STATS_ERROR = "view_city_stats_error";
     public const string VIEW_CITY_STATS_INIT = "view_city_stats_init";
     public const string VIEW_CITY_STATS_SUCCESS = "view_city_stats_success";

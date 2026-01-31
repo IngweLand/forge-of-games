@@ -10,13 +10,13 @@ namespace Ingweland.Fog.Application.Client.Web.Services;
 
 public class CommunityCityStrategyUiService(
     ICommonUiService commonUiService,
-    ISharedCityStrategyService sharedCityStrategyService,
+    ICommunityCityStrategyService communityCityStrategyService,
     ICommunityCityStrategyViewModelFactory cityStrategyViewModelFactory,
     ILogger<CommunityCityStrategyUiService> logger) : UiServiceBase(logger), ICommunityCityStrategyUIService
 {
-    public async Task<IReadOnlyCollection<CommunityCityStrategyViewModel>> GetAllAsync()
+    public async Task<IReadOnlyCollection<CommunityCityStrategyViewModel>> GetStrategiesAsync()
     {
-        var strategies = await ExecuteSafeAsync(() => sharedCityStrategyService.GetAllAsync(), []);
+        var strategies = await ExecuteSafeAsync(() => communityCityStrategyService.GetStrategiesAsync(), []);
         IReadOnlyDictionary<string, AgeViewModel> ages = new Dictionary<string, AgeViewModel>();
         if (strategies.Any(x => x.AgeId != null))
         {
@@ -25,5 +25,35 @@ public class CommunityCityStrategyUiService(
 
         return strategies.OrderByDescending(x => x.UpdatedAt)
             .Select(x => cityStrategyViewModelFactory.Create(x, ages)).ToList();
+    }
+
+    public async Task<IReadOnlyCollection<CommunityCityGuideViewModel>> GetGuidesAsync()
+    {
+        var guides = await ExecuteSafeAsync(() => communityCityStrategyService.GetGuidesAsync(), []);
+        IReadOnlyDictionary<string, AgeViewModel> ages = new Dictionary<string, AgeViewModel>();
+        if (guides.Any(x => x.AgeId != null))
+        {
+            ages = await commonUiService.GetAgesAsync();
+        }
+
+        return guides.OrderByDescending(x => x.UpdatedAt)
+            .Select(x => cityStrategyViewModelFactory.Create(x, ages)).ToList();
+    }
+
+    public async Task<CommunityCityGuideViewModel?> GetGuideAsync(int guideId)
+    {
+        var guide = await ExecuteSafeAsync(() => communityCityStrategyService.GetGuideAsync(guideId), null);
+        if (guide == null)
+        {
+            return null;
+        }
+
+        AgeViewModel? age = null;
+        if (guide.AgeId != null)
+        {
+            age = await commonUiService.GetAgeAsync(guide.AgeId);
+        }
+
+        return cityStrategyViewModelFactory.Create(guide, age);
     }
 }

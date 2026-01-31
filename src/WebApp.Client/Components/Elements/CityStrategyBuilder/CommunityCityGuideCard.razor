@@ -12,7 +12,7 @@
         {
             <img class="city-id-icon" src="@Info.CityIconUrl"/>
         }
-        <span class="material-symbols-outlined strategy-type-icon">strategy</span>
+        <span class="material-symbols-outlined strategy-type-icon">menu_book</span>
     </div>
     <div class="main-container">
         <span class="city-name">@Info.Name</span>
@@ -27,9 +27,9 @@
 
     [Parameter]
     [EditorRequired]
-    public required CommunityCityStrategyViewModel Info { get; init; }
+    public required CommunityCityGuideViewModel Info { get; init; }
 
     [Parameter]
-    public EventCallback<CommunityCityStrategyViewModel> OnClick { get; set; }
+    public EventCallback<CommunityCityGuideViewModel> OnClick { get; set; }
 
 }

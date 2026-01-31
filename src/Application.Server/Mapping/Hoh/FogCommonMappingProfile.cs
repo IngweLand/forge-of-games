@@ -14,5 +14,7 @@ public class FogCommonMappingProfile : Profile
                     (float) Math.Round(x.ServerContributions / x.ServerGoal, 3, MidpointRounding.ToZero)));
 
         CreateMap<CommunityCityStrategyEntity, CommunityCityStrategyDto>();
+        CreateMap<CommunityCityGuideEntity, CommunityCityGuideDto>();
+        CreateMap<CommunityCityGuideEntity, CommunityCityGuideInfoDto>();
     }
 }

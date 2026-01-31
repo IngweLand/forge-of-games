@@ -11,6 +11,8 @@ public class FogDbContext : DbContext, IFogDbContext
     {
     }
 
+    public DbSet<CommunityCityGuideEntity> CommunityCityGuides { get; set; }
+
     public DbSet<EventCityStrategy> EventCityStrategies { get; set; }
 
     public DbSet<EventCityFetchState> EventCityFetchStates { get; set; }
@@ -91,6 +93,6 @@ public class FogDbContext : DbContext, IFogDbContext
         builder.ApplyConfiguration(new EventCityStrategyEntityTypeConfiguration());
         builder.ApplyConfiguration(new EventCityStrategyDataEntityTypeConfiguration());
         builder.ApplyConfiguration(new CommunityCityStrategyEntityTypeConfiguration());
-        builder.ApplyConfiguration(new CommunityCityStrategyGuideEntityTypeConfiguration());
+        builder.ApplyConfiguration(new CommunityCityGuideEntityTypeConfiguration());
     }
 }

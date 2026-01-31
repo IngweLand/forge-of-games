@@ -16,7 +16,9 @@ public static class FogApi
         var api = app.MapGroup(PREFIX);
         api.MapPost(FogUrlBuilder.ApiRoutes.CREATE_SHARE, CreateShareAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_RESOURCE_TEMPLATE, GetSharedResourceAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_CITY_STRATEGIES, GetSharedCityStrategiesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_STRATEGIES, GetCommunityCityStrategiesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDES, GetCommunityCityGuidesAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDE_TEMPLATE, GetCommunityCityGuideAsync);
         api.MapPost(FogUrlBuilder.ApiRoutes.UPLOAD_SHARED_IMAGE, UploadSharedImageAsync);
         return api;
     }
@@ -95,7 +97,7 @@ public static class FogApi
         return TypedResults.Ok(result.Value);
     }
 
-    private static async Task<Ok<IReadOnlyCollection<CommunityCityStrategyDto>>> GetSharedCityStrategiesAsync(
+    private static async Task<Ok<IReadOnlyCollection<CommunityCityStrategyDto>>> GetCommunityCityStrategiesAsync(
         [AsParameters] StatsServices services,
         CancellationToken ct)
     {
@@ -104,5 +106,35 @@ public static class FogApi
         result.LogIfFailed(nameof(FogApi));
 
         return TypedResults.Ok(result.IsSuccess ? result.Value : []);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<CommunityCityGuideInfoDto>>> GetCommunityCityGuidesAsync(
+        [AsParameters] StatsServices services,
+        CancellationToken ct)
+    {
+        var query = new GetCommunityCityGuidesQuery();
+        var result = await services.Mediator.Send(query, ct);
+        result.LogIfFailed(nameof(FogApi));
+
+        return TypedResults.Ok(result.IsSuccess ? result.Value : []);
+    }
+
+    private static async Task<Results<Ok<CommunityCityGuideDto>, NotFound, InternalServerError>>
+        GetCommunityCityGuideAsync([AsParameters] StatsServices services, HttpContext context,
+            [AsParameters] GetCommunityCityGuideQuery query, CancellationToken ct = default)
+    {
+        var result = await services.Mediator.Send(query, ct);
+        result.LogIfFailed(nameof(FogApi));
+        if (result.IsFailed)
+        {
+            if (result.HasError<ResourceNotFoundError>())
+            {
+                return TypedResults.NotFound();
+            }
+
+            return TypedResults.InternalServerError();
+        }
+
+        return TypedResults.Ok(result.Value);
     }
 }

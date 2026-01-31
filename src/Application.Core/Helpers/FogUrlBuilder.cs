@@ -101,7 +101,10 @@ public static class FogUrlBuilder
         public const string ANNUAL_BUDGET_TEMPLATE_REFIT = "/annualBudget/{year}";
         public const string CREATE_SHARE = "/shares";
         public const string GET_SHARED_RESOURCE_TEMPLATE = "/shares/{shareId}";
-        public const string GET_SHARED_CITY_STRATEGIES = "/sharedCityStrategies";
+        public const string GET_COMMUNITY_CITY_STRATEGIES = "/communityCityStrategies";
+        public const string GET_COMMUNITY_CITY_GUIDES = "/communityCityGuides";
+        public const string GET_COMMUNITY_CITY_GUIDE_TEMPLATE = GET_COMMUNITY_CITY_GUIDES + "/{id:int}";
+        public const string GET_COMMUNITY_CITY_GUIDE_TEMPLATE_REFIT = GET_COMMUNITY_CITY_GUIDES + "/{id}";
         public const string UPLOAD_SHARED_IMAGE = "/uploadSharedImage";
     }
 
@@ -116,6 +119,8 @@ public static class FogUrlBuilder
         public const string CITY_STRATEGIES_DASHBOARD_PATH = BASE_CITY_PLANNER_PATH + "/strategies";
         public const string CITY_STRATEGY_BUILDER_APP_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/app";
         public const string CITY_STRATEGY_VIEWER_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/viewer";
+        public const string BASE_CITY_GUIDES_PATH = CITY_STRATEGIES_DASHBOARD_PATH + "/guides";
+        public const string CITY_GUIDE_TEMPLATE = BASE_CITY_GUIDES_PATH + "/{guideId:int}";
         public const string CITY_VIEWER_PATH = BASE_CITY_PLANNER_PATH + "/viewer";
         public const string BASE_HEROES_PATH = "/heroes";
         public const string BASE_STATS_HUB_PATH = "/stats-hub";
@@ -267,6 +272,11 @@ public static class FogUrlBuilder
         public static string EquipmentProfile(string profileId)
         {
             return COMMAND_CENTER_EQUIPMENT_CONFIGURATOR_TEMPLATE.Replace("{profileId}", profileId);
+        }
+
+        public static string CommunityCityGuide(int guideId)
+        {
+            return CITY_GUIDE_TEMPLATE.Replace("{guideId:int}", guideId.ToString());
         }
 
         public static string WorldEventCity(string worldId)

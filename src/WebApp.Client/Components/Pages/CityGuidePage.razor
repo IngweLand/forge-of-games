@@ -1,0 +1,13 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_GUIDE_TEMPLATE)]
+@using Ingweland.Fog.Application.Core.Helpers
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<PageTitle>@_pageTitle</PageTitle>
+<div class="fog-container component-root markdown-body city-guide">@((MarkupString) _content)</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required int GuideId { get; set; }
+
+}

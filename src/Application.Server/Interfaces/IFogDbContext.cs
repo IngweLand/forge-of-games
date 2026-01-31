@@ -13,6 +13,7 @@ public interface IFogDbContext
     DbSet<BattleStatsEntity> BattleStats { get; set; }
     DbSet<BattleTimelineEntity> BattleTimelines { get; set; }
     DbSet<BattleUnitEntity> BattleUnits { get; set; }
+    public DbSet<CommunityCityGuideEntity> CommunityCityGuides { get; set; }
     public DbSet<CommunityCityStrategyEntity> CommunityCityStrategies { get; set; }
     DbSet<EquipmentInsightsEntity> EquipmentInsights { get; set; }
     DbSet<EventCityFetchState> EventCityFetchStates { get; set; }

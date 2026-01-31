@@ -31,23 +31,42 @@
         </div>
     }
 
-
     <div class="section-title">
         <span>@Loc[FogResource.CityStrategiesDashboard_CommunityStrategies]</span>
-        @if (_isLoading)
+        @if (_strategiesAreLoading)
         {
             <div class="loading-indicator">
                 <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
             </div>
         }
     </div>
-    @if (_sharedStrategies.Count > 0)
+    @if (_communityStrategies.Count > 0)
     {
         <div class="items-container">
 
-            @foreach (var info in _sharedStrategies)
+            @foreach (var info in _communityStrategies)
             {
                 <CommunityCityStrategyCard Info="@info" OnClick="@OpenCommunityStrategy"/>
+            }
+        </div>
+    }
+
+    <div class="section-title">
+        <span>@Loc[FogResource.CityStrategiesDashboard_CommunityGuides]</span>
+        @if (_guidesAreLoading)
+        {
+            <div class="loading-indicator">
+                <MudProgressLinear Color="Color.Secondary" Indeterminate="true"/>
+            </div>
+        }
+    </div>
+    @if (_communityGuides.Count > 0)
+    {
+        <div class="items-container">
+
+            @foreach (var info in _communityGuides)
+            {
+                <CommunityCityGuideCard Info="@info" OnClick="@OpenCommunityGuide"/>
             }
         </div>
     }

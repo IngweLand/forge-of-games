@@ -8,4 +8,9 @@ public interface ICommunityCityStrategyViewModelFactory
 {
     CommunityCityStrategyViewModel Create(CommunityCityStrategyDto dto,
         IReadOnlyDictionary<string, AgeViewModel> ages);
+
+    CommunityCityGuideViewModel Create(CommunityCityGuideInfoDto infoDto,
+        IReadOnlyDictionary<string, AgeViewModel> ages);
+
+    CommunityCityGuideViewModel Create(CommunityCityGuideDto dto, AgeViewModel? age);
 }
