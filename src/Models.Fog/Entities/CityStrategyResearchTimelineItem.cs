@@ -4,7 +4,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Fog.Entities;
 
 [ProtoContract]
-public class CityStrategyTimelineResearchItem : CityStrategyTimelineItemBase
+public class CityStrategyResearchTimelineItem : CityStrategyTimelineItemBase
 {
     [ProtoIgnore]
     public IReadOnlySet<string> OpenedTechnologies { get; set; } = new HashSet<string>();

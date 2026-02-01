@@ -1,8 +1,7 @@
 @using System.Collections.ObjectModel
 @using Ingweland.Fog.Models.Fog.Entities
-@using Ingweland.Fog.Models.Fog.Enums
 @using Size = MudBlazor.Size
-
+@inherits CityStrategyTimelineComponentBase
 <div class="component-root">
     <div class="name-container">@StrategyName</div>
     <div class="main-container">
@@ -44,17 +43,6 @@
     {
         base.OnParametersSet();
         _selectedItem = Items.FirstOrDefault(x => x.Selected);
-    }
-
-    private static string GetTypeIcon(CityStrategyTimelineItemType type)
-    {
-        return type switch
-        {
-            CityStrategyTimelineItemType.Research => "material-symbols-outlined/experiment",
-            CityStrategyTimelineItemType.Description => "material-symbols-outlined/description",
-            CityStrategyTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
-            _ => string.Empty,
-        };
     }
 
 }

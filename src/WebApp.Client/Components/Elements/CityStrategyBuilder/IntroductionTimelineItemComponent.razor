@@ -20,7 +20,7 @@
                          Color="Color.Inherit" Style="align-self: flex-end"/>
     @if (_showPreview)
     {
-        <div class="markdown-body">
+        <div class="markdown-city-guide">
             @((MarkupString) _html)
         </div>
     }
@@ -39,7 +39,7 @@
 
     [Parameter]
     [EditorRequired]
-    public required CityStrategyTimelineDescriptionItem Data { get; set; }
+    public required CityStrategyIntroTimelineItem Data { get; set; }
 
     [Parameter]
     public EventCallback OnChanged { get; set; }

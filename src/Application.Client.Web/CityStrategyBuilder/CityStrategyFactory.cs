@@ -12,7 +12,7 @@ public class CityStrategyFactory(IHohCityFactory cityFactory, IStringLocalizer<F
 {
     public CityStrategy Create(NewCityRequest newCityRequest, int cityPlannerVersion)
     {
-        var layoutItem = CreateTimelineLayoutItem(newCityRequest);
+        var layoutItem = CreateLayoutTimelineItem(newCityRequest);
         var strategy = new CityStrategy
         {
             Id = Guid.NewGuid().ToString(),
@@ -23,31 +23,32 @@ public class CityStrategyFactory(IHohCityFactory cityFactory, IStringLocalizer<F
             CityPlannerVersion = cityPlannerVersion,
             AgeId = layoutItem.AgeId,
         };
-        strategy.Timeline.Add(CreateTimelineDescriptionItem());
-        strategy.Timeline.Add(CreateTimelineResearchItem());
+        strategy.Timeline.Add(CreateIntroTimelineItem(newCityRequest.CityId, newCityRequest.WonderId));
+        strategy.Timeline.Add(CreateDescriptionTimelineItem());
+        strategy.Timeline.Add(CreateResearchTimelineItem());
         strategy.Timeline.Add(layoutItem);
 
         return strategy;
     }
 
-    public CityStrategyTimelineDescriptionItem CreateTimelineDescriptionItem()
+    public CityStrategyDescriptionTimelineItem CreateDescriptionTimelineItem()
     {
-        return new CityStrategyTimelineDescriptionItem
+        return new CityStrategyDescriptionTimelineItem
         {
             Title = loc[FogResource.CityStrategy_TimelineDescriptionItem_DefaultTitle],
             Description = loc[FogResource.CityStrategy_TimelineDescriptionItem_DefaultDescription],
         };
     }
 
-    public CityStrategyTimelineResearchItem CreateTimelineResearchItem()
+    public CityStrategyResearchTimelineItem CreateResearchTimelineItem()
     {
-        return new CityStrategyTimelineResearchItem
+        return new CityStrategyResearchTimelineItem
         {
             Title = loc[FogResource.CityStrategy_TimelineResearchItem_DefaultTitle],
         };
     }
 
-    public CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(CityId cityId,
+    public CityStrategyLayoutTimelineItem CreateLayoutTimelineItem(CityId cityId,
         WonderId wonderId = WonderId.Undefined)
     {
         var request = new NewCityRequest
@@ -56,12 +57,12 @@ public class CityStrategyFactory(IHohCityFactory cityFactory, IStringLocalizer<F
             WonderId = wonderId,
             Name = string.Empty,
         };
-        return CreateTimelineLayoutItem(request);
+        return CreateLayoutTimelineItem(request);
     }
 
-    public CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(HohCity city)
+    public CityStrategyLayoutTimelineItem CreateLayoutTimelineItem(HohCity city)
     {
-        return new CityStrategyTimelineLayoutItem
+        return new CityStrategyLayoutTimelineItem
         {
             Id = Guid.NewGuid().ToString(),
             Title = loc[FogResource.CityStrategy_TimelineLayoutItem_DefaultTitle],
@@ -72,9 +73,20 @@ public class CityStrategyFactory(IHohCityFactory cityFactory, IStringLocalizer<F
         };
     }
 
-    private CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(NewCityRequest request)
+    public CityStrategyIntroTimelineItem CreateIntroTimelineItem(CityId cityId, WonderId wonderId)
+    {
+        return new CityStrategyIntroTimelineItem
+        {
+            Title = wonderId.ToString(),
+            Description = loc[FogResource.CityStrategy_TimelineDescriptionItem_DefaultDescription],
+            CityId = cityId,
+            WonderId = wonderId,
+        };
+    }
+
+    private CityStrategyLayoutTimelineItem CreateLayoutTimelineItem(NewCityRequest request)
     {
         var city = cityFactory.Create(request, 0);
-        return CreateTimelineLayoutItem(city);
+        return CreateLayoutTimelineItem(city);
     }
 }

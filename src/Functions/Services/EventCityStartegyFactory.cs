@@ -24,7 +24,7 @@ public class EventCityStrategyFactory(
 {
     public async Task RunAsync()
     {
-         var snapshotGroups = await context.EventCitySnapshots.AsNoTracking().ToListAsync();
+        var snapshotGroups = await context.EventCitySnapshots.AsNoTracking().ToListAsync();
         var comparer = new HohCitySpecificComparer();
         foreach (var sg in snapshotGroups.GroupBy(x => x.PlayerId))
         {
@@ -35,6 +35,7 @@ public class EventCityStrategyFactory(
                 logger.LogWarning("Could not find event with id {eventId}", first.InGameEventId);
                 continue;
             }
+
             var hasPremiumExpansions = false;
             CityStrategy? strategy = null;
             HohCity? lastCity = null;
@@ -84,8 +85,8 @@ public class EventCityStrategyFactory(
             logger.LogInformation("Created event city strategy for player {playerId}", first.PlayerId);
         }
     }
-    
-     private static string CreateTimelineLayoutItemTitle(DateTime snapshotTime, DateTime eventStartTime, int wonderLevel)
+
+    private static string CreateTimelineLayoutItemTitle(DateTime snapshotTime, DateTime eventStartTime, int wonderLevel)
     {
         return $"{(snapshotTime - eventStartTime).ToShortReadableString()}, lvl. {wonderLevel}";
     }
@@ -106,9 +107,9 @@ public class EventCityStrategyFactory(
         return strategy;
     }
 
-    private CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(HohCity city, string title)
+    private CityStrategyLayoutTimelineItem CreateTimelineLayoutItem(HohCity city, string title)
     {
-        return new CityStrategyTimelineLayoutItem
+        return new CityStrategyLayoutTimelineItem
         {
             Id = Guid.NewGuid().ToString(),
             Title = title,

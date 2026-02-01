@@ -39,7 +39,7 @@
         }
         else
         {
-            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
             {
                 <div class="main-container">
                     <div class="timeline-item-title-container">
@@ -55,28 +55,34 @@
                     </div>
                 </div>
             }
-            else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineDescriptionItem di)
+            else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyDescriptionTimelineItem di)
             {
                 <div class="main-container">
                     <div class="timeline-item-title-container">
                         @CityStrategyBuilderService.SelectedTimelineItem?.Title
                     </div>
                     <div class="content-container">
-                        <TimelineDescriptionItemViewerComponent Description="@di.Description"/>
+                        <DescriptionTimelineItemViewerComponent Description="@di.Description"/>
                     </div>
                 </div>
             }
-            else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
+            else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyResearchTimelineItem ri)
             {
                 <div class="main-container">
                     <div class="timeline-item-title-container">
                         @CityStrategyBuilderService.SelectedTimelineItem?.Title
                     </div>
                     <div class="content-container">
-                        <TimelineResearchItemComponent Data="@ri"
+                        <ResearchTimelineItemComponent Data="@ri"
                                                        CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
                                                        IsReadOnly="true"/>
                     </div>
+                </div>
+            }
+            else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyIntroTimelineItem ii)
+            {
+                <div class="main-container col-span-2">
+                    <IntroTimelineItemViewerComponent Data="@ii"/>
                 </div>
             }
 
@@ -106,7 +112,7 @@
                                                  ToggledIcon="@Icons.Material.Filled.ViewTimeline"
                                                  ToggledColor="Color.Inherit"
                                                  ToggledChanged="ToggleTimeline"/>
-                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
                             {
                                 @if (_currentState == ViewerState.Main)
                                 {

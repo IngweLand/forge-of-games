@@ -20,7 +20,7 @@
             </div>
         }
 
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
         {
             <div class="main-container">
                 <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
@@ -31,23 +31,27 @@
                           IgnorePixelScaling="true"/>
             </div>
         }
-
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineDescriptionItem di)
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyDescriptionTimelineItem di)
         {
             <div class="main-container col-span-2">
-                <TimelineDescriptionItemViewerComponent Description="@di.Description"/>
+                <DescriptionTimelineItemViewerComponent Description="@di.Description"/>
             </div>
         }
-
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyResearchTimelineItem ri)
         {
             <div class="main-container col-span-2">
-                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
+                <ResearchTimelineItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
                                                IsReadOnly="true"/>
             </div>
         }
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyIntroTimelineItem ii)
+        {
+            <div class="main-container col-span-2">
+                <IntroTimelineItemViewerComponent Data="@ii"/>
+            </div>
+        }
 
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
         {
             <MudTabs Class="right-container" TabHeaderClass="buildings-selector-tabs"
                      SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
@@ -100,7 +104,7 @@
                                                  ToggledIcon="@Icons.Material.Filled.ViewTimeline"
                                                  ToggledColor="Color.Inherit"
                                                  ToggledChanged="ToggleLeftPanel"/>
-                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
                             {
                                 <div class="toolbar-divider"></div>
                                 <div>

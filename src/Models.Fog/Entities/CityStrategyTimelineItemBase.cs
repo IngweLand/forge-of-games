@@ -4,9 +4,10 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Fog.Entities;
 
 [ProtoContract]
-[ProtoInclude(100, typeof(CityStrategyTimelineDescriptionItem))]
-[ProtoInclude(101, typeof(CityStrategyTimelineResearchItem))]
-[ProtoInclude(102, typeof(CityStrategyTimelineLayoutItem))]
+[ProtoInclude(100, typeof(CityStrategyDescriptionTimelineItem))]
+[ProtoInclude(101, typeof(CityStrategyResearchTimelineItem))]
+[ProtoInclude(102, typeof(CityStrategyLayoutTimelineItem))]
+[ProtoInclude(103, typeof(CityStrategyIntroTimelineItem))]
 public abstract class CityStrategyTimelineItemBase
 {
     [ProtoMember(1)]

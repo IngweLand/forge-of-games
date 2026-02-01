@@ -4,7 +4,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Fog.Entities;
 
 [ProtoContract]
-public class CityStrategyTimelineLayoutItem : CityStrategyTimelineItemBase
+public class CityStrategyLayoutTimelineItem : CityStrategyTimelineItemBase
 {
     [ProtoMember(1)]
     public required string AgeId { get; set; }

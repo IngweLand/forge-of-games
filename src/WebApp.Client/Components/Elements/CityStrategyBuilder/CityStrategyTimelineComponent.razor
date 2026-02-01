@@ -2,12 +2,11 @@
 @using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Models.Fog.Entities
-@using Ingweland.Fog.Models.Fog.Enums
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
-
+@inherits CityStrategyTimelineComponentBase
 <div class="fog-container component-root">
     <div class="header-container">
         <div class="section-title">@Loc[FogResource.CityStrategy_Timeline]</div>
@@ -58,6 +57,12 @@
                                          OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.LayoutImport))">
                                 @Loc[FogResource.CityStrategy_Timeline_CreateMenu_ImportLayout]
                             </MudMenuItem>
+                            <MudMenuItem Icon="@GetTypeIcon(CityStrategyNewTimelineItemType.Intro)"
+                                         Size="Size.Small"
+                                         Color="Color.Inherit"
+                                         OnClick="@(() => OnAddMenuSelected(item.Id, CityStrategyNewTimelineItemType.Intro))">
+                                @Loc[FogResource.CityStrategy_Timeline_CreateMenu_Introduction]
+                            </MudMenuItem>
                         </MudMenu>
                         <div class="v-line"></div>
                     </div>
@@ -100,17 +105,7 @@
             CityStrategyNewTimelineItemType.Description => "material-symbols-outlined/description",
             CityStrategyNewTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
             CityStrategyNewTimelineItemType.LayoutImport => "material-symbols-outlined/file_open",
-            _ => string.Empty,
-        };
-    }
-
-    private static string GetTypeIcon(CityStrategyTimelineItemType type)
-    {
-        return type switch
-        {
-            CityStrategyTimelineItemType.Research => "material-symbols-outlined/experiment",
-            CityStrategyTimelineItemType.Description => "material-symbols-outlined/description",
-            CityStrategyTimelineItemType.Layout => "material-symbols-outlined/dashboard_2",
+            CityStrategyNewTimelineItemType.Intro => "material-symbols-outlined/tour",
             _ => string.Empty,
         };
     }

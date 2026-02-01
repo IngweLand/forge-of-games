@@ -33,7 +33,7 @@
             <div>
                 <MudIconButton Icon="@Icons.Material.Outlined.Save" OnClick="@Save" Class="fog-icon-light"/>
             </div>
-            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
             {
                 <div class="toolbar-divider"></div>
                 <div>
@@ -64,13 +64,13 @@
                                  ToggledColor="Color.Inherit"
                                  ToggledChanged="ToggleRightPanel"/>
         </MudAppBar>
-        @if (_leftPanelIsVisible && CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        @if (_leftPanelIsVisible && CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
         {
             <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked"
                                        Items="@CityStrategyBuilderService.CityMapState.BuildingSelectorItems"/>
         }
 
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineLayoutItem)
+        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
         {
             <div class="city-planner-map-container">
                 <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" @onkeyup="OnKeyUp" tabindex="0"
@@ -80,19 +80,23 @@
                           IgnorePixelScaling="true"/>
             </div>
         }
-
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineDescriptionItem di)
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyDescriptionTimelineItem di)
         {
             <div class="non-layout-item-container">
-                <TimelineDescriptionItemComponent Data="@di" OnChanged="@RequestSaving"/>
+                <DescriptionTimelineItemComponent Data="@di" OnChanged="@RequestSaving"/>
             </div>
         }
-
-        @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyTimelineResearchItem ri)
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyResearchTimelineItem ri)
         {
             <div class="non-layout-item-container">
-                <TimelineResearchItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
+                <ResearchTimelineItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
                                                OnChanged="@RequestSaving"/>
+            </div>
+        }
+        else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyIntroTimelineItem ii)
+        {
+            <div class="non-layout-item-container">
+                <IntroductionTimelineItemComponent Data="@ii" OnChanged="@RequestSaving"/>
             </div>
         }
 
@@ -108,7 +112,7 @@
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics"
-                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyTimelineLayoutItem)">
+                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyLayoutTimelineItem)">
                     <div class="city-planner-side-panel">
                         @if (CityStrategyBuilderService.CityMapState.SelectedCityMapEntity != null)
                         {
@@ -129,16 +133,16 @@
 
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator"
-                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyTimelineLayoutItem)">
+                             Disabled="@(CityStrategyBuilderService.SelectedTimelineItem is not CityStrategyLayoutTimelineItem)">
                     <div class="city-planner-side-panel">
                         <CityPlannerBuildingCostCalculator
                             CityId="@CityStrategyBuilderService.CityMapState.InGameCityId"
                             BuildingGroup="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
                             FromLevel="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
                             BuildingName="@CityStrategyBuilderService.CityMapState.SelectedCityMapEntity?.Name"/>
-                        @if(CityStrategyBuilderService.CityMapState.CityWonder != null)
+                        @if (CityStrategyBuilderService.CityMapState.CityWonder != null)
                         {
-                            <CityPlannerWonderCostCalculator 
+                            <CityPlannerWonderCostCalculator
                                 FromLevel="@CityStrategyBuilderService.CityMapState.CityWonderLevel"/>
                         }
                     </div>

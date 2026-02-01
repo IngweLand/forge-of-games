@@ -1,0 +1,48 @@
+@using System.Text
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Extensions
+@using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Hoh.Enums
+@inject IMarkdownSecurityService MarkdownSecurityService
+@inject IAssetUrlProvider AssetUrlProvider
+<div class="component-root">
+    <div class="markdown-city-guide">
+        @((MarkupString) _html)
+    </div>
+</div>
+
+@code {
+
+    private string _html = string.Empty;
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategyIntroTimelineItem Data { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        _html = MarkdownSecurityService.ConvertToSafeHtml(PrependHeader(Data));
+    }
+
+    private string PrependHeader(CityStrategyIntroTimelineItem data)
+    {
+        if (data.WonderId != WonderId.Undefined)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"![header]({AssetUrlProvider.GetHohImageUrl(data.WonderId.GetImageFileName())})");
+            sb.AppendLine();
+            sb.AppendLine($"# {data.Title}");
+            sb.AppendLine();
+            sb.AppendLine("---");
+            sb.AppendLine();
+            sb.Append(data.Description);
+            return sb.ToString();
+        }
+
+        return data.Description;
+    }
+
+}

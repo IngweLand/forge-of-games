@@ -5,4 +5,5 @@ public enum CityStrategyTimelineItemType
     Description = 0,
     Research = 1,
     Layout = 2,
+    Intro = 3,
 }

@@ -1185,6 +1185,15 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Introduction.
+        /// </summary>
+        public static string CityStrategy_Timeline_CreateMenu_Introduction {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.CreateMenu.Introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Layout.
         /// </summary>
         public static string CityStrategy_Timeline_CreateMenu_Layout {

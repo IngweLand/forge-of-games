@@ -6,4 +6,5 @@ public enum CityStrategyNewTimelineItemType
     Research,
     Layout,
     LayoutImport,
+    Intro,
 }

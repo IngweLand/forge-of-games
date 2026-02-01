@@ -13,7 +13,7 @@ public class CityPlannerUiProfile : Profile
             .ForMember(dest => dest.BuildingGroup, opt => opt.MapFrom(src => src.Group))
             .ForMember(dest => dest.Label, opt => opt.MapFrom(src => src.GroupName));
 
-        CreateMap<CityStrategyTimelineLayoutItem, CityStrategyTimelineLayoutItem>()
+        CreateMap<CityStrategyLayoutTimelineItem, CityStrategyLayoutTimelineItem>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid().ToString()));
     }
 }

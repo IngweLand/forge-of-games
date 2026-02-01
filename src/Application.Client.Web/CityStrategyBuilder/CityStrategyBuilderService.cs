@@ -156,6 +156,7 @@ public class CityStrategyBuilderService(
             CityStrategyNewTimelineItemType.Layout => await AddNewLayoutItem(request.ItemId, request.ExistingCityId),
             CityStrategyNewTimelineItemType.LayoutImport => await AddNewLayoutItem(request.ItemId,
                 request.ExistingCityId),
+            CityStrategyNewTimelineItemType.Intro => AddNewIntroItem(request.ItemId),
             _ => throw new ArgumentOutOfRangeException(),
         };
 
@@ -254,10 +255,10 @@ public class CityStrategyBuilderService(
 
         if (_isReadOnly)
         {
-            CityStrategyTimelineLayoutItem? previousLayoutItem = null;
+            CityStrategyLayoutTimelineItem? previousLayoutItem = null;
             foreach (var item in TimelineItems)
             {
-                if (item is not CityStrategyTimelineLayoutItem li)
+                if (item is not CityStrategyLayoutTimelineItem li)
                 {
                     continue;
                 }
@@ -289,7 +290,7 @@ public class CityStrategyBuilderService(
         _isInitialized = true;
     }
 
-    private void CreateLayoutDiff(CityStrategyTimelineLayoutItem oldItem, CityStrategyTimelineLayoutItem newItem)
+    private void CreateLayoutDiff(CityStrategyLayoutTimelineItem oldItem, CityStrategyLayoutTimelineItem newItem)
     {
         var oldItemMap = oldItem.Entities.ToDictionary(x => new Point(x.X, x.Y));
         foreach (var newItemEntity in newItem.Entities)
@@ -361,7 +362,7 @@ public class CityStrategyBuilderService(
         }
     }
 
-    private async Task InitializeLayout(CityStrategyTimelineLayoutItem item)
+    private async Task InitializeLayout(CityStrategyLayoutTimelineItem item)
     {
         var city = hohCityFactory.Create(item.Id, Strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
             item.UnlockedExpansions, Strategy.CityPlannerVersion, Strategy.WonderId, item.WonderLevel);
@@ -377,13 +378,13 @@ public class CityStrategyBuilderService(
 
         switch (item)
         {
-            case CityStrategyTimelineResearchItem ri:
+            case CityStrategyResearchTimelineItem ri:
             {
                 UpdateOpenedTechnologies(ri);
                 break;
             }
 
-            case CityStrategyTimelineLayoutItem li:
+            case CityStrategyLayoutTimelineItem li:
             {
                 await InitializeLayout(li);
                 break;
@@ -416,7 +417,7 @@ public class CityStrategyBuilderService(
             return;
         }
 
-        var layoutItem = TimelineItems.OfType<CityStrategyTimelineLayoutItem>().LastOrDefault();
+        var layoutItem = TimelineItems.OfType<CityStrategyLayoutTimelineItem>().LastOrDefault();
         if (layoutItem != null)
         {
             Strategy.AgeId = layoutItem.AgeId;
@@ -425,7 +426,7 @@ public class CityStrategyBuilderService(
 
     private void UpdateCurrentLayoutItem()
     {
-        if (SelectedTimelineItem is not CityStrategyTimelineLayoutItem li)
+        if (SelectedTimelineItem is not CityStrategyLayoutTimelineItem li)
         {
             return;
         }
@@ -447,12 +448,12 @@ public class CityStrategyBuilderService(
         li.UnlockedExpansions = city.UnlockedExpansions;
     }
 
-    private CityStrategyTimelineResearchItem UpdateOpenedTechnologies(CityStrategyTimelineResearchItem item)
+    private CityStrategyResearchTimelineItem UpdateOpenedTechnologies(CityStrategyResearchTimelineItem item)
     {
         var alreadyOpened = new HashSet<string>();
         foreach (var ti in TimelineItems)
         {
-            if (ti is CityStrategyTimelineResearchItem ri)
+            if (ti is CityStrategyResearchTimelineItem ri)
             {
                 if (ti == item)
                 {
@@ -467,24 +468,32 @@ public class CityStrategyBuilderService(
         return item;
     }
 
-    private CityStrategyTimelineDescriptionItem AddNewDescriptionItem(string id)
+    private CityStrategyDescriptionTimelineItem AddNewDescriptionItem(string id)
     {
         var i = GetInsertionIndex(id);
-        var item = cityStrategyFactory.CreateTimelineDescriptionItem();
+        var item = cityStrategyFactory.CreateDescriptionTimelineItem();
         TimelineItems.Insert(i, item);
         return item;
     }
 
-    private async Task<CityStrategyTimelineLayoutItem> AddNewLayoutItem(string id, string? existingCityId = null)
+    private CityStrategyIntroTimelineItem AddNewIntroItem(string id)
     {
         var i = GetInsertionIndex(id);
-        CityStrategyTimelineLayoutItem? item = null;
+        var item = cityStrategyFactory.CreateIntroTimelineItem(Strategy.InGameCityId, Strategy.WonderId);
+        TimelineItems.Insert(i, item);
+        return item;
+    }
+
+    private async Task<CityStrategyLayoutTimelineItem> AddNewLayoutItem(string id, string? existingCityId = null)
+    {
+        var i = GetInsertionIndex(id);
+        CityStrategyLayoutTimelineItem? item = null;
         if (existingCityId != null)
         {
             var city = await persistenceService.LoadCity(existingCityId);
             if (city != null)
             {
-                item = cityStrategyFactory.CreateTimelineLayoutItem(city);
+                item = cityStrategyFactory.CreateLayoutTimelineItem(city);
             }
             else
             {
@@ -495,27 +504,27 @@ public class CityStrategyBuilderService(
         {
             for (var j = i - 1; j >= 0; j--)
             {
-                if (TimelineItems[j] is CityStrategyTimelineLayoutItem ri)
+                if (TimelineItems[j] is CityStrategyLayoutTimelineItem ri)
                 {
-                    item = mapper.Map<CityStrategyTimelineLayoutItem>(ri);
+                    item = mapper.Map<CityStrategyLayoutTimelineItem>(ri);
                     item.Title = loc[FogResource.CityStrategy_TimelineLayoutItem_DefaultTitle];
                     break;
                 }
             }
         }
 
-        item ??= cityStrategyFactory.CreateTimelineLayoutItem(Strategy.InGameCityId, Strategy.WonderId);
+        item ??= cityStrategyFactory.CreateLayoutTimelineItem(Strategy.InGameCityId, Strategy.WonderId);
 
         TimelineItems.Insert(i, item);
 
         return item;
     }
 
-    private CityStrategyTimelineResearchItem AddNewResearchItem(string id)
+    private CityStrategyResearchTimelineItem AddNewResearchItem(string id)
     {
         var i = GetInsertionIndex(id);
 
-        var item = cityStrategyFactory.CreateTimelineResearchItem();
+        var item = cityStrategyFactory.CreateResearchTimelineItem();
         TimelineItems.Insert(i, item);
 
         return UpdateOpenedTechnologies(item);

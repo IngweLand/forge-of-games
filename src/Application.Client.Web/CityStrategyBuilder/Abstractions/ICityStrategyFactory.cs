@@ -7,8 +7,9 @@ namespace Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 public interface ICityStrategyFactory
 {
     CityStrategy Create(NewCityRequest newCityRequest, int cityPlannerVersion);
-    CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(CityId cityId, WonderId wonderId = WonderId.Undefined);
-    CityStrategyTimelineDescriptionItem CreateTimelineDescriptionItem();
-    CityStrategyTimelineResearchItem CreateTimelineResearchItem();
-    CityStrategyTimelineLayoutItem CreateTimelineLayoutItem(HohCity city);
+    CityStrategyLayoutTimelineItem CreateLayoutTimelineItem(CityId cityId, WonderId wonderId = WonderId.Undefined);
+    CityStrategyDescriptionTimelineItem CreateDescriptionTimelineItem();
+    CityStrategyIntroTimelineItem CreateIntroTimelineItem(CityId cityId, WonderId wonderId);
+    CityStrategyResearchTimelineItem CreateResearchTimelineItem();
+    CityStrategyLayoutTimelineItem CreateLayoutTimelineItem(HohCity city);
 }

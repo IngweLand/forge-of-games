@@ -1,0 +1,66 @@
+@using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<FogResource> Loc
+@inject IMarkdownSecurityService MarkdownSecurityService
+<div class="component-root">
+    <div>
+        <MudTextField @bind-Value="@Data.Title" DebounceInterval="1000"
+                      OnDebounceIntervalElapsed="@OnTitleChanged" OnBlur="@OnChanged"
+                      Counter="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
+                      MaxLength="@FogConstants.CITY_STRATEGY_TIMELINE_ITEM_TITLE_MAX_LENGTH"
+                      Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultTitle]"
+                      Variant="Variant.Outlined"/>
+    </div>
+    <MudToggleIconButton T="bool" Toggled="@_showPreview" ToggledChanged="@TogglePreview"
+                         ToggledIcon="@Icons.Material.Filled.VisibilityOff"
+                         Icon="@Icons.Material.Filled.Visibility"
+                         Color="Color.Inherit" Style="align-self: flex-end"/>
+    @if (_showPreview)
+    {
+        <div class="markdown-city-guide">
+            @((MarkupString) _html)
+        </div>
+    }
+    else
+    {
+        <FogMarkdownEditor @bind-Value="@Data.Description" OnDebounceIntervalElapsed="@OnDescriptionChanged"
+                           Placeholder="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"/>
+    }
+
+</div>
+
+@code {
+
+    private bool _showPreview;
+    private string _html = string.Empty;
+
+    [Parameter]
+    [EditorRequired]
+    public required CityStrategyDescriptionTimelineItem Data { get; set; }
+
+    [Parameter]
+    public EventCallback OnChanged { get; set; }
+
+    private Task OnTitleChanged(string newValue)
+    {
+        return OnChanged.InvokeAsync();
+    }
+
+    private Task OnDescriptionChanged(string newValue)
+    {
+        return OnChanged.InvokeAsync();
+    }
+
+    private void TogglePreview(bool toggled)
+    {
+        _showPreview = toggled;
+        if (_showPreview)
+        {
+            _html = MarkdownSecurityService.ConvertToSafeHtml(Data.Description);
+        }
+    }
+
+}
