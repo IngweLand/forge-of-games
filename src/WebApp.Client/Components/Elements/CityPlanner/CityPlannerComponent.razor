@@ -68,6 +68,8 @@
             <MudIconButton Icon="@Icons.Material.Outlined.DeleteSweep" Class="fog-icon-light"
                            OnClick="PurgeInventory"
                            Disabled="@(!_inventoryIsActive || CityPlanner.CityMapState.InventoryBuildings.Count == 0)"/>
+            <div class="toolbar-divider"></div>
+            <MudIconButton Icon="@Icons.Material.Outlined.Image" OnClick="@OnSaveImage" Class="fog-icon-light"/>
             <MudSpacer/>
             @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@
             @* <div class="toolbar-divider"></div> *@

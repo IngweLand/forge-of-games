@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Mime;
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Localization;
 using MudBlazor;
+using SkiaSharp;
 using SkiaSharp.Views.Blazor;
 using Size = System.Drawing.Size;
 
@@ -427,6 +429,21 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
             },
         };
         _ = await DialogService.ShowAsync<ShareResourceDialog>(null, parameters, GetDefaultDialogOptions());
+    }
+
+    private async Task OnSaveImage()
+    {
+        var image = CityPlanner.GenerateCityImage(SKEncodedImageFormat.Png, 100);
+        if (image.IsSuccess)
+        {
+            await JsInteropService.SaveFileAsync($"{CityPlanner.CityMapState.CityName}.png",
+                MediaTypeNames.Image.Png, image.Value);
+        }
+        else
+        {
+            _ = await DialogService.ShowMessageBox("Error generating image",
+                string.Join("; ", image.Reasons.Select(r => r.Message)), Loc[FogResource.Common_Ok]);
+        }
     }
 
     private static DialogOptions GetDefaultDialogOptions()
