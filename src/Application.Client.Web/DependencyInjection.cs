@@ -61,6 +61,7 @@ public static class DependencyInjection
         services.AddSingleton<ICcProfileTeamViewModelFactory, CcProfileTeamViewModelFactory>();
         services.AddSingleton<ICcProfileViewModelFactory, CcProfileViewModelFactory>();
         services.AddSingleton<IBarracksViewModelFactory, BarracksViewModelFactory>();
+        services.AddSingleton<IMarkdownSecurityService, MarkdownSecurityService>();
 
         services.AddScoped<IAssetUrlProvider, AssetUrlProvider>();
         services.AddScoped<IHohResourceIconUrlProvider, HohResourceIconUrlProvider>();

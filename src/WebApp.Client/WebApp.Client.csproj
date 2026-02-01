@@ -17,28 +17,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AutoMapper" Version="13.0.1" />
-        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
-        <PackageReference Include="Markdig" Version="0.44.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.2" />
-        <PackageReference Include="MudBlazor" Version="8.2.0" />
-        <PackageReference Include="Refit" Version="8.0.0" />
-        <PackageReference Include="Refit.HttpClientFactory" Version="8.0.0" />
-        <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.116.1" />
-        <PackageReference Include="Syncfusion.Blazor.Charts" Version="28.2.7" />
+        <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.5.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0"/>
+        <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.2"/>
+        <PackageReference Include="MudBlazor" Version="8.2.0"/>
+        <PackageReference Include="Refit" Version="8.0.0"/>
+        <PackageReference Include="Refit.HttpClientFactory" Version="8.0.0"/>
+        <PackageReference Include="SkiaSharp.Views.Blazor" Version="3.116.1"/>
+        <PackageReference Include="Syncfusion.Blazor.Charts" Version="28.2.7"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj" />
-        <ProjectReference Include="..\Shared\Shared.csproj" />
+        <ProjectReference Include="..\Application.Client.Web\Application.Client.Web.csproj"/>
+        <ProjectReference Include="..\Shared\Shared.csproj"/>
     </ItemGroup>
     <ItemGroup Condition="Exists('..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj')">
-        <ProjectReference Include="..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj" />
+        <ProjectReference Include="..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj"/>
     </ItemGroup>
     <ItemGroup Condition="!Exists('..\Misc\SyncfusionLicensing\SyncfusionLicensing.csproj')">
-        <ProjectReference Include="..\Misc\SyncfusionLicensingStub\SyncfusionLicensingStub.csproj" />
+        <ProjectReference Include="..\Misc\SyncfusionLicensingStub\SyncfusionLicensingStub.csproj"/>
     </ItemGroup>
 
 </Project>

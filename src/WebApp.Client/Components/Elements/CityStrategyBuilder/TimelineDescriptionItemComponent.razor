@@ -1,9 +1,10 @@
 @using Ingweland.Fog.Application.Client.Web.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Models.Fog.Entities
-@using Markdig
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
+@inject IMarkdownSecurityService MarkdownSecurityService
 <div class="component-root">
     <div>
         <MudTextField @bind-Value="@Data.Title" DebounceInterval="1000"
@@ -61,7 +62,7 @@
         _showPreview = toggled;
         if (_showPreview)
         {
-            _html = Markdown.ToHtml(Data.Description);
+            _html = MarkdownSecurityService.ConvertToSafeHtml(Data.Description);
         }
     }
 

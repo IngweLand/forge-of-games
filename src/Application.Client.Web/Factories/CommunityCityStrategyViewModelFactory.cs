@@ -1,15 +1,17 @@
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
+using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Markdig;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
 
-public class CommunityCityStrategyViewModelFactory(IAssetUrlProvider assetUrlProvider)
+public class CommunityCityStrategyViewModelFactory(
+    IAssetUrlProvider assetUrlProvider,
+    IMarkdownSecurityService markdownSecurityService)
     : ICommunityCityStrategyViewModelFactory
 {
     public CommunityCityStrategyViewModel Create(CommunityCityStrategyDto dto,
@@ -77,7 +79,7 @@ public class CommunityCityStrategyViewModelFactory(IAssetUrlProvider assetUrlPro
         var htmlContent = string.Empty;
         try
         {
-            htmlContent = Markdown.ToHtml(dto.Content);
+            htmlContent = markdownSecurityService.ConvertToSafeHtml(dto.Content);
         }
         catch (Exception e)
         {

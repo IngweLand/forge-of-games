@@ -2,8 +2,8 @@
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
-@using Markdig
 @using Size = MudBlazor.Size
+@inject IMarkdownSecurityService MarkdownSecurityService
 <div class="component-root">
     <MudSelect T="WonderId" @bind-Value="_selectedWonder" Label="Wonder" Required="true" Strict="true"
                Variant="Variant.Outlined">
@@ -112,7 +112,7 @@
         if (result.IsSuccess)
         {
             _output = result.Value;
-            _htmlOutput = Markdown.ToHtml(result.Value);
+            _htmlOutput = MarkdownSecurityService.ConvertToSafeHtml(result.Value);
         }
 
         _converting = false;
