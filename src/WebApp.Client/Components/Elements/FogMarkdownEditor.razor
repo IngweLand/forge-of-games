@@ -1,0 +1,58 @@
+@implements  IAsyncDisposable
+<MarkdownEditor Value="@Value" ValueChanged="@OnValueChangedInternal" HideIcons="@_editorToolbarIconsToHide"
+                SpellChecker="false" NativeSpellChecker="true"
+                Placeholder="@Placeholder"/>
+
+@code {
+    
+    private readonly string[] _editorToolbarIconsToHide =
+        ["preview", "fullscreen", "side-by-side", "guide", "table", "quote", "code"];
+    
+    private Timer? _debounceTimer;
+    
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; } 
+    
+    [Parameter]
+    public EventCallback<string> OnDebounceIntervalElapsed { get; set; }
+
+    [Parameter]
+    public int DebounceInterval { get; set; } = 1000;
+
+    [Parameter]
+    public string Value { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Placeholder { get; set; } = string.Empty;
+
+    
+    private async Task OnValueChangedInternal(string newValue)
+    {
+        if (_debounceTimer != null)
+        {
+            await _debounceTimer.DisposeAsync();
+        }
+
+        await ValueChanged.InvokeAsync(newValue);
+        
+        if (DebounceInterval > 0)
+        {
+            _debounceTimer = new Timer(_ =>
+            {
+                if (ValueChanged.HasDelegate)
+                {
+                    OnDebounceIntervalElapsed.InvokeAsync(newValue);
+                }
+            }, null, DebounceInterval, Timeout.Infinite);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_debounceTimer != null)
+        {
+            await _debounceTimer.DisposeAsync();
+        }
+    }
+
+}

@@ -26,11 +26,8 @@
     }
     else
     {
-        <MudTextField @bind-Value="@Data.Description" Lines="10" AutoGrow
-                      OnDebounceIntervalElapsed="@OnDescriptionChanged"
-                      DebounceInterval="1000" OnBlur="@OnChanged"
-                      Label="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"
-                      Variant="Variant.Outlined"/>
+        <FogMarkdownEditor @bind-Value="@Data.Description" OnDebounceIntervalElapsed="@OnDescriptionChanged"
+                           Placeholder="@Loc[FogResource.CityStrategy_TimelineDescriptionItemEditor_DefaultDescription]"/>
     }
 
 </div>
