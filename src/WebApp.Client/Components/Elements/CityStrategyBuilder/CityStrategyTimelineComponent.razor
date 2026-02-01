@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder
 @using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Models.Fog.Entities
+@using Ingweland.Fog.Models.Fog.Enums
 @using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
 @inject IStringLocalizer<FogResource> Loc
@@ -36,6 +37,29 @@
                             <MudIconButton Icon="@Icons.Material.Outlined.MoveDown" Size="Size.Small"
                                            Color="Color.Tertiary"
                                            OnClick="@(() => OnMoveDown.InvokeAsync(item))"/>
+                        }
+                        @if (item is {Selected: true, Type: CityStrategyTimelineItemType.Layout})
+                        {
+                            <MudMenu Size="Size.Small" Dense="true">
+                                <ActivatorContent>
+                                    <MudIconButton Icon="@Icons.Material.Outlined.IosShare"
+                                                   Size="Size.Small" Color="Color.Tertiary"/>
+                                </ActivatorContent>
+                                <ChildContent>
+                                    <MudMenuItem Icon="material-symbols-outlined/file_export"
+                                                 OnClick="@OnExportToCityPlanner">
+                                        @Loc[FogResource.CityStrategy_Timeline_ShareMenu_ExportToCityPlanner]
+                                    </MudMenuItem>
+                                    <MudMenuItem Icon="@Icons.Material.Outlined.IosShare"
+                                                 OnClick="@(() => OnShareLayout.InvokeAsync((CityStrategyLayoutTimelineItem) item))">
+                                        @Loc[FogResource.CityStrategy_Timeline_ShareMenu_Share]
+                                    </MudMenuItem>
+                                    <MudMenuItem Icon="@Icons.Material.Outlined.Image"
+                                                 OnClick="@OnSaveImage">
+                                        @Loc[FogResource.CityStrategy_Timeline_ShareMenu_SaveImage]
+                                    </MudMenuItem>
+                                </ChildContent>
+                            </MudMenu>
                         }
                         <MudIconButton Icon="@Icons.Material.Outlined.Edit" Size="Size.Small" Color="Color.Tertiary"
                                        OnClick="@(() => OnEdit.InvokeAsync(item))"/>
@@ -102,6 +126,15 @@
 
     [Parameter]
     public EventCallback<CityStrategyTimelineItemBase> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback OnExportToCityPlanner { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyLayoutTimelineItem> OnShareLayout { get; set; }
+
+    [Parameter]
+    public EventCallback OnSaveImage { get; set; }
 
     [Parameter]
     public EventCallback<string> OnSelect { get; set; }

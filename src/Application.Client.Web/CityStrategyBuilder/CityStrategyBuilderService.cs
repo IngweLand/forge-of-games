@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Timers;
 using AutoMapper;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web.Analytics.Interfaces;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
@@ -276,6 +277,33 @@ public class CityStrategyBuilderService(
         return Task.CompletedTask;
     }
 
+    public Task ExportCurrentLayoutItemToCityPlanner()
+    {
+        if (SelectedTimelineItem is not CityStrategyLayoutTimelineItem li)
+        {
+            return Task.CompletedTask;
+        }
+
+        var city = CreateCity(li);
+        return persistenceService.SaveCity(city).AsTask();
+    }
+
+    public HohCity CreateCity(CityStrategyLayoutTimelineItem item)
+    {
+        return hohCityFactory.Create(item.Id, Strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
+            item.UnlockedExpansions, Strategy.CityPlannerVersion, Strategy.WonderId, item.WonderLevel);
+    }
+
+    public Result<byte[]> GenerateCurrentLayoutItemImage()
+    {
+        if (SelectedTimelineItem is not CityStrategyLayoutTimelineItem li)
+        {
+            return Result.Fail("Selected timeline item is not a layout item.");
+        }
+
+        return Result.Try(() => cityPlanner.GenerateCityImage(SKEncodedImageFormat.Png, 100));
+    }
+
     public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly)
     {
         if (_isInitialized)
@@ -400,8 +428,7 @@ public class CityStrategyBuilderService(
 
     private async Task InitializeLayout(CityStrategyLayoutTimelineItem item)
     {
-        var city = hohCityFactory.Create(item.Id, Strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
-            item.UnlockedExpansions, Strategy.CityPlannerVersion, Strategy.WonderId, item.WonderLevel);
+        var city = CreateCity(item);
         await cityPlanner.InitializeAsync(city);
     }
 

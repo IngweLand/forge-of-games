@@ -177,19 +177,7 @@ public class CityGuideMarkdownConverter(
     private Task<Result<byte[]>> GenerateCityImage(HohCity city)
     {
         return Result.Try(() => cityPlanner.InitializeAsync(city))
-            .Bind(() => Result.Try(() =>
-            {
-                using var bitmap = new SKBitmap(cityPlanner.Bounds.Width, cityPlanner.Bounds.Height,
-                    SKColorType.Rgba8888,
-                    SKAlphaType.Premul);
-                using var canvas = new SKCanvas(bitmap);
-                canvas.Clear(SKColors.White);
-                canvas.Translate(cityPlanner.Bounds.X * -1, cityPlanner.Bounds.Y * -1);
-                cityPlanner.RenderScene(canvas);
-                using var image = SKImage.FromBitmap(bitmap);
-                using var data = image.Encode(SKEncodedImageFormat.Jpeg, JPEG_QUALITY);
-                return Task.FromResult(Result.Ok(data.ToArray()));
-            }));
+            .Bind(() => Task.FromResult(cityPlanner.GenerateCityImage(SKEncodedImageFormat.Jpeg, JPEG_QUALITY)));
     }
 
     private static string GetAltText(LinkInline imageInline)

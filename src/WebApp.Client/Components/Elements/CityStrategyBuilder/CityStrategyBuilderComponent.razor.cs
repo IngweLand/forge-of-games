@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Mime;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder;
@@ -42,6 +43,9 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     [Inject]
     public IFogSharingUiService FogSharingUiService { get; set; }
+
+    [Inject]
+    public IJSInteropService JsInteropService { get; set; }
 
     [Inject]
     private IStringLocalizer<FogResource> Loc { get; set; }
@@ -411,5 +415,39 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
     private Task OnMoveTimelineItemUp(CityStrategyTimelineItemBase item)
     {
         return CityStrategyBuilderService.MoveTimelineItemUp(item);
+    }
+
+    private Task OnExportToCityPlanner()
+    {
+        return CityStrategyBuilderService.ExportCurrentLayoutItemToCityPlanner();
+    }
+
+    private async Task OnSaveImage()
+    {
+        var image = CityStrategyBuilderService.GenerateCurrentLayoutItemImage();
+        if (image.IsSuccess)
+        {
+            await JsInteropService.SaveFileAsync($"{CityStrategyBuilderService.SelectedTimelineItem!.Title}.png",
+                MediaTypeNames.Image.Png, image.Value);
+        }
+        else
+        {
+            _ = await DialogService.ShowMessageBox("Error generating image",
+                string.Join("; ", image.Reasons.Select(r => r.Message)), Loc[FogResource.Common_Ok]);
+        }
+    }
+
+    private async Task OnShareLayout(CityStrategyLayoutTimelineItem item)
+    {
+        var data = FogSharingUiService.CreateSharedData(CityStrategyBuilderService.CreateCity(item));
+        var parameters = new DialogParameters<ShareResourceDialog>
+        {
+            {d => d.Data, data},
+            {
+                d => d.BaseUrl,
+                $"{NavigationManager.BaseUri.TrimEnd('/')}{FogUrlBuilder.PageRoutes.GET_SHARED_CITY_TEMPLATE}"
+            },
+        };
+        _ = await DialogService.ShowAsync<ShareResourceDialog>(null, parameters, GetDefaultDialogOptions());
     }
 }

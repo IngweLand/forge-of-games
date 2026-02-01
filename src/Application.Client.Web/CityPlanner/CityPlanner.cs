@@ -1,5 +1,6 @@
 using System.Drawing;
 using AutoMapper;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
@@ -576,6 +577,23 @@ public class CityPlanner(
         CityMapState.SelectedCityMapEntity = null;
         CityMapState.SelectedEntityViewModel = null;
         CityMapState.SelectedCityMapBuildingGroupViewModel = null;
+    }
+
+    public Result<byte[]> GenerateCityImage(SKEncodedImageFormat format, int quality)
+    {
+        return Result.Try(() =>
+        {
+            using var bitmap = new SKBitmap(Bounds.Width, Bounds.Height,
+                SKColorType.Rgba8888,
+                SKAlphaType.Premul);
+            using var canvas = new SKCanvas(bitmap);
+            canvas.Clear(SKColors.White);
+            canvas.Translate(Bounds.X * -1, Bounds.Y * -1);
+            RenderScene(canvas);
+            using var image = SKImage.FromBitmap(bitmap);
+            using var data = image.Encode(format, quality);
+            return Result.Ok(data.ToArray());
+        });
     }
 
     private void FinalizeGroupLevelUpdate(string cityEntityId)

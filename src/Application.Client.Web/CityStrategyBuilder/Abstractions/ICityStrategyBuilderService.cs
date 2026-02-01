@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -33,4 +34,7 @@ public interface ICityStrategyBuilderService : IDisposable
     Task SelectPreviousItem();
     Task MoveTimelineItemDown(CityStrategyTimelineItemBase item);
     Task MoveTimelineItemUp(CityStrategyTimelineItemBase item);
+    Task ExportCurrentLayoutItemToCityPlanner();
+    HohCity CreateCity(CityStrategyLayoutTimelineItem item);
+    Result<byte[]> GenerateCurrentLayoutItemImage();
 }

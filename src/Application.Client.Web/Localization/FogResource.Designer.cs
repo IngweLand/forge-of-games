@@ -1212,6 +1212,33 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Export to city planner.
+        /// </summary>
+        public static string CityStrategy_Timeline_ShareMenu_ExportToCityPlanner {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.ShareMenu.ExportToCityPlanner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image.
+        /// </summary>
+        public static string CityStrategy_Timeline_ShareMenu_SaveImage {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.ShareMenu.SaveImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        public static string CityStrategy_Timeline_ShareMenu_Share {
+            get {
+                return ResourceManager.GetString("CityStrategy.Timeline.ShareMenu.Share", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string CityStrategy_TimelineDescriptionItem_DefaultDescription {

@@ -1,4 +1,5 @@
 using System.Drawing;
+using FluentResults;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Dtos.Hoh.City;
@@ -52,4 +53,5 @@ public interface ICityPlanner
     bool ValidateLayout();
     void ChangeEntityUpgradeState(int entityId, bool isUpgrading);
     void DeselectAll();
+    Result<byte[]> GenerateCityImage(SKEncodedImageFormat format, int quality);
 }
