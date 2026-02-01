@@ -10,6 +10,8 @@
 <div class="fog-container component-root">
     <div class="header-container">
         <div class="section-title">@Loc[FogResource.CityStrategy_Timeline]</div>
+        <MudToggleIconButton Icon="@Icons.Material.Outlined.Reorder" Size="Size.Small" Color="Color.Inherit"
+                             @bind-Toggled="@_canReorder"/>
     </div>
     <div class="main-container">
         <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
@@ -26,6 +28,15 @@
                 </MudListItem>
                 <div class="timeline-actions">
                     <div class="timeline-item-actions">
+                        @if (_canReorder)
+                        {
+                            <MudIconButton Icon="@Icons.Material.Outlined.MoveUp" Size="Size.Small"
+                                           Color="Color.Tertiary"
+                                           OnClick="@(() => OnMoveUp.InvokeAsync(item))"/>
+                            <MudIconButton Icon="@Icons.Material.Outlined.MoveDown" Size="Size.Small"
+                                           Color="Color.Tertiary"
+                                           OnClick="@(() => OnMoveDown.InvokeAsync(item))"/>
+                        }
                         <MudIconButton Icon="@Icons.Material.Outlined.Edit" Size="Size.Small" Color="Color.Tertiary"
                                        OnClick="@(() => OnEdit.InvokeAsync(item))"/>
                         <MudIconButton Icon="@Icons.Material.Outlined.Delete" Size="Size.Small" Color="Color.Tertiary"
@@ -74,6 +85,7 @@
 
 @code {
     private CityStrategyTimelineItemBase? _selectedItem;
+    private bool _canReorder;
 
     [Parameter]
     [EditorRequired]
@@ -81,6 +93,12 @@
 
     [Parameter]
     public EventCallback<CityStrategyTimelineItemBase> OnEdit { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyTimelineItemBase> OnMoveUp { get; set; }
+
+    [Parameter]
+    public EventCallback<CityStrategyTimelineItemBase> OnMoveDown { get; set; }
 
     [Parameter]
     public EventCallback<CityStrategyTimelineItemBase> OnDelete { get; set; }

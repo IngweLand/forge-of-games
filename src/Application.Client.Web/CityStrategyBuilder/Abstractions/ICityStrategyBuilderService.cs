@@ -31,4 +31,6 @@ public interface ICityStrategyBuilderService : IDisposable
     void DeselectAll();
     Task SelectNextItem();
     Task SelectPreviousItem();
+    Task MoveTimelineItemDown(CityStrategyTimelineItemBase item);
+    Task MoveTimelineItemUp(CityStrategyTimelineItemBase item);
 }

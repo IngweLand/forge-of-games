@@ -240,6 +240,42 @@ public class CityStrategyBuilderService(
         return SelectTimelineItem(i > 0 ? TimelineItems[i - 1] : TimelineItems.Last());
     }
 
+    public Task MoveTimelineItemDown(CityStrategyTimelineItemBase item)
+    {
+        if (TimelineItems.Count < 2)
+        {
+            return Task.CompletedTask;
+        }
+
+        var index = TimelineItems.IndexOf(item);
+        if (index == TimelineItems.Count - 1)
+        {
+            return Task.CompletedTask;
+        }
+
+        TimelineItems.Move(index, index + 1);
+        RequestSaving();
+        return Task.CompletedTask;
+    }
+
+    public Task MoveTimelineItemUp(CityStrategyTimelineItemBase item)
+    {
+        if (TimelineItems.Count < 2)
+        {
+            return Task.CompletedTask;
+        }
+
+        var index = TimelineItems.IndexOf(item);
+        if (index == 0)
+        {
+            return Task.CompletedTask;
+        }
+
+        TimelineItems.Move(index, index - 1);
+        RequestSaving();
+        return Task.CompletedTask;
+    }
+
     public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly)
     {
         if (_isInitialized)

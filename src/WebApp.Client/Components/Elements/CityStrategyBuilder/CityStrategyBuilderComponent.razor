@@ -108,7 +108,9 @@
                     <div class="city-planner-side-panel">
                         <CityStrategyTimelineComponent OnCreate="@OnCreateTimelineItem" OnDelete="@OnDeleteTimelineItem"
                                                        OnSelect="@OnSelectTimelineItem" OnEdit="@OnEditTimelineItem"
-                                                       Items="@CityStrategyBuilderService.TimelineItems"/>
+                                                       Items="@CityStrategyBuilderService.TimelineItems"
+                                                       OnMoveDown="@OnMoveTimelineItemDown"
+                                                       OnMoveUp="@OnMoveTimelineItemUp"/>
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics"

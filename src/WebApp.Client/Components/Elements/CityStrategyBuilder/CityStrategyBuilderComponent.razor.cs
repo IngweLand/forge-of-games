@@ -402,4 +402,14 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
             Position = DialogPosition.TopCenter,
         };
     }
+
+    private Task OnMoveTimelineItemDown(CityStrategyTimelineItemBase item)
+    {
+        return CityStrategyBuilderService.MoveTimelineItemDown(item);
+    }
+
+    private Task OnMoveTimelineItemUp(CityStrategyTimelineItemBase item)
+    {
+        return CityStrategyBuilderService.MoveTimelineItemUp(item);
+    }
 }
