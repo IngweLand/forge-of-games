@@ -39,5 +39,6 @@ public static class DependencyInjection
         services.AddScoped<ICityMapEntityStatsFactory, CityMapEntityStatsFactory>();
         services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
         services.AddScoped<IHohCityFactory, HohCityFactory>();
+        services.AddScoped<IProductInfoFactory, ProductInfoFactory>();
     }
 }

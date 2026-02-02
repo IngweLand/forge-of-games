@@ -94,6 +94,13 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohUnitVideosPath, $"{assetId}.mp4");
     }
 
+    public (string Image, string Meta) GetHohIconAtlasUrl()
+    {
+        var fileName = $"hoh-icons-{assetsSettings.Value.HohIconAtlasHash}";
+        return (GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{fileName}.png"),
+            GetAssetUrl(assetsSettings.Value.HohIconsPath, $"{fileName}.json"));
+    }
+
     public string GetHohUnitStatIconUrl(UnitStatType unitStatType)
     {
         return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_unit_stat_{unitStatType}.png");
@@ -115,13 +122,13 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath, $"icon_{iconId}.png");
     }
 
-    public string GetNotoSansFontUrl(string locale)
+    public string GetFontUrl(string font, string locale)
     {
         var filename = locale switch
         {
             "ja-JP" => "NotoSansJP-Regular.ttf",
             "zh-TW" => "NotoSansTC-Regular.ttf",
-            _ => "NotoSans-Regular.ttf",
+            _ => $"{font}.ttf",
         };
         var basePath = assetsSettings.Value.BaseUrl.TrimEnd('/');
         return string.Join("/", new[] {basePath, assetsSettings.Value.Fonts.Trim('/'), filename});
@@ -132,7 +139,7 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         return GetAssetUrl(assetsSettings.Value.HohIconsPath,
             $"icon_equipmentset_{equipmentSet.ToString().ToLowerInvariant()}.png");
     }
-    
+
     public string GetHohEquipmentIconUrl(EquipmentSet equipmentSet, EquipmentSlotType slot)
     {
         return GetAssetUrl(assetsSettings.Value.HohIconsPath,

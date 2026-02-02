@@ -82,112 +82,128 @@ public static class SkiaTextUtils
         }
     }
 
-    public static void DrawText(
-    SKCanvas canvas,
-    string text,
-    SKRect bounds,
-    float padding,
-    SKFont font,
-    SKPaint paint,
-    TextHorizontalAlignment horizontalAlignment = TextHorizontalAlignment.Left,
-    TextVerticalAlignment verticalAlignment = TextVerticalAlignment.Top)
-{
-    if (string.IsNullOrEmpty(text))
+    public static void DrawText(SKCanvas canvas, string text, SKRect bounds, SKFont font, SKPaint paint)
     {
-        return;
-    }
-
-    const string ELLIPSIS = "...";
-
-    // Create working rectangle with padding
-    var workingRect = new SKRect(
-        bounds.Left + padding,
-        bounds.Top + padding,
-        bounds.Right - padding,
-        bounds.Bottom - padding
-    );
-
-    // Get font metrics
-    var fontMetrics = font.Metrics;
-    var ellipsisWidth = font.MeasureText(ELLIPSIS, paint);
-    var textWidth = font.MeasureText(text, paint);
-    
-    // Calculate vertical position based on alignment
-    float baselineY;
-    switch (verticalAlignment)
-    {
-        case TextVerticalAlignment.Top:
-            baselineY = workingRect.Top - fontMetrics.Ascent;
-            break;
-        case TextVerticalAlignment.Center:
-            var textHeight = fontMetrics.Bottom - fontMetrics.Top;
-            var centerY = workingRect.MidY;
-            baselineY = centerY + (textHeight / 2) - fontMetrics.Descent;
-            break;
-        case TextVerticalAlignment.Bottom:
-            baselineY = workingRect.Bottom - fontMetrics.Descent;
-            break;
-        default:
-            baselineY = workingRect.Top - fontMetrics.Ascent;
-            break;
-    }
-
-    // Check if truncation is needed
-    string finalText;
-    float finalX;
-
-    if (textWidth <= workingRect.Width)
-    {
-        // Text fits, use it as is
-        finalText = text;
-    }
-    else
-    {
-        // Binary search for the maximum number of characters that will fit
-        var low = 0;
-        var high = text.Length;
-        var bestFit = 0;
-
-        while (low <= high)
+        if (string.IsNullOrEmpty(text))
         {
-            var mid = (low + high) / 2;
-            var truncated = text.Substring(0, mid);
-            var width = font.MeasureText(truncated, paint) + ellipsisWidth;
-
-            if (width <= workingRect.Width)
-            {
-                bestFit = mid;
-                low = mid + 1;
-            }
-            else
-            {
-                high = mid - 1;
-            }
+            return;
         }
 
-        // Create final truncated text with ellipsis
-        finalText = text.Substring(0, bestFit).TrimEnd() + ELLIPSIS;
+        // Calculate vertical position for center alignment
+        var fontMetrics = font.Metrics;
+        var textHeight = fontMetrics.Bottom - fontMetrics.Top;
+        var centerY = bounds.MidY;
+        var baselineY = centerY + textHeight / 2 - fontMetrics.Descent;
+
+        canvas.DrawText(text, bounds.Left, baselineY, font, paint);
     }
 
-    // Calculate horizontal position based on alignment
-    var finalWidth = font.MeasureText(finalText, paint);
-    switch (horizontalAlignment)
+    public static void DrawText(
+        SKCanvas canvas,
+        string text,
+        SKRect bounds,
+        float padding,
+        SKFont font,
+        SKPaint paint,
+        TextHorizontalAlignment horizontalAlignment = TextHorizontalAlignment.Left,
+        TextVerticalAlignment verticalAlignment = TextVerticalAlignment.Top)
     {
-        case TextHorizontalAlignment.Left:
-            finalX = workingRect.Left;
-            break;
-        case TextHorizontalAlignment.Center:
-            finalX = workingRect.MidX - (finalWidth / 2);
-            break;
-        case TextHorizontalAlignment.Right:
-            finalX = workingRect.Right - finalWidth;
-            break;
-        default:
-            finalX = workingRect.Left;
-            break;
-    }
+        if (string.IsNullOrEmpty(text))
+        {
+            return;
+        }
 
-    // Draw the text
-    canvas.DrawText(finalText, finalX, baselineY, font, paint);
-}
+        const string ELLIPSIS = "...";
+
+        // Create working rectangle with padding
+        var workingRect = new SKRect(
+            bounds.Left + padding,
+            bounds.Top + padding,
+            bounds.Right - padding,
+            bounds.Bottom - padding
+        );
+
+        // Get font metrics
+        var fontMetrics = font.Metrics;
+        var ellipsisWidth = font.MeasureText(ELLIPSIS, paint);
+        var textWidth = font.MeasureText(text, paint);
+
+        // Calculate vertical position based on alignment
+        float baselineY;
+        switch (verticalAlignment)
+        {
+            case TextVerticalAlignment.Top:
+                baselineY = workingRect.Top - fontMetrics.Ascent;
+                break;
+            case TextVerticalAlignment.Center:
+                var textHeight = fontMetrics.Bottom - fontMetrics.Top;
+                var centerY = workingRect.MidY;
+                baselineY = centerY + textHeight / 2 - fontMetrics.Descent;
+                break;
+            case TextVerticalAlignment.Bottom:
+                baselineY = workingRect.Bottom - fontMetrics.Descent;
+                break;
+            default:
+                baselineY = workingRect.Top - fontMetrics.Ascent;
+                break;
+        }
+
+        // Check if truncation is needed
+        string finalText;
+        float finalX;
+
+        if (textWidth <= workingRect.Width)
+        {
+            // Text fits, use it as is
+            finalText = text;
+        }
+        else
+        {
+            // Binary search for the maximum number of characters that will fit
+            var low = 0;
+            var high = text.Length;
+            var bestFit = 0;
+
+            while (low <= high)
+            {
+                var mid = (low + high) / 2;
+                var truncated = text.Substring(0, mid);
+                var width = font.MeasureText(truncated, paint) + ellipsisWidth;
+
+                if (width <= workingRect.Width)
+                {
+                    bestFit = mid;
+                    low = mid + 1;
+                }
+                else
+                {
+                    high = mid - 1;
+                }
+            }
+
+            // Create final truncated text with ellipsis
+            finalText = text.Substring(0, bestFit).TrimEnd() + ELLIPSIS;
+        }
+
+        // Calculate horizontal position based on alignment
+        var finalWidth = font.MeasureText(finalText, paint);
+        switch (horizontalAlignment)
+        {
+            case TextHorizontalAlignment.Left:
+                finalX = workingRect.Left;
+                break;
+            case TextHorizontalAlignment.Center:
+                finalX = workingRect.MidX - finalWidth / 2;
+                break;
+            case TextHorizontalAlignment.Right:
+                finalX = workingRect.Right - finalWidth;
+                break;
+            default:
+                finalX = workingRect.Left;
+                break;
+        }
+
+        // Draw the text
+        canvas.DrawText(finalText, finalX, baselineY, font, paint);
+    }
 }

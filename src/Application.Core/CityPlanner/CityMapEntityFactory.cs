@@ -8,7 +8,9 @@ using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner;
 
-public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFactory) : ICityMapEntityFactory
+public class CityMapEntityFactory(
+    ICityMapEntityStatsFactory mapEntityStatsFactory,
+    IProductInfoFactory productInfoFactory) : ICityMapEntityFactory
 {
     private static int _nextBuildingId = -1;
 
@@ -19,6 +21,14 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
     {
         var overflowRange = FindOverflowRange(building, hohCityMapEntity.Level);
 
+        var productionComponent = building.Components.OfType<ProductionComponent>()
+            .FirstOrDefault(x => x.Id == hohCityMapEntity.SelectedProductId);
+        ProductInfo? productInfo = null;
+        if (productionComponent != null)
+        {
+            productInfo = productInfoFactory.Create(productionComponent);
+        }
+
         var cme = new CityMapEntity(hohCityMapEntity.Id, new Point(hohCityMapEntity.X, hohCityMapEntity.Y),
             new Size(building.Width, building.Length), building.Name, building.Id,
             hohCityMapEntity.Level,
@@ -27,7 +37,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
             hohCityMapEntity.IsLocked, hohCityMapEntity.IsUpgrading)
         {
             IsRotated = hohCityMapEntity.IsRotated,
-            SelectedProductId = hohCityMapEntity.SelectedProductId,
+            SelectedProduct = productInfo,
             CustomizationId = hohCityMapEntity.CustomizationId,
             Stats = mapEntityStatsFactory.Create(building),
             IsUnchanged = hohCityMapEntity.IsUnchanged,
@@ -64,7 +74,7 @@ public class CityMapEntityFactory(ICityMapEntityStatsFactory mapEntityStatsFacto
             Stats = mapEntityStatsFactory.Create(building),
             IsRotated = sourceEntity.IsRotated,
             CustomizationId = sourceEntity.CustomizationId,
-            SelectedProductId = sourceEntity.SelectedProductId,
+            SelectedProduct = sourceEntity.SelectedProduct != null ? sourceEntity.SelectedProduct with { } : null,
         };
         _nextBuildingId--;
         return cme;

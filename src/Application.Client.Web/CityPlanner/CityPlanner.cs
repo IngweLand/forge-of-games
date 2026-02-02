@@ -47,6 +47,7 @@ public class CityPlanner(
     ISnapshotsComparisonViewModelFactory snapshotsComparisonViewModelFactory,
     IStringLocalizer<FogResource> localizer,
     ICityPlannerDataService cityPlannerDataService,
+    IProductInfoFactory productInfoFactory,
     IMapper mapper) : ICityPlanner
 {
     private MapArea _mapArea = null!;
@@ -440,9 +441,9 @@ public class CityPlanner(
         }
 
         var hasChanged = false;
-        if (CityMapState.SelectedCityMapEntity.SelectedProductId == productId)
+        if (CityMapState.SelectedCityMapEntity.SelectedProduct?.Id == productId)
         {
-            CityMapState.SelectedCityMapEntity.SelectedProductId = null;
+            CityMapState.SelectedCityMapEntity.SelectedProduct = null;
             hasChanged = true;
         }
         else
@@ -452,7 +453,7 @@ public class CityPlanner(
                 building.Components.OfType<ProductionComponent>().FirstOrDefault(pc => pc.Id == productId);
             if (productionComponent != null)
             {
-                CityMapState.SelectedCityMapEntity.SelectedProductId = productId;
+                CityMapState.SelectedCityMapEntity.SelectedProduct = productInfoFactory.Create(productionComponent);
                 hasChanged = true;
             }
         }
@@ -642,13 +643,13 @@ public class CityPlanner(
                 kvp.Value.Group == currentBuilding.Group && kvp.Value.Level == level).Value;
             var newStats = cityMapEntityStatsFactory.Create(newBuilding);
             newEntity = currentEntity.CloneWithLevel(newBuilding.Id, level, newStats);
-            if (currentEntity.SelectedProductId != null)
+            if (currentEntity.SelectedProduct != null)
             {
                 var lastProduct = newEntity.FirstOrDefaultStat<ProductionProvider>()?.ProductionComponents
                     .LastOrDefault();
                 if (lastProduct != null)
                 {
-                    newEntity.SelectedProductId = lastProduct.Id;
+                    newEntity.SelectedProduct = productInfoFactory.Create(lastProduct);
                 }
             }
         }

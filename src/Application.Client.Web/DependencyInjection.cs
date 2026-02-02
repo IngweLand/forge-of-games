@@ -162,10 +162,12 @@ public static class DependencyInjection
         services.AddScoped<ICommunityCityStrategyViewModelFactory, CommunityCityStrategyViewModelFactory>();
         services.AddScoped<ICommunityCityStrategyUIService, CommunityCityStrategyUiService>();
         services.AddScoped<ICityGuideMarkdownConverter, CityGuideMarkdownConverter>();
+        services.AddScoped<IBuildingRenderer, BuildingRenderer>();
 
         services.AddScoped<CityPlannerSettings>();
 
-        services.AddHttpClient<IBuildingRenderer, BuildingRenderer>();
+        services.AddHttpClient<IProductionRenderer, ProductionRenderer>();
+        services.AddHttpClient<ITypefaceProvider, TypefaceProvider>();
 
         services.AddTransient<IResearchCalculatorService, ResearchCalculatorService>();
         services.AddTransient<ICityStrategyBuilderService, CityStrategyBuilderService>();

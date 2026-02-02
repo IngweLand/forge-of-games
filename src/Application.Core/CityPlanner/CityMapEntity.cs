@@ -133,7 +133,7 @@ public class CityMapEntity
 
     public int OverflowRange { get; }
 
-    public string? SelectedProductId { get; set; }
+    public ProductInfo? SelectedProduct { get; set; }
 
     public Size Size { get; }
 
@@ -152,7 +152,7 @@ public class CityMapEntity
             _isRotated = IsRotated,
             _isSelected = IsSelected,
             _location = Location,
-            SelectedProductId = SelectedProductId,
+            SelectedProduct = SelectedProduct,
             CustomizationId = CustomizationId,
             Stats = stats,
             ExcludeFromStats = ExcludeFromStats,

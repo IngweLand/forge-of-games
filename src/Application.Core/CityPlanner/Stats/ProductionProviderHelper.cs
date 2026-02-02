@@ -8,7 +8,7 @@ public static class ProductionProviderHelper
     [
         BuildingType.Farm, BuildingType.Workshop, BuildingType.ExtractionPoint, BuildingType.Beehive,
         BuildingType.Quarry, BuildingType.FishingPier, BuildingType.GoldMine, BuildingType.PapyrusField,
-        BuildingType.RiceFarm, BuildingType.CamelFarm,
+        BuildingType.RiceFarm, BuildingType.CamelFarm, BuildingType.Aviary,
     ];
 
     public static bool CanSelectProduct(BuildingType buildingType, BuildingGroup buildingGroup)
@@ -21,7 +21,7 @@ public static class ProductionProviderHelper
             {
                 BuildingGroup.CollectableSchoolV2 => true,
                 BuildingGroup.CollectableArchitectsStudioV2 => true,
-                _ => false
+                _ => false,
             };
         }
 

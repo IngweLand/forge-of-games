@@ -76,6 +76,7 @@ public class DefaultCityMapEntityStyle : ICityMapEntityStyle
     };
 
     public int NameDefaultTextSize { get; } = 16;
+    public int ProductionTimeDefaultTextSize { get; } = 16;
 
     public SKPaint NegativeSelectionFillPaint { get; } = new()
     {

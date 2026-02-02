@@ -22,7 +22,8 @@ public interface IAssetUrlProvider
     string GetHohStatAttributeIconUrl(StatAttribute statAttribute);
     string GetHohUnitVideoUrl(string assetId, string extension);
     string GetHohUnitVideoUrl(string assetId);
-    string GetNotoSansFontUrl(string locale);
+    (string Image, string Meta) GetHohIconAtlasUrl();
+    string GetFontUrl(string font, string locale);
     string GetImageUrl(string filename);
     string GetHohEquipmentSetIconUrl(EquipmentSet equipmentSet);
     string GetHohRelicIconUrl(string relicId);

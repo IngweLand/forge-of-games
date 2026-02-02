@@ -35,10 +35,10 @@ public static class CityStatsProcessor
                 var canSelectProduct = ProductionProviderHelper.CanSelectProduct(cme.BuildingType, cme.BuildingGroup);
                 if (canSelectProduct)
                 {
-                    if (cme.SelectedProductId != null)
+                    if (cme.SelectedProduct?.Id != null)
                     {
                         stats.RequiredWorkersCount += productionProvider.ProductionStatsItems
-                            .FirstOrDefault(psi => psi.ProductionId == cme.SelectedProductId)?.WorkerCount ?? 0;
+                            .FirstOrDefault(psi => psi.ProductionId == cme.SelectedProduct.Id)?.WorkerCount ?? 0;
                     }
                 }
                 else
@@ -50,7 +50,7 @@ public static class CityStatsProcessor
                 foreach (var productionStatsItem in productionProvider.ProductionStatsItems)
                 {
                     if (!canSelectProduct ||
-                        (canSelectProduct && productionStatsItem.ProductionId == cme.SelectedProductId))
+                        (canSelectProduct && productionStatsItem.ProductionId == cme.SelectedProduct?.Id))
                     {
                         foreach (var productStatsItem in productionStatsItem.Products)
                         {

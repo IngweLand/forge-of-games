@@ -19,6 +19,7 @@ public interface ICityMapEntityStyle
     SKPaint OverflowStrokePaint { get; }
     SKPaint PositiveSelectionFillPaint { get; }
     SKPaint PositiveSelectionStrokePaint { get; }
+    int ProductionTimeDefaultTextSize { get; }
     SKPaint StateIconPaint { get; }
     SKPaint UnchangedBuildingPaint { get; }
     SKPaint UnchangedNameTextPaint { get; }

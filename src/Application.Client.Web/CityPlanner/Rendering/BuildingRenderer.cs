@@ -1,8 +1,6 @@
-using System.Drawing;
-using System.Globalization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Core.CityPlanner;
+using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 using SkiaSharp;
@@ -11,31 +9,33 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 
 public class BuildingRenderer : IBuildingRenderer
 {
-    private readonly IAssetUrlProvider _assetUrlProvider;
+    private const int BUFF_PADDING = 2;
     private readonly ICityMapEntityStyle _cityMapEntityStyle;
     private readonly IMapGrid _grid;
-    private readonly HttpClient _httpClient;
     private readonly IconRenderer _iconRenderer = new();
     private readonly Task _initializationTask;
     private readonly ILogger<BuildingRenderer> _logger;
     private readonly IMapTransformationComponent _mapTransformationComponent;
+    private readonly IProductionRenderer _productionRenderer;
     private readonly CityPlannerSettings _settings;
+    private readonly ITypefaceProvider _typefaceProvider;
+    private int _buffSize;
     private SKFont _currentNameFont;
     private SKFont _defaultNameFont;
     private SKPaint _fillPaint;
-    private SKTypeface _notoSansTypeface;
     private SKPaint _strokePaint;
 
     public BuildingRenderer(IMapGrid grid, IMapTransformationComponent mapTransformationComponent,
-        ICityMapEntityStyle cityMapEntityStyle, CityPlannerSettings settings, IAssetUrlProvider assetUrlProvider,
-        HttpClient httpClient, ILogger<BuildingRenderer> logger)
+        ICityMapEntityStyle cityMapEntityStyle, CityPlannerSettings settings,
+        IProductionRenderer productionRenderer, ITypefaceProvider typefaceProvider,
+        ILogger<BuildingRenderer> logger)
     {
         _grid = grid;
         _mapTransformationComponent = mapTransformationComponent;
         _cityMapEntityStyle = cityMapEntityStyle;
         _settings = settings;
-        _assetUrlProvider = assetUrlProvider;
-        _httpClient = httpClient;
+        _productionRenderer = productionRenderer;
+        _typefaceProvider = typefaceProvider;
         _logger = logger;
         _fillPaint = _cityMapEntityStyle.DefaultFillPaint;
         _strokePaint = _cityMapEntityStyle.DefaultStrokePaint;
@@ -57,10 +57,12 @@ public class BuildingRenderer : IBuildingRenderer
         var nameTextSize = (int) MathF.Min(
             MathF.Round(_cityMapEntityStyle.NameDefaultTextSize / _mapTransformationComponent.Scale),
             _cityMapEntityStyle.NameDefaultTextSize);
-        if (_currentNameFont.Size != nameTextSize)
+        if ((int) _currentNameFont.Size != nameTextSize)
         {
-            _currentNameFont = new SKFont(_notoSansTypeface, nameTextSize);
+            _currentNameFont = new SKFont(_typefaceProvider.MainTypeface, nameTextSize);
         }
+
+        _productionRenderer.UpdateFontSize();
 
         var selectedEntities = new List<CityMapEntity>();
         foreach (var entity in entities)
@@ -136,11 +138,9 @@ public class BuildingRenderer : IBuildingRenderer
         // buff
         if (entity is {HappinessFraction: >= 0, Bounds.Height: > 1})
         {
-            var buffEntityRect = new Rectangle(entity.Bounds.Right - 1, entity.Bounds.Bottom - 1, 1, 1);
-            var buffRect = _grid.GridToScreen(buffEntityRect);
-            buffRect.Offset(2, 2);
-            buffRect.Inflate(-4, -4);
-            DrawBuffLevel(entity.HappinessFraction, buffRect.ToSKRect(), canvas, entity.IsUnchanged);
+            var buffRect = new SKRect(rect.Right - _buffSize - BUFF_PADDING, rect.Bottom - _buffSize - BUFF_PADDING,
+                rect.Right - BUFF_PADDING, rect.Bottom - BUFF_PADDING);
+            DrawBuffLevel(entity.HappinessFraction, buffRect, canvas, entity.IsUnchanged);
         }
 
         // customization
@@ -157,25 +157,25 @@ public class BuildingRenderer : IBuildingRenderer
         {
             _iconRenderer.DrawLockIcon(canvas, rect, IconRenderer.Icon.Upgrade, _cityMapEntityStyle.StateIconPaint);
         }
+        else if (ProductionProviderHelper.CanSelectProduct(entity.BuildingType, entity.BuildingGroup) &&
+                 entity.SelectedProduct is {Resources.Count: > 0})
+        {
+            _productionRenderer.Draw(canvas, rect, entity.SelectedProduct.Resources.First().Value,
+                entity.BuildingType == BuildingType.Workshop ? entity.SelectedProduct.ProductionTime : null,
+                entity.IsUnchanged);
+        }
     }
 
     private async Task InitializeInternalAsync()
     {
-        var url = _assetUrlProvider.GetNotoSansFontUrl(CultureInfo.CurrentCulture.Name);
-        try
-        {
-            await using var fontStream = await _httpClient.GetStreamAsync(url);
-            _notoSansTypeface = SKTypeface.FromStream(fontStream);
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(e, "Error setting up Noto Sans font for {target}. Falling back to the default.",
-                nameof(BuildingRenderer));
-            _notoSansTypeface = SKTypeface.CreateDefault();
-        }
+        _buffSize = (int) (_grid.GridSize * 0.5);
 
-        _defaultNameFont = new SKFont(_notoSansTypeface, _cityMapEntityStyle.NameDefaultTextSize);
+        await _typefaceProvider.InitializeAsync();
+
+        _defaultNameFont = new SKFont(_typefaceProvider.MainTypeface, _cityMapEntityStyle.NameDefaultTextSize);
         _currentNameFont = _defaultNameFont;
+
+        await _productionRenderer.InitializeAsync();
     }
 
     private void ThrowIfNotInitialized()

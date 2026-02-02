@@ -114,7 +114,7 @@ public class CityMapEntityViewModelFactory(
                     foreach (var product in productionStatsItem.Products)
                     {
                         if (!canSelectProduct || (canSelectProduct &&
-                                entity.SelectedProductId == productionStatsItem.ProductionId))
+                                entity.SelectedProduct?.Id == productionStatsItem.ProductionId))
                         {
                             if (productionStatsItem.WorkerCount > 0)
                             {
@@ -154,14 +154,14 @@ public class CityMapEntityViewModelFactory(
                             IconUrl = resourceIconUrlProvider.GetIconUrl(product.ResourceId),
                             OneHourProduction = product.OneHourProduction.BuffedValue.ToString("N0"),
                             OneDayProduction = product.OneDayProduction.BuffedValue.ToString("N0"),
-                            IsSelected = productionStatsItem.ProductionId == entity.SelectedProductId,
+                            IsSelected = productionStatsItem.ProductionId == entity.SelectedProduct?.Id,
                         });
                     }
 
                     foreach (var costItem in productionStatsItem.Cost)
                     {
                         if (!canSelectProduct || (canSelectProduct &&
-                                entity.SelectedProductId == productionStatsItem.ProductionId))
+                                entity.SelectedProduct?.Id == productionStatsItem.ProductionId))
                         {
                             productionCost.Add(new TimedProductionValuesViewModel
                             {
