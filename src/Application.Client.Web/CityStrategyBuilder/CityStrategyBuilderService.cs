@@ -317,25 +317,33 @@ public class CityStrategyBuilderService(
 
         TimelineItems = new ObservableCollection<CityStrategyTimelineItemBase>(Strategy.Timeline);
 
-        if (_isReadOnly)
+        CityStrategyLayoutTimelineItem? previousLayoutItem = null;
+        foreach (var item in TimelineItems)
         {
-            CityStrategyLayoutTimelineItem? previousLayoutItem = null;
-            foreach (var item in TimelineItems)
+            if (item is not CityStrategyLayoutTimelineItem li)
             {
-                if (item is not CityStrategyLayoutTimelineItem li)
-                {
-                    continue;
-                }
-
-                if (previousLayoutItem == null)
-                {
-                    previousLayoutItem = li;
-                    continue;
-                }
-
-                CreateLayoutDiff(previousLayoutItem, li);
-                previousLayoutItem = li;
+                continue;
             }
+
+            if (!_isReadOnly)
+            {
+                // reset because we may use the same instance of a Strategy when moving from viewer to builder
+                foreach (var entity in li.Entities)
+                {
+                    entity.IsUnchanged = false;
+                }
+
+                continue;
+            }
+
+            if (previousLayoutItem == null)
+            {
+                previousLayoutItem = li;
+                continue;
+            }
+
+            CreateLayoutDiff(previousLayoutItem, li);
+            previousLayoutItem = li;
         }
 
         await SelectTimelineItem(await GetInitialTimelineItemAsync(), false);
