@@ -9,8 +9,10 @@ public class MapTransformationComponent : IMapTransformationComponent
     private const float MAX_SCALE = 3f;
     private const float MIN_SCALE = 0.2f;
     private const float ZOOM_STEP = 0.001f;
-    public float Scale { get; private set; } = 1f;
+    private const int PADDING = 5;
+
     private SKPoint _location = SKPoint.Empty;
+    public float Scale { get; private set; } = 1f;
 
     public PointF GetTransformedCoordinates(float x, float y)
     {
@@ -28,7 +30,7 @@ public class MapTransformationComponent : IMapTransformationComponent
     public bool CommitScale(float scaleOriginX, float scaleOriginY, float deltaY)
     {
         var scale = 1 + deltaY * -ZOOM_STEP;
-        var newScale = Scale * (float) scale;
+        var newScale = Scale * scale;
         //TODO: check if _scale has changed
         if (newScale < MIN_SCALE)
         {
@@ -57,7 +59,7 @@ public class MapTransformationComponent : IMapTransformationComponent
     public void FitToScreen(Rectangle targetBounds, Size containerSize, bool fitHeight = false)
     {
         var targetRect = targetBounds;
-        targetRect.Inflate(10, 10);
+        targetRect.Inflate(PADDING, PADDING);
 
         if (fitHeight)
         {
@@ -69,7 +71,7 @@ public class MapTransformationComponent : IMapTransformationComponent
             var scaleY = (float) containerSize.Height / targetRect.Height;
             Scale = Math.Min(scaleX, scaleY);
         }
-        
+
         var x = (containerSize.Width - targetRect.Width * Scale) / 2f - targetRect.Left * Scale;
         var y = (containerSize.Height - targetRect.Height * Scale) / 2f - targetRect.Top * Scale;
         _location = new SKPoint(x, y);
