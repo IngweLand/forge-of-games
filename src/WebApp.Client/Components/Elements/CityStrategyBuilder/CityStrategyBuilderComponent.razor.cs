@@ -328,11 +328,6 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
         }
     }
 
-    private void NavigateToDashboard()
-    {
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH, false, true);
-    }
-
     private async Task OnCreateTimelineItem(CityStrategyTimelineItemCreateRequest request)
     {
         if (request.Type == CityStrategyNewTimelineItemType.LayoutImport)

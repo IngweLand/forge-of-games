@@ -1,11 +1,10 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_BUILDER_APP_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder
-@using Ingweland.Fog.WebApp.Client.Components.Layout
-@attribute [Route(FogUrlBuilder.PageRoutes.CITY_STRATEGY_BUILDER_APP_PATH)]
-@layout BlankLayout
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @if (_strategy != null)
 {
     <CityStrategyBuilderComponent Strategy="@_strategy"/>

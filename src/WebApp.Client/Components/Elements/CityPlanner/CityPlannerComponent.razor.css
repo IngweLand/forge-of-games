@@ -14,17 +14,6 @@
     color: var(--fog-icon-on-dark-color);
 }
 
-.toolbar-divider {
-    height: 50%;
-    border-right: 1px solid var(--fog-border-color);
-}
-
-.loading-indicator {
-    grid-column: 1 / -1; /* Spans all columns */
-    grid-row: 1 / -1; /* Spans all rows */
-    place-self: center;
-}
-
 .left-container {
     grid-column: 1;
     grid-row: 2;
@@ -36,14 +25,6 @@
     grid-column: 2;
     grid-row: 2;
     position: relative;
-    min-height: 0;
-    min-width: 0;
-}
-
-::deep .right-container {
-    grid-column: 3;
-    grid-row: 2;
-    width: 300px;
     min-height: 0;
     min-width: 0;
 }
@@ -60,6 +41,14 @@
 
 ::deep .main-container canvas:focus {
     outline: none;
+}
+
+::deep .right-container {
+    grid-column: 3;
+    grid-row: 2;
+    width: 300px;
+    min-height: 0;
+    min-width: 0;
 }
 
 .right-content-container {
