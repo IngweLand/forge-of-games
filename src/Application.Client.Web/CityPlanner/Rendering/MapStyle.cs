@@ -5,7 +5,7 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 
 public class MapStyle
 {
-    public SKColor BackgroundColor { get; } = SKColor.Parse("#f0f0f0");
+    public SKColor BackgroundColor { get; } = SKColor.Parse("#333333");
 
     public IDictionary<ExpansionType, SKPaint> ExpansionPaints { get; } = new Dictionary<ExpansionType, SKPaint>
     {
