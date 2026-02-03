@@ -50,6 +50,7 @@
     --fog-selected-target-tech-color: #F4E8C8;
     --fog-selected-open-tech-color: #ACD2C7;
     --fog-open-tech-color: #CFFCEF;
+    --fog-toolbar-background-color: #808080;
 
     /*values*/
     --fog-border-radius: 0.5rem;
@@ -57,10 +58,11 @@
     --main-content-padding: 8px;
     --main-content-padding-576: 12px;
     --fog-font-size: 0.875rem;
-    --full-page-height: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4));
-    --full-page-height-576: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4));
-    --full-page-height-with-padding: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4) - var(--main-content-padding) * 2);
-    --full-page-height-with-padding-576: calc(100dvh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4) - var(--main-content-padding-576) * 2);
+    --mud-appbar-height-dense: calc(var(--mud-appbar-height) - var(--mud-appbar-height) / 4);
+    --full-page-height: calc(100dvh - var(--mud-appbar-height-dense));
+    --full-page-height-576: calc(100dvh - var(--mud-appbar-height-dense));
+    --full-page-height-with-padding: calc(100dvh - var(--mud-appbar-height-dense) - var(--main-content-padding) * 2);
+    --full-page-height-with-padding-576: calc(100dvh - var(--mud-appbar-height-dense) - var(--main-content-padding-576) * 2);
 }
 
 html {
@@ -256,79 +258,8 @@ input[type="radio"]:checked {
 
 /*city planner start*/
 
-.city-planner-appbar {
-    grid-column: 1 / -1; /* Spans full width (both columns) */
-}
-
-.city-planner-appbar-brand {
-    color: var(--fog-text-on-dark-color);
-    font-size: 1rem;
-    padding-left: 12px;
-    padding-right: 24px;
-    text-decoration: none;
-}
-
-.city-planner-toolbar {
-    gap: 6px;
-}
-
-.city-planner-buildings-selector-container {
-    grid-column: 1 / 2; /* First column */
-}
-
-.city-planner-map-container {
-    grid-column: 2 / 3; /* Second column */
-    position: relative;
-}
-
-.city-planner-properties-container {
-    grid-column: 3 / -1; /* Third column to end */
-    width: 300px;
-}
-
-.city-planner-map-container canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    touch-action: none;
-    outline: none;
-}
-
-.city-planner-map-container canvas:focus {
-    outline: none;
-}
-
-.city-planner-side-panel {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - (var(--mud-appbar-height) - var(--mud-appbar-height) / 4));
-    overflow-y: auto;
-    gap: 8px;
-    align-items: stretch;
-    width: 100%;
-    padding: 8px;
-}
-
-.buildings-selector-tabs {
+.city-planner-tabs-header {
     background-color: #36536C;
-}
-
-.building-selector-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--fog-surface-color);
-    border-radius: var(--fog-border-radius);
-    border: 1px solid var(--fog-border-color);
-    color: var(--fog-text-color);
-    cursor: pointer;
-    padding: 12px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 12px;
-    width: 100%;
 }
 
 /*city planner end*/

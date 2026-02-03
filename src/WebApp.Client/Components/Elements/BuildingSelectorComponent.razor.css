@@ -1,3 +1,24 @@
-hr {
-    margin: 0;
+.content-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 8px;
+    width: 130px;
+    padding: 6px;
+}
+
+.building-selector-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fog-surface-color);
+    border-radius: var(--fog-border-radius);
+    border: 1px solid var(--fog-border-color);
+    color: var(--fog-text-color);
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+    width: 100%;
 }

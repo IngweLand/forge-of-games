@@ -1,9 +1,8 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH)]
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
-@using Ingweland.Fog.WebApp.Client.Components.Layout
-@attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_APP_PATH)]
-@layout BlankLayout
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @if (_isInitialized)
 {
     <CityPlannerComponent/>
@@ -21,6 +20,7 @@
         if (OperatingSystem.IsBrowser())
         {
             await JsInteropService.ResetScrollPositionAsync();
+            await Task.Delay(30);
 
             _isInitialized = true;
         }

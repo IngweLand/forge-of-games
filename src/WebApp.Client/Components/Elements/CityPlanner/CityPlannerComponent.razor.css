@@ -2,23 +2,78 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr;
-    height: 100%;
-    width: 100%;
+    height: var(--full-page-height);
+    margin: calc(var(--main-content-padding) * -1);
+}
+
+::deep .city-planner-toolbar {
+    gap: 6px;
+    background-color: var(--fog-toolbar-background-color);
+    grid-row: 1;
+    grid-column: 1/-1;
+    color: var(--fog-icon-on-dark-color);
 }
 
 .toolbar-divider {
-    height: 1.5rem;
-    width: 1px;
-    background-color: var(--fog-border-color);
+    height: 50%;
+    border-right: 1px solid var(--fog-border-color);
 }
 
 .loading-indicator {
     grid-column: 1 / -1; /* Spans all columns */
-    grid-row: 1 / -1;    /* Spans all rows */
+    grid-row: 1 / -1; /* Spans all rows */
     place-self: center;
 }
 
-sup {
-    font-size: 10px;
-    padding-left: 4px;
+.left-container {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 0;
+    min-width: 0;
+}
+
+.main-container {
+    grid-column: 2;
+    grid-row: 2;
+    position: relative;
+    min-height: 0;
+    min-width: 0;
+}
+
+::deep .right-container {
+    grid-column: 3;
+    grid-row: 2;
+    width: 300px;
+    min-height: 0;
+    min-width: 0;
+}
+
+::deep .main-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    outline: none;
+}
+
+::deep .main-container canvas:focus {
+    outline: none;
+}
+
+.right-content-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 12px;
+    width: 100%;
+    padding: 6px;
+}
+
+@media (min-width: 576px) {
+    .content-wrapper {
+        height: var(--full-page-height-576);
+        margin: calc(var(--main-content-padding-576) * -1);
+    }
 }

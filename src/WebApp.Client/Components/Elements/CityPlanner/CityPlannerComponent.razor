@@ -1,11 +1,8 @@
-@using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using SkiaSharp.Views.Blazor
 @using Position = MudBlazor.Position
 
-<MudPopoverProvider/>
-<MudDialogProvider/>
 <div class="content-wrapper">
     @if (!_isInitialized)
     {
@@ -13,82 +10,64 @@
     }
     else
     {
-        <MudAppBar ToolBarClass="city-planner-toolbar user-select-none" Class="city-planner-appbar" Gutters="false"
-                   Dense="true"
-                   Color="Color.Primary" Fixed="false">
+        <MudToolBar Dense="true" Class="city-planner-toolbar user-select-none" Gutters="false">
             <MudToggleIconButton Icon="material-symbols-outlined/left_panel_open"
-                                 Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
+                                 Color="Color.Inherit" Toggled="@_leftPanelIsVisible"
                                  ToggledIcon="material-symbols-outlined/left_panel_close"
                                  ToggledColor="Color.Inherit"
                                  ToggledChanged="ToggleLeftPanel"/>
-            <span>Hoh City Planner</span>
+            <div style="width: 32px; visibility: hidden"></div>
+            <MudIconButton Icon="@Icons.Material.Outlined.Save" OnClick="@Save" Color="Color.Inherit"/>
+            <div class="toolbar-divider"></div>
             <div>
-                <MudIconButton Icon="@Icons.Material.Outlined.Dashboard" OnClick="NavigateToDashboard"
-                               Class="fog-icon-light"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut" Color="Color.Inherit"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn" Color="Color.Inherit"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="@FitToScreen" Color="Color.Inherit"/>
             </div>
             <div class="toolbar-divider"></div>
             <div>
-                <MudIconButton Icon="@Icons.Material.Outlined.Save" OnClick="Save" Class="fog-icon-light"/>
-            </div>
-            <div class="toolbar-divider"></div>
-            <div>
-                <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="ZoomOut" Class="fog-icon-light"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="ZoomIn" Class="fog-icon-light"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen" OnClick="FitToScreen" Class="fog-icon-light"/>
-            </div>
-            @* <div class="toolbar-divider"></div> *@
-            @* <div> *@
-            @*     <MudIconButton Icon="@Icons.Material.Outlined.Undo" OnClick="Undo" Class="fog-icon-light" *@
-            @*                    Disabled="@(!CommandManager.CanUndo)"/> *@
-            @*     <MudIconButton Icon="@Icons.Material.Outlined.Redo" OnClick="Redo" Class="fog-icon-light" *@
-            @*                    Disabled="@(!CommandManager.CanRedo)"/> *@
-            @* </div> *@
-            <div class="toolbar-divider"></div>
-            <div>
-                <MudIconButton Icon="@Icons.Material.Outlined.Cached" OnClick="Rotate" Class="fog-icon-light"
+                <MudIconButton Icon="@Icons.Material.Outlined.Cached" OnClick="@Rotate" Color="Color.Inherit"
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="Delete" Class="fog-icon-light"
+                <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="@Delete" Color="Color.Inherit"
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity is not {IsMovable: true})"/>
-                <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="SelectGroup" Class="fog-icon-light"
+                <MudIconButton Icon="@Icons.Material.Outlined.SelectAll" OnClick="@SelectGroup" Color="Color.Inherit"
                                Disabled="@(CityPlanner.CityMapState.SelectedCityMapEntity == null)"/>
             </div>
             <div class="toolbar-divider"></div>
-            <MudToggleIconButton Icon="material-symbols-outlined/shelves" ToggledColor="Color.Error"
-                                 @bind-Toggled="_inventoryIsActive"
-                                 Color="Color.Primary" Variant="Variant.Filled" DropShadow="false"
-                                 ToggledVariant="Variant.Filled"/>
-            <MudIconButton
-                Icon="@(CityPlanner.CityMapState.SelectedCityMapEntities != null ? "material-symbols-outlined/stat_minus_2" : "material-symbols-outlined/stat_minus_1")"
-                Class="fog-icon-light"
-                OnClick="MoveToInventory"
-                Disabled="@(!_inventoryIsActive || (CityPlanner.CityMapState.SelectedCityMapEntity == null && CityPlanner.CityMapState.SelectedCityMapEntities == null))"/>
-            <MudIconButton Icon="material-symbols-outlined/stat_minus_3" Class="fog-icon-light"
-                           OnClick="MoveAllToInventory"
-                           Disabled="@(!_inventoryIsActive)"/>
-            <MudIconButton Icon="@Icons.Material.Outlined.DeleteSweep" Class="fog-icon-light"
-                           OnClick="PurgeInventory"
-                           Disabled="@(!_inventoryIsActive || CityPlanner.CityMapState.InventoryBuildings.Count == 0)"/>
+            <div>
+                <MudToggleIconButton Icon="material-symbols-outlined/shelves" ToggledColor="Color.Error"
+                                     @bind-Toggled="_inventoryIsActive" Color="Color.Inherit"/>
+                <MudIconButton
+                    Icon="@(CityPlanner.CityMapState.SelectedCityMapEntities != null ? "material-symbols-outlined/stat_minus_2" : "material-symbols-outlined/stat_minus_1")"
+                    Color="Color.Inherit"
+                    OnClick="@MoveToInventory"
+                    Disabled="@(!_inventoryIsActive || (CityPlanner.CityMapState.SelectedCityMapEntity == null && CityPlanner.CityMapState.SelectedCityMapEntities == null))"/>
+                <MudIconButton Icon="material-symbols-outlined/stat_minus_3" Color="Color.Inherit"
+                               OnClick="@MoveAllToInventory"
+                               Disabled="@(!_inventoryIsActive)"/>
+                <MudIconButton Icon="@Icons.Material.Outlined.DeleteSweep" Color="Color.Inherit"
+                               OnClick="@PurgeInventory"
+                               Disabled="@(!_inventoryIsActive || CityPlanner.CityMapState.InventoryBuildings.Count == 0)"/>
+            </div>
             <div class="toolbar-divider"></div>
-            <MudIconButton Icon="@Icons.Material.Outlined.Image" OnClick="@OnSaveImage" Class="fog-icon-light"/>
+            <MudIconButton Icon="@Icons.Material.Outlined.Image" OnClick="@OnSaveImage" Color="Color.Inherit"/>
             <MudSpacer/>
-            @* <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit"/> *@
-            @* <div class="toolbar-divider"></div> *@
-            <MudIconButton Icon="@Icons.Material.Outlined.Help" Color="Color.Inherit" 
-                           Href="@FogUrlBuilder.PageRoutes.HELP_CITY_PLANNER_APP_PATH" Target="_blank"/>
             <MudToggleIconButton Icon="material-symbols-outlined/right_panel_open"
                                  Color="Color.Inherit" Toggled="@_rightPanelIsVisible"
                                  ToggledIcon="material-symbols-outlined/right_panel_close"
                                  ToggledColor="Color.Inherit"
                                  ToggledChanged="ToggleRightPanel"/>
-        </MudAppBar>
+        </MudToolBar>
         @if (_leftPanelIsVisible)
         {
-            <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked" IsInventory="@_inventoryIsActive"
-                                       Items="@CityPlanner?.CityMapState.BuildingSelectorItems"/>
+            <div class="left-container">
+                <BuildingSelectorComponent ItemClicked="BuildingSelectorOnItemClicked" IsInventory="@_inventoryIsActive"
+                                           Items="@CityPlanner?.CityMapState.BuildingSelectorItems"/>
+            </div>
         }
 
-        <div class="city-planner-map-container">
-            <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" @onkeyup="OnKeyUp" tabindex="0"
+        <div class="main-container">
+            <SKGLView OnPaintSurface="@SkCanvasView_OnPaintSurface" @onkeyup="OnKeyUp" tabindex="0"
                       @ref="_skCanvasView" @onpointerup="InteractiveCanvasOnPointerUp"
                       @onpointerdown="InteractiveCanvasOnPointerDown" @onwheel="InteractiveCanvasOnWheel"
                       @onpointermove="InteractiveCanvasOnPointerMove"
@@ -96,10 +75,10 @@
         </div>
         @if (_rightPanelIsVisible)
         {
-            <MudTabs Class="city-planner-properties-container" TabHeaderClass="buildings-selector-tabs"
+            <MudTabs Class="right-container" TabHeaderClass="city-planner-tabs-header"
                      SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
-                    <div class="city-planner-side-panel">
+                    <div class="right-content-container">
                         @if (CityPlanner!.CityMapState.SelectedCityMapEntity != null)
                         {
                             <CityMapEntityPropertiesComponent
@@ -118,27 +97,27 @@
 
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.ViewList">
-                    <div class="city-planner-side-panel">
-                        <CityPlannerSnapshotsComponent OnCreate="CreateSnapshot" OnDelete="DeleteSnapshot"
-                                                       OnLoad="LoadSnapshot" OnCompare="CompareSnapshots"
+                    <div class="right-content-container">
+                        <CityPlannerSnapshotsComponent OnCreate="@CreateSnapshot" OnDelete="@DeleteSnapshot"
+                                                       OnLoad="@LoadSnapshot" OnCompare="@CompareSnapshots"
                                                        Snapshots="@CityPlanner!.CityMapState.Snapshots"/>
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="fas fa-calculator">
-                    <div class="city-planner-side-panel">
+                    <div class="right-content-container">
                         <CityPlannerBuildingCostCalculator
                             CityId="@CityPlanner!.CityMapState.InGameCityId"
                             BuildingGroup="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.BuildingGroup ?? BuildingGroup.Undefined)"
                             FromLevel="@(CityPlanner!.CityMapState.SelectedCityMapEntity?.Level ?? 0)"
                             BuildingName="@CityPlanner!.CityMapState.SelectedCityMapEntity?.Name"/>
-                        @if(CityPlanner.CityMapState.CityWonder != null)
+                        @if (CityPlanner.CityMapState.CityWonder != null)
                         {
                             <CityPlannerWonderCostCalculator FromLevel="@CityPlanner.CityMapState.CityWonderLevel"/>
                         }
                     </div>
                 </MudTabPanel>
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Settings">
-                    <div class="city-planner-side-panel">
+                    <div class="right-content-container">
                         <CityPlannerSettingsComponent/>
                         <CityPlannerActionsComponent OnShare="@ShareCity"/>
                     </div>

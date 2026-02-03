@@ -5,12 +5,12 @@
 
 @if (Items != null)
 {
-    <MudTabs Class="city-planner-buildings-selector-container" TabHeaderClass="buildings-selector-tabs"
+    <MudTabs TabHeaderClass="city-planner-tabs-header" Style="height: 100%"
              SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Left" Outlined="false">
         @foreach (var buildingType in Items)
         {
-            <MudTabPanel Class="buildings-selector-tabs" Icon="@buildingType.Icon">
-                <div class="city-planner-side-panel user-select-none" style="width: 140px">
+            <MudTabPanel Class="city-planner-tabs-header" Icon="@buildingType.Icon">
+                <div class="content-container user-select-none">
                     @foreach (var buildingGroup in buildingType.BuildingGroups)
                     {
                         @if (!IsInventory)
@@ -36,6 +36,7 @@
     .mud-tab-slider {
         width: 6px !important;
     }
+
     .mud-badge.mud-badge-top.right.mud-badge-overlap {
         inset: auto auto calc(100% - 12px) calc(100% - 18px) !important;
     }
