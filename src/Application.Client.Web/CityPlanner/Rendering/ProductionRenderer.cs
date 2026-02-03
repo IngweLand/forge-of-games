@@ -13,7 +13,7 @@ public class ProductionRenderer : IProductionRenderer
     private const int ICON_SIZE = 24;
     private const int GAP = 4;
     private const float GRAYSCALE_BRIGHTNESS = 0.2f;
-    
+
     private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly ICityMapEntityStyle _cityMapEntityStyle;
     private readonly HttpClient _httpClient;
@@ -67,8 +67,6 @@ public class ProductionRenderer : IProductionRenderer
         {
             _currentNameFont = new SKFont(_typefaceProvider.MainTypeface, textSize);
         }
-
-        Console.Out.WriteLine(textSize);
     }
 
     public void Draw(SKCanvas canvas, SKRect bounds, string resourceId, int? productionTime, bool isUnchanged)
