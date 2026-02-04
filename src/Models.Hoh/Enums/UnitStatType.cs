@@ -56,6 +56,8 @@ public enum UnitStatType
     SquadSpacingX,
     SquadSpacingY,
     StatusEffectDurationAmp,
+    StormcastDamageAmp,
+    StormcastDamageTakenAmp,
     StunDurationAmp,
     StunDurationTakenAmp,
 }

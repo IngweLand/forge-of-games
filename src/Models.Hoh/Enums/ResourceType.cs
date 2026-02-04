@@ -12,6 +12,7 @@ public enum ResourceType
     Blueprint,
     BuildingPiece,
     Ember,
+    EventCityHighscore,
     EvolutionToken,
     Gacha,
     GachaDust,
