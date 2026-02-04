@@ -1,9 +1,12 @@
 @using System.Collections.ObjectModel
+@using Ingweland.Fog.Application.Client.Web.Localization
 @using Ingweland.Fog.Models.Fog.Entities
+@using Microsoft.Extensions.Localization
 @using Size = MudBlazor.Size
 @inherits CityStrategyTimelineComponentBase
+@inject  IStringLocalizer<FogResource> Loc
 <div class="component-root">
-    <div class="name-container">@StrategyName</div>
+    <div class="name-container">@Loc[FogResource.CityStrategy_Timeline]</div>
     <div class="main-container">
         <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem">
             @for (var i = 0; i < Items.Count; i++)
@@ -31,10 +34,6 @@
     [Parameter]
     [EditorRequired]
     public required ObservableCollection<CityStrategyTimelineItemBase> Items { get; set; }
-
-    [Parameter]
-    [EditorRequired]
-    public required string StrategyName { get; set; }
 
     [Parameter]
     public EventCallback<string> OnSelect { get; set; }

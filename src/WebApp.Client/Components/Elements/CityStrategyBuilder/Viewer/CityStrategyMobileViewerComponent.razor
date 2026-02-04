@@ -15,7 +15,7 @@
         @if (_currentState == ViewerState.Timeline)
         {
             <div class="main-container">
-                <CityStrategyTimelineViewerComponent OnSelect="@OnSelectTimelineItem" StrategyName="@Strategy.Name"
+                <CityStrategyTimelineViewerComponent OnSelect="@OnSelectTimelineItem"
                                                      Items="@CityStrategyBuilderService.TimelineItems"/>
             </div>
         }
