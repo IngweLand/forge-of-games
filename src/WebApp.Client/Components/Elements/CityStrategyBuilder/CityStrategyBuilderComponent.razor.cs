@@ -207,7 +207,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
         }
     }
 
-    private void OnKeyUp(KeyboardEventArgs args)
+    private Task OnKeyUp(KeyboardEventArgs args)
     {
         switch (args.Code)
         {
@@ -230,6 +230,8 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
                 break;
             }
         }
+
+        return Task.CompletedTask;
     }
 
     private void Rotate()

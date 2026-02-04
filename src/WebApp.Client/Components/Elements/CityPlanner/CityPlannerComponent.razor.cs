@@ -238,7 +238,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         }
     }
 
-    private async Task OnKeyUp(KeyboardEventArgs args)
+    private Task OnKeyUp(KeyboardEventArgs args)
     {
         // if (args.CtrlKey)
         // {
@@ -281,6 +281,8 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
                 break;
             }
         }
+
+        return Task.CompletedTask;
     }
 
     private void Redo()

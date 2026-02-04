@@ -2,7 +2,7 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using Position = MudBlazor.Position
 
-<div class="content-wrapper">
+<div class="content-wrapper" @onkeyup="OnKeyUp" tabindex="0">
     @if (!_isInitialized)
     {
         <div class="spinner-grow gid-loading-indicator" role="status"></div>
@@ -66,15 +66,17 @@
         }
 
         <div class="main-container">
-            <SKGLViewComponent OnPaintSurface="SkCanvasView_OnPaintSurface"
-                               @ref="_skComponent" OnPointerUp="@InteractiveCanvasOnPointerUp"
+            <SKGLViewComponent @ref="_skComponent"
+                               OnPaintSurface="SkCanvasView_OnPaintSurface"
+                               OnPointerUp="@InteractiveCanvasOnPointerUp"
                                OnPointerDown="@InteractiveCanvasOnPointerDown"
                                OnWheel="@InteractiveCanvasOnWheel"
                                OnPointerMove="@InteractiveCanvasOnPointerMove"/>
         </div>
         @if (_rightPanelIsVisible)
         {
-            <MudTabs Class="right-container" TabHeaderClass="city-planner-tabs-header"
+            <MudTabs @onkeydown:stopPropagation="true" @onkeyup:stopPropagation="true" Class="right-container"
+                     TabHeaderClass="city-planner-tabs-header"
                      SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.Analytics">
                     <div class="right-content-container">

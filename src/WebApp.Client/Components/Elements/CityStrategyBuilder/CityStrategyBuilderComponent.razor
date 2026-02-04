@@ -4,7 +4,7 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
 @using Position = MudBlazor.Position
 
-<div class="content-wrapper">
+<div class="content-wrapper" @onkeyup="OnKeyUp" tabindex="0">
     @if (!_isInitialized)
     {
         <div class="spinner-grow gid-loading-indicator" role="status"></div>
@@ -59,35 +59,40 @@
         <div class="main-container">
             @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
             {
-                <SKGLViewComponent OnPaintSurface="SkCanvasView_OnPaintSurface"
-                                   @ref="_skComponent" OnPointerUp="@InteractiveCanvasOnPointerUp"
+                <SKGLViewComponent @ref="_skComponent"
+                                   OnPaintSurface="SkCanvasView_OnPaintSurface"
+                                   OnPointerUp="@InteractiveCanvasOnPointerUp"
                                    OnPointerDown="@InteractiveCanvasOnPointerDown"
                                    OnWheel="@InteractiveCanvasOnWheel"
                                    OnPointerMove="@InteractiveCanvasOnPointerMove"/>
             }
             else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyDescriptionTimelineItem di)
             {
-                <div class="main-container-non-layout-item-container">
+                <div class="main-container-non-layout-item-container" @onkeydown:stopPropagation="true"
+                     @onkeyup:stopPropagation="true">
                     <DescriptionTimelineItemComponent Data="@di" OnChanged="@RequestSaving"/>
                 </div>
             }
             else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyResearchTimelineItem ri)
             {
-                <div class="main-container-non-layout-item-container">
+                <div class="main-container-non-layout-item-container" @onkeydown:stopPropagation="true"
+                     @onkeyup:stopPropagation="true">
                     <ResearchTimelineItemComponent Data="@ri" CityId="@CityStrategyBuilderService.Strategy.InGameCityId"
                                                    OnChanged="@RequestSaving"/>
                 </div>
             }
             else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyIntroTimelineItem ii)
             {
-                <div class="main-container-non-layout-item-container">
+                <div class="main-container-non-layout-item-container" @onkeydown:stopPropagation="true"
+                     @onkeyup:stopPropagation="true">
                     <IntroductionTimelineItemComponent Data="@ii" OnChanged="@RequestSaving"/>
                 </div>
             }
         </div>
         @if (_rightPanelIsVisible)
         {
-            <MudTabs Class="right-container" TabHeaderClass="city-planner-tabs-header"
+            <MudTabs Class="right-container" TabHeaderClass="city-planner-tabs-header" @onkeydown:stopPropagation="true"
+                     @onkeyup:stopPropagation="true"
                      SliderColor="Color.Error" MinimumTabWidth="28px" Position="Position.Right" Outlined="false">
                 <MudTabPanel Class="fog-icon-light" Icon="@Icons.Material.Outlined.ViewTimeline">
                     <div class="right-content-container">

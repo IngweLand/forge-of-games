@@ -10,12 +10,12 @@
     else
     {
         <div class="main-container">
-            <SKGLViewComponent OnPaintSurface="SkCanvasView_OnPaintSurface"
-                               @ref="SkCanvasViewComponent" OnPointerUp="@InteractiveCanvasOnPointerUp"
+            <SKGLViewComponent @ref="SkCanvasViewComponent"
+                               OnPaintSurface="SkCanvasView_OnPaintSurface"
+                               OnPointerUp="@InteractiveCanvasOnPointerUp"
                                OnPointerDown="@InteractiveCanvasOnPointerDown"
                                OnWheel="@InteractiveCanvasOnWheel"
-                               OnPointerMove="@InteractiveCanvasOnPointerMove"
-            />
+                               OnPointerMove="@InteractiveCanvasOnPointerMove"/>
         </div>
 
         <MudTabs Class="right-container" TabHeaderClass="city-planner-tabs-header"

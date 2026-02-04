@@ -1,8 +1,8 @@
 @using SkiaSharp.Views.Blazor
 @implements IHandleEvent
-<SKGLView OnPaintSurface="@OnPaintSurface" tabindex="0" @ref="SkCanvasView"
-          @onpointerup="@(x => OnPointerUp?.Invoke(x) ?? Task.CompletedTask)"
-          @onpointerdown="@(x => OnPointerDown?.Invoke(x))"
+<SKGLView OnPaintSurface="@OnPaintSurface" @ref="SkCanvasView"
+          @onpointerup="OnPointerUp"
+          @onpointerdown="OnPointerDown"
           @onwheel="@(x => OnWheel?.Invoke(x))"
           @onpointermove="@(x => OnPointerMove?.Invoke(x))"
           IgnorePixelScaling="true"/>
@@ -15,10 +15,10 @@
     public SKGLView? SkCanvasView { get; private set; }
 
     [Parameter]
-    public Func<PointerEventArgs, Task>? OnPointerUp { get; set; }
+    public EventCallback<PointerEventArgs> OnPointerUp { get; set; }
 
     [Parameter]
-    public Action<PointerEventArgs>? OnPointerDown { get; set; }
+    public EventCallback<PointerEventArgs> OnPointerDown { get; set; }
 
     [Parameter]
     public Action<WheelEventArgs>? OnWheel { get; set; }
@@ -26,6 +26,12 @@
     [Parameter]
     public Action<PointerEventArgs>? OnPointerMove { get; set; }
 
+    /// <summary>
+    /// This prevents native events from triggering the render cycle (Seems to be fixed in .NET10).
+    /// However, this only works for the events we are handling inside this component.
+    /// This is why we create Action/Func parameters for the events we want to handle here
+    /// while using EventCallback for the rest.
+    /// </summary>
     Task IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, object? arg)
     {
         return callback.InvokeAsync(arg);
