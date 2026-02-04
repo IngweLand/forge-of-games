@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Microsoft.AspNetCore.Components.Routing;
 
 namespace Ingweland.Fog.WebApp.Client.Models;

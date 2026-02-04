@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ingweland.Fog.Application.Client.Web.Localization {
+namespace Ingweland.Fog.Application.Client.Core.Localization {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace Ingweland.Fog.Application.Client.Web.Localization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ingweland.Fog.Application.Client.Web.Localization.FogResource", typeof(FogResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ingweland.Fog.Application.Client.Core.Localization.FogResource", typeof(FogResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

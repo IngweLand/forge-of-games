@@ -1,5 +1,5 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.Extensions.Localization;
 

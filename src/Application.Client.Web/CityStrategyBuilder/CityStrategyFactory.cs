@@ -1,5 +1,5 @@
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;

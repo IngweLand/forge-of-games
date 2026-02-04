@@ -1,7 +1,6 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Providers;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;

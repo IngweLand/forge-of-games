@@ -1,12 +1,12 @@
 using System.Drawing;
 using AutoMapper;
 using FluentResults;
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Snapshots.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;

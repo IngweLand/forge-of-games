@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncfusionLicensing", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HohCoreDataParserSdk", "src\Misc\HohCoreDataParserSdk\HohCoreDataParserSdk.csproj", "{99E7EC34-5AF8-453E-9F0D-1DE903DFBC5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Client.Core", "src\Application.Client.Core\Application.Client.Core.csproj", "{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{99E7EC34-5AF8-453E-9F0D-1DE903DFBC5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99E7EC34-5AF8-453E-9F0D-1DE903DFBC5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99E7EC34-5AF8-453E-9F0D-1DE903DFBC5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,5 +148,6 @@ Global
 		{39DCEBD2-9FF9-495D-8304-DFEB9E6C8B50} = {185F4E0D-8359-46BC-B433-61C460C78755}
 		{80DC58F4-8E31-4BC5-982E-782A563018FA} = {185F4E0D-8359-46BC-B433-61C460C78755}
 		{99E7EC34-5AF8-453E-9F0D-1DE903DFBC5D} = {185F4E0D-8359-46BC-B433-61C460C78755}
+		{4D79C3E9-C0C5-4217-A80F-E4B5BF54A55C} = {DA391560-5A96-4DA1-81AD-11F0C496202C}
 	EndGlobalSection
 EndGlobal

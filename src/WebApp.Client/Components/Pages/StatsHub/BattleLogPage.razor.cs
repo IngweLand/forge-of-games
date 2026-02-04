@@ -1,7 +1,7 @@
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Analytics;
 using Ingweland.Fog.Application.Client.Web.Constants;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Core.Helpers;

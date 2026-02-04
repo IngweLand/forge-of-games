@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;

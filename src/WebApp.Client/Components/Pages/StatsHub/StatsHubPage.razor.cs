@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Core.Localization;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 

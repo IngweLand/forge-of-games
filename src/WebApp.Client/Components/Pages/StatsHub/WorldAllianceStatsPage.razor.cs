@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Client.Web.Localization;
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Models.Fog;
 using Microsoft.AspNetCore.Components.Web.Virtualization;

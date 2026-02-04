@@ -25,22 +25,11 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Application.Client.Core\Application.Client.Core.csproj" />
         <ProjectReference Include="..\Application.Core\Application.Core.csproj"/>
         <ProjectReference Include="..\Dtos.Hoh\Dtos.Hoh.csproj"/>
         <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj"/>
         <ProjectReference Include="..\Shared\Shared.csproj"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Update="Localization\FogResource.resx">
-            <Generator>PublicResXFileCodeGenerator</Generator>
-            <LastGenOutput>FogResource.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-        <Compile Update="Localization\FogResource.Designer.cs">
-            <DesignTime>True</DesignTime>
-            <AutoGen>True</AutoGen>
-            <DependentUpon>FogResource.resx</DependentUpon>
-        </Compile>
     </ItemGroup>
 
 </Project>

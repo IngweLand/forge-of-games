@@ -1,5 +1,5 @@
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;

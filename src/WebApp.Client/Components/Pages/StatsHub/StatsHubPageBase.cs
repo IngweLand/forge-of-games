@@ -1,4 +1,3 @@
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.WebApp.Client.Components.Layout;
 using Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions;

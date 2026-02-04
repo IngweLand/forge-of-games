@@ -1,6 +1,6 @@
 using System.Net.Http.Json;
+using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Localization;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
