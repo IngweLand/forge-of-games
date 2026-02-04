@@ -2,6 +2,7 @@
 @using Ingweland.Fog.Application.Core.CityPlanner
 @using Ingweland.Fog.Application.Core.CityPlanner.Abstractions
 @using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Application.Core.Extensions
 @using Ingweland.Fog.Dtos.Hoh.City
 @using Ingweland.Fog.Dtos.Hoh.CityPlanner
 @using Ingweland.Fog.Models.Hoh.Enums
@@ -95,10 +96,15 @@
             return;
         }
 
+        var cityId = _selectedCity.CityId;
+        if (cityId != CityId.Capital)
+        {
+            cityId = _selectedWonder == null ? _selectedCity.CityId : _selectedWonder.Id.ToCity();
+        }
         MudDialog.Close(DialogResult.Ok(new NewCityRequest
         {
             Name = _inputText,
-            CityId = _selectedCity.CityId,
+            CityId = cityId,
             WonderId = _selectedWonder?.Id ?? WonderId.Undefined,
         }));
     }
