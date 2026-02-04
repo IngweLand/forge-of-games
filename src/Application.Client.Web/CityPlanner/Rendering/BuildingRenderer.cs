@@ -161,7 +161,9 @@ public class BuildingRenderer : IBuildingRenderer
                  entity.SelectedProduct is {Resources.Count: > 0})
         {
             _productionRenderer.Draw(canvas, rect, entity.SelectedProduct.Resources.First().Value,
-                entity.BuildingType == BuildingType.Workshop ? entity.SelectedProduct.ProductionTime : null,
+                ProductionProviderHelper.CanRenderProductionLabel(entity.BuildingType)
+                    ? entity.SelectedProduct.ProductionTime
+                    : null,
                 entity.IsUnchanged);
         }
     }

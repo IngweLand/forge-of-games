@@ -27,4 +27,14 @@ public static class ProductionProviderHelper
 
         return canSelect;
     }
+
+    public static bool CanRenderProductionLabel(BuildingType buildingType)
+    {
+        return buildingType switch
+        {
+            BuildingType.Workshop => true,
+            BuildingType.CamelFarm => true,
+            _ => false,
+        };
+    }
 }
