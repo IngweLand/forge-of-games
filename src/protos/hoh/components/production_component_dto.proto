@@ -11,7 +11,7 @@ message ProductionComponentDTO {
   DurationDto production_time = 5;
   double factor = 8;
   // WorkerBehaviourDTO
-  google.protobuf.Any packed_worker_behaviour = 9;
+  repeated google.protobuf.Any packed_behaviours = 9;
   ProductionCostDto cost = 10;
   BuildingProductDto product = 11;
 }

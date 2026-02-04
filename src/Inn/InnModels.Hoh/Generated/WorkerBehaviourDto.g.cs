@@ -24,13 +24,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static WorkerBehaviourDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chp3b3JrZXJfYmVoYXZpb3VyX2R0by5wcm90byIqChJXb3JrZXJCZWhhdmlv",
-            "dXJEVE8SFAoMd29ya2VyX2NvdW50GAEgASgFQh+qAhxJbmd3ZWxhbmQuRm9n",
-            "Lklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Chp3b3JrZXJfYmVoYXZpb3VyX2R0by5wcm90bxoRd29ya2VyX3R5cGUucHJv",
+            "dG8iPwoSV29ya2VyQmVoYXZpb3VyRFRPEg4KBmFtb3VudBgBIAEoBRIZCgR0",
+            "eXBlGAIgASgOMgsuV29ya2VyVHlwZUIfqgIcSW5nd2VsYW5kLkZvZy5Jbm4u",
+            "TW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.WorkerTypeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.WorkerBehaviourDTO), global::Ingweland.Fog.Inn.Models.Hoh.WorkerBehaviourDTO.Parser, new[]{ "WorkerCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.WorkerBehaviourDTO), global::Ingweland.Fog.Inn.Models.Hoh.WorkerBehaviourDTO.Parser, new[]{ "Amount", "Type" }, null, null, null, null)
           }));
     }
     #endregion
@@ -72,7 +73,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public WorkerBehaviourDTO(WorkerBehaviourDTO other) : this() {
-      workerCount_ = other.workerCount_;
+      amount_ = other.amount_;
+      type_ = other.type_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -82,15 +84,27 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       return new WorkerBehaviourDTO(this);
     }
 
-    /// <summary>Field number for the "worker_count" field.</summary>
-    public const int WorkerCountFieldNumber = 1;
-    private int workerCount_;
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 1;
+    private int amount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int WorkerCount {
-      get { return workerCount_; }
+    public int Amount {
+      get { return amount_; }
       set {
-        workerCount_ = value;
+        amount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private global::Ingweland.Fog.Inn.Models.Hoh.WorkerType type_ = global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Ingweland.Fog.Inn.Models.Hoh.WorkerType Type {
+      get { return type_; }
+      set {
+        type_ = value;
       }
     }
 
@@ -109,7 +123,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (WorkerCount != other.WorkerCount) return false;
+      if (Amount != other.Amount) return false;
+      if (Type != other.Type) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -117,7 +132,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (WorkerCount != 0) hash ^= WorkerCount.GetHashCode();
+      if (Amount != 0) hash ^= Amount.GetHashCode();
+      if (Type != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) hash ^= Type.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -136,9 +152,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (WorkerCount != 0) {
+      if (Amount != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(WorkerCount);
+        output.WriteInt32(Amount);
+      }
+      if (Type != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -150,9 +170,13 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (WorkerCount != 0) {
+      if (Amount != 0) {
         output.WriteRawTag(8);
-        output.WriteInt32(WorkerCount);
+        output.WriteInt32(Amount);
+      }
+      if (Type != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Type);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -164,8 +188,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (WorkerCount != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(WorkerCount);
+      if (Amount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Amount);
+      }
+      if (Type != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -179,8 +206,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other == null) {
         return;
       }
-      if (other.WorkerCount != 0) {
-        WorkerCount = other.WorkerCount;
+      if (other.Amount != 0) {
+        Amount = other.Amount;
+      }
+      if (other.Type != global::Ingweland.Fog.Inn.Models.Hoh.WorkerType.Undefined) {
+        Type = other.Type;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -198,7 +228,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            WorkerCount = input.ReadInt32();
+            Amount = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Type = (global::Ingweland.Fog.Inn.Models.Hoh.WorkerType) input.ReadEnum();
             break;
           }
         }
@@ -217,7 +251,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            WorkerCount = input.ReadInt32();
+            Amount = input.ReadInt32();
+            break;
+          }
+          case 16: {
+            Type = (global::Ingweland.Fog.Inn.Models.Hoh.WorkerType) input.ReadEnum();
             break;
           }
         }

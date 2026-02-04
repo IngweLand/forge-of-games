@@ -116,12 +116,13 @@ public class CityMapEntityViewModelFactory(
                         if (!canSelectProduct || (canSelectProduct &&
                                 entity.SelectedProduct?.Id == productionStatsItem.ProductionId))
                         {
-                            if (productionStatsItem.WorkerCount > 0)
+                            if (productionStatsItem.WorkerBehaviour != null)
                             {
                                 generalItems.Add(new IconLabelItemViewModel
                                 {
-                                    Label = productionStatsItem.WorkerCount.ToString(),
-                                    IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First()),
+                                    Label = productionStatsItem.WorkerBehaviour.Amount.ToString(),
+                                    IconUrl = workerIconUrlProvider.GetIcon(building.CityIds.First(),
+                                        productionStatsItem.WorkerBehaviour.Type),
                                 });
                             }
 

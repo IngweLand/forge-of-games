@@ -22,13 +22,15 @@ public class CityPlannerCityPropertiesViewModelFactory(
         IEnumerable<BuildingDto> buildings, WonderDto? wonder = null, int wonderLevel = 0)
     {
         var wonderBonus = new List<IconLabelItemViewModel>();
-        if (stats.WonderWorkersBonus > 0)
+        if (stats.WonderWorkersBonus != null)
         {
-            wonderBonus.Add(new IconLabelItemViewModel
-            {
-                Label = stats.WonderWorkersBonus.ToString(),
-                IconUrl = workerIconUrlProvider.GetIcon(cityId),
-            });
+            wonderBonus.AddRange(stats.WonderWorkersBonus
+                .OrderBy(kvp => kvp.Key)
+                .Select(kvp => new IconLabelItemViewModel
+                {
+                    Label = kvp.Value.ToString(),
+                    IconUrl = workerIconUrlProvider.GetIcon(cityId, kvp.Key),
+                }));
         }
 
         if (stats.WonderResourcesBonus != null)
@@ -57,16 +59,30 @@ public class CityPlannerCityPropertiesViewModelFactory(
             }
         }
 
+        var workforce = stats.ProvidedWorkers.ToDictionary(worker => worker.Key,
+            worker => (Provided: worker.Value, Required: stats.RequiredWorkers.GetValueOrDefault(worker.Key, 0)));
+
+        foreach (var kvp in stats.RequiredWorkers)
+        {
+            if (!workforce.ContainsKey(kvp.Key))
+            {
+                workforce.Add(kvp.Key, (0, kvp.Value));
+            }
+        }
+
         return new CityPlannerCityPropertiesViewModel
         {
             CityId = cityId,
             Name = name,
             Age = age,
-            Workforce = new IconLabelItemViewModel
-            {
-                Label = $"{stats.ProvidedWorkersCount - stats.RequiredWorkersCount}/{stats.ProvidedWorkersCount}",
-                IconUrl = workerIconUrlProvider.GetIcon(cityId),
-            },
+            Workforce = workforce
+                .OrderBy(x => x.Key)
+                .Select(x => new IconLabelItemViewModel
+                {
+                    Label = $"{x.Value.Provided - x.Value.Required}/{x.Value.Provided}",
+                    IconUrl = workerIconUrlProvider.GetIcon(cityId, x.Key),
+                })
+                .ToList(),
             Happiness = happinessStatsViewModelFactory.Create(stats),
             Production = productionStatsViewModelFactory.Create(stats.Products, stats.ProductionCosts),
             Areas = areaStatsViewModelFactory.Create(stats, buildings),

@@ -9,7 +9,7 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
     {
         var stats = new List<ICityMapEntityStats>();
 
-        stats.Add(new AreaProvider()
+        stats.Add(new AreaProvider
         {
             BuildingType = building.Type,
             BuildingGroup = building.Group,
@@ -18,7 +18,7 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
 
         if (building.BuffDetails != null)
         {
-            stats.Add(new HappinessConsumer()
+            stats.Add(new HappinessConsumer
             {
                 BuffDetails = building.BuffDetails,
             });
@@ -27,7 +27,7 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
         var productionComponents = building.Components.OfType<ProductionComponent>().ToList();
         if (productionComponents.Count > 0)
         {
-            stats.Add(new ProductionProvider()
+            stats.Add(new ProductionProvider
             {
                 ProductionComponents = productionComponents,
             });
@@ -35,7 +35,7 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
 
         if (building.CultureComponent != null)
         {
-            stats.Add(new HappinessProvider()
+            stats.Add(new HappinessProvider
             {
                 CultureComponent = building.CultureComponent,
                 Range = building.CultureComponent.Range ?? 0,
@@ -46,9 +46,9 @@ public class CityMapEntityStatsFactory : ICityMapEntityStatsFactory
         var grantWorkerComponents = building.Components.OfType<GrantWorkerComponent>().ToList();
         if (grantWorkerComponents.Count > 0)
         {
-            stats.Add(new WorkerProvider()
+            stats.Add(new WorkerProvider
             {
-                WorkerCount = grantWorkerComponents.Sum(src => src.GetWorkerCount()),
+                Workers = grantWorkerComponents.ToDictionary(x => x.WorkerType, x => x.GetWorkerCount()),
             });
         }
 

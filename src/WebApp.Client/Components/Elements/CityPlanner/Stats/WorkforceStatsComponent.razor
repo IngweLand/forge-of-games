@@ -6,7 +6,10 @@
     <StatsSectionHeader Label="@Loc[FogResource.CityPlanner_Workforce]" OnClick="OnHeaderClick"/>
     <MudCollapse Expanded="_expanded">
         <div class="general-items-container">
-            <GeneralProductionItemComponent Item="@Data"/>
+            @foreach (var item in Workforce)
+            {
+                <GeneralProductionItemComponent Item="@item"/>
+            }
         </div>
     </MudCollapse>
 </div>
@@ -14,7 +17,7 @@
 @code {
 
     [Parameter]
-    public required IconLabelItemViewModel Data { get; set; }
+    public required IReadOnlyCollection<IconLabelItemViewModel> Workforce { get; set; }
 
     bool _expanded = true;
 

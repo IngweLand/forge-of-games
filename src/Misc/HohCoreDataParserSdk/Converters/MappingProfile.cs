@@ -117,6 +117,7 @@ public class MappingProfile : Profile
             .ConvertUsing((src, _, _) =>
                 src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key), x => x.Value)
             );
+        CreateMap<WorkerBehaviourDTO, WorkerBehaviour>();
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()
@@ -129,11 +130,6 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Id,
                 opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)))
             .ForMember(dest => dest.ProductionTime, opt => opt.MapFrom(uc => uc.ProductionTime.Seconds))
-            .ForMember(dest => dest.WorkerCount, opt =>
-            {
-                opt.PreCondition(uc => uc.WorkerBehaviour != null);
-                opt.MapFrom(uc => uc.WorkerBehaviour!.WorkerCount);
-            })
             .ForMember(dest => dest.Cost, opt => opt.MapFrom(uc => uc.Cost.Resources))
             .ForMember(dest => dest.Products, opt => opt.MapFrom(uc => uc.Product.PackedRewards));
         CreateMap<ConstructionComponentDTO, ConstructionComponent>()

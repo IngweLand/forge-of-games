@@ -1,3 +1,5 @@
+using Ingweland.Fog.Models.Hoh.Entities.City;
+
 namespace Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
 
 public class ProductionStatsItem
@@ -7,5 +9,5 @@ public class ProductionStatsItem
 
     public required string ProductionId { get; init; }
     public required IReadOnlyCollection<ProductStatsItem> Products { get; init; } = new List<ProductStatsItem>();
-    public int WorkerCount { get; init; }
+    public WorkerBehaviour? WorkerBehaviour { get; init; }
 }

@@ -16,5 +16,5 @@ public class CityPlannerCityPropertiesViewModel
     public int WonderLevel { get; set; }
     public string? WonderNextLevelRangeLabel { get; set; }
 
-    public required IconLabelItemViewModel Workforce { get; set; }
+    public required IReadOnlyCollection<IconLabelItemViewModel> Workforce { get; set; }
 }

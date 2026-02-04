@@ -32,14 +32,14 @@ public class CityStats
     public IDictionary<string, ConsolidatedTimedProductionValues> Products { get; } =
         new Dictionary<string, ConsolidatedTimedProductionValues>();
 
-    public int ProvidedWorkersCount { get; set; }
+    public IReadOnlyDictionary<WorkerType, int> ProvidedWorkers { get; set; } = new Dictionary<WorkerType, int>();
 
-    public int RequiredWorkersCount { get; set; }
+    public IReadOnlyDictionary<WorkerType, int> RequiredWorkers { get; set; } = new Dictionary<WorkerType, int>();
     public int TotalArea { get; set; }
     public int TotalAvailableHappiness { get; set; }
     public int TotalHappinessConsumption { get; set; }
     public int UnmetHappinessNeed { get; set; }
 
     public IReadOnlyDictionary<string, double>? WonderResourcesBonus { get; set; }
-    public int WonderWorkersBonus { get; set; }
+    public IReadOnlyDictionary<WorkerType, int>? WonderWorkersBonus { get; set; }
 }

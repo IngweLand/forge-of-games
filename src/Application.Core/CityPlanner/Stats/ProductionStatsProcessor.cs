@@ -104,7 +104,7 @@ public class ProductionStatsProcessor : IProductionStatsProcessor
             {
                 ProductionId = productionComponent.Id,
                 Products = products,
-                WorkerCount = productionComponent.WorkerCount,
+                WorkerBehaviour = productionComponent.WorkerBehaviour,
                 Cost = cost,
             });
         }

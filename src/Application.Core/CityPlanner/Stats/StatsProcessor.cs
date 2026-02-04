@@ -83,10 +83,10 @@ public class StatsProcessor(
             : null;
     }
 
-    private int GetWonderWorkers()
+    private IReadOnlyDictionary<WorkerType, int>? GetWonderWorkers()
     {
-        var c = cityMapState.CityWonder?.Components.OfType<GrantWorkerComponent>().FirstOrDefault();
-        return c?.GetWorkerCount(cityMapState.CityWonderLevel) ?? 0;
+        return cityMapState.CityWonder?.Components.OfType<GrantWorkerComponent>()
+            .ToDictionary(x => x.WorkerType, x => x.GetWorkerCount(cityMapState.CityWonderLevel));
     }
 
     public CityStats UpdateStats(CityMapEntity target)

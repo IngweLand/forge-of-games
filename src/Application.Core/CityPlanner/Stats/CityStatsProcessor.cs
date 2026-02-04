@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Core.CityPlanner.Stats.BuildingTypedStats;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner.Stats;
 
@@ -7,14 +8,13 @@ public static class CityStatsProcessor
     public static CityStats Update(IEnumerable<CityMapEntity> entities,
         IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
         IEnumerable<CityMapExpansion> openExpansions,
-        int wonderWorkersBonus = 0,
+        IReadOnlyDictionary<WorkerType, int>? wonderWorkersBonus = null,
         IReadOnlyDictionary<string, double>? wonderResourcesBonus = null,
         int premiumExpansionCount = 0)
     {
-        var stats = new CityStats
-        {
-            ProvidedWorkersCount = wonderWorkersBonus,
-        };
+        var stats = new CityStats();
+        var providedWorkers = wonderWorkersBonus?.ToDictionary() ?? new Dictionary<WorkerType, int>();
+        var requiredWorkers = new Dictionary<WorkerType, int>();
 
         foreach (var cme in entities)
         {
@@ -26,7 +26,11 @@ public static class CityStatsProcessor
             var workerProvider = cme.FirstOrDefaultStat<WorkerProvider>();
             if (workerProvider != null)
             {
-                stats.ProvidedWorkersCount += workerProvider.WorkerCount;
+                foreach (var kvp in workerProvider.Workers)
+                {
+                    var tempValue = providedWorkers.GetValueOrDefault(kvp.Key, 0);
+                    providedWorkers[kvp.Key] = tempValue + kvp.Value;
+                }
             }
 
             var productionProvider = cme.FirstOrDefaultStat<ProductionProvider>();
@@ -37,14 +41,23 @@ public static class CityStatsProcessor
                 {
                     if (cme.SelectedProduct?.Id != null)
                     {
-                        stats.RequiredWorkersCount += productionProvider.ProductionStatsItems
-                            .FirstOrDefault(psi => psi.ProductionId == cme.SelectedProduct.Id)?.WorkerCount ?? 0;
+                        var wb = productionProvider.ProductionStatsItems
+                            .FirstOrDefault(psi => psi.ProductionId == cme.SelectedProduct.Id)?.WorkerBehaviour;
+                        if (wb != null)
+                        {
+                            var tempValue = requiredWorkers.GetValueOrDefault(wb.Type, 0);
+                            requiredWorkers[wb.Type] = tempValue + wb.Amount;
+                        }
                     }
                 }
                 else
                 {
-                    stats.RequiredWorkersCount +=
-                        productionProvider.ProductionStatsItems.FirstOrDefault()?.WorkerCount ?? 0;
+                    var wb = productionProvider.ProductionStatsItems.FirstOrDefault()?.WorkerBehaviour;
+                    if (wb != null)
+                    {
+                        var tempValue = requiredWorkers.GetValueOrDefault(wb.Type, 0);
+                        requiredWorkers[wb.Type] = tempValue + wb.Amount;
+                    }
                 }
 
                 foreach (var productionStatsItem in productionProvider.ProductionStatsItems)
@@ -135,6 +148,8 @@ public static class CityStatsProcessor
         stats.WonderResourcesBonus = wonderResourcesBonus;
         stats.WonderWorkersBonus = wonderWorkersBonus;
         stats.PremiumExpansionCount = premiumExpansionCount;
+        stats.RequiredWorkers = requiredWorkers;
+        stats.ProvidedWorkers = providedWorkers;
 
         return stats;
     }

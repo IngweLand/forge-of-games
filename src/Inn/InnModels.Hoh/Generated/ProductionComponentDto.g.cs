@@ -27,17 +27,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "Ch5wcm9kdWN0aW9uX2NvbXBvbmVudF9kdG8ucHJvdG8aEmR1cmF0aW9uX2R0",
             "by5wcm90bxokYnVpbGRpbmdfcHJvZHVjdGlvbl9yZXdhcmRfZHRvLnByb3Rv",
             "Ghlwcm9kdWN0aW9uX2Nvc3RfZHRvLnByb3RvGhlnb29nbGUvcHJvdG9idWYv",
-            "YW55LnByb3RvItoBChZQcm9kdWN0aW9uQ29tcG9uZW50RFRPEgoKAmlkGAEg",
+            "YW55LnByb3RvItQBChZQcm9kdWN0aW9uQ29tcG9uZW50RFRPEgoKAmlkGAEg",
             "ASgJEiUKD3Byb2R1Y3Rpb25fdGltZRgFIAEoCzIMLkR1cmF0aW9uRHRvEg4K",
-            "BmZhY3RvchgIIAEoARI1ChdwYWNrZWRfd29ya2VyX2JlaGF2aW91chgJIAEo",
-            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSIAoEY29zdBgKIAEoCzISLlByb2R1",
-            "Y3Rpb25Db3N0RHRvEiQKB3Byb2R1Y3QYCyABKAsyEy5CdWlsZGluZ1Byb2R1",
-            "Y3REdG9CH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3Rv",
-            "Mw=="));
+            "BmZhY3RvchgIIAEoARIvChFwYWNrZWRfYmVoYXZpb3VycxgJIAMoCzIULmdv",
+            "b2dsZS5wcm90b2J1Zi5BbnkSIAoEY29zdBgKIAEoCzISLlByb2R1Y3Rpb25D",
+            "b3N0RHRvEiQKB3Byb2R1Y3QYCyABKAsyEy5CdWlsZGluZ1Byb2R1Y3REdG9C",
+            "H6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.DurationDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BuildingProductionRewardDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.ProductionCostDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ProductionComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.ProductionComponentDTO.Parser, new[]{ "Id", "ProductionTime", "Factor", "PackedWorkerBehaviour", "Cost", "Product" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.ProductionComponentDTO), global::Ingweland.Fog.Inn.Models.Hoh.ProductionComponentDTO.Parser, new[]{ "Id", "ProductionTime", "Factor", "PackedBehaviours", "Cost", "Product" }, null, null, null, null)
           }));
     }
     #endregion
@@ -82,7 +81,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       id_ = other.id_;
       productionTime_ = other.productionTime_ != null ? other.productionTime_.Clone() : null;
       factor_ = other.factor_;
-      packedWorkerBehaviour_ = other.packedWorkerBehaviour_ != null ? other.packedWorkerBehaviour_.Clone() : null;
+      packedBehaviours_ = other.packedBehaviours_.Clone();
       cost_ = other.cost_ != null ? other.cost_.Clone() : null;
       product_ = other.product_ != null ? other.product_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -130,19 +129,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "packed_worker_behaviour" field.</summary>
-    public const int PackedWorkerBehaviourFieldNumber = 9;
-    private global::Google.Protobuf.WellKnownTypes.Any packedWorkerBehaviour_;
+    /// <summary>Field number for the "packed_behaviours" field.</summary>
+    public const int PackedBehavioursFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_packedBehaviours_codec
+        = pb::FieldCodec.ForMessage(74, global::Google.Protobuf.WellKnownTypes.Any.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> packedBehaviours_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
     /// <summary>
     /// WorkerBehaviourDTO
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Any PackedWorkerBehaviour {
-      get { return packedWorkerBehaviour_; }
-      set {
-        packedWorkerBehaviour_ = value;
-      }
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> PackedBehaviours {
+      get { return packedBehaviours_; }
     }
 
     /// <summary>Field number for the "cost" field.</summary>
@@ -187,7 +185,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id != other.Id) return false;
       if (!object.Equals(ProductionTime, other.ProductionTime)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Factor, other.Factor)) return false;
-      if (!object.Equals(PackedWorkerBehaviour, other.PackedWorkerBehaviour)) return false;
+      if(!packedBehaviours_.Equals(other.packedBehaviours_)) return false;
       if (!object.Equals(Cost, other.Cost)) return false;
       if (!object.Equals(Product, other.Product)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -200,7 +198,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (productionTime_ != null) hash ^= ProductionTime.GetHashCode();
       if (Factor != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Factor);
-      if (packedWorkerBehaviour_ != null) hash ^= PackedWorkerBehaviour.GetHashCode();
+      hash ^= packedBehaviours_.GetHashCode();
       if (cost_ != null) hash ^= Cost.GetHashCode();
       if (product_ != null) hash ^= Product.GetHashCode();
       if (_unknownFields != null) {
@@ -233,10 +231,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(65);
         output.WriteDouble(Factor);
       }
-      if (packedWorkerBehaviour_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(PackedWorkerBehaviour);
-      }
+      packedBehaviours_.WriteTo(output, _repeated_packedBehaviours_codec);
       if (cost_ != null) {
         output.WriteRawTag(82);
         output.WriteMessage(Cost);
@@ -267,10 +262,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(65);
         output.WriteDouble(Factor);
       }
-      if (packedWorkerBehaviour_ != null) {
-        output.WriteRawTag(74);
-        output.WriteMessage(PackedWorkerBehaviour);
-      }
+      packedBehaviours_.WriteTo(ref output, _repeated_packedBehaviours_codec);
       if (cost_ != null) {
         output.WriteRawTag(82);
         output.WriteMessage(Cost);
@@ -298,9 +290,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Factor != 0D) {
         size += 1 + 8;
       }
-      if (packedWorkerBehaviour_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PackedWorkerBehaviour);
-      }
+      size += packedBehaviours_.CalculateSize(_repeated_packedBehaviours_codec);
       if (cost_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Cost);
       }
@@ -331,12 +321,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.Factor != 0D) {
         Factor = other.Factor;
       }
-      if (other.packedWorkerBehaviour_ != null) {
-        if (packedWorkerBehaviour_ == null) {
-          PackedWorkerBehaviour = new global::Google.Protobuf.WellKnownTypes.Any();
-        }
-        PackedWorkerBehaviour.MergeFrom(other.PackedWorkerBehaviour);
-      }
+      packedBehaviours_.Add(other.packedBehaviours_);
       if (other.cost_ != null) {
         if (cost_ == null) {
           Cost = new global::Ingweland.Fog.Inn.Models.Hoh.ProductionCostDto();
@@ -380,10 +365,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 74: {
-            if (packedWorkerBehaviour_ == null) {
-              PackedWorkerBehaviour = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(PackedWorkerBehaviour);
+            packedBehaviours_.AddEntriesFrom(input, _repeated_packedBehaviours_codec);
             break;
           }
           case 82: {
@@ -431,10 +413,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             break;
           }
           case 74: {
-            if (packedWorkerBehaviour_ == null) {
-              PackedWorkerBehaviour = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(PackedWorkerBehaviour);
+            packedBehaviours_.AddEntriesFrom(ref input, _repeated_packedBehaviours_codec);
             break;
           }
           case 82: {
