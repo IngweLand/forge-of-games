@@ -1,6 +1,5 @@
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
-@using SkiaSharp.Views.Blazor
 @using Position = MudBlazor.Position
 
 <div class="content-wrapper">
@@ -67,11 +66,11 @@
         }
 
         <div class="main-container">
-            <SKGLView OnPaintSurface="@SkCanvasView_OnPaintSurface" @onkeyup="OnKeyUp" tabindex="0"
-                      @ref="_skCanvasView" @onpointerup="InteractiveCanvasOnPointerUp"
-                      @onpointerdown="InteractiveCanvasOnPointerDown" @onwheel="InteractiveCanvasOnWheel"
-                      @onpointermove="InteractiveCanvasOnPointerMove"
-                      IgnorePixelScaling="true"/>
+            <SKGLViewComponent OnPaintSurface="SkCanvasView_OnPaintSurface"
+                               @ref="_skComponent" OnPointerUp="@InteractiveCanvasOnPointerUp"
+                               OnPointerDown="@InteractiveCanvasOnPointerDown"
+                               OnWheel="@InteractiveCanvasOnWheel"
+                               OnPointerMove="@InteractiveCanvasOnPointerMove"/>
         </div>
         @if (_rightPanelIsVisible)
         {

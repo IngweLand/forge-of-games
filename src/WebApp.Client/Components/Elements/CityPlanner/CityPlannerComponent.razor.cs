@@ -31,7 +31,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private bool _isInitialized;
     private bool _leftPanelIsVisible = true;
     private bool _rightPanelIsVisible = true;
-    private SKGLView _skCanvasView;
+    private SKGLViewComponent _skComponent;
 
     [Inject]
     private ICityPlannerAnalyticsService AnalyticsService { get; set; }
@@ -83,7 +83,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     public void Dispose()
     {
-        _skCanvasView?.Dispose();
+        _skComponent?.SkCanvasView?.Dispose();
         Snackbar.Dispose();
         if (_isInitialized)
         {
@@ -142,19 +142,19 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
         {
             var cmd = CommandFactory.CreateAddBuildingCommand(buildingGroup);
             CommandManager.ExecuteCommand(cmd);
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
     }
 
     private void CityPlannerOnStateHasHasChanged()
     {
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
         StateHasChanged();
     }
 
     private void CityPlannerSettingsOnStateChanged()
     {
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void Delete()
@@ -166,7 +166,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         var cmd = CommandFactory.CreateDeleteEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity);
         CommandManager.ExecuteCommand(cmd);
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void MoveToInventory()
@@ -199,7 +199,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private void FitToScreen()
     {
         CityPlannerInteractionManager.FitToScreen(_canvasSize);
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void InteractiveCanvasOnPointerDown(PointerEventArgs args)
@@ -216,23 +216,25 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         if (CityPlannerInteractionManager.OnPointerMove((float) args.OffsetX, (float) args.OffsetY))
         {
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
     }
 
-    private void InteractiveCanvasOnPointerUp(PointerEventArgs args)
+    private Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
         if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY))
         {
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
+
+        return Task.CompletedTask;
     }
 
     private void InteractiveCanvasOnWheel(WheelEventArgs e)
     {
         if (CityPlannerInteractionManager.Zoom((float) e.OffsetX, (float) e.OffsetY, (float) e.DeltaY))
         {
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
     }
 
@@ -284,7 +286,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private void Redo()
     {
         CommandManager.Redo();
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void Rotate()
@@ -296,7 +298,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         var cmd = CommandFactory.CreateRotateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
         CommandManager.ExecuteCommand(cmd);
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void Duplicate()
@@ -308,7 +310,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
         var cmd = CommandFactory.CreateDuplicateEntityCommand(CityPlanner.CityMapState.SelectedCityMapEntity.Id);
         CommandManager.ExecuteCommand(cmd);
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private async Task Save()
@@ -319,7 +321,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private void SelectGroup()
     {
         CityPlanner.SelectGroup();
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void SkCanvasView_OnPaintSurface(SKPaintGLSurfaceEventArgs e)
@@ -350,14 +352,14 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     private void Undo()
     {
         CommandManager.Undo();
-        _skCanvasView!.Invalidate();
+        _skComponent?.SkCanvasView!.Invalidate();
     }
 
     private void ZoomIn()
     {
         if (CityPlannerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, -100))
         {
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
     }
 
@@ -365,7 +367,7 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
     {
         if (CityPlannerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, 100))
         {
-            _skCanvasView!.Invalidate();
+            _skComponent?.SkCanvasView!.Invalidate();
         }
     }
 

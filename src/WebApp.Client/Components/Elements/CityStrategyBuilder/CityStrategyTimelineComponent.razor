@@ -12,7 +12,7 @@
     <div class="header-container">
         <div class="section-title">@Loc[FogResource.CityStrategy_Timeline]</div>
         <MudToggleIconButton Icon="@Icons.Material.Outlined.Reorder" Size="Size.Small" Color="Color.Inherit"
-                             @bind-Toggled="@_canReorder"/>
+                             Toggled="@_canReorder" ToggledChanged="@OnCanReorderChanged"/>
     </div>
     <div class="main-container">
         <MudList T="CityStrategyTimelineItemBase" Gutters="false" Dense="true" SelectedValue="@_selectedItem"
@@ -110,6 +110,7 @@
 @code {
     private CityStrategyTimelineItemBase? _selectedItem;
     private bool _canReorder;
+    private bool _hasPendingUiChanges = true;
 
     [Parameter]
     [EditorRequired]
@@ -145,7 +146,21 @@
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        _selectedItem = Items.FirstOrDefault(x => x.Selected);
+        var selected = Items.FirstOrDefault(x => x.Selected);
+        if (_selectedItem == selected)
+        {
+            return;
+        }
+
+        _hasPendingUiChanges = true;
+        _selectedItem = selected;
+    }
+
+    protected override bool ShouldRender()
+    {
+        var shouldRender = _hasPendingUiChanges;
+        _hasPendingUiChanges = false;
+        return shouldRender;
     }
 
     private static string GetTypeIcon(CityStrategyNewTimelineItemType type)
@@ -180,6 +195,12 @@
         {
             await OnDelete.InvokeAsync(item);
         }
+    }
+
+    private void OnCanReorderChanged(bool newValue)
+    {
+        _canReorder = newValue;
+        _hasPendingUiChanges = true;
     }
 
 }

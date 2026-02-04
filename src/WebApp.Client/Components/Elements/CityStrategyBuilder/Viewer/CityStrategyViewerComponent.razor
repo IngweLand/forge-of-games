@@ -2,7 +2,6 @@
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
-@using SkiaSharp.Views.Blazor
 @using Position = MudBlazor.Position
 @inherits CityStrategyViewerComponentBase
 <div class="content-wrapper">
@@ -23,12 +22,11 @@
         @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
         {
             <div class="main-container">
-                <SKGLView OnPaintSurface="SkCanvasView_OnPaintSurface" tabindex="0"
-                          @ref="SkCanvasView" @onpointerup="@InteractiveCanvasOnPointerUp"
-                          @onpointerdown="@InteractiveCanvasOnPointerDown"
-                          @onwheel="@InteractiveCanvasOnWheel"
-                          @onpointermove="@InteractiveCanvasOnPointerMove"
-                          IgnorePixelScaling="true"/>
+                <SKGLViewComponent OnPaintSurface="SkCanvasView_OnPaintSurface"
+                                   @ref="SkCanvasViewComponent" OnPointerUp="@InteractiveCanvasOnPointerUp"
+                                   OnPointerDown="@InteractiveCanvasOnPointerDown"
+                                   OnWheel="@InteractiveCanvasOnWheel"
+                                   OnPointerMove="@InteractiveCanvasOnPointerMove"/>
             </div>
         }
         else if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyDescriptionTimelineItem di)

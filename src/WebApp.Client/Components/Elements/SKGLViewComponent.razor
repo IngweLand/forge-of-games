@@ -1,0 +1,34 @@
+@using SkiaSharp.Views.Blazor
+@implements IHandleEvent
+<SKGLView OnPaintSurface="@OnPaintSurface" tabindex="0" @ref="SkCanvasView"
+          @onpointerup="@(x => OnPointerUp?.Invoke(x) ?? Task.CompletedTask)"
+          @onpointerdown="@(x => OnPointerDown?.Invoke(x))"
+          @onwheel="@(x => OnWheel?.Invoke(x))"
+          @onpointermove="@(x => OnPointerMove?.Invoke(x))"
+          IgnorePixelScaling="true"/>
+
+@code {
+
+    [Parameter]
+    public Action<SKPaintGLSurfaceEventArgs>? OnPaintSurface { get; set; }
+
+    public SKGLView? SkCanvasView { get; private set; }
+
+    [Parameter]
+    public Func<PointerEventArgs, Task>? OnPointerUp { get; set; }
+
+    [Parameter]
+    public Action<PointerEventArgs>? OnPointerDown { get; set; }
+
+    [Parameter]
+    public Action<WheelEventArgs>? OnWheel { get; set; }
+
+    [Parameter]
+    public Action<PointerEventArgs>? OnPointerMove { get; set; }
+
+    Task IHandleEvent.HandleEventAsync(EventCallbackWorkItem callback, object? arg)
+    {
+        return callback.InvokeAsync(arg);
+    }
+
+}

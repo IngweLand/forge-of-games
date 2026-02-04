@@ -19,7 +19,7 @@ public abstract class LayoutViewerComponentBase : ComponentBase, IDisposable
     protected RenderFragment? AppBarButtons;
     protected Size CanvasSize = Size.Empty;
     protected bool IsInitialized;
-    protected SKGLView? SkCanvasView;
+    protected SKGLViewComponent? SkCanvasViewComponent;
 
     [Inject]
     protected AppBarService AppBarService { get; set; }
@@ -38,6 +38,8 @@ public abstract class LayoutViewerComponentBase : ComponentBase, IDisposable
 
     [Inject]
     protected NavigationManager NavigationManager { get; set; }
+
+    protected SKGLView? SkCanvasView => SkCanvasViewComponent?.SkCanvasView;
 
     public void Dispose()
     {

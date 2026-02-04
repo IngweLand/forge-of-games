@@ -27,7 +27,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
     private bool _isInitialized;
     private bool _leftPanelIsVisible = true;
     private bool _rightPanelIsVisible = true;
-    private SKGLView? _skCanvasView;
+    private SKGLViewComponent? _skComponent;
 
     [Inject]
     private ICityPlannerInteractionManager CityPlannerInteractionManager { get; set; }
@@ -58,7 +58,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     public void Dispose()
     {
-        _skCanvasView?.Dispose();
+        _skComponent?.SkCanvasView?.Dispose();
         CityStrategyBuilderService.StateHasChanged -= CityPlannerOnStateHasHasChanged;
         CityPlannerSettings.StateChanged -= CityPlannerSettingsOnStateChanged;
         CityStrategyBuilderService.Dispose();
@@ -81,41 +81,41 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void BuildingSelectorOnItemClicked(BuildingGroup buildingGroup)
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         CityStrategyBuilderService.AddNewCityMapEntity(buildingGroup);
-        _skCanvasView.Invalidate();
+        _skComponent?.SkCanvasView.Invalidate();
     }
 
     private void CityPlannerOnStateHasHasChanged()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
-        _skCanvasView.Invalidate();
+        _skComponent?.SkCanvasView.Invalidate();
         StateHasChanged();
     }
 
     private void CityPlannerSettingsOnStateChanged()
     {
-        _skCanvasView?.Invalidate();
+        _skComponent?.SkCanvasView?.Invalidate();
     }
 
     private void DeleteCityMapEntity()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityStrategyBuilderService.DeleteSelectedCityMapEntity())
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
@@ -147,13 +147,13 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void FitToScreen()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         CityPlannerInteractionManager.FitToScreen(_canvasSize);
-        _skCanvasView.Invalidate();
+        _skComponent?.SkCanvasView.Invalidate();
     }
 
     private void InteractiveCanvasOnPointerDown(PointerEventArgs args)
@@ -163,7 +163,7 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void InteractiveCanvasOnPointerMove(PointerEventArgs args)
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
@@ -175,33 +175,35 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
         if (CityPlannerInteractionManager.OnPointerMove((float) args.OffsetX, (float) args.OffsetY))
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
-    private void InteractiveCanvasOnPointerUp(PointerEventArgs args)
+    private Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
-            return;
+            return Task.CompletedTask;
         }
 
         if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY))
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
+
+        return Task.CompletedTask;
     }
 
     private void InteractiveCanvasOnWheel(WheelEventArgs e)
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityPlannerInteractionManager.Zoom((float) e.OffsetX, (float) e.OffsetY, (float) e.DeltaY))
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
@@ -232,27 +234,27 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void Rotate()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityStrategyBuilderService.RotateSelectedCityMapEntity())
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
     private void Duplicate()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityStrategyBuilderService.DuplicateSelectedCityMapEntity())
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
@@ -268,13 +270,13 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void SelectGroup()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         CityStrategyBuilderService.SelectCityMapEntityGroup();
-        _skCanvasView.Invalidate();
+        _skComponent?.SkCanvasView.Invalidate();
     }
 
     private void SkCanvasView_OnPaintSurface(SKPaintGLSurfaceEventArgs e)
@@ -304,27 +306,27 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 
     private void ZoomIn()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityPlannerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, -100))
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
     private void ZoomOut()
     {
-        if (_skCanvasView == null)
+        if (_skComponent?.SkCanvasView == null)
         {
             return;
         }
 
         if (CityPlannerInteractionManager.Zoom(_canvasSize.Width / 2, _canvasSize.Height / 2, 100))
         {
-            _skCanvasView.Invalidate();
+            _skComponent?.SkCanvasView.Invalidate();
         }
     }
 
