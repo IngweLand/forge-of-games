@@ -16,7 +16,7 @@ public class CityStrategy
     public required string Id { get; set; }
 
     [ProtoMember(4)]
-    public CityId InGameCityId { get; init; }
+    public CityId InGameCityId { get; set; }
 
     [ProtoMember(5)]
     public required string Name { get; set; }

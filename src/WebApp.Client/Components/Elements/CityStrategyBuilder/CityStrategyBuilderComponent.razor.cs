@@ -449,4 +449,9 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
         };
         _ = await DialogService.ShowAsync<ShareResourceDialog>(null, parameters, GetDefaultDialogOptions());
     }
+
+    private Task ChangeWonder(WonderId newWonder)
+    {
+        return CityStrategyBuilderService.ChangeWonder(newWonder);
+    }
 }

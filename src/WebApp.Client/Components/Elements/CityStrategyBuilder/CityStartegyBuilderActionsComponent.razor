@@ -1,5 +1,7 @@
 @using Ingweland.Fog.Application.Client.Core.Localization
 @using Ingweland.Fog.Application.Core.Constants
+@using Ingweland.Fog.Dtos.Hoh.City
+@using Ingweland.Fog.Models.Hoh.Enums
 @using Microsoft.Extensions.Localization
 @inject IStringLocalizer<FogResource> Loc
 @inject IDialogService DialogService
@@ -21,6 +23,17 @@
                 @Loc[FogResource.Common_Save]
             </MudButton>
         </div>
+        @if (Wonders != null)
+        {
+            <MudSelect Label="@Loc[FogResource.Hoh_WorldWonder]" Value="@Wonder"
+                       ValueChanged="@(dto => OnWonderChanged.InvokeAsync(dto.Id))"
+                       T="WonderDto" Variant="Variant.Outlined" Margin="Margin.Dense" Dense="true">
+                @foreach (var wonder in Wonders)
+                {
+                    <MudSelectItem Value="wonder">@wonder.WonderName</MudSelectItem>
+                }
+            </MudSelect>
+        }
         <MudButton StartIcon="@Icons.Material.Filled.Share" Variant="Variant.Filled"
                    OnClick="@OnShare">@Loc[FogResource.Common_Share]
         </MudButton>
@@ -46,6 +59,15 @@
     [Parameter]
     public EventCallback<string> OnNameChanged { get; set; }
 
+    [Parameter]
+    public IReadOnlyCollection<WonderDto>? Wonders { get; set; }
+
+    [Parameter]
+    public WonderDto? Wonder { get; set; }
+
+    [Parameter]
+    public EventCallback<WonderId> OnWonderChanged { get; set; }
+
     private async Task SaveName()
     {
         await OnNameChanged.InvokeAsync(StrategyName);
@@ -70,4 +92,5 @@
         else if (input.Length > FogConstants.NAME_MAX_CHARACTERS)
             yield return Loc[FogResource.CityPlanner_NameTooLongError, FogConstants.NAME_MAX_CHARACTERS];
     }
+
 }

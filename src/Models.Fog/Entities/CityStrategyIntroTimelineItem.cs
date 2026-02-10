@@ -8,7 +8,7 @@ namespace Ingweland.Fog.Models.Fog.Entities;
 public class CityStrategyIntroTimelineItem : CityStrategyTimelineItemBase
 {
     [ProtoMember(1)]
-    public required CityId CityId { get; init; }
+    public required CityId CityId { get; set; }
 
     [ProtoMember(2)]
     public string Description { get; set; } = string.Empty;
@@ -16,5 +16,5 @@ public class CityStrategyIntroTimelineItem : CityStrategyTimelineItemBase
     public override CityStrategyTimelineItemType Type => CityStrategyTimelineItemType.Intro;
 
     [ProtoMember(3)]
-    public WonderId WonderId { get; init; } = WonderId.Undefined;
+    public WonderId WonderId { get; set; } = WonderId.Undefined;
 }

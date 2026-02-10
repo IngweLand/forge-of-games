@@ -147,7 +147,10 @@
                         <CityPlannerSettingsComponent/>
                         <CityStartegyBuilderActionsComponent StrategyName="@CityStrategyBuilderService.Strategy.Name"
                                                              OnDelete="@DeleteStrategy" OnShare="@ShareStrategy"
-                                                             OnNameChanged="@RenameStrategy"/>
+                                                             OnNameChanged="@RenameStrategy"
+                                                             OnWonderChanged="@ChangeWonder"
+                                                             Wonder="@CityStrategyBuilderService.CurrentWonder"
+                                                             Wonders="@CityStrategyBuilderService.AllowedWonders"/>
                     </div>
                 </MudTabPanel>
             </MudTabs>

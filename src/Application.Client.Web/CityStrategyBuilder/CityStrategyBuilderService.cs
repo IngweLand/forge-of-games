@@ -11,7 +11,10 @@ using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Constants;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.Extensions;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Fog.Enums;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
@@ -30,10 +33,17 @@ public class CityStrategyBuilderService(
     IHohCityFactory hohCityFactory,
     IPersistenceService persistenceService,
     ICityStrategyFactory cityStrategyFactory,
+    ICityPlannerDataService cityPlannerDataService,
     IStringLocalizer<FogResource> loc,
     IMapper mapper,
     ILogger<CityStrategyBuilderService> logger) : ICityStrategyBuilderService
 {
+    private static readonly IReadOnlySet<CityId> CitiesWithChangeableWonders = new HashSet<CityId>
+    {
+        CityId.China, CityId.Egypt, CityId.Vikings, CityId.Arabia_CityOfBrass, CityId.Arabia_NoriasOfHama,
+        CityId.Arabia_Petra,
+    };
+
     private static readonly TimeSpan AutoSaveInterval = TimeSpan.FromSeconds(10);
     private readonly SemaphoreSlim _saveSemaphore = new(1, 1);
     private Timer? _autoSaveTimer;
@@ -42,6 +52,8 @@ public class CityStrategyBuilderService(
     private bool _savingRequested;
     private Dictionary<string, string> _selectionHistory = new();
     public CityStrategy Strategy { get; private set; } = null!;
+    public IReadOnlyCollection<WonderDto>? AllowedWonders { get; private set; }
+    public WonderDto? CurrentWonder { get; private set; }
     public CityStrategyTimelineItemBase? SelectedTimelineItem { get; private set; }
     public ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; private set; }
     public CityMapState CityMapState => cityPlanner.CityMapState;
@@ -304,6 +316,47 @@ public class CityStrategyBuilderService(
         return Result.Try(() => cityPlanner.GenerateCityImage(SKEncodedImageFormat.Png, 100));
     }
 
+    public async Task ChangeWonder(WonderId newWonder)
+    {
+        if (!CitiesWithChangeableWonders.Contains(newWonder.ToCity()))
+        {
+            throw new InvalidOperationException($"Wonder {newWonder} cannot be changed for city {Strategy.InGameCityId
+            }.");
+        }
+
+        if (newWonder is WonderId.Arabia_CityOfBrass or WonderId.Arabia_NoriasOfHama or WonderId.Arabia_Petra)
+        {
+            foreach (CityStrategyLayoutTimelineItem li in Strategy.Timeline.Where(x =>
+                         x.Type == CityStrategyTimelineItemType.Layout))
+            {
+                var expansions = new HashSet<string>();
+                foreach (var unlockedExpansion in li.UnlockedExpansions)
+                {
+                    var i = unlockedExpansion.LastIndexOf('_');
+                    expansions.Add($"Expansion_{newWonder}_{unlockedExpansion[(i + 1)..]}");
+                }
+
+                li.UnlockedExpansions = expansions;
+            }
+        }
+
+        foreach (CityStrategyIntroTimelineItem ii in Strategy.Timeline.Where(x =>
+                     x.Type == CityStrategyTimelineItemType.Intro))
+        {
+            ii.CityId = newWonder.ToCity();
+            ii.WonderId = newWonder;
+        }
+
+        Strategy.InGameCityId = newWonder.ToCity();
+        Strategy.WonderId = newWonder;
+        CurrentWonder = AllowedWonders?.FirstOrDefault(x => x.Id == newWonder);
+        if (SelectedTimelineItem is {Type: CityStrategyTimelineItemType.Layout})
+        {
+            await InitializeLayout((CityStrategyLayoutTimelineItem) SelectedTimelineItem);
+        }
+        await Save();
+    }
+
     public async Task InitializeAsync(CityStrategy strategy, bool isReadOnly)
     {
         if (_isInitialized)
@@ -357,6 +410,14 @@ public class CityStrategyBuilderService(
             _autoSaveTimer = new Timer(AutoSaveInterval);
             _autoSaveTimer.Elapsed += OnAutoSaveTimerOnElapsed;
             _autoSaveTimer.Start();
+
+            if (CitiesWithChangeableWonders.Contains(Strategy.InGameCityId))
+            {
+                var items = await cityPlannerDataService.GetNewCityDialogItemsAsync();
+                AllowedWonders = items.FirstOrDefault(x => x.CityId == Strategy.InGameCityId.ToDefaultTechnologyCity())
+                    ?.Wonders;
+                CurrentWonder = AllowedWonders?.FirstOrDefault(x => x.Id == Strategy.WonderId);
+            }
         }
 
         _isInitialized = true;

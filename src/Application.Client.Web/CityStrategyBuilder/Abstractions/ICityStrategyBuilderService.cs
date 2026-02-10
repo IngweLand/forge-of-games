@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using FluentResults;
 using Ingweland.Fog.Application.Client.Web.CityPlanner;
+using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using SkiaSharp;
@@ -9,10 +10,13 @@ namespace Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 
 public interface ICityStrategyBuilderService : IDisposable
 {
+    IReadOnlyCollection<WonderDto>? AllowedWonders { get; }
     CityMapState CityMapState { get; }
+    WonderDto? CurrentWonder { get; }
     CityStrategyTimelineItemBase? SelectedTimelineItem { get; }
     CityStrategy Strategy { get; }
     ObservableCollection<CityStrategyTimelineItemBase> TimelineItems { get; }
+    Task ChangeWonder(WonderId newWonder);
     Task InitializeAsync(CityStrategy strategy, bool isReadOnly = false);
     public event Action? StateHasChanged;
     bool DeleteSelectedCityMapEntity();
