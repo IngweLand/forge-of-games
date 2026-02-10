@@ -111,6 +111,7 @@
     private CityStrategyTimelineItemBase? _selectedItem;
     private bool _canReorder;
     private bool _hasPendingUiChanges = true;
+    private int _itemsCount;
 
     [Parameter]
     [EditorRequired]
@@ -146,14 +147,16 @@
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
+        Console.Out.WriteLine("OnParametersSet");
         var selected = Items.FirstOrDefault(x => x.Selected);
-        if (_selectedItem == selected)
+        if (_selectedItem != selected || Items.Count != _itemsCount)
         {
-            return;
+            _hasPendingUiChanges = true;
         }
 
-        _hasPendingUiChanges = true;
+        
         _selectedItem = selected;
+        _itemsCount = Items.Count;
     }
 
     protected override bool ShouldRender()
