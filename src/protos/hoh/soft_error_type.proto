@@ -5,6 +5,7 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 enum SoftErrorType {
   SoftErrorType_UNDEFINED = 0;
   SoftErrorType_ALLIANCE_NOT_FOUND = 1495406539;
+  SoftErrorType_PLAYER_NOT_FOUND = 1739575217;
   SoftErrorType_GENERAL_UNKNOWN = 52884052;
   SoftErrorType_REQUEST_SESSION_EXPIRED = 555876709;
   SoftErrorType_SESSION_INVALID = 657935190; // e.g. session can be invalidated after in-game backend version update

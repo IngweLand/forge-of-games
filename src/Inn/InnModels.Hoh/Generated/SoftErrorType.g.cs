@@ -24,13 +24,14 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static SoftErrorTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8q0gEKDVNvZnRFcnJvclR5cGUSGwoX",
+            "ChVzb2Z0X2Vycm9yX3R5cGUucHJvdG8q+gEKDVNvZnRFcnJvclR5cGUSGwoX",
             "U29mdEVycm9yVHlwZV9VTkRFRklORUQQABIoCiBTb2Z0RXJyb3JUeXBlX0FM",
-            "TElBTkNFX05PVF9GT1VORBDLr4jJBRIkCh1Tb2Z0RXJyb3JUeXBlX0dFTkVS",
-            "QUxfVU5LTk9XThDU5JsZEi0KJVNvZnRFcnJvclR5cGVfUkVRVUVTVF9TRVNT",
-            "SU9OX0VYUElSRUQQ5YKIiQISJQodU29mdEVycm9yVHlwZV9TRVNTSU9OX0lO",
-            "VkFMSUQQ1pbduQJCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hi",
-            "BnByb3RvMw=="));
+            "TElBTkNFX05PVF9GT1VORBDLr4jJBRImCh5Tb2Z0RXJyb3JUeXBlX1BMQVlF",
+            "Ul9OT1RfRk9VTkQQsZ+/vQYSJAodU29mdEVycm9yVHlwZV9HRU5FUkFMX1VO",
+            "S05PV04Q1OSbGRItCiVTb2Z0RXJyb3JUeXBlX1JFUVVFU1RfU0VTU0lPTl9F",
+            "WFBJUkVEEOWCiIkCEiUKHVNvZnRFcnJvclR5cGVfU0VTU0lPTl9JTlZBTElE",
+            "ENaW3bkCQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.SoftErrorType), }, null, null));
@@ -42,6 +43,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   public enum SoftErrorType {
     [pbr::OriginalName("SoftErrorType_UNDEFINED")] Undefined = 0,
     [pbr::OriginalName("SoftErrorType_ALLIANCE_NOT_FOUND")] AllianceNotFound = 1495406539,
+    [pbr::OriginalName("SoftErrorType_PLAYER_NOT_FOUND")] PlayerNotFound = 1739575217,
     [pbr::OriginalName("SoftErrorType_GENERAL_UNKNOWN")] GeneralUnknown = 52884052,
     [pbr::OriginalName("SoftErrorType_REQUEST_SESSION_EXPIRED")] RequestSessionExpired = 555876709,
     /// <summary>
