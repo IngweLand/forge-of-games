@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "alliance_join_policy.proto";
 import "alliance_member_dto.proto";
+import "alliance_banner_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -10,11 +11,10 @@ message AllianceRankDto {
   int32 points = 3;
   int32 member_count = 4;
   string name = 5;
-  int32 avatar_icon_id = 6;
-  int32 avatar_background_id = 7;
   int32 max_members = 8;
   AllianceJoinPolicy type = 9;
   string language = 10;
   AllianceMemberDto leader = 11;
   string description = 12;
+  AllianceBannerDto banner = 18;
 }

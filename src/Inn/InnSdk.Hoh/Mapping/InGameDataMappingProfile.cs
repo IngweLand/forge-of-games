@@ -30,6 +30,7 @@ public class InGameDataMappingProfile : Profile
         CreateMap<AllianceRankDto, AllianceRank>()
             .ForMember(dest => dest.Leader, opt => opt.MapFrom(src => src.Leader.Player));
         CreateMap<AllianceRanksDTO, AllianceRanks>();
+        CreateMap<AllianceBannerDto, AllianceBanner>();
 
         CreateMap<PvpRankDto, PvpRank>();
         CreateMap<PlayerDto, HohPlayer>()
@@ -54,15 +55,12 @@ public class InGameDataMappingProfile : Profile
         CreateMap<AlliancePush, HohAlliance>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Alliance.Id))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Alliance.Details.Name))
-            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Alliance.Details.AvatarIconId))
-            .ForMember(dest => dest.AvatarBackgroundId,
-                opt => opt.MapFrom(src => src.Alliance.Details.AvatarBackgroundId))
+            .ForMember(dest => dest.Banner, opt => opt.MapFrom(src => src.Alliance.Details.Banner))
             .ForMember(dest => dest.MemberCount, opt => opt.MapFrom(src => src.Alliance.MemberCount));
         CreateMap<AllianceWithLeaderDTO, AllianceWithLeader>();
         CreateMap<AllianceDetailsDto, HohAllianceExtended>()
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Settings.Name))
-            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.Settings.AvatarIconId))
-            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.Settings.AvatarBackgroundId))
+            .ForMember(dest => dest.Banner, opt => opt.MapFrom(src => src.Settings.Banner))
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Settings.Description));
 
         CreateMap<CommunicationDto, Wakeup>()
@@ -176,12 +174,12 @@ public class InGameDataMappingProfile : Profile
                             .FindAndUnpack<AllEquipmentUnitDataDTO>().Items));
                 })
             .ForMember(dest => dest.Relic,
-            opt =>
-            {
-                opt.PreCondition(src => src.DomainData.Contains<RelicUnitDataDTO>());
-                opt.MapFrom((src, _, _, context) =>
-                    context.Mapper.Map<SquadRelic>(src.DomainData.FindAndUnpack<RelicUnitDataDTO>()));
-            })
+                opt =>
+                {
+                    opt.PreCondition(src => src.DomainData.Contains<RelicUnitDataDTO>());
+                    opt.MapFrom((src, _, _, context) =>
+                        context.Mapper.Map<SquadRelic>(src.DomainData.FindAndUnpack<RelicUnitDataDTO>()));
+                })
             .ForMember(dest => dest.AbilityLevel,
                 opt => opt.MapFrom(x => x.AbilityLevel > 0 ? x.AbilityLevel : 1));
         CreateMap<BattleUnitDto, BattleUnit>()
@@ -242,8 +240,7 @@ public class InGameDataMappingProfile : Profile
         CreateMap<PlayerWithAllianceDto, HohAlliance>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.AllianceId))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.AllianceName))
-            .ForMember(dest => dest.AvatarIconId, opt => opt.MapFrom(src => src.AllianceAvatarIconId))
-            .ForMember(dest => dest.AvatarBackgroundId, opt => opt.MapFrom(src => src.AllianceAvatarBackgroundId));
+            .ForMember(dest => dest.Banner, opt => opt.MapFrom(src => src.AllianceBanner));
 
         CreateMap<ResearchStateTechnologyDto, ResearchStateTechnology>()
             .ForMember(dest => dest.TechnologyId,

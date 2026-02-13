@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
+
+message AllianceBannerDto {
+  int32 icon_id = 1;
+  int32 crest_id = 2;
+  int32 crest_color_id = 3;
+  int32 icon_color_id = 4;
+}

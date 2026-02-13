@@ -2,8 +2,7 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
 public class AllianceViewModel
 {
-    public required string AvatarBackgroundUrl { get; set; }
-    public required string AvatarIconUrl { get; set; }
+    public required AllianceBannerViewModel Banner { get; init; }
     public required int Id { get; init; }
     public bool IsDeleted { get; init; }
     public required bool IsStale { get; set; }

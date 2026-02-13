@@ -3,6 +3,7 @@ using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Fog.Enums;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Shared.Extensions;
 
 namespace Ingweland.Fog.Application.Server.Mapping.Hoh;
@@ -61,7 +62,8 @@ public class StatsMappingProfile : Profile
                 opt => opt.MapFrom(src =>
                     src.UpdatedAt > src.MembersUpdatedAt.ToDateOnly()
                         ? src.UpdatedAt
-                        : src.MembersUpdatedAt.ToDateOnly()));
+                        : src.MembersUpdatedAt.ToDateOnly()))
+            .ForMember(dest => dest.Banner, opt => opt.MapFrom(x => x));
         CreateMap<AllianceRanking, StatsTimedIntValue>()
             .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Points))
             .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.CollectedAt.ToDateTime(TimeOnly.MinValue)));
@@ -75,5 +77,10 @@ public class StatsMappingProfile : Profile
         CreateMap<EquipmentInsightsEntity, EquipmentInsightsDto>();
         CreateMap<RelicInsightsEntity, RelicInsightsDto>();
         CreateMap<PvpRanking2, PvpRankingDto>();
+        CreateMap<Alliance, AllianceBanner>()
+            .ForMember(dest => dest.IconId, opt => opt.MapFrom(x => x.BannerIconId))
+            .ForMember(dest => dest.CrestId, opt => opt.MapFrom(x => x.BannerCrestId))
+            .ForMember(dest => dest.IconColorId, opt => opt.MapFrom(x => x.BannerIconColorId))
+            .ForMember(dest => dest.CrestColorId, opt => opt.MapFrom(x => x.BannerCrestColorId));
     }
 }

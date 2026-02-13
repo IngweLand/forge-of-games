@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "alliance_banner_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -9,6 +10,5 @@ message PlayerWithAllianceDto {
   int32 player_avatar_id = 4;
   optional int32 alliance_id = 5;
   string alliance_name = 6;
-  int32 alliance_avatar_icon_id = 7;
-  int32 alliance_avatar_background_id = 8;
+  AllianceBannerDto alliance_banner = 10;
 }

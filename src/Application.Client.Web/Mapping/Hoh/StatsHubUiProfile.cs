@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Stats;
 using Ingweland.Fog.Models.Fog;
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Constants;
 using Ingweland.Fog.Shared.Extensions;
@@ -100,10 +101,8 @@ public class StatsHubUiProfile : Profile
         CreateMap<AllianceDto, AllianceViewModel>()
             .ForMember(dest => dest.RankingPointsFormatted,
                 opt => opt.MapFrom(src => NumberFormatter.FormatCompactNumber(src.RankingPoints)))
-            .ForMember(dest => dest.AvatarIconUrl,
-                opt => opt.ConvertUsing<AllianceAvatarIconIdToUrlConverter, int>(src => src.AvatarIconId))
-            .ForMember(dest => dest.AvatarBackgroundUrl,
-                opt => opt.ConvertUsing<AllianceAvatarBackgroundIdToUrlConverter, int>(src => src.AvatarBackgroundId))
+            .ForMember(dest => dest.Banner,
+                opt => opt.ConvertUsing<AllianceBannerViewModelConverter, AllianceBanner>(src => src.Banner))
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToString("d")))
             .ForMember(dest => dest.IsStale,
                 opt => opt.MapFrom(src => src.UpdatedAt < DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-1)));

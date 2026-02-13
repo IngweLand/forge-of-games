@@ -7,8 +7,10 @@ public class Alliance
 {
     private AllianceKey? _key;
     public ICollection<AllianceAthRanking> AthRankings { get; set; } = new List<AllianceAthRanking>();
-    public int AvatarBackgroundId { get; set; }
-    public int AvatarIconId { get; set; }
+    public int BannerCrestColorId { get; set; }
+    public int BannerCrestId { get; set; }
+    public int BannerIconColorId { get; set; }
+    public int BannerIconId { get; set; }
     public int Id { get; set; }
     public required int InGameAllianceId { get; set; }
 

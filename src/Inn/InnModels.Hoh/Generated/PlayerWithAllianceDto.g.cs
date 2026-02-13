@@ -24,18 +24,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static PlayerWithAllianceDtoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5wbGF5ZXJfd2l0aF9hbGxpYW5jZV9kdG8ucHJvdG8i9gEKFVBsYXllcldp",
-            "dGhBbGxpYW5jZUR0bxIRCglwbGF5ZXJfaWQYASABKAUSEwoLcGxheWVyX25h",
-            "bWUYAiABKAkSEgoKcGxheWVyX2FnZRgDIAEoCRIYChBwbGF5ZXJfYXZhdGFy",
-            "X2lkGAQgASgFEhgKC2FsbGlhbmNlX2lkGAUgASgFSACIAQESFQoNYWxsaWFu",
-            "Y2VfbmFtZRgGIAEoCRIfChdhbGxpYW5jZV9hdmF0YXJfaWNvbl9pZBgHIAEo",
-            "BRIlCh1hbGxpYW5jZV9hdmF0YXJfYmFja2dyb3VuZF9pZBgIIAEoBUIOCgxf",
+            "Ch5wbGF5ZXJfd2l0aF9hbGxpYW5jZV9kdG8ucHJvdG8aGWFsbGlhbmNlX2Jh",
+            "bm5lcl9kdG8ucHJvdG8i2wEKFVBsYXllcldpdGhBbGxpYW5jZUR0bxIRCglw",
+            "bGF5ZXJfaWQYASABKAUSEwoLcGxheWVyX25hbWUYAiABKAkSEgoKcGxheWVy",
+            "X2FnZRgDIAEoCRIYChBwbGF5ZXJfYXZhdGFyX2lkGAQgASgFEhgKC2FsbGlh",
+            "bmNlX2lkGAUgASgFSACIAQESFQoNYWxsaWFuY2VfbmFtZRgGIAEoCRIrCg9h",
+            "bGxpYW5jZV9iYW5uZXIYCiABKAsyEi5BbGxpYW5jZUJhbm5lckR0b0IOCgxf",
             "YWxsaWFuY2VfaWRCH6oCHEluZ3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hi",
             "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDtoReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PlayerWithAllianceDto), global::Ingweland.Fog.Inn.Models.Hoh.PlayerWithAllianceDto.Parser, new[]{ "PlayerId", "PlayerName", "PlayerAge", "PlayerAvatarId", "AllianceId", "AllianceName", "AllianceAvatarIconId", "AllianceAvatarBackgroundId" }, new[]{ "AllianceId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PlayerWithAllianceDto), global::Ingweland.Fog.Inn.Models.Hoh.PlayerWithAllianceDto.Parser, new[]{ "PlayerId", "PlayerName", "PlayerAge", "PlayerAvatarId", "AllianceId", "AllianceName", "AllianceBanner" }, new[]{ "AllianceId" }, null, null, null)
           }));
     }
     #endregion
@@ -85,8 +85,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       playerAvatarId_ = other.playerAvatarId_;
       allianceId_ = other.allianceId_;
       allianceName_ = other.allianceName_;
-      allianceAvatarIconId_ = other.allianceAvatarIconId_;
-      allianceAvatarBackgroundId_ = other.allianceAvatarBackgroundId_;
+      allianceBanner_ = other.allianceBanner_ != null ? other.allianceBanner_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -183,27 +182,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "alliance_avatar_icon_id" field.</summary>
-    public const int AllianceAvatarIconIdFieldNumber = 7;
-    private int allianceAvatarIconId_;
+    /// <summary>Field number for the "alliance_banner" field.</summary>
+    public const int AllianceBannerFieldNumber = 10;
+    private global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDto allianceBanner_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AllianceAvatarIconId {
-      get { return allianceAvatarIconId_; }
+    public global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDto AllianceBanner {
+      get { return allianceBanner_; }
       set {
-        allianceAvatarIconId_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "alliance_avatar_background_id" field.</summary>
-    public const int AllianceAvatarBackgroundIdFieldNumber = 8;
-    private int allianceAvatarBackgroundId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AllianceAvatarBackgroundId {
-      get { return allianceAvatarBackgroundId_; }
-      set {
-        allianceAvatarBackgroundId_ = value;
+        allianceBanner_ = value;
       }
     }
 
@@ -228,8 +215,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (PlayerAvatarId != other.PlayerAvatarId) return false;
       if (AllianceId != other.AllianceId) return false;
       if (AllianceName != other.AllianceName) return false;
-      if (AllianceAvatarIconId != other.AllianceAvatarIconId) return false;
-      if (AllianceAvatarBackgroundId != other.AllianceAvatarBackgroundId) return false;
+      if (!object.Equals(AllianceBanner, other.AllianceBanner)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -243,8 +229,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (PlayerAvatarId != 0) hash ^= PlayerAvatarId.GetHashCode();
       if (HasAllianceId) hash ^= AllianceId.GetHashCode();
       if (AllianceName.Length != 0) hash ^= AllianceName.GetHashCode();
-      if (AllianceAvatarIconId != 0) hash ^= AllianceAvatarIconId.GetHashCode();
-      if (AllianceAvatarBackgroundId != 0) hash ^= AllianceAvatarBackgroundId.GetHashCode();
+      if (allianceBanner_ != null) hash ^= AllianceBanner.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -287,13 +272,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(50);
         output.WriteString(AllianceName);
       }
-      if (AllianceAvatarIconId != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(AllianceAvatarIconId);
-      }
-      if (AllianceAvatarBackgroundId != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(AllianceAvatarBackgroundId);
+      if (allianceBanner_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(AllianceBanner);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -329,13 +310,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(50);
         output.WriteString(AllianceName);
       }
-      if (AllianceAvatarIconId != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(AllianceAvatarIconId);
-      }
-      if (AllianceAvatarBackgroundId != 0) {
-        output.WriteRawTag(64);
-        output.WriteInt32(AllianceAvatarBackgroundId);
+      if (allianceBanner_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(AllianceBanner);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -365,11 +342,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (AllianceName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AllianceName);
       }
-      if (AllianceAvatarIconId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AllianceAvatarIconId);
-      }
-      if (AllianceAvatarBackgroundId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AllianceAvatarBackgroundId);
+      if (allianceBanner_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AllianceBanner);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -401,11 +375,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (other.AllianceName.Length != 0) {
         AllianceName = other.AllianceName;
       }
-      if (other.AllianceAvatarIconId != 0) {
-        AllianceAvatarIconId = other.AllianceAvatarIconId;
-      }
-      if (other.AllianceAvatarBackgroundId != 0) {
-        AllianceAvatarBackgroundId = other.AllianceAvatarBackgroundId;
+      if (other.allianceBanner_ != null) {
+        if (allianceBanner_ == null) {
+          AllianceBanner = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDto();
+        }
+        AllianceBanner.MergeFrom(other.AllianceBanner);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -418,7 +392,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
@@ -446,12 +424,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             AllianceName = input.ReadString();
             break;
           }
-          case 56: {
-            AllianceAvatarIconId = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            AllianceAvatarBackgroundId = input.ReadInt32();
+          case 82: {
+            if (allianceBanner_ == null) {
+              AllianceBanner = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDto();
+            }
+            input.ReadMessage(AllianceBanner);
             break;
           }
         }
@@ -465,7 +442,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
@@ -493,12 +474,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             AllianceName = input.ReadString();
             break;
           }
-          case 56: {
-            AllianceAvatarIconId = input.ReadInt32();
-            break;
-          }
-          case 64: {
-            AllianceAvatarBackgroundId = input.ReadInt32();
+          case 82: {
+            if (allianceBanner_ == null) {
+              AllianceBanner = new global::Ingweland.Fog.Inn.Models.Hoh.AllianceBannerDto();
+            }
+            input.ReadMessage(AllianceBanner);
             break;
           }
         }

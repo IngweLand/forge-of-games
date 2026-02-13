@@ -1,9 +1,10 @@
+using Ingweland.Fog.Models.Hoh.Entities.Alliance;
+
 namespace Ingweland.Fog.Dtos.Hoh.Stats;
 
 public class AllianceDto
 {
-    public int AvatarBackgroundId { get; set; }
-    public int AvatarIconId { get; set; }
+    public required AllianceBanner Banner { get; init; }
     public required int Id { get; init; }
     public bool IsDeleted { get; init; }
     public required string Name { get; set; }

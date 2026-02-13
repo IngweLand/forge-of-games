@@ -11,8 +11,8 @@
     }
 
     <div class="avatar-container">
-        <img class="avatar-background" src="@Alliance.AvatarBackgroundUrl"/>
-        <img class="avatar-icon" src="@Alliance.AvatarIconUrl"/>
+        <img class="avatar-background" src="@Alliance.Banner.CrestUrl"/>
+        <img class="avatar-icon" src="@Alliance.Banner.IconUrl"/>
     </div>
     <div class="content">
         <span class="content-label"
@@ -28,7 +28,8 @@
 
 @code {
 
-    [Parameter][EditorRequired]
+    [Parameter]
+    [EditorRequired]
     public required AllianceViewModel Alliance { get; set; }
 
     [Parameter]

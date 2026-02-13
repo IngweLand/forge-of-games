@@ -120,8 +120,10 @@ public class GetMissingAlliancesService(
                 WorldId = worldId,
                 InGameAllianceId = alliance.Alliance.Id,
                 Name = alliance.Alliance.Name,
-                AvatarIconId = alliance.Alliance.AvatarIconId,
-                AvatarBackgroundId = alliance.Alliance.AvatarBackgroundId,
+                BannerIconId = alliance.Alliance.Banner.IconId,
+                BannerCrestId = alliance.Alliance.Banner.CrestId,
+                BannerIconColorId = alliance.Alliance.Banner.IconColorId,
+                BannerCrestColorId = alliance.Alliance.Banner.CrestColorId,
                 Rank = alliance.Alliance.Rank,
                 UpdatedAt = today,
                 NameHistory = new List<AllianceNameHistoryEntry>

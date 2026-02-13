@@ -36,8 +36,10 @@ public class AllianceService(IFogDbContext context, IMapper mapper, ILogger<Play
                 WorldId = allianceAggregate.WorldId,
                 InGameAllianceId = allianceAggregate.InGameAllianceId,
                 Name = allianceAggregate.Name,
-                AvatarIconId = allianceAggregate.AvatarIconId ?? 0,
-                AvatarBackgroundId = allianceAggregate.AvatarBackgroundId ?? 0,
+                BannerIconId = allianceAggregate.Banner?.IconId ?? 0,
+                BannerCrestId = allianceAggregate.Banner?.CrestId ?? 0,
+                BannerIconColorId = allianceAggregate.Banner?.IconColorId ?? 0,
+                BannerCrestColorId = allianceAggregate.Banner?.CrestColorId ?? 0,
                 UpdatedAt = DateOnly.FromDateTime(allianceAggregate.CollectedAt),
             };
         }).ToList();

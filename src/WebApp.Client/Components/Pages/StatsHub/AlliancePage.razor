@@ -11,8 +11,8 @@
         <div class="fog-container info-container">
             <div class="avatar-container">
                 <div class="avatar">
-                    <img class="avatar-background" src="@_alliance.Alliance.AvatarBackgroundUrl"/>
-                    <img class="avatar-icon" src="@_alliance.Alliance.AvatarIconUrl"/>
+                    <img class="avatar-background" src="@_alliance.Alliance.Banner.CrestUrl"/>
+                    <img class="avatar-icon" src="@_alliance.Alliance.Banner.IconUrl"/>
                 </div>
                 @if (_alliance.Alliance.IsDeleted)
                 {
@@ -50,7 +50,7 @@
             <div class="fog-container section-container">
                 <div class="current-members-header-container">
                     <span class="section-title">@Loc[FogResource.StatsHub_Alliance_CurrentMembers]</span>
-                    <MudToggleIconButton @bind-Toggled="@_showLastSeenOn" 
+                    <MudToggleIconButton @bind-Toggled="@_showLastSeenOn"
                                          Icon="@Icons.Material.Filled.VisibilityOff"
                                          ToggledIcon="@Icons.Material.Filled.Visibility"
                                          Color="Color.Inherit"/>

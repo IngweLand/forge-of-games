@@ -1,6 +1,7 @@
 syntax = "proto3";
 import "alliance_admission_type.proto";
 import "alliance_member_dto.proto";
+import "alliance_banner_dto.proto";
 
 option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 
@@ -20,7 +21,6 @@ message AllianceSettingsDto {
   string name = 1;
   string description = 2;
   AllianceAdmissionType admission_type = 5;
-  int32 avatar_icon_id = 6;
-  int32 avatar_background_id = 7;
   string language = 4;
+  AllianceBannerDto banner = 12;
 }

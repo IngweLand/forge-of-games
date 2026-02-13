@@ -232,8 +232,10 @@ public class FogAllianceService(IFogDbContext context, ILogger<FogAllianceServic
         if (collectedAtDate >= alliance.UpdatedAt)
         {
             alliance.Name = hohAlliance.Name;
-            alliance.AvatarIconId = hohAlliance.AvatarIconId;
-            alliance.AvatarBackgroundId = hohAlliance.AvatarBackgroundId;
+            alliance.BannerIconId = hohAlliance.Banner.IconId;
+            alliance.BannerCrestId = hohAlliance.Banner.CrestId;
+            alliance.BannerCrestColorId = hohAlliance.Banner.CrestColorId;
+            alliance.BannerIconColorId = hohAlliance.Banner.IconColorId;
             alliance.UpdatedAt = collectedAtDate;
 
             if (alliance.NameHistory.OrderByDescending(x => x.ChangedAt).FirstOrDefault()?.Name != hohAlliance.Name)
