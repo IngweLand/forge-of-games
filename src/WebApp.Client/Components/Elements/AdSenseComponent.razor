@@ -9,12 +9,11 @@
 @if (_canShowAds)
 {
     <div id="@_adContainerId" @key="_adContainerId" class="@WrapperClass" style="@Style">
-        <ins class="adsbygoogle"
+        <ins class="adsbygoogle @AdClass"
              style="display:block; @AdStyle"
              data-ad-client="@AdClient"
-             data-ad-slot="@AdSlot"
              data-ad-format="@AdFormat"
-             data-full-width-responsive="@FullWidthResponsive"></ins>
+             data-ad-slot="@AdSlot"></ins>
     </div>
 }
 
@@ -25,13 +24,13 @@
     public required string AdSlot { get; set; } = string.Empty;
 
     [Parameter]
-    public string AdFormat { get; set; } = "auto";
+    public string? AdFormat { get; set; }
+    
+    [Parameter]
+    public string AdClass { get; set; } = string.Empty;
 
     [Parameter]
     public string AdClient { get; set; } = FogConstants.AD_SENSE_PUBLISHER_ID;
-
-    [Parameter]
-    public bool FullWidthResponsive { get; set; } = true;
 
     [Parameter]
     public string CssClass { get; set; } = string.Empty;
@@ -89,6 +88,7 @@
     {
         if (firstRender)
         {
+            await Task.Delay(100);
             _rendered = true;
             await InitializeAd();
         }

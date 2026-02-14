@@ -175,36 +175,11 @@ window.Fog.Webapp.Analytics = {
 
 window.Fog.Webapp.AdSense = {
     initializeAd:  (adSlotId) => {
+        console.debug('Initializing ad:', adSlotId);
         try {
-            // Check if adsbygoogle is loaded
-            if (typeof adsbygoogle === 'undefined') {
-                console.error('AdSense script not loaded yet');
-                return false;
-            }
-
-            // Find the ad container
-            const adContainer = document.getElementById(adSlotId);
-            if (!adContainer) {
-                console.error('Ad container not found:', adSlotId);
-                return false;
-            }
-
-            // Find the ins element inside
-            const insElement = adContainer.querySelector('ins.adsbygoogle');
-            if (!insElement) {
-                console.error('Ad ins element not found in container:', adSlotId);
-                return false;
-            }
-
-            // Check if already initialized (AdSense adds data-adsbygoogle-status when processed)
-            if (insElement.dataset.adsbygoogleStatus) {
-                console.log('Ad already initialized:', adSlotId);
-                return true;
-            }
-
             // Push the ad to AdSense queue
             (adsbygoogle = window.adsbygoogle || []).push({});
-            console.log('Ad initialized:', adSlotId);
+            console.debug('Ad initialized:', adSlotId);
             return true;
 
         } catch (e) {
@@ -212,9 +187,5 @@ window.Fog.Webapp.AdSense = {
             return false;
         }
     },
-
-    isAdSenseLoaded: ()  => {
-        return typeof adsbygoogle !== 'undefined';
-    }
 }
 

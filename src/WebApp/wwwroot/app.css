@@ -498,6 +498,14 @@ img.command-center-card-icon {
 
 /*markdown end*/
 
+/*ads start*/
+.ads-display-responsive-horizontal {
+    width: 100%;
+    max-width: 570px;
+    height: 200px;
+}
+
+/*ads end*/
 @media (min-width: 576px) {
     .main-layout-main-content {
         padding: var(--main-content-padding-576) !important;
@@ -548,6 +556,10 @@ img.command-center-card-icon {
     .horizontal-layout {
         gap: 12px;
     }
+
+    .ads-display-responsive-horizontal {
+        max-width: 768px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -567,11 +579,19 @@ img.command-center-card-icon {
     .markdown-city-guide h3 {
         margin: 24px 0;
     }
+
+    .ads-display-responsive-horizontal {
+        max-width: 992px;
+    }
 }
 
 @media (min-width: 992px) {
     .heroes-grid-layout {
         grid-template-columns: repeat(auto-fit, 100px);
+    }
+
+    .ads-display-responsive-horizontal {
+        max-width: 1200px;
     }
 }
 
@@ -582,5 +602,11 @@ img.command-center-card-icon {
 
     .horizontal-layout {
         gap: 16px;
+    }
+}
+
+@media (min-height: 800px) {
+    .ads-display-responsive-horizontal {
+        height: 250px;
     }
 }

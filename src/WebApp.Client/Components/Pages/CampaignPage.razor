@@ -2,17 +2,22 @@
 @inject ICampaignUiService CampaignUiService;
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
-@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-<div class="container-fluid g-0">
-    <AdSenseComponent AdSlot="9442418621" 
-             AdClient="@FogConstants.AD_SENSE_PUBLISHER_ID" />
+<div class="component-root">
+    <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
     <div class="list-group">
         @if (_continents != null)
         {
             @foreach (var continent in _continents)
             {
+                if (continent == _centralContinent)
+                {
+                    <AdSenseComponent AdSlot="9442418621"
+                                      AdClass="ads-display-responsive-horizontal"
+                                      Style="margin: 12px 0"/>
+                }
+
                 <div class="list-group-item list-group-item-secondary fw-bold">
                     @continent.Name
                 </div>
@@ -25,12 +30,12 @@
             }
         }
     </div>
-    <AdSenseComponent AdSlot="9404993245" AdFormat="autorelaxed"
-                      AdClient="@FogConstants.AD_SENSE_PUBLISHER_ID" />
+    <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
 </div>
 
 @code {
     private IReadOnlyCollection<ContinentBasicViewModel>? _continents;
+    private ContinentBasicViewModel? _centralContinent;
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,6 +45,11 @@
             nameof(_continents),
             async () => await CampaignUiService.GetCampaignContinentsBasicDataAsync()
         );
+
+        if (OperatingSystem.IsBrowser())
+        {
+            _centralContinent = _continents?.Skip(_continents.Count / 2).FirstOrDefault();
+        }
     }
 
 }
