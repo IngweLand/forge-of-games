@@ -9,9 +9,4 @@ public class AdSenseService(IJSRuntime jsRuntime) :IAdSenseService
     {
         return jsRuntime.InvokeVoidAsync("Fog.Webapp.AdSense.initializeAd", adSlotId);
     }
-
-    public ValueTask ClearAd(string adSlotId)
-    {
-        return jsRuntime.InvokeVoidAsync("Fog.Webapp.AdSense.clearAd", adSlotId);
-    }
 }

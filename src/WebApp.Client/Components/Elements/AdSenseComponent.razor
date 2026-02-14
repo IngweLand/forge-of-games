@@ -1,16 +1,22 @@
-@inject IAdSenseService AdSenseService
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Constants
+@using MudBlazor.Utilities
+@inject IAdSenseService AdSenseService
 @inject ILogger<AdSenseComponent> Logger
-@implements IAsyncDisposable
+@inject IPersistenceService PersistenceService
 
-<div id="@_adContainerId" class="adsbygoogle @CssClass" style="@Style">
-    <ins class="adsbygoogle"
-         style="display:block; @AdStyle"
-         data-ad-client="@AdClient"
-         data-ad-slot="@AdSlot"
-         data-ad-format="@AdFormat"
-         data-full-width-responsive="@FullWidthResponsive"></ins>
-</div>
+@if (_canShowAds)
+{
+    <div id="@_adContainerId" @key="_adContainerId" class="@WrapperClass" style="@Style">
+        <ins class="adsbygoogle"
+             style="display:block; @AdStyle"
+             data-ad-client="@AdClient"
+             data-ad-slot="@AdSlot"
+             data-ad-format="@AdFormat"
+             data-full-width-responsive="@FullWidthResponsive"></ins>
+    </div>
+}
 
 @code {
 
@@ -22,8 +28,7 @@
     public string AdFormat { get; set; } = "auto";
 
     [Parameter]
-    [EditorRequired]
-    public required string AdClient { get; set; } // publisher ID
+    public string AdClient { get; set; } = FogConstants.AD_SENSE_PUBLISHER_ID;
 
     [Parameter]
     public bool FullWidthResponsive { get; set; } = true;
@@ -33,39 +38,59 @@
 
     [Parameter]
     public string Style { get; set; } = string.Empty;
-
+    
     [Parameter]
     public string AdStyle { get; set; } = string.Empty;
 
     private readonly string _adContainerId = Guid.NewGuid().ToString("N");
+    private bool _canShowAds;
+    private bool _rendered;
+    private bool _isInitialized;
+
+    private string WrapperClass =>
+        new CssBuilder("component-root")
+            .AddClass(CssClass)
+            .Build();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        var firstVisitAt = await PersistenceService.GetItemAsync<DateTime?>(PersistenceKeys.FIRST_VISIT_AT);
+        _canShowAds = firstVisitAt < DateTime.UtcNow.AddDays(FogConstants.DAYS_BEFORE_SHOWING_ADS * -1);
+        await InitializeAd();
+    }
+
+    private async ValueTask InitializeAd()
+    {
+        if (_isInitialized || !_rendered || !_canShowAds)
+        {
+            return;
+        }
+
+        try
+        {
+            await AdSenseService.InitializeAd(_adContainerId);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error initializing AdSense: {ExMessage}", ex.Message);
+        }
+
+        _isInitialized = true;
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            try
-            {
-                // ensure DOM is fully ready
-                await Task.Delay(100);
-
-                await AdSenseService.InitializeAd(_adContainerId);
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError(ex, "Error initializing AdSense: {ExMessage}", ex.Message);
-            }
-        }
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        try
-        {
-            await AdSenseService.ClearAd(_adContainerId);
-        }
-        catch (Exception)
-        {
-            //Ignore
+            _rendered = true;
+            await InitializeAd();
         }
     }
 

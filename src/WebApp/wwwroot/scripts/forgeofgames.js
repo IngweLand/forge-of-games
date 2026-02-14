@@ -213,39 +213,6 @@ window.Fog.Webapp.AdSense = {
         }
     },
 
-    clearAd: (adSlotId) => {
-        try {
-            const adContainer = document.getElementById(adSlotId);
-            if (!adContainer) {
-                console.log('Ad container already removed:', adSlotId);
-                return;
-            }
-
-            // Find the ins element
-            const insElement = adContainer.querySelector('ins.adsbygoogle');
-            if (insElement) {
-                // Remove the status to allow re-initialization
-                delete insElement.dataset.adsbygoogleStatus;
-
-                // Clear any iframe or ad content that Google injected
-                const iframe = insElement.querySelector('iframe');
-                if (iframe) {
-                    iframe.remove();
-                }
-
-                // Clear any other injected content
-                while (insElement.firstChild) {
-                    insElement.removeChild(insElement.firstChild);
-                }
-            }
-
-            console.log('Ad cleared:', adSlotId);
-        } catch (e) {
-            console.error('Error clearing ad:', e);
-        }
-    },
-
-    // Utility function to check if AdSense script is loaded
     isAdSenseLoaded: ()  => {
         return typeof adsbygoogle !== 'undefined';
     }

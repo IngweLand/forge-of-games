@@ -27,4 +27,5 @@ public static class FogConstants
     public static readonly int MaxPlayerCitySnapshotSearchResults = 20;
 
     public const string AD_SENSE_PUBLISHER_ID = "ca-pub-9697370175465282";
+    public const int DAYS_BEFORE_SHOWING_ADS = 3;
 }

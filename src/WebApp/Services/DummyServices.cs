@@ -367,9 +367,4 @@ internal class DummyAdSenseService:IAdSenseService
     {
         throw new NotImplementedException();
     }
-
-    public ValueTask ClearAd(string adSlotId)
-    {
-        throw new NotImplementedException();
-    }
 }
