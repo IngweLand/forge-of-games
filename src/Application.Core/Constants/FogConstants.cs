@@ -25,4 +25,6 @@ public static class FogConstants
     public static readonly int MaxDisplayedBattles = 30;
     public static readonly int MaxDisplayedUnitBattles = 30;
     public static readonly int MaxPlayerCitySnapshotSearchResults = 20;
+
+    public const string AD_SENSE_PUBLISHER_ID = "ca-pub-9697370175465282";
 }

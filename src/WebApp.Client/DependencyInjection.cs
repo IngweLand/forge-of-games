@@ -33,6 +33,7 @@ internal static class DependencyInjection
         services.AddScoped<IEquipmentProfilePersistenceService, EquipmentProfilePersistenceService>();
         services.AddScoped<AppBarService>();
         services.AddScoped<CityStrategyNavigationState>();
+        services.AddScoped<IAdSenseService, AdSenseService>();
 
         var refitSettings = new RefitSettings
         {

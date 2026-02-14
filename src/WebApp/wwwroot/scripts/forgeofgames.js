@@ -173,3 +173,81 @@ window.Fog.Webapp.Analytics = {
     },
 }
 
+window.Fog.Webapp.AdSense = {
+    initializeAd:  (adSlotId) => {
+        try {
+            // Check if adsbygoogle is loaded
+            if (typeof adsbygoogle === 'undefined') {
+                console.error('AdSense script not loaded yet');
+                return false;
+            }
+
+            // Find the ad container
+            const adContainer = document.getElementById(adSlotId);
+            if (!adContainer) {
+                console.error('Ad container not found:', adSlotId);
+                return false;
+            }
+
+            // Find the ins element inside
+            const insElement = adContainer.querySelector('ins.adsbygoogle');
+            if (!insElement) {
+                console.error('Ad ins element not found in container:', adSlotId);
+                return false;
+            }
+
+            // Check if already initialized (AdSense adds data-adsbygoogle-status when processed)
+            if (insElement.dataset.adsbygoogleStatus) {
+                console.log('Ad already initialized:', adSlotId);
+                return true;
+            }
+
+            // Push the ad to AdSense queue
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            console.log('Ad initialized:', adSlotId);
+            return true;
+
+        } catch (e) {
+            console.error('Error initializing ad:', e);
+            return false;
+        }
+    },
+
+    clearAd: (adSlotId) => {
+        try {
+            const adContainer = document.getElementById(adSlotId);
+            if (!adContainer) {
+                console.log('Ad container already removed:', adSlotId);
+                return;
+            }
+
+            // Find the ins element
+            const insElement = adContainer.querySelector('ins.adsbygoogle');
+            if (insElement) {
+                // Remove the status to allow re-initialization
+                delete insElement.dataset.adsbygoogleStatus;
+
+                // Clear any iframe or ad content that Google injected
+                const iframe = insElement.querySelector('iframe');
+                if (iframe) {
+                    iframe.remove();
+                }
+
+                // Clear any other injected content
+                while (insElement.firstChild) {
+                    insElement.removeChild(insElement.firstChild);
+                }
+            }
+
+            console.log('Ad cleared:', adSlotId);
+        } catch (e) {
+            console.error('Error clearing ad:', e);
+        }
+    },
+
+    // Utility function to check if AdSense script is loaded
+    isAdSenseLoaded: ()  => {
+        return typeof adsbygoogle !== 'undefined';
+    }
+}
+

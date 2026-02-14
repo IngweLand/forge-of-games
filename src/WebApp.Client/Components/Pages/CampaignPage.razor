@@ -2,9 +2,12 @@
 @inject ICampaignUiService CampaignUiService;
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="container-fluid g-0">
+    <AdSenseComponent AdSlot="9442418621" 
+             AdClient="@FogConstants.AD_SENSE_PUBLISHER_ID" />
     <div class="list-group">
         @if (_continents != null)
         {
@@ -22,6 +25,8 @@
             }
         }
     </div>
+    <AdSenseComponent AdSlot="9404993245" AdFormat="autorelaxed"
+                      AdClient="@FogConstants.AD_SENSE_PUBLISHER_ID" />
 </div>
 
 @code {

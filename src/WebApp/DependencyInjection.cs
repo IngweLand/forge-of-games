@@ -37,6 +37,7 @@ internal static class DependencyInjection
         services.AddScoped<IFogSharingService, DummyFogSharingService>();
         services.AddScoped<IEquipmentProfilePersistenceService, DummyEquipmentProfilePersistenceService>();
         services.AddScoped<ISharedImageUploaderService, DummySharedImageUploaderService>();
+        services.AddScoped<IAdSenseService, DummyAdSenseService>();
 
         services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IMainMenuService, MainMenuService>();

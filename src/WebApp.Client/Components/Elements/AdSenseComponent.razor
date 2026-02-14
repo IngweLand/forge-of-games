@@ -1,0 +1,72 @@
+@inject IAdSenseService AdSenseService
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@inject ILogger<AdSenseComponent> Logger
+@implements IAsyncDisposable
+
+<div id="@_adContainerId" class="adsbygoogle @CssClass" style="@Style">
+    <ins class="adsbygoogle"
+         style="display:block; @AdStyle"
+         data-ad-client="@AdClient"
+         data-ad-slot="@AdSlot"
+         data-ad-format="@AdFormat"
+         data-full-width-responsive="@FullWidthResponsive"></ins>
+</div>
+
+@code {
+
+    [Parameter]
+    [EditorRequired]
+    public required string AdSlot { get; set; } = string.Empty;
+
+    [Parameter]
+    public string AdFormat { get; set; } = "auto";
+
+    [Parameter]
+    [EditorRequired]
+    public required string AdClient { get; set; } // publisher ID
+
+    [Parameter]
+    public bool FullWidthResponsive { get; set; } = true;
+
+    [Parameter]
+    public string CssClass { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Style { get; set; } = string.Empty;
+
+    [Parameter]
+    public string AdStyle { get; set; } = string.Empty;
+
+    private readonly string _adContainerId = Guid.NewGuid().ToString("N");
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            try
+            {
+                // ensure DOM is fully ready
+                await Task.Delay(100);
+
+                await AdSenseService.InitializeAd(_adContainerId);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, "Error initializing AdSense: {ExMessage}", ex.Message);
+            }
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        try
+        {
+            await AdSenseService.ClearAd(_adContainerId);
+        }
+        catch (Exception)
+        {
+            //Ignore
+        }
+    }
+
+}

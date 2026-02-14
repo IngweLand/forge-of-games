@@ -360,3 +360,16 @@ internal class DummyEquipmentProfilePersistenceService : IEquipmentProfilePersis
         throw new NotImplementedException();
     }
 }
+
+internal class DummyAdSenseService:IAdSenseService
+{
+    public ValueTask InitializeAd(string adSlotId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask ClearAd(string adSlotId)
+    {
+        throw new NotImplementedException();
+    }
+}
