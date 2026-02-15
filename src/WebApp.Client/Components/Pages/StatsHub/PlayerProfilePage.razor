@@ -11,6 +11,7 @@
 @if (IsInitialized && _player != null)
 {
     <div class="page-container">
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
         <PlayerInfoComponent Player="@_player.Player" OnAllianceClicked="OnPlayerInfoAllianceClicked"/>
         <div class="fog-container section-container actions-container">
             <div>
@@ -171,7 +172,7 @@
                 </div>
             }
         </ExpandableContainer>
-        
+
         @* <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_CityStrategies]" *@
         @*                      IsLoading="@_cityStrategiesAreLoading" *@
         @*                      ExpandedChanged="@ToggleCityStrategiesContainer"> *@
@@ -271,6 +272,7 @@
                 </div>
             </div>
         }
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
     </div>
 }
 else

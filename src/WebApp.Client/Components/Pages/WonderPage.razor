@@ -10,6 +10,9 @@
 @if (_wonder != null)
 {
     <div class="content-wrapper">
+        
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+
         <!-- Header -->
         <div class="fog-container header-container">
             <div class="group-name">@_wonder.Name</div>
@@ -22,13 +25,19 @@
         </div>
 
         <div class="fog-container">
-
-            @foreach (var level in _wonder.Levels)
+            @for(var i = 0; i < _wonder.Levels.Count; i++)
             {
-                <WonderLevelComponent LevelData="@level"/>
+                <WonderLevelComponent LevelData="@_wonder.Levels[i]"/>
+                
+                @if (i == 24)
+                {
+                    <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"
+                                      Style="margin: 12px 0"/>
+                }
             }
-
         </div>
+        
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
     </div>
 }
 

@@ -9,6 +9,11 @@
     <div class="root">
         @foreach (var difficulty in _difficulties)
         {
+            if (difficulty == _centralItem)
+            {
+                <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+            }
+            
             <div class="fog-container">
                 <img class="difficulty-icon" src="@difficulty.IconUrl"/>
                 <div class="difficulty-text">@difficulty.Name</div>
@@ -24,11 +29,14 @@
                 </div>
             </div>
         }
+        
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
     </div>
 }
 
 @code {
     private IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel>? _difficulties;
+    private TreasureHuntDifficultyBasicViewModel? _centralItem;
 
     protected override async Task OnInitializedAsync()
     {
@@ -38,6 +46,11 @@
             nameof(_difficulties),
             async () => await TreasureHuntUiService.GetDifficultiesAsync()
         );
+        
+        if (OperatingSystem.IsBrowser())
+        {
+            _centralItem = _difficulties?.Skip(_difficulties.Count / 2).FirstOrDefault();
+        }
     }
 
 }

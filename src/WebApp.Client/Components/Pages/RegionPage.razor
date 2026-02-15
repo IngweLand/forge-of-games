@@ -7,7 +7,6 @@
 @inject IAssetUrlProvider AssetUrlProvider
 @using Ingweland.Fog.Application.Client.Core.Localization
 @using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
-@using Ingweland.Fog.Application.Client.Web.Models
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
@@ -57,9 +56,13 @@
             </div>
         </div>
 
-        @foreach (var encounter in _region.Encounters)
+        @for (var i = 0; i < Encounters.Count; i++)
         {
-            <EncounterComponent Difficulty="@_difficulty" IsExpanded="@_isExpanded" Encounter="@encounter"/>
+            <EncounterComponent Difficulty="@_difficulty" IsExpanded="@_isExpanded" Encounter="@Encounters[i]"/>
+            @if ((i + 1) % 3 == 0)
+            {
+                <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+            }
         }
     </div>
 }
@@ -77,12 +80,13 @@
     private string _difficultyIcon;
     private bool _isChecked;
 
+    private IList<EncounterViewModel> Encounters => _region?.Encounters.ToList() ?? [];
+
     private string UnitGroupingButtonTooltip => _isExpanded
         ? Loc[FogResource.Tooltip_Battle_Squads_Aggregate]
         : Loc[FogResource.Tooltip_Battle_Squads_Disaggregate];
 
     private IReadOnlyCollection<IconLabelItemViewModel> _currentRewards = Array.Empty<IconLabelItemViewModel>();
-
 
     protected override async Task OnInitializedAsync()
     {
