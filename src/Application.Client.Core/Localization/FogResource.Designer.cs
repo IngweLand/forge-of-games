@@ -150,6 +150,33 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access to the City Viewer for 24 hours.
+        /// </summary>
+        public static string Adsense_Offerwall_CityViewer_RewardMessage {
+            get {
+                return ResourceManager.GetString("Adsense.Offerwall.CityViewer.RewardMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take action to continue accessing the City Viewer.
+        /// </summary>
+        public static string Adsense_Offerwall_CityViewer_Subtitle {
+            get {
+                return ResourceManager.GetString("Adsense.Offerwall.CityViewer.Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unlock the City Viewer.
+        /// </summary>
+        public static string Adsense_Offerwall_CityViewer_Title {
+            get {
+                return ResourceManager.GetString("Adsense.Offerwall.CityViewer.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forge of Games needs help. I’ve been covering all costs for this project myself for almost a year. I can’t keep funding it alone — without donations, the site may have to go offline soon. If you’d like it to stay up, please consider donating..
         /// </summary>
         public static string Announcement_Donation {
