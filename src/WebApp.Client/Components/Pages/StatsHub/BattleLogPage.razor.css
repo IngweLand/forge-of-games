@@ -14,10 +14,12 @@
 }
 
 .teams-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    padding: 0 2px;
-    gap: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    gap: 10px;
+    align-self: center;
 }
 
 .help-info {
@@ -27,7 +29,6 @@
 @media (min-width: 576px) {
     .teams-container {
         gap: 18px;
-        padding: 0 12px;
     }
 
     .options-container {

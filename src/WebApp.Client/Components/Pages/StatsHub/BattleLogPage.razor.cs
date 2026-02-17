@@ -16,9 +16,11 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
 public partial class BattleLogPage : BattleLogPageBase
 {
-    private IReadOnlyCollection<BattleSummaryViewModel> _battles = [];
+    private IReadOnlyList<BattleSummaryViewModel> _battles = [];
 
     private CancellationTokenSource? _battlesCts;
+
+    private bool _showContributionMessage = true;
 
     [Inject]
     private IBattleSearchRequestFactory BattleSearchRequestFactory { get; set; }
@@ -37,6 +39,9 @@ public partial class BattleLogPage : BattleLogPageBase
 
         if (OperatingSystem.IsBrowser())
         {
+            _showContributionMessage =
+                !await PersistenceService.GetItemAsync<bool>(PersistenceKeys.BATTLE_LOG_CONTRIBUTION_MESSAGE_READ);
+
             var savedRequest =
                 await PersistenceService.GetItemAsync<BattleSearchRequest?>(PersistenceKeys.BATTLE_LOG_REQUEST);
             BattleSearchRequest = savedRequest ?? new BattleSearchRequest();
@@ -76,12 +81,12 @@ public partial class BattleLogPage : BattleLogPageBase
         IsLoading = true;
         _battles = [];
         StateHasChanged();
-        
+
         if (_battlesCts != null)
         {
             await _battlesCts.CancelAsync();
         }
-        
+
         _battlesCts = new CancellationTokenSource();
 
         try
@@ -103,8 +108,10 @@ public partial class BattleLogPage : BattleLogPageBase
         }
     }
 
-    private void OnContributionPromptClick()
+    private async Task OnContributionPromptClick()
     {
+        await PersistenceService.SetItemAsync(PersistenceKeys.BATTLE_LOG_CONTRIBUTION_MESSAGE_READ, true);
+
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_BATTLE_LOG_PATH);
     }
 

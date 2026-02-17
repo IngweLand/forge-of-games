@@ -1,13 +1,22 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH)]
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattleLogPageBase
 
 <div class="component-root">
-    <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
-        @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
-    </div>
+    @if(_showContributionMessage)
+    {
+        <div class="help-info user-select-none" @onclick="OnContributionPromptClick">
+            @Loc[FogResource.StatsHub_BattleLog_ContributePrompt]
+        </div>
+    }
+    else
+    {
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/>
+    }
+   
     <div class="options-container fog-container">
         <BattleSelector ViewModel="@SelectorViewModel" SearchRequest="@BattleSearchRequest"
                         SearchRequestChanged="BattleSelectorOnValueChanged"/>
@@ -20,10 +29,21 @@
     </div>
 
     <div class="teams-container">
-        @foreach (var battle in _battles)
+        @for (var i = 0; i < _battles.Count; i++)
         {
+            var battle = _battles[i];
             <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile"
                                  OnBattleStatsClicked="OpenBattleStats"/>
+
+            @if ((i == 1 || (i + 1) % 5 == 0) && i != _battles.Count - 1)
+            {
+                <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
+                                  AdLayoutKey="-73+ed+2i-1n-4w"
+                                  AdClass="ads-in-feed"/>
+            }
         }
     </div>
+
+    <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                      AdClass="ads-multiflex" Style="margin-top: 12px;"/>
 </div>

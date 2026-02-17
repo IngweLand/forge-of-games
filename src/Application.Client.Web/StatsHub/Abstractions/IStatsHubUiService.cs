@@ -23,7 +23,7 @@ public interface IStatsHubUiService
     Task<PaginatedList<AllianceViewModel>> GetAllianceStatsAsync(string worldId, int startIndex, int pageSize,
         string? allianceName = null, CancellationToken ct = default);
 
-    Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(BattleSearchRequest request,
+    Task<IReadOnlyList<BattleSummaryViewModel>> SearchBattles(BattleSearchRequest request,
         CancellationToken ct = default);
 
     Task<IReadOnlyCollection<AllianceAthRankingViewModel>> GetAllianceAthRankingsAsync(int allianceId);

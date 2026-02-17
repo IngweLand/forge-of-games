@@ -13,7 +13,10 @@
              style="display:block; @AdStyle"
              data-ad-client="@AdClient"
              data-ad-format="@AdFormat"
-             data-ad-slot="@AdSlot"></ins>
+             data-ad-slot="@AdSlot"
+             data-ad-layout="@AdLayout"
+             data-ad-layout-key="@AdLayoutKey"
+             ></ins>
     </div>
 }
 
@@ -25,6 +28,12 @@
 
     [Parameter]
     public string? AdFormat { get; set; }
+    
+    [Parameter]
+    public string? AdLayout { get; set; } 
+    
+    [Parameter]
+    public string? AdLayoutKey { get; set; }
     
     [Parameter]
     public string AdClass { get; set; } = string.Empty;

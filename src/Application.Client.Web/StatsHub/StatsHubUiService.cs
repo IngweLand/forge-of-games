@@ -197,7 +197,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return _statsHubViewModelsFactory.CreatePlayers(result, await _ages.Value);
     }
 
-    public async Task<IReadOnlyCollection<BattleSummaryViewModel>> SearchBattles(
+    public async Task<IReadOnlyList<BattleSummaryViewModel>> SearchBattles(
         BattleSearchRequest request, CancellationToken ct = default)
     {
         var result = await _battleService.SearchBattlesAsync(request, ct);

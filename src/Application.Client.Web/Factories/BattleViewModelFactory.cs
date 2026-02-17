@@ -65,7 +65,7 @@ public class BattleViewModelFactory(
         };
     }
 
-    public async Task<IReadOnlyCollection<BattleSummaryViewModel>> CreateBattleSummaryViewModels(
+    public async Task<IReadOnlyList<BattleSummaryViewModel>> CreateBattleSummaryViewModels(
         IReadOnlyCollection<BattleSummaryDto> battles, BattleType battleType)
     {
         var heroIds =

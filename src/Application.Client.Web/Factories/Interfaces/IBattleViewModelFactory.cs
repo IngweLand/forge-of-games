@@ -13,7 +13,7 @@ namespace Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 
 public interface IBattleViewModelFactory
 {
-    Task<IReadOnlyCollection<BattleSummaryViewModel>> CreateBattleSummaryViewModels(
+    Task<IReadOnlyList<BattleSummaryViewModel>> CreateBattleSummaryViewModels(
         IReadOnlyCollection<BattleSummaryDto> battles, BattleType battleType);
 
     PvpBattleViewModel CreatePvpBattle(PlayerViewModel player, PvpBattleDto pvpBattleDto,
