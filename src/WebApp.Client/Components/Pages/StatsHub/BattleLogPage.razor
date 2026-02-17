@@ -35,7 +35,7 @@
             <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile"
                                  OnBattleStatsClicked="OpenBattleStats"/>
 
-            @if ((i == 1 || (i + 1) % 5 == 0) && i != _battles.Count - 1)
+            @if ((i == 0 || (i + 1) % 5 == 0) && i != _battles.Count - 1)
             {
                 <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
                                   AdLayoutKey="-73+ed+2i-1n-4w"

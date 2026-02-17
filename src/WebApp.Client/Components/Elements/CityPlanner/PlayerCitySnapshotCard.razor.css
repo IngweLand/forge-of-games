@@ -1,6 +1,7 @@
 .command-center-card {
     padding: 0;
     overflow: hidden;
+    justify-content: space-between;
 }
 .top-container, .bottom-container, .main-container{
     display: flex;

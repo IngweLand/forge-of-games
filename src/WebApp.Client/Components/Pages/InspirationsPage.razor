@@ -1,11 +1,14 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.CITY_PLANNER_INSPIRATIONS_PATH)]
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 
 <div class="component-root">
+    <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/>
+    
     <div class="options-container fog-container">
-        <CityInspirationsSearchForm FormData="@_searchFormViewModel"  Request="@_searchRequest"
+        <CityInspirationsSearchForm FormData="@_searchFormViewModel" Request="@_searchRequest"
                                     OnSearchClick="SearchFormOnSearchClick"/>
         @if (_isLoading)
         {
@@ -15,9 +18,21 @@
     </div>
 
     <div class="items-container">
-        @foreach (var inspiration in _inspirations)
+        
+        @for (var i = 0; i < _inspirations.Count; i++)
         {
-            <PlayerCitySnapshotCard Snapshot="@inspiration" OnClick="OpenCity"/>
+            var inspiration = _inspirations[i];
+            <PlayerCitySnapshotCard Snapshot="@inspiration" OnClick="@OpenCity"/>
+
+            @if ((i == 0 || (i + 1) % 5 == 0) && i != _inspirations.Count - 1)
+            {
+                <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
+                                  AdLayoutKey="-73+ed+2i-1n-4w"
+                                  AdClass="items-container-add"/>
+            }
         }
     </div>
+    
+    <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                      AdClass="ads-multiflex" Style="margin-top: 12px;"/>
 </div>

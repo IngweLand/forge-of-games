@@ -22,7 +22,7 @@ public partial class InspirationsPage : FogPageBase, IAsyncDisposable
 
     private CancellationTokenSource _cts = new();
 
-    private IReadOnlyCollection<PlayerCitySnapshotBasicViewModel> _inspirations = [];
+    private IReadOnlyList<PlayerCitySnapshotBasicViewModel> _inspirations = [];
     private bool _isDisposed;
     private bool _isLoading = true;
     private CityInspirationsSearchFormViewModel? _searchFormViewModel;

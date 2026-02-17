@@ -53,7 +53,7 @@ public class CityInspirationsUiService(
         };
     }
 
-    public async Task<IReadOnlyCollection<PlayerCitySnapshotBasicViewModel>> GetInspirationsAsync(
+    public async Task<IReadOnlyList<PlayerCitySnapshotBasicViewModel>> GetInspirationsAsync(
         CityInspirationsSearchRequest request, CancellationToken ct = default)
     {
         var ages = await commonUiService.GetAgesAsync();

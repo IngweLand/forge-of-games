@@ -9,7 +9,7 @@ public interface ICityInspirationsUiService
 {
     Task<CityInspirationsSearchFormViewModel> GetSearchFormDataAsync();
 
-    Task<IReadOnlyCollection<PlayerCitySnapshotBasicViewModel>> GetInspirationsAsync(CityInspirationsSearchRequest request,
+    Task<IReadOnlyList<PlayerCitySnapshotBasicViewModel>> GetInspirationsAsync(CityInspirationsSearchRequest request,
         CancellationToken ct = default);
 
     Task<HohCity?> GetPlayerCitySnapshotAsync(int snapshotId, CancellationToken ct = default);
