@@ -14,4 +14,5 @@ public interface IJSInteropService
     ValueTask ScrollToBottomAsync(ElementReference target, bool smooth = false);
     ValueTask SendToGtag(string command, string target, IReadOnlyDictionary<string, object> parameters);
     ValueTask SaveFileAsync(string fileName, string contentType, object content);
+    ValueTask OpenPrivacySettingsAsync();
 }

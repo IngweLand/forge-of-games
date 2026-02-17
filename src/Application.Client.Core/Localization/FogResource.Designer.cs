@@ -2985,6 +2985,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Privacy and cookie settings.
+        /// </summary>
+        public static string Privacy_OpenSettings {
+            get {
+                return ResourceManager.GetString("Privacy.OpenSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Plan your research efficiently in Heroes of History. Calculate resource costs and unlock new technologies with ease..
         /// </summary>
         public static string ResearchCalculator_Meta_Description {

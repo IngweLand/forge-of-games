@@ -55,4 +55,9 @@ public class JSInteropService(IJSRuntime jsRuntime) : IJSInteropService
     {
         return jsRuntime.InvokeVoidAsync("Fog.Webapp.Common.saveFile", fileName, contentType, content);
     }
+    
+    public ValueTask OpenPrivacySettingsAsync()
+    {
+        return jsRuntime.InvokeVoidAsync("Fog.Webapp.Google.openPrivacySettings");
+    }
 }

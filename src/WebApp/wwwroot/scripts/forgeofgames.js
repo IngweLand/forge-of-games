@@ -189,3 +189,18 @@ window.Fog.Webapp.AdSense = {
     },
 }
 
+window.Fog.Webapp.Google = {
+    openPrivacySettings:  () => {
+        try {
+            if (window.googlefc && typeof googlefc.showRevocationMessage === "function") {
+                googlefc.showRevocationMessage();
+            } else {
+                console.warn("Funding Choices not loaded yet.");
+            }
+
+        } catch (e) {
+            console.error('Error initializing ad:', e);
+        }
+    },
+}
+

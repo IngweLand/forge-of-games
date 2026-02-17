@@ -1,23 +1,27 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BASE_ABOUT_PATH)]
+@inject IJSInteropService JSInteropService;
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
 @using Ingweland.Fog.Application.Core.Helpers
-@using Microsoft.Extensions.Localization
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
-<div class="container gap-5">
-    <div class="row py-3 px-2 mb-3">
-        <AboutComponent/>
-    </div>
-    <div class="row py-3 px-2">
-        <h5>@Loc[FogResource.Common_Disclaimer]</h5>
-        <p>@Loc[FogResource.Common_Disclaimer_Text]</p>
-        <p>info@forgeofgames.com</p>
-        <a href="https://discord.gg/4vFeeh7CZn" target="_blank" class="discord-link">
-            <i class="fab fa-discord fs-4"></i>
-            <span>@Loc[FogResource.Common_JoinDiscord]</span>
-        </a>
-    </div>
+<div class="component-root">
+    <AboutComponent/>
+    <h5>@Loc[FogResource.Common_Disclaimer]</h5>
+    <span>@Loc[FogResource.Common_Disclaimer_Text]</span>
+    <span>info@forgeofgames.com</span>
+    <a href="https://discord.gg/4vFeeh7CZn" target="_blank" class="discord-link">
+        <i class="fab fa-discord fs-4"></i>
+        <span>@Loc[FogResource.Common_JoinDiscord]</span>
+    </a>
+    <MudButton Variant="Variant.Filled"
+               OnClick="@OpenPrivacySettings">@Loc[FogResource.Privacy_OpenSettings]</MudButton>
 </div>
 
 @code {
+
+    private Task OpenPrivacySettings()
+    {
+        return JSInteropService.OpenPrivacySettingsAsync().AsTask();
+    }
 
 }

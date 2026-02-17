@@ -231,6 +231,11 @@ internal class DummyJSInteropService : IJSInteropService
         throw new NotImplementedException();
     }
 
+    public ValueTask OpenPrivacySettingsAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     public ValueTask<bool> IsMobileAsync()
     {
         throw new NotImplementedException();
