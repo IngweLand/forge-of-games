@@ -1,5 +1,6 @@
 @using System.Globalization
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
 @using Ingweland.Fog.Models.Fog.Entities
 @if (_profile != null)
@@ -166,9 +167,10 @@
         <RelicInsightsComponent UnitId="@_profile.HeroUnitId"/>
         <UnitBattlesComponent UnitId="@_profile.HeroUnitId" AdditionalAnalyticsParams="_defaultAnalyticsParameters"/>
 
-        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
-        
         <WikiAbstractComponent SearchString="@_profile.Name"/>
+        
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
 
     </div>
 }

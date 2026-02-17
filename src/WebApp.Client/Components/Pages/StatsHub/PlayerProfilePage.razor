@@ -1,6 +1,7 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.PLAYER_PROFILE_TEMPLATE)]
 @using System.Globalization
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Core.Extensions
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Hoh.Enums
@@ -272,7 +273,8 @@
                 </div>
             </div>
         }
-        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
     </div>
 }
 else

@@ -1,5 +1,6 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.TREASURE_HUNT_STAGE_TEMPLATE)]
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
@@ -48,11 +49,14 @@
         @for (var i = 0; i < Encounters.Count; i++)
         {
             <TreasureHuntEncounterComponent IsExpanded="@_isExpanded" Encounter="@Encounters[i]"/>
-            @if ((i + 1) % 5 == 0)
+            @if ((i + 1) % 5 == 0&& i != Encounters.Count -1)
             {
                 <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
             }
         }
+        
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
     </div>
 }
 

@@ -1,5 +1,6 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BUILDING_TEMPLATE)]
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
 @using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City
@@ -39,7 +40,8 @@
 
         </div>
         
-        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
         
     </div>
 }

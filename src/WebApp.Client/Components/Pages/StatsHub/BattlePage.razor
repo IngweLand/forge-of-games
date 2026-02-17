@@ -1,5 +1,6 @@
 @attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_TEMPLATE)]
 @using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattlePageBase
@@ -16,5 +17,8 @@
         {
             <BattleTimelineComponent Timeline="@_battle.Timeline" OnEntryClicked="OpenBattleSquadProfile"/>
         }
+        
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
     </div>
 }
