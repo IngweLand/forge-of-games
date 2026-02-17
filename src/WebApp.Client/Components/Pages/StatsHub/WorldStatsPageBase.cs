@@ -1,15 +1,17 @@
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Models.Fog;
-using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Refit;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
-public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
+public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase, IAsyncDisposable
 {
+    private CancellationTokenSource? _cts;
+    private Task<PaginatedList<TItem>>? _currentTask;
     private bool _isNavigatingAway;
-    protected PaginatedStatsListComponent<TItem>? _listComponent;
+    protected bool IsLoading => _currentTask is {IsCompleted: false};
+    protected IReadOnlyList<TItem> Items { get; set; }
 
     [Parameter]
     [SupplyParameterFromQuery]
@@ -21,6 +23,27 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
     [Parameter]
     public required string WorldId { get; set; }
+
+    public async ValueTask DisposeAsync()
+    {
+        await DisposeAsyncCore();
+        GC.SuppressFinalize(this);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        Items = await LoadWithPersistenceAsync(nameof(Items),
+            async () =>
+            {
+                _currentTask = GetDataAsync(0, FogConstants.MAX_LEADERBOARD_PAGE_SIZE);
+                var result = await _currentTask;
+                return result.Items.ToList();
+            }) ?? [];
+
+        IsInitialized = true;
+    }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -37,27 +60,30 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
 
         if (OperatingSystem.IsBrowser())
         {
-            await RequestDataRefreshAsync();
+            _currentTask = GetDataAsync(0, FogConstants.MAX_LEADERBOARD_PAGE_SIZE);
+            var result = await _currentTask;
+            Items = result.Items.ToList();
             IsInitialized = true;
         }
-    }
-    
-    protected virtual Task RequestDataRefreshAsync()
-    {
-         _listComponent?.RequestDataRefresh();
-         return Task.CompletedTask;
     }
 
     protected abstract string GetTitle();
 
-    protected abstract ValueTask<PaginatedList<TItem>> FetchDataAsync(ItemsProviderRequest request);
+    protected abstract ValueTask<PaginatedList<TItem>> FetchDataAsync(int startIndex, int count, string? query = null,
+        CancellationToken ct = default);
 
-    protected async ValueTask<ItemsProviderResult<TItem>> GetDataAsync(ItemsProviderRequest request)
+    protected async Task<PaginatedList<TItem>> GetDataAsync(int startIndex, int count)
     {
+        if (_cts != null)
+        {
+            await _cts.CancelAsync();
+        }
+
+        _cts = new CancellationTokenSource();
+
         try
         {
-            var result = await FetchDataAsync(request);
-            return new ItemsProviderResult<TItem>(result.Items, result.TotalCount);
+            return await FetchDataAsync(startIndex, count, Q, _cts.Token);
         }
         catch (OperationCanceledException _)
         {
@@ -70,7 +96,7 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
             await Console.Error.WriteLineAsync($"Unexpected error: {ex}");
         }
 
-        return new ItemsProviderResult<TItem>([], 0);
+        return PaginatedList<TItem>.Empty;
     }
 
     private void NavigateWithQuery(string? queryItem)
@@ -91,5 +117,13 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase
     protected void Search(string? name)
     {
         NavigateWithQuery(name);
+    }
+
+    protected virtual async ValueTask DisposeAsyncCore()
+    {
+        if (_cts != null)
+        {
+            await _cts.CancelAsync();
+        }
     }
 }

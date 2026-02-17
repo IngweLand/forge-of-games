@@ -1,7 +1,6 @@
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Models.Fog;
-using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
@@ -14,9 +13,9 @@ public partial class WorldAllianceStatsPage : WorldStatsPageBase<AllianceViewMod
             : Loc[FogResource.StatsHub_Worlds_AllianceListTitle, FogResource.StatsHub_Worlds_MainWorld];
     }
 
-    protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(ItemsProviderRequest request)
+    protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(int startIndex, int count,
+        string? query = null, CancellationToken ct = default)
     {
-        return await StatsHubUiService.GetAllianceStatsAsync(WorldId, request.StartIndex, request.Count, Q,
-            request.CancellationToken);
+        return await StatsHubUiService.GetAllianceStatsAsync(WorldId, startIndex, count, query, ct);
     }
 }

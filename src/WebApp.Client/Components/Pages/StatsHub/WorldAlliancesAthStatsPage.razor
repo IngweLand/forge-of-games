@@ -5,7 +5,7 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title" Items="@_items" IsLoading="@_isLoading">
+    <StatsListComponent Title="@Title" Items="@Items" IsLoading="@IsLoading">
         <FilterTemplate>
             <AthLeagueSelectorComponent Leagues="@_treasureHuntLeagues" SelectedLeague="@_selectedLeague"
                                         LeagueChanged="@OnLeagueChanged"/>
@@ -16,7 +16,7 @@
                 <AllianceListItemComponent ShowRank="true" Alliance="@context"/>
             </a>
         </ItemTemplate>
-    </PaginatedStatsListComponent>
+    </StatsListComponent>
 }
 else
 {

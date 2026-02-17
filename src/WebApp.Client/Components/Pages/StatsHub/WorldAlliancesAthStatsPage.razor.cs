@@ -1,12 +1,10 @@
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
-using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Fog;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 
@@ -28,15 +26,17 @@ public partial class WorldAlliancesAthStatsPage : WorldStatsPageBase<AllianceVie
             : Loc[FogResource.StatsHub_Worlds_TopAllianceAthRankingListTitle, FogResource.StatsHub_Worlds_MainWorld];
     }
 
-    protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(ItemsProviderRequest request)
+    protected override async ValueTask<PaginatedList<AllianceViewModel>> FetchDataAsync(int startIndex, int count,
+        string? query = null, CancellationToken ct = default)
     {
-        return await StatsHubUiService.GetAlliancesAthRankingsAsync(WorldId, request.StartIndex,
-            request.Count, _selectedLeague, request.CancellationToken);
+        return await StatsHubUiService.GetAlliancesAthRankingsAsync(WorldId, startIndex, count, _selectedLeague, ct);
     }
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
+
+        IsInitialized = false;
 
         _treasureHuntLeagues = await LoadWithPersistenceAsync(nameof(_treasureHuntLeagues),
             async () =>
@@ -46,26 +46,7 @@ public partial class WorldAlliancesAthStatsPage : WorldStatsPageBase<AllianceVie
                     .ToList();
             });
 
-        _items = await LoadWithPersistenceAsync(nameof(_items),
-            async () =>
-            {
-                _isLoading = true;
-                var result = await GetDataAsync(new ItemsProviderRequest(0, FogConstants.MAX_ALLIANCES_ATH_RANKINGS,
-                    CancellationToken.None));
-                _isLoading = false;
-                return result.Items.ToList();
-            });
-
         IsInitialized = true;
-    }
-
-    protected override async Task RequestDataRefreshAsync()
-    {
-        _isLoading = true;
-        var result = await GetDataAsync(new ItemsProviderRequest(0, FogConstants.MAX_ALLIANCES_ATH_RANKINGS,
-            CancellationToken.None));
-        _items = result.Items.ToList();
-        _isLoading = false;
     }
 
     protected override async Task OnParametersSetAsync()

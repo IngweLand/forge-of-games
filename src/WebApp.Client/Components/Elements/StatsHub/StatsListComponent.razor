@@ -1,0 +1,99 @@
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
+@using Ingweland.Fog.Application.Client.Web.Services.Abstractions
+@using Ingweland.Fog.Application.Core.Helpers
+@using Microsoft.Extensions.Localization
+@typeparam TItem
+@inject IStringLocalizer<FogResource> Loc
+@inject NavigationManager NavigationManager
+@inject IPersistenceService PersistenceService
+<div class="content-wrapper">
+    @if (_shouldShowContributionPrompt)
+    {
+        <div class="help-info user-select-none"
+             @onclick="OnContributionPromptClick">
+            @((MarkupString) Loc[FogResource.StatsHub_ContributePrompt].Value)
+        </div>
+    }
+    else
+    {
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/>
+    }
+    <div class="fog-container section">
+        <div class="top-container">
+            <span class="title">@Title</span>
+            @if (IsLoading)
+            {
+                <MudProgressLinear Style="position: absolute; bottom: 0; left: 0" Color="Color.Primary"
+                                   Indeterminate="true"/>
+            }
+        </div>
+        @if (FilterTemplate != null)
+        {
+            <div class="search-form">
+                @FilterTemplate
+            </div>
+        }
+        <div class="items-container">
+
+            @for (var i = 0; i < Items.Count; i++)
+            {
+                var item = Items[i];
+                @ItemTemplate(item)
+
+                @if ((i == 2 || (i + 1) % 10 == 0) && i != Items.Count - 1)
+                {
+                    <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
+                                      AdLayoutKey="-73+ed+2i-1n-4w"
+                                      AdClass="ads-in-feed" CssClass="in-feed-container"/>
+                }
+            }
+        </div>
+    </div>
+    
+    <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                      AdClass="ads-multiflex" Style="margin-top: 12px;"/>
+</div>
+
+@code {
+
+    private const string CONTRIBUTION_PROMPT_CLICKED_KEY = "ContributionPromptClicked";
+    private bool _shouldShowContributionPrompt = true;
+
+    [Parameter]
+    [EditorRequired]
+    public RenderFragment<TItem> ItemTemplate { get; set; }
+
+    [Parameter]
+    public RenderFragment? FilterTemplate { get; set; }
+
+    [Parameter]
+    [EditorRequired]
+    public string Title { get; set; }
+
+    [Parameter]
+    public IReadOnlyList<TItem> Items { get; set; } = [];
+
+    [Parameter]
+    public bool IsLoading { get; set; }
+
+    private async Task OnContributionPromptClick()
+    {
+        _shouldShowContributionPrompt = false;
+
+        await PersistenceService.SetItemAsync(CONTRIBUTION_PROMPT_CLICKED_KEY, true);
+
+        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.HELP_STATS_HUB_PATH);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!OperatingSystem.IsBrowser())
+        {
+            return;
+        }
+
+        _shouldShowContributionPrompt = !await PersistenceService.GetItemAsync<bool>(CONTRIBUTION_PROMPT_CLICKED_KEY);
+    }
+
+}

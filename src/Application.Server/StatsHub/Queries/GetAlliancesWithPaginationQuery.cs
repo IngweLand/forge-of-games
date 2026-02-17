@@ -12,12 +12,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Server.StatsHub.Queries;
 
-public record GetAlliancesWithPaginationQuery : IRequest<PaginatedList<AllianceDto>>
+public record GetAlliancesWithPaginationQuery : IRequest<PaginatedList<AllianceDto>>, ICacheableRequest
 {
     public string? Name { get; init; }
     public int PageSize { get; init; }
     public int StartIndex { get; init; }
     public string? WorldId { get; init; }
+    public TimeSpan? Duration => TimeSpan.FromMinutes(15);
+    public DateTimeOffset? Expiration { get; }
 }
 
 public class GetAlliancesWithPaginationQueryHandler(
@@ -32,7 +34,9 @@ public class GetAlliancesWithPaginationQueryHandler(
         CancellationToken cancellationToken)
     {
         // TODO implement validator instead
-        var pageSize = request.PageSize > 100 ? 100 : request.PageSize;
+        var pageSize = request.PageSize > FogConstants.MAX_LEADERBOARD_PAGE_SIZE
+            ? FogConstants.MAX_LEADERBOARD_PAGE_SIZE
+            : request.PageSize;
         var result = await GetAlliancesFromDbAsync(request.WorldId, request.Name, request.StartIndex, pageSize,
             cancellationToken);
         if (result.Count != 0 || request.WorldId == null || string.IsNullOrWhiteSpace(request.Name) ||

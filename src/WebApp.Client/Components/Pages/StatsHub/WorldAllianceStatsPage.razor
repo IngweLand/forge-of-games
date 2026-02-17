@@ -5,7 +5,7 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title"  ItemsProviderDelegate="GetDataAsync">
+    <StatsListComponent Title="@Title" Items="@Items" IsLoading="@IsLoading">
         <FilterTemplate>
             <TextSearchComponent OnSearch="Search" NameSearchString="@QueryItem"></TextSearchComponent>
         </FilterTemplate>
@@ -15,7 +15,7 @@
                 <AllianceListItemComponent Alliance="@context"/>
             </a>
         </ItemTemplate>
-    </PaginatedStatsListComponent>
+    </StatsListComponent>
 }
 else
 {

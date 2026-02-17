@@ -5,14 +5,14 @@
 
 @if (IsInitialized)
 {
-    <PaginatedStatsListComponent @ref="@_listComponent" Title="@Title" Items="@_items" IsLoading="@_isLoading">
+    <StatsListComponent Title="@Title" Items="@Items" IsLoading="@IsLoading">
         <ItemTemplate>
             <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.Player(context.Id)"
                @onclick="OnItemClicked">
                 <PlayerListItemComponent ShowRank="true" Player="@context"/>
             </a>
         </ItemTemplate>
-    </PaginatedStatsListComponent>
+    </StatsListComponent>
 }
 else
 {

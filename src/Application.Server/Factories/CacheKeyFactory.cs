@@ -94,6 +94,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetCommunityCityStrategiesQuery q => $"CommunityCityStrategies",
             GetCommunityCityGuidesQuery q => $"CommunityCityGuides",
             GetCommunityCityGuideQuery q => $"CommunityCityGuide:{q.Id}",
+            GetAlliancesWithPaginationQuery q => $"Alliances:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
+            GetPlayersWithPaginationQuery q => $"Players:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }
