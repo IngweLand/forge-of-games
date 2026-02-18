@@ -11,6 +11,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages;
 
 public partial class CityStrategyViewerPage : FogPageBase
 {
+    private bool _canEdit;
     private bool _isSmallScreen;
     private CityStrategy? _strategy;
 
@@ -47,6 +48,8 @@ public partial class CityStrategyViewerPage : FogPageBase
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH, false, true);
             return;
         }
+
+        _canEdit = !CityStrategyNavigationState.Data!.IsCommunity;
 
         await JsInteropService.ResetScrollPositionAsync();
         await Task.Delay(30);

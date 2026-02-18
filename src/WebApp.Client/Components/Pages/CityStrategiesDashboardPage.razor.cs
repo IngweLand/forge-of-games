@@ -136,12 +136,13 @@ public partial class CityStrategiesDashboardPage : FogPageBase
             {
                 Strategy = strategy,
                 IsRemote = true,
+                IsCommunity = true,
             };
 
             _strategiesAreLoading = false;
-            
+
             AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_COMMUNITY_CITY_STRATEGY_SUCCESS, eventParams);
-            
+
             NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
         }
         else

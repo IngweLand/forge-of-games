@@ -93,6 +93,9 @@
     [Parameter]
     public EventCallback OnEditRequested { get; set; }
 
+    [Parameter]
+    public bool CanEdit { get; set; }
+
     protected override void OnInitialized()
     {
         base.OnInitialized();
@@ -116,9 +119,13 @@
                                                    Color="Color.Inherit"/>
                                 </div>
                             }
-                            <div class="toolbar-divider"></div>
-                            <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
-                                           Color="Color.Inherit"/>
+                            @if (CanEdit)
+                            {
+                                <div class="toolbar-divider"></div>
+                                <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
+                                               Color="Color.Inherit"/>
+                            }
+
                         </div>;
     }
 

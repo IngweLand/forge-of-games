@@ -8,6 +8,7 @@ public class CityStrategyNavigationState
 
     public record CityStrategyNavigationStateData
     {
+        public bool IsCommunity { get; init; }
         public bool IsRemote { get; init; }
         public required CityStrategy Strategy { get; init; }
     }
