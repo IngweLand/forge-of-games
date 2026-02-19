@@ -1,3 +1,4 @@
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
@@ -66,6 +67,9 @@
                             <CityPropertiesComponent Editable="false"
                                                      Data="@CityStrategyBuilderService.CityMapState.CityPropertiesViewModel"/>
                         }
+
+                        <AdSenseComponent AdSlot="4481707737" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                                          AdClass="right-container-ads"/>
                     </div>
 
                 </MudTabPanel>
@@ -81,6 +85,9 @@
                             <CityPlannerWonderCostCalculator
                                 FromLevel="@CityStrategyBuilderService.CityMapState.CityWonderLevel"/>
                         }
+
+                        <AdSenseComponent AdSlot="4481707737" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                                          AdClass="right-container-ads"/>
                     </div>
                 </MudTabPanel>
             </MudTabs>

@@ -1,3 +1,4 @@
+@using Ingweland.Fog.Application.Client.Web.Constants
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner
 @using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats
@@ -33,6 +34,9 @@
                         <CityPlannerWonderCostCalculator
                             FromLevel="@CityStrategyBuilderService.CityMapState.CityWonderLevel"/>
                     }
+
+                    <AdSenseComponent AdSlot="4481707737" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                                      AdClass="ad-city-properties"/>
                 </div>
             </div>
         }

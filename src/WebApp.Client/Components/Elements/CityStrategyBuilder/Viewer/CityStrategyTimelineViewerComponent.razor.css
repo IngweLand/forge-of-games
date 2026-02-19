@@ -4,7 +4,6 @@
     overflow: hidden;
     height: 100%;
     background-color: var(--fog-surface-color);
-    border: 1px solid var(--fog-border-color);
     gap: 6px;
 }
 
@@ -69,4 +68,12 @@
     text-align: center;
     flex: 0 0 auto;
     font-size: 10px;
+}
+
+::deep .in-feed-container {
+    margin: 24px 0 !important;
+}
+
+::deep .ad-item {
+    width: 100%;
 }

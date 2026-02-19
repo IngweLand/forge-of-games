@@ -499,11 +499,11 @@ img.command-center-card-icon {
 /*markdown end*/
 
 /*ads start*/
-ins.adsbygoogle[data-ad-status="unfilled"] {
+.adsense-component-root:has(> ins.adsbygoogle[data-ad-status="unfilled"]) {
     display: none !important;
 }
 
-ins.adsbygoogle[data-ad-status="unfilled-optimized"] {
+.adsense-component-root:has(> ins.adsbygoogle[data-ad-status="unfill-optimized"]) {
     display: none !important;
 }
 

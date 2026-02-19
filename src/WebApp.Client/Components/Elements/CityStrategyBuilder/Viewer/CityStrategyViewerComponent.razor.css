@@ -3,7 +3,7 @@
     grid-template-columns: auto 1fr auto;
     position: relative;
     height: var(--full-page-height);
-    gap: 6px;
+    gap: 2px;
     margin: calc(var(--main-content-padding) * -1);
 }
 
@@ -21,7 +21,7 @@
 
 .timeline-container {
     grid-column: 1 / 2; /* First column */
-    width: 260px;
+    width: 270px;
 }
 
 .main-container {
@@ -78,6 +78,11 @@
 
 ::deep .mud-tab-slider {
     width: 6px !important;
+}
+
+::deep .right-container-ads {
+    width: 100%;
+    min-height: 800px;
 }
 
 @media (min-width: 576px) {

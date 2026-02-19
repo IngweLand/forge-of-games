@@ -64,6 +64,8 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
         {
             {d => d.Building, CityStrategyBuilderService.CityMapState.SelectedEntityViewModel},
             {d => d.CityId, CityStrategyBuilderService.CityMapState.InGameCityId},
+            {d => d.TopAdSlot, "7927904829"},
+            {d => d.BottomAdSlot, "7927904829"},
         };
         _ = await DialogService.ShowAsync<CityMapEntityPropertiesDialog>(null, parameters, options);
         CityStrategyBuilderService.DeselectAll();

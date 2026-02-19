@@ -18,7 +18,7 @@
     grid-template-rows: auto 1fr;
     overflow-y: auto;
     flex: 1 1 auto;
-    padding: 6px;
+    padding-top: 6px;
 }
 
 .content-container {
@@ -93,6 +93,11 @@
     padding-top: 24px;
     left: 12px;
     right: 12px;
+}
+
+::deep .ad-city-properties {
+    width: 100%;
+    min-height: 800px;
 }
 
 @media (min-width: 576px) {

@@ -1,0 +1,15 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+
+::deep .ad-cme-properties-dialog-top {
+    width: 100%;
+    height: 100px;
+}
+
+::deep .ad-cme-properties-dialog-bottom {
+    width: 100%;
+    height: 280px;
+}

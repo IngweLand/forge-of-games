@@ -2,13 +2,22 @@
 @using Ingweland.Fog.Models.Hoh.Enums
 <MudDialog Gutters="false" ContentStyle="padding: 8px !important; margin: 0 !important">
     <DialogContent>
-        <div style="display: flex; flex-direction: column; gap: 8px">
+        <div class="content-container">
             <MudIconButton Icon="@Icons.Material.Outlined.Close" OnClick="@(() => Close())"
-                           Style="align-self: flex-end"></MudIconButton>
+                           Style="align-self: flex-end; margin-bottom: 12px;"></MudIconButton>
+            @if (TopAdSlot != null)
+            {
+                <AdSenseComponent AdSlot="@TopAdSlot" AdClass="ad-cme-properties-dialog-top"/>
+            }
             <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
             <CityPlannerBuildingCostCalculator
                 CityId="@CityId" BuildingGroup="@Building.Group" FromLevel="@Building.Level"
                 BuildingName="@Building.Name"/>
+
+            @if (BottomAdSlot != null)
+            {
+                <AdSenseComponent AdSlot="@BottomAdSlot" AdClass="ad-cme-properties-dialog-bottom"/>
+            }
         </div>
     </DialogContent>
 </MudDialog>
@@ -25,6 +34,12 @@
     [Parameter]
     [EditorRequired]
     public required CityId CityId { get; init; }
+
+    [Parameter]
+    public string? BottomAdSlot { get; set; }
+
+    [Parameter]
+    public string? TopAdSlot { get; set; }
 
     private void Close()
     {

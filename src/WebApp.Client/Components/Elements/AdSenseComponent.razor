@@ -16,7 +16,7 @@
              data-ad-slot="@AdSlot"
              data-ad-layout="@AdLayout"
              data-ad-layout-key="@AdLayoutKey"
-             ></ins>
+        ></ins>
     </div>
 }
 
@@ -28,13 +28,13 @@
 
     [Parameter]
     public string? AdFormat { get; set; }
-    
+
     [Parameter]
-    public string? AdLayout { get; set; } 
-    
+    public string? AdLayout { get; set; }
+
     [Parameter]
     public string? AdLayoutKey { get; set; }
-    
+
     [Parameter]
     public string AdClass { get; set; } = string.Empty;
 
@@ -46,7 +46,7 @@
 
     [Parameter]
     public string Style { get; set; } = string.Empty;
-    
+
     [Parameter]
     public string AdStyle { get; set; } = string.Empty;
 
@@ -56,7 +56,7 @@
     private bool _isInitialized;
 
     private string WrapperClass =>
-        new CssBuilder("component-root")
+        new CssBuilder("adsense-component-root")
             .AddClass(CssClass)
             .Build();
 
