@@ -25,8 +25,7 @@
 }
 
 .card img {
-    height: 400px;
-    aspect-ratio: 1/1;
+    height: 200px;
     object-fit: cover;
     filter: grayscale(0%);
     transition: filter 0.3s ease;
@@ -37,8 +36,8 @@
 .card .title {
     text-align: center;
     text-transform: uppercase;
-    padding: 0.8rem !important;
-    font-size: 1.5rem !important;
+    padding: 8px;
+    font-size: 20px;
     font-weight: 200 !important;
     letter-spacing: 3px;
     color: var(--fog-text-on-container-color);
@@ -48,5 +47,14 @@
     .banner-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+
+    .card .title {
+        padding: 12px;
+        font-size: 24px;
     }
 }

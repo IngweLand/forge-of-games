@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using Ingweland.Fog.Application.Client.Core.Localization
 @using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 @inject IAssetUrlProvider AssetUrlProvider;
 <div class="container-fluid">
@@ -8,6 +9,12 @@
         <AboutComponent/>
     </div>
     <div class="banner-grid">
+        <a class="anchor-inherited-style" href="@FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH">
+            <div class="card">
+                <img src="@AssetUrlProvider.GetHohImageUrl("city_strategies_banner", ".jpg")"/>
+                <div class="title">@Loc[FogResource.CityStrategiesDashboard_Title]</div>
+            </div>
+        </a>
         <a class="anchor-inherited-style" href="city-planner">
             <div class="card">
                 <img src="@AssetUrlProvider.GetHohImageUrl("city_planner_banner", ".jpg")"/>
