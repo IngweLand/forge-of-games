@@ -532,6 +532,51 @@ img.command-center-card-icon {
     text-align: center;
 }
 
+.side-ad-160 {
+    width: 160px !important;
+    height: 600px !important;
+    display: inline-block !important;
+}
+
+.side-ad-300 {
+    width: 300px !important;
+    height: 600px !important;
+    display: inline-block !important;
+}
+
+.side-ad-container {
+    position: fixed !important;
+    top: 64px !important;
+    display: none !important;
+    width: unset !important;
+}
+
+.side-ad-container-left {
+    left: 16px !important;
+}
+
+.side-ad-container-right {
+    right: 16px !important;
+}
+
+.side-ad-container-160, .side-ad-container-300 {}
+
+@media (min-width: 1400px) and (min-height: 750px) {
+    .side-ad-container-160 {
+        display: block !important;
+    }
+}
+
+@media (min-width: 1700px) and (min-height: 750px) {
+    .side-ad-container-160 {
+        display: none !important;
+    }
+
+    .side-ad-container-300 {
+        display: block !important;
+    }
+}
+
 /*ads end*/
 
 @media (min-width: 576px) {

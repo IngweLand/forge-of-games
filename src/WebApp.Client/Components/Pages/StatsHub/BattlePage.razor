@@ -5,6 +5,12 @@
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.BattlePageBase
 <PageTitle>@Loc[FogResource.StatsHub_Battle_PageTitle, _battleTitle]</PageTitle>
+
+<AdSenseComponent AdSlot="7526140641" AdClass="side-ad-160"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-160"/>
+<AdSenseComponent AdSlot="2924115885" AdClass="side-ad-300"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-300"/>
+
 @if (_battle != null)
 {
     <div class="page-container">
@@ -12,13 +18,19 @@
         <BattleTeamComponent Data="@_battle.Summary" OnHeroClicked="OpenBattleSquadProfile"
                              ShowNavigateToBattleButton="false"
                              OnBattleStatsClicked="OpenBattleStats"/>
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
         <BattleTeamFormationComponent Battle="@_battle.Summary"/>
         @if (_battle.Timeline.Count > 0)
         {
             <BattleTimelineComponent Timeline="@_battle.Timeline" OnEntryClicked="OpenBattleSquadProfile"/>
         }
-        
+
         <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
                           AdClass="ads-multiflex" Style="margin-top: 12px;"/>
     </div>
 }
+
+<AdSenseComponent AdSlot="7526140641" AdClass="side-ad-160"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-160"/>
+<AdSenseComponent AdSlot="2924115885" AdClass="side-ad-300"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-300"/>
