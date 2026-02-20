@@ -17,7 +17,11 @@ public class GoogleAnalyticsService(IJSInteropService jsInteropService, ILogger<
 
         try
         {
-            await jsInteropService.SendToGtag("event", eventName, eventParams);
+            var enriched = new Dictionary<string, object>(eventParams)
+            {
+                [AnalyticsParams.IS_FOG_CUSTOM_EVENT] = true,
+            };
+            await jsInteropService.SendToGtag("event", eventName, enriched);
             logger.LogDebug("GA event sent: {EventName}", eventName);
         }
         catch (Exception ex)

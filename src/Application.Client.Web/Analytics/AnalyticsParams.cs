@@ -22,6 +22,7 @@ public static class AnalyticsParams
     public const string HERO4 = "hero4";
     public const string HERO5 = "hero5";
     public const string HEROES = "heroes";
+    public const string IS_FOG_CUSTOM_EVENT = "is_fog_custom_event";
     public const string IS_REMOTE = "isRemote";
     public const string LEVEL = "level";
     public const string LOCATION = "location";
