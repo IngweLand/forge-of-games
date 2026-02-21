@@ -2,7 +2,18 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <PageTitle>@_pageTitle</PageTitle>
+
+<AdSenseComponent AdSlot="8488309460" AdClass="side-ad side-ad-200"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-200"/>
+<AdSenseComponent AdSlot="2908533931" AdClass="side-ad side-ad-400"
+                  CssClass="side-ad-container side-ad-container-left side-ad-container-400"/>
+
 <div class="fog-container component-root markdown-city-guide">@((MarkupString) _content)</div>
+
+<AdSenseComponent AdSlot="8488309460" AdClass="side-ad side-ad-200"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-200"/>
+<AdSenseComponent AdSlot="2908533931" AdClass="side-ad side-ad-400"
+                  CssClass="side-ad-container side-ad-container-right side-ad-container-400"/>
 
 @code {
 

@@ -532,16 +532,24 @@ img.command-center-card-icon {
     text-align: center;
 }
 
-.side-ad-160 {
-    width: 160px !important;
+.side-ad {
     height: 600px !important;
     display: inline-block !important;
+}
+.side-ad-160 {
+    width: 160px !important;
+}
+
+.side-ad-200 {
+    width: 200px !important;
 }
 
 .side-ad-300 {
     width: 300px !important;
-    height: 600px !important;
-    display: inline-block !important;
+}
+
+.side-ad-400 {
+    width: 400px !important;
 }
 
 .side-ad-container {
@@ -559,10 +567,17 @@ img.command-center-card-icon {
     right: 16px !important;
 }
 
-.side-ad-container-160, .side-ad-container-300 {}
+.side-ad-container-160,
+.side-ad-container-200,
+.side-ad-container-300,
+.side-ad-container-400 {}
 
 @media (min-width: 1400px) and (min-height: 750px) {
     .side-ad-container-160 {
+        display: block !important;
+    }
+
+    .side-ad-container-200 {
         display: block !important;
     }
 }
@@ -572,7 +587,15 @@ img.command-center-card-icon {
         display: none !important;
     }
 
+    .side-ad-container-200 {
+        display: none !important;
+    }
+    
     .side-ad-container-300 {
+        display: block !important;
+    }
+
+    .side-ad-container-400 {
         display: block !important;
     }
 }
