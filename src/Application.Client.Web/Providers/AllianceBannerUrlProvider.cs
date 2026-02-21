@@ -7,7 +7,7 @@ public class AllianceBannerUrlProvider(IAssetUrlProvider assetUrlProvider) : IAl
     public string GetIconUrl(int iconId, int colorId)
     {
         //TODO: Remove after we get icon/crest color ids
-        return assetUrlProvider.GetHohIconUrl($"icon_alliance_symbol_0");
+        return assetUrlProvider.GetHohIconUrl($"icon_alliance_symbol_{iconId}");
         return assetUrlProvider.GetHohIconUrl($"icon_alliance_symbol_{iconId}_{colorId}");
     }
 
