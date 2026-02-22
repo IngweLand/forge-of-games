@@ -31,6 +31,11 @@ public class BattleLocationDtoConverter : ITypeConverter<Any, BattleLocationBase
         {
             return mapper.Map<HistoricBattleLocation>(source.Unpack<HistoricBattleLocationDTO>());
         }
+        
+        if (source.Is(PvpRevengeBattleLocationDataDTO.Descriptor))
+        {
+            return mapper.Map<PvpRevengeBattleLocation>(source.Unpack<PvpRevengeBattleLocationDataDTO>());
+        }
 
         throw new Exception($"Unknown location type: {source.TypeUrl}");
     }

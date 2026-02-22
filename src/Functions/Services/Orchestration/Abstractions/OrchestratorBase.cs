@@ -38,6 +38,11 @@ public abstract class OrchestratorBase(
             try
             {
                 var parsed = InGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
+                
+                if (parsed.Location is PvpRevengeBattleLocation)
+                {
+                    continue;
+                }
 
                 if (parsed.ResultStatus == BattleResultStatus.Undefined)
                 {

@@ -52,6 +52,11 @@ message HistoricBattleLocationDTO {
   string encounter = 2;
 }
 
+message PvpRevengeBattleLocationDataDTO {
+  int32 pvp_event_id = 1;
+  string battle_definition_id = 2;
+}
+
 enum BattleResultStatus {
   BattleResultStatus_UNDEFINED = 0;
   BattleResultStatus_WIN = 1;

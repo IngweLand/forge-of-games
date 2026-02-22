@@ -6,6 +6,7 @@ using Ingweland.Fog.Functions.Services;
 using Ingweland.Fog.Infrastructure.Entities;
 using Ingweland.Fog.Infrastructure.Enums;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
@@ -64,6 +65,11 @@ public class InGameDataQueueProcessor(
         var rawData = await LoadRawDataAsync(partitionKey, rowKey);
 
         var parsedResult = inGameDataParsingService.ParseBattleWaveResult(rawData.Base64Data);
+
+        if (parsedResult.Location is PvpRevengeBattleLocation)
+        {
+            return;
+        }
 
         if (parsedResult.ResultStatus != BattleResultStatus.Undefined)
         {

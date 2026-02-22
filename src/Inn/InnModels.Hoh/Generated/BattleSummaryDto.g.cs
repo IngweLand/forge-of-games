@@ -48,10 +48,12 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             "c19vbl93aW4YCCABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8SKwoOcG9pbnRz",
             "X29uX2xvc3MYCSABKAsyEy5QdnBSZXN1bHRQb2ludHNEdG8iQgoZSGlzdG9y",
             "aWNCYXR0bGVMb2NhdGlvbkRUTxISCgpkaWZmaWN1bHR5GAEgASgJEhEKCWVu",
-            "Y291bnRlchgCIAEoCSpxChJCYXR0bGVSZXN1bHRTdGF0dXMSIAocQmF0dGxl",
-            "UmVzdWx0U3RhdHVzX1VOREVGSU5FRBAAEhoKFkJhdHRsZVJlc3VsdFN0YXR1",
-            "c19XSU4QARIdChlCYXR0bGVSZXN1bHRTdGF0dXNfREVGRUFUEAJCH6oCHElu",
-            "Z3dlbGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
+            "Y291bnRlchgCIAEoCSJVCh9QdnBSZXZlbmdlQmF0dGxlTG9jYXRpb25EYXRh",
+            "RFRPEhQKDHB2cF9ldmVudF9pZBgBIAEoBRIcChRiYXR0bGVfZGVmaW5pdGlv",
+            "bl9pZBgCIAEoCSpxChJCYXR0bGVSZXN1bHRTdGF0dXMSIAocQmF0dGxlUmVz",
+            "dWx0U3RhdHVzX1VOREVGSU5FRBAAEhoKFkJhdHRsZVJlc3VsdFN0YXR1c19X",
+            "SU4QARIdChlCYXR0bGVSZXN1bHRTdGF0dXNfREVGRUFUEAJCH6oCHEluZ3dl",
+            "bGFuZC5Gb2cuSW5uLk1vZGVscy5Ib2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.AllianceDtoReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.PvpResultPointsDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Ingweland.Fog.Inn.Models.Hoh.BattleSquadDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.BattleResultStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -60,7 +62,8 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntEncounterLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntEncounterLocationDTO.Parser, new[]{ "TreasureHuntEventId", "Difficulty", "Stage", "Encounter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.CampaignMapBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.CampaignMapBattleLocationDTO.Parser, new[]{ "Difficulty", "Encounter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpBattleLocationDataDTO.Parser, new[]{ "PvpEventId", "BattleDefinitionId", "EnemyId", "Enemy", "EnemyAlliance", "EnemyRankingPoints", "PointsOnWin", "PointsOnLoss" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO.Parser, new[]{ "Difficulty", "Encounter" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO), global::Ingweland.Fog.Inn.Models.Hoh.HistoricBattleLocationDTO.Parser, new[]{ "Difficulty", "Encounter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.PvpRevengeBattleLocationDataDTO), global::Ingweland.Fog.Inn.Models.Hoh.PvpRevengeBattleLocationDataDTO.Parser, new[]{ "PvpEventId", "BattleDefinitionId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1917,6 +1920,233 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 18: {
             Encounter = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class PvpRevengeBattleLocationDataDTO : pb::IMessage<PvpRevengeBattleLocationDataDTO>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PvpRevengeBattleLocationDataDTO> _parser = new pb::MessageParser<PvpRevengeBattleLocationDataDTO>(() => new PvpRevengeBattleLocationDataDTO());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PvpRevengeBattleLocationDataDTO> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Ingweland.Fog.Inn.Models.Hoh.BattleSummaryDtoReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpRevengeBattleLocationDataDTO() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpRevengeBattleLocationDataDTO(PvpRevengeBattleLocationDataDTO other) : this() {
+      pvpEventId_ = other.pvpEventId_;
+      battleDefinitionId_ = other.battleDefinitionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PvpRevengeBattleLocationDataDTO Clone() {
+      return new PvpRevengeBattleLocationDataDTO(this);
+    }
+
+    /// <summary>Field number for the "pvp_event_id" field.</summary>
+    public const int PvpEventIdFieldNumber = 1;
+    private int pvpEventId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PvpEventId {
+      get { return pvpEventId_; }
+      set {
+        pvpEventId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battle_definition_id" field.</summary>
+    public const int BattleDefinitionIdFieldNumber = 2;
+    private string battleDefinitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BattleDefinitionId {
+      get { return battleDefinitionId_; }
+      set {
+        battleDefinitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PvpRevengeBattleLocationDataDTO);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PvpRevengeBattleLocationDataDTO other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PvpEventId != other.PvpEventId) return false;
+      if (BattleDefinitionId != other.BattleDefinitionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PvpEventId != 0) hash ^= PvpEventId.GetHashCode();
+      if (BattleDefinitionId.Length != 0) hash ^= BattleDefinitionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PvpEventId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PvpEventId);
+      }
+      if (BattleDefinitionId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BattleDefinitionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PvpEventId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(PvpEventId);
+      }
+      if (BattleDefinitionId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BattleDefinitionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PvpEventId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PvpEventId);
+      }
+      if (BattleDefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BattleDefinitionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PvpRevengeBattleLocationDataDTO other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PvpEventId != 0) {
+        PvpEventId = other.PvpEventId;
+      }
+      if (other.BattleDefinitionId.Length != 0) {
+        BattleDefinitionId = other.BattleDefinitionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PvpEventId = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            BattleDefinitionId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PvpEventId = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            BattleDefinitionId = input.ReadString();
             break;
           }
         }
