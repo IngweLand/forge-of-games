@@ -29,14 +29,13 @@ public class GetMissingAlliancesService(
 {
     public async Task RunAsync()
     {
-        var gw = gameWorldsProvider.GetGameWorlds().First(x => x.Id == "zz1");
+        var gw = gameWorldsProvider.GetGameWorlds().First(x => x.Id == "un1");
         var allianceIds = await context.Alliances.ProjectTo<AllianceKey>(mapper.ConfigurationProvider).ToListAsync();
-        var ids = allianceIds.Where(x => x.WorldId == gw.Id).Select(x => x.InGameAllianceId).ToList();
-        var allianceIdsSet = ids.ToHashSet();
+        var ids = allianceIds.Where(x => x.WorldId == gw.Id).Select(x => x.InGameAllianceId).ToHashSet();
         var newAlliances = new List<AllianceWithLeader>();
         for (var i = ids.Max(); i > 0; i--)
         {
-            if (allianceIdsSet.Contains(i))
+            if (ids.Contains(i))
             {
                 continue;
             }
