@@ -150,6 +150,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unlock the Battle Log.
+        /// </summary>
+        public static string Adsense_Offerwall_BattleLog_Title {
+            get {
+                return ResourceManager.GetString("Adsense.Offerwall.BattleLog.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Access to the City Viewer for 24 hours.
         /// </summary>
         public static string Adsense_Offerwall_CityViewer_RewardMessage {
@@ -173,6 +182,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string Adsense_Offerwall_CityViewer_Title {
             get {
                 return ResourceManager.GetString("Adsense.Offerwall.CityViewer.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access for {0} hours.
+        /// </summary>
+        public static string Adsense_Offerwall_Common_RewardMessage {
+            get {
+                return ResourceManager.GetString("Adsense.Offerwall.Common.RewardMessage", resourceCulture);
             }
         }
         

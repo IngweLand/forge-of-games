@@ -14,7 +14,7 @@
     }
     else
     {
-        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/>
+        @* <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/> *@
     }
    
     <div class="options-container fog-container">
@@ -35,15 +35,15 @@
             <BattleTeamComponent Data="@battle" OnHeroClicked="OpenBattleSquadProfile"
                                  OnBattleStatsClicked="OpenBattleStats"/>
 
-            @if ((i == 0 || (i + 1) % 5 == 0) && i != _battles.Count - 1)
-            {
-                <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
-                                  AdLayoutKey="-73+ed+2i-1n-4w"
-                                  AdClass="ads-in-feed"/>
-            }
+            @* @if ((i == 0 || (i + 1) % 5 == 0) && i != _battles.Count - 1) *@
+            @* { *@
+            @*     <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID" *@
+            @*                       AdLayoutKey="-73+ed+2i-1n-4w" *@
+            @*                       AdClass="ads-in-feed"/> *@
+            @* } *@
         }
     </div>
 
-    <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
-                      AdClass="ads-multiflex" Style="margin-top: 12px;"/>
+    @* <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX" *@
+    @*                   AdClass="ads-multiflex" Style="margin-top: 12px;"/> *@
 </div>
