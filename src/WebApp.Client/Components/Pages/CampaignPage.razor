@@ -6,18 +6,18 @@
 @using Ingweland.Fog.Application.Core.Helpers
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <div class="component-root">
-    <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+    @* <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/> *@
     <div class="list-group">
         @if (_continents != null)
         {
             @foreach (var continent in _continents)
             {
-                if (continent == _centralContinent)
-                {
-                    <AdSenseComponent AdSlot="9442418621"
-                                      AdClass="ads-display-responsive-horizontal"
-                                      Style="margin: 12px 0"/>
-                }
+                @* if (continent == _centralContinent) *@
+                @* { *@
+                @*     <AdSenseComponent AdSlot="9442418621" *@
+                @*                       AdClass="ads-display-responsive-horizontal" *@
+                @*                       Style="margin: 12px 0"/> *@
+                @* } *@
 
                 <div class="list-group-item list-group-item-secondary fw-bold">
                     @continent.Name
