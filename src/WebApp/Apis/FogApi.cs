@@ -1,9 +1,12 @@
+using System.Security.Claims;
 using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Services.Commands;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Dtos.Hoh;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ingweland.Fog.WebApp.Apis;
 
@@ -20,6 +23,17 @@ public static class FogApi
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDES, GetCommunityCityGuidesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDE_TEMPLATE, GetCommunityCityGuideAsync);
         api.MapPost(FogUrlBuilder.ApiRoutes.UPLOAD_SHARED_IMAGE, UploadSharedImageAsync);
+        
+        app.MapGet("/login/patreon", async (HttpContext context) =>
+        {
+            await context.ChallengeAsync("Patreon",
+                new AuthenticationProperties
+                {
+                    RedirectUri = "/",
+                    IsPersistent = true,
+                });
+        });
+        
         return api;
     }
 

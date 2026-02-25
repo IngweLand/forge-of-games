@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Entities;
 using Ingweland.Fog.Infrastructure.Repositories;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,10 +24,11 @@ public static class DependencyInjection
             throw new InvalidOperationException("Connection string 'DefaultSQL' not found.");
         }
 
-        services.AddDbContext<IFogDbContext, FogDbContext>(options =>
+        services.AddDbContext<FogDbContext>(options =>
         {
             options.UseSqlServer(connectionString, sqlOptions => { sqlOptions.CommandTimeout(120); });
         });
+        services.AddScoped<IFogDbContext>(provider => provider.GetRequiredService<FogDbContext>());
         return services;
     }
 
@@ -46,6 +48,15 @@ public static class DependencyInjection
         services.AddScoped<ICommandCenterProfileRepository, CommandCenterProfileRepository>();
         services.AddScoped<IHohCityRepository, HohCityRepository>();
         services.AddScoped<IInGameRawDataTableRepository, InGameRawDataTableRepository>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddIdentity(this IServiceCollection services)
+    {
+        services
+            .AddIdentity<IdentityUser, IdentityRole>(options => { options.SignIn.RequireConfirmedAccount = false; })
+            .AddEntityFrameworkStores<FogDbContext>();
 
         return services;
     }

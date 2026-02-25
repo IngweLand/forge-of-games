@@ -1,11 +1,13 @@
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Infrastructure.EntityConfigurations;
 using Ingweland.Fog.Models.Fog.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ingweland.Fog.Infrastructure;
 
-public class FogDbContext : DbContext, IFogDbContext
+public class FogDbContext : IdentityDbContext<IdentityUser>, IFogDbContext
 {
     public FogDbContext(DbContextOptions options) : base(options)
     {

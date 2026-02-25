@@ -1,8 +1,10 @@
+using System.Security.Claims;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.InnSdk.Hoh.Authentication.Models;
 using Ingweland.Fog.WebApp.Apis;
@@ -11,6 +13,7 @@ using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Ingweland.Fog.WebApp.Services;
 using Ingweland.Fog.WebApp.Startup;
 using Ingweland.Fog.WebApp.Startup.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ingweland.Fog.WebApp;
 
@@ -84,5 +87,53 @@ internal static class DependencyInjection
 
         builder.Services.Configure<MaintenanceModeSettings>(
             builder.Configuration.GetSection(MaintenanceModeSettings.CONFIGURATION_PROPERTY_NAME));
+        builder.Services.Configure<PatreonSettings>(
+            builder.Configuration.GetSection(PatreonSettings.CONFIGURATION_PROPERTY_NAME));
     }
+    
+    public static void AddPatreon(this IHostApplicationBuilder builder, IConfiguration configuration)
+    {
+        builder.Services
+            .AddAuthentication()
+            .AddPatreon(options =>
+            {
+                options.ClientId = configuration["PatreonSettings:ClientId"];
+                options.ClientSecret = configuration["PatreonSettings:ClientSecret"];
+                options.CallbackPath = "/signin-patreon";
+                options.Fields.Add("email");
+                options.Includes.Add("memberships");
+
+                options.Scope.Add("identity");
+                options.Scope.Add("identity[email]");
+                options.Scope.Add("identity.memberships");
+
+                options.SaveTokens = true;
+
+                options.Events.OnCreatingTicket = async ctx =>
+                {
+                    // parse membership JSON here
+                    // extract patron_status / tier
+                    // ctx.Identity.AddClaim(new Claim("PatronStatus", "active"));
+                    // ctx.Identity.AddClaim(new Claim("TierAmount", "500"));
+                    
+                    var userId = ctx.Principal.FindFirstValue(ClaimTypes.NameIdentifier);
+                    var patronStatus = ctx.Principal.FindFirstValue("patron_status") ?? "inactive";
+
+                    // Create Identity user if not exists
+                    var userManager = ctx.HttpContext.RequestServices.GetRequiredService<UserManager<IdentityUser>>();
+                    var signInManager = ctx.HttpContext.RequestServices.GetRequiredService<SignInManager<IdentityUser>>();
+
+                    var user = await userManager.FindByLoginAsync("Patreon", userId);
+                    if (user == null)
+                    {
+                        user = new IdentityUser { UserName = userId };
+                        await userManager.CreateAsync(user);
+                        await userManager.AddLoginAsync(user, new UserLoginInfo("Patreon", userId, "Patreon"));
+                    }
+
+                    // Sign in locally
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                };
+            });
+        }
 }

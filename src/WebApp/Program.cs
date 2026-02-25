@@ -20,14 +20,16 @@ using _Imports = Ingweland.Fog.WebApp.Client._Imports;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddWebAppSettings();
+builder.AddWebAppServices();
+builder.AddPatreon(builder.Configuration);
 builder.Services.AddOpenApi();
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 builder.Services.AddMudServices();
 builder.Services.AddApplicationServices();
-builder.AddWebAppServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddInfrastructureDbContext(builder.Configuration);
+builder.Services.AddIdentity();
 builder.Services.AddSharedServices();
 builder.Services.AddInnSdkServices();
 builder.Services.AddWebAppApplicationServices();
