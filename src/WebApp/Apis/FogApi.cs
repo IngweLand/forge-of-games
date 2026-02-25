@@ -17,8 +17,6 @@ public static class FogApi
         api.MapPost(FogUrlBuilder.ApiRoutes.CREATE_SHARE, CreateShareAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_SHARED_RESOURCE_TEMPLATE, GetSharedResourceAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_STRATEGIES, GetCommunityCityStrategiesAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDES, GetCommunityCityGuidesAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.GET_COMMUNITY_CITY_GUIDE_TEMPLATE, GetCommunityCityGuideAsync);
         api.MapPost(FogUrlBuilder.ApiRoutes.UPLOAD_SHARED_IMAGE, UploadSharedImageAsync);
         return api;
     }
