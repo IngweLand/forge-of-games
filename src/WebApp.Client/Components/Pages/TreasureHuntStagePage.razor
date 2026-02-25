@@ -49,10 +49,10 @@
         @for (var i = 0; i < Encounters.Count; i++)
         {
             <TreasureHuntEncounterComponent IsExpanded="@_isExpanded" Encounter="@Encounters[i]"/>
-            @* @if ((i + 1) % 5 == 0&& i != Encounters.Count -1) *@
-            @* { *@
-            @*     <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/> *@
-            @* } *@
+            @if ((i + 1) % 5 == 0&& i != Encounters.Count -1)
+            {
+                <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+            }
         }
         
         <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"

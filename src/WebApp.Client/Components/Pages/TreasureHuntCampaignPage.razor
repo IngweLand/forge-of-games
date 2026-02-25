@@ -10,10 +10,10 @@
     <div class="root">
         @foreach (var difficulty in _difficulties)
         {
-            @* if (difficulty == _centralItem) *@
-            @* { *@
-            @*     <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/> *@
-            @* } *@
+            if (difficulty == _centralItem)
+            {
+                <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+            }
             
             <div class="fog-container">
                 <img class="difficulty-icon" src="@difficulty.IconUrl"/>

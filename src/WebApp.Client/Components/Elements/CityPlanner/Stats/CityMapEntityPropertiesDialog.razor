@@ -7,7 +7,7 @@
                            Style="align-self: flex-end; margin-bottom: 12px;"></MudIconButton>
             @if (TopAdSlot != null)
             {
-                @* <AdSenseComponent AdSlot="@TopAdSlot" AdClass="ad-cme-properties-dialog-top"/> *@
+                <AdSenseComponent AdSlot="@TopAdSlot" AdClass="ad-cme-properties-dialog-top"/>
             }
             <CityMapEntityPropertiesComponent Building="@Building" Editable="false"/>
             <CityPlannerBuildingCostCalculator
@@ -16,7 +16,7 @@
 
             @if (BottomAdSlot != null)
             {
-                @* <AdSenseComponent AdSlot="@BottomAdSlot" AdClass="ad-cme-properties-dialog-bottom"/> *@
+                <AdSenseComponent AdSlot="@BottomAdSlot" AdClass="ad-cme-properties-dialog-bottom"/>
             }
         </div>
     </DialogContent>

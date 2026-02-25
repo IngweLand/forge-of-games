@@ -17,7 +17,7 @@
     }
     else
     {
-        @* <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/> *@
+        <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal-short"/>
     }
     <div class="fog-container section">
         <div class="top-container">
@@ -41,12 +41,12 @@
                 var item = Items[i];
                 @ItemTemplate(item)
 
-                @* @if ((i == 2 || (i + 1) % 10 == 0) && i != Items.Count - 1) *@
-                @* { *@
-                @*     <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID" *@
-                @*                       AdLayoutKey="-73+ed+2i-1n-4w" *@
-                @*                       AdClass="ads-in-feed" CssClass="in-feed-container"/> *@
-                @* } *@
+                @if ((i == 2 || (i + 1) % 10 == 0) && i != Items.Count - 1)
+                {
+                    <AdSenseComponent AdSlot="4284528504" AdFormat="@AdSenseConstants.FORMAT_FLUID"
+                                      AdLayoutKey="-73+ed+2i-1n-4w"
+                                      AdClass="ads-in-feed" CssClass="in-feed-container"/>
+                }
             }
         </div>
     </div>
