@@ -1,4 +1,7 @@
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Microsoft.Extensions.Localization
 @using MudBlazor.Utilities
+@inject IStringLocalizer<FogResource> Loc
 <div class="fog-container component-root">
     <div class="title-container" @onclick="@Expand">
         <span style="@TitleStyle">@Title</span>
@@ -14,7 +17,14 @@
     @if (_isExpanded)
     {
         <div class="@ContentClassname">
-            @ChildContent
+            @if (!IsEmpty)
+            {
+                @ChildContent
+            }
+            else
+            {
+                <div class="empty-label">@Loc[FogResource.StatsHub_Common_NoResults]</div>
+            }
         </div>
 
         @if (IsLoading)
@@ -48,12 +58,14 @@
 
     [Parameter]
     public bool HasHorizontalPadding { get; set; } = true;
-    
+
+    [Parameter]
+    public bool IsEmpty { get; set; }
+
     private string ContentClassname =>
         new CssBuilder("content-container")
             .AddClass("no-horizontal-padding", !HasHorizontalPadding)
             .Build();
-    
 
     private Task Expand()
     {

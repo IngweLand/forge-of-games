@@ -10,6 +10,7 @@ public class Player
     public ICollection<PlayerAgeHistoryEntry> AgeHistory { get; set; } = new List<PlayerAgeHistoryEntry>();
     public ICollection<Alliance> AllianceHistory { get; set; } = new List<Alliance>();
     public AllianceMemberEntity? AllianceMembership { get; set; }
+    public ICollection<PlayerAthRanking> AthRankings { get; set; } = new List<PlayerAthRanking>();
 
     public int AvatarId { get; set; }
     public ICollection<PlayerCitySnapshot> CitySnapshots { get; set; } = new List<PlayerCitySnapshot>();

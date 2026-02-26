@@ -46,6 +46,10 @@ public interface IStatsHubService
     Task<IReadOnlyCollection<AllianceAthRankingDto>> GetAllianceAthRankingsAsync(int allianceId,
         CancellationToken ct = default);
 
+    [Get(FogUrlBuilder.ApiRoutes.PLAYER_ATH_RANKINGS_TEMPLATE_REFIT)]
+    Task<IReadOnlyCollection<PlayerAthRankingDto>> GetPlayerAthRankingsAsync(int playerId,
+        CancellationToken ct = default);
+
     [Get(FogUrlBuilder.ApiRoutes.ALLIANCE_RANKINGS_TEMPLATE_REFIT)]
     Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,
         CancellationToken ct = default);

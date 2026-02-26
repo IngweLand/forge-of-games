@@ -536,6 +536,7 @@ img.command-center-card-icon {
     height: 600px !important;
     display: inline-block !important;
 }
+
 .side-ad-160 {
     width: 160px !important;
 }
@@ -570,7 +571,10 @@ img.command-center-card-icon {
 .side-ad-container-160,
 .side-ad-container-200,
 .side-ad-container-300,
-.side-ad-container-400 {}
+.side-ad-container-400 {
+}
+
+/*ads end*/
 
 @media (min-width: 1400px) and (min-height: 750px) {
     .side-ad-container-160 {
@@ -590,7 +594,7 @@ img.command-center-card-icon {
     .side-ad-container-200 {
         display: none !important;
     }
-    
+
     .side-ad-container-300 {
         display: block !important;
     }

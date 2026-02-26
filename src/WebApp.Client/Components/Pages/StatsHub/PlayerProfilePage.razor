@@ -2,9 +2,7 @@
 @using System.Globalization
 @using Ingweland.Fog.Application.Client.Core.Localization
 @using Ingweland.Fog.Application.Client.Web.Constants
-@using Ingweland.Fog.Application.Core.Extensions
 @using Ingweland.Fog.Application.Core.Helpers
-@using Ingweland.Fog.Models.Hoh.Enums
 @using Ingweland.Fog.WebApp.Client.Components.Elements.StatsHub
 @using Size = MudBlazor.Size
 @using ValueType = Syncfusion.Blazor.Charts.ValueType
@@ -160,8 +158,22 @@
             </ExpandableContainer>
         }
 
+        <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_AthRanking]"
+                             IsLoading="@_athRankingsAreLoading" IsEmpty="@(_athRankings is {Count: 0})"
+                             ExpandedChanged="@ToggleAthRankingsContainer">
+            @if (_athRankings != null)
+            {
+                <div class="ath-ranking-items-container">
+                    @foreach (var r in _athRankings)
+                    {
+                        <PlayerAthRankingComponent Ranking="@r"/>
+                    }
+                </div>
+            }
+        </ExpandableContainer>
+
         <ExpandableContainer Title="@Loc[FogResource.StatsHub_Player_WonderLevels]"
-                             IsLoading="@_wonderRankingsAreLoading"
+                             IsLoading="@_wonderRankingsAreLoading" IsEmpty="@(_wonderRankings is {Count: 0})"
                              ExpandedChanged="@ToggleWonderRankingsContainer">
             @if (_wonderRankings != null)
             {

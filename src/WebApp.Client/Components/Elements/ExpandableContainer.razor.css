@@ -35,6 +35,16 @@
     padding-right: 0;
 }
 
+.empty-label {
+    font-size: 20px;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: var(--fog-text-secondary-color);
+    user-select: none;
+    text-align: center;
+    width: 100%;
+}
+
 @media (min-width: 576px) {
 
     .title-container {
@@ -49,5 +59,9 @@
     .no-horizontal-padding {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .empty-label {
+        font-size: 24px;
     }
 }

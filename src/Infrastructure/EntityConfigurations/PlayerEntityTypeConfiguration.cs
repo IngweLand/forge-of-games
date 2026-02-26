@@ -1,5 +1,4 @@
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Fog.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -27,9 +26,9 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasIndex(p => p.ProfileUpdatedAt).IsDescending();
         builder.HasIndex(p => p.LastSeenOnline).IsDescending();
         builder.HasIndex(p => new {p.WorldId, p.InGamePlayerId}).IsUnique();
-        builder.HasIndex(p => new { p.WorldId, p.Status, p.RankingPoints, p.Rank })
+        builder.HasIndex(p => new {p.WorldId, p.Status, p.RankingPoints, p.Rank})
             .IsDescending(false, false, true, false) // WorldId ASC, Status ASC, RankingPoints DESC, Rank ASC
-            .IncludeProperties(p => new { p.Id, p.Age, p.AvatarId, p.Name, p.UpdatedAt })
+            .IncludeProperties(p => new {p.Id, p.Age, p.AvatarId, p.Name, p.UpdatedAt})
             .HasDatabaseName("IX_players_WorldId_Status_RankingPoints_Rank");
 
         builder.HasMany(p => p.Rankings).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
@@ -46,5 +45,6 @@ public class PlayerEntityTypeConfiguration : IEntityTypeConfiguration<Player>
         builder.HasMany(p => p.Squads).WithOne(x => x.Player).HasForeignKey(p => p.PlayerId);
         builder.HasOne(p => p.AllianceMembership).WithOne(x => x.Player);
         builder.HasMany(p => p.EventCityWonderRankings).WithOne().HasForeignKey(p => p.PlayerId);
+        builder.HasMany(p => p.AthRankings).WithOne().HasForeignKey(p => p.PlayerId);
     }
 }

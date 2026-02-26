@@ -20,6 +20,7 @@ public class InGameDataQueueProcessor(
     IBattleTimelineService battleTimelineService,
     DatabaseWarmUpService databaseWarmUpService,
     IAllianceAthService allianceAthService,
+    IPlayerAthService playerAthService,
     ILogger<InGameDataQueueProcessor> logger)
 {
     [Function(nameof(InGameDataQueueProcessor))]
@@ -29,7 +30,7 @@ public class InGameDataQueueProcessor(
         QueueMessage message)
     {
         logger.LogInformation("Message: {MessageId}", message.MessageId);
-        
+
         var payload = JsonSerializer.Deserialize<InGameRawDataQueueMessage>(message.MessageText);
         if (payload == null)
         {
@@ -49,6 +50,11 @@ public class InGameDataQueueProcessor(
             case InGameDataProcessingServiceType.WakeupLeaderboards:
             {
                 await ProcessAllianceAthRankingsAsync(payload.PartitionKey, payload.RowKey);
+                break;
+            }
+            case InGameDataProcessingServiceType.WakeupAlliance:
+            {
+                await ProcessPlayerAthRankingsAsync(payload.PartitionKey, payload.RowKey);
                 break;
             }
             default:
@@ -91,6 +97,14 @@ public class InGameDataQueueProcessor(
         var parts = partitionKey.Split('_');
         var wakeup = inGameDataParsingService.ParseWakeup(rawData.Base64Data);
         await allianceAthService.RunAsync(wakeup.AthAllianceRankings, parts[1], rawData.CollectedAt);
+    }
+
+    private async Task ProcessPlayerAthRankingsAsync(string partitionKey, string rowKey)
+    {
+        var rawData = await LoadRawDataAsync(partitionKey, rowKey);
+        var parts = partitionKey.Split('_');
+        var wakeup = inGameDataParsingService.ParseWakeup(rawData.Base64Data);
+        await playerAthService.RunAsync(wakeup.AthPlayerRankings, parts[1], rawData.CollectedAt);
     }
 
     private async Task<InGameRawData> LoadRawDataAsync(string partitionKey, string rowKey)

@@ -51,7 +51,8 @@ public class InGameDataMappingProfile : Profile
                         ? (TreasureHuntLeague) src.League
                         : TreasureHuntLeague.Undefined))
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToDateTime()));
-        CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>();
+        CreateMap<HeroTreasureHuntPlayerPointsPush, HeroTreasureHuntPlayerPoints>()
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => src.UpdatedAt.ToDateTime()));
         CreateMap<AlliancePush, HohAlliance>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Alliance.Id))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Alliance.Details.Name))

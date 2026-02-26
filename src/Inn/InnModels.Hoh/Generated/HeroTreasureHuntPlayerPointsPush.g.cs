@@ -25,14 +25,17 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CitoZXJvX3RyZWFzdXJlX2h1bnRfcGxheWVyX3BvaW50c19wdXNoLnByb3Rv",
-            "GhBwbGF5ZXJfZHRvLnByb3RvInYKIEhlcm9UcmVhc3VyZUh1bnRQbGF5ZXJQ",
-            "b2ludHNQdXNoEh4KFnRyZWFzdXJlX2h1bnRfZXZlbnRfaWQYASABKAUSGgoG",
-            "cGxheWVyGAMgASgLMgouUGxheWVyRHRvEhYKDnJhbmtpbmdfcG9pbnRzGAQg",
-            "ASgFQh+qAhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "GhBwbGF5ZXJfZHRvLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1w",
+            "LnByb3RvItMBCiBIZXJvVHJlYXN1cmVIdW50UGxheWVyUG9pbnRzUHVzaBIe",
+            "ChZ0cmVhc3VyZV9odW50X2V2ZW50X2lkGAEgASgFEhoKBnBsYXllchgDIAEo",
+            "CzIKLlBsYXllckR0bxIWCg5yYW5raW5nX3BvaW50cxgEIAEoBRIXCg9hbGxp",
+            "YW5jZV9wb2ludHMYBSABKAUSLgoKdXBkYXRlZF9hdBgGIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASEgoKZGlmZmljdWx0eRgHIAEoBUIfqgIc",
+            "SW5nd2VsYW5kLkZvZy5Jbm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Ingweland.Fog.Inn.Models.Hoh.PlayerDtoReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntPlayerPointsPush), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntPlayerPointsPush.Parser, new[]{ "TreasureHuntEventId", "Player", "RankingPoints" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntPlayerPointsPush), global::Ingweland.Fog.Inn.Models.Hoh.HeroTreasureHuntPlayerPointsPush.Parser, new[]{ "TreasureHuntEventId", "Player", "RankingPoints", "AlliancePoints", "UpdatedAt", "Difficulty" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,6 +80,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       treasureHuntEventId_ = other.treasureHuntEventId_;
       player_ = other.player_ != null ? other.player_.Clone() : null;
       rankingPoints_ = other.rankingPoints_;
+      alliancePoints_ = other.alliancePoints_;
+      updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
+      difficulty_ = other.difficulty_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -122,6 +128,42 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
+    /// <summary>Field number for the "alliance_points" field.</summary>
+    public const int AlliancePointsFieldNumber = 5;
+    private int alliancePoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int AlliancePoints {
+      get { return alliancePoints_; }
+      set {
+        alliancePoints_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "updated_at" field.</summary>
+    public const int UpdatedAtFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp updatedAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp UpdatedAt {
+      get { return updatedAt_; }
+      set {
+        updatedAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "difficulty" field.</summary>
+    public const int DifficultyFieldNumber = 7;
+    private int difficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Difficulty {
+      get { return difficulty_; }
+      set {
+        difficulty_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -140,6 +182,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (TreasureHuntEventId != other.TreasureHuntEventId) return false;
       if (!object.Equals(Player, other.Player)) return false;
       if (RankingPoints != other.RankingPoints) return false;
+      if (AlliancePoints != other.AlliancePoints) return false;
+      if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
+      if (Difficulty != other.Difficulty) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -150,6 +195,9 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (TreasureHuntEventId != 0) hash ^= TreasureHuntEventId.GetHashCode();
       if (player_ != null) hash ^= Player.GetHashCode();
       if (RankingPoints != 0) hash ^= RankingPoints.GetHashCode();
+      if (AlliancePoints != 0) hash ^= AlliancePoints.GetHashCode();
+      if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,6 +228,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(32);
         output.WriteInt32(RankingPoints);
       }
+      if (AlliancePoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(AlliancePoints);
+      }
+      if (updatedAt_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(UpdatedAt);
+      }
+      if (Difficulty != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Difficulty);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -202,6 +262,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(32);
         output.WriteInt32(RankingPoints);
       }
+      if (AlliancePoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(AlliancePoints);
+      }
+      if (updatedAt_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(UpdatedAt);
+      }
+      if (Difficulty != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Difficulty);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,6 +292,15 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (RankingPoints != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RankingPoints);
+      }
+      if (AlliancePoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AlliancePoints);
+      }
+      if (updatedAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
+      }
+      if (Difficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Difficulty);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -244,6 +325,18 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.RankingPoints != 0) {
         RankingPoints = other.RankingPoints;
+      }
+      if (other.AlliancePoints != 0) {
+        AlliancePoints = other.AlliancePoints;
+      }
+      if (other.updatedAt_ != null) {
+        if (updatedAt_ == null) {
+          UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        UpdatedAt.MergeFrom(other.UpdatedAt);
+      }
+      if (other.Difficulty != 0) {
+        Difficulty = other.Difficulty;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -275,6 +368,21 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
             RankingPoints = input.ReadInt32();
             break;
           }
+          case 40: {
+            AlliancePoints = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            if (updatedAt_ == null) {
+              UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 56: {
+            Difficulty = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -303,6 +411,21 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 32: {
             RankingPoints = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            AlliancePoints = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            if (updatedAt_ == null) {
+              UpdatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(UpdatedAt);
+            break;
+          }
+          case 56: {
+            Difficulty = input.ReadInt32();
             break;
           }
         }

@@ -3183,6 +3183,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No results.
+        /// </summary>
+        public static string StatsHub_Common_NoResults {
+            get {
+                return ResourceManager.GetString("StatsHub.Common.NoResults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;strong&gt;Can&apos;t find yourself or another player/alliance?&lt;/strong&gt; Our game analytics are community-driven! Click this message to learn how to contribute!.
         /// </summary>
         public static string StatsHub_ContributePrompt {
@@ -3368,6 +3377,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string StatsHub_Player_Alliances {
             get {
                 return ResourceManager.GetString("StatsHub.Player.Alliances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Treasure Hunt Ranking.
+        /// </summary>
+        public static string StatsHub_Player_AthRanking {
+            get {
+                return ResourceManager.GetString("StatsHub.Player.AthRanking", resourceCulture);
             }
         }
         

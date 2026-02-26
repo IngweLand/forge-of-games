@@ -49,6 +49,8 @@ public static class FogUrlBuilder
         public const string PLAYER_WONDER_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/wonderRankings";
         public const string PLAYER_CITY_STRATEGIES_REFIT = PLAYER_TEMPLATE_REFIT + "/cityStrategies";
         public const string PLAYER_CITY_STRATEGIES = PLAYER_TEMPLATE + "/cityStrategies";
+        public const string PLAYER_ATH_RANKINGS_TEMPLATE = PLAYER_TEMPLATE + "/athRankings";
+        public const string PLAYER_ATH_RANKINGS_TEMPLATE_REFIT = PLAYER_TEMPLATE_REFIT + "/athRankings";
 
         public const string PLAYER_CITY_STRATEGY_REFIT = "/playerCityStrategies/{strategyId}";
         public const string PLAYER_CITY_STRATEGY = "/playerCityStrategies/{strategyId:int}";

@@ -26,6 +26,9 @@ namespace Ingweland.Fog.WebApp.Client.Components.Pages.StatsHub;
 public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 {
     private readonly CancellationTokenSource _inGameEventCts = new();
+    private IReadOnlyCollection<PlayerAthRankingViewModel>? _athRankings;
+    private bool _athRankingsAreLoading;
+    private CancellationTokenSource? _athRankingsCts;
     private CancellationTokenSource _battleStatsCts = new();
     private bool _canShowChart;
     private CancellationTokenSource _cityFetchCts = new();
@@ -288,7 +291,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
                 AnalyticsService.TrackEvent(AnalyticsEvents.VISIT_CITY_SUCCESS, _defaultAnalyticsParameters,
                     parameters);
 
-                CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData()
+                CityPlannerNavigationState.Data = new CityPlannerNavigationState.CityPlannerNavigationStateData
                 {
                     City = city,
                     IsRemote = true,
@@ -633,5 +636,37 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         };
 
         NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
+    }
+
+    private async Task ToggleAthRankingsContainer(bool expanded)
+    {
+        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
+            AnalyticsParams.Values.Sources.PLAYER_ATH_RANKINGS, expanded);
+
+        if (expanded)
+        {
+            await GetAthRankings();
+        }
+    }
+
+    private async Task GetAthRankings()
+    {
+        if (_athRankings != null)
+        {
+            return;
+        }
+
+        if (_athRankingsCts != null)
+        {
+            await _athRankingsCts.CancelAsync();
+        }
+
+        _athRankingsAreLoading = true;
+        StateHasChanged();
+
+        _athRankingsCts = new CancellationTokenSource();
+
+        _athRankings = await StatsHubUiService.GetPlayerAthRankingsAsync(PlayerId);
+        _athRankingsAreLoading = false;
     }
 }

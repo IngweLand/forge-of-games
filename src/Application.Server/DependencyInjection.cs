@@ -102,6 +102,7 @@ public static class DependencyInjection
         services.AddScoped<IPlayerCityStrategyInfoDtoFactory, PlayerCityStrategyInfoDtoFactory>();
         services.AddScoped<IPlayerCityStrategyService, PlayerCityStrategyService>();
         services.AddScoped<ICommunityCityStrategyService, CommunityCityStrategyService>();
+        services.AddScoped<IPlayerAthRankingDtoFactory, PlayerAthRankingDtoFactory>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

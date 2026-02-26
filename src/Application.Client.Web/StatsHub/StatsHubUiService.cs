@@ -36,6 +36,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
     private readonly IHohCoreDataCache _coreDataCache;
     private readonly IMapper _mapper;
     private readonly IMemoryCache _memoryCache;
+    private readonly IPlayerAthRankingViewModelFactory _playerAthRankingViewModelFactory;
     private readonly IPlayerCityStrategyInfoViewModelFactory _playerCityStrategyInfoViewModelFactory;
     private readonly IStatsHubService _statsHubService;
     private readonly IStatsHubViewModelsFactory _statsHubViewModelsFactory;
@@ -55,6 +56,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         IPlayerCityPropertiesViewModelFactory cityPropertiesViewModelFactory,
         IWonderRankingViewModelFactory wonderRankingViewModelFactory,
         IPlayerCityStrategyInfoViewModelFactory playerCityStrategyInfoViewModelFactory,
+        IPlayerAthRankingViewModelFactory playerAthRankingViewModelFactory,
         ILogger<StatsHubUiService> logger,
         IMemoryCache memoryCache) : base(logger)
     {
@@ -72,6 +74,7 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         _wonderRankingViewModelFactory = wonderRankingViewModelFactory;
         _playerCityStrategyInfoViewModelFactory = playerCityStrategyInfoViewModelFactory;
         _memoryCache = memoryCache;
+        _playerAthRankingViewModelFactory = playerAthRankingViewModelFactory;
 
         _ages = new Lazy<Task<IReadOnlyDictionary<string, AgeDto>>>(GetAgesAsync);
     }
@@ -152,6 +155,19 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return rankings.OrderBy(x => x.StartedAt).Select(x => _allianceAthRankingViewModelFactory.Create(x,
             leagues.GetValueOrDefault(x.League,
                 new TreasureHuntLeagueDto {League = TreasureHuntLeague.Undefined, Name = string.Empty}))).ToList();
+    }
+
+    public Task<IReadOnlyCollection<PlayerAthRankingViewModel>> GetPlayerAthRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        return ExecuteSafeAsync<IReadOnlyCollection<PlayerAthRankingViewModel>>(
+            async () =>
+            {
+                var rankings = await _statsHubService.GetPlayerAthRankingsAsync(playerId, ct);
+                return rankings.OrderBy(x => x.StartedAt).Select(x => _playerAthRankingViewModelFactory.Create(x))
+                    .ToList();
+            },
+            []);
     }
 
     public async Task<IReadOnlyCollection<WonderRankingViewModel>> GetWonderRankingsAsync(int playerId)

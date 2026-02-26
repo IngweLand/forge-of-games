@@ -62,6 +62,16 @@ public class StatsHubService(ISender sender) : IStatsHubService
         return sender.Send(query, ct);
     }
 
+    public Task<IReadOnlyCollection<PlayerAthRankingDto>> GetPlayerAthRankingsAsync(int playerId,
+        CancellationToken ct = default)
+    {
+        var query = new GetPlayerAthRankingsQuery
+        {
+            PlayerId = playerId,
+        };
+        return sender.Send(query, ct);
+    }
+
     public Task<IReadOnlyCollection<WonderRankingDto>> GetWonderRankingsAsync(int playerId,
         CancellationToken ct = default)
     {
@@ -178,7 +188,7 @@ public class StatsHubService(ISender sender) : IStatsHubService
         var query = new GetPlayerCityStrategiesQuery(playerId);
         var result = await sender.Send(query, ct);
         result.LogIfFailed<StatsHubService>();
-        return result.IsSuccess? result.Value : [];
+        return result.IsSuccess ? result.Value : [];
     }
 
     public Task<IReadOnlyCollection<StatsTimedIntValue>> GetAllianceRankingsAsync(int allianceId,

@@ -61,6 +61,7 @@ public static class DependencyInjection
         services.AddScoped<IEventCityWonderRankingFetcher, EventCityWonderRankingFetcher>();
         services.AddScoped<IEventCityFetcher, EventCityFetcher>();
         services.AddScoped<IEventCityStrategyFactory, EventCityStrategyFactory>();
+        services.AddScoped<IPlayerAthService, PlayerAthService>();
 
         services.AddScoped<HohHelperResponseDtoToTablePkConverter>();
 
@@ -82,7 +83,7 @@ public static class DependencyInjection
                 options.Connect(connectionString);
             });
         }
-        
+
         IConfigurationBuilder configBuilder = builder.Configuration;
         var dynamicProvider = new DynamicConfigurationProvider();
         configBuilder.Add(new DynamicConfigurationSource(dynamicProvider));
