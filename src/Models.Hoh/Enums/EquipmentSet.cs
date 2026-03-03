@@ -42,4 +42,5 @@ public enum EquipmentSet
     Warchief,
     Warrior,
     Worker,
+    RoyalEgyptian,
 }
