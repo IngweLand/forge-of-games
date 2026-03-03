@@ -36,6 +36,7 @@ public interface IHohCoreDataRepository
     Task<IReadOnlyCollection<Wonder>> GetWondersAsync();
     Task<TreasureHuntStage?> GetTreasureHuntStageAsync(int difficulty, int stageIndex);
     Task<Unit?> GetUnitAsync(string id);
+    Task<Unit?> GetUnitByLegacyUnitIdAsync(string id);
     Task<UnitBattleConstants> GetUnitBattleConstants();
     Task<Wonder?> GetWonderAsync(WonderId id);
     Task<World?> GetWorldAsync(WorldId id);

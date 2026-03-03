@@ -73,4 +73,6 @@ public class Data
     
     [ProtoMember(24)]
     public required IReadOnlyCollection<Hero> LegacyHeroes { get; init; }
+    [ProtoMember(25)]
+    public required IReadOnlyCollection<Unit> LegacyUnits { get; init; }
 }

@@ -89,7 +89,15 @@ public class UnitService(
             return null;
         }
 
-        var unit = await hohCoreDataRepository.GetUnitAsync(hero.UnitId);
+        Unit? unit;
+        if (!LegacyUnitIds.Contains(id))
+        {
+            unit = await hohCoreDataRepository.GetUnitAsync(hero.UnitId);
+        }
+        else
+        {
+            unit = await hohCoreDataRepository.GetUnitByLegacyUnitIdAsync(hero.UnitId);
+        }
         if (unit == null)
         {
             logger.LogError($"Could not find unit {hero.UnitId} for the hero with id {id}");

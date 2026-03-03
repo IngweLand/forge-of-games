@@ -283,6 +283,18 @@ public class GameDesignDataParser(
                 SupportUnitType = h.SupportUnitType,
             })
             .ToList();
+        var legacyUnits = units
+            .Where(kvp => CurrentToLegacyHeroUnitIdMap.ContainsKey(kvp.Key))
+            .Select(kvp => new Unit
+            {
+                Id = CurrentToLegacyHeroUnitIdMap[kvp.Key],
+                Name = kvp.Value.Name,
+                Stats = kvp.Value.Stats,
+                Color = kvp.Value.Color,
+                RarityId = kvp.Value.RarityId,
+                Type = kvp.Value.Type,
+            })
+            .ToList();
         var data = new Data
         {
             Worlds = worlds.AsReadOnly(),
@@ -311,6 +323,7 @@ public class GameDesignDataParser(
             RelicBoostAgeModifiers = mapper.Map<IDictionary<string, float>>(gdr.RelicBoostAgeModifiers).AsReadOnly(),
             EquipmentSetDefinitions = equipmentSets.AsReadOnly(),
             LegacyHeroes = legacyHeroes.AsReadOnly(),
+            LegacyUnits = legacyUnits.AsReadOnly(),
         };
 
         return data;

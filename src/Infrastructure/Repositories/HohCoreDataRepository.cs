@@ -49,6 +49,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.Units.FirstOrDefault(u => u.Id == id);
     }
 
+    public async Task<Unit?> GetUnitByLegacyUnitIdAsync(string id)
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.LegacyUnits.FirstOrDefault(u => u.Id == id);
+    }
+
     public async Task<IReadOnlyCollection<Unit>> GetUnitsAsync(UnitType unitType)
     {
         var data = await dataProvider.GetDataAsync();
