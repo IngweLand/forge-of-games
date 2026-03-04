@@ -22,7 +22,6 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
     private void ToggleTimeline(bool toggled)
     {
         _currentState = _currentState == ViewerState.Timeline ? ViewerState.Main : ViewerState.Timeline;
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 
     protected override async Task OnSelectTimelineItem(string itemId)
@@ -34,7 +33,6 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
     private void ToggleCityProperties(bool toggled)
     {
         _currentState = _currentState == ViewerState.CityProperties ? ViewerState.Main : ViewerState.CityProperties;
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 
     private static DialogOptions GetDefaultDialogOptions()
@@ -74,13 +72,11 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
     private async Task PreviousBtnOnClicked()
     {
         await CityStrategyBuilderService.SelectPreviousItem();
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 
     private async Task NextBtnOnClicked()
     {
         await CityStrategyBuilderService.SelectNextItem();
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 
     private enum ViewerState

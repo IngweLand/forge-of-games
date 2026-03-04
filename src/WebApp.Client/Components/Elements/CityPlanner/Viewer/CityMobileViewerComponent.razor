@@ -7,6 +7,23 @@
     }
     else
     {
+        <MudToolBar Dense="true" Class="city-viewer-toolbar user-select-none" Gutters="false">
+            @if (_currentState == ViewerState.Main)
+            {
+                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                               OnClick="@FitToScreen"
+                               Color="Color.Inherit"/>
+            }
+
+            <div class="toolbar-divider"></div>
+            <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
+                                 Color="Color.Inherit"
+                                 Toggled="@(_currentState == ViewerState.CityProperties)"
+                                 ToggledIcon="@Icons.Material.Filled.Analytics"
+                                 ToggledColor="Color.Inherit"
+                                 ToggledChanged="ToggleCityProperties"/>
+        </MudToolBar>
+
         @if (_currentState == ViewerState.CityProperties)
         {
             <div class="main-container">
@@ -38,27 +55,5 @@
 </div>
 
 @code{
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        AppBarButtons = @<div class="app-bar-content-container">
-                            @if (_currentState == ViewerState.Main)
-                            {
-                                <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
-                                               OnClick="@FitToScreen"
-                                               Color="Color.Inherit"/>
-                            }
-
-                            <div class="toolbar-divider"></div>
-                            <MudToggleIconButton Icon="@Icons.Material.Outlined.Analytics"
-                                                 Color="Color.Inherit"
-                                                 Toggled="@(_currentState == ViewerState.CityProperties)"
-                                                 ToggledIcon="@Icons.Material.Filled.Analytics"
-                                                 ToggledColor="Color.Inherit"
-                                                 ToggledChanged="ToggleCityProperties"/>
-                        </div>;
-    }
 
 }

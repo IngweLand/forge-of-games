@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.WebApp.Client.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Extensions.Localization;
@@ -16,13 +15,9 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements;
 public abstract class LayoutViewerComponentBase : ComponentBase, IDisposable
 {
     private bool _fitOnPaint = true;
-    protected RenderFragment? AppBarButtons;
     protected Size CanvasSize = Size.Empty;
     protected bool IsInitialized;
     protected SKGLViewComponent? SkCanvasViewComponent;
-
-    [Inject]
-    protected AppBarService AppBarService { get; set; }
 
     [Inject]
     protected IBrowserViewportService BrowserViewportService { get; set; }
@@ -52,7 +47,6 @@ public abstract class LayoutViewerComponentBase : ComponentBase, IDisposable
         if (disposing)
         {
             SkCanvasView?.Dispose();
-            AppBarService.RemoveState(NavigationManager.Uri);
         }
     }
 

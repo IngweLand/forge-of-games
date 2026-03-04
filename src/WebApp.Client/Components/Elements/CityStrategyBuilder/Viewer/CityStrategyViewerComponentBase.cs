@@ -1,6 +1,5 @@
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.WebApp.Client.Models;
 using Microsoft.AspNetCore.Components;
 using SkiaSharp;
 
@@ -33,18 +32,9 @@ public abstract class CityStrategyViewerComponentBase : LayoutViewerComponentBas
             return;
         }
 
-        var size = await BrowserViewportService.GetCurrentBrowserWindowSizeAsync();
-        var appBarState = new AppBarState
-        {
-            Content = AppBarButtons,
-            ShouldHideTitle = size.Width < 720,
-        };
-        AppBarService.SetState(NavigationManager.Uri, appBarState);
-
         await CityStrategyBuilderService.InitializeAsync(Strategy, true);
 
         CityStrategyBuilderService.StateHasChanged += CityPlannerOnStateHasHasChanged;
-        AppBarService.StateHasChanged(NavigationManager.Uri);
         IsInitialized = true;
     }
 
@@ -67,6 +57,5 @@ public abstract class CityStrategyViewerComponentBase : LayoutViewerComponentBas
     protected virtual async Task OnSelectTimelineItem(string itemId)
     {
         await CityStrategyBuilderService.SelectTimelineItem(itemId);
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 }

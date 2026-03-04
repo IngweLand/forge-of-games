@@ -12,6 +12,33 @@
     }
     else
     {
+        <MudToolBar Dense="true" Class="city-viewer-toolbar user-select-none" Gutters="false">
+            <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
+                                 Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
+                                 ToggledIcon="@Icons.Material.Filled.ViewTimeline"
+                                 ToggledColor="Color.Inherit"
+                                 ToggledChanged="ToggleLeftPanel"/>
+            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
+            {
+                <div class="toolbar-divider"></div>
+                <div>
+                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
+                                   Color="Color.Inherit"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
+                                   Color="Color.Inherit"/>
+                    <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
+                                   OnClick="@FitToScreen"
+                                   Color="Color.Inherit"/>
+                </div>
+            }
+            @if (CanEdit)
+            {
+                <div class="toolbar-divider"></div>
+                <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
+                               Color="Color.Inherit"/>
+            }
+        </MudToolBar>
+
         @if (_leftPanelIsVisible)
         {
             <div class="timeline-container">
@@ -102,38 +129,5 @@
 
     [Parameter]
     public bool CanEdit { get; set; }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        AppBarButtons = @<div class="app-bar-content-container">
-                            <MudToggleIconButton Icon="@Icons.Material.Outlined.ViewTimeline"
-                                                 Class="fog-icon-light" Toggled="@_leftPanelIsVisible"
-                                                 ToggledIcon="@Icons.Material.Filled.ViewTimeline"
-                                                 ToggledColor="Color.Inherit"
-                                                 ToggledChanged="ToggleLeftPanel"/>
-                            @if (CityStrategyBuilderService.SelectedTimelineItem is CityStrategyLayoutTimelineItem)
-                            {
-                                <div class="toolbar-divider"></div>
-                                <div>
-                                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomOut" OnClick="@ZoomOut"
-                                                   Color="Color.Inherit"/>
-                                    <MudIconButton Icon="@Icons.Material.Outlined.ZoomIn" OnClick="@ZoomIn"
-                                                   Color="Color.Inherit"/>
-                                    <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
-                                                   OnClick="@FitToScreen"
-                                                   Color="Color.Inherit"/>
-                                </div>
-                            }
-                            @if (CanEdit)
-                            {
-                                <div class="toolbar-divider"></div>
-                                <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@OnEditRequested"
-                                               Color="Color.Inherit"/>
-                            }
-
-                        </div>;
-    }
 
 }

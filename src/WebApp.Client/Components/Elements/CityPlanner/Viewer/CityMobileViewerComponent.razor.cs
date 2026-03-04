@@ -22,7 +22,6 @@ public partial class CityMobileViewerComponent : CityViewerComponentBase
     private void ToggleCityProperties(bool toggled)
     {
         _currentState = _currentState == ViewerState.CityProperties ? ViewerState.Main : ViewerState.CityProperties;
-        AppBarService.StateHasChanged(NavigationManager.Uri);
     }
 
     private static DialogOptions GetDefaultDialogOptions()

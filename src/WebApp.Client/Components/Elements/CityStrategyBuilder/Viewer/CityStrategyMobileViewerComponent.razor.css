@@ -6,11 +6,11 @@
     position: relative;
 }
 
-.app-bar-content-container {
-    display: flex;
-    align-items: center;
+::deep .city-viewer-toolbar {
     gap: 6px;
-    margin-left: 12px;
+    background-color: var(--fog-toolbar-background-color);
+    color: var(--fog-icon-on-dark-color);
+    width: 100%;
 }
 
 .main-container {
