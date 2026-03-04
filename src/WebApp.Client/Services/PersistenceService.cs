@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoMapper;
 using Blazored.LocalStorage;
+using Ingweland.Fog.Application.Client.Web.Constants;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -46,6 +47,14 @@ public class PersistenceService(
         var serialized = protobufSerializer.SerializeToBytes(cityStrategy);
         var compressed = CompressionUtils.Compress(serialized);
         var key = GetCityStrategyKey(cityStrategy.Id);
+        return localStorageService.SetItemAsStringAsync(key, Convert.ToBase64String(compressed));
+    }
+
+    public ValueTask SaveCommunityCityStrategy(string strategyId, CityStrategy cityStrategy)
+    {
+        var serialized = protobufSerializer.SerializeToBytes(cityStrategy);
+        var compressed = CompressionUtils.Compress(serialized);
+        var key = GetCommunityCityStrategyKey(strategyId);
         return localStorageService.SetItemAsStringAsync(key, Convert.ToBase64String(compressed));
     }
 
@@ -146,9 +155,10 @@ public class PersistenceService(
         return DoLoadCity(GetCityKey(cityId));
     }
 
-    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId)
+    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId, bool isCommunity = false)
     {
-        return DoLoadCityStrategy(GetCityStrategyKey(strategyId));
+        return DoLoadCityStrategy(
+            isCommunity ? GetCommunityCityStrategyKey(strategyId) : GetCityStrategyKey(strategyId));
     }
 
     public async ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities()
@@ -439,6 +449,11 @@ public class PersistenceService(
     private static string GetCityStrategyKey(string id)
     {
         return $"{CITY_STRATEGY_KEY_PREFIX}.{id}";
+    }
+
+    private static string GetCommunityCityStrategyKey(string id)
+    {
+        return $"{PersistenceKeys.COMMUNITY_CITY_STRATEGY}.{id}";
     }
 
     private static string GetCityBackupKey(string id)

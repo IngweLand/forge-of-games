@@ -160,7 +160,6 @@ public static class DependencyInjection
         services.AddScoped<IHeroEquipmentConfigurationFactory, HeroEquipmentConfigurationFactory>();
         services.AddScoped<ICityPlannerDataConverter, CityPlannerDataConverter>();
         services.AddScoped<ICommunityCityStrategyViewModelFactory, CommunityCityStrategyViewModelFactory>();
-        services.AddScoped<ICommunityCityStrategyUIService, CommunityCityStrategyUiService>();
         services.AddScoped<ICityGuideMarkdownConverter, CityGuideMarkdownConverter>();
         services.AddScoped<IBuildingRenderer, BuildingRenderer>();
         services.AddScoped<IPlayerAthRankingViewModelFactory, PlayerAthRankingViewModelFactory>();

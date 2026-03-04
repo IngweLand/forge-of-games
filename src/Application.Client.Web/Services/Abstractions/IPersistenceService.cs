@@ -16,7 +16,7 @@ public interface IPersistenceService
     ValueTask<bool> DeleteCity(string cityId);
     ValueTask<bool> DeleteCityStrategy(string strategyId);
     ValueTask<HohCity?> LoadCity(string cityId);
-    ValueTask<CityStrategy?> LoadCityStrategy(string strategyId);
+    ValueTask<CityStrategy?> LoadCityStrategy(string strategyId, bool isCommunity = false);
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCities();
     ValueTask<IReadOnlyCollection<HohCityBasicData>> GetCityStrategies();
 
@@ -38,6 +38,7 @@ public interface IPersistenceService
 
     ValueTask SaveOpenTechnologies(CityId cityId, IReadOnlyCollection<string> openTechnologies);
     ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId);
+    ValueTask SaveCommunityCityStrategy(string strategyId, CityStrategy cityStrategy);
 
     ValueTask SetItemAsync<T>(string key, T value);
     ValueTask RemoveItemAsync(string key);

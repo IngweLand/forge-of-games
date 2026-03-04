@@ -35,13 +35,7 @@ public partial class CityStrategiesDashboardPage : FogPageBase
     private ICityStrategyUiService CityStrategyUiService { get; set; }
 
     [Inject]
-    private ICommunityCityStrategyUIService CommunityCityStrategyUiService { get; set; }
-
-    [Inject]
     private IDialogService DialogService { get; set; }
-
-    [Inject]
-    public IFogSharingUiService FogSharingUiService { get; set; }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; }
@@ -72,7 +66,7 @@ public partial class CityStrategiesDashboardPage : FogPageBase
         _strategiesAreLoading = true;
         StateHasChanged();
 
-        _communityStrategies = await CommunityCityStrategyUiService.GetStrategiesAsync();
+        _communityStrategies = await CityStrategyUiService.GetCommunityStrategiesAsync();
 
         _strategiesAreLoading = false;
         StateHasChanged();
@@ -115,7 +109,7 @@ public partial class CityStrategiesDashboardPage : FogPageBase
 
         AnalyticsService.TrackEvent(AnalyticsEvents.OPEN_COMMUNITY_CITY_STRATEGY_INIT, eventParams);
 
-        var strategy = await FogSharingUiService.FetchCityStrategyAsync(communityStrategy.SharedDataId);
+        var strategy = await CityStrategyUiService.GetCommunityStrategyAsync(communityStrategy.SharedDataId);
         if (strategy != null)
         {
             CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData

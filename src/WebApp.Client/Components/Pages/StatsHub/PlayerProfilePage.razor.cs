@@ -620,7 +620,7 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
 
         AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_INIT, _defaultAnalyticsParameters, parameters);
 
-        var strategy = await CityStrategyUiService.FetchStrategy(strategyInfo.Id);
+        var strategy = await CityStrategyUiService.FetchPlayerStrategy(strategyInfo.Id);
         if (strategy == null)
         {
             AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_ERROR, _defaultAnalyticsParameters,

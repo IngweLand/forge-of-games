@@ -11,4 +11,5 @@ public static class PersistenceKeys
     public const string EQUIPMENT_PROFILE = "EquipmentProfile";
     public const string CITY_STRATEGY_LAST_SELECTED_ITEMS = "CityStrategyLastSelectedItems";
     public const string BATTLE_LOG_CONTRIBUTION_MESSAGE_READ = "BattleLogContributionMessageRead";
+    public const string COMMUNITY_CITY_STRATEGY = "CommunityCityStrategy";
 }

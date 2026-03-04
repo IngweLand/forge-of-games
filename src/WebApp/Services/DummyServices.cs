@@ -60,7 +60,7 @@ internal class DummyPersistenceService : IPersistenceService
         throw new NotImplementedException();
     }
 
-    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId)
+    public ValueTask<CityStrategy?> LoadCityStrategy(string strategyId, bool isCommunity = false)
     {
         throw new NotImplementedException();
     }
@@ -151,6 +151,11 @@ internal class DummyPersistenceService : IPersistenceService
     }
 
     public ValueTask<IReadOnlyCollection<string>> GetOpenTechnologies(CityId cityId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public ValueTask SaveCommunityCityStrategy(string strategyId, CityStrategy cityStrategy)
     {
         throw new NotImplementedException();
     }
@@ -366,7 +371,7 @@ internal class DummyEquipmentProfilePersistenceService : IEquipmentProfilePersis
     }
 }
 
-internal class DummyAdSenseService:IAdSenseService
+internal class DummyAdSenseService : IAdSenseService
 {
     public ValueTask InitializeAd(string adSlotId)
     {
