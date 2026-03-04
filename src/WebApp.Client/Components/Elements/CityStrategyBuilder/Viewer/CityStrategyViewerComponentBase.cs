@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Client.Web.CityPlanner;
 using Ingweland.Fog.Application.Client.Web.CityStrategyBuilder.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
 using Microsoft.AspNetCore.Components;
@@ -7,6 +8,9 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Vi
 
 public abstract class CityStrategyViewerComponentBase : LayoutViewerComponentBase
 {
+    [Inject]
+    protected CityPlannerSettings CityPlannerSettings { get; set; }
+
     [Inject]
     protected ICityStrategyBuilderService CityStrategyBuilderService { get; set; }
 
@@ -20,6 +24,7 @@ public abstract class CityStrategyViewerComponentBase : LayoutViewerComponentBas
         {
             CityStrategyBuilderService.StateHasChanged -= CityPlannerOnStateHasHasChanged;
             CityStrategyBuilderService.Dispose();
+            CityPlannerSettings.StateChanged -= CityPlannerSettingsOnStateChanged;
         }
 
         base.Dispose(disposing);
@@ -33,9 +38,19 @@ public abstract class CityStrategyViewerComponentBase : LayoutViewerComponentBas
         }
 
         await CityStrategyBuilderService.InitializeAsync(Strategy, true);
-
+        CityPlannerSettings.StateChanged += CityPlannerSettingsOnStateChanged;
         CityStrategyBuilderService.StateHasChanged += CityPlannerOnStateHasHasChanged;
         IsInitialized = true;
+    }
+
+    private void CityPlannerSettingsOnStateChanged()
+    {
+        if (SkCanvasView == null)
+        {
+            return;
+        }
+
+        SkCanvasView.Invalidate();
     }
 
     private void CityPlannerOnStateHasHasChanged()

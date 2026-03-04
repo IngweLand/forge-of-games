@@ -2,20 +2,21 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityPlannerSettings
 {
-    private bool _showEntityName = true;
+    private bool _diffModeIsActive = true;
     private bool _showEntityLevel = true;
+    private bool _showEntityName = true;
 
-    public bool ShowEntityName
+    public bool DiffModeIsActive
     {
-        get => _showEntityName;
+        get => _diffModeIsActive;
         set
         {
-            if (_showEntityName == value)
+            if (_diffModeIsActive == value)
             {
                 return;
             }
 
-            _showEntityName = value;
+            _diffModeIsActive = value;
             StateChanged?.Invoke();
         }
     }
@@ -31,6 +32,21 @@ public class CityPlannerSettings
             }
 
             _showEntityLevel = value;
+            StateChanged?.Invoke();
+        }
+    }
+
+    public bool ShowEntityName
+    {
+        get => _showEntityName;
+        set
+        {
+            if (_showEntityName == value)
+            {
+                return;
+            }
+
+            _showEntityName = value;
             StateChanged?.Invoke();
         }
     }

@@ -28,6 +28,10 @@
                     <MudIconButton Icon="@Icons.Material.Outlined.FitScreen"
                                    OnClick="@FitToScreen"
                                    Color="Color.Inherit"/>
+                    <MudToggleIconButton Icon="@Icons.Material.Outlined.Difference"
+                                         Class="fog-icon-light" @bind-Toggled="@CityPlannerSettings.DiffModeIsActive"
+                                         ToggledIcon="@Icons.Material.Filled.Difference"
+                                         ToggledColor="Color.Inherit"/>
                 }
 
                 <div class="toolbar-divider"></div>

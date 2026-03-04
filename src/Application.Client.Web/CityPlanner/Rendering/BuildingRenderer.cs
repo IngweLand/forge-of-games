@@ -89,9 +89,10 @@ public class BuildingRenderer : IBuildingRenderer
         RenderOverflow(canvas, entity);
 
         var rect = _grid.GridToScreen(entity.Bounds).ToSKRect();
+        var isUnchanged = _settings.DiffModeIsActive && entity.IsUnchanged;
         if (!entity.IsSelected)
         {
-            var paint = !entity.IsUnchanged
+            var paint = !isUnchanged
                 ? _cityMapEntityStyle.GetPaint(entity.BuildingType)
                 : _cityMapEntityStyle.UnchangedBuildingPaint;
             _fillPaint = paint;
@@ -124,14 +125,14 @@ public class BuildingRenderer : IBuildingRenderer
             entity.BuildingType != BuildingType.CultureSite)
         {
             SkiaTextUtils.DrawText(canvas, entity.Name, rect, 5, _currentNameFont,
-                !entity.IsUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint);
+                !isUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint);
         }
 
         // entity level
         if (_settings.ShowEntityLevel)
         {
             SkiaTextUtils.DrawText(canvas, entity.Level.ToString(), rect, 5, _currentNameFont,
-                !entity.IsUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint,
+                !isUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint,
                 TextHorizontalAlignment.Left, TextVerticalAlignment.Bottom);
         }
 
@@ -140,7 +141,7 @@ public class BuildingRenderer : IBuildingRenderer
         {
             var buffRect = new SKRect(rect.Right - _buffSize - BUFF_PADDING, rect.Bottom - _buffSize - BUFF_PADDING,
                 rect.Right - BUFF_PADDING, rect.Bottom - BUFF_PADDING);
-            DrawBuffLevel(entity.HappinessFraction, buffRect, canvas, entity.IsUnchanged);
+            DrawBuffLevel(entity.HappinessFraction, buffRect, canvas, isUnchanged);
         }
 
         // customization
@@ -164,7 +165,7 @@ public class BuildingRenderer : IBuildingRenderer
                 ProductionProviderHelper.CanRenderProductionLabel(entity.BuildingType)
                     ? entity.SelectedProduct.ProductionTime
                     : null,
-                entity.IsUnchanged);
+                isUnchanged);
         }
     }
 

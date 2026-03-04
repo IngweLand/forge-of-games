@@ -30,6 +30,11 @@
                                    OnClick="@FitToScreen"
                                    Color="Color.Inherit"/>
                 </div>
+                <div class="toolbar-divider"></div>
+                <MudToggleIconButton Icon="@Icons.Material.Outlined.Difference"
+                                     Class="fog-icon-light" @bind-Toggled="@CityPlannerSettings.DiffModeIsActive"
+                                     ToggledIcon="@Icons.Material.Filled.Difference"
+                                     ToggledColor="Color.Inherit"/>
             }
             @if (CanEdit)
             {
