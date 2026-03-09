@@ -94,11 +94,47 @@ public class ProductionStatsProcessor : IProductionStatsProcessor
 
             var cost = productionComponent.Cost.Select(resourceAmount => new ProductionCostStatsItem
                 {
-                    ResourceId = resourceAmount.ResourceId, Default = resourceAmount.Amount,
+                    ResourceId = resourceAmount.ResourceId,
+                    Default = resourceAmount.Amount,
                     OneHour = (int) (resourceAmount.Amount / defaultProductionHours),
                     OneDay = (int) (resourceAmount.Amount / defaultProductionHours * 24),
                 })
                 .ToList();
+
+            var extraCost = new Dictionary<string, ProductionCostStatsItem>();
+            foreach (var costItem in cost)
+            {
+                if (!ResourceConversions.Rates.TryGetValue(costItem.ResourceId, out var conversionRates))
+                {
+                    continue;
+                }
+
+                foreach (var t in conversionRates)
+                {
+                    if (extraCost.TryGetValue(t.SourceResourceId, out var extraCostItem))
+                    {
+                        extraCost[t.SourceResourceId] = new ProductionCostStatsItem
+                        {
+                            ResourceId = t.SourceResourceId,
+                            Default = (int) Math.Ceiling(costItem.Default / t.TargetPerSource) + extraCostItem.Default,
+                            OneHour = (int) Math.Ceiling(costItem.OneHour / t.TargetPerSource) + extraCostItem.OneHour,
+                            OneDay = (int) Math.Ceiling(costItem.OneDay / t.TargetPerSource) + extraCostItem.OneDay,
+                        };
+                    }
+                    else
+                    {
+                        extraCost.Add(t.SourceResourceId, new ProductionCostStatsItem
+                        {
+                            ResourceId = t.SourceResourceId,
+                            Default = (int) Math.Ceiling(costItem.Default / t.TargetPerSource),
+                            OneHour = (int) Math.Ceiling(costItem.OneHour / t.TargetPerSource),
+                            OneDay = (int) Math.Ceiling(costItem.OneDay / t.TargetPerSource),
+                        });
+                    }
+                }
+            }
+
+            cost.AddRange(extraCost.Values);
 
             productionItems.Add(new ProductionStatsItem
             {
