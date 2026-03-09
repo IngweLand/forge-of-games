@@ -12,7 +12,7 @@ namespace Ingweland.Fog.Application.Server.Services.Queries;
 public record GetCommunityCityStrategiesQuery : IRequest<Result<IReadOnlyCollection<CommunityCityStrategyDto>>>,
     ICacheableRequest
 {
-    public TimeSpan? Duration => TimeSpan.FromHours(1);
+    public TimeSpan? Duration => TimeSpan.FromHours(3);
     public DateTimeOffset? Expiration { get; }
 }
 
