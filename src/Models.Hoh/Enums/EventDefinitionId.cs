@@ -6,4 +6,5 @@ public enum EventDefinitionId
     TreasureHuntLeague,
     PvP,
     EventCity,
+    MilestoneEvent,
 }

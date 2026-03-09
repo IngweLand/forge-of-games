@@ -38,11 +38,20 @@ public class InGameEventsFetcher(
                 var defId = EventDefinitionId.Undefined;
                 try
                 {
-                    defId =
-                        ige.EventDefinition.Id.StartsWith("event.EventCity_",
-                            StringComparison.InvariantCultureIgnoreCase)
-                            ? EventDefinitionId.EventCity
-                            : HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);
+                    if (ige.EventDefinition.Id.StartsWith("event.EventCity_",
+                            StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        defId = EventDefinitionId.EventCity;
+                    }
+                    else if (ige.EventDefinition.Id.StartsWith("event.MilestoneEvent_",
+                                 StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        defId = EventDefinitionId.MilestoneEvent;
+                    }
+                    else
+                    {
+                        defId = HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);
+                    }
                 }
                 catch
                 {
