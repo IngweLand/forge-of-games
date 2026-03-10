@@ -97,6 +97,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetAlliancesWithPaginationQuery q => $"Alliances:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
             GetPlayersWithPaginationQuery q => $"Players:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
             GetPlayerAthRankingsQuery q => $"PlayerAthRankings:{q.PlayerId}",
+            GetSharedResourceQuery q => $"SharedResource:{q.ShareId}",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

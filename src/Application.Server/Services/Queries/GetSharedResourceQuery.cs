@@ -5,7 +5,11 @@ using MediatR;
 
 namespace Ingweland.Fog.Application.Server.Services.Queries;
 
-public record GetSharedResourceQuery(string ShareId) : IRequest<Result<SharedDataDto>>;
+public record GetSharedResourceQuery(string ShareId) : IRequest<Result<SharedDataDto>>, ICacheableRequest
+{
+    public TimeSpan? Duration => TimeSpan.FromHours(24);
+    public DateTimeOffset? Expiration { get; }
+}
 
 public class GetSharedResourceHandler(IFogSharedDataStorageRepository storageRepository)
     : IRequestHandler<GetSharedResourceQuery, Result<SharedDataDto>>
