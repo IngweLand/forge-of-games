@@ -29,7 +29,7 @@ public class InGameDataQueueProcessor(
             Connection = "StorageSettings:ConnectionString")]
         QueueMessage message)
     {
-        logger.LogInformation("Message: {MessageId}", message.MessageId);
+        logger.LogInformation("Msg: {MessageId}", message.MessageId);
 
         var payload = JsonSerializer.Deserialize<InGameRawDataQueueMessage>(message.MessageText);
         if (payload == null)
@@ -37,7 +37,7 @@ public class InGameDataQueueProcessor(
             throw new Exception("Could not deserialize payload");
         }
 
-        logger.LogInformation("ServiceType: {ServiceType}, PartitionKey: {MessageMessageText}, RowKey: {RowKey}",
+        logger.LogInformation("ST: {ServiceType}, PK: {MessageMessageText}, RK: {RowKey}",
             payload.ProcessingServiceType.ToString(), payload.PartitionKey, payload.RowKey);
 
         switch (payload.ProcessingServiceType)
@@ -63,7 +63,7 @@ public class InGameDataQueueProcessor(
             }
         }
 
-        logger.LogInformation("Successfully processed: {MessageId}", message.MessageId);
+        logger.LogInformation("Processed: {MessageId}", message.MessageId);
     }
 
     private async Task ProcessBattleAsync(string partitionKey, string rowKey)

@@ -52,7 +52,7 @@ public class InGameDataReceiver(
         try
         {
             var now = DateTime.UtcNow;
-            logger.LogInformation("Processing raw data at {Time}", now);
+            logger.LogDebug("Processing raw data at {Time}", now);
             var rawData = new InGameRawData
             {
                 RequestBase64Data = inGameData.Base64RequestData,
@@ -65,10 +65,10 @@ public class InGameDataReceiver(
             {
                 var rowKey = await inGameRawDataTableRepository.SaveAsync(rawData, t.PartitionKey);
                 keys.Add((t.ProcessingServiceType, t.PartitionKey, rowKey));
-                logger.LogInformation("Saved raw data for partition key: {PartitionKey}", t.PartitionKey);
+                logger.LogDebug("Saved raw data for partition key: {PartitionKey}", t.PartitionKey);
             }
 
-            logger.LogInformation("Processing raw data completed");
+            logger.LogDebug("Processing raw data completed");
         }
         catch (Exception e)
         {
@@ -89,7 +89,6 @@ public class InGameDataReceiver(
             logger.LogError(e, "Error occurred while queueing for immediate processing");
         }
 
-        logger.LogInformation("Function InGameDataReceiver completed");
         return new NoContentResult();
     }
 

@@ -49,7 +49,7 @@ public class InGameRawDataTableRepository(
         try
         {
             await tableStorageRepository.UpsertEntityAsync(entity);
-            logger.LogInformation("Successfully saved in-game raw data.  {pk}, {rk}", partitionKey, rowKey);
+            logger.LogInformation("Saved in-game raw data.  {pk}, {rk}", partitionKey, rowKey);
         }
         catch (Exception ex)
         {

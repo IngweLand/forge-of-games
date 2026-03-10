@@ -18,7 +18,7 @@ public class DatabaseWarmUpService(IConfiguration configuration, ILogger<Databas
         var customEnvironment = configuration.GetValue<string>("CustomEnvironment");
         if (customEnvironment is not ("Development" or "Staging"))
         {
-            logger.LogInformation("Skipping database warm-up because custom environment value is set to {environment}",
+            logger.LogDebug("Skipping database warm-up because custom environment value is set to {environment}",
                 customEnvironment);
             return;
         }
