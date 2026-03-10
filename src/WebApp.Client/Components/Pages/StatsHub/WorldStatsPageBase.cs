@@ -30,21 +30,6 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase, IAsyncDispos
         GC.SuppressFinalize(this);
     }
 
-    protected override async Task OnInitializedAsync()
-    {
-        await base.OnInitializedAsync();
-
-        Items = await LoadWithPersistenceAsync(nameof(Items),
-            async () =>
-            {
-                _currentTask = GetDataAsync(0, FogConstants.MAX_LEADERBOARD_PAGE_SIZE);
-                var result = await _currentTask;
-                return result.Items.ToList();
-            }) ?? [];
-
-        IsInitialized = true;
-    }
-
     protected override async Task OnParametersSetAsync()
     {
         if (_isNavigatingAway)
