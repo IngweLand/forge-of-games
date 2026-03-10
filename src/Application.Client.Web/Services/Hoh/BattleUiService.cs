@@ -4,6 +4,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
+using Ingweland.Fog.Application.Core.Constants;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Battle;
@@ -53,7 +54,7 @@ public class BattleUiService(
         await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask);
         return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
             historicBattlesTask.Result, teslaStormTask.Result,
-            heroesTask.Result);
+            heroesTask.Result.Where(x => !FogConstants.NoHeroIds.Contains(x.Id)).ToList());
     }
 
     public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId,

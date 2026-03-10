@@ -2,12 +2,17 @@
 @using Ingweland.Fog.Application.Client.Core.Localization
 @using Ingweland.Fog.Application.Client.Web.Analytics
 @using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Core.Constants
 @using Ingweland.Fog.Application.Core.Helpers
 @using Ingweland.Fog.Models.Fog.Entities
 @using Ingweland.Fog.WebApp.Client.Components.Elements.Heroes
 @inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
 <PageTitle>@_pageTitle</PageTitle>
-@if (_heroProfileIdentifier != null)
+@if(_isNoHero && _heroProfileIdentifier != null)
+{
+    <NoHeroComponent Profile="@_heroProfileIdentifier"/>
+}
+else if (_heroProfileIdentifier != null)
 {
     <HeroComponent InitProfile="@_heroProfileIdentifier" AnalyticsLocation="@AnalyticsParams.Values.Locations.HERO_PAGE"
                    OnProfileUpdate="SaveProfile"/>
@@ -16,6 +21,7 @@
 @code {
 
     private HeroProfileIdentifier? _heroProfileIdentifier;
+    private bool _isNoHero;
 
     [Parameter]
     public required string HeroId { get; set; }
@@ -37,7 +43,14 @@
                     Loc[FogResource.Hero_PageTitle, HeroId].ToString();
             }) ?? string.Empty;
 
-        _heroProfileIdentifier = await HeroProfileUiService.GetHeroProfileIdentifierAsync(HeroId);
+        
+        var identifier = await HeroProfileUiService.GetHeroProfileIdentifierAsync(HeroId);
+        if (identifier != null)
+        {
+            _isNoHero = FogConstants.NoHeroIds.Contains(identifier.HeroId);
+            _heroProfileIdentifier = identifier;
+        }
+        
         // _heroProfileIdentifier = await LoadWithPersistenceAsync(nameof(_heroProfileIdentifier),
         //     () => HeroProfileUiService.GetHeroProfileIdentifierAsync(HeroId));
     }

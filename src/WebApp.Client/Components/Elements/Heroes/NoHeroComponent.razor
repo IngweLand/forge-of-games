@@ -1,0 +1,19 @@
+@if (_profile != null)
+{
+    <div class="component-root">
+        <div class="header-container">
+            <div class="fog-container avatar-section">
+                <div class="avatar-container">
+                    <img src="@_profile.PortraitUrl"/>
+                </div>
+            </div>
+            <div class="fog-container header-content">
+                <div class="hero-name">@_profile.Name</div>
+            </div>
+        </div>
+
+        <div class="fog-container section-container markdown-city-guide">
+            @((MarkupString) _html)
+        </div>
+    </div>
+}

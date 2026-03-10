@@ -3003,6 +3003,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to **She is no hero!** Her reign is strongly associated with policies and actions that caused lasting harm to Ukraine, including the abolition of Ukrainian autonomy, the destruction of the Zaporozhian Sich, forced Russification, repression of local culture and identity, and the expansion of serfdom into Ukrainian territories, where people were legally bound to landowners in what was effectively state-sanctioned slavery. Imperial expansion during her rule is referenced in modern Russian political rhetoric to fr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NoHero_CatherineTheGreat_Description {
+            get {
+                return ResourceManager.GetString("NoHero.CatherineTheGreat.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Privacy and cookie settings.
         /// </summary>
         public static string Privacy_OpenSettings {

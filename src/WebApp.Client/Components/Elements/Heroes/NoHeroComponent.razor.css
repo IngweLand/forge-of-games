@@ -1,0 +1,87 @@
+.component-root{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.header-container {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+}
+
+.avatar-section{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 80px;
+    cursor: pointer;
+}
+
+.avatar-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/10;
+}
+
+.avatar-container > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block; 
+}
+
+.header-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 6px;
+}
+
+.hero-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.section-container{
+    display: flex;
+    padding: 8px;
+    gap: 8px;
+}
+
+
+@media (min-width: 576px) {
+    .component-root{
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .avatar-section {
+        width: 120px;
+    }
+
+    .hero-name {
+        font-size: 20px;
+    }
+
+    .header-container {
+        gap: 12px;
+    }
+
+    .section-container{
+        gap: 12px;
+        padding: 12px;
+    }
+}
