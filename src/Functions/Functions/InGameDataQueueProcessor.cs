@@ -29,8 +29,6 @@ public class InGameDataQueueProcessor(
             Connection = "StorageSettings:ConnectionString")]
         QueueMessage message)
     {
-        logger.LogInformation("Msg: {MessageId}", message.MessageId);
-
         var payload = JsonSerializer.Deserialize<InGameRawDataQueueMessage>(message.MessageText);
         if (payload == null)
         {
