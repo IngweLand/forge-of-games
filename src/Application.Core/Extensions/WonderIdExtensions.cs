@@ -18,6 +18,7 @@ public static class WonderIdExtensions
             WonderId.Arabia_CityOfBrass => CityId.Arabia_CityOfBrass,
             WonderId.Arabia_NoriasOfHama => CityId.Arabia_NoriasOfHama,
             WonderId.Arabia_Petra => CityId.Arabia_Petra,
+            WonderId.AncientEgyptEvent_AnubisTemple => CityId.AncientEgyptEvent,
             _ => CityId.Undefined,
         };
     }

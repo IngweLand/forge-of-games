@@ -16,9 +16,12 @@ public static class CityIdExtensions
 
     private static readonly List<WonderId> VikingsWonders =
         [WonderId.Vikings_Valhalla, WonderId.Vikings_Yggdrasil, WonderId.Vikings_DragonshipEllida];
-    
+
     private static readonly List<WonderId> ArabicWonders =
         [WonderId.Arabia_Petra, WonderId.Arabia_CityOfBrass, WonderId.Arabia_NoriasOfHama];
+
+    private static readonly List<WonderId> AncientEgyptWonders =
+        [WonderId.AncientEgyptEvent_AnubisTemple];
 
     public static IReadOnlyCollection<WonderId> GetWonders(this CityId cityId)
     {
@@ -33,6 +36,7 @@ public static class CityIdExtensions
             CityId.Arabia_CityOfBrass => ArabicWonders,
             CityId.Arabia_NoriasOfHama => ArabicWonders,
             CityId.Arabia_Petra => ArabicWonders,
+            CityId.AncientEgyptEvent => AncientEgyptWonders,
             _ => Array.Empty<WonderId>(),
         };
     }
@@ -50,6 +54,7 @@ public static class CityIdExtensions
             CityId.Arabia_CityOfBrass => AgeIds.ARABIA,
             CityId.Arabia_NoriasOfHama => AgeIds.ARABIA,
             CityId.Arabia_Petra => AgeIds.ARABIA,
+            CityId.AncientEgyptEvent => AgeIds.ANCIENT_EGYPT_EVENT,
             _ => AgeIds.BRONZE_AGE,
         };
     }
@@ -60,7 +65,7 @@ public static class CityIdExtensions
         {
             CityId.Mayas_Tikal or CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace => CityId.Mayas_ChichenItza,
             CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra => CityId.Arabia_Petra,
-            _ => cityId
+            _ => cityId,
         };
     }
 
@@ -77,6 +82,7 @@ public static class CityIdExtensions
             CityId.Arabia_CityOfBrass => "icon_city_crest_arabia",
             CityId.Arabia_NoriasOfHama => "icon_city_crest_arabia",
             CityId.Arabia_Petra => "icon_city_crest_arabia",
+            CityId.AncientEgyptEvent => "icon_city_crest_ancient_egypt",
             _ => string.Empty,
         };
     }

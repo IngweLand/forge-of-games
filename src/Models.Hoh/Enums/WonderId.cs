@@ -32,4 +32,5 @@ public enum WonderId
     Arabia_CityOfBrass,
     Arabia_NoriasOfHama,
     Arabia_Petra,
+    AncientEgyptEvent_AnubisTemple,
 }

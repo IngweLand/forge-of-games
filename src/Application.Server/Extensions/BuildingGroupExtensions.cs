@@ -101,6 +101,8 @@ public static class BuildingGroupExtensions
             BuildingGroup.ThreadProcessor => "threadProcessor",
             BuildingGroup.WaterPump => "waterPump",
             BuildingGroup.WorkerHome => "workerHome",
+            BuildingGroup.PresetFountain => "presetFountain",
+            BuildingGroup.PresetOasis => "presetOasis",
             _ => string.Empty,
         };
     }

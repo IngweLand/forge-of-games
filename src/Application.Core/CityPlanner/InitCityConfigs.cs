@@ -410,6 +410,37 @@ public class InitCityConfigs
                         IsLocked = true,
                     },
                 ],
+            nameof(WonderId.AncientEgyptEvent_AnubisTemple) =>
+            [
+                new HohCityMapEntity
+                {
+                    Id = 0,
+                    CityEntityId = "Building_AncientEgyptEvent_City_CityHall_1",
+                    Level = 1,
+                    X = 46,
+                    Y = -51,
+                },
+                new HohCityMapEntity
+                {
+                    Id = 1,
+                    CityEntityId = "Building_AncientEgyptEvent_Irrigation_PresetOasis_1",
+                    Level = 1,
+                    X = 27,
+                    Y = -47,
+                    IsRotated = true,
+                    IsLocked = true,
+                },
+                new HohCityMapEntity
+                {
+                    Id = 2,
+                    CityEntityId = "Building_AncientEgyptEvent_Irrigation_PresetFountain_1",
+                    Level = 1,
+                    X = 31,
+                    Y = -39,
+                    IsRotated = true,
+                    IsLocked = true,
+                },
+            ],
             _ => [],
         };
     }
@@ -488,6 +519,14 @@ public class InitCityConfigs
                 "Expansion_Arabia_Petra_10", "Expansion_Arabia_Petra_11", "Expansion_Arabia_Petra_12",
                 "Expansion_Arabia_Petra_13", "Expansion_Arabia_Petra_14", "Expansion_Arabia_Petra_15",
                 "Expansion_Arabia_Petra_16",
+            ],
+            CityId.AncientEgyptEvent =>
+            [
+                "Expansion_AncientEgypt_Event_1", "Expansion_AncientEgypt_Event_2",
+                "Expansion_AncientEgypt_Event_3", "Expansion_AncientEgypt_Event_4",
+                "Expansion_AncientEgypt_Event_5", "Expansion_AncientEgypt_Event_6",
+                "Expansion_AncientEgypt_Event_7", "Expansion_AncientEgypt_Event_8",
+                "Expansion_AncientEgypt_Event_9",
             ],
             _ => [],
         };

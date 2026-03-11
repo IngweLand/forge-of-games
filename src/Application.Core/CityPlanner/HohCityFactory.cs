@@ -134,7 +134,8 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
     {
         var key = cityId.ToString();
         if (cityId is CityId.Mayas_ChichenItza or CityId.Mayas_SayilPalace or CityId.Mayas_Tikal
-            or CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra)
+            or CityId.Arabia_CityOfBrass or CityId.Arabia_NoriasOfHama or CityId.Arabia_Petra
+            or CityId.AncientEgyptEvent)
         {
             key = wonderId.ToString();
         }

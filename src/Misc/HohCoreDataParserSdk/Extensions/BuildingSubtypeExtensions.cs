@@ -101,6 +101,8 @@ public static class BuildingSubtypeExtensions
             "threadProcessor" => BuildingGroup.ThreadProcessor,
             "waterPump" => BuildingGroup.WaterPump,
             "workerHome" => BuildingGroup.WorkerHome,
+            "presetFountain" => BuildingGroup.PresetFountain,
+            "presetOasis" => BuildingGroup.PresetOasis,
             _ => throw new Exception($"Cannot map building subtype: {value}"),
         };
     }

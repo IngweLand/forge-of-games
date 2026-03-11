@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using ProtoBuf;
 
 namespace Ingweland.Fog.Models.Hoh.Enums;
 
@@ -17,4 +16,5 @@ public enum CityId
     Arabia_CityOfBrass,
     Arabia_NoriasOfHama,
     Arabia_Petra,
+    AncientEgyptEvent,
 }

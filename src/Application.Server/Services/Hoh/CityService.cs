@@ -153,6 +153,14 @@ public class CityService(
                     mapper.Map<WonderBasicDto>(await hohCoreDataRepository.GetWonderAsync(WonderId.Arabia_Petra)),
                 }
             },
+            {
+                CityId.AncientEgyptEvent,
+                new List<WonderBasicDto>
+                {
+                    mapper.Map<WonderBasicDto>(
+                        await hohCoreDataRepository.GetWonderAsync(WonderId.AncientEgyptEvent_AnubisTemple)),
+                }
+            },
         };
     }
 
@@ -175,7 +183,7 @@ public class CityService(
         var cityIds = new List<CityId>
         {
             CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity(),
-            CityId.Arabia_Petra.ToDefaultTechnologyCity(),
+            CityId.Arabia_Petra.ToDefaultTechnologyCity(), CityId.AncientEgyptEvent,
         };
         return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
     }
