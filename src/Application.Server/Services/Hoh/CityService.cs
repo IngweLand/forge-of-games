@@ -183,7 +183,7 @@ public class CityService(
         var cityIds = new List<CityId>
         {
             CityId.Capital, CityId.China, CityId.Egypt, CityId.Vikings, CityId.Mayas_Tikal.ToDefaultTechnologyCity(),
-            CityId.Arabia_Petra.ToDefaultTechnologyCity(), CityId.AncientEgyptEvent,
+            CityId.Arabia_Petra.ToDefaultTechnologyCity(), //CityId.AncientEgyptEvent,
         };
         return Task.FromResult(mapper.Map<IReadOnlyCollection<CityDto>>(cityIds));
     }
