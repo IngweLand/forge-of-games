@@ -60,8 +60,6 @@ public class InGameDataQueueProcessor(
                 throw new Exception($"Unknown processing service type {payload.ProcessingServiceType}");
             }
         }
-
-        logger.LogInformation("Processed: {MessageId}", message.MessageId);
     }
 
     private async Task ProcessBattleAsync(string partitionKey, string rowKey)
