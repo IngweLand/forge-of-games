@@ -136,7 +136,7 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
     public async Task<IReadOnlyCollection<Technology>> GetTechnologiesAsync(CityId cityId)
     {
         var data = await dataProvider.GetDataAsync();
-        return data.Technologies.Where(b => b.CityId == cityId)
+        return data.Technologies.Where(b => b.CityIds.Contains(cityId))
             .ToList();
     }
 

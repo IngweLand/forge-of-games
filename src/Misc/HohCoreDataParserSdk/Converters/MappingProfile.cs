@@ -218,7 +218,7 @@ public class MappingProfile : Profile
         CreateMap<TechnologyDefinitionDTO, Technology>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)))
             .ForMember(dest => dest.Age, opt => opt.ConvertUsing(new AgeValueConverter(), td => td.Age))
-            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), td => td.City))
+            .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), td => td.Cities))
             .ForMember(dest => dest.ResearchComponent, opt => opt.MapFrom(src => src.ResearchComponent));
         CreateMap<WorldDefinitionDTO, World>().ConvertUsing<WorldDefinitionConverter>();
         CreateMap<BuildingDefinitionDTO, Building>()

@@ -25,16 +25,16 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch90ZWNobm9sb2d5X2RlZmluaXRpb25fZHRvLnByb3RvGhlnb29nbGUvcHJv",
-            "dG9idWYvYW55LnByb3RvIskBChdUZWNobm9sb2d5RGVmaW5pdGlvbkRUTxIK",
+            "dG9idWYvYW55LnByb3RvIrsBChdUZWNobm9sb2d5RGVmaW5pdGlvbkRUTxIK",
             "CgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEgsKA2FnZRgDIAEoCRIYChBob3Jp",
-            "em9udGFsX2luZGV4GAQgASgFEhYKDnZlcnRpY2FsX2luZGV4GAUgASgFEgwK",
-            "BGNpdHkYBiABKAkSNwoZcGFja2VkX3Jlc2VhcmNoX2NvbXBvbmVudBgHIAEo",
-            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSDgoGY2l0aWVzGAggAygJQh+qAhxJ",
-            "bmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "em9udGFsX2luZGV4GAQgASgFEhYKDnZlcnRpY2FsX2luZGV4GAUgASgFEjcK",
+            "GXBhY2tlZF9yZXNlYXJjaF9jb21wb25lbnQYByABKAsyFC5nb29nbGUucHJv",
+            "dG9idWYuQW55Eg4KBmNpdGllcxgIIAMoCUIfqgIcSW5nd2VsYW5kLkZvZy5J",
+            "bm4uTW9kZWxzLkhvaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDTO.Parser, new[]{ "Id", "Name", "Age", "HorizontalIndex", "VerticalIndex", "City", "PackedResearchComponent", "Cities" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDTO), global::Ingweland.Fog.Inn.Models.Hoh.TechnologyDefinitionDTO.Parser, new[]{ "Id", "Name", "Age", "HorizontalIndex", "VerticalIndex", "PackedResearchComponent", "Cities" }, null, null, null, null)
           }));
     }
     #endregion
@@ -81,7 +81,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       age_ = other.age_;
       horizontalIndex_ = other.horizontalIndex_;
       verticalIndex_ = other.verticalIndex_;
-      city_ = other.city_;
       packedResearchComponent_ = other.packedResearchComponent_ != null ? other.packedResearchComponent_.Clone() : null;
       cities_ = other.cities_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -153,18 +152,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
     }
 
-    /// <summary>Field number for the "city" field.</summary>
-    public const int CityFieldNumber = 6;
-    private string city_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string City {
-      get { return city_; }
-      set {
-        city_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "packed_research_component" field.</summary>
     public const int PackedResearchComponentFieldNumber = 7;
     private global::Google.Protobuf.WellKnownTypes.Any packedResearchComponent_;
@@ -211,7 +198,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Age != other.Age) return false;
       if (HorizontalIndex != other.HorizontalIndex) return false;
       if (VerticalIndex != other.VerticalIndex) return false;
-      if (City != other.City) return false;
       if (!object.Equals(PackedResearchComponent, other.PackedResearchComponent)) return false;
       if(!cities_.Equals(other.cities_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -226,7 +212,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       if (Age.Length != 0) hash ^= Age.GetHashCode();
       if (HorizontalIndex != 0) hash ^= HorizontalIndex.GetHashCode();
       if (VerticalIndex != 0) hash ^= VerticalIndex.GetHashCode();
-      if (City.Length != 0) hash ^= City.GetHashCode();
       if (packedResearchComponent_ != null) hash ^= PackedResearchComponent.GetHashCode();
       hash ^= cities_.GetHashCode();
       if (_unknownFields != null) {
@@ -267,10 +252,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(40);
         output.WriteInt32(VerticalIndex);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(City);
-      }
       if (packedResearchComponent_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(PackedResearchComponent);
@@ -306,10 +287,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
         output.WriteRawTag(40);
         output.WriteInt32(VerticalIndex);
       }
-      if (City.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(City);
-      }
       if (packedResearchComponent_ != null) {
         output.WriteRawTag(58);
         output.WriteMessage(PackedResearchComponent);
@@ -339,9 +316,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (VerticalIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(VerticalIndex);
-      }
-      if (City.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(City);
       }
       if (packedResearchComponent_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PackedResearchComponent);
@@ -373,9 +347,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
       }
       if (other.VerticalIndex != 0) {
         VerticalIndex = other.VerticalIndex;
-      }
-      if (other.City.Length != 0) {
-        City = other.City;
       }
       if (other.packedResearchComponent_ != null) {
         if (packedResearchComponent_ == null) {
@@ -417,10 +388,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 40: {
             VerticalIndex = input.ReadInt32();
-            break;
-          }
-          case 50: {
-            City = input.ReadString();
             break;
           }
           case 58: {
@@ -467,10 +434,6 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
           }
           case 40: {
             VerticalIndex = input.ReadInt32();
-            break;
-          }
-          case 50: {
-            City = input.ReadString();
             break;
           }
           case 58: {

@@ -10,7 +10,6 @@ message TechnologyDefinitionDTO {
   string age = 3;
   int32 horizontal_index = 4;
   int32 vertical_index = 5;
-  string city = 6;
   //ResearchComponentDTO
   google.protobuf.Any packed_research_component = 7;
   repeated string cities = 8;

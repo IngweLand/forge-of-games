@@ -4,13 +4,11 @@ using Ingweland.Fog.Models.Hoh.Enums;
 namespace Ingweland.Fog.Models.Hoh.Entities.Research;
 
 [ProtoContract]
+[ProtoReserved(2, "Was used for CityId property, which was discarded in the game.")]
 public class Technology
 {
     [ProtoMember(1)]
     public required Age Age { get; init; }
-
-    [ProtoMember(2)]
-    public required CityId CityId { get; init; }
 
     [ProtoMember(3)]
     public required int HorizontalIndex { get; init; }
@@ -26,4 +24,7 @@ public class Technology
 
     [ProtoMember(7)]
     public required int VerticalIndex { get; init; }
+    
+    [ProtoMember(8)]
+    public required HashSet<CityId> CityIds { get; init; }
 }
