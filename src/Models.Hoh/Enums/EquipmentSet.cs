@@ -43,4 +43,5 @@ public enum EquipmentSet
     Warrior,
     Worker,
     RoyalEgyptian,
+    Jackal,
 }
