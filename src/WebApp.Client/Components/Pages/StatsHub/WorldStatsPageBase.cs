@@ -11,7 +11,7 @@ public abstract class WorldStatsPageBase<TItem> : StatsHubPageBase, IAsyncDispos
     private Task<PaginatedList<TItem>>? _currentTask;
     private bool _isNavigatingAway;
     protected bool IsLoading => _currentTask is {IsCompleted: false};
-    protected IReadOnlyList<TItem> Items { get; set; }
+    protected IReadOnlyList<TItem> Items { get; set; } = [];
 
     [Parameter]
     [SupplyParameterFromQuery]
