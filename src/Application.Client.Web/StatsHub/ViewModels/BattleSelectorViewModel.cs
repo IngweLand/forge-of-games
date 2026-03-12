@@ -6,6 +6,7 @@ namespace Ingweland.Fog.Application.Client.Web.StatsHub.ViewModels;
 
 public class BattleSelectorViewModel
 {
+    public required IReadOnlyCollection<BattleEventBasicViewModel> BattleEvents { get; init; }
     public required IReadOnlyDictionary<BattleType, string> BattleTypes { get; init; }
 
     public required IReadOnlyCollection<ContinentBasicViewModel> CampaignContinents { get; init; }

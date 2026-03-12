@@ -11,7 +11,10 @@ using Microsoft.Extensions.Localization;
 
 namespace Ingweland.Fog.Application.Client.Web.Factories;
 
-public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IStringLocalizer<FogResource> localizer)
+public class BattleSearchRequestFactory(
+    ICampaignUiService campaignUiService,
+    IStringLocalizer<FogResource> localizer,
+    IResourceLocalizationService resourceLocalizationService)
     : IBattleSearchRequestFactory
 {
     private const string BattleTypeKey = "battleType";
@@ -25,9 +28,16 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
     private const string HistoricBattleEncounterKey = "historicBattleEncounter";
     private const string TeslaStormRegionKey = "teslaStormRegion";
     private const string TeslaStormEncounterKey = "teslaStormEncounter";
+    private const string BattleEventRegionKey = "battleEventRegion";
+    private const string BattleEventEncounterKey = "battleEventEncounter";
     private const string UnitIdKey = "unitId";
 
     private static readonly BattleSearchRequest DefaultInfo = new();
+
+    private readonly Dictionary<RegionId, string> _battleEventAbbreviations = new()
+    {
+        {RegionId.AncientEgyptDungeon, "Anubis"},
+    };
 
     private readonly Dictionary<RegionId, string> _historicBattlesAbbreviations = new()
     {
@@ -83,6 +93,8 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         return new Dictionary<string, object?>
         {
             [BattleTypeKey] = request.BattleType.ToString(),
+            [BattleEventRegionKey] = request.BattleEventRegion.ToString(),
+            [BattleEventEncounterKey] = request.BattleEventEncounter.ToString(),
             [CampaignRegionKey] = request.CampaignRegion.ToString(),
             [CampaignRegionEncounterKey] = request.CampaignRegionEncounter,
             [DifficultyKey] = request.Difficulty.ToString(),
@@ -142,10 +154,12 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             queryParams.Add(TeslaStormRegionKey, battleDefinitionIdParts[0]);
             queryParams.Add(TeslaStormEncounterKey, battleDefinitionIdParts[1]);
         }
-        
-        if (battleType == BattleType.AncientEgypt)
+
+        if (battleType == BattleType.BattleEvent)
         {
-            // TODO: implement
+            var battleEventEncounter = int.Parse(battleDefinitionIdParts[3]);
+            queryParams.Add(BattleEventRegionKey, battleDefinitionIdParts[0]);
+            queryParams.Add(BattleEventEncounterKey, battleEventEncounter);
         }
 
         if (unitIds != null)
@@ -182,9 +196,9 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             case BattleType.TeslaStorm:
                 details = $"{_teslaAbbreviations[request.TeslaStormRegion]}–{request.TeslaStormEncounter}";
                 break;
-            case BattleType.AncientEgypt:
-                // TODO: implement
-                details = string.Empty;
+            case BattleType.BattleEvent:
+                details = $"{_battleEventAbbreviations[request.BattleEventRegion]}–{request.BattleEventEncounter
+                }";
                 break;
             default:
                 details = string.Empty;
@@ -192,7 +206,7 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
         }
 
         var sb = new StringBuilder();
-        sb.Append(GetBattleTypeTitle(request.BattleType));
+        sb.Append(resourceLocalizationService.Localize(request.BattleType));
 
         if (request.Difficulty == Difficulty.Hard)
         {
@@ -296,6 +310,20 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             teslaStormEncounter = DefaultInfo.TeslaStormEncounter;
         }
 
+        var battleEventRegionValue = query[BattleEventRegionKey];
+        if (string.IsNullOrWhiteSpace(battleEventRegionValue) ||
+            !Enum.TryParse<RegionId>(battleEventRegionValue, out var battleEventRegionId))
+        {
+            battleEventRegionId = DefaultInfo.BattleEventRegion;
+        }
+
+        var battleEventEncounterValue = query[BattleEventEncounterKey];
+        if (string.IsNullOrWhiteSpace(battleEventEncounterValue) ||
+            !int.TryParse(battleEventEncounterValue, out var battleEventEncounter))
+        {
+            battleEventEncounter = DefaultInfo.BattleEventEncounter;
+        }
+
         return new BattleSearchRequest
         {
             BattleType = battleType,
@@ -310,20 +338,8 @@ public class BattleSearchRequestFactory(ICampaignUiService campaignUiService, IS
             TeslaStormRegion = teslaStormRegionId,
             TeslaStormEncounter = teslaStormEncounter,
             UnitIds = query.GetValues(UnitIdKey) ?? [],
-        };
-    }
-
-    private string GetBattleTypeTitle(BattleType battleType)
-    {
-        return battleType switch
-        {
-            BattleType.Campaign => localizer[FogResource.BattleType_Campaign],
-            BattleType.HistoricBattle => localizer[FogResource.BattleType_HistoricBattle],
-            BattleType.Pvp => localizer[FogResource.BattleType_PvP],
-            BattleType.TeslaStorm => localizer[FogResource.BattleType_TeslaStorm],
-            BattleType.TreasureHunt => localizer[FogResource.BattleType_TreasureHunt],
-            BattleType.AncientEgypt => localizer[FogResource.BattleType_AncientEgypt],
-            _ => string.Empty,
+            BattleEventRegion = battleEventRegionId,
+            BattleEventEncounter = battleEventEncounter,
         };
     }
 }

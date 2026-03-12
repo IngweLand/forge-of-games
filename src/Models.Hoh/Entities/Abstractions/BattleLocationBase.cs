@@ -8,7 +8,8 @@ namespace Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 [ProtoInclude(101, typeof(PvpBattleLocation))]
 [ProtoInclude(102, typeof(TreasureHuntEncounterLocation))]
 [ProtoInclude(103, typeof(HistoricBattleLocation))]
+[ProtoInclude(104, typeof(PvpRevengeBattleLocation))]
+[ProtoInclude(105, typeof(BattleEventBattleLocation))]
 public abstract class BattleLocationBase
 {
-    
 }

@@ -4,6 +4,8 @@ namespace Ingweland.Fog.Dtos.Hoh.Battle;
 
 public record BattleSearchRequest
 {
+    public int BattleEventEncounter { get; init; } = 1;
+    public RegionId BattleEventRegion { get; init; } = RegionId.AncientEgyptDungeon;
     public BattleType BattleType { get; init; } = BattleType.Campaign;
     public RegionId CampaignRegion { get; init; } = RegionId.DesertDelta_1;
     public int CampaignRegionEncounter { get; init; } = 1;

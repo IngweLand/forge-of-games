@@ -18,6 +18,7 @@ public interface IHohGameLocalizationService
     string GetHeroClassName(string name);
     string GetHeroName(string id);
     string GetRegionName(RegionId id);
+    string GetBattleEventName(string eventId);
     string GetResourceName(string resourceId);
     string GetTechnologyName(string technologyId);
     string GetTreasureHuntDifficulty(int difficulty);

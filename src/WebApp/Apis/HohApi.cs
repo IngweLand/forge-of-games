@@ -5,7 +5,6 @@ using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Ingweland.Fog.WebApp.Constants;
 using Ingweland.Fog.WebApp.Extensions;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -126,6 +125,8 @@ public static class HohApi
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_REGION_TEMPLATE, GetCampaignRegionAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.CAMPAIGN_REGION_BASIC_DATA_TEMPLATE,
             GetCampaignRegionBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.BATTLE_EVENTS_BASIC_DATA,
+            GetBattleEventsBasicDataAsync);
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
@@ -161,7 +162,7 @@ public static class HohApi
 
         return api;
     }
-    
+
     private static async Task<Results<Ok<AnnualBudgetDto>, NotFound, BadRequest<string>>>
         GetAnnualBudgetAsync([AsParameters] StatsServices services, HttpContext context,
             [AsParameters] GetAnnualBudgetQuery query, CancellationToken ct = default)
@@ -195,8 +196,8 @@ public static class HohApi
         var result = await services.Mediator.Send(query, ct);
         return TypedResults.Ok(result);
     }
-    
-    private static async Task<Results<Ok<InGameEventDto>,NotFound, BadRequest<string>>>
+
+    private static async Task<Results<Ok<InGameEventDto>, NotFound, BadRequest<string>>>
         GetCurrentInGameEventAsync([AsParameters] StatsServices services, HttpContext context, string worldId,
             EventDefinitionId eventDefinitionId, CancellationToken ct)
     {
@@ -302,7 +303,7 @@ public static class HohApi
         var tiers = await services.CommonService.GetPvpTiersAsync();
         await services.ProtobufResponseFactory.WriteToResponseAsync(context, tiers);
     }
-    
+
     private static async Task GetTreasureHuntLeaguesAsync([AsParameters] HohServices services,
         HttpContext context)
     {
@@ -435,6 +436,12 @@ public static class HohApi
     {
         var region = await services.CampaignService.GetRegionBasicDataAsync(regionId);
         await services.ProtobufResponseFactory.WriteToResponseAsync(context, region);
+    }
+
+    private static async Task GetBattleEventsBasicDataAsync([AsParameters] HohServices services, HttpContext context)
+    {
+        var data = await services.CampaignService.GetBattleEventsBasicDataAsync();
+        await services.ProtobufResponseFactory.WriteToResponseAsync(context, data);
     }
 
     private static async Task GetTreasureHuntStageAsync([AsParameters] HohServices services,

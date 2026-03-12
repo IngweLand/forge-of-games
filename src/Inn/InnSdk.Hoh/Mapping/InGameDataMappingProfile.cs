@@ -198,6 +198,7 @@ public class InGameDataMappingProfile : Profile
         CreateMap<PvpBattleLocationDataDTO, PvpBattleLocation>()
             .ForMember(dest => dest.EnemyAlliance, opt => opt.PreCondition(src => src.EnemyAlliance != null));
         CreateMap<PvpRevengeBattleLocationDataDTO, PvpRevengeBattleLocation>();
+        CreateMap<BattleEventBattleLocationDTO, BattleEventBattleLocation>();
         CreateMap<Any, BattleLocationBase>().ConvertUsing<BattleLocationDtoConverter>();
         CreateMap<BattleSummaryDto, BattleSummary>()
             .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => src.BattleId.ToByteArray()))

@@ -48,6 +48,11 @@ public class InGameEventsFetcher(
                     {
                         defId = EventDefinitionId.MilestoneEvent;
                     }
+                    else if (ige.EventDefinition.Id.StartsWith("event.BattleEvent_",
+                                 StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        defId = EventDefinitionId.BattleEvent;
+                    }
                     else
                     {
                         defId = HohStringParser.ParseEnumFromString<EventDefinitionId>(ige.EventDefinition.Id);

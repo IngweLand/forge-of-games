@@ -1,7 +1,6 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Client.Web.Caching.Interfaces;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Extensions;
+using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -9,7 +8,6 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -21,8 +19,10 @@ public class CampaignUiService(
     IContinentBasicViewModelFactory continentBasicViewModelFactory,
     IAssetUrlProvider assetUrlProvider,
     IMapper mapper,
-    IBattleViewModelFactory battleViewModelFactory) : ICampaignUiService
+    IBattleViewModelFactory battleViewModelFactory,
+    IBattleEventBasicViewModelFactory battleEventBasicViewModelFactory) : ICampaignUiService
 {
+    private IReadOnlyCollection<BattleEventBasicViewModel>? _cachedBattleEvents;
     private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
     private IReadOnlyCollection<RegionBasicViewModel>? _cachedHistoricBattles;
     private IReadOnlyCollection<RegionBasicViewModel>? _cachedTeslaStormRegions;
@@ -50,8 +50,10 @@ public class CampaignUiService(
         var spartasLastStand = await campaignService.GetRegionBasicDataAsync(RegionId.SpartasLastStand);
         var fallOfTroy = await campaignService.GetRegionBasicDataAsync(RegionId.FallOfTroy);
         _cachedHistoricBattles =
-            [mapper.Map<RegionBasicViewModel>(siegeOfOrleans), mapper.Map<RegionBasicViewModel>(spartasLastStand),
-                 mapper.Map<RegionBasicViewModel>(fallOfTroy)];
+        [
+            mapper.Map<RegionBasicViewModel>(siegeOfOrleans), mapper.Map<RegionBasicViewModel>(spartasLastStand),
+            mapper.Map<RegionBasicViewModel>(fallOfTroy),
+        ];
         return _cachedHistoricBattles;
     }
 
@@ -137,7 +139,19 @@ public class CampaignUiService(
         _cachedTeslaStormRegions = list.AsReadOnly();
         return _cachedTeslaStormRegions;
     }
-    
+
+    public async Task<IReadOnlyCollection<BattleEventBasicViewModel>> GetBattleEventsBasicDataAsync()
+    {
+        if (_cachedBattleEvents != null)
+        {
+            return _cachedBattleEvents;
+        }
+
+        var events = await campaignService.GetBattleEventsBasicDataAsync();
+        _cachedBattleEvents = events.Select(battleEventBasicViewModelFactory.Create).ToList();
+        return _cachedBattleEvents;
+    }
+
     public Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero)
     {
         return battleViewModelFactory.CreateHeroProfileAsync(hero, null, false);

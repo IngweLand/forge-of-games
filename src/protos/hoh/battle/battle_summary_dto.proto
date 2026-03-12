@@ -12,7 +12,7 @@ message BattleSummaryDto {
   google.protobuf.BytesValue battle_id = 1;
   BattleResultStatusDto result_status = 2;
   // HeroTreasureHuntEncounterLocationDTO, CampaignMapBattleLocationDTO, PvpBattleLocationDataDTO
-  // HistoricBattleLocationDTO,
+  // HistoricBattleLocationDTO, BattleEventBattleLocationDTO
   google.protobuf.Any packed_encounter_location = 3;
   string battle_definition_id = 4;
   int32 next_wave_index = 5;
@@ -55,6 +55,11 @@ message HistoricBattleLocationDTO {
 message PvpRevengeBattleLocationDataDTO {
   int32 pvp_event_id = 1;
   string battle_definition_id = 2;
+}
+
+message BattleEventBattleLocationDTO {
+  int32 event_id = 1;
+  string battle_event_battle_component = 2;
 }
 
 enum BattleResultStatus {

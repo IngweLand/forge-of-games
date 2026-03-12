@@ -10,5 +10,5 @@ public interface IBattleLogFactories
         IReadOnlyCollection<TreasureHuntDifficultyBasicViewModel> treasureHuntDifficulties,
         IReadOnlyCollection<RegionBasicViewModel> historicBattles,
         IReadOnlyCollection<RegionBasicViewModel> teslaStormRegions,
-        IReadOnlyCollection<HeroBasicViewModel> heroes);
+        IReadOnlyCollection<HeroBasicViewModel> heroes, IReadOnlyCollection<BattleEventBasicViewModel> battleEvents);
 }

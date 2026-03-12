@@ -85,4 +85,28 @@ public class CampaignService(
             Name = gameLocalizationService.GetRegionName(regionId),
         });
     }
+
+    public async Task<IReadOnlyCollection<BattleEventBasicDto>> GetBattleEventsBasicDataAsync()
+    {
+        var region = (await hohCoreDataRepository.GetWorldAsync(WorldId.AncientEgyptDungeon))?.Continents
+            .SelectMany(c => c.Regions)
+            .FirstOrDefault(r => r.Id == RegionId.AncientEgyptDungeon);
+        if (region == null)
+        {
+            logger.LogWarning($"Failed to get region by RegionId: {RegionId.AncientEgyptDungeon}");
+            return [];
+        }
+
+        var result = new List<BattleEventBasicDto>
+        {
+            new()
+            {
+                Id = RegionId.AncientEgyptDungeon,
+                EncounterCount = region.Encounters.Count,
+                EncounterStartIndex = region.Encounters.MinBy(x => x.Index)!.Index,
+                Name = gameLocalizationService.GetBattleEventName("BattleEvent_AncientEgyptEvent_AnubisDungeon"),
+            },
+        };
+        return result;
+    }
 }

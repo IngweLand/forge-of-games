@@ -11,7 +11,7 @@ public static class BattleTypeExtensions
         {BattleType.TreasureHunt, 3},
         {BattleType.HistoricBattle, 4},
         {BattleType.TeslaStorm, 5},
-        {BattleType.AncientEgypt, 6},
+        {BattleType.BattleEvent, 6},
     };
 
     public static BattleType ToBattleType(this string src)
@@ -44,10 +44,10 @@ public static class BattleTypeExtensions
         {
             return BattleType.Pvp;
         }
-        
-        if (lowerSrc.StartsWith("ancientegypt", StringComparison.InvariantCultureIgnoreCase))
+
+        if (lowerSrc.StartsWith(nameof(RegionId.AncientEgyptDungeon), StringComparison.InvariantCultureIgnoreCase))
         {
-            return BattleType.AncientEgypt;
+            return BattleType.BattleEvent;
         }
 
         return BattleType.Campaign;

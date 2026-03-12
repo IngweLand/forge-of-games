@@ -72,6 +72,8 @@ var searchKeys = new HashSet<string>
     "Base.EquipmentFilterPopover.HideEquipped",
     "Base.HeroPanel.Equipped",
     "Base.EquipmentLevelUpPanel.EquippedHint",
+    "Base.BattleEventPanel.BattleEvent",
+    "Base.IngameEvents.BattleEvent_AncientEgyptEvent_AnubisDungeon_Name",
 };
 
 var result = new Dictionary<string, List<Translations>>();

@@ -131,6 +131,13 @@ public class HohGameLocalizationService(IHohGameLocalizationDataRepository local
         return GetValue(key) ?? id.ToString();
     }
 
+    public string GetBattleEventName(string eventId)
+    {
+        var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.IngameEvents, HohLocalizationProperty.Name,
+            eventId);
+        return GetValue(key) ?? eventId;
+    }
+
     public string GetResourceName(string resourceId)
     {
         var key = HohLocalizationKeyBuilder.BuildKey(HohLocalizationCategory.Resources, HohLocalizationProperty.Name,

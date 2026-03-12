@@ -24,7 +24,8 @@ public class BattleUiService(
 {
     private readonly HashSet<BattleType> _unitBattleTypes =
     [
-        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm, //BattleType.AncientEgypt,
+        BattleType.Pvp, BattleType.Campaign, BattleType.TreasureHunt, BattleType.HistoricBattle, BattleType.TeslaStorm,
+        BattleType.BattleEvent,
     ];
 
     public async Task<BattleStatsViewModel> GetBattleStatsAsync(
@@ -50,11 +51,14 @@ public class BattleUiService(
         var treasureHuntTask = treasureHuntUiService.GetDifficultiesAsync();
         var historicBattlesTask = campaignUiService.GetHistoricBattlesBasicDataAsync();
         var teslaStormTask = campaignUiService.GetTeslaStormRegionsBasicDataAsync();
+        var battleEventsTask = campaignUiService.GetBattleEventsBasicDataAsync();
         var heroesTask = heroProfileUiService.GetHeroes();
-        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask);
+        await Task.WhenAll(campaignTask, treasureHuntTask, historicBattlesTask, heroesTask, teslaStormTask,
+            battleEventsTask);
         return battleLogFactories.CreateBattleSelectorData(campaignTask.Result, treasureHuntTask.Result,
             historicBattlesTask.Result, teslaStormTask.Result,
-            heroesTask.Result.Where(x => !FogConstants.NoHeroIds.Contains(x.Id)).ToList());
+            heroesTask.Result.Where(x => !FogConstants.NoHeroIds.Contains(x.Id)).ToList(),
+            battleEventsTask.Result);
     }
 
     public async Task<IReadOnlyCollection<UnitBattleViewModel>> GetUnitBattlesAsync(string unitId,

@@ -163,6 +163,7 @@ public static class DependencyInjection
         services.AddScoped<ICityGuideMarkdownConverter, CityGuideMarkdownConverter>();
         services.AddScoped<IBuildingRenderer, BuildingRenderer>();
         services.AddScoped<IPlayerAthRankingViewModelFactory, PlayerAthRankingViewModelFactory>();
+        services.AddScoped<IBattleEventBasicViewModelFactory, BattleEventBasicViewModelFactory>();
 
         services.AddScoped<CityPlannerSettings>();
 

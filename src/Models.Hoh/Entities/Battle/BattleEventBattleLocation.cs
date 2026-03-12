@@ -4,11 +4,11 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Hoh.Entities.Battle;
 
 [ProtoContract]
-public class PvpRevengeBattleLocation : BattleLocationBase
+public class BattleEventBattleLocation : BattleLocationBase
 {
     [ProtoMember(1)]
-    public required string BattleDefinitionId { get; set; }
+    public required string BattleEventBattleComponent { get; set; }
 
     [ProtoMember(2)]
-    public int PvpEventId { get; set; }
+    public required int EventId { get; set; }
 }

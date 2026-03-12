@@ -7,4 +7,5 @@ public enum EventDefinitionId
     PvP,
     EventCity,
     MilestoneEvent,
+    BattleEvent,
 }

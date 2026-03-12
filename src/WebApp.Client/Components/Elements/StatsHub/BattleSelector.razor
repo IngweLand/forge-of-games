@@ -141,6 +141,28 @@
                     }
                 </MudSelect>
             }
+            else if (SearchRequest.BattleType == BattleType.BattleEvent)
+            {
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Battle]"
+                           Value="@_selectedBattleEvent"
+                           T="BattleEventBasicViewModel" Strict="true"
+                           ValueChanged="BattleEventOnChange" Variant="Variant.Outlined">
+                    @foreach (var be in ViewModel.BattleEvents)
+                    {
+                        <MudSelectItem Value="@be">@be.Name</MudSelectItem>
+                    }
+                </MudSelect>
+
+                <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Encounter]"
+                           Value="@SearchRequest.BattleEventEncounter"
+                           T="int" Strict="true"
+                           ValueChanged="BattleEventEncounterOnChange" Variant="Variant.Outlined">
+                    @foreach (var encounter in _selectedBattleEvent!.Encounters)
+                    {
+                        <MudSelectItem Value="@encounter">@encounter</MudSelectItem>
+                    }
+                </MudSelect>
+            }
             <MudSelect Margin="Margin.Dense" Dense="true" Label="@Loc[FogResource.BattleSelector_Result]"
                        Value="@SearchRequest.ResultStatus"
                        T="BattleResultStatus" Strict="true" ToStringFunc="@BattleResultStatusToStringFunc"
@@ -182,6 +204,7 @@
     private RegionBasicViewModel? _selectedCampaignRegion;
     private RegionBasicViewModel? _selectedHistoricBattleRegion;
     private RegionBasicViewModel? _selectedTeslaStormRegion;
+    private BattleEventBasicViewModel? _selectedBattleEvent;
 
     [Parameter]
     public required BattleSearchRequest SearchRequest { get; set; }
@@ -207,6 +230,8 @@
                 .ToDictionary(src => src.Id) ?? [];
             _teslaStormRegionViewModels = _viewModel?.TeslaStormRegions
                 .ToDictionary(src => src.Id) ?? [];
+            _battleEventViewModels = _viewModel?.BattleEvents
+                .ToDictionary(src => src.Id) ?? [];
         }
     }
 
@@ -216,6 +241,7 @@
     private Dictionary<RegionId, RegionBasicViewModel> _regionViewModels = [];
     private Dictionary<RegionId, RegionBasicViewModel> _historicBattleRegionViewModels = [];
     private Dictionary<RegionId, RegionBasicViewModel> _teslaStormRegionViewModels = [];
+    private Dictionary<RegionId, BattleEventBasicViewModel> _battleEventViewModels = [];
     private BattleSelectorViewModel? _viewModel;
 
     protected override void OnParametersSet()
@@ -238,6 +264,11 @@
         if (!_teslaStormRegionViewModels.TryGetValue(SearchRequest.TeslaStormRegion, out _selectedTeslaStormRegion))
         {
             _selectedTeslaStormRegion = ViewModel.TeslaStormRegions.First();
+        }
+
+        if (!_battleEventViewModels.TryGetValue(SearchRequest.BattleEventRegion, out _selectedBattleEvent))
+        {
+            _selectedBattleEvent = ViewModel.BattleEvents.First();
         }
     }
 
@@ -286,6 +317,13 @@
             : SearchRequestChanged.InvokeAsync(SearchRequest with {TeslaStormRegion = newValue.Id});
     }
 
+    private Task BattleEventOnChange(BattleEventBasicViewModel newValue)
+    {
+        return SearchRequest.BattleEventRegion == newValue.Id
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {BattleEventRegion = newValue.Id});
+    }
+
     private Task CampaignRegionEncounterOnChange(int newValue)
     {
         return SearchRequest.CampaignRegionEncounter == newValue
@@ -326,6 +364,13 @@
         return SearchRequest.TeslaStormEncounter == newValue
             ? Task.CompletedTask
             : SearchRequestChanged.InvokeAsync(SearchRequest with {TeslaStormEncounter = newValue});
+    }
+
+    private Task BattleEventEncounterOnChange(int newValue)
+    {
+        return SearchRequest.BattleEventEncounter == newValue
+            ? Task.CompletedTask
+            : SearchRequestChanged.InvokeAsync(SearchRequest with {BattleEventEncounter = newValue});
     }
 
     private Task ResultStatusOnChange(BattleResultStatus newValue)

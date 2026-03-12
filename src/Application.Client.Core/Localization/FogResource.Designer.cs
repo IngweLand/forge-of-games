@@ -384,11 +384,11 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ancient Egypt.
+        ///   Looks up a localized string similar to Event Dungeon.
         /// </summary>
-        public static string BattleType_AncientEgypt {
+        public static string BattleType_BattleEvent {
             get {
-                return ResourceManager.GetString("BattleType.AncientEgypt", resourceCulture);
+                return ResourceManager.GetString("BattleType.BattleEvent", resourceCulture);
             }
         }
         

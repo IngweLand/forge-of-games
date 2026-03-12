@@ -18,7 +18,7 @@ public class BattleDefinitionIdFactory : IBattleDefinitionIdFactory
             BattleType.TreasureHunt => CreateTreasureHuntId(request, sb),
             BattleType.HistoricBattle => CreateHistoricBattleId(request, sb),
             BattleType.TeslaStorm => CreateTeslaStormId(request, sb),
-            BattleType.AncientEgypt => CreateAncientEgyptId(request, sb),
+            BattleType.BattleEvent => CreateBattleEventId(request, sb),
             BattleType.Pvp => "pvp",
             _ => sb.ToString(),
         };
@@ -45,12 +45,20 @@ public class BattleDefinitionIdFactory : IBattleDefinitionIdFactory
             .Append(request.TeslaStormEncounter);
 
         return sb.ToString();
-    }  
-    
-    private string CreateAncientEgyptId(BattleSearchRequest request, StringBuilder sb)
-    {
-        sb.Append(RegionId.AncientEgypt);
+    }
 
+    private string CreateBattleEventId(BattleSearchRequest request, StringBuilder sb)
+    {
+        sb.Append(request.BattleEventRegion);
+        if (request.BattleEventRegion == RegionId.AncientEgyptDungeon)
+        {
+            sb.Append("_1");
+        }
+
+        sb.Append('_')
+            .Append("Encounter")
+            .Append('_')
+            .Append(request.BattleEventEncounter);
         return sb.ToString();
     }
 
