@@ -3840,6 +3840,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to If you’d like to support City Strategies specifically, either add a comment when donating via PayPal or pick a Strategy membership tier on Patreon..
+        /// </summary>
+        public static string SupportUs_StrategyInstructions {
+            get {
+                return ResourceManager.GetString("SupportUs.StrategyInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Support Forge of Games.
         /// </summary>
         public static string SupportUs_Title {
