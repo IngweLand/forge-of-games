@@ -1,4 +1,5 @@
 using Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner.Stats;
+using Ingweland.Fog.WebApp.Client.Helpers;
 using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 
@@ -7,6 +8,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder.Vi
 public partial class CityStrategyMobileViewerComponent : CityStrategyViewerComponentBase
 {
     private ViewerState _currentState = ViewerState.Main;
+    private ClickThrottle _clickThrottle = new ();
 
     protected override async Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
@@ -69,14 +71,14 @@ public partial class CityStrategyMobileViewerComponent : CityStrategyViewerCompo
         CityStrategyBuilderService.DeselectAll();
     }
 
-    private async Task PreviousBtnOnClicked()
+    private Task PreviousBtnOnClicked()
     {
-        await CityStrategyBuilderService.SelectPreviousItem();
+        return _clickThrottle.Run(CityStrategyBuilderService.SelectPreviousItem);
     }
 
-    private async Task NextBtnOnClicked()
+    private Task NextBtnOnClicked()
     {
-        await CityStrategyBuilderService.SelectNextItem();
+        return _clickThrottle.Run(CityStrategyBuilderService.SelectNextItem);
     }
 
     private enum ViewerState
