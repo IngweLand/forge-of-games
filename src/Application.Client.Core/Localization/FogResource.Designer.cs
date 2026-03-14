@@ -69,7 +69,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access detailed campaign info for all regions, encounters and treasure hunt..
+        ///   Looks up a localized string similar to Access detailed campaign info for all regions, encounters, and treasure hunt..
         /// </summary>
         public static string About_ListItem1 {
             get {
@@ -2742,11 +2742,11 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cummulative cost.
+        ///   Looks up a localized string similar to Cumulative cost.
         /// </summary>
-        public static string Hoh_Wonder_CummulativeCost {
+        public static string Hoh_Wonder_CumulativeCost {
             get {
-                return ResourceManager.GetString("Hoh.Wonder.CummulativeCost", resourceCulture);
+                return ResourceManager.GetString("Hoh.Wonder.CumulativeCost", resourceCulture);
             }
         }
         
@@ -4020,7 +4020,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cost of the technologies..
+        ///   Looks up a localized string similar to Cost of technologies.
         /// </summary>
         public static string Tools_ResearchCalculator_Result {
             get {
@@ -4029,7 +4029,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick the last technologies you have discovered..
+        ///   Looks up a localized string similar to Pick the last technologies you have discovered.
         /// </summary>
         public static string Tools_ResearchCalculator_SelectOpenTech {
             get {
@@ -4038,7 +4038,7 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick technologies you want to discover..
+        ///   Looks up a localized string similar to Pick technologies you want to discover.
         /// </summary>
         public static string Tools_ResearchCalculator_SelectTargetTech {
             get {
