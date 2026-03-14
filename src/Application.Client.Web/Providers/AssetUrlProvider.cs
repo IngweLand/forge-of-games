@@ -128,6 +128,7 @@ public class AssetUrlProvider(IOptionsSnapshot<AssetsSettings> assetsSettings) :
         {
             "ja-JP" => "NotoSansJP-Regular.ttf",
             "zh-TW" => "NotoSansTC-Regular.ttf",
+            "ko-KR" => "NotoSansKR-Regular.ttf",
             _ => $"{font}.ttf",
         };
         var basePath = assetsSettings.Value.BaseUrl.TrimEnd('/');
