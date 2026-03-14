@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Abstractions;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 
@@ -12,4 +13,5 @@ public interface ICampaignUiService
     Task<IReadOnlyCollection<RegionBasicViewModel>> GetTeslaStormRegionsBasicDataAsync();
     Task<IReadOnlyCollection<BattleEventBasicViewModel>> GetBattleEventsBasicDataAsync();
     Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero);
+    Task<BattleEventRegionViewModel?> GetBattleEventRegionAsync(RegionId regionId);
 }

@@ -1,0 +1,113 @@
+@attribute [Route(FogUrlBuilder.PageRoutes.BATTLE_EVENT_REGION_TEMPLATE)]
+@inject ICampaignUiService CampaignUiService;
+@inject IBattleSearchRequestFactory BattleSearchRequestFactory
+@inject NavigationManager NavigationManager
+@inject IAssetUrlProvider AssetUrlProvider
+@using Ingweland.Fog.Application.Client.Core.Localization
+@using Ingweland.Fog.Application.Client.Web.Constants
+@using Ingweland.Fog.Application.Client.Web.Factories.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@using Ingweland.Fog.Application.Core.Helpers
+@using Ingweland.Fog.Dtos.Hoh.Battle
+@using Ingweland.Fog.Models.Hoh.Enums
+@inherits Ingweland.Fog.WebApp.Client.Components.Pages.Abstractions.FogPageBase
+<PageTitle>@_pageTitle</PageTitle>
+@if (_region != null)
+{
+    <div class="d-flex flex-column align-items-center gap-3 pb-4">
+        <div class="encounter-section-title-container">
+            <div class="options-container">
+                <div class="option-items right">
+                    <div class="units-grouping-control-buttons-container">
+                        <img src="@AssetUrlProvider.GetHohIconUrl("icon_unit_stat_SquadSpacing")">
+                        <MudTooltip Text="@UnitGroupingButtonTooltip" Delay="500">
+                            <MudToggleIconButton Icon="@Icons.Material.Filled.UnfoldMore"
+                                                 ToggledIcon="@Icons.Material.Filled.UnfoldLess"
+                                                 @bind-Toggled="_isExpanded"/>
+                        </MudTooltip>
+                    </div>
+                    <MudTooltip Text="@Loc[FogResource.Tooltip_BattleLog]" Delay="500">
+                        <div class="battles-button" @onclick="NavigateToBattles">
+                            <img src="@AssetUrlProvider.GetHohIconUrl("icon_flat_pvp_results")">
+                        </div>
+                    </MudTooltip>
+                </div>
+            </div>
+        </div>
+
+        @for (var i = 0; i < Encounters.Count; i++)
+        {
+            <BattleEventEncounterComponent IsExpanded="@_isExpanded" Encounter="@Encounters[i]"/>
+            @if ((i + 1) % 3 == 0 && i != Encounters.Count - 1)
+            {
+                <AdSenseComponent AdSlot="9442418621" AdClass="ads-display-responsive-horizontal"/>
+            }
+        }
+
+        <AdSenseComponent AdSlot="9404993245" AdFormat="@AdSenseConstants.FORMAT_MULTIPLEX"
+                          AdClass="ads-multiflex" Style="margin-top: 12px;"/>
+    </div>
+}
+
+@code {
+
+    protected override bool ShouldHidePageLoadingIndicator => false;
+
+    [Parameter]
+    public required string RegionId { get; set; }
+
+    private string _pageTitle = null!;
+    private BattleEventRegionViewModel? _region;
+    private bool _isExpanded;
+
+    private IList<BattleEventEncounterViewModel> Encounters => _region?.Encounters.ToList() ?? [];
+
+    private string UnitGroupingButtonTooltip => _isExpanded
+        ? Loc[FogResource.Tooltip_Battle_Squads_Aggregate]
+        : Loc[FogResource.Tooltip_Battle_Squads_Disaggregate];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        if (!Enum.TryParse<RegionId>(RegionId, true, out var regionId))
+        {
+            NavigationManager.NavigateTo("/");
+            return;
+        }
+
+        if (OperatingSystem.IsBrowser())
+        {
+            await JsInteropService.ShowLoadingIndicatorAsync();
+            StateHasChanged();
+        }
+
+        _region = await LoadWithPersistenceAsync(nameof(_region),
+            async () => await CampaignUiService.GetBattleEventRegionAsync(regionId));
+
+        if (_region != null)
+        {
+            _pageTitle = Loc[FogResource.CampaignRegion_PageTitle, _region.Name];
+        }
+
+        if (OperatingSystem.IsBrowser())
+        {
+            await JsInteropService.HideLoadingIndicatorAsync();
+        }
+    }
+
+    private void NavigateToBattles()
+    {
+        var query = BattleSearchRequestFactory.CreateQueryParams(new BattleSearchRequest
+        {
+            BattleType = BattleType.BattleEvent,
+            BattleEventRegion = Fog.Models.Hoh.Enums.RegionId.AncientEgyptDungeon,
+        });
+
+        NavigationManager.NavigateTo(
+            NavigationManager.GetUriWithQueryParameters(FogUrlBuilder.PageRoutes.BATTLE_LOG_PATH, query), false);
+    }
+
+}

@@ -1,6 +1,5 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.Extensions;
-using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
@@ -22,6 +21,7 @@ public class CampaignUiService(
     IBattleViewModelFactory battleViewModelFactory,
     IBattleEventBasicViewModelFactory battleEventBasicViewModelFactory) : ICampaignUiService
 {
+    private readonly Dictionary<RegionId, Lazy<Task<BattleEventRegionViewModel?>>> _lazyBattleEventRegions = new();
     private IReadOnlyCollection<BattleEventBasicViewModel>? _cachedBattleEvents;
     private IReadOnlyCollection<ContinentBasicViewModel>? _cachedContinents;
     private IReadOnlyCollection<RegionBasicViewModel>? _cachedHistoricBattles;
@@ -55,6 +55,18 @@ public class CampaignUiService(
             mapper.Map<RegionBasicViewModel>(fallOfTroy),
         ];
         return _cachedHistoricBattles;
+    }
+
+    public async Task<BattleEventRegionViewModel?> GetBattleEventRegionAsync(RegionId regionId)
+    {
+        if (!_lazyBattleEventRegions.TryGetValue(regionId, out var lazy))
+        {
+            lazy = new Lazy<Task<BattleEventRegionViewModel?>>(async () => await DoGetBattleEventRegionAsync(regionId),
+                true);
+            _lazyBattleEventRegions.Add(regionId, lazy);
+        }
+
+        return await lazy.Value;
     }
 
     public async Task<RegionViewModel?> GetRegionAsync(string id)
@@ -155,5 +167,39 @@ public class CampaignUiService(
     public Task<HeroProfileViewModel> CreateHeroProfileAsync(IBattleUnitProperties hero)
     {
         return battleViewModelFactory.CreateHeroProfileAsync(hero, null, false);
+    }
+
+    private async Task<BattleEventRegionViewModel?> DoGetBattleEventRegionAsync(RegionId regionId)
+    {
+        var region = await campaignService.GetBattleEventRegionAsync(regionId);
+        if (region == null)
+        {
+            return null;
+        }
+
+        var encounters = region.Encounters
+            .Select((e, index) => new BattleEventEncounterViewModel
+            {
+                Title = (index + 1).ToString(),
+                Waves = e.Waves.Select((bw, bwi) =>
+                    new BattleWaveViewModel
+                    {
+                        Title = $"~{index + 1}.{bwi + 1}",
+                        Squads = bw.Squads.Select(bws =>
+                                battleWaveSquadViewModelFactory.Create(bws, region.Units, region.Heroes))
+                            .ToList(),
+                        AggregatedSquads = bw.Squads.GroupBy(bws => bws.Unit.UnitId)
+                            .SelectMany(g =>
+                                battleWaveSquadViewModelFactory.Create(g.ToList(), region.Units, region.Heroes))
+                            .ToList(),
+                    }).ToList().AsReadOnly(),
+            })
+            .ToList().AsReadOnly();
+        return new BattleEventRegionViewModel
+        {
+            RegionId = region.Id,
+            Name = region.Name,
+            Encounters = encounters,
+        };
     }
 }

@@ -109,6 +109,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.Worlds.FirstOrDefault(w => w.Id == id);
     }
 
+    public async Task<IReadOnlyCollection<BattleEventEncounter>> GetBattleEventRegionAsync(RegionId regionId)
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.BattleEventRegions.GetValueOrDefault(regionId, []);
+    }
+
     public async Task<IReadOnlyCollection<Resource>> GetResources()
     {
         var data = await dataProvider.GetDataAsync();

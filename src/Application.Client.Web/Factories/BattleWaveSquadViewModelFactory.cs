@@ -1,5 +1,4 @@
 using Ingweland.Fog.Application.Client.Core.Localization;
-using Ingweland.Fog.Application.Client.Web.CommandCenter.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Extensions;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
@@ -58,7 +57,7 @@ public class BattleWaveSquadViewModelFactory(
 
         return CreateInternal(squad, size, unit, heroes);
     }
-    
+
     private int GetSquadSize(BattleWaveSquad squad, UnitDto unit)
     {
         var size = 1;
@@ -85,7 +84,7 @@ public class BattleWaveSquadViewModelFactory(
         }
 
         //TODO: get concrete star class
-        if (squad.Hero != null)
+        if (squad.Hero != null && IsValidHero(squad.Hero.UnitId))
         {
             var hero = heroes.First(u => u.Unit.Id == squad.Hero.UnitId);
             // TODO: start using squad.Hero.AbilityLevel once they fix the data
@@ -114,5 +113,18 @@ public class BattleWaveSquadViewModelFactory(
             Power = power,
             ColorAffinity = colorAffinity,
         };
+    }
+
+    private static bool IsValidHero(string queryString)
+    {
+        // Some units are located in a Hero slot. However, they are not regular player's heroes.
+        if (queryString == "unit.Unit_SpartasLastStand_Leonidas_1" ||
+            queryString.Contains("Unit_FallOfTroy_Barricade") || queryString.Contains("Unit_FallOfTroy_Gate") ||
+            queryString.Contains("Unit_Anubis_Boss"))
+        {
+            return false;
+        }
+
+        return true;
     }
 }

@@ -40,6 +40,7 @@ public interface IHohCoreDataRepository
     Task<UnitBattleConstants> GetUnitBattleConstants();
     Task<Wonder?> GetWonderAsync(WonderId id);
     Task<World?> GetWorldAsync(WorldId id);
+    Task<IReadOnlyCollection<BattleEventEncounter>> GetBattleEventRegionAsync(RegionId regionId);
     Task<IReadOnlyCollection<Resource>> GetResources();
     Task<IReadOnlyCollection<Relic>> GetRelicsAsync();
     Task<IReadOnlyCollection<EquipmentSetDefinition>> GetEquipmentSetDefinitionsAsync();

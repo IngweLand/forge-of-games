@@ -203,6 +203,7 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Id, opt => opt.MapFrom(a => HohStringParser.GetConcreteId(a.Name)));
         CreateMap<ContinentDefinitionDTO, Continent>().ConvertUsing<ContinentDefinitionConverter>();
         CreateMap<EncounterDefinitionDTO, Encounter>().ConvertUsing<EncounterDefinitionDtoConverter>();
+        CreateMap<EncounterDefinitionDTO, BattleEventEncounter>().ConvertUsing<BattleEventEncounterConverter>();
         CreateMap<RegionDefinitionDTO, Region>().ConvertUsing<RegionDefinitionConverter>();
         CreateMap<ResourceDefinitionDTO, Resource>()
             .ForMember(dest => dest.CityIds, opt => opt.ConvertUsing(new CityIdListValueConverter(), rd => rd.Cities))

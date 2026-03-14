@@ -74,6 +74,7 @@ var searchKeys = new HashSet<string>
     "Base.EquipmentLevelUpPanel.EquippedHint",
     "Base.BattleEventPanel.BattleEvent",
     "Base.IngameEvents.BattleEvent_AncientEgyptEvent_AnubisDungeon_Name",
+    "Base.EventDungeonInfoPopup.BattleEvent_AncientEgyptEvent_AnubisDungeon.BossHeader",
 };
 
 var result = new Dictionary<string, List<Translations>>();

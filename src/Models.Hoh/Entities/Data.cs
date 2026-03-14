@@ -4,6 +4,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
 namespace Ingweland.Fog.Models.Hoh.Entities;
@@ -73,6 +74,14 @@ public class Data
     
     [ProtoMember(24)]
     public required IReadOnlyCollection<Hero> LegacyHeroes { get; init; }
+    
     [ProtoMember(25)]
     public required IReadOnlyCollection<Unit> LegacyUnits { get; init; }
+    
+    [ProtoMember(26)]
+    public required IReadOnlyDictionary<RegionId, IReadOnlyCollection<BattleEventEncounter>> BattleEventRegions
+    {
+        get;
+        init;
+    }
 }

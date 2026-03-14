@@ -1,3 +1,5 @@
+using Ingweland.Fog.Models.Hoh.Enums;
+
 namespace Ingweland.Fog.Application.Core.Helpers;
 
 public static class FogUrlBuilder
@@ -20,7 +22,9 @@ public static class FogUrlBuilder
         public const string CAMPAIGN_REGION_TEMPLATE = "/campaign/regions/{regionId}";
         public const string CAMPAIGN_REGION_BASIC_DATA_TEMPLATE = "/campaign/regions/{regionId}/basicData";
 
-        public const string BATTLE_EVENTS_BASIC_DATA = "/battleEvents/basicData";
+        private const string BASE_BATTLE_EVENTS = "/battleEvents";
+        public const string BATTLE_EVENTS_BASIC_DATA = BASE_BATTLE_EVENTS + "/basicData";
+        public const string BATTLE_EVENT_REGION_TEMPLATE = BASE_BATTLE_EVENTS + "/regions/{regionId}";
 
         public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
         public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";
@@ -150,6 +154,8 @@ public static class FogUrlBuilder
         public const string HELP_MY_BATTLES_PATH = BASE_HELP_PATH + "/my-battles";
         public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{heroId}";
         public const string CAMPAIGN_REGION_TEMPLATE = BASE_CAMPAIGN_PATH + "/region/{regionId}";
+        public const string BASE_BATTLE_EVENTS_PATH = "/battle-events";
+        public const string BATTLE_EVENT_REGION_TEMPLATE = BASE_BATTLE_EVENTS_PATH + "/regions/{regionId}";
         public const string BUILDING_TEMPLATE = BASE_BUILDINGS_PATH + "/{cityId}/{buildingGroup}";
         public const string RESEARCH_CALCULATOR_PATH = BASE_TOOLS_PATH + "/research-calculator";
         public const string WONDER_COST_CALCULATOR_PATH = BASE_TOOLS_PATH + "/wonder-cost-calculator";
@@ -291,6 +297,11 @@ public static class FogUrlBuilder
             }
 
             return WORLD_EVENT_CITY_TEMPLATE.Replace("{worldId}", worldId);
+        }
+
+        public static string BattleEventRegion(RegionId regionId)
+        {
+            return BATTLE_EVENT_REGION_TEMPLATE.Replace("{regionId}", regionId.ToString());
         }
     }
 }

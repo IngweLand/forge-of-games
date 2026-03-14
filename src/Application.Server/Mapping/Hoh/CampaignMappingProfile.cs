@@ -18,6 +18,8 @@ public class CampaignMappingProfile : Profile
             .ForMember(dest => dest.Name,
                 opt => opt.ConvertUsing<RegionNameLocalizationConverter, RegionId>(src => src.Id));
         CreateMap<Encounter, EncounterDto>();
+        CreateMap<BattleEventEncounter, BattleEventEncounterDto>().ForMember(dest => dest.Waves,
+            opt => opt.MapFrom(src => Enumerable.OrderBy<BattleWave, string>(src.BattleDetails.Waves, w => w.Id)));
         CreateMap<EncounterDetails, EncounterDetailsDto>()
             .ForMember(dest => dest.Waves,
                 opt =>

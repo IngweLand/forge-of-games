@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Providers.Interfaces;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Models;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
@@ -136,6 +137,12 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                 Href = FogUrlBuilder.PageRoutes.BASE_TREASURE_HUNT_PATH,
                 ResourceKey = FogResource.Navigation_TreasureHunt,
                 Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_hud_battle")),
+            },
+            new()
+            {
+                Href = FogUrlBuilder.PageRoutes.BattleEventRegion(RegionId.AncientEgyptDungeon),
+                ResourceKey = FogResource.Navigation_AnubisAwakening,
+                Icon = GetIconString(assetUrlProvider.GetHohIconUrl("icon_flat_ancient_egypt")),
             },
             new()
             {

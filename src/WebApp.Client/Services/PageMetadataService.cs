@@ -1,6 +1,7 @@
 using Ingweland.Fog.Application.Client.Core.Localization;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Core.Helpers;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
@@ -498,6 +499,20 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 Keywords = localizer[FogResource.Help_Meta_Keywords],
                 Title = localizer[FogResource.Navigation_Help],
                 CurrentHomePath = FogUrlBuilder.PageRoutes.BASE_HELP_PATH,
+            };
+        }
+
+        // Anubis' Awakening
+        if (currentPageAbsolutePath.StartsWith(FogUrlBuilder.PageRoutes.BASE_BATTLE_EVENTS_PATH))
+        {
+            return new PageMetadata
+            {
+                PageTitle = localizer[FogResource.AnubisAwakening_PageTitle],
+                Description = localizer[FogResource.AnubisAwakening_Meta_Description],
+                Keywords = localizer[FogResource.AnubisAwakening_Meta_Keywords],
+                Title = localizer[FogResource.Navigation_AnubisAwakening],
+                CurrentHomePath = FogUrlBuilder.PageRoutes.BattleEventRegion(RegionId.AncientEgyptDungeon),
+                HelpPagePath = FogUrlBuilder.PageRoutes.BASE_HELP_PATH,
             };
         }
 

@@ -1,0 +1,34 @@
+@inject IAssetUrlProvider AssetUrlProvider;
+@using Ingweland.Fog.Application.Client.Web.Providers.Interfaces
+@using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.Battle
+@inherits EncounterComponentBase
+<div class="fog-container component-root">
+    <div class="encounter-number-container">
+        <img alt="Encounter"
+             src="@AssetUrlProvider.GetHohIconUrl("common_battle_boss_frame_ancient_egypt")">
+        <span>
+                @Encounter.Title
+            </span>
+    </div>
+    @foreach (var wave in Encounter.Waves)
+    {
+        <div class="row g-2 m-0">
+            @foreach (var squad in IsExpanded ? wave.Squads : wave.AggregatedSquads)
+            {
+                <div class="col-12 col-lg-6 col-xxl-4">
+                    <CampaignSquadComponent Squad="@squad"/>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public BattleEventEncounterViewModel Encounter { get; set; }
+
+    [Parameter]
+    public bool IsExpanded { get; set; }
+
+}

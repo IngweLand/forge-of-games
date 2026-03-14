@@ -8,6 +8,7 @@ using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
+using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.Shared.Helpers.Interfaces;
 using Microsoft.Extensions.Logging;
 
@@ -260,6 +261,9 @@ public class GameDesignDataParser(
         var heroAbilities = CreateHeroAbilities(mapper, gdr);
         var heroAbilityComponents = CreateHeroAbilityComponents(mapper, gdr);
         var treasureHuntBattles = CreateTreasureHuntBattles(mapper, gdr, units);
+        var anubisAwakeningEncounters = CreateAnubisAwakeningBattles(mapper,
+            gdr.RegionDefinitions.First(x => x.Region.EndsWith(nameof(RegionId.AncientEgyptDungeon))).Encounters, gdr,
+            units);
         var wonders = CreateWonders(mapper, gdr);
         var heroAwakeningComponents = CreateHeroAwakeningComponents(mapper, gdr);
         var cities = CreateCities(mapper, gdr);
@@ -324,8 +328,25 @@ public class GameDesignDataParser(
             EquipmentSetDefinitions = equipmentSets.AsReadOnly(),
             LegacyHeroes = legacyHeroes.AsReadOnly(),
             LegacyUnits = legacyUnits.AsReadOnly(),
+            BattleEventRegions = new Dictionary<RegionId, IReadOnlyCollection<BattleEventEncounter>>
+            {
+                [RegionId.AncientEgyptDungeon] = anubisAwakeningEncounters.AsReadOnly(),
+            },
         };
 
         return data;
+    }
+
+    private static IList<BattleEventEncounter> CreateAnubisAwakeningBattles(IMapper mapper, IEnumerable<string> encounterIds,
+        GameDesignResponse gdr, Dictionary<string, Unit> units)
+    {
+        var encounters = gdr.EncounterDefinitions.Where(x => encounterIds.Contains(x.EncounterId)).ToList();
+        return
+            mapper.Map<IList<BattleEventEncounter>>(encounters, opt =>
+            {
+                opt.Items.Add(ContextKeys.BATTLES_DEFINITIONS, gdr.HeroBattleDefinitions);
+                opt.Items.Add(ContextKeys.BATTLE_WAVES_DEFINITIONS, gdr.HeroBattleWaveDefinitions);
+                opt.Items.Add(ContextKeys.UNITS, units);
+            });
     }
 }

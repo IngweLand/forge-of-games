@@ -127,6 +127,7 @@ public static class HohApi
             GetCampaignRegionBasicDataAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.BATTLE_EVENTS_BASIC_DATA,
             GetBattleEventsBasicDataAsync);
+        api.MapProtobufGet(FogUrlBuilder.ApiRoutes.BATTLE_EVENT_REGION_TEMPLATE, GetBattleEventRegionAsync);
 
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_DIFFICULTIES_PATH, GetTreasureHuntDifficultiesAsync);
         api.MapProtobufGet(FogUrlBuilder.ApiRoutes.TREASURE_HUNT_STAGE_TEMPLATE, GetTreasureHuntStageAsync);
@@ -442,6 +443,20 @@ public static class HohApi
     {
         var data = await services.CampaignService.GetBattleEventsBasicDataAsync();
         await services.ProtobufResponseFactory.WriteToResponseAsync(context, data);
+    }
+
+    private static async Task GetBattleEventRegionAsync([AsParameters] HohServices services, HttpContext context,
+        RegionId regionId)
+    {
+        var data = await services.CampaignService.GetBattleEventRegionAsync(regionId);
+        if (data != null)
+        {
+            await services.ProtobufResponseFactory.WriteToResponseAsync(context, data);
+        }
+        else
+        {
+            services.ProtobufResponseFactory.WriteNotFoundToResponse(context);
+        }
     }
 
     private static async Task GetTreasureHuntStageAsync([AsParameters] HohServices services,

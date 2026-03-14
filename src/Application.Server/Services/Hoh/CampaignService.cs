@@ -109,4 +109,53 @@ public class CampaignService(
         };
         return result;
     }
+
+    public async Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId)
+    {
+        var encounters = await hohCoreDataRepository.GetBattleEventRegionAsync(regionId);
+        if (encounters.Count == 0)
+        {
+            logger.LogWarning($"Failed to get battle event region by RegionId: {regionId}");
+            return null;
+        }
+
+        var unitIds = encounters.SelectMany(e =>
+            e.BattleDetails.Waves.SelectMany(bw =>
+                bw.Squads.Select(bws => (
+                    UnitId: bws.Hero != null ? bws.Hero.UnitId : bws.SupportUnit!.UnitId,
+                    IsHero: bws.Hero != null)))).ToHashSet();
+        var units = new List<UnitDto>();
+        var heroes = new List<HeroDto>();
+        foreach (var t in unitIds)
+        {
+            var unit = await hohCoreDataRepository.GetUnitAsync(t.UnitId);
+            if (unit == null)
+            {
+                logger.LogWarning($"Failed to get unit by UnitId: {t.UnitId}");
+                return null;
+            }
+
+            units.Add(unitDtoFactory.Create(unit, await hohCoreDataRepository.GetUnitStatFormulaData(),
+                await hohCoreDataRepository.GetUnitBattleConstants(),
+                await hohCoreDataRepository.GetHeroUnitType(unit.Type)));
+
+            if (t.IsHero)
+            {
+                var hero = await unitService.GetHeroAsync(t.UnitId);
+                if (hero != null)
+                {
+                    heroes.Add(hero);
+                }
+            }
+        }
+
+        return new BattleEventRegionDto
+        {
+            Id = RegionId.AncientEgyptDungeon,
+            Name = gameLocalizationService.GetBattleEventName("BattleEvent_AncientEgyptEvent_AnubisDungeon"),
+            Encounters = mapper.Map<IReadOnlyCollection<BattleEventEncounterDto>>(encounters.OrderBy(e => e.Index)),
+            Units = units,
+            Heroes = heroes,
+        };
+    }
 }

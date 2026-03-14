@@ -18,4 +18,7 @@ public interface ICampaignService
 
     [Get(FogUrlBuilder.ApiRoutes.BATTLE_EVENTS_BASIC_DATA)]
     Task<IReadOnlyCollection<BattleEventBasicDto>> GetBattleEventsBasicDataAsync();
+
+    [Get(FogUrlBuilder.ApiRoutes.BATTLE_EVENT_REGION_TEMPLATE)]
+    Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId);
 }

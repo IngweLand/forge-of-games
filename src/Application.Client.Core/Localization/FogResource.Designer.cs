@@ -231,6 +231,33 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Master the Anubis&apos; Awakening campaign in Heroes of History. Explore enemy squads for each encounter..
+        /// </summary>
+        public static string AnubisAwakening_Meta_Description {
+            get {
+                return ResourceManager.GetString("AnubisAwakening.Meta.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Heroes of History Anubis&apos; Awakening, battles, strategy guide, enemy encounters, game progression.
+        /// </summary>
+        public static string AnubisAwakening_Meta_Keywords {
+            get {
+                return ResourceManager.GetString("AnubisAwakening.Meta.Keywords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anubis&apos; Awakening Campaign | Heroes of History | Forge of Games.
+        /// </summary>
+        public static string AnubisAwakening_PageTitle {
+            get {
+                return ResourceManager.GetString("AnubisAwakening.PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hard.
         /// </summary>
         public static string Battle_Difficulty_Hard {
@@ -2895,6 +2922,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Anubis&apos; Awakening.
+        /// </summary>
+        public static string Navigation_AnubisAwakening {
+            get {
+                return ResourceManager.GetString("Navigation.AnubisAwakening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buildings.
         /// </summary>
         public static string Navigation_Buildings {
@@ -4196,6 +4232,24 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string Unit_RelicInsights_Title {
             get {
                 return ResourceManager.GetString("Unit.RelicInsights.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anubis.
+        /// </summary>
+        public static string Units_Anubis {
+            get {
+                return ResourceManager.GetString("Units.Anubis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mummy.
+        /// </summary>
+        public static string Units_Mummy {
+            get {
+                return ResourceManager.GetString("Units.Mummy", resourceCulture);
             }
         }
         
