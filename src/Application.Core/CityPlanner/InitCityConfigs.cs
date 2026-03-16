@@ -426,7 +426,7 @@ public class InitCityConfigs
                     CityEntityId = "Building_AncientEgyptEvent_Irrigation_PresetOasis_1",
                     Level = 1,
                     X = 43,
-                    Y = -30,
+                    Y = -31,
                     IsRotated = true,
                     IsLocked = true,
                 },
