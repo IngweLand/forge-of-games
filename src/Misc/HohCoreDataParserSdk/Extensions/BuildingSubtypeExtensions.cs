@@ -103,6 +103,7 @@ public static class BuildingSubtypeExtensions
             "workerHome" => BuildingGroup.WorkerHome,
             "presetFountain" => BuildingGroup.PresetFountain,
             "presetOasis" => BuildingGroup.PresetOasis,
+            "tutorialCityHall" => BuildingGroup.TutorialCityHall,
             _ => throw new Exception($"Cannot map building subtype: {value}"),
         };
     }

@@ -101,4 +101,5 @@ public enum BuildingGroup
     WorkerHome,
     PresetFountain,
     PresetOasis,
+    TutorialCityHall,
 }

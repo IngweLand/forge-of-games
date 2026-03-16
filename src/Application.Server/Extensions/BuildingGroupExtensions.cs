@@ -103,6 +103,7 @@ public static class BuildingGroupExtensions
             BuildingGroup.WorkerHome => "workerHome",
             BuildingGroup.PresetFountain => "presetFountain",
             BuildingGroup.PresetOasis => "presetOasis",
+            BuildingGroup.TutorialCityHall => "tutorialCityHall",
             _ => string.Empty,
         };
     }
