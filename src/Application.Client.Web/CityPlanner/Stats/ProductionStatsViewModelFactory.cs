@@ -49,6 +49,8 @@ public class ProductionStatsViewModelFactory(IHohResourceIconUrlProvider resourc
             "resource.wu_zhu", "resource.rice", // china
             "resource.pennies", "resource.honey", "resource.fish", // vikings
             "resource.deben", "resource.papyrus", "resource.gold_ore", // egypt
+            "resource.ancient_egypt_deben", "resource.ancient_egypt_papyrus",
+            "resource.ancient_egypt_gold_ore", // ancient egypt
             "resource.cocoa", "resource.jade", "resource.obsidian", "resource.feathers", // maya
         ];
 
