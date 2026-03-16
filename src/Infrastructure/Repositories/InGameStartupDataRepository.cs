@@ -1,7 +1,4 @@
-using System.Text.Json;
-using AutoMapper;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
-using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Infrastructure.Entities;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
@@ -11,7 +8,6 @@ namespace Ingweland.Fog.Infrastructure.Repositories;
 
 public class InGameStartupDataRepository(
     ITableStorageRepository<InGameStartupDataTableEntity> tableStorageRepository,
-    IMapper mapper,
     ILogger<InGameStartupDataRepository> logger) : IInGameStartupDataRepository
 {
     private static readonly string PartitionKey = "inGameData";
@@ -65,5 +61,15 @@ public class InGameStartupDataRepository(
         }
 
         return rowKey;
+    }
+
+    public async Task DeleteAllAsync(DateTime cutOffDate)
+    {
+        var entities = tableStorageRepository.GetAllAsync(x => x.CollectedAt < cutOffDate, 1000,
+            ["PartitionKey, RowKey"]);
+        await foreach (var entity in entities)
+        {
+            await tableStorageRepository.DeleteAsync(entity.PartitionKey, entity.RowKey);
+        }
     }
 }
