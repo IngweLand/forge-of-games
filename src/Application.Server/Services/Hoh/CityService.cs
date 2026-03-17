@@ -28,7 +28,7 @@ public class CityService(
             BuildingType.CultureSite, BuildingType.Special, BuildingType.Beehive, BuildingType.Irrigation,
             BuildingType.Merchant, BuildingType.ExtractionPoint, BuildingType.FishingPier, BuildingType.GoldMine,
             BuildingType.PapyrusField, BuildingType.RiceFarm, BuildingType.Aviary, BuildingType.Quarry,
-            BuildingType.RitualSite, BuildingType.CamelFarm,
+            BuildingType.RitualSite, BuildingType.CamelFarm, BuildingType.PresetIrrigation,
         };
         var buildings = await hohCoreDataRepository.GetBuildingsAsync(cityId);
         var categories = buildings.Where(b => types.Contains(b.Type)).DistinctBy(b => b.Group).GroupBy(b => b.Type);
