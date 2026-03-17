@@ -86,6 +86,7 @@ internal static class DependencyInjection
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
                 options.Retry.MaxRetryAttempts = 3;
                 options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
+                options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(60);
             });
     }
 
@@ -101,6 +102,7 @@ internal static class DependencyInjection
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
                 options.Retry.MaxRetryAttempts = 3;
                 options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
+                options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(60);
             });
     }
 
