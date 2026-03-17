@@ -63,7 +63,7 @@ internal static class DependencyInjection
                         refreshOptions
                             .Register("Logging:LogLevel:Sentinel", refreshAll: true)
                             .Register($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:Sentinel", refreshAll: true)
-                            .SetRefreshInterval(TimeSpan.FromMinutes(10));
+                            .SetRefreshInterval(TimeSpan.FromMinutes(20));
                     });
             });
 
