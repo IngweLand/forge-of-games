@@ -15,10 +15,11 @@ using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
+using Microsoft.Extensions.Logging;
 
 namespace Ingweland.Fog.Application.Client.Web.Services.Hoh;
 
-public class HeroProfileUiService : IHeroProfileUiService
+public class HeroProfileUiService : UiServiceBase, IHeroProfileUiService
 {
     private readonly IAssetUrlProvider _assetUrlProvider;
     private readonly IBuildingLevelRangesFactory _buildingLevelRangesFactory;
@@ -45,7 +46,8 @@ public class HeroProfileUiService : IHeroProfileUiService
         IHeroProgressionCalculators heroProgressionCalculators,
         IHeroProfileIdentifierFactory heroProfileIdentifierFactory,
         IAssetUrlProvider assetUrlProvider,
-        IMapper mapper)
+        IMapper mapper,
+        ILogger<HeroProfileUiService> logger) : base(logger)
     {
         _persistenceService = persistenceService;
         _heroProfileViewModelFactory = heroProfileViewModelFactory;
@@ -234,7 +236,7 @@ public class HeroProfileUiService : IHeroProfileUiService
 
     private async Task<IReadOnlyDictionary<string, HeroBasicViewModel>> DoGetHeroesAsync()
     {
-        _heroes = await _unitService.GetHeroesBasicDataAsync();
+        _heroes = await ExecuteSafeAsync(() => _unitService.GetHeroesBasicDataAsync(), []);
         CreateHeroAbilityTags(_heroes.ToDictionary(x => x.Id, x => x.AbilityTags));
         return _mapper.Map<IReadOnlyCollection<HeroBasicViewModel>>(_heroes).ToDictionary(x => x.Id);
     }

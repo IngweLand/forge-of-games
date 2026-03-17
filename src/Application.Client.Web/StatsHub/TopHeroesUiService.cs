@@ -81,15 +81,26 @@ public class TopHeroesUiService(
     public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetTopHeroes(HeroInsightsMode mode, string? ageId,
         HeroLevelRange? levelRange, CancellationToken ct)
     {
-        var topHeroes = await statsHubService.GetTopHeroesAsync(mode, ageId, levelRange?.From, levelRange?.To, ct);
-        var heroes = (await heroProfileUiService.GetHeroes()).ToDictionary(h => h.UnitId);
-        return topHeroes.Select(x => heroes[x]).ToList();
+        return await ExecuteSafeAsync(
+            async () =>
+            {
+                var topHeroes =
+                    await statsHubService.GetTopHeroesAsync(mode, ageId, levelRange?.From, levelRange?.To, ct);
+                var heroes = (await heroProfileUiService.GetHeroes()).ToDictionary(h => h.UnitId);
+                return topHeroes.Select(x => heroes[x]).ToList();
+            },
+            []);
     }
 
     public async Task<IReadOnlyCollection<HeroBasicViewModel>> GetTopHeroes(CancellationToken ct)
     {
-        var topHeroes = await statsHubService.GetTopHeroesAsync(HeroInsightsMode.MostPopular, ct: ct);
-        var heroes = (await heroProfileUiService.GetHeroes()).ToDictionary(h => h.UnitId);
-        return topHeroes.Take(6).Select(x => heroes[x]).ToList();
+        return await ExecuteSafeAsync(
+            async () =>
+            {
+                var topHeroes = await statsHubService.GetTopHeroesAsync(HeroInsightsMode.MostPopular, ct: ct);
+                var heroes = (await heroProfileUiService.GetHeroes()).ToDictionary(h => h.UnitId);
+                return topHeroes.Take(6).Select(x => heroes[x]).ToList();
+            },
+            []);
     }
 }
