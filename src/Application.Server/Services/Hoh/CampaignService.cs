@@ -1,6 +1,7 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
+using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
@@ -15,6 +16,8 @@ public class CampaignService(
     IUnitDtoFactory unitDtoFactory,
     IUnitService unitService,
     IMapper mapper,
+    IHohDataCache dataCache,
+    ICacheKeyFactory cacheKeyFactory,
     IHohGameLocalizationService gameLocalizationService,
     ILogger<CampaignService> logger) : ICampaignService
 {
@@ -110,7 +113,14 @@ public class CampaignService(
         return result;
     }
 
-    public async Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId)
+    public Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId)
+    {
+        var version = hohCoreDataRepository.Version;
+        return dataCache.GetOrAddAsync(cacheKeyFactory.BattleEventRegionDto(regionId, version),
+            () => CreateBattleEventRegionAsync(regionId), version);
+    }
+
+    private async Task<BattleEventRegionDto?> CreateBattleEventRegionAsync(RegionId regionId)
     {
         var encounters = await hohCoreDataRepository.GetBattleEventRegionAsync(regionId);
         if (encounters.Count == 0)

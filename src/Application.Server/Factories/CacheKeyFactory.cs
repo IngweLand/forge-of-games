@@ -6,6 +6,7 @@ using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
@@ -14,6 +15,11 @@ public class CacheKeyFactory : ICacheKeyFactory
     public string HeroDto(string heroId, Guid version)
     {
         return $"hero_dto:{heroId}:{CultureInfo.CurrentCulture.Name}:{version}";
+    }
+
+    public string BattleEventRegionDto(RegionId regionId, Guid version)
+    {
+        return $"battle_event_region_dto:{regionId}:{CultureInfo.CurrentCulture.Name}:{version}";
     }
 
     public string RelicDtos(Guid version)
@@ -91,8 +97,8 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetWonderRankingsQuery q => $"WonderRankings:{q.PlayerId}",
             GetPlayerCityStrategiesQuery q => $"PlayerCityStrategies:{q.PlayerId}",
             GetPlayerCityStrategyQuery q => $"PlayerCityStrategy:{q.StrategyId}",
-            GetCommunityCityStrategiesQuery q => $"CommunityCityStrategies",
-            GetCommunityCityGuidesQuery q => $"CommunityCityGuides",
+            GetCommunityCityStrategiesQuery q => "CommunityCityStrategies",
+            GetCommunityCityGuidesQuery q => "CommunityCityGuides",
             GetCommunityCityGuideQuery q => $"CommunityCityGuide:{q.Id}",
             GetAlliancesWithPaginationQuery q => $"Alliances:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
             GetPlayersWithPaginationQuery q => $"Players:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",

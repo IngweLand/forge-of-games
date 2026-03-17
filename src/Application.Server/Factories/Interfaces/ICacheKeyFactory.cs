@@ -1,10 +1,12 @@
 using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface ICacheKeyFactory
 {
     string HeroDto(string heroId, Guid version);
+    string BattleEventRegionDto(RegionId regionId, Guid version);
     string RelicDtos(Guid version);
     string HeroesBasicData(Guid version);
     string HohAges(Guid version);
