@@ -130,7 +130,16 @@ public partial class CityPlannerBuildingCostCalculator : ComponentBase
             .OrderBy(x => x.Level)
             .ToList();
 
-        _fromLevels = new List<BuildingLevelSpecs>() {BuildingLevelSpecs.ZeroLevel}.Concat(buildings)
+        var firstLevel = buildings.FirstOrDefault()?.Level - 1 ?? 0;
+        _fromLevels = new List<BuildingLevelSpecs>()
+            {
+                firstLevel == 0 ? BuildingLevelSpecs.ZeroLevel : new BuildingLevelSpecs()
+                {
+                    Level = firstLevel,
+                    CanBeConstructed = false,
+                    CanBeUpgradedTo = false,
+                },
+            }.Concat(buildings)
             .ToList();
         if (_fromLevels.Count > 1)
         {
