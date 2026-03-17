@@ -3732,6 +3732,24 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forge of Games and City Strategies.
+        /// </summary>
+        public static string SupportUs_DonationOptions_FoGAndStrategies {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.FoGAndStrategies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forge of Games.
+        /// </summary>
+        public static string SupportUs_DonationOptions_ForgeOfGames {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.ForgeOfGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monthly.
         /// </summary>
         public static string SupportUs_DonationOptions_Monthly {
@@ -3746,6 +3764,33 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string SupportUs_DonationOptions_OneTime {
             get {
                 return ResourceManager.GetString("SupportUs.DonationOptions.OneTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick Strategy tier.
+        /// </summary>
+        public static string SupportUs_DonationOptions_PatreonCityStrategiesInstruction {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.PatreonCityStrategiesInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick Normal tier.
+        /// </summary>
+        public static string SupportUs_DonationOptions_PatreonFoGInstruction {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.PatreonFoGInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you’d like to support City Strategies specifically, add a comment when donating.
+        /// </summary>
+        public static string SupportUs_DonationOptions_PayPalCityStrategiesInstruction {
+            get {
+                return ResourceManager.GetString("SupportUs.DonationOptions.PayPalCityStrategiesInstruction", resourceCulture);
             }
         }
         
