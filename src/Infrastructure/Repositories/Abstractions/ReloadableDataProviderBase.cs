@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Application.Server.Settings;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -6,14 +7,17 @@ namespace Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 
 public abstract class ReloadableDataProviderBase<TData> : IDisposable
 {
+    private readonly IHohDataCacheClearingService _cacheClearingService;
     private readonly IDisposable? _optionsChangeToken;
     private bool _disposed;
 
     private Task<TData> _loadingTask;
 
     protected ReloadableDataProviderBase(IOptionsMonitor<ResourceSettings> optionsMonitor,
+        IHohDataCacheClearingService cacheClearingService,
         ILogger<ReloadableDataProviderBase<TData>> logger)
     {
+        _cacheClearingService = cacheClearingService;
         Logger = logger;
 
         _loadingTask = ReloadDataAsync(optionsMonitor.CurrentValue);
@@ -52,6 +56,7 @@ public abstract class ReloadableDataProviderBase<TData> : IDisposable
         try
         {
             Logger.LogInformation("Reloading Azure Blob Storage data...");
+            _cacheClearingService.Clear();
             var data = await LoadAsync(options);
             Logger.LogInformation("Azure Blob Storage data reloaded successfully.");
             return data;

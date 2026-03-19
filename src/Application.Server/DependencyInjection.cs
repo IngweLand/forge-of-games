@@ -46,6 +46,7 @@ public static class DependencyInjection
         services.AddSingleton<IFailedPlayerCityFetchesCache, FailedPlayerCityFetchesCache>();
         services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
         services.AddSingleton<IHohDataCache, HohDataCache>();
+        services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();

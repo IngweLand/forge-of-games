@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
@@ -12,8 +13,9 @@ public class AzureBlobStorageHohDataProvider(
     IProtobufSerializer protobufSerializer,
     IOptionsMonitor<ResourceSettings> optionsMonitor,
     IHohCoreDataAzureContainerClient containerClient,
+    IHohDataCacheClearingService cacheClearingService,
     ILogger<AzureBlobStorageHohDataProvider> logger)
-    : ReloadableDataProviderBase<Data>(optionsMonitor, logger), IHohDataProvider
+    : ReloadableDataProviderBase<Data>(optionsMonitor, cacheClearingService, logger), IHohDataProvider
 {
     protected override async Task<Data> LoadAsync(ResourceSettings options)
     {

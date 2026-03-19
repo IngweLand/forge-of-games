@@ -1,4 +1,5 @@
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
+using Ingweland.Fog.Application.Server.Services.Interfaces;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;
@@ -13,8 +14,9 @@ public class AzureBlobStorageHohLocalizationDataProvider(
     IProtobufSerializer protobufSerializer,
     IOptionsMonitor<ResourceSettings> optionsMonitor,
     IHohCoreDataAzureContainerClient containerClient,
+    IHohDataCacheClearingService cacheClearingService,
     ILogger<AzureBlobStorageHohLocalizationDataProvider> logger)
-    : ReloadableDataProviderBase<IDictionary<string, LocalizationData>>(optionsMonitor, logger),
+    : ReloadableDataProviderBase<IDictionary<string, LocalizationData>>(optionsMonitor, cacheClearingService, logger),
         IHohLocalizationDataProvider
 {
     protected override async Task<IDictionary<string, LocalizationData>> LoadAsync(ResourceSettings options)

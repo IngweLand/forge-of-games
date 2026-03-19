@@ -22,6 +22,16 @@ public class HohDataCache(IAppCache appCache) : IHohDataCache
         return appCache.GetOrAdd(key, addItemFactory, DateTimeOffset.MaxValue);
     }
 
+    public void Clear()
+    {
+        foreach (var key in _keys)
+        {
+            appCache.Remove(key);
+        }
+
+        _keys.Clear();
+    }
+
     private void ClearCacheIfRequired(Guid version)
     {
         if (version == _dataVersion)
@@ -29,12 +39,8 @@ public class HohDataCache(IAppCache appCache) : IHohDataCache
             return;
         }
 
-        foreach (var key in _keys)
-        {
-            appCache.Remove(key);
-        }
+        Clear();
 
-        _keys.Clear();
         _dataVersion = version;
     }
 }
