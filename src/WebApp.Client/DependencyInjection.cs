@@ -4,15 +4,18 @@ using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Settings;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Shared.Helpers;
 using Ingweland.Fog.WebApp.Client.Net;
+using Ingweland.Fog.WebApp.Client.Repositories;
 using Ingweland.Fog.WebApp.Client.Services;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Polly;
 using Refit;
+using IHohDataService = Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions.IHohDataService;
 
 namespace Ingweland.Fog.WebApp.Client;
 
@@ -22,8 +25,13 @@ internal static class DependencyInjection
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
+        services.AddSingleton<IFileCacheInteropService, FileCacheInteropService>();
+        services.AddSingleton<IHohDataProvider, IndexedDbHohDataProvider>();
+        services.AddSingleton<IHohLocalizationDataProvider, IndexedDbHohLocalizationDataProvider>();
+        services.AddSingleton<IClientLocaleService, ClientLocaleService>();
+        services.AddSingleton<IHohDataInitializationService, HohDataInitializationService>();
+
         services.AddScoped<CityPlannerNavigationState>();
-        services.AddScoped<IClientLocaleService, ClientLocaleService>();
         services.AddScoped<IJSInteropService, JSInteropService>();
         services.AddScoped<IClipboardService, ClipboardService>();
         services.AddScoped<IPersistenceService, PersistenceService>();
@@ -40,7 +48,6 @@ internal static class DependencyInjection
             ContentSerializer = new ProtobufHttpContentSerializer(new ProtobufSerializer()),
         };
         AddRefitProtobufApiClient<IUnitService>(services, baseAddress, refitSettings);
-        AddRefitProtobufApiClient<ICityService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICommonService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<IResearchService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
@@ -67,6 +74,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IFogSharingService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<ICommunityCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<ISharedImageUploaderService>(services, baseAddress, refitJsonSettings, "api");
+        AddRefitJsonApiClient<IHohDataService>(services, baseAddress, refitJsonSettings);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,
@@ -85,8 +93,9 @@ internal static class DependencyInjection
             {
                 options.Retry.BackoffType = DelayBackoffType.Exponential;
                 options.Retry.MaxRetryAttempts = 3;
-                options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(15);
-                options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(60);
+                options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(30);
+                options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(120);
+                options.CircuitBreaker.SamplingDuration = TimeSpan.FromSeconds(60);
             });
     }
 

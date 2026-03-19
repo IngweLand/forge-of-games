@@ -114,6 +114,9 @@ public static class FogUrlBuilder
         public const string GET_COMMUNITY_CITY_GUIDE_TEMPLATE = GET_COMMUNITY_CITY_GUIDES + "/{id:int}";
         public const string GET_COMMUNITY_CITY_GUIDE_TEMPLATE_REFIT = GET_COMMUNITY_CITY_GUIDES + "/{id}";
         public const string UPLOAD_SHARED_IMAGE = "/uploadSharedImage";
+
+        public const string HOH_DATA = "/data";
+        public const string HOH_LOCALIZATION_DATA = "/localizationData";
     }
 
     public static class PageRoutes

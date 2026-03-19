@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.Settings;
 using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
 using Ingweland.Fog.Models.Hoh.Entities;

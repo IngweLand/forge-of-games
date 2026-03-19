@@ -11,31 +11,32 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Folder Include="Helpers\"/>
         <Folder Include="Mapping\"/>
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="13.0.1"/>
-        <PackageReference Include="Azure.Data.Tables" Version="12.10.0" />
-        <PackageReference Include="FluentResults" Version="4.0.0" />
-        <PackageReference Include="Google.Protobuf" Version="3.29.3" />
-        <PackageReference Include="LazyCache.AspNetCore" Version="2.4.0" />
-        <PackageReference Include="MediatR" Version="12.4.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2" />
-        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0" />
-        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+        <PackageReference Include="Azure.Data.Tables" Version="12.10.0"/>
+        <PackageReference Include="FluentResults" Version="4.0.0"/>
+        <PackageReference Include="Google.Protobuf" Version="3.29.3"/>
+        <PackageReference Include="LazyCache.AspNetCore" Version="2.4.0"/>
+        <PackageReference Include="MediatR" Version="12.4.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.2.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2"/>
         <PackageReference Include="protobuf-net" Version="3.2.45"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Application.Core\Application.Core.csproj" />
+        <ProjectReference Include="..\Application.Core\Application.Core.csproj"/>
         <ProjectReference Include="..\Dtos.Hoh\Dtos.Hoh.csproj"/>
-        <ProjectReference Include="..\Inn\InnModels.Hoh\InnModels.Hoh.csproj" />
-        <ProjectReference Include="..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj" />
+        <ProjectReference Include="..\Inn\InnModels.Hoh\InnModels.Hoh.csproj"/>
+        <ProjectReference Include="..\Inn\InnSdk.Hoh\InnSdk.Hoh.csproj"/>
         <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj"/>
         <ProjectReference Include="..\Shared\Shared.csproj"/>
     </ItemGroup>

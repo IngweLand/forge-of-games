@@ -1,7 +1,6 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Research;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;

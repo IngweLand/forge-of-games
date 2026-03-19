@@ -378,3 +378,36 @@ internal class DummyAdSenseService : IAdSenseService
         throw new NotImplementedException();
     }
 }
+
+internal class DummyFileCacheInteropService : IFileCacheInteropService
+{
+    public Task<byte[]?> LoadAsync(string key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveAsync(string key, byte[] data)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAsync(string key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IReadOnlyCollection<string>> ListKeysAsync(string key)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task SaveVersionAsync(string version)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<string?> GetVersionAsync()
+    {
+        throw new NotImplementedException();
+    }
+}

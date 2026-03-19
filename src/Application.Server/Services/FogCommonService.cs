@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Ingweland.Fog.Application.Server.Services;
 
-public class FogCommonService(ISender sender):IFogCommonService
+public class FogCommonService(ISender sender) : IFogCommonService
 {
     public Task<AnnualBudgetDto?> GetAnnualBudgetAsync(int year)
     {

@@ -1,6 +1,6 @@
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Shared.Helpers;
@@ -24,7 +24,7 @@ public class BattleStatsDtoFactory(
                 SupportUnit = squad.SupportUnit != null ? await CreateUnitBattleStatsDto(squad.SupportUnit) : null,
             });
         }
-        
+
         var enemySquads = new List<BattleSquadStatsDto>();
         foreach (var squad in entity.EnemySquads)
         {

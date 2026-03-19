@@ -1,4 +1,4 @@
-using Ingweland.Fog.Infrastructure.Repositories.Abstractions;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.WebApp.Startup.Interfaces;
 
 namespace Ingweland.Fog.WebApp.Startup;

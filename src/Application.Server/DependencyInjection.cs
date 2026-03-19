@@ -49,21 +49,15 @@ public static class DependencyInjection
 
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ICampaignService, CampaignService>();
-        services.AddScoped<IHohGameLocalizationService, HohGameLocalizationService>();
         services.AddScoped<IHeroBasicDtoFactory, HeroBasicDtoFactory>();
         services.AddScoped<IUnitDtoFactory, UnitDtoFactory>();
         services.AddScoped<IHeroDtoFactory, HeroDtoFactory>();
         services.AddScoped<IRegionDtoFactory, RegionDtoFactory>();
-        services.AddScoped<ICityService, CityService>();
-        services.AddScoped<IBuildingTypeDtoFactory, BuildingTypeDtoFactory>();
-        services.AddScoped<IBuildingGroupDtoFactory, BuildingGroupDtoFactory>();
         services.AddScoped<ITreasureHuntService, TreasureHuntService>();
         services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
         services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();
-        services.AddScoped<IWonderDtoFactory, WonderDtoFactory>();
         services.AddScoped<IResearchService, ResearchService>();
         services.AddScoped<ICommonService, CommonService>();
-        services.AddScoped<ICityPlannerDataFactory, CityPlannerDataFactory>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();

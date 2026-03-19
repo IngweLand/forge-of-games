@@ -1,8 +1,8 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Extensions;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Services.Hoh.Abstractions;
 using Ingweland.Fog.Inn.Models.Hoh;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;

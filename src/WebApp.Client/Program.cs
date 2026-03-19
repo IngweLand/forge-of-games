@@ -42,4 +42,5 @@ var localeInfo = await localeService.GetCurrentLocaleAsync();
 var culture = CultureInfo.GetCultureInfo(localeInfo.Code);
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
+await app.Services.GetRequiredService<IHohDataInitializationService>().InitializeAsync();
 await app.RunAsync();

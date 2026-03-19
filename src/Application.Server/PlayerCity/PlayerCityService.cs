@@ -5,9 +5,9 @@ using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
 using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Application.Core.Interfaces;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.Errors;
 using Ingweland.Fog.Application.Server.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Providers;
@@ -213,7 +213,8 @@ public class PlayerCityService : IPlayerCityService
         return await CreateCity(otherCityResult.Value);
     }
 
-    private EventCitySnapshot CreateEventCitySnapshot(int inGameEventId, int playerId, HohCity city, int premiumExpansionCount,
+    private EventCitySnapshot CreateEventCitySnapshot(int inGameEventId, int playerId, HohCity city,
+        int premiumExpansionCount,
         byte[] data)
     {
         return new EventCitySnapshot

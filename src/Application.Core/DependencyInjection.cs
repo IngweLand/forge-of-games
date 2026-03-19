@@ -9,6 +9,11 @@ using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Formatters;
 using Ingweland.Fog.Application.Core.Formatters.Interfaces;
 using Ingweland.Fog.Application.Core.Interfaces;
+using Ingweland.Fog.Application.Core.Repository;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
+using Ingweland.Fog.Application.Core.Services;
+using Ingweland.Fog.Application.Core.Services.Hoh;
+using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Utils;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +31,8 @@ public static class DependencyInjection
         services.AddSingleton<IUnitStatCalculators, UnitStatCalculators>();
         services.AddSingleton<IUnitPowerCalculator, UnitPowerCalculator>();
         services.AddSingleton<IEquipmentStatsCalculators, EquipmentStatsCalculators>();
+        services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
+        services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.AddSingleton<InitCityConfigs>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
@@ -40,5 +47,11 @@ public static class DependencyInjection
         services.AddScoped<IBattleDefinitionIdFactory, BattleDefinitionIdFactory>();
         services.AddScoped<IHohCityFactory, HohCityFactory>();
         services.AddScoped<IProductInfoFactory, ProductInfoFactory>();
+        services.AddScoped<ICityService, CityService>();
+        services.AddScoped<IBuildingTypeDtoFactory, BuildingTypeDtoFactory>();
+        services.AddScoped<IBuildingGroupDtoFactory, BuildingGroupDtoFactory>();
+        services.AddScoped<IWonderDtoFactory, WonderDtoFactory>();
+        services.AddScoped<ICityPlannerDataFactory, CityPlannerDataFactory>();
+        services.AddScoped<IHohGameLocalizationService, HohGameLocalizationService>();
     }
 }

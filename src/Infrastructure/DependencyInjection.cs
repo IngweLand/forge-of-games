@@ -1,3 +1,4 @@
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Interfaces.Hoh;
 using Ingweland.Fog.Application.Server.Settings;
@@ -38,8 +39,6 @@ public static class DependencyInjection
         services.AddAzureQueues();
         services.AddBlobStorage();
 
-        services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
-        services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
         services.TryAddSingleton<IHohDataProvider, AzureBlobStorageHohDataProvider>();
         services.TryAddSingleton<IHohLocalizationDataProvider, AzureBlobStorageHohLocalizationDataProvider>();
         services.AddScoped<IInGameStartupDataRepository, InGameStartupDataRepository>();

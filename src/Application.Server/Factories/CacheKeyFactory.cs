@@ -57,6 +57,13 @@ public class CacheKeyFactory : ICacheKeyFactory
         return $"Alliance:{allianceId}";
     }
 
+    public string HohData => "HohData";
+
+    public string HohLocalizationData(string cultureCode)
+    {
+        return $"HohLocalizationData:{cultureCode}";
+    }
+
     public string CreateKey<TRequest>(TRequest request) where TRequest : ICacheableRequest
     {
         return request switch

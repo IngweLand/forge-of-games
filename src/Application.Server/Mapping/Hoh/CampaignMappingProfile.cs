@@ -1,5 +1,5 @@
 using AutoMapper;
-using Ingweland.Fog.Application.Server.Mapping.Hoh.Converters;
+using Ingweland.Fog.Application.Core.Mapping.Converters;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 using Ingweland.Fog.Models.Hoh.Enums;

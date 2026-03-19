@@ -161,6 +161,9 @@ public static class HohApi
         api.MapGet(FogUrlBuilder.ApiRoutes.CURRENT_IN_GAME_EVENT_TEMPLATE, GetCurrentInGameEventAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ANNUAL_BUDGET_TEMPLATE, GetAnnualBudgetAsync);
 
+        api.MapGet(FogUrlBuilder.ApiRoutes.HOH_DATA, GetHohDataAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.HOH_LOCALIZATION_DATA, GetHohLocalizationDataAsync);
+
         return api;
     }
 
@@ -379,6 +382,23 @@ public static class HohApi
         var cpd = await services.CommandCenterService.GetCommandCenterDataAsync();
 
         await services.ProtobufResponseFactory.WriteToResponseAsync(context, cpd);
+    }
+
+    private static async Task<Ok<VersionedResponse<byte[]?>>> GetHohDataAsync([AsParameters] HohServices services,
+        HttpContext context, [AsParameters] GetHohDataQuery query)
+    {
+        var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<VersionedResponse<byte[]?>>> GetHohLocalizationDataAsync(
+        [AsParameters] HohServices services,
+        HttpContext context, [AsParameters] GetHohLocalizationDataQuery query)
+    {
+        var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
     }
 
     private static async Task GetExpansionsAsync([AsParameters] HohServices services,

@@ -24,10 +24,11 @@ internal static class DependencyInjection
 
         services.AddSingleton<IStartupTask, PreloadDataStartupTask>();
         services.AddSingleton<IProtobufResponseFactory, ProtobufResponseFactory>();
+        services.AddSingleton<IFileCacheInteropService, DummyFileCacheInteropService>();
+        services.AddSingleton<IClientLocaleService, DummyClientLocaleService>();
 
         services.AddHostedService<StartupTaskHostedService>();
 
-        services.AddScoped<IClientLocaleService, DummyClientLocaleService>();
         services.AddScoped<IPersistenceService, DummyPersistenceService>();
         services.AddScoped<IInGameStartupDataService, DummyInGameStartupDataService>();
         services.AddScoped<IJSInteropService, DummyJSInteropService>();

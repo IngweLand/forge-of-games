@@ -1,5 +1,5 @@
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Server.Interfaces.Hoh;
+using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
 using Ingweland.Fog.InnSdk.Hoh.Services.Abstractions;
 using Ingweland.Fog.Models.Fog.Entities;
