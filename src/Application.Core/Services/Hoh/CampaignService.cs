@@ -1,14 +1,13 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class CampaignService(
     IHohCoreDataRepository hohCoreDataRepository,
@@ -16,8 +15,6 @@ public class CampaignService(
     IUnitDtoFactory unitDtoFactory,
     IUnitService unitService,
     IMapper mapper,
-    IHohDataCache dataCache,
-    ICacheKeyFactory cacheKeyFactory,
     IHohGameLocalizationService gameLocalizationService,
     ILogger<CampaignService> logger) : ICampaignService
 {
@@ -113,14 +110,7 @@ public class CampaignService(
         return result;
     }
 
-    public Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId)
-    {
-        var version = hohCoreDataRepository.Version;
-        return dataCache.GetOrAddAsync(cacheKeyFactory.BattleEventRegionDto(regionId, version),
-            () => CreateBattleEventRegionAsync(regionId), version);
-    }
-
-    private async Task<BattleEventRegionDto?> CreateBattleEventRegionAsync(RegionId regionId)
+    public async Task<BattleEventRegionDto?> GetBattleEventRegionAsync(RegionId regionId)
     {
         var encounters = await hohCoreDataRepository.GetBattleEventRegionAsync(regionId);
         if (encounters.Count == 0)

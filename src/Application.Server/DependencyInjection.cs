@@ -49,11 +49,8 @@ public static class DependencyInjection
         services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
 
         services.AddScoped<IUnitService, UnitService>();
-        services.AddScoped<ICampaignService, CampaignService>();
         services.AddScoped<IHeroBasicDtoFactory, HeroBasicDtoFactory>();
-        services.AddScoped<IUnitDtoFactory, UnitDtoFactory>();
         services.AddScoped<IHeroDtoFactory, HeroDtoFactory>();
-        services.AddScoped<IRegionDtoFactory, RegionDtoFactory>();
         services.AddScoped<ITreasureHuntService, TreasureHuntService>();
         services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
         services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();

@@ -53,5 +53,8 @@ public static class DependencyInjection
         services.AddScoped<IWonderDtoFactory, WonderDtoFactory>();
         services.AddScoped<ICityPlannerDataFactory, CityPlannerDataFactory>();
         services.AddScoped<IHohGameLocalizationService, HohGameLocalizationService>();
+        services.AddScoped<IUnitDtoFactory, UnitDtoFactory>();
+        services.AddScoped<IRegionDtoFactory, RegionDtoFactory>();
+        services.AddScoped<ICampaignService, CampaignService>();
     }
 }
