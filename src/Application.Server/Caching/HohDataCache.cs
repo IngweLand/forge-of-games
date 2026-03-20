@@ -1,4 +1,4 @@
-using Ingweland.Fog.Application.Server.Interfaces;
+using Ingweland.Fog.Application.Core.Interfaces;
 using LazyCache;
 
 namespace Ingweland.Fog.Application.Server.Caching;

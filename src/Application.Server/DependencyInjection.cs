@@ -1,13 +1,13 @@
 using System.Net;
 using FluentResults;
 using Ingweland.Fog.Application.Core;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Services;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Behaviors;
 using Ingweland.Fog.Application.Server.Caching;
 using Ingweland.Fog.Application.Server.Factories;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Application.Server.Logging;
 using Ingweland.Fog.Application.Server.PlayerCity;
 using Ingweland.Fog.Application.Server.PlayerCity.Abstractions;
@@ -47,13 +47,8 @@ public static class DependencyInjection
         services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
         services.AddSingleton<IHohDataCache, HohDataCache>();
         services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
-
-        services.AddScoped<IUnitService, UnitService>();
-        services.AddScoped<IHeroBasicDtoFactory, HeroBasicDtoFactory>();
-        services.AddScoped<IHeroDtoFactory, HeroDtoFactory>();
         services.AddScoped<ITreasureHuntService, TreasureHuntService>();
         services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
-        services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();
         services.AddScoped<IResearchService, ResearchService>();
         services.AddScoped<ICommonService, CommonService>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
@@ -95,6 +90,7 @@ public static class DependencyInjection
         services.AddScoped<IPlayerCityStrategyService, PlayerCityStrategyService>();
         services.AddScoped<ICommunityCityStrategyService, CommunityCityStrategyService>();
         services.AddScoped<IPlayerAthRankingDtoFactory, PlayerAthRankingDtoFactory>();
+        services.AddScoped<IHeroAbilityService, HeroAbilityService>();
 
         services.AddTransient<IResultLogger, ResultLogger>();
 

@@ -1,8 +1,9 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Hoh.Enums;
 
@@ -14,7 +15,7 @@ public class CommonService(
     IMapper mapper,
     IHohDataCache dataCache,
     IHohGameLocalizationService localizationService,
-    ICacheKeyFactory cacheKeyFactory) : ICommonService
+    IHohDataCacheKeyFactory cacheKeyFactory) : ICommonService
 {
     public Task<IReadOnlyCollection<AgeDto>> GetAgesAsync()
     {

@@ -1,4 +1,4 @@
-namespace Ingweland.Fog.Application.Server.Interfaces;
+namespace Ingweland.Fog.Application.Core.Interfaces;
 
 public interface IHohDataCache
 {

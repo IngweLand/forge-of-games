@@ -34,6 +34,7 @@ using Ingweland.Fog.Application.Client.Web.StatsHub;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Abstractions;
 using Ingweland.Fog.Application.Client.Web.StatsHub.Factories;
 using Ingweland.Fog.Application.Core;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ingweland.Fog.Application.Client.Web;
@@ -62,6 +63,7 @@ public static class DependencyInjection
         services.AddSingleton<ICcProfileViewModelFactory, CcProfileViewModelFactory>();
         services.AddSingleton<IBarracksViewModelFactory, BarracksViewModelFactory>();
         services.AddSingleton<IMarkdownSecurityService, MarkdownSecurityService>();
+        services.AddSingleton<IHohDataCache, HohDataCache>();
 
         services.AddScoped<IAssetUrlProvider, AssetUrlProvider>();
         services.AddScoped<IHohResourceIconUrlProvider, HohResourceIconUrlProvider>();

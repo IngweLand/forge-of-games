@@ -1,16 +1,13 @@
 using System.Collections.ObjectModel;
-using System.Globalization;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
-using Ingweland.Fog.Shared.Localization;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class UnitService(
     IHohCoreDataRepository hohCoreDataRepository,
@@ -19,14 +16,16 @@ public class UnitService(
     IHeroDtoFactory heroDtoFactory,
     IHeroAbilityDtoFactory heroAbilityDtoFactory,
     IHohDataCache dataCache,
-    ICacheKeyFactory cacheKeyFactory,
-    IFogDbContext context)
+    IHohDataCacheKeyFactory cacheKeyFactory,
+    IHeroAbilityService heroAbilityService)
     : IUnitService
 {
     private static readonly HashSet<string> LegacyUnitIds =
     [
         "unit.Unit_WilliamTell_5",
     ];
+
+    private ReadOnlyDictionary<string, ReadOnlySet<string>>? _heroAbilityTags;
 
     public Task<HeroDto?> GetHeroAsync(string id)
     {
@@ -40,19 +39,20 @@ public class UnitService(
         return dataCache.GetOrAddAsync(cacheKeyFactory.HeroesBasicData(version), CreateHeroesBasicDataAsync, version);
     }
 
-    private async Task<IReadOnlyDictionary<string, ReadOnlySet<string>>> GetHeroAbilityTags()
+    private async Task FetchHeroAbilityTagsAsync()
     {
-        var cultureCode = HohSupportedCultures.AllCultures.FirstOrDefault(x => x == CultureInfo.CurrentCulture.Name) ??
-            HohSupportedCultures.DefaultCulture;
-        var result = await context.HeroAbilityFeatures.Where(x => x.Locale == cultureCode)
-            .Select(x => new {x.HeroId, x.Tags})
-            .ToDictionaryAsync(x => x.HeroId, x => new ReadOnlySet<string>(x.Tags));
-        return result;
+        if (_heroAbilityTags != null)
+        {
+            return;
+        }
+
+        var abilityTags = await heroAbilityService.GetHeroAbilityFeaturesAsync();
+        _heroAbilityTags = abilityTags.ToDictionary(x => x.HeroId, x => new ReadOnlySet<string>(x.Tags)).AsReadOnly();
     }
 
     private async Task<IReadOnlyCollection<HeroBasicDto>> CreateHeroesBasicDataAsync()
     {
-        var abilityTags = await GetHeroAbilityTags();
+        await FetchHeroAbilityTagsAsync();
         var heroes = new List<HeroBasicDto>();
         foreach (var hero in await hohCoreDataRepository.GetHeroesAsync())
         {
@@ -63,7 +63,7 @@ public class UnitService(
                 continue;
             }
 
-            var heroAbilityTags = abilityTags.GetValueOrDefault(hero.Id, ReadOnlySet<string>.Empty);
+            var heroAbilityTags = _heroAbilityTags!.GetValueOrDefault(hero.Id, ReadOnlySet<string>.Empty);
             heroes.Add(heroBasicDtoFactory.Create(hero, unit, heroAbilityTags));
         }
 

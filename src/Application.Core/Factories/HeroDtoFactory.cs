@@ -1,11 +1,10 @@
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities;
 using Ingweland.Fog.Models.Hoh.Entities.Units;
 
-namespace Ingweland.Fog.Application.Server.Factories;
+namespace Ingweland.Fog.Application.Core.Factories;
 
 public class HeroDtoFactory(IUnitDtoFactory unitDtoFactory, IHohGameLocalizationService localizationService)
     : IHeroDtoFactory

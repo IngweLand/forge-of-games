@@ -3,6 +3,7 @@ using Ingweland.Fog.Application.Server.CommandCenter.Commands;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.Equipment;
+using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Ingweland.Fog.WebApp.Constants;
@@ -163,6 +164,7 @@ public static class HohApi
 
         api.MapGet(FogUrlBuilder.ApiRoutes.HOH_DATA, GetHohDataAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.HOH_LOCALIZATION_DATA, GetHohLocalizationDataAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.HERO_ABILITY_FEATURES, GetHeroAbilityFeaturesAsync);
 
         return api;
     }
@@ -397,6 +399,14 @@ public static class HohApi
         HttpContext context, [AsParameters] GetHohLocalizationDataQuery query)
     {
         var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<IReadOnlyCollection<HeroAbilityFeaturesDto>>> GetHeroAbilityFeaturesAsync(
+        [AsParameters] HohServices services, HttpContext context)
+    {
+        var result = await services.Mediator.Send(new GetHeroAbilityFeaturesQuery());
 
         return TypedResults.Ok(result);
     }

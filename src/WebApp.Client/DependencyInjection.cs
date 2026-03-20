@@ -47,7 +47,6 @@ internal static class DependencyInjection
         {
             ContentSerializer = new ProtobufHttpContentSerializer(new ProtobufSerializer()),
         };
-        AddRefitProtobufApiClient<IUnitService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICommonService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<IResearchService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
@@ -74,6 +73,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<ICommunityCityStrategyService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<ISharedImageUploaderService>(services, baseAddress, refitJsonSettings, "api");
         AddRefitJsonApiClient<IHohDataService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IHeroAbilityService>(services, baseAddress, refitJsonSettings);
     }
 
     private static void AddRefitProtobufApiClient<T>(IServiceCollection services, string baseAddress,

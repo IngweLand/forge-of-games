@@ -1,7 +1,8 @@
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
+using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Server.Factories.Interfaces;
-using Ingweland.Fog.Application.Server.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 
 namespace Ingweland.Fog.Application.Server.Services.Hoh;
@@ -10,7 +11,7 @@ public class RelicCoreDataService(
     IHohCoreDataRepository hohCoreDataRepository,
     IRelicDtoFactory relicDtoFactory,
     IHohDataCache dataCache,
-    ICacheKeyFactory cacheKeyFactory) : IRelicCoreDataService
+    IHohDataCacheKeyFactory cacheKeyFactory) : IRelicCoreDataService
 {
     public Task<IReadOnlyCollection<RelicDto>> GetRelicsAsync()
     {

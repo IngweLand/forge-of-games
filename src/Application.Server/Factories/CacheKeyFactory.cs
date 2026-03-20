@@ -6,52 +6,11 @@ using Ingweland.Fog.Application.Server.PlayerCity.Queries;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries;
 using Ingweland.Fog.Application.Server.StatsHub.Queries.Tops;
-using Ingweland.Fog.Models.Hoh.Enums;
 
 namespace Ingweland.Fog.Application.Server.Factories;
 
 public class CacheKeyFactory : ICacheKeyFactory
 {
-    public string HeroDto(string heroId, Guid version)
-    {
-        return $"hero_dto:{heroId}:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string BattleEventRegionDto(RegionId regionId, Guid version)
-    {
-        return $"battle_event_region_dto:{regionId}:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string RelicDtos(Guid version)
-    {
-        return $"relic_dtos:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string HeroesBasicData(Guid version)
-    {
-        return $"heroes-basic-data:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string HohAges(Guid version)
-    {
-        return $"hoh-ages:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string PvpTiers(Guid version)
-    {
-        return $"pvp-tiers:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string TreasureHuntLeagues(Guid version)
-    {
-        return $"ath-leagues:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
-    public string HohResources(Guid version)
-    {
-        return $"hoh-resources:{CultureInfo.CurrentCulture.Name}:{version}";
-    }
-
     public string Alliance(int allianceId)
     {
         return $"Alliance:{allianceId}";
@@ -62,6 +21,11 @@ public class CacheKeyFactory : ICacheKeyFactory
     public string HohLocalizationData(string cultureCode)
     {
         return $"HohLocalizationData:{cultureCode}";
+    }
+
+    public string HeroAbilityFeatures(string cultureCode)
+    {
+        return $"HeroAbilityFeaturesQuery:{cultureCode}";
     }
 
     public string CreateKey<TRequest>(TRequest request) where TRequest : ICacheableRequest
@@ -111,6 +75,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayersWithPaginationQuery q => $"Players:{q.WorldId}:{q.StartIndex}:{q.PageSize}:{q.Name}",
             GetPlayerAthRankingsQuery q => $"PlayerAthRankings:{q.PlayerId}",
             GetSharedResourceQuery q => $"SharedResource:{q.ShareId}",
+            GetHeroAbilityFeaturesQuery q => HeroAbilityFeatures(CultureInfo.CurrentCulture.Name),
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

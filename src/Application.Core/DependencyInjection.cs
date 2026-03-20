@@ -33,6 +33,7 @@ public static class DependencyInjection
         services.AddSingleton<IEquipmentStatsCalculators, EquipmentStatsCalculators>();
         services.AddSingleton<IHohCoreDataRepository, HohCoreDataRepository>();
         services.AddSingleton<IHohGameLocalizationDataRepository, HohGameLocalizationDataRepository>();
+        services.AddSingleton<IHohDataCacheKeyFactory, HohDataCacheKeyFactory>();
         services.AddSingleton<InitCityConfigs>();
 
         services.AddScoped<ICityPlannerDataService, CityPlannerDataService>();
@@ -56,5 +57,9 @@ public static class DependencyInjection
         services.AddScoped<IUnitDtoFactory, UnitDtoFactory>();
         services.AddScoped<IRegionDtoFactory, RegionDtoFactory>();
         services.AddScoped<ICampaignService, CampaignService>();
+        services.AddScoped<IHeroBasicDtoFactory, HeroBasicDtoFactory>();
+        services.AddScoped<IHeroDtoFactory, HeroDtoFactory>();
+        services.AddScoped<IHeroAbilityDtoFactory, HeroAbilityDtoFactory>();
+        services.AddScoped<IUnitService, UnitService>();
     }
 }
