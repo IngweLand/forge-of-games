@@ -74,19 +74,14 @@ public class InGameStartupDataProcessingService(
             {
                 var buildings = await coreDataRepository.GetBuildingsAsync(cityDto.CityId);
                 var wonderIds = cityDto.CityId.GetWonders();
-                var activeWonderDto = startupDto.Wonders?.Wonders.FirstOrDefault(src => src.IsActive);
-                var wonderId = WonderId.Undefined;
-                if (activeWonderDto != null)
-                {
-                    var activeWonderId = HohStringParser.ParseEnumFromString2<WonderId>(activeWonderDto.Id, '_');
-                    if (wonderIds.Contains(activeWonderId))
-                    {
-                        wonderId = activeWonderId;
-                    }
-                }
+                var wonderDto = startupDto.Wonders?.Wonders.FirstOrDefault(src =>
+                    wonderIds.Contains(HohStringParser.ParseEnumFromString2<WonderId>(src.Id, '_')));
+                var wonderId = wonderDto != null
+                    ? HohStringParser.ParseEnumFromString2<WonderId>(wonderDto.Id, '_')
+                    : WonderId.Undefined;
 
                 var city = cityFactory.Create(cityDto, buildings.ToDictionary(b => b.Id), wonderId,
-                    activeWonderDto?.Level ?? 0);
+                    wonderDto?.Level ?? 0);
                 cities.Add(city);
             }
             catch (Exception ex)
@@ -150,7 +145,7 @@ public class InGameStartupDataProcessingService(
 
         return equipmentItems;
     }
-    
+
     private async Task<IList<RelicItem>> ImportRelicsAsync(CommunicationDto startupDto)
     {
         var relics = new List<RelicItem>();
