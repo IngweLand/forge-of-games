@@ -109,7 +109,7 @@
             webAssembly: {
                 loadBootResource: function (type, name, defaultUri, integrity) {
                     console.debug(`Loading: '${type}', '${name}', '${defaultUri}', '${integrity}'`);
-                    const CDN = `@AssetsSettings.Value.BaseUrl/app/staging`;
+                    const CDN = `@AssetsSettings.Value.BaseUrl/@AssetsSettings.Value.AppFilesPath`;
                     switch (type) {
                         case 'assembly':
                         case 'dotnetwasm':

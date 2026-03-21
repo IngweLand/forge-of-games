@@ -3,6 +3,7 @@ namespace Ingweland.Fog.Application.Client.Web.Settings;
 public class AssetsSettings
 {
     public const string CONFIGURATION_PROPERTY_NAME = "AssetsSettings";
+    public required string AppFilesPath { get; set; }
     public required string BaseUrl { get; set; }
     public required string Fonts { get; set; } = "fonts";
     public required string HohIconAtlasHash { get; set; }
