@@ -108,7 +108,7 @@
         Blazor.start({
             webAssembly: {
                 loadBootResource: function (type, name, defaultUri, integrity) {
-                    console.log(`Loading: '${type}', '${name}', '${defaultUri}', '${integrity}'`);
+                    console.debug(`Loading: '${type}', '${name}', '${defaultUri}', '${integrity}'`);
                     const CDN = `@AssetsSettings.Value.BaseUrl/app/staging`;
                     switch (type) {
                         case 'assembly':
