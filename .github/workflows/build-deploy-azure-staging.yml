@@ -23,6 +23,9 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
+          
+      - name: Install WASM workload
+        run: dotnet workload install wasm-tools
 
       - name: Cache NuGet packages
         uses: actions/cache@v4
@@ -65,7 +68,7 @@ jobs:
       - name: Sync _framework to S3
         run: |
           aws s3 rm s3://${{ env.S3_FOLDER_PATH }} --recursive
-          aws s3 cp ${{ env.PUBLISH_OUTPUT_PATH }} \
+          aws s3 cp ${{ env.PUBLISH_OUTPUT_PATH }}/wwwroot \
           s3://${{ env.S3_FOLDER_PATH }} \
           --recursive \
           --cache-control "public, max-age=31536000, immutable"
@@ -73,7 +76,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v3
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS_STAGING }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-azure
