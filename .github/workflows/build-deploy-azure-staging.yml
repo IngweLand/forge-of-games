@@ -34,6 +34,13 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
+            
+      - name: Generate Syncfusion license key file
+        run: |
+          echo 'public static partial class FogSyncfusionLicenseProvider
+          {
+              private static string LicenseKey => "${{ secrets.SYNCFUSION_LICENSE_KEY }}";
+          }' > ./src/WebApp.Client/Providers/FogSyncfusionLicenseProvider.Key.cs
 
       - name: Publish
         run: dotnet publish ${{ env.WEBAPP_PROJECT_PATH }} -c Release -o ${{ env.PUBLISH_OUTPUT_PATH }}

@@ -1,12 +1,12 @@
-using Ingweland.Fog.Application.Client.Web;
-using Ingweland.Fog.WebApp.Client;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using MudBlazor.Services;
 using System.Globalization;
 using Blazored.LocalStorage;
+using Ingweland.Fog.Application.Client.Web;
 using Ingweland.Fog.Shared;
-using Ingweland.Fog.SyncfusionLicensing;
+using Ingweland.Fog.WebApp.Client;
+using Ingweland.Fog.WebApp.Client.Providers;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using MudBlazor.Services;
 using Syncfusion.Blazor;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
