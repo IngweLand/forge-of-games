@@ -47,8 +47,6 @@ public static class DependencyInjection
         services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
         services.AddSingleton<IHohDataCache, HohDataCache>();
         services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
-        services.AddScoped<ITreasureHuntService, TreasureHuntService>();
-        services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
         services.AddScoped<IResearchService, ResearchService>();
         services.AddScoped<ICommonService, CommonService>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();

@@ -3,7 +3,7 @@ using Ingweland.Fog.Application.Core.Mapping.Converters;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Models.Hoh.Entities.Battle;
 
-namespace Ingweland.Fog.Application.Server.Mapping.Hoh;
+namespace Ingweland.Fog.Application.Core.Mapping;
 
 public class TreasureHuntProfile : Profile
 {

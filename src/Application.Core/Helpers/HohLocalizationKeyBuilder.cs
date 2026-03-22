@@ -1,6 +1,6 @@
 using Ingweland.Fog.Application.Core.Enums.Hoh;
 
-namespace Ingweland.Fog.Application.Server.Helpers;
+namespace Ingweland.Fog.Application.Core.Helpers;
 
 public static class HohLocalizationKeyBuilder
 {

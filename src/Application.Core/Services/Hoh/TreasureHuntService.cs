@@ -2,12 +2,11 @@ using AutoMapper;
 using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Battle;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class TreasureHuntService(
     IHohCoreDataRepository hohCoreDataRepository,
