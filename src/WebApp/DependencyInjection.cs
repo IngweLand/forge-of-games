@@ -53,17 +53,18 @@ internal static class DependencyInjection
             var connectionString = builder.Configuration.GetConnectionString("AppConfiguration") ??
                 throw new InvalidOperationException("The Connection string  `AppConfiguration` was not found.");
 
+            var refreshInterval = builder.Environment.IsStaging() ? TimeSpan.FromMinutes(2) : TimeSpan.FromMinutes(10);
             builder.Configuration.AddAzureAppConfiguration(options =>
             {
                 options.Connect(connectionString)
                     .Select($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:*")
+                    .Select($"{MaintenanceModeSettings.CONFIGURATION_PROPERTY_NAME}:*")
                     .Select("Logging:LogLevel:*")
                     .ConfigureRefresh(refreshOptions =>
                     {
                         refreshOptions
-                            .Register("Logging:LogLevel:Sentinel", refreshAll: true)
-                            .Register($"{ResourceSettings.CONFIGURATION_PROPERTY_NAME}:Sentinel", refreshAll: true)
-                            .SetRefreshInterval(TimeSpan.FromMinutes(20));
+                            .Register("RefreshSentinel", true)
+                            .SetRefreshInterval(refreshInterval);
                     });
             });
 
