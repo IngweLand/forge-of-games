@@ -63,5 +63,6 @@ public static class DependencyInjection
         services.AddScoped<IUnitService, UnitService>();
         services.AddScoped<ITreasureHuntStageDtoFactory, TreasureHuntStageDtoFactory>();
         services.AddScoped<ITreasureHuntService, TreasureHuntService>();
+        services.AddScoped<IResearchService, ResearchService>();
     }
 }

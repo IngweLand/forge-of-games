@@ -3,7 +3,7 @@ using Ingweland.Fog.Application.Core.Mapping.Converters;
 using Ingweland.Fog.Dtos.Hoh.Research;
 using Ingweland.Fog.Models.Hoh.Entities.Research;
 
-namespace Ingweland.Fog.Application.Server.Mapping.Hoh;
+namespace Ingweland.Fog.Application.Core.Mapping;
 
 public class ResearchMappingProfile : Profile
 {

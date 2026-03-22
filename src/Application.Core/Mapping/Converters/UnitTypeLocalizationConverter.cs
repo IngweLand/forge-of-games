@@ -2,7 +2,7 @@ using AutoMapper;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Application.Server.Mapping.Hoh.Converters;
+namespace Ingweland.Fog.Application.Core.Mapping.Converters;
 
 public class UnitTypeLocalizationConverter : IValueConverter<UnitType, string>
 {

@@ -1,12 +1,11 @@
 using AutoMapper;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
-using Ingweland.Fog.Application.Core.Services.Hoh;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.Research;
 using Ingweland.Fog.Models.Hoh.Enums;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class ResearchService(
     IHohCoreDataRepository hohCoreDataRepository,
