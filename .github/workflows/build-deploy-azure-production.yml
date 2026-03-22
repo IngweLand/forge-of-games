@@ -1,0 +1,11 @@
+name: '[Production] Build and deploy to Azure + S3'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/build-deploy-azure-base.yml
+    with:
+      ENVIRONMENT_NAME: Production
+    secrets: inherit
