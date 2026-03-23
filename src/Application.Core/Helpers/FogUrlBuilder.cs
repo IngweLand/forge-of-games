@@ -18,19 +18,6 @@ public static class FogUrlBuilder
         private const string BASE_STATS_PATH = "stats";
         private const string BASE_BATTLES_PATH = "battles";
 
-        public const string CAMPAIGN_CONTINENTS_BASIC_DATA_PATH = "/campaign/continents/basicData";
-        public const string CAMPAIGN_REGION_TEMPLATE = "/campaign/regions/{regionId}";
-        public const string CAMPAIGN_REGION_BASIC_DATA_TEMPLATE = "/campaign/regions/{regionId}/basicData";
-
-        private const string BASE_BATTLE_EVENTS = "/battleEvents";
-        public const string BATTLE_EVENTS_BASIC_DATA = BASE_BATTLE_EVENTS + "/basicData";
-        public const string BATTLE_EVENT_REGION_TEMPLATE = BASE_BATTLE_EVENTS + "/regions/{regionId}";
-
-        public const string TREASURE_HUNT_STAGE_TEMPLATE_REFIT = "/ath/difficulties/{difficulty}/stages/{stageIndex}";
-        public const string TREASURE_HUNT_DIFFICULTIES_PATH = "/ath/difficulties";
-        public const string TREASURE_HUNT_STAGE_TEMPLATE = "/ath/difficulties/{difficulty:int}/stages/{stageIndex:int}";
-        public const string TREASURE_HUNT_ENCOUNTERS_BASIC_DATA_PATH = "/ath/encounter/basicData";
-
         public const string WIKI_EXTRACT = "/wiki/extract";
 
         public const string PLAYERS_TEMPLATE = "/" + BASE_STATS_PATH + "/worlds/{worldId}/players";
@@ -92,11 +79,8 @@ public static class FogUrlBuilder
 
         public const string BASE_HEROES_PATH = "/" + BASE_STATS_PATH + "/heroes";
         public const string TOP_HEROES_PATH = BASE_HEROES_PATH + "/top";
-        public const string HERO_TEMPLATE = BASE_HEROES_PATH + "/{id}";
-        public const string HEROES_BASICS = BASE_HEROES_PATH + "/basic";
         public const string HERO_ABILITY_FEATURES = BASE_HEROES_PATH + "/abilityFeatures";
 
-        public const string RELICS_DATA = "/relics/data";
         public const string RELICS_INSIGHTS_TEMPLATE = "/relics/insights/{unitId}";
 
         public const string USER_BATTLE_SEARCH = "/userBattleSearch";
