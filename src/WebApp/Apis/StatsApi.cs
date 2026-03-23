@@ -29,8 +29,6 @@ public static class StatsApi
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_BATTLES_TEMPLATE, GetPlayerBattlesAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.TOP_PLAYERS_TEMPLATE, GetTopPlayersAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_WONDER_RANKINGS_TEMPLATE, GetWonderRankingsAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_STRATEGIES, GetPlayerCityStrategiesAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_CITY_STRATEGY, GetPlayerCityStrategyAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.PLAYER_ATH_RANKINGS_TEMPLATE, GetPlayerAthRankingsAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.ALLIANCES_TEMPLATE, GetAlliancesAsync);
@@ -273,30 +271,6 @@ public static class StatsApi
         var result = await services.StatsHubService.GetWonderRankingsAsync(playerId, ct);
 
         return TypedResults.Ok(result);
-    }
-
-    private static async Task<Ok<IReadOnlyCollection<PlayerCityStrategyInfoDto>>>
-        GetPlayerCityStrategiesAsync([AsParameters] StatsServices services, HttpContext context, int playerId,
-            CancellationToken ct = default)
-    {
-        var result = await services.StatsHubService.GetPlayerCityStrategiesAsync(playerId, ct);
-
-        return TypedResults.Ok(result);
-    }
-
-    private static async Task GetPlayerCityStrategyAsync([AsParameters] StatsServices services, HttpContext context,
-        [AsParameters] GetPlayerCityStrategyQuery query, CancellationToken ct = default)
-    {
-        var result = await services.Mediator.Send(query, ct);
-        if (result.IsSuccess)
-        {
-            await services.ProtobufResponseFactory.WriteToResponseAsync(context, result.Value);
-        }
-        else
-        {
-            result.LogIfFailed();
-            services.ProtobufResponseFactory.WriteNotFoundToResponse(context);
-        }
     }
 
     private static async Task<Ok<IReadOnlyCollection<StatsTimedIntValue>>>

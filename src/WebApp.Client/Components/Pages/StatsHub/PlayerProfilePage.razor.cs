@@ -36,11 +36,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
     private bool _cityPropertiesAreLoading;
     private CancellationTokenSource? _cityPropertiesCts;
     private DateTime? _citySnapshotDate = DateTime.Today;
-    private IReadOnlyCollection<PlayerCityStrategyInfoViewModel>? _cityStrategies;
-    private bool _cityStrategiesAreLoading;
-    private CancellationTokenSource? _cityStrategiesCts;
-    private CancellationTokenSource? _cityStrategyCts;
-    private bool _cityStrategyIsLoading;
     private Dictionary<string, object> _defaultAnalyticsParameters = [];
     private bool _fetchingCity;
     private bool _isDisposed;
@@ -169,16 +164,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         if (_wonderRankingsCts != null)
         {
             await _wonderRankingsCts.CancelAsync();
-        }
-
-        if (_cityStrategiesCts != null)
-        {
-            await _cityStrategiesCts.CancelAsync();
-        }
-
-        if (_cityStrategyCts != null)
-        {
-            await _cityStrategyCts.CancelAsync();
         }
     }
 
@@ -526,38 +511,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
         }
     }
 
-    private async Task ToggleCityStrategiesContainer(bool expanded)
-    {
-        AnalyticsService.TrackChartView(AnalyticsEvents.TOGGLE_VIEW, _defaultAnalyticsParameters,
-            AnalyticsParams.Values.Sources.CITY_STRATEGIES, expanded);
-
-        if (expanded)
-        {
-            await GetCityStrategies();
-        }
-    }
-
-    private async Task GetCityStrategies()
-    {
-        if (_cityStrategies != null)
-        {
-            return;
-        }
-
-        if (_cityStrategiesCts != null)
-        {
-            await _cityStrategiesCts.CancelAsync();
-        }
-
-        _cityStrategiesAreLoading = true;
-        StateHasChanged();
-
-        _cityStrategiesCts = new CancellationTokenSource();
-
-        _cityStrategies = await StatsHubUiService.GetPlayerCityStrategiesAsync(PlayerId, _cityStrategiesCts.Token);
-        _cityStrategiesAreLoading = false;
-    }
-
     private async Task GetWonderRankings()
     {
         if (_wonderRankings != null)
@@ -592,50 +545,6 @@ public partial class PlayerProfilePage : StatsHubPageBase, IAsyncDisposable
             _wonderRankingsAreLoading = false;
             Console.Error.WriteLine(e);
         }
-    }
-
-    private async Task GetStrategy(PlayerCityStrategyInfoViewModel strategyInfo)
-    {
-        if (_cityStrategyCts != null)
-        {
-            await _cityStrategyCts.CancelAsync();
-        }
-
-        _cityStrategyIsLoading = true;
-        StateHasChanged();
-
-        _cityStrategyCts = new CancellationTokenSource();
-
-        var parameters = new Dictionary<string, object>
-        {
-            {AnalyticsParams.CITY_ID, strategyInfo.CityId.ToString()},
-            {AnalyticsParams.PLAYER_CITY_STRATEGY_ID, strategyInfo.Id},
-            {AnalyticsParams.IS_REMOTE, true},
-        };
-
-        if (strategyInfo.Wonder != null)
-        {
-            parameters.Add(AnalyticsParams.WONDER_ID, strategyInfo.Wonder.ToString()!);
-        }
-
-        AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_INIT, _defaultAnalyticsParameters, parameters);
-
-        var strategy = await CityStrategyUiService.FetchPlayerStrategy(strategyInfo.Id);
-        if (strategy == null)
-        {
-            AnalyticsService.TrackEvent(AnalyticsEvents.VIEW_CITY_STRATEGY_ERROR, _defaultAnalyticsParameters,
-                parameters);
-            _cityStrategyIsLoading = false;
-            return;
-        }
-
-        CityStrategyNavigationState.Data = new CityStrategyNavigationState.CityStrategyNavigationStateData
-        {
-            Strategy = strategy,
-            IsRemote = true,
-        };
-
-        NavigationManager.NavigateTo(FogUrlBuilder.PageRoutes.CITY_STRATEGY_VIEWER_PATH);
     }
 
     private async Task ToggleAthRankingsContainer(bool expanded)

@@ -53,7 +53,4 @@ public interface IStatsHubUiService
 
     Task<PlayerCityPropertiesViewModel?> GetPlayerCityPropertiesAsync(int playerId,
         CancellationToken ct = default);
-
-    Task<IReadOnlyCollection<PlayerCityStrategyInfoViewModel>> GetPlayerCityStrategiesAsync(int playerId,
-        CancellationToken ct = default);
 }

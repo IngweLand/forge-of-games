@@ -14,7 +14,6 @@ namespace Ingweland.Fog.Application.Client.Web.CityStrategyBuilder;
 
 public class CityStrategyUiService(
     ICityStrategyFactory cityStrategyFactory,
-    IPlayerCityStrategyService playerCityStrategyService,
     ICommonUiService commonUiService,
     ICommunityCityStrategyService communityCityStrategyService,
     ICommunityCityStrategyViewModelFactory cityStrategyViewModelFactory,
@@ -25,11 +24,6 @@ public class CityStrategyUiService(
     public CityStrategy CreateCityStrategy(NewCityRequest newCityRequest)
     {
         return cityStrategyFactory.Create(newCityRequest, FogConstants.CITY_PLANNER_VERSION);
-    }
-
-    public Task<CityStrategy?> FetchPlayerStrategy(int strategyId, CancellationToken ct = default)
-    {
-        return ExecuteSafeAsync(() => playerCityStrategyService.GetPlayerCityStrategyAsync(strategyId, ct)!, null);
     }
 
     public async Task<CityStrategy?> GetCommunityStrategyAsync(string strategyId)

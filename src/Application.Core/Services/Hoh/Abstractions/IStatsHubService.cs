@@ -86,8 +86,4 @@ public interface IStatsHubService
 
     [Get(FogUrlBuilder.ApiRoutes.PLAYER_PRODUCTION_CAPACITY_TEMPLATE_REFIT)]
     Task<PlayerCityPropertiesDto?> GetPlayerProductionCapacityAsync(int playerId, CancellationToken ct = default);
-
-    [Get(FogUrlBuilder.ApiRoutes.PLAYER_CITY_STRATEGIES_REFIT)]
-    Task<IReadOnlyCollection<PlayerCityStrategyInfoDto>> GetPlayerCityStrategiesAsync(int playerId,
-        CancellationToken ct = default);
 }

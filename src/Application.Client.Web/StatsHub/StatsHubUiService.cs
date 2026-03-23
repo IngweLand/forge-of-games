@@ -176,19 +176,6 @@ public class StatsHubUiService : UiServiceBase, IStatsHubUiService
         return rankings.OrderBy(x => x.StartedAt).Select(x => _wonderRankingViewModelFactory.Create(x)).ToList();
     }
 
-    public Task<IReadOnlyCollection<PlayerCityStrategyInfoViewModel>> GetPlayerCityStrategiesAsync(int playerId,
-        CancellationToken ct = default)
-    {
-        return ExecuteSafeAsync<IReadOnlyCollection<PlayerCityStrategyInfoViewModel>>(
-            async () =>
-            {
-                var result = await _statsHubService.GetPlayerCityStrategiesAsync(playerId, ct);
-                return result.OrderBy(x => x.StartedAt).Select(x => _playerCityStrategyInfoViewModelFactory.Create(x))
-                    .ToList();
-            },
-            []);
-    }
-
     public async Task<IReadOnlyCollection<PvpRankingViewModel>> GetPlayerPvpRankingsAsync(int playerId)
     {
         var rankings = await _statsHubService.GetPlayerPvpRankingsAsync(playerId);
