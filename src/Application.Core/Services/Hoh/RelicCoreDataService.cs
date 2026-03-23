@@ -2,10 +2,9 @@ using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class RelicCoreDataService(
     IHohCoreDataRepository hohCoreDataRepository,

@@ -68,8 +68,6 @@ public static class DependencyInjection
         services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
         services.AddScoped<IInGamePlayerService, InGamePlayerService>();
         services.AddScoped<IFogPlayerService, FogPlayerService>();
-        services.AddScoped<IRelicDtoFactory, RelicDtoFactory>();
-        services.AddScoped<IRelicCoreDataService, RelicCoreDataService>();
         services.AddScoped<IInGameAllianceService, InGameAllianceService>();
         services.AddScoped<IFogAllianceService, FogAllianceService>();
         services.AddScoped<IAllianceUpdateOrchestrator, AllianceUpdateOrchestrator>();

@@ -1,12 +1,12 @@
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Entities.Relics;
 using Ingweland.Fog.Shared.Helpers;
 using Microsoft.Extensions.Logging;
 
-namespace Ingweland.Fog.Application.Server.Factories;
+namespace Ingweland.Fog.Application.Core.Factories;
 
 public class RelicDtoFactory(
     IHohCoreDataRepository hohCoreDataRepository,
