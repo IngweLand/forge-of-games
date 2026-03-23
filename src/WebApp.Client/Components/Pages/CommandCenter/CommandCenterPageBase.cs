@@ -74,6 +74,10 @@ public abstract class CommandCenterPageBase : FogPageBase
             return;
         }
 
+        await JsInteropService.ShowLoadingIndicatorAsync();
+        StateHasChanged();
+        await Task.Yield();
+
         await LocalStorageBackupService.BackupCommandCenterProfiles(FogConstants.COMMAND_CENTER_VERSION);
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed

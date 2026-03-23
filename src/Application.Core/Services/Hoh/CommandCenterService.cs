@@ -1,29 +1,19 @@
-using System.Globalization;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Dtos.Hoh.CommandCenter;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Hoh.Enums;
-using Microsoft.Extensions.Caching.Memory;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class CommandCenterService(
     IUnitService unitService,
     IHohCoreDataRepository hohCoreDataRepository,
-    ICityService cityService,
-    IMemoryCache cache) : ICommandCenterService
+    ICityService cityService) : ICommandCenterService
 {
-    private const string CACHE_KEY_PREFIX = nameof(CommandCenterService);
-
     public async Task<CommandCenterDataDto> GetCommandCenterDataAsync()
     {
-        if (cache.TryGetValue(GetKey(), out CommandCenterDataDto? cachedResult) && cachedResult != null)
-        {
-            return cachedResult;
-        }
-
         var heroes = new List<HeroDto>();
         foreach (var hero in await hohCoreDataRepository.GetHeroesAsync())
         {
@@ -47,12 +37,6 @@ public class CommandCenterService(
             Barracks = barracks,
         };
 
-        cache.Set(GetKey(), result, TimeSpan.FromHours(1));
         return result;
-    }
-
-    private string GetKey()
-    {
-        return $"{CACHE_KEY_PREFIX}_{CultureInfo.CurrentCulture.Name}";
     }
 }

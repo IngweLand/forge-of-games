@@ -47,7 +47,6 @@ internal static class DependencyInjection
         {
             ContentSerializer = new ProtobufHttpContentSerializer(new ProtobufSerializer()),
         };
-        AddRefitProtobufApiClient<ICommandCenterService>(services, baseAddress, refitSettings);
         AddRefitProtobufApiClient<IPlayerCityStrategyService>(services, baseAddress, refitSettings);
 
         var refitJsonSettings = new RefitSettings

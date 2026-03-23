@@ -48,7 +48,6 @@ public static class DependencyInjection
         services.AddSingleton<IHohDataCache, HohDataCache>();
         services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
-        services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
         services.AddScoped<ICommandCenterProfileFactory, CommandCenterProfileFactory>();
         services.AddScoped<IPlayerProfileDtoFactory, PlayerProfileDtoFactory>();
