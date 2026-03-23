@@ -154,7 +154,7 @@ public static class StatsApi
         GetEquipmentInsightsAsync([AsParameters] StatsServices services, HttpContext context, string unitId,
             CancellationToken ct)
     {
-        var result = await services.EquipmentService.GetInsightsAsync(unitId, ct);
+        var result = await services.EquipmentInsightsService.GetInsightsAsync(unitId, ct);
         return TypedResults.Ok(result);
     }
 

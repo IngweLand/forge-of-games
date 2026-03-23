@@ -15,7 +15,7 @@ public class EquipmentUiService(
     IPersistenceService persistenceService,
     IMapper mapper,
     IEquipmentSlotTypeIconUrlProvider equipmentSlotTypeIconUrlProvider,
-    IEquipmentService equipmentService,
+    IEquipmentInsightsService equipmentInsightsService,
     IEquipmentInsightsViewModelFactory equipmentInsightsViewModelFactory,
     IHohCoreDataCache coreDataCache) : IEquipmentUiService
 {
@@ -57,7 +57,7 @@ public class EquipmentUiService(
         CancellationToken ct)
     {
         var equipmentData = await coreDataCache.GetEquipmentDataAsync();
-        var dtos = await equipmentService.GetInsightsAsync(unitId, ct);
+        var dtos = await equipmentInsightsService.GetInsightsAsync(unitId, ct);
         return dtos.OrderBy(x => x.FromLevel).Select(dto =>
                 equipmentInsightsViewModelFactory.Create(dto, equipmentData.StatAttributeNames, equipmentData.SetNames))
             .ToList();

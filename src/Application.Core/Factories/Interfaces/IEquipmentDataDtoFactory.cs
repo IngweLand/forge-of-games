@@ -1,7 +1,7 @@
 using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Models.Hoh.Entities.Equipment;
 
-namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
+namespace Ingweland.Fog.Application.Core.Factories.Interfaces;
 
 public interface IEquipmentDataDtoFactory
 {

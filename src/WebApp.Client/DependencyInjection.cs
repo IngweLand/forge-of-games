@@ -59,7 +59,7 @@ internal static class DependencyInjection
         AddRefitJsonApiClient<IWikipediaService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IBattleService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<ICityPlannerService>(services, baseAddress, refitJsonSettings);
-        AddRefitJsonApiClient<IEquipmentService>(services, baseAddress, refitJsonSettings);
+        AddRefitJsonApiClient<IEquipmentInsightsService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IRelicService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IFogCommonService>(services, baseAddress, refitJsonSettings);
         AddRefitJsonApiClient<IInGameEventService>(services, baseAddress, refitJsonSettings);

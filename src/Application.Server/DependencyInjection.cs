@@ -69,8 +69,7 @@ public static class DependencyInjection
         services.AddScoped<IFogAllianceService, FogAllianceService>();
         services.AddScoped<IAllianceUpdateOrchestrator, AllianceUpdateOrchestrator>();
         services.AddScoped<IHeroInsightsService, HeroInsightsService>();
-        services.AddScoped<IEquipmentDataDtoFactory, EquipmentDataDtoFactory>();
-        services.AddScoped<IEquipmentService, EquipmentService>();
+        services.AddScoped<IEquipmentInsightsService, EquipmentInsightsService>();
         services.AddScoped<IRelicService, RelicService>();
         services.AddScoped<IAllianceAthRankingDtoFactory, AllianceAthRankingDtoFactory>();
         services.AddScoped<IFogRankingService, FogRankingService>();

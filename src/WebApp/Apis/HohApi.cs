@@ -2,7 +2,6 @@ using Ingweland.Fog.Application.Core.Helpers;
 using Ingweland.Fog.Application.Server.CommandCenter.Commands;
 using Ingweland.Fog.Application.Server.Services.Queries;
 using Ingweland.Fog.Dtos.Hoh;
-using Ingweland.Fog.Dtos.Hoh.Equipment;
 using Ingweland.Fog.Dtos.Hoh.Units;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -116,7 +115,6 @@ public static class HohApi
         api.MapGet("/inGameData/{inGameStartupDataId}", GetInGameDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.WIKI_EXTRACT, GetWikiExtractAsync);
-        api.MapGet(FogUrlBuilder.ApiRoutes.EQUIPMENT_DATA, GetEquipmentDataAsync);
 
         api.MapGet(FogUrlBuilder.ApiRoutes.IN_GAME_EVENTS_TEMPLATE, GetInGameEventsAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.CURRENT_IN_GAME_EVENT_TEMPLATE, GetCurrentInGameEventAsync);
@@ -141,13 +139,6 @@ public static class HohApi
         }
 
         return TypedResults.NotFound();
-    }
-
-    private static async Task<Ok<EquipmentDataDto>>
-        GetEquipmentDataAsync([AsParameters] StatsServices services, HttpContext context, CancellationToken ct)
-    {
-        var result = await services.EquipmentService.GetEquipmentData(ct);
-        return TypedResults.Ok(result);
     }
 
     private static async Task<Ok<IReadOnlyCollection<InGameEventDto>>>

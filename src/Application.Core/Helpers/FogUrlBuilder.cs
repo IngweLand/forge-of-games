@@ -82,7 +82,6 @@ public static class FogUrlBuilder
 
         public const string COMMAND_CENTER_SHARED_SUBMISSION_ID = "/commandCenter/sharedSubmissionId";
         public const string EQUIPMENT_INSIGHTS_TEMPLATE = "/equipment/insights/{unitId}";
-        public const string EQUIPMENT_DATA = "/equipment/data";
         public const string IN_GAME_EVENTS_TEMPLATE = "/inGameEvents/{worldId}/{eventDefinitionId}";
         public const string CURRENT_IN_GAME_EVENT_TEMPLATE = "/currentInGameEvent/{worldId}/{eventDefinitionId}";
         public const string ANNUAL_BUDGET_TEMPLATE = "/annualBudget/{year:int}";

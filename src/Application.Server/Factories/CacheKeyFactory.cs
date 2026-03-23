@@ -52,7 +52,6 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayerQuery q => Player(q.PlayerId),
             GetTopHeroesQuery q => $"TopHeroes:{q.Mode}:{q.AgeId}:{q.FromLevel}:{q.ToLevel}",
             GetEquipmentInsightsQuery q => $"EquipmentInsights:{q.UnitId}",
-            GetEquipmentDataQuery _ => $"EquipmentData:{CultureInfo.CurrentCulture.Name}",
             GetRelicInsightsQuery q => $"RelicInsights:{q.UnitId}",
             GetAllianceAthRankingsQuery q => $"AllianceAthRankings:{q.AllianceId}",
             GetAllianceRankingsQuery q => $"AllianceRankings:{q.AllianceId}",

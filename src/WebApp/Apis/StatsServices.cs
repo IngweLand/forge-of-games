@@ -8,14 +8,14 @@ public class StatsServices(
     IBattleService battleService,
     ICityPlannerService cityPlannerService,
     IStatsHubService statsHubService,
-    IEquipmentService equipmentService,
+    IEquipmentInsightsService equipmentInsightsService,
     IRelicService relicService,
     IMediator mediator,
     IProtobufResponseFactory protobufResponseFactory)
 {
     public IBattleService BattleService { get; } = battleService;
     public ICityPlannerService CityPlannerService { get; } = cityPlannerService;
-    public IEquipmentService EquipmentService { get; } = equipmentService;
+    public IEquipmentInsightsService EquipmentInsightsService { get; } = equipmentInsightsService;
     public ILogger<StatsServices> Logger { get; } = logger;
     public IMediator Mediator { get; } = mediator;
     public IProtobufResponseFactory ProtobufResponseFactory { get; } = protobufResponseFactory;

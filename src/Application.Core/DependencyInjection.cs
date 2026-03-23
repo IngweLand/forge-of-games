@@ -69,5 +69,7 @@ public static class DependencyInjection
         services.AddScoped<ICommonService, CommonService>();
         services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
         services.AddScoped<ICommandCenterService, CommandCenterService>();
+        services.AddScoped<IEquipmentDataDtoFactory, EquipmentDataDtoFactory>();
+        services.AddScoped<IEquipmentService, EquipmentService>();
     }
 }

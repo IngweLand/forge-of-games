@@ -25,7 +25,7 @@ public class HohServices(
     IWikipediaService wikipediaService,
     IRelicCoreDataService relicCoreDataService,
     ICommandCenterSharingService commandCenterSharingService,
-    IEquipmentService equipmentService,
+    IEquipmentInsightsService equipmentInsightsService,
     IMediator mediator,
     IProtobufResponseFactory protobufResponseFactory)
 {
@@ -35,7 +35,7 @@ public class HohServices(
     public ICommandCenterService CommandCenterService { get; } = commandCenterService;
     public ICommandCenterSharingService CommandCenterSharingService { get; } = commandCenterSharingService;
     public ICommonService CommonService { get; } = commonService;
-    public IEquipmentService EquipmentService { get; } = equipmentService;
+    public IEquipmentInsightsService EquipmentInsightsService { get; } = equipmentInsightsService;
 
     public IHohCityRepository HohCityRepository { get; } = hohCityRepository;
 
