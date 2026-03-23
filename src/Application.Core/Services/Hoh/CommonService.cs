@@ -3,11 +3,10 @@ using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Interfaces;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Hoh.Enums;
 
-namespace Ingweland.Fog.Application.Server.Services.Hoh;
+namespace Ingweland.Fog.Application.Core.Services.Hoh;
 
 public class CommonService(
     IHohCoreDataRepository hohCoreDataRepository,

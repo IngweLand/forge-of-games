@@ -1,12 +1,13 @@
 using AutoMapper;
+using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Application.Core.Services.Hoh.Abstractions;
-using Ingweland.Fog.Application.Server.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 
-namespace Ingweland.Fog.Application.Server.Factories;
+namespace Ingweland.Fog.Application.Core.Factories;
 
-public class ResourceDtoFactory(IMapper mapper, IHohGameLocalizationService gameLocalizationService) : IResourceDtoFactory
+public class ResourceDtoFactory(IMapper mapper, IHohGameLocalizationService gameLocalizationService)
+    : IResourceDtoFactory
 {
     public ResourceDto Create(Resource resource, Age? age)
     {

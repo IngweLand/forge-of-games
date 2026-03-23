@@ -66,5 +66,7 @@ public static class DependencyInjection
         services.AddScoped<IResearchService, ResearchService>();
         services.AddScoped<IRelicDtoFactory, RelicDtoFactory>();
         services.AddScoped<IRelicCoreDataService, RelicCoreDataService>();
+        services.AddScoped<ICommonService, CommonService>();
+        services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
     }
 }

@@ -47,7 +47,6 @@ public static class DependencyInjection
         services.AddSingleton<ICacheKeyFactory, CacheKeyFactory>();
         services.AddSingleton<IHohDataCache, HohDataCache>();
         services.AddSingleton<IHohDataCacheClearingService, HohDataCacheClearingService>();
-        services.AddScoped<ICommonService, CommonService>();
         services.AddScoped<IInGameStartupDataProcessingService, InGameStartupDataProcessingService>();
         services.AddScoped<ICommandCenterService, CommandCenterService>();
         services.AddScoped<IBarracksProfileFactory, BarracksProfileFactory>();
@@ -64,7 +63,6 @@ public static class DependencyInjection
         services.AddScoped<IPlayerCityService, PlayerCityService>();
         services.AddScoped<ICityPlannerService, CityPlannerService>();
         services.AddScoped<IHohCityCreationService, HohCityCreationService>();
-        services.AddScoped<IResourceDtoFactory, ResourceDtoFactory>();
         services.AddScoped<IPlayerBattlesFactory, PlayerBattlesFactory>();
         services.AddScoped<IInGamePlayerService, InGamePlayerService>();
         services.AddScoped<IFogPlayerService, FogPlayerService>();

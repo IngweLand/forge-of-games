@@ -1,7 +1,7 @@
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Models.Hoh.Entities;
 
-namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
+namespace Ingweland.Fog.Application.Core.Factories.Interfaces;
 
 public interface IResourceDtoFactory
 {
