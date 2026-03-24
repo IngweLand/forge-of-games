@@ -155,7 +155,7 @@ else
     }
 
     const observer = new MutationObserver((mutations) => {
-        console.debug("Trying to remove Google Privacy Settings button/banner");
+        @* console.debug("Trying to remove Google Privacy Settings button/banner"); *@
         for (const mutation of mutations) {
             if (removePrivacyElement(mutation.addedNodes)) {
                 return;
