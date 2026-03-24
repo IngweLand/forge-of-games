@@ -9,3 +9,54 @@
     background-color: rgba(0, 0, 0, 0.01);
     backdrop-filter: blur(70px);
 }
+
+.track {
+    width: 300px;
+    height: 3px;
+    background: var(--fog-icon-color);
+    border-radius: 3px;
+    overflow: hidden;
+    animation: fade-out 0.4s ease 3.1s forwards;
+}
+
+.bar-complete {
+    height: 100%;
+    width: 0%;
+    background: var(--fog-units-yellow-color);
+    border-radius: inherit;
+    animation: fill-complete 5s cubic-bezier(0.1, 0.05, 0.1, 1) forwards;
+}
+
+@keyframes fill-complete {
+    0%   { width: 0%; }
+    50%  { width: 50%; }
+    70%  { width: 80%; }
+    80%  { width: 90%; }
+    100% { width: 100%; }
+}
+
+@keyframes fade-out {
+    to { opacity: 0; }
+}
+
+.dual-ring {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--fog-units-purple-color);
+    border-bottom-color: var(--fog-units-blue-color);
+    position: absolute;
+    opacity: 0;
+    animation:
+            spin 1s linear 3.6s infinite,
+            fade-in 0.5s ease 3.6s forwards;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+    to { opacity: 1; }
+}
