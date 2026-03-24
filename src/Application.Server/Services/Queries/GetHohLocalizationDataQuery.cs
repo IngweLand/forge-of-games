@@ -13,7 +13,8 @@ using Microsoft.Extensions.Options;
 
 namespace Ingweland.Fog.Application.Server.Services.Queries;
 
-public record GetHohLocalizationDataQuery(string? Version) : IRequest<VersionedResponse<byte[]?>>;
+// ReSharper disable once ClassNeverInstantiated.Global
+public record GetHohLocalizationDataQuery(string? LocaleCode) : IRequest<VersionedResponse<byte[]?>>;
 
 public class GetHohLocalizationDataQueryHandler(
     IHohLocalizationDataProvider dataProvider,
@@ -27,13 +28,15 @@ public class GetHohLocalizationDataQueryHandler(
     public Task<VersionedResponse<byte[]?>> Handle(GetHohLocalizationDataQuery request,
         CancellationToken cancellationToken)
     {
-        var cultureCode = CultureInfo.CurrentCulture.Name;
-        var cacheKey = cacheKeyFactory.HohLocalizationData(cultureCode);
+        var localeCode = !string.IsNullOrWhiteSpace(request.LocaleCode)
+            ? request.LocaleCode
+            : CultureInfo.CurrentCulture.Name;
+        var cacheKey = cacheKeyFactory.HohLocalizationData(localeCode);
         var cached = appCache.GetOrAdd(cacheKey, entry =>
         {
             logger.LogInformation("Cache MISS for key: {CacheKey}", cacheKey);
             var data = dataProvider.GetData();
-            var concreteData = data.TryGetValue(cultureCode, out var localizationData)
+            var concreteData = data.TryGetValue(localeCode, out var localizationData)
                 ? localizationData
                 : data[HohSupportedCultures.DefaultCulture];
             var absoluteExpiration = DateTimeOffset.MaxValue;
@@ -47,14 +50,9 @@ public class GetHohLocalizationDataQueryHandler(
 
         if (cached is null)
         {
-            return Task.FromResult(new VersionedResponse<byte[]?>(true, string.Empty, null));
+            return Task.FromResult(new VersionedResponse<byte[]?>(string.Empty, null));
         }
 
-        if (request.Version == cached.Version)
-        {
-            return Task.FromResult(new VersionedResponse<byte[]?>(true, cached.Version, null));
-        }
-
-        return Task.FromResult(new VersionedResponse<byte[]?>(false, cached.Version, cached.Data));
+        return Task.FromResult(new VersionedResponse<byte[]?>(cached.Version, cached.Data));
     }
 }

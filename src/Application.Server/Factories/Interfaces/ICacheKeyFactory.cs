@@ -4,7 +4,7 @@ namespace Ingweland.Fog.Application.Server.Factories.Interfaces;
 
 public interface ICacheKeyFactory
 {
-    string HohData { get; }
+    string HohCoreData { get; }
     string Alliance(int allianceId);
     string Player(int playerId);
     string CreateKey<TRequest>(TRequest request) where TRequest : ICacheableRequest;

@@ -1,27 +1,25 @@
 using System.Diagnostics;
-using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
+using Ingweland.Fog.Application.Client.Web.Services.Hoh.Abstractions;
 using Ingweland.Fog.Application.Core.Repository.Abstractions;
 using Ingweland.Fog.WebApp.Client.Services.Abstractions;
 
-namespace Ingweland.Fog.WebApp.Client.Services;
-
 public class HohDataInitializationService(
     IHohDataProvider hohDataProvider,
+    IHohDataService hohDataService,
     IHohLocalizationDataProvider hohLocalizationDataProvider,
-    IFileCacheInteropService fileCacheInteropService,
     ILogger<HohDataInitializationService> logger) : IHohDataInitializationService
 {
     public async Task InitializeAsync()
     {
-        var version = await fileCacheInteropService.GetVersionAsync();
+        var version = await hohDataService.GetHohCoreDataVersionAsync();
         var sw = new Stopwatch();
         sw.Start();
-        await ((IDataProvider) hohDataProvider).InitializeAsync(version);
+        await ((IDataProvider) hohDataProvider).InitializeAsync(version.Version);
         sw.Stop();
-        logger.LogDebug("Hoh data loaded: {elapsed}", sw.Elapsed);
+        logger.LogDebug("Hoh core data loaded. Total elapsed: {elapsed}", sw.Elapsed);
         sw.Restart();
-        await ((IDataProvider) hohLocalizationDataProvider).InitializeAsync(version);
+        await ((IDataProvider) hohLocalizationDataProvider).InitializeAsync(version.Version);
         sw.Stop();
-        logger.LogDebug("Hoh loca data loaded: {elapsed}", sw.Elapsed);
+        logger.LogDebug("Hoh localization data loaded. Total elapsed: {elapsed}", sw.Elapsed);
     }
 }

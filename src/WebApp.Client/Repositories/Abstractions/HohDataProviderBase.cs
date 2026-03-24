@@ -11,7 +11,7 @@ public abstract class HohDataProviderBase<TData>(
     protected ILogger<HohDataProviderBase<TData>> Logger { get; } = logger;
     public Guid Version { get; } = Guid.NewGuid();
 
-    public async Task InitializeAsync(string? version)
+    public async Task InitializeAsync(string version)
     {
         _cachedData = await (_loadingTask ??= LoadAsync(version));
     }
@@ -26,5 +26,5 @@ public abstract class HohDataProviderBase<TData>(
         return _cachedData;
     }
 
-    protected abstract Task<TData> LoadAsync(string? version);
+    protected abstract Task<TData> LoadAsync(string version);
 }

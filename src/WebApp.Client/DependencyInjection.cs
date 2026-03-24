@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Ingweland.Fog.Application.Client.Web.Data;
 using Ingweland.Fog.Application.Client.Web.EquipmentConfigurator.Abstractions;
 using Ingweland.Fog.Application.Client.Web.Models;
 using Ingweland.Fog.Application.Client.Web.Services.Abstractions;
@@ -25,11 +26,11 @@ internal static class DependencyInjection
     {
         services.AddAutoMapper(typeof(DependencyInjection).Assembly);
 
-        services.AddSingleton<IFileCacheInteropService, FileCacheInteropService>();
         services.AddSingleton<IHohDataProvider, IndexedDbHohDataProvider>();
         services.AddSingleton<IHohLocalizationDataProvider, IndexedDbHohLocalizationDataProvider>();
         services.AddSingleton<IClientLocaleService, ClientLocaleService>();
         services.AddSingleton<IHohDataInitializationService, HohDataInitializationService>();
+        services.AddSingleton<IFogLocalDbContext, FogLocalDbContext>();
 
         services.AddScoped<CityPlannerNavigationState>();
         services.AddScoped<IJSInteropService, JSInteropService>();

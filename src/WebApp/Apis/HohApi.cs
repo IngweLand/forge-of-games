@@ -120,8 +120,10 @@ public static class HohApi
         api.MapGet(FogUrlBuilder.ApiRoutes.CURRENT_IN_GAME_EVENT_TEMPLATE, GetCurrentInGameEventAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.ANNUAL_BUDGET_TEMPLATE, GetAnnualBudgetAsync);
 
-        api.MapGet(FogUrlBuilder.ApiRoutes.HOH_DATA, GetHohDataAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.HOH_CORE_DATA, GetHohCoreDataAsync);
         api.MapGet(FogUrlBuilder.ApiRoutes.HOH_LOCALIZATION_DATA, GetHohLocalizationDataAsync);
+        api.MapGet(FogUrlBuilder.ApiRoutes.HOH_CORE_DATE_VERSION, GetHohCoreDataVersionAsync);
+
         api.MapGet(FogUrlBuilder.ApiRoutes.HERO_ABILITY_FEATURES, GetHeroAbilityFeaturesAsync);
 
         return api;
@@ -233,8 +235,16 @@ public static class HohApi
         }
     }
 
-    private static async Task<Ok<VersionedResponse<byte[]?>>> GetHohDataAsync([AsParameters] HohServices services,
-        HttpContext context, [AsParameters] GetHohDataQuery query)
+    private static async Task<Ok<VersionedResponse<byte[]?>>> GetHohCoreDataAsync([AsParameters] HohServices services,
+        HttpContext context, [AsParameters] GetHohCoreDataQuery query)
+    {
+        var result = await services.Mediator.Send(query);
+
+        return TypedResults.Ok(result);
+    }
+
+    private static async Task<Ok<VersionDto>> GetHohCoreDataVersionAsync([AsParameters] HohServices services,
+        HttpContext context, [AsParameters] GetHohCoreDataVersionQuery query)
     {
         var result = await services.Mediator.Send(query);
 

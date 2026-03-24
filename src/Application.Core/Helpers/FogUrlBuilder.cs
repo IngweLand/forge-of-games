@@ -94,8 +94,9 @@ public static class FogUrlBuilder
         public const string GET_COMMUNITY_CITY_GUIDE_TEMPLATE_REFIT = GET_COMMUNITY_CITY_GUIDES + "/{id}";
         public const string UPLOAD_SHARED_IMAGE = "/uploadSharedImage";
 
-        public const string HOH_DATA = "/data";
-        public const string HOH_LOCALIZATION_DATA = "/localizationData";
+        public const string HOH_CORE_DATA = "/coreData";
+        public const string HOH_LOCALIZATION_DATA = HOH_CORE_DATA + "/localization";
+        public const string HOH_CORE_DATE_VERSION = HOH_CORE_DATA + "/version";
     }
 
     public static class PageRoutes

@@ -16,7 +16,7 @@ public class CacheKeyFactory : ICacheKeyFactory
         return $"Alliance:{allianceId}";
     }
 
-    public string HohData => "HohData";
+    public string HohCoreData => "HohCoreData";
 
     public string HohLocalizationData(string cultureCode)
     {
@@ -73,6 +73,7 @@ public class CacheKeyFactory : ICacheKeyFactory
             GetPlayerAthRankingsQuery q => $"PlayerAthRankings:{q.PlayerId}",
             GetSharedResourceQuery q => $"SharedResource:{q.ShareId}",
             GetHeroAbilityFeaturesQuery q => HeroAbilityFeatures(CultureInfo.CurrentCulture.Name),
+            GetHohCoreDataVersionQuery q => "HohCoreDataVersion",
             _ => typeof(TRequest).FullName ?? Guid.NewGuid().ToString(),
         };
     }

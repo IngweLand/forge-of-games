@@ -24,7 +24,6 @@ internal static class DependencyInjection
 
         services.AddSingleton<IStartupTask, PreloadDataStartupTask>();
         services.AddSingleton<IProtobufResponseFactory, ProtobufResponseFactory>();
-        services.AddSingleton<IFileCacheInteropService, DummyFileCacheInteropService>();
         services.AddSingleton<IClientLocaleService, DummyClientLocaleService>();
 
         services.AddHostedService<StartupTaskHostedService>();

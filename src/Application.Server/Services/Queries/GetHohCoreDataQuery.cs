@@ -11,21 +11,22 @@ using Microsoft.Extensions.Options;
 
 namespace Ingweland.Fog.Application.Server.Services.Queries;
 
-public record GetHohDataQuery(string? Version) : IRequest<VersionedResponse<byte[]?>>;
+// ReSharper disable once ClassNeverInstantiated.Global
+public record GetHohCoreDataQuery() : IRequest<VersionedResponse<byte[]?>>;
 
-public class GetHohDataQueryHandler(
+public class GetHohCoreDataQueryHandler(
     IHohDataProvider dataProvider,
     IProtobufSerializer protobufSerializer,
     IAppCache appCache,
     IOptionsSnapshot<ResourceSettings> resourceSettings,
     ICacheKeyFactory cacheKeyFactory,
-    ILogger<GetHohDataQueryHandler> logger)
-    : IRequestHandler<GetHohDataQuery, VersionedResponse<byte[]?>>
+    ILogger<GetHohCoreDataQueryHandler> logger)
+    : IRequestHandler<GetHohCoreDataQuery, VersionedResponse<byte[]?>>
 {
-    public async Task<VersionedResponse<byte[]?>> Handle(GetHohDataQuery request,
+    public async Task<VersionedResponse<byte[]?>> Handle(GetHohCoreDataQuery request,
         CancellationToken cancellationToken)
     {
-        var cacheKey = cacheKeyFactory.HohData;
+        var cacheKey = cacheKeyFactory.HohCoreData;
         var cached = await appCache.GetOrAddAsync(cacheKey, async entry =>
         {
             logger.LogInformation("Cache MISS for key: {CacheKey}", cacheKey);
@@ -41,14 +42,9 @@ public class GetHohDataQueryHandler(
 
         if (cached is null)
         {
-            return new VersionedResponse<byte[]?>(true, string.Empty, null);
+            return new VersionedResponse<byte[]?>(string.Empty, null);
         }
 
-        if (request.Version == cached.Version)
-        {
-            return new VersionedResponse<byte[]?>(true, cached.Version, null);
-        }
-
-        return new VersionedResponse<byte[]?>(false, cached.Version, cached.Data);
+        return new VersionedResponse<byte[]?>(cached.Version, cached.Data);
     }
 }

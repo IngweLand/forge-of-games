@@ -13,7 +13,7 @@ public class HohDataCacheClearingService(
 {
     public void Clear()
     {
-        appCache.Remove(cacheKeyFactory.HohData);
+        appCache.Remove(cacheKeyFactory.HohCoreData);
         foreach (var culture in HohSupportedCultures.AllCultures)
         {
             appCache.Remove(cacheKeyFactory.HohLocalizationData(culture));

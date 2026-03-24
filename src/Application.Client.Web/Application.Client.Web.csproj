@@ -12,6 +12,7 @@
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="13.0.1"/>
+        <PackageReference Include="BlazorEssentials.IndexedDb" Version="4.0.0"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
         <PackageReference Include="FluentResults" Version="4.0.0"/>
         <PackageReference Include="HtmlSanitizer" Version="9.0.889"/>
@@ -25,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Application.Client.Core\Application.Client.Core.csproj" />
+        <ProjectReference Include="..\Application.Client.Core\Application.Client.Core.csproj"/>
         <ProjectReference Include="..\Application.Core\Application.Core.csproj"/>
         <ProjectReference Include="..\Dtos.Hoh\Dtos.Hoh.csproj"/>
         <ProjectReference Include="..\Models.Hoh\Models.Hoh.csproj"/>
