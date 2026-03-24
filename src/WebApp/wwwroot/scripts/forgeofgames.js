@@ -175,11 +175,9 @@ window.Fog.Webapp.Analytics = {
 
 window.Fog.Webapp.AdSense = {
     initializeAd: (adSlotId) => {
-        console.debug('Initializing ad:', adSlotId);
         try {
             // Push the ad to AdSense queue
             (adsbygoogle = window.adsbygoogle || []).push({});
-            console.debug('Ad initialized:', adSlotId);
             return true;
 
         } catch (e) {
