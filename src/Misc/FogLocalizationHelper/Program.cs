@@ -75,6 +75,7 @@ var searchKeys = new HashSet<string>
     "Base.BattleEventPanel.BattleEvent",
     "Base.IngameEvents.BattleEvent_AncientEgyptEvent_AnubisDungeon_Name",
     "Base.EventDungeonInfoPopup.BattleEvent_AncientEgyptEvent_AnubisDungeon.BossHeader",
+    "Base.UnlockableFeatures.EventCities",
 };
 
 var result = new Dictionary<string, List<Translations>>();

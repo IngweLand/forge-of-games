@@ -1176,6 +1176,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allied Cultures.
+        /// </summary>
+        public static string CityStrategiesDashboard_AlliedCultures {
+            get {
+                return ResourceManager.GetString("CityStrategiesDashboard.AlliedCultures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Community Guides.
         /// </summary>
         public static string CityStrategiesDashboard_CommunityGuides {
@@ -2963,6 +2972,15 @@ namespace Ingweland.Fog.Application.Client.Core.Localization {
         public static string Navigation_CityLayouts {
             get {
                 return ResourceManager.GetString("Navigation.CityLayouts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guides.
+        /// </summary>
+        public static string Navigation_CityStrategiesDashboard {
+            get {
+                return ResourceManager.GetString("Navigation.CityStrategiesDashboard", resourceCulture);
             }
         }
         

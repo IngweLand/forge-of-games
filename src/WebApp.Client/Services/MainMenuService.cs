@@ -42,7 +42,7 @@ public class MainMenuService(NavigationManager navigationManager, IAssetUrlProvi
                     new()
                     {
                         Href = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
-                        ResourceKey = FogResource.Navigation_CityStrategyBuilder,
+                        ResourceKey = FogResource.Navigation_CityStrategiesDashboard,
                         Icon = GetIconString(
                             assetUrlProvider.GetIconUrl("strategy_24dp_FBE0C6_FILL0_wght400_GRAD0_opsz24", ".svg")),
                         Match = NavLinkMatch.All,
