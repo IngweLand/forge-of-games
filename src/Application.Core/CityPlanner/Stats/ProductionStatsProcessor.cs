@@ -34,62 +34,16 @@ public class ProductionStatsProcessor : IProductionStatsProcessor
         {
             var products = new List<ProductStatsItem>();
             var defaultProductionHours = (float) productionComponent.ProductionTime / SECONDS_IN_HOUR;
-            foreach (var resourceProduct in productionComponent.Products.OfType<ResourceReward>())
+            foreach (var resourceProduct in productionComponent.Products)
             {
-                var defaultProductionAmount = resourceProduct.Amount;
-                var totalProductionAmount = (double) defaultProductionAmount;
-                if (modifiers.TryGetValue(resourceProduct.ResourceId, out var modifier))
+                if (resourceProduct is ResourceReward resourceReward)
                 {
-                    totalProductionAmount += totalProductionAmount * (modifier / 100);
+                    products.Add(ProcessResourceReward(resourceReward, modifiers, happinessConsumer,
+                        defaultProductionHours, productionComponent.ProductionTime));
                 }
-
-                if (happinessConsumer != null)
+                else if (resourceProduct is Reward complexReward)
                 {
-                    var buffedResource =
-                        happinessConsumer.BuffDetails.Resources?.FirstOrDefault(r =>
-                            r.ResourceId == resourceProduct.ResourceId);
-                    double factor;
-                    if (buffedResource != null)
-                    {
-                        factor = MathF.Min(1,
-                                (float) happinessConsumer.ConsumedHappiness / happinessConsumer.BuffDetails.Value) *
-                            buffedResource.Factor;
-                    }
-                    else
-                    {
-                        factor = MathF.Min(1,
-                                (float) happinessConsumer.ConsumedHappiness / happinessConsumer.BuffDetails.Value) *
-                            happinessConsumer.BuffDetails.Factor;
-                    }
-
-                    var oneHourBonus = (int) Math.Floor(happinessConsumer.BuffDetails.Value * factor);
-                    totalProductionAmount += oneHourBonus * defaultProductionHours;
                 }
-
-                products.Add(new ProductStatsItem
-                {
-                    ResourceId = resourceProduct.ResourceId,
-                    DefaultProduction = new TimedProductStatsItem
-                    {
-                        ProductionTime = productionComponent.ProductionTime,
-                        Value = defaultProductionAmount,
-                        BuffedValue = (int) totalProductionAmount,
-                    },
-
-                    OneHourProduction = new TimedProductStatsItem
-                    {
-                        ProductionTime = SECONDS_IN_HOUR,
-                        Value = (int) (defaultProductionAmount / defaultProductionHours),
-                        BuffedValue = (int) (totalProductionAmount / defaultProductionHours),
-                    },
-
-                    OneDayProduction = new TimedProductStatsItem
-                    {
-                        ProductionTime = SECONDS_IN_DAY,
-                        Value = (int) (defaultProductionAmount / defaultProductionHours * 24),
-                        BuffedValue = (int) (totalProductionAmount / defaultProductionHours * 24),
-                    },
-                });
             }
 
             var cost = productionComponent.Cost.Select(resourceAmount => new ProductionCostStatsItem
@@ -146,5 +100,65 @@ public class ProductionStatsProcessor : IProductionStatsProcessor
         }
 
         productionProvider.ProductionStatsItems = productionItems;
+    }
+
+    private static ProductStatsItem ProcessResourceReward(ResourceReward reward,
+        IReadOnlyDictionary<string, double> modifiers, HappinessConsumer? happinessConsumer,
+        float defaultProductionHours, int defaultProductionTime)
+    {
+        var defaultProductionAmount = reward.Amount;
+        var totalProductionAmount = (double) defaultProductionAmount;
+        if (modifiers.TryGetValue(reward.ResourceId, out var modifier))
+        {
+            totalProductionAmount += totalProductionAmount * (modifier / 100);
+        }
+
+        if (happinessConsumer != null)
+        {
+            var buffedResource =
+                happinessConsumer.BuffDetails.Resources?.FirstOrDefault(r =>
+                    r.ResourceId == reward.ResourceId);
+            double factor;
+            if (buffedResource != null)
+            {
+                factor = MathF.Min(1,
+                        (float) happinessConsumer.ConsumedHappiness / happinessConsumer.BuffDetails.Value) *
+                    buffedResource.Factor;
+            }
+            else
+            {
+                factor = MathF.Min(1,
+                        (float) happinessConsumer.ConsumedHappiness / happinessConsumer.BuffDetails.Value) *
+                    happinessConsumer.BuffDetails.Factor;
+            }
+
+            var oneHourBonus = (int) Math.Floor(happinessConsumer.BuffDetails.Value * factor);
+            totalProductionAmount += oneHourBonus * defaultProductionHours;
+        }
+
+        return new ProductStatsItem
+        {
+            ResourceId = reward.ResourceId,
+            DefaultProduction = new TimedProductStatsItem
+            {
+                ProductionTime = defaultProductionTime,
+                Value = defaultProductionAmount,
+                BuffedValue = (int) totalProductionAmount,
+            },
+
+            OneHourProduction = new TimedProductStatsItem
+            {
+                ProductionTime = SECONDS_IN_HOUR,
+                Value = (int) (defaultProductionAmount / defaultProductionHours),
+                BuffedValue = (int) (totalProductionAmount / defaultProductionHours),
+            },
+
+            OneDayProduction = new TimedProductStatsItem
+            {
+                ProductionTime = SECONDS_IN_DAY,
+                Value = (int) (defaultProductionAmount / defaultProductionHours * 24),
+                BuffedValue = (int) (totalProductionAmount / defaultProductionHours * 24),
+            },
+        };
     }
 }
