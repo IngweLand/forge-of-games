@@ -28,16 +28,41 @@
         @foreach (var item in Data.Products)
         {
             <tr class="user-select-none" @onclick="() => HandleProductSelection(item)">
+
                 @if (Data.CanSelectProduct)
                 {
-                    <td><input type="radio" disabled="@(!Editable)"
+                    <td>
+                        <input type="radio" disabled="@(!Editable)"
                                name="productSelection"
                                value="@item" T="CityMapEntityProductViewModel"
                                checked="@item.IsSelected"/></td>
                 }
-                <td><img src="@item.IconUrl" class="resource-icon"/></td>
-                <td class="production-label">@item.OneHourProduction</td>
-                <td class="production-label">@item.OneDayProduction</td>
+
+                <td>
+                    <div class="rewards-container">
+                        @foreach (var r in item.Rewards)
+                        {
+                            <img src="@r.IconUrl" class="resource-icon"/>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="rewards-container">
+                        @foreach (var r in item.Rewards)
+                        {
+                            <span class="production-label">@r.OneHourProduction</span>
+                        }
+                    </div>
+                </td>
+                <td>
+                    <div class="rewards-container">
+                        @foreach (var r in item.Rewards)
+                        {
+                            <span class="production-label">@r.OneDayProduction</span>
+                        }
+                    </div>
+                </td>
+
             </tr>
         }
         </tbody>

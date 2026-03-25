@@ -65,17 +65,20 @@ public static class CityStatsProcessor
                     if (!canSelectProduct ||
                         (canSelectProduct && productionStatsItem.ProductionId == cme.SelectedProduct?.Id))
                     {
-                        foreach (var productStatsItem in productionStatsItem.Products)
+                        foreach (var product in productionStatsItem.Products)
                         {
-                            if (!stats.Products.TryGetValue(productStatsItem.ResourceId, out var productTuple))
+                            foreach (var productStatsItem in product)
                             {
-                                productTuple = new ConsolidatedTimedProductionValues();
-                                stats.Products.Add(productStatsItem.ResourceId, productTuple);
-                            }
+                                if (!stats.Products.TryGetValue(productStatsItem.ResourceId, out var productTuple))
+                                {
+                                    productTuple = new ConsolidatedTimedProductionValues();
+                                    stats.Products.Add(productStatsItem.ResourceId, productTuple);
+                                }
 
-                            productTuple.Default += productStatsItem.DefaultProduction.BuffedValue;
-                            productTuple.OneHour += productStatsItem.OneHourProduction.BuffedValue;
-                            productTuple.OneDay += productStatsItem.OneDayProduction.BuffedValue;
+                                productTuple.Default += productStatsItem.DefaultProduction.BuffedValue;
+                                productTuple.OneHour += productStatsItem.OneHourProduction.BuffedValue;
+                                productTuple.OneDay += productStatsItem.OneDayProduction.BuffedValue;
+                            }
                         }
 
                         foreach (var costItem in productionStatsItem.Cost)

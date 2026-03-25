@@ -126,36 +126,48 @@ public class CityMapEntityViewModelFactory(
                                 });
                             }
 
-                            string defaultProductionLbl;
-                            if (product.DefaultProduction.ProductionTime >= 3600)
+                            foreach (var productReward in product)
                             {
-                                var defaultHours = product.DefaultProduction.ProductionTime / 3600;
-                                defaultProductionLbl = $"{defaultHours}{localizer[FogResource.Common_Hours_Abbr]} - {
-                                    product.DefaultProduction.BuffedValue:N0}";
-                            }
-                            else
-                            {
-                                var defaultMinutes = product.DefaultProduction.ProductionTime / 60;
-                                defaultProductionLbl = $"{defaultMinutes}{localizer[FogResource.Common_Minutes_Abbr]
-                                } - {product.DefaultProduction.BuffedValue:N0}";
-                            }
+                                string defaultProductionLbl;
+                                if (productReward.DefaultProduction.ProductionTime >= 3600)
+                                {
+                                    var defaultHours = productReward.DefaultProduction.ProductionTime / 3600;
+                                    defaultProductionLbl = $"{defaultHours}{localizer[FogResource.Common_Hours_Abbr]
+                                    } - {productReward.DefaultProduction.BuffedValue:N0}";
+                                }
+                                else
+                                {
+                                    var defaultMinutes = productReward.DefaultProduction.ProductionTime / 60;
+                                    defaultProductionLbl = $"{defaultMinutes}{localizer[FogResource.Common_Minutes_Abbr]
+                                    } - {productReward.DefaultProduction.BuffedValue:N0}";
+                                }
 
-                            generalItems.Add(new IconLabelItemViewModel
+                                generalItems.Add(new IconLabelItemViewModel
+                                {
+                                    Label = defaultProductionLbl,
+                                    IconUrl = building.Type == BuildingType.CityHall
+                                        ? storageIconUrlProvider.GetIconUrl(productReward.ResourceId)
+                                        : storageIconUrlProvider.GetIconUrl(building.Type),
+                                });
+                            }
+                        }
+
+                        var productRewards = new List<CityMapEntityProductRewardViewModel>();
+                        foreach (var productReward in product)
+                        {
+                            productRewards.Add(new CityMapEntityProductRewardViewModel
                             {
-                                Label = defaultProductionLbl,
-                                IconUrl = building.Type == BuildingType.CityHall
-                                    ? storageIconUrlProvider.GetIconUrl(product.ResourceId)
-                                    : storageIconUrlProvider.GetIconUrl(building.Type),
+                                IconUrl = resourceIconUrlProvider.GetIconUrl(productReward.ResourceId),
+                                OneHourProduction = productReward.OneHourProduction.BuffedValue.ToString("N0"),
+                                OneDayProduction = productReward.OneDayProduction.BuffedValue.ToString("N0"),
                             });
                         }
 
                         products.Add(new CityMapEntityProductViewModel
                         {
                             ProductId = productionStatsItem.ProductionId,
-                            IconUrl = resourceIconUrlProvider.GetIconUrl(product.ResourceId),
-                            OneHourProduction = product.OneHourProduction.BuffedValue.ToString("N0"),
-                            OneDayProduction = product.OneDayProduction.BuffedValue.ToString("N0"),
                             IsSelected = productionStatsItem.ProductionId == entity.SelectedProduct?.Id,
+                            Rewards = productRewards,
                         });
                     }
 
@@ -195,12 +207,15 @@ public class CityMapEntityViewModelFactory(
                     products.Add(new CityMapEntityProductViewModel
                     {
                         ProductId = abilityTrainingComponent.Id,
-                        IconUrl = resourceIconUrlProvider.GetIconUrl("resource.mastery_points"),
-                        OneHourProduction = ((int) MathF.Floor(productionAmount))
-                            .ToString("N0"),
-                        OneDayProduction =
-                            ((int) MathF.Floor(productionAmount * 24)).ToString(
-                                "N0"),
+                        Rewards =
+                        [
+                            new CityMapEntityProductRewardViewModel
+                            {
+                                IconUrl = resourceIconUrlProvider.GetIconUrl("resource.mastery_points"),
+                                OneHourProduction = ((int) MathF.Floor(productionAmount)).ToString("N0"),
+                                OneDayProduction = ((int) MathF.Floor(productionAmount * 24)).ToString("N0"),
+                            },
+                        ],
                     });
                 }
             }

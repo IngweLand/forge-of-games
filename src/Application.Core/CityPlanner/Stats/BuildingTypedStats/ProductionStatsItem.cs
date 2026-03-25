@@ -8,6 +8,9 @@ public class ProductionStatsItem
         new List<ProductionCostStatsItem>();
 
     public required string ProductionId { get; init; }
-    public required IReadOnlyCollection<ProductStatsItem> Products { get; init; } = new List<ProductStatsItem>();
+
+    public required IReadOnlyCollection<IReadOnlyCollection<ProductStatsItem>> Products { get; init; } =
+        new List<List<ProductStatsItem>>();
+
     public WorkerBehaviour? WorkerBehaviour { get; init; }
 }
