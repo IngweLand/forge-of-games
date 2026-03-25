@@ -47,7 +47,9 @@ public class ProductionStatsViewModelFactory(IHohResourceIconUrlProvider resourc
             "resource.dirham", "resource.gold_fal", "resource.coffee_beans", "resource.brass", "resource.myrrh",
             "resource.oil", // arabia
             "resource.wu_zhu", "resource.rice", // china
-            "resource.pennies", "resource.honey", "resource.fish", // vikings
+            "resource.pennies", "resource.honey", "resource.fish", "resource.mead", "resource.stockfish",
+            "resource.ceramic_treasure", "resource.gold_treasure", "resource.spice_treasure",
+            "resource.gem_treasure", // vikings
             "resource.deben", "resource.papyrus", "resource.gold_ore", // egypt
             "resource.ancient_egypt_deben", "resource.ancient_egypt_papyrus",
             "resource.ancient_egypt_gold_ore", // ancient egypt
