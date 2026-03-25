@@ -20,7 +20,6 @@ namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Stats;
 public class CityMapEntityViewModelFactory(
     IMapper mapper,
     IAssetUrlProvider assetUrlProvider,
-    IHohStorageIconUrlProvider storageIconUrlProvider,
     IHohResourceIconUrlProvider resourceIconUrlProvider,
     IStringLocalizer<FogResource> localizer,
     IWorkerIconUrlProvider workerIconUrlProvider,
@@ -145,9 +144,7 @@ public class CityMapEntityViewModelFactory(
                                 generalItems.Add(new IconLabelItemViewModel
                                 {
                                     Label = defaultProductionLbl,
-                                    IconUrl = building.Type == BuildingType.CityHall
-                                        ? storageIconUrlProvider.GetIconUrl(productReward.ResourceId)
-                                        : storageIconUrlProvider.GetIconUrl(building.Type),
+                                    IconUrl = resourceIconUrlProvider.GetIconUrl(productReward.ResourceId),
                                 });
                             }
                         }
