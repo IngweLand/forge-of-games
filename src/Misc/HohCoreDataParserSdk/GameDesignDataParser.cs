@@ -314,7 +314,7 @@ public class GameDesignDataParser(
             TreasureHuntBattles = treasureHuntBattles.AsReadOnly(),
             HeroAbilities = heroAbilities.AsReadOnly(),
             HeroBattleAbilityComponents = heroAbilityComponents.AsReadOnly(),
-            Wonders = wonders.AsReadOnly(),
+            Wonders = wonders.Where(x => x.CityId != CityId.Capital).ToList().AsReadOnly(),
             HeroAwakeningComponents = heroAwakeningComponents.AsReadOnly(),
             Expansions = CreateExpansions(mapper, gdr).AsReadOnly(),
             Technologies = technologies.AsReadOnly(),
@@ -337,8 +337,8 @@ public class GameDesignDataParser(
         return data;
     }
 
-    private static IList<BattleEventEncounter> CreateAnubisAwakeningBattles(IMapper mapper, IEnumerable<string> encounterIds,
-        GameDesignResponse gdr, Dictionary<string, Unit> units)
+    private static IList<BattleEventEncounter> CreateAnubisAwakeningBattles(IMapper mapper,
+        IEnumerable<string> encounterIds, GameDesignResponse gdr, Dictionary<string, Unit> units)
     {
         var encounters = gdr.EncounterDefinitions.Where(x => encounterIds.Contains(x.EncounterId)).ToList();
         return
