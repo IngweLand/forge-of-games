@@ -49,6 +49,11 @@ public static class BattleTypeExtensions
         {
             return BattleType.BattleEvent;
         }
+        
+        if (lowerSrc.StartsWith("elite_arena", StringComparison.InvariantCultureIgnoreCase))
+        {
+            return BattleType.EliteArena;
+        }
 
         return BattleType.Campaign;
     }

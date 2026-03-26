@@ -21,6 +21,7 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         WHEN '{Models.Hoh.Enums.BattleType.TeslaStorm.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.TeslaStorm}
                         WHEN '{Models.Hoh.Enums.BattleType.TreasureHunt.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.TreasureHunt}
                         WHEN '{Models.Hoh.Enums.BattleType.BattleEvent.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.BattleEvent}
+                        WHEN '{Models.Hoh.Enums.BattleType.EliteArena.ToString()}' THEN {(byte)Models.Hoh.Enums.BattleType.EliteArena}
                         ELSE {(byte)Models.Hoh.Enums.BattleType.Undefined} -- default
                     END
             ");
@@ -91,6 +92,7 @@ namespace Ingweland.Fog.Infrastructure.Migrations
                         WHEN {(byte)Models.Hoh.Enums.BattleType.TeslaStorm} THEN '{Models.Hoh.Enums.BattleType.TeslaStorm.ToString()}'
                         WHEN {(byte)Models.Hoh.Enums.BattleType.TreasureHunt} THEN '{Models.Hoh.Enums.BattleType.TreasureHunt.ToString()}'
                         WHEN {(byte)Models.Hoh.Enums.BattleType.BattleEvent} THEN '{Models.Hoh.Enums.BattleType.BattleEvent.ToString()}'
+                        WHEN {(byte)Models.Hoh.Enums.BattleType.EliteArena} THEN '{Models.Hoh.Enums.BattleType.EliteArena.ToString()}'
                         ELSE '{Models.Hoh.Enums.BattleType.Undefined.ToString()}' -- default
                     END
             ");

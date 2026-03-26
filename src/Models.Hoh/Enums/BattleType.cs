@@ -9,4 +9,5 @@ public enum BattleType : byte
     TeslaStorm = 4,
     TreasureHunt = 5,
     BattleEvent = 6,
+    EliteArena = 7,
 }
