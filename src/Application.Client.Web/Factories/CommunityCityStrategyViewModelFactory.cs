@@ -34,7 +34,7 @@ public class CommunityCityStrategyViewModelFactory(
             SharedDataId = dto.SharedDataId,
             Author = dto.Author,
             CityId = dto.CityId,
-            UpdatedAt = dto.UpdatedAt.ToString("g"),
+            UpdatedAt = dto.UpdatedAt.ToString("d"),
             Age = age,
             Name = dto.Name,
             CityIconUrl = cityIconUrl,
