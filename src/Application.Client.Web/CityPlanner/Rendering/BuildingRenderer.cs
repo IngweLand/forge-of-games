@@ -161,7 +161,7 @@ public class BuildingRenderer : IBuildingRenderer
         else if (ProductionProviderHelper.CanSelectProduct(entity.BuildingType, entity.BuildingGroup) &&
                  entity.SelectedProduct is {Resources.Count: > 0})
         {
-            _productionRenderer.Draw(canvas, rect, entity.SelectedProduct.Resources.First().Value,
+            _productionRenderer.Draw(canvas, rect, entity.SelectedProduct.Resources.Values,
                 ProductionProviderHelper.CanRenderProductionLabel(entity.BuildingType)
                     ? entity.SelectedProduct.ProductionTime
                     : null,

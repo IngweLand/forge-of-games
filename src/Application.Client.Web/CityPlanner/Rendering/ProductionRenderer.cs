@@ -12,6 +12,7 @@ public class ProductionRenderer : IProductionRenderer
 {
     private const int ICON_SIZE = 24;
     private const int GAP = 4;
+    private const int VERTICAL_GAP = 2;
     private const float GRAYSCALE_BRIGHTNESS = 0.2f;
 
     private readonly IAssetUrlProvider _assetUrlProvider;
@@ -69,46 +70,68 @@ public class ProductionRenderer : IProductionRenderer
         }
     }
 
-    public void Draw(SKCanvas canvas, SKRect bounds, string resourceId, int? productionTime, bool isUnchanged)
+    public void Draw(SKCanvas canvas, SKRect bounds, IEnumerable<string> resourceIds, int? productionTime,
+        bool isUnchanged)
     {
         if (!_isInitialized)
         {
             return;
         }
 
-        var icon = $"icon_{resourceId}";
-        if (!_sprites.TryGetValue(icon, out var frame))
+        var icons = new List<(SKRect Frame, float ScaledWidth, float ScaledHeight)>();
+        float iconsContainerWidth = 0;
+        float iconsContainerHeight = 0;
+        foreach (var resourceId in resourceIds)
         {
-            return;
+            var icon = $"icon_{resourceId}";
+            if (_sprites.TryGetValue(icon, out var frame))
+            {
+                var iconScale = Math.Min(ICON_SIZE / frame.Width, ICON_SIZE / frame.Height);
+                var iconWidth = frame.Width * iconScale;
+                var iconHeight = frame.Height * iconScale;
+                icons.Add((frame, iconWidth, iconHeight));
+                iconsContainerWidth = Math.Max(iconsContainerWidth, iconWidth);
+                iconsContainerHeight += iconHeight + VERTICAL_GAP;
+            }
+
+            if (icons.Count > 0)
+            {
+                iconsContainerHeight -= VERTICAL_GAP;
+            }
         }
 
         var textWidth = 0f;
-        var scale = Math.Min(ICON_SIZE / frame.Width, ICON_SIZE / frame.Height);
-        var iconWidth = frame.Width * scale;
-        var iconHeight = frame.Height * scale;
-        var totalWidth = iconWidth;
+        var totalWidth = iconsContainerWidth;
         var labelPaint = !isUnchanged ? _cityMapEntityStyle.NameTextPaint : _cityMapEntityStyle.UnchangedNameTextPaint;
         var productionText = string.Empty;
         if (productionTime != null)
         {
             productionText = CreateProductionText(productionTime.Value);
             textWidth = _currentNameFont.MeasureText(productionText, labelPaint);
-            totalWidth = iconWidth + GAP + textWidth;
+            totalWidth = iconsContainerWidth + GAP + textWidth;
         }
 
-        var iconOffsetX = bounds.Left + (bounds.Width - totalWidth) / 2f;
-        var offsetY = bounds.Top + (bounds.Height - iconHeight) / 2f;
-        var labelOffsetX = iconOffsetX + iconWidth + GAP;
+        var iconsContainerOffsetX = bounds.Left + (bounds.Width - totalWidth) / 2f;
+        var offsetY = bounds.Top + (bounds.Height - iconsContainerHeight) / 2f;
+        var labelOffsetX = iconsContainerOffsetX + iconsContainerWidth + GAP;
 
         var atlas = isUnchanged ? _greyscaleAtlasCache : _atlasCache;
 
-        canvas.DrawImage(atlas, frame, new SKRect(iconOffsetX, offsetY, iconOffsetX + iconWidth, offsetY + iconHeight),
-            _sampling);
         if (productionTime != null)
         {
             SkiaTextUtils.DrawText(canvas, productionText,
-                new SKRect(labelOffsetX, offsetY, labelOffsetX + textWidth, offsetY + iconHeight), _currentNameFont,
+                new SKRect(labelOffsetX, offsetY, labelOffsetX + textWidth, offsetY + iconsContainerHeight),
+                _currentNameFont,
                 labelPaint);
+        }
+
+        foreach (var icon in icons)
+        {
+            var offsetX = iconsContainerOffsetX + (iconsContainerWidth - icon.ScaledWidth) / 2f;
+            canvas.DrawImage(atlas, icon.Frame,
+                new SKRect(offsetX, offsetY, offsetX + icon.ScaledWidth, offsetY + icon.ScaledHeight),
+                _sampling);
+            offsetY += icon.ScaledHeight + VERTICAL_GAP;
         }
     }
 
