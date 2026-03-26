@@ -8,4 +8,5 @@ public enum EventDefinitionId
     EventCity,
     MilestoneEvent,
     BattleEvent,
+    TreasureHunt,
 }
