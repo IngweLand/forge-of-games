@@ -217,8 +217,8 @@ public class PageMetadataService(NavigationManager navigationManager, IStringLoc
                 return new PageMetadata
                 {
                     PageTitle = localizer[FogResource.CityStrategiesDashboard_PageTitle],
-                    Description = localizer[FogResource.CityStrategyBuilder_Meta_Description],
-                    Keywords = localizer[FogResource.CityStrategyBuilder_Meta_Keywords],
+                    Description = localizer[FogResource.CityStrategiesDashboard_Meta_Description],
+                    Keywords = localizer[FogResource.CityStrategiesDashboard_Meta_Keywords],
                     Title = localizer[FogResource.CityStrategiesDashboard_Title],
                     CurrentHomePath = FogUrlBuilder.PageRoutes.CITY_STRATEGIES_DASHBOARD_PATH,
                     HelpPagePath = FogUrlBuilder.PageRoutes.HELP_CITY_STRATEGY_BUILDER_APP_PATH,
