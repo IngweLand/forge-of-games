@@ -29,13 +29,15 @@ public class GetAlliancesAthRankingsQueryHandler(IFogDbContext context, IMapper 
     {
         var now = DateTime.UtcNow;
         var latestAthEvent = await context.InGameEvents.FirstOrDefaultAsync(
-            x => x.DefinitionId == EventDefinitionId.TreasureHuntLeague && x.WorldId == request.WorldId &&
+            x => (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
+                    x.DefinitionId == EventDefinitionId.TreasureHunt) && x.WorldId == request.WorldId &&
                 x.StartAt <= now && x.EndAt >= now,
             cancellationToken);
         if (latestAthEvent == null)
         {
             latestAthEvent = await context.InGameEvents
-                .Where(x => x.DefinitionId == EventDefinitionId.TreasureHuntLeague && x.WorldId == request.WorldId &&
+                .Where(x => (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
+                        x.DefinitionId == EventDefinitionId.TreasureHunt) && x.WorldId == request.WorldId &&
                     x.StartAt <= now)
                 .OrderByDescending(x => x.StartAt)
                 .FirstOrDefaultAsync(cancellationToken);

@@ -29,7 +29,7 @@ public class AllianceAthService(
         {
             return;
         }
-        
+
         var alliances = mapper.Map<List<AllianceAggregate>>(rankings.Select(x => x.Alliance), opt =>
         {
             opt.Items[ResolutionContextKeys.WORLD_ID] = worldId;
@@ -41,7 +41,8 @@ public class AllianceAthService(
         {
             var inGameEvent = await context.InGameEvents
                 .FirstOrDefaultAsync(x =>
-                    x.WorldId == worldId && x.DefinitionId == EventDefinitionId.TreasureHuntLeague &&
+                    x.WorldId == worldId && (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
+                        x.DefinitionId == EventDefinitionId.TreasureHunt) &&
                     x.EventId == r.EventId);
             if (inGameEvent == null)
             {
@@ -65,10 +66,11 @@ public class AllianceAthService(
                     worldId, r.Alliance.Id);
                 continue;
             }
+
             var athRanking = alliance.AthRankings.FirstOrDefault();
             if (athRanking == null)
             {
-                athRanking = new AllianceAthRanking()
+                athRanking = new AllianceAthRanking
                 {
                     InGameEventId = inGameEvent.Id,
                     Points = r.Points,
@@ -77,13 +79,13 @@ public class AllianceAthService(
                 };
                 alliance.AthRankings.Add(athRanking);
             }
-            else if(athRanking.CollectedAt < collectedAt)
+            else if (athRanking.CollectedAt < collectedAt)
             {
                 athRanking.Points = r.Points;
                 athRanking.CollectedAt = collectedAt;
             }
         }
-        
+
         await context.SaveChangesAsync();
     }
 }

@@ -43,11 +43,13 @@ public class PlayerAthService(
         {
             var inGameEvent = _events
                     .FirstOrDefault(x =>
-                        x.WorldId == worldId && x.DefinitionId == EventDefinitionId.TreasureHuntLeague &&
+                        x.WorldId == worldId && (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
+                            x.DefinitionId == EventDefinitionId.TreasureHunt) &&
                         x.EventId == r.TreasureHuntEventId) ??
                 await context.InGameEvents
                     .FirstOrDefaultAsync(x =>
-                        x.WorldId == worldId && x.DefinitionId == EventDefinitionId.TreasureHuntLeague &&
+                        x.WorldId == worldId && (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
+                            x.DefinitionId == EventDefinitionId.TreasureHunt) &&
                         x.EventId == r.TreasureHuntEventId);
             if (inGameEvent == null)
             {
