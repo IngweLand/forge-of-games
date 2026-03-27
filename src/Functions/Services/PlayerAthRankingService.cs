@@ -22,7 +22,7 @@ public class PlayerAthService(
     IPlayerService playerService,
     ILogger<PlayerAthService> logger) : IPlayerAthService
 {
-    private List<InGameEventEntity> _events = new List<InGameEventEntity>();
+    private readonly List<InGameEventEntity> _events = new();
 
     public async Task RunAsync(IReadOnlyCollection<HeroTreasureHuntPlayerPoints> rankings, string worldId,
         DateTime collectedAt)
@@ -42,15 +42,23 @@ public class PlayerAthService(
         foreach (var r in rankings)
         {
             var inGameEvent = _events
-                    .FirstOrDefault(x =>
-                        x.WorldId == worldId && (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
-                            x.DefinitionId == EventDefinitionId.TreasureHunt) &&
-                        x.EventId == r.TreasureHuntEventId) ??
-                await context.InGameEvents
+                .FirstOrDefault(x =>
+                    x.WorldId == worldId &&
+                    x.DefinitionId is EventDefinitionId.TreasureHuntLeague or EventDefinitionId.TreasureHunt &&
+                    x.EventId == r.TreasureHuntEventId);
+            if (inGameEvent == null)
+            {
+                inGameEvent = await context.InGameEvents
                     .FirstOrDefaultAsync(x =>
                         x.WorldId == worldId && (x.DefinitionId == EventDefinitionId.TreasureHuntLeague ||
                             x.DefinitionId == EventDefinitionId.TreasureHunt) &&
                         x.EventId == r.TreasureHuntEventId);
+                if (inGameEvent != null)
+                {
+                    _events.Add(inGameEvent);
+                }
+            }
+
             if (inGameEvent == null)
             {
                 logger.LogError("In-game event with key {WorldId}:{EventId} not found.", worldId,
