@@ -7,6 +7,8 @@ message HeroFinishWaveRequestDto {
   google.protobuf.BytesValue battle_id = 2;
   repeated WaveResultUnitStatDto unit_stats = 3;
   WaveTimelineDto timeline = 4;
+  bool auto_mode = 6;
+  float battle_speed = 7;
 }
 
 message WaveResultUnitStatDto {
@@ -25,8 +27,20 @@ message WaveTimelineDto {
 
 message WaveTimelineEntryDto {
   int32 time_milliseconds = 1;
+  WaveTimelineRegularStrikeDto regular_strike = 10;
   WaveTimelineAbilityCasterDto ability_caster = 11;
   WaveTimelineAbilityTargetDto ability_target = 12;
+}
+
+message WaveTimelineRegularStrikeDto {
+  WaveTimelineUnitIdentifierDto attacker = 1;
+  RegularStrikeResultDto result = 2;
+}
+
+message RegularStrikeResultDto {
+  WaveTimelineUnitIdentifierDto defender = 1;
+  float hit_points_lost = 2;
+  bool is_critical_hit = 3;
 }
 
 message WaveTimelineAbilityCasterDto {
@@ -41,7 +55,7 @@ message WaveTimelineAbilityTargetDto {
   WaveTimelineUnitIdentifierDto target = 8;
   string u1 = 107;
   WaveTimelineAffectedStatDto unit_stat = 112;
-  int32 result_value = 115;
+  WaveTimelineDurationDto result_value = 115;
 }
 
 message WaveTimelineAffectedStatDto {
@@ -52,4 +66,8 @@ message WaveTimelineAffectedStatDto {
 
 message WaveTimelineUnitIdentifierDto {
   int32 in_battle_id = 1;
+}
+
+message WaveTimelineDurationDto {
+  int32 milliseconds = 1;
 }
