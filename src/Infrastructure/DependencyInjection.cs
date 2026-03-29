@@ -79,32 +79,37 @@ public static class DependencyInjection
 
     private static IServiceCollection AddTableStorage(this IServiceCollection services)
     {
-        services.AddSingleton<ITableStorageRepository<CcProfileTableEntity>>(sp =>
-        {
-            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<CcProfileTableEntity>(options.ConnectionString,
-                options.CommandCenterProfilesTable);
-        });
+        services.AddTableStorage<CcProfileTableEntity>(options => options.CommandCenterProfilesTable);
+        services.AddTableStorage<InGameStartupDataTableEntity>(options => options.HohStartupDataTable);
+        services.AddTableStorage<HohCityTableEntity>(options => options.CityPlannerCitiesTable);
+        services.AddTableStorage<InGameRawDataTableEntity>(options => options.InGameRawDataTable);
 
-        services.AddSingleton<ITableStorageRepository<InGameStartupDataTableEntity>>(sp =>
-        {
-            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<InGameStartupDataTableEntity>(options.ConnectionString,
-                options.HohStartupDataTable);
-        });
+        return services;
+    }
 
-        services.AddSingleton<ITableStorageRepository<HohCityTableEntity>>(sp =>
+    private static IServiceCollection AddTableStorage<TTableEntity>(
+        this IServiceCollection services,
+        Func<StorageSettings, string> tableNameSelector)
+        where TTableEntity : TableEntityBase
+    {
+        services.AddSingleton<ITableStorageRepository<TTableEntity>>(sp =>
         {
             var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<HohCityTableEntity>(options.ConnectionString,
-                options.CityPlannerCitiesTable);
-        });
 
-        services.AddSingleton<ITableStorageRepository<InGameRawDataTableEntity>>(sp =>
-        {
-            var options = sp.GetRequiredService<IOptions<StorageSettings>>().Value;
-            return new TableStorageRepository<InGameRawDataTableEntity>(options.ConnectionString,
-                options.InGameRawDataTable);
+            if (string.IsNullOrWhiteSpace(options.ConnectionString))
+            {
+                throw new InvalidOperationException("Storage connection string is missing.");
+            }
+
+            var tableName = tableNameSelector(options);
+            if (string.IsNullOrWhiteSpace(tableName))
+            {
+                throw new InvalidOperationException($"Table name for {typeof(TTableEntity).Name} is missing.");
+            }
+
+            return new TableStorageRepository<TTableEntity>(
+                options.ConnectionString,
+                tableName);
         });
 
         return services;
