@@ -9,7 +9,6 @@ public class EndpointValidator
         {
             {"game/wakeup", ["alliance", "leaderboards"]},
             {"game/ranking/player", ["leaderboards"]},
-            {"game/pvp/get-ranking", ["leaderboards"]},
             {"game/ranking/alliance", ["leaderboards"]},
             {"game/pvp/get-battle-history", ["pvpBattles"]},
             {"game/battle/hero/stats", ["battleStats"]},
