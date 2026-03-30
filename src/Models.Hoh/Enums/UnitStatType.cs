@@ -62,4 +62,6 @@ public enum UnitStatType
     StunDurationTakenAmp,
     AuraRangeAmp,
     CritHealChance,
+    LightningDamageTakenAmp,
+    LightningDamageAmp,
 }

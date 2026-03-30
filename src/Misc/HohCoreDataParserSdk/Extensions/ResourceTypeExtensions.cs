@@ -34,6 +34,7 @@ public static class ResourceTypeExtensions
             "woa" => ResourceType.Woa,
             "wonder_contribution" => ResourceType.WonderContribution,
             "xp_scroll" => ResourceType.XpScroll,
+            "mock_woa_healing_item" => ResourceType.MockWoaHealingItem,
             _ => throw new Exception($"Cannot map resource type: {value}"),
         };
     }

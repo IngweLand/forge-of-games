@@ -15,6 +15,7 @@ public static class HohUnitExtensions
             UnitType.Siege => "icon_flat_unit_siege",
             UnitType.Gate => "icon_flat_unit_gate",
             UnitType.Spawner => "icon_flat_unit_spawner",
+            UnitType.Ghost => "icon_flat_unit_ghost",
             _ => throw new ArgumentOutOfRangeException(nameof(unitType), unitType, null),
         };
     }

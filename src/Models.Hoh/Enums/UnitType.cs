@@ -14,4 +14,5 @@ public enum UnitType
     Spawner,
     Gate,
     Ally,
+    Ghost,
 }

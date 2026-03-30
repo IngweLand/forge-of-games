@@ -32,4 +32,5 @@ public enum ResourceType
     Woa,
     WonderContribution,
     XpScroll,
+    MockWoaHealingItem,
 }
