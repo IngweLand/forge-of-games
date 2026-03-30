@@ -118,6 +118,7 @@ else
                         case 'assembly':
                         case 'dotnetwasm':
                         case 'pdb':
+                        case 'timezonedata':
                             return `${CDN}${new URL(defaultUri, window.location.origin).pathname}`;
                         default:
                             return null; // everything else from the default location
