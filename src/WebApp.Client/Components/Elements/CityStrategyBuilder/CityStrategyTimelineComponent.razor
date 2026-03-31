@@ -147,7 +147,6 @@
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        Console.Out.WriteLine("OnParametersSet");
         var selected = Items.FirstOrDefault(x => x.Selected);
         if (_selectedItem != selected || Items.Count != _itemsCount)
         {
