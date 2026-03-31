@@ -5,4 +5,5 @@ option csharp_namespace = "Ingweland.Fog.Inn.Models.Hoh";
 enum ExpansionUnlockingType {
   ExpansionUnlockingType_UNDEFINED = 0;
   ExpansionUnlockingType_PREMIUM = 1;
+  ExpansionUnlockingType_CONNECTOR = 2;
 }

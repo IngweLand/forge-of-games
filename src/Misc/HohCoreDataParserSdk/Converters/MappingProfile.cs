@@ -118,6 +118,16 @@ public class MappingProfile : Profile
                 src.ModifierByAgeDefinitionId.ToDictionary(x => HohStringParser.GetConcreteId(x.Key), x => x.Value)
             );
         CreateMap<WorkerBehaviourDTO, WorkerBehaviour>();
+        CreateMap<ExpansionCostsDTO, ExpansionCosts>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => HohStringParser.GetConcreteId(src.Id)))
+            .ForMember(dest => dest.CityId, opt => opt.ConvertUsing(new CityIdValueConverter(), src => src.CityId))
+            .ForMember(dest => dest.UnlockingType, opt => opt.MapFrom(src => src.UnlockingType))
+            .ForMember(dest => dest.ExpansionId, opt =>
+            {
+                opt.PreCondition(src => !string.IsNullOrWhiteSpace(src.ExpansionId));
+                opt.MapFrom(src => HohStringParser.GetConcreteId(src.ExpansionId));
+            })
+            .ForMember(dest => dest.Components, opt => opt.MapFrom(bd => bd.PackedComponents));
 
         // components
         CreateMap<UpgradeComponentDTO, UpgradeComponent>()

@@ -34,7 +34,7 @@
             </div>
             <div class="toolbar-divider"></div>
             <div>
-                <MudToggleIconButton Icon="material-symbols-outlined/shelves" ToggledColor="Color.Error"
+                <MudToggleIconButton Icon="material-symbols-outlined/shelves" ToggledColor="Color.Warning"
                                      @bind-Toggled="_inventoryIsActive" Color="Color.Inherit"/>
                 <MudIconButton
                     Icon="@(CityPlanner.CityMapState.SelectedCityMapEntities != null ? "material-symbols-outlined/stat_minus_2" : "material-symbols-outlined/stat_minus_1")"
@@ -49,6 +49,8 @@
                                Disabled="@(!_inventoryIsActive || CityPlanner.CityMapState.InventoryBuildings.Count == 0)"/>
             </div>
             <div class="toolbar-divider"></div>
+            <MudToggleIconButton Icon="material-symbols-outlined/open_run" ToggledColor="Color.Warning"
+                                 @bind-Toggled="_extendedExpansionModeIsActive" Color="Color.Inherit"/>
             <MudIconButton Icon="@Icons.Material.Outlined.Image" OnClick="@OnSaveImage" Color="Color.Inherit"/>
             <MudSpacer/>
             <MudToggleIconButton Icon="material-symbols-outlined/right_panel_open"

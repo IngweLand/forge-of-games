@@ -1,11 +1,12 @@
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Hoh.Entities.City;
-using Ingweland.Fog.Models.Hoh.Enums;
 using ProtoBuf;
 
 namespace Ingweland.Fog.Dtos.Hoh.CityPlanner;
 
 [ProtoContract]
+[ProtoReserved(2, "Obsolete")]
+[ProtoReserved(4, 6, "Obsolete")]
 public class CityPlannerDataDto
 {
     [ProtoMember(1)]
@@ -29,4 +30,7 @@ public class CityPlannerDataDto
     
     [ProtoMember(11)]
     public required CityDefinition City { get; set; }
+    
+    [ProtoMember(12)]
+    public required IReadOnlyCollection<ExpansionCosts> ExpansionCosts { get; init; } = new List<ExpansionCosts>();
 }

@@ -35,7 +35,11 @@ public class CityMapStateCore(IMapArea mapArea)
     public IReadOnlyList<CityMapEntity> HappinessConsumers => _happinessConsumers.AsReadOnly();
     public IReadOnlyList<CityMapEntity> HappinessProviders => _happinessProviders.AsReadOnly();
     public IEnumerable<CityMapExpansion> OpenExpansions => mapArea.OpenExpansions;
-    public int PremiumExpansionCount { get; init; }
+
+    public required IReadOnlyCollection<int> PremiumExpansionCosts { get; init; }
+
+    public IReadOnlyCollection<CityMapExpansion> PremiumExpansions =>
+        mapArea.OpenExpansions.Where(x => x.UnlockingType == ExpansionUnlockingType.Premium).ToList();
 
     public IReadOnlyDictionary<BuildingType, IList<CityMapEntity>> TypedEntities => _typedEntities.AsReadOnly();
 

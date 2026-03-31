@@ -4,7 +4,6 @@ using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.CityPlanner.Stats;
-using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
 using Ingweland.Fog.Models.Hoh.Enums;
@@ -12,13 +11,14 @@ using Ingweland.Fog.Models.Hoh.Enums;
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
 public class CityMapState(
-    IBuildingLevelRangesFactory buildingLevelRangesFactory, IMapArea mapArea) : CityMapStateCore(mapArea)
+    IBuildingLevelRangesFactory buildingLevelRangesFactory,
+    IMapArea mapArea) : CityMapStateCore(mapArea)
 {
+    private readonly IReadOnlyCollection<BuildingSelectorTypesViewModel> _buildingSelectorItems = [];
     private readonly List<CityMapEntity> _inventoryBuildings = [];
     private readonly IList<HohCitySnapshot> _snapshots = new List<HohCitySnapshot>();
 
     private IReadOnlyDictionary<BuildingGroup, BuildingLevelRange>? _buildingLevelRanges;
-    private readonly IReadOnlyCollection<BuildingSelectorTypesViewModel> _buildingSelectorItems = [];
 
     private CityPlannerCityPropertiesViewModel? _cityPropertiesViewModel;
 
@@ -185,7 +185,7 @@ public class CityMapState(
         _flattenedBuildingSelectorItems[entity.BuildingGroup].Count++;
         StateChanged?.Invoke();
     }
-    
+
     public void AddToInventory(IEnumerable<CityMapEntity> entities)
     {
         foreach (var entity in entities)
@@ -193,10 +193,10 @@ public class CityMapState(
             _inventoryBuildings.Add(entity);
             _flattenedBuildingSelectorItems[entity.BuildingGroup].Count++;
         }
-        
+
         StateChanged?.Invoke();
     }
-    
+
     public CityMapEntity? RemoveFromInventory(int entityId)
     {
         var entity = _inventoryBuildings.FirstOrDefault(e => e.Id == entityId);
@@ -204,12 +204,13 @@ public class CityMapState(
         {
             return null;
         }
+
         _inventoryBuildings.Remove(entity);
         _flattenedBuildingSelectorItems[entity.BuildingGroup].Count--;
         StateChanged?.Invoke();
         return entity;
     }
-    
+
     public void PurgeInventory()
     {
         _inventoryBuildings.Clear();
@@ -217,7 +218,8 @@ public class CityMapState(
         {
             item.Count = 0;
         }
-        StateChanged?.Invoke();   
+
+        StateChanged?.Invoke();
     }
 
     public event Action? StateChanged;

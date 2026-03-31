@@ -37,8 +37,9 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
         IEnumerable<CityMapEntity> entities, IEnumerable<CityMapEntity> inventoryBuildings,
-        IReadOnlyCollection<HohCitySnapshot> snapshots, IEnumerable<string> expansions, int cityPlannerVersion,
-        WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
+        IReadOnlyCollection<HohCitySnapshot> snapshots, IEnumerable<string> expansions,
+        IEnumerable<string> premiumExpansions, int cityPlannerVersion, WonderId cityWonderId = WonderId.Undefined,
+        int cityWonderLevel = 0)
     {
         return new HohCity
         {
@@ -54,12 +55,14 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
             WonderLevel = cityWonderLevel,
             UpdatedAt = DateTime.Now.ToLocalTime(),
             CityPlannerVersion = cityPlannerVersion,
+            UnlockedPremiumExpansions = premiumExpansions.ToHashSet(),
         };
     }
 
     public HohCity Create(string id, CityId inGameCityId, string ageId, string name,
-        IReadOnlyCollection<HohCityMapEntity> entities, HashSet<string> expansions, int cityPlannerVersion,
-        WonderId cityWonderId = WonderId.Undefined, int cityWonderLevel = 0)
+        IReadOnlyCollection<HohCityMapEntity> entities, HashSet<string> expansions,
+        IEnumerable<string> premiumExpansions, int cityPlannerVersion, WonderId cityWonderId = WonderId.Undefined,
+        int cityWonderLevel = 0)
     {
         return new HohCity
         {
@@ -75,6 +78,7 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
             WonderLevel = cityWonderLevel,
             UpdatedAt = DateTime.Now.ToLocalTime(),
             CityPlannerVersion = cityPlannerVersion,
+            UnlockedPremiumExpansions = premiumExpansions.ToHashSet(),
         };
     }
 
@@ -109,7 +113,8 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
             WonderLevel = wonderLevel,
             UpdatedAt = DateTime.UtcNow,
             UnlockedExpansions = inGameCity.OpenedExpansions.Select(src => src.Id).ToHashSet(),
-            PremiumExpansionCount = GetPremiumExpansionCount(inGameCity),
+            UnlockedPremiumExpansions = inGameCity.OpenedExpansions
+                .Where(x => x.UnlockingType == ExpansionUnlockingType.Premium).Select(src => src.Id).ToHashSet(),
         };
     }
 
@@ -123,11 +128,6 @@ public class HohCityFactory(IMapper mapper, InitCityConfigs initCityConfigs, IHo
     {
         var wonder = inGameCity.Wonders.FirstOrDefault();
         return Create(inGameCity, buildings, wonder?.Id ?? WonderId.Undefined, wonder?.Level ?? 0);
-    }
-
-    private int GetPremiumExpansionCount(City city)
-    {
-        return city.OpenedExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
     }
 
     private static string GetInitEntitiesKey(CityId cityId, WonderId wonderId)

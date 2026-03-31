@@ -1,17 +1,12 @@
-using AutoMapper;
 using Ingweland.Fog.Application.Client.Web.CityPlanner.Abstractions;
-using Ingweland.Fog.Application.Client.Web.Factories;
 using Ingweland.Fog.Application.Client.Web.Factories.Interfaces;
-using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh;
 using Ingweland.Fog.Application.Client.Web.ViewModels.Hoh.City;
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 using Ingweland.Fog.Application.Core.Extensions;
-using Ingweland.Fog.Application.Core.Factories.Interfaces;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
-using Ingweland.Fog.Models.Hoh.Enums;
-using Microsoft.Extensions.Logging;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
@@ -26,7 +21,8 @@ public class CityMapStateFactory(
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
         IMapArea mapArea,
-        WonderDto? wonder)
+        WonderDto? wonder,
+        IReadOnlyCollection<ExpansionCosts> expansionCosts)
     {
         var buildingDictionary = buildings.ToDictionary(b => b.Id);
         var age = ages.First(a => a.Id == city.AgeId);
@@ -42,7 +38,7 @@ public class CityMapStateFactory(
             Snapshots = city.Snapshots,
             CityWonder = wonder,
             CityWonderLevel = city.WonderLevel,
-            PremiumExpansionCount = city.PremiumExpansionCount,
+            PremiumExpansionCosts = expansionCosts.ToPremiumExpansionCosts(),
         };
         state.AddRange(city.Entities.Select(hohCityMapEntity =>
         {

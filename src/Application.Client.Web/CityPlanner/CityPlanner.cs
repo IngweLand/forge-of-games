@@ -73,7 +73,7 @@ public class CityPlanner(
             city.Entities = snapshot.Entities;
             var state = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
                 PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city, _mapArea,
-                cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
+                cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId), cityPlannerData.ExpansionCosts);
             var statsProcessor = cityStatsProcessorFactory.Create(state,
                 cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
 
@@ -466,7 +466,7 @@ public class CityPlanner(
         }
     }
 
-    public bool TryToggleExpansion(Point coordinates)
+    public bool TryToggleExpansion(Point coordinates, bool useExtendedExpansionMode = false)
     {
         var expansion = _mapArea.GetExpansion(coordinates);
 
@@ -478,7 +478,40 @@ public class CityPlanner(
             }
             else
             {
-                expansion.IsLocked = !expansion.IsLocked;
+                if (!useExtendedExpansionMode)
+                {
+                    expansion.IsLocked = !expansion.IsLocked;
+                    expansion.UnlockingType = ExpansionUnlockingType.Undefined;
+                }
+                else
+                {
+                    if (expansion.IsLocked)
+                    {
+                        expansion.IsLocked = false;
+                        expansion.UnlockingType = ExpansionUnlockingType.Undefined;
+                    }
+                    else if (expansion.UnlockingType == ExpansionUnlockingType.Premium)
+                    {
+                        expansion.IsLocked = true;
+                        expansion.UnlockingType = ExpansionUnlockingType.Undefined;
+                    }
+                    else
+                    {
+                        var unlockedPremiumExpansionCount =
+                            _mapArea.OpenExpansions.Count(x => x.UnlockingType == ExpansionUnlockingType.Premium);
+                        if (unlockedPremiumExpansionCount < CityMapState.PremiumExpansionCosts.Count)
+                        {
+                            expansion.IsLocked = false;
+                            expansion.UnlockingType = ExpansionUnlockingType.Premium;
+                        }
+                        else
+                        {
+                            expansion.IsLocked = true;
+                            expansion.UnlockingType = ExpansionUnlockingType.Undefined;
+                        }
+                    }
+                }
+
                 foreach (var cityMapEntity in CityMapState.CityMapEntities.Values)
                 {
                     cityMapEntity.ExcludeFromStats = _mapArea.IntersectsWithLocked(cityMapEntity.Bounds);
@@ -524,7 +557,9 @@ public class CityPlanner(
         return hohCityFactory.Create(CityMapState.CityId, CityMapState.InGameCityId, CityMapState.CityAge.Id,
             CityMapState.CityName, CityMapState.CityMapEntities.Values, CityMapState.InventoryBuildings,
             CityMapState.Snapshots,
-            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id), FogConstants.CITY_PLANNER_VERSION,
+            _mapArea.UsableExpansions.Where(e => !e.IsLocked).Select(e => e.Id),
+            CityMapState.PremiumExpansions.Select(e => e.Id),
+            FogConstants.CITY_PLANNER_VERSION,
             CityMapState.CityWonder?.Id ?? WonderId.Undefined, CityMapState.CityWonderLevel);
     }
 
@@ -613,12 +648,13 @@ public class CityPlanner(
 
         commandManager.Reset();
         _mapArea = mapAreaFactory.Create(cityPlannerData.City.InitConfigs.Grid.ExpansionSize,
-            cityPlannerData.Expansions, city.UnlockedExpansions,
+            cityPlannerData.Expansions, city.UnlockedExpansions, city.UnlockedPremiumExpansions,
             cityPlannerData.City.Components.OfType<CityCultureAreaComponent>());
         CityMapState = cityMapStateFactory.Create(cityPlannerData.Buildings, cityPlannerData.BuildingCustomizations,
             PrepareBuildingSelectorItems(cityPlannerData), cityPlannerData.Ages, city, _mapArea,
-            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId));
+            cityPlannerData.Wonders.FirstOrDefault(src => src.Id == city.WonderId), cityPlannerData.ExpansionCosts);
         _mapAreaRenderer = mapAreaRendererFactory.Create(_mapArea);
+        await _mapAreaRenderer.InitializeAsync();
         var lockedMapEntities = CityMapState.CityMapEntities.Values.Where(e => _mapArea.IntersectsWithLocked(e.Bounds))
             .ToList();
         foreach (var lockedMapEntity in lockedMapEntities)

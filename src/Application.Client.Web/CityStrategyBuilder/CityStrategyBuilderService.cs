@@ -303,7 +303,8 @@ public class CityStrategyBuilderService(
     public HohCity CreateCity(CityStrategyLayoutTimelineItem item)
     {
         return hohCityFactory.Create(item.Id, Strategy.InGameCityId, item.AgeId, item.Title, item.Entities,
-            item.UnlockedExpansions, Strategy.CityPlannerVersion, Strategy.WonderId, item.WonderLevel);
+            item.UnlockedExpansions, item.UnlockedPremiumExpansions, Strategy.CityPlannerVersion, Strategy.WonderId,
+            item.WonderLevel);
     }
 
     public Result<byte[]> GenerateCurrentLayoutItemImage()
@@ -330,13 +331,20 @@ public class CityStrategyBuilderService(
                          x.Type == CityStrategyTimelineItemType.Layout))
             {
                 var expansions = new HashSet<string>();
+                var premiumExpansions = new HashSet<string>();
                 foreach (var unlockedExpansion in li.UnlockedExpansions)
                 {
                     var i = unlockedExpansion.LastIndexOf('_');
-                    expansions.Add($"Expansion_{newWonder}_{unlockedExpansion[(i + 1)..]}");
+                    var newExpansionId = $"Expansion_{newWonder}_{unlockedExpansion[(i + 1)..]}";
+                    expansions.Add(newExpansionId);
+                    if (li.UnlockedPremiumExpansions.Contains(unlockedExpansion))
+                    {
+                        premiumExpansions.Add(newExpansionId);
+                    }
                 }
 
                 li.UnlockedExpansions = expansions;
+                li.UnlockedPremiumExpansions = premiumExpansions;
             }
         }
 
@@ -354,6 +362,7 @@ public class CityStrategyBuilderService(
         {
             await InitializeLayout((CityStrategyLayoutTimelineItem) SelectedTimelineItem);
         }
+
         await Save();
     }
 
@@ -578,6 +587,7 @@ public class CityStrategyBuilderService(
         li.WonderLevel = city.WonderLevel;
         li.Entities = city.Entities;
         li.UnlockedExpansions = city.UnlockedExpansions;
+        li.UnlockedPremiumExpansions = city.UnlockedPremiumExpansions;
     }
 
     private CityStrategyResearchTimelineItem UpdateOpenedTechnologies(CityStrategyResearchTimelineItem item)

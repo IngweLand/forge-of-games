@@ -19,4 +19,7 @@ public class CityStrategyLayoutTimelineItem : CityStrategyTimelineItemBase
 
     [ProtoMember(4)]
     public int WonderLevel { get; set; }
+    
+    [ProtoMember(5)]
+    public HashSet<string> UnlockedPremiumExpansions { get; set; } = new();
 }

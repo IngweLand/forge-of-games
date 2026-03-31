@@ -138,6 +138,12 @@ public class HohCoreDataRepository(IHohDataProvider dataProvider) : IHohCoreData
         return data.Buildings.Where(b => b.CityIds.Contains(cityId)).ToList();
     }
 
+    public async Task<IReadOnlyCollection<ExpansionCosts>> GetExpansionCosts(CityId cityId)
+    {
+        var data = await dataProvider.GetDataAsync();
+        return data.ExpansionCosts.Where(x => x.CityId == cityId).ToList();
+    }
+
     public async Task<IReadOnlyCollection<Technology>> GetTechnologiesAsync(CityId cityId)
     {
         var data = await dataProvider.GetDataAsync();

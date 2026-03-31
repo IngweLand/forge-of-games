@@ -65,7 +65,7 @@ public class EventCityStrategyFactory(
                 }
 
                 lastCity = cityResult.Value;
-                hasPremiumExpansions = hasPremiumExpansions || cityResult.Value.PremiumExpansionCount > 0;
+                hasPremiumExpansions = hasPremiumExpansions || cityResult.Value.UnlockedPremiumExpansions.Count > 0;
             }
 
             context.EventCityStrategies.Add(new EventCityStrategy
@@ -115,6 +115,7 @@ public class EventCityStrategyFactory(
             Title = title,
             AgeId = city.AgeId,
             UnlockedExpansions = city.UnlockedExpansions,
+            UnlockedPremiumExpansions = city.UnlockedPremiumExpansions,
             WonderLevel = city.WonderLevel,
             Entities = city.Entities,
         };
@@ -136,7 +137,7 @@ public class EventCityStrategyFactory(
 
             if (x.WonderId != y.WonderId ||
                 x.WonderLevel != y.WonderLevel ||
-                x.PremiumExpansionCount != y.PremiumExpansionCount)
+                x.UnlockedPremiumExpansions.Count != y.UnlockedPremiumExpansions.Count)
             {
                 return false;
             }
@@ -166,7 +167,7 @@ public class EventCityStrategyFactory(
             var hash = new HashCode();
             hash.Add(obj.WonderId);
             hash.Add(obj.WonderLevel);
-            hash.Add(obj.PremiumExpansionCount);
+            hash.Add(obj.UnlockedPremiumExpansions.Count);
             hash.Add(obj.Entities.Count);
             return hash.ToHashCode();
         }

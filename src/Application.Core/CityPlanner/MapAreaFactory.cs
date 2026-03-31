@@ -8,9 +8,10 @@ namespace Ingweland.Fog.Application.Core.CityPlanner;
 public class MapAreaFactory(IMapper mapper) : IMapAreaFactory
 {
     public MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions,
-        HashSet<string> unlockedExpansions, IEnumerable<CityCultureAreaComponent> mapAreaHappinessProviders)
+        HashSet<string> unlockedExpansions, HashSet<string> unlockedPremiumExpansions,
+        IEnumerable<CityCultureAreaComponent> mapAreaHappinessProviders)
     {
-        return new MapArea(expansionSize, expansions, unlockedExpansions,
+        return new MapArea(expansionSize, expansions, unlockedExpansions, unlockedPremiumExpansions,
             mapper.Map<IReadOnlyCollection<MapAreaHappinessProvider>>(mapAreaHappinessProviders));
     }
 }

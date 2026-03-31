@@ -4,4 +4,5 @@ public enum ExpansionUnlockingType
 {
     Undefined = 0,
     Premium = 1,
+    Connector = 2,
 }

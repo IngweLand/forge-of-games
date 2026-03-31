@@ -25,8 +25,8 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityPlanner;
 public partial class CityPlannerComponent : ComponentBase, IDisposable
 {
     private Size _canvasSize = Size.Empty;
+    private bool _extendedExpansionModeIsActive;
     private bool _fitOnPaint = true;
-
     private bool _inventoryIsActive;
     private bool _isInitialized;
     private bool _leftPanelIsVisible = true;
@@ -222,7 +222,8 @@ public partial class CityPlannerComponent : ComponentBase, IDisposable
 
     private Task InteractiveCanvasOnPointerUp(PointerEventArgs args)
     {
-        if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY))
+        if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY,
+                _extendedExpansionModeIsActive))
         {
             _skComponent?.SkCanvasView!.Invalidate();
         }

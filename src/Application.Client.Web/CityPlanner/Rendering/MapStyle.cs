@@ -98,4 +98,12 @@ public class MapStyle
         IsAntialias = false,
         Style = SKPaintStyle.Fill,
     };
+
+    public SKPaint PremiumExpansionGridLinePaint { get; } = new()
+    {
+        Color = SKColor.Parse("#C9F2DF"),
+        IsAntialias = true,
+        Style = SKPaintStyle.Stroke,
+        StrokeWidth = 1,
+    };
 }

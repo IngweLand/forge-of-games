@@ -106,6 +106,18 @@ public class GameDesignDataParser(
         return buildings;
     }
 
+    private static IList<ExpansionCosts> CreateExpansionCosts(IMapper mapper, GameDesignResponse gdr)
+    {
+        return mapper.Map<IList<ExpansionCosts>>(gdr.ExpansionCosts, opt =>
+        {
+            opt.Items.Add(ContextKeys.HERO_BUILDING_BOOST_COMPONENTS,
+                gdr.HeroBuildingBoostComponents.ToDictionary(hbbc => hbbc.Id));
+            opt.Items.Add(ContextKeys.HERO_ABILITY_TRAINING_COMPONENTS,
+                gdr.HeroAbilityTrainingComponents.ToDictionary(hatc => hatc.Id));
+            opt.Items.Add(ContextKeys.DYNAMIC_FLOAT_VALUE_DEFINITIONS, gdr.DynamicFloatValueDefinitions);
+        });
+    }
+
     private static IList<CityDefinition> CreateCities(IMapper mapper, GameDesignResponse gdr)
     {
         return mapper.Map<IList<CityDefinition>>(gdr.CityDefinitions, opt =>
@@ -299,6 +311,7 @@ public class GameDesignDataParser(
                 Type = kvp.Value.Type,
             })
             .ToList();
+        var expansionCosts = CreateExpansionCosts(mapper, gdr);
         var data = new Data
         {
             Worlds = worlds.AsReadOnly(),
@@ -332,6 +345,7 @@ public class GameDesignDataParser(
             {
                 [RegionId.AncientEgyptDungeon] = anubisAwakeningEncounters.AsReadOnly(),
             },
+            ExpansionCosts = expansionCosts.AsReadOnly(),
         };
 
         return data;

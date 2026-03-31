@@ -68,6 +68,7 @@ public class CityStrategyFactory(IHohCityFactory cityFactory, IStringLocalizer<F
             Title = loc[FogResource.CityStrategy_TimelineLayoutItem_DefaultTitle],
             AgeId = city.AgeId,
             UnlockedExpansions = city.UnlockedExpansions,
+            UnlockedPremiumExpansions = city.UnlockedPremiumExpansions,
             WonderLevel = city.WonderLevel,
             Entities = city.Entities,
         };

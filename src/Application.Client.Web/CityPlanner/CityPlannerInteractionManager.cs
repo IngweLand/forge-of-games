@@ -33,7 +33,7 @@ public class CityPlannerInteractionManager(
         _canBeTapEvent = true;
     }
 
-    public bool OnPointerUp(float x, float y)
+    public bool OnPointerUp(float x, float y, bool useExtendedExpansionMode)
     {
         if (!_shouldProcessPointerUp)
         {
@@ -54,7 +54,7 @@ public class CityPlannerInteractionManager(
             _canBeTapEvent = false;
             var location = grid.ScreenToGrid(transformationComponent.GetTransformedCoordinates(x, y));
             var consumed = cityPlanner.TrySelectCityMapEntity(location);
-            return consumed || cityPlanner.TryToggleExpansion(location);
+            return consumed || cityPlanner.TryToggleExpansion(location, useExtendedExpansionMode);
         }
 
         _canBeTapEvent = false;

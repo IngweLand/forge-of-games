@@ -46,7 +46,7 @@ public interface ICityPlanner
     void UpdateProduct(string productId);
     Task DeleteCityAsync();
 
-    bool TryToggleExpansion(Point coordinates);
+    bool TryToggleExpansion(Point coordinates, bool useExtendedExpansionMode = false);
     void UpdateWonderLevel(int level);
 
     HohCity GetCity();

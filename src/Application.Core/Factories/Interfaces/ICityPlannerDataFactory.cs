@@ -9,5 +9,6 @@ public interface ICityPlannerDataFactory
 {
     CityPlannerDataDto Create(CityDefinition cityDefinition, IReadOnlyCollection<Expansion> expansions,
         IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations,
-        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders);
+        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders,
+        IReadOnlyCollection<ExpansionCosts> expansionCosts);
 }

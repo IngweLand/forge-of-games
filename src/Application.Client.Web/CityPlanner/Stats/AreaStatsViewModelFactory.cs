@@ -51,12 +51,18 @@ public class AreaStatsViewModelFactory(
         }
 
         IconLabelItemViewModel? premiumExpansions = null;
+        IconLabelItemViewModel? premiumExpansionCost = null;
         if (stats.PremiumExpansionCount > 0)
         {
             premiumExpansions = new IconLabelItemViewModel
             {
                 Label = stats.PremiumExpansionCount.ToString("N0"),
                 IconUrl = assetUrlProvider.GetHohIconUrl("icon_flat_expansion"),
+            };
+            premiumExpansionCost = new IconLabelItemViewModel
+            {
+                Label = stats.PremiumExpansionCost.ToString("N0"),
+                IconUrl = assetUrlProvider.GetHohIconUrl("icon_premium"),
             };
         }
 
@@ -66,6 +72,7 @@ public class AreaStatsViewModelFactory(
             AreasByGroup = areasByGroup,
             TotalArea = stats.TotalArea.ToString(CultureInfo.InvariantCulture),
             PremiumExpansionCount = premiumExpansions,
+            PremiumExpansionCost = premiumExpansionCost,
         };
     }
 }

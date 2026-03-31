@@ -5,5 +5,5 @@ namespace Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
 public interface IMapAreaFactory
 {
     MapArea Create(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions,
-        IEnumerable<CityCultureAreaComponent> mapAreaHappinessProviders);
+        HashSet<string> unlockedPremiumExpansions, IEnumerable<CityCultureAreaComponent> mapAreaHappinessProviders);
 }

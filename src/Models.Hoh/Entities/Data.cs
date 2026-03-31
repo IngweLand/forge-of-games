@@ -84,4 +84,7 @@ public class Data
         get;
         init;
     }
+    
+    [ProtoMember(27)]
+    public required IReadOnlyCollection<ExpansionCosts> ExpansionCosts { get; init; }
 }

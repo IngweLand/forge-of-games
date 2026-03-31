@@ -23,6 +23,7 @@ namespace Ingweland.Fog.WebApp.Client.Components.Elements.CityStrategyBuilder;
 public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
 {
     private Size _canvasSize = Size.Empty;
+    private bool _extendedExpansionModeIsActive;
     private bool _fitOnPaint = true;
     private bool _isInitialized;
     private bool _leftPanelIsVisible = true;
@@ -186,7 +187,8 @@ public partial class CityStrategyBuilderComponent : ComponentBase, IDisposable
             return Task.CompletedTask;
         }
 
-        if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY))
+        if (CityPlannerInteractionManager.OnPointerUp((float) args.OffsetX, (float) args.OffsetY,
+                _extendedExpansionModeIsActive))
         {
             _skComponent?.SkCanvasView.Invalidate();
         }

@@ -16,6 +16,7 @@ public class MapArea : IMapArea
     private IList<Rectangle> _lockedBounds;
 
     public MapArea(int expansionSize, IReadOnlyCollection<Expansion> expansions, HashSet<string> unlockedExpansions,
+        HashSet<string> unlockedPremiumExpansions,
         IReadOnlyCollection<MapAreaHappinessProvider> mapAreaHappinessProviders)
     {
         ExpansionSize = expansionSize;
@@ -33,6 +34,11 @@ public class MapArea : IMapArea
             {
                 expansion.IsLocked = true;
             }
+        }
+
+        foreach (var expansion in UsableExpansions.Where(e => unlockedPremiumExpansions.Contains(e.Id)))
+        {
+            expansion.UnlockingType = ExpansionUnlockingType.Premium;
         }
 
         var openExpansions = expansions.Where(e => e.Type == ExpansionType.Undefined).ToList();

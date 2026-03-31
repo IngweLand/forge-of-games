@@ -24,10 +24,11 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
     static ExpansionUnlockingTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Ch5leHBhbnNpb25fdW5sb2NraW5nX3R5cGUucHJvdG8qYgoWRXhwYW5zaW9u",
-            "VW5sb2NraW5nVHlwZRIkCiBFeHBhbnNpb25VbmxvY2tpbmdUeXBlX1VOREVG",
-            "SU5FRBAAEiIKHkV4cGFuc2lvblVubG9ja2luZ1R5cGVfUFJFTUlVTRABQh+q",
-            "AhxJbmd3ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
+            "Ch5leHBhbnNpb25fdW5sb2NraW5nX3R5cGUucHJvdG8qiAEKFkV4cGFuc2lv",
+            "blVubG9ja2luZ1R5cGUSJAogRXhwYW5zaW9uVW5sb2NraW5nVHlwZV9VTkRF",
+            "RklORUQQABIiCh5FeHBhbnNpb25VbmxvY2tpbmdUeXBlX1BSRU1JVU0QARIk",
+            "CiBFeHBhbnNpb25VbmxvY2tpbmdUeXBlX0NPTk5FQ1RPUhACQh+qAhxJbmd3",
+            "ZWxhbmQuRm9nLklubi5Nb2RlbHMuSG9oYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Ingweland.Fog.Inn.Models.Hoh.ExpansionUnlockingType), }, null, null));
@@ -39,6 +40,7 @@ namespace Ingweland.Fog.Inn.Models.Hoh {
   public enum ExpansionUnlockingType {
     [pbr::OriginalName("ExpansionUnlockingType_UNDEFINED")] Undefined = 0,
     [pbr::OriginalName("ExpansionUnlockingType_PREMIUM")] Premium = 1,
+    [pbr::OriginalName("ExpansionUnlockingType_CONNECTOR")] Connector = 2,
   }
 
   #endregion

@@ -18,7 +18,8 @@ public class CityPlannerDataFactory(
 {
     public CityPlannerDataDto Create(CityDefinition cityDefinition, IReadOnlyCollection<Expansion> expansions,
         IReadOnlyCollection<BuildingDto> buildings, IEnumerable<BuildingCustomization> customizations,
-        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders)
+        IReadOnlyCollection<Age> ages, IReadOnlyCollection<Wonder> wonders,
+        IReadOnlyCollection<ExpansionCosts> expansionCosts)
     {
         var wonderIds = cityDefinition.Id.GetWonders();
         return new CityPlannerDataDto
@@ -30,6 +31,7 @@ public class CityPlannerDataFactory(
             Ages = mapper.Map<IReadOnlyList<AgeDto>>(ages),
             Wonders = wonders.Where(w => wonderIds.Contains(w.Id)).Select(wonderDtoFactory.Create).ToList(),
             NewCityDialogItems = CreateDialogItems(wonders),
+            ExpansionCosts = expansionCosts,
         };
     }
 

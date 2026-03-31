@@ -4,26 +4,28 @@ using Ingweland.Fog.Application.Core.CityPlanner;
 using Ingweland.Fog.Models.Hoh.Entities.City;
 using Ingweland.Fog.Models.Hoh.Enums;
 using SkiaSharp;
+using CityMapExpansion = Ingweland.Fog.Application.Core.CityPlanner.CityMapExpansion;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner.Rendering;
 
 public class MapAreaRenderer
 {
+    private readonly List<LayerItem> _bottomLayerItems;
     private readonly IMapGrid _grid;
+    private readonly IconRenderer _iconRenderer = new();
+    private readonly Task _initializationTask;
     private readonly MapArea _mapArea;
     private readonly MapStyle _mapStyle;
-    private List<LayerItem> _bottomLayerItems;
+    private readonly IProductionRenderer _productionRenderer;
+    private readonly List<LayerItem> _topLayerItems;
     private IList<Tuple<SKPoint, SKPoint>>? _gridLines;
-    private List<LayerItem> _topLayerItems;
-    private IconRenderer _iconRenderer = new();
 
-    public MapAreaRenderer(MapArea mapArea, IMapGrid grid, MapStyle mapStyle)
+    public MapAreaRenderer(MapArea mapArea, IMapGrid grid, MapStyle mapStyle, IProductionRenderer productionRenderer)
     {
         _mapArea = mapArea;
         _grid = grid;
         _mapStyle = mapStyle;
-
-        
+        _productionRenderer = productionRenderer;
 
         var bottomLayerExpansions = mapArea.Expansions
             .Where(e => e.Type is ExpansionType.Undefined or ExpansionType.Linked).ToList();
@@ -35,16 +37,18 @@ public class MapAreaRenderer
         Bounds = grid.GridToScreen(new Rectangle(_mapArea.Bounds.X, _mapArea.Bounds.Y,
             _mapArea.Bounds.Width,
             _mapArea.Bounds.Height));
+
+        _initializationTask = InitializeInternalAsync();
     }
 
     public Rectangle Bounds { get; }
 
     private List<LayerItem> CreateHappinessTiles()
     {
-        return _mapArea.MapAreaHappinessProviders.Select(src => new LayerItem()
+        return _mapArea.MapAreaHappinessProviders.Select(src => new LayerItem
         {
             Rect = _grid.GridToScreen(src.Bounds).ToSKRect(),
-            Paint = _mapStyle.HappinessPaint
+            Paint = _mapStyle.HappinessPaint,
         }).ToList();
     }
 
@@ -71,6 +75,16 @@ public class MapAreaRenderer
         }
     }
 
+    public Task InitializeAsync()
+    {
+        return _initializationTask;
+    }
+
+    private async Task InitializeInternalAsync()
+    {
+        await _productionRenderer.InitializeAsync();
+    }
+
     public void Render(SKCanvas canvas)
     {
         canvas.Clear(_mapStyle.BackgroundColor);
@@ -93,26 +107,29 @@ public class MapAreaRenderer
             canvas.DrawRect(layerItem.Rect, layerItem.Paint);
         }
 
-        DrawExpansionIcons(canvas);
+        var premiumExpansions = _mapArea.OpenExpansions.Where(x => x.UnlockingType == ExpansionUnlockingType.Premium)
+            .ToList();
+        DrawPremiumExpansionGridLines(canvas, premiumExpansions);
+        DrawExpansionIcons(canvas, premiumExpansions);
     }
 
     private LayerItem CreateLayerItem(Expansion expansion)
     {
-        return new LayerItem()
+        return new LayerItem
         {
             Rect = _grid.GridToScreen(new Rectangle(expansion.X, expansion.Y,
                 _mapArea.ExpansionSize,
                 _mapArea.ExpansionSize)).ToSKRect(),
-            Paint = GetPaint(expansion)
+            Paint = GetPaint(expansion),
         };
     }
 
     private LayerItem CreateLockedLayerItem(Rectangle bounds)
     {
-        return new LayerItem()
+        return new LayerItem
         {
             Rect = _grid.GridToScreen(bounds).ToSKRect(),
-            Paint = _mapStyle.LockedExpansionPaint
+            Paint = _mapStyle.LockedExpansionPaint,
         };
     }
 
@@ -125,12 +142,18 @@ public class MapAreaRenderer
         }
     }
 
-    private void DrawExpansionIcons(SKCanvas canvas)
+    private void DrawExpansionIcons(SKCanvas canvas, IReadOnlyCollection<CityMapExpansion> premiumExpansions)
     {
         foreach (var expansion in _mapArea.LockedExpansions)
         {
             var rect = _grid.GridToScreen(expansion.Bounds).ToSKRect();
             _iconRenderer.DrawLockIcon(canvas, rect, IconRenderer.Icon.Lock, _mapStyle.MapExpansionIconPaint);
+        }
+
+        foreach (var expansion in premiumExpansions)
+        {
+            var rect = _grid.GridToScreen(expansion.Bounds).ToSKRect();
+            _productionRenderer.Draw(canvas, rect, ["premium"], null, false);
         }
     }
 
@@ -139,6 +162,31 @@ public class MapAreaRenderer
         foreach (var line in _gridLines)
         {
             canvas.DrawLine(line.Item1, line.Item2, _mapStyle.GridLinePaint);
+        }
+    }
+
+    private void DrawPremiumExpansionGridLines(SKCanvas canvas, IReadOnlyCollection<CityMapExpansion> premiumExpansions)
+    {
+        foreach (var expansion in premiumExpansions)
+        {
+            var bounds = _grid.GridToScreen(expansion.Bounds);
+            var gl = new List<Tuple<SKPoint, SKPoint>>();
+            for (var j = bounds.Y; j < bounds.Bottom + 1; j += _grid.GridSize)
+            {
+                gl.Add(new Tuple<SKPoint, SKPoint>(new SKPoint(bounds.X, j),
+                    new SKPoint(bounds.Right, j)));
+            }
+
+            for (var j = bounds.X; j < bounds.Right + 1; j += _grid.GridSize)
+            {
+                gl.Add(new Tuple<SKPoint, SKPoint>(new SKPoint(j, bounds.Y),
+                    new SKPoint(j, bounds.Bottom)));
+            }
+
+            foreach (var line in gl)
+            {
+                canvas.DrawLine(line.Item1, line.Item2, _mapStyle.PremiumExpansionGridLinePaint);
+            }
         }
     }
 

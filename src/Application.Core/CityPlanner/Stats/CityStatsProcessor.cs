@@ -8,6 +8,7 @@ public static class CityStatsProcessor
     public static CityStats Update(IEnumerable<CityMapEntity> entities,
         IEnumerable<MapAreaHappinessProvider> mapAreaHappinessProviders,
         IEnumerable<CityMapExpansion> openExpansions,
+        IReadOnlyCollection<int> premiumExpansionCosts,
         IReadOnlyDictionary<WorkerType, int>? wonderWorkersBonus = null,
         IReadOnlyDictionary<string, double>? wonderResourcesBonus = null,
         int premiumExpansionCount = 0)
@@ -151,6 +152,7 @@ public static class CityStatsProcessor
         stats.WonderResourcesBonus = wonderResourcesBonus;
         stats.WonderWorkersBonus = wonderWorkersBonus;
         stats.PremiumExpansionCount = premiumExpansionCount;
+        stats.PremiumExpansionCost = premiumExpansionCosts.Take(premiumExpansionCount).Sum();
         stats.RequiredWorkers = requiredWorkers;
         stats.ProvidedWorkers = providedWorkers;
 

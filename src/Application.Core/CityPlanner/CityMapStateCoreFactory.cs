@@ -1,7 +1,9 @@
 using Ingweland.Fog.Application.Core.CityPlanner.Abstractions;
+using Ingweland.Fog.Application.Core.Extensions;
 using Ingweland.Fog.Dtos.Hoh;
 using Ingweland.Fog.Dtos.Hoh.City;
 using Ingweland.Fog.Models.Fog.Entities;
+using Ingweland.Fog.Models.Hoh.Entities.City;
 
 namespace Ingweland.Fog.Application.Core.CityPlanner;
 
@@ -11,7 +13,8 @@ public class CityMapStateCoreFactory(ICityMapEntityFactory cityMapEntityFactory)
         IReadOnlyCollection<AgeDto> ages,
         HohCity city,
         IMapArea mapArea,
-        WonderDto? wonder)
+        WonderDto? wonder,
+        IReadOnlyCollection<ExpansionCosts> expansionCosts)
     {
         var buildingDictionary = buildings.ToDictionary(b => b.Id);
         var age = ages.First(a => a.Id == city.AgeId);
@@ -22,7 +25,7 @@ public class CityMapStateCoreFactory(ICityMapEntityFactory cityMapEntityFactory)
             CityAge = age,
             CityWonder = wonder,
             CityWonderLevel = city.WonderLevel,
-            PremiumExpansionCount = city.PremiumExpansionCount,
+            PremiumExpansionCosts = expansionCosts.ToPremiumExpansionCosts(),
         };
         state.AddRange(city.Entities.Select(hohCityMapEntity =>
         {

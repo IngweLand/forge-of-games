@@ -40,6 +40,8 @@
                                    Disabled="@(CityStrategyBuilderService.CityMapState.SelectedCityMapEntity == null)"/>
                 </div>
                 <div class="toolbar-divider"></div>
+                <MudToggleIconButton Icon="material-symbols-outlined/open_run" ToggledColor="Color.Warning"
+                                     @bind-Toggled="_extendedExpansionModeIsActive" Color="Color.Inherit"/>
             }
             <MudSpacer/>
             <MudToggleIconButton Icon="material-symbols-outlined/right_panel_open"

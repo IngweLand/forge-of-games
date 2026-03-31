@@ -45,7 +45,11 @@
                 <div class="premium-expansions-container">
                     <span
                         class="premium-expansions-label">@Loc[FogResource.StatsHub_Player_PremiumExpansions]</span>
-                    <GeneralProductionItemComponent Item="@Data.PremiumExpansionCount"/>
+                    <div class="premium-expansions-values">
+                        <GeneralProductionItemComponent Item="@Data.PremiumExpansionCount"/>
+                        <GeneralProductionItemComponent Item="@Data.PremiumExpansionCost"/>
+                    </div>
+
                 </div>
             }
 

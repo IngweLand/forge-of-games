@@ -4,6 +4,7 @@ using ProtoBuf;
 namespace Ingweland.Fog.Models.Fog.Entities;
 
 [ProtoContract]
+[ProtoReserved(8, "Obsolete PremiumExpansionCount field")]
 public class HohCity
 {
     [ProtoMember(1)]
@@ -27,9 +28,6 @@ public class HohCity
     [ProtoMember(7)]
     public required string Name { get; set; }
 
-    [ProtoMember(8)]
-    public int PremiumExpansionCount { get; set; }
-
     [ProtoMember(9)]
     public IReadOnlyCollection<HohCitySnapshot> Snapshots { get; init; } = new List<HohCitySnapshot>();
 
@@ -44,4 +42,7 @@ public class HohCity
 
     [ProtoMember(13)]
     public int WonderLevel { get; set; }
+    
+    [ProtoMember(14)]
+    public HashSet<string> UnlockedPremiumExpansions { get; set; } = [];
 }

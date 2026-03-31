@@ -29,6 +29,7 @@ public interface IHohCoreDataRepository
     Task<IReadOnlyCollection<Building>> GetGroupBuildingsAsync(CityId cityId, BuildingGroup group);
     Task<IReadOnlyCollection<BuildingCustomization>> GetBuildingCustomizations(CityId cityId);
     Task<IReadOnlyCollection<Expansion>> GetExpansions(CityId cityId);
+    Task<IReadOnlyCollection<ExpansionCosts>> GetExpansionCosts(CityId cityId);
     Task<IReadOnlyCollection<Technology>> GetTechnologiesAsync(CityId cityId);
     Task<IReadOnlyCollection<TreasureHuntDifficultyData>> GetTreasureHuntDifficultiesAsync();
     Task<IReadOnlyCollection<Unit>> GetUnitsAsync(UnitType unitType);

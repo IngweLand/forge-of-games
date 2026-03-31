@@ -4,10 +4,10 @@ using Ingweland.Fog.Application.Core.CityPlanner;
 
 namespace Ingweland.Fog.Application.Client.Web.CityPlanner;
 
-public class MapAreaRendererFactory(IMapGrid grid) : IMapAreaRendererFactory
+public class MapAreaRendererFactory(IMapGrid grid, IProductionRenderer productionRenderer) : IMapAreaRendererFactory
 {
     public MapAreaRenderer Create(MapArea mapArea)
     {
-        return new MapAreaRenderer(mapArea, grid, new MapStyle());
+        return new MapAreaRenderer(mapArea, grid, new MapStyle(), productionRenderer);
     }
 }
