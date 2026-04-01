@@ -246,6 +246,15 @@ public class CityPlanner(
 
         entity.IsLocked = !entity.IsLocked;
         UpdateEntityState(entity);
+        
+        // toggle expansion under the entity if:
+        // 1) it is usable
+        // 2) its bounds are equal to the entity bounds
+        var expansion = _mapArea.GetExpansion(entity.Location);
+        if (expansion != null && expansion.Bounds == entity.Bounds)
+        {
+            expansion.IsLocked = entity.IsLocked;
+        }
         CityMapState.CityStats = _statsProcessor.UpdateStats(entity);
         UpdateSelectedEntityViewModel();
         StateHasChanged?.Invoke();
