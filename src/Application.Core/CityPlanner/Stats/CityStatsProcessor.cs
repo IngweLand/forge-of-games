@@ -19,6 +19,31 @@ public static class CityStatsProcessor
 
         foreach (var cme in entities)
         {
+            if (!cme.IsLocked)
+            {
+                var areaProvider = cme.FirstOrDefaultStat<AreaProvider>();
+                if (areaProvider != null)
+                {
+                    if (!stats.AreasByType.TryGetValue(areaProvider.BuildingType, out var typedArea))
+                    {
+                        stats.AreasByType.Add(areaProvider.BuildingType, 0);
+                    }
+
+                    typedArea += areaProvider.Area;
+                    stats.AreasByType[areaProvider.BuildingType] = typedArea;
+
+                    if (!stats.AreasByGroup.TryGetValue(areaProvider.BuildingGroup, out var groupedArea))
+                    {
+                        stats.AreasByGroup.Add(areaProvider.BuildingGroup, (0, 0));
+                    }
+
+                    groupedArea.Count++;
+                    groupedArea.Area += areaProvider.Area;
+                    stats.AreasByGroup[areaProvider.BuildingGroup] = groupedArea;
+                }
+            }
+            
+            
             if (cme.ExcludeFromStats)
             {
                 continue;
@@ -118,27 +143,6 @@ public static class CityStatsProcessor
                     stats.UnmetHappinessNeed +=
                         happinessConsumer.BuffDetails.Value - happinessConsumer.ConsumedHappiness;
                 }
-            }
-
-            var areaProvider = cme.FirstOrDefaultStat<AreaProvider>();
-            if (areaProvider != null)
-            {
-                if (!stats.AreasByType.TryGetValue(areaProvider.BuildingType, out var typedArea))
-                {
-                    stats.AreasByType.Add(areaProvider.BuildingType, 0);
-                }
-
-                typedArea += areaProvider.Area;
-                stats.AreasByType[areaProvider.BuildingType] = typedArea;
-
-                if (!stats.AreasByGroup.TryGetValue(areaProvider.BuildingGroup, out var groupedArea))
-                {
-                    stats.AreasByGroup.Add(areaProvider.BuildingGroup, (0, 0));
-                }
-
-                groupedArea.Count++;
-                groupedArea.Area += areaProvider.Area;
-                stats.AreasByGroup[areaProvider.BuildingGroup] = groupedArea;
             }
         }
 
