@@ -201,6 +201,9 @@ public class ProductionStatsProcessor(ILogger<ProductionStatsProcessor> logger) 
         // We currently support only Vikings production, where the structure is: 
         // RewardDefinitionDTO > LootContainerRewardDTO > RewardDefinitionDTO > MysteryChestRewardDTO
         // We also support only cases where the Mysterious chest has only one type of resource.
+
+        //TODO: Support other types of buildings. E.g., School has single MysteryChestReward in reward.Rewards collection.
+        
         var rewards = new List<ProductStatsItem>();
         var lootContainerReward = reward.Rewards.OfType<LootContainerReward>().Single();
         foreach (var rewardWrapper in lootContainerReward.Rewards.OfType<Reward>())
