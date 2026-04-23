@@ -16,6 +16,7 @@ public static class HohUnitExtensions
             UnitType.Gate => "icon_flat_unit_gate",
             UnitType.Spawner => "icon_flat_unit_spawner",
             UnitType.Ghost => "icon_flat_unit_ghost",
+            UnitType.AllyNaya => "icon_flat_unit_allynaya",
             _ => throw new ArgumentOutOfRangeException(nameof(unitType), unitType, null),
         };
     }

@@ -64,4 +64,6 @@ public enum UnitStatType
     CritHealChance,
     LightningDamageTakenAmp,
     LightningDamageAmp,
+    FrostDamageAmp,
+    FrostDamageTakenAmp,
 }

@@ -15,4 +15,5 @@ public enum UnitType
     Gate,
     Ally,
     Ghost,
+    AllyNaya,
 }
